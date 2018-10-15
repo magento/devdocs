@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Logging handlers
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

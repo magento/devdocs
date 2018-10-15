@@ -1,7 +1,6 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: View Controller
-version: 2.1
 ---
 Within the Magento application, user may need to view a set of data in more than one way. The view controller is used to switch between the views of data set.
 

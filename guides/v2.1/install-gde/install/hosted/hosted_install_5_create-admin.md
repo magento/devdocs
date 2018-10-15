@@ -1,11 +1,10 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 5. Create Admin account
 menu_title: Step 5. Create Admin account
 menu_order: 10
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()
 menu_node:
 menu_order: 26
-version: 2.1
 functional_areas:
   - Install
   - System

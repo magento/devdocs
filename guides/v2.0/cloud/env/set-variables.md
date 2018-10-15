@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 120_env
 title: Example setting variables
 menu_title: Example setting variables
 menu_order: 15
 menu_node:
-version: 2.0
 ---
 
 For security reasons, we strongly recommend you change the Magento Admin URI, administrator username, and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.

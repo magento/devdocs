@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: Compile LESS with Grunt
 menu_order: 4
 menu_title: Compile LESS with Grunt
-version: 2.0
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css_debug.html
 functional_areas:
   - Frontend
   - Testing

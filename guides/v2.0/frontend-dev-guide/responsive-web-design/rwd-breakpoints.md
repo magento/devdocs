@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: Add a custom breakpoint
 menu_order: 7
 menu_title: Add a custom breakpoint
-version: 2.0
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
  - /guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html

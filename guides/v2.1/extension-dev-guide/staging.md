@@ -1,7 +1,6 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Staging (Magento Commerce only)
-version: 2.1
 ee_only: true
 ---
 

@@ -4,7 +4,6 @@ subgroup: C_vault
 title: Token UI component provider
 menu_title: Token UI component provider
 menu_order: 15
-version: 2.1
 functional_areas:
   - Integration
 ---

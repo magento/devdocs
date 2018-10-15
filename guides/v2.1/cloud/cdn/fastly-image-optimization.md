@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Fastly image optimization
-version: 2.1
 functional_areas:
   - Cloud
   - Setup
@@ -18,13 +17,13 @@ images through image optimizers, using default configurations.
 
 **Prerequisites**
 
--  Install or upgrade to Fastly module version 1.2.52 or later
--  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/access-acct/fastly.html#backend)
+-  Install or upgrade to Fastly module version 1.2.62 or later
+-  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#backend)
 
 #### To enable Fastly IO:
 
 1.  Log in to your local
-    [Magento Admin]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin){:target="\_blank"}
+    [Magento Admin]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin)
     panel as an administrator.
 
 1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
@@ -200,8 +199,8 @@ following example:
   alt="Fusion Backpack"/>
 ```
 
-See `srcset` [browser support](https://caniuse.com/#feat=srcset){:target="\_blank"}
-and [specification](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset){:target="\_blank"}.
+See `srcset` [browser support](https://caniuse.com/#feat=srcset)
+and [specification](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset).
 
 ## Validate Fastly IO
 

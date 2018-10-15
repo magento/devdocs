@@ -1,13 +1,6 @@
 ---
-group: config-guide
-subgroup: 045_pipeline
+group: configuration-guide
 title: Shared configuration
-menu_title: Shared configuration
-menu_node:
-menu_order: 6100
-level3_menu_node: level3child
-level3_subgroup: deployment-examples
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy
@@ -89,6 +82,5 @@ To verify these settings are not editable in the Magento Admin:
 
 	![Configuration options not editable in the Admin]({{ site.baseurl }}/common/images/config_split-deploy_not-editable.png){:width="650px"}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 To change a setting that is locked in the Admin, use the [`magento config:set --lock` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
-</div>

@@ -1,15 +1,9 @@
 ---
-group: fedg
-subgroup: C_Templates
+group: frontend-developer-guide
 title: Customize email templates
-menu_title: Customize email templates
-menu_order: 4
-version: 2.1
 functional_areas:
   - Frontend
 ---
-
-#### Contents
 
 ## Customize email templates {#customize-email-templates}
 
@@ -23,7 +17,7 @@ You can add custom templates as physical files in your custom {% glossarytooltip
 
 Override email templates by creating templates in a new directory in your custom theme, using this pattern: `<theme_dir>/<ModuleVendorName>_<ModuleName>/email`. For example, to override the New Order email template, create a template named `order_new.html` in the `<theme_dir>/Magento_Sales/email` directory.
 
-[Template fallback]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates){:target="_blank"} is supported for email templates, so parent themes of your current theme are searched for templates.
+[Template fallback]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates) is supported for email templates, so parent themes of your current theme are searched for templates.
  
 ### Customize email templates using the Magento Admin {#customize-email-admin}
 
@@ -33,20 +27,21 @@ Any templates configured in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8
 2. Click **Add New Template**.
 3. If you want to use a default template as a starting point, in the **Load default template** section, choose the template and click **Load Template**. The path to the configuration settings for each default template displays in the **Currently Used For** field in the Template Information section.<br>
 Make note of this path because you will need it later when you configure this new template to be used instead of the default template.
-    <br>![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template.png){:width="70%"}{:height="70%"}
+
+   ![New template creation page with loaded default template]({{ site.baseurl }}/common/images/email_create_template21.png){:width="70%"}{:height="70%"}
 
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
 5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  
 6. Customize template content. For details, see [the section on customizing content](#customize-content).
-7. In **Template Styles**, optionally add {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the [LESS files](#email-styles) to make style changes to emails because some email clients don't support styles in `<style>` tags.
+7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the [Less files](#email-styles) to make style changes to emails because some email clients don't support styles in `<style>` tags.
 8. Click **Save Template**.
 9. Now that you have created a template, you must configure that template to be used:
 
     1. If you haven't done so already, log in to the Magento Admin as an administrator.
     2. Click **STORES** > Settings > **Configuration** > SALES > **Sales Emails**.
     3. In the left pane, locate the section that contains the template you want to override. This is the section referenced by **Currently Used For** in your new template. (See step 3 earlier in this section.)
-    <br>For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
-    <br>![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template.png){:width="70%"}{:height="70%"}
+       For example, if you created a "New Order" template, the configuration section is **Order** as the following figure shows.
+       ![Choosing a custom template]({{ site.baseurl }}/common/images/email_choose-template21.png){:width="70%"}{:height="70%"}
     4. Select your newly created template from the list.
     5. Click **Save Config**.
 
@@ -63,8 +58,47 @@ You can customize header and footer templates using either the [theme](#customiz
 
 To add the store and sales related information to a template, use system variables.
 
-System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
+System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the Store Hours (`{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`) variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
 
+Here is a list of the most commonly used email template variables that are available:
+
+  * Email Footer Template: `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
+  * Email Header Template: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}`
+  * Email Logo Image Alt: `{% raw %}{{var logo_alt}}{% endraw %}`
+  * Email Logo Image URL: `{% raw %}{{var logo_url}}{% endraw %}`
+  * Email Logo Image Height: `{% raw %}{{var logo_height}}{% endraw %}`
+  * Email Logo Image Width: `{% raw %}{{var logo_width}}{% endraw %}`
+  * Template CSS: `{% raw %}{{var template_styles|raw}}{% endraw %}`
+  * Base Unsecure URL: `{% raw %}{{config path="web/unsecure/base_url"}}{% endraw %}`
+  * Base Secure URL: `{% raw %}{{config path="web/secure/base_url"}}{% endraw %}`
+  * General Contact Name: `{% raw %}{{config path="trans_email/ident_general/name"}}{% endraw %}`
+  * Sales Representative Contact Name: `{% raw %}{{config path="trans_email/ident_sales/name"}}{% endraw %}`
+  * Sales Representative Contact Email: `{% raw %}{{config path="trans_email/ident_sales/email"}}{% endraw %}`
+  * Custom1 Contact Name: `{% raw %}{{config path="trans_email/ident_custom1/name"}}{% endraw %}`
+  * Custom1 Contact Email: `{% raw %}{{config path="trans_email/ident_custom1/email"}}{% endraw %}`
+  * Custom2 Contact Name: `{% raw %}{{config path="trans_email/ident_custom2/name"}}{% endraw %}`
+  * Custom2 Contact Email: `{% raw %}{{config path="trans_email/ident_custom2/email"}}{% endraw %}`
+  * Store Name: `{% raw %}{{config path="general/store_information/name"}}{% endraw %}`
+  * Store Phone Number: `{% raw %}{{config path="general/store_information/phone"}}{% endraw %}`
+  * Store Hours: `{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`
+  * Country: `{% raw %}{{config path="general/store_information/country_id"}}{% endraw %}`
+  * Region/State: `{% raw %}{{config path="general/store_information/region_id"}}{% endraw %}`
+  * Zip/Postal Code: `{% raw %}{{config path="general/store_information/postcode"}}{% endraw %}`
+  * City: `{% raw %}{{config path="general/store_information/city"}}{% endraw %}`
+  * Street Address 1: `{% raw %}{{config path="general/store_information/street_line1"}}{% endraw %}`
+  * Street Address 2: `{% raw %}{{config path="general/store_information/street_line2"}}{% endraw %}`
+  * Store Contact Address: `{% raw %}{{config path="general/store_information/address"}}{% endraw %}`
+  * Customer Account URL: `{% raw %}{{var this.getUrl($store, 'customer/account/')}}{% endraw %}`
+  * Customer Email: `{% raw %}{{var customer.email}}{% endraw %}`
+  * Customer Name: `{% raw %}{{var customer.name}}{% endraw %}`
+  * Billing Address: `{% raw %}{{var formattedBillingAddress|raw}}{% endraw %}`
+  * Email Order Note: `{% raw %}{{var order.getEmailCustomerNote()}}{% endraw %}`
+  * Order ID: `{% raw %}{{var order.increment_id}}{% endraw %}`
+  * Order Items Grid: `{% raw %}{{layout handle="sales_email_order_items" order=$order area="frontend"}}{% endraw %}`
+  * Payment Details: `{% raw %}{{var payment_html|raw}}{% endraw %}`
+  * Shipping Address: `{% raw %}{{var formattedShippingAddress|raw}}{% endraw %}`
+  * Shipping Description: `{% raw %}{{var order.getShippingDescription()}}{% endraw %}`
+  
 {:.bs-callout .bs-callout-info}
 You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
 
@@ -73,18 +107,18 @@ To add a variable to your template content:
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Create a new template or edit an existing template.
 3. Click to place the cursor in the text in which to insert the variable.
-4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: <br>![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable.png){:width="70%"}{:height="70%"}
+4. Click **Insert Variable**. A pop-up containing a list of variables opens, including custom variables. The variables in the **Store Contact Information** are available in all email templates whereas the variables in the **Template Variables** section are specific to the template you're editing. The following figure shows an example: 
+   ![The list of available variables]({{ site.baseurl }}/common/images/email_insert_variable21.png){:width="70%"}{:height="70%"}
 
 5. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
 
 {:.bs-callout .bs-callout-info}
-
-The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `&lt;!--@vars @--&gt;` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2100url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
+The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `<!--@vars @-->` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2100url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
 
 ## Styles for email templates {#email-styles}
 
-Some email clients (for example, Gmail) support only CSS styles that have been applied as "inline" styles on the `style` attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the [Emogrifier](https://github.com/jjriv/emogrifier)Emogrifier library, which takes the HTML and CSS and adds all of the CSS styles to `style` attributes of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} tags.
+Some email clients (for example, Gmail) support only CSS styles that have been applied as "inline" styles on the `style` attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the [Emogrifier](https://github.com/jjriv/emogrifier)Emogrifier library, which takes the HTML and CSS and adds all of the CSS styles to `style` attributes of the HTML tags.
 
 ### Inline styles {#inline-styles}
 
@@ -96,7 +130,7 @@ The `inlinecss` directive tells Magento which files to apply as inline styles on
 
 For example, let's say an email is being sent from a store configured with the Magento Luma theme. The `inlinecss` directive first looks for a `email-inline.less` file in `<Magento_Luma_theme_dir>/web/css/email-inline.less`. However because that file doesn't exist, it will fall back to the `<Magento_Blank_theme_dir>/web/css/email-inline.less` file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.
 
-Refer to the [Emogrifier README](https://github.com/jjriv/emogrifier#supported-css-selectors"){:target="_blank"} to see what CSS selectors are supported.
+Refer to the [Emogrifier README](https://github.com/jjriv/emogrifier#supported-css-selectors") to see what CSS selectors are supported.
 
 ### Non-inline styles {#non-inline-styles}
 
@@ -107,12 +141,13 @@ Non-inline styles for emails come from global and template-specific styles, as d
 While the majority of styles should be applied inline, there are certain CSS styles that can't be applied inline, such as media queries or `:hover` pseudo styles. These styles must be in a `<style type="text/css"></style>` tag for them to work.
 
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains a `css` directive inside of a `<style>` tag:
+```html
+<style type="text/css">
+    {% raw %}{{var template_styles|raw}}{% endraw %}
 
-    <style type="text/css">
-        {% raw %}{{var template_styles|raw}}{% endraw %}
-    
-        {% raw %}{{css file="css/email.css"}}{% endraw %}
-    </style>
+    {% raw %}{{css file="css/email.css"}}{% endraw %}
+</style>
+```
 
 The `css` directive compiles the contents of the provided file and outputs it. 
 
@@ -125,10 +160,11 @@ As mentioned in the preceding section, the `header.html` file outputs the `{% ra
 The value of that variable comes from any of the following: 
 
 * Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
-      
+```html
       <!--@styles 
       .example-style { color: green; }
       @-->
+```
       
 * If you customize transactional emails using the Magento Admin, you can add CSS styles to the **Template Styles** field to include those styles in the `template_styles` variable.
 
@@ -139,8 +175,12 @@ The styles for emails are split into several different files.
 <table>
   <tbody>
     <tr>
-      <th>File</th>
-      <th>Description</th>
+      <th>
+        File
+      </th>
+      <th>
+        Description
+      </th>
     </tr>
     <tr>
       <td>
@@ -155,7 +195,12 @@ The styles for emails are split into several different files.
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-fonts.less</code></p>
       </td>
       <td>
-          <p>Contains <code>@font-face</code> declarations for custom fonts. This file is imported by the <code>_email-extend.less</code> file using an <code>@import</code> rule.</p>
+        <p>
+          Contains <code>@font-face</code> declarations for custom
+          fonts. This file is imported by the
+          <code>_email-extend.less</code> file using an
+          <code>@import</code> rule.
+        </p>
       </td>
     </tr>
     <tr>
@@ -163,7 +208,10 @@ The styles for emails are split into several different files.
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/email-inline.less</code></p>
       </td>
       <td>
-          <p>Imports necessary files and then outputs styles to be inlined</p>
+        <p>
+          Imports necessary files and then outputs styles to be
+          inlined
+        </p>
       </td>
     </tr>
     <tr>
@@ -171,7 +219,13 @@ The styles for emails are split into several different files.
           <p><code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-base.less</code></p>
       </td>
       <td>
-          <p>Contains majority of styles for emails, including resets, layout, typography, and so on. Review the comments at the top of this file to understand how the styles in this file are split between the <code>email.less</code> and <code>email-inline.less</code> files.</p>
+        <p>
+          Contains majority of styles for emails, including resets,
+          layout, typography, and so on. Review the comments at the
+          top of this file to understand how the styles in this
+          file are split between the <code>email.less</code> and
+          <code>email-inline.less</code> files.
+        </p>
       </td>
     </tr>
     <tr>
@@ -192,15 +246,22 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code>&lt;Magento_Blank_theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
+          <p><code>&lt;Namespace&gt;_&lt;Module&gt;/web/css/source/_email.less</code></p>
       </td>
       <td>
-          <p>Styles that are specific to modules are stored in these files. This mechanism also allows third-party extensions to include styles that will get included in the inline/non-inline output.</p>
+        <p>
+          Styles that are specific to modules are stored in these
+          files. This mechanism also allows third-party extensions
+          to include styles that will get included in the
+          inline/non-inline output.
+        </p>
       </td>
     </tr>
     <tr>
       <td>
-          <p><code>lib/web/css/source/_email-variables.less</code></p>
+        <p>
+          <code>lib/web/css/source/_email-variables.less</code>
+        </p>
       </td>
       <td>
           <p>Same as <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code></p>
@@ -208,20 +269,25 @@ The styles for emails are split into several different files.
     </tr>
     <tr>
       <td>
-          <p><code>lib/web/css/source/lib/variables/_email.less</code></p>
+        <p>
+          <code>lib/web/css/source/lib/variables/_email.less</code>
+        </p>
       </td>
       <td>
-          <p>Contains new email-specific variables that can be overridden in a theme-specific <code>_email-variables.less</code> file. </p>
+        <p>
+          Contains new email-specific variables that can be
+          overridden in a theme-specific
+          <code>_email-variables.less</code> file.
+        </p>
       </td>
     </tr>
   </tbody>
 </table>
-
 When implementing a custom theme, you should be able to fully customize email templates by copying the `<Magento_Blank_theme_dir>/web/css/source/_email-extend.less` and `<Magento_Blank_theme_dir>/web/css/source/_email-variables.less` files to your custom theme and editing those files.
 
 ### Custom fonts {#custom-fonts}
 
-Emails inherit the custom fonts that are defined by the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} theme. The Magento Blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
+Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the **Open Sans** font. Because **Open Sans** is not a standard system font, `@font-face` rules are used to include web fonts.
 
 Here is an overview of how the font structure for emails works:
 
@@ -229,8 +295,8 @@ Here is an overview of how the font structure for emails works:
 
   The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
 * The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
-    * [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_variables.less){:target="_blank"} defines which font is used in the `@font-family-name__base` variable.
-    * [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_typography.less){:target="_blank"} generates the `@font-face` rules which import the custom fonts.
+    * [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_variables.less) defines which font is used in the `@font-family-name__base` variable.
+    * [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_typography.less) generates the `@font-face` rules which import the custom fonts.
 
 If you want to change the font used for emails, do the following:
 
@@ -329,16 +395,17 @@ Correct:
     {% endraw %}
 
 Incorrect:
+
     {% raw %}
     {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
-{% endraw %}
+    {% endraw %}
 
 {:.bs-callout .bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.
 
 ## Supported email clients and devices {#supported-clients}
 
-We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/){:target="_blank"}. Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
+We tested responsive emails using a combination of real devices and [Litmus](http://litmus.com/). Due to the greatly varied level of support among email clients for modern web technologies, not all email clients rendered the emails perfectly. However, all of the following clients should render the emails in a manner that allows them to be easily read without obvious issues.
 
 * Supported Desktop Clients
     * Apple Mail 7 (OS X 10.9)

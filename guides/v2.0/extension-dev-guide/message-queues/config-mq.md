@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Configure message queue topology
 menu_title: Configure message queue topology
@@ -7,7 +7,6 @@ menu_order: 18
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.0
 redirect_from: /guides/v2.0/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration
@@ -15,9 +14,8 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-warning">
-  <p>The message queue topology can only be configured after {{site.data.var.ce}} has been installed and before {{site.data.var.ee}} has been installed. </p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The message queue topology can only be configured after {{site.data.var.ce}} has been installed and before {{site.data.var.ee}} has been installed.
 
 Each module that is to be a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings.
 
@@ -54,7 +52,7 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 <tr>
 <td>name</td>
-<td>A unique identifer for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
+<td>A unique identifier for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
 </tr>
 <tr>
 <td>connection</td>
@@ -163,6 +161,6 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 
 #### Related Topics
 
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{ page.baseurl }}/config-guide/mq/manage-mysql.html">Manage message queues</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*	[Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

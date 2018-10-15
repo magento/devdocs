@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 7. Create a customer and generate a customer token
 subtitle: Order processing with MSI
 menu_title: Step 7. Create a customer and generate a customer token
@@ -9,7 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
 functional_areas:
   - Integration
 ---
@@ -65,16 +64,16 @@ In this step, we will create a customer account that is tied to the `us` web vie
 
 **Response**
 
-The customer `id` is `2`.
+The customer `id` is `3`.
 
 ``` json
 {
-    "id": 2,
+    "id": 3,
     "group_id": 1,
-    "default_billing": "2",
-    "default_shipping": "2",
-    "created_at": "2018-08-02 16:17:26",
-    "updated_at": "2018-08-02 16:17:27",
+    "default_billing": "3",
+    "default_shipping": "3",
+    "created_at": "2018-09-24 19:01:22",
+    "updated_at": "2018-09-24 19:01:23",
     "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
@@ -83,8 +82,8 @@ The customer `id` is `2`.
     "website_id": 2,
     "addresses": [
         {
-            "id": 2,
-            "customer_id": 2,
+            "id": 3,
+            "customer_id": 3,
             "region": {
                 "region_code": "NY",
                 "region": "New York",

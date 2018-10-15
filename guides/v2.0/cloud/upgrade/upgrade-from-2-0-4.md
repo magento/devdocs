@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 130_upgrades
 title: Upgrade from 2.0.4
 menu_title: Upgrade from 2.0.4
 menu_order: 30
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Upgrade

@@ -1,12 +1,10 @@
 ---
-group: get-started
+group: web-api
 subgroup: 50_Testing
 title: Web API functional testing
 menu_title: Web API functional testing
 menu_order: 1
 menu_node: parent
-version: 2.1
-redirect_from: /guides/v1.0/get-started/web-api-functional-testing.html
 ---
 
 ## Web API functional testing
@@ -76,7 +74,7 @@ interface AdapterInterface
      *         'resourcePath' => $resourcePath, // e.g. /products/:id
      *         'httpMethod' => $httpMethod,     // e.g. GET
      *         'token' => '21hasbtlaqy8t3mj73kjh71cxxkqj4aq'    // optional : for token based Authentication. Will
-     *                                                             override default Oauth based authentication provided
+     *                                                             override default OAuth based authentication provided
      *                                                             by test framework
      *     ),
      *     'soap' => array(

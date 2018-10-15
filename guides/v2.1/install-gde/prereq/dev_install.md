@@ -1,7 +1,6 @@
 ---
-group: install_pre
+group: installation-guide
 title: (Contributor) Clone the Magento repository
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/install/composer-clone.html
@@ -32,7 +31,7 @@ If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento softw
 
 ## Clone the Magento repository {#instgde-prereq-compose-clone}
 
-This section discusses how to get current code by cloning [Magento's GitHub repository](https://github.com/magento/magento2){:target="\_blank"} and checking out branches. You can either checkout a release branch or a development branch:
+This section discusses how to get current code by cloning [Magento's GitHub repository](https://github.com/magento/magento2){:target="_blank"} and checking out branches. You can either checkout a release branch or a development branch:
 
 *	Release branches, like `2.1.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool]({{page.baseurl}}/migration/bk-migration-guide.html).
 
@@ -41,7 +40,7 @@ This section discusses how to get current code by cloning [Magento's GitHub repo
 Currently, the `2.2-develop` branch is the default, but you can checkout a release branch, like `2.1.0`, after cloning.
 
 {:.bs-callout .bs-callout-info}
-Refer to [GitHub's documentation](https://help.github.com/articles/cloning-a-repository-from-github/){:target="\_blank"} for instructions on cloning a repository.
+Refer to [GitHub's documentation](https://help.github.com/articles/cloning-a-repository-from-github/){:target="_blank"} for instructions on cloning a repository.
 
 ### Creating an authorization file {#instgde-prereq-compose-clone-auth}
 

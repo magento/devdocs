@@ -1,11 +1,10 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: ZZ_continue
 title:
 menu_title: Next&mdash;Installation part 3, post-installation
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Install
   - System

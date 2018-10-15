@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 03_market
 title: Magento Marketplace example
 menu_title: Magento Marketplace example
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Upgrade
 ---

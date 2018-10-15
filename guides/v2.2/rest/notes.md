@@ -1,10 +1,9 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: REST usage notes
 menu_title: REST usage notes
 menu_order: 7
-version: 2.2
 functional_areas:
   - Integration
 ---

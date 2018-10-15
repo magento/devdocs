@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ## {{site.data.var.ee}} Web APIs Services per Module {#eelist}
 
 The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are available on {{site.data.var.ee}} installations only. {{site.data.var.ee}} installations automatically have access to all {{site.data.var.ce}} (formerly Magento Community Edition) web APIs.
@@ -33,7 +31,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
 ## {{site.data.var.ce}} Web APIs Services per Module {#celist}
 
   The {{site.data.var.ce}} Web APIs are available on all installations.
-  
+
 ### Analytics
     analyticsLinkProviderV1
 
@@ -197,4 +195,3 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
 ## Magento B2B
 
 See [Integrate with B2B using REST]({{ page.baseurl }}/b2b/integrations.html) for a list of services provided with B2B.
-</div>

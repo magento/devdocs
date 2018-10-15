@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 7. Create an order
 subtitle: Order processing tutorial
 return_to:
@@ -8,7 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 7
 level3_subgroup: order-tutorial
-version: 2.1
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-create-order.html
   - /guides/v2.2/get-started/order-tutorial/order-create-order.html

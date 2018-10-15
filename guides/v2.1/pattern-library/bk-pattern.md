@@ -1,9 +1,7 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Admin Design Pattern Library
 landing-page: Pattern Library
-version: 2.1
-redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---
 ## What is a design pattern?
 

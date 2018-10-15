@@ -1,10 +1,9 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Navigation widget
 menu_order: 11
 menu_title: Navigation widget
-version: 2.0
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_navigation.html

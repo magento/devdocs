@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 5. Create the personalization option
 subtitle: Create a configurable product tutorial
 menu_title: Step 5. Create the personalization option
@@ -9,7 +9,6 @@ level3_subgroup: configurable-product-tutorial
 return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
-version: 2.2
 functional_areas:
   - Integration
 ---
@@ -67,9 +66,8 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ![Search results]({{ page.baseurl }}/rest/images/add-your-name.png)
 
-  <div class="bs-callout bs-callout-info" id="info" markdown="1">
+  {:.bs-callout .bs-callout-info}
   If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
-  </div>
 
   ## Congratulations! You've finished.
   {:.no_toc}

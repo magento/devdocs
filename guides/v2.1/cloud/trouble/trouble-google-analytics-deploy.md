@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Resolve issues with Google Analytics during deployment
 menu_title: Resolve issues with Google Analytics during deployment
 menu_order: 35
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

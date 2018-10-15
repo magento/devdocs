@@ -1,12 +1,11 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Manage company credit
 menu_title: Manage company credit
 menu_order: 18
 level3_menu_node: level3child
 level3_subgroup: credit
-version: 2.2
 ee_only: True
 functional_areas:
   - B2B

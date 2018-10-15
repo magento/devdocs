@@ -1,11 +1,10 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 3. Web configuration
 menu_title: Step 3. Web configuration
 menu_order: 6
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: During installation, fatal PDO error displays
 menu_title: During installation, fatal PDO error displays
 menu_node:
 menu_order: 21
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_pdo.html
   - /guides/v2.0/install-gde/trouble/tshoot_pdo.html
@@ -21,5 +20,5 @@ functional_areas:
 
 ### Solution:
 
-Make sure you installed all required PHP extensions (<a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html">CentOS</a>, <a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">Ubuntu</a>). 
+Make sure you installed all required PHP extensions ([CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html), [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)). 
 

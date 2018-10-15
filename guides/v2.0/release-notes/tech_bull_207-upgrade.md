@@ -5,7 +5,6 @@ title: Technical Bulletin
 menu_title: Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)
 menu_node: 
 menu_order: 3
-version: 2.0
 ---
 
 This bulletin informs you of a known issue updating from Magento Commerce (formerly Enterprise Edition) and Open Source (formerly Community Edition)  environments that run the following:   
@@ -125,8 +124,8 @@ To apply this patch:
 	</tbody>
 	</table>
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Use patch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Use patch `MDVA-449` whether or not you installed optional sample data.
 	</div>
 
 2.	Extract the patch in your Magento installation directory.
@@ -157,8 +156,8 @@ To apply this patch:
 
 	`cp -R magento2-updater-10.0.2/*  update/`
 
-	<div class="bs-callout bs-callout-tip">
-		<p>If you're prompted to overwrite files repeatedly, cancel the operation and try the following command: <code>yes | cp -rf magento2-updater-10.0.2/* update/</code>. Also see <a href="http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command" target="_blank">this article on stackexchange</a>.</p>
+	<div class="bs-callout bs-callout-tip" markdown="1">
+	If you're prompted to overwrite files repeatedly, cancel the operation and try the following command: `yes | cp -rf magento2-updater-10.0.2/* update/`. Also see [this article on stackexchange](http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command){: target="_blank"}.
 	</div>
 
 4. After copying all  patch-related files to their appropriate locations,  remove any unwanted files and directories by executing these commands:

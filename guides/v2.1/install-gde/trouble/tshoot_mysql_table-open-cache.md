@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 20_other
 title: Error 'MySQL server has gone away' during installation
 menu_title: Error 'MySQL server has gone away' during installation
 menu_node:
 menu_order: 505
-version: 2.1
 functional_areas:
   - Install
   - System
@@ -20,7 +19,7 @@ During installation, the following message displays:
 
 ### Solution
 
-Set the value of [table_open_cache](https://dev.mysql.com/doc/refman/5.6/en/table-cache.html) to a value of at least 250 as follows:
+Set the value of [table_open_cache](https://dev.mysql.com/doc/refman/5.6/en/table-cache.html){:target="_blank"} to a value of at least 250 as follows:
 
 1.	As a user with `root` privileges, open the MySQL configuration file in a text editor.
 

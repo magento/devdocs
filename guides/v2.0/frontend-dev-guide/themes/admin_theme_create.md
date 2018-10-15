@@ -1,9 +1,8 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Create an Admin theme
 menu_title: Create an Admin theme
-version: 2.0
 menu_order: 9
 functional_areas:
   - Frontend

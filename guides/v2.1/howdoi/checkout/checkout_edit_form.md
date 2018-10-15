@@ -1,12 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a custom template for a form field on Checkout page
 subtitle: Customize Checkout
 menu_order: 7
 level3_subgroup: checkout-tutorial
-version: 2.1
 functional_areas:
   - Checkout
 ---
@@ -52,9 +51,8 @@ Example of a field template:
 <img src="%path_to_image%" alt="image_de"/>
 ```
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 The original templates of all form field types are located in the `app/code/Magento/Ui/view/base/web/templates/form/element` directory.
-</div>
 
 ## Step 2: Specify the new template in layout {#layout}
 

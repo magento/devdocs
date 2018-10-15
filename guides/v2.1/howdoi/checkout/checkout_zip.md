@@ -1,12 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add custom input mask for ZIP code
 subtitle: Customize Checkout
 menu_order: 6
 level3_subgroup: checkout-tutorial
-version: 2.1
 functional_areas:
   - Checkout
 ---

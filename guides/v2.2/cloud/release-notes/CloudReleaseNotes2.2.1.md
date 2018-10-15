@@ -6,7 +6,6 @@ menu_title: Magento Commerce (Cloud) 2.2.1 Release Notes
 menu_order: 380
 level3_menu_node:
 level3_subgroup:
-version: 2.2
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
@@ -22,7 +21,7 @@ We strongly recommend upgrading to Fastly v1.2.33 module for all Magento Commerc
 
 Look for the following {{site.data.var.ece}} highlights in this release:
 
-* **30-day free trials available for Starter and Pro projects**. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html).
+* **30-day free trials available for Starter and Pro projects**. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project and configure basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html).
 
 * **Staging and Production environments in the UI for Pro projects**. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{ site.baseurl }}/guides/v2.2/cloud/trouble/pro-env-management.html).
 
@@ -54,7 +53,7 @@ For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Re
 
 ## Fixed issues {#fixed}
 
-<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
 
 <!--- MAGECLOUD-1121 -->* We resolved an issue with the ElasticSearch option being added and saved to `app/etc/env.php`. When ElasticSearch is configured and activated in your environment, the setting properly saves in the `env.php` file. For example:  
 
@@ -92,7 +91,7 @@ The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details
 
 ## Installation and upgrade instructions {#install-upgrade}
 
-If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
+If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
 
 To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.x and 2.1.x.
 

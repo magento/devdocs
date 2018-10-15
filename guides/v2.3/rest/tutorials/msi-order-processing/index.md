@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Order Processing with Multi Source Inventory
 menu_title: Initial tasks
 menu_order: 0
@@ -8,7 +8,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
 functional_areas:
   - Integration
 ---

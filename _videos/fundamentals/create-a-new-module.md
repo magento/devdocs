@@ -5,7 +5,6 @@ group: "Fundamentals of Magento 2 Development"
 title: "Create a New Module"
 thumbnail: "fundamentals/thumbs/create-new-module.png"
 menu_order: 1
-github_link:
 ---
 
 Module is a structural element of Magento 2 – the whole system is built upon modules. Typically, the first step in creating a customization is building a module.
@@ -24,7 +23,7 @@ Let’s go through each of these steps in detail.
 
 #### There are two possible locations for modules in Magento 2: the app/code folder and the vendor folder
 
-Depending on how Magento 2 has been installed, core modules can either be located in the `vendor/magento/magento-*`folders (for composer installation) or in the `app/code/Magento/` folder (for cloning github).
+Depending on how Magento 2 has been installed, core modules can either be located in the `vendor/magento/magento-*`folders (for composer installation) or in the `app/code/Magento/` folder (for cloning GitHub).
 
 #### Which of these locations should you choose for your new module?
 
@@ -38,7 +37,7 @@ Let’s create the folder app/code/Learning and inside this folder place another
 
 1. `cd` to the root folder
 2. `mkdir app/code/Learning`
-3. `mkdirapp/code/Learning/FirstUnit`
+3. `mkdir app/code/Learning/FirstUnit`
 
 ## Make sure you have permission to create files and folders in your installation
 

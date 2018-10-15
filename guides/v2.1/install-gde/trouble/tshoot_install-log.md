@@ -1,12 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
 menu_node:
 menu_order: 400
-version: 2.1
-redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install-log.html
 functional_areas:
   - Install
   - System
@@ -23,7 +21,7 @@ Running Magento processes at the same time might result in problems creating the
 
 ### Solution
 
-Review your setting for `open_basedir` in `php.ini`. The Setup Wizard uses the [sys_get_temp_dir ( void )](http://php.net/manual/en/function.sys-get-temp-dir.php) PHP call to get the value of the temporary directory. If [open_basedir](http://php.net/manual/en/ini.core.php#ini.open-basedir) is set to refuse connections to a directory specified by `sys_get_temp_dir`, the installation fails.
+Review your setting for `open_basedir` in `php.ini`. The Setup Wizard uses the [sys_get_temp_dir ( void )](http://php.net/manual/en/function.sys-get-temp-dir.php){:target="_blank"} PHP call to get the value of the temporary directory. If [open_basedir](http://php.net/manual/en/ini.core.php#ini.open-basedir){:target="_blank"} is set to refuse connections to a directory specified by `sys_get_temp_dir`, the installation fails.
 
 To resolve the issue, change the value of `open_basedir` and restart the web server.
 

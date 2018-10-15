@@ -1,11 +1,10 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_order: 3
 menu_node:
-version: 2.0
 functional_areas:
   - Install
   - System
@@ -16,5 +15,5 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/hosted/hosted_install_2_db.html">Step 2. Add a database</a>
+[Step 2. Add a database]({{ page.baseurl }}/install-gde/install/hosted/hosted_install_2_db.html)
 

@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup:
 title: Git
 menu_title: Git
 menu_node:
 menu_order:
-version: 2.0
 ---
 
 Git is the center of all code management, build, and deployment for your {{site.data.var.ece}} stores and sites. We use Git to provide source control for your code:
@@ -22,7 +21,7 @@ If you need help understand Git, you can review the following resources:
 
 ## Git CLI and clients {#clients}
 
-You can interact with Git using [CLI commands](https://git-scm.com/documentation){:target="\_blank"} or using a Git client. Git provides a <a href="https://git-scm.com/downloads" target="\_blank">Git client</a> option, or you can use other clients such as installed on your computer to be able to interact with {{site.data.var.ece}}.
+You can interact with Git using [CLI commands](https://git-scm.com/documentation){:target="\_blank"} or using a Git client. Git provides a [Git client](https://git-scm.com/downloads){: target="\_blank"} option, or you can use other clients such as installed on your computer to be able to interact with {{site.data.var.ece}}.
 
 Not everyone remembers [Git](https://git-scm.com/docs){:target="\_blank"} commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/){:target="\_blank"} and [SmartGit](https://www.syntevo.com/smartgit/){:target="\_blank"}.
 
@@ -53,8 +52,7 @@ When setting up your SSH, review our information at [SSH and sFTP]({{ page.baseu
 
 ## Git integrations {#integrations}
 
-We support using either [Github]({{ page.baseurl }}/cloud/project/project-integrate-github.html) or [Bitbucket]({{ page.baseurl }}/cloud/project/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
+We support using either [GitHub]({{ page.baseurl }}/cloud/project/project-integrate-github.html) or [Bitbucket]({{ page.baseurl }}/cloud/project/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-To integrate other git repositories with your {{site.data.var.ece}} project using Github or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).
-</div>
+{: .bs-callout .bs-callout-info }
+To integrate other git repositories with your {{site.data.var.ece}} project using GitHub or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).

@@ -1,11 +1,10 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 20_Enterprise Edition
 ee_only: true
 title: Magento_CatalogImportExportStaging module
 menu_title: CatalogImportExportStaging
 menu_order: 2
-version: 2.2
 ee_only: true
 ---
 

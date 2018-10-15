@@ -1,17 +1,16 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: nginx
 menu_title: nginx
 menu_order: 2
-version: 2.0
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="&#95;blank}). You must also install the latest version of `php-fpm`.
+Magento supports nginx 1.8 (or the [latest mainline version](http://nginx.org/en/linux_packages.html#mainline){:target="_blank}). You must also install the latest version of `php-fpm`.
 
 Installation instructions vary based on which operating system you're using:
 
@@ -97,8 +96,8 @@ For this example, we'll download and extract an archive.
 5. [Set directory ownership and file permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
 		cd /var/www/html/magento2
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 		chown -R :www-data .
 		chmod u+x bin/magento
 
@@ -290,8 +289,8 @@ For this example, we'll download and extract an archive.
 3. [Set directory ownership and file permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
 		cd /usr/share/nginx/html/magento2
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 		chown -R :apache .
 		chmod u+x bin/magento
 

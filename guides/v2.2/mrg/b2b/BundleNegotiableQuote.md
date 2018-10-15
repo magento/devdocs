@@ -1,10 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_BundleNegotiableQuote module
 menu_title: BundleNegotiableQuote
 menu_order: 20
-version: 2.2
 ---
 ## Overview
 

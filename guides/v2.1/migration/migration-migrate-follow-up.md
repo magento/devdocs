@@ -1,11 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Follow-up (info and steps)
 menu_title: Follow-up (info and steps)
 menu_node:
 menu_order: 4
-version: 2.1
 functional_areas:
   - Tools
 ---

@@ -1,8 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Module relationships
 menu_title: Module relationships
-version: 2.1
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_relationships.html
   - /guides/v2.0/architecture/modules/mod_relationships.html

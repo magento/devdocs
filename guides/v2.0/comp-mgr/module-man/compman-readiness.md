@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node:
 menu_order: 5
-version: 2.0
 redirect_from: /guides/v2.0/comp-mgr/compman-readiness.html
 functional_areas:
   - Upgrade

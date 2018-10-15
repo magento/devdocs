@@ -1,5 +1,5 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: What is the software that the Magento server needs to run?
 menu_title: What is the software that the Magento server needs to run?
@@ -7,8 +7,6 @@ menu_node:
 menu_order: 125
 level3_menu_node: level3child
 level3_subgroup: basics
-version: 2.1
-redirect_from: /guides/v1.0/install-gde/basics/basics_software.html
 functional_areas:
   - Install
   - System

@@ -1,10 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: Security
 title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
-version: 2.1
 redirect_from:
   - /guides/v2.0/extension-dev-guide/security/writing-secure-code.html
   - /guides/v2.1/extension-dev-guide/security/writing-secure-code.html

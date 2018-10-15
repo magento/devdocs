@@ -1,7 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Modules providing advanced reporting
-version: 2.2
 functional_areas:
     - Reports
 ---

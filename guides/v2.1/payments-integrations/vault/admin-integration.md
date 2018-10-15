@@ -4,7 +4,6 @@ subgroup: C_vault
 title: Vault implementation for Admin
 menu_title: Vault implementation for Admin
 menu_order: 25
-version: 2.1
 functional_areas:
   - Integration
 ---

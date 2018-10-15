@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Post-deploy variables
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration

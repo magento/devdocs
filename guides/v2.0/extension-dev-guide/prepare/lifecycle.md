@@ -1,8 +1,7 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
-version: 2.0
 ---
 
 This topic describes a module's lifecycle and how to create classes that execute code when your module is initialized, upgraded, or uninstalled.

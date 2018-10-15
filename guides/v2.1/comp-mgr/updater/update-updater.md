@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 40_update-updater
 title: Update the updater application
 menu_title: Update the updater application
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Upgrade
 ---

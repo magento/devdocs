@@ -1,14 +1,6 @@
 ---
-group: ext-best-practices
-subgroup: 01_Admin
+group: extension-best-practices
 title: Admin
-menu_title: Admin
-menu_order: 1
-menu_node: parent
-version: 2.1
-tabgroup: best-practices
-tablabel: Admin
-tabweight: 20
 functional_areas:
   - Standards
 ---

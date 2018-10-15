@@ -1,10 +1,9 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Magnifier widget 
 menu_order: 8
 menu_title: Magnifier widget 
-version: 2.0
 ---
 
 ## Overview

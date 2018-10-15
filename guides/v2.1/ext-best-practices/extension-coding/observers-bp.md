@@ -1,10 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Observers Best Practices
 menu_title: Observers best practices
 menu_order: 4
-version: 2.1
 functional_areas:
   - Standards
 ---

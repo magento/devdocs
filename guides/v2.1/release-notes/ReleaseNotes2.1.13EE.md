@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento Commerce 2.1.13 Release Notes
-version: 2.1
 ---
 
 *	TOC
@@ -60,7 +59,7 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 
 <!--- MAGETWO-64171 -->* Display issues no longer prevent a user from adding a shipping address when checking out when running Internet Explorer 11.x. Previously, a registered user could not add a new shipping address in the  shipping step of the checkout process due to display issues.
 
-<!--- MAGETWO-71229 -->* Magento no longer caches warning messages as often as a customer clicks the **Update Shopping Cart** button while the shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while the page loaded in FireFox or Chrome, and this action resulted in multiple warning messages appearing on the top of the shopping cart page.
+<!--- MAGETWO-71229 -->* Magento no longer caches warning messages as often as a customer clicks the **Update Shopping Cart** button while the shopping cart page loads. Previously, Magento cached a warning message each time a customer clicked this button while the page loaded in Firefox or Chrome, and this action resulted in multiple warning messages appearing on the top of the shopping cart page.
 
 <!--- MAGETWO-87745 -->* You can now create unique checkbox IDs for the Terms and Conditions part of the checkout process. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13543*. [GitHub-6207](https://github.com/magento/magento2/issues/6207)
 
@@ -418,7 +417,7 @@ The following table identifies contributions from our community members. This ta
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
 
 ## Installation
 

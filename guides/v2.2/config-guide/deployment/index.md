@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 045_pipeline
+group: configuration-guide
 title: Pipeline Deployment
-menu_title: Pipeline Deployment
-menu_node: parent
-menu_order: 1
-version: 2.2
 redirect_from: /guides/v2.2/config-guide/prod/prod_deploy.html
 functional_areas:
   - Configuration

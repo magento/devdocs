@@ -1,25 +1,15 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: MassActions component
 menu_title: MassActions component
-version: 2.1
 ---
-
-## Overview
 
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 See the [Admin Design Pattern Library (MassActions)]({{ page.baseurl }}/pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the MassActions component.
 
-#### Component Elements (classes, files)
-
-The following are the component elements:
-
-* Constructor `app\code\Magento\Ui\view\base\web\js\grid\massactions.js`
-* Template: `app\code\Magento\Ui\view\base\web\templates\grid\actions.html`
-
-#### Dependencies on Other Components
+## Dependencies
 
 Dependency on the following components:
 
@@ -27,9 +17,8 @@ Dependency on the following components:
 * Modal window with confirmation: `app\code\Magento\Ui\view\base\web\js\modal\confirm.js`
 * Modal window with alert: `app\code\Magento\Ui\view\base\web\js\modal\alert.js`
 
-#### MassActions configuration
+## Configuration options
 
-Extends <code>Collapsible</code> configuration with the following options:
 <table>
   <tr>
     <th>Option</th>
@@ -63,7 +52,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
 </table>
 
-##### MassAction interface
+### MassAction interface
 
 <table>
   <tr>
@@ -74,14 +63,14 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
   <tr>
     <td><code>callback</code></td>
-    <td></td>
+    <td />
     <td><a href="{{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a></td>
     <td>Optional</td>
   </tr>
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message displayed before applying the action.</td>
-    <td>{<br>title: string;<br>message: string;<br>}</td>
+    <td>{<br />title: string;<br />message: string;<br />}</td>
     <td>Optional</td>
   </tr>
   <tr>
@@ -104,18 +93,9 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
 </table>
 
-##### Methods and Events
+## Examples
 
-The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
-
-* <code>getAction</code> - returns the action instance found by the provided identifier
-* <code>addAction</code> - adds a new action to the actions
-* <code>applyAction</code> - applies the specified action as identifier action
-* <code>getSelections</code> - returns the object with current selections
-
-#### Example configuration modifications:
-
-##### Redefining the link to the template
+### Redefine the link to the template
 
 {% highlight xml %}
 <massaction name="listing_massaction">
@@ -128,7 +108,7 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
 </massaction>
 {% endhighlight %}
 
-##### Specifying action with confirmation
+### Specify action with confirmation
 
 {% highlight xml %}
 <massaction name="listing_massaction">
@@ -140,7 +120,7 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
             <item name="config" xsi:type="array">
                 <item name="confirm" xsi:type="array">
                     <item name="title" xsi:type="string" translate="true">Edit items</item>
-                    <item name="message" xsi:type="string" translate="true">Are you sure you wan't to edit selected items?</item>
+                    <item name="message" xsi:type="string" translate="true">Are you sure you want to edit selected items?</item>
                 </item>
                 <item name="type" xsi:type="string">edit</item>
                 <item name="label" xsi:type="string" translate="true">Edit</item>
@@ -150,7 +130,7 @@ The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% en
 </massaction>
 {% endhighlight %}
 
-##### Action with a custom callback
+### Action with a custom callback
 
 Callback is provided by another component.
 
@@ -174,7 +154,7 @@ Callback is provided by another component.
 </massaction>
 {% endhighlight %}
 
-##### Instance replacement: one instance of a component
+### Instance replacement (one instance of a component)
 
 Redefine link to constructor.
 
@@ -187,3 +167,19 @@ Redefine link to constructor.
     </argument>
 </massaction>
 {% endhighlight %}
+
+## Source files
+
+Extends `Collapsible`:
+- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
+- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
+
+### Methods and Events
+
+The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
+
+* <code>getAction</code> - returns the action instance found by the provided identifier
+* <code>addAction</code> - adds a new action to the actions
+* <code>applyAction</code> - applies the specified action as identifier action
+* <code>getSelections</code> - returns the object with current selections
+

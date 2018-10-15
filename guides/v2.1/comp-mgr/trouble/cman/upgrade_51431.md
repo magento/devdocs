@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Troubleshoot upgrade issues
 menu_title: Troubleshoot upgrade issues
 menu_node:
 menu_order: 5
-version: 2.1
 functional_areas:
   - Upgrade
 ---
@@ -72,23 +71,23 @@ To set file system permissions before upgrade:
 	*	One Magento user (typical of shared hosting):
 
 			cd <your Magento install dir>
-			find var -type f -exec chmod u+w {} \;
-			find var -type d -exec chmod u+w {} \;
+			find var -type f -exec chmod u+w {} +
+			find var -type d -exec chmod u+w {} +
 
 		If you don't have access to a command line, use a file manager tool provided by your hosting provider to set permissions.
 
 	*	Two Magento users:
 
 			cd <your Magento install dir>
-			find var -type f -exec chmod g+w {} \;
-			find var -type d -exec chmod g+ws {} \;
+			find var -type f -exec chmod g+w {} +
+			find var -type d -exec chmod g+ws {} +
 			chown -R :<web server group> .
 
 		For example, on CentOS where the web server group is typically `apache`:
 
 			cd /var/www/html/magento2
-			find var -type f -exec chmod g+w {} \;
-			find var -type d -exec chmod g+ws {} \;
+			find var -type f -exec chmod g+w {} +
+			find var -type d -exec chmod g+ws {} +
 			chown -R :apache .
 
 For additional details about file ownership and permissions, see [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).

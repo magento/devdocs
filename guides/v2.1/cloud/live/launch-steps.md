@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 165_live
 title: Launch steps
 menu_title: Launch steps
 menu_order: 20
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Testing

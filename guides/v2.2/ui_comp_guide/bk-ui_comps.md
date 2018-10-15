@@ -1,11 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup:
+group: ui-components-guide
 title: Overview of UI components
-landing-page: UI Components
-menu_title: Overview of UI components
-menu_order: 1
-version: 2.2
 redirect_from:
   - /guides/v2.1/ui-components/ui-component.html
   - /guides/v2.2/ui-components/ui-component.html
@@ -48,9 +43,8 @@ Basic components are declared in the [page layout files]({{ page.baseurl }}/fron
 
 All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You need to configure styles manually for components on storefront.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You need to configure styles manually for components on storefront.
 
 ## When to use UI components?
 
@@ -105,7 +99,7 @@ A UI component can be bound to one or more {% glossarytooltip a2aff425-07dd-4bd6
 
 A particular instance of a UI component is defined primarily by the following:
 
-1. [definition.xml](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml): default component configuration. Can be extended in custom modules.
+1. [definition.xml]({{ site.mage2200url }}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml): default component configuration. Can be extended in custom modules.
 2. [UI component's XML declaration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html).
 3. [Backend/PHP modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
 4. Configuration inside the JavaScript classes.

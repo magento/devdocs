@@ -1,10 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Bulk Operations
 menu_title: Bulk Operations
 menu_order: 28
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq

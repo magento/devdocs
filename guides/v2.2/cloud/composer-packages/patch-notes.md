@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Magento Commerce (Cloud) package updates
-version: 2.2
 functional_areas:
   - Cloud
   - Setup

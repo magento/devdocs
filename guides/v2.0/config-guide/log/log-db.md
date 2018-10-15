@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 500_log
 title: Example&mdash;logging database activity
 menu_title: Example&mdash;logging database activity
 menu_node:
 menu_order: 3
-version: 2.0
 functional_areas:
   - Configuration
   - System

@@ -1,8 +1,6 @@
 ---
-layout: default
-group: perf-best-practices
+group: performance-best-practices
 title: Advanced JavaScript bundling
-version: 2.3
 functional_areas:
   - Configuration
   - System
@@ -451,9 +449,8 @@ require.config({
             }});
 ```
 
-<div class="bs-callout bs-callout-info">
-  <p>When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, because the calls are executed in the sequential order they appear.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+When configuring bundles, make sure you put the `requirejs.config()` calls in the order you want them executed, because the calls are executed in the sequential order they appear.
 
 #### 6. Test the results
 

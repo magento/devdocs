@@ -1,18 +1,13 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Date component
 menu_title: Date component
-version: 2.1
 ---
-
-## Overview
 
 The Date component implements a custom date input field. It uses a date picker implementation provided by the [calendar widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_calendar.html).
 
-## Date configuration
-
-Extends all `abstract` configuration.
+## Configuration options
 
 <table>
   <tr>

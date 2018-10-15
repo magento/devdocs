@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Example of managing system-specific settings
-version: 2.2
 functional_areas:
   - Cloud
   - Deploy
@@ -67,7 +66,7 @@ To change locale and static file optimization settings:
 
 	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.php to your local system {#export}
@@ -184,7 +183,7 @@ To add additional configuration values in the Integration environment Magento Ad
 4.	In the right pane, expand **JavaScript Settings**.
 5.	From the **Merge JavaScript Files** list, click **Yes**.
 6.	Click **Save Config**.
-7.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+7.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 8.	Log out of the Magento Admin.
 
 ### Run the config.php command {#regenerate}

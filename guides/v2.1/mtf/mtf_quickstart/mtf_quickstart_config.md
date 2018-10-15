@@ -1,16 +1,14 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Quick start. Adjust configuration
-version: 2.1
 ---
 
 ### Edit `phpunit.xml` to configure PHPUnit {#mtf_quickstart_config_phpunitxml}
 
 Find `phpunit.xml` in `<magento2_root_dir>/dev/tests/functional`, and open it in editor.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you cannot find <code>phpunit.xml</code>, create it from <code>phpunit.xml.dist</code>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you cannot find `phpunit.xml`, create it from `phpunit.xml.dist`.
 
 #### Set URL for Magento storefront under test {#mtf_quickstart_config_phpunitxml_frontend}
 
@@ -29,9 +27,8 @@ Example:
 
 ### Edit `config.xml` to configure Functional Testing Framework {#mtf_quickstart_config_configxml}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The default configuration is set in <a href="{{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist"><code>&lt;magento2&gt;/dev/tests/functional/etc/config.xml.dist</code></a>. It should be copied as <code>config.xml</code> for further changes.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+The default configuration is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist). It should be copied as `config.xml` for further changes.
 
 Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
 
@@ -51,7 +48,7 @@ Enter actual data in `<browserName>` and `<browser>` attributes.
 
 Example for Google Chrome:
 
-{% highlight xml %}
+```xml
 
 <server>
 <item name="selenium"
@@ -68,15 +65,14 @@ Example for Google Chrome:
 </item>
 </server>
 
-{% endhighlight %}
+```
 
 ### Edit `credentials.xml` to work with Magento modules that requires credentials {#mtf_quickstart_config_credentialsxml}
 
 Find `credentials.xml` in `<magento2_root_dir>/dev/tests/functional`, and open it in editor.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you cannot find <code>credentials.xml</code>, create it from <code>credentials.xml.dist</code>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you cannot find `credentials.xml`, create it from `credentials.xml.dist`.
 
 #### Set credentials for Magento modules under test {#mtf_quickstart_config_credentialsxml-set}
 

@@ -1,11 +1,10 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Multiselect Component
 menu_title: Multiselect Component
 menu_node:
 menu_order: 7
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-secondary-multi.html
 
 ---

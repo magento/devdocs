@@ -1,11 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: W_continue
 title:
 menu_title: Next&mdash;Installation part 3, post-installation
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Install
   - System
@@ -24,7 +23,7 @@ You can also do any of the following:
 
 ### Install optional sample data
 
-If you haven't already installed optional sample data, you can <a href="{{ page.baseurl }}/install-gde/install/sample-data.html">install it now</a>.
+If you haven't already installed optional sample data, you can [install it now]({{ page.baseurl }}/install-gde/install/sample-data.html).
 
 ### Manage and upgrade components
 

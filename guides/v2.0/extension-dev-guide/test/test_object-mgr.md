@@ -4,17 +4,14 @@ subgroup: Testing
 title: Object Manager helper
 menu_title: Object Manager helper
 menu_order: 3
-version: 2.0
-redirect_from: /guides/v1.0/extension-dev-guide/test/test_object-mgr.html
 ---
 
 <p>Block and model class constructors declare many dependencies. The Magento system uses constructor {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}.</p>
 <p>To unit test such classes, you must manually create mocks for all constructor parameters before you can instantiate the class objects. If the number of dependencies is ten or greater, this task is time-consuming.</p>
 <p>Use the <code>\Magento\TestFramework\Helper\ObjectManager</code> helper class to simplify this task. Its methods automatically create mocks for all required dependencies. You can then instantiate a testing object by passing these mocks to a class constructor.</p>
 <p>You can still create your custom mocks, if needed.</p>
-<div class="bs-callout bs-callout-info" id="info">
-   <p>Do not use the ObjectManager helper class for classes with a small number of dependencies.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Do not use the ObjectManager helper class for classes with a small number of dependencies.
 
 ## ObjectManager methods   {#help}
 

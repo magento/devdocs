@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 5. Add items to the cart
 subtitle: Order processing tutorial
 return_to:
@@ -8,7 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 5
 level3_subgroup: order-tutorial
-version: 2.1
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-add-items.html
   - /guides/v2.2/get-started/order-tutorial/order-add-items.html

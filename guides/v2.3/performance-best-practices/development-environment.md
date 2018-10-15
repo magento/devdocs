@@ -1,7 +1,6 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Development environment recommendations
-version: 2.3
 functional_areas:
   - Configuration
   - System

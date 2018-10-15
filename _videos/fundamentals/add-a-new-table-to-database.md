@@ -5,7 +5,6 @@ group: "Fundamentals of Magento 2 Development"
 title: "How to Add a New Table to a Database"
 thumbnail: "fundamentals/thumbs/add-table.png"
 menu_order: 0
-github_link:
 ---
 
 Magento 2 has a special mechanism that enables you to create database tables, modify existing ones, and even add some data into them (like setup data, which has to be added when a module is installed).

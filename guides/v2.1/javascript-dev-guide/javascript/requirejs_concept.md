@@ -1,8 +1,7 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: About AMD modules and RequireJS
-version: 2.1
 redirect_from: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 functional_areas:
   - Tools

@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Clone and branch the project
 menu_title: Clone and branch the project
 menu_order: 30
 menu_node:
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-keys.html
   - /guides/v2.1/cloud/before/before-setup-env-keys.html
@@ -23,7 +22,7 @@ functional_areas:
 
 The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
 
-To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation){:target="\_blank"}.
+To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation){:target="_blank"}.
 
 The commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. For a full list of Magento Cloud CLI commands, enter `magento-cloud list` or see the [Magento CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
@@ -77,9 +76,8 @@ We recommend changing the following variables for the Magento Admin URL and admi
 * `ADMIN_PASSWORD`: Administrative user's password. When the project is created, a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You may need to contact the Project Owner for the updated password.
 * `ADMIN_URL`: The relative URL by which to access the Magento Admin. For example: <domain>/admin. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Make note of any changes you make. You may need them when installing Magento with the command line and when verifying the installation.
-</div>
 
 ### List and review variables {#variablelist}
 
@@ -91,11 +89,10 @@ To set Admin variables, you will use this command format:
 
 	magento-cloud variable:set <name> <value> -e <environment ID>
 
-You can also [log into your project](https://accounts.magento.cloud){:target="\_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
+You can also [log into your project](https://accounts.magento.cloud){:target="_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
-</div>
+{: .bs-callout .bs-callout-warning }
+Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
 
 ### Add variables using the CLI {#cli}
 
@@ -142,7 +139,7 @@ To set variables using the CLI (with example values used):
 
 To set variables using the Project Web Interface:
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="\_blank"}.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
 2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
 
 	![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)

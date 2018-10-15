@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Block
-version: 2.0
 ---
 
 In functional tests we use Page Object {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %}. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.
@@ -19,10 +18,10 @@ This topic shows how to create a new block and explore its structure. It discuss
 
 ## Example {#mtf_block_class}
 
-A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
+A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target="_blank"} and implements methods to interact with messages.
 
 {% collapsible Show/hide the code %}
-{% highlight php inline=true %}
+```php?start_inline=1
 /**
  * Copyright © 2013-2017 Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
@@ -183,56 +182,55 @@ class Messages extends Block
         return $this->_rootElement->find($this->warningMessage)->getText();
     }
 }
-
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 ## Basic blocks {#mtf_block_basic}
 
 Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:
 
-* [`Magento\Mtf\Block\Block`]{:target=_blank}
-* [`Magento\Mtf\Block\Form`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\Tab`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target=_blank}
-* [`Magento\Backend\Test\Block\Widget\Grid`]{:target=_blank}
-* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target=_blank}
+* [`Magento\Mtf\Block\Block`]{:target="_blank"}
+* [`Magento\Mtf\Block\Form`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\Tab`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target="_blank"}
+* [`Magento\Backend\Test\Block\Widget\Grid`]{:target="_blank"}
+* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target="_blank"}
 
 ## Block identifier {#mtf_block_identifier}
 
-Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target=_blank} class and is stored in the `_rootElement` property of the [`Magento\Mtf\Block\Block`]{:target=_blank} class.
+Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target="_blank"} class and is stored in the `_rootElement` property of the [`Magento\Mtf\Block\Block`]{:target="_blank"} class.
 
 You can use the `_rootElement` to find an element in the current block.
 
-Example from the <a href="https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php"><code>WidgetInstance.php</code></a> block:
+Example from the [`WidgetInstance.php`](https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php) block:
 
-{%highlight php%}
+```php
 <?php
 protected function addLayoutUpdates()
 {
    $this->_rootElement->find($this->addLayoutUpdates)->click();
 }
-{%endhighlight%}
+```
 
 This code uses `_rootElement` to search the button element by the `$this->addLayoutUpdates` selector. The advantage of the `_rootElement` is that it enables search in the context of the block to which the element belongs.
 
 ## Form mapping {#mtf_block_mapping}
 
-Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html">fixture</a>.
+Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the [fixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html).
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
 Let's see the [Customer Login]({{ site.mage2000url }}app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
 
-<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png" /></a>
+[![]({{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png)
 
 The mapping file for the block is stored in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Customer/Test/Block/Form/Login.xml`, along with the block.
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_login_dir.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_login_dir.png)
 
 The mapping file defines the fields from the form.
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" ?>
 <!--
 /**
@@ -249,7 +247,7 @@ The mapping file defines the fields from the form.
         <password />
     </fields>
 </mapping>
-{%endhighlight%}
+```
 
 See a description of the nodes in the following table.
 {:#mtf_block_form_xml_nodes}
@@ -259,7 +257,7 @@ See a description of the nodes in the following table.
 <tr><td><code>mapping</code> </td><td>Root node with a <code>strict</code> attribute. If <code>strict</code> equals <code>0</code>, then all the fixture field data must be entered in the block form. If <code>strict</code> equals <code>1</code>, then only the mapping file fields data must be entered in the block form. </td><td><code>"1"</code>. <i>Only</i> the <i>mapping</i> file fields data <i>must</i> be entered in the block form.</td></tr>
 <tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the selector of the field, when <code>selector</code> has not been specified. </td><td><code>login</code></td></tr>
 <tr><td><code>fields</code> </td><td>The node containing mapping fields. </td><td><code>&lt;email&gt;</code>, <code>&lt;password /&gt;</code>.</td></tr>
-<tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br/> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
+<tr><td><code>selector</code> </td><td>Value for the selector that is used to find the field. Default: <code>[name='group_name[field_node_name]']</code>. Default value is assigned automatically if the node is absent in the field. </td><td>For the <code>&lt;email&gt;</code>, the <code>[name='login[username]']</code>.<br /> For the <code>&lt;password /&gt;</code>, the <code>[name='login[password]']</code> that is the default value where <code>wrapper="login"</code>.</td></tr>
 <tr><td><code>strategy</code> </td><td>The strategy of the selection. Available values: <code>css selector</code>, <code>xpath</code>. Default: <code>css selector</code>. </td><td><code>css selector</code> as a default value.</td></tr>
 <tr><td><code>input</code> </td><td>Type of the input element. Available values: <ul><li><code>select</code></li> <li><code>checkbox</code></li> <li><a href="{{ page.baseurl }}/mtf/mtf_entities/mtf_typified-element.html">&lt;typified element&gt;</a></li> <li><code>simple</code></li></ul> <code>simple</code> is for simple input element. Default: <code>simple</code>. Do not use <code>class</code> node, if you use <code>input</code> in the field. </td><td><code>simple</code> as a default value.</td></tr>
 <tr><td><code>class</code> </td><td>Class of the element. Applicable if non of the <code>input</code> options fits. Do not use <code>input</code>, if you use <code>class</code> in the field. </td><td>This node has not been used in the example.</td></tr>
@@ -269,24 +267,24 @@ All nodes are optional. Default value is assigned automatically if a node (`sele
 
 The general structure of the form mapping file:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_map_form_xml.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_map_form_xml.png)
 
 ## Form tab mapping {#mtf_block_map_form_tab}
 
 You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
+To get the block class with form tab mapping, extend your class from [`Magento\Backend\Test\Block\Widget\FormTabs` ]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php). If you want to use custom tab logic you can extend your class from [`Magento\Backend\Test\Block\Widget\Tab`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php) class.
 
 For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_tabs_ui.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_tabs_ui.png)
 
 Four tabs are mapped in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/WidgetForm.xml` file, which is stored along with the block class. 
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_tab_struc.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_tab_struc.png)
 
 The file contains the following mapping:
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" ?>
 <!--
 /**
@@ -331,28 +329,50 @@ The file contains the following mapping:
         <strategy>css selector</strategy>
     </widget_instance>
 </tabs>
-{% endhighlight %}
+```
 
 See the following table to understand the node's purpose.
 
 <table>
-<col width="1*">
-<col width="3*">
-<tbody>
-<tr><th><code>tabs</code> nodes </th><th>Description</th></tr>
-<tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code> has not been specified.</td></tr>
-<tr><td><code>class</code> </td><td>Reference to the class that handles tab’s behavior.</td></tr>
-<tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code, used to open the tab.</td></tr>
-<tr><td><code>strategy</code> </td><td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td></tr>
-<tr><td><code>fields</code> </td><td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code> attribute <code>composite="1"</code>.</td></tr>
-</tbody>
+    <col width="1*" />
+    <col width="3*" />
+    <tbody>
+        <tr>
+            <th><code>tabs</code> nodes </th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><code>wrapper</code> </td>
+            <td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code>
+                has not been specified.</td>
+        </tr>
+        <tr>
+            <td><code>class</code> </td>
+            <td>Reference to the class that handles tab’s behavior.</td>
+        </tr>
+        <tr>
+            <td><code>selector</code> </td>
+            <td>Identifier for the selector of the tab in the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871
+                %}HTML{% endglossarytooltip %} code, used to open the tab.</td>
+        </tr>
+        <tr>
+            <td><code>strategy</code> </td>
+            <td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td>
+        </tr>
+        <tr>
+            <td><code>fields</code> </td>
+            <td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form
+                    mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code>
+                attribute <code>composite="1"</code>.</td>
+        </tr>
+    </tbody>
 </table>
 
 Example of `composite` field from [ProductForm.xml]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml):
 
 In the mapping file: 
 
-{%highlight xml%}
+```xml
 <quantity_and_stock_status composite="1">
     <qty>
         <selector>[name="product[quantity_and_stock_status][qty]"]</selector>
@@ -362,7 +382,7 @@ In the mapping file:
         <input>select</input>
     </is_in_stock>
 </quantity_and_stock_status>
-{%endhighlight%}
+```
 
 On the UI:
 
@@ -370,7 +390,7 @@ On the UI:
 
 The general structure of the form tab mapping file:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_map_form_tab_xml.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_map_form_tab_xml.png)
 
 ## Merging form tab mapping files {#mtf_block_map_form_tab_merge}
 
@@ -380,7 +400,7 @@ The form tab mapping files that have the same name and path inside different mod
 
 Form tab mapping files in the following example will be merged automatically:
 
-<img src="{{ site.baseurl }}/common/images/ftf/mtf_block_formtab_merge.png" />
+![]({{ site.baseurl }}/common/images/ftf/mtf_block_formtab_merge.png)
 
 ## Renders {#mtf_block_render}
 
@@ -421,21 +441,22 @@ To enable this feature follow:
 
 Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.
 
-<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png" /></a>
+[![]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_ui.png)
 
-<div class="bs-callout bs-callout-tip">
-  <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
+<div class="bs-callout bs-callout-tip" markdown="1">
+  
+If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.
 </div>
 
 ##### Get the name and the path of blocks in the code {#mtf_block_path_code}
 
-If you want to change the representation of block details, you can change a <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
+If you want to change the representation of block details, you can change a [`Template.php`]({{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php):
 
 * Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
 
 * Find the method
 
-{% highlight php5 %}
+```php
 <?php
 protected function _toHtml()
 {
@@ -444,11 +465,11 @@ protected function _toHtml()
     }
     return $this->fetchView($this->getTemplateFile());
 }
-{% endhighlight php %}
+```
 
 * Change the code to the following
 
-{% highlight php %}
+```php
 <?php
 protected function _toHtml()
 {
@@ -462,23 +483,23 @@ protected function _toHtml()
         . $this->fetchView($template)
         . "<!-- END $name using $template -->";
 }
-{% endhighlight php %}
+```
 
 * Save the file
 
 Now you can inspect any element in a browser, and find which block contains it.
 
-<a href="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png" /></a>
+[![]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_name_path_in_code.png)
 
 #### Add a block to the page {#mtf_block_to-page}
 
 Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
 
-For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
+For example, the [WidgetGrid.php]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php) is a part of the page that is defined in [`WidgetInstanceIndex.xml`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml).
 
 `block` is the node that adds the block to the page:
 
-{%highlight xml%}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="WidgetInstanceIndex" area="Adminhtml" mca="admin/widget_instance/index" module="Magento_Widget">
         ...
@@ -486,21 +507,21 @@ For example, the <a href="{{ site.mage2000url }}dev/tests/functional/tests/app/M
         ...
     </page>
 </config>
-{%endhighlight%}
+```
 
 {% include mtf/block_attributes.md %}
 
 #### Run the page generator {#mtf_run_page_gen}
 
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 
 ### Use blocks inside blocks {#mtf_block_in_block}
 
-You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code>BlockFactory</code></a> class and a selector.
+You can get other blocks in the block using the [`BlockFactory`](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php) class and a selector.
 
 See the following example:
 
-{%highlight php%}
+```php
 <?php
 protected function getTemplateBlock()
 {
@@ -509,7 +530,7 @@ protected function getTemplateBlock()
         ['element' => $this->_rootElement->find($this->templateBlock, Locator::SELECTOR_XPATH)]
     );
 }
-{%endhighlight%}
+```
 
 In this code we are creating the `Magento\Backend\Test\Block\Template` block with the selector `$this->templateBlock`.
 
@@ -519,20 +540,15 @@ In this code we are creating the `Magento\Backend\Test\Block\Template` block wit
 
 Let's see the [`Catalog/Test/Page/Product/CatalogProductView.xml`] page. For the better readability we reduced a list of blocks to one block.
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view" module="Magento_Catalog">
         <block name="viewBlock" class="Magento\Catalog\Test\Block\Product\View" locator="#maincontent" strategy="css selector" module="Magento_Catalog"/>        
     </page>
 </config>
-{%endhighlight%}
+```
 
 This page relates to the Magento_Catalog module and contains `ViewBlock`. This block has reference to the [`Magento\Catalog\Test\Block\Product\View`] class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own `ViewBlock` in a corresponding module. And that is where you can use render!
 
@@ -544,31 +560,21 @@ Let's create render for the bundle product.
 
 **Step 2**. In the `Bundle/Test/Page/Product/CatalogProductView.xml`, copy `page` node from the `Catalog/Test/Page/Product/CatalogProductView.xml` without `module` attribute
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view">
                 
     </page>
 </config>
-{%endhighlight%}
+```
 
 **Step 3**. Insert `block` with the same name of block and add a render that indicates the type of product and the class that processes this block
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-/**
- * Copyright © 2015 Magento. All rights reserved.
- * See COPYING.txt for license details.
- */
- -->
+
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
     <page name="CatalogProductView" area="Product" mca="catalog/product/view">
         <block name="viewBlock">
@@ -576,7 +582,7 @@ Let's create render for the bundle product.
         </block>
     </page>
 </config>
-{%endhighlight%}
+```
 
 Details:
 
@@ -585,13 +591,13 @@ Details:
 
 **Step 4**. Run the page generator
 
-{%include mtf/page-generator.html%}
+{%include mtf/page-generator.md%}
 
 #### Use a render {#mtf_block_render_use}
 
 Let's take a look at the basic class `Magento\Catalog\Test\Block\Product\View`, where a render calls the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View`.
 
-{%highlight php5%}
+```php
 <?php
 public function getOptions(FixtureInterface $product)
 {
@@ -603,7 +609,7 @@ public function getOptions(FixtureInterface $product)
         ? $this->callRender($typeId, 'getOptions', ['product' => $product])
         : $this->getCustomOptionsBlock()->getOptions($product);
 }
-{%endhighlight%}
+```
 
 It contains the `getOptions()` method that:
 

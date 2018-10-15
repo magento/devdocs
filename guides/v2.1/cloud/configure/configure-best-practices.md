@@ -1,27 +1,26 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Best practices for store configuration
 menu_title: Best practices for store configuration
 menu_order:
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration
 ---
 
-For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
+For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html). This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
 
 ## Understanding marketing campaigns and promotions {#campaigns}
 
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
-To create campaigns and promotions, you will create the options and settings in [Content Staging](http://docs.magento.com/m2/ee/user_guide/cms/content-staging.html){:target="_blank"}. This feature allows you to create and preview your campaigns prior to making them public for customer sales. The following information provides helpful information. For exact instructions, see the linked Magento 2 User Guide content.
+To create campaigns and promotions, you will create the options and settings in [Content Staging](http://docs.magento.com/m2/ee/user_guide/cms/content-staging.html). This feature allows you to create and preview your campaigns prior to making them public for customer sales. The following information provides helpful information. For exact instructions, see the linked Magento 2 User Guide content.
 
 _Campaigns_ are marketing events for seasonal sales, new product lines, and more. Each campaign can include custom themes, blocks for content, widgets to control and display content, and associated promotions with price rules. Due to the extensive nature of a campaign, you create them with a start and end date through Content Staging.
 
-_Promotions_ provide discounts, one time offers, coupons, first time buyer incentives, and more. You create these promotions as _Price Rules_ that set the terms, discounts, and options to encourage customers to buy. You can create price rules on the [shopping cart](http://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart.html){:target="_blank"} or [catalog](http://docs.magento.com/m2/ee/user_guide/marketing/price-rules-catalog.html){:target="_blank"}, with additional options for banners, reward points, and more. We also support scheduling campaigns for your promotions, applying price rules for major events like a new product line or seasonal sales.
+_Promotions_ provide discounts, one time offers, coupons, first time buyer incentives, and more. You create these promotions as _Price Rules_ that set the terms, discounts, and options to encourage customers to buy. You can create price rules on the [shopping cart](http://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart.html) or [catalog](http://docs.magento.com/m2/ee/user_guide/marketing/price-rules-catalog.html), with additional options for banners, reward points, and more. We also support scheduling campaigns for your promotions, applying price rules for major events like a new product line or seasonal sales.
 
 The following are tips to help create, update, and manage promotions and campaigns:
 
@@ -34,7 +33,7 @@ The following are tips to help create, update, and manage promotions and campaig
 
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
-Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_guide/catalog/settings-advanced-advanced-pricing.html){:target="_blank"} for products through the Products > Catalogs area of the Magento Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
+Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_guide/catalog/settings-advanced-advanced-pricing.html) for products through the Products > Catalogs area of the Magento Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
 
 To edit Advanced Pricing and update Content Staging:
 
@@ -47,17 +46,17 @@ To edit Advanced Pricing and update Content Staging:
 6. Save the promotion. An inactive initial campaign is created.
 7. You can Preview to review the special price, promotion name, regular price, and the scheduled date range for the campaign.
 
-For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html){:target="_blank"}. Click **Next** to walk through the steps.
+For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html). Click **Next** to walk through the steps.
 
 ## Example Price Rules {#price-rules}
 
 Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on orders over $100 dollars, and so on.
 
-To create a Price Rule, see our [Magento 2 User Guide](http://docs.magento.com/m2/ee/user_guide/Search.html#search-price%20rules){:target="_blank"}.
+To create a Price Rule, see our [Magento 2 User Guide](http://docs.magento.com/m2/ee/user_guide/Search.html#search-price%20rules).
 
 The following provides an example of creating a Price Rule for a First Order Only discount. For this discount, you would want to:
 
-* Create a price rule with a [customer segment](http://docs.magento.com/m2/ee/user_guide/marketing/customer-segment-price-rule.html){:target="_blank"} with a condition: Total Number of Orders less than 1
+* Create a price rule with a [customer segment](http://docs.magento.com/m2/ee/user_guide/marketing/customer-segment-price-rule.html) with a condition: Total Number of Orders less than 1
 * Add this customer segment as a condition to the cart rule
 * Optional - Add conditions and rules to apply the discounts to specific SKUs or categories of products for focused purchases
 

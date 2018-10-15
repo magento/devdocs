@@ -4,7 +4,6 @@ subgroup: C_vault
 title: Add vault to module dependencies
 menu_title: Add vault to module dependencies
 menu_order: 1
-version: 2.1
 functional_areas:
   - Integration
 ---

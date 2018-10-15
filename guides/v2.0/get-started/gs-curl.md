@@ -1,11 +1,9 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Use cURL to run the request
 menu_title: Use cURL to run the request
 menu_order: 2
-version: 2.0
-redirect_from: /guides/v1.0/get-started/gs-curl.html
 functional_areas:
   - Integration
 ---

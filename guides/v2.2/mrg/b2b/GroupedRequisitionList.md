@@ -1,10 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_GroupedRequisitionList module
 menu_title: GroupedRequisitionList
 menu_order: 140
-version: 2.2
 functional_areas:
   - B2B
 ---

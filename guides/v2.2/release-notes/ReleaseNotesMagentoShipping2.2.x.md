@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento Shipping Release Notes
-version: 2.2
 ---
 *Code and release notes updated on May 2, 2018.*
 
@@ -11,6 +10,35 @@ The release information in this section describes changes to the Magento Shippin
 
 
 See the [Magento Commerce 2.2.2 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.2CE.html) and [Magento Commerce 2.2.4 Release Notes]({{ page.baseurl }}/release-notes/ReleaseNotes2.2.4CE.html) for a comprehensive discussion of 2.2.2 and 2.2.4 fixes and enhancements.  
+
+## Changes effective September 18, 2018 (Magento 2.2.6)
+
+Here are the enhancements available as of September 18, 2018:
+
+### Enhancements
+
+
+* The **Click & Collect** feature offers merchants the ability to:
+
+	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations/stores 
+
+	* Configure source locations available for Click & Collect pick-ups
+
+Consumers can also select Click & Collect locations during check-out. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+
+* **Batch Processing** provides merchants with the ability to 
+
+	* Process multiple orders in one batch
+
+	* Specify and modify packages, experiences, and add-ons for orders assigned to a batch
+
+	* Book shipments for a batch
+
+	* Generate documentation for individual shipments as well as all shipments within a batch
+
+
+
+
 
 ## Changes effective May 2, 2018 (Magento 2.2.4)
 

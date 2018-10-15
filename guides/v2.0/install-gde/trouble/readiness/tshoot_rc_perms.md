@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 05_readiness
 title: File permissions readiness check issues
 menu_title: File permissions readiness check issues
 menu_node:
 menu_order: 50
-version: 2.0
 functional_areas:
   - Install
   - System

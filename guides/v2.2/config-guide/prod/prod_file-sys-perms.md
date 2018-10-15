@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 045_pipeline
+group: configuration-guide
 title: File systems access permissions
-menu_title: File systems access permissions
-menu_node:
-menu_order: 3000
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -74,7 +69,7 @@ To remove writable permissions to files and directories from the web server user
 		php bin/magento deploy:mode:set production
 3.	Enter the following command:
 
-		find app/code var vendor pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+		find app/code var vendor pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 #### Make code files and directories writable:
 
@@ -102,9 +97,8 @@ If you use your own server (including a hosting provider's private server setup)
 
 	Magento uses this user to run Magento CLI commands and cron.
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	{:.bs-callout .bs-callout-info}
 	The command-line user is also referred to as the _Magento file system owner_.
-	</div>
 
 Because these users require access to the same files, we recommend you create a [shared group]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
 
@@ -123,11 +117,10 @@ Files in the following directories must be writable by both users in developer a
 * `pub/media`
 * `app/etc`
 
-Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory.
+Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/) bit on directories so permissions always inherit from the parent directory.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 `setgid` applies to directories only, _not_ to files.
-</div>
 
 In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.
 
@@ -139,7 +132,7 @@ To set `setgid` and permissions for developer mode:
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 
 ### Two Magento file system owners in production mode {#mage-owner-two-prod}
 
@@ -166,7 +159,7 @@ To remove writable permissions to files and directories from the web server user
 		php bin/magento deploy:mode:set production
 3.	Enter the following command as a user with `root` privileges:
 
-		find app/code lib pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
+		find app/code lib pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} + && chmod o-rwx app/etc/env.php
 
 #### Make code files and directories writable
 
@@ -176,6 +169,6 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following command:
 
-		find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
+		find app/code lib var generated vendor pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} + && chmod o+rwx app/etc/env.php
 
 {% endcollapsibleh2 %}

@@ -1,12 +1,11 @@
 ---
-group: fedg
-title: Simple style changes with client-side LESS compilation vs. server-side
-version: 2.1
+group: frontend-developer-guide
+title: Simple style changes with client-side Less compilation vs. server-side
 functional_areas:
   - Frontend
 ---
 
-After you [create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html), you need to decide which LESS compilation mode to use before changing styles. You can choose between [two modes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes):
+After you [create a theme], you need to decide which Less compilation mode to use before changing styles. You can choose between [two compilation modes]:
 
 - Server-side compilation mode (default)
 - Client-side compilation mode (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development)
@@ -24,12 +23,12 @@ In our examples, we will change the color and font of the primary buttons. The d
 
 ## Using server-side compilation mode
 
-The following is an illustration of how the process of making simple changes looks like with the server-side LESS compilation mode:
+The following is an illustration of how the process of making simple changes looks like with the server-side Less compilation mode:
 
 1. Navigate to your theme directory and add the `web/css/source/_extend.less` file.
 1. Change the color of the buttons by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -45,7 +44,7 @@ The following is an illustration of how the process of making simple changes loo
 
 1. Change the button font size by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -80,7 +79,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Change the color of the buttons by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -95,7 +94,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Change the button font size by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -113,12 +112,12 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Navigate to your theme directory and create a `web/css/source/_extend.less` file.
 1. Log in to the Magento Admin.
-1. Click **STORES** > **Configuration** > **ADVANCED** > **Developer** > **Front-end development workflow** > **Workflow type**.
-1. Change the LESS compilation mode to client-side.
+1. Click **STORES** > **Configuration** > **ADVANCED** > **Developer** > **Frontend development workflow** > **Workflow type**.
+1. Change the Less compilation mode to client-side.
 1. [Clean static view files]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache).
 1. Change the color of the buttons by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -133,7 +132,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Change the button font size by adding the following code in the `_extend.less` file:
 
-    ```css
+    ```less
     .action {
         &.primary {
             background-color: palevioletred;
@@ -149,3 +148,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 {:.bs-callout .bs-callout-info}
 Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#css_debug_client).
+
+
+[create a theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-create.html
+[two compilation modes]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html#Less

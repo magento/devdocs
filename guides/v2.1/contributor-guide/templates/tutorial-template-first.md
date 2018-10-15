@@ -1,37 +1,49 @@
 ---
 layout: tutorial
-group: contributor
-subgroup: templates
-title: Title
-subtitle: Subtitle
+level3_subgroup: sample-tutorial
+title: Sample template tutorial
 menu_title: Initial tasks
 menu_order: 0
-level3_menu_node:
-level3_subgroup: sample-tutorial
-version: 2.1
+return_to:
+   title: Code Contributions
+   url: contributor-guide/contributing.html
 ---
 
 A tutorial provides procedural information spread across multiple pages. It contains several design elements that differ from standard topics:
 
-* When a user clicks on a tutorial title from the left navigation area, the Devdocs {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} replaces the navigation with a table of contents that is specific to the tutorial.
+* A tutorial replaces the navigation with a table of contents that is specific to the tutorial.
+* The bottom of the index page contains a **Begin Tutorial** button.
 * **Next** and **Previous** buttons are displayed at the bottom of each topic.
 
 ## Metadata parameters
 
-The following table lists the {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameters that are used in a tutorial.
+You must use the following metadata parameters on the tutorial index page.
 
 Parameter | Description
 --- | ---
 `layout:` | Must be `tutorial`.
-`group:` | The group, or book, to which the topic belongs.
-`subgroup:`| First page only. Places a link with the specified text to the {% glossarytooltip 31751771-8163-434b-88bc-c5f94d859fc3 %}sidebar{% endglossarytooltip %}
 `level3_subgroup:` | A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.
-`title:` | The title of the tutorial. For all other topics in the tutorial, this value should be in the form _Step X. Perform this task_. (For example, `Step 1. Configure the Store`)
-`subtitle` | Displays the tutorial name. The value must be specified on each topic in the tutorial.
-`menu_title:` | On the first page of the tutorial, specify `Initial tasks`. Otherwise, leave this line blank.
-`menu_order:` | The sequence number of the topic. If the topic is an intro topic in a multi-step tutorial, set this 0. Otherwise set it to the step number.
-`version:` | The version of Magento that this topic applies to.
-`ee_only:` | If set to `true`, graphics/cues indicating that the article applies to EE are displayed on devdocs.
+`title:` | The title of the tutorial.
+`menu_title:` | On the index page of the tutorial, specify `Initial tasks`.
+`menu_order:` | The sequence number of the topic. For the index page in a multi-step tutorial, set this 0.
+`return_to:` | Defines the tutorial's parent page. The parent page title is displayed in the left navigation above the tutorial steps. Do not specify a value for the `return_to:` parameter. Instead, specify values for these second-level parameters:<br/><br/>`title:` The title of the parent topic<br/><br/>`url:` The URL of the parent topic
+`functional_areas:`  |  Optional. Adds facets for search results. Available facets include: sales, products, carts, customers, marketing, account, content, reports, stores, system, catalog, orders, frontend, theme, staging, search, configurations, integration, services, tools, setup, testing or test, standards, install, upgrade, B2B, cloud, and bundled extensions.
+`redirect_from`  | Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the `/guides` directory. For an example, see the source code for this template page.  |  
+`ee_only:` | Optional. If set to `true`, graphics/cues indicating that the article applies to {{site.data.var.ee}} are displayed on devdocs.
+{:style="table-layout:auto;"}
+
+The following example shows the completed frontmatter section for an index page:
+
+```
+layout: tutorial
+level3_subgroup: order-tutorial
+title: Order processing tutorial
+menu_title: Initial tasks
+return_to:
+  title: REST tutorials
+  url: rest/tutorials/index.html
+menu_order: 0
+```
 
 ## Before you begin...
 {:.tutorial-before}

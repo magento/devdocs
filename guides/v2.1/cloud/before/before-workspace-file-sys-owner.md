@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Set up the Magento file system owner
 menu_title: Set up the Magento file system owner
 menu_order: 25
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

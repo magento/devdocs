@@ -1,15 +1,14 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: The di.xml file
 menu_title: The di.xml file
 menu_order: 1
-version: 2.2
 ---
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration settings](#ext-di-sens) using `di.xml`.
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) are injected by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration settings](#ext-di-sens) using `di.xml`.
 
 ## Areas and application entry points
 
@@ -18,7 +17,7 @@ Magento reads all the `di.xml` configuration files declared in the system and me
 
 As a general rule, the area specific `di.xml` files should configure dependencies for the presentation layer, and your module's global `di.xml` file should configure the remaining dependencies.
 
-Magento loads The configuration in the following stages:
+Magento loads the configuration in the following stages:
 
 1. Initial (`app/etc/di.xml`)
 2. Global (`<moduleDir>/etc/di.xml`)
@@ -28,11 +27,11 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
 
 ## Type configuration
 
@@ -181,24 +180,26 @@ This indicates a null value.
 
 Node Format:
 
-: ~~~
+: The node format is as follows:
+
+  ``` xml
   <argument xsi:type="array">
     <item name="someKey" xsi:type="<type>">someVal</item>
   </argument>
-  ~~~
+  ```
 
-Magento builds an array with elements corresponding to the items and passes it as the argument.
-The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
-
-When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
-
-When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
-
+  Magento builds an array with elements corresponding to the items and passes it as the argument.
+  The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
+  
+  When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
+  
+  When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
+  
 ---
 
 **Argument Examples:**
 
-{% highlight xml %}
+``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Example\Type">
         <arguments>
@@ -233,14 +234,13 @@ When Magento loads a new configuration at a later time, either by a more specifi
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
-<div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 **Merging and Arguments**
-
+<br/>
 During merging, arguments replace other arguments with the same name if their type is different.
 If the argument type is the same, then the newer argument replaces the old one.
-</div>
 
 ### Abstraction-implementation mappings
 
@@ -299,10 +299,10 @@ The lifestyle of an object determines the number of instances that can exist of 
 
 You can configure dependencies in Magento to have the following lifestyles:
 
-*	**singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
+*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
 Requesting the class again returns the same instance.
 Disposing or ending the container registered to it releases the instance.
-*	**transient** - The object manager creates a new instance of the class for every request.
+*	**Transient** - The object manager creates a new instance of the class for every request.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 

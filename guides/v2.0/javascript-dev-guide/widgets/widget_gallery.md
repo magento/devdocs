@@ -1,10 +1,9 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Gallery widget
 menu_order: 7
 menu_title: Gallery widget
-version: 2.0
 ---
 
 ## Overview
@@ -13,19 +12,19 @@ The gallery {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% e
 
 The following picture is an illustration of image displaying on the product page using the gallery widget:
 
-<img src="{{ site.baseurl }}/common/images/gallery_scr.png" width="650px" alt="A product page with preview and thumbnails">
+![A product page with preview and thumbnails]({{ site.baseurl }}/common/images/gallery_scr.png){: width="650px"}
 
 In addition, the [magnifier widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_gallery_mg.html) can be used to demonstrate images in 100% scaled size in separate dedicated layer, and the gallery fullscreen mode can be used to navigate the entire full sized photo.
 
 Gallery is displayed consistently across all supported browsers and is responsive &mdash; it sizes correctly on mobile devices and desktops.
 
-The gallery widget uses the <a href="http://fotorama.io/">Fotorama widget</a>.
+The gallery widget uses the [Fotorama widget](http://fotorama.io/).
 
 The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-The gallery widget source code is <a href="{{ site.mage2000url }}lib/web/mage/gallery/gallery.js">lib/web/mage/gallery/gallery.js</a>
+The gallery widget source code is [lib/web/mage/gallery/gallery.js]({{ site.mage2000url }}lib/web/mage/gallery/gallery.js)
 
-The gallery magnifier source is <a href="{{ site.mage2000url }}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
+The gallery magnifier source is [ lib/web/magnifier/magnify.js]({{ site.mage2000url }}lib/web/magnifier/magnify.js).
 
 ### Contents
 
@@ -528,7 +527,7 @@ Displays the previous preview image.
 
 If the first image ID is passed, the behavior depends on whether [loop](#gallery_loop) is enabled:
 
-* if loop is enbled, the last image is displayed.
+* if loop is enabled, the last image is displayed.
 * if loop is disabled, does not change the displayed image.
 
 #### `seek()` {#gallery_seek}

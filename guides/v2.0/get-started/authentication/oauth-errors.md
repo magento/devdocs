@@ -1,10 +1,9 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: OAuth error codes
 menu_title: OAuth error codes
 menu_order: 3
-version: 2.0
 functional_areas:
   - Integration
 ---
@@ -100,4 +99,4 @@ When the third-party application makes an invalid request to Magento, the follow
 
 ## Related topic
 
-<a href="{{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
+[OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)

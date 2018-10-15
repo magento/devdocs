@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: How To
 title: Configure Xdebug
 menu_title: Configure Xdebug
 menu_order: 100
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Setup
@@ -145,11 +144,11 @@ To troubleshoot the connection:
 
 #### Port forwarding on Windows {#portwindows}
 
-To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html){:target="_blank"}. You can use other applications such as Cygwin. For more information on other applications, please see the vendor documentation provided with those applications.
+To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use other applications such as Cygwin. For more information on other applications, please see the vendor documentation provided with those applications.
 
 To set up an SSH tunnel on Windows using Putty:
 
-1.	If you haven't already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html){:target="_blank"}.
+1.	If you haven't already done so, download [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 2.	Start Putty.
 3.	In the Category pane, click **Session**.
 4.	Enter the following information:
@@ -265,7 +264,7 @@ This section discusses how to use Xdebug in Chrome using the Xdebug Helper exten
 To use Xdebug Helper with Chrome:
 
 1.	Create an [SSH tunnel](#ssh) to the Cloud server.
-2.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en){:target="_blank"} from the Chrome store.
+2.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) from the Chrome store.
 3.	Enable the extension in Chrome as shown in the following figure.
 
 	![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)

@@ -1,8 +1,7 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript resources in Magento
-version: 2.1
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
  - /guides/v1.0/config-guide/config/js-resources.html
@@ -11,9 +10,9 @@ redirect_from:
 
 ## Overview {#m2devgde-js-resources-intro}
 
-This topic describes the general concepts of how to work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento.
+This topic describes the general concepts of how {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components are organized in Magento.
 
-To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library].
+To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
 
 RequireJS improves the perceived page load, time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
 
@@ -79,21 +78,23 @@ These relative paths are also used in for [mapping and setting `paths` in requir
 
 To build a dependency on the third-party plugin, specify a [shim] in the following configuration files:
  - `requirejs-config.js`
-        ```javascript
-        var config = {
-          "shim": {
-            "3-rd-party-plugin": ["jquery"]
-          }
-        };
-        ```
+
+    ```javascript
+    var config = {
+        "shim": {
+        "3-rd-party-plugin": ["jquery"]
+        }
+    };
+    ```
 
  - `<third-party-plugin>.js`
-        ```javascript
-        !(function($){
-          // plugin code
-          // where $ == jQuery
-        })(jQuery);
-        ```
+ 
+    ```javascript
+    !(function($){
+        // plugin code
+        // where $ == jQuery
+    })(jQuery);
+    ```
 
 ## RequireJS library
 

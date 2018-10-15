@@ -1,10 +1,6 @@
 ---
-group: config-guide
-subgroup: 07_conf
+group: configuration-guide
 title: Disable module output
-menu_title: Disable module output
-menu_order: 15
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -15,9 +11,8 @@ By default, all modules are configured so that a module's output can be written 
 
 For example, the `Customer` module depends on the `Review` module, so the `Review` module can't be disabled. However, if you don't want customers to be able to provide reviews, you could turn off output from the `Review` module.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 If a merchant used the Admin to disable a module's output in a previous release, you must manually configure the system to migrate these settings.
-</div>
 
 ## Disable module output in a pipeline deployment
 
@@ -64,7 +59,7 @@ Archive the original `<Magento_install_dir>/app/etc/config.php` file. Then add t
 
 ```
 'system' =>
-  array ( 
+  array (
     'websites' =>
     array (
       'base' =>

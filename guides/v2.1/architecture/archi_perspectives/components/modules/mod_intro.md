@@ -1,8 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Module overview
 menu_title: Module overview
-version: 2.1
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_intro.html
   - /guides/v2.0/architecture/modules/mod_intro.html
@@ -39,7 +38,7 @@ Inside this folder, you will find all the code related to this module, including
 
 ## Working with modules
 
-Magento developers, administrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.
+Magento developers, administrators, and anyone building a Magento website will want to review all relevant topics surrounding their particular goals and use cases.
 
 See [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) for specific instructions on extending modules 
 

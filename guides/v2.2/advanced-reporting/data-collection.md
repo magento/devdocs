@@ -1,7 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Data collection for advanced reporting
-version: 2.2
 functional_areas:
     - Reports
 ---
@@ -14,10 +13,8 @@ Data collection is declared in a configuration file `etc/analytics.xml`. It decl
 - Which provider classes must collect data for each report file.
 - Which report data configuration must be applied to collected data.
 
-<div class="bs-callout bs-callout-warning" markdown="1" >
-This topic serves to provide better understanding of how data collection works.
-Any changes in configuration files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
-</div>
+{: .bs-callout .bs-callout-warning }
+This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
 
 ## Example
 
@@ -201,12 +198,12 @@ It cannot contain any parameters.
 
 ## Related topics
 
-[Modules providing advanced reporting][modules]
-
+ [Modules providing advanced reporting][modules]
+ 
 
 <!-- LINK DEFINITIONS -->
 
-[modules]: data-collection.html
+[modules]: modules.html
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics

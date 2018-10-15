@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: Composer
 menu_title: Composer
 menu_node:
 menu_order: 5
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
   - /guides/v2.1/cloud/cloud-composer.html

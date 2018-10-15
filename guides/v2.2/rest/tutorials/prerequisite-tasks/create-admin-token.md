@@ -1,8 +1,6 @@
 ---
-layout: default
-group: rest
+group: rest-api
 title: Generate the admin token
-version: 2.2
 functional_areas:
   - Integration
   - Orders

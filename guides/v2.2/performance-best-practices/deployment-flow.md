@@ -1,7 +1,6 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Deployment flow
-version: 2.2
 functional_areas:
   - Configuration
   - System

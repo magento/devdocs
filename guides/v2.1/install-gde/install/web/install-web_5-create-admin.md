@@ -1,11 +1,10 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 5. Create Admin Account
 menu_title: Step 5. Create Admin Account
 menu_node:
 menu_order: 6
-version: 2.1
 functional_areas:
   - Install
   - System

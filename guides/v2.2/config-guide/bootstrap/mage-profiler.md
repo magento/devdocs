@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Enable profiling (MAGE_PROFILER)
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -18,7 +17,7 @@ Magento profiling enables you to:
 
 	You should be particularly interested in the list of *unused dependencies*, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.
 
-Magento provides the base functionality in [Magento\\Framework\\Profiler]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php){:target="&#95;blank"}.
+Magento provides the base functionality in [Magento\\Framework\\Profiler]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler.php).
 
 You can enable and configure the profiler using a [MAGE_PROFILER](#variable) variable or the [command line](#cli).
 
@@ -32,8 +31,8 @@ You can set the value of `MAGE_PROFILER` in any of the ways discussed in [Set th
 
 	You can also use one of the following values to enable a specific profiler:
 
-    - `csvfile` which uses [Magento\\Framework\\Profiler\\Driver\\Standard\\Output\\Csvfile]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php){:target="&#95;blank"}
-    - Any other value (except `2`), including an empty value, which uses [Magento\\Framework\\Profiler\\Driver\\Standard\\Output\\Html]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php){:target="&#95;blank"}
+    - `csvfile` which uses [Magento\\Framework\\Profiler\\Driver\\Standard\\Output\\Csvfile]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php)
+    - Any other value (except `2`), including an empty value, which uses [Magento\\Framework\\Profiler\\Driver\\Standard\\Output\\Html]({{ site.mage2000url }}lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php)
 
 -   `2` to enable dependency graphs.
 

@@ -1,17 +1,16 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Configure your project
 menu_title: Configure your project
 menu_order: 5
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Configuration
 ---
 
-The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="\_blank"} enables you to do the following for all Starter and Pro environments:
+The {{site.data.var.ece}} [Project Web Interface](https://accounts.magento.cloud){:target="_blank"} enables you to do the following for all Starter and Pro environments:
 
 * [Access projects](#project-access)
 * Create and manage projects

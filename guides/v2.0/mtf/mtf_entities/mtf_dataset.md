@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Data set
-version: 2.0
 ---
 
 A data set contains data used by a [test case] and [constraints][constraint].
@@ -12,11 +11,11 @@ Each variation has constraints that are called at the end of the test flow.
 
 Let's see an example for `CreateSimpleProductEntityTest`. A data set and its corresponding [test case] must be placed in the `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product` directory.
 
-<a href="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"><img src="{{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png"/></a>
+[![]({{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png)]({{ site.baseurl }}/common/images/ftf/mtf_dataset_dir.png)
 
 The `CreateSimpleProductEntityTest.xml` data set contains:
 
-{%highlight xml%}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/variations.xsd">
     <testCase name="Magento\Catalog\Test\TestCase\Product\CreateSimpleProductEntityTest" summary="Create Simple Product" ticketId="MAGETWO-23414">
         <variation name="CreateSimpleProductEntityTestVariation1" summary="Create product with custom options(fixed price)">
@@ -40,7 +39,7 @@ The `CreateSimpleProductEntityTest.xml` data set contains:
         </variation>
     </testCase>
 </config>
-{%endhighlight xml%}
+```
 
 This is a data set that:
 
@@ -56,8 +55,8 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 {:#ex_variation_table}
 
 <table>
-<col width="1*">
-<col width="2*">
+<col width="1*" />
+<col width="2*" />
 <tr><th>Fixture field</th><th>Description</th></tr>
 <tr>
 <td><code>url_key</code> </td>
@@ -117,9 +116,9 @@ The following table shows structure of the data set:
 {:#dataset_struct_table}
 
 <table>
-<col width="1*">
-<col width="1*">
-<col width="2*">
+<col width="1*" />
+<col width="1*" />
+<col width="2*" />
 <tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
@@ -176,9 +175,9 @@ The following data types are available:
 </ul></td></tr>
 </table>
 
-<div class="bs-callout bs-callout-warning">
-  <p>A variation should contain only data that is required for its flow and constraints.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+A variation should contain only data that is required for its flow and constraints.
+
 
 A data set should be placed in the same directory with a corresponding test case.
 
@@ -210,10 +209,10 @@ where `var` is a name of an argument of a [test case] or a [constraint].
 
 If a variable is assigned more than one value:
 
-{%highlight xml%}
+```xml
 <data name="price/shopping_cart/total" xsi:type="string">50</data>
 <data name="price/product_page/special_price/excluding_tax" xsi:type="string">6</data>
-{%endhighlight xml%}
+```
 
 the value is processed as an array:
 
@@ -234,7 +233,7 @@ $price = [
 
 Also, in similar cases you can use array type in a data set, like:
 
-{%highlight xml%}
+```xml
 <data name="price" xsi:type="array">
     <item name="shopping_cart" xsi:type="array">
         <item name="total" xsi:type="string">50</item>
@@ -244,49 +243,49 @@ Also, in similar cases you can use array type in a data set, like:
         </item>
     </item>
 </data>
-{%endhighlight xml%}
+```
 
 ### Set a simple variable {#simple_var}
 
 For example, if a [test case] or constraint has an argument `$price`, then the test case takes from the data set all the `<data>` nodes with a name `price`. Assume a method with the `$price` argument.
 
-{%highlight php inline=true %}
+```php?start_inline=1
 public function testCreate($price)
 {
     //
 }
-{%endhighlight php%}
+```
 
 To assign it with `10` in one of the variations, add the following field to a variation of the corresponding data set:
 
-{%highlight xml%}
+```xml
 <data name="price" xsi:type="string">10</data>
-{%endhighlight xml%}
+```
 
 ### Set data to a fixture field {#fixture_field}
 
 In your test you often need to use injectable [fixture] instances. For example:
 
-{%highlight php inline=true %}
+```php?start_inline=1
 public function testCreate(\Magento\Catalog\Test\Fixture\CatalogProductSimple $product)
 {
     //
 }
-{%endhighlight php%}
+```
 
 In this case, the ObjectManager sends data to the [InjectableFixture] constructor. It declares that your data can be passed to the fixture in `$data` variable as an array. For example, to assign the existing fixture field `weight` with `50` you can use the following notation:
 
-{%highlight xml%}
+```xml
  <data name="product/data/weight" xsi:type="string">50</data>
-{%endhighlight xml%}
+```
 
 ### Set data to a fixture from a repository {#fixture_repository}
 
 The [InjectableFixture] class enables you to use a [fixture repository][repository]. It can be injected in a `$dataset` variable. For example, to use `dataset = product_with_special_symbols_in_name` from the repository assigned in the [fixture], you can use:
 
-{%highlight xml%}
+```xml
 <data name="product/dataset" xsi:type="string">product_with_special_symbols_in_name</data>
-{%endhighlight xml%}
+```
 
 ### Set data to a fixture field from a repository {#fixture_field_repository}
 
@@ -294,17 +293,17 @@ You can assign data to a [fixture field from its repository].
  
 Let's see an example:
 
-{%highlight xml%}
+```xml
 <data name="product/data/price/dataset" xsi:type="string">drop_down_with_one_option_fixed_price</data>
 <data name="product/data/checkout_data/dataset" xsi:type="string">simple_drop_down_with_one_option_fixed_price</data>
-{%endhighlight xml%}
+```
 
 A `CatalogProductSimple.xml` fixture contains the following declarations:
 
-{%highlight xml%}
+```xml
 <field name="price" is_required="1" group="product-details" source="Magento\Catalog\Test\Fixture\Product\Price" repository="Magento\Catalog\Test\Repository\CatalogProductSimple\Price" />
 <field name="checkout_data" group="null" repository="Magento\Catalog\Test\Repository\CatalogProductSimple\CheckoutData" />
-{%endhighlight xml%}
+```
 
 The `price` fixture field contains the [data source] that assigns values from a repository. After the [InjectableFixture] class has passed data to the CatalogProductSimple fixture, `Magento\Catalog\Test\Fixture\Product\Price` data source receives `['dataset' => 'drop_down_with_one_option_fixed_price']` and assigns values from the `['dataset' => 'drop_down_with_one_option_fixed_price']` of the `Magento\Catalog\Test\Repository\CatalogProductSimple\Price` repository.
 
@@ -316,7 +315,7 @@ To add a new variation using [merging], you should simply use the name of a [tes
  
  * Create `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/ProductVideo/Test/TestCase/Product/UpdateSimpleProductEntityTest.xml` with the following code:
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /**
@@ -346,7 +345,7 @@ To add a new variation using [merging], you should simply use the name of a [tes
         </variation>
     </testCase>
 </config>
-{%endhighlight xml%}
+```
 
 Variations `DeleteVideoFromPCFTestVariation1` and `DeleteVideoFromPCFTestVariation2` will be used by the `Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest` class during the test run.
 
@@ -356,15 +355,15 @@ If you want to extend variation in another module using [merging], you should us
  
 For example, see how in `Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml`
 
- {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
- {%endhighlight xml%}
- 
- the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module:
- 
- {%highlight xml%}
- {%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
-  {%endhighlight xml%}
+```xml
+{%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/ValidateOrderOfProductTypeTest.xml%}
+```
+
+the variation `ValidateOrderOfProductTypeTestVariation1` is extended by the Magento_Bundle module:
+
+```xml
+{%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.0/dev/tests/functional/tests/app/Magento/Bundle/Test/TestCase/ValidateOrderOfProductTypeTest.xml%}
+```
 
 <!-- LINK DEFINITIONS -->
 

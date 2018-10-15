@@ -1,20 +1,19 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 02_prereq
 title: Prerequisites
 menu_title: Prerequisites
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Upgrade
 ---
 
 Before running the Component Manager or System Upgrade, complete the following tasks:
 
-*	<a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_cron.html">Set up cron</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html">Enter your authentication keys in the Admin</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/prereq/prereq_compman-ulimit.html">Set `ulimit` for the web server user</a>
+*	[Set up cron]({{ page.baseurl }}/comp-mgr/prereq/prereq_cron.html)
+*	[Enter your authentication keys in the Admin]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html)
+*	[Set `ulimit` for the web server user]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-ulimit.html)
 *	[Checklist]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-checklist.html)
 
 After you've completed all prerequisites, continue with:

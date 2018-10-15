@@ -1,8 +1,6 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 title: Extension Repository Structure
-version: 2.3
 ---
 
 ## Extension Repository Structure

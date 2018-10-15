@@ -1,11 +1,10 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 2. Add a database
 menu_title: Step 2. Add a database
 menu_order: 5
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

@@ -1,10 +1,6 @@
 ---
-group: fedg
-subgroup: A_Themes
+group: frontend-developer-guide
 title: Create an Admin theme
-menu_title: Create an Admin theme
-version: 2.1
-menu_order: 9
 functional_areas:
   - Frontend
   - Theme
@@ -41,12 +37,12 @@ Add or copy from an existing `theme.xml` to your theme directory `app/design/adm
 
 Configure it using the following example (replace placeholders with your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} information):
 
-{%highlight xml%}
+```xml
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
      <title>%Theme title%</title> <!-- your theme's name -->
      <parent>%vendor_dir%/%parent_theme_dir%</parent> <!-- the parent theme. Example: Magento/backend -->
 </theme>
-{%endhighlight%}
+```
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
@@ -55,7 +51,7 @@ If you change the theme title or parent theme information in `theme.xml` after a
 In your theme directory, create a `registration.php` file.
 In this file, add the following code, having replaced placeholders with your theme information:
 
-{%highlight php%}
+```php
 <?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
@@ -66,7 +62,7 @@ In this file, add the following code, having replaced placeholders with your the
     'adminhtml/%vendor_dir/your_theme_dir%', // Example: 'adminhtml/Magento/backend'
     __DIR__
 );  
-{%endhighlight%}
+```
 
 ## Optionally add `composer.json` {#make_composer}
 

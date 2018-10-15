@@ -1,12 +1,10 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Authentication
 menu_title: Authentication
 menu_order: 1
 menu_node: parent
-version: 2.0
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication.html
 functional_areas:
   - Integration
 ---

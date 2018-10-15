@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 20_cqrs
+group: configuration-guide
 title: Set up optional database replication
-menu_title: Set up optional database replication
-menu_order: 10
-menu_node:
-version: 2.1
 ee_only: True
 functional_areas:
   - Configuration
@@ -19,20 +14,20 @@ Setting up database replication provides the following benefits:
 *	Enables data analysis without affecting the master database
 *	Scalability
 
-MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master. 
+MySQL databases replicate asynchronously, which means slaves do not need to be connected permanently to receive updates from the master.
 
 ## Configure database replication {#config-ee-multidb-slave-conf}
 
 An in-depth discussion of database replication is beyond the scope of this guide. To set it up, you can consult a resource like:
 
-*	<a href="https://dev.mysql.com/doc/refman/5.6/en/replication.html" target="_blank">MySQL documentation</a>
-*	<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql" target="_blank">How To Set Up Master Slave Replication in MySQL (digitalocean)</a>
+*	[MySQL documentation](https://dev.mysql.com/doc/refman/5.6/en/replication.html)
+*	[How To Set Up Master Slave Replication in MySQL (digitalocean)](https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql)
 
 Magento provides sample MySQL configurations for your slave databases. A simple configuration is provided with the `ResourceConnections` class `README.md`.
 
 The following is more advanced and is provided for your information only:
 
-{% highlight PHP startinline=true %}
+```php?start_inline=1
 	return array (
    //...
   'db' =>
@@ -115,7 +110,7 @@ The following is more advanced and is provided for your information only:
     'table_prefix' => '',
   ),
 //.......
-{% endhighlight %}
+```
 
 ## Performance improvement
 
@@ -125,5 +120,4 @@ To do this, add the following line to your `my.cnf` file on your slave instances
 
     replicate-wild-ignore-table=%.search\_tmp\_%
 
-For more information about this setting, see [MySQL documentation](https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#option_mysqld_replicate-wild-ignore-table){:target="_blank"}.
-
+For more information about this setting, see [MySQL documentation](https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#option_mysqld_replicate-wild-ignore-table).

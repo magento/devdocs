@@ -1,20 +1,13 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Input component
 menu_title: Input component
-version: 2.1
 ---
-
-## Overview
 
 The Input component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="text">` field.
 
 ## Configuration options
-
-Extends all `abstract` configuration.
-
-Input-specific options:
 
 <table>
   <tr>

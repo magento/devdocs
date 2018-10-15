@@ -1,12 +1,11 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Factories
 menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.1
 ---
 
 ## Overview

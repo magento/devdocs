@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Parallel execution flow with the Functional Testing Framework
-version: 2.1
 ---
 
 ## Overview
@@ -30,8 +29,7 @@ or run a test suite using parallel execution flow with multiple Magento instance
 
 To set up a parallel execution flow, add Magento instances to `<magento2_root_dir>/dev/tests/functional/phpunit.xml` in the following format:
 
-{%highlight xml%}
-
+```xml
 <php>
     ...
     <env name="app_instances" value="<quantity of the Magento instances>" />
@@ -39,25 +37,21 @@ To set up a parallel execution flow, add Magento instances to `<magento2_root_di
     <env name="app_backend_url_<index number of Magento instance>" value="<backend URL of the Magento instance>" />
     ...
 </php>
+```
 
-{%endhighlight xml%}
-
-<div class="bs-callout bs-callout-warning">
-    <p>The default elements <code>"app_frontend_url"</code> and <code>"app_backend_url"</code> must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if <code>"app_instances"</code> element is present.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The default elements `"app_frontend_url"` and `"app_backend_url"` must be added obligatory. Otherwise FTF returns an error. The default instances are ignored if `"app_instances"` element is present.
 
 ### Parallel execution flow with one Magento instance
 
 Parallel execution flow with one Magento instance should be used with a caution. In this mode, test cases are executed simultaneously and can conflict with each other (for example, when different tests set the same parameter in different states).
 
-<div class="bs-callout bs-callout-warning">
-    <p>Parallel execution flow with one Magento instance can cause conflict between tests running at the same time.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Parallel execution flow with one Magento instance can cause conflict between tests running at the same time.
 
 The following example shows a setup configuration of the flow with one Magento instance.
 
-{% highlight xml %}
-
+```xml
 <php>
     ...
     <env name="app_frontend_url" value="http://example.com/magento2/index.php/" />            // The default frontend instance. Ignored by the FTF.
@@ -72,15 +66,13 @@ The following example shows a setup configuration of the flow with one Magento i
     <env name="app_backend_url_2" value="http://example.com/magento2/index.php/backend/" />
     ...
 </php>
-
-{% endhighlight %}
+```
 
 ### Parallel execution flow with multiple Magento instances
 
 The following example shows a setup configuration of the flow with three Magento instances.
 
-{% highlight xml %}
-
+```xml
 <php>
     ...
     <env name="app_frontend_url" value="http://example.com/magento2/index.php/" />            // The default frontend instance. Ignored by the FTF.
@@ -95,19 +87,20 @@ The following example shows a setup configuration of the flow with three Magento
     <env name="app_backend_url_2" value="http://example_3.com/magento2/index.php/backend/" />
     ...
 </php>
-
-{% endhighlight %}
+```
 
 ## Run parallel execution flow
 
 To run parallel execution flow, you must configure and run a test suite and corresponding Magento instances.
 
-Run a test suite:
+Run the test suite:
 
-{% highlight bash %}
-cd phpunit <magento2_root_dir>/dev/tests/functional
+```bash
+cd <magento2_root_dir>/dev/tests/functional
+```
+```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
-{% endhighlight %}
+```
 
 <!-- LINK DEFINITIONS -->
 

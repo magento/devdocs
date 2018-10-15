@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: New Relic APM
-version: 2.0
 functional_areas:
   - Cloud
   - Integration
@@ -9,7 +8,7 @@ functional_areas:
   - Services
 ---
 
-The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="\_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
+The software analytics product [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm){:target="_blank"} helps you to analyze and improve application interactions. Each {{site.data.var.ece}} plan includes a New Relic APM license that supports up to three instances across all environments. You do not need to purchase or install the New Relic extension (different than the APM service). For plan details, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
 
 ## Key features {#features}
 
@@ -107,9 +106,9 @@ You can mix the high-level data captured by New Relic APM and the code-level dat
 
 ## New Relic APM resources {#resources}
 
--  [Introduction to APM](https://docs.newrelic.com/docs/data-analysis/user-interface-functions/view-your-data/standard-page-functions){:target="\_blank"}
--  [View transactions](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/transactions-page#tx_viewing){:target="\_blank"}
--  [Analyze database and instance-level performance issues](https://docs.newrelic.com/docs/apm/applications-menu/features/analyze-database-instance-level-performance-issues){:target="\_blank"}
--  [Tracking front-end time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="\_blank"}
--  [APM best practices](https://docs.newrelic.com/docs/apm/new-relic-apm/guides/new-relic-apm-best-practices-guide){:target="\_blank"}
--  [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="\_blank"}
+-  [Introduction to APM](https://docs.newrelic.com/docs/data-analysis/user-interface-functions/view-your-data/standard-page-functions){:target="_blank"}
+-  [View transactions](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/transactions-page#tx_viewing){:target="_blank"}
+-  [Analyze database and instance-level performance issues](https://docs.newrelic.com/docs/apm/applications-menu/features/analyze-database-instance-level-performance-issues){:target="_blank"}
+-  [Tracking frontend time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="_blank"}
+-  [APM best practices](https://docs.newrelic.com/docs/apm/new-relic-apm/guides/new-relic-apm-best-practices-guide){:target="_blank"}
+-  [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="_blank"}

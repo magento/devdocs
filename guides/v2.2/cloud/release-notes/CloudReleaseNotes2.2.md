@@ -6,7 +6,6 @@ menu_title: Magento Commerce (Cloud) 2.2.0 Release Notes
 menu_order: 400
 level3_menu_node:
 level3_subgroup:
-version: 2.2
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
@@ -27,7 +26,7 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Staging and Production environments in the UI** for Pro projects. Starting October 23, 2017, all projects created using the free 30-day trial or provisioned for new accounts includes Staging and Production environments in the Project Web Interface. Existing accounts created before October 23, 2017 can enter a ticket to be updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
 
-* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/basic-information/cloud-plans.html).
+* **30-day free trials available** for Starter and Pro projects. Starting October 23, 2017, we provide trials for Start and Pro projects. We autoprovision your project, configuring basic settings to get you started. You can access a new Onboarding Portal to get started with your project. For more information, see [Subscriptions and plans]({{ page.baseurl }}/cloud/bk-cloud.html).
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
@@ -53,7 +52,7 @@ Magento 2.2.0 includes multiple security enhancements. Although this release inc
 
 In general, we’ve removed serialize/unserialize from most the code to improve protection against remote code execution attacks. We’ve enhanced protection of code where use of object serialization or unserialization was unavoidable.  Additionally, we’ve increased our use of output escaping to protect against cross-site scripting (XSS) attacks.
 
-[Contact us](https://magento.com/company/contact-us){:target="\_blank"} for more information.
+[Contact us](https://magento.com/company/contact-us) for more information.
 
 ## Known issues {#known}
 
@@ -65,7 +64,7 @@ This release contains numerous fixes and enhancements. This section includes onl
 
 <!--RFC-125-->* We removed `var/view_preprocessed` symlinking to fix an issue that was causing JavaScript minification conflicts.
 
-<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#reset-cron-jobs) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
+<!-- MAGECLOUD-1355 -->* You can now [manually reset stuck Magento cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html) using a CLI command in all environments via SSH access. The deployment process automatically resets cron jobs. You must [patch magento/ece-tools]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html) to get this update.
 
 <!-- 57167 -->* You can now generate sitemap.xml and robots.txt normally through the Magento Admin panel, without needing to move the file and have a redirect entered. If you are upgrading to 2.2, please enter a [Support ticket] to have any redirects removed for sitemap and robots.txt.
 
@@ -89,7 +88,7 @@ This release contains numerous fixes and enhancements. This section includes onl
 
 When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in deployment:
 
-* `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html#variables).
+* `ADMIN_EMAIL` variable must be set. We require the `ADMIN_EMAIL` environment variable configured for deployments. You can set this variable through the Project Web Interface. This is required for new installations and upgrades. For instructions, see [Add admin variables for Admin access]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html).
 
 * Update and include `config.php` and add a list of all modules. If you use Configuration Management with a `config.local.php` file, you must create a `config.php` and add it to your code. For instructions, see [Configuration Management and upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html).
 
@@ -118,11 +117,11 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="\_blank"}.
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
 
-If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
+If installing and working with {{site.data.var.ece}} for the first time, we recommend [First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
 
 To test and implement your {{site.data.var.ece}} upgrade, see [Upgrade Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-upgrade.html). We include upgrade paths and additional instructions for upgrading from 2.0.X and 2.1.X.
 

@@ -1,13 +1,12 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Customize using a modifier class
 subtitle: Customize Product Creation Form
 menu_node:
 level3_subgroup: product-creation-form
 menu_order: 3
-version: 2.1
 ---
 
 [Modifier classes]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html) should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.

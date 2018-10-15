@@ -1,11 +1,9 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 1
-version: 2.0
-redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 functional_areas:
   - Install
   - System
@@ -39,10 +37,8 @@ Magento uses server rewrites and <code>.htaccess</code> to provide directory-lev
 {% include install/allowoverrides22.md %}
 {% endcollapsible %}
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
 ## Verify the Apache version   {#install-prereq-apache-verify}
 
@@ -117,9 +113,8 @@ To upgrade to Apache 2.4:
 
 		apt-get install -y apache2
 
-	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p></span>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If the `apt-get install` command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){: target="_blank"}.
 	</div>
 
 3.	Verify the installation.
@@ -167,10 +162,8 @@ Installing and configuring Apache is basically a three-step process: install the
 
 3.	Continue with the next section.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
 
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 {% include install/allowoverrides22.md %}
@@ -192,7 +185,7 @@ If you encounter 403 Forbidden errors when trying to access the Magento site, yo
 
 #### Solving 403 Forbidden errors for Apache 2.4   {#install-apache-403_2.4}
 
-To enable web site visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.
+To enable website visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.
 
 For example:
 	
@@ -203,14 +196,12 @@ For example:
 		Require all granted
 	</Directory>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){: target="_blank"}.
 
 #### Solving 403 Forbidden errors for Apache 2.2   {#install-apache-403_2.2}
 
-To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
+To enable website visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
 
 For example:
 	
@@ -221,10 +212,8 @@ For example:
 		Allow from all
 	</Directory>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){: target="_blank"}.
 {% endcollapsible %}
 
 #### Related topics:

@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Cannot install using nginx
 menu_title: Cannot install using nginx
 menu_node:
 menu_order: 20
-version: 2.0
 functional_areas:
   - Install
   - System
@@ -24,5 +23,5 @@ You can confirm the issue by the following error in the `var/report` directory:
 
 ### Workaround
 
-Append `/setup` to the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} by which you access the Setup Wizard or install the Magento software using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.
+Append `/setup` to the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} by which you access the Setup Wizard or install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
 

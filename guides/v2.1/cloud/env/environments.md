@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Configure environments
-version: 2.1
 redirect_from:
   - /guides/v2.0/cloud/deploy/configure-deploy.html
   - /guides/v2.1/cloud/deploy/configure-deploy.html

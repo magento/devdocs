@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Unknown module Magento_BundleSampleData
 menu_title: Unknown module Magento_BundleSampleData
 menu_node:
 menu_order: 400
-version: 2.0
 functional_areas:
   - Install
   - System

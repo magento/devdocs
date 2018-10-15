@@ -1,11 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Uninstall or reinstall Magento
 menu_title: Uninstall or reinstall Magento
 menu_node:
 menu_order: 5
-version: 2.0
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall.html
@@ -17,7 +16,7 @@ functional_areas:
 
 ## First steps   {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
 ## Prerequisites   {#instgde-install-magento-prereq}
@@ -51,10 +50,9 @@ To reinstall the Magento software as a system integrator:
 		git pull origin develop
 		php bin/magento setup:uninstall
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  			<ul><li>If <code>git pull origin develop</code> fails, see <a href="{{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>. </li>
-  				<li>To use your existing Magento software version , omit the <code>git pull origin develop</code> command.</li></ul></span>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	* If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
+	* To use your existing Magento software version , omit the `git pull origin develop` command.
 	</div>
 
 3.	Install the Magento software:
@@ -82,9 +80,10 @@ However, in some situations (particularly, deploying Magento to production), you
 
 	magento setup:upgrade --keep-generated
 
-<div class="bs-callout bs-callout-warning">
-    <p>The optional <code>--keep-generated</code> option should be used <em>only</em> in limited circumstances by experienced system integrators. <code>--keep-generated</code> should <em>never</em> be used in a development environment.</p>
-    <p>Improper use of this optional parameter can cause errors during code execution.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+The optional `--keep-generated` option should be used *only* in limited circumstances by experienced system integrators. `--keep-generated` should *never* be used in a development environment.
+
+Improper use of this optional parameter can cause errors during code execution.
 </div>
 
 

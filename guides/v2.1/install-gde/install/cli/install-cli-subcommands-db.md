@@ -1,7 +1,6 @@
 ---
-group: install_cli
+group: installation-guide
 title: Create the Magento database schema
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-db.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-db.html
@@ -13,7 +12,7 @@ functional_areas:
 
 ## First steps {#instgde-cli-before}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 

@@ -7,7 +7,6 @@ menu_order: 388
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-version: 2.1
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.2.html
 functional_areas:
@@ -26,7 +25,7 @@ We made the following change in this release:
 We made the following fixes in this release:
 
 * Improved the performance of static file deployment.
-*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="\_blank"}.
+*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html).
 *   You no longer need a `pub/front-static.php` in your template.
 *   We now back up `env.php` before disabling the Redis cache during deployment.
 *   Patches are now applied in alphabetical order.

@@ -1,12 +1,11 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 01_Introduction
 title: B2B Developer Guide
 landing-page: B2B
 menu_title: B2B Developer Guide
 menu_order: 1
 menu_node: parent
-version: 2.2
 ee_only: True
 functional_areas:
   - B2B

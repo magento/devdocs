@@ -4,7 +4,6 @@ subgroup: B_integration
 title: Payment method module configuration
 menu_title: Payment method module configuration
 menu_order: 1
-version: 2.1
 functional_areas:
   - Integration
 ---

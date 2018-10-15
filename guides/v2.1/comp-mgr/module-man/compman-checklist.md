@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Run the Component Manager
 menu_title: Run the Component Manager
 menu_node: parent
 menu_order: 1
-version: 2.1
 redirect_from: /guides/v2.0/comp-mgr/compman-checklist.html
 functional_areas:
   - Upgrade

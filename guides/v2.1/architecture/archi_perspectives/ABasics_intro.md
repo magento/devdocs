@@ -1,9 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Architectural basics overview
 menu_title: Architectural basics
-version: 2.1
-redirect_from: /guides/v1.0/architecture/archi_perspectives/ABasics_intro.html
 ---
 
 Magento incorporates the core architectural principles of object-oriented, PHP-based applications. Comprehensive discussions of these general principles exist both on-line and in printed form.

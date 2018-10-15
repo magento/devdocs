@@ -1,11 +1,10 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Headings and Organization
 menu_title: Headings and Organization
 menu_order: 6
 menu_node:
-version: 2.0
 ---
 Use consistent heading structure and content prioritization to create a hierarchy for users to easily navigate Magento Admin.
 

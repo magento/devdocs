@@ -1,9 +1,8 @@
 ---
-group: unit-testing
+group: testing
 title: Running Unit Tests
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-version: 2.1
 functional_areas:
   - Testing
   - test

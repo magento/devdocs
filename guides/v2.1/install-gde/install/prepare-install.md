@@ -1,12 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: T_Developer
 title: Update installation dependencies
 menu_title: Update installation dependencies
 menu_node:
 menu_order: 10
-version: 2.1
-redirect_from: /guides/v1.0/install-gde/install/prepare-install.html
 functional_areas:
   - Install
   - System

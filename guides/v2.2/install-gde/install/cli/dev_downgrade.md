@@ -1,11 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Change to a released version
 menu_title: Change to a released version
 menu_order: 200
 menu_node:
-version: 2.2
 functional_areas:
   - Install
   - System

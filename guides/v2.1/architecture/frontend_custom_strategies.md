@@ -1,8 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Ease of frontend customization
 menu_title: Ease of frontend customization
-version: 2.1
 ---
 
 ## Overview {#m2arch-whatis-overview}
@@ -52,7 +51,7 @@ Form elements included in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c
 
 Users of the default Magento storefront encounter examples of these form elements throughout the product. These patterns provide a valuable language of software components (and indirectly, user experiences) for {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers and administrators.
 
-The Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Pattern library is built on the LESS preprocessor and implemented as a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can download a free, current version of this module from [Magento Marketplace](https://marketplace.magento.com/).
+The Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Pattern library is built on the Less preprocessor and implemented as a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. You can download a free, current version of this module from [Magento Marketplace](https://marketplace.magento.com/).
 
 See [Magento Admin Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) for more information on using this library.
 

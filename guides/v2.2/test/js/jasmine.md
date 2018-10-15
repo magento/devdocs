@@ -1,7 +1,6 @@
 ---
-group: jstf
+group: testing
 title: JavaScript unit testing with Jasmine
-version: 2.2
 functional_areas:
   - Testing
   - test

@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: SSH and sFTP
 menu_title: SSH and sFTP
 menu_order: 35
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

@@ -1,11 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Add or update components
 menu_title: Add or update components
 menu_order: 5
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System
@@ -53,5 +52,8 @@ Add a `require` section like the following:
 Save your changes to `composer.json`, exit the text editor, and enter `composer update`
 
 ### For more information
+If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.
+
+<!-- ABBREVIATIONS -->
 
 If you have issues, see [Composer troubleshooting](https://getcomposer.org/doc/articles/troubleshooting.md){:target="_blank"}.

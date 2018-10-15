@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 02_Security
+group: configuration-guide
 title: Security settings
-menu_title: Security settings
-menu_order: 1
-menu_node: parent
-version: 2.1
 functional_areas:
   - Configuration
   - System

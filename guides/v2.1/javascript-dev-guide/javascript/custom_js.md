@@ -1,8 +1,7 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Use custom JavaScript
-version: 2.1
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/custom_js.html
  - /guides/v1.0/frontend-dev-guide/javascript/custom_js.html
@@ -101,7 +100,7 @@ Where the following notation is used:
 -   `mage.<widget.name>` - the name of the Magento widget that you
     extend.
 
-For information about how to initialize your custom widget in a `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
+For information about how to initialize your custom widget in a `.phtml` template, see the [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html){:target="_blank"} topic.
 
 ### Extend a default Ui component {#extend_js_component}
 

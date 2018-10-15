@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Routes
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

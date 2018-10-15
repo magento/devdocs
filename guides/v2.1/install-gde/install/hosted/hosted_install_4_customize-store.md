@@ -1,11 +1,10 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 4. Customize your store
 menu_title: Step 4. Customize your store
 menu_order: 6
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

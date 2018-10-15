@@ -1,9 +1,7 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Magento Framework
 menu_title: Magento Framework
-version: 2.1
-redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 ---
 
 ## Overview
@@ -73,11 +71,11 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
       </tr><tr>
          <td><code>Magento\Framework\Model\AbstractModel</code>
          </td>
-         <td></td>
+         <td />
       </tr>
       <tr>
          <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
-         <td></td>
+         <td />
       </tr>
       <tr>
          <td><code>Magento\Framework\Controller</code></td>
@@ -90,7 +88,7 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          <td><code>Magento\Framework\Data</code></td>
          <td>Contains additional classes that handle forms.</td>
       </tr><tr>
-         <td><code>Magento\Framework\URL</code></td>
+         <td><code>Magento\Framework\Url</code></td>
          <td>Contains code to look up other pages in Magento.</td>
       </tr>
    </tbody>
@@ -137,13 +135,13 @@ Other namespaces under `Magento\Framework` that will interest extension develope
 		<td>
 			<code>Magento\Framework\HTTP\PhpEnvironment</code>
 		</td>
-		<td/>
+		<td />
 	</tr>
 	<tr>
 		<td>
 			<code>Magento\Framework\Session</code>
 		</td>
-		<td/>
+		<td />
 	</tr>
 	<tr>
 		<td>

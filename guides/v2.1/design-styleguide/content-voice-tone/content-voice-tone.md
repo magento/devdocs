@@ -1,11 +1,10 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Voice and Tone
 menu_title: Voice and Tone
 menu_order: 1
 menu_node:
-version: 2.1
 functional_areas:
   - Content
 ---

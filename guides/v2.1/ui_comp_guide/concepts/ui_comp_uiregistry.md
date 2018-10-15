@@ -1,10 +1,9 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: uiRegistry
 menu_title: uiRegistry
 menu_order: 110
-version: 2.1
 ---
 
 `uiRegistry` is a in-memory storage, plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.

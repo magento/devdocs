@@ -6,7 +6,6 @@ menu_title: Magento Commerce 2.2.1 Release Notes
 menu_order: 296
 level3_menu_node:
 level3_subgroup:
-version: 2.2
 ---
 *Patch code and release notes published on November 7, 2017.* 
 

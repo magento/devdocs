@@ -4,7 +4,6 @@ subgroup: B_integration
 title: Configure payment method by area
 menu_title: Configure payment method by area
 menu_order: 10
-version: 2.1
 functional_areas:
   - Integration
 ---
@@ -22,7 +21,7 @@ If your payment flow should be different for storefront and Admin panel, you can
 ## Example
 
 For example, on the storefront 3D Secure verification is integrated for the Braintree payment method, but it should not be available in Admin panel
-The ВI configuration for {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} request builder for [admin area]({{ site.mage2100url }}app/code/Magento/Braintree/etc/adminhtml/di.xml) looks like following:
+The DI configuration for {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} request builder for [admin area]({{ site.mage2100url }}app/code/Magento/Braintree/etc/adminhtml/di.xml) looks like following:
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">

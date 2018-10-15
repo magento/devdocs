@@ -1,12 +1,11 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Welcome to Magento Commerce (Cloud)
 landing-page: Cloud
 menu_title: Welcome to Magento Commerce (Cloud)
 menu_order: 10
 menu_node: parent
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/access-acct/resources.html
   - /guides/v2.1/cloud/access-acct/resources.html
@@ -74,7 +73,7 @@ To better understand {{site.data.var.ee}}, your plan, architecture, and workflow
 	* [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
 	*	[Pro develop and deploy workflow]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html)
 *	[Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
-* [Local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
+* [Local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 
 ## Learn more about Magento 2 {#magento2}
 
@@ -89,7 +88,7 @@ If you would like to learn more about Magento 2, see the following resources:
 *	Developer documentation
 
 	*	[Magento 2 Architecture guide]({{ page.baseurl }}/architecture/bk-architecture.html){:target="_blank"}
-  *	[Front end development]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html){:target="_blank"}
+  *	[Frontend development]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html){:target="_blank"}
 	*	[Customizing the Magento software]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html){:target="_blank"}
 	*	[Installation]({{ page.baseurl }}/install-gde/bk-install-guide.html), though we recommend following [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html){:target="_blank"}
 	*	[Configuration]({{ page.baseurl }}/config-guide/bk-config-guide.html){:target="_blank"}

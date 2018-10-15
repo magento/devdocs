@@ -1,11 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Z_continue
 title:
 menu_title: Next&mdash;Installation part 2, installing
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Install
   - System

@@ -1,11 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 02_sample
 title: Install optional sample data modules
 menu_title: Install optional sample data modules
 menu_node: parent
 menu_order: 1
-version: 2.0
 functional_areas:
   - Install
   - System

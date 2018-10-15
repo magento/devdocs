@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: JavaScript in Magento responsive design
 menu_title: JavaScript in Magento responsive design
 menu_order: 3
-version: 2.0
-redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_js.html
 functional_areas:
   - Frontend
 ---
@@ -86,7 +84,7 @@ In a mobile view, on the 768px breakpoint, <code>menu.js</code> changes the navi
 The following image illustrates the mobile-view navigation menu.
 
 
-<img style="border: 1px solid #ABABAB" src="{{ site.baseurl }}/common/images/js_rwd_menu.png">
+![]({{ site.baseurl }}/common/images/js_rwd_menu.png){: style="border: 1px solid #ABABAB"}
 
 ## Re-using Magento scripts in your theme   {#rwd_js_reuse}
 

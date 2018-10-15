@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 5. Create products
 subtitle: Order processing with MSI
 menu_title: Step 5. Create products
@@ -9,7 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
 functional_areas:
   - Integration
 ---
@@ -63,7 +62,7 @@ In a single-source inventory environment, you would use the `qty` field in the `
 
 ``` json
 {
-    "id": 7,
+    "id": 2056,
     "sku": "sp1",
     "name": "Simple Product 1",
     "attribute_set_id": 4,
@@ -71,8 +70,8 @@ In a single-source inventory environment, you would use the `qty` field in the `
     "status": 1,
     "visibility": 4,
     "type_id": "simple",
-    "created_at": "2018-08-02 16:03:19",
-    "updated_at": "2018-08-02 16:03:19",
+    "created_at": "2018-09-24 18:25:15",
+    "updated_at": "2018-09-24 18:25:15",
     "weight": 0.8,
     "extension_attributes": {
         "website_ids": [
@@ -81,8 +80,8 @@ In a single-source inventory environment, you would use the `qty` field in the `
             3
         ],
         "stock_item": {
-            "item_id": 7,
-            "product_id": 7,
+            "item_id": 2056,
+            "product_id": 2056,
             "stock_id": 1,
             "qty": null,
             "is_in_stock": false,
@@ -115,12 +114,16 @@ In a single-source inventory environment, you would use the `qty` field in the `
     "tier_prices": [],
     "custom_attributes": [
         {
-            "attribute_code": "category_ids",
-            "value": []
+            "attribute_code": "color",
+            "value": "49"
         },
         {
             "attribute_code": "options_container",
             "value": "container2"
+        },
+        {
+            "attribute_code": "url_key",
+            "value": "simple-product-1"
         },
         {
             "attribute_code": "required_options",
@@ -131,11 +134,15 @@ In a single-source inventory environment, you would use the `qty` field in the `
             "value": "0"
         },
         {
-            "attribute_code": "url_key",
-            "value": "simple-product-1"
+            "attribute_code": "tax_class_id",
+            "value": "2"
         },
         {
-            "attribute_code": "tax_class_id",
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "is_returnable",
             "value": "2"
         }
     ]
@@ -170,7 +177,7 @@ Use the same endpoint to create the second simple product.
 
 ``` json
 {
-    "id": 8,
+    "id": 2057,
     "sku": "sp2",
     "name": "Simple Product 2",
     "attribute_set_id": 4,
@@ -178,8 +185,8 @@ Use the same endpoint to create the second simple product.
     "status": 1,
     "visibility": 4,
     "type_id": "simple",
-    "created_at": "2018-08-02 16:03:58",
-    "updated_at": "2018-08-02 16:03:58",
+    "created_at": "2018-09-24 18:41:25",
+    "updated_at": "2018-09-24 18:41:25",
     "weight": 0.8,
     "extension_attributes": {
         "website_ids": [
@@ -188,8 +195,8 @@ Use the same endpoint to create the second simple product.
             3
         ],
         "stock_item": {
-            "item_id": 8,
-            "product_id": 8,
+            "item_id": 2057,
+            "product_id": 2057,
             "stock_id": 1,
             "qty": null,
             "is_in_stock": false,
@@ -222,12 +229,16 @@ Use the same endpoint to create the second simple product.
     "tier_prices": [],
     "custom_attributes": [
         {
-            "attribute_code": "category_ids",
-            "value": []
+            "attribute_code": "color",
+            "value": "49"
         },
         {
             "attribute_code": "options_container",
             "value": "container2"
+        },
+        {
+            "attribute_code": "url_key",
+            "value": "simple-product-2"
         },
         {
             "attribute_code": "required_options",
@@ -238,11 +249,15 @@ Use the same endpoint to create the second simple product.
             "value": "0"
         },
         {
-            "attribute_code": "url_key",
-            "value": "simple-product-2"
+            "attribute_code": "tax_class_id",
+            "value": "2"
         },
         {
-            "attribute_code": "tax_class_id",
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "is_returnable",
             "value": "2"
         }
     ]
@@ -285,7 +300,7 @@ Authorization: Bearer <admin_token>
 
 ``` json
 {
-    "id": 9,
+    "id": 2058,
     "sku": "vp1",
     "name": "Gold Club Membership",
     "attribute_set_id": 4,
@@ -293,8 +308,8 @@ Authorization: Bearer <admin_token>
     "status": 1,
     "visibility": 4,
     "type_id": "virtual",
-    "created_at": "2018-08-02 16:05:29",
-    "updated_at": "2018-08-02 16:05:29",
+    "created_at": "2018-09-24 18:42:50",
+    "updated_at": "2018-09-24 18:42:50",
     "extension_attributes": {
         "website_ids": [
             1,
@@ -302,8 +317,8 @@ Authorization: Bearer <admin_token>
             3
         ],
         "stock_item": {
-            "item_id": 9,
-            "product_id": 9,
+            "item_id": 2058,
+            "product_id": 2058,
             "stock_id": 1,
             "qty": null,
             "is_in_stock": false,
@@ -336,12 +351,16 @@ Authorization: Bearer <admin_token>
     "tier_prices": [],
     "custom_attributes": [
         {
-            "attribute_code": "category_ids",
-            "value": []
+            "attribute_code": "color",
+            "value": "49"
         },
         {
             "attribute_code": "options_container",
             "value": "container2"
+        },
+        {
+            "attribute_code": "url_key",
+            "value": "gold-club-membership"
         },
         {
             "attribute_code": "required_options",
@@ -352,11 +371,15 @@ Authorization: Bearer <admin_token>
             "value": "0"
         },
         {
-            "attribute_code": "url_key",
-            "value": "gold-club-membership"
+            "attribute_code": "tax_class_id",
+            "value": "2"
         },
         {
-            "attribute_code": "tax_class_id",
+            "attribute_code": "category_ids",
+            "value": []
+        },
+        {
+            "attribute_code": "is_returnable",
             "value": "2"
         }
     ]

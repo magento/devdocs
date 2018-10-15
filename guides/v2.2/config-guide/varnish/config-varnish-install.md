@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 09_Varnish
+group: configuration-guide
 title: Install Varnish
-menu_title: Install Varnish
-menu_order: 5
-menu_node:
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -16,15 +11,12 @@ functional_areas:
 
 Installing the Varnish software is beyond the scope of this guide. For more information about installing Varnish, see:
 
-*	<a href="http://wiki.mikejung.biz/Varnish" target="_blank">installation wiki</a>
-*	<a href="https://www.varnish-cache.org/docs" target="_blank">Varnish installation guides</a>
-*	<a href="http://www.tecmint.com/install-varnish-cache-web-accelerator" target="_blank">How to install Varnish (Tecmint)</a>
+*	[installation wiki](http://wiki.mikejung.biz/Varnish)
+*	[Varnish installation guides](https://www.varnish-cache.org/docs)
+*	[How to install Varnish (Tecmint)](http://www.tecmint.com/install-varnish-cache-web-accelerator)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.
-
-If you intend to install Varnish modules (vmods), such as saint mode, you should install Varnish by compiling the code, rather than installing from a package. See [Saint mode]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html#saint) for more details.
-</div>
+{:.bs-callout .bs-callout-info}
+This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult the preceding documentation for more information.<br><br>If you intend to install Varnish modules (vmods), such as saint mode, you should install Varnish by compiling the code, rather than installing from a package. See [Saint mode]({{ page.baseurl }}/config-guide/varnish/config-varnish-advanced.html#saint) for more details.
 
 ## Confirm your Varnish version {#config-varnish-version}
 
@@ -42,4 +34,4 @@ Make sure the version is 4.x or 5.x before continuing. If you are running versio
 
 ### Next step
 
-<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
+[Configure Varnish and your web server]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html)

@@ -1,11 +1,10 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Errors and Messages Writing
 menu_title: Errors and Messages Writing
 menu_order: 2
 menu_node:
-version: 2.0
 ---
 Magento uses different types of dynamic messaging to alert users when:
 

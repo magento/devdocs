@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: View logs for troubleshooting
 menu_title: View logs for troubleshooting
 menu_order: 5
 menu_node:
-version: 2.0
 functional_areas:
   - Cloud
   - Configuration

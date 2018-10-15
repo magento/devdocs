@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: How To
 title: Install a theme
 menu_title: Install a theme
 menu_order: 60
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

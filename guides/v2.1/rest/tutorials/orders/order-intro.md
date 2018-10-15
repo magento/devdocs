@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Order processing tutorial
 menu_title: Initial tasks
 return_to:
@@ -8,7 +8,6 @@ return_to:
   url: rest/tutorials/index.html
 menu_order: 0
 level3_subgroup: order-tutorial
-version: 2.1
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-intro.html
   - /guides/v2.2/get-started/order-tutorial/order-intro.html

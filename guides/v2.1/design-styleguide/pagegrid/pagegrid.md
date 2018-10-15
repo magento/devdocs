@@ -1,11 +1,10 @@
 ---
-group: styleguide
+group: admin-style-guide
 subgroup: Design
 title: Admin Page Grids
 menu_title: Page Grids
 menu_order: 3
 menu_node:
-version: 2.1
 ---
 In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}, a grid is used on all pages to establish global layouts for page templates. The grid assigns a set number of columns and rows for a page, and designers can create a layout by dividing the columns into sections, where design patterns and content can be placed.
 
@@ -17,7 +16,8 @@ In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{%
 	<li>For views smaller than 984px, a page’s layout doesn’t change as the page shrinks to fit smaller screen widths.</li>
 </ul>
 
-<img src="img/PageGrid.png">
+![](img/PageGrid.png)
+
 
 ## Slide-Out Grid {#slide-out}
 
@@ -34,16 +34,19 @@ For example:
 
 Standard {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} within the edges of a browser screen
 
-<img src="img/slideout-panel7.png">
+![](img/slideout-panel7.png)
+
 
 (Panel position in relation to browser edge)
 
 <b>Spacing:</b> Slide-out content is contained in a 12-column page grid, with additional 15px padding on the left edge. The gutter spacing at left is fluid, based on browser width.
 
-<img src="img/slideout-panel8.png">
+![](img/slideout-panel8.png)
+
 
 (Nested page-grid with additional padding)
 
 <b>Nested Slide-outs:</b> For multiple panels displayed, additional gutter space is used at left to show a small sliver of a Slide-out below another Slide-out.
 
-<img src="img/slideout-panel9.png">
+![](img/slideout-panel9.png)
+

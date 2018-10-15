@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Bitbucket integration
-version: 2.0
 functional_areas:
   - Cloud
   - Setup
@@ -11,9 +10,8 @@ Use the Bitbucket integration to automatically build and deploy an environment w
 
 For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We _strongly_ recommend using a private Bitbucket repository for your {{site.data.var.ece}} project.
-</div>
 
 ## Before you begin
 
@@ -23,7 +21,7 @@ We _strongly_ recommend using a private Bitbucket repository for your {{site.dat
 
 ## Prepare your repository
 
-This section shows you how to clone your {{site.data.var.ece}} project from and existing environment and add that code to a new, empty Bitbucket repository. If you don't already have an empty Bitbucket repository, [create one](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="\_blank"} before proceeding.
+This section shows you how to clone your {{site.data.var.ece}} project from and existing environment and add that code to a new, empty Bitbucket repository. If you don't already have an empty Bitbucket repository, [create one](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html){:target="_blank"} before proceeding.
 
 1.  Open a terminal and log in to your {{site.data.var.ece}} project:
 
@@ -62,9 +60,9 @@ This section shows you how to clone your {{site.data.var.ece}} project from and 
 
 ## Create an OAuth consumer
 
-The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="\_blank"}. This section shows you how to create one in Bitbucket. You'll need the OAuth `key` and `secret` from this consumer to complete the next section.
+The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="_blank"}. This section shows you how to create one in Bitbucket. You'll need the OAuth `key` and `secret` from this consumer to complete the next section.
 
-1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="\_blank"} account.
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="_blank"} account.
 1.  Click **Settings** > **Access Management** > **OAuth**.
 1.  Click **Add consumer** and configure it as follows:
 
@@ -116,7 +114,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 
         magento-cloud project:curl -p 'PROJECT ID' /integrations -i -X POST -d "$(< bitbucket.json)"
 
-    This command returns a long HTTP response, including headers. The first line of the output should contain a 200 or 201 status code indicating successfull integration. A status of 400 or above indicates that an error occurred.
+    This command returns a long HTTP response, including headers. The first line of the output should contain a 200 or 201 status code indicating successful integration. A status of 400 or above indicates that an error occurred.
 
 1.  Delete the temporary `bitbucket.json` file.
 

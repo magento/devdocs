@@ -1,7 +1,6 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Code generation
-version: 2.1
 ---
 
 ## Overview of code generation {#codegen-over}

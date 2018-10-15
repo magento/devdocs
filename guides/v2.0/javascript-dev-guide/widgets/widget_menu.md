@@ -1,10 +1,9 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Menu widget
 menu_order: 8
 menu_title: Menu widget
-version: 2.0
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_menu.html

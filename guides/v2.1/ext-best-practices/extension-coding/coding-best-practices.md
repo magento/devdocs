@@ -1,14 +1,6 @@
 ---
-group: ext-best-practices
-subgroup: 02_Extension-Coding
+group: extension-best-practices
 title: Extension Coding
-menu_title: Extension Coding
-menu_order: 1
-menu_node: parent
-version: 2.1
-tabgroup: best-practices
-tablabel: Coding
-tabweight: 10
 functional_areas:
   - Standards
 ---

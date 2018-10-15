@@ -17,6 +17,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 
 
@@ -164,7 +165,7 @@ CREATE TABLE `blog_posts` (
 
 <pre>$model = Mage::getModel('weblog/blogpost');</pre>
 
-<p>The first part of the URI you pass into get Model is the <a href="http://alanstorm.com/2009/img/magento-book/weblogGetModel.png">Model Group Name</a>. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded agains conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.</p>
+<p>The first part of the URI you pass into get Model is the <a href="http://alanstorm.com/2009/img/magento-book/weblogGetModel.png">Model Group Name</a>. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded against conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.</p>
 
 <p>So, let's add the following XML to our module's `config.xml`.</p>
 <pre>

@@ -1,10 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Programming Best Practices
 menu_title: Programming best practices
 menu_order: 1
-version: 2.1
 functional_areas:
   - Standards
 ---

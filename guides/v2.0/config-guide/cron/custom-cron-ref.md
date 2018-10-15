@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 12_cron
 title: Custom cron job and cron group reference
 menu_title: Custom cron job and cron group reference
 menu_order: 2
 menu_node:
-version: 2.0
 functional_areas:
   - Configuration
   - System
@@ -78,7 +77,7 @@ The resulting `crontab.xml` with two groups may look like this:
 </config>
 {%endhighlight%}
 
-As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.
+As an example, see [Magento\_Customer crontab.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml){: target="_blank"}.
 
 #### Specifying Cron group options {#specify-cron-group-options}
 

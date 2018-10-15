@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 1. Plan the product
 subtitle: Create a configurable product tutorial
 menu_title: Step 1. Plan the product
@@ -9,7 +9,6 @@ level3_subgroup: configurable-product-tutorial
 return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
-version: 2.2
 functional_areas:
   - Integration
 ---
@@ -43,6 +42,7 @@ Pattern | Graphic Print
 Color | Gray
 Size | Configurable in small, medium, or large
 Description | The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10.
+{:style="table-layout:auto;"}
 
 A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are defined by the system.
 
@@ -69,7 +69,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 
 The `attribute_set_id` for the Top attribute set is `9`.
 
-{% highlight json %}
+``` json
 {
     "items": [
         {
@@ -94,7 +94,7 @@ The `attribute_set_id` for the Top attribute set is `9`.
     },
     "total_count": 1
 }
-{% endhighlight %}
+```
 
 ### Get the list of attributes defined in an attribute searchCriteria {#get-attributes}
 
@@ -102,7 +102,7 @@ Use the `GET V1/products/attribute-sets/:attributeSetId/attributes` call to retu
 
 **Endpoint**
 
-`GET <host>/V1/products/attribute-sets/9/attributes`
+`GET <host>/rest/default/V1/products/attribute-sets/9/attributes`
 
 **Response**
 
@@ -116,10 +116,10 @@ Material | LumaTech  | 136 | `material` | 148
 Pattern | Graphic Print | 152 | `pattern` | 196
 Color | Gray | 93 | `color` | 52
 Size | Not applicable | 141 | `size` | 168 (small), 169 (medium), 170 (large)
+{:style="table-layout:auto;"}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.
-</div>
 
 ### Get the list of category values
 
@@ -128,7 +128,7 @@ You must assign the product to one or more categories to enable customers to fin
 Use the following call to search for all categories (`id` is greater than or equal to `0`).
 
 ```html
-GET <host>/V1/categories?
+GET <host>/rest/default/V1/categories?
 searchCriteria[filter_groups][0][filters][0][field]=id&
 searchCriteria[filter_groups][0][filters][0][value]=1&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gte

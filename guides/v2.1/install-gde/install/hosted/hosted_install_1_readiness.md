@@ -1,11 +1,10 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_order: 3
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

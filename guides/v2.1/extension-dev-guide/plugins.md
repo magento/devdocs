@@ -1,10 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
-version: 2.1
 redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html
   - /guides/v1.0/config-guide/config/plugins.html
@@ -107,9 +106,8 @@ Around methods are defined such that their code is run both before and after the
 
 Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When the `callable` is called, the next plugin or the observed function is called.
 
-<div class="bs-callout bs-callout-warning">
-  <p>If the around method does not call the <code>callable</code>, it will prevent the execution of all the plugins next in the chain and the original method call.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+If the around method does not call the `callable`, it will prevent the execution of all the plugins next in the chain and the original method call.
 
 Below is an example of an around method adding behavior before and after an observed method:
 

@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 4. Define configurable product options
 subtitle: Create a configurable product tutorial
 menu_title: Step 4. Define configurable product options
@@ -9,7 +9,6 @@ level3_subgroup: configurable-product-tutorial
 return_to:
   title: REST tutorials
   url: rest/tutorials/index.html
-version: 2.2
 functional_areas:
   - Integration
 ---
@@ -54,7 +53,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 **Endpoint**
 
-`POST <host>/V1/configurable-products/MS-Champ/child`
+`POST <host>/rest/default/V1/configurable-products/MS-Champ/child`
 
 **Payload**
 

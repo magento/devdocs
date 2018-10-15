@@ -1,11 +1,10 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 02_config-hosted
 title: Configure your hosted system
 menu_title: Configure your hosted system
 menu_order: 1
 menu_node: parent
-version: 2.1
 functional_areas:
   - Install
   - System
@@ -17,14 +16,6 @@ functional_areas:
 Before you can install the Magento software, you must get your hosted system ready.  
 
 If your hosted system is already set up, go to [Get the Magento software packages]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html#get-archive).
-
-#### Contents
-
-*	[Verify the software on your system](#newbie-verify)
-*	[Configure a database and a database user]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_db.html)
-*	[Configure PHP]({{ page.baseurl }}/install-gde/install/hosted/hosted_start_php.html)
-*	[Transfer the Magento software to your hosted system]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html)
-*	[Install the Magento software]({{ page.baseurl }}/install-gde/install/hosted/hosted_install.html)
 
 ## Verify the software on your system {#newbie-verify}
 

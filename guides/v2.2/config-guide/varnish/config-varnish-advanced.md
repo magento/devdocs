@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 09_Varnish
+group: configuration-guide
 title: Advanced Varnish configuration
-menu_title: Advanced Varnish configuration
-menu_order: 16
-menu_node:
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -36,7 +31,7 @@ Every 5 seconds, this health check calls the `pub/health_check.php` script. This
 
 The `health_check.php` script is located in the `pub` directory. If your Magento root directory is `pub`, then be sure to change the path in the `url` parameter from `/pub/health_check.php` to `health_check.php`.
 
-For more information, see the <a href="https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks" target="_blank">Varnish health checks</a> documentation.
+For more information, see the [Varnish health checks](https://varnish-cache.org/docs/4.1/users-guide/vcl-backends.html?highlight=health%20check#health-checks) documentation.
 
 ## Grace mode {#grace}
 
@@ -88,7 +83,7 @@ Saint mode is not part of the main Varnish package. It is a separately-versioned
 
 After you've recompiled, you can install the Saint mode {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. In general, follow these steps:
 
-1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the git version (master version) since the 0.9.x versions contain a source code error.
+1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the Git version (master version) since the 0.9.x versions contain a source code error.
 2. Build the source code with autotools:
 ```bash
 sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel
@@ -174,4 +169,4 @@ sub vcl_backend_response {
 
 #### Final step
 
-<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish-final.html">Final verification</a>
+[Final verification]({{ page.baseurl }}/config-guide/varnish/config-varnish-final.html)

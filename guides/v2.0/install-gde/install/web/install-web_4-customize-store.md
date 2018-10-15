@@ -1,11 +1,10 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 4. Customize Your Store
 menu_title: Step 4. Customize Your Store
 menu_node:
 menu_order: 5
-version: 2.0
 functional_areas:
   - Install
   - System
@@ -16,4 +15,4 @@ functional_areas:
 
 #### Next step
 
-<a href="{{ page.baseurl }}/install-gde/install/web/install-web_5-create-admin.html">Step 5. Create Admin account</a>
+[Step 5. Create Admin account]({{ page.baseurl }}/install-gde/install/web/install-web_5-create-admin.html)

@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Test suite in the Functional Testing Framework
-version: 2.2
 ---
 
 ## Overview {#overview}

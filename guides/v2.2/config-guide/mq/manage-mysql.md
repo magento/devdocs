@@ -1,10 +1,6 @@
 ---
-group: config-guide
-subgroup: 24_RabbitMQ
+group: configuration-guide
 title: Manage message queues
-menu_title: Manage message queues
-menu_order: 3
-version: 2.0
 functional_areas:
   - Configuration
   - System
@@ -22,21 +18,16 @@ The following shows a `crontab` configuration for running consumers in our imple
 
 */app/code/Magento/MessageQueue/etc/crontab.xml*
 
-{% highlight xml %}
+```xml
 ...
 <job name="consumers_runner" instance="Magento\MessageQueue\Model\Cron\ConsumersRunner" method="run">
     <schedule>* * * * *</schedule>
 </job>
 ...
-{% endhighlight %}
+```
 
-<div class="bs-callout bs-callout-tip" id="info" markdown="1">
-How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.
-
-It can be configured in Admin Panel **Stores > Configuration > Advanced > System > Cron configuration options for group: consumers**
-
-See [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
-</div>
+{:.bs-callout .bs-callout-info}
+How often you check message queues depends on your business logic and available system resources. In general, you'll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define `cron` schedules according to your business needs.<br><br>It can be configured in Admin Panel **Stores > Configuration > Advanced > System > Cron configuration options for group: consumers**<br><br>See [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) for more information about using `cron` with Magento.
 
 You can also use a process manager such as [Supervisor](http://supervisord.org/index.html) to monitor the status of processes. The manager can use the command line to restart the processes as needed.
 

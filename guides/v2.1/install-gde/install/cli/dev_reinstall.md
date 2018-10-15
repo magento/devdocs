@@ -1,11 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Reinstall the Magento software
 menu_title: Reinstall the Magento software
 menu_order: 200
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

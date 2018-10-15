@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: D_CSS
 title: CSS preprocessing
 menu_order: 3
 menu_title: CSS preprocessing
-version: 2.0
-redirect_from: /guides/v1.0/frontend-dev-guide/css-topics/css-preprocess.html
 functional_areas:
   - Frontend
 ---
@@ -34,9 +32,9 @@ For example, in one of the <a href="https://github.com/magento/magento2/blob/2.0
 
 <pre>
     &lt;head&gt;
-        &lt;css src=&quot;css/styles-m.css&quot; /&gt;
-        &lt;css src=&quot;css/styles-l.css&quot; media=&quot;screen and (min-width: 768px)&quot;/&gt;
-        &lt;css src=&quot;css/print.css&quot; media=&quot;print&quot; /&gt;
+        &lt;css src="css/styles-m.css" /&gt;
+        &lt;css src="css/styles-l.css" media="screen and (min-width: 768px)"/&gt;
+        &lt;css src="css/print.css" media="print" /&gt;
     &lt;/head&gt;
 </pre>
 
@@ -71,10 +69,10 @@ To set the compilation mode, do the following:
 <ol>
 <li>In the Magento Admin, navigate to <b>Stores</b> > <b>Configuration</b> > ADVANCED > <b>Developer</b>.</li>
 <li>In the <b>Store View</b> drop-down field, select <b>Default Config</b>.</li>
-<li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
+<li>Under <b>Frontend development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
 <li>To save the settings, click <b>Save Config</b>.</li>
 
-<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} scope first, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. Change the option to match the default config if it is different.</li>
+<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Frontend development workflow</b> option having switched the <b>Store View</b> drop-down field to the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} scope first, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. Change the option to match the default config if it is different.</li>
 </ol>
 
 ### Server-side LESS compilation {#server-side}
@@ -97,9 +95,8 @@ For each CSS file included in the layouts, LESS preprocessor does the following:
 
 In server-side LESS compilation mode, to have your changes applied, clear <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You might also need to clear the <code>var/cache</code> and <code>var/view_preprocessed</code> directories.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
 
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the <a href="http://gruntjs.com/" target="_blank">Grunt JavaScript task runner</a>.
 
@@ -115,9 +112,8 @@ The client-side compilation flow is similar to server-side. The difference is in
 <li>symlinks to all other <code>.less</code> files imported recursively by the <code>@magento_import</code> and <code>@import</code> directives</li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>Symlink is not created, and a copy of the processed file is published to <code>pub/static</code> instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the <code>@import</code> directive without file extension in the source file. See <a href="#fedg_css-import">The @import directive usage</a> for more details.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Symlink is not created, and a copy of the processed file is published to `pub/static` instead, if the source file differs from the processed one. One of the reasons of this difference might be the usage of the `@import` directive without file extension in the source file. See [The @import directive usage](#fedg_css-import) for more details.
 
 #### Styles debugging in client-side compilation mode {#css_debug_client}
 

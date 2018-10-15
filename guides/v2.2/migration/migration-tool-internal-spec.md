@@ -1,12 +1,10 @@
 ---
-group:  migration
+group: migration-guide
 subgroup: o_mapping
 title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
-version: 2.2
-redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 ---
 
 ## Overview {#migrate-overview}
@@ -15,11 +13,11 @@ This section describes an implementation details of Data Migration Tool and how 
 
 ### Repositories {#repositories}
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="&#95;blank">migration-tool</a>
+Data Migration Tool repository [migration-tool](https://github.com/magento/data-migration-tool)
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="{{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
+Same as for [Magento2]({{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html)
 
 ## Internal structure {#migrate-is}
 
@@ -110,10 +108,10 @@ Script that runs migration process is located at magento-root/bin/magento
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{ page.baseurl }}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see [`--config <value>` parameter]({{ page.baseurl }}/migration/migration-migrate.html)).
 
 Configuration file has the following structure:
-{% highlight xml %}
+``` xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="settings">
         <step title="Settings step">
@@ -152,7 +150,7 @@ Configuration file has the following structure:
         ...
     </options>
 </config>
-{% endhighlight %}
+```
 
 * steps - describes all steps that are processed during migration
 
@@ -166,7 +164,8 @@ Change prefix option in case Magento was installed with prefix in database table
 
 Configuration data is accessible via \Migration\Config class.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+### Connect using the TLS protocol
+
 You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the `database` element:
 
 -   `ssl_ca`
@@ -175,16 +174,14 @@ You can also connect to a database using the TLS protocol (i.e., using public/pr
 
 For example:
 
-{% highlight xml %}
+``` xml
 <source>
     <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </source>
 <destination>
     <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </destination>
-{% endhighlight %}
-
-</div>
+```
 
 ## Step internals {#step-internals}
 
@@ -198,7 +195,7 @@ Steps related classes are located in the src/Migration/Step directory.
 
 To execute a Step class, the class must be defined in config.xml file.
 
-{% highlight xml %}
+``` xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="mode_name">
         <step title="Step Name">
@@ -210,23 +207,23 @@ To execute a Step class, the class must be defined in config.xml file.
     </steps>
     ...
 </config>
-{% endhighlight %}
+```
 
 Every stage class must implement StageInterface.
 
-<pre>
-class&nbsp;StageClass&nbsp;implements&nbsp;StageInterface
+``` php
+class StageClass implements StageInterface
 {
-&nbsp;&nbsp;/**
-&nbsp;&nbsp;&nbsp;*&nbsp;Perform&nbsp;the&nbsp;stage
-&nbsp;&nbsp;&nbsp;*
-&nbsp;&nbsp;&nbsp;*&nbsp;@return&nbsp;bool
-&nbsp;&nbsp;&nbsp;*/
-&nbsp;&nbsp;public&nbsp;function&nbsp;perform()
-&nbsp;&nbsp;{
-&nbsp;&nbsp;}
+  /**
+   * Perform the stage
+   *
+   * @return bool
+   */
+  public function perform()
+  {
+  }
 }
-</pre>
+```
 
 If the data stage supports rollback, it should implement the RollbackInterface interface.
 
@@ -234,11 +231,11 @@ Visualization of the running step is provided by Symfony's ProgressBar component
 
 Main methods for use are:
 
-{% highlight xml %}
+``` xml
 $this->progress->start();
 $this->progress->advance();
 $this->progress->finish();
-{% endhighlight %}
+```
 
 ## Stages
 
@@ -277,7 +274,7 @@ Settings migration mode of this tool is used to transfer following entities:
 
 All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:
 
-{% highlight xml %}
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="settings.xsd">
     <key>
@@ -296,7 +293,7 @@ All store configuration keeps its data in core_config_data table in database. se
         </transform>
     </value>
 </settings>
-{% endhighlight %}
+```
 
 Under node <code>&lt;key&gt;</code> there are rules that work with 'path' column of core_config_data table. <code>&lt;ignore&gt;</code> rules make the tool not to transfer some setting. Wildcards can be used in this node. All other settings not listed in <code>&lt;ignore&gt;</code> node, will be migrated. If path of some setting is changed in Magento 2, it should be added to //key/rename node, where old path indicates in //key/rename/path node and new path indicates in //key/rename/to node.
 
@@ -312,7 +309,7 @@ Map step is responsible for transferring most of data from Magento 1 to Magento 
 
 Map file has the next format:
 
-{% highlight xml %}
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="map.xsd">
     <source>
@@ -362,7 +359,7 @@ Map file has the next format:
         </field_rules>
     </destination>
 </map>
-{% endhighlight %}
+```
 
 Areas:
 

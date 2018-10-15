@@ -1,9 +1,8 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 title: Conventional notations used in this Guide
 menu_title: Conventional notations used in this Guide
 menu_order: 2
-version: 2.0
 ---
 
 ## Conventional notations for paths to modules and themes

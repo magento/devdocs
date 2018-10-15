@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Upgrades and patches
-version: 2.1
 functional_areas:
   - Cloud
   - Upgrade

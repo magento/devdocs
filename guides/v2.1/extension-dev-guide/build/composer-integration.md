@@ -1,10 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: The composer.json file
 menu_title: The composer.json file
 menu_order: 1000
-version: 2.1
 redirect_from:
   - /guides/v1.0/extension-dev-guide/composer-integration.html
   - /guides/v2.0/extension-dev-guide/composer-integration.html
@@ -12,20 +11,19 @@ redirect_from:
 
 ## Overview
 
-Magento 2 uses [Composer][0]{:target="\_blank"}, a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} dependency manager, to package components and product editions.
+Magento 2 uses [Composer][0]{:target="_blank"}, a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} dependency manager, to package components and product editions.
 
 Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
 
 The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
 
-*	The Component Manager can update, uninstall, enable, or disable an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} if installed using Composer (including from [Packagist][2]{:target="\_blank"}, [Magento Marketplace][6]{:target="\_blank"}, or other source) *and* it has a `composer.json` file.
+*	The Component Manager can update, uninstall, enable, or disable an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
 *	The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
 
 We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Magento does not support the [`path`][3] repository.
-</div>
 
 ## Composer binary location {#composer-binary}
 
@@ -35,7 +33,7 @@ Keep this in mind while customizing, updating, or troubleshooting composer while
 
 ## Project vs product
 
-In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="\_blank"} to set up the project structure.
+In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
 The [installation instructions for system integrators][10] use the {{site.data.var.ce}} and {{site.data.var.ee}} project packages to set up the Magento directory structure.
 
 A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
@@ -131,7 +129,7 @@ The `composer.json` file for a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7
 
 **Type:** `magento2-language`
 
-For language packages, you must use the correct [ISO code][4]{:target="\_blank"} for the language code in the `composer.json` file.
+For language packages, you must use the correct [ISO code][4]{:target="_blank"} for the language code in the `composer.json` file.
 
 ---
 
@@ -162,11 +160,11 @@ For example, the vendor name format for extensions released by Magento Inc is `m
 #### Magento Marketplace Extensions
 
 Magento Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
-If you plan to submit your extension to the [Magento Marketplace][7]{:target="\_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
+If you plan to submit your extension to the [Magento Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
 
 In the `composer.json` file, use the value of 'Vendor Name' in your profile for the `vendor-name` part of the extension name.
 
-Please see the [Marketplace Documentation][5]{:target="\_blank"} for more information about your unique vendor name.
+Please see the [Marketplace Documentation][5]{:target="_blank"} for more information about your unique vendor name.
 
 ### package-name
 

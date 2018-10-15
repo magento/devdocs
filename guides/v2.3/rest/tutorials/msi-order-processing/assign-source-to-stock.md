@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 4. Link stocks and sources
 subtitle: Order processing with MSI
 menu_title: Step 4. Link stocks and sources
@@ -9,7 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
 functional_areas:
   - Integration
 ---
@@ -102,4 +101,4 @@ php bin/magento indexer:reindex && php bin/magento cache:flush
 
 ### Verify this step
 
-In Admin, click **Stores** > **Manage Stocks**.  Then click **Edit** to the right of North America Stock. The **Assign Sources** section contains the linked source. Repeat this step for Europe Stock.
+In Admin, click **Stores** > **Inventory** > **Stocks**.  Then click **Edit** to the right of North America Stock. The **Assign Sources** section contains the linked source. Repeat this step for Europe Stock.

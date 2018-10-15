@@ -1,7 +1,6 @@
 ---
-group: jstf
+group: testing
 title: JavaScript unit testing with Jasmine
-version: 2.0
 redirect_from:
   - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
   - /guides/v2.1/extension-dev-guide/test/test_js-unit.html

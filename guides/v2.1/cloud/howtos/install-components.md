@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Install, manage, and upgrade extensions
-version: 2.1
 redirect_from:
   - /guides/v2.1/cloud/howtos/update-components.html
 functional_areas:
@@ -32,7 +31,7 @@ We recommend using a branch for adding or updating, configuring, and testing you
 ## Install an extension {#install}
 [Extension installation](#install) uses the following steps:
 
-1.  Purchase an extension or module from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another site.
+1.  Purchase an extension or module from [Magento Marketplace](https://marketplace.magento.com) or another site.
 1.  [Create a branch](#getstarted) to work with the files.
 1.  [Get the extension's Composer name](#compose) and version from your purchase history.
 1.  In your local {{site.data.var.ece}} project, [update the Magento `composer.json`](#update) file with the name and version of the extension and add the code to Git. The code builds, deploys, and is available through the environment.

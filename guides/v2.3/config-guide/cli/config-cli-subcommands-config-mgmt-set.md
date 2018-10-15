@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Set configuration values
-version: 2.3
 functional_areas:
   - Configuration
   - System
@@ -123,20 +122,18 @@ bin/magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
 
 The following table describes the `set` command parameters:
 
-Parameter | Description 
+Parameter | Description
 --- | --- | ---
-`--scope` | The scope of the configuration. The possible values are `default`, `website`, or `store`. The default is `default`. 
-`--scope-code` | The scope code of configuration (website code or store view code) 
-`-le or --lock-env` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file. 
+`--scope` | The scope of the configuration. The possible values are `default`, `website`, or `store`. The default is `default`.
+`--scope-code` | The scope code of configuration (website code or store view code)
+`-le or --lock-env` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file.
 `-lc or --lock-config` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/config.php` file. The `--lock-config` option overwrites `--lock-env` if you specify both options.
-`path` | *Required*. The configuration path 
-`value` | *Required*. The value of the configuration 
+`path` | *Required*. The configuration path
+`value` | *Required*. The value of the configuration
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 * As of Magento 2.2.4, the `--lock-env` and `--lock-config` options replace the `--lock` option.
-
 * If you use the `--lock-env` or `--lock-config` option to set or change a value, you must use the [`bin/magento app:config:import` command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
-</div>
 
 If you enter an incorrect configuration path, this command returns an error
 
@@ -182,9 +179,8 @@ bin/magento config:set --lock-env --scope=stores --scope-code=default web/unsecu
 
 You can use the `--lock-env` option to set configuration values if Magento is not installed. However, you can set values only for the default scope.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The `env.php` file is system specific. You should not transfer it to another system. You can use it to overwrite configuration values from the database. For example, you can take a database dump from another system and overwrite the `base_url` and other values so you don't have to modify the database.
-</div>
 
 If you use the `--lock-config` option as follows, the configuration value is saved in `<Magento base dir>/app/etc/config.php`. The field for editing this value in Admin page is disabled.
 
@@ -194,9 +190,8 @@ bin/magento config:set --lock-config --scope=stores --scope-code=default web/url
 
 You can use `--lock-config` to set configuration values if Magento is not installed. However, you can set values only for the default scope.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You can transfer `config.php` to another system to use the same configuration values there. For example, if you have a testing system, using the same `config.php` means you don't have to set the same configuration values again.
-</div>
 
 ## Display the value of configuration settings {#config-cli-config-show}
 
@@ -212,9 +207,8 @@ where
 * `--scope-code` is the scope code of configuration (website code or store view code)
 * `path` is the configuration path in format first_part/second_part/third_part/etc *(required)*
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The `bin/magento config:show` command displays the values of any [encrypted values]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
-</div>
 
 ### Examples
 

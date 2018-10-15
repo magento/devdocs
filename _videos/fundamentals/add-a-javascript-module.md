@@ -5,7 +5,6 @@ group: "Fundamentals of Magento 2 Development"
 title: "How to Add a JavaScript Module"
 thumbnail: "fundamentals/thumbs/add-js-module.png"
 menu_order: 1
-github_link:
 ---
 
 Magento 2 uses requireJS as a tool to define the module structure.
@@ -71,7 +70,7 @@ Next, we’ll create a view folder:
 ```
 $ cd <magento2_root>
 $ mkdir app/code/Learning/Js/view
-$ mkdir app/code/Learning/Js/view/fronted
+$ mkdir app/code/Learning/Js/view/frontend
 ```
 
 Add the file `app/code/Learning/Js/view/frontend/requirejs-config.js`:

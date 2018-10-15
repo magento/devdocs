@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Caching
 menu_title: Caching
@@ -7,7 +7,6 @@ menu_order: 35
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
-version: 2.0
 functional_areas:
   - Cloud
   - Setup
@@ -65,9 +64,8 @@ And the following routes are **not** cached:
 -   `http://{default}/path/`
 -   `http://{default}/path/etc/`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Regular expressions in routes are <em>not</em> supported.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Regular expressions in routes are *not* supported.
 
 ## Cache duration {#cloud-cache-ttl}
 
@@ -129,10 +127,8 @@ The cache key depends on the value of the `value` cookie in the request.
 
 A special case exists if the `cookies` key has the `["*"]` value. This value means that any request with a cookie will bypass the cache. This is the default value.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot  use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (<code>*</code>). <code>SESS*</code> or <code>~SESS</code> are currently  <em>not</em> valid values.
-</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You cannot use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (`*`). `SESS*` or `~SESS` are currently *not* valid values.
 
 ### `default_ttl` {#cloud-cache-attrib-ttl}
 If the response does not have a `Cache-Control` header, the `default_ttl` key is used to define the cache duration, in seconds. The default value is `0`, which means nothing is cached.

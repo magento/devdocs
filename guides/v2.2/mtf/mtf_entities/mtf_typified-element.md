@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Typified element
-version: 2.2
 ---
 
 A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}Store View{% endglossarytooltip %} Selector. Typified elements are often used as elements of a form or a grid. Functional Testing Framework (FTF) enables you to test any typified element.
@@ -16,9 +15,8 @@ This example shows the `optgroup` typified element. You can use the [`\Magento\M
 
 A testing typified element class in the FTF contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a [basic class](#basic_class) or a [Magento class](#magento_class) to cover your typified element.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{: .bs-callout .bs-callout-tip }
 The most important methods are `setValue()` and `getValue()`. These methods are required when you work with a form.
-</div>
 
 There are two types of testing typified elements: default typified elements and Magento custom typified elements.
  

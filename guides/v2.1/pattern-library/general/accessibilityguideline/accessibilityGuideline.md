@@ -1,8 +1,6 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Accessibility Guidelines
-version: 2.1
-redirect_from: /guides/v1.0/pattern-library/general/accessibilityguideline/accessibilityGuideline.html
 ---
 The Magento application should be accessible for all people, whatever their hardware, software, language, culture, location, or physical or mental ability. These are general guidelines that when adhere to, people with diverse range of hearing, movement, sight, and cognitive ability should be able to use.
 
@@ -15,9 +13,9 @@ Don't make textual content too long or too short.
 #### Provide adequate contrast
 
 Be extra careful with light shades of gray, orange, and yellow. Check your contrast levels here:
-[http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target=_"blank"}
+[http://webaim.org/resources/contrastchecker/](http://webaim.org/resources/contrastchecker/){:target="_blank"}
 or here:
-[http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target=_"blank"}
+[http://www.paciellogroup.com/resources/contrastAnalyser](http://www.paciellogroup.com/resources/contrastAnalyser){:target="_blank"}
 
 Acceptable
 
@@ -51,11 +49,11 @@ A link for keyboard users to skip navigation should be at the top of the page. I
 
 Examples:
 
-* [http://www.nomensa.com/](http://www.nomensa.com/){:target=_"blank"}
-* [https://www.paypal.com/](https://www.paypal.com/){:target=_"blank"}
-* [http://www.standardchartered.com/en/](http://www.standardchartered.com/en/){:target=_"blank"}
-* [http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/](http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/){:target=_"blank"}
-* [Skip-To Widget](https://github.com/paypal/skipto){:target=_"blank"}
+* [http://www.nomensa.com/](http://www.nomensa.com/){:target="_blank"}
+* [https://www.paypal.com/](https://www.paypal.com/){:target="_blank"}
+* [http://www.standardchartered.com/en/](http://www.standardchartered.com/en/){:target="_blank"}
+* [http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/](http://nemesisdesign.net/blog/accessibility/nice-css-skip-links-appearing-focus/){:target="_blank"}
+* [Skip-To Widget](https://github.com/paypal/skipto){:target="_blank"}
 
 #### Use animation, video and audio with caution
 
@@ -137,6 +135,6 @@ Cascading style sheets (CSS) for purely decorative images. Hyperlinked images wi
 
 ## Resources
 
-* Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/){:target=_"blank"}
-* Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/){:target=_"blank"}
-* Authoring Tool Accessibility Guidelines (ATAG) 2.0: [http://www.w3.org/TR/WCAG20-HTML-TECHS/](http://www.w3.org/TR/WCAG20-HTML-TECHS/){:target=_"blank"}
+* Overview: [http://www.w3.org/WAI/WCAG20/glance/](http://www.w3.org/WAI/WCAG20/glance/){:target="_blank"}
+* Authoring Tool Accessibility Guidelines (ATAG) 1.0: [http://www.w3.org/TR/WCAG10-HTML-TECHS/](http://www.w3.org/TR/WCAG10-HTML-TECHS/){:target="_blank"}
+* Authoring Tool Accessibility Guidelines (ATAG) 2.0: [http://www.w3.org/TR/WCAG20-HTML-TECHS/](http://www.w3.org/TR/WCAG20-HTML-TECHS/){:target="_blank"}

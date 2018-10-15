@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Smart wizards
-version: 2.1
 functional_areas:
   - Cloud
   - Setup

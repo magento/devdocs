@@ -1,12 +1,6 @@
 ---
-group: contributor
-subgroup: contributor_docs
+group: contributor-guide
 title: Magento Definition of Done
-menu_title: Magento Definition of Done
-menu_order: 2
-menu_node:
-version: 2.0
-redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
 
 ### Overview
@@ -34,7 +28,7 @@ All changes, additions, and extensions to the product should be documented by th
 The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
 Ideally, the information about the submitted code should be added to the official Magento DevDocs {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
-Contributors are asked to submit the doc as a Pull Request to the [DevDocs Github repo][4].
+Contributors are asked to submit the doc as a Pull Request to the [DevDocs GitHub repo][4].
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message.
 
@@ -46,7 +40,7 @@ Any backwards-incompatible changes must also be recorded in the accompanying doc
 | ----------- | ------------------ | --------------------- |
 | description | example            | example               |
 
-### Tests 
+### Tests
 
 #### Automated Tests
 
@@ -115,7 +109,7 @@ Code to cover:
 
 * Must cover any formal backwards-incompatible changes on code level.
 For more information, see
-<a href="{{ page.baseurl }}/architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
+[Magento's backward compatibility policy]({{ page.baseurl }}/architecture/back-compatibility.html).
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
 

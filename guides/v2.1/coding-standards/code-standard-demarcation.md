@@ -5,8 +5,6 @@ landing-page: Coding standards
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
-version: 2.1
-redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 functional_areas:
   - Standards
 ---
@@ -21,7 +19,8 @@ functional_areas:
    <li>Reinstate emphasis on using of {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} templates.</li>
    <li>Reinstate emphasis on decoupling HTML, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and JS from {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes.</li>
 </ul>
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.</p>
+
+Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.
 
 ## Semantics
 
@@ -181,9 +180,8 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-<div class="bs-callout bs-callout-info" id="info">
-   <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
 <ul>
    <li>Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.</li>
    <li>Improves style extensibility.</li>

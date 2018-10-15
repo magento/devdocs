@@ -1,12 +1,13 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Develop data and schema patches
-version: 2.3
 ---
 
 A data patch is a class that contains data modification instructions. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Data/<Patch_Name>.php` file and implements `\Magento\Setup\Model\Patch\DataPatchInterface`.
 
 A schema patch contains custom schema modification instructions. These modifications can be complex. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Schema/<Patch_Name>.php` file and implements `\Magento\Setup\Model\Patch\SchemaPatchInterface`.
+
+Unlike the declarative schema approach, patches will only be applied once. A list of applied patches is stored in the `patch_list` database table. An unapplied patch will be applied when running the `setup:upgrade` from the Magento CLI. 
 
 Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`.
 
@@ -111,7 +112,7 @@ The following code sample defines a data patch class that has a dependency.
         {
             /**
              * This internal Magento method, that means that some patches with time can change their names,
-             * but changing name should not affect installation process, thats why if we will change name of the patch
+             * but changing name should not affect installation process, that's why if we will change name of the patch
              * we will add alias here
              */
             return [];

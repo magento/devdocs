@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 02_Security
+group: configuration-guide
 title: Prevent cache poisoning
-menu_title: Prevent cache poisoning
-menu_order: 10
-menu_node:
-version: 2.1
 functional_areas:
   - Configuration
   - System
@@ -21,9 +16,8 @@ This solution applies to the following Magento versions:
 *	2.0.10 and later
 *	2.1.2 and later
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This topic is intended for experienced IIS administrators. </p>
-</div>
+{:.bs-callout .bs-callout-info}
+This topic is intended for experienced IIS administrators.
 
 ### Description
 
@@ -44,17 +38,5 @@ We provide the option to remove the values of all of the preceding headers based
 *	If `Enable_IIS_Rewrites` is set to `0`,  the values of the headers are removed.
 *	If `Enable_IIS_Rewrites` is set to `1`, the values of the headers are left intact.
 
-	<div class="bs-callout bs-callout-warning">
-    	<p>If you set <code>Enable_IIS_Rewrites</code> to <code>1</code>, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.</p>
-       
-	</div>
-
-
-<!--
-	http://www.iis.net/learn/extensions/url-rewrite-module/url-rewrite-module-configuration-reference
-
-	http://www.iis.net/learn/extensions/url-rewrite-module/url-rewrite-module-configuration-reference#UsingServerVars
-
-	http://www.iis.net/learn/extensions/url-rewrite-module
-
-	http://www.iis.net/learn/extensions/url-rewrite-module/setting-http-request-headers-and-iis-server-variables -->
+	{:.bs-callout .bs-callout-warning}
+  If you set `Enable_IIS_Rewrites` to `1`, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.

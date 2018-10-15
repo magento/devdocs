@@ -1,11 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Get your authentication keys
 menu_title: Get your authentication keys
 menu_order: 26
 menu_node:
-version: 2.1
 functional_areas:
   - Install
   - System

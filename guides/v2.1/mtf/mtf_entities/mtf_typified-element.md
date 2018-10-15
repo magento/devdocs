@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Typified element
-version: 2.1
 ---
 
 A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}Store View{% endglossarytooltip %} Selector. Typified elements are often used as elements of a form or a grid.
@@ -20,8 +19,9 @@ This topic discusses how to create classes for a typified element and to use the
 
 A typified element class in the FTF contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a [basic class](#basic_class) or a [Magento class](#magento_class) to cover your typified element.
 
-<div class="bs-callout bs-callout-tip">
-  <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with a form.</p>
+<div class="bs-callout bs-callout-tip" markdown="1">
+  
+The most important methods are `setValue()` and `getValue()`. These methods are required when you work with a form.
 </div>
 
 ### Classes and relations with UI {#classes}
@@ -75,7 +75,7 @@ __Step 1.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}P
  
  It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital `E` in the `Element.php`. For example: `OptgroupselectElement.php`.
  
-{%highlight php %}
+```php
  
  <?php
 
@@ -87,7 +87,7 @@ __Step 1.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}P
  {
     //
  }
-  {%endhighlight %}
+  ```
  
 __Step 2.__ Extend your class from the [default element](#basic_class) or the [Magento custom element](#magento_class) class
 
@@ -167,7 +167,7 @@ Typified elements can be used in the [form mapping][].
 
 The following code is a corresponding mapping with the typified element `optgroupselect` from the previous image:
 
-{%highlight xml%}
+```xml
 <mapping strict="0">
     <wrapper>store</wrapper>
     <fields>
@@ -181,7 +181,7 @@ The following code is a corresponding mapping with the typified element `optgrou
         </is_active>
     </fields>
 </mapping>
-{%endhighlight%}
+```
 
 
 <!-- PICTURE DEFINITIONS -->

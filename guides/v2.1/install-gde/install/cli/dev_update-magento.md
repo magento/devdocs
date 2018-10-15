@@ -1,11 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Update the Magento application
 menu_title: Update the Magento application
 menu_order: 2
 menu_node:
-version: 2.1
 redirect_from: /guides/v2.0/install-gde/install/cli/instgde-install-magento-update-db
 functional_areas:
   - Install

@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Step 3. Enable/Disable
 menu_title: Enable/Disable
 menu_node:
 menu_order: 11
-version: 2.2
 functional_areas:
   - Upgrade
 ---

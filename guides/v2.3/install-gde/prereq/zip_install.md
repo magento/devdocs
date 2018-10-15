@@ -1,11 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: R_General
 title: (Easy) Install the Magento archive on your server
 menu_title: (Easy) Install the Magento archive on your server
 menu_order: 1
 menu_node: parent
-version: 2.2
 functional_areas:
   - Install
   - System
@@ -21,8 +20,6 @@ The audience for this topic is anyone who downloaded a compressed Magento softwa
 {% include install/prereq.md %}
 
 ## Get the Magento software
-
-{% include install/archives-php-issue.md %}
 
 {% include install/get-software_zip.md %}
 

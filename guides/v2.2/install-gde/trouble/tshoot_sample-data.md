@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
 menu_node:
 menu_order: 500
-version: 2.2
 functional_areas:
   - Install
   - System
@@ -13,14 +12,6 @@ functional_areas:
 ---
 
 This topic discusses solutions to errors you might encounter installing optional sample data.
-
-#### Contents
-
-*	[Symptom (file system permissions)](#trouble-samp-perms)
-*	[Symptom (production mode)](#trouble-samp-prod)
-*	[Symptom (security)](#trouble-samp-secy)
-*	[Symptom (develop branch)](#trouble-samp-dev)
-*	[Symptom (max_execution_time)](#trouble-samp-max)
 
 ### Symptom (file system permissions) {#trouble-samp-perms}
 

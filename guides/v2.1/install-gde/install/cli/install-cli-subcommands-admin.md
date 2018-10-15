@@ -1,7 +1,6 @@
 ---
-group: install_cli
+group: installation-guide
 title: Create, edit, or unlock a Magento administrator account
-version: 2.1
 redirect_from: /guides/v2.0/install-gde/install/install-cli-subcommands-admin.html
 functional_areas:
   - Install
@@ -10,7 +9,7 @@ functional_areas:
 ---
 
 ## First steps
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 

@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Customize email templates
 menu_title: Customize email templates
 menu_order: 4
-version: 2.0
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-email.html
 functional_areas:
   - Frontend
 ---
@@ -64,10 +62,8 @@ To add the store and sales related information to a template, use system variabl
 
 System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Emails** section.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>You can also create your own custom variables and set their values in the Admin, under <strong>SYSTEM</strong> > <b>Custom Variables</b>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
 
 To add a variable to your template content:
 
@@ -79,10 +75,8 @@ To add a variable to your template content:
 5. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- <p>The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a <code>&lt;!--@vars @--&gt;</code> comment at the top of each template on the file system. (For example, look at <a href="{{ site.mage2000url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8">app/code/Magento/Customer/view/frontend/email/account_new.html</a>.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `<!--@vars @-->` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2000url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
 
 ## Styles for email templates   {#email-styles}
 
@@ -284,7 +278,8 @@ To customize your logo using a theme:
 1. In the Magento Admin, navigate to **STORES** > Settings > **Configuration** > GENERAL > **Design** > **Emails**
 2. In the **Scope** drop-down list, select the scope for which you want to set a logo (a certain store view, the whole website, or default config). 
 3. Upload your logo and specify the alternative text for it.
-<img src="{{ site.baseurl }}/common/images/email_configuration.png" alt="System configuration">
+
+    ![System configuration]({{ site.baseurl }}/common/images/email_configuration.png)
 
 4. Enter values for **Logo Width** and **Logo Height**. Based on the preceding example, you would enter `200` and `100`, respectively.
 5. Click the **Save Config** button.
@@ -334,11 +329,8 @@ Incorrect:
     {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
 {% endraw %}
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>
+{: .bs-callout .bs-callout-info }
 Exception: argument value can contain spaces if it is enclosed in brackets.
-</p>
-</div>
 
 ## Supported email clients and devices   {#supported-clients}
 

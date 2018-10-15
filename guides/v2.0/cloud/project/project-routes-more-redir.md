@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Redirects
 menu_title: Redirects
@@ -7,7 +7,6 @@ menu_order: 40
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
-version: 2.0
 functional_areas:
   - Cloud
   - Setup

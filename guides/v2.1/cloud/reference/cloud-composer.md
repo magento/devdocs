@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Composer
-version: 2.1
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
   - /guides/v2.1/cloud/cloud-composer.html
@@ -9,7 +8,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc) to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 Composer manages required libraries and dependencies for your project and installs them in the `vendor` directory.
 
@@ -38,7 +37,7 @@ The workflow is as follows:
 During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
 ## magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
-`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
+`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type) and does not contain any code.
 
 The metapackage depends on the appropriate versions of [`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig) and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. Therefore, to use {{site.data.var.ee}} version 2.1.4, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.1.4.
 

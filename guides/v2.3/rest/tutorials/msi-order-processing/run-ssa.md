@@ -1,6 +1,5 @@
 ---
 layout: tutorial
-group: rest
 title: Step 12. Run the Source Selection Algorithm
 subtitle: Order processing with MSI
 menu_title: Step 12. Run the Source Selection Algorithm
@@ -9,7 +8,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-version: 2.3
 functional_areas:
   - Integration
 ---
@@ -17,7 +15,7 @@ functional_areas:
 One of the most significant parts of MSI is the Source Selection Algorithm (SSA). SSA analyzes and determines the best match for sources and shipping based on the priorities you specified in [Link stocks and sources
 ]({{ page.baseurl }}/rest/tutorials/msi-order-processing/order-intro.html). The algorithm also provides a list of source items with quantities to deduct per each source item.
 
-For more information about shipping and SSAs, see the Wiki topic [Shipment and Order Management](https://github.com/magento-engcom/msi/wiki/Shipment-and-Order-Management){:target="_blank"}.
+For more information about shipping and SSAs, see the Wiki topic [Shipment and Order Management](https://github.com/magento-engcom/msi/wiki/Shipment-and-Order-Management).
 
 ## Get the list of algorithms
 
@@ -39,7 +37,7 @@ Currently, MSI supports only the default SSA for priority. Third-party developer
 
 **Payload**
 
-Not appliable
+Not applicable
 
 **Response**
 
@@ -101,6 +99,8 @@ Product | Source | Quantity
 `sp1` | Baltimore | 20
 `sp2` | Baltimore | 25
 `sp2` | Reno | 35
+{:style="table-layout:auto;"}
+
 
 ``` json
 {

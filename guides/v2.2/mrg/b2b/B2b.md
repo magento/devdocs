@@ -1,10 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_b2b module
 menu_title: B2b
 menu_order: 10
-version: 2.2
 ---
 
 ## Overview

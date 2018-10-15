@@ -1,12 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Customize the view of a checkout step
 subtitle: Customize Checkout
 menu_order: 2
 level3_subgroup: checkout-tutorial
-version: 2.1
 functional_areas:
   - Checkout
 ---
@@ -115,6 +114,5 @@ return $jsLayout;
 
 If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
 
-<div class="bs-callout bs-callout-info">
+{: .bs-callout .bs-callout-info" }
 Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is not loaded.
-</div>

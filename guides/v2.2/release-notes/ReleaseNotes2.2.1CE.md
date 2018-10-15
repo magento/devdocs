@@ -6,7 +6,6 @@ menu_title: Magento Open Source 2.2.1 Release Notes
 menu_order: 287
 level3_menu_node:
 level3_subgroup:
-version: 2.2
 ---
 *Patch code and release notes published on November 7, 2017.* 
 
@@ -42,9 +41,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ### Installation, upgrade, deployment
 
-<!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler </a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
+<!--- 80225 -->* We’ve improved the message that Magento displays during upgrade if any schema or data version in the `setup_modules` database is higher than the current module version in the code. *Fix submitted by community member <a href="https://github.com/schmengler" target="_blank">Fabian Schmengler</a> in pull request <a href="https://github.com/magento/magento2/pull/11064" target="_blank">11064</a>.*
 
-<!--- 75452 -->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from a unsuccessful commit, and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
+<!--- 75452 -->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from an unsuccessful commit and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. [GitHub-9955](https://github.com/magento/magento2/issues/9955)
 
 <!--- 80201 -->*  We’ve resolved a fatal error in the repository generator. Both `InputException` and `NoSuchEntityException` now require a Phrase object as their first constructor argument.  [GitHub-10601](https://github.com/magento/magento2/issues/10601)
 
@@ -92,13 +91,13 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 <!--- 80096 -->* We've fixed JavaScript date validation on the storefront. Previously, validation of the date of birth field during customer registration when changing the default locale did not work. *Fix submitted by community member <a href="https://github.com/joachimVT" target="_blank">Joachim Vanthuyne</a> in pull request <a href="https://github.com/magento/magento2/pull/11067" target="_blank">11067</a>.*
 
-<!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added a new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
+<!--- 80112 -->* We’ve added a CSS selector to remove an additional top-margin that was rendered when you added  a link widget to the footer in the Luma theme. Previously, when you added new footer links, the block of footer links did not line up with the default footer links. *Fix submitted by community member <a href="https://github.com/fragdochkarl" target="_blank">Sandro Wagner</a> in pull request <a href="https://github.com/magento/magento2/pull/11063" target="_blank">11063</a>.*
 
 <!--- 67296 -->* String localizations now work as expected when phrases include text wrapped with single quotation marks.
 
 <!--- 69964 -->* PHPCS can now correctly parse the syntax of PHP 7.x return types.
 
-<!--- 75455 -->* You can now generate unsecure URLs even when the current URL is secure.
+<!--- 75455 -->* You can now generate unsecured URLs even when the current URL is secure.
 
 <!--- 80204 -->* The Checkout authentication popup now contains the correct message. [GitHub-9533](https://github.com/magento/magento2/issues/9533), [GitHub-10627](https://github.com/magento/magento2/issues/10627)
 

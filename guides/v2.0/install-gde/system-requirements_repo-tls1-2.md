@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: TLS requirement for repo.magento.com
 menu_title: TLS requirement for repo.magento.com
@@ -7,7 +7,6 @@ menu_node:
 menu_order: 102
 level3_menu_node: level3child
 level3_subgroup: tls
-version: 2.0
 redirect_from:
   - guides/v2.0/install-gde/system-requirements-tls-parent.html
 functional_areas:

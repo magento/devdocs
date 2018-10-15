@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Add Staging and Production to Pro projects UI
-version: 2.1
 ---
 
 Previously, you accessed Pro Staging and Production environments by using an SSH login or submitting a ticket. We added features to the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html) to directly manage these environments without using an SSH login for specific options.
@@ -68,7 +67,7 @@ If you have additional code, such as new extensions in your Production environme
 
 We recommend verifying your user account access and permissions set in the Integration environment. When adding Staging and Production to the Project Web Interface, the process includes all user accounts and settings. You can modify the settings and values for these environments after they are added.
 
-1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 1.  From your project, click **Master** to view the environment information and settings.
 1.  Click ![configure your project]({{ site.baseurl }}/common/images/cloud_edit-project.png) **Configure environment**.
 1.  Click the **Users** tab to review the user accounts and permission configurations.
@@ -78,7 +77,7 @@ We recommend verifying your user account access and permissions set in the Integ
 
 When we convert your project to the new Project Web Interface, we add variables from Integration environment to the Staging and Production environments. You can review, modify, and add variables through the current Project Web Interface prior to conversion.
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 1. From your project, click the Integration `master` branch to view the environment information and settings.
 1. Click **Configure environment**.
 1. On the _Variables_ tab, review the environment variables.  
@@ -105,7 +104,7 @@ After conversion, you can manually migrate specific environment variables for St
     magento-cloud variable:list
     ```
 
-1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1.  Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 1.  Click the **Projects** tab and the name of your project.
 1.  Click the Staging or Production environment.
 1.  On the _Variables_ tab, review the environment variables.

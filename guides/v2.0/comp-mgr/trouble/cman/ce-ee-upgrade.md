@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Error upgrading from CE to EE
 menu_title: Error upgrading from CE to EE
 menu_node:
 menu_order: 500
-version: 2.0
 functional_areas:
   - Upgrade
 ---

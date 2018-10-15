@@ -1,12 +1,11 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: How to get the Magento software
 landing-page: Installation Guide
 menu_title: How to get the Magento software
 menu_node:
 menu_order: 1
-version: 2.1
 redirect_from:
   - /guides/v2.0/install-gde/continue.html
   - /guides/v2.1/install-gde/continue.html
@@ -68,7 +67,7 @@ Consult the following table for how to get started installing {{site.data.var.ce
 		<td><p>Contributes to the Magento codebase, files bugs, and customizes the Magento software. Highly technical, has their own Magento development server, understands Composer and GitHub.</p>
 			<p>Enables you to install the Magento software and extensions using either the <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.</p>
 			<p>You <em>cannot</em> use Magento in a production environment.</p>
-      <p>You <em>cannot</em> use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Composer and git commands</a>.</p></td>
+      <p>You <em>cannot</em> use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Composer and Git commands</a>.</p></td>
 		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
 			<li>Uses Composer to update package dependencies.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>

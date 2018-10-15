@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Bitbucket integration
-version: 2.1
 functional_areas:
   - Cloud
   - Setup
@@ -11,8 +10,7 @@ You can configure your Bitbucket repository to automatically build and deploy an
 
 For Pro projects **created before October 23, 2017**, this integration works on Integration environments _only_. You must [request an upgrade]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) before you can use this integration on Staging and Production environments.
 
-{: .bs-callout .bs-callout-info}
-We _strongly_ recommend using a private Bitbucket repository for your {{site.data.var.ece}} project.
+{% include cloud/note-private-repo.md %}
 
 Before you enable the integration, you must have the following:
 
@@ -81,17 +79,17 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
 
 ## Create an OAuth consumer
 
-The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg){:target="\_blank"}. You need the OAuth `key` and `secret` from this consumer to complete the next section.
+The Bitbucket integration requires an [OAuth consumer](https://confluence.atlassian.com/x/pwIwDg). You need the OAuth `key` and `secret` from this consumer to complete the next section.
 
 #### To create an OAuth consumer in Bitbucket:
 
-1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/){:target="\_blank"} account.
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
 
 1.  Click **Settings** > **Access Management** > **OAuth**.
 
 1.  Click **Add consumer** and configure it as follows:
 
-    ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud_oauth_consumer_config.png)
+    ![Bitbucket OAuth consumer configuration]({{ site.baseurl }}/common/images/cloud_oauth_consumer_config.png){: width="700px"}
 
     {: .bs-callout .bs-callout-warning}
     A valid **Callback URL** is not required, but you must enter a value in this field to successfully complete the integration.
@@ -124,7 +122,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
     ```
 
     {: .bs-callout .bs-callout-tip}
-    Be sure to use the name of your Bitbucket repository and not the URL. The integration will fail if you use a URL.
+    Be sure to use the name of your Bitbucket repository and not the URL. The integration fails if you use a URL.
 
 1.  Add the integration to your project using the `magento-cloud` CLI tool.
 
@@ -145,7 +143,38 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
     magento-cloud integrations -p '<project-ID>'
     ```
 
-## Test the integration
+    ```terminal
+    +----------+-----------+--------------------------------------------------------------------------------+
+    | ID       | Type      | Summary                                                                        |
+    +----------+-----------+--------------------------------------------------------------------------------+
+    | <int-id> | bitbucket | Repository: bitbucket_Account/magento-int.git                                  |
+    |          |           | Hook URL:                                                                      |
+    |          |           | https://magento-url.cloud/api/projects/<project-id>/integrations/<int-id>/hook |
+    +----------+-----------+--------------------------------------------------------------------------------+
+    ```
+    Make a note of the **Hook URL** to configure a webhook in BitBucket.
+
+### Add a webhook in BitBucket
+
+In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your BitBucket repository.
+
+1.  Log in to your [Bitbucket](https://bitbucket.org/account/signin/) account.
+
+1.  Click **Repositories** and select your project.
+
+1.  Click **Settings** > **Workflow** > **Webhooks**.
+
+1.  Click **Add webhook**.
+
+1.  In the _Add new webhook_ view, edit the following fields:
+
+    - **Title**: Magento Cloud Integration
+    - **URL**: Use the Hook URL from your `magento-cloud` integration list
+    - **Triggers**: The default is a basic _Repository push_
+
+1.  Click **Save**.
+
+### Test the integration
 
 After configuring the Bitbucket integration, test it by pushing a simple change to your Bitbucket repository.
 
@@ -202,7 +231,7 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     * - Indicates the current environment
     ```
 
-After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
+After you create a new environment, you can push the corresponding branch to your remote Bitbucket repository using regular Git commands. Subsequent changes to your branch in Bitbucket automatically build and deploy the environment.
 
 ## Remove the integration
 
@@ -224,4 +253,4 @@ You can safely remove the Bitbucket integration from your project without affect
     magento-cloud integration:delete <project-ID>
     ```
 
-Also, you can remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the _Settings_ page.
+Also, you can remove the Bitbucket integration by logging in to your Bitbucket account and revoking the OAuth grant on the account _Settings_ page.

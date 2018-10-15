@@ -1,11 +1,10 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 05_Package
 title: Package
 menu_title: Package
 menu_order: 1
 menu_node: parent
-version: 2.1
 redirect_from: /guides/v2.0/extension-dev-guide/package.html
 ---
 

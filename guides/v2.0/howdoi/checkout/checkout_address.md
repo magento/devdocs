@@ -1,12 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a custom shipping address renderer
 subtitle: Customize Checkout
 menu_order: 10
 level3_subgroup: checkout-tutorial
-version: 2.0
 functional_areas:
   - Checkout
 ---

@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Incorrect credentials
 menu_title: Incorrect credentials
 menu_order: 7
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Configuration
@@ -32,7 +31,7 @@ To see the error log:
 
 To resolve this issue, you must clone the project locally and update `auth.json` with the correct {{site.data.var.ee}} [authorization keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) and run `composer update` to update project dependencies. After that, you can deploy your project successfully and get started with your development.
 
-Make sure you're using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html){:target="_blank"}.
+Make sure you're using your own keys, and *not* [shared account keys](http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html).
 
 #### Get started
 

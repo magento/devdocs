@@ -1,8 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Illustration of customizing templates
-version: 2.1
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-sample.html
 functional_areas:
   - Frontend
 ---
@@ -17,7 +15,7 @@ In the Magento basic Blank theme, in the mini shopping cart, products are listed
 
 OrangeCo decided they want to change this and display the product list before the **Go to Checkout** button.
 
-The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2100url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html){:target="\_blank"}.
+The template responsible for displaying the mini-shopping cart items and controls is [`<Magento_Checkout_module_dir>/view/frontend/web/template/minicart/content.html`]({{site.mage2100url}}app/code/Magento/Checkout/view/frontend/web/template/minicart/content.html).
 Here is the part of the code OrangeCo worked with:
 
 ![code1]({{site.baseurl}}/common/images/templ_overview_code121.png)

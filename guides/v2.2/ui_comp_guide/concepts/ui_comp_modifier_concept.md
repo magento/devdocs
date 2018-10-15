@@ -1,10 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: About PHP modifiers in UI components
-menu_title: About PHP modifiers in UI components
-menu_order: 40
-version: 2.2
 ---
 
 ## What's in this topic
@@ -30,8 +26,7 @@ In your custom module, add a class that implements [`\Magento\Ui\DataProvider\Mo
 
 Sample modifier:
 
-{% highlight php%}
-
+```php
 <?php
 
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
@@ -83,13 +78,13 @@ class Example extends AbstractModifier
         return $data;
     }
 }
-{%endhighlight%}
+```
 
 **Step 2**
 
 Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adminhtml/di.xml`. This declaration looks like the following:
 
-{% highlight xml %}
+```xml
 <virtualType name="%YourNamespace\YourModule\DataProvider\Modifier\Pool%" type="Magento\Ui\DataProvider\Modifier\Pool">
      <arguments>
          <argument name="modifiers" xsi:type="array">
@@ -100,11 +95,11 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
          </argument>
      </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 , where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type).
 
-(If you want to use this sample in your `di.xml`, replace the sample values with with the real names of your entities.)
+(If you want to use this sample in your `di.xml`, replace the sample values with the real names of your entities.)
 
 **Step 3**
 

@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Magento file system ownership and permissions
 menu_title: Magento file system ownership and permissions
@@ -7,7 +7,6 @@ level3_menu_node: level3parent
 level3_subgroup: umask
 menu_node:
 menu_order: 29
-version: 2.1
 functional_areas:
   - Install
   - System

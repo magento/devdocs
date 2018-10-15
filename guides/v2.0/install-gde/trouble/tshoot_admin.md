@@ -1,7 +1,6 @@
 ---
-group: install_trouble
+group: installation-guide
 title: Error after logging in to the Magento Admin
-version: 2.0
 functional_areas:
   - Install
   - System

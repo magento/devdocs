@@ -1,7 +1,6 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Magento_CheckoutStaging module
-version: 2.1
 ee_only: true
 ---
 

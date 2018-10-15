@@ -1,7 +1,6 @@
 ---
 group: release-notes
 title: Magento 2.2 backward incompatible changes
-version: 2.2
 redirect_from: /guides/v2.2/release-notes/backward-incompatible-changes.html
 ---
 
@@ -175,7 +174,7 @@ was changed to
 `public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);`
 
 These changes won't affect the clients that use these interfaces, but this will affect the extensions that implemented these interfaces.
-In oder to adopt custom implementations of these interfaces, please, change method signature from `\Magento\Framework\Api\SearchCriteria` to `\Magento\Framework\Api\SearchCriteriaInterface` in your implementations.
+In order to adopt custom implementations of these interfaces, please, change method signature from `\Magento\Framework\Api\SearchCriteria` to `\Magento\Framework\Api\SearchCriteriaInterface` in your implementations.
 
 ### Affected {{site.data.var.ce}} repositories
 

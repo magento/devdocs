@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Message Queues
 menu_title: Message Queues
@@ -7,7 +7,6 @@ menu_order: 17
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.0
 redirect_from: /guides/v2.0/extension-dev-guide/message-queues.html
 functional_areas:
   - Services
@@ -19,7 +18,7 @@ In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional
 
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
-See <a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a> for information about setting up the message queue system.
+See [Configure message queue topology]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html) for information about setting up the message queue system.
 
 ## Send a message from the publisher to a queue
 
@@ -37,7 +36,7 @@ The procedure for instantiating a consumer differs, depending on which message q
 
 ### RabbitMQ
 
-This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`)listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
+This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
 {% highlight php startinline=true %}
 $this->consumerFactory->get('customer_created_listener')
@@ -71,6 +70,6 @@ The following sample introduces a runtime configuration that allows you to redef
 
 #### Related Topics
 
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html">Configure message queue topology</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Configure message queue topology]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)
+*	[Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

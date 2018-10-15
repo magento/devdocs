@@ -1,8 +1,6 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Technology stack
-version: 2.3
-redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
 ## Overview
@@ -20,11 +18,10 @@ Magento's highly modular structure includes the following open-source technologi
 
 *	{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} (dependency management package for PHP)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info }
 Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases.
-
-If you are interested in participating in Magento Community projects we welcome your help! See our <a href="https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902" target="_blank">ZenHub board</a> for a full list of outstanding issues.
-</div>
+<br/><br/>
+If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902){: target="_blank"} for a full list of outstanding issues.
 
 ### Database
 
@@ -71,4 +68,4 @@ For more information, see the [Functional Testing Framework]({{page.baseurl}}/mt
 
 ## Related topics
 
-<a href="{{page.baseurl}}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+[Architectural basics]({{page.baseurl}}/architecture/archi_perspectives/ABasics_intro.html)

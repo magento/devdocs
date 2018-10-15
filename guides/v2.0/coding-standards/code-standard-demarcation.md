@@ -5,8 +5,6 @@ landing-page: Coding standards
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
-version: 2.0
-redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 functional_areas:
   - Standards
 ---
@@ -179,9 +177,8 @@ section[role="main"] { ... }
 
 ### You must not hard-code CSS styles in JavaScript files
 
-<div class="bs-callout bs-callout-info" id="info">
-   <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
 <ul>
    <li>Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.</li>
    <li>Improves style extensibility.</li>

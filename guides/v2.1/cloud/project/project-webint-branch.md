@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Manage branches with the Project Web Interface
 menu_title: Manage branches with the Interface
 menu_order: 20
 menu_node:
-version: 2.1
 redirect_from:
   - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html
@@ -146,7 +145,7 @@ To add a deployment key to your private GitHub repository, you must be the admin
 
 If your project needs to access multiple repositories, you can choose to
 attach an SSH key to an automated user account. Because this account won't
-be used by a human, it's referred to as a [*machine user*](https://developer.github.com/guides/managing-deploy-keys/){:target="_blank"}. You can then add the
+be used by a human, it's referred to as a [*machine user*](https://developer.github.com/guides/managing-deploy-keys/). You can then add the
 machine account as collaborator or add the machine user to a team with
 access to the repositories it needs to manipulate.
 

@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Functional Testing Framework Features
-version: 2.0
 ---
 
 The Functional Testing Framework is:

@@ -1,39 +1,33 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Enable or disable your component
 menu_title: Enable or disable your component
 menu_order: 8000
-version: 2.1
 redirect_from: /guides/v2.0/extension-dev-guide/enable-module.html
 ---
 
 After you have built the component and are ready to enable it in your Magento environment, do the following:
 
-<ol>
-<li>Disable the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} under <code>System->Cache Management</code>.</li>
-<li>Enter the following at the command line:
+1. Disable the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} under `System->Cache Management`.
+1. Enter the following in the command line:
 
-<pre>
-bin/magento module:enable --clear-static-content Component_Name
-bin/magento setup:upgrade
-</pre>
+   ``` bash
+   bin/magento module:enable --clear-static-content Component_Name
+   bin/magento setup:upgrade
+   ```
 
-where <code>Component_Name</code> is the name of the component you are enabling.
-</li>
-<li>Check under <code>Stores->Configuration->Advanced->Advanced</code> that the component is present.</li>
-</ol>
+   Where `Component_Name` is the name of the component you are enabling.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon-class"></span>
-  <p>The general order of operations for <code>setup:upgrade</code> is:</p>
+1. Check under `Stores->Configuration->Advanced->Advanced` that the component is present.
 
-  <ol>
-    <li><strong>Schema install/upgrade.</strong></li>
-    <li><strong>Schema post-upgrade</strong>&#8212; handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.</li>
-    <li><strong>Data install/upgrade</strong> &#8212; installs the data. Taken from <code>setup/InstallData.php</code>.</li>
-  </ol>
-</div>
+## Order of operations
+
+The general order of operations for `setup:upgrade` is:
+
+1.  **Schema install/upgrade.**
+2.  **Schema post-upgrade**— handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.
+3.  **Data install/upgrade** — installs the data. Taken from `setup/InstallData.php`.
 
 ## Disable a component
 

@@ -1,7 +1,6 @@
 ---
-group: install_cli
+group: installation-guide
 title: Uninstall modules
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-mods.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
@@ -25,7 +24,7 @@ You should uninstall a module only if you're certain you won't use it. Instead o
 This command checks _only_ dependencies declared in the `composer.json` file. If you uninstall a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that is _not_ defined in the `composer.json` file, this command uninstalls the module without checking for dependencies. This command does _not_, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, `rm -rf <path to module>`). As an alternative, you can [disable]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html) non-Composer modules.
 
 ## First steps {#instgde-cli-before}
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
 ## Uninstall modules {#instgde-cli-uninst-mod-uninst}
@@ -59,7 +58,8 @@ The module uninstall command performs the following tasks:
 
 3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
-	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php).
+	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
+
 4.	Removes the specified modules from the `setup_module` database table.
 4.	Removes the specified modules from the module list in the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html).
 5.	Removes code from the codebase using `composer remove`.

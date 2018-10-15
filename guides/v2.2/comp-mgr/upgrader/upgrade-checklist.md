@@ -1,11 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 32_UseUpgrade
 title: Run System Upgrade
 menu_title: Run System Upgrade
 menu_node: parent
 menu_order: 1
-version: 2.2
 functional_areas:
   - Upgrade
 ---

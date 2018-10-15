@@ -1,10 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Coding FAQ
 menu_title: Coding FAQ
 menu_order: 1000
-version: 2.0
 functional_areas:
   - Standards
 ---

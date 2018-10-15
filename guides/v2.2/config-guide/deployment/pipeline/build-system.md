@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: 045_pipeline
+group: configuration-guide
 title: Build System Setup
-menu_title: Build System Setup
-menu_node:
-menu_order: 1400
-version: 2.2
 functional_areas:
   - Configuration
   - Deploy
@@ -32,9 +27,8 @@ The build system does _not_ need any of the following:
 *	Magento database connection
 *	Magento software installed (only the code must be present)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The build machine can be on its own host or on the same host as an installed Magento system.
-</div>
 
 ## Configure the build machine
 

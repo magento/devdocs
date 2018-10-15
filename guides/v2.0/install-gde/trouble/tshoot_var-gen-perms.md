@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: Cannot write to the var/generation directory
 menu_title: Cannot write to the var/generation directory
 menu_node:
 menu_order: 9
-version: 2.0
 functional_areas:
   - Install
   - System

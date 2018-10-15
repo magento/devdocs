@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Component deployment failure
 menu_title: Component deployment failure
 menu_order: 15
 menu_node:
-version: 2.1
 functional_areas:
   - Cloud
   - Deploy

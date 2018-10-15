@@ -1,7 +1,6 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Name your component
-version: 2.1
 redirect_from:
   - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
@@ -45,9 +44,9 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
 * If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
 * We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
 
-### Example
+### Example `composer.json` file
 
-``` json
+```json
 {
     "name": "your-name/module-Acme",
     "description": "Test component for Magento 2",
@@ -63,7 +62,7 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
       "magento/module-webapi": "1.0.0-beta"
     },
     "type": "magento2-module",
-     "version": "1.0.0-beta",
+    "version": "1.0.0-beta",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
@@ -77,7 +76,7 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
 }
 ```
 
-Here:
+In this example:
 
 * `name` is the name of your component.
 * `description` is a concise explanation of your component's purpose.
@@ -88,14 +87,8 @@ Here:
 * `license` lists applicable licenses that apply to your component.
 * `autoload` instructs Composer to load the specified files.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
-</div>
-
-<!-- <div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div> -->
+{: .bs-callout .bs-callout-info}
+Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path) repository.
 
 #### Next
 

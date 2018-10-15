@@ -1,7 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Report XML
-version: 2.2
 functional_areas:
     - Reports
 ---

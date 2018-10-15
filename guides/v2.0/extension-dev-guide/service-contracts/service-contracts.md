@@ -1,11 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Service contracts
 menu_title: Service contracts
 menu_order: 2
-version: 2.0
-redirect_from: /guides/v1.0/extension-dev-guide/service-contracts/service-contracts.html
 functional_areas:
   - Services
 ---

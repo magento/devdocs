@@ -1,11 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Snapshots and backup management
 menu_title: Snapshots and backup management
 menu_order: 30
 menu_node:
-version: 2.0
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html
   - /guides/v2.1/cloud/admin/admin-snap.html
@@ -20,9 +19,8 @@ Creating a snapshot backs up the environment and because an environment is deplo
 A *snapshot* is a complete backup of an environment. It includes all
 persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code).
-</div>
 
 You can *restore* a snapshot up to 14 days after the snapshot was created.
 

@@ -1,8 +1,6 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Links
-version: 2.1
-redirect_from: /guides/v1.0/pattern-library/navigation/links/links.html
 ---
 Within the Magento application, users often need to navigate through information inside or outside of the application by using links. These links should follow this guideline.
 

@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Cannot install using nginx
 menu_title: Cannot install using nginx
 menu_node:
 menu_order: 20
-version: 2.1
 functional_areas:
   - Install
   - System

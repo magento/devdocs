@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Troubleshoot the Functional Testing Framework issues
-version: 2.1
 ---
 
 ### Installation issues {#install-issues}

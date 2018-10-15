@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 11_sites
 title: Tutorial&mdash;Set up multiple websites with Apache
 menu_title: Tutorial&mdash;Set up multiple websites with Apache
 menu_order: 9
 menu_node:
-version: 2.0
 functional_areas:
   - Configuration
   - System

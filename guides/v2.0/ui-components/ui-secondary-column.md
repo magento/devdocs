@@ -1,11 +1,10 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Column Component
 menu_title: Column Component
 menu_node:
 menu_order: 5
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-secondary-column.html
 
 ---

@@ -1,10 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: Tutorials
 title: Copying fieldsets
 menu_title: Copying fieldsets
 menu_order: 1000
-version: 2.0
 functional_areas:
   - Standards
 ---

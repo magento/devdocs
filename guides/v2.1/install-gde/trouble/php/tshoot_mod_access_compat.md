@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: 503 (Service Unavailable) errors accessing Magento software in a web browser
 menu_title: 503 (Service Unavailable) errors accessing Magento software in a web browser
 menu_node:
 menu_order: 3
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html
   - /guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html
@@ -42,7 +41,7 @@ On CentOS, `<name>` is `httpd`. On Ubuntu, `<name>` is `apache2`.
 
 #### Additional resources
 
-*	[Apache documentation about mod_access_compat](http://httpd.apache.org/docs/current/mod/mod_access_compat.html)
-*	[Apache documentation about mod_authz_host](http://httpd.apache.org/docs/current/mod/mod_authz_host.html)
-*	[Order, Allow, Deny from the Apache Definitive Guide](http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm)
-*	[askubuntu.com](http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts)
+*	[Apache documentation about mod_access_compat](http://httpd.apache.org/docs/current/mod/mod_access_compat.html){:target="_blank"}
+*	[Apache documentation about mod_authz_host](http://httpd.apache.org/docs/current/mod/mod_authz_host.html){:target="_blank"}
+*	[Order, Allow, Deny from the Apache Definitive Guide](http://docstore.mik.ua/orelly/linux/apache/ch05_06.htm){:target="_blank"}
+*	[askubuntu.com](http://askubuntu.com/questions/335228/changes-in-apache-config-between-12-04-2-and-12-04-3-lts){:target="_blank"}

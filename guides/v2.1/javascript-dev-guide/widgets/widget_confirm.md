@@ -1,8 +1,7 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Confirmation widget
-version: 2.1
 ---
 
 ## Overview
@@ -49,7 +48,7 @@ require([
 });
 ```
 
-For details about how to initialize a widget in a`.phtml` template, refer to the [Javascript initialization] topic.
+For details about how to initialize a widget in a`.phtml` template, refer to the [JavaScript initialization] topic.
 
 ## Options {#confirm_options}
 
@@ -98,7 +97,7 @@ The confirmation window content.
 
 ### `focus` {#confirm_focus}
 The selector of the element to be in focus when the confirmation window opens.
-If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
+If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not required, set `focus` to `none`.
 
 **Type**: String.
 
@@ -127,5 +126,5 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [\<Magento\_Ui\_module\_dir\>/view/base/web/js/modal/confirm.js]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
-[Javascript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
+[JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [navigation of the modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Manage variables
-version: 2.0
 redirect_from:
   - /guides/v2.1/cloud/live/config-reference-most.html
   - /guides/v2.2/cloud/live/config-reference-most.html
@@ -56,9 +55,10 @@ Platform variables that are expressed as base64-encoded JSON object can be up to
 
 Environment variables have an `env` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Variables are <em>hierarchical</em>, which means that if a variable is not overridden, it is inherited from the parent environment and is indicated as <code>inherited</code>.</p>
-<p>This enables you to define your development variables only once, and use them on all the child environments.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Variables are *hierarchical*, which means that if a variable is not overridden, it is inherited from the parent environment and is indicated as `inherited`.
+
+This enables you to define your development variables only once, and use them on all the child environments.
 </div>
 
 ## CLI: List the current environment variables {#cloud-env-list}
@@ -97,9 +97,8 @@ To list environment variables using Magento Cloud CLI:
 
 ## CLI: Add environment variables {#addvariables}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
-</div>
+{: .bs-callout .bs-callout-warning }
+Every time you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
 
 To create a variable using the command line:
 
@@ -113,6 +112,5 @@ To create a variable using the command line:
 
 You can add environment variables for active environments through the Project Web Interface. To create variables through the Project Web Interface, see [Set environment variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Everytime you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.
-</div>
+{: .bs-callout .bs-callout-warning }
+Every time you add or modify a variable using the Project Web Interface or the CLI, the branch will redeploy automatically.

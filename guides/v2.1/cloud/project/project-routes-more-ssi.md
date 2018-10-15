@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Server side includes
 menu_title: Server side includes
@@ -7,7 +7,6 @@ menu_order: 45
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: routes
-version: 2.1
 functional_areas:
   - Cloud
   - Setup
@@ -15,7 +14,7 @@ functional_areas:
 
 [Server side includes](http://httpd.apache.org/docs/current/howto/ssi.html){:target="_site"} (SSI) are directives in {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} pages that get evaluated on the server while the pages are being rendered. Use of {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %} includes enables you to add dynamically generated content to an existing HTML page without having to serve the entire page.
 
-More information about [nginx SSI](http://nginx.org/en/docs/http/ngx_http_ssi_module.html){:target="_blank"}.
+More information about [nginx SSI](http://nginx.org/en/docs/http/ngx_http_ssi_module.html).
 
 You can activate or deactivate SSI on a per-route basis in your
 `.magento/routes.yaml`; for example:

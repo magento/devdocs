@@ -7,7 +7,6 @@ menu_order: 388
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-version: 2.0
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.2.html
 functional_areas:
@@ -26,7 +25,7 @@ We made the following change in this release:
 We made the following fixes in this release:
 
 * Improved the performance of static file deployment.
-*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="\_blank"}.
+*	You can now upgrade to version 2.1.2 if you enabled [static file signatures](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html){:target="_blank"}.
 *   You no longer need a `pub/front-static.php` in your template.
 *   We now back up `env.php` before disabling the Redis cache during deployment.
 *   Patches are now applied in alphabetical order.
@@ -47,9 +46,8 @@ This is a known issue with Magento core software; we're actively working to addr
 2.  Click **Support** > **Submit ticket** from the top menu.
 3.  Follow the prompts to open an issue with Support.
 
-<div class="bs-callout bs-callout-warning">
-    <p>This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}/cloud/reference/discover-arch.html">Architecture</a>.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+This issue affects Staging and Production environments only. There are no issues in an Integration environment. For a discussion of these terms, see [Architecture]({{ page.baseurl }}/cloud/reference/discover-arch.html).
 
 ### {{site.data.var.ee}} Release Notes
 *	[{{site.data.var.ee}} 2.0.10 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html)

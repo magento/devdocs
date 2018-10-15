@@ -1,27 +1,25 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Z_continue
 title:
 menu_title: Next&mdash;Installation part 2, installing
 menu_node: parent
 menu_order: 1
-version: 2.0
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-<div class="bs-callout bs-callout-tip">
-  <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
-</div>
+{: .bs-callout .bs-callout-tip }
+Totally lost? Need a helping hand? Try our [installation quick reference (tutorial)]({{ page.baseurl }}/install-gde/install-quick-ref.html) or [installation roadmap (reference)]({{ page.baseurl }}/install-gde/install-roadmap_part1.html).
 
-## Installation options: command line or Setup Wizard
+## Installation options: Setup Wizard or Command Line
 
-Now that you've installed prerequisites and taken the first steps (merchant, system integrator, or developer), you're ready to install the Magento software in any of the following ways:
+Now that you've installed prerequisites and taken the first steps (merchant, system integrator, or developer), you're ready to install the Magento software in one of the following ways:
 
-*	Using the web-based <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a>, which is better for less experienced users or anyone who has a hosting provider (especially if you don't have access to the Magento server)
-*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>, which gives you more control but requires more experience and also access to the Magento server
+*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Setup Wizard</a>&mdash;Recommended for less-experienced users or anyone who has a hosting provider, especially if you do not have access to the Magento server
+*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>&mdash;Recommended for advanced users with access to the Magento server
 
 ## Already installed the Magento software?
 

@@ -1,11 +1,10 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Build
 menu_title: Build
 menu_order: 1
 menu_node: parent
-version: 2.1
 redirect_from: /guides/v2.0/extension-dev-guide/build.html
 ---
 

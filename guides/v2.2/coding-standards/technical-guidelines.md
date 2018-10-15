@@ -1,7 +1,6 @@
 ---
 group: coding-standards
 title: Technical guidelines
-version: 2.2
 redirect_from:
     - /guides/v2.2/coding-standards/technical-guidelines/technical-guidelines.html
 functional_areas:
@@ -44,7 +43,7 @@ Use [RFC2119] to interpret keywords like:
 
 1.3. Type hints for scalar arguments SHOULD be used.
 
-1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled.
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces SHOULD NOT have this declaration.
 
 ## 2. Class design
 
@@ -615,7 +614,7 @@ We are reviewing this section and will publish it soon.
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build front-end applications.
+10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -784,5 +783,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: https://github.com/magento/magento2/blob/2.1/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: {{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

@@ -1,7 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Quick start. Prepare Magento application
-version: 2.2
 ---
 
 ## Change WYSIWYG settings
@@ -28,11 +27,13 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 ## Refresh page cache
 
 * Go to **Cache Management**.
+
 ![Cache Management message]({{ site.baseurl }}/common/images/ftf/mtf_cache_mngt.png){:width="650px"}
 
 * Select the checkboxes next to **Configuration** and **Page Cache**.
-* * From the **Actions** list in the upper left, click **Refresh**.
-* * Click **Submit**.
+* From the **Actions** list in the upper left, click **Refresh**.
+* Click **Submit**.
+  
 ## Enable CLI commands
 
 Functional tests require access to utilities working with Magento during test run. Depending on a web server, use the following instructions to enable access to the commands.
@@ -45,8 +46,7 @@ Copy `/dev/tests/functional/.htaccess.sample` to `/dev/tests/functional/.htacces
 
 In `nginx.conf`, add declaration blocks for each command listed in `/dev/tests/functional/.htaccess.sample` using the following example:
 
-{% highlight nginx %}
-
+```nginx
 location ~* ^/dev/tests/functional/utils($|/) {
     root $MAGE_ROOT;
     location ~ ^/dev/tests/functional/utils/command.php {
@@ -64,9 +64,7 @@ location ~* ^/dev/tests/functional/utils($|/) {
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
         include        fastcgi_params;
     }
-
-{% endhighlight %}
-
+```
 
 [&lt;&lt; Adjust configuration]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html)
 

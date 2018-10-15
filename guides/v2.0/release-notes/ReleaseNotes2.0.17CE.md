@@ -4,7 +4,6 @@ subgroup: 02_rel-notes
 title: Magento Open Source 2.0.17 Release Notes
 menu_title: Magento Open Source 2.0.17 Release Notes
 menu_order: 161
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 ---
@@ -76,15 +75,15 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ### Framework
 
-<!--- 57816 -->*  Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9333" target="_blank">9333</a>.*
+<!--- 57816 -->*  Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member [Pieter Hoste](https://github.com/hostep){: target="_blank"} in pull request [9333](https://github.com/magento/magento2/pull/9333){: target="_blank"}.*
 
-<!--- 60778 -->*  Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
+<!--- 60778 -->*  Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product frontend.
 
 ### General
 
 <!--- 61564 -->* When you edit a product list widget on a CMS page, Magento now shows previously set conditions. Previously, when you tried to edit a product list widget, the condition parameter was empty. [GitHub-6616](https://github.com/magento/magento2/issues/6616)
 
-<!--- 60543 -->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the "Shipping and Tracking" block did not work properly. 
+<!--- 60543 -->* The **Print Shipping Label** link now displays on the product frontend. Previously, the layout for the "Shipping and Tracking" block did not work properly. 
 
 
 <!--- 60822 -->* Enabling  **Admin > Stores > Configuration > Advanced > Developer > Merge CSS files** no longer degrades product performance. Previously, enabling this setting slowed down both frontend and Admin processes. [GitHub-4321](https://github.com/magento/magento2/issues/4321)
@@ -150,18 +149,18 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){: target="_blank"}.
 
 {% include install/releasenotes/ce_install_20.md %}
 
 ## Migration toolkits
 
-The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
+The [Data Migration Tool]({{ page.baseurl }}/migration/migration-migrate.html){: target="_blank"} helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html){: target="_blank"}. Consider exploring or contributing to the [ Magento Data Migration repository](https://github.com/magento/data-migration-tool){: target="_blank"}.
 
 An updated version of this toolkit is typically available several days after the patch release.
 
 
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
+The [Code Migration Toolkit](https://github.com/magento/code-migration){: target="_blank"} helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
 

@@ -1,7 +1,6 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Configure declarative schema
-version: 2.3
 ---
 
 Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:
@@ -21,15 +20,14 @@ and Magento determines the differences between the current table structure and w
 The following example, extracted from the `Catalog/etc/db_schema.xml` file, defines the `catalog_product_entity_datetime` table:
 
 ```xml
-<table name="catalog_product_entity_datetime" resource="default" engine="innodb"
-           comment="Catalog Product Datetime Attribute Backend Table">
-        <column xsi:type="int" name="value_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
+<table name="catalog_product_entity_datetime" resource="default" engine="innodb" comment="Catalog Product Datetime Attribute Backend Table">
+        <column xsi:type="int" name="value_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID" />
         <column xsi:type="smallint" name="attribute_id" padding="5" unsigned="true" nullable="false" identity="false"default="0" comment="Attribute ID"/>
-        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
-        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0"/>
-        <column xsi:type="datetime" name="value" on_update="false" nullable="true" comment="Value"/>
+        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID" />
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0" />
+        <column xsi:type="datetime" name="value" on_update="false" nullable="true" comment="Value" />
         <constraint xsi:type="primary" name="PRIMARY">
-            <column name="value_id"/>
+            <column name="value_id" />
         </constraint>
 </table>
 ```
@@ -38,16 +36,15 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
-</div>
 
 ### Top-level node
 
 The `schema` node defines the location of the `schema.xsd`  file.
 
 `<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="urn:magento:setup:Model/Declaration/Schema/etc/schema.xsd">`
+  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">`
 
 ### `table` node
 

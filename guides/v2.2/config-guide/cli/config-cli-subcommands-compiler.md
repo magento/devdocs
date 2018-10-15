@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Code compiler
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -19,11 +18,10 @@ Code compilation includes the following (in no particular order):
 -   Repositories code generation (generated code for APIs)
 -   Service data attributes generation (generated {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} classes for data objects)
 
-You can find code compilation classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="\_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
+You can find code compilation classes in the [\Magento\Setup\Module\Di\App\Task\Operation]({{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation) {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 The Magento software does not support the multi-tenant compiler, which includes the `bin/magento setup:di:compile-multi-tenant` command.
-</div>
 
 #### To run the single-tenant compiler: {#config-cli-subcommands-single}
 

@@ -1,13 +1,12 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup: product-create-page
 title: Customize product creation form
 menu_title: Initial Tasks
 menu_node:
 level3_subgroup: product-creation-form
 menu_order: 1
-version: 2.2
 ---
 
 This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. The product creation form is implemented using the [form UI component]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html).
@@ -35,4 +34,4 @@ This tutorial includes the following customizations:
 
 The following image is an illustration of the default view of the form on the **New Product** page:
 
-<img src="{{ site.baseurl }}/common/images/product_pmg.png" alt="The product creation page in Admin">
+![The product creation page in Admin]({{ site.baseurl }}/common/images/product_pmg.png)

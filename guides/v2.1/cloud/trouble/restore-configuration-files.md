@@ -1,7 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title:  Restore configuration files
-version: 2.1
 functional_areas:
   - Cloud
   - Deploy

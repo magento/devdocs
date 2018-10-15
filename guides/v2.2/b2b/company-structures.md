@@ -1,10 +1,9 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Manage company structures
 menu_title: Manage company structures
 menu_order: 15
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
@@ -208,7 +207,7 @@ Admin (structure_id = 2)
 
 **Sample Usage**
 
-`GET /V1/heirarchy/2`
+`GET /V1/hierarchy/2`
 
 **Payload**
 

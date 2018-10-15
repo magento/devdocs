@@ -1,12 +1,10 @@
 ---
 group: release-notes
-version: 2.3
 title: Backward incompatible changes in Magento Commerce
 ---
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
-</div>
 
 The changes are aggregated into two tables:
 

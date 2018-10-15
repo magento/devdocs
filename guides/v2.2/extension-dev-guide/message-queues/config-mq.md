@@ -1,11 +1,10 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Configure message queues
 menu_title: Configure message queues
 menu_order: 26
 ee_only: True
-version: 2.2
 level3_menu_node: level3child
 level3_subgroup: mq
 redirect_from: /guides/v2.2/config-guide/mq/config-mq.html
@@ -244,6 +243,6 @@ See [Migrate message queue configuration]({{ page.baseurl }}/extension-dev-guide
 
 ### Related Topics
 
-*   <a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*   <a href="{{ page.baseurl }}/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
-*   <a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+*   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*   [Manage message queues with MySQL]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*   [Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

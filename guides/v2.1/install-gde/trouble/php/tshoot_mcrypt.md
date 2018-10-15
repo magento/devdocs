@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_php
 title: The PHP mcrypt extension is not installed properly
 menu_title: The PHP mcrypt extension is not installed properly
 menu_node:
 menu_order: 355
-version: 2.1
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_mcrypt.html
   - /guides/v2.0/install-gde/trouble/tshoot_mcrypt.html
@@ -48,7 +47,7 @@ As a result, the Magento installer cannot locate the extension and the installat
 
 Determine if the mcrypt extension is loaded in any of the following ways:
 
-*	Set up a [phpinfo.php](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs) file in the web server's root directory and examine the output in a web browser.
+*	Set up a [phpinfo.php](http://kb.mediatemple.net/questions/764/How+can+I+create+a+phpinfo.php+page%3F#gs){:target="_blank"} file in the web server's root directory and examine the output in a web browser.
 *	Run the following command:
 
   ```bash

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up Elasticsearch service
 menu_title: Set up Elasticsearch service
@@ -7,14 +7,13 @@ menu_order: 70
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
-version: 2.1
 functional_areas:
   - Cloud
   - Setup
   - Search
 ---
 
-[Elasticsearch](https://www.elastic.co){:target="\_blank"} is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
+[Elasticsearch](https://www.elastic.co) is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
 
 *   Elasticsearch performs quick and advanced searches on products in the product catalog
 *   Elasticsearch Analyzers support multiple languages
@@ -28,6 +27,8 @@ If you're upgrading to Magento Commerce 2.1.3, you must change your configuratio
 
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
+
+{% include cloud/service-config-integration-starter.md %}
 
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
 
@@ -62,7 +63,7 @@ elasticsearch:
       - lang-python
 ```
 
-For example, if you are using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target="\_blank"}, you should add the following plugins:
+For example, if you are using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you should add the following plugins:
 
 ```yaml
 elasticsearch:
@@ -86,15 +87,15 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `cloud-gce`: GCE Cloud Plugin
 * `delete-by-query`: Support for deleting documents matching a given query
 * `discovery-multicast`: Ability to form a cluster using TCP/IP multicast messages
-* `lang-javascript`: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts
+* `lang-javascript`: JavaScript language plugin, allows the use of JavaScript in Elasticsearch scripts
 * `lang-python`: Python language plugin, allows the use of Python in Elasticsearch scripts
 * `mapper-attachments`: Mapper attachments plugin for indexing common file types
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 * `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite){:target="\_blank"}, the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
+If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
 
-For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html){:target="\_blank"}.
+For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
 

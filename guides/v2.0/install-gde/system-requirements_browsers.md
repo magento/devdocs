@@ -1,11 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: Supported browsers
 menu_title: Supported browsers
 menu_node:
 menu_order: 3
-version: 2.0
 functional_areas:
   - Install
   - System

@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 10_github
 title: GitHub errors
 menu_title: GitHub errors
 menu_node: parent
 menu_order: 1
-version: 2.1
 functional_areas:
   - Install
   - System

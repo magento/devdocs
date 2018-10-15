@@ -1,8 +1,7 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Calendar widget
-version: 2.1
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
  - /guides/v1.0/frontend-dev-guide/javascript/widget_calendar.html

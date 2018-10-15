@@ -1,7 +1,6 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Hardware recommendations
-version: 2.2
 functional_areas:
   - Configuration
   - System
@@ -25,7 +24,7 @@ Magento 2 has differing PHP memory requirements, based on how your system is dep
 Scenarios and expected PHP memory requirements:
 * Webnode serving only storefront pages: 256 MB
 * Webnode serving admin pages with a large catalog: 1 GB
-* Magento 2 cron indexing a site with a large catalog: >256 MB (See [advanced-setup]({{ page.baseurl }}/performance-best-practices/advanced-setup.md) to tune for optimal performance.)
+* Magento 2 cron indexing a site with a large catalog: >256 MB (See [advanced-setup]({{ page.baseurl }}/performance-best-practices/advanced-setup.html) to tune for optimal performance.)
 * Magento 2 compile and deploy of static assets: 756 MB
 * Magento 2 using the web setup wizard to install or upgrade a store with several 3rd party extensions: 2 GB
 * Magento 2 performance toolkit profile generation: >1 GB PHP RAM, >16 MB MySQL TMP_TABLE_SIZE & MAX_HEAP_TABLE_SIZE settings
@@ -43,4 +42,4 @@ If you are deploying multiple Magento 2 and using Redis or Varnish for your cach
 
 ## Network bandwidth
 
-Sufficient network bandwith is one of the key requirements for data exchange between web nodes, database(s), caching/session servers, and other services. Because Magento 2 effectively leverages caching for high performance, your system can actively exchange data with caching servers like Redis. If Redis is located on a remote server, you must provide a sufficient network channel between web nodes and the caching server to prevent bottlenecks on read/write operations.
+Sufficient network bandwidth is one of the key requirements for data exchange between web nodes, database(s), caching/session servers, and other services. Because Magento 2 effectively leverages caching for high performance, your system can actively exchange data with caching servers like Redis. If Redis is located on a remote server, you must provide a sufficient network channel between web nodes and the caching server to prevent bottlenecks on read/write operations.

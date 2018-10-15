@@ -1,10 +1,9 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: G_UI definition.xml
 title: definition.xml
 menu_title: definition.xml
 menu_node: parent
-version: 2.0
 redirect_from: /guides/v2.0/ui-library/ui-definition.html
 
 ---

@@ -1,7 +1,6 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Declarative Schema Overview
-version: 2.3
 ---
 
 Declarative Schema aims to simplify the Magento installation and upgrade processes. Previously, developers had to write database scripts in PHP for each new version of Magento. Various scripts were required for

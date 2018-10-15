@@ -1,10 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_BundleSharedCatalog module
 menu_title: BundleSharedCatalog
 menu_order: 40
-version: 2.2
 functional_areas:
   - B2B
   - Catalog

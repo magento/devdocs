@@ -1,11 +1,9 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: List of REST APIs by module
 menu_title: List of REST APIs by module
 menu_order: 3
-version: 2.0
-redirect_from: /guides/v1.0/rest/list.html
 functional_areas:
   - Integration
 ---

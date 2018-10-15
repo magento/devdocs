@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Layout file types
 menu_title: Layout file types
 menu_order: 3
-version: 2.0
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 functional_areas:
   - Frontend
 ---
@@ -183,7 +181,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;script&gt;</code></li>
         </ul>
       </td>
-      <td colspan="1"></td>
+      <td colspan="1" />
     </tr>
     <tr>
       <td colspan="1"><code>&lt;body&gt;&lt;/body&gt;</code></td>
@@ -199,7 +197,7 @@ The following table describes the instructions specific for page configuration f
           <li><code>&lt;action&gt;</code></li>
         </ul>
       </td>
-      <td colspan="1"></td>
+      <td colspan="1" />
     </tr>
     <tr>
       <td colspan="1"><code>&lt;attribute&gt;</code></td>
@@ -211,7 +209,7 @@ The following table describes the instructions specific for page configuration f
           </li>
         </ul>
       </td>
-      <td colspan="1"></td>
+      <td colspan="1" />
       <td colspan="1">
         <p>Specified for <code>&lt;html&gt;</code>, rendered like following:</p>
         <p><code>&lt;html name="value'&gt;</code></p>
@@ -251,7 +249,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"></td>
+      <td colspan="1" />
     </tr>
     <tr>
       <td colspan="1">
@@ -349,7 +347,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"></td>
+      <td colspan="1" />
     </tr>
     <tr>
       <td colspan="1">
@@ -383,7 +381,7 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <span>none</span>
       </td>
-      <td colspan="1"></td>
+      <td colspan="1" />
     </tr>
   </tbody>
 </table>
@@ -420,7 +418,7 @@ The following table describes the instructions specific for generic layout files
       <td colspan="1">
         <ul>
           <li>
-            <code >
+            <code>
               xsi:noNamespaceSchemaLocation="{path_to_schema}"
 </code>
           </li>
@@ -449,7 +447,7 @@ The following table describes the instructions specific for generic layout files
       <td colspan="1">
 none
       </td>
-<td></td>
+<td />
     </tr>
     <tr>
       <td colspan="1"><code>&lt;container&gt;</code></td>
