@@ -1,8 +1,8 @@
 ---
 group: cloud-guide
 subgroup: 080_setup
-title: Import Magento EE into Magento Commerce (Cloud)
-menu_title: Import Magento EE into Magento Commerce (Cloud)
+title: Import Magento code (Cloud)
+menu_title: Import Magento code into Magento Commerce (Cloud)
 menu_order: 154
 menu_node:
 level3_menu_node: level3child
@@ -15,39 +15,37 @@ functional_areas:
   - Cloud
   - Setup
 ---
-<! -- QUESTION: Do we really want to support a full overwrite? -->
 
-The following instructions walk-through importing your {{site.data.var.ee}} code into your current project code.
+Use the following instructions to import your {{site.data.var.ee}} code into your current {{ site.data.var.ece }} project code.
 
 {: .bs-callout .bs-callout-warning}
-When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master`. Any data, websites, stores, and so on will be lost.
-Before you continue, make sure there is nothing in your {{site.data.var.ece}} project that you want to keep.
+When you force push code from an existing Git branch to your {{site.data.var.ece}} project, you overwrite the project code in `master` which removes all data, sites, stores, and other development work you have done on the project. If you want to keep any files or directories, copy them to a directory outside of your project.
 
 ## Required information
 
-Before you continue, make sure you have the [encryption key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system.
+You need the following information to import code into your project:
+
+- [Encryption key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system
+
+- SSH or HTTPS {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your {{site.data.var.ee}} installation Git repository.
 
 ## Create a remote Git reference {#cloud-import-ref}
 
-This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your {{site.data.var.ee}} installation is located.
-
-Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your {{site.data.var.ee}} installation Git repository.
-
-To create a remote Git reference:
+Create a remote Git reference from your Cloud Git repository to the repository containing your {{site.data.var.ee}} installation so you can pull the {{site.data.var.ee}} code into your project.
 
 1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
-1.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
+1.  Copy `composer.json` to a _non-tracked directory_ so it doesn't get overwritten.
 
     ```
-   cp composer.json ../composer.json.cloud
-   ```
+    cp composer.json ../composer.json.cloud
+    ```
 
 1.  Rename your Cloud Git remote from `origin` to `cloud-project` to make it clear which repository is which:
 
     ```
-	git remote rename origin cloud-project
-	```
+    git remote rename origin cloud-project
+    ```
 
 1.  Add a remote upstream for your existing {{site.data.var.ee}} installation:
 
@@ -55,28 +53,30 @@ To create a remote Git reference:
     git remote add prev-project <git url>
     ```
 
-1.  Confirm what you've done so far.
+1.  Review the remote branch configuration.
 
     ```
     git remote -v
     ```
-
-    Results are displayed as follows.
-
-    <pre class="no-copy">cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
+    
+    Verify that the remote branch configuration matches the following sample configuration, with your project name instead of `ikyyrqvlgnrai`.
+    
+    ```
+    cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
     cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
     magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
     magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
     prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
-    prev-project    git@github.com:mygitusername/myeereponame.git (push)</pre>
+    prev-project    git@github.com:mygitusername/myeereponame.git (push)
+    ```
 
-1.  Make sure you're on the Cloud project `master` branch.
+1.  Checkout the Cloud project `master` branch.
 
     ```
     magento-cloud environment:checkout master
     ```
 
-1.  Make sure this `master` branch is set up to import code to the Cloud project.
+1.  Set the `cloud-project` branch as an upstream tracking branch for `master`.
 
     ```
     git fetch cloud-project
@@ -85,9 +85,7 @@ To create a remote Git reference:
 
 ## Import your {{site.data.var.ee}} code to your Cloud project {#cloud-import-imp}
 
-Before you continue, make sure you've completed all tasks discussed in the preceding section.
-
-To import your {{site.data.var.ee}} code to Cloud:
+After you have completed the git reference configuration, you can import the {{site.data.var.ee}} code.
 
 1.  Fetch the {{site.data.var.ee}} branch.
 
@@ -106,8 +104,8 @@ To import your {{site.data.var.ee}} code to Cloud:
     ```
     git push -f cloud-project master
     ```
-
-    A successful deployment is indicated by the following messages:
+	
+    If the import succeeds, the {{site.data.var.ece}} environment redeploys. 
 
     ```
     Re-deploying environment 43biovskhelhy-master-l5ut8gq.
@@ -126,10 +124,10 @@ To import your {{site.data.var.ee}} code to Cloud:
 
 Before you can use your existing {{site.data.var.ee}} code in {{site.data.var.ece}}, you must import the database.
 
-To import the Magento database in {{site.data.var.ece}}, you must know:
+You need the following information to complete this task:
 
--   The {{site.data.var.ece}} environment's [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh)
--   The database name, username, and password of the [Cloud database]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds)
+-   [SSH URL]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#ssh) for the {{site.data.var.ece}} environment 
+-   The database name, username, and password for the [Cloud database]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds)
 
 {:.bs-callout .bs-callout-info}
 This topic discusses how to import the Integration environment database. The database connection information is different for Staging and Production environments.
@@ -154,7 +152,7 @@ To drop and re-create the Cloud database:
 
     ```
     drop database main;
-   ```
+    ```
 
 1.  Re-create the database:
 
@@ -163,6 +161,7 @@ To drop and re-create the Cloud database:
     ```
 
 1.  At the `MariaDB [main]>` prompt, enter `exit`.
+
 1.  At the shell command prompt, enter the following command to re-create the database.
 
     ```
@@ -186,7 +185,7 @@ To update the unsecure base URL:
 1.  If you haven't already done so, SSH to the Cloud integration server.
 
     ```
-        magento-cloud ssh
+    magento-cloud ssh
     ```
 
 1.  Connect to the database.
