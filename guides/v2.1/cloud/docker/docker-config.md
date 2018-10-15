@@ -21,7 +21,7 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 
 This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
-### Prerequisites ###
+#### Prerequisites
 
 1.  You have PHP (version 7.0+) and [Composer](https://getcomposer.org) installed locally.
 
