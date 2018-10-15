@@ -33,6 +33,7 @@ versions:
 
 github_link: true
 feedback_link: true
+mage2bloburl: "https://github.com/magento/magento2/blob/"
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
@@ -54,7 +55,6 @@ githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
 mage2200url: "https://github.com/magento/magento2/blob/2.2/"
 
 # 2.3.0 variables
-
 gdeurl23: "/guides/v2.3/"
 githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
 mage2300url: "https://github.com/magento/magento2/blob/2.3-develop/"
