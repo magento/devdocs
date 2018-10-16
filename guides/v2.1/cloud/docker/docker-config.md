@@ -13,11 +13,22 @@ functional_areas:
 
 The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. To specify a particular version, use the following options:
 
-- PHP: `--php`
-- NGINX: `--nginx`
-- MariaDB: `--db`
+| Service     | Key        | Default value | Possible values |
+| ----------- | ---------- | ------------- | --------------- |
+| PHP         | `--php`    | 7.1           | 7.0, 7.1, 7.2   |
+| Nginx       | `--nginx`  | latest        | 1.9, latest     |
+| MariaDB     | `--db`     | 10            | 10              |
+{:style="table-layout:auto;"}
 
-This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
+This version also provides a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
+
+#### Prerequisites
+
+You must have the following software installed on your local workstation:
+
+-  PHP version 7.0 or later
+-  [Composer](https://getcomposer.org)
+-  [Docker](https://www.docker.com/get-started)
 
 #### To launch Docker:
 
@@ -30,15 +41,15 @@ This version also provides a ` docker:config:convert` command to convert PHP con
     ```bash
     composer install
     ```
-    
-    {: .bs-callout .bs-callout-info}
-    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
 
 1.  In your local environment, start the Docker configuration generator.
 
     ```bash
-    vendor/bin/ece-tools docker:build
+    ./vendor/bin/ece-tools docker:build
     ```
+
+    {: .bs-callout .bs-callout-info}
+    You can use the `--php` option to specify the version of PHP compatible with your {{site.data.var.ee}} version.
 
 1.  Copy the raw configuration files.
 
@@ -53,7 +64,7 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 1. Convert the PHP configuration files to Docker ENV files.
 
     ```bash
-    vendor/bin/ece-tools docker:config:convert
+    ./vendor/bin/ece-tools docker:config:convert
     ```
     This command generates the following Docker ENV files:
 
@@ -66,18 +77,18 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 1.  Build files to containers and run in the background.
 
     ```bash
-    docker-compose up -d --build
+    docker-compose up -d
     ```
 
 1. Install Magento in your Docker environment.
 
-    * Build Magento in the Docker container:
+    - Build Magento in the Docker container:
 
         ```bash
         docker-compose run build cloud-build
         ```
 
-    * Deploy Magento in the Docker container:
+    - Deploy Magento in the Docker container:
 
         ```bash
         docker-compose run deploy cloud-deploy
@@ -88,7 +99,7 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
-    -  [`http://localhost:8080`](http://localhost:8080)
+    -  [`http://localhost`](http://localhost)
 
     -  [`https://localhost`](https://localhost)
 
@@ -97,5 +108,5 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 Remove all components of your local Docker instance including containers, networks, volumes, and images.
 
 ```bash
-docker-compose down
+docker-compose down -v
 ```
