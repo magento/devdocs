@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.7 Release Notes
 
 ---
 
-*Patch code and release notes were published on November.*
+*Patch code and release notes were published on November 26, 2018.*
 
 
 We are pleased to present Magento Open Source 2.2.7. This release includes 25 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
@@ -23,7 +23,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 In addition to over 40 critical security fixes, look for the following highlights in this release:
 
 
-###### Core code highlights
+### Core code highlights
 
 Fixes and enhancements to the core code include improvements to general usability and also to the wishlist and shipping features. 
 
@@ -49,20 +49,21 @@ Fixes and enhancements to the core code include improvements to general usabilit
 
 
 ### Shipping
+
 The Magento Shipping **Click & Collect** feature offers merchants the ability to:
 
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
+* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
 
-	* Configure source locations available for Click & Collect pick-ups
+* Configure source locations available for Click & Collect pick-ups
 
-	* Updates to Shipment Form for UPS (US only)
+* Updates to Shipment Form for UPS (US only)
 
 Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
 
 
 
 
-### **Community contribution highlights**
+### Community contribution highlights
 
 Highlights of community contributions include fixes that improve ...:
 
@@ -141,11 +142,8 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-73245 -->* A merchant can now successfully create and save configurable products from the Admin in a multisite deployment. Previously, when a merchant created a configurable product with customizable options, Magento set its `has_options` and `required_options`  (in the `catalog_product_entity` table) to 0, and the merchant needed to click **Save** again to correctly add the product.  
 
 
-<!-- MAGETWO-93047 -->*
+<!-- MAGETWO-93047 -->
 
-rest/all/V1/categories/:categoryID deletes category name
-
-ask cloudvolks
 
 
 
