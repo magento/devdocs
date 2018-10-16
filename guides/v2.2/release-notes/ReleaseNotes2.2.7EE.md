@@ -56,10 +56,11 @@ Fixes and enhancements to the core code include improvements to general usabilit
 
 <!-- MAGETWO-92400 -->* Magento now removes information from all fields when you click **Reset** when creating a new Company from the Admin. Previously, Magento cleared all fields except for the **admin email** field. 
 
-MAGETWO-93050 Magento no longer permits merchants to open a new tab to edit Company users from the Company Users tabs. Previously, a merchant would try to open a new tab to edit users, and Magento threw an error.
+<!-- MAGETWO-93050 -->* Magento no longer permits merchants to open a new tab to edit Company users from the Company Users tabs. Previously, a merchant would try to open a new tab to edit users, and Magento threw an error.
 
 
 ### Shipping
+
 The Magento Shipping **Click & Collect** feature offers merchants the ability to:
 
 	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
@@ -109,10 +110,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-93990 -->* An adminstrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
 
 <!-- MAGETWO-90765 -->* Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this wwhen an adminstrator tried to edit or create a block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png`.￼
-
-
-EE only
-
 
 ### B2B
 
@@ -164,8 +161,6 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- MAGETWO-92682 -->* The Catalog Staging module no longer overrides trigger settings in scheduled indexed operations. Previously, when Magento indexes were configured to run on schedule, Magento  created the appropriate INSERT/UPDATE/DELETE triggers. Consequently, the UPDATE trigger script contained a condition to check if any values was  changed, and only then insert a record into changelog table of subscribed indexers. The Catalog Staging module prevented the inclusion of trigger conditions.
 
-EE ONLY
-
 
 <!-- MAGETWO-88641 -->* Magento now applies tier prices as expected after a customer logs into their shopping cart. [GitHub-14255](https://github.com/magento/magento2/issues/14255)
 
@@ -192,11 +187,11 @@ ask cloudvolks
 
 <!-- MAGETWO-93037 -->* Customers can no longer place orders for out-of-stock products. 
 
- <!-- ENGCOM-2743 -->* Magento no longer displays an undefined string on the Order Summary page. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17526](https://github.com/magento/magento2/pull/17526)*. [GitHub-17492](https://github.com/magento/magento2/issues/17492)
+<!-- ENGCOM-2743 -->* Magento no longer displays an undefined string on the Order Summary page. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17526](https://github.com/magento/magento2/pull/17526)*. [GitHub-17492](https://github.com/magento/magento2/issues/17492)
 
- <!-- ENGCOM-2901 -->* Magento now displays the wishlist icon on the shopping cart page on mobile devices. Previously, Magento cut off the wishlist icon on this page when viewed on a mobile device. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17877](https://github.com/magento/magento2/pull/17877)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
+<!-- ENGCOM-2901 -->* Magento now displays the wishlist icon on the shopping cart page on mobile devices. Previously, Magento cut off the wishlist icon on this page when viewed on a mobile device. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17877](https://github.com/magento/magento2/pull/17877)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
 
- <!-- ENGCOM-2789 -->* Magento no longer unchecks **My billing and shipping address are the same** checkbox when a customer uses an offline custom payment method for an order. Previously, when a customer used an offline custom payment method for an order, Magento unchecked this  checkbox on payment step if the shipping address was updated. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17593](https://github.com/magento/magento2/pull/17593)*. [GitHub-14819](https://github.com/magento/magento2/issues/14819)
+<!-- ENGCOM-2789 -->* Magento no longer unchecks **My billing and shipping address are the same** checkbox when a customer uses an offline custom payment method for an order. Previously, when a customer used an offline custom payment method for an order, Magento unchecked this  checkbox on payment step if the shipping address was updated. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17593](https://github.com/magento/magento2/pull/17593)*. [GitHub-14819](https://github.com/magento/magento2/issues/14819)
 
 <!-- MAGETWO-93038 -->* You can now see category changes on the storefront as expected after the changes have been saved. Previously, Magento did not display changes to product categories on the storefront until reindexing occurred even if **update on schedule** was set and the cache had been cleaned.
 
@@ -237,10 +232,7 @@ ask cloudvolks
 
 ### Customer
 
- <!-- ENGCOM-2746 -->*Magento now throws a descriptive error as expected when using a negative value that contains an invalid minus symbol to update reward points on a customer account. 
-
-
- *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+<!-- ENGCOM-2746 -->* Magento now displays the Customer group menu under the Customers  as expected. Previously, Magento displayed the customer group menu  under the Customers menu on the Admin, but displayed it  under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
 
 ### Directory
@@ -251,18 +243,10 @@ ask cloudvolks
 
 ### EAV
 
- <!-- ENGCOM-2642 -->*  
-
-(These values now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected.)
-
- Incorrect return value from Product Attribute Repository
-
-
-  *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15691](https://github.com/magento/magento2/pull/15691)*. [GitHub-4803](https://github.com/magento/magento2/issues/4803)
+<!-- ENGCOM-2642 -->*  The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15691](https://github.com/magento/magento2/pull/15691)*. [GitHub-4803](https://github.com/magento/magento2/issues/4803)
 
 
 ### Email
-
 
 <!-- MAGETWO-92786 -->* Magento now displays the correct width for the welcome email when viewed on a mobile device.  
 
@@ -320,7 +304,7 @@ ask cloudvolks
 
 <!-- ENGCOM-2322 -->* Magento now correctly displays the Datepicker widget when a user scrolls a  page containing it. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16775](https://github.com/magento/magento2/pull/16775)*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
 
- <!-- ENGCOM-2628 -->* Magento now disables the **Shop By** button on the search page when a customer sets additional search filters. *Fix submitted by [Andrea Rivadossi](https://github.com/AndreaRivadossi) in pull request [15650](https://github.com/magento/magento2/pull/15650)*. [GitHub-13445](https://github.com/magento/magento2/issues/13445)
+<!-- ENGCOM-2628 -->* Magento now disables the **Shop By** button on the search page when a customer sets additional search filters. *Fix submitted by [Andrea Rivadossi](https://github.com/AndreaRivadossi) in pull request [15650](https://github.com/magento/magento2/pull/15650)*. [GitHub-13445](https://github.com/magento/magento2/issues/13445)
 
 <!-- MAGETWO-83984-->* Magento now processes the oldest message queue entries first instead of last.
 
@@ -341,9 +325,9 @@ ask cloudvolks
 
 ### Infrastructure
 
- <!-- ENGCOM-2783 -->* The Web Setup wizard icon sidebar shortcut on the Admin now links as expected to the wizard. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17543](https://github.com/magento/magento2/pull/17543)*. [GitHub-13948](https://github.com/magento/magento2/issues/13948)
+<!-- ENGCOM-2783 -->* The Web Setup wizard icon sidebar shortcut on the Admin now links as expected to the wizard. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17543](https://github.com/magento/magento2/pull/17543)*. [GitHub-13948](https://github.com/magento/magento2/issues/13948)
 
- <!-- ENGCOM-2872 -->* The `$keepRation` parameter in the `Magento\Cms\Model\Wysiwyg\Images\Storage` class has been renamed to `$keepRatio`. *Fix submitted by [Martin Aarts](https://github.com/MartinAarts) in pull request [17776](https://github.com/magento/magento2/pull/17776)*. [GitHub-17587](https://github.com/magento/magento2/issues/17587)
+<!-- ENGCOM-2872 -->* The `$keepRation` parameter in the `Magento\Cms\Model\Wysiwyg\Images\Storage` class has been renamed to `$keepRatio`. *Fix submitted by [Martin Aarts](https://github.com/MartinAarts) in pull request [17776](https://github.com/magento/magento2/pull/17776)*. [GitHub-17587](https://github.com/magento/magento2/issues/17587)
 
 <!-- MAGETWO-73342 -->* Customers can now change product status by clicking on either the toggle element or label text, but not by clicking the area around a toggle element. Previously, if a customer  clicked on the area around a toggle element, Magento changed the state of the element. Unintended results could occur if a customer mistakenly clicked on the area around the element and didn't realize that the status had  changed.
 
@@ -372,21 +356,8 @@ ask cloudvolks
 
 #### PayPal
 
-<!-- MAGETWO-86712 -->* 
+<!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. *Fix submitted by [Jason Woods](https://github.com/driskell) in pull request [13133](https://github.com/magento/magento2/pull/13133)*. 
 
-Magento PayPal checkout fails if email sending fails / other payment does not 
-	1.	Description If PayPal checkout is used and, for whatever reason, the email sender throws an exception (maybe third-party integration fails to send), the PayPal order is still placed but the user is shown Something went wrong message and ends up in review page.
-This is in contrast to a cash payment or other payment method where the order is placed successfully.
-If PayPal checkout is used and, for whatever reason, the email sender throws an exception (maybe third-party integration fails to send), the PayPal order is still placed but the user is shown Something went wrong message and ends up in review page.
-This is in contrast to a cash payment or other payment method where the order is placed successfully.
-
-
-
-Pull Request:
- - title: Magento PayPal checkout fails if email sending fails / other payment does not
- - url: [magento/magento2#13133|https://github.com/magento/magento2/pull/13133]
- - contributor name: @driskell
- - contributor link: https://github.com/driskell
 
 
 
@@ -398,7 +369,7 @@ Pull Request:
 
 <!-- MAGETWO-86650 -->* The `.csv` export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this `.csv` file contained only only the first 20 rows of the report. 
 
- <!-- ENGCOM-2724 -->* The **Year-to-date** dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!-- ENGCOM-2724 -->* The **Year-to-date** dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 <!-- MAGETWO- 73585-->* Wishlist reports are available on the Admin as expected. 
@@ -413,17 +384,7 @@ Pull Request:
 
 ### Review
 
- <!-- ENGCOM-2720-->* 
-
-
- Fixed review list ajax if product not exist redirect to 404 page
- Steps to reproduce
-Visit review/product/listAjax/id/{{non existent id}/
-Expected result
-I would expect a 404 not found
-
-
-   *Fix submitted by [Ananth](https://github.com/Ananth747) in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
+<!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by [Ananth](https://github.com/Ananth747) in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
 
 
@@ -431,14 +392,11 @@ I would expect a 404 not found
 
 <!-- MAGETWO-93060 -->* Magento now throws a descriptive error as expected when using a negative value that contains an invalid minus symbol to update reward points on a customer account.
 
-ee only
-
-
 
 ### Sales
 
 
- <!-- ENGCOM-2623 -->* The `Magento\Sales\Block\Adminhtml\Order\Totalbar` class and totalbar template file  have been deprecated.  These components were formerly included but never implemented in the invoice create and credit memo create layout files. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [16656](https://github.com/magento/magento2/pull/16656)*. [GitHub-16653](https://github.com/magento/magento2/issues/16653)
+<!-- ENGCOM-2623 -->* The `Magento\Sales\Block\Adminhtml\Order\Totalbar` class and totalbar template file  have been deprecated.  These components were formerly included but never implemented in the invoice create and credit memo create layout files. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [16656](https://github.com/magento/magento2/pull/16656)*. [GitHub-16653](https://github.com/magento/magento2/issues/16653)
 
 
 <!-- MAGETWO-94291 -->* Magento now displays product price and shipping costs in the default currency that was configured for that  specific website for orders created from the Admin. Previously, when you have multi-site configuration with different default currencies for each website, the product and shipping prices shown while creating an admin order are incorrect.
@@ -459,7 +417,7 @@ ee only
 
 ### Search
 
- <!-- ENGCOM-2415 -->* JavaScript files are now located inside the `web/js` directory. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16582](https://github.com/magento/magento2/pull/16582)*. [GitHub-16302](https://github.com/magento/magento2/issues/16302)
+<!-- ENGCOM-2415 -->* JavaScript files are now located inside the `web/js` directory. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16582](https://github.com/magento/magento2/pull/16582)*. [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
 <!-- MAGETWO-91063 -->* Search synonyms are now available for all search engines deployed in your Magento store. Previously, search synonyms did not appear in the Admin menu when Elasticsearch 5.0+ was deployed. 
 
@@ -479,10 +437,6 @@ ee only
 
 <!-- MAGETWO-93810 -->* Customers can now view their completed order from the success page for orders that will be shipped to multiple addresses. Previously, when a customer took a link from the order success page to view their just-completed order, Magento displayed this error, **There has been an error processing your request**.
 
-
-### Swagger
-
-<!-- MAGETWO-93748 -->*. Swagger now  works as expected when JavaScript minification and merging are enabled. 
 
 
 #### Elasticsearch
@@ -516,12 +470,14 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 ### Swagger
 
- <!-- ENGCOM-2837 -->* Swagger now works as expected when JavaScript minification is enabled. Previously, when JavaScript minification was enabled, the swagger-ui-bundle.js became corrupted, although Swagger worked fine when minification was subsequently disabled, and the files were redeployed. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17626](https://github.com/magento/magento2/pull/17626)*. [GitHub-16927](https://github.com/magento/magento2/issues/16927)
+<!-- MAGETWO-93748 -->* Swagger now  works as expected when JavaScript minification and merging are enabled. 
+
+<!-- ENGCOM-2837 -->* Swagger now works as expected when JavaScript minification is enabled. Previously, when JavaScript minification was enabled, the swagger-ui-bundle.js became corrupted, although Swagger worked fine when minification was subsequently disabled, and the files were redeployed. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17626](https://github.com/magento/magento2/pull/17626)*. [GitHub-16927](https://github.com/magento/magento2/issues/16927)
 
 
 ### Testing
 
- <!-- ENGCOM-2616 -->* The ProcessCronQueueObserverTest.php integration test now works correctly. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
+<!-- ENGCOM-2616 -->* The ProcessCronQueueObserverTest.php integration test now works correctly. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
 
 
 
