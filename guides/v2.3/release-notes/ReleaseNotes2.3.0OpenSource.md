@@ -40,7 +40,7 @@ This release introduces significant tools to improve the developer experience: P
 
 * **Improvements to import and export**  focus on enhancements to existing processes, including the  addition of new object types. 
 
-* **Elasticsearch support for Magento Open Source**. Elasticsearch support was previously provided in Magento Commerce only. 
+* **Elasticsearch support for {{site.data.var.ce}}**. Elasticsearch support was previously provided in Magento Commerce only. 
 
 * **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
 
