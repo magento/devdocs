@@ -26,7 +26,7 @@ This version also provides a `docker:config:convert` command to convert PHP conf
 
 You must have the following software installed on your local workstation:
 
--  PHP (version 7.0+)
+-  PHP version 7.0 or later
 -  [Composer](https://getcomposer.org)
 -  [Docker](https://www.docker.com/get-started)
 
