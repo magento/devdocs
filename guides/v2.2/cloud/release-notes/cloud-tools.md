@@ -23,6 +23,17 @@ php ./vendor/bin/ece-tools list
 
 The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 	
+## v2002.0.15
+
+#### New features
+
+-  **Docker Updates for Cloud**—
+
+    -  <!-- MAGECLOUD- 2838 -->Added PHP 7.2—Updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
+
+#### Resolved Issues
+
+
 ## v2002.0.14
 
 #### New features
