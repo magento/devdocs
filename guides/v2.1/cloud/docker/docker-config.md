@@ -30,12 +30,6 @@ You must have the following software installed on your local workstation:
 -  [Composer](https://getcomposer.org)
 -  [Docker](https://www.docker.com/get-started)
 
-#### Prerequisites
-
-1.  You have PHP (version 7.0+) and [Composer](https://getcomposer.org) installed locally.
-
-1.  You have [Docker](https://www.docker.com/get-started) installed on your local machine.
-
 #### To launch Docker:
 
 1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud).
@@ -53,8 +47,6 @@ You must have the following software installed on your local workstation:
     ```bash
     ./vendor/bin/ece-tools docker:build
     ```
-    
-    *Note*: On this step you may need to provide `--php` option to use appropriate PHP version according on your Magento's version.
 
     {: .bs-callout .bs-callout-info}
     You can use the `--php` option to specify the version of PHP compatible with your {{site.data.var.ee}} version.
