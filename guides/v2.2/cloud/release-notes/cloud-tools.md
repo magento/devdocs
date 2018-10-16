@@ -29,7 +29,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  **Docker Updates for Cloud**—
 
-    -  <!-- MAGECLOUD- 2838 -->Added PHP 7.2—Updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
+    -  <!-- MAGECLOUD- 2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
 #### Resolved Issues
 
