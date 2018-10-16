@@ -24,13 +24,14 @@ In addition to over 40 critical security fixes, look for the following highlight
 
 ### Core code highlights
 
-Fixes and enhancements to the core code include improvements to general usability and also to the wishlist, shipping, and B2B features. 
+This release includes improvements to general usability of the core code plus enhancements to wishlist, shipping, and B2B features. 
+
 
 #### General improvements
 
 <!-- MAGETWO-94434 -->* The Magento UPS module has been updated to support new UPS API endpoints.
 
-<!-- MAGETWO-93990 -->* An adminstrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
+<!-- MAGETWO-93990 -->* An administrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
 
 <!-- MAGETWO-87437 -->* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle,  and configurable  product attributes were missing from the Google Tag Manager. 
 
@@ -76,9 +77,13 @@ Customers can also select Click & Collect locations during checkout. This featur
 
 ### Community contribution highlights
 
-Highlights of community contributions include fixes that improve ...:
+Highlights of community contributions include these fixes::
 
+<!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member [Jason Woods](https://github.com/driskell)!
 
+<!-- ENGCOM-2671 -->* You can now use REST to add a configurable product to a shopping cart without creating a duplicate product entry. Thanks to community member [zamboten](https://github.com/zamboten)! [GitHub-15028](https://github.com/magento/magento2/issues/15028)
+
+<!-- ENGCOM-1832 -->* The price range displayed for bundle products now shows only valid prices. Previously, Magento displayed special prices that had expired, even though the price in the customization and summary area was correct. Thanks to community member [Riccardo Tempesta](https://github.com/phoenix128)! [GitHub-15457](https://github.com/magento/magento2/issues/15457) 
 
 
 
