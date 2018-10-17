@@ -62,12 +62,10 @@ A successful HTTP 200 OK response will be sent for a valid application ID and se
 }
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
 * The `mage_id` value will identify the user account associated with the client application.
 * The `ust` value (user session token) must be used as the `Authorization Bearer` header for all subsequent API calls.
 * The session token is valid only for the time specified in `expires_in` (seconds).
 * When session token expires, a new token must be obtained as described above.
-</div>
 
 ## Authorization Bearer
 

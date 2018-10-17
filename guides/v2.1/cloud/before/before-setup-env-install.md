@@ -84,8 +84,8 @@ After you have installed Magento, you need to set the file system permissions an
     ```
 
     ```terminal
-    find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-    find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+    find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+    find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
     ```
 
     ```bash

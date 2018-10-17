@@ -114,7 +114,7 @@ pages:
         - label: Prepare your existing Magento Commerce system
           url: /cloud/setup/first-time-setup-import-prepare.html
 
-        - label: Import Magento Commerce into Magento Commerce (Cloud)
+        - label: Import Magento Commerce code
           url: /cloud/setup/first-time-setup-import-import.html
 
     - label: Configure your store

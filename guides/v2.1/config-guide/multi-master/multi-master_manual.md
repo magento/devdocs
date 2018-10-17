@@ -102,7 +102,7 @@ Sales database table names start with:
 *   `magento_sales_`
 *   The `magento_customercustomattributes_sales_flat_order` table is also affected
 
-{:.bs-callout .bs-callout-info}>
+{:.bs-callout .bs-callout-info}
 This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).
 
 For more information, see:
