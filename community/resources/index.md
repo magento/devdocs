@@ -21,6 +21,7 @@ Does it fill gaps in our current docs and provide important information?
 **Note:** Magento does not officially endorse any of the blogs, books, presentation, or podcasts linked below.
 They are listed here because the content has been well received within the Magento community.
 </div>
+
 ## Best Practices
 This section will cover a broad scope of Magento best practices. To name a few:
 * Project Setup
