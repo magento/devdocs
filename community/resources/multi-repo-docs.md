@@ -1,5 +1,4 @@
 ---
-layout: full-width
 group: community
 title: Multi-Repo Docs
 ---
