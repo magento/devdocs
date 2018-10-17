@@ -164,7 +164,7 @@ Previously, Magento did not create the RMA, and the store returned an error.
 <!-- ENGCOM-2758 -->*  You can now add a custom fieldset  to the Admin category editor without changing the position of  the General section (that is, the section that contains the **Enable category**, **Include in Menu**, and **Category Name** fields). Previously, Magento moved the General section to the last position of the form. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [17540](https://github.com/magento/magento2/pull/17540)*. [GitHub-15041](https://github.com/magento/magento2/issues/15041)
 
 
-<!-- MAGETWO-94080 -->* ASKED BRUCE
+<!-- MAGETWO-94080 -->* The Catalog Products List widget can now display products on the storefront that have specific attributes applied to the default Global scope.
 
 <!-- MAGETWO-94062 -->* Magento now displays a descriptive error message  when a customer tries to order a product in increments that are not allowed.
 
