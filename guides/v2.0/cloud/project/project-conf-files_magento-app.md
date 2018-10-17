@@ -220,8 +220,8 @@ The home directory, where your application is mounted, is `/app`, and that is th
 
 The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### [Example] Compile SASS files using grunt
-For example, to compile SASS files using grunt:
+#### [Example] Compile Sass files using grunt
+For example, to compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -239,7 +239,7 @@ hooks:
     php ./bin/magento magento-cloud:build
 ```
 
-You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
+You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ## `crons` {#cloud-yaml-platform-cron}
 `crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.

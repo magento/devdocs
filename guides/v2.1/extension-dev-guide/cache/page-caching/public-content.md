@@ -92,10 +92,9 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 }
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-- You should take caching into account even if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.
-- Only GET and HEAD methods are cacheable.
-</div>
+{:.bs-callout .bs-callout-info}
+Take caching into account if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.
+Only GET and HEAD methods are cacheable.
 
 ## Configure page variations
 
@@ -115,18 +114,6 @@ To make each cached URL totally unique, we use *HTTP context variables*. Context
 Context variables should not be specific to individual users because variables are used in cache keys for public content. In other words, a context variable per user results in a separate copy of content cached on the server for each user.
 
 Magento generates a hash based on all context variables (`\Magento\Framework\App\Http\Context::getVaryString`). The hash and current URL are used as keys for cache storage.
-
-<div class="bs-callout bs-callout-tip" markdown="1">
-Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2000url }}app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
-```
-sub vcl_hash {
-if (req.http.cookie ~ "X-Magento-Vary=") {
-hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
-}
-... more ...
-}
-```
-</div>
 
 For example, let's declare a context variable that shows a drinks catalog and advertisement to adult customers only. The following code snippet will create a copy of every page in Magento for users under the age of 18.
 
@@ -158,6 +145,19 @@ class CustomerAgeContextPlugin
 The `subject->setValue` argument specifies the value for newcomer context and is used to guarantee parity during cache key generation for newcomers and users who already received the `X-Magento-Vary` cookie.
 
 For another example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http/Context.php){:target="_blank"}.
+
+### `X-Magento-Vary` cookie
+
+Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2000url }}app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
+
+```
+sub vcl_hash {
+if (req.http.cookie ~ "X-Magento-Vary=") {
+hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
+}
+... more ...
+}
+```
 
 ## Invalidate public content
 

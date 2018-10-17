@@ -59,10 +59,9 @@ This data is updated when the relevant customer data changes, such as adding or 
 
   Since the final price of the shipment is calculated after product and quantity are specified in the final confirmation, "Cheapest price" is displayed in the confirmation pop-up for the customer.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{:.bs-callout .bs-callout-tip}
 The Instant Purchase capability logic is the most customizable part of the module.
 For more customization details, see the [Customization Points] section.
-</div>
 
 ### Order placement
 

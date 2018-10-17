@@ -6,7 +6,7 @@ functional_areas:
 ---
 ## What's in this topic
 
-Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the [LESS compilation mode]. What's next? Where to add the style changes? This topic gives quick answers.
+Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the [Less compilation mode]. What's next? Where to add the style changes? This topic gives quick answers.
 
 ## Simplest way to extend parent styles {#simple_extend} 
 
@@ -24,7 +24,7 @@ To extend the parent theme's styles in your theme:
     ...
     ```
 
-3. Add your LESS code in this file.
+3. Add your Less code in this file.
 
 Extending a theme using `_extend.less` is the simplest option when you are happy with everything the parent theme has, but want to add more styles.
 
@@ -96,10 +96,10 @@ To override the parent theme's styles for buttons in your theme:
 
 ## Recommended reading
 
--   [Compile LESS with Grunt]({{page.baseurl}}/frontend-dev-guide/css-topics/css_debug.html)
+-   [Compile Less with Grunt]({{page.baseurl}}/frontend-dev-guide/css-topics/css_debug.html)
 -   [CSS preprocessing]({{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html)
 -   [Magento UI library]({{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html)
 
 
-[LESS compilation mode]: {{page.baseurl}}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
+[Less compilation mode]: {{page.baseurl}}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
 [Magento UI library component]: {{page.baseurl}}/frontend-dev-guide/css-topics/theme-ui-lib.html#library_elements

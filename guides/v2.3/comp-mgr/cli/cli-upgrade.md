@@ -89,7 +89,7 @@ composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
 ```
 _Magento Commerce_
 ```bash
-composer require magento/product-enterprise-edition=2.3.0 --no-update
+composer show magento/product-enterprise-edition 2.3.* --all | grep -m 1 versions
 ```
 '
 %}
@@ -108,7 +108,7 @@ composer remove --dev sjparkinson/static-review fabpot/php-cs-fixer --no-update
 
 ### Update `autoload`
 
-Open `composer.json` and edit the the `"autoload": "psr-4"` section to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`:
+Open `composer.json` and edit the `"autoload": "psr-4"` section to include `"Zend\\Mvc\\Controller\\": "setup/src/Zend/Mvc/Controller/"`:
 
 ```json
 "autoload": {

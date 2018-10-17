@@ -1,0 +1,2 @@
+
+You can use the following instructions for service setup on {{site.data.var.ece}} Pro Integration environments and Starter environments including Production `master`. You must submit a support ticket to configure the service on Pro Production and Staging environments. See [Services]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).

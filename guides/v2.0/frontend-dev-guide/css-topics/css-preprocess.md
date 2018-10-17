@@ -69,10 +69,10 @@ To set the compilation mode, do the following:
 <ol>
 <li>In the Magento Admin, navigate to <b>Stores</b> > <b>Configuration</b> > ADVANCED > <b>Developer</b>.</li>
 <li>In the <b>Store View</b> drop-down field, select <b>Default Config</b>.</li>
-<li>Under <b>Front-end development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
+<li>Under <b>Frontend development workflow</b>, in the <b>Workflow type</b> field, select the compilation mode.</li>
 <li>To save the settings, click <b>Save Config</b>.</li>
 
-<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Front-end development workflow</b> option having switched the <b>Store View</b> drop-down field to the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} scope first, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. Change the option to match the default config if it is different.</li>
+<li>Make sure that the same compilation mode is set for each configuration scope. That is, check the <b>Frontend development workflow</b> option having switched the <b>Store View</b> drop-down field to the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} scope first, and then to the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}. Change the option to match the default config if it is different.</li>
 </ol>
 
 ### Server-side LESS compilation {#server-side}

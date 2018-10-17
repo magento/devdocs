@@ -70,7 +70,7 @@ Next, we’ll create a view folder:
 ```
 $ cd <magento2_root>
 $ mkdir app/code/Learning/Js/view
-$ mkdir app/code/Learning/Js/view/fronted
+$ mkdir app/code/Learning/Js/view/frontend
 ```
 
 Add the file `app/code/Learning/Js/view/frontend/requirejs-config.js`:

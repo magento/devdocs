@@ -28,6 +28,8 @@ If you're upgrading to Magento Commerce 2.1.3, you must change your configuratio
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
 
+{% include cloud/service-config-integration-starter.md %}
+
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
 
 To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
@@ -85,7 +87,7 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `cloud-gce`: GCE Cloud Plugin
 * `delete-by-query`: Support for deleting documents matching a given query
 * `discovery-multicast`: Ability to form a cluster using TCP/IP multicast messages
-* `lang-javascript`: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts
+* `lang-javascript`: JavaScript language plugin, allows the use of JavaScript in Elasticsearch scripts
 * `lang-python`: Python language plugin, allows the use of Python in Elasticsearch scripts
 * `mapper-attachments`: Mapper attachments plugin for indexing common file types
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time

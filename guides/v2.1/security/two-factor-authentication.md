@@ -1,5 +1,5 @@
 ---
-group: security
+group: configuration-guide
 title: Two-Factor Authentication
 functional_areas:
   - Configuration

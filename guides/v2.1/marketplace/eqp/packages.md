@@ -19,7 +19,7 @@ A successful submission results in a package being published on the [Magento Mar
 
 The EQP review process includes two steps:
 
-* In **technical review**, we preform all automated testing. This step also involves manual testing after all automated tests run.
+* In **technical review**, we perform all automated testing. This step also involves manual testing after all automated tests run.
 * In **marketing review**, we manually review all marketing content associated with your package before you can publish it on the Magento Marketplace.
 
 These review steps occur in parallel when you submit a package. If both steps are successful, the package can be published to the Magento Marketplace. If there is a failure, you can iteratively fix issues until they are resolved.
@@ -509,13 +509,11 @@ curl -X POST \
 ]
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
 * The API returns a HTTP 200 batch response listing items in the same order as they were provided in the request.
 * Each item contains a `code` and `message` indicating success or failure. Any non-200 code indicates an error. Refer to the message for more details.
 * A unique `submission_id` is returned for each successful item, which must be used for any GET, PUT, or DELETE methods.
 * Optionally, if a user-defined `item_id` was supplied during the POST, the response will echo back the same `item_id` for each item in the batch. The resource can be retrieved via GET using the `item_id`.
 * Any non-200 HTTP response code indicates an error for the entire batch request.
-</div>
 
 ### Update a package
 
@@ -780,12 +778,10 @@ curl -X GET \
 ]
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
 * The previous example shows one product only, but an array of products can be returned.
 * The `sku` and version will be determined from the code artifact (M1 tarball or M2 zip file) meta-information (M1 `packages.xml` or M2 `composer.json`), once it passes the malware checks.
 * The code, documentation, and media artifact files have additional info indicating meta-information on these files, including their current malware status.
 * The `eqp_status` field will indicate the current state of the package in the EQP process.
-</div>
 
 ### Get EQP status details
 
@@ -847,12 +843,11 @@ curl -X GET \
   }
 }
 ```
-<div class="bs-callout bs-callout-info" markdown="1">
+
 * Technical reports include the Magento edition, version, and PHP version used to run tests.
 * The top-level `code` indicates the overall result, which can be `pass`, `fail`, or `in_progress`.
 * Each EQP review step, `technical` and `marketing` have their own overall status indicated by the `code` value, which can be `pass`, `fail` or `in_progress`.
 * The `results` list contains details for each tool and their respective outcome via the `status` field, which can be `pass` or `fail`.
-</div>
 
 ### Sorting and Filtering
 

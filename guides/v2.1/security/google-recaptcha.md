@@ -1,5 +1,5 @@
 ---
-group: security
+group: configuration-guide
 title: Google reCAPTCHA
 functional_areas:
   - Configuration

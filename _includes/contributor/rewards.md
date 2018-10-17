@@ -50,7 +50,12 @@ Author of Ported Issue | 5 | Additional points for a contribution that ports (up
 
 ## DevDocs awards and points
 
-Contributors and Maintainers can also earn rewards for merged submissions to the [DevDocs repository](https://github.com/magento/devdocs). These earned points add to contributor totals. Like code contributions, the DevDocs team assesses the PRs and apply labels to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
+Contributors and Maintainers can also earn rewards for merged submissions to the [DevDocs repository](https://github.com/magento/devdocs). These earned points add to contributor totals. Like code contributions, the DevDocs team assesses the PRs and applies labels to determine the level of work and achievements. Each PR receives one base achievement and potentially additional achievements.
+
+See the following examples for calculated reward points:
+
+- Contributor submits PR with HTML formatting and typos fixes: Editorial(base) 1 point
+- Contributor submits PR with code sample update and new parameter descriptions: Improvement(base) 10 points + Major update(additional) 20 points = 30 points
 
 ### Base achievements
 {:.no_toc}
