@@ -103,6 +103,20 @@ You must have the following software installed on your local workstation:
 
     -  [`https://localhost`](https://localhost)
 
+#### To stop containers and restore them afterwards:
+
+Suspend containers to continue your work later.
+
+```bash
+docker-compose stop
+```
+
+Start containers from suspended state.
+
+```bash
+docker-compose start
+```
+
 #### To stop and remove the Docker configuration:
 
 Remove all components of your local Docker instance including containers, networks, volumes, and images.
