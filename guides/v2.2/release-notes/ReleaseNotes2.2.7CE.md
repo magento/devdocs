@@ -33,6 +33,7 @@ This release includes improvements to general usability of the core code plus en
 
 <!-- MAGETWO-87437 -->* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle,  and configurable  product attributes were missing from the Google Tag Manager. 
 
+*  Magento Functional Test Framework (MFTF) 2.3.8 has been merged to Magento 2.2.7. 
 
 
 #### Wishlist
