@@ -5,7 +5,7 @@ pages:
     url: /community/resources/resources.html
     versionless: true
 
-  - label: Best Practices Guide
+  - label: Community Contributed Best Practices
     url: /community/resources/best-practices.html
     versionless: true  
     #children:
