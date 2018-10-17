@@ -23,7 +23,7 @@ In the project root directory (where you have installed the framework as a compo
 ```bash
 vendor/bin/mftf command [options] [<arguments>] [--remove|-r]
 ```
-  
+
 ## Useful commands
 
 Use the following commands to run commonly performed tasks.
@@ -47,13 +47,14 @@ Upgrades the existing MFTF tests after the MFTF major upgrade.
 ```bash
 vendor/bin/mftf generate:tests
 ```
+
 ### Generate tests by test name
 
 ```bash
 vendor/bin/mftf generate:tests LoginAsAdminTest LoginAsCustomerTest
 ```
 
-### Generate and run the tests for a spcecified group
+### Generate and run the tests for a specified group
 
 ```bash
 vendor/bin/mftf run:group product -r
@@ -70,8 +71,8 @@ vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
 
 ## Reference
- 
-### `build:project`     
+
+### `build:project`
 
 #### Description
 
@@ -116,6 +117,7 @@ Option | Description|
 #### Examples of the JSON configuration
 
 The configuration to generate a single test with no suites:
+
 ```json
 {  
    "tests":[
@@ -126,6 +128,7 @@ The configuration to generate a single test with no suites:
 ```
 
 The configuration to generate a single test in the suite:
+
 ```json
 {  
    "tests": null,         // No tests outside the suite configuration will be generated.
@@ -142,7 +145,7 @@ Complex configuration to generate a few non-suite tests, a single test in a suit
 ```json
 {  
    "tests":[  
-      "general_test1",   
+      "general_test1",
       "general_test2",
       "general_test3"
    ],
@@ -177,7 +180,6 @@ Generates one or more suites based on XML declarations.
 ```bash
 vendor/bin/mftf generate:suite <suite name> [<suite name>] [--remove]
 ```
-
 
 #### Options
 
@@ -250,7 +252,7 @@ Generates and executes the listed groups of tests using Codeception.
 #### Usage
 
 ```bash
-vendor/bin/mftf run:group [--skip-generate|--remove] [--] <group1> [<group2>] 
+vendor/bin/mftf run:group [--skip-generate|--remove] [--] <group1> [<group2>]
 ```
 
 #### Options
@@ -273,7 +275,7 @@ Execute previously generated tests with the annotations `group="group1"` and `gr
 ```bash
 vendor/bin/mftf run:group -k -- group1 group2
 ```
-  
+
 ### `run:test`
 
 Generates and executes tests by name using Codeception.
@@ -298,7 +300,6 @@ Generate the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests from X
 ```bash
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ```
-
 
 ### `upgrade:tests`
 
