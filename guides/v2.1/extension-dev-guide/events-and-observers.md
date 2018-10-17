@@ -46,7 +46,7 @@ class MyClass
     // Code...
     $this->eventManager->dispatch('my_module_event_before');
     // More code that sets $eventData...
-    $this->eventManager->dispatch('my_module_event_after',['myEventData'=>$eventData]);
+    $this->eventManager->dispatch('my_module_event_after', ['myEventData' => $eventData]);
   }
 }
 
@@ -78,13 +78,13 @@ class MyObserver implements ObserverInterface
 {
   public function __construct()
   {
-    //Observer initialization code...
-    //You can use dependency injection to get any class this observer may need.
+    // Observer initialization code...
+    // You can use dependency injection to get any class this observer may need.
   }
 
   public function execute(\Magento\Framework\Event\Observer $observer)
   {
-    //Observer execution code...
+    // Observer execution code...
   }
 }
 {% endhighlight %}
@@ -100,14 +100,14 @@ class AnotherObserver implements ObserverInterface
 {
   public function __construct()
   {
-    //Observer initialization code...
-    //You can use dependency injection to get any class this observer may need.
+    // Observer initialization code...
+    // You can use dependency injection to get any class this observer may need.
   }
 
   public function execute(\Magento\Framework\Event\Observer $observer)
   {
     $myEventData = $observer->getData('myEventData');
-    //Additional observer execution code...
+    // Additional observer execution code...
   }
 }
 {% endhighlight %}

@@ -38,7 +38,7 @@ To upload a video to the Magento Admin application the user taps the "Add Video"
 
 ![](img/image-uploader-video-button.jpg)
 
-![](img/image-uploader-video-uploaded.jpg.jpg)
+![](img/image-uploader-video-uploaded.jpg)
 
 A video settings panel is revealed that allows the user to provide the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} location of the video, write a description and upload a preview image for the video. The user taps the "Save" button to upload the information.
 

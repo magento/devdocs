@@ -42,7 +42,7 @@ To create a configuration file:
 
 5.	Specify the following at minimum:
 
-{% highlight xml %}
+``` xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root"/>
 </source>
@@ -52,7 +52,7 @@ To create a configuration file:
 <options>
     <crypt_key />
 </options>
-{% endhighlight %}
+```
 
 The `<crypt_key>` tag is mandatory to fill. It can be found in `local.xml` file which is located in the directory of Magento 1 instance at `app/etc/local.xml` in `<key>` tag
 
@@ -64,7 +64,7 @@ Optional parameters:
 
 For example, if your database owner's username is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
-{% highlight xml %}
+``` xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root" password="pass"/>
 </source>
@@ -75,11 +75,12 @@ For example, if your database owner's username is `root` with password `pass` an
     <source_prefix>magento1</source_prefix>
     <crypt_key>f3e25abe619dae2387df9fs594f01985</crypt_key>
 </options>
-{% endhighlight %}
+```
 
 When finished, save your changes to `config.xml` and exit the text editor.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+### Connect using the TLS protocol
+
 You can also connect to a database using the TLS protocol (i.e., using public/private cryptographic keys). Add the following optional attributes to the `database` element:
 
 -   `ssl_ca`
@@ -88,15 +89,14 @@ You can also connect to a database using the TLS protocol (i.e., using public/pr
 
 For example:
 
-{% highlight xml %}
+``` xml
 <source>
     <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </source>
 <destination>
     <database host="localhost" name="magento2" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </destination>
-{% endhighlight %}
-</div>
+```
 
 ## Work with configuration and mapping files {#migration-config}
 

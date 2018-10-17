@@ -22,6 +22,8 @@ following command:
 
     mysql -h database.internal -u user
 
+{% include cloud/service-config-integration-starter.md %}
+
 ## Set up multiple database users {#cloud-appyaml-mysqlusers}
 
 You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named `mysql` that has administrator access to all defined databases.

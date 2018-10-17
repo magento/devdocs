@@ -76,8 +76,8 @@ Use the following steps:
 
 3.	Set permissions:
 
-		find . -type d -exec chmod 770 {} \; && find . -type f -exec chmod 660 {} \; && chmod u+x bin/magento
+		find . -type d -exec chmod 770 {} + && find . -type f -exec chmod 660 {} + && chmod u+x bin/magento
 
 	If you must enter the commands as `sudo`, use:
 
-		sudo find . -type d -exec chmod 770 {} \; && sudo find . -type f -exec chmod 660 {} \; && sudo chmod u+x bin/magento
+		sudo find . -type d -exec chmod 770 {} + && sudo find . -type f -exec chmod 660 {} + && sudo chmod u+x bin/magento

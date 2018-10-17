@@ -28,6 +28,8 @@ If you're upgrading to Magento Commerce 2.1.3, you must change your configuratio
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
 
+{% include cloud/service-config-integration-starter.md %}
+
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
 
 To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.

@@ -22,6 +22,14 @@ Does it fill gaps in our current docs and provide important information?
 They are listed here because the content has been well received within the Magento community.
 </div>
 
+## Best Practices
+This section will cover a broad scope of Magento best practices. To name a few:
+* Project Setup
+* Themeing (when and were to make a new theme)
+* Composer use (When to make a new repo)
+* Local enviroment options
+
+
 ## Magento APIs
 
 * *Presentation:* [Magento 2 Integrations][2]{:target="_blank"} by Joshua Warren
