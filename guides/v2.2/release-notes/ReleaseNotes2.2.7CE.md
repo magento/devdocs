@@ -65,7 +65,7 @@ Customers can also select Click & Collect locations during checkout. This featur
 
 ### Community contribution highlights
 
-Highlights of community contributions include these fixes::
+Highlights of community contributions include these fixes:
 
 <!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member [Jason Woods](https://github.com/driskell)!
 
@@ -473,8 +473,16 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-89234 -->* Magento now displays a success message when a customer successfully updates a wishlist.
 
 
-<!-- not needed --  MAGETWO-93800 MAGETWO-94468 MAGETWO-94236 MAGETWO-94213 MAGETWO-94174 MAGETWO-94098 MAGETWO-93725 MAGETWO-93105 MAGETWO-92654 MAGETWO-92187 MAGETWO-92169 MAGETWO-91477 MAGETWO-91358 MAGETWO-91288 MAGETWO-89892 MAGETWO-89309 MAGETWO-88233 MAGETWO-86482 MAGETWO-85420 MAGETWO-82084 MAGETWO-73357 MAGETWO-72067 MAGETWO-71157 MAGETWO-95529 MAGETWO-95424 MAGETWO-94762 MAGETWO-94409 MAGETWO-94331 MAGETWO-94300 MAGETWO-94475 --> 
+## Known issues
 
+<!-- BUNDLE-1728 -->* Vertex does not correctly assess taxes for each product of an order that is being shipped to multiple addresses. 
+
+<!-- BUNDLE-1746 -->* Magento calculates shipping costs incorrectly for orders of bundle products that contain at least one a virtual product when Vertex is enabled.
+
+
+
+
+<!-- not needed --  MAGETWO-93800 MAGETWO-94468 MAGETWO-94236 MAGETWO-94213 MAGETWO-94174 MAGETWO-94098 MAGETWO-93725 MAGETWO-93105 MAGETWO-92654 MAGETWO-92187 MAGETWO-92169 MAGETWO-91477 MAGETWO-91358 MAGETWO-91288 MAGETWO-89892 MAGETWO-89309 MAGETWO-88233 MAGETWO-86482 MAGETWO-85420 MAGETWO-82084 MAGETWO-73357 MAGETWO-72067 MAGETWO-71157 MAGETWO-95529 MAGETWO-95424 MAGETWO-94762 MAGETWO-94409 MAGETWO-94331 MAGETWO-94300 MAGETWO-94475 --> 
 
 
 
