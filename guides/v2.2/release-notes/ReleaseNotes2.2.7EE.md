@@ -29,7 +29,6 @@ This release includes improvements to general usability of the core code plus en
 
 #### General improvements
 
-<!-- MAGETWO-94434 -->* The Magento UPS module has been updated to support new UPS API endpoints.
 
 <!-- MAGETWO-93990 -->* An administrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
 
@@ -62,15 +61,18 @@ This release includes improvements to general usability of the core code plus en
 
 ### Shipping
 
-The Magento Shipping **Click & Collect** feature offers merchants the ability to:
+<!-- MAGETWO-94434 -->* The Magento UPS module has been updated to support new UPS API endpoints.
 
-* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
 
-* Configure source locations available for Click & Collect pick-ups
+* The Magento Shipping **Click & Collect** feature offers merchants the ability to:
 
-* Updates to Shipment Form for UPS (US only)
+	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
 
-Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
+	* Configure source locations available for Click & Collect pick-ups
+
+	* Updates to Shipment Form for UPS (US only)
+
+	Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
 
 
 
