@@ -1,8 +1,7 @@
 ---
 group: cloud-guide
 subgroup: 080_setup
-title: Import Magento code (Cloud)
-menu_title: Import Magento code into Magento Commerce (Cloud)
+title: Import Magento Commerce code into a Cloud project
 menu_order: 154
 menu_node:
 level3_menu_node: level3child
