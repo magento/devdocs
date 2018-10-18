@@ -147,37 +147,38 @@ pages:
           url: /cloud/configure/import-url-rewrites.html
           include_versions: ["2.2"]
 
-    - label: Configure Fastly
+    - label: Configure Fastly services
       url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: /cloud/cdn/configure-fastly.html
 
-        - label: Fastly Image Optimization
-          url: /cloud/cdn/fastly-image-optimization.html
+        - label: Managed Cloud WAF
+          url: /cloud/cdn/fastly-waf-service.html
           exclude_versions: ["2.0"]
 
-        - label: Fastly managed WAF
-          url: /cloud/cdn/fastly-waf-service.html
+        - label: Image Optimization
+          url: /cloud/cdn/fastly-image-optimization.html
           exclude_versions: ["2.0"]
 
         - label: Custom Fastly VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
+          exclude_versions: ["2.0"]
+          children:
+            - label: Custom whitelist VCL
+              url: /cloud/cdn/fastly-vcl-whitelist.html
 
-        - label: Custom whitelist VCL
-          url: /cloud/cdn/fastly-vcl-whitelist.html
+            - label: Custom blacklist VCL
+              url: /cloud/cdn/fastly-vcl-blacklist.html
 
-        - label: Custom blacklist VCL
-          url: /cloud/cdn/fastly-vcl-blacklist.html
+            - label: Custom redirect to WordPress VCL
+              url: /cloud/cdn/fastly-vcl-wordpress.html
 
-        - label: Custom redirect to WordPress VCL
-          url: /cloud/cdn/fastly-vcl-wordpress.html
+            - label: Custom block bad referer VCL
+              url: /cloud/cdn/fastly-vcl-badreferer.html
 
-        - label: Custom block bad referer VCL
-          url: /cloud/cdn/fastly-vcl-badreferer.html
-
-        - label: Fastly troubleshooting
-          url: /cloud/cdn/trouble-fastly.html
+            - label: Fastly troubleshooting
+              url: /cloud/cdn/trouble-fastly.html
 
     - label: Configure environments
       url: /cloud/env/environments.html

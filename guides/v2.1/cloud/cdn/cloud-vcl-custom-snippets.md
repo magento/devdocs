@@ -3,7 +3,7 @@ group: cloud-guide
 subgroup: 090_configure
 title: Custom Fastly VCL snippets
 menu_title: Custom Fastly VCL snippets
-menu_order: 7
+menu_order: 40
 menu_node:
 redirect_from:
    - /guides/v2.1/cloud/configure/cloud-vcl-custom-snippets.html

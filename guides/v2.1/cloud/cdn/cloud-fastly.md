@@ -10,44 +10,51 @@ functional_areas:
   - Setup
 ---
 
-Fastly is a CDN based on Varnish caching, basically a cloud varnish service. When
-working with Fastly, you are also working directly with a heavily customized version of Varnish (2.1). [Fastly](https://docs.fastly.com/)
-with [Varnish](https://varnish-cache.org/docs/) caches your
-site pages, assets, CSS, and more in backend data centers you set up. As
-customers access your site and stores, the requests hit Fastly to load cached
-pages faster.
 
-For {{site.data.var.ece}}, you receive Fastly CDN and DDoS services. When you
-update products, catalogs, content, and more, Fastly purges that specific cached
-content to refresh and provide the latest changes.
+Fastly provides the following services to optimize your {{ site.data.var.ece }} operations by simplifying maintenance, securing site and network traffic, and speeding up content delivery to site visitors. These services are included with your {{ site.data.var.ece }} account at no additional cost: 
 
-We provide Fastly service credentials including a Fastly Service ID and API key
-pair for your Staging and Production environments. To
-[set up Fastly](#install-configure), you enter credentials, upload VCL snippets,
-and configure backends (with Origin shields) in Staging and Production
-environments, not in Integration.
+-  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features: 
+	
+   -  Caches your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwith load and costs
+	
+   -  Create [edge and ACL dictionaries with VCL snippets](#custom-vcl) (Varnish 2.1 compliant) to modify how caching responds to requests
 
-Fastly provides the following powerful tools for Magento:
+   -  Configure [purge options]({{ page.base.url }}/http://127.0.0.1:4000/guides/v2.1/cloud/cdn/configure-fastly.html#purge) to clear generated content
+   
+   -  [GeoIP service support]({{ page.base.url }}/cloud/cdn/configure-fastly.html#geoip)
 
-* Create edge and ACL dictionaries with VCL snippets (Varnish 2.1 compliant) to
-  modify how caching responds to requests
+   -  [Force unencrypted requests over to TLS](#tls)
+   
+   -  [Customize Fastly timeout](#timeouts) settings to prevent 503 responses on bulk operation requests 
+	
+   -  [Custom error or maintenance page]({{ site.base.url }}/cloud/cdn/configure-fastly.html#fastly-errpg)
+   
+-  **Security**—Once you have configured {{ site.data.var.ece }} projects to use the Fastly CDN, you can take advantage of additional security features to protect your sites and network.
 
-* Three types of purges for:
+      -  [**DDoS protection**](#ddos)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
 
-  * Quick Purge (by URL)
-  * Surrogate/key purge using tags to purge specific HTML, images, categories, and so on
-  * Purge all, which clears everything in the cache
-* GeoIP extension support
-* Force unencrypted requests over to TLS
-* Image optimization support offloads image optimization to the Fastly service
-  to speed up image delivery for your store
+      -  **Web application firewall (WAF)**—Managed service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. See [Managed Cloud WAF]({{ site.base.url }}/cloud/cdn/fastly-waf-service.html).
+   
+-  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
-We highly recommend enabling and using Fastly for your caching and CDN. The only
+We highly recommend enabling and using Fastly for your CDN, security, and image optimization needs. The only
 situation where you might not want to enable Fastly is for a headless deployment.
 
-We strongly recommend installing Fastly module 1.2.33 or later. If you want to
-use the image optimization feature, you must use Fastly module version 1.2.52
-or later.
+
+## Fastly CDN module for Magento
+
+Fastly services for {{ site.data.var.ece }} use the [Fastly CDN for Magento module](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master` branch). 
+
+On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly]({{ page.base.url}}/cloud/cdn/configure-fastly.html#upgrade).
+
+
+## DDoS protection
+
+DDOS protection is builtin to the Fastly CDN service. After you enable and configure the Fastly service for your {{ site.data.var.ece }} sites, Fastly filters all web and admin traffic to your site to detect and block potential attacks: 
+   
+-  For attacks targeting layer 3 or 4, the Fastly service filters out traffic  based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
+
+-  The Fastly service protects against Layer 7 attacks by applying custom rules (using VCLs) that can inspect for and filter out malicious requests based on header, payload, or the combination of attributes that identify attack traffic.
 
 ## Fastly and 503 timeouts {#timeouts}
 
@@ -154,19 +161,6 @@ handling manages visitor redirection (automatically) and store matching
 (select from list) based on their obtained country code. For more information,
 see the Fastly [GeoIP documentation](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#geoip-handling).
 
-## Image Optimization support
-
-Fastly image optimization (Fastly IO) provides real-time image manipulation and
-optimization to speed up image delivery and simplify maintenance of image
-source sets for responsive web applications. Fastly IO provides
-the following image optimization features:
-
-- Force lossy conversion
-- Deep image optimization
-- Adaptive pixel ratios
-
-You must set up your Fastly service and configure the Origin shield before you
-can enable and configure the Fastly IO option. See [Configure Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
 ## Installation and configuration {#install-configure}
 

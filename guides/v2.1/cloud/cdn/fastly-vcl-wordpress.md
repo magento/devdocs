@@ -3,7 +3,7 @@ group: cloud-guide
 subgroup: 090_configure
 title: Custom redirect to Wordpress VCL
 menu_title: Custom redirect to Wordpress VCL
-menu_order:
+menu_order: 60
 menu_node:
 redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-wordpress.html
