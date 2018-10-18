@@ -400,7 +400,7 @@ Magento `template` binding is a customization of the existing Knockout [`templat
 
 **Value type:** String \| Object
 
-Сonfiguration for the `template` binding. If the provided value is a string, it is processed as a path to `.html` file.
+Configuration for the `template` binding. If the provided value is a string, it is processed as a path to `.html` file.
 
 **Aliases:** `[render]`, `<render>`
 

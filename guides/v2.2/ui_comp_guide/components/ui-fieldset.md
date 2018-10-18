@@ -1,6 +1,6 @@
 ---
 group: ui-components-guide
-title: Fieldset сomponent
+title: Fieldset component
 ---
 
 The Fieldset component implements a container for visually-grouped form elements, such as buttons and form fields.

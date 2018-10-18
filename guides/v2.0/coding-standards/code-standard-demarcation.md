@@ -40,7 +40,7 @@ functional_areas:
 
 **Unacceptable**
 {% highlight html %}
-<section id="заголовок">
+<section id="some_id">
    <p> ... </p>
    <p> ... </p>
 </section>
