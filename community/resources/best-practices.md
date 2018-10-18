@@ -1,21 +1,21 @@
 ---
 group: community
-title: Community Contributed Best Practices
+title: Community contributed best practices
 ---
 
 This section covers a broad scope of Community contributed best and leading practices, common solutions, and recommendations for Magento. 
 
 Topics and areas include:
 
-* Project Setup
-* Theme development (when and were to make a new theme)
-* Composer use (when to create a new repo)
+* Project setup
+* Theme development 
+* Composer use and repos
 * Local environment options
+* And much more
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 **Note:** Magento does not officially endorse these best practices. 
 They are available in DevDocs because the content has been well received within the Magento community.
-</div>
 
 ## Magento approved best practices
 
@@ -38,4 +38,4 @@ You can [contribute](https://github.com/magento/devdocs/blob/master/.github/CONT
 
 We can help add navigation and format content when reviewing your submitted PRs. 
 
-If you have any questions, contact us through [#DevDocs Slack](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) (or [join us](https://t.co/9HImUyCmyh)) or Twitter [@MagentoDevDocs](https://twitter.com/MagentoDevDocs).
+If you have any questions, contact us through [#DevDocs Slack](https://magentocommeng.slack.com/messages/CAN932A3H) (or [join us](https://t.co/9HImUyCmyh)) or Twitter [@MagentoDevDocs](https://twitter.com/MagentoDevDocs).

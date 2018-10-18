@@ -15,10 +15,9 @@ Do you know of a popular resource about Magento 2 that has been released/publish
 Does it fill gaps in our current docs and provide important information?
 [Let us know][1]!
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 **Note:** Magento does not officially endorse any of the linked blogs, books, presentation, or podcasts linked below.
 They are listed here because the content has been well received within the Magento community.
-</div>
 
 ## Best Practices
 

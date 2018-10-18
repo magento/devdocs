@@ -5,6 +5,7 @@ landing-page: Performance Best Practices
 redirect_from: 
   - /guides/v2.2/config-guide/prod/prod_perf-optimize.html
   - /guides/v2.2/config-guide/prod/performance-best-practices.html
+  - /guides/v2.2/performance-best-practices/index.html
 functional_areas:
   - Configuration
   - System
