@@ -27,7 +27,7 @@ In this example, the customer is a company user (buyer).
 
 **Endpoint**
 
-`POST /V1/carts/mine`
+`POST <host>/rest/default/V1/carts/mine`
 
 **Headers**
 
@@ -50,7 +50,7 @@ This example adds 15 Pursuit Lumaflex Tone Bands and 10 Harmony Lumaflex Strengt
 
 **Endpoint**
 
-`POST V1/carts/mine`
+`POST <host>/rest/default/V1/carts/mine`
 
 **Headers**
 
