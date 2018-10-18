@@ -31,7 +31,7 @@ The web container works with the [PHP-FPM](https://php-fpm.org) to serve PHP cod
 
 ### CLI container
 
-The CLI container is based on a php-cli image, provides `magento-cloud` and `{{site.data.var.ct}}` commands and performs file system operations. The CLI container depends on the **DB** image for the local database and the **Redis** image.
+The CLI container is based on a PHP-CLI image that provides `magento-cloud` and `{{site.data.var.ct}}` commands and performs file system operations. The CLI container depends on the **DB** image for the local database and the **Redis** image.
 
 -  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
 -  `cron`—extends the CLI container to run cron
@@ -43,7 +43,9 @@ The CLI container is based on a php-cli image, provides `magento-cloud` and `{{s
 
 ### Cron container
 
-The Cron container is based on php-cli images, executes operations in background right after Docker environment start. View cron log:
+The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start.
+
+#### To view the cron log:
 
 ```bash
 docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
@@ -57,8 +59,8 @@ Build and start Docker environment | `docker-compose up -d`
 Build environment | `docker-compose run build cloud-build`
 Deploy environment | `docker-compose run deploy cloud-deploy`
 Connect to CLI container | `docker-compose run cli bash`
-Use `{{site.data.var.ct}}` command | `docker-compose run <ece-command>`
-Use Magento CLI command | `docker-compose run <magento-cloud-command>`
+Use `{{site.data.var.ct}}` command | `docker-compose run ece-command`
+Use Magento command | `docker-compose run magento-command`
 Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
 Stop Docker environment without destroying containers | `docker-compose stop`
 Resume Docker environment | `docker-compose start`
