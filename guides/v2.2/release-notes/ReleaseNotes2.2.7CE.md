@@ -150,7 +150,7 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-73245 -->* A merchant can now successfully create and save configurable products from the Admin in a multisite deployment. Previously, when a merchant created a configurable product with customizable options, Magento set its `has_options` and `required_options`  (in the `catalog_product_entity` table) to 0, and the merchant needed to click **Save** again to correctly add the product.  
 
 
-<!-- MAGETWO-93047 -->
+<!-- MAGETWO-93047 --> `categoryNAME` is now a required field for `rest/all/V1/categories/:categoryID` REST  calls. 
 
 
 
