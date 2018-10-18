@@ -182,7 +182,7 @@ TESTS_MODULES_PATH
 #### MAGENTO_BP
 
 The path to a local Magento codebase.
-It enables the [`bin/mftf generate`][mftf generate] commands to parse all modules at `app/code` and `vendor` of the provided Magento codebase.
+It enables the [`bin/mftf`][mftf] commands such as `run` and `generate` to parse all modules of the Magento codebase for MFTF tests.
 
 ```conf
 MAGENTO_BP=~/magento2/
@@ -190,8 +190,8 @@ MAGENTO_BP=~/magento2/
 
 #### TESTS_BP
 
-The path to where MFTF supplementary files are located in the Magento codebase.
 BP is an acronym for _Base Path_.
+The path to where MFTF supplementary files are located in the Magento codebase.
 
 Example:
 
@@ -261,5 +261,5 @@ BROWSER=firefox
 
 [`MAGENTO_CLI_COMMAND_PATH`]: #magento_cli_command_path
 [generateDate]: test/actions.html#generatedate
-[mftf generate]: commands/mftf.html
+[mftf]: commands/mftf.html
 [timezones]: http://php.net/manual/en/timezones.php
