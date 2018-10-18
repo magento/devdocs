@@ -142,8 +142,8 @@ When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09c
 
 [Magento’s backward compatibility policy]: {{ site.baseurl }}/guides/v2.0/contributor-guide/backward-compatible-development/index.html
 
-[`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
-[`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
+[`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: {{site.mage2bloburl}}bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
+[`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: {{site.mage2bloburl}}bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
 
 [{{site.data.var.ce}} backward incompatible changes]: {{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html
 [{{site.data.var.ee}} backward incompatible changes]: {{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html
