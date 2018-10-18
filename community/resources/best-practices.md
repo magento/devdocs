@@ -36,6 +36,6 @@ The DevDocs and Magento teams verified and provide the following best practices 
 
 You can [contribute](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) by adding content and new topics through Pull Requests to the [DevDocs](https://github.com/magento/devdocs) repo. Save all files to the `/community/resources` directory. We can help add navigation and format content when reviewing your submitted PRs. 
 
-Some PRs may require architectural and internal development reviews to verify and approve the contributed best practices. 
+Some PRs may require architectural and internal development reviews to verify and approve the contributed best practices. These reviews may require more time to complete before merging content. 
 
 If you have any questions, contact us through [#DevDocs Slack](https://magentocommeng.slack.com/messages/CAN932A3H) (or [join us](https://t.co/9HImUyCmyh)) or Twitter [@MagentoDevDocs](https://twitter.com/MagentoDevDocs).
