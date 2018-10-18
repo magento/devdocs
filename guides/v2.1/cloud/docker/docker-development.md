@@ -57,10 +57,10 @@ Build and start Docker environment | `docker-compose up -d`
 Build environment | `docker-compose run build cloud-build`
 Deploy environment | `docker-compose run deploy cloud-deploy`
 Connect to CLI container | `docker-compose run cli bash`
-Use `{{site.data.var.ct}}` command | `docker-compose run ece-command`
-Use Magento command | `docker-compose run cli magento-command`
+Use `{{site.data.var.ct}}` command | `docker-compose run <ece-command>`
+Use Magento CLI command | `docker-compose run <magento-cloud-command>`
 Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
-Stop Docker environment without destroying containers | `docker-compsoe stop`
+Stop Docker environment without destroying containers | `docker-compose stop`
 Resume Docker environment | `docker-compose start`
 {:style="table-layout:auto;"}
 
