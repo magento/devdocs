@@ -41,6 +41,19 @@ The CLI container is based on a PHP-CLI image that provides `magento-cloud` and 
 
 -  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
 
+As an example, to run the `{{site.data.var.ct}}` ideal-state command:
+
+```bash
+$ docker-compose run cli ece-command wizard:ideal-state
+Starting project-name_redis_1 ... done
+Starting project-name_dbdata_1  ... done
+Starting project-name_appdata_1 ... done
+Starting project-name_db_1      ... done
+[ ok ] Starting enhanced syslogd: rsyslogd.
+ - Your application does not have the "post_deploy" hook enabled.
+The configured state is not ideal
+```
+
 ### Cron container
 
 The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start.
@@ -59,8 +72,8 @@ Build and start Docker environment | `docker-compose up -d`
 Build environment | `docker-compose run build cloud-build`
 Deploy environment | `docker-compose run deploy cloud-deploy`
 Connect to CLI container | `docker-compose run cli bash`
-Use `{{site.data.var.ct}}` command | `docker-compose run ece-command`
-Use Magento command | `docker-compose run magento-command`
+Use `{{site.data.var.ct}}` command | `docker-compose run cli ece-command <command>`
+Use Magento CLI command | `docker-compose run cli magento-command <command>`
 Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
 Stop Docker environment without destroying containers | `docker-compose stop`
 Resume Docker environment | `docker-compose start`
