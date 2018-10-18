@@ -8,7 +8,7 @@ functional_areas:
 
 ## Pre-Launch Checklist {#checklist}
 
-Prior to go live and switching the DNS, you should download and complete the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. Deploy your `master` branch to the Production environment. 
+Prior to go live and switching the DNS, you should download and complete the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. Deploy your `production` branch to the Production environment. 
 
 ## Completely test in Production {#test}
 
@@ -27,7 +27,7 @@ You need to complete configurations for your DNS including:
 After checking with your registrar about where to change your DNS settings, add a CNAME record for your website that points to the Fastly service: `prod.magentocloud.map.fastly.net`. If you use multiple hostnames for your site, you must add a CNAME record for each one.
 
 {:.bs-callout .bs-callout-info}
-This does not work for an [apex] domain(https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp) (also referred to as a _naked_ domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.
+This does not work for an [apex domain](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp) (also referred to as a _naked_ domain). You must use a DNS provider that supports forwarding DNS queries to use an apex domain.
 
 The following list contains examples of DNS providers for informational purposes. Use your preferred DNS provider.
 
