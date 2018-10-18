@@ -321,7 +321,7 @@ To configure additional databases, you must
 
 These commands migratte specific domain tables from the main database to domain database and change the Magento configuration to allow corresponding connectivity and constraints processing.
 
-By having separate databases for checkout and Order Management, you can distribute the load between your database servers. You can serve more checkouts and process more orders per second without affecting the availability of your сatalog and other operations. We recommend splitting databases for periods of flash or active sales, or using them permanently for naturally high load projects. Migration of present data between databases should be executed under control of your system administrator.  Do not split databases while in production mode.
+By having separate databases for checkout and Order Management, you can distribute the load between your database servers. You can serve more checkouts and process more orders per second without affecting the availability of your catalog and other operations. We recommend splitting databases for periods of flash or active sales, or using them permanently for naturally high load projects. Migration of present data between databases should be executed under control of your system administrator.  Do not split databases while in production mode.
 
 In addition to master databases, Magento 2 allows you to configure a number of slave databases (1 for each data resource declared in the system). You can add slave database by running the following command:
 
