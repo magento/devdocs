@@ -81,7 +81,7 @@ You must have an authentication key to access the {{site.data.var.ee}} repositor
 
 #### To create a new `auth.json` file:
 
-First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`](https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample){:target="_blank"}.
+First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`]({{site.mage2bloburl}}2.2-develop/auth.json.sample){:target="_blank"}.
 
 1.  Using a text editor, create an `auth.json` file and save it in your Magento root directory.
 
