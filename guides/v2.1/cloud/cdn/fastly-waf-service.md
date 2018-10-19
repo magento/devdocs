@@ -10,7 +10,7 @@ Powered by Fastly, the Managed Cloud WAF is a web application firewall service t
 
 As a managed service, the Magento WAF provides the following benefits: 
 - **PCI compliance**—WAF enablement ensures that {{ site.data.var.ee }} storefronts in production environments meet PCI DSS 6.6 security requirements.
-- **Default WAF policy**—The default WAF policy, configured and maintained by Fastly provides a collection of security rules tailored to protect {{ site.data.var.ee }} projects from a wide range of attacks, including the OWASP Top Ten.
+- **Default WAF policy**—The default WAF policy, configured and maintained by Fastly, provides a collection of security rules tailored to protect {{ site.data.var.ee }} projects from a wide range of attacks, including the OWASP Top Ten.
 - **WAF onboarding and enablement**—Magento works with you to plan and schedule the WAF rollout to deploy the WAF, tune the default WAF policy in your environment, and enable the service.
 - **Operations support**—
   - Magento and Fastly set up and manage your WAF logs and alerts.
@@ -24,7 +24,7 @@ Once deployed, the WAF monitors web and admin traffic to identify any suspicious
 
 ### Enabling the WAF
 
-The managed web application firewall service for {{ site.data.var.ece }} is implemented through the Fastly CDN service. You do not have to install or maintain any hardware or software. Before you can use the WAF, you must set up your Fastly service and configure Origin shielding so that 
+Fastly implements the managed web application firewall for {{ site.data.var.ece }} using the Fastly CDN service. You do not have to install or maintain any hardware or software. Before you can use the WAF, you must set up your Fastly service and configure Origin shielding so that 
 all external traffic routes through the Fastly service. See [Set up Fastly]({{ page.base.url }}/cloud/cdn/configure-fastly.html).
 
 For new {{ site.data.var.ece }} accounts, your Magento technical account manager works with you during the onboarding and launch process to plan and schedule WAF enablement. For existing {{ site.data.var.ece }} projects, contact your account manager or CSM for help enabling the WAF. 
@@ -37,11 +37,11 @@ When the Managed Cloud WAF is enabled, it filters all web and admin traffic agai
 
 You can customize this error response page from the Magento Admin UI. See [Create a custom error response page]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg).
 
-If your {{ site.data.var.ee }} admin page or storefront returns a `403 Forbidden` error page in response to a legitimate URL request, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket). Copy the reference id from the error response page and paste it into the ticket description.
+If your {{ site.data.var.ee }} admin page or storefront returns a `403 Forbidden` error page in response to a legitimate URL request, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket). Copy the reference ID from the error response page and paste it into the ticket description.
 
 ### WAF maintenance and updates
 
-Fastly maintains and updates the WAF ruleset based on rule updates from commercial third parties, Fastly research, and open sources. Fastly updates published rules into a policy as needed, or when changes to the rules are available from their respective sources. Fastly can also add new rules which match the published classes of rules into the WAF instance of any service after the WAF is enabled. These updates ensure immediate coverage for new or evolving exploits.
+Fastly maintains and updates the WAF ruleset based on rule updates from commercial third parties, Fastly research, and open sources. Fastly updates the published rules into a policy as needed, or when changes to the rules are available from their respective sources. Also, Fastly can add new rules that match the published classes of rules into the WAF instance of any service after the WAF is enabled. These updates ensure immediate coverage for new or evolving exploits.
 
 Magento and Fastly manage the update process to ensure that new or modified WAF rules work effectively in your production environment before the updates are deployed in blocking mode. See [Fastly WAF rule set update and maintenance](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-rule-set-updates-maintenance).
 
