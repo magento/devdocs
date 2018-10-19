@@ -10,8 +10,7 @@ functional_areas:
   - Setup
 ---
 
-
-Fastly provides the following services to optimize your {{ site.data.var.ece }} operations by simplifying maintenance, securing site and network traffic, and speeding up content delivery to site visitors. These services are included with your {{ site.data.var.ece }} account at no additional cost: 
+Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} account at no additional cost:  These services are included with your {{ site.data.var.ece }} account at no additional cost: 
 
 -  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features: 
 	
