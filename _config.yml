@@ -121,6 +121,8 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   toc_levels: 2..3
+  syntax_highlighter_opts:
+    css_class: 'highlighter'
 
 incremental: false
 
