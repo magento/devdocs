@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.6
+mftf-release: 2.3.8
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/getting-started.html
 ---
 
@@ -69,7 +69,7 @@ git clone git@github.com:magento/magento2.git
 
 ### Step 2. Install dependencies {#install-dependencies}
 
-Checkout to the Magento version that you are going to test.
+Checkout the Magento version that you are going to test.
 
 ```bash
 cd magento2/
@@ -204,8 +204,8 @@ During testing, the MFTF generates test reports in CLI.
 You can generate visual representations of the report data using [Allure Framework][].
 To view the reports in GUI:
 
-- [install Allure][]
-- run the tool to serve the artifacts in `dev/tests/acceptance/tests/_output/allure-results/`:
+- [Install Allure][]
+- Run the tool to serve the artifacts in `dev/tests/acceptance/tests/_output/allure-results/`:
 
 ```bash
 allure serve dev/tests/acceptance/tests/_output/allure-results/
@@ -216,7 +216,7 @@ Learn more about Allure in the [official documentation][allure docs].
 ## Set up a standalone MFTF
 
 The MFTF is a root level Magento dependency, but it is also available for use as a standalone application.
-The potential use case is when you develop the MFTF or contribute to it, as it facilitates debugging and tracking changes.
+You may want to use a standalone application when you develop for or contribute to MFTF, which facilitates debugging and tracking changes.
 These guidelines demonstrate how to set up and run Magento acceptance functional tests using standalone MFTF.
 
 ### Prerequisites
@@ -256,7 +256,7 @@ Create the `utils/` directory, if you didn't find it.
 
 ### Step 6. Remove the MFTF package dependency in Magento
 
-The MFTF uses the Magento `app/autoload.php` to read the Magento modules.
+The MFTF uses the Magento `app/autoload.php` file to read Magento modules.
 The MFTF dependency in Magento supersedes the standalone registered namespaces unless it is removed at a Composer level.
 
 ```bash
