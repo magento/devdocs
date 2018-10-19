@@ -114,7 +114,8 @@ The response includes all relationships for services and configuration data for 
          "port" : "9200"
       }
    ],
-```{: .no-copy}
+```
+{: .no-copy}
 
 ## Configure Elasticsearch for your site {#configure}
 

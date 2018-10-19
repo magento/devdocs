@@ -10,25 +10,25 @@ functional_areas:
   - Setup
 ---
 
-Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} account at no additional cost:  These services are included with your {{ site.data.var.ece }} account at no additional cost: 
+Fastly provides the following services to optimize and secure content delivery operations for your {{ site.data.var.ece }} projects. These services are included with your {{ site.data.var.ece }} subscription at no additional cost.
 
 -  **Content delivery network (CDN)**—Varnish-based service that caches your site pages, assets, CSS, and more in backend data centers you set up. As customers access your site and stores, the requests hit Fastly to load cached pages faster. The CDN service provides the following features: 
 	
-   -  Caches your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwith load and costs
+   -  Cache your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwith load and costs
 	
    -  Create [edge and ACL dictionaries with VCL snippets](#custom-vcl) (Varnish 2.1 compliant) to modify how caching responds to requests
 
-   -  Configure [purge options]({{ page.baseurl }}/http://127.0.0.1:4000/guides/v2.1/cloud/cdn/configure-fastly.html#purge) to clear generated content
+   -  Configure [purge options]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#purge) to clear generated content
    
-   -  [GeoIP service support]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#geoip)
+   -  Set up [GeoIP service support]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#geoip)
 
    -  [Force unencrypted requests over to TLS](#tls)
    
    -  [Customize Fastly timeout](#timeouts) settings to prevent 503 responses on bulk operation requests 
 	
-   -  [Custom error or maintenance page]({{ site.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg)
+   -  Create [custom error response pages]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg)
    
--  **Security**—After you set up your {{ site.data.var.ece }} projects to use the Fastly CDN, additional security features are available to protect your sites and network.
+-  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network.
 
       -  [**DDoS protection**](#ddos)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
 
@@ -36,8 +36,8 @@ Fastly provides the following services to optimize and secure content delivery o
    
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
-We highly recommend enabling and using Fastly for your CDN, security, and image optimization needs. The only
-situation where you might not want to enable Fastly is for a headless deployment.
+We highly recommend using Fastly for your CDN, security, and image optimization needs. The only
+case where you might not want to use Fastly is for a headless deployment.
 
 
 ## Fastly CDN module for Magento

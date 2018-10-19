@@ -65,7 +65,8 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
     ```terminal
     origin git@bitbucket.org:<user-name>/<repo-name>.git (fetch)
     origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
-    ```{: .no-copy}
+    ```
+	{: .no-copy}
 
 1.  Push the project files to your new Bitbucket repository. Remember to keep all branch names the same.
 

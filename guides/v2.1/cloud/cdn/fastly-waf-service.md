@@ -50,7 +50,7 @@ Magento and Fastly manage the update process to ensure that new or modified WAF 
 
 The standard Magento Cloud WAF powered by Fastly does not support the following features:
 
-- Filtering for TCP, UDP or ICMP requests
+- Filtering for TCP, UDP, or ICMP requests
 - Protection against malware or bot mitigation
 - Rate limiting or virtual patching
 - Configuring a logging endpoint for customer
