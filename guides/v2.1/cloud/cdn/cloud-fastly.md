@@ -36,9 +36,7 @@ Fastly provides the following services to optimize and secure content delivery o
    
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
-We highly recommend using Fastly for your CDN, security, and image optimization needs. The only
-case where you might not want to use Fastly is for a headless deployment.
-
+We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you plan to use {{ site.data.var.ee}} through a headless deployment. In that case, you do not need to use Fastly. 
 
 ## Fastly CDN module for Magento
 
@@ -49,9 +47,9 @@ On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we 
 
 ## DDoS protection
 
-DDOS protection is builtin to the Fastly CDN service. After you enable and configure the Fastly service for your {{ site.data.var.ece }} sites, Fastly filters all web and admin traffic to your site to detect and block potential attacks: 
+DDOS protection is built-in to the Fastly CDN service. After you enable and configure the Fastly service for your {{ site.data.var.ece }} sites, Fastly filters all web and admin traffic to your site to detect and block potential attacks: 
    
--  For attacks targeting layer 3 or 4, the Fastly service filters out traffic  based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
+-  For attacks targeting layer 3 or 4, the Fastly service filters out traffic based on port and protocol, inspecting only HTTP or HTTPS requests. ICMP, UDP, and other network born attacks are dropped at our network edge. This includes reflection and amplification attacks, which use UDP services like SSDP or NTP. By providing this level of protection, we effectively block  multiple common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.  Fastly manages the TCP level attacks at the cache layer, addressing the necessary scale and context per client to deal with SYN flood and its many variants, including TCP stack, resource attacks, and TLS attacks within the Fastly systems.
 
 -  The Fastly service protects against Layer 7 attacks by applying custom rules (using VCLs) that can inspect for and filter out malicious requests based on header, payload, or the combination of attributes that identify attack traffic.
 
