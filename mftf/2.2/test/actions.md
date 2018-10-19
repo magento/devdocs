@@ -161,7 +161,7 @@ The following test actions return a variable:
 *  [grabValueFrom](#grabvaluefrom)
 *  [executeJS](#executejs)
 
-Learn more in [Using data returned by test actions](../data.html#use-data-returned-by-test-actions).
+Learn more in [Using data returned by test actions](../data.html#use-returned-data).
 
 ## Actions handling data entities
 
