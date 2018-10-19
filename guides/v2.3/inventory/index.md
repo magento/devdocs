@@ -1,12 +1,14 @@
 ---
 group: inventory
 title: Inventory Management overview
+landing-page: Inventory
+
 ---
 
 
-Magento Open Source and Commerce v2.3 include new and expanded features and APIs for Inventory Management. Inventory Management replace all core APIs in the Open Source `CatalogInventory` module and the `ScalableInventory` module in Commerce. It also provides additional APIs to extend and add functionality.
+Magento Open Source and Commerce v2.3 include new and expanded features and APIs for Inventory Management. Inventory Management replaces all core APIs in the Open Source `CatalogInventory` module and the `ScalableInventory` module in Commerce. It also provides additional APIs to extend and add functionality.
 
-The inventory management features include
+Inventory Management features include
 
 * Different configurations for merchants whose inventory originates from a single source and from multiple sources
 * Stocks for tracking available aggregated quantities through assigned sources
@@ -32,7 +34,7 @@ The following terms are important as you work with Inventory Management APIs:
 
 ## A simple scenario
 
-The following diagram illustrates the relationship between source stocks, aggregate stocks, and sales channels
+The following diagram illustrates the relationship between source stocks, aggregate stocks, and sales channels:
 
 ![Source and aggregate stock](images/inventory-diagram-stock.png)
 
@@ -49,7 +51,7 @@ In this diagram, a bicycle merchant has inventory for a touring bike in a wareho
 
 ## Shipping algorithms
 
-When merchants are ready to make a partial or full shipment, they select the source or sources from which to send the products. Customers typically want low-cost shipping and a guarantee of safe arrival of products, while the merchant needs to ensure minimal overhead for the inventory storage and shipping costs. Inventory Management includes an algorithm takes these considerations into account that recommends the best shipping option or options. Magento provides an algorithm for Priority, using the source priority per stock, where each source is given a priority in the scope of a specific sales channel. Inventory Management also supports developer-provided extensions for other algorithms based on criteria such as cheapest shipping and closest GPS location.
+When merchants are ready to make a partial or full shipment, they select the source or sources from which to send the products. Customers typically want low-cost shipping and a guarantee of safe arrival of products, while the merchant needs to ensure minimal overhead for the inventory storage and shipping costs. Inventory Management includes an algorithm that takes these considerations into account and recommends the best shipping option or options. Magento provides an algorithm for Priority, using the source priority per stock, where each source is given a priority in the scope of a specific sales channel. Inventory Management also supports developer-provided extensions for other algorithms based on criteria such as cheapest shipping and closest GPS location.
 
 ## Related information
 
