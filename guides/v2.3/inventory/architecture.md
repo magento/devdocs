@@ -3,9 +3,6 @@ group: inventory
 title: Inventory management architecture
 ---
 
-Magento Inventory Management implements architectural
-
-## Service layer in Magento 2
 
 Magento 2 is a highly modular system that allows 3rd-party developers to extend and customize the system on many levels. As a result, a developer can replace or add any component (module) without affecting the rest of the system.
 

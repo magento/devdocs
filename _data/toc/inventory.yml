@@ -6,4 +6,10 @@ pages:
       url: /inventory/index.html
 
     - label: Inventory management architecture
-      url: inventory/architecture.html
+      url: /inventory/architecture.html
+
+    - label: Deprecated CatalogInventory entities
+      url: /inventory/catalog-inventory-replacements.html
+
+    - label: Deprecated ScalableInventory entities
+      url: /inventory/scalable-inventory-replacements.html
