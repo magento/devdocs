@@ -98,6 +98,7 @@ When you delete an environment, the environment is set to _inactive_. The code i
     The environment <environment-ID> is currently active: deleting it will delete all associated data.
     Are you sure you want to delete the environment <environment-ID>? [Y/n]
     ```
+    {: .no-copy}
 
     Deleting the environment places it in an _inactive_ state.
 
@@ -119,6 +120,7 @@ When you delete an environment, the environment is set to _inactive_. The code i
     Deleted remote Git branch <environment-ID>
     Run git fetch --prune to remove deleted branches from your local cache.
     ```
+    {: .no-copy}
 
 #### To delete more than one environment:
 

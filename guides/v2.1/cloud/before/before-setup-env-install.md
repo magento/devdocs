@@ -44,6 +44,7 @@ magento-cloud variable:get -e <environment-ID>
 | ADMIN_USERNAME | admin_A456    | Yes       | No   |
 +----------------+---------------+-----------+------+
 ```
+{: .no-copy}
 
 ### Get Magento authentication keys
 
