@@ -1,0 +1,20 @@
+project-webint-basiclabel: Community Resources
+pages:
+
+  - label: Community resources
+    url: /community/resources/resources.html
+    versionless: true
+
+  - label: Community contributed best practices
+    url: /community/resources/best-practices.html
+    versionless: true  
+    #children:
+
+    #  - label: Page Name
+    #    url: /community/resources/filename.html
+    #    versionless: true
+
+  - label: Multi-repo docs
+    url: /community/resources/multi-repo-docs.html
+    versionless: true
+    
