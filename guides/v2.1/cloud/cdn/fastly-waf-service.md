@@ -25,7 +25,7 @@ Once deployed, the WAF monitors web and admin traffic to identify any suspicious
 ### Enabling the WAF
 
 Fastly implements the managed web application firewall for {{ site.data.var.ece }} using the Fastly CDN service. You do not have to install or maintain any hardware or software. Before you can use the WAF, you must set up your Fastly service and configure Origin shielding so that 
-all external traffic routes through the Fastly service. See [Set up Fastly]({{ page.base.url }}/cloud/cdn/configure-fastly.html).
+all external traffic routes through the Fastly service. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
 For new {{ site.data.var.ece }} accounts, your Magento technical account manager works with you during the onboarding and launch process to plan and schedule WAF enablement. For existing {{ site.data.var.ece }} projects, contact your account manager or CSM for help enabling the WAF. 
 
@@ -55,7 +55,7 @@ The standard Magento Cloud WAF powered by Fastly does not support the following 
 - Rate limiting or virtual patching
 - Configuring a logging endpoint for customer
 
-You can add blacklist and whitelist filtering for IP addresses by uploading custom VCL snippets to the Fastly CDN service. See [Custom VCL snippets]({{ page.base.url }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+You can add blacklist and whitelist filtering for IP addresses by uploading custom VCL snippets to the Fastly CDN service. See [Custom VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 
 [WAF error response page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
