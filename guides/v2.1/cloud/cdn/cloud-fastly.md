@@ -29,7 +29,7 @@ Fastly provides the following services to optimize your {{ site.data.var.ece }} 
 	
    -  [Custom error or maintenance page]({{ site.base.url }}/cloud/cdn/configure-fastly.html#fastly-errpg)
    
--  **Security**—After you set up your { site.data.var.ece }} projects to use the Fastly CDN, additional security features are available to protect your sites and network.
+-  **Security**—After you set up your {{ site.data.var.ece }} projects to use the Fastly CDN, additional security features are available to protect your sites and network.
 
       -  [**DDoS protection**](#ddos)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
 
