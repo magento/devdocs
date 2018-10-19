@@ -136,7 +136,7 @@ The file structure under the both path cases is the same:
 Follow the [MFTF project] and [contribute on Github].
 
 <!-- Link definitions -->
-[contribute on Github]: contribution-guidelines.html
+[contribute on Github]: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
 [Functional Testing Framework]: {{ site.gdeurl23 }}mtf/mtf_introduction.html
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework
 [{{page.mftf-release}}]: https://github.com/magento/magento2-functional-testing-framework/releases/tag/{{page.mftf-release}}
