@@ -21,16 +21,16 @@ They are available in DevDocs because the content has been well received within 
 
 The DevDocs and Magento teams verified and provide the following best practices and recommendations:
 
-- [Best Practices and Benchmarking]({{ page.baseurl }}/migration/migration-overview-practices.html) for Migration
-- [Best Practices for Extension Development]({{ page.baseurl }}/ext-best-practices/bk-ext-best-practices.html) 
+- [Best Practices and Benchmarking](https://devdocs.magento.com/guides/v2.2/migration/migration-overview-practices.html) for Migration
+- [Best Practices for Extension Development](https://devdocs.magento.com/guides/v2.2/ext-best-practices/bk-ext-best-practices.html) 
     
     We also recommend the [Magento Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us) for extension questions.
-- [Programming Best Practices]({{ page.baseurl }}/ext-best-practices/extension-coding/common-programming-bp.html)
-- [Observers Best Practices]({{ page.baseurl }}/ext-best-practices/extension-coding/observers-bp.html)
-- [Theme development best practices]({{ page.baseurl }}/frontend-dev-guide/theme-best-practice.html)
-- [Performance Best Practices]({{ page.baseurl }}/performance-best-practices/)
-- [Best Practices for Store Configuration]({{ page.baseurl }}/cloud/configure/configure-best-practices.html) for Commerce Cloud
-- [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html) for Commerce Cloud
+- [Programming Best Practices](https://devdocs.magento.com/guides/v2.2/ext-best-practices/extension-coding/common-programming-bp.html)
+- [Observers Best Practices](https://devdocs.magento.com/guides/v2.2/ext-best-practices/extension-coding/observers-bp.html)
+- [Theme development best practices](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/theme-best-practice.html)
+- [Performance Best Practices](https://devdocs.magento.com/guides/v2.2/performance-best-practices/)
+- [Best Practices for Store Configuration](https://devdocs.magento.com/guides/v2.2/cloud/configure/configure-best-practices.html) for Commerce Cloud
+- [Deployment process](https://devdocs.magento.com/guides/v2.2/cloud/reference/discover-deploy.html) for Commerce Cloud
 
 ## Want to contribute?
 
