@@ -29,11 +29,11 @@ Fastly provides the following services to optimize your {{ site.data.var.ece }} 
 	
    -  [Custom error or maintenance page]({{ site.base.url }}/cloud/cdn/configure-fastly.html#fastly-errpg)
    
--  **Security**—Once you have configured {{ site.data.var.ece }} projects to use the Fastly CDN, you can take advantage of additional security features to protect your sites and network.
+-  **Security**—After you set up your { site.data.var.ece }} projects to use the Fastly CDN, additional security features are available to protect your sites and network.
 
       -  [**DDoS protection**](#ddos)—Built-in protection against common attacks like Ping of Death, Smurf attacks, as well as other ICMP-based floods.
 
-      -  **Web application firewall (WAF)**—Managed service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network. See [Managed Cloud WAF]({{ site.base.url }}/cloud/cdn/fastly-waf-service.html).
+      -  **[Managed Cloud WAF]({{ site.base.url }}/cloud/cdn/fastly-waf-service.html)**—Managed web application firewall service that provides PCI-compliant protection to block malicious traffic before it can damage your production {{ site.data.var.ece }} sites and network.
    
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
