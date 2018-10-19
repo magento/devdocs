@@ -24,24 +24,20 @@ Once deployed, the WAF monitors web and admin traffic to identify any suspicious
 
 ### Enabling the WAF
 
-The managed web application firewall service for {{ site.data.var.ece }} is implemented through the Fastly CDN service. You do not have to install or or maintain any hardware or software. Before you can use the WAF, you must set up your Fastly service and configure Origin shielding so that 
+The managed web application firewall service for {{ site.data.var.ece }} is implemented through the Fastly CDN service. You do not have to install or maintain any hardware or software. Before you can use the WAF, you must set up your Fastly service and configure Origin shielding so that 
 all external traffic routes through the Fastly service. See [Set up Fastly]({{ page.base.url }}/cloud/cdn/configure-fastly.html).
 
 For new {{ site.data.var.ece }} accounts, your Magento technical account manager works with you during the onboarding and launch process to plan and schedule WAF enablement. For existing {{ site.data.var.ece }} projects, contact your account manager or CSM for help enabling the WAF. 
 
-### Using the WAF 
+### Troubleshooting blocked requests
 
-When the Managed Cloud WAF is enabled, it filters all web and admin traffic against the WAF rules. The WAF service blocks any web request that triggers a WAF rule and returns a 403 error message that includes a reference ID for the blocking event.
+When the Managed Cloud WAF is enabled, it filters all web and admin traffic against the WAF rules and WAF blocks any web request that triggers a WAF rule. When a request is blocked, the requestor sees a default `403 Forbidden` error page that includes a reference ID for the blocking event.
 
 ![WAF error response page]
 
-You can customize the error response page from the Magento Admin UI. See [Create a custom error response page]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg).
+You can customize this error response page from the Magento Admin UI. See [Create a custom error response page]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg).
 
-
-### Troubleshooting blocked requests
-
-Even a well-tuned WAF can sometimes block legitimate traffic.  If your {{ site.data.var.ee }} admin page or storefront returns a `403 Forbidden` error page in response to a legitimate URL request, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket). Copy the reference id from the error message and paste it in the support ticket. 
-
+If your {{ site.data.var.ee }} admin page or storefront returns a `403 Forbidden` error page in response to a legitimate URL request, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket). Copy the reference id from the error response page and paste it into the ticket description.
 
 ### WAF maintenance and updates
 
@@ -52,7 +48,7 @@ Magento and Fastly manage the update process to ensure that new or modified WAF 
 
 ### Limitations
 
-The standard Magento WAF service powered by Fastly does not support the following features:
+The standard Magento Cloud WAF powered by Fastly does not support the following features:
 
 - Filtering for TCP, UDP or ICMP requests
 - Protection against malware or bot mitigation
