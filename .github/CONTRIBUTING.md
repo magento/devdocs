@@ -1,7 +1,7 @@
 ## How to contribute
 
 Share your knowledge with the community by contributing to Magento DevDocs!
-You can contribute by creating an issue or pull request (PR) on our [DevDocs](https://GitHub.com/magento/devdocs) GitHub repository.
+You can contribute by creating an issue or pull request (PR) on our [DevDocs](https://github.com/magento/devdocs) GitHub repository.
 We welcome all types of contributions; from minor typo fixes to new topics.
 
 Magento's tech writer team and [Community Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis, and we do our best to address all issues as soon as possible.
