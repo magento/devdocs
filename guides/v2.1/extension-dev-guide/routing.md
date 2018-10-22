@@ -160,25 +160,25 @@ $this->_forward('action', 'controller', 'Other_Module')
 {: .bs-callout .bs-callout-tip }
 Use the [`ActionFactory`] in your router to create an instance of an `Action` class.
 
-[`FrontController` class]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
+[`FrontController` class]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
 [FrontController]: #frontcontroller-class
-[Router class]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
-[admin]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/app/code/Magento/Backend/App/Router.php
-[robots]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/app/code/Magento/Robots/Controller/Router.php
-[urlrewrite]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/app/code/Magento/UrlRewrite/Controller/Router.php
-[standard]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/Base.php
-[default]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
-[cms]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/app/code/Magento/Cms/Controller/Router.php
+[Router class]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
+[admin]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Backend/App/Router.php
+[robots]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Robots/Controller/Router.php
+[urlrewrite]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/UrlRewrite/Controller/Router.php
+[standard]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/Base.php
+[default]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
+[cms]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Cms/Controller/Router.php
 [default router]: #default-router
-[NoRouteHandler]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandler.php
-[NoRouteHandlerInterface]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php
-[`ActionFactory`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/ActionFactory.php
-[`RouterList`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterList.php
-[`RouterInterface`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
-[`routes.xsd`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/etc/routes.xsd
+[NoRouteHandler]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandler.php
+[NoRouteHandlerInterface]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php
+[`ActionFactory`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/ActionFactory.php
+[`RouterList`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterList.php
+[`RouterInterface`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
+[`routes.xsd`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/etc/routes.xsd
 [Router class section]: #router-class
-[`Magento\Robots\Controller\Router`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/app/code/Magento/Robots/etc/frontend/di.xml
-[`Config`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Route/ConfigInterface.php
-[`Action`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Action/Action.php
-[`DefaultRouter`]: https://github.com/magento/magento2/blob/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
+[`Magento\Robots\Controller\Router`]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Robots/etc/frontend/di.xml
+[`Config`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Route/ConfigInterface.php
+[`Action`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Action/Action.php
+[`DefaultRouter`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
 [action class]: #action-class

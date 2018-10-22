@@ -44,7 +44,7 @@ See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for
 
 ### Install Bundler
 
-Install the [Bundler](http://bundler.io/) gem, which helps with Ruby dependencies:
+Install the [Bundler](https://bundler.io/) gem, which helps with Ruby dependencies:
 
 ```
 $ gem install bundler
@@ -168,7 +168,7 @@ To use Docker and Docker Compose, first download and install Docker for the appr
 
 1. Using [git](https://git-scm.com/), [clone](https://help.github.com/articles/cloning-a-repository/) this repository.
 2. Navigate to the resulting directory.
-3. Run `docker-compose up` to initialize the build process. Refer [here](https://docs.docker.com/compose/gettingstarted/#step-build-and-run-your-app-with-compose) for more details on the use of `docker-compose`.
+3. Run `docker-compose up` to initialize the build process. Refer [here](https://docs.docker.com/compose/gettingstarted/#step-4-build-and-run-your-app-with-compose) for more details on the use of `docker-compose`.
 4. Visit `http://localhost:4000/` in a web browser, and you should be presented with a local copy of the Magento DevDocs. The configuration for the local port (`4000` by default) is found in the [docker-compose.yml](https://github.com/magento/devdocs/blob/develop/docker-compose.yml) file. If another port is desired, please refer [here](https://docs.docker.com/compose/compose-file/compose-file-v2/#ports) for further details regarding Docker Compose port mapping.
 
 ### Addressing Problems With Docker Build
@@ -191,7 +191,7 @@ If you have questions, open an issue and ask us. We're looking forward to hearin
 
 *	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
 
-*	<a href="http://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
+*	<a href="https://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
 
 ## Build DevDocs in Windows
 

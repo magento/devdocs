@@ -103,7 +103,7 @@ To verify this information used for configurations and settings:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 
-The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Elasticsearch:
+The response includes all relationships for services and configuration data for that environment. In the response, you can locate data similar to the following for Elasticsearch:
 
 ```
 "elasticsearch" : [
@@ -114,7 +114,8 @@ The response includes all relationships for services and configuration data for 
          "port" : "9200"
       }
    ],
-```{: .no-copy}
+```
+{: .no-copy}
 
 ## Configure Elasticsearch for your site {#configure}
 
