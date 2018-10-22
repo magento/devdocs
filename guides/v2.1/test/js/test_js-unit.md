@@ -10,11 +10,11 @@ functional_areas:
 
 Magento {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} unit tests use the external [JsTestDriver test library]. The tests are implemented using the external [JsTestDriver API] and have their own [jsunit.requirejsUtil framework].
 
-After you run the PHP interpreter once to run unit tests, you can [run the JavaScript unit tests from the PhpStorm IDE][PhpStorm].
+After you run the PHP interpreter once to run unit tests, you can [run the JavaScript unit tests from the PHPStorm IDE][PHPStorm].
 
 ## Overview {#unit-test-overview}
 
-To run the automated JavaScript unit tests, you run the [`run_js_tests.php` script] inside the PHP interpreter from the command line. When you run the PHP script, it reads [configuration files] in the `<magento2_root_dir>/dev/tests/js` directory. It also generates a `jsTestDriver.conf` YAML configuration file in the `<magento2_root_dir>/dev/tests/js` directory. The JsTestDriver reads this generated file to run the tests. After you run the PHP interpreter once to run unit tests, you can [run the JavaScript unit tests from the PhpStorm IDE][PhpStorm].
+To run the automated JavaScript unit tests, you run the [`run_js_tests.php` script] inside the PHP interpreter from the command line. When you run the PHP script, it reads [configuration files] in the `<magento2_root_dir>/dev/tests/js` directory. It also generates a `jsTestDriver.conf` YAML configuration file in the `<magento2_root_dir>/dev/tests/js` directory. The JsTestDriver reads this generated file to run the tests. After you run the PHP interpreter once to run unit tests, you can [run the JavaScript unit tests from the PHPStorm IDE][PHPStorm].
 
 ### JsTestDriver test library {#test-library}
 
@@ -194,11 +194,11 @@ serve:
   ...
 {% endhighlight %}
 
-## Step 4. Use PhpStorm to run unit tests {#phpstorm}
+## Step 4. Use PHPStorm to run unit tests {#phpstorm}
 
-After the PHP interpreter runs for the first time, you can [run the JavaScript unit tests from the PhpStorm IDE][PhpStorm].
+After the PHP interpreter runs for the first time, you can [run the JavaScript unit tests from the PHPStorm IDE][PHPStorm].
 
-Complete these steps to use PhpStorm to run unit tests:
+Complete these steps to use PHPStorm to run unit tests:
 
 1. [Install the JsTestDriver plugin]
 2. [Start the JsTestDriver server]
@@ -207,10 +207,10 @@ Complete these steps to use PhpStorm to run unit tests:
 
 ### Install the JsTestDriver plugin {#install-plugin}
 
-1. In PhpStorm, open **Settings** and select **Plugins**.
+1. In PHPStorm, open **Settings** and select **Plugins**.
 2. Click **Browse Repositories...**.
 3. Right click **JSTestDriver Plugin** and select **Download and Install**.
-4. Restart PhpStorm.
+4. Restart PHPStorm.
 
 ### Start the JsTestDriver server {#start-jstestdriver-server}
 
@@ -243,8 +243,8 @@ Complete these steps to use PhpStorm to run unit tests:
 
 3. Depending on whether you have changed one or more configuration files, complete the appropriate step to run the tests:
    * **No changed configuration files**
-     Use PhpStorm to run the tests.
-     Before you can run the tests, click the red square icon in the **JsTestDriver Server** panel to stop the JsTestDriver server that runs in PhpStorm. You must also close the captured browser.
+     Use PHPStorm to run the tests.
+     Before you can run the tests, click the red square icon in the **JsTestDriver Server** panel to stop the JsTestDriver server that runs in PHPStorm. You must also close the captured browser.
    * **One or more changed configuration files**
      Use the PHP interpreter at the command line to regenerate the `jsTestDriver.conf` file and run the tests.
 
@@ -266,5 +266,5 @@ Complete these steps to use PhpStorm to run unit tests:
 [jsunit.requirejsUtil framework]: #framework
 [Install the JsTestDriver plugin]: #install-plugin
 [`run_js_tests.php` script]: #process-overview
-[PhpStorm]: #phpstorm
+[PHPStorm]: #phpstorm
 [Start the JsTestDriver server]: #start-jstestdriver-server
