@@ -27,9 +27,13 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 #### New features
 
--  **Docker Updates for Cloud**—
+-  **Docker Updates**
 
     -  <!-- MAGECLOUD- 2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
+
+    -  <!-- MAGECLOUD- 2799 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
+
+-  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for PHP constants in the `.magento.env.yaml` configuration file.
 
 #### Resolved Issues
 

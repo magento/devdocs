@@ -44,12 +44,8 @@ The CLI container is based on a PHP-CLI image that provides `magento-cloud` and 
 As an example, to run the `{{site.data.var.ct}}` ideal-state command:
 
 ```bash
-$ docker-compose run cli ece-command wizard:ideal-state
-Starting project-name_redis_1 ... done
-Starting project-name_dbdata_1  ... done
-Starting project-name_appdata_1 ... done
-Starting project-name_db_1      ... done
-[ ok ] Starting enhanced syslogd: rsyslogd.
+docker-compose run cli ece-command wizard:ideal-state
+...
  - Your application does not have the "post_deploy" hook enabled.
 The configured state is not ideal
 ```
@@ -88,5 +84,3 @@ Installing {{site.data.var.ece}} in a dedicated Docker environment presents an o
 -  Flexible permissions
 -  Easy local setup and implementation
 
-[containers]: {{site.baseurl}}/common/images/cloud/docker-containers.png
- {: width="500px"}
