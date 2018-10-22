@@ -36,7 +36,7 @@ Fastly provides the following services to optimize and secure content delivery o
    
 -  **Image optimization**—Offloads image processing and resizing load to the Fastly service freeing servers to process orders and conversions efficiently. See [Fastly image optimization]({{ page.baseurl }}/cloud/cdn/fastly-image-optimization.html).
 
-We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you plan to use {{ site.data.var.ee}} through a headless deployment. In that case, you do not need to use Fastly. 
+We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you are using {{ site.data.var.ee}} in a headless deployment. 
 
 ## Fastly CDN module for Magento
 

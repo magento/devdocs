@@ -2,9 +2,6 @@
 group: cloud-guide
 subgroup: 090_configure
 title: Custom block bad referer VCL
-menu_title: Custom block bad referer VCL
-menu_order: 65
-menu_node:
 redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-badreferer.html
    - /guides/v2.2/cloud/configure/fastly-vcl-badreferer.html

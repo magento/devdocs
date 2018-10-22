@@ -177,8 +177,8 @@ pages:
             - label: Custom block bad referer VCL
               url: /cloud/cdn/fastly-vcl-badreferer.html
 
-            - label: Fastly troubleshooting
-              url: /cloud/cdn/trouble-fastly.html
+        - label: Fastly troubleshooting
+          url: /cloud/cdn/trouble-fastly.html
 
     - label: Configure environments
       url: /cloud/env/environments.html
