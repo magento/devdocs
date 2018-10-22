@@ -59,7 +59,7 @@ Magento GraphQL clause | SQL equivalent
 
 Currently, Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
 
-The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. The search engine determines the maximum number of results that a query can return. For SQL searches, the maximum is the value  of the `PHP_INT_MAX` environment variable. For Elasticsearch, the value is defined in the `Elasticsearch/etc/di.xml` file. The default is 2147483647.
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
 
 The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
 
