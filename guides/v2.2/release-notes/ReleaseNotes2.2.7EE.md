@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.7 Release Notes
 
 ---
 
-*Patch code and release notes were published on November 26, 2018.*
+*Patch code and release notes were published on November 30, 2018.*
 
 
 
@@ -112,6 +112,19 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-94475 -->* The `bin/magento` command now works as expected when Magento is not installed. Previously, Magento displayed this error, `Command line user does not have read and write permissions on generated directory. Please address this issue before using Magento command line.` 
 
+<!-- ENGCOM-2740 -->* Magento no longer throws an error when loading configuration data while running the `setup:di:compile` command. Previously, Magento threw an error when loading configuration data before Magento was installed because no  store-specific or website-specific configuration data was available. (Stores and website data is available only after Magento is installed.) *Fix submitted by [Marcel](https://github.com/mimarcel) in pull request [13649](https://github.com/magento/magento2/pull/13649)*.
+
+
+<!-- ENGCOM-2674 -->* You can now set a custom `frontend_model` value in `system.xml` if the name of the module you're using contains an underscore. *Fix submitted by [Ben Tideswell](https://github.com/bentideswell) in pull request [14397](https://github.com/magento/magento2/pull/14397)*.
+
+
+<!-- ENGCOM-2596 -->* Performance of the `setup:upgrade` step  of the update process has been improved for installations containing many orders (greater than 100,000). *Fix submitted by [Aurélien Lavorel](https://github.com/AurelienLavorel) in pull request [16570](https://github.com/magento/magento2/pull/16570)*.
+
+<!-- ENGCOM-2646 -->* You can now complete `setup:install` for installations running  an authenticated Redis instance for cache configuration. Previously, Magento did not read the Redis cache options in `env.php` as expected, although  the Redis session password configuration worked as expected.  *Fix submitted by [Guillaume Giordana](https://github.com/guillaumegiordana) in pull request [17078](https://github.com/magento/magento2/pull/17078)*.
+
+<!-- ENGCOM-2721 -->* You can now replace the transaction trace driver for the Profiler (app/bootstrap.php). This change expands For example, you could replace  the default profiler with the OpenTracing API, which can then use its own exporters to express the code to the CNCF Jaeger project, which in turn supports a more granular view of application transactions.) *Fix submitted by [Andrew Howden](https://github.com/andrewhowdencom) in pull request [15171](https://github.com/magento/magento2/pull/15171)*.
+
+
 
 
 ### AdminGWS
@@ -141,6 +154,10 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-89006 -->* Merchants can now create a return merchandise authorization (RMA)  for a bundled product from a customer's account. 
 Previously, Magento did not create the RMA, and the store returned an error.
+
+### CAPTCHA
+
+<!-- ENGCOM-2576 -->* CAPTCHA code has been refactored to eliminate unnecessary multiple conditions. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17203](https://github.com/magento/magento2/pull/17203)*.
 
 
 ### Catalog
@@ -184,8 +201,13 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-93047 --> `categoryNAME` is now a required field for `rest/all/V1/categories/:categoryID` REST  calls. 
 
 
+<!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by [Dmitry Chukhnov](https://github.com/DmitryChukhnov) in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
 
 
+
+### Catalog rule
+
+<!-- ENGCOM-2718 -->* `date` can now be used as a condition for Catalog Price rules. *Fix submitted by [Glenn Cheng](https://github.com/GlennCheng) in pull request [16855](https://github.com/magento/magento2/pull/16855)*.
 
 
 ### Cart and checkout
@@ -201,6 +223,62 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-93038 -->* You can now see category changes on the storefront as expected after the changes have been saved. Previously, Magento did not display changes to product categories on the storefront until reindexing occurred even if **update on schedule** was set and the cache had been cleaned.
 
 <!-- MAGETWO-73604 -->* Magento now populates the **Default Billing** address field with the shipping address when a customer selects **Save in address book** during checkout. Previously, Magento saved the address, but did not populate the default billing address field as expected. 
+
+
+
+<!-- ENGCOM-2534 -->* Third-party modules can now perform actions after `totals` calculation. (Modules can perform additional actions by adding `.done`, `.fail`, or `.always` tasks to the request promise by creating a JavaScript mixin for the totals processor.) *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request [17127](https://github.com/magento/magento2/pull/17127)*. 
+
+<!-- ENGCOM-2645 -->* Magenta no longer adds an empty method to the cart summary. Previously, when the method html was empty, an empty list item resulted, which subsequently  resulted in an extra margin of 20px because of default styling. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17189](https://github.com/magento/magento2/pull/17189)*. 
+
+<!-- ENGCOM-2636 -->* The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed `&trade;` instead of rendered special characters on these pages. *Fix submitted by [deepjoshi94](https://github.com/deepjoshi94) in pull request [17070](https://github.com/magento/magento2/pull/17070)*. 
+
+<!-- ENGCOM-2665 -->* The `disabled attribute` has been removed from the region list. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16955](https://github.com/magento/magento2/pull/16955)*. 
+
+<!-- ENGCOM-2210 -->* The Admin checkout agreement controllers have been refactored to remove the use of `ObjectManager`. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16505](https://github.com/magento/magento2/pull/16505)*. 
+
+
+
+
+
+### Clean up and minor refactoring
+
+<!-- ENGCOM-2580 -->* Problems with the responsive layout  `app/design/frontend/Magento/luma/Magento_Theme/web/css/source/_module.less` have been resolved. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17217](https://github.com/magento/magento2/pull/17217)*.
+
+<!-- ENGCOM-2549 -->* The `text-aligh` for the <th> element of the Subtotal column in the Creditmemo email has been corrected. *Fix submitted by [Tomash Khamlai](https://github.com/TomashKhamlai) in pull request [17153](https://github.com/magento/magento2/pull/17153)*.
+
+<!-- ENGCOM-2568 -->* The  invalid `knockoutjs` data binding in Braintree PayPal has been fixed. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17236](https://github.com/magento/magento2/pull/17236)*.
+
+<!-- ENGCOM-2613 -->* The overall readability of Shipping Methods sorting has been improved by replacing sort callbacks. *Fix submitted by [Lukasz Bajsarowicz](https://github.com/lbajsarowicz) in pull request [16788](https://github.com/magento/magento2/pull/16788)*.
+
+<!-- ENGCOM-2594 -->* Files in `/lib` have been cleaned up. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17103](https://github.com/magento/magento2/pull/17103)*.
+
+<!-- ENGCOM-2619 -->* Unused IDs in `app/code/Magento/Checkout/view/frontend/web/template/billing-address/form.html` and `app/code/Magento/Checkout/Test/Mftf/Section/CheckoutPaymentSection.xml` have been removed. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [163541](https://github.com/magento/magento2/pull/163541)*.
+
+
+<!-- ENGCOM-2118 -->* Remove unnecessary translation of HTML tags in `app/code/Magento/Catalog/Block/Adminhtml/Form/Renderer/Config/YearRange.php` and `app/code/Magento/Catalog/i18n/en_US.csv`. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [17291](https://github.com/magento/magento2/pull/17291)*.
+
+<!-- ENGCOM-2651 -->* Minor CSS issues in `lib/internal/Magento/Framework/View/Test/Unit/Url/_files/sourceImport.css` have been fixed. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17365](https://github.com/magento/magento2/pull/17365)*.
+
+<!-- ENGCOM-2762 -->* Duplicate code in `app/code/Magento/Ui/view/base/web/js/dynamic-rows/dynamic-rows.js` has been removed. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17505](https://github.com/magento/magento2/pull/17505)*.
+
+<!-- ENGCOM-2776 -->* The code generator for Proxy is no longer missing `returnType` in the method information definition. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [17552](https://github.com/magento/magento2/pull/17552)*.
+
+
+<!-- ENGCOM-2748 -->* The <script/> tag has been replaced with <script type="text/x-magento-init" /> in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also created a new JavaScript component with the callback function.  *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
+
+
+<!-- ENGCOM-2632 -->* The '$outputHelper' property declaration has been added to `app/code/Magento/Catalog/CustomerData/CompareProducts.php`. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
+
+
+<!-- ENGCOM-2632 -->* The `Magento_Backend` module  has been refactored. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17101](https://github.com/magento/magento2/pull/17101)*.
+
+
+<!-- ENGCOM-1666 -->* `cache count()` for loops has been refactored to improve the performance of the loops that were running `count()` in every iteration throughout the code base. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15507](https://github.com/magento/magento2/pull/15507)*.
+
+
+### CMS content
+
+<!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
 
 
 
@@ -232,6 +310,8 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-73359 -->* You can successfully save a CMS page with same URL key as another store on a different website but with the same hierarchy. 
 
+<!-- ENGCOM-2655 -->* The CMS page index has been refactored to remove the Object Manager and added dependency injection to the constructor. *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [17066](https://github.com/magento/magento2/pull/17066)*. 
+
 
 
 
@@ -257,7 +337,7 @@ product, and hung indefinitely while trying to add the product.
 
 
 
-
+<!-- ENGCOM-2787 -->* Magento can no longer send more than 50 emails per cronjob, which will reduce duplicate emails.  *Fix submitted by [iGerchak](https://github.com/iGerchak) in pull request [17484](https://github.com/magento/magento2/pull/15942)*. 
 
 
 
@@ -266,6 +346,11 @@ product, and hung indefinitely while trying to add the product.
 ### Frameworks
 
 <!-- ENGCOM-2070 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [15942](https://github.com/magento/magento2/pull/15942)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
+
+<!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function `__()` to trigger translations) now lives in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
+
+
+<!-- ENGCOM-2570 -->* FTP connections can  now use user or password strings with special characters (for example, @ or #). *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17246](https://github.com/magento/magento2/pull/17246)*.
 
 
 
@@ -284,7 +369,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2291 -->* JavaScript validation rules no longer require validation of fields where completion is not required. Previously, customers could not complete forms unless non-required fuelds were completed. *Fix submitted by [Vitaliy Boyko](https://github.com/VitaliyBoyko) in pull request [16724](https://github.com/magento/magento2/pull/16724)*. [GitHub-16544](https://github.com/magento/magento2/issues/16544)
 
-
+<!-- ENGCOM-1967 -->* You can disable the **Use system value** checkboxes on the Adminhtml as expected. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16000](https://github.com/magento/magento2/pull/16000)*.
 
 
 #### Session framework
@@ -314,6 +399,11 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-83984-->* Magento now processes the oldest message queue entries first instead of last.
 
 
+<!-- ENGCOM-2875 -->* The `setterName` method is now correctly set. *Fix submitted by [insanityinside](https://github.com/insanityinside) in pull request [17773](https://github.com/magento/magento2/pull/17773)*. 
+
+
+<!-- ENGCOM-2896 -->* New templates have been added to the GitHub Issue Reporting section. These templates target a broad scope of possible problems, and the proposed descriptions are aimed at simplifying future fixes. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request [17817](https://github.com/magento/magento2/pull/17817)*. 
+
 
 
 ### Google Tag Manager
@@ -335,6 +425,22 @@ product, and hung indefinitely while trying to add the product.
 <!-- ENGCOM-2872 -->* The `$keepRation` parameter in the `Magento\Cms\Model\Wysiwyg\Images\Storage` class has been renamed to `$keepRatio`. *Fix submitted by [Martin Aarts](https://github.com/MartinAarts) in pull request [17776](https://github.com/magento/magento2/pull/17776)*. [GitHub-17587](https://github.com/magento/magento2/issues/17587)
 
 <!-- MAGETWO-73342 -->* Customers can now change product status by clicking on either the toggle element or label text, but not by clicking the area around a toggle element. Previously, if a customer  clicked on the area around a toggle element, Magento changed the state of the element. Unintended results could occur if a customer mistakenly clicked on the area around the element and didn't realize that the status had  changed.
+
+<!-- ENGCOM-2736 -->* Outdated LESS lib docs have been updated. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [17479](https://github.com/magento/magento2/pull/17479)*.
+
+
+<!-- ENGCOM-2643 -->* The `floatval()` function has been replaced by the use of direct type casting to `(float)` throughout the code base. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [16848](https://github.com/magento/magento2/pull/16848)*.
+
+
+
+<!-- ENGCOM-2644 -->* The `strval()` function has been replaced by the use of direct type casting to `(string)` throughout the code base. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [16849](https://github.com/magento/magento2/pull/16849)*.
+
+<!-- ENGCOM-2668 -->* The EU-VAT-Numbers `Countrycode`  prefixes have been removed for validation purposes. *Fix submitted by [Drischie](https://github.com/Drischie) in pull request [17385](https://github.com/magento/magento2/pull/17385)*.
+
+
+<!-- ENGCOM-2634 -->* Missing `data-th` selectors have been added to tables. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [17327](https://github.com/magento/magento2/pull/17327)*.
+
+
 
 
 ### Locale
@@ -483,6 +589,53 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 ### Testing
 
 <!-- ENGCOM-2616 -->* The ProcessCronQueueObserverTest.php integration test now works correctly. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
+
+<!-- ENGCOM-2900 -->* Deprecated methods throughout the test suite have been replaced. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17872](https://github.com/magento/magento2/pull/17872)*.
+
+<!-- ENGCOM-2899 -->* An API-functional test  for the `/V1/search` (searchV1) resource has been added. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17840](https://github.com/magento/magento2/pull/17840)*.
+
+<!-- ENGCOM-2907 -->* The `\Magento\Sales\Model\Validator` class now has unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17876](https://github.com/magento/magento2/pull/17876)*.
+
+<!-- ENGCOM-2908 -->* The `\Magento\Search\Model\PopularSearchTerms` now has unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17739](https://github.com/magento/magento2/pull/17739)*.
+
+<!-- ENGCOM-2876 -->* The `\Magento\Search\Model\SynonymAnalyzer` class  now has a unit test. *Fix submitted by [Zebra](https://github.com/furseyev) in pull request [17801](https://github.com/magento/magento2/pull/17801)*.
+
+<!-- ENGCOM-2843 -->* The Sales Rule model classes now have unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17710](https://github.com/magento/magento2/pull/17710)*.
+
+<!-- ENGCOM-2830 -->* The `\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver` now has unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17693](https://github.com/magento/magento2/pull/17693)*.
+
+<!-- ENGCOM-2823 -->* The CMS model classes now have unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17678](https://github.com/magento/magento2/pull/17678)*.
+
+<!-- ENGCOM-2807 -->* The `\Magento\Newsletter\Model\Problem` class now has unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17633](https://github.com/magento/magento2/pull/17633)*.
+
+<!-- ENGCOM-2780 -->* The `\Magento\Braintree\Model\InstantPurchase\CreditCard\TokenFormatter` class now has unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17590](https://github.com/magento/magento2/pull/17590)*.
+
+
+<!-- ENGCOM-2772 -->* The \Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest  and \Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest classes now have unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17561](https://github.com/magento/magento2/pull/17561)*.
+
+<!-- ENGCOM-2715 -->* The `Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker` class now has a unit test. [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17454](https://github.com/magento/magento2/pull/17454)*
+
+
+<!-- ENGCOM-2680 -->* The instant purchase PayPal token formatter now has a unit test. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17405](https://github.com/magento/magento2/pull/17405)*.
+
+<!-- ENGCOM-2657 -->* The `\Magento\Braintree\Gateway\Http\Client\TransactionVoid` and `\Magento\Braintree\Gateway\Http\Client\TransactionRefund` classes now have unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17368](https://github.com/magento/magento2/pull/17368)*.
+
+
+<!-- ENGCOM-2632 -->* The `\Magento\Catalog\CustomerData\CompareProducts` class now has unit tests. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
+
+<!-- ENGCOM-2828 -->* `\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver` is now covered by an integration test. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17690](https://github.com/magento/magento2/pull/17690)*.
+
+### Translation
+
+<!-- ENGCOM-2863 -->* Errors in  `app/code/Magento/Sales/i18n/en_US.csv` have been corrected. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17735](https://github.com/magento/magento2/pull/17735)*.
+
+<!-- ENGCOM-2817 -->* `translate="title"`  has been added to Admin menus. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [17521](https://github.com/magento/magento2/pull/17521)*.
+
+<!-- ENGCOM-2799 -->* The custom attribute group name on customer and product pages can now be translated. *Fix submitted by [Grayson](https://github.com/GraysonChiang) in pull request [17602](https://github.com/magento/magento2/pull/17602)*.
+
+<!-- ENGCOM-2781 -->* Validation error messages can now be translated. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [17575](https://github.com/magento/magento2/pull/17575)*.
+
+<!-- ENGCOM-2677 -->* Error messages in the shopping cart page can now be translated. *Fix submitted by [Yogesh Suhagiya](https://github.com/Yogeshks) in pull request [16777](https://github.com/magento/magento2/pull/16777)*.
 
 
 
