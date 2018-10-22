@@ -1,6 +1,6 @@
 ---
 mftf-release: 2.3.6
-redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/test/annotations.md
+redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/test/annotations.html
 ---
 
 # Annotations

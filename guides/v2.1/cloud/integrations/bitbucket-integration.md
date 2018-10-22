@@ -66,7 +66,7 @@ You need to clone your {{site.data.var.ece}} project from an existing environmen
     origin git@bitbucket.org:<user-name>/<repo-name>.git (fetch)
     origin git@bitbucket.org:<user-name>/<repo-name>.git (push)
     ```
-	{: .no-copy}
+    {: .no-copy}
 
 1.  Push the project files to your new Bitbucket repository. Remember to keep all branch names the same.
 
@@ -153,6 +153,8 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
     |          |           | https://magento-url.cloud/api/projects/<project-id>/integrations/<int-id>/hook |
     +----------+-----------+--------------------------------------------------------------------------------+
     ```
+    {: .no-copy}
+    
     Make a note of the **Hook URL** to configure a webhook in BitBucket.
 
 ### Add a webhook in BitBucket
@@ -213,6 +215,7 @@ The Bitbucket integration cannot activate new environments in your {{site.data.v
     Parent environment [master]: integration
     --- (Validation and activation messages)
     ```
+    {: .no-copy}
 
 1.  Verify the environment is active.
 
