@@ -6,7 +6,18 @@ functional_areas:
   - Setup
   - Configuration
 ---
-Fastly provides image optimization support for common image formats: PNG, JPEG, GIF. The Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
+
+Fastly image optimization (Fastly IO) provides real-time image manipulation and optimization to speed up image delivery and simplify maintenance of image source sets for responsive web applications. Once configured Fastly IO provides the following image optimization features:
+
+- Force lossy conversion
+- Deep image optimization
+- Adaptive pixel ratios
+- Support for common image formats: PNG, JPEG, and GIF
+
+You must set up your Fastly service and configure Origin shielding before you can enable and configure the Fastly IO option.
+
+
+Based on your configuration settings, the Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
 
 ## Enable Fastly IO
 
