@@ -2,9 +2,10 @@
 group: cloud-guide
 subgroup:
 title: Git
-menu_title: Git
-menu_node:
-menu_order:
+redirect_from:
+   - /guides/v2.1/cloud/project/admin-git-push.html
+   - /guides/v2.2/cloud/project/admin-git-push.html
+   - /guides/v2.3/cloud/project/admin-git-push.html
 ---
 
 Git is the center of all code management, build, and deployment for your {{site.data.var.ece}} stores and sites. We use Git to provide source control for your code:
