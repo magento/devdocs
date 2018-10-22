@@ -27,13 +27,14 @@ The smallest working `module.xml` file would look something like this:
 ``` xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-        <module name="Vendor_ComponentName"/>
+        <module name="Vendor_ComponentName" setup_version="2.0.0"/>
 </config>
 ```
 
-The `name` parameter defines the name of your component. It is required for all components. If you do not use [Declarative Schema]({{ page.baseurl/extension-dev-guide/declarative-schema/index.html }})  to help manage the installation and upgrade processes for your component, then you must also add the  `setup_version` parameter to the `module` line. Set the `setup_version` value to your module's {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} version. Omit the `setup_version` parameter if you implement Declarative Schema.
+The `name` parameter defines the name of your component. It is required for all components. If you do not use [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html)  to help manage the installation and upgrade processes for your component, then you must also add the  `setup_version` parameter to the `module` line. Set the `setup_version` value to your module's {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} version. Omit the `setup_version` parameter if you implement Declarative Schema.
 
-Avoid using "Ui" for your custom module name because the `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
+{: .bs-callout .bs-callout-info}
+Avoid using "Ui" for your custom module name, because the `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 ## Add the component's `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
@@ -44,6 +45,8 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
 * If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
 * We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
 
+Refer to [Module version dependencies]({{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html) to determine versioning requirements.
+
 ### Example `composer.json` file
 
 ```json
@@ -52,17 +55,17 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
     "description": "Test component for Magento 2",
     "require": {
         "php": "~7.1.3||~7.2.0",
-        "magento/module-store": "1.0.0-beta",
-        "magento/module-catalog": "1.0.0-beta",
-        "magento/module-catalog-inventory": "1.0.0-beta",
+        "magento/module-store": "102.1",
+        "magento/module-catalog": "102.1",
+        "magento/module-catalog-inventory": "102.1",
         "magento/module-ui": "self.version",
         "magento/magento-composer-installer": "*"
     },
     "suggest": {
-      "magento/module-webapi": "1.0.0-beta"
+      "magento/module-webapi": "102.1"
     },
     "type": "magento2-module",
-    "version": "1.0.0-beta",
+    "version": "102.1",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
