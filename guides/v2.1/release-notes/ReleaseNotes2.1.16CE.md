@@ -14,7 +14,7 @@ We are pleased to present Magento Open Source 2.1.15. This release includes  mul
 
 Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.15) have been ported to 2.2.6, 1.14.3.10, and 1.9.3.10, as appropriate. 
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.6-and-2.1.15-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.16) have been ported to 2.2.7, 1.14.4.0, and 1.9.4.0, as appropriate. 
 
 ## Highlights
 
@@ -28,11 +28,26 @@ Magento 2.1.16 contains over 40 security fixes and enhancements. See [Magento Se
 ## Fixed issues
 In addition to security enhancements, this release contains the following functional fixes. 
 
+
+### Installation, deployment, configuration
+
+<!--- ENGCOM-2784 -->* You can now save configuration values to the database without assigning parameters for scope ID and type when using default scope. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17083](https://github.com/magento/magento2/pull/17083)*. 
+
 ### Catalog
 
 <!--- ENGCOM-2750 -->* Magento now maintains product image roles as expected after upgrade. Previously, image roles randomly disappeared from product pages after upgrade. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17553](https://github.com/magento/magento2/pull/17553)*. [GitHub-10687](https://github.com/magento/magento2/issues/10687)
 
+<!--- ENGCOM-2827 -->* The custom attribute group name on customer and product pages can now be translated. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17684](https://github.com/magento/magento2/pull/17684)*. 
 
+<!--- ENGCOM-2877 -->* The `setterName` method is now correctly set. *Fix submitted by [insanityinside](https://github.com/insanityinside) in pull request [17774](https://github.com/magento/magento2/pull/17774)*. 
+
+<!--- ENGCOM-2913 -->*  `setterName` in `app/code/Magento/Catalog/Model/ProductLink/Repository.php` now implements `SimpleDataObjectConverter::snakeCaseToUpperCamelCase`. *Fix submitted by [insanityinside](https://github.com/insanityinside) in pull request [17883](https://github.com/magento/magento2/pull/17883)*. 
+
+
+
+### Cleanup and minor code refactoring 
+
+<!--- ENGCOM-2652 -->* Minor CSS issues in `lib/internal/Magento/Framework/View/Test/Unit/Url/_files/sourceImport.css` have been fixed. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17366](https://github.com/magento/magento2/pull/17366)*. 
 
 
 ### EAV
@@ -78,6 +93,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-2730 -->* You can now use REST to add a configurable product to a shopping cart without creating a duplicate product entry. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17476](https://github.com/magento/magento2/pull/17476)*.  [GitHub-15028](https://github.com/magento/magento2/issues/15028)
 
+<!--- ENGCOM-2696 -->* The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed `&trade;` instead of rendered special characters on these pages. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17422](https://github.com/magento/magento2/pull/17422)*.
+
+
 
 ### Password
 
@@ -118,6 +136,15 @@ In addition to security enhancements, this release contains the following functi
 <!--- ENGCOM-2627 -->*  The `$product->getUrlInStore()` method now returns more compact URLs. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [16310](https://github.com/magento/magento2/pull/16310)*. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
 
+### Testing
+
+<!--- ENGCOM-2844 -->*  `\Magento\Cms\Model\Block` is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17682](https://github.com/magento/magento2/pull/17682)*.
+
+<!--- ENGCOM-2889 -->*  The `\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest` and `\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest` classes are now covered by unit tests. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17606](https://github.com/magento/magento2/pull/17606)*.
+
+<!--- ENGCOM-2909 -->*  The `\Magento\Search\Model\SynonymAnalyzer` and `\Magento\Search\Model\SynonymAnalyzer` classes are now covered by unit tests. *Fix submitted by [Zebra](https://github.com/furseyev) in pull request [17839](https://github.com/magento/magento2/pull/17839)*.
+
+<!--- ENGCOM-2928 -->*  `\Magento\Sales\Model\Validator` is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17940](https://github.com/magento/magento2/pull/17940)*.
 
 
 
