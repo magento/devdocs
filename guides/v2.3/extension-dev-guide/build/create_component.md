@@ -27,7 +27,7 @@ The smallest working `module.xml` file would look something like this:
 ``` xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-        <module name="Vendor_ComponentName" setup_version="2.0.0"/>
+        <module name="Vendor_ComponentName"/>
 </config>
 ```
 
