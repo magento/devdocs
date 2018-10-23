@@ -135,7 +135,7 @@ var config = {
 
 To add the field to the address model on the server side, add the `extension_attributes.xml` file in the `<YourModule_dir>/etc/` directory.
 
-The following code is an example of a `extension_attributes.xml` file:
+The following code is an example of an `extension_attributes.xml` file:
 
 ```xml
 <?xml version="1.0"?>
@@ -151,7 +151,7 @@ Clear the `var/generation` directory when you run the `setup:di:compile` command
 
 ## Step 5: Access the value of the custom field on server side {#access}
 
-If completed all the steps described in the previous sections, Magento will generate the interface that includes your custom attribute and you can access your field value.
+If you completed all the steps described in the previous sections, Magento will generate the interface that includes your custom attribute and you can access your field value.
 
 You can set/get these attributes values by creating an instance of the  `Magento/Quote/Api/Data/AddressInterface.php interface`.
 
