@@ -1,6 +1,5 @@
 ---
 group: cloud-guide
-subgroup:
 title: Git
 redirect_from:
    - /guides/v2.1/cloud/project/admin-git-push.html
