@@ -14,6 +14,9 @@ Each of the following links lead to a list of REST endpoints specific to a user 
 
 * [Guest REST API endpoints]({{site.baseurl}}/redoc/2.3/guest-rest-api.html) - Available for anonymous users
 * [Customer REST API endpoints]({{site.baseurl}}/redoc/2.3/customer-rest-api.html) - Available using a customer security token
-* [Admin REST API endpoints]({{site.baseurl}}/redoc/2.3/admin-rest-api.html) - Available using an admin security token
+* [Admin REST API endpoints]({{site.baseurl}}/redoc/2.3/admin-rest-api.html) - Available using an admin security token.
+
+   {: .bs-callout .bs-callout-warning}
+   The list of Admin REST API endpoints lists a large number of endpoints and takes longer to load.
 
 [Token-based authentication]: {{page.baseurl}}/get-started/authentication/gs-authentication-token.html
