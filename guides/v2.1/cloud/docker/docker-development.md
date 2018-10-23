@@ -15,15 +15,19 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
 
 -  **DB**  
     Database based on MariaDB version 10
--  **FPM**—[magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php/)  
+-  **FPM**—[magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)  
     PHP-CLI: version 7 and later  
     PHP-FPM: version 7 and later  
--  **NGINX**—[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx/)  
+-  **NGINX**—[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)  
     Web server based on NGINX version 1.9
--  **Redis**—[magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis/)  
+-  **Redis**—[magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)  
     Redis server based on the latest Redis version
--  **Varnish**—[magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish/)  
+-  **Varnish**—[magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)  
     Based on the latest Varnish version and used for caching
+-  **RabbitMQ**—[rabbitmq](https://hub.docker.com/_/rabbitmq)  
+    Based on the latest official RabbitMQ version
+-  **ElasticSearch**—[magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)  
+    Based on version 5.2
 
 ### Web container
 
@@ -50,15 +54,26 @@ docker-compose run cli ece-command wizard:ideal-state
 The configured state is not ideal
 ```
 
+#### Sharing data between host machine and container
+
+You can easily share files between your machine and Docker container, by putting them into *docker/mnt* folder. They will appear in */mnt* directory after next `docker-compose up`
+
 ### Cron container
 
 The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start.
 
-#### To view the cron log:
+#### View cron log
 
 ```bash
 docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
 ```
+
+### Database container
+
+#### Import database
+
+To import a database dump, put it into *docker/mysql/docker-entrypoint-initdb.d* folder as *.sql* file. It will be imported and processed by *ECE-Tools* on next *docker-compose up*.
+You can also use more complex approach with *gzip*, by sharing *.sql.gz* file via *docker/mnt* directory and importing it inside of Docker container.
 
 ## Docker commands
 
