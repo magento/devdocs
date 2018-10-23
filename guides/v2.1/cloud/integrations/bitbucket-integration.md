@@ -128,7 +128,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 1.  Add the integration to your project using the `magento-cloud` CLI tool.
 
     {: .bs-callout .bs-callout-warning}
-    The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone.
+    The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. With that said, please make sure you cloned all of your branches from Cloud Project and pushed them to your Bitbucket repository prior to adding the Bitbucket integration , it is critical to have identical git tree in Bitbucket and Cloud repository in order not to delete branches/environments in Cloud Project. 
 
     ```bash
     magento-cloud project:curl -p '<project-ID>' /integrations -i -X POST -d "$(< bitbucket.json)"
