@@ -81,7 +81,7 @@ Clone the example configuration files and build the Codeception project.
 #### Usage
 
 ```bash
-vendor/bin/mftf build:project [--upgrade]
+vendor/bin/mftf build:project [--upgrade] [config_params]
 ```
 
 #### Options
@@ -89,6 +89,12 @@ vendor/bin/mftf build:project [--upgrade]
 | Option            | Description                                                                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `-u`, `--upgrade` | Upgrades existing MFTF tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: `build:project --upgrade`. |
+
+You can use options to set up particular configuration parameters, since the `build:project` command runs [`setup:env`][setup] as well.
+
+```bash
+vendor/bin/mftf build:project --MAGENTO_BASE_URL=http://magento.local/ --MAGENTO_BACKEND_NAME=admin214365
+```
 
 ### `generate:tests`
 
@@ -289,7 +295,7 @@ vendor/bin/mftf run:test [--skip-generate|--remove] [--] <name1> [<name2>]
 #### Options
 
 | Option                | Description                                                                                               |
-| --------------------- | --------------------------------------------------------------------------------------------------------- |
+|-----------------------|-----------------------------------------------------------------------------------------------------------|
 | `-k, --skip-generate` | Skips generating from the source XML. Instead, the command executes previously-generated groups of tests. |
 | `-r, --remove`        | Remove previously generated suites and tests.                                                             |
 
@@ -300,6 +306,39 @@ Generate the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests from X
 ```bash
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ```
+
+### `setup:env`
+
+Updates values to [configuration] parameters in the [`.env`] file.
+Creates the file it is not exist.
+
+#### Usage
+
+```bash
+vendor/bin/mftf setup:env [config_param1=value] [config_param2=value]
+```
+
+`config_param` is a configuration parameter from the `.env` file.
+The command consumes the parameters in a format of options assigned with values, for example `--MAGENTO_BASE_URL=http://magento.local/`.
+If the provided parameter does not exist, the command returns an error.
+
+This command is also run as a part of [`build:project`][build] that enables you to set up configuration the same way from a command line.
+
+#### Examples
+
+To change values for the `MAGENTO_BASE_URL` and `BROWSER`:
+
+```bash
+vendor/bin/mftf setup:env --MAGENTO_BASE_URL=http://magento.local/ --BROWSER=firefox
+```
+
+To create a `.env` file with example parameters:
+
+```bash
+vendor/bin/mftf setup:env
+```
+
+The example parameters are taken from the `etc/config/.env.example` file.
 
 ### `upgrade:tests`
 
@@ -332,6 +371,8 @@ vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test
 
 [configuration]: ../configuration.html
 [Reference]: #reference
+[build]: #buildproject
+[setup]: #setupenv
 
 <!-- Abbreviations -->
 
