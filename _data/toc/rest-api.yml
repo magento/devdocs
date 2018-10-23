@@ -23,16 +23,16 @@ pages:
           versionless: true
           children:
 
-            - label: Guest REST endpoints
-              url: /redoc/2.3/guest-rest-api.html
+            - label: Admin REST endpoints
+              url: /redoc/2.3/admin-rest-api.html
               versionless: true
 
             - label: Customer REST endpoints
               url: /redoc/2.3/customer-rest-api.html
               versionless: true
 
-            - label: Admin REST endpoints
-              url: /redoc/2.3/admin-rest-api.html
+            - label: Guest REST endpoints
+              url: /redoc/2.3/guest-rest-api.html
               versionless: true
 
         - label: List of REST endpoints by module

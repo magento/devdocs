@@ -9,8 +9,6 @@ return_to:
 menu_order: 10
 level3_subgroup: order-tutorial
 redirect_from:
-  - /guides/v2.1/get-started/order-tutorial/order-issue-refund.html
-  - /guides/v2.2/get-started/order-tutorial/order-issue-refund.html
   - /guides/v2.3/get-started/order-tutorial/order-issue-refund.html
 functional_areas:
   - Integration
