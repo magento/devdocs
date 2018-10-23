@@ -17,7 +17,7 @@ functional_areas:
 Variables are _hierarchical_, which means that if a variable is not overridden, it is inherited from the parent environment.
 
 You can set [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
-from the Project Web interface or using the Magento CLI. Other environment variables can be managed from the [`.magento.env.yaml`]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
+from the Project Web interface or using the Magento CLI. Other environment variables can be managed from the [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html) file to manage build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 ## Global variables
 
@@ -28,18 +28,20 @@ stage:
   global:
     GLOBAL_VARIABLE_NAME: value
 ```
+
 ### `MIN_LOGGING_LEVEL`
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Overrides the minimum logging level for all output streams without making changes to the code. This helps to improve troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
+Overrides the minimum logging level for all output streams without making changes to the code. This helps to improve troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Log levels]({{page.baseurl}}/cloud/env/log-handlers.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
 
 ```yaml
 stage:
     global:
         MIN_LOGGING_LEVEL: debug
 ```
+
 ### `SCD_ON_DEMAND`
 
 -  **Default**—_Not set_
@@ -64,7 +66,9 @@ return array(
    ...
 );
 ```
-{% include note.html type="info" content="JS bundling and JS/CSS merging do not work with SCD on demand." %}
+
+{: .bs-callout .bs-callout-info}
+JS bundling and JS/CSS merging do not work with SCD on demand.
 
 ### `SKIP_HTML_MINIFICATION`
 
@@ -79,7 +83,6 @@ Enables or disables copying static view files to the `<magento_root>/init/` dire
 -   **`true`**—Enables on-demand HTML minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the _build_ stage.
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
-
 
 ```yaml
 stage:
