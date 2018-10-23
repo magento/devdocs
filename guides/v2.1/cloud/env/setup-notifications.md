@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Notifications
+title: Set up notifications
 functional_areas:
   - Cloud
   - Setup
@@ -29,7 +29,7 @@ The configuration file used to set up notifications is at the root of your proje
 To configure notifications:
 
 1.  Open a terminal and [checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
-1.  In the `.magento.env.yaml` file in your project root, add your messaging system settings, including preferred notification [Log levels]({{page.baseurl}}/cloud/env/log-handlers.html#log-levels#log-levels).
+1.  In the `.magento.env.yaml` file in your project root, add your messaging system settings, including preferred notification [Log levels]({{page.baseurl}}/cloud/env/log-handlers.html#log-levels).
 
     For example, to configure both Slack _and_ email configurations, use the following:
 
