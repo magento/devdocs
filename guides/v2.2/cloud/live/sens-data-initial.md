@@ -96,29 +96,29 @@ The following snippet from `config.php` shows an example of changing the default
 
 <pre class="no-copy">
  'general' => [
-   'locale' => [
-     'code' => 'en_GB',
-     'timezone' => 'UTC',
-   ],
+     'locale' => [
+         'code' => 'en_GB',
+         'timezone' => 'UTC',
+     ],
 
-   ... more ...
+     ... more ...
 
  'dev' => [
-   'template' => [
-     'allow_symlink' => '0',
-     'minify_html' => '0',
-   ],
-   'js' => [
-     'merge_files' => '0',
-     'enable_js_bundling' => '0',
-     'minify_files' => '0',
-   ],
-   'css' => [
-     'merge_css_files' => '0',
-     'minify_files' => '0',
-   ],
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '0',
+     ],
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '0',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '0',
+     ],
 
-   ... more ...
+     ... more ...
 </pre>
 
 ## Push and deploy config.php to environments {#deploy}
