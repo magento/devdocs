@@ -67,7 +67,7 @@ Boolean
   </tbody>
 </table>
 
-You can configure these options in your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module's{% endglossarytooltip %} config.xml file.
+You can configure these options in your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module's{% endglossarytooltip %} `config.xml` file.
 
 Example:
 
