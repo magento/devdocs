@@ -8,7 +8,10 @@ functional_areas:
 
 Integrations are useful for leveraging the functionality of external services—such as Git hosting or Slack bots—and maintaining your current development processes, such as using the code review pull request function in GitHub. You can add the following integrations to your {{site.data.var.ece}} project:
 
--  [Health notifications]({{ page.baseurl }}/cloud/integrations/health-notifications.html)
+-  [Health notifications]({{ page.baseurl }}/cloud/integrations/health-notifications.html):
+    -  Email
+    -  Slack interactive bot
+    -  PagerDuty integration
 -  Git-based hosting services:
     -  [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html)
     -  [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html)
