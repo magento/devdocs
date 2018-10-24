@@ -22,3 +22,7 @@
 6.	Transfer the `config.local.php` file to your local workstation.
 
 		rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
+
+7.	You can then test to ensure the transfer was successful by importing the config file to your local environment.
+
+		php bin/magento app:config:import
