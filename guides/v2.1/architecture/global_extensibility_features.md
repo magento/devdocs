@@ -32,7 +32,7 @@ Design patterns are time-tested, widely recognized software architecture constru
 
 ### Coding standards
 
-Magento developers should familiarize themselves with our coding standards, best practices, and conventions, especially standards for PHP file formatting, coding style, and file naming conventions. Magento standards are based on Zend Framework Coding Standards.
+Magento developers should familiarize themselves with our coding standards, best practices, and conventions, especially standards for PHP file formatting, coding style, and file naming conventions. Magento standards are based on PSR2 Coding Standards.
 
 See [Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html) for guidelines and requirements.
 
