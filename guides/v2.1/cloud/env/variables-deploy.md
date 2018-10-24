@@ -106,6 +106,27 @@ stage:
       _merge: true
 ```
 
+### `ENABLE_GOOGLE_ANALYTICS`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Enables or disables Google Analytics when deploying to Staging and Integration environments.
+
+-   **`true`**—Enables Google Analytics on Staging and Integration environments.
+-   **`false`**—Disables Google Analytics on Staging and Integration environments.
+
+The following example enables Google Analytics when deploying to a Staging or Integration environment.
+
+```yaml
+stage:
+  deploy:
+    ENABLE_GOOGLE_ANALYTICS: true 
+```
+
+{:.bs-callout .bs-callout-info}
+The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
+
 ### `GENERATED_CODE_SYMLINK`
 
 -  **Default**—`true`
