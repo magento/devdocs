@@ -54,10 +54,6 @@ docker-compose run cli ece-command wizard:ideal-state
 The configured state is not ideal
 ```
 
-#### Sharing data between host machine and container
-
-You can easily share files between your machine and Docker container, by putting them into *docker/mnt* folder. They will appear in */mnt* directory after next `docker-compose up`
-
 ### Cron container
 
 The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start.
@@ -70,10 +66,17 @@ docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
 
 ### Database container
 
-#### Import database
+The database container is based on the `mariadb:10` image.
 
-To import a database dump, put it into *docker/mysql/docker-entrypoint-initdb.d* folder as *.sql* file. It will be imported and processed by *ECE-Tools* on next *docker-compose up*.
-You can also use more complex approach with *gzip*, by sharing *.sql.gz* file via *docker/mnt* directory and importing it inside of Docker container.
+#### Importing a database dump
+
+To import a database dump, place the SQL file into the `docker/mysql/docker-entrypoint-initdb.d` folder. The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
+
+Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `docker/mnt` directory and importing it inside the Docker container.
+
+## Sharing data between host machine and container
+
+You can easily share files between your machine and a Docker container by placing the files in the `docker/mnt` directory. They appear in `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
 
 ## Docker commands
 
@@ -98,4 +101,3 @@ Installing {{site.data.var.ece}} in a dedicated Docker environment presents an o
 -  Customizable Docker Compose file to support a wide range of environment sets
 -  Flexible permissions
 -  Easy local setup and implementation
-
