@@ -15,15 +15,19 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
 
 -  **DB**  
     Database based on MariaDB version 10
--  **FPM**—[magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php/)  
+-  **FPM**—[magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)  
     PHP-CLI: version 7 and later  
     PHP-FPM: version 7 and later  
--  **NGINX**—[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx/)  
+-  **NGINX**—[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)  
     Web server based on NGINX version 1.9
--  **Redis**—[magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis/)  
+-  **Redis**—[magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)  
     Redis server based on the latest Redis version
--  **Varnish**—[magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish/)  
+-  **Varnish**—[magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)  
     Based on the latest Varnish version and used for caching
+-  **RabbitMQ**—[rabbitmq](https://hub.docker.com/_/rabbitmq)  
+    Based on the latest official RabbitMQ version
+-  **ElasticSearch**—[magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)  
+    Based on version 5.2
 
 ### Web container
 
@@ -54,11 +58,25 @@ The configured state is not ideal
 
 The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start.
 
-#### To view the cron log:
+#### View cron log
 
 ```bash
 docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
 ```
+
+### Database container
+
+The database container is based on the `mariadb:10` image.
+
+#### Importing a database dump
+
+To import a database dump, place the SQL file into the `docker/mysql/docker-entrypoint-initdb.d` folder. The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
+
+Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `docker/mnt` directory and importing it inside the Docker container.
+
+## Sharing data between host machine and container
+
+You can easily share files between your machine and a Docker container by placing the files in the `docker/mnt` directory. They appear in `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
 
 ## Docker commands
 
@@ -83,4 +101,3 @@ Installing {{site.data.var.ece}} in a dedicated Docker environment presents an o
 -  Customizable Docker Compose file to support a wide range of environment sets
 -  Flexible permissions
 -  Easy local setup and implementation
-
