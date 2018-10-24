@@ -33,11 +33,9 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
     -  <!-- MAGECLOUD- 2799 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
 
--  **Environment variable updates**
+-  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for PHP constants in the `.magento.env.yaml` configuration file.
 
-    -  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for PHP constants in the `.magento.env.yaml` configuration file.
-
-    -  <!--MAGECLOUD-2879-->Added the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html##enable_google_analytics) deploy environment variable to enable or disable Google Analytics on Staging and Integration environments.
+-  <!--MAGECLOUD-2879-->**Environment variable update**—Added the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html##enable_google_analytics) environment variable to enable or disable Google Analytics when deploying to Staging and Integration environments.
 
 
 #### Resolved Issues
