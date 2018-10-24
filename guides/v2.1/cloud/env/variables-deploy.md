@@ -125,7 +125,7 @@ stage:
 ```
 
 {:.bs-callout .bs-callout-info}
-The {{ site.data.var.ece }} deploy process always enables Google Analytics when deploying to Production environments.
+The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
 
 ### `GENERATED_CODE_SYMLINK`
 
