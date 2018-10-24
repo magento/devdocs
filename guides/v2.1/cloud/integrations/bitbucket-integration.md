@@ -22,7 +22,7 @@ Before you enable the integration, you must have the following:
 
 ## Prepare your repository
 
-You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.
+You need to clone your {{site.data.var.ece}} project from an existing environment and migrate the project branches to a new, empty Bitbucket repository, preserving the same branch names.  It is **critical** to retain an identical Git tree, so that you do not lose any existing environments or branches in your {{site.data.var.ece}} project.
 
 1.  From the terminal, log in to your {{site.data.var.ece}} project.
 
@@ -128,7 +128,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 1.  Add the integration to your project using the `magento-cloud` CLI tool.
 
     {: .bs-callout .bs-callout-warning}
-    The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. With that said, please make sure you cloned all of your branches from Cloud Project and pushed them to your Bitbucket repository prior to adding the Bitbucket integration , it is critical to have identical git tree in Bitbucket and Cloud repository in order not to delete branches/environments in Cloud Project. 
+    The following command overwrites _all_ code in your {{site.data.var.ece}} project with code from your Bitbucket repository. This includes all branches, including the Production branch. This action happens instantly and cannot be undone. As a best practice, it is very important to clone all of your branches from your {{site.data.var.ece}} project and push them to your Bitbucket repository **before** adding the Bitbucket integration. 
 
     ```bash
     magento-cloud project:curl -p '<project-ID>' /integrations -i -X POST -d "$(< bitbucket.json)"
