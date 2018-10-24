@@ -301,7 +301,7 @@ allure serve dev/tests/_output/allure-results/
 [java]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [mftf tests]: introduction.html#mftf-tests
 [php]: {{ site.gdeurl23 }}/install-gde/system-requirements-tech.html#php
-[PHPStorm]: https://www.jetbrains.com/phpstorm/
+[PhpStorm]: https://www.jetbrains.com/phpstorm/
 [selenium server]: https://www.seleniumhq.org/download/
 [Set up a standalone MFTF]: #set-up-a-standalone-mftf
 [test suite]: suite.html
