@@ -95,36 +95,30 @@ To create and transfer `config.php`:
 The following snippet from `config.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
 <pre class="no-copy">
- 'general' =>
-      array (
-        'locale' =>
-        array (
-          'code' => 'en_GB',
-          'timezone' => 'UTC',
-        ),
+ 'general' => [
+     'locale' => [
+         'code' => 'en_GB',
+         'timezone' => 'UTC',
+     ],
 
-        ... more ...
+     ... more ...
 
- 'dev' =>
-      'template' =>
-        array (
-          'allow_symlink' => '0',
-          'minify_html' => '0',
-        ),
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '0',
+     ],
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '0',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '0',
+     ],
 
-        ... more ...
-
-        'js' =>
-        array (
-          'merge_files' => '0',
-          'enable_js_bundling' => '0',
-          'minify_files' => '0',
-        ),
-        'css' =>
-        array (
-          'merge_css_files' => '0',
-          'minify_files' => '0',
-        ),
+     ... more ...
 </pre>
 
 ## Push and deploy config.php to environments {#deploy}
