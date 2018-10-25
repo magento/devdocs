@@ -31,7 +31,8 @@ If you write and contribute a full topic, we will add your name (or your company
 1. Edit or create markdown (`.md`) files in your branch. 
 1. When ready, push your branch to your fork.
 1. Create a PR to the [magento/devdocs repo](https://github.com/magento/devdocs). Fill out as much info as possible and link any GitHub issues.
-1. The DevDocs team and Maintainers work with you on content, navigation, and reviews. 
+
+The DevDocs team and Maintainers will review the PR and help with formatting and navigation. 
 
 
 **Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the PR provides a link. We require a signed form and agreement to the terms for contribution.
