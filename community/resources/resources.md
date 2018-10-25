@@ -35,6 +35,9 @@ To connect with Magento and the Community, join us on the [Magento Community Eng
 ## Resources and guides
 
 - *GitHub* [Magento Resources][23] curated list by Alessandro Ronchi
+- *Videos* [Mage2.tv][24] 
+- *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
+- *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
 
 ## Magento APIs
 
@@ -95,3 +98,8 @@ To connect with Magento and the Community, join us on the [Magento Community Eng
 [21]: https://magenticians.com/magento-2-launch-checklist/
 [22]: https://docs.google.com/presentation/d/1NdtNz_LBxk-JsCBy8AvekZAkSPWOE0WCzE14Y9ki-5Q/mobilepresent?slide=id.g3444c1e91c_0_10
 [23]: https://github.com/aleron75/mageres
+[24]: https://www.mage2.tv
+[25]: https://magetalk.com/
+[26]: https://www.youtube.com/channel/UCSH4_56yf5khLwTK9q71IGw
+[27]: https://magetalk.com/about/
+[28]: https://twitter.com/ecommerceaholic
