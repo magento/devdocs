@@ -5,7 +5,7 @@ title: Manage source selection algorithms
 
 Inventory Management uses the Source Selection Algorithm (SSA) to track the salable quantities of product inventory across all sources and make recommendations for partial and full shipments. 
 
-The SSA uses stocks and sources to check the sales channel for incoming product requests and determines the available inventory. It
+The SSA uses stocks and sources to check the sales channel for incoming product requests and determines the available inventory. The algorithm:
 
 * Calculates the aggregated virtual salable quantity of all assigned sources per stock
 * Subtracts the Out-of-Stock Threshold amount from salable quantity to protect against overselling and support concurrent checkout
@@ -14,7 +14,7 @@ The SSA uses stocks and sources to check the sales channel for incoming product 
 
 The SSA also manages shipments by providing recommendations for the best sources to ship partial or all products or override the selections to:
 
-* Ship partial shipments, sending only a few products from specific locations and completing the full order at a later date.
+* Ship partial shipments, sending only a few products from specific sources and completing the full order at a later date.
 * Ship the entire order from one source.
 * Break the order into partial shipments across multiple sources in different amounts to keep a balanced stock across all warehouses and stores.
 

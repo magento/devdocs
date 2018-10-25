@@ -31,7 +31,7 @@ Name | Description | Type
 `stock_id` | The ID of the stock the product is assigned to | Integer
 `requestedQty` | The requested quantity of products | Integer
 `type` | The type of sales channel the stock is assigned to. For 2.3, this value must be `website`. | String
-`code` | The name of the sales channel (website) | String
+`code` | The code of the sales channel (website) | String
 {:style="table-layout:auto;"}
 
 ## Check the available quantity of a salable product
