@@ -48,7 +48,6 @@ Name | Description | Type
 `stock_id` | The ID of the stock the product is assigned to
 {:style="table-layout:auto;"}
 
-
 **Payload**
 
 None
