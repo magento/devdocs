@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published September 21, 2018.*
+*Release notes published October 25, 2018.*
 
 
 We are pleased to present Magento Commerce 2.3.0 Beta. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 pre-release code is a work in progress.
@@ -73,11 +73,8 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 #### Application framework
 
-* <!--- 93723,92185--> The Magento application framework has been updated to use: 
+<!--- 93723,  92185-->* The Magento application framework has been updated to address a jQuery security issue.
 
-	* jQuery 3.x 
-
-	* AngularJS  1.6.9 
 
 
 #### B2B
