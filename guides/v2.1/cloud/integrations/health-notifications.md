@@ -10,7 +10,7 @@ functional_areas:
 
 -  **Warning**—available disk space drops below 20%
 -  **Critical**—available disk space drops below 10%
--  **All-clear**—available disk space returns above 20%, after a Low disk event
+-  **All-clear**—available disk space returns above 20%, after a low-disk event
 
 ## Email notifications
 
