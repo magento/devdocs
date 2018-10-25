@@ -67,9 +67,6 @@ return array(
 );
 ```
 
-{: .bs-callout .bs-callout-info}
-JS bundling and JS/CSS merging do not work with SCD on demand.
-
 ### `SKIP_HTML_MINIFICATION`
 
 -  **Default**
