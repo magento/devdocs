@@ -108,7 +108,7 @@ The `POST /V1/inventory/low-quantity-notifications-delete` endpoint deletes the 
 
 **Payload**
 
-```
+``` json
 {
   "sourceItems": [
     {

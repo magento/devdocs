@@ -102,7 +102,7 @@ This call returns the stock ID associated with the specified sales channel type 
 
 **Sample usage**
 
-`GET /V1/inventory/stock-resolver/:website/:na_site`
+`GET /V1/inventory/stock-resolver/website/na_site`
 
 
 **Payload**
