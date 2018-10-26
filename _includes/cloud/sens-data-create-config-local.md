@@ -17,7 +17,8 @@
 1.  Transfer the `config.local.php` file to your local workstation.
 
     ```bash
-    rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
+    rsync ssh server@ssh.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
+:app/etc/config.local.php ./app/etc/config.local.php
     ```
 
 1.  Test to ensure a successful transfer by importing the configuration file to your local environment.
