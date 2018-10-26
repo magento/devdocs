@@ -305,7 +305,7 @@ git push origin back-port-pull-<PR_NUMBER>:back-port-pull-<PR_NUMBER>
 
 ## Report an issue {#report}
 
-If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository.
+If you find a bug in Magento 2 code, you can report it by creating an issue in the Magento 2 repository. We recommend creating an issue prior to providing a PR fix, to properly validate the issue and verify any duplicates.
 
 Before creating an issue:
 
