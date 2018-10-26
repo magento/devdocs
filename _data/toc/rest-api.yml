@@ -132,3 +132,12 @@ pages:
 
             - label: Perform bulk actions
               url: /rest/modules/inventory/bulk-inventory.html
+
+            - label: Manage low-quantity notifications
+              url: /rest/modules/inventory/manage-low-quantity.html
+
+            - label: Check salable quantities
+              url: /rest/modules/inventory/check-salable-quantity.html
+
+            - label: Manage source selection algorithms
+              url: /rest/modules/inventory/manage-source-selection.html
