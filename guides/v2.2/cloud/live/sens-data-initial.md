@@ -204,51 +204,45 @@ By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new confi
 On your local, use a text editor to edit the updated `app/etc/config.php` file. We will edit these settings to enable minifying for JavaScript, HTML, and CSS files.
 
 <pre class="no-copy">
-'dev' =>
-		'template' =>
-			array (
-				'allow_symlink' => '0',
-				'minify_html' => '0',
-			),
-
-			... more ...
-
-		'js' =>
-			array (
-				'merge_files' => '0',
-				'enable_js_bundling' => '0',
-				'minify_files' => '0',
-			),
-		'css' =>
-			array (
-				'merge_css_files' => '0',
-				'minify_files' => '0',
-			),
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '0',
+     ],
+     
+     ... more ...
+     
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '0',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '0',
+     ],
 </pre>
 
 To modify settings to allow minification, we edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
 
 <pre class="no-copy">
-'dev' =>
-		'template' =>
-			array (
-				'allow_symlink' => '0',
-				'minify_html' => '1',
-			),
-
-			... more ...
-
-		'js' =>
-			array (
-				'merge_files' => '0',
-				'enable_js_bundling' => '0',
-				'minify_files' => '1',
-			),
-			'css' =>
-				array (
-					'merge_css_files' => '0',
-					'minify_files' => '1',
-				),
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '1',
+     ],
+     
+     ... more ...
+     
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '1',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '1',
+     ],
 </pre>
 
 Save the changes to the file.
