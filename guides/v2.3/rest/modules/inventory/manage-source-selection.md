@@ -72,7 +72,7 @@ The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algo
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
-`stock_id` | The stock ID | Integer | Required
+`stock_id` | The ID of the stock | Integer | Required
 `items` | An array containing the SKU and quantity of items in the order |  Array | Required
 `sku` | The SKU of a product to be shipped | String | Required for each item 
 `qty` | The quantity of a product to be shipped | Number | Required for each item
