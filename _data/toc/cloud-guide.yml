@@ -81,6 +81,9 @@ pages:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
 
+            - label: Docker quick reference
+              url: /cloud/docker/docker-quick-reference.html
+
         - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
           children:
