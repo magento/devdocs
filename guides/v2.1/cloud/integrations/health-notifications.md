@@ -34,7 +34,7 @@ magento-cloud integration:add --type health.slack --token SLACK_BOT_TOKEN --chan
 
 ## PagerDuty notifications
 
-PagerDuty is an external service that can notify on-call team members of important issues. Before you can receive health notifications in PagerDuty, you must create a [PagerDuty integration](https://v2.developer.pagerduty.com/v2/docs/integrating) that uses the Events API version 2. Use the Integration Key as known as the _routing key_ to register your integration.
+PagerDuty is an external service that can notify on-call team members of important issues. Before you can receive health notifications in PagerDuty, you must create a [PagerDuty integration](https://v2.developer.pagerduty.com/v2/docs/integrating) that uses the Events API version 2. Use the Integration Key, or _routing key_, to register your integration.
 
 #### To register health notifications for PagerDuty:
 
