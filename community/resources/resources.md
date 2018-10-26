@@ -25,47 +25,54 @@ See our collection of best and leading practices, common solutions, and more in 
 
 ## Community Engineering Slack
 
-To connect with Magento and the Community, join us on the [Magento Community Engineering Slack](https://t.co/9HImUyCmyh). We have channels for each project. These channels are recommended for new members joining us:
+To connect with Magento and the Community, join us on the [Magento Community Engineering Slack](http://tinyurl.com/engcom-slack). We have channels for each project. These channels are recommended for new members joining us:
 
 - general: Open chat for introductions and Magento 2 questions
 - github: Support for GitHub issues, pull requests, and processes
 - devdocs: Documentation contribution support
 - public-backlog: Discussions of the Magento 2 backlog
 
+## Resources and guides
+
+- *GitHub* [Magento Resources][23] curated list by Alessandro Ronchi
+- *Videos* [Mage2.tv][24] 
+- *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
+- *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
+
 ## Magento APIs
 
-* *Presentation:* [Magento 2 Integrations][2] by Joshua Warren
-* *Presentation:* [Integrations with Magento, end to end story: RabbitMQ, APIs][3] by Eugene Tulika
+- *Presentation:* [Magento 2 Integrations][2] by Joshua Warren
+- *Presentation:* [Integrations with Magento, end to end story: RabbitMQ, APIs][3] by Eugene Tulika
 
 ## Install/deploy
 
-* *Blog post* [Magento 2 - Launch Checklist][21] by Syed Muneeb Ul Hasan 
-* *Presentation:* [Magento 2 Deployment: What you should know][4] by Olga KopyLova
-* *Blog post* [Magento 2 deployment without the downtime][5] by Robert Egginton
-* *Blog post* [Deploying Magento 2 - History & Overview][6] by Matthias Walter
-* *Blog post* [Deploying Magento 2 using Capistrano][17] by David Alger
-* *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by Nick Rigby
-* *GitHub* [Magento 2 Docker][18]
+- *Blog post* [Magento 2 - Launch Checklist][21] by Syed Muneeb Ul Hasan 
+- *Presentation:* [Magento 2 Deployment: What you should know][4] by Olga KopyLova
+- *Blog post* [Magento 2 deployment without the downtime][5] by Robert Egginton
+- *Blog post* [Deploying Magento 2 - History & Overview][6] by Matthias Walter
+- *Blog post* [Deploying Magento 2 using Capistrano][17] by David Alger
+- *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by Nick Rigby
+- *GitHub* [Magento 2 Docker][18]
 
 ## Automated Testing
 
-* *Presentation:* [Writing testable code][10] by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
-* *Book:* [Test Driven Magento Extension Development][12] by Allan MacGregor
-* *Blog post:* [Integration Tests with Magento 2][19] by Andreas von Studnitz
+- *Presentation:* [Writing testable code][10] by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
+- *Book:* [Test Driven Magento Extension Development][12] by Allan MacGregor
+- *Blog post:* [Integration Tests with Magento 2][19] by Andreas von Studnitz
 
 ## Mastering Magento 2
 
-* *Book:* [Magento 2 DIY][7] by Viktor Khliupko
-* *Book:* [Magento 2 Cookbook][8] by Ray Bogman and Vladimir Kerkhoff
-* *Presentation:* [Staging and Preview][9] by Igor Melnykov
-* *Blog post:* [Introducing UI Components][13] by Alan Storm
-* *Presentation:* [Micro Services][14] by Ivan Chepurnyi
-* *Blog post:* [10 Practical Rules to Build High Quality Magento 2 Module][20] by Max Pronko
-* *Presentation:* [Stop Flushing the F#@king Cache, Indexing and Caching in Magento 2][22] by John Hughes
+- *Book:* [Magento 2 DIY][7] by Viktor Khliupko
+- *Book:* [Magento 2 Cookbook][8] by Ray Bogman and Vladimir Kerkhoff
+- *Presentation:* [Staging and Preview][9] by Igor Melnykov
+- *Blog post:* [Introducing UI Components][13] by Alan Storm
+- *Presentation:* [Micro Services][14] by Ivan Chepurnyi
+- *Blog post:* [10 Practical Rules to Build High Quality Magento 2 Module][20] by Max Pronko
+- *Presentation:* [Stop Flushing the F#@king Cache, Indexing and Caching in Magento 2][22] by John Hughes
 
 ## Performance
 
-*  *Presentation:* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
+-  *Presentation:* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
 
 [0]: https://github.com/DavidLambauer/awesome-magento2 
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
@@ -90,3 +97,9 @@ To connect with Magento and the Community, join us on the [Magento Community Eng
 [20]: https://medium.com/@maxpronko/10-practical-rules-to-build-high-quality-magento-2-module-e6fe2c9461ac
 [21]: https://magenticians.com/magento-2-launch-checklist/
 [22]: https://docs.google.com/presentation/d/1NdtNz_LBxk-JsCBy8AvekZAkSPWOE0WCzE14Y9ki-5Q/mobilepresent?slide=id.g3444c1e91c_0_10
+[23]: https://github.com/aleron75/mageres
+[24]: https://www.mage2.tv
+[25]: https://magetalk.com/
+[26]: https://www.youtube.com/channel/UCSH4_56yf5khLwTK9q71IGw
+[27]: https://magetalk.com/about/
+[28]: https://twitter.com/ecommerceaholic
