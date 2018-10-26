@@ -72,8 +72,8 @@ The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algo
 
 Name | Description | Type | Requirements
 --- | --- | --- | ---
-`stock_id` |  | Integer | Required
-`items` | |  Array | Required
+`stock_id` | The stock ID | Integer | Required
+`items` | An array containing the SKU and quantity of items in the order |  Array | Required
 `sku` | The SKU of a product to be shipped | String | Required for each item 
 `qty` | The quantity of a product to be shipped | Number | Required for each item
 `algorithmCode` | The name of the SSA to implement. For 2.3, this value must be `priority`. | String | Required
