@@ -12,7 +12,7 @@ functional_areas:
   - Setup
 ---
 
-The `mysql` service provides data storage. It's based on [MariaDB](https://mariadb.com/products/subscription-plans), supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage
+The `mysql` service provides data storage. It is based on [MariaDB](https://mariadb.com/), supporting the [XtraDB](https://www.percona.com/software/mysql-database/percona-server/xtradb) storage
 engine (equivalent to MySQL with InnoDB).
 
 We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.
