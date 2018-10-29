@@ -94,7 +94,7 @@ To create and transfer `config.php`:
 
 The following snippet from `config.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
-```php
+```php?start_inline=1
 'general' => [
      'locale' => [
          'code' => 'en_GB',
@@ -206,7 +206,7 @@ By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new confi
 
 On your local, use a text editor to edit the updated `app/etc/config.php` file. Edit these settings to enable minifying for JavaScript, HTML, and CSS files.
 
-```php
+```php?start_inline=1
  'dev' => [
      'template' => [
          'allow_symlink' => '0',
@@ -229,7 +229,7 @@ On your local, use a text editor to edit the updated `app/etc/config.php` file. 
 
 To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
 
-```php
+```php?start_inline=1
  'dev' => [
      'template' => [
          'allow_symlink' => '0',
