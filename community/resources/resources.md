@@ -25,12 +25,15 @@ See our collection of best and leading practices, common solutions, and more in 
 
 ## Community Engineering Slack
 
-To connect with Magento and the Community, join us on the [Magento Community Engineering Slack](http://tinyurl.com/engcom-slack). We have channels for each project. These channels are recommended for new members joining us:
+To connect with Magento and the Community, join us on the [Magento Community Engineering Slack](https://magentocommeng.slack.com/messages/C4YS78WE6). If you are interested in joining Slack or a specific channel, just send us request at [engcom@magento.com](mailto:engcom@magento.com) or use this URL for self signup: [https://tinyurl.com/engcom-slack](https://tinyurl.com/engcom-slack).
 
-- general: Open chat for introductions and Magento 2 questions
-- github: Support for GitHub issues, pull requests, and processes
-- devdocs: Documentation contribution support
-- public-backlog: Discussions of the Magento 2 backlog
+
+We have channels for each project. These channels are recommended for new members joining us:
+
+- [general](https://magentocommeng.slack.com/messages/C4YS78WE6): Open chat for introductions and Magento 2 questions
+- [github](https://magentocommeng.slack.com/messages/C7KB93M32): Support for GitHub issues, pull requests, and processes
+- [public-backlog](https://magentocommeng.slack.com/messages/CCV3J3RV5): Discussions of the Magento 2 backlog
+- [devdocs](https://magentocommeng.slack.com/messages/CAN932A3H): Documentation contribution support
 
 ## Resources and guides
 
@@ -46,6 +49,7 @@ To connect with Magento and the Community, join us on the [Magento Community Eng
 
 ## Install/deploy
 
+- *Presentation:* [48 Hour Launches and Other Lessons Learned With Large-Scale Digital Transformations][29] by Joshua Warren of Creatuity
 - *Blog post* [Magento 2 - Launch Checklist][21] by Syed Muneeb Ul Hasan 
 - *Presentation:* [Magento 2 Deployment: What you should know][4] by Olga KopyLova
 - *Blog post* [Magento 2 deployment without the downtime][5] by Robert Egginton
@@ -103,3 +107,4 @@ To connect with Magento and the Community, join us on the [Magento Community Eng
 [26]: https://www.youtube.com/channel/UCSH4_56yf5khLwTK9q71IGw
 [27]: https://magetalk.com/about/
 [28]: https://twitter.com/ecommerceaholic
+[29]: https://creatuity.com/m/download-joshua-warrens-magetitans-2018-presentation
