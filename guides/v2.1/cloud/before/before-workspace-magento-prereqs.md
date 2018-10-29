@@ -50,7 +50,7 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 
 ## Web server (local) {#webserver}
 
-We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
+We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html)
 
 ## PHP (local) {#php}
 
