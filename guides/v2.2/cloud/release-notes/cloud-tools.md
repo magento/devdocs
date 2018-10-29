@@ -101,7 +101,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
    -  <!--MAGECLOUD--2360-->Secure site access—Added SSL support to access your {{site.data.var.ee}} store and Admin panel.
 
 
--  <!--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} extension support**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
+-  <!--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} extension support**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `{{site.data.var.ct}}` package is compatible with more extensions.
 
 - <!--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ee}} application during the build phase**—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process transfers the generated code and static content to the final destination. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
 
@@ -148,7 +148,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 - <!-- MAGECLOUD-2182-->Fixed an issue with the [static content compression process]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-intro.html) (`gzip`) that caused `not overwritten` and `no such file or directory` errors when referencing the compressed file during the deployment process.
 
-- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
+- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `{{site.data.var.ct}}` v2002.0.13, regenerate older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
 - <!--MAGECLOUD-2556-->Fixed an issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain to a `www` domain.
 
@@ -160,7 +160,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 #### New features
 
--  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `ece-tools` repository.
+-  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `{{site.data.var.ct}}` repository.
 
 -  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{page.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
@@ -192,7 +192,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  <!-- MAGECLOUD-2034 -->Fixed an issue when using SCD with multiple locales, which generated the same `js-translation.json` file for each locale.
 
-- <!-- MAGECLOUD-2033 -->Optimized the `db:dump` command in the `ece-tools` package to avoid locking tables and increase speed.
+- <!-- MAGECLOUD-2033 -->Optimized the `db:dump` command in the `{{site.data.var.ct}}` package to avoid locking tables and increase speed.
 
 ## v2002.0.11
 
@@ -384,7 +384,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 -   <!-- MAGECLOUD-1170 -->We fixed an issue preventing patch errors from causing deployment failures.
 
--   <!-- MAGECLOUD-1152 -->We fixed an issue preventing `ece-tools` from halting execution and throwing an exception if no patches can be applied.
+-   <!-- MAGECLOUD-1152 -->We fixed an issue preventing `{{site.data.var.ct}}` from halting execution and throwing an exception if no patches can be applied.
 
 -   <!-- MAGECLOUD-1138 -->We fixed an issue causing errors when loading the storefront after enabling HTML minification in the Magento Admin.
 
@@ -416,9 +416,9 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 #### Resolved issues
 
--   <!-- MAGECLOUD-919 & MAGECLOUD-1030-->Refactored the `ece-tools` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
+-   <!-- MAGECLOUD-919 & MAGECLOUD-1030-->Refactored the `{{site.data.var.ct}}` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
 
--   <!-- MAGECLOUD-1186-->We fixed an issue that was preventing `ece-tools` from halting execution and throwing an exception if no patches can be applied.
+-   <!-- MAGECLOUD-1186-->We fixed an issue that was preventing `{{site.data.var.ct}}` from halting execution and throwing an exception if no patches can be applied.
 
 -   <!-- MAGECLOUD-1047 & MAGECLOUD-1049-->We fixed an issue that was causing exceptions to be thrown when  dependency injection (di) compilation is skipped during builds.
 
@@ -433,4 +433,4 @@ This package is no longer compatible with other versions of {{site.data.var.ece}
 
 ### Initial release
 
-Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
+Initial release of `{{site.data.var.ct}}` for {{site.data.var.ece}} 2.2.0.
