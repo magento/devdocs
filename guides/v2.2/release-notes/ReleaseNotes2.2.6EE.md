@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.6 Release Notes
 
 ---
 
-*Patch code and release notes were published on September 18, 2018 and last revised September 21.*
+*Patch code and release notes were published on September 18, 2018 and last revised October 29, 2018.*
 
 
 
@@ -1744,15 +1744,16 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 
-## Known issue
+## Known issues
 
-The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6: 
-
-* Remove   `pub/media/catalog/product/cache`. (The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.) 
-
-* Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+**Issue**: Merchants cannot save a newly created multiselect or dropdown customer attribute or edit existing customer attributes from the customer’s account on the storefront after upgrade to Magento 2.2.6. **Workaround**: Download and apply  Magento Commerce Support Patch MAGETWO-95591 after logging into your account from the partner portal. This issue will be fixed in Magento Commerce 2.2.7, which is scheduled for release by the end of 2018. 
 
 
+**Issue**: The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6: 
+
+	* Remove   `pub/media/catalog/product/cache`. (The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.) 
+
+	* Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 
 
