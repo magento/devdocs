@@ -7,7 +7,7 @@ menu_title: Sizes component
 
 The Sizes component defines the maximum number of displayed records in a table (grid).
 
-## Сonfiguration options
+## Configuration options
 
 <table>
   <tr>

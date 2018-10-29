@@ -67,7 +67,7 @@ The ExportButton component implements the ability to export grid data to the spe
 
 ### Configure component
 
-To enable the ExportButton сomponent, add the `exportButton` element with a `selectProvider` item to the listing configuration file:
+To enable the ExportButton component, add the `exportButton` element with a `selectProvider` item to the listing configuration file:
 
 {% highlight XML %}
 <exportButton name="export_button">
