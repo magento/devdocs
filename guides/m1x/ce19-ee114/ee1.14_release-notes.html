@@ -56,10 +56,14 @@
 
 <h2 id="ee114-11440">Magento Commerce 1.14.4.0 Release Notes</h2>
 
-<p>This version (or patch SUPEE-10975, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These critical security issues include remote code execution (RCE),  cross-site scripting (XSS), and cross-site request forgery (CSRF) issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+<p>This version (or patch SUPEE-10975, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These critical security issues include remote code execution (RCE),  cross-site scripting (XSS), and cross-site request forgery (CSRF) issues. This release also provides support for PHP 7.2.</p>
+
+<p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
 
 <h3>Fixed issues and enhancements</h3>
 <ul>
+<li><!-- MPERF-10223 -->This release provides support for PHP 7.2. </li>
+<li><!-- MPERF-10219 10218 -->The Magento logo has been updated throughout the code base. </li>	
 <li><!-- MPERF-8829 -->The <b>Continue</b> button now works as expected on the Payments step of checkout  when paying with the PayPal payment method. </li>	
 <li><!-- MPERF-8826 -->Google Tag Manager now logs sales information in Google Analytics as expected. </li>	
 <li><!-- MPERF-8382 -->The product export CSV file now contains columns for super attributes. </li>	
@@ -71,6 +75,7 @@
 <li><!-- MPERF-5168 -->Magento no longer throws a fatal error when a merchant uses an already  reserved word to name a product attribute.  </li>	
 <li><!-- MPERF-4913 -->Magento now adds the correct sales tax to orders being shipped to U.S. addresses that use zip codes with the optional four-digit suffix (for example, 73365-1234). Previously, the Tax rule triggered a failure if the U.S. zip code that had this optional four-digit suffix.  </li>	
 <li><!-- MPERF-4630 -->Magento now displays all products on a production website that were edited by a role-restricted user on the associated staging website.  </li>	
+<li><!-- MPERF-8827 -->We’ve resolved an issue that caused Target Rules to throw an exception when a customer opened a product view page.  </li>	
 </ul>
 
 
