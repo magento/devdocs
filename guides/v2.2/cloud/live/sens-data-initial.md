@@ -94,8 +94,8 @@ To create and transfer `config.php`:
 
 The following snippet from `config.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
-<pre class="no-copy">
- 'general' => [
+```php?start_inline=1
+'general' => [
      'locale' => [
          'code' => 'en_GB',
          'timezone' => 'UTC',
@@ -119,7 +119,8 @@ The following snippet from `config.php` shows an example of changing the default
      ],
 
      ... more ...
-</pre>
+```
+{: .no-copy}
 
 ## Push and deploy config.php to environments {#deploy}
 
@@ -127,7 +128,9 @@ Now that you've created `config.php` and transferred it to your local system, co
 
 The following command adds, commits, and pushes to master:
 
-	git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+```bash
+git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+```
 
 Complete code deployment to Staging and Production. For Starter, you push to `staging` and `master` branches. For Production, you will need to SSH into your environments and push. For details on deployment commands, see [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
@@ -201,55 +204,51 @@ By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new confi
 
 ### Edit config.php with new settings {#change-config}
 
-On your local, use a text editor to edit the updated `app/etc/config.php` file. We will edit these settings to enable minifying for JavaScript, HTML, and CSS files.
+On your local, use a text editor to edit the updated `app/etc/config.php` file. Edit these settings to enable minifying for JavaScript, HTML, and CSS files.
 
-<pre class="no-copy">
-'dev' =>
-		'template' =>
-			array (
-				'allow_symlink' => '0',
-				'minify_html' => '0',
-			),
+```php?start_inline=1
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '0',
+     ],
+     
+     ... more ...
+     
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '0',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '0',
+     ],
+```
+{: .no-copy}
 
-			... more ...
+To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
 
-		'js' =>
-			array (
-				'merge_files' => '0',
-				'enable_js_bundling' => '0',
-				'minify_files' => '0',
-			),
-		'css' =>
-			array (
-				'merge_css_files' => '0',
-				'minify_files' => '0',
-			),
-</pre>
-
-To modify settings to allow minification, we edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
-
-<pre class="no-copy">
-'dev' =>
-		'template' =>
-			array (
-				'allow_symlink' => '0',
-				'minify_html' => '1',
-			),
-
-			... more ...
-
-		'js' =>
-			array (
-				'merge_files' => '0',
-				'enable_js_bundling' => '0',
-				'minify_files' => '1',
-			),
-			'css' =>
-				array (
-					'merge_css_files' => '0',
-					'minify_files' => '1',
-				),
-</pre>
+```php?start_inline=1
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '1',
+     ],
+     
+     ... more ...
+     
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '1',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '1',
+     ],
+```
+{: .no-copy}
 
 Save the changes to the file.
 
@@ -257,7 +256,9 @@ Save the changes to the file.
 
 To push your changes, enter the following command:
 
-	git add app/etc/config.php && git commit -m "Add system-specific configuration and edit settings" && git push origin master
+```bash
+git add app/etc/config.php && git commit -m "Add system-specific configuration and edit settings" && git push origin master
+```
 
 Wait for deployment to complete.
 
