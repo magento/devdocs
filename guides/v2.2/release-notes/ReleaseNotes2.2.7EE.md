@@ -34,7 +34,6 @@ This release includes improvements to general usability of the core code plus en
 
 <!-- MAGETWO-87437 -->* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle,  and configurable  product attributes were missing from the Google Tag Manager. 
 
-*  Magento Functional Test Framework (MFTF) 2.3.8 has been merged to Magento 2.2.7. 
 
 
 
@@ -66,17 +65,35 @@ This release includes improvements to general usability of the core code plus en
 <!-- MAGETWO-94434 -->* The Magento UPS module has been updated to support new UPS API endpoints.
 
 
+####  Magento Shipping
+
 * The Magento Shipping **Click & Collect** feature offers merchants the ability to:
 
 	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
 
 	* Configure source locations available for Click & Collect pick-ups
 
-	* Updates to Shipment Form for UPS (US only)
+	* Updates to Shipment Form for UPS (U.S. only)
 
 	Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
 
+ * The batch details page now displays collection point addresses, as applicable
 
+ * Activation notices can now be translated.
+
+
+- Manifest order with instant payment methods, e.g. PayPal Express
+
+* Tracking popups for multi-package shipments are now displayed. 
+
+* The dispatch details page has been enhanced. 
+
+
+Merchants can now individual shipments for dispatch
+
+### Magento Functional Test Framework (MFTF)
+
+* MTFT version 2.3.8 is now packaged with Magento 2.2.7. 
 
 
 ### Community contribution highlights
@@ -102,6 +119,8 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Installation, setup, and deployment
+
+<!-- MAGETWO-95591 -->* Customer attribute management issues that merchants  experienced after upgrading to Magento 2.2.6 have been resolved. Previously, after upgrading their stores to Magento 2.2.6, merchants could not create and save a new multiselect or dropdown customer custom attribute, and  existing customer attributes  no longer appeared for editing within the customer's account on storefront.
 
 
 <!-- MAGETWO-94764 -->* Fixed an issue with the shared configuration settings in `app/etc/config.php` that caused `recursion detected` errors during deployment.
@@ -139,7 +158,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-92400 -->* Magento now removes information from all fields when you click **Reset** when creating a new Company from the Admin. Previously, Magento cleared all fields except for the **admin email** field. 
 
-<!-- MAGETWO-89654 -->* Merchants can now create a Company with an optional regional setting. Previously, Magento displayed this message, `Error message: Invalid value of "" provided for the region_id field.`.
+<!-- MAGETWO-89654 -->* Merchants can now create a Company with an optional regional setting. Previously, Magento displayed this message, `Error message: Invalid value of "" provided for the region_id field.
 
 
 
@@ -279,6 +298,10 @@ product, and hung indefinitely while trying to add the product.
 ### CMS content
 
 <!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
+
+<!-- MAGETWO-73359 -->* You can successfully save a CMS page with same URL key as another store on a different website but with the same hierarchy. 
+
+<!-- ENGCOM-2655 -->* The CMS page index has been refactored to remove the Object Manager and added dependency injection to the constructor. *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [17066](https://github.com/magento/magento2/pull/17066)*. 
 
 
 
@@ -455,6 +478,8 @@ product, and hung indefinitely while trying to add the product.
 
 
 
+
+
 ### Payment methods
 
 
@@ -534,6 +559,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-92652 -->* Product attribute are now displayed as expected in layered navigation with Elasticsearch 5.0+.
 
+<!-- MAGETWO-90497 -->* Elasticsearch now works as expected for Chinese locales. 
 
 
 
@@ -548,30 +574,11 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-93810 -->* Customers can now view their completed order from the success page for orders that will be shipped to multiple addresses. Previously, when a customer took a link from the order success page to view their just-completed order, Magento displayed this error, **There has been an error processing your request**.
 
-
-
-#### Elasticsearch
-
-<!-- MAGETWO-90497 -->* Elasticsearch now works as expected for Chinese locales. 
-
-
-
-
-
-
-
-
-
-### Shipping
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-You can find Magento Shipping-specific release notes in [Magento Shipping Release Notes]({{page.baseurl}}/release-notes/ReleaseNotesMagentoShipping2.2.x.html).
-</div>
-
-
-
 <!-- MAGETWO-92144 -->* The Shipment grid now displays the status of completed orders correctly. Previously, the Order Status column of the Shipment grid indicated that a completed was being processed.
 
+#### Magento Shipping
+
+<!-- BUNDLE-1663 -->* Magento Shipping RMA can no longer be enabled when Magento Shipping is disabled.
 
 
 ### Store
@@ -662,6 +669,11 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!-- MAGETWO-89234 -->* Magento now displays a success message when a customer successfully updates a wishlist.
 
 
+## Known issues
+
+<!-- BUNDLE-1728 -->* Vertex does not correctly assess taxes for each product of an order that is being shipped to multiple addresses. 
+
+<!-- BUNDLE-1746 -->* Magento calculates shipping costs incorrectly for orders of bundle products that contain at least one a virtual product when Vertex is enabled.
 
 
 
@@ -670,11 +682,6 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 <!-- not needed --  MAGETWO-93800 MAGETWO-94468 MAGETWO-94236 MAGETWO-94213 MAGETWO-94174 MAGETWO-94098 MAGETWO-93725 MAGETWO-93105 MAGETWO-92654 MAGETWO-92187 MAGETWO-92169 MAGETWO-91477 MAGETWO-91358 MAGETWO-91288 MAGETWO-89892 MAGETWO-89309 MAGETWO-88233 MAGETWO-86482 MAGETWO-85420 MAGETWO-82084 MAGETWO-73357 MAGETWO-72067 MAGETWO-71157 MAGETWO-95529 MAGETWO-95424 MAGETWO-94762 MAGETWO-94409 MAGETWO-94331 MAGETWO-94300 MAGETWO-94475 --> 
 
 
-## Known issues
-
-<!-- BUNDLE-1728 -->* Vertex does not correctly assess taxes for each product of an order that is being shipped to multiple addresses. 
-
-<!-- BUNDLE-1746 -->* Magento calculates shipping costs incorrectly for orders of bundle products that contain at least one a virtual product when Vertex is enabled.
 
 
 
