@@ -22,7 +22,7 @@ There are two ways to upgrade your Magento application to the 2.3 version:
 The upgrade scenario is the same for each of these options (both utilize Composer and a command line interface) from the system's point of view. However, if you upgrade using the script several of the steps are automated.
 
 {:.bs-callout .bs-callout-warning}
-Both scenarios require that you comply with the [Pre-upgrade checklist].
+Both scenarios require that you comply with the [Prerequisites].
 
 {:.bs-callout .bs-callout-info}
 If you cloned the Magento 2 GitHub repository, you **cannot** use this method to upgrade. Instead, see [Update the Magento application] for upgrade instructions.
@@ -321,5 +321,5 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Upgrade using the command line]: #upgrade-cli-upgr
 [Upgrade using the script]: #upgrade-cli-script
-[Pre-upgrade checklist]: #pre-upgrade-checklist
+[Prerequisites]: #prerequisites
 [the manual process]: #upgrade-cli-upgr
