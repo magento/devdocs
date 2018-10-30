@@ -65,7 +65,7 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 The relative path to other XSDs cannot be used from inside the XSD file, because the {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} loader fails to resolve the relative path.
 
 {: .bs-callout .bs-callout-info }
-For those wishing to defer the schema validation to PhpStorm IDE, there exists a [very useful command]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html) which allows one to generate the mappings normally required by the IDE with little effort.
+Use the [dev:urn-catalog:generate]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html) command to configure your integrated developer environment (IDE) to recognize and highlight URNs (PhpStorm only).
 
 #### Next
 [Name your component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
