@@ -41,6 +41,7 @@ We have channels for each project. These channels are recommended for new member
 - *Videos* [Mage2.tv][24] 
 - *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
 - *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
+- *Statistics* [Magestats][32] by [Marcel Hauri][33]
 
 ## Magento APIs
 
@@ -110,3 +111,5 @@ We have channels for each project. These channels are recommended for new member
 [29]: https://creatuity.com/m/download-joshua-warrens-magetitans-2018-presentation
 [30]: https://twitter.com/aleron75
 [31]: https://twitter.com/JoshuaSWarren
+[32]: https://magestats.net/
+[33]: https://twitter.com/mhauri
