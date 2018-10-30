@@ -118,7 +118,7 @@ A container renders child elements during view output generation. It can be empt
          <td><code>name</code></td>
          <td>A name that can be used to address the container in which this attribute is assigned. The name must be unique per generated page.</td>
          <td>A-Z, a-z, 0-9, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
-         <td>yes</td>
+         <td>no</td>
       </tr>
       <tr class="odd">
          <td><code>label</code></td>
