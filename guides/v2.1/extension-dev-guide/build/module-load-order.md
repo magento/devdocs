@@ -41,10 +41,10 @@ For each particular scenario, files of the same type are loaded from different c
 
 In another scenario, let's say you want to load all of the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files with the name `default.xml`. __Component A__ specifies __component B__ in `<sequence>`. The files load in the following order:
 
-42. `component X/view/frontend/layout/default.xml`&mdash;Either we don't care about when component X loads or perhaps component B requires it to be loaded before it.
+42. `component X/view/frontend/layout/default.xml` &mdash; Either we don't care about when component X loads or perhaps component B requires it to be loaded before it.
 42. `component B/view/frontend/layout/default.xml`
-42. `component A/view/frontend/layout/default.xml`&mdash;Loads after __component B__ because __component B__ is listed in __component A's__ `<sequence>` tag.
-42. `component Z/view/frontend/layout/default.xml`&mdash;Either we don't care about the sequence for component Z or perhaps component Z requires component A files to be loaded before it.
+42. `component A/view/frontend/layout/default.xml` &mdash; Loads after __component B__ because __component B__ is listed in __component A's__ `<sequence>` tag.
+42. `component Z/view/frontend/layout/default.xml` &mdash; Either we don't care about the sequence for component Z or perhaps component Z requires component A files to be loaded before it.
 
 There are no limitations&mdash;you can specify any valid component in `<sequence>`.
 
