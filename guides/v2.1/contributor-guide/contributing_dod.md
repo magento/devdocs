@@ -35,7 +35,7 @@ When submitting either code or documentation, a brief summary of the work should
 
 Additionally, the code itself should follow our [DocBlock standard][0] and contain high-quality comments and descriptions for all classes and methods.
 
-Any backwards-incompatible changes must also be recorded in the accompanying documentation, using the following format:
+Any backward-incompatible changes must also be recorded in the accompanying documentation, using the following format:
 
 | Change      | Was in Magento 1.x | Became in Magento 2.x |
 | ----------- | ------------------ | --------------------- |
@@ -138,7 +138,7 @@ Expected code coverage: must cover all applicable files in entire code base.
 
 Code to cover:
 
-* Must cover any formal backwards-incompatible changes on code level.
+* Must cover any formal backward-incompatible changes on code level.
 For more information, see
 [Magento's backward compatibility policy]({{ page.baseurl }}/architecture/back-compatibility.html).
 
@@ -146,7 +146,7 @@ A failure in a legacy test must provide comprehensive explanation of an alternat
 
 Expected code coverage:
 
-* Must cover majority of occurrences of the backwards-incompatible change
+* Must cover majority of occurrences of the backward-incompatible change
 * Should cover 100% of occurrences
 
 Not all changes can be covered.

@@ -371,7 +371,7 @@ Generic layouts define the contents and detailed structure inside the `<body>` s
 Conventionally generic layout files must be located as follows:
 
 - Module generic layouts: `<module_dir>/view/frontend/layout`
-- Theme generic layouts: `<theme_dir>/<Namespace>_>Module>/layout`
+- Theme generic layouts: `<theme_dir>/<Namespace>_<Module>/layout`
 
 ### Generic layout structure and allowed layout instructions
 

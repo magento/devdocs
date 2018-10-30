@@ -5,3 +5,11 @@
 .message-banner {
     margin: 0;
 }
+
+redoc[spec-url] table {
+  table-layout: auto;
+}
+
+redoc[spec-url] .menu-subitems .menu-item-title{
+  text-transform: none;
+}

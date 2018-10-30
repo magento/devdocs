@@ -163,7 +163,7 @@ The `string` argument type provides a method to pass a single piece of data to t
 </actionGroup>
 ```
 
-The `relevantString` argument value points to the data [created](../data.html#persisting-a-data-entity-as-a-prerequisite-of-a-test){:target="_blank"} in the `stepKey="persistedData"` test step.
+The `relevantString` argument value points to the data [created](../data.html#persist-data){:target="_blank"} in the `stepKey="persistedData"` test step.
 `field1` is a data key of the required data string.
 Even with the `persistedData` data entity, the MFTF interprets the `$persistedData.field1$` value as a string.
 

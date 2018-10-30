@@ -128,4 +128,4 @@ To get around this limitation, injectable objects can depend on [factories] that
 [proxy]: {{ page.baseurl }}/extension-dev-guide/proxies.html
 [factories]: {{ page.baseurl }}/extension-dev-guide/factories.html
 [interceptors]: {{ page.baseurl }}/extension-dev-guide/plugins.html
-[`Product`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Catalog/Model/Product.php
+[`Product`]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/Catalog/Model/Product.php

@@ -59,7 +59,7 @@ Magento GraphQL clause | SQL equivalent
 
 Currently, Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
 
-The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
 
 The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
 
@@ -84,7 +84,7 @@ The following sections provide examples of each type of search. These examples u
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-``` json 
+``` json
 {
     products(
       search: "Yoga pants"
@@ -123,7 +123,7 @@ The following sample query returns a list of products that meets the following c
 
 The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
 
-``` json 
+``` json
 {
     products(
       search: "Messenger"
@@ -162,7 +162,7 @@ The response for each item includes the `name`, `sku`, `price` and `description`
 
 The query returns the following:
 
-``` json 
+``` json
 {
   "data": {
     "products": {
@@ -207,7 +207,7 @@ The query returns the following:
 
 The following search finds all products that were added after the specified time (midnight, November 1, 2017).
 
-``` json 
+``` json
 {
     products(
       filter: {
@@ -244,7 +244,7 @@ The following search finds all products that were added after the specified time
 
 The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
 
-``` json 
+``` json
 {
     products(
       filter: {
@@ -286,7 +286,7 @@ The query returns 8 items.
 
 This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the product is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
-``` json 
+``` json
 {
     products(
       filter: {

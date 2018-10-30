@@ -181,7 +181,7 @@ A sample DI configuration file of a custom module `<your_module_dir>/etc/fronten
 
 ```xml
 ...
-<type name="Magento\Checkout\Modерel\CompositeConfigProvider">
+<type name="Magento\Checkout\Model\CompositeConfigProvider">
     <arguments>
         <argument name="configProviders" xsi:type="array">
             ...
