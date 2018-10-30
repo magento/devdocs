@@ -244,8 +244,8 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `name` | Argument name. | unique | yes |
-| `xsi:type` | Argument type. | string|boolean|object|number|null|array | yes |
-| `translate` | | true|false | no |
+| `xsi:type` | Argument type. | `string|boolean|object|number|null|array` | yes |
+| `translate` | | `true|false` | no |
 {:style="table-layout:auto;"}
 
 To pass multiple arguments use the following construction:
