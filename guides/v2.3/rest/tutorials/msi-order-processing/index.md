@@ -36,4 +36,4 @@ The Order Processing with MSI tutorial is a draft. It will be expanded to includ
 
 ### Other resources
 
-* Magento uses [Swagger](https://swagger.io) to provide REST API documentation. You can view the [static REST API documentation]({{ site.baseurl }}/swagger/) or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).
+* Magento uses [Swagger](https://swagger.io) to provide REST API documentation. You can view the [static REST API documentation]({{site.baseurl}}/redoc/{{page.guide_version}}/) or [generate a local API reference]({{ page.baseurl }}/rest/generate-local.html).

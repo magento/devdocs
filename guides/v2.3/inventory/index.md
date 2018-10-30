@@ -2,6 +2,7 @@
 group: inventory
 title: Inventory Management overview
 landing-page: Inventory
+redirect_from: /guides/v2.3/inventory/overview.html
 ---
 
 Magento Open Source and Commerce v2.3 include new and expanded features and APIs for Inventory Management. Inventory Management replaces all core APIs in the Open Source `CatalogInventory` module and the `ScalableInventory` module in Commerce. It also provides additional APIs to extend and add functionality.

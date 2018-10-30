@@ -2,9 +2,6 @@
 group: cloud-guide
 subgroup: 090_configure
 title: Custom whitelist VCL
-menu_title: Custom whitelist VCL
-menu_order:
-menu_node:
 redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-whitelist.html
    - /guides/v2.2/cloud/configure/fastly-vcl-whitelist.html
