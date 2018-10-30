@@ -48,7 +48,7 @@ Depending on your needs, you can use the existing [language packages](#m2devgde-
 Changes made:
 
 *	The {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} (`i18n` directory) can now be moved and saved to any directory of your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
-*	The phrases for translations are enabled in the [Phrase] class.
+*	The phrases for translations are enabled in the Phrase class.
 
 ### Programming notes
 
@@ -140,11 +140,11 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 *	`composer.json` that contains any dependencies for the language package and a mapping to its defined {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}
 
-	[Sample composer.json]
+	[Sample composer.json](https://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html#sample-composerjson-file)
 
 *	`language.xml`, in which you declare a language package.
 
-	[Sample language.xml]
+	[Sample language.xml](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
 
 #### Next step
 
@@ -153,12 +153,9 @@ To create translation dictionaries and language packages, see [Translation dicti
 
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language inheritance]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework
-[Phrase]: {{site.mage2100url}}lib/internal/Magento/Framework/Phrase.php
 [parent theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [Create a translation dictionary for a theme]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
 [translation dictionary tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language package]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack
 [More information about the dictionary generator tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
-[Sample composer.json]: {{site.mage2100url}}app/i18n/Magento/de_DE/composer.json
-[Sample language.xml]: {{site.mage2100url}}app/i18n/Magento/de_DE/language.xml
 [Translation dictionaries and packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
