@@ -79,6 +79,8 @@ We know of the following issues with Varnish:
 #### Next step
 [Install Varnish]
 
+[Install Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish-install.html 
+
 <!-- Link Definitions -->
 [Varnish Cache]: https://www.varnish-cache.org/
 
