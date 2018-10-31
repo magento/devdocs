@@ -5,8 +5,6 @@ title: Admin Capitalization
 menu_title: Capitalization
 menu_order: 4
 menu_node:
-version: 2.0
-github_link: design-styleguide/capitalization/capitalization.md
 ---
 Magento uses three different cases for content – sentence case, title case, and all-caps.
 
@@ -104,7 +102,7 @@ Use capitalization standards, as specified in the Magento Glossary and Word U
 
 * **UI names.** Use initial caps, where the Magento Glossary and Word Usage Bank specify.
 
-* **Lists' first word, initial capped.** See more “Lists” guidance in Content Formats.
+* **Lists' first word, initial capped.** See more “Lists” for guidance in Content Formats.
 
 ### Do Not Capitalize ...
 

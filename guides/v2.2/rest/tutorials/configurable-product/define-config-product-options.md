@@ -2,14 +2,13 @@
 layout: tutorial
 group: rest
 title: Step 4. Define configurable product options
+subtitle: Create a configurable product tutorial
 menu_title: Step 4. Define configurable product options
 menu_order: 40
 level3_subgroup: configurable-product-tutorial
 return_to:
-  title: REST API Reference
-  url: rest/bk-rest.html
-version: 2.2
-github_link: rest/tutorials/configurable-product/define-config-product-options.md
+  title: REST tutorials
+  url: rest/tutorials/index.html
 functional_areas:
   - Integration
 ---

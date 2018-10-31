@@ -5,8 +5,6 @@ title: 503 (Service Unavailable) errors accessing Magento software in a web brow
 menu_title: 503 (Service Unavailable) errors accessing Magento software in a web browser
 menu_node:
 menu_order: 3
-version: 2.0
-github_link: install-gde/trouble/php/tshoot_mod_access_compat.md
 redirect_from:
   - /guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html
   - /guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html
@@ -16,8 +14,7 @@ functional_areas:
   - Setup
 ---
 
-
-<h2 id="trouble-install-depend">503 (Service Unavailable) errors accessing Magento software in a web browser</h2>
+## 503 (Service Unavailable) errors accessing Magento software in a web browser   {#trouble-install-depend}
 
 #### Symptoms
 
@@ -34,6 +31,7 @@ Apache 2.4 changes the way certain directives related to `.htaccess` work. The M
 Not all Apache 2.4 distributions have this issue because in some cases, a compatibility {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} named `mod_access_compat` is enabled by default. If, however, your Apache 2.4 distribution has this module disabled, you must perform the tasks discussed in the next section. You can also consult the resources listed in the final section in this topic.
 
 #### Suggested solution
+
 As a user with 'root' privileges, enter the following commands:
 
 	a2enmod access_compat

@@ -5,8 +5,6 @@ title: Optionally set a umask
 menu_title: Optionally set a umask
 menu_node: parent
 menu_order: 5
-version: 2.0
-github_link: install-gde/install/post-install-umask.md
 functional_areas:
   - Install
   - System

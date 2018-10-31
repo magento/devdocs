@@ -3,18 +3,11 @@ group: UI_Components_guide
 subgroup: components
 title: Textarea component
 menu_title: Textarea component
-version: 2.1
-github_link: ui_comp_guide/components/ui-textarea.md
 ---
-
-## Overview
 
 The Textarea component implements the `<textarea>` form field.
 
-## Textarea configuration
-Extends all `abstract` configuration.
-
-Textarea-specific options:
+## Configuration options
 
 <table>
   <tr>
@@ -80,7 +73,7 @@ Textarea-specific options:
       <code>rows</code>
     </td>
     <td>
-      The number of columns that will be specified in the
+      The number of rows that will be specified in the
       <code>rows</code> attribute of the textarea DOM element.
     </td>
     <td>

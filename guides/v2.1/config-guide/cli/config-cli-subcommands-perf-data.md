@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Generate data for performance testing
-menu_title: Generate data for performance testing
-menu_node:
-menu_order: 800
-version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-perf-data.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-perf-data.html
 functional_areas:
   - Configuration
@@ -17,7 +11,8 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of performance testing data {#config-cli-perf-overview}
-To use the [Magento Performance Toolkit]({{ site.mage2100url }}setup/performance-toolkit){:target="\_blank"} or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
+
+To use the [Magento Performance Toolkit]({{ site.mage2100url }}setup/performance-toolkit) or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
@@ -28,6 +23,7 @@ The following figure shows how a product displays on the {% glossarytooltip 1a70
 This gives you an idea about what the data looks like.
 
 ## About profiles {#config-cli-perf-prof}
+
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
 Profiles are located in `<your Magento install dir>/setup/performance-toolkit/profiles/<ce or ee>`
@@ -146,9 +142,9 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 </table>
 
 ## Run the data generator {#config-cli-perf-run}
-<div class="bs-callout bs-callout-warning" markdown="1">
+
+{:.bs-callout .bs-callout-warning}
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
-</div>
 
 Run the command as discussed in this section. After the command runs, you must [reindex all indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex).
 
@@ -180,18 +176,3 @@ Sample output for the small profile:
     Generating simple products...  done in <time>
     Generating configurable EAV variations...  done in <time>
     ... more ...
-
-
-#### Related topics
-*   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
-*   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
-*   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
-*   [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
-*   [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html)
-*   [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
-*   [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
-*   [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
-*   [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
-*   [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
-*   [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-*   [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)

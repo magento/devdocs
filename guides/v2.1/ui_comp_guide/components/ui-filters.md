@@ -3,24 +3,13 @@ group: UI_Components_guide
 subgroup: components
 title: Filters component
 menu_title: Filters component
-version: 2.1
-github_link: ui_comp_guide/components/ui-filters.md
 ---
-
-## Overview
 
 The Filters component renders UI controls for filtering and applies filtering. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-library/filters/data-table-filters/filtering.html) topic for information about the UI design patterns that can be implemented using Filters component.
 
-## Structure
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
-
-## Filters configuration
-
-Extends all [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Filters-specific configuration:
+## Configuration options
 
 <table>
   <tr>
@@ -60,3 +49,9 @@ Filters-specific configuration:
     <td>Contains definitions of the <code>text</code>, <code>select</code>,<code>dateRange</code> and <code>textRange</code> filter types.</td>
   </tr>
 </table>
+
+## Source files
+
+Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)

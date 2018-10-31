@@ -1,9 +1,7 @@
 ---
 group: mrg
 title: Magento_CatalogRuleStaging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/CatalogRuleStaging.md
 ---
 
 The Magento_CatalogRuleStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} rule updates to existing store campaigns. In other words, you can add and/or remove {% glossarytooltip 3b0e248f-5571-48c0-9dde-efe1662fac6d %}catalog rules{% endglossarytooltip %} for some period of time. These updates are shown on the campaign dashboard.

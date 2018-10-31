@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Configure environments
-version: 2.2
-github_link: cloud/env/environments.md
 redirect_from:
   - /guides/v2.0/cloud/deploy/configure-deploy.html
   - /guides/v2.1/cloud/deploy/configure-deploy.html

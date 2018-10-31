@@ -4,21 +4,17 @@ subgroup: 01_Admin
 title: Admin FAQ
 menu_title: Admin FAQ
 menu_order: 1000
-version: 2.1
-github_link: ext-best-practices/admin/ext-best-practices_admin_FAQ.md
 functional_areas:
   - Standards
 ---
 
 This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
-
 #### Where should my extension appear in the Admin?
 
 The appropriate place for your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} to appear in the Admin depends on what it does. For a list of extension types and their proper spot in the Admin, please consult the article: [Admin panel placement and design]({{ page.baseurl }}/ext-best-practices/admin/placement-and-design.html).
 
 ____
-
 
 #### What are the rules about using the left-navigation "slide-out panels" in the Admin?
 

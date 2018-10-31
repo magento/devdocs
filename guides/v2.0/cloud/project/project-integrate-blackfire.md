@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Blackfire Profiler
-version: 2.0
-github_link: cloud/project/project-integrate-blackfire.md
 functional_areas:
   - Cloud
   - Integration
@@ -27,11 +25,13 @@ For Pro plans, you need to enter a Support ticket with your Blackfire credential
 </div>
 
 ## Get your Blackfire credentials {#cloud-int-black}
+
 The Project Owner is the account owner. This account's e-mail address is used as part of the credentials for access to Blackfire for your project. Only the Project Owner credentials can be used to integrate Blackfire with {{site.data.var.ece}} and to log into the Blackfire site. An invitation email is sent to the Project Owner's e-mail address to complete activation.
 
 For information on setting up the account on Blackfire, see [Accessing your Blackfire account as a Magento Cloud user](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-1-accessing-your-blackfire-account-as-a-magento-cloud-user){:target="_blank"}. You can also access your Blackfire license key through [project details]({{ page.baseurl }}/cloud/project/projects.html#integrations).
 
 ## Add collaborator accounts {#collaborators}
+
 After you have accessed your Blackfire account, you can [add additional collaborator accounts](http://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-2-adding-collaborators-to-the-blackfire-environments){:target="_blank"}.
 
 We recommend adding at least one account through Blackfire to manage all access, integrations, and usage of the tool. We also recommend promoting one of the added members to Admin, to manage all Blackfire access and integrations.
@@ -45,6 +45,7 @@ We recommend adding at least one account through Blackfire to manage all access,
 	![Promote an admin]({{ site.baseurl }}/common/images/cloud_blackfire-member.png)
 
 ## Enable Blackfire on your local {#cloud-int-black-en}
+
 You need to install and configure Blackfire on your local workspace with your working {{site.data.var.ece}} installation. You don't need to run these installations directly on the hosted environments, only on your local.
 
 We recommend using their installation guide to walk you through the process:
@@ -56,6 +57,7 @@ We recommend using their installation guide to walk you through the process:
 5. Open [this guide](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}, select the Operating System, and follow the instructions.
 
 ## Integrate Blackfire in Integration {#dev}
+
 We recommend enabling Blackfire in all of your environments including Integration. To integrate, you begin in the Blackfire site. For full details, see [their guide.](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-the-server-credentials-the-integration-with-magento-cloud){:target="_blank"}. You can integrate with Pro's Integration environment and Starter's development branches.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -83,6 +85,7 @@ The following sections include instructions for completing this list of integrat
 * [Save changes in Blackfire](#save)
 
 ### Add Blackfire to .magento.app.yaml {#magentoappyaml}
+
 By default, the Blackfire module is included in the `.magento.app.yaml` file as part of your Git branch.
 
 The following instructions provide additional instructions if the module is not added to `.magento.app.yaml`. To enable and integrate Blackfire into your code, you will modify the `.magento.app.yaml` file, push the file into your remote Git branch, merge, and deploy across all environments.
@@ -155,6 +158,7 @@ Next, modify the `.magento.app.yaml` file:
 	If errors display during deployment, open `.magento.app.yaml` and check the syntax. Check indentation and spelling and try again.
 
 ### Add project variables {#variables}
+
 Add project variables for Blackfire for the server ID and token. You can add these using the Magento Cloud CLI or the Project Web Interface. The following instructions walk through adding them using CLI commands.
 
 1.  Log in to your {{site.data.var.ece}} project.
@@ -172,6 +176,7 @@ Add project variables for Blackfire for the server ID and token. You can add the
 	```
 
 ### Add Blackfire integration to the project {#integration}
+
 Using the Magento Cloud CLI, you will enter an integration command to connect Blackfire with the project. This command requires using an account with super user access. Make sure your Cloud Project account has the [super user option]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-user-webinterface) in the Project through the Project Web Interface.
 
 1.  Log in to your {{site.data.var.ece}} project.
@@ -192,6 +197,7 @@ Using the Magento Cloud CLI, you will enter an integration command to connect Bl
 1. A series of requests display for the command. To accept default values, hit enter for the questions. If you receive a permission error, make sure you have super user access for the {{site.data.var.ece}} project. Either request your permission be upgraded or have someone else who is an admin run this command.
 
 ### Add a default route {#route}
+
 If you do not have a default route specified in `routes.yaml`, or want to define which route to use instead of the default route, you will add it to Blackfire and `routes.yaml`.
 
 Add route information on the Blackfire Magento Cloud integration page:
@@ -261,9 +267,11 @@ If you leave this field blank, we will try the following keys in this order: `ht
 	If errors display during deployment, open `routes.yaml` and check the syntax. Check indentation and spelling and try again.
 
 ### Save changes in Blackfire {#save}
+
 With all integrations entered on the Blackfire Magento Cloud integration page, click Save. All integration settings save to your Blackfire account with saved integrations and connections with changes entered to your {{site.data.var.ece}} project. Continue to the next section to begin profiling your store to verify the integration.
 
 ## Profile your store {#profile}
+
 To verify Blackfire works, you have a couple options: a browser extension or using the CLI. For extensive CLI profiling options and better understanding the profiles, see [Blackfire's resources](#resources).
 
 <div class="bs-callout bs-callout-info" markdown="1">
@@ -318,6 +326,7 @@ To profile using the CLI:
 	```
 
 ## Blackfire resources {#resources}
+
 Blackfire provides great information to better profile and investigate the results on their documentation site. Check out some resources:
 
 *	[Profiling HTTP requests](https://blackfire.io/docs/cookbooks/profiling-http){:target="_blank"}

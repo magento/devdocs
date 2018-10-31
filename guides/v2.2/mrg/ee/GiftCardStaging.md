@@ -5,9 +5,7 @@ ee_only: true
 title: Magento_GiftCardStaging module
 menu_title: GiftCardStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/GiftCardStaging.md
 ---
 
 The Magento_GiftCardStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add GiftCard Product updates to the existing store campaigns. In other words, you can change the GiftCard Product attributes in campaigns. These updates are shown on the campaign dashboard.

@@ -5,15 +5,12 @@ title: Exceptions during installation
 menu_title: Exceptions during installation
 menu_node:
 menu_order: 8
-version: 2.2
-github_link: install-gde/trouble/tshoot_access-browser.md
 redirect_from: /guides/v1.0/install-gde/trouble/tshoot_access-browser.html
 functional_areas:
   - Install
   - System
   - Setup
 ---
-
 
 ### Symptom: Exceptions display during installation. Users have reported a variety of exceptions, including the following:
 
@@ -33,6 +30,7 @@ functional_areas:
 	... more ...
 	
 #### Solution
+
 Clear the `<your Magento install dir>/generated/code` and other directories under `var` and `generated` as follows:
 
 	rm -rf <your Magento install dir>/generated/code/* <your Magento install dir>/generated/metadata/* <your Magento install dir>/var/cache/* 

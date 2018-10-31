@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 10_mem
 title: Configure Magento to use memcached
-menu_title: Configure Magento to use memcached
-menu_order: 30
-menu_node:
-version: 2.1
-github_link: config-guide/memcache/memcache_magento.md
 functional_areas:
   - Configuration
   - System
@@ -40,11 +34,12 @@ To configure Magento to use memcache:
                   'save' => 'memcached',
                   'save_path' => '<memcache ip or host>:<memcache port>'
             ),
-            
-    Both memcache and memcached have optional startup parameters that are beyond the scope of this guide. You can find more information about them in the <a href="http://php.net/manual/en/memcache.ini.php#ini.memcache.save-path" target="_blank">memcache</a> or <a href="http://php.net/manual/en/memcached.sessions.php" target="_blank">memcached</a> documentation, source code, and changelogs.
+
+    Both memcache and memcached have optional startup parameters that are beyond the scope of this guide. You can find more information about them in the [memcache](http://php.net/manual/en/memcache.ini.php#ini.memcache.save-path) or [memcached](http://php.net/manual/en/memcached.sessions.php) documentation, source code, and changelogs.
 3.  Continue with the next section.
 
-<h2 id="config-memcache-verify">Verify memcached is working with Magento</h2>
+## Verify memcached is working with Magento {#config-memcache-verify}
+
 To verify memcached works with Magento:
 
 1.  Delete the contents of the following directories under your Magento installation directory:
@@ -57,7 +52,7 @@ To verify memcached works with Magento:
 
     If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.
 
-    If errors display (such as an HTTP 500 (Internal Server Error)), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that `env.php` has no syntax errors. 
+    If errors display (such as an HTTP 500 (Internal Server Error)), enable developer mode and diagnose the issue. Make sure memcached is running, configured properly, and that `env.php` has no syntax errors.
 
 4.  (Optional.) Use Telnet to look at memcached storage.
 
@@ -74,6 +69,4 @@ To verify memcached works with Magento:
         STAT items:3:outofmemory 0
         STAT items:3:tailrepairs 0
 
-    <a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Look at the keys in more detail</a>
-
-
+    [Look at the keys in more detail](http://www.darkcoding.net/software/memcached-list-all-keys/)

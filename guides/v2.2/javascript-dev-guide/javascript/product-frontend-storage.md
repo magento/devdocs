@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: Use the Frontend Product Repository
 menu_title: Use the Frontend Product Repository
 menu_order: 10
-version: 2.2
 ---
 
 The frontend product repository is a storage service that uses the local cache to get product information without making additional requests to the server.
@@ -195,7 +194,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
 {% endcollapsible %}
 
 [datasource-component]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_data_source.html
-[recently-viewed-widget]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
-[product-render-interface]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php
-[storage-service]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js
-[load-data-from-server]: https://github.com/magento/magento2/blob/2.2/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213
+[recently-viewed-widget]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[product-render-interface]: {{ site.mage2200url }}app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php
+[storage-service]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js
+[load-data-from-server]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213

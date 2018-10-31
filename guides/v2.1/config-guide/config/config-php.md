@@ -1,23 +1,12 @@
 ---
 group: config-guide
-subgroup: 07_conf
 title: Magento's deployment configuration
-menu_title: Magento's deployment configuration
-menu_order: 1
-version: 2.2
-github_link: config-guide/config/config-php.md
 redirect_from: /guides/v1.0/config-guide/config/config-php.html
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
-
-
-#### Contents
-
-*  <a href="#config-php-overview">Purpose of the deployment configuration</a>
-*  <a href="#config-php-contents">Details about the deployment configuration</a>
 
 ## Purpose of the deployment configuration {#config-php-overview}
 
@@ -28,36 +17,47 @@ Magento's deployment configuration consists of the shared and system-specific co
 	`config.php` contains the list of installed modules, themes, and language packages; and shared configuration settings
 *	`<Magento base dir>/app/etc/env.php`, which contains system-specific settings, such as:
 
+	*	Database credentials and connection settings
+	*	i18n TBD
+	*	Cache storage settings
+	*	Session storage settings
+	*	[x-frame-options]({{ page.baseurl }}/config-guide/secy/secy-xframe.html) setting
+	*	Enabled cache types
+	*	Your encryption key
+	*	Web routing parameters (base URLs, Magento Admin URI)
+	*	[Magento mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html)
+	*	Magento installation date
+	*	System-specific and sensitive configuration settings TBD
+
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
-</div>
 
 Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
 
-
 ## Details about the deployment configuration {#config-php-contents}
-`config.php` and `env.php` are {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.
+
+`config.php` and `env.php` are {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} files that return a [multi-dimensional associative array](http://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
 
 On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key&mdash;where both the key and its value are defined by the Magento framework.
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
+[Magento\Framework\App\DeploymentConfig]({{ site.mage2000url }}/lib/internal/Magento/Framework/App/DeploymentConfig.php) merely provides access to these sections but does not allow you to extend them.
 
 On the next hierarchy level, items in each segment are ordered according to the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} sequence definition, which is obtained by merging all modules' configuration files, with the {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} of disabled modules.
 
 The following sections discusses the structure and contents of the deployment configuration&mdash;`config.php` and `env.php`.
 
-* <a href="#config-php-contents-config-php">Manage installed modules</a>
-* <a href="#config-php-contents-env-php">Environmental configuration</a>
+* [Manage installed modules](#config-php-contents-config-php)
+* [Environmental configuration](#config-php-contents-env-php)
 
 ## Manage installed modules {#config-php-contents-config-php}
 `config.php` lists your installed components (modules, themes, and language packages). Magento provides both command-line and web-based utilities to manage components (install, uninstall, enable, disable, or upgrade).
 
 Examples:
 
-* Uninstall components: <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a>
-* Enable or disable components: <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.
+* Uninstall components: [`bin/magento setup:uninstall`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html)
+* Enable or disable components: [`bin/magento module:enable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable), [`bin/magento module:disable`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
 * Component Manager: coming soon
 * System Upgrade: coming soon
 
@@ -88,6 +88,7 @@ Disabled modules are not recognized by the Magento application; in other words, 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 
 ## Environmental configuration {#config-php-contents-env-php}
+
 The following table provides details about each `env.php` segment and its structure.
 
 <table>
@@ -174,4 +175,5 @@ The following table provides details about each `env.php` segment and its struct
 </table>
 
 ## Related topic
-<a href="{{ page.baseurl }}/config-guide/config/config-files.html">Module configuration files</a>
+
+[Module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html)

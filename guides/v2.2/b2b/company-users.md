@@ -4,20 +4,18 @@ subgroup: 10_REST
 title: Manage company users
 menu_title: Manage company users
 menu_order: 13
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/company-users.md
 functional_areas:
   - B2B
   - Integration
 ---
 
-A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with Magento {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
+A company user is a customer (buyer) that is assigned extended attributes that identify the company the user belongs to. Use the `POST /V1/customers` call, which is included with {{site.data.var.ce}} and {{site.data.var.ee}}, and specify the `company_attributes` extended attributes to create a company user.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{ page.baseurl }}/get-started/order-tutorial/order-create-customer.html) for an example of creating a standard customer.
+This topic discusses only the features of the `customerCustomerRepositoryV1` service that are specific to B2B. See [Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html) for an example of creating a standard customer.
 </div>
 
 ## Manage company users

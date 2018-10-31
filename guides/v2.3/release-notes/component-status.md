@@ -1,19 +1,17 @@
 ---
 group: release-notes
 title: Component Status
-version: 2.3
-github_link: release-notes/component-status.md
 ---
 
-**Last Updated: April 4, 2018** 
+**Last Updated: August 20, 2018**
 
 This page shows the status of each component for the Magento 2.3.x release and is intended to show you the readiness of different components.
 
 Each status color indicates the severity and amount of 2.3-related issues for a particular component.
 
-* <span class="status red">Red</span> - The module has critical and blocking issues that make this module unstable.
-* <span class="status yellow">Yellow</span> - The module has some issues that may cause problems, but it is still functional.
-* <span class="status green">Green</span> - The module has no significant or outstanding issues.
+- <span class="status red">Red</span> - The module has critical and blocking issues that make this module unstable.
+- <span class="status yellow">Yellow</span> - The module has some issues that may cause problems, but it is still functional.
+- <span class="status green">Green</span> - The module has no significant or outstanding issues.
 
 The issues used to generate the status of these components come from verified internal and GitHub reports for Magento 2.3.
 Issues that are not related to the 2.3 release are not part of this report.
@@ -25,12 +23,12 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Catalog                                | <span class='status red'>Red</span>       |
 | Infrastructure/ Performance                    | <span class='status yellow'>Yellow</span> |
 | Module/ Bundle                                 | <span class='status yellow'>Yellow</span> |
-| Module/ Catalog/ Pricing                       | <span class='status yellow'>Yellow</span> |
-| Module/ CatalogInventory                       | <span class='status yellow'>Yellow</span> |
+| Module/ Checkout/ One Page Checkout            | <span class='status yellow'>Yellow</span> |
 | Module/ Cms/ CMS Content                       | <span class='status yellow'>Yellow</span> |
 | Module/ ConfigurableProduct                    | <span class='status yellow'>Yellow</span> |
 | Module/ ImportExport                           | <span class='status yellow'>Yellow</span> |
 | Module/ Setup                                  | <span class='status yellow'>Yellow</span> |
+| Module/ UI                                     | <span class='status yellow'>Yellow</span> |
 | Module/ Webapi/ Web API Framework              | <span class='status yellow'>Yellow</span> |
 | Infrastructure/ App Framework                  | <span class='status green'>Green</span>   |
 | Infrastructure/ Autoload Framework             | <span class='status green'>Green</span>   |
@@ -71,12 +69,13 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ CacheInvalidate                        | <span class='status green'>Green</span>   |
 | Module/ Captcha                                | <span class='status green'>Green</span>   |
 | Module/ CatalogImportExport                    | <span class='status green'>Green</span>   |
+| Module/ CatalogInventory                       | <span class='status green'>Green</span>   |
 | Module/ CatalogRule                            | <span class='status green'>Green</span>   |
+| Module/ Catalog/ Pricing                       | <span class='status green'>Green</span>   |
 | Module/ CatalogSearch/ Search Frontend         | <span class='status green'>Green</span>   |
 | Module/ CatalogUrlRewrite                      | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Guest Checkout               | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Mini Shopping Cart           | <span class='status green'>Green</span>   |
-| Module/ Checkout/ One Page Checkout            | <span class='status green'>Green</span>   |
 | Module/ Checkout/ Shopping Cart                | <span class='status green'>Green</span>   |
 | Module/ Cms/ CMS Hierarchy                     | <span class='status green'>Green</span>   |
 | Module/ Config                                 | <span class='status green'>Green</span>   |
@@ -126,7 +125,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Tax                                    | <span class='status green'>Green</span>   |
 | Module/ Theme                                  | <span class='status green'>Green</span>   |
 | Module/ Translation                            | <span class='status green'>Green</span>   |
-| Module/ UI                                     | <span class='status green'>Green</span>   |
 | Module/ UPS                                    | <span class='status green'>Green</span>   |
 | Module/ UrlRewrite                             | <span class='status green'>Green</span>   |
 | Module/ User                                   | <span class='status green'>Green</span>   |
@@ -194,13 +192,12 @@ Issues that are not related to the 2.3 release are not part of this report.
 
 | Name                              | Status                                    |
 | --------------------------------- | ----------------------------------------- |
-| Framework/ Setup                  | <span class='status yellow'>Yellow</span> |
 | Module/ Sales                     | <span class='status yellow'>Yellow</span> |
-| None                              | <span class='status yellow'>Yellow</span> |
 | devbox                            | <span class='status green'>Green</span>   |
 | Documentation                     | <span class='status green'>Green</span>   |
 | Framework/ DB                     | <span class='status green'>Green</span>   |
 | Framework/ Indexer                | <span class='status green'>Green</span>   |
+| Framework/ Setup                  | <span class='status green'>Green</span>   |
 | Framework/ Url                    | <span class='status green'>Green</span>   |
 | Infrastructure/ Cloud             | <span class='status green'>Green</span>   |
 | Infrastructure/ GraphQL Framework | <span class='status green'>Green</span>   |
@@ -215,5 +212,6 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ MessageQueue              | <span class='status green'>Green</span>   |
 | Module/ PageBuilder               | <span class='status green'>Green</span>   |
 | Module/ ReleaseNotification       | <span class='status green'>Green</span>   |
+| None                              | <span class='status green'>Green</span>   |
 | Tools/ Utilities                  | <span class='status green'>Green</span>   |
 {:style="table-layout:auto"}

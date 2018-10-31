@@ -3,25 +3,13 @@ group: UI_Components_guide
 subgroup: components
 title: Expandable Column сomponent
 menu_title: Expandable Column component
-version: 2.2
-github_link: ui_comp_guide/components/ui-expandable-column.md
 ---
 
-## Overview
 The Expandable Column {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} for [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html). It alphabetically sorts the options associated with a record/row and renders several options (the number is defined in configuration) into a cell. The full list of options is displayed in a tooltip implemented by the Tooltip UI component `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`.
 
 The Expandable Column component can be used in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
-## Structure
-
-The Expandable Column UI component includes the following files:
-
-- JS component: `<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`
-- Template: `<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`
-- Template for tooltip content: `<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`
-
-## Configuration Settings
-
+## Configuration options
 <table>
     <tr>
         <th>Option</th>
@@ -70,18 +58,23 @@ Component's options are set in the configuration `.xml` file as follows:
 </column>
 {% endhighlight %}
 
-## Dependencies on Other Components
+## Dependencies
 
-This component has a dependency on the following component:
+This component has a dependency on the Column component, `<Magento_Ui_module_dir>/view/base/web/js/grid/columns/column.js`.
 
-* Column: `<Magento_Ui_module_dir>/view/base/web/js/grid/columns/column.js`
+## Source files
 
-## Methods and Events
+- [`<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
+
+
+### Methods and events
 
 The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
 
-- `getFullLabel()`: gets a label from a full list of options.
-- `getShortLabel()`: gets a label from a list of options limited by `visibeItemsLimit` value.
-- `getLabelsArray()`: extracts an array of labels associated with provided values and sorts these labels alphabetically.
-- `isExpandable()`: checks if the amount of options associated with a record is greater than a `visibeItemsLimit` value.
-- `flatOptions()`: transforms the tree options structure to a linear array.
+- `getFullLabel()` - gets a label from a full list of options.
+- `getShortLabel()` - gets a label from a list of options limited by `visibeItemsLimit` value.
+- `getLabelsArray()` - extracts an array of labels associated with provided values and sorts these labels alphabetically.
+- `isExpandable()` - checks if the amount of options associated with a record is greater than a `visibeItemsLimit` value.
+- `flatOptions()` - transforms the tree options structure to a linear array.

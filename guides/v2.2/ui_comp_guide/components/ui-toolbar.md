@@ -3,20 +3,11 @@ group: UI_Components_guide
 subgroup: components
 title: Toolbar component
 menu_title: Toolbar component
-version: 2.2
-github_link: ui_comp_guide/components/ui-toolbar.md
 ---
-## Overview
 
 The Toolbar component implements a container for the listing-related elements like paging, mass actions, filters, bookmarks. That is, it aggregates all elements that serve as tools and renders them at the top of the main table. 
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)
-
-## Toolbar configuration
-
-Extends all [UiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Toolbar-specific configuration:
+## Configuration options
 
 <table>
   <tr>
@@ -50,3 +41,9 @@ Toolbar-specific configuration:
     <td><code>ui/grid/toolbar</code></td>
   </tr>
 </table>
+
+## Source files
+
+Extends [`UiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
+- [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)

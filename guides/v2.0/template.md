@@ -13,10 +13,12 @@ To get started, edit your local version of this file, using the {% glossarytoolt
 
 Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!
 
-<h2 id="overview">Overview</h2>
+## Overview   {#overview}
+
 PROVIDE OVERVIEW OF TOPIC HERE
 
-<h2 id="H2">HEADING 2</h2>
+## HEADING 2   {#H2}
+
 PROVIDE TEXT HERE FOR FIRST SECTION.
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -25,19 +27,19 @@ PROVIDE TEXT HERE FOR FIRST SECTION.
 
 </div>
 
-<h3 id="H3">HEADING 3</h3>
+### HEADING 3   {#H3}
+
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
 TO HYPERLINK TO ANOTHER TOPIC... refer to the <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.
 
+## HEADING 2   {#H2}
 
-
-<h2 id="H2">HEADING 2</h2>
 PROVIDE TEXT HERE FOR NEXT SECTION.
 
 ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE"></p>
 
-<h2 id="book-related">Related topics</h2>
+## Related topics   {#book-related}
 
 * <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
 * <a href="{{ page.baseurl }}/_____/_____.html">Title of related topic</a>
@@ -97,7 +99,7 @@ See the markdown version of this file for examples.
 {% endcollapsible %}
 
 {% collapsible Click to show/hide included content %}
-{% include mtf/page-generator.html %}
+{% include mtf/page-generator.md %}
 {% endcollapsible %}
 
 {% collapsible Collapsible Code Examples%}
@@ -106,7 +108,10 @@ See the markdown version of this file for examples.
 
 ~~~
 <div class="collapsible">
-  <h4 class="collapsible-title">Collapsible Title</h4>
+
+#### Collapsible Title
+{: .collapsible-title}
+
   <div class="collapsible-content">
     <p>Put collapsible content here.</p>
   </div>
@@ -117,14 +122,16 @@ See the markdown version of this file for examples.
 
 {% highlight html %}
 <div class="collapsible">
-  <h4 class="collapsible-title">Collapsible Title</h4>
+
+#### Collapsible Title
+{: .collapsible-title}
+
   <div class="collapsible-content">
     <p>Put collapsible content here.</p>
   </div>
 </div>
 {% endhighlight %}
 {% endcollapsible %}
-
 
 ### Collapsible Group
 

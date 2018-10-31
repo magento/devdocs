@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Isolation management
-version: 2.0
-github_link: mtf/features/isolation.md
 ---
 
 Isolation management feature enables you to isolate a test suite, a test case, or a test using custom logic coded in a script. You can use it to return your system to its initial state (drop a database, clean cache, reset filesystem) or perform any other procedures that you need.

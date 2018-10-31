@@ -1,11 +1,6 @@
 ---
 group: fedg
-subgroup: A_Themes
 title: JavaScript Bundling
-menu_title: JavaScript Bundling
-menu_order: 9000
-version: 2.1
-github_link: frontend-dev-guide/themes/js-bundling.md
 functional_areas:
   - Frontend
   - Theme
@@ -16,7 +11,7 @@ Bundling accomplishes this by merging multiple JavaScript files together into on
 
 ## Enable JavaScript bundling
 
-Magento must be set to [production mode][production-mode] in order for bundling to work.
+Magento must be set to [production mode] in order for bundling to work.
 
 To activate JavaScript bundling:
 
@@ -42,11 +37,11 @@ JavaScript files excluded from bundling are loaded asynchronously by RequireJS a
 
 Do not bundle JavaScript files used for testing or development because these will get loaded on every page.  
 
-The following code snippet from [Magento's Luma theme][luma-view-xml]{:target="_blank"} shows the types of files you should exclude in your theme.
+The following code snippet from [Magento's Luma theme][luma-view-xml] shows the types of files you should exclude in your theme.
 
 {% collapsible Show example %}
 
-{% highlight xml %}
+```xml
 <vars module="Js_Bundle">
     <var name="bundle_size">1MB</var>
 </vars>
@@ -100,7 +95,7 @@ The following code snippet from [Magento's Luma theme][luma-view-xml]{:target="_
     <item type="directory">Lib::mage/adminhtml</item>
     <item type="directory">Lib::mage/backend</item>
 </exclude>
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 

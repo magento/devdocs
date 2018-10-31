@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Web Driver Replacement in the Functional Testing Framework
-version: 2.0
-github_link: mtf/features/webdriver.md
 ---
 
 ## Overview

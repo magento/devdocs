@@ -1,22 +1,19 @@
 ---
 group: config-guide
 title: Example&mdash;logging database activity
-version: 2.2
-github_link: config-guide/log/log-db.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-The following example shows how to log database activity using the [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2200url }}lib/internal/Magento/Framework/DB/LoggerInterface.php){:target="\_blank"}, which has two implementations:
+The following example shows how to log database activity using the [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2200url }}lib/internal/Magento/Framework/DB/LoggerInterface.php), which has two implementations:
 
-*   Logs nothing (default): [`Magento\Framework\DB\Logger\Quiet`]({{ site.mage2200url }}lib/internal/Magento/Framework/DB/Logger/Quiet.php){:target="\_blank"}
-*   Logs to the Magento `var/log` directory: [`Magento\Framework\DB\Logger\File`]({{ site.mage2200url }}lib/internal/Magento/Framework/DB/Logger/File.php){:target="\_blank"}
+*   Logs nothing (default): [`Magento\Framework\DB\Logger\Quiet`]({{ site.mage2200url }}lib/internal/Magento/Framework/DB/Logger/Quiet.php)
+*   Logs to the Magento `var/log` directory: [`Magento\Framework\DB\Logger\File`]({{ site.mage2200url }}lib/internal/Magento/Framework/DB/Logger/File.php)
 
-<div class="bs-callout bs-callout-tip" markdown="1">
+{:.bs-callout .bs-callout-info}
 You can also use the Magento CLI to [enable and disable database logging]({{page.baseurl}}/config-guide/cli/logging.html#database-logging).
-</div>
 
 To change the default configuration of `\Magento\Framework\DB\Logger\LoggerProxy`, edit your `app/etc/di.xml`.
 

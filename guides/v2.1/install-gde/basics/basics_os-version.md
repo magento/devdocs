@@ -1,8 +1,6 @@
 ---
 group: install2
 title: What operating system is my server running?
-version: 2.1
-github_link: install-gde/basics/basics_os-version.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
 functional_areas:
   - Install
@@ -17,7 +15,7 @@ How can you tell what operating system and version your Magento server runs?
 
 If you can log in directly to the machine, the application is usually called Terminal. 
 
-If you cannot log in directly, you can <a href="{{ page.baseurl }}/install-gde/basics/basics_login.html">log in remotely</a>.
+If you cannot log in directly, you can [log in remotely]({{ page.baseurl }}/install-gde/basics/basics_login.html).
 
 ## Exact command or process of elimination?
 

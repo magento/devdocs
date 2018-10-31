@@ -5,8 +5,6 @@ title: Project structure
 menu_title: Project structure
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: cloud/project/project-start.md
 redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
@@ -19,6 +17,7 @@ functional_areas:
 When you create your project, you receive a cloned repository of {{site.data.var.ece}} code.
 
 ## Local project directory structure {#cloud-structure-local}
+
 Not including the Magento application itself, your local project has the following structure:
 
 {% highlight xml %}
@@ -46,6 +45,7 @@ Depending on your {{site.data.var.ece}} version, you may need different informat
 We include a base `.gitignore` file with the project repository. For a review of the {{site.data.var.ece}} file, see [.gitignore file](https://github.com/magento/magento-cloud/blob/master/.gitignore){:target="\_blank"}. You can review the recommended files for your file in the [`.gitignore` reference]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-gitignore.html).
 
 ## Magento application root directory {#rootdir}
+
 The Magento application root directory is located in different locations depending on the environment.
 
 For Starter:
@@ -60,6 +60,7 @@ For Pro:
 -  Production environment—the Magento application is located in the ` /<project code>` directory.
 
 ## Writable directories {#write-dir}
+
 In Integration, Staging, and Production, *only* the following directories are writable due to security reasons:
 
 *	`var`
@@ -73,6 +74,7 @@ In Integration, Staging, and Production, *only* the following directories are wr
 </div>
 
 ## Logs {#logs}
+
 Logs for all environments are located under the `/var/log` directory. You can access that directory by opening an SSH tunnel to the environment using the `magento-cloud environment:ssh -e <environment id>` command.
 
 For Pro, the deployment log for Staging and Production is located in `/var/log/platform/<project ID>`.
@@ -80,9 +82,11 @@ For Pro, the deployment log for Staging and Production is located in `/var/log/p
 Magento logs are located in the `<magento root dir>/var/log` directory.
 
 ## Build logs {#build-log}
+
 After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of `git push`, so you can observe them in the terminal or capture them (along with error messages) with `git push > build.log 2>&1`.
 
 ### Deploy logs {#deploy-log}
+
 You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.
 
 Logs from the deploy hook are located on the server in the following locations:
@@ -118,6 +122,7 @@ The deploy log contains start and stop messages for each of the two hooks:
 `Starting pre-deploy`, `Pre-deploy complete.`, `Start deploy.`, and `Deployment complete.`.
 
 ### Application logs {#app-log}
+
 To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/ProjectID`.
 
 For Pro plan Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the nginx logs, you can SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`.
@@ -125,6 +130,7 @@ For Pro plan Staging, the project ID has `_stg` at the end. For example, if you 
 For Pro plan Production, you have three nodes to check for logs.
 
 #### Related topics
+
 *	[Get started with an environment]({{ page.baseurl }}/cloud/env/environments-start.html)
 *	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 *	[`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)

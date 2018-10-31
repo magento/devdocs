@@ -5,15 +5,14 @@ title: (Easy) Install the Magento archive on your server
 menu_title: (Easy) Install the Magento archive on your server
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: install-gde/prereq/zip_install.md
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-<h2 id="integrator-aud">Intended audience</h2>
+## Intended audience   {#integrator-aud}
+
 The audience for this topic is anyone who downloaded a compressed Magento software archive (`.zip` or `.tar`). If you'd rather use Composer, go back and <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">choose another starting point</a>.
 
 ## Prerequisites
@@ -24,7 +23,8 @@ The audience for this topic is anyone who downloaded a compressed Magento softwa
 
 {% include install/get-software_zip.md %}
 
-<h2 id="zip-transfer">Transfer the Magento archive to your server</h2>
+## Transfer the Magento archive to your server   {#zip-transfer}
+
 To transfer the Magento software archive to your server:
 
 1.	Install and configure a file transfer protocol (FTP) or secure copy protocol (SCP) client to transfer the Magento software from your computer to your server.
@@ -73,7 +73,8 @@ To transfer the Magento software archive to your server:
 
 8.	Continue with the next section.
 
-<h2 id="zip-extract">Extract the software on your server</h2>
+## Extract the software on your server   {#zip-extract}
+
 Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and extract the software package in the web server docroot using one of the following commands:
 
 <table>
@@ -102,6 +103,7 @@ The Magento software extracts to the directory you created. After the file has e
 {% include install/file-system-perms-before.md %}
 
 #### Next step
+
 Install the Magento software:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>

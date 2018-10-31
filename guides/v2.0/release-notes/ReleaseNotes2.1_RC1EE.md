@@ -4,10 +4,8 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_title: Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes 
 menu_order: 421
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: rc20-relnotes
-github_link: release-notes/ReleaseNotes2.1_RC1EE.md
 ---
 
 We are pleased to present Magento 2.1 Release Candidate 1 (RC1). This release candidate build is not intended for production purposes. Instead, it provides the development community opportunities to: 
@@ -30,8 +28,7 @@ This Release Candidate is available from `repo.magento.com` if you have an Magen
 
 Backward-incompatible changes are documented in <a href="{{ site.baseurl }}/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-
-<h3>Highlights</h3>
+### Highlights
 
 Magento Commerce (formerly Enterprise Edition) 2.1 includes several new features:
 
@@ -45,8 +42,7 @@ Magento Commerce (formerly Enterprise Edition) 2.1 includes several new features
  
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
-
-<h3>Known issue</h3>
+### Known issue
 
 <b>Issue:</b> Enabling Varnish causes the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} menu to switch from http to https<a href="https://github.com/magento/magento2/issues/4540" target="_blank"> (GITHUB-4540)</a>
 
@@ -61,7 +57,7 @@ RewriteCond %{REQUEST_URI} /red-fruit.html
 RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [L]</pre>
 
  
-<h3>Fixed issues</h3>
+### Fixed issues
 
 This release includes fixes for the following GitHub issues:
 
@@ -100,7 +96,7 @@ This release includes fixes for the following GitHub issues:
 
 <!--- 40320 --> * Attribute 'setup_version' is missing for {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} error when defined as optional. <a href="https://github.com/magento/magento2/issues/1493" target="_blank">(GITHUB-1493)</a>
 
-<h3>Technology stack</h3>
+### Technology stack
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.1 RC3 supports:
 
@@ -112,6 +108,7 @@ Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a8
 We do not support PHP 5.5.x or 7.0.5. 
 
 ## Installation and upgrade instructions
+
 You can install Magento Commerce 2.1 Release Candidate 1 (RC1) using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 
 This Release Candidate is for test purposes only. Do not install it in a production environment.
@@ -123,11 +120,13 @@ See one of the following sections:
 *	[Upgrade to an RC with sample data](#upgrade-rc-samp)
 
 ## Install using Composer {#install-rc-composer}
+
 This Release Candidate is available from `repo.magento.com`. Before installing this Release Candidate using Composer,  familiarize yourself with these  <a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:
 
 		composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.0-rc2 <installation directory name>
 
 ## Upgrade existing installations {#upgrade-rc-nosamp}
+
 This section discusses how to upgrade to a Release Candidate *without* sample data.
 
 If you installed optional sample data, see [Upgrade to an RC with sample data](#upgrade-rc-samp) instead.
@@ -137,9 +136,11 @@ If you installed optional sample data, see [Upgrade to an RC with sample data](#
 </div>
 
 ### Upgrade using the Setup Wizard
+
 Use the instructions in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html). When prompted to choose a version, choose a Release Candidate.
 
 ### Upgrade an existing installation from the GitHub repository
+
 Developers who contribute to the Open Source codebase can <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento Open Source GitHub repository.
 
 1.	Go to the <a href="{{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.

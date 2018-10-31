@@ -5,8 +5,6 @@ title: Build and deploy on local
 menu_title: Build and deploy on local
 menu_order: 30
 menu_node:
-version: 2.0
-github_link: cloud/live/live-sanity-check.md
 functional_areas:
   - Cloud
   - Testing
@@ -27,9 +25,11 @@ We highly recommend completing your testing in an Integration active environment
 </div>
 
 ## Update composer if you add extensions {#composer}
+
 If you modified your [composer.json]({{ page.baseurl }}/cloud/cloud-composer.html) to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
 
 ## Verify all required files in Git {#files}
+
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
 * `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
@@ -40,6 +40,7 @@ Your Git branch must have the following files for building and deploying for you
 * [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) is updated and saved in `magento/`
 
 ## Test build your code locally before pushing {#test-build}
+
 Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. The generated build files from this test build **should not be pushed** into Git. This is just a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins.
 
 1. SSH into your local Magento workspace.
@@ -56,6 +57,7 @@ If errors occur during the build, you can investigate and resolve the code issue
 To remove these test builds, you can use the `magento-cloud local:clean` command. For details, enter `magento-cloud local:clean --help`.
 
 ## Push code to Git and Integration {#push}
+
 Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
 
 To prepare your code and branch:
@@ -72,6 +74,7 @@ To push code to your remote environment:
 3.	The build and deploy phases begin. Wait for the deployment to complete.
 
 ## Build phase {#build}
+
 During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *	Apply patches distributed to all Magento Commerce (Cloud) accounts
@@ -145,6 +148,7 @@ If errors display, debug them if possible or open a [support ticket]({{ page.bas
 We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
 
 ## Deploy phase {#deploy}
+
 We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
 *	Install the Magento application if needed

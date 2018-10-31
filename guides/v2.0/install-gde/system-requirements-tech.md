@@ -5,8 +5,6 @@ title: Magento 2.0.x technology stack requirements
 menu_title: Magento 2.0.x technology stack requirements
 menu_node:
 menu_order: 3
-version: 2.0
-github_link: install-gde/system-requirements-tech.md
 redirect_from:
   - /guides/v1.0/install-gde/system-requirements.html
   - /guides/v2.0/install-gde/system-requirements-2.0-tech.html
@@ -21,12 +19,14 @@ functional_areas:
 Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on
 
 ### Memory requirement
+
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}/comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
 
 ### Composer (latest stable version)
 {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
 
 ### Web servers
+
 *	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
 
 	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{ page.baseurl }}/install-gde/prereq/apache.html">our Apache documentation</a>.
@@ -66,16 +66,19 @@ PHP documentation: <a href="{{ page.baseurl }}/install-gde/prereq/php-centos.htm
 	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
+
 We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="{{ page.baseurl }}/install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.
 
 If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.
 
 #### PHP settings
+
 We recommend particular PHP configuration settings, such as `memory_limit`, that can avoid common problems when using Magento.
 
 For more information, see our [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
 ### SSL
+
 *	A valid {% glossarytooltip 363d6806-6a7d-4cb6-bc47-efc62bc26a1c %}security certificate{% endglossarytooltip %} is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
 *	Transport Layer Security (TLS) requirement
@@ -87,9 +90,11 @@ For more information, see our [Required PHP settings]({{ page.baseurl }}/install
 	*	[More information about `repo.magento.com`]({{ page.baseurl }}/release-notes/tech_bull_tls-repo.html)
 
 ### Mail server
+
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can utilize the following technologies:
+
 *	<a href="{{ page.baseurl }}/config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)
 *	<a href="{{ page.baseurl }}/config-guide/varnish/config-varnish.html">Varnish</a> version 3.0.5 or latest stable 4.x version for page caching
 *	<a href="{{ page.baseurl }}/config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)

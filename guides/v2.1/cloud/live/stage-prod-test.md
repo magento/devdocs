@@ -5,8 +5,6 @@ title: Test deployment
 menu_title: Test deployment
 menu_order: 60
 menu_node:
-version: 2.1
-github_link: cloud/live/stage-prod-test.md
 functional_areas:
   - Cloud
   - Testing
@@ -21,6 +19,7 @@ When your code, files, and data is successfully migrated to Staging or Productio
 The following information provides information on verifying logs, testing Fastly configurations, user acceptance testing (UAT), and more.
 
 ## Log files {#logs}
+
 If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the `var/log` directory.
 
 The deployment log is located in `/var/log/platform/<prodject ID>/post_deploy.log`. The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging user is `yw1unoukjcawe_stg` and the Production user is `yw1unoukjcawe`.
@@ -30,12 +29,15 @@ When accessing logs in Production, you may need to SSH into each of the three no
 For more information, see [View logs for troubleshooting]({{ page.baseurl }}/cloud/trouble/environments-logs.html)
 
 ## Check the code base {#codebase}
+
 Verify your `master` code base correctly deployed to Staging and Production environments. The environments should have identical code bases.
 
 ## Verify configuration settings {#configsettings}
+
 Check the Magento configuration settings through the Admin panel including the Base URL, Base Admin URL, multi-site settings, and more. If you need to make any additional changes, complete edits in your local Git branch and push to the `master` branch in Integration, Staging, and Production.
 
 ## Check Fastly caching {#fastly}
+
 Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
 
 First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
@@ -78,13 +80,13 @@ To verify Fastly is enabled in Staging and Production, check the configuration i
 3. Ensure Fastly CDN is selected.
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 Make sure you entered the correct Fastly Service ID and API token in your Staging and Production environments. If you enter Staging credentials in your Production environment, you may not be able to upload your VCL snippets, caching will not work correctly, and your caching will be pointed to the wrong server and stores. Your Fastly credentials are created and mapped per service environment.
-</div>
 
 The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.html).
 
 ## Complete UAT testing {#uat-testing}
+
 Complete User Acceptance Testing (UAT) on Staging and Production. The following tests are a quick list of possible tasks and areas to test as a Merchant and Customer. Your list may be longer and include additional tests for custom modules, extensions, and 3rd party integrations. When testing, use desktops, laptops, and mobile devices.
 
 If you encounter issues, save your reproduction steps, error messages, strange screen captures, and links. Use this information to investigate and fix issues in Integration environment code and configurations or environment settings.
@@ -198,6 +200,7 @@ If you encounter issues, save your reproduction steps, error messages, strange s
 </table>
 
 ## Complete load and stress tests {#loadtest}
+
 Before launching, we highly recommend performing extensive traffic and performance testing on your Staging and Production environments.  You should consider performance testing for your frontend and backend processes.
 
 Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
@@ -213,4 +216,5 @@ For best results, we recommend the following tools:
 * [WebPageTest](https://www.webpagetest.org/){:target="_blank"} and [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
 ## Set up Magento Security Scan Tool {#security-scan}
+
 We provide a free Security Scan Tool for your sites. To add your sites and run the tool, see [Magento Security Scan Tool]({{ page.baseurl }}/cloud/live/live.html#security-scan).

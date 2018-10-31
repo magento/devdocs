@@ -1,8 +1,6 @@
 ---
 group: config-guide
 title: Deploy static view files
-version: 2.1
-github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 functional_areas:
   - Configuration
@@ -32,11 +30,9 @@ Static view files deployment is affected by Magento modes as follows:
 You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 {: .bs-callout .bs-callout-warning }
-_Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on.
-To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+_Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 <br/>
-You can clean generated static view files in several ways.
-Refer to [Clean static files cache topic for details] for more information.
+You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details] for more information.
 
 ## Deploy static view files {#config-cli-subcommands-xlate-dict}
 
@@ -198,11 +194,11 @@ If you enable static view file merging in the Magento Admin, the `pub/static` di
 
 ## Tip for developers customizing the static content deployment tool
 
-When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, use only [atomic]{:target="\_blank"} file writing for files that should be available on the client.
+When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, use only [atomic] file writing for files that should be available on the client.
 If you use non-atomic file writing, those files might be loaded on the client with partial content.
 
 One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over.
-For details about writing to files, see [fwrite.php]{:target="\_blank"}.
+For details about writing to files, see [fwrite.php].
 
 [production mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [switch to]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html

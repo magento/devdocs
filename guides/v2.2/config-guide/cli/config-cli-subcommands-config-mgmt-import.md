@@ -1,14 +1,6 @@
 ---
 group: config-guide
-subgroup: 04_CLI
 title: Import data from configuration files
-menu_title: Import data from configuration files
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: cli-config-mgmt
-menu_order: 253
-version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-mgmt-import.md
 functional_areas:
   - Configuration
   - System
@@ -22,9 +14,8 @@ These settings include configuration paths and values, websites, stores, store v
 
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The `bin/magento app:config:import` command does not process configuration stored in environment variables.
-</div>
 
 ## Import configuration data
 
@@ -69,11 +60,12 @@ For example, the value of the configuration path `web/secure/base_url` must be v
 Backend models are the mechanism for processing changes in system configuration.
 You define backend modules in `<module_name>/adminhtml/system.xml`.
 
-All backend models must extend the [`Magento\Framework\App\Config\Value`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Config/Value.php){:target="\_blank"} class.
+All backend models must extend the [`Magento\Framework\App\Config\Value`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Config/Value.php) class.
 
 When we import backend models, we don't save the configuration values.
 
 ### Websites, stores, and store groups configuration
+
 We import the following types of configurations.
 (These configurations are under the `scopes` array in `config.php`.)
 
@@ -87,16 +79,16 @@ The preceding configurations can be imported in the following modes:
 *   `update`: `config.php` contains entities (`websites`, `groups`, `stores`) that are different from the production environment
 *   `delete`: `config.php` does _not_ contain entities (`websites`, `groups`, `stores`) that are present on production environment
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-We don't import the root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} associated with stores.
-You must associate a root category with a store using the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
-</div>
+{:.bs-callout .bs-callout-info}
+We don't import the root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} associated with stores. You must associate a root category with a store using the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 ### Theme configuration
+
 Theme configuration includes all themes registered in your Magento system; the data comes directly from the `theme` database table.
 (Theme configuration is in the `themes` array in `config.php`.)
 
 #### Structure of theme data
+
 The key of array is full theme path: `area` + `theme path`
 
 For example, `frontend/Magento/luma`.
@@ -119,11 +111,11 @@ Full example:
 ),
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 *   _Theme registration_. If a theme data is defined in `config.php` but the theme's source code is  not present in the file system, the theme is ignored (that is, not registered).
 *   _Theme removal_. If a theme is not present in `config.php` but the source code is present on the file system, the theme is not removed.
-</div>
 
 #### For more information
+
 *   [Deployment general overview]({{ page.baseurl }}/config-guide/deployment/pipeline/)
 *   [`bin/magento app:config:dump`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)

@@ -4,14 +4,13 @@ subgroup: 99_Module Development
 title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
-version: 2.1
-github_link: extension-dev-guide/plugins.md
 redirect_from:
   - /guides/v1.0/extension-dev-guide/plugins.html
   - /guides/v1.0/config-guide/config/plugins.html
 ---
 
 ### Overview
+
 A plugin, or interceptor, is a class that modifies the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. This allows you to *substitute* or *extend* the behavior of original, public methods for any *class* or *interface*.
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class which are referred to as plugins.
@@ -56,11 +55,13 @@ The following elements are optional:
   * Use this property to disable core or third-party plugins in your `di.xml` file.
 
 ### Defining a plugin
+
 A plugin is used to extend or modify a public method's behavior by applying code before, after, or around that observed method.
 
 The first argument for the before, after, and around methods is an object that provides access to all public methods of the observed method's class.
 
 #### Before methods
+
 Before methods run prior to an observed method. These methods must have the same name as the observed method with 'before' as the prefix.
 
 You can use before methods to change the arguments of an observed method by returning a modified argument. If there are multiple arguments, the method should return an array of those arguments. Returning `null` will indicate that the arguments for the observed method should not be modified.
@@ -80,6 +81,7 @@ class ProductPlugin
 {% endhighlight %}
 
 #### After methods
+
 After methods run following the completion of the observed method. These methods must have the same name as the observed method with 'after' as the prefix.
 
 These methods can be used to modify the results of an observed method and are required to have a return value.
@@ -99,6 +101,7 @@ class ProductPlugin
 {% endhighlight %}
 
 #### Around methods
+
 Around methods are defined such that their code is run both before and after the observed method. This allows you to completely override a method. Around methods must have the same name as the observed method with 'around' as the prefix.
 
 Before the list of the original method's arguments, around methods receive a `callable` that will allow a call to the next method in the chain. When the `callable` is called, the next plugin or the observed function is called.
@@ -217,7 +220,6 @@ The execution flow will be as follows:
   * `PluginB::aroundDispatch()` (Only the second half after `callable` is called)
   * `PluginB::afterDispatch()`
   * `PluginA::afterDispatch()`
-
 
 ### Configuration inheritance
 

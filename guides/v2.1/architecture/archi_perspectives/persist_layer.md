@@ -1,11 +1,7 @@
 ---
 group: arch-guide
-subgroup: Architectural Layers
 title: Persistence layer
 menu_title: Persistence layer
-menu_order: 4
-version: 2.1
-github_link: architecture/archi_perspectives/persist_layer.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/persist_layer.html
 ---
 
@@ -27,6 +23,6 @@ The `Customer`,`Catalog` and `Order` resource models use EAV attributes.
 
 ## Related topics {#related}
 
-[Architectural diagrams]({{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html)
+[Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
-[Architectural layers overview]({{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html)
+[Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)

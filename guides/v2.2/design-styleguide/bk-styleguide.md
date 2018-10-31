@@ -6,8 +6,6 @@ landing-page: Admin Style Guide
 menu_title: Introduction
 menu_order: 1
 menu_node:
-version: 2.2
-github_link: design-styleguide/bk-styleguide.md
 ---
 The Magento Admin guide sets our foundational design, writing, and content standards for the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} software. For more specific user-interface standards, see the [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html).
 

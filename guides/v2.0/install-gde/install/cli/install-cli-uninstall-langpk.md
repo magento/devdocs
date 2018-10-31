@@ -5,8 +5,6 @@ title: Uninstall language packages
 menu_title: Uninstall language packages
 menu_node:
 menu_order: 500
-version: 2.0
-github_link: install-gde/install/cli/install-cli-uninstall-langpk.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-uninstall-langpk.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html
@@ -17,18 +15,21 @@ functional_areas:
 ---
 
   
-<h2 id="instgde-cli-uninst-lgpk-over">Overview of uninstalling language packages</h2>
+## Overview of uninstalling language packages   {#instgde-cli-uninst-lgpk-over}
+
 This section discusses how to uninstall one or more language packages, optionally including the language packages' code from the file system. You can create backups first so you can restore the data at a later time.
 
 This command uninstalls *only* language packages that are specified in `composer.json`; in other words, language packages that are provided as {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages. If your {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} is not a Composer package, you must uninstall it manually by removing language package code from the file system.
 
 You can restore backups at any time using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll">magento setup:rollback</a> command.
 
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+## First steps   {#instgde-cli-before}
+
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-uninst-lgpk-uninst">Uninstall language packages</h2>
+## Uninstall language packages   {#instgde-cli-uninst-lgpk-uninst}
+
 Command usage:
 
 	magento i18n:uninstall [-b|--backup-code] {language package name} ... {language package name}

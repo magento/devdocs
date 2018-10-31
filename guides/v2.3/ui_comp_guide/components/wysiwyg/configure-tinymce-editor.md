@@ -2,8 +2,6 @@
 subgroup: howtos
 group: UI_Components_guide
 title: Configure the TinyMCE editor
-version: 2.3
-github_link: ui_comp_guide/howto/configure-tinymce-editor.md
 ---
 You can extend and fully customize the TinyMCE editor to match the style and look-and-feel of your custom theme.
 This enables richer content editing capabilities and ensures that content created in the Page Builder <span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">WYSIWYG</span> is seamlessly integrated and consistent with your other content.

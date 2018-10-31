@@ -5,9 +5,7 @@ ee_only: true
 title: Magento_CatalogImportExportStaging module
 menu_title: CatalogImportExportStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/CatalogImportExportStaging.md
 ---
 
 The Magento_CatalogImportExportStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It extends the Magento_CatalogImportExport module functionality to be used in staging mode.

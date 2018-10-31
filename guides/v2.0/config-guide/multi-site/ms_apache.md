@@ -5,8 +5,6 @@ title: Tutorial&mdash;Set up multiple websites with Apache
 menu_title: Tutorial&mdash;Set up multiple websites with Apache
 menu_order: 9
 menu_node:
-version: 2.0
-github_link: config-guide/multi-site/ms_apache.md
 functional_areas:
   - Configuration
   - System
@@ -14,6 +12,7 @@ functional_areas:
 ---
 
 ## Set values in an entry point script {#ms-entry-script}
+
 If necessary, copy the existing `index.php` entry point script for your {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} and add to it the following:
 
 *   You're working on a development machine (laptop, virtual machine, and so on)
@@ -31,17 +30,18 @@ If necessary, copy the existing `index.php` entry point script for your {% gloss
     *   `german.mysite.mg` with website code `german` and store view code `de`
 
 ### Roadmap for setting up multiple websites with Apache
+
 Setting up multiple stores consists of the following tasks:
 
 1.  [Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.  Create one [Apache virtual host](#ms-apache-vhosts) per Magento website.
-
 
 ## Step 1: Create websites, stores, and store views in the Magento Admin
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
 ## Step 2: Create Apache virtual hosts {#ms-apache-vhosts}
+
 This section discusses how to set values for `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` using the Apache server variable `SetEnvIf` in a virtual host.
 
 For more information about `SetEnvIf`, see:

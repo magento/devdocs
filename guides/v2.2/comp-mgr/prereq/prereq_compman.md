@@ -5,13 +5,12 @@ title: Prerequisites
 menu_title: Prerequisites
 menu_order: 1
 menu_node: parent
-version: 2.2
-github_link: comp-mgr/prereq/prereq_compman.md
 functional_areas:
   - Upgrade
 ---
 
 ## Prerequisites
+
 Before running the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} Manager, {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager, or System Upgrade, complete the following tasks:
 
 *	[Set up cron]({{ page.baseurl }}/comp-mgr/prereq/prereq_cron.html)

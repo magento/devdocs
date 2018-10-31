@@ -5,8 +5,6 @@ title: Custom extend Admin timeout VCL
 menu_title: Custom extend Admin timeout VCL
 menu_order:
 menu_node:
-version: 2.0
-github_link: cloud/configure/fastly-vcl-extend-timeout.md
 functional_areas:
   - Cloud
   - Setup
@@ -23,6 +21,7 @@ This information is just the code portion for setting up your VCL. Use this info
 </div>
 
 ## Create extendtimeout.json {#vcl}
+
 To extend the timeout for the Magento Admin to Staging and Production environments, you can use the same VCL snippet file without edits.
 
 Create an `extendtimeout.json` file with the following JSON content:
@@ -49,4 +48,5 @@ The default VCL snippets you uploaded included a prepended name of `magentomodul
 </div>
 
 ## Finish adding the VCL {#complete}
+
 When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).

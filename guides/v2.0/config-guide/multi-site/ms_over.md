@@ -5,8 +5,6 @@ title: Multiple websites or stores
 menu_title: Multiple websites or stores
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: config-guide/multi-site/ms_over.md
 redirect_from:
  - /guides/v2.0/config-guide/bootstrap/mage-run.html
  - /guides/v2.1/config-guide/bootstrap/mage-run.html
@@ -17,6 +15,7 @@ functional_areas:
 ---
 
 ## Introduction to multiple Magento stores and websites {#ms-over}
+
 One instance of the Magento software can enable you to start multiple websites or store views that use different:
 
 *   Default languages
@@ -29,7 +28,8 @@ You configure the websites, stores, and store views in the Magento {% glossaryto
 
 A typical use of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another domain that has categories and products for a different language.
 
-<h2 id="magerun-conf">Configure Magento websites and stores</h2>
+## Configure Magento websites and stores   {#magerun-conf}
+
 This section discusses the minimum tasks required to use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables. 
 
 We use the following terms:
@@ -58,6 +58,7 @@ Following is a summary of the tasks you must perform. More details are provided 
 3.	Pass the values of `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` to the web server.
 
 #### Related topics
+
 *	[Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html)
 *	[Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 *	[Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)

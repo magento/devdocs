@@ -5,8 +5,6 @@ title: Setup Wizard installation
 menu_title: Setup Wizard installation
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: install-gde/install/web/install-web.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-web.html
   - /guides/v2.0/install-gde/install/install-web.html
@@ -27,4 +25,5 @@ functional_areas:
 {% include install/web/install-web.md %}
 
 #### Next step
+
 <a href="{{ page.baseurl }}/install-gde/install/web/install-web_1-readiness.html">Step 1: Readiness Check</a>

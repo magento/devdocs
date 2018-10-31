@@ -6,8 +6,6 @@ menu_title: Magento Commerce 2.0.9 Release Notes
 menu_order: 279
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes
-version: 2.0
-github_link: release-notes/ReleaseNotes2.0.9EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.9. This release includes several functional fixes.
@@ -15,10 +13,7 @@ We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.9. 
 
 Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.
 
-
-
 ### Fixed issues
-
 
 #### Shopping cart
 
@@ -26,11 +21,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}/rele
 
 <!--- 55464/53793 -->* The Minicart Maximum Display Recently Added Item setting now works as expected.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a> 
 
-
 #### Performance
 
 <!--- 54682 -->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when you use many variations of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}.
-
 
 #### Miscellaneous
 
@@ -69,17 +62,15 @@ The Sales API
 
 You can run these operations from the Admin panel.
 
-
-
 ### System requirements
+
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. For details, see [Technology stack requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

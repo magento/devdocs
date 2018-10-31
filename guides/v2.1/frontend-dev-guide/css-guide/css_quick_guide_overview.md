@@ -1,9 +1,6 @@
 ---
 group: fedg
-subgroup: D_CSS_G
 title: Quick start guide to working with styles for a new theme
-version: 2.1
-github_link: frontend-dev-guide/css-guide/css_quick_guide_overview.md
 functional_areas:
   - Frontend
 ---
@@ -13,13 +10,12 @@ This chapter combines the topics aiming to help you to quickly start working wit
 - [Simple ways to customize a theme's styles]
 - [Simple style changes with client-side LESS compilation vs. server-side]
 
-
 ## High-level steps to create a theme and change styles
 
 1. [Set] your Magento application to the developer [mode].
 1. In the file system, [add a new theme] inheriting from Magento Blank or Luma.
 3. [Apply your theme]
-2. Decide which {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} compilation mode you will use. Compilation modes are described in the following topics:
+2. Decide which CSS compilation mode you will use. Compilation modes are described in the following topics:
 	- Detailed description: [Styles debugging]
 	- Practical illustration: [Simple style changes with client-side LESS compilation vs. server-side]
 4. Customize styles. To learn how, check out the following sources:
@@ -28,7 +24,7 @@ This chapter combines the topics aiming to help you to quickly start working wit
 
 ## Why do you need to create a custom theme?
 
-Magento provides two themes out of the box: Blank and Luma. If Magento is installed with sample data, the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} applied after installation is Luma. If no sample data is installed, the Blank theme is installed by default.
+Magento provides two themes out of the box: Blank and Luma. If Magento is installed with sample data, the theme applied after installation is Luma. If no sample data is installed, the Blank theme is installed by default.
 
 ![Storefront with Luma applied]
 
@@ -52,9 +48,9 @@ Making changes in the Magento out-of-the-box themes is a bad idea, because can r
 [Set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html
 [mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [add a new theme]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html
-{:target="_blank"}
+
 [Apply your theme]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html
-{:target="_blank"}
+
 [Styles debugging]: {{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html
 [Simple style changes with client-side LESS compilation vs. server-side]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
 [css overview]: {{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html

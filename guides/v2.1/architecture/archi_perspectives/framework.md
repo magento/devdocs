@@ -1,11 +1,7 @@
 ---
 group: arch-guide
-subgroup: Logical View
 title: Magento Framework
 menu_title: Magento Framework
-menu_order: 4
-version: 2.1
-github_link: architecture/archi_perspectives/framework.md
 redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 ---
 
@@ -13,12 +9,11 @@ redirect_from: /guides/v1.0/architecture/archi_perspectives/framework.html
 
 The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.
 
-This primarily {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
+This primarily {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} software component is organized into logical groups called *libraries*, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
 (Although the Magento Framework does not contain resource models, it does contain a {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} of code to help implement a resource model.)
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Don't confuse the Magento Framework with the Zend web application framework that ships with Magento.</p>
-</div>
+{:.bs-callout .bs-callout-tip}
+Don't confuse the Magento Framework with the Zend web application framework that ships with Magento.
 
 You should never modify Framework files, although if you are extending Magento, you must know how to call Framework libraries. Modules you create will typically inherit from classes and interfaces defined in the Framework directories.  
 
@@ -38,15 +33,14 @@ The Framework is responsible for operations that are useful for potentially all 
 
 Here is the Magento Framework folder structure:
 
-<pre>
-vendor/
+
+`vendor/
     ../magento
         ../framework
 lib/
     ../internal
         ../LinLibertineFont
-    ../web
- </pre>
+    ../web`
 
 * `/vendor/magento/framework`  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the Framework libraries). For example,  libraries in the Framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} rendering.
 
@@ -54,9 +48,8 @@ lib/
 
 * `/lib/web` contains JavaScript and CSS/LESS files. These files reside  under `web` and not `internal` because they are accessible from a web browser, while the PHP code under `internal` is not. (Any code that a web browser must access should be under `web`, while everything else under `internal`.)
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>vendor/magento/framework</code> directory maps to the <code>Magento\Framework</code> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p>
-</div>
+{:.bs-callout .bs-callout-tip}
+The `vendor/magento/framework` directory maps to the `Magento\Framework` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
 ## Highlights of Magento Framework
 
@@ -73,30 +66,30 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
          </td>
          <td>Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Model</code>
+         <td><code>Magento\Framework\Model</code>
          </td>
          <td>Contains base Model classes that almost all Magento Model classes extend from.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\AbstractModel</code>
+         <td><code>Magento\Framework\Model\AbstractModel</code>
          </td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\AbstractResource</code></td>
+         <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
          <td></td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\Controller</code></td>
+         <td><code>Magento\Framework\Controller</code></td>
          <td>Contains classes to help return different types of results (for example, JSON and redirects).</td>
       </tr>
       <tr>
-         <td><code>Magento\Framework\DataObject\View</code></td>
+         <td><code>Magento\Framework\View</code></td>
          <td>Contains code to render pages and layouts.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\Data</code></td>
+         <td><code>Magento\Framework\Data</code></td>
          <td>Contains additional classes that handle forms.</td>
       </tr><tr>
-         <td><code>Magento\Framework\DataObject\URL</code></td>
+         <td><code>Magento\Framework\Url</code></td>
          <td>Contains code to look up other pages in Magento.</td>
       </tr>
    </tbody>

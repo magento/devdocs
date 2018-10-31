@@ -5,8 +5,6 @@ title: During installation, exception SessionHandler::read()
 menu_title: During installation, exception SessionHandler::read()
 menu_node:
 menu_order: 26
-version: 2.0
-github_link: install-gde/trouble/php/tshoot_session.md
 functional_areas:
   - Install
   - System
@@ -38,6 +36,7 @@ Solutions:
 *	Use the following workaround with existing code.
 
 ### Locate `php.ini`
+
 Locate `php.ini` by entering the following command:
 
 	php -i | grep "Loaded Configuration File"
@@ -48,6 +47,7 @@ Typical locations follow:
 *	CentOS: `/etc/php.ini`
 
 ### Workaround
+
 1.	As a user with `root` privileges, open `php.ini` in a text editor.
 2.	Locate `session.save_handler`
 3.	Set it in any of the following ways:

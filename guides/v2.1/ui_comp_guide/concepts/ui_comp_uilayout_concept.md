@@ -1,12 +1,10 @@
 ---
 group: UI_Components_guide
 title: The uiLayout service object
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
 The `uiLayout` service object is a JavaScript function object used for initializing and configuring UI components.
-This object is defined in the [`layout.js`](https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
+This object is defined in the [`layout.js`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
 
 ## `run()` method
 
@@ -62,7 +60,6 @@ When `isTemplate` is set to `true`, `uiLayout` stores the configuration in a pri
 You can use this stored configuration to create dynamic component instances during runtime by specifying the full name of the configuration in `nodeTemplate`.
 If the configuration is found, `uiLayout` uses that configuration instead of the current values.
 
-
 ## Code samples
 
 The example module referenced in the following examples uses `OrangeCo` as its company value and `Sample` as the module name.
@@ -111,7 +108,6 @@ The component instance is created when `myNewComponentConfig` is passed on to th
 `layout([this.myNewComponentConfig]);`
 
 This instance is stored in the `uiRegistry` with other components and rendered using the logic for rendering `uiCollection` children templates.
-
 
 ### Use a configuration template
 

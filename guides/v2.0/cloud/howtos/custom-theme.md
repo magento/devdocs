@@ -5,8 +5,6 @@ title: Install a theme
 menu_title: Install a theme
 menu_order: 60
 menu_node:
-version: 2.0
-github_link: cloud/howtos/custom-theme.md
 functional_areas:
   - Cloud
   - Setup
@@ -16,11 +14,13 @@ functional_areas:
 You can install one or multiple themes to use for one or all of your stores and sites in your project. Themes include multiple static files including images, fonts, CSS, JavaScript, PHP, and more to fully design your stores. You can add the theme by either by extracting its code to the Magento file system or using Composer.
 
 ## Get started with a branch {#branch}
+
 We recommend using a branch for adding, configuring, and testing your theme.
 
 {% include cloud/cli-get-started.md %}
 
 ## Install a theme manually {#manual}
+
 To install a theme manually, you must have the theme's code, either in a compressed archive or in a directory structure similar to the following:
 
 {% highlight xml %}
@@ -67,6 +67,7 @@ To install a theme manually:
 	The theme displays in the right pane.
 
 ## Install a theme using Composer {#composer}
+
 Installing a theme using Composer is the same as installing any other extension using Composer. See [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) for details.
 
 To summarize the procedure:
@@ -91,4 +92,5 @@ To summarize the procedure:
     The theme displays in the right pane.
 
 #### Related topics
+
 *	[Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html)

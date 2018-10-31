@@ -3,22 +3,13 @@ group: UI_Components_guide
 subgroup: components
 title: Form component
 menu_title: Form component
-version: 2.1
-github_link: ui_comp_guide/components/ui-form.md
 ---
 
-
-## Overview
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
 
 Form is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure).
 
-
-## Structure
-
-{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
-
-### Related UI components
+## Related components
 
 The following components can be used in the scope of the Form component:
 
@@ -38,12 +29,7 @@ The following components can be used in the scope of the Form component:
 * Textarea
 * {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}Wysiwyg{% endglossarytooltip %}
 
-
-## Component options
-
-Form configuration extends the [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Form-specific configuration:
+## Configuration options
 
 <table>
   <tbody>
@@ -220,9 +206,9 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
   </tbody>
 </table>
 
+## Examples
 
-
-## Create an instance of the Form component
+### Create an instance
 
 To create an instance of the Form component, you need to do the following:
 
@@ -230,8 +216,6 @@ To create an instance of the Form component, you need to do the following:
 2. Add a set of fields (the Fieldset component with the component of the Field) for {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} or     to implement the upload of meta info in the DataProvider.
 3. Create the DataProvider class for the entity that implements DataProviderInterface
 * Add a component in Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} as a node: `<uiComponent name="customer_form"/>`
-
-Example:
 
 {% highlight xml %}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -244,7 +228,7 @@ Example:
 </page>
 {% endhighlight %}
 
-## Configure the Form component
+### Configure the component
 
 Component could be configured in two ways:
 
@@ -326,8 +310,9 @@ To group components you can use the component container as in example below:
 </container>
 {% endhighlight %}
 
-## Creating DataSource
-You need to configure component's DataSource in order to provide data and meta information for your Form component.
+### Configure DataSource
+
+You must configure a component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
 
@@ -377,15 +362,15 @@ An example of the configuration of the DataSource object:
 
 Component configuration:
 
-* argument "dataProvider" - contains configuration, class name and arguments
+* argument `"dataProvider"` - contains configuration, class name, and arguments
 
-* js_config -> component - > JS indication of a responsible component
+* `"js_config"` -> `"component"` -> JavaScript indication of a responsible component
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 
 Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components.
 
-## Replacing
+### Replace instances of component
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Replacing principles are the same for all UI Components.</p>
@@ -393,7 +378,7 @@ Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %
 
 #### Global replacement
 
-To replace all instances of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
+To replace all instances, globally, of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
 
 `app/code/Magento/Ui/view/base/ui_component/etc/definition.xml`
 
@@ -407,7 +392,7 @@ To replace all instances of a UI Form with a custom implementation redefine link
 </form>
 {% endhighlight %}
 
-## Instance Replacement
+#### Single replacement
 
 To replace one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
 
@@ -422,3 +407,9 @@ To replace one instance of a UI Form Component redefine link to a constructor in
         </argument>
 </form>
 {% endhighlight %}
+
+## Source files
+
+Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
+- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/form.js)

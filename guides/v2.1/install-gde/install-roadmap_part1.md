@@ -5,8 +5,6 @@ title: Installation roadmap (reference)
 menu_title: Installation roadmap (reference)
 menu_node:
 menu_order: 10
-version: 2.1
-github_link: install-gde/install-roadmap_part1.md
 functional_areas:
   - Install
   - System

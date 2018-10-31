@@ -5,8 +5,6 @@ title: Protective block
 menu_title: Protective block
 menu_order: 20
 menu_node:
-version: 2.1
-github_link: cloud/live/live-prot.md
 functional_areas:
   - Cloud
   - Configuration
@@ -17,6 +15,7 @@ Magento Commerce (Cloud) has a protective blocking feature that, under certain c
 Outdated software often contains exploits we protect against by partially blocking access to these sites.
 
 ## How the protective block works
+
 Magento Commerce maintains a database of signatures of known security vulnerabilities in open-source software that are commonly deployed on our infrastructure. The security check analyzes only known vulnerabilities in open-source projects; it cannot examine customizations you write.
 
 We analyze the code of your application:
@@ -39,6 +38,7 @@ We run two types of blocks:
 Unblocking is automated upon resolution of the security risk. The block is removed soon after you apply a security upgrade that removes the vulnerability.
 
 ## Opt out of the protective block
+
 The protective block is there to protect you against known vulnerabilities in the software you deploy on Magento Commerce.
 
 However, you can opt out of the protective block by adding the following to [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html):

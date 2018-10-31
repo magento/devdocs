@@ -5,8 +5,6 @@ title: Troubleshoot deployment
 menu_title: Troubleshoot deployment
 menu_order: 3
 menu_node:
-version: 2.1
-github_link: cloud/access-acct/trouble.md
 functional_areas:
   - Cloud
   - Deploy
@@ -16,9 +14,8 @@ This topic discusses how to recover if you deployed the Magento application with
 
 If you used the incorrect keys, deployment fails. To recover, you must clone the project, add the correct keys to `auth.json`, and push the change to the master branch.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In this section, we assume that your project has a <code>master</code> branch only (<code>master</code> is the default branch when you first create a project). </p>
-</div>
+{:.bs-callout .bs-callout-info}
+In this section, we assume that your project has a `master` branch only (`master` is the default branch when you first create a project).
 
 To redeploy with the correct authentication keys:
 

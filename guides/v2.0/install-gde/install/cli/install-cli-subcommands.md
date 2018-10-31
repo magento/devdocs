@@ -5,8 +5,6 @@ title: Get started with the command-line installation
 menu_title: Get started with the command-line installation
 menu_node:
 menu_order: 2
-version: 2.0
-github_link: install-gde/install/cli/install-cli-subcommands.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands.html
@@ -16,8 +14,9 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
-{% include install/before-you-begin-cli.html %}
+## Before you start your installation   {#instgde-install-cli-prereq}
+
+{% include install/before-you-begin-cli.md %}
 
 The installer is designed to be run multiple times if necessary so you can:
 
@@ -28,11 +27,13 @@ The installer is designed to be run multiple times if necessary so you can:
 *	Correct mistakes in previous installations
 *	Install Magento in a different database instance
 
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+## First steps   {#instgde-cli-before}
+
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-summary">Command summary</h2>
+## Command summary   {#instgde-cli-summary}
+
 The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 <table>
@@ -122,15 +123,16 @@ The following table summarizes the available commands. Commands are shown in sum
 	</tbody>
 </table>
 
-<h2 id="instgde-cli-help">Help commands</h2>
-{% include install/cli_help-commands.html %}
+## Help commands   {#instgde-cli-help}
 
+{% include install/cli_help-commands.md %}
 
-<h2 id="instgde-cli-subcommands-common">Common arguments</h2>
-{% include install/cli_common-commands.html %}
+## Common arguments   {#instgde-cli-subcommands-common}
 
+{% include install/cli_common-commands.md %}
 
-<h2 id="instgde-cli-subcommands">Commands</h2>
+## Commands   {#instgde-cli-subcommands}
+
 The following sections discuss the available commands.
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a>

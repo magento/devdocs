@@ -5,8 +5,6 @@ title: Set up cron for update and upgrade
 menu_title: Set up cron for update and upgrade
 menu_order: 3
 menu_node:
-version: 2.2
-github_link: comp-mgr/prereq/prereq_cron.md
 functional_areas:
   - Upgrade
 ---

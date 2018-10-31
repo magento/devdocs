@@ -5,8 +5,6 @@ title: LESS coding standard
 landing-page: Coding standards
 menu_title: LESS coding standard
 menu_order: 8
-version: 2.1
-github_link: coding-standards/code-standard-less.md
 functional_areas:
   - Standards
 ---
@@ -16,7 +14,6 @@ This standard defines Magento internal requirements for code formatting and styl
 Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this.
 
 This coding standard is optional for third-party Magento developers.
-
 
 ## General rules
 
@@ -35,7 +32,6 @@ Use only spaces for indentation:
             ...
         }
     }
-
 
 ### Formatting
 
@@ -70,7 +66,6 @@ Add a line break after each selector delimiter. Do not add spaces before or afte
         color: @color__base;
     }
 
-
 #### Quotes
 
 Use single quotes.
@@ -86,7 +81,6 @@ Use single quotes.
     .nav {
         content: "lorem ipsum";
     }
-
 
 #### Combinator indents
 
@@ -129,8 +123,6 @@ Start each property declaration in a new line.
         color: @nav__color; background-color: @nav__background-color;
     }
 
-
-
 #### Properties colon indents
 
 Add space after but not before the colon that separates property names from values.
@@ -154,7 +146,6 @@ Add space after but not before the colon that separates property names from valu
     .item {
         color :@item__color;
     }
-
 
 #### End of file
 
@@ -185,7 +176,6 @@ Add a blank line after a selector.
         .bar {
             background-color: @bar__background-color;
         }
-
 
 #### End of the property line
 
@@ -223,7 +213,6 @@ Avoid using the `!important` property if possible. If it is required, add a spac
         background-color: @nav__background-color!important;
     }
 ```
-
 
 ### Comments
 
@@ -286,8 +275,6 @@ Exception: Avoid the `id` selector.
         ...
     }
 
-
-
 ### Classes Naming
 
 #### Standard classes
@@ -312,7 +299,6 @@ Class names should be lowercase, start with a letter (except helper classes), wo
     .nav_bar {
        ...
     }
-
 
 #### Helper classes
 
@@ -350,9 +336,7 @@ Try to convey what class is about while being as brief as possible.
        ...
     }
 
-
 #### Meaning
-
 
 Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic.
 
@@ -382,8 +366,6 @@ Use meaningful, specific class names that reflect the purpose of the element. Cl
     .clear {
        ...
     }
-
-
 
 ### Selectors naming
 
@@ -423,7 +405,6 @@ Type selectors must be lowercase.
        ...
     }
 
-
 #### Formatting
 
 Write selector in one line, do not use concatenation.
@@ -445,7 +426,6 @@ Write selector in one line, do not use concatenation.
             }
         }
     }
-
 
 #### Nesting
 
@@ -483,7 +463,6 @@ Exceptions are pseudo elements and states.
         }
     }
 
-
 ## Properties
 
 ### Sorting
@@ -506,7 +485,6 @@ Sort all properties in the alphabetical order. Mixins, variables, and so on shou
         background-color: @nav__background-color;
     }
 
-
 ### Shorthand
 
 Use shorthand properties where possible.
@@ -526,7 +504,6 @@ CSS offers a variety of shorthand properties that should be used whenever possib
     padding-right: 1rem;
     padding-top: 0;
 
-
 ### 0 and units
 
 Do not specify units "0" value.
@@ -542,7 +519,6 @@ Do not specify units "0" value.
     border-width: 0px;
     margin: 0rem;
 
-
 ### Floating values
 
 Omit leading "0"s in values, use dot instead.
@@ -554,7 +530,6 @@ Omit leading "0"s in values, use dot instead.
 **Incorrect**:
 
     margin-left: 0.5rem;
-
 
 ### Hexadecimal notation
 
@@ -575,7 +550,6 @@ Omit leading "0"s in values, use dot instead.
     color: #ff0000;
     @nav__color: #FAFAFA;
     @nav-item__color: red;
-
 
 ## Variables
 
@@ -598,7 +572,6 @@ If variables are local and used only in a {% glossarytooltip c1e4242b-1f1a-44c3-
     @btn-primary__color: @color-white;
     @btn-secondary__color: @color-white;
     ...
-
 
 #### Theme variables
 

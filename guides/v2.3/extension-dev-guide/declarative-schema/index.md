@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: Declarative Schema Overview
-version: 2.3
-github_link: extension-dev-guide/declarative-schema/index.md
 ---
 
 Declarative Schema aims to simplify the Magento installation and upgrade processes. Previously, developers had to write database scripts in PHP for each new version of Magento. Various scripts were required for
@@ -16,9 +14,9 @@ When a customer upgrades Magento to a version several releases ahead of the inst
 The new declarative schema approach allows developers to declare the final desired state of the database and has the system adjust to it automatically, without performing redundant operations. Developers are no longer forced to write scripts for each new version. In addition, this approach allows data be deleted when a module is uninstalled.
 
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 **Implementing declarative schema is not a requirement for Magento 2.3.** However, upgrade scripts will be phased out in favor of declarative schema.
-</div>
+
 
 To prepare a module for declarative schema, you must
 

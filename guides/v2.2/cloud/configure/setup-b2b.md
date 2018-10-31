@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Set up Magento B2B
-version: 2.2
-github_link: cloud/configure/setup-b2b.md
 ---
 
 With the {{site.data.var.ece}} Pro subscription for v2.2 and later, you can install and setup Magento Business to Business (B2B) Commerce features. B2B supports merchants whose customers are other companies. This section provides specific information for installing and setting up B2B in {{site.data.var.ece}}.
@@ -15,6 +13,7 @@ For additional information on using and extending B2B, see the following guides:
 We provide these features as a module you can install and setup in {{site.data.var.ece}}. Installation of B2B in a Pro project require additional steps to add the module and update your Git branch.
 
 ## Prerequisites for adding B2B {#prereqs}
+
 Prior to adding the B2B module, you should have the following:
 
 * Upgraded to a {{site.data.var.ece}} 2.2.X on your environments
@@ -24,11 +23,13 @@ Prior to adding the B2B module, you should have the following:
 We provide B2B as a module for Magento. For new Pro projects, we highly recommend having {{site.data.var.ece}} fully deployed to Integration, Staging, and Production environments. For more information, see [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html). Adding a module as part of your initial deployment could cause issues.
 
 ## Create a branch to work in {#branch}
+
 We recommend working in a branch to add the B2B module and features to your implementation. If you have a branch, continue to [Add B2B in the cloud](#add).
 
 {% include cloud/cli-get-started.md %}
 
 ## Add B2B in the cloud {#add}
+
 You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions]({{ site.baseurl }}/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) in the B2B guide.
 
 1. Open a terminal application.
@@ -69,4 +70,5 @@ If you have a config.php file as part of your deployment, you should also add th
         git commit -a -m “Add config.php.”
 
 ## Configure and use B2B {#use}
+
 For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html){:target="_blank"}. To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html).

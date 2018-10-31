@@ -5,8 +5,6 @@ title: Migrate using Data Migration Tool
 menu_title: Migrate using Data Migration Tool
 menu_node: parent
 menu_order: 4
-version: 2.0
-github_link: migration/migration-migrate.md
 redirect_from: /guides/v1.0/migration/migration-migrate.html
 functional_areas:
   - Tools
@@ -29,11 +27,12 @@ During the migration process, **do not:**
 </div>
 
 ## Run Data Migration Tool {#migration-command-run}
+
 This section shows how to run the Data Migration Tool to migrate settings, data, or incremental changes.
 
 ### First steps {#migration-command-run-first}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 In addition to the command arguments mentioned here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common)
 

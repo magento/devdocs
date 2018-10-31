@@ -7,8 +7,6 @@ menu_node:
 menu_order: 103
 level3_menu_node: level3child
 level3_subgroup: basics
-version: 2.0
-github_link: install-gde/basics/basics_os-version.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_os-version.html
 functional_areas:
   - Install

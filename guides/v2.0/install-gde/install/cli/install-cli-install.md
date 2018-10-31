@@ -4,8 +4,6 @@ subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
-version: 2.0
-github_link: install-gde/install/cli/install-cli-install.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-install.html
   - /guides/v2.0/install-gde/install/install-cli-install.html
@@ -19,7 +17,7 @@ functional_areas:
   <p>Totally lost? Need a helping hand? Try our <a href="{{ page.baseurl }}/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{ page.baseurl }}/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
 
-<h2 id="instgde-install-cli-prereq">Before you start your installation</h2>
+## Before you start your installation   {#instgde-install-cli-prereq}
 
 Before you begin, make sure that:
 
@@ -52,6 +50,7 @@ See also <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninsta
 {% include install/fully-secure.md %}
 
 ## Installer help commands {#instgde-cli-help-cmds}
+
 You can run the following commands to find values for some required arguments:
 
 <table>
@@ -80,8 +79,8 @@ You can run the following commands to find values for some required arguments:
   <p>If an error displays when you run these commands, make sure you updated installation dependencies as discussed in <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p></span>
 </div>
 
+## Install the Magento software from the command line   {#instgde-install-cli-magento}
 
-<h2 id="instgde-install-cli-magento">Install the Magento software from the command line</h2>
 The format of the install command follows:
 
 	magento setup:install --<option>=<value> ... --<option>=<value>
@@ -308,7 +307,7 @@ The following table discusses the meanings of installation option names and valu
 
 {% include install/sens-data.md %}
 
-<h4 id="install-cli-example">Sample localhost installations</h4>
+#### Sample localhost installations   {#install-cli-example}
 
 **Example 1**
 
@@ -398,6 +397,7 @@ Messages similar to the following display to indicate a successful installation:
 </div>
 
 #### Next step
+
 *	If you have one user account to access the Magento server, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 
 	This type of setup is typical for shared hosting.

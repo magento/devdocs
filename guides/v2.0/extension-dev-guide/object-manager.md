@@ -4,8 +4,6 @@ subgroup: 99_Module Development
 title: ObjectManager
 menu_title: ObjectManager
 menu_order: 5
-version: 2.0
-github_link: extension-dev-guide/object-manager.md
 ---
 ## Overview
 

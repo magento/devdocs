@@ -5,19 +5,19 @@ title: Resolve a broken branch
 menu_title: Resolve a broken branch
 menu_order: 40
 menu_node:
-version: 2.0
-github_link: cloud/trouble/trouble-broken-branch.md
 functional_areas:
   - Cloud
   - Configuration
 ---
 
 ## Resolve issues with broken Git branches
+
 This topic discusses solutions to typical issues you might experience with broken branches. You should have experience with Git [branches and commits](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging){:target="_blank"} to effectively fix your branch. Additional information is linked as needed to help understand Git and {{site.data.var.ece}} builds and deployments.
 
 To review logs, see [Troubleshoot your deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
 
 ## Issues with installing patches {#patches}
+
 When you push your code, the build and deploy phases begin. Patch and available hotfix installation is part of the process. If you receive errors indicating the patches could not be installed and the build failed, you can run the following command locally to identify any errors:
 
     git apply <path to patch>
@@ -27,6 +27,7 @@ Make note of the errors. These may help determine what fixes are required. We ca
 You should apply patches in your local on your Git branch then push to the remote for normal build and deploy scripts to run. For full instructions, see [Patch and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-patch.html).
 
 ## Code compile issues {#compile}
+
 If you receive build errors due to compilation of your code, you may have disabled modules that are not correctly enabling for the compile commands.
 
 To enable all modules:
@@ -40,6 +41,7 @@ To enable all modules:
 These commands enable all extensions and run the compile part of the build. Verify if you continue to encounter errors or issues.
 
 ## Broken build trying to force build using the Magento Cloud CLI {#cli-build}
+
 When we initially provision your project, you receive a cloned `master` branch. You should clone the `master` to your local workspace and create a branch from it to complete all of your development.
 
 When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.
@@ -74,6 +76,7 @@ If your build broke in this situation, we recommend force resetting the code fro
 You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.
 
 #### Related topics
+
 * [First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
 * [Build and deploy on local]({{ page.baseurl }}/cloud/live/live-sanity-check.html)
 * [Deployment Process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)

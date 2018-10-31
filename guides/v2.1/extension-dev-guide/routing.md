@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: Routing
-version: 2.1
-github_link: extension-dev-guide/routing.md
 ---
 
 In web applications, such as Magento, routing is the act of providing data from a URL request to the appropriate class for processing.

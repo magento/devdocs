@@ -5,22 +5,21 @@ title: Download fails because of changes in Composer
 menu_title: Download fails because of changes in Composer
 menu_node:
 menu_order: 300
-version: 2.0
-github_link: install-gde/trouble/tshoot_composer-fail.md
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-
 ### Symptom
+
 During download, the following error displays:
 
 	[ErrorException]
   	file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
 
 ### Description
+
 This happens because of changes in certain versions of {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
 The workaround is to downgrade Composer to an earlier version and try your Magento download again.

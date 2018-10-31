@@ -5,8 +5,6 @@ title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
-version: 2.3
-github_link: extension-dev-guide/versioning/index.md
 redirect_from:
   - /guides/v2.0/architecture/versioning.html
   - /guides/v2.1/architecture/versioning.html
@@ -70,7 +68,6 @@ Or it can be used to declare a dependency on a particular version of a component
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 If Magento is installed from GitHub without using Composer, the `version` is not included. Magento Admin displays the version as `Magento ver. dev-<GitHub-branch-name>`. In addition, Magento modules inside the `require` declaration  list a version of `*`. For example, `"magento/framework": "*"`
 </div>
-
 
 ## Related Topics
 

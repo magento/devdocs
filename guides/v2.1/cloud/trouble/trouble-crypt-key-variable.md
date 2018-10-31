@@ -5,8 +5,6 @@ title: Resolve issues with encryption key
 menu_title: Resolve issues with encryption key
 menu_order: 25
 menu_node:
-version: 2.1
-github_link: cloud/trouble/trouble-crypt-key-variable.md
 functional_areas:
   - Cloud
   - Setup
@@ -21,6 +19,7 @@ For a new Pro project starting with a "blank site" {{site.data.var.ece}} templat
 If you have imported data from an existing Magento installation into {{site.data.var.ece}}, you need to [copy the key]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key) and [deploy it]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#encryption-key) to the environments.
 
 ### Encryption key not in all environments {#cloud-trouble-nocrypt}
+
 All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.
 
 To verify and update the encryption key environment variable:
@@ -31,13 +30,14 @@ To verify and update the encryption key environment variable:
 2.  Open `app/etc/env.php` in a text editor.
 3.  Verify the existing value of `key` for `crypt`. The value should be your [{{site.data.var.ee}} key]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-prepare.html#encryption-key).
 
-        {% highlight php startinline=true %}
+    ```php
         return array (
           'crypt' =>
           array (
             'key' => '<your encryption key>',
           ),
         );
-        {% endhighlight %}
+   ```
+
 4.  If the value is incorrect, add the key value, and save your changes to `env.php`.
 5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.

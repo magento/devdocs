@@ -5,9 +5,7 @@ ee_only: true
 title: Magento_Staging module
 menu_title: Staging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/Staging.md
 ---
 
 
@@ -158,6 +156,7 @@ The lower expandable list in the form represent types of [staging](#staging) ent
 Each one is a grid of corresponding entities assigned to the campaign.
 
 #### Remove a campaign
+
 Only empty [campaign](#campaign) can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
 ### Update

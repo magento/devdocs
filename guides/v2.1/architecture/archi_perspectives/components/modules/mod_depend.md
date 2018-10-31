@@ -1,13 +1,7 @@
 ---
 group: arch-guide
-subgroup: Components
 title: Module dependencies
 menu_title: Module dependencies
-menu_order: 6
-level3_menu_node: level3child
-level3_subgroup: modules
-version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_depend.md
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_depend.html
   - /guides/v2.0/architecture/modules/mod_depend.html
@@ -15,7 +9,7 @@ redirect_from:
 
 ## Overview {#m2devgde-moddep-intro}
 
-A *software dependency* identifies  one software component's reliance on another for proper functioning. A core principle of Magento architecture is the **minimization of software dependencies**. Instead of being closely interrelated with other modules, modules are optimally designed to be <i>loosely coupled</i>. Loosely coupled modules require little or no knowledge of other modules to perform their tasks.
+A *software dependency* identifies  one software component's reliance on another for proper functioning. A core principle of Magento architecture is the **minimization of software dependencies**. Instead of being closely interrelated with other modules, modules are optimally designed to be *loosely coupled*. Loosely coupled modules require little or no knowledge of other modules to perform their tasks.
 
 Each Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for a unique feature. In practice, this means that:
 
@@ -37,8 +31,8 @@ Although Magento architecture favors loosely coupled software components, module
 
 * libraries (either Magento Framework {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} or third party libraries)
 
-<div class="bs-callout bs-callout-warning" id="warning">
-<p>Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.</p></div>
+{:.bs-callout .bs-callout-tip}
+Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.
 
 ## Managing module dependencies
 
@@ -50,10 +44,11 @@ At a high level, there are three main steps for managing module dependencies:
 
 3. (*Optional*) Define the desired load order of config files and `.css` files in the `module.xml` file.
 
-Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the `<sequence>` list, so that B's files are loaded before A's. Additionally, you must declare a dependency upon Module B in A's `composer.json` file. Furthermore, in the <a href="{{ page.baseurl }}/config-guide/config/config-php.html">deployment configuration</a>, Modules A and B must both be defined as enabled.
+Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the `<sequence>` list, so that B's files are loaded before A's. Additionally, you must declare a dependency upon Module B in A's `composer.json` file. Furthermore, in the [deployment configuration]({{page.baseurl}}/config-guide/config/config-php.html), Modules A and B must both be defined as enabled.
 
 ## Related topics {#m2arch-module-related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+[Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend_types.html">Types of module dependencies</a>
+[Types of module dependencies]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend_types.html)
+

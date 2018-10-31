@@ -1,8 +1,6 @@
 ---
 group: install_trouble
 title: Error after logging in to the Magento Admin
-version: 2.1
-github_link: install-gde/trouble/tshoot_admin.md
 functional_areas:
   - Install
   - System

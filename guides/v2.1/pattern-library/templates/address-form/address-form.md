@@ -1,36 +1,27 @@
 ---
 group: pattern
-subgroup: Templates
-title: Admin Design Pattern Library
-menu_title: Address Form
-menu_order: 1
-menu_node: 
-version: 2.1
-github_link: pattern-library/templates/address-form/address-form.md
+title: Address Form
 redirect_from: /guides/v1.0/pattern-library/templates/address-form/address-form.html
 ---
-
-## Address Form
-
-<h3> Contents </h3>
-This article discusses  standards and rules for an address entry forms.
+This article discusses standards and rules for an address entry forms.
 
 For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 
+## When to Use / When Not to Use
 
-<h3 id="when-to-use">When to Use / When Not to Use</h3>
 The address entry fields should be used whenever an address needs to be captured. This set of form elements will be universal across the Magento user experience. This pattern should follow rules established in the Form Elements and related patterns.
 
-<h3 id="variations">Variations</h3>
+## Variations
+
 The only variation of this pattern at this time is the North American Address Entry format. Users have the ability to create address entry formats for other locales within the system.
 
-#### Fields That Make Up Address Entry (in order)
+### Fields That Make Up Address Entry (in order)
 
 <table>
 	<thead>
-		<th> Label</th>
-		<th> Input Type </th>
-		<th> Required? </th>
+		<th>Label</th>
+		<th>Input Type</th>
+		<th>Required?</th>
 	</thead>
 	<tbody>
 		<tr>
@@ -66,15 +57,16 @@ The only variation of this pattern at this time is the North American Address En
 	</tbody>
 </table>
 
-<img src="img/AddressForm_example01.jpg">
+![](img/AddressForm_example01.jpg)
 
+## Styling
 
-<h3 id="styling">Styling</h3>
 This pattern will follow the Form standards established in the Form Elements and related patterns. Refer to the Form Elements and related patterns for style information.
 
+## Usage Example
 
-<h3 id="examples">Usage Example</h3>
-<img src="img/AddressForm_example02.jpg">
+![](img/AddressForm_example02.jpg)
 
-<h3 id="assets">Assets</h3>
+## Assets
+
 Source files associated with this article are currently attached the Form Elements Pattern.

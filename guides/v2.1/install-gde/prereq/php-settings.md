@@ -6,8 +6,6 @@ menu_title: Required PHP settings
 menu_order: 24
 level3_menu_node: level3child
 level3_subgroup: php
-version: 2.1
-github_link: install-gde/prereq/php-settings.md
 functional_areas:
   - Install
   - System
@@ -21,7 +19,7 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 *	Set the system time zone for PHP; otherwise, errors like the following display during the installation and time-related operations like cron might not work:
 
 		PHP Warning:  date(): It is not safe to rely on the system's timezone settings. [more messages follow]
-*	Set [`always_populate_raw_post_data = -1`](http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data){:target="_blank"}
+*	Set [`always_populate_raw_post_data = -1`](http://php.net/manual/en/ini.core.php#ini.always-populate-raw-post-data){:target="&#95;blank"}
 
 	`always_populate_raw_post_data` is deprecated in PHP 5.6 and is dropped in PHP 7.0.x. This setting causes PHP to always populate `$HTTP_RAW_POST_DATA` with raw POST data. Failure to set this properly in PHP 5.5 or 5.6 results in errors when connecting to the database.
 *	Set the PHP memory limit.
@@ -31,30 +29,30 @@ This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b
 	*	Compiling code or deploying static assets, `756M`
     *	Installing and updating Magento components from Magento Marketplace, `2G`
     *	Testing, `2G`
-*	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}
+*	Disable [`asp_tags`](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="&#95;blank"}
 
 	If `asp_tags are` enabled, errors display when accessing PHTML templates.
 
 	`asp_tags` will be removed in PHP 7.
-*	Enable [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="_blank"}, which is required for Magento 2.1 and later. 
+*	Enable [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments){:target="&#95;blank"}, which is required for Magento 2.1 and later.
 
-	We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="_blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
+	We recommend you enable the [PHP OpCache](http://php.net/manual/en/intro.opcache.php){:target="&#95;blank"} for performance reasons. The OPcache is enabled in many PHP distributions.
 
-	Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73){:target="_blank"} method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
+	Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73){:target="&#95;blank"} method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
 
-<div class="bs-callout bs-callout-warning">
-    <p>To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+To avoid issues during installation and upgrade, we strongly recommend you apply the same PHP settings to both the PHP command-line configuration and to the PHP web server plug-in's configuration. For more information, see the next section.
 
 {% endcollapsible %}
 
 ### Step 1: Find PHP configuration files {#php-required-find}
-This section discusses how you find the configuration files necesary to update required settings.
+
+This section discusses how you find the configuration files necessary to update required settings.
 
 {% collapsible To find the PHP configuration file, php.ini: %}
-To find the web server configuration, run a <a href="{{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo">`phpinfo.php` file</a> in your web browser and look for the Loaded Configuration File as follows:
+To find the web server configuration, run a [`phpinfo.php` file]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) in your web browser and look for the Loaded Configuration File as follows:
 
-<img src="{{ site.baseurl }}/common/images/config_phpini-webserver.png" width="700px">
+![]({{ site.baseurl }}/common/images/config_phpini-webserver.png)
 
 To locate the PHP command-line configuration, enter
 
@@ -62,9 +60,8 @@ To locate the PHP command-line configuration, enter
 
 Use the value of Loaded Configuration file.
 
-<div class="bs-callout bs-callout-warning">
-    <p>If you have only one <code>php.ini</code> file, make the changes in that file. If you have two <code>php.ini</code> files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.</p>
-</div> 
+{:.bs-callout .bs-callout-info}
+If you have only one `php.ini` file, make the changes in that file. If you have two `php.ini` files, make the changes in <em>all</em> files. Failure to do so might cause unpredictable performance.
 
 {% endcollapsible %}
 
@@ -76,7 +73,7 @@ Use the following guidelines to find it:
 
 *	Apache web server:
 
-	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`. 
+	For Ubuntu with Apache, OPcache settings are typically located in `php.ini`.
 
 	For CentOS with Apache or nginx, OPcache settings are typically located in `/etc/php.d/opcache.ini`
 
@@ -95,7 +92,7 @@ If you have more than one `opcache.ini`, modify all of them.
 {% collapsible To set PHP options: %}
 
 1.	Open a `php.ini` in a text editor.
-3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="_blank"}
+3.	Locate your server's time zone in the available [time zone settings](http://php.net/manual/en/timezones.php){:target="&#95;blank"}
 4.	Locate the following setting and uncomment it if necessary:
 
 		date.timezone =
@@ -136,4 +133,3 @@ If you have more than one `opcache.ini`, modify all of them.
 	*	nginx, Ubuntu and CentOS: `service nginx restart`
 
 {% endcollapsible %}
-

@@ -5,8 +5,6 @@ title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
-version: 2.2
-github_link: install-gde/prereq/prereq-overview.md
 functional_areas:
   - Install
   - System
@@ -17,16 +15,14 @@ functional_areas:
 
 Before you install Magento, you must do all of the following:
 
-*	Set up one or more hosts that meet the <a href="{{page.baseurl}}/install-gde/system-requirements.html">Magento system requirements</a>.
+*	Set up one or more hosts that meet the [Magento system requirements]({{page.baseurl}}/install-gde/system-requirements.html).
 *	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
 *	Make sure you can back up your entire system at various points during the installation so you can roll back in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>We assume you're installing the Magento 2 software in a <em>development environment</em>, which means you have <a href="http://www.linfo.org/root.html" target="&#95;blank">root user</a> access to the machine <em>and</em> that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+We assume you're installing the Magento 2 software in a <em>development environment</em>, which means you have [root user](http://www.linfo.org/root.html) access to the machine <em>and</em> that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
 
-We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our <a href="{{page.baseurl}}/install-gde/bk-install-guide.html">installation overview page</a>.
+We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our [installation overview page]({{page.baseurl}}/install-gde/bk-install-guide.html).
 
 
 Enter the following commands as a user with `root` privileges:
@@ -41,7 +37,7 @@ Enter the following commands as a user with `root` privileges:
 		yum -y update
 		yum -y upgrade
 
-<h2 id="instgde-prereq-check">Prerequisite check</h2>
+## Prerequisite check {#instgde-prereq-check}
 
 To check your system for prerequisites, enter the following commands:
 
@@ -56,15 +52,12 @@ You must run Apache version 2.2 or 2.4 as the following result indicates:
 	Server version: Apache/2.2.15 (Unix)
 	Server built:   Jul 23 2014 14:17:29
 
-To install or upgrade Apache, see <a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>.
+To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/apache.html).
 
 ### PHP
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases.
-
-If you are interested in participating in Magento Community projects we welcome your help! See our <a href="https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902" target="_blank">ZenHub board</a> for a full list of outstanding issues.
-</div>
+{:.bs-callout .bs-callout-info}
+Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases. If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
 	php -v
 
@@ -100,15 +93,17 @@ You must run MySQL version 5.6 or later as the following result indicates:
 
 Enter `exit` at the `mysql>` prompt to exit.
 
-To install or upgrade MySQL, see <a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>.
+To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html).
 
 #### Next step
-<a href="{{page.baseurl}}/install-gde/bk-install-guide.html">Choose how to install the Magento software</a>
+
+[Choose how to install the Magento software]({{page.baseurl}}/install-gde/bk-install-guide.html)
 
 #### Related topics
-*	<a href="{{page.baseurl}}/install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}/install-gde/prereq/optional.html">Installing optional software</a>
+
+*	[MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+*	[PHP&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
+*	[PHP&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
+*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
 *	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)

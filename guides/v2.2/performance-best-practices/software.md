@@ -1,8 +1,6 @@
 ---
 group: perf-best-practices
 title: Software recommendations
-version: 2.2
-github_link: performance-best-practices/software.md
 functional_areas:
   - Configuration
   - System
@@ -50,14 +48,18 @@ We recommend limiting the list of active PHP extensions to those that are requir
 * `php-bcmath`
 * `php-cli`
 * `php-common`
+* `php-curl`
 * `php-gd`
 * `php-intl`
 * `php-mbstring`
 * `php-mcrypt`
 * `php-opcache`
+* `php-openssl`
 * `php-pdo`
 * `php-soap`
 * `php-xml`
+* `php-xsl`
+* `php-zip`
 
 Adding more extensions increases library load times.
 
@@ -108,7 +110,6 @@ Nginx | `worker_collections` | `/etc/nginx/nginx.conf` (Debian) | [Tuning NGINX 
 Apache 2.2 | `MaxClients` | `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache Performance Tuning](http://httpd.apache.org/docs/2.2/misc/perf-tuning.html)
 Apache 2.4 | `MaxRequestWorkers` |  `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache MPM Common Directives](https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers )
 
-
 ## MySQL
 
 This document does not provide in-depth MySQL tuning instructions because each store and environment is different, but we can make some general recommendations.
@@ -148,6 +149,7 @@ At the end of the `if` statement for PURGE requests in the `vcl_recv` subroutine
 
 ``` javascript
 # static files are cacheable. remove SSL flag and cookie
+
 if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$") {
   unset req.http.Https;
   unset req.http./* {{ ssl_offloaded_header }} */;
@@ -161,6 +163,7 @@ The updated `if` block should look like the following:
 ``` javascript
 # validate if we need to cache it and prevent from setting cookie
 # images, css and js are cacheable by default so we have to remove cookie also
+
 if (beresp.ttl > 0s && (bereq.method == "GET" || bereq.method == "HEAD")) {
   unset beresp.http.set-cookie;
 if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)(\?|$)") {

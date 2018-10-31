@@ -5,8 +5,6 @@ title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade
 menu_node:
 menu_order: 200
-version: 2.0
-github_link: comp-mgr/trouble/cman/maint-mode.md
 functional_areas:
   - Upgrade
 ---
@@ -26,6 +24,7 @@ See one of the following sections for more information:
 *	[Custom maintenance page for nginx](#compman-trouble-maint-nginx)
 
 ## Create the custom maintenance page {#compman-trouble-maint-create}
+
 To create a maintenance page and redirect to it, first create a maintenance page named:
 
 *	Apache: `<web server docroot>/maintenance.html`
@@ -49,13 +48,16 @@ body
 </style>
 </head>
 <body>
-<h1>Temporarily offline</h1>
+
+# Temporarily offline
+
 <p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
 </body>
 </html>
 {% endhighlight %}
 
 ## Custom maintenance page for Apache {#compman-trouble-maint-apache}
+
 This section discusses how to create a custom maintenance page and how to redirect traffic to it.
 
 The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
@@ -96,6 +98,7 @@ To redirect traffic to a custom maintenance page:
 6.	After the upgrade is done, delete `maintenance.enable`.
 
 ## Custom maintenance page for nginx {#compman-trouble-maint-nginx}
+
 This section discusses how to create a custom maintenance page and how to redirect traffic to it.
 
 To redirect traffic to a custom maintenance page:

@@ -1,14 +1,11 @@
 ---
 group: perf-best-practices
 title: Hardware recommendations
-version: 2.2
-github_link: performance-best-practices/hardware.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
-
 
 ## CPUs
 
@@ -21,6 +18,7 @@ If you expect a store's load to change, you can manually increase the number of 
 ## Memory
 
 ### PHP
+
 Magento 2 has differing PHP memory requirements, based on how your system is deployed.  In general, if you are setting up a single server store and plan on using the web setup wizard, we recommend configuring PHP memory for 2G.  If you are setting up a site using pipeline deployment, we recommend 2 GB on your build server and 1 GB on your web nodes.
 
 Scenarios and expected PHP memory requirements:
@@ -32,6 +30,7 @@ Scenarios and expected PHP memory requirements:
 * Magento 2 performance toolkit profile generation: >1 GB PHP RAM, >16 MB MySQL TMP_TABLE_SIZE & MAX_HEAP_TABLE_SIZE settings
 
 ### MySQL
+
 The Magento 2 database (as well as any other database) is sensitive to the amount of the memory available for storing data and indexes. To effectively leverage MySQL data indexation, the amount of memory available should be, at minimum, close to half the size of the data stored in the database.
 
 ### Caches

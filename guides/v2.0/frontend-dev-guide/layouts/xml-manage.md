@@ -4,14 +4,12 @@ subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
-version: 2.0
-github_link: frontend-dev-guide/layouts/xml-manage.md
 redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
 
 This article describes the following typical {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization tasks:
 
@@ -34,7 +32,7 @@ This article describes the following typical {% glossarytooltip 73ab5daa-5857-40
   <p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.</p></span>
 </div>
 
-<h2 id="layout_markup_columns">Set the page layout</h2>
+## Set the page layout   {#layout_markup_columns}
 
 The type of page layout to be used for a certain page is defined in the page configuration file, in the `layout` attribute of the root <code>&lt;page&gt;</code> node.
 
@@ -49,8 +47,7 @@ Change the layout of Advanced Search page from default "1-column" to "2-column w
 </page>
 {%endhighlight xml%}
 
-
-<h2 id="layout_markup_css">Include static resources (JavaScript, CSS, fonts)</h2>
+## Include static resources (JavaScript, CSS, fonts)   {#layout_markup_css}
 
 JavaScript, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and other static assets are added in the `<head>` section of a <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configuration</a> file. The default look of a Magento store page `<head>` is defined by `app/code/Magento/Theme/view/frontend/layout/default_head_blocks.xml`. The recommended way to add CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} is to extend this file in your custom theme, and add the assets there.
 The following file is a sample of a file you must add:
@@ -90,7 +87,8 @@ The path to assets is specified relatively to one of the following locations:
 
 </ul>
 
-<h3>Adding conditional comments</h3>
+### Adding conditional comments
+
 <a href="http://en.wikipedia.org/wiki/Conditional_comment" target="_blank">Conditional comments</a> are meant to give special instructions for Internet Explorer. 
 In the terms of adding assets, you can add CSS files to be included for a specific version of Internet Explorer. 
 A sample follows:
@@ -112,7 +110,7 @@ This adds an IE conditional comment in the generated HTML, like in the following
 
 In this example, <code>orange</code> is a custom theme created by the OrangeCo vendor.
 
-<h2 id="layout_markup_css_remove">Remove static resources (JavaScript, CSS, fonts)</h2>
+## Remove static resources (JavaScript, CSS, fonts)   {#layout_markup_css_remove}
 
 To remove the static resources, linked in a page `<head>`, make a change similar to the following in a theme extending file:
 
@@ -135,7 +133,7 @@ To remove the static resources, linked in a page `<head>`, make a change similar
 
 Note, that if a static asset is added with a module path (for example `Magento_Catalog::js/sample.js`) in the initial layout, you need to specify the module path as well when removing the asset.
 
-<h2 id="create_cont">Create a container</h2>
+## Create a container   {#create_cont}
 
 Use the following sample to create (declare) a container:
 
@@ -143,7 +141,7 @@ Use the following sample to create (declare) a container:
 <container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container" />
 {%endhighlight xml%}
 
-<h2 id="ref_container">Reference a container</h2>
+## Reference a container   {#ref_container}
 
 To update a container use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceContainer>`</a> instruction.
 
@@ -159,7 +157,7 @@ Example: add links to the page header panel.
 </referenceContainer>
 {%endhighlight xml%}
 
-<h2 id="xml-manage-block">Create a block</h2>
+## Create a block   {#xml-manage-block}
 
 Blocks are created (declared) using the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block" target="_blank">`<block>`</a> instruction.
 
@@ -175,8 +173,7 @@ Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-a
 </block>
 {%endhighlight xml%}
 
-
-<h2 id="xml-manage-ref-block">Reference a block</h2>
+## Reference a block   {#xml-manage-ref-block}
 
 To update a block use the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref" target="_blank">`<referenceBlock>`</a> instruction.
 
@@ -225,7 +222,7 @@ In both example, the template is specified according to the following:
   <p>Template values specified as attributes have higher priority during layout generation, than the ones specified using <code>&lt;argument&gt;</code>. It means, that if for a certain block, a template is set as attribute, it will override the value you specify in <code>&lt;argument&gt;</code> for the same block.</p>
 </div>
 
-<h2 id="layout_markup_modify-block">Modify block arguments</h2>
+## Modify block arguments   {#layout_markup_modify-block}
 
 To modify block arguments, use the `<referenceBlock>` instruction.
 
@@ -258,7 +255,7 @@ Extending layout:
 ...
 {%endhighlight xml%}
 
-<h2 id="layout_markup_block-properties">Use block object methods to set block properties</h2>
+## Use block object methods to set block properties   {#layout_markup_block-properties}
 
 There are two ways to access block object methods:
 
@@ -298,7 +295,7 @@ Extending layout:
 	...
 {%endhighlight xml%}
 
-<h2 id="layout_markup_rearrange">Rearrange elements</h2>
+## Rearrange elements   {#layout_markup_rearrange}
 
 In layout files you can change the elements order on a page. This can be done using one of the following:
 
@@ -335,7 +332,7 @@ This would make the product page look like following:
   <p>To learn how to locate the layout file you need to customize, see <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a>.</p></span>
 </div>
 
-<h2 id="layout_markup_remove_elements">Remove elements</h2>
+## Remove elements   {#layout_markup_remove_elements}
 
 Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
 
@@ -373,11 +370,9 @@ In this file, reference the element having added the `remove` attribute:
 
 {%endhighlight xml%}
 
-
-<h2 id="layout_markup_replace_elements">Replace elements</h2>
+## Replace elements   {#layout_markup_replace_elements}
 
 To replace an element, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
-
 
 #### Related topics:
 

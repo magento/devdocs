@@ -1,8 +1,6 @@
 ---
 group: marketplace-api
 title: Authentication
-version: 2.1
-github_link: marketplace/eqp/auth.md
 ---
 
 All API requests must be authenticated using [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). The REST APIs use a two-step process to authenticate a client application and authorize access to resources:

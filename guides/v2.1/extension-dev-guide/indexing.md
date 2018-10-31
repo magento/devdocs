@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: Indexing overview
-version: 2.1
-github_link: extension-dev-guide/indexing.md
 redirect_from:
   - /guides/v1.0/architecture/index-cache/indexing.html
   - /guides/v2.0/architecture/index-cache/indexing.html
@@ -35,6 +33,7 @@ Magento contains several indexers out of the box, but you might want to add your
 This topic provides a high level description of how indexing is implemented from a developer's point of view, and practical advice for how to add your own indexer.
 
 ## How Magento implements indexing
+
 The following components are involved in the indexing process:
 
 <table>
@@ -82,6 +81,7 @@ The following figure shows the logic for partial reindexing.
 ![Partial indexing workflow]({{ site.baseurl }}/common/images/index_indexers_flow.png){:width="300px"}
 
 ### Indexer status {#m2devgde-indexing-status}
+
 Depending on whether an index data is up to date, an indexer status value is one of the following:
 
 *	valid - data is synchronized, no reindex required
@@ -90,7 +90,8 @@ Depending on whether an index data is up to date, an indexer status value is one
 
 The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel in **System > New Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
-<h3 id="m2devgde-indexing-modes">Indexing modes</h3>
+### Indexing modes {#m2devgde-indexing-modes}
+
 Reindexing can be performed in two modes:
 
 *	Update on Save - index tables are updated immediately after the dictionary data is changed.
@@ -111,12 +112,14 @@ The following figure shows an example of setting indexers to Update by Schedule:
 ![Changing indexer modes]({{ site.baseurl }}/common/images/index_index-modes.png){:width="600px"}
 
 ### How to reindex
+
 You can reindex by:
 
 *	Using a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg), which is preferred because indexing runs every minute.
 *	Using the [`magento indexer:reindex [indexer]`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex) command, which reindexes selected indexers, or all indexers, one time only.
 
-<h2 id="m2devgde-indexing-outofbox">Magento indexers</h2>
+## Magento indexers {#m2devgde-indexing-outofbox}
+
 The Magento application implements the following indexers:
 
 <table>

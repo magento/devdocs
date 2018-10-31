@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Patch Magento Commerce (Cloud)
-version: 2.0
-github_link: cloud/project/project-patch.md
 redirect_from:
   - /guides/v2.0/cloud/howtos/patch-magento.html
   - /guides/v2.1/cloud/howtos/patch-magento.html
@@ -43,9 +41,11 @@ Always apply and test a patch your local system in an active branch. You can pus
 Our patches are Composer driven. For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}/cloud/reference/cloud-composer.html). When you perform a {{site.data.var.ece}} upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
 ## Verify or set the ADMIN_EMAIL variable {#variable}
+
 The environment variable `ADMIN_EMAIL` is required for upgrading and patching. This email is used for sending password reset requests and verified during when updating {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 ## Back up the database {#backup-db}
+
 Back up your Integration environment database and code:
 
 1.  Enter the following command to make a local backup of the remote database:
@@ -69,6 +69,7 @@ Back up your Staging or Production environment database before deploying to thos
         mysqldump -h <database host> --user=<database username> --password=<password> --single-transaction <database name> | gzip - > /tmp/database.sql.gz
 
 ## Verify other changes {#verify-changes}
+
 Verify other changes you're going to submit to source control before you start the upgrade:
 
 1.  If you haven't done so already, change to your project root directory.
@@ -78,6 +79,7 @@ Verify other changes you're going to submit to source control before you start t
 3.  If there are changes you do *not* want to submit to source control, branch or stash them now.
 
 ## Apply the patch {#patch}
+
 To apply the patch, you run the `composer update` command. The command uses `composer.json` to pull and install the patch to your local. When complete, you will add the files to the Git branch and push to build and deploy.
 
 If multiple patches are installed, they are applied in order by name. The name of the patches include the version number.
@@ -101,9 +103,11 @@ If multiple patches are installed, they are applied in order by name. The name o
 5.  Wait for deployment to complete.
 
 ## Test general patches {#cloud-patch-gen}
+
 *General patches* are provided for all Magento Commerce customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.
 
 ### Get started {#gen-getstarted}
+
 We recommend testing patches in an active branch, prior to deploying to Staging and Production environments.
 
 {% include cloud/cli-get-started.md %}
@@ -133,6 +137,7 @@ To test a general patch on your local system, you create a branch from the Pro I
 		git push origin <branch name>
 
 ### Push a general patch to Staging or Production environments {#gen-pushpatch}
+
 After you've successfully tested a patch locally and on your integration environment, you can push the patch to Staging or Production environment:
 
 1.  Open an SSH connection to your Staging or Production environment. For Starter, see the Project Web Interface for the SSH links. Your Production environment is the Master. For Pro, the SSH access is one of the following:
@@ -157,9 +162,11 @@ After you've successfully tested a patch locally and on your integration environ
 		git push origin master
 
 ## Test custom patches {#cloud-patch-custom}
+
 *Custom patches* are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.
 
 ### Get started {#custom-getstarted}
+
 We recommend you test a patch locally in an active branch. After completing testing, you can push the branch to Staging and Production.
 
 {% include cloud/cli-get-started.md %}
@@ -230,4 +237,5 @@ After you've successfully tested a custom patch locally and on your Integration 
 		git push origin <branch name>
 
 #### Related topic
+
 * [Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html)

@@ -4,8 +4,6 @@ subgroup: 03_Build
 title: The di.xml file
 menu_title: The di.xml file
 menu_order: 1
-version: 2.0
-github_link: extension-dev-guide/build/di-xml-file.md
 ---
 
 ## Overview
@@ -29,11 +27,11 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
 ## Type configuration
 
@@ -62,6 +60,7 @@ The preceding example declares the following types:
 *	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 ### Virtual types
+
 A {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
 This allows you to use a customized class without affecting other classes that have a dependency on the original.
 

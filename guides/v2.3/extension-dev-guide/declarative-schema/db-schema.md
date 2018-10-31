@@ -1,8 +1,6 @@
 ---
 group: extension-dev-guide
 title: Configure declarative schema
-version: 2.3
-github_link: extension-dev-guide/declarative-schema/db-schema.md
 ---
 
 Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:
@@ -251,7 +249,6 @@ onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
 The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
 
 ![Add index]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/add-index.png)
-
 
 ## Other tasks
 

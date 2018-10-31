@@ -5,8 +5,6 @@ title: Set up multiple websites, stores, and store views in the Admin
 menu_title: Set up multiple websites, stores, and store views in the Admin
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: config-guide/multi-site/ms_websites.md
 functional_areas:
   - Configuration
   - System
@@ -14,6 +12,7 @@ functional_areas:
 ---
 
 ## Set up multiple websites, stores, and store views in the Admin
+
 This task requires you to create a root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} (and additional categories if desired) for each store.
 
 The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
@@ -32,6 +31,7 @@ For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e
 </div>
 
 ## Step 1: Create root categories
+
 Creating a root category is optional, but we show how to do it in this tutorial in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} you want each website to have a unique root category. You can create additional categories if you choose.
 
 {% collapsible To create a root category: %}
@@ -112,6 +112,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 {% endcollapsible %}
 
 ## Step 5: Change a website's base URL
+
 To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} like `http://french.magento.mg`, you must change the base URL for each site in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 {% collapsible To change the website's base URL: %}
@@ -137,6 +138,7 @@ To access a website using a unique {% glossarytooltip a05c59d3-77b9-47d0-92a1-2c
 {% endcollapsible %}
 
 ## Step 6: Add the store code to the base URL {#multi-storecode-baseurl}
+
 Magento gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`.
 
 This prevents `index.php` and `.htaccess` from getting out of sync with the Magento codebase in future upgrades.
@@ -160,6 +162,7 @@ For more information, see the [Magento User Guide](http://docs.magento.com/m2/ce
 {% endcollapsible %}
 
 ## Step 7: Change the default store view's base URL
+
 You must perform this step last because after it's done, you'll lose access to the Magento Admin; your access returns after you set up virtual hosts as discussed in the web-server-specific topics.
 
 {% collapsible To change the default store view's base URL: %}
@@ -183,6 +186,7 @@ You must perform this step last because after it's done, you'll lose access to t
 {% endcollapsible %}
 
 #### Next step
+
 *	{{site.data.var.ece}}: [Set up multiple {{site.data.var.ece}} websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html)
 *	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 *	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)

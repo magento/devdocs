@@ -5,8 +5,6 @@ title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_title: Appendix&mdash;Magento file system ownership and appendix (legacy)
 menu_node: parent
 menu_order: 100
-version: 2.0
-github_link: install-gde/install/legacy-file-system-perms.md
 functional_areas:
   - Install
   - System
@@ -14,14 +12,17 @@ functional_areas:
 ---
 
 ## Overview: Magento file system ownership and appendix (legacy) {#appendix-over}
+
 This topic is provided for convenience for anyone using {{site.data.var.ce}} or {{site.data.var.ee}} versions 2.0.0&ndash;2.0.5. 
 
 In versions *before* 2.0.6, Magento explicitly set file system permissions when we created files, such as {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see [Overview of ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 ## Summary of file system permissions {#appendix-summary}
+
 This section summarizes the permissions Magento uses when creating files in the file system.
 
 ### Developer mode permissions
+
 In developer mode, Magento sets permissions as follows:
 
 *	Directories: 770
@@ -32,6 +33,7 @@ In developer mode, Magento sets permissions as follows:
 	660 permissions give read-write permissions to the owner and to the group, and no permissions to anyone else.
 
 ### Production mode permissions
+
 Changing modes affects permissions and ownership the following subdirectories in your Magento installation:
 
 	var/view_preprocessed
@@ -48,6 +50,7 @@ When you change to production mode, we set the following permissions on these di
 	640 permissions give read-write permissions to the owner, read-only permissions to the group, and no permissions to anyone else.
 
 ## Set permissions before installing the Magento software {#appendix-install}
+
 Use the following steps:
 
 1.	If you haven't already done so, log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).

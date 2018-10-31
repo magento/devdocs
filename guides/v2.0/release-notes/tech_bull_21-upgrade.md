@@ -1,13 +1,10 @@
 ---
-layout: default 
 group: release-notes
 subgroup: 05_techbull
 title: Technical Bulletin
 menu_title: Upgrade to Magento version 2.1 (June 22, 2016)
 menu_node: 
 menu_order: 3
-version: 2.1
-github_link: release-notes/tech_bull_21-upgrade.md
 ---
 
 
@@ -20,11 +17,13 @@ See one of the following sections for more information:
 *	[Enterprise Edition only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data](#tb-upgr-samp-wiz)
 
 ### Upgrade to Magento Open Source or Commerce version 2.1 *without* sample data {#tb-upgr-nosamp}
+
 Upgrades to version 2.1 without sample data can fail because of an issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and compiled code directories properly. As a result, fatal errors display during the upgrade.
 
 To address the issue, you must apply a patch.
 
 #### Get the patch
+
 Use the following instructions to get the patch named `MDVA-532.*`, then transfer it to your Magento server.
 
 {% collapsible To get the patch: %}
@@ -34,6 +33,7 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 {% endcollapsible %}
 
 #### Apply the patch
+
 As the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
 
 {% collapsible To apply the patch: %}
@@ -47,6 +47,7 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 {% endcollapsible %}
 
 #### Complete your upgrade
+
 After applying the patch, complete your upgrade as follows:
 
 *	[Command-line upgrade]({{ page.baseurl }}/comp-mgr/cli/cli-upgrade.html)
@@ -56,8 +57,8 @@ After applying the patch, complete your upgrade as follows:
 
 {%include install/sampledata/sample-data-rc1-cli.md %}
 
-
 ### Commerce only: Web Setup Wizard upgrade to Magento Commerce version 2.1 with sample data {#tb-upgr-samp-wiz}
+
 Upgrades to Magento Commerce 2.1 with sample data can fail because of the following issues:
 
 *	An issue with the Magento `composer-installer` component. It doesn't correctly detect code changes and therefore doesn't update the cache and compiled code directories properly. As a result, fatal errors display during the upgrade.
@@ -68,6 +69,7 @@ Upgrades to Magento Commerce 2.1 with sample data can fail because of the follow
 	You can edit `composer.lock` to fix this issue.
 
 #### Get the patch
+
 Use the following instructions to get the patch named `MDVA-532.*`, then transfer it to your Magento server.
 
 {% collapsible To get the patch: %}
@@ -77,6 +79,7 @@ Use the following instructions to get the patch named `MDVA-532.*`, then transfe
 {% endcollapsible %}
 
 #### Apply the patch
+
 As the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), extract the patch in your Magento installation directory.
 
 {% collapsible To apply the patch: %}
@@ -108,6 +111,7 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 {% endcollapsible %}
 
 #### Manually clear directories
+
 Manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
 
 A sample command follows:
@@ -115,4 +119,5 @@ A sample command follows:
 	rm -rf var/cache/* var/page_cache/* var/generation/*
 
 #### Start the upgrade
+
 Start your upgrade as discussed in [Start System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).

@@ -5,8 +5,6 @@ title: Get the Magento Commerce metapackage
 menu_title: Get the Magento Commerce metapackage
 menu_order: 4
 menu_node:
-version: 2.0
-github_link: install-gde/prereq/integrator_install_ee.md
 functional_areas:
   - Install
   - System
@@ -43,6 +41,7 @@ To get the {{site.data.var.ee}} metapackage:
 {% include install/file-system-perms-before.md %}
 
 #### Next step
+
 Install the Magento software:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>

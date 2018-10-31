@@ -1,11 +1,6 @@
 ---
 group: config-guide
-subgroup: Optimization
 title: Magento Optimization Guide
-menu_title: Magento Optimization Guide
-menu_order: 100
-version: 2.1
-github_link: config-guide/prod/prod_perf-optimize.md
 functional_areas:
   - Configuration
   - System
@@ -106,18 +101,17 @@ Go to the Admin in default of developer mode and change the following settings f
 
 Set all indexers to "Update by Schedule" mode.
 
-
 ### Production Mode
 
 Switching to production mode improves storefront responsiveness and prevents long initial page load times that can occur in default mode.
 
 Run the following commands to switch to production mode:
 
-~~~
+```bash
 bin/magento deploy:mode:set production
-~~~
+```
 
-[composer-install]: {{ page.baseurl }}/install-gde/prereq/integrator_install.html
+[composer-install]: {{ page.baseurl }}/install-gde/composer.html
 [zip-install]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
 [config-varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
 [elasticsearch]: {{ page.baseurl }}/config-guide/elasticsearch/es-overview.html

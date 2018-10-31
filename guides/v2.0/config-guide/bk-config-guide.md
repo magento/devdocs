@@ -6,8 +6,6 @@ landing-page: Configuration Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: config-guide/bk-config-guide.md
 redirect_from: /guides/v1.0/config-guide/bk-config-guide.html
 functional_areas:
   - Configuration
@@ -15,7 +13,8 @@ functional_areas:
   - Setup
 ---
 
-<h2 id="configuration">Configure the Magento application</h2>
+## Configure the Magento application   {#configuration}
+
 You can configure the Magento application in any of the following ways:
 
 *	General configuration

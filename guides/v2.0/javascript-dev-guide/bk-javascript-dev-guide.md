@@ -4,18 +4,18 @@ title: JavaScript Developer Guide
 landing-page: JavaScript Developer Guide
 menu_title: Introduction
 menu_order: 1
-version: 2.0
-github_link: javascript-dev-guide/bk-javascript-dev-guide.md
 ---
 
-<h2 id="overview-introduction">Introduction</h2>
+## Introduction   {#overview-introduction}
+
 By default, the Magento application uses the <a href="http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} files, and to manage dependencies of JavaScript resources.
 
 You can follow the same approach when customizing Magento JavaScript, or <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html#disable_default_js" target="_blank">disable all the default scripts and their load by RequireJS</a>.
 
 For information about how JS resources are located and configured, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html" target="_blank">JavaScript resources</a> topic in the Configuration Guide.
 
-<h2 id="#js_contents">What's in this guide</h2>
+## What\'s in this guide   {##js_contents}
+
 Topics of this book describe the following:
 
 - [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
@@ -26,7 +26,7 @@ Topics of this book describe the following:
 
 JavaScript automatic testing is described in a separate [JavaScript unit testing]({{ page.baseurl }}/test/js/jasmine.html) topic.
 
-<h2 id="js_terms">Terms used</h2>
+## Terms used   {#js_terms}
 
 <table>
 <tr>

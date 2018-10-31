@@ -4,11 +4,9 @@ subgroup: 3_Widgets
 title: Gallery widget
 menu_order: 7
 menu_title: Gallery widget
-version: 2.0
-github_link: javascript-dev-guide/widgets/widget_gallery.md
 ---
 
-<h2>Overview</h2>
+## Overview
 
 The gallery {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a content area with images organized into preview and thumbnails blocks.
 
@@ -28,10 +26,7 @@ The gallery widget source code is <a href="{{ site.mage2000url }}lib/web/mage/ga
 
 The gallery magnifier source is <a href="{{ site.mage2000url }}lib/web/magnifier/magnify.js"> lib/web/magnifier/magnify.js</a>.
 
-
-
-<h3>Contents</h3>
-
+### Contents
 
 ## Initialize the gallery widget {#gallery_init}
 
@@ -95,7 +90,6 @@ Example of declarative initialization:
 </script>
 
 {%endhighlight%}
-
 
 ## Options {#gallery_options}
 
@@ -464,7 +458,6 @@ The fullscreen and breakpoints options are set in a similar way:
 {%endhighlight%}
 
 For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
-
 
 ## Gallery API {#gallery_api}
 

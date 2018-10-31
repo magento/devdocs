@@ -4,14 +4,13 @@ subgroup: C_Templates
 title: Templates customization walkthrough
 menu_title: Templates customization walkthrough
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/templates/template-walkthrough.md
 redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-walkthrough.html
 functional_areas:
   - Frontend
 ---
 
 ## What's in this topic
+
 This topic walks you through how to customize a template.
 
 ## Prerequisites 
@@ -38,6 +37,7 @@ To add a new template in a theme:
 If you add a new `.html` template, and then edit it, the changes will not apply until you do the following: delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories, then reload the pages. You can delete the files manually or run the `grunt clean:&lt;theme_name&gt;` command in CLI. For details about using Grunt in Magento see [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
 
 ## Walkthrough illustration: adding a message to the customer review form
+
 A small customization to illustrate the walkthrough: in their Orange theme, the OrangeCo company wants to add a short text to the product review form to encourage customers to write reviews. 
 
 The following image illustrates how the default review form looks like:

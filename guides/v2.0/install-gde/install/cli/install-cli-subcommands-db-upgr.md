@@ -5,22 +5,23 @@ title: Update the Magento database schema and data
 menu_title: Update the Magento database schema and data
 menu_node:
 menu_order: 16
-version: 2.0
-github_link: install-gde/install/cli/install-cli-subcommands-db-upgr.md
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+## First steps   {#instgde-cli-before}
+
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-subcommands-maint-prereq">Prerequisites</h2>
+## Prerequisites   {#instgde-cli-subcommands-maint-prereq}
+
 Before you use this command, you must <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">install the Magento software</a>.
 
 ## Upgrade the Magento database schema and data {#instgde-cli-db-upgr}
+
 Anytime you perform an action that causes the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
 
 *	You upgraded the Magento software using the command line

@@ -1,11 +1,9 @@
 ---
 group: cloud
 title: Subscriptions and plans
-version: 2.1
-github_link: cloud/basic-information/cloud-plans.md
 ---
 
-{{site.data.var.ece}} includes the following plans with different infrastructures for smaller to larger stores and supported products.
+{{site.data.var.ece}} has a Starter and a Pro plan. For comparison, each plan includes the following infrastructure features and supported products.
 
 <table>
   <tbody>
@@ -20,18 +18,15 @@ github_link: cloud/basic-information/cloud-plans.md
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
+          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
         </ul>
       </td>
       <td>
         <ul>
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
-          <li>
-            <a href="https://magento.com/business-needs/b2b-commerce">B2B module</a>
-          </li>
-          <li>
-            <a href="https://magento.com/products/business-intelligence/essentials">BI Essentials</a>
-          </li>
+          <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
+          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
     </tr>
@@ -71,11 +66,6 @@ github_link: cloud/basic-information/cloud-plans.md
       <td>24x7 monitoring and email support for the core application and the cloud infrastructure</td>
     </tr>
     <tr>
-      <td>Business Intelligence</td>
-      <td class="blank"></td>
-      <td>Magento Business Intelligence Essentials giving you full visibility into your data with 75 reports and 5 dashboards available out of the box</td>
-    </tr>
-    <tr>
       <td>High availability infrastructure</td>
       <td class="blank"></td>
       <td>High availability architecture with a three-server setup in the underlying Infrastructure-as-a-Service (IaaS) to provide enterprise grade reliability and availability</td>
@@ -93,15 +83,8 @@ github_link: cloud/basic-information/cloud-plans.md
   </tbody>
 </table>
 
-## Additional options {#extras}
-To further customize your {{site.data.var.ece}} project and account, you can purchase additional options.
+### Domain-Validated SSL (HTTP) certificate
 
-### Domain-Validated SSL (HTTP) certificate {#ssl}
-If you don't want to use the shared SSL certificate, you can purchase this option as part of your subscription. The cost of the service includes adding and deploying the Domain-Validated SSL certificate to all Fastly servers and services.
+The Domain-Validated SSL (HTTP) certificate option is an alternative to using the shared SSL certificate. The cost of the service includes adding and deploying the Domain-Validated SSL certificate to all Fastly servers and services.
 
 This service is an additional cost for your contract.
-
-### AWS Managed VPN Connection Service access {#vpn}
-If you need access to your own Virtual Private Network (VPN) to access your {{site.data.var.ee}} environment, you can purchase this option to gain access to the AWS Managed VPN Connection Service. We will provide information required for configurations including the required IPs and modes.
-
-This service is an additional cost for your contract. VPN configurations require technical resources and requirements for configuring. For information on the AWS service, see their [AWS Managed VPN Connections](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html){:target="\_blank"} and  [VPN Connections](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpn-connections.html){:target="\_blank"}.

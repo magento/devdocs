@@ -5,8 +5,6 @@ title: Roadmap for developing and packaging components
 menu_title: Roadmap for developing and packaging components
 menu_order: 50
 menu_node:
-version: 2.0
-github_link: extension-dev-guide/prepare/dev-summary.md
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/dev-intro.html
   - /guides/v2.0/mktpl-quickstart/dev-summary.html

@@ -5,11 +5,10 @@ title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100
 menu_node:
-version: 2.1
-github_link: cloud/project/admin-git-push.md
 ---
 
 # Step by step walk-through of `git push` output
+
 To better grasp what is happening here, we will show you what the output of the `git push` command might look like with {{site.data.var.ece}}.
 
 For this example, we use a sample PHP project configured with multiple services including MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a `composer.json` file. It uses the Ruby library `sass` to compile the SCSS during its build process.

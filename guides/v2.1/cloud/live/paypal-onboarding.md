@@ -5,8 +5,6 @@ title: Set up PayPal payment methods
 menu_title: Set up PayPal
 menu_order: 10
 menu_node:
-version: 2.1
-github_link: cloud/live/paypal-onboarding.md
 functional_areas:
   - Cloud
   - Setup
@@ -73,4 +71,5 @@ With the account configured and authenticated, you can enable and disable PayPal
 * __Enable PayPal Credit__ allows customers to PayPal credit financing without additional costs. PayPal pays the order up-front, handling all repayments for the credit directly with the customer.
 
 ## PayPal variables {#deploy}
+
 When using the PayPal on-boarding tool with {{site.data.var.ece}} 2.1.8 and later 2.1.x versions, we automatically include a variable in `.magento.app.yaml` to correctly connect your PayPal module with PayPal services.

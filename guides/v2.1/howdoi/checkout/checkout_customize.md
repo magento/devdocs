@@ -6,14 +6,11 @@ title: Customize the view of a checkout step
 subtitle: Customize Checkout
 menu_order: 2
 level3_subgroup: checkout-tutorial
-version: 2.1
-github_link: howdoi/checkout/checkout_customize.md
 functional_areas:
   - Checkout
 ---
 
 This topic contains the basic information about how to customize the view of an existing {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} step. In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation or template](#change-component) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.
-
 
 ## Change the component's .js implementation and template {#change-component}
 
@@ -92,8 +89,8 @@ Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% end
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
-
 ## Disable a component {#disable}
+
 To disable the component in your `checkout_index_index.xml` use the following instructions:
 
 ```xml

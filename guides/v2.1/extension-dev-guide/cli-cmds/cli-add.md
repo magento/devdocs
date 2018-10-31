@@ -5,8 +5,6 @@ title: Add CLI commands
 menu_title: Add CLI commands
 menu_node: parent
 menu_order: 1
-version: 2.1
-github_link: extension-dev-guide/cli-cmds/cli-add.md
 redirect_from: /guides/v2.0/extension-dev-guide/cli-add.html
 ---
 

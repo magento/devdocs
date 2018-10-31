@@ -1,8 +1,6 @@
 ---
 group: mrg
 title: Magento_Sales module
-version: 2.1
-github_link: mrg/ce/Sales.md
 redirect_from:
  - /guides/v2.1/mrg/ce/Sales/description.html
  - /guides/v2.1/mrg/ce/Sales/dependencies.html
@@ -146,7 +144,7 @@ The service returns an identifier of the created Invoice.
 
 #### REST declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/invoice" method="POST">
@@ -210,9 +208,6 @@ The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b
 |[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]{:target="_blank"}| An interface for sending notifications about new Invoice creation.
 |[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]{:target="_blank"}| An interface for validating service parameters and Invoice data object.
 |[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]{:target="_blank"}| An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.
-
-
-
 
 ## RefundInvoice
 
@@ -456,7 +451,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
@@ -735,7 +730,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/refund" method="POST">
@@ -955,7 +950,7 @@ The service returns the identifier of a created shipment.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/ship" method="POST">

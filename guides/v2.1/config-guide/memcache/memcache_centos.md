@@ -1,12 +1,6 @@
 ---
 group: config-guide
-subgroup: 10_mem
 title: Install, configure, verify memcached on CentOS
-menu_title: Install, configure, verify memcached on CentOS
-menu_order: 3
-menu_node:
-version: 2.1
-github_link: config-guide/memcache/memcache_ubuntu.md
 functional_areas:
   - Configuration
   - System
@@ -15,14 +9,12 @@ functional_areas:
 
 {% include config/php-memcache.md %}
 
-<h2 id="config-memcache-install">Install and configure memcached on CentOS</h2>
-This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the <a href="https://github.com/memcached/old-wiki" target="_blank">memcached wiki</a>.
+## Install and configure memcached on CentOS {#config-memcache-install}
 
-<div class="bs-callout bs-callout-info" id="info">
-   <span class="glyphicon-class">
-   <p>We recommend using the latest stable memcache or memcached version (currently, 3.0.8 for memcache and 2.2.0 for memcached).</p></span>
-</div>
+This section provides instructions to install memcached on CentOS and Ubuntu. For additional information, consult the [memcached wiki](https://github.com/memcached/old-wiki).
 
+{:.bs-callout .bs-callout-info}
+We recommend using the latest stable memcache or memcached version (currently, 3.0.8 for memcache and 2.2.0 for memcached).
 
 To install memcached on CentOS, perform the following tasks as a user with `root` privileges:
 
@@ -33,10 +25,8 @@ To install memcached on CentOS, perform the following tasks as a user with `root
         yum install -y memcached
         yum install -y php-pecl-memcache
 
-    <div class="bs-callout bs-callout-info" id="info">
-        <span class="glyphicon-class">
-        <p>The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use <code>yum search memcache|grep php</code> to find the appropriate package name.</p></span>
-    </div>
+    {:.bs-callout .bs-callout-info}
+    The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use `yum search memcache|grep php` to find the appropriate package name.
 
 3.  Change the memcached configuration setting for `CACHESIZE` and `OPTIONS`:
 
@@ -48,7 +38,7 @@ To install memcached on CentOS, perform the following tasks as a user with `root
             CACHESIZE="1GB"
     3.  Locate the value for `OPTIONS` and change it to `localhost` or `127.0.0.1`
 
-    For more information about configuring memcached, see <a href="https://code.google.com/p/memcached/wiki/NewConfiguringServer" target="_blank">the memcached wiki</a>.
+    For more information about configuring memcached, see [the memcached wiki](https://code.google.com/p/memcached/wiki/NewConfiguringServer).
 
 4.  Save your changes to `memcached` and exit the text editor.
 5.  Restart memcached.
@@ -61,7 +51,8 @@ To install memcached on CentOS, perform the following tasks as a user with `root
 
 6.  Continue with the next section.
 
-<h2 id="config-memcache-verify-its-cent">Verify memcached works before installing Magento</h2>
+## Verify memcached works before installing Magento {#config-memcache-verify-its-cent}
+
 We recommend testing memcached to make sure it works before you install Magento. Doing so takes only a few minutes and can simplify troubleshooting later.
 
 ### Verify memcached is recognized by the web server
@@ -81,7 +72,7 @@ To verify memcached is recognized by the web server:
 
 2.  Make sure memcache displays as follows:
 
-    <img src="{{ site.baseurl }}/common/images/config_memcache.png" alt="Confirm memcache is recognized by the web server">
+    ![Confirm memcache is recognized by the web server]({{ site.baseurl }}/common/images/config_memcache.png)
 
     Verify you're using memcached version 3.0.5 or later.
 
@@ -91,7 +82,7 @@ To verify memcached is recognized by the web server:
 
 The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script first searches the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
 
-<a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04" target="_blank">More details about this test</a>
+[More details about this test](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04)
 
 Create the MySQL database:
 
@@ -108,7 +99,7 @@ At the `mysql` prompt, enter the following commands:
 
 Create `cache-test.php` in your web server's docroot:
 
-{% highlight php startinline=true %}
+```php?start_inline=1
 if (class_exists('Memcache')) {
     $meminstance = new Memcache();
 } else {
@@ -136,7 +127,7 @@ if (!$result) {
 }
 print "got result from memcached\n";
 return 0;
-{% endhighlight %}
+```
 
 where `<memcache hostname or ip>` is either `localhost`, `127.0.0.1`, or the memcache hostname or IP address. `<memcache port>` is its listen port; by default, `11211`.
 
@@ -172,7 +163,8 @@ Flush the memcache storage and quit Telnet:
     flush_all
     quit
 
-<a href="http://www.darkcoding.net/software/memcached-list-all-keys/" target="_blank">Additional information about the Telnet test</a>
+[Additional information about the Telnet test](http://www.darkcoding.net/software/memcached-list-all-keys/)
 
 #### Next step
-<a href="{{ page.baseurl }}/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a>
+
+[Configure Magento to use memcached]({{ page.baseurl }}/config-guide/memcache/memcache_magento.html)

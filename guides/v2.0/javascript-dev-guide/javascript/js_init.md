@@ -4,14 +4,12 @@ subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 menu_title: Calling and initializing JavaScript
 menu_order: 10
-version: 2.0
-github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
  - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
-<h2 id="js_init_overview">Overview</h2>
+## Overview   {#js_init_overview}
 
 This topic talks about how to insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
 
@@ -20,8 +18,8 @@ It covers declarative notation, used when initialization is required, and impera
 We strongly recommend that you use the described approaches and do not add inline {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}.
 
 ## Insert a JS component in a PHTML template {#init_phtml}
-Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
 
+Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
 
 ### Declarative notation
 
@@ -145,7 +143,6 @@ require([
 });
 </script>
 {%endhighlight%}
-
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 

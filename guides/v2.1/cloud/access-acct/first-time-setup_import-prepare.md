@@ -1,14 +1,6 @@
 ---
 group: cloud
-subgroup: 080_setup
 title: Prepare your existing Magento Commerce install
-menu_title: Prepare your existing Magento Commerce install
-menu_order: 153
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: import
-version: 2.1
-github_link: cloud/access-acct/first-time-setup_import-prepare.md
 functional_areas:
   - Cloud
   - Setup
@@ -16,42 +8,46 @@ functional_areas:
 
 You need to prepare your existing {{site.data.var.ee}} implementation to import it into a new {{site.data.var.ece}} project. This includes updating and adding files, transferring media files, and migrating data.
 
-Before preparing your project and importing code, push all pending changes to Git. Your remote {{site.data.var.ece}} branch should be fully updated. When you push, build and deploy scripts run to update code, static content, and environment services.
+Before preparing your project and importing code, push all pending changes from your local workstation to your remote {{site.data.var.ece}} repository. When you push, the build and deploy scripts run to update code, static content, and environment services.
 
-These import preparation steps include the following:
+The import preparation steps include the following:
 
-* [Prepare and add required files](#required-files):
-* [Add Cloud-specific files and directories ]to {{site.data.var.ee}}. Without these files and directories, your {{site.data.var.ee}} code can't be imported to Cloud.
-* [Add Authentication Keys to `auth.json`.](#auth-json)
-* [Modify your existing `composer.json`](#composer-json) to specify Cloud-specific dependencies. Make sure to include all modules. Cloud uses this file for `composer install` commands. Add `composer.lock` to Git. Cloud uses this file for `composer update` commands and during the build and deploy process.
-* [Transfer media files to Cloud.](#media)
-* [Add your {{site.data.var.ee}} authentication credentials](#encryption-key) to `auth.json` if you haven't done so already.
-* [Migrate your {{site.data.var.ee}} data.](#migrate-db)
+-  [Prepare and add required files](#required-files)
+-  [Add Magento authentication keys](#auth-json)
+-  [Modify your existing `composer.json`](#composer-json)
+-  [Transfer media files to Cloud](#media)
+-  [Add your {{site.data.var.ee}} encryption key](#encryption-key)
+-  [Migrate your {{site.data.var.ee}} data](#migrate-db)
 
 ## Prepare and add required files {#required-files}
-To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you need to add a directory and the following files to your existing code.
 
-*  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) manages applications, service relationships, mounts for writable directories, and cron jobs
-*  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html) for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
-*  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) for handling routes including redirections, caching, and server-side includes
-*  [`magento-vars.php`]({{ page.baseurl }}/cloud/project/project-multi-sites.html#cloud-multi-stores-magento-vars) for multiple websites and stores
+To import {{site.data.var.ee}} code to a {{site.data.var.ece}} project, you must add the following files to your existing code:
 
-You need to add these files to your {{site.data.var.ee}} code:
+-  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—manages applications, service relationships, mounts for writable directories, and cron jobs
+-  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—for service configurations including MySQL, PHP, Redis, Solr (2.0.X only), ElasticSearch (2.1.X and later)
+-  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—for handling routes including redirections, caching, and server-side includes
+-  [`magento-vars.php`]({{ page.baseurl }}/cloud/project/project-multi-sites.html)—for multiple websites and stores
 
-1.  Go to the [{{site.data.var.ece}} GitHub](https://github.com/magento/magento-cloud){:target="\_blank"}.
-2.  Select the branch corresponding to the {{site.data.var.ee}} version you currently have.
+Add these files to your {{site.data.var.ee}} code:
+
+1.  In the [{{site.data.var.ece}} GitHub repository](https://github.com/magento/magento-cloud){:target="\_blank"}, select the branch corresponding to the {{site.data.var.ee}} version you currently have.
 
     The following figure shows an example of selecting the `2.1.4` branch.
 
     ![Switch to your current Magento Commerce branch]({{ site.baseurl }}/common/images/cloud_cloud-git-214.png){:width="600px"}
 
-    In the procedure that follows, you'll copy the contents of some of these files to your {{site.data.var.ee}} system.
-3.  Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-4.  Enter the following commands in the order shown:
+1.  Log in to your {{site.data.var.ee}} system as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
+1.  Change to the Magento installation directory and create a `.magento` directory.
 
-        cd <Magento installation dir>
-        mkdir .magento
-5.  One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} GitHub:
+    ```bash
+    cd <Magento installation dir>
+    ```
+
+    ```bash
+    mkdir .magento
+    ```
+
+5.  One at a time, create the following files in your {{site.data.var.ee}} system using the contents of the files in the {{site.data.var.ece}} repository:
 
     *   `<Magento Commerce install dir>/.magento.app.yaml`
     *   `<Magento Commerce install dir>/magento-vars.php`
@@ -72,37 +68,70 @@ You need to add these files to your {{site.data.var.ee}} code:
         * Make sure to create `magento-vars.php` in the Magento root directory.
         * Make sure to create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 
-Modify these files as necessary as discussed in the following topics:
-
-*  [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
-*  [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
-*  [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
-
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
-## Add or update `auth.json` with Magento Authentication keys {#auth-json}
-To enable install and update commands for {{site.data.var.ece}}, you must have an `auth.json` file in your project's root directory. `auth.json` contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html) for {{site.data.var.ece}}.
+## Add Magento authentication keys {#auth-json}
 
-In some cases, you might already have `auth.json`. Verify if you have the file and add your authentication credentials before you create a new one. It's located in your Magento root directory. You can also [get a sample `auth.json`](https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample){:target="\_blank"}.
+You must have an authentication key to access the {{site.data.var.ee}} repository and to enable install and update commands for your {{site.data.var.ece}} project. There are two methods for specifying Composer authorization credentials.
 
-To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} you don't have one:
+-  **authentication file**—You must have an `auth.json` file that contains your {{site.data.var.ee}} [authorization credentials]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/connect-auth.html) in your {{site.data.var.ece}} root directory.
+-  **environment variable**—Alternatively, you can use an environment variable to set up authentication keys in your {{site.data.var.ece}} project to prevent accidental exposure.
 
-1.  Use a text editor to create a file named `auth.json` in your Magento root directory.
-3.  Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
+#### To create a new `auth.json` file:
 
-    See the following example:
+First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`](https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample){:target="\_blank"}.
 
-        {
-           "http-basic": {
-              "repo.magento.com": {
-              "username": "<public-key>",
-              "password": "<private-key>"
-            }
-          }
+1.  Using a text editor, create an `auth.json` file and save it in your Magento root directory.
+
+1.  Replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials.
+
+    ```json
+    {
+       "http-basic": {
+          "repo.magento.com": {
+          "username": "<public-key>",
+          "password": "<private-key>"
         }
-3.  Save your changes to `auth.json` and exit the text editor.
+      }
+    }
+    ```
+
+1.  Save your changes to `auth.json` file and exit the text editor.
+
+#### To add authentication keys using an environment variable:
+
+This method is best to prevent accidental exposure of credentials, such as pushing an `auth.json` file to a public repository.
+
+1.  In the _Project Web UI_, click the configuration icon in the upper left corner.
+
+1.  In the _Configure Project_ view, click the **Variables** tab.
+
+1.  Click **Add Variable**.
+
+1.  In the _Name_ field, enter `env:COMPOSER_AUTH`.
+
+1.  In the _Value_ field, add the following and replace `<public-key>` and `<private-key>` with your {{site.data.var.ee}} authentication credentials:
+
+    ```json
+    {
+       "http-basic": {
+          "repo.magento.com": {
+          "username": "<public-key>",
+          "password": "<private-key>"
+        }
+      }
+    }
+    ```
+
+1.  Select **Visible during build** and deselect **Visible at run**.
+
+1.  Click **Add Variable**.
+
+1.  Remove the `auth.json` file from each environment.
+
 
 ## Edit `composer.json` {#composer-json}
+
 Before you push code to the {{site.data.var.ece}} Git repository, modify your `composer.json` for Cloud. You can also [view a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json){:target="\_blank"}.
 
 To edit `composer.json`:
@@ -117,9 +146,8 @@ To edit `composer.json`:
 
         "magento/magento-cloud-metapackage": "<version>",
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    {:.bs-callout .bs-callout-info}
     Both `<version>` values _must be the same_. For example, if your current {{site.data.var.ee}} version is 2.1.9, your `magento-cloud-metapackage` version must also be 2.1.9.
-    </div>
 
 4.  Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
 
@@ -143,6 +171,7 @@ To edit `composer.json`:
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
 ## Back up and transfer media files {#media}
+
 Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) to back up media files:
 
 1.  Get the  integration system's [SSH URL]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-first-steps.html#ssh).
@@ -160,7 +189,8 @@ Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/
         rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
 
 ## Copy the encryption key {#encryption-key}
-To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. Every environment inIntegration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
+
+To decrypt the encrypted data from your imported database, copy your encryption from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
 2.  Search for the value of `key` in the `crypt` array.
@@ -169,6 +199,7 @@ To be able to decrypt encrypted data from your imported database, copy your encr
 You must paste the encryption key into your {{site.data.var.ece}} `env.php` file in each environment in a [later step]({{ page.baseurl }}/cloud/access-acct/first-time-setup_import-import.html#encryption-key).
 
 ## Migrate Magento Commerce data {#migrate-db}
+
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
 
 The following command example compresses the dump so it doesn't significantly interfere with traffic from in live site. The dump file is named `db.sql.gz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.

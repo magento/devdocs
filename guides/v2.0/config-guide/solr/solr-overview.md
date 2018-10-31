@@ -5,9 +5,7 @@ title: Install and configure Solr
 menu_title: Install and configure Solr (Magento Commerce only)
 menu_order: 1
 menu_node: parent
-version: 2.0
 ee_only: True
-github_link: config-guide/solr/solr-overview.md
 functional_areas:
   - Configuration
   - Search
@@ -38,6 +36,7 @@ See one of the following sections for more information:
 *	[More information about the Solr solution](#overview-solr){:target="_blank"}
 
 ### Intended audience and purpose of this topic {#overview-this-topic}
+
 This topic is intended for {{site.data.var.ee}} administrators and systems integrators who have some familiarity with search engines&mdash;ideally, who also have Solr configuration experience.
 No programming is required to perform the tasks discussed in this topic.
 
@@ -50,9 +49,8 @@ It's for testing and development only.
 Because it's simple to use, it's a great way for you to learn more about Solr.
 </div>
 
-
-
 ### More information about the Solr solution {#overview-solr}
+
 Solr runs as a standalone full-text search server in a servlet container such as Jetty (which is used by the Solr example configuration) and Tomcat.
 
 Solr uses the Lucene Java search {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for full-text indexing and search.
@@ -83,6 +81,7 @@ Some reasons to use Solr with Magento include:
 *	When the system is under load, Solr avoids frequent updates of the MySQL <code>catalogsearch_fulltext</code> table and alleviates issues with database table locks.
 
 ## Assumptions for using Solr in a development environment {#dev}
+
 This topic discusses a simple way to set up Solr in a development environment.
 No coding is required.
 
@@ -99,8 +98,8 @@ The following suggestions in this topic should *not* be used in a production env
 	SELinux settings are entirely up to you.
 Magento does not recommend particular settings; however, be aware that setting up SELinux is very complex.
 
-
 ## Prerequisites {#prereq}
+
 The tasks discussed in this topic require the following:
 
 *	[Disable the UNIX firewall and SELinux](#prereq-secy){:target="_blank"}
@@ -108,12 +107,14 @@ The tasks discussed in this topic require the following:
 *	[Latest available version of Solr 4](#install-prereq-solr){:target="_blank"}
 
 ### Firewall and SELinux {#prereq-secy}
+
 By default, UNIX systems generally enable a firewall with restrictive rules and also enable SELinux, which imposes other types of security on the operating system.
 It's easier to run Solr in development by disabling the firewall and SELinux but that choice is up to you.
 
 If you choose to enable your firewall and SELinux, you must set up rules to allow TCP traffic between Magento and Solr on Solr's listen port (8983 by default).
 
 #### Disable iptables and SELinux
+
 To stop the `iptables` (firewall) service, enter the following command as a user with `root` privileges:
 
 	service iptables stop
@@ -131,6 +132,7 @@ To set SELinux for permissive mode:
 		setenforce 0
 
 #### Set up rules for iptables and SELinux
+
 To set up rules to allow communication with the firewall or SELinux enabled, consult the following resources:
 
 *	[iptables how-to](https://help.ubuntu.com/community/IptablesHowTo){:target="_blank"}
@@ -140,6 +142,7 @@ To set up rules to allow communication with the firewall or SELinux enabled, con
 *	[SELinux How-To Wiki (CentOS.org)](https://wiki.centos.org/HowTos/SELinux){:target="_blank"}
 
 ### Install the Java Software Development Kit (JDK) {#prereq-java}
+
 To determine if Java is already installed, enter the following command:
 
 	java -version
@@ -158,11 +161,13 @@ See one of the following sections:
 * [Install the latest JDK on Ubuntu](#install-prereq-java-ubuntu){:target="_blank"}
 
 #### Install the JDK on CentOS {#install-prereq-java-centos}
+
 See [this article on digitalocean](https://www.digitalocean.com/community/tutorials/how-to-install-java-on-centos-and-fedora#install-oracle-java-8){:target="_blank"}.
 
 Be sure to install the JDK and *not* the JRE.
 
 #### Install the Java 6 or later SDK on Ubuntu {#install-prereq-java-ubuntu}
+
 To install the Java 6 SDK, enter the following command as a user with <code>root</code> privileges:
 
 <pre>apt-get install openjdk-6-jdk</pre>
@@ -178,6 +183,7 @@ For example, you can search the list of available packages for Ubuntu [here](htt
 To install JDK 1.8 on Ubuntu, see [Oracle documentation](https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html){:target="_blank"}.
 
 ### Install Solr 4 and Jetty {#install-prereq-solr}
+
 The Apache Solr package installs both Solr and Jetty.
 If Jetty is already installed, see the [Solr with Jetty Wiki](https://cwiki.apache.org/confluence/display/solr/Running+Solr+on+Jetty){:target="_blank"} for more information.
 

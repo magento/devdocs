@@ -4,8 +4,6 @@ subgroup: 30_B2B
 title: Magento_RequisitionList module
 menu_title: RequisitionList
 menu_order: 190
-version: 2.2
-github_link: mrg/b2b/RequisitionList.md
 functional_areas:
   - B2B
 ---

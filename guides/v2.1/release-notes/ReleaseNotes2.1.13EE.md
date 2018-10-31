@@ -1,8 +1,6 @@
 ---
 group: release-notes
 title: Magento Commerce 2.1.13 Release Notes
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.13EE.md
 ---
 
 *	TOC
@@ -15,10 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.13EE.md
 
 We are pleased to present Magento Commerce  2.1.13. This release includes many bug fixes and enhancements. Check out the many community-contributed fixes!
 
-
-
 ## Fixed issues
-
 
 ### Setup
 
@@ -28,12 +23,9 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 
 <!--- MAGETWO-58072 -->* Magento no longer creates an `/ i18n` at system root (`/`) in addition to the expected language file when you run `bin/magento i18n:pack` to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
-
-
 ### Bundle
+
 <!--- MAGETWO-69496 -->*  You can now specify a Bundle option title on a store-view level with changes to more than one store view. Previously, after making a change to the store view title of a second store view, the previous store view would show the default title for the store view title.
-
-
 
 ### Catalog
 
@@ -59,7 +51,6 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 
 <!--- MAGETWO-87521 -->*   Product page attribute labels are now translated as expected when languages other than English are used. Previously, these fields were empty. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13532*. [GitHub-10738](https://github.com/magento/magento2/issues/10738)
 
-
 ### Cart and checkout
 
 <!--- MAGETWO-87195 -->*  Magento now displays the expected state in the Multishipping New Address form when a customer enters information on the Ship to Multiple Addresses page. *Fix submitted by [enriquei4](https://github.com/enriquei4) in pull request 13367*. [GitHub-8069](https://github.com/magento/magento2/issues/8069)
@@ -72,9 +63,6 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 
 <!--- MAGETWO-87745 -->* You can now create unique checkbox IDs for the Terms and Conditions part of the checkout process. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13543*. [GitHub-6207](https://github.com/magento/magento2/issues/6207)
 
-
-
-
 ### Configurable products
 
 <!--- MAGETWO-86312 -->*   Magento now reorders configurable attribute options as expected on the product page. *Fix submitted by [wardcapp](https://github.com/wardcapp) in pull request 12962*. [GitHub-7441](https://github.com/magento/magento2/issues/7441)
@@ -82,10 +70,8 @@ We are pleased to present Magento Commerce  2.1.13. This release includes many b
 <!--- MAGETWO-60140 -->*  You can now disable a child product from a configurable product’s edit page. Previously, the child product’s status
 did not change after you selected **Disable product**.
 
-
-
-
 ### Customers
+
 <!--- MAGETWO-85674 -->* `window.checkout.customerLoginUrl` now contains a URL that includes the referer in base64 encoding (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). Previously, the login URL did not include a referer (for example, https://myshop.com/customer/account/login). *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request 12629*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
 
 <!--- MAGETWO-84861 -->*  Administrators can now reset customer passwords as expected when the **max wait time between password resets** setting has been disabled.  Previously, when an administrator attempted to reset a customer's password from the Admin, Magento displayed this error, `Too many password reset requests`, even when the **max wait time between password resets** setting had been disabled. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request 11436*. [GitHub-12627](https://github.com/magento/magento2/issues/12627)
@@ -94,35 +80,25 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-84733 -->* Magento now refreshes customer data in `localStorage` upon customer log in, which results in proper loading of the customer's cart. Previously, when a customer with existing cart items logged in using the authentication popup, the mini cart did  not display her cart items. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request 12246*.
 
-
-
 ### Framework
 
 <!--- MAGETWO-86676 -->* `vendor/magento/framework/composer.json` now declares a dependency on `magento/zendframework1`. Previously, packages depending on `magento/framework` packages failed to execute. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request 12991*. [GitHub-12967](https://github.com/magento/magento2/issues/12967)
-
-
-
 
 #### Configuration framework
 
 <!--- MAGETWO-83646 -->*  Scope-based configuration now decrypts data as expected. Previously, scope-based configuration failed to decrypt data on the default store only. [GitHub-8591](https://github.com/magento/magento2/issues/8591)
 
-
-
 #### Session framework
 
 <!--- MAGETWO-83288 -->* When you add a product to your wish list after logging out, Magento now redirects you to your account wish list page and adds the product. Previously, you were redirected to your wish list page, but Magento did not add the product. [GitHub-11825](https://github.com/magento/magento2/issues/11825)
-
 
 #### Web API framework
 
 <!--- MAGETWO-59726 -->*  When you used REST to create a paginated search of products, Magento now includes `category_id`s   as expected in the `custom_attributes` section of listed products. [GitHub-6127](https://github.com/magento/magento2/issues/6127)
 
-
 #### Zend
+
 <!--- MAGETWO-86300 -->*  We've upgraded the Zend framework `Zend_Service` component. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12958*. [GitHub-9243](https://github.com/magento/magento2/issues/9243)
-
-
 
 ### General
 
@@ -150,25 +126,17 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-84907 -->* Duplicate array keys in `app/code/Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Attributes/Extend.php` and `app/code/Magento/Downloadable/Helper/File.php` have been removed. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request 12519*.
 
-
-
 ### Gift card
 
 <!--- MAGETWO-84806 -->* Magento now includes a gift card recipient's email address in the gift card account history. Previously, Magento did not include the gift card recipient's name and email address in the gift card account history, even though Magento successfully sent the email.
-
-
 
 ### Index
 
 <!--- MAGETWO-83478 -->*  You can now view the state of the `mview` queue in real time, which can be useful when debugging indexing issues. You can now view how many items are in the queue pending processing, as well as view information from the `mview_state` table. *Fix submitted by [Luke Rodgers](https://github.com/convenient) in pull request 12050*.
 
-
-
 ### Newsletter
 
 <!--- MAGETWO-66793 -->* Merchants can now unsubscribe customers from a newsletter from the Admin. [GitHub-6313](https://github.com/magento/magento2/issues/6313)
-
-
 
 ### Order management
 
@@ -177,7 +145,6 @@ did not change after you selected **Disable product**.
 <!--- MAGETWO-86259 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12952*. [GitHub-9969](https://github.com/magento/magento2/issues/9969)
 
 <!--- MAGETWO-84108 -->* You can now alter the transport variable in the `email_invoice_set_template_vars_before` event. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request 12135*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
-
 
 ### Payment methods
 
@@ -189,8 +156,6 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-86429 -->*  You can now implement a product attribute that sets **Catalog Input Type for Store Owner** equal to **Fixed Product Tax** in a multistore environment. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 13020*. [GitHub-12393](https://github.com/magento/magento2/issues/12393)
 
-
-
 ### Reports
 
 <!--- MAGETWO-84476 -->*  When generating the output of **Reports > Marketing > Products in Cart**, Magento no longer calls the data of products that have been deleted from the cart. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request 12321*.
@@ -200,41 +165,27 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-83094 -->* You can now successfully export the Ordered Products report to a CSV file. Previously, the export file contained no report data.
 
-
-
-
-
-
-
 ### Scope
 
 <!--- MAGETWO-80502 -->* Products are now activated only for specified websites after a scheduled update has run. Previously, Magento incorrectly activated the product for all websites when the scheduled update event ended.
 
-
-
-
-
-
-
 ### Search
+
 <!--- MAGETWO-72312 -->* Layered navigation now displays the correct product count. Previously, the layered navigation product count incorrectly included only in-stock products.
 
 <!--- MAGETWO-60246 -->* When you switch between multiple currencies on the storefront, Magento now converts the product price into the correct currency. [GitHub-6746](https://github.com/magento/magento2/issues/6746)
-
 
 ### Shipping
 
 <!--- MAGETWO-59660 -->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
-
 ### Swagger
-<!--- MAGETWO-85180 -->*  The code formatting in the Swagger block and template has been updated.
 
+<!--- MAGETWO-85180 -->*  The code formatting in the Swagger block and template has been updated.
 
 ### Translations
 
 <!--- MAGETWO-86285 -->* Inline translations and custom translators now work for Knockout templates. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 12954*. [GitHub-2156](https://github.com/magento/magento2/issues/2156)
-
 
 ### UI
 
@@ -245,19 +196,12 @@ did not change after you selected **Disable product**.
 
 <!--- MAGETWO-83282 -->* Magento no longer displays the current date when a product's date attribute has an empty value. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 12033*.  [GitHub-9869](https://github.com/magento/magento2/issues/9869)
 
-
 ### Wish list
+
 <!--- MAGETWO-86204-->* The default value for a wish list item's `buyRequest` data is now always an array. Previously, this value was set to `null`. *Fix submitted by [James Halsall](https://github.com/jameshalsall) in pull request 12930*.
 
 
 <!--- NOT NEEDED  MAGETWO-89535 MAGETWO-89066 MAGETWO-88992 MAGETWO-88336 MAGETWO-53814 MAGETWO-60969 MAGETWO-61020 MAGETWO-85904 MAGETWO-85755 MAGETWO-84822 MAGETWO-69577 MAGETWO-69213 MAGETWO-83326 MAGETWO-84738 MAGETWO-87517 MAGETWO-84238 MAGETWO-87517 MAGETWO-84849 MAGETWO-84848 MAGETWO-84346 MAGETWO-87348 MAGETWO-87346 MAGETWO-87343 MAGETWO-86454 MAGETWO-85030 MAGETWO-83115 MAGETWO-65534 MAGETWO-59163 MAGETWO-84138 MAGETWO-80426 MAGETWO-60154 MAGETWO-85206 MAGETWO-83426 MAGETWO-80324 MAGETWO-89646  -->
-
-
-
-
-
-
-
 
 ## Community contributions
 
@@ -471,18 +415,13 @@ The following table identifies contributions from our community members. This ta
 
  </table>
 
-
-
-
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
-
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
 
 ## Installation
 
 See [How to get the Magento software]({{ site.baseurl }}/guides/v2.1/install-gde/bk-install-guide.html) for comprehensive information about Magento 2.1.x installation and setup.
-
 
 ## Migration toolkits
 
@@ -493,6 +432,7 @@ An updated version of this toolkit is typically available several days after the
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions,  bug reports and code contributions.
 
 

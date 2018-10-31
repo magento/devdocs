@@ -4,16 +4,13 @@ subgroup: 02_rel-notes
 title: Magento Commerce 2.0.12 Release Notes
 menu_title: Magento Commerce 2.0.12 Release Notes
 menu_order: 267
-version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
-github_link: release-notes/ReleaseNotes2.0.12EE.md
 ---
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.0.12. This release includes many functional fixes and enhancements. 
 
 Looking for the <a href="{{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Commerce (Cloud) 2.1.4 and 2.0.12 Release Notes</a>?
-
 
 ## Highlights
 
@@ -28,11 +25,9 @@ Magento 2.0.12 contains more than 20 functional fixes and enhancements, and one 
 
 This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
-
 ## Functional fixes
 
 We address the following functional issues in this release.
-
 
 ### Catalog
 
@@ -46,8 +41,6 @@ We address the following functional issues in this release.
 
 <!--- 62654 -->* You can now successfully match products by rule with an AND condition on Category Rule. Previously, this operation did not return any matched products.  
 
-
-
 ### Checkout
 
 <!--- 58946 -->* Magento now displays custom address attributes on the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} summary. 
@@ -59,21 +52,13 @@ We address the following functional issues in this release.
 
 <!--- 61022 -->* You can now create a new order from the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a>
 
-
-
 ### Customer
 
-
 <!--- 60965 -->* When you add an address, new custom attributes are now displayed together, along with other address details. 
-
-
 
 ### Gift card
 
 <!--- 57610 -->* You can now use a {% glossarytooltip f5cdf732-d644-4bd5-9f75-53b01401b7e7 %}gift card{% endglossarytooltip %} to complete payment for an order that contains gift wrap. Previously, when you paid for an order with a gift card, the gift wrap amount remained as a balance, even when the gift card contained sufficient funds to cover the expense of gift wrapping.
-
-
-
 
 ### Import/export
 
@@ -83,10 +68,7 @@ We address the following functional issues in this release.
 
 <!--- 63243 -->* You can now use {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager to uninstall extensions that were installed using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}. 
 
-
-
 ### Miscellaneous
-
 
 <!--- 60724 -->* Magento now redirects you to the Setup page as expected when you specify a particular port when installing the application using {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}Nginx{% endglossarytooltip %}. Previously, Magento did not {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} you to the Setup page, and instead displayed this message in `var/report`: `You cannot install Magento using the Setup Wizard because the Magento setup directory cannot be accessed`. 
 
@@ -102,16 +84,11 @@ We address the following functional issues in this release.
 		Command returned non-zero exit code:
 		`php -f /var/www/html/20ce/bin/magento setup:di:compile-multi-tenant 2>&1`
 
-
-
 ### Payment methods
 
 <!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displays this message, **No {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}Payment method{% endglossarytooltip %} available**.
 
-
-
 ### Sales
-
 
 <!--- 61151 -->* Magento now displays an error message as expected when a user tries to add less than the specified minimum quantity of a product to his shopping cart. 
 
@@ -120,9 +97,6 @@ We address the following functional issues in this release.
 <!--- 60327 -->* Magento no longer assigns all orders a status of Suspected Fraud in multi-currency store configurations. <a href="https://github.com/magento/magento2/issues/4263" target="_blank">(GITHUB-4263)</a>
 
 <!--- 61146 -->* An Admin user with restricted permissions no longer has access to all orders. 
-
-
-
 
 ### Travis builds
 
@@ -201,20 +175,16 @@ We address the following functional issues in this release.
 
 <!--- 61150 -->* **Issue**: When editing a product description, you cannot delete a product image across multiple stores. When you try to save your edits, Magento displays this message: **The image cannot be removed as it has been assigned to the other image role**. 
 
-
-
-
-
 ## System requirements
+
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. See
 <a href="{{ page.baseurl }}/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 {% include install/releasenotes/ee_install_20.md %}
 
-
-
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

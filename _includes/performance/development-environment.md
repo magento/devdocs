@@ -19,7 +19,7 @@ These commands were built for use in production mode only.
   magento setup:di:compile
   ```
   `setup:di:compile` generates auto-generated classes and optimized configuration caches.
-  In development mode, Magento performs the generation on-demand; you do not need to run it. 
+  In development mode, Magento performs the generation on-demand; you do not need to run it.
   If you modified a signature of a class and need to re-generate its auto-generated factories/proxies/interceptors, remove those classes or the _generated_ folder.
 
 * ```bash
@@ -28,7 +28,6 @@ These commands were built for use in production mode only.
   `setup:static-content:deploy` deploys static content for a store.
   In development mode, Magento performs it on-demand; you do not need to run it.
 
-
 ## Normal page load time on a virtual machine
 
 If you develop on a VM and it takes longer than 2 seconds to load a Magento page, review your environment settings.
@@ -36,7 +35,4 @@ If you develop on a VM and it takes longer than 2 seconds to load a Magento page
 <!-- Link definitions -->
 
 [clean the caches]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean
-{:target="_blank"}
 [disable the caches]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en
-{:target="_blank"}
-</div>

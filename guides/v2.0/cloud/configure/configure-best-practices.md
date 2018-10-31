@@ -5,8 +5,6 @@ title: Best practices for store configuration
 menu_title: Best practices for store configuration
 menu_order:
 menu_node:
-version: 2.0
-github_link: cloud/configure/configure-best-practices.md
 functional_areas:
   - Cloud
   - Configuration
@@ -15,6 +13,7 @@ functional_areas:
 For detailed information for configuring your store, sites, and websites, you may want to review the  [Magento 2.2.x User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html){:target="_blank"}. This page provides best practices, helpful information, and guidelines for configuring your stores, sites, and more with additional content to post over time and across versions.
 
 ## Understanding marketing campaigns and promotions {#campaigns}
+
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
 To create campaigns and promotions, you will create the options and settings in [Content Staging](http://docs.magento.com/m2/ee/user_guide/cms/content-staging.html){:target="_blank"}. This feature allows you to create and preview your campaigns prior to making them public for customer sales. The following information provides helpful information. For exact instructions, see the linked Magento 2 User Guide content.
@@ -31,6 +30,7 @@ The following are tips to help create, update, and manage promotions and campaig
 * You cannot directly edit in Staged Content. If you need to edit settings and options in the campaign, you will need to edit the original or a replica and push to overwrite in Staged Content. For example, if you don't an end date for a campaign, you must edit the original and push to update.
 
 ## Advanced Pricing and Staged Content {#adv-pricing}
+
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
 Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_guide/catalog/settings-advanced-advanced-pricing.html){:target="_blank"} for products through the Products > Catalogs area of the Magento Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
@@ -49,6 +49,7 @@ To edit Advanced Pricing and update Content Staging:
 For additional steps, you can continue with instructions with [Schedule Changes for Catalog Price Rules](http://docs.magento.com/m2/ee/user_guide/marketing/price-rule-catalog-scheduled-changes.html){:target="_blank"}. Click **Next** to walk through the steps.
 
 ## Example Price Rules {#price-rules}
+
 Price rules can include logic and conditions as limitless as your marketing imagination. Some popular examples include Buy One Get One Free, Buy One Get One 50% Off, a $25 dollars off on orders over $100 dollars, and so on.
 
 To create a Price Rule, see our [Magento 2 User Guide](http://docs.magento.com/m2/ee/user_guide/Search.html#search-price%20rules){:target="_blank"}.
@@ -62,6 +63,7 @@ The following provides an example of creating a Price Rule for a First Order Onl
 This ensures net-new customers or existing customers who have not made a purchase receive the discount only on their very first order. You could create banners and send email promotions for the first time purchase discount.
 
 ## Understanding websites, stores, and store views {#sites}
+
 Magento 2 allows you to run multiple stores, websites, with different views all through a single implementation. How they work together to provide multiples stores, sites, catalogs, and shopping experiences can be confusing. This section explains what these are, how they work. To configure a multi-site {{site.data.var.ece}} implementation, see [Set up multiple websites or stores]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
 
 You can set up and run several shops through a single implementation of Magento. If you want to have shops that do not interact with each other, you create multiple _websites_. Each website has specific articles, customer data, checkouts, and shopping cart not shared with other websites in Magento.

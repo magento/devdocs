@@ -5,8 +5,6 @@ title: Enable or disable modules
 menu_title: Enable or disable modules
 menu_node:
 menu_order: 7
-version: 2.0
-github_link: install-gde/install/cli/install-cli-subcommands-enable.md
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-enable.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-enable.html
@@ -16,15 +14,17 @@ functional_areas:
   - Setup
 ---
 
+## First steps   {#instgde-cli-before}
 
-<h2 id="instgde-cli-before">First steps</h2>
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-subcommands-enable-disable-prereq">Prerequisites</h2>
+## Prerequisites   {#instgde-cli-subcommands-enable-disable-prereq}
+
 This command has no prerequisites.
 
-<h2 id="instgde-cli-subcommands-enable-disable">Module enable, disable</h2>
+## Module enable, disable   {#instgde-cli-subcommands-enable-disable}
+
 To enable or disable available modules, use the following command:
 
 	magento module:enable [-c|--clear-static-content] [-f|--force] [--all] <module-list>
@@ -51,13 +51,15 @@ For example, to disable the Weee module, enter:
 
 For important information about enabling and disabling modules, see <a href="#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.
 
-<h2 id="instgde-cli-subcommands-enable-update">Update the database</h2>
+## Update the database   {#instgde-cli-subcommands-enable-update}
+
 If you enabled one or more modules, run the following command to update the database:
 
 	magento setup:upgrade
 
-<h2 id="instgde-cli-subcommands-enable-modules">About enabling and disabling modules</h2>
-{% include install/enable-disable-modules.html %}
+## About enabling and disabling modules   {#instgde-cli-subcommands-enable-modules}
+
+{% include install/enable-disable-modules.md %}
 
 #### Related topics
 

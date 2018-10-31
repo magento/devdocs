@@ -1,13 +1,12 @@
 ---
 group: cloud
 title: Theme troubleshooting
-version: 2.1
-github_link: cloud/trouble/theme-troubleshooting.md
 ---
 
 This information helps you troubleshoot issues with themes added to your {{site.data.var.ece}} sites and stores.
 
 ## Lost images on deployment {#images}
+
 When using a theme in your stores that resizes images, the images may not display or disappear from catalog pages when deployed. This may occur due to loading the images from the cache. If this happens, you can use Magento command to regenerate the image cache and properly display the images.
 
 This issue can occur in all environments during any deployment.
@@ -25,6 +24,7 @@ To resolve, you need the SSH information and store URL available through the [Pr
 1.  Test the category pages through the store URL.
 
 ## Locate blocks in themes that make them uncacheable {#uncache}
+
 When debugging your themes, you may need to locate blocks in themes that make the pages uncacheable. Use the following command to locate these blocks.
 
 ```bash

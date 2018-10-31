@@ -1,67 +1,63 @@
 ---
 group: pattern
-subgroup:
 title: Admin Design Pattern Library
 landing-page: Pattern Library
-menu_title: Introduction
-menu_order:
-menu_node:
-version: 2.1
-github_link: pattern-library/bk-pattern.md
 redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---
-<h3>What is a design pattern?</h3>
+## What is a design pattern?
 
 Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables and forms - that are standardized to be easily repeated and reused across a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or application.
 
-Patterns include definitions, examples, instructions and specifications that break down spatial relationships and interactions / behaviors. 
+Patterns include definitions, examples, instructions and specifications that break down spatial relationships and interactions / behaviors.
 
-<h3>Why use patterns?</h3>
+## Why use patterns?
 
 Using patterns enhances customer experience through maintaining consistency and ease of use. And, sticking to defined standards simplifies updating patterns across multiple pages when changes are required.
 
 Patterns libraries are designed to evolve over time, never going out of date. Changes should be communicated, as they occur, to the design community.
 
-<br> <br>
 Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}Library{% endglossarytooltip %} in the following topic:
 
-#### Container
-<a href="containers/staticContentContainer/contentContainer.html">Static Content Container</a><br>
-<a href="containers/slideouts-modals-overlays/slideouts-modals-overalys.html">Slide-out Panels, Modal Windows, and Overlays</a><br>
-<a href="containers/tabs/tabs.html">Tabs</a><br>
+### Container
 
-#### Controls
-<a href="controls/buttons/buttons.html">Buttons</a><br>
-<a href="controls/button-bar/button-bar.html">Button Bar</a>
+* [Static Content Container](containers/staticContentContainer/contentContainer.html)
+* [Slide-out Panels, Modal Windows, and Overlays](containers/slideouts-modals-overlays/slideouts-modals-overalys.html)
+* [Tabs](containers/tabs/tabs.html)
 
-#### Displaying and Dealing with Data
-<a href="displaying-data/tile/tile.html">Tile</a><br>
-<a href="filters/data-table-filters/filtering.html">Filters</a><br>
-<a href="displaying-data/datatable/datatable.html">Data Table</a><br>
-<a href="displaying-data/tree/tree.html">Tree</a><br>
+### Controls
 
+* [Buttons](controls/buttons/buttons.html)
+* [Button Bar](controls/button-bar/button-bar.html)
 
-#### Feedback to User
-<a href="feedbackToUser/progressIndicator/progressIndicator.html">Progress Indicator</a>
+### Displaying and Dealing with Data
 
+* [Tile](displaying-data/tile/tile.html)
+* [Filters](filters/data-table-filters/filtering.html)
+* [Data Table](displaying-data/datatable/datatable.html)
+* [Tree](displaying-data/tree/tree.html)
 
-#### Getting User Input
-<a href="getting-user-input/form_elements/form_elements.html">Form Elements</a><br>
-<a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a><br>
-<a href="getting-user-input/date_time_selector/date_time_selector.html">Date and Time Selector</a>
-<a href="getting-user-input/use_default_config/use_default_config.html">Use Default Config</a><br>
-<a href="getting-user-input/select_from_list/select_from_list.html">Select From List</a>
+### Feedback to User
 
+* [Progress Indicator](feedbackToUser/progressIndicator/progressIndicator.html)
 
-#### Navigation
-<a href="navigation/links/links.html">Links</a><br>
-<a href="navigation/wizard/wizard.html">Wizard</a><br>
+### Getting User Input
 
+* [Form Elements](getting-user-input/form_elements/form_elements.html)
+* [Image Uploader](getting-user-input/image_uploader/image_uploader.html)
+* [Date and Time Selector](getting-user-input/date_time_selector/date_time_selector.html)
+* [Use Default Config](getting-user-input/use_default_config/use_default_config.html)
+* [Select From List](getting-user-input/select_from_list/select_from_list.html)
 
-#### Templates
-<a href="templates/address-form/address-form.html">Address Form</a><br>
-<a href="templates/sign-in-form/sign-in-form.html">Sign In Form</a><br>
+### Navigation
 
+* [Links](navigation/links/links.html)
+* [Wizard](navigation/wizard/wizard.htm)
 
-#### General
-<a href="general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a><br>
+### Templates
+
+* [Address Form](templates/address-form/address-form.html)
+* [Sign In Form](templates/sign-in-form/sign-in-form.html)
+
+### General
+
+* [Accessibility Guidelines](general/accessibilityguideline/accessibilityGuideline.html)

@@ -1,26 +1,30 @@
 ---
 group: extension-dev-guide
 title: Develop data and schema patches
-version: 2.3
-github_link: extension-dev-guide/declarative-schema/data-patches.md
 ---
 
 A data patch is a class that contains data modification instructions. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Data/<Patch_Name>.php` file and implements `\Magento\Setup\Model\Patch\DataPatchInterface`.
 
 A schema patch contains custom schema modification instructions. These modifications can be complex. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Schema/<Patch_Name>.php` file and implements `\Magento\Setup\Model\Patch\SchemaPatchInterface`.
 
+Unlike the declarative schema approach, patches will only be applied once. A list of applied patches is stored in the `patch_list` database table. An unapplied patch will be applied when running the `setup:upgrade` from the Magento CLI. 
+
 Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`.
 
 The declarative schema approach removes the version from the `setup_module` table (in a backward compatible way), leaving only the Composer version. Therefore, you can create all new patches and modules without specifying a `setup_module` version.
 
-The sequnce of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
+The sequence of installing patches is handled through a dependency-based approach. Patches can either be independent or dependent on other patches. Independent patches can be installed in any sequence. A dependent patch requires a minimal number of patches so that it can be installed successfully.
 
-To define a dependency in a patch, make a static reference to the patch class. The class can be in any module.
+To define a dependency in a patch, add the method `public static function getDependencies()`
+to the patch class and return the class names of the patches this patch depends on. The dependency can be in any module.
 
 ``` php
-return [
-  \SomeVendor\SomeModule\Setup\Patch\Data\SomePatch::class
-];
+public static function getDependencies()
+{
+    return [
+        \SomeVendor\SomeModule\Setup\Patch\Data\SomePatch::class
+    ];
+}
 ```
 
 The following code sample defines a data patch class that has a dependency.

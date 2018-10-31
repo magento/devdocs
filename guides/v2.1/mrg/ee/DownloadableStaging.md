@@ -1,9 +1,7 @@
 ---
 group: mrg
 title: Magento_DownloadableStaging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/DownloadableStaging.md
 ---
 
 The Magento_DownloadableStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the {% glossarytooltip 38fc3629-ee25-4de5-ac7a-72db8e8de6de %}Downloadable Product{% endglossarytooltip %} updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.

@@ -3,12 +3,8 @@ group: UI_Components_guide
 subgroup: components
 title: Modal сomponent
 menu_title: Modal component
-version: 2.2
-github_link: ui_comp_guide/components/ui-modal.md
 redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
-
-## Overview
 
 The Modal {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).
 
@@ -18,14 +14,8 @@ The Modal component can be used for both {% glossarytooltip 29ddb393-ca22-4df9-a
 
 For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
-## Structure
 
-The modal UI component comprises the following files:
-
-- JS component: `<Magento_Ui_module_dir>/view/base/web/js/modal/modal-component.js`
-- Template: `<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-component.html`
-
-## Options
+## Configuration options
 
 Component's options are set in the configuration `.xml` file as follows:
 
@@ -42,9 +32,6 @@ Component's options are set in the configuration `.xml` file as follows:
 </modal>
 {%endhighlight%}
 
-Extends UiCollection configuration.
-
-Modal-specific configuration:
 <table>
   <tr>
     <th>Option</th>
@@ -90,7 +77,9 @@ Modal-specific configuration:
   </tr>
 </table>
 
-## Example of the Modal component configuration
+## Examples
+
+### Configure component
 
 The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
@@ -155,14 +144,20 @@ The following sample is an example of the configuration for a simple modal windo
 </button>
 {%endhighlight%}
 
+## Source files
 
-## Public API (JS)
+Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- `actionCancel()`: returns all modal's child components to the state they had on modal open and closes the modal window.
-- `actionDone()`: validates the changes in the modal's child components and, if valid, closes the modal.
-- `closeModal()`: closes the modal window.
-- `openModal()`: opens the modal window.
-- `setPrevValues(elem)`: returns all `elem`'s child components to the state they had on modal open.
-- `setTitle()`: sets modal title.
-- `setSubTitle()`: sets modal sub title.
-- `toggleModal()`: toggles the modal window state (open/close).
+- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+
+### Methods and events
+
+- `actionCancel()` - returns all modal's child components to the state they had on modal open and closes the modal window.
+- `actionDone()` - validates the changes in the modal's child components and, if valid, closes the modal.
+- `closeModal()` - closes the modal window.
+- `openModal()` - opens the modal window.
+- `setPrevValues(elem)` - returns all `elem`'s child components to the state they had on modal open.
+- `setTitle()` - sets modal title.
+- `setSubTitle()` - sets modal sub title.
+- `toggleModal()` - toggles the modal window state (open/close).

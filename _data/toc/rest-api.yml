@@ -2,20 +2,22 @@ label: REST API Reference
 pages:
     - label: Overview
       url: /rest/bk-rest.html
+
+    - label: Quick reference
       children:
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.0"]
           url: http://devdocs.magento.com/swagger/index_20.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.1"]
           url: http://devdocs.magento.com/swagger/index_21.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.2"]
           url: http://devdocs.magento.com/swagger/index_22.html
 
-        - label: REST APIs (Swagger)
+        - label: REST Endpoints (Swagger)
           versions: ["2.3"]
           url: http://devdocs.magento.com/swagger/index_23.html
 
@@ -28,7 +30,8 @@ pages:
         - label: Generate a local API reference
           url: /rest/generate-local.html
 
-
+    - label: Use REST endpoints
+      children:
         - label: Search using REST
           url: /rest/performing-searches.html
 
@@ -38,13 +41,51 @@ pages:
         - label: Restricting access to anonymous web APIs
           url: /rest/anonymous-api-security.html
 
+        - label: Asynchronous web endpoints
+          versions: ["2.3"]
+          url: /rest/asynchronous-web-endpoints.html
+
+        - label: Bulk endpoints
+          versions: ["2.3"]
+          url: /rest/bulk-endpoints.html
+
+        - label: Bulk operation status endpoints
+          versions: ["2.3"]
+          url: /rest/operation-status-endpoints.html
+
+        - label: Search for the status of a bulk operation
+          versions: ["2.3"]
+          url: /rest/operation-status-search.html
+
         - label: REST usage notes
           url: /rest/notes.html
 
-    - label: Create configurable products Tutorial
-      class: tutorial
-      url: /rest/tutorials/configurable-product/config-product-intro.html
-      versions: ["2.2", "2.3"]
+    - label: Tutorials
+      url: /rest/tutorials/index.html
+      versions: ["2.1", "2.2", "2.3"]
+      children:
+
+      - label: Prerequisite tasks
+        versions: ["2.2", "2.3"]
+        children:
+
+          - label: Generate an admin token
+            url: /rest/tutorials/prerequisite-tasks/create-admin-token.html
+
+      - label: Order processing
+        class: tutorial
+        url: /rest/tutorials/orders/order-intro.html
+        versions: ["2.1", "2.2", "2.3"]
+
+      - label: Order processing with MSI
+        class: tutorial
+        url: /rest/tutorials/msi-order-processing/index.html
+        versions: ["2.3"]
+
+      - label: Create configurable products
+        class: tutorial
+        url: /rest/tutorials/configurable-product/config-product-intro.html
+        versions: ["2.2", "2.3"]
 
     - label: Modules
       children:

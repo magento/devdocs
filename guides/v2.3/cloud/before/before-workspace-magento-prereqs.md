@@ -5,8 +5,6 @@ title: Install Magento prerequisites
 menu_title: Install Magento prerequisites
 menu_order: 15
 menu_node:
-version: 2.1
-github_link: cloud/before/before-workspace-magento-prereqs.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-workspace-php.html
   - /guides/v2.1/cloud/before/before-workspace-php.html
@@ -34,6 +32,7 @@ Magento documentation provides installation instructions for installing software
 </div>
 
 ## Virtual machine or container (host) {#vm}
+
 To best develop and manage your host, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.
 
 For your VM, we recommend installing one of the following:
@@ -44,15 +43,18 @@ For your VM, we recommend installing one of the following:
 When using Vagrant, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager){:target="_blank"} and using [VirtualBox](https://www.virtualbox.org/wiki/Documentation){:target="_blank"} to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 ## Development tools {#devtools}
+
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing {{site.data.var.ee}} and your code repositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
 	For more information, see [How Cloud uses Git]({{ page.baseurl }}/cloud/reference/git-integration.html).
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
 	For more information, see [How Cloud uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html).
 
 ## Web server (local) {#webserver}
+
 We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
 
 ## PHP (local) {#php}
+
 Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.1.3+ or 7.2. For information on installing PHP on CentOS and Ubuntu see [PHP](../../../v2.3/install-gde/prereq/php-centos-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
 
 The following packages may also be helpful for your PHP installation:
@@ -71,6 +73,7 @@ The following packages may also be helpful for your PHP installation:
 * [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 
 ### Set up PHP memory limit {#cloud-first-php}
+
 When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from {{site.data.var.ee}}. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
 
 To set `memory_limit`:
@@ -121,6 +124,7 @@ These example instructions detail how to install and create a MariaDB database f
 6. Exit when done.
 
 ### Pro: Set up the auto-increment for MariaDB {#cloud-mysql}
+
 You need to set an auto-increment value for the MariaDB installation.
 
 1.	As a user with `root` privileges, open `/etc/mysql/mariadb.conf.d/50-server.cnf` in a text editor.
@@ -128,6 +132,7 @@ You need to set an auto-increment value for the MariaDB installation.
 3.	Restart the service: `service mysql restart`.
 
 ### Pro: Set up the auto-increment for MySQL {#cloud-mysql}
+
 The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.ee}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
@@ -155,6 +160,7 @@ If necessary, set `auto_increment_increment` to 3:
 		service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
+
 The Magento Cloud command-line interface (CLI) tool helps you manage your projects and code branches on {{site.data.var.ece}}. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.
@@ -188,12 +194,14 @@ To install the Magento Cloud CLI:
 		magento-cloud list
 
 ## Additional requirements for Magento Commerce {#commerce}
+
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
 * [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
-* [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/prereq/integrator_install.html)
+* [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/composer.html)
 
 ## Additional options
+
 You can also install additional [optional software]({{ page.baseurl }}/install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
 #### Next step:

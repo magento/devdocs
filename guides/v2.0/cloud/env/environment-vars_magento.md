@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Application variables
-version: 2.0
-github_link: cloud/env/environment-vars_magento.md
 functional_areas:
   - Cloud
   - Configuration
@@ -52,6 +50,7 @@ The following table lists variables that you can override using environment vari
 </table>
 
 ## Magento deploy variables {#deploy}
+
 The following variables are available during the deploy process of build and deploy. To know what version the variable is available on, see the Magento Version in the table.
 
 <table>
@@ -145,6 +144,7 @@ The following variables are available during the deploy process of build and dep
 For information on the build and deploy process, see [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
 ## Add environment variables {#addvariables}
+
 You can add environment variables for active environments through the Project Web Interface and through the Magento Cloud CLI. To create variables through the Project Web Interface, see [Set environment variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -160,6 +160,7 @@ To create a variable using the command line:
 5. After creating these variables, you can list all project variables with the command `magento-cloud variable:get` or `magento-cloud vget`.
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
+
 In the event something goes wrong and you can not access your environment after it deploys, try the following:
 
 *   [SSH to the environment]({{ page.baseurl }}/cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{ page.baseurl }}/cloud/env/environments-start.html#tunnel-services) are running.

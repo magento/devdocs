@@ -1,8 +1,6 @@
 ---
 group: cloud
 title: Services
-version: 2.2
-github_link: cloud/project/project-conf-files_services.md
 functional_areas:
   - Cloud
   - Setup
@@ -15,6 +13,7 @@ When you push your Git branch, our deploy script uses the values defined by conf
 {% include cloud/note-pro-using-yaml-support.md %}
 
 ## How this file works {#howitworks}
+
 The `.magento.app.yaml` and `services.yaml` files set the services, applications, and configurations to build and include in an environment. If you add services with specific versions, the initial push and deployment of your branches with these updated files directs the PaaS environment to provision the environment with those services. When you make changes to the services, the environment updates.
 
 This affects the following environments:
@@ -25,6 +24,7 @@ This affects the following environments:
 To install and update services in Pro Staging and Production environments (IaaS), you must enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html). Indicate the service changes needed and your updated `.magento.app.yaml` and `services.yaml` files in the ticket.
 
 ## Default and supported services {#cloud-yaml-services-default}
+
 Your Git branch includes the following default `services.yaml` file:
 
 	mysql:
@@ -37,6 +37,7 @@ Your Git branch includes the following default `services.yaml` file:
 Modify this file to use specific and additional services in your deployment. See the [`type`](#cloud-yaml-services-type) section to see the services we support and deploy for you if you add them to the file.
 
 ## Service values {#services}
+
 To add a service, you add the following data to services.yaml:
 
   name:
@@ -82,4 +83,5 @@ We support and deploy the following services for you:
 For example, the current default storage amount per project is 5GB, or 5120MB. You can distribute this amount between your application and each of its services.
 
 ## Using the services
+
 For services to be available to an application in your project, you must specify [*relationships*]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#relationships) between applications and services in `.magento.app.yaml`.

@@ -1,8 +1,6 @@
 ---
 group: mtf-guide
 title: Quick start. Test run
-version: 2.0
-github_link: mtf/mtf_quickstart/mtf_quickstart_runtest.md
 ---
 
 All tests classified by categories in corresponding directories in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento`.
@@ -41,6 +39,6 @@ Let's check creating of new category. For this we should run `<magento2_root_dir
     cd <magento2_root_dir>/dev/tests/functional
     vendor/bin/phpunit --filter CreateCategoryEntityTest
 
-<h2 id="mtf_install_pre">Next Steps</h2>
+## Next Steps   {#mtf_install_pre}
 
 [&lt;&lt; Prepare environment for test]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html) | [See logs for failed tests &gt;&gt;]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_logs.html)
