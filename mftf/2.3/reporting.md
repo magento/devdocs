@@ -113,7 +113,7 @@ It means that all test steps were processed as expected.
 
 #### Failed tests
 
-The second text fails with the following report:
+The second test fails with the following report:
 
 ```terminal
 AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
