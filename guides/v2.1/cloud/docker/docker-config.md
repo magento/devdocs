@@ -13,11 +13,14 @@ functional_areas:
 
 The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. To specify a particular version, use the following options:
 
-| Service     | Key        | Default value | Possible values |
-| ----------- | ---------- | ------------- | --------------- |
-| PHP         | `--php`    | 7.1           | 7.0, 7.1, 7.2   |
-| Nginx       | `--nginx`  | latest        | 1.9, latest     |
-| MariaDB     | `--db`     | 10            | 10              |
+| Service       | Key        | Default value | Possible values |
+| ------------- | ---------- | ------------- | --------------- |
+| PHP           | `--php`    | 7.1           | 7.0, 7.1, 7.2   |
+| Nginx         | `--nginx`  | latest        | 1.9, latest     |
+| MariaDB       | `--db`     | 10            | 10              |
+| Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2   |
+| RabbitMQ      | `--rmq`    | 3.5           | 3.5, 3.7        |
+| Redis         | `--redis`  | 3.2           | 3.2, 4.0, 5.0   |
 {:style="table-layout:auto;"}
 
 This version also provides a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
