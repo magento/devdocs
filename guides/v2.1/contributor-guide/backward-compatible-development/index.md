@@ -201,7 +201,6 @@ $transportObject = new DataObject($transport);
         'email_invoice_set_template_vars_before',
         ['sender' => $this, 'transport' => $transportObject->getData(), 'transportObject' => $transportObject]
     );
-
 ```
 
 ### JS
