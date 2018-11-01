@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.0
+mftf-release: 2.3.7
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/configuration.html
 ---
 
@@ -25,6 +25,9 @@ Example:
 ```conf
 MAGENTO_BASE_URL=http://magento2.vagrant251
 ```
+
+{: .bs-callout .bs-callout-info }
+If the `MAGENTO_BASE_URL` contains a subdirectory (like `http://magento.test/magento2ce`), specify [`MAGENTO_CLI_COMMAND_PATH`][].
 
 ### MAGENTO_BACKEND_NAME
 
@@ -56,21 +59,30 @@ Example:
 MAGENTO_ADMIN_PASSWORD=1234reTyt%$7
 ```
 
-## Advanced Configuration
+## Advanced configuration
 
-In most cases, these values are not required.
-Sensible defaults are in place.
-But in case you do need to do some configuration, they are shown here for your reference.
+Depending on the environment you use, you may need to configure the MFTF more precisely by setting more configuration parameters then for basic configuration.
+This section describes available configuration parameters and their default values (where applicable).
+
+### DEFAULT_TIMEZONE
+
+Sets a default value for the `timezone` attribute of a [`generateDate` action][generateDate].
+This value is applied when a test step does not specify a time zone.
+For the complete list of available time zones, refer to [List of Supported Timezones][timezones].
+
+Default: `America/Los_Angeles`.
+
+Example:
+
+```conf
+DEFAULT_TIMEZONE=UTC
+```
 
 ### SELENIUM
 
 The `SELENIUM_*` values form the URL of a custom Selenium server for running testing.
 
-Your default Selenium URL:
-
-```
-http://127.0.0.1:4444/wd/hub
-```
+Default Selenium URL: `http://127.0.0.1:4444/wd/hub`
 
 And the default configuration:
 
@@ -82,7 +94,7 @@ SELENIUM_PATH=/wd/hub
 ```
 
 {:.bs-callout .bs-callout-warning}
-`SELENIUM_*` values are required if you are running Selenium on an external system. 
+`SELENIUM_*` values are required if you are running Selenium on an external system.
 If you change the configuration of the external Selenium server, you must update these values.
 
 #### SELENIUM_HOST
@@ -109,7 +121,7 @@ SELENIUM_PORT=443
 
 Override the default Selenium server protocol.
 
-Example: 
+Example:
 
 ```conf
 SELENIUM_PROTOCOL=https
@@ -138,7 +150,7 @@ MAGENTO_RESTAPI_SERVER_PORT
 
 The protocol and the host of the REST API server path.
 
-Example: 
+Example:
 
 ```conf
 MAGENTO_RESTAPI_SERVER_HOST=http://localhost
@@ -154,21 +166,32 @@ Example:
 MAGENTO_RESTAPI_SERVER_PORT=5000
 ```
 
-### TESTS
+### *_BP
 
-These values can be used in cases where you are working locally on both MFTF's implementation code and Magento's test case code.
-Use them if you have a more advanced local development setup that involves symlinking the MFTF into the `vendor` directory of the Magento root directory.
+Settings to override base paths for the framework.
+You can use it when the MFTF is applied as a separate tool.
+For example, when you need to place the MFTF and the Magento codebase in separate projects.
 
 ```conf
+MAGENTO_BP
 TESTS_BP
 FW_BP
 TESTS_MODULES_PATH
 ```
 
+#### MAGENTO_BP
+
+The path to a local Magento codebase.
+It enables the [`bin/mftf`][mftf] commands such as `run` and `generate` to parse all modules of the Magento codebase for MFTF tests.
+
+```conf
+MAGENTO_BP=~/magento2/
+```
+
 #### TESTS_BP
 
-The path to where MFTF supplementary files are located in the Magento2 codebase.
-BP is an acronym for _BasePath_.
+BP is an acronym for _Base Path_.
+The path to where MFTF supplementary files are located in the Magento codebase.
 
 Example:
 
@@ -178,8 +201,8 @@ TESTS_BP=~/magento2ce/dev/tests/acceptance
 
 #### FW_BP
 
-The path to where MFTF exists and from which it is symlinked.
-FW_BP is an acronym for _FrameWork BasePath_.
+The path to MFTF.
+FW_BP is an acronym for _FrameWork Base Path_.
 
 Example:
 
@@ -189,12 +212,12 @@ FW_BP=~/magento/magento2-functional-testing-framework
 
 #### TESTS_MODULE_PATH
 
-The path to where MFTF modules mirror Magento's modules.
+The path to where the MFTF modules mirror Magento modules.
 
-Example: 
+Example:
 
 ```conf
-~/magento2/dev/tests/acceptance/tests/functional/Magento/FunctionalTest
+TESTS_MODULE_PATH=~/magento2/dev/tests/acceptance/tests/functional/Magento/FunctionalTest
 ```
 
 ### MODULE_WHITELIST
@@ -233,3 +256,10 @@ Example:
 ```conf
 BROWSER=firefox
 ```
+
+<!-- Link definitions -->
+
+[`MAGENTO_CLI_COMMAND_PATH`]: #magento_cli_command_path
+[generateDate]: test/actions.html#generatedate
+[mftf]: commands/mftf.html
+[timezones]: http://php.net/manual/en/timezones.php

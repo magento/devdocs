@@ -87,7 +87,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  <!--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} extension support**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
 
-- <!--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ee}} application during the build phase**—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process transfers the generated code and static content to the final destination. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
+- <!--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ee}} application during the build phase**—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process transfers the generated code and static content to the final destination. See [Application hooks]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).
 
 -  **Environment configuration checks**—Improved validation of the environment configuration to warn customers about version incompatibilities and configuration errors before building and deploying {{site.data.var.ece}}.
 
@@ -107,7 +107,7 @@ The following updates describe the latest improvements to the `ece-tools` packag
 
 -  **Logging**—Made the following changes to improve log messages and reduce log size:
 
-   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{ page.baseurl }}//cloud/env/variables-intro.html#min_logging_level).
+   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{ page.baseurl }}/cloud/env/variables-intro.html#min_logging_level).
 
    -  <!--MAGECLOUD-2209-->Added logging for deployment failures that occur when the generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.
 
@@ -347,7 +347,7 @@ We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this r
     -   [Static content deployment performance]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-confman-scd-over)
     -   [Deployment process]({{ site.baseurl }}/guides/v2.1/cloud/reference/discover-deploy.html)
 
--   **Configuration management**—We now auto-generate an `app/etc/config.php` file in your git repository during the build phase if it doesn't already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process]({{ site.baseurl }}/guides/v2.1/cloud/reference/discover-deploy.html) for more information.
+-   **Configuration management**—We now auto-generate an `app/etc/config.php` file in your Git repository during the build phase if it doesn't already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process]({{ site.baseurl }}/guides/v2.1/cloud/reference/discover-deploy.html) for more information.
 
 -   **Database dumps**—We added a new `magento/ece-tools` CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See [Snapshots and backup management]({{ site.baseurl }}/guides/v2.1/cloud/project/project-webint-snap.html#db-dump) for more information.
 

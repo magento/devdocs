@@ -55,11 +55,12 @@ If `<data>` has been persisted in `<before>` or `<after>`:
 ```xml
 userInput="$$customer.email$$"
 ```
+
 {%endraw%}
 In this example:
 
-* `customer` is a `stepKey` of the corresponding test step, where an entity is created.
-* `email` is a `dataKey` of the entity. The corresponding value will be assigned to `userInput` as a result.
+* `customer` is a step key of the corresponding test step, where an entity is created.
+* `email` is a data key of the entity. The corresponding value will be assigned to `userInput` as a result.
 
 {%
 include note.html
@@ -69,6 +70,7 @@ content="This is a side effect of PHP outputting. Even though both are nested, i
 Since `_before()` is a function outside a `myTest()` test method, it creates a variable in the class scope instead of the method scope (`$this->persistedData` vs `$persistedData`).
 
 As they are relevant to test:
+
 * `$persistedData.field$` turns into `$persistedData.getData('field')`.
 * `$$persistedData.field$$` turns into `$this->persistedData.getData('field')`."
 %}

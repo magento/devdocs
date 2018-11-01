@@ -8,7 +8,7 @@ Welcome to Magento 2.0 documentation! And welcome to Magento 2.0!
 
 Here we explain the Magento platform and components from the perspective of several audiences: merchants, web store developers (frontend developers), {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers, system administrators, installers, and integrators.
 
-Magento is a highly-customizable eCommerce platform and content management system that is primarily used to build online storefronts or web sites for selling merchandise.
+Magento is a highly-customizable eCommerce platform and content management system that is primarily used to build online storefronts or websites for selling merchandise.
 
 Magento is written using the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} programming language, and leverages elements of the Zend framework and the model-view-controller architecture. Magento runs on the MySQL relational database, and Magento schema and tables are included in the Magento installation package.
 

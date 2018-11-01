@@ -16,6 +16,8 @@ functional_areas:
 
 We support Redis versions 2.8 and 3.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See [Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html).
 
+{% include cloud/service-config-integration-starter.md %}
+
 ## Add Redis in configuration files {#settings}
 
 To enable Redis, add your installed version and allocated disk space in MB to `.magento/services.yaml` file:

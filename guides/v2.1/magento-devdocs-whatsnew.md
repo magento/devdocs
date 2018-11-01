@@ -9,11 +9,31 @@ We exclude from this list proofreading, spelling checks, and all minor updates.
 
 ## October 2018
 
-Description  | Versions applied to  | New or Updated | Date
--------------|--------------|----------------------|--------
-Added [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/security/two-factor-authentication.html) and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html) installation and troubleshooting information for [Security settings](https://devdocs.magento.com/guides/v2.2/config-guide/secy/secy.html).|2.1.x, 2.2.x|New topic|October  1
+| Description                                                                                                                                                                                                                                                                                                                                                                                                                           | Versions applied to | New or Updated    | Date       |
+|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------|-------------------|------------|
+| Updated the [Contributing process](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) for DevDocs with updates to the [Community Resources](https://devdocs.magento.com/community/resources/resources.html) and [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)                                                                                                 | 2.x                 | Major update      | October 26 |
+| Added documentation for Inventory Management REST endpoints: [low stock notifications](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-low-quantity.html), [salable quantities](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/check-salable-quantity.html), and [source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html)     | 2.3.x               | New topic         | October 26 |
+| Updated coding standards based on PSR2 from Zend Framework in [Global features that support extensibility](https://devdocs.magento.com/guides/v2.2/architecture/global_extensibility_features.html).                                                                                                                                                                                                                                  | 2.1.x, 2.2.x, 2.3.x | Technical changes | October 25 |
+| Updated the Magento Commerce Cloud Fastly documentation with information about the Magento Managed Cloud WAF solution. See [Managed Cloud WAF](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-waf-service.html).                                                                                                                                                                                                            | 2.1.x, 2.2.x, 2.3.x | Major update      | October 22 |
+| Added guidelines how to [Set up a standalone MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#set-up-a-standalone-mftf).                                                                                                                                                                                                                                                                                               | 2.3.x               | Major update      | October 19 |
+| Added [MSI (Inventory Management)](https://devdocs.magento.com/guides/v2.3/inventory/index.html) topics                                                                                                                                                                                                                                                                                                                               | 2.3.x               | New topic         | October 19 |
+| Added [Community contributed best practices](https://devdocs.magento.com/community/resources/best-practices.html) section and navigation to the [Community Resources](https://devdocs.magento.com/community/resources/resources.html).                                                                                                                                                                                                | 2.x                 | New topic         | October 18 |
+| Corrected a code sample in [Configure declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html)                                                                                                                                                                                                                                                                              | 2.3.x               | Technical changes | October 12 |
+| Updated the Cloud set up [Services](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html) articles to clarify that the instructions apply to the Magento Commerce Pro Integration environment and Starter environments only.                                                                                                                                                                        | 2.1.x, 2.2.x, 2.3.x | Technical changes | October 12 |
+| Added code samples to [Construct a request](https://devdocs.magento.com/guides/v2.1/get-started/gs-web-api-request.html)                                                                                                                                                                                                                                                                                                              | 2.x                 | Technical changes | October 12 |
+| Updated shell commands that change a file permission to run much faster when using in combination with the `find` command. For more details, refer to the #3024 issue.                                                                                                                                                                                                                                                                | 2.x                 | Technical changes | October 11 |
+| Added a list of [common email template variables](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-email.html).                                                                                                                                                                                                                                                                                          | 2.1.x, 2.2.x, 2.3.x | Major update      | October 10 |
+| MFTF:<br/>- New release: [2.3.8](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md)<br/>- Changed obsolete `--lines` to `--time` in the [`mftf generate:tests`](https://devdocs.magento.com/mftf/2.3/commands/mftf.html#generatetests)                                                                                                                                                       | 2.3.x               | Technical changes | October 10 |
+| Added [contact information](https://devdocs.magento.com/guides/v2.2/release-notes/cbe-support-info.html) for reporting issues with third-party bundled extensions.                                                                                                                                                                                                                                                                    | 2.2.x               | New topic         | October  9 |
+| Added [Multi-Repo Docs](https://devdocs.magento.com/community/resources/multi-repo-docs.html) features and overview                                                                                                                                                                                                                                                                                                                   | 2.x                 | New topic         | October  7 |
+| MFTF 2.3.7 release:<br/>Updated the [pressKey](https://devdocs.magento.com/mftf/2.3/test/actions.html#presskey) action.<br/>Updated the [action group argument](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#data-type-usage) syntax for a value based on data entity resolution.<br/>Added the [DEFAULT_TIMEZONE](https://devdocs.magento.com/mftf/2.3/configuration.html#default_timezone) configuration parameter. | 2.3.x               | Technical changes | October  5 |
+| Added a 2.3 [product availability](https://devdocs.magento.com/availability.html) topic.                                                                                                                                                                                                                                                                                                                                              | 2.3.x               | New topic         | October  5 |
+| Updated the [1.3.1 technical guideline](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#1-basic-programming-principles).                                                                                                                                                                                                                                                                           | 2.x                 | Major update      | October  4 |
+| Corrected the instructions for optimizing JavaScript files using the [JavaScript bundling](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/js-bundling.html) technique.                                                                                                                                                                                                                                             | 2.1.x, 2.2.x, 2.3.x | Technical changes | October  3 |
+| Added [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/security/two-factor-authentication.html) and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html) installation and troubleshooting information for [Security settings](https://devdocs.magento.com/guides/v2.2/config-guide/secy/secy.html).                                                                          | 2.1.x, 2.2.x        | New topic         | October  1 |
 
 {% collapsibleh2 September 2018 %}
+
 Description  | Versions applied to  | New or Updated | Date
 -------------|--------------|----------------------|--------
 Added [Contribution awards and points](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#points) section to the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)|2.1.x, 2.2.x, 2.3.x|Major update|September 27
@@ -37,6 +57,7 @@ Replaced all references to the `composer create-project --repository-url` flag w
 Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html) to include the new `attribute_options` object.|2.3.x|Technical changes|Sep 4
 Added [REST reference documentation for MSI](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-sources.html)|2.3.x|New topic|Sep 4
 Removed Fastly VCL snippet for extending the Admin timeout. Magento Commerce Cloud Admin users can configure the timeout from the [Magento Admin UI](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html).|2.1.x, 2.2.x, 2.3.x|Technical changes|Sep 4
+
 {% endcollapsibleh2 %}
 
 {% collapsibleh2 August 2018 %}
@@ -69,7 +90,6 @@ Added the topic [Custom routes](https://devdocs.magento.com/guides/v2.3/extensio
 Added the topic [Operation Status Search](https://devdocs.magento.com/guides/v2.3/rest/operation-status-search.html).|2.3.x|New topic|Aug 03
 Updated the [Magento Functional Testing Framework documentation](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html) due to the MFTF 2.3.0 release.|2.2.x, 2.3.x|Major update|Aug 02
 {% endcollapsibleh2 %}
-
 
 {% collapsibleh2 July 2018 %}
 
@@ -378,11 +398,11 @@ Description  | Versions applied to  | New or Updated | Date
 [Technical Guidelines 2.2]({{ site.baseurl }}/guides/v2.1/coding-standards/technical-guidelines.html)|2.2.x|New|Jul 21
 [Added BICs for delta Magento CE 2.2.0 RC1.4-RC1.3]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)<br/>[Added BICs for delta Magento EE 2.2.0 RC1.4-RC1.3]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)|2.2.x|Updated|Jul 17
 [Backward compatible changes for delta Magento 2.2.0 RC1.3 and RC1.2]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#changes-220rc13)|2.2.x|Updated|Jul 12
-[Fix code example on the video tutorial page]()|2.x|Updated|Jul 10
-[Cron groups: run twice when using the command line]()|2.x|Updated|Jul 07
+Fix code example on the video tutorial page|2.x|Updated|Jul 10
+Cron groups: run twice when using the command line|2.x|Updated|Jul 07
 [Added tables with BICs for delta 2.2.0-RC1.2 and 2.2.0-RC1.1]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)|2.2.x|Updated|Jul 07
 [Added known issues to Jasmine tests]({{ site.baseurl }}/guides/v2.1/test/js/jasmine.html#known-issues-and-solutions)|2.x|Updated|Jul 05
-[Added BIC about moved directories]()|2.2.x|Updated|Jul 03
+Added BIC about moved directories|2.2.x|Updated|Jul 03
 {% endcollapsibleh2 %}
 
 {% collapsibleh2 June 2017 %}
@@ -454,8 +474,8 @@ Description  | Versions applied to  | New or Updated | Date
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [How CSS and LESS files are preprocessed and how to debug them]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Compile LESS using Grunt]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [How CSS and Less files are preprocessed and how to debug them]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Compile Less using Grunt]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Layout overview]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Common layout customization tasks]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Templates XSS security]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/templates/template-security.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -597,7 +617,6 @@ Description  | Versions applied to  | New or Updated | Date
 
 {% endcollapsibleh2 %}
 
-
 {% collapsibleh2 Feb 2017 %}
 
 | Description  | Versions applied to  | New or Updated | Date |
@@ -623,7 +642,6 @@ Description  | Versions applied to  | New or Updated | Date
 | [Corrected instructions to set up multiple websites or stores on {{site.data.var.ece}}]({{ page.baseurl }}/cloud/project/project-multi-sites.html){:target="_blank"} | 2.x  | Updated  | Jan 31  |
 
 {% endcollapsibleh2 %}
-
 
 {% collapsibleh2 January 2017 %}
 
@@ -723,6 +741,5 @@ Description  | Versions applied to  | New or Updated | Date
 | [MECE moving from integration to staging and production]({{ page.baseurl }}/cloud/live/stage-prod-over.html){:target="_blank"} (see also associated topics)  | 2.x  |  New | Oct 7 |
 | [Added info about using tokens in authentication requests]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html){:target="_blank"}| 2.x | Updated | Oct 7 |
 | [How to programmatically create a category with custom attributes]({{ page.baseurl }}/rest/catalog-notes.html){:target="_blank"} | 2.x | New | Oct 7 |
-
 
 {% endcollapsibleh2 %}

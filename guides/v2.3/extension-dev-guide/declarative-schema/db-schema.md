@@ -37,14 +37,14 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
 {: .bs-callout .bs-callout-info }
-If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
+If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PhpStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 
 ### Top-level node
 
 The `schema` node defines the location of the `schema.xsd`  file.
 
 `<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="urn:magento:setup:Model/Declaration/Schema/etc/schema.xsd">`
+  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">`
 
 ### `table` node
 

@@ -60,7 +60,9 @@ You can apply patches as they become available to update Magento Commerce (Cloud
 {:.bs-callout .bs-callout-tip}
 We recommend installing full [{{site.data.var.ece}} upgrades]({{site.baseurl}}/guides/v2.2/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
 
+## Contact information for third-party extensions
 
+[Contact Information for Third-Party Extensions]({{page.baseurl}}/release-notes/cbe-support-info.html)
 
 ## Magento Shipping release notes
 

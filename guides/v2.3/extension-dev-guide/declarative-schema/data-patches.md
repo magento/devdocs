@@ -112,7 +112,7 @@ The following code sample defines a data patch class that has a dependency.
         {
             /**
              * This internal Magento method, that means that some patches with time can change their names,
-             * but changing name should not affect installation process, thats why if we will change name of the patch
+             * but changing name should not affect installation process, that's why if we will change name of the patch
              * we will add alias here
              */
             return [];

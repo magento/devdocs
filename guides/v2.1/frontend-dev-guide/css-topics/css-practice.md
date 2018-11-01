@@ -20,7 +20,7 @@ In their Grey theme, OrangeCo wants to change the color scheme from white to gre
 
 The Grey theme directory is `app/design/frontend/OrangeCo/grey`.
 
-OrangeCo decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
+OrangeCo decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default Less variables.
 To do this, they added an overriding `_theme.less` file in the `app/design/frontend/OrangeCo/grey/web/css/source` directory, with the following content:
 
 ```less

@@ -326,7 +326,7 @@ The total number of records loaded into the table  will display above the column
 
 ![](img/datatable39.jpg)
 
-As items are selected on the gird, a count for the number of items selected should be displayed next to the total count. This will give the user confidence that records are selected though they may not be on the current page view.
+As items are selected on the grid, a count for the number of items selected should be displayed next to the total count. This will give the user confidence that records are selected though they may not be on the current page view.
 
 ![](img/datatable40.jpg)
 
@@ -420,7 +420,7 @@ When the thumbnail is clicked a modal is presented over the data-table to provid
 
 ### Parent-Child relationships
 
-The data-table will support parent-child relationships. Parent and child records will be delineated via style and/or iconography. Parent nodes will be expandable/collapsable.
+The data-table will support parent-child relationships. Parent and child records will be delineated via style and/or iconography. Parent nodes will be expandable/collapsible.
 
 ![](img/datatable51.jpg)
 

@@ -29,13 +29,13 @@ All changes, additions, and extensions to the product should be documented by th
 The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
 Ideally, the information about the submitted code should be added to the official Magento DevDocs {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
-Contributors are asked to submit the doc as a Pull Request to the [DevDocs Github repo][4].
+Contributors are asked to submit the doc as a Pull Request to the [DevDocs GitHub repo][4].
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message.
 
 Additionally, the code itself should follow our [DocBlock standard][0] and contain high-quality comments and descriptions for all classes and methods.
 
-Any backwards-incompatible changes must also be recorded in the accompanying documentation, using the following format:
+Any backward-incompatible changes must also be recorded in the accompanying documentation, using the following format:
 
 | Change      | Was in Magento 1.x | Became in Magento 2.x |
 | ----------- | ------------------ | --------------------- |
@@ -138,7 +138,7 @@ Expected code coverage: must cover all applicable files in entire code base.
 
 Code to cover:
 
-* Must cover any formal backwards-incompatible changes on code level.
+* Must cover any formal backward-incompatible changes on code level.
 For more information, see
 [Magento's backward compatibility policy]({{ page.baseurl }}/architecture/back-compatibility.html).
 
@@ -146,7 +146,7 @@ A failure in a legacy test must provide comprehensive explanation of an alternat
 
 Expected code coverage:
 
-* Must cover majority of occurrences of the backwards-incompatible change
+* Must cover majority of occurrences of the backward-incompatible change
 * Should cover 100% of occurrences
 
 Not all changes can be covered.

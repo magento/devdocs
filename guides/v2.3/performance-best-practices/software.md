@@ -175,7 +175,7 @@ if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg
 
 Restart the Varnish server to flush cached assets whenever you upgrade your site or deploy/update assets.
 
-## Cacheing and session servers
+## Caching and session servers
 
 Magento provides a number of options to store your cache and session data, including Redis, Memcache, filesystem, and database. Some of these options are discussed below.
 

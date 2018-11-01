@@ -64,45 +64,7 @@ To set up routes in a staging or production environment, you must create a [Supp
 
 In the Admin panel, set up your {{site.data.var.ee}} websites, stores, and store views. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
-#### To retrieve Admin login information:
-
-1.  On your local workstation, log in as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-
-1.  Change to your {{site.data.var.ee}} base directory.
-
-1.  Log in to your account.
-
-    ```bash
-    magento-cloud login
-    ```
-
-1.  List the environments.
-
-    ```bash
-    magento-cloud environment:list
-    ```
-
-1.  Check out your environment.
-
-    ```bash
-    magento-cloud environment:checkout <environment-ID>
-    ```
-
-1.  Access the public URLs:
-
-    ```bash
-    magento-cloud environment:url
-    ```
-
-1.  View Admin login information in the variable list.
-
-    ```bash
-    magento-cloud variable:list
-    ```
-
 Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
-
-See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
 ### Modify the `magento-vars.php` file
 

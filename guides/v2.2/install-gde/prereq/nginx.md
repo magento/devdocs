@@ -81,7 +81,7 @@ There are several ways to download the Magento software, including:
 
 *	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
-*	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+*	[Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll install using Composer and the command line.
 
@@ -116,8 +116,8 @@ You cannot use the Web Setup Wizard when installing Magento on nginx. You must u
 
     ```terminal
     cd /var/www/html/<magento install directory>
-    find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-    find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+    find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+    find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
     chown -R :www-data . // Ubuntu
     chmod u+x bin/magento
     ```
@@ -290,7 +290,7 @@ There are several ways to download the Magento software, including:
 
 *	[Download an archive]({{ page.baseurl }}/install-gde/prereq/zip_install.html)
 
-*	[Clone the git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
+*	[Clone the Git repository]({{ page.baseurl }}/install-gde/prereq/dev_install.html)
 
 For this example, we'll download and extract an archive.
 
@@ -307,8 +307,8 @@ For this example, we'll download and extract an archive.
 3. [Set directory ownership and file permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
 		cd /usr/share/nginx/html/magento2
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 		chown -R :apache .
 		chmod u+x bin/magento
 

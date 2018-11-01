@@ -22,7 +22,7 @@ The ActionsColumns component implements a table's column responsible for display
   </tr>
   <tr>
     <td><code>draggable</code></td>
-    <td>Defines whether a user can change column's position in the table by grabbing column's header and draging it across the table.</td>
+    <td>Defines whether a user can change column's position in the table by grabbing column's header and dragging it across the table.</td>
     <td>Boolean</td>
     <td><code>false</code></td>
   </tr>

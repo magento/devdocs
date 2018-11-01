@@ -109,10 +109,19 @@ These values can be used in cases where you are working locally on both MFTF's i
 Use them if you have a more advanced local development setup involving symlinking MFTF into the `vendor` directory of `magento2`.
 
 ```config
+MAGENTO_BP
 TESTS_BP
 FW_BP
 TESTS_MODULES_PATH
 ```
+
+#### MAGENTO_BP
+
+BP is an acronym for BasePath.
+
+* Use: Optional.
+* Description: The path to a Magento2 codebase
+* Example: `~/magento2ce/`
 
 #### TESTS_BP
 

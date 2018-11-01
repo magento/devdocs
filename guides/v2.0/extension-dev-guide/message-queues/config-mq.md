@@ -52,7 +52,7 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 <tr>
 <td>name</td>
-<td>A unique identifer for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
+<td>A unique identifier for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
 </tr>
 <tr>
 <td>connection</td>

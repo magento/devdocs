@@ -22,7 +22,7 @@ Make sure that you've installed and set up the following software:
 
 ### Recommendations
 
-We recommend using [PHPStorm 2017](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
+We recommend using [PhpStorm 2017](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
 They recently added support for [Codeception Test execution](https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/), which is helpful when debugging.
 
 ## Prepare Magento

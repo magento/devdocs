@@ -35,14 +35,14 @@ Example for Google Chrome with Selenium 2:
 ```bash
 java -jar <path_to_selenium_directory>/selenium-server.jar -Dwebdriver.chrome.driver=<path_to_chrome_driver>/chromedriver.exe
 ```
+
+### Selenium 3
     
-<div class="bs-callout bs-callout-info" markdown="1">
 For Selenium 3 add the web driver to the directory where `selenium-server.jar` is located and run tests without additional argument:
 
 ```bash
 java -jar <path_to_selenium_directory>/selenium-server.jar
 ```
-</div>
 
 ## Run generator {#mtf_quickstart_env_generator}
 

@@ -224,7 +224,7 @@ hooks:
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### To compile SASS files using grunt:
+#### To compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -242,7 +242,7 @@ hooks:
         php ./vendor/bin/ece-tools
 ```
 
-You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
+You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.

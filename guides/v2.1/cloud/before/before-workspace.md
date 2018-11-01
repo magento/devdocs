@@ -41,7 +41,7 @@ You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %
 
 This guide assumes you're working on a UNIX system or in a UNIX shell environment. For MAC OS and Linux-based systems, feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/), [Putty](http://www.putty.org/), or Git Bash.
 
-For development on your local, use any development environment or tools you prefer. For recommendations, many Magento developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/), [PHPStorm](https://www.jetbrains.com/phpstorm/), and [Atom](https://atom.io/).
+For development on your local, use any development environment or tools you prefer. For recommendations, many Magento developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/), [PhpStorm](https://www.jetbrains.com/phpstorm/), and [Atom](https://atom.io/).
 
 Developing code for {{site.data.var.ee}} requires working in Git branches. Not everyone remembers [Git](https://git-scm.com/docs) commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/) and [SmartGit](https://www.syntevo.com/smartgit/).
 

@@ -5,7 +5,7 @@ title: Sizes component
 
 The Sizes component defines the maximum number of displayed records in a table (grid).
 
-## Сonfiguration options
+## Configuration options
 
 <table>
   <tr>
@@ -22,7 +22,7 @@ The Sizes component defines the maximum number of displayed records in a table (
   </tr>
   <tr>
     <td><code>minSize</code></td>
-    <td>Minimun number of rows.</td>
+    <td>Minimum number of rows.</td>
     <td>Number</td>
     <td><code>1</code></td>
   </tr>

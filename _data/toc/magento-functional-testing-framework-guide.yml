@@ -94,7 +94,7 @@ pages:
     versionless: true
 
   - label: Contribution Guidelines
-    url: /mftf/2.2/contribution-guidelines.html
+    url: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
     versionless: true
 
   - label: Changelog

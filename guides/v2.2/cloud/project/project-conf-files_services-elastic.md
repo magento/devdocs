@@ -79,7 +79,7 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `cloud-gce`: GCE Cloud Plugin
 * `delete-by-query`: Support for deleting documents matching a given query
 * `discovery-multicast`: Ability to form a cluster using TCP/IP multicast messages
-* `lang-javascript`: Javascript language plugin, allows the use of Javascript in Elasticsearch scripts
+* `lang-javascript`: JavaScript language plugin, allows the use of JavaScript in Elasticsearch scripts
 * `lang-python`: Python language plugin, allows the use of Python in Elasticsearch scripts
 * `mapper-attachments`: Mapper attachments plugin for indexing common file types
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
@@ -103,7 +103,7 @@ To verify this information used for configurations and settings:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 
-The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Elasticsearch:
+The response includes all relationships for services and configuration data for that environment. In the response, you can locate data similar to the following for Elasticsearch:
 
 ```
 "elasticsearch" : [
@@ -114,7 +114,8 @@ The response includes all relationships for services and configuration data for 
          "port" : "9200"
       }
    ],
-```{: .no-copy}
+```
+{: .no-copy}
 
 ## Configure Elasticsearch for your site {#configure}
 

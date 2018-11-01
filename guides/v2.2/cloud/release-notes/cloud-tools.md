@@ -85,7 +85,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  <!--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} extension support**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
 
-- <!--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ee}} application during the build phase**—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process transfers the generated code and static content to the final destination. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
+- <!--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ee}} application during the build phase**—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process transfers the generated code and static content to the final destination. See [Application hooks]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).
 
 -  **Environment configuration checks**—Improved validation of the environment configuration to warn customers about version incompatibilities and configuration errors before building and deploying {{site.data.var.ece}}.
 
@@ -110,7 +110,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 -  **Logging**—  
     Made the following changes to improve log messages and reduce log size:
 
-   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{page.baseurl}}//cloud/env/variables-intro.html#min_logging_level).
+   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{page.baseurl}}/cloud/env/variables-intro.html#min_logging_level).
 
    -  <!--MAGECLOUD-2209-->Added logging for deployment failures that occur when generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.
 
@@ -132,7 +132,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 - <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
-- <!--MAGECLOUD-2556-->Fixed an issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain to a `www`domain.
+- <!--MAGECLOUD-2556-->Fixed an issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain to a `www` domain.
 
 -  <!--MAGECLOUD-2520-->Fixed an issue with the `_merge` option for the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) variable that caused incorrect merge results if you do not include the `engine` parameter in the updated `.magento.env.yaml` configuration file. Now, the merge operation correctly overwrites only the values you specify in the updated `.magento.env.yaml` without requiring you to set the `engine` parameter.
 
@@ -346,7 +346,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
     -   [Static content deployment performance]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)
     -   [Deployment process]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html)
 
--   **Configuration management**—We now auto-generate an `app/etc/config.php` file in your git repository during the build phase if it doesn't already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html) for more information.
+-   **Configuration management**—We now auto-generate an `app/etc/config.php` file in your Git repository during the build phase if it doesn't already exist. The auto-generated file includes only a list of modules and extensions. If the file already exists, the build phase continues as normal. If you follow [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) at a later time, the commands update the file without requiring additional steps. Refer to [Deployment process]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html) for more information.
 
 -   **Database dumps**—We added a `magento/ece-tools` CLI command for creating database dumps in all environments. For Pro plan Production environments, this command only dumps from one of three high-availability nodes, so production data written to a different node during the dump may not be copied. We recommend putting the application in maintenance mode before doing a database dump in Production environments. See [Snapshots and backup management]({{ site.baseurl }}/guides/v2.2/cloud/project/project-webint-snap.html#db-dump) for more information.
 
