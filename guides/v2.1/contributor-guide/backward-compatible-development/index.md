@@ -202,7 +202,7 @@ $transportObject = new DataObject($transport);
         ['sender' => $this, 'transport' => $transportObject->getData(), 'transportObject' => $transportObject]
     );
 
-{% endhighlight %} {% endcollapsible %}
+```
 
 ### JS
 
