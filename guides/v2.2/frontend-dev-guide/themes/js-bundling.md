@@ -31,15 +31,17 @@ JavaScript bundling does not work unless Magento is in [production mode][product
     php -f bin/magento config:set dev/js/minify_files 1
     ```
  
-4. Cache your static files:
+4. Enable cache busting on static file URLs. This ensures users get the latest version of the assets anytime they update:
 
     ```bash
     php -f bin/magento config:set dev/static/sign 1
     ```
 
+    For example, when `Sign Static Files` is disabled (which is the default: `config:set dev/static/sign 0`), the URL to a static file might look like this: `/static/frontend/Magento/luma/en_US/mage/dataPost.js`. But when you enable the setting (`config:set dev/static/sign 1`), the same URL might look something like this: `static/version40s2f9ef/frontend/Magento/luma/en_US/mage/dataPost.js`, with a version number added as shown. The next time this file is updated (with `bin/magento setup:static-content:deploy`), a new version will be generated, causing the browser to download a new file from the server, thus busting the browser's cache.
+
 ## How bundling works in Magento
 
-When bundling is enabled, JavaScript files are zipped into bundles and loaded synchronously on every page load. This means that the bundles block the rendering of the page until they are downloaded. But the benefit is that downloading just a few bundles significantly reduces trips to the server, in contrast to every module/file being downloaded individually, which can result in hundreds of trips to the server, even if the downloads are asynchronous.
+When bundling is enabled, JavaScript files are zipped into bundles and loaded synchronously on every page load. This means that the bundles block the rendering of the page until they are downloaded. But the benefit is that downloading just a few bundles significantly reduces trips to the server, in contrast to every module/file being downloaded individually, which can result in hundreds of trips to the server, slowing page rendering as well, even if the downloads are asynchronous.
 
 ### Excluding files
 
