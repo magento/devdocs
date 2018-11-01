@@ -184,7 +184,7 @@ Actions after `FAIL` are run as a part of the [`after`][] hook of the test.
 
 ### Test result report
 
-After the MFTF completed test execution, it generates general report about test results along with detailed information about each fail.
+After the MFTF completed test execution, it generates a general report about test results along with detailed information about each fail.
 
 ```terminal
 --------------------------------------------------------------------------------
