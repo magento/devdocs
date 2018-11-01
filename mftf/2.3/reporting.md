@@ -204,7 +204,7 @@ In such cases, [report an issue][].
 Then, the MFTF reports that the test run took 52.43 seconds using 16 MB of the system RAM.
 And, finally, that there was `1 failure`.
 
-Next, the report provides you with details about the test fail.
+Next, the report provides details about the test fail.
 See interpretation after the following report.
 
 ```terminal
