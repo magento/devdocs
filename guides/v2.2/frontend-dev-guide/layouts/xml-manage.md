@@ -397,7 +397,7 @@ The following block, which is our old block, is declared in `app/design/frontend
     <action method="setTitle" translate="value"><value>Additional Information</value></action>
 </block>
 ```
-Let us say that we want to replace the block inside our `<reference>` container to replaced with the following custom block type below:
+You can replace this block in `layout.xml` with a custom block that uses the same name, as follows:
 
 ```xml
 <block type="attributesasgroup/groupview" name="product.attributes" as="additional" template="webguys/attributesasgroup/groupview.phtml">
