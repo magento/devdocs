@@ -1,52 +1,54 @@
 ---
-group: fedg
-subgroup: A_Themes
+group: frontend-developer-guide
 title: JavaScript Bundling
-menu_title: JavaScript Bundling
-menu_order: 9000
-version: 2.2
-github_link: frontend-dev-guide/themes/js-bundling.md
 functional_areas:
   - Frontend
   - Theme
 ---
-
 JavaScript bundling is an optimization technique you can use to reduce the number of server requests for JavaScript files.
 Bundling accomplishes this by merging multiple JavaScript files together into one file to reduce the number of page requests.
 
 ## Enable JavaScript bundling
 
-Magento must be set to [production mode][production-mode] in order for bundling to work.
+{: .bs-callout .bs-callout-info }
+JavaScript bundling does not work unless Magento is in [production mode][production-mode]. Once in production mode, JavaScript bundling can only be enabled using the CLI. Follow these steps to setup JavaScript bundling from the CLI.
 
-To activate JavaScript bundling:
+1. From the Magento root directory, switch to production mode:
 
-- Enter the following command to make
+    ```bash
+    php bin/magento deploy:mode:set production
+    ```
+ 
+2. Enable JavaScript bundling:
+
     ```bash
     php -f bin/magento config:set dev/js/enable_js_bundling 1
     ```
-    
-<div class="bs-callout bs-callout-info" markdown="1">
-Javascript bundling configuration is not available in production mode. While it is available in developer mode.
-</div>    
 
-To optimize bundling, set the following settings to `Yes`:
+3. Optimize bundling by minifying JavaScript files:
 
-* `Javascript Settings -> Merge JavaScript Files`
-* `Javascript Settings -> Minify Javascript Files`
-* `Static Files Settings -> Sign Static Files`
+    ```bash
+    php -f bin/magento config:set /dev/js/minify_files 1
+    ```
+ 
+4. Cache your static files:
+
+    ```bash
+    php -f bin/magento config:set /dev/static/sign 1
+    ```
 
 ## How bundling works in Magento
 
-When bundling is enabled, Javascript files are loaded in synchronously in the head on every page load. They become render-blocking assets, unlike the default where every module is requested individually and asynchronously.
+When bundling is enabled, JavaScript files are zipped into bundles and loaded synchronously on every page load. This means that the bundles block the rendering of the page until they are downloaded. But the benefit is that downloading just a few bundles significantly reduces trips to the server, in contrast to every module/file being downloaded individually, which can result in hundreds of trips to the server, even if the downloads are asynchronous.
 
 ### Excluding files
 
 The `<exclude>` entry in a theme's `etc/view.xml` file tells Magento which files it should not bundle.
 JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.
 
-Do not bundle JavaScript files used for testing or development because these will get loaded on every page.  
+As such, you should exclude the JavaScript files you use for testing or development so that they are not loaded on every page.  
 
-The following code snippet from [Magento's Luma theme][luma-view-xml]{:target="_blank"} shows the types of files you should exclude in your theme.
+The following code snippet from [Magento's Luma theme][luma-view-xml] shows the types of files you should exclude in your theme.
 
 {% collapsible Show example %}
 
@@ -131,4 +133,5 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 3. Use the results of that comparison to build your exclude list.
 
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
+[Advanced-JavaScript-Bundling]:https://devdocs.magento.com/guides/v2.3/performance-best-practices/advanced-js-bundling.html
 [luma-view-xml]:https://github.com/magento/magento2/blob/2.2.3/app/design/frontend/Magento/luma/etc/view.xml#L270
