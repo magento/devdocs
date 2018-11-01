@@ -61,16 +61,6 @@ pages:
           url: /cloud/project/sendgrid.html
           exclude_versions: ["2.0"]
 
-    - label: Integrations
-      url: /cloud/integrations/cloud-integrations.html
-      exclude_versions: ["2.0"]
-      children:
-        - label: Bitbucket integration
-          url: /cloud/integrations/bitbucket-integration.html
-
-        - label: GitHub integration
-          url: /cloud/integrations/github-integration.html
-
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
       children:
@@ -107,6 +97,19 @@ pages:
 
         - label: Optional - Configure Xdebug
           url: /cloud/howtos/debug.html
+
+    - label: Integrations
+      url: /cloud/integrations/cloud-integrations.html
+      exclude_versions: ["2.0"]
+      children:
+        - label: Bitbucket integration
+          url: /cloud/integrations/bitbucket-integration.html
+
+        - label: GitHub integration
+          url: /cloud/integrations/github-integration.html
+
+        - label: Health notifications
+          url: /cloud/integrations/health-notifications.html
 
     - label: Import existing code into a project
       url: /cloud/setup/first-time-setup-import-first-steps.html

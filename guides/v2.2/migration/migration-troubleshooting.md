@@ -121,6 +121,24 @@ The error occurs during the Volume Check step. It means the Magento 2 database r
 
 Missing records happen when a customer places an order during migration.
 
-#### Solution
+#### Possible solution
 
 Run the Data Migration Tool in `Delta` mode to transfer incremental changes.
+
+### Deltalog is not installed
+
+{%highlight xml%}
+Deltalog for <DATABASE> is not installed
+{%endhighlight%}
+
+#### Explanation
+
+This error occurs during the process of incremental migration of changes to data. It means the delta migration of changes made in Magento 1 since the last time you migrated data was not performed properly and retained.
+
+Delta migrations can fail when you wipe the Magento 1 database before doing the delta, since this action erases the tables created during the initial migration of data into the Magento 1 database. These tables are needed to perform the delta migration properly. 
+
+#### Possible solution
+
+Do not wipe the Magento 1 database before the delta migration process is complete in order to keep your initial migration tables.
+
+If you have Magento 1 on one server and Magento 2 on another that can't access the live Magento 1 database, you may need to copy the Magento 1 database over first. Otherwise if you drop and overwrite the database, you will lose those special tables.
