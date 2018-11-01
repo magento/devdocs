@@ -260,7 +260,7 @@ full_page
 
 - `Step  See "#something"` - the failing test step is the *see* action with the *#something* selector. It would correspond the `<see selector="#something" ... />` test step in the XML defined tests.
 
-- `Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../` - the fail was occurred on the web page `<MAGENTO_BASE_URL>/admin/admin/system_config/index/key/678b7ba922c.../`.
+- `Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../` - the fail occurred on the web page `<MAGENTO_BASE_URL>/admin/admin/system_config/index/key/678b7ba922c.../`.
 
 ```terminal
 --> ...
