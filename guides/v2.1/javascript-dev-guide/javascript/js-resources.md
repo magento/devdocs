@@ -38,8 +38,6 @@ We recommend specifying JavaScript resources in the templates rather than in the
 
 JS resources are accessed using relative paths.
 
-Examples:
-
 **Example 1**
 
 - File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
@@ -50,7 +48,8 @@ Examples:
        });
     ```
 
-{% collapsible Example 2 %}
+
+**Example 2**
 
 - File actual location: `app/code/design/frontend/Magento/blank/web/js/theme.js`
 - File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
@@ -59,10 +58,10 @@ Examples:
     require(["js/theme.js"], function(){
        });
     ```
-{% endcollapsible %}
 
 
-{% collapsible Example 3 %}
+**Example 3**
+
 - File actual location: `lib/web/jquery.js`
 - File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
 - Called in script:
@@ -70,7 +69,7 @@ Examples:
     require(["jquery"], function($){
        });
     ```
-{% endcollapsible %}
+
 
 These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html).
 
