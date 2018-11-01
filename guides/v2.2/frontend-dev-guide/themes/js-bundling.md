@@ -28,13 +28,13 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 3. Optimize bundling by minifying JavaScript files:
 
     ```bash
-    php -f bin/magento config:set /dev/js/minify_files 1
+    php -f bin/magento config:set dev/js/minify_files 1
     ```
  
 4. Cache your static files:
 
     ```bash
-    php -f bin/magento config:set /dev/static/sign 1
+    php -f bin/magento config:set dev/static/sign 1
     ```
 
 ## How bundling works in Magento
