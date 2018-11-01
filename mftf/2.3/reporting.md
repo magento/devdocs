@@ -253,7 +253,7 @@ full_page
 ```
 {: .no-copy }
 
-- `1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test`-the failed Codeception test is *AdminMenuNavigationWithSecretKeysTestCest*.It references to the PHP class that implemented the failed test.
+- `1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test` - the failed Codeception test is *AdminMenuNavigationWithSecretKeysTestCest*. It references to the PHP class that implemented the failed test.
 
 - `Test  tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest` - the test is implemented in the *AdminMenuNavigationWithSecretKeysTest* test method of the *tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php* file under `<magento root>/dev/tests/acceptance/`.
   It matches the corresponding test defined in XML that is *AdminMenuNavigationWithSecretKeysTest* defined in `<test name="AdminMenuNavigationWithSecretKeysTest">...</test>`
