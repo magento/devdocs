@@ -91,7 +91,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 
 #### Next steps
 
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	<a href="#apache-error">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
@@ -133,7 +133,7 @@ To upgrade to Apache 2.4:
 
 #### Next steps
 
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	<a href="#apache-error">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
@@ -170,20 +170,20 @@ Even though Apache 2.4 is provided by default with CentOS 7, you configure it li
 
 #### Next steps
 
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
+*	<a href="#apache-error">Solving 403 (Forbidden) errors</a>
 *	Continue with the next prerequisite (<a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html">PHP Ubuntu</a>)
 *	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
 {% endcollapsible %}
 
-## Solving 403 (Forbidden) errors   {#403-apache}
+## Solving 403 (Forbidden) errors   {#apache-error}
 
 {% collapsible Click to install solve 403 errors %}
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
 
-*	<a href="#install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</a>
-*	<a href="#install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</a>
+*	<a href="#apache-error-2-4">Solving 403 Forbidden errors for Apache 2.4</a>
+*	<a href="#apache-error-2-2">Solving 403 Forbidden errors for Apache 2.2</a>
 
-#### Solving 403 Forbidden errors for Apache 2.4   {#install-apache-403_2.4}
+#### Solving 403 Forbidden errors for Apache 2.4   {#apache-error-2-4}
 
 To enable website visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.
 
@@ -199,7 +199,7 @@ For example:
 {: .bs-callout .bs-callout-info }
 The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){: target="_blank"}.
 
-#### Solving 403 Forbidden errors for Apache 2.2   {#install-apache-403_2.2}
+#### Solving 403 Forbidden errors for Apache 2.2   {#apache-error-2-2}
 
 To enable website visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
 
