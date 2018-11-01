@@ -45,7 +45,7 @@ When you enable bundling, Magento combines hundreds of JavaScript files into jus
 
 ### Excluding files
 
-The `<exclude>` node in a the `etc/view.xml` file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
+The `<exclude>` node in the `etc/view.xml` file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
 JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.
 
 As such, you should exclude the JavaScript files you use for testing or development so that they are not loaded on every page.  
