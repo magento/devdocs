@@ -83,7 +83,7 @@ class MinimalDeliveryCostAlgorithm implements SourceSelectionInterface
 
 ### Create a `InventoryRequest` factory for quotes  (optional)
 
-Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines which sources to use to full the order at the time a shipment is created. 
+Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines which sources to use to fulfill the order at the time a shipment is created. 
 
 ```php?start_inline=1
 class InventoryRequestFromOrderFactory
