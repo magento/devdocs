@@ -35,7 +35,7 @@ The report may contain three main parts:
 To manage the level of verbosity, use `-v` or `--verbose` flag in the `mftf` commands.
 To enable verbosity using the `codecept` commands, refer to the Codeception [Console Commands][codeception].
 
-The following sections demonstrate an example of interpretation of a complete log separated into chunks.
+The following sections demonstrate an example interpretation of a complete log separated into chunks.
 
 ### Pre-run check report
 
