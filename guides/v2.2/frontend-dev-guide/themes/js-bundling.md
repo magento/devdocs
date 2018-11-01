@@ -41,16 +41,16 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 
 ## How bundling works in Magento
 
-When bundling is enabled, JavaScript files are zipped into bundles and loaded synchronously on every page load. This means that the bundles block the rendering of the page until they are downloaded. But the benefit is that downloading just a few bundles significantly reduces trips to the server, in contrast to every module/file being downloaded individually, which can result in hundreds of trips to the server, slowing page rendering as well, even if the downloads are asynchronous.
+When you enable bundling, Magento combines hundreds of JavaScript files into just a few JavaScript bundles and downloads those bundles for each page. Because the browser downloads the bundles sychronously, page rendering *is* blocked until all bundles finish downloading. But the time saved from reducing server requests from hundreds to just a few, usually offsets the cost of downloading the bundles synchronously.
 
 ### Excluding files
 
-The `<exclude>` entry in a theme's `etc/view.xml` file tells Magento which files it should not bundle.
+The `<exclude>` node in a the `etc/view.xml` file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
 JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.
 
 As such, you should exclude the JavaScript files you use for testing or development so that they are not loaded on every page.  
 
-The following code snippet from [Magento's Luma theme][luma-view-xml] shows the types of files you should exclude in your theme.
+The following code snippet from [Magento's Luma theme][luma-view-xml] shows the types of files you should exclude from the bundling process.
 
 {% collapsible Show example %}
 
@@ -114,19 +114,18 @@ The following code snippet from [Magento's Luma theme][luma-view-xml] shows the 
 
 ### Setting bundle file size
 
-The `bundle_size` entry controls the file size of the generated bundles.
-Setting this to a large number will reduce the number of bundles generated, but the file sizes will be big.
-A small number will increase the number of bundles generated, but the file sizes will be smaller.
+The `bundle_size` variable controls the file size of the generated bundles.
+Specifying a large `bundle_size` reduces the number of bundles generated, but generates larger file sizes.
+Specifying a smaller `bundle_size` generates more bundles with a smaller file sizes.
 
-You want to balance the number of files to download on a page with the size of the data.
-A single connection should be around 100kb.
+The goal is to balance the number of bundles to download with the size of each bundle.
+As a rule of thumb, each bundle should be at least 100 kB.
 
 ## Fine tuning your theme
 
-There are many ways to tune your theme's `etc/view.xml` file.  
+There are many ways to tune your theme using the `etc/view.xml` file.  
 
-For example, Magento's Luma theme is configured to work well for all pages, but 
-by adding or removing items inside `exclude`, you can maximize browser performance for home, catalog, or product pages.
+For example, the Magento Luma theme is configured to work well for all pages, but you can maximize browser performance for home, catalog, or product pages by adding items to or removing items inside the `<exclude>` node.
 
 Follow these steps to help you identify which JavaScript files to bundle for your theme:
 
