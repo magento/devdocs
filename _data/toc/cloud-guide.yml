@@ -1,6 +1,7 @@
+label: Magento Commerce Cloud
 project-webint-basiclabel: Magento Commerce Cloud Guide
 pages:
-    - label: Magento Commerce Cloud guide
+    - label: Overview
       url: /cloud/bk-cloud.html
       children:
         - label: Onboarding tasks
