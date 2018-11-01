@@ -45,7 +45,7 @@ When you enable bundling, Magento combines hundreds of JavaScript files into jus
 
 ### Excluding files
 
-The `<exclude>` node in a the `etc/view.xml` file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
+The `<exclude>` node in the `etc/view.xml` file for a theme specifies the files to exclude from the Magento JavaScript bundling process.
 JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.
 
 As such, you should exclude the JavaScript files you use for testing or development so that they are not loaded on every page.  
@@ -125,7 +125,7 @@ As a rule of thumb, each bundle should be at least 100 kB.
 
 There are many ways to tune your theme using the `etc/view.xml` file.  
 
-For example, the Magento Luma theme is configured to work well for all pages, but you can maximize browser performance for home, catalog, or product pages by adding items to or removing items inside the `<exclude>` node.
+For example, the Magento Luma theme is configured to work well for all pages, but you can maximize browser performance for home, catalog, or product pages by adding items to or removing items from the `<exclude>` node.
 
 Follow these steps to help you identify which JavaScript files to bundle for your theme:
 
