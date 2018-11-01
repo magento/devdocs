@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.8
+mftf-release: 2.3.9
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/suite.html
 ---
 
@@ -240,7 +240,7 @@ It may contain test steps with any [actions] and [action groups].
 
 ### include {#include-tag}
 
-A set of filters to be used for including tests into the suite.
+A set of filters that you can use to specify which tests to include in the test suite.
 
 It may contain filters by:
 
@@ -248,11 +248,11 @@ It may contain filters by:
 - group which refers to a declared `group` annotation.
 - module which refers to `test` files under a specific Magento Module.
 
-The element may contain [`<test>`], [`<group>`], and [`<module>`].
+The element can contain [`<test>`], [`<group>`], and [`<module>`].
 
 ### exclude {#exclude-tag}
 
-A set of filters to be used for excluding tests from the suite.
+A set of filters that you can use to specify which tests to exclude in the test suite.
 
 There two types of behavior:
 

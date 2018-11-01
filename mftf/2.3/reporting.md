@@ -5,10 +5,10 @@
 
 The Magento Functional Testing Framework provides two types of reporting:
 
-- In CLI, when you run [`mftf`][mftf] or [`codecept`][codecept] commands.
-- In a web browser, using [Allure Framework][] after test run was complete.
+- Inline reporting that you can view in the terminal as you run [`mftf`][mftf] or [`codecept`][codecept] CLI commands.
+- HTML reports that you can view using the [Allure Framework][] after a test run completes.
 
-All the reporting artifacts are stored at the `dev/tests/acceptance/tests/_output` in the Magento root directory.
+When you run a test, MFTF copies all reporting artifacts to the `dev/tests/acceptance/tests/_output` subdirectory in the Magento root directory.
 The directory contains:
 
 - `allure-results/` that is a directory generated and served by the Allure Framework.
@@ -17,18 +17,18 @@ The directory contains:
 - `.html` and `.png` files that are screenshots of fails in HTML and PNG formats.
   To cleanup the `_output/` directory, remove them manually.
 
-The `mftf` tool logs its output at `dev/tests/acceptance/mftf.log` continuously.
+The `mftf` tool logs output continuously to the `dev/tests/acceptance/mftf.log` file.
 
 ## Command line
 
 The MFTF reports about its progress during test run when you run the `mftf` CLI tool with [`run:test`][] or [`run:group`][] commands.
 
-The report may contain three main parts:
+The report can contain three main parts:
 
 - Pre-run checks:
   - Environment check, such as PHP warnings, etc.
   - XML test validation like deprecation warnings such as missing required components in XML tests.
-- Codeception report which is the actual report about progress of each test.
+- Codeception report which is the progress report for each test.
 - Total results of the test run such as number of tests, assertions, and failures.
 
 To manage the level of verbosity, use `-v` or `--verbose` flag in the `mftf` commands.
@@ -161,8 +161,8 @@ The interesting part starts near the `FAIL` line.
  FAIL
 ```
 
-When a test step fails, the MFTF always saves a screenshot of the web page with failing state.
-And it always follows the failing test step, which is `I see "#something"` in our case.
+When a test step fails, the MFTF always saves a screenshot of the web page with the failing state immediately after the failure occurs.
+`I save screenshot` follows the failing test step `I see "#something"` in our case.
 
 A screenshot of the fail goes at the `acceptance/tests/_output` directory in both PNG and HTML formats:
 
@@ -198,13 +198,12 @@ There was 1 failure:
 
 First you see warnings and deprecations.
 The `DEPRECATION` here is thrown by an MFTF dependency (Symfony) that is out of the scope for test writers and should be considered by MFTF contributors.
-In such cases, [report an issue][].
+If you encounter this type of reporting, [report an issue][].
 
-Then, the MFTF reports that the test run took 52.43 seconds using 16 MB of the system RAM.
+Then, the MFTF reports that the test run took 52.43 seconds using 16 MB of system RAM.
 And, finally, that there was `1 failure`.
 
-Next, the report provides details about the test fail.
-See interpretation after the following report.
+Next, the report provides details about the test failure.
 
 ```terminal
 ---------
@@ -263,11 +262,11 @@ full_page
 
 ```terminal
 --> ...
-[Content too long to display. See complete response in '/Users/dmytroshevtsov/Projects/vagrant/vagrant-magento/magento2ce/dev/tests/acceptance/tests/_output/' directory]
+[Content too long to display. See complete response in '/../../magento2/dev/tests/acceptance/tests/_output/' directory]
 --> contains "#something".
 ```
 
-The web page is too long to be reported in the CLI, and it is stored at *'/Users/dmytroshevtsov/Projects/vagrant/vagrant-magento/magento2ce/dev/tests/acceptance/tests/_output/'*.
+The web page is too long to be reported in the CLI, and it is stored at *'/../../magento2/dev/tests/acceptance/tests/_output/'*.
 Search the web page by test name *AdminMenuNavigationWithSecretKeysTest*.
 The failing test assertion is that the web page contains *contains* a CSS locator *#something*.
 

@@ -81,7 +81,7 @@ Clone the example configuration files and build the Codeception project.
 #### Usage
 
 ```bash
-vendor/bin/mftf build:project [--upgrade] [config_params]
+vendor/bin/mftf build:project [--upgrade] [config_param_options]
 ```
 
 #### Options
@@ -90,7 +90,7 @@ vendor/bin/mftf build:project [--upgrade] [config_params]
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `-u`, `--upgrade` | Upgrades existing MFTF tests according to requirements of the last major release. Specifying this flag upgrades only those tests in the default location. Example: `build:project --upgrade`. |
 
-You can use options to set up particular configuration parameters, since the `build:project` command runs [`setup:env`][setup] as well.
+You can include options to set configuration parameter values for your environment since the project build process also [sets up the environment][setup].
 
 ```bash
 vendor/bin/mftf build:project --MAGENTO_BASE_URL=http://magento.local/ --MAGENTO_BACKEND_NAME=admin214365
@@ -309,20 +309,20 @@ vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 
 ### `setup:env`
 
-Updates values to [configuration] parameters in the [`.env`] file.
-Creates the file if it does not exist.
+Updates the [configuration] parameter values in the [`.env`] file.
+Creates the `.env` file if it does not exist.
 
 #### Usage
 
 ```bash
-vendor/bin/mftf setup:env [config_param1=value] [config_param2=value]
+vendor/bin/mftf setup:env [config_param_option1=<value>] [config_param_option2=<value>]
 ```
 
 `config_param` is a configuration parameter from the `.env` file.
 The command consumes the parameters in a format of options assigned with values, for example `--MAGENTO_BASE_URL=http://magento.local/`.
-If the provided parameter does not exist, the command returns an error.
+If you specify a parameter that the `.env` file does not contain, the command returns an error.
 
-This command is also run as a part of [`build:project`][build] that enables you to set up configuration the same way from a command line.
+You can also update configuration parameter values when you use the [`build:project`][build] command.
 
 #### Examples
 
