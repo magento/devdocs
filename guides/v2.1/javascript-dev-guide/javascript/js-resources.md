@@ -50,6 +50,7 @@ Examples:
        });
     ```
 
+
 {% collapsible Example 2 %}
 
 - File actual location: `app/code/design/frontend/Magento/blank/web/js/theme.js`
