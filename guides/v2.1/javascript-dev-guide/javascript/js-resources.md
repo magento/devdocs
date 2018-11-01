@@ -60,7 +60,7 @@ JS resources are accessed using relative paths.
     ```
 
 
-**Example**
+**Example 3**
 
 - File actual location: `lib/web/jquery.js`
 - File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
