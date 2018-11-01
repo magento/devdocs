@@ -30,7 +30,6 @@ Topics include:
 *	[Verifying]({{ page.baseurl }}/install-gde/install/verify.html)
 *	[Configuring]({{ page.baseurl }}/install-gde/install/post-install-config.html)
 *	[Optional sample data (after installing Magento)]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html)
-{% endcollapsible %}
 
 ## Upgrade, update
 
