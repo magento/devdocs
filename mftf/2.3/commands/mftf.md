@@ -310,7 +310,7 @@ vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ### `setup:env`
 
 Updates values to [configuration] parameters in the [`.env`] file.
-Creates the file it is not exist.
+Creates the file if it does not exist.
 
 #### Usage
 
