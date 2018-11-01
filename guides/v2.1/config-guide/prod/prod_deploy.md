@@ -1,7 +1,7 @@
 ---
 group: configuration-guide
 title: Deploy to production
-redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
+redirect_from: /guides/v2.1/howdoi/deploy/deploy-to-prod.html
 functional_areas:
   - Configuration
   - Deploy
