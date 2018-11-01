@@ -11,11 +11,10 @@ The Magento Functional Testing Framework provides two types of reporting:
 All the reporting artifacts are stored at the `dev/tests/acceptance/tests/_output` in the Magento root directory.
 The directory contains:
 
-- `allure-report/` that is a directory generated and served by the Allure Framework.
+- `allure-results/` that is a directory generated and served by the Allure Framework.
 - `failed` that is a text file containing relative paths to failed tests after the last test run.
   The paths are relative to `dev/tests/acceptance/`.
 - `.html` and `.png` files that are screenshots of fails in HTML and PNG formats.
-  The files are appended after each new run.
   To cleanup the `_output/` directory, remove them manually.
 
 The `mftf` tool logs its output at `dev/tests/acceptance/mftf.log` continuously.
