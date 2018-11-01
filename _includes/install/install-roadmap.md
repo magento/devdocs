@@ -29,7 +29,6 @@ Do you know what a "terminal" application is? Do you know what operating system 
 *	[Verifying]({{ page.baseurl }}/install-gde/install/verify.html)
 *	[Configuring]({{ page.baseurl }}/install-gde/install/post-install-config.html)
 *	[Optional sample data (after installing Magento)]({{ page.baseurl }}/install-gde/install/sample-data-after-magento.html)
-*	[Magento in production]({{page.baseurl}}/howdoi/deploy/deploy-to-prod.html)
 {% endcollapsible %}
 
 ## Upgrade, update
