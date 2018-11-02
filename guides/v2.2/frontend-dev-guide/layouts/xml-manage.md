@@ -406,9 +406,7 @@ You can replace this block in `layout.xml` with a custom block that uses the sam
 </block>
 ```
 
-For the replacement of this block we will use the `local.xml` file, which is a special layout file that is always processed last by Magento (i.e. layout updates in this file are applied last after all other layout update files).   
-
-Include this file inside your theme's layout directory with specified layout changes. Essentially, we can swap out an existing block type for a new block via `local.xml` :
+Magento processes the layout updates made within the special `local.xml` file last, after applying all other layout updates from other files. This means that you can include a `layout.xml` inside your theme's layout directory to ensure that your layout updates will replace an existing block type with the new block that defines your changes. For example:
 
 ```xml
 <catalog_product_view>
