@@ -13,8 +13,3 @@ end
 group :jekyll_plugins do
   gem 'jekyll-algolia', '~> 1.0'
 end
-
-if RUBY_VERSION =~ /2.5.3/
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
