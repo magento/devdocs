@@ -128,17 +128,15 @@ Run the Data Migration Tool in `Delta` mode to transfer incremental changes.
 ### Deltalog is not installed
 
 {%highlight xml%}
-Deltalog for <DATABASE> is not installed
+Deltalog for <TABLE_NAME> is not installed
 {%endhighlight%}
 
 #### Explanation
 
-This error occurs during the process of incremental migration of changes to data. It means the delta migration of changes made in Magento 1 since the last time you migrated data was not performed properly and retained.
+This error occurs during the process of [incremental migration]({{ page.baseurl }}/migration/migration-migrate-delta.md) of changes to data. It means deltalog tables (with prefix m2_cl_*) were not found in Magento 1 database. The tool installs these tables during [data migration]({{ page.baseurl }}/migration/migration-migrate-data.md) as well as database triggers which track changes and fill deltalog tables.
 
-Delta migrations can fail when you wipe the Magento 1 database before doing the delta, since this action erases the tables created during the initial migration of data into the Magento 1 database. These tables are needed to perform the delta migration properly. 
+Possible reason of the error could be if migration of data is done not from live Magento 1 store but its copy. If you overwrite the copy again from live Magento 1, the deltalog tables will be erased.
 
 #### Possible solution
 
-Do not wipe the Magento 1 database before the delta migration process is complete in order to keep your initial migration tables.
-
-If you have Magento 1 on one server and Magento 2 on another that can't access the live Magento 1 database, you may need to copy the Magento 1 database over first. Otherwise if you drop and overwrite the database, you will lose those special tables.
+It is recommended to test migration process from a copy of Magento 1 database in order to fix possible issues. After it, migrate all over again but from the live Magento 1 database.
