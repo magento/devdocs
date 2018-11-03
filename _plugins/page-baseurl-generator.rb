@@ -9,15 +9,17 @@
 # if it is not set, then the 'guide_version' is set to version from the page path (for example, "2.2" in the "guides/v2.2/**/*.md");
 # if the path doesn't contain "guides/v2.x", then the version is unset and returns the nil object (same as null)
 Jekyll::Hooks.register :pages, :post_init do |page|
-  pattern = %r{\A(?=guides/v)(?<version_from_path>2\.\d)}
+  pattern = %r{\Aguides/v(?<version_from_path>2\.\d)}
   baseurl = page.site.baseurl
-  version = page.data['guide_version']
-  unless version
-    pattern.match(page.path)
+  path = page.path
+  data = page.data
+  version = data['guide_version']
+  if version.nil? && path.start_with?('guides')
+    pattern.match(path)
     version = Regexp.last_match(:version_from_path)
-    page.data['guide_version'] = version
+    data['guide_version'] = version
   end
-  page.data['baseurl'] =
+  data['baseurl'] =
     if version
       "#{baseurl}/guides/v#{version}"
     else
