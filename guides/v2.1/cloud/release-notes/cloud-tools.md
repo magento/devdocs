@@ -40,6 +40,13 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 #### Resolved Issues
 
+-  <!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration.
+
+-  <!--MAGECLOUD-2740-->Corrected the `config:dump` command so that it includes each website locale in the `system` section of the `config.local.php` file.
+
+-  <!--MAGECLOUD-2797-->Fixed an issue that resulted in warm-up errors during the post-deploy phase by correcting the source base URL reference.
+
+-  <!--MAGECLOUD-2850-->Fixed an issue that generated files improperly during the `setup:di:compile` process, which affected the Amazon Pay module.
 
 ## v2002.0.14
 
