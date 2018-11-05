@@ -16,7 +16,7 @@ Does it fill gaps in our current docs and provide important information?
 [Let us know][1]!
 
 {:.bs-callout .bs-callout-info}
-**Note:** Magento does not officially endorse any of the linked blogs, books, presentation, or podcasts linked below.
+Magento does not officially endorse any of the linked blogs, books, presentation, or podcasts linked below.
 They are listed here because the content has been well received within the Magento community.
 
 ## Best Practices
@@ -25,15 +25,15 @@ See our collection of best and leading practices, common solutions, and more in 
 
 ## Community Engineering Slack
 
-To connect with Magento and the Community, join us on the [Magento Community Engineering Slack](https://magentocommeng.slack.com). If you are interested in joining Slack, or a specific channel, send us request at [engcom@magento.com](mailto:engcom@magento.com) or [self signup](https://tinyurl.com/engcom-slack).
+To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us request at [engcom@magento.com][] or [self signup][].
 
 
 We have channels for each project. These channels are recommended for new members:
 
-- [general](https://magentocommeng.slack.com/messages/C4YS78WE6): Open chat for introductions and Magento 2 questions
-- [github](https://magentocommeng.slack.com/messages/C7KB93M32): Support for GitHub issues, pull requests, and processes
-- [public-backlog](https://magentocommeng.slack.com/messages/CCV3J3RV5): Discussions of the Magento 2 backlog
-- [devdocs](https://magentocommeng.slack.com/messages/CAN932A3H): Documentation contribution support
+- [general][]: Open chat for introductions and Magento 2 questions
+- [github][]: Support for GitHub issues, pull requests, and processes
+- [public-backlog][]: Discussions of the Magento 2 backlog
+- [devdocs][]: Documentation contribution support
 
 ## Resources and guides
 
@@ -63,7 +63,7 @@ We have channels for each project. These channels are recommended for new member
 
 ## Automated Testing
 
-- *Presentation* [Writing testable code][10] by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
+- *Presentation* [Writing testable code][10] by Vinai Kopp (**Bonus:** [Video Presentation][11])
 - *Book* [Test Driven Magento Extension Development][12] by Allan MacGregor
 - *Blog post* [Integration Tests with Magento 2][19] by Andreas von Studnitz
 
@@ -82,6 +82,13 @@ We have channels for each project. These channels are recommended for new member
 -  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
+[Magento Community Engineering Slack]: https://magentocommeng.slack.com
+[engcom@magento.com]: mailto:engcom@magento.com
+[self signup]: https://tinyurl.com/engcom-slack
+[general]: https://magentocommeng.slack.com/messages/C4YS78WE6
+[github]: https://magentocommeng.slack.com/messages/C7KB93M32
+[public-backlog]: https://magentocommeng.slack.com/messages/CCV3J3RV5
+[devdocs]: https://magentocommeng.slack.com/messages/CAN932A3H
 [0]: https://github.com/DavidLambauer/awesome-magento2 
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
