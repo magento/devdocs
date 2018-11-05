@@ -11,7 +11,7 @@ functional_areas:
 
 ## Overview
 
-The incremental migration tool installs deltalog tables (with prefix m2_cl_*) and triggers to Magento 1 database during the [migration of data]({{ page.baseurl }}/migration/migration-migrate-data.html). It enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
+The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) and triggers (for tracking changes) in the Magento 1 database during the [migration of data]({{ page.baseurl }}/migration/migration-migrate-data.html). These deltalog tables and triggers are essential to ensuring that you migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
 
 * data that customers added via {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (created orders, reviews, changes in customer profiles, etc.)
 
