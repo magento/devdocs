@@ -139,4 +139,4 @@ One reason for the error could be that you are trying to migrate from a *copy* o
 
 #### Possible solution
 
-It is recommended to test migration process from a copy of Magento 1 database in order to fix possible issues. After it, migrate all over again but from the live Magento 1 database.
+We recommended testing the migration process from a copy of your Magento 1 database to fix any issues. After fixing all issues on the copy, start the migration process over again from your live Magento 1 database.
