@@ -21,7 +21,7 @@ They are listed here because the content has been well received within the Magen
 
 ## Best Practices
 
-See our collection of best and leading practices, common solutions, and more in the [Best Practices]({{ site.baseurl }}/community/resources/best-practices.html) guide. This guide is open to contributions!
+See our collection of best and leading practices, common solutions, and more in the [Community contributed best practices]({{ site.baseurl }}/community/resources/best-practices.html) guide. If you have excellent best practices, tips and tricks, and work-arounds, feel free to [contribute][]!
 
 ## Community Engineering Slack
 
@@ -42,6 +42,8 @@ We have channels for each project. These channels are recommended for new member
 - *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
 - *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
 - *Statistics* [Magestats][32] by [Marcel Hauri][33]
+- *Videos* [Magento Dev Channel with Max Pronko][34] by [Max Pronko][35]
+- *Courses* [Magento Courses][36] by [Max Pronko][35]
 
 ## Magento APIs
 
@@ -79,6 +81,7 @@ We have channels for each project. These channels are recommended for new member
 
 -  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
 
+[contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [0]: https://github.com/DavidLambauer/awesome-magento2 
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
@@ -113,3 +116,6 @@ We have channels for each project. These channels are recommended for new member
 [31]: https://twitter.com/JoshuaSWarren
 [32]: https://magestats.net/
 [33]: https://twitter.com/mhauri
+[34]: https://www.youtube.com/maxpronko
+[35]: https://twitter.com/max_pronko
+[36]: https://www.maxpronko.com/all-courses/
