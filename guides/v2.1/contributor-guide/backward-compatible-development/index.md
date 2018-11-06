@@ -189,18 +189,18 @@ Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe 
 Do not change argument types.
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding `@deprecated` annotation before dispatching the event.
 
+Example code: 
 
-{% collapsible Example Code %} {% highlight php startinline %} /**
-
+```php?start_inline=1
 $transportObject = new DataObject($transport);
 
-    /**
-     * Event argument `transport` is @deprecated. Use `transportObject` instead.
-     */
-    $this->eventManager->dispatch(
-        'email_invoice_set_template_vars_before',
-        ['sender' => $this, 'transport' => $transportObject->getData(), 'transportObject' => $transportObject]
-    );
+/**
+ * Event argument `transport` is @deprecated. Use `transport_object` instead.
+ */
+$this->eventManager->dispatch(
+    'email_invoice_set_template_vars_before',
+    ['sender' => $this, 'transport' => $transportObject->getData(), 'transport_object' => $transportObject]
+);
 ```
 
 ### JS
