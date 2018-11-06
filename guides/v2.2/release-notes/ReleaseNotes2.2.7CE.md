@@ -5,14 +5,14 @@ title: Magento Open Source 2.2.7 Release Notes
 
 ---
 
-*Patch code and release notes were published on November 30, 2018.*
+*Patch code and release notes were published on November 27, 2018.*
 
 
-We are pleased to present Magento Open Source 2.2.7. This release includes over 40 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
+We are pleased to present Magento Open Source 2.2.7. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.6) have been ported to 2.1.15, 1.14.3.10, and 1.9.3.10, as appropriate.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.7) have been ported to 2.1.16, 1.14.3.10, and 1.9.3.10, as appropriate.
 
 
 
@@ -20,12 +20,13 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 ## Highlights
 
-In addition to over 40 critical security fixes, look for the following highlights in this release:
+In addition to over 30 critical security fixes, look for the following highlights in this release:
 
 
 ### Core code highlights
 
 This release includes improvements to general usability of the core code plus enhancements to wishlist and shipping features. 
+
 
 #### General improvements
 
@@ -54,7 +55,7 @@ This release includes improvements to general usability of the core code plus en
 
 ####  Magento Shipping
 
-* The Magento Shipping **Click & Collect** feature offers merchants the ability to:
+* The Magento Shipping Click & Collect feature offers merchants the ability to:
 
 	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
 
@@ -64,19 +65,16 @@ This release includes improvements to general usability of the core code plus en
 
 	Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
 
- * The batch details page now displays collection point addresses, as applicable
+* The batch details page now displays collection point addresses, as applicable.
 
- * Activation notices can now be translated.
+* Activation notices can now be translated.
 
-
-- Manifest order with instant payment methods, e.g. PayPal Express
+* Manifest order with instant payment methods, e.g. PayPal Express
 
 * Tracking popups for multi-package shipments are now displayed. 
 
 * The dispatch details page has been enhanced. 
 
-
-Merchants can now individual shipments for dispatch
 
 
 
@@ -106,7 +104,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!-- MAGETWO-95591 -->* Customer attribute management issues that merchants  experienced after upgrading to Magento 2.2.6 have been resolved. Previously, after upgrading their stores to Magento 2.2.6, merchants could not create and save a new multiselect or dropdown customer custom attribute, and  existing customer attributes  no longer appeared for editing within the customer's account on storefront.
+<!-- MAGETWO-95591 -->* Customer attribute management issues that merchants  experienced after upgrading to Magento 2.2.6 have been resolved. Previously, after upgrading their stores to Magento 2.2.6, merchants could not create and save a new multiselect or dropdown customer custom attribute, and  existing customer attributes  no longer appeared for editing within the customer's account on the storefront.
 
 
 <!-- MAGETWO-94764 -->* Fixed an issue with the shared configuration settings in `app/etc/config.php` that caused `recursion detected` errors during deployment.
@@ -117,7 +115,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-94475 -->* The `bin/magento` command now works as expected when Magento is not installed. Previously, Magento displayed this error, `Command line user does not have read and write permissions on generated directory. Please address this issue before using Magento command line.` 
 
-<!-- ENGCOM-2740 -->* Magento no longer throws an error when loading configuration data while running the `setup:di:compile` command. Previously, Magento threw an error when loading configuration data before Magento was installed because no  store-specific or website-specific configuration data was available. (Stores and website data is available only after Magento is installed.) *Fix submitted by [Marcel](https://github.com/mimarcel) in pull request [13649](https://github.com/magento/magento2/pull/13649)*.
+<!-- ENGCOM-2740 -->* Magento no longer throws an error when loading configuration data while running the `setup:di:compile` command. Previously, Magento threw an error when loading configuration data before Magento was installed because no  store-specific or website-specific configuration data was available. (Store and website data is available only after Magento is installed.) *Fix submitted by [Marcel](https://github.com/mimarcel) in pull request [13649](https://github.com/magento/magento2/pull/13649)*.
 
 
 <!-- ENGCOM-2674 -->* You can now set a custom `frontend_model` value in `system.xml` if the name of the module you're using contains an underscore. *Fix submitted by [Ben Tideswell](https://github.com/bentideswell) in pull request [14397](https://github.com/magento/magento2/pull/14397)*.
@@ -125,9 +123,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-2596 -->* Performance of the `setup:upgrade` step  of the update process has been improved for installations containing many orders (greater than 100,000). *Fix submitted by [Aurélien Lavorel](https://github.com/AurelienLavorel) in pull request [16570](https://github.com/magento/magento2/pull/16570)*.
 
-<!-- ENGCOM-2646 -->* You can now complete `setup:install` for installations running  an authenticated Redis instance for cache configuration. Previously, Magento did not read the Redis cache options in `env.php` as expected, although  the Redis session password configuration worked as expected.  *Fix submitted by [Guillaume Giordana](https://github.com/guillaumegiordana) in pull request [17078](https://github.com/magento/magento2/pull/17078)*.
+<!-- ENGCOM-2646 -->* You can now complete `setup:install` for installations running  an authenticated Redis instance for cache configuration. Previously, Magento did not read the Redis cache options in `env.php` as expected, although the Redis session password configuration worked as expected.  *Fix submitted by [Guillaume Giordana](https://github.com/guillaumegiordana) in pull request [17078](https://github.com/magento/magento2/pull/17078)*.
 
-<!-- ENGCOM-2721 -->* You can now replace the transaction trace driver for the Profiler (app/bootstrap.php). This change expands For example, you could replace  the default profiler with the OpenTracing API, which can then use its own exporters to express the code to the CNCF Jaeger project, which in turn supports a more granular view of application transactions.) *Fix submitted by [Andrew Howden](https://github.com/andrewhowdencom) in pull request [15171](https://github.com/magento/magento2/pull/15171)*.
+<!-- ENGCOM-2721 -->* You can now replace the transaction trace driver for the Profiler (`app/bootstrap.php`). For example, with this change you could replace  the default profiler with the OpenTracing API, which can then use its own exporters to express the code to the CNCF Jaeger project. This in turn supports a more granular view of application transactions.) *Fix submitted by [Andrew Howden](https://github.com/andrewhowdencom) in pull request [15171](https://github.com/magento/magento2/pull/15171)*.
 
 
 
@@ -136,7 +134,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-93990 -->* An adminstrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
 
-<!-- MAGETWO-90765 -->* Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this wwhen an adminstrator tried to edit or create a block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png`.￼
+<!-- MAGETWO-90765 -->* Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this when an adminstrator tried to edit or create a block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png`.￼
 
 
 
@@ -161,7 +159,7 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- ENGCOM-2901 -->* Magento now displays the wishlist icon on the shopping cart page on mobile devices. Previously, Magento cut off the wishlist icon on this page when viewed on a mobile device. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17877](https://github.com/magento/magento2/pull/17877)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
 
-<!-- ENGCOM-2789 -->* Magento no longer unchecks **My billing and shipping address are the same** checkbox when a customer uses an offline custom payment method for an order. Previously, when a customer used an offline custom payment method for an order, Magento unchecked this  checkbox on payment step if the shipping address was updated. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17593](https://github.com/magento/magento2/pull/17593)*. [GitHub-14819](https://github.com/magento/magento2/issues/14819)
+<!-- ENGCOM-2789 -->* Magento no longer unchecks **My billing and shipping address are the same** checkbox when a customer uses an offline custom payment method for an order. Previously, when a customer used an offline custom payment method for an order, Magento unchecked this checkbox on the payment step if the shipping address was updated. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17593](https://github.com/magento/magento2/pull/17593)*. [GitHub-14819](https://github.com/magento/magento2/issues/14819)
 
 <!-- MAGETWO-93038 -->* You can now see category changes on the storefront as expected after the changes have been saved. Previously, Magento did not display changes to product categories on the storefront until reindexing occurred even if **update on schedule** was set and the cache had been cleaned.
 
@@ -169,7 +167,7 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- ENGCOM-2534 -->* Third-party modules can now perform actions after `totals` calculation. (Modules can perform additional actions by adding `.done`, `.fail`, or `.always` tasks to the request promise by creating a JavaScript mixin for the totals processor.) *Fix submitted by [Navarr Barnier](https://github.com/navarr) in pull request [17127](https://github.com/magento/magento2/pull/17127)*. 
 
-<!-- ENGCOM-2645 -->* Magenta no longer adds an empty method to the cart summary. Previously, when the method html was empty, an empty list item resulted, which subsequently  resulted in an extra margin of 20px because of default styling. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17189](https://github.com/magento/magento2/pull/17189)*. 
+<!-- ENGCOM-2645 -->* Magento no longer adds an empty method to the cart summary. Previously, when the method html was empty, an empty list item resulted, which subsequently  resulted in an extra margin of 20px because of default styling. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [17189](https://github.com/magento/magento2/pull/17189)*. 
 
 <!-- ENGCOM-2636 -->* The sidebars for the wishlist on the catalog, my account, and checkout pages now render special characters correctly. Previously, the browser displayed `&trade;` instead of rendered special characters on these pages. *Fix submitted by [deepjoshi94](https://github.com/deepjoshi94) in pull request [17070](https://github.com/magento/magento2/pull/17070)*. 
 
@@ -205,7 +203,7 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- MAGETWO-94062 -->* Magento now displays a descriptive error message  when a customer tries to order a product in increments that are not allowed.
 
-<!-- MAGETWO-92682 -->* The Catalog Staging module no longer overrides trigger settings in scheduled indexed operations. Previously, when Magento indexes were configured to run on schedule, Magento  created the appropriate INSERT/UPDATE/DELETE triggers. Consequently, the UPDATE trigger script contained a condition to check if any values was  changed, and only then insert a record into changelog table of subscribed indexers. The Catalog Staging module prevented the inclusion of trigger conditions.
+<!-- MAGETWO-92682 -->* The Catalog Staging module no longer overrides trigger settings in scheduled indexed operations. Previously, when Magento indexes were configured to run on schedule, Magento  created the appropriate INSERT/UPDATE/DELETE triggers. Consequently, the UPDATE trigger script contained a condition to check if any values were  changed, and only then insert a record into the changelog table of subscribed indexers. The Catalog Staging module prevented the inclusion of trigger conditions.
 
 
 <!-- MAGETWO-88641 -->* Magento now applies tier prices as expected after a customer logs into their shopping cart. [GitHub-14255](https://github.com/magento/magento2/issues/14255)
@@ -235,7 +233,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2580 -->* Problems with the responsive layout  `app/design/frontend/Magento/luma/Magento_Theme/web/css/source/_module.less` have been resolved. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17217](https://github.com/magento/magento2/pull/17217)*.
 
-<!-- ENGCOM-2549 -->* The `text-aligh` for the <th> element of the Subtotal column in the Creditmemo email has been corrected. *Fix submitted by [Tomash Khamlai](https://github.com/TomashKhamlai) in pull request [17153](https://github.com/magento/magento2/pull/17153)*.
+<!-- ENGCOM-2549 -->* The `text-aligh` for the `<th>` element of the Subtotal column in the creditmemo email has been corrected. *Fix submitted by [Tomash Khamlai](https://github.com/TomashKhamlai) in pull request [17153](https://github.com/magento/magento2/pull/17153)*.
 
 <!-- ENGCOM-2568 -->* The  invalid `knockoutjs` data binding in Braintree PayPal has been fixed. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17236](https://github.com/magento/magento2/pull/17236)*.
 
@@ -255,7 +253,7 @@ product, and hung indefinitely while trying to add the product.
 <!-- ENGCOM-2776 -->* The code generator for Proxy is no longer missing `returnType` in the method information definition. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [17552](https://github.com/magento/magento2/pull/17552)*.
 
 
-<!-- ENGCOM-2748 -->* The <script/> tag has been replaced with <script type="text/x-magento-init" /> in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also created a new JavaScript component with the callback function.  *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
+<!-- ENGCOM-2748 -->* The `<script/>` tag has been replaced with `<script type="text/x-magento-init" /> `in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also  a new JavaScript component with the callback function has been created.  *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
 
 
 <!-- ENGCOM-2632 -->* The '$outputHelper' property declaration has been added to `app/code/Magento/Catalog/CustomerData/CompareProducts.php`. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
@@ -274,7 +272,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-73359 -->* You can successfully save a CMS page with same URL key as another store on a different website but with the same hierarchy. 
 
-<!-- ENGCOM-2655 -->* The CMS page index has been refactored to remove the Object Manager and added dependency injection to the constructor. *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [17066](https://github.com/magento/magento2/pull/17066)*. 
+<!-- ENGCOM-2655 -->* The CMS page index has been refactored to remove the Object Manager, and  dependency injection has been added  to the constructor. *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [17066](https://github.com/magento/magento2/pull/17066)*. 
 
 
 ### Configurable products
@@ -289,7 +287,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Customer
 
-<!-- ENGCOM-2746 -->* Magento now displays the Customer group menu under the Customers  as expected. Previously, Magento displayed the customer group menu  under the Customers menu on the Admin, but displayed it  under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+<!-- ENGCOM-2746 -->* Magento now displays the customer group menu under the customers menu as expected. Previously, Magento displayed the customer group menu  under the customers menu on the Admin, but displayed it  under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
 ### Directory
 
@@ -343,9 +341,9 @@ product, and hung indefinitely while trying to add the product.
 
 #### JavaScript framework
 
-<!-- ENGCOM-2291 -->* JavaScript validation rules no longer require validation of fields where completion is not required. Previously, customers could not complete forms unless non-required fuelds were completed. *Fix submitted by [Vitaliy Boyko](https://github.com/VitaliyBoyko) in pull request [16724](https://github.com/magento/magento2/pull/16724)*. [GitHub-16544](https://github.com/magento/magento2/issues/16544)
+<!-- ENGCOM-2291 -->* JavaScript validation rules no longer require validation of fields where completion is not required. Previously, customers could not complete forms unless non-required fields were completed. *Fix submitted by [Vitaliy Boyko](https://github.com/VitaliyBoyko) in pull request [16724](https://github.com/magento/magento2/pull/16724)*. [GitHub-16544](https://github.com/magento/magento2/issues/16544)
 
-<!-- ENGCOM-1967 -->* You can disable the **Use system value** checkboxes on the Adminhtml as expected. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16000](https://github.com/magento/magento2/pull/16000)*.
+<!-- ENGCOM-1967 -->* You can disable the **Use system value** checkboxes on the Admin as expected. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16000](https://github.com/magento/magento2/pull/16000)*.
 
 
 
@@ -365,7 +363,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2785 -->* Magento now displays the background of transparent product image watermarks correctly. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17013](https://github.com/magento/magento2/pull/17013)*. [GitHub-16929](https://github.com/magento/magento2/issues/16929)
 
-<!-- ENGCOM-2855 -->* The WYSIWYG editor now displays the backgrounds of .PHG thumbnail images as expected. Previously, transparent background were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
+<!-- ENGCOM-2855 -->* The WYSIWYG editor now displays the backgrounds of .PHG thumbnail images as expected. Previously, transparent backgrounds were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 
 <!-- ENGCOM-2860 -->*  Magento no longer duplicates events during delete operations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 
@@ -432,11 +430,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Payment methods
 
-#### Braintree
-<!-- MAGETWO-93299 -->* Magento no longer throws an error when you try to add a new shipping address to an order paid with using Braintree from the Admin. 
-
-
-#### PayPal
+<!-- MAGETWO-93299 -->* Magento no longer throws an error when you try to add a new shipping address to an order placed using Braintree from the Admin. 
 
 <!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. *Fix submitted by [Jason Woods](https://github.com/driskell) in pull request [13133](https://github.com/magento/magento2/pull/13133)*. 
 
@@ -447,7 +441,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-93345 -->* The `.csv` export of Coupon reports now shows the correct total for  selected coupons. Previously, the total line in the `.csv` file showed the totals for all coupons in the selected time period, rather than just the selected coupons.
 
-<!-- MAGETWO-86650 -->* The `.csv` export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this `.csv` file contained only only the first 20 rows of the report. 
+<!-- MAGETWO-86650 -->* The `.csv` export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this `.csv` file contained only  the first 20 rows of the report. 
 
 <!-- ENGCOM-2724 -->* The **Year-to-date** dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
@@ -481,12 +475,8 @@ product, and hung indefinitely while trying to add the product.
 
 
 
-
-
-
-
-
 ### Sales rule
+
 <!-- MAGETWO-93209 -->* You can now use wildcard values in coupon codes. 
 
 
@@ -500,7 +490,6 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-91063 -->* Search synonyms are now available for all search engines deployed in your Magento store. Previously, search synonyms did not appear in the Admin menu when Elasticsearch 5.0+ was deployed. 
 
 <!-- MAGETWO-92652 -->* Product attribute are now displayed as expected in layered navigation with Elasticsearch 5.0+.
-
 
 <!-- MAGETWO-90497 -->* Elasticsearch now works as expected for Chinese locales. 
 
@@ -517,12 +506,12 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-93810 -->* Customers can now view their completed order from the success page for orders that will be shipped to multiple addresses. Previously, when a customer took a link from the order success page to view their just-completed order, Magento displayed this error, **There has been an error processing your request**.
 
-<!-- MAGETWO-92144 -->* The Shipment grid now displays the status of completed orders correctly. Previously, the Order Status column of the Shipment grid indicated that a completed was being processed.
+<!-- MAGETWO-92144 -->* The Shipment grid now displays the status of completed orders correctly. Previously, the Order Status column of the Shipment grid indicated that a completed order was being processed.
 
 
 #### Magento Shipping
 
-<!-- BUNDLE-1663 -->* Magento Shipping RMA can no longer be enabled when Magento Shipping is disabled.
+<!-- BUNDLE-1663 -->* Magento Shipping return merchandise authorization (RMA) can no longer be enabled when Magento Shipping is disabled.
 
 
 
@@ -532,55 +521,52 @@ product, and hung indefinitely while trying to add the product.
 
 
 ### Store
+
 <!--  ENGCOM-2530 -->* The `getUrlInStore()` method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [16468](https://github.com/magento/magento2/pull/16468)*. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
 
 
 ### Swagger
 
-<!-- MAGETWO-93748 -->* Swagger now  works as expected when JavaScript minification and merging are enabled. 
-
-
-<!-- ENGCOM-2837 -->* Swagger now works as expected when JavaScript minification is enabled. Previously, when JavaScript minification was enabled, the swagger-ui-bundle.js became corrupted, although Swagger worked fine when minification was subsequently disabled, and the files were redeployed. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17626](https://github.com/magento/magento2/pull/17626)*. [GitHub-16927](https://github.com/magento/magento2/issues/16927)
-
+<!-- ENGCOM-2837, MAGETWO-93748 -->* Swagger now works as expected when JavaScript minification is enabled. Previously, when JavaScript minification was enabled, the `swagger-ui-bundle.js` became corrupted, although Swagger worked fine when minification was subsequently disabled, and the files were redeployed. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [17626](https://github.com/magento/magento2/pull/17626)*. [GitHub-16927](https://github.com/magento/magento2/issues/16927)
 
 
 ### Testing
 
-<!-- ENGCOM-2616 -->* The ProcessCronQueueObserverTest.php integration test now works correctly. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
+<!-- ENGCOM-2616 -->* The `ProcessCronQueueObserverTest.php` integration test now works correctly. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17191](https://github.com/magento/magento2/pull/17191)*. [GitHub-16243](https://github.com/magento/magento2/issues/16243)
 
 <!-- ENGCOM-2900 -->* Deprecated methods throughout the test suite have been replaced. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17872](https://github.com/magento/magento2/pull/17872)*.
 
 <!-- ENGCOM-2899 -->* An API-functional test  for the `/V1/search` (searchV1) resource has been added. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17840](https://github.com/magento/magento2/pull/17840)*.
 
-<!-- ENGCOM-2907 -->* The `\Magento\Sales\Model\Validator` class now has unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17876](https://github.com/magento/magento2/pull/17876)*.
+<!-- ENGCOM-2907 -->* The `\Magento\Sales\Model\Validator` class is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17876](https://github.com/magento/magento2/pull/17876)*.
 
-<!-- ENGCOM-2908 -->* The `\Magento\Search\Model\PopularSearchTerms` now has unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17739](https://github.com/magento/magento2/pull/17739)*.
+<!-- ENGCOM-2908 -->* The `\Magento\Search\Model\PopularSearchTerms` is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17739](https://github.com/magento/magento2/pull/17739)*.
 
-<!-- ENGCOM-2876 -->* The `\Magento\Search\Model\SynonymAnalyzer` class  now has a unit test. *Fix submitted by [Zebra](https://github.com/furseyev) in pull request [17801](https://github.com/magento/magento2/pull/17801)*.
+<!-- ENGCOM-2876 -->* The `\Magento\Search\Model\SynonymAnalyzer` class  is now covered by a unit test. *Fix submitted by [Zebra](https://github.com/furseyev) in pull request [17801](https://github.com/magento/magento2/pull/17801)*.
 
-<!-- ENGCOM-2843 -->* The Sales Rule model classes now have unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17710](https://github.com/magento/magento2/pull/17710)*.
+<!-- ENGCOM-2843 -->* The Sales Rule model classes is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17710](https://github.com/magento/magento2/pull/17710)*.
 
-<!-- ENGCOM-2830 -->* The `\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver` now has unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17693](https://github.com/magento/magento2/pull/17693)*.
+<!-- ENGCOM-2830 -->* The `\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver` is now covered by unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17693](https://github.com/magento/magento2/pull/17693)*.
 
-<!-- ENGCOM-2823 -->* The CMS model classes now have unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17678](https://github.com/magento/magento2/pull/17678)*.
+<!-- ENGCOM-2823 -->* The CMS model classes is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17678](https://github.com/magento/magento2/pull/17678)*.
 
-<!-- ENGCOM-2807 -->* The `\Magento\Newsletter\Model\Problem` class now has unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17633](https://github.com/magento/magento2/pull/17633)*.
+<!-- ENGCOM-2807 -->* The `\Magento\Newsletter\Model\Problem` class is now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17633](https://github.com/magento/magento2/pull/17633)*.
 
-<!-- ENGCOM-2780 -->* The `\Magento\Braintree\Model\InstantPurchase\CreditCard\TokenFormatter` class now has unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17590](https://github.com/magento/magento2/pull/17590)*.
-
-
-<!-- ENGCOM-2772 -->* The \Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest  and \Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest classes now have unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17561](https://github.com/magento/magento2/pull/17561)*.
-
-<!-- ENGCOM-2715 -->* The `Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker` class now has a unit test. [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17454](https://github.com/magento/magento2/pull/17454)*
+<!-- ENGCOM-2780 -->* The `\Magento\Braintree\Model\InstantPurchase\CreditCard\TokenFormatter` class is now covered by unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17590](https://github.com/magento/magento2/pull/17590)*.
 
 
-<!-- ENGCOM-2680 -->* The instant purchase PayPal token formatter now has a unit test. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17405](https://github.com/magento/magento2/pull/17405)*.
+<!-- ENGCOM-2772 -->* The `\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest ` and `\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest` classes is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17561](https://github.com/magento/magento2/pull/17561)*.
 
-<!-- ENGCOM-2657 -->* The `\Magento\Braintree\Gateway\Http\Client\TransactionVoid` and `\Magento\Braintree\Gateway\Http\Client\TransactionRefund` classes now have unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17368](https://github.com/magento/magento2/pull/17368)*.
+<!-- ENGCOM-2715 -->* The `Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker` class is now covered by a unit test. [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17454](https://github.com/magento/magento2/pull/17454)*
 
 
-<!-- ENGCOM-2632 -->* The `\Magento\Catalog\CustomerData\CompareProducts` class now has unit tests. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
+<!-- ENGCOM-2680 -->* The instant purchase PayPal token formatter is now covered by a unit test. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17405](https://github.com/magento/magento2/pull/17405)*.
+
+<!-- ENGCOM-2657 -->* The `\Magento\Braintree\Gateway\Http\Client\TransactionVoid` and `\Magento\Braintree\Gateway\Http\Client\TransactionRefund` classes is now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17368](https://github.com/magento/magento2/pull/17368)*.
+
+
+<!-- ENGCOM-2632 -->* The `\Magento\Catalog\CustomerData\CompareProducts` class is now covered by unit tests. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
 
 <!-- ENGCOM-2828 -->* `\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver` is now covered by an integration test. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17690](https://github.com/magento/magento2/pull/17690)*.
 
@@ -605,7 +591,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2834 -->* The message list component message type now has a message type of success. Previously, this type was always `error` when the `parameters` property was specified. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17701](https://github.com/magento/magento2/pull/17701)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
 
-<!-- ENGCOM-2607 -->* The confirmation modal buttons that Magento displays a customer sends a product to the trash are now translated as expected. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [17275](https://github.com/magento/magento2/pull/17275)*. [GitHub-17193](https://github.com/magento/magento2/issues/17193)
+<!-- ENGCOM-2607 -->* The confirmation modal buttons that Magento displays when a customer sends a product to the trash are now translated as expected. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [17275](https://github.com/magento/magento2/pull/17275)*. [GitHub-17193](https://github.com/magento/magento2/issues/17193)
 
 
 ### User
@@ -617,7 +603,7 @@ product, and hung indefinitely while trying to add the product.
 ### Wishlist
 
 
-<!-- MAGETWO-86609 -->*  Products disabled in the Admin still appear no longer appear in storefront wishlists. Previously, disabled products still appeared in the storefront wishlist, although when a customer clicked on a disabled product, Magento correctly returned “page not found”. 
+<!-- MAGETWO-86609 -->*  Products disabled in the Admin  no longer appear in storefront wishlists. Previously, disabled products still appeared in the storefront wishlist, although when a customer clicked on a disabled product, Magento correctly returned “page not found”. 
 
 <!-- MAGETWO-74289 -->* Customers can now choose which wishlist to add a product to when adding products to the wishlist from the shopping cart.
 
@@ -664,7 +650,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 
 ### System requirements
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html).
+Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
 
 ### Installation and upgrade instructions
