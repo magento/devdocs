@@ -6,18 +6,18 @@ title: Magento Commerce 2.1.16 Release Notes
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on November 30, 2018.*
+*Patch code and release notes were published on November 27, 2018.*
 
 
 We are pleased to present Magento Commerce  2.1.16. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
 
-Although this release includes these enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.16) have been ported to 2.2.7, 1.14.4.0, and 1.9.4.0, as appropriate. 
 
 ## Highlights
 
-Magento 2.1.16 contains over 40 security fixes and enhancements. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for more information.
+Magento 2.1.16 contains over 30 security fixes and enhancements. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for more information.
 
 
 <!--- MAGETWO-92836 -->* Magento 2.1.16 now provides support for PHP 7.1. 
