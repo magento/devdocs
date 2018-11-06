@@ -646,7 +646,7 @@ The following table identifies contributions from our community members. This ta
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
 
-
+{% include release-notes/engcomm-2-2-7-partner.md %}
 
 
 ### System requirements
