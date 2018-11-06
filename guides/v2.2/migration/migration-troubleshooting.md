@@ -1,10 +1,6 @@
 ---
 group: migration-guide
-subgroup: F_troubleshooting
 title: Troubleshooting
-menu_title: Troubleshooting
-menu_node: parent
-menu_order: 6
 ---
 
 ## Common error messages
@@ -13,13 +9,13 @@ This section is about the errors that might occur when you run the Data Migratio
 
 ### Source documents/fields not mapped
 
-{% highlight xml %}
+```xml
 Source documents are not mapped: <EXTENSION_TABLE>
-{% endhighlight %}
+```
 
-{% highlight xml %}
+```xml
 Source fields are not mapped. Document: <EXTENSION_TABLE>. Fields: <EXTENSION_FIELD>
-{% endhighlight %}
+```
 
 In rare cases, the message might mention `Destination documents` or `Destination fields` instead of source ones.
 
@@ -41,21 +37,21 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 
-{% highlight xml %}
+```xml
 <ignore>
    <field>sales_order_address_id</field>
 </ignore>
-{% endhighlight %}
+```
 
 {: .bs-callout .bs-callout-warning }
 Before ignoring entities by map file or using the `-a` option, make sure you do not need the affected data in your Magento 2 store.
 
 ### Class does not exist but mentioned
 
-{% highlight xml %}
+```xml
 Class <extension/class_name> does not exist but mentioned in:
 <eav_attribute.frontend_model> for <attribute_id=196>
-{% endhighlight %}
+```
 
 #### Explanation
 
@@ -75,11 +71,11 @@ A class from Magento 1 codebase could not be found in Magento 2 codebase during 
 
 #### Error message text
 
-{% highlight xml %}
+```xml
 Foreign key <KEY_NAME> constraint fails.
 Orphan records id: <id_1>, <id_2> from <child_table>.
 <field_id> has no referenced records in <parent_table>
-{% endhighlight %}
+```
 
 #### Explanation
 
@@ -93,11 +89,11 @@ To keep the records, disable the `Data Integrity Step` by modifying the Data Mig
 
 ### Duplicates in URL rewrites
 
-{% highlight xml %}
+```xml
 There are duplicates in URL rewrites:
 Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/10
 Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12
-{% endhighlight %}
+```
 
 #### Explanation
 
@@ -111,9 +107,9 @@ This configuration adds a hash-string to the conflicting records of {% glossaryt
 
 ### Mismatch of entities
 
-{%highlight xml%}
+```xml
 Mismatch of entities in the document: <DOCUMENT>
-{%endhighlight%}
+```
 
 #### Explanation
 
@@ -127,13 +123,13 @@ Run the Data Migration Tool in `Delta` mode to transfer incremental changes.
 
 ### Deltalog is not installed
 
-{%highlight xml%}
+```xml
 Deltalog for <TABLE_NAME> is not installed
-{%endhighlight%}
+```
 
 #### Explanation
 
-This error occurs during the process of [incremental migration]({{ page.baseurl }}/migration/migration-migrate-delta.md) of changes to data. It means deltalog tables (with prefix `m2_cl_*`) were not found in Magento 1 database. The tool installs these tables during [data migration]({{ page.baseurl }}/migration/migration-migrate-data.md) as well as database triggers which track changes and fill deltalog tables.
+This error occurs during [incremental migration]({{ page.baseurl }}/migration/migration-migrate-delta.html) of changes to data. It means deltalog tables (with prefix `m2_cl_*`) were not found in Magento 1 database. The tool installs these tables during [data migration]({{ page.baseurl }}/migration/migration-migrate-data.html) as well as database triggers which track changes and fill deltalog tables.
 
 One reason for the error could be that you are trying to migrate from a *copy* of your live Magento 1 store, not from the live store itself. When you make a copy from a live Magento 1 store that has never been migrated, the copy does not contain the triggers and additional deltalog tables needed to complete a delta migration, so the migration fails. The Data Migration Tool does NOT make comparisons between the DB of M1 and M2 to migrate the differences. Instead, the tool uses the triggers and deltalog tables installed during the first migration in order to perform subsequent delta migrations. In such a case, your copy of the live Magento 1 DB will not contain the triggers and deltalog tables that the Data Migration Tool uses to perform a migration.
 
