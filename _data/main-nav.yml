@@ -38,7 +38,7 @@
       url: /config-guide/bk-config-guide.html
 
     - label: Performance Best Practices
-      url: /performance-best-practices/
+      url: /performance-best-practices/introduction.html
       exclude_versions: ['2.0','2.1']
 
     - label: Migration Guide

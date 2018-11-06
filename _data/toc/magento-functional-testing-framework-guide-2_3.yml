@@ -68,6 +68,10 @@ pages:
     url: /mftf/2.3/extending.html
     versionless: true
 
+  - label: Reporting
+    url: /mftf/2.3/reporting.html
+    versionless: true
+
   - label: Configuration
     url: /mftf/2.3/configuration.html
     versionless: true

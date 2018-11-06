@@ -8,32 +8,32 @@ pages:
       include_versions: ["2.0"]
 
     - label: Open Source
-      include_versions: ["2.1","2.2"]
+      exclude_versions: ["2.0"]
       children:
 
         - label: Analytics
           url: /mrg/ce/Analytics.html
-          include_versions: ["2.2"]
+          exclude_versions: ["2.1"]
 
         - label: CatalogAnalytics
           url: /mrg/ce/CatalogAnalytics.html
-          include_versions: ["2.2"]
+          exclude_versions: ["2.1"]
 
         - label: CustomerAnalytics
           url: /mrg/ce/CustomerAnalytics.html
-          include_versions: ["2.2"]
+          exclude_versions: ["2.1"]
 
         - label: Instant Purchase
           url: /mrg/ce/instant-purchase/
-          include_versions: ["2.2","2.3"]
+          exclude_versions: ["2.1"]
 
         - label: QuoteAnalytics
           url: /mrg/ce/QuoteAnalytics.html
-          include_versions: ["2.2"]
+          exclude_versions: ["2.1"]
 
         - label: ReviewAnalytics
           url: /mrg/ce/ReviewAnalytics.html
-          include_versions: ["2.2"]
+          exclude_versions: ["2.1"]
 
         - label: Sales
           url: /mrg/ce/Sales.html
@@ -41,7 +41,7 @@ pages:
 
         - label: SalesAnalytics
           url: /mrg/ce/SalesAnalytics.html
-          include_versions: ["2.2"]
+          exclude_versions: ["2.1"]
 
         - label: Signifyd
           url: /mrg/ce/Signifyd.html
@@ -49,7 +49,7 @@ pages:
 
         - label: WishlistAnalytics
           url: /mrg/ce/WishlistAnalytics.html
-          include_versions: ["2.2"]
+          exclude_versions: ["2.1"]
 
     - label: Commerce
       include_versions: ["2.1","2.2"]
