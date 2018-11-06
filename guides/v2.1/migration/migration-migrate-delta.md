@@ -37,6 +37,12 @@ where
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
+You must have the tables the migration initially created in the Magento 1 database in order to perform and retain the delta migration. If you wipe the Magento 1 database and try to do the delta, it will fail with the following error: 
+
+    Deltalog for customer_entity is not installed
+
+As an example, if you have Magento 1 on one server and Magento 2 on another that can't access the live Magento 1 database, you may need to copy the Magento 1 database over. In this case if you drop and overwrite the database, you will lose those special tables.
+
 {: .bs-callout .bs-callout-info }
 Incremental migration runs continuously until you stop it by pressing CTRL+C.
 
