@@ -10,7 +10,7 @@ functional_areas:
   - Configuration
 ---
 
-Magento Commerce (Cloud) has a protective blocking feature that, under certain circumstances, restricts access to websites with security vulnerabilities. We use this partial blocking method to prevent exploitation of known security vulnerabilities.
+{{site.data.var.ece}} has a protective blocking feature that, under certain circumstances, restricts access to websites with security vulnerabilities. We use this partial blocking method to prevent exploitation of known security vulnerabilities.
 
 Outdated software often contains exploits we protect against by partially blocking access to these sites.
 

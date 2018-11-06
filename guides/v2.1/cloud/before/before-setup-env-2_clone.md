@@ -70,7 +70,7 @@ To clone the project's `master` environment to your local:
 
 We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned `master`. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
 
-* `ADMIN_EMAIL`: The email address for the administrative user. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.
+* `ADMIN_EMAIL`: The email address for the administrative user. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails.
 * `ADMIN_USERNAME`: Username for the administrative user. The administrative user
 can create other users, including other administrative users. The default
 hardcoded username is the Project Owner email address. You can use this value, or change it to another secure username.

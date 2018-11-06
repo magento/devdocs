@@ -45,7 +45,7 @@ To deploy, you need the following:
 
 If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
-To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.
+To request environment provisioning, you will need to have cleared a payment for the {{site.data.var.ece}} subscription and completed an on-boarding call with Magento.
 
 To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.
 

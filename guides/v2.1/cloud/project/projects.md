@@ -31,7 +31,7 @@ To manage your project, environment, and branches, see:
 The following sections detail more about project and environment variables:
 
 *	[Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
-*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
+*	[{{site.data.var.ece}} environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
 *	[Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
 *	[Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)

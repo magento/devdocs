@@ -1,4 +1,4 @@
-This topic discusses how to test patches to your Magento Commerce (Cloud) system locally before you push them to the remote server. We strongly recommend you test patches locally so you can identify and resolve any issues.
+This topic discusses how to test patches to your {{site.data.var.ece}} system locally before you push them to the remote server. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
 When you perform a Magento Commerce upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command. If you upgrade a Cloud patch without upgrading the full Magento Commerce application, see [Upgrade a Magento Commerce patch](#upgrade-patch). To upgrade and test a full Magento Commerce version (including patches and hotfixes), see [Upgrade and test Magento Commerce]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
