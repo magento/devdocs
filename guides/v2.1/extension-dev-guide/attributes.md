@@ -258,7 +258,7 @@ However, if an extension similar to the following has been defined, the interfac
 
 If you have issues when using `setup:upgrade`, verify `__construct` uses the method `EavSetupFactory` not `EavSetup`. You should not directly inject `EavSetup` in extension code. Check your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.
 
-## Add Product EAV Attribute Options Reference
+## Add product EAV attribute options reference
 
 This is a reference of the `Magento\Eav\Setup\EavSetup::addAttribute` method. It contains a table of the available options when creating a product attribute. Listing each option's key, description and the default value.
 
