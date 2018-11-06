@@ -218,6 +218,9 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 1. Install `php-fpm`:
 
 		yum -y install php70w-fpm
+   
+   If you are on Centos 7.1 and want to install PHP7.1-FPM, do:
+   		`yum install -y php71u-fpm`
 
 2. Open the `/etc/php.ini` file in an editor.
 
