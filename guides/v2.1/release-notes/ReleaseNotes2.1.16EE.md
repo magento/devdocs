@@ -49,6 +49,7 @@ In addition to security enhancements, this release contains the following functi
 <!--- ENGCOM-2913 -->*  `setterName` in `app/code/Magento/Catalog/Model/ProductLink/Repository.php` now implements `SimpleDataObjectConverter::snakeCaseToUpperCamelCase`. *Fix submitted by [insanityinside](https://github.com/insanityinside) in pull request [17883](https://github.com/magento/magento2/pull/17883)*. 
 
 
+<!--- ENGCOM-2795 -->* You can now save a title for a product from the **Product** > **Customizable Options** page. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17609](https://github.com/magento/magento2/pull/17609)*. [GitHub-6305](https://github.com/magento/magento2/issues/6305)
 
 
 ### Cleanup and minor code refactoring 
@@ -83,7 +84,6 @@ In addition to security enhancements, this release contains the following functi
 
 ### General
 
-<!--- ENGCOM-2795 -->* You can now save a title for a product from the **Product** > **Customizable Options** page. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17609](https://github.com/magento/magento2/pull/17609)*. [GitHub-6305](https://github.com/magento/magento2/issues/6305)
 
 <!--- ENGCOM-2805 -->* Magento now displays the Customer group menu under the Customers as expected. Previously, Magento displayed the customer group menu under the Customers menu on the Admin, but displayed it under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
@@ -124,9 +124,9 @@ In addition to security enhancements, this release contains the following functi
 
 ###  Sales
 
-<!--- ENGCOM-2933 -->* Join extension attributes are now added to results for orders created through REST. Previously, the JSON response did not contain `some_id` in the extension attributes property. *Fix submitted by [Sam Butler Thompson](https://github.com/Scarraban) in pull request [16169](https://github.com/magento/magento2/pull/16169)*. [GitHub-8035](https://github.com/magento/magento2/issues/8035)
+<!--- ENGCOM-2933 -->* When you define an extension attribute for the `OrderInterface` with a join table, the specified attribute code value is now returned as expected in REST calls. Previously, the JSON response did not contain `some_id` in the extension attributes property. *Fix submitted by [Sam Butler Thompson](https://github.com/Scarraban) in pull request [16169](https://github.com/magento/magento2/pull/16169)*. [GitHub-8035](https://github.com/magento/magento2/issues/8035)
 
-<!--- ENGCOM-2691 -->* The `Magento\Sales\Block\Adminhtml\Order\Totalbar` class and totalbar template file have been deprecated. These components were formerly included but never implemented in the invoice create and credit memo create layout files. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [17413](https://github.com/magento/magento2/pull/17413)*. [GitHub-16653](https://github.com/magento/magento2/issues/16653), [GitHub-16655](https://github.com/magento/magento2/issues/16655)
+<!--- ENGCOM-2691 -->* The `Magento\Sales\Block\Adminhtml\Order\Totalbar` class and totalbar template files have been deprecated. These components were formerly included but never implemented in the invoice create and credit memo create layout files. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [17413](https://github.com/magento/magento2/pull/17413)*. [GitHub-16653](https://github.com/magento/magento2/issues/16653), [GitHub-16655](https://github.com/magento/magento2/issues/16655)
 
 
 
@@ -134,9 +134,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-94435 -->*  The Magento UPS module has been updated to support new UPS API endpoints.
 
-<!--- ENGCOM-2325 -->* Multishipping checkout now works as expected. Previously, Magento displayed the `Shipping address is not set` error message  when checking out an order with multiple addresses. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
-
-
+<!--- ENGCOM-2325 -->* Multishipping checkout now works as expected. Previously, Magento displayed the `Shipping address is not set` error message  when checking out an order with multiple addresses. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [16783](https://github.com/magento/magento2/pull/16783)*. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
 
 
 ### Store
@@ -158,10 +156,6 @@ In addition to security enhancements, this release contains the following functi
 ### Theme
 
 <!--- ENGCOM-2917 -->* Magento now displays the wishlist icon on the shopping cart in mobile view. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [17912](https://github.com/magento/magento2/pull/17912)*. [GitHub-17851](https://github.com/magento/magento2/issues/17851)
-
-
-
-<!--- ENGCOM-2325 -->* Multishipping checkout now works as expected. Previously, Magento displayed the `Shipping address is not set` error message  when checking out an order with multiple addresses. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [16783](https://github.com/magento/magento2/pull/16783)*. [GitHub-16555](https://github.com/magento/magento2/issues/16555)
 
 
 ### UI
