@@ -301,7 +301,7 @@ Under node <code>&lt;value&gt;</code> there are rules that work with 'value' col
 
 ### Data migration mode
 
-In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix `m2_cl_*`) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
+In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If the integrity check passes, the Data Migration Tool installs deltalog tables (with prefix `m2_cl_*`) and corresponding triggers to the Magento 1 database and runs data migration stage of steps. When migration is completed without errors, the volume check checks data consistency. It can show a warning message if you migrate the live store. Do not worry, delta migration will take care of this incremental data. The most valuable migration steps are Map, URL Rewrite, and EAV.
 
 #### Map Step
 
