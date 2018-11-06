@@ -136,8 +136,9 @@ algolia:
     - guides/m1x/**/*.html
     - guides/m1x/**/*.md
     - swagger
+    - redoc
 
 google:
   analytics: 'UA-66243208-1'
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Gemfile', 'Gemfile.lock', 'gulpfile.js', 'package.json', 'package-lock.json', 'Rakefile', 'rakelib', 'README.md']

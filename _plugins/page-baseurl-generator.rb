@@ -3,32 +3,26 @@
 # This custom plugin dynamically sets and injects the page.baseurl variable
 # based on the page's destination.
 #
-#
-module Jekyll
-  # The class generates page.baseurl as "{site.baseurl}/guides/v#{version}".
-  # The {version} is taken from the 'guide_version' front matter parameter on the page;
-  # if it is not set, then the generator takes it from the path of the page (for example, "2.2" in the "guides/v2.2");
-  # if the path doesn't contain "guides/vx.x", then the version is unset (returns nil object, same as null)
-  class PageBaseUrlGenerator < Generator
-    def generate(site)
-      pattern = %r{guides\/v(\d\.\d)}
-      pages = site.pages
-      baseurl = site.baseurl
-      pages.each do |page|
-        matcher = pattern.match(page.path)
-        version =
-          if page.data['guide_version']
-            page.data['guide_version']
-          elsif matcher
-            matcher[1]
-          end
-        page.data['baseurl'] = if version
-                                 "#{baseurl}/guides/v#{version}"
-                               else
-                                 baseurl
-                               end
-        page.data['guide_version'] = version
-      end
-    end
+# The hook introduces the page.baseurl and page.guide_version data parameters for each page.
+# For pages at guides/v2.x the page.baseurl parameter is set as "{site.baseurl}/guides/v#{version}".
+# The {version} is taken from the 'guide_version' front matter parameter on the page;
+# if it is not set, then the 'guide_version' is set to version from the page path (for example, "2.2" in the "guides/v2.2/**/*.md");
+# if the path doesn't contain "guides/v2.x", then the version is unset and returns the nil object (same as null)
+Jekyll::Hooks.register :pages, :post_init do |page|
+  pattern = %r{\Aguides/v(?<version_from_path>2\.\d)}
+  baseurl = page.site.baseurl
+  path = page.path
+  data = page.data
+  version = data['guide_version']
+  if version.nil? && path.start_with?('guides')
+    pattern.match(path)
+    version = Regexp.last_match(:version_from_path)
+    data['guide_version'] = version
   end
+  data['baseurl'] =
+    if version
+      "#{baseurl}/guides/v#{version}"
+    else
+      baseurl
+    end
 end

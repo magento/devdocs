@@ -121,7 +121,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 {:.bs-callout .bs-callout-info}
 There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.
 
-For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).
+For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html).
 
 *	PHPUnit (as a command-line tool) 4.1 or later
 

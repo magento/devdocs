@@ -168,20 +168,17 @@ pages:
           url: /config-guide/config/disable-module-output.html
 
         - label: Configuration reference
-          include_versions: ["2.1", "2.2", "2.3"]
+          exclude_versions: ["2.0"]
           children:
 
             - label: Sensitive and system-specific
               url: /config-guide/prod/config-reference-sens.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: Payment configuration paths reference
               url: /config-guide/prod/config-reference-payment.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: Other configuration paths reference
               url: /config-guide/prod/config-reference-most.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: Magento Commerce for B2B Extension configuration paths reference
               url: /config-guide/prod/config-reference-b2b.html
@@ -193,7 +190,6 @@ pages:
 
             - label: Use environment variables to override configuration settings
               url: /config-guide/prod/config-reference-var-name.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: config.php reference
               url: /config-guide/prod/config-reference-configphp.html
@@ -332,7 +328,6 @@ pages:
 
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
-
 
     - label: Message Queues (Magento Commerce only)
       include_versions: ["2.0","2.1", "2.2"]
