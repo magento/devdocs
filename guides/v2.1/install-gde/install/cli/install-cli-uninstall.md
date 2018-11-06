@@ -53,7 +53,7 @@ To reinstall the Magento software as a system integrator:
 	*   To use your existing Magento software version , omit the `git pull origin develop` command.
 3.	Install the Magento software:
 
-	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
+	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento)
 	*	[Install the Magento software using the Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 ## Uninstall the Magento software {#instgde-install-uninstall}
@@ -82,5 +82,5 @@ The optional `--keep-generated` option should be used _only_ in limited circumst
 
 6.	Install the Magento software:
 
-	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
+	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento)
 	*	[Install the Magento software using the Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)

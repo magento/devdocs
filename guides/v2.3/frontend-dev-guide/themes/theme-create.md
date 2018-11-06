@@ -264,4 +264,4 @@ For information on how to apply the theme for the storefront, see the [Apply and
 
 ## See also
 
- * [Uninstall a theme]({{ site.gdeurl }}install-gde/install/cli/install-cli-theme-uninstall.html)
+ * [Uninstall a theme]({{ site.gdeurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
