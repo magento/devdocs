@@ -97,7 +97,7 @@ return [
 Leave all the settings that do not start with `db-` and `amqp-` at their default values.
 
 Additional setup options available to the `setup:install` command can be included in the test configuration file. A
-complete list of options is available [here](guides/v2.3/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).
+complete list of options is available [here]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento).
 
 ### Adjust the PHPUnit configuration file
 
