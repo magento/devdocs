@@ -48,7 +48,6 @@ module Proofer
     mtf
     pattern-library
     payments-integrations
-    performance-best-practices
     release-notes
     rest
     soap
