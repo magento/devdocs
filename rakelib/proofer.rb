@@ -42,7 +42,6 @@ module Proofer
     release-notes
     rest
     ui_comp_guide
-    ui-library
     www.thegeekstuff.com
     yatil.net
   ].freeze
