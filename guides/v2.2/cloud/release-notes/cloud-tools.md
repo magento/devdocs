@@ -22,8 +22,6 @@ php ./vendor/bin/ece-tools list
 ```
 
 The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
-<<<<<<< Local Changes
-<<<<<<< Local Changes
 
 ## v2002.0.15
 
@@ -35,16 +33,17 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
     -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
 
-    -  Added the following services to the Docker container()
+    -  Added the following services to the Docker build:
 
-        -  <!-- MAGECLOUD-2567 2889-->RabbitMQ 3.5 and 3.7
+        -  <!-- MAGECLOUD-2567 & 2889-->RabbitMQ 3.5 and 3.7
         -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7 and 2.4
         -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
--  <!-- MAGECLOUD-2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
+    -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using Cloud Docker CLI container.
 
--  <!--MAGECLOUD-2710-->**Environment variable update**—Now, you can enable Google Analytics on Staging and Production environments by setting the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable to `true` in the `.magento.env.yaml` file.
+-  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
+-  <!--MAGECLOUD-2879-->**Environment variable update**—Now you can enable Google Analytics on Staging and Production environments by setting the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable to `true` in the `.magento.env.yaml` file.
 
 #### Resolved Issues
 
