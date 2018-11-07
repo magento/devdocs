@@ -33,7 +33,6 @@ module Proofer
     extension-dev-guide
     frontend-dev-guide
     github.com
-    graphql
     guides/v2.0
     howdoi
     javascript-dev-guide
