@@ -4759,48 +4759,31 @@ Fix implementations so that interfaces are compatible.
 
 ### Testing
 
-<!-- MAGETWO-87154 -->*  [GitHub-12844](https://github.com/magento/magento2/issues/12844)  
+<!-- MAGETWO-87154 -->*  
+
+
+[GitHub-12844](https://github.com/magento/magento2/issues/12844)  
 
 "Cannot instantiate interface Magento\Framework\Interception\ObjectManager\ConfigInterface" error in integration tests
 
 
-<!-- MAGETWO-87064 -->*  [GitHub-10025](https://github.com/magento/magento2/issues/10025)  
-
-Integration tests don't reset the database 
 
 
-<!---MAGETWO-82550 -->* 
+<!-- MAGETWO-87064 -->* Integration tests now reset the integration test database as expected.  [GitHub-10025](https://github.com/magento/magento2/issues/10025)  
 
-<!---MAGETWO-87317 -->*  Removed `each()` function usage -- deprecated
-Removed each() function usage
-Updated static test to check each() usage
+<!---MAGETWO-82550 -->* A typo in `dev/tests/functional/tests/app/Magento/Paypal/Test/TestCase/OnePageCheckoutTest.xml` has been fixed. [GitHub-7591](https://github.com/magento/magento2/issues/7591) 
 
-  *Fix submitted by [Yevhen Sentiabov](https://github.com/joni-jones) in pull request [31](https://github.com/magento-engcom/php-7.2-support/pull/31)*. 
+<!---MAGETWO-87317 -->* Static tests now check for the deprecated `each()` function. *Fix submitted by [Yevhen Sentiabov](https://github.com/joni-jones) in pull request [31](https://github.com/magento-engcom/php-7.2-support/pull/31)*. 
 
+<!---MAGETWO-85993 -->*  The functional.suite.dist.yml has been updated to handle custom backend names. (This value was previously hard-coded.) *Fix submitted by [scribam](https://github.com/scribam) in pull request [12848](https://github.com/magento/magento2/pull/12848)*. 
+
+<!---MAGETWO-85817 -->*  THe `validate_image_info_rollback.php` test suite has been updated. *Fix submitted by [Harry Mumford-Turner](https://github.com/harrymt) in pull request [12800](https://github.com/magento/magento2/pull/12800)*. 
 
 
 
-<!---MAGETWO-85993 -->*  Update functional.suite.dist.yml to handle a custom backend name
+<!---MAGETWO-90803 -->*  
 
-
-  *Fix submitted by [scribam](https://github.com/scribam) in pull request [12848](https://github.com/magento/magento2/pull/12848)*. 
-
-
- In the file functional.suite.dist.yml, the value for the backend_name configuration is hardcoded. We should be able to customize the value by using the variable MAGENTO_BACKEND_NAME defined in the .env file.
-
-<!---MAGETWO-85817 -->*  Update testsuite validate_image_info_rollback.php
-
-
-
-   *Fix submitted by [Harry Mumford-Turner](https://github.com/harrymt) in pull request [12800](https://github.com/magento/magento2/pull/12800)*. 
-
-
- Minor tweak of @var comment, added\ infront of /** @var Magento\Catalog\...
-
-
-
-
-<!---MAGETWO-90803 -->*  phpunit.xml is blacklisted during schema validation static tests, particularly Magento/Test/Integrity/Xml/SchemaTest.php
+phpunit.xml is blacklisted during schema validation static tests, particularly Magento/Test/Integrity/Xml/SchemaTest.php
 
 Extension developers still use old MFTF and the only option for them to have tests distributed along with the code, is to provide custom phpunit.xml.
 
@@ -4833,7 +4816,9 @@ Unit test fails after fresh installation
 
 <!--- MAGETWO-88973 -->* Customers can now successfully close full-screen zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if a customer chose full-screen zoom for any product image, he could not close the full-screen zoom.
 
-<!--- MAGETWO-88264 -->* Remove forced setting of cache_lifetime to false in constructor and set default cache_lifetime to 3600
+<!--- MAGETWO-88264 -->* 
+
+Remove forced setting of cache_lifetime to false in constructor and set default cache_lifetime to 3600
 loadCache for Block Magento\Theme\Block\Html\Footer dont work
 Steps to reproduce
 Disable Full page caching in Backend
@@ -4871,7 +4856,7 @@ $cacheData = $this->_cache->load($cacheKey); return false`
 
 <!-- MAGETWO-93708 -->* We've added  client-side caching of `js-translation.js`.
 
-<!-- MAGETWO-94119 -->* The DatePicker date filter on **Reports** > **Products** > **Ordered** now works as expected for administrators working in Australian English locales. 
+<!-- MAGETWO-94119 -->* The datepicker date filter on **Reports** > **Products** > **Ordered** now works as expected for administrators working in Australian English locales. 
 
 <!--- ENGCOM-1055 -->* Magento now supports Malaysian locales. [GitHub-14089](https://github.com/magento/magento2/issues/14089)
 
@@ -4888,7 +4873,7 @@ $cacheData = $this->_cache->load($cacheKey); return false`
 
 <!-- MAGETWO-87066 -->*  The hint provided for the global configuration field on the Admin configuration page has been corrected. [GitHub-8958](https://github.com/magento/magento2/issues/8958)
 
-<!-- MAGETWO-87066 -->*  region_id is no longer overridden when a customer edits their billing address from a country that requires a value for state to a country where one is not required. [GitHub-10317](https://github.com/magento/magento2/issues/10317)
+<!-- MAGETWO-87066 -->*  `region_id` is no longer overridden when a customer edits their billing address from a country that requires a value for state to a country where one is not required. [GitHub-10317](https://github.com/magento/magento2/issues/10317)
 
 
 
@@ -4903,7 +4888,11 @@ $cacheData = $this->_cache->load($cacheKey); return false`
 <!--- ENGCOM-1457 -->* Administrators who lack access to the CatalogRule module can now perform operations as expected in the Admin cart price rule edit page. 
 
 
-<!--- ENGCOM-1541 -->* 
+<!--- ENGCOM-1541 -->* Clarify XSD for formElements allowed settings
+
+
+*Fix submitted by [Neill Robson](https://github.com/neillrobson) in pull request 15161*. [GitHub-14140](https://github.com/magento/magento2/issues/14140)
+
 
 
 <!--- ENGCOM-2219 -->* Users can now press the **Esc** button on  the delete-from-cart confirmation pop-up window  without generating a `jQuery` UI error. Previously, when a customer added a product to the shopping cart, then pressed the trash icon to delete it, Magento displayed this confirmation pop-up window, but threw an error when the customer pressed the window's **Esc** button. [GitHub-14593](https://github.com/magento/magento2/issues/14593)
@@ -4916,36 +4905,48 @@ $cacheData = $this->_cache->load($cacheKey); return false`
 <!--- ENGCOM-2878 -->* Footers now behave as expected when displaying Magento on a mobile device. [GitHub-15118](https://github.com/magento/magento2/issues/15118)
 
 
-<!--- ENGCOM-2690 -->* 2116 2691
+<!--- ENGCOM-2690 -->* 
 
-<!--- ENGCOM-2824 -->* The JavaScript  validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified.
+Upon investigation there is a totalbar block in the create invoice and credit memo screens which is not being used. This PR addresses that:
+
+Removed the unused Totalbar block from the invoice create and credit memo create layouts.
+Deprecated Totalbar class
+
+
+title: [Forwardport]Fix #16655 Block totalbar not used in invoice create and credit memo create screens
+
+
+
+*Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 17414*.
+[GitHub-16653](https://github.com/magento/magento2/issues/16653)
+[GitHub-16655](https://github.com/magento/magento2/issues/16655)
+
+
+Block totalbar not used in invoice create and credit memo create screens
+
+
+<!--- ENGCOM-2824 -->* The JavaScript validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified.
 
 <!--- ENGCOM-2839 -->* The message list component message type now has a message type of success. Previously, this type was always `error` when the `parameters` property was specified. 
 
 <!--- ENGCOM-2918 -->* Magento now displays the wishlist icon on the shopping cart page on mobile devices. Previously, Magento cut off the wishlist icon on this page when viewed on a mobile device.
 
-<!--- ENGCOM-2861 -->* JavaScript validation rules no longer require validation of fields where completion is not required. Previously, customers could not complete forms unless non-required fuelds were completed.
+<!--- ENGCOM-2861 -->* JavaScript validation rules no longer require validation of fields where completion is not required. Previously, customers could not complete forms unless non-required fields were completed.
 
-<!--- ENGCOM-2323 -->* 2111 83320
+<!--- ENGCOM-2323 -->* When a user scrolls a page, the datepicker now retains its position relative to other page elements as expected. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request 16776*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
 
-<!--- ENGCOM-2649 -->* The confirmation modal buttons that Magento displays a customer sends a product to the trash are now translated as expected.
+
+
+
+<!--- ENGCOM-2649 -->* The confirmation modal buttons that Magento displays when a customer sends a product to the trash are now translated as expected.
 
 <!--- ENGCOM-1810 -->* The dropdown menu is now positioned as expected under the link on the UI Component listing. [GitHub-15660](https://github.com/magento/magento2/issues/15660)
 
-<!---MAGETWO-82721 -->*
+<!---MAGETWO-82721 -->* Magento no longer displays the current date for a product when the `date` attribute is empty. [GitHub-9869](https://github.com/magento/magento2/issues/9869)
 
-<!---MAGETWO-87066 -->*  
-
-
-[GitHub-9920](https://github.com/magento/magento2/issues/9920)
-
-stripped-min-length Validation via UI Component Fails with "special" characters (fixed in magento-engcom/magento2ce#1282 by @magento-engcom-team) 
-
+<!---MAGETWO-87066 -->*  Nagento no longer throws a JavaScript error when a user enters a special character (for example, `/` or `&`) while adding the `stripped-min-length` validation to a UI component. [GitHub-9920](https://github.com/magento/magento2/issues/9920)
 
 <!---MAGETWO-87531 -->*  Magento no longer throws an `Uncaught Error: Script error for: trackingCode` error on storefront pages. [GitHub-12828](https://github.com/magento/magento2/issues/12828)
-
-
-
 
 <!---MAGETWO-87153 -->*  `range-word` validation for form fields now works as expected. [GitHub-6113](https://github.com/magento/magento2/issues/6113)
 
@@ -4956,7 +4957,7 @@ stripped-min-length Validation via UI Component Fails with "special" characters 
 
 <!--- MAGETWO-85026-->* Magento now sets the value of `Store_Code` from the current store when this information is included in a URL. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [12545](https://github.com/magento/magento2/pull/12545)*. [GitHub-12450](https://github.com/magento/magento2/issues/12450)
 
-<!--- MAGETWO-82310-->* Magento now loads *urlrewrite* router before the Magento base router. Previously, the Magento custom URL rewrites functionality did not work when you added an additional redirection (for example, a custom redirection from `/customer/account/create` to another page). *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request [11471](https://github.com/magento/magento2/pull/11471)*. [GitHub-10231](https://github.com/magento/magento2/issues/10231)
+<!--- MAGETWO-82310-->* Magento now loads `urlrewrite` router before the Magento base router. Previously, the Magento custom URL rewrite functionality did not work when you added an additional redirection (for example, a custom redirection from `/customer/account/create` to another page). *Fix submitted by [Marc Rodriguez](https://github.com/mrodespin) in pull request [11471](https://github.com/magento/magento2/pull/11471)*. [GitHub-10231](https://github.com/magento/magento2/issues/10231)
 
 <!--- MAGETWO-88091-->* Switching store views now works as expected. Previously, under some conditions, users were redirected to a 404 page.[GitHub-5416](https://github.com/magento/magento2/issues/5416)
 
@@ -4971,6 +4972,7 @@ stripped-min-length Validation via UI Component Fails with "special" characters 
 <!--- ENGCOM-1210 -->* The Magento URL rewrite functionality now supports the use of special characters in category names. Previously, the category tree did not load if a category name contained a special character. [GitHub-13296](https://github.com/magento/magento2/issues/13296)
 
 
+
 ### Visual Merchandiser
 
 <!--- MAGETWO-87846 -->* Visual Merchandiser now includes website scope when displaying the correct prices and availability of configurable products.
@@ -4982,22 +4984,22 @@ stripped-min-length Validation via UI Component Fails with "special" characters 
 
 ### Web API
 
-<!--- MAGETWO-82315 -->* When you use REST to update an existing product, Magento assists the update only to the websites that the was assigned to pre-update. Previously, updating a product using the REST API (`PUT /rest/all/V1/products/example_sku`) assigned the product update to all websites automatically. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [11443](https://github.com/magento/magento2/pull/11443)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
+<!--- MAGETWO-82315 -->* When you use REST to update an existing product, Magento assigns the update only to the websites that they were assigned to before the update. Previously, updating a product using the REST API (`PUT /rest/all/V1/products/example_sku`) assigned the product update to all websites automatically. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [11443](https://github.com/magento/magento2/pull/11443)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
 
 <!--- MAGETWO-90147 -->* When you create a credit memo comment with `POST /V1/creditmemo/:id/comments`, Magento now sends  credit memo update emails as expected. Previously,  Magento did not send this email, and no other transaction emails were sent to the customer.
 
 <!--- MAGETWO-84319 -->* Magento no longer creates duplicate shipments for orders created via API. Previously, Magento created duplicate shipments when a merchant created a shipment via the API under certain conditions (mainly with bundled products).
 
-<!--- MAGETWO-64316 -->*  When you create a product with `POST V1/products` whose name matches an existing product, Magento changes the URL key of the new product to a unique value. This matches the behavior when you create a product in Admin. [GitHub-8188](https://github.com/magento/magento2/issues/8188)
+<!--- MAGETWO-64316 -->*  When you create a product with `POST V1/products` whose name matches an existing product, Magento changes the URL key of the new product to a unique value. This matches the behavior that occurs when you create a product in Admin. [GitHub-8188](https://github.com/magento/magento2/issues/8188)
 
 
-<!--- MAGETWO-91540 -->*  Product searches using `GET V1/products` return extension_attributes for configurable products as expected.
+<!--- MAGETWO-91540 -->*  Product searches using `GET V1/products` return `extension_attributes` for configurable products as expected.
 
 <!--- MAGETWO-91568 -->*  You can now include custom attributes when filtering the responses of REST calls.
 
 <!--- MAGETWO-94207 -->*  Magento now returns a 404 error and includes a descriptive error message when a  REST search is performed on a non-existent cart.
 
-<!--- MAGETWO-81910 -->*   Magento now includes the Filter Groups and the Sort Order of the `$searchCriteria` parameter in the `searchCriteria` Object that is provided for the EAV set repository. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
+<!--- MAGETWO-81910 -->*   Magento now includes the filter groups and the sort order of the `$searchCriteria` parameter in the `searchCriteria` Object that is provided for the EAV set repository. [GitHub-11022](https://github.com/magento/magento2/issues/11022)
 
 
 <!--- MAGETWO-82315 -->* Updating a product with the REST API (`PUT /rest/all/V1/products/example_sku`) no longer assigns the product to all websites automatically. (Automatic assignment to all websites now occurs only when you create the product in All Store Views scope.) [GitHub-11324](https://github.com/magento/magento2/issues/11324)
