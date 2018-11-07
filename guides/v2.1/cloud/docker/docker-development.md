@@ -21,13 +21,13 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
 -  **NGINX**—[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)  
     Web server based on NGINX version 1.9
 -  **Redis**—[magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)  
-    Redis server based on the latest Redis version
+    Based on version 3.2 and later
 -  **Varnish**—[magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)  
     Based on the latest Varnish version and used for caching
 -  **RabbitMQ**—[rabbitmq](https://hub.docker.com/_/rabbitmq)  
-    Based on the latest official RabbitMQ version
+    Based on version 3.5 and later
 -  **ElasticSearch**—[magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)  
-    Based on version 5.2
+    Based on version 1.7 and later
 
 ### Web container
 
