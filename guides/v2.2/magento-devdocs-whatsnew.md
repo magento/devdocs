@@ -1,1 +1,0 @@
-../v2.1/magento-devdocs-whatsnew.md
