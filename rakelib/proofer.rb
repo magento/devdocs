@@ -32,7 +32,6 @@ module Proofer
     github.com
     guides/v2.0
     howdoi
-    javascript-dev-guide
     mariadb.com
     mftf
     mrg
