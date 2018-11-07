@@ -40,11 +40,11 @@ This release includes improvements to general usability of the core code plus en
 
 <!-- MAGETWO-74289 -->* Customers can now choose which wishlist to add a product to when adding products to the wishlist from the shopping cart.
 
-<!-- MAGETWO-86609 -->* Products disabled in the Admin still appear no longer appear in storefront wishlists. Previously, disabled products still appeared in the storefront wishlist, although when a customer clicked on a disabled product, Magento correctly returned “page not found”. 
+<!-- MAGETWO-86609 -->* Products disabled in the Admin  no longer appear in storefront wishlists. Previously, disabled products still appeared in the storefront wishlist, although when a customer clicked on a disabled product, Magento correctly returned “page not found”. 
 
 <!-- MAGETWO-89234 -->* Magento now displays a success message when a customer successfully updates a wishlist.
  
-<!-- MAGETWO-75086 -->* Magento now displays the correct selected product options when you click  on  **View Details** for a  product with configurable options. ￼Previously, Magento displayed the image for the parent product. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
+<!-- MAGETWO-75086 -->* Magento now displays the correct  options when you click  on  **View Details** for a  product with configurable options. ￼Previously, Magento displayed the image for the parent product. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
 
 ### Shipping
@@ -132,9 +132,9 @@ In addition to security enhancements, this release contains the following functi
 
 ### AdminGWS
 
-<!-- MAGETWO-93990 -->* An adminstrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
+<!-- MAGETWO-93990 -->* An administrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
 
-<!-- MAGETWO-90765 -->* Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this when an adminstrator tried to edit or create a block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png`.￼
+<!-- MAGETWO-90765 -->* Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this when an administrator tried to edit or create a block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png`.￼
 
 
 
@@ -184,7 +184,7 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- MAGETWO-92036 -->* Magento now alerts you to an error when a merchant tries to save a product without completed required fields. 
 
-<!-- ENGCOM-2555 -->* Previous fix for a gallery template issue that was inadvertently reverted has been restored. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [16594](https://github.com/magento/magento2/pull/16594)*. [GitHub-15009](https://github.com/magento/magento2/issues/15009)
+<!-- ENGCOM-2555 -->* A previous fix for a gallery template issue that was inadvertently reverted has been restored. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [16594](https://github.com/magento/magento2/pull/16594)*. [GitHub-15009](https://github.com/magento/magento2/issues/15009)
 
 <!-- ENGCOM-2650 -->* Parent theme image height settings (specified in `view.xml`) no longer override the height settings assigned to individual images. *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [14537](https://github.com/magento/magento2/pull/14537)*. [GitHub-12250](https://github.com/magento/magento2/issues/12250)
 
@@ -216,7 +216,9 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-73245 -->* A merchant can now successfully create and save configurable products from the Admin in a multisite deployment. Previously, when a merchant created a configurable product with customizable options, Magento set its `has_options` and `required_options`  (in the `catalog_product_entity` table) to 0, and the merchant needed to click **Save** again to correctly add the product.  
 
 
-<!-- MAGETWO-93047 --> `categoryNAME` is now a required field for `rest/all/V1/categories/:categoryID` REST  calls. 
+<!-- MAGETWO-93047 --> The `PUT rest/all/V1/categories/:categoryId` endpoint now requires the `name` field.
+
+. 
 
 
 <!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by [Dmitry Chukhnov](https://github.com/DmitryChukhnov) in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
@@ -233,7 +235,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2580 -->* Problems with the responsive layout  `app/design/frontend/Magento/luma/Magento_Theme/web/css/source/_module.less` have been resolved. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17217](https://github.com/magento/magento2/pull/17217)*.
 
-<!-- ENGCOM-2549 -->* The `text-aligh` for the `<th>` element of the Subtotal column in the creditmemo email has been corrected. *Fix submitted by [Tomash Khamlai](https://github.com/TomashKhamlai) in pull request [17153](https://github.com/magento/magento2/pull/17153)*.
+<!-- ENGCOM-2549 -->* The `text-align` for the `<th>` element of the Subtotal column in the creditmemo email has been corrected. *Fix submitted by [Tomash Khamlai](https://github.com/TomashKhamlai) in pull request [17153](https://github.com/magento/magento2/pull/17153)*.
 
 <!-- ENGCOM-2568 -->* The  invalid `knockoutjs` data binding in Braintree PayPal has been fixed. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17236](https://github.com/magento/magento2/pull/17236)*.
 
@@ -281,7 +283,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-77742 -->* Magento now displays a descriptive error message when you try to upload a file in an unsupported format. Previously, Magento displayed an error that did not relate to the specific upload problem. 
 
-<!-- MAGETWO-75086 -->* Magento now displays the correct selected product options when you click  on  **View Details** for a  product with configurable options.  ￼Previously, Magento displayed the image for the parent product. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
+<!-- MAGETWO-75086 -->* Magento now displays the correct  options when you click  on  **View Details** for a  product with configurable options.  ￼Previously, Magento displayed the image for the parent product. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
 
 
@@ -319,7 +321,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2070 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [15942](https://github.com/magento/magento2/pull/15942)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
 
-<!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function `__()` to trigger translations) now lives in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
+<!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function <code>__()</code> to trigger translations) now lives in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
 
 
 <!-- ENGCOM-2570 -->* FTP connections can  now use user or password strings with special characters (for example, @ or #). *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17246](https://github.com/magento/magento2/pull/17246)*.
@@ -363,7 +365,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2785 -->* Magento now displays the background of transparent product image watermarks correctly. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17013](https://github.com/magento/magento2/pull/17013)*. [GitHub-16929](https://github.com/magento/magento2/issues/16929)
 
-<!-- ENGCOM-2855 -->* The WYSIWYG editor now displays the backgrounds of .PHG thumbnail images as expected. Previously, transparent backgrounds were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
+<!-- ENGCOM-2855 -->* The WYSIWYG editor now displays the backgrounds of .png thumbnail images as expected. Previously, transparent backgrounds were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 
 <!-- ENGCOM-2860 -->*  Magento no longer duplicates events during delete operations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 
