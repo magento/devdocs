@@ -92,12 +92,3 @@ Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
 Stop Docker environment without destroying containers | `docker-compose stop`
 Resume Docker environment | `docker-compose start`
 {:style="table-layout:auto;"}
-
-## Automate integration testing
-
-Installing {{site.data.var.ece}} in a dedicated Docker environment presents an opportunity for you to customize the following features and capabilities to implement automated integration testing:
-
--  2-layer configuration for Docker build and Travis CI
--  Customizable Docker Compose file to support a wide range of environment sets
--  Flexible permissions
--  Easy local setup and implementation
