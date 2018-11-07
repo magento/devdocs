@@ -6,11 +6,11 @@ functional_areas:
   - Configuration
 ---
 
-The `.magento.env.yaml` file centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables. 
+The `.magento.env.yaml` file centralizes the management of build and deploy actions across all of your environments, including Pro Staging and Production, using environment variables. If you need to configure unique actions in each environment, you must modify this file in each environment branch.
 
 Unlike other YAML configuration files, such as [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html), [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html), and [`.magento/services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html), you can use the `.magento.env.yaml` file to manage configuration settings without opening a support ticket.
 
-{% include note.html type="info" content="If you want to configure unique actions in each environment, you must modify this file in each environment branch."%}
+## File structure
 
 The `.magento.env.yaml` file includes the following sections:
 
@@ -31,6 +31,26 @@ The latest sample of the `.magento.env.yaml` file contains a detailed definition
     -   [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
     -   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
     -   [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
+
+### PHP constants
+
+You can use PHP constants in `.magento.env.yaml` file definitions instead of hard-coding values. The following example defines the `driver_ options` using a PHP constant:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      connection:
+        default:
+          driver_options:
+            !php/const:\PDO::MYSQL_ATTR_LOCAL_INFILE : 1
+        indexer:
+          driver_options:
+            !php/const:\PDO::MYSQL_ATTR_LOCAL_INFILE : 1
+      _merge: true
+```
+
+## Error handling
 
 When a failure occurs because of an unexpected value in the `.magento.env.yaml` configuration file, you receive an error message. For example, the following error message presents a list of suggested changes to each item with an unexpected value, in some cases providing valid options:
 

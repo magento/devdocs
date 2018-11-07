@@ -33,12 +33,22 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
     -  <!-- MAGECLOUD- 2799 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
 
--  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for PHP constants in the `.magento.env.yaml` configuration file.
+-  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
--  <!--MAGECLOUD-2879-->**Environment variable update**—Added the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html##enable_google_analytics) environment variable to enable or disable Google Analytics when deploying to Staging and Integration environments.
+-  <!--MAGECLOUD-2710-->**Environment variable update**—You can now enable Google Analytics on Staging and Production environments by setting the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable to `true` in the `.magento.env.yaml` file.
+
 
 #### Resolved Issues
 
+-  <!-- MAGECLOUD-2862 -->Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when enabled. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.
+
+-  <!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration.
+
+-  <!--MAGECLOUD-2740-->Corrected the `config:dump` command so that it includes each website locale in the `system` section of the `config.local.php` file.
+
+-  <!--MAGECLOUD-2797-->Fixed an issue that resulted in warm-up errors during the post-deploy phase by correcting the source base URL reference.
+
+-  <!--MAGECLOUD-2850-->Fixed an issue that generated files improperly during the `setup:di:compile` process, which affected the Amazon Pay module.
 
 ## v2002.0.14
 

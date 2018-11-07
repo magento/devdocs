@@ -69,8 +69,8 @@ return array(
 ### `SKIP_HTML_MINIFICATION`
 
 -  **Default**
-   - `true` for `ece-tools` 2002.0.13 and later
-   - `false` for earlier versions of `ece-tools`
+   - `true` for `{{site.data.var.ct}}` 2002.0.13 and later
+   - `false` for earlier versions of `{{site.data.var.ct}}`
 -  **Version**—Magento 2.1.4 and later
 
 Enables or disables copying static view files to the `<magento_root>/init/` directory at the end of the build stage. If set to `true` files are not copied and HTML minification is available on request. Set this value to `true` to reduce downtime when deploying to Staging and Production environments.

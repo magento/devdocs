@@ -22,6 +22,8 @@ php ./vendor/bin/ece-tools list
 ```
 
 The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
+<<<<<<< Local Changes
+<<<<<<< Local Changes
 
 ## v2002.0.15
 
@@ -29,17 +31,32 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  **Docker Updates**
 
-    -  <!-- MAGECLOUD- 2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
+    -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
-    -  <!-- MAGECLOUD- 2799 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
+    -  <!-- MAGECLOUD-2799 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
 
--  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for PHP constants in the `.magento.env.yaml` configuration file.
+    -  Added the following services to the Docker container()
 
--  <!--MAGECLOUD-2879-->**Environment variable update**—Added the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html##enable_google_analytics) environment variable to enable or disable Google Analytics when deploying to Staging and Integration environments.
+        -  <!-- MAGECLOUD-2567 2889-->RabbitMQ 3.5 and 3.7
+        -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7 and 2.4
+        -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
+
+-  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
+
+-  <!--MAGECLOUD-2710-->**Environment variable update**—Now, you can enable Google Analytics on Staging and Production environments by setting the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable to `true` in the `.magento.env.yaml` file.
 
 
 #### Resolved Issues
 
+-  <!-- MAGECLOUD-2862 -->Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when enabled. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.
+
+-  <!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration.
+
+-  <!--MAGECLOUD-2740-->Corrected the `config:dump` command so that it includes each website locale in the `system` section of the `config.local.php` file.
+
+-  <!--MAGECLOUD-2797-->Fixed an issue that resulted in warm-up errors during the post-deploy phase by correcting the source base URL reference.
+
+-  <!--MAGECLOUD-2850-->Fixed an issue that generated files improperly during the `setup:di:compile` process, which affected the Amazon Pay module.
 
 ## v2002.0.14
 
@@ -101,7 +118,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
    -  <!--MAGECLOUD--2360-->Secure site access—Added SSL support to access your {{site.data.var.ee}} store and Admin panel.
 
 
--  <!--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} extension support**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `ece-tools` package is compatible with more extensions.
+-  <!--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} extension support**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `{{site.data.var.ct}}` package is compatible with more extensions.
 
 - <!--MAGECLOUD-2363-->**Apply custom changes to your {{site.data.var.ee}} application during the build phase**—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The *build:generate* process generates code, applies patches, and generates static content. The *build:transfer* process transfers the generated code and static content to the final destination. See [Application hooks]({{ page.baseurl }}//cloud/project/project-conf-files_magento-app.html#hooks).
 
@@ -148,7 +165,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 - <!-- MAGECLOUD-2182-->Fixed an issue with the [static content compression process]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-intro.html) (`gzip`) that caused `not overwritten` and `no such file or directory` errors when referencing the compressed file during the deployment process.
 
-- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `ece-tools` v2002.0.13, regenerate older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
+- <!--MAGECLOUD-2444-->Fixed an issue that prevented the `php ./vendor/bin/ece-tools config:dump` command from removing redundant sections from the `config.php` file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `{{site.data.var.ct}}` v2002.0.13, regenerate older `config.php` files with the improved `config:dump` command. See [Configuration management for store settings]({{ page.baseurl }}/cloud/live/sens-data-over.html).
 
 - <!--MAGECLOUD-2556-->Fixed an issue that caused an error during the deploy phase if the route configuration in the `.magento/routes.yaml` file redirects from an [apex](https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/) domain to a `www` domain.
 
@@ -160,7 +177,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 #### New features
 
--  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `ece-tools` repository.
+-  <!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `{{site.data.var.ct}}` repository.
 
 -  <!-- MAGECLOUD-2019 -->**Change Locales**—Now you can [change store locale]({{page.baseurl}}/cloud/live/sens-data-over.html#change-locales) without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.
 
@@ -192,7 +209,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  <!-- MAGECLOUD-2034 -->Fixed an issue when using SCD with multiple locales, which generated the same `js-translation.json` file for each locale.
 
-- <!-- MAGECLOUD-2033 -->Optimized the `db:dump` command in the `ece-tools` package to avoid locking tables and increase speed.
+- <!-- MAGECLOUD-2033 -->Optimized the `db:dump` command in the `{{site.data.var.ct}}` package to avoid locking tables and increase speed.
 
 ## v2002.0.11
 
@@ -384,7 +401,7 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 -   <!-- MAGECLOUD-1170 -->We fixed an issue preventing patch errors from causing deployment failures.
 
--   <!-- MAGECLOUD-1152 -->We fixed an issue preventing `ece-tools` from halting execution and throwing an exception if no patches can be applied.
+-   <!-- MAGECLOUD-1152 -->We fixed an issue preventing `{{site.data.var.ct}}` from halting execution and throwing an exception if no patches can be applied.
 
 -   <!-- MAGECLOUD-1138 -->We fixed an issue causing errors when loading the storefront after enabling HTML minification in the Magento Admin.
 
@@ -416,9 +433,9 @@ We merged [`vendor/magento/ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/co
 
 #### Resolved issues
 
--   <!-- MAGECLOUD-919 & MAGECLOUD-1030-->Refactored the `ece-tools` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
+-   <!-- MAGECLOUD-919 & MAGECLOUD-1030-->Refactored the `{{site.data.var.ct}}` package to make it compatible with {{site.data.var.ece}} 2.2.0 and higher.
 
--   <!-- MAGECLOUD-1186-->We fixed an issue that was preventing `ece-tools` from halting execution and throwing an exception if no patches can be applied.
+-   <!-- MAGECLOUD-1186-->We fixed an issue that was preventing `{{site.data.var.ct}}` from halting execution and throwing an exception if no patches can be applied.
 
 -   <!-- MAGECLOUD-1047 & MAGECLOUD-1049-->We fixed an issue that was causing exceptions to be thrown when  dependency injection (di) compilation is skipped during builds.
 
@@ -433,4 +450,4 @@ This package is no longer compatible with other versions of {{site.data.var.ece}
 
 ### Initial release
 
-Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
+Initial release of `{{site.data.var.ct}}` for {{site.data.var.ece}} 2.2.0.
