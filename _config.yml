@@ -141,4 +141,18 @@ algolia:
 google:
   analytics: 'UA-66243208-1'
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Gemfile', 'Gemfile.lock', 'gulpfile.js', 'package.json', 'package-lock.json', 'Rakefile', 'rakelib', 'README.md']
+exclude:
+  - scss
+  - bin
+  - node_modules
+  - vendor
+  - .git
+  - .idea
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - rakelib
+  - README.md
