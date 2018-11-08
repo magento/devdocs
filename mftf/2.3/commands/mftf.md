@@ -70,6 +70,14 @@ vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 
 This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
 
+### Generate and run previously failed tests
+
+```bash
+vendor/bin/mftf run:failed
+```
+
+This command cleans up the previously generated tests; generates and runs any tests listed in `_output/failed`.
+
 ## Reference
 
 ### `build:project`
@@ -305,6 +313,24 @@ Generate the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests from X
 
 ```bash
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
+```
+
+### `run:failed`
+
+Generates and executes failed tests using Codeception.
+
+#### Usage
+
+```bash
+vendor/bin/mftf run:failed
+```
+
+#### Examples
+
+Run tests that failed in your previous run:
+
+```bash
+vendor/bin/mftf run:failed
 ```
 
 ### `setup:env`
