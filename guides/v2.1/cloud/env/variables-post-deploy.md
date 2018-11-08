@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables).  Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
+The following _post\_deploy_ variables control actions in the post-deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `post-deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:

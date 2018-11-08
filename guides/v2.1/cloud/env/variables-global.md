@@ -13,6 +13,7 @@ stage:
   global:
     GLOBAL_VARIABLE_NAME: value
 ```
+
 ### `MIN_LOGGING_LEVEL`
 
 -  **Default**—_Not set_
@@ -25,6 +26,7 @@ stage:
     global:
         MIN_LOGGING_LEVEL: debug
 ```
+
 ### `SCD_ON_DEMAND`
 
 -  **Default**—_Not set_
