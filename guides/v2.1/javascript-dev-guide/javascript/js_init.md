@@ -154,7 +154,7 @@ In a similar way, you can initialize any JS component that a returns callback fu
 For example:
 
 ```javascript
-define ([
+require ([
     'jquery',
     'mage/gallery/gallery'
 ], function ($, Gallery) {
