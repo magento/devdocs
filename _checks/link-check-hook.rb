@@ -12,8 +12,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
   def url_ignore
     url_ignore = @site.config.dig('html_proofer', 'url_ignore') || []
     exclude = @site.exclude || []
+    return [] if url_ignore.empty? && exclude.empty?
     array = url_ignore.concat(exclude).uniq
-    return [] if array.empty?
     array_to_re(array)
   end
 
