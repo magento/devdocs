@@ -20,7 +20,7 @@ functional_areas:
 #### Previous step:
 [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)
 
-The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
+The {{site.data.var.ee}} project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
 
 To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation).
 

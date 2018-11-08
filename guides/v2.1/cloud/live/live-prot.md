@@ -16,7 +16,7 @@ Outdated software often contains exploits we protect against by partially blocki
 
 ## How the protective block works
 
-Magento Commerce maintains a database of signatures of known security vulnerabilities in open-source software that are commonly deployed on our infrastructure. The security check analyzes only known vulnerabilities in open-source projects; it cannot examine customizations you write.
+{{site.data.var.ee}} maintains a database of signatures of known security vulnerabilities in open-source software that are commonly deployed on our infrastructure. The security check analyzes only known vulnerabilities in open-source projects; it cannot examine customizations you write.
 
 We analyze the code of your application:
 

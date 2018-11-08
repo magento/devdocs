@@ -61,7 +61,7 @@ Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), 
 
 To review your integration tokens, IDs, and more:
 
-1. As the {{site.data.var.ece}} Account Owner, log in to your Magento Commerce project.
+1. As the {{site.data.var.ece}} Account Owner, log in to your project.
 2. In the upper right corner, click **&lt;your name>** > **Account Settings**.
 
 	![Go to account settings]({{ site.baseurl }}/common/images/cloud_acct-settings-option.png)
