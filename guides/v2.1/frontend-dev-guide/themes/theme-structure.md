@@ -134,9 +134,9 @@ The directories and files structure described below is the most extended one. It
           /etc/view.xml
         </code>
       </td>
-      <td colspan="1">required for a theme, but optional if exists in the parent theme</td>
+      <td colspan="1">required for a theme, but optional if it exists in the parent theme</td>
       <td colspan="1">
-        This file contains images configuration for all storefront product images and thumbnails.
+        This file contains configuration for all storefront product images and thumbnails.
       </td>
     </tr>
     <tr>
