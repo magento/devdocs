@@ -11,7 +11,9 @@ functional_areas:
   - Configuration
 ---
 
-The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. To specify a particular version, use the following options:
+The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. 
+
+The following table helps to determine a service key and version value that you can use when building your Docker environment:
 
 | Service       | Key        | Default value | Possible values
 | ------------- | ---------- | ------------- | ----------------
