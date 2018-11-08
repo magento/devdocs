@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.6
+mftf-release: 2.3.10
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/commands/mftf.html
 ---
 
@@ -76,7 +76,8 @@ This command cleans up the previously generated tests; generates and runs the `L
 vendor/bin/mftf run:failed
 ```
 
-This command cleans up the previously generated tests; generates and runs any tests listed in `_output/failed`.
+This command cleans up the previously generated tests; generates and runs the tests listed in `dev/tests/acceptance/tests/_output/failed`.
+For more details about `failed`, refer to [Reporting][].
 
 ## Reference
 
@@ -317,7 +318,7 @@ vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 
 ### `run:failed`
 
-Generates and executes failed tests using Codeception.
+Generates and executes failed tests.
 
 #### Usage
 
@@ -399,6 +400,7 @@ vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test
 [Reference]: #reference
 [build]: #buildproject
 [setup]: #setupenv
+[Reporting]: ../reporting.html
 
 <!-- Abbreviations -->
 
