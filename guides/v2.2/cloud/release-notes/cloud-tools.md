@@ -43,7 +43,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
--  <!--MAGECLOUD-2879-->**Environment variable update**—Now you can enable Google Analytics on Staging and Production environments by setting the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable to `true` in the `.magento.env.yaml` file.
+-  <!--MAGECLOUD-2879-->**Environment variable update**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging or Integration environments using the  [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable.
 
 #### Resolved Issues
 
@@ -51,7 +51,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  <!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration. Previously, the installation process used the database configuration from the MAGENTO_CLOUD_RELATIONSHIP variable even if you designated customized connection information in the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
 
--  <!--MAGECLOUD-2740-->Corrected the `config:dump` command so that it includes each website locale in the `system` section of the `config.local.php` file.
+-  <!--MAGECLOUD-2740-->Corrected the `config:dump` command so that it includes each website locale in the `system` section of the `config.php` file.
 
 -  <!--MAGECLOUD-2797-->Fixed an issue that resulted in warm-up errors during the post-deploy phase by correcting the source base URL reference.
 

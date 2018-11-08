@@ -137,12 +137,10 @@ stage:
 -  **Default**—`false`
 -  **Version**—Magento 2.1.4 and later
 
-Enables or disables Google Analytics when deploying to Staging and Integration environments.
+Disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
 
 -   **`true`**—Enables Google Analytics on Staging and Integration environments.
 -   **`false`**—Disables Google Analytics on Staging and Integration environments.
-
-The following example enables Google Analytics when deploying to a Staging or Integration environment.
 
 ```yaml
 stage:
