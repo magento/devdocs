@@ -55,9 +55,9 @@ Depending on the type of the inserted JS component, processing is performed as f
 return function(config, element) { ... };
 ```
 
-- If neither a function nor an object with the `"component_name&gt;"` key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as `$(element).&lt;component_name&gt;(config)`. For example:
+- If neither a function nor an object with the `"<component_name>"` key are returned, then the initializer tries to search for <code>"<component_name>"</code> in the jQuery prototype. If found, the initializer applies it as `$(element).&lt;component_name&gt;(config)`. For example:
     ```javascript
-    $.fn.&lt;component_name&gt; = function() { ... };
+    $.fn.<component_name> = function() { ... };
     return;
     ```
 
