@@ -203,6 +203,10 @@ pages:
             - label: ADMIN variables
               url: /cloud/env/environment-vars_magento.html
 
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+              exclude_versions: ["2.0"]
+
             - label: Build variables
               url: /cloud/env/variables-build.html
               exclude_versions: ["2.0"]
