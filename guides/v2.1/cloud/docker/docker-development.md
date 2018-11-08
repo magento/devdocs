@@ -78,17 +78,3 @@ Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.
 
 You can easily share files between your machine and a Docker container by placing the files in the `docker/mnt` directory. They appear in `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
 
-## Docker commands
-
-Action | Command
-:--- | :---
-Build and start Docker environment | `docker-compose up -d`
-Build environment | `docker-compose run build cloud-build`
-Deploy environment | `docker-compose run deploy cloud-deploy`
-Connect to CLI container | `docker-compose run cli bash`
-Use `{{site.data.var.ct}}` command | `docker-compose run cli ece-command <command>`
-Use Magento CLI command | `docker-compose run cli magento-command <command>`
-Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
-Stop Docker environment without destroying containers | `docker-compose stop`
-Resume Docker environment | `docker-compose start`
-{:style="table-layout:auto;"}

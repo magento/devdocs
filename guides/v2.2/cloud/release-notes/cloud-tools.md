@@ -29,16 +29,25 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  **Docker Updates**
 
-    -  <!-- MAGECLOUD- 2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
+    -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
-    -  <!-- MAGECLOUD- 2799 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
+    -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
+
+    -  Added the following services to the Docker build:
+
+        -  <!-- MAGECLOUD-2567 & 2889-->RabbitMQ 3.5 and 3.7
+        -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7 and 2.4
+        -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
+
+    -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using Cloud Docker CLI container.
 
 -  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
--  <!--MAGECLOUD-2710-->**Environment variable update**—You can now enable Google Analytics on Staging and Production environments by setting the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable to `true` in the `.magento.env.yaml` file.
-
+-  <!--MAGECLOUD-2879-->**Environment variable update**—Now you can enable Google Analytics on Staging and Production environments by setting the [ENABLE_GOOGLE_ANALYTICS]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics) environment variable to `true` in the `.magento.env.yaml` file.
 
 #### Resolved Issues
+
+-  <!-- MAGECLOUD-2862 -->Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when enabled. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.
 
 -  <!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration.
 
