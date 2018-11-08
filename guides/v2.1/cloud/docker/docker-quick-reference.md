@@ -51,9 +51,3 @@ In the Docker environment, you can invoke the `magento-cloud` commands from the 
 ```bash
 docker-compose run cli magento-command list
 ```
-
-Also, you can run `magento` commands from the CLI container.
-
-```bash
-docker-compose run cli /var/www/magento/bin/magento queue:consumers:list
-```
