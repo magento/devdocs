@@ -3,14 +3,16 @@
 
 # Credentials
 
-When you test functionality that involves external services such as UPS, FedEx, PayPal, SignifyD, use the MFTF credentials feature to hide sensitive data like integration tokens, API keys, etc.
+When you test functionality that involves external services such as UPS, FedEx, PayPal, SignifyD, use the MFTF credentials feature to hide sensitive [data][] like integration tokens, API keys, etc.
 
 ## Define sensitive data in `.credentials`
 
-The MFTF creates a sample file for credentials during [initial setup]: `magento2/dev/tests/acceptance/.credentials.example`.
-The file contains a list of fields for credentials you may need.
+The MFTF creates a sample file for credentials during [initial setup][]: `magento2/dev/tests/acceptance/.credentials.example`.
+The file contains an example list of keys for fields that can require credentials.
 
-To make the file with credentials visible for the MFTF, copy the `.credentials.example` to ``.credentials` while you are in the `<magento root>/dev/tests/acceptance/` directory:
+### Create `.credentials`
+
+To make the MFTF to process the file with credentials, copy `.credentials.example` to `.credentials` while you are at the `magento2/dev/tests/acceptance/` directory:
 
 ```bash
 cd dev/tests/acceptance/
@@ -20,7 +22,9 @@ cd dev/tests/acceptance/
 cp .credentials.example .credentials
 ```
 
-Verify whether the file is excluded from tracking by `.gitignore` (unless you need this behavior):
+### Add `.credentials` to `.gitignore`
+
+Verify that the file is excluded from tracking by `.gitignore` (unless you need this behavior):
 
 ```bash
 git check-ignore .credentials
@@ -32,65 +36,63 @@ The command outputs the path if the file is excluded:
 .credentials
 ```
 
+### Define sensitive data
+
 Open the file, uncomment the fields you want to use, and add your values:
 
 ```config
-carriers/usps/userid=test_user
-carriers/usps/password=Lmgxvrq89uPwECeV
+...
+# Credentials for the USPS service
+carriers_usps_userid=test_user
+carriers_usps_password=Lmgxvrq89uPwECeV
 
-#carriers_dhl_id_us=
-#carriers_dhl_password_us=
+# Credentials for the DHL service
+#carriers/dhl/id_us=
+#carriers/dhl/password_us=
+....
+```
+
+{: .bs-callout .bs-callout-info }
+The `/` symbol is not supported in a key name.
+
+You are free to use any other keys you like, as they are merely the keys to reference from your tests.
+
+```conf
+# Credentials for the MyAwesome service
+my_awesome_service_token=rRVSVnh3cbDsVG39oTMz4A
+
+# Credentials for the USPS service
+carriers_usps_userid=test_user
+carriers_usps_password=Lmgxvrq89uPwECeV
 ....
 ```
 
 ## Use credentials in test
 
-Access data defined in the `.credentials` file using the [`fillField` ][] action with the `userInput` attribute defined in the `{{_CREDS.<your data key>}}` format.
+<!--{% raw %}-->
+Access the data defined in the `.credentials` file using the [`fillField`][] action with the `userInput` attribute.
+Define the value as a reference to the corresponding key in the credentials file such as `{{_CREDS.my_data_key}}`:
+
+- `_CREDS` is an environment constant pointing to the `.credentials` file
+- `my_data_key` is a key in the the `.credentials` file that contains the value to be used in a test step
+
 For example:
 
 ```xml
-<fillField stepKey="FillAPIUsername" selector=".username" userInput="{{_CREDS.PAYMENTUSER}}"/>
-<fillField stepKey="FillAPIPassword" selector=".password" userInput="{{_CREDS.PAYMENTPASSWORD}}"/>
+<fillField stepKey="FillApiToken" selector=".api-token" userInput="{{_CREDS.my_data_key}}" />
 ```
 
+## Implementations details
 
-When you need to use credentials in your tests such as integration token, you can do it without exposing the sensitive data in your XML tests.
+The generated tests does not contain credentials values.
+The MFTF dynamically retrieves, encrypts, and decrypts the sensitive data during test execution.
+Decrypted credentials do not appear in the console, error logs, or [test reports][].
+The decrypted values are only available in the `.credentials` file.
 
-The MFTF enables you to store credentials for external services in the `.credentials` file which is 
-The template file is `.credentials.example`.
+<!--{% endraw %}-->
 
-
-
-1. When do I need people would need credentials in the MFTF?
-    - Credentials are used for when you need to input an integration token or other security credential via a `fillField`.
-    - You shouldn't have security tokens checked in to any repo, so storing it in a DATA.xml file is a bad idea
-    - Furthermore, if you used data.xml, the Allure Report would show your security token like:
-        I fill field "SECURITYTOKEN".
-        - Use of {{_CREDS.TOKEN}} turns a `fillField` action into `fillSecretField` which scrubs the allure report.
-
-2. What functionality does the MFTF credentials feature cover?
-    - How to store credentials
-        - build:project copies over .credentials.example, copy and remove the `.example`
-        - Store new credentials in a new line as `KEY=VALUE`
-    - How to use Credentials in test actions
-        - In fillField actions, you can reference it as {{_CREDS.KEY}}
-        - data.md has info on this, check out "Sensitive Data"
-
-3. How to implement credentials in test design?
-    - Credentials should only every be used if you have the need to connect to some external integration for your test
-    - Credentials should NOT be used to store stuff like Username/Password in your sandbox test environment; should be limited to tokens and passwords that would propose a security risk.
-
-4. How to setup credentials?
-    - build:project copies over .credentials.example, copy and remove the `.example`
-    - Store new credentials in a new line as
-        - KEY=VALUE
-    - You CANNOT check in the .credentials file
-        - For Magneto Devs, DevOps is still working on the solution of how to store credentials to be used in a build enviroment
-        - For outside Devs, they can store the credentials and build their own .credentials file as part of build steps
-
-5. Examples of daily routine tasks using credentials in the MFTF.
-    - In my test, I am wanting to test a Payment Method integration. This requires me to add a Payment via the Configuration page in the admin backend.
-    - I need to use the credentials to my Sandbox Environment, but I don't want those visible in the Allure Report:
-        - <fillField stepKey="FillAPIUsername" selector=".username" userInput="{{_CREDS.PAYMENTUSER}}"/>
-        - <fillField stepKey="FillAPIPassword" selector=".password" userInput="{{_CREDS.PAYMENTPASSWORD}}"/>
-  
+<!-- Link definitions -->
+[`fillField`]: test/actions.html#fillfield
+[data]: data.html
+[initial setup]: getting-started.html
+[test reports]: reporting.html
