@@ -103,6 +103,10 @@ pages:
         - label: Set the Magento mode
           url: /config-guide/cli/config-cli-subcommands-mode.html
 
+        - label: Start message queue consumers
+          include_versions: ["2.3"]
+          url: /config-guide/cli/config-cli-subcommands-queue.html
+
         - label: URN highlighter
           url: /config-guide/cli/config-cli-subcommands-urn.html
 
