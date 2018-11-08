@@ -4,20 +4,22 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
   # Read file_ignore and url_ignore for html_proofer in configuration files
   def file_ignore
-    array = @site.config['html_proofer']['file_ignore']
+    array = @site.config.dig('html_proofer', 'file_ignore')
+    return [] if array.nil?
     array_to_re(array)
   end
 
   def url_ignore
-    url_ignore = @site.config['html_proofer']['url_ignore']
-    exclude = @site.exclude
+    url_ignore = @site.config.dig('html_proofer', 'url_ignore') || []
+    exclude = @site.exclude || []
     array = url_ignore.concat(exclude).uniq
+    return [] if array.empty?
     array_to_re(array)
   end
 
   # Conver array of strings into array of regular expressions
   def array_to_re(array)
-    array.map { |item| /#{item}/ }
+    array.map { |item| /#{item}/ } unless array.nil?
   end
 
   # Configure options for html-proofer
@@ -28,8 +30,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
     checks_to_ignore: %w[ScriptCheck ImageCheck],
     allow_hash_ref: true,
     alt_ignore: [/.*/],
-    file_ignore: array_to_re(file_ignore),
-    url_ignore: array_to_re(url_ignore),
+    file_ignore: file_ignore,
+    url_ignore: url_ignore,
     error_sort: :desc, # Sort by invalid link instead of affected file path (default). This makes it easier to see how many files the broken link affects.
     parallel: { in_processes: 3 },
     typhoeus: { followlocation: true, connecttimeout: 10, timeout: 30 },
