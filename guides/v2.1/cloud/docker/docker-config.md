@@ -16,7 +16,7 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 | Service       | Key        | Default value | Possible values |
 | ------------- | ---------- | ------------- | --------------- |
 | PHP           | `--php`    | 7.1           | 7.0, 7.1, 7.2   |
-| Nginx         | `--nginx`  | latest        | 1.9, latest     |
+| NGINX         | `--nginx`  | latest        | 1.9, latest     |
 | MariaDB       | `--db`     | 10            | 10              |
 | Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2   |
 | RabbitMQ      | `--rmq`    | 3.5           | 3.5, 3.7        |
@@ -45,14 +45,11 @@ You must have the following software installed on your local workstation:
     composer install
     ```
 
-1.  In your local environment, start the Docker configuration generator.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php` to specify a version compatible with your {{site.data.var.ee}} version.
 
     ```bash
     ./vendor/bin/ece-tools docker:build
     ```
-
-    {: .bs-callout .bs-callout-info}
-    You can use the `--php` option to specify the version of PHP compatible with your {{site.data.var.ee}} version.
 
 1.  Copy the raw configuration files.
 

@@ -3,12 +3,12 @@ group: cloud-guide
 title: Docker development quick reference
 functional_areas:
   - Cloud
-  - Setup
+  - Docker
 ---
 
 ## ece-tools
 
-The following `{{site.data.var.ct}}` commands relate to establishing your local [Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html).
+The following `{{site.data.var.ct}}` commands relate to [launching a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html).
 
 ```bash
 php ./vendor/bin/ece-tools list | grep docker
@@ -24,7 +24,7 @@ php ./vendor/bin/ece-tools list | grep docker
 ## docker-compose
 
 Action | Command
-:--- | :---
+:----- | :------
 Build and start Docker environment | `docker-compose up -d`
 Build environment | `docker-compose run build cloud-build`
 Deploy environment | `docker-compose run deploy cloud-deploy`
