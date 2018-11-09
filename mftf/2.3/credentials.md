@@ -3,7 +3,7 @@
 
 # Credentials
 
-When you test functionality that involves external services such as UPS, FedEx, PayPal, SignifyD, use the MFTF credentials feature to hide sensitive [data][] like integration tokens, API keys, etc.
+When you test functionality that involves external services such as UPS, FedEx, PayPal, or SignifyD, use the MFTF credentials feature to hide sensitive [data][] like integration tokens and API keys.
 
 ## Define sensitive data in `.credentials`
 
@@ -12,7 +12,7 @@ The file contains an example list of keys for fields that can require credential
 
 ### Create `.credentials`
 
-To make the MFTF to process the file with credentials, copy `.credentials.example` to `.credentials` while you are at the `magento2/dev/tests/acceptance/` directory:
+To make the MFTF process the file with credentials, change directories to `magento2/dev/tests/acceptance/` and copy `.credentials.example` to `.credentials`.
 
 ```bash
 cd dev/tests/acceptance/
@@ -38,7 +38,7 @@ The command outputs the path if the file is excluded:
 
 ### Define sensitive data
 
-Open the file, uncomment the fields you want to use, and add your values:
+Open the `.credentials` file, uncomment the fields you want to use, and add your values:
 
 ```config
 ...
@@ -82,9 +82,9 @@ For example:
 <fillField stepKey="FillApiToken" selector=".api-token" userInput="{{_CREDS.my_data_key}}" />
 ```
 
-## Implementations details
+## Implementation details
 
-The generated tests does not contain credentials values.
+The generated tests do not contain credentials values.
 The MFTF dynamically retrieves, encrypts, and decrypts the sensitive data during test execution.
 Decrypted credentials do not appear in the console, error logs, or [test reports][].
 The decrypted values are only available in the `.credentials` file.
