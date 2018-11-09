@@ -82,7 +82,7 @@ For example:
 <fillField stepKey="FillApiToken" selector=".api-token" userInput="{{_CREDS.my_data_key}}" />
 ```
 
-## Implementations details
+## Implementation details
 
 The generated tests does not contain credentials values.
 The MFTF dynamically retrieves, encrypts, and decrypts the sensitive data during test execution.
