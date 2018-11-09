@@ -71,6 +71,6 @@ When upgrading to a new {{site.data.var.ece}} version or adding, removing, or ch
 2.	Add and commit these updated files to your Cloud Git repository.
 3.	Push the changes to your Cloud Integration environment.
 
-See [Patch Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/project/project-patch.html).
+See [Patch {{site.data.var.ece}}]({{ page.baseurl }}/cloud/project/project-patch.html).
 
 This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after deploying an updated version of Magento, one of the first things to check is whether all of the base package files were added to source control.
