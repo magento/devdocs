@@ -12,7 +12,7 @@ The file contains an example list of keys for fields that can require credential
 
 ### Create `.credentials`
 
-To make the MFTF to process the file with credentials, copy `.credentials.example` to `.credentials` while you are at the `magento2/dev/tests/acceptance/` directory:
+To make the MFTF process the file with credentials, change directories to `magento2/dev/tests/acceptance/` and copy `.credentials.example` to `.credentials`.
 
 ```bash
 cd dev/tests/acceptance/
