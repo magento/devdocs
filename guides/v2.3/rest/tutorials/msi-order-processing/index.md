@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: rest-api
-title: Order Processing with Multi Source Inventory
+title: Order Processing with Inventory Management
 menu_title: Initial tasks
 menu_order: 0
 level3_subgroup: msi-tutorial
@@ -15,18 +15,15 @@ functional_areas:
 ### Before you begin
 {:.tutorial-before}
 
-This tutorial builds upon the workflow described in the [Order Processing with REST APIs tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html). The Order Processing with Multi Source Inventory (MSI) tutorial provides additional steps that detail how to create stocks and sources, assign products to a custom source, and run the Source Selection Algorithm to recommend shipping options.
+This tutorial builds upon the workflow described in the [Order Processing with REST APIs tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html). The Order Processing with Inventory Management tutorial provides additional steps that detail how to create stocks and sources, assign products to a custom source, and run the Source Selection Algorithm to recommend shipping options.
 
-For more information about MSI, see the [MSI wiki](https://github.com/magento-engcom/msi/wiki/Overview).
+For more information about key inventory features, see [Inventory Management overview]({{ page.baseurl }}/inventory/index.html).
 
 This **13-step tutorial** generally takes **1 hour**.
 
-{:.bs-callout .bs-callout-info}
-The Order Processing with MSI tutorial is a draft. It will be expanded to include more steps that show MSI functionality. This tutorial does not currently use the Luma sample store, but later versions will.
-
 ### Complete these prerequisites
 
-* Install the latest version of Magento 2.3 Alpha from the [MSI repository](https://github.com/magento-engcom/msi). Additional information is available at [How to get the Magento software](https://devdocs.magento.com/guides/v2.3/install-gde/bk-install-guide.html).
+* Install the latest version of Magento 2.3 Beta from the [MSI repository](https://github.com/magento-engcom/msi). Additional information is available at [How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html).
 
 * Install a REST client. You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/) is recommended.
 

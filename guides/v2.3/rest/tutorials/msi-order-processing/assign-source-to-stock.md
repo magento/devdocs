@@ -96,7 +96,7 @@ Magento returns empty array.
 **Required:** After you have assigned a source to stock, use the following command to perform a full reindex and flush the cache. This is required!
 
 ``` bash
-php bin/magento indexer:reindex && php bin/magento cache:flush
+bin/magento indexer:reindex && php bin/magento cache:flush
 ```
 
 ### Verify this step
