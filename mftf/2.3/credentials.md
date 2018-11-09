@@ -67,7 +67,7 @@ carriers_usps_password=Lmgxvrq89uPwECeV
 ....
 ```
 
-## Use credentials in test
+## Use credentials in a test
 
 <!--{% raw %}-->
 Access the data defined in the `.credentials` file using the [`fillField`][] action with the `userInput` attribute.
@@ -88,6 +88,9 @@ The generated tests does not contain credentials values.
 The MFTF dynamically retrieves, encrypts, and decrypts the sensitive data during test execution.
 Decrypted credentials do not appear in the console, error logs, or [test reports][].
 The decrypted values are only available in the `.credentials` file.
+
+{: .bs-callout .bs-callout-info }
+The MFTF tests delivered with Magento application do not use credentials and do not cover external services, because of sensitivity of the data.
 
 <!--{% endraw %}-->
 
