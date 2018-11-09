@@ -76,5 +76,5 @@ Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.
 
 ## Sharing data between host machine and container
 
-You can easily share files between your machine and a Docker container by placing the files in the `docker/mnt` directory. They appear in `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
+You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. The files appear in `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
 

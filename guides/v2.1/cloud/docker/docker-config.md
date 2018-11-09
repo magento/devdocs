@@ -47,7 +47,7 @@ You must have the following software installed on your local workstation:
     composer install
     ```
 
-1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php` to specify a version compatible with your {{site.data.var.ee}} version.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version compatible with your {{site.data.var.ee}} version.
 
     ```bash
     ./vendor/bin/ece-tools docker:build
