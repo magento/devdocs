@@ -19,7 +19,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Overrides the minimum logging level for all output streams without making changes to the code. This helps to improve troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
+Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
 
 ```yaml
 stage:
@@ -32,7 +32,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Enable generation of static content when requested by a user. This is ideal for the development and testing workflow, because it decreases the deployment time.
+Enable generation of static content when requested by a user (SCD). This is ideal for the development and testing workflow, because it decreases the deployment time.
 
 Pre-loading the cache using the [`post_deploy` hook]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks) reduces site downtime. The cache warming is available only for Pro projects that contain Staging and Production environments in the Project Web UI and for Starter projects. Add the `SCD_ON_DEMAND` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
