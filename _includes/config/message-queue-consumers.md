@@ -21,7 +21,7 @@ async.operations.all
 To start message queue consumers:
 
 ```bash
-/bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] <consumer_name>
+bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] <consumer_name>
 ```
 
 The following table explains this command’s options, parameters, and values.
