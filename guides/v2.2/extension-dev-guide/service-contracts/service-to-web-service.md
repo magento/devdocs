@@ -215,7 +215,7 @@ If a service method argument is called `item`, there will be a problem during SO
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
 ``` xml
 <?xml version="1.0"?>
-    <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
+    <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group Service-->
     <route url="/V1/customerGroups/:id" method="GET">
         <service class="Magento\Customer\Api\GroupRepositoryInterface" method="get"/>

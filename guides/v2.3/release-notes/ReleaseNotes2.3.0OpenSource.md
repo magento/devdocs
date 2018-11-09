@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.0 Release Notes
 ---
 
-*Release notes published September 21, 2018.*
+*Release notes published October 25, 2018.*
 
 We are pleased to present Magento Open Source 2.3.0 Beta. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 pre-release code is a work in progress.
 
@@ -40,7 +40,7 @@ This release introduces significant tools to improve the developer experience: P
 
 * **Improvements to import and export**  focus on enhancements to existing processes, including the  addition of new object types. 
 
-* **Elasticsearch support for Magento Community version**. Elasticsearch support was previously provided in Magento Commerce only. 
+* **Elasticsearch support for {{site.data.var.ce}}**. Elasticsearch support was previously provided in Magento Commerce only. 
 
 * **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
 
@@ -73,13 +73,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 #### Application framework
 
-* <!--- 93723,  92185-->The Magento application framework has been updated to use: 
-
-	* jQuery 3.x 
-
-	* AngularJS  1.6.9 
-
-
+<!--- 93723,  92185-->* The Magento application framework has been updated to address a jQuery security issue.
 
 #### Cart
 

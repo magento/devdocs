@@ -33,6 +33,7 @@ versions:
 
 github_link: true
 feedback_link: true
+mage2bloburl: "https://github.com/magento/magento2/blob/"
 
 # 2.0.0 variables
 gdeurl: "/guides/v2.0/"
@@ -54,7 +55,6 @@ githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
 mage2200url: "https://github.com/magento/magento2/blob/2.2/"
 
 # 2.3.0 variables
-
 gdeurl23: "/guides/v2.3/"
 githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
 mage2300url: "https://github.com/magento/magento2/blob/2.3-develop/"
@@ -121,6 +121,8 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   toc_levels: 2..3
+  syntax_highlighter_opts:
+    css_class: 'highlighter'
 
 incremental: false
 
@@ -134,8 +136,9 @@ algolia:
     - guides/m1x/**/*.html
     - guides/m1x/**/*.md
     - swagger
+    - redoc
 
 google:
   analytics: 'UA-66243208-1'
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Gemfile', 'Gemfile.lock', 'gulpfile.js', 'package.json', 'package-lock.json', 'Rakefile', 'rakelib', 'README.md']

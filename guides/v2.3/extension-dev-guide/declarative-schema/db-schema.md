@@ -37,7 +37,7 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
 {: .bs-callout .bs-callout-info }
-If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
+If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PhpStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 
 ### Top-level node
 

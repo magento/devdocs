@@ -44,6 +44,7 @@ magento-cloud variable:get -e <environment-ID>
 | ADMIN_USERNAME | admin_A456    | Yes       | No   |
 +----------------+---------------+-----------+------+
 ```
+{: .no-copy}
 
 ### Get Magento authentication keys
 
@@ -201,7 +202,7 @@ To verify the Integration master branch environment, log into the Project Web In
 
 With these steps completed, you should have:
 
-* Magento Commerce account and initial project setup and master branch
+* A {{site.data.var.ee}} account and initial project setup and master branch
 * A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
 * SSH keys set up
 * The Magento file system owner configured

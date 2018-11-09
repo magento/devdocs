@@ -42,7 +42,7 @@ For the component configuration inside `<container>` and `<component>`, [use the
 
 If the custom component you create is a [basic UI component] (like Form or Listing), you need to take the following steps to declare it:
 
-1. Specify the XML file with its configuration it in the page layout file in your module, as described in the [About XML сonfiguration of UI сomponents] topic.
+1. Specify the XML file with its configuration it in the page layout file in your module, as described in the [About XML configuration of UI components] topic.
 2. Declare the component in a separate `.xml` file using the `<container>` or `<component>` as parent node.
 
 ## Declare a custom secondary component 
@@ -136,5 +136,5 @@ We copy the `<field>` configuration, remove the `<select>` node and its configur
 [uiCollection]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html
 [use the "arbitrary" structure]: {{ page.baseurl }}/ui_comp_guide/best-practices/semantic_config.html#info_structure_except
 [basic UI component]: {{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure
-[About XML сonfiguration of UI сomponents]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#about-the-layout-configuration-file-and-ui-component-declaration
+[About XML configuration of UI components]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#about-the-layout-configuration-file-and-ui-component-declaration
 

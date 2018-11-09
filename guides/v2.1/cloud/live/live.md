@@ -21,7 +21,7 @@ You need the following information to go live:
 * List of all storefront domains to add to the certificate
 * SSL certificate if not using the shared-SSL (requires option purchase)
 
-As part of Magento Commerce (Cloud) subscription, you have access to a shared Domain-Validated SSL (HTTPS) certificate that is issued by GlobalSign. This certificate is shared with other merchants and included for all Cloud accounts. If you want to deploy an Extended Validation SSL (not-shared) certificate for your company, this option can be purchased when you first sign-up with Magento Commerce. If you need to purchase this option, contact your account representative.
+As part of {{site.data.var.ece}} subscription, you have access to a shared Domain-Validated SSL (HTTPS) certificate that is issued by GlobalSign. This certificate is shared with other merchants and included for all Cloud accounts. If you want to deploy an Extended Validation SSL (not-shared) certificate for your company, this option can be purchased when you first sign-up with Magento Commerce. If you need to purchase this option, contact your account representative.
 
 ## Why test fully in Integration and Staging? {#whytest}
 

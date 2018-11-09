@@ -1,7 +1,7 @@
 ---
 group: configuration-guide
 title: Deploy to production
-redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
+redirect_from: /guides/v2.1/howdoi/deploy/deploy-to-prod.html
 functional_areas:
   - Configuration
   - Deploy
@@ -20,4 +20,4 @@ The following is a list of recommended strategies for production deployment:
 
 [0]: {{ page.baseurl }}/config-guide/prod/single-machine-deployment.html
 [1]: {{ page.baseurl }}/cloud/reference/discover-deploy.html
-[2]: {{ site.baseurl }}/community/resources/#installdeploy
+[2]: {{ site.baseurl }}/community/resources/resources.html#installdeploy

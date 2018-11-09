@@ -202,7 +202,7 @@ Each block has an identifier that includes selector and searching strategy. This
 
 You can use the `_rootElement` to find an element in the current block.
 
-Example from the [`WidgetInstance.php`](https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php) block:
+Example from the [`WidgetInstance.php`]({{site.mage2bloburl}}c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php) block:
 
 ```php
 <?php
