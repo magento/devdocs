@@ -84,7 +84,7 @@ For example:
 
 ## Implementation details
 
-The generated tests does not contain credentials values.
+The generated tests do not contain credentials values.
 The MFTF dynamically retrieves, encrypts, and decrypts the sensitive data during test execution.
 Decrypted credentials do not appear in the console, error logs, or [test reports][].
 The decrypted values are only available in the `.credentials` file.
