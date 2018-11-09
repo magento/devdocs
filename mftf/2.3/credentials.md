@@ -38,7 +38,7 @@ The command outputs the path if the file is excluded:
 
 ### Define sensitive data
 
-Open the file, uncomment the fields you want to use, and add your values:
+Open the `.credentials` file, uncomment the fields you want to use, and add your values:
 
 ```config
 ...
