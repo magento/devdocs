@@ -765,6 +765,8 @@ contributor link: https://github.com/nmalevanec
 
 Malyovanets Nickolas
 
+should show product name as brower title and should have meta title tag in html source
+
 
 https://github.com/magento/magento2/issues/15501
 
@@ -789,21 +791,7 @@ should show product name as brower title and should have meta title tag in html 
 
 
 
-<!--- ENGCOM-2302-->* 225 1247
-
-title: [Forwardport] Fix for GitHub issue #14035.
-url: magento/magento2#16742
-contributor name: @eduard13
-contributor link: https://github.com/eduard13
-
-https://github.com/magento/magento2/issues/14035
-
-Magento REST API, wrong condition for product list category filter 
-
-Expected result
-A list of enabled products assigned to any of the listed categories should be returned
-Actual result
-A list of products assigned to first listed category is returned
+<!--- ENGCOM-2302-->* REST search queries in which the `condition_type` is set to `in` or `nin` now return results for all specified values. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request  [16742](https://github.com/magento/magento2/pull/16742)*. [GitHub-14035](https://github.com/magento/magento2/issues/14035)
 
 <!--- ENGCOM-2373-->* A type error in the payment void method of the Authorizenet module has been fixed. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
 
@@ -909,15 +897,7 @@ When varnish is selected as the cache engine, If there are products associated t
 
 
 
-<!---MAGETWO-93306 -->* It's impossible to specify negative value in "Quantity" field for product
-STEPS
-Go to storefront
-Add Simple Product to shopping cart with Qty = 3
-Place Order
-Login to admin
-Open Simple Product for edit
-Pay attention to Quantity field (with value -2, and js validation message - Please enter a valid number in this field.)
-Try to Save product
+<!---MAGETWO-93306 -->* You can now specify a negative value for a product in the orders **Quantity** field when editing the order from the Admin. 
 
 
 
@@ -1094,6 +1074,7 @@ address.street becomes an object. Eg. {0: 'Sesame Street'}
 
 <!---ENGCOM-1254 -->* The syntax of expectException() calls has been improved. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14621](https://github.com/magento/magento2/pull/14621)*. [GitHub-11059](https://github.com/magento/magento2/issues/11059) 
 
+<!---ENGCOM-1698 -->* JavaScript in the Tav module has been refactored to meet Magento code standards. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15560](https://github.com/magento/magento2/pull/15560)*. [GitHub-15352](https://github.com/magento/magento2/issues/15352)
 
 
 
@@ -4921,7 +4902,8 @@ We observe that page loads to long when the option will be switched in the admin
 
 
 
-<!---ENGCOM-1291 -->* added GNU Free Font to be used by sales PDFs
+<!---ENGCOM-1291 -->* Sales PDFs now support unicode fonts (GNU Free Font), which broadens language support in these PDFs. 
+
 
 title: added GNU Free Font to be used by sales PDFs
 url: magento/magento2#14710
@@ -4931,24 +4913,12 @@ contributor link: https://github.com/rossmc
 
 Ross
 
-[GitHub-9666](https://github.com/magento/magento2/issues/9666)
-
-
-Invoice PDF doesn't support Thai
-
-
-[GitHub-12323](https://github.com/magento/magento2/issues/12323)
-
-Invoice and shipment PDF doesn't support Arabic
-
-The sales PDFs use the Libertine font which is not a unicode font and therefore it does not have full support of characters. It does not support Arabic, Russian, Greek, Indian or Thai alphabets and many more. For example it does not support the Indian rupee currency symbol ( ₹ ) and displays tofu boxes instead, which makes the PDF invoice totals illegible.
-
-It's better if we use a unicode font to support more writing systems and characters. So I've added the open source GNU Free Font which supports much more writing systems.
+[GitHub-9666](https://github.com/magento/magento2/issues/9666), [GitHub-12323](https://github.com/magento/magento2/issues/12323)
 
 
 
 
-<!---ENGCOM-1466 -->* Transport variable can not be altered in email_invoice_set_template_vars_before Event
+<!---ENGCOM-1466 -->* Transport variable can now be altered in `email_invoice_set_template_vars_before Event
 
 gwharton
 
@@ -4962,6 +4932,8 @@ We waht to change the payment_html for banktransfer invoices. Unfortunately the 
 
 
 [GitHub-10210](https://github.com/magento/magento2/issues/10210)
+
+
 
 <!---ENGCOM-1110 -->* Fixed decimal handling in order quantities
 
@@ -5264,6 +5236,8 @@ Quaternion
 checkout Magento from 2.3-develop branch
 Run bin/magento sampledata:deploy (with no errors)
 
+
+
 ### Shipping
 
 <!-- MAGETWO-93712 -->* The free shipping cart price rule now works as expected when **UPS shipping method** is enabled and **Free Shipping** is set to "For matching items only".
@@ -5308,53 +5282,32 @@ If you leave as default, shipping lines disappear
 
 ### Store
 
-<!-- MAGETWO-75322 -->* 
-add is_active to Magento\Store\Api\Data\StoreInterface to show it in the rest endpoint
-
-Description
-Magento\Store\Api\Data\StoreInterface had no get and set method defined for is_active flag and thus the value did not appear in the V1/store/storeViews endpoint with the store view data
-
-
-
-[GitHub-10922](https://github.com/magento/magento2/issues/10922)
-
-
-
-REST endpoint /V1/store/storeViews is missing is_active value in store data
-
-When doing API call to /rest/default/V1/store/storeViews the result list items do not show is_active value
+<!-- MAGETWO-75322 -->*  Returns from REST endpoint  `/V1/store/storeViews` calls now include as expected `is_active` values for stores. [GitHub-10922](https://github.com/magento/magento2/issues/10922)
 
 
 
 
 
+<!---ENGCOM-1999 -->* Getting wrong frontend-controller, when using storecodes in urls
+
+Create a Store with 2 StoreViews like "de" and "en". "de" is the default storeview
+Set 'Stores' > 'Configuration' > 'General' > 'Web' > 'Add Store Code to Urls' to 'Yes'
+Set "web/default/front" from Store "en" to somehing different like "catalog/product/view/id/productid"
+Go to "domain.com/en"
+Expected result
+I will see the product page
+
+Actual result
+I see the default CMS-Page
 
 
-<!---ENGCOM-1999 -->* 
 
 
-title: [Forwardport] 2.3 develop pr port 15566
-url: magento/magento2#15759
-contributor name: @vgelani
-contributor link: https://github.com/vgelani
-
-Vishal Gelani
-
-gelanivishal
-
-Getting wrong frontend-controller, when using storecodes in urls
-
-
-[GitHub-15565](https://github.com/magento/magento2/issues/15565)
-
-
+*Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15759](https://github.com/magento/magento2/pull/15759)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
 
 <!---ENGCOM-2606 -->* The `getUrlInStore()` method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
-
-<!--- MAGETWO-87615 -->*  [GitHub-5035](https://github.com/magento/magento2/issues/5035)  
-
-I can not to subscribe on change of all sections in Stores ->Configuration using event admin_system_config_changed_section
+<!--- MAGETWO-87615 -->*  You can now use an `admin_system_config_changed_section` event to subscribe to changes for all sections in **Stores** > **Configuration**. [GitHub-5035](https://github.com/magento/magento2/issues/5035)  
 
 
 ### Staging
@@ -5369,10 +5322,7 @@ I can not to subscribe on change of all sections in Stores ->Configuration using
 
 ### Swagger
 
-<!--- MAGETWO-90787-->* Swagger does not render correctly for many POST/PUT operations.
-
-Previously, In Swagger, the text area that contains the payload structure of some POST and PUT operations is not displayed. If a fraction of the text area is displayed, you can click on it to display the payload structure in a text area in the center of the page. If the text area is not displayed at all, then you cannot access the payload structure. 
-
+<!--- MAGETWO-90787-->* Swagger now correctly renders correctly POST/PUT operations. Previously, in Swagger, the text area that contained the payload structure of some POST and PUT operations was not displayed. 
 
 <!---ENGCOM-2811 -->* Swagger now works as expected when JavaScript minification is enabled. Previously, when JavaScript minification was enabled, the swagger-ui-bundle.js became corrupted, although Swagger worked fine when minification was subsequently disabled, and the files were redeployed.
 
@@ -5383,129 +5333,42 @@ Previously, In Swagger, the text area that contains the payload structure of som
 
 ### Swatches
 
+<!-- MAGETWO-87155 -->* Visual swatches now display  swatch color in the Admin as expected. [GitHub-11828](https://github.com/magento/magento2/issues/11828) 
 
-<!-- MAGETWO-87155 -->* [GitHub-11828](https://github.com/magento/magento2/issues/11828) 
-
-Visual Swatches not showing swatch color in admin
-
-<!-- MAGETWO-87151 -->*  [GitHub-10628](https://github.com/magento/magento2/issues/10628) 
-
-Color attribute swatches are not visible if sorting is enabled
+<!-- MAGETWO-87151 -->* Color attribute swatches are now visible when sorting is enabled. [GitHub-10628](https://github.com/magento/magento2/issues/10628) 
 
 <!--- MAGETWO-83292-->* You can now use REST to import visual swatch attribute options. Previously, you could not add swatch options using service contracts unless a swatch option already existed for the attribute. *Fix submitted by [gonzalopelon](https://github.com/gomencal) in pull request [12044](https://github.com/magento/magento2/pull/12044)*. [GitHub-9410](https://github.com/magento/magento2/issues/9410), [GitHub-10707](https://github.com/magento/magento2/issues/10707), [GitHub-10737](https://github.com/magento/magento2/issues/10737), [GitHub-11032](https://github.com/magento/magento2/issues/11032)
 
+<!--- MAGETWO-87869-->* The load and merge order of `view.xml` configuration in `\Magento\Swatches\Helper\Media` now matches `\Magento\Catalog\Helper\Image.` *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [13506](https://github.com/magento/magento2/pull/13506)*. [GitHub-12647](https://github.com/magento/magento2/issues/12647)
 
+<!--- MAGETWO-87935-->* Replaced .size() with .length to be compatible with jQuery 3.*. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request [13686](https://github.com/magento/magento2/pull/13686)*. 
 
-<!--- MAGETWO-87869-->* Fix load order of view.xml when loading Swatch config 
+<!--- ENGCOM-1128 -->* Swatch functionality that has been extended using JavaScript mixins now works as expected in Safari and Microsoft Edge. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14247](https://github.com/magento/magento2/pull/14247)*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
-[GitHub-12647](https://github.com/magento/magento2/issues/12647)
+<!--- ENGCOM-1017 -->* You can now save a swatch attribute that has an empty option. *Fix submitted by [enriquei4](https://github.com/enriquei4) in pull request [13220](https://github.com/magento/magento2/pull/13220)*. [GitHub-13117](https://github.com/magento/magento2/issues/13117)
 
-
-Image Swatch size change not working
-
-Expected result
-The background image used for the visual swatch has the dimensions 250x250
-
-Actual result
-The background image used for the visual swatch has the dimensions 30x20 which represents the default setting
-
-
-<!--- MAGETWO-87935-->* Replaced .size() with .length to be compatible with jQuery 3.* 
-
-
- *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request [13686](https://github.com/magento/magento2/pull/13686)*. 
-
-
-Provide replacement of .size() call as of jQuery documentation.
-
-<!--- ENGCOM-1128 -->* 225 86332
-title: [Forwardport] Issues #10559 - Extend swatch using mixins (M2.2)
-url: magento/magento2#14247
-contributor name: @rostyslav-hymon
-contributor link: https://github.com/rostyslav-hymon
-
-Rostyslav
-
-
-[GitHub-10559](https://github.com/magento/magento2/issues/10559)
-
-Extending swatch functionality using javascript mixins does not work in Safari and MS Edge
-
-
-
-
-
-<!--- ENGCOM-1017 -->* 
-Solve problem saving empty swatches in admin
-
-title: Solve problem saving empty swatches in admin
-url: magento/magento2#13220
-contributor name: @enriquei4
-contributor link: https://github.com/enriquei4
-
-
-enriquei4
-
-
-[GitHub-13117](https://github.com/magento/magento2/issues/13117)
-
-
-Swatch Attribute is not getting save while deleting a swatch row with empty admin scope text 
-
-Expected result
-Attribute should be save with out any error if i want to remove any option
-It should not validate for deleted swatch row while saving
-Actual result
-When i add a new row and delete it without filling data into it its getting display none, but its getting validate while submitting form for save.
-
-
-
-225 845
-
-<!--- ENGCOM-2870 -->* 
-
-Unable to change attribute type from swatch
-
-title: [Forwardport] Unable to change attribute type from swatch
-url: magento/magento2#17750
-contributor name: @nmalevanec
-contributor link: https://github.com/nmalevanec
-
-Malyovanets Nickolas
-
-
-[GitHub-12695](https://github.com/magento/magento2/issues/12695)
-
-
-Unable to change attribute type from swatch to dropdown
-
-
-
-[GitHub-11703](https://github.com/magento/magento2/issues/11703)
-Changing Swatches to Drop-down does not remove swatches from existing products
-
-
-[GitHub-9307](https://github.com/magento/magento2/issues/9307)
-Color attribute taking swatch instead of Drop down option for configurable options
-
-
-
-[GitHub-11403](https://github.com/magento/magento2/issues/11403)
-
-Product Attributes Not Updating on Frontend
-
-
-[GitHub-9923](https://github.com/magento/magento2/issues/9923)
-Upgrading to 2.1.7 changed dropdown attributes to swatches
+<!--- ENGCOM-2870 -->* You can now change attribute type from `swatch` to `dropdown`. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17750](https://github.com/magento/magento2/pull/17750)*. [GitHub-12695](https://github.com/magento/magento2/issues/12695), [GitHub-11703](https://github.com/magento/magento2/issues/11703), [GitHub-9307](https://github.com/magento/magento2/issues/9307), [GitHub-11403](https://github.com/magento/magento2/issues/11403), [GitHub-9923](https://github.com/magento/magento2/issues/9923)
 
 
 
 
 
 <!---MAGETWO-82558 -->*
+
+Steps to reproduce
+Go to Admin
+Open Stores > Attributes > Product
+Add New Attribute with Catalog Input Type for Store Owner: Visual Swatch
+In Tab Manage Swatch (Values of Your Attribute) click Add Swatch button
+Press to chose color or file
+Expected result
+Drop down menu is show all items
+
 FIX show visual swatches in admin - product attribute
 
 Visual swatch wasn't shown full menu, I only fix some CSS to show full menu. Now the menu is showed correctly.
+
+
 
 
 
@@ -5524,83 +5387,18 @@ Values of Visual Swatch Attribute drop down is not work correct
 
 <!---MAGETWO-82746 -->*  You can now successfully upgrade from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [11735](https://github.com/magento/magento2/pull/11735)*.
 
+<!---MAGETWO-87511 -->*  `\Magento\Framework\Data\OptionSourceInterface::getAllOptions()` and `\Magento\Framework\Data\OptionSourceInterface::toOptionArray()` are now compatible with parent classes. *Fix submitted by [Yevhen Sentiabov](https://github.com/joni-jones) in pull request [34](https://github.com/magento-engcom/php-7.2-support/pull/34)*. 
+
+<!---MAGETWO-75865 -->* Double tags have been removed from the `config.xml` of the `Magento_Tax` module.
+
+<!---ENGCOM-1555 -->* Magento no longer performs redundant tax calculations  for every price on category page, which has improved product performance. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [15200](https://github.com/magento/magento2/pull/15200)*. [GitHub-14941](https://github.com/magento/magento2/issues/14941)
 
 
-<!---MAGETWO-87511 -->*  Made `getAllOptions()` and `toOptionArray()` compatible
-
-
-
-  *Fix submitted by [Yevhen Sentiabov](https://github.com/joni-jones) in pull request [34](https://github.com/magento-engcom/php-7.2-support/pull/34)*. 
-
-
- Implementations of \Magento\Framework\Data\OptionSourceInterface::toOptionArray() are often incompatible with the interface and/or parent class, which causes fatal error in PHP 7.2.
-Fix implementations so that interfaces are compatible.
-
-
-<!---MAGETWO-75865 -->* 
-
-Removed double tag from configuration XML
-
-
-The `config.xml` of the `Magento_Tax` module had a double tag which caused unwanted results.
-
-Removed double tag from configuration XML
-
-The config.xml of the Magento_Tax module had a double tag which caused unwanted results.
-
-app/code/Magento/Tax/etc/config.xml
-
-
-
-
-
-<!---ENGCOM-1698 -->* 
-
-title: [Forwardport] Format the javascript code in Tax module
-url: magento/magento2#15560
-contributor name: @vgelani
-contributor link: https://github.com/vgelani
-
-Reformat the javascript code as per magento standards
-
-Vishal Gelani
-gelanivishal
-
-
-[GitHub-15352](https://github.com/magento/magento2/issues/15352)
-
-
-Use javascript inside `*.phtml` file it's legacy code that we try to refactor according to Magento way.
-For that we have `<script type="text/x-magento-init" />` tag, where we declare path to JS file and pass parameters if they are needed.
-
-
-
-<!---ENGCOM-1555 -->* Don't recalculate tax for every price on category page 
-
-title: [Port 2.3-develop] Don't recalculate tax for every price on category page
-url: magento/magento2#15200
-contributor name: @JeroenVanLeusden
-contributor link: https://github.com/JeroenVanLeusden
-
-Jeroen
-
-Unnecessary recalculation of product list pricing causes huge slowdowns
-
-
-[GitHub-14941](https://github.com/magento/magento2/issues/14941)
 
 
 ### Testing
 
-<!-- MAGETWO-87154 -->*  
-
-
-[GitHub-12844](https://github.com/magento/magento2/issues/12844)  
-
-"Cannot instantiate interface Magento\Framework\Interception\ObjectManager\ConfigInterface" error in integration tests
-
-
-
+<!-- MAGETWO-87154 -->*  Integrations tests no longer throw "Cannot instantiate interface Magento\Framework\Interception\ObjectManager\ConfigInterface" errors. [GitHub-12844](https://github.com/magento/magento2/issues/12844)  
 
 <!-- MAGETWO-87064 -->* Integration tests now reset the integration test database as expected.  [GitHub-10025](https://github.com/magento/magento2/issues/10025)  
 
@@ -5612,97 +5410,25 @@ Unnecessary recalculation of product list pricing causes huge slowdowns
 
 <!---MAGETWO-85817 -->*  THe `validate_image_info_rollback.php` test suite has been updated. *Fix submitted by [Harry Mumford-Turner](https://github.com/harrymt) in pull request [12800](https://github.com/magento/magento2/pull/12800)*. 
 
-
-
-<!---MAGETWO-90803 -->*  
-
-phpunit.xml is blacklisted during schema validation static tests, particularly Magento/Test/Integrity/Xml/SchemaTest.php
-
-Extension developers still use old MFTF and the only option for them to have tests distributed along with the code, is to provide custom phpunit.xml.
-
-Since phpunit.xml is not regular Magento configuration file, it should be blacklisted during some schema validation static tests, particularly Magento/Test/Integrity/Xml/SchemaTest.php
-
-The issue has high priority because it causes builds failures when bundled extensions are installed (e.g. Vertex_Tax), and thus blocks bundled extensions release.
-
-
+<!---MAGETWO-90803 -->*  `phpunit.xml` is now blacklisted during schema validation static tests, particularly `Magento/Test/Integrity/Xml/SchemaTest.php`.
 
 <!--- MAGETWO-81646 -->* The `\Magento\Test\Php\LiveCodeTest::testCodeStyle`  method now uses whitelist files. *Fix submitted by [Adrian Martinez](https://github.com/adrian-martinez-interactiv4) in pull request [11376](https://github.com/magento/magento2/pull/11376)*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
-<!--- ENGCOM-1257 -->*  Integration test rework. Introduced new extension point for New Shipment Controller
+<!--- ENGCOM-1257 -->*  Integration test coverage for new extension point for New Shipment Controller has been added. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [14634](https://github.com/magento/magento2/pull/14634)*. [GitHub-788](https://github.com/magento/magento2/issues/788)
 
-Malyovanets Nickolas
+<!--- ENGCOM-1093 -->* `sjparkinson/static-review` and other obsolete tools  (including `dev/tools/Magento/Tools/Layout`, `dev/tools/Magento/Tools/StaticReview/pre-commit`, and `dev/tools/Magento/Tools/psr/phpcs_precommit_hook.sh`) have been removed from the test code base. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14368](https://github.com/magento/magento2/pull/14368)*. [GitHub-14138](https://github.com/magento/magento2/issues/14138)
 
-title: 788: Integration test rework. Introduced new extension point for New Shipment Controller.
-url: magento/magento2#14634
-contributor name: @nmalevanec
-contributor link: https://github.com/nmalevanec
+<!--- ENGCOM-1031 -->* Integration tests for product URL rewrite generation have been added.  *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14252](https://github.com/magento/magento2/pull/14252)*.
 
-
-[GitHub-788](https://github.com/magento/magento2/issues/788)
-
-ackend depends on Javascript for saving settings
-
-If for some reason the backend broke and the styles/scripts can't be found (in this instance I messed up the base url), there is no fixing things from the backend because settings can't be saved anymore.
-
-
-
-<!--- ENGCOM-1093 -->* Remove sjparkinson/static-review and other obsolete tools 
-
-title: [Forwardport] Remove sjparkinson/static-review and other obsolete tools
-url: magento/magento2#14368
-contributor name: @rostyslav-hymon
-contributor link: https://github.com/rostyslav-hymon
-
-Rostyslav
-
-
-[GitHub-14138](https://github.com/magento/magento2/issues/14138)
-
-
-Obsolete tools removed:
-
-dev/tools/Magento/Tools/Layout is a set of XSLT processors used within Magento 2 development prior to 2.0 GA. Can be useful only as a migration tool but those are consolidated in separate repo.
-dev/tools/Magento/Tools/StaticReview/pre-commit pre-commit hook based on sjparkinson/static-review implemented by me, never really liked it anyway as it processed files one-by-one, just tried to reuse some existing library instead of a custom bash script
-dev/tools/Magento/Tools/psr/phpcs_precommit_hook.sh even older pre-commit hook, not worth fixing, better use PHPCS in IDE directly or via phpro/grumphp
-
-<!--- ENGCOM-1031 -->* Add integration tests for product urls rewrite generation
-title: [Forwardport] Add integration tests for product urls rewrite generation
-url: magento/magento2#14252
-contributor name: @rostyslav-hymon
-contributor link: https://github.com/rostyslav-hymon
-''
-Rostyslav
-
-
-
-
-<!--- ENGCOM-2138 -->* The ProcessCronQueueObserverTest.php integration test now works correctly.
+<!--- ENGCOM-2138 -->* The `ProcessCronQueueObserverTest.php` integration test now works correctly.
 
 <!--- ENGCOM-2409 -->* `setCateroryIds([])` has been corrected to `setCategoryIds([])` throughout the test suites. [GitHub-15590](https://github.com/magento/magento2/issues/15590)
 
-<!--- ENGCOM-1968 -->*  CreateOrderBackendTest rework to support MSI 'Reorder' button new behaviour
+<!--- ENGCOM-1968 -->*  CreateOrderBackendTest has been refactored to support  **Reorder** button when MSI is enabled. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [16006](https://github.com/magento/magento2/pull/16006)*. [GitHub-680](https://github.com/magento/magento2/issues/680)
 
-title: 1334: CreateOrderBackendTest rework to support MSI 'Reorder' button new behaviour.
-url: magento/magento2#16006
-contributor name: @nmalevanec
-contributor link: https://github.com/nmalevanec
-
-Malyovanets Nickolas
-
-CreateOrderBackendTest rework to support MSI 'Reorder' button new behaviour.
-
-Add shipment step to CreateOrderBackendTest in order to support "Reorder" button new behaviour with enabled MSI
+<!---MAGETWO-87058 -->*  Unit tests have been refactored to no longer check for deleted file `app/code/Magento/Catalog/Model/ResourceModel/Product/Indexer/Eav/AbstractEav.php`. [GitHub-11230](https://github.com/magento/magento2/issues/11230) 
 
 
-More settings for image storage
-
-
-[GitHub-680](https://github.com/magento/magento2/issues/680)
-
-
-<!---MAGETWO-87058 -->*  [GitHub-11230](https://github.com/magento/magento2/issues/11230) 
-
-Unit test fails after fresh installation
 
 
 
@@ -5710,24 +5436,7 @@ Unit test fails after fresh installation
 
 <!--- MAGETWO-88973 -->* Customers can now successfully close full-screen zoomed product images displayed on an iPhone 4s, 5s, 6, or 6s with the Safari browser. Previously, if a customer chose full-screen zoom for any product image, he could not close the full-screen zoom.
 
-<!--- MAGETWO-88264 -->* 
-
-Remove forced setting of cache_lifetime to false in constructor and set default cache_lifetime to 3600
-loadCache for Block Magento\Theme\Block\Html\Footer dont work
-Steps to reproduce
-Disable Full page caching in Backend
-Reload the Category Page
-
-Expected result
-`\Magento\Framework\View\Element\AbstractBlock::_loadCache
-$cacheData = $this->_cache->load($cacheKey); return a result for the second Page reload`
-
-Actual result
-`\Magento\Framework\View\Element\AbstractBlock::_loadCache
-$cacheData = $this->_cache->load($cacheKey); return false`
-
-
-[GitHub-13595](https://github.com/magento/magento2/issues/13595)
+<!--- MAGETWO-88264 -->* The forced setting of `cache_lifetime` to `false`  has been changed to a default `cache_lifetime` value of 3600 for `Magento\Theme\Block\Html\Footer`. [GitHub-13595](https://github.com/magento/magento2/issues/13595)
 
 <!--- ENGCOM-959 -->* The default storefront welcome message now works as expected when the **Translate Inline**  (**Stores > Configuration > Advanced > Developer >**) setting is enabled. [GitHub-12711](https://github.com/magento/magento2/issues/12711)
 
@@ -5798,26 +5507,7 @@ $cacheData = $this->_cache->load($cacheKey); return false`
 
 <!--- ENGCOM-2878 -->* Footers now behave as expected when displaying Magento on a mobile device. [GitHub-15118](https://github.com/magento/magento2/issues/15118)
 
-
-<!--- ENGCOM-2690 -->* 
-
-Upon investigation there is a totalbar block in the create invoice and credit memo screens which is not being used. This PR addresses that:
-
-Removed the unused Totalbar block from the invoice create and credit memo create layouts.
-Deprecated Totalbar class
-
-
-title: [Forwardport]Fix #16655 Block totalbar not used in invoice create and credit memo create screens
-
-
-
-*Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 17414*.
-[GitHub-16653](https://github.com/magento/magento2/issues/16653)
-[GitHub-16655](https://github.com/magento/magento2/issues/16655)
-
-
-Block totalbar not used in invoice create and credit memo create screens
-
+<!--- ENGCOM-2690 -->* The unused totalbar block has been removed from the invoice create and credit memo create layouts. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request 17414*. [GitHub-16653](https://github.com/magento/magento2/issues/16653), [GitHub-16655](https://github.com/magento/magento2/issues/16655)
 
 <!--- ENGCOM-2824 -->* The JavaScript validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified.
 
@@ -5828,9 +5518,6 @@ Block totalbar not used in invoice create and credit memo create screens
 <!--- ENGCOM-2861 -->* JavaScript validation rules no longer require validation of fields where completion is not required. Previously, customers could not complete forms unless non-required fields were completed.
 
 <!--- ENGCOM-2323 -->* When a user scrolls a page, the datepicker now retains its position relative to other page elements as expected. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request 16776*. [GitHub-7903](https://github.com/magento/magento2/issues/7903)
-
-
-
 
 <!--- ENGCOM-2649 -->* The confirmation modal buttons that Magento displays when a customer sends a product to the trash are now translated as expected.
 
