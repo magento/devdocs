@@ -8,15 +8,13 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/data.html
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-Tests require data to function properly.
-
-The MFTF allows you to specify and use `<data>` entities defined in XML. Default `<data>` entities are provided for use and as templates for entity creation and manipulation.
-
+The MFTF enables you to specify and use `<data>` entities defined in XML. Default `<data>` entities are provided for use and as templates for entity creation and manipulation.
 The following diagram shows the XML structure of an MFTF data object:
 
 {%include_relative img/data-dia.svg%}
 
-### Supply data to test by reference to a data entity
+## Supply data to test by reference to a data entity
+
 {%raw%}
 Test steps requiring `<data>` input in an action, like filling a field with a string, may reference an attribute from a data entity:
 
@@ -29,8 +27,7 @@ In this example:
 * `SimpleSubCategory` is an entity name.
 * `name` is a `<data>` key of the entity. The corresponding value will be assigned to `userInput` as a result.
 
-****
-#### Environmental data
+### Environmental data
 
 ```xml
 userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}"
@@ -40,23 +37,24 @@ In this example:
 
 * `_ENV` is a reference to the `dev/tests/acceptance/.env` file, where basic environment variables are set.
 * `MAGENTO_ADMIN_USERNAME` is a name of an environment variable.
-The corresponding value will be assigned to `userInput` as a result.
+   The corresponding value will be assigned to `userInput` as a result.
 
-#### Sensitive data
+### Sensitive data
 
 ```xml
-userInput="{{_CREDS.MY_SECRET_TOKEN}}"
+userInput="{{_CREDS.my_secret_token}}"
 ```
 
 In this example:
 
-* `_CREDS` is a reference to the `dev/tests/acceptance/.credentials` file, where sensitive data and secrets are stored for use in a test.
+* `_CREDS` is a constant to reference to the `dev/tests/acceptance/.credentials` file, where sensitive data and secrets are stored for use in a test.
 * `MY_SECRET_TOKEN` is the name of a key in the credentials variable.
-The corresponding value of the credential will be assigned to `userInput` as a result.
-* Credential values are not generated into a test. Instead, they are dynamically retrieved, encrypted and decrypted when used by a specific action during the test's execution.
-* References to credentials do not appear decrypted in the console, error logs or test reports, their values can only be seen decrypted in the .credentials file in which they are stored.
+  The corresponding value of the credential will be assigned to `userInput` as a result.
+* The decrypted values are only available in the `.credentials` file in which they are stored.
 
-### Persist a data entity as a prerequisite of a test
+Learn more in [Credentials][].
+
+## Persist a data entity as a prerequisite of a test
 
 A test can specify an entity to be persisted (created in the database) so that the test actions could operate on the existing known data.
 
@@ -84,7 +82,8 @@ The current scope is preferred, then widening to _test > hook > suite_ or _hook 
 This emphasizes the practice for the `stepKey` of `createData` to be descriptive and unique, as a duplicated `stepKey` in both a `<test>` and `<before>` prefers the `<test>` data.'
 %}
 
-### Use data returned by test actions
+## Use data returned by test actions
+
 {%raw%}
 A test can also reference data that was returned as a result of [test actions](./test/actions.html#actions-returning-a-variable), like the action `<grabValueFrom selector="someSelector" stepKey="grabStepKey>`.
 
@@ -97,7 +96,7 @@ The following example shows the usage of `grabValueFrom` in testing, where the r
 <fillField selector=".functionalTestSelector" userInput="{$grabStepKey}" stepKey="fillFieldKey1"/>
 ```
 
-### Hard-coded data input
+## Hard-coded data input
 
 The data to operate against can be included as literals in a test. Hard-coded data input can be useful in assertions.
 
