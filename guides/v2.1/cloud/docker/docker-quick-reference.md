@@ -23,7 +23,7 @@ Resume Docker environment | `docker-compose start`
 
 ## ece-tools
 
-The following `{{site.data.var.ct}}` commands relate to [launching a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html).
+The following lists the `{{site.data.var.ct}}` commands that relate to [launching a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html):
 
 ```bash
 php ./vendor/bin/ece-tools list | grep docker
@@ -35,19 +35,3 @@ php ./vendor/bin/ece-tools list | grep docker
   docker:config:convert    Convert raw config to .env files configuration
 ```
 {: .no-copy}
-
-## ece-command
-
-After launching the Docker environment, you can invoke the `{{site.data.var.ct}}` package from the CLI container.
-
-```bash
-docker-compose run cli ece-command list
-```
-
-## magento-command
-
-In the Docker environment, you can invoke the `magento-cloud` commands from the CLI container.
-
-```bash
-docker-compose run cli magento-command list
-```
