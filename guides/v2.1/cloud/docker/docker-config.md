@@ -13,8 +13,7 @@ functional_areas:
 
 The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. 
 
-We will try to determine which services you need by the `.magento.app.yaml` and `.magento/services.yaml` configuration files.
-You can always overwrite any particular service version with optional parameters.
+{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator, you can overwrite a service version with the following optional parameters:
 
 | Service       | Key        | Default value | Possible values
 | ------------- | ---------- | ------------- | ----------------
@@ -48,7 +47,7 @@ You must have the following software installed on your local workstation:
     composer install
     ```
 
-1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php` to specify a version compatible with your {{site.data.var.ee}} version.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
 
     ```bash
     ./vendor/bin/ece-tools docker:build
