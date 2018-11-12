@@ -400,8 +400,6 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2872 -->* The `$keepRation` parameter in the `Magento\Cms\Model\Wysiwyg\Images\Storage` class has been renamed to `$keepRatio`. *Fix submitted by [Martin Aarts](https://github.com/MartinAarts) in pull request [17776](https://github.com/magento/magento2/pull/17776)*. [GitHub-17587](https://github.com/magento/magento2/issues/17587)
 
-<!-- MAGETWO-73342 -->* Customers can now change product status by clicking on either the toggle element or label text, but not by clicking the area around a toggle element. Previously, if a customer  clicked on the area around a toggle element, Magento changed the state of the element. Unintended results could occur if a customer mistakenly clicked on the area around the element and didn't realize that the status had  changed.
-
 <!-- ENGCOM-2736 -->* Outdated LESS lib docs have been updated. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [17479](https://github.com/magento/magento2/pull/17479)*.
 
 <!-- ENGCOM-2643 -->* The `floatval()` function has been replaced by the use of direct type casting to `(float)` throughout the code base. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request [16848](https://github.com/magento/magento2/pull/16848)*.
@@ -614,11 +612,12 @@ product, and hung indefinitely while trying to add the product.
 
 ## Known issues
 
-<!-- BUNDLE-1728 -->* Vertex does not correctly assess taxes for each product of an order that is being shipped to multiple addresses. 
+<!-- BUNDLE-1731 -->* Magento  currently does not display the requested quote information when you select Get Quotes for an order from a storefront that supports collection point delivery. 
 
-<!-- BUNDLE-1746 -->* Magento calculates shipping costs incorrectly for orders of bundle products that contain at least one a virtual product when Vertex is enabled.
+<!-- BUNDLE-1840 -->* 
 
 
+<!-- BUNDLE-1835 -->*  Customers will not be able to complete purchases  if  merchants configure Klarna payments to work in a different region than the store has been configured for. 
 
 
 <!-- not needed --  MAGETWO-93800 MAGETWO-94468 MAGETWO-94236 MAGETWO-94213 MAGETWO-94174 MAGETWO-94098 MAGETWO-93725 MAGETWO-93105 MAGETWO-92654 MAGETWO-92187 MAGETWO-92169 MAGETWO-91477 MAGETWO-91358 MAGETWO-91288 MAGETWO-89892 MAGETWO-89309 MAGETWO-88233 MAGETWO-86482 MAGETWO-85420 MAGETWO-82084 MAGETWO-73357 MAGETWO-72067 MAGETWO-71157 MAGETWO-95529 MAGETWO-95424 MAGETWO-94762 MAGETWO-94409 MAGETWO-94331 MAGETWO-94300 MAGETWO-94475 --> 
