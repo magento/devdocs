@@ -6,7 +6,7 @@ functional_areas:
   - Install
 ---
 
-Powered by Fastly, the Managed Cloud WAF is a web application firewall service that detects, logs, and blocks malicious request traffic before it can damage your sites or network. Because the Managed Cloud WAF service is integrated with the Fastly CDN service, it protects your network without the latency issues associated with other WAF solutions.
+Powered by Fastly, the Managed Cloud WAF is a web application firewall service that detects, logs, and blocks malicious request traffic before it can damage your sites or network.
 
 As a managed service, the Magento WAF provides the following benefits: 
 - **PCI compliance**—WAF enablement ensures that {{ site.data.var.ee }} storefronts in production environments meet PCI DSS 6.6 security requirements.
@@ -27,7 +27,7 @@ For additional information about maintaining PCI compliance for your {{ site.var
 The Managed Cloud WAF integrates with Fastly using the cache logic within the Fastly CDN 
 service and filtering traffic at the Fastly global nodes. We enable the WAF service in your production environment with a default WAF policy based on [ModSecurity Rules from Trustwave SpiderLabs](https://www.trustwave.com/Products/Application-Security/ModSecurity-Rules-and-Support/) and the OWASP Top Ten security threats.
 
-The Managed Cloud WAF filters HTTP and HTTPS traffic (GET and POST requests) against the WAF ruleset and blocks traffic that is malicious or does not comply with specific rules. The WAF service filters only origin-bound traffic that attempts to refresh the cache. As a result, we stop attack traffic at the Fastly cache which protects your origin traffic from malicious attacks. By processing only origin traffic, the Managed Cloud WAF preserves cache performance, introducing only an estimated 1.5 milliseconds (ms) to 20 ms of latency to every non-cached request.
+The Managed Cloud WAF filters HTTP and HTTPS traffic (GET and POST requests) against the WAF ruleset and blocks traffic that is malicious or does not comply with specific rules. The WAF service filters only origin-bound traffic that attempts to refresh the cache. As a result, we stop most attack traffic at the Fastly cache, protecting your origin traffic from malicious attacks. By processing only origin traffic, the Managed Cloud WAF preserves cache performance, introducing only an estimated 1.5 milliseconds (ms) to 20 ms of latency to every non-cached request.
 
 {:.bs-callout .bs-callout-info}
 If you notice performance issues and want to rule out WAF-related issues, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) to investigate the problem.
