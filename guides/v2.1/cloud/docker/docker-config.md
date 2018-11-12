@@ -13,7 +13,7 @@ functional_areas:
 
 The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. 
 
-The following table helps to determine a service key and version value that you can use when building your Docker environment:
+{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator, you can overwrite a service version with the following optional parameters:
 
 | Service       | Key        | Default value | Possible values
 | ------------- | ---------- | ------------- | ----------------
@@ -22,7 +22,7 @@ The following table helps to determine a service key and version value that you 
 | MariaDB       | `--db`     | 10            | 10.0, 10.1, 10.2
 | Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2
 | RabbitMQ      | `--rmq`    | 3.5           | 3.5, 3.7
-| Redis         | `--redis`  | 3.2           | 3.2, 4.0
+| Redis         | `--redis`  | 3.2           | 3.0, 3.2, 4.0
 {:style="table-layout:auto;"}
 
 This version also provides a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
@@ -47,7 +47,7 @@ You must have the following software installed on your local workstation:
     composer install
     ```
 
-1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version compatible with your {{site.data.var.ee}} version.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
 
     ```bash
     ./vendor/bin/ece-tools docker:build
