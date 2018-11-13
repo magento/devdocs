@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 ---
 
-The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
+The following _build_ variables control actions in the build phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:

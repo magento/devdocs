@@ -23,7 +23,7 @@ Resume Docker environment | `docker-compose start`
 
 ## ece-tools
 
-The following lists the `{{site.data.var.ct}}` commands that relate to [launching a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html):
+The following example lists the `{{site.data.var.ct}}` commands that relate to [launching a Docker development environment]({{page.baseurl}}/cloud/docker/docker-config.html):
 
 ```bash
 php ./vendor/bin/ece-tools list | grep docker

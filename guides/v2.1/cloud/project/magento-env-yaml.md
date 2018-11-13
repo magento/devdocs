@@ -19,7 +19,7 @@ The `.magento.env.yaml` file includes the following sections:
     -   `build`—Controls actions in the build phase only. If you do not specify settings in this section, the build phase uses settings from the global section. Settings in the `build_options.ini` file override settings in this section.
     -   `deploy`—Controls actions in the deploy phase only. If you do not specify settings in this section, the deploy phase uses settings from the global section.
     -   `post-deploy`—Controls actions _after_ deploying your application and _after_ the container begins accepting connections.
--   **`log`**—Controls notifications, including notification types and level of detail.
+-   **`log`**—Controls [notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html), including notification types and level of detail.
     -   `slack`—Configure a message to send to a Slack bot.
     -   `email`—Configure an email to send to one or more email recipients.
     -  [logging handlers]({{ page.baseurl }}/cloud/env/log-handlers.html)—Configure hardware and software application messages sent to a remote logging server.
@@ -32,7 +32,7 @@ The latest sample of the `.magento.env.yaml` file contains a detailed definition
     -   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
     -   [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
 
-### PHP constants
+## PHP constants
 
 You can use PHP constants in `.magento.env.yaml` file definitions instead of hard-coding values. The following example defines the `driver_ options` using a PHP constant:
 

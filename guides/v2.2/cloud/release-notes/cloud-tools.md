@@ -144,7 +144,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 -  **Logging**—  
     Made the following changes to improve log messages and reduce log size:
 
-   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{page.baseurl}}/cloud/env/variables-intro.html#min_logging_level).
+   -  <!--MAGECLOUD-2489-->Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See [`MIN_LOGGING_LEVEL`]({{page.baseurl}}/cloud/env/variables-global.html#min_logging_level).
 
    -  <!--MAGECLOUD-2209-->Added logging for deployment failures that occur when generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.
 

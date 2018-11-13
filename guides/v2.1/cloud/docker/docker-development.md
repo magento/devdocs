@@ -35,7 +35,7 @@ The web container works with the [PHP-FPM](https://php-fpm.org) to serve PHP cod
 
 ### CLI container
 
-The CLI container is based on a PHP-CLI image that provides `magento-cloud` and `{{site.data.var.ct}}` commands and performs file system operations. The CLI container depends on the **DB** image for the local database and the **Redis** image.
+The CLI container is based on a PHP-CLI image that provides `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations. The CLI container depends on the **DB** image for the local database and the **Redis** image.
 
 -  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
 -  `cron`—extends the CLI container to run cron
@@ -76,5 +76,5 @@ Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.
 
 ## Sharing data between host machine and container
 
-You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. The files appear in `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
+You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
 

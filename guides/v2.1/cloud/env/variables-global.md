@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 ---
 
-The following _global_ variables control actions in the build, deploy, and post-deploy stages of the `.magento.env.yaml` file. Because global variables impact every stage, you must set them in the `global` stage. Insert these variables in the `global` stage of the `.magento.env.yaml` file:
+The following _global_ variables control actions across each phase: build, deploy, and post-deploy. Because global variables impact every phase, you must set them in the `global` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -19,7 +19,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
+Overrides the minimum logging level for all output streams without making changes to the code. This helps when troubleshooting problems with deployment. For example, if your deployment fails, you can use this variable to increase the logging granularity globally. See [Log levels]({{ page.baseurl }}/cloud/env/log-handlers.html#log-levels). The `min_level` value in Logging handlers overwrites this setting.
 
 ```yaml
 stage:
