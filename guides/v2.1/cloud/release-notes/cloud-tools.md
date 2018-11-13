@@ -38,7 +38,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
     -  Added the following services to the Docker build:
 
         -  <!-- MAGECLOUD-2567 & 2889-->RabbitMQ 3.5 and 3.7
-        -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7 and 2.4
+        -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7, 2.4, and 5.2
         -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
     -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
