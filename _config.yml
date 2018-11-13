@@ -156,3 +156,4 @@ exclude:
   - Rakefile
   - rakelib
   - README.md
+  - _plugins
