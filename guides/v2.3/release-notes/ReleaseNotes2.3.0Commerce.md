@@ -7,58 +7,69 @@ title: Magento Commerce 2.3.0 Release Notes
 
 
 
-We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements. tml). 
+We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
 
 
 ## Highlights
 
 Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
-### New features
 
-This release introduces significant tools to improve the developer experience: PWA Studio, alternatives to SOAP and REST, and a flexible frontend  API for frontend, headless, and mobile development.
+### Merchant tool enhancements
+
+* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. 
+
+
+* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
 
 * **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. PageBuilder Beta code will be available in 2018 Q4. Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  Watch this space for more information about participating in the PageBuilder Beta program plus installation instructions. 
 
+
+### Improved developer experience
 
 * **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento-research.github.io/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.  
 
 
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
 
-
 * **GraphQL API** provides an alternative to REST and SOAP web APIs for frontend development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. 
 
+* **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to Magento Open Source.  See [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html) for more information. 
 
-* **Inventory Management (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Sources can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that helps merchants customize inventory actions or third-party order management systems to perform the same actions in an automated way. 
 
-### Core product improvements
+* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to Magento Open Source. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
 
-* **Updates to Magento's tech stack (including upgraded PHP support)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. 
+* **Updates to Magento's tech stack (including upgraded PHP support to maintain PCI compliance)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. 
 
-* **Improvements to import and export**  focus on enhancements to existing processes, including the  addition of new object types. 
 
-* **Elasticsearch support for Magento Community version**. Elasticsearch support was previously provided in Magento Commerce only. 
 
-* **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
+### Substantial security enhancements
 
-* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
-
-* **Security enhancements** 
+	* Over 30 security fixes to core Magento code.
 
     * Cache flush ACL provides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches. 
 
     * 2FA/CAPTCHA protects the Admin panel against against stolen passwords and protects stores against bots.
 
+
+### Other improvements
+
+
+* **Elasticsearch support for Magento Community version**. Elasticsearch support was previously provided in Magento Commerce only. 
+
+* **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
+
 * **Change in versioning for B2B product** to match the versioning of the core product. 
 
-## Known issues
+* Upgrade of Magento Functional Test Framework (MFTF) to 2.3.6. 
+
 
 
 
 ## Fixed issues
 
-We've fixed hundreds of issues for Magento 2.3.0. 
+We've fixed hundreds of issues in the Magento 2.3.0 core code. 
+
 
 ### Installation, upgrade, deployment
  
@@ -119,7 +130,6 @@ We've fixed hundreds of issues for Magento 2.3.0.
 
 <!--- ENGCOM-1360 -->* The `app:config:dump` command now has an argument that supports dumping only the specified settings that are required to prepare static content on a build system, not all system settings. This new option (`config-types`) makes it possible to dump scopes and themes automatically (which are needed for a build system) while managing system settings manually using `config:set --lock-config`. [GitHub-11396](https://github.com/magento/magento2/issues/11396) 
 
-
 <!--- MAGETWO-86569 -->* You can now switch to default mode from production mode. Previously, if you tried to switch back to default mode, Magento displayed this error, `Cannot switch into given mode 'default'`. [GitHub-4292](https://github.com/magento/magento2/issues/4292) 
 
 <!--- MAGETWO-87152 -->*  The Web Setup wizard no loads successfully when session storage is configured to use memcache in `env.php`. [GitHub-9633](https://github.com/magento/magento2/issues/9633)
@@ -160,13 +170,9 @@ We've fixed hundreds of issues for Magento 2.3.0.
 
 <!--- ENGCOM-1419 -->* XML sitemap generation can now be scheduled. [GitHub-5768](https://github.com/magento/magento2/issues/5768)
 
-<!--- MAGETWO-87155-->*  Issues with the database backup command have been resolved. [GitHub-1287](https://github.com/magento/magento2/issues/12877) 
+<!--- MAGETWO-87155-->* Issues with the database backup command have been resolved. [GitHub-1287](https://github.com/magento/magento2/issues/12877) 
 
-
-
-<!---MAGETWO-87449 -->*  [GitHub-9981](https://github.com/magento/magento2/issues/9981)   M2 suggests running setup:upgrade if version number of module is higher than expected
-
-
+<!---MAGETWO-87449 -->* Magento now displays a more informative message you update a module and then switch to a different branch of source control that contains a lower version of that module. [GitHub-9981](https://github.com/magento/magento2/issues/9981)   M2 suggests running setup:upgrade if version number of module is higher than expected
 
 <!---MAGETWO-87154 -->*  Disabling the **State is Required for** field from **Admin** > **Stores** > **Configuration** > **General** now works as expected. [GitHub-12894](https://github.com/magento/magento2/issues/12894)
 
@@ -238,14 +244,13 @@ Backend Security key broken for controllers with frontname not equal to route ID
 
 
 
-### Banner
+### Banner (now Dynamic Block)
 
-<!---MAGETWO-42047-->* Dynamic Block (former Banner) content can be created in WYSIWYG 
-Store specific content for Dynamic Block is created by switching between scopes in Magento Scope Selector (same as content for Products)
+<!---MAGETWO-71816-->* The Magento CMS banner has been renamed to *dynamic block* to better represent this feature. Banners from **Content** > **Banners** have been  renamed across Admin panel and the code base dynamic block. Correspondingly, Magento widget banner rotator type (from **Content** > **Widget** > **Widget type**) has been renamed to dynamic blocks rotator. 
 
-<!---MAGETWO-71816-->* Magento CMS Banner is renamed to Dynamic Block to better reflect the essence of the functionality
-Banners from Content>Banners are renamed across Admin panel and code base into Dynamic Block
-Magento widget Banner Rotator type from Content>Widget>Widget type is renamed across Admin panel and code base into Dynamic Blocks Rotator
+
+<!---MAGETWO-42047-->* You can now create dynamic block (former banners) content from the WYSIWYG editor. Yu can create store-specific content for dynamic blocks  by switching between scopes using the Magento Scope Selector.
+
 
 
 ### B2B
@@ -465,235 +470,36 @@ no discount
 
 ### Catalog
 
-<!--- MAGETWO-87153 -->*  [GitHub-5188](https://github.com/magento/magento2/issues/5188)
-Error generating URN-catalog when blank one exists
+<!--- MAGETWO-87153 -->*  Magento no longer throws an error when you try to create a new URN catalog for a project when a blank one already exists in PHP storm. [GitHub-5188](https://github.com/magento/magento2/issues/5188)
 
+<!--- MAGETWO-87313 -->*  You can now save a product after updating multiple select attributes through mass action. [GitHub-11329](https://github.com/magento/magento2/issues/11329) 
 
-Steps to reproduce
-Install Magento from develop branch.
-Create a blank misc.xml file inside of the .idea folder (if using php storm)
-Run 'bin/magento dev:urn-catalog:generate --ide="phpstorm" ./.idea/misc.xml'
-Expected result
-A new URN catalog for the project should get generated
-Actual result
-User receives the error "Warning: DOMDocument::loadXML(): Empty string supplied as input in /Sites/magento2ce/app/code/Magento/Developer/Model/XmlCatalog/Format/PhpStorm.php on line 61"
+<!--- MAGETWO-87562 -->*   Magento now currently handles apostrophes in attribute option value created from the Admin. [GitHub-12127](https://github.com/magento/magento2/issues/12127) 
 
+<!-- MAGETWO-87151 -->*  The Save & Duplicate option in the catalog manager now works as expected. [GitHub-11532](https://github.com/magento/magento2/issues/11532) 
 
-
-
-
-<!--- MAGETWO-87313 -->*  [GitHub-11329](https://github.com/magento/magento2/issues/11329) 
-
-Unable to proceed massaction "Update attributes" with required multiple select attribute
-
-Steps to reproduce
-clean install
-create product attribute Multiple Select with id "test_multiselect" and set required values to true
-fill some options values
-create product with previously created multiple select attribute
-save product
-In Adminhtml -> Catalog -> Products grid select product and do massaction "Update attributes"
-click on SAVE
-Expected result
-Saving must be processed without error
-Actual result
-Error "The value of attribute "test_multiselect" must be set" is shown
-
-
-
-<!--- MAGETWO-87562 -->*   [GitHub-12127](https://github.com/magento/magento2/issues/12127) 
-
-Apostrophe in attribute option value in admin is not handled properly
-
-Steps to reproduce
-As an admin, go to Stores -> Attributes -> Products -> Manufacturer
-Add a new attribute option called "Nature's Way Supplements"
-Hit "Save and continue"
-Hit "Save and continue" again
-Expected result
-In the admin, the attribute option value text input should say "Nature's Way Supplements"
-If you check the value in the database, it should be "Nature's Way Supplements"
-Actual result
-The text input says: Nature&#039;s Way Supplements
-The database entry says: Nature&#039;s Way Supplements
-
-
-
-
-<!-- MAGETWO-87151 -->*  [GitHub-11532](https://github.com/magento/magento2/issues/11532) 
-
-Duplicate Simple Product Throws Error: Undefined offset: 0 in SaveHandler.php on line 122 
-
-Steps to reproduce
-Click on an existing simple product in the catalog manager
-Click the "Save & Duplicate" option
-Expected result
-The product saves and creates a duplicate item
-Actual result
-Saves the product but doesn't duplicate it. Throws the following error:
-Notice: Undefined offset: 0 in /home/store/public_html/vendor/magento/module-catalog/Model/Category/Link/SaveHandler.php on line 122
-
-
-
-<!--- ENGCOM-1226 -->*  225 1179 
-
-title: [Forwardport] Issue #13582 show message for qty minAllowed, maxAllowed, qtyIncremen?
-
-https://github.com/magento/magento2/issues/13582
-
-Magento default validation message for "validate-item-quantity" not showing. 
-
-
- *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14508](https://github.com/magento/magento2/pull/14508)*.  [GitHub-13582](https://github.com/magento/magento2/issues/13582)
-
-
+<!--- ENGCOM-1226 -->*  Magento now displays the default validation message for `validate-item-quantity` as expected. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14508](https://github.com/magento/magento2/pull/14508)*.  [GitHub-13582](https://github.com/magento/magento2/issues/13582)
 
 <!--- ENGCOM-1103 -->*  The `Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite` method now uses the `storeId` value  set on the actual collection of the store rather than the `storeId` retrieved from the store manager.  [GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
 <!--- MAGETWO-71832 -->* Magento no longer displays unused product attributes  with a value of N/A or NO on the storefront.
 
+<!--- ENGCOM-1174-->*  Editing an order with backordered items from the Admin now results in a new order with backordered items  correctly marked. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14444](https://github.com/magento/magento2/pull/14444)*.  [GitHub-10057](https://github.com/magento/magento2/issues/10057)
 
-<!--- ENGCOM-1174-->*  225 
-
-Problem related to products with configured backorder.
-If you place order with backorder product from frontend - everything work properly: backorder order items will have status 'Backordered'.
-But when you try to place order/edit/reorder from backoffice, backorder products will not have 'Backorder' status.
-
-
-Editing order with backordered items results in new order not correctly marking order items as backordered
-
-
-
- *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14444](https://github.com/magento/magento2/pull/14444)*.  [GitHub-10057](https://github.com/magento/magento2/issues/10057)
-
-
-<!--- ENGCOM-1188-->*  
-
-title: [Forwardport] precision for price overriding by js
-
-
-Mastiuhin Oleksandr
-
-When using more then 2 digits ex(9.4880 will be displayed as 9.49) for the price the js will override this value and it will format using the round for 2 digits.
-
-
-
-When using more then 2 digits ex(9.4880 will be displayed as 9.49) for the price the js will override this value and it will format using the round for 2 digits.
-
- *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14461](https://github.com/magento/magento2/pull/14461)*.  [GitHub-14249](https://github.com/magento/magento2/issues/14249)
-
-
+<!--- ENGCOM-1188-->*  Magento no longer overrides prices with more than two digits after the decimal (for example, 9.4880) by rounding the last two digits. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14461](https://github.com/magento/magento2/pull/14461)*.  [GitHub-14249](https://github.com/magento/magento2/issues/14249)
 
 <!--- ENGCOM-2345 -->*  Magento now throws an exception as expected  when a user tries to submit a product review without selecting a star rating. Previously, if a user submitted a product review without selecting a star rating, Magento assigned a one-star rating. 
  
+<!--- ENGCOM-1295-->* Merchants can now successfully change the default label of the **country of manufacture** attribute for an existing product from the Admin.  *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14714](https://github.com/magento/magento2/pull/14714)*.  [GitHub-6879](https://github.com/magento/magento2/issues/6879)
 
-<!--- ENGCOM-1126-->*   not needed
+<!--- ENGCOM-963-->*   You can now sort products by quantity from the category page. *Fix submitted by [Dmytro Paidych](https://github.com/dimonovp) in pull request [14179](https://github.com/magento/magento2/pull/14179)*.  [GitHub-13556](https://github.com/magento/magento2/issues/13556)
 
-add one configurable product to a new category
+<!--- ENGCOM-1653-->*  Magento no longer creates pagination automatically when a product has more than 20 tier prices in the Advanced Pricing area. *Fix submitted by [saravananvelu](https://github.com/saravananvelu) in pull request [15360](https://github.com/magento/magento2/pull/15360)*.  [GitHub-15210](https://github.com/magento/magento2/issues/15210)
 
-Add a configuration product with a SKU greater than 70 characters
-Configure the product based on two different attributes in the configuration options.
-save the products
-Expected result
-save it successfully
-
-
-https://github.com/magento/magento2/issues/14409
-
-Product with SKU `"a long sku***" does not exist`
-
-Steps to reproduce
-Add a configuration product with a SKU greater than 70 characters
-Configure the product based on two different attributes in the configuration options.
-save the products
-Expected result
-save it successfully
-
-actual : error
-
-
-<!--- ENGCOM-1295-->*  itle: [Forwardport] 6879 - Unable to change country of manufacture default label value
-url: magento/magento2#14714
-contributor name: @rostyslav-hymon
-contributor link: https://github.com/rostyslav-hymon
-
-
-Rostyslav
-
-https://github.com/magento/magento2/issues/6879
-
-Unable to change country of manufacture default label value
-
-Navigate to product attributes in admin panel
-Edit country of manufacture attribute
-Try to change default label
-Hit save
+<!--- MAGETWO-93949-->*  Magento now alerts you to an error when a merchant tries to save a product without completing required fields. 
 
 
 
-I can't save labels for county_of_manufacture, status, tax_class_id, and so on..
-For new custom created attributes , It is working fine.
-
-
-
-
-<!--- ENGCOM-963-->*   225 797
-
-itle: [Forwardport] Fix for Issue-13556 - Sorting in Product Listing via Quantity not work
-url: magento/magento2#14179
-contributor name: @dimonovp
-contributor link: https://github.com/dimonovp
-
-Dmytro Paidych
-
-https://github.com/magento/magento2/issues/13556
-
-Sorting in Product Listing via Quantity not work
-
-
-Go to Category Page on storefront and try sort via Quantity.
-
-Expected result
-Product are sorted from the lowest to the highest quantity or from the highest to the lowest quantity.
-Actual result
-Products are sorted via Position.
-
-
-
-
-
-<!--- ENGCOM-1653-->*   
-
-title: 15210-Fixed product tier pricing pagination issue in admin
-url: magento/magento2#15360
-contributor name: @saravananvelu
-contributor link: https://github.com/saravananvelu
-
-saravananvelu
-
-https://github.com/magento/magento2/issues/15210
-
-There is a product which has more than 25 tier price (customer group price) in Advanced Pricing section.
-
-Magento creates the pagination automatically if there are more than 20 customer group price row.
-
-If I click on a next/previous button of pagination, it works properly and navigates the pricing page. But if I enter any page number in the input field and press enter button, it keeps on loading.
-
-
-
-Resolved product tier price pagination loader issue in admin
-
-Description:
-
-Navigate Admin => Catalog => Products => Create New / Edit Product.
-
-Go to Advanced Pricing link under Price text field.
-Add tier price more than a page and do save.
-Jump to other pages by directly editing the pagination text box.
-
-
-
-<!--- MAGETWO-93949-->*  Magento now alerts you to an error when a merchant tries to save a product without completed required fields. 
 
 
 <!--- MAGETWO-75328-->* copy from 221 80511
@@ -709,24 +515,14 @@ Change the method argument getRateRequest with actual method
 
 
 
-<!--- MAGETWO-75329-->* Make default sorting fully working when setup on category level
-
-Problem is that category has own configuration to setup Default Sort Attribute, but method to get default sorting attribute didn't take it into consideration and get it from config only.
-
-Unable to sort by store configuration default field when different to category's default sorting field
-
-Unable to sort by store configuration default field when different to category's default sorting field
-
-One is unable to sort by store configuration default field when it differs from category default sort by setting. I found that the underlying issue lies within Magento\Catalog\Block\Product\ProductList::getWidgetOptionsJson() which uses the productListHelper to determine the 'orderDefault' setting, though that helper only returns the stores configuration value and doesn't take the default sorting field of the current category into account.
-
-https://github.com/magento/magento2/issues/10772
+<!--- MAGETWO-75329-->* You can now sort products by the store configuration default field when even when this value differs from category default sort by setting. [GitHub-10772](https://github.com/magento/magento2/issues/10772)
 
 
 <!--- MAGETWO-80770-->*
 
 
 
-https://github.com/magento/magento2/issues/10738
+[GitHub-10738](https://github.com/magento/magento2/issues/10738)
 
 Empty attribute label is displayed on product page when other language used.
 
@@ -735,6 +531,7 @@ See attribute label ('none' translated to your foreign language) in the attribut
 Expected result
 'none' label translated to other languages i.e. polish lang - 'brak' should not be displayed
 comparisson in line 37 of app/code/Magento/Catalog/view/frontend/templates/product/view/attribute.phtml is changed to `if ($_attributeLabel != __('none'))` in order to not display 'none' translated to foreign language
+
 Actual result
 In the template app/code/Magento/Catalog/view/frontend/templates/product/view/attribute.phtml line 37 you have followin comparisson: `if ($_attributeLabel != 'none')` but at this part of code `$_attributeLabel` is already translated.
 
@@ -745,14 +542,7 @@ Only layout instruction can define "none" as keyword for skip rendering label in
 
 
 
-<!--- MAGETWO-81966-->*
-
-Show the product alerts in the admin panel when a customer is subscribed to the stock or price of a product
-
-https://github.com/magento/magento2/issues/10007
-
-
-
+<!--- MAGETWO-81966-->* Magento now displays product alerts in the Admin product edit page. when a customer is subscribed to a product's stock or price. [GitHub-10007](https://github.com/magento/magento2/issues/10007)
 
 
 
@@ -845,63 +635,15 @@ Method getUrl in Magento\Catalog\Model\Product\Attribute\Frontend returns image 
  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [13635](https://github.com/magento/magento2/pull/13635)*. 
 
 
-<!---MAGETWO-87359 -->* Translate attribute label with default translation helper function
+<!---MAGETWO-87359 -->* Translation functionality has been added  to customer attribute labels in the Admin, making it possible to translate a label as appropriate for the locale of an Admin  user. *Fix submitted by [Christian Münch](https://github.com/cmuench) in pull request [13251](https://github.com/magento/magento2/pull/13251)*. 
 
-Adds the translation function to customer attribute labels in Magento
-admin. This gives a chance to translate a label in the locale of a
-backend user.
+<!---MAGETWO-87358 -->* Magento now displays the Catalog Products List widget  on the storefront. *Fix submitted by [Rostislav Sabischenko](https://github.com/RostislavS) in pull request [12765](https://github.com/magento/magento2/pull/12765)*. 
 
-A custom attribute is created.
-We have different frontend labels for the attribute. Store views with different locale settings exist.
-Admin users are speaking different languages and need a localized attribute label.
-This is not possible.
+<!---MAGETWO-85519 -->* Magento now respects the maximum depth setting for category navigation. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [12640](https://github.com/magento/magento2/pull/12640)*. 
 
-
- *Fix submitted by [Christian Münch](https://github.com/cmuench) in pull request [13251](https://github.com/magento/magento2/pull/13251)*. 
-
-
-
-
-<!---MAGETWO-87358 -->* Catalog Products List widget is not displayed on Storefront
-
-
- *Fix submitted by [Rostislav Sabischenko](https://github.com/RostislavS) in pull request [12765](https://github.com/magento/magento2/pull/12765)*. 
-
-
- Expected result
-Widget is visible on Storefront
-
-Actual result
-Widget is not visible on Storefront, following error persists in support_report.log:
-
-
-<!---MAGETWO-85519 -->* Respect Category Top Navigation Max Depth setting
-
-
-  *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [12640](https://github.com/magento/magento2/pull/12640)*. 
-
-
-Category Top Navigation / Maximal Depth configuration not working
-
-Expected result
-Expect only to see Category 1 in top navigation. When hoover over Category 1 do not expect to see child categories and children of children
-Actual result
-Can see all categories from top menu
-
-
-
-
-<!---MAGETWO-84933 -->* Category page X-Magento-Tags headers contains product cache identities even which category display mode is set to "Static block only"
-
-When varnish is selected as the cache engine, If there are products associated to a respective category, and the category display mode is set to Static block only, on the category page X-Magento-Tags headers contains product item cache identities even when no product is displayed for the page.
-
-
+<!---MAGETWO-84933 -->* Category page X-Magento-Tags headers no longer contains product cache identities  when category display mode is set to **Static block only** when Varnish is selected as the cache engine. 
 
 <!---MAGETWO-93306 -->* You can now specify a negative value for a product in the orders **Quantity** field when editing the order from the Admin. 
-
-
-
-
 
 <!-- MAGETWO-93188 -->* You can now create a product date attribute that contains a day value than exceeds 12 (in the format dd/mm/yyyy). Previously, when you created a product attribute with a default date specifying a day greater than 12, Magento did not save the attribute, but instead displayed this error, `Invalid default date`. 
 
@@ -911,14 +653,11 @@ When varnish is selected as the cache engine, If there are products associated t
 
 <!-- MAGETWO-60823 -->* You can now unset a category image on the store-view level when the image is defined on all store views.
 
-<!-- MAGETWO-94060 -->* Eliminated usage of EAV Indexer tables in CatalogWidget module
+<!-- MAGETWO-94060 -->* Usage of EAV Indexer tables in CatalogWidget module has been removed.
 
+<!--- MAGETWO-91575 -->* Magento now correctly renders print previews of product compare pages. Previously, the print view did not display text from the right side of the product compare page. 
 
-
-
-<!--- MAGETWO-91575 -->*  Magento now correctly renders print previews of product compare pages. Previously, the print view did not display text from the right side of the product compare page. 
-
-<!--- MAGETWO-91848 -->*  The validation hint on the product custom option page  text field now updates as expected with the number of characters left before hitting the maximum.
+<!--- MAGETWO-91848 -->* The validation hint on the product custom option page  text field now updates as expected with the number of characters left before hitting the maximum.
 
 
 <!--- MAGETWO-91837 -->* The `PUT /V1/products/:sku/media/:entryId` call updates a product's media gallery as expected.
@@ -942,10 +681,7 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- MAGETWO-91529 -->* A restricted Admin user who is authorized to access only designated websites can no longer remove products from undesignated websites. 
 
-
 <!--- MAGETWO-91504 -->* Customers viewing a storefront on a mobile device  can now see the text displayed when clicking on the "More Information" accordion anchor without having to scroll back up. Previously, the Mobile PDP accordion widget did not work as expected on mobile devices. 
-
-
 
 <!--- MAGETWO-91473 -->* Magento now maintains designated sort order for products after saving a product in a category. Previously, product sort order reverted to sorting by product ID.
 
@@ -953,23 +689,15 @@ Previously, Magento did not load the image if its name contained double quotatio
 
 <!--- MAGETWO-91440 -->*  Attributes with no assigned values on a product are no longer displayed with a  value of N/A in the Compare Products page or block as expected. 
 
-
-
 <!--- MAGETWO-91439 -->* Prices are now visible as expected on the category page for a configurable product when you re-enable them from the Admin. Previously, when you re-enabled a previously disabled product and assigned it to a different store, Magento did not display its price on the category or product page. 
-
-
 
 <!--- MAGETWO-91435 -->* Category smart rules now work as expected for partial values when conditions include using a dropdown attribute and "contains”.
 
-
 <!--- MAGETWO-91434 -->* Magento now correctly sets the default option for the `status` attribute when a merchant creates a product. Previously, Magento changed a default setting of disabled (**No**) to **Yes** during product creation.
-
 
 <!--- MAGETWO-69949 -->* `auto_increment` values are now preserved after restarting the MySQL server.
 
-
 <!--- MAGETWO-91436 -->* You can now successfully save a product with custom options to a different website in multisite deployments. Previously, when you added another site to a product with customizable options, Magento corrupted these options. by splitting into multiple options or duplicating an option.
-
 
 <!--- MAGETWO-62310 -->* A product’s **Use Default Value** check box for attributes is now unchecked by default when you add a new website to a product’s scope.
 
@@ -984,49 +712,18 @@ contributor link: https://github.com/vasilii-b
 
 Burlacu Vasilii
 
-https://github.com/magento/magento2/issues/15085
+
+[GitHub-15085](https://github.com/magento/magento2/issues/15085)
 
 he return docblock for getLowStockItems() in \Magento\CatalogInventory\Api\StockRegistryInterface just needs to be updated to return \Magento\CatalogInventory\Api\Data\StockItemCollectionInterface instead of \Magento\CatalogInventory\Api\Data\StockStatusCollectionInterface
 
 
 
-<!--- ENGCOM-956 -->* 2115 2511
+<!--- ENGCOM-956 -->* Magento now displays drop-down attribute values in the catalog product grid after applying filtering  on drop-down/select attributes. *Fix submitted by [Dmytro Paidych](https://github.com/dimonovp) in pull request [14174](https://github.com/magento/magento2/pull/14174)*. [GitHub-13006](https://github.com/magento/magento2/issues/13006)
 
-title: [Forwardport] Solved this issue : Drop down values are not showing in catalog produ?
-url: magento/magento2#14174
-contributor name: @dimonovp
-contributor link: https://github.com/dimonovp
-
-Dmytro Paidych
-
-https://github.com/magento/magento2/issues/13006
-
-Drop down values are not showing in catalog product grid magento2
-
-Drop down values are not showing in catalog product grid magento2 after applying filter and sorting on respected attribute.
+<!--- ENGCOM-1030 -->* The JavaScript address converter no longer mutates the function's `address.street` argument. (The argument remains an array as expected.) *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14250](https://github.com/magento/magento2/pull/14250)*. 
 
 
-
-
-
-<!--- ENGCOM-1030 -->* 224 632
-
-title: [Forwardport] Fix JS address converter function from mutating its argument
-url: magento/magento2#14250
-contributor name: @mastiuhin-olexandr
-contributor link: https://github.com/mastiuhin-olexandr
-
-https://github.com/magento/magento2/issues/13216
-
-`quoteAddressToFormAddressData` mutates the argument
-
-Steps to reproduce
-Require 'Magento_Checkout/js/model/address-converter' inside any JavaScript module.
-Call quoteAddressToFormAddressData method with some address.
-Expected result
-address.street should remain as an array. Eg. ['Sesame Street']
-Actual result
-address.street becomes an object. Eg. {0: 'Sesame Street'}
 
 
 ### Catalog Rule
@@ -1092,68 +789,25 @@ Found 2 elements with non-unique id #email: magento 2 contact
 
 <!---ENGCOM-1155 -->* Magento no longer unexpectedly empties a customer's shopping cart during checkout when concurrent requests occur.
 
+<!---MAGETWO-86330 -->*  `@codingStandardsIgnoreFile` has been removed from the `TypeLocatorTest` file header.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12977](https://github.com/magento/magento2/pull/12977)*. 
 
+<!---MAGETWO-86275 -->* Redundant spaces have been removed from the "configure your" phrase throughout the code base. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12961](https://github.com/magento/magento2/pull/12961)*. 
 
-
-<!---MAGETWO-86330 -->* 
-
-Fixed Coding Standards in the TypeLocatorTest file. This is the last file with a @codingstandardsignorefile code in it.
-Removed @codingStandardsIgnoreFile from file header
-Changed line length
-
-
- *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12977](https://github.com/magento/magento2/pull/12977)*. 
-
-
-
-<!---MAGETWO-86275 -->* Changed typo where a string to be translated used double space "configure your" instead of "configure your".
-Checked all files and changed the string everywhere to a single space.
-
-
- *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12961](https://github.com/magento/magento2/pull/12961)*. 
-
-
-
-
-<!---MAGETWO-86036 -->* The unused `if` statement in order invoice save
-
-
- $shippingResponse is undefined in scope.
-
- *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [12888](https://github.com/magento/magento2/pull/12888)*. 
-
+<!---MAGETWO-86036 -->* Unused `if` statement has been removed from `app/code/Magento/Sales/Controller/Adminhtml/Order/Invoice/Save.php`. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [12888](https://github.com/magento/magento2/pull/12888)*. 
 
 <!---ENGCOM-1814 -->* Magento no longer displays duplicate element IDs for gift messages in the checkout page. [GitHub-13415](https://github.com/magento/magento2/issues/13415)
 
 <!---ENGCOM-1824 -->* Magento now correctly aligns submenus. [GitHub-7897](https://github.com/magento/magento2/issues/7897)
 
-
-<!---ENGCOM-1823 -->* title: [Forwardport] Function unnecessarily called multiple time
-url: magento/magento2#15763
-contributor name: @vgelani
-contributor link: https://github.com/vgelani
-
-https://github.com/magento/magento2/issues/15355
-
-Function is unnecessarily called multiple time.
-app/code/Magento/CurrencySymbol/view/adminhtml/templates/grid.phtml
-
+<!---ENGCOM-1823 -->* The app/code/Magento/CurrencySymbol/view/adminhtml/templates/grid.phtml file has been refactored to remove redundant function calls. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15763](https://github.com/magento/magento2/pull/15763)*. [GitHub-15355](https://github.com/magento/magento2/issues/15355) 
 
 <!---ENGCOM-1900 -->* Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x. GitHub-6058](https://github.com/magento/magento2/issues/6058)
-
 
 <!---ENGCOM-2082 -->* Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
 <!---ENGCOM-1893 -->* Magento now correctly aligns page elements on  the home page and category page of the Hot Seller section. [GitHub-15213](https://github.com/magento/magento2/issues/15213)
 
-<!---ENGCOM-1986 -->* title: [Forwardport] #15308 removed extraneous margin
-url: magento/magento2#15975
-contributor name: @chirag-wagento
-contributor link: https://github.com/chirag-wagento
-
-https://github.com/magento/magento2/issues/15308
-
-extraneous margins on product list and product list items
+<!---ENGCOM-1986 -->* Extraneous margins on the product list  and product entries. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15975](https://github.com/magento/magento2/pull/15975)*. [GitHub-15308](https://github.com/magento/magento2/issues/15308) 
 
 <!---ENGCOM-2005 -->* `inline-block` issues with space and font-size in the Name form have been resolved. 
 
@@ -1170,49 +824,15 @@ extraneous margins on product list and product list items
 
 <!---ENGCOM-2786 -->*  The `$keepRation` parameter in the `Magento\Cms\Model\Wysiwyg\Images\Storage` class has been renamed to `$keepRatio`.
 
-<!---ENGCOM-2816 -->* Typo in Gallery.php
+<!---ENGCOM-2816 -->* Typo in Gallery.php has been fixed. *Fix submitted by [Daniël van der Linden](https://github.com/Spaggel) in pull request [17659](https://github.com/magento/magento2/pull/17659)*. 
 
-title: Fix #17579 Typo in Gallery.php
-url: magento/magento2#17659
-contributor name: @Spaggel
-contributor link: https://github.com/Spaggel
-
-Typo in vendor/magento/module-catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php
-
-
-<!---ENGCOM-2859 -->* duplicate event in Delete operation transaction "entity_manager_delete_before
-
-title: [Forwardport] ISSUE-17715: Duplicate event in Delete operation transa?
-url: magento/magento2#17720
-contributor name: @p-bystritsky
-contributor link: https://github.com/p-bystritsky
-
-Actual result
-'entity_manager_delete_before' event dispatched twice.
-
-
-[GitHub-17715](https://github.com/magento/magento2/issues/17715)
+<!---ENGCOM-2859 -->* The delete operation transaction "entity_manager_delete_before" event is no longer dispatched twice unnecessarily. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17720](https://github.com/magento/magento2/pull/17720)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 
 <!---ENGCOM-2231 -->* Trim email address in newsletter, forgot password, checkout login and email to a friend form 
 
- 
+<!---ENGCOM-1807 -->* The JavaScript code in the `spli.phtml` template file for the button widget has bene refactored. [GitHub-15354](https://github.com/magento/magento2/issues/15354)
 
-<!---ENGCOM-1807 -->* Refactored the  JavaScript code of the button split widget . [GitHub-15354](https://github.com/magento/magento2/issues/15354)
-
-<!---ENGCOM-1817 -->* Refactor JavsScript for UrlRewrite module edit page
-
-title: [Forwardport] Refactor JavsScript for UrlRewrite module edit page
-url: magento/magento2#15747
-contributor name: @vijay-wagento
-contributor link: https://github.com/vijay-wagento
-
-Vijay Golani
-
-
-
-[GitHub-15356](https://github.com/magento/magento2/issues/15356)
-
-
+<!---ENGCOM-1817 -->* The JavaScript code for the UrlRewrite module edit page has been refactored. *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15747](https://github.com/magento/magento2/pull/15747)*. [GitHub-15356](https://github.com/magento/magento2/issues/15356)
 
 <!---ENGCOM-1772 -->* The annotation for the `formatDateTime` function in the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php` file has been corrected. The `locale` and `timezone` have been changed to `param string|null $locale` and `@param string|null $timezone`. 
 
@@ -1220,30 +840,13 @@ Vijay Golani
 
 <!--- ENGCOM-2065 -->* Magento now displays the Contact Us page on the menu as expected. Previously, Magento displayed unnecessary space between the category page and the main footer. [GitHub-12601](https://github.com/magento/magento2/issues/12601)
 
+
+
 ### Cookie
 
 <!-- MAGETWO-93790 -->* Customer data is now fully loaded after restarting the browser during an unexpired user session. Previously,  the `section_data_ids` section of the session cookie was not properly completed. [GitHub-14912](https://github.com/magento/magento2/issues/14912)
 
-<!--- ENGCOM-1089 -->* Allow modification of cookies via extension 
-
-title: [Forwardport] ISSUE-14109: Allow modification of cookies via extension
-url: magento/magento2#14366
-contributor name: @rostyslav-hymon
-contributor link: https://github.com/rostyslav-hymon
-
-Rostyslav
-
-rostyslav-hymon
-
-`MAX_NUM_COOKIES` doesn't follow the open-closed principle
-
-Steps to reproduce
-open `Magento\Framework\Stdlib\Cookie\PhpCookieManager::checkAbilityToSendCookie`
-See PhpCookieManager::MAX_NUM_COOKIES
-Expected result
-Should bind using static::MAX_NUM_COOKIES
-Actual result
-I cannot change the outcome of this class without rewriting 3 methods
+<!--- ENGCOM-1089 -->* Cookies can now bwe modified by extension. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14366](https://github.com/magento/magento2/pull/14366)*. 
 
 
 ### CMS content
@@ -1252,40 +855,15 @@ I cannot change the outcome of this class without rewriting 3 methods
 
 <!-- MAGETWO-93705-->* Page layout issues that resulted from incorrect module sequence have been corrected. Previously, the  `Magento_theme` module was loaded too late, which resulted in unexpected display issues. 
 
-
 <!-- MAGETWO-51484-->* Magento changed the way how product input type that require WYSIWYG is set up. Currently it's a separate option _Text Editor_ that Admin user can choose when configure custom product attribute
 
 <!-- MAGETWO-91645 -->* Magento no longer unexpectedly locks up CMS pages when a merchant changes a scheduler end date. Previously, when a merchant updated the end date for a CMS page after the current scheduler ended, Magento generated an error, and the merchant could no longer access any CMS page from the Admin. 
 
+<!-- MAGETWO-80077 -->* We've added `EvenPrefix` and `EventObject` for CMS Collections to instantiate the observer for `$this->_eventPrefix . '_load_after'` and `$this->_eventPrefix . '_load_before'`. [GitHub-9900](https://github.com/magento/magento2/issues/9900)
 
-Magento changed the way how product input type that require WYSIWYG is set up. Currently it's a separate option _Text Editor_ that Admin user can choose when configure custom product attribute
+<!-- MAGETWO-83101 -->* CMS blocks are not validated against having same store and identifier. [GitHub-8236](https://github.com/magento/magento2/issues/8236)
 
-<!-- MAGETWO-80077 -->* Add EventPrefix and EventObject to CMS Page/Block Collection
-
-Added EvenPrefix and EventObject for CMS Collections for instantiate observer for `$this->_eventPrefix . '_load_after'` and `$this->_eventPrefix . '_load_before'`
-
-GH issue  9900
-
-
-
-<!-- MAGETWO-83101 -->* CMS blocks are not validated against having same store and identifier
-
-GH 8236
-
-
-
-<!-- MAGETWO-75313 -->* Add ability to load block and pages by identifiers
-
-As a Magento develop I would like to have a @api interface to get CMS pages and blocks by identifiers and store id.
-
-Introduce BlockManagementInterface and PageManagementInterface to provide an ability get CMS pages and blocks by identifiers and store id.
-
-
-
-GH 10414
-
-
-
+<!-- MAGETWO-75313 -->* There is now an API interface to retrieve CMS pages and blocks by identifiers and store ID. [GitHub-10414](https://github.com/magento/magento2/issues/10414)
 
 <!--- ENGCOM-2413 -->* Disabling a product now removes it from the flat index as expected. [GitHub-14966](https://github.com/magento/magento2/issues/14966)
 
@@ -1294,17 +872,35 @@ GH 10414
 
 ### Configurable products
 
-<!--- MAGETWO-87154 -->*  [GitHub-12294](https://github.com/magento/magento2/issues/12294)     
+<!--- MAGETWO-87154 -->*  You can now add empty
+
+[GitHub-12294](https://github.com/magento/magento2/issues/12294)     
 
 Adding Custom Attribute - The value of Admin scope can't be empty
 
-<!--- MAGETWO-87153 -->*    [GitHub-11953](https://github.com/magento/magento2/issues/11953)  
+Steps to reproduce
+Add customer Product Attribute
+Choose Dropdown
+Under Manage Attributes, click "Add Option" and then "Delete" empty boxes
+Attempt to save. Error produced, "The value of Admin scope can't be empty."
+Expected result
+Attribute should save rather than trying to collect data that can no longer be entered.
 
-Product configuration creator does not warn about invalid SKUs
 
-<!--- MAGETWO-87524 -->*     [GitHub-12430](https://github.com/magento/magento2/issues/12430) 
+<!--- MAGETWO-87153 -->*  Product configuration creator  now warns about invalid SKUs. [GitHub-11953](https://github.com/magento/magento2/issues/11953)  
+
+
+
+
+<!--- MAGETWO-87524 -->*     While assigning prices to configurable products, prices are now readable when using custom price symbol .
+
+
+[GitHub-12430](https://github.com/magento/magento2/issues/12430) 
 
 While assigning prices to configurable products, prices aren's readable when using custom price symbol.
+
+
+
 
 <!--- MAGETWO-87524 -->*  [GitHub-11792](https://github.com/magento/magento2/issues/11792)   
 
@@ -1316,9 +912,13 @@ While assigning prices to configurable products, prices aren's readable when usi
 Multiselect Attribute is not saved for a product in the admin panel when it has a related product using another attribute set 
 
 
+
+
 <!--- MAGETWO-87176 -->*   [GitHub-12713](https://github.com/magento/magento2/issues/12713) 
 
-Currency symbol overlaps entered attribute option's price while creating Configurable Product ( 
+Currency symbol overlaps entered attribute option's price while creating Configurable Product 
+
+
 
 <!--- MAGETWO-85177 -->* Magento now displays the price of a configurable product as expected even when its simple products are out-of-stock. Previously, Magento displayed a price of 0 for any configurable product price when its simple products were out-of-stock. [GitHub-12578](https://github.com/magento/magento2/issues/12578)
 
@@ -1347,12 +947,11 @@ Currency symbol overlaps entered attribute option's price while creating Configu
 
 <!--- MAGETWO-8709 -->* The wishlist now displays the appropriate product image for configurable products with selected options. Previously, Magento displayed the parent image instead of the image of the selected child product. [GitHub-8168](https://github.com/magento/magento2/issues/8168)
 
-<!--- ENGCOM-1069 -->* Order grid page showing previous order id in URL while coming back from order view page
+<!--- ENGCOM-1069 -->* 
 
-title: magento/magento2#13295:Order grid page showing previous order id in URL while coming back from order view page
-url: magento/magento2#13390
-contributor name: @vinayshah
-contributor link: https://github.com/vinayshah
+
+Order grid page showing previous order id in URL while coming back from order view page
+
 
 Steps to reproduce
 Open Order Page From order grid page
@@ -1363,29 +962,18 @@ Actual result
 The URL on order grid page show old order id.
 
 
-Vinay Shah
 
 
-[GitHub-13295](https://github.com/magento/magento2/issues/13295)
+*Fix submitted by [Vinay Shah](https://github.com/vinayshah) in pull request [13390](https://github.com/magento/magento2/pull/13390)*.[GitHub-13295](https://github.com/magento/magento2/issues/13295)
 
 
 
 
-<!--- ENGCOM-1096 -->* 
-
-Fix OptionsRepository API test to add option by attribute_id
-
-title: Fix OptionsRepository API test to add option by attribute_id
-url: magento/magento2#14345
-contributor name: @bcerban
-contributor link: https://github.com/bcerban
-
-Bettina
+<!--- ENGCOM-1096 -->* The OptionsRepository API test now tests for the use the attribute ID instead of attribute code in the request body.  *Fix submitted by [Bettina](https://github.com/bcerban) in pull request [14345](https://github.com/magento/magento2/pull/14345)*. [GitHub-5580](https://github.com/magento/magento2/issues/5580)
 
 
-[GitHub-5580](https://github.com/magento/magento2/issues/5580)
 
-Cannot add multiple options to configurable product via REST API
+
 
 
 
@@ -3082,13 +2670,6 @@ Actual result
 
 
 ### GraphQL
-
-<!---MAGETWO-83853 -->* 
-
-
-Websites object was added to products results documented in the graphql SDL
-GraphQL response returns null for website_ids
-
 
 <!---ENGCOM-2318 -->* Category queries return category `id` and `name` values as expected.
 
@@ -5490,13 +5071,7 @@ Values of Visual Swatch Attribute drop down is not work correct
 
 <!--- ENGCOM-1457 -->* Administrators who lack access to the CatalogRule module can now perform operations as expected in the Admin cart price rule edit page. 
 
-
-<!--- ENGCOM-1541 -->* Clarify XSD for formElements allowed settings
-
-
-*Fix submitted by [Neill Robson](https://github.com/neillrobson) in pull request 15161*. [GitHub-14140](https://github.com/magento/magento2/issues/14140)
-
-
+<!--- ENGCOM-1541 -->* The UI component configration XSD file (`ui-configuration.xsd`) now constrains settings so that `abstractSettings`, such as `<label>`, can only be placed and read from the top-level `<settings>` nodes, while component-specific settings, such as `<options>`, can only be placed and read from the appropriate `<settings>` descendent of `<formElements>`. *Fix submitted by [Neill Robson](https://github.com/neillrobson) in pull request 15161*. [GitHub-14140](https://github.com/magento/magento2/issues/14140)
 
 <!--- ENGCOM-2219 -->* Users can now press the **Esc** button on  the delete-from-cart confirmation pop-up window  without generating a `jQuery` UI error. Previously, when a customer added a product to the shopping cart, then pressed the trash icon to delete it, Magento displayed this confirmation pop-up window, but threw an error when the customer pressed the window's **Esc** button. [GitHub-14593](https://github.com/magento/magento2/issues/14593)
 

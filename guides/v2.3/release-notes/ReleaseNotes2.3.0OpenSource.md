@@ -3,60 +3,64 @@ group: release-notes
 title: Magento Open Source 2.3.0 Release Notes
 ---
 
-*Release notes published October 25, 2018.*
+*Release notes published November 27, 2018.*
 
-We are pleased to present Magento Open Source 2.3.0 Beta. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 pre-release code is a work in progress.
+We are pleased to present Magento Open Source 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
-For information about signing up for the Magento 2.3 Beta Evaluation program, see [Magento 2.3.0 Beta Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start.html). 
-
-## About Magento 2.3.0 Beta release
-
-We welcome all feedback from registered participants on this Beta release. 
 
 ## Highlights
 
-Magento Open Source 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
-
-### New features
-
-This release introduces significant tools to improve the developer experience: PWA Studio, alternatives to SOAP and REST, and a flexible frontend  API for frontend, headless, and mobile development.
+Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
 
+### Merchant tool enhancements
+
+* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. 
+
+
+* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
+
+* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. PageBuilder Beta code will be available in 2018 Q4. Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  Watch this space for more information about participating in the PageBuilder Beta program plus installation instructions. 
+
+
+### Improved developer experience
 
 * **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento-research.github.io/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.  
 
 
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
 
+* **GraphQL API** provides an alternative to REST and SOAP web APIs for frontend development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. 
 
-* **GraphQL API** provides an alternative to REST and SOAP web APIs for frontend development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language.
+* **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to Magento Open Source.  See [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html) for more information. 
 
 
-* **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Sources can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that helps merchants customize inventory actions or third-party order management systems to perform the same actions in an automated way. 
+* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to Magento Open Source. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
 
-### Core product improvements
+* **Updates to Magento's tech stack (including upgraded PHP support to maintain PCI compliance)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2. 
 
-* **Updates to Magento's tech stack (including upgraded PHP support)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2.  
 
-* **Improvements to import and export**  focus on enhancements to existing processes, including the  addition of new object types. 
 
-* **Elasticsearch support for {{site.data.var.ce}}**. Elasticsearch support was previously provided in Magento Commerce only. 
+### Substantial security enhancements
 
-* **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
-
-* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
-
-* **Security enhancements** 
+	* Over 30 security fixes to core Magento code.
 
     * Cache flush ACL provides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches. 
 
-    * 2FA/CAPTCHA protects the Admin panel against against stolen passwords and protects stores against bots. 
+    * 2FA/CAPTCHA protects the Admin panel against against stolen passwords and protects stores against bots.
 
-* **Change in versioning for B2B product** to match the versioning of the core product.
 
-## Known issues
+### Other improvements
 
-Magento 2.3.0 pre-release code is a work in progress, and readiness of different components may vary. See [Component Status]({{page.baseurl}}/release-notes/component-status.html) for an overview of the health of core code components and modules.
+
+* **Elasticsearch support for Magento Community version**. Elasticsearch support was previously provided in Magento Commerce only. 
+
+* **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
+
+* **Change in versioning for B2B product** to match the versioning of the core product. 
+
+* Upgrade of Magento Functional Test Framework (MFTF) to 2.3.6. 
+
 
 
 
@@ -64,11 +68,135 @@ Magento 2.3.0 pre-release code is a work in progress, and readiness of different
 
 The following issues, which were identified in our 2.3.0 Alpha code base, have been fixed in this Beta release:
 
-#### AdminGWS
+### Installation, upgrade, deployment
+ 
+<!--- MAGETWO-83409, MAGETWO-81578-->* The `bin/magento setup` command now provides a rollback option that prompts the user to optionally retain files for future rollbacks. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11750*. [GitHub-6460](https://github.com/magento/magento2/issues/6460)
 
-<!--- 91565 -->*  Restricted Admin users can now successfully create and save product attributes.
+<!--- MAGETWO-82781-->* The `user.ini` files now recommend the correct values for `php_value memory_limit`. 
+*Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [11760](https://github.com/magento/magento2/pull/11760)*. [GitHub-11322](https://github.com/magento/magento2/issues/11322)
 
-<!--- 91616 -->*  Restricted Admins can now create and edit CMS blocks as expected. Previously, Magento displayed this error message when a administrator with restricted privileges tries to create a new CMS block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075`.
+<!--- MAGETWO-81992-->* You can now use the `bin/magento cron:install`  and `cron:remove` commands to install or uninstall cron across multiple Magento installations with the same crontab. Previously, you could not create different crontab entries for multiple Magento installations that were in different folders because they used the same `#~ MAGENTO START` and `#~ MAGENTO END` suffixes. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [11360](https://github.com/magento/magento2/pull/11360)*. 
+
+<!--- MAGETWO-81965-->* The default time setting for `cron` success  and failure history is now seven days. *Fix submitted by [Max Chadwick](https://github.com/mpchadwick) in pull request [11463](https://github.com/magento/magento2/pull/11463)*.
+
+<!--- MAGETWO-82752-->* In Magento deployments using multiple languages, the `Framework/translation.php` constructor that sets a store's locale now uses the correct locale. *Fix submitted by [Wiard van Rij](https://github.com/wiardvanrij) in pull request [10913](https://github.com/magento/magento2/pull/10913)*. [GitHub-10673](https://github.com/magento/magento2/issues/10673)
+
+<!--- MAGETWO-82294-->* The `.htaccess` template now uses apache2.4 syntax. *Fix submitted by [Jonas Hünig](https://github.com/jonashrem) in pull request [11466](https://github.com/magento/magento2/pull/11466)*. [GitHub-10810](https://github.com/magento/magento2/issues/10810)
+
+<!--- MAGETWO-69895-->* When a callback during commit throws an exception, the calling plugin can now distinguish this exception from a unsuccessful commit, and logs an exception. Previously, Magento threw an “Asymmetric transaction rollback error”. *Fix submitted by [Wayne Theisinger](https://github.com/waynetheisinger) in pull request [9955](https://github.com/magento/magento2/pull/9955)*.  [GitHub-6497](https://github.com/magento/magento2/issues/6497)
+
+<!---MAGETWO-71744 -->* The links that the Admin panel provides to backup packages now link to the expected packages. Previously, these links permitted you to download only the latest backup package. *Fix submitted by [will-b](https://github.com/will-b) in pull request [10593](https://github.com/magento/magento2/pull/10593)*.  [GitHub-10032](https://github.com/magento/magento2/issues/10032)
+
+<!---MAGETWO-71359 -->* All `cron` schedule times are now saved in UTC and then displayed to the user in the expected time zone. Previously, the `cron` schedule times in the database were in local date time formats and not UTC, while the other system dates and times were saved as UTC in the database. This resulted in varying and potentially confusing *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request [10432](https://github.com/magento/magento2/pull/10432)*. [GitHub-4237](https://github.com/magento/magento2/issues/4237)
+
+<!---MAGETWO-94844 -->* You can install and deploy Magento without first creating an administrator account. 
+
+<!---MAGETWO-93699 -->* Improved the cron job management process during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after deployment completes
+
+<!---MAGETWO-91863 -->* Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **System Configuration** > **General** > **Reports**. Note that certain product features, such as  Magento Commerce dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly. 
+
+<!---MAGETWO-88281 -->* You can now add a new IP address to an existing list by appending the new address with the `- add` flag rather than replacing a former address with a new one.  *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request [13783](https://github.com/magento/magento2/pull/13783)*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
+
+<!---MAGETWO-88045 -->* Magento now provides an input/output helper object that supports easier access to styling objects in the Symfony console. (This helper is instantiated inside a command object's methods (usually interact and execute but not limited to) like this: `$io = new MagentoStyle($input,$output);`.) *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [13741](https://github.com/magento/magento2/pull/13741)*. 
+
+<!---MAGETWO-88258 -->* The `.htaccess` file in the `pub/static` folder now includes a `RewriteBase` directive, which supports the installation of Magento under a directory inside the web root. Note: Setting this directive in the `.htaccess` file in Magento root  without setting it in `.htaccess` under `pub/static`  will result in a missing file.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [13788](https://github.com/magento/magento2/pull/13788)*. 
+
+<!---MAGETWO-88017 -->* The list of IP addresses for maintenance status no longer includes commas, which facilitates directly copy and pasting the addresses as needed.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [13727](https://github.com/magento/magento2/pull/13727)*. 
+
+<!---MAGETWO-86717 -->* All existing installation and data scripts have been converted into declarative schema data patches for easier deployment. 
+
+<!---MAGETWO-86567 -->* `PhpFormatter` has been refactored to recursively return the array representation using short array syntax `[]` instead of long `array()`. If the given variable is not an array, it uses the standard `var_export` behavior. This change support Magento coding standards. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [1193](https://github.com/magento/magento2/pull/1193)*. [GitHub-758](https://github.com/magento/magento2/issues/758)
+
+<!---MAGETWO-86276 -->* The icons that represent the Extension Manager and Module Manager in the main area and left-hand menu of the Web Setup Wizard have been refactored for consistency with Magento UI guidelines. *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12960](https://github.com/magento/magento2/pull/12960)*. [GitHub-11236](https://github.com/magento/magento2/issues/11236)
+
+<!--- MAGETWO-87025 -->*  You can now deploy static content on demand while in production mode.
+
+<!--- MAGETWO-84646 -->* Magento now restarts cron jobs as needed after a cron job was terminated during execution.
+
+<!--- MAGETWO-88212 85273 -->* The `CrontabManager.php` file has been updated as follows: If `crontab` has already been populated, the `bin/magento cron:install` command adds `#~ MAGENTO START` and the rest of code directly to the last row of crontab without any spaces. *Fix submitted by [Michele Fantetti](https://github.com/WaPoNe) in pull request [12609](https://github.com/magento/magento2/pull/12609)*.
+
+<!--- MAGETWO-71059 -->* `Zend_Json` in the setup `PackagesAuth` has been replaced with the new Serializer\Json. [GitHub-9236](https://github.com/magento/magento2/issues/9236)
+
+<!--- MAGETWO-71896 -->* Static versioning and minification no longer  break email font styles. [GitHub-8241](https://github.com/magento/magento2/issues/8241)
+
+<!--- MAGETWO-82461 -->* We've fixed an issue with using the command line to install or remove `crontab`. Previously, installing or removing `crontab` via the command line appended `2>&1` to entries, even those not related to Magento. [GitHub-11586](https://github.com/magento/magento2/issues/11586)
+
+<!--- ENGCOM-1187 -->* The **Back** button that was previously accessible during the first step of installation has been disabled. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request  [14460](https://github.com/magento/magento2/pull/14460)*. [GitHub-14307](https://github.com/magento/magento2/issues/14307)
+
+<!--- ENGCOM-1108 -->* Multifields that previously lacked labels in forms now display labels. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request  [14383](https://github.com/magento/magento2/pull/14383)*. [GitHub-7428](https://github.com/magento/magento2/issues/7428)
+
+<!--- ENGCOM-1360 -->* The `app:config:dump` command now has an argument that supports dumping only the specified settings that are required to prepare static content on a build system, not all system settings. This new option (`config-types`) makes it possible to dump scopes and themes automatically (which are needed for a build system) while managing system settings manually using `config:set --lock-config`. [GitHub-11396](https://github.com/magento/magento2/issues/11396) 
+
+<!--- MAGETWO-86569 -->* You can now switch to default mode from production mode. Previously, if you tried to switch back to default mode, Magento displayed this error, `Cannot switch into given mode 'default'`. [GitHub-4292](https://github.com/magento/magento2/issues/4292) 
+
+<!--- MAGETWO-87152 -->*  The Web Setup wizard no loads successfully when session storage is configured to use memcache in `env.php`. [GitHub-9633](https://github.com/magento/magento2/issues/9633)
+
+<!--- MAGETWO-87562 -->*  Triggers now work as expected during database backup. Previously, triggers were missing, which resulted in incorrect indexing. [GitHub-9036](https://github.com/magento/magento2/issues/9036)
+
+<!--- MAGETWO-87562 -->*  Magento no longer automatically disables maintenance mode during a scheduled back up. [GitHub-9918](https://github.com/magento/magento2/issues/9918)
+
+<!--- MAGETWO-87562 -->*  Database rollback with SSH now works as expected. [GitHub-12064](https://github.com/magento/magento2/issues/12064)
+
+<!---MAGETWO-87524 -->*  New command-line interface commands that support enabling and disabling the Magento Profiler have been added. See [Enable profiling (MAGE_PROFILER)](https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/mage-profiler.html) for more information. [GitHub-9277](https://github.com/magento/magento2/issues/9277)
+
+
+
+#### Web server configuration
+
+<!---MAGETWO-87916 -->* `web/unsecure/base_url` config has been added to website and store scope. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [13659](https://github.com/magento/magento2/pull/13659)*. 
+
+<!---MAGETWO-87748 -->* The `static/` string has been removed from the `resource` parameter, allowing `static.php` to generate the specified resource correctly. *Fix submitted by [Daniel](https://github.com/nieltg) in pull request [13361](https://github.com/magento/magento2/pull/13361)*. 
+
+<!---MAGETWO-94349 -->* Fixed an issue with the shared configuration settings in `app/etc/config.php` that caused `recursion detected` errors during deployment.
+
+<!---MAGETWO-70764 -->* You can now set a default value to fields with config field type `image` or `file`. [GitHub-10253](https://github.com/magento/magento2/issues/10253)
+
+<!---MAGETWO-71061 -->* We’ve removed `Zend_Json` from `Setup/Migration.php`. [GitHub-10341](https://github.com/magento/magento2/issues/10341)
+
+<!--- ENGCOM-2610 -->* The licenses listed in `composer.json` have been updated for accuracy. *Fix submitted by [Marcel Hauri](https://github.com/mhauri) in pull request  [17268](https://github.com/magento/magento2/pull/17268)*. [GitHub-17225](https://github.com/magento/magento2/issues/17225)
+
+<!--- ENGCOM-2125 -->* Magento multi-store installations now use the store view-specific values from the Store Configuration if they differ from the global default configuration settings. Previously, Magento loaded the wrong home page in multi-store deployments. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request  [16046](https://github.com/magento/magento2/pull/16046)*. [GitHub-15205](https://github.com/magento/magento2/issues/15205), [GitHub-15245](https://github.com/magento/magento2/issues/15245)
+
+<!--- ENGCOM-748 -->* Magento no longer displays deprecated currencies in the currency dropdown menu displayed during the setup process. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request  [13782](https://github.com/magento/magento2/pull/13782)*. [GitHub-13760](https://github.com/magento/magento2/issues/13760)
+
+<!--- ENGCOM-838 -->* You can no successfully create a new store view from the Admin. Previously, Magento displayed this message when you attempted to create a new storeview, `Requested store is not found`. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request  [14043](https://github.com/magento/magento2/pull/14043)*. [GitHub-12421](https://github.com/magento/magento2/issues/12421), [GitHub-12405](https://github.com/magento/magento2/issues/12405)
+
+<!--- ENGCOM-850 -->* Magento now send order sent email as expected. *Fix submitted by [pawcioma](https://github.com/pawcioma) in pull request  [14051](https://github.com/magento/magento2/pull/14051)*. [GitHub-13769](https://github.com/magento/magento2/issues/12421), [GitHub-12405](https://github.com/magento/magento2/issues/13769)
+
+<!--- ENGCOM-805 -->* The output of the `setup:static-content:deploy` command has been  changed to a less alarming color. [GitHub-12404](https://github.com/magento/magento2/issues/12404)
+
+<!--- ENGCOM-1419 -->* XML sitemap generation can now be scheduled. [GitHub-5768](https://github.com/magento/magento2/issues/5768)
+
+<!--- MAGETWO-87155-->* Issues with the database backup command have been resolved. [GitHub-1287](https://github.com/magento/magento2/issues/12877) 
+
+<!---MAGETWO-87449 -->* Magento now displays a more informative message you update a module and then switch to a different branch of source control that contains a lower version of that module. [GitHub-9981](https://github.com/magento/magento2/issues/9981)   M2 suggests running setup:upgrade if version number of module is higher than expected
+
+<!---MAGETWO-87154 -->*  Disabling the **State is Required for** field from **Admin** > **Stores** > **Configuration** > **General** now works as expected. [GitHub-12894](https://github.com/magento/magento2/issues/12894)
+
+
+
+
+
+
+### AdminGS
+
+<!-- MAGETWO-91337 -->* Admin global search preview now works as expected. Previously, this feature worked inconsistently, and search results  differed depending on which area was being searched  (for example, Products, Categories, or Customers). 
+
+<!--- MAGETWO-91565 -->*  Restricted Admin users can now successfully create and save product attributes.
+
+<!--- MAGETWO-91616 -->*  Restricted Admins can now create and edit CMS blocks as expected. Previously, Magento displayed this error message when a administrator with restricted privileges tries to create a new CMS block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075`.
+
+<!--- ENGCOM-1143 -->* The `Magento_Authorization` module is now installed after `Magento_Authorization` to satisfy `Magento_Authorization`'s dependency upon authorisation tables. *Fix submitted by [Anton Evers](https://github.com/AntonEvers) in pull request [56](https://github.com/magento-partners/magento2ee/pull/56)*. 
+
+
+
+### Analytics
+
+<!---MAGETWO-87520-->* PHPDocs have been added as needed for methods throughout the code base. *Fix submitted by [Aki Ojalehto](https://github.com/akiojalehto) in pull request [13337](https://github.com/magento/magento2/pull/13337)*. 
+
+<!--- MAGETWO-85059 -->* Users are now subscribed by default to the Advanced Reporting service.
+
+
 
 
 #### Application framework
