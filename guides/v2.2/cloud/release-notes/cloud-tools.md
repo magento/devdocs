@@ -39,7 +39,7 @@ The following updates describe the latest improvements to the `{{site.data.var.c
         -  <!-- MAGECLOUD-2569 & 2887 -->ElasticSearch 1.7 and 2.4
         -  <!-- MAGECLOUD-2886 -->Redis 3.2 and 4.0
 
-    -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
+    -  <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
 -  <!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
@@ -47,13 +47,13 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 #### Resolved Issues
 
--  <!-- MAGECLOUD-2862 -->Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when enabled. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.
+-  <!-- MAGECLOUD-2862 -->Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when configured. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.
 
 -  <!--MAGECLOUD-2736-->Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration. Previously, the installation process used the database configuration from the MAGENTO_CLOUD_RELATIONSHIP variable even if you designated customized connection information in the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
 
 -  <!--MAGECLOUD-2740-->Corrected the `config:dump` command so that it includes each website locale in the `system` section of the `config.php` file.
 
--  <!--MAGECLOUD-2797-->Fixed an issue that resulted in warm-up errors during the post-deploy phase by correcting the source base URL reference.
+-  <!--MAGECLOUD-2797-->Fixed an issue that resulted in _warm-up_ errors during the post-deploy phase by correcting the source base URL reference.
 
 -  <!--MAGECLOUD-2850-->Fixed an issue that generated files improperly during the `setup:di:compile` process, which affected the Amazon Pay module.
 
