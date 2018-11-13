@@ -12,7 +12,6 @@ module Proofer
     index.html
     magento-third-party.html
     magento-techbull.html
-    mftf
     pattern-library
     release-notes
     search.html
@@ -33,7 +32,6 @@ module Proofer
     guides/v2.0
     howdoi
     mariadb.com
-    mftf
     mrg
     navigation
     pattern-library
