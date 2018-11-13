@@ -1,5 +1,6 @@
 # Configure html-proofer parameters
 module Proofer
+
   # Read options from the '_config.checks.yml'
   def options
     config = YAML.load_file('_config.checks.yml')
