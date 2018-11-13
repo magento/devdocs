@@ -634,9 +634,7 @@ We are reviewing this section and will publish it soon.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Function declarations MUST be used for private functions instead of function expressions.
-
-10.5.7. Re-declaration of function names MUST NOT be used.
+10.5.6. Re-declaration of function names MUST NOT be used.
 
 ## 11. Testing
 

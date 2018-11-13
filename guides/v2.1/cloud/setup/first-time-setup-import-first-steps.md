@@ -95,7 +95,7 @@ The complete workflow for importing existing code includes the following steps:
 
 ## Create a new {{site.data.var.ece}} project {#cloud-import-proj}
 
-1.  Access your account. Open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud).
+1.  Access your account. Open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your {{site.data.var.ee}} account](https://accounts.magento.cloud).
 
 1.  Click the _This project has no code yet_ link next to the project name.
 
@@ -122,4 +122,4 @@ The complete workflow for importing existing code includes the following steps:
 1.  After the project deploys, **Success** displays next to the name of your project.
 
 #### Next step
-[Prepare your existing Magento Commerce install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html)
+[Prepare your existing {{site.data.var.ee}} install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html)
