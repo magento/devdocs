@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 title: Step 1. Configure your environment
-subtitle: Order processing with MSI
+subtitle: Order processing with Inventory Management
 menu_title: Step 1. Configure your environment
 menu_order: 10
 level3_subgroup: msi-tutorial
@@ -12,11 +12,11 @@ functional_areas:
   - Integration
 ---
 
-This step guides you through the process of configuring your Magento instance so that you can perform the Order Processing with MSI tutorial.
+This step guides you through the process of configuring your Magento instance so that you can perform the Order Processing with Inventory Management tutorial.
 
 ## Create two websites
 
-**Sales Channels** are entities from which you sell inventory. You can set up Magento websites to be sales channels, and MSI supports extensions for creating other types of channels.
+**Sales Channels** are entities from which you sell inventory. You can set up Magento websites to be sales channels, and Magento supports extensions for creating other types of channels.
 
 In this tutorial, we'll create the infrastructure needed to implement a US and a German store.
 
@@ -83,7 +83,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 3. Click **Create Store View** and assign the following values:
 
    Field | Value
-   --- | ---
+   --- | --- 
    Store | Europe Store
    Name | Germany Store View
    Code | `de`

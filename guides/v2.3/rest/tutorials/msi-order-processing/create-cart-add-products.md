@@ -1,9 +1,9 @@
 ---
 layout: tutorial
-title: Step 8. Create a cart and add products to it
-subtitle: Order processing with MSI
-menu_title: Step 8. Create a cart and add products to it
-menu_order: 80
+title: Step 7. Create a cart and add products to it
+subtitle: Order processing with Inventory Management
+menu_title: Step 7. Create a cart and add products to it
+menu_order: 70
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
@@ -12,7 +12,7 @@ functional_areas:
   - Integration
 ---
 
-Next, we'll create a cart and add the items that we created in [Step 5. Create products](create-products.html).
+Next, we'll create a cart and add the items that we modified in [Reassign products to custom sources](reassign-products-to-another-source.html.
 
 ## Create a cart
 
@@ -38,27 +38,27 @@ None
 
 **Response**
 
-The response is the `quoteId`: 3
+The response is the `quoteId`: 4
 
 ## Check for product availability
 
-In [Step 6. Reassign products to another source](reassign-products-to-another-source.html), we defined the quantities of products `sp1` and `sp2` for the UK source as follows:
+In [Step 6. Reassign products to another source](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
 
 Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
 --- | --- | --- | ---
-`sp1` | 50 | 10 | 100
-`sp2` | 25 | 0 | 50
+`24-WB01` | 35 | 10 | 25
+`24-WB03` | 19 | 0 | 42
 {:style="table-layout:auto;"}
 
-Later in this step, we'll order 20 `sp1` items and 60 `sp2` items. We can see that we have enough salable items for both products, but let's check programmatically.
+Later in this step, we'll order 20 `24-WB01` items and 50 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
 
-### Check for product `sp1`
+### Check for product `24-WB01`
 
-The `get-product-salable-quantity` endpoint indicates how many items are available for sale for the specified product and source.
+The `get-product-salable-quantity` endpoint indicates how many items are available for sale for the specified product (24-WB01) and source (2).
 
 **Endpoint**
 
-`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/sp1/2`
+`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
 
 **Scope**
 
@@ -76,15 +76,15 @@ Not applicable
 
 **Response**
 
-`160`
+`70`
 
-### Check for product `sp2`
+### Check for product `24-WB03`
 
-Use the same endpoint to check the quantity available for product `sp2`.
+Use the same endpoint to check the quantity available for product `24-WB03`.
 
 **Endpoint**
 
-`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/sp2/2`
+`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
 
 **Scope**
 
@@ -102,7 +102,7 @@ Not applicable
 
 **Response**
 
-`75`
+`61`
 
 ## Add items to the cart
 
@@ -110,7 +110,7 @@ We have ensured that we have enough physical products in stock to fulfill the po
 
 ### Add the first simple product
 
-In this call, we'll add 20 `sp1` items. This portion of the order can be fulfilled from the Baltimore or Reno warehouse.
+In this call, we'll add 20 `24-WB01` items. This portion of the order can be fulfilled from the Baltimore or Reno warehouse.
 
 **Endpoint**
 
@@ -131,9 +131,9 @@ In this call, we'll add 20 `sp1` items. This portion of the order can be fulfill
 ``` json
 {
   "cartItem": {
-    "sku": "sp1",
+    "sku": "24-WB01",
     "qty": 20,
-    "quote_id": "3"
+    "quote_id": "4"
   }
 }
 ```
@@ -144,56 +144,59 @@ Note the `item_id` for use in subsequent steps.
 
 ``` json
 {
-    "item_id": 5,
-    "sku": "sp1",
+    "item_id": 3,
+    "sku": "24-WB01",
     "qty": 20,
-    "name": "Simple Product 1",
+    "name": "Voyage Yoga Bag",
     "product_type": "simple",
-    "quote_id": "3"
+    "quote_id": "4"
 }
 ```
 
 ### Add the second simple product
 
-Use the same endpoint to add 60 items of `sp2` to the cart. Multiple sources will be required to fulfill this potential order.
+Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources will be required to fulfill this potential order.
 
 **Payload**
 
 ``` json
 {
   "cartItem": {
-    "sku": "sp2",
-    "qty": 60,
-    "quote_id": "3"
+    "sku": "24-WB03",
+    "qty": 50,
+    "quote_id": "4"
   }
 }
 ```
 **Response**
 
+Note the `item_id` for use in subsequent steps.
+
+
 ``` json
 {
-    "item_id": 6,
-    "sku": "sp2",
-    "qty": 60,
-    "name": "Simple Product 2",
-    "price": 10,
+    "item_id": 4,
+    "sku": "24-WB03",
+    "qty": 50,
+    "name": "Driven Backpack",
+    "price": 36,
     "product_type": "simple",
-    "quote_id": "3"
+    "quote_id": "4"
 }
 ```
 
-### Add a virtual product
+### Add a downloadable product
 
-Finally, we'll add a single instance of a virtual product to the cart.
+Finally, we'll add a single instance of a downloadable product to the cart.
 
 **Payload**
 
 ``` json
 {
   "cartItem": {
-    "sku": "vp1",
+    "sku": "240-LV06",
     "qty": 1,
-    "quote_id": "3"
+    "quote_id": "4"
   }
 }
 ```
@@ -202,13 +205,22 @@ Finally, we'll add a single instance of a virtual product to the cart.
 
 ``` json
 {
-    "item_id": 7,
-    "sku": "vp1",
+    "item_id": 5,
+    "sku": "240-LV06",
     "qty": 1,
-    "name": "Gold Club Membership",
-    "price": 20,
-    "product_type": "virtual",
-    "quote_id": "3"
+    "name": "Yoga Adventure",
+    "price": 22,
+    "product_type": "downloadable",
+    "quote_id": "4",
+    "product_option": {
+        "extension_attributes": {
+            "downloadable_option": {
+                "downloadable_links": [
+                    3
+                ]
+            }
+        }
+    }
 }
 ```
 

@@ -1,10 +1,10 @@
 ---
 layout: tutorial
 group: rest-api
-title: Step 7. Create a customer and generate a customer token
-subtitle: Order processing with MSI
-menu_title: Step 7. Create a customer and generate a customer token
-menu_order: 70
+title: Step 6. Create a customer and generate a customer token
+subtitle: Order processing with Inventory Management
+menu_title: Step 6. Create a customer and generate a customer token
+menu_order: 60
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
@@ -13,7 +13,75 @@ functional_areas:
   - Integration
 ---
 
-In this step, we will create a customer account that is tied to the `us` web view that we created in Step 1. We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-customer.html), with the only difference being the scope of the call. In this case, the endpoint path contains `us` instead of `default`.
+In this step, we will create a customer account that is tied to the `us` web view that we created in Step 1. Before we can do this, we need to know the website and store view IDs.
+
+## Get the website and store view IDs
+
+The `GET /V1/store/storeViews` endpoint returns an array of store view IDs, along with the corresponding website and store group IDs. When you create a customer, change the `id` parameter to the `store_id` parameter
+
+
+**Endpoint**
+
+`GET http://<host>/rest/all/V1/store/storeViews`
+
+**Scope**
+
+`all` store view
+
+**Headers**
+
+`Content-Type`: `application/json`
+
+`Authorization`: `Bearer <admin_token>`
+
+**Payload**
+
+Not applicable
+
+**Response**
+
+The value of the `id` and `website_id` parameters for the US Store View is `2`.
+
+```json
+[
+    {
+        "id": 1,
+        "code": "default",
+        "name": "Default Store View",
+        "website_id": 1,
+        "store_group_id": 1,
+        "is_active": 1
+    },
+    {
+        "id": 0,
+        "code": "admin",
+        "name": "Admin",
+        "website_id": 0,
+        "store_group_id": 0,
+        "is_active": 1
+    },
+    {
+        "id": 2,
+        "code": "us",
+        "name": "US Store View",
+        "website_id": 2,
+        "store_group_id": 2,
+        "is_active": 1
+    },
+    {
+        "id": 3,
+        "code": "de",
+        "name": "Germany Store View",
+        "website_id": 3,
+        "store_group_id": 3,
+        "is_active": 1
+    }
+]
+```
+
+## Create a customer
+
+We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
 
 **Endpoint**
 
@@ -37,6 +105,8 @@ In this step, we will create a customer account that is tied to the `us` web vie
       "lastname" : "Doe",
       "firstname" : "Jane",
       "email" : "jdoe@example.com",
+      "store_id": 2,
+      "website_id": 2,
       "addresses" : [
          {
             "defaultBilling" : true,
@@ -68,12 +138,12 @@ The customer `id` is `3`.
 
 ``` json
 {
-    "id": 3,
+    "id": 5,
     "group_id": 1,
-    "default_billing": "3",
-    "default_shipping": "3",
-    "created_at": "2018-09-24 19:01:22",
-    "updated_at": "2018-09-24 19:01:23",
+    "default_billing": "5",
+    "default_shipping": "5",
+    "created_at": "2018-11-12 21:38:45",
+    "updated_at": "2018-11-12 21:38:45",
     "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
@@ -82,8 +152,8 @@ The customer `id` is `3`.
     "website_id": 2,
     "addresses": [
         {
-            "id": 3,
-            "customer_id": 3,
+            "id": 5,
+            "customer_id": 5,
             "region": {
                 "region_code": "NY",
                 "region": "New York",
