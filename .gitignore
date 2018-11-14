@@ -16,6 +16,7 @@
 !/_config.yml
 !/_config.prod.yml
 !/_config.checks.yml
+!/_config.stage.yml
 
 *.bat
 *.sh
