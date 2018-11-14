@@ -8,12 +8,13 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
+redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/run-ssa.html
 functional_areas:
   - Integration
 ---
 
 One of the most significant parts of Inventory Management is the Source Selection Algorithm (SSA). SSA analyzes and determines the best match for sources and shipping based on the priorities you specified in [Step 4. Link stocks and sources
-]({{ page.baseurl }}/rest/tutorials/msi-order-processing/assign-source-to-stock.html). The algorithm also provides a list of source items with quantities to deduct per each source item.
+]({{ page.baseurl }}/rest/tutorials/inventory/assign-source-to-stock.html). The algorithm also provides a list of source items with quantities to deduct per each source item.
 
 For more information about shipping and SSAs, see the Wiki topic [Shipment and Order Management](https://github.com/magento-engcom/msi/wiki/Shipment-and-Order-Management).
 

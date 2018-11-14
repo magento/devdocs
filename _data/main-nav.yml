@@ -10,6 +10,9 @@
     - label: Local Development
       url: /cloud/setup/first-time-setup.html
 
+    - label: Docker quick reference
+      url: /cloud/docker/docker-quick-reference.html
+
     - label: Configure Environments
       url: /cloud/env/environments.html
 
