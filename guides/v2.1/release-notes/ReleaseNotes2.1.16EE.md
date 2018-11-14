@@ -85,10 +85,10 @@ In addition to security enhancements, this release contains the following functi
 ### General
 
 
-<!--- ENGCOM-2805 -->* Magento now displays the Customer group menu under the Customers as expected. Previously, Magento displayed the customer group menu under the Customers menu on the Admin, but displayed it under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+<!--- ENGCOM-2805 -->* Magento now displays the customer group menu under the Customers tab as expected. Previously, Magento displayed the customer group menu under the customers menu on the Admin, but displayed it under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
 
-<!--- ENGCOM-2975 -->* The dropdown menu of available countries that is accessible throughout both storefront and Admin is now populated as expected. *Fix submitted by [Nilesh Lokhande](https://github.com/nilesh2jcommerce) in pull request [17194](https://github.com/magento/magento2/pull/17194)*. [GitHub-2146](https://github.com/magento/magento2/issues/2146)
+<!--- ENGCOM-2975 -->* The dropdown menu of available countries that is accessible throughout both the storefront and Admin is now populated as expected. *Fix submitted by [Nilesh Lokhande](https://github.com/nilesh2jcommerce) in pull request [17194](https://github.com/magento/magento2/pull/17194)*. [GitHub-2146](https://github.com/magento/magento2/issues/2146)
 
 
 
