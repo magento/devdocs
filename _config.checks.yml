@@ -34,7 +34,6 @@ html-proofer:
   - !ruby/regexp /whats-new.html/
   :url_ignore:
   - !ruby/regexp /account.magento.com/
-  - !ruby/regexp /config-guide/
   - !ruby/regexp /docs.magento.com/
   - !ruby/regexp /extension-dev-guide/
   - !ruby/regexp /frontend-dev-guide/
