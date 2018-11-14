@@ -1,0 +1,52 @@
+# Configuration settings for html-proofer.
+# For configuration documentation, refer to: https://github.com/gjtorikian/html-proofer#configuration
+# For configuration defaults, refer to: https://github.com/gjtorikian/html-proofer/blob/master/lib/html-proofer/configuration.rb
+#
+html-proofer:
+  :disable_external: true
+  :only_4xx: true
+  :checks_to_ignore:
+  - ImageCheck
+  - ScriptCheck
+  :allow_hash_ref: true
+  :error_sort: :desc
+  :parallel:
+    :in_processes: 3
+  :file_ignore:
+  - !ruby/regexp /404.html/
+  - !ruby/regexp /action-groups.html/
+  - !ruby/regexp /cloud-fastly.html/
+  - !ruby/regexp /codelinks/
+  - !ruby/regexp /contributing.html/
+  - !ruby/regexp /css-preprocess.html/
+  - !ruby/regexp /es-overview.html/
+  - !ruby/regexp /guides\/m1x/
+  - !ruby/regexp /index.html/
+  - !ruby/regexp /magento-third-party.html/
+  - !ruby/regexp /magento-techbull.html/
+  - !ruby/regexp /pattern-library/
+  - !ruby/regexp /release-notes/
+  - !ruby/regexp /search.html/
+  - !ruby/regexp /swagger/
+  - !ruby/regexp /template.html/
+  - !ruby/regexp /theme_dictionary.html/
+  - !ruby/regexp /videos/
+  - !ruby/regexp /whats-new.html/
+  :url_ignore:
+  - !ruby/regexp /account.magento.com/
+  - !ruby/regexp /config-guide/
+  - !ruby/regexp /docs.magento.com/
+  - !ruby/regexp /extension-dev-guide/
+  - !ruby/regexp /frontend-dev-guide/
+  - !ruby/regexp /github.com/
+  - !ruby/regexp /guides\/v2.0/
+  - !ruby/regexp /howdoi/
+  - !ruby/regexp /mariadb.com/
+  - !ruby/regexp /mrg/
+  - !ruby/regexp /navigation/
+  - !ruby/regexp /pattern-library/
+  - !ruby/regexp /release-notes/
+  - !ruby/regexp /rest/
+  - !ruby/regexp /ui_comp_guide/
+  - !ruby/regexp /www.thegeekstuff.com/
+  - !ruby/regexp /yatil.net/
