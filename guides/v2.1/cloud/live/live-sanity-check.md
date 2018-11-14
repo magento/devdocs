@@ -78,7 +78,7 @@ Before you continue, make sure you push all current code to the remote Cloud ser
 
 During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
-*	Apply patches distributed to all Magento Commerce (Cloud) accounts
+*	Apply patches distributed to all {{site.data.var.ece}} accounts
 *	Apply patches we provided specifically to you
 *	Enable modules to build
 *	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
@@ -89,7 +89,7 @@ Before you continue, you must know the file system path to any patch we provided
 
 #### To build your site:
 
-1.	Apply patches distributed to all Magento Commerce (Cloud) accounts.
+1.	Apply patches distributed to all {{site.data.var.ece}} accounts.
 
 	Enter the following command from the project root directory:
 

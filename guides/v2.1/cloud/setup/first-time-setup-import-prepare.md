@@ -223,4 +223,4 @@ The following command example compresses the dump so it doesn't significantly in
 To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
 
 #### Next step
-[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)
+[Import {{site.data.var.ee}} into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)

@@ -1,5 +1,6 @@
 # Configure html-proofer parameters
 module Proofer
+
   # Read options from the '_config.checks.yml'
   # Ignore baseurl if $branch is available in environment
   def options
