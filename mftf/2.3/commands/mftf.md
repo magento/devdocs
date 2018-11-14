@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.10
+mftf-release: 2.3.11
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/commands/mftf.html
 ---
 
@@ -70,7 +70,7 @@ vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 
 This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
 
-### Generate and run previously failed tests
+### Generate and run the previously failed tests
 
 ```bash
 vendor/bin/mftf run:failed
