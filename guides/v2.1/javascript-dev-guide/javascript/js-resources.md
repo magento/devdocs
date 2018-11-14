@@ -41,7 +41,7 @@ JS resources are accessed using relative paths.
 **Example 1**
 
 - File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
-- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}.
+- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}.
 - Called in script:
     ```javascript
     require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
@@ -87,7 +87,7 @@ To build a dependency on the third-party plugin, specify a [shim] in the followi
     ```
 
  - `<third-party-plugin>.js`
- 
+
     ```javascript
     !(function($){
         // plugin code
@@ -110,14 +110,14 @@ To be available for the entire Magento instance, RequireJS library is included i
             <title>Magento Admin</title>
             <meta name="viewport" content="width=1024"/>
             <meta name="format-detection" content="telephone=no"/>
-        <!-- Here's the library included -->       
+        <!-- Here's the library included -->
         <link src="requirejs/require.js"/>
             <css src="extjs/resources/css/ext-all.css"/>
             <css src="extjs/resources/css/ytheme-magento.css"/>
         </head>
         <body>
             <attribute name="id" value="html-body"/>
-            <!-- Here's the basic configuration file require_js.phtml specified -->   
+            <!-- Here's the basic configuration file require_js.phtml specified -->
         <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
             <referenceContainer name="global.notices">
                 <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="page/notices.phtml"/>

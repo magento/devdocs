@@ -1,72 +1,45 @@
 module Proofer
   # Constants to be used in options
   FILE_IGNORE = %w[
-    videos
-    swagger
-    mftf
-    pattern-library
-    guides/m1x
-    search.html
     404.html
-    codelinks
-    magento-third-party.html
-    magento-techbull.html
-    release-notes
-    index.html
-    template.html
-    whats-new.html
     action-groups.html
+    cloud-fastly.html
+    codelinks
+    contributing.html
     css-preprocess.html
     es-overview.html
-    cloud-fastly.html
+    guides/m1x
+    index.html
+    magento-third-party.html
+    magento-techbull.html
+    pattern-library
+    release-notes
+    search.html
+    swagger
+    template.html
     theme_dictionary.html
-    contributing.html
+    videos
+    whats-new.html
   ].freeze
 
   URL_IGNORE = %w[
-    guides/v2.0
-    architecture
-    advanced-reporting
-    coding-standards
-    comp-mgr
+    account.magento.com
     config-guide
-    contributor-guide
-    design-styleguide
-    ext-best-practices
+    docs.magento.com
     extension-dev-guide
     frontend-dev-guide
-    get-started
-    graphql
+    github.com
+    guides/v2.0
     howdoi
-    inventory
-    javascript-dev-guide
-    marketplace
-    magento-functional-testing-framework
-    migration
-    modules
+    mariadb.com
     mrg
-    mtf
+    navigation
     pattern-library
-    payments-integrations
     release-notes
     rest
-    soap
-    test
-    ui-components
     ui_comp_guide
-    pwa
-    msi
-    mftf
-    github.com
     www.thegeekstuff.com
-    account.magento.com
     yatil.net
-    ui-library
-    security
-    navigation
-    community
-    docs.magento.com
-    mariadb.com
   ].freeze
 
   # Configure htmlproofer parameters:
