@@ -44,7 +44,7 @@ Old data scripts cannot be converted automatically. The following steps help mak
 1. Generate a patch stub.
 
     ```bash
-    setup:db-declaration:generate-patch [options] <module-name> <patch-name>
+    magento setup:db-declaration:generate-patch [options] <module-name> <patch-name>
     ```
     where `[options]` can be any of the following:
 
@@ -66,8 +66,8 @@ It is important that declarative installation/upgrade does not break anything. A
 To enable dry run mode, run one of the following commands:
 
 ```bash
-setup:install --dry-run=1
-setup:upgrade --dry-run=1
+magento setup:install --dry-run=1
+$ magento setup:upgrade --dry-run=1
 ```
 
 As a result of specifying the `--dry-run=1` flag, Magento writes a log file at `<Magento_Root>/var/log/dry-run-installation.log`. This file contains all the DDL SQL statements that are generated during installation. You can use these SQL statements for debugging and optimizing performance processes.
