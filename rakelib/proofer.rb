@@ -1,9 +1,12 @@
 # Configure html-proofer parameters
 module Proofer
   # Read options from the '_config.checks.yml'
+  # Ignore baseurl if $branch is available in environment
   def options
     config = YAML.load_file('_config.checks.yml')
-    config['html-proofer']
+    return config['html-proofer'] unless ENV['branch']
+    url_swap = { :url_swap => { %r{\A/#{ENV['branch']}} => '' } }
+    cicd_config = config['html-proofer'].merge(url_swap)
   end
 
   # Count the number of lines in the given file
