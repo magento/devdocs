@@ -1,9 +1,9 @@
 ---
 layout: tutorial
-title: Step 10. Create an order
-subtitle: Order processing with MSI
-menu_title: Step 10. Create an order
-menu_order: 100
+title: Step 9. Create an order
+subtitle: Order processing with Inventory Management
+menu_title: Step 9. Create an order
+menu_order: 90
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
@@ -12,7 +12,7 @@ functional_areas:
   - Integration
 ---
 
-The {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} contains 81 items totaling $720. The shipping charges are $400, making the grand total $1120. We're now ready to convert the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} to an order.
+The {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} contains 71 items totaling $2462. The shipping charges are $350, making the grand total $2812. We're now ready to convert the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} to an order.
 
 When you create an order, Magento enters reservations for the total amount of products. These reservations place a hold on that amount of inventory per stock, temporarily deducting the amount from the salable quantity. On the Products page of Admin, the **Salable Quantity** column accounts for reservations. When an order is shipped, Magento updates the quantities in the **Quantity per Source** column.
 

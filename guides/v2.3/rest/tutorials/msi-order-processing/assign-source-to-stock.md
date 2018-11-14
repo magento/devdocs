@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 4. Link stocks and sources
-subtitle: Order processing with MSI
+subtitle: Order processing with Inventory Management
 menu_title: Step 4. Link stocks and sources
 menu_order: 40
 level3_subgroup: msi-tutorial
@@ -15,7 +15,7 @@ functional_areas:
 
 This step links the sources we created in Step 2 with the stocks we created in Step 3.
 
-Each stock can be assigned one or more sources. MSI uses these associations to calculate the virtual aggregated inventory per product.
+Each stock can be assigned one or more sources. Magento uses these associations to calculate the virtual aggregated inventory per product.
 
 {:.bs-callout .bs-callout-tip}
 You must reindex and flush cache after performing this step.
@@ -96,7 +96,7 @@ Magento returns empty array.
 **Required:** After you have assigned a source to stock, use the following command to perform a full reindex and flush the cache. This is required!
 
 ``` bash
-php bin/magento indexer:reindex && php bin/magento cache:flush
+bin/magento indexer:reindex && bin/magento cache:flush
 ```
 
 ### Verify this step
