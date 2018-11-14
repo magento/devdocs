@@ -11,7 +11,7 @@ html-proofer:
   :allow_hash_ref: true
   :error_sort: :desc
   :parallel:
-  :in_processes: 3
+    :in_processes: 3
   :file_ignore:
   - !ruby/regexp /404.html/
   - !ruby/regexp /action-groups.html/
