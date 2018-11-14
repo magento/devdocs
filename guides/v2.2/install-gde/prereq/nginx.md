@@ -265,12 +265,12 @@ Magento requires several [PHP extensions]({{ page.baseurl }}/install-gde/prereq/
 11. Create a new directory for the PHP session path and change the owner to the `apache` user and group:
 
 		mkdir -p /var/lib/php/session/
-		chown -R apache:apache /var/lib/php/
+		chown -R nginx:nginx /var/lib/php/
 
 12. Create a new directory for the PHP session path and change the owner to the `apache` user and group:
 
 		mkdir -p /run/php-fpm/
-		chown -R apache:apache /run/php-fpm/
+		chown -R nginx:nginx /run/php-fpm/
 
 13. Start the `php-fpm` service and configure it to start at boot time:
 
