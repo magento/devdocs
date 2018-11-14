@@ -215,6 +215,8 @@ Magento requires several [PHP extensions](php-centos-ubuntu.html) to function pr
 1. Install `php-fpm`:
 
 		yum -y install php70w-fpm
+   If you are on Centos 7.1 and want to install PHP7.1-FPM:
+   		`yum install -y php71u-fpm`
 
 2. Open the `/etc/php.ini` file in an editor.
 
@@ -259,12 +261,12 @@ We recommend setting the memory limit to 2G when testing Magento. Refer to [Requ
 11. Create a new directory for the PHP session path and change the owner to the `apache` user and group:
 
 		mkdir -p /var/lib/php/session/
-		chown -R apache:apache /var/lib/php/
+		chown -R nginx:nginx /var/lib/php/
 
 12. Create a new directory for the PHP session path and change the owner to the `apache` user and group:
 
 		mkdir -p /run/php-fpm/
-		chown -R apache:apache /run/php-fpm/
+		chown -R nginx:nginx /run/php-fpm/
 
 13. Start the `php-fpm` service and configure it to start at boot time:
 
