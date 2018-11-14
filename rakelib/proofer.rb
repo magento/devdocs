@@ -24,7 +24,6 @@ module Proofer
 
   URL_IGNORE = %w[
     account.magento.com
-    config-guide
     docs.magento.com
     extension-dev-guide
     frontend-dev-guide
