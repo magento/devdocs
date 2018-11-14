@@ -93,7 +93,7 @@ pages:
 
       - label: Order processing with Inventory Management
         class: tutorial
-        url: /rest/tutorials/msi-order-processing/index.html
+        url: /rest/tutorials/inventory/index.html
         include_versions: ["2.3"]
 
       - label: Create configurable products
