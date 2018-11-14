@@ -1,6 +1,6 @@
 require_relative './rakelib/rake-helper.rb'
 
-include Jekyll
+include JekyllRake
 include Proofer
 include Converter
 
