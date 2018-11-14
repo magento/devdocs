@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -132,6 +132,27 @@ stage:
       _merge: true
 ```
 
+### `ENABLE_GOOGLE_ANALYTICS`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Enables and disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
+
+-   **`true`**—Enables Google Analytics on Staging and Integration environments.
+-   **`false`**—Disables Google Analytics on Staging and Integration environments.
+
+Add the `ENABLE_GOOGLE_ANALYTICS` environment variable to the `deploy` stage in the `.magento.env.yaml` file:
+
+```yaml
+stage:
+  deploy:
+    ENABLE_GOOGLE_ANALYTICS: true 
+```
+
+{:.bs-callout .bs-callout-info}
+The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
+
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
@@ -237,13 +258,13 @@ stage:
 
 You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
-The following example deploys the `magento/backend` theme with three locales:
+The following example deploys the `Magento/backend` theme with three locales:
 
 ```yaml
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend":
+      "Magento/backend":
         language:
           - en_US
           - fr_FR
@@ -256,7 +277,7 @@ Also, you can choose to _not_ deploy a theme:
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend": [ ]
+      "Magento/backend": [ ]
 ```
 
 ### `SCD_STRATEGY`
