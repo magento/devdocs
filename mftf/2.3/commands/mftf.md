@@ -70,7 +70,7 @@ vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 
 This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
 
-### Generate and run the previously failed tests
+### Generate and run previously failed tests
 
 ```bash
 vendor/bin/mftf run:failed
