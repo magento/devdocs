@@ -52,32 +52,6 @@ This release includes improvements to general usability of the core code plus en
 <!-- MAGETWO-94434 -->* The Magento UPS module has been updated to support new UPS API endpoints.
 
 
-
-####  Magento Shipping
-
-* The Magento Shipping Click & Collect feature offers merchants the ability to:
-
-	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores 
-
-	* Configure source locations available for Click & Collect pick-ups
-
-	* Updates to Shipment Form for UPS (U.S. only)
-
-	Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection. 
-
-* The batch details page now displays collection point addresses, as applicable.
-
-* Activation notices can now be translated.
-
-* Manifest order with instant payment methods, e.g. PayPal Express
-
-* Tracking popups for multi-package shipments are now displayed. 
-
-* The dispatch details page has been enhanced. 
-
-
-
-
 ### Magento Functional Test Framework (MFTF)
 
 * MTFT version 2.3.8 is now packaged with Magento 2.2.7. 
@@ -125,7 +99,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-2646 -->* You can now complete `setup:install` for installations running  an authenticated Redis instance for cache configuration. Previously, Magento did not read the Redis cache options in `env.php` as expected, although the Redis session password configuration worked as expected.  *Fix submitted by [Guillaume Giordana](https://github.com/guillaumegiordana) in pull request [17078](https://github.com/magento/magento2/pull/17078)*.
 
-<!-- ENGCOM-2721 -->* You can now replace the transaction trace driver for the Profiler (`app/bootstrap.php`). For example, with this change you could replace  the default profiler with the OpenTracing API, which can then use its own exporters to express the code to the CNCF Jaeger project. This in turn supports a more granular view of application transactions.) *Fix submitted by [Andrew Howden](https://github.com/andrewhowdencom) in pull request [15171](https://github.com/magento/magento2/pull/15171)*.
+<!-- ENGCOM-2721 -->* You can now replace the transaction trace driver for the Profiler (`app/bootstrap.php`). For example, with this change you could replace  the default profiler with the OpenTracing API, which can then use its own exporters to express the code to the CNCF Jaeger project. This in turn supports a more granular view of application transactions. *Fix submitted by [Andrew Howden](https://github.com/andrewhowdencom) in pull request [15171](https://github.com/magento/magento2/pull/15171)*.
 
 
 
@@ -190,7 +164,7 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- ENGCOM-2672 -->* Magento now maintains product image roles as expected after upgrade. Previously, image roles randomly disappeared from product pages after upgrade. *Fix submitted by [Sam Butler Thompson](https://github.com/Scarraban) in pull request [15606](https://github.com/magento/magento2/pull/15606)*. [GitHub-10687](https://github.com/magento/magento2/issues/10687)
 
-<!-- ENGCOM-2670 -->* You can now save attributes for a configurable product after a validation error occurs. Previously, when you added a new product with an image, if a validation error occurred during the product save, Magento removed the images  from the **Images And Videos** section. If you subsequently fixed the validation conflict and attempted to save the product again, Magento threw a descriptive error. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16597](https://github.com/magento/magento2/pull/16597)*. [GitHub-7372](https://github.com/magento/magento2/issues/7372), [GitHub-13177](https://github.com/magento/magento2/issues/13177)
+<!-- ENGCOM-2670 -->* You can now save attributes for a configurable product after a validation error occurs. Previously, when you added a new product with an image, if a validation error occurred during the product save, Magento removed the images  from the **Images and Videos** section. If you subsequently fixed the validation conflict and attempted to save the product again, Magento threw a descriptive error. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16597](https://github.com/magento/magento2/pull/16597)*. [GitHub-7372](https://github.com/magento/magento2/issues/7372), [GitHub-13177](https://github.com/magento/magento2/issues/13177)
 
 <!-- ENGCOM-2675 -->* You can now add a product with a price of zero (0) to a wishlist. *Fix submitted by [sv3n](https://github.com/sreichel) in pull request [17395](https://github.com/magento/magento2/pull/17395)*. [GitHub-16479](https://github.com/magento/magento2/issues/16479)
 
@@ -203,7 +177,7 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- MAGETWO-94062 -->* Magento now displays a descriptive error message  when a customer tries to order a product in increments that are not allowed.
 
-<!-- MAGETWO-92682 -->* The Catalog Staging module no longer overrides trigger settings in scheduled indexed operations. Previously, when Magento indexes were configured to run on schedule, Magento  created the appropriate INSERT/UPDATE/DELETE triggers. Consequently, the UPDATE trigger script contained a condition to check if any values were  changed, and only then insert a record into the changelog table of subscribed indexers. The Catalog Staging module prevented the inclusion of trigger conditions.
+<!-- MAGETWO-92682 -->* The Catalog Staging module no longer overrides trigger settings in scheduled indexed operations. Previously, when Magento indexes were configured to run on schedule, Magento  created the appropriate INSERT/UPDATE/DELETE triggers. Consequently, the UPDATE trigger script contained a condition to check if any values were  changed, and only then inserted a record into the changelog table of subscribed indexers. The Catalog Staging module prevented the inclusion of trigger conditions.
 
 
 <!-- MAGETWO-88641 -->* Magento now applies tier prices as expected after a customer logs into their shopping cart. [GitHub-14255](https://github.com/magento/magento2/issues/14255)
@@ -255,10 +229,10 @@ product, and hung indefinitely while trying to add the product.
 <!-- ENGCOM-2776 -->* The code generator for Proxy is no longer missing `returnType` in the method information definition. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [17552](https://github.com/magento/magento2/pull/17552)*.
 
 
-<!-- ENGCOM-2748 -->* The `<script/>` tag has been replaced with `<script type="text/x-magento-init" /> `in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also  a new JavaScript component with the callback function has been created.  *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
+<!-- ENGCOM-2748 -->* The `<script/>` tag has been replaced with `<script type="text/x-magento-init" /> `in  `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/attribute/form.phtml` and `app/code/Magento/Catalog/view/adminhtml/templates/catalog/product/edit/action/attribute.phtml`. Also,  a new JavaScript component with the callback function has been created.  *Fix submitted by [Yogesh Suhagiya](https://github.com/swnsma) in pull request [17527](https://github.com/magento/magento2/pull/17527)*.
 
 
-<!-- ENGCOM-2632 -->* The '$outputHelper' property declaration has been added to `app/code/Magento/Catalog/CustomerData/CompareProducts.php`. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
+<!-- ENGCOM-2632 -->* The `$outputHelper` property declaration has been added to `app/code/Magento/Catalog/CustomerData/CompareProducts.php`. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
 
 
 <!-- ENGCOM-2632 -->* The `Magento_Backend` module  has been refactored. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17101](https://github.com/magento/magento2/pull/17101)*.
@@ -321,7 +295,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2070 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [15942](https://github.com/magento/magento2/pull/15942)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
 
-<!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function <code>__()</code> to trigger translations) now lives in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
+<!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function <code>__()</code> to trigger translations) now resides in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
 
 
 <!-- ENGCOM-2570 -->* FTP connections can  now use user or password strings with special characters (for example, @ or #). *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17246](https://github.com/magento/magento2/pull/17246)*.
@@ -437,7 +411,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Reports
 
-<!-- MAGETWO-93729 -->* The scope selector for reports now works as expected. Previously, when a merchant set the scope to **All Websites** , the generated report showed  sales from only a subset of websites.
+<!-- MAGETWO-93729 -->* The scope selector for reports now works as expected. Previously, when a merchant set the scope to **All Websites**, the generated report showed  sales from only a subset of websites.
 
 <!-- MAGETWO-93345 -->* The `.csv` export of Coupon reports now shows the correct total for  selected coupons. Previously, the total line in the `.csv` file showed the totals for all coupons in the selected time period, rather than just the selected coupons.
 
@@ -537,7 +511,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2900 -->* Deprecated methods throughout the test suite have been replaced. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17872](https://github.com/magento/magento2/pull/17872)*.
 
-<!-- ENGCOM-2899 -->* An API-functional test  for the `/V1/search` (searchV1) resource has been added. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17840](https://github.com/magento/magento2/pull/17840)*.
+<!-- ENGCOM-2899 -->* An API functional test  for the `/V1/search` (searchV1) resource has been added. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17840](https://github.com/magento/magento2/pull/17840)*.
 
 <!-- ENGCOM-2907 -->* The `\Magento\Sales\Model\Validator` class is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17876](https://github.com/magento/magento2/pull/17876)*.
 
@@ -545,25 +519,25 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2876 -->* The `\Magento\Search\Model\SynonymAnalyzer` class  is now covered by a unit test. *Fix submitted by [Zebra](https://github.com/furseyev) in pull request [17801](https://github.com/magento/magento2/pull/17801)*.
 
-<!-- ENGCOM-2843 -->* The Sales Rule model classes is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17710](https://github.com/magento/magento2/pull/17710)*.
+<!-- ENGCOM-2843 -->* The Sales Rule model classes are now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17710](https://github.com/magento/magento2/pull/17710)*.
 
 <!-- ENGCOM-2830 -->* The `\Magento\Review\Observer\ProcessProductAfterDeleteEventObserver` is now covered by unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17693](https://github.com/magento/magento2/pull/17693)*.
 
-<!-- ENGCOM-2823 -->* The CMS model classes is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17678](https://github.com/magento/magento2/pull/17678)*.
+<!-- ENGCOM-2823 -->* The CMS model classes are now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17678](https://github.com/magento/magento2/pull/17678)*.
 
 <!-- ENGCOM-2807 -->* The `\Magento\Newsletter\Model\Problem` class is now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17633](https://github.com/magento/magento2/pull/17633)*.
 
 <!-- ENGCOM-2780 -->* The `\Magento\Braintree\Model\InstantPurchase\CreditCard\TokenFormatter` class is now covered by unit tests. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17590](https://github.com/magento/magento2/pull/17590)*.
 
 
-<!-- ENGCOM-2772 -->* The `\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest ` and `\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest` classes is now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17561](https://github.com/magento/magento2/pull/17561)*.
+<!-- ENGCOM-2772 -->* The `\Magento\Catalog\Test\Unit\Cron\AvailabilityCheckerTest ` and `\Magento\Catalog\Test\Unit\Cron\DeleteOutdatedPriceValuesTest` classes are now covered by unit tests. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17561](https://github.com/magento/magento2/pull/17561)*.
 
 <!-- ENGCOM-2715 -->* The `Magento\Braintree\Model\InstantPurchase\CreditCard\AvailabilityChecker` class is now covered by a unit test. [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17454](https://github.com/magento/magento2/pull/17454)*
 
 
 <!-- ENGCOM-2680 -->* The instant purchase PayPal token formatter is now covered by a unit test. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17405](https://github.com/magento/magento2/pull/17405)*.
 
-<!-- ENGCOM-2657 -->* The `\Magento\Braintree\Gateway\Http\Client\TransactionVoid` and `\Magento\Braintree\Gateway\Http\Client\TransactionRefund` classes is now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17368](https://github.com/magento/magento2/pull/17368)*.
+<!-- ENGCOM-2657 -->* The `\Magento\Braintree\Gateway\Http\Client\TransactionVoid` and `\Magento\Braintree\Gateway\Http\Client\TransactionRefund` classes are now covered by unit tests. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [17368](https://github.com/magento/magento2/pull/17368)*.
 
 
 <!-- ENGCOM-2632 -->* The `\Magento\Catalog\CustomerData\CompareProducts` class is now covered by unit tests. *Fix submitted by [Oleksandr Kravchuk](https://github.com/Yogeshks) in pull request [17250](https://github.com/magento/magento2/pull/17250)*.
@@ -589,7 +563,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2812 -->* The JavaScript  validation rule used to validate AM/PM time settings now works as expected when JavaScript is minified. *Fix submitted by [Mark Shust](https://github.com/markoshust) in pull request [17652](https://github.com/magento/magento2/pull/17652)*. [GitHub-17648](https://github.com/magento/magento2/issues/17648)
 
-<!-- ENGCOM-2834 -->* The message list component message type now has a message type of success. Previously, this type was always `error` when the `parameters` property was specified. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17701](https://github.com/magento/magento2/pull/17701)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
+<!-- ENGCOM-2834 -->* The message list component message type now has a message type of `success`. Previously, this type was always `error` when the `parameters` property was specified. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17701](https://github.com/magento/magento2/pull/17701)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
 
 <!-- ENGCOM-2607 -->* The confirmation modal buttons that Magento displays when a customer sends a product to the trash are now translated as expected. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [17275](https://github.com/magento/magento2/pull/17275)*. [GitHub-17193](https://github.com/magento/magento2/issues/17193)
 
