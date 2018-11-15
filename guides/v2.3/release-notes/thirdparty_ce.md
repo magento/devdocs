@@ -1,12 +1,19 @@
 ---
 group: release-notes
-subgroup: Third-party licenses
-menu_title: Magento Open Source third-party licenses
 title: Magento Open Source third-party licenses
-menu_order: 1
 ---
 
 This page contains links to the third party components used within {{site.data.var.ce}}. Click the **Name** links to view the repository and the license agreement.
+
+## Auto generated table
+
+{% assign packages = site.data.codebase.composer-lock.packages %}
+
+Name | Version |  License | Description
+--- | --- | --- | --- {% for package in packages %}
+[{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }}{% endfor %}
+
+## Manually written table
 
 Name | Version |  License
 --- | --- | ---
