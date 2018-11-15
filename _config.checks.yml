@@ -42,7 +42,6 @@ html-proofer:
   - !ruby/regexp /howdoi/
   - !ruby/regexp /mariadb.com/
   - !ruby/regexp /mrg/
-  - !ruby/regexp /navigation/
   - !ruby/regexp /pattern-library/
   - !ruby/regexp /release-notes/
   - !ruby/regexp /rest/
