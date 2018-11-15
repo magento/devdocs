@@ -9,9 +9,11 @@ This page contains links to the third party components used within {{site.data.v
 
 {% assign packages = site.data.codebase.composer-lock.packages %}
 
-Name | Version |  License | Description
---- | --- | --- | --- {% for package in packages %}
-[{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }}{% endfor %}
+<!-- {% increment counter %} -->
+
+\# | Name | Version |  License | Description
+--- |--- | --- | --- | --- {% for package in packages %}
+{% increment counter %} | [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }}{% endfor %}
 
 ## Manually written table
 
