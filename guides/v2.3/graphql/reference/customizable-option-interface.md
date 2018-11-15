@@ -24,6 +24,7 @@ Field | Type | Description
 `title` |  String | The display name for this option
 `required` | Boolean | Indicates whether the option is required
 `sort_order` | Int | The order in which the option is displayed
+`option_id` | Int |  The ID assigned to the option
 
 ## CustomizableAreaOption object
 
@@ -149,3 +150,25 @@ Field | Type | Description
 `sort_order` | Int | The order in which the option is displayed
 
 ## Example usage
+
+The following query returns information about the customizable options configured for the product with a `sku` of `xyz`.
+
+```json
+  products(filter: {sku: {eq: "xyz"}}) {
+    items {
+      id
+      name
+      sku
+      type_id
+      ... on CustomizableProductInterface {
+        options {
+          title
+          required
+          sort_order
+          option_id
+        }
+      }
+    }
+  }
+}
+```
