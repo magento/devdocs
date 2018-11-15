@@ -150,6 +150,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
 
 * Custom and extension attributes defined in any attribute set
 * The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)
+* 
 * Product types that define their own implementation of `ProductInterface`, including
   * [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html)
   * [ConfigurableProduct]({{ page.baseurl }}/graphql/reference/configurable-product.html)
@@ -184,6 +185,7 @@ Attribute | Data type | Description
 `name` | String | The product name. Customers use this name to identify the product.
 `new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
 `new_to_date` | String | The end date for new product listings
+`only_x_left_in_stock` | Float | The remaining quantity of this item
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
 `price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
@@ -195,6 +197,7 @@ Attribute | Data type | Description
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
+`stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
 `thumbnail` | String | The relative path to the product's thumbnail image
