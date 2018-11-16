@@ -40,4 +40,3 @@ html-proofer:
   - !ruby/regexp /pattern-library/
   - !ruby/regexp /release-notes/
   - !ruby/regexp /rest/
-  - !ruby/regexp /ui_comp_guide/
