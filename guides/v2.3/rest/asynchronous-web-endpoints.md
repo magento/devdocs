@@ -9,6 +9,9 @@ functional_areas:
 
 An asynchronous web endpoint intercepts messages to a Web API and writes them to the message queue. Each time the system accepts such an API request, it generates a UUID identifier. Magento includes this UUID when it adds the message to the queue. Then, a consumer reads the messages from the queue and executes them one-by-one.
 
+{:.bs-callout .bs-callout-tip}
+Use the `bin/magento queue:consumers:start async.operations.all` command to enable asynchronous requests.
+
 Magento supports the following types of asynchronous requests:
 
 * POST

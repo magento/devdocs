@@ -1,74 +1,13 @@
+# Configure html-proofer parameters
 module Proofer
-  # Constants to be used in options
-  FILE_IGNORE = %w[
-    404.html
-    action-groups.html
-    cloud-fastly.html
-    codelinks
-    contributing.html
-    css-preprocess.html
-    es-overview.html
-    guides/m1x
-    index.html
-    magento-third-party.html
-    magento-techbull.html
-    mftf
-    pattern-library
-    release-notes
-    search.html
-    swagger
-    template.html
-    theme_dictionary.html
-    videos
-    whats-new.html
-  ].freeze
 
-  URL_IGNORE = %w[
-    account.magento.com
-    architecture
-    config-guide
-    docs.magento.com
-    extension-dev-guide
-    frontend-dev-guide
-    github.com
-    guides/v2.0
-    howdoi
-    javascript-dev-guide
-    mariadb.com
-    mftf
-    mrg
-    navigation
-    pattern-library
-    release-notes
-    rest
-    ui_comp_guide
-    ui-library
-    www.thegeekstuff.com
-    yatil.net
-  ].freeze
-
-  # Configure htmlproofer parameters:
+  # Read options from the '_config.checks.yml'
+  # Ignore baseurl if $branch is available in environment
   def options
-    {
-      log_level: :info,
-      only_4xx: true,
-      # external_only: true, # Check external links only
-      checks_to_ignore: %w[ScriptCheck ImageCheck],
-      allow_hash_ref: true,
-      alt_ignore: [/.*/],
-      file_ignore: array_to_re(FILE_IGNORE),
-      url_ignore: array_to_re(URL_IGNORE),
-      error_sort: :desc, # Sort by invalid link instead of affected file path (default). This makes it easier to see how many files the broken link affects.
-      parallel: { in_processes: 3 },
-      typhoeus: { followlocation: true, connecttimeout: 10, timeout: 30 },
-      hydra: { max_concurrency: 50 },
-      # cache: { :timeframe => '30d' }
-    }
-  end
-
-  # Convert array of strings to array of regular expressions
-  def array_to_re(array)
-    array.map { |item| /#{item}/ }
+    config = YAML.load_file('_config.checks.yml')
+    return config['html-proofer'] unless ENV['branch']
+    url_swap = { :url_swap => { %r{\A/#{ENV['branch']}} => '' } }
+    cicd_config = config['html-proofer'].merge(url_swap)
   end
 
   # Count the number of lines in the given file
@@ -76,7 +15,8 @@ module Proofer
     f = File.new(filepath)
     f.readlines[-1]
     count = f.lineno.to_s
-    puts "#{count} lines in the #{File.basename(filepath)} file.".blue
+    puts "The link check report contains #{count} lines.".blue
+    puts "To see the report, open the #{filepath} file.".blue
   end
 
   # Read the current Git branch
@@ -91,8 +31,8 @@ module Proofer
 
   # Name the file for the link checker report
   def file_name
-    prefix = "broken-links-in-"
-    timestamp = Time.now.strftime("_%m-%d_%H-%M-%S")
+    prefix = 'broken-links-in-'
+    timestamp = Time.now.strftime('_%m-%d_%H-%M-%S')
     prefix + current_branch + timestamp
   end
 

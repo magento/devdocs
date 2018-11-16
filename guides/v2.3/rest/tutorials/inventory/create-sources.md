@@ -2,24 +2,25 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Create sources
-subtitle: Order processing with MSI
+subtitle: Order processing with Inventory Management
 menu_title: Step 2. Create sources
 menu_order: 20
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
+redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/create-sources.html
 functional_areas:
   - Integration
 ---
 
-**Sources** are the physical locations from which you manage product inventory and ship orders. These locations can include warehouses, brick-and-mortar stores, distribution centers, and drop shippers. MSI leverages the quantities and salable quantities per stock and manages inventory amounts automatically for managed products and orders. Virtual and downloadable products can also be assigned to a source.
+**Sources** are the physical locations from which you manage product inventory and ship orders. These locations can include warehouses, brick-and-mortar stores, distribution centers, and drop shippers. Magento leverages the quantities and salable quantities per stock and manages inventory amounts automatically for managed products and orders. Virtual and downloadable products can also be assigned to a source.
 
 You cannot delete or disable the default source. You can create, modify, enable, and disable custom sources, but you cannot delete them.
 
 This step guides you through the process of creating sources for your inventory, including warehouses for the physical products and another source for virtual and downloadable products.
 
-For more information about sources, see the Wiki topic [Create sources](https://github.com/magento-engcom/msi/wiki/Create-Sources).
+For more information about sources, see [Inventory Management overview]({{ page.baseurl }}/inventory/index.html).
 
 {:.bs-callout .bs-callout-info}
 This step requires an admin token. See [Generate the admin token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html) for more information.
