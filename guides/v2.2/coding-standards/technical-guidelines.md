@@ -506,6 +506,10 @@ class View extends Template
 
 6.1.2. Every application layer (Presentation, Service Contracts, Data Access) MUST process (handle or re-throw) exceptions of the underlying layer.
 
+6.2.5. Configuration for the presentation layer SHOULD be declared in corresponding application area. This includes events and plugins that customize presentation layer
+
+6.2.5.1. Configuration that applies to all areas CAN be declared in `global` area
+
 ### 6.2. Presentation layer
 
 6.2.1. According to CQRS, the Presentation layer hosts the Command and the Query Infrastructures:
@@ -533,6 +537,10 @@ class View extends Template
 ### 6.4. Service Contracts (Application) layer
 
 We are reviewing this section and will publish it soon.
+
+6.4.1. Domain/business logic MUST be executed on the Service Contracts layer
+
+6.4.1.1. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in `global` area
 
 ## 7. Configuration
 
