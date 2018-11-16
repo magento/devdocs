@@ -3,16 +3,23 @@ group: inventory
 title: Source selection algorithms
 ---
 
-The **Source Selection Algorithm (SSA)** receives the total number of shippable SKUs and their quantities in an order as well as the order's shipping address. It recommends how to fulfill partial and full shipments. The merchant decides which business needs take precedence when deciding which shipping method to use:
+The **Source Selection Algorithm (SSA)** recommends how to fulfill partial and full shipments. The merchant decides which business needs take precedence when deciding which shipping method to use:
 
 * Should the products be delivered from the sources designated as having the highest priority? 
 * Should the total shipment cost be the primary factor in choosing a shipment method?
 * Should the shipments originate from the closest source?
+* Should the fastest shipping method be used, even if it's not the cheapest?
 
 Magento 2.3 provides the priority-based SSA only. Third party developers can create their own algorithms to 
 help merchants decide which shipping option best meets their needs.
 
 Magento does not enforce or save the results of SSA recommendations. The recommendations reflect conditions at the moment when the algorithm runs, but conditions change over time. For example, the amount of in-stock products will always fluctuate, and shipping costs might change. The merchant can also modify the recommendations by adjusting quantities for deduction or even by re-assigning the shipment's sources of origin.  
+
+## The priority algorithm
+
+Inventory Management defines the priority algorithm, which recommends delivering products from sources having the highest priority. The `SourceSelectionServiceInterface` accepts an `InventoryRequestInterface` object, which in turn contains the stock ID and a list of items to be shipped. Each item contains only the SKU and quantity. Other potentially relevant data, such as shipping address, is not included, because the priority algorithm does not need it. 
+
+Additional input data might be needed for more sophisticated algorithms. For example, an algorithm that calculates distance would need the shipping address. that's why `InventoryRequestInterface` implements `ExtensibleDataInterface` interfaces which could be extended with custom input parameters
 
 ## SSA interfaces
 
@@ -83,7 +90,7 @@ class MinimalDeliveryCostAlgorithm implements SourceSelectionInterface
 
 ### Create a `InventoryRequest` factory for quotes  (optional)
 
-Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines which sources to use to fulfill the order at the time a shipment is created. 
+Magento provides the [`InventoryRequestFromOrderFactory`](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventoryShipping/Model/InventoryRequestFromOrderFactory.php), which determines the sources to use to fulfill the order at the time a shipment is created. 
 
 ```php?start_inline=1
 class InventoryRequestFromOrderFactory
