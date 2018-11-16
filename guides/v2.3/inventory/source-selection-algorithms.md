@@ -19,7 +19,7 @@ Magento does not enforce or save the results of SSA recommendations. The recomme
 
 Inventory Management defines the priority algorithm, which recommends delivering products from sources having the highest priority. The `SourceSelectionServiceInterface` accepts an `InventoryRequestInterface` object, which in turn contains the stock ID and a list of items to be shipped. Each item contains only the SKU and quantity. Other potentially relevant data, such as shipping address, is not included, because the priority algorithm does not need it. 
 
-Additional input data might be needed for more sophisticated algorithms. For example, an algorithm that calculates distance would need the shipping address. that's why `InventoryRequestInterface` implements `ExtensibleDataInterface` interfaces which could be extended with custom input parameters
+Additional input data might be needed for more sophisticated algorithms. For example, an algorithm that calculates distance would need the shipping address and all data entered for the source (GPS or full address). That's why `InventoryRequestInterface` implements `ExtensibleDataInterface` interfaces, which can be extended with custom input parameters.
 
 ## SSA interfaces
 
