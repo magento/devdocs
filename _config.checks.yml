@@ -35,7 +35,6 @@ html-proofer:
   :url_ignore:
   - !ruby/regexp /frontend-dev-guide/
   - !ruby/regexp /guides\/v2.0/
-  - !ruby/regexp /howdoi/
   - !ruby/regexp /mrg/
   - !ruby/regexp /pattern-library/
   - !ruby/regexp /release-notes/
