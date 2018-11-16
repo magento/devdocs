@@ -33,17 +33,10 @@ html-proofer:
   - !ruby/regexp /videos/
   - !ruby/regexp /whats-new.html/
   :url_ignore:
-  - !ruby/regexp /account.magento.com/
-  - !ruby/regexp /docs.magento.com/
-  - !ruby/regexp /extension-dev-guide/
   - !ruby/regexp /frontend-dev-guide/
-  - !ruby/regexp /github.com/
   - !ruby/regexp /guides\/v2.0/
   - !ruby/regexp /howdoi/
-  - !ruby/regexp /mariadb.com/
   - !ruby/regexp /mrg/
   - !ruby/regexp /pattern-library/
   - !ruby/regexp /release-notes/
   - !ruby/regexp /rest/
-  - !ruby/regexp /www.thegeekstuff.com/
-  - !ruby/regexp /yatil.net/
