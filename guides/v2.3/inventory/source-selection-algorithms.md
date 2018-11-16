@@ -23,7 +23,7 @@ Additional input data might be needed for more sophisticated algorithms. For exa
 
 ## SSA interfaces
 
-Currently, Inventory Management deducts stock from the appropriate source after the merchant create a shipment for an order. However, that's not flexible enough--a developer might want to introduce customizations and launch the SSA when the customer proceeds to checkout. Running the SSA at this point could provide the customer more accurate shipping costs. Note in this case, the `Order` object has not created yet, and the system must instead rely on the `Quote` object.
+Currently, Inventory Management deducts stock from the appropriate source after the merchant creates a shipment for an order. However, that's not flexible enough--a developer might want to introduce customizations and launch the SSA when the customer proceeds to checkout. Running the SSA at this point could provide the customer more accurate shipping costs. Note in this case, the `Order` object has not created yet, and the system must instead rely on the `Quote` object.
 
 Taking into account that there are at least two valid business cases when to launch the SSA, and the data source can be an `Order` or `Quote` object, Inventory Management introduces a new layer of abstraction. The algorithm must use an abstract data container instead of a specific Magento entity.
 
