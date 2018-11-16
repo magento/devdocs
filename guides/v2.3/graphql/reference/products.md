@@ -197,7 +197,7 @@ Attribute | Data type | Description
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
-`stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`
+`stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
 `thumbnail` | String | The relative path to the product's thumbnail image
