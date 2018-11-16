@@ -82,7 +82,7 @@ The value of the `id` and `website_id` parameters for the US Store View is `2`.
 
 ## Create a customer
 
-We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
+We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/prerequisite-tasks/create-admin-token.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
 
 **Endpoint**
 

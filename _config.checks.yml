@@ -39,4 +39,3 @@ html-proofer:
   - !ruby/regexp /mrg/
   - !ruby/regexp /pattern-library/
   - !ruby/regexp /release-notes/
-  - !ruby/regexp /rest/
