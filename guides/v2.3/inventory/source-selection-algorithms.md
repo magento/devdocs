@@ -131,7 +131,7 @@ class InventoryRequestFromOrderFactory
 }
 ```
 
-To add an SSA at the time of checkout, introduce your own factory that produces an  `InventoryRequestInterface` based on a Quote object, outlined as follows:
+To add an SSA at the time of checkout, introduce your own factory that produces an  `InventoryRequestInterface` based on a `Quote` object, outlined as follows:
 
 ```php?start_inline=1
 class InventoryRequestFactory
