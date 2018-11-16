@@ -8,7 +8,7 @@ The **Source Selection Algorithm (SSA)** recommends how to fulfill partial and f
 * Should the products be delivered from the sources designated as having the highest priority? 
 * Should the total shipment cost be the primary factor in choosing a shipment method?
 * Should the shipments originate from the closest source?
-* Should the fastest shipping method be used, even if it's not the cheapest?
+* Should the fastest shipping method with the shortest delivery time be used, even if it's not the cheapest?
 
 Magento 2.3 provides the priority-based SSA only. Third party developers can create their own algorithms to 
 help merchants decide which shipping option best meets their needs.
