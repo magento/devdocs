@@ -1,5 +1,5 @@
 ---
-group: module-reference-guide
+group: module-reference-guide-2_3
 title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 ---
