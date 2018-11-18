@@ -67,9 +67,17 @@
 
 <p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
 
+<p>Note that after updating to this release, third-party modules that depend upon Magento core backup functionality will no longer work. Alternatively, you can use one of these two methods  to enable database backups: </p>
+
+<ul>
+<li>Change <b>false</b> to <b>true</b> in the <b>config</b> > <b>modules</b> > <b>Mage_Backup</b> > <b>active</b>  setting of <code> app/etc/modules/Mage_All.xml</code>. </li>
+<li>From the Admin,  change the <b>System</b> > <b>Configuration</b> > <b>Advanced</b> > <b>Disable  Modules Output</b> > <b>Mage_Backup</b> from <b>disabled</b> to <b>enabled</b>.</li>
+</ul>
+
 <h3>Fixed issues and enhancements</h3>
 <ul>
 <li><!-- MPERF-10223 -->This release provides support for PHP 7.2. </li>
+<li><!-- MPERF-10217 -->We’ve removed the CC module. As a result, third-party modules that depend upon either the <code>ccsave</code> method or the <code>xmlconnect</code> method will not work as expected.  Third-party themes that implement <code>ccsave</code> will not work as expected, either. </li>
 <li><!-- MPERF-10219 10218 -->The Magento logo has been updated throughout the code base. </li>	
 <li><!-- MPERF-8829 -->The <b>Continue</b> button now works as expected on the Payments step of checkout  when paying with the PayPal payment method. </li>	
 <li><!-- MPERF-8826 -->Google Tag Manager now logs sales information in Google Analytics as expected. </li>	
