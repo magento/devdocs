@@ -53,7 +53,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 ### Other improvements
 
 
-* **Elasticsearch support for Magento Community version**. Elasticsearch support was previously provided in Magento Commerce only. 
+* **Elasticsearch support for Magento Open Source version**. Elasticsearch support was previously provided in Magento Commerce only. 
 
 * **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
 
