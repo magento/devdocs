@@ -1,13 +1,14 @@
 ---
 layout: tutorial
-title: Step 11. Create an invoice
-subtitle: Order processing with MSI
-menu_title: Step 11. Create an invoice
-menu_order: 110
+title: Step 10. Create an invoice
+subtitle: Order processing with Inventory Management
+menu_title: Step 10. Create an invoice
+menu_order: 100
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
+redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/create-invoice.html
 functional_areas:
   - Integration
 ---
@@ -47,7 +48,7 @@ where `3` is the `orderid`
 
 **Response**
 
-An invoice `id`, such as `1`.
+An invoice `id`, such as `3`.
 
 ## Verify this step {#verify-step}
 

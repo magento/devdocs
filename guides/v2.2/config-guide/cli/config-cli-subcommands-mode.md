@@ -129,7 +129,7 @@ When you change from production to developer mode, you should clear generated cl
 
 	The following message displays:
 
-		Switched to developer mode.
+		Enabled developer mode.
 
 ### Change to default mode
 

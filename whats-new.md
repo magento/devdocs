@@ -101,7 +101,7 @@ Added topics on [Asynchronous web endpoints](https://devdocs.magento.com/guides/
 Update [nginx](https://devdocs.magento.com/guides/v2.2/install-gde/prereq/nginx.html) PHP versions and Composer installation steps|2.2.x, 2.3.x|Major update|Aug 13
 Added Events to [WYSIWYG component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-wysiwyg.html).<br/> Updated list of methods in [Add Custom Editor](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html#step-3-create-editor-adapter).|2.3.x|Major update|Aug 09
 Added CLI enable/disable commands for profiler in [Enable profiling (MAGE_PROFILER)](https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/mage-profiler.html) for 2.2 and 2.3|2.2.x, 2.3.x|Major update|Aug 08
-Added the [Order Processing for MSI tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/msi-order-processing/index.html)|2.3.x|New topic|Aug 08
+Added the [Order Processing for MSI tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/inventory/index.html)|2.3.x|New topic|Aug 08
 Corrected the path of the `PUT /V1/companyCredits/:id` [endpoint](https://devdocs.magento.com/guides/v2.2/b2b/credit-manage.html#update-a-company-credit-limit).|2.2.x, 2.3.x|Technical changes|Aug 06
 Updated the Inbound and Outbound [Integration environment IP address tables](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html#ipaddress).|2.x|Technical changes|Aug 06
 Added the topic [Custom routes](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/webapi/custom-routes.html).|2.3.x|New topic|Aug 03
@@ -127,7 +127,7 @@ Added the [CLI instructions](https://devdocs.magento.com/guides/v2.3/comp-mgr/cl
 Added [installation instructions](https://devdocs.magento.com/guides/v2.3/release-notes/2.3.0-alpha-install.html) for Commerce 2.3 Alpha.|2.3.x|Major update|Jul 20
 Updated [location](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html#mftf-tests) of the MFTF tests.|2.2.x, 2.3.x|Technical changes|Jul 18
 The default username for new Magento Commerce Cloud accounts has been changed from `Admin` to the Project Owner email address.|2.x|Technical changes|Jul 17
-Changed the default value for the [SKIP_HTML_MINIFICATION global variable](https://devdocs.magento.com/guides/v2.1/cloud/env/variables-intro.html##skip_html_minification) to `true` to minimize downtime during deployment.|v2.2.1, v2.2.x, v2.2.3|Technical changes|Jul 13
+Changed the default value for the [SKIP_HTML_MINIFICATION global variable](https://devdocs.magento.com/guides/v2.1/cloud/env/variables-global.html#skip_html_minification) to `true` to minimize downtime during deployment.|v2.2.1, v2.2.x, v2.2.3|Technical changes|Jul 13
 Enhanced the [hooks property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks) so that you can customize the build phase further by using the `generate` and `transfer` commands to perform additional actions when specifically building code or moving files.|2.1.x, 2.2.x|Major update|Jul 12
 Added MSI and bulk API endpoints to [List of REST endpoints by module](https://devdocs.magento.com/guides/v2.3/rest/list.html)|2.3.x|Technical changes|Jul 12
 Added [Security information](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#15-security) to Coding Standards [Technical Guidelines](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).|2.2.x|Major update|Jul 09

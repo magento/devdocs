@@ -1,13 +1,14 @@
 ---
 layout: tutorial
-title: Step 9. Prepare for checkout
-subtitle: Order processing with MSI
-menu_title: Step 9. Prepare for checkout
-menu_order: 90
+title: Step 8. Prepare for checkout
+subtitle: Order processing with Inventory Management
+menu_title: Step 8. Prepare for checkout
+menu_order: 80
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
+redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/prepare-for-checkout.html
 functional_areas:
   - Integration
 ---
@@ -52,7 +53,7 @@ The payload contains the shipping address.
       "city": "Purchase",
       "firstname": "Jane",
       "lastname": "Doe",
-      "customer_id": 4,
+      "customer_id": 5,
       "email": "jdoe@example.com",
       "telephone": "(512) 555-1111",
       "same_as_billing": 1
@@ -62,7 +63,7 @@ The payload contains the shipping address.
 
 **Response**
 
-The cost for the `flatrate` shipping method is $400 (80 items x $5 each). The virtual item does not have a shipping charge because it is not a physical product.
+The cost for the `flatrate` shipping method is $350 (70 items x $5 each). The downloadable item does not have a shipping charge because it is not a physical product.
 
 ``` json
 [
@@ -71,12 +72,12 @@ The cost for the `flatrate` shipping method is $400 (80 items x $5 each). The vi
         "method_code": "flatrate",
         "carrier_title": "Flat Rate",
         "method_title": "Fixed",
-        "amount": 400,
-        "base_amount": 400,
+        "amount": 350,
+        "base_amount": 350,
         "available": true,
         "error_message": "",
-        "price_excl_tax": 400,
-        "price_incl_tax": 400
+        "price_excl_tax": 350,
+        "price_incl_tax": 350
     }
 ]
 ```
@@ -104,46 +105,47 @@ Magento returns a list of payment options and calculates the order totals.
 **Payload**
 
 ``` json
-{  "addressInformation": {
-		"shipping_address": {
-			"region": "New York",
-			"region_id": 43,
-			"region_code": "NY",
-			"country_id": "US",
-			"street": [
-				"123 Oak Ave"
-			],
-			"postcode": "10577",
-			"city": "Purchase",
-			"firstname": "Jane",
-			"lastname": "Doe",
-			"email": "jdoe@example.com",
-			"telephone": "512-555-1111"
-		},
-		"billing_address": {
-			"region": "New York",
-			"region_id": 43,
-			"region_code": "NY",
-			"country_id": "US",
-			"street": [
-				"123 Oak Ave"
-			],
-			"postcode": "10577",
-			"city": "Purchase",
-			"firstname": "Jane",
-			"lastname": "Doe",
-			"email": "jdoe@example.com",
-			"telephone": "512-555-1111"
-		},
-		"shipping_carrier_code": "flatrate",
-		"shipping_method_code": "flatrate"
-	}
+{
+"addressInformation": {
+    "shipping_address": {
+        "region": "New York",
+        "region_id": 43,
+        "region_code": "NY",
+        "country_id": "US",
+        "street": [
+            "123 Oak Ave"
+        ],
+        "postcode": "10577",
+        "city": "Purchase",
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "email": "jdoe@example.com",
+        "telephone": "512-555-1111"
+    },
+    "billing_address": {
+        "region": "New York",
+        "region_id": 43,
+        "region_code": "NY",
+        "country_id": "US",
+        "street": [
+            "123 Oak Ave"
+        ],
+        "postcode": "10577",
+        "city": "Purchase",
+        "firstname": "Jane",
+        "lastname": "Doe",
+        "email": "jdoe@example.com",
+        "telephone": "512-555-1111"
+    },
+    "shipping_carrier_code": "flatrate",
+    "shipping_method_code": "flatrate"
+    }
 }
 ```
 
 **Response**
 
-The subtotal of the order is $720, and shipping charges are $400. The grand total is $1120.
+The subtotal of the order is $2462, and shipping charges are $350. The grand total is $2812.
 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} in the next step.
 
@@ -152,21 +154,25 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 {
     "payment_methods": [
         {
+            "code": "banktransfer",
+            "title": "Bank Transfer Payment"
+        },
+        {
             "code": "checkmo",
             "title": "Check / Money order"
         }
     ],
     "totals": {
-        "grand_total": 1120,
-        "base_grand_total": 1120,
-        "subtotal": 720,
-        "base_subtotal": 720,
+        "grand_total": 2812,
+        "base_grand_total": 2812,
+        "subtotal": 2462,
+        "base_subtotal": 2462,
         "discount_amount": 0,
         "base_discount_amount": 0,
-        "subtotal_with_discount": 720,
-        "base_subtotal_with_discount": 720,
-        "shipping_amount": 400,
-        "base_shipping_amount": 400,
+        "subtotal_with_discount": 2462,
+        "base_subtotal_with_discount": 2462,
+        "shipping_amount": 350,
+        "base_shipping_amount": 350,
         "shipping_discount_amount": 0,
         "base_shipping_discount_amount": 0,
         "tax_amount": 0,
@@ -174,20 +180,20 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         "weee_tax_applied_amount": null,
         "shipping_tax_amount": 0,
         "base_shipping_tax_amount": 0,
-        "subtotal_incl_tax": 720,
-        "shipping_incl_tax": 400,
-        "base_shipping_incl_tax": 400,
+        "subtotal_incl_tax": 2462,
+        "shipping_incl_tax": 350,
+        "base_shipping_incl_tax": 350,
         "base_currency_code": "USD",
         "quote_currency_code": "USD",
-        "items_qty": 81,
+        "items_qty": 71,
         "items": [
             {
-                "item_id": 5,
-                "price": 5,
-                "base_price": 5,
+                "item_id": 3,
+                "price": 32,
+                "base_price": 32,
                 "qty": 20,
-                "row_total": 100,
-                "base_row_total": 100,
+                "row_total": 640,
+                "base_row_total": 640,
                 "row_total_with_discount": 0,
                 "tax_amount": 0,
                 "base_tax_amount": 0,
@@ -195,22 +201,22 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "discount_amount": 0,
                 "base_discount_amount": 0,
                 "discount_percent": 0,
-                "price_incl_tax": 5,
-                "base_price_incl_tax": 5,
-                "row_total_incl_tax": 100,
-                "base_row_total_incl_tax": 100,
+                "price_incl_tax": 32,
+                "base_price_incl_tax": 32,
+                "row_total_incl_tax": 640,
+                "base_row_total_incl_tax": 640,
                 "options": "[]",
                 "weee_tax_applied_amount": null,
                 "weee_tax_applied": null,
-                "name": "Simple Product 1"
+                "name": "Voyage Yoga Bag"
             },
             {
-                "item_id": 6,
-                "price": 10,
-                "base_price": 10,
-                "qty": 60,
-                "row_total": 600,
-                "base_row_total": 600,
+                "item_id": 4,
+                "price": 36,
+                "base_price": 36,
+                "qty": 50,
+                "row_total": 1800,
+                "base_row_total": 1800,
                 "row_total_with_discount": 0,
                 "tax_amount": 0,
                 "base_tax_amount": 0,
@@ -218,22 +224,22 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "discount_amount": 0,
                 "base_discount_amount": 0,
                 "discount_percent": 0,
-                "price_incl_tax": 10,
-                "base_price_incl_tax": 10,
-                "row_total_incl_tax": 600,
-                "base_row_total_incl_tax": 600,
+                "price_incl_tax": 36,
+                "base_price_incl_tax": 36,
+                "row_total_incl_tax": 1800,
+                "base_row_total_incl_tax": 1800,
                 "options": "[]",
                 "weee_tax_applied_amount": null,
                 "weee_tax_applied": null,
-                "name": "Simple Product 2"
+                "name": "Driven Backpack"
             },
             {
-                "item_id": 7,
-                "price": 20,
-                "base_price": 20,
+                "item_id": 5,
+                "price": 22,
+                "base_price": 22,
                 "qty": 1,
-                "row_total": 20,
-                "base_row_total": 20,
+                "row_total": 22,
+                "base_row_total": 22,
                 "row_total_with_discount": 0,
                 "tax_amount": 0,
                 "base_tax_amount": 0,
@@ -241,21 +247,21 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "discount_amount": 0,
                 "base_discount_amount": 0,
                 "discount_percent": 0,
-                "price_incl_tax": 20,
-                "base_price_incl_tax": 20,
-                "row_total_incl_tax": 20,
-                "base_row_total_incl_tax": 20,
-                "options": "[]",
+                "price_incl_tax": 22,
+                "base_price_incl_tax": 22,
+                "row_total_incl_tax": 22,
+                "base_row_total_incl_tax": 22,
+                "options": "[{\"value\":\"Yoga Adventure\",\"label\":\"Downloads\"}]",
                 "weee_tax_applied_amount": null,
                 "weee_tax_applied": null,
-                "name": "Gold Club Membership"
+                "name": "Yoga Adventure"
             }
         ],
         "total_segments": [
             {
                 "code": "subtotal",
                 "title": "Subtotal",
-                "value": 720
+                "value": 2462
             },
             {
                 "code": "giftwrapping",
@@ -274,7 +280,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
             {
                 "code": "shipping",
                 "title": "Shipping & Handling (Flat Rate - Fixed)",
-                "value": 400
+                "value": 350
             },
             {
                 "code": "tax",
@@ -287,7 +293,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
             {
                 "code": "grand_total",
                 "title": "Grand Total",
-                "value": 1120,
+                "value": 2812,
                 "area": "footer"
             },
             {
