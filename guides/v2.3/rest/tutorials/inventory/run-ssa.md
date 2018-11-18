@@ -1,25 +1,26 @@
 ---
 layout: tutorial
-title: Step 12. Run the Source Selection Algorithm
-subtitle: Order processing with MSI
-menu_title: Step 12. Run the Source Selection Algorithm
-menu_order: 120
+title: Step 11. Run the Source Selection Algorithm
+subtitle: Order processing with Inventory Management
+menu_title: Step 11. Run the Source Selection Algorithm
+menu_order: 110
 level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
+redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/run-ssa.html
 functional_areas:
   - Integration
 ---
 
-One of the most significant parts of MSI is the Source Selection Algorithm (SSA). SSA analyzes and determines the best match for sources and shipping based on the priorities you specified in [Link stocks and sources
-]({{ page.baseurl }}/rest/tutorials/msi-order-processing/order-intro.html). The algorithm also provides a list of source items with quantities to deduct per each source item.
+One of the most significant parts of Inventory Management is the Source Selection Algorithm (SSA). SSA analyzes and determines the best match for sources and shipping based on the priorities you specified in [Step 4. Link stocks and sources
+]({{ page.baseurl }}/rest/tutorials/inventory/assign-source-to-stock.html). The algorithm also provides a list of source items with quantities to deduct per each source item.
 
 For more information about shipping and SSAs, see the Wiki topic [Shipment and Order Management](https://github.com/magento-engcom/msi/wiki/Shipment-and-Order-Management).
 
 ## Get the list of algorithms
 
-Currently, MSI supports only the default SSA for priority. Third-party developers and future releases may add support for additional algorithms.
+Currently, Magento supports only the default SSA for priority. Third-party developers and future releases may add support for additional algorithms.
 
 **Endpoint**
 
@@ -55,7 +56,7 @@ Not applicable
 
 The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algorithm defined by the `algorithmCode` attribute to calculate the recommended sources and quantities for each item defined in the `items` array.
 
-This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (20 items of product `sp1` and 60 items of product `sp2`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
+This tutorial does not consider complications such selling out of products or back ordering. We can ask the SSA to determine the best way to immediately ship all the items ordered (20 items of product `24-WB01` and 50 items of product `24-WB03`). If the `shippable` attribute in the response is `false`, there are not enough salable items to complete a full shipment, but the merchant can still perform a partial shipment.
 
 
 **Endpoint**
@@ -79,12 +80,12 @@ This tutorial does not consider complications such selling out of products or ba
     "inventoryRequest": {
         "stockId": 2,
         "items": [{
-            "sku": "sp1",
+            "sku": "24-WB01",
             "qty": 20
         },
         {
-            "sku": "sp2",
-            "qty": 60
+            "sku": "24-WB03",
+            "qty": 50
         }]
     },
     "algorithmCode": "priority"
@@ -97,9 +98,9 @@ The SSA recommends shipping from the following sources:
 
 Product | Source | Quantity
 --- | --- | ---
-`sp1` | Baltimore | 20
-`sp2` | Baltimore | 25
-`sp2` | Reno | 35
+`24-WB01` | Baltimore | 20
+`24-WB03` | Baltimore | 19
+`24-WB03` | Reno | 31
 {:style="table-layout:auto;"}
 
 
@@ -108,33 +109,33 @@ Product | Source | Quantity
     "source_selection_items": [
         {
             "source_code": "baltimore_wh",
-            "sku": "sp1",
+            "sku": "24-WB01",
             "qty_to_deduct": 20,
-            "qty_available": 50
+            "qty_available": 35
         },
         {
             "source_code": "austin_wh",
-            "sku": "sp1",
+            "sku": "24-WB01",
             "qty_to_deduct": 0,
             "qty_available": 10
         },
         {
             "source_code": "reno_wh",
-            "sku": "sp1",
+            "sku": "24-WB01",
             "qty_to_deduct": 0,
-            "qty_available": 100
-        },
-        {
-            "source_code": "baltimore_wh",
-            "sku": "sp2",
-            "qty_to_deduct": 25,
             "qty_available": 25
         },
         {
+            "source_code": "baltimore_wh",
+            "sku": "24-WB03",
+            "qty_to_deduct": 19,
+            "qty_available": 19
+        },
+        {
             "source_code": "reno_wh",
-            "sku": "sp2",
-            "qty_to_deduct": 35,
-            "qty_available": 50
+            "sku": "24-WB03",
+            "qty_to_deduct": 31,
+            "qty_available": 42
         }
     ],
     "shippable": true
