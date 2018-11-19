@@ -96,6 +96,6 @@ You'll also need `root` privileges to create the [Magento file system owner] and
 
 <!-- LINK DEFINITIONS -->
 
-[installation quick reference (tutorial)]: {{ page.baseurl }}/install-gde/install-quick-ref.html
+[installation quick reference (tutorial)]: {{ page.baseurl }}/instal-gde/install-quick-ref.html
 [installation roadmap (reference)]: {{ page.baseurl }}/install-gde/install-roadmap_part1.html
 [Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
