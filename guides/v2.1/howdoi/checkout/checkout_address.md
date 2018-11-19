@@ -9,6 +9,7 @@ level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
 ---
+TEST
 
 This topic describes how to implement a custom shipping address renderer.
 
