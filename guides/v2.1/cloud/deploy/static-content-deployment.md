@@ -6,13 +6,13 @@ functional_areas:
   - Configuration
 ---
 
-Static content deployment (SCD) has a great impact on the store deployment process that depends on the amount of content generated—such as images, scripts, CSS, videos, and web pages—and when to generate the content. By default, the static content generates during the [deploy phase]({{page.baseurl}}/cloud/deploy/optimize-cloud-deploy.html#deploy-phase) when the site is down; however, this can take time because it must copy the content to the mounted `pub/static` directory.
+Static content deployment (SCD) has a great impact on the store deployment process that depends on the amount of content generated—such as images, scripts, CSS, videos, and web pages—and when to generate the content. By default, the static content generates during the [deploy phase]({{page.baseurl}}/cloud/deploy/optimize-cloud-deploy.html#-deploy-phase) when the site is down; however, this can take time because it must copy the content to the mounted `pub/static` directory.
 
 ## Minify content
 
 You can improve the SCD load time during the deployment process if you skip copying the static view files in the `var/view_preprocessed` directory and generate _minified_ HTML when requested. You can activate this by setting the [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) global environment variable to `true` in the `.magento.env.yaml` file.
 
-You can save more deployment time and disk space by reducing the amount of unnecessary theme files. For example, you can deploy the `magento/backend` theme in English and a custom theme in other languages. You can configure these theme settings with the [SCD_MATRIX environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_matrix).
+You can save more deployment time and disk space by reducing the amount of unnecessary theme files. For example, you can deploy the `magento/backend` theme in English and a custom theme in other languages. You can configure these theme settings with the [SCD_MATRIX]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_matrix) environment variable.
 
 ## Choosing a deploy strategy
 
@@ -36,7 +36,7 @@ The file system is accessible in all deployment phases; however, Magento stores 
 
     -  Set [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) to `true`
     -  Set [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) on build stage to `false`
-    -  Set [SCD_STRATEGY]({{page.baseurl}}/cloud/env/variables-build.html#scd_strategy) to `compact`
+    -  Set `SCD_STRATEGY` to `compact`
 
 1.  Configure the [Post-deploy hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) in the `.magento.app.yaml` configuration file.
 
