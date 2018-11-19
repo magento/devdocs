@@ -59,9 +59,9 @@ Magento GraphQL clause | SQL equivalent
 
 Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
 
-The `page_size` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
 
-The `current_page` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
+The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
 
 You can include the `total_pages` attribute in the `page_info` section of the output definition to indicate how many pages were returned for the query.
 
