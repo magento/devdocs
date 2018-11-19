@@ -54,7 +54,7 @@ In this example:
 
 Learn more in [Credentials][].
 
-## Persist a data entity as a prerequisite of a test
+## Persist a data entity as a prerequisite of a test {#persist-data}
 
 A test can specify an entity to be persisted (created in the database) so that the test actions could operate on the existing known data.
 

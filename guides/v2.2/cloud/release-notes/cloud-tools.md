@@ -49,6 +49,8 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 #### Resolved Issues
 
+-  <!-- MAGECLOUD-2923 -->Fixed an issue that removed customized cron configurations from the `env.php` file after a redeployment. Now, custom cron configurations safely remain in the `env.php` file.
+
 -  <!-- MAGECLOUD-2919 -->Fixed inconsistencies in the messages and [log levels]({{ page.baseurl }}/cloud/env/log-handlers.html#log-levels) for build, deploy, and post-deploy phases. Increased beginning and ending log message levels from **info** to **notice** for all phases and sub-phases. Added beginning and ending log messages, where appropriate.
 
 -  <!-- MAGECLOUD-2862 -->Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when configured. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.

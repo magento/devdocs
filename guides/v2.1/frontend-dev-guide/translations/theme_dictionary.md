@@ -48,7 +48,7 @@ See the [Create a translation dictionary for a theme] topic for the practical il
 
 Even if your theme uses `en_US.csv` to override certain default strings, the dictionaries for other locales for your theme should contain the default strings as keys, not the custom ones. 
 
-Continuing the [previous example](#luma_example) with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:
+Continuing the previous example with the Luma theme, if the `de_DE.csv` dictionary will be added for the Luma theme, it will look like following:
 ```text
 "Add to Wish List",	<translation>
 "Add to Compare",	<translation>
