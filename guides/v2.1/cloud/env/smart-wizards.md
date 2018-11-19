@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-The smart wizards can assist you in determining if your Cloud configuration follows best practices. The available wizards can assist with the following configurations:
+The smart wizards can assist you in determining if your Cloud configuration follows best practices. The available wizards assist with the following configurations:
 
 -  Ideal state for minimal deployment downtime
 -  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
@@ -22,6 +22,7 @@ Command | Description
 `wizard:scd-on-demand` | Check that the `SCD_ON_DEMAND` global environment variable is `true`.
 `wizard:scd-on-build ` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies the `config.php` file contains information for stores, store groups, and websites.
 `wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
+{:style="table-layout:auto;"}
 
 ## Assisting the SCD on-demand configuration
 
@@ -60,7 +61,7 @@ Ideal state is not configured
 
 Make the following corrections to your configuration:
 
-1.  Disable the Skip HTML minification:
+1.  Enable the Skip HTML minification:
 
     > .magento.env.yaml
     
