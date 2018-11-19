@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GiftRegistry
+title: Magento_GiftRegistry module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento\GiftRegistry module that allows to create sets of gifts specified for specific holiday(Birthday, Wedding, etc).
 It resembles wishlist, but there are differences. You can describe Gift Registry as a wishlist of products you would

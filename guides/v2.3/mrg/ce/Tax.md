@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Tax
+title: Magento_Tax module
 ---
+
+{% include mrg/note.md %}
 
 # Overview
 ## Purpose of module

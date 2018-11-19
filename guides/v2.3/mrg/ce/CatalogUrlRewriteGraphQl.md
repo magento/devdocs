@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CatalogUrlRewriteGraphQl
+title: Magento_CatalogUrlRewriteGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # CatalogUrlRewriteGraphQl
 

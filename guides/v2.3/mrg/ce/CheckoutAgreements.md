@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CheckoutAgreements
+title: Magento_CheckoutAgreements module
 ---
+
+{% include mrg/note.md %}
 
 Magento\CheckoutAgreements module provides the ability add web store agreement that customers must accept before purchasing
 products from store. The customer will need to accept the terms and conditions in the Order Review section of the

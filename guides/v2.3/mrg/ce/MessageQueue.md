@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_MessageQueue
+title: Magento_MessageQueue module
 ---
+
+{% include mrg/note.md %}
 
 # MessageQueue
 

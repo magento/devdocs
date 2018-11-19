@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Indexer
+title: Magento_Indexer module
 ---
+
+{% include mrg/note.md %}
 
 ## Overview
 Magento_Indexer module is a base of Magento Indexing functionality.

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Webapi
+title: Magento_Webapi module
 ---
+
+{% include mrg/note.md %}
 
 # Webapi
 

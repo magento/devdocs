@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SwatchesGraphQl
+title: Magento_SwatchesGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # SwatchesGraphQl
 

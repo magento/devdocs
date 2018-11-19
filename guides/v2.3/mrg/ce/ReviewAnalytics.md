@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_ReviewAnalytics
+title: Magento_ReviewAnalytics module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_ReviewAnalytics module
 

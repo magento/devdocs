@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_AdminNotification
+title: Magento_AdminNotification module
 ---
+
+{% include mrg/note.md %}
 
 # Admin Notification
 

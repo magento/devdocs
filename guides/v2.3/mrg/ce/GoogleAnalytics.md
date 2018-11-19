@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GoogleAnalytics
+title: Magento_GoogleAnalytics module
 ---
+
+{% include mrg/note.md %}
 
 Magento_GoogleAnalytics is a module for integration with Google Analytics service.
 

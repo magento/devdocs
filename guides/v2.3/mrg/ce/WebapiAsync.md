@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_WebapiAsync
+title: Magento_WebapiAsync module
 ---
+
+{% include mrg/note.md %}
 
 # WebapiAsync
 

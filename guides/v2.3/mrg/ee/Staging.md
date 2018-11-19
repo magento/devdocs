@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Staging
+title: Magento_Staging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Overview
 Magento_Staging module is used for setting up, previewing and managing future store updates.

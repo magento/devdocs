@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_InstantPurchase
+title: Magento_InstantPurchase module
 ---
+
+{% include mrg/note.md %}
 
 ## Overview
 

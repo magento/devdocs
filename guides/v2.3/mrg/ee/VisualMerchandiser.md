@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_VisualMerchandiser
+title: Magento_VisualMerchandiser module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Create and merchandise categories quickly and easily with Visual Merchandiser for Magento.
 Drag-and-drop products into position, or set up 'Smart Categories' based upon attributes.

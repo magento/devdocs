@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_WishlistAnalytics
+title: Magento_WishlistAnalytics module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_WishlistAnalytics module
 

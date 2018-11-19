@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_TargetRule
+title: Magento_TargetRule module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento_TargetRule module allows to configure the rules for showing related products.
 

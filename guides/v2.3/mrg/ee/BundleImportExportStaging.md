@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_BundleImportExportStaging
+title: Magento_BundleImportExportStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 <h2>Magento_BundleImportExportStaging module</h2>
 

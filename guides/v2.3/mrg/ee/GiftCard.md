@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GiftCard
+title: Magento_GiftCard module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento_GiftCard module introduces new product type in the Magento application called GiftCard Product.
 This module extends existing functionality of Magento_Catalog module by adding new product type.

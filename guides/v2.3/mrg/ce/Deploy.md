@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Deploy
+title: Magento_Deploy module
 ---
+
+{% include mrg/note.md %}
 
 # Overview
 ## Purpose of module

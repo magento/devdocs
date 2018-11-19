@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Robots
+title: Magento_Robots module
 ---
+
+{% include mrg/note.md %}
 
 The Robots module provides the following functionalities: 
 * contains a router to match application action class for requests to the `robots.txt` file;

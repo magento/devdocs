@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_RewardStaging
+title: Magento_RewardStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Magento_RewardStaging module
 

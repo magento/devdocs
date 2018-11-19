@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_AdvancedRule
+title: Magento_AdvancedRule module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 AdvancedRule module enhances the performance of rule processing.
 

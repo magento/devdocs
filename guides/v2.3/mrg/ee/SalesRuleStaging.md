@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SalesRuleStaging
+title: Magento_SalesRuleStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 <h2>Magento_SalesRuleStaging module</h2>
 

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CustomerGraphQl
+title: Magento_CustomerGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # CustomerGraphQl
 

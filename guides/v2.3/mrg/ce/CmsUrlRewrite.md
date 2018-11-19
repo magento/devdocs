@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CmsUrlRewrite
+title: Magento_CmsUrlRewrite module
 ---
+
+{% include mrg/note.md %}
 
 ## Overview
  

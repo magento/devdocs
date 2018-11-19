@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Ui
+title: Magento_Ui module
 ---
+
+{% include mrg/note.md %}
 
 # Overview
 ## Purpose of module

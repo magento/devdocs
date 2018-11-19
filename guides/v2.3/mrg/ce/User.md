@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_User
+title: Magento_User module
 ---
+
+{% include mrg/note.md %}
 
 # User
 

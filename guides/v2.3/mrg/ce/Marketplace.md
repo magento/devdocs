@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Marketplace
+title: Magento_Marketplace module
 ---
+
+{% include mrg/note.md %}
 
 The Magento_Marketplace module allows to display partners of Magento in the backend.
 

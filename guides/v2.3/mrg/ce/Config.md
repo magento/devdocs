@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Config
+title: Magento_Config module
 ---
+
+{% include mrg/note.md %}
 
 #Config
 The Config module is designed to implement system configuration functionality.

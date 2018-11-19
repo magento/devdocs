@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_StoreGraphQl
+title: Magento_StoreGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # StoreGraphQl
 

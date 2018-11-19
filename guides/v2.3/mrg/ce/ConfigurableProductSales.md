@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_ConfigurableProductSales
+title: Magento_ConfigurableProductSales module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_ConfigurableProductSales module
 

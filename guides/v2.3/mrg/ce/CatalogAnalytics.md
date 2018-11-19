@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CatalogAnalytics
+title: Magento_CatalogAnalytics module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_CatalogAnalytics module
 

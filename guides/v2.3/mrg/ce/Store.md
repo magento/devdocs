@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Store
+title: Magento_Store module
 ---
+
+{% include mrg/note.md %}
 
 The Store module provides one of the basic and major features of a content management system for e-commerce web
 sites by creating and managing a store for the customers to conduct online-shopping. Stores can be combined in groups,

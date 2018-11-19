@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GiftCardStaging
+title: Magento_GiftCardStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Magento_GiftCardStaging module
 

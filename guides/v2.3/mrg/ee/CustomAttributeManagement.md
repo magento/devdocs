@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CustomAttributeManagement
+title: Magento_CustomAttributeManagement module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento_CustomAttributeManagement implements user-defined attributes management which provides ability to manage attributes of customers and their address.
 Admin user can manage attributes on UI level without assistance of programmer.

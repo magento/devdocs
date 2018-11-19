@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_MysqlMq
+title: Magento_MysqlMq module
 ---
+
+{% include mrg/note.md %}
 
 # MysqlMq
 

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_QuoteAnalytics
+title: Magento_QuoteAnalytics module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_QuoteAnalytics
 

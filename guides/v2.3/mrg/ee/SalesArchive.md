@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SalesArchive
+title: Magento_SalesArchive module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 # Overview
 ## Purpose of module

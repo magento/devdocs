@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CustomerAnalytics
+title: Magento_CustomerAnalytics module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_CustomerAnalytics module
 

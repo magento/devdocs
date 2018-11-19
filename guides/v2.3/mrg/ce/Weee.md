@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Weee
+title: Magento_Weee module
 ---
+
+{% include mrg/note.md %}
 
 # Overview
 The Magento_Weee module enables the application of fees/fixed product taxes (FPT) on certain types of products, usually related to electronic devices and recycling.

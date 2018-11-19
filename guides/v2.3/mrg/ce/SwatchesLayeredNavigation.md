@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SwatchesLayeredNavigation
+title: Magento_SwatchesLayeredNavigation module
 ---
+
+{% include mrg/note.md %}
 
 # The Magento SwatchesLayeredNavigation Module
 

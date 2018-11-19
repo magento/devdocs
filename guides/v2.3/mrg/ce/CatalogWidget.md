@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CatalogWidget
+title: Magento_CatalogWidget module
 ---
+
+{% include mrg/note.md %}
 
 # CatalogWidget
 

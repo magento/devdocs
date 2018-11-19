@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Signifyd
+title: Magento_Signifyd module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_Signifyd module
 

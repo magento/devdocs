@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SalesSequence
+title: Magento_SalesSequence module
 ---
+
+{% include mrg/note.md %}
 
 # Overview
 ## Purpose of module

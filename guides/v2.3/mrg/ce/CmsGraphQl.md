@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CmsGraphQl
+title: Magento_CmsGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # CmsGraphQl
 

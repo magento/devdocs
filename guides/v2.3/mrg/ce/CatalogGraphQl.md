@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CatalogGraphQl
+title: Magento_CatalogGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # CatalogGraphQl
 

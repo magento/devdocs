@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CatalogRuleStaging
+title: Magento_CatalogRuleStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Magento_CatalogRuleStaging module
 

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SalesAnalytics
+title: Magento_SalesAnalytics module
 ---
+
+{% include mrg/note.md %}
 
 # Magento_SalesAnalytics module
 

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_TaxGraphQl
+title: Magento_TaxGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # TaxGraphQl
 

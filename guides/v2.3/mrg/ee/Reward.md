@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Reward
+title: Magento_Reward module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento\Reward module allows an online merchant to implement unique programs designed to enhance user experience and increase
 customer loyalty. Points are awarded based on a wide range of transaction and customer activities, with the ability for

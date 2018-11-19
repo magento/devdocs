@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_VersionsCms
+title: Magento_VersionsCms module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 The Versions CMS module adds a hierarchy feature for CMS pages.
 

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Persistent
+title: Magento_Persistent module
 ---
+
+{% include mrg/note.md %}
 
 Magento\Persistent module enables set customer a long-term cookie containing internal id (random hash - to exclude brute
 force) of persistent session. Persistent session data is kept in DB - so it's not deleted in some days and is kept for

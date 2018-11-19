@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CmsStaging
+title: Magento_CmsStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Magento_CmsStaging module
 

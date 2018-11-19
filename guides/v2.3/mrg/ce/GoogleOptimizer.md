@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GoogleOptimizer
+title: Magento_GoogleOptimizer module
 ---
+
+{% include mrg/note.md %}
 
 Magento_GoogleOptimizer module implements functionality of Google Experiment tool that is the part of Google Analytics functionality.
 

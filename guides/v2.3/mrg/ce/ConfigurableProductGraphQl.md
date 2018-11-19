@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_ConfigurableProductGraphQl
+title: Magento_ConfigurableProductGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # ConfigurableProductGraphQl
 

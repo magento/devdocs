@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Integration
+title: Magento_Integration module
 ---
+
+{% include mrg/note.md %}
 
 # Integration
 

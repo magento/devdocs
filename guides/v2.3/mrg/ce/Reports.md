@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Reports
+title: Magento_Reports module
 ---
+
+{% include mrg/note.md %}
 
 Magento_Reports module provides ability to collect various reports such as:
  - products reports (bestsellers, low stock, most viewed, products ordered),

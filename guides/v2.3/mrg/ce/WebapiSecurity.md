@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_WebapiSecurity
+title: Magento_WebapiSecurity module
 ---
+
+{% include mrg/note.md %}
 
 # WebapiSecurity
 

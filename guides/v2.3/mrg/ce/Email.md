@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Email
+title: Magento_Email module
 ---
+
+{% include mrg/note.md %}
 
 # Email
 

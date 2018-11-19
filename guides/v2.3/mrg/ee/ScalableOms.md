@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_ScalableOms
+title: Magento_ScalableOms module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento\ScalableOms (Order Management System) module provides ability for system extension
 (Sales can be configured to work with separate database).

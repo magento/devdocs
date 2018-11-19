@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CurrencySymbol
+title: Magento_CurrencySymbol module
 ---
+
+{% include mrg/note.md %}
 
 # CurrencySymbol
 

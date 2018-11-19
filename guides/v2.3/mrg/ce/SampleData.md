@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SampleData
+title: Magento_SampleData module
 ---
+
+{% include mrg/note.md %}
 
 Magento sample data includes a sample store, complete with more than 250 products (about 200 of them are configurable products), categories, promotional price rules, CMS pages, banners, and so on. Sample data uses the Luma theme on the storefront.
 

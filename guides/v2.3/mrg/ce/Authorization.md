@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Authorization
+title: Magento_Authorization module
 ---
+
+{% include mrg/note.md %}
 
 # Authorization
 

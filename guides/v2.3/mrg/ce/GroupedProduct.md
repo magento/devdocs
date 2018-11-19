@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GroupedProduct
+title: Magento_GroupedProduct module
 ---
+
+{% include mrg/note.md %}
 
 Magento_GroupedProduct module provides ability to offer several standalone products for sale as a group on the same Product Detail page.
 It can offer variations of a product, or group them by season or theme to create a coordinated set.

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Catalog
+title: Magento_Catalog module
 ---
+
+{% include mrg/note.md %}
 
 Magento_Catalog module functionality is represented by the following sub-systems:
  - Products Management. It includes CRUD operation of product, product media, product attributes, etc...

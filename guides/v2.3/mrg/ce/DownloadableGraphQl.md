@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_DownloadableGraphQl
+title: Magento_DownloadableGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # DownloadableGraphQl
 

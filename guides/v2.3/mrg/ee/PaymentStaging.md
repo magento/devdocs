@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_PaymentStaging
+title: Magento_PaymentStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Magento Magento_PaymentStaging Module
 

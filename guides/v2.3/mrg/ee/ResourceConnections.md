@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_ResourceConnections
+title: Magento_ResourceConnections module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento\ResourceConnections module adds a mechanism to segregate database connections between master and slave 
 database servers based on the request type.

@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_MsrpStaging
+title: Magento_MsrpStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Magento_MsrpStaging module
 

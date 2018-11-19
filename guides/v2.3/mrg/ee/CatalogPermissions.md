@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CatalogPermissions
+title: Magento_CatalogPermissions module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 Magento_CatalogPermissions feature allows to restrict the following permissions:
 - Browse categories

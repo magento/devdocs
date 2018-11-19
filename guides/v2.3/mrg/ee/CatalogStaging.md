@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_CatalogStaging
+title: Magento_CatalogStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 <h2>Magento_CatalogStaging module</h2>
 

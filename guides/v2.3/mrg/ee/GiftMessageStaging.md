@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GiftMessageStaging
+title: Magento_GiftMessageStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 ## Magento_GiftMessageStaging module
 

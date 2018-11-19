@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GraphQl
+title: Magento_GraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # GraphQl
 

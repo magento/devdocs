@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_BannerCustomerSegment
+title: Magento_BannerCustomerSegment module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 The Banner Customer Segment module allows creating and managing banners in the customer segment scope.

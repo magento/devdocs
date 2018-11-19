@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Amqp
+title: Magento_Amqp module
 ---
+
+{% include mrg/note.md %}
 
 # Amqp
 

@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_GroupedProductGraphQl
+title: Magento_GroupedProductGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # GroupedProductGraphQl
 

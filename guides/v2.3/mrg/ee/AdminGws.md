@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_AdminGws
+title: Magento_AdminGws module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 # AdminGws
 

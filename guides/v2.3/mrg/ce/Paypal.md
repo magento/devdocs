@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Paypal
+title: Magento_Paypal module
 ---
+
+{% include mrg/note.md %}
 
 Module Magento\PayPal implements integration with the PayPal payment system. Namely, it enables the following payment methods:
 *PayPal Express Checkout

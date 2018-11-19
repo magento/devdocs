@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_BundleGraphQl
+title: Magento_BundleGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # BundleGraphQl
 

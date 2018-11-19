@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_WebsiteRestriction
+title: Magento_WebsiteRestriction module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 # Website Restriction
 

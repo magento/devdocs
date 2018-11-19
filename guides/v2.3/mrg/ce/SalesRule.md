@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_SalesRule
+title: Magento_SalesRule module
 ---
+
+{% include mrg/note.md %}
 
 SalesRule module is responsible for managing and processing Promotion Shopping Cart Rules.
 

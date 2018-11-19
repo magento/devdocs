@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_QuoteGraphQl
+title: Magento_QuoteGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # QuoteGraphQl
 

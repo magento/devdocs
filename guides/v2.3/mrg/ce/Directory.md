@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Directory
+title: Magento_Directory module
 ---
+
+{% include mrg/note.md %}
 
 # Directory
 

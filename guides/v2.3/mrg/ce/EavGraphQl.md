@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_EavGraphQl
+title: Magento_EavGraphQl module
 ---
+
+{% include mrg/note.md %}
 
 # EavGraphQl
 

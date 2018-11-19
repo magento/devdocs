@@ -1,8 +1,9 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_BundleStaging
+title: Magento_BundleStaging module
 ee_only: true
 ---
+
+{% include mrg/note.md %}
 
 <h2>Magento_BundleStaging module</h2>
 

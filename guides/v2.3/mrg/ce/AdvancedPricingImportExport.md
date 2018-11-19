@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_AdvancedPricingImportExport
+title: Magento_AdvancedPricingImportExport module
 ---
+
+{% include mrg/note.md %}
 
 The Magento_AdvancedPricingImportExport module handles the import and export of the advanced pricing.
 

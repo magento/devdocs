@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_Quote
+title: Magento_Quote module
 ---
+
+{% include mrg/note.md %}
 
 # Overview
 ## Purpose of module

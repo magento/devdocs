@@ -1,7 +1,8 @@
 ---
-group: module-reference-guide-2_3
-title: Magento_ConfigurableProduct
+title: Magento_ConfigurableProduct module
 ---
+
+{% include mrg/note.md %}
 
 Magento_ConfigurableProduct module introduces new product type in the Magento application called Configurable Product.
 This module is designed to extend existing functionality of Magento_Catalog module by adding new product type.
