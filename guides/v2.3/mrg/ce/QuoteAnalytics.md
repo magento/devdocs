@@ -1,5 +1,11 @@
 ---
-group: module-reference-guide
+title: Magento_QuoteAnalytics module
 ---
 
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.3-develop/app/code/Magento/QuoteAnalytics/README.md %}
+{% include mrg/note.md %}
+
+# Magento_QuoteAnalytics
+
+The Magento_QuoteAnalytics module configures data definitions for a data collection related to the Quote module entities to be used in [Advanced Reporting](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html).
+
+

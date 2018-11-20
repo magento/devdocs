@@ -31,8 +31,6 @@ versions:
 
 # GitHub variables
 
-github_link: true
-feedback_link: true
 mage2bloburl: "https://github.com/magento/magento2/blob/"
 
 # 2.0.0 variables
@@ -110,6 +108,14 @@ defaults:
       group: magento-functional-testing-framework-guide-2_3
       functional_areas:
         - Test
+
+  -
+    scope:
+      path: "guides/v2.3/mrg"
+    values:
+      group: module-reference-guide-2_3
+      github_link: false
+      feedback_link: false
 
 titles_from_headings:
   enabled:     true
