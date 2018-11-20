@@ -29,9 +29,9 @@ The following updates describe the latest improvements to the `{{site.data.var.c
 
 -  **Docker Updates**
 
-    - <!-- MAGECLOUD-2888 -->Now the Docker generator uses the services specified in the `.magento.app.yaml` and `.magento/services.yaml` configuration files when [building your Docker environment]({{page.baseurl}}/cloud/docker/docker-config.html). You can choose a different service version using build parameters.
+    - {:.fix}<!-- MAGECLOUD-2888 -->Now the Docker generator uses the services specified in the `.magento.app.yaml` and `.magento/services.yaml` configuration files when [building your Docker environment]({{page.baseurl}}/cloud/docker/docker-config.html). You can choose a different service version using build parameters.
 
-    -  <!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
+    - {:.new}<!-- MAGECLOUD-2799 -->Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the [Launch Docker configuration]({{ page.baseurl }}/cloud/docker/docker-config.html) to include the `docker:build --php` option to specify the version of PHP compatible with your Magento Commerce version.
 
     -  <!-- MAGECLOUD-2565 -->Added a [Cron container]({{page.baseurl}}/cloud/docker/docker-development.html#cron-container) based on the PHP-CLI image.
 
