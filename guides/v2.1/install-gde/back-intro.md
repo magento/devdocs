@@ -6,7 +6,7 @@ functional_areas:
   - System
   - Setup
 ---
-
+test
 ## Need more help?
 
 Need some basic information before you get started? New to Magento installation? Here are some helpful resources for you:
