@@ -20,7 +20,6 @@ html-proofer:
   - !ruby/regexp /videos/
   - !ruby/regexp /whats-new\.html/
   :url_ignore:
-  - !ruby/regexp /frontend-dev-guide/
   - !ruby/regexp /guides\/v2\.0/
   # - !ruby/regexp /mrg/
   
