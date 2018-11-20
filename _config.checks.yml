@@ -16,7 +16,6 @@ html-proofer:
   - !ruby/regexp /guides\/m1x/
   - !ruby/regexp /magento-techbull\.html/
   - !ruby/regexp /pattern-library/
-  - !ruby/regexp /release-notes/
   - !ruby/regexp /swagger/
   - !ruby/regexp /template\.html/
   - !ruby/regexp /videos/
@@ -26,4 +25,3 @@ html-proofer:
   - !ruby/regexp /guides\/v2\.0/
   # - !ruby/regexp /mrg/
   - !ruby/regexp /pattern-library/
-  - !ruby/regexp /release-notes/
