@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.7 Release Notes
 
 ---
 
-*Patch code and release notes were published on November 27, 2018.*
+*Patch code and release notes were published on November 28, 2018.*
 
 
 
@@ -640,7 +640,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- BUNDLE-1731 -->* Magento  currently does not display the requested quote information when you select Get Quotes for an order from a storefront that supports collection point delivery. 
 
-<!-- BUNDLE-1840 -->* 
+<!-- BUNDLE-1840 -->* The Vertex customer tax code that is defined on Vertex Cloud and specified in the **Customer Code** field ignores a new customer tax class if both are specified on the customer detail page in the Magento Admin.
 
 
 <!-- BUNDLE-1835 -->*  Customers will not be able to complete purchases  if  merchants configure Klarna payments to work in a different region than the store has been configured for. 
