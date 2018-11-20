@@ -23,7 +23,7 @@ You can upgrade Magento from the command line if you installed the software usin
 </div>
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-* If you're upgrading to version 2.1, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html).
+* If you're upgrading to version 2.1, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).
 * If you're upgrading from {{site.data.var.ce}} or {{site.data.var.ee}} 2.0.0 or 2.0.1, you must first perform the tasks discussed in the [Technical Bulletin (1/28/16)]({{ page.baseurl }}/release-notes/tech_bull_201-upgrade.html).
 </div>
 
