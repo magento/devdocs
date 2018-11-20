@@ -80,7 +80,8 @@ Pagination controls allow the user to easily page through and organize data. Pag
 
 ![](img/datatable07.jpg)
 
-## Mass Actions
+## Mass Actions 
+{: #mass-actions}
 
 A common {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} across the existing Magento user experience includes mass actions that can be taken. This is a convention used on both data-table and non-data-table pages. Not all pages have these action buttons. This document will not attempt to capture all actions that appear here or how they might be redesigned for Magento 2. This document will make note that these actions exist on many of the data-table pages and will use the area directly above the table to indicate placement of such action buttons where they might be needed.
 
