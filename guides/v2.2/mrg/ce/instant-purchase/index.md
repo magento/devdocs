@@ -256,7 +256,7 @@ Use this marker if no other options are available to implement specific payment 
 [Braintree PayPal]: https://github.com/magento/magento2/tree/{{ page.guide_version }}/app/code/Magento/Braintree/Model/InstantPurchase/PayPal
 [PayPal Payflow Pro]: https://github.com/magento/magento2/tree/{{ page.guide_version }}/app/code/Magento/Paypal/Model/InstantPurchase/Payflow/Pro
 [module customization]: #customization-points
-[Instant Purchase logic]: #instant-purchase-capability
+[Instant Purchase logic]: #instant-purchase-logic
 [Customer Data cache]: {{ page.baseurl }}/extension-dev-guide/cache/page-caching/private-content.html
 [Order placement]: #order-placement
 [Customization Points]: #customization-points

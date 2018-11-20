@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.6
+mftf-release: 2.3.11
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/commands/mftf.html
 ---
 
@@ -69,6 +69,15 @@ vendor/bin/mftf run:test LoginAsAdminTest LoginAsCustomerTest -r
 ```
 
 This command cleans up the previously generated tests; generates and runs the `LoginAsAdminTest` and `LoginAsCustomerTest` tests.
+
+### Generate and run previously failed tests
+
+```bash
+vendor/bin/mftf run:failed
+```
+
+This command cleans up the previously generated tests; generates and runs the tests listed in `dev/tests/acceptance/tests/_output/failed`.
+For more details about `failed`, refer to [Reporting][].
 
 ## Reference
 
@@ -307,6 +316,27 @@ Generate the `LoginCustomerTest` and `StorefrontCreateCustomerTest` tests from X
 vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 ```
 
+### `run:failed`
+
+Generates and executes failed tests.
+
+This command cleans up previously generated tests. It generates and runs the tests listed in `dev/tests/acceptance/tests/_output/failed`.
+For more details about `failed`, refer to [Reporting][].
+
+#### Usage
+
+```bash
+vendor/bin/mftf run:failed
+```
+
+#### Examples
+
+Run the tests that failed in the previous run:
+
+```bash
+vendor/bin/mftf run:failed
+```
+
 ### `setup:env`
 
 Updates the [configuration] parameter values in the [`.env`] file.
@@ -373,6 +403,7 @@ vendor/bin/mftf upgrade:tests /Users/user/magento2/app/code/Magento/Catalog/Test
 [Reference]: #reference
 [build]: #buildproject
 [setup]: #setupenv
+[Reporting]: ../reporting.html
 
 <!-- Abbreviations -->
 

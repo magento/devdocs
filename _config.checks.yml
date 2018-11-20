@@ -1,0 +1,27 @@
+# Configuration settings for html-proofer.
+# For configuration documentation, refer to: https://github.com/gjtorikian/html-proofer#configuration
+# For configuration defaults, refer to: https://github.com/gjtorikian/html-proofer/blob/master/lib/html-proofer/configuration.rb
+#
+html-proofer:
+  :disable_external: true
+  :only_4xx: true
+  :checks_to_ignore:
+  - ImageCheck
+  - ScriptCheck
+  :allow_hash_ref: true
+  :error_sort: :desc
+  :parallel:
+    :in_processes: 3
+  :file_ignore:
+  - !ruby/regexp /guides\/m1x/
+  - !ruby/regexp /magento-techbull\.html/
+  - !ruby/regexp /pattern-library/
+  - !ruby/regexp /swagger/
+  - !ruby/regexp /template\.html/
+  - !ruby/regexp /videos/
+  - !ruby/regexp /whats-new\.html/
+  :url_ignore:
+  - !ruby/regexp /frontend-dev-guide/
+  - !ruby/regexp /guides\/v2\.0/
+  # - !ruby/regexp /mrg/
+  - !ruby/regexp /pattern-library/

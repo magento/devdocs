@@ -126,7 +126,7 @@ Search Result objects hold the Search Criteria object and the retrieved entities
 A Collection Processor is an implementation of the [`CollectionProcessorInterface`]({{ site.mage2200url }}lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php){:target="_blank"} interface that unifies the application of custom filters, sorting, and paginating.
 It contains a one method process that applies a Search Criteria object to an abstract database collection.
 
-You can use [virtual typing]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type) in your `di.xml` file to specify the processors used in the Collection Processor.
+You can use [virtual typing]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#dependency-types) in your `di.xml` file to specify the processors used in the Collection Processor.
 
 #### Filter Processor
 
