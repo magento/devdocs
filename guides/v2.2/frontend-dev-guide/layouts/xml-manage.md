@@ -406,47 +406,59 @@ You can replace this block in `layout.xml` with a custom block that uses the sam
 </block>
 ```
 
-Magento processes the layout updates made within the special `local.xml` file last, after applying all other layout updates from other files. This means that you can include a `layout.xml` inside your theme's layout directory to ensure that your layout updates will replace an existing block type with the new block that defines your changes. For example:
-
-```xml
-<catalog_product_view>
-
-    <remove name="product.attributes" />
-
-    <reference name="content">
-        <block type="attributesasgroup/groupview" name="product.attributes" as="additional" template="webguys/attributesasgroup/groupview.phtml">
-            <action method="addToParentGroup"><group>detailed_info</group></action>
-            <action method="setTitle" translate="value"><value>Additional Information</value></action>
-        </block>
-    </reference>
-
-</catalog_product_view>
-```
-This layout structure held by our `local.xml` does two things. First, it removes the default block from the layout structure with the `remove` node.
-Second, it then adds our own custom block to the content section of the page within the `<reference>` container.
-
 As a final note, it is important that your block be defined on the backend side. If it is not defined, Magento will not understand which block you are referencing to it. This will mean that Magento will not properly render the content that is located inside your block.
 
 For instance, in order for the new block in the above case to be processed properly, Magento needs `Namespace_Modulename_Block_Groupview` to be defined at `app/code/local/Namespace/Modulename/Block/Groupview.php` (where `Namespace_Modulename` stands for your custom module name).
 
-Some block definitions do not contain an explicit name attribute, which means you cannot override the block from a layout XML file. For these blocks, you can use the class preference method to override the template.
+Some block definitions do not contain an explicit name attribute, which means you cannot override the block from a layout XML file. For these blocks, you can add functionality through ViewModels or modify functionality through plugins (interceptors).
 
-**Example 2**: override the block containing the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
+**Example 2**: add functionality with a ViewModel inserted into the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
 
-Let us say that we want to override the block containing the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`:
-
-```xml
-<block class="Magento\Checkout\Block\Cart\Item\Renderer" as="virtual" template="cart/item/default.phtml">
-```
-
-The class attribute on the block sets the scope for the template path, which means that all it takes to change the template's module scope is to change the block's class with a class preference in your `di.xml` file:
+Let us say that we want to add functionality to a core template with custom logic using a ViewModel in the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`:
 
 ```xml
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Magento\Checkout\Block\Cart\Item\Renderer" type="Vendor\Module\Block\Checkout\Cart\Item\Renderer" />
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<body>
+    <referenceBlock name="Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" template="Magento_Checkout::cart/item/default.phtml" />
+        <arguments>
+           <argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
+        </arguments>
+    </referenceBlock>
+</body>
+```
+
+Even though the scope for the template path is based on the block class, changing the block's class with a class preference in your `di.xml` file could lead to problems when overriding your template in a theme. To prevent this, the best way to change the template's module scope is to include a namespace in the template name, similar to how the core does in `checkout_cart_item_renderers.xml` (i.e. `Magento_Checkout::cart/item/default.phtml`).
+
+You would also have to implement the right interface in your viewModel class (i.e. `ArgumentInterface`):
+
+```php
+namespace Vendor\CustomModule\ViewModel;
+
+class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
+{
+    public function __construct()
+    {
+
+    }
+}
+```
+
+To substitute or extend the behavior of original, public methods for any class or interface, we can make use of plugins, or interceptors, which are classes that modify the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. 
+
+This interception approach reduces conflicts among extensions that change the behavior of the same class or method, with a Plugin class implementation changing only the behavior of a class function, not the class itself.
+
+The di.xml file in your module declares a plugin for a class object in the following manner:
+
+```xml
+<config>
+    <type name="{ObservedType}">
+      <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="false" />
+    </type>
 </config>
 ```
+
+You must specify the following elements: type name (a class or interface which the plugin observes), plugin name (an arbitrary plugin name that identifies a plugin that is also used to merge the configurations for the plugin), and plugin type (name of a plugin’s class or its virtual type; use the following naming convention when you specify this element: \Vendor\Module\Plugin\<ClassName>).
 
 Now we have to verify that the block actually exists even if you don't need to do anything with it. To do this we can create a skeleton block, which serves to change the scope of the old block definition:
 
