@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
 ---
 
-After you [create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html), you need to decide which LESS compilation mode to use before changing styles. You can choose between [two modes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes):
+After you [create a theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html), you need to decide which LESS compilation mode to use before changing styles. You can choose between [two modes]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html):
 
 - Server-side compilation mode (default)
 - Client-side compilation mode (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development)
@@ -69,7 +69,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 ## Using server-side compilation mode with Grunt
 
 1. Navigate to your theme directory and create a `web/css/source/_extend.less` file.
-1. Install Grunt and register your theme as described in [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+1. Install Grunt and register your theme as described in [Installing and configuring Grunt]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_prereq).
 1. From your Magento installation directory, run the following commands:
 
     - `grunt exec:<your_theme>`
@@ -146,4 +146,4 @@ If you are using server-side compilation mode, you must [clean generated static 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
 {:.bs-callout .bs-callout-info}
-Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#css_debug_client).
+Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
