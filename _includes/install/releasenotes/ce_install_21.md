@@ -55,4 +55,4 @@ Developers who contribute to the Open Source codebase can [upgrade manually]({{ 
 ### Other upgrades {#upgrade-other}
 {:.no_toc}
 
-Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21-upgrade.html).
+Other types of upgrades are discussed in [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html).
