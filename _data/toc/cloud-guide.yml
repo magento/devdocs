@@ -72,6 +72,9 @@ pages:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
 
+            - label: Docker quick reference
+              url: /cloud/docker/docker-quick-reference.html
+
         - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
           children:
@@ -208,6 +211,10 @@ pages:
           children:
             - label: ADMIN variables
               url: /cloud/env/environment-vars_magento.html
+
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+              exclude_versions: ["2.0"]
 
             - label: Build variables
               url: /cloud/env/variables-build.html

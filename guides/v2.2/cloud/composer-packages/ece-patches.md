@@ -52,4 +52,4 @@ This package is no longer compatible with other versions of {{site.data.var.ece}
 
 ### Initial release
 
-Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
+Initial release of `{{site.data.var.ct}}` for {{site.data.var.ece}} 2.2.0.

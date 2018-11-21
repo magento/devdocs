@@ -7,10 +7,10 @@ functional_areas:
   - Integration
 ---
 
-Bulk API endpoints differ from other endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue.
+Bulk API endpoints differ from other REST endpoints in that they combine multiple calls of the same type into an array and execute them as a single request. The endpoint handler splits the array into individual entities and writes them as separate messages to the message queue. 
 
 {:.bs-callout .bs-callout-tip}
-GET requests are not supported.
+Use the `bin/magento queue:consumers:start async.operations.all` command to enable bulk endpoint processing.
 
 ### Routes
 
@@ -32,6 +32,8 @@ Synchronous route | Bulk route
 `POST /V1/carts/:quoteId/items` | `POST async/bulk/V1/carts/byQuoteId/items`
 `DELETE /V1/customers/:customerId` | `DELETE async/bulk/V1/customers/byCustomerId`
 
+{:.bs-callout .bs-callout-info}
+GET requests are not supported.
 
 ### Payloads
 

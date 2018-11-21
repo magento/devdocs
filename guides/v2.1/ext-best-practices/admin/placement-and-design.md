@@ -16,7 +16,7 @@ Magento’s flexible platform lets you place an {% glossarytooltip 55774db9-bf9d
 
 We discourage practices that diminish the user experience in the Admin. The following design decisions that have been seen in some extensions create a negative user experience and should be avoided.
 
-### Icons in the Primary Navigation
+### Icons in the Primary Navigation {#icons-in-navigation}
 
 Icons should not be added to the primary navigation panel in the Admin. If every extension added its own icon to the primary navigation panel, the interface will quickly become cluttered and unusable.
 

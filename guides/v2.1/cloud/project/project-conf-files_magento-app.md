@@ -214,11 +214,13 @@ Also, you can customize the build phase further by using the `generate` and `tra
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
+        set -e
         php ./vendor/bin/ece-tools build:generate
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
 
+-  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
 -  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
 -  `build:transfer`—transfers generated code and static content to the final destination.
 

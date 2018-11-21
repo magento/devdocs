@@ -42,7 +42,7 @@ site.
 3. **Click View Project Page** in the
 [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
-## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
+## Sign up for a {{site.data.var.ece}} account {#cloud-first-acct}
 
 Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales).
 We will create your account and send you a welcome email that provides instructions to access the project.
