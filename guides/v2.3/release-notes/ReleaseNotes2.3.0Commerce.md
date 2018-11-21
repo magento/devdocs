@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 27, 2018.*
+*Release notes published November 28, 2018.*
 
 
 

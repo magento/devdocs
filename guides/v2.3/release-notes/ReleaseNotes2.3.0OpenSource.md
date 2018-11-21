@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.0 Release Notes
 ---
 
-*Release notes published November 27, 2018.*
+*Release notes published November 28, 2018.*
 
 We are pleased to present Magento Open Source 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
