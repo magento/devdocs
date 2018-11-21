@@ -1,5 +1,11 @@
 ---
-group: module-reference-guide
+title: Magento_SalesAnalytics module
 ---
 
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.3-develop/app/code/Magento/SalesAnalytics/README.md %}
+{% include mrg/note.md %}
+
+# Magento_SalesAnalytics module
+
+The Magento_SalesAnalytics module configures data definitions for a data collection related to the Sales module entities to be used in [Advanced Reporting](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html).
+
+

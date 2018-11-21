@@ -96,7 +96,6 @@ Below is an example of the `cron_groups.xml` file:
         <history_cleanup_every>10</history_cleanup_every>
         <history_success_lifetime>60</history_success_lifetime>
         <history_failure_lifetime>600</history_failure_lifetime>
-        <use_separate_process>1</use_separate_process>
     </group>
 </config>
 {%endhighlight%}
@@ -111,7 +110,6 @@ where:
 |`history_cleanup_every`|Time (in minutes) that cron history is kept in the database.|
 |`history_success_lifetime`|Time (in minutes) that the record of successfully completed cron jobs are kept in the database.|
 |`history_failure_lifetime`|Time (in minutes) that the record of failed cron jobs are kept in the database.|
-|`use_separate_process`|This feature is available only for Magento 2.1 and later.|
 
 #### Related topic
 [Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)
