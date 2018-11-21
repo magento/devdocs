@@ -11,7 +11,7 @@ functional_areas:
 
 ## What\'s in this topic   {#theme-structure-intro}
 
-A <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+A <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 ## Magento theme location   {#theme-structure-loc}
 
