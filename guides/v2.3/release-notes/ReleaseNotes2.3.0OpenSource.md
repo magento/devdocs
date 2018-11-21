@@ -222,7 +222,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!---MAGETWO-71816-->* The Magento CMS banner has been renamed to dynamic block to better represent this feature. Banners from Content > Banners have been renamed across the Admin and the code base. Correspondingly, the Magento widget banner rotator type (from Content > Widget > Widget type) has been renamed to dynamic blocks rotator. 
 
 
-<!---MAGETWO-42047-->* You can now create dynamic block (formerly banners) content from the WYSIWYG editor. Yu can create store-specific content for dynamic blocks  by switching between scopes using the Magento Scope Selector.
+<!---MAGETWO-42047-->* You can now create dynamic block (formerly banners) content from the WYSIWYG editor. You can create store-specific content for dynamic blocks  by switching between scopes using the Magento Scope Selector.
 
 
 
