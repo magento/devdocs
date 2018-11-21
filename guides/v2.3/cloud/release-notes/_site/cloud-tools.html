@@ -1,0 +1,613 @@
+<!-- Assigning liquid variables for placeholder values
+
+
+-->
+
+<p>The `` package is compatible with  version 2.1.4 and later to provide a rich set of features you can use to manage your  project. It contains scripts and  commands designed to help manage your code and automatically build and deploy your projects.</p>
+
+<p>You can list the available `` commands using:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>php ./vendor/bin/ece-tools list
+</code></pre></div></div>
+
+<p>The following updates describe the latest improvements to the <code class="highlighter-rouge">package, which uses the following version sequence: `200&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;`. See [Upgrades and patches](/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the</code> package.</p>
+
+<p>The release notes include:</p>
+
+<ul>
+  <li class="new">New features</li>
+  <li class="fix">Fixes and improvements</li>
+</ul>
+
+<h2 id="v2002015">v2002.0.15</h2>
+
+<ul>
+  <li class="new">
+    <p><strong>Docker updates</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-2888 -->
+        <p>Now the Docker generator uses the services specified in the <code class="highlighter-rouge">.magento.app.yaml</code> and <code class="highlighter-rouge">.magento/services.yaml</code> configuration files when <a href="/cloud/docker/docker-config.html">building your Docker environment</a>. You can choose a different service version using build parameters.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2799 -->
+        <p>Added PHP 7.2 image—Added support for PHP 7.2 in Cloud Docker; updated the <a href="/cloud/docker/docker-config.html">Launch Docker configuration</a> to include the <code class="highlighter-rouge">docker:build --php</code> option to specify the version of PHP compatible with your Magento Commerce version.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2565 -->
+        <p>Added a <a href="/cloud/docker/docker-development.html#cron-container">Cron container</a> based on the PHP-CLI image.</p>
+      </li>
+      <li>
+        <p>Added the following services to the Docker build:</p>
+
+        <ul>
+          <li>
+            <!-- MAGECLOUD-2567 & 2889-->
+            <p>RabbitMQ 3.5 and 3.7</p>
+          </li>
+          <li>
+            <!-- MAGECLOUD-2569 & 2887 -->
+            <p>ElasticSearch 1.7, 2.4, and 5.2</p>
+          </li>
+          <li>
+            <!-- MAGECLOUD-2886 -->
+            <p>Redis 3.2 and 4.0</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2577 -->
+        <p>Now you have the DB dump capability when using the Cloud Docker <a href="/cloud/docker/docker-development.html#database-container">database container</a>. Also, you can <a href="/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container">share files</a> between a host machine and a container using the <code class="highlighter-rouge">docker/mnt</code> directory.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD- 2575 -->
+    <p><strong>Configure with PHP constants</strong>—Added support for <a href="/cloud/project/magento-env-yaml.html#php-constants">PHP constants</a> in the <code class="highlighter-rouge">.magento.env.yaml</code> configuration file.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2879-->
+    <p><strong>New Environment variable</strong>—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  <a href="/cloud/env/variables-deploy.html#enable_google_analytics">ENABLE_GOOGLE_ANALYTICS environment variable</a>.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2923 -->
+    <p>Fixed an issue that removed customized cron configurations from the <code class="highlighter-rouge">env.php</code> file after a redeployment. Now, custom cron configurations safely remain in the <code class="highlighter-rouge">env.php</code> file.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2919 -->
+    <p>Fixed inconsistencies in the messages and <a href="/cloud/env/log-handlers.html#log-levels">log levels</a> for build, deploy, and post-deploy phases. Increased beginning and ending log message levels from <strong>info</strong> to <strong>notice</strong> for all phases and sub-phases. Added beginning and ending log messages, where appropriate.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2862 -->
+    <p>Fixed an issue involving cron processes that prevented the start of the post-deploy phase, when configured. Now, if you have the post-deploy hook enabled, the cron processes are enabled again at the beginning of the post-deploy phase.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2736-->
+    <p>Resolved an issue that prevented a successful installation of Magento when specifying a custom database configuration. Previously, the installation process used the database configuration from the <a href="/cloud/env/variables-cloud.html">MAGENTO_CLOUD_RELATIONSHIP variable</a> even if you designated customized connection information in the <a href="/cloud/env/variables-deploy.html#database_configuration">DATABASE_CONFIGURATION environment variable</a>.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2740-->
+    <p>Corrected the <code class="highlighter-rouge">config:dump</code> command so that it includes each website locale in the <code class="highlighter-rouge">system</code> section of the <code class="highlighter-rouge">config.php</code> file.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2797-->
+    <p>Fixed an issue that resulted in <em>warm-up</em> errors during the post-deploy phase by correcting the source base URL reference.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2850-->
+    <p>Fixed an issue that generated files improperly during the <code class="highlighter-rouge">setup:di:compile</code> process, which affected the Amazon Pay module.</p>
+  </li>
+</ul>
+
+<h2 id="v2002014">v2002.0.14</h2>
+
+<ul>
+  <li class="new">
+    <!--MAGECLOUD-2372-->
+    <p><strong>Verify Ideal State</strong>—The <code class="highlighter-rouge">ideal-state</code> wizard now verifies the current configuration during each deployment and provides clear instructions for updating the configuration to achieve a faster, zero-downtime deployment.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2521-->
+    <p><strong>PCI Compliance</strong>—Updated the messaging protocols for  to require Transport Layer Security (TLS) version 1.2 when connecting with third-party messaging services. If you are using a message service that does not support TLS version 1.2, you must upgrade your service. Otherwise, the following error message displays when your  application tries to connect to the message server to send an email: <code class="highlighter-rouge">Unable to connect via TLS</code>.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2517-->
+    <p><strong>Deployment improvement</strong>—Added validation to warn customers if a Staging or Production environment has <code class="highlighter-rouge">dev</code>, <code class="highlighter-rouge">debug</code>, or <code class="highlighter-rouge">debug_logging</code> options enabled to prevent performance issues caused by excessive logging activity.</p>
+  </li>
+  <li class="fix">
+    <p><strong>Deployment fixes</strong>—</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2603-->
+        <p>Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved. Previously, the site returned to production mode even if the deployment failed.</p>
+      </li>
+      <li>
+        <p>Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from <code class="highlighter-rouge">CRITICAL</code> to <code class="highlighter-rouge">WARNING</code> so that the deployment completes. Previously, these issues caused the deployment to fail.</p>
+
+        <ul>
+          <li>
+            <p>ADMIN_EMAIL is not set on upgrade.</p>
+          </li>
+          <li>
+            <p>ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.</p>
+          </li>
+          <li>
+            <p>Environment configuration contains incorrect values for deploy or cloud variables.</p>
+          </li>
+          <li>
+            <!--MAGECLOUD-2600-->
+            <p>The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by . See the <a href="https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento">Elasticsearch troubleshooting article</a> in the Magento Support Knowledgebase.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <!--MAGECLOUD-2173-->
+        <p>Fixed an issue with the shared configuration settings in the <code class="highlighter-rouge">app/etc/config.php</code> file that caused <code class="highlighter-rouge">recursion detected</code> errors during deployment.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Cron-related fixes</strong>—</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2602-->
+        <p>Fixed a cron scheduling issue that prevented jobs from running if you specify a cron frequency other than the default (1 minute).</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2537-->
+        <p>Fixed an issue in the deploy phase that allowed cron jobs to continue running during deployment, which can cause database locks and other critical issues. Now, all cron jobs are stopped before the deploy phase begins and restarted after the deployment completes.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2501-->
+        <p>Fixed the cron job workflow in versions 2.2.x to unlock frozen cron jobs so that they can be stopped before beginning deployment. Previously, a frozen cron job caused the deployment to stall.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2527-->
+    <p>Changed the format of the <code class="highlighter-rouge">config.php</code> file generated by the <code class="highlighter-rouge">vendor/bin/ece-tools config:dump</code> command to use short array syntax and 4-space indentation to comply with Magento coding standards.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2607-->
+    <p>Fixed a deployment error that occurs when the <code class="highlighter-rouge">.magento.env.yaml</code> contains <code class="highlighter-rouge">{{base_url}}</code> and <code class="highlighter-rouge">{{unsecure_base_url}}</code> placeholders for web configurations instead of the default URL configuration for a  project./</p>
+  </li>
+</ul>
+
+<h2 id="v2002013">v2002.0.13</h2>
+
+<ul>
+  <li class="new">
+    <!--MAGECLOUD-2169-->
+    <p><strong>Enable zero-downtime deployment</strong>—Now  queues requests with required database changes during deployment and applies the changes as soon as the deployment completes. Requests can be held for up to 5 minutes to ensure that no sessions are lost. See <a href="https://support.magento.com/hc/en-us/articles/360004861194-Static-content-deployment-options-to-reduce-deployment-downtime-on-Cloud">Static content deployment options to reduce deployment downtime on Cloud</a>.</p>
+  </li>
+  <li class="new">
+    <p><strong>Docker Compose for Cloud</strong>—Made the following improvements to the <a href="/cloud/docker/docker-config.html">Docker setup and configuration</a> process:</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2359-->
+        <p>Added a command—<code class="highlighter-rouge">docker:config:convert</code> to convert PHP configuration files to Docker ENV format to simplify environment configuration. Now, you copy the PHP configuration files to the Docker directory and convert them to Docker ENV files. See <a href="/cloud/docker/docker-config.html">Launch Docker</a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2357-->
+        <p>The  installation process now supports deploying to both read-only and read-write file systems to more closely emulate the Cloud file system. See <a href="/cloud/docker/docker-config.html">Configure Docker</a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2442-->
+        <p><strong>Redis service support</strong>—Added a Redis image, which is deployed to a Docker container and configured automatically to work with your Docker installation.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2358-->
+        <p><strong>Varnish service support</strong>— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See <a href="/config-guide/varnish/config-varnish.html">Configure and use Varnish</a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD--2360-->
+        <p>Secure site access—Added SSL support to access your  store and Admin panel.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2205-->
+    <p><strong>Improved  extension support</strong>—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the  <a href="/cloud/reference/cloud-composer.html">composer.json file</a> to version 6.2 so that the `` package is compatible with more extensions.</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-2363-->
+    <p><strong>Apply custom changes to your  application during the build phase</strong>—We split the build phase into two separate processes so that you can use hooks to apply custom changes to the generated static content before packaging the application for deployment. The <em>build:generate</em> process generates code, applies patches, and generates static content. The <em>build:transfer</em> process transfers the generated code and static content to the final destination. See <a href="/cloud/project/project-conf-files_magento-app.html#hooks">Application hooks</a>.</p>
+  </li>
+  <li class="fix">
+    <p><strong>Environment configuration checks</strong>—Improved validation of the environment configuration to warn customers about version incompatibilities and configuration errors before building and deploying .</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2183-->
+        <p>Added version-specific validation to identify unsupported or deprecated environment variables and values.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2389-->
+        <p>Added an Elasticsearch compatibility check to warn users about Elasticsearch configuration issues. Now, the deployment fails if the version of Elasticsearch service on the server is incompatible with . Previously, the deployment succeeded even if the Elasticsearch version was incompatible, which caused product catalog issues after site deployment.</p>
+
+        <p>You can resolve the incompatibility by <a href="/cloud/trouble/trouble.html">submitting a Support ticket</a> to upgrade Elasticsearch to a compatible version, or change the  configuration to specify a compatible version of the Elasticsearch PHP client.</p>
+
+        <ul>
+          <li>
+            <p>For  version 2.1.x to 2.2.2, upgrade Elasticsearch to version 2.4.</p>
+          </li>
+          <li>
+            <p>For  version 2.2.3 and later, upgrade Elasticsearch to version 5.2.</p>
+          </li>
+          <li>
+            <p>If you have Elasticsearch 1.x or 2.x and do not want to upgrade, update the  Elasticsearch PHP client version requirement in composer.json to <code class="highlighter-rouge">"elasticsearch/elasticsearch": "~2.0"</code>.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <!--MAGECLOUD-2156-->
+        <p>Improved validation of environment variables to identify configuration settings that can cause conflicts during the build, deploy, and post-deploy phases. For example, a warning message displays during the install and upgrade process if the global setting for static content deployment conflicts with settings on the build or deploy phase.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Environment variable updates</strong>—Changed the following environment variables:</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2435-->
+        <p><strong><a href="/cloud/env/variables-global.html#skip_html_minification">SKIP_HTML_MINIFICATION global variable</a></strong>—Changed the default value to <code class="highlighter-rouge">true</code> to enable on-demand HTML content minification, which minimizes downtime when deploying to Staging and Production environments. This configuration is required for zero-downtime deployments.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-1506-->
+        <p><strong><a href="/cloud/env/variables-deploy.html#clean_static_files">CLEAN_STATIC_FILES deploy variable</a></strong>—Added the capability to manage the clean static files processing for static content generated during the build phase based on the CLEAN_STATIC_FILES environment variable setting. Previously, static content files generated during the build phase were always cleaned.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Logging</strong>—<br />
+Made the following changes to improve log messages and reduce log size:</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2489-->
+        <p>Deployment failure log entries now include the command output from the operations that cause the failures even if your environment configuration does not specify debug level logging. See <a href="/cloud/env/variables-global.html#min_logging_level"><code class="highlighter-rouge">MIN_LOGGING_LEVEL</code></a>.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2209-->
+        <p>Added logging for deployment failures that occur when generated factories required by some extensions cannot be generated correctly because the file system is in a read-only state.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2402-->
+        <p>Reduced the deploy log size and fixed formatting issues caused by setup commands that use the interactive progress bar.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2227-->
+        <p>Eliminated unnecessary verbosity and updated the priority levels for some log statements.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>Cron-specific fixes</strong>—</p>
+
+    <ul>
+      <li>
+        <!--MAGECLOUD-2427-->
+        <p>Changed the default cron job configuration settings for history lifetime from 3d (4320 min) to 1h (60 min) to prevent performance issues and deployment failures that can occur when the cron queue fills too quickly.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2445-->
+        <p>Improved the cron job management process during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after deployment completes.</p>
+      </li>
+      <li>
+        <!--MAGECLOUD-2464-->
+        <p>Fixed an issue with the locking mechanism for scheduling consumers launched by cron jobs in  versions 2.2.0 and later to prevent cron jobs from launching duplicate consumers.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2182-->
+    <p>Fixed an issue with the <a href="/guides/v2.2/cloud/env/variables-intro.html">static content compression process</a> (<code class="highlighter-rouge">gzip</code>) that caused <code class="highlighter-rouge">not overwritten</code> and <code class="highlighter-rouge">no such file or directory</code> errors when referencing the compressed file during the deployment process.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2444-->
+    <p>Fixed an issue that prevented the <code class="highlighter-rouge">php ./vendor/bin/ece-tools config:dump</code> command from removing redundant sections from the <code class="highlighter-rouge">config.php</code> file during the dump process if the store locale is not specified. Now you can easily move your configuration files between environments. After you update to `` v2002.0.13, regenerate older <code class="highlighter-rouge">config.php</code> files with the improved <code class="highlighter-rouge">config:dump</code> command. See <a href="/cloud/live/sens-data-over.html">Configuration management for store settings</a>.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2556-->
+    <p>Fixed an issue that caused an error during the deploy phase if the route configuration in the <code class="highlighter-rouge">.magento/routes.yaml</code> file redirects from an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp/">apex</a> domain to a <code class="highlighter-rouge">www</code> domain.</p>
+  </li>
+  <li class="fix">
+    <!--MAGECLOUD-2520-->
+    <p>Fixed an issue with the <code class="highlighter-rouge">_merge</code> option for the <a href="/cloud/env/variables-deploy.html#search_configuration"><code class="highlighter-rouge">SEARCH_CONFIGURATION</code></a> variable that caused incorrect merge results if you do not include the <code class="highlighter-rouge">engine</code> parameter in the updated <code class="highlighter-rouge">.magento.env.yaml</code> configuration file. Now, the merge operation correctly overwrites only the values you specify in the updated <code class="highlighter-rouge">.magento.env.yaml</code> without requiring you to set the <code class="highlighter-rouge">engine</code> parameter.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2515-->
+    <p>Fixed a Redis configuration issue that incorrectly enabled session locking for  versions 2.2.1 and later, which can cause slow performance and timeouts. Now, session locking is disabled by default. The issue was caused by a change in the default behavior of the <code class="highlighter-rouge">disable_locking</code> parameter introduced in v1.3.4 of the Redis session handler package. See <a href="https://github.com/colinmollenhour/php-redis-session-abstract">colinmollenhour/php-redis-session-abstract package</a>.</p>
+  </li>
+</ul>
+
+<h2 id="v2002012">v2002.0.12</h2>
+
+<ul>
+  <li class="new">
+    <!-- MAGECLOUD-2250 -->
+    <p><strong>Docker Compose for Cloud</strong>—Added a command—<code class="highlighter-rouge">docker:build</code>—to generate a <a href="/cloud/docker/docker-config.html">Docker Compose</a> configuration from the Cloud `` repository.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-2019 -->
+    <p><strong>Change Locales</strong>—Now you can <a href="/cloud/live/sens-data-over.html#change-locales">change store locale</a> without the exporting and importing configuration process. While Magento is in Production and the SCD_ON_DEMAND is enabled, the Magento store and admin locale options are available.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOU-1998 -->
+    <p><strong>Site map and Robots</strong>—Created a <a href="/cloud/trouble/robots-sitemap.html">workflow</a>to add a <code class="highlighter-rouge">robots.txt</code> file and generate a <code class="highlighter-rouge">sitemap.xml</code> file for a single domain configuration without requiring a change to the infrastructure.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1910 -->
+    <p><strong>Wizards</strong>—Added two <a href="/cloud/env/smart-wizards.html">wizards</a> to help you with Cloud configuration:</p>
+    <ul>
+      <li><code class="highlighter-rouge">ideal-state</code>—configure the ideal state for minimal deployment downtime</li>
+      <li><code class="highlighter-rouge">master-slave</code>—configure load balancing for database and Redis</li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1521 -->
+    <p><strong>Module Refresh</strong>—Added a Cloud command—<code class="highlighter-rouge">module:refresh</code>—to enable modules that were disabled or not explicitly enabled, similar to the way that it is done automatically during a build. See <a href="/cloud/live/live-sanity-check.html#build">Build and deploy on local in Build phase</a>.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-2105 -->
+    <p>Added the ability to choose to merge or overwrite configuration for services using the <code class="highlighter-rouge">_merge</code> option in <a href="/cloud/env/variables-deploy.html#cache_configuration">CACHE</a>, <a href="/cloud/env/variables-deploy.html#session_configuration">SESSION</a>, <a href="/cloud/env/variables-deploy.html#queue_configuration">QUEUE</a>, and <a href="/cloud/env/variables-deploy.html#search_configuration">SEARCH</a> configurations.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1908 -->
+    <p><strong>Environment Configuration sample file</strong>—We added a <code class="highlighter-rouge">.magento.env.yaml</code> sample file to the ece-tools package that includes a detailed description and possible values for each environment variable.</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1907 -->
+        <p>We also added a deep validation for the <code class="highlighter-rouge">.magento.env.yaml</code> configuration that prevents failures in the deployment process caused by unexpected values. When a failure occurs, you now receive a detailed error message that begins with: <code class="highlighter-rouge">Environment configuration is not valid. Please correct .magento.env.yaml file with next suggestions:</code></p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <p>Added the following <a href="/cloud/env/variables-intro.html"><strong>Environment variables</strong></a>:</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1501 -->
+        <p>Now you can define multiple locales for each theme using the new <a href="/cloud/env/variables-deploy.html#scd_matrix">SCD_MATRIX</a> environment variable, which reduces the amount of theme files to deploy.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2047 -->
+        <p>Added the <a href="/cloud/env/variables-deploy.html#database_configuration">DATABASE_CONFIGURATION</a> environment variable to customize your database connections for deployment.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2129 -->
+        <p>The new <a href="/cloud/env/variables-global.html#min_logging_level">MIN_LOGGING_LEVEL</a> variable overrides the minimum logging level for all output streams without making changes to the code.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p>Fixed an issue that caused downtime between the deploy and post-deploy phase. Now, the post_deploy phase begins <em>immediately</em> after the deploy phase ends.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2268 -->
+    <p>Fixed an issue that did not clean the successful cron jobs, those with <code class="highlighter-rouge">status = success</code>, from the schedule.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2113 -->
+    <p>Fixed an issue with the <code class="highlighter-rouge">post_deploy</code> hook that cleared the cache in the deploy phase instead of the post-deploy phase of the project.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2034 -->
+    <p>Fixed an issue when using SCD with multiple locales, which generated the same <code class="highlighter-rouge">js-translation.json</code> file for each locale.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2033 -->
+    <p>Optimized the <code class="highlighter-rouge">db:dump</code> command in the `` package to avoid locking tables and increase speed.</p>
+  </li>
+</ul>
+
+<h2 id="v2002011">v2002.0.11</h2>
+
+<p class="bs-callout bs-callout-info">The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.</p>
+
+<h4 id="new-features">New features</h4>
+
+<ul>
+  <li class="new">
+    <p><strong>Configuring read-only connections to non-master nodes</strong>—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 --><a href="/cloud/env/variables-deploy.html#redis_use_slave_connection">Redis</a> and for <!--MAGECLOUD-143 --> <a href="/cloud/env/variables-deploy.html#mysql_use_slave_connection">MariaDB</a>).</p>
+  </li>
+  <li class="new">
+    <!--MAGECLOUD-1910 -->
+    <p><strong>Configuration Wizard</strong>—Added a wizard to help verify your configuration for static content deployment. See <a href="/cloud/env/smart-wizards.html">Smart wizards</a>.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1966 -->
+    <p><strong>Symfony Console support</strong>—Added support for Symfony Console 4 with Magento 2.3.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1607 -->
+    <p><strong>Cron scheduling optimizations</strong>—Improved the queue management and enhanced logging to help with debugging cron-related issues.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1221 -->
+    <p>Deployment validation fails if an <code class="highlighter-rouge">ADMIN_EMAIL</code> or <code class="highlighter-rouge">ADMIN_USERNAME</code> value is the same as an existing Magento administrator account.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1282 -->
+    <p>Removed SOLR support for 2.2.x versions. 2.1.x versions retain the ability to enable SOLR.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1489 -->
+    <p>The first installation of the Staging &amp; Production environments of a PRO project now includes different index prefixes for ElasticSearch to prevent possible conflicts while identifying records belonging to each environment.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-2021 -->
+    <p>Fixed an issue that interrupted the build phase for legacy architecture during static content deployment.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1607 -->
+    <p><strong>Cron-specific Improvements</strong>—Re-worked the cron implementation:</p>
+
+    <ul>
+      <li>
+        <p>Fixed an issue that caused the cron queue to fill quickly. Now it clears the outdated cron jobs in a more reliable way.</p>
+      </li>
+      <li>
+        <p>Re-organized the sequence of cron jobs so that all jobs in separate threads launch prior to the general group.</p>
+      </li>
+      <li>
+        <p>Improved logging to better assist in debugging cron issues.</p>
+      </li>
+      <li>
+        <p><strong>NOTE</strong>—This release addresses many cron-related issues. If you currently use some cron-related patches in <em>m2-hotfixes</em>, remove them.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <p><strong>SCD-specific improvements</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1819 -->
+        <p>You can use the <code class="highlighter-rouge">VERBOSE_COMMANDS</code> and the <code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variables during both <em>build</em> and <em>deploy</em> phases.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2043 -->
+        <p>Fixed an issue that caused deployment to fail with a random error when encountering an unexpected value for the <code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variable. Improved the configuration validation to provide meaningful notifications. See <a href="/cloud/env/variables-build.html#scd_compression_level"><code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code></a> for acceptable values.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2044 -->
+        <p>Fixed the behavior of the <code class="highlighter-rouge">SCD_COMPRESSION_LEVEL</code> environment variable configuration flow so the overrides work as expected.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-2046 -->
+        <p>Fixed an issue that prevented the configuration of the <code class="highlighter-rouge">SCD_THREADS</code> environment variable in the <code class="highlighter-rouge">.magento.env.yaml</code> file <em>deploy</em> stage.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="v2002010">v2002.0.10</h2>
+
+<ul>
+  <li class="new">
+    <!-- MAGECLOUD-1285 -->
+    <p><strong>Static Content Deployment (SCD)</strong>—There is a new, alternative deployment process to generate static content when requested (on-demand). This decreases downtime and improves cache handling by generating the most critical assets.</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1738 -->
+        <p><strong>New environment variable</strong>—Added the <code class="highlighter-rouge">SCD_ON_DEMAND</code> global environment variable to generate static content when requested.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1788 -->
+        <p><strong>Post-deploy hook</strong>—Added a <code class="highlighter-rouge">post_deploy</code> hook for the <code class="highlighter-rouge">.magento.app.yaml</code> file that clears the cache and pre-loads (warms) the cache <em>after</em> the container begins accepting connections. It is available only for Pro projects that contain <a href="/cloud/trouble/pro-env-management.html">Staging and Production environments in the Project Web UI</a> and for Starter projects. Although not required, this works in tandem with the <code class="highlighter-rouge">SCD_ON_DEMAND</code> environment variable.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1842 -->
+    <p><strong>Optimization</strong>—Optimized moving or copying files during deployment to improve deployment speed and decrease loads on the file system.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1751 -->
+    <p><strong>Deployment Logging</strong>—Added the ability to enable Syslog and Graylog Extended Log Format (GELF) handlers for outputting logs during the deployment process. See <a href="/cloud/env/log-handlers.html">Logging handlers</a>.</p>
+  </li>
+  <li class="new">
+    <p>Added the following <a href="/guides/v2.2/cloud/env/variables-intro.html"><strong>Environment variables</strong></a>:</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1556 -->
+        <p><code class="highlighter-rouge">CRYPT_KEY</code>—Provide a cryptographic key to another environment when moving a database.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1621 and MAGECLOUD-1736-->
+        <p><code class="highlighter-rouge">SKIP_HTML_MINIFICATION</code>—<em>Global</em> environment variable that skips copying the static view files in the <code class="highlighter-rouge">var/view_preprocessed</code> directory and generates minified HTML when requested.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1738 -->
+        <p><code class="highlighter-rouge">SCD_ON_DEMAND</code>—<em>Global</em> environment variable to generate static content when requested.</p>
+      </li>
+      <li><code class="highlighter-rouge">WARM_UP_PAGES</code>—You can list the pages to use to pre-load the cache. Available in the new <a href="/guides/v2.2/cloud/env/variables-post-deploy.html">Post-deploy variables</a>.</li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-982 -->
+    <p>Fixed an issue that involved a locally applied patch breaking the deployment on an instance. Now, ece-tools can detect that a patch has been applied.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1735 -->
+    <p>Fixed a conflict between JavaScript bundling and GZIP functionality. Now these features work correctly together.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1744 -->
+    <p>Fixed an issue that caused ece-tools CLI commands to fail when using earlier PHP 7.0.x versions.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1822 -->
+    <p>Fixed an issue that prevented static content deployment with the compact strategy in multiple threads.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1853 -->
+    <p>Fixed a Redis session locking issue that caused an Admin login delay. Also, the fix is available for 2.1.x.</p>
+  </li>
+</ul>
+
+<h2 id="v200209">v2002.0.9</h2>
+
+<p class="bs-callout bs-callout-info">You must <a href="/guides/v2.2/cloud/project/project-upgrade-parent.html">upgrade the  metapackage</a> to get this and all future updates.</p>
+
+<ul>
+  <li class="new">
+    <!-- MAGECLOUD-1086 -->
+    <p><strong>ece-tools</strong>—The `` package now supports Magento 2.1.x.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1552 -->
+    <p><strong>Redis configuration</strong>—You can now <a href="/guides/v2.2/cloud/env/variables-deploy.html#cache_configuration">configure Redis</a> page and default cache and Redis session storage using an environment variable.</p>
+  </li>
+  <li class="new">
+    <!-- MAGECLOUD-1437 -->
+    <p><strong>Search, AMQP, and Redis service improvements</strong>—We unified the service configuration flow so that it now behaves the same way for all services. Manually editing the <code class="highlighter-rouge">env.php</code> file to configure services is no longer supported. You must use environment variables or the <code class="highlighter-rouge">.magento.env.yaml</code> file instead.</p>
+  </li>
+  <li class="fix">
+    <p><strong>Environment variables</strong>—</p>
+
+    <ul>
+      <li>
+        <!-- MAGECLOUD-1507 -->
+        <p>The use of <code class="highlighter-rouge">env:STATIC_CONTENT_THREADS</code> was deprecated and will be removed in a future release. Use the <code class="highlighter-rouge">STATIC_CONTENT_THREADS</code> environment variable instead.</p>
+      </li>
+      <li>
+        <!-- MAGECLOUD-1640 -->
+        <p>The <code class="highlighter-rouge">STATIC_CONTENT_EXCLUDE_THEMES</code> environment variable was deprecated. You must use the <code class="highlighter-rouge">SCD_EXCLUDE_THEMES</code> environment variable instead.</p>
+      </li>
+    </ul>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1674 -->
+    <p><strong>Logging</strong>—We simplified logging around built-in patching operations.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1615 -->
+    <p>We removed <code class="highlighter-rouge">developer</code> mode support and the <code class="highlighter-rouge">APPLICATION_MODE</code> environment variable because they were causing unexpected behavior.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1630 -->
+    <p>We fixed an issue that was causing static content deployment failures related to Redis. Now, multi-threaded static content deployment runs as designed.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1175 -->
+    <p>We fixed an issue that was preventing users from saving modifications to configuration fields in the Admin, which are marked as sensitive after running the <code class="highlighter-rouge">app:config:dump</code> command.</p>
+  </li>
+  <li class="fix">
+    <!-- MAGECLOUD-1674 -->
+    <p>We added support for an earlier version of <code class="highlighter-rouge">symfony/yaml</code> to fix conflicts with some packages, which are not yet compatible with the latest version.</p>
+  </li>
+</ul>
+
+<h2 id="older-releases">Older releases</h2>
+
+<p>See the <a href="/cloud/release-notes/cloud-release-archive.html">release notes archive</a> for version 2002.0.8 and earlier.</p>

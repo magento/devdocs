@@ -23,5 +23,5 @@ html-proofer:
   :url_ignore:
   - !ruby/regexp /frontend-dev-guide/
   - !ruby/regexp /guides\/v2\.0/
-  # - !ruby/regexp /mrg/
+  - !ruby/regexp /mrg/
   - !ruby/regexp /pattern-library/
