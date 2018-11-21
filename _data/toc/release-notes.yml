@@ -241,15 +241,11 @@ pages:
             - label: Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes
               url: /release-notes/ReleaseNotes2.1_RC1EE.html
 
-
-
         - label: Third-party extension contact information
           children:
 
             - label: Contact Information for Third-Party Extensions
               url: /release-notes/cbe-support-info.html
-
-
 
     - label: Backward incompatible changes
       url: /release-notes/backward-incompatible-changes/index.html
@@ -264,7 +260,6 @@ pages:
         - label: Magento Commerce for B2B changes
           url: /release-notes/changes/b2b_changes.html
           include_versions: ["2.2"]
-
 
     - label: Third-party licenses
       children:

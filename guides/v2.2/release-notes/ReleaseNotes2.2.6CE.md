@@ -33,11 +33,11 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has decreased up to 98%, from 40 minutes to one minute for 100,000 categories.  Previously, when your store contained many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
 
-<!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
+<!-- MAGETWO-91164 -->* The `catalog:images:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
     * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
 
-    * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+    * Run `bin/magento catalog:images:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 <!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and the average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes. 
 

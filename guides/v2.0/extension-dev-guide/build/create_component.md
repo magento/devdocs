@@ -22,7 +22,7 @@ Before you continue, make sure you have completed all of the following tasks:
 *   Created the [configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html) you'll need
 *   [Registered]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component
 
-## Add the component's `module.xml` file {#module-xml}
+## Add the component's `module.xml` file {#add-component-xml}
 
 Declare the component itself by adding a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml file in the `/etc` folder of your component.
 

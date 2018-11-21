@@ -80,7 +80,7 @@ Sample result:
 Use this command to reindex all or selected indexers one time only.
 
 {:.bs-callout .bs-callout-info}
-This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
+This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
 Command options:
 
@@ -220,5 +220,5 @@ Index mode for Indexer Product Categories was changed from 'Update on Save' to '
 * [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
 * [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
 * [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html")
+* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)
 * [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)

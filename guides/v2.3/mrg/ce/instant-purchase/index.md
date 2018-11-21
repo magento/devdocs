@@ -1,1 +1,0 @@
-../../../../v2.2/mrg/ce/instant-purchase/index.md
