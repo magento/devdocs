@@ -14,16 +14,8 @@ html-proofer:
     :in_processes: 3
   :file_ignore:
   - !ruby/regexp /guides\/m1x/
-  - !ruby/regexp /magento-techbull\.html/
-  - !ruby/regexp /pattern-library/
-  - !ruby/regexp /release-notes/
-  - !ruby/regexp /swagger/
   - !ruby/regexp /template\.html/
   - !ruby/regexp /videos/
   - !ruby/regexp /whats-new\.html/
   :url_ignore:
-  - !ruby/regexp /frontend-dev-guide/
   - !ruby/regexp /guides\/v2\.0/
-  # - !ruby/regexp /mrg/
-  - !ruby/regexp /pattern-library/
-  - !ruby/regexp /release-notes/
