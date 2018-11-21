@@ -7,7 +7,7 @@ A quote represents the contents of a customer's shopping cart. It is responsible
 
 * Tracking each item in the cart, including the quantity and base cost
 * Determining estimated shipping costs
-* Calculating subtotals, computing additional costs, applying coupons, and determining the payment method.
+* Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
 ## Mutations
 
