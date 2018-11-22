@@ -131,6 +131,17 @@ Make sure that these indexers are in "Update By Schedule" mode. If "Update On Sa
 {: .bs-callout .bs-callout-info }
 The indexer table switching mechanism requires additional database storage.
 
+#### EAV indexer optimization
+Magento 2.3 allows to disable Product EAV indexer for performance purposes.
+Product EAV indexer is used in Magento only by MySQL search engine. Its indexation takes approximately 5 minutes on large performance profile. You can disable it to minimize indexation time.
+To disable Product EAV indexer, two conditions must match:
+1.  Used search engine is other than MySQL
+2.  This indexer is not used by installed 3rd-party extensions
+{:.bs-callout .bs-callout-info}
+To check if Product EAV indexer is used by 3rd party extensions, you can verify if 3rd party extension is using `catalog_product_index_eav` table for reading/writing purposes.
+
+To disable Product EAV indexer, you go to Configuration -> Catalog -> Catalog Search section -> Search Engine option, uncheck checkbox and select other search engine than MySQL. Enable EAV indexer option will appear under Catalog Search section.
+
 ### Related topics
 {:.no_toc}
 
