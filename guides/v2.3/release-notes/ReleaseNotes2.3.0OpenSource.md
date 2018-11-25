@@ -1172,7 +1172,7 @@ required attribute set id filter on attribute group repository getList
 
 <!--- ENGCOM-1857 -->* The Module Manager module grid list is now displayed correctly (**System** > **Tools** > **Web Setup Wizard**  >  **Module Manager**).  *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15755](https://github.com/magento/magento2/pull/15755)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
 
-<!--- MAGETWO-87176 -->* Layered navigation now shows the correct product count. Previously, Magenta counted only in-stock product.  [GitHub-11946](https://github.com/magento/magento2/issues/11946)  
+<!--- MAGETWO-87176 -->* Layered navigation now shows the correct product count. Previously, Magento counted only in-stock product.  [GitHub-11946](https://github.com/magento/magento2/issues/11946)  
 
 <!--- MAGETWO-87449 -->*  DatePicker date format now reflects the  user's locale as expected. [GitHub-6858](https://github.com/magento/magento2/issues/6858)
 
@@ -1564,11 +1564,11 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 
 ### Payment methods
 
-<!--- MAGETWO-83340 -->* Merchants can now provide customized error messages when a transaction fails at the payment stage. Previously, Magenta displayed this default message when an error occurred: `Transaction has been declined. Please try again later.` For more details, please, see http://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html. 
+<!--- MAGETWO-83340 -->* Merchants can now provide customized error messages when a transaction fails at the payment stage. Previously, Magento displayed this default message when an error occurred: `Transaction has been declined. Please try again later.` For more details, please, see http://devdocs.magento.com/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html. 
 
 <!-- MAGETWO-87154 -->*  Magento no longer throws a validation error at the payments step of check out when an agreements checkbox is present. [GitHub-11885](https://github.com/magento/magento2/issues/11885) 
 
-<!--- MAGETWO-94402-->* Magento now displays the correct billing address in the order confirmation email when  **Paypal Express Checkout** is enabled. Previously, Magenta displayed the shipping address instead of the billing address. 
+<!--- MAGETWO-94402-->* Magento now displays the correct billing address in the order confirmation email when  **Paypal Express Checkout** is enabled. Previously, Magento displayed the shipping address instead of the billing address. 
 
 
 <!--- MAGETWO-91610-->* Customers can now check out using PayPal when the **Request Billing Information** feature is not enabled. Previously, Magento threw this error when a customer tried to check out with Braintree through Paypal from the shopping cart,  `Undefined index: billingAddress in /app/aacdg4mgbgw24/vendor/magento/module-braintree/Model/PayPal/Helper/QuoteUpdater.php on line 138`. 
