@@ -583,6 +583,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---MAGETWO-90784 -->* Catalog rules are now applied as expected when products are sorted by price. 
 
+<!--- ENGCOM-2874-->* Product pages now show the product name as the browser title and include meta title tag in the HTML source.  (The title and meta title tags can now be used independently.)  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17771](https://github.com/magento/magento2/pull/17771)*.  [GitHub-15501](https://github.com/magento/magento2/issues/15501)
 
 
 
@@ -812,6 +813,18 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!--- MAGETWO-86530 -->* Magento now trims trailing and leading spaces when saving the name of a new contact. *Fix submitted by [wardcapp](https://github.com/wardcapp) in pull request [12964](https://github.com/magento/magento2/pull/12964)*. [GitHub-10415](https://github.com/magento/magento2/issues/10415)
 
 
+<!--- MAGETWO-71432 -->*  We’ve added cast to string for `GroupInterface::CUST_GROUP_ALL` in the customer group source model. [GitHub-10436](https://github.com/magento/magento2/issues/10436)
+
+<!--- ENGCOM-1268 -->*  Magento now always returns the user data for the current logged user. Previously, you could get another customer’s session information from sections controller without a timestamp. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request  [14661](https://github.com/magento/magento2/pull/14661)*. [GitHub-14049](https://github.com/magento/magento2/issues/14049)
+
+
+<!--- ENGCOM-1146 MAGETWO-85968 -->* The PayPal module no longer automatically sets the customer dashboard page to Billing Agreements. *Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request  [14322](https://github.com/magento/magento2/pull/14322)*. [GitHub-7816](https://github.com/magento/magento2/issues/7816)
+
+<!--- ENGCOM-2782 -->* The Customer group menu is now displayed under Customers when you create a user role for a customer group. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request  [17574](https://github.com/magento/magento2/pull/17574)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+
+
+<!--- ENGCOM-2682 -->* The welcome email sent to new customers is now based on the ID of the selected store. Previously, Magento did not check if the selected store from which to send the welcome email was associated with website when creating a customer account in the Admin.  *Fix submitted by [Jason Evans](https://github.com/jasonevans1) in pull request  [17375](https://github.com/magento/magento2/pull/17375)*. [GitHub-10411](https://github.com/magento/magento2/issues/10411)
+
 
 
 
@@ -838,6 +851,10 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!--- MAGETWO-82734 -->* Long input field labels now wrap by word, not letter. 
 
 <!--- ENGCOM-1770 -->* The dashboard last order table now shows the correct  table for the specified store view in a multisite deployment where storefronts use different currencies. *Fix submitted by [Ankur Raiyani](https://github.com/ankurvr) in pull request [15682](https://github.com/magento/magento2/pull/15682)*. [GitHub-15660](https://github.com/magento/magento2/issues/15660)
+
+<!--- MAGETWO-82561 -->* The Customer Groups menu item has been relocated from **Stores** > **Other Settings** > **Customer Groups** to **Customers** > **Customer Groups**.  
+
+
 
 ### Directory
 
@@ -1212,6 +1229,16 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!---MAGETWO-87066 -->* Magento no longer throw the `Data key is missing: code-entity` error when you try to create and edit a page. [GitHub-11163](https://github.com/magento/magento2/issues/11163)
 
 
+<!--- MAGETWO-87153 -->* Customers are now redirected to the Sign In form as expected when they navigate to this form using the Back arrow on this browser.  [GitHub-12715](https://github.com/magento/magento2/issues/12715)  
+
+<!--- MAGETWO-87153 -->*  The welcome message now displays the new customer’s first and last name after they have confirmed their account by clicking  the Confirm Your Account button in the confirmation email.  [GitHub-12719](https://github.com/magento/magento2/issues/12719) 
+
+
+<!--- MAGETWO-87442 -->*  You can now enable debugging (log to file) in production mode. [GitHub-11882](https://github.com/magento/magento2/issues/11882) 
+
+<!--- MAGETWO-87449 -->*    Datepicker now uses the store locale as expected. [GitHub-6350](https://github.com/magento/magento2/issues/6350) 
+
+
 
 
 
@@ -1435,6 +1462,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- MAGETWO-87562 -->*  The  input format of customer date of birth has been corrected. [GitHub-11332](https://github.com/magento/magento2/issues/11332)
 
+<!-- MAGETWO-87064 -->* The **add to cart** checkboxes in Related Products are no longer visible when `$canItemsAddToCart` is set to **false**.  [GitHub-6891](https://github.com/magento/magento2/issues/6891)    
 
 
 
