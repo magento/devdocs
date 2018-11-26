@@ -626,7 +626,7 @@ We are reviewing this section and will publish it soon.
 
 10.5.1. ECMAScript 5.1 SHOULD be used as a JS standard.
 
-10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
+10.5.2. Language features (closures, WeakMaps, etc) MUST be used for private state. There SHOULD be no `_` (underscore) naming convention for private properties.
 
 10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
 
