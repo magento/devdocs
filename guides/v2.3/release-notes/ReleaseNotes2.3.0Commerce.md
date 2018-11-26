@@ -1056,6 +1056,14 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-70966-->* `Zend_Json` has been removed from the  `DataObject` class. [GitHub-9236](https://github.com/magento/magento2/issues/9236)
 
 
+<!---MAGETWO-93969 -->*  We’ve added a declarative mechanism to limit the HTTP methods that a controller can process by implementing one or more `Http<Method>ActionInterface`.
+
+<!--- MAGETWO-71059  MAGETWO-71040-->* `Zend_Json` has been removed from setup and `Webapi` and replaced by `Serializer\Json` in `PackagesAuth`.
+
+
+<!--- MAGETWO-71933-->*  Classes that contain a *–*  are now rendered as added to the XML. Previously,  *–*  were  replaced with a single *-*.  [GitHub-10645](https://github.com/magento/magento2/issues/10645)
+
+
 #### Configuration framework
 
 <!---MAGETWO-83083 -->* An order's `relation_child_id` and `relation_child_real_id` fields are now accurately set during edit operations. *Fix submitted by [Roman K.](https://github.com/RomaKis) in pull request [11909](https://github.com/magento/magento2/pull/11909)*. [GitHub-10195](https://github.com/magento/magento2/issues/10195)
@@ -1095,6 +1103,16 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- ENGCOM-774 -->* `jquery.mobile.custom.js` is now compatible with jQuery 3.x. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request  [13688](https://github.com/magento/magento2/pull/13688)*.
 
 <!---ENGCOM-1006 -->* The Fotorama gallery now works as expected on Android devices. *Fix submitted by [Danilo Argentiero](https://github.com/DaniloEmpire) in pull request  [14123](https://github.com/magento/magento2/pull/14123)*. [GitHub-7906](https://github.com/magento/magento2/issues/7906)
+
+
+<!---MAGETWO-85958 -->*  The dataprovider constructor has been changed to the `RendererInterface`, making it compatible with custom translators (which can be injected as an argument for `\Magento\Framework\Phrase\Renderer\Composite`).  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12007](https://github.com/magento/magento2/pull/12007)*. [GitHub-2156](https://github.com/magento/magento2/issues/2156)
+
+
+<!---ENGCOM-1368 -->* You can now place an order for a  grouped product where the subproducts quantity is less than one. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request [14814](https://github.com/magento/magento2/pull/14814)*.  [GitHub-14692](https://github.com/magento/magento2/issues/14692)
+
+
+
+<!---ENGCOM-1723 -->*  A JavaScript error in `dropdowns.js` has been fixed by properly initializing the `el` variable. You can now set `options.autoclose` to `false`.  *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [15607](https://github.com/magento/magento2/pull/15607)*.  [GitHub-15469](https://github.com/magento/magento2/issues/15469)
 
 
 
@@ -1489,6 +1507,40 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-87562 -->*  The  input format of customer date of birth has been corrected. [GitHub-11332](https://github.com/magento/magento2/issues/11332)
 
 <!-- MAGETWO-87064 -->* The **add to cart** checkboxes in Related Products are no longer visible when `$canItemsAddToCart` is set to **false**.  [GitHub-6891](https://github.com/magento/magento2/issues/6891)    
+
+<!---MAGETWO-87056 -->*  A  responsive design issue with the mobile landing page has been resolved. Previously, the Shop By and other page elements were positioned incorrectly. [GitHub-10941](https://github.com/magento/magento2/issues/10941) 
+
+
+<!---MAGETWO-87056 -->*   We’ve fixed an issue with `addCrumb()`. [GitHub-11275](https://github.com/magento/magento2/issues/11275)
+
+<!---MAGETWO-87056 -->* The `getChildren()` method now returns a list of IDs that is sorted by the `position` attribute.  [GitHub-11310](https://github.com/magento/magento2/issues/11310)  
+
+<!-- MAGETWO-87057 -->*  Magento now allows the  setting of a custom  HTTP response status code in a redirection. [GitHub-9028](https://github.com/magento/magento2/issues/9028)  
+
+
+<!---MAGETWO-87058 -->*  Magento\Search\Helper\getSuggestUrl() is now used as expected in the search template, which supports a custom autosuggest feature. [GitHub-6802](https://github.com/magento/magento2/issues/6802)   
+
+<!---MAGETWO-87058 -->*  XHTML templates now use schema URNs.  [GitHub-6661](https://github.com/magento/magento2/issues/6661)  
+
+
+<!---MAGETWO-87058 -->*  `SymLinksIfOwnerMatch` has replaced `FollowSymLinks` in htaccess templates. [GitHub-10811](https://github.com/magento/magento2/issues/10811) 
+
+
+<!-- MAGETWO-87057 -->* Magento no longer throws an error when using Magento\Quote\Model\ResourceModel\QuoteItem\Collection::getItems()  to load a quote item collection. [GitHub-8954](https://github.com/magento/magento2/issues/8954)   
+
+<!---ENGCOM-1851 -->* Merchants can now apply styling by changing LESS variables in the Luma theme as expected. [GitHub-15608](https://github.com/magento/magento2/issues/15608)
+
+<!--- MAGETWO-88148 -->* `sjparkinson/static-review` has been removed throughout the code base.
+
+<!-- MAGETWO-75114 -->* The `@deprecated` tag has been added to `Magento\Store\Model\Store::$_isAdminSecure`.  [GitHub-4720](https://github.com/magento/magento2/issues/4720)
+
+<!-- MAGETWO-80287 -->* A new static test detects blocks without the `name` attribute. 
+
+<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.0/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
+
+
+<!---MAGETWO-87056 -->*  You can now use the command-line interface to create a new administrator. Previously, Magento did not recognize configured tableprefix, which prevented Magento from creating the new user. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
+
 
 
 
