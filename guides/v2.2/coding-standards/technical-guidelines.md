@@ -755,7 +755,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.7.2. All data manipulation requests should be made with POST requests.
 
-15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
+15.8. Frequently update third-party libraries used in the project/component to eliminate known vulnerabilities.
 
 15.9. Local File Inclusion (LFI) protection.
 
