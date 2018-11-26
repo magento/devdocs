@@ -723,7 +723,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.3.1. Sanitize input; escape output.
 
-15.3.2. Follow [templates XSS security guidelines](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html) for escaping output.
+15.3.2. Follow [templates XSS security guidelines]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) for escaping output.
 
 15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
 
