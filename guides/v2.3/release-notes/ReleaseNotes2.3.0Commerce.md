@@ -890,6 +890,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- ENGCOM-2719 -->*  The new Currency Converter API supports retrieving TWD currency rates. Previously, the currency rates services that Magento connected to by default could not retrieve TWD rates. *Fix submitted by [Hirokazu Nishi](https://github.com/HirokazuNishi) in pull request [15542](https://github.com/magento/magento2/pull/15542)*.[GitHub-15541](https://github.com/magento/magento2/issues/15541)
 
 
+<!--- ENGCOM-982 -->* Magento now displays the default country selection when you add a new address as part of creating a new customer from the Admin.  *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14204](https://github.com/magento/magento2/pull/14204)* [GitHub-3483](https://github.com/magento/magento2/issues/3483)
 
 
 ### dotmailer
