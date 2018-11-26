@@ -634,7 +634,7 @@ We are reviewing this section and will publish it soon.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Re-declaration of function names MUST NOT be used.
+10.5.6. Code MUST NOT re-declare any identifiers already declared in a reachable scope (re-assignment is acceptable).
 
 ## 11. Testing
 
