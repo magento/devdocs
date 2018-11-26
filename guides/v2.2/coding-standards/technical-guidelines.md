@@ -630,7 +630,7 @@ We are reviewing this section and will publish it soon.
 
 10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
 
-10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
+10.5.4. New global properties MUST not be added (either through explicit `window` assignment or `var` in the top scope). The RequireJS module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
