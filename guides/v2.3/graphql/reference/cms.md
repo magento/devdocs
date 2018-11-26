@@ -21,6 +21,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `id` | Int | The ID of a CMS page
 `identifiers` | Array | An array containing a comma-separated list of block identifiers
+{:style="table-layout:auto;"}
 
 ### CmsPage output attributes 
 
@@ -35,7 +36,7 @@ Attribute | Data type | Description
 `meta_title` | String | The title that appears in the browser title bar and tab
 `page_layout` | String | The design layout of the page, indicating the number of columns and navigation features used on the page
 `title` | String | The name that appears in the breadcrumb trail navigation
-`url_key` |String | The URL key of CMS page, which is often based on the `content_heading`
+`url_key` |String | The URL key of the CMS page, which is often based on the `content_heading`
 {:style="table-layout:auto;"}
 
 ###  CmsBlocks output attributes
