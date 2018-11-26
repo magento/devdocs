@@ -26,7 +26,7 @@ Fastly provides the following services to optimize and secure content delivery o
    
    -  [Customize Fastly timeout](#timeouts) settings to prevent 503 responses on bulk operation requests 
 	
-   -  Create [custom error response pages]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg)
+   -  Create [custom error response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html-fastly.html#fastly-errpg)
    
 -  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network.
 
@@ -123,8 +123,8 @@ of WordPress URLs.
 ### Edge ACLs {#acl}
 
 ACLs are access control lists that allow you to manage IP addresses to allow or
-block access to resources. You could use edge ACLs with VCL snippets to block IP
-addresses or provide access. For example, use edge ACLs and a custom VCL snippet
+block access to resources. You can use edge ACLs with VCL snippets to block or allow
+access by IP address. For example, use edge ACLs and a custom VCL snippet
 to white list IPs to access your site.
 
 ### VCL snippets {#vcl}

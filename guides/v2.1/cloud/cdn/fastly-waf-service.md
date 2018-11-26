@@ -44,7 +44,7 @@ When the Managed Cloud WAF is enabled, it filters all web and admin traffic agai
 
 ![WAF error response page]
 
-You can customize this error response page from the Magento Admin UI. See [Create a custom error response page]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg).
+You can customize this error response page from the Magento Admin UI. See [Customize the WAF response page]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html#customize-the-waf-response-page). 
 
 If your {{ site.data.var.ee }} admin page or storefront returns a `403 Forbidden` error page in response to a legitimate URL request, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket). Copy the reference ID from the error response page and paste it into the ticket description.
 
