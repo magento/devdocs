@@ -630,11 +630,11 @@ We are reviewing this section and will publish it soon.
 
 10.5.3. All uses of XMLHttpRequest (including jQuery's `$.ajax`) MUST be asynchronous.
 
-10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
+10.5.4. New global properties MUST not be added (either through explicit `window` assignment or `var` in the top scope). The RequireJS module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Re-declaration of function names MUST NOT be used.
+10.5.6. Code MUST NOT re-declare any identifiers already declared in a reachable scope (re-assignment is acceptable).
 
 ## 11. Testing
 
