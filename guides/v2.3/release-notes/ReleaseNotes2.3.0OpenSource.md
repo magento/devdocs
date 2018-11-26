@@ -70,13 +70,13 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * Added a link to the Klarna merchant portal  
 
-* Show a detailed Klarna error message in the Magento Admin where needed  
+* Added a detailed Klarna message in the Magento Admin where needed  
 
 * Added an initial Magento Functional Test Framework (MFTF) test and support for future tests  
 
 * Extended cleanser filtering  
 
-* Added support for PHP 7.2  and dropped support for PHP 5.6
+* Added support for PHP 7.2 and dropped support for PHP 5.6
 
 #### Magento Shipping
 
@@ -573,7 +573,9 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- MAGETWO-94056 -->*  Product attribute are now displayed as expected in layered navigation with Elasticsearch 5.0+. 
 
+<!--- MAGETWO-93982 -->*  Magento now displays category images consistently.  Previously, category images disappeared then reappeared after every save. 
 
+<!--- MAGETWO-75328-->*  We’ve fixed the display of calculated tax for a logged-in customer when billing and shipping address differed. 
 
 
 
@@ -1333,6 +1335,26 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---MAGETWO-86884-->* Error reporting for product image import has been improved.   *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [1201](https://github.com/magento-engcom/magento2ce/pull/1201)*. [GitHub-4711](https://github.com/magento/magento2/issues/4711)
 
+<!---ENGCOM-732 -->* You can now set `selection_can_change_qty` during the export or import of a bundle product with properties. *Fix submitted by [Adam Paterson](https://github.com/adam-paterson) in pull request [100](https://github.com/magento-engcom/import-export-improvements/pull/100)*. [GitHub-9342](https://github.com/magento/magento2/issues/9342)
+
+
+<!--- MAGETWO-87442 -->* Magento no longer throws an exception after successfully validating a .csv for import. Previously, an exception message was mistakenly passed as a exception description argument instead of exception message, which triggered the exception. [GitHub-6924](https://github.com/magento/magento2/issues/6924)    
+
+<!--- MAGETWO-87442 -->* The product export process now correctly considers `hide_for_product_page` setting for images. [GitHub-8255](https://github.com/magento/magento2/issues/8255) 
+
+<!--- MAGETWO-87439 -->* Magento no longer displays a success message when it fails to successfully import all products.  [GitHub-5846](https://github.com/magento/magento2/issues/5846) 
+
+<!--- MAGETWO-87562 -->*  Magento no longer displays extraneous records for an order into the exported CSV file.  [GitHub-12714](https://github.com/magento/magento2/issues/12714) 
+
+<!---MAGETWO-87058 -->* Product import now fetches the relationship between product SKU and `entity_id` with improved efficiency when inserting attribute data. [GitHub-10920](https://github.com/magento/magento2/issues/10920) 
+
+<!--- MAGETWO-88240 -->* Magento now renames images during a bulk upload of products  with images. *Fix submitted by [Umar Chaudhry](https://github.com/umarch06) in pull request [99](https://github.com/magento-engcom/import-export-improvements/pull/99)*. [GitHub-11324](https://github.com/magento/magento2/issues/11324)
+
+
+<!--- MAGETWO-87933 -->* Report error CSV file now works when you  try to import a CSV file with a semicolon delimiter. *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [1203](https://github.com/magento-engcom/magento2ce/pull/1203)*.  [GitHub-5015](https://github.com/magento/magento2/issues/5015)
+
+
+<!---ENGCOM-2468 -->* Magento now provides a validation failure during import when multiselect columns contain duplicate values. *Fix submitted by [carstenpfeifer](https://github.com/pogster) in pull request [117](https://github.com/magento-engcom/magento2ce/pull/1203)*.  [GitHub-103](https://github.com/magento/magento2/issues/103)
 
 
 
@@ -1409,7 +1431,9 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---MAGETWO-87058 -->*   The Admin shipping report now shows the correct currency code. [GitHub-11793](https://github.com/magento/magento2/issues/11793)
 
- <!---MAGETWO-87058 -->*  `Configurable::getUsedProducts` returns a simple array as expected after product collections are cached [GitHub-11880](https://github.com/magento/magento2/issues/11880)  
+<!---MAGETWO-87058 -->*  `Configurable::getUsedProducts` returns a simple array as expected after product collections are cached [GitHub-11880](https://github.com/magento/magento2/issues/11880)  
+
+<!--- MAGETWO-87562 -->*  The  input format of customer date of birth has been corrected. [GitHub-11332](https://github.com/magento/magento2/issues/11332)
 
 
 
@@ -1600,12 +1624,6 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 <!-- MAGETWO-91934 -->* You can change store locale without the exporting and importing configuration data. While Magento is in production mode and the `SCD_ON_DEMAND` is enabled, the Magento store and admin locale options are available. See [Change locales](https://devdocs.magento.com/guides/v2.2/cloud/live/sens-data-over.html#change-locales).
 
 <!-- MAGETWO-90564 -->* The catalog rule re-indexing operation has been optimized, and average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes. 
-
-<!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in this release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
-
-    * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
-
-    * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 
 ### Pricing 
@@ -1925,8 +1943,6 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 ### Tax
 
 <!--- MAGETWO-83405 -->* Tax total amount is now equal to the sum of the tax details amounts. Previously, Magento displayed the wrong order tax amounts when using specific tax configurations. *Fix submitted by [Pieter Cappelle](https://github.com/PieterCappelle) in pull request [11594](https://github.com/magento/magento2/pull/11594)*. [GitHub-10347](https://github.com/magento/magento2/issues/10347)
-
-<!---MAGETWO-82746 -->*  You can now successfully upgrade from 2.1.x to 2.2.0. Previously, when you tried to upgrade from 2.1.9 to 2.2.0, Magento displayed the  **postcode is a required field** error message, and `setup:upgrade` failed. *Fix submitted by [Mr. Lewis](https://github.com/lewisvoncken) in pull request [11735](https://github.com/magento/magento2/pull/11735)*.
 
 <!---MAGETWO-87511 -->*  `\Magento\Framework\Data\OptionSourceInterface::getAllOptions()` and `\Magento\Framework\Data\OptionSourceInterface::toOptionArray()` are now compatible with parent classes. *Fix submitted by [Yevhen Sentiabov](https://github.com/joni-jones) in pull request [34](https://github.com/magento-engcom/php-7.2-support/pull/34)*. 
 
