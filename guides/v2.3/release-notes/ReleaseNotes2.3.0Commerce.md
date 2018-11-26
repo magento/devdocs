@@ -2185,17 +2185,31 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
+### Individual contributor contributions
+
+The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+
+{% include release-notes/engcomm-2-3-0-issues.md %}
+
+
+### Partner contributions
+
+The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
+
+{% include release-notes/engcomm-2-3-0-partner.md %}
+
+
 
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
 
 
- For more information, see [System Requirements]({{site.baseurl}}/magento-system-requirements.html).
+For more information, see [System Requirements]({{site.baseurl}}/magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3 Beta  using Composer.
+You can install Magento Commerce 2.3.0  using Composer.
 
 ## Migration toolkits
 
