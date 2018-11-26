@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Introduction to the Functional Testing Framework
 landing-page: Functional Testing Framework Guide
 ---
@@ -70,7 +70,7 @@ FTF works with tests from `<magento2_root_dir>/dev/tests/functional` only.
 
 For other tests please see the following topics:
 
-- [How to run unit tests during development on the command line or PHPStorm.]({{ page.baseurl }}/test/unit/unit_test_execution.html)
+- [How to run unit tests during development on the command line or PhpStorm.]({{ page.baseurl }}/test/unit/unit_test_execution.html)
 
 - [How to run unit and integration tests using `bin/magento` in continuous integration.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
 

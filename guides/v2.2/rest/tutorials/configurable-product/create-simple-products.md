@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 3. Create the simple products
 subtitle: Create a configurable product tutorial
 menu_title: Step 3. Create the simple products

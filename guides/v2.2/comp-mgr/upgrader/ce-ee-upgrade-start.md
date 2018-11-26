@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Upgrade from Open Source to Commerce
 functional_areas:
   - Upgrade
@@ -15,11 +15,6 @@ You must be authorized for {{site.data.var.ee}} to perform the tasks discussed i
 ## Prerequisites {#compman-prereq}
 
 Before continuing, complete all tasks discussed in [Prerequisites].
-
-In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`] extension, which is required by {{site.data.var.ee}}. Examples follow:
-
-*	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
-*	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
 {:.bs-callout .bs-callout-info}
 Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="_blank"} if you have questions.

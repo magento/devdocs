@@ -1,7 +1,7 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
-title: Modal сomponent
+title: Modal component
 menu_title: Modal component
 redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---

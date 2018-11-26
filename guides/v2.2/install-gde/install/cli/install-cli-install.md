@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Install the Magento software
 menu_title: Install the Magento software
@@ -109,7 +109,7 @@ To enable or disable modules after installing Magento, see [Enable and disable m
 
 {% include install/sens-data.md %}
 
-#### Sample localhost installations {install-cli-example}
+#### Sample localhost installations {#install-cli-example}
 
 **Example 1**
 

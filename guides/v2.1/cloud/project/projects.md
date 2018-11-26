@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 100_project
 title: Manage your project
 menu_title: Manage your project
@@ -31,7 +31,7 @@ To manage your project, environment, and branches, see:
 The following sections detail more about project and environment variables:
 
 *	[Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
-*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
+*	[{{site.data.var.ece}} environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
 *	[Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
 *	[Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
@@ -45,20 +45,23 @@ To upgrade and patch Magento, see:
 
 ## Access the Project Web Interface {#login}
 
-With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
+With your {{site.data.var.ece}} account created, you can log into the Project Web Interface at [https://accounts.magento.cloud](https://accounts.magento.cloud).
 
 ![Log in to a project]({{ site.baseurl }}/common/images/cloud_project-login.png){:width="450px"}
 
-## Blackfire and New Relic credentials {#integrations}
+## Fastly, New Relic, and Blackfire credentials {#integrations}
 
-Your project includes [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) and [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+
+* [Fastly](https://https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects.
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
+
 * [New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.ece}}.
 
 To review your integration tokens, IDs, and more:
 
-1. As the {{site.data.var.ece}} Account Owner, log in to your Magento Commerce project.
+1. As the {{site.data.var.ece}} Account Owner, log in to your project.
 2. In the upper right corner, click **&lt;your name>** > **Account Settings**.
 
 	![Go to account settings]({{ site.baseurl }}/common/images/cloud_acct-settings-option.png)

@@ -43,7 +43,7 @@ Use [RFC2119] to interpret keywords like:
 
 1.3. Type hints for scalar arguments SHOULD be used.
 
-1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled.
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces SHOULD NOT have this declaration.
 
 ## 2. Class design
 
@@ -614,7 +614,7 @@ We are reviewing this section and will publish it soon.
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build front-end applications.
+10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -624,19 +624,17 @@ We are reviewing this section and will publish it soon.
 
 10.5. ESLint [rules][rules] SHOULD BE followed.
 
-10.5.1. ES5 SHOULD be used as a JS standard.
+10.5.1. ECMAScript 5.1 SHOULD be used as a JS standard.
 
-10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
+10.5.2. Language features (closures, WeakMaps, etc) MUST be used for private state. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
+10.5.3. All uses of XMLHttpRequest (including jQuery's `$.ajax`) MUST be asynchronous.
 
-10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
+10.5.4. New global properties MUST not be added (either through explicit `window` assignment or `var` in the top scope). The RequireJS module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Function declarations MUST be used for private functions instead of function expressions.
-
-10.5.7. Re-declaration of function names MUST NOT be used.
+10.5.6. Code MUST NOT re-declare any identifiers already declared in a reachable scope (re-assignment is acceptable).
 
 ## 11. Testing
 

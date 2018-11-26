@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Magento logging in more detail
 functional_areas:
   - Configuration
@@ -18,7 +18,7 @@ A Monolog _logger_ is a channel that has its own set of _handlers_. Monolog has 
 *	Log to files and syslog
 *	Send alerts and e-mails
 *	Log specific servers and networked logging
-*	Logging in development (integration with FireBug and ChromePHP, among others)
+*	Logging in development (integration with FireBug and Chrome Logger, among others)
 *	Log to the database
 
 Each handler can either process the input message and stop propagation or pass the control to the next handler in a chain.

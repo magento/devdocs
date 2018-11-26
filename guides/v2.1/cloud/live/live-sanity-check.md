@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Build and deploy on local
 functional_areas:
   - Cloud
@@ -27,7 +27,7 @@ If you modified your `composer.json` file to add modules, we recommend running t
 
 Your Git branch must have the following files for building and deploying for your local and to Integration, Staging, and Production environments:
 
-* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/access-acct/trouble.html).
+* `auth.json` in the root Magento directory. This file includes the Magento authentication keys entered when creating the project. If you need to verify the file and settings, see [Troubleshoot deployment]({{ page.baseurl }}/cloud/trouble/troubleshoot-deployment.html).
 * `config.local.php` if you used [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html) for 2.1.X
 * `config.php` if you used [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) for 2.2.X
 * [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) is updated and saved in the root directory
@@ -36,7 +36,7 @@ Your Git branch must have the following files for building and deploying for you
 
 ## Test build your code locally before pushing {#test-build}
 
-Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do **NOT** push the generated build files from this test to your remote Git branch. This is a trial run to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.
+Sometimes you just want to test your build prior to pushing your code to Git. You can use a specific set of commands to build locally. Do **NOT** push the generated build files from this test to your remote Git branch. This is a test to ensure no issues occur before pushing to Git. Remember, when you push to the remote Git branch, a full build and deploy process begins automatically.
 
 1. SSH into your local Magento workspace.
 2. Move to another location to run your build. You should keep this build separate from your usual Git branch.
@@ -78,7 +78,7 @@ Before you continue, make sure you push all current code to the remote Cloud ser
 
 During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
-*	Apply patches distributed to all Magento Commerce (Cloud) accounts
+*	Apply patches distributed to all {{site.data.var.ece}} accounts
 *	Apply patches we provided specifically to you
 *	Enable modules to build
 *	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
@@ -89,7 +89,7 @@ Before you continue, you must know the file system path to any patch we provided
 
 #### To build your site:
 
-1.	Apply patches distributed to all Magento Commerce (Cloud) accounts.
+1.	Apply patches distributed to all {{site.data.var.ece}} accounts.
 
 	Enter the following command from the project root directory:
 
@@ -169,7 +169,7 @@ We highly recommend having Magento already installed prior to deployment. During
 
 		php bin/magento setup:upgrade
 
-	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean

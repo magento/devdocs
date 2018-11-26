@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 10. Issue a partial refund
 subtitle: Order processing tutorial
 return_to:
@@ -11,7 +11,6 @@ level3_subgroup: order-tutorial
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-issue-refund.html
   - /guides/v2.2/get-started/order-tutorial/order-issue-refund.html
-  - /guides/v2.3/get-started/order-tutorial/order-issue-refund.html
 functional_areas:
   - Integration
   - Orders

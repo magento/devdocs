@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 120_env
 title: Manage branches with the CLI
 menu_title: Manage branches with the CLI

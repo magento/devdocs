@@ -1,6 +1,6 @@
 ---
 subgroup: howtos
-group: UI_Components_guide
+group: ui-components-guide
 title: Configure the TinyMCE editor
 ---
 You can extend and fully customize the TinyMCE editor to match the style and look-and-feel of your custom theme.

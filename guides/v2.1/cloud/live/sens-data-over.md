@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Configuration management for store settings
 functional_areas:
   - Cloud
@@ -188,7 +188,7 @@ To complete extensive changes:
 
 ## Change locales
 
-You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
+You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-global.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
 
 You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.local.php` file with the new locale information, and copy the configuration file to the target environment.
 

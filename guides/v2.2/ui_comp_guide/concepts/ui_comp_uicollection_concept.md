@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 title: About the uiCollection class
 ---
 
@@ -7,7 +7,7 @@ title: About the uiCollection class
 
 The `uiCollection` library class should be used as a base class by any components that contain a collection of child UI components.  `uiCollection` inherits from the [uiElement class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html).
 
-`uiCollection` source code is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js).
+`uiCollection` source code is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js).
 
 ## Commonly used `uiCollection` methods
 
@@ -66,7 +66,7 @@ console.log(this.elems());
 
 ## uiCollection template {#uicollection_template}
 
-The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the {{site.data.var.ce}} github repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/collection.html).
+The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the {{site.data.var.ce}} GitHub repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/collection.html).
 
 This template performs only one task: renders child templates if they exist.
 

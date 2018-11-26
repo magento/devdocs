@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 title: InsertListing component
 ---
 
@@ -122,7 +122,7 @@ The InsertListing component inserts [Listing]({{ page.baseurl }}/ui_comp_guide/c
     </td>
     <td>
       Enable link between insertListing's externalValue and value.
-      Here <code>link</code> means the two-way <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
+      Here <code>link</code> means the two-way <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links-property">
       links property</a> of UI components, which allows immediate
       update.
     </td>

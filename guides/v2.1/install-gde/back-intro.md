@@ -1,11 +1,6 @@
 ---
-group:
-subgroup: A_intro
+group: 
 title: Go back to the Magento installation overview
-menu_title: Go back to the Magento installation overview
-menu_node: parent
-menu_order: 1
-redirect_from: /guides/v1.0/install-gde/back-intro.html
 functional_areas:
   - Install
   - System
@@ -14,7 +9,7 @@ functional_areas:
 
 ## Need more help?
 
-Need some basic info before you get started? New to Magento installation? Here are some helpful resources for you:
+Need some basic information before you get started? New to Magento installation? Here are some helpful resources for you:
 
 *	[Installation overview]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 *	[Is the Magento software already installed?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)

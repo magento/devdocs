@@ -1,5 +1,5 @@
 ---
-group: install
+group: installation-guide
 title: Configure the Magento application
 functional_areas:
   - Install
@@ -49,7 +49,7 @@ The UNIX `logrotate` utility enables you to administer systems that generate lar
 
 For more information, see one of the following:
 
-*	[HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](http://www.thegeekstuff.com/2010/07/logrotate-examples)
+*	[HowTo: The Ultimate Logrotate Command Tutorial with 10 Examples](https://www.thegeekstuff.com/2010/07/logrotate-examples)
 *	[stackexchange](http://unix.stackexchange.com/questions/85662/how-to-properly-automatically-manually-rotate-log-files-for-production-rails-app)
 *	[logrotate man page](http://linuxconfig.org/logrotate-8-manual-page)
 

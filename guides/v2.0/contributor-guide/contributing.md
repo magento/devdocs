@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Code Contributions
 ---
 
@@ -59,7 +59,7 @@ Submit feature requests or enhancement suggestions to the new [Magento 2 Feature
 
 ## Fork a repository   {#fork}
 
-To fork a repository on Github:
+To fork a repository on GitHub:
 
 1. Create or log in to your account on GitHub.
 2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="_blank"}.

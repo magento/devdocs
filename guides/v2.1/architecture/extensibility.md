@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Extensibility and modularity
 menu_title: Extensibility and modularity
 ---
@@ -14,7 +14,7 @@ Maximizing extensibility has been our goal through all aspects of Magento develo
 
 *Magento extensibility* describes the product's built-in ability for developers and merchants to routinely extend their storefront's capabilities as their business grows.
 
-Below are the main factors affect extensibility.
+The following factors significantly affect extensibility.
 
 ### Architectural principles that guide product structure
 
@@ -26,7 +26,7 @@ Magento is built on open-source technologies, created for the development commun
 
 ### Coding standards
 
-Adherence to standard best practices for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code ensures that the code base is sound. Magento has adopted most of the Zend Framework Coding Standards for PHP. See [Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html) for more information.
+Adherence to standard best practices for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code ensures that the code base is sound. Magento has adopted most of the PSR2 Coding Standards for PHP. See [Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html) for more information.
 
 ### Upgrade and versioning strategies
 

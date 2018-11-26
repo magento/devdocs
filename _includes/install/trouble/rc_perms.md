@@ -15,7 +15,7 @@ The way you resolve the issue depends on whether you have a one-user or two-user
 
 If you have command-line access, enter the following command assuming Magento is installed in `/var/www/html/magento2`:
 
-	cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod u+x bin/magento
+	cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} + && chmod u+x bin/magento
 
 If you do not have command-line access, use an FTP client or a file manager application provided by your hosting provider to set permissions.
 

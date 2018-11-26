@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Magento's deployment configuration
-redirect_from: /guides/v1.0/config-guide/config/config-php.html
 functional_areas:
   - Configuration
   - System

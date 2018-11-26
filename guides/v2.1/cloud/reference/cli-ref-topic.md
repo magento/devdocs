@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Magento Cloud CLI reference
 functional_areas:
   - Cloud
@@ -179,3 +179,4 @@ magento-cloud update
 Checking for Magento Cloud CLI updates (current version: X.XX.X)
 No updates found
 ```
+{: .no-copy}

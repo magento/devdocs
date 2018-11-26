@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Inline Edit Component
 menu_title: Inline Edit Component
@@ -158,7 +158,7 @@ Additional examples:
 ..
 </columns>
 {% endhighlight %}
- ** - Example of the editor type configuraion - let's add a colorpicker type, for example, as addition to the existed types (which extend form/element/abstract)
+ ** - Example of the editor type configuration - let's add a colorpicker type, for example, as addition to the existed types (which extend form/element/abstract)
 {% highlight xml%}
 <item name="editor" xsi:type="array">
     <item name="component" xsi:type="string">Magento_Ui/js/form/element/colorpicker</item>

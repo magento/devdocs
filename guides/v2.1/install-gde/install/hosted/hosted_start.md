@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 02_config-hosted
 title: Configure your hosted system
 menu_title: Configure your hosted system
@@ -15,7 +15,7 @@ functional_areas:
 
 Before you can install the Magento software, you must get your hosted system ready.  
 
-If your hosted system is already set up, go to [Get the Magento software packages]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html#get-archive).
+If your hosted system is already set up, go to [Get the Magento software packages]({{ page.baseurl }}/install-gde/install/hosted/hosted_get-ftp.html).
 
 ## Verify the software on your system {#newbie-verify}
 

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 20_cqrs
 title: Verify split databases
 menu_title: Verify split databases

@@ -1,8 +1,7 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Dependency injection
 menu_title: Dependency injection
-redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---
 
 Magento 2 uses [Dependency Injection] to replace functionality provided by the `Mage` class in Magento 1.x.
@@ -129,4 +128,4 @@ To get around this limitation, injectable objects can depend on [factories] that
 [proxy]: {{ page.baseurl }}/extension-dev-guide/proxies.html
 [factories]: {{ page.baseurl }}/extension-dev-guide/factories.html
 [interceptors]: {{ page.baseurl }}/extension-dev-guide/plugins.html
-[`Product`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Catalog/Model/Product.php
+[`Product`]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/Catalog/Model/Product.php

@@ -1,5 +1,5 @@
 ---
-group: contributor
+group: contributor-guide
 title: Basic template
 redirect_from:
    - /guides/v2.1/contributor-guide/basic_template.html
@@ -11,6 +11,25 @@ Introductory text that gives an overview of the topic you will be writing about.
 The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
 
 You can start off by editing the local version of this file using markdown language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
+
+## Metadata parameters
+
+Add the following metadata parameters at the top of your page. We use YAML for the metadata in front matter. We use this data when generating the DevDocs for the following:
+
+Parameter | Description
+--- | ---
+`group:` | The table of contents this file belongs to, which points to files located in `_data/toc/`. Only add the name of the file without the extension. For example, the group of this file is `group: contributor-guide`, which points to the table of contents defined in `_data/toc/contributor-guide.yml`.
+`title:` | The title of the page.
+`functional_areas:`  |  Optional. Adds facets for search results. Available facets include: Sales, Products, Carts, Customers, Marketing, Account, Content, Reports, Stores, System, Catalog, Orders, Frontend, Theme, Staging, Search, Configurations, Integration, Services, Tools, Setup, Testing, test, Standards, Install, Upgrade, B2B, Cloud, and Bundled extensions. These facets are case sensitive and support multiple facets separated by commas. For example: `functional_areas: Install`.
+`redirect_from`  | Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the `/guides` directory. For an example, see the source code for this template page.
+`ee_only:` | Optional. If set to `true`, graphics/cues display on the page indicating it applies to {{site.data.var.ee}}.
+{:style="table-layout:auto;"}
+
+{%
+include note.html
+type='info'
+content='If you need help with metadata, we can help in your submitted pull requests.'
+%}
 
 ## Basic Markdown Syntax {#basic}
 

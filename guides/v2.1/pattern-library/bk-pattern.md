@@ -1,8 +1,7 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Admin Design Pattern Library
 landing-page: Pattern Library
-redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---
 ## What is a design pattern?
 
@@ -51,7 +50,7 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 ### Navigation
 
 * [Links](navigation/links/links.html)
-* [Wizard](navigation/wizard/wizard.htm)
+* [Wizard](navigation/wizard/wizard.html)
 
 ### Templates
 

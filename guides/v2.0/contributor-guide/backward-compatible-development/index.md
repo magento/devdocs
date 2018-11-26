@@ -1,10 +1,10 @@
 ---
-group: contributor
+group: contributor-guide
 title: Backward compatible development
 ---
 This page describes rules and best practices for backward compatible development.
 
-## Backward Сompatibility Policy
+## Backward Compatibility Policy
 
 See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.
 
@@ -16,7 +16,7 @@ The core Magento team and contributing developers work in two release types
     - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
 {: .bs-callout .bs-callout-info }
-Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
+Backward Compatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 
 ## Prohibited code changes
 
@@ -333,7 +333,7 @@ Preserve `@api` tag when deprecating `@api`-marked code.
 
 ~~~
 /**
- * @deprecated because new api was introduced
+ * @deprecated because new API was introduced
  * @see \New\Api
  */
 ~~~
@@ -342,7 +342,7 @@ Preserve `@api` tag when deprecating `@api`-marked code.
 
 ~~~
 <!--
-@deprecated because new api was introduced
+@deprecated because new API was introduced
 @see NewApi
 -->
 ~~~

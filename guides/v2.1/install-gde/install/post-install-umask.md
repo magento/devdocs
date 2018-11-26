@@ -1,5 +1,5 @@
 ---
-group: install
+group: installation-guide
 subgroup: 05_umask
 title: Optionally set a umask
 menu_title: Optionally set a umask

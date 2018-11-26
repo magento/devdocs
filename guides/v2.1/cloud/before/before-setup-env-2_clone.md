@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 080_setup
 title: Clone and branch the project
 menu_title: Clone and branch the project
@@ -20,9 +20,9 @@ functional_areas:
 #### Previous step:
 [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)
 
-The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
+The {{site.data.var.ee}} project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
 
-To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation){:target="_blank"}.
+To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation).
 
 The commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. For a full list of Magento Cloud CLI commands, enter `magento-cloud list` or see the [Magento CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
@@ -70,7 +70,7 @@ To clone the project's `master` environment to your local:
 
 We recommend changing the following variables for the Magento Admin URL and administrator account. You should configure these settings for security reasons prior to branching from the cloned `master`. If you change the variables in the `master` branch, you only have to make these changes once. All branches inherit the variables from `master`.
 
-* `ADMIN_EMAIL`: The email address for the administrative user. This value is required for upgrading and patching Magento Commerce (Cloud) and is used to send password reset emails.
+* `ADMIN_EMAIL`: The email address for the administrative user. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails.
 * `ADMIN_USERNAME`: Username for the administrative user. The administrative user
 can create other users, including other administrative users. The default
 hardcoded username is the Project Owner email address. You can use this value, or change it to another secure username.
@@ -92,7 +92,7 @@ To set Admin variables, you will use this command format:
 
 	magento-cloud variable:set <name> <value> -e <environment ID>
 
-You can also [log into your project](https://accounts.magento.cloud){:target="_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
+You can also [log into your project](https://accounts.magento.cloud) in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
 {: .bs-callout .bs-callout-warning}
 Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
@@ -142,7 +142,7 @@ To set variables using the CLI (with example values used):
 
 To set variables using the Project Web Interface:
 
-1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud){:target="_blank"}.
+1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 2. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. If you are asked to create the project, click **Continue Later**.
 
 	![Project without code]({{ site.baseurl }}/common/images/cloud_project_empty.png)

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up RabbitMQ service
 menu_title: Set up RabbitMQ service
@@ -14,12 +14,14 @@ functional_areas:
 
 The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
 
-The MQF uses [RabbitMQ](http://www.rabbitmq.com){:target="_blank"} as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
+The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
 We support RabbitMQ version 3.5.
 
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing AMQP-based service, like RabbitMQ, instead of relying on {{site.data.var.ece}} to create it for you, use the [`QUEUE_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration) environment variable to connect it to your site.
+
+{% include cloud/service-config-integration-starter.md %}
 
 ## Add RabbitMQ in services.yaml and .magento.app.yaml {#settings}
 
@@ -66,7 +68,7 @@ The response includes all relationships for services and configuration data for 
       }
    ]
 }
-```{: .no-copy}
+```
 
 ## Connect to RabbitMQ for debugging {#connect}
 
@@ -95,7 +97,7 @@ You can do this using [SSH tunneling]({{ page.baseurl }}/cloud/env/environments-
 
 ### Connect from the application {#cloud-rabbitmq-conn-cont}
 
-To connect to RabbitMQ running in an application, you should install a client like [amqp-utils](https://github.com/dougbarth/amqp-utils){:target="_blank"} as a project dependency in your `.magento.app.yaml` file.
+To connect to RabbitMQ running in an application, you should install a client like [amqp-utils](https://github.com/dougbarth/amqp-utils) as a project dependency in your `.magento.app.yaml` file.
 
 For example,
 
@@ -109,4 +111,4 @@ Then, when you SSH into your {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd4
 
 ### Connect from your PHP application {#cloud-rabbitmq-conn-php}
 
-To connect to RabbitMQ using your PHP application, add a PHP {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} (like [PHP AMQPlib](https://github.com/videlalvaro/php-amqplib){:target="_blank"}) to your source tree.
+To connect to RabbitMQ using your PHP application, add a PHP {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} (like [PHP AMQPlib](https://github.com/videlalvaro/php-amqplib)) to your source tree.

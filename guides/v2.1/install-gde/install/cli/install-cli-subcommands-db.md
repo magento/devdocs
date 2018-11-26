@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 title: Create the Magento database schema
 redirect_from:
   - /guides/v1.0/install-gde/install/install-cli-subcommands-db.html

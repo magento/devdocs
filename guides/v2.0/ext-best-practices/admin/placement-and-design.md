@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 01_Admin
 title: Admin Panel Placement and Design
 menu_title: Admin Panel Placement and Design

@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: R_General
 title: (Easy) Install the Magento archive on your server
 menu_title: (Easy) Install the Magento archive on your server

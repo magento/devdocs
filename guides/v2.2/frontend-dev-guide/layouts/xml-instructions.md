@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Layout instructions
 functional_areas:
   - Frontend
@@ -45,58 +45,19 @@ Blocks employ templates to generate HTML. Examples of blocks include a {% glossa
 {:.bs-callout .bs-callout-info}
 The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required.**
 
-<table>
-   <tbody>
-      <tr>
-         <th>Attribute</th>
-         <th>Description</th>
-         <th>Values</th>
-         <th>Required?</th>
-      </tr>
-      <tr class="even">
-         <td><code>class</code></td>
-         <td>Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output.</td>
-         <td>class name</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>name</code></td>
-         <td>Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code></td>
-         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td><code>before</code></td>
-         <td><p>Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
-         <td>Possible values: element name or dash (-)</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>after</code></td>
-         <td>Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
-         <td>Possible values: element name or dash (-)</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td><code>template</code></td>
-         <td>A template that represents the functionality of the block to which this attribute is assigned.</td>
-         <td>template file name</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>as</code></td>
-         <td>An alias name that serves as identifier in the scope of the parent element.</td>
-         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>cacheable</code></td>
-         <td>Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. </td>
-         <td><code>true</code> or <code>false</code></td>
-         <td>no</td>
-      </tr>
-   </tbody>
-</table>
+{:.bs-callout .bs-callout-info}
+We recommend always adding a `name` to blocks. Otherwise, it is given a random name.
+
+| Attribute | Description | Values | Required? |
+|:------- |:------ |:------ |:------ |
+| `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | class name | no |
+|`name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
+| `before` | Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
+| `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
+| `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
+| `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no | 
+| `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
+{:style="table-layout:auto;"}
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction. 
 
@@ -106,71 +67,21 @@ A structure without content that holds other layout elements such as blocks and 
 **Details:** 
 A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
 
-<table>
-   <tbody>
-      <tr>
-         <th>Attribute</th>
-         <th>Description</th>
-         <th>Values</th>
-         <th>Required?</th>
-      </tr>
-      <tr class="even">
-         <td><code>name</code></td>
-         <td>A name that can be used to address the container in which this attribute is assigned. The name must be unique per generated page.</td>
-         <td>A-Z, a-z, 0-9, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive.</td>
-         <td>yes</td>
-      </tr>
-      <tr class="odd">
-         <td><code>label</code></td>
-         <td>An arbitrary name to display in the web browser.</td>
-         <td>any</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td><code>before</code></td>
-         <td>Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
-         <td>Possible values: element name or dash (-).</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>after</code></td>
-         <td>Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See <a href="#fedg_xml-instrux_before-after">before and after attributes</a> for details.</td>
-         <td>Possible values: element name or dash (-).</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td><code>as</code></td>
-         <td>An alias name that serves as identifier in the scope of the parent element.</td>
-         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>output</code></td>
-         <td>Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.)</td>
-         <td>Any value except the obsolete <code>toHtml</code>. Recommended value is <code>1</code>.</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td><code>htmlTag</code></td>
-         <td>Output parameter. If specified, the output is wrapped into specified HTML tag.</td>
-         <td>Any valid HTML 5 tag.</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>htmlId</code></td>
-         <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5 <code>id</code> value.</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td><code>htmlClass</code></td>
-         <td>Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect.</td>
-         <td>Any valid HTML 5 <code>class</code> value.</td>
-         <td>no</td>
-      </tr>
-   </tbody>
-</table>
+{:.bs-callout .bs-callout-info}
+We recommend always adding a `name` to containers. Otherwise, it is given a random name.
 
+| Attribute | Description | Values | Required? |
+|:------- |:------ |:------ |:------ |
+| `name` | A name that can be used to address the container in which this attribute is assigned. The name must be unique per generated page. | A-Z, a-z, 0-9, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
+| `label` | An arbitrary name to display in the web browser. | any| no |
+| `before` | Used to position the container before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-). | no |
+| `after` | Used to position the container after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-). | no |
+| `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no |
+| `output` | Defines whether to output the root element. If specified, the element will be added to output list. (If not specified, the parent element is responsible for rendering its children.) | Any value except the obsolete `toHtml`. Recommended value is `1`. | no |
+| `htmlTag` | Output parameter. If specified, the output is wrapped into specified HTML tag. | Any valid HTML 5 tag. | no |
+| htmlId | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `id` value. | no |
+| `htmlClass` | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `class` value. | no |
+{:style="table-layout:auto;"}
 
 Sample of usage in layout:
 ```xml
@@ -188,72 +99,25 @@ These optional attributes can be used in layout XML files to control the order o
 
 The following tables give a detailed description of the results you can get using the `before` and `after` attributes. The first table uses a block a as positioned element.
 
-<table>
-   <tbody>
-      <tr>
-         <th><code>Attribute</code></th>
-         <th>Value</th>
-         <th>Description</th>
-      </tr>
-      <tr class="even">
-         <td><code>before</code></td>
-         <td>Dash (-)</td>
-         <td>The block displays before all other elements in its parent node.</td>
-      </tr>
-      <tr class="odd">
-         <td><code>before</code></td>
-         <td>[element name]</td>
-         <td>The block displays before the named element.</td>
-      </tr>
-      <tr class="even">
-         <td><code>before</code></td>
-         <td>empty value or [element name] is absent</td>
-         <td>Use the value of <code>after</code>. If that value is empty or absent as well, the element is considered as non-positioned.</td>
-      </tr>
-      <tr class="even">
-         <td><code>after</code></td>
-         <td>Dash (-)</td>
-         <td>The block displays after all other elements in its parent node.</td>
-      </tr>
-      <tr class="odd">
-         <td><code>after</code></td>
-         <td>[element name]</td>
-         <td>The block displays after the named element.</td>
-      </tr>
-      <tr class="even">
-         <td><code>after</code></td>
-         <td>empty value or [element name] is absent</td>
-         <td>Use the value of <code>before</code>. If that value is empty or absent as well, the block is considered as non-positioned.</td>
-      </tr>
-   </tbody>
-</table>
+| Attribute | Value | Description |
+|:------- |:------ |:------ |
+| `before` | Dash (-) | The block displays before all other elements in its parent node. |
+| `before` | [element name] | The block displays before the named element. |
+| `before` | empty value or [element name] is absent | Use the value of `after`. If that value is empty or absent as well, the element is considered as non-positioned. |
+| `after` | Dash (-) | The block displays after all other elements in its parent node. |
+| `after` | [element name] | The block displays after the named element. |
+| `after` | empty value or [element name] is absent | Use the value of `before`. If that value is empty or absent as well, the block is considered as non-positioned. |
+{:style="table-layout:auto;"}
 
 #### Examples {#examples}
 
-<table>
-   <tbody>
-      <tr>
-         <th>Situation</th>
-         <th>Result</th>
-      </tr>
-      <tr class="even">
-         <td>Both <code>before</code> and <code>after</code> attributes are present</td>
-         <td><code>after</code> takes precedence.</td>
-      </tr>
-      <tr class="odd">
-         <td>Both <code>before</code> and <code>after</code> attributes are absent or empty</td>
-         <td>The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements.</td>
-      </tr>
-      <tr class="even">
-         <td>Several elements have <code>before</code> or <code>after</code> set to dash (-)</td>
-         <td>All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined.</td>
-      </tr>
-      <tr class="odd">
-         <td>The <code>before</code> or <code>after</code> attribute's value refers to an element that is not located in the parent node of the element being defined.</td>
-         <td>The element displays at a random location that doesn't violate requirements for the correctly positioned elements.</td>
-      </tr>
-   </tbody>
-</table>
+| Situation | Result |
+|:------- |:------ |
+| Both `before` and `after` attributes are present | `after` takes precedence. |
+| Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements. |
+| Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
+| The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
+{:style="table-layout:auto;"}
 
 ### action {#fedg_layout_xml-instruc_ex_act}
 
@@ -280,22 +144,10 @@ Example:
 
 `<action>` child nodes are translated into block method arguments. Child nodes names are arbitrary. If there are two or more nodes with the same name under `<action>`, they are passed as one array.
 
-<table>
-   <tbody>
-      <tr>
-         <th>Attribute</th>
-         <th>Description</th>
-         <th>Values</th>
-         <th>Required?</th>
-      </tr>
-      <tr class="even">
-         <td><code>method</code></td>
-         <td>Name of the public method of the block class this tag is located in that is called during block generation.</td>
-         <td>block method name</td>
-         <td>yes</td>
-      </tr>
-   </tbody>
-</table>
+| Attribute | Description | Values | Required? |
+|:------- |:------ |:------ |:------ |
+| `method` | Name of the public method of the block class this tag is located in that is called during block generation. | block method name | yes |
+{:style="table-layout:auto;"}
 
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
@@ -306,28 +158,11 @@ For example, if you make a reference by `<referenceBlock name="right">`, you're 
 
 To pass parameters to a block use the [`<argument></argument>`](#argument) instruction.
 
-<table>
-   <tbody>
-      <tr>
-         <th>Attribute</th>
-         <th>Description</th>
-         <th>Values</th>
-         <th>Required?</th>
-      </tr>
-      <tr class="even">
-         <td><code>remove</code></td>
-         <td>Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well.</td>
-         <td>true/false</td>
-         <td>no</td>
-      </tr>
-      <tr class="even">
-         <td><code>display</code></td>
-         <td>Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation.</td>
-         <td>true/false</td>
-         <td>no</td>
-      </tr>
-   </tbody>
-</table>
+| Attribute | Description | Values | Required? |
+|:------- |:------ |:------ |:------ |
+| `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | true/false | no |
+| `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | true/false | no |
+{:style="table-layout:auto;"}
 
 - The `remove` attribute is optional and its default value is `false`.
 
@@ -360,40 +195,13 @@ Sets the declared block or container element as a child of another element in th
 - If the `as` attribute is not defined, the current value of the element alias is used. If that is not possible, the value of the `name` attribute is used instead.
 - During layout generation, the `<move>` instruction is processed before the removal (set using the `remove` attribute). This means if any elements are moved to the element scheduled for removal, they will be removed as well.
 
-<table>
-   <tbody>
-      <tr>
-         <th>Attribute</th>
-         <th>Description</th>
-         <th>Values</th>
-         <th>Required?</th>
-      </tr>
-      <tr class="even">
-         <td>element</td>
-         <td>Name of the element to move.</td>
-         <td>element name</td>
-         <td>yes</td>
-      </tr>
-      <tr class="odd">
-         <td><code>destination</code></td>
-         <td>Name of the target parent element.</td>
-         <td>element name</td>
-         <td>yes</td>
-      </tr>
-      <tr class="even">
-         <td><code>as</code></td>
-         <td>Alias name for the element in the new location.</td>
-         <td>0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive.</td>
-         <td>no</td>
-      </tr>
-      <tr class="odd">
-         <td><code>after | before</code></td>
-         <td>Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings.</td>
-         <td>element name</td>
-         <td>no</td>
-      </tr>
-   </tbody>
-</table>
+| Attribute | Description | Values | Required? |
+|:------- |:------ |:------ |:------ |
+| `element` | Name of the element to move. | element name | yes |
+| `destination` | Name of the target parent element. | element name | yes |
+| `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no | 
+| `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | element name | no |
+{:style="table-layout:auto;"}
 
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
@@ -433,35 +241,12 @@ The specified [handle] is "included" and executed recursively.
 ### argument {#argument}
 Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments).
  
-<table>
-   <tbody>
-      <tr>
-         <th>Attribute</th>
-         <th>Description</th>
-         <th>Values</th>
-         <th>Required?</th>
-      </tr>
-      <tr class="even">
-         <td><code>name</code></td>
-         <td>Argument name.</td>
-         <td>unique</td>
-         <td>yes</td>
-      </tr>
-      <tr class="odd">
-         <td><code>xsi:type</code></td>
-         <td>Argument type.</td>
-         <td>string|boolean|object|number|null|array</td>
-         <td>yes</td>
-      </tr>
-      <tr class="even">
-         <td><code>translate</code></td>
-         <td />
-         <td>true|false</td>
-         <td>no</td>
-      </tr>
-
-   </tbody>
-</table>
+| Attribute | Description | Values | Required? |
+|:------- |:------ |:------ |:------ |
+| `name` | Argument name. | unique | yes |
+| `xsi:type` | Argument type. | `string|boolean|object|number|null|array` | yes |
+| `translate` | | `true|false` | no |
+{:style="table-layout:auto;"}
 
 To pass multiple arguments use the following construction:
 ```xml
@@ -516,7 +301,7 @@ Example:
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
 [generic layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen
-[handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#handle
+[handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms
 [templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
 [app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
 [app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml

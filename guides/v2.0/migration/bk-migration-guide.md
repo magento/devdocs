@@ -1,11 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: Migration overview
 menu_title: Overview
 menu_node: parent
 menu_order: 1
-redirect_from: /guides/v1.0/migration/bk-migration-guide.html
 functional_areas:
   - Tools
 ---

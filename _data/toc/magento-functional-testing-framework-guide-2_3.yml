@@ -1,79 +1,111 @@
 label: Magento Functional Testing Framework Guide version 2.3
-include_versions: ["2.3"]
 pages:
 
   - label: Introduction
-    url: /magento-functional-testing-framework/2.3/introduction.html
+    url: /mftf/2.3/introduction.html
+    versionless: true
 
   - label: Getting started
-    url: /magento-functional-testing-framework/2.3/getting-started.html
+    url: /mftf/2.3/getting-started.html
+    versionless: true
 
   - label: Suite
-    url: /magento-functional-testing-framework/2.3/suite.html
+    url: /mftf/2.3/suite.html
+    versionless: true
 
   - label: Test
-    url: /magento-functional-testing-framework/2.3/test.html
+    url: /mftf/2.3/test.html
+    versionless: true
     children:
 
       - label: Annotations
-        url: /magento-functional-testing-framework/2.3/test/annotations.html
+        url: /mftf/2.3/test/annotations.html
+        versionless: true
 
       - label: Actions
-        url: /magento-functional-testing-framework/2.3/test/actions.html
+        url: /mftf/2.3/test/actions.html
+        versionless: true
 
       - label: Action groups
-        url: /magento-functional-testing-framework/2.3/test/action-groups.html
+        url: /mftf/2.3/test/action-groups.html
+        versionless: true
 
       - label: Assertions
-        url: /magento-functional-testing-framework/2.3/test/assertions.html
+        url: /mftf/2.3/test/assertions.html
+        versionless: true
 
   - label: Page
-    url: /magento-functional-testing-framework/2.3/page.html
+    url: /mftf/2.3/page.html
+    versionless: true
 
   - label: Section
-    url: /magento-functional-testing-framework/2.3/section.html
+    url: /mftf/2.3/section.html
+    versionless: true
     children:
 
       - label: Parameterized selectors
-        url: /magento-functional-testing-framework/2.3/section/parameterized-selectors.html
+        url: /mftf/2.3/section/parameterized-selectors.html
+        versionless: true
 
       - label: Locator functions
-        url: /magento-functional-testing-framework/2.3/section/locator-functions.html
+        url: /mftf/2.3/section/locator-functions.html
+        versionless: true
 
   - label: Data
-    url: /magento-functional-testing-framework/2.3/data.html
+    url: /mftf/2.3/data.html
+    versionless: true
 
   - label: Metadata
-    url: /magento-functional-testing-framework/2.3/metadata.html
+    url: /mftf/2.3/metadata.html
+    versionless: true
 
   - label: Merging
-    url: /magento-functional-testing-framework/2.3/merging.html
+    url: /mftf/2.3/merging.html
+    versionless: true
 
   - label: Extending
-    url: /magento-functional-testing-framework/2.3/extending.html
+    url: /mftf/2.3/extending.html
+    versionless: true
+
+  - label: Reporting
+    url: /mftf/2.3/reporting.html
+    versionless: true
+
+  - label: Credentials
+    url: /mftf/2.3/credentials.html
+    versionless: true
 
   - label: Configuration
-    url: /magento-functional-testing-framework/2.3/configuration.html
+    url: /mftf/2.3/configuration.html
+    versionless: true
 
   - label: CLI Commands
+    versionless: true
     children:
 
       - label: mftf
-        url: /magento-functional-testing-framework/2.3/commands/mftf.html
+        url: /mftf/2.3/commands/mftf.html
+        versionless: true
       - label: codecept
-        url: /magento-functional-testing-framework/2.3/commands/codeception.html
+        url: /mftf/2.3/commands/codeception.html
+        versionless: true
 
   - label: Update
-    url: /magento-functional-testing-framework/2.3/update.html
+    url: /mftf/2.3/update.html
+    versionless: true
 
   - label: Best practices
-    url: /magento-functional-testing-framework/2.3/best-practices.html
+    url: /mftf/2.3/best-practices.html
+    versionless: true
 
   - label: Troubleshooting
-    url: /magento-functional-testing-framework/2.3/troubleshooting.html
+    url: /mftf/2.3/troubleshooting.html
+    versionless: true
 
-  - label: Contribution Guidelines
-    url: /magento-functional-testing-framework/contribution-guidelines.html
+  - label: Contribution guidelines
+    url: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
+    versionless: true
 
   - label: Changelog
-    url: /magento-functional-testing-framework/changelog.html
+    url: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
+    versionless: true

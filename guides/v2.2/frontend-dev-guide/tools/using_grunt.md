@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Using Grunt for Magento tasks
 functional_areas:
   - Frontend
@@ -10,7 +10,7 @@ The topic describes how to install and configure [Grunt JavaScript task runner](
 
 ## Overview
 
-You can use Grunt to automatize any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files.
+You can use Grunt to automate any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files.
 
 ## Prerequisites
 
@@ -63,7 +63,7 @@ To use a custom file for Grunt configuration:
 
 
        {
-           "themes": "dev/tools/grunt/configs/local-themes/themes"
+           "themes": "dev/tools/grunt/configs/local-themes"
        }
 This path is also added to your .gitignore by default
 

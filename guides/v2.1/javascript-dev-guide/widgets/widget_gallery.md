@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Gallery widget
 ---
@@ -519,7 +519,7 @@ Displays the previous preview image.
 
 If the first image ID is passed, the behavior depends on whether [loop](#gallery_loop) is enabled:
 
-* if loop is enbled, the last image is displayed.
+* if loop is enabled, the last image is displayed.
 * if loop is disabled, does not change the displayed image.
 
 #### `seek()` {#gallery_seek}

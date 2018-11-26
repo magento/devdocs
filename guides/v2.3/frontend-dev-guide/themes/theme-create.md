@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Create a new storefront theme
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html
 functional_areas:
   - Frontend
   - Theme
@@ -88,7 +87,7 @@ Magento default themes are distributed as [Composer](https://getcomposer.org/){:
 
 To distribute your theme as a package, add a `composer.json` file to the theme directory and register the package on a packaging server. A default public packaging server is [https://packagist.org/](https://packagist.org/){:target="_blank"}.
 
-The `composer.json` file provides theme dependency information. Refer to a current `theme.xml` file for the correct dependancies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
+The `composer.json` file provides theme dependency information. Refer to a current `theme.xml` file for the correct dependencies and their versions. If your parent theme is something other than `Magento/blank`, you may need additional modules in the `"require"` section.
 
 Example of a theme `composer.json` file:
 
@@ -96,13 +95,15 @@ Example of a theme `composer.json` file:
 {
     "name": "magento/theme-frontend-luma",
     "description": "N/A",
+    "config": {
+        "sort-packages": true
+    },
     "require": {
-        "php": "~5.5.0|~5.6.0|~7.0.0",
-        "magento/theme-frontend-blank": "100.0.*",
-        "magento/framework": "100.0.*"
+        "php": "~7.1.3||~7.2.0",
+        "magento/framework": "*",
+        "magento/theme-frontend-blank": "*"
     },
     "type": "magento2-theme",
-    "version": "100.0.1",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
@@ -263,4 +264,4 @@ For information on how to apply the theme for the storefront, see the [Apply and
 
 ## See also
 
- * [Uninstall a theme]({{ site.gdeurl }}install-gde/install/cli/install-cli-theme-uninstall.html)
+ * [Uninstall a theme]({{ site.gdeurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)

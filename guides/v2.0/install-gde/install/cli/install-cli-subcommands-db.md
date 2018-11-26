@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Create the Magento database schema
 menu_title: Create the Magento database schema

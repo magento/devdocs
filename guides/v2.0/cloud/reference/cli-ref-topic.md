@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: Magento Cloud CLI reference
 menu_title: Magento Cloud CLI

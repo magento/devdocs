@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Starter architecture
 functional_areas:
   - Cloud
@@ -80,7 +80,7 @@ Each service runs in its own secure container. Containers are managed together i
 *	Git
 *	Secure Shell (SSH)
 
-You can even have multiple applications running in the same project. Building a microservice oriented architecture with Magento Commerce is as easy as managing a monolithic application.
+You can even have multiple applications running in the same project. Building a microservice oriented architecture with {{site.data.var.ee}} is as easy as managing a monolithic application.
 
 ### Software versions {#cloud-arch-software}
 

@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Manage the indexers
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-index.html
 functional_areas:
   - Configuration
   - System
@@ -69,7 +68,7 @@ Sample result:
 Use this command to reindex all or selected indexers one time only.
 
 {:.bs-callout .bs-callout-info}
-This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
+This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
 Command options:
 

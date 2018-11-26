@@ -1,5 +1,5 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_RequisitionList module
 menu_title: RequisitionList
@@ -12,7 +12,7 @@ functional_areas:
 
 The `Magento_RequisitionList` module allows a customer to create multiple lists of frequently-purchased items and use those lists for order placement. This feature is available for both logged-in users and guests.
 
-`RequisitionList` functionality is similiar to wish lists, but it has the following differences:
+`RequisitionList` functionality is similar to wish lists, but it has the following differences:
 
 * A requisition list is not purged after sending items to the shopping cart. It can be used to place multiple orders.
 

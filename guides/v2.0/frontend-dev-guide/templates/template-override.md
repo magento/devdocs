@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: C_Templates
 title: Templates basic concepts
 menu_title: Templates basic concepts
 menu_order: 3
-redirect_from: /guides/v1.0/frontend-dev-guide/templates/template-override.html
 functional_areas:
   - Frontend
 ---
@@ -60,7 +59,7 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 
 ## Getting argument values from layout   {#getter}
 
-Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#getter" target="_blank">Layout instructions article.
+Arguments values set in a layout file can be accessed in templates using the <code>get{ArgumentName}()</code> and <code>has{ArgumentName}()</code> methods. There are more details in the <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html" target="_blank">Layout instructions article.
 
 ## Related reading
 

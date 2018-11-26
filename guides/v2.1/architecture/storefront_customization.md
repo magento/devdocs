@@ -1,5 +1,5 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Storefront customization strategies
 menu_title: Storefront customization strategies
 ---
@@ -14,7 +14,7 @@ These four levels of potential storefront customization are listed in order to i
 
 ### Extend Magento-Provided CSS
 
-Magento supplies a default {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and a LESS-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.
+Magento supplies a default {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and a Less-based CSS. You can substantially change a storefront using CSS only. This uncomplicated strategy might suit projects with a limited budget, or might interest developers who create different skins for a site. A small business enter this process of storefront customization by buying a third-party developed theme from Magento Marketplace to extend the default values.
 
 ### Replace PHTML template files
 

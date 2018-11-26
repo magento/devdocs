@@ -1,14 +1,11 @@
 ---
-group: compman
-subgroup: 10_Install extensions from the command line
+group: software-update-guide
 title: Install the B2B extension
-menu_title: Install the B2B extension
-menu_order: 1
 ee_only: true
 ---
 
 {: .bs-callout .bs-callout-warning }
-The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0. You must install it after installing {{site.data.var.ee}}.
+The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
 
 ## Installation
 
@@ -86,7 +83,7 @@ Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql
 
 ### Add message consumers to cron
 
-You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab.xml`:
+You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab`:
 
 {%highlight xml%}
 * * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions &

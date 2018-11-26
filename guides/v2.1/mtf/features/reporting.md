@@ -1,5 +1,5 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Reporting with the Functional Testing Framework
 ---
 
@@ -297,7 +297,7 @@ namespace Magento\Mtf\System\Observer;
 use Magento\Mtf\System\Event\Event;
 
 /**
- * Observer for obtaining response of web api handler.
+ * Observer for obtaining response of webAPI  handler.
  */
 class WebapiResponse extends AbstractObserver
 {

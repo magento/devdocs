@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Split database performance solution (Magento Commerce only)
 ee_only: True
 functional_areas:
@@ -72,7 +72,7 @@ You must back up the two additional database instances manually. Magento backs u
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
 
 *	One master database for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} tables
-*	One master database for sales tables (also referred to as *Order Management System*, or *OMS*, tales)
+*	One master database for sales tables (also referred to as *Order Management System*, or *OMS*, tables)
 *	One master database for the remainder of the Magento 2 application tables
 
 In addition, you can optionally set up any number of *slave* databases that serve as load balancers and backups.

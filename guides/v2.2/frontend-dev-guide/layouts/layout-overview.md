@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Layout overview
 functional_areas:
   - Frontend
@@ -22,7 +22,7 @@ In Magento, the basic components of page design are layouts, containers, and blo
 
 ## Basic layouts
 
-The basic view of all Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} pages in defined in two page configuration layout files located in the Magento_Theme module:
+The basic view of all Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} pages is defined in two page configuration layout files located in the Magento_Theme module:
 
 * `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`: defines the page layout.
 * `<Magento_Theme_module_dir>/view/frontend/layout/default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' `<head>` section.

@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Customizing layout illustration
 functional_areas:
   - Frontend
@@ -88,7 +88,7 @@ OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/t
 </container>
 ```
 
-(See [app/code/Magento/Theme/view/frontend/layout/default.xml]({{ site.mage2100url }}app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on github).
+(See [app/code/Magento/Theme/view/frontend/layout/default.xml]({{ site.mage2100url }}app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on GitHub).
 
 Other modules use this block to add their specific links to the header using the [referenceBlock]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23]({{ site.mage2100url }}app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23)
 
@@ -217,12 +217,12 @@ Clicking the **Change** button toggles the `active` CSS class:
 
 To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
-* redundant elements are hidden with CSS
-* the `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element
+* Redundant elements are hidden with CSS.
+* The `.lib-dropdown()` mixin from [Magento UI library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element.
 
 `app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
 
-```less
+```
 //
 //  Common
 //  _____________________________________________
@@ -274,5 +274,5 @@ As a result, the customer links look like following:
 
 
 [layout transform]: {{site.baseurl}}/common/images/layout_transform21.png
-[layout screen1]: {{site.baseurl}}/common/images/fdg/layout_screen221.png
-[layout screen2]: {{site.baseurl}}/common/images/fdg/layout_screen321.png
+[layout screen1]: {{site.baseurl}}/common/images/layout_screen221.png
+[layout screen2]: {{site.baseurl}}/common/images/layout_screen321.png

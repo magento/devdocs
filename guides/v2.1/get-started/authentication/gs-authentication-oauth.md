@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 title: OAuth-based authentication
 functional_areas:
   - Integration
@@ -56,7 +56,7 @@ Integrations use the `oauth_consumer_key` key to get a request token and the `oa
 
 ## OAuth handshake details {#oauth-handshake}
 
-The process of completing the Oauth handshake requires that you
+The process of completing the OAuth handshake requires that you
 
 * [Get a request token](#pre-auth-token)
 * [Get an access token](#get-access-token)

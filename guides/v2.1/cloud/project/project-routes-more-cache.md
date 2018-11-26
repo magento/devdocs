@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Caching
 functional_areas:
   - Cloud
@@ -67,7 +67,7 @@ The cache duration is determined by the `Cache-Control` response header value. I
 
 ## Cache key {#cloud-cache-key}
 
-To decide how to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} a response, {{site.data.var.ee}} builds a cache key depending on several factors and store the response associated with this key. When a request comes with the same cache key, the response is reused. Its purpose is similar to the HTTP [`Vary` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44){:target="_blank"}.
+To decide how to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} a response, {{site.data.var.ee}} builds a cache key depending on several factors and store the response associated with this key. When a request comes with the same cache key, the response is reused. Its purpose is similar to the HTTP [`Vary` header](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.44).
 
 The parameters `headers` and
 `cookies` keys enable you to change this cache key.

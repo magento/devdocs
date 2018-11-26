@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: B_UI Library Listing/Grid Component
 title: Grid search indexing
 menu_title: Grid search indexing
@@ -41,7 +41,7 @@ You can extend the current indexer declaration with an optional <fieldset> eleme
             <field name="title" xsi:type="filterable"/>
         </fieldset>
  
-        <saveHandler class="Magento\Framework\Indexer\SaveHandler\Grid" /><!-- optional --><!-- indexer put api -->
+        <saveHandler class="Magento\Framework\Indexer\SaveHandler\Grid" /><!-- optional --><!-- indexer put API -->
         <structure class="Magento\Framework\Indexer\GridStructure" /><!-- optional --><!-- creating flat table for index (or in other index database) -->
     </indexer>
 </config>

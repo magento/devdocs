@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Bitbucket integration
 functional_areas:
   - Cloud
@@ -114,7 +114,7 @@ The Bitbucket integration requires an [OAuth consumer](https://confluence.atlass
 
         magento-cloud project:curl -p 'PROJECT ID' /integrations -i -X POST -d "$(< bitbucket.json)"
 
-    This command returns a long HTTP response, including headers. The first line of the output should contain a 200 or 201 status code indicating successfull integration. A status of 400 or above indicates that an error occurred.
+    This command returns a long HTTP response, including headers. The first line of the output should contain a 200 or 201 status code indicating successful integration. A status of 400 or above indicates that an error occurred.
 
 1.  Delete the temporary `bitbucket.json` file.
 

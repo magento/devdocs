@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Confirmation widget
 menu_order: 5
@@ -52,7 +52,7 @@ require([
 {% endhighlight %}
 
 
-For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize a widget in a`.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 ## Options   {#confirm_options}
 
@@ -107,7 +107,7 @@ The confirmation window content.
 ### `focus`   {#confirm_focus}
 
 The selector of the element to be in focus when the confirmation window opens.
-If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not requried, set `focus` to `none`.
+If `focus` is not specified or set to empty string, the focus is on close button. If focusing is not required, set `focus` to `none`.
 
 **Type**: String.
 

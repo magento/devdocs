@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Getting Started
 title: Magento 2.1.x technology stack requirements
 menu_title: Magento 2.1.x technology stack requirements
@@ -60,10 +60,7 @@ PHP documentation: [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.htm
 *   [xml](http://php.net/manual/en/book.xml.php){:target="_blank"}
 *   [xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
 *   [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
-*	{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 only:
-
-	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
-	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
+*	{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 only: [json](http://php.net/manual/en/book.json.php){:target="_blank"}, [iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
 #### PHP OPcache
 
@@ -124,7 +121,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 {:.bs-callout .bs-callout-info}
 There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.
 
-For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).
+For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html).
 
 *	PHPUnit (as a command-line tool) 4.1 or later
 

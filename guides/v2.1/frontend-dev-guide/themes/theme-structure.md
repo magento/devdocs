@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Magento theme structure
-redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 functional_areas:
   - Frontend
   - Theme
@@ -9,7 +8,7 @@ functional_areas:
 
 ## What's in this topic {#theme-structure-intro}
 
-A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html#theme-gen-overview) is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html) is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 ## Magento theme location {#theme-structure-loc}
 {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} repository.
@@ -135,9 +134,9 @@ The directories and files structure described below is the most extended one. It
           /etc/view.xml
         </code>
       </td>
-      <td colspan="1">required for a theme, but optional if exists in the parent theme</td>
+      <td colspan="1">required for a theme, but optional if it exists in the parent theme</td>
       <td colspan="1">
-        This file contains images configuration for all storefront product images and thumbnails.
+        This file contains configuration for all storefront product images and thumbnails.
       </td>
     </tr>
     <tr>

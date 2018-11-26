@@ -1,8 +1,7 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Frontend Developer Guide
 landing-page: Frontend Developer Guide
-redirect_from: /guides/v1.0/frontend-dev-guide/bk-frontend-dev-guide.html
 functional_areas:
   - Frontend
 ---
@@ -38,7 +37,7 @@ You can apply these levels of customization to your site, where the levels requi
     
     This third level of customization is not addressed in this guide.
     
-    See the Developers' Guide for details on how to develop new modules.
+    See the Developer Guide for details on how to develop new modules.
     
     This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.
 

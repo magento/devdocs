@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Advanced Varnish configuration
 functional_areas:
   - Configuration
@@ -83,7 +83,7 @@ Saint mode is not part of the main Varnish package. It is a separately-versioned
 
 After you've recompiled, you can install the Saint mode {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. In general, follow these steps:
 
-1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the git version (master version) since the 0.9.x versions contain a source code error.
+1. Obtain the source code from [Varnish modules](https://github.com/varnish/varnish-modules) . Clone the Git version (master version) since the 0.9.x versions contain a source code error.
 2. Build the source code with autotools:
 ```bash
 sudo apt-get install libvarnishapi-dev || sudo yum install varnish-libs-devel

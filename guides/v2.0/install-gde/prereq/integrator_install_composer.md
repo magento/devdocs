@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: S_Integrator
 title: Install Composer
 menu_title: Install Composer

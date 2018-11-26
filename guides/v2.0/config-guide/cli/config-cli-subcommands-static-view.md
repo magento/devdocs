@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Deploy static view files
 menu_title: Deploy static view files
 menu_node:
 menu_order: 300
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 functional_areas:
   - Configuration
   - System

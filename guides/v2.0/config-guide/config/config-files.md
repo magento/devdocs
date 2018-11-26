@@ -1,10 +1,9 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
-redirect_from: /guides/v1.0/config-guide/config/config-files.html
 functional_areas:
   - Configuration
   - System

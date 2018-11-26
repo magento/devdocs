@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 title: Install extensions from the command line
 ---
 
@@ -116,9 +116,7 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 
 5.  Configure the extension in Admin as needed.
 
-<div class="bs-callout bs-callout-tip" markdown="1">
-You may need to clear the cache if you encounter errors when loading the storefront in a browser.
-```bash
-bin/magento cache:flush
-```
-</div>
+{:.bs-callout .bs-callout-tip}
+If you encounter errors when loading the storefront in a browser, use the following command to clear the cache:
+<br/>
+`bin/magento cache:flush`

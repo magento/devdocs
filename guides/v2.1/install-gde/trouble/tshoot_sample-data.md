@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Errors installing optional sample data
 menu_title: Errors installing optional sample data
@@ -30,7 +30,7 @@ These exceptions result from file system permissions settings.
 
 #### Solution
 
-[Set file system ownership and permissions again]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data.html#samp-data-perms) as a user with `root` privileges.
+[Set file system ownership and permissions again]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
 
 ### Symptom (production mode) {#trouble-samp-prod}
 

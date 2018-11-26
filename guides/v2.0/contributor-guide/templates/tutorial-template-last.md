@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: contributor
+group: contributor-guide
 subgroup:
 title: Step X. Finish the tutorial
 subtitle: Sample template tutorial

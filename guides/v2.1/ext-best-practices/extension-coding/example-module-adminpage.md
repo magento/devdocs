@@ -1,5 +1,5 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Creating a Magento admin page
 menu_title: Creating a Magento admin page
@@ -274,7 +274,7 @@ The module is now complete. Your module's directory structure under `app/code` s
         `-- <a href="#registrationphp">registration.php</a>
   </pre>
   <script>
-    //Javascript to make the code blocks open on anchor click
+    //JavaScript to make the code blocks open on anchor click
     $(document).ready(function(){
       var anchor = window.location.hash.substring(1);
       if(anchor)

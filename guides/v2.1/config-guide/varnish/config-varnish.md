@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure and use Varnish
 functional_areas:
   - Configuration
@@ -81,7 +81,7 @@ We know of the following issues with Varnish:
 
 <!-- Link Definitions -->
 [Varnish Cache]: https://www.varnish-cache.org/
-
+[Install Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish-install.html 
 [Redis]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
 [database]: {{ page.baseurl }}/config-guide/database/database.html
 [Wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29

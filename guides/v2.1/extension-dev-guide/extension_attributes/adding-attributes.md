@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
@@ -18,18 +18,18 @@ In Response we got object with next structure:
 
 ### Product response:
 
-{% highlight xml %}
+``` xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>
     <custom_attributes><!-- Custom Attributes Data --></custom_attributes>
     <extension_attributes><!-- Here should we add extension attributes data --></extension_attributes>
 </product>
-{% endhighlight %}
+```
 
 ### Product list response:
 
-{% highlight xml %}
+``` xml
 <products>
     <item>
         <id>1</id>
@@ -44,7 +44,7 @@ In Response we got object with next structure:
         <extension_attributes><!-- Here should we add extension attributes data --></extension_attributes>
     </item>
 </products>
-{% endhighlight %}
+```
 
 ## Add plugin to product repository
 
@@ -52,13 +52,10 @@ In order to add attributes, we need to use after plugin on Product Repository.
 Plugin should listen next methods: save, get, getList.
 
 We can add scalar and non-scalar extension attributes.
+Scalar is a simple attribute.
+Non-scalar attributes can be represented by Data Object.
 
-<div class="bs-callout bs-callout-info" id="other-component-types" markdown="1">
-Scalar is simple attribute.
-Non-scalar attribute can be represented by Data Object.
-</div>
-
-{% highlight php inline=true %}
+``` php
 public function afterGet
 (
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
@@ -72,7 +69,7 @@ public function afterGet
 
     return $entity;
 }
-{% endhighlight %}
+```
 
 It is the easiest way to add custom attributes. Because we need to know if {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} already has extension attributes.
 Also we need to check whether we already has our {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %}.
@@ -81,7 +78,7 @@ AfterGetList is similar to afterGet.
 
 Likewise afterSave plugin should take data from entity and do some manipulations:
 
-{% highlight php inline=true %}
+``` php
 public function afterSave
 (
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
@@ -93,7 +90,7 @@ public function afterSave
 
     return $entity;
 }
-{% endhighlight %}
+```
 
 But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension attributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
 
@@ -143,38 +140,38 @@ class ProductAttributesLoad
 
 And now need to bind our plugin to `ProductInterface`:
 
-{% highlight xml %}
+``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Catalog\Api\Data\ProductInterface">
         <plugin name="ProductExtensionAttributeOperations" type="Magento\Catalog\Plugin\ProductAttributesLoad"/>
     </type>
 </config>
-{% endhighlight %}
+```
 
 ## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:
-{% highlight xml %}
+``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="first_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
         <attribute code="second_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
     </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
 For non-scalar attributes:
-{% highlight xml %}
+``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
     </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
 In first case we will get the next result:
 
-{% highlight xml %}
+``` xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>
@@ -184,10 +181,10 @@ In first case we will get the next result:
         <second_custom_attribute>2</second_custom_attribute>
     </extension_attributes>
 </product>
-{% endhighlight %}
+```
 
 In second one:
-{% highlight xml %}
+``` xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>
@@ -199,6 +196,6 @@ In second one:
         </our_custom_data>
     </extension_attributes>
 </product>
-{% endhighlight %}
+```
 
-[Sample module on github](https://github.com/magento/magento2-samples/tree/master/sample-external-links)
+[Sample module on GitHub](https://github.com/magento/magento2-samples/tree/master/sample-external-links)

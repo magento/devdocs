@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Common layout customization tasks
 menu_title: Common layout customization tasks
 menu_order: 6
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/xml-manage.html
 functional_areas:
   - Frontend
 ---
@@ -366,7 +365,7 @@ In this file, reference the element having added the `remove` attribute:
 
 ## Replace elements   {#layout_markup_replace_elements}
 
-To replace an element, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem" target="_blank">remove it</a> and add a new one.
+To replace an element, <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rmv" target="_blank">remove it</a> and add a new one.
 
 #### Related topics:
 

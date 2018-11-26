@@ -1,5 +1,5 @@
 ---
-group: get-started
+group: web-api
 subgroup: Web APIs
 title: Create an integration
 menu_title: Create an integration

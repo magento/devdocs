@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Custom cron job and cron group reference
 functional_areas:
   - Configuration
@@ -108,7 +108,7 @@ where:
 | `history_cleanup_every`    | Time (in minutes) that cron history is kept in the database.                                           |
 | `history_success_lifetime` | Time (in minutes) that the record of successfully completed cron jobs are kept in the database.        |
 | `history_failure_lifetime` | Time (in minutes) that the record of failed cron jobs are kept in the database.                        |
-| `use_separate_process`     | This feature is available only for Magento 2.1 and later.                                              |
+| `use_separate_process`     | Run this crongroup's jobs in a separate php process                                             |
 {:style="table-layout:auto;"}
 
 #### Related topic

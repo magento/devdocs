@@ -1,11 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
-redirect_from: /guides/v1.0/install-gde/prereq/prereq-overview.html
 functional_areas:
   - Install
   - System

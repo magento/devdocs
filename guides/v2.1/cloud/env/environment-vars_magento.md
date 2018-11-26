@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: ADMIN variables
 functional_areas:
   - Cloud

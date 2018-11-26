@@ -1,13 +1,6 @@
 ---
-group: ext-best-practices
-subgroup: 03_Storefront
+group: extension-best-practices
 title: Storefront UI best practices
-menu_title: Storefront
-menu_order: 1
-menu_node: parent
-tabgroup: best-practices
-tablabel: Storefront
-tabweight: 40
 functional_areas:
   - Frontend
   - Theme

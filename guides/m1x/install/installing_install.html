@@ -19,6 +19,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 <div id="content">
 
@@ -314,12 +315,12 @@ cd /var/www/html/magento</pre></li>
 For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
 <pre>chown -R www-data .</pre></li>
 <li>Enter the following commands to set directory permissions to 700 and file permissions to 600:
-<pre>find . -type d -exec chmod 700 {} \;
-find . -type f -exec chmod 600 {} \;</pre></li></ol>
+<pre>find . -type d -exec chmod 700 {} +
+find . -type f -exec chmod 600 {} +</pre></li></ol>
 <!-- <li>Set file permissions.
-<code>find . -type f -exec chmod 644 {} \;</code></li>
+<code>find . -type f -exec chmod 644 {} +</code></li>
 <li>Set directory permissions.
-<code>find . -type d -exec chmod 755 {} \;</code></li>
+<code>find . -type d -exec chmod 755 {} +</code></li>
 <li>Make the <code>var</code>, <code>app/etc</code>, and <code>media</code> directories and subdirectories world-writable.
 <code>chmod -R 777 media app/etc var var/.htaccess</code></li>
 <li>Change to the directory above the Magento installation directory.<br />

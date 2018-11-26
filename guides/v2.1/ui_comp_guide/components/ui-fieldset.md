@@ -1,7 +1,7 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
-title: Fieldset сomponent
+title: Fieldset component
 menu_title: Fieldset component
 ---
 

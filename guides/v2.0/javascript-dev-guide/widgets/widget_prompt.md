@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Prompt widget
 menu_order: 12
@@ -53,7 +53,7 @@ require([
 });
 {% endhighlight %}
 
-For details about how to initialize a widget in a `.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.
+For details about how to initialize a widget in a `.phtml` template, refer to the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 ## Options   {#prompt_options}
 
@@ -107,7 +107,7 @@ The prompt window content.
 ### `focus`   {#prompt_focus}
 
 The selector of the element to be in focus when the prompt window opens.
-If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set `focus` to `none`.
+If `focus` is not specified or set to empty string, the focus is on the close button. If focusing is not required, set `focus` to `none`.
 
 **Type**: String.
 

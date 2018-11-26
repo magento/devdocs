@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 03_install
 title: Install the Magento software
 menu_title: Install the Magento software

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Example of managing system-specific settings
 functional_areas:
   - Cloud
@@ -65,7 +65,7 @@ To change locale and static file optimization settings:
 
 	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.local.php to your local workstation {#export}
@@ -79,36 +79,30 @@ This procedure corresponds to step 2 in the [recommended procedure]({{ page.base
 The following snippet from `config.local.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
 <pre class="no-copy">
- 'general' =>
-      array (
-        'locale' =>
-        array (
-          'code' => 'en_GB',
-          'timezone' => 'UTC',
-        ),
+ 'general' => [
+     'locale' => [
+         'code' => 'en_GB',
+         'timezone' => 'UTC',
+     ],
 
-        ... more ...
+     ... more ...
 
- 'dev' =>
-      'template' =>
-        array (
-          'allow_symlink' => '0',
-          'minify_html' => '0',
-        ),
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '0',
+     ],
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '0',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '0',
+     ],
 
-        ... more ...
-
-        'js' =>
-        array (
-          'merge_files' => '0',
-          'enable_js_bundling' => '0',
-          'minify_files' => '0',
-        ),
-        'css' =>
-        array (
-          'merge_css_files' => '0',
-          'minify_files' => '0',
-        ),
+     ... more ...
 </pre>
 
 ## Push and deploy config.local.php to environments {#deploy}
@@ -186,7 +180,7 @@ To change values in the Integration environment Magento Admin:
 
 	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_reset-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 10.	Log out of the Magento Admin.
 
 ### Generate a new version of config.local.php {#regenerate}

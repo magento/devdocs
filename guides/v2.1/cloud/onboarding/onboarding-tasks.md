@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Onboarding tasks
 functional_areas:
   - Cloud
@@ -42,9 +42,9 @@ site.
 3. **Click View Project Page** in the
 [Projects section](https://cloud.magento.com/cloud/project/subscriptions/).
 
-## Sign up for a Magento Commerce (Cloud) account {#cloud-first-acct}
+## Sign up for a {{site.data.var.ece}} account {#cloud-first-acct}
 
-Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}.
+Don't have a {{site.data.var.ece}} account yet? Contact [Magento Sales](https://magento.com/explore/contact-sales).
 We will create your account and send you a welcome email that provides instructions to access the project.
 
 The person who signs up for a {{site.data.var.ece}} account is referred to as
@@ -56,7 +56,7 @@ Magento sends a welcome email to the Project Owner using the address that was
 provided during the sign up process. The email contains a link to access your
 {{site.data.var.ece}} project and complete initial project set up.
 
-You can also access your project by [logging in to your account](https://accounts.magento.cloud){:target="_blank"}.
+You can also access your project by [logging in to your account](https://accounts.magento.cloud).
 
 ## Project access and users {#users}
 
@@ -68,7 +68,7 @@ Typically, the only user the Project Owner must create is the _Technical Admin_.
 The Technical Admin needs a user account with admin access to create user
 accounts for developers, set environment permissions, and
 manage all branches and environments. The Technical Admin can be a developer,
-a consultant, a [Magento Solution Partner](https://magento.com/find-a-partner){:target="_blank"},
+a consultant, a [Magento Solution Partner](https://magento.com/find-a-partner),
 or yourself.
 
 You can create a Technical Admin through the Project portal, from the Project
@@ -96,7 +96,7 @@ For details, see [Project Web Interface]({{ page.baseurl }}/cloud/project/projec
 
 Get updates about {{site.data.var.ece}}
 platform environments and related services from the
-[Status page](https://status.magento.cloud){:target="_blank"}.
+[Status page](https://status.magento.cloud).
 
 The page lists current status for all {{site.data.var.ece}} components and
 services followed by notifications about incident reports, service upgrades,
@@ -108,7 +108,7 @@ Anyone working on your project can subscribe to the {{site.data.var.ece}}
 status site to receive event notifications and updates through email. You can
 customize your subscription to select only the platform and services that you
 want to track. Sign up from the
-[Subscription page](https://status.magento.cloud/subscribe){:target="_blank"}.
+[Subscription page](https://status.magento.cloud/subscribe).
 
 ## Access your Magento Admin panel {#admin}
 

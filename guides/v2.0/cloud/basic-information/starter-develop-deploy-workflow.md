@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 010_welcome
 title: Starter develop and deploy workflow
 menu_title: Starter develop and deploy workflow
@@ -65,7 +65,7 @@ You also have a few optional steps to help develop and test your code and store 
 * [Install sample data](#sample-data) to your store
 * [Pull production store data](#prod-data) down to environments
 
-This process assumes you would have your [local developer workspace]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html) set up. Feel free to read over this process even if your local isn't ready.
+This process assumes you would have your [local developer workspace]({{ page.baseurl }}/cloud/setup/first-time-setup.html) set up. Feel free to read over this process even if your local isn't ready.
 
 ### Clone and branch {#clone-branch}
 
@@ -80,7 +80,7 @@ The first time you start working in branches for your Starter project, you need 
 
 Next, create branches from `staging` to develop code, add extensions, and configure 3rd party integrations. Anytime you need to develop custom code, add extensions, integrate with a 3rd party service, work in a develop branch created from `staging`. You will have four active Integration environments available. When you push your an active branch of Git code, one of these Integration environments automatically deploys your code to test.
 
-We walk you through the process when you [set up your local]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html).
+We walk you through the process when you [set up your local]({{ page.baseurl }}/cloud/setup/first-time-setup.html).
 
 The format of the Git branch command is:
 
@@ -164,7 +164,7 @@ For more information, see [Configuration Management]({{ site.baseurl }}/guides/v
 
 At this point, you should have a developed code branch with a configuration file (`config.local.php` or `config.php`) ready to test.
 
-Everytime you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
+Every time you push code from your local environment, a series of build and deploy scripts run. These scripts generate new Magento code and deploy it to the remote environment. For example, if you are pushing a development branch from your local to the remote Git branch, a matching environment updates services, code, and static content.
 
 You can directly access this environment with a store URL, Magento Admin URL, and SSH. These environments include a web server, database, and configured services. When ready, you can start deploying and testing in Staging.
 
@@ -257,6 +257,6 @@ For more information, see [Continuous integration]({{ page.baseurl }}/cloud/depl
 
 #### Related topics
 
-*	[First-time local environment setup]({{ page.baseurl }}/cloud/access-acct/first-time-setup.html)
+*	[First-time local environment setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html)
 *	[Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
 *	[Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)

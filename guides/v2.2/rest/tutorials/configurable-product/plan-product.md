@@ -1,6 +1,6 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 1. Plan the product
 subtitle: Create a configurable product tutorial
 menu_title: Step 1. Plan the product
@@ -102,7 +102,7 @@ Use the `GET V1/products/attribute-sets/:attributeSetId/attributes` call to retu
 
 **Endpoint**
 
-`GET <host>/V1/products/attribute-sets/9/attributes`
+`GET <host>/rest/default/V1/products/attribute-sets/9/attributes`
 
 **Response**
 
@@ -128,7 +128,7 @@ You must assign the product to one or more categories to enable customers to fin
 Use the following call to search for all categories (`id` is greater than or equal to `0`).
 
 ```html
-GET <host>/V1/categories?
+GET <host>/rest/default/V1/categories?
 searchCriteria[filter_groups][0][filters][0][field]=id&
 searchCriteria[filter_groups][0][filters][0][value]=1&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gte

@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Override a layout
 menu_title: Override a layout
 menu_order: 5
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 functional_areas:
   - Frontend
 ---
@@ -36,7 +35,7 @@ Examples of customizations that involve overriding layouts:
 	Certain attributes, like `htmlClass`, `htmlId`, `label` attributes can be changed in [extending layouts]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){: target="_blank"}.
 	</div>
 *	Removing block arguments.
-*	Modifying and suppressing <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handles</a> inclusion.
+*	Modifying and suppressing <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms" target="_blank">handles</a> inclusion.
 *	Removing all handle instructions by declaring an overriding layout file with an empty handle.
 
 ## How to override a layout   {#fedg_layout_override_howto}

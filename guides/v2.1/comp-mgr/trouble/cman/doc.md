@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: magento/theme-doc-blank failure
 menu_title: magento/theme-doc-blank failure
@@ -30,7 +30,7 @@ When installing new purchases, you might see an error like the following during 
 
 This issue is caused by two `doc`-related components we published by mistake. They can't be installed. 
 
-The workaround is to go back to the Component Manager and unselect the following components:
+The workaround is to go back to the Component Manager and deselect the following components:
 
 *	magento/theme-doc-blank
 *	magento/module-doc

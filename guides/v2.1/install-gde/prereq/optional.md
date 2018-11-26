@@ -1,10 +1,9 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Optional software
 menu_title: Optional software
 menu_order: 400
-redirect_from: /guides/v1.0/install-gde/prereq/optional.html
 functional_areas:
   - Install
   - System
@@ -25,7 +24,7 @@ If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee
 See one of the following sections:
 
 *	[Install and configure NTP on Ubuntu](#install-optional-ntp-ubuntu)
-*	[Install and configure NTP on CentOS](##install-optional-ntp-centos)
+*	[Install and configure NTP on CentOS](#install-optional-ntp-centos)
 *	[Use NTP pool servers](#install-optional-ntp-servers)
 
 ### Install and configure NTP on Ubuntu {#install-optional-ntp-ubuntu}

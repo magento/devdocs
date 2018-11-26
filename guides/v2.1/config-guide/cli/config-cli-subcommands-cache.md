@@ -1,7 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Manage the cache
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html
 functional_areas:
   - Configuration
   - System

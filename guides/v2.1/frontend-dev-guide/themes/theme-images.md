@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Configure images properties for a theme
 functional_areas:
   - Frontend
@@ -77,10 +77,10 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
         The type of the images defined by the specified <code>id</code>. Allowed values:
         <ul>
         <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
-        <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li> 
+        <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
         <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
         <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.</li>
-        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li> 
+        <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
         </ul>
 
       </td>
@@ -96,7 +96,7 @@ Image properties are defined by the corresponding elements, for example:
 ```xml
 <images module="Magento_Catalog">
     <image id="unique_image_id" type="image">
-        <width>100</width> <!-- Image width in px --> 
+        <width>100</width> <!-- Image width in px -->
         <height>100</height> <!-- Image height in px -->
     </image>
 </images>
@@ -104,7 +104,7 @@ Image properties are defined by the corresponding elements, for example:
 
 <br>
 
-The following table contains the list of all properties which can be configured:
+All image properties used in `view.xml` should be listed in the order shown here to prevent a **"This element is not expected."** frontend error. The following table contains the list of all properties which can be configured:
 <table>
   <tbody>
     <tr>
@@ -240,7 +240,7 @@ The following table contains the list of all properties which can be configured:
 Generally, product images are cached while saving the product. However, the `magento catalog:images:resize` command enables you to resize all images for display on your storefront. Situations where this could be necessary might be:
 
 * After you import products, which might have images of various sizes
-* If images were resized or deleted manually from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} 
+* If images were resized or deleted manually from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 
 Each image assigned to a product must be resized in accordance with image {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} defined in a module's [`view.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to-images) configuration file. After resizing an image, its resized copy is stored in the cache (`/pub/media/catalog/product/cache` directory). Magento serves storefront images from cache.
 

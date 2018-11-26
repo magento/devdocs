@@ -1,10 +1,12 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: Fastly
 menu_title: Fastly
 menu_node:
 menu_order: 15
+redirect_from:
+  - /guides/v2.0/cloud/access-acct/fastly.html
 functional_areas:
   - Cloud
   - Setup
@@ -35,9 +37,9 @@ We strongly recommend installing Fastly module 1.2.33 or later.
 
 When you receive a 503 error from Fastly, it may be due to a lengthy operation or performing bulk actions. Fastly has a default 60 second time out. Any request that takes longer than 60 seconds will return a 503 error.
 
-If you receive a 503 error, make the request directly to the origin or review logs. For details, see [Fastly troubleshooting]({{ page.baseurl }}/cloud/trouble/trouble_fastly.html#timeouts).
+If you receive a 503 error, make the request directly to the origin or review logs. For details, see [Fastly troubleshooting]({{ page.baseurl }}/cloud/cdn/trouble-fastly.html#timeouts).
 
-Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}cloud/access-acct/fastly.html#bulkaction).
+Fastly can be bypassed for the Magento Admin to perform long running or bulk actions and API access to avoid 503s. For Fastly module 1.2.22 and later, the timeout for the Magento Admin was extended to three minutes. You can also update the Fastly configuration for your store to [extend the Fastly timeout for the Magento Admin]({{ page.baseurl }}cloud/cdn/configure-fastly.html#bulkaction).
 
 
 ## Backends and Origin shields {#backend}
@@ -46,7 +48,7 @@ Backend settings provide fine tuning for Fastly performance with Origin shieldin
 
 _Origin shielding_ routes all requests for your store to a specific Point of Presence (POP). When a request is received, the POP checks for cached content and provides it. If it is not cached, it continues to the Shield POP, then to the Origin server which caches the content. The shields reduces traffic directly to the origin.
 
-We provide detailed instructions for configuring backends when you [configure Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html).
+We provide detailed instructions for configuring backends when you [configure Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
 ## Basic authentication {#basic-auth}
 
@@ -58,7 +60,7 @@ If you add user access and enable basic authentication on Staging, you can still
 
 Fastly provides an extremely custom code friendly method for creating lists of items like IPs and domains to complete actions via Fastly and Varnish code blocks. For example, with edge and ACL dictionaries and VCL code, you could allow, block, or redirect access for specific users or IPs.
 
-After you have [set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html), you can create [custom VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html) using these edge dictionaries and ACLs.
+After you have [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html), you can create [custom VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html) using these edge dictionaries and ACLs.
 
 ### Edge dictionaries {#dictionary}
 
@@ -83,7 +85,7 @@ For a few examples, you can create VCL snippets to:
 * Redirect blog links from your store to a blog site
 * Extend timeouts for Fastly and Magento
 
-After you have [set up Fastly](#install-configure), we provide detailed instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/configure/cloud-vcl-custom-snippets.html).
+After you have [set up Fastly](#install-configure), we provide detailed instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 ## Force TLS {#tls}
 
@@ -102,4 +104,4 @@ The installation and configuration process is:
 * Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching
 
-For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/access-acct/fastly.html). After you have configured it, you can continue with advanced options including custom VCL snippets.
+For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html). After you have configured it, you can continue with advanced options including custom VCL snippets.

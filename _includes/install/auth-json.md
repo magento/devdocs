@@ -7,7 +7,7 @@ To create `auth.json`:
 
         {
            "github-oauth": {
-             "github.com": "<your github oauth id>"
+             "github.com": "<your GitHub OAuth ID>"
            },
            "http-basic": {
               "repo.magento.com": {

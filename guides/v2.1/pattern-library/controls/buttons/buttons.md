@@ -1,7 +1,6 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Buttons
-redirect_from: /guides/v1.0/pattern-library/controls/buttons/buttons.html
 ---
 Buttons bring attention to actions on the screen. This article will cover the use of general buttons on Magento.
 

@@ -521,7 +521,7 @@ This release contains hundreds of fixes and enhancements.
 
 ### Frameworks
 
-<!--- 60611-->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.
+<!--- 60611-->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product frontend.
 
 
 <!---71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{ page.baseurl }}/config-guide/config/disable-module-output.html) for details.
@@ -673,7 +673,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 67048-->* You can now add a `translate` attribute to any String argument in the `di.xml` file for any class. This attribute provides an ability on the level of dependency injection configuration to specify that an argument can be translated. The actual translation of strings is handled by another Magento component.
 
-<!--- 59322-->* Magento front-end scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
+<!--- 59322-->* Magento frontend scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
 
 <!--- 58298-->* Only users with permission to view a store can view or process the orders placed on it.
 
@@ -804,7 +804,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 55234-->* Magento now successfully saves images that you edit in a {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
 
-<!--- 58031-->*  Inserted images on the content block of Category no longer reference the Admin URL. Previously, when you used the Wysiwyg editor to insert an image into the Content block of a Category, the image URL on the front end would reference the Admin location. When you subsequently logged out of the Admin panel, and refreshed the Category page, the image is no longer available.
+<!--- 58031-->*  Inserted images on the content block of Category no longer reference the Admin URL. Previously, when you used the Wysiwyg editor to insert an image into the Content block of a Category, the image URL on the frontend would reference the Admin location. When you subsequently logged out of the Admin panel, and refreshed the Category page, the image is no longer available.
 
 #### Import/Export
 
@@ -950,7 +950,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 54813 -->* You can now add a gift card with an undefined amount to the Items Ordered table. Previously, Magento did not permit you to add a gift card of an open value to this table.
 
-<!--- 58074-->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the Shipping and Tracking block did not work properly.
+<!--- 58074-->* The **Print Shipping Label** link now displays on the product frontend. Previously, the layout for the Shipping and Tracking block did not work properly.
 
 <!---66428 -->* You can now create an order through Admin  if there is a `translate csv` for order-header. *Fix submitted by community member  [Pascal Brouwers](https://github.com/PascalBrouwers){: target="_blank"} in pull request [6856](https://github.com/magento/magento2/pull/6856){: target="_blank"}.*
 

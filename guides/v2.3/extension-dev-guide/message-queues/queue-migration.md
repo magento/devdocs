@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
 redirect_from: /guides/v2.3/config-guide/mq/queue-migration.html

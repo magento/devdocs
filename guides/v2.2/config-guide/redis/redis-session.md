@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Use Redis for session storage
 functional_areas:
   - Configuration
@@ -185,7 +185,7 @@ where
 
 ### Example command
 
-The following example sets Redis as the session data store, sets the host to `redis.example.com`, sets the log level to 3, and sets the datbase number to 2. All other parameters are set to the default value.
+The following example sets Redis as the session data store, sets the host to `redis.example.com`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
 
 `bin/magento setup:config:set --session-save=redis --session-save-redis-host=redis.example.com --session-save-redis-log-level=3 --session-save-redis-db=2`
 
@@ -218,6 +218,9 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
         'max_lifetime' => '2592000'
       )
     ),
+    
+{: .bs-callout .bs-callout-info }
+TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
 ## Basic verification {#redis-verify}
 

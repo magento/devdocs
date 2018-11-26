@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Customizing layout illustration
 menu_title: Customizing layout illustration
 menu_order: 7
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-practice.html
 functional_areas:
   - Frontend
 ---

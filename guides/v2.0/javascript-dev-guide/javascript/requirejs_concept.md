@@ -1,5 +1,5 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: About AMD modules and RequireJS
 menu_title: About AMD modules and RequireJS

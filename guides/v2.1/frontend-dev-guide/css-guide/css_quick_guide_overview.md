@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Quick start guide to working with styles for a new theme
 functional_areas:
   - Frontend
@@ -8,7 +8,7 @@ functional_areas:
 This chapter combines the topics aiming to help you to quickly start working with styles of your custom theme:
 
 - [Simple ways to customize a theme's styles]
-- [Simple style changes with client-side LESS compilation vs. server-side]
+- [Simple style changes with client-side Less compilation vs. server-side]
 
 ## High-level steps to create a theme and change styles
 
@@ -17,7 +17,7 @@ This chapter combines the topics aiming to help you to quickly start working wit
 3. [Apply your theme]
 2. Decide which CSS compilation mode you will use. Compilation modes are described in the following topics:
 	- Detailed description: [Styles debugging]
-	- Practical illustration: [Simple style changes with client-side LESS compilation vs. server-side]
+	- Practical illustration: [Simple style changes with client-side Less compilation vs. server-side]
 4. Customize styles. To learn how, check out the following sources:
 	- [CSS chapter of this book][css overview]
 	- [Simple ways to customize a theme's styles]
@@ -40,11 +40,11 @@ Making changes in the Magento out-of-the-box themes is a bad idea, because can r
 
 - [CSS in Magento themes][css overview]
 - [Simple ways to customize a theme's styles]
-- [Simple style changes with client-side LESS compilation vs. server-side]
+- [Simple style changes with client-side Less compilation vs. server-side]
 
 <!-- Link Definitions -->
 [Simple ways to customize a theme's styles]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html
-[Simple style changes with client-side LESS compilation vs. server-side]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
+[Simple style changes with client-side Less compilation vs. server-side]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
 [Set]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html
 [mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
 [add a new theme]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html
@@ -52,10 +52,10 @@ Making changes in the Magento out-of-the-box themes is a bad idea, because can r
 [Apply your theme]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html
 
 [Styles debugging]: {{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html
-[Simple style changes with client-side LESS compilation vs. server-side]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
+[Simple style changes with client-side Less compilation vs. server-side]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
 [css overview]: {{ page.baseurl }}/frontend-dev-guide/css-topics/css-overview.html
 [Simple ways to customize a theme's styles]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html
-[Simple style changes with client-side LESS compilation vs. server-side]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
+[Simple style changes with client-side Less compilation vs. server-side]: {{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_mode.html
 
 <!-- Image definitions -->
 [Storefront with Luma applied]: {{ site.baseurl }}/common/images/css_guide_luma21.png

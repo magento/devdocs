@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Install and configure Elasticsearch
 ee_only: True
 functional_areas:
@@ -81,7 +81,7 @@ The tasks discussed in this section require the following:
 *	[Firewall and SELinux](#firewall-selinux)
 *	[Install the Java Software Development Kit (JDK)](#prereq-java)
 *	[Install Elasticsearch](#es-install-es)
-*	[Configure Magento to use Elasticsearch](#configure-magento-to-use-elasticsearch)
+*	[Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
 
 {% include config/solr-elastic-selinux.md %}
 

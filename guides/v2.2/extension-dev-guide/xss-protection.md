@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Security
 title: XSS prevention strategies
 menu_title: XSS prevention strategies

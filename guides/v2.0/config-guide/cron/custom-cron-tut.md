@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 12_cron
 title: Configure a custom cron job and cron group (tutorial)
 menu_title: Configure a custom cron job and cron group (tutorial)
@@ -40,7 +40,7 @@ If you already have a sample module, you can use it; skip this step and the next
         cd ~
         git clone git@github.com:magento/magento2-samples.git
 
-    If the command fails with the error `Permission denied (publickey).`, you must [add your SSH public key to github.com](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account){:target="_blank"}.
+    If the command fails with the error `Permission denied (publickey).`, you must [add your SSH public key to GitHub.com](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account){:target="_blank"}.
 4.  Make a directory to which to copy the sample code:
 
         mkdir -p /var/www/html/magento2/app/code/Magento/SampleMinimal

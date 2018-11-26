@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 500_log
 title: Custom logging
 menu_title: Custom logging

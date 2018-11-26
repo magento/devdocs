@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Uninstall or reinstall Magento
 menu_title: Uninstall or reinstall Magento
@@ -57,7 +57,7 @@ To reinstall the Magento software as a system integrator:
 
 3.	Install the Magento software:
 
-	*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
+	*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 ## Uninstall the Magento software   {#instgde-install-uninstall}
@@ -89,7 +89,7 @@ Improper use of this optional parameter can cause errors during code execution.
 
 6.	Install the Magento software:
 
-	*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
+	*	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
 	*	<a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase

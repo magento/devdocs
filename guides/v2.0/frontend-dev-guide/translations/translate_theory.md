@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: G_Translate
 title: Translate theme strings
 menu_title: Translate theme strings
@@ -40,7 +40,7 @@ In this example, the <i>'Hello %s'</i> string is added to the dictionary when th
 If your theme contains [custom email templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-theme){: target="_blank"}, their strings can be added to the dictionary as well. 
 To make sure the strings of an email template are added to the dictionary, use the  {% raw %} {{trans}}  {% endraw %} [directive]({{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#localization){: target="_blank"}. 
 
-Custom email templates [added using the Admin panel]({{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-admin){: target="_blank"}, are not stored in the file system, and their stings are not added to the dictionary.
+Custom email templates [added using the Admin panel]({{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-admin){: target="_blank"}, are not stored in the file system, and their strings are not added to the dictionary.
 
 ## Strings added in UI component templates   {#add_strings_ui_html}
 

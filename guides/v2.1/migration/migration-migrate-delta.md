@@ -1,18 +1,17 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate changes
 menu_title: Migrate changes
 menu_node:
 menu_order: 3
-redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 functional_areas:
   - Tools
 ---
 
 ## Overview
 
-Incremental migration enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
+The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) and triggers (for tracking changes) in the Magento 1 database during the [migration of data]({{ page.baseurl }}/migration/migration-migrate-data.html). These deltalog tables and triggers are essential to ensuring that you migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
 
 * data that customers added via {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (created orders, reviews, changes in customer profiles, etc.)
 
@@ -32,7 +31,7 @@ To start migrating incremental changes, run:
 
     bin/magento migrate:delta [-r|--reset] {<path to config.xml>}
 
-where;
+where
 
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 

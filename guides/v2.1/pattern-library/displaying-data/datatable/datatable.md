@@ -1,5 +1,5 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Data Table
 ---
 The data-table organizes {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data.
@@ -80,7 +80,8 @@ Pagination controls allow the user to easily page through and organize data. Pag
 
 ![](img/datatable07.jpg)
 
-## Mass Actions
+## Mass Actions 
+{: #mass-actions}
 
 A common {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} across the existing Magento user experience includes mass actions that can be taken. This is a convention used on both data-table and non-data-table pages. Not all pages have these action buttons. This document will not attempt to capture all actions that appear here or how they might be redesigned for Magento 2. This document will make note that these actions exist on many of the data-table pages and will use the area directly above the table to indicate placement of such action buttons where they might be needed.
 
@@ -326,7 +327,7 @@ The total number of records loaded into the table  will display above the column
 
 ![](img/datatable39.jpg)
 
-As items are selected on the gird, a count for the number of items selected should be displayed next to the total count. This will give the user confidence that records are selected though they may not be on the current page view.
+As items are selected on the grid, a count for the number of items selected should be displayed next to the total count. This will give the user confidence that records are selected though they may not be on the current page view.
 
 ![](img/datatable40.jpg)
 
@@ -420,7 +421,7 @@ When the thumbnail is clicked a modal is presented over the data-table to provid
 
 ### Parent-Child relationships
 
-The data-table will support parent-child relationships. Parent and child records will be delineated via style and/or iconography. Parent nodes will be expandable/collapsable.
+The data-table will support parent-child relationships. Parent and child records will be delineated via style and/or iconography. Parent nodes will be expandable/collapsible.
 
 ![](img/datatable51.jpg)
 

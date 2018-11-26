@@ -20,6 +20,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 <!-- Title: Magento Enterprise Edition (EE) Release Notes (1.13 and later) -->
 <!-- URL: ee113-later-release-notes -->
@@ -297,7 +298,7 @@ The following options are available in the Admin Panel in <strong>System</strong
 <strong> Allow Gift Wrapping for Order Items</strong> set to <strong>Yes</strong></li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-757" target="_blank">MPERF-757</a>)  -->Category and subcategory names display correctly. Before the issue was resolved, subcategory names that were significantly longer than the category name did not display properly.</li>
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2361" target="_blank">MPERF-2361</a>) Resolved an issue where <code>Mage_Adminhtml_CustomerController->viewCartAction</code> falsely displayed <code>There are no items in customer's shopping cart at the moment</code> in the customer's shoppign cart view.<br />
-Magento thanks Johnathan David Froeming for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/pull/259" target="_blank">github pull request</a>.</li>  -->
+Magento thanks Johnathan David Froeming for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/pull/259" target="_blank">GitHub pull request</a>.</li>  -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2350" target="_blank">MPERF-2350</a>)  -->If a customer adds more than one product that requires products to be purchased in increments, only the products that meet the increment requirements are added. Before the fix, all products were added.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2340" target="_blank">MPERF-2340</a>)  -->Scheduled payments work properly.<br />
 Magento thanks Sylvain Raye for contributing to this fix. </li>
@@ -354,23 +355,23 @@ Magento thanks Florinel Chis for contributing to this fix. </li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-868" target="_blank">MPERF-868</a>)  -->Fixed issues with customer segments.</li>
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-736" target="_blank">MPERF-736</a>)  -->Back-in-stock e-mails contain the correct content.</li>
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2357" target="_blank">MPERF-2357</a>) You can now use the <code>$file</code> variable in installation scripts without errors.<br />
-Magento thanks Fabian Blechschmidt Schrank for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/244" target="_blank">github issue</a>.</li> -->
+Magento thanks Fabian Blechschmidt Schrank for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/244" target="_blank">GitHub issue</a>.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2358" target="_blank">MPERF-2358</a>) Fixed issues with Magento's use of the Zend TwoLevels backend cache.<br />
-Magento thanks Rouven Alexander Rieker for contributing to this fix. Link to <a href="https://github.com/magento/bugathon_march_2013/pull/247" target="_blank">github pull request</a> for more information.</li> -->
+Magento thanks Rouven Alexander Rieker for contributing to this fix. Link to <a href="https://github.com/magento/bugathon_march_2013/pull/247" target="_blank">GitHub pull request</a> for more information.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2359" target="_blank">MPERF-2359</a>) The database cache backend now deletes cache tags when deleting the corresponding cache entry.<br />
 Magento thanks Fabrizio Branca for contrinbuting to this fix.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2360" target="_blank">MPERF-2360</a>) Fixed the definition of the store ID in <code>sendPasswortResetConfirmationEmail()</code> to specify the current store's ID.<br />
 Magento thanks Dominik Weber for contributing to this fix.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2361" target="_blank">MPERF-2361</a>) <code>Mage_Page_Block_Html_Header->getIsHomePage</code> returns <code>true</code> when the URL has GET parameters. For example, the following now returns <code>true</code>:<br />
 <code>http://domain.com/?hoge=hoge //Mage_Page_Block_Html_Header->getIsHomePage</code><br />
-Magento thanks Johnathan David Froeming for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/pull/259" target="_blank">github pull request</a>.</li> -->
+Magento thanks Johnathan David Froeming for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/pull/259" target="_blank">GitHub pull request</a>.</li> -->
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2339" target="_blank">MPERF-2339</a>) Products sort correctly using a custom attribute.<br />
-Magento thanks Vinai Kopp for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/58" target="_blank">github issue</a>.</li> -->
+Magento thanks Vinai Kopp for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/58" target="_blank">GitHub issue</a>.</li> -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2336" target="_blank">MPERF-2336</a>)  -->You can now manage product ratings and reviews from the Admin Panel as well as from the web store.<br />
 Magento thanks Fabian Blechschmidt Schrank for contributing to this fix. </li>
 <!-- <li>(<a href="https://jira.corp.x.com/browse/MPERF-2342" target="_blank">MPERF-2342</a>) When you create an order using the Admin Panel, the values for the default shipping address and default billing address display properly.<br />
 For example, if you clear the <strong>Same as Billing Address</strong> checkbox, the default shipping address displays.<br />
-Magento thanks TBD for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/115" target="_blank">github issue</a>.</li> -->
+Magento thanks TBD for contributing to this fix. Link to the <a href="https://github.com/magento/bugathon_march_2013/issues/115" target="_blank">GitHub issue</a>.</li> -->
 <li><!-- (<a href="https://jira.corp.x.com/browse/MPERF-2354" target="_blank">MPERF-2354</a>)  -->Resolved an issue with <code>Mage_Page_Block_Template_Links::addLinkBlock</code> to enable you to sort an array of results by position.<br />
 Magento thanks Benjamin Marks for contributing to this fix. </li>
 
@@ -721,7 +722,7 @@ Now, the session ID changes after successful registration, making unauthorized u
 (In the Admin Panel, <strong>System</strong> > <strong>Configuration</strong> > WEB > <strong>Session Validation Settings</strong>, <strong>Use SID on Frontend</strong>.)</li></ul>
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-note.png" alt="note" align="left" width="40"><span><strong>Note</strong>: The potential vulnerability exists <em>only</em> if both of the preceding are true. Default Magento installations or installations that enable <strong>Use SID on Frontend</strong> but have no custom code with full page caching are at no risk.</div>
 
-<p>If both of the preceding are true, Magento can be subjected to <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)" target="_blank">cross-site scripting</a> (XSS) attacks&mdash;a type of injection issue, which means that malicious code is injected into otherwise trusted web sites, generally in the form of a browser-side script.</p>
+<p>If both of the preceding are true, Magento can be subjected to <a href="https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)" target="_blank">cross-site scripting</a> (XSS) attacks&mdash;a type of injection issue, which means that malicious code is injected into otherwise trusted websites, generally in the form of a browser-side script.</p>
 <p><em>Issue</em>: Magento is subject to XSS attacks because the SID cookie value is not sanitized by default.</p>
 <p><em>Suggested solution</em>: Either disable <strong>Use SID on Frontend</strong> or <a href="http://stackoverflow.com/questions/4213686/best-practice-for-php-output" target="_blank">output-encode</a> any usage of the SID cookie value before using it or passing it as a parameter to any page cache helper functions.</p>
 <p>Additional references:</p>

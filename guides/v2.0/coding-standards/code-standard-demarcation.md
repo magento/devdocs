@@ -5,7 +5,6 @@ landing-page: Coding standards
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
-redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 functional_areas:
   - Standards
 ---
@@ -41,7 +40,7 @@ functional_areas:
 
 **Unacceptable**
 {% highlight html %}
-<section id="заголовок">
+<section id="some_id">
    <p> ... </p>
    <p> ... </p>
 </section>

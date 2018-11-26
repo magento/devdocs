@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Set up notifications
 functional_areas:
   - Cloud
@@ -11,25 +11,25 @@ By default, {{site.data.var.ece}} writes build and deploy actions to the `app/va
 
 For example, you could send a Slack message to alert a group of people when a deployment fails, and prompt an investigation into what went wrong.
 
-## Plan your notifications
+## Plan notifications
 
 Before you configure notifications, consider the following:
 
 -   What kind of notifications do you want to receive (Slack messages, email, both)?
--   How much detail do you want to see in the logs (see [Log levels](#log-levels))?
+-   How much detail do you want to see in the logs?
 -   Where do you want to set up notifications (Integration, Staging, Production)?
 
 For example, during initial development you may prefer email notifications that show detailed logs about your Integration environment to help you debug issues before deploying to the Staging environment. When you are ready to deploy to the Staging or Production environment, you may prefer a Slack message that contains less detailed information.
 
-{% include note.html type="info" content="The configuration file used to set up notifications is at the root of your project directory, so it applies when you push changes to any environment. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment." %}
+{:.bs-callout .bs-callout-info}
+The configuration file used to set up notifications is at the root of your project directory, so it applies when you push changes to any environment. If you want to customize notifications per environment, you must modify the configuration file before pushing it to that environment.
 
 ## Configure notifications
 
 To configure notifications:
 
 1.  Open a terminal and [checkout a branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) in your local environment.
-1.  Locate the `.magento.env.yaml.sample` file in your project root and rename it `.magento.env.yaml`. The code in this file is commented out by default.
-1.  Remove the code comments and add your messaging system settings, including preferred notification [log level](#log-levels).
+1.  In the `.magento.env.yaml` file in your project root, add your messaging system settings, including preferred notification [Log levels]({{page.baseurl}}/cloud/env/log-handlers.html#log-levels).
 
     For example, to configure both Slack _and_ email configurations, use the following:
 
@@ -70,7 +70,7 @@ log:
       min_level: "info"
 ```
 
--   `token`—Your Slack [user token](https://api.slack.com/docs/token-types#user){:target="_blank"}. Your user token authorizes {{site.data.var.ece}} to send messages.
+-   `token`—Your Slack [user token](https://api.slack.com/docs/token-types#user). Your user token authorizes {{site.data.var.ece}} to send messages.
 -   `channel`—Name of the Slack channel {{site.data.var.ece}} sends notifications.
 -   `username`—Username {{site.data.var.ece}} uses to send notification messages in Slack.
 -   `min_level`—Minimum log level for notification messages. We recommend using `info`.
@@ -95,16 +95,3 @@ log:
 -   `from`—Email address for sending notification messages to recipients.
 -   `subject`—Description of the email.
 -   `min_level`—Minimum log level for notification messages. We recommend using `notice` or `warning`.
-
-### Log levels
-
-Log levels determine the level of detail your notification messages contain. You can choose from the following options:
-
--   **debug**—Detailed debug information.
--   **info**—Interesting events. For example, a user logs in, SQL logs, etc.
--   **notice**—Normal but significant events.
--   **warning**—Exceptional occurrences that are not errors. For example, use of deprecated APIs, poor use of an API, undesirable things that are not necessarily wrong.
--   **error**—Runtime errors that don't require immediate action but should be logged and monitored.
--   **critical**—Critical conditions. For example, an unavailable application component, unexpected exceptions.
--   **alert**—Action must be taken immediately. For example, your website is down, the database is unavailable, etc. This should trigger SMS alerts and wake you up.
--   **emergency**—The system is unusable.

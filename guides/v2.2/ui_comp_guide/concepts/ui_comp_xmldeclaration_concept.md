@@ -1,6 +1,6 @@
 ---
-group: UI_Components_guide
-title: About XML сonfiguration of UI сomponents
+group: ui-components-guide
+title: About XML configuration of UI components
 ---
 
 ## Overview

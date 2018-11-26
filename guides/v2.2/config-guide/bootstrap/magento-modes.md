@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: About Magento modes
 functional_areas:
   - Configuration
@@ -33,9 +33,6 @@ You can run Magento in any of the following *modes*:
 				<li>Enables enhanced debugging</li>
 				<li>Shows custom <code>X-Magento-*</code> HTTP request and response headers</li>
 				<li>Results in the slowest performance (because of the preceding)</li></ul>
-        <div class="bs-callout bs-callout-info">
-        <a href="{{ page.baseurl }}/cloud/bk-cloud.html">{{site.data.var.ece}}</a> supports production mode only.
-        </div>
     </td>
 	</tr>
 	<tr>
@@ -47,12 +44,23 @@ You can run Magento in any of the following *modes*:
 				<li><b>Does not allow you to enable or disable cache types in Magento Admin.</b> <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en">More information about enabling and disabling the cache</a>.</li>
 			</ul></td>
 	</tr>
+<tr>
+		<td>maintenance</td>
+		<td><p>Intended to prevent access to a Magento Commerce site while it is being updated or reconfigured, this mode:</p>
+			<ul><li>Redirects site visitors to a default <code>Service Temporarily Unavailable</code> page.</li>
+				<li>When the site is in maintenance mode, the <code>var/</code> directory contains the <code>.maintenance.flag</code> file.</li>
+				<li>You can configure maintenance mode to allow visitor access from a specified list of IP addresses.</li>
+			</ul></td>
+		</tr>
 </tbody>
 </table>
 
+{:.bs-callout .bs-callout-info}
+[{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports only the production and maintenance modes.
+
 ## Default mode
 
-As its name implies, default mode is how the Magento software operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.
+As its name implies, default mode is how Magento operates if no other mode is specified. Default mode enables you to deploy the Magento application on a single server without changing any settings. However, default mode is not as optimized for production as is production mode.
 
 To deploy the Magento application on more than one server or to optimize it for production, change to one of the other modes.
 
@@ -66,10 +74,7 @@ For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide
 
 ## Developer mode
 
-You should run the Magento software in developer mode when you're extending or customizing it.
-
-{:.bs-callout .bs-callout-info}
-[{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production mode only.
+Run Magento in developer mode when you are extending or customizing it.
 
 In developer mode:
 
@@ -81,9 +86,9 @@ In developer mode:
 
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-## Production mode
+## Production mode {#production-mode}
 
-You should run the Magento software in production mode when it is deployed to a production server. After optimizing the server environment, such as the database and web server, you should run the [static view files deployment tool]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html) to write static view files to the Magento `pub/static` directory.
+Run Magento in production mode when it is deployed to a production server. After optimizing the server environment, such as the database and web server, you should run the [static view files deployment tool]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html) to write static view files to the Magento `pub/static` directory.
 
 This improves performance by providing all necessary static files at deployment instead of forcing Magento to dynamically locate and copy (materialize) static files on demand during run time.
 
@@ -94,6 +99,14 @@ In production mode:
 -   You can enable and disable cache types only using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en).
 
 	You _cannot_ enable or disable cache types using the Magento Admin
+	
+## Maintenance mode
+
+Run Magento in maintenance mode to take your site offline while you complete maintenance, upgrade, or configuration tasks.  In maintenance mode, the site redirects visitors to a default `Service Temporarily Unavailable` page.
+
+You can create a [custom maintenance page]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html#compman-trouble-maint-create), manually enable and disable maintenance mode, and configure maintenance mode to allow visitors from authorized IP addresses to view the store normally. See [enable and disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
+
+If you are using {{site.data.var.ece}}, the Magento application runs in maintenance mode during the deploy phase. When the deployment completes successfully, Magento returns to running in production mode. See [Deployment hooks]({{ page.baseurl }}/cloud/reference/discover-deploy.html).
 
 #### Next step
 

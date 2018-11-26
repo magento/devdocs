@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Manage the indexers
 functional_areas:
   - Configuration
@@ -80,7 +80,7 @@ Sample result:
 Use this command to reindex all or selected indexers one time only.
 
 {:.bs-callout .bs-callout-info}
-This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
+This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
 Command options:
 
@@ -116,9 +116,9 @@ Catalog Search index has been rebuilt successfully in <time>
 ```
 
 {:.bs-callout .bs-callout-info}
-Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Content for 2.3:  To reduce processing time, see the next section for reindexing in parallel mode. -->
+Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Add to docs in 2.3.1 - MAGEDOC-3020:  To reduce processing time, see the next section for reindexing in parallel mode. -->
 
-<!-- Content for 2.3:
+<!-- Add to docs in 2.3.1 - MAGEDOC-3020
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
 
 Indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
@@ -220,5 +220,5 @@ Index mode for Indexer Product Categories was changed from 'Update on Save' to '
 * [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
 * [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
 * [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html")
+* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)
 * [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)

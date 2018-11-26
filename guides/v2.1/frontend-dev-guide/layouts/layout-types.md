@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Layout file types
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 functional_areas:
   - Frontend
 ---
@@ -10,10 +9,10 @@ functional_areas:
 
 For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks). 
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only [containers]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html). 
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
-Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks of particular classes]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks) and containers.
+Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks of particular classes]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) and containers.
 
 We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the `<body>` section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
 
@@ -372,7 +371,7 @@ Generic layouts define the contents and detailed structure inside the `<body>` s
 Conventionally generic layout files must be located as follows:
 
 - Module generic layouts: `<module_dir>/view/frontend/layout`
-- Theme generic layouts: `<theme_dir>/<Namespace>_>Module>/layout`
+- Theme generic layouts: `<theme_dir>/<Namespace>_<Module>/layout`
 
 ### Generic layout structure and allowed layout instructions
 
@@ -429,7 +428,7 @@ none
       <td colspan="1">
 <ul>
 <li><code>name="root"</code></li>
-<li>For complete list of attributes, see <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#container">Layout instructions</a></li>
+<li>For complete list of attributes, see <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_cont">Layout instructions</a></li>
 </ul>
 </td>
       <td colspan="1">

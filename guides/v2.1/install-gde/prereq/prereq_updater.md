@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 title: Set up the updater
 functional_areas:
   - Install
@@ -13,7 +13,7 @@ Learn more about the cron setup in [Configure the Magento application].
 
 ## Clone the updater
 
-Clone the [Magento 2 updater] to `<your Magento install dir>/update`.
+Clone the [Magento 2 updater](https://github.com/magento/magento2-updater) to `<your Magento install dir>/update`.
 
 Example:
 
@@ -42,6 +42,5 @@ composer install
 
 <!-- Link definitions -->
 
-[Magento 2 updater]: https://github.com/magento/magento2-updater
 [Configure the Magento application]: {{ page.baseurl }}/install-gde/install/post-install-config.html
 [Installation options]: {{ page.baseurl }}/install-gde/continue-to-install.html

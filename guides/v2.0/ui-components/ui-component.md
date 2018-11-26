@@ -1,5 +1,5 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: A_Overview
 title: Overview
 landing-page: UI Components
@@ -41,7 +41,7 @@ You need to configure styles manually for components on storefront.
 
 Using {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is as simple as adding the following code to the appropriate {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} section:
 
-`<uiСomponent name="some_ui_component_instance_name"/>`
+`<uiComponent name="some_ui_component_instance_name"/>`
 
 All UI components have base declaration in [`Magento/Ui/view/base/ui_component/etc/definition.xml`]({{ page.baseurl }}/ui-library/ui-definition.html). 
 

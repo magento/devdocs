@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: CSS in responsive design
 menu_title: CSS in responsive design
 menu_order: 2
-redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_css.html
 functional_areas:
   - Frontend
 ---

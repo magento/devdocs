@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Theme development workflow
 functional_areas:
   - Frontend
@@ -84,7 +84,7 @@ See:
 
 ### Clean cache and/or static files if necessary
 
-* Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Сlean static files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.
+* Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Clean static files]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.
 
 * Changes in layout and templates requires cleaning cache. See [Clean cache]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_cache) for details.
 

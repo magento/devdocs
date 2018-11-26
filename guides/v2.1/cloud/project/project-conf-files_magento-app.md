@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Application
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
@@ -12,7 +12,7 @@ functional_areas:
 
 The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.
 
-The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
+The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
 {% include cloud/note-pro-using-yaml.md %}
 
@@ -214,17 +214,19 @@ Also, you can customize the build phase further by using the `generate` and `tra
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
+        set -e
         php ./vendor/bin/ece-tools build:generate
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
 
+-  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
 -  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
 -  `build:transfer`—transfers generated code and static content to the final destination.
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### To compile SASS files using grunt:
+#### To compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -242,7 +244,7 @@ hooks:
         php ./vendor/bin/ece-tools
 ```
 
-You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
+You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.
@@ -318,56 +320,56 @@ To view the current list of PHP extensions, SSH into your environment and enter 
 
 Magento requires the following PHP extensions that are enabled by default:
 
--  [curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
--  [gd](http://php.net/manual/en/book.image.php){:target="_blank"}
--  [intl](http://php.net/manual/en/book.intl.php){:target="_blank"}
+-  [curl](http://php.net/manual/en/book.curl.php)
+-  [gd](http://php.net/manual/en/book.image.php)
+-  [intl](http://php.net/manual/en/book.intl.php)
 -  PHP 7 only:
 
-	-  [json](http://php.net/manual/en/book.json.php){:target="_blank"}
-	-  [iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
--  [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
--  [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="_blank"}
--  [bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"}
--  [mbstring](http://php.net/manual/en/book.mbstring.php){:target="_blank"}
--  [mhash](http://php.net/manual/en/book.mhash.php){:target="_blank"}
--  [openssl](http://php.net/manual/en/book.openssl.php){:target="_blank"}
--  [SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="_blank"}
--  [soap](http://php.net/manual/en/book.soap.php){:target="_blank"}
--  [xml](http://php.net/manual/en/book.xml.php){:target="_blank"}
--  [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
+	-  [json](http://php.net/manual/en/book.json.php)
+	-  [iconv](http://php.net/manual/en/book.iconv.php)
+-  [mcrypt](http://php.net/manual/en/book.mcrypt.php)
+-  [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php)
+-  [bc-math](http://php.net/manual/en/book.bc.php)
+-  [mbstring](http://php.net/manual/en/book.mbstring.php)
+-  [mhash](http://php.net/manual/en/book.mhash.php)
+-  [openssl](http://php.net/manual/en/book.openssl.php)
+-  [SimpleXML](http://php.net/manual/en/book.simplexml.php)
+-  [soap](http://php.net/manual/en/book.soap.php)
+-  [xml](http://php.net/manual/en/book.xml.php)
+-  [zip](http://php.net/manual/en/book.zip.php)
 
 You must install the following extensions:
 
--  [ImageMagick](http://php.net/manual/en/book.imagick.php){:target="_blank"} 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
--  [xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
--  [redis](https://pecl.php.net/package/redis){:target="_blank"}
+-  [ImageMagick](http://php.net/manual/en/book.imagick.php) 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
+-  [xsl](http://php.net/manual/en/book.xsl.php)
+-  [redis](https://pecl.php.net/package/redis)
 
 In addition, we strongly recommend you enable `opcache`.
 
 Optional PHP extensions available to install:
 
--  [apcu](http://php.net/manual/en/book.apcu.php){:target="_blank"}
--  [blackfire](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}
--  [enchant](http://php.net/manual/en/book.enchant.php){:target="_blank"}
--  [gearman](http://php.net/manual/en/book.gearman.php){:target="_blank"}
--  [geoip](http://php.net/manual/en/book.geoip.php){:target="_blank"}
--  [imap](http://php.net/manual/en/book.imap.php){:target="_blank"}
--  [ioncube](https://www.ioncube.com/loaders.php){:target="_blank"}
--  [pecl-http](https://pecl.php.net/package/pecl_http){:target="_blank"}
--  [pinba](http://pinba.org){:target="_blank"}
--  [propro](https://pecl.php.net/package/propro){:target="_blank"}
--  [pspell](http://php.net/manual/en/book.pspell.php){:target="_blank"}
--  [raphf](https://pecl.php.net/package/raphf){:target="_blank"}
--  [readline](http://php.net/manual/en/book.readline.php){:target="_blank"}
--  [recode](http://php.net/manual/en/book.recode.php){:target="_blank"}
--  [snmp](http://php.net/manual/en/book.snmp.php){:target="_blank"}
--  [sqlite3](http://php.net/manual/en/book.sqlite3.php){:target="_blank"}
--  [ssh2](http://php.net/manual/en/book.ssh2.php){:target="_blank"}
--  [tidy](http://php.net/manual/en/book.tidy.php){:target="_blank"}
--  [xcache](https://xcache.lighttpd.net){:target="_blank"}
--  [xdebug](https://xdebug.org){:target="_blank"}
--  [xhprof](http://php.net/manual/en/book.xhprof.php){:target="_blank"}
--  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
+-  [apcu](http://php.net/manual/en/book.apcu.php)
+-  [blackfire](https://blackfire.io/docs/up-and-running/installation)
+-  [enchant](http://php.net/manual/en/book.enchant.php)
+-  [gearman](http://php.net/manual/en/book.gearman.php)
+-  [geoip](http://php.net/manual/en/book.geoip.php)
+-  [imap](http://php.net/manual/en/book.imap.php)
+-  [ioncube](https://www.ioncube.com/loaders.php)
+-  [pecl-http](https://pecl.php.net/package/pecl_http)
+-  [pinba](http://pinba.org)
+-  [propro](https://pecl.php.net/package/propro)
+-  [pspell](http://php.net/manual/en/book.pspell.php)
+-  [raphf](https://pecl.php.net/package/raphf)
+-  [readline](http://php.net/manual/en/book.readline.php)
+-  [recode](http://php.net/manual/en/book.recode.php)
+-  [snmp](http://php.net/manual/en/book.snmp.php)
+-  [sqlite3](http://php.net/manual/en/book.sqlite3.php)
+-  [ssh2](http://php.net/manual/en/book.ssh2.php)
+-  [tidy](http://php.net/manual/en/book.tidy.php)
+-  [xcache](https://xcache.lighttpd.net)
+-  [xdebug](https://xdebug.org)
+-  [xhprof](http://php.net/manual/en/book.xhprof.php)
+-  [xmlrpc](http://php.net/manual/en/book.xmlrpc.php)
 
 {:.bs-callout .bs-callout-warning}
 PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.

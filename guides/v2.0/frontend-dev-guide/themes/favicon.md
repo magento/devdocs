@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Adding custom favicons
 menu_title: Adding custom favicons
@@ -57,7 +57,7 @@ For example, if you added a `favicon-32x32.png` icon and want it to be used as a
 
 {%endhighlight%}
 
-For your changes to be applied, clear the brower cache, and the following directories on the server (do not delete the `.htaccess` file!): 
+For your changes to be applied, clear the browser cache, and the following directories on the server (do not delete the `.htaccess` file!): 
 
 - `pub/static`
 - all directories under `var`

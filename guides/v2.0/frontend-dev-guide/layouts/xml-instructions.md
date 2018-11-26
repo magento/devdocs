@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Layout instructions
 menu_title: Layout instructions
@@ -301,7 +301,7 @@ To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
 ### referenceBlock and referenceContainer {#fedg_layout_xml-instruc_ex_ref}
 
-Updates in `<referenceBlockr>` and `<referenceContainerr>` are applied to the corresponding `<blockr>` or `<container>`.
+Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.
 
 For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
 
@@ -516,7 +516,7 @@ Example:
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
 [generic layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen
-[handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#handle
+[handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms
 [templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
 [app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
 [app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml

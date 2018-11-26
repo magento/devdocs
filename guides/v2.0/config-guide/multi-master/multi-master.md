@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 20_cqrs
 title: Split database performance solution (Magento Commerce only)
 menu_title: Split database performance solution (Magento Commerce only)

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: New Relic APM
 functional_areas:
   - Cloud
@@ -109,6 +109,6 @@ You can mix the high-level data captured by New Relic APM and the code-level dat
 -  [Introduction to APM](https://docs.newrelic.com/docs/data-analysis/user-interface-functions/view-your-data/standard-page-functions){:target="_blank"}
 -  [View transactions](https://docs.newrelic.com/docs/apm/applications-menu/monitoring/transactions-page#tx_viewing){:target="_blank"}
 -  [Analyze database and instance-level performance issues](https://docs.newrelic.com/docs/apm/applications-menu/features/analyze-database-instance-level-performance-issues){:target="_blank"}
--  [Tracking front-end time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="_blank"}
+-  [Tracking frontend time](https://docs.newrelic.com/docs/apm/applications-menu/features/request-queuing-tracking-front-end-time){:target="_blank"}
 -  [APM best practices](https://docs.newrelic.com/docs/apm/new-relic-apm/guides/new-relic-apm-best-practices-guide){:target="_blank"}
 -  [New Relic University](https://learn.newrelic.com/courses/intro_apm){:target="_blank"}

@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Toolbar component
 menu_title: Toolbar component
@@ -24,7 +24,7 @@ The Toolbar component implements a container for the listing-related elements li
   </tr>
   <tr>
     <td><code>stickyClass</code></td>
-    <td>A list of aditional CSS classes added to the root node of the <code>.html</code> template specified in <code>StickyTmpl</code>.</td>
+    <td>A list of additional CSS classes added to the root node of the <code>.html</code> template specified in <code>StickyTmpl</code>.</td>
     <td>{<br />[name:string]: Boolean<br />}</td>
     <td>{<br /><code>'sticky-header': true</code><br />}</td>
   </tr>

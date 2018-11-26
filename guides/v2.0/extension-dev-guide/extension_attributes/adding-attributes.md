@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Adding extension attributes to entity
 menu_title: Adding extension attributes to entity
@@ -201,4 +201,4 @@ In second one:
 </product>
 {% endhighlight %}
 
-[Sample module on github](https://github.com/magento/magento2-samples/tree/master/sample-external-links)
+[Sample module on GitHub](https://github.com/magento/magento2-samples/tree/master/sample-external-links)

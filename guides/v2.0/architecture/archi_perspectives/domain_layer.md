@@ -1,10 +1,9 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Layers
 title: Domain layer
 menu_title: Domain layer
 menu_order: 3
-redirect_from: /guides/v1.0/architecture/archi_perspectives/domain_layer.html
 ---
 
 ## What is Magento Domain layer?

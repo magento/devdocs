@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Message Queues Overview
 ---
 

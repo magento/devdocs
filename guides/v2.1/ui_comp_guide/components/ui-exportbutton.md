@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: ExportButton component
 menu_title: ExportButton component
@@ -63,7 +63,7 @@ The ExportButton component implements the ability to export grid data to the spe
 
 ### Configure component
 
-To enable the ExportButton сomponent, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
+To enable the ExportButton component, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
 
 {% highlight XML %}
 <exportButton name="export_button">
@@ -99,7 +99,7 @@ By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea
 
 To add new export format:
 
-* Add configuration data to ExportButton definition <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
+* Add configuration data to ExportButton definition <a href="{{site.mage2bloburl}}2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`
 

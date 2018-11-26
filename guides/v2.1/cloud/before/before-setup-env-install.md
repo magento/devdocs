@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Install Magento
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html
@@ -44,6 +44,7 @@ magento-cloud variable:get -e <environment-ID>
 | ADMIN_USERNAME | admin_A456    | Yes       | No   |
 +----------------+---------------+-----------+------+
 ```
+{: .no-copy}
 
 ### Get Magento authentication keys
 
@@ -84,8 +85,8 @@ After you have installed Magento, you need to set the file system permissions an
     ```
 
     ```terminal
-    find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-    find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+    find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+    find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
     ```
 
     ```bash
@@ -201,7 +202,7 @@ To verify the Integration master branch environment, log into the Project Web In
 
 With these steps completed, you should have:
 
-* Magento Commerce account and initial project setup and master branch
+* A {{site.data.var.ee}} account and initial project setup and master branch
 * A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
 * SSH keys set up
 * The Magento file system owner configured
@@ -210,6 +211,6 @@ With these steps completed, you should have:
 
 ## Next steps:
 
-For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/access-acct/first-time-deploy.html).
+For **Pro projects**, we strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production. For instructions, see [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html).
 
 For **Starter projects**, you are ready to start developing.

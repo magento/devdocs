@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 05_Command-line installation
 title: Uninstall themes Composer packages
 menu_title: Uninstall themes Composer packages

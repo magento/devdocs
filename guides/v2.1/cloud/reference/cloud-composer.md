@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: Composer
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
@@ -8,7 +8,7 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc) to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 Composer manages required libraries and dependencies for your project and installs them in the `vendor` directory.
 
@@ -37,7 +37,7 @@ The workflow is as follows:
 During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
 ## magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
-`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
+`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type) and does not contain any code.
 
 The metapackage depends on the appropriate versions of [`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig) and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. Therefore, to use {{site.data.var.ee}} version 2.1.4, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.1.4.
 
@@ -69,7 +69,7 @@ This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% end
 
 ## vendor/magento/ece-tools {#ece-tools}
 
-The`ece-tools`package is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
+The `{{site.data.var.ct}}` package is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
 
 ## Base packages and file marshalling
 

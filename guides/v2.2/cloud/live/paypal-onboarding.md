@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up PayPal payment methods
 menu_title: Set up PayPal
@@ -11,7 +11,7 @@ functional_areas:
   - Services
 ---
 
-Magento Commerce (Cloud) provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. This tool is available for ECE 2.1.8 and later. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.
+{{site.data.var.ece}} provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. This tool is available for ECE 2.1.8 and later. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.
 
 You can configure either the sandbox or production account in every environment:
 
@@ -27,7 +27,7 @@ PayPal on-boarding supports connecting with the following accounts:
 * PayPal Business account
 * PayPal personal account, converting to a Business account. If you have an existing personal PayPal account, you can login with those credentials and upgrade this account to a business account as you complete the sync.
 
-If you do not have an existing PayPal account, you have an option to create a new one. Enter an e-mail address for a new account. If a matching PayPal account is not found, you will be prompted to create a new PayPal Business account. Or you can create an account directly through [PayPal](https://www.paypal.com/us/webapps/mpp/account-selection){:target="_blank"}.
+If you do not have an existing PayPal account, you have an option to create a new one. Enter an e-mail address for a new account. If a matching PayPal account is not found, you will be prompted to create a new PayPal Business account. Or you can create an account directly through [PayPal](https://www.paypal.com/us/webapps/mpp/account-selection).
 
 Please note the [PayPal account limitations](#limitations) for further information.
 
@@ -40,7 +40,7 @@ PayPal supports connecting PayPal Express Checkout for countries across the glob
 * India, and Japan (future PayPal updates may support these accounts)
 * Israel
 
-For Brazil, you must have an existing PayPal business account to connect. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account through [their website](https://www.paypal.com/us/webapps/mpp/account-selection){:target="_blank"}.
+For Brazil, you must have an existing PayPal business account to connect. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account through [their website](https://www.paypal.com/us/webapps/mpp/account-selection).
 
 ## Configure PayPal Express Checkout
 
@@ -61,7 +61,7 @@ To configure PayPal Express Checkout:
     * API Username, Password, and Signature captured from your PayPal account.
     * __Sandbox Mode__ select Yes or No to indicate if the credentials you entered are for sandbox. If you entered production credentials, select No.
     * __API Uses Proxy__ select Yes or No to set if the system uses a proxy server to establish a connection between Magento and the PayPal payment system. If Yes, enter the proxy host and port.
-6. For detailed information and steps for configuring your account, see [PayPal Express Checkout](http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html){:target="_blank"} starting with Step 2 Complete the Required Settings.
+6. For detailed information and steps for configuring your account, see [PayPal Express Checkout](http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html) starting with Step 2 Complete the Required Settings.
 
 
 With the account configured and authenticated, you can enable and disable PayPal payment options under Required PayPal Settings:

@@ -1,12 +1,11 @@
 ---
-group: get-started
+group: web-api
 subgroup: 01_Introduction
 title: Getting Started with Magento Web APIs
 landing-page: Getting Started with Web APIs
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v1.0/get-started/bk-get-started-api.html
 functional_areas:
   - Integration
 ---
@@ -37,7 +36,7 @@ The APIs can be used to perform a wide array of tasks. For example:
 
 * Create a shopping app. This can be a traditional app that a user downloads on a mobile device. You could also create an app that an employee uses on a showroom floor to help customers make purchases.
 
-* Integrate with CRM (Customer Relationship Management) or ERP (Enterprise Resource Planning) back-end systems, such as Salesforce or Xero.
+* Integrate with CRM (Customer Relationship Management) or ERP (Enterprise Resource Planning) backend systems, such as Salesforce or Xero.
 
 * Integrate with a {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} (Content Management System). At present, content tagging is not supported.
 

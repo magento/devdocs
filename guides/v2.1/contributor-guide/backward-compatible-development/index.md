@@ -1,10 +1,10 @@
 ---
-group: contributor
+group: contributor-guide
 title: Backward compatible development
 ---
 This page describes rules and best practices for backward compatible development.
 
-## Backward Сompatibility Policy
+## Backward Compatibility Policy
 
 See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.
 
@@ -16,7 +16,7 @@ The core Magento team and contributing developers work in two release types
     - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
 {: .bs-callout .bs-callout-info }
-Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
+Backward Compatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 
 ## Prohibited code changes
 
@@ -189,6 +189,20 @@ Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe 
 Do not change argument types.
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding `@deprecated` annotation before dispatching the event.
 
+Example code: 
+
+```php?start_inline=1
+$transportObject = new DataObject($transport);
+
+/**
+ * Event argument `transport` is @deprecated. Use `transport_object` instead.
+ */
+$this->eventManager->dispatch(
+    'email_invoice_set_template_vars_before',
+    ['sender' => $this, 'transport' => $transportObject->getData(), 'transport_object' => $transportObject]
+);
+```
+
 ### JS
 
 The following is a list of prohibited JS code changes:
@@ -220,9 +234,9 @@ The following is a list of prohibited DB Schema changes:
 * Removing or renaming a table
 * Introducing a required field
 
-### CSS/LESS
+### CSS/Less
 
-The following is a list of prohibited CSS/LESS changes:
+The following is a list of prohibited CSS/Less changes:
 
 * Removing or renaming a class
 * Removing or renaming a mix-in
@@ -321,7 +335,7 @@ Review and refactor the class such that parts of the logic go into smaller speci
 Magento 2 must not have alternative APIs.
 Whenever you introduce a new implementation of some behavior, mark the old implementation as deprecated and specify the reason.
 
-### PHP, JS and XML
+### PHP, JS, and XML
 
 Use the `@deprecated` tag to mark methods as deprecated and follow it up with an explanation.
 
@@ -329,23 +343,39 @@ Use the  `@see` tag to recommend the new API to use instead of the old one.
 
 Preserve `@api` tag when deprecating `@api`-marked code.
 
-#### Deprecated tag in PHP
+#### Deprecating in PHP and JS
 
-~~~
+Comment:
+
+```terminal
 /**
- * @deprecated because new api was introduced
+ * @deprecated because newAPI  was introduced
  * @see \New\Api
  */
-~~~
+```
 
-#### Deprecated tag in XML/HTML
+Trigger a deprecation message in deprecated functions/classes to notify extensions/customizations that use them.
 
-~~~
+PHP:
+
+```php
+trigger_error('Class is deprecated', E_USER_DEPRECATED);
+```
+
+JS:
+
+```js
+console.warn('Function is deprecated');
+```
+
+#### Deprecating in XML/HTML
+
+```xml
 <!--
-@deprecated because new api was introduced
+@deprecated because newAPI  was introduced
 @see NewApi
 -->
-~~~
+```
 
 ### WebAPI
 

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_Solr
 title: Install and configure Solr
 menu_title: Install and configure Solr (Magento Commerce only)
@@ -137,7 +137,7 @@ To set up rules to allow communication with the firewall or SELinux enabled, con
 
 *	[iptables how-to](https://help.ubuntu.com/community/IptablesHowTo){:target="_blank"}
 *	[How to edit iptables rules (fedora project)](https://fedoraproject.org/wiki/How_to_edit_iptables_rules){:target="_blank"}
-*	[25 Most Frequently Used Linux IPTables Rules Examples](http://www.thegeekstuff.com/2011/06/iptables-rules-examples/){:target="_blank"}
+*	[25 Most Frequently Used Linux IPTables Rules Examples](https://www.thegeekstuff.com/2011/06/iptables-rules-examples/){:target="_blank"}
 *	[Introduction to SELinux (CentOS.org)](https://www.centos.org/docs/5/html/Deployment_Guide-en-US/ch-selinux.html){:target="_blank"}
 *	[SELinux How-To Wiki (CentOS.org)](https://wiki.centos.org/HowTos/SELinux){:target="_blank"}
 

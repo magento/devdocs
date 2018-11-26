@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: MultiselectColumn component
 menu_title: MultiselectColumn component
@@ -64,7 +64,7 @@ MultiselectColumn is a child of the [Listing component]({{ page.baseurl }}/ui_co
 
 ## Examples
 
-### Configure a MultiselectColumn сomponent already used in code
+### Configure a MultiselectColumn component already used in code
 
 Sample of code where component configurations are performed:
 

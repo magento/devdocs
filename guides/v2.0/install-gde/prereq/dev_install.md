@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: T_Developer
 title: (Contributor) Clone the Magento repository
 menu_title: (Contributor) Clone the Magento repository

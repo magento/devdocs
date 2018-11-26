@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 13_DBProfiler
 title: Configure the database profiler
 menu_title: Configure the database profiler

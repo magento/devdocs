@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 05_Package
 title: Package a component
 menu_title: Package a component
@@ -143,9 +143,9 @@ Third party repositories are supported.
 
 ### Hosting on GitHub and Packagist {#hosting}
 
-Prerequisite: git must be set up on your machine.
+Prerequisite: Git must be set up on your machine.
 
-1. Navigate to your component directory, with the `composer.json` file in the root, and make it a new git repository. See the [GitHub documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) for details.
+1. Navigate to your component directory, with the `composer.json` file in the root, and make it a new Git repository. See the [GitHub documentation](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/) for details.
 2. When you have committed and pushed your component to your GitHub repository, you can either:
   * Use [Composer to refer to it directly](https://getcomposer.org/doc/05-repositories.md#vcs), or
   * Use the following steps to refer to the package through Packagist.

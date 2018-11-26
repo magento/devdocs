@@ -1,5 +1,5 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: 01_resource
 title: Installation quick reference (tutorial)
 menu_title: Installation quick reference (tutorial)
@@ -65,7 +65,7 @@ Alternatively, you can also download a [Magento software archive]({{page.baseurl
 
 ## Installation part 2: Installing the Magento software
 
-You can choose to install the Magento software using either a [command line]({{page.baseurl }}/install-gde/install/web/install-web.html">web-based Setup Wizard</a> or using the <a href="{{page.baseurl }}/install-gde/install/cli/install-cli.html).
+You can choose to install the Magento software using either a [web-based Setup Wizard]({{page.baseurl }}/install-gde/install/web/install-web.html) or using the [command line]({{page.baseurl }}/install-gde/install/cli/install-cli.html).
 
 #### Command line installation
 

@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 65_CLI
 title: Command naming guidelines
 menu_title: Command naming guidelines

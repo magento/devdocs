@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 999_prod
 title: Deploy to production
 menu_title: Deploy to production
@@ -24,4 +24,4 @@ The following is a list of recommended strategies for production deployment:
 
 [0]: {{ page.baseurl }}/config-guide/prod/single-machine-deployment.html
 [1]: {{ page.baseurl }}/cloud/reference/discover-deploy.html
-[2]: {{ site.baseurl }}/community/resources/#installdeploy
+[2]: {{ site.baseurl }}/community/resources/resources.html#installdeploy

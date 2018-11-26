@@ -19,6 +19,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header"/>
+{% include m1x/eol_message.html %}
 
 <!-- Title: Magento Community Edition (CE) 1.9 and Magento Enterprise Edition (EE) 1.14 Responsive Web Design Developer's Guide-->
 <!-- URL: ee114-ce19-rwd-dev-guide -->
@@ -92,7 +93,7 @@
     </ul>
 
     <h3 id="intro-audience">Intended Audience</h3>
-    <p>This guide assumes that you have a good understanding of Magento front end development and Responsive Web Design
+    <p>This guide assumes that you have a good understanding of Magento frontend development and Responsive Web Design
         techniques.</p>
 
     <h3 id="intro-assumptions">Documentation Conventions and Assumptions</h3>
@@ -233,7 +234,7 @@
                 <li><a href="https://incident57.com/codekit" target="_blank">CodeKit</a></li>
             </ul>
         </li>
-        <li>Compile using your code editor (PHPStorm, Sublime, and so on): Many code editors run Compass from the editor
+        <li>Compile using your code editor (PhpStorm, Sublime, and so on): Many code editors run Compass from the editor
             so that you don't have to use the command line to re-compile when you make changes. However, you must
             install Compass using the command line.
         </li>
@@ -362,9 +363,9 @@ cp -R skin/frontend/rwd/default/scss skin/frontend/custompackage/customtheme
         when something changes.</p>
     <p>You can do this in either of the following ways:</p>
     <ul>
-        <li><em>(Recommended)</em> Using your PHP IDE. For example, if you use PHP Storm, see <a
+        <li><em>(Recommended)</em> Using your PHP IDE. For example, if you use PhpStorm, see <a
                 href="http://www.jetbrains.com/phpstorm/webhelp/working-with-sass-and-scss-in-compass-projects.html"
-                target="_blank">Working with SASS and SCSS in Compass Projects</a> and <a
+                target="_blank">Working with Sass and SCSS in Compass Projects</a> and <a
                 href="http://www.jetbrains.com/phpstorm/webhelp/using-file-watchers.html" target="_blank">Using File
             Watchers</a>.
         </li>
@@ -402,7 +403,7 @@ ls skin/frontend/custompackage/customtheme/scss</pre>
     <p>Compass requires a <tt>config.rb</tt> file located in the directory from which you run this command. The sample
         provided with Magento CE and EE follows:</p>
         <pre><code>
-# note: this should never truly be refernced since we are using relative assets
+# note: this should never truly be referenced since we are using relative assets
 http_path = "/skin/frontend/rwd/default/"
 css_dir = "../css"
 sass_dir = "../scss"

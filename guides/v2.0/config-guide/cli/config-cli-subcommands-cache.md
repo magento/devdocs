@@ -1,11 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Manage the cache
 menu_title: Manage the cache
 menu_node:
 menu_order: 50
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-cache.html
 functional_areas:
   - Configuration
   - System

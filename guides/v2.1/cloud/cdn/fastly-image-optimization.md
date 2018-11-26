@@ -1,12 +1,23 @@
 ---
-group: cloud
+group: cloud-guide
 title: Fastly image optimization
 functional_areas:
   - Cloud
   - Setup
   - Configuration
 ---
-Fastly provides image optimization support for common image formats: PNG, JPEG, GIF. The Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
+
+Fastly image optimization (Fastly IO) provides real-time image manipulation and optimization to speed up image delivery and simplify maintenance of image source sets for responsive web applications. Once configured Fastly IO provides the following image optimization features:
+
+- Force lossy conversion
+- Deep image optimization
+- Adaptive pixel ratios
+- Support for common image formats: PNG, JPEG, and GIF
+
+You must set up your Fastly service and configure Origin shielding before you can enable and configure the Fastly IO option.
+
+
+Based on your configuration settings, the Fastly Image Optimization (Fastly IO) snippet inserts the VCL code to perform image optimization to speed up delivery of the product images included in your store. There are three steps to configure the Fastly IO: Enable, Configure, and Verify.
 
 ## Enable Fastly IO
 
@@ -18,12 +29,12 @@ images through image optimizers, using default configurations.
 **Prerequisites**
 
 -  Install or upgrade to Fastly module version 1.2.62 or later
--  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/access-acct/fastly.html#backend)
+-  [Configure Fastly Origin shield and backend]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#backend)
 
 #### To enable Fastly IO:
 
 1.  Log in to your local
-    [Magento Admin]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin){:target="_blank"}
+    [Magento Admin]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin)
     panel as an administrator.
 
 1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
@@ -199,8 +210,8 @@ following example:
   alt="Fusion Backpack"/>
 ```
 
-See `srcset` [browser support](https://caniuse.com/#feat=srcset){:target="_blank"}
-and [specification](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset){:target="_blank"}.
+See `srcset` [browser support](https://caniuse.com/#feat=srcset)
+and [specification](https://html.spec.whatwg.org/multipage/embedded-content.html#attr-img-srcset).
 
 ## Validate Fastly IO
 

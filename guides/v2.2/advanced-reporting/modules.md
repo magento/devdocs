@@ -1,5 +1,5 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Modules providing advanced reporting
 functional_areas:
     - Reports

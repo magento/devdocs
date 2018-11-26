@@ -1,5 +1,5 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Change to a released version
 menu_title: Change to a released version
@@ -46,7 +46,7 @@ To change versions after cloning:
 
 		git checkout tags/2.2.0 -b 2.2.0
 
-5.	Install the Magento software using the [Setup Wizard]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html).
+5.	Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
 
 ### Change versions by installing the Magento software in a new database instance {#downgrade-db}
 

@@ -1,11 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: Installation fails; cannot create install.log
 menu_title: Installation fails; cannot create install.log
 menu_node:
 menu_order: 400
-redirect_from: /guides/v1.0/install-gde/trouble/tshoot_install-log.html
 functional_areas:
   - Install
   - System

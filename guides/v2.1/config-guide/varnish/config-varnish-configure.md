@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Configure Varnish and your web server
 functional_areas:
   - Configuration
@@ -182,7 +182,7 @@ Before you can look at headers, you must set Magento for developer mode. There a
 
 #### Set Magento for developer mode
 
-To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change) command.
+To set Magento for developer mode, use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode) command.
 
 #### Look at the Varnish log
 

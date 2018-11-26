@@ -1,18 +1,17 @@
 ---
-group:  migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate data
 menu_title: Migrate data
 menu_node:
 menu_order: 2
-redirect_from: /guides/v1.0/migration/migration-migrate-data.html
 ---
 
 ## Before you start: routine preparations
 
 1. Log in to Magento server as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
-2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
+2. Change to the Magento installation directory or make sure it is added to your system PATH.
 
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
@@ -30,10 +29,9 @@ where:
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The Data Migration Tool saves its current progress as it runs. If errors or user intervention stop it from running, the Tool resumes progress at the last known good state.
 To force the Data Migration Tool to run from the beginning, use the `--reset` argument. In that case, we recommend you restore your Magento 2 database dump to prevent duplicating previously migrated data.
-</div>
 
 ## Possible consistency errors {#migrate-command-data}
 

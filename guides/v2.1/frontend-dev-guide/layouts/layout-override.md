@@ -1,7 +1,6 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Override a layout
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 functional_areas:
   - Frontend
 ---
@@ -112,6 +111,6 @@ Although the layout overriding mechanism provides great customization flexibilit
 [page layouts]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configurations]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
 [generic layouts]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen
-[handles]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#handle
+[handles]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms
 [Base layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-loc
 [Theme layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-loc

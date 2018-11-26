@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Partial caching
 menu_title: Partial caching
@@ -46,7 +46,7 @@ The following topics discuss how to set up caching:
 
 *	[Create a cache type]({{ page.baseurl }}/config-guide/cache/caching-cache-type.html)
 *	[Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
-*	[Associate cache frontends with cache types]({{ page.baseurl }}/config-guide/config/caching_frontend-cache-types.html)
+*	[Associate cache frontends with cache types]({{ page.baseurl }}/config-guide/cache/cache-types.html)
 *	[Low-level cache options]({{ page.baseurl }}/config-guide/cache/caching_low-level.html)
 *	[Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
 *	[Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)

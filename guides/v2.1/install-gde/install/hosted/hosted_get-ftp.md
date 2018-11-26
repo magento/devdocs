@@ -1,5 +1,5 @@
 ---
-group: install_hosted
+group: installation-guide
 subgroup: 02_config-hosted
 title: Transfer the Magento software to your hosted system
 menu_title: Transfer the Magento software to your hosted system

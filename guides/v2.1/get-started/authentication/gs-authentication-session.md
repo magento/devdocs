@@ -1,10 +1,9 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication
 menu_order: 4
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-session.html
 functional_areas:
   - Integration
 ---

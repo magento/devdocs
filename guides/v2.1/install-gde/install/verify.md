@@ -1,11 +1,10 @@
 ---
-group: install
+group: installation-guide
 subgroup: 01_Verify
 title: Verify the installation
 menu_title: Verify the installation
 menu_node: parent
 menu_order: 1
-redirect_from: /guides/v1.0/install-gde/install/verify.html
 functional_areas:
   - Install
   - System
@@ -18,7 +17,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
 The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-![Magento storefront with the Luma theme]({{ site.baseurl }}/common/images/install-success_store-luma.png
+![Magento storefront with the Luma theme]({{ site.baseurl }}/common/images/install-success_store-luma.png)
 
 ## Verify the storefront (no sample data) {#instgde-verify-front}
 

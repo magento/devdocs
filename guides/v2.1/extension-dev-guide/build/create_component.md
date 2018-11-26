@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Name your component
 redirect_from:
   - /guides/v1.0/extension-dev-guide/create_module.html
@@ -16,7 +16,7 @@ Before you continue, make sure you have completed all of the following tasks:
 *   Create the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need.
 *   [Register]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) your component.
 
-## Add the component's `module.xml` file {#module-xml}
+## Add the component's `module.xml` file {#add-component-xml}
 
 Declare the component itself by adding a `module.xml` file in the `/etc` folder of your component.
 
@@ -44,9 +44,9 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
 * If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
 * We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other Magento merchants.
 
-### Example
+### Example `composer.json` file
 
-``` json
+```json
 {
     "name": "your-name/module-Acme",
     "description": "Test component for Magento 2",
@@ -62,7 +62,7 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
       "magento/module-webapi": "1.0.0-beta"
     },
     "type": "magento2-module",
-     "version": "1.0.0-beta",
+    "version": "1.0.0-beta",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
@@ -76,7 +76,7 @@ In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.h
 }
 ```
 
-Here:
+In this example:
 
 * `name` is the name of your component.
 * `description` is a concise explanation of your component's purpose.

@@ -1,10 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: E_rwd
 title: Customizing RWD illustration
 menu_title: Customizing RWD illustration
 menu_order: 6
-redirect_from: /guides/v1.0/frontend-dev-guide/responsive-web-design/rwd_practice.html
 functional_areas:
   - Frontend
 ---
@@ -47,4 +46,4 @@ After OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply
 
 <p><img src="{{ site.baseurl }}/common/images/rwd_practice.jpg"></p>
 
-(compare to the <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>.)
+(compare to the <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_mobile.html" target="_blank">same page for the Blank theme</a>.)

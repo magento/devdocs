@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 title: New Relic APM
 functional_areas:
   - Cloud
@@ -21,7 +21,7 @@ By default, the {site.data.var.ece}} Pro plan includes New Relic on the Staging 
 
 
 {:.bs-callout .bs-callout-info}
-Your Magento Commerce Cloud account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
+Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
 ## New Relic account credentials
 
@@ -86,7 +86,7 @@ Contact your Magento technical account manager or New Relic sales (sales@newreli
 
 1.  Copy the license key.
 
-You can also access the license key from the the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html).
+You can also access the license key from the Project Web interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html).
 
 
 #### To add a New Relic license key to an environment:

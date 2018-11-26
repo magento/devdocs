@@ -1,5 +1,5 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: During installation, fatal PDO error displays
 menu_title: During installation, fatal PDO error displays
@@ -20,5 +20,5 @@ functional_areas:
 
 ### Solution:
 
-Make sure you installed all required PHP extensions ([Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-centos.html">CentOS</a>, <a href="{{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)). 
+Make sure you installed all required PHP extensions ([Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-centos.html) [CentOS]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)). 
 

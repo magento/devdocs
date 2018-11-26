@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: Multiselect component
 menu_title: Multiselect component
@@ -7,7 +7,7 @@ menu_title: Multiselect component
 
 The Multiselect component provides the interface for a list or a data set. Multiselect allows selecting multiple items.
 
-## Сonfiguration options
+## Configuration options
 
 <table>
   <tr>

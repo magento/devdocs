@@ -1,5 +1,5 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Add custom CSS preprocessor
 functional_areas:
   - Frontend
@@ -54,7 +54,7 @@ The content of your `di.xml` will be similar to the following:
                 <item name="%your_preprocessor_name%" xsi:type="array">
                     <item name="class" xsi:type="string">%Your\Adapter\Class%</item>
                 </item>
-                <!-- Use the following syntax to set the priority of processors. That is, what file types will the system search for, when requested CSS files are not found. The following lines set SCSS to be prior to LESS -->
+                <!-- Use the following syntax to set the priority of processors. That is, what file types will the system search for, when requested CSS files are not found. The following lines set SCSS to be prior to Less -->
                 <item name="less" xsi:type="array">
                     <item name="after" xsi:type="string">scss</item>
                 </item>

@@ -1,5 +1,5 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 10_mem
 title: Install, configure, verify memcached on CentOS
 menu_title: Install, configure, verify memcached on CentOS

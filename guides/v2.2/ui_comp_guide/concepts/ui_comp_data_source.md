@@ -1,5 +1,5 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 title: The DataSource Component
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
@@ -28,7 +28,7 @@ The component's data provider class is declared inside `<dataSource />`. The fol
 
 In the block of code above, [YourNameSpace]\[YourModule] would be the directory that contains all of the module's files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.
 
-The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`. To meet that requirement, it can extend `\Magento\Ui\DataProvider\AbstractDataProvider`. The `AbstractDataProvider` class implements all of the required methods in the `DataProviderInterface`. The DataProvider class is the primary source of any data or {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} that the component needs or will use.
+The main node of interest is `<argument name="class" />.` This references a PHP class that must implement `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`. To meet that requirement, it can extend [`\Magento\Ui\DataProvider\AbstractDataProvider`]({{ site.mage2200url }}app/code/Magento/Ui/DataProvider/AbstractDataProvider.php). The `AbstractDataProvider` class implements all of the required methods in the `DataProviderInterface`. The DataProvider class is the primary source of any data or {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} that the component needs or will use.
 
 While the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} tells Magento about the component's data provider, Magento doesn't do anything in particular with that unless you hook it up to the component's main PHP class. To make the data available in javascript, add a `getDataSourceData()` method to the UI component's PHP class and return `$this->getContext()->getDataProvider()->getData()`. This will output the result of the data provider's `getData()` method into the JSON that is sent to the browser along with the rest of the UI component's configuration.
 
@@ -48,7 +48,7 @@ Include the Form Provider Javascript component by adding this inside the `<dataS
 </argument>
 ```
 
-This will include `Magento/Ui/view/base/web/js/form/provider.js` on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn't do what is necessary in your case.
+This will include [`Magento/Ui/view/base/web/js/form/provider.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/provider.js) on the page as part of this DataSource component. The Form Provider javascript can also be extended if the functionality doesn't do what is necessary in your case.
 
 Remember that this data provider is still, technically speaking, a completely separate UI Component. To fully link it to the "base" component, there are a few things that need to happen so that the "base" UI component's javascript can use the data provided by the data provider.
 
@@ -74,7 +74,7 @@ But, XML is static and while that gets us the name of the data provider componen
 
 # Javascript Component Linking
 
-Every Javascript component should extend the core Element class in some way (mapped to [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in `Magento/Ui/view/base/web/js/lib/core/element/element.js`.  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components.
+Every Javascript component should extend the core Element class in some way (mapped to [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) with RequireJS and located in [`Magento/Ui/view/base/web/js/lib/core/element/element.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).  When this class initializes it runs an `initLinks()` method. That method, in turn, passes a few class properties into a method that handles linking components together. This file (`lib/core/element/link.js`) binds the values of those parameters to actual components.
 
 The properties Magento will parse are:
 
