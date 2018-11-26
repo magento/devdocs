@@ -765,7 +765,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.10.3. Variable functions SHOULD NOT be used if the variable values are submitted by the user.
 
-15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by entire application in a centralize manner.
+15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
