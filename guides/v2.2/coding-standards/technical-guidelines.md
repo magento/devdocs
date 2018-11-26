@@ -628,7 +628,7 @@ We are reviewing this section and will publish it soon.
 
 10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
+10.5.3. All uses of XMLHttpRequest (including jQuery's `$.ajax`) MUST be asynchronous.
 
 10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
 
