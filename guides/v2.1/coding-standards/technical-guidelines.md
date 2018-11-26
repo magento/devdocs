@@ -741,7 +741,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.6.1. Exceptions/Notices/Warnings should be caught and logged.
 
-15.6.2. No error output should be displayed to user, some standard message should appear instead.
+15.6.2. Error output should not be displayed to the user. Display standard messages to inform the user.
 
 15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
 
