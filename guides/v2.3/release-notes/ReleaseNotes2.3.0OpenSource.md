@@ -43,11 +43,11 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 ### Substantial security enhancements
 
-	* Over 30 security fixes to core Magento code.
+* Over 30 security fixes to core Magento code
 
-    * Cache flush ACL provides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches. 
+* Cache flush ACL provides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches. 
 
-    * 2FA/CAPTCHA protects the Admin panel against against stolen passwords and protects stores against bots.
+* 2FA/CAPTCHA protects the Admin panel against stolen passwords and affects stores against bots. 
 
 
 ### Core bundled extension enhancements
@@ -85,8 +85,8 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 	* Provide Click & Collect as a shipping option to customers, enabling them to directly collect shipments from designated source locations or stores
  
 	* Configure source locations available for Click & Collect pick-ups
- 
- 	* Updates to Shipment Form for UPS (U.S. only)
+
+	* Updates to Shipment Form for UPS (U.S. only)
  
  	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
  
@@ -237,22 +237,6 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 
 
-
-
-
-### AdminGS
-
-<!-- MAGETWO-91337 -->* Admin global search preview now works as expected. Previously, this feature worked inconsistently, and search results  differed depending on which area was being searched  (for example, Products, Categories, or Customers). 
-
-<!--- MAGETWO-91565 -->*  Restricted Admin users can now successfully create and save product attributes.
-
-<!--- MAGETWO-91616 -->*  Restricted Admins can now create and edit CMS blocks as expected. Previously, Magento displayed this error message when an administrator with restricted privileges tried to create a new CMS block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075`.
-
-<!--- ENGCOM-1143 -->* The `Magento_Authorization` module is now installed after `Magento_Authorization` to satisfy `Magento_Authorization`'s dependency upon authorisation tables. *Fix submitted by [Anton Evers](https://github.com/AntonEvers) in pull request [56](https://github.com/magento-partners/magento2ee/pull/56)*. 
-
-
-
-
 ### Analytics
 
 <!---MAGETWO-87520-->* PHPDocs have been added as needed for methods throughout the code base. *Fix submitted by [Aki Ojalehto](https://github.com/akiojalehto) in pull request [13337](https://github.com/magento/magento2/pull/13337)*. 
@@ -299,7 +283,8 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---ENGCOM-1830 -->* Magento no longer includes expired special prices for bundle options when displaying product price ranges. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15768](https://github.com/magento/magento2/pull/15768)*.  [GitHub-15457](https://github.com/magento/magento2/issues/15457)
 
- <!---MAGETWO-87058 -->*  Reports now handle bundle and group products as expected. Previously, when a merchant viewed the Products in cart report, the report gives error if the cart contains a bundle or a grouped product. [GitHub-12079](https://github.com/magento/magento2/issues/12079)
+
+<!---MAGETWO-87058 -->*  Reports now handle bundle and group products as expected. Previously, when a merchant viewed the Products in cart report, the report gives error if the cart contains a bundle or a grouped product. [GitHub-12079](https://github.com/magento/magento2/issues/12079)
 
 
  
@@ -466,13 +451,14 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 
 
-<!--- ENGCOM-2185-->* You can now add a product with a price of zero (0) to a wishlist.
+<!--- ENGCOM-2185-->* You can now add a product with a price of zero (0) to a wishlist.  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16537](https://github.com/magento/magento2/pull/16537)*. [GitHub-16479](https://github.com/magento/magento2/issues/16479)
+
 
 
 <!--- ENGCOM-2116-->* Magento now maintains the default products sort order of “newest first” when you upgrade your Magento deployment. Previously, after upgrade, the default products order in categories changed from “newest first” to “oldest first”. [GitHub-15627](https://github.com/magento/magento2/issues/15627)
 
 
-<!--- ENGCOM-2612-->* An error with the template notation for `Magento_CatalogWidget` module has been fixed. [GitHub-16529](https://github.com/magento/magento2/issues/16529)
+<!--- ENGCOM-2612-->* An error with the template notation for `Magento_CatalogWidget` module has been fixed. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16856](https://github.com/magento/magento2/pull/16856)*. [GitHub-16529](https://github.com/magento/magento2/issues/16529)
 
 
 <!--- MAGETWO-85695-->*  Magento no longer throws an error when you re-save a product attribute with a new name. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request  [11619](https://github.com/magento/magento2/pull/11619)*. [GitHub-6770](https://github.com/magento/magento2/issues/6770)
@@ -630,7 +616,8 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---ENGCOM-1698 -->* JavaScript in the Tav module has been refactored to meet Magento code standards. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15560](https://github.com/magento/magento2/pull/15560)*. [GitHub-15352](https://github.com/magento/magento2/issues/15352)
 
-<!---ENGCOM-1155 -->* Magento no longer unexpectedly empties a customer's shopping cart during checkout when concurrent requests occur.
+<!---ENGCOM-1155 -->* Magento no longer unexpectedly empties a customer's shopping cart during checkout when concurrent requests occur. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [14429](https://github.com/magento/magento2/pull/14429)*. [GitHub-4301](https://github.com/magento/magento2/issues/4301)
+
 
 <!---MAGETWO-86330 -->*  `@codingStandardsIgnoreFile` has been removed from the `TypeLocatorTest` file header.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12977](https://github.com/magento/magento2/pull/12977)*. 
 
@@ -638,13 +625,14 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---MAGETWO-86036 -->* An unused `if` statement has been removed from `app/code/Magento/Sales/Controller/Adminhtml/Order/Invoice/Save.php`. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [12888](https://github.com/magento/magento2/pull/12888)*. 
 
-<!---ENGCOM-1814 -->* Magento no longer displays duplicate element IDs for gift messages in the checkout page. [GitHub-13415](https://github.com/magento/magento2/issues/13415)
+<!---ENGCOM-1814 -->* Magento no longer displays duplicate element IDs for gift messages in the checkout page. *Fix submitted by [Julien Anquetil](https://github.com/julienanquetil) in pull request [15705](https://github.com/magento/magento2/pull/15705)*. [GitHub-13415](https://github.com/magento/magento2/issues/13415)
 
-<!---ENGCOM-1824 -->* Magento now correctly aligns submenus. [GitHub-7897](https://github.com/magento/magento2/issues/7897)
+<!---ENGCOM-1824 -->* Magento now correctly aligns submenus. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15764](https://github.com/magento/magento2/pull/15764)*. [GitHub-7897](https://github.com/magento/magento2/issues/7897)
+
 
 <!---ENGCOM-1823 -->* The `app/code/Magento/CurrencySymbol/view/adminhtml/templates/grid.phtml` file has been refactored to remove redundant function calls. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15763](https://github.com/magento/magento2/pull/15763)*. [GitHub-15355](https://github.com/magento/magento2/issues/15355) 
 
-<!---ENGCOM-1900 2082-->* Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
+<!---ENGCOM-1900 2082-->* Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x.  *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [15884](https://github.com/magento/magento2/pull/15884)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
 <!---ENGCOM-1893 -->* Magento now correctly aligns page elements on  the home page and category page of the Hot Seller section. [GitHub-15213](https://github.com/magento/magento2/issues/15213)
 
@@ -1232,12 +1220,12 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---MAGETWO-91338 -->* The My Invitations page for a customer account now displays the correct reward points amount.
 
- <!--- MAGETWO-87066 -->* The `404 forbidden` error message has been corrected for accuracy to `404 not found` in `/app/code/Magento/Backend/Controller/Adminhtml/Noroute/Index.php`. [GitHub-10775](https://github.com/magento/magento2/issues/10775)
+<!--- MAGETWO-87066 -->* The `404 forbidden` error message has been corrected for accuracy to `404 not found` in `/app/code/Magento/Backend/Controller/Adminhtml/Noroute/Index.php`. [GitHub-10775](https://github.com/magento/magento2/issues/10775)
 
 
 <!--- ENGCOM-1857 -->* The Module Manager module grid list is now displayed correctly (**System** > **Tools** > **Web Setup Wizard**  >  **Module Manager**).  *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15755](https://github.com/magento/magento2/pull/15755)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
 
- <!--- MAGETWO-87176 -->* Layered navigation now shows the correct product count. Previously, Magento counted only in-stock product.  [GitHub-11946](https://github.com/magento/magento2/issues/11946)  
+<!--- MAGETWO-87176 -->* Layered navigation now shows the correct product count. Previously, Magento counted only in-stock product.  [GitHub-11946](https://github.com/magento/magento2/issues/11946)  
 
 
 <!--- MAGETWO-87449 -->*  DatePicker date format now reflects the  user's locale as expected. [GitHub-6858](https://github.com/magento/magento2/issues/6858)
@@ -1297,7 +1285,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### Gift cards
 
-<!---MAGETWO-90335 -->* `Magento now includes a gift card recipient's email address in the gift card account history. Previously, Magento did not include the gift card recipient's name and email address in the gift card account history, even though Magento successfully sent the email.
+<!---MAGETWO-90335 -->* Magento now includes a gift card recipient's email address in the gift card account history. Previously, Magento did not include the gift card recipient's name and email address in the gift card account history, even though Magento successfully sent the email.
 
 <!-- MAGETWO-93791 -->* Magento no longer permits users to save a new gift card  without first completing the required values. Previously, when creating a gift card, users could save the card without having designated an amount, but the card could not be purchased. Magento also created a `report.CRITICAL: Warning` error message in the `system.log`.
 
@@ -1577,9 +1565,6 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- MAGETWO-87449-->*  Magento now correctly validates birth dates in stores running French locales.  [GitHub-9743](https://github.com/magento/magento2/issues/9743)
 
-### Logging
-
-<!--- MAGETWO-94267 -->* Admin action logs now list changes to product quantity as expected. 
 
 
 ### Messages
@@ -1683,7 +1668,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### Page cache
 
-Asynchronous rendering of blocks no longer corrupts layout cache. Previously, when an asynchronous request generated a layout `cacheId` based on same handle as a CMS page, but without loading the associated CMS page, the CMS page-related layout updates were lost. [GitHub-8554](https://github.com/magento/magento2/issues/8554), [GitHub-9050](https://github.com/magento/magento2/issues/9050)
+* Asynchronous rendering of blocks no longer corrupts layout cache. Previously, when an asynchronous request generated a layout `cacheId` based on same handle as a CMS page, but without loading the associated CMS page, the CMS page-related layout updates were lost. [GitHub-8554](https://github.com/magento/magento2/issues/8554), [GitHub-9050](https://github.com/magento/magento2/issues/9050)
 
 
 ### Payment methods
@@ -1822,28 +1807,6 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 <!---ENGCOM-1234 -->* Magento now checks if a product is assigned to a current website before displaying the write a review page. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14528](https://github.com/magento/magento2/pull/14528)*. [GitHub-13010](https://github.com/magento/magento2/issues/13010)
 
 
-
-
-
-#### Return Merchandise Authorizations (RMA)
-
-* `GET  V1/returns/:id` calls return tracks objects as expected.  
-
-<!-- MAGETWO-91567 -->* The `GET /V1/returns/:id` endpoint retrieves `tracks` arrays as expected.
-
-<!-- MAGETWO-93787 -->* The `GET /V1/returns?searchCriteria` endpoint retrieves `tracks` arrays as expected.
-
-<!-- MAGETWO-93711 -->* The RMA status label now shows on the email that Magento sends to customers when the status of an RMA changes.
-
-<!-- MAGETWO-93708 -->* Magento now sends email when the status of a Return Merchandise Authorization (RMA) changes to Return Received, Approved, or Rejected. Previously, no email was sent to the customer who created the order.
-
-<!-- MAGETWO-92125 -->* Return Merchandise Authorization (RMA) calls now return order items and comments as expected. 
-
-<!-- MAGETWO-93709 -->* Magento now sends email when the status of a Return Merchandise Authorization (RMA) changes to Return Received, Approved, or Rejected. Previously, no email was sent to the customer who created the order.
-
-<!--- MAGETWO-90295 -->* `Magento/Rma/Block/Adminhtml/Rma/Edit/Item/Form/Element/Boolean` is a new block element that allows rendering ability for the Boolean RMA attributes on the Admin.
-
-<!--- MAGETWO-94297 -->* The **Show/Hide** details button now works as expected on the Returns (RMA) page.
 
 
 ### Rule
@@ -2080,7 +2043,7 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 
 ### Testing
 
-<!-- MAGETWO-87154 -->*  Integrations tests no longer throw "Cannot instantiate interface Magento\Framework\Interception\ObjectManager\ConfigInterface" errors. [GitHub-12844](https://github.com/magento/magento2/issues/12844)  
+<!-- MAGETWO-87154 -->*  Integrations tests no longer throw `Cannot instantiate interface Magento\Framework\Interception\ObjectManager\ConfigInterface` errors. [GitHub-12844](https://github.com/magento/magento2/issues/12844)  
 
 <!-- MAGETWO-87064 -->* Integration tests now reset the integration test database as expected.  [GitHub-10025](https://github.com/magento/magento2/issues/10025)  
 
@@ -2293,10 +2256,10 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
 
-* <!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
+<!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
 
 
-* **Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend assigning products (not bundled products) to one custom source and stock. Having only bundled products assigned to Default Source and Default Stock may ease potential performance issues. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
+**Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend assigning products (not bundled products) to one custom source and stock. Having only bundled products assigned to Default Source and Default Stock may ease potential performance issues. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
 
 
 
