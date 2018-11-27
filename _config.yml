@@ -134,6 +134,8 @@ algolia:
 google:
   analytics: UA-66243208-1
 
+check_links: true
+
 #############
 # Variables #
 #############

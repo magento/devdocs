@@ -12,7 +12,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
   # in '_config.checks.yml' and add 'excludes' from Jekyll configurtiuon
   # to the 'url_ignore' list if it exists.
   #
-  if site.config['serving'] == true
+  if site.config['serving'] && site.config['check_links'] == true
     begin
       checks_config = YAML.load_file('_config.checks.yml')
       url_ignore = checks_config.dig('html-proofer', :url_ignore)
