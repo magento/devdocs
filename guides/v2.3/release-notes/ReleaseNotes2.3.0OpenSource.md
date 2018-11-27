@@ -181,7 +181,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- ENGCOM-1108 -->* Multifields that previously lacked labels in forms now display labels. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request  [14383](https://github.com/magento/magento2/pull/14383)*. [GitHub-7428](https://github.com/magento/magento2/issues/7428)
 
-<!--- ENGCOM-1360 -->* The `app:config:dump` command now has an argument that supports dumping only the specified settings that are required to prepare static content on a build system, not all system settings. This new option (`config-types`) makes it possible to dump scopes and themes automatically (which are needed for a build system) while managing system settings manually using `config:set --lock-config`. [GitHub-11396](https://github.com/magento/magento2/issues/11396) 
+<!--- ENGCOM-1360 -->* The `app:config:dump` command now has an argument that supports dumping only the specified settings that are required to prepare static content on a build system, not all system settings. This new option (`config-types`) makes it possible to dump scopes and themes automatically (which are needed for a build system) while managing system settings manually using `config:set --lock-config`.  *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request [14807](https://github.com/magento/magento2/pull/14807)*.  [GitHub-11396](https://github.com/magento/magento2/issues/11396) 
 
 <!--- MAGETWO-86569 -->* You can now switch to default mode from production mode. Previously, if you tried to switch back to default mode, Magento displayed this error, `Cannot switch into given mode 'default'`. [GitHub-4292](https://github.com/magento/magento2/issues/4292) 
 
@@ -224,9 +224,9 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- ENGCOM-850 -->* Magento now sends order sent email as expected. *Fix submitted by [pawcioma](https://github.com/pawcioma) in pull request  [14051](https://github.com/magento/magento2/pull/14051)*. [GitHub-13769](https://github.com/magento/magento2/issues/12421), [GitHub-12405](https://github.com/magento/magento2/issues/13769)
 
-<!--- ENGCOM-805 -->* The output of the `setup:static-content:deploy` command has been  changed to a less alarming color. [GitHub-12404](https://github.com/magento/magento2/issues/12404)
+<!--- ENGCOM-805 -->* The output of the `setup:static-content:deploy` command has been  changed to a less alarming color.  *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [13975](https://github.com/magento/magento2/pull/13975)*.  [GitHub-12404](https://github.com/magento/magento2/issues/12404)
 
-<!--- ENGCOM-1419 -->* XML sitemap generation can now be scheduled. [GitHub-5768](https://github.com/magento/magento2/issues/5768)
+<!--- ENGCOM-1419 -->* XML sitemap generation can now be scheduled.  *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14908](https://github.com/magento/magento2/pull/14908)*.  [GitHub-5768](https://github.com/magento/magento2/issues/5768)
 
 <!--- MAGETWO-87155-->* Issues with the database backup command have been resolved. [GitHub-1287](https://github.com/magento/magento2/issues/12877) 
 
@@ -263,11 +263,11 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### Backend
 
-<!---ENGCOM-1831 -->* Customers can now successfully download and export PDFs after logging in. Previously, customers were redirected to the Admin when trying to download or export data to a PDF right after logging in. [GitHub-15510](https://github.com/magento/magento2/issues/15510)
+<!---ENGCOM-1831 -->* Customers can now successfully download and export PDFs after logging in. Previously, customers were redirected to the Admin when trying to download or export data to a PDF right after logging in.  *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15766](https://github.com/magento/magento2/pull/15766)*.  [GitHub-15510](https://github.com/magento/magento2/issues/15510)
 
-<!---ENGCOM-2158 -->* Admin tabs are now ordered as expected. Previously, when you used the `addTabAfter` method to add two or more tabs to the Admin (for example, to the order view page), the sort order of the tabs was incorrect.  [GitHub-16174](https://github.com/magento/magento2/issues/16174)
+<!---ENGCOM-2158 -->* Admin tabs are now ordered as expected. Previously, when you used the `addTabAfter` method to add two or more tabs to the Admin (for example, to the order view page), the sort order of the tabs was incorrect.  *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [16412](https://github.com/magento/magento2/pull/16412)*.  [GitHub-16174](https://github.com/magento/magento2/issues/16174)
 
-<!---ENGCOM-2339 -->* The headers of the User Agent Rules table now align as expected with the content of the table's rows. [GitHub-16703](https://github.com/magento/magento2/issues/16703)
+<!---ENGCOM-2339 -->* The headers of the User Agent Rules table now align as expected with the content of the table's rows.  *Fix submitted by [Justin](https://github.com/JRhyne) in pull request [16792](https://github.com/magento/magento2/pull/16792)*.  [GitHub-16703](https://github.com/magento/magento2/issues/16703)
 
 <!---ENGCOM-2919 -->* The **Enter** button on the customer grid now filters the table as expected. Previously, clicking **Enter**  did not filter contents but simply changed the display to the next page of the grid.  *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request  [17650](https://github.com/magento/magento2/pull/17650)*. [GitHub-17789](https://github.com/magento/magento2/issues/17789)
 
@@ -852,7 +852,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- ENGCOM-1770 -->* The dashboard last order table now shows the correct  table for the specified store view in a multisite deployment where storefronts use different currencies. *Fix submitted by [Ankur Raiyani](https://github.com/ankurvr) in pull request [15682](https://github.com/magento/magento2/pull/15682)*. [GitHub-15660](https://github.com/magento/magento2/issues/15660)
 
-<!--- MAGETWO-82561 -->* The Customer Groups menu item has been relocated from **Stores** > **Other Settings** > **Customer Groups** to **Customers** > **Customer Groups**.  
+<!--- MAGETWO-82561 -->*  When you edit an Admin user role, Magento now displays the Customer Groups section under the Customers section as expected. Previously, Magento displayed the Customer Groups section under the **Stores** > **Other settings** section..  
 
 
 
@@ -1281,6 +1281,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- MAGETWO-87449 -->*    Datepicker now uses the store locale as expected. [GitHub-6350](https://github.com/magento/magento2/issues/6350) 
 
+<!--- MAGETWO-87449 -->*  When you click on a row with inline editing mode enabled while creating an Admin listing, the date column is now converted to the correct value in the date picker. Previously, the date value displayed in the date picker UI always showed the value of the current date instead of the actual column value. [GitHub-6831](https://github.com/magento/magento2/issues/6831)  
 
 
 
@@ -1317,7 +1318,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!-- MAGETWO-92126 -->* Google Tag Manager product category data is now fully reported. Previously, the Google Tag Manager product category (Enhanced Ecommerce) data did not report all information. 
 
 
-<!--- ENGCOM-633 -->*  Magento now correctly displays product titles when displaying Sales information in Google Analytics.  Previously, Magento replaced spaces in product names with their HTML values (for example, `\u0020`). [GitHub-13827](https://github.com/magento/magento2/issues/13827), [GitHub-13350](https://github.com/magento/magento2/issues/13350)
+<!--- ENGCOM-633 -->*  Magento now correctly displays product titles when displaying Sales information in Google Analytics.  Previously, Magento replaced spaces in product names with their HTML values (for example, `\u0020`).  *Fix submitted by [Julien ANQUETIL](https://github.com/julienanquetil) in pull request [13907](https://github.com/magento/magento2/pull/13907)*.  [GitHub-13827](https://github.com/magento/magento2/issues/13827), [GitHub-13350](https://github.com/magento/magento2/issues/13350)
 
 
 <!-- MAGETWO-91712 -->* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle, and configurable product attributes were missing in the Google Tag Manager. 
@@ -1329,11 +1330,13 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### GraphQL
 
-<!---ENGCOM-2318 -->* Category queries return category `id` and `name` values as expected.
+<!---ENGCOM-2318 -->* Category queries return category `id` and `name` values as expected.  *Fix submitted by [Valeriy Naida](https://github.com/naydav) in pull request [16036](https://github.com/magento/graphql-ce/pull/119)*. [GitHub-116](https://github.com/magento/magento2/issues/116)
 
-<!---ENGCOM-2445 -->* We've added the GraphQL `StoreConfig` query.
 
-<!---ENGCOM-2320 -->* The `CatalogGraphQl` module now correctly calculates the depth of child nodes in a category tree.
+<!---ENGCOM-2445 -->* We've added the GraphQL `StoreConfig` query.  *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [126](https://github.com/magento/graphql-ce/pull/126)*. [GitHub-120](https://github.com/magento/magento2/issues/120)
+
+<!---ENGCOM-2320 -->* The `CatalogGraphQl` module now correctly calculates the depth of child nodes in a category tree.  *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [102](https://github.com/magento/graphql-ce/pull/102)*. [GitHub-100](https://github.com/magento/magento2/issues/100)
+
 
 
 
@@ -1342,9 +1345,9 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---MAGETWO-87351 -->* Magento now displays a newly created Contact Us form on a category page as expected. Previously, you could create a Contact Us form, but Magento  did not display it properly. [GitHub-12601](https://github.com/magento/magento2/issues/12601)
 
-<!---ENGCOM-1990 -->* You can now change only the primary button `font-weight` without changing regular button `font-weight` with LESS variables. [GitHub-15832](https://github.com/magento/magento2/issues/15832)
+<!---ENGCOM-1990 -->* You can now change only the primary button `font-weight` without changing regular button `font-weight` with LESS variables.  *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [16036](https://github.com/magento/magento2/pull/16036)*. [GitHub-15832](https://github.com/magento/magento2/issues/15832)
 
-<!---ENGCOM-2112 -->* HTML minification now works as expected. [GitHub-5316](https://github.com/magento/magento2/issues/5316)
+<!---ENGCOM-2112 -->* HTML minification now works as expected.  *Fix submitted by [Lisovyi Yevhenii](https://github.com/lisovyievhenii) in pull request [16332](https://github.com/magento/magento2/pull/16332)*. [GitHub-5316](https://github.com/magento/magento2/issues/5316)
 
 <!-- MAGETWO-87064 -->* The `name` attribute is no longer empty when you create custom fields during product creation. [GitHub-9944](https://github.com/magento/magento2/issues/9944) 
 
@@ -1352,13 +1355,17 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### Image
 
-<!---ENGCOM-2955 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. 
+<!---ENGCOM-2955 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17826](https://github.com/magento/magento2/pull/17826)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
 
-<!---ENGCOM-2956 -->* The WYSIWYG editor now displays the backgrounds of .PNG thumbnail images as expected. Previously, transparent backgrounds were displayed as black.
 
-<!---ENGCOM-2802 -->*  Magento now displays the background of transparent product image watermarks correctly.
+<!---ENGCOM-2956 -->* `.png` images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17857](https://github.com/magento/magento2/pull/17857)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 
-<!---ENGCOM-2698 -->* Product image zoom now works as expected in stores running on Safari.
+
+<!---ENGCOM-2802 -->*  Magento now displays the background of transparent product image watermarks correctly.  *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [16929](https://github.com/magento/magento2/pull/16929)*. [GitHub-16929](https://github.com/magento/magento2/issues/16929)
+
+
+<!---ENGCOM-2698 -->* Product image zoom now works as expected in stores running on Safari.  *Fix submitted by [Danny Nimmo](https://github.com/dannynimmo) in pull request [17426](https://github.com/magento/magento2/pull/17426)*. [GitHub-17416](https://github.com/magento/magento2/issues/17416)
+
 
 <!-- MAGETWO-87057 -->* The cross-sell product placeholder image on the shopping cart page is now the same size as the  product listing page placeholder image. [GitHub-12017](https://github.com/magento/magento2/issues/12017) 
 
@@ -1539,6 +1546,16 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 
 <!---MAGETWO-87056 -->*  You can now use the command-line interface to create a new administrator. Previously, Magento did not recognize configured tableprefix, which prevented Magento from creating the new user. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
+
+
+<!-- MAGETWO-87936 -->*   The `getToolbarBlock()` method  has been refactored to permit removal of product_list_toolbar. [GitHub-9413](https://github.com/magento/magento2/issues/9413) 
+
+
+<!-- MAGETWO-87064 -->*  When you use a UI component-based form and add a custom regular expression pattern validation to an input field, Magento now properly converts the supplied pattern from a string to a JavaScript RegEx object. [GitHub-9919](https://github.com/magento/magento2/issues/9919) 
+
+<!-- MAGETWO-87524 -->*  The `hasDataChanges` function now returns false as expected when no data has been changed. [GitHub-12374](https://github.com/magento/magento2/issues/12374)
+
+
 
 
 
@@ -2268,7 +2285,7 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 
 ## Known issues
 
-**Known issue:** When installing Magento with PHP 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. For more information on encryption key size and sensitive data, see [ChaCha20 and Poly1305 for IETF Protocols](https://tools.ietf.org/html/rfc7539). 
+**Known issue:** When installing Magento with PHP 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. 
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
 
@@ -2319,18 +2336,5 @@ The Data Migration Tool helps transfer existing Magento 1.x store data to Magent
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 
-
-
-
-<!--- DUPLICATE MAGETWO-42158 MAGETWO-85224 MAGETWO-84105 MAGETWO-83192 -->
-
-<!--- CANNOT REPRODUCE MAGETWO-83798 MAGETWO-83772  MAGETWO-84068 MAGETWO-84067 MAGETWO-84065 MAGETWO-84044 MAGETWO-84027 MAGETWO-83991 MAGETWO-83985 MAGETWO-83978 MAGETWO-83971 MAGETWO-83969 MAGETWO-83962 MAGETWO-83915 MAGETWO-83909 MAGETWO-83879 MAGETWO-83436 MAGETWO-83536 MAGETWO-83615 MAGETWO-83295 MAGETWO-83297 MAGETWO-83348 MAGETWO-83357 MAGETWO-83387 MAGETWO-83433 MAGETWO-83520 MAGETWO-83557 MAGETWO-83758 MAGETWO-83750 MAGETWO-83748 MAGETWO-83721 MAGETWO-83719 MAGETWO-83715 MAGETWO-83468 MAGETWO-83713 MAGETWO-83712 MAGETWO-83666 MAGETWO-83665 MAGETWO-83623 MAGETWO-83620 MAGETWO-83618 MAGETWO-82510 MAGETWO-83223 MAGETWO-83220 MAGETWO-83213 MAGETWO-83210 MAGETWO-83179 MAGETWO-83098 MAGETWO-83097 MAGETWO-83080 MAGETWO-83015 MAGETWO-82955 MAGETWO-82964 MAGETWO-82575 MAGETWO-82571 MAGETWO-82534 MAGETWO-82909 MAGETWO-82870 MAGETWO-82834 MAGETWO-82822 MAGETWO-82783 MAGETWO-82777 MAGETWO-82775 MAGETWO-82469 MAGETWO-82726 MAGETWO-82719 MAGETWO-82718 MAGETWO-82714 MAGETWO-82703 MAGETWO-82700 MAGETWO-82699 MAGETWO-82697 MAGETWO-82693 MAGETWO-82688 MAGETWO-82644 MAGETWO-82626 MAGETWO-82606 MAGETWO-82604 MAGETWO-82602 MAGETWO-82600 MAGETWO-82594 MAGETWO-82585 MAGETWO-82583 MAGETWO-82514 MAGETWO-82490 MAGETWO-82488 MAGETWO-82482 MAGETWO-82472 MAGETWO-82458 MAGETWO-82454 MAGETWO-82424 MAGETWO-82419 MAGETWO-82410 MAGETWO-82408 MAGETWO-82404 MAGETWO-82401 MAGETWO-82390 MAGETWO-82378 MAGETWO-82376 MAGETWO-82372 MAGETWO-82368 MAGETWO-82362 MAGETWO-82358 MAGETWO-82356 MAGETWO-82350 MAGETWO-82345 MAGETWO-82293 MAGETWO-84319--> 
-
-<!--- INTERNAL ONLY MAGETWO-85926 MAGETWO-82817 MAGETWO-82811 MAGETWO-82225 MAGETWO-81033 MAGETWO-81528 MAGETWO-81532 MAGETWO-81803 MAGETWO-84172 MAGETWO-84131 MAGETWO-85606 MAGETWO-85572 MAGETWO-85517 MAGETWO-85189 MAGETWO-85070 MAGETWO-84197 MAGETWO-84168 MAGETWO-84152 MAGETWO-84131 MAGETWO-84110 MAGETWO-84123 MAGETWO-84068 MAGETWO-84067 MAGETWO-84065 MAGETWO-84044 MAGETWO-84027 MAGETWO-83991 MAGETWO-83985 MAGETWO-83978 MAGETWO-83972 MAGETWO-83971 MAGETWO-83969 MAGETWO-83962 MAGETWO-83915 MAGETWO-83909 MAGETWO-83830 MAGETWO-84079 MAGETWO-86066 MAGETWO-83890 MAGETWO-83821 MAGETWO-83807 MAGETWO-83776 MAGETWO-83699 MAGETWO-81799 MAGETWO-85068 MAGETWO-83187 MAGETWO-83039 MAGETWO-85521 MAGETWO-85515 MAGETWO-85513 MAGETWO-85262 MAGETWO-85259 MAGETWO-85243 MAGETWO-85240 MAGETWO-85237 MAGETWO-85203 MAGETWO-85191 MAGETWO-85147 MAGETWO-85131 MAGETWO-85010 MAGETWO-84906 MAGETWO-84905 MAGETWO-84904 MAGETWO-85057 MAGETWO-83673 MAGETWO-85737 MAGETWO-84976 MAGETWO-85563 MAGETWO-85001 MAGETWO-83040 MAGETWO-83260 MAGETWO-88191 MAGETWO-82951 87615 87562 87531 87524 87523 87442 87439 87351 87313 87176 87155 87154 87153 87152 87151 87066 87064 87062 87058 87057 87056 87615 --> 
-
-
-<!--- WON'T FIX MAGETWO-85927 MAGETWO-85616 MAGETWO-51484 MAGETWO-85605 MAGETWO-85244 MAGETWO-84928 MAGETWO-85132 MAGETWO-83890 MAGETWO-83821 MAGETWO-83807 MAGETWO-82779 MAGETWO-82509 MAGETWO-83188 MAGETWO-82566 -->
-
-<!--- INVALID/NOT A BUG MAGETWO-83422 MAGETWO-83299 --> 
 
 
