@@ -2266,6 +2266,12 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 <!--- MAGETWO-91433 -->*  Magento no longer changes the grid view to list view on the product list page when a customer adds a product from the wishlist section to the cart, and now displays the appropriate success message. 
 
 
+## Known issues
+
+**Known issue:** When installing Magento with PHP 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. For more information on encryption key size and sensitive data, see [ChaCha20 and Poly1305 for IETF Protocols](https://tools.ietf.org/html/rfc7539). 
+
+**Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
+
 
 
 ## Community contributions
@@ -2278,11 +2284,6 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 * The Magento Community Engineering team [Magento Contributors](https://magento.com/magento-contributors) maintains a list of top contributing individuals and partners by month, quarter, and year. From that Contributors page, you can follow links to their merged PRs on GitHub.
 
 
-### Individual contributor contributions
-
-The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
-
-{% include release-notes/engcomm-2-3-0-issues.md %}
 
 
 ### Partner contributions
@@ -2290,6 +2291,14 @@ The following table identifies contributions from our community members. This ta
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
 
 {% include release-notes/engcomm-2-3-0-partner.md %}
+
+
+### Individual contributor contributions
+
+The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+
+{% include release-notes/engcomm-2-3-0-issues.md %}
+
 
 
 ### System requirements
