@@ -152,8 +152,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-1832 -->* The price range displayed for bundle products now shows only valid prices. Previously, Magento displayed special prices that had expired, even though the price in the customization and summary area was correct. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15535](https://github.com/magento/magento2/pull/15535)*. [GitHub-15457](https://github.com/magento/magento2/issues/15457)
 
-<!-- MAGETWO-89006 -->* Merchants can now create a return merchandise authorization (RMA)  for a bundled product from a customer's account. 
-Previously, Magento did not create the RMA, and the store returned an error.
+<!-- MAGETWO-89006 -->* Merchants can now create a return merchandise authorization (RMA)  for a bundled product from a customer's account. Previously, Magento did not create the RMA, and the store returned an error.
 
 ### CAPTCHA
 
@@ -198,7 +197,7 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-73245 -->* A merchant can now successfully create and save configurable products from the Admin in a multisite deployment. Previously, when a merchant created a configurable product with customizable options, Magento set its `has_options` and `required_options`  (in the `catalog_product_entity` table) to 0, and the merchant needed to click **Save** again to correctly add the product.  
 
 
-<!-- MAGETWO-93047 --> The `PUT rest/all/V1/categories/:categoryId` endpoint now requires the `name` field.
+<!-- MAGETWO-93047 -->* The `PUT rest/all/V1/categories/:categoryId` endpoint now requires the `name` field.
 
 
 <!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by [Dmitry Chukhnov](https://github.com/DmitryChukhnov) in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
@@ -273,14 +272,14 @@ product, and hung indefinitely while trying to add the product.
 <!-- ENGCOM-2632 -->* The `Magento_Backend` module  has been refactored. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17101](https://github.com/magento/magento2/pull/17101)*.
 
 
-<!-- ENGCOM-1666 -->* `cache count()` for loops has been refactored to improve the performance of the loops that were running `count()` in every iteration throughout the code base. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15507](https://github.com/magento/magento2/pull/15507)*.
+<!-- ENGCOM-1666 -->* The usage of the `count()` function in for loops has been refactored to improve the performance of the loops that were running `count()` in every iteration throughout the code base. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15507](https://github.com/magento/magento2/pull/15507)*.
 
 
 ### CMS content
 
 <!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
 
-<!-- MAGETWO-73359 -->* You can successfully save a CMS page with same URL key as another store on a different website but with the same hierarchy. 
+<!-- MAGETWO-73359 -->* You can successfully save a CMS page with the same URL key as another store on a different website but with the same hierarchy. 
 
 <!-- ENGCOM-2655 -->* The CMS page index has been refactored to remove the Object Manager, and  dependency injection has been added  to the constructor. *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [17066](https://github.com/magento/magento2/pull/17066)*. 
 
@@ -313,7 +312,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Customer
 
-<!-- ENGCOM-2746 -->* Magento now displays the customer group menu under the customers menu as expected. Previously, Magento displayed the customer group menu  under the customers menu on the Admin, but displayed it  under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+<!-- ENGCOM-2746 -->* When editing an Admin user role, Magento now displays the Customer Groups section under the Customers section as expected. Previously, Magento displayed the Customer Groups section under the **Stores** > **Other settings** section. *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
 
 ### Directory
@@ -384,7 +383,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2785 -->* Magento now displays the background of transparent product image watermarks correctly. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17013](https://github.com/magento/magento2/pull/17013)*. [GitHub-16929](https://github.com/magento/magento2/issues/16929)
 
-<!-- ENGCOM-2855 -->* The WYSIWYG editor now displays the backgrounds of .png thumbnail images as expected. Previously, transparent backgrounds were displayed as black.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
+<!-- ENGCOM-2855 -->* `.png` images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [16733](https://github.com/magento/magento2/pull/16733)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 
 <!-- ENGCOM-2860 -->*  Magento no longer duplicates events during delete operations. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17718](https://github.com/magento/magento2/pull/17718)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 

@@ -30,7 +30,6 @@ This release includes improvements to general usability of the core code plus en
 
 #### General improvements
 
-<!-- MAGETWO-93990 -->* An administrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
 
 <!-- MAGETWO-87437 -->* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle,  and configurable  product attributes were missing from the Google Tag Manager. 
 
@@ -103,23 +102,12 @@ In addition to security enhancements, this release contains the following functi
 
 
 
-
-### AdminGWS
-
-<!-- MAGETWO-93990 -->* An administrator with permissions on one website only can no longer access the All Store Views scope for a product that is assigned to multiple websites.
-
-<!-- MAGETWO-90765 -->* Administrators with restricted privileges can now edit and create CMS blocks as expected. Previously, Magento threw an  error like this when an administrator tried to edit or create a block: `Warning: array_intersect(): Argument #1 is not an array in /var/www/html/magento2ee/app/code/Magento/AdminGws/Model/Models.php on line 1075 error_123.png`.￼
-
-
-
 ### Bundle products
 
 <!-- MAGETWO-93145 -->* Magento now sorts bundle summaries according to the criteria set in the Admin. 
 
 <!-- ENGCOM-1832 -->* The price range displayed for bundle products now shows only valid prices. Previously, Magento displayed special prices that had expired, even though the price in the customization and summary area was correct. *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15535](https://github.com/magento/magento2/pull/15535)*. [GitHub-15457](https://github.com/magento/magento2/issues/15457)
 
-<!-- MAGETWO-89006 -->* Merchants can now create a return merchandise authorization (RMA)  for a bundled product from a customer's account. 
-Previously, Magento did not create the RMA, and the store returned an error.
 
 ### CAPTCHA
 
@@ -177,8 +165,6 @@ Previously, Magento did not create the RMA, and the store returned an error.
 
 <!-- MAGETWO-94062 -->* Magento now displays a descriptive error message  when a customer tries to order a product in increments that are not allowed.
 
-<!-- MAGETWO-92682 -->* The Catalog Staging module no longer overrides trigger settings in scheduled indexed operations. Previously, when Magento indexes were configured to run on schedule, Magento  created the appropriate INSERT/UPDATE/DELETE triggers. Consequently, the UPDATE trigger script contained a condition to check if any values were  changed, and only then inserted a record into the changelog table of subscribed indexers. The Catalog Staging module prevented the inclusion of trigger conditions.
-
 
 <!-- MAGETWO-88641 -->* Magento now applies tier prices as expected after a customer logs into their shopping cart. [GitHub-14255](https://github.com/magento/magento2/issues/14255)
 
@@ -190,9 +176,9 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-73245 -->* A merchant can now successfully create and save configurable products from the Admin in a multisite deployment. Previously, when a merchant created a configurable product with customizable options, Magento set its `has_options` and `required_options`  (in the `catalog_product_entity` table) to 0, and the merchant needed to click **Save** again to correctly add the product.  
 
 
-<!-- MAGETWO-93047 --> The `PUT rest/all/V1/categories/:categoryId` endpoint now requires the `name` field.
+<!-- MAGETWO-93047 -->* The `PUT rest/all/V1/categories/:categoryId` endpoint now requires the `name` field.
 
-. 
+
 
 
 <!-- ENGCOM-2622 -->* Special price expressions now work as expected. Previously, `catalog_product_price` did not generate correct price data. *Fix submitted by [Dmitry Chukhnov](https://github.com/DmitryChukhnov) in pull request [16510](https://github.com/magento/magento2/pull/16510)*. 
@@ -238,7 +224,7 @@ product, and hung indefinitely while trying to add the product.
 <!-- ENGCOM-2632 -->* The `Magento_Backend` module  has been refactored. *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17101](https://github.com/magento/magento2/pull/17101)*.
 
 
-<!-- ENGCOM-1666 -->* `cache count()` for loops has been refactored to improve the performance of the loops that were running `count()` in every iteration throughout the code base. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15507](https://github.com/magento/magento2/pull/15507)*.
+<!-- ENGCOM-1666 -->* The usage of the `count()` function in for loops has been refactored to improve the performance of the loops that were running `count()` in every iteration throughout the code base. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [15507](https://github.com/magento/magento2/pull/15507)*.
 
 
 
@@ -246,7 +232,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2734 -->* A new `OptionSource` of blocks has been added. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16021](https://github.com/magento/magento2/pull/16021)*.
 
-<!-- MAGETWO-73359 -->* You can successfully save a CMS page with same URL key as another store on a different website but with the same hierarchy. 
+<!-- MAGETWO-73359 -->* You can successfully save a CMS page with the same URL key as another store on a different website but with the same hierarchy. 
 
 <!-- ENGCOM-2655 -->* The CMS page index has been refactored to remove the Object Manager, and  dependency injection has been added  to the constructor. *Fix submitted by [Vladymyr Hrivinskyi](https://github.com/hryvinskyi) in pull request [17066](https://github.com/magento/magento2/pull/17066)*. 
 
@@ -263,7 +249,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Customer
 
-<!-- ENGCOM-2746 -->* Magento now displays the customer group menu under the customers menu as expected. Previously, Magento displayed the customer group menu  under the customers menu on the Admin, but displayed it  under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+<!-- ENGCOM-2746 -->* When editing an Admin user role, Magento now displays the Customer Groups section under the Customers section as expected. Previously, Magento displayed the Customer Groups section under the **Stores** > **Other settings** section. *Fix submitted by [Emipro Technologies Pvt Ltd](https://github.com/emiprotech) in pull request [17515](https://github.com/magento/magento2/pull/17515)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
 ### Directory
 
@@ -347,8 +333,6 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2628 -->* Magento now disables the **Shop By** button on the search page when a customer sets additional search filters. *Fix submitted by [Andrea Rivadossi](https://github.com/AndreaRivadossi) in pull request [15650](https://github.com/magento/magento2/pull/15650)*. [GitHub-13445](https://github.com/magento/magento2/issues/13445)
 
-<!-- MAGETWO-83984-->* Magento now processes the oldest message queue entries first instead of last.
-
 
 <!-- ENGCOM-2875 -->* The `setterName` method is now correctly set. *Fix submitted by [insanityinside](https://github.com/insanityinside) in pull request [17773](https://github.com/magento/magento2/pull/17773)*. 
 
@@ -390,18 +374,6 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-94075 -->* The DatePicker date filter on **Reports** > **Products** > **Ordered** now works as expected for administrators working in Australian English locales. 
 
 
-
-
-
-### Logging
-
-<!-- MAGETWO-93054 -->* Admin action logs now list changes to product quantity as expected. 
-
-
-
-
-
-
 ### Payment methods
 
 <!-- MAGETWO-93299 -->* Magento no longer throws an error when you try to add a new shipping address to an order placed using Braintree from the Admin. 
@@ -429,9 +401,6 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- ENGCOM-2720-->* Magento now displays a `404 page not found` error when a customer tries to navigate to a product review that is not accessible. Previously. Magento displayed a PHP error code. *Fix submitted by [Ananth](https://github.com/Ananth747) in pull request [15369](https://github.com/magento/magento2/pull/15369)*. [GitHub-13102](https://github.com/magento/magento2/issues/13102)
 
-### Reward
-
-<!-- MAGETWO-93060 -->* Magento now throws a descriptive error as expected when using a negative value that contains an invalid minus symbol to update reward points on a customer account.
 
 
 ### Sales
@@ -465,9 +434,6 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-92652 -->* Product attribute are now displayed as expected in layered navigation with Elasticsearch 5.0+.
 
-<!-- MAGETWO-90497 -->* Elasticsearch now works as expected for Chinese locales. 
-
-
 
 
 ### Shipping 
@@ -481,13 +447,6 @@ product, and hung indefinitely while trying to add the product.
 <!-- MAGETWO-93810 -->* Customers can now view their completed order from the success page for orders that will be shipped to multiple addresses. Previously, when a customer took a link from the order success page to view their just-completed order, Magento displayed this error, **There has been an error processing your request**.
 
 <!-- MAGETWO-92144 -->* The Shipment grid now displays the status of completed orders correctly. Previously, the Order Status column of the Shipment grid indicated that a completed order was being processed.
-
-
-#### Magento Shipping
-
-<!-- BUNDLE-1663 -->* Magento Shipping return merchandise authorization (RMA) can no longer be enabled when Magento Shipping is disabled.
-
-
 
 
 
