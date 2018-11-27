@@ -6,7 +6,7 @@ title: Magento Commerce 2.1.16 Release Notes
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on November 27, 2018.*
+*Patch code and release notes were published on November 28, 2018.*
 
 
 We are pleased to present Magento Commerce  2.1.16. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
@@ -66,7 +66,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Email
 
-<!--- MAGETWO-82598 -->* Magento now supports the new top-level address domains identified in the [IANA list](https://data.iana.org/TLD/tlds-alpha-by-domain.txt). [GitHub-4547](https://github.com/magento/magento2/issues/4547)
+<!--- MAGETWO-82598 -->* Magento now supports the new top-level address domains identified in the [IANA list](https://data.iana.org/TLD/tlds-alpha-by-domain.txt). *Fix submitted by [Alessandro](https://github.com/elachino) in pull request [11576](https://github.com/magento/magento2/pull/11576)*. [GitHub-4547](https://github.com/magento/magento2/issues/4547)
 
 
 
@@ -85,7 +85,7 @@ In addition to security enhancements, this release contains the following functi
 ### General
 
 
-<!--- ENGCOM-2805 -->* Magento now displays the customer group menu under the Customers tab as expected. Previously, Magento displayed the customer group menu under the customers menu on the Admin, but displayed it under **Store** > **Other settings** menu while assigning a user role. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+<!--- ENGCOM-2805 -->* When editing an Admin user role, Magento now displays the Customer Groups section under the Customers section as expected. Previously, Magento displayed the Customer Groups section under the **Stores** > **Other settings** section. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
 
 <!--- ENGCOM-2975 -->* The dropdown menu of available countries that is accessible throughout both the storefront and Admin is now populated as expected. *Fix submitted by [Nilesh Lokhande](https://github.com/nilesh2jcommerce) in pull request [17194](https://github.com/magento/magento2/pull/17194)*. [GitHub-2146](https://github.com/magento/magento2/issues/2146)
@@ -164,7 +164,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-2835 -->* The message list component message type now has a message type of success. Previously, this type was always error when the parameters property was specified. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [17702](https://github.com/magento/magento2/pull/17702)*. [GitHub-17700](https://github.com/magento/magento2/issues/17700)
 
-<!--- ENGCOM-2898 -->* The WYSIWYG editor now preserves the transparent background of .png  thumbnails. Previously, Magento rendered these transparent backgrounds black. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17855](https://github.com/magento/magento2/pull/17855)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
+<!--- ENGCOM-2898 -->* `.png` images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17855](https://github.com/magento/magento2/pull/17855)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 
 
 
