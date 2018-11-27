@@ -410,7 +410,7 @@ Attribute|Type|Use|Description
 `name`|string|optional|Name of the operation.
 `dataType`|string|required|Data type of the operation. It refers to a `type` attribute of data entity that will be used as a source of input data.
 `type`|Possible values: `create`, `delete`, `update`, `get`.|required|Type of operation.
-`url`|string|optional |A routing URL of the operation. Example: `/V1/categories`. The full URL at the end will contain: `ENV.baseUrl` + /rest/ + `url`.
+`url`|string|optional |A routing URL of the operation. Example: `/V1/categories`. The full URL at the end will contain: `ENV.baseUrl` + /rest/ + `url`. You can use {} to specify url parameters to reference entity's property. Example:  /V1/path1/{key}/path2 or /V1/path1/{Type.key}/path2
 `auth`|Possible values: `adminOath`, `adminFormKey`, `customerFormKey`, `anonymous` |optional|Type of authorization of the operation.
 `method`|string|optional|HTTP method of the operation. Possible values: `POST`, `DELETE`, `PUT`, `GET`.
 `successRegex`|string|optional|Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the `successRegex` exists.
