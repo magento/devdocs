@@ -5,10 +5,6 @@ title: Magento Open Source 2.3.0 Release Notes
 
 *Release notes published October 25, 2018.*
 
-We are pleased to present Magento Open Source 2.3.0 Beta. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 pre-release code is a work in progress.
-
-For information about signing up for the Magento 2.3 Beta Evaluation program, see [Magento 2.3.0 Beta Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start.html). 
-
 ## About Magento 2.3.0 Beta release
 
 We welcome all feedback from registered participants on this Beta release. 
