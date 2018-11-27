@@ -5,11 +5,6 @@ title: Magento Commerce 2.3.0 Release Notes
 
 *Release notes published October 25, 2018.*
 
-
-We are pleased to present Magento Commerce 2.3.0 Beta. This release includes numerous functional fixes and enhancements. Note that Magento 2.3.0 pre-release code is a work in progress.
-
-For information about signing up for the Magento 2.3 Beta Evaluation program, see [Magento 2.3.0 Beta Quick Start Guide]({{page.baseurl}}/release-notes/2.3.0-quick-start.html). 
-
 ## About Magento 2.3.0 Beta release
 
 We welcome all feedback from registered participants on this Beta release. 
@@ -24,15 +19,11 @@ This release introduces significant tools to improve the developer experience: P
 
 * **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. PageBuilder Beta code will be available in 2018 Q4. Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  Watch this space for more information about participating in the PageBuilder Beta program plus installation instructions. 
 
-
 * **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento-research.github.io/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.  
-
 
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
 
-
 * **GraphQL API** provides an alternative to REST and SOAP web APIs for frontend development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. 
-
 
 * **MultiSource Inventory (MSI)** lets merchants manage physical inventory across locations in Magento. Merchants can represent multiple locations (sources) for physical inventory in Magento. Sources can be grouped into stocks to create inventory pools that can be defined for one or more websites. Merchants can manipulate inventory based on sources. Magento also provides an API for source operations that helps merchants customize inventory actions or third-party order management systems to perform the same actions in an automated way. 
 
