@@ -224,30 +224,8 @@ pages:
             - label: Magento Commerce (Cloud) version 2.1.2 and 2.0.10
               url: /cloud/release-notes/CloudReleaseNotes2.1.2.html
 
-    
-
-        - label: Magento Release Candidate Notes
-          children:
-
-            - label: Magento Open Source 2.1 Release Candidate 3 (RC3) Release Notes
-              url: /release-notes/ReleaseNotes2.1_RC3CE.html
-
-            - label: Magento Commerce 2.1 Release Candidate 3 (RC3) Release Notes
-              url: /release-notes/ReleaseNotes2.1_RC3EE.html
-
-            - label: Magento Open Source 2.1 Release Candidate 2 (RC2) Release Notes
-              url: /release-notes/ReleaseNotes2.1_RC2CE.html
-
-            - label: Magento Commerce 2.1 Release Candidate 2 (RC2) Release Notes
-              url: /release-notes/ReleaseNotes2.1_RC2EE.html
-
-            - label: Magento Open Source 2.1 Release Candidate 1 (RC1) Release Notes
-              url: /release-notes/ReleaseNotes2.1_RC1CE.html
-
-            - label: Magento Commerce 2.1 Release Candidate 1 (RC1) Release Notes
-              url: /release-notes/ReleaseNotes2.1_RC1EE.html
-
         - label: Third-party extension contact information
+          exclude_versions: ["2.0", "2.1"]
           children:
 
             - label: Contact Information for Third-Party Extensions
