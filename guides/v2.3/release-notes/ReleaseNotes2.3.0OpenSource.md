@@ -54,7 +54,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 #### Amazon Payments
 
-* Added branding to the Amazon Pay config section in admin
+* Added branding to the Amazon Pay configuration section in the Admin
 
 * Improved extension architecture and performance
 
@@ -278,7 +278,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### Banner (now Dynamic Block)
 
-<!---MAGETWO-71816-->* The Magento CMS banner has been renamed to dynamic block to better represent this feature. Banners from Content > Banners have been renamed across the Admin and the code base. Correspondingly, the Magento widget banner rotator type (from Content > Widget > Widget type) has been renamed to dynamic blocks rotator. 
+<!---MAGETWO-71816-->* The Magento CMS banner has been renamed to dynamic block to better represent this feature. Banners from **Content** > **Banners** have been renamed across the Admin and the code base. Correspondingly, the Magento widget banner rotator type (from **Content** > **Widget** > **Widget type**) has been renamed to dynamic blocks rotator. 
 
 
 <!---MAGETWO-42047-->* You can now create dynamic block (formerly banners) content from the WYSIWYG editor. You can create store-specific content for dynamic blocks  by switching between scopes using the Magento Scope Selector.
@@ -371,13 +371,13 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- ENGCOM-978 -->* The minicart now updates as expected when a customer adds a configurable product to the cart while accessing the storefront on a device running Internet Explorer 11.x. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14192](https://github.com/magento/magento2/pull/14192)*.  [GitHub-13820](https://github.com/magento/magento2/issues/13820)
 
-<!--- ENGCOM-2959 -->* Magento no longer unchecks the **My billing and shipping address are the same** checkbox when a customer uses an offline custom payment method for an order. Previously, when a customer used an offline custom payment method for an order, Magento unchecked this  checkbox on payment step if the shipping address was updated.
+<!--- ENGCOM-2959 -->* Magento no longer unchecks the **My billing and shipping address are the same** checkbox when a customer uses an offline custom payment method for an order. Previously, when a customer used an offline custom payment method for an order, Magento unchecked this  checkbox on payment step if the shipping address was updated.  *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17628](https://github.com/magento/magento2/pull/17628)*. [GitHub-14819](https://github.com/magento/magento2/issues/14819)
 
-<!--- ENGCOM-2833 -->* Magento no longer displays an undefined string on the Order Summary page.
+<!--- ENGCOM-2833 -->* Magento no longer displays an undefined string on the Order Summary page.  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [17697](https://github.com/magento/magento2/pull/17697)*. [GitHub-17492](https://github.com/magento/magento2/issues/17492)
 
 <!--- ENGCOM-2017 -->* Unnecessary blank lines have been removed from `app/code/Magento/Catalog/etc/adminhtml/menu.xml`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16180](https://github.com/magento/magento2/pull/16180)*.  
 
-<!--- ENGCOM-2181 -->* Placeholders for the password field  no longer suggest that a password is optional. Previously, the placeholder for the password field in the checkout page suggested that the password was optional, but after validation, Magento indicated that the password field  was mandatory. [GitHub-16378](https://github.com/magento/magento2/issues/16378)
+<!--- ENGCOM-2181 -->* Placeholders for the password field  no longer suggest that a password is optional. Previously, the placeholder for the password field in the checkout page suggested that the password was optional, but after validation, Magento indicated that the password field  was mandatory.  *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [16521](https://github.com/magento/magento2/pull/16521)*. [GitHub-16378](https://github.com/magento/magento2/issues/16378)
 
 <!--- ENGCOM-861 -->* The minicart now correctly displays product titles that contain special characters. *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [13802](https://github.com/magento/magento2/pull/13802)*.  [GitHub-13652](https://github.com/magento/magento2/issues/13652)
 
@@ -422,7 +422,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- ENGCOM-1226 -->*  Magento now displays the default validation message for `validate-item-quantity` as expected. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14508](https://github.com/magento/magento2/pull/14508)*.  [GitHub-13582](https://github.com/magento/magento2/issues/13582)
 
-<!--- ENGCOM-1103 -->*  The `Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite` method now uses the `storeId` value  set on the actual collection of the store rather than the `storeId` retrieved from the store manager.  [GitHub-13704](https://github.com/magento/magento2/issues/13704)
+<!--- ENGCOM-1103 -->*  The `Magento\Catalog\Model\ResourceModel\Category\Collection::joinUrlRewrite` method now uses the `storeId` value  set on the actual collection of the store rather than the `storeId` retrieved from the store manager. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14381](https://github.com/magento/magento2/pull/14381)*. [GitHub-13704](https://github.com/magento/magento2/issues/13704)
 
 <!--- MAGETWO-71832 -->* Magento no longer displays unused product attributes  with a value of N/A or NO on the storefront.
 
@@ -430,7 +430,8 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- ENGCOM-1188-->*  Magento no longer overrides prices with more than two digits after the decimal (for example, 9.4880) by rounding the last two digits. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14461](https://github.com/magento/magento2/pull/14461)*.  [GitHub-14249](https://github.com/magento/magento2/issues/14249)
 
-<!--- ENGCOM-2345 -->*  Magento now throws an exception as expected  when a user tries to submit a product review without selecting a star rating. Previously, if a user submitted a product review without selecting a star rating, Magento assigned a one-star rating. 
+<!--- ENGCOM-2345 -->*  Magento now throws an exception as expected  when a user tries to submit a product review without selecting a star rating. Previously, if a user submitted a product review without selecting a star rating, Magento assigned a one-star rating.  *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request [16808](https://github.com/magento/magento2/pull/16808)*. [GitHub-16764](https://github.com/magento/magento2/issues/16764)
+
  
 <!--- ENGCOM-1295-->* Merchants can now successfully change the default label of the **country of manufacture** attribute for an existing product from the Admin.  *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14714](https://github.com/magento/magento2/pull/14714)*.  [GitHub-6879](https://github.com/magento/magento2/issues/6879)
 
@@ -446,21 +447,23 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 
 
-<!--- ENGCOM-2869-->* The `data-container` class name is now based on view mode. [GitHub-15319](https://github.com/magento/magento2/issues/15319)
+<!--- ENGCOM-2869-->* The `data-container` class name is now based on view mode.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17751](https://github.com/magento/magento2/pull/17751)*. [GitHub-15319](https://github.com/magento/magento2/issues/15319)
 
-<!--- ENGCOM-2852-->* Parent theme image height settings (specified in `view.xml`) no longer override the height settings assigned to individual images.
+<!--- ENGCOM-2852-->* Parent theme image height settings (specified in `view.xml`) no longer override the height settings assigned to individual images.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17725](https://github.com/magento/magento2/pull/17725)*. [GitHub-15319](https://github.com/magento/magento2/issues/12250)
 
-<!--- ENGCOM-2793-->* You can now save a title for a product from the **Product** > **Customizable Options** page.
+<!--- ENGCOM-2793-->* You can now save a title for a product from the **Product** > **Customizable Options** page.  *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17607](https://github.com/magento/magento2/pull/17607)*. [GitHub-6305](https://github.com/magento/magento2/issues/6305)
 
-<!--- ENGCOM-2792-->* You can now add a custom fieldset  to the Admin category editor without changing the position of  the General section (that is, the section that contains the **Enable category**, **Include in Menu**, and **Category Name** fields). Previously, Magento moved the General section to the last position of the form.
+<!--- ENGCOM-2792-->* You can now add a custom fieldset  to the Admin category editor without changing the position of  the General section (that is, the section that contains the **Enable category**, **Include in Menu**, and **Category Name** fields). Previously, Magento moved the General section to the last position of the form.  *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17604](https://github.com/magento/magento2/pull/17604)*. [GitHub-15041](https://github.com/magento/magento2/issues/15041)
 
-<!--- ENGCOM-2751-->*  Magento now maintains product image roles as expected after upgrade. Previously, image roles randomly disappeared from product pages after upgrade.
+
+<!--- ENGCOM-2751-->*  Magento now maintains product image roles as expected after upgrade. Previously, image roles randomly disappeared from product pages after upgrade.  *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17554](https://github.com/magento/magento2/pull/17554)*. [GitHub-10687](https://github.com/magento/magento2/issues/10687)
 
 
 
 <!--- ENGCOM-2302-->* REST search queries in which the `condition_type` is set to `in` or `nin` now return results for all specified values. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request  [16742](https://github.com/magento/magento2/pull/16742)*. [GitHub-14035](https://github.com/magento/magento2/issues/14035)
 
-<!--- ENGCOM-2373-->* A type error in the payment void method of the Authorizenet module has been fixed. [GitHub-16184](https://github.com/magento/magento2/issues/16184)
+<!--- ENGCOM-2373-->* A type error in the payment void method of the Authorizenet module has been fixed.  *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request [16838](https://github.com/magento/magento2/pull/16838)*. [GitHub-5067](https://github.com/magento/magento2/issues/5067)
+
 
 
 <!--- ENGCOM-2185-->* You can now add a product with a price of zero (0) to a wishlist.
@@ -2285,9 +2288,15 @@ Asynchronous rendering of blocks no longer corrupts layout cache. Previously, wh
 
 ## Known issues
 
-**Known issue:** When installing Magento with PHP 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. 
+**Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > **Other Settings ** > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
+
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.
+
+* <!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
+
+
+* **Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend assigning products (not bundled products) to one custom source and stock. Having only bundled products assigned to Default Source and Default Stock may ease potential performance issues. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
 
 
 
