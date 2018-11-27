@@ -6,8 +6,6 @@ pages:
     - label: 2.3 Release Notes
       include_versions: ["2.3"]
       children:
-        - label: 2.3.0 Installation Guide
-          url: /release-notes/2.3.0-install.html
 
         - label: Component Status
           url: /release-notes/component-status.html
