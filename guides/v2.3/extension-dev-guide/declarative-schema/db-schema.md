@@ -159,12 +159,12 @@ Example:
 
 #### `constraint` subnode
 
-The `constraint` subnode always contains the following parameters:
+The `constraint` subnode always contains the following attributes:
 
 Attribute | Description
 --- | ---
 `type` | One of `primary`, `unique`, or `foreign`
-`referenceId` |  In most instances, a system-generated reference ID that represents an entity in the schema. System-generated IDs cannot be changed. However, you can override `referenceId` values.
+`referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
 
 The `primary` and `unique` constraints are called "internal" constraints, because they can be applied only to the scope of the table where they are created. Internal constraints define one or more `column` subnodes. Each subnode defines a constrained column.
 
@@ -199,7 +199,7 @@ The `index` subnode has the same structure as internal constraints but contains 
 
 Attribute | Description
 --- | ---
-`referenceId` | In most instances, a system-generated reference ID that represents an entity in the schema. System-generated IDs cannot be changed. However, you can override `referenceId` values 
+`referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
 `indexType` | The value must be `btree`, `fulltext`, or `hash`
 {:style="table-layout:auto;"}
 
@@ -307,6 +307,7 @@ The following example changes the `type` of the `title` column from `varchar` to
     <table name="declarative_table">
         <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
         <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+-       <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
 +       <column xsi:type="tinytext" name="title" nullable="false" length="255" comment="Title"/>
         <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
         <constraint xsi:type="primary" referenceId="PRIMARY">
@@ -397,7 +398,8 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
 
 ### Recreate a foreign key
 
-In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column. Module B disables the original primary key and sets the `referenceId` to a value be different from PRIMARY. Although the `referenceId` is different, the real name of the primary key in the database remains PRIMARY. 
+In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column. 
+Module B disables the original primary key and sets a new primary key with a `referenceId` value that is different from PRIMARY. Although this value is different, the real name of the primary key in the database remains PRIMARY.
 
  **Module A declaration**
 

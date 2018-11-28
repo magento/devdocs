@@ -25,8 +25,6 @@ bin/magento setup:install --convert-old-scripts=1
 bin/magento setup:upgrade --convert-old-scripts=1
 ```
 
-The `convert-old-scripts` option converts tables and columns only. Renaming tables is not supported.
-
 {: .bs-callout .bs-callout-info }
 In Magento 2.3 Alpha, the `--convert-old-scripts` parameter was named `--convert_old_scripts`.
 
@@ -110,7 +108,7 @@ Each CSV file contains a row that defines the column (or other database entity) 
 
 ![Dump Example]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/dump_example.png)
 
-## Create a schema whitelist
+## Create a schema whitelist {#create-whitelist}
 
 Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema can't delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
 
@@ -120,7 +118,7 @@ The `<module_vendor>/<module_name>/etc/db_schema_whitelist.json` file provides a
 bin/magento setup:db-declaration:generate-whitelist [options]
 ```
 
-where `[options]` can be:
+`[options]` can be:
 
 `--module-name[=MODULE-NAME]` specifies which module to generate a whitelist for. If no module name is specified, then the default behavior is to generate a whitelist for all modules. You can also explicitly set `--module-name=all`.
 
@@ -171,7 +169,7 @@ This file is a temporary solution. It will be removed in the future, when upgrad
 
 ## Resolve reference IDs
 
-The sample `db_schema_whitelist.json` file above contains system-generated constraint and index names. [Configure your `db_schema.json` file]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) so that the `referenceId` parameters match these values. 
+The sample `db_schema_whitelist.json` file above contains system-generated constraint and index names. [Configure your `db_schema.xml` file]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) so that the `referenceId` attributes match these values. 
 
 {: .bs-callout .bs-callout-info }
-In Magento 2.3.0, the identifying parameter for constraints and index definitions is `referenceId`. In pre-release versions, the parameter was `name`. 
+In Magento 2.3.0, the identifying attribute for constraints and index definitions is `referenceId`. In pre-release versions, the attribute was `name`. 
