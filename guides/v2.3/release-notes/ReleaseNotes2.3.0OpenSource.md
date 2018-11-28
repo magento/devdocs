@@ -20,8 +20,6 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
 
-* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. PageBuilder Beta code will be available in 2018 Q4. Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  Watch this space for more information about participating in the PageBuilder Beta program plus installation instructions. 
-
 
 ### Improved developer experience
 
@@ -87,8 +85,9 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 	* Configure source locations available for Click & Collect pick-ups
 
 	* Updates to Shipment Form for UPS (U.S. only)
- 
- 	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+
+	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+
  
 * The batch details page now displays collection point addresses, as applicable
  
@@ -382,7 +381,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 #### Cart Price rules
 
-<!--- MAGETWO-94407 -->*  The cart price rule now uses specified conditions correctly when applying discounts on configurable products. 
+<!-- MAGETWO-94407 -->* The cart price rule now uses specified conditions correctly when applying discounts on configurable products. 
 
 <!-- MAGETWO-87064 -->* Magento no longer throws an error when a customer applies a discount code on the checkout page. [GitHub-9763](https://github.com/magento/magento2/issues/9763)
 
@@ -472,7 +471,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- MAGETWO-83038-->* You can now assign and save a custom option assigned a price of 0. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request [11842](https://github.com/magento/magento2/pull/11842)*.[GitHub-4808](https://github.com/magento/magento2/issues/4808)
 
-<!--- 82202-->* The ProductRepository SKU cache is no longer corrupted when the value assigned to `cacheLimit` is reached. *Fix submitted by [Thomas](https://github.com/heldchen) in pull request 11537*.
+<!--- MAGETWO-82202-->* The ProductRepository SKU cache is no longer corrupted when the value assigned to `cacheLimit` is reached. *Fix submitted by [Thomas](https://github.com/heldchen) in pull request 11537*.
 
 <!--- MAGETWO-80828-->* The price filter on a product category page now works as expected. Previously, if you applied this filter to a category listing, Magento displayed redundant product listings and unrelated products.  *Fix submitted by [Mayank Zalavadia](https://github.com/mayankzalavadia) in pull request 11206*. [GitHub-11139](https://github.com/magento/magento2/issues/11139)
 
