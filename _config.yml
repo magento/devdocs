@@ -134,6 +134,10 @@ algolia:
 google:
   analytics: UA-66243208-1
 
+# Toggles the _plugin/html-check-hook.rb script that checks links in the generated HTML
+#
+check_links: true
+
 #############
 # Variables #
 #############
