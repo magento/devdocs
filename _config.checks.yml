@@ -19,4 +19,4 @@ html-proofer:
   - !ruby/regexp /whats-new\.html/
   :url_ignore:
   - !ruby/regexp /guides\/v2\.0/
-  - !ruby/regexp src/
+  - !ruby/regexp /src\//
