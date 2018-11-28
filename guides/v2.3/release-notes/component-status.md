@@ -60,7 +60,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Bundle                                 | <span class='status green'>Green</span> |
 | Module/ CacheInvalidate                        | <span class='status green'>Green</span> |
 | Module/ Captcha                                | <span class='status green'>Green</span> |
-| Module/ Catalog                                | <span class='status green'>Green</span> |
+| Module/ Catalog                                | <span class='status yellow'>Yellow</span> |
 | Module/ CatalogImportExport                    | <span class='status green'>Green</span> |
 | Module/ CatalogInventory                       | <span class='status green'>Green</span> |
 | Module/ CatalogRule                            | <span class='status green'>Green</span> |
@@ -69,9 +69,9 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ CatalogUrlRewrite                      | <span class='status green'>Green</span> |
 | Module/ Checkout/ Guest Checkout               | <span class='status green'>Green</span> |
 | Module/ Checkout/ Mini Shopping Cart           | <span class='status green'>Green</span> |
-| Module/ Checkout/ One Page Checkout            | <span class='status green'>Green</span> |
+| Module/ Checkout/ One Page Checkout            | <span class='status yellow'>Yellow</span> |
 | Module/ Checkout/ Shopping Cart                | <span class='status green'>Green</span> |
-| Module/ Cms/ CMS Content                       | <span class='status green'>Green</span> |
+| Module/ Cms/ CMS Content                       | <span class='status yellow'>Yellow</span> |
 | Module/ Cms/ CMS Hierarchy                     | <span class='status green'>Green</span> |
 | Module/ Config                                 | <span class='status green'>Green</span> |
 | Module/ ConfigurableProduct                    | <span class='status green'>Green</span> |
@@ -120,7 +120,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Store                                  | <span class='status green'>Green</span> |
 | Module/ Swagger                                | <span class='status green'>Green</span> |
 | Module/ Swatches                               | <span class='status green'>Green</span> |
-| Module/ Tax                                    | <span class='status green'>Green</span> |
+| Module/ Tax                                    | <span class='status yellow'>Yellow</span> |
 | Module/ Theme                                  | <span class='status green'>Green</span> |
 | Module/ Translation                            | <span class='status green'>Green</span> |
 | Module/ UI                                     | <span class='status green'>Green</span> |
@@ -144,7 +144,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ AdminGWS                  | <span class='status green'>Green</span> |
 | Module/ AdvancedCatalog           | <span class='status green'>Green</span> |
 | Module/ AdvancedSearch            | <span class='status green'>Green</span> |
-| Module/ Banner                    | <span class='status green'>Green</span> |
+| Module/ Banner                    | <span class='status yellow'>Yellow</span> |
 | Module/ BundleStaging             | <span class='status green'>Green</span> |
 | Module/ CatalogEvent              | <span class='status green'>Green</span> |
 | Module/ CatalogInventoryStaging   | <span class='status green'>Green</span> |
@@ -154,7 +154,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ CmsStaging                | <span class='status green'>Green</span> |
 | Module/ CustomAttributeManagement | <span class='status green'>Green</span> |
 | Module/ CustomerBalance           | <span class='status green'>Green</span> |
-| Module/ CustomerCustomAttributes  | <span class='status green'>Green</span> |
+| Module/ CustomerCustomAttributes  | <span class='status yellow'>Yellow</span> |
 | Module/ CustomerFinance           | <span class='status green'>Green</span> |
 | Module/ CustomerSegment           | <span class='status green'>Green</span> |
 | Module/ Cybersource               | <span class='status green'>Green</span> |
@@ -211,7 +211,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ MessageQueue              | <span class='status green'>Green</span> |
 | Module/ PageBuilder               | <span class='status green'>Green</span> |
 | Module/ ReleaseNotification       | <span class='status green'>Green</span> |
-| Module/ Sales                     | <span class='status green'>Green</span> |
+| Module/ Sales                     | <span class='status yellow'>Yellow</span> |
 | None                              | <span class='status green'>Green</span> |
 | Tools/ Utilities                  | <span class='status green'>Green</span> |
 {:style="table-layout:auto"}

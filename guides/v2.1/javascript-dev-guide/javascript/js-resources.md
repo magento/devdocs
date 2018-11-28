@@ -71,7 +71,7 @@ JS resources are accessed using relative paths.
     ```
 
 
-These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html).
+These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html).
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
@@ -159,7 +159,7 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 
 ## Related reading
 
-[About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html)
+[About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
 [RequireJS library]: http://requirejs.org
 [inheriting]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 [shim]: http://requirejs.org/docs/api.html#config-shim
