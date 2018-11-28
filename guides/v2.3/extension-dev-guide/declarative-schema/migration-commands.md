@@ -25,6 +25,8 @@ bin/magento setup:install --convert-old-scripts=1
 bin/magento setup:upgrade --convert-old-scripts=1
 ```
 
+The `convert-old-scripts` option converts tables and columns only. Renaming tables is not supported.
+
 {: .bs-callout .bs-callout-info }
 In Magento 2.3 Alpha, the `--convert-old-scripts` parameter was named `--convert_old_scripts`.
 
@@ -108,7 +110,7 @@ Each CSV file contains a row that defines the column (or other database entity) 
 
 ![Dump Example]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/dump_example.png)
 
-## Maintain backward compatibility
+## Create a schema whitelist
 
 Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema can't delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
 
@@ -127,5 +129,49 @@ In Magento 2.3 Alpha, the `setup:db-declaration:generate-whitelist` command was 
 
 As a best practice, you should generate a new whitelist file for each release. You must generate the whitelist  in any release that contains changes in the `db_schema.xml` file.
 
+The following code sample shows a sample `db_schema_whitelist.json` file:
+
+```json
+{
+    "adminnotification_inbox": {
+        "column": {
+            "notification_id": true,
+            "severity": true,
+            "date_added": true,
+            "title": true,
+            "description": true,
+            "url": true,
+            "is_read": true,
+            "is_remove": true
+        },
+        "index": {
+            "ADMINNOTIFICATION_INBOX_SEVERITY": true,
+            "ADMINNOTIFICATION_INBOX_IS_READ": true,
+            "ADMINNOTIFICATION_INBOX_IS_REMOVE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "admin_system_messages": {
+        "column": {
+            "identity": true,
+            "severity": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
+```
+
 {: .bs-callout .bs-callout-info }
 This file is a temporary solution. It will be removed in the future, when upgrade scripts are no longer supported.
+
+## Resolve reference IDs
+
+The sample `db_schema_whitelist.json` file above contains system-generated constraint and index names. [Configure your `db_schema.json` file]({{ page.baseurl }}/extension-dev-guide/declarative-schema/db-schema.html) so that the `referenceId` parameters match these values. 
+
+{: .bs-callout .bs-callout-info }
+In Magento 2.3.0, the identifying parameter for constraints and index definitions is `referenceId`. In pre-release versions, the parameter was `name`. 
