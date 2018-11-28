@@ -32,6 +32,7 @@
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
 
+<li><a href="#ce19-1940">Magento Open Source 1.9.4.0 Release Notes</a></li>
 <li><a href="#ce19-19310">Magento Open Source 1.9.3.10 Release Notes</a></li>
 <li><a href="#ce19-1939">Magento Open Source 1.9.3.9 Release Notes</a></li>
 <li><a href="#ce19-1938">Magento Open Source 1.9.3.8 Release Notes</a></li>
@@ -58,6 +59,42 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Open Source 1.9.3.0 or later for <em>all new Magento Open Source installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+
+
+<h2 id="ce19-1940">Magento Open Source 1.9.4.0 Release Notes</h2>
+ <p>This version (or patch SUPEE-10975, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These critical security issues include remote code execution (RCE),  cross-site scripting (XSS), and cross-site request forgery (CSRF) issues. This release also provides support for PHP 7.2.</p>
+
+<p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<p>Note that after updating to this release, third-party modules that depend upon Magento core backup functionality will no longer work. Alternatively, you can use one of these two methods  to enable database backups: </p>
+
+<ul>
+<li>Change <b>false</b> to <b>true</b> in the <b>config</b> > <b>modules</b> > <b>Mage_Backup</b> > <b>active</b>  setting of <code> app/etc/modules/Mage_All.xml</code>. </li>
+<li>From the Admin,  change the <b>System</b> > <b>Configuration</b> > <b>Advanced</b> > <b>Disable  Modules Output</b> > <b>Mage_Backup</b> from <b>disabled</b> to <b>enabled</b>.</li>
+</ul>
+
+<h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- MPERF-10223 -->This release provides support for PHP 7.2. </li>
+<li><!-- MPERF-10217 -->We’ve removed the CC module. As a result, third-party modules that depend upon either the <code>ccsave</code> method or the <code>xmlconnect</code> method will not work as expected.  Third-party themes that implement <code>ccsave</code> will not work as expected, either. </li>
+<li><!-- MPERF-10219 10218 -->The Magento logo has been updated throughout the code base. </li>	
+<li><!-- MPERF-8829 -->The <b>Continue</b> button now works as expected on the Payments step of checkout  when paying with the PayPal payment method. </li>	
+<li><!-- MPERF-8826 -->Google Tag Manager now logs sales information in Google Analytics as expected. </li>	
+<li><!-- MPERF-8382 -->The product export CSV file now contains columns for super attributes. </li>	
+<li><!-- MPERF-7181 -->Magento no longer throws an error when a customer accesses their shopping cart after items in their cart have been removed due to a timeout. Previously, Magento displayed this error, `Notice: Undefined variable: freePackageValue in /var/www/dev/htdocs/app/code/core/Mage/Shipping/Model/Carrier/Tablerate.php on line 130`.  </li>	
+<li><!-- MPERF-7067 -->Clicking on a configurable product’s swatch on the  product list page now updates product price as expected.  </li>	
+<li><!-- MPERF-6629 -->Customers can now successfully add a grouped product to their shopping cart when category permissions are enabled. Previously, Magento did not add the product to the cart, but instead displayed a descriptive error message.  </li>	
+<li><!-- MPERF-6566 -->Magento no longer displays incorrect prices on the storefront after a failure of the enterprise refresh index.  </li>	
+<li><!-- MPERF-5931 -->We’ve resolved issues in the indexing locking mechanism that previously resulted in Magento throwing an exception after indexing completed.  </li>	
+<li><!-- MPERF-5168 -->Magento no longer throws a fatal error when a merchant uses an already  reserved word to name a product attribute.  </li>	
+<li><!-- MPERF-4913 -->Magento now adds the correct sales tax to orders being shipped to U.S. addresses that use zip codes with the optional four-digit suffix (for example, 73365-1234). Previously, the Tax rule triggered a failure if the U.S. zip code that had this optional four-digit suffix.  </li>	
+<li><!-- MPERF-4630 -->Magento now displays all products on a production website that were edited by a role-restricted user on the associated staging website.  </li>	
+<li><!-- MPERF-8827 -->We’ve resolved an issue that caused Target Rules to throw an exception when a customer opened a product view page.  </li>		
+</ul>
+
+
+
 
 
 <h2 id="ce19-19310">Magento Open Source 1.9.3.10 Release Notes</h2>
