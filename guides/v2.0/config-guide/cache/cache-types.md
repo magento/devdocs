@@ -20,7 +20,7 @@ functional_areas:
 The Magento application has a `default` cache {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} you can use for any <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %} with a different name, which is preferable if you expect to customize your frontend.
 
 {: .bs-callout .bs-callout-info }
-To use the `default` cache type, you don't need to modify `env.php` at all; you modify Magento's global `di.xml`. See the topics referenced in [Low-level cache options]({{ page.baseurl }}/config-guide/cache/caching_low-level.html).
+To use the `default` cache type, you don't need to modify `env.php` at all; you modify Magento's global `di.xml`. See the topics referenced in [Low-level cache options]({{ page.baseurl }}/config-guide/cache/cache-options.html).
 
 You must specify a custom cache frontend either `app/etc/env.php` or Magento's global `app/etc/di.xml`.
 
@@ -78,4 +78,4 @@ where
 
 #### Next step
 
-<a href="{{ page.baseurl }}/config-guide/cache/caching_low-level.html">Low-level cache options</a>
+<a href="{{ page.baseurl }}/config-guide/cache/cache-options.html">Low-level cache options</a>
