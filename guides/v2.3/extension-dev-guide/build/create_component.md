@@ -16,7 +16,7 @@ Before you continue, make sure you have completed all of the following tasks:
 *   Create the [configuration files]({{page.baseurl}}/extension-dev-guide/build/required-configuration-files.html) you'll need.
 *   [Register]({{page.baseurl}}/extension-dev-guide/build/component-registration.html) your component.
 
-## Add the component's `module.xml` file {#module-xml}
+## Add the component's `module.xml` file {#add-component-xml}
 
 Declare the component itself by adding a `module.xml` file in the `/etc` folder of your component.
 

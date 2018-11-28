@@ -1,5 +1,11 @@
 ---
-group: module-reference-guide
+title: Magento_ReviewAnalytics module
 ---
 
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.3-develop/app/code/Magento/ReviewAnalytics/README.md %}
+{% include mrg/note.md %}
+
+# Magento_ReviewAnalytics module
+
+The Magento_ReviewAnalytics module configures data definitions for a data collection related to the Review module entities to be used in [Advanced Reporting](http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html).
+
+

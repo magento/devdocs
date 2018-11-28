@@ -114,7 +114,7 @@ The following figure shows an example of setting indexers to Update by Schedule:
 
 You can reindex by:
 
-*	Using a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg), which is preferred because indexing runs every minute.
+*	Using a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html), which is preferred because indexing runs every minute.
 *	Using the [`magento indexer:reindex [indexer]`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex) command, which reindexes selected indexers, or all indexers, one time only.
 
 ## Magento indexers {#m2devgde-indexing-outofbox}

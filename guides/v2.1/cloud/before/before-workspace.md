@@ -23,7 +23,7 @@ This section walks through the steps for first time merchants with Magento, Mage
 
 ## Set up an account {#newaccount}
 
-To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Commerce (Cloud) account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
+To begin working with a project and develop your store, you should have received an e-mail invitation to [create a {{site.data.var.ece}} account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
 
 You should receive an e-mail invitation to verify and access the project. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
 

@@ -85,4 +85,4 @@ is the same as writing
 [`app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml`]: {{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml
 [Child theme]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 [Theme inheritance]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-templates
-[Layout instructions]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#getter
+[Layout instructions]: {{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html
