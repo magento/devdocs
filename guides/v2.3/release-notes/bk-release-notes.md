@@ -4,22 +4,16 @@ subgroup: 2.3.x_Release_Information
 title: 2.3.x Release Information
 ---
 
-
-
 ## Magento 2.3.x Release Notes
 
 * [{{site.data.var.ce}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0OpenSource.html)
 * [{{site.data.var.ee}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0Commerce.html)
-
-
 
 Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x]({{ site.baseurl }}/guides/v2.1/release-notes/bk-release-notes.html) and [2.2.x]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html) Release Information pages.  
 
 ## Backward-incompatible changes
 
 *	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
-
-
 
 ## {{site.data.var.ece}} Composer packages
 

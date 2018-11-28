@@ -5,10 +5,7 @@ title: Magento Commerce 2.3.0 Release Notes
 
 *Release notes published November 28, 2018.*
 
-
-
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
-
 
 ## Highlights
 
@@ -1356,15 +1353,9 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-87064 -->* The `name` attribute is no longer empty when you create custom fields during product creation. [GitHub-9944](https://github.com/magento/magento2/issues/9944) 
 
-
-
-
-
-
 ### Image
 
 <!---ENGCOM-2955 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [17826](https://github.com/magento/magento2/pull/17826)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
-
 
 <!---ENGCOM-2956 -->* `.png` images from the GD2 image library that have transparent backgrounds now retain their  transparent backgrounds after upload. Previously, these transparent backgrounds were rendered black when you displayed these images after upload. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17857](https://github.com/magento/magento2/pull/17857)*. [GitHub-14248](https://github.com/magento/magento2/issues/14248)
 

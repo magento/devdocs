@@ -1314,11 +1314,6 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!-- MAGETWO-91712 -->* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle, and configurable product attributes were missing in the Google Tag Manager. 
 
-
-
-
-
-
 ### GraphQL
 
 <!---ENGCOM-2318 -->* Category queries return category `id` and `name` values as expected.  *Fix submitted by [Valeriy Naida](https://github.com/naydav) in pull request [16036](https://github.com/magento/graphql-ce/pull/119)*. [GitHub-116](https://github.com/magento/magento2/issues/116)
