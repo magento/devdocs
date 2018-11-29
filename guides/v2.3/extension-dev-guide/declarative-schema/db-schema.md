@@ -333,7 +333,7 @@ onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
 
 ### Add an index
 
-The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
+The following example adds the `INDEX_SEVERITY` index to the `declarative_table` table.
 
 ```diff
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

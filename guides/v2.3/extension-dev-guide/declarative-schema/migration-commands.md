@@ -110,7 +110,7 @@ Each CSV file contains a row that defines the column (or other database entity) 
 
 ## Create a schema whitelist {#create-whitelist}
 
-Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema can't delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
+Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema cannot delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
 
 The `<module_vendor>/<module_name>/etc/db_schema_whitelist.json` file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:
 
