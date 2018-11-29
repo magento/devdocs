@@ -916,7 +916,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- ENGCOM-2708 -->* The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15723](https://github.com/magento/magento2/pull/15723)*.  [GitHub-4803](https://github.com/magento/magento2/issues/4803)
 
-<!--- MAGETWO-94070 -->*  You can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Configuration** > **Catalog**  > **Catalog Search**).
+<!--- MAGETWO-94070 -->*  When Elasticsearch is configured as the search engine, you can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Configuration** > **Catalog**  > **Catalog Search**).
 
 <!--- MAGETWO-91580 -->*  Magento no longer displays empty product attributes of type `dropdown` or `swatch` as having a value of **no** on the storefront. 
 
