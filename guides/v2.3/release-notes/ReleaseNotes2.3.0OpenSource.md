@@ -5,37 +5,31 @@ title: Magento Open Source 2.3.0 Release Notes
 
 *Release notes published November 28, 2018.*
 
-We are pleased to present Magento Open Source 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
-
+We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 ## Highlights
 
-Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
-
+{{site.data.var.ce}} 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. 
+* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
+* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
 
-* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
-
-* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. PageBuilder Beta code will be available in 2018 Q4. Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  Watch this space for more information about participating in the PageBuilder Beta program plus installation instructions. 
 
 
 ### Improved developer experience
 
 * **PWA Studio** is a set of tools that support the development, deployment and maintenance of progressive web applications. See [Magento PWA documentation](https://magento-research.github.io/pwa-studio/) for information about this toolset as well as information about contributing to this ongoing project.  
 
-
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
 
-* **GraphQL API** provides an alternative to REST and SOAP web APIs for frontend development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. 
+* **GraphQL API** is now available with Magento 2.3.0. This API provides an alternative to REST and SOAP web APIs for custom frontend development, including headless storefronts and PWAs. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. GraphQL is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [GraphQL GitHub](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
-* **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to Magento Open Source.  See [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html) for more information. 
+* **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to {{site.data.var.ce}}. See [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html) for more information. 
 
-
-* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to Magento Open Source. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
+* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
 
 * **Updates to Magento's tech stack (including upgraded PHP support to maintain PCI compliance)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2.x. 
 
@@ -87,8 +81,9 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 	* Configure source locations available for Click & Collect pick-ups
 
 	* Updates to Shipment Form for UPS (U.S. only)
- 
- 	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+
+	* Customers can also select Click & Collect locations during checkout. This feature is supported by workflows and notifications for Click & Collect pick up, packing, and collection.
+
  
 * The batch details page now displays collection point addresses, as applicable
  
@@ -97,27 +92,19 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 * Tracking popups for multi-package shipments are now displayed.
  
 * The dispatch details page has been enhanced.
- 
-
 
 #### Vertex
 
 * The Magento implementation of Vertex now supports Vertex O Series 7.0. 
 
-
 ### Other improvements
 
 
-* **Elasticsearch support for Magento Open Source version**. Elasticsearch support was previously provided in Magento Commerce only. 
+* **Elasticsearch support for {{site.data.var.ce}} version**. Elasticsearch support was previously provided in Magento Commerce only. 
 
 * **Improvements to release packaging** plus an increase in test automation, results in a faster, more efficient release process and improved product quality. 
 
-* **Change in versioning for B2B product** to match the versioning of the core product. 
-
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.6. 
-
-
-
 
 ### Issues fixed in 2.3.0 Alpha
 
@@ -382,7 +369,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 #### Cart Price rules
 
-<!--- MAGETWO-94407 -->*  The cart price rule now uses specified conditions correctly when applying discounts on configurable products. 
+<!-- MAGETWO-94407 -->* The cart price rule now uses specified conditions correctly when applying discounts on configurable products. 
 
 <!-- MAGETWO-87064 -->* Magento no longer throws an error when a customer applies a discount code on the checkout page. [GitHub-9763](https://github.com/magento/magento2/issues/9763)
 
@@ -472,7 +459,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- MAGETWO-83038-->* You can now assign and save a custom option assigned a price of 0. *Fix submitted by [Raul Mateos](https://github.com/raumatbel) in pull request [11842](https://github.com/magento/magento2/pull/11842)*.[GitHub-4808](https://github.com/magento/magento2/issues/4808)
 
-<!--- 82202-->* The ProductRepository SKU cache is no longer corrupted when the value assigned to `cacheLimit` is reached. *Fix submitted by [Thomas](https://github.com/heldchen) in pull request 11537*.
+<!--- MAGETWO-82202-->* The ProductRepository SKU cache is no longer corrupted when the value assigned to `cacheLimit` is reached. *Fix submitted by [Thomas](https://github.com/heldchen) in pull request 11537*.
 
 <!--- MAGETWO-80828-->* The price filter on a product category page now works as expected. Previously, if you applied this filter to a category listing, Magento displayed redundant product listings and unrelated products.  *Fix submitted by [Mayank Zalavadia](https://github.com/mayankzalavadia) in pull request 11206*. [GitHub-11139](https://github.com/magento/magento2/issues/11139)
 
@@ -634,38 +621,43 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!---ENGCOM-1900 2082-->* Client-side email validation now works in Internet Explorer 11.x the same way as it does in Chrome. Previously, a leading or trailing space on the following pages resulted in  client-side validation failure in Magento stores deployed on Internet Explorer 11.x.  *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [15884](https://github.com/magento/magento2/pull/15884)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
-<!---ENGCOM-1893 -->* Magento now correctly aligns page elements on  the home page and category page of the Hot Seller section. [GitHub-15213](https://github.com/magento/magento2/issues/15213)
+<!---ENGCOM-1893 -->* Magento now correctly aligns page elements on  the home page and category page of the Hot Seller section.  *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15896](https://github.com/magento/magento2/pull/15896)*.  [GitHub-15213](https://github.com/magento/magento2/issues/15213)
+
 
 <!---ENGCOM-1986 -->* Extraneous margins on the product list  and product entries have been removed. *Fix submitted by [Chirag Matholiya](https://github.com/chirag-wagento) in pull request [15975](https://github.com/magento/magento2/pull/15975)*. [GitHub-15308](https://github.com/magento/magento2/issues/15308) 
 
-<!---ENGCOM-2005 -->* `inline-block` issues with space and font-size in the Name form have been resolved. 
+<!---ENGCOM-2005 -->* `inline-block` issues with space and font-size in the Name form have been resolved. *Fix submitted by [Daniel Ruf](https://github.com/DanielRuf) in pull request [16097](https://github.com/magento/magento2/pull/16097)*. [GitHub-16047](https://github.com/magento/magento2/issues/16047)
 
-<!---ENGCOM-2147 -->* The Shipping and Estimate Tax page now correctly displays country, city, and postal code fields. [GitHub-8222](https://github.com/magento/magento2/issues/8222)
+<!---ENGCOM-2147 -->* The Shipping and Estimate Tax page now correctly displays country, city, and postal code fields. *Fix submitted by [Alexander Kras'ko](https://github.com/0m3r) in pull request [16429](https://github.com/magento/magento2/pull/16429)*. [GitHub-8222](https://github.com/magento/magento2/issues/8222)
 
-<!---ENGCOM-2462 -->* Unneeded JavaScript was removed from `logout.phtml` and replaced with a new JavaScript component.
+<!---ENGCOM-2462 -->* Unneeded JavaScript was removed from `logout.phtml` and replaced with a new JavaScript component.  *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request [16993](https://github.com/magento/magento2/pull/16993)*.  [GitHub-13692](https://github.com/magento/magento2/issues/13692)
 
-<!---ENGCOM-2593 -->* Template syntax errors in `app/code/Magento/Theme/Block/Html/Breadcrumbs.php` have been corrected. [GitHub-15345](https://github.com/magento/magento2/issues/15345)
+<!---ENGCOM-2593 -->* Template syntax errors in `app/code/Magento/Theme/Block/Html/Breadcrumbs.php` have been corrected. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16805](https://github.com/magento/magento2/pull/16805)*. [GitHub-15345](https://github.com/magento/magento2/issues/15345)
 
-<!---ENGCOM-2692 -->* Magento now disables the **Shop By** button on the search page when a customer sets additional search filters.
 
-<!---ENGCOM-2731 -->* Product image zoom now works as expected in stores running on Safari.
+<!---ENGCOM-2692 -->* Magento now disables the **Shop By** button on the search page when a customer sets additional search filters. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17418](https://github.com/magento/magento2/pull/17418)*. [GitHub-13445](https://github.com/magento/magento2/issues/13445)
 
-<!---ENGCOM-2786 -->*  The `$keepRation` parameter in the `Magento\Cms\Model\Wysiwyg\Images\Storage` class has been renamed to `$keepRatio`.
+<!---ENGCOM-2731 -->* Product image zoom now works as expected in stores running on Safari. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17418](https://github.com/magento/magento2/pull/17418)*. [GitHub-13445](https://github.com/magento/magento2/issues/13445)
+
+
+<!---ENGCOM-2786 -->*  The `$keepRation` parameter in the `Magento\Cms\Model\Wysiwyg\Images\Storage` class has been renamed to `$keepRatio`. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [17596](https://github.com/magento/magento2/pull/17596)*. [GitHub-17587](https://github.com/magento/magento2/issues/17587)
 
 <!---ENGCOM-2816 -->* A typo in `gallery.php` has been fixed. *Fix submitted by [Daniël van der Linden](https://github.com/Spaggel) in pull request [17659](https://github.com/magento/magento2/pull/17659)*. 
 
 <!---ENGCOM-2859 -->* The delete operation `entity_manager_delete_before`  transaction event  is no longer dispatched twice unnecessarily. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [17720](https://github.com/magento/magento2/pull/17720)*. [GitHub-17715](https://github.com/magento/magento2/issues/17715)
 
-<!---ENGCOM-2231 -->* Unnecessary space has been trimmed from the email address field in the forgot password, check out, log in,  and email to a friend forms. 
+<!---ENGCOM-2231 -->* Unnecessary space has been trimmed from the email address field in the forgot password, check out, log in,  and email to a friend forms. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16640](https://github.com/magento/magento2/pull/16640)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
-<!---ENGCOM-1807 -->* The JavaScript code in the `spli.phtml` template file for the button widget has been refactored. [GitHub-15354](https://github.com/magento/magento2/issues/15354)
+
+<!---ENGCOM-1807 -->* The JavaScript code in the `spli.phtml` template file for the button widget has been refactored. *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15731](https://github.com/magento/magento2/pull/15731)*. [GitHub-15354](https://github.com/magento/magento2/issues/15354)
 
 <!---ENGCOM-1817 -->* The JavaScript code for the UrlRewrite module edit page has been refactored. *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15747](https://github.com/magento/magento2/pull/15747)*. [GitHub-15356](https://github.com/magento/magento2/issues/15356)
 
-<!---ENGCOM-1772, 1771 -->* The annotation for the `formatDateTime` function in the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php` file has been corrected. The `locale` and `timezone` have been changed to `param string|null $locale` and `@param string|null $timezone`. [GitHub-15668](https://github.com/magento/magento2/issues/15668)
+<!---ENGCOM-1772, 1771 -->* The annotation for the `formatDateTime` function in the `lib/internal/Magento/Framework/Stdlib/DateTime/TimezoneInterface.php` file has been corrected. The `locale` and `timezone` have been changed to `param string|null $locale` and `@param string|null $timezone`.  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15667](https://github.com/magento/magento2/pull/15667)*.  [GitHub-15601](https://github.com/magento/magento2/issues/15601), [GitHub-15668](https://github.com/magento/magento2/issues/15668)
 
 
-<!--- ENGCOM-2065 -->* Magento now displays the Contact Us page on the menu as expected. Previously, Magento displayed unnecessary space between the category page and the main footer. [GitHub-12601](https://github.com/magento/magento2/issues/12601)
+<!--- ENGCOM-2065 -->* Magento now displays the Contact Us page on the menu as expected. Previously, Magento displayed unnecessary space between the category page and the main footer. *Fix submitted by [Sanjay Patel](https://github.com/sanjay-wagento) in pull request [15726](https://github.com/magento/magento2/pull/15726)*. [GitHub-12601](https://github.com/magento/magento2/issues/12601)
+
 
 
 
@@ -690,9 +682,9 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!-- MAGETWO-75313 -->* There is now an API interface for retrieving CMS pages and blocks by identifiers and store ID. [GitHub-10414](https://github.com/magento/magento2/issues/10414)
 
-<!--- ENGCOM-2413 -->* Disabling a product now removes it from the flat index as expected. [GitHub-14966](https://github.com/magento/magento2/issues/14966)
+<!--- ENGCOM-2413 -->* Disabling a product now removes it from the flat index as expected.  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16791](https://github.com/magento/magento2/pull/16791)*.  [GitHub-14966](https://github.com/magento/magento2/issues/14966)
 
-<!--- ENGCOM-2032 -->* Breadcrumbs now work as expected when a product name contains quotation marks. Previously, the breadcrumbs on the product details page caused this syntax error to be thrown, `SyntaxError: Unexpected token x in JSON`. [GitHub-15037](https://github.com/magento/magento2/issues/15037)
+<!--- ENGCOM-2032 -->* Breadcrumbs now work as expected when a product name contains quotation marks. Previously, the breadcrumbs on the product details page caused this syntax error to be thrown, `SyntaxError: Unexpected token x in JSON`. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [16148](https://github.com/magento/magento2/pull/16148)*. [GitHub-15037](https://github.com/magento/magento2/issues/15037)
 
 <!-- MAGETWO-83101 -->* CMS blocks are now validated to prevent multiple blocks from having the same store view  and identifier.
 
@@ -774,12 +766,12 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 <!--- MAGETWO-70775 -->*  We have replaced `Zend_Json`  with `\Magento\Framework\Serialize\JsonConverter::convert` in customer data.  [GitHub-10259](https://github.com/magento/magento2/issues/10259)
 
-<!--- ENGCOM-1493 -->* In multi-site deployments, a customer requesting a password reset on a non-default store should receive the password reset email from the non-default, not the primary, store. Previously, this password reset email was sent from the default store. [GitHub-5726](https://github.com/magento/magento2/issues/5726)
+<!--- ENGCOM-1493 -->* In multi-site deployments, a customer requesting a password reset on a non-default store should receive the password reset email from the non-default, not the primary, store. Previously, this password reset email was sent from the default store. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [15095](https://github.com/magento/magento2/pull/15095)*. [GitHub-5726](https://github.com/magento/magento2/issues/5726)
 
-<!--- ENGCOM-2481 -->* Unnecessary leading and trailing spaces have been removed from the customer account login page email field. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
+<!--- ENGCOM-2481 -->* Unnecessary leading and trailing spaces have been removed from the customer account login page email field. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16956](https://github.com/magento/magento2/pull/16956)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
 
-<!--- ENGCOM-2067 -->* Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`.
+<!--- ENGCOM-2067 -->* Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`.  *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15842](https://github.com/magento/magento2/pull/15842)*. [GitHub-15822](https://github.com/magento/magento2/issues/15822)
 
 <!--- ENGCOM-2060 -->* Customer accounts are now unlocked as expected after a password reset. [GitHub-15534](https://github.com/magento/magento2/issues/15534)
 
@@ -849,7 +841,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### Directory
 
-<!--- ENGCOM-993 -->*  When sorting by price, Magento now displays the same number of products no matter how it sorts products in the Catalog Product list. Previously, Magento reduced the product count by the number of disabled products when sorting by price.
+<!--- ENGCOM-993 -->*  When sorting by price, Magento now displays the same number of products no matter how it sorts products in the Catalog Product list. Previously, Magento reduced the product count by the number of disabled products when sorting by price. *Fix submitted by [AlexWorking](https://github.com/AlexWorking) in pull request [14215](https://github.com/magento/magento2/pull/14215)*. [GitHub-13899](https://github.com/magento/magento2/issues/13899)
 
 
 <!--- MAGETWO-93761 -->*  Currency conversion rate services now work as expected in the Admin. 
@@ -866,9 +858,9 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 ### EAV 
 
-<!--- ENGCOM-2708 -->* The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected.
+<!--- ENGCOM-2708 -->* The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15723](https://github.com/magento/magento2/pull/15723)*.  [GitHub-4803](https://github.com/magento/magento2/issues/4803)
 
-<!--- MAGETWO-94070 -->*  You can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Configuration** > **Catalog**  > **Catalog Search**).
+<!--- MAGETWO-94070 -->*  When Elasticsearch is configured as the search engine, you can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Configuration** > **Catalog**  > **Catalog Search**).
 
 <!--- MAGETWO-91580 -->*  Magento no longer displays empty product attributes of type `dropdown` or `swatch` as having a value of **no** on the storefront. 
 
@@ -1313,18 +1305,6 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 
 <!-- MAGETWO-91712 -->* All relevant attributes are now populated in the Google Tag Manager when a customer adds a product to their shopping cart. Previously, grouped, bundle, and configurable product attributes were missing in the Google Tag Manager. 
-
-### GraphQL
-
-<!---ENGCOM-2318 -->* Category queries return category `id` and `name` values as expected.  *Fix submitted by [Valeriy Naida](https://github.com/naydav) in pull request [16036](https://github.com/magento/graphql-ce/pull/119)*. [GitHub-116](https://github.com/magento/magento2/issues/116)
-
-
-<!---ENGCOM-2445 -->* We've added the GraphQL `StoreConfig` query.  *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [126](https://github.com/magento/graphql-ce/pull/126)*. [GitHub-120](https://github.com/magento/magento2/issues/120)
-
-<!---ENGCOM-2320 -->* The `CatalogGraphQl` module now correctly calculates the depth of child nodes in a category tree.  *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [102](https://github.com/magento/graphql-ce/pull/102)*. [GitHub-100](https://github.com/magento/magento2/issues/100)
-
-
-
 
 
 ### HTML
@@ -2254,7 +2234,7 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** For Inventory Management, ElasticSearch is  supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
 
 
-**Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend assigning products (not bundled products) to one custom source and stock. Having only bundled products assigned to Default Source and Default Stock may ease potential performance issues. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
+**Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend creating and assigning all products to one custom source and stock. This will affect bundled products support. To continue with bundled products, continue using Default Source and Stock in Single Source mode. We plan to have a resolution and bundled product multi-sourcing support in a later release. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
 
 
 
@@ -2294,7 +2274,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-You can install Magento Open Source 2.3 Beta  using Composer.
+You can install {{site.data.var.ce}} 2.3 Beta  using Composer.
 
 ## Migration toolkits
 
