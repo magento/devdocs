@@ -26,7 +26,7 @@ Fastly provides the following services to optimize and secure content delivery o
    
    -  [Customize Fastly timeout](#timeouts) settings to prevent 503 responses on bulk operation requests 
 	
-   -  Create [custom error response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html-fastly.html#fastly-errpg)
+   -  Create [custom error response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
    
 -  **Security**—After you set up your {{ site.data.var.ece }} project to use the Fastly CDN, additional security features are available to protect your sites and network.
 
