@@ -198,7 +198,7 @@ Where:
 [Define your configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html)
 
 [0]: https://getcomposer.org/
-[1]: {{ page.baseurl }}/comp-mgr/compman-start.html
+[1]: {{ page.baseurl }}/comp-mgr/module-man/compman-start.html
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
 [4]: https://www.iso.org/iso-639-language-codes.html

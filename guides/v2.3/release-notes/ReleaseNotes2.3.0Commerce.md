@@ -14,7 +14,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. 
+* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
@@ -29,7 +29,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * **Declarative schema** simplifies installation and upgrade procedures for Magento and extensions. Declarative schema reduce the need for many database scripts, eliminating the need to maintain these scripts. And here's a big advantage: This features enables Magento to roll out database schema changes in patch releases (not currently possible). This feature supports split and shared database structures and database structure validation. 
 
-* **GraphQL API** provides an alternative to REST and SOAP web APIs for frontend development. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. 
+* **GraphQL API** is now available with Magento 2.3.0. This API provides an alternative to REST and SOAP web APIs for custom frontend development, including headless storefronts and PWAs. See [GraphQL Developer Guide]({{site.baseurl}}/guides/v2.3/graphql/index.html) for more information about Magento's implementation of this data query language. GraphQL is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [GraphQL GitHub](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
 * **Asynchronous Web APIs** allow any previous Magento REST APIs to be called asynchronously. This community-contributed feature includes separate status APIs that have been created to check the status of each request. Developers can now use the asynchronous APIs  in conjunction with queues that have also been migrated to Magento Open Source.  See [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html) for more information. 
 
@@ -1340,17 +1340,6 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 
 
-
-### GraphQL
-
-<!---ENGCOM-2318 -->* Category queries return category `id` and `name` values as expected.  *Fix submitted by [Valeriy Naida](https://github.com/naydav) in pull request [16036](https://github.com/magento/graphql-ce/pull/119)*. [GitHub-116](https://github.com/magento/magento2/issues/116)
-
-<!---ENGCOM-2445 -->* We've added the GraphQL `StoreConfig` query.  *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [126](https://github.com/magento/graphql-ce/pull/126)*. [GitHub-120](https://github.com/magento/magento2/issues/120)
-
-
-<!---ENGCOM-2320 -->* The `CatalogGraphQl` module now correctly calculates the depth of child nodes in a category tree.  *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [102](https://github.com/magento/graphql-ce/pull/102)*. [GitHub-100](https://github.com/magento/magento2/issues/100)
-
-
 ### HTML
 
 <!---MAGETWO-87351 -->* Magento now displays a newly created Contact Us form on a category page as expected. Previously, you could create a Contact Us form, but Magento  did not display it properly. [GitHub-12601](https://github.com/magento/magento2/issues/12601)
@@ -2308,7 +2297,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- https://github.com/magento-engcom/msi/issues/1890  -->**Known issue:** Currently, ElasticSearch is supported only in Single Source mode for the Default Source. It is not supported in Multi Source mode with custom sources.
 
-**Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend assigning products (not bundled products) to one custom source and stock. Having only bundled products assigned to Default Source and Default Stock may ease potential performance issues. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
+**Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend creating and assigning all products to one custom source and stock. This will affect bundled products support. To continue with bundled products, continue using Default Source and Stock in Single Source mode. We plan to have a resolution and bundled product multi-sourcing support in a later release. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
 
 **Known issue:** For B2B merchants, please assign products to the Default Source and Default Stock for complete support. We will provide complete B2B support in a later release.
 
