@@ -2293,7 +2293,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 **Known issue:** For B2B merchants, please assign products to the Default Source and Default Stock for complete support. We will provide complete B2B support in a later release.
 
-**Known issue:** The `--convert-old-scripts` command has the following limitations, which will be addressed in a future release:
+**Known issue:** The `bin/magento setup:install — convert-old-scripts` command, which is used to create declarative schema files, has the following limitations. These limitations will be addressed in a future release:
 
 * Only tables and columns are currently supported. 
 
