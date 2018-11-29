@@ -87,7 +87,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 ## Customize the WAF response page
 
-If the Magento [Managed Cloud WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service) blocks a customer request at the Fastly origin, they see the following default response page:
+If the Magento [Managed Cloud WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocks a customer request at the Fastly origin, they see the following default response page:
 
 ![WAF error response page]
 

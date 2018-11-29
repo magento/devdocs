@@ -24,7 +24,7 @@ For additional information about maintaining PCI compliance for your {{ site.var
 
 ## How it works
 
-The Managed Cloud WAF integrates with Fastly using the cache logic within the Fastly CDN 
+The Managed Cloud WAF integrates with Fastly and uses the cache logic within the Fastly CDN 
 service to filter traffic at the Fastly global nodes. We enable the WAF service in your production environment with a default WAF policy based on [ModSecurity Rules from Trustwave SpiderLabs](https://www.trustwave.com/Products/Application-Security/ModSecurity-Rules-and-Support/) and the OWASP Top Ten security threats.
 
 The Managed Cloud WAF filters HTTP and HTTPS traffic (GET and POST requests) against the WAF ruleset and blocks traffic that is malicious or does not comply with specific rules. The WAF service filters only origin-bound traffic that attempts to refresh the cache. As a result, we stop most attack traffic at the Fastly cache, protecting your origin traffic from malicious attacks. By processing only origin traffic, the Managed Cloud WAF preserves cache performance, introducing only an estimated 1.5 milliseconds (ms) to 20 ms of latency to every non-cached request.
