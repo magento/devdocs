@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Smart wizards
-version: 2.1
-github_link: cloud/env/smart-wizards.md
 functional_areas:
   - Cloud
   - Setup
@@ -38,12 +36,14 @@ A successful configuration returns:
 ```terminal
 SCD on-demand is enabled
 ```
+{: .no-copy}
 
 A failed configuration returns:
 
 ```terminal
 SCD on-demand is disabled
 ```
+{: .no-copy}
 
 ## Verifying an ideal configuration
 
@@ -56,6 +56,7 @@ The _ideal_ configuration for your Cloud project helps to minimize deployment do
 
 Ideal state is not configured
 ```
+{: .no-copy}
 
 Make the following corrections to your configuration:
 
@@ -83,3 +84,4 @@ Make the following corrections to your configuration:
     ```terminal
     Ideal state is configured
     ```
+    {: .no-copy}

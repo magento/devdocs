@@ -1,11 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Creating a Magento admin page
 menu_title: Creating a Magento admin page
 menu_order: 1000
-version: 2.0
-github_link: ext-best-practices/extension-coding/example-module-adminpage.md
 functional_areas:
   - Standards
 ---
@@ -27,7 +25,6 @@ mkdir -p MyCompany/ExampleAdminNewPage
 ~~~
 
 This command creates the `MyCompany` company directory and the `ExampleAdminNewPage` module directory. The latter will be the root directory for the module we will create.
-
 
 ### Initial boilerplate files
 
@@ -118,6 +115,7 @@ The following parts make up the generated page request link to the **Hello World
 * `helloworld` - This specifies the name of the controller to use.
 * `index` - In the XML file, since the action for the controller is not specified, Magento uses the default value `index`.
 
+[//]: # (Stop list rendering before collapsible, see: https://github.com/magento/devdocs/issues/2655)
 {% collapsible File content for menu.xml %}
   {% highlight xml %}
     <?xml version="1.0"?>
@@ -276,7 +274,7 @@ The module is now complete. Your module's directory structure under `app/code` s
         `-- <a href="#registrationphp">registration.php</a>
   </pre>
   <script>
-    //Javascript to make the code blocks open on anchor click
+    //JavaScript to make the code blocks open on anchor click
     $(document).ready(function(){
       var anchor = window.location.hash.substring(1);
       if(anchor)

@@ -1,13 +1,11 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deploy variables
-version: 2.2
-github_link: cloud/env/variables-deploy.md
 functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -61,7 +59,12 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Cleans the [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action such as enabling or disabling a component. We recommend the default value _true_ in development. The supported values are `true` and `false`.
+Enables or disables cleaning [static content files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development.
+
+-   **`true`**—Removes all existing static content before deploying the updated static content.
+-   **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
+
+If you make modifications to static content through a separate process, set the value to _false_.
 
 ```yaml
 stage:
@@ -69,31 +72,36 @@ stage:
     CLEAN_STATIC_FILES: false
 ```
 
-Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+Failure to clean static view files before deploying can cause problems if you
+deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
 
 ### `CRON_CONSUMERS_RUNNER`
 
 -  **Default**—`cron_run = false`, `max_messages = 1000`
 -  **Version**—Magento 2.2.0 and later
 
-Use this environment variable to make sure message queues are running after a deployment. 
+Use this environment variable to make sure message queues are running after a deployment.
 
 -   `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
 -   `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
--   `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers. Refer to [List consumers]({{ page.baseurl }}/config-guide/mq/manage-mysql.html#list-consumers) for more information.
+-   `consumers`—An array of strings specifying which consumer(s) to run. An empty array runs _all_ consumers.
 
 ```yaml
-stage: 
+stage:
   deploy:
     CRON_CONSUMERS_RUNNER:
-      cron_run: true,
-      max_messages: 1000,
+      cron_run: true
+      max_messages: 1000
       consumers:
         - consumer1
         - consumer2
 ```
 
 By default, the deployment process overwrites all settings in the `env.php` file. Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html) for more information about how this works in {{site.data.var.ce}} and {{site.data.var.ee}}.
+
+#### To see a list of message queue consumers:
+
+    ./bin/magento queue:consumers:list
 
 ### `CRYPT_KEY`
 
@@ -127,6 +135,27 @@ stage:
       some_config: 'some_new_value'
       _merge: true
 ```
+
+### `ENABLE_GOOGLE_ANALYTICS`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Enables and disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
+
+-   **`true`**—Enables Google Analytics on Staging and Integration environments.
+-   **`false`**—Disables Google Analytics on Staging and Integration environments.
+
+Add the `ENABLE_GOOGLE_ANALYTICS` environment variable to the `deploy` stage in the `.magento.env.yaml` file:
+
+```yaml
+stage:
+  deploy:
+    ENABLE_GOOGLE_ANALYTICS: true 
+```
+
+{:.bs-callout .bs-callout-info}
+The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
 
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
@@ -205,7 +234,7 @@ The read-only connection is not available for use in the Integration environment
 -  **Default**—`6`
 -  **Version**—Magento 2.1.4 and later
 
-Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
+Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
 ```yaml
 stage:
@@ -223,7 +252,7 @@ Themes can include numerous files. Set this variable to `true` if you want to sk
 ```yaml
 stage:
   deploy:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
+    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
 ```
 
 ### `SCD_MATRIX`
@@ -233,13 +262,13 @@ stage:
 
 You can configure multiple locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
-The following example deploys the `magento/backend` theme with three locales:
+The following example deploys the `Magento/backend` theme with three locales:
 
 ```yaml
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend":
+      "Magento/backend":
         language:
           - en_US
           - fr_FR
@@ -252,7 +281,7 @@ Also, you can choose to _not_ deploy a theme:
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend": [ ]
+      "Magento/backend": [ ]
 ```
 
 ### `SCD_STRATEGY`
@@ -266,7 +295,7 @@ Use these options _only_ if you have more than one locale:
 
 -  `standard`—deploys all static view files for all packages.
 -  `quick`—minimizes deployment time. This is the default command option, if not specified.
--  `compact`—conserves disk space on the server and overrides the value for `scd_threads` with a value of `1`. This strategy does not work with multi-threads.
+-  `compact`—conserves disk space on the server. In Magento version 2.2.4 and earlier, this setting overrides the value for `scd_threads` with a value of `1`.
 
 ```yaml
 stage:
@@ -276,7 +305,7 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**: 
+-  **Default**:
     -  `1`—Starter environments and Pro Integration environments
     -  `3`—Pro Staging and Production environments
 -  **Version**—Magento 2.1.4 and later
@@ -330,10 +359,10 @@ stage:
 Configure Redis session storage. You must specify the `save`, `redis`, `host`, `port`, and `database` options for the session storage variable. For example:
 
 ```yaml
-stage: 
+stage:
   deploy:
-    SESSION_CONFIGURATION: 
-      redis: 
+    SESSION_CONFIGURATION:
+      redis:
         bot_first_lifetime: 100
         bot_lifetime: 10001
         database: 0
@@ -407,7 +436,7 @@ You should set this variable to `false` _only_ in Staging or Production environm
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="\_blank"} debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+ Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
 ```yaml
 stage:

@@ -16,6 +16,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header"/>
+{% include m1x/eol_message.html %}
 <div id="content">
     <h1>Magento Enterprise Edition (EE) 1.13 Benchmarking Guide</h1>
 
@@ -145,7 +146,7 @@
         <li>As many eCommerce sites offer different types of products, we specified physical (simple) products, virtual
             products, and downloadable products, with 60% of the products in each catalog being physical.
         </li>
-        <li>We benchmarked each catalog on one Web site/storefront.</li>
+        <li>We benchmarked each catalog on one website/storefront.</li>
     </ul>
 
     <figure>
@@ -220,7 +221,7 @@
 
     <p>The Magento Enterprise Edition 1.13 indexer component contains a number of individual indexers such as Product
         Flat Data and Product Price. When a Magento admin changes the price of a product, it is only necessary to
-        execute the Product Price indexer for pricing changes to propagate to the front end. The completion times of
+        execute the Product Price indexer for pricing changes to propagate to the frontend. The completion times of
         these individual indexers were measured in the benchmark environment for Magento Enterprise Edition 1.13 and
         Magento Enterprise Edition 1.12.</p>
 

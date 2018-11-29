@@ -1,14 +1,12 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Configure message queues
 menu_title: Configure message queues
 menu_order: 26
 ee_only: True
-version: 2.2
 level3_menu_node: level3child
 level3_subgroup: mq
-github_link: extension-dev-guide/message-queues/config-mq.md
 redirect_from: /guides/v2.2/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration
@@ -19,6 +17,7 @@ functional_areas:
 The message queue topology is a {{site.data.var.ee}} feature. It can be included as part of {{site.data.var.ee}} installation, or you can add it existing modules.
 
 ### Overview ###
+
 Configuring the message queue topology involves creating and modifying the following configuration files in the `<module>/etc` directory:
 
 * [`communication.xml`](#communicationxml) - Defines aspects of the message queue system that all communication types have in common.
@@ -27,6 +26,7 @@ Configuring the message queue topology involves creating and modifying the follo
 * [`queue_publisher.xml`](#queuepublisherxml) - Defines the exchange where a topic is published.
 
 ### Use Cases ###
+
 Depending on your needs, you may only need to create and configure `communication.xml` and one or two of these files.
 
 * If you only want to publish to an existing queue created by a 3rd party system, you will only need the `queue_publisher.xml` file.
@@ -45,7 +45,7 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 
 {% highlight xml %}
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
   <topic name="synchronous.rpc.test" request="string" response="string">
     <handler name="processRpcRequest" type="Magento\TestModuleSynchronousAmqp\Model\RpcRequestHandler" method="process"/>
   </topic>
@@ -87,7 +87,7 @@ The `queue_consumer.xml` file contains one or more `consumer` elements:
 
 {% highlight xml %}
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_consumer.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
     <consumer name="basic.consumer" queue="basic.consumer.queue" handler="LoggerClass::log"/>
     <consumer name="synchronous.rpc.test" queue="synchronous.rpc.test.queue" handler="LoggerClass::log"/>
     <consumer name="rpc.test" queue="queue.for.rpc.test.unused.queue" consumerInstance="Magento\Framework\MessageQueue\BatchConsumer" connection="amqp"/>
@@ -120,7 +120,7 @@ The `queue_topology.xml` file defines the message routing rules and declares que
 
 {% highlight xml %}
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_topology.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
   <exchange name="magento-topic-based-exchange1" type="topic" connection="db">
     <binding id="topicBasedRouting2" topic="anotherTopic" destinationType="queue" destination="topic-queue1">
         <arguments>
@@ -209,7 +209,7 @@ The `queue_publisher.xml` file defines which connection and exchange to use to p
 
 {% highlight xml %}
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue_publisher.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
     <publisher topic="magento.testModuleSynchronousAmqp.api.serviceInterface.execute" disabled="true" />
     <publisher topic="asynchronous.test">
         <connection name="amqp" exchange="magento" disabled="false"/>
@@ -229,7 +229,7 @@ The `queue_publisher.xml` file defines which connection and exchange to use to p
 #### `connection` element
 {:.no_toc}
 
-The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a pushlisher defined at a time. If you omit the `connection` element, the default connection of `amqp` and exchange `magento` will be used.
+The `connection` element is a subnode of the `publisher` element. There must not be more than one enabled active connection to a publisher defined at a time. If you omit the `connection` element, the default connection of `amqp` and exchange `magento` will be used.
 
 | Attribute            | Description |
 | -------------------- | ----------- |
@@ -242,6 +242,7 @@ The `connection` element is a subnode of the `publisher` element. There must not
 See [Migrate message queue configuration]({{ page.baseurl }}/extension-dev-guide/message-queues/queue-migration.html) for information about upgrading from Magento 2.0 or 2.1.
 
 ### Related Topics
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{ page.baseurl }}/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+
+*   [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*   [Manage message queues with MySQL]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*   [Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

@@ -1,13 +1,11 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Components
 title: Module overview
 menu_title: Module overview
 menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: modules
-version: 2.0
-github_link: architecture/archi_perspectives/components/modules/mod_intro.md
 redirect_from:
   - /guides/v1.0/architecture/modules/mod_intro.html
   - /guides/v2.0/architecture/modules/mod_intro.html
@@ -27,7 +25,7 @@ The purpose of each module is to provide specific product features by implementi
 
 ## Module components
 
-A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html">themes</a>, <a href="{{ page.baseurl }}/architecture/archi_perspectives/third-party-libs.html">libraries</a>, and <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack">language packages</a>.
+A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: [themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-overview.html), [libraries]({{ page.baseurl }}/architecture/archi_perspectives/third-party-libs.html), and [language packages]({{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack).
 
 ## Where do modules live?
 
@@ -44,17 +42,17 @@ Inside this folder, you will find all the code related to this module, including
 
 ## Working with modules
 
-Magento developers, administrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.
+Magento developers, administrators, and anyone building a Magento website will want to review all relevant topics surrounding their particular goals and use cases.
 
-See <a href="{{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for specific instructions on extending modules.
+See [PHP Developer Guide]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html) for specific instructions on extending modules.
 
 See
-<a href="{{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a> for information on implementing themes and other components.
+[Frontend Developer Guide]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html) for information on implementing themes and other components.
 
 ## Related topics {#arch-modules-related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+[Module dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>
+[Modules and areas]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_conventions.html">Module location and naming conventions</a>
+[Module location and naming conventions]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_conventions.html)

@@ -1,13 +1,11 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 20_Enterprise Edition
 ee_only: true
 title: Magento_GroupedProductStaging module
 menu_title: GroupedProductStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/GroupedProductStaging.md
 ---
 
 

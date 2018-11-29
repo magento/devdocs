@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ## {{site.data.var.ee}} Web APIs Services per Module {#eelist}
 
 The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are available on {{site.data.var.ee}} installations only. {{site.data.var.ee}} installations automatically have access to all {{site.data.var.ce}} (formerly Magento Community Edition) web APIs.

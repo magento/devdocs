@@ -1,13 +1,11 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Factories
 menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.1
-github_link: extension-dev-guide/factories.md
 ---
 
 ## Overview
@@ -54,7 +52,6 @@ class BaseFactory
 }
 {% endhighlight %}
 
-
 ## Writing factories
 
 Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an [automatically generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) class type.
@@ -64,10 +61,9 @@ Factories follow the naming convention `<class-type>Factory` where `<class-type>
 
 For example the automatically generated `Magento\Cms\Model\BlockFactory` class is a factory that instantiates the class [`Magento\Cms\Model\Block`]({{ site.mage2000url }}app/code/Magento/Cms/Model/Block.php).
 
-
 ## Using factories
 
-You can get the singleton instance of a factory for a specific model using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html##dep-inj-preview-cons){:target="_blank"}.
+You can get the singleton instance of a factory for a specific model using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html).
 
 The following example shows a class getting the `BlockFactory` instance through the constructor:
 

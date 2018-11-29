@@ -1,0 +1,18 @@
+label:  Inventory Management Guide
+versions:  ["2.3"]
+pages:
+
+    - label: Overview
+      url: /inventory/index.html
+
+    - label: Inventory management architecture
+      url: /inventory/architecture.html
+
+    - label: Source selection algorithms
+      url: /inventory/source-selection-algorithms.html
+
+    - label: Deprecated CatalogInventory entities
+      url: /inventory/catalog-inventory-replacements.html
+
+    - label: Deprecated ScalableInventory entities
+      url: /inventory/scalable-inventory-replacements.html

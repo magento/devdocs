@@ -1,9 +1,6 @@
 ---
-layout: default
 group: release-notes
 title: Magento Open Source 2.1.14 Release Notes
-version: 2.1
-github_link: release-notes/ReleaseNotes2.1.14CE.md
 ---
 
 *	TOC
@@ -20,11 +17,12 @@ Although this release includes these enhancements, no confirmed attacks related 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for a comprehensive discussion of these issues.
 
 ## Highlights
+
 Magento 2.1.14 contains 38 security fixes and enhancements.  The enhancements help close stored XSS, SQL injection, and cross-site request forgery (CSRF) vulnerabilities. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.5-and-2.1.14-security-update) for more information.
 
 ## Fixed issues
-In addition to security enhancements, this release contains the following functional fixes. 
 
+In addition to security enhancements, this release contains the following functional fixes. 
 
 ### Setup
 
@@ -32,14 +30,13 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-707 -->* The misspelling in the name of the namespace in `Magento\Cron\Observer\ProcessCronQueueObserver.php` has been fixed. Previously, this misspelling resulted in a  fatal error when this class was instantiated and run. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 13949*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
 
-<!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan Yehuda](https://github.com/Ethan3600) in pull request 13806*. [GitHub-4173](https://github.com/magento/magento2/issues/4173)
+<!--- ENGCOM-846 -->* The `magento setup:di:compile` command now supports quoting for base paths. Previously, this command tried to exclude paths from the compilation process via regex in the `excludedPathsList` property. However, that property does not use quoting but instead contains the full path to Magento, which resulted in the failure to exclude some paths (for example,`/var/www/magento (1)/`). *Fix submitted by [Ethan Yehuda](https://github.com/Ethan3600) in pull request 13806*. 
 
 <!--- ENGCOM-949 -->* `Store getConfig()` now respects  valid false return values. Previously, the system represented the **no** setting as a string value of 0 (and 0 equals false), and as a result, this method fetched the default configuration values when a configuration value was set to **no**.    *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13654*.
 
 <!--- ENGCOM-1200 -->* All console commands now return status. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14480*.
 
 <!--- MAGETWO-87870 -->*  We've added the `web/unsecure/base_url` config to both website and store scopes. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13658*.
-
 
 ### Catalog
 
@@ -62,6 +59,7 @@ In addition to security enhancements, this release contains the following functi
  
 
 ### Cart and checkout
+
 <!--- ENGCOM-780 -->* Enhancements to LESS code include moving several LESS variables  to `.lib-dropdown()` variables and adding `font-weight` variable to `navigation.less`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 13987*.
 
 
@@ -70,17 +68,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-920 -->* You can now successfully override settings in `module-directory/etc/zip_codes.xml`. Previously, when you tried to override these settings, Magento displayed only the last pattern from the module's `zip_codes.xml`. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14117*. [GitHub-6694](https://github.com/magento/magento2/issues/6694)
 
-
-
-
 ### Configurable products
 
 <!--- ENGCOM-1204 -->* Magento now displays accurate configurable product prices in multi-store environments. Previously, Magento displayed the same configurable product prices for all stores after the first store emulation. *Fix submitted by [Sergey P](https://github.com/simpleadm) in pull request 14479*. 
-
-
-
-
-
 
 ### Customers
 
@@ -88,13 +78,9 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- ENGCOM-1147 -->* We've removed `<title>Billing Agreements</title>` from the `customer_account.xml` file in the PayPal module. *Fix submitted by [Mike Whitby](https://github.com/mikewhitby) in pull request 14323*. 
 
-
-
 ### Email
+
 <!--- ENGCOM-1212 -->* The color of the button on the email template when a user hovers over it has been changed from `@button-primary__color` to `@button-primary__hover__color`. *Fix submitted by [Karla Saaremäe](https://github.com/Karlasa) in pull request 14497*.
-
-
-
 
 ### Framework
 
@@ -111,21 +97,14 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-69715 -->* You can now cancel the removal of a block or container from a layout by setting the `remove` attribute value to `false`. [GitHub-1931](https://github.com/magento/magento2/issues/1931)
 
-
-
-
 #### Configuration framework
 
 <!--- ENGCOM-1011 -->* You can now add an XML comment node as a parameter when adding a new widget declaration to `widget.xml`. Previously, if you added a comment as a parameter to a widget declaration, Magento displayed a 500 error. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 14219*. [GitHub-3882](https://github.com/magento/magento2/issues/3882)
 
-
-
-
 ### General
 
-
 <!--- ENGCOM-1251 -->*  The  `setAttributeFilter` method now specifies the relevant table when calling the `addFieldToFilter` method. This method is called as part of the process of adding a field to the filter for the collection `Eav/Model/ResourceModel/Entity/Attribute/Option/Collection.php`. Previously, Magento displayed an error (`ambiguous column name`) when you joined tables containing column `attribute_id`.  
-*Fix submitted by [Pierre LeMaguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
+*Fix submitted by [Pierre Le Maguer](https://github.com/PierreLeMaguer) in pull request 14596*. [GitHub-14572](https://github.com/magento/magento2/issues/14572)
 
 <!--- ENGCOM-926 -->* We've added a CodeTriage badge to the `magento/magento2` GitHub repository. See [CodeTriage](https://www.codetriage.com/magento/magento2 ) for more information. *Fix submitted by [Eugene Shakhsuvarov](https://github.com/ishakhsuvarov) in pull request 1454*. 
 
@@ -146,22 +125,13 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- MAGETWO-87571 -->* Load query no longer uses requireJS to print. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request 13545*. 
 
-
-
-
-
 ### Swagger
+
 <!--- MAGETWO-87607 -->*  You can now use a parameter to change the store code in Swagger, which makes it possible to test API calls in Swagger for different storeviews. *Fix submitted by [Jeroen](https://github.com/JeroenVanLeusden) in pull request 13486*. [GitHub-13474](https://github.com/magento/magento2/issues/13474)
-
-
 
 ### Swatches
 
 <!--- MAGETWO-86331 -->* You can now use JavaScript mixins to extend swatch functionality in all supported browsers. *Fix submitted by [Renon Stewart](https://github.com/srenon) in pull request 12928*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
-
-
-
-
 
 ### Translations
 
@@ -179,8 +149,8 @@ In addition to security enhancements, this release contains the following functi
 
 <!--- NOT NEEDED   MAGETWO-90925   MAGETWO-90394  MAGETWO-90069  MAGETWO-90063 MAGETWO-89614 MAGETWO-89611 MAGETWO-88653 MAGETWO-88648 MAGETWO-88647 MAGETWO-88644 MAGETWO-88606 MAGETWO-88602 MAGETWO-86797 MAGETWO-85137 MAGETWO-85983 ENGCOM-644-->
 
-
 ## Community contributions
+
 We are grateful to the wider Magento community and would like to acknowledge their contributions to this release.
 
 ### Individual contributor contributions
@@ -194,6 +164,11 @@ The following table identifies contributions from our community members. This ta
     <th>Pull request</th>
     <th>Related GitHub issue</th>
      <th>Contributing community member</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/magento/magento2/pull/14596" target="_blank">14596</a></td>
+    <td>14572</td>
+     <td><a href="https://github.com/PierreLeMaguer" target="_blank">Pierre Le Maguer</a></td>
   </tr>
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/13949" target="_blank">13949</a></td>
@@ -365,16 +340,6 @@ The following table identifies contributions from our community members. This ta
     <td>N/A</td>
      <td><a href="https://github.com/Karlasa" target="_blank">Karla Saaremäe</a></td>
   </tr>
-<tr>
-  <td><a href="https://github.com/magento/magento2/pull/14572" target="_blank">14572</a></td>
-    <td>N/A</td>
-     <td><a href="https://github.com/PierreLeMaguer" target="_blank">PierreLeMaguer</a></td>
-  </tr>
-  <tr>
-  <td><a href="https://github.com/magento/magento2/pull/13550" target="_blank">13550</a></td>
-    <td>13214</td>
-     <td><a href="https://github.com/hostep" target="_blank">Pieter Hoste</a></td>
-  </tr>
  </table>
 
 ### Partner contributions
@@ -396,8 +361,8 @@ The following table highlights contributions made by Partners. This table lists 
 
 <tr>
     <td>Convert</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/14479">14479</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14348">14348</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14480">14480</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14151">14151</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14117">14117</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14098">14098</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/14096">14096</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13806">13806</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/4173">4173</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/5808">5808</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/6694">6694</a>, <a target="_blank" href="https://github.com/magento/magento2/issues/3489">3489</a> </td>
   </tr>
 
   <tr>
@@ -408,23 +373,19 @@ The following table highlights contributions made by Partners. This table lists 
 
   <tr>
     <td>H&O</td>
-    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a></td>
-    <td>N/A</td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/pull/13654">13654</a>, <a target="_blank" href="https://github.com/magento/magento2/pull/13658">13658</a>,  <a target="_blank" href="https://github.com/magento/magento2/pull/13486">13486</a></td>
+    <td><a target="_blank" href="https://github.com/magento/magento2/issues/13474">13474</a></td>
   </tr>
 
 </table>
 
-
-
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
-
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements](http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html){:target="_blank"}.
 
 ## Installation
 
 See [How to get the Magento software](http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html) for comprehensive information about Magento 2.1.x installation and setup. 
-
 
 ## Migration toolkits 
 
@@ -435,6 +396,7 @@ An updated version of this toolkit is typically available several days after the
 The [Code Migration Toolkit](https://github.com/magento/code-migration) helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
+
 Dear community members, thank you for your suggestions,  bug reports and code contributions. 
 
 

@@ -21,6 +21,7 @@
 <body>
 <a name="top"></a>
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 
 <h1>How to Extend the Magento REST API to Use Coupon Auto Generation</h1>
@@ -37,7 +38,7 @@
 <li><a href="#trouble">Troubleshooting Suggestions</a></li>
 <li><a href="#next">Next Steps</a></li>
 </ul>
-      
+
 <h2 id="overview">Overview</h2>
 <p>Customers of traditional stores and online web stores love coupons. Typically, a merchant sends coupons to customers who input them when checking out. The coupon saves the customer money and hopefully entices the customer to visit the store more frequently. In addition, the merchant can track coupon codes to individual customers to target market those customers.</p>
 
@@ -57,7 +58,7 @@
 This guide gives you all the files to create the module; no programming is necessary. There are four module configuration <code>.xml</code> files and one <code>.php</code> file to create the web service.</li>
 <li>Creating a user for the OAuth access to the new service</li>
 <li>Testing the web service from a separate page</li></ul>
-     
+
 <h2 id="system-reqs">System Requirements</h2>
 <p>To implement and test the Coupon AutoGen API, you must have all of the following:</p>
 <ul><li>Magento Community Edition (CE) 1.7 or later on Ubuntu.</li>
@@ -156,7 +157,7 @@ The General Information page displays as follows.<br />
 </tr>
 <tr>
   <td>Websites</td>
-  <td>Click the web sites on which you want the coupons to display. Hold down the Shift key and click the names of all items to select them.</td>
+  <td>Click the websites on which you want the coupons to display. Hold down the Shift key and click the names of all items to select them.</td>
 </tr>
 <tr>
   <td>Customer Groups</td>
@@ -189,15 +190,15 @@ The General Information page displays as follows.<br />
 <tr>
   <td>To Date</td>
   <td>Select any date in the future.</td>
-</tr>  
+</tr>
  <tr>
   <td>Priority</td>
   <td>Enter <code>0</code>.</td>
-</tr>     
+</tr>
  <tr>
   <td>Public In RSS Feed</td>
   <td>Click <strong>No</strong>.</td>
-</tr>    
+</tr>
 </tbody>
 </table></li>
 <li>In the upper-right corner of the page, click <strong>Save and Continue Edit</strong>.<br />
@@ -316,7 +317,7 @@ Magento disables the selected caches, replacing the green ENABLED status indicat
 <li>Click <strong>Flush Magento Cache</strong> and wait for the cache to be flushed.</li>
 <li>Log out of the Magento Admin Panel.</li></ol>
 
-<h3><a name="extend-rest-api_create-files"></a>Creating Configuration Files</h3> 
+<h3><a name="extend-rest-api_create-files"></a>Creating Configuration Files</h3>
 <p>This section discusses how to create a module (also referred to as an <em>extension</em>). The module consists of configuration files that create a web service that extends the Magento REST API to take input from an external program. This program uses <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5" target="_blank">HTTP POST</a> and OAuth calls to auto-generate coupon codes.</p>
 <p>In this guide, the external program is a PHP script; however, it could be any application that uses OAuth and REST calls. </p>
 <p>For more information about Magento module development, see <a href="http://www.magentocommerce.com/magento-connect/create_your_extension/" target="_blank">developer documentation on Magento Connect</a>.</p>
@@ -388,7 +389,7 @@ For example, if Magento is installed in <code>/var/www/magento</code>, create th
     &lt;/global&gt;
 &lt;/config&gt;
   </pre></code>
-<li>Create a file named <code>api2.xml</code> with the following contents.<br />     
+<li>Create a file named <code>api2.xml</code> with the following contents.<br />
   <code><pre>
 &lt;config&gt;
     &lt;api2&gt;
@@ -533,8 +534,8 @@ If you're not sure which group owns Apache processes, enter the command <code>ps
 <ol><li>As a user with <code>root</code> privileges, enter the following commands in the order shown to change ownership of the files and directories you created as discussed in this guide:<br />
 <pre>cd <em>magento-install-dir</em>/app/code/community
 chown -R <em>your-login-name</em>:www-data CouponDemo
-find . -type f -exec chmod 644 {} \;
-find . -type d -exec chmod 755 {} \;</pre></li>
+find . -type f -exec chmod 644 {} +
+find . -type d -exec chmod 755 {} +</pre></li>
 <li>As a user with <code>root</code> privileges, enter the following commands in the order shown to change the permissions and ownership of <code>CouponDemo_AutoGen.xml</code><br />.
 <pre>cd <em>magento-install-dir</em>/app/etc/modules
 chown <em>your-login-name</em>:www-data CouponDemo_AutoGen.xml
@@ -746,7 +747,7 @@ try {
 <li>Save the file and close the text editor.</li></ol>
 
 <h3 id="test-run">Running the Test Script</h3>
-<p>To run the test script:</p> 
+<p>To run the test script:</p>
 <ol><li>Start a web browser.</li>
 <li>In the browser's address or location field, enter:<br />
 <pre>http://<em>magento-server-host-or-ip</em>[:<em>port</em>]/rest_test.php</pre></li>

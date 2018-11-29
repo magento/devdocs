@@ -1,13 +1,11 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: how tos
 title: Add a category attribute
 menu_title: Create and display a category attribute with UI components
 menu_order: 3
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
-version: 2.1
-github_link: ui_comp_guide/howto/add_category_attribute.md
 ---
 
 Category attributes were automatically displayed in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %}. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace `attribute_id` and `Your Category Attribute Name` with your own values.
@@ -94,6 +92,6 @@ UI Component configuration is merged. When you add a new file, Magento will merg
 
 The `<field>` node is declared originally in `vendor/magento/module-ui/view/base/ui_component/etc/definition.xml`. If you open that file and look for `<field>`, you will notice that there is only a PHP class referenced—nothing particularly helpful. This is where the `config` elements in the example above come in important. Notice the value of `<item name="formElement">` (`checkbox`)? Now, if you look in `definition.xml`, you will find a `<checkbox>` node that has some configuration values. In the PHP class that the `<field>` element references, it looks up the `formElement` to use and loads that. As a result, `<checkbox>` is the node. In this case, that has the information that we are looking for.
 
-One of those elements is particularly useful when determining what XML you need to provide for your field: `<item name="component">`. That is a Javascript file that handles the functionality of the field. In our case, it is located in `vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js`. If you open that file, there is a `defaults` object which contains values that can be modified through the XML above. For example, notice: `defaults.prefer: 'checkbox'`. In the XML above, we declared `<item name="prefer">toggle</item>`. As a result, the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} value overrides the default value, and the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} renders a toggle instead of a plain checkbox.
+One of those elements is particularly useful when determining what XML you need to provide for your field: `<item name="component">`. That is a JavaScript file that handles the functionality of the field. In our case, it is located in `vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js`. If you open that file, there is a `defaults` object which contains values that can be modified through the XML above. For example, notice: `defaults.prefer: 'checkbox'`. In the XML above, we declared `<item name="prefer">toggle</item>`. As a result, the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} value overrides the default value, and the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} renders a toggle instead of a plain checkbox.
 
 This opens up the opportunity for you to customize nearly anything about the UI Component. It also should provide you with a basis of how to determine what configuration is available for you to set through XML.

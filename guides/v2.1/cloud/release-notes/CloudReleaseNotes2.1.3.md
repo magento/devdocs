@@ -7,8 +7,6 @@ menu_order: 385
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-version: 2.1
-github_link: cloud/release-notes/CloudReleaseNotes2.1.3.md
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.3.html
 functional_areas:
@@ -22,7 +20,8 @@ These Release Notes provide up-to-date information about changes, additions, and
 * Staging and Production environments in the UI for Pro projects. You can enter a ticket to have your project updated. For more information, see [Add Staging and Production to Pro projects UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html).
 
 ## Required update to `.magento.app.yaml`
-Before you [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration server]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-prod).
+
+Before you [upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your integration environment, then, after upgrading, push the changes to the staging and production environments. See [{{site.data.var.ece}} architecture]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html).
 
 ### Get started
 
@@ -56,26 +55,24 @@ Before you [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to ve
                 passthru: "/static/$resource"
     ~~~
 4.	Save your changes to `.magento.app.yaml` and exit the text editor.
-5.	You may now [upgrade]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11.
+5.	You may now [upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html) to version 2.1.3 or 2.0.11.
 
 
 {% endcollapsible %}
 
 ## Update your Elasticsearch configuration {#cloud-rn-213-es}
-This section discusses how to update your [integration]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-int) system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks.
+
+This section discusses how to update your [integration]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks.
 
 Elasticsearch is supported by Magento Cloud Enterprise Edition 2.1.x only.
 
 If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you don't need to do this because Elasticsearch is already the default search engine.
 
-To use Elasticsearch on a [staging]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}/cloud/reference/discover-arch.html#cloud-arch-prod) system, open a [Support ticket]({{ page.baseurl }}/cloud/welcome/get-help.html) and request Elasticsearch.
+To use Elasticsearch on a [staging]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) or [production]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) system, open a [Support ticket]({{ page.baseurl }}/cloud/welcome/get-help.html) and request Elasticsearch.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning}
 After installing Elasticsearch, you must do a full index of your fulltext index.
-This process can take a while if the index is large.
-
-The search functionality will be unavailable until the process completes.
-</div>
+This process can take a while if the index is large. The search functionality is unavailable until the process completes.
 
 To use Elasticsearch, you must perform all the tasks discussed in this section.
 
@@ -135,6 +132,7 @@ To use Elasticsearch, you must perform all the tasks discussed in this section.
 {% endcollapsible %}
 
 ### Step 4: Get Elasticsearch connection information {#cloud-es-config-mg}
+
 This section discusses how to get connection information for Elasticsearch so you can configure the Magento application to use it as your search engine.
 
 {% collapsible To get Elasticsearch connection information: %}

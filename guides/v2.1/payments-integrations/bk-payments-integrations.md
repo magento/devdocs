@@ -5,8 +5,6 @@ title: Payments Integrations
 menu_title: Get Started
 menu_order: 2
 menu_node: parent
-version: 2.1
-github_link: payments-integrations/bk-payments-integrations.md
 functional_areas:
   - Integration
 ---

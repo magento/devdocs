@@ -1,20 +1,23 @@
-# Site settings
-encoding: "utf-8"
+# This file contains configuration settings for the devdocs website.
+# Each setting is available on pages using Liquid {{ site.<config key> }}. For example, {{ site.title }}.
+# For more details about available options and defaults, refer to https://jekyllrb.com/docs/configuration/
+#
 title: Magento 2 Developer Documentation
 logo: DevDocs
-email: mailto:DL-Magento-Doc-Feedback@magento.com
-description: > # this means to ignore newlines until "baseurl:"
-  Magento 2 Developer Documentation.
-baseurl: ""
-# url: "https://github.com/magento/devdocs" # the base hostname & protocol for your site
-# twitter_username: magento
-# github_username:  magento
+description: Magento 2 Developer Documentation.
+
+# the base protocol and domain
+url: https://devdocs.magento.com
+
+# Site theme. https://jekyllrb.com/docs/themes/
 theme: devdocs
 
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+# Base url that forms 
+baseurl: ""
 
-# Version Switcher. Version numbers should be STRING
-version: "2.2"
+# Parameters for the version switcher. Numeric values must be wraped in quotes.
+#
+version: "2.3"
 versions:
    -
       name: "2.0"
@@ -29,53 +32,13 @@ versions:
       name: "2.3"
       url: /guides/v2.3/
 
-# GitHub variables
-github_repo: "https://github.com/magento/devdocs/"
-github_files: "https://github.com/magento/devdocs/blob/develop/"
-github_link: true
-feedback_link: true
-
-# 2.0.0 variables
-gdeurl: "/guides/v2.0/"
-githuburl: "https://github.com/magento/devdocs/tree/develop/guides/v2.0/"
-mage2000url: "https://github.com/magento/magento2/blob/2.0/"
-
-# 1.x variables
-m1xgdeurl: "/guides/m1x/"
-m1xgithuburl: "https://github.com/magento/devdocs/blob/develop/"
-
-# 2.1.0 variables
-gdeurl21: "/guides/v2.1/"
-githuburl21: "https://github.com/magento/devdocs/tree/develop/guides/v2.1/"
-mage2100url: "https://github.com/magento/magento2/blob/2.1/"
-
-# 2.2.0 variables
-gdeurl22: "/guides/v2.2/"
-githuburl22: "https://github.com/magento/devdocs/tree/develop/guides/v2.2/"
-mage2200url: "https://github.com/magento/magento2/blob/2.2/"
-
-# 2.3.0 variables
-
-gdeurl23: "/guides/v2.3/"
-githuburl23: "https://github.com/magento/devdocs/tree/develop/guides/v2.3/"
-mage2300url: "https://github.com/magento/magento2/blob/2.3-develop/"
-
-# Other variables
-namem2fedg: "Magento 2 Frontend Developer's Guide"
-namem2devgde: "Magento 2 Developer's Guide"
-namem2apiref: "Magento 2 API Reference"
-namem2install: "Magento 2 Installation Guide"
-
-
 collections:
   videos:
     output: true
     permalink: "/videos/:path/"
 
-plugins:
-  - jekyll-redirect-from
-
-
+# Specific settings for different scopes.
+#
 defaults:
 
   -
@@ -83,10 +46,15 @@ defaults:
       path: ""
     values:
       layout: default
-      guide_version: "2.2"
+      github_repo: https://github.com/magento/devdocs/
+      github_files: https://github.com/magento/devdocs/blob/master/
+      # Enables the 'Edit this page on GitHub' appearences on pages
+      github_link: true
+      # Enables the 'Give us feedback' appearences on pages
+      feedback_link: true
   -
     scope:
-      path: "guides/m1x"
+      path: guides/m1x
     values:
       layout: null
   -
@@ -95,27 +63,132 @@ defaults:
     values:
       layout: video
 
-# toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
+  -
+    scope:
+      path: mftf/2.2
+    values:
+      group: magento-functional-testing-framework-guide
+      functional_areas:
+        - Test
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
+  -
+    scope:
+      path: mftf/2.3
+    values:
+      group: magento-functional-testing-framework-guide-2_3
+      functional_areas:
+        - Test
+
+  -
+    scope:
+      path: guides/v2.3/mrg
+    values:
+      group: module-reference-guide-2_3
+      github_link: false
+      feedback_link: false
+
+##########################
+# Plugins and extensions #
+##########################
+#
+# For more details about plugins, refer to https://jekyllrb.com/docs/plugins/
+# To learn more about particular plugin, find it by name on GitHub.
+# This list doesn't include custom plugins.
+#
+plugins:
+  - jekyll-redirect-from
+  - jekyll-titles-from-headings
+
+# Settings for the jekyll-titles-from-headings plugin.
+# For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
+#
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: false
+
+# kramdown parser settings (extended Markdown to HTML parser). For more details about available options, refer to https://kramdown.gettalong.org/converter/html.html
+#
 kramdown:
   toc_levels: 2..3
+  syntax_highlighter_opts:
+    css_class: highlighter
 
-incremental: false
+# LiveReload monitors changes in the file system and refreshes browser when Jekyll is in serving mode.
+# http://livereload.com/
+#
+livereload: true
 
+# Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
+#
 algolia:
-  application_id: 'E642SEDTHL'
-  index_name: 'devdocs'
-  api_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
-  lazy_update: false
+  application_id: E642SEDTHL
+  index_name: devdocs
+  api_key: d2d0f33ab73e291ef8d88d8b565e754c
   files_to_exclude:
     - guides/m1x/**/*.html
     - guides/m1x/**/*.md
     - swagger
+    - redoc
 
 google:
-  analytics: 'UA-66243208-1'
+  analytics: UA-66243208-1
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'Rakefile' ]
+# Toggles the _plugin/html-check-hook.rb script that checks links in the generated HTML
+#
+check_links: true
+
+#############
+# Variables #
+#############
+#
+# Magento 2 repository variable
+mage2bloburl: https://github.com/magento/magento2/blob/
+
+# 2.0 variables
+gdeurl: /guides/v2.0/
+githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
+mage2000url: https://github.com/magento/magento2/blob/2.0/
+
+# 1.x variables
+m1xgdeurl: /guides/m1x/
+m1xgithuburl: https://github.com/magento/devdocs/blob/master/
+
+# 2.1 variables
+gdeurl21: /guides/v2.1/
+githuburl21: https://github.com/magento/devdocs/tree/master/guides/v2.1/
+mage2100url: https://github.com/magento/magento2/blob/2.1/
+
+# 2.2 variables
+gdeurl22: /guides/v2.2/
+githuburl22: https://github.com/magento/devdocs/tree/master/guides/v2.2/
+mage2200url: https://github.com/magento/magento2/blob/2.2/
+
+# 2.3 variables
+gdeurl23: /guides/v2.3/
+githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
+mage2300url: https://github.com/magento/magento2/blob/2.3/
+
+
+##########
+# Ignore #
+##########
+#
+# The path patterns excluded during site generation
+#
+exclude:
+  - scss
+  - bin
+  - node_modules
+  - vendor
+  - .git
+  - .idea
+  - Gemfile
+  - Gemfile.lock
+  - gulpfile.js
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - rakelib
+  - README.md
+  - _plugins

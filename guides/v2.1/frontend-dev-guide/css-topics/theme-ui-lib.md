@@ -1,14 +1,12 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Magento UI library
-version: 2.1
-github_link: frontend-dev-guide/css-topics/theme-ui-lib.md
 functional_areas:
   - Frontend
   - Theme
 ---
 
-The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible [LESS]-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers.
+The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible [Less]-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers.
 It employs a set of mixins for base elements to ease frontend theme development and customization.
 
 This topic describes how the library is organized, and how to use it. For more information, see the [Magento UI library documentation] that reflects the latest [embedded documentation].
@@ -95,10 +93,9 @@ For example, [`lib/web/css/source/lib/variables/_breadcrumbs.less`] contains var
 
 To change the default library variables values, specify the new values for the required variables in the `<theme_dir>/web/css/source/_theme.less` file.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Please mind, that your `&lt;theme_dir&gt;/web/css/source/_theme.less` file overrides `_theme.less` of the parent theme (if your theme has a parent).
+{:.bs-callout .bs-callout-info}
+Please mind, that your `<theme_dir>/web/css/source/_theme.less` file overrides `_theme.less` of the parent theme (if your theme has a parent).
 So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s `_theme.less` to your file as well.
-</div>
 
 The following figure shows the product page shown earlier in this topic, after a custom theme was applied.
 The theme customized Blank by redefining variables only.
@@ -107,7 +104,7 @@ The theme customized Blank by redefining variables only.
 
 ## Your custom variables {#fedg_using-ui-lib_vars}
 
-When naming custom variables, please follow the [Magento naming convention for the LESS variables].
+When naming custom variables, please follow the [Magento naming convention for the Less variables].
 
 ## Using mixins {#fedg_using-ui-lib_customize}
 
@@ -147,24 +144,24 @@ The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-
 <!-- Link definitions -->
 
 [`lib/web/css/docs/source/README.md`]: {{ site.mage2100url }}/lib/web/css/docs/source/README.md
-{:target="_blank"}
+
 [`lib/web/css/docs`]: {{ site.mage2100url }}/lib/web/css/docs
-{:target="_blank"}
+
 [`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables/_breadcrumbs.less
-{:target="_blank"}
+
 [`lib/web/css/source/lib/variables`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables
-{:target="_blank"}
+
 [`lib/web/css`]: {{ site.mage2100url }}/lib/web/css
-{:target="_blank"}
+
 [embedded documentation]: #docs
 [inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
-{:target="_blank"}
-[LESS]: http://lesscss.org/
-{:target="_blank"}
-[Magento naming convention for the LESS variables]: {{ page.baseurl }}/coding-standards/code-standard-less.html#naming
-{:target="_blank"}
+
+[Less]: http://lesscss.org/
+
+[Magento naming convention for the Less variables]: {{ page.baseurl }}/coding-standards/code-standard-less.html#naming
+
 [Magento UI library documentation]: https://magento-devdocs.github.io/magento2-ui-library/
-{:target="_blank"}
+
 [ui_lib1.png]: {{ site.baseurl }}/common/images/ui_lib1.png
 [ui_lib2.png]: {{ site.baseurl }}/common/images/ui_lib2.png
 

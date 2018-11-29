@@ -1,8 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Report XML
-version: 2.2
-github_link: advanced-reporting/report-xml.md
 functional_areas:
     - Reports
 ---
@@ -69,7 +67,7 @@ The data sources that correspond to table names in a database.
 |`alias`|Table alias|Optional|
 
 The main table is specified with the `<source>` tag.
-After rendering, it is represented in an SQL query as the `FROM` statement .
+After rendering, it is represented in an SQL query as the `FROM` statement.
 
 A report can be filtered using `<filter>` declared inside the `<source>` node.
 

@@ -1,13 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add custom shipping carrier validations
 subtitle: Customize Checkout
 menu_order: 5
 level3_subgroup: checkout-tutorial
-version: 2.0
-github_link: howdoi/checkout/checkout_carrier.md
 functional_areas:
   - Checkout
 ---
@@ -21,11 +19,11 @@ To add new shipping carrier validations to the Magento checkout, do the followin
 3. [Register validator and rules in the validators pool](#register).
 4. [Add the validators and rules to the checkout layout](#layout).
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 During checkout, when a customer fills the shipping address form, shipping carrier validations trigger the shipping rates request. That is why adding shipping carrier validations for your custom shipping method is mandatory.
-</div>
 
 ## Step 1: Create validation rules {#rules}
+
 Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator).
 
 During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields' values is carried on the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}. For example, whether a carrier is available for the specified country.
@@ -130,7 +128,6 @@ define(
     }
 );
 ```
-
 
 ## Step 4: Add the validation to the checkout layout {#layout}
 

@@ -6,7 +6,7 @@
 
 # Community Edition (CE)          ---> Open Source
 # Enterprise Edition (EE)         ---> Commerce
-# Enterprise Cloud Edition (ECE)  ---> Commerce (Cloud)
+# Enterprise Cloud Edition (ECE)  ---> Commerce Cloud
 # Enterprise Edition for B2B      ---> Commerce for B2B
 
 #NOTE: The new product name variables use the old product name abbreviations (e.g., ce, ee, ece, b2b). 
@@ -16,9 +16,11 @@
 ce: Magento Open Source
 ee: Magento Commerce
 b2b: Magento Commerce for B2B
-ece: Magento Commerce (Cloud)
 mbi: Magento Business Intelligence
 
+# Cloud product name variables
+ece: Magento Commerce Cloud
+ct: ece-tools
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
 # is the variable value.

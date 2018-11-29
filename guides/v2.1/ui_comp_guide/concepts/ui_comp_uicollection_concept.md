@@ -1,18 +1,16 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: About the uiCollection class
 menu_title: About the uiCollection class
 menu_order: 80
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_uicollection_concept.md
 ---
 
 ## What is `uiCollection`
 
 The `uiCollection` library class should be used as a base class by any components that contain a collection of child UI components.  `uiCollection` inherits from the [uiElement class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html).
 
-`uiCollection` source code is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`, in the {{site.data.var.ce}} github repository: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js).
+`uiCollection` source code is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js).
 
 ## Commonly used `uiCollection` methods
 
@@ -50,7 +48,6 @@ The `uiCollection` class implements the following methods:
 
   where `childIndex` is the value of the child element's `index` property.
 
-
 ## Commonly used `uiCollection` properties
 
 * `elems` is the observable property that contains the collection of child UI components.
@@ -72,7 +69,7 @@ console.log(this.elems());
 
 ## uiCollection template {#uicollection_template}
 
-The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the {{site.data.var.ce}} github repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/collection.html).
+The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the {{site.data.var.ce}} GitHub repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/collection.html).
 
 This template performs only one task: renders child templates if they exist.
 

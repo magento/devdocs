@@ -1,7 +1,6 @@
-<div markdown="1">
-
 #### What is sensitive data? {#sens-data}
-Magento uses your encryption key to encrypt the following: 
+
+Magento uses your encryption key to encrypt the following:
 
 *	Credit card information
 *	Usernames and passwords specified in the Magento Admin configuration  (for example, logins to payment gateways)
@@ -13,4 +12,3 @@ Magento does *not* encrypt:
 *	Address
 *	Phone number
 *	Other types of personally identifiable information except for credit card numbers
-</div>

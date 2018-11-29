@@ -1,21 +1,19 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: WYSIWYG component
 menu_title: WYSIWYG component
-version: 2.2
-github_link: ui_comp_guide/components/ui-wysiwyg.md
 ---
 
-The WYSIWYG component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for [TinyMCE v4](https://www.tinymce.com/){:target="\_blank"} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
+The WYSIWYG component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for [TinyMCE v4](https://www.tinymce.com/){:target="_blank"} that integrates an editor instance with the [form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects a complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
 
 Magento supports all selector, plugin, and toolbar/menu configuration options supported by the TinyMCE v4 `tinymce.init()` method. However, Magento doesn't validate TinyMCE configuration options or flag invalid values before adding the editor to a page.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/){:target="\_blank"} for more information.
-</div>
+{: .bs-callout .bs-callout-info }
+Refer to [TinyMCE's documentation](https://www.tinymce.com/docs/){:target="_blank"} for more information.
 
 ## Configuration options
+
 Extends all `abstract` configuration.
 
 Wysiwyg-specific options:
@@ -58,7 +56,7 @@ Wysiwyg-specific options:
 </li>
 </td>
     <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
-    <td>Object<br>String</td>
+    <td>Object<br />String</td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
   </tr>
   <tr>
@@ -69,7 +67,26 @@ Wysiwyg-specific options:
   </tr>
 </table>
 
+## Events
+
+Events are dispatched by modules when certain actions are triggered. When an event is dispatched, it can pass data to any observers configured to watch that event.
+
+See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html) to learn more about events and how to use them.
+
+The following are available events for use in the WYSIWYG component adapter for TinyMCE4:
+
+* `tinymceBeforeSetContent` - fires before the contents are inserted into the editor
+* `tinymcePaste` - fires when a paste is done within the editor
+* `tinymceSaveContent` - fires when the contents in the editor are saved
+* `tinymceSaveContent` (`PostProcess`) - fires when the contents in the editor are being serialized
+* `tinymceUndo` - fires when the contents have been reverted to a previous state
+* `tinymceFocus` - fires when the editor is focused
+* `tinymceBlur` - fires when the editor is blurred
+* `tinymceChange` - fires when undo level is added to the editor
+* `wysiwygEditorInitialized` - fires when the WYSIWYG editor is initialized
+
 ## Add a default editor
+
 Adding the default Magento WYSIWYG editor to a page requires the following steps:
 
 1. Create a layout
@@ -137,11 +154,11 @@ Next, create a custom form in the `ModuleName\view\adminhtml\ui_component` direc
 Last, add your data provider, controller, and routes. Refer to [Creating a Magento admin page]({{ page.baseurl }}/ext-best-practices/extension-coding/example-module-adminpage.html) for more information.
 
 ## Modify the default editor
+
 The most common way to configure UI components in Magento is to add a configuration section inside the XMl element when declaring it on a form. If you need to apply dynamic modifications to a UI component, we recommend using PHP modifiers since Magento supports replacing the default WYSIWYG editor with other WYSIWYG libraries.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Refer to [About PHP modifiers in UI components]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html) for more information.
-</div>
 
 To use PHP modifiers, your data provider must inherit from `ModifierPoolDataProvider`. The following class adds support for modifier pools, which are required when using modifiers. Inheriting from this class allows you to use modifiers.
 
@@ -340,7 +357,6 @@ Here's an example that connects the data provider and modifier created in the pr
 </config>
 ```
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If your form already uses the [ModifierPool]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), you can continue using it to control the configuration of your WYSIWYG components.
-</div>
 

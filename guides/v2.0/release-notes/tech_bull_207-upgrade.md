@@ -5,8 +5,6 @@ title: Technical Bulletin
 menu_title: Required patch for PHP 5.5.x and Setup Application environments (June 6, 2016)
 menu_node: 
 menu_order: 3
-version: 2.0
-github_link: release-notes/tech_bull_207-upgrade.md
 ---
 
 This bulletin informs you of a known issue updating from Magento Commerce (formerly Enterprise Edition) and Open Source (formerly Community Edition)  environments that run the following:   
@@ -19,9 +17,7 @@ This bulletin informs you of a known issue updating from Magento Commerce (forme
 
 Patch `MDVA-449` supplies the fix for this potential upgrade issue. 
 
-
-
-<h3>Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1</h3>
+### Issue: Upgrade failure from Magento installations running PHP 5.5.x and Updater application 10.0.1
 
 Magento Open Source  and Commerce upgrades fail if your server runs PHP 5.5.x and Setup application (also referred to as the <i>Updater application</i>) version 10.0.1 and you  try to upgrade to a later version of Magento.
 
@@ -65,7 +61,8 @@ The following table summarizes what you need to do.
 </tbody>
 </table>
 
-<h4>How to determine which version of Updater application you are running</h4> 
+#### How to determine which version of Updater application you are running
+
 1. Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 
 2. Open the following file in a text editor:
@@ -78,10 +75,12 @@ The following table summarizes what you need to do.
 
 4. Exit the text editor without making changes.
 
-<h4>Details</h4>
+#### Details
+
 The Setup application  that is packaged with Magento version 2.0.7 (version 10.0.1) has a line of code that is not compatible with PHP version 5.5.x. To ensure the success of future upgrades, download and install patch `MDVA-449`. 
 
-<h4>Download and install patch MDVA-449</h4> 
+#### Download and install patch MDVA-449
+
 If your Magento server runs PHP 5.5.x and Setup application  10.0.1,  apply patch `MDVA-449`.
 
 To apply this patch:
@@ -125,8 +124,8 @@ To apply this patch:
 	</tbody>
 	</table>
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>Use patch <code>MDVA-449</code> whether or not you installed optional sample data.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Use patch `MDVA-449` whether or not you installed optional sample data.
 	</div>
 
 2.	Extract the patch in your Magento installation directory.
@@ -157,8 +156,8 @@ To apply this patch:
 
 	`cp -R magento2-updater-10.0.2/*  update/`
 
-	<div class="bs-callout bs-callout-tip">
-		<p>If you're prompted to overwrite files repeatedly, cancel the operation and try the following command: <code>yes | cp -rf magento2-updater-10.0.2/* update/</code>. Also see <a href="http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command" target="_blank">this article on stackexchange</a>.</p>
+	<div class="bs-callout bs-callout-tip" markdown="1">
+	If you're prompted to overwrite files repeatedly, cancel the operation and try the following command: `yes | cp -rf magento2-updater-10.0.2/* update/`. Also see [this article on stackexchange](http://magento.stackexchange.com/questions/119865/magento-2-patch-mdva-449-ssh-command){: target="_blank"}.
 	</div>
 
 4. After copying all  patch-related files to their appropriate locations,  remove any unwanted files and directories by executing these commands:

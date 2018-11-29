@@ -1,12 +1,10 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: TreeMassAction Component
 menu_title: TreeMassAction Component
 menu_node:
 menu_order: 4
-version: 2.0
-github_link: ui-components/ui-secondary-treemass.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-treemass.html
 
 ---
@@ -82,9 +80,10 @@ Example:
 {% endhighlight%}
 
 #### Configuration
+
 Component can be configured in two ways:
 
-* Globally: using any module's <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances
+* Globally: using any module's [`view/*/ui_component/etc/definition.xml`]({{ page.baseurl }}/ui-library/ui-definition.html) file. All settings declared in this file are applied to all component's instances
 * Locally: using concrete component instance configuration, such as `<Magento_Catalog_module_dir>/view/adminhtml/ui_component/product_listing.xml`
 
 #### TreeMassAction JS Component Structure
@@ -150,7 +149,7 @@ Example of configuration modifications:
             <item name="config" xsi:type="array">
                 <item name="confirm" xsi:type="array">
                     <item name="title" xsi:type="string" translate="true">Edit items</item>
-                    <item name="message" xsi:type="string" translate="true">Are you sure you wan't to edit selected items?</item>
+                    <item name="message" xsi:type="string" translate="true">Are you sure you want to edit selected items?</item>
                 </item>
                 <item name="type" xsi:type="string">edit</item>
                 <item name="label" xsi:type="string" translate="true">Edit</item>
