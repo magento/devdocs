@@ -133,7 +133,7 @@ Specify the following parameters, which are required to launch tests:
 - `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
   Example: `MAGENTO_BASE_URL=http://magento.test`
 
-- `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
+- `MAGENTO_BACKEND_NAME` must contain the relative path for the Admin area.
   Example: `MAGENTO_BACKEND_NAME=admin`
 
 - `MAGENTO_ADMIN_USERNAME` must contain the username required for authorization in the Admin area.
