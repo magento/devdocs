@@ -2228,6 +2228,12 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 **Known issue:** For Inventory Management, Single Source merchants may experience performance degradation with all products assigned to the Default Source and Default Stock. As a workaround for best performance, we recommend creating and assigning all products to one custom source and stock. This will affect bundled products support. To continue with bundled products, continue using Default Source and Stock in Single Source mode. We plan to have a resolution and bundled product multi-sourcing support in a later release. This does not affect Multi Source merchants. For details, see [Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html).
 
+**Known issue:** The `--convert-old-scripts` command has the following limitations, which will be addressed in a future release:
+
+* Only tables and columns are currently supported. 
+
+* Renaming of tables is not supported. 
+
 
 
 ## Community contributions
