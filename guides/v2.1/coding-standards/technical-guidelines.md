@@ -514,9 +514,7 @@ class View extends Template
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
-6.2.5. Configuration for the presentation layer SHOULD be declared in corresponding application area. This includes events and plugins that customize presentation layer
-
-6.2.5.1. Configuration that applies to all areas CAN be declared in `global` area
+6.2.5. Configuration for the presentation layer MUST be declared in corresponding application area. This includes events and plugins that customize presentation layer
 
 ###  6.3. Data Access (Persistence) layer
 
