@@ -77,7 +77,7 @@ Test and verify Fastly caching is correctly working in Production. For detailed 
 
 ## Performance testing {#performance}
 
-We recommend that you review the [Magento Performance Toolkit]({{ site.mage2200url }}setup/performance-toolkit) options as part of your pre-launch readiness process.
+We recommend that you review the [Magento Performance Toolkit]({{ site.mage2300url }}setup/performance-toolkit) options as part of your pre-launch readiness process.
 
 You can also test using the following 3rd party options:
 
