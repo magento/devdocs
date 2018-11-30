@@ -17,7 +17,7 @@ baseurl: ""
 
 # Parameters for the version switcher. Numeric values must be wraped in quotes.
 #
-version: "2.2"
+version: "2.3"
 versions:
    -
       name: "2.0"
@@ -134,6 +134,10 @@ algolia:
 google:
   analytics: UA-66243208-1
 
+# Toggles the _plugin/html-check-hook.rb script that checks links in the generated HTML
+#
+check_links: true
+
 #############
 # Variables #
 #############
@@ -163,7 +167,7 @@ mage2200url: https://github.com/magento/magento2/blob/2.2/
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
-mage2300url: https://github.com/magento/magento2/blob/2.3-develop/
+mage2300url: https://github.com/magento/magento2/blob/2.3/
 
 
 ##########
