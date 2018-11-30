@@ -1,13 +1,8 @@
 ---
 group: ui-components-guide
-subgroup:
 title: Overview of UI components
-landing-page: UI Components
-menu_title: Overview of UI components
-menu_order: 1
 redirect_from:
   - /guides/v2.1/ui-components/ui-component.html
-  - /guides/v2.2/ui-components/ui-component.html
   - /guides/v2.1/ui-components/ui-definition.html
   - /guides/v2.1/ui-components/ui-secondary.html
   - /guides/v2.1/ui-components/ui_components_js.html
