@@ -469,7 +469,7 @@ It contains one or more `value` elements.
 
 ### value {#value-tag}
 
-The `type` of the `array` item or the entity property of the `array` item. 
+Defines the data type of the array elements. Possible values can be primitive data types supported by operation schema, custom data types define in meta data, or a `field` of a custom data type.
 
 Examples:
 ```xml
