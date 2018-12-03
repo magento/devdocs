@@ -39,7 +39,7 @@ Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c
 <type name="Magento\Customer\CustomerData\SectionPoolInterface">
     <arguments>
         <argument name="sectionSourceMap" xsi:type="array">
-            <item name="compare-products" xsi:type="string">Magento\Catalog\CustomerData\CompareProducts</item>
+            <item name="custom-name" xsi:type="string">Vendor\ModuleName\CustomerData\ClassName</item>
         </argument>
     </arguments>
 </type>
