@@ -31,13 +31,13 @@ By default, the [STATIC_CONTENT_SYMLINK environment variable]({{page.baseurl}}/c
 
 Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must move locales to the file system. The {{site.data.var.ct}} package contains the `config:dump` command that reads locales and saves them in the `app/etc/config.php` file.
 
-1.  Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{page.baseurl}}/cloud/project/project-upgrade.html#create-a-new-configphp-file).
+1.  Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/guides/v2.2/cloud/project/project-upgrade.html#create-a-new-configphp-file).
 
 1.  The `.magento.env.yaml` configuration file should contain the following values:
 
     -  [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) is set to `true`
     -  [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) on build stage is set to `false`
-    -  [SCD_STRATEGY]({{page.baseurl}}/cloud/env/variables-build.html#scd_strategy) is set to `compact`
+    -  [SCD_STRATEGY]({{site.baseurl}}/guides/v2.2/cloud/env/variables-build.html#scd_strategy) is set to `compact`
 
 1.  Verify configuration of the [Post-deploy hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) in the `.magento.app.yaml` file.
 

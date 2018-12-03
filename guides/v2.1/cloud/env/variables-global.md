@@ -13,6 +13,7 @@ stage:
   global:
     GLOBAL_VARIABLE_NAME: value
 ```
+{% include cloud/customize-build-deploy.md %}
 
 ### `MIN_LOGGING_LEVEL`
 
