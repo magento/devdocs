@@ -91,7 +91,7 @@ Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allo
 Our default configuration allows the following:
 
 -  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
--  From the `/pub/static` and `/pub/media` paths, any file can be accessed
+-  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 

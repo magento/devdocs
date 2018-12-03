@@ -1,6 +1,10 @@
 ---
 group: cloud-guide
 title: Smart wizards
+redirect_from:
+  - /guides/v2.1/cloud/env/smart-wizards.html
+  - /guides/v2.2/cloud/env/smart-wizards.html
+  - /guides/v2.3/cloud/env/smart-wizards.html
 functional_areas:
   - Cloud
   - Setup
@@ -10,8 +14,8 @@ functional_areas:
 The smart wizards can assist you in determining if your Cloud configuration follows best practices. The available wizards assist with the following configurations:
 
 -  Ideal state for minimal deployment downtime
--  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
 -  Load balancing configuration for database and Redis
+-  Static Content Deployment (SCD) for on-demand, the build stage, or the deploy stage
 
 Each of the smart wizard commands provides a verification response and, if applicable, a recommendation for the proper configuration.
 
@@ -24,9 +28,7 @@ Command | Description
 `wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
 {:style="table-layout:auto;"}
 
-## Assisting the SCD on-demand configuration
-
-To verify your configuration properly enables the SCD on-demand feature:
+As an example to verify that your configuration properly enables the SCD on-demand feature, you can run the `scd-on-demand` wizard:
 
 ```bash
 ./vendor/bin/ece-tools wizard:scd-on-demand
@@ -48,7 +50,7 @@ SCD on-demand is disabled
 
 ## Verifying an ideal configuration
 
-The _ideal_ configuration for your Cloud project helps to minimize deployment downtime by warming the cache and generating static content when requested by the user. If your Cloud is not configured for this _ideal state_, then you receive a message similar to the following:
+The _ideal_ configuration for your Cloud project helps to minimize deployment downtime by warming the cache and generating static content when requested by the user. This wizard automatically runs during the deployment process. If your Cloud is not configured for this _ideal state_, then you receive a message similar to the following:
 
 ```terminal
 - SCD on build is not configured

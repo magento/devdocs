@@ -297,11 +297,14 @@ pages:
     - label: Optimize deployment
       url: /cloud/deploy/optimize-cloud-deploy.html
       children:
+        - label: Cloud deployment process
+          url: /cloud/deploy/cloud-deployment-process.html
+
         - label: Static content deployment
           url: /cloud/deploy/static-content-deployment.html
 
         - label: Smart wizards
-          url: /cloud/env/smart-wizards.html
+          url: /cloud/deploy/smart-wizards.html
 
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html
