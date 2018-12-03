@@ -167,7 +167,7 @@ Configure the following features and enable additional [configuration options](h
 
 * [Upload Fastly VCL snippets](#upload-vcl-snippets)
 * [Configure backends and Origin shielding](#backend)
-* [Customize response pages]({{ page.baseurl }}/cloud/guides/cloud-fastly-custom-response.html)
+* [Customize response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
 
 {:#info .bs-callout .bs-callout-info}
 *	Ignore the link to create a free Fastly account. We'll provide your Fastly
