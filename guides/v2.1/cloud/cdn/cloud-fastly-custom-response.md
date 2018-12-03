@@ -77,13 +77,9 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
     ![Update 503 response]
 
-1.	Click **Upload** to upload the customized HTML source to the Fastly server.
+1.	Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
 
 1.	Click **Save Config** at the top of the page to save the updated configuration file.
-
-1.  At the top of the page, the following message displays:
-
-system > cache management > click on Flush magento cache
 
 
 One or more of the Cache Types are invalidated: Configuration, Page Cache. Please go to Cache Management and refresh cache types. 
@@ -109,7 +105,7 @@ The following code sample shows the HTML source for the default page:
 </html>
 ```
 
-You can use the **Custom Synthetic Pages > Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event: 
+You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event: 
 
 ```html
 <p>"} req.http.x-request-id {"</p>
