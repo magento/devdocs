@@ -64,13 +64,13 @@ You can customize the default page by adapting the following HTML code to includ
 
 Verify that the modified source displays correctly in the browser. Then, add the customized HTML code to the Fastly configuration.
 
-### Add the custom response page to the Fastly configuration
+#### To  add the custom response page to the Fastly configuration
 
 1.  [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
-1.  Click **Stores > Settings > Configuration > Advanced > System**.
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache > Fastly Configuration > Custom Synthetic Pages**.
+1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
     ![Edit 503 error page]
 
@@ -79,12 +79,17 @@ Verify that the modified source displays correctly in the browser. Then, add the
 1.	Copy and paste the source code for your custom response page into the HTML field. 
 
     ![Update 503 response]
-	
-1.	Click **Upload** to update the Fastly configuation.
 
-1.	Click **Save Config** at the top of the page.
+1.	Click **Upload** to upload the customized HTML source to the Fastly server.
+
+1.	Click **Save Config** at the top of the page to save the updated configuration file.
+
+1.  At the top of the page, the following message displays:
+
+system > cache management > click on Flush magento cache
 
 
+One or more of the Cache Types are invalidated: Configuration, Page Cache. Please go to Cache Management and refresh cache types. 
 ## Customize the WAF response page
 
 If the Magento [Managed Cloud WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocks a customer request at the Fastly origin, they see the following default response page:
@@ -107,19 +112,23 @@ The following code sample shows the HTML source for the default page:
 </html>
 ```
 
-You can use the **Custom Synthetic Pages > Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event: `<p>"} req.http.x-request-id {"</p>`
+You can use the **Custom Synthetic Pages > Edit WAF page** option in the Fastly configuration menu to customize the default code for your {{ site.data.var.ece }} project. When you edit the code, retain the following line that provides the reference ID for the WAF blocking event: 
+
+```html
+<p>"} req.http.x-request-id {"</p>
+```
 
 
-{:.bs-callout .bs-callout-tip}
+{:.bs-callout .bs-callout-info}
 The Edit WAF option is available only if the Managed Cloud WAF service is enabled for your {{ site.var.data.ece }} project.
 
-### Edit the WAF page
+#### To edit the WAF page
 
 1.  [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
-1.  Click **Stores > Settings > Configuration > Advanced > System**.
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache > Fastly Configuration > Custom Synthetic Pages**.
+1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
     ![Edit WAF response option]
 
@@ -133,8 +142,9 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
     -  **MIME type**—Type `text/html`.
     -  **Content**—Edit the default HTML response to add custom CSS and update the title and messaging as needed.
 
-1.	Click **Save Config** at the top of the page.
+1.	Click **Upload** to upload the customized HTML source to the Fastly server.
 
+1.	Click **Save Config** at the top of the page to save the updated configuration file.
 
 <!-- Link definitions -->
 
@@ -147,7 +157,7 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 [Edit WAF response option]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-waf.png
 {: width="650px"}
 
-[Fastly default error page]: {{site.baseurl}}/common/images/cloud/cloud_fastly-503-example.png
+[Fastly default error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-503-example.png
 
 [Fastly custom error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-new-error-page.png
 {: width="650px"}
