@@ -8,9 +8,6 @@ redirect_from:
    - /guides/v2.1/cloud/access-acct/fastly.html
    - /guides/v2.2/cloud/access-acct/fastly.html
    - /guides/v2.3/cloud/access-acct/fastly.html
-   - /guides/v2.1/cloud/cdn/configure-fastly.html#fastly-errpg
-   - /guides/v2.2/cloud/cdn/configure-fastly.html#fastly-errpg
-   - /guides/v2.3/cloud/cdn/configure-fastly.html#fastly-errpg
 
 functional_areas:
   - Cloud
