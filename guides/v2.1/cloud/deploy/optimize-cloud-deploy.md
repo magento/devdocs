@@ -7,7 +7,7 @@ functional_areas:
   - SCD
 ---
 
-Site performance can suffer during the deployment process. The length of time a site is in maintenance mode when deploying to a production site depends on many factors, such as environment configuration and the amount of content a site contains. The first best-practice to optimizing your cloud deployment is to [upgrade to use `{{site.data.var.ct}}`]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) to benefit from the package features, such as commands to create a backup of the database and verify environment configuration.
+Site performance can suffer during the deployment process. The length of time a site is in maintenance mode when deploying to a production site depends on many factors, such as environment configuration and the amount of content a site contains. The first best-practice for optimizing your Cloud deployment is to [upgrade to use `{{site.data.var.ct}}`]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) to benefit from the package features, such as commands to create a backup of the database and verify environment configuration.
 
 -  [Cloud deployment process]({{page.baseurl}}/cloud/deploy/cloud-deployment-process.html)  
     There are three phases in the Cloud deployment process, and you can use the strengths and weaknesses of each phase to your advantage.
