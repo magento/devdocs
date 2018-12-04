@@ -194,11 +194,11 @@ To reindex using the command line:
 1.	Log in to your Magento server as, or switch to, the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.
 2.	Enter the following command to reindex all indexers:
 
-		php <your Magento install dir>/bin magento indexer:reindex
+		php <your Magento install dir>/bin/magento indexer:reindex
 
 	Enter the following command to reindex the catalog search index only:
 
-		php <your Magento install dir>/bin magento indexer:reindex catalogsearch_fulltext
+		php <your Magento install dir>/bin/magento indexer:reindex catalogsearch_fulltext
 
 3.	Wait while the indexers are reindexed.
 
