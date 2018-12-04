@@ -24,7 +24,7 @@ The _deploy_ phase places a temporary hold on incoming requests and transitions 
 -  `pub/static`—contains generated static files
 -  `var`—contains temporary files created during Magento runtime
 
-All other directories have read-only permissions. The new site becomes active, transitions the site out of maintenance mode, and releases the temporary hold on incoming requests.
+All other directories have read-only permissions. The new site becomes active at the end of the deploy phase as it transitions out of maintenance mode and releases the temporary hold on incoming requests.
 
 ## ![Post-deploy phase] Post-deploy phase
 
