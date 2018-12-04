@@ -8,7 +8,7 @@ functional_areas:
 ### What is a repository? {#m2devgde-repository-intro}
 
 Repositories give service requestors the ability to perform create, read, update, and delete (CRUD) operations on entities or a list of entities.
-A repository is an example of a [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer.
+A repository is an example of a [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the domain layer.
 
 #### Repository state
 
