@@ -13,6 +13,7 @@ stage:
   global:
     GLOBAL_VARIABLE_NAME: value
 ```
+{% include cloud/customize-build-deploy.md %}
 
 ### `MIN_LOGGING_LEVEL`
 
@@ -54,15 +55,15 @@ return array(
 
 ### `SKIP_HTML_MINIFICATION`
 
--  **Default**
-   - `true` for `{{site.data.var.ct}}` 2002.0.13 and later
-   - `false` for earlier versions of `{{site.data.var.ct}}`
+-  **Default**:
+   -  `true`—for `{{site.data.var.ct}}` 2002.0.13 and later
+   -  `false`—for earlier versions of `{{site.data.var.ct}}`
 -  **Version**—Magento 2.1.4 and later
 
 Enables or disables copying static view files to the `<magento_root>/init/` directory at the end of the build stage. If set to `true` files are not copied and HTML minification is available on request. Set this value to `true` to reduce downtime when deploying to Staging and Production environments.
 
--   **`false`**—Copies the `view_preprocessed` directory to the `<magento_root>/init/` directory at the end of the build stage, and restores the directory in the `<magento_root>/var` directory at the beginning of the deployment stage.
--   **`true`**—Enables on-demand HTML minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the _build_ stage.
+-   **`false`**—Copies the `view_preprocessed` directory to the `<magento_root>/init/` directory at the end of the build phase, and restores the directory in the `<magento_root>/var` directory at the beginning of the deploy phase.
+-   **`true`**—Enables on-demand HTML minification; does *not* copy the `<magento_root>var/view_preprocessed` to the `<magento_root>/init/` directory at the end of the build phase.
 
 Add the `SKIP_HTML_MINIFICATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
 
