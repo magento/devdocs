@@ -90,11 +90,11 @@ To reindex using the command line:
 
 	Enter the following command to reindex the catalog search index only:
 
-		php <your Magento install dir>/bin magento indexer:reindex catalogsearch_fulltext
+		php <your Magento install dir>/bin/magento indexer:reindex catalogsearch_fulltext
 
 	Enter the following command to reindex all indexers:
 
-		php <your Magento install dir>/bin magento indexer:reindex
+		php <your Magento install dir>/bin/magento indexer:reindex
 
 3.	Wait while the reindexing completes.
 
