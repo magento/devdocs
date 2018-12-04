@@ -295,7 +295,7 @@ pages:
           url: /cloud/project/project-webint-snap.html
 
     - label: Optimize deployment
-      url: /cloud/deploy/optimize-cloud-deploy.html
+      url: /cloud/deploy/optimize-cloud-deployment.html
       children:
         - label: Cloud deployment process
           url: /cloud/deploy/cloud-deployment-process.html
