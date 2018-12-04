@@ -11,7 +11,7 @@ functional_areas:
   - Configuration
 ---
 
-The smart wizards can assist you in determining if your Cloud configuration follows best practices. The available wizards assist with the following configurations:
+The smart wizards can help you determine whether your Cloud configuration follows best practices. The available wizards assist with the following configurations:
 
 -  Ideal state for minimal deployment downtime
 -  Load balancing configuration for database and Redis
@@ -21,14 +21,14 @@ Each of the smart wizard commands provides a verification response and, if appli
 
 Command | Description
 ------- | -----------
-`wizard:ideal-state` | Check that SCD is on the _build_ stage, the `SKIP_HTML_MINIFICATION` variable is set to `true`, and the post_deploy hook configured.
-`wizard:master-slave` | Check that the `REDIS_USE_SLAVE_CONNECTION` variable  and the `MYSQL_USE_SLAVE_CONNECTION` variable is set to `true`.
+`wizard:ideal-state` | Check that SCD is on the _build_ stage, the `SKIP_HTML_MINIFICATION` variable is `true`, and the post_deploy hook configured.
+`wizard:master-slave` | Check that the `REDIS_USE_SLAVE_CONNECTION` variable and the `MYSQL_USE_SLAVE_CONNECTION` variable is `true`.
 `wizard:scd-on-demand` | Check that the `SCD_ON_DEMAND` global environment variable is `true`.
-`wizard:scd-on-build ` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies the `config.php` file contains information for stores, store groups, and websites.
-`wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
+`wizard:scd-on-build ` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _build_ stage. Verifies that the `config.php` file contains information for stores, store groups, and websites.
+`wizard:scd-on-deploy` | Check that the `SCD_ON_DEMAND` global environment variable is `false` and the `SKIP_SCD` environment variable is `false` for the _deploy_ stage. Verifies that the `config.php` file does _NOT_ contain the list of stores, store groups, and websites with related information.
 {:style="table-layout:auto;"}
 
-As an example to verify that your configuration properly enables the SCD on-demand feature, you can run the `scd-on-demand` wizard:
+As an example, you can verify that your configuration properly enables the SCD on-demand feature:
 
 ```bash
 ./vendor/bin/ece-tools wizard:scd-on-demand
@@ -61,9 +61,9 @@ Ideal state is not configured
 ```
 {: .no-copy}
 
-Make the following corrections to your configuration:
+Based on the output, you need to make the following corrections to your configuration:
 
-1.  Enable the Skip HTML minification:
+1.  Enable the Skip HTML minification variable.
 
     > .magento.env.yaml
     
@@ -73,7 +73,7 @@ Make the following corrections to your configuration:
         SKIP_HTML_MINIFICATION: true
     ```
 
-1.  Configure the post-deploy hook:
+1.  Configure the post-deploy hook.
 
     > .magento.app.yaml
     
@@ -82,7 +82,7 @@ Make the following corrections to your configuration:
             php ./vendor/bin/ece-tools post-deploy
     ```
 
-1.  Push your code changes and run the test again. When your configuration is _ideal_, you receive the following message:
+1.  Push your code changes and run the test again. When your configuration is _ideal_, you receive the following message.
 
     ```terminal
     Ideal state is configured

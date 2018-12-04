@@ -6,7 +6,7 @@ functional_areas:
   - Configuration
 ---
 
-Static content deployment (SCD) has a great impact on the store deployment process that depends on the amount of content generated—such as images, scripts, CSS, videos, themes, locales, and web pages—and when to generate the content. By default, the static content generates during the [deploy phase]({{page.baseurl}}/cloud/deploy/cloud-deployment-process.html#-deploy-phase) when the site is down; however, this can take time because it must copy the content to the mounted `pub/static` directory.
+Static content deployment (SCD) has a significant impact on the store deployment process that depends on how much content to generate—such as images, scripts, CSS, videos, themes, locales, and web pages—and when to generate the content. For example, the default strategy generates static content during the [deploy phase]({{page.baseurl}}/cloud/deploy/cloud-deployment-process.html#-deploy-phase) when the site is in maintenance mode; however, this deployment strategy takes time to write the content directly to the mounted `pub/static` directory. You have several options or strategies to help you improve the deployment time depending on your needs.
 
 ## Minify content
 
@@ -29,15 +29,17 @@ Generating static content during the build phase with minified HTML is the optim
 
 By default, the [STATIC_CONTENT_SYMLINK environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#static_content_symlink) is set to `true`. After generating the static content during the build phase, it creates a symlink to the content folder.
 
-Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must move locales to the file system. The {{site.data.var.ct}} package contains the `config:dump` command that reads locales and saves them in the `app/etc/config.php` file.
+Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must use the `config:dump` command in the {site.data.var.ct}} package to move locales to the file system. It reads the locales and saves them in the `app/etc/config.php` file.
+
+#### To configure your project to generate SCD on build:
 
 1.  Log in to your Cloud environment using SSH and move locales to the file system, then update the [`config.php` file]({{site.baseurl}}/guides/v2.2/cloud/project/project-upgrade.html#create-a-new-configphp-file).
 
 1.  The `.magento.env.yaml` configuration file should contain the following values:
 
-    -  [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) is set to `true`
-    -  [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) on build stage is set to `false`
-    -  [SCD_STRATEGY]({{site.baseurl}}/guides/v2.2/cloud/env/variables-build.html#scd_strategy) is set to `compact`
+    -  [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) is `true`
+    -  [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) on build stage is `false`
+    -  [SCD_STRATEGY]({{site.baseurl}}/guides/v2.2/cloud/env/variables-build.html#scd_strategy) is `compact`
 
 1.  Verify configuration of the [Post-deploy hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks) in the `.magento.app.yaml` file.
 
@@ -55,7 +57,7 @@ When using the SCD on-demand strategy, it helps to preload the cache with pages 
 
 ### Skipping SCD
 
-In some cases you could choose to skip generatating static content completely. You can set the [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) environment variable in the global stage to ignore other configurations related to SCD. This does not affect existing content in the `~/pub/static` directory.
+In some cases you could choose to skip generating static content completely. You can set the [SKIP_SCD]({{page.baseurl}}/cloud/env/variables-build.html#skip_scd) environment variable in the global stage to ignore other configurations related to SCD. This does not affect existing content in the `~/pub/static` directory.
 
 [SCD Load Comparison]: {{site.baseurl}}/common/images/cloud/scd-load-times.png
 {: width="700px"}

@@ -17,7 +17,7 @@ The _build_ phase assembles containers for the services defined in the configura
 
 ## ![Deploy phase] Deploy phase
 
-The _deploy_ phase places a temporary hold on incoming requests and transitions the site to [maintenance mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The deploy phase uses the new containers and, after mounting the file system, opens network connections, activates the services defined in the `relationships` section of the `.magento.app.yaml` file, and runs the deploy hooks defined in the `.magento.app.yaml` file. Everything is _read only_, except for directories defined in the `.magento.app.yaml` file. See the [`mounts` property]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts).
+The _deploy_ phase places a temporary hold on incoming requests and transitions the site to [maintenance mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The deploy phase uses the new containers and, after mounting the file system, opens network connections, activates the services defined in the `relationships` section of the `.magento.app.yaml` file, and runs the deploy hooks defined in the `.magento.app.yaml` file. Everything is _read only_, except for directories defined in the `.magento.app.yaml` file. By default, the [`mounts` property]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts) property includes the following directories:
 
 -  `app/etc`—contains the `env.php` and `config.php` configuration files
 -  `pub/media`—contains all media data, such as Magento products or categories
@@ -28,7 +28,7 @@ All other directories have read-only permissions. The new site becomes active, t
 
 ## ![Post-deploy phase] Post-deploy phase
 
-The _post-deploy_ phase runs the post-deploy hooks defined in the `.magento.app.yaml` file. Performing any action on this phase can dramatically affect site performance.
+The _post-deploy_ phase runs the post-deploy hooks defined in the `.magento.app.yaml` file. Performing any action on this phase can affect site performance; however, you can use the [WARM_UP_PAGES]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) environment variable to populate the cache.
 
 ## ![Verify state] Verify configurations
 

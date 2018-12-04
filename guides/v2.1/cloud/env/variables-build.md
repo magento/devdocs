@@ -111,9 +111,9 @@ If you need to quickly debug code, use this variable to skip compilation before 
 
 Set to `true` to skip static content deployment during the build phase.
 
-If you already deploy static content during the build phase with [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html), you may want to turn it off for a quick build test.
+If you already deploy static content during the build phase with [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html), you can skip generating static content for a quick build test.
 
-We do not recommend setting this option to `true`, because running static content deployment during the deploy phase can greatly increase deployment times and downtime for your live site.
+We do not recommend setting this option to `true` because generating static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:

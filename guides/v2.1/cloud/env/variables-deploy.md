@@ -356,7 +356,7 @@ stage:
 
 Set to `true` to skip static content deployment during the deploy phase.
 
-We recommend setting this option to `true`, because running static content deployment during the deploy phase can greatly increase deployment times and downtime for your live site.
+We recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:

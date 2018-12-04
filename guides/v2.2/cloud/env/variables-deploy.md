@@ -392,7 +392,7 @@ stage:
 
 Set to `true` to skip static content deployment during the deploy phase.
 
-We recommend setting this option to `true`, because running static content deployment during the deploy phase can greatly increase deployment times and downtime for your live site.
+We recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:
@@ -406,6 +406,10 @@ stage:
 -  **Version**—Magento 2.1.4 and later
 
 Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
+
+If you generate static content during the build phase, it creates a symlink to the content folder.
+If you generate static content during the deploy phase, it writes directly to the content folder.
+Generating static content on demand disables this variable.
 
 ```yaml
 stage:
