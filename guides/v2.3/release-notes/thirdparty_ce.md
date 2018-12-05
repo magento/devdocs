@@ -18,7 +18,7 @@ title: Magento Open Source third-party licenses
 
 |Name | Version | License |
 |--- | --- | --- |
-|[Color picker](www.eyecon.ro) | - | MIT and GPL|
+|[Color picker](https://www.eyecon.ro) | - | MIT and GPL|
 |[extjs](https://www.sencha.com/) | 1.0.1| Open GPL 3.0 |
 |[FormData for XMLHttpRequest 2](https://gist.github.com/Rob--W/8b5adedd84c0d36aba64) |-| MIT|
 |HTML5 Shiv | v3.6 | MIT/GPL2|
@@ -34,8 +34,8 @@ title: Magento Open Source third-party licenses
 |jsTree | 1.0-rc3 2010 | MIT/GPL Version 2|
 |Less - Leaner CSS | v2.3.1 2009-2015 | Apache v2|
 |matchMedia | 2012 | MIT/BSD|
-|Modernizr | v2.6.1 | [BSD and MIT licenses](www.modernizr.com/license/)|
-|[moment-timezone](github.com/moment/moment-timezone) |  0.5.5 | MIT |
+|Modernizr | v2.6.1 | [BSD and MIT licenses](https://www.modernizr.com/license/)|
+|[moment-timezone](https://github.com/moment/moment-timezone) |  0.5.5 | MIT |
 |moment.js | 2.17.1 | MIT|
 |Mutation Observer | 2014 | [BSD](http://polymer.github.io/LICENSE.txt)|
 |prototype/validation | 1.5.4.1 2007 |
