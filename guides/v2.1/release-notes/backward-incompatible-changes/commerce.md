@@ -19,6 +19,10 @@ The changes are aggregated into two tables:
 {: .bs-callout .bs-callout-warning }
 When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
 
+## 2.1.15 - 2.1.16    {#releases-2_1_15-2_1_16}
+
+{% include backward-incompatible-changes/commerce/2.1.15-2.1.16.md %}
+
 ## 2.1.14 - 2.1.15    {#releases-2_1_14-2_1_15}
 
 {% include backward-incompatible-changes/commerce/2.1.14-2.1.15.html %}

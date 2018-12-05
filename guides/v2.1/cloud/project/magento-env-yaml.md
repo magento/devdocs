@@ -27,7 +27,7 @@ The `.magento.env.yaml` file includes the following sections:
 The latest sample of the `.magento.env.yaml` file contains a detailed definition for each variable in the following reference topics:
 
 -   [Application]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)—variables control administrative credentials
--   [Global]({{ page.baseurl }}/cloud/env/variables-intro.html)—variables control actions in the following stages:
+-   [Global]({{ page.baseurl }}/cloud/env/variables-global.html)—variables control actions in the following stages:
     -   [Build]({{ page.baseurl }}/cloud/env/variables-build.html)—variables control build actions
     -   [Deploy]({{ page.baseurl }}/cloud/env/variables-deploy.html)—variables control deploy actions
     -   [Post-deploy]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)—variables control actions after deploy
