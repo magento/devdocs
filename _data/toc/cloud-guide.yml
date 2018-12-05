@@ -203,9 +203,6 @@ pages:
             - label: Logging handlers
               url: /cloud/env/log-handlers.html
 
-            - label: Smart wizards
-              url: /cloud/env/smart-wizards.html
-
         - label: Environment variables
           url: /cloud/env/variables-intro.html
           children:
@@ -296,6 +293,18 @@ pages:
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
+
+    - label: Optimize deployment
+      url: /cloud/deploy/optimize-cloud-deployment.html
+      children:
+        - label: Cloud deployment process
+          url: /cloud/deploy/cloud-deployment-process.html
+
+        - label: Static content deployment
+          url: /cloud/deploy/static-content-deployment.html
+
+        - label: Smart wizards
+          url: /cloud/deploy/smart-wizards.html
 
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html

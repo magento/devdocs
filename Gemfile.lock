@@ -156,6 +156,9 @@ GEM
     jekyll-github-metadata (2.9.4)
       jekyll (~> 3.1)
       octokit (~> 4.0, != 4.4.0)
+    jekyll-last-modified-at (1.0.1)
+      jekyll (~> 3.3)
+      posix-spawn (~> 0.3.9)
     jekyll-mentions (1.4.1)
       html-pipeline (~> 2.3)
       jekyll (~> 3.0)
@@ -250,6 +253,7 @@ GEM
     parallel (1.12.1)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
+    posix-spawn (0.3.13)
     progressbar (1.10.0)
     public_suffix (2.0.5)
     rb-fsevent (0.10.3)
@@ -288,7 +292,8 @@ DEPENDENCIES
   github-pages
   html-proofer
   jekyll-algolia (~> 1.0)
+  jekyll-last-modified-at
   launchy
 
 BUNDLED WITH
-   1.16.1
+   1.16.5
