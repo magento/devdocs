@@ -3,33 +3,41 @@ group: release-notes
 title: Magento Open Source third-party licenses
 ---
 
-This page contains links to the third party components used within {{site.data.var.ce}}.
-Click the **Name** links to view the repository and the license agreement.
+<!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_3/open-source/composer_lock.json' file
+{% assign packages = site.data.codebase.v2_3.open-source.composer_lock.packages %} -->
 
-## Packages required for production
+<!-- The 'packages-dev' variable contains the 'packages-dev' node of the '_data/codebase/v2_3/open-source/composer_lock.json' file
+{% assign packages-dev = site.data.codebase.v2_3.open-source.composer_lock.packages-dev %} -->
 
-{% assign packages = site.data.codebase.composer-lock.packages %}
+<!-- The 'packages-dev' variable contains the 'packages-dev' node of the '_data/codebase/v2_3/open-source/composer_lock.json' file
+{% assign edition = site.data.var.ce %} -->
 
-Name | Version |  License | Description
---- | --- | --- | --- {% for package in packages %}
-[{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }}{% endfor %}
+{% include release-notes/third_party_libs.md%}
 
-## Packages required for development
+## Additional packages
 
-{% assign packages-dev = site.data.codebase.composer-lock.packages-dev %}
-
-Name | Version |  License | Description
---- | --- | --- | --- {% for package in packages-dev %}
-[{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }}{% endfor %}
-
-## Other supported packages
-
-Name                                                                      | Version | License
---------------------------------------------------------------------------|---------|---------
-[ircmaxell/password-compat](https://github.com/ircmaxell/password_compat) | v1.0.4  | MIT
-[seld/cli-prompt](https://github.com/Seldaek/cli-prompt)                  | 1.0.3   | MIT
-[Swagger UI](https://github.com/swagger-api/swagger-ui)                   | 2.0     | Apache 2
-[symfony/debug](https://github.com/symfony/debug)                         | v3.0.9  | MIT
-[symfony/polyfill-php54](https://github.com/symfony/polyfill-php54)       | v1.6.0  | MIT
-[symfony/polyfill-php55](https://github.com/symfony/polyfill-php55)       | v1.6.0  | MIT
-[symfony/polyfill-xml](https://github.com/symfony/polyfill-xml)           | v1.6.0  | MIT
+|Name | Version | License |
+|--- | --- | --- |
+|[Color picker](www.eyecon.ro) | - | MIT and GPL|
+|[extjs](https://www.sencha.com/) | 1.0.1| Open GPL 3.0 |
+|[FormData for XMLHttpRequest 2](https://gist.github.com/Rob--W/8b5adedd84c0d36aba64) |-| MIT|
+|HTML5 Shiv | v3.6 | MIT/GPL2|
+|jQuery Color Animations | v2.1.2 | MIT|
+|jQuery File Upload File Processing Plugin | 1.0 2012 | MIT|
+|jQuery File Upload Plugin | 5.16.4 2010 | MIT|
+|jQuery File Upload Plugin JS Example | 6.7 2010 | MIT|
+|jQuery hashchange event | v1.3 2010 | [MIT and GPL](http://benalman.com/about/license/)|
+|jQuery Iframe Transport Plugin | 1.5| 2011|
+|jQuery JavaScript Library | v1.12.4 | [MIT](http://jquery.org/license)|
+|jQuery Timepicker Addon | v1.4.3 2013 | MIT|
+|jQuery UI | v1.10.4 2014 |  MIT|
+|jsTree | 1.0-rc3 2010 | MIT/GPL Version 2|
+|Less - Leaner CSS | v2.3.1 2009-2015 | Apache v2|
+|matchMedia | 2012 | MIT/BSD|
+|Modernizr | v2.6.1 | [BSD and MIT licenses](www.modernizr.com/license/)|
+|[moment-timezone](github.com/moment/moment-timezone) |  0.5.5 | MIT |
+|moment.js | 2.17.1 | MIT|
+|Mutation Observer | 2014 | [BSD](http://polymer.github.io/LICENSE.txt)|
+|prototype/validation | 1.5.4.1 2007 |
+|Sizzle CSS Selector Engine | v2.2.1 | [MIT](http://jquery.org/license)|
+|Underscore.js | 1.8.2 | MIT|
