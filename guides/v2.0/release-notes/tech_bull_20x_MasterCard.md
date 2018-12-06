@@ -9,7 +9,7 @@ menu_order: 7
 
 *Technical bulletin published on May 19, 2017.*
 
-These instructions apply to anyone running Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition) version 2.0.x. 
+These instructions apply to anyone running {{site.data.var.ce}} (formerly Community Edition (CE) or {{site.data.var.ce}} (formerly Enterprise Edition (EE) version 2.0.x. 
 
 ### Issue
 

@@ -8,7 +8,7 @@ menu_order: 3
 ---
 
 
-These instructions apply to anyone upgrading to Magento Open Source (formerly Community Edition) or Magento Commerce (formerly Enterprise Edition)  version 2.1 (including a Release Candidate). 
+These instructions apply to anyone upgrading to {{site.data.var.ce}} (formerly Community Edition (CE) or {{site.data.var.ce}} (formerly Enterprise Edition (EE)  version 2.1 (including a Release Candidate). 
 
 See one of the following sections for more information:
 
