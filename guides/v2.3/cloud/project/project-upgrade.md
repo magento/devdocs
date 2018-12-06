@@ -6,7 +6,7 @@ functional_areas:
   - Upgrade
 ---
 
-You can upgrade the core {{site.data.var.ee}} code base to version 2.3. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{page.baseurl}}/cloud/project/project-upgrade-parent.html) for upgrade path details.
+You can upgrade the core {{site.data.var.ee}} code base to version 2.3. It is best to review the summary of the updated [technology stack]({{site.baseurl}}/guides/v2.3/install-gde/system-requirements-tech.html) before upgrading your project. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first. See [Upgrades and patches]({{page.baseurl}}/cloud/project/project-upgrade-parent.html) for upgrade path details.
 
 It is a best practice to verify the `ADMIN_EMAIL` variable, because it is required for upgrading and patching {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
 
