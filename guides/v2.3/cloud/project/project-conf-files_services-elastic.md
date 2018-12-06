@@ -42,10 +42,12 @@ If you prefer using an existing search service, like Elasticsearch, instead of r
 1.  Add, commit, and push code changes.
 
     ```bash
-    git add -A && git commit -m "Enable elasticsearch" && git push origin <branch name>
+    git add -A && git commit -m "Enable Elasticsearch" && git push origin <branch name>
     ```
 
     For information on how these changes affect your environments, see [Services]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
+
+1.  [Verify the relationships](#verify-relationships) and configure Elasticsearch in the Admin UI.
 
 ## Elasticsearch plugins
 
@@ -68,7 +70,7 @@ For documentation on plugins, see [Elasticsearch plugin documentation](https://w
 
 ## Verify relationships
 
-{{site.data.var.ece}} uses the [MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/env/variables-cloud.html) variable to retrieve the environment-related relationships. You must use this information when you configure Elasticsearch through the Magento Admin.
+{{site.data.var.ece}} uses the [MAGENTO_CLOUD_RELATIONSHIPS]({{ page.baseurl }}/cloud/env/variables-cloud.html) variable to retrieve the environment-related relationships. You must use this information when you [configure Elasticsearch through the Magento Admin]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html).
 
 #### To print the connection information for Elasticsearch:
 
@@ -90,9 +92,5 @@ The response includes all relationships for services and configuration data for 
 ```
 {: .no-copy}
 
-## Configure Elasticsearch
-
-The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
-
 {:.bs-callout .bs-callout-warning}
-Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
+The Staging and Production environments share a single Elasticsearch instance; therefore, you must specify a unique Elasticsearch prefix for each environment.
