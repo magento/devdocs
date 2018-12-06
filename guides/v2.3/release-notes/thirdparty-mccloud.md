@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Magento Commerce (Cloud) third-party licenses
+title: Magento Commerce Cloud third-party licenses
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_3/cloud/composer_lock.json' file
