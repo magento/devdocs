@@ -20,6 +20,8 @@ It is a best practice to verify the `ADMIN_EMAIL` variable, because it is requir
 
 ## Complete the upgrade
 
+If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`extensions` section of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#configure-php-options). For Pro projects, you need to create a support ticket to completely disable the `mcrypt` extension.
+
 1.  Before completing the upgrade, you must [update the `autoload`]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
 
 1.  Change to your Magento root directory and set the upgrade version.
