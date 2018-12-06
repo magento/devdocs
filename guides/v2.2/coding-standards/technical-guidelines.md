@@ -520,6 +520,8 @@ class View extends Template
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
+6.2.5 Blocks MUST NOT assume user input has been validated in an action and, if they use user input directly, must validate it themselves.
+
 ###  6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
