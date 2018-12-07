@@ -47,7 +47,9 @@ To find the web server user's group:
 
 *	CentOS:
 
-	grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
+    ```bash
+    grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
+    ```
     # or
     grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
 	
