@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Application
-version: 2.0
-github_link: cloud/project/project-conf-files_magento-app.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-cron.html
   - /guides/v2.1/cloud/before/before-setup-env-cron.html
@@ -15,14 +13,14 @@ functional_areas:
 ## About `.magento.app.yaml` {#cloud-yaml-platform}
 {{site.data.var.ee}} supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
 
-This file controls the application and the way it is built and deployed on {{site.data.var.ece}}. To see a sample of the file, see [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="\_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
+This file controls the application and the way it is built and deployed on {{site.data.var.ece}}. To see a sample of the file, see [`.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}. Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
 {% include cloud/note-pro-using-yaml.md %}
 
 The following sections discuss properties in `.magento.app.yaml`.
 
 ## Defaults {#cloud-yaml-default}
-`.magento.app.yaml` has many default values; see the [sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="\_blank"}.
+`.magento.app.yaml` has many default values; see the [sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}.
 
 ## `name` property {#name}
 `name` identifies the application in the project. {{site.data.var.ee}} supports multiple applications in a project, so each application must have a *unique name* in a project.
@@ -31,9 +29,8 @@ The following sections discuss properties in `.magento.app.yaml`.
 
 For example, if the value of `name` is `app`, you must use `app:php` in the upstream field. You can also use this name in multi-application relationships.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 If you change the name you should think about updating your other configuration files (`routes.yaml` or the different `.magento.app.yaml`, you will have in a multi-application project. Changing the name has no effect on your different services (such as databases)
-</div>
 
 
 ## `type` and `build` {#cloud-yaml-platform-type}
@@ -109,6 +106,7 @@ The following displays the default set of web accessible locations associated wi
 
 ```yaml
 # The configuration of app when it is exposed to the web.
+
 web:
 locations:
     "/":
@@ -145,9 +143,8 @@ locations:
 `disk` defines the size of the persistent disk size of the
 application in MB.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The minimal recommended disk size is 256MB. If you see the error <code>UserError: Error building the project: Disk size may not be smaller than 128MB</code>, increase the size to 256MB.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ## `mounts` {#cloud-yaml-platform-mounts}
 `mounts` is an object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. It's in the form `volume_id[/subpath]`.
@@ -156,6 +153,7 @@ The following is a default list of mounts configured in `magento.app.yaml`:
 
 ```yaml
 # The mounts that will be performed when the package is deployed.
+
 mounts:
     "var": "shared:files/var"
     "app/etc": "shared:files/etc"
@@ -172,9 +170,8 @@ The format for adding your mount to this list is as follows:
 * `shared` means that the volume is shared between your applications inside an environment.
 * `disk` key defines the size available for that `shared` volume
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Important: The subpath portion of the mount is the unique identifier of the files area. If changed, files at the old location will be permanently lost. Do not change this value once your site has data unless you really want to lose all existing data.
-</div>
 
 If you also want the mount web accessible, you must add it to the [`web`](#cloud-yaml-platform-web) block of locations.
 
@@ -223,8 +220,8 @@ The home directory, where your application is mounted, is `/app`, and that is th
 
 The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### [Example] Compile SASS files using grunt
-For example, to compile SASS files using grunt:
+#### [Example] Compile Sass files using grunt
+For example, to compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -242,7 +239,7 @@ hooks:
     php ./bin/magento magento-cloud:build
 ```
 
-You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
+You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ## `crons` {#cloud-yaml-platform-cron}
 `crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
@@ -264,6 +261,7 @@ crons:
 ```
 
 ## Configure PHP options {#cloud-yaml-platform-php}
+
 You can choose which version of PHP to run in your `.magento.app.yaml` file:
 
 ```yaml
@@ -274,6 +272,7 @@ type: php:5.6
 {{site.data.var.ece}} supports PHP 5.5, 5.6, and 7.0.
 
 ### PHP extensions {#cloud-yaml-platform-php-ext}
+
 You can define additional PHP extensions you want to enable or disable. Example:
 
 ```yaml
@@ -293,62 +292,62 @@ To view the current list of PHP extensions, SSH into your environment and enter 
 
 Magento requires the following PHP extensions that are enabled by default:
 
-*	[curl](http://php.net/manual/en/book.curl.php){:target="\_blank"}
-*	[gd](http://php.net/manual/en/book.image.php){:target="\_blank"}
-*	[intl](http://php.net/manual/en/book.intl.php){:target="\_blank"}
+*	[curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
+*	[gd](http://php.net/manual/en/book.image.php){:target="_blank"}
+*	[intl](http://php.net/manual/en/book.intl.php){:target="_blank"}
 *	PHP 7 only:
 
-	*	[json](http://php.net/manual/en/book.json.php){:target="\_blank"}
-	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="\_blank"}
-*	[mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="\_blank"}
-*	[PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="\_blank"}
-*	[bc-math](http://php.net/manual/en/book.bc.php){:target="\_blank"}
-*	[mbstring](http://php.net/manual/en/book.mbstring.php){:target="\_blank"}
-*	[mhash](http://php.net/manual/en/book.mhash.php){:target="\_blank"}
-*	[openssl](http://php.net/manual/en/book.openssl.php){:target="\_blank"}
-*	[SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="\_blank"}
-*	[soap](http://php.net/manual/en/book.soap.php){:target="\_blank"}
-*	[xml](http://php.net/manual/en/book.xml.php){:target="\_blank"}
-*	[zip](http://php.net/manual/en/book.zip.php){:target="\_blank"}
+	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
+	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
+*	[mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
+*	[PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php){:target="_blank"}
+*	[bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"}
+*	[mbstring](http://php.net/manual/en/book.mbstring.php){:target="_blank"}
+*	[mhash](http://php.net/manual/en/book.mhash.php){:target="_blank"}
+*	[openssl](http://php.net/manual/en/book.openssl.php){:target="_blank"}
+*	[SimpleXML](http://php.net/manual/en/book.simplexml.php){:target="_blank"}
+*	[soap](http://php.net/manual/en/book.soap.php){:target="_blank"}
+*	[xml](http://php.net/manual/en/book.xml.php){:target="_blank"}
+*	[zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 
 You must install the following extensions:
 
-* [ImageMagick](http://php.net/manual/en/book.imagick.php){:target="\_blank"} 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
-*	[xsl](http://php.net/manual/en/book.xsl.php){:target="\_blank"}
-*	[redis](https://pecl.php.net/package/redis){:target="\_blank"}
+* [ImageMagick](http://php.net/manual/en/book.imagick.php){:target="_blank"} 6.3.7 (or later), ImageMagick can optionally be used with the `gd` extension
+*	[xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
+*	[redis](https://pecl.php.net/package/redis){:target="_blank"}
 
 In addition, we strongly recommend you enable `opcache`.
 
 Other PHP extensions you can optionally install:
 
-*	[apcu](http://php.net/manual/en/book.apcu.php){:target="\_blank"}
-*	[blackfire](https://blackfire.io/docs/up-and-running/installation){:target="\_blank"}
-*	[enchant](http://php.net/manual/en/book.enchant.php){:target="\_blank"}
-*	[gearman](http://php.net/manual/en/book.gearman.php){:target="\_blank"}
-*	[geoip](http://php.net/manual/en/book.geoip.php){:target="\_blank"}
-*	[imap](http://php.net/manual/en/book.imap.php){:target="\_blank"}
-*	[ioncube](https://www.ioncube.com/loaders.php){:target="\_blank"}
-*	[pecl-http](https://pecl.php.net/package/pecl_http){:target="\_blank"}
-*	[pinba](http://pinba.org){:target="\_blank"}
-*	[propro](https://pecl.php.net/package/propro){:target="\_blank"}
-*	[pspell](http://php.net/manual/en/book.pspell.php){:target="\_blank"}
-*	[raphf](https://pecl.php.net/package/raphf){:target="\_blank"}
-*	[readline](http://php.net/manual/en/book.readline.php){:target="\_blank"}
-*	[recode](http://php.net/manual/en/book.recode.php){:target="\_blank"}
-*	[snmp](http://php.net/manual/en/book.snmp.php){:target="\_blank"}
-*	[sqlite3](http://php.net/manual/en/book.sqlite3.php){:target="\_blank"}
-*	[ssh2](http://php.net/manual/en/book.ssh2.php){:target="\_blank"}
-*	[tidy](http://php.net/manual/en/book.tidy.php){:target="\_blank"}
-*	[xcache](https://xcache.lighttpd.net){:target="\_blank"}
-*	[xdebug](https://xdebug.org){:target="\_blank"}
-*	[xhprof](http://php.net/manual/en/book.xhprof.php){:target="\_blank"}
-*	[xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="\_blank"}
+*	[apcu](http://php.net/manual/en/book.apcu.php){:target="_blank"}
+*	[blackfire](https://blackfire.io/docs/up-and-running/installation){:target="_blank"}
+*	[enchant](http://php.net/manual/en/book.enchant.php){:target="_blank"}
+*	[gearman](http://php.net/manual/en/book.gearman.php){:target="_blank"}
+*	[geoip](http://php.net/manual/en/book.geoip.php){:target="_blank"}
+*	[imap](http://php.net/manual/en/book.imap.php){:target="_blank"}
+*	[ioncube](https://www.ioncube.com/loaders.php){:target="_blank"}
+*	[pecl-http](https://pecl.php.net/package/pecl_http){:target="_blank"}
+*	[pinba](http://pinba.org){:target="_blank"}
+*	[propro](https://pecl.php.net/package/propro){:target="_blank"}
+*	[pspell](http://php.net/manual/en/book.pspell.php){:target="_blank"}
+*	[raphf](https://pecl.php.net/package/raphf){:target="_blank"}
+*	[readline](http://php.net/manual/en/book.readline.php){:target="_blank"}
+*	[recode](http://php.net/manual/en/book.recode.php){:target="_blank"}
+*	[snmp](http://php.net/manual/en/book.snmp.php){:target="_blank"}
+*	[sqlite3](http://php.net/manual/en/book.sqlite3.php){:target="_blank"}
+*	[ssh2](http://php.net/manual/en/book.ssh2.php){:target="_blank"}
+*	[tidy](http://php.net/manual/en/book.tidy.php){:target="_blank"}
+*	[xcache](https://xcache.lighttpd.net){:target="_blank"}
+*	[xdebug](https://xdebug.org){:target="_blank"}
+*	[xhprof](http://php.net/manual/en/book.xhprof.php){:target="_blank"}
+*	[xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Important: PHP compiled with debug is not supported and the Probe may conflict with XDebug or XHProf. Disable those extensions when enabling the Probe. The Probe conflicts with some PHP extensions like Pinba or IonCube.
-</div>
 
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
+
 You can also create and push a `php.ini` file that is appended to the configuration maintained by {{site.data.var.ee}}.
 
 In your repository, the `php.ini` file should be added to the root of the application (the repository root).
@@ -368,6 +367,7 @@ After pushing your file, you can check that the custom PHP configuration has bee
 	cat /etc/php5/fpm/php.ini
 
 #### Related topics
+
 *	[Get started with a project]({{ page.baseurl }}/cloud/project/project-start.html)
 *	[routes.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
 *	[services.yaml]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)

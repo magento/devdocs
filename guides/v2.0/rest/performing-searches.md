@@ -1,14 +1,8 @@
 ---
-
-group: rest
+group: rest-api
 subgroup: Web APIs
 title: Search using REST APIs
-menu_title: Search using REST
-menu_order: 2
-version: 2.0
-github_link: rest/performing-searches.md
 redirect_from: /guides/v2.0/howdoi/webapi/search-criteria.html
-
 ---
 
 POST, PUT, and DELETE requests to the REST Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} structure) in the body of the message.
@@ -45,9 +39,8 @@ Condition | Notes
 `null` | Null
 `to` | The end of a range. Must be used with `from`
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p><code>condition_type</code> is optional if the operator is <code>eq</code>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+`condition_type` is optional if the operator is `eq`.
 
 The `filter_groups` array defines one or more `filters`. Each filter defines a search term, and the `field`, `value`, and `condition_type` of a search term must be assigned the same index number, starting with 0. Increment additional terms as needed.
 
@@ -61,6 +54,7 @@ When constructing a search, keep the following in mind:
 The following sections provide examples of each type of search. These examples use the {{site.data.var.ce}} sample data.
 
 ## Simple search
+
 The {{site.data.var.ce}} sample data uses the `category_gear` field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.
 
 {% highlight html %}
@@ -90,6 +84,7 @@ searchCriteria => [
 The query returns 9 items.
 
 ## Simple search using a timestamp
+
 The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.
 
 {% highlight html %}
@@ -100,6 +95,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 {% endhighlight %}
 
 ### Logical OR search
+
 The following example searches for all products whose names contain the string `Leggings` or `Parachute`. The instances of `%25` in the example are converted into the SQL wildcard character `%`.
 
 {% highlight html %}
@@ -137,6 +133,7 @@ searchCriteria => [
 The search returns 14 products that contain the string `Leggings` in the `name` field and 14 products that contain the string `Parachute`.
 
 ### Logical AND search
+
 This sample searches for women's shorts that are size 31 and costs less than $30. In the CE sample data, women's shorts have a `sku` value that begins with `WSH`. The `sku` also contains the size and color, such as `WSH02-31-Yellow`.
 
 {% highlight html %}
@@ -197,6 +194,7 @@ searchCriteria[filter_groups][2][filters][0][condition_type]=to
 The query returns 37 items.
 
 ## Other search criteria
+
 The following searchCriteria can be used to determine the sort order and the number of items to return.
 
 * `searchCriteria[sortOrders][<index>][field]=<field-name>` - Specifies the field to sort on. By default, search results are returned in descending order. You can sort on multiple fields. For example, to sort on `price` first and then by `name`, call `searchCriteria[sortOrders][0][field]=price&searchCriteria[sortOrders][1][field]=name`.

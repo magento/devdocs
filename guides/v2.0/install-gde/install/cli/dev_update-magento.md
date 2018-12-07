@@ -1,12 +1,10 @@
 ---
-group: install_cli
+group: installation-guide
 subgroup: 99_contrib
 title: Update the Magento application
 menu_title: Update the Magento application
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: install-gde/install/cli/dev_update-magento.md
 redirect_from: /guides/v2.0/install-gde/install/cli/instgde-install-magento-update-db
 functional_areas:
   - Install
@@ -28,9 +26,8 @@ To update the Magento software if you're a contributing developer:
 		
 		git pull origin develop
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<span class="glyphicon-class">
-  			<p>If <code>git pull origin develop</code> fails, see <a href="{{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html">troubleshooting</a>.</p> </span>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
 	</div>
 				
 3.	Diff and merge your `composer.json.old` with `composer.json` installed with the Magento software.

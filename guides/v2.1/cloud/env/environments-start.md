@@ -1,12 +1,6 @@
 ---
-group: cloud
-subgroup: 120_env
+group: cloud-guide
 title: Manage branches with the CLI
-menu_title: Manage branches with the CLI
-menu_order: 2
-menu_node:
-version: 2.1
-github_link: cloud/env/environments-start.md
 redirect_from:
   - /guides/v2.0/cloud/before/integration-ip-addr.html
   - /guides/v2.1/cloud/before/integration-ip-addr.html
@@ -18,149 +12,190 @@ functional_areas:
   - Cloud
 ---
 
-When managing with your environment, you will tend to use the Magento CLI and SSH into the system. You should have the Magento CLI installed and SSH keys set up. For detailed information on the environment architecture, see [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) architecture information.
+After you install the Magento Cloud CLI and set up SSH keys for remote access to your Cloud infrastructure, you can use Magento Cloud CLI commands to manage the environments for your {{site.data.var.ece}} projects. For information about the environment architecture, see [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html).
 
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html).
 
-## Common Magento CLI commands {#env-start-comm}
-The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The `magento-cloud` versions directly connect with Magento Git, the Magento ECE project, and provide Git features.
+## Common Magento Cloud CLI commands {#env-start-comm}
 
-All commands are shown with required options only. Get help for any `magento-cloud` command by appending `--help`.
+Magento Cloud CLI commands are very similar to Git commands. You can use them to connect to your {{site.data.var.ece}} project and manage your  {{site.data.var.ece}} environments. Although you can run the commands from any directory, we recommend that you run them from a project directory. When run from a project directory, you can omit the `-p <project-ID>` parameter.
 
-`git commit --allow-empty -m "redeploy" && git push <branch name>`
-:  Push an empty commit to force a redeployment. Some actions, like adding a user for example, don't result in deployment.
+The following list of commonly used Magento Cloud CLI commands includes required options only. Use the ``--help``
+option with any command to get more detailed information. 
 
-`magento-cloud login`
-:	Log in to the project.
+Command | Description
+--- | ---
+`git commit --allow-empty -m "redeploy" && git push <branch-name>` | Push an empty commit to force a redeployment. Some actions, such as adding a user, do not result in deployment.
+`magento-cloud login` | Log in to the project.
+`magento-cloud project:get <project-ID> <directory> -e <environment-ID>` | Clone a project to a directory. To clone the `master` environment, omit `-e <environment-ID>`.
+`magento-cloud environment:list -p <project-ID>` | List the environments in the current project.
+`magento-cloud environment:branch <name> <parent-branch>` | Create a new branch with a name and an ID. This information corresponds to the environment.
+`magento-cloud environment:checkout <environment-ID>` | Check out an existing environment.
+`magento-cloud environment:merge -p <project-ID> -e <environment ID>` | Merge changes in this environment with its parent.
+`magento-cloud environment:synchronize -p <project-ID> -e <environment-ID> {code|data}` | Synchronize (`git pull`) code and data from the parent to this environment.
+`magento-cloud variable:list` | List variables in this environment.
+`magento-cloud variable:set <name> <value>` | Set a value for an environment variable.
 
-`magento-cloud project:get <project ID> <directory> -e <environment ID>`
-:	Clone a project to a directory. To clone the `master` environment, omit `-e <environment ID>`.
+For a full list of commands, see the [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html).
 
-`magento-cloud environment:list -p <project ID>`
-:	List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).
-
-`magento-cloud environment:branch <name> <parent branch>`
-:	Create a new branch with a name and an ID. This information corresponds to the environment.
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes.
-
-An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
-</div>
-
-`magento-cloud environment:checkout <environment ID>`
-:	Check out an existing environment.
-
-`magento-cloud environment:merge -p <project ID> -e <environment ID>`
-:	Merge changes in this environment with its parent.
-
-`magento-cloud environment:synchronize -p <project ID> -e <environment ID> {code|data}`
-:	Synchronize (that is, `git pull`) code and/or data from the parent to this environment.
-
-`magento-cloud variable:list`
-:	List variables in this environment.
-
-`magento-cloud variable:set <name> <value>`
-:	Set a value for an environment variable in this environment.
-
-For a full list of Magento cloud CLI commands, see the Magento cloud [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html)
+{:.bs-callout .bs-callout-info}
+The environment _name_ is different from the environment _ID_ only if you use spaces or capital letters in the environment name. An environment ID consists of all lowercase letters, numbers, and allowed symbols. Capital letters in an environment name are converted to lowercase in the ID; spaces in an environment name are converted to dashes. An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
 
 ## Get started creating branches {#getstarted}
-To begin, you'll need a branch to work in.
+
+To begin, create a new branch.
 
 {% include cloud/cli-get-started.md %}
 
 ## Merge a branch {#merge}
-After completing development, you can merge this branch to the parent. The following instructions provide an example.
 
-1.	Complete code in your local branch.
-2.	Add, commit, and push your change to the environment:
+After completing development, you can merge this branch to the parent:
 
-		git add -A
-		git commit -m "<commit message>"
-		git push origin <branch name>
+1.  Complete code in your local branch.
 
-	Where `<branch name>` is the Git name of the environment (that is, the environment ID).
+1.  Add, commit, and push changes to the environment.
 
-3.	Merge with the parent environment:
+    ```bash
+    git add -A && git commit -m "Commit message" && git push origin <branch-name>
+    ```
 
-		magento-cloud environment:merge <environment ID>
+1.  Merge with the parent environment:
 
-	For example,
+    ```bash
+    magento-cloud environment:merge <environment-ID>
+    ```
 
-		magento-cloud environment:merge master
+## Delete an environment {#env-delete}
 
-## Optionally delete the environment {#env-delete}
-Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
+Only delete an environment if you are certain that you no longer need it. You cannot recover an environment after you delete it.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot delete the <code>master</code> environment of any project.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+You cannot delete the `master` environment of any project.
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
-This section discusses how to optionally delete an environment in the following ways:
+When you delete an environment, the environment is set to _inactive_. The code is still available in the Git branch, but no longer contains the services or the database. To delete the environment completely, you must also delete the corresponding remote Git branch.
 
-*	Make the environment *inactive* but let it remain in the project
-*	Delete the environment entirely and remove it from the project
+#### To delete an environment:
 
-To delete a environment:
+1.  Open a terminal and navigate to your project.
 
-1.	Log in to your project if you haven't already done so.
-2.	Fetch branches from the origin server.
+1.  Fetch updates from the remote server.
 
-		git fetch origin
-3.	To delete the branch entirely (removing it from the project), check out the branch.
+    ```bash
+    git fetch
+    ```
 
-		magento-cloud environment:checkout <environment ID>
-4.	Delete the environment:
+1.  Checkout the environment branch.
 
-		magento-cloud environment:delete <environment ID>
+    ```bash
+    magento-cloud environment:checkout <environment-ID>
+    ```
 
-	For example, to delete the `deleteme` environment:
+1.  Respond to the prompts to delete the local environment and the corresponding remote environment.
 
-		magento-cloud environment:delete deleteme
+    ```terminal
+    The environment <environment-ID> is currently active: deleting it will delete all associated data.
+    Are you sure you want to delete the environment <environment-ID>? [Y/n]
+    ```
+    {: .no-copy}
 
-	To delete more than one environment:
+    Deleting the environment places it in an _inactive_ state.
 
-		magento-cloud environment:delete <environment ID> <environmentID>
+    ```terminal
+    Delete the remote Git branch too? [Y/n]
+    ```
 
-	For additional options, see the command-line help:
+    Deleting the remote Git branch removes the environment from the project.
 
-		magento-cloud environment:delete --help
+1.  Wait for the environment to delete.
 
-5. Answer the prompt:
+    ```terminal
+    Deleting environment <environment-ID>
+    Waiting for the activity...
+      Deleting environment <project-id>-<environment-ID>-xxxxxx
+    
+      [============================]  1 min (complete)
+    Activity ID succeeded
+    Deleted remote Git branch <environment-ID>
+    Run git fetch --prune to remove deleted branches from your local cache.
+    ```
+    {: .no-copy}
 
-		Are you sure you want to delete the remote Git branch deleteme? [Y/n]
+#### To delete more than one environment:
 
-	A `Y` answer makes the branch inactive but leaves it in the project.
-6.	Answer the prompt:
+You can delete more than one environment at a time by adding multiple environment IDs to the delete command.
 
-		Delete the remote Git branch too? [Y/n]
+```bash
+magento-cloud environment:delete <environment-1-ID> <environment-2-ID>
+```
 
-	A `Y` answer completely removes the branch from the project.
-
-Wait for the environment to delete.
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+To activate an inactive environment, use the `magento-cloud environment:activate` command.
 
 ## Integration environment IP addresses {#ipaddress}
-The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+
+The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int). These IP addresses are stable, but might change. We always notify customers before making any IP address changes.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
 
 <table>
 <tr>
-<th colspan="2"><b>Outbound IP addresses</b></th>
-<th colspan="2"><b>Inbound IP addresses</b></th>
+<th colspan="6"><b>Incoming IP addresses</b></th>
 </tr>
 <tr>
 <td>US Region</td>
+<td>US-2 Region</td>
+<td>US-3 Region</td>
 <td>EU Region</td>
+<td>EU-3 Region</td>
+<td>AP-3 Region</td>
+</tr>
+<tr>
+<td>
+<p>52.200.159.23</p>
+<p>52.200.159.125</p>
+<p>52.200.160.5</p>
+</td>
+<td>
+<p>34.197.214.148</p>
+<p>34.197.144.144</p>
+<p>34.196.44.47</p>
+</td>
+<td>
+<p>34.210.133.187</p>
+<p>34.214.72.239</p>
+<p>34.215.10.85</p>
+</td>
+<td>
+<p>52.209.44.44</p>
+<p>52.209.23.96</p>
+<p>52.51.117.101</p>
+</td>
+<td>
+<p>34.240.75.192</p>
+<p>34.251.110.37</p>
+<p>52.19.113.35</p>
+</td>
+<td>
+<p>52.65.39.201</p>
+<p>52.65.10.202</p>
+<p>52.65.30.37</p>
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th colspan="6"><b>Outgoing IP addresses</b></th>
+</tr>
+<tr>
 <td>US Region</td>
+<td>US-2 Region</td>
+<td>US-3 Region</td>
 <td>EU Region</td>
+<td>EU-3 Region</td>
+<td>AP-3 Region</td>
 </tr>
 <tr>
 <td>
@@ -169,27 +204,37 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 <p>50.17.163.75</p>
 </td>
 <td>
+<p>34.197.219.58</p>
+<p>34.197.201.45</p>
+<p>34.197.217.71</p>
+</td>
+<td>
+<p>34.210.166.180</p>
+<p>34.215.83.92</p>
+<p>34.213.20.158</p>
+</td>
+<td>
 <p>52.51.163.159</p>
 <p>52.209.44.60</p>
 <p>52.208.156.247</p>
 </td>
 <td>
-<p>52.200.159.23</p>
-<p>52.200.159.125</p>
-<p>52.200.160.5</p>
+<p>34.240.57.142</p>
+<p>52.16.140.48</p>
+<p>52.209.134.55</p>
 </td>
 <td>
-<p>52.209.44.44</p>
-<p>52.209.23.96</p>
-<p>52.51.117.101</p>
+<p>52.65.143.178</p>
+<p>13.54.80.197</p>
+<p>52.62.224.4</p>
 </td>
 </tr>
 </table>
+{:style="table-layout:auto;"}
 
-## Interact with environments via CLI {#commands}
-After setting up your [set up SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can interact with services and modify settings through your local to a remote environment.
+## Interact with environments via the Magento Cloud CLI {#commands}
 
-The following steps provide an example of accessing a database:
+After you [setup SSH keys]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can connect from your local workspace to a remote environment and use Magento Cloud CLI commands to interact with your {{site.data.var.ece}} project services and modify settings.
 
 {% include cloud/log-in-db.md %}
 

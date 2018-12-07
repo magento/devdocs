@@ -5,8 +5,6 @@ title: Code sniffers
 landing-page: Coding standards
 menu_title: PHP code sniffers
 menu_order: 3
-version: 2.2
-github_link: coding-standards/code-standard-sniffers.md
 ---
 
 We recommend the consistent use of a _code sniffer_ to enhance the readability of your code and help ensure that it meets Magento code standards.  A code sniffer is a tool that automates the process of identifying code irregularities. Although a sniffer will identify many more inconsistencies and errors than a manual edit, we recommend that you evaluate and make any fixes that your sniffer program identifies.
@@ -35,6 +33,6 @@ The [Coding standards overview]{:target="_blank"} introduces Magento-specific pr
 [eqp]: https://github.com/magento/marketplace-eqp
 [PSR-1]: http://www.php-fig.org/psr/psr-1/
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
-[Coding standards overview]: http://devdocs.magento.com/guides/v2.0/coding-standards/bk-coding-standards.html
+[Coding standards overview]: {{ site.baseurl }}/guides/v2.0/coding-standards/bk-coding-standards.html
 [ruleset]: http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php
 [ruleset.xml]: {{ site.mage2200url }}dev/tests/static/framework/Magento/ruleset.xml

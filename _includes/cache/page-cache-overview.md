@@ -16,19 +16,20 @@ We recommend using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varn
 -   [Redis]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html)
 
 ## Cacheable and uncacheable pages {#cache-over-cacheable}
+
 *Cacheable* and *uncacheable* are terms we use to indicate whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is designated as uncacheable, the entire page is uncacheable.
 
 To create an uncacheable page, mark any block on that page as uncacheable in the layout using `cacheable="false"`.
 
 Examples of uncacheable pages include the compare products, cart, {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} pages, and so on.
 
-[Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="&#95;blank"}
+[Example]({{ site.mage2000url }}app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml){:target="_blank"}
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 Do not configure content pages (i.e., catalog, product, and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.
-</div>
 
 ## Public and private content
+
 Reverse proxies serve "public" or shared content to more than one user. However, most Magento websites generate dynamic and personalized "private" content that should only be served to one user, which presents unique caching challenges. To address these challenges, Magento can distinguish between two types of content:
 
 -   **[Public]({{ page.baseurl }}/extension-dev-guide/cache/page-caching/public-content.html)** - Public content is stored server side in your reverse proxy cache storage (e.g., file system, database, Redis, or Varnish) and is available to multiple customers. Examples of public content include header, footer, and category listing.

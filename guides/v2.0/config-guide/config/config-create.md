@@ -1,28 +1,27 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Create or extend configuration types
 menu_title: Create or extend configuration types
 menu_order: 10
-version: 2.0
-github_link: config-guide/config/config-create.md
-redirect_from: /guides/v1.0/config-guide/config/config-create.html
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-<h2 id="config-files-extend-create">Extend configuration types</h2>
+## Extend configuration types   {#config-files-extend-create}
+
 To extend an existing configuration type, you need only create a configuration file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-For example, to add an event observer, you create `app/etc/events.xml` and declare a new observer.
+For example, to add an event observer, you create `app/code/{VendorName}/{ModuleName}/etc/events.xml` and declare a new observer.
 
 Because the event configuration type already exists in Magento, the loader and the `events.xsd` validating schema are already present and functional.
    
 Your new `events.xml` is automatically collected from your module and merged with other `events.xml` files for other modules.
 
-<h2 id="config-files-extend-create-create">Create configuration types</h2>
+## Create configuration types   {#config-files-extend-create-create}
+
 To create new configuration type, you must add at minimum:
 
 *  {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files
@@ -38,7 +37,7 @@ For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
-To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php" target="_blank">Magento\Framework\Config\Reader\Filesystem</a> to provide the following parameters:
+To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\\Framework\\Config\\Reader\\Filesystem]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php){: target="_blank"} to provide the following parameters:
 
 *  `$fileResolver`. Implements `\Magento\Framework\Config\FileResolverInterface`. This parameter lists the files containing the configurations of your custom type.
 *  `$converter`. Implements `\Magento\Framework\Config\ConverterInterface`. This parameter converts the XML into the internal array representation of the configurations.
@@ -58,7 +57,7 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
  
  After you customize `ReaderInterface`, you can use it to collect, merge, validate, and convert the configuration files to an internal array representation.
 
-<h2 id="config-files-validate">Validate a configuration type</h2>
+## Validate a configuration type   {#config-files-validate}
 
 Each configuration file is validated against a schema specific to its configuration type. Example: events, which, in earlier Magento versions, were configured in `config.xml`, are now configured in `events.xml`.
 
@@ -83,5 +82,5 @@ Your IDE can validate your configuration files at both runtime and during develo
 
 #### Related topics
 
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Module configuration files</a>
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>
+*  [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
+*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

@@ -17,6 +17,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
   
 <h1>Magento Commerce Release Notes (1.14 and later)</h1>
@@ -24,8 +25,11 @@
 
 <div class="toc"> <h4 class="toc">Contents</h4>
 <p>These Release Notes contain the following information:</p>
-<ul><li><a href="#upgrade">Important Upgrade Information</a></li>
 
+<ul><li><a href="#upgrade">Important Upgrade Information</a></li>
+	<li><a href="#ee114-11440">Magento Commerce 1.14.4.0 Release Notes</a></li>
+    <li><a href="#ee114-114310">Magento Commerce 1.14.3.10 Release Notes</a></li>
+	<li><a href="#ee114-11439">Magento Commerce 1.14.3.9 Release Notes</a></li>
 	<li><a href="#ee114-11438">Magento Commerce 1.14.3.8 Release Notes</a></li>
 	<li><a href="#ee114-11437">Magento Commerce 1.14.3.7 Release Notes</a></li>
 	<li><a href="#ee114-11436">Magento Commerce 1.14.3.6 Release Notes</a></li>
@@ -49,6 +53,74 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Commerce 1.14.3.0 or later for <em>all new Magento Commerce installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+<h2 id="ee114-11440">Magento Commerce 1.14.4.0 Release Notes</h2>
+
+<p>This version (or patch SUPEE-10975, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These critical security issues include remote code execution (RCE),  cross-site scripting (XSS), and cross-site request forgery (CSRF) issues. This release also provides support for PHP 7.2.</p>
+
+<p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<p>Note that after updating to this release, third-party modules that depend upon Magento core backup functionality will no longer work. Alternatively, you can use one of these two methods  to enable database backups: </p>
+
+<ul>
+<li>Change <b>false</b> to <b>true</b> in the <b>config</b> > <b>modules</b> > <b>Mage_Backup</b> > <b>active</b>  setting of <code> app/etc/modules/Mage_All.xml</code>. </li>
+<li>From the Admin,  change the <b>System</b> > <b>Configuration</b> > <b>Advanced</b> > <b>Disable  Modules Output</b> > <b>Mage_Backup</b> from <b>disabled</b> to <b>enabled</b>.</li>
+</ul>
+
+<h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- MPERF-10223 -->This release provides support for PHP 7.2. </li>
+<li><!-- MPERF-10217 -->We’ve removed the CC module. As a result, third-party modules that depend upon either the <code>ccsave</code> method or the <code>xmlconnect</code> method will not work as expected.  Third-party themes that implement <code>ccsave</code> will not work as expected, either.  </li>	
+<li><!-- MPERF-10219 10218 -->The Magento logo has been updated throughout the code base. </li>	
+<li><!-- MPERF-8829 -->The <b>Continue</b> button now works as expected on the Payments step of checkout  when paying with the PayPal payment method. </li>	
+<li><!-- MPERF-8826 -->Google Tag Manager now logs sales information in Google Analytics as expected. </li>	
+<li><!-- MPERF-8382 -->The product export CSV file now contains columns for super attributes. </li>	
+<li><!-- MPERF-7181 -->Magento no longer throws an error when a customer accesses their shopping cart after items in their cart have been removed due to a timeout. Previously, Magento displayed this error, `Notice: Undefined variable: freePackageValue in /var/www/dev/htdocs/app/code/core/Mage/Shipping/Model/Carrier/Tablerate.php on line 130`.  </li>	
+<li><!-- MPERF-7067 -->Clicking on a configurable product’s swatch on the  product list page now updates product price as expected.  </li>	
+<li><!-- MPERF-6629 -->Customers can now successfully add a grouped product to their shopping cart when category permissions are enabled. Previously, Magento did not add the product to the cart, but instead displayed a descriptive error message.  </li>	
+<li><!-- MPERF-6566 -->Magento no longer displays incorrect prices on the storefront after a failure of the enterprise refresh index.  </li>	
+<li><!-- MPERF-5931 -->We’ve resolved issues in the indexing locking mechanism that previously resulted in Magento throwing an exception after indexing completed.  </li>	
+<li><!-- MPERF-5168 -->Magento no longer throws a fatal error when a merchant uses an already  reserved word to name a product attribute.  </li>	
+<li><!-- MPERF-4913 -->Magento now adds the correct sales tax to orders being shipped to U.S. addresses that use zip codes with the optional four-digit suffix (for example, 73365-1234). Previously, the Tax rule triggered a failure if the U.S. zip code that had this optional four-digit suffix.  </li>	
+<li><!-- MPERF-4630 -->Magento now displays all products on a production website that were edited by a role-restricted user on the associated staging website.  </li>	
+<li><!-- MPERF-8827 -->We’ve resolved an issue that caused Target Rules to throw an exception when a customer opened a product view page.  </li>	
+</ul>
+
+
+<h2 id="ee114-114310">Magento Commerce 1.14.3.10 Release Notes</h2>
+
+<p>This version (or patch SUPEE-10888, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote cross-site scripting and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<p><b>Note:</b> With this release, Magento is announcing the following support policy: Magento will provide  software support through June 2020 for Magento Commerce 1.x. Depending on your Magento Commerce 1 version, software support may include both quality fixes and security patches. Please review our Magento Software Lifecycle Policy <a href="https://magento.com/sites/default/files/magento-software-lifecycle-policy.pdf" target="_blank">Magento Software Lifecycle Policy</a>  to see how your version of Magento Commerce 1 is supported. </p>
+
+
+<h3>Known issue</h3>
+
+<p><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9856" target="_blank">MPERF-9856</a> --> <p><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9856" target="_blank">MPERF-9856</a> -->You cannot re-send the password for new customers who created their account during checkout. </p>
+  </p>
+
+
+
+
+
+<h2 id="ee114-11439">Magento Commerce 1.14.3.9 Release Notes</h2>
+<p>This version (or patch SUPEE-10752, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-768" target="_blank">MPERF-768</a> -->Magento no longer performs unnecessary write operations on the <code>core_url_rewrite</code> table.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10065" target="_blank">MPERF-10065</a> -->Customers can now successfully register during checkout without being unexpectedly logged out.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9735" target="_blank">MPERF-9735</a> -->Incorrect escaping in the <code>cron.sh</code> file no longer prevents cron jobs from running in parallel as expected.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10021" target="_blank">MPERF-10021</a> -->Magento now cleans session data as expected after a customer logs out.</li>	
+</ul>
+
+
+
+<h3>Known issue</h3>
+ <p>If your custom code or extension is using <code>Zend/Filter/PregReplace.php</code> with the modifier <code>e</code>, it will now return an error due to possible RCE issues. See APPSEC-2029 in <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for more information.</p>
+
+
+
 
 <h2 id="ee114-11438">Magento Commerce 1.14.3.8 Release Notes</h2>
 <p>This version (or patch SUPEE-10570, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10415" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
@@ -282,7 +354,7 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7649" target="_blank">MPERF-7649</a>.  -->Resolved a potential PHP security vulnerability.</li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8572" target="_blank">MPERF-8572</a>. --> An administrative user is no longer able to create a potential security vulnerability that used the block cache.</li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8363" target="_blank">MPERF-8363</a>. --> Resolved a potential <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)" target="_blank">cross-site request forgery (CSRF)</a> vulnerability involving the wishlist.</li>
-	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1484" target="_blank">APPSEC-1484</a>.  -->Resolved a potential remote code excecution exploit.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1484" target="_blank">APPSEC-1484</a>.  -->Resolved a potential remote code execution exploit.</li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1517" target="_blank">APPSEC-1517</a>. --> It is no longer possible to  log in to a store as an existing customer using only an e-mail address.</li>
 
 
@@ -578,7 +650,7 @@ For more information about using Solr with Magento Commerce, see the <a href="ht
 <strong>Note</strong>: If you're using the Solr search engine with Commerce versions 1.13.1 or earlier, you must perform an additional step during upgrade due to the fact that the Solr schema changes in Commerce 1.14. You must copy two files to your Solr server&mdash;<code>schema.xml</code> and <code>solrconfig.xml</code>. For details, see <a href="{{ site.m1xgdeurl }}install/installing_upgrade_details.html#upgrade-manual-solr" target="_blank">the section on upgrading Solr in the Magento upgrade guide</a>.</li>
 <li>Cross-border trade: (Also referred to as <em>pricing consistency</em>.) We support European Union (EU) merchants operating across regions and geographies who want to show their customers a single price. Pricing is clean and uncluttered regardless of tax structures and rates that vary from country to country.<br />
 To enable cross-border trade in the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Calculation Settings</strong>, option <strong>Enable Cross Border Trade</strong>.</li>
-<li>Supports <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">PHP 5.4</a>. For more information, see <a href="http://php.net/ChangeLog-5.php#5.4.0" target="blank">the PHP changelog</a>.</li>
+<li>Supports <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">PHP 5.4</a>. For more information, see <a href="http://php.net/ChangeLog-5.php#5.4.0" target="_blank">the PHP changelog</a>.</li>
 <li>The Zend Framework has been upgraded to <a href="http://framework.zend.com/changelog/1.12.3/" target="_blank">version 1.12.3</a></li>
 <li>Checkout improvements:
 <ul><li>You can capture up to 18% more sales  by providing customers access to financing using the Bill Me Later service at no additional cost to you. </li>

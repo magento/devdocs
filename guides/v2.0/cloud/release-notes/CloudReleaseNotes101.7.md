@@ -7,8 +7,6 @@ menu_order:
 menu_node:
 level3_menu_node:
 level3_subgroup:
-version: 2.0
-github_link: cloud/release-notes/CloudReleaseNotes101.7.md
 functional_areas:
   - Cloud
 ---
@@ -21,7 +19,7 @@ In `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6
 
 ### 101.7.6 changes {#changes}
 
-* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting](http://devdocs.magento.com/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
+* We’ve added support for the latest version of Redis and for PHP-Redis 3.1.3. For more information on this update, and for guidance on Redis troubleshooting on {{site.data.var.ece}}, see [Redis troubleshooting]({{ site.baseurl }}/guides/v2.0/cloud/trouble/redis-troubleshooting.html).
 
 ### 101.7.5 changes {#changes-1}
 
@@ -39,9 +37,8 @@ In `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6
     Exception]
     	Notice: Undefined index: stores in /app/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/Console/Command/SCDConfigDump.php on line 91
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We've reverted the changes to image resizing that we introduced in 2.1.6. Unfortunately, certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update.
-</div>
 
 ## How to get magento-cloud-configuration release 101.7.x
 
@@ -51,4 +48,4 @@ To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento up
 
 ## Magento Commerce Release Notes
 
-These {{site.data.var.ece}} releases correspond to [Magento Commerce 2.1.7](http://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.7EE.html).
+These {{site.data.var.ece}} releases correspond to [Magento Commerce 2.1.7]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.7EE.html).

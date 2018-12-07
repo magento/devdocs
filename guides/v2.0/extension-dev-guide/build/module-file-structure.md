@@ -1,11 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Create your component file structure
 menu_title: Create your component file structure
 menu_order: 3000
-version: 2.0
-github_link: extension-dev-guide/build/module-file-structure.md
 redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ---
 
@@ -15,6 +13,7 @@ In this section, we go over the different file structures for the component type
 {% include php-dev/component-root.md %}
 
 ### Module file structure
+
 A typical file structure for a Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can look like the following:
 
 ![Module File Structure]({{ site.baseurl }}/common/images/pdg-config-file-structure.png){:width="300px"}
@@ -35,10 +34,11 @@ Additional folders can be added for configuration and other ancillary functions 
 
 * `Api`: contains any PHP classes exposed to the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 * `i18n`: contains localization files.
-* `Plugin`: contains any needed <a href="{{ page.baseurl }}/extension-dev-guide/plugins.html">plug-ins</a>.
+* `Plugin`: contains any needed [plug-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html).
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.
 
 ### Theme file structure
+
 A typical {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} file structure can look like the following:
 
 ~~~

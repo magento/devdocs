@@ -1,16 +1,14 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: The di.xml file
 menu_title: The di.xml file
 menu_order: 1
-version: 2.1
-github_link: extension-dev-guide/build/di-xml-file.md
 ---
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to inject by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html).
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) are injected by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html).
 
 ## Areas and application entry points
 
@@ -19,7 +17,7 @@ Magento reads all the `di.xml` configuration files declared in the system and me
 
 As a general rule, the area specific `di.xml` files should configure dependencies for the presentation layer, and your module's global `di.xml` file should configure the remaining dependencies.
 
-Magento loads The configuration in the following stages:
+Magento loads the configuration in the following stages:
 
 1. Initial (`app/etc/di.xml`)
 2. Global (`<moduleDir>/etc/di.xml`)
@@ -29,11 +27,11 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
 
 ## Type configuration
 
@@ -62,6 +60,7 @@ The preceding example declares the following types:
 *	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 ### Virtual types
+
 A {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
 This allows you to use a customized class without affecting other classes that have a dependency on the original.
 
@@ -299,10 +298,10 @@ The lifestyle of an object determines the number of instances that can exist of 
 
 You can configure dependencies in Magento to have the following lifestyles:
 
-*	**singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
+*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
 Requesting the class again returns the same instance.
 Disposing or ending the container registered to it releases the instance.
-*	**transient** - The object manager creates a new instance of the class for every request.
+*	**Transient** - The object manager creates a new instance of the class for every request.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 

@@ -1,8 +1,6 @@
 ---
 group: release-notes
-version: 2.2
 title: Backward incompatible changes in Magento Open Source
-github_link: release-notes/backward-incompatible-changes/open-source.md
 redirect_from: /guides/v2.2/release-notes/changes/ce_changes.html
 ---
 
@@ -19,10 +17,21 @@ type="warning"
 content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
 
+## 2.2.6 - 2.2.7 {#releases-2_2_6-2_2_7}
+
+{% include backward-incompatible-changes/open-source/2.2.6-2.2.7.md %}
+
+## 2.2.5 - 2.2.6 {#releases-2_2_5-2_2_6}
+
+{% include backward-incompatible-changes/open-source/2.2.5-2.2.6.html %}
+
+## 2.2.4 - 2.2.5 {#releases-2_2_4-2_2_5}
+
+{% include backward-incompatible-changes/open-source/2.2.4-2.2.5.html %}
+
 ## 2.2.3 - 2.2.4 {#releases-2_2_3-2_2_4}
 
 {% include backward-incompatible-changes/open-source/2.2.3-2.2.4.html %}
-
 
 ## 2.2.2 - 2.2.3 {#releases-2_2_2-2_2_3}
 

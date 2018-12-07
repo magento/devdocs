@@ -17,6 +17,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 <!-- Title: Magento Community Edition (CE) 1.9 Release Notes -->
 <!-- URL: ce19-later-release-notes -->
@@ -31,6 +32,9 @@
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
 
+<li><a href="#ce19-1940">Magento Open Source 1.9.4.0 Release Notes</a></li>
+<li><a href="#ce19-19310">Magento Open Source 1.9.3.10 Release Notes</a></li>
+<li><a href="#ce19-1939">Magento Open Source 1.9.3.9 Release Notes</a></li>
 <li><a href="#ce19-1938">Magento Open Source 1.9.3.8 Release Notes</a></li>
 <li><a href="#ce19-1937">Magento Open Source 1.9.3.7 Release Notes</a></li>
 <li><a href="#ce19-1936">Magento Open Source 1.9.3.6 Release Notes</a></li>
@@ -55,6 +59,70 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Open Source 1.9.3.0 or later for <em>all new Magento Open Source installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+
+
+<h2 id="ce19-1940">Magento Open Source 1.9.4.0 Release Notes</h2>
+ <p>This version (or patch SUPEE-10975, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These critical security issues include remote code execution (RCE),  cross-site scripting (XSS), and cross-site request forgery (CSRF) issues. This release also provides support for PHP 7.2.</p>
+
+<p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<p>Note that after updating to this release, third-party modules that depend upon Magento core backup functionality will no longer work. Alternatively, you can use one of these two methods  to enable database backups: </p>
+
+<ul>
+<li>Change <b>false</b> to <b>true</b> in the <b>config</b> > <b>modules</b> > <b>Mage_Backup</b> > <b>active</b>  setting of <code> app/etc/modules/Mage_All.xml</code>. </li>
+<li>From the Admin,  change the <b>System</b> > <b>Configuration</b> > <b>Advanced</b> > <b>Disable  Modules Output</b> > <b>Mage_Backup</b> from <b>disabled</b> to <b>enabled</b>.</li>
+</ul>
+
+<h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- MPERF-10223 -->This release provides support for PHP 7.2. </li>
+<li><!-- MPERF-10217 -->We’ve removed the CC module. As a result, third-party modules that depend upon either the <code>ccsave</code> method or the <code>xmlconnect</code> method will not work as expected.  Third-party themes that implement <code>ccsave</code> will not work as expected, either. </li>
+<li><!-- MPERF-10219 10218 -->The Magento logo has been updated throughout the code base. </li>	
+<li><!-- MPERF-8829 -->The <b>Continue</b> button now works as expected on the Payments step of checkout  when paying with the PayPal payment method. </li>	
+<li><!-- MPERF-8826 -->Google Tag Manager now logs sales information in Google Analytics as expected. </li>	
+<li><!-- MPERF-8382 -->The product export CSV file now contains columns for super attributes. </li>	
+<li><!-- MPERF-7181 -->Magento no longer throws an error when a customer accesses their shopping cart after items in their cart have been removed due to a timeout. Previously, Magento displayed this error, `Notice: Undefined variable: freePackageValue in /var/www/dev/htdocs/app/code/core/Mage/Shipping/Model/Carrier/Tablerate.php on line 130`.  </li>	
+<li><!-- MPERF-7067 -->Clicking on a configurable product’s swatch on the  product list page now updates product price as expected.  </li>	
+<li><!-- MPERF-6629 -->Customers can now successfully add a grouped product to their shopping cart when category permissions are enabled. Previously, Magento did not add the product to the cart, but instead displayed a descriptive error message.  </li>	
+<li><!-- MPERF-6566 -->Magento no longer displays incorrect prices on the storefront after a failure of the enterprise refresh index.  </li>	
+<li><!-- MPERF-5931 -->We’ve resolved issues in the indexing locking mechanism that previously resulted in Magento throwing an exception after indexing completed.  </li>	
+<li><!-- MPERF-5168 -->Magento no longer throws a fatal error when a merchant uses an already  reserved word to name a product attribute.  </li>	
+<li><!-- MPERF-4913 -->Magento now adds the correct sales tax to orders being shipped to U.S. addresses that use zip codes with the optional four-digit suffix (for example, 73365-1234). Previously, the Tax rule triggered a failure if the U.S. zip code that had this optional four-digit suffix.  </li>	
+<li><!-- MPERF-4630 -->Magento now displays all products on a production website that were edited by a role-restricted user on the associated staging website.  </li>	
+<li><!-- MPERF-8827 -->We’ve resolved an issue that caused Target Rules to throw an exception when a customer opened a product view page.  </li>		
+</ul>
+
+
+
+
+
+<h2 id="ce19-19310">Magento Open Source 1.9.3.10 Release Notes</h2>
+ <p>This version (or patch SUPEE-10888, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote cross-site scripting and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<p><b>Note:</b> With this release, Magento is announcing the following support policy: For Magento Open Source 1.5 to 1.9, Magento will provide software security patches through June 2020 to ensure those sites remain secure and compliant. Visit our <a href="https://info2.magento.com/M1OpenSource.html" target="_blank">information page</a> for more details about our software maintenance policy and other considerations for your business. </p>
+
+
+<h3>Known issue</h3>
+
+<p><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9856" target="_blank">MPERF-9856</a> -->You cannot re-send the password for new customers who created their account during checkout. </p>
+
+
+
+<h2 id="ce19-1939">Magento Open Source 1.9.3.9 Release Notes</h2>
+ <p>This version (or patch SUPEE-10752, which applies to older versions of Magento) provides resolution of multiple critical security issues. These critical security issues include remote code execution, cross-site scripting, and cross-site request forgery issues. We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+ <h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-768" target="_blank">MPERF-768</a> -->Magento no longer performs unnecessary write operations on the <code>core_url_rewrite</code> table.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10065" target="_blank">MPERF-10065</a> -->Customers can now successfully register during checkout without being unexpectedly logged out.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9735" target="_blank">MPERF-9735</a> -->Incorrect escaping in the <code>cron.sh</code> file no longer prevents cron jobs from running in parallel as expected.</li>	
+<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-10021" target="_blank">MPERF-10021</a> -->Magento now cleans session data as expected after a customer logs out.</li>	
+</ul>
+
+
+<h3>Known issue</h3>
+ <p>If your custom code or extension is using <code>Zend/Filter/PregReplace.php</code> with the modifier <code>e</code>, it will now return an error due to possible RCE issues. See  <a href="https://magento.com/security/patches/supee-10752" target="_blank">Magento Security Center</a> for more information.</p>
 
 
 <h2 id="ce19-1938">Magento Open Source 1.9.3.8 Release Notes</h2>
@@ -260,7 +328,7 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 <h4 id="ee114-1430security-general">General security enhancements</h4>
 <p>For more information about these security enhancements, see <a href="https://magento.com/security/patches/supee-8788" target="_blank">our Security Center article</a>.</p>
 <p>Patches for major security issues in earlier versions of the Magento software are available on the <a href="https://www.magentocommerce.com/download" target="_blank">Magento download page (look for <code>SUPEE-8788</code>.)</p>
-<p>See <a href="http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a></p>.
+<p>See <a href="{{ site.baseurl }}/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a></p>.
 <ul><li>Resolved a potential SQL injection (Zend Framework issue)</li>
 	<li>Resolved a cache poisoning issue</li>
 <li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7714" target="_blank">MPERF-7714</a> --> We now provide better protection against path exploits.</li>
@@ -276,7 +344,7 @@ This patch is available from <a href="https://magento.com/tech-resources/downloa
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7649" target="_blank">MPERF-7649</a>.  -->Resolved a potential PHP security vulnerability.</li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8572" target="_blank">MPERF-8572</a>. --> An administrative user is no longer able to create a potential security vulnerability that used the block cache.</li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-8363" target="_blank">MPERF-8363</a>. --> Resolved a potential <a href="https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)" target="_blank">cross-site request forgery (CSRF)</a> vulnerability involving the wishlist.</li>
-	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1484" target="_blank">APPSEC-1484</a>.  -->Resolved a potential remote code excecution exploit.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1484" target="_blank">APPSEC-1484</a>.  -->Resolved a potential remote code execution exploit.</li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/APPSEC-1517" target="_blank">APPSEC-1517</a>. --> It is no longer possible to  log in to a store as an existing customer using only an e-mail address.</li>
 
 
@@ -533,7 +601,7 @@ li>Scroll down to the Magento Open Source Patches section.</li>
 </li>
 <li>Cross-border trade: (Also referred to as <em>pricing consistency</em>.) We support European Union (EU) merchants operating across regions and geographies who want to show their customers a single price. Pricing is clean and uncluttered regardless of tax structures and rates that vary from country to country.<br />
 To enable cross-border trade in the Admin Panel, click <strong>System</strong> > <strong>Configuration</strong> > SALES > <strong>Tax</strong> > <strong>Calculation Settings</strong>, option <strong>Enable Cross Border Trade</strong>.</li>
-<li>Supports <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">PHP 5.4</a>. For more information, see <a href="http://php.net/ChangeLog-5.php#5.4.0" target="blank">the PHP changelog</a>.</li>
+<li>Supports <a href="http://www.php.net/manual/en/migration54.changes.php" target="_blank">PHP 5.4</a>. For more information, see <a href="http://php.net/ChangeLog-5.php#5.4.0" target="_blank">the PHP changelog</a>.</li>
 <li>The Zend Framework has been upgraded to <a href="http://framework.zend.com/changelog/1.12.3/" target="_blank">version 1.12.3</a></li>
 <li>Checkout improvements:
 <ul class="level2"><li>You can capture up to 18% more sales  by providing customers access to financing using the Bill Me Later service at no additional cost to you. </li>

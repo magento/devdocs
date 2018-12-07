@@ -1,13 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add a new input form to checkout
 subtitle: Customize Checkout
 menu_order: 8
 level3_subgroup: checkout-tutorial
-version: 2.1
-github_link: howdoi/checkout/checkout_form.md
 functional_areas:
   - Checkout
 ---
@@ -71,8 +69,8 @@ define([
 });
 ```
 
-
 ## Step 2: Create the HTML template {#template}
+
 Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory.
 
 Example:
@@ -100,7 +98,7 @@ Example:
 
 If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
 
-1. Delete all files in the `pub/static/frontend` and `var/view_preprocessing` directories.
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
 2. Reload the pages.
 
 ## Step 3: Declare the form in the checkout page layout {#layout}
@@ -281,6 +279,8 @@ $textField = [
 ```
 
 ## Illustration
+
 If you use the code samples provided as examples in this topic, this would result in adding the following form to the Shipping Information step:
 
-<img src="{{ site.baseurl }}/common/images/how_checkout_form.png" alt="The input form with four fields">
+![The input form with four fields]({{ site.baseurl }}/common/images/how_checkout_form.png)
+

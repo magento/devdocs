@@ -1,13 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: Versions supported
 menu_title: Versions supported
 menu_node:
 menu_order: 2
-version: 2.0
-github_link: migration/migration-overview-supported.md
-redirect_from: /guides/v1.0/migration/migration-overview-supported.html
 functional_areas:
   - Tools
 ---

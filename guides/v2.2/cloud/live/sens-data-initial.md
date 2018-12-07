@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Example of managing system-specific settings
-version: 2.2
-github_link: cloud/live/sens-data-initial.md
 functional_areas:
   - Cloud
   - Deploy
@@ -23,9 +21,9 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
 	* To remove or edit existing configurations, manually edit the file.
 	* Commit and push to Git.
 
-<!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
+<!-- {:.bs-callout .bs-callout-info}
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
-</div> -->
+-->
 For example, you may want to set the following settings:
 
 * Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Integration environment
@@ -35,6 +33,7 @@ For example, you may want to set the following settings:
 _Static file optimization_ means merging and minifying {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and Cascading Style Sheets, and minifying {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates.
 
 ## Prerequisites {#prereqs}
+
 To complete these configuration management tasks, you need the following:
 
 * Minimum a project reader role with [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env) privileges
@@ -67,10 +66,11 @@ To change locale and static file optimization settings:
 
 	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
-9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="\_blank"}.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 10.	Log out of the Magento Admin.
 
 ## Export values and transfer config.php to your local system {#export}
+
 This step creates and transfers the `config.php` configuration file on the Integration environment using a command you run on your local machine.
 
 This procedure corresponds to step 2 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.php`, transfer it to your local system so you can add it to Git.
@@ -94,51 +94,50 @@ To create and transfer `config.php`:
 
 The following snippet from `config.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
-<pre class="no-copy">
- 'general' =>
-      array (
-        'locale' =>
-        array (
-          'code' => 'en_GB',
-          'timezone' => 'UTC',
-        ),
+```php?start_inline=1
+'general' => [
+     'locale' => [
+         'code' => 'en_GB',
+         'timezone' => 'UTC',
+     ],
 
-        ... more ...
+     ... more ...
 
- 'dev' =>
-      'template' =>
-        array (
-          'allow_symlink' => '0',
-          'minify_html' => '0',
-        ),
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '0',
+     ],
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '0',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '0',
+     ],
 
-        ... more ...
-
-        'js' =>
-        array (
-          'merge_files' => '0',
-          'enable_js_bundling' => '0',
-          'minify_files' => '0',
-        ),
-        'css' =>
-        array (
-          'merge_css_files' => '0',
-          'minify_files' => '0',
-        ),
-</pre>
+     ... more ...
+```
+{: .no-copy}
 
 ## Push and deploy config.php to environments {#deploy}
+
 Now that you've created `config.php` and transferred it to your local system, commit it to Git and push it to your environments. This procedure corresponds to step 3 and 4 in the [recommended procedure]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 The following command adds, commits, and pushes to master:
 
-	git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+```bash
+git add app/etc/config.php && git commit -m "Add system-specific configuration" && git push origin master
+```
 
 Complete code deployment to Staging and Production. For Starter, you push to `staging` and `master` branches. For Production, you will need to SSH into your environments and push. For details on deployment commands, see [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 Wait for deployment to complete in all environments.
 
 ## Verify your configuration changes {#cloud-set-verify}
+
 After you push `config.php` to your environments, any values you changed should be read-only in the Magento Admin. In this example, the modified default locale and static file optimization settings should not be editable in the Magento Admin. These configuration settings are set in `config.php`.
 
 To verify your configuration changes:
@@ -160,6 +159,7 @@ To verify your configuration changes:
 7.	Log out of the Magento Admin.
 
 ## Change and update system-specific configuration settings {#modify}
+
 If you need to modify any of these settings and update `config.php`, you will need to modify the file manually with a text editor. After completing edits or removals, you can push it to Git following the previous steps.
 
 To add new configurations, modify your Integration environment and run the command again to generate the file. Any new configurations are appended to the code in the file. Push it to Git following the previous steps.
@@ -169,20 +169,22 @@ For an overview, see the [recommended procedure]({{ page.baseurl }}/cloud/live/s
 For this example, we'll modify static file optimization settings and add a new setting for JavaScript.
 
 ### Add new configurations in Integration {#change-settings}
+
 To add additional configuration values in the Integration environment Magento Admin. For this example, we are merging JavaScript files.
 
 1.	If you haven't done so already, log out of the Integration Admin.
 2.	Log in to the Integration Admin.
 
-	For URL and credentials, see [Find Admin login information](http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
+	For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
 3.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 4.	In the right pane, expand **JavaScript Settings**.
 5.	From the **Merge JavaScript Files** list, click **Yes**.
 6.	Click **Save Config**.
-7.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+7.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 8.	Log out of the Magento Admin.
 
 ### Run the config.php command {#regenerate}
+
 By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new configuration is appended to the file.
 
 1.	On your local system, find the integration server's SSH URL.
@@ -201,62 +203,62 @@ By running the command again for `php vendor/bin/m2-ece-scd-dump`, the new confi
 		rsync <SSH URL>:app/etc/config.php ./app/etc/config.php
 
 ### Edit config.php with new settings {#change-config}
-On your local, use a text editor to edit the updated `app/etc/config.php` file. We will edit these settings to enable minifying for JavaScript, HTML, and CSS files.
 
-<pre class="no-copy">
-'dev' =>
-		'template' =>
-			array (
-				'allow_symlink' => '0',
-				'minify_html' => '0',
-			),
+On your local, use a text editor to edit the updated `app/etc/config.php` file. Edit these settings to enable minifying for JavaScript, HTML, and CSS files.
 
-			... more ...
+```php?start_inline=1
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '0',
+     ],
+     
+     ... more ...
+     
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '0',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '0',
+     ],
+```
+{: .no-copy}
 
-		'js' =>
-			array (
-				'merge_files' => '0',
-				'enable_js_bundling' => '0',
-				'minify_files' => '0',
-			),
-		'css' =>
-			array (
-				'merge_css_files' => '0',
-				'minify_files' => '0',
-			),
-</pre>
+To modify settings to allow minification, edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
 
-To modify settings to allow minification, we edit `'0'` to `'1'` for `'minify_html'` and each `'minify_files'` option:
-
-<pre class="no-copy">
-'dev' =>
-		'template' =>
-			array (
-				'allow_symlink' => '0',
-				'minify_html' => '1',
-			),
-
-			... more ...
-
-		'js' =>
-			array (
-				'merge_files' => '0',
-				'enable_js_bundling' => '0',
-				'minify_files' => '1',
-			),
-			'css' =>
-				array (
-					'merge_css_files' => '0',
-					'minify_files' => '1',
-				),
-</pre>
+```php?start_inline=1
+ 'dev' => [
+     'template' => [
+         'allow_symlink' => '0',
+         'minify_html' => '1',
+     ],
+     
+     ... more ...
+     
+     'js' => [
+         'merge_files' => '0',
+         'enable_js_bundling' => '0',
+         'minify_files' => '1',
+     ],
+     'css' => [
+         'merge_css_files' => '0',
+         'minify_files' => '1',
+     ],
+```
+{: .no-copy}
 
 Save the changes to the file.
 
 ### Push the changes to Git {#push-again}
+
 To push your changes, enter the following command:
 
-	git add app/etc/config.php && git commit -m "Add system-specific configuration and edit settings" && git push origin master
+```bash
+git add app/etc/config.php && git commit -m "Add system-specific configuration and edit settings" && git push origin master
+```
 
 Wait for deployment to complete.
 

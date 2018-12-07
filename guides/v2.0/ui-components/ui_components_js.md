@@ -1,15 +1,14 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: A_Using_UI
 title: Using UI components client-side
 menu_title: Using UI components client-side
 menu_node: parent
-version: 2.0
-github_link: ui-components/ui_components_js.md
 redirect_from: /guides/v2.0/javascript-dev-guide/ui_components_js.html
 ---
 
 ## What's in this topic
+
 This topic is aimed for developers, who need to reuse the [Magento UI Components]({{ page.baseurl }}/ui-library/ui-library-component.html). 
 
 The topic covers the following:
@@ -30,8 +29,8 @@ A UI component's behavior, configuration and structure is defined by the followi
 
 All these properties, options, and methods are available in the component template's scope.
 
-
 ## Most important UI component properties {#main_properties}
+
 The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} are the following:
 
  - `component`: the path to the component's `.js` file in terms of RequireJS.
@@ -193,8 +192,8 @@ Example of using `listens` in a component's configuration `.xml` file:
 </argument>
 {% endhighlight xml%}
 
-
 ## Frequently used additional components {#comp_additional}
+
 This section is a brief description of the most frequently used additional UI components.
 
 ### `uiClass`
@@ -213,7 +212,7 @@ Extends `uiClass`. Adds the following:
 Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
-- by default uses the <a href="{{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html">app/code/Magento/Ui/view/base/web/templates/collection.html</a> template
+- by default uses the [app/code/Magento/Ui/view/base/web/templates/collection.html]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html) template
 
 ### `uiRegistry`
 In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.
@@ -242,11 +241,13 @@ Example of using the `uiClass` property in a configuration file:
 {%endhighlight js%}
 
 ## JS UI components debugging {#comp_debug}
+
 This section describes how to define what UI components are used on a particular page and what data they use.
 
 To define the UI components used on a page, you can use browser built-in developer tools, or install additionally a plugin, for example Knockout JS context debugger for Google Chrome.
 
 ### Debug using browser built-in tools
+
 1. Open the required page in a browser.
 2. Select to view the page source.
 3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.
@@ -254,30 +255,19 @@ To define the UI components used on a page, you can use browser built-in develop
 
 For illustration, let's find out what UI components are used on the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug1.png" alt="The catalog page"> 
-</div>
-
+![The catalog page]({{ site.baseurl }}/common/images/ui_debug1.png) 
 
 According to the described procedure, open the page source and search for "`data-bind="scope:`"
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug2.png" alt="searching for data-bind=scope:">
-</div>
-
+![searching for data-bind=scope:]({{ site.baseurl }}/common/images/ui_debug2.png)
 
 So we find out that the main UI component used on this page is product listing, with `product_listing.product_listing` as a full name. To see its configuration, child components and data source, in the in the **Console** tab we run `require('uiRegistry').get('product_listing.product_listing')`:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug3.png" alt="run the command in Console">
-</div>
-
+![run the command in Console]({{ site.baseurl }}/common/images/ui_debug3.png)
 
 And we get the component's configuration:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/ui_debug4.png" alt="view the configuration">
-</div>
+![view the configuration]({{ site.baseurl }}/common/images/ui_debug4.png)
 
 ### Debug using a Google Chrome plug-in
 

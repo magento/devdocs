@@ -17,12 +17,13 @@
 <body>
 <a name="top"></a>
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 <h1>Upgrading to and Verifying Magento Community Edition and Enterprise Edition&mdash;Part 2</h1>
 <p><a href="{{ site.m1xgithuburl }}guides/m1x/install/installing_upgrade_details.html" target="_blank">Edit this page on GitHub <img src="{{ site.baseurl }}/common/images/github_icon.png" height="15px"></a></p>
 
- 
-<div class="toc"> <h4 class="toc">Table of Contents</h4> 
+
+<div class="toc"> <h4 class="toc">Table of Contents</h4>
 <ul>
 <li><a href="#overview">Overview</a></li>
 <li><a href="#upgrade-ee-versions">Upgrade Roadmaps</a></li>
@@ -316,7 +317,7 @@ The following figure shows an example.<br />
 <li>Click <strong>Go</strong>.</li>
 <li>Repeat these tasks for the path that includes <code>web/secure/base_url</code>.</li>
 <li>Exit phpmyadmin.</li></ol>
-</li></ol> 
+</li></ol>
 
 <h3 id="upgrade-manual-solr">Upgrading Solr (EE 1.14.0.0 only)</h3>
 <p><em>This section applies to upgrading to EE 1.14.0.0 using the Solr search engine only</em>. If you're upgrading to a different version&mdash;or if you're not using Solr&mdash;skip this section and continue with <a href="#upgrade-manual-cleanup">Finishing the File System</a>.</p>
@@ -384,8 +385,8 @@ cd /var/www/html/magento</pre></li>
 For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
 <pre>chown -R www-data .</pre></li>
 <li>Enter the following commands to set directory permissions to 700 and file permissions to 600:
-<pre>find . -type d -exec chmod 700 {} \;
-find . -type f -exec chmod 600 {} \;</pre></li></ol>
+<pre>find . -type d -exec chmod 700 {} +
+find . -type f -exec chmod 600 {} +</pre></li></ol>
 
 <!-- Start by changing to your Magento installation directory:
 <code>#Ubuntu example<br />
@@ -394,9 +395,9 @@ cd /var/www/magento<br />
 #CentOS example<br />
 cd /var/www/html/magento</code></li>
 <li>Set file permissions.
-<code>find . -type f -exec chmod 644 {} \;</code></li>
+<code>find . -type f -exec chmod 644 {} +</code></li>
 <li>Set directory permissions.
-<code>find . -type d -exec chmod 755 {} \;</code></li>
+<code>find . -type d -exec chmod 755 {} +</code></li>
 <li>Make the <code>var</code>, <code>app/etc</code>, and <code>media</code> directories and subdirectories world-writable.
 <code>chmod -R 777 media app/etc var var/.htaccess</code></li>
 <li>Change to the directory above the Magento install directory.
@@ -427,8 +428,8 @@ chown -R myuser:www-data magento</code></li></ol> -->
 <p>Complete the following tasks in the order shown:</p>
 <ol><li><a href="#upgrade-manual-scripts">Running the Upgrade Scripts and Fixing Exceptions</a></li>
 <li><a href="#upgrade-manual-post-upgrade-11302">Running the URL Redirect Script <em>(EE 1.12.x and earlier only)</em></a></li>
-<li><a href="#upgrade-manual-post-upgrade-11300">Post-Upgrade Tasks <em>(EE 1.13.0.1 Only)</em></a></li> 
-<li>To apply the <a href="https://magento.com/security/patches/supee-8788" target="_blank">security patch</a> released in October, 2016, see <a href="http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a>.</li>
+<li><a href="#upgrade-manual-post-upgrade-11300">Post-Upgrade Tasks <em>(EE 1.13.0.1 Only)</em></a></li>
+<li>To apply the <a href="https://magento.com/security/patches/supee-8788" target="_blank">security patch</a> released in October, 2016, see <a href="{{ site.baseurl }}/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a>.</li>
 <li><a href="#upgrade-manual-cron">Setting Up the Magento Cron Job</a></li>
 <li><a href="#upgrade-manual-var">Clearing Magento var/ Subdirectories</a></li>
 <li><a href="#upgrade-manual-index">Verifying the Status of Indexers</a></li>
@@ -490,7 +491,7 @@ You can find errors in the web server's error log or in <code>[your Magento inst
 <h3 id="upgrade-manual-index">Verifying the Status of Indexers</h3>
 <p>After the cron job runs, all indexers should be in a Ready status. Before testing your upgrade, verify all indexers are Ready; otherwise, your testing will be inconclusive.</p>
 <p>To verify the status of indexers:</p>
-<ol><li>Log in to the Admin Panel as an administrator.</li> 
+<ol><li>Log in to the Admin Panel as an administrator.</li>
 <li>Click <strong>System</strong> > <strong>Index Management</strong>.<br />
 Verify that all indexers have a status of Ready, as the following figure shows.<br />
 <img src="{{ site.baseurl }}/common/images/m1x/upgrade_index-management_after.png" width="600px" height="154px"/></li>
@@ -554,5 +555,5 @@ The way you do this is up to you; typically, you can configure your DNS server t
 <li>When you log back in to the Admin Panel, everything works as expected.</li></ol>
 
 <p>In the event of any other issue during the upgrade, see <a href="{{ site.m1xgdeurl }}install/installing.html#help" target="_blank">Getting Help With Your Installation or Upgrade</a>.</p>
- 
+
 </p>

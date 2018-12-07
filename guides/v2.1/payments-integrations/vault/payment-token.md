@@ -4,8 +4,6 @@ subgroup: C_vault
 title: Payment Token
 menu_title: Payment Token
 menu_order: 10
-version: 2.1
-github_link: payments-integrations/vault/payment-token.md
 functional_areas:
   - Integration
 ---

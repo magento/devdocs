@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deploy code and migrate static files and data
-version: 2.0
-github_link: cloud/live/stage-prod-migrate.md
 functional_areas:
   - Cloud
   - Deploy
@@ -20,9 +18,11 @@ To migrate your database and static files to Staging and Production:
 If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}/cloud/live/stage-prod-migrate.html).
 
 ## Deploy code to Staging and Production {#code}
+
 You can also use the [Project Web Interface](#interface) or [SSH and CLI commands](#ssh) to deploy your code to Staging and Production.
 
 ### Deploy code with the Project Web Interface {#interface}
+
 The Project Web Interface provides full features to create, manage, and deploy code branches in your Integration, Staging, and Production environments for Starter and Pro plans.
 
 For Pro projects created **after October 23, 2017** or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html), deploy the Integration `master` branch you created to Staging and Production:
@@ -46,6 +46,7 @@ For Starter, deploy your development branch you created to Staging and Productio
 ![Use the merge option to deploy]({{ site.baseurl }}/common/images/cloud_project-merge.png)
 
 ### Deploy code with SSH and CLI {#ssh}
+
 If you prefer to use CLI for deploying, you will need to configure additional SSH settings and Git remotes to use commands. You can SSH into the Staging and Production environments to push the `master` branch.
 
 You'll need the SSH and Git access information for your project.
@@ -65,6 +66,7 @@ You'll need the SSH and Git access information for your project.
   	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
 
 #### Deploy to Pro: updated or created after October 23, 2017
+
 To deploy to Pro projects **created after October 23, 2017** or [updated]({{ page.baseurl }}/cloud/trouble/pro-env-management.html):
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
@@ -81,8 +83,8 @@ To deploy to Pro projects **created after October 23, 2017** or [updated]({{ pag
 
         git push origin
 
-
 #### Deploy to Pro: created before October 23, 2017 {#classic}
+
 For these environments, you are pushing code from repository to repository: Integration `master` to Staging or Production `master`. Due to these being `master` branches in different repositories, you cannot merge as if branch to branch. You should have completed all [prerequisites]({{ page.baseurl }}/cloud/live/stage-prod-migrate-prereq.html) prior to deployment.
 
 1. Open an SSH connection to your Staging or Production environment using the SSH command.
@@ -98,9 +100,10 @@ For these environments, you are pushing code from repository to repository: Inte
   You must force push for these branches as they are separate repositories with a master branch.
 
 ## Migrate static files {#cloud-live-migrate-static}
+
 You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
 
-We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="\_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
+We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
 We suggest using the following syntax:
 
@@ -113,7 +116,7 @@ Options:
 	v verbose
 	P partial progress
 
-For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="\_blank"}.
+For additional options, see the [rsync man page](http://linux.die.net/man/1/rsync){:target="_blank"}.
 
 To migrate static files:
 
@@ -129,11 +132,11 @@ To migrate static files:
 
 ## Migrate the database {#cloud-live-migrate-db}
 
-**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="\_blank"}.
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
 
 **Important:** The Integration environment database is strictly for development testing and may include data you may not want to migrate into Staging and Production.
 
-For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file](http://devdocs.magento.com/guides/v2.1/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
+For continuous integration deployments, we **do not recommend** migrating data from Integration to Staging and Production. You could pass testing data or overwrite important data. Any vital configurations will be passed using the [configuration file]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html) and `setup:upgrade` command during build and deploy.
 
 We **do recommend** migrating data from Production into Staging to fully test your site and store(s) in a near-production environment with all services and settings.
 
@@ -183,6 +186,7 @@ To migrate a database:
 		zcat database.sql.gz | mysql -u user main
 
 ### Troubleshooting the database migration
+
 If you encounter the following error, you can try to create a database dump with the DEFINER replaced:
 
 ```
@@ -199,9 +203,8 @@ mysqldump -h <database host> --user=<database username> --password=<password> --
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.
-</div>
 
 #### Next step
 [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html)

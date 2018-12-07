@@ -1,17 +1,14 @@
 ---
-group: unit-testing
+group: testing
 title: Writing Testable Code
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-version: 2.1
-github_link: test/unit/writing_testable_code.md
 functional_areas:
   - Testing
   - test
 ---
 
 This topic does not aim to be a replacement for existing documentation about testing, but rather tries to highlight some thoughts on the subject. Although the truth of anything depends somewhat on the context, this topic attempts to provide information that is applicable in *most* situations.
-
 
 ## Tests should be simple
 
@@ -24,6 +21,7 @@ A big part of making code testable is managing its dependencies. Dependencies ca
 The fewer dependencies a class has and the more obvious they are, the easier it is to maintain and test the class. At the same time, the class is less likely to break because of future changes.
 
 ### Creating new instances
+
 We strongly recommend you do *not*:
 
 *   Use `new` to instantiate new objects, because that removes the flexibility the Magento dependency configuration offers.  
@@ -31,9 +29,8 @@ We strongly recommend you do *not*:
 
 There always is a better alternative, usually a [generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) `Factory` class, or a [`Locator`](https://thephp.cc/news/2015/09/dependencies-in-disguise){:target="_blank"} class of sorts.  
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This rule applies only to production code. When writing <a href="{{ page.baseurl }}/test/integration/integration_test_execution.html">integration tests</a>, this is not true. In fact, the object manager is recommended for integration tests.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+This rule applies only to production code. When writing [integration tests]({{ page.baseurl }}/test/integration/integration_test_execution.html), this is not true. In fact, the object manager is recommended for integration tests.
 
 ### Collaborator classes
 
@@ -41,7 +38,7 @@ Whenever an external class property, class constant, or a class method is used i
 
 {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
 
-Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#dep-inj-preview-cons).
+Collaborator instances should be passed into the class using [constructor injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#constructor-injection).
 
 ### The environment (file system, time, global variables)
 

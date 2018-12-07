@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 09_Varnish
 title: Final verification
 menu_title: Final verification
 menu_order: 100
 menu_node:
-version: 2.0
-github_link: config-guide/varnish/config-varnish-final.md
 functional_areas:
   - Configuration
   - System
@@ -15,7 +13,8 @@ functional_areas:
 
 Now that you're using the `default.vcl` generated for you by Magento, you can perform some final verifications to make sure Varnish is working.
 
-<h3 id="config-varnish-final-verify-headers">Verify HTTP response headers</h3>
+### Verify HTTP response headers   {#config-varnish-final-verify-headers}
+
 Use `curl` or another utility to view HTTP response headers when you visit any Magento page in a web browser.
 
 First, make sure you are using Magento's [developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#config-mode-change); otherwise, you won't see the headers.
@@ -30,11 +29,11 @@ Important headers:
 	Age: 0
 	X-Magento-Cache-Debug: MISS
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>This value is also acceptable: <code>X-Magento-Cache-Debug: HIT</code></p>
-</div>
+{: .bs-callout .bs-callout-info }
+This value is also acceptable: `X-Magento-Cache-Debug: HIT`
 
-<h3 id="config-varnish-final-response">Check page load times</h3>
+### Check page load times   {#config-varnish-final-response}
+
 If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} pages.
 
 Use a browser inspector to measure page load times.
@@ -57,7 +56,8 @@ For example, to use the Chrome inspector:
 
 	You can view HTTP headers which are discussed in more detail in <a href="#config-varnish-final-verify-headers">Verify HTTP response headers</a>.
 
-<h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
+### Verify the Magento cache   {#config-varnish-final-verify-cache}
+
 Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 
 1.	Log in to your Magento server, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
@@ -71,10 +71,10 @@ Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 	If the directory is empty, congratulations! You successfully configured Varnish and Magento to work together!
 5.	If you cleared the `var/page_cache/` directory, restart Varnish.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>If you encounter 503 (Backend Fetch Failed) errors, see <a href="{{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 (Service Unavailable) errors</a>.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+If you encounter 503 (Backend Fetch Failed) errors, see [Troubleshooting 503 (Service Unavailable) errors]({{ page.baseurl }}/config-guide/varnish/tshoot-varnish-503.html).
 
 #### Next steps
+
 *	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
 *	<a href="{{ page.baseurl }}/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a>

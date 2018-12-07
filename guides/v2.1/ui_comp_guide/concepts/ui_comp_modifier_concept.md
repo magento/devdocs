@@ -1,11 +1,9 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: About PHP modifiers in UI components
 menu_title: About PHP modifiers in UI components
 menu_order: 40
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 ---
 
 ## What's in this topic
@@ -73,7 +71,7 @@ class Example extends AbstractModifier
             ]
         ];
 
- return $meta;
+        return $meta;
     }
 
     /**
@@ -103,7 +101,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 </virtualType>
 {% endhighlight %}
 
-, where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type).
+Where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#dependency-types).
 
 (If you want to use this sample in your `di.xml`, replace the sample values with the real names of your entities.)
 
@@ -111,8 +109,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 
 To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{ site.mage2100url }}app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{ site.mage2100url }}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
 
-
 ## Related reading
 
 - [Dependency injection]( {{ page.baseurl }}/extension-dev-guide/depend-inj.html)
-- [How Do I: Customize product creation form]({{ page.baseurl }}/howdoi/customize_product.html#modifier)
+- [How Do I: Customize product creation form]({{ page.baseurl }}/howdoi/customize_product.html)

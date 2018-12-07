@@ -1,11 +1,9 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: REST usage notes
 menu_title: REST usage notes
 menu_order: 7
-version: 2.2
-github_link: rest/notes.md
 functional_areas:
   - Integration
 ---

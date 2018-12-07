@@ -1,19 +1,18 @@
-<div markdown="1">
-
 Before you continue, to avoid errors during your installation or update, make sure you verify *all* of the following:
 
 *	You set up a [Magento file system owner](#magento-owner-group) and shared that owner's group with the web server user group
 *	Your [cron jobs](#magento-cron) are set up and running
 *	[File system permissions](#perms) are set properly
 
-<div class="bs-callout bs-callout-warning">
-    <p>Do not continue without performing these checks. Failure to do so could result in errors.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+Do not continue without performing these checks. Failure to do so could result in errors.
 
 ### Magento file system owner and group {#magento-owner-group}
+
 The [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) group must have write access to Magento directories and files.
 
 ### Cron jobs are running {#magento-cron}
+
 Magento requires three cron jobs, all running as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 To verify your cron jobs are set up properly, enter the following command as a user with `root` privileges:
@@ -41,6 +40,7 @@ To see the error, you might need to click **System Messages** at the top of the 
 For details, see [Set up cron]({{ page.baseurl }}/install-gde/install/post-install-config.html#post-install-cron).
 
 ### File system permissions {#perms}
+
 For security reasons, Magento requires certain permissions on the file system. Permissions are different from [*ownership*](#magento-owner-group). Ownership determines *who* can perform actions on the file system; permissions determine *what* the user can do.
 
 Directories in the Magento file system must be writable by the [Magento file system owner's]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) group.

@@ -1,13 +1,11 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 20_Enterprise Edition
 ee_only: true
 title: Magento_CatalogImportExportStaging module
 menu_title: CatalogImportExportStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/CatalogImportExportStaging.md
 ---
 
 The Magento_CatalogImportExportStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It extends the Magento_CatalogImportExport module functionality to be used in staging mode.
@@ -27,8 +25,8 @@ You can find the list of modules that have dependencies on the Magento_CatalogIm
 
 The Magento_CatalogImportExportStaging module does not provide any specific {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} points. You can extend it using the Magento extension mechanism.
 
-For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html) and [Magento dependency injection](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html).
+For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html) and [Magento dependency injection]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html).
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release](http://devdocs.magento.com/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

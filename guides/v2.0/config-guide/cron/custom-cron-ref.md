@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 12_cron
 title: Custom cron job and cron group reference
 menu_title: Custom cron job and cron group reference
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: config-guide/cron/custom-cron-ref.md
 functional_areas:
   - Configuration
   - System
@@ -24,6 +22,7 @@ For a step-by-step tutorial, see [Configure custom cron jobs and cron groups (tu
 {% include config/cron-overview.md %}
 
 ## Configure cron groups {#config-cli-cron-group-conf}
+
 This section discusses how to optionally create a cron group for a custom module. If you don't need to do this, continue with the next section.
 
 A *cron group* is a logical group that enables you to easily run cron for more than one process at a time. Most Magento modules use the `default` cron group; some modules use the `index` group.
@@ -78,7 +77,7 @@ The resulting `crontab.xml` with two groups may look like this:
 </config>
 {%endhighlight%}
 
-As an example, see <a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml" target="_blank">Magento_Customer crontab.xml</a>.
+As an example, see [Magento\_Customer crontab.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/crontab.xml){: target="_blank"}.
 
 #### Specifying Cron group options {#specify-cron-group-options}
 
@@ -97,7 +96,6 @@ Below is an example of the `cron_groups.xml` file:
         <history_cleanup_every>10</history_cleanup_every>
         <history_success_lifetime>60</history_success_lifetime>
         <history_failure_lifetime>600</history_failure_lifetime>
-        <use_separate_process>1</use_separate_process>
     </group>
 </config>
 {%endhighlight%}
@@ -112,7 +110,6 @@ where:
 |`history_cleanup_every`|Time (in minutes) that cron history is kept in the database.|
 |`history_success_lifetime`|Time (in minutes) that the record of successfully completed cron jobs are kept in the database.|
 |`history_failure_lifetime`|Time (in minutes) that the record of failed cron jobs are kept in the database.|
-|`use_separate_process`|This feature is available only for Magento 2.1 and later.|
 
 #### Related topic
 [Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)
