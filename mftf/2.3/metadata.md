@@ -469,8 +469,26 @@ It contains one or more `value` elements.
 
 ### value {#value-tag}
 
-An item in `array`.
+Defines the data type of the array elements. Possible values can be primitive data types supported by operation schema, custom data types define in meta data, or a `field` of a custom data type.
 
+Examples:
+```xml
+<array key="tax_rate_ids">
+    <value>integer</value>
+</array>
+```
+or
+```xml
+<array key="product_options">
+    <value>product_option</value>
+</array>
+```
+or
+```xml
+<array key="tax_rate_ids">
+    <value>tax_rate.id</value>
+</array>
+``` 
 ### header {#header-tag}
 
 An additional parameter in REST API request.
