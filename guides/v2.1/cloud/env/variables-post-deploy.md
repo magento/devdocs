@@ -13,10 +13,7 @@ stage:
     POST-DEPLOY_VARIABLE_NAME: value
 ```
 
-For more information about customizing the build and deploy process:
-
--  [Manage build and deploy actions]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
+{% include cloud/customize-build-deploy.md %}
 
 ### `WARM_UP_PAGES`
 

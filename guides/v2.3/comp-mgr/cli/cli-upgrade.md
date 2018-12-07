@@ -248,7 +248,7 @@ php -f pre_composer_update_2.3.php -- --help
 ### Run the script
 
 ```bash
-php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' <options>
+php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' --repo=https://repo.magento.com/ <options>
 ```
 
 ### Apply updates

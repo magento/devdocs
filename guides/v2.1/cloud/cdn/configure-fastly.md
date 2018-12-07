@@ -167,7 +167,7 @@ Configure the following features and enable additional [configuration options](h
 
 * [Upload Fastly VCL snippets](#upload-vcl-snippets)
 * [Configure backends and Origin shielding](#backend)
-* [Create custom error/maintenance page](#fastly-errpg)
+* [Customize response pages]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html)
 
 {:#info .bs-callout .bs-callout-info}
 *	Ignore the link to create a free Fastly account. We'll provide your Fastly
@@ -307,30 +307,6 @@ purge caches through the Cache Management page.
    *Fastly Configuration* section.
 
 For more information, see [the Fastly configuration options](https://github.com/fastly/fastly-magento2/blob/21b61c8189971275589219d418332798efc7db41/Documentation/CONFIGURATION.md#further-configuration-options).
-
-## Create a custom error/maintenance page {#fastly-errpg}
-
-You can optionally create a custom page for errors or when your site is down for
-maintenance. Create your page with HTML code to provide detailed information
-about why the site is temporarily down, instead of an HTTP error code.
-
-To create a custom error/maintenance page:
-
-1.	In the **Fastly Configuration** section, expand **Error/Maintenance Page**
-    as the following figure shows.
-
-	![Custom Fastly error page]({{ site.baseurl }}/common/images/cloud-fastly_err-pg.png){:width="650px"}
-
-2.	Click **Set HTML**.
-3.	In the provided field, enter your HTML code.	The HTML you enter can be a  
-    maximum of 65,535 bytes in length.
-
-	{:#info .bs-callout .bs-callout-info}
-	Avoid using images on your site in the event Fastly is not available. To use
-  images, refer to [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/).
-
-4.	When you're done, click **Upload** to send your updates to Fastly.
-5.	Click **Save Config** at the top of the page.
 
 ## Create custom VCL snippets {#custom-vcl}
 
