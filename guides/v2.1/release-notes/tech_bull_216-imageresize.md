@@ -9,7 +9,7 @@ menu_order: 4
 
 *Technical bulletin updated on May 17, 2017.*
 
-These instructions apply to anyone upgrading to {{site.data.var.ce}} (formerly Community Edition (CE) or {{site.data.var.ce}} (formerly Enterprise Edition (EE) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
+These instructions apply to anyone upgrading to {{site.data.var.ce}} or {{site.data.var.ee}}  version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
 
 ### Who needs this information?
 
