@@ -50,7 +50,7 @@ To find the web server user's group:
 *	CentOS: 
 
 	grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
-    # or
+    or
     grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
 	
 Typically, the user and group name are both `apache`
