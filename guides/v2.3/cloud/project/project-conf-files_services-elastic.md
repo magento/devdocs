@@ -20,11 +20,11 @@ functional_areas:
 Elasticsearch 5.2 is only available for 2.2.3 and later. If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es). See [Elasticsearch information]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html) to learn more.
 
 {:.bs-callout .bs-callout-warning}
-If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
+If you prefer using an existing search service, such as Elasticsearch, instead of relying on the default Cloud configuration, you can use the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
 
 #### To enable Elasticsearch:
 
-1.  Update the `.magento/services.yaml` file with the installed version and allocated disk space in MB.
+1.  Add the `elasticsearch` service to the `.magento/services.yaml` file with the Elasticsearch version and allocated disk space in MB.
 
     ```yaml
     elasticsearch:
@@ -51,7 +51,7 @@ If you prefer using an existing search service, like Elasticsearch, instead of r
 
 ## Elasticsearch plugins
 
-Optionally, you can add plugins in the `.magento/services.yaml` file. For example, to enable ICU analysis plugin and Python script support plugins, add the configuration plugins section with the listed plugin codes:
+Optionally, you can add plugins with the `.magento/services.yaml` file. For example, to enable the ICU analysis plugin and Python script support plugin, add the `configuration:plugins` section with the listed plugin codes:
 
 ```yaml
 elasticsearch:
@@ -64,9 +64,9 @@ elasticsearch:
 ```
 
 {:.bs-callout .bs-callout-info}
-ElasticSuite is a third party plugin and is not officially supported by Magento. If you use [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you must add the `analysis-icu` and `analysis-phonetic` plugins to the `services.yaml` file.
+ElasticSuite is a third-party plugin and is not officially supported by Magento. If you use [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you must add the `analysis-icu` and `analysis-phonetic` plugins to the `services.yaml` file.
 
-For documentation on plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/index.html).
+See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/index.html).
 
 ## Verify relationships
 

@@ -13,7 +13,7 @@ There are three, distinct phases of the deployment process: build, deploy, and p
 
 ## ![Build phase] Build phase
 
-The _build_ phase assembles containers for the services defined in the configuration files, installs dependencies based on the `composer.lock` file, and runs the build hooks defined in the `.magento.app.yaml` file. Without the ability to connect to any services or access the database, the build phase is entirely environment independent.
+The _build_ phase assembles containers for the services defined in the configuration files, installs dependencies based on the `composer.lock` file, and runs the build hooks defined in the `.magento.app.yaml` file. Without the ability to connect to any services or access the database, the build phase depends on the resources limited to the environment.
 
 ## ![Deploy phase] Deploy phase
 
