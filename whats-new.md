@@ -664,7 +664,7 @@ Added BIC about moved directories|2.2.x|Updated|Jul 03
 | [Magento EE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13EE.html){:target="_blank"} | 2.0.13 | New | Feb 21 |
 | [How {{site.data.var.ece}} uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html){:target="_blank"}  | 2.x  |  New | Feb 17  |
 |  [Prohibit usage of DocBlock templates, add License Notice and Copyright]({{ page.baseurl }}/coding-standards/docblock-standard-general.html){:target="_blank"}  | 2.x  |  Updated | Feb 11  |
-| [How to create a Fastly error or maintenance page]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#fastly-errpg){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
+| [How to create a Fastly error or maintenance page]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
 | [{{site.data.var.ece}} 2.1.4 and 2.0.12 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}  |  2.x | New  | Feb 7  |
 | [Magento Community Edition (CE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12CE.html){:target="_blank"}  | 2.0.x  | New  | Feb 7  |
 | [Magento Enterprise Edition (EE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}  |  2.0.x | New  |  Feb 7 |
