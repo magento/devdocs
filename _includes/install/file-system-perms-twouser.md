@@ -45,9 +45,17 @@ Because the point of creating this user is to provide added security, make sure 
 
 To find the web server user's group:
 
-*	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
+*	CentOS: 
 
-	Typically, the user and group name are both `apache`
+    ```bash
+    grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
+    ```
+    or
+    ```bash
+    grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
+    ```
+	
+Typically, the user and group name are both `apache`
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
 	Typically, the username and the group name are both `www-data`
