@@ -20,12 +20,12 @@ To configure Magento to use Elasticsearch:
 	<tr>
 		<td>Elasticsearch Server Hostname</td>
 		<td><p>Enter the fully qualified hostname or IP address of the machine running Elasticsearch.</p>
-		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
+		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#verify-relationships">Get this value</a> from your integration system.</p> </td>
 	</tr>
 	<tr>
 		<td>Elasticsearch Server Port</td>
 		<td><p>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</p>
-		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
+		<p>{{site.data.var.ece}}: <a href="{{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html#verify-relationships">Get this value</a> from your integration system.</p></td>
 	</tr>
 	<tr>
 		<td>Elasticsearch Index Prefix</td>
