@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 28, 2018.*
+*Release notes published November 28 and last updated on December 10,2018.*
 
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
 
@@ -48,6 +48,8 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * 2FA/CAPTCHA protects the Admin panel against stolen passwords and affects stores against bots. 
 
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.7, 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
+
 
 ### Core bundled extension enhancements
 
@@ -77,7 +79,6 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * Added support for PHP 7.2 and dropped support for PHP 5.6
 
-#### Magento Shipping
 
 #### Magento Shipping
 
@@ -127,6 +128,8 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 
 ### Installation, upgrade, deployment
+
+<!---MAGETWO-94173 -->* Magento backup functionality is no longer enabled by default. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
  
 <!---MAGETWO-86717 -->* All existing installation and data scripts have been converted into declarative schema data patches for easier deployment. 
 
