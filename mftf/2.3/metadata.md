@@ -422,34 +422,30 @@ Root element that points to the corresponding XML Schema.
 
 ### operation {#operation-tag}
 
-Attribute|Type|Use|Description
----|---|---|---
-`name`|string|optional|Name of the operation.
-`dataType`|string|required|Data type of the operation. It refers to a `type` attribute of data entity that will be used as a source of input data.
-`type`|Possible values: `create`, `delete`, `update`, `get`.|required|Type of operation.
-`url`|string|optional |A routing URL of the operation. Example value: `"/V1/categories"`. The full URL at the end will contain: `ENV.baseUrl` + /rest/ + `url`.  To reference to a field key of a particular data type, wrap the reference into `{}` such as `{dataType.field key}`, or mere `{field key}` that will reference the field key by the current or inherited data type. Examples: `"/V1/bundle-products/{product2.sku}/links/{return}"`, or just `"/V1/bundle-products/{sku}/links/{return}"`, in this case we intended to reference `sku` from a product whose dataType is `product2`.
-`auth`|Possible values: `adminOath`, `adminFormKey`, `customerFormKey`, `anonymous` |optional|Type of authorization of the operation.
-`method`|string|optional|HTTP method of the operation. Possible values: `POST`, `DELETE`, `PUT`, `GET`.
-`successRegex`|string|optional|Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the `successRegex` exists.
-`returnRegex`|string|optional| Determines if the response contains the matching value to return.
-`removeBackend`|boolean|optional|Removes backend name from requested URL. Applicable when `auth="adminFormKey"`.
+| Attribute       | Type                                                                         | Use      | Description                                                                                                                                  |
+|-----------------|------------------------------------------------------------------------------|----------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| `name`          | string                                                                       | optional | Name of the operation.                                                                                                                       |
+| `dataType`      | string                                                                       | required | Data type of the operation. It refers to a `type` attribute of data entity that will be used as a source of input data.                      |
+| `type`          | Possible values: `create`, `delete`, `update`, `get`.                        | required | Type of operation.                                                                                                                           |
+| \*`url`         | string                                                                       | optional | A routing URL of the operation. Example value: `"/V1/categories"`.                                                                           |
+| \*\*`auth`      | Possible values: `adminOath`, `adminFormKey`, `customerFormKey`, `anonymous` | optional | Type of authorization of the operation.                                                                                                      |
+| `method`        | string                                                                       | optional | HTTP method of the operation. Possible values: `POST`, `DELETE`, `PUT`, `GET`.                                                               |
+| `successRegex`  | string                                                                       | optional | Determines if the operation was successful. Parses the HTML body in response and asserts if the value assigned to the `successRegex` exists. |
+| `returnRegex`   | string                                                                       | optional | Determines if the response contains the matching value to return.                                                                            |
+| `removeBackend` | boolean                                                                      | optional | Removes backend name from requested URL. Applicable when `auth="adminFormKey"`.                                                              |
+| `filename`      | string                                                                       | optional |                                                                                                                                              |
 
-{% include note.html
-type="info"
-content="GET is used for retrieving data from objects.
+- \*`url` - full URL is a concatenation of _ENV.baseUrl_ + `/rest/` + _url_.
+  To reuse data of a required entity or returned response use a field key wrapped in curly braces such as `{sku}`.
+  When the data to reuse is of a different type, declare also the type of data such as `{product.sku}`.
+  Examples: `"/V1/products/{sku}/media/{id}"`.
 
-POST is used for creating new objects.
+- \*\*`auth` - available values:
 
-PUT is used for updating objects.
-
-DELETE is used for deleting objects." %}
-
-The following is a list with descriptions the `auth` possible values:
-
-- `adminOath` is used for REST API persistence in the Admin area with [OAuth-based authentication][oauth].
-- `adminFormKey` is used for HTML form persistence in the Admin area.
-- `customerFormKey` is used for HTML form persistence in the Customer area.
-- `anonymous` is used for REST API persistence without authorization.
+  - `adminOath` is used for REST API persistence in the Admin area with [OAuth-based authentication][oauth].
+  - `adminFormKey` is used for HTML form persistence in the Admin area.
+  - `customerFormKey` is used for HTML form persistence in the Customer area.
+  - `anonymous` is used for REST API persistence without authorization.
 
 ### contentType {#contentType-tag}
 
@@ -463,35 +459,35 @@ Sets one of the following operation types:
 Representation of a complex entity that may contain fields, arrays, and objects.
 An object must match the [entity] of the same `type`.
 
-Attribute|Type|Use|Description
----|---|---|---
-`key`|string|optional| Name of the object.
-`dataType`|string|required| Type of the related [entity].
-`required`|boolean|optional| Determines if the object is required or not. It must match the Magento REST API specification.
+| Attribute  | Type    | Use      | Description                                                                                    |
+| ---------- | ------- | -------- | ---------------------------------------------------------------------------------------------- |
+| `key`      | string  | optional | Name of the object.                                                                            |
+| `dataType` | string  | required | Type of the related [entity].                                                                  |
+| `required` | boolean | optional | Determines if the object is required or not. It must match the Magento REST API specification. |
 
 ### field {#field-tag}
 
 Representation of HTML form or REST API fields.
 
-Attribute|Type|Use|Description
----|---|---|---
-`key`|string|required|Name of the field. It must match the field name of the related [entity].
-`type`|string|optional|Type of the value. It may contain a primitive type or the type of another operation.
-`required`|boolean|optional| Determines if the field is required or not. It must match the Magento REST API specification.
+| Attribute  | Type    | Use      | Description                                                                                   |
+| ---------- | ------- | -------- | --------------------------------------------------------------------------------------------- |
+| `key`      | string  | required | Name of the field. It must match the field name of the related [entity].                      |
+| `type`     | string  | optional | Type of the value. It may contain a primitive type or the type of another operation.          |
+| `required` | boolean | optional | Determines if the field is required or not. It must match the Magento REST API specification. |
 
 ### array {#array-tag}
 
 Representation of an array.
 
-Attribute|Type|Use|Description
----|---|---|---
-`key`|string|required|Name of the array.
+| Attribute | Type   | Use      | Description        |
+| --------- | ------ | -------- | ------------------ |
+| `key`     | string | required | Name of the array. |
 
 It contains one or more `value` elements.
 
 ### value {#value-tag}
 
-Declares a data type for the parent array items.
+Declares a data type of the parent array items.
 
 1. Example of an array with value of a primitive data type:
 
@@ -548,9 +544,9 @@ Declares a data type for the parent array items.
 
 An additional parameter in REST API request.
 
-Attribute|Type|Use|Description
----|---|---|---
-`param`|string|required|A REST API header parameter.
+| Attribute | Type   | Use      | Description                  |
+| --------- | ------ | -------- | ---------------------------- |
+| `param`   | string | required | A REST API header parameter. |
 
 ```xml
 <header param="status">available</header>
@@ -560,9 +556,9 @@ Attribute|Type|Use|Description
 
 An additional parameter in URL.
 
-Attribute|Type|Use|Description
----|---|---|---
-`key`|string|required|Name of the URL parameter.
+| Attribute | Type   | Use      | Description                |
+| --------- | ------ | -------- | -------------------------- |
+| `key`     | string | required | Name of the URL parameter. |
 
 Example:
 
