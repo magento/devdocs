@@ -263,9 +263,9 @@ _Quote/Data/GuestCartData.xml_:
 _Catalog/Data/CategoryData.xml_:
 
 ```xml
- <operation name="CreateGuestCart" dataType="guestCart" type="create" auth="anonymous" url="/V1/guest-carts" method="POST">
-     <contentType>application/json</contentType>
- </operation>
+<operation name="CreateGuestCart" dataType="guestCart" type="create" auth="anonymous" url="/V1/guest-carts" method="POST">
+    <contentType>application/json</contentType>
+</operation>
 ```
 
 As a result, the MFTF sends an unauthorized POST request with an empty body to the `https://example.com/rest/V1/guest-carts` and stores the single string response that the endpoint returns.
@@ -436,10 +436,13 @@ Attribute|Type|Use|Description
 
 {% include note.html
 type="info"
-content="GET is used for retrieving data from objects.<br/>
-POST is used for creating new objects.<br/>
-PUT is used for updating objects.<br/>
-DELETE is used for deleting objects.<br/>" %}
+content="GET is used for retrieving data from objects.
+
+POST is used for creating new objects.
+
+PUT is used for updating objects.
+
+DELETE is used for deleting objects." %}
 
 The following is a list with descriptions the `auth` possible values:
 
@@ -488,32 +491,58 @@ It contains one or more `value` elements.
 
 ### value {#value-tag}
 
-Defines the data type of the array elements.
-Possible values can be primitive data types supported by operation schema, custom data types define in meta data, or a `field` of a custom data type.
+Declares a data type for the parent array items.
 
-Examples:
+1. Example of an array with value of a primitive data type:
 
-```xml
-<array key="tax_rate_ids">
-    <value>integer</value>
-</array>
-```
+   - Metadata declaration of the operation schema:
 
-or
+    ```xml
+    <array key="tax_rate_ids">
+        <value>integer</value>
+    </array>
+    ```
 
-```xml
-<array key="product_options">
-    <value>product_option</value>
-</array>
-```
+    The value can contain one or more items.
 
-or
+   - Data entity with the corresponding assignment:
 
-```xml
-<array key="tax_rate_ids">
-    <value>tax_rate.id</value>
-</array>
-```
+    ```xml
+    <array key="tax_rate_ids">
+        <item>1</item>
+        <item>2</item>
+    </array>
+    ```
+
+   - Resulted JSON request:
+
+    ```json
+    "tax_rate_ids":
+        [
+            "item": 1,
+            "item": 2
+        ]
+    ```
+
+2. Example of an array containing data entities:
+
+    ```xml
+    <array key="product_options">
+        <value>product_option</value>
+    </array>
+    ```
+
+    The value declares the `product_options` array that contains one or more entities of the `product_option` data type.
+
+3. Example of an array containing a particular data field:
+
+    ```xml
+    <array key="tax_rate_ids">
+        <value>tax_rate.id</value>
+    </array>
+    ```
+
+    The value declares the `tax_rate_ids` array that contains one or more `id` fields of the `tax_rate` data type entity.
 
 ### header {#header-tag}
 
