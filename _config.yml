@@ -131,6 +131,10 @@ kramdown:
   toc_levels: 2..3
   syntax_highlighter_opts:
     css_class: highlighter
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
 
 # LiveReload monitors changes in the file system and refreshes browser when Jekyll is in serving mode.
 # http://livereload.com/

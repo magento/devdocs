@@ -1,0 +1,21 @@
+// Hide line numbers for all code blocks
+.rouge-table .gl {
+  display: none;
+}
+
+// Show line numbers for specific languages 
+.language-json,
+.language-php,
+.language-html,
+.language-xml,
+.language-js,
+.language-yaml {
+  .rouge-table .gl {
+    display: table-cell;
+  }
+}
+
+// Fix the $ symbol to work with the new code markup
+.language-bash .rouge-table {
+  display: inline;
+}
