@@ -3,15 +3,28 @@ group: inventory
 title: Reservations
 ---
 
-Magento manages inventory by issuing a set of _reservations_ for each product order. 
+Magento uses _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, Magento creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped or cancelled, Magento issues another reservation that compensates the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped or cancelled. 
 
-When Magento receives an order, Inventory Management issues a reservation tracks inventory using reservations against the salable quantity, deducting from inventory quantity when invoicing and shipping the products.
+Reservations prevent the merchant from overselling products, even in cases where the latency between order placement and order processing is high. In addition, reservations are append-only operations that help prevent blocking operations and race conditions at the time of checkout.
 
-Magento tracks inventory using _reservations_. A reservation represents product quantities that have been set aside ordered but not shipped. 
-  against the salable quantity, deducting from inventory quantity when invoicing and shipping the products.
+The first reservation 
 
+## Reservation lifecycles
 
-is an entity which is used to keep calculation of Salable product quantity consistent, and prevent overselling. It is created as an "inventory request" when an order is placed and exists until the time when the order would be processed and corresponding source deduction (deduction of specific SourceItems) happen, along with that the initial Reservation should be compensated. Introducing Reservation entity we could be sure that merchant would not sell more products than he has in stock even if latency between order placement and order processing (deduction of specific SourceItems) is high. Reservations are append-only operations and help us to prevent blocking operations and race conditions at the time of checkout.
+This example demonstrates how reservations are applied to product `SKU-1` in the following environment:
+
+* The product is assigned to three physical sources (Source A, Source B, Source C).
+* The product is allocated to the sources in unequal amounts (SourceItem A - 20; SourceItem B - 25; SourceItem C -  0).
+* The default website is the only sales channel. Stock Z maps the default website to the three sources.
+* The quantity for `StockItem` Z for `SKU-1` is 55 (20 + 25 + 10). 
+
+### Order placement
+
+A customer wants to buy 30 items of product `SKU-1` from the default website. Magento must determine whether we have items in stock to fulfill the order. 
+
+Magento needs to decide whether we can sell (do we have enough products to sell in stock), Quantity of SKU-1 on StockItem A is 55, plus an aggregated quantity of all the reservations for product SKU-1 on Stock A. In our case there are no reservations created, so the number is 0, 55 - 0 > 30, so we can proceed to checkout and place an order.
+
+At the time of order placement, the system is agnostic to the fact from which physical sources the order would be fulfilled and the qty of SKU-1 would be deducted afterwards, that's why we don't use SourceItem interfaces during this process (order placement). Also, we can't deduct Qty of StockItem A, because it's read-only interface and represents index value. Thus, we create a Reservation for SKU-1 on Stock A in the amount of (-30) items. Reservation creation is append-only operation, so there are no checks and blocking operations (locks) needed.
 
 ## Reservations scenario
 
