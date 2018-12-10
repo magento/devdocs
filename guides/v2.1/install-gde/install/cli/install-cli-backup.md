@@ -26,6 +26,14 @@ After backing up, you can [roll back](#instgde-cli-uninst-roll) at a later time.
 {% include install/first-steps-cli.md %}
 In addition to the command arguments discussed here, see [Common arguments]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common).
 
+## Enable backups
+
+The Magento backup feature is disabled by default. To enable, enter the following CLI command:
+
+``` bash
+php bin/magento config:set system/backup/functionality_enabled 1
+```
+
 ## Set ulimit for the web server user {#instgde-cli-ulimit}
 {% include install/ulimit.md %}
 
