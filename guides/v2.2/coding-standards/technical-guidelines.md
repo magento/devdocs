@@ -534,31 +534,31 @@ class View extends Template
 
 6.4.1. Location of API interfaces
 
-6.4.1.1. Service contract interfaces should be placed in separate API modules. All other modules will depend on the API module, while implementations could be easily swapped via `di.xml`. For example, if module is named `MyModule`, its APIs should be declared in the module named `MyModuleApi`.
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. All other modules will depend on the API module, while implementations could be easily swapped via `di.xml`. For example, if module is named `MyModule`, its APIs SHOULD be declared in the module named `MyModuleApi`.
 
-6.4.1.2. Service interfaces which should be exposed as web APIs must be placed under `MyModuleApi/Api/Service` directory. Service data interfaces must be placed under `MyModuleApi/Api/Data`. 
+6.4.1.2. Service interfaces which SHOULD be exposed as web APIs MUST be placed under `MyModuleApi/Api/Service` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. 
 
-6.4.1.3. All other APIs, including explicit extension points like Chain or Composite implementations must be placed under `MyModuleApi/Model`. 
+6.4.1.3. All other APIs, including explicit extension points like Chain or Composite implementations MUST be placed under `MyModuleApi/Model`. 
 
 6.4.1.4. Arbitrary directory nesting can be used for APIs to improve code structure. For example, `MyCompany\MyModuleApi\Api\Service\Relations\DeleteInterface`.
 
 6.4.2. Service Interface Structure
 
-6.4.2.1. Methods named similarly must serve similar purpose across different services, but still might have different signatures.
+6.4.2.1. Methods named similarly MUST serve similar purpose across different services, but still might have different signatures.
 
-6.4.2.2. Services must only operate on scalar types or service data interfaces.
+6.4.2.2. Services MUST only operate on scalar types or service data interfaces.
 
-6.4.2.3. Service contracts should not be used for read scenarios on the storefront, GraphQL should be used for storefront scenarios instead. Check out [web API technical vision]({{ page.baseurl }}/coding-standards/technical-vision/webapi.html) for more details.
+6.4.2.3. Service contracts SHOULD NOT be used for read scenarios on the storefront, GraphQL SHOULD be used for storefront scenarios instead. Check out [web API technical vision]({{ page.baseurl }}/coding-standards/technical-vision/webapi.html) for more details.
 
-6.4.2.4. Each service interface should declare a single public method. Interface name should reflect task/action to be performed. Example `Magento\InventoryApi\Api\StockSourceLinksDeleteInterface::execute(array $links)`. The only exception is Repository API which may be added for convenience and must be limited to singular CRUD operations and `getList($searchCriteria)`.
+6.4.2.4. Each service interface SHOULD declare a single public method. Interface name SHOULD reflect task/action to be performed. Example `Magento\InventoryApi\Api\StockSourceLinksDeleteInterface::execute(array $links)`. The only exception is Repository API which MAY be added for convenience and MUST be limited to singular CRUD operations and `getList($searchCriteria)`.
 
 6.4.3. Service Method Signature
 
-6.4.3.1. Service contracts should not apply presentation layer formatting to the returned data.
+6.4.3.1. Service contracts SHOULD NOT apply presentation layer formatting to the returned data.
 
 6.4.3.2. Service data interfaces represent domain entities and can reference related data interfaces.
 
-6.4.3.3. Service data interfaces must not contain any business logic. They should represent a container of data transferable over the wire. All the business logic should be moved to services.
+6.4.3.3. Service data interfaces MUST NOT contain any business logic. They SHOULD represent a container of data transferable over the wire. All the business logic SHOULD be moved to services.
 
 6.4.3.3. Strict typing is enforced for Service and Data interfaces located under `MyCompany/MyModuleApi/Api`. Only the following types are allowed:
 
@@ -572,33 +572,33 @@ class View extends Template
 
 * `void` for async operations
 
-6.4.3.4. Service contracts should support batch data whenever possible. For example, entity persisting interface should accept an array of entities to persist instead of a single entity. Customizations via plugins must be adjusted respectively. Batch retrieval operations must accept `SearchCriteriaInterface` and return `SearchResultInterface` to support pagination.
+6.4.3.4. Service contracts SHOULD support batch data whenever possible. For example, entity persisting interface SHOULD accept an array of entities to persist instead of a single entity. Customizations via plugins must be adjusted respectively. Batch retrieval operations MUST accept `SearchCriteriaInterface` and return `SearchResultInterface` to support pagination.
 
-6.4.3.5. All services which modify the state must support asynchronous execution. Void must be used as return type, the status of the operation may be checked by polling of the respective query operation. Create operations must support UUID generated on the client side.
+6.4.3.5. All services which modify the state MUST support asynchronous execution. Void MUST be used as return type, the status of the operation MAY be checked by polling of the respective query operation. Create operations MUST support UUID generated on the client side.
 
-6.4.3.6. Data objects returned by service contracts should be fully loaded to ensure consistency.
+6.4.3.6. Data objects returned by service contracts SHOULD be fully loaded to ensure consistency.
 
 6.4.4. Service Implementation
 
-6.4.4.1. Service data interfaces must extend from `Magento\Framework\Api\ExtensibleDataInterface`. The only exception is when extensibility is not desired, like in case of value-objects.
+6.4.4.1. Service data interfaces MUST extend from `Magento\Framework\Api\ExtensibleDataInterface`. The only exception is when extensibility is not desired, like in case of value-objects.
 
-6.4.4.2. Extensible data interfaces must not form hierarchies. If interface `MyInterface` extends `ExtensibleDataInterface`, there must be no interfaces extending `MyInterface`. Otherwise a list of extension attributes will be shared for all extensible interfaces in the hierarchy.
+6.4.4.2. Extensible data interfaces MUST NOT form hierarchies. If interface `MyInterface` extends `ExtensibleDataInterface`, there must be no interfaces extending `MyInterface`. Otherwise a list of extension attributes will be shared for all extensible interfaces in the hierarchy.
 
-6.4.4.3. Service implementations and plugins must not rely on storage-specific integrity features, such as foreign key constraints.
+6.4.4.3. Service implementations and plugins MUST NOT rely on storage-specific integrity features, such as foreign key constraints.
 
-6.4.4.4. Replace strategy should be used to persist main entity fields/attributes, child entities and relation links. 
+6.4.4.4. Replace strategy SHOULD be used to persist main entity fields/attributes, child entities and relation links. 
 
-6.4.4.5. During update operations, Web APIs with `PATCH` HTTP method and all action controllers that accept entities should pre-load them first, merge request data on top of that and provide full data to service.
+6.4.4.5. During update operations, Web APIs with `PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, merge request data on top of that and provide full data to service.
 
-6.4.4.6. If service method needs to return a modified version of the argument, the original argument object must not be modified and its copy should be modified and returned instead.
+6.4.4.6. If service method needs to return a modified version of the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified and returned instead.
 
-6.4.4.7. Services should not apply ACL rules to methods or returned data.
+6.4.4.7. Services SHOULD NOT apply ACL rules to methods or returned data.
 
-6.4.4.8. If multiple data scopes available, within one service call entity should be persisted only for one specific data scope.
+6.4.4.8. If multiple data scopes available, within one service call entity SHOULD be persisted only for one specific data scope.
 
 6.4.5. Exception Handling
 
-6.4.5.1. Service methods must only throw exceptions defined as part of service contract layer. Exceptions thrown from lower layers should not be exposed outside and must be wrapped with appropriate service contract layer exception.
+6.4.5.1. Service methods MUST only throw exceptions defined as part of service contract layer. Exceptions thrown from lower layers SHOULD NOT be exposed outside and MUST be wrapped with appropriate service contract layer exception.
 
 ## 7. Configuration
 
