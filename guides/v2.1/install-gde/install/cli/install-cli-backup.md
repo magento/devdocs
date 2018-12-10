@@ -36,7 +36,8 @@ bin/magento config:set system/backup/functionality_enabled 1
 
 {:.bs-callout .bs-callout-warning}
 **Deprecation Notice**
-Magento backup functionality is deprecated as of 2.1.16, 2.2.7, 2.3.0. We recommend investigating additional backup technologies and binary backup tools (for example, Percona XtraBackup).
+**Deprecation Notice**
+Magento backup functionality is deprecated as of 2.1.16, 2.2.7, and 2.3.0. We recommend investigating additional backup technologies and binary backup tools (such as Percona XtraBackup).
 
 
 ## Set ulimit for the web server user {#instgde-cli-ulimit}
