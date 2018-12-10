@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Bulk endpoints
+ee_only: True
 contributor_name: comwrap GmbH
 contributor_link: http://comwrap.com/
 functional_areas:
