@@ -63,8 +63,8 @@ For more information, see [Enabling Inventory Management](https://docs.magento.c
 You may need to disable Inventory Management modules to:
 
 * Speed up upgrade of merchants currently on Magento 2.0/2.1/2.2 and migrating to 2.3.0.
-* Support inventory customization. For example, if you have a custom implementation of Multi-Sourcing or Magento Order Management merchants.
-* Use [Magento Order Management](https://omsdocs.magento.com). The current Order Management connector does not support MSI interfaces. We plan to support Inventory Management and Order Management through a connector in a later release.
+* Support inventory customization. For example, disable Inventory Management if you use a multisourcing custom implementation or Magento Order Management merchants.
+* Use [Magento Order Management](https://omsdocs.magento.com). The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 
 To disable, see the instructions for [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
 
