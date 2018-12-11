@@ -11,7 +11,7 @@ These features and extensions were developed as part of the [Multi Source Invent
 
 Inventory Management installs like a Core Bundled Extension (CBE) with all features enabled by default. No additional steps are required for installing and enabling these inventory features. 
 
-When Magento 2.3.X installs, it adds and enables the following modules in composer.json:
+The Inventory Management installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled. 
 
 ``` json
         'Magento_Inventory' => 1,
