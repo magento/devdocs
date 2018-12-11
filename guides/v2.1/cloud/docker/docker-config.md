@@ -99,11 +99,17 @@ You must have the following software installed on your local workstation:
     {: .bs-callout .bs-callout-info}
     For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
+1.  Add Docker host line to hosts file `/etc/hosts`
+
+```
+127.0.0.1 magento2.docker
+```
+
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
-    -  [`http://localhost`](http://localhost)
+    -  [`http://magento2.docker`](http://magento2.docker)
 
-    -  [`https://localhost`](https://localhost)
+    -  [`https://magento2.docker`](https://magento2.docker)
 
 #### To stop containers and restore them afterwards:
 

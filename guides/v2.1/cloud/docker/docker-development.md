@@ -64,6 +64,20 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
 ```
 
+### Sendmail
+
+To send emails from your local Cloud Docker, enable sendmail in `global.php` config file
+
+```bash
+ENABLE_SENDMAIL=true
+```
+
+And convert configs
+
+```bash
+./vendor/bin/ece-tools docker:config:convert
+```
+
 ### Database container
 
 The database container is based on the `mariadb:10` image.
