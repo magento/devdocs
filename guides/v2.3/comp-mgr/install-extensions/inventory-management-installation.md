@@ -7,9 +7,9 @@ Inventory Management modules provide all inventory features and options for Sing
 
 These features and extensions were developed as part of the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi) through the Magento Community Engineering program.
 
-## Installation
+## Install Inventory Management
 
-Inventory Management installs like a Core Bundled Extension (CBE) with all features enabled by default. No additional steps are required for installing and enabling these inventory features. 
+Inventory Management installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features. 
 
 When Magento 2.3.X installs, it adds and enables the following modules in composer.json:
 
@@ -52,21 +52,21 @@ When Magento 2.3.X installs, it adds and enables the following modules in compos
         'Magento_InventoryShippingAdminUi' => 1,
 ```
 
-## Enable features
+## Enable Inventory Management features
 
-All Inventory Management features enable by default. The **Manage Stock** option in the Admin enables and disables tracking of inventory quantities, calculations of aggregated salable quantities, and reservation management for tracking purchases through to invoice and shipment. 
+When installed or upgraded, the **Manage Stock** option in the Admin enables by default. This option enables inventory tracking and management, but does not affect module status. To disable modules, see the next section.
 
-For more information, see [Enabling Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory.html) in the Magento 2 User Guide.
+For more information on configurations, see [Enabling Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory.html) in the Magento 2 User Guide.
 
 ## Disable Inventory Management
 
 You may need to disable Inventory Management modules to:
 
-* Speed up upgrade of merchants currently on Magento 2.0/2.1/2.2 and migrating to 2.3.0.
-* Support inventory customization. For example, disable Inventory Management if you use a multisourcing custom implementation or Magento Order Management merchants.
-* Use [Magento Order Management](https://omsdocs.magento.com). The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
+* Speed up the upgrade process for merchants currently on Magento 2.0/2.1/2.2 and migrating to 2.3.0.
+* Use custom or third party inventory and order management modules. 
+* Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 
-To disable, see the instructions for [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
+To disable Inventory Management, see the instructions for [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
 
 ``` json
         'Magento_Inventory' => 0,
@@ -111,5 +111,5 @@ To disable, see the instructions for [Enable or disable modules]({{ page.baseurl
 
 See the following guides for more information on Inventory Management:
 
-* [Inventory Management](https://devdocs.magento.com/guides/v2.3/inventory/index.html) overview for developer resources
+* [Inventory Management]({{ page.baseurl }}/inventory/index.md) overview for developer resources
 * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) in the Magento 2 User Guides for merchant information
