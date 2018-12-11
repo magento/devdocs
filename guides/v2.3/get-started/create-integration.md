@@ -36,7 +36,7 @@ To develop a module, you must:
 
    Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
-    <pre>
+    ```bash
     cd <magento_base_dir>
     mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
     mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
