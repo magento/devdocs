@@ -13,11 +13,11 @@ There are three, distinct phases of the deployment process: build, deploy, and p
 
 ## ![Build phase] Build phase
 
-The _build_ phase assembles containers for the services defined in the configuration files, installs dependencies based on the `composer.lock` file, and runs the build hooks defined in the `.magento.app.yaml` file. Without the ability to connect to any services or access the database, the build phase is entirely environment independent.
+The _build_ phase assembles containers for the services defined in the configuration files, installs dependencies based on the `composer.lock` file, and runs the build hooks defined in the `.magento.app.yaml` file. Without the ability to connect to any services or access the database, the build phase depends on the resources limited to the environment.
 
 ## ![Deploy phase] Deploy phase
 
-The _deploy_ phase places a temporary hold on incoming requests and transitions the site to [maintenance mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The deploy phase uses the new containers and, after mounting the file system, opens network connections, activates the services defined in the `relationships` section of the `.magento.app.yaml` file, and runs the deploy hooks defined in the `.magento.app.yaml` file. Everything is _read only_, except for directories defined in the `.magento.app.yaml` file. By default, the [`mounts` property]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts) property includes the following directories:
+The _deploy_ phase places a temporary hold on incoming requests and transitions the site to [maintenance mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html). The deploy phase uses the new containers and, after mounting the file system, opens network connections, activates the services defined in the `relationships` section of the `.magento.app.yaml` file, and runs the deploy hooks defined in the `.magento.app.yaml` file. Everything is _read only_, except for directories defined in the `.magento.app.yaml` file. By default, the [`mounts` property]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#mounts) includes the following directories:
 
 -  `app/etc`—contains the `env.php` and `config.php` configuration files
 -  `pub/media`—contains all media data, such as Magento products or categories
