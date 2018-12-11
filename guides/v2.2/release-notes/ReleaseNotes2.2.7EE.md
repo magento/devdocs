@@ -97,7 +97,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, setup, and deployment
 
-<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
+<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
 
 <!-- MAGETWO-95591 -->* Customer attribute management issues that merchants  experienced after upgrading to Magento 2.2.6 have been resolved. Previously, after upgrading their stores to Magento 2.2.6, merchants could not create and save a new multiselect or dropdown customer custom attribute, and  existing customer attributes  no longer appeared for editing within the customer's account on the storefront.
 

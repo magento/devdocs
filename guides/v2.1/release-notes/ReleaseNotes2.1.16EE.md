@@ -35,7 +35,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Installation, deployment, configuration
 
-<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.1/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
+<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.1/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
 
 
 <!--- ENGCOM-2784 -->* You can now save configuration values to the database without assigning parameters for scope ID and type when using default scope. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17083](https://github.com/magento/magento2/pull/17083)*. 

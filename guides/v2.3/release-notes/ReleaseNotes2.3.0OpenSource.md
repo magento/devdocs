@@ -110,7 +110,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 ### Installation, upgrade, deployment
 
-<!---MAGETWO-94173 -->* Magento backup functionality is no longer enabled by default. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
+<!---MAGETWO-94173 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
 
 <!---MAGETWO-86717 -->* All existing installation and data scripts have been converted into declarative schema data patches for easier deployment. 
 
