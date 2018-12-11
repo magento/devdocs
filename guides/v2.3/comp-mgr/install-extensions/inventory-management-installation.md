@@ -66,7 +66,7 @@ You may need to disable Inventory Management modules to:
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 
-To disable Inventory Management, see the instructions for [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
+To disable Inventory Management, see the instructions for [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.md). When complete, you should see the following modules and values in `composer.json`:
 
 ``` json
         'Magento_Inventory' => 0,
