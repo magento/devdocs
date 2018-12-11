@@ -41,4 +41,6 @@ where the following table defines parameters and values.
 |`--use-secure`|`1` enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.<br><br>`0` disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be 0. This is the default.|No|
 |`--base-url-secure`|Secure base URL to use to access your Magento Admin and storefront in the following format:`http[s]://<host or ip>/<your Magento install dir>/`|No|
 |`--use-secure-admin`|`1` means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.<br><br>`0` means you do not use SSL with the Admin. This is the default.|No|
+|`--admin-use-security-key`|`1:` causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent cross-site script forgery attacks. This is the default.<br/><br/>`0:` disables the use of the key.|No|
+|`--magento-init-params`|Add to any command to customize Magneto initialization parameters<br/><br/>For example: `MAGE_MODE=developer&MAGE_DIRS[base][path]=/var/www/example.com&MAGE_DIRS[cache][path]=/var/tmp/cache`|No|
 {:style="table-layout:auto;"}
