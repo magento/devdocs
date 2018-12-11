@@ -9,9 +9,9 @@ These features and extensions were developed as part of the [Multi Source Invent
 
 ## Install Inventory Management
 
-Inventory Management installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features. 
+Inventory Management installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features.
 
-When Magento 2.3.X installs, it adds and enables the following modules in composer.json:
+The Inventory Management installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
 
 ``` json
         'Magento_Inventory' => 1,
@@ -63,7 +63,7 @@ For more information on configurations, see [Enabling Inventory Management](http
 You may need to disable Inventory Management modules to:
 
 * Speed up the upgrade process for merchants currently on Magento 2.0/2.1/2.2 and migrating to 2.3.0.
-* Use custom or third party inventory and order management modules. 
+* Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 
 To disable Inventory Management, see the instructions for [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
