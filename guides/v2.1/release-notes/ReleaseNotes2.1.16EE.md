@@ -6,7 +6,7 @@ title: Magento Commerce 2.1.16 Release Notes
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on November 28, 2018.*
+*Release notes published November 28 and last updated on December 10,2018.*
 
 
 We are pleased to present Magento Commerce  2.1.16. This release includes  multiple enhancements to product security plus  bug fixes and enhancements. Check out the many community-contributed fixes!
@@ -34,6 +34,9 @@ Magento 2.1.16 contains over 30 security fixes and enhancements. See [Magento Se
 In addition to security enhancements, this release contains the following functional fixes.
 
 ### Installation, deployment, configuration
+
+<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.1/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
+
 
 <!--- ENGCOM-2784 -->* You can now save configuration values to the database without assigning parameters for scope ID and type when using default scope. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [17083](https://github.com/magento/magento2/pull/17083)*. 
 
