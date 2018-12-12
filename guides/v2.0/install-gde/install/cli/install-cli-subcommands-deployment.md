@@ -93,7 +93,7 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{ page.baseurl }}/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+		<ul><li><code>db</code> to store session data in the <a href="{{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
 
     <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow oe you have a clustered database.</li>
     
