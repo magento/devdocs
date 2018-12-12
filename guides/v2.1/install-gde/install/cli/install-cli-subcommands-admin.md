@@ -48,11 +48,11 @@ Where the following table defines parameters and values:
 
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
 
-	magento admin:user:unlock {username}
+	php bin/magento admin:user:unlock {username}
 
 You must specify the administrator's username. Example:
 
-	magento admin:user:unlock admin
+	php bin/magento admin:user:unlock admin
 	The user account "admin" has been unlocked
 
 If the account is either not unlocked or if there was a problem, the following message displays:
