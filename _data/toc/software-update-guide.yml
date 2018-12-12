@@ -121,7 +121,7 @@ pages:
 
         - label: Manage Inventory Management modules
           url: /comp-mgr/install-extensions/inventory-management-installation.html
-          exclude_versions: ["2.1, 2.2"]
+          exclude_versions: ["2.1","2.2"]
 
         - label: Install the B2B extension
           url: /comp-mgr/install-extensions/b2b-installation.html
