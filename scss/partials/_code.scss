@@ -3,19 +3,37 @@
   display: none;
 }
 
-// Show line numbers for specific languages 
+// Fix the $ symbol to work with the new code markup
+.language-bash .rouge-table {
+  display: inline;
+}
+
+// Show line numbers for specific languages
 .language-json,
 .language-php,
 .language-html,
 .language-xml,
 .language-js,
+.language-javascript,
 .language-yaml {
-  .rouge-table .gl {
-    display: table-cell;
-  }
-}
+  .rouge-table {
+    margin: -10px; // removes excess padding from .highlight pre to help center line numbers and position horizontal scrollbar at the bottom of the code block
 
-// Fix the $ symbol to work with the new code markup
-.language-bash .rouge-table {
-  display: inline;
+    .gl {
+      display: table-cell;
+    }
+
+    .lineno {
+      text-align: center; // centering helps the line numbers look more balanced (not over-indented) when in single digits, which is most of the time
+      padding: 10px 0;    // removes padding that throws off line-number centering and adds top and bottom padding internally
+    }
+
+    // For line number border (comment these out to remove line number border)
+    td:nth-child(1) {
+      border-right: 1px solid #dddddd;
+    }
+    pre {
+      padding-left: 10px;
+    }
+  }
 }
