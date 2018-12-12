@@ -7,7 +7,6 @@ menu_title: Introduction
 menu_order: 1
 menu_node: parent
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
   - /guides/v2.0/mktpl-quickstart/bk-marketplace-qs.html
   - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
   - /guides/v2.1/mktpl-quickstart/bk-marketplace-qs.html
