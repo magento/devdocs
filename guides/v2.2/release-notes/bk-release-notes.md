@@ -18,6 +18,9 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 
 ## Magento 2.2.x Release Notes
 
+* [{{site.data.var.ce}} 2.2.8 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.8CE.html)
+* [{{site.data.var.ee}} 2.2.8 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.8EE.html)
+
 * [{{site.data.var.ce}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7CE.html)
 * [{{site.data.var.ee}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7EE.html)
 
