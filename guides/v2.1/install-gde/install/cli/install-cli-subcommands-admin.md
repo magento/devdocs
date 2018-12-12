@@ -30,7 +30,7 @@ Use this command to create a new administrator or to edit an existing administra
 
 Command usage:
 
-	magento admin:user:create [--<parameter_name>=<value>, ...]
+	php bin/magento admin:user:create [--<parameter_name>=<value>, ...]
 
 Where the following table defines parameters and values:
 
