@@ -21,7 +21,7 @@ To update a page URL type, you must:
 
 Create a `.php` file implementing the new link class in the module directory containing the applicable UI component, such as `<your-module>/Ui/Component/UrlInput/`.
 
-```
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.

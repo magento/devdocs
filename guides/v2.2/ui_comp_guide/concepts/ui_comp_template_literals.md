@@ -53,28 +53,133 @@ Names of other registered modules can be added to the {% glossarytooltip ebe2cd1
 
 ```javascript
 return Element.extend({
-    defaults: {
-        template: 'Example_Component/message-list',
-        imports: {
-            messages: '${ $.messageHandler }:data.userMessages'
-        }
-    },
+  defaults: {
+    template: 'Example_Component/message-list',
+      imports: {
+        messages: '${ $.messageHandler }:data.userMessages'
+      }
+  },
 
-    // ...
+  // ...
 
-    initialize: function() {
+  initialize: function() {
+    this._super();
+      this.addHtmlClassesToMessages();
+  },
+
+  addHtmlClassesToMessages: function() {
+    this.messages.forEach(function(currentValue) {
+      currentValue['htmlClass'] = 'message message--' + currentValue['type'];
+    });
+  }
+
+  // ...
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      initialize: function() {
         this._super();
-        this.addHtmlClassesToMessages();
-    },
+          this.addHtmlClassesToMessages();
+      },
 
     addHtmlClassesToMessages: function() {
-        this.messages.forEach(function(currentValue) {
-            currentValue['htmlClass'] = 'message message--' + currentValue['type'];
-        });
-    }
-
-    // ...
-})
+    this.messages.forEach(function(currentValue) {
+      currentValue['htmlClass'] = 'message message--' + currentValue['type'];
+    });
+}
 ```
 
 Notice how the `addHtmlClassesToMessages()` method accesses the `messages` property of `this`. When the class was initialized, the `data.userMessages` array was obtained from the `$.messageHandler` UI Component and was then assigned to the primary object.
