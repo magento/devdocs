@@ -112,7 +112,6 @@ defaults:
 # This list doesn't include custom plugins.
 #
 plugins:
-  - jekyll-last-modified-at
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
