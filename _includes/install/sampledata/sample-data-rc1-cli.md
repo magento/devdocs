@@ -1,6 +1,6 @@
 ## Command-line upgrade to Magento {{ page.guide_version }} with sample data
 
-These instructions apply to {{site.data.var.ce}} and {{site.data.var.ce}} users *only* if all of the following are true:
+These instructions apply to {{site.data.var.ce}} and {{site.data.var.ee}} users *only* if all of the following are true:
 
 *	You have installed optional sample data
 *	You are upgrading to Magento {{ page.guide_version }} (including a Release Candidate) from any earlier version using the command line
