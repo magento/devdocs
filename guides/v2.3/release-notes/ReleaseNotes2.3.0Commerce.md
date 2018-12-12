@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 28, 2018.*
+*Release notes published November 28 and last updated on December 10,2018.*
 
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
 
@@ -14,7 +14,11 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
+  	
+	MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+   * [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation 
+   * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions 
 
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
@@ -48,6 +52,8 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * 2FA/CAPTCHA protects the Admin panel against stolen passwords and affects stores against bots. 
 
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.7, 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
+
 
 ### Core bundled extension enhancements
 
@@ -77,7 +83,6 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * Added support for PHP 7.2 and dropped support for PHP 5.6
 
-#### Magento Shipping
 
 #### Magento Shipping
 
@@ -127,6 +132,8 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 
 ### Installation, upgrade, deployment
+
+<!---MAGETWO-94173 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
  
 <!---MAGETWO-86717 -->* All existing installation and data scripts have been converted into declarative schema data patches for easier deployment. 
 
