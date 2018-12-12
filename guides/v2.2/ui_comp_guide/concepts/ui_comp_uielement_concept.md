@@ -17,19 +17,19 @@ When creating a new component, use the `uiElement` class as a direct parent, if 
 - The `initObservable()` method allows you to declare observable variables within the same instance.
 
   Example:
-    ```javascript
-    initObservable: function () {
-      this._super();
-    
-      this.track('childTemplate')
-      this.observe([
-          '%myVariable1%',
-          '%myVariable2%'
-      ]);
-    
-      return this;
-    }
-    ```
+
+      initObservable: function () {
+          this._super();
+
+          this.track('childTemplate')
+          this.observe([
+              '%myVariable1%',
+              '%myVariable2%'
+          ]);
+
+          return this;
+      }
+
   , where:
 
     - the `observe()` method is a wrapper for the `ko.observable()` and `ko.observableArray()` methods. It converts the properties of the current method into the observable properties.

@@ -6,6 +6,7 @@
   "devDependencies": {
     "browser-sync": "latest",
     "del": "latest",
+    "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-compass": "latest",
     "gulp-concat": "latest",
@@ -24,7 +25,6 @@
     "run-sequence": "latest"
   },
   "dependencies": {
-    "gulp": "^3.9.1",
     "gulp-install": "latest",
     "gulp-ruby-sass": "latest",
     "highlight.js": "latest",
