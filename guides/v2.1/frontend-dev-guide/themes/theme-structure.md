@@ -77,13 +77,13 @@ The directories and files structure described below is the most extended one. It
     </tr>
     <tr>
       <td colspan="1">
-        <code>/&lt;Vendor&gt;_&lt;Module&gt;/web/css/source</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/web/css/</code>
       </td>
       <td colspan="1">
         optional
       </td>
       <td colspan="1">
-          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code>.
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code><br/><br/>Ex: [Module_Theme]({{ site.mage2300url }}app/code/Magento/Theme/view/frontend/web/css) or description field should be corrected</code>.
       </td>
     </tr>
     <tr>
@@ -152,7 +152,7 @@ The directories and files structure described below is the most extended one. It
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        This directory contains a theme preview (a screenshot of your theme).
+        This directory contains a theme preview (a screenshot of your theme). It should not be required as admin theme do not have it and also in [Create a new storefront theme page](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare).
       </td>
     </tr>
     <tr>
@@ -271,7 +271,7 @@ A set of theme files that are returned by the server to a browser as is, without
 <theme_dir>/
 ├── media/
 ├── web
-│	├── css/ (except the &quot;source&quot; sub-directory)
+│	├── css/ (except the "source" sub-directory)
 │	├── fonts/
 │	├── images/
 │	├── js/
