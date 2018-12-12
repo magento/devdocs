@@ -12,16 +12,14 @@ layout: null
     <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% assign sorted_pages = site.html_pages | sort:"last_modified_at" | reverse %}
-    {% for page in sorted_pages %}
-      {% unless page.tag == 'omit' %}
+    {% assign sorted_pages = site.html_pages | where_exp: "page", "page.tag != 'omit'"| sort:"last_modified_at" | reverse %}
+    {% for page in sorted_pages limit: 100 %}
         <item>
           <title>{{ page.title | xml_escape }}</title>
           <description>{{ page.content | xml_escape | strip_html | truncatewords: 75 }}</description>
           <link>{{ page.url | prepend: site.url }}</link>
           <pubDate>{{ page.last_modified_at | date_to_rfc822 }}</pubDate>
         </item>
-      {% endunless %}
     {% endfor %}
   </channel>
 </rss>
