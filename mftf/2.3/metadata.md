@@ -73,8 +73,8 @@ The following diagram demonstrates the XML structure of a metadata file:
 
 ## Principles   {#principles}
 
-1. The `dataType` value must match the `type` value of the corresponding entity.
-2. The file name contains data type split with `_` and ends with `-meta`.
+1. A `dataType` value must match the `type` value of the corresponding entity.
+2. A file name should contain data type split with `_` and must end with `-meta`.
    Example: `product_attribute-meta.xml`.
 3. A metadata file may contain different types of operations (`type`) with the same data entity (`dataType`).
 
@@ -438,7 +438,7 @@ Root element that points to the corresponding XML Schema.
 - \*`url` - full URL is a concatenation of _ENV.baseUrl_ + `/rest/` + _url_.
   To reuse data of a required entity or returned response use a field key wrapped in curly braces such as `{sku}`.
   When the data to reuse is of a different type, declare also the type of data such as `{product.sku}`.
-  Examples: `"/V1/products/{sku}/media/{id}"`.
+  Example: `"/V1/products/{product.sku}/media/{id}"`.
 
 - \*\*`auth` - available values:
 
@@ -487,7 +487,7 @@ It contains one or more `value` elements.
 
 ### value {#value-tag}
 
-Declares a data type of the parent array items.
+Declares a data type for items within `<array>`.
 
 1. Example of an array with value of a primitive data type:
 
