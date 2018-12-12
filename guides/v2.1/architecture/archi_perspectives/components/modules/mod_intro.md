@@ -3,7 +3,6 @@ group: architecture-guide
 title: Module overview
 menu_title: Module overview
 redirect_from:
-  - /guides/v1.0/architecture/modules/mod_intro.html
   - /guides/v2.0/architecture/modules/mod_intro.html
 ---
 

@@ -2,7 +2,6 @@
 group: installation-guide
 title: Enable or disable modules
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-subcommands-enable.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-enable.html
 functional_areas:
   - Install

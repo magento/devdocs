@@ -2,7 +2,6 @@
 group: installation-guide
 title: Configure the store
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-subcommands-store.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-store.html
 functional_areas:
   - Install
