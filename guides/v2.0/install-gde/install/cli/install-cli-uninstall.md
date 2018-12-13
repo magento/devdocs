@@ -6,7 +6,6 @@ menu_title: Uninstall or reinstall Magento
 menu_node:
 menu_order: 5
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall.html
 functional_areas:
   - Install

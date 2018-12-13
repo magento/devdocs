@@ -7,7 +7,6 @@ menu_order: 13
 level3_menu_node: level3child
 level3_subgroup: index
 redirect_from:
-  - /guides/v1.0/architecture/index-cache/indexing.html
   - /guides/v2.0/architecture/index-cache/indexing.html
 ---
 

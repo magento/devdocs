@@ -2,15 +2,6 @@
 group: cloud-guide
 title: Manage variables
 redirect_from:
-  - /guides/v2.1/cloud/live/config-reference-most.html
-  - /guides/v2.2/cloud/live/config-reference-most.html
-  - /guides/v2.3/cloud/live/config-reference-most.html
-  - /guides/v2.1/cloud/live/config-reference-payment.html
-  - /guides/v2.2/cloud/live/config-reference-payment.html
-  - /guides/v2.3/cloud/live/config-reference-payment.html
-  - /guides/v2.1/cloud/live/config-reference-sens.html
-  - /guides/v2.2/cloud/live/config-reference-sens.html
-  - /guides/v2.3/cloud/live/config-reference-sens.html
   - /guides/v2.0/cloud/env/environment-vars_over.html
 functional_areas:
   - Cloud
