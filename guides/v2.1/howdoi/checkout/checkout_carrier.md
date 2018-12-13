@@ -136,6 +136,8 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 
 In this file, add the following:
 
+You must add `<your-validation-name>` like `%carrier%-rates-validation` - where carrier has to match the actual carrier code.
+
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
