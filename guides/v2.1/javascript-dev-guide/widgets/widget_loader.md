@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Loader widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_loader.html
 ---
 
 ## Overview

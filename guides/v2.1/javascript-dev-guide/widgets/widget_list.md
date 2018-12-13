@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: List widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_list.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_list.html
 ---
 ## Overview
 
