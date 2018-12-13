@@ -586,7 +586,7 @@ We are reviewing this section and will publish it soon.
 
 8.6. A module MUST NOT contain references to {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resources.
 
-8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
+8.7. A component MUST NOT rely either on dependencies of dependencies or on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
 
 ## 9. Browser-Server interaction in web application
 
