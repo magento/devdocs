@@ -81,8 +81,12 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1.	Click **Save Config** at the top of the page to save the updated configuration file.
 
+1. Refresh the cache.
 
-One or more of the Cache Types are invalidated: Configuration, Page Cache. Please go to Cache Management and refresh cache types. 
+   - In the notification at the top of the page, click the *Cache Management* link.
+   
+   - On the Cache Management page, click **Flush Magento Cache**.
+
 ## Customize the WAF response page
 
 If the Magento [Managed Cloud WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocks a customer request at the Fastly origin, they see the following default response page:
@@ -138,6 +142,12 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 1.	Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
 
 1.	Click **Save Config** at the top of the page to save the updated configuration file.
+
+1. Refresh the cache.
+
+   - In the notification at the top of the page, click the *Cache Management* link.
+   
+   - On the Cache Management page, click **Flush Magento Cache**.
 
 <!-- Link definitions -->
 
