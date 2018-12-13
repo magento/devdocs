@@ -150,7 +150,7 @@ The directories and files structure described below is the most extended one. It
       <td colspan="1">
         <code>/media</code>
       </td>
-      <td colspan="1">required</td>
+      <td colspan="1">Optional</td>
       <td colspan="1">
         This directory contains a theme preview (a screenshot of your theme). It should not be required as admin theme do not have it and also in [Create a new storefront theme page](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare).
       </td>
