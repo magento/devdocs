@@ -3,7 +3,7 @@ group: inventory
 title: Reservations
 ---
 
-Magento uses _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, Magento checks whether the quantity requested for each item is in stock. If yes, Magento creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped, cancelled or refunded, Magento issues additional reservations that compensate the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped, cancelled, or refunded. 
+Magento uses _reservations_ to calculate and keep track of the salable quantity of each product assigned to a stock. When a customer places an order, Magento checks whether the quantity requested for each item is available for sale. If yes, Magento creates a reservation as an inventory request for each item, thereby reducing the salable quantity available for purchase. As items are shipped, cancelled or refunded, Magento issues additional reservations that compensate the original. A cron job removes the original reservation and all compensatory reservations from the database when all ordered items have been shipped, cancelled, or refunded. 
 
 Reservations prevent the merchant from overselling products, even in cases where the latency between order placement and order processing is high. In addition, reservations are append-only operations that help prevent blocking operations and race conditions at the time of checkout.
 
@@ -19,7 +19,7 @@ Magento creates a reservation for each product when the following events occur:
 
 Reservations are append-only operations, similar to a log of events. The initial reservation is assigned a negative quantity value. All subsequent reservations created while processing the order are positive values. When the order is complete, the sum of all reservations for the product is 0. 
 
-Before Magento can issue a reservation in response to a new order, it determines whether there are enough items in stock to fulfill the order. The following quantities factor into the calculation:
+Before Magento can issue a reservation in response to a new order, it determines whether there are enough salable items to fulfill the order. The following quantities factor into the calculation:
 
 * **StockItem quantity**. The StockItem quantity is the aggregated amount of inventory from all the physical sources for the current sales channel. If the Baltimore source has 20 units of a product, the Austin source has 25 units of the same product, while the Reno source has 10, and all these sources are linked to Stock A, then the StockItem count for thus product is 55 (20 + 15 + 10). (When items are shipped, the Inventory indexer updates the quantities available at each source.)
 
@@ -155,7 +155,7 @@ Use the following dynamic services introduced instead of `StockItem`:
 Interface | Description
 --- | ---
 `GetProductSalableQtyInterface` | Returns the salable product quantity for the specified stock ID
-`IsProductSalableInterface` | Checks whether the product is in stock
+`IsProductSalableInterface` | Checks whether the product is salable
 `IsProductSalableForRequestedQtyInterface` |  Checks whether there is enough salable quantity to fulfill an order or place the product into a shopping cart 
 {:style="table-layout:auto;"}
 
