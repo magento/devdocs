@@ -82,12 +82,26 @@ In addition to security enhancements, this release contains the following functi
 
 ### B2B
 
+<!-- MAGETWO-85125 -->* 
 
 
+<!-- MAGETWO-94884 -->* 
 
 
+<!-- MAGETWO-89296 -->* 
+
+<!-- MAGETWO-88254 -->* 
 
 
+<!-- MAGETWO-94820 -->* 
+
+<!-- MAGETWO-90835 -->* 
+
+<!-- MAGETWO-88254 -->* 
+
+<!-- MAGETWO-94431 -->* 
+
+<!-- MAGETWO-96442 -->* 
 
 
 
@@ -204,6 +218,38 @@ In addition to security enhancements, this release contains the following functi
 
 *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [18604](https://github.com/magento/magento2/pull/18604)*. [GitHub-18268](https://github.com/magento/magento2/issues/18268)
 
+
+
+
+<!-- MAGETWO-95067 -->* 
+
+<!-- MAGETWO-91138 -->* 
+
+
+<!-- MAGETWO-86477 -->* 
+
+
+<!-- MAGETWO-89397 -->* 
+
+
+<!-- MAGETWO-94425 -->* 
+
+<!-- MAGETWO-72877 -->* 
+
+<!-- MAGETWO-87971 -->* 
+
+<!-- MAGETWO-86640 -->* 
+
+<!-- MAGETWO-86120 -->* 
+
+<!-- MAGETWO-95846 -->* 
+
+<!-- MAGETWO-94425 -->* 
+
+<!-- MAGETWO-87016 -->* 
+
+
+<!-- MAGETWO-95067 -->* 
 
 
 ### Clean up and minor refactoring
@@ -434,6 +480,7 @@ In addition to security enhancements, this release contains the following functi
 ### Reports
 
 
+<!-- MAGETWO-90727 -->* 
 
 
 
@@ -444,9 +491,33 @@ In addition to security enhancements, this release contains the following functi
 ### Review
 
 
+<!-- MAGETWO-93988 -->* 
+
+<!-- MAGETWO-93988 -->* 
+
 
 
 ### Reward
+
+<!-- MAGETWO-93968 -->* 
+
+<!-- MAGETWO-93968 -->* 
+
+
+
+### RMA
+
+<!-- MAGETWO-96664 -->* 
+
+<!-- MAGETWO-94019 -->* 
+
+<!-- MAGETWO-96712 -->* 
+
+<!-- MAGETWO-94232 -->* 
+
+<!-- MAGETWO-72953 -->* 
+
+<!-- MAGETWO-88920 -->* 
 
 
 
