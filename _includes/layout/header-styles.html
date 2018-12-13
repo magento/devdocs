@@ -1,2 +1,8 @@
 <link rel="stylesheet" href="{{ site.baseurl }}/common/css/devdocs.css" />
 <link rel="alternate" type="application/rss+xml" title="Magento DevDocs RSS" href="/feed.xml" />
+
+{% if page.canonical_url != nil %}
+<link rel="canonical" href="{{ page.canonical_url }}" />
+{% else %}
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url | replace_first: 'guides/v2.2', 'guides/v2.3' | replace_first: 'guides/v2.1', 'guides/v2.3' | replace_first: 'guides/v2.0', 'guides/v2.3' }}" />
+{% endif %}
