@@ -83,7 +83,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1. Refresh the cache.
 
-   - In the notification at the top of the page, click the *Cache Management* link.
+   - In the notification at the top of the page, click the **Cache Management** link.
    
    - On the Cache Management page, click **Flush Magento Cache**.
 
@@ -145,7 +145,7 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 
 1. Refresh the cache.
 
-   - In the notification at the top of the page, click the *Cache Management* link.
+   - In the notification at the top of the page, click the **Cache Management** link.
    
    - On the Cache Management page, click **Flush Magento Cache**.
 
