@@ -7,7 +7,7 @@ menu_title: MassActions component
 
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
-See the [Admin Design Pattern Library (MassActions)]({{ page.baseurl }}/pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the MassActions component.
+See the [Admin Design Pattern Library (MassActions)]({{ page.baseurl }}/pattern-library/displaying-data/datatable/datatable.html#mass-actions) topic for information about the UI design patterns that can be implemented using the MassActions component.
 
 ## Dependencies
 
@@ -120,7 +120,7 @@ Dependency on the following components:
             <item name="config" xsi:type="array">
                 <item name="confirm" xsi:type="array">
                     <item name="title" xsi:type="string" translate="true">Edit items</item>
-                    <item name="message" xsi:type="string" translate="true">Are you sure you wan't to edit selected items?</item>
+                    <item name="message" xsi:type="string" translate="true">Are you sure you want to edit selected items?</item>
                 </item>
                 <item name="type" xsi:type="string">edit</item>
                 <item name="label" xsi:type="string" translate="true">Edit</item>

@@ -180,6 +180,7 @@ There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: <error number>
 ```
+{: .no-copy}
 
 #### To resolve the error:
 

@@ -91,7 +91,7 @@ Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allo
 Our default configuration allows the following:
 
 -  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
--  From the `/pub/static` and `/pub/media` paths, any file can be accessed
+-  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 
@@ -214,17 +214,19 @@ Also, you can customize the build phase further by using the `generate` and `tra
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
+        set -e
         php ./vendor/bin/ece-tools build:generate
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
 
+-  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
 -  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
 -  `build:transfer`—transfers generated code and static content to the final destination.
 
 The commands run from the application (`/app`) directory. You can use the `cd` command to change the directory. The hooks fail if the final command in them fails. To cause them to fail on the first failed command, add `set -e` to the beginning of the hook.
 
-#### To compile SASS files using grunt:
+#### To compile Sass files using grunt:
 
 ```yaml
 dependencies:
@@ -242,7 +244,7 @@ hooks:
         php ./vendor/bin/ece-tools
 ```
 
-You must compile SASS files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
+You must compile Sass files using `grunt` before static content deployment, which happens during the build. Place the `grunt` command before the `build` command.
 
 ### `crons`
 Describes processes that are triggered on a schedule. We recommend you run `cron` as the [Magento file system owner]({{page.baseurl}}/cloud/before/before-workspace-file-sys-owner.html). Do _not_ run cron as `root` or as the web server user.

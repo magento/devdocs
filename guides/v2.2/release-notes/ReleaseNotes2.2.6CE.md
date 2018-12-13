@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.6 Release Notes
 
 ---
 
-*Patch code and release notes were published on September 18, 2018 and last revised September 21.*
+*Patch code and release notes were published on September 18, 2018 and last revised October 29, 2018.*
 
 
 We are pleased to present Magento Open Source 2.2.6. This release includes 25 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
@@ -33,11 +33,11 @@ Performance-tuning enhancements focus on catalog indexing and include:   
 
 <!-- MAGETWO-87430 -->* Category product indexer logic has been optimized, and re-indexing time has decreased up to 98%, from 40 minutes to one minute for 100,000 categories.  Previously, when your store contained many categories (100,0000), Magento could take up to 40 minutes to re-index product catalogs. 
 
-<!-- MAGETWO-91164 -->* The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
+<!-- MAGETWO-91164 -->* The `catalog:images:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6:
 
     * Remove   `pub/media/catalog/product/cache` . (Removing this folder frees up space.)
 
-    * Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+    * Run `bin/magento catalog:images:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
 
 <!-- MAGETWO-47320 -->* The catalog rule re-indexing operation has been optimized, and the average re-indexing time (which depends on rule conditions) has improved by more than  80%.  Previously, a full catalog rule re-index operation on a medium B2C store took more than 20 minutes. 
 
@@ -348,7 +348,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-2390-->* Array short syntax usage has been standardized in these files: `app/code/Magento/Catalog/Test/Unit/Model/ProductTest.php`, `app/code/Magento/GroupedProduct/Test/Unit/Model/ProductTest.php`, and `setup/src/Magento/Setup/Module/Di/Code/Reader/FileScanner.php`. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [16880](https://github.com/magento/magento2/pull/16880)*. 
 
 
-<!-- ENGCOM-2132-->* The error message that Magento displayed when a duplicate error key occured during product import has been improved. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16389](https://github.com/magento/magento2/pull/16389)*. 
+<!-- ENGCOM-2132-->* The error message that Magento displayed when a duplicate error key occurred during product import has been improved. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16389](https://github.com/magento/magento2/pull/16389)*.
 
 <!-- ENGCOM-2093-->* We've removed the direct use of the object manager when saving Admin attribute sets. *Fix submitted by [AnshuMishra17](https://github.com/AnshuMishra17) in pull request [16217](https://github.com/magento/magento2/pull/16217)*. 
 
@@ -706,7 +706,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- MAGETWO-89849 -->* Non-U.S. and non-Canadian addresses that are displayed in the  **Address Book summary**  field now display the State/Province values as expected if that information was provided.
 
-<!-- MAGETWO-89034 -->* The checkout page no longer displays custom address attributes when **Show on front-end** is set to **no**. 
+<!-- MAGETWO-89034 -->* The checkout page no longer displays custom address attributes when **Show on frontend** is set to **no**. 
 
 <!-- MAGETWO-88411 -->* Magento now displays the default value for a new Customer attribute that is created from the Admin. Previously, Magento set this value to **no** by default. 
 
@@ -1170,7 +1170,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1655 -->* Added missing lowercase conversion on grouped product assignation. *Fix submitted by [Juan Alonso](https://github.com/jalogut) in pull request [15312](https://github.com/magento/magento2/pull/15312)*. 
 
-<!-- ENGCOM-1643 -->* Removed code responsibile for multiple add-to-cart initializations when Magento loads the product listing. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request [15409](https://github.com/magento/magento2/pull/15409)*. 
+<!-- ENGCOM-1643 -->* Removed code responsible for multiple add-to-cart initializations when Magento loads the product listing. *Fix submitted by [Vova Yatsyuk](https://github.com/vovayatsyuk) in pull request [15409](https://github.com/magento/magento2/pull/15409)*. 
 
 <!-- ENGCOM-1641 -->* Refactored JavaScript code from `popup.phtml` to meet Magento coding standards. *Fix submitted by [Rahul Kachhadiya](https://github.com/rahul-kachhadiya) in pull request [15341](https://github.com/magento/magento2/pull/15341)*. 
 
@@ -1188,7 +1188,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 <!-- ENGCOM-1434 -->* Replaced `template/path` with `Module_Name::template/path` in the block class to ensure extensibility of the class. Previously, if the source block classes referenced a template without specifying the module name, then block render failed with this error: `Invalid template file`. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
 
-<!-- ENGCOM-1405 -->* Replaced the `\Magento\Backend\Helper\Data` parameter with `\Magento\Backend\Model\UrlInterface` to make them identical with the  contructor. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
+<!-- ENGCOM-1405 -->* Replaced the `\Magento\Backend\Helper\Data` parameter with `\Magento\Backend\Model\UrlInterface` to make them identical with the  constructor. *Fix submitted by [Abhishek Jakhotiya](https://github.com/Jakhotiya) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
 
 <!-- ENGCOM-1403 -->* The return type of `addToCartPostParams` in `app/code/Magento/Catalog/Block/Product/ListProduct.php` has been changed to array. *Fix submitted by [Sean Templeton](https://github.com/LordZardeck) in pull request [14946](https://github.com/magento/magento2/pull/14946)*. 
 
@@ -1365,7 +1365,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Rule 
 
-<!-- MAGETWO-89220 -->* A cart rule that uses  a `subselection` condition now works as exected. Previously, cart rules with this condition automatically granted a discount. 
+<!-- MAGETWO-89220 -->* A cart rule that uses  a `subselection` condition now works as executed. Previously, cart rules with this condition automatically granted a discount. 
 
 <!-- ENGCOM-1961 -->* The retrieval of first array elements in the following files has been improved: `app/code/Magento/Rule/Model/Action/AbstractAction.php` and `app/code/Magento/Rule/Model/Condition/Combine.php`. *Fix submitted by [Thomas Klein](https://github.com/thomas-blackbird) in pull request [16053](https://github.com/magento/magento2/pull/16053)*. [GitHub-15940](https://github.com/magento/magento2/issues/15940)
 
@@ -1618,7 +1618,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!--  ENGCOM-1547 -->* Button definitions have been moved to the new `buttons.js` file. *Fix submitted by [Jisse Reitsma](https://github.com/jissereitsma) in pull request [15194](https://github.com/magento/magento2/pull/15194)*. 
 
-<!--  ENGCOM-1438 -->* Overlay issues with the mini cart have been resolved. Previously, if you logged in as a customer, then clicked on the mini cart icon and then the Account menu, the mini cart overlayed the Account menu. *Fix submitted by [Arthur James](https://github.com/ArtiDjeims) in pull request [14963](https://github.com/magento/magento2/pull/14963)*. 
+<!--  ENGCOM-1438 -->* Overlay issues with the mini cart have been resolved. Previously, if you logged in as a customer, then clicked on the mini cart icon and then the Account menu, the mini cart overlaid the Account menu. *Fix submitted by [Arthur James](https://github.com/ArtiDjeims) in pull request [14963](https://github.com/magento/magento2/pull/14963)*. 
 
 <!--  ENGCOM-1313 -->* Magento now supports multiple `ui_components` with layout type `tabs` on a page. Previously, the second UI component failed to render, and Magento displayed this error, `Element with ID 'tabs_nav' already exists`. *Fix submitted by [Freek Vandeursen](https://github.com/FreekVandeursen) in pull request [14742](https://github.com/magento/magento2/pull/14742)*. 
 
@@ -1677,13 +1677,18 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 
 
-## Known issue
+## Known issues
 
-The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6: 
+**Issue**: Merchants cannot save a newly created multiselect or dropdown customer attribute or edit existing customer attributes from the customer’s account on the storefront after upgrade to Magento 2.2.6. 
 
-* Remove   `pub/media/catalog/product/cache`. (The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space.) 
+**Workaround**: Download and apply hot fix [MAGETWO-95591](https://magento.com/tech-resources/download#download2248). This issue will be fixed in Magento Open Source 2.2.7, which is scheduled for release by the end of 2018. 
 
-* Run `bin/magento catalog:image:resize`  to generate a new image cache.  (This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.)
+
+**Issue**: The `catalog:image:resize` command execution time has been reduced by up to 90% in the release. However, this improvement necessitates these additional steps after upgrading your Magento instance to 2.2.6: 
+
+	* Remove   `pub/media/catalog/product/cache`. The path for cached images was changed in this release, which explains why you need to clean this directory after upgrade to free up space. 
+
+	* Run `bin/magento catalog:image:resize`  to generate a new image cache.  This step is necessary because we’ve changed the path to cached images and must remove the previously cached images.
 
 
 

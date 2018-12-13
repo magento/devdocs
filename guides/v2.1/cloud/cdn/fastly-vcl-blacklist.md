@@ -2,10 +2,7 @@
 group: cloud-guide
 subgroup: 090_configure
 title: Custom blacklist VCL
-menu_title: Custom blacklist VCL
-menu_order:
-menu_node:
-redirect from:
+redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-blacklist.html
    - /guides/v2.2/cloud/configure/fastly-vcl-blacklist.html
    - /guides/v2.3/cloud/configure/fastly-vcl-blacklist.html

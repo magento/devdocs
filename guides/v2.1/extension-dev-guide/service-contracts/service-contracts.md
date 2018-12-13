@@ -37,12 +37,9 @@ To address these issues, the Magento system introduces _service contracts_.
 
 ## Using the @api tag
 
-Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="{{ page.baseurl }}/extension-dev-guide/backward-compatibility.html">Backward compatibility</a>.
+Backward compatibility can be indicated by the use of `@api`. For more information, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 ### Related topics {#related-topics}
 
-<ul>
-   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html">Service contract design patterns</a></li>
-   <li><a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a>
-   </li>
-</ul>
+- [Service contract designpatterns]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html)
+- [Configure services as webAPIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

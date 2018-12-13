@@ -6,7 +6,7 @@ functional_areas:
   - Theme
 ---
 
-The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible [LESS]-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers.
+The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible [Less]-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers.
 It employs a set of mixins for base elements to ease frontend theme development and customization.
 
 This topic describes how the library is organized, and how to use it. For more information, see the [Magento UI library documentation] that reflects the latest [embedded documentation].
@@ -71,9 +71,11 @@ lib/web
     │    │    │    ├── _typography.less
     │    │    │    ├── _utilities.less
     │    │    │    └── _variables.less
+    │    │    └── _email-variables.less
     │    │    └── _extend.less
     │    │    └── _theme.less
     │    │    └── _variables.less
+    │    │    └── _widgets.less
     │    └── styles.less
     ├── fonts/
     │    └── Blank-Theme-Icons/ (Library custom icons font)
@@ -104,7 +106,7 @@ The theme customized Blank by redefining variables only.
 
 ## Your custom variables {#fedg_using-ui-lib_vars}
 
-When naming custom variables, please follow the [Magento naming convention for the LESS variables].
+When naming custom variables, please follow the [Magento naming convention for the Less variables].
 
 ## Using mixins {#fedg_using-ui-lib_customize}
 
@@ -156,9 +158,9 @@ The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-
 [embedded documentation]: #docs
 [inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
 
-[LESS]: http://lesscss.org/
+[Less]: http://lesscss.org/
 
-[Magento naming convention for the LESS variables]: {{ page.baseurl }}/coding-standards/code-standard-less.html#naming
+[Magento naming convention for the Less variables]: {{ page.baseurl }}/coding-standards/code-standard-less.html#naming
 
 [Magento UI library documentation]: https://magento-devdocs.github.io/magento2-ui-library/
 

@@ -1,6 +1,6 @@
 require_relative './rakelib/rake-helper.rb'
 
-include Jekyll
+include JekyllRake
 include Proofer
 include Converter
 
@@ -36,7 +36,7 @@ task :install do
   puts "Installed!".green
 end
 
-desc "Build the entire web site"
+desc "Build the entire website"
 task build: %w[clean] do
   print 'Building the site with Jekyll: $ '.magenta
   jekyll 'build --verbose'

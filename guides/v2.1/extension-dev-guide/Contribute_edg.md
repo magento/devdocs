@@ -7,7 +7,7 @@ menu_order:
 
 We encourage our users to add or correct Magento DevDoc content. Write a full topic, add a new section to an existing topic, or even just add a few sentences about something you know on an existing topic. Don't worry about grammar or form; we can fix that for you!
 
-Magento Devdocs site content is written in [Markdown](https://daringfireball.net/projects/markdown/), and is kept in Github. If you know how to use Github, you can contribute to our docs.
+Magento Devdocs site content is written in [Markdown](https://daringfireball.net/projects/markdown/), and is kept in GitHub. If you know how to use GitHub, you can contribute to our docs.
 
 Review the Table of Contents in the left pane of the Guide, and determine which topic areas you can contribute to, or any that might be missing.
 

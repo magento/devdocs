@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
- - /guides/v1.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
 ## Overview {#practice_overview}
@@ -135,7 +134,7 @@ var config = {
 
 [Page source search result]: {{site.baseurl}}/common/images/fdg_js_pr1.png
 [`gallery.js`]: {{site.mage2100url}}lib/web/mage/gallery/gallery.js
-[can be reached from the page source view or from the file system]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#config_file
+[can be reached from the page source view or from the file system]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#extend_js
 [RequireJS config file]: {{site.baseurl}}/common/images/fdg_pr_2.png
 [jCarousel widget]: http://sorgalla.com/jcarousel/
 [`gallery.js`]: {{site.mage2100url}}lib/web/mage/gallery/gallery.js

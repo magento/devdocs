@@ -1,19 +1,39 @@
 ---
 group: cloud-guide
 title: Launch Docker configuration
+redirect_from:
+  - /guides/v2.1/cloud/reference/docker-config.html
+  - /guides/v2.2/cloud/reference/docker-config.html
+  - /guides/v2.3/cloud/reference/docker-config.html
 functional_areas:
   - Cloud
   - Setup
   - Configuration
 ---
 
-The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. To specify a particular version, use the following options:
+The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. 
 
-- PHP: `--php`
-- NGINX: `--nginx`
-- MariaDB: `--db`
+{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator, you can overwrite a service version with the following optional parameters:
 
-This version also provides a ` docker:config:convert` command to convert PHP configuration files to Docker ENV files.
+| Service       | Key        | Default value | Possible values
+| ------------- | ---------- | ------------- | ----------------
+| PHP           | `--php`    | 7.1           | 7.0, 7.1, 7.2
+| NGINX         | `--nginx`  | latest        | 1.9, latest
+| MariaDB       | `--db`     | 10            | 10.0, 10.1, 10.2
+| Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2
+| RabbitMQ      | `--rmq`    | 3.5           | 3.5, 3.7
+| Redis         | `--redis`  | 3.2           | 3.0, 3.2, 4.0
+{:style="table-layout:auto;"}
+
+This version also provides a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
+
+#### Prerequisites
+
+You must have the following software installed on your local workstation:
+
+-  PHP version 7.0 or later
+-  [Composer](https://getcomposer.org)
+-  [Docker](https://www.docker.com/get-started)
 
 #### To launch Docker:
 
@@ -26,14 +46,11 @@ This version also provides a ` docker:config:convert` command to convert PHP con
     ```bash
     composer install
     ```
-    
-    {: .bs-callout .bs-callout-info}
-    You can use the `--ignore-platform-reqs` option to bypass restrictions related to the PHP version.
 
-1.  In your local environment, start the Docker configuration generator.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
 
     ```bash
-    vendor/bin/ece-tools docker:build
+    ./vendor/bin/ece-tools docker:build
     ```
 
 1.  Copy the raw configuration files.
@@ -49,7 +66,7 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 1. Convert the PHP configuration files to Docker ENV files.
 
     ```bash
-    vendor/bin/ece-tools docker:config:convert
+    ./vendor/bin/ece-tools docker:config:convert
     ```
     This command generates the following Docker ENV files:
 
@@ -62,18 +79,18 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 1.  Build files to containers and run in the background.
 
     ```bash
-    docker-compose up -d --build
+    docker-compose up -d
     ```
 
 1. Install Magento in your Docker environment.
 
-    * Build Magento in the Docker container:
+    - Build Magento in the Docker container:
 
         ```bash
         docker-compose run build cloud-build
         ```
 
-    * Deploy Magento in the Docker container:
+    - Deploy Magento in the Docker container:
 
         ```bash
         docker-compose run deploy cloud-deploy
@@ -84,14 +101,28 @@ This version also provides a ` docker:config:convert` command to convert PHP con
 
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
-    -  [`http://localhost:8080`](http://localhost:8080)
+    -  [`http://localhost`](http://localhost)
 
     -  [`https://localhost`](https://localhost)
+
+#### To stop containers and restore them afterwards:
+
+Suspend containers to continue your work later.
+
+```bash
+docker-compose stop
+```
+
+Start containers from suspended state.
+
+```bash
+docker-compose start
+```
 
 #### To stop and remove the Docker configuration:
 
 Remove all components of your local Docker instance including containers, networks, volumes, and images.
 
 ```bash
-docker-compose down
+docker-compose down -v
 ```

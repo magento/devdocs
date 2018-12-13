@@ -5,7 +5,6 @@ title: The composer.json file
 menu_title: The composer.json file
 menu_order: 1000
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/composer-integration.html
   - /guides/v2.0/extension-dev-guide/composer-integration.html
 ---
 
@@ -196,7 +195,7 @@ Where:
 [Define your configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html)
 
 [0]: https://getcomposer.org/
-[1]: {{ page.baseurl }}/comp-mgr/compman-start.html
+[1]: {{ page.baseurl }}/comp-mgr/module-man/compman-start.html
 [2]: https://packagist.org/
 [3]: https://getcomposer.org/doc/05-repositories.md#path
 [4]: https://www.iso.org/iso-639-language-codes.html

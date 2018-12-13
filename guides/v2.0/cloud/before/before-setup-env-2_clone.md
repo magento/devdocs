@@ -7,11 +7,7 @@ menu_order: 30
 menu_node:
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-keys.html
-  - /guides/v2.1/cloud/before/before-setup-env-keys.html
-  - /guides/v2.2/cloud/before/before-setup-env-keys.html
   - /guides/v2.0/cloud/before/before-setup-env-env.html
-  - /guides/v2.1/cloud/before/before-setup-env-env.html
-  - /guides/v2.2/cloud/before/before-setup-env-env.html
 functional_areas:
   - Cloud
   - Setup
@@ -92,7 +88,7 @@ To set Admin variables, you will use this command format:
 You can also [log into your project](https://accounts.magento.cloud){:target="_blank"} in the Project Web Interface to review project variables entered there. Click the Configure environment gear icon ![Configure your environment]({{ site.baseurl }}/common/images/cloud_edit-project.png) next to the Project name. Click the **Variables** tab and review any configured variables there.
 
 {: .bs-callout .bs-callout-warning }
-Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
+Every time you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
 
 ### Add variables using the CLI {#cli}
 

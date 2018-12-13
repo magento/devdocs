@@ -5,21 +5,15 @@ contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 redirect_from:
  - /guides/v2.0/test/integration/integration_test_setup.html
- - /guides/v2.1/test/integration/integration_test_setup.html
- - /guides/v2.2/test/integration/integration_test_setup.html
  - /guides/v2.0/test/integration/integration_test_execution_cli.html
- - /guides/v2.1/test/integration/integration_test_execution_cli.html
- - /guides/v2.2/test/integration/integration_test_execution_cli.html
  - /guides/v2.0/test/integration/integration_test_execution_phpstorm.html
- - /guides/v2.1/test/integration/integration_test_execution_phpstorm.html
- - /guides/v2.2/test/integration/integration_test_execution_phpstorm.html
 functional_areas:
   - Testing
   - test
 ---
 
 Integration tests require the Magento runtime environment, so they need a little preparation before they can be executed.
-Once the system is prepared, the tests can be executed using either the command line interface or within an IDE like PHPStorm.
+Once the system is prepared, the tests can be executed using either the command line interface or within an IDE like PhpStorm.
 
 ### Setting up the integration test framework
 
@@ -34,13 +28,13 @@ This option can be used for running the tests locally during development or on r
 
 Please refer to [Running Integration Tests in the CLI][cli run] for further information.
 
-### PHPStorm IDE
+### PhpStorm IDE
 
-Running the integration tests inside an IDE like PHPStorm IDE is convenient during development. This is mostly used when writing a new integration test.
+Running the integration tests inside an IDE like PhpStorm IDE is convenient during development. This is mostly used when writing a new integration test.
 
 Other then convenience there is no benefit over running the tests on the console.
 
-Please refer to [Running Integration Tests in PHPStorm][phpstorm run] for further information.
+Please refer to [Running Integration Tests in PhpStorm][phpstorm run] for further information.
 
 ## Preparing Integration Test Execution {#setup}
 
@@ -285,9 +279,9 @@ exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or di
 
 There are many ways this problem can be resolved, but the easiest is to run the tests in the virtual machine, too.
 
-## Running Integration Tests in PHPStorm {#phpstorm-run}
+## Running Integration Tests in PhpStorm {#phpstorm-run}
 
-When writing new integration tests or during debugging, it is convenient to execute tests from within the PHPStorm IDE.
+When writing new integration tests or during debugging, it is convenient to execute tests from within the PhpStorm IDE.
 
 Please ensure you have [prepared the integration test environment][setup] before starting.
 
@@ -295,7 +289,7 @@ Please ensure you have [prepared the integration test environment][setup] before
 
 Setting up a run configuration for integration tests is very similar to creating a run configuration for unit tests.
 
-Please refer to [Running Unit Tests in PHPStorm][phpstorm run] for instructions on how to create a basic run configuration.
+Please refer to [Running Unit Tests in PhpStorm][phpstorm run] for instructions on how to create a basic run configuration.
 Then configure the integration test configuration file to be used.
 
 #### Using the integration test configuration file

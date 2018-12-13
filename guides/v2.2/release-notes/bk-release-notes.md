@@ -18,6 +18,10 @@ Quarterly patch releases do not introduce backward-incompatible changes, archite
 
 ## Magento 2.2.x Release Notes
 
+* [{{site.data.var.ce}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7CE.html)
+* [{{site.data.var.ee}} 2.2.7 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.7EE.html)
+
+
 * [{{site.data.var.ce}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6CE.html)
 * [{{site.data.var.ee}} 2.2.6 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.2.6EE.html)
 
@@ -56,14 +60,13 @@ Interested in the Magento 2.0.x and 2.1.x releases? Check out the [2.0.x]({{site
 
 You can apply patches as they become available to update Magento Commerce (Cloud). We recommend using a new active branch and Integration environment for applying and testing the patch prior to fully deploying across all environments. We strongly recommend you test patches locally so you can identify and resolve any issues.
 
-<<<<<<< HEAD
+
 {:.bs-callout .bs-callout-tip}
 We recommend installing full [{{site.data.var.ece}} upgrades]({{site.baseurl}}/guides/v2.2/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
 
-=======
-{: .bs-callout .bs-callout-info }
-We recommend installing full [{{site.data.var.ece}} upgrades]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
->>>>>>> 9e09a04345ec0930fbb5145dbab517599ce23a9d
+## Contact information for third-party extensions
+
+[Contact Information for Third-Party Extensions]({{page.baseurl}}/release-notes/cbe-support-info.html)
 
 ## Magento Shipping release notes
 

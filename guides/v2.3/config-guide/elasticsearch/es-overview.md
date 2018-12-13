@@ -77,7 +77,7 @@ The tasks discussed in this section require the following:
 *	[Install Elasticsearch 5.x](#es-install-es5)
 *	[Install Elasticsearch 2.x](#es-install-es)
 *	[Upgrade from Elasticsearch 2.x to 5.x](#es-upgrade5)
-*	[Configure Magento to use Elasticsearch](#configure-magento-to-use-elasticsearch)
+*	[Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
 
 {% include config/solr-elastic-selinux.md %}
 

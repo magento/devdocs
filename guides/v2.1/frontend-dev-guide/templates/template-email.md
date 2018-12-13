@@ -33,7 +33,7 @@ Make note of this path because you will need it later when you configure this ne
 4. In **Template Name**, enter a name to identify the template in the Magento Admin.
 5. In **Template Subject**, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.  
 6. Customize template content. For details, see [the section on customizing content](#customize-content).
-7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the [LESS files](#email-styles) to make style changes to emails because some email clients don't support styles in `<style>` tags.
+7. In **Template Styles**, optionally add CSS styles for the template. These styles are added inside of a `<style>` tag in the `<head>` of the email. Typically, you'll use the [Less files](#email-styles) to make style changes to emails because some email clients don't support styles in `<style>` tags.
 8. Click **Save Template**.
 9. Now that you have created a template, you must configure that template to be used:
 
@@ -58,8 +58,47 @@ You can customize header and footer templates using either the [theme](#customiz
 
 To add the store and sales related information to a template, use system variables.
 
-System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the `{% raw %}{{var store_hours}}{% endraw %}` variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
+System variables are placeholders which are replaced by particular values when the actual email is generated. For example, the Store Hours (`{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`) variable is replaced by the value set in the **STORES** > Settings > **Configuration** > GENERAL > **General** > **Store Information** section.
 
+Here is a list of the most commonly used email template variables that are available:
+
+  * Email Footer Template: `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`
+  * Email Header Template: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}`
+  * Email Logo Image Alt: `{% raw %}{{var logo_alt}}{% endraw %}`
+  * Email Logo Image URL: `{% raw %}{{var logo_url}}{% endraw %}`
+  * Email Logo Image Height: `{% raw %}{{var logo_height}}{% endraw %}`
+  * Email Logo Image Width: `{% raw %}{{var logo_width}}{% endraw %}`
+  * Template CSS: `{% raw %}{{var template_styles|raw}}{% endraw %}`
+  * Base Unsecure URL: `{% raw %}{{config path="web/unsecure/base_url"}}{% endraw %}`
+  * Base Secure URL: `{% raw %}{{config path="web/secure/base_url"}}{% endraw %}`
+  * General Contact Name: `{% raw %}{{config path="trans_email/ident_general/name"}}{% endraw %}`
+  * Sales Representative Contact Name: `{% raw %}{{config path="trans_email/ident_sales/name"}}{% endraw %}`
+  * Sales Representative Contact Email: `{% raw %}{{config path="trans_email/ident_sales/email"}}{% endraw %}`
+  * Custom1 Contact Name: `{% raw %}{{config path="trans_email/ident_custom1/name"}}{% endraw %}`
+  * Custom1 Contact Email: `{% raw %}{{config path="trans_email/ident_custom1/email"}}{% endraw %}`
+  * Custom2 Contact Name: `{% raw %}{{config path="trans_email/ident_custom2/name"}}{% endraw %}`
+  * Custom2 Contact Email: `{% raw %}{{config path="trans_email/ident_custom2/email"}}{% endraw %}`
+  * Store Name: `{% raw %}{{config path="general/store_information/name"}}{% endraw %}`
+  * Store Phone Number: `{% raw %}{{config path="general/store_information/phone"}}{% endraw %}`
+  * Store Hours: `{% raw %}{{config path="general/store_information/hours"}}{% endraw %}`
+  * Country: `{% raw %}{{config path="general/store_information/country_id"}}{% endraw %}`
+  * Region/State: `{% raw %}{{config path="general/store_information/region_id"}}{% endraw %}`
+  * Zip/Postal Code: `{% raw %}{{config path="general/store_information/postcode"}}{% endraw %}`
+  * City: `{% raw %}{{config path="general/store_information/city"}}{% endraw %}`
+  * Street Address 1: `{% raw %}{{config path="general/store_information/street_line1"}}{% endraw %}`
+  * Street Address 2: `{% raw %}{{config path="general/store_information/street_line2"}}{% endraw %}`
+  * Store Contact Address: `{% raw %}{{config path="general/store_information/address"}}{% endraw %}`
+  * Customer Account URL: `{% raw %}{{var this.getUrl($store, 'customer/account/')}}{% endraw %}`
+  * Customer Email: `{% raw %}{{var customer.email}}{% endraw %}`
+  * Customer Name: `{% raw %}{{var customer.name}}{% endraw %}`
+  * Billing Address: `{% raw %}{{var formattedBillingAddress|raw}}{% endraw %}`
+  * Email Order Note: `{% raw %}{{var order.getEmailCustomerNote()}}{% endraw %}`
+  * Order ID: `{% raw %}{{var order.increment_id}}{% endraw %}`
+  * Order Items Grid: `{% raw %}{{layout handle="sales_email_order_items" order=$order area="frontend"}}{% endraw %}`
+  * Payment Details: `{% raw %}{{var payment_html|raw}}{% endraw %}`
+  * Shipping Address: `{% raw %}{{var formattedShippingAddress|raw}}{% endraw %}`
+  * Shipping Description: `{% raw %}{{var order.getShippingDescription()}}{% endraw %}`
+  
 {:.bs-callout .bs-callout-info}
 You can also create your own custom variables and set their values in the Admin, under **SYSTEM** > **Custom Variables**.
 

@@ -6,7 +6,6 @@ menu_title: Uninstall or reinstall Magento
 menu_node:
 menu_order: 5
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-uninstall.html
 functional_areas:
   - Install
@@ -49,13 +48,11 @@ To reinstall the Magento software as a system integrator:
 		git pull origin develop
 		php bin/magento setup:uninstall
 
-	<div class="bs-callout bs-callout-info" markdown="1">
 	*   If `git pull origin develop` fails, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/git/tshoot_git-pull-origin.html).
 	*   To use your existing Magento software version , omit the `git pull origin develop` command.
-	</div>
 3.	Install the Magento software:
 
-	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
+	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento)
 	*	[Install the Magento software using the Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 ## Uninstall the Magento software {#instgde-install-uninstall}
@@ -84,5 +81,5 @@ The optional `--keep-generated` option should be used _only_ in limited circumst
 
 6.	Install the Magento software:
 
-	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html)
+	*	[Install the Magento software using the command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento)
 	*	[Install the Magento software using the Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)

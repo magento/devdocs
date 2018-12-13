@@ -23,4 +23,4 @@ You can find the list of modules that have dependencies on the Magento_MsrpStagi
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation]({{ site.baseurl }}). Also, there you can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation]({{ site.baseurl }}/). Also, there you can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

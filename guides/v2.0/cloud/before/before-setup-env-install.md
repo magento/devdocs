@@ -6,8 +6,6 @@ menu_title: Install Magento
 menu_order: 50
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html
-  - /guides/v2.1/cloud/before/before-setup-env-perms.html
-  - /guides/v2.2/cloud/before/before-setup-env-perms.html
 functional_areas:
   - Cloud
   - Install
@@ -79,8 +77,8 @@ After you have installed Magento, you need to set the file system permissions an
 2.  Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
   	    chown -R :<web server group> .
   	    chmod u+x bin/magento
 

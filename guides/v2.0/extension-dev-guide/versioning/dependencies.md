@@ -6,8 +6,6 @@ menu_title: Module version dependencies
 menu_order: 1200
 redirect_from:
   - /guides/v2.0/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.1/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.2/extension-dev-guide/backward-compatibility.html
 ---
 
 Magento platform clients need notifications about breaking changes for their installed extensions and customizations when they upgrade their Magento installation.
@@ -76,7 +74,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 | **JavaScript Interface** (marked with `@api`)               | Inject in a constructor and/or call methods                                                             | MAJOR              |
 |                                                             | Implement the interface                                                                                 | MINOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
-| **Javascript class** (marked with `@api`)                   | Inject in a constructor                                                                                 | MAJOR              |
+| **JavaScript class** (marked with `@api`)                   | Inject in a constructor                                                                                 | MAJOR              |
 |                                                             | Extend from a class                                                                                     | MINOR              |
 |                                                             | Override a method                                                                                       | MINOR              |
 |                                                             | Subscribe to an event  | MINOR              |

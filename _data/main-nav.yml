@@ -10,6 +10,9 @@
     - label: Local Development
       url: /cloud/setup/first-time-setup.html
 
+    - label: Docker quick reference
+      url: /cloud/docker/docker-quick-reference.html
+
     - label: Configure Environments
       url: /cloud/env/environments.html
 
@@ -38,7 +41,7 @@
       url: /config-guide/bk-config-guide.html
 
     - label: Performance Best Practices
-      url: /performance-best-practices/
+      url: /performance-best-practices/introduction.html
       exclude_versions: ['2.0','2.1']
 
     - label: Migration Guide
@@ -131,14 +134,9 @@
     - label: Magento Testing Guide
       url: /test/testing.html
 
-    - label: Functional Acceptance Testing
-      url: /mftf/2.2/introduction.html
-      include_versions: ['2.2']
-      versionless: true
-
-    - label: Functional Acceptance Testing
+    - label: Functional Acceptance Testing (MFTF)
       url: /mftf/2.3/introduction.html
-      include_versions: ['2.3']
+      exclude_versions: ['2.0', '2.1']
       versionless: true
 
     - label: Functional Testing
@@ -171,6 +169,10 @@
 
     - label: Checkout
       url: /howdoi/checkout/checkout_overview.html
+
+    - label: Inventory Management
+      url: /inventory/index.html
+      exclude_versions: ['2.0', '2.1', '2.2']
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/

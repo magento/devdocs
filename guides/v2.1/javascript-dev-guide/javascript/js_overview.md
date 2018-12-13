@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: JavaScript
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_overview.html
- - /guides/v1.0/frontend-dev-guide/javascript/js_overview.html
 ---
 
 By default, the Magento application uses the [RequireJS file and module loader] to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
@@ -37,5 +36,5 @@ Topics of this chapter describe the following:
 [disable all the default scripts and their load by RequireJS]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js
 [Configure JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js-resources.html
 [AMD module]: http://requirejs.org/docs/whyamd.html#amd
-[app/code/Magento/Ui/view]: {{site.mage2000ur}}app/code/Magento/Ui/view
-[jQuery UI library used in Magento]: {{site.mage2000url}}lib/web/jquery/jquery-ui-1.9.2.js
+[app/code/Magento/Ui/view]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/Ui/view
+[jQuery UI library used in Magento]: {{site.mage2bloburl}}{{page.guide_version}}/lib/web/jquery/jquery-ui-1.9.2.js

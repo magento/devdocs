@@ -259,7 +259,7 @@ This section contains code sample snippets to refer to when configuring database
 
 <!-- Link references -->
 [Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
-[associate cache frontends with cache types]: {{ page.baseurl }}/config-guide/config/caching_frontend-cache-types.html
+[associate cache frontends with cache types]: {{ page.baseurl }}/config-guide/cache/cache-types.html
 [sample configurations]: #mage-cache-db-config
 [Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
 [Verify database caching is working]: #mage-cache-db-verify

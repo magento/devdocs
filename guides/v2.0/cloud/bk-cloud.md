@@ -8,14 +8,8 @@ menu_order: 10
 menu_node: parent
 redirect_from:
   - /guides/v2.0/cloud/access-acct/resources.html
-  - /guides/v2.1/cloud/access-acct/resources.html
-  - /guides/v2.2/cloud/access-acct/resources.html
   - /guides/v2.0/cloud/welcome/get-help.html
-  - /guides/v2.1/cloud/welcome/get-help.html
-  - /guides/v2.2/cloud/welcome/get-help.html
   - /guides/v2.0/cloud/welcome/10000-ft-overview.html
-  - /guides/v2.1/cloud/welcome/10000-ft-overview.html
-  - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 functional_areas:
   - Cloud
 ---
@@ -88,7 +82,7 @@ If you would like to learn more about Magento 2, see the following resources:
 *	Developer documentation
 
 	*	[Magento 2 Architecture guide]({{ page.baseurl }}/architecture/bk-architecture.html){:target="_blank"}
-  *	[Front end development]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html){:target="_blank"}
+  *	[Frontend development]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html){:target="_blank"}
 	*	[Customizing the Magento software]({{ page.baseurl }}/extension-dev-guide/bk-extension-dev-guide.html){:target="_blank"}
 	*	[Installation]({{ page.baseurl }}/install-gde/bk-install-guide.html), though we recommend following [Prepare for local environment setup]({{ page.baseurl }}/cloud/before/before-workspace.html){:target="_blank"}
 	*	[Configuration]({{ page.baseurl }}/config-guide/bk-config-guide.html){:target="_blank"}

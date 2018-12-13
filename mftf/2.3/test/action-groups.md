@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.0
+mftf-release: 2.3.7
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/test/action-groups.html
 ---
 
@@ -18,8 +18,8 @@ The following diagram shows the structure of an MFTF action group:
 
 The following conventions apply to MFTF action groups:
 
--  All action groups are declared in XML files and stored in the `<module>/ActionGroup/` directory.
--  Every file name ends with `ActionGroup`, such as `LoginToAdminActionGroup.xml`.
+- All action groups are declared in XML files and stored in the `<module>/ActionGroup/` directory.
+- Every file name ends with `ActionGroup`, such as `LoginToAdminActionGroup`.
 
 The XML format for the `actionGroups` declaration is:
 
@@ -39,17 +39,19 @@ The XML format for the `actionGroups` declaration is:
 ```
 
 ## Example
-{%raw%}
+
+{% raw %}
 
 These examples build a declaration for a group of actions that grant authorization to the Admin area, and use the declaration in a test.
 
-The _Backend/ActionGroup/LoginToAdminActionGroup.xml_ `<actionGroup>` relates to the functionality of the _Backend_ module. In [test](../test.html), the name and identifier of the `<actionGroup>` is used as a reference in the `ref` parameter, such as `ref="LoginToAdminActionGroup"`.
+The _Backend/ActionGroup/LoginToAdminActionGroup.xml_ `<actionGroup>` relates to the functionality of the _Backend_ module.
+In [test](../test.html), the name and identifier of the `<actionGroup>` is used as a reference in the `ref` parameter, such as `ref="LoginToAdminActionGroup"`.
 
 ### Create an action group declaration
 
 To create the `<actionGroup>` declaration:
 
-1.  Begin with a _Backend/ActionGroup/LoginToAdminActionGroup.xml_ template for the `<actionGroup>`:
+1. Begin with a _Backend/ActionGroup/LoginToAdminActionGroup.xml_ template for the `<actionGroup>`:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -62,7 +64,7 @@ To create the `<actionGroup>` declaration:
     </actionGroups>
     ```
 
-1.  Add actions to the `actionGroup` arguments:
+1. Add actions to the `actionGroup` arguments:
 
     ```xml
     <actionGroup name="LoginToAdminActionGroup">
@@ -72,13 +74,15 @@ To create the `<actionGroup>` declaration:
     </actionGroup>
     ```
 
-1.  The `userInput` variable must contain a data value for test. Add a default data value for the variable to use in the most common cases. For this example, the default value is `_defaultAdmin`.
+1. The `userInput` variable must contain a data value for test.
+   Add a default data value for the variable to use in the most common cases.
+   For this example, the default value is `_defaultAdmin`.
 
     ```xml
     <argument name="adminUser" defaultValue="_defaultAdmin"/>
     ```
 
-1.  The following example shows the complete declaration:
+1. The following example shows the complete declaration:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -108,13 +112,13 @@ In this test example, we want to add the following set of actions:
 
 Instead of adding this set of actions, use the _LoginToAdminActionGroup_ `<actionGroup>` declaration in tests:
 
-1.  Reference the `LoginToAdminActionGroup` action group:
+1. Reference the `LoginToAdminActionGroup` action group:
 
     ```xml
     <actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup"/>
     ```
 
-1.  Update the argument name/value pair to `adminUser` and `CustomAdminUser`:
+1. Update the argument name/value pair to `adminUser` and `CustomAdminUser`:
 
     ```xml
     <actionGroup stepKey="loginToAdminPanel" ref="LoginToAdminActionGroup">
@@ -124,7 +128,8 @@ Instead of adding this set of actions, use the _LoginToAdminActionGroup_ `<actio
 
 ## Data type usage
 
-By default, an [`argument`](#argument-tag) expects an entire `entity` when the `type` value is not defined. There are cases when you use a string instead of a whole entity.
+By default, an [`argument`](#argument-tag) expects an entire `entity` when the `type` value is not defined.
+There are cases when you use a string instead of a whole entity.
 
 For example, the following defines the replacement argument `relevantString` using a primitive data type:
 
@@ -142,7 +147,7 @@ For example, the following defines the replacement argument `relevantString` usi
 
 The `string` argument type provides a method to pass a single piece of data to the `<actionGroup>`during a test instead of passing an entire entity.
 
-**To explicitly define the argument value**:
+### Explicitly define the argument value
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
@@ -150,7 +155,7 @@ The `string` argument type provides a method to pass a single piece of data to t
 </actionGroup>
 ```
 
-**To define the argument value using persisted data references**:
+### Use persisted data references to define the argument value
 
 ```xml
 <actionGroup stepKey="fillWithStringLiteral" ref="fillExample">
@@ -158,13 +163,19 @@ The `string` argument type provides a method to pass a single piece of data to t
 </actionGroup>
 ```
 
-**To define the argument value based on data entity resolution**:
+The `relevantString` argument value points to the data [created](../data.html#persist-data){:target="_blank"} in the `stepKey="persistedData"` test step.
+`field1` is a data key of the required data string.
+Even with the `persistedData` data entity, the MFTF interprets the `$persistedData.field1$` value as a string.
 
-Create an argument of `type="entity"`. The argument value points to an entity and string pair [created](../data.html#persist-data){:target="_blank"}  in a previous `stepKey="persistedData"` test step. The `field1` data contains the required string. Even with the `myCustomEntity` data entity, MFTF interprets the `myCustomEntity.field1` value as a string.
+### Define the argument value based on data entity resolution
+
+The argument value points to a piece of data defined in a `data.xml` file.
+The `field1` data contains the required string.
+MFTF resolves `{{myCustomEntity.field1}}` the same as it would in a `selector` or `userInput` attribute.
 
 ```xml
 <actionGroup stepKey="fillWithXmlData" ref="fillExample">
-    <argument name="relevantString" value="myCustomEntity.field1"/>
+    <argument name="relevantString" value="{{myCustomEntity.field1}}"/>
 </actionGroup>
 ```
 
@@ -202,5 +213,4 @@ Attribute|Type|Use|Description
 `defaultValue`|string|optional|Provides a default data value.
 `type`|Possible values: `string`, `entity` (default).|optional|Defines the argument data type; Defaults to `entity`.
 
-{%endraw%}
-
+{% endraw %}

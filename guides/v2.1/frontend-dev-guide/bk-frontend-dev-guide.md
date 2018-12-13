@@ -37,7 +37,7 @@ You can apply these levels of customization to your site, where the levels requi
     
     This third level of customization is not addressed in this guide.
     
-    See the Developers' Guide for details on how to develop new modules.
+    See the Developer Guide for details on how to develop new modules.
     
     This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.
 

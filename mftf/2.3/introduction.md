@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.6
+mftf-release: 2.3.11
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/introduction.html
 ---
 
@@ -13,11 +13,11 @@ _The latest MFTF release is [{{page.mftf-release}}]._
 The Magento Functional Testing Framework (MFTF) aims to replace the [Functional Testing Framework] in future releases.
 MFTF improves:
 
-* **Traceability** for clear logging and reporting capabilities.
-* **Modularity** to run tests based on installed modules and extensions.
-* **Customizability** for existing tests.
-* **Readability** using clear and declarative XML test steps.
-* **Maintainability** based on simple test creation and overall structure.
+- **Traceability** for clear logging and reporting capabilities.
+- **Modularity** to run tests based on installed modules and extensions.
+- **Customizability** for existing tests.
+- **Readability** using clear and declarative XML test steps.
+- **Maintainability** based on simple test creation and overall structure.
 
 Because MFTF tests are written in XML, you no longer need to learn PHP to write tests.
 
@@ -32,16 +32,18 @@ This MFTF guide is intended for Magento developers and software engineers, such 
 ## Goals
 
 The purpose of MFTF is to:
--   Facilitate functional testing and minimize the effort it takes to perform regression testing.
--   Make it easier to support the extension and customization of tests via XML merging.
+
+- Facilitate functional testing and minimize the effort it takes to perform regression testing.
+- Make it easier to support the extension and customization of tests via XML merging.
 
 ## Scope
 
 MFTF will enable you to:
--  Test user interactions with web applications in testing.
--  Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
--  Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
--  Automate regression testing.
+
+- Test user interactions with web applications in testing.
+- Write functional tests located in `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/`.
+- Cover basic functionality using out-of-the-box tests. You can test extended functionality using custom tests.
+- Automate regression testing.
 
 ## Use cases
 
@@ -52,6 +54,7 @@ As a software engineer, perform regression testing before release to ensure that
 ## Find your MFTF version {#find-version}
 
 There are two options to find out your MFTF version:
+
 - using the MFTF CLI
 - using the Composer CLI
 
@@ -60,6 +63,7 @@ There are two options to find out your MFTF version:
 ```bash
 cd <magento_root>/
 ```
+
 ```bash
 vendor/bin/mftf --version
 ```
@@ -69,13 +73,14 @@ vendor/bin/mftf --version
 ```bash
 cd <magento_root>/
 ```
+
 ```bash
 composer show magento/magento2-functional-testing-framework
 ```
 
 ## Contents of dev/tests/acceptance
 
-```
+```tree
 tests
     _data                       // Additional files required for tests (e.g. pictures, CSV files for import/export, etc.)
     _output                     // The directory is generated during test run. It contains testing reports.
@@ -102,13 +107,15 @@ codeception.dist.yml            // Codeception configuration (generated while ru
 ## MFTF tests
 
 The MFTF supports two different locations for storing the tests and test artifacts:
+
 - `<magento_root>/app/code/<vendor_name>/<module_name>/Test/Mftf/` is the directory to create new tests.
 - `<magento_root>/vendor/<vendor_name>/<module_name>/Test/Mftf/` is the directory with the out of the box tests (fetched by the Composer).
 
 All tests and test data from these locations are merged in the order indicated in the above list.
 
 The file structure under the both path cases is the same:
-```
+
+```tree
 <Path>
 ├── ActionGroup
 │   └── ...
@@ -128,9 +135,8 @@ The file structure under the both path cases is the same:
 
 Follow the [MFTF project] and [contribute on Github].
 
-
 <!-- Link definitions -->
-[contribute on Github]: contribution-guidelines.html
+[contribute on Github]: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
 [Functional Testing Framework]: {{ site.gdeurl23 }}mtf/mtf_introduction.html
 [MFTF project]: https://github.com/magento/magento2-functional-testing-framework
 [{{page.mftf-release}}]: https://github.com/magento/magento2-functional-testing-framework/releases/tag/{{page.mftf-release}}

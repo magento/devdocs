@@ -45,9 +45,18 @@ Because the point of creating this user is to provide added security, make sure 
 
 To find the web server user's group:
 
-*	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
+*	CentOS:
 
-	Typically, the user and group name are both `apache`
+    ```bash
+    grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
+    ```
+    or
+    ```bash
+    grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
+    ```
+	
+Typically, the user and group name are both `apache`
+
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
 	Typically, the username and the group name are both `www-data`
@@ -98,8 +107,8 @@ To set ownership and permissions before you install the Magento software:
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+		find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 		sudo chown -R :<web server group> .
 		chmod u+x bin/magento
 

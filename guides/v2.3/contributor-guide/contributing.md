@@ -71,7 +71,7 @@ Please review the following supported and accepted pull request rules. We define
 
 ## Fork a repository {#fork}
 
-To fork a repository on Github:
+To fork a repository on GitHub:
 
 1. Create or log in to your account on GitHub.
 2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="_blank"}.
@@ -270,7 +270,7 @@ The tool includes configuration settings through the gear icon located top right
 
 ![Magento Porting Tool Settings]({{ site.baseurl }}/common/images/porting-tool-setting.png){:width="600px"}
 
-### Manual porting {#manual-porting}
+### Manual porting {#porting-manual}
 
 When manually porting, you use git commands to create branches and pull requests. This option may require a strong understanding of git.
 

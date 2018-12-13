@@ -3,23 +3,11 @@ group: cloud-guide
 title: Technologies and requirements
 redirect_from:
   - /guides/v2.0/cloud/discover-tools.html
-  - /guides/v2.1/cloud/discover-tools.html
-  - /guides/v2.2/cloud/discover-tools.html
   - /guides/v2.0/cloud/cloud-requirements.html
-  - /guides/v2.1/cloud/cloud-requirements.html
-  - /guides/v2.2/cloud/cloud-requirements.html
   - /guides/v2.0/cloud/cloud-requirements-git.html
-  - /guides/v2.1/cloud/cloud-requirements-git.html
-  - /guides/v2.2/cloud/cloud-requirements-git.html
   - /guides/v2.0/cloud/cloud-requirements-license.html
-  - /guides/v2.1/cloud/cloud-requirements-license.html
-  - /guides/v2.2/cloud/cloud-requirements-license.html
   - /guides/v2.0/cloud/requirements/cloud-requirements-license.html
-  - /guides/v2.1/cloud/requirements/cloud-requirements-license.html
-  - /guides/v2.2/cloud/requirements/cloud-requirements-license.html
   - /guides/v2.0/cloud/requirements/cloud-requirements-git.html
-  - /guides/v2.1/cloud/requirements/cloud-requirements-git.html
-  - /guides/v2.2/cloud/requirements/cloud-requirements-git.html
 functional_areas:
   - Cloud
   - Install

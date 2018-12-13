@@ -22,7 +22,7 @@ Make sure that you've installed and set up the following software:
 
 ### Recommendations
 
-We recommend using [PHPStorm 2017](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
+We recommend using [PhpStorm 2017](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
 They recently added support for [Codeception Test execution](https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/), which is helpful when debugging.
 
 ## Prepare Magento
@@ -96,7 +96,7 @@ In the _magento2/dev/tests/acceptance_ directory, edit the `.env` file to match 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
 Example: `MAGENTO_BASE_URL=http://magento.test`
 
-* `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
+* `MAGENTO_BACKEND_NAME` must contain the relative path to the Admin area.
 Example: `MAGENTO_BACKEND_NAME=admin`
 
 * `MAGENTO_ADMIN_USERNAME` must contain the username required for authorization in the Admin area.

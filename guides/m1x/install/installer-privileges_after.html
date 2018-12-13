@@ -100,12 +100,12 @@
             For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
             <pre>chown -R www-data .</pre></li>
         <li>Enter the following commands to set permissions:
-            <pre>find . -type f -exec chmod 400 {} \;
-find . -type d -exec chmod 500 {} \;
-find var/ -type f -exec chmod 600 {} \;
-find media/ -type f -exec chmod 600 {} \;
-find var/ -type d -exec chmod 700 {} \;
-find media/ -type d -exec chmod 700 {} \;
+            <pre>find . -type f -exec chmod 400 {} +
+find . -type d -exec chmod 500 {} +
+find var/ -type f -exec chmod 600 {} +
+find media/ -type f -exec chmod 600 {} +
+find var/ -type d -exec chmod 700 {} +
+find media/ -type d -exec chmod 700 {} +
 chmod 700 includes
 chmod 600 includes/config.php</pre></li></ol>
 
@@ -125,8 +125,8 @@ chmod 600 includes/config.php</pre></li></ol>
     <ol><li>Change to the Magento installation directory.<br />
         On CentOS, this is typically <code>/var/www/html/magento</code>. On Ubuntu, it is typically <code>/var/www/magento</code>.</li>
         <li>Enter the following commands:<br />
-            <pre>find . -type d -exec chmod 700 {} \;
-find . -type f -exec chmod 600 {} \;</pre></li>
+            <pre>find . -type d -exec chmod 700 {} +
+find . -type f -exec chmod 600 {} +</pre></li>
         <li>Install your extension using the Magento Connect Manager.</li></ol>
 
     <h3 id="extensions-after">Restoring the Recommended Permissions</h3>
@@ -139,12 +139,12 @@ find . -type f -exec chmod 600 {} \;</pre></li>
             For example, on Ubuntu where Apache usually runs as <code>www-data</code>, enter
             <pre>chown -R www-data .</pre></li>
         <li>Enter the following commands to set permissions:
-            <pre>find . -type f -exec chmod 400 {} \;
-find . -type d -exec chmod 500 {} \;
-find var/ -type f -exec chmod 600 {} \;
-find media/ -type f -exec chmod 600 {} \;
-find var/ -type d -exec chmod 700 {} \;
-find media/ -type d -exec chmod 700 {} \;</pre></li></ol>
+            <pre>find . -type f -exec chmod 400 {} +
+find . -type d -exec chmod 500 {} +
+find var/ -type f -exec chmod 600 {} +
+find media/ -type f -exec chmod 600 {} +
+find var/ -type d -exec chmod 700 {} +
+find media/ -type d -exec chmod 700 {} +</pre></li></ol>
 
     <h2 id="privs-patches">Applying Magento Support Patches</h2>
     <p>Magento Support typically provides a shell script to patch various Magento issues. When you run the shell script, file and directory permissions are typically not changed; however, the files provided with the patch are owned by the user who applied the patch. If you have a dedicated Magento server, this is typically <code>root</code>; therefore, after applying the patch, you must change file ownership.</p>

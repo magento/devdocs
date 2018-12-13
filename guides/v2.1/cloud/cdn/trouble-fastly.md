@@ -5,7 +5,7 @@ title: Fastly troubleshooting
 menu_title: Fastly troubleshooting
 menu_order: 20
 menu_node:
-redirect from:
+redirect_from:
    - /guides/v2.1/cloud/trouble/trouble_fastly.html
    - /guides/v2.2/cloud/trouble/trouble_fastly.html
    - /guides/v2.3/cloud/trouble/trouble_fastly.html
@@ -38,9 +38,10 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 1.	Log into the Magento Admin for the Production or Staging Admin.
 2.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 3.	In the right pane, expand **Full Page Cache**.
-4.	In the **Fastly Configuration** section, expand **Error/Maintenance Page** as the following figure shows.
+4.	In the **Fastly Configuration** section, expand **Custom Synthetic Pages** as the following figure shows.
 
-	![Custom Fastly error page]({{ site.baseurl }}/common/images/cloud_fastly-503-page.png)
+	![Custom 503 error page]
+
 5.	Click **Set HTML**.
 3.	Remove the custom code. You can save it in a text program to add back later.
 4.	When you're done, click **Upload** to send your updates to Fastly.
@@ -251,7 +252,7 @@ Verify if you have the correct Fastly Service ID and API token in your environme
 
 If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:
 
-	curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/snippet/ -H "Fastly-Key: <FASTLY_API_TOKEN>"
+	curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/snippet -H "Fastly-Key: <FASTLY_API_TOKEN>"
 
 Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets). For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
@@ -280,3 +281,8 @@ If you want to activate an older version, you need to deactivate the currently a
 Then activate the version you want active:
 
   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate
+  
+<!-- Link definitions -->
+
+  [Custom 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages.png
+  {: width="650px"}

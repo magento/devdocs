@@ -1,24 +1,21 @@
 ---
 group: software-update-guide
-subgroup: 10_Install extensions from the command line
 title: Install the B2B extension
-menu_title: Install the B2B extension
-menu_order: 1
 ee_only: true
 ---
 
 {: .bs-callout .bs-callout-warning }
-The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0. You must install it after installing {{site.data.var.ee}}.
+The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
 
 ## Installation
 
 1.  Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
     ```
-    composer require magento/extension-b2b
+    composer require magento/extension-b2b=^1.0
     ```
 
-    If you get an error when trying to install the B2B module for local instance of Magento Commerce (for example: `[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).`), you need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of you public_key and private_key for `username` and `password`:
+    If you get an error when trying to install the B2B module for a local instance of Magento Commerce (for example: `[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).`), you need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your public_key and private_key for `username` and `password`:
 
     ```
     {
@@ -86,7 +83,7 @@ Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql
 
 ### Add message consumers to cron
 
-You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab.xml`:
+You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab`:
 
 {%highlight xml%}
 * * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions &

@@ -134,7 +134,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 57615 -->* Visual Merchandiser `Match products by rule` now works as expected.
 
 
-<!--- 60542 -->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the "Shipping and Tracking" block did not work properly.
+<!--- 60542 -->* The **Print Shipping Label** link now displays on the product frontend. Previously, the layout for the "Shipping and Tracking" block did not work properly.
 
 <!--- 60529 -->* Magento now displays Up-sells on the Product page.
 
@@ -144,7 +144,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 63814 -->* SalesRule now applies to auto-generated coupon codes as expected.
 
-<!--- 60777 -->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.  
+<!--- 60777 -->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product frontend.  
 
 <!--- 60599 -->* Magento now supports negative values in **Quantity** field for a product. [GitHub-7401](https://github.com/magento/magento2/issues/7401)
 
@@ -172,7 +172,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 61262 -->* You no longer need to delete the URL rewrite to force Magento to display links after adding pages to the CMS hierarchy. Previously, when you added new pages to the CMS hierarchy, Magento did not show the links to the new pages until you deleted the URL rewrites.
 
 
-<!--- 63124 -->* Magento front-end scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
+<!--- 63124 -->* Magento frontend scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
 
 <!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented.  Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response.
 
@@ -335,7 +335,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 59660 -->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
-<!--- 57060 -->*  You can now apply free shipping to a specified shipping method when you create order in the Admin. Previously, if you set up a price rule to provide free shipping for one specific shipping method (for example, table rates), Magento applies the rule  on the front end only, but not on the Admin order creation page.
+<!--- 57060 -->*  You can now apply free shipping to a specified shipping method when you create order in the Admin. Previously, if you set up a price rule to provide free shipping for one specific shipping method (for example, table rates), Magento applies the rule  on the frontend only, but not on the Admin order creation page.
 
 ### Staging
 

@@ -66,9 +66,8 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ![Search results]({{ page.baseurl }}/rest/images/add-your-name.png)
 
-  <div class="bs-callout bs-callout-info" id="info" markdown="1">
+  {:.bs-callout .bs-callout-info}
   If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
-  </div>
 
   ## Congratulations! You've finished.
   {:.no_toc}

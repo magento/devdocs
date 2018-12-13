@@ -6,13 +6,13 @@ title: Searches and pagination in GraphQL
 A GraphQL search query can contain the following components:
 
 * A full text search keyword
-* Filters (search criteria).
+* Filters (search criteria)
 * Pagination information
 * Sorting instructions
 
 ## Specifying full text search keywords
 
-The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.
+The `search` element causes Magento to perform a full text search on the specified keywords. (This is the same type of search that is performed from the storefront. If multiple keywords are specified, each keyword is evaluated separately.)
 
 The `search` element is optional, but it can be used with or without filters. Each query must contain a `search` or `filter` element.
 
@@ -51,18 +51,19 @@ Magento GraphQL clause | SQL equivalent
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
 `finset: [1, 2, 3]`	| <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-* `to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
-* `gt` and `lt` can be used in the same search term. For example, `qty: {lt: "10" gt: "20"}`.
-</div>
+`to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
+
+`gt` and `lt` can be used in the same search term. For example, `qty: {lt: "10" gt: "20"}`.
 
 ## Specifying pagination
 
-Currently, Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
+Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
 
-The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
 
 The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
+
+You can include the `total_pages` attribute in the `page_info` section of the output definition to indicate how many pages were returned for the query.
 
 ## Sorting instructions
 
@@ -85,10 +86,11 @@ The following sections provide examples of each type of search. These examples u
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-{% highlight json %}
+``` json
 {
     products(
       search: "Yoga pants"
+      page_size: 10
     )
     {
         total_count
@@ -107,10 +109,11 @@ The following search returns items that contain the word `yoga` or `pants`. The 
         page_info {
           page_size
           current_page
+          total_pages
         }
       }
 }
-{% endhighlight %}
+```
 
 The search returns 45 items.
 
@@ -124,46 +127,47 @@ The following sample query returns a list of products that meets the following c
 
 The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
 
-{% highlight json %}
+``` json
 {
-    products(
-      search: "Messenger"
-      filter: {
-             sku: {like: "24-MB%"}
-             price: {lt: "50"}
-             }
-        pageSize: 25
-          sort: {
-          price: DESC
+  products(
+    search: "Messenger"
+    filter: {
+      sku: {like: "24-MB%"}
+      price: {lt: "50"}
+    }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
+    items
+      {
+        name
+        sku
+        description {
+          html
         }
-    )
-    {
-      items
-      	{
-          name
-          sku
-          description
-          price {
-            regularPrice {
-              amount {
-                value
-                currency
-              }
+        price {
+          regularPrice {
+            amount {
+              value
+              currency
             }
           }
-
         }
-        total_count
-        page_info {
-            page_size
-        }
+      }
+    total_count
+    page_info {
+      page_size
     }
+  }
 }
-{% endhighlight %}
+```
 
 The query returns the following:
 
-{% highlight json %}
+``` json
 {
   "data": {
     "products": {
@@ -171,7 +175,9 @@ The query returns the following:
         {
           "name": "Wayfarer Messenger Bag",
           "sku": "24-MB05",
-          "description": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>",
+          "description": {
+            "html": "<p>Perfect for class, work or the gym, the Wayfarer Messenger Bag is packed with pockets. The dual-buckle flap closure reveals an organizational panel, and the roomy main compartment has spaces for your laptop and a change of clothes. An adjustable shoulder strap and easy-grip handle promise easy carrying.</p>\n<ul>\n<li>Multiple internal zip pockets.</li>\n<li>Made of durable nylon.</li>\n</ul>"
+          },
           "price": {
             "regularPrice": {
               "amount": {
@@ -184,7 +190,9 @@ The query returns the following:
         {
           "name": "Rival Field Messenger",
           "sku": "24-MB06",
-          "description": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>",
+          "description": {
+            "html": "<p>The Rival Field Messenger packs all your campus, studio or trail essentials inside a unique design of soft, textured leather - with loads of character to spare. Two exterior pockets keep all your smaller items handy, and the roomy interior offers even more space.</p>\n<ul>\n<li>Leather construction.</li>\n<li>Adjustable fabric carry strap.</li>\n<li>Dimensions: 18\" x 10\" x 4\".</li>\n</ul>"
+          },
           "price": {
             "regularPrice": {
               "amount": {
@@ -202,84 +210,84 @@ The query returns the following:
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Simple search using a timestamp
 
 The following search finds all products that were added after the specified time (midnight, November 1, 2017).
 
-{% highlight json %}
+``` json
 {
-    products(
-      filter: {
-          created_at: {gt: "2017-11-01 00:00:00"}
-        }
-        pageSize: 25
-          sort: {
-          price: DESC
-        }
+  products(
+    filter: {
+        created_at: {gt: "2017-11-01 00:00:00"}
+      }
+      pageSize: 25
+      sort: {
+        price: DESC
+      }
     )
     {
-        total_count
-        items {
-          name
-          sku
-          price {
-            regularPrice {
-              amount {
-                value
-                currency
-              }
+      total_count
+      items {
+        name
+        sku
+        price {
+          regularPrice {
+            amount {
+              value
+              currency
             }
           }
         }
-        page_info {
-          page_size
-          current_page
-        }
       }
+      page_info {
+        page_size
+        current_page
+      }
+  }
 }
-{% endhighlight %}
+```
 
 ### Simple Logical OR search
 
 The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
 
-{% highlight json %}
+``` json
 {
-    products(
-      filter: {
-          or: {
-            sku: {like: "24-MB%"}
-            name: {like: "%Bag"}
-						}
-       	 }
-        pageSize: 25
-          sort: {
-          price: DESC
-        }
-    )
-    {
-        total_count
-        items {
-          name
-          sku
-          price {
-            regularPrice {
-              amount {
-                value
-                currency
-              }
-            }
+  products(
+    filter: {
+      or: {
+        sku: {like: "24-MB%"}
+        name: {like: "%Bag"}
+      }
+    }
+    pageSize: 25
+      sort: {
+      price: DESC
+    }
+  )
+  {
+    total_count
+    items {
+      name
+      sku
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
           }
         }
-        page_info {
-          page_size
-          current_page
-        }
       }
+    }
+    page_info {
+      page_size
+      current_page
+    }
+  }
 }
-{% endhighlight %}
+```
 
 The query returns 8 items.
 
@@ -287,7 +295,7 @@ The query returns 8 items.
 
 This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the product is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
-{% highlight json %}
+``` json
 {
     products(
       filter: {
@@ -321,6 +329,6 @@ This query searches for products that have `name` that ends with `Orange` or has
         }
       }
 }
-{% endhighlight %}
+```
 
 The query returns 4 items.

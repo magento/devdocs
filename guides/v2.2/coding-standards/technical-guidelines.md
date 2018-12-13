@@ -43,7 +43,7 @@ Use [RFC2119] to interpret keywords like:
 
 1.3. Type hints for scalar arguments SHOULD be used.
 
-1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled.
+1.3.1. All new PHP files MUST have strict type mode enabled by starting with `declare(strict_types=1);`. All updated PHP files SHOULD have strict type mode enabled. PHP interfaces SHOULD NOT have this declaration.
 
 ## 2. Class design
 
@@ -586,7 +586,7 @@ We are reviewing this section and will publish it soon.
 
 8.6. A module MUST NOT contain references to {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resources.
 
-8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
+8.7. A component MUST NOT rely either on dependencies of dependencies or on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
 
 ## 9. Browser-Server interaction in web application
 
@@ -614,7 +614,7 @@ We are reviewing this section and will publish it soon.
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build front-end applications.
+10.1. The Magento 2 {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -624,19 +624,17 @@ We are reviewing this section and will publish it soon.
 
 10.5. ESLint [rules][rules] SHOULD BE followed.
 
-10.5.1. ES5 SHOULD be used as a JS standard.
+10.5.1. ECMAScript 5.1 SHOULD be used as a JS standard.
 
-10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
+10.5.2. Language features (closures, WeakMaps, etc) MUST be used for private state. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
+10.5.3. All uses of XMLHttpRequest (including jQuery's `$.ajax`) MUST be asynchronous.
 
-10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
+10.5.4. New global properties MUST not be added (either through explicit `window` assignment or `var` in the top scope). The RequireJS module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Function declarations MUST be used for private functions instead of function expressions.
-
-10.5.7. Re-declaration of function names MUST NOT be used.
+10.5.6. Code MUST NOT re-declare any identifiers already declared in a reachable scope (re-assignment is acceptable).
 
 ## 11. Testing
 
@@ -725,7 +723,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.3.1. Sanitize input; escape output.
 
-15.3.2. Follow [templates XSS security guidelines](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html) for escaping output.
+15.3.2. Follow [templates XSS security guidelines]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) for escaping output.
 
 15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
 
@@ -747,7 +745,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.6.1. Exceptions/Notices/Warnings should be caught and logged.
 
-15.6.2. No error output should be displayed to user, some standard message should appear instead.
+15.6.2. Error output should not be displayed to the user. Display standard messages to inform the user.
 
 15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
 
@@ -757,21 +755,25 @@ class SampleEventObserverThatModifiesInputs
 
 15.7.2. All data manipulation requests should be made with POST requests.
 
-15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
+15.8. Frequently update third-party libraries used in the project/component to eliminate known vulnerabilities.
 
 15.9. Local File Inclusion (LFI) protection.
 
-15.9.1. SHOULD NOT trust user-submitted requests containing path and file name.
+15.9.1. User-submitted requests containing path and file name SHOULD NOT be trusted.
 
-15.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.
+15.9.2. User-submitted path and file values SHOULD be sanitized to remove dot-dot-slash from the request.
 
 15.10. Remote Code Execution (RCE) protection.
 
-15.10.1. SHOULD NOT use eval(), passthru(), system(), shell_exec(), serialize(), unserialize(), md5(), srand(), mt_srand()
+15.10.1. `eval()`, `passthru()`, `system()`, `shell_exec()`, `serialize()`, `unserialize()`, `md5()`, `srand()`, `mt_srand()` SHOULD NOT be used.
 
-15.10.2. SHOULD NOT directly pass user-submitted values to include*(), require*(), create_function(), fopen(), preg_replace()
+15.10.2. User-submitted values SHOULD NOT be passed directly to `include*()`, `require*()`, `create_function()`, `fopen()`, `preg_replace()`.
 
-15.10.3. SHOULD NOT use variable functions if the variable values are submitted by the user.
+15.10.3. Variable functions SHOULD NOT be used if the variable values are submitted by the user.
+
+15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
+
+15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 

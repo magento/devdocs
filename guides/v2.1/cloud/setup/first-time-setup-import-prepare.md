@@ -83,7 +83,7 @@ You must have an authentication key to access the {{site.data.var.ee}} repositor
 
 #### To create a new `auth.json` file:
 
-First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`](https://github.com/magento/magento2/blob/2.2-develop/auth.json.sample).
+First, verify if you have an `auth.json` file, located in your Magento root directory. You can also [get a sample `auth.json`]({{site.mage2bloburl}}2.2-develop/auth.json.sample).
 
 1.  Using a text editor, create an `auth.json` file and save it in your Magento root directory.
 
@@ -194,7 +194,7 @@ Use the command [`magento setup:backup --media`]({{ page.baseurl }}/install-gde/
 
 ## Copy the encryption key {#encryption-key}
 
-To decrypt the encrypted data from your imported database, copy your encryption from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
+To decrypt the encrypted data from your imported database, copy your encryption key from your existing `env.php` file. Every environment in Integration, Staging, and Production has an `env.php` of sensitive data and environment variables. The file contains a nested PHP array storing configuration data.
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
 2.  Search for the value of `key` in the `crypt` array.
@@ -223,4 +223,4 @@ The following command example compresses the dump so it doesn't significantly in
 To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
 
 #### Next step
-[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)
+[Import {{site.data.var.ee}} into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)

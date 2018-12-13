@@ -1,6 +1,7 @@
+label: Magento Commerce Cloud
 project-webint-basiclabel: Magento Commerce Cloud Guide
 pages:
-    - label: Magento Commerce Cloud guide
+    - label: Overview
       url: /cloud/bk-cloud.html
       children:
         - label: Onboarding tasks
@@ -61,16 +62,6 @@ pages:
           url: /cloud/project/sendgrid.html
           exclude_versions: ["2.0"]
 
-    - label: Integrations
-      url: /cloud/integrations/cloud-integrations.html
-      exclude_versions: ["2.0"]
-      children:
-        - label: Bitbucket integration
-          url: /cloud/integrations/bitbucket-integration.html
-
-        - label: GitHub integration
-          url: /cloud/integrations/github-integration.html
-
     - label: Local development setup
       url: /cloud/setup/first-time-setup.html
       children:
@@ -80,6 +71,9 @@ pages:
           children:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
+
+            - label: Docker quick reference
+              url: /cloud/docker/docker-quick-reference.html
 
         - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
@@ -108,13 +102,26 @@ pages:
         - label: Optional - Configure Xdebug
           url: /cloud/howtos/debug.html
 
+    - label: Integrations
+      url: /cloud/integrations/cloud-integrations.html
+      exclude_versions: ["2.0"]
+      children:
+        - label: Bitbucket integration
+          url: /cloud/integrations/bitbucket-integration.html
+
+        - label: GitHub integration
+          url: /cloud/integrations/github-integration.html
+
+        - label: Health notifications
+          url: /cloud/integrations/health-notifications.html
+
     - label: Import existing code into a project
       url: /cloud/setup/first-time-setup-import-first-steps.html
       children:
         - label: Prepare your existing Magento Commerce system
           url: /cloud/setup/first-time-setup-import-prepare.html
 
-        - label: Import Magento Commerce into Magento Commerce (Cloud)
+        - label: Import Magento Commerce code
           url: /cloud/setup/first-time-setup-import-import.html
 
     - label: Configure your store
@@ -147,30 +154,39 @@ pages:
           url: /cloud/configure/import-url-rewrites.html
           include_versions: ["2.2"]
 
-    - label: Configure Fastly
+    - label: Configure Fastly services
       url: /cloud/cdn/cloud-fastly.html
       children:
         - label: Set up Fastly
           url: /cloud/cdn/configure-fastly.html
+          exclude_versions: ["2.0"]
+          children:
+            - label: Customize response pages
+              url: /cloud/cdn/cloud-fastly-custom-response.html
 
-        - label: Fastly Image Optimization
+        - label: Managed Cloud WAF
+          url: /cloud/cdn/fastly-waf-service.html
+          exclude_versions: ["2.0"]
+
+        - label: Image Optimization
           url: /cloud/cdn/fastly-image-optimization.html
           exclude_versions: ["2.0"]
 
         - label: Custom Fastly VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
+          exclude_versions: ["2.0"]
+          children:
+            - label: Custom whitelist VCL
+              url: /cloud/cdn/fastly-vcl-whitelist.html
 
-        - label: Custom whitelist VCL
-          url: /cloud/cdn/fastly-vcl-whitelist.html
+            - label: Custom blacklist VCL
+              url: /cloud/cdn/fastly-vcl-blacklist.html
 
-        - label: Custom blacklist VCL
-          url: /cloud/cdn/fastly-vcl-blacklist.html
+            - label: Custom redirect to WordPress VCL
+              url: /cloud/cdn/fastly-vcl-wordpress.html
 
-        - label: Custom redirect to WordPress VCL
-          url: /cloud/cdn/fastly-vcl-wordpress.html
-
-        - label: Custom block bad referer VCL
-          url: /cloud/cdn/fastly-vcl-badreferer.html
+            - label: Custom block bad referer VCL
+              url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
           url: /cloud/cdn/trouble-fastly.html
@@ -191,14 +207,15 @@ pages:
             - label: Logging handlers
               url: /cloud/env/log-handlers.html
 
-            - label: Smart wizards
-              url: /cloud/env/smart-wizards.html
-
         - label: Environment variables
           url: /cloud/env/variables-intro.html
           children:
             - label: ADMIN variables
               url: /cloud/env/environment-vars_magento.html
+
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+              exclude_versions: ["2.0"]
 
             - label: Build variables
               url: /cloud/env/variables-build.html
@@ -280,6 +297,18 @@ pages:
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
+
+    - label: Optimize deployment
+      url: /cloud/deploy/optimize-cloud-deployment.html
+      children:
+        - label: Cloud deployment process
+          url: /cloud/deploy/cloud-deployment-process.html
+
+        - label: Static content deployment
+          url: /cloud/deploy/static-content-deployment.html
+
+        - label: Smart wizards
+          url: /cloud/deploy/smart-wizards.html
 
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html

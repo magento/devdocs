@@ -111,8 +111,13 @@ pages:
                 - label: Set pre-installation ownership and permissions
                   url: /install-gde/prereq/file-system-perms.html
 
+            - label: RabbitMQ
+              url: /install-gde/prereq/install-rabbitmq.html
+              include_versions: ["2.3"]
+              
             - label: RabbitMQ (Magento Commerce only)
               url: /install-gde/prereq/install-rabbitmq.html
+              include_versions: ["2.2", "2.1", "2.0"]
 
             - label: Set up a remote MySQL database connection
               url: /install-gde/prereq/mysql_remote.html

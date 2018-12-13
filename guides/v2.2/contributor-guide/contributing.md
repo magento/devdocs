@@ -72,7 +72,7 @@ Please review the following supported and accepted pull request rules. We define
 
 ## Fork a repository {#fork}
 
-To fork a repository on Github:
+To fork a repository on GitHub:
 
 1. Create or log in to your account on GitHub.
 2. Navigate to the [Magento 2 repository](https://github.com/magento/magento2){:target="_blank"}.
@@ -222,7 +222,7 @@ In order to keep consistency between Magento release lines (2.1, 2.2, 2.3, etc),
 We provide two options to create back-ports and up-ports for your code contributions:
 
 - [Magento Porting Tool](#porting-tool) - Quick and easy method with a few clicks in a Magento tool
-- [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
+- [Manual porting](#porting-manual) - Manual process requiring a strong understanding of Git
 
 {: .bs-callout .bs-callout-info }
 Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
@@ -265,15 +265,15 @@ The tool includes configuration settings through the gear icon located top right
 
 - **Use my fork as target** - When checked, your fork is used to push the result. This is selected by default.
 - **Target options** - If you do not use your fork as a target (not checked), manually specify an organization and repository for ported commits.
-- **Porting strategy** - Sets the git commands and method for committing the code port:
+- **Porting strategy** - Sets the Git commands and method for committing the code port:
     - `git am` – Recommended. When selected, authorship and original commit message will be saved. This command is used to port.
     - `git apply` – A new commit will be created with a default message. GitHub provided patch is applied with `git apply`. **Important**: This is an experimental strategy and results may vary.
 
 ![Magento Porting Tool Settings]({{ site.baseurl }}/common/images/porting-tool-setting.png){:width="600px"}
 
-### Manual porting {#manual-porting}
+### Manual porting {#porting-manual}
 
-When manually porting, you use git commands to create branches and pull requests. This option may require a strong understanding of git.
+When manually porting, you use Git commands to create branches and pull requests. This option may require a strong understanding of Git.
 
 The following is an example "Forwardport" (up-port) pull request for https://github.com/magento/magento2/pull/13528 from the `2.2-develop` branch to the `2.3-develop` branch:
 
@@ -284,7 +284,7 @@ The following is an example "Forwardport" (up-port) pull request for https://git
 1. Create a pull request from `<your-fork>:up-port-pull-13528` to `magento:2.3-develop`.
 1. In the up-port pull request description, add the full path to the original pull request (for example: https://github.com/magento/magento2/pull/13528) to help the Magento team link these pull requests.
 
-The following git commands detail how to up-port to `2.3-develop` branch from `2.2-develop` branch:
+The following Git commands detail how to up-port to `2.3-develop` branch from `2.2-develop` branch:
 
 ```
 git checkout 2.3-develop
@@ -293,7 +293,7 @@ curl -L https://github.com/magento/magento2/pull/<PR_NUMBER>.patch | git am
 git push origin up-port-pull-<PR_NUMBER>:up-port-pull-<PR_NUMBER>
 ```
 
-The following git commands detail how to back-port to `2.2-develop` branch from `2.3-develop` branch:
+The following Git commands detail how to back-port to `2.2-develop` branch from `2.3-develop` branch:
 
 ```
 git checkout 2.2-develop

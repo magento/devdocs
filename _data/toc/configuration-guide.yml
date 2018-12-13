@@ -4,7 +4,6 @@ pages:
       url: /config-guide/bk-config-guide.html
 
     - label: Security settings
-      url: /config-guide/secy/secy.html
       children:
         - label: Secure cron.php to run in a browser
           url: /config-guide/secy/secy-cron.html
@@ -14,6 +13,14 @@ pages:
 
         - label: Prevent cache poisoning
           url: /config-guide/secy/secy-headers.html
+
+        - label: Two-Factor Authentication
+          url: /security/two-factor-authentication.html
+          include_versions: ["2.1", "2.2"]
+
+        - label: Google reCAPTCHA
+          url: /security/google-recaptcha.html
+          include_versions: ["2.1", "2.2"]
 
     - label: Magento application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
@@ -96,6 +103,10 @@ pages:
         - label: Set the Magento mode
           url: /config-guide/cli/config-cli-subcommands-mode.html
 
+        - label: Start message queue consumers
+          include_versions: ["2.3"]
+          url: /config-guide/cli/config-cli-subcommands-queue.html
+
         - label: URN highlighter
           url: /config-guide/cli/config-cli-subcommands-urn.html
 
@@ -161,20 +172,17 @@ pages:
           url: /config-guide/config/disable-module-output.html
 
         - label: Configuration reference
-          include_versions: ["2.1", "2.2", "2.3"]
+          exclude_versions: ["2.0"]
           children:
 
             - label: Sensitive and system-specific
               url: /config-guide/prod/config-reference-sens.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: Payment configuration paths reference
               url: /config-guide/prod/config-reference-payment.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: Other configuration paths reference
               url: /config-guide/prod/config-reference-most.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: Magento Commerce for B2B Extension configuration paths reference
               url: /config-guide/prod/config-reference-b2b.html
@@ -186,7 +194,6 @@ pages:
 
             - label: Use environment variables to override configuration settings
               url: /config-guide/prod/config-reference-var-name.html
-              include_versions: ["2.1", "2.2", "2.3"]
 
             - label: config.php reference
               url: /config-guide/prod/config-reference-configphp.html
@@ -325,7 +332,6 @@ pages:
 
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
-
 
     - label: Message Queues (Magento Commerce only)
       include_versions: ["2.0","2.1", "2.2"]

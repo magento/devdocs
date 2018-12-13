@@ -1,10 +1,10 @@
 ---
 group: cloud-guide
-subgroup:
 title: Git
-menu_title: Git
-menu_node:
-menu_order:
+redirect_from:
+   - /guides/v2.1/cloud/project/admin-git-push.html
+   - /guides/v2.2/cloud/project/admin-git-push.html
+   - /guides/v2.3/cloud/project/admin-git-push.html
 ---
 
 Git is the center of all code management, build, and deployment for your {{site.data.var.ece}} stores and sites. We use Git to provide source control for your code:
@@ -51,7 +51,7 @@ When setting up your SSH, review our information at [SSH and sFTP]({{ page.baseu
 
 ## Git integrations {#integrations}
 
-We support using either [Github]({{ page.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
+We support using either [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html) or [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html) integrations for your {{site.data.var.ece}} project.
 
 {:.bs-callout .bs-callout-info}
-To integrate other git repositories with your {{site.data.var.ece}} project using Github or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).
+To integrate other Git repositories with your {{site.data.var.ece}} project using GitHub or Bitbucket deploy keys, refer to [Pull code from a private Git repository]({{ page.baseurl }}/cloud/project/project-webint-branch.html#private).
