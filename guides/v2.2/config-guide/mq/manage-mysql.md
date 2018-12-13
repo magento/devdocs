@@ -66,7 +66,7 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 
 Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 
-    ./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] <consumer_name>
+    ./bin/magento queue:consumers:start <consumer_name> [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] [--area-code=<value>] 
 
 Where:
 
@@ -77,6 +77,8 @@ Where:
 *   `--batch-size=<value>` specifies the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.
 
 *   `--pid-file-path=<value>` the file path for saving PID of consumer process.
+
+*   `--area-code=<value>` the area code preferred for consumer process.
 
 After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start <consumer_name> &`).
 
