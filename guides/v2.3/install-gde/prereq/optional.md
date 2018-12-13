@@ -98,8 +98,8 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 Use `phpinfo.php` in a development system _only_. It can be a security issue in production.
 
 Add the following code anywhere in your web server's docroot:
-	&lt;?php
 
+	<?php
 	// Show all information, defaults to INFO_ALL
 	phpinfo();
 

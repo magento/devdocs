@@ -25,10 +25,10 @@ For example:
 If your string contains a variable, to add a placeholder for this variable in the dictionary, use syntax similar to the following:
 
 ```php
-### <?php echo sprintf(__('Hello %s'), $yourVariable) ?>
+### <?php echo __('Hello %1', $yourVariable) ?>
 ```
 
-In this example, the <i>'Hello %s'</i> string is added to the dictionary when the i18n tool is run.
+In this example, the <i>'Hello %1'</i> string is added to the dictionary when the i18n tool is run.
 
 ## Strings added in email templates {#add_strings_email}
 

@@ -5,7 +5,6 @@ title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-install.html
   - /guides/v2.0/install-gde/install/install-cli-install.html
 functional_areas:
   - Install
@@ -109,7 +108,7 @@ To enable or disable modules after installing Magento, see [Enable and disable m
 
 {% include install/sens-data.md %}
 
-#### Sample localhost installations {install-cli-example}
+#### Sample localhost installations {#install-cli-example}
 
 **Example 1**
 

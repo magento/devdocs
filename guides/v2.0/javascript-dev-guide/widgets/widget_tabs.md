@@ -6,7 +6,6 @@ menu_title: Tabs widget
 menu_order: 14
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 ## Overview   {#fedg_tabs-widget_overview}

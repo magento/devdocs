@@ -5,7 +5,6 @@ title: Install the Magento software
 menu_title: Install the Magento software
 menu_order: 4
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-install.html
   - /guides/v2.0/install-gde/install/install-cli-install.html
 functional_areas:
   - Install
@@ -239,7 +238,7 @@ Any options that contain spaces or special characters must be enclosed in either
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{ page.baseurl }}/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+		<ul><li><code>db</code> to store session data in the <a href="{{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
 
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>

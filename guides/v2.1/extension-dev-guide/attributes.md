@@ -5,11 +5,11 @@ title: EAV and extension attributes
 
 There are two types of attributes you can use to extend Magento functionality:
 
-* Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes on the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
+* Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules are the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
-* {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} attributes. Extension attributes are new in Magento 2. They are used to extend functionality and often use more {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} types than custom attributes. These attributes do not appear in the Magento Admin.
+* {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}Extension attributes{% endglossarytooltip %}. Extension attributes are new in Magento 2. They are used to extend functionality and often use more {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} types than custom attributes. These attributes do not appear in the Magento Admin.
 
 ## EAV and custom attributes {#custom}
 
@@ -257,3 +257,46 @@ However, if an extension similar to the following has been defined, the interfac
 ### Troubleshoot EAV attributes {#troubleshooting}
 
 If you have issues when using `setup:upgrade`, verify `__construct` uses the method `EavSetupFactory` not `EavSetup`. You should not directly inject `EavSetup` in extension code. Check your custom code and purchased modules and extensions to verify. After changing the methods, you should be able to properly deploy.
+
+## Add product EAV attribute options reference
+
+The following table is a reference for the `Magento\Eav\Setup\EavSetup::addAttribute` method. It contains the available options when creating a product attribute, listing each option's key, description, and the default value (where applicable).
+
+|Key|Description|Default Value|
+|--- |--- |--- |
+|apply_to|Catalog EAV Attribute apply_to||
+|attribute_model|EAV Attribute attribute_model||
+|backend|EAV Attribute backend_model||
+|comparable|Catalog EAV Attribute is_comparable|0|
+|default|EAV Attribute default_value||
+|filterable_in_search|Catalog EAV Attribute is_filterable_in_search|0|
+|filterable|Catalog EAV Attribute is_filterable|0|
+|frontend_class|EAV Attribute frontend_class||
+|frontend|EAV Attribute frontend_model||
+|global|Catalog EAV Attribute is_global field|1|
+|group|Attribute group name or ID||
+|input_renderer|Catalog EAV Attribute frontend_input_renderer||
+|input|EAV Attribute frontend_input|text|
+|is_filterable_in_grid|Catalog EAV Attribute is_filterable_in_grid|0|
+|is_html_allowed_on_front|Catalog EAV Attribute is_html_allowed_on_front|0|
+|is_used_in_grid|Catalog EAV Attribute is_used_in_grid field|0|
+|is_visible_in_grid|Catalog EAV Attribute is_visible_in_grid field|0|
+|label|EAV Attribute frontend_label||
+|note|EAV Attribute note||
+|option|EAV Attribute Option values||
+|position|Catalog EAV Attribute position|0|
+|required|EAV Attribute is_required|1|
+|searchable|Catalog EAV Attribute is_searchable|0|
+|sort_order|EAV Entity Attribute sort_order||
+|source|EAV Attribute source_model||
+|table|EAV Attribute backend_table||
+|type|EAV Attribute backend_type|varchar|
+|unique|EAV Attribute is_unique|0|
+|used_for_promo_rules|Catalog EAV Attribute is_used_for_promo_rules|0|
+|used_for_sort_by|Catalog EAV Attribute used_for_sort_by|0|
+|used_in_product_listing|Catalog EAV Attribute used_in_product_listing|0|
+|user_defined|EAV Attribute is_user_defined|0|
+|visible_in_advanced_search|Catalog EAV Attribute is_visible_in_advanced_search|0|
+|visible_on_front|Catalog EAV Attribute is_visible_on_front|0|
+|visible|Catalog EAV Attribute is_visible|1|
+|wysiwyg_enabled|Catalog EAV Attribute is_wysiwyg_enabled|0|

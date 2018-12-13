@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: JavaScript resources in Magento
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
- - /guides/v1.0/config-guide/config/js-resources.html
  - /guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
 ---
 
@@ -38,19 +37,18 @@ We recommend specifying JavaScript resources in the templates rather than in the
 
 JS resources are accessed using relative paths.
 
-Examples:
-
 **Example 1**
 
 - File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
-- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}.
+- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_ConfigurableProduct/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}.
 - Called in script:
     ```javascript
     require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
        });
     ```
 
-{% collapsible Example 2 %}
+
+**Example 2**
 
 - File actual location: `app/code/design/frontend/Magento/blank/web/js/theme.js`
 - File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
@@ -59,10 +57,10 @@ Examples:
     require(["js/theme.js"], function(){
        });
     ```
-{% endcollapsible %}
 
 
-{% collapsible Example 3 %}
+**Example 3**
+
 - File actual location: `lib/web/jquery.js`
 - File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
 - Called in script:
@@ -70,9 +68,9 @@ Examples:
     require(["jquery"], function($){
        });
     ```
-{% endcollapsible %}
 
-These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html).
+
+These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html).
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
@@ -88,7 +86,7 @@ To build a dependency on the third-party plugin, specify a [shim] in the followi
     ```
 
  - `<third-party-plugin>.js`
- 
+
     ```javascript
     !(function($){
         // plugin code
@@ -111,14 +109,14 @@ To be available for the entire Magento instance, RequireJS library is included i
             <title>Magento Admin</title>
             <meta name="viewport" content="width=1024"/>
             <meta name="format-detection" content="telephone=no"/>
-        <!-- Here's the library included -->       
+        <!-- Here's the library included -->
         <link src="requirejs/require.js"/>
             <css src="extjs/resources/css/ext-all.css"/>
             <css src="extjs/resources/css/ytheme-magento.css"/>
         </head>
         <body>
             <attribute name="id" value="html-body"/>
-            <!-- Here's the basic configuration file require_js.phtml specified -->   
+            <!-- Here's the basic configuration file require_js.phtml specified -->
         <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
             <referenceContainer name="global.notices">
                 <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="page/notices.phtml"/>
@@ -160,7 +158,7 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 
 ## Related reading
 
-[About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html)
-[RequireJS library]: http://requirejs.org
-[inheriting]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
-[shim]: http://requirejs.org/docs/api.html#config-shim
+[About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
+[RequireJS library](http://requirejs.org)
+[inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
+[shim](http://requirejs.org/docs/api.html#config-shim)

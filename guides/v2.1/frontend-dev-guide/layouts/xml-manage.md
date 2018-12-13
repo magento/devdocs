@@ -356,7 +356,7 @@ In this file, reference the element having added the `remove` attribute:
 
 ## Replace elements {#layout_markup_replace_elements}
 
-To replace an element, [remove it]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem) and add a new one.
+To replace an element, [remove it]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rmv) and add a new one.
 
 #### Related topics:
 

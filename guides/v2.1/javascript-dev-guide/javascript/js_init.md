@@ -4,44 +4,42 @@ subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
- - /guides/v1.0/frontend-dev-guide/javascript/js_init.html
 ---
 
 ## Overview {#js_init_overview}
 
-This topic talks about how to insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
+This topic describes different ways to call and initialize JavaScript in Magento 2:
 
-It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.
+- Insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates.
+- Call Javascript components that require initialization in Javascript (`.js`) files.
 
 We strongly recommend that you use the described approaches and do not add inline {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}.
 
 ## Insert a JS component in a PHTML template {#init_phtml}
 
-Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
+Depending on your task, you can use declarative or imperative notation to insert a JS component into a PHTML template. Use declarative notation if a component requires initialization and imperative notation in other cases.
 
 ### Declarative notation
 
-Using the declarative notation to insert a JS component allows preparing all the configuration on the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} side and outputting it to the page source using standard tools. You should use declarative notation if your JavaScript component requires initialization.
+Using the declarative notation to insert a JS component prepares all the configuration on the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} and outputs it to page source using standard tools. Use declarative notation if your JavaScript component requires initialization.
 
-In Magento 2 there are two ways of declarative notation:
+In Magento 2, you have two options for specifying declarative notation:
  - using the `data-mage-init` attribute
  - using the `<script type="text/x-magento-init" />` tag
 
-Both ways are described further.
-
 #### Declarative notation using the `data-mage-init` attribute {#data_mage_init}
 
-Use the `data-mage-init` attribute to insert a JS component in a certain HTML element. The following code sample is an illustration. Here a JS component is inserted in the `<nav/>` element:
+Use the `data-mage-init` attribute to insert a JS component in a specified HTML element. The following example inserts a JS component in the `<nav/>` element:
+
 ```html
 <nav data-mage-init='{ "<component_name>": {...} }'></nav>
 ```
 
-When inserted in a certain element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.
+When the Javascript is inserted into the specified element, the script is called only for this particular element. It is not automatically called for other elements of this type on the page.
 
 ##### How `data-mage-init` is processed {#init_process}
 
-On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element.
-Depending on the type of the inserted JS component, processing is performed as follows:
+On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element. Depending on the type of the inserted JS component, processing is performed as follows:
 
 - If an object is returned, the initializer tries to find the `<component_name>` key. If the corresponding value is a function, the initializer passes the `config` and `element` values to this function. For example:
 ```javascript
@@ -55,17 +53,17 @@ Depending on the type of the inserted JS component, processing is performed as f
 return function(config, element) { ... };
 ```
 
-- If neither a function nor an object with the `"component_name&gt;"` key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as `$(element).&lt;component_name&gt;(config)`. For example:
+- If neither a function nor an object with the `"<component_name>"` key are returned, then the initializer tries to search for `"<component_name>"` in the jQuery prototype. If found, the initializer applies it as `$(element).<component_name>;(config)`. For example:
     ```javascript
-    $.fn.&lt;component_name&gt; = function() { ... };
+    $.fn.<component_name> = function() { ... };
     return;
     ```
 
-- If none of the previous cases is true, the component is executed with no further processing. Such a component does not require either `config` or `element`. The recommended way to declare such components is [using the <script\> tag].
+- If none of the previous cases is true, the component is executed with no further processing. Such a component does not require either `config` or `element`. The recommended way to declare such components is [using the `<script>` tag](#init_script).
 
-#### Declarative notation using the `<script type="text/x-magento-init" />` tag {decl_tag}
+#### Declarative notation using the `<script type="text/x-magento-init" />` tag {#decl_tag}
 
-To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute. The syntax is following:
+To call a JS component on an HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute syntax shown in the following example.
 
 ```html
 <script type="text/x-magento-init">
@@ -84,11 +82,12 @@ To call a JS component on a HTML element without direct access to the element or
 ```
 
 Where:
+
 -   `<element_selector>` is a [selector] (in terms of querySelectorAll) for the element on which the following JS components are called.
 -   `<js_component1>` and `<js_component2>` are the JS components being initialized on the element with the selector specified as `<element_selector>`.
 -   `<js_component3>` is the JS component called with no binding to an element.
 
-The following is a working code sample of a widget call using `<script>`. Here the `accordion` and `navigation` widgets are added to the element with the `#main-container` selector, and the `pageCache` script is inserted with no binding to any element.
+The following example provides a working code sample of a widget call using `<script>`. Here the `accordion` and `navigation` widgets are added to the element with the `#main-container` selector, and the `pageCache` script is inserted with no binding to any element.
 
 ```html
 <script type="text/x-magento-init">
@@ -106,7 +105,7 @@ The following is a working code sample of a widget call using `<script>`. Here t
 
 ### Imperative notation {#init_script}
 
-Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init"` attribute, is the imperative notation. The syntax is following:
+Use imperative notation in the PHTML template to include raw JavaScript code on the pages to execute specified business logic. This method uses the `<script>` tag without the `type="text/x-magento-init"` attribute as shown in the following example:
 
 ```html
 <script>

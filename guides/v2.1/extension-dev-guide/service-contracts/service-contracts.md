@@ -37,7 +37,7 @@ To address these issues, the Magento system introduces _service contracts_.
 
 ## Using the @api tag
 
-Backward compatibility can be indicated by the use of `@api`. For more information, see <a href="{{ page.baseurl }}/extension-dev-guide/backward-compatibility.html">Backward compatibility</a>.
+Backward compatibility can be indicated by the use of `@api`. For more information, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 ### Related topics {#related-topics}
 

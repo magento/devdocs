@@ -41,7 +41,7 @@ A simple example:
 
 To retrieve the context within markup, you can also use the instance of Knockout:
 
-At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html) `knockout`.
+At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html) `knockout`.
 
 {%highlight js%}
 var ko = require('knockout');
