@@ -159,6 +159,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 ## Related reading
 
 [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-[RequireJS library]: http://requirejs.org
-[inheriting]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
-[shim]: http://requirejs.org/docs/api.html#config-shim
+[RequireJS library](http://requirejs.org)
+[inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
+[shim](http://requirejs.org/docs/api.html#config-shim)

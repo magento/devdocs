@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.0 Release Notes
 ---
 
-*Release notes published November 28 and last updated on December 10, 2018.*
+*Release notes published November 28 and last updated on December 13, 2018.*
 
 We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
@@ -2218,6 +2218,8 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 
 ## Known issues
+
+**Known issue:** After installing a module and running `setup:upgrade`, you must run `cache:clean config`.
 
 **Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > **Other Settings ** > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
 
