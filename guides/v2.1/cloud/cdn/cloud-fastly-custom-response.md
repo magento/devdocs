@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Customize error response pages
+title: Customize error pages
 redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-extend-timeout.html
    - /guides/v2.2/cloud/configure/fastly-vcl-extend-timeout.html
@@ -15,7 +15,7 @@ functional_areas:
   - Configuration
 ---
 
-When a request to the Fastly origin fails, Fastly returns default response pages with basic formatting and generic messaging that can be confusing for users. For example, Fastly returns the following default error page when an origin request fails with a 503.
+When a request to the Fastly origin fails, Fastly returns default response pages with basic formatting and generic messaging that can be confusing for users. For example, Fastly returns the following default error page when a request to the Fastly origin fails because of a 503 error.
 
 ![Fastly default error page]
 
@@ -38,9 +38,9 @@ The HTML code for the custom page must meet the following requirements:
 - Bundle images in the HTML page using base64 so that they display even if Fastly is offline. See [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/).
 
 
-## Customize the 503 response page
+## Customize the 503 error page
 
-Customers see the default 503 response page in the following cases:
+Customers see the default 503 error page in the following cases:
 
 - When a request to the Fastly origin returns a response status great than 500.
 - When the Fastly origin is down, for example due to a timeout, maintenance activity, or health issues.
@@ -75,7 +75,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 1.	Copy and paste the source code for your custom response page into the HTML field. 
 
-    ![Update 503 response]
+    ![Update 503 error page]
 
 1.	Click **Upload** at the top of the page to upload the customized HTML source to the Fastly server.
 
@@ -87,11 +87,11 @@ Verify that the modified source displays correctly in the browser. Then, add the
    
    - On the Cache Management page, click **Flush Magento Cache**.
 
-## Customize the WAF response page
+## Customize the WAF error page
 
-If the Magento [Managed Cloud WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocks a customer request at the Fastly origin, they see the following default response page:
+Customers see the following default WAF error page when a request to the Fastly origin fails with a `403 Forbidden` error  caused by a [WAF](({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocking event.
 
-![WAF error response page]
+![WAF error page]
 
 The following code sample shows the HTML source for the default page:
 
@@ -119,7 +119,7 @@ You can use the **Custom Synthetic Pages** > **Edit WAF page** option in the Fas
 {:.bs-callout .bs-callout-info}
 The Edit WAF option is available only if the Managed Cloud WAF service is enabled for your {{ site.var.data.ece }} project.
 
-#### To edit the WAF page:
+#### To edit the WAF error page:
 
 1.  [Log in to the Magento Admin UI]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
@@ -127,13 +127,13 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 
 1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom Synthetic Pages**.
 
-    ![Edit WAF response option]
+    ![Edit WAF error page option]
 
 1.  Click **Edit WAF page**.
 
 1.  Complete the fields to update the HTML.
 
-    ![Update WAF response page]
+    ![Update WAF error page]
 
     -  **Status**—Select the `403 Forbidden` status.
     -  **MIME type**—Type `text/html`.
@@ -154,10 +154,10 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 [Edit 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
 {: width="650px"}
 
-[Update 503 response]: {{site.baseurl}}/common/images/cloud/cloud-fastly-customize-503-response.png
+[Update 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-customize-503-response.png
 {: width="650px"}
 
-[Edit WAF response option]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-waf.png
+[Edit WAF error page option]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-waf.png
 {: width="650px"}
 
 [Fastly default error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-503-example.png
@@ -165,8 +165,8 @@ The Edit WAF option is available only if the Managed Cloud WAF service is enable
 [Fastly custom error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-new-error-page.png
 {: width="650px"}
 
-[WAF error response page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
+[WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
 
-[Update WAF response page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edit-waf-html.png
+[Update WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edit-waf-html.png
 {: width="650px"}
 
