@@ -25,8 +25,8 @@ You can update your {{ site.var.data.ee }} store configuration to replace some d
 
 Currently, you can customize the following Fastly response pages for your {{ site.data.var.ece }} project through the Magento Admin UI.
 
-- [Timeout or site maintenance outages (503 Service Unavailable)](#customize-the-503-response-page)
-- [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-response-page)
+- [Timeout or site maintenance outages (503 Service Unavailable)](#customize-the-503-error-page)
+- [WAF blocking events that occur when the WAF detects suspicious request traffic (403 Forbidden)](#customize-the-waf-error-page)
 
 
 **HTML coding requirements**
