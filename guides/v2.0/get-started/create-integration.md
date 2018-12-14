@@ -274,7 +274,7 @@ Use the following steps to install your module:
 2. Run the following command to generate the new code.
 
 {: .bs-callout .bs-callout-info }
-If you get the 'Please rerun Magento compile command' message then run below `bin/magento setup:di:compile` command. This message is only shows up in production mode.
+In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
     <code>bin/magento setup:di:compile</code>
 
