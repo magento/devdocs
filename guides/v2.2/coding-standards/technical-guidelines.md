@@ -534,19 +534,19 @@ class View extends Template
 
 6.4.1. Location of API interfaces
 
-6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. All other modules will depend on the API module, while implementations could be easily swapped via `di.xml`. API modules must have `Api` suffix in their names. For example, if module is named `MyModule`, its APIs SHOULD be declared in the module named `MyModuleApi`.
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. All other modules will depend on the API module, while implementations could be easily swapped via `di.xml`. API modules must have `Api` suffix in their names. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
 
-6.4.1.2. Service interfaces which should be exposed as web APIs MUST be placed under `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
+6.4.1.2. Service interfaces which should be exposed as web APIs MUST be placed under the `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
 
-6.4.1.3. All other APIs, including explicit extension points like Chain or Composite implementations MUST be placed under `MyModuleApi/Model`. 
+6.4.1.3. All other APIs, including explicit extension points like Chain or Composite implementations, MUST be placed under `MyModuleApi/Model`. 
 
 6.4.2. Service Interface Structure
 
-6.4.2.1. Methods named similarly MUST serve similar purpose across different services, but still MAY have different signatures.
+6.4.2.1. Methods that have similar MUST serve similar purposes across different services, but they still MAY have different signatures.
 
 6.4.2.2. Service contracts SHOULD NOT be used for read scenarios on the storefront, GraphQL SHOULD be used for storefront scenarios instead. Check out [web API technical vision]({{ page.baseurl }}/coding-standards/technical-vision/webapi.html) for more details.
 
-6.4.2.3. Each service interface SHOULD declare a single public method. Interface name SHOULD reflect task/action to be performed. Example `Magento\InventoryApi\Api\StockSourceLinksDeleteInterface::execute(array $links)`. The only exception is Repository API which MAY be added for convenience and MUST be limited to singular CRUD operations and `getList($searchCriteria)`.
+6.4.2.3. Each service interface SHOULD declare a single public method. An interface name SHOULD reflect the task/action to be performed. For example, `Magento\InventoryApi\Api\StockSourceLinksDeleteInterface::execute(array $links)`. The only exception is a Repository API which MAY be added for convenience and MUST be limited to singular CRUD operations and `getList($searchCriteria)`.
 
 6.4.3. Service Method Signature
 
@@ -556,13 +556,13 @@ class View extends Template
 
 * Data interfaces
 
-* One-dimensional indexed arrays of scalars or data interfaces: for example `string[]`, `\MyCompany\MyModuleApi\Api\Data\SomeInterface[]`. Hash maps (associative arrays) are not supported
+* One-dimensional indexed arrays of scalars or data interfaces: for example `string[]`, `\MyCompany\MyModuleApi\Api\Data\SomeInterface[]`. Hash maps (associative arrays) are not supported.
 
-* Nullable scalars or data interfaces: for example `string|null`. It is prohibited to use just `null`
+* Nullable scalars or data interfaces: for example `string|null`. Using just `null` is prohibited.
 
 * `void`
 
-6.4.3.2. Service contracts SHOULD support batch data processing. For example, entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations via plugins SHOULD be adjusted respectively. 
+6.4.3.2. Service contracts SHOULD support batch data processing. For example, an entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations via plugins SHOULD be adjusted respectively. 
 
 6.4.3.3. Batch retrieval operations MUST accept `SearchCriteriaInterface` and return `SearchResultInterface` to support pagination.
 
@@ -590,15 +590,15 @@ class View extends Template
 
 6.4.4.3. Service implementations and plugins MUST NOT rely on storage-specific integrity features, such as foreign key constraints.
 
-6.4.4.4. Replace strategy SHOULD be used to persist main entity fields/attributes, child entities and relation links. 
+6.4.4.4. Replace strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links. 
 
-6.4.4.5. During update operations, Web APIs with `PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, merge request data on top of that and provide full data to service.
+6.4.4.5. During update operations, Web APIs using the`PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, merge request data on top of that, and provide full data to service.
 
-6.4.4.6. If service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead. 
+6.4.4.6. If a service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead. 
 
 6.4.4.7. Services SHOULD NOT apply ACL rules to methods or returned data.
 
-6.4.4.8. If multiple data scopes available, within one service call entity SHOULD be persisted only for one specific data scope.
+6.4.4.8. If multiple data scopes available, within one service call one entity SHOULD be persisted only for one specific data scope.
 
 6.4.4.9. Service contracts SHOULD NOT apply presentation layer formatting to the returned data.
 
