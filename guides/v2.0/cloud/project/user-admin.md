@@ -10,7 +10,6 @@ functional_areas:
   - Configuration
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-user-admin.html
-  - /guides/v2.1/cloud/admin/admin-user-admin.html
 ---
 
 {{site.data.var.ece}} enables you to administer users by assigning them one or more roles. A *role* provides access and improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. You can add and manage user accounts for the entire project and permissions per available environment.

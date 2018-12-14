@@ -7,7 +7,6 @@ menu_node:
 menu_order: 5
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
-  - /guides/v2.1/cloud/cloud-composer.html
 functional_areas:
   - Cloud
   - Upgrade
