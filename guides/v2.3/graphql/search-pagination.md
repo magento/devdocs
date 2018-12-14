@@ -90,7 +90,7 @@ The following search returns items that contain the word `yoga` or `pants`. The 
 {
     products(
       search: "Yoga pants"
-      page_size: 10
+      pageSize: 10
     )
     {
         total_count

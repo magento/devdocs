@@ -36,11 +36,11 @@ To develop a module, you must:
 
    Also create  `etc`, `etc/integration`, and `Setup` subdirectories under `module-<module_name>`, as shown in the following example:
 
-    <pre>
-    cd &lt;magento_base_dir>
-    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/etc/integration
-    mkdir -p vendor/&lt;vendor_name>/module-&lt;module_name>/Setup
-   </pre>
+    ```bash
+    cd <magento_base_dir>
+    mkdir -p vendor/<vendor_name>/module-<module_name>/etc/integration
+    mkdir -p vendor/<vendor_name>/module-<module_name>/Setup
+    ```
    For more detailed information, see [Create your component file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
 
 2. **Define your module configuration file.** The `etc/module.xml` file provides basic information about the module. Change directories to the `etc` directory and create the `module.xml` file. You must specify values for the following attributes:
@@ -60,22 +60,22 @@ To develop a module, you must:
    </table>
    The following example shows an example `etc/module.xml` file.
 
-   <pre>
-   &lt;?xml version="1.0"?>
-   &lt;!--
+   ```xml
+   <?xml version="1.0"?>
+   <!--
       /**
       * Copyright © 2015 Magento. All rights reserved.
       * See COPYING.txt for license details.
-      &#42;&#47;
+      */
       -->
-      &lt;config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-          &lt;module name="Vendor1_Module1" setup_version="2.0.0">
-               &lt;sequence>
-                   &lt;module name="Magento_Integration"/>
-               &lt;/sequence>
-          &lt;/module>
-        &lt;/config>
-   </pre>
+      <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+          <module name="Vendor1_Module1" setup_version="2.0.0">
+               <sequence>
+                   <module name="Magento_Integration"/>
+               </sequence>
+          </module>
+        </config>
+   ```
 
    Module `Magento_Integration` is added to "sequence" to be loaded first. It helps to avoid the issue, when a module with integration config loaded, that leads to a malfunction.
 
@@ -84,8 +84,7 @@ To develop a module, you must:
 
     The following example demonstrates a minimal `composer.json` file.
 
-
-    <pre>
+    ```json
       {
          "name": "Vendor1_Module1",
          "description": "create integration from config",
@@ -103,34 +102,34 @@ To develop a module, you must:
             }
          }
       }
-    </pre>
+    ```
 
 
     For more information, see [Create a component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html).
 
 4. **Create a `registration.php` file** The `registration.php` registers the module with the Magento system. It must be placed in the module's root directory.
 
-      <pre>
-      &lt;?php
+      ```php
+      <?php
         /**
         * Copyright © 2015 Magento. All rights reserved.
         * See COPYING.txt for license details.
-        &#42;&#47;
+        */
 
         \Magento\Framework\Component\ComponentRegistrar::register(
         \Magento\Framework\Component\ComponentRegistrar::MODULE,
         'Vendor1_Module1',
         __DIR__
         );
-      </pre>
+      ```
 
 5. **Create an install class.**
 Change directories to your `Setup` directory. Create a `InstallData.php` file that installs the integration configuration data into the Magento integration table.
 
     The following sample is boilerplate and requires minor changes to make your integration work.
 
-    <pre>
-    &lt;?php
+    ```php
+    <?php
     namespace Vendor1\Module1\Setup;
 
     use Magento\Framework\Setup\ModuleContextInterface;
@@ -141,15 +140,15 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
     class InstallData implements InstallDataInterface
     {
         /**
-         &#42; @var ConfigBasedIntegrationManager
-         &#42;&#47;
+         * @var ConfigBasedIntegrationManager
+         */
 
 
         private $integrationManager;
 
         /**
-         &#42; @param ConfigBasedIntegrationManager $integrationManager
-         &#42;&#47;
+         * @param ConfigBasedIntegrationManager $integrationManager
+         */
 
         public function __construct(ConfigBasedIntegrationManager $integrationManager)
         {
@@ -157,15 +156,15 @@ Change directories to your `Setup` directory. Create a `InstallData.php` file th
         }
 
         /**
-         &#42; {@inheritdoc}
-         &#42;&#47;
+         * {@inheritdoc}
+         */
 
         public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
         {
             $this->integrationManager->processIntegrationConfig(['TestIntegration']);
         }
     }
-    </pre>
+    ```
 
     In the following line
 

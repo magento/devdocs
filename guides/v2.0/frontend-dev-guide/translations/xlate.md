@@ -6,7 +6,6 @@ menu_title: Translations
 menu_order: 1
 menu_node: parent
 redirect_from:
-  - /guides/v1.0/architecture/behavior/xlate.html
   - /guides/v2.0/architecture/behavior/xlate.html
 functional_areas:
   - Frontend
