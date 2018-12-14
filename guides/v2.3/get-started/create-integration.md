@@ -271,6 +271,7 @@ Use the following steps to install your module:
     <code>bin/magento setup:upgrade</code>
 
 2. Run the following command to generate the new code.
+
 {: .bs-callout .bs-callout-info }
 In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
