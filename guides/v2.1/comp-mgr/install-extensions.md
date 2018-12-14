@@ -101,7 +101,7 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 3.  Recompile your Magento project:
 
 {: .bs-callout .bs-callout-info }
-If you get the 'Please rerun Magento compile command' message then run below `bin/magento setup:di:compile` command. This message is only shows up in production mode.
+In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
 		bin/magento setup:di:compile
 
