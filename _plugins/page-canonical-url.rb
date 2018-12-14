@@ -8,9 +8,9 @@
 # For example: if 'page.url' is '/guides/v2.0/ftf/introduction.html',
 # then 'page.canonical_url' for the page is site.url + site.baseurl + '/guides/v2.3/ftf/introduction.html'.
 # In all other cases, 'page.canonical_url' is site.url + site.baseurl + page.url'.
-#
+# The plugin is disabled in serving mode.
 Jekyll::Hooks.register :pages, :post_init do |page|
-  unless page.name == 'redirect.html'
+  unless page.site.config['serving'] or page.name == 'redirect.html'
     site_url = page.site.config['url']
     site_baseurl = page.site.baseurl
     default_version = page.site.config['version']
@@ -20,8 +20,8 @@ Jekyll::Hooks.register :pages, :post_init do |page|
     page_canonical_url = data['canonical_url']
     if page_canonical_url.nil?
       relative_page_canonical_url =
-        if page_url.start_with?(pattern_to_replace)
-          page_url.sub(pattern_to_replace, "/guides/v#{default_version}")
+        if page_url.start_with? pattern_to_replace
+          page_url.sub pattern_to_replace, "/guides/v#{default_version}"
         else
           page_url
         end
