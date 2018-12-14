@@ -62,4 +62,4 @@ Update the `graphql.xml` and `events.xml` file in your module's `etc` directory 
 ## Related Topics
 
 * [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
-* [urlResolver endpoint]({{ page.baseurl }}/graphql/url-resolver.html)
+* [urlResolver endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html)

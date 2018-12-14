@@ -86,7 +86,7 @@ In developer mode:
 
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-## Production mode
+## Production mode {#production-mode}
 
 Run Magento in production mode when it is deployed to a production server. After optimizing the server environment, such as the database and web server, you should run the [static view files deployment tool]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html) to write static view files to the Magento `pub/static` directory.
 

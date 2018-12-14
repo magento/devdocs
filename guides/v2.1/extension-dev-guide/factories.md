@@ -63,7 +63,7 @@ For example the automatically generated `Magento\Cms\Model\BlockFactory` class i
 
 ## Using factories
 
-You can get the singleton instance of a factory for a specific model using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html##dep-inj-preview-cons){:target="_blank"}.
+You can get the singleton instance of a factory for a specific model using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html).
 
 The following example shows a class getting the `BlockFactory` instance through the constructor:
 

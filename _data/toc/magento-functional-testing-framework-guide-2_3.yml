@@ -1,5 +1,4 @@
 label: Magento Functional Testing Framework Guide version 2.3
-versionless: true
 pages:
 
   - label: Introduction
@@ -66,6 +65,14 @@ pages:
 
   - label: Extending
     url: /mftf/2.3/extending.html
+    versionless: true
+
+  - label: Reporting
+    url: /mftf/2.3/reporting.html
+    versionless: true
+
+  - label: Credentials
+    url: /mftf/2.3/credentials.html
     versionless: true
 
   - label: Configuration

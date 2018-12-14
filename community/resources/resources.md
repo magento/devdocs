@@ -16,24 +16,24 @@ Does it fill gaps in our current docs and provide important information?
 [Let us know][1]!
 
 {:.bs-callout .bs-callout-info}
-**Note:** Magento does not officially endorse any of the linked blogs, books, presentation, or podcasts linked below.
+Magento does not officially endorse any of the linked blogs, books, presentation, or podcasts linked below.
 They are listed here because the content has been well received within the Magento community.
 
 ## Best Practices
 
-See our collection of best and leading practices, common solutions, and more in the [Best Practices]({{ site.baseurl }}/community/resources/best-practices.html) guide. This guide is open to contributions!
+See our collection of best and leading practices, common solutions, and more in the [Community contributed best practices]({{ site.baseurl }}/community/resources/best-practices.html) guide. If you have excellent best practices, tips and tricks, and work-arounds, feel free to [contribute][]!
 
 ## Community Engineering Slack
 
-To connect with Magento and the Community, join us on the [Magento Community Engineering Slack](https://magentocommeng.slack.com). If you are interested in joining Slack, or a specific channel, send us request at [engcom@magento.com](mailto:engcom@magento.com) or [self signup](https://tinyurl.com/engcom-slack).
+To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us request at [engcom@magento.com][] or [self signup][].
 
 
 We have channels for each project. These channels are recommended for new members:
 
-- [general](https://magentocommeng.slack.com/messages/C4YS78WE6): Open chat for introductions and Magento 2 questions
-- [github](https://magentocommeng.slack.com/messages/C7KB93M32): Support for GitHub issues, pull requests, and processes
-- [public-backlog](https://magentocommeng.slack.com/messages/CCV3J3RV5): Discussions of the Magento 2 backlog
-- [devdocs](https://magentocommeng.slack.com/messages/CAN932A3H): Documentation contribution support
+- [general][]: Open chat for introductions and Magento 2 questions
+- [github][]: Support for GitHub issues, pull requests, and processes
+- [public-backlog][]: Discussions of the Magento 2 backlog
+- [devdocs][]: Documentation contribution support
 
 ## Resources and guides
 
@@ -42,6 +42,8 @@ We have channels for each project. These channels are recommended for new member
 - *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
 - *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
 - *Statistics* [Magestats][32] by [Marcel Hauri][33]
+- *Videos* [Magento Dev Channel with Max Pronko][34] by [Max Pronko][35]
+- *Courses* [Magento Courses][36] by [Max Pronko][35]
 
 ## Magento APIs
 
@@ -50,6 +52,7 @@ We have channels for each project. These channels are recommended for new member
 
 ## Install/deploy
 
+- *GitHub* [Magento 2 Docker][37] by [Mark Shust][38] (supports Magento 2.3.0, PHP 7.2, Elasticsearch)
 - *Presentation* [48 Hour Launches and Other Lessons Learned With Large-Scale Digital Transformations][29] by Joshua Warren of Creatuity
 - *Blog post* [Magento 2 - Launch Checklist][21] by Syed Muneeb Ul Hasan 
 - *Presentation* [Magento 2 Deployment: What you should know][4] by Olga KopyLova
@@ -57,11 +60,11 @@ We have channels for each project. These channels are recommended for new member
 - *Blog post* [Deploying Magento 2 - History & Overview][6] by Matthias Walter
 - *Blog post* [Deploying Magento 2 using Capistrano][17] by David Alger
 - *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by Nick Rigby
-- *GitHub* [Magento 2 Docker][18]
+- *GitHub* [Magento 2 Docker][18] by meanbee
 
 ## Automated Testing
 
-- *Presentation* [Writing testable code][10] by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
+- *Presentation* [Writing testable code][10] by Vinai Kopp (**Bonus:** [Video Presentation][11])
 - *Book* [Test Driven Magento Extension Development][12] by Allan MacGregor
 - *Blog post* [Integration Tests with Magento 2][19] by Andreas von Studnitz
 
@@ -79,6 +82,14 @@ We have channels for each project. These channels are recommended for new member
 
 -  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
 
+[contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
+[Magento Community Engineering Slack]: https://magentocommeng.slack.com
+[engcom@magento.com]: mailto:engcom@magento.com
+[self signup]: https://tinyurl.com/engcom-slack
+[general]: https://magentocommeng.slack.com/messages/C4YS78WE6
+[github]: https://magentocommeng.slack.com/messages/C7KB93M32
+[public-backlog]: https://magentocommeng.slack.com/messages/CCV3J3RV5
+[devdocs]: https://magentocommeng.slack.com/messages/CAN932A3H
 [0]: https://github.com/DavidLambauer/awesome-magento2 
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
@@ -113,3 +124,8 @@ We have channels for each project. These channels are recommended for new member
 [31]: https://twitter.com/JoshuaSWarren
 [32]: https://magestats.net/
 [33]: https://twitter.com/mhauri
+[34]: https://www.youtube.com/maxpronko
+[35]: https://twitter.com/max_pronko
+[36]: https://www.maxpronko.com/all-courses/
+[37]: https://github.com/markoshust/docker-magento
+[38]: https://twitter.com/markshust

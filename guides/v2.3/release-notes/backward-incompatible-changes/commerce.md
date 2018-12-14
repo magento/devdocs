@@ -16,14 +16,13 @@ type="warning"
 content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
 
-## 2.2.0 - 2.3-develop
+## 2.2.0 - 2.3.0 {#releases-2_2_0-2_3_0}
 
-{% include note.html
-type="info"
-content='The following tables are updated when new commits are merged into the "2.3-develop" branch on a daily basis.'
-%}
+{% include backward-incompatible-changes/commerce/2.2.0-2.3.0.md %}
 
-{% include backward-incompatible-changes/commerce/2.2.0-develop.html %}
+## 2.1.0 - 2.3.0 {#releases-2_1_0-2_3_0}
+
+{% include backward-incompatible-changes/commerce/2.1.0-2.3.0.md %}
 
 <!-- LINK DEFINITIONS -->
 

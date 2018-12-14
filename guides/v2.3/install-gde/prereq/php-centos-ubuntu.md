@@ -1,6 +1,8 @@
 ---
 group: installation-guide
 title: PHP
+redirect_from: 
+  - /guides/v2.3/install-gde/prereq/php-centos.html
 functional_areas:
   - Install
   - System

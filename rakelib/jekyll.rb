@@ -1,4 +1,4 @@
-module Jekyll
+module JekyllRake
     ## Run Jekyll
     def jekyll(options)
         sh "bundle exec jekyll #{options}"

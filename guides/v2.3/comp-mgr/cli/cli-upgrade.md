@@ -248,7 +248,7 @@ php -f pre_composer_update_2.3.php -- --help
 ### Run the script
 
 ```bash
-php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' <options>
+php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' --repo=https://repo.magento.com/ <options>
 ```
 
 ### Apply updates
@@ -313,7 +313,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [custom maintenance mode page]: {{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html
 [Enable or disable maintenance mode]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
-[script]: https://raw.githubusercontent.com/magento/magento2/2.3-develop/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
+[script]: https://raw.githubusercontent.com/magento/magento2/2.3.0/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
 {:target="_blank"}
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html

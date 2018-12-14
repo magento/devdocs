@@ -56,19 +56,19 @@ pages:
           url: /rest/anonymous-api-security.html
 
         - label: Asynchronous web endpoints
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/asynchronous-web-endpoints.html
 
         - label: Bulk endpoints
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/bulk-endpoints.html
 
         - label: Bulk operation status endpoints
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/operation-status-endpoints.html
 
         - label: Search for the status of a bulk operation
-          include_versions: ["2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /rest/operation-status-search.html
 
         - label: Parameters in URLs
@@ -91,9 +91,9 @@ pages:
         url: /rest/tutorials/orders/order-intro.html
         include_versions: ["2.1", "2.2", "2.3"]
 
-      - label: Order processing with MSI
+      - label: Order processing with Inventory Management
         class: tutorial
-        url: /rest/tutorials/msi-order-processing/index.html
+        url: /rest/tutorials/inventory/index.html
         include_versions: ["2.3"]
 
       - label: Create configurable products
