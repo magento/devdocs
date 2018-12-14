@@ -54,6 +54,8 @@ When merchants are ready to make a partial or full shipment, they select the sou
 
 ## Related information
 
-[Order Processing with Multi Source Inventory]({{ page.baseurl }}/rest/tutorials/msi-order-processing/index.html) is a tutorial that uses REST calls to illustrate the life cycle of an order in an Multi Source Inventory environment.
+[Order Processing with Inventory Management]({{ page.baseurl }}/rest/tutorials/inventory/index.html) is a tutorial that uses REST calls to illustrate the life cycle of an order in an Multi Source Inventory environment.
 
 [Manage sources]({{ page.baseurl }}/rest/modules/inventory/manage-sources.html) is the starting point for REST reference documentation.
+
+[Manage Inventory Management modules]({{ page.baseurl }}/comp-mgr/install-extensions/inventory-management-installation.html) is an overview of modules installed for Inventory Management.

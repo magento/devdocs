@@ -101,7 +101,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 </virtualType>
 {% endhighlight %}
 
-Where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type).
+Where `YourNamespace\YourModule\DataProvider\Modifier\Pool` is a [virtual class]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#dependency-types).
 
 (If you want to use this sample in your `di.xml`, replace the sample values with the real names of your entities.)
 
@@ -112,4 +112,4 @@ To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\Po
 ## Related reading
 
 - [Dependency injection]( {{ page.baseurl }}/extension-dev-guide/depend-inj.html)
-- [How Do I: Customize product creation form]({{ page.baseurl }}/howdoi/customize_product.html#modifier)
+- [How Do I: Customize product creation form]({{ page.baseurl }}/howdoi/customize_product.html)

@@ -72,6 +72,9 @@ pages:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
 
+            - label: Docker quick reference
+              url: /cloud/docker/docker-quick-reference.html
+
         - label: Prepare for manual setup
           url: /cloud/before/before-workspace.html
           children:
@@ -156,6 +159,10 @@ pages:
       children:
         - label: Set up Fastly
           url: /cloud/cdn/configure-fastly.html
+          exclude_versions: ["2.0"]
+          children:
+            - label: Customize response pages
+              url: /cloud/cdn/cloud-fastly-custom-response.html
 
         - label: Managed Cloud WAF
           url: /cloud/cdn/fastly-waf-service.html
@@ -200,14 +207,15 @@ pages:
             - label: Logging handlers
               url: /cloud/env/log-handlers.html
 
-            - label: Smart wizards
-              url: /cloud/env/smart-wizards.html
-
         - label: Environment variables
           url: /cloud/env/variables-intro.html
           children:
             - label: ADMIN variables
               url: /cloud/env/environment-vars_magento.html
+
+            - label: Global variables
+              url: /cloud/env/variables-global.html
+              exclude_versions: ["2.0"]
 
             - label: Build variables
               url: /cloud/env/variables-build.html
@@ -289,6 +297,18 @@ pages:
 
         - label: Snapshots and backup management
           url: /cloud/project/project-webint-snap.html
+
+    - label: Optimize deployment
+      url: /cloud/deploy/optimize-cloud-deployment.html
+      children:
+        - label: Cloud deployment process
+          url: /cloud/deploy/cloud-deployment-process.html
+
+        - label: Static content deployment
+          url: /cloud/deploy/static-content-deployment.html
+
+        - label: Smart wizards
+          url: /cloud/deploy/smart-wizards.html
 
     - label: Deploy your store
       url: /cloud/live/stage-prod-live.html

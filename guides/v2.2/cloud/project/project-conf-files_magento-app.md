@@ -91,7 +91,7 @@ Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allo
 Our default configuration allows the following:
 
 -  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
--  From the `/pub/static` and `/pub/media` paths, any file can be accessed
+-  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 
@@ -137,7 +137,7 @@ disk: 2048
 ```
 
 {:.bs-callout .bs-callout-info}
-The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
+The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ### `mounts`
 An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
@@ -214,11 +214,13 @@ Also, you can customize the build phase further by using the `generate` and `tra
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
+        set -e
         php ./vendor/bin/ece-tools build:generate
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
 
+-  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
 -  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
 -  `build:transfer`—transfers generated code and static content to the final destination.
 

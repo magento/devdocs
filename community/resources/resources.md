@@ -52,6 +52,7 @@ We have channels for each project. These channels are recommended for new member
 
 ## Install/deploy
 
+- *GitHub* [Magento 2 Docker][37] by [Mark Shust][38] (supports Magento 2.3.0, PHP 7.2, Elasticsearch)
 - *Presentation* [48 Hour Launches and Other Lessons Learned With Large-Scale Digital Transformations][29] by Joshua Warren of Creatuity
 - *Blog post* [Magento 2 - Launch Checklist][21] by Syed Muneeb Ul Hasan 
 - *Presentation* [Magento 2 Deployment: What you should know][4] by Olga KopyLova
@@ -59,7 +60,7 @@ We have channels for each project. These channels are recommended for new member
 - *Blog post* [Deploying Magento 2 - History & Overview][6] by Matthias Walter
 - *Blog post* [Deploying Magento 2 using Capistrano][17] by David Alger
 - *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by Nick Rigby
-- *GitHub* [Magento 2 Docker][18]
+- *GitHub* [Magento 2 Docker][18] by meanbee
 
 ## Automated Testing
 
@@ -126,3 +127,5 @@ We have channels for each project. These channels are recommended for new member
 [34]: https://www.youtube.com/maxpronko
 [35]: https://twitter.com/max_pronko
 [36]: https://www.maxpronko.com/all-courses/
+[37]: https://github.com/markoshust/docker-magento
+[38]: https://twitter.com/markshust
