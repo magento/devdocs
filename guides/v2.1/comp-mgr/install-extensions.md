@@ -99,6 +99,8 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 		bin/magento setup:upgrade
 
 3.  Recompile your Magento project:
+{: .bs-callout .bs-callout-info }
+If you get the 'Please rerun Magento compile command' message then run below `bin/magento setup:di:compile` command. This message is only shows up in production mode.
 
 		bin/magento setup:di:compile
 
