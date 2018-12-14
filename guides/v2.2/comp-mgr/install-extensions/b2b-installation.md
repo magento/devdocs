@@ -31,6 +31,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 2.  When prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html). Your *public key* is your username; your *private key* is your password. If you have stored your public and private keys in `auth.json`, you won't be asked to enter them here.
 
 3.  Run the following commands after Composer finishes updating modules:
+
 {: .bs-callout .bs-callout-info }
 If you get the 'Please rerun Magento compile command' message then run below `bin/magento setup:di:compile` command. This message is only shows up in production mode.
 
