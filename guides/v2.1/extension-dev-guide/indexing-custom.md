@@ -58,7 +58,7 @@ All Mview declarations related to a module should be declared in one file.
 
 To push best-selling products to the top of a category listing, process statistics about sales to change the product position dynamically.
 
-Assuming your module is named `<VendorName>_Merchandizing`, you must write the appropriate code in the indexer class `Merchandizing/Model/Indexer/Test.php` 
+Assuming your module is named `<VendorName>_Merchandizing`, you must write the appropriate code in the indexer class `Merchandizing/Model/Indexer/Popular.php` 
 
 
 ```php
