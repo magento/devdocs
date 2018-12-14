@@ -30,7 +30,7 @@ Parameter | Value | Required? | Default Value
 --- | --- | --- | ---
 `--max-messages=<value>` | The maximum number of messages to consume per invocation. If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don't specify `--max-messages`, the process runs continuously. | No | 50
 `--batch-size=<value>` | The number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only. If `--batch-size` is not defined, the batch consumer receives all available messages in a queue. | No | 500
-`--pid-file-path=<value>` | The file path for saving PID of consumer process. | No | `/var/someConsumer.pid`
+`--pid-file-path=<value>` | The file path for saving PID of consumer process. | No | consumer process  such as `/var/someConsumer.pid`
 `--area-code=<value>` | The area code preferred for consumer process. | No | adminhtml
 `<consumer_name>` | The consumer to start. | Yes | |
 {:style="table-layout:auto;"}
