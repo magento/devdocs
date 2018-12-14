@@ -7,6 +7,7 @@ Magento uses _reservations_ to calculate and keep track of the salable quantity 
 
 Reservations prevent the merchant from overselling products, even in cases where the latency between order placement and order processing is high. In addition, reservations are append-only operations that help prevent blocking operations and race conditions at the time of checkout.
 
+
 ## Reservation calculations
 
 Magento creates a reservation for each product when the following events occur:
@@ -26,6 +27,9 @@ Before Magento can issue a reservation in response to a new order, it determines
 * **Outstanding reservations**. Magento totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15. 
 
 Therefore, the merchant can fulfill an incoming order as long as the customer orders less than 40 (55 + -15) units. 
+
+{: .bs-callout .bs-callout-info }
+Backorders and Minimum Quantity Threshold settings also affect the calculation of salable quantities, but they are outside the scope of this topic. For more information about these settings, see [Configuring Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-inventory-management.html) in the _Magento User Guide_.
 
 ## Reservation objects
 
@@ -52,34 +56,37 @@ Currently, the metadata object type must be `order`, and the object ID is the or
 
 ## Reservation lifecycle
 
-The following example shows the sequence of reservations generated for a simple order. 
+The following example shows the sequence of reservations generated for a simple order.
 
-1. The customer places an order for 25 units of product `SKU-1`. The reservation contains the following information:
+1. The customer makes a purchase order for 25 units of product `SKU-1`. The reservation contains the following information:
 
-```
-reservation_id = 1
-stock_id = 1
-sku = `SKU-1` 
-quantity = -25
+   ```
+   reservation_id = 1
+   stock_id = 1
+   sku = SKU-1
+   quantity = -25
+   event_type = order_placed
 ```
 
-2. The customer cancels 5 of the units ordered.
+2. The customer sends an invoice for 20 items, essentially canceling 5 of the units ordered.
 
-```
-reservation_id = 2
-stock_id = 1
-sku = `SKU-1` 
-quantity = 5
-```
+   ```
+   reservation_id = 2
+   stock_id = 1
+   sku = SKU-1
+   quantity = 5
+   event_type = order_canceled
+   ```
 
 3. The merchant ships the remaining 20 units.
 
-```
-reservation_id = 3
-stock_id = 1
-sku = `SKU-1` 
-quantity = 20
-```
+   ```
+   reservation_id = 3
+   stock_id = 1
+   sku = `SKU-1` 
+   quantity = 20
+   event_type = shipment_created
+   ```
 
 The three `quantity` values sum up to 0 (-25 + 5 + 20). Note that Magento does not modify any existing reservations. 
 
