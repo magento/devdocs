@@ -111,7 +111,7 @@ Next, declare the indexer in `Merchandizing/etc/indexer.xml`:
     </indexer>
 </config>
 ```
-In this file, Need to declare a new indexer process with the attribute:
+In this file, declare a new indexer process with the attribute:
 - `id` - To identify this indexer. Check status, mode or reindex this indexer by command line.
 - `view_id` - Id of view element which will be defined in the `mview` configuration file.
 - `class` -  The name to the class which we process indexer method.
