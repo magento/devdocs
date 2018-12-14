@@ -37,7 +37,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 Use the `magento` command to start message queue consumers. You can start multiple consumers simultaneously.
 
 ```bash
-./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] [--area-code=<value>] <consumer_name>
+./bin/magento queue:consumers:start [--max-messages=<value>] [--batch-size=<value>] [--pid-file-path=<value>] [--area-code=<value>] <consumer_name> 
 ```
 
 Where `<consumer_name>` is the consumer to start and `--max-messages=<value>` specifies the maximum number of messages to consume per invocation.
