@@ -74,6 +74,9 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Luuk Schakenraad](https://github.com/luukschakenraad) in pull request [18595](https://github.com/magento/magento2/pull/18595)*. [GitHub-18585](https://github.com/magento/magento2/issues/18585)
 
 
+<!-- MAGETWO-95411 -->* 
+
+
 
 ### AdminGWS
 
@@ -116,6 +119,16 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-3275 -->* 
 *Fix submitted by [magently](https://github.com/magently) in pull request [17971](https://github.com/magento/magento2/pull/17971)*. [GitHub-17638](https://github.com/magento/magento2/issues/17638)
+
+
+<!-- MAGETWO-90381 -->* 
+
+
+### CAPTCHA
+
+<!-- MAGETWO-94114 -->* 
+
+<!-- MAGETWO-93780 -->* 
 
 
 
@@ -190,7 +203,53 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-3317 -->* 
 *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18862](https://github.com/magento/magento2/pull/18862)*. [GitHub-16572](https://github.com/magento/magento2/issues/16572)
 
+<!-- MAGETWO-93673 -->* 
 
+<!-- MAGETWO-69650 -->* 
+
+<!-- MAGETWO-96288 -->* 
+
+<!-- MAGETWO-96258 -->* 
+
+<!-- MAGETWO-93273 -->* 
+
+<!-- MAGETWO-96377 -->* 
+
+<!-- MAGETWO-96374 -->* 
+
+<!-- MAGETWO-73687 -->* 
+
+<!-- MAGETWO-95898 -->* 
+
+<!-- MAGETWO-91070 -->* 
+
+<!-- MAGETWO-73687 -->* 
+
+<!-- MAGETWO-95461 -->* 
+
+<!-- MAGETWO-93947 -->* 
+
+<!-- MAGETWO-73449 -->* 
+
+<!-- MAGETWO-73140 -->* 
+
+<!-- MAGETWO-73149 -->* 
+
+<!-- MAGETWO-96288 -->* 
+
+<!-- MAGETWO-91070 -->* 
+
+<!-- MAGETWO-95122 -->* 
+
+<!-- MAGETWO-90930 -->* 
+
+<!-- MAGETWO-95556 -->* 
+
+<!-- MAGETWO-73840 -->* 
+
+<!-- MAGETWO-89620 -->* 
+
+<!-- MAGETWO-90930 -->* 
 
 
 
@@ -265,9 +324,16 @@ In addition to security enhancements, this release contains the following functi
 
 ### Configurable products
 
+<!-- MAGETWO-94072 -->* 
+
+<!-- MAGETWO-89230 -->* 
+
 
 ### CMS
 
+<!-- MAGETWO-94154 -->* 
+
+<!-- MAGETWO-91122 -->* 
 
 
 
@@ -290,7 +356,37 @@ In addition to security enhancements, this release contains the following functi
 
 *Fix submitted by [Francesco Haymar d'Ettory](https://github.com/Thundar) in pull request [17968](https://github.com/magento/magento2/pull/17968)*. [GitHub-12479](https://github.com/magento/magento2/issues/12479)
 
+<!-- MAGETWO-96079 -->* 
 
+<!-- MAGETWO-95990 -->* 
+
+<!-- MAGETWO-93072 -->* 
+
+<!-- MAGETWO-87853 -->* 
+
+<!-- MAGETWO-89847 -->* 
+
+<!-- MAGETWO-95990 -->* 
+
+<!-- MAGETWO-74169 -->* 
+
+<!-- MAGETWO-95884 -->* 
+
+
+### Customer custom attributes
+
+<!-- MAGETWO-89039 -->* 
+
+<!-- MAGETWO-86686 -->* 
+
+<!-- MAGETWO-95059 -->* 
+
+
+
+
+### Dashboard
+
+<!-- MAGETWO-96174 -->* 
 
 
 ### Developer
@@ -324,6 +420,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Email
 
+<!-- MAGETWO-95057 -->* 
 
 
 
@@ -341,6 +438,13 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18554](https://github.com/magento/magento2/pull/18554)*. [GitHub-14555](https://github.com/magento/magento2/issues/14555)
 
 
+<!-- MAGETWO-96104 -->* 
+
+<!-- MAGETWO-95779 -->* 
+
+<!-- MAGETWO-93183 -->* 
+
+
 
 
 #### Application framework
@@ -350,6 +454,11 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Matthew Muscat](https://github.com/matthew-muscat) in pull request [16940](https://github.com/magento/magento2/pull/16940)*. [GitHub-16939](https://github.com/magento/magento2/issues/16939)
 
 
+#### Cache framework
+
+<!-- MAGETWO-73528 -->* 
+
+<!-- MAGETWO-69766 -->* 
 
 
 #### Database framework
@@ -358,6 +467,7 @@ In addition to security enhancements, this release contains the following functi
 
 #### JavaScript framework
 
+<!-- MAGETWO-74160 -->* 
 
 
 
@@ -395,6 +505,45 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18875](https://github.com/magento/magento2/pull/18875)*. [GitHub-18729](https://github.com/magento/magento2/issues/18729)
 
 
+<!-- MAGETWO-87734 -->* 
+
+<!-- MAGETWO-89617 -->* 
+
+<!-- MAGETWO-89039 -->* 
+
+
+<!-- MAGETWO-90189 -->* 
+
+<!-- MAGETWO-85932 -->* 
+
+<!-- MAGETWO-86549 -->* 
+
+<!-- MAGETWO-94423 -->* 
+
+<!-- MAGETWO-94076 -->* 
+
+<!-- MAGETWO-89487 -->*
+
+<!-- MAGETWO-89438 -->* 
+
+
+
+
+### Gift card
+
+<!-- MAGETWO-90920 -->* 
+
+<!-- MAGETWO-87985 -->* 
+
+### Gift message
+
+<!-- MAGETWO-73397 -->* 
+
+
+### Gift registry
+
+<!-- MAGETWO-95738 -->* 
+
 
 
 ### Google Analytics
@@ -413,6 +562,13 @@ In addition to security enhancements, this release contains the following functi
 ### Google Tag Manager
 
 
+### Image
+
+<!-- MAGETWO-94988 -->* 
+
+<!-- MAGETWO-93985 -->* 
+
+<!-- MAGETWO-93985 -->* 
 
 
 ### Import/export
@@ -434,6 +590,30 @@ In addition to security enhancements, this release contains the following functi
 
 
 
+<!-- MAGETWO-86303 -->* 
+
+<!-- MAGETWO-93222 -->* 
+
+<!-- MAGETWO-86048 -->* 
+
+<!-- MAGETWO-73922 -->* 
+
+<!-- MAGETWO-95101 -->* 
+
+<!-- MAGETWO-94432 -->* 
+
+<!-- MAGETWO-91283 -->* 
+
+<!-- MAGETWO-95653 -->* 
+
+<!-- MAGETWO-74012 -->* 
+
+<!-- MAGETWO-95535 -->* 
+
+<!-- MAGETWO-89952 -->* 
+
+
+
 ### Infrastructure
 
 
@@ -452,7 +632,12 @@ In addition to security enhancements, this release contains the following functi
 
 *Fix submitted by [Janak Bhimani](https://github.com/janakbhimani) in pull request [18643](https://github.com/magento/magento2/pull/18643)*. [GitHub-17954](https://github.com/magento/magento2/issues/17954)
 
+<!-- MAGETWO-88736 -->* 
 
+<!-- MAGETWO-88736 -->* 
+
+
+<!-- MAGETWO-82530 -->* 
 
 
 ### Offline shipping
@@ -466,6 +651,11 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [magently](https://github.com/magently) in pull request [18166](https://github.com/magento/magento2/pull/18166)*. [GitHub-17770](https://github.com/magento/magento2/issues/17770)
 
 
+### Orders
+
+<!-- MAGETWO-74160 -->* 
+96010
+
 
 ### Payment methods
 
@@ -474,7 +664,33 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Michiel Gerritsen](https://github.com/michielgerritsen) in pull request [15683](https://github.com/magento/magento2/pull/15683)*. [GitHub-15652](https://github.com/magento/magento2/issues/15652)
 
 
+<!-- MAGETWO-86499 -->* 
 
+
+<!-- MAGETWO-96289 -->* 
+
+<!-- MAGETWO-90929 -->* 
+
+<!-- MAGETWO-94857 -->* 
+
+<!-- MAGETWO-95218 -->* 
+
+<!-- MAGETWO-86499 -->* 
+
+### Pricing
+
+<!-- MAGETWO-95721 -->* 
+
+<!-- MAGETWO-95781 -->* 
+
+<!-- MAGETWO-69650 -->* 
+
+
+### Quote
+
+<!-- MAGETWO-91332 -->* 
+
+<!-- MAGETWO-95180 -->* 
 
 
 ### Reports
@@ -502,6 +718,9 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-93968 -->* 
 
 <!-- MAGETWO-93968 -->* 
+
+<!-- MAGETWO-89737 -->* 
+
 
 
 
@@ -537,13 +756,58 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Petar Sambolek](https://github.com/sambolek) in pull request [18376](https://github.com/magento/magento2/pull/18376)*. [GitHub-17152](https://github.com/magento/magento2/issues/17152)
 
 
+<!-- MAGETWO-96976 -->* 
+
+<!-- MAGETWO-94295 -->* 
+
+<!-- MAGETWO-94181 -->* 
+
+<!-- MAGETWO-73570 -->* 
+
+<!-- MAGETWO-93393 -->* 
+
+<!-- MAGETWO-94458 -->* 
+
+<!-- MAGETWO-86292 -->* 
+
+<!-- MAGETWO-94181 -->* 
+
+<!-- MAGETWO-73570 -->* 
+
+<!-- MAGETWO-86121 -->* 
+
+
+<!-- MAGETWO-96394 -->* 
+
+<!-- MAGETWO-96141 -->* 
+
+<!-- MAGETWO-94956 -->* 
+
+<!-- MAGETWO-96394 -->* 
+
+
+### Sales archive
+
+<!-- MAGETWO-95993 -->* 
+
+
+
 
 ### Sales rule
 
+<!-- MAGETWO-86098 -->* 
+
+<!-- MAGETWO-86637 -->* 
 
 
 
 ### Search
+
+<!-- MAGETWO-73351 -->* 
+
+<!-- MAGETWO-86052 -->* 
+
+<!-- MAGETWO-85699 -->* 
 
 
 
@@ -552,6 +816,19 @@ In addition to security enhancements, this release contains the following functi
 
 ### Shipping 
 
+<!-- MAGETWO-87920 -->* 
+
+<!-- MAGETWO-73894 -->* 
+
+<!-- MAGETWO-90920 -->* 
+
+<!-- MAGETWO-91105 -->* 
+
+<!-- MAGETWO-96156 -->* 
+
+<!-- MAGETWO-95497 -->* 
+
+<!-- MAGETWO-96156 -->* 
 
 
 
@@ -565,6 +842,15 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Toan Nguyen](https://github.com/nntoan) in pull request [18000](https://github.com/magento/magento2/pull/18000)*. [GitHub-17999](https://github.com/magento/magento2/issues/17999)
 
 
+### Staging
+
+<!-- MAGETWO-89282 -->* 
+
+<!-- MAGETWO-73332 -->* 
+
+<!-- MAGETWO-67135 -->* 
+
+<!-- MAGETWO-73332 -->* 
 
 
 ### Store
@@ -580,6 +866,31 @@ In addition to security enhancements, this release contains the following functi
 *Fix submitted by [Misha Medzhytov](https://github.com/magicaner) in pull request [17891](https://github.com/magento/magento2/pull/17891)*. [GitHub-17890](https://github.com/magento/magento2/issues/17890)
 
 
+<!-- MAGETWO-73862 -->* 
+
+
+<!-- MAGETWO-94462 -->* 
+
+### TargetRule
+
+<!-- MAGETWO-95420 -->* 
+
+<!-- MAGETWO-73526 -->* 
+
+<!-- MAGETWO-87678 -->* 
+
+
+
+
+### Tax
+
+<!-- MAGETWO-82400 -->* 
+
+<!-- MAGETWO-89989 -->* 
+
+<!-- MAGETWO-89986 -->* 
+
+<!-- MAGETWO-94179 -->* 
 
 
 ### Testing
@@ -587,6 +898,20 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-3021 -->* 
 *Fix submitted by [Jisse Reitsma](https://github.com/jissereitsma) in pull request [16361](https://github.com/magento/magento2/pull/16361)*. [GitHub-15196](https://github.com/magento/magento2/issues/15196)
 
+
+### Theme
+
+<!-- MAGETWO-89546 -->* 
+
+<!-- MAGETWO-74079 -->* 
+
+<!-- MAGETWO-94455 -->* 
+
+<!-- MAGETWO-87027 -->* 
+
+<!-- MAGETWO-94462 -->* 
+
+<!-- MAGETWO-74079 -->* 
 
 
 
@@ -616,6 +941,16 @@ In addition to security enhancements, this release contains the following functi
 
 ###  URL rewrite
 
+<!-- MAGETWO-86419 -->* 
+
+
+<!-- MAGETWO-94860 -->* 
+
+
+<!-- MAGETWO-89619 -->* 
+
+<!-- MAGETWO-86303 -->* 
+
 
 <!-- ENGCOM-3175 -->* 
 
@@ -625,6 +960,20 @@ In addition to security enhancements, this release contains the following functi
 
 ### User 
 
+### Visual Merchandiser
+
+<!-- MAGETWO-91019 -->* 
+
+
+
+### Web API framework
+
+<!-- MAGETWO-73526 -->* 
+
+<!-- MAGETWO-86344 -->* 
+
+<!-- MAGETWO-73061 -->* 
+
 
 
 ### Wishlist
@@ -632,7 +981,9 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-3344 -->* 
 *Fix submitted by [Ratnesh Kumar](https://github.com/webkul-ratnesh) in pull request [18967](https://github.com/magento/magento2/pull/18967)*. [GitHub-18555](https://github.com/magento/magento2/issues/18555)
 
+<!-- MAGETWO-73613 -->* 
 
+<!-- MAGETWO-90812 -->* 
 
 
 
