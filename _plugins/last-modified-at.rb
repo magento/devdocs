@@ -5,8 +5,13 @@
 # For available date formats, refer to https://git-scm.com/docs/git-log#git-log---dateltformatgt
 #
 Jekyll::Hooks.register :pages, :post_init do |page|
-  unless page.name == 'redirect.html'
-    page.data['last_modified_at'] =
-      `git log -1 --format=%cd --date=iso -- #{page.path}`.strip
-  end
+  # Do nothing in serving mode
+  next if page.site.config['serving']
+
+  # Do nothing for redirects
+  next if page.name == 'redirect.html'
+
+  # Create a page parameter 'last_modified_at' and assign a value to it
+  page.data['last_modified_at'] =
+    `git log -1 --format=%cd --date=iso -- #{page.path}`.strip
 end
