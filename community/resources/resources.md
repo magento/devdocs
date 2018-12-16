@@ -133,7 +133,6 @@ We have channels for each project. These channels are recommended for new member
 [38]: https://twitter.com/markshust
 [39]: https://github.com/ModestCoders/magento2-dockergento
 [40]: https://www.slideshare.net/OscarRecioSoria/zero-downtime-in-magento-2-is-it-possible
-[39]: https://github.com/ModestCoders/magento2-dockergento
 [41]: https://twitter.com/osrecio
 [42]: https://twitter.com/syed_muneebb
 [43]: https://twitter.com/buskamuza
