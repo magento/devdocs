@@ -1,15 +1,13 @@
 ---
 group: integration-testing
-version: 2.1
 title: Application Area Annotation in the Integration Testing Framework
-github_link: test/integration/annotations/magentoAppArea.md
 ---
 
 Integration testing framework enables you to configure the application area to run tests using the `@magentoAppArea` annotation.
 
 ## Format
 
-> Configuring the test environment in scope of the specified application area
+Configuring the test environment in scope of the specified application area:
 
 ```php?start_inline=1
 /**
@@ -19,7 +17,7 @@ Integration testing framework enables you to configure the application area to r
 
 ## Usage
 
-The annotation is applied following the fallback scheme below:
+The annotation fallback sequence:
 
 1. Test annotation
 2. Test case annotation
@@ -30,7 +28,7 @@ The annotation is applied following the fallback scheme below:
 The annotation in a test case enables the specified application area for all tests in the test case.
 If the annotation is specified over a test in the test case, it will overwrite the test case annotation.
 
-> The test case annotation example:
+The test case annotation example:
 
 ```php?start_inline=1
 /**
@@ -43,7 +41,7 @@ class ClassToTest extends PHPUnit\Framework\TestCase
     {
         //...
     }
- 
+
     /**
      * @magentoAppArea frontend
      */
@@ -51,7 +49,7 @@ class ClassToTest extends PHPUnit\Framework\TestCase
     {
         //...
     }
- 
+
     public function testThree()
     {
         //...
@@ -69,19 +67,20 @@ The default value for `@magentoAppArea` is `global`.
 The annotation in a test is used to configure the environment in scope of the specified application area for the test.
 Each time you specify a different area, Magento will be reinitialized in the specified scope.
 
-> The test annotation example:
+The test annotation example:
 
 ```php?start_inline=1
-namespace Vendor\Module;
-class ClassToTest extends PHPUnit\Framework\TestCase
+namespace \Vendor\Module;
+
+class ClassToTest extends \PHPUnit\Framework\TestCase
 {
-    // executes the test in scope of the global area
+    // execute the test in scope of the global area
     public function testOne()
     {
         //...
     }
- 
-    // reinitializes the application and executes the test in scope of the frontend area
+
+    // reinitialize the application and executes the test in scope of the frontend area
     /**
      * @magentoAppArea frontend
      */
@@ -89,8 +88,8 @@ class ClassToTest extends PHPUnit\Framework\TestCase
     {
         //...
     }
- 
-    // reinitializes the application and executes the test in scope of the adminhtml area
+
+    // reinitialize the application and executes the test in scope of the adminhtml area
     /**
      * @magentoAppArea adminhtml
      */
@@ -98,14 +97,14 @@ class ClassToTest extends PHPUnit\Framework\TestCase
     {
         //...
     }
- 
-    // reinitializes the application and executes the test in scope of the global area
+
+    // reinitialize the application and executes the test in scope of the global area
     public function testFour()
     {
         //...
     }
- 
-    // executes in scope of the global area
+
+    // execute in scope of the global area
     public function testFive()
     {
         //...

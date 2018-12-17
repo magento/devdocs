@@ -1,8 +1,6 @@
 ---
 group: integration-testing
-version: 2.1
 title: Application isolation annotation
-github_link: test/integration/annotations/magentoAppIsolation.md
 ---
 
 Many integration tests use the application state which, in turn, can be altered during execution of some tests.
@@ -12,7 +10,7 @@ The isolation is managed using the `@magentoAppIsolation` annotation.
 
 ## Format
 
-> Application isolation annotation:
+Application isolation annotation:
 
 ```php?start_inline=1
 /**
@@ -31,13 +29,12 @@ The test case isolation is mandatory; it cannot be disabled.
 {:.bs-callout .bs-callout-warning}
 Do not share and do not rely on sharing the application objects between test cases.
 
-
 ### In a test
 
 By default, the application isolation between tests is disabled.
-You can enable the automatic reinitialization (application isolation) for a test using the `@magentoAppIsolation` annotation.
+You can enable the automatic re-initialization (application isolation) for a test using the `@magentoAppIsolation` annotation.
 
-> Example of a test that alters the application objects
+Example of a test that alters the application objects:
 
 ```php?start_inline=1
 /**
@@ -51,17 +48,17 @@ public function testRegister()
 }
 ```
 
-In most cases, the controller tests depend on the application state and require reinitialization in each test.
-Therefore, the test cases inherited from the `Magento_TestFramework_TestCase_ControllerAbstract` behave as if `@magentoAppIsolation` is enabled for each test.
+In most cases, the controller tests depend on the application state and require re-initialization in each test.
+Therefore, the test cases inherited from the `\Magento\TestFramework\TestCase\ControllerAbstract` behave as if `@magentoAppIsolation` is enabled for each test.
 
 ## Default isolation
 
 Default values for the `@magentoAppIsolation` annotation:
 
-Test class ancestors|Test case (class)|Test (method)
----|---|---
-`PHPUnit\Framework\TestCase`|enabled|disabled
-`Magento_TestFramework_TestCase_ControllerAbstract`|enabled|enabled
+Test class ancestors                                 | Test case (class) | Test (method)
+-----------------------------------------------------|-------------------|--------------
+`\PHPUnit\Framework\TestCase`                        | enabled           | disabled
+`\Magento\TestFramework\TestCase\ControllerAbstract` | enabled           | enabled
 
 Although `@magentoAppIsolation` cannot be changed at the test case level, developers can change it for individual tests.
 

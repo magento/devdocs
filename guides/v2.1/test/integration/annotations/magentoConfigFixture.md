@@ -1,8 +1,6 @@
 ---
 group: integration-testing
-version: 2.1
 title: Configuration Fixture Annotation
-github_link: /test/integration/annotations/magentoConfigFixture.md
 ---
 
 The Integration Testing Framework (ITF) enables you to set the Magento configuration values for individual tests and revert them after the test execution.
@@ -10,7 +8,7 @@ Use the `@magentoConfigFixture` annotation for this purpose.
 
 ## Format
 
-> Code format for a fixture setting the configuration option
+Code format for a fixture setting the configuration option:
 
 ```php?start_inline=1
 /**
@@ -19,16 +17,17 @@ Use the `@magentoConfigFixture` annotation for this purpose.
 ```
 
 Here,
-* `<store_code>` is a code of the store to be configured.
+
+- `<store_code>` is a code of the store to be configured.
  If it is not specified, the configuration option is applied globally.
  To specify the current store, use `current`.
-* `<config_path>` is XPath of the configuration option. See [configuration reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) for available options.
-* `<config_value>` is a fixture value for the configuration option.
+- `<config_path>` is XPath of the configuration option. See [configuration reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html) for available options.
+- `<config_value>` is a fixture value for the configuration option.
 
 ## Principles
 
 1. The `@magentoConfigFixture` is applicable in scope of a test method only.
-It is not available on a test case level.
+   It is not available on a test case level.
 2. You can declare more than one configuration option for a test.
 
 ## Usage
@@ -43,20 +42,22 @@ The following example demonstrates the `testConfigFixtures` test that uses the s
 The test asserts that the specified configuration options have been applied.
 
 ```php?start_inline=1
-class Magento_Test_Annotation_ConfigFixtureTest extends PHPUnit\Framework\TestCase
+namespace Magento\Test\Annotation;
+
+class Magento\Test\Annotation\ConfigFixtureTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @var Mage_Core_Model_Config
      */
     protected $_config;
- 
+
     /**
      * Core store config
      *
-     * @var Magento_Core_Model_Store_Config
+     * @var \Magento\Core\Model\Store\Config
      */
     protected $_coreStoreConfig = null;
- 
+
     /**
      * @magentoConfigFixture               web/unsecure/base_url  http://example.com/
      * @magentoConfigFixture               web/secure/base_url    https://example.com/

@@ -1,24 +1,23 @@
 ---
 group: integration-testing
-version: 2.1
 title: Cache Annotation
-github_link: test/integration/annotations/magentoCache.md
 ---
 
 The Magento integration testing framework enables you to enable or disable a cache type using the `@magentoCache` annotation.
 
 ## Format
 
-> Enable or disable cache type
+Enable or disable cache type
 
 ```php?start_inline=1
 /**
  * @magentoCache [<type>|all] [enabled|disabled]
  * @magentoCache [<type>|all] [enabled|disabled]
- */ 
+ */
 ```
 
-Here, 
+Here,
+
 * `<type>` is a placeholder for a cache type
 * `all` is a value for any cache type
 * `enabled` or `disabled` are to enable or disable the cache respectively
@@ -44,12 +43,12 @@ It completely overrides the annotation specified for the test case.
 
 ## Example
 
-> Cache annotations example
+Cache annotations example:
 
 ```php
 <?php
 namespace Magento\Foo;
- 
+
 /**
  * @magentoCache all enabled
  */
@@ -59,7 +58,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
     {
         ...
     }
- 
+
     /**
      * @magentoCache config disabled
      */
@@ -67,7 +66,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
     {
         ...
     }
- 
+
     /**
      * @magentoCache all enabled
      * @magentoCache config disabled
@@ -76,7 +75,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
     {
         ...
     }
- 
+
     /**
      * @magentoCache config disabled
      * @magentoCache all enabled

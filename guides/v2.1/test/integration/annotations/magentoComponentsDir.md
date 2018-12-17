@@ -1,8 +1,6 @@
 ---
 group: integration-testing
-version: 2.1
 title: Component registrar annotation
-github_link: test/integration/annotations/magentoComponentsDir.md
 ---
 
 When your test design require to register the fixture components and unregister them after the test execution, use the `@magentoComponentsDir` annotation.
@@ -10,7 +8,7 @@ It enables you to register recursively all the components at a specified directo
 
 ## Format
 
-> Registration of the fixture components at the `<dir_path>` directory
+Registration of the fixture components at the `<dir_path>` directory:
 
 ```php?start_inline=1
 /**
@@ -37,8 +35,8 @@ The test method annotation automatically contains the `@magentoComponentsDir` an
 ## Example
 
 The following example demonstrates the usage of the `@magentoComponentsDir` annotation in different scopes.
- 
-> Example of `Magento/Foo/_files/modules/moduleOne/registration.php`
+
+Example of `Magento/Foo/_files/modules/moduleOne/registration.php`
 
 ```php?start_inline=1
 \Magento\Framework\Component\ComponentRegistrar::register(
@@ -48,11 +46,11 @@ The following example demonstrates the usage of the `@magentoComponentsDir` anno
 );
 ```
 
-> Fixture components registration using the annotation
+Fixture components registration using the annotation
 
 ```php?start_inline=1
 namespace Magento\Foo;
- 
+
 /**
  * @magentoComponentsDir Magento/Foo/_files/modules
  */
@@ -65,7 +63,7 @@ class BarTest extends \PHPUnit\Framework\TestCase
     {
        ...   // Here you can use the registered components from 'Magento/Foo/_files/modules' and 'Magento/Foo/_files/themes'
     }
- 
+
     /**
      * @magentoComponentsDir Magento/Foo/_files/libs
      * @magentoComponentsDir Magento/Baz/_files/languages
@@ -85,15 +83,15 @@ The `@magentoComponentsDir` annotation is NOT responsible for this.
 Each time you register the theme, you have to reset the entire application.
 Use the [`@magentoDbIsolation`] annotation to keep the DB integrity in safe.
 
-> Example
+ExampleЖ
 
 ```php?start_inline=1
 namespace Magento\Foo;
- 
+
 use Magento\TestFramework\Helper\Bootstrap;
 use Magento\Backend\App\Area\FrontNameResolver as BackendFrontNameResolver;
 use Magento\Theme\Model\Theme\Registration;
- 
+
 class BarTest extends \PHPUnit\Framework\TestCase
 {
     /**
@@ -104,12 +102,12 @@ class BarTest extends \PHPUnit\Framework\TestCase
      */
     public function testSimple()
     {
-        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
-        /** @var \Magento\Theme\Model\Theme\Registration $registration */
+        $objectManager = Bootstrap::getObjectManager();
+        /** @var Registration $registration */
         $registration = $objectManager->get(Registration::class);
         $registration->register();
     }
- 
+
     /**
      * Set a default theme for the store
      *
@@ -118,18 +116,18 @@ class BarTest extends \PHPUnit\Framework\TestCase
      */
     public function testWithDefaultFixtureTheme()
     {
-        $objectManager = \Magento\TestFramework\Helper\Bootstrap::getObjectManager();
- 
+        $objectManager = Bootstrap::getObjectManager();
+
         $themes = [BackendFrontNameResolver::AREA_CODE => 'Magento/test_theme'];
-        $design = $objectManager->create('Magento\Theme\Model\View\Design', ['themes' => $themes]);
-        $objectManager->addSharedInstance($design, 'Magento\Theme\Model\View\Design');
- 
-        /** @var \Magento\Theme\Model\Theme\Registration $registration */
+        $design = $objectManager->create('\Magento\Theme\Model\View\Design', ['themes' => $themes]);
+        $objectManager->addSharedInstance($design, '\Magento\Theme\Model\View\Design');
+
+        /** @var \Registration $registration */
         $registration = $objectManager->get(
-            'Magento\Theme\Model\Theme\Registration'
+            'Registration'
         );
         $registration->register();
- 
+
         Bootstrap::getInstance()->loadArea(BackendFrontNameResolver::AREA_CODE);
     }
 }
