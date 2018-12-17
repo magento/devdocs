@@ -618,7 +618,11 @@ We are reviewing this section and will publish it soon.
 
 10.2. Only private content SHOULD be rendered in browser.
 
-10.3. All module dependencies of a RequireJS module MUST be declared in the module's definition header. No direct calls to `require` SHOULD be made unless the list of modules to be loaded is dynamic.
+10.3. All module dependencies of a RequireJS module MUST be declared in the module's definition header.
+
+10.3.1 No direct calls to `require` SHOULD be made unless the list of modules to be loaded is dynamic.
+
+10.3.2 Code MUST NOT make use of the synchronous form of `require` (`require('moduleIdentifier')`).
 
 10.4. The [W3C Content Security Policy] MUST be followed.
 
