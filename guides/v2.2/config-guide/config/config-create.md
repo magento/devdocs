@@ -34,7 +34,7 @@ For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
-To create a new configuration type, extend the [\Magento\Framework\Config\ReaderInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/ReaderInterface.php), which is [\Magento\Framework\Config\Reader\Filesystem]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
+To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
 
 *  `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
 *  `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
