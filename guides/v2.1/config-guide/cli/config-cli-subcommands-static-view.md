@@ -51,108 +51,401 @@ Command options:
 The following table explains this command's parameters and values.
 
 <table>
-	<col width="15%" />
-  	<col width="65%" />
-  	<col width="25%" />
-	<tbody>
-		<tr>
-			<th>Option</th>
-			<th>Description</th>
-			<th>Required?</th>
-		</tr>
-	<tr>
-        <td>&lt;languages&gt;</td>
-        <td><p>Space-separated list of language codes to output static view files. (Default is <code>en_US</code>.)</p>
-        <p>You can find the list by running <code>magento info:language:list</code>.</p></td>
-    <td><p>No</p></td>
-    </tr>
-	<tr>
-        <td>--language (-l)</td>
-        <td><p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all language codes. You can specify the name of one language code at a time.</p>
-            <p>For example, <code>--language en_US --language es_ES</code></p></td>
-        <td><p>No</p></td>
+  <col width="25%" />
+  <col width="60%" />
+  <col width="10%" />
+  <col width="10%" />
+  <tbody>
+    <tr>
+      <th>
+        Option
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Required?
+      </th>
+      <th>
+        Default
+      </th>
     </tr>
     <tr>
-        <td>--exclude-language</td>
-        <td><p>Generate files for the specified language codes. The default, with no option specified, is to exclude nothing. You can specify the name of one language code or a comma-separated list of language codes.</p></td>
-        <td><p>No</p></td>
+      <td>
+        &lt;languages&gt;
+      </td>
+      <td>
+        <p>
+          Space-separated list of <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes for which to
+          output static view files. (Default is
+          <code>en_US</code>.)
+        </p>
+        <p>
+          You can find the list by running <code>bin/magento info:language:list</code>.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      </td>
     </tr>
     <tr>
-        <td>--theme &lt;theme></td>
-        <td><p>Themes for which to deploy static content.</p>
-            <p>For example, <code>--theme Magento/blank --theme Magento/luma</code></p></td>
-        <td><p>No</p></td>
+      <td>
+        --language (-l)
+      </td>
+      <td>
+        <p>
+          Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time.
+        </p>
+        <p>
+          For example, <code>--language en_US --language es_ES</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      all
+      </td>
     </tr>
     <tr>
-        <td>--exclude-theme &lt;theme></td>
-        <td><p>Themes to exclude when deploying static content.</p>
-            <p>For example, <code>--exclude-theme Magento/blank</code></p></td>
-        <td><p>No</p></td>
+      <td>
+        --exclude-language
+      </td>
+      <td>
+        <p>
+          Generate files for the specified language codes. The default, with no option specified, is to exclude nothing. You can specify the name of one language code or a comma-separated list of language codes.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      none
+      </td>
     </tr>
     <tr>
-        <td>--area (-a)</td>
-        <td><p>Generate files only for the specified areas. The default, with no option specified, is to generate files for all areas. Valid values are <code>adminhtml</code> and <code>frontend</code>.</p>
-            <p>For example, <code>--area adminhtml</code></p></td>
-        <td><p>No</p></td>
+      <td>
+        --theme &lt;theme&gt;
+      </td>
+      <td>
+        <p>
+          Themes for which to deploy static content.
+        </p>
+        <p>
+          For example, <code>--theme Magento/blank --theme Magento/luma</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      all
+      </td>
     </tr>
     <tr>
-        <td>--exclude-area</td>
-        <td><p>Do not generate files for the specified areas. The default, with no option specified, is to exclude nothing. </p></td>
-        <td><p>No</p></td>
+      <td>
+        --exclude-theme &lt;theme&gt;
+      </td>
+      <td>
+        <p>
+          Themes to exclude when deploying static content.
+        </p>
+        <p>
+          For example, <code>--exclude-theme Magento/blank</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      none
+      </td>
     </tr>
     <tr>
-        <td>--jobs (-j)</td>
-        <td><p>Enable parallel processing using the specified number of jobs. The default is 4. To cause the task to run in one process (for example, if your system does not support process forking), use <code>--jobs 1</code>.</p></td>
-        <td><p>No</p></td>
+      <td>
+        --area (-a)
+      </td>
+      <td>
+        <p>
+          Generate files only for the specified areas. The default, with no option specified, is to generate files for all areas. Valid values are <code>adminhtml</code> and <code>frontend</code>.
+        </p>
+        <p>
+          For example, <code>--area adminhtml</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      all
+      </td>
     </tr>
     <tr>
-        <td>--no-javascript</td>
-        <td><p>Do not deploy JavaScript files</p></td>
-        <td><p>No</p></td>
+      <td>
+        --exclude-area
+      </td>
+      <td>
+        <p>
+          Do not generate files for the specified areas. The default, with no option specified, is to exclude nothing.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      none
+      </td>
     </tr>
     <tr>
-        <td>--no-css</td>
-        <td><p>Do not deploy CSS files. </p></td>
-        <td><p>No</p></td>
+      <td>
+        --jobs (-j)
+      </td>
+      <td>
+        <p>
+          Enable parallel processing using the specified number of jobs. The default is 0 (do not run in parallel processes).
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td>
+      0
+      </td>
     </tr>
     <tr>
-        <td>--no-less</td>
-        <td><p>Do not deploy LESS files. </p></td>
-        <td><p>No</p></td>
+      <td>
+        --symlink-locale
+      </td>
+      <td>
+        <p>
+          Create symlinks for the files of those locales, which are passed for deployment, but have no customizations.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
     <tr>
-        <td>--no-images</td>
-        <td>Do not deploy images.</td>
-        <td><p>No</p></td>
+      <td>
+        --content-version=CONTENT-VERSION
+      </td>
+      <td>
+        <p>
+          Custom version of static content can be used if running deployment on multiple nodes to ensure that static content version is identical and caching works properly.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
     <tr>
-        <td>--no-fonts</td>
-        <td><p>Do not deploy font files.</p></td>
-        <td><p>No</p></td>
+      <td>
+        --no-javascript
+      </td>
+      <td>
+        <p>
+          Do not deploy JavaScript files
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
     <tr>
-        <td><p>--no-html</p></td>
-        <td><p>Do not deploy HTML files.</p></td>
-        <td><p>No</p></td>
+      <td>
+        --no-css
+      </td>
+      <td>
+        <p>
+          Do not deploy CSS files.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
     <tr>
-        <td>--no-misc</td>
-        <td><p> Do not deploy other types of files (that is <code>.md</code>, <code>.jbf</code>, <code>.csv</code>, <code>.json</code>, <code>.txt</code>, <code>.htc</code>, or <code>.swf</code> files). </p></td>
-        <td><p>No</p></td>
+      <td>
+        --no-less
+      </td>
+      <td>
+        <p>
+          Do not deploy LESS files.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
     <tr>
-        <td>--no-html-minify</td>
-        <td><p> Do not minify HTML files.  </p></td>
-        <td><p>No</p></td>
+      <td>
+        --no-images
+      </td>
+      <td>
+        Do not deploy images.
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
     <tr>
-        <td>--dry-run (-d)</td>
-        <td><p>Include to view the files output by the tool without outputting anything.</p></td>
-        <td><p>No</p></td>
+      <td>
+        --no-fonts
+      </td>
+      <td>
+        <p>
+          Do not deploy font files.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
-
-
-	</tbody>
+    <tr>
+      <td>
+        <p>
+          --no-html
+        </p>
+      </td>
+      <td>
+        <p>
+          Do not deploy HTML files.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        --no-misc
+      </td>
+      <td>
+        <p>
+          Do not deploy other types of files (that is
+          <code>.md</code>, <code>.jbf</code>, <code>.csv</code>,
+          <code>.json</code>, <code>.txt</code>, <code>.htc</code>,
+          or <code>.swf</code> files).
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        --no-html-minify
+      </td>
+      <td>
+        <p>
+          Do not minify HTML files.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        -s
+        <ul>
+          <li>-s quick
+          </li>
+          <li>-s standard
+          </li>
+          <li>-s compact
+          </li>
+        </ul>
+      </td>
+      <td>
+        Define the deployment strategy. Use these options only if you have more than one locale.
+				<ul>
+					<li>
+	          Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a> to minimize deployment time. This is the default command option if not specified.
+					</li>
+					<li>
+						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-standard">standard strategy</a> to deploy all static view files for all packages.
+					</li>
+					<li>
+						Use the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a> to conserve disk space on the server.
+					</li>
+				</ul>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        --force (-f)
+      </td>
+      <td>
+        <p>
+          Deploy files in any mode. (by default, the static
+          content deployment tool can be run only in production
+          mode. Use this option to run it in default or developer
+          mode).
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
 </table>
 
 {: .bs-callout .bs-callout-info}

@@ -50,8 +50,9 @@ The following table explains this command's parameters and values.
 
 <table>
   <col width="25%" />
-  <col width="65%" />
-  <col width="15%" />
+  <col width="60%" />
+  <col width="10%" />
+  <col width="10%" />
   <tbody>
     <tr>
       <th>
@@ -62,6 +63,9 @@ The following table explains this command's parameters and values.
       </th>
       <th>
         Required?
+      </th>
+      <th>
+        Default
       </th>
     </tr>
     <tr>
@@ -83,6 +87,8 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td>
+      </td>
     </tr>
     <tr>
       <td>
@@ -101,6 +107,9 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td>
+      all
+      </td>
     </tr>
     <tr>
       <td>
@@ -115,6 +124,9 @@ The following table explains this command's parameters and values.
         <p>
           No
         </p>
+      </td>
+      <td>
+      none
       </td>
     </tr>
     <tr>
@@ -134,6 +146,9 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td>
+      all
+      </td>
     </tr>
     <tr>
       <td>
@@ -151,6 +166,9 @@ The following table explains this command's parameters and values.
         <p>
           No
         </p>
+      </td>
+      <td>
+      none
       </td>
     </tr>
     <tr>
@@ -170,6 +188,9 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td>
+      all
+      </td>
     </tr>
     <tr>
       <td>
@@ -184,6 +205,9 @@ The following table explains this command's parameters and values.
         <p>
           No
         </p>
+      </td>
+      <td>
+      none
       </td>
     </tr>
     <tr>
@@ -200,6 +224,41 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td>
+      0
+      </td>
+    </tr>
+    <tr>
+      <td>
+        --symlink-locale
+      </td>
+      <td>
+        <p>
+          Create symlinks for the files of those locales, which are passed for deployment, but have no customizations.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>
+        --content-version=CONTENT-VERSION
+      </td>
+      <td>
+        <p>
+          Custom version of static content can be used if running deployment on multiple nodes to ensure that static content version is identical and caching works properly.
+        </p>
+      </td>
+      <td>
+        <p>
+          No
+        </p>
+      </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -215,6 +274,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -230,6 +290,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -245,6 +306,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -258,6 +320,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -273,6 +336,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -290,6 +354,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -308,6 +373,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -323,6 +389,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -355,6 +422,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
     <tr>
       <td>
@@ -373,6 +441,7 @@ The following table explains this command's parameters and values.
           No
         </p>
       </td>
+      <td></td>
     </tr>
   </tbody>
 </table>
