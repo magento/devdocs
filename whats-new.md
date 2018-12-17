@@ -8,10 +8,14 @@ redirect_from:
   - /guides/v2.3/magento-devdocs-whatsnew.html
 ---
 
-This page contains recent changes that we think you'd like to know about.
-We exclude from this list proofreading, spelling checks, and all minor updates.
+{% assign whatsnew = site.data.whats-new %}
 
-{% assign entries = site.data.whats-new.entries %}
+<!-- The link enables RSS readers to recognize the whatsnew-feed thread on the page -->
+<link rel="alternate" type="application/atom+xml" title="What's new on Magento DevDocs" href= "{{ whatsnew.thread }}" />
+
+{{ whatsnew.description }}
+
+{% assign entries = whatsnew.entries %}
 
 {% assign grouped_by_year = entries | group_by_exp: "entry", "entry.date | date: '%Y'" %}
 
