@@ -50,14 +50,14 @@ Submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to add 
 
 -  For Starter projects, include the origin URLs for your Master and Staging sites.
 
-If the domains included in your Cloud project are associated with an existing Fastly service account, see [Multiple Fastly accounts and assigned domains](#Multiple-fastly-accounts-and-assigned-domains).
+If the domains included in your Cloud project are associated with an existing Fastly service account, see [Multiple Fastly accounts and assigned domains](#domain).
 
 
 ####  To view your Fastly credentials:
 
 When we provision your project environments for Fastly services, we add the Fastly credentials to your project environment configuration. You can get these credentials using any of the following methods:
 
--  After you [enable the Fastly module]({{ page.baseurl }}#cloud-fastly-config), you can view the credentials in the Fastly configuration section of the Admin UI.
+-  After you [enable the Fastly module](#cloud-fastly-config), you can view the credentials in the Fastly configuration section of the Admin UI.
 
    ![Fastly credentials Admin UI]({{ site.baseurl }}/common/images/cloud/cloud-fastly-credentials-admin-ui.png){:width="650px"}
 
