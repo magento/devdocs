@@ -39,10 +39,10 @@ For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d
 
 To create a new configuration type, extend the [\Magento\Framework\Config\ReaderInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/ReaderInterface.php), which is [Magento\\Framework\\Config\\Reader\\Filesystem]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php){: target="_blank"} to provide the following parameters:
 
-*  `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
-*  `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
-*  `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.</p>
-*  `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated. 
+*  `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
+*  `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
+*  `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.</p>
+*  `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated. 
 *  `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
 *  `$idAttributes`. Array of node attribute IDs.
 
