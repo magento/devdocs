@@ -32,8 +32,8 @@ type Query {
         filter: ProductFilterInput,
         pageSize: Int = 20,
         currentPage: Int = 1,
-     ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
         sort: ProductSortInput
+    ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
 }
 ```
 
@@ -119,10 +119,10 @@ You can optionally define enumerations to help prevent input errors. Magento cap
 
 ``` php
 enum VolumeUnitEnum {
-  IN3
-  FT3
-  CM3
-  M3
+    IN3
+    FT3
+    CM3
+    M3
 }
 ```
 
