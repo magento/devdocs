@@ -134,9 +134,8 @@ You can describe any attribute, type definition, or other entity within a `schem
 
 For example:
 
-`sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
-
+```
+sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
 url_key: String @doc(description: "The url key assigned to the product")
-
 product_count: Int @doc(description: "The number of products")
-`
+```
