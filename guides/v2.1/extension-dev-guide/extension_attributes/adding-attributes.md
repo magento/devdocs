@@ -6,7 +6,7 @@ menu_title: Adding extension attributes to entity
 menu_order: 20
 ---
 
-Third party developers cannot change the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attributes{% endglossarytooltip %}.  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
+Third-party developers cannot change the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attributes{% endglossarytooltip %}.  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
 
 {: .bs-callout .bs-callout-info }
 We will demonstrate how to add extension attributes to a Product entity, Product Repository and {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web Api{% endglossarytooltip %} example.
