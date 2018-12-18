@@ -190,7 +190,7 @@ If the SQL command and system log contain no entries, run the `magento cron:run`
 
 ## Step 6 (optional): Set up a custom cron group
 
-This step shows how to optionally set up a custom cron group. You should set up a custom cron group. If you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
+ This step shows how to optionally set up a custom cron group. You should set up a custom cron group if you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
 
 {% collapsible To set up a custom cron group: %}
 
