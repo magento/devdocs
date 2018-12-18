@@ -150,8 +150,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
 
 * Custom and extension attributes defined in any attribute set
 * The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)
-*
-* Product types that define their own implementation of `ProductInterface`, including
+* Product types that define their own implementation of `ProductInterface` including:
   * [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html)
   * [ConfigurableProduct]({{ page.baseurl }}/graphql/reference/configurable-product.html)
   * [DownloadableProduct]({{ page.baseurl }}/graphql/reference/downloadable-product.html)
