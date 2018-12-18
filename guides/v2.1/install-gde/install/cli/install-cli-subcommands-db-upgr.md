@@ -28,8 +28,16 @@ Note the following:
 *	If you used the Web Setup Wizard to do any of the preceding, you don't have to use the command discussed in this topic.
 *	A Magento *component* can be a module, theme, or language pack; it doesn't matter whether the component comes from the Magento Marketplace or not
 
-Command usage:
+1. Start the upgrade:
 
-	magento setup:upgrade [--keep-generated]
+	```bash
+  magento setup:upgrade [--keep-generated]
+  ```
 
-where `--keep-generated` is an optional argument that does not update [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html). This optional argument is for use *only* in limited circumstances by experienced system integrators. It should be used *only* in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). It should *not* be used in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode).
+  where `--keep-generated` is an optional argument that does not update [static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html). This optional argument is for use *only* in limited circumstances by experienced system integrators. It should be used *only* in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode). It should *not* be used in [developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#developer-mode).
+
+2. Clean the configuration cache:
+
+  ```bash
+  bin/magento cache:clean config
+  ```

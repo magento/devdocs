@@ -47,7 +47,7 @@ Complete the following prerequisites to prepare your environment before starting
 ## Upgrade using the command line {#upgrade-cli-upgr}
 
 Using the more manual process of upgrading via the command line allows you to track and control exactly what's being changed in the upgrade. If you previously made updates to the same values that the upgrade script affects, the script will override those values, so using the manual process is the best approach. Upgrading using the script process is a bit easier and less intensive, if you have not made updates to values that the script affects.
-   
+
 ### Backup `composer.json`
 
 Backup the existing `composer.json` file in the Magento installation directory.
@@ -59,7 +59,7 @@ Specify needed packages and remove any unneeded ones before proceeding with the 
 #### Deactivate the {{ ce }} update
 
 _Optional_—If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
- 
+
 ```bash
 composer remove magento/product-community-edition --no-update
 ```
@@ -128,7 +128,7 @@ _Optional_—If the Magento updater is installed (it is located in `<Magento ins
 
 1. Backup and remove the old updater, in the `<Magento install dir>/update` directory.
 1. Create a Composer project.
-   
+
    _{{ ce }} version 2.3.0:_
     ```bash
     composer create-project --repository=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
@@ -167,7 +167,13 @@ Updating the metadata in `composer.json` file is entirely superficial, not funct
 composer update
 ```
 
-### Clear caches and generated content
+### Clean the Magento configuration cache
+
+```bash
+bin/magento cache:clean config
+```
+
+### Manually clear caches and generated content
 
 Clear the `var` and `generated` subdirectories:
 
@@ -183,7 +189,7 @@ rm -rf <Magento install dir>/generated/code/*
 
 {:.bs-callout .bs-callout-info}
 If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
-    
+
 ### Update the database schema and data
 
 ```bash
@@ -216,7 +222,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
    * `<your Magento install dir>/var/page_cache`
    * `<your Magento install dir>/generated/code`
 1. Check your storefront in your web browser again.
-   
+
 ## Upgrade using the script {#upgrade-cli-script}
 
 Upgrading your Magento installation with our script, which makes the upgrade process semi-automated, is the preferred method—it's easy, quick, and efficient.
@@ -273,7 +279,7 @@ rm -rf <Magento install dir>/generated/code/*
 
 {:.bs-callout .bs-callout-info}
 If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
-    
+
 ### Update the database schema and data
 
 ```bash

@@ -26,8 +26,13 @@ composer require msp/recaptcha:2.0.0
 To complete installation in an existing Magento instance, run the following commands to enable the module:
 
 ``` bash
-php bin/magento module:enable --all
-php bin/magento setup:upgrade
+bin/magento module:enable --all
+```
+``` bash
+bin/magento setup:upgrade
+```
+```bash
+bin/magento cache:clean config
 ```
 
 ## Configure reCAPTCHA

@@ -56,19 +56,23 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 6. Update the database schema and data:
 
-        php bin/magento setup:upgrade
+        bin/magento setup:upgrade
 
 7. Compile the code:
 
-        php bin/magento setup:di:compile
+        bin/magento setup:di:compile
 
 8. Deploy static content:
 
-        php bin/magento setup:static-content:deploy
+        bin/magento setup:static-content:deploy
+
+9. Clean the configuration cache:
+
+        bin/magento cache:clean config
 
 9. Exit maintenance mode:
 
-        php bin/magento maintenance:disable
+        bin/magento maintenance:disable
 
 ## Alternative deployment strategies
 

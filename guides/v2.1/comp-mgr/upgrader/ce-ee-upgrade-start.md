@@ -20,13 +20,13 @@ You must be authorized for {{site.data.var.ee}} to perform the tasks discussed i
 
 Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
-In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`](http://php.net/manual/en/book.bc.php){:target="_blank"} extension, which is required by {{site.data.var.ee}}. Examples follow:
+In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`](http://php.net/manual/en/book.bc.php) extension, which is required by {{site.data.var.ee}}. Examples follow:
 
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
 
 {:.bs-callout .bs-callout-info}
-Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="_blank"} if you have questions.
+Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com) if you have questions.
 
 ## Start System Upgrade from the Magento Admin {#compman-access}
 
@@ -47,9 +47,19 @@ To run System Upgrade:
 
 	From the list, click the version to which to upgrade. Typically, you'll choose the most recent version (indicated by **(latest)**.)
 
-After the upgrade completes, restart Varnish if you use it for page caching.
+After the upgrade completes:
 
-	service varnish restart
+1. Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+   ```bash
+   bin/magento cache:clean config
+   ```
+
+2. Restart Varnish if you use it for page caching.
+
+	```bash
+  service varnish restart
+  ```
 
 #### Errors
 
@@ -61,9 +71,9 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 
 *	The following error might display:
 
-		[2016-01-19 23:33:24 UTC] An error occurred while executing job 
-		"setup:upgrade {"command":"setup:upgrade"}": Could not complete 
-		setup:upgrade {"command":"setup:upgrade"} successfully: Source 
+		[2016-01-19 23:33:24 UTC] An error occurred while executing job
+		"setup:upgrade {"command":"setup:upgrade"}": Could not complete
+		setup:upgrade {"command":"setup:upgrade"} successfully: Source
 		class "\Cybersource" for "CybersourceLogger" generation does not exist.
 
 	For more information, see [Error upgrading from CE to EE]({{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html).

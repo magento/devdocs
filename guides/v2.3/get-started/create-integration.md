@@ -277,6 +277,10 @@ In Production mode, you may receive a message to 'Please rerun Magento compile c
 
     <code>bin/magento setup:di:compile</code>
 
+3. Run the following command to clean the configuration cache.
+
+    <code>bin/magento cache:clean config</code>
+
 ## Check your integration {#check}
 
 Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.

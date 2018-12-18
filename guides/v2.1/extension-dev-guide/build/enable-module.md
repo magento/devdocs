@@ -15,6 +15,7 @@ After you have built the component and are ready to enable it in your Magento en
    ``` bash
    bin/magento module:enable --clear-static-content Component_Name
    bin/magento setup:upgrade
+   bin/magento cache:clean config
    ```
 
    Where `Component_Name` is the name of the component you are enabling.

@@ -204,7 +204,7 @@ Also, you can define your own `etc/acl.xml` file with a custom resource.
             </resource>
         </resources>
     </acl>
-</config> 
+</config>
 ```
 
 ### Pre-configure the integration {#preconfig}
@@ -283,6 +283,10 @@ Use the following steps to install your module:
 In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
     <code>bin/magento setup:di:compile</code>
+
+3. Run the following command to clean the configuration cache.
+
+    <code>bin/magento cache:clean config</code>
 
 ## Check your integration {#check}
 

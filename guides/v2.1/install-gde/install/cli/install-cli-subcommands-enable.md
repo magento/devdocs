@@ -49,7 +49,15 @@ For important information about enabling and disabling modules, see [About enabl
 
 If you enabled one or more modules, run the following command to update the database:
 
-	magento setup:upgrade
+```bash
+bin/magento setup:upgrade
+```
+
+Then clean the configuration cache
+
+```bash
+bin/magento cache:clean config
+```
 
 ## About enabling and disabling modules {#instgde-cli-subcommands-enable-modules}
 {% include install/enable-disable-modules.md %}

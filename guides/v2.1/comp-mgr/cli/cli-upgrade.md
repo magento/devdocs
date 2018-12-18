@@ -79,7 +79,14 @@ To enable maintenance mode:
    composer update
    ```
 
-3. If prompted, enter your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html).
+4. If prompted, enter your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html).
+
+5. Clean the Magento configuration cache:
+
+   ```bash
+   bin/magento cache:clean config
+   ```
+   
 4. Manually clear `var` subdirectories:
 
    ```bash

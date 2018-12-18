@@ -22,7 +22,7 @@ If you cloned the Magento 2 GitHub repository, you **cannot** use this method to
 This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`.
 If you did not do this, skip this section and continue with the next section.
 
-If you use pub as your Magento root directory: 
+If you use pub as your Magento root directory:
 
 * For the upgrade, create another subdomain or docroot that uses the Magento installation directory as its root.
 
@@ -79,6 +79,13 @@ To enable maintenance mode:
    ```
 
 4. If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+
+5. Clean the Magento configuration cache:
+
+   ```bash
+   bin/magento cache:clean config
+   ```
+
 5. Manually clear `var` subdirectories:
    ```bash
    rm -rf <Magento install dir>/var/cache/*
