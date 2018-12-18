@@ -9,11 +9,11 @@ The `products` endpoint allows you to search for catalog items.
 
 ``` json
 products(
-search: String
-filter: ProductFilterInput
-pageSize: Int
-currentPage: Int
-sort: ProductSortInput
+    search: String
+    filter: ProductFilterInput
+    pageSize: Int
+    currentPage: Int
+    sort: ProductSortInput
 ): Products
 ```
 Each query attribute is defined below:
@@ -34,9 +34,9 @@ The `ProductFilterInput` object defines the filters to be used in the search. A 
 
 {% highlight json %}
 filter: {
-       sku: {like: "24-MB%"}
-       price: {lt: "50"}
-       }
+    sku: {like: "24-MB%"}
+    price: {lt: "50"}
+}
 {% endhighlight %}
 
 See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information about the operators.
@@ -150,7 +150,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
 
 * Custom and extension attributes defined in any attribute set
 * The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)
-* 
+*
 * Product types that define their own implementation of `ProductInterface`, including
   * [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html)
   * [ConfigurableProduct]({{ page.baseurl }}/graphql/reference/configurable-product.html)
