@@ -32,8 +32,8 @@ type Query {
         filter: ProductFilterInput,
         pageSize: Int = 20,
         currentPage: Int = 1,
-        sort: ProductSortInput)
      ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
+        sort: ProductSortInput
 }
 ```
 
