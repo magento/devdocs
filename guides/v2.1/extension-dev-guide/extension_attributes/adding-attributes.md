@@ -76,7 +76,7 @@ This is the simplest way to add extension attributes without causing a conflict:
 
 AfterGetList is similar to afterGet.
 
-Likewise afterSave plugin should take data from entity and do some manipulations before returning it:
+Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
 ``` php
 public function afterSave
