@@ -11,7 +11,7 @@ Third-party developers cannot change the {% glossarytooltip 786086f2-622b-4007-9
 {: .bs-callout .bs-callout-info }
 We will demonstrate how to add extension attributes to a Product entity, Product Repository and {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web Api{% endglossarytooltip %} example.
 
-In order to retreive a product or a list of products from the Magento API you need to make an API request to the appropriate service (the Product Repository in this case).  
+In order to retreive a product or a list of products from the Magento API, you need to make an API request to the appropriate service (the Product Repository in this case).  
 The response to these requests will return objects with the following structure:
 
 ### Product response:
