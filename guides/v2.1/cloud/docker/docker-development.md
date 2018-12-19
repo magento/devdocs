@@ -66,13 +66,13 @@ docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
 
 ### Sendmail
 
-To send emails from your local Cloud Docker, enable sendmail in `global.php` config file
+You can send emails from your Docker environment whe you enable `sendmail` in the `docker/global.php` configuration file:
 
 ```bash
 ENABLE_SENDMAIL=true
 ```
 
-And convert configs
+After you update a configuration file, you must convert the file to a Docker ENV file to include your updates the next time you launch your Docker environment:
 
 ```bash
 ./vendor/bin/ece-tools docker:config:convert
