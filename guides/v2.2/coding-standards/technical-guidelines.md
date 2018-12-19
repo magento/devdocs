@@ -598,7 +598,7 @@ class View extends Template
 
 6.4.4.7. Services SHOULD NOT apply ACL rules to methods or returned data.
 
-6.4.4.8. If multiple data scopes are available, only one entity SHOULD be persisted for one specific data scope within one service call.  If an entity must be saved in multiple scopes, then multiple calls SHOULD be performed.
+6.4.4.8. If a store has multiple scopes (websites, stores), then each call MUST persist an entity in a single scope only. If an entity needs to be saved in multiple scopes, then multiple calls SHOULD be made.
 
 6.4.4.9. Service contracts SHOULD NOT apply presentation layer formatting to the returned data.
 
