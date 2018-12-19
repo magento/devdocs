@@ -277,9 +277,9 @@ Use the following steps to install your module:
 
    <code>bin/magento setup:di:compile</code>
 
-3. Run the following command to clean the configuration cache.
+3. Run the following command to clean the cache.
 
-    <code>bin/magento cache:clean config</code>
+    <code>bin/magento cache:clean</code>
 
 ## Check your integration {#check}
 

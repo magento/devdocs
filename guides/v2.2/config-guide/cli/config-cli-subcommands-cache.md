@@ -24,11 +24,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
       <td><p>Configuration</p></td>
       <td><p>config</p></td>
       <td><p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
-      <p>Clean or flush this cache type after:
-      <ul><li>Modifying configuration files</li>
-      <li>Upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}</li>
-      <li>Upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}</li>
-      <li>Installing {{site.data.var.b2b}} or any module.</li></ul></p></td>
+      <p>Clean or flush this cache type after modifying configuration files.</p></td>
     </tr>
     <tr>
       <td><p>Layout</p></td>

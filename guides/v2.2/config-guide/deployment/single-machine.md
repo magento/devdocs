@@ -66,9 +66,9 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
         bin/magento setup:static-content:deploy
 
-9. Clean the configuration cache:
+9. Clean the cache:
 
-        bin/magento cache:clean config
+        bin/magento cache:clean
 
 9. Exit maintenance mode:
 

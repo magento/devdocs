@@ -42,7 +42,7 @@ In Production mode, you may receive a message to 'Please rerun Magento compile c
 
     bin/magento setup:static-content:deploy -f
 
-    bin/magento cache:clean config
+    bin/magento cache:clean
     ```
 
 {: .bs-callout .bs-callout-info }

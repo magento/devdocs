@@ -38,6 +38,6 @@ To update the Magento software if you're a contributing developer:
 
 		<your Magento install dir>/bin/magento setup:upgrade
 
-6.  Clean the configuration cache:
+6.  Clean the cache:
 
-    bin/magento cache:clean config
+    bin/magento cache:clean

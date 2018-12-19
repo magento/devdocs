@@ -35,9 +35,8 @@ bin/magento module:enable --all
 bin/magento setup:upgrade
 ```
 ```bash
-bin/magento cache:clean config
+bin/magento cache:clean
 ```
-
 
 ## Configure and manage 2FA
 

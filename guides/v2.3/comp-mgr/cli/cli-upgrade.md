@@ -167,12 +167,12 @@ Updating the metadata in `composer.json` file is entirely superficial, not funct
 composer update
 ```
 
-### Clean the Magento configuration cache
+### Clean the Magento cache
 
-After applying an update, you must clean the configuration cache.
+After applying an update, you must clean the cache.
 
 ```bash
-bin/magento cache:clean config
+bin/magento cache:clean
 ```
 
 ### Manually clear caches and generated content

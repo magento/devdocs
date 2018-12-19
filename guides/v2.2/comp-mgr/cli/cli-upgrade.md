@@ -80,10 +80,10 @@ To enable maintenance mode:
 
 4. If prompted, enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
-5. Clean the Magento configuration cache:
+5. Clean the Magento cache:
 
    ```bash
-   bin/magento cache:clean config
+   bin/magento cache:clean
    ```
 
 5. Manually clear `var` subdirectories:

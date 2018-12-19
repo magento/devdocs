@@ -29,12 +29,12 @@ Messages similar to the following display in the Console Log:
 
 {% endcollapsible %}
 
-## Clean the Magento configuration cache
+## Clean the Magento cache
 
-Clean the Magento configuration cache:
+Clean the Magento cache:
 
 ```bash
-bin/magento cache:clean config
+bin/magento cache:clean
 ```
 
 ## Manually clear directories

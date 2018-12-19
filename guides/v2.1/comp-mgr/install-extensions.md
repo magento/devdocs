@@ -119,10 +119,10 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 		List of disabled modules:
 		None
 
-5. Clean the configuration cache:
+5. Clean the cache:
 
    ```bash
-   bin/magento cache:clean config
+   bin/magento cache:clean
    ```
 
 6.  Configure the extension in Admin as needed.

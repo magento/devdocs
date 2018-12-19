@@ -53,10 +53,10 @@ If you enabled one or more modules, run the following command to update the data
 bin/magento setup:upgrade
 ```
 
-Then clean the configuration cache
+Then clean the cache:
 
 ```bash
-bin/magento cache:clean config
+bin/magento cache:clean
 ```
 
 ## About enabling and disabling modules {#instgde-cli-subcommands-enable-modules}

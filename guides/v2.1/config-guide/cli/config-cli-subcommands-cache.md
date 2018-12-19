@@ -15,7 +15,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 
 |Cache type "friendly" name|Cache type code name|Description|
 |--- |--- |--- |
-|Configuration|config|Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database.<br><br>Clean or flush this cache type after modifying configuration files or settings within the admin panel, upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, installing {{site.data.var.b2b}} or any module.|
+|Configuration|config|Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database.<br><br>Clean or flush this cache type after modifying configuration files or settings within the admin panel.|
 |Layout|layout|Compiled page layouts (that is, the layout components from all components).<br><br>Clean or flush this cache type after modifying layout files.|
 |Block HTML output|block_html|HTML page fragments per block.<br><br>Clean or flush this cache type after modifying the view layer.|
 |Collections data|collections|Results of database queries.<br><br>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache.<br><br>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.|

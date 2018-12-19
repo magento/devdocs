@@ -46,7 +46,7 @@ Messages similar to the following display in the Console Log:
   Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
 
   ```bash
-  bin/magento cache:clean config
+  bin/magento cache:clean
   ```
 
 ### Failure

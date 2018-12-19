@@ -174,7 +174,7 @@ Finally, let’s add our module and test the result.
 ```
 $ cd <magento2_root>
 $ bin/magento setup:upgrade
-$ bin/magento cache:clean config
+$ bin/magento cache:clean
 ```
 
 Now we’ll go to any product view page, and we should see the “HELLO WORLD!” message.
