@@ -163,9 +163,12 @@ Magento admins will review and approve translations as available. We plan to exp
 
 If you need help understanding the context or meaning of a UI string, or have questions, chat with us in the Community Engineering [Translations Slack channel]. To join, send us request at [engcom@magento.com] or [self signup].
 
-#### Next step
+## Additional information
 
-To create translation dictionaries and language packages, see [Translation dictionaries and packages].
+*	[Translation dictionaries and packages]
+*	[Use translation dictionary to customize strings]
+*	[Translate theme strings]
+*	[Example theme translation dictionary]
 
 
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
@@ -184,3 +187,6 @@ To create translation dictionaries and language packages, see [Translation dicti
 [Translations Slack channel]: https://magentocommeng.slack.com/messages/CD97DKBHS
 [Magento Marketplace]: https://marketplace.magento.com/catalogsearch/result/?q=language%20packs#q=language%20pack&idx=m2_cloud_prod_default_products&p=0&nR%5Bvisibility_search%5D%5B%3D%5D%5B0%5D=1
 [Conventional notations for paths to modules and themes]: {{page.baseurl}}/frontend-dev-guide/conventions.html
+[Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
+[Translate theme strings]: {{page.baseurl}}/frontend-dev-guide/translations/translate_theory.html
+[Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html

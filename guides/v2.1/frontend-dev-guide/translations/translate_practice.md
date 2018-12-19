@@ -1,6 +1,6 @@
 ---
 group: frontend-developer-guide
-title: Create a translation dictionary for a theme
+title: Example theme translation dictionary
 functional_areas:
   - Frontend
 ---
@@ -51,7 +51,7 @@ For example:
 
 -   [Translations overview]
 -   [Translation dictionaries and language packages]
--   [Using translation dictionary to customize strings]
+-   [Usetranslation dictionary to customize strings]
 
 
 [dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms
@@ -59,5 +59,5 @@ For example:
 [i18n (internationalization) tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [Product page where the customized Compare string is displayed]: {{site.baseurl}}/common/images/fdg_translations_bag2.png
 [Translation dictionaries and language packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
-[Using translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
+[Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
 [Translations overview]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html

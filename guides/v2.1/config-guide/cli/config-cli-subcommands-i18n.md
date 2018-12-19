@@ -18,9 +18,9 @@ This topic discusses how to generate:
 -   Translation dictionaries, which are a convenient way to customize or translate *some* words and phrases, such as those for a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 -   Language packages, which enable you to translate *any or all* words and phrases in the Magento application.
 
-For more information, see [Translation overview].
+For more information, see [Translations overview].
 
-We also accept [Community Engineering contributions] using CrowdIn for translations. We plan to provide translation packs through the project.
+We also accept [Community Engineering contributions] using CrowdIn for translations. We plan to provide translation packs through the project. Join us and other contributors around the globe working to localize Magento.
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 
@@ -139,7 +139,7 @@ To create these files:
 4.  Register the language package with [`registration.php`]
 5.  Add `language.xml` meta-information file as discussed in the next section.
 
-#### Language package language.xml and inheritance{#config-cli-subcommands-xlate-pack-meta-xml}
+#### Language package language.xml {#config-cli-subcommands-xlate-pack-meta-xml}
 
 When declaring a language package in the `language.xml` configuration file, you must specify the sequence of the language inheritance for this package.
 
@@ -311,13 +311,14 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
 ## Additional information
 
--   [Translation overview]
+-   [Translations overview]
 -   [Translate theme strings]
 
 
 
-[Translation oveview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html
+
 [Translate theme strings]: {{ page.baseurl }}/frontend-dev-guide/translations/translate_theory.html
+[Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html
 [Community Engineering contributions]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translations-project
 [About translation dictionaries]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries
 [configures the translations]: http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation
