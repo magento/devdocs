@@ -30,16 +30,16 @@ To create a language package, the `.csv` file requires additional columns that s
 
 ## Benefits of Translations
 
-Localizing Magento storefronts and the Admin panel gives your company global presence for support and sales.  
+Localizing Magento storefronts and the Admin panel gives your company global presence for support and sales.
 
 *	Magento supports two types of language packages:
 
-	*	Translated Module and theme packages. 
-	
+	*	Translated Module and theme packages.
+
 		Magento auto-discovers packages included in the `i18n` directory of a module or theme. When installing themes and extensions, consider checking for multiple language versions to download and use.
 
-	*	An entire dictionary in one directory. 
-	
+	*	An entire dictionary in one directory.
+
 		This is intended to be used and distributed as a standalone component (similar to modules and themes).
 *	Customize the default strings in Magento. For example, changing "Add to Wish List" to "Wish List".
 *	Use ready-to-use language packages prepared by other users or create your own. The [Magento Marketplace] offers language packs to download and install.
@@ -143,11 +143,11 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 *	`composer.json` that contains any dependencies for the language package and a mapping to its defined {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}
 
-	[Sample composer.json]
+	[Sample composer.json](https://devdocs.magento.com/guides/v2.2/extension-dev-guide/package/package_module.html#sample-composerjson-file)
 
 *	`language.xml`, in which you declare a language package.
 
-	[Sample language.xml]
+	[Sample language.xml](https://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-example2)
 
 
 ## Community Engineering Translations project {#translations-project}
@@ -156,10 +156,10 @@ Community Engineering accepts translation contributions through the [Magento Cro
 
 1. Create a [CrowdIn account] and join the [Magento CrowdIn project].
 1. Browse and select a language. A percentage displays tracking translation progress overall and per section of the Magento Admin.
-1. Expand and locate an area of UI text strings to translate. Strings marked red need a translation, and marked green have existing translations. 
+1. Expand and locate an area of UI text strings to translate. Strings marked red need a translation, and marked green have existing translations.
 1. Enter or review translations for strings. For more information, see the [CrowdIn knowledge base].
 
-Magento admins will review and approve translations as available. We plan to expand the project to generate and provide language packs using these approved translations. 
+Magento admins will review and approve translations as available. We plan to expand the project to generate and provide language packs using these approved translations.
 
 If you need help understanding the context or meaning of a UI string, or have questions, chat with us in the Community Engineering [Translations Slack channel]. To join, send us request at [engcom@magento.com] or [self signup].
 
@@ -170,14 +170,11 @@ To create translation dictionaries and language packages, see [Translation dicti
 
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language inheritance]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework
-[Phrase]: {{site.mage2100url}}lib/internal/Magento/Framework/Phrase.php
 [parent theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [Create a translation dictionary for a theme]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
 [translation dictionary tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language package]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack
 [More information about the dictionary generator tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
-[Sample composer.json]: {{site.mage2100url}}app/i18n/Magento/de_DE/composer.json
-[Sample language.xml]: {{site.mage2100url}}app/i18n/Magento/de_DE/language.xml
 [Translation dictionaries and packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
 [Magento CrowdIn project]: https://crowdin.com/project/magento-2
 [CrowdIn account]: https://crowdin.com/join

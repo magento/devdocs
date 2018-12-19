@@ -30,10 +30,9 @@ Synchronous route | Bulk route
 --- | ---
 `PUT /V1/product/:sku/options/:optionId` | `PUT /V1/product/bySku/options/byOptionId`
 `POST /V1/carts/:quoteId/items` | `POST async/bulk/V1/carts/byQuoteId/items`
-`DELETE /V1/customers/:customerId` | `DELETE async/bulk/V1/customers/byCustomerId`
 
 {:.bs-callout .bs-callout-info}
-GET requests are not supported.
+GET and DELETE requests are not supported.
 
 ### Payloads
 
