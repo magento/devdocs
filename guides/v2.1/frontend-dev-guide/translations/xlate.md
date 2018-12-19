@@ -171,7 +171,6 @@ To create translation dictionaries and language packages, see [Translation dicti
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language inheritance]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework
 [Phrase]: {{site.mage2100url}}lib/internal/Magento/Framework/Phrase.php
-[Conventional notations for paths to modules and themes]: {{ page.baseurl }}/frontend-dev-guide/conventions.html
 [parent theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [Create a translation dictionary for a theme]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
 [translation dictionary tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
@@ -182,8 +181,9 @@ To create translation dictionaries and language packages, see [Translation dicti
 [Translation dictionaries and packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
 [Magento CrowdIn project]: https://crowdin.com/project/magento-2
 [CrowdIn account]: https://crowdin.com/join
-[CrowdIn knowledge base]: https://support.crowdin.com/online-editor/
+[CrowdIn knowledge base]: https://support.crowdin.com/online-editor
 [engcom@magento.com]: mailto:engcom@magento.com
 [self signup]: https://tinyurl.com/engcom-slack
 [Translations Slack channel]: https://magentocommeng.slack.com/messages/CD97DKBHS
 [Magento Marketplace]: https://marketplace.magento.com/catalogsearch/result/?q=language%20packs#q=language%20pack&idx=m2_cloud_prod_default_products&p=0&nR%5Bvisibility_search%5D%5B%3D%5D%5B0%5D=1
+[Conventional notations for paths to modules and themes]: {{page.baseurl}}/frontend-dev-guide/conventions.html
