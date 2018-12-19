@@ -169,6 +169,8 @@ composer update
 
 ### Clean the Magento configuration cache
 
+After applying an update, you must clean the configuration cache.
+
 ```bash
 bin/magento cache:clean config
 ```

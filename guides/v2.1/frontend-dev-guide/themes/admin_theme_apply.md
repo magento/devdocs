@@ -63,7 +63,7 @@ In `<your_module_dir>/etc/adminhtml/di.xml` add the following (replace the place
 ## Update components to actually apply the Admin theme
 
 For your changes to take effect, you need to update Magento components. For this,
-run the `bin/magento setup:upgrade` command in your command line. If prompted, also run `bin/magento setup:di:compile`. Then also run `bin/magento cache:clean config` to clear the configuration cache.
+run the `bin/magento setup:upgrade` command in your command line. If prompted, also run `bin/magento setup:di:compile`. Then run `bin/magento cache:clean config` to clear the configuration cache.
 
 
 For details about performing command line tasks, view the following topics:
