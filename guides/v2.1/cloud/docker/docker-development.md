@@ -64,20 +64,6 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
 ```
 
-### Sendmail
-
-You can send emails from your Docker environment whe you enable `sendmail` in the `docker/global.php` configuration file:
-
-```bash
-ENABLE_SENDMAIL=true
-```
-
-After you update a configuration file, you must convert the file to a Docker ENV file to include your updates the next time you launch your Docker environment:
-
-```bash
-./vendor/bin/ece-tools docker:config:convert
-```
-
 ### Database container
 
 The database container is based on the `mariadb:10` image.
@@ -92,3 +78,16 @@ Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.
 
 You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
 
+## Sendmail service
+
+You can send emails from your Docker environment when you enable `sendmail` in the `docker/global.php` configuration file:
+
+```terminal
+ENABLE_SENDMAIL=true
+```
+
+After you update a configuration file, you must convert the file to a Docker ENV file to include your updates the next time you launch your Docker environment:
+
+```bash
+./vendor/bin/ece-tools docker:config:convert
+```

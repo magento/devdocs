@@ -28,6 +28,12 @@ The release notes include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
+## v2002.0.16
+
+-   {:.new}**Docker updates**—
+
+    -   You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
+
 ## v2002.0.15
 
 -   {:.new}**Docker Updates**—
