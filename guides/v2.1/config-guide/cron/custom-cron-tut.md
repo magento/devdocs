@@ -64,9 +64,9 @@ If you already have a sample module, you can use it; skip this step and the next
     bin/magento setup:upgrade
     ```
 
-7. Clean the configuration cache:
+7. Clean the cache:
    ```
-   bin/magento cache:clean config
+   bin/magento cache:clean
    ```
 
 {% endcollapsible %}
