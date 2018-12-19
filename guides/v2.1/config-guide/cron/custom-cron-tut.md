@@ -60,7 +60,14 @@ If you already have a sample module, you can use it; skip this step and the next
         drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 6.  Update the Magento database and schema:
 
-        php /var/www/html/magento2/bin/magento setup:upgrade
+    ```bash
+    bin/magento setup:upgrade
+    ```
+
+7. Clean the cache:
+   ```
+   bin/magento cache:clean
+   ```
 
 {% endcollapsible %}
 
