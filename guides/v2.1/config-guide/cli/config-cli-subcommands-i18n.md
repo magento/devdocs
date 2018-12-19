@@ -18,7 +18,7 @@ This topic discusses how to generate:
 -   Translation dictionaries, which are a convenient way to customize or translate *some* words and phrases, such as those for a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 -   Language packages, which enable you to translate *any or all* words and phrases in the Magento application.
 
-For more information, see the [Translation overview].
+For more information, see [Translation overview].
 
 We also accept [Community Engineering contributions] using CrowdIn for translations. We plan to provide translation packs through the project.
 
