@@ -69,7 +69,7 @@ You might need to add a dictionary for the default language (en_US) in the follo
 - To replace or customize strings in the [parent theme]. For example, use "Compare" instead of "Add to Compare".
 - To prepare your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for localization. More merchants may use your theme if it supports localization.
 
-For an example of creating a dictionary for a theme for both cases, see [Create a translation dictionary for a theme].
+For an example of creating a dictionary for a theme for both cases, see [Example theme translation dictionary].
 
 ## Manually translate words and phrases {#m2devgde-xlate-translating}
 
@@ -173,7 +173,7 @@ If you need help understanding the context or meaning of a UI string, or have qu
 [Generate a translation dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language inheritance]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#m2devgde-xlate-inheritancework
 [parent theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
-[Create a translation dictionary for a theme]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
+[Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
 [translation dictionary tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [language package]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-pack
 [More information about the dictionary generator tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict

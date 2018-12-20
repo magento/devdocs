@@ -44,7 +44,7 @@ To add custom strings:
 
 The i18n tool does not create a dictionary if the theme files do not contain strings for translation. In this case, add the file manually. 
 
-See the [Create a translation dictionary for a theme] topic for the practical illustration of the procedure.
+See the [Example theme translation dictionary] topic for the practical illustration of the procedure.
 
 ## Creating locale dictionaries
 
@@ -64,12 +64,12 @@ The locale dictionary would use the default values (keys) in the left column fol
 ## Additional information
 
 - [Translations overview]
-- [Create a translation dictionary for a theme]
+- [Example theme translation dictionary]
 
 
 [translation dictionaries]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html#translate_terms
 [`<Magento_Luma_theme_dir>/i18n/en_US.csv`]: {{site.mage2000url}}app/design/frontend/Magento/luma/i18n/en_US.csv
 [i18n tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [Generate the dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
-[Create a translation dictionary for a theme]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
+[Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html
 [Translations overview]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html
