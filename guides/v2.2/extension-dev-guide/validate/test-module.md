@@ -1,10 +1,6 @@
 ---
 group: php-developer-guide
-subgroup: 06_Validate
 title: Test your component
-menu_title: Test your component
-menu_order: 2
-menu_node:
 redirect_from:
   - /guides/v2.2/mktpl-quickstart/dev-test.html
 ---
@@ -39,18 +35,18 @@ Before you publish your component, you should test installing it using the [Mage
 One way to do this follows:
 
 1.	[Package your component] in a GitHub repository that's accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
-2.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
+1.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
 	To create a static route, add a line similar to the following to your `hosts` file:
 
 		<IP or hostname of your GitHub repository> https://repo.magento.com
 
-3.	[Install your component] exactly like a merchant.
-4.	Verify the component installed properly.
+1.	[Install your component] exactly like a merchant.
+1.	Verify the component installed properly.
 
 ## More information
 
-See these resources on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components:
+See these resources for testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components:
 
 * [Magento Marketplace Extension Quality Program Coding Standard] provides a set of rules and sniffs for [PHP_CodeSniffer] tool
 * [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program] (video) from Magento Imagine 2017

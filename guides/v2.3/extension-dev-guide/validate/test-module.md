@@ -1,9 +1,6 @@
 ---
 group: php-developer-guide
 title: Test your component
-redirect_from:
-  - /guides/v2.0/mktpl-quickstart/dev-test.html
-  - /guides/v2.1/mktpl-quickstart/dev-test.html
 ---
 
 ## Unit and Integration Tests {#test-unit}
@@ -14,7 +11,7 @@ See the [Magento Testing Overview].
 ## Functional testing {#test-functional}
 
 For further testing with the Magento functional testing frameworks, see
-[Functional Testing Framework].
+[Functional Testing Framework] and [Magento Functional Testing Framework].
 
 ## Test using {{site.data.var.ce}} {#test-comm}
 
@@ -47,7 +44,7 @@ One way to do this follows:
 
 ## More information
 
-See these resources on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components:
+See these resources for testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components:
 
 * [Magento Marketplace Extension Quality Program Coding Standard] provides a set of rules and sniffs for [PHP_CodeSniffer] tool
 * [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program] (video) from Magento Imagine 2017
@@ -57,6 +54,7 @@ See these resources on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a
 
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/2.3/introduction.html
 [register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Magento Component Manager]: {{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
 [Web Setup Wizard]: https://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
