@@ -54,13 +54,15 @@ We have channels for each project. These channels are recommended for new member
 
 - *GitHub* [Magento 2 Docker][37] by [Mark Shust][38] (supports Magento 2.3.0, PHP 7.2, Elasticsearch)
 - *Presentation* [48 Hour Launches and Other Lessons Learned With Large-Scale Digital Transformations][29] by Joshua Warren of Creatuity
-- *Blog post* [Magento 2 - Launch Checklist][21] by Syed Muneeb Ul Hasan 
-- *Presentation* [Magento 2 Deployment: What you should know][4] by Olga KopyLova
+- *Blog post* [Magento 2 - Launch Checklist][21] by [Syed Muneeb Ul Hasan][42]
+- *Presentation* [Magento 2 Deployment: What you should know][4] by [Olga KopyLova][43]
 - *Blog post* [Magento 2 deployment without the downtime][5] by Robert Egginton
-- *Blog post* [Deploying Magento 2 - History & Overview][6] by Matthias Walter
-- *Blog post* [Deploying Magento 2 using Capistrano][17] by David Alger
-- *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by Nick Rigby
+- *Blog post* [Deploying Magento 2 - History & Overview][6] by [Matthias Walter][44]
+- *Blog post* [Deploying Magento 2 using Capistrano][17] by [David Alger][45]
+- *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by [Nick Rigby][46]
 - *GitHub* [Magento 2 Docker][18] by meanbee
+- *GitHub* [Magento 2 Dockergento][39] by ModestCoders
+- *Presentation* [Zero Downtime in Magento 2, Is it Possible?][40] by [Óscar Recio][41]
 
 ## Automated Testing
 
@@ -129,3 +131,11 @@ We have channels for each project. These channels are recommended for new member
 [36]: https://www.maxpronko.com/all-courses/
 [37]: https://github.com/markoshust/docker-magento
 [38]: https://twitter.com/markshust
+[39]: https://github.com/ModestCoders/magento2-dockergento
+[40]: https://www.slideshare.net/OscarRecioSoria/zero-downtime-in-magento-2-is-it-possible
+[41]: https://twitter.com/osrecio
+[42]: https://twitter.com/syed_muneebb
+[43]: https://twitter.com/buskamuza
+[44]: https://twitter.com/mat_walter
+[45]: https://twitter.com/blackbooker
+[46]: https://twitter.com/nick_rigby
