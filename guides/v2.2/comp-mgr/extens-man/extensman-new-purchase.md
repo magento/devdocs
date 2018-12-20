@@ -17,6 +17,8 @@ When you're installing new purchases from Magento Marketplace, the page displays
 
 ![]({{ site.baseurl }}/common/images/extensman_new-purchases-step3install.png){: width="500px"}
 
+### Install the purchase
+
 If the list of purchases is correct, click **Install**.
 
 Messages display in the Console Log as your new purchases are installed. Following is a sample of some of these messages:
@@ -84,7 +86,7 @@ Module 'Magento_Store':
 Module 'Magento_SwatchesLayeredNavigation':
 ... more ...
 Module 'Magento_ThemeSampleData':
-Installing data... 
+Installing data...
 Module 'Magento_TaxImportExport':
 Module 'Magento_NewRelicReporting':
 Module 'Magento_CatalogSampleData':
@@ -97,3 +99,11 @@ When the installation is complete, a page similar to the following displays:
 ![]({{ site.baseurl }}/common/images/extensman_new-purchases_finish.png){: width="200px"}
 
 Click **Back to Setup Tool**.
+
+### Clean the cache
+
+If the update is successful, clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+```bash
+bin/magento cache:clean
+```
