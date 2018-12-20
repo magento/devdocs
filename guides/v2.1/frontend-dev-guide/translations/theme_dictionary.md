@@ -36,7 +36,7 @@ For example, this approach is used in the Magento Luma theme. It has the [`<Mage
 
 It is important to remember that if you generate a dictionary for your theme using the [i18n tool] with the conventional names and locations for the dictionary, the existing dictionary gets overwritten. 
 
-We recommend the following workflow to add custom strings:
+To add custom strings:
 
 1. [Generate the dictionary] for your theme.
 1. Change the necessary values in the right column.
@@ -48,7 +48,7 @@ See the [Create a translation dictionary for a theme] topic for the practical il
 
 ## Creating locale dictionaries
 
-When creating locale dictionaries for your theme, use the default strings as keys. Do not create translates using the custom keys you may have created and overwritten in your default locale dictionary. 
+When creating locale dictionaries for your theme, use the default strings as keys. Do not create translations using the custom keys you may have created and overwritten in your default locale dictionary. 
 
 Continuing the previous example with the Luma theme, we changed "Add to Wish List" to "Wish List" in `en_US.csv`. In the `de_DE.csv` dictionary, use the original, default key of "Add to Wish List" to enter your translation. Do not use the custom value "Wish List" for translations. 
 

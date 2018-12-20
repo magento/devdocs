@@ -18,18 +18,13 @@ This topic discusses how to generate:
 -   Translation dictionaries, which are a convenient way to customize or translate *some* words and phrases, such as those for a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 -   Language packages, which enable you to translate *any or all* words and phrases in the Magento application.
 
-For more information, see [Translations overview].
+See [Translations overview].
 
-We also accept [Community Engineering contributions] using CrowdIn for translations. We plan to provide translation packs through the project. Join us and other contributors around the globe working to localize Magento.
+We also accept [Community Engineering contributions] using CrowdIn for translations. The project may include package creation and further support using the contributed translations. Join us and other contributors around the globe working to localize Magento!
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 
-You can generate a translation dictionary to customize existing strings, translate words and phrases in a custom module, localize a theme, or for a {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %}. 
-
-See one of the following sections:
-
--   [About translation dictionaries]
--   [Work with translation dictionaries](#config-cli-subcommands-xlate-dict-dict)
+You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language packages{% endglossarytooltip %}. 
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
 
@@ -37,7 +32,7 @@ To begin translating, use a command to generate a dictionary `.csv` file with a 
 
 Generate the dictionary and translate:
 
-1.  Run the translation collection command to extract translatable words and phrases from enabled components. Content extracts into a `.csv` file.
+1.  Extract translatable words and phrases from enabled components using the translati9on collection command. Content extracts into a `.csv` file.
 1.  Translate the existing words and phrases. You can also add additional custom terms as needed.
 
 You have options for using the translated dictionary:
@@ -320,7 +315,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 [Translate theme strings]: {{ page.baseurl }}/frontend-dev-guide/translations/translate_theory.html
 [Translations overview]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html
 [Community Engineering contributions]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translations-project
-[About translation dictionaries]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries
+[translation dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-dictionaries
 [configures the translations]: http://docs.magento.com/m2/ce/user_guide/stores/store-language-add.html?Highlight=translation
 [Learn more about language packages]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack
 [ISO 639-1]: http://www.iso.org/iso/home/standards/language_codes.htm

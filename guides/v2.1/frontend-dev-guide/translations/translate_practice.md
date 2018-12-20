@@ -33,7 +33,7 @@ To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file.
     "Add to Compare", "Compare"
     "Add to Wish List", "Wishlist"
     ```
-1. Run deploy command to get localization changes:
+1. Run the `deploy` command to get localization changes:
 
     ```bash
     php bin/magento setup:static-content:deploy
@@ -41,7 +41,7 @@ To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file.
 
 ## Results 
 
-When the OrangeCo applies the orange theme, the custom strings are used instead of the default. 
+When OrangeCo applies the orange theme, the custom strings are used instead of the default. 
 
 For example:
 

@@ -7,7 +7,7 @@ functional_areas:
 
 The Magento application enables you to localize your store for multiple regions and markets. We improved the localization and customization of Magento instances by making translation dictionaries easier to update and by maintaining a reduced amount of code coupling and duplication.
 
-We also accept [Community Engineering contributions](#translations-project) using CrowdIn for translations. We plan to provide translation packs through the project.
+Also, we accept [Community Engineering contributions](#translations-project) using CrowdIn for translations. The project may include package creation and further support using the contributed translations.
 
 ## Translations terms {#translate_terms}
 
@@ -21,7 +21,7 @@ A *translation dictionary* is a comma-separated value (.csv) file with at least 
 "Address %1 of %2","Adresse %1 von %2"
 ```
 
-*UI text strings* are the text elements in the Magento Admin, including field names, instructions, notifications, and table and grid labels. When localizing Magento, you use translations of these strings using the translation dictionary content.
+*UI text strings* are the text elements in the Magento Admin, including field names, instructions, notifications, and table and grid labels. When localizing Magento, you replace these strings with translation dictionary content.
 
 A *language package* is basically a collection of translation dictionaries for a particular language together with meta-information. You can also distribute language packages to other merchants if you wish. [More information about language packages](#m2devgde-xlate-languagepack).
 
@@ -40,12 +40,12 @@ Localizing Magento storefronts and the Admin panel gives your company global pre
 
 	*	An entire dictionary in one directory.
 
-		This is intended to be used and distributed as a standalone component (similar to modules and themes).
+		Use and distribute the dictionary as a standalone component (similar to modules and themes).
 *	Customize the default strings in Magento. For example, changing "Add to Wish List" to "Wish List".
 *	Use ready-to-use language packages prepared by other users or create your own. The [Magento Marketplace] offers language packs to download and install.
 *	Create localizations based on existing, or parent, translations using [language inheritance]. Inheritance means (among other things) that if you missed or omitted localizing some phrases or terms, parent translations are used.
 *	Customize your translations further by creating more than one version of a translation for the same language.
-*	Contribute to Magento translations through [Magento CrowdIn project] with Magento Community Engineering. We encourage translation contributions and efforts in the project for future language packs. Learn more about the [Translations project](#translations-project).
+*	Contribute to [Magento translations](#translations-project) through [Magento CrowdIn project] with Magento Community Engineering. We encourage translation contributions and efforts in the project for future language packs. 
 
 Depending on your needs, you can use the existing [language packages](#m2devgde-xlate-languagepack), [translate Magento by yourself](#m2devgde-xlate-translating), or [contribute](#translations-project).
 
@@ -57,7 +57,6 @@ Depending on your needs, you can use the existing [language packages](#m2devgde-
 
 ### More information
 
-See one of the following sections for more information:
 * [Theme dictionaries](#m2devgde-xlate-themes)
 * [Manually translate words and phrases](#m2devgde-xlate-translating)
 * [Translation dictionaries](#m2devgde-xlate-dictionaries)
@@ -159,9 +158,9 @@ Community Engineering accepts translation contributions through the [Magento Cro
 1. Expand and locate an area of UI text strings to translate. Strings marked red need a translation, and marked green have existing translations.
 1. Enter or review translations for strings. For more information, see the [CrowdIn knowledge base].
 
-Magento admins will review and approve translations as available. We plan to expand the project to generate and provide language packs using these approved translations.
+Magento admins will review and approve translations as available. The project may include package creation and further support using the contributed and approved translations. 
 
-If you need help understanding the context or meaning of a UI string, or have questions, chat with us in the Community Engineering [Translations Slack channel]. To join, send us request at [engcom@magento.com] or [self signup].
+If you need help understanding the context or meaning of a UI string, or have questions about the project, chat with us in the Community Engineering [Translations Slack channel]. To join, send a request to [engcom@magento.com] or [self signup].
 
 ## Additional information
 
