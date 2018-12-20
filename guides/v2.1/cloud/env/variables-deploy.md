@@ -211,7 +211,7 @@ The read-only connection is not available for use in the Integration environment
 
 ### `SCD_COMPRESSION_LEVEL`
 
--  **Default**—`6`
+-  **Default**—`6` (build stage) or `4` (deploy stage)
 -  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
@@ -219,7 +219,7 @@ Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0`
 ```yaml
 stage:
   deploy:
-    SCD_COMPRESSION_LEVEL: 4
+    SCD_COMPRESSION_LEVEL: 5
 ```
 
 ### `SCD_EXCLUDE_THEMES`
