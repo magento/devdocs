@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
 ---
 
-This topic describes how to add theme strings in a way that the i18n tool collects and adds the strings to the dictionary.
+ This topic describes how to add theme strings so that the i18n tool can collect and add the strings to the dictionary.
 
 Your custom theme may contain new strings that are not present in out-of-the-box Magento themes. 
 To ensure your theme displays correctly with any language applied on a store view, verify the unique strings of your theme are added to the translation [i18n tool] when [generating the dictionary].
