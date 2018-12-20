@@ -75,7 +75,7 @@ Populates with a value:
 
 The resulting phrase must contain at least one of each placeholder. 
 For example, suppose there are placeholders from `%1` to `%3` in the original phrase. 
-The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, or `%3`. 
+ The translation can have as many of these placeholders in any order, but there must be at least one occurrence of `%1`, `%2`, and `%3`. 
 The translation cannot contain placeholder values not present in the original value (for example, `%4`, `%5`, and so on).
 
 An example of translating a phrase:
