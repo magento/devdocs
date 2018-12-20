@@ -60,7 +60,6 @@ The following table explains this command's parameters and values.
         <th>Option</th>
         <th>Description</th>
         <th>Required?</th>
-        <th>Default</th>
     </tr>
     <tr>
         <td>&lt;languages&gt;</td>
@@ -72,82 +71,73 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td>
-        </td>
     </tr>
     <tr>
         <td>--language (-l)</td>
         <td>
-            <p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time.</p>
+            <p>Generate files only for the specified languages. The default, with no option specified, is to generate files for all <a href="http://www.loc.gov/standards/iso639-2/php/code_list.php">ISO-639</a> language codes. You can specify the name of one language code at a time. Default value is <b>all</b>.</p>
             <p>For example, <code>--language en_US --language es_ES</code></p>
         </td>
         <td>
             <p>No</p>
         </td>
-        <td>all</td>
     </tr>
     <tr>
         <td>--exclude-language</td>
         <td>
-            <p>Generate files for the specified language codes. The default, with no option specified, is to exclude nothing. You can specify the name of one language code or a comma-separated list of language codes.</p>
+            <p>Generate files for the specified language codes. The default, with no option specified, is to exclude nothing. You can specify the name of one language code or a comma-separated list of language codes. Default value is <b>none</b>.</p>
         </td>
         <td>
             <p>No</p>
         </td>
-        <td>none</td>
     </tr>
     <tr>
         <td>--theme &lt;theme&gt;</td>
         <td>
-            <p>Themes for which to deploy static content.</p>
+            <p>Themes for which to deploy static content. Default value is <b>all</b>.</p>
             <p>For example, <code>--theme Magento/blank --theme Magento/luma</code></p>
         </td>
         <td>
             <p>No</p>
         </td>
-        <td>all</td>
     </tr>
     <tr>
         <td>--exclude-theme &lt;theme&gt;</td>
         <td>
-            <p>Themes to exclude when deploying static content.</p>
+            <p>Themes to exclude when deploying static content. Default value is <b>none</b>.</p>
             <p>For example, <code>--exclude-theme Magento/blank</code></p>
         </td>
         <td>
             <p>No</p>
         </td>
-        <td>none</td>
     </tr>
     <tr>
         <td>--area (-a)</td>
         <td>
-            <p>Generate files only for the specified areas. The default, with no option specified, is to generate files for all areas. Valid values are <code>adminhtml</code> and <code>frontend</code>.</p>
+            <p>Generate files only for the specified areas. The default, with no option specified, is to generate files for all areas. Valid values are <code>adminhtml</code> and <code>frontend</code>. Default value is <b>all</b>.</p>
             <p>For example, <code>--area adminhtml</code></p>
         </td>
         <td>
             <p>No</p>
         </td>
-        <td>all</td>
     </tr>
     <tr>
         <td>--exclude-area</td>
         <td>
-            <p>Do not generate files for the specified areas. The default, with no option specified, is to exclude nothing.</p>
+            <p>Do not generate files for the specified areas. The default, with no option specified, is to exclude nothing. Default value is <b>none</b>.</p>
         </td>
         <td>
             <p>No</p>
         </td>
-        <td>none</td>
     </tr>
     <tr>
         <td>--jobs (-j)</td>
         <td>
-            <p>Enable parallel processing using the specified number of jobs. The default is 0 (do not run in parallel processes).</p>
+            <p>Enable parallel processing using the specified number of jobs. The default is 0 (do not run in parallel processes). Default value is <b>0</b>.</p>
         </td>
         <td>
             <p>No</p>
         </td>
-        <td>0</td>
     </tr>
     <tr>
         <td>--symlink-locale</td>
@@ -157,7 +147,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--content-version=CONTENT-VERSION</td>
@@ -167,7 +156,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--no-javascript</td>
@@ -177,7 +165,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--no-css</td>
@@ -187,7 +174,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--no-less</td>
@@ -197,7 +183,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--no-images</td>
@@ -207,7 +192,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--no-fonts</td>
@@ -217,7 +201,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>
@@ -229,7 +212,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--no-misc</td>
@@ -239,7 +221,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--no-html-minify</td>
@@ -249,7 +230,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>
@@ -272,7 +252,6 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     <tr>
         <td>--force (-f)</td>
@@ -282,10 +261,9 @@ The following table explains this command's parameters and values.
         <td>
             <p>No</p>
         </td>
-        <td></td>
     </tr>
     </tbody>
-</table>
+</table> 
 
 {: .bs-callout .bs-callout-info}
 If you specify values for both `<languages>` and `--language`, `<languages>` takes precedence.
