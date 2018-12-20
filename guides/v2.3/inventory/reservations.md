@@ -80,7 +80,7 @@ The following example shows the sequence of reservations generated for a simple 
    event_type = order_canceled
    ```
 
-3. The merchant ships the remaining 20 units.
+3. The merchant ships the purchased 20 units.
 
    ```
    reservation_id = 3
