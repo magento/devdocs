@@ -77,7 +77,7 @@ __($this->config->getData('label'))
 
 ## Strings added in .js files {#add_strings_js}
 
-To ensure that the text you add in a `.js` file is collected by the i18n tool and added to the dictionary, do the following:
+To ensure that the text you add in a `.js` file is collected by the i18n tool and added to the dictionary:
 
 1. Link the `mage/translate` library:
 
