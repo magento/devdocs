@@ -52,7 +52,9 @@ The metadata `event_type` can have the following values:
 * `creditmemo_created`
 * `invoice_created`
 
-Currently, the metadata object type must be `order`, and the object ID is the order ID. In the future, it might be possible to create a reservation when a customer adds an item to a shopping cart. Each item could be reserved for a fixed amount of time, such as 15 minutes, allowing the customer to reserve items while continuing to shop. When this type of reservation is enabled, the metadata could contain additional types of information.
+Currently, the metadata object type must be `order`, and the object ID is the order ID. 
+
+In future releases, it might be possible to create a reservation when a customer adds an item to a shopping cart. Each item could be reserved for a fixed amount of time, such as 15 minutes, allowing the customer to reserve items while continuing to shop. When this type of reservation is enabled, the metadata could contain additional types of information.
 
 ## Reservation lifecycle
 
