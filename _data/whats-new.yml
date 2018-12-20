@@ -4,8 +4,44 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-# updated: $to-be-rewritten
+updated: 2018-12-20 14:21:59 -0600
 entries:
+- description: Added a missing parameter to the message queue consumer [reference
+    documentation](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-queue.html).
+  versions: 2.x
+  type: Major update
+  date: December 15
+  link: https://github.com/magento/devdocs/pull/3456
+- description: Added information for the `setup:di:compile` step for [Install extensions
+    from the command line](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html),
+    [Install the B2B extension](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html),
+    and [Create an integration](https://devdocs.magento.com/guides/v2.2/get-started/create-integration.html).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: December 15
+  link: https://github.com/magento/devdocs/pull/3466
+- description: Added a note in Cloud guide about using PHP constants with certain
+    versions of the `symfony/yaml` package.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: December 14
+  link: https://github.com/magento/devdocs/pull/3446
+- description: Improved custom indexer code and information in [Adding a custom indexer](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/indexing-custom.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: December 14
+  link: https://github.com/magento/devdocs/pull/3465
+- description: Added missing [cache information](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html).
+  versions: 2.3.x
+  type: Major update
+  date: December 13
+  link: https://github.com/magento/devdocs/pull/3452
+- description: 'Added corrected validation to Step 4 in [Customize Checkout: Add custom
+    shipping carrier validations](https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_carrier.html).'
+  versions: 2.x
+  type: Technical changes
+  date: December 13
+  link: https://github.com/magento/devdocs/pull/3458
 - description: Added missing parameters and descriptions to the [store configuration](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-store.html)
     topic.
   versions: 2.1.x, 2.2.x, 2.3.x
