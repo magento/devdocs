@@ -1,0 +1,2770 @@
+title: Whats New on Devdocs
+description: |
+  This page contains recent changes that we think you'd like to know about.
+  We exclude from this list proofreading, spelling checks, and all minor updates.
+link: /whats-new.html
+thread: /whatsnew-feed.xml
+updated: 2018-12-20 14:21:59 -0600
+entries:
+- description: Added a missing parameter to the message queue consumer [reference
+    documentation](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-queue.html).
+  versions: 2.x
+  type: Major update
+  date: December 15
+  link: https://github.com/magento/devdocs/pull/3456
+- description: Added information for the `setup:di:compile` step for [Install extensions
+    from the command line](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html),
+    [Install the B2B extension](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html),
+    and [Create an integration](https://devdocs.magento.com/guides/v2.2/get-started/create-integration.html).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: December 15
+  link: https://github.com/magento/devdocs/pull/3466
+- description: Added a note in Cloud guide about using PHP constants with certain
+    versions of the `symfony/yaml` package.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: December 14
+  link: https://github.com/magento/devdocs/pull/3446
+- description: Improved custom indexer code and information in [Adding a custom indexer](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/indexing-custom.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: December 14
+  link: https://github.com/magento/devdocs/pull/3465
+- description: Added missing [cache information](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-cache.html).
+  versions: 2.3.x
+  type: Major update
+  date: December 13
+  link: https://github.com/magento/devdocs/pull/3452
+- description: 'Added corrected validation to Step 4 in [Customize Checkout: Add custom
+    shipping carrier validations](https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_carrier.html).'
+  versions: 2.x
+  type: Technical changes
+  date: December 13
+  link: https://github.com/magento/devdocs/pull/3458
+- description: Added missing parameters and descriptions to the [store configuration](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-store.html)
+    topic.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: December 11 2018
+- description: Magento backup feature is deprecated as of v2.1.16, v2.2.7, and v2.3.0.
+    Added content to enable the backup feature in [Back up and roll back the file
+    system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html),
+    [Step 3. Back up the file system and database](https://devdocs.magento.com/guides/v2.3/comp-mgr/upgrader/upgrade-backup.html),
+    [Step 2. Back up the file system and database](https://devdocs.magento.com/guides/v2.3/comp-mgr/module-man/compman-backup.html),
+    and [Troubleshoot backups](https://devdocs.magento.com/guides/v2.3/comp-mgr/trouble/cman/tshoot_backup.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: December 10 2018
+- description: Backported [asynchronous](https://devdocs.magento.com/guides/v2.2/rest/asynchronous-web-endpoints.html)
+    and [bulk](https://devdocs.magento.com/guides/v2.2/rest/bulk-endpoints.html) REST
+    documentation to 2.2
+  versions: 2.2.x
+  type: New topic
+  date: December  8 2018
+- description: Updated the Cloud guide instructions for [Upgrading to Magento version](https://devdocs.magento.com/guides/v2.3/cloud/project/project-upgrade.html)
+    2.3.<br/>Updated the [Elasticsearch setup](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html)
+    topic in the Cloud guide.
+  versions: 2.3.x
+  type: Technical changes
+  date: December  7 2018
+- description: Added Docker project by Mark Shust to the [Community Resources](https://devdocs.magento.com/community/resources/resources.html).
+  versions: 2.x
+  type: Major update
+  date: December  5 2018
+- description: "- Updated the Magento Commerce Cloud instructions for [customizing
+    response pages](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-fastly-custom-response.html)<br/>for
+    Fastly CDN and WAF services--adding additional screen captures and explanation.<br/>-
+    Edited the [Managed Cloud WAF](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-waf-service.html)
+    documentation to clarify information about features and benefits"
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: December  5 2018
+- description: Added a new section to the Cloud guide called [Optimize cloud deployment](https://devdocs.magento.com/guides/v2.2/cloud/deploy/optimize-cloud-deployment.html).
+    This section includes a fresh overview of the Cloud deployment process, SCD strategies,
+    and Smart wizards.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: December  4 2018
+- description: Added sections documenting backward incompatible changes:<br/>- 2.1.15-2.1.16
+    [OpenSource](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html#releases-2_1_15-2_1_16),
+    [Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html#releases-2_1_15-2_1_16)<br/>-
+    2.2.6-2.2.7 [OpenSource](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#releases-2_2_6-2_2_7),
+    [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html#releases-2_2_6-2_2_7)<br/>-
+    2.1.0-2.3.0 [OpenSource](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html#releases-2_1_0-2_3_0),
+    [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html#releases-2_1_0-2_3_0)<br/>-
+    2.2.0-2.3.0 [OpenSource](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html#releases-2_2_0-2_3_0),
+    [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html#releases-2_2_0-2_3_0)
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: November 30 2018
+- description: "[Index and constraint definitions](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html)
+    in declarative schema now contain the `referenceId` attribute instead of `name`."
+  versions: 2.3.x
+  type: Major update
+  date: November 29 2018
+- description: Added a new [Enable EAV indexer](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/indexer-batch.html)
+    section to the indexer optimization topic..
+  versions: 2.3.x
+  type: Major update
+  date: November 28 2018
+- description: Updated release information for Inventory Management (MSI) and GraphQL
+    in 2.3.0 Release Notes for [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0Commerce.html).
+  versions: 2.3.x
+  type: Major update
+  date: November 28 2018
+- description: Updated and added Security Guidelines to the [Coding Standards](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html)
+    for all versions.
+  versions: 2.x
+  type: Major update
+  date: November 27 2018
+- description: Added documentation for for the `cmsPage` and `cmsBlock` [GraphQL queries](https://devdocs.magento.com/guides/v2.3/graphql/reference/cms.html).
+  versions: 2.3.x
+  type: New topic
+  date: November 26 2018
+- description: Added a fresh, new look to the [Cloud release notes](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html)
+    format.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: November 21 2018
+- description: Added the [GraphQL quote endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/quote.html)
+    topic
+  versions: 2.3.x
+  type: New topic
+  date: November 21 2018
+- description: Generated topics for all modules in the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html)
+    from the corresponding READMEs.
+  versions: 2.3.x
+  type: Major update
+  date: November 20 2018
+- description: Added `CatalogInventory` attributes to the [products query](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: November 16 2018
+- description: Added content to [Deprecated ScalableInventory entities](https://devdocs.magento.com/guides/v2.3/inventory/scalable-inventory-replacements.html)
+  versions: 2.3.x
+  type: Major update
+  date: November 16 2018
+- description: Added the [Source selection algorithms](https://devdocs.magento.com/guides/v2.3/inventory/source-selection-algorithms.html)
+    topic
+  versions: 2.3.x
+  type: New topic
+  date: November 16 2018
+- description: Release notes for Cloud ece-tools version [2002.0.15](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002015)<br/>Added
+    a new [Cron container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html#cron-container)
+    to the Cloud Docker architecture.<br/>Added a [services table](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-config.html)
+    to clarify the service key and version values available for the Cloud Docker environment
+    setup.<br/>There are several other Cloud Docker updates, such as a new a PHP 7.2
+    image and various services, the ability to [share data between host and container](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container),  and
+    information on [importing a database dump](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html#database-container).<br/>Added
+    a [Quick Reference](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-quick-reference.html)
+    for the Docker environment.<br/>Added the [ENABLE_GOOGLE_ANALYTICS environment
+    variable](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#enable-google-analytics).<br/>Moved
+    the [Global environment variables](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-global.html)
+    to a new, independent topic.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: November 14 2018
+- description: 'MFTF 2.3.11: Added the [mftf run:failed](https://devdocs.magento.com/mftf/2.3/commands/mftf.html#runfailed)
+    command to rerun the previously failed tests.'
+  versions: 2.3.x
+  type: Major update
+  date: November 14 2018
+- description: Updated the [Inventory Management REST tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/inventory/index.html)
+    to use sample data and added a step for [mass transferring products](https://devdocs.magento.com/guides/v2.3/rest/tutorials/inventory/bulk-transfer-products.html).
+  versions: 2.3.x
+  type: Major update
+  date: November 14 2018
+- description: Added a topic about [Credentials in the MFTF](https://devdocs.magento.com/mftf/2.3/credentials.html).
+  versions: 2.3.x
+  type: New topic
+  date: November  9 2018
+- description: Added the topic [Start message queue consumers](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-queue.html).
+  versions: 2.3.x
+  type: New topic
+  date: November  8 2018
+- description: 'Updated [migration troubleshooting](https://devdocs.magento.com/guides/v2.2/migration/migration-troubleshooting.html)
+    guide with corrected info about the error that occurs when the Deltalog is not
+    installed:'
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: November  6 2018
+- description: Added a new [product attribute reference section](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/attributes.html#add-product-eav-attribute-options-reference).
+  versions: 2.x
+  type: Major update
+  date: November  6 2018
+- description: Added [Reporting in the MFTF](https://devdocs.magento.com/mftf/2.3/reporting.html).
+  versions: 2.3.x
+  type: New topic
+  date: November  2 2018
+- description: Added a note about important tables for [delta migrations](https://devdocs.magento.com/guides/v2.2/migration/migration-migrate-delta.html).
+    Also, added an example to the [troubleshooting page](https://devdocs.magento.com/guides/v2.2/migration/migration-troubleshooting.html)
+    with specific error type reference.
+  versions: 2.1.x, 2.2.x
+  type: Major update
+  date: October 30 2018
+- description: Added [Health notifications](https://devdocs.magento.com/guides/v2.2/cloud/integrations/health-notifications.html)
+    to [Integrations](https://devdocs.magento.com/guides/v2.2/cloud/integrations/cloud-integrations.html)
+    for Cloud.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: October 29 2018
+- description: Added new resource links from Alessandro Ronchi and Joshua Warren and
+    Slack information for [Community Resources](https://devdocs.magento.com/community/resources/resources.html).
+  versions: 2.x
+  type: Major update
+  date: October 29 2018
+- description: Updated the [Contributing process](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md)
+    for DevDocs with updates to the [Community Resources](https://devdocs.magento.com/community/resources/resources.html)
+    and [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+  versions: 2.x
+  type: Major update
+  date: October 26 2018
+- description: 'Added documentation for Inventory Management REST endpoints: [low
+    stock notifications](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-low-quantity.html),
+    [salable quantities](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/check-salable-quantity.html),
+    and [source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html)'
+  versions: 2.3.x
+  type: New topic
+  date: October 26 2018
+- description: Updated coding standards based on PSR2 from Zend Framework in [Global
+    features that support extensibility](https://devdocs.magento.com/guides/v2.2/architecture/global_extensibility_features.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: October 25 2018
+- description: Updated the Magento Commerce Cloud Fastly documentation with information
+    about the Magento Managed Cloud WAF solution. See [Managed Cloud WAF](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-waf-service.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: October 22 2018
+- description: Added guidelines how to [Set up a standalone MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#set-up-a-standalone-mftf).
+  versions: 2.3.x
+  type: Major update
+  date: October 19 2018
+- description: Added [MSI (Inventory Management)](https://devdocs.magento.com/guides/v2.3/inventory/index.html)
+    topics
+  versions: 2.3.x
+  type: New topic
+  date: October 19 2018
+- description: Added [Community contributed best practices](https://devdocs.magento.com/community/resources/best-practices.html)
+    section and navigation to the [Community Resources](https://devdocs.magento.com/community/resources/resources.html).
+  versions: 2.x
+  type: New topic
+  date: October 18 2018
+- description: Corrected a code sample in [Configure declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html)
+  versions: 2.3.x
+  type: Technical changes
+  date: October 12 2018
+- description: Updated the Cloud set up [Services](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_services.html)
+    articles to clarify that the instructions apply to the Magento Commerce Pro Integration
+    environment and Starter environments only.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: October 12 2018
+- description: Added code samples to [Construct a request](https://devdocs.magento.com/guides/v2.1/get-started/gs-web-api-request.html)
+  versions: 2.x
+  type: Technical changes
+  date: October 12 2018
+- description: 'Updated shell commands that change a file permission to run much faster
+    when using in combination with the `find` command. For more details, refer to
+    the #3024 issue.'
+  versions: 2.x
+  type: Technical changes
+  date: October 11 2018
+- description: Added a list of [common email template variables](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-email.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: October 10 2018
+- description: 'MFTF:<br/>- New release: [2.3.8](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md)<br/>-
+    Changed obsolete `--lines` to `--time` in the [`mftf generate:tests`](https://devdocs.magento.com/mftf/2.3/commands/mftf.html#generatetests)'
+  versions: 2.3.x
+  type: Technical changes
+  date: October 10 2018
+- description: Added [contact information](https://devdocs.magento.com/guides/v2.2/release-notes/cbe-support-info.html)
+    for reporting issues with third-party bundled extensions.
+  versions: 2.2.x
+  type: New topic
+  date: October  9 2018
+- description: Added [Multi-Repo Docs](https://devdocs.magento.com/community/resources/multi-repo-docs.html)
+    features and overview
+  versions: 2.x
+  type: New topic
+  date: October  7 2018
+- description: MFTF 2.3.7 release:<br/>Updated the [pressKey](https://devdocs.magento.com/mftf/2.3/test/actions.html#presskey)
+    action.<br/>Updated the [action group argument](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#data-type-usage)
+    syntax for a value based on data entity resolution.<br/>Added the [DEFAULT_TIMEZONE](https://devdocs.magento.com/mftf/2.3/configuration.html#default_timezone)
+    configuration parameter.
+  versions: 2.3.x
+  type: Technical changes
+  date: October  5 2018
+- description: Added a 2.3 [product availability](https://devdocs.magento.com/availability.html)
+    topic.
+  versions: 2.3.x
+  type: New topic
+  date: October  5 2018
+- description: Updated the [1.3.1 technical guideline](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#1-basic-programming-principles).
+  versions: 2.x
+  type: Major update
+  date: October  4 2018
+- description: Corrected the instructions for optimizing JavaScript files using the
+    [JavaScript bundling](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/js-bundling.html)
+    technique.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: October  3 2018
+- description: Added [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.2/security/two-factor-authentication.html)
+    and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html)
+    installation and troubleshooting information for [Security settings](https://devdocs.magento.com/guides/v2.2/config-guide/secy/secy.html).
+  versions: 2.1.x, 2.2.x
+  type: New topic
+  date: October  1 2018
+- description: Added [Contribution awards and points](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html#points)
+    section to the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: September 27 2018
+- description: Updated the [Release notes for ece-tools version 2002.0.14.](http://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html#v2002014)<br/>Renamed
+    Local environment setup to Local development. Added new [Docker development](https://devdocs.magento.com/guides/v2.2/cloud/docker/docker-development.html)
+    architecture.<br/>Added [Reset cron jobs](http://devdocs.magento.com/guides/v2.1/cloud/trouble/reset-cron-jobs.html)
+    topic to version 2.1.<br/>And other minor Cloud guide fixes for broken links and
+    a bad redirect for the ece-tools update.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: September 25 2018
+- description: Updated [declarative schema](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/migration-commands.html)
+    command names and parameters.
+  versions: 2.3.x
+  type: Technical changes
+  date: September 21 2018
+- description: Added a step to configure a webhook for the Magento Cloud [BitBucket
+    integration](https://devdocs.magento.com/guides/v2.2/cloud/integrations/bitbucket-integration.html).
+  versions: 2.1.x, 2.2.x
+  type: Technical changes
+  date: September 21 2018
+- description: Updated the backward incompatible changes for [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#releases-2_2_5-2_2_6)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html#releases-2_2_5-2_2_6)
+    after the Magento 2.2.6 release.
+  versions: 2.2.x
+  type: Major update
+  date: September 18 2018
+- description: Updated the backward incompatible changes for [Open Source](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html#releases-2_1_14-2_1_15)
+    and [Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html#releases-2_1_14-2_1_15)
+    after the Magento 2.1.15 release.
+  versions: 2.1.x
+  type: Major update
+  date: September 18 2018
+- description: Added details about the [`\Magento\Store\Api\StoreResolverInterface`
+    deprecation](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/index.html#storemanager-instead-of-storeresolve).
+  versions: 2.3.x
+  type: Technical changes
+  date: September 17 2018
+- description: Added announcements and supported pull requests for [v2.1](https://devdocs.magento.com/guides/v2.1/contributor-guide/contributing.html),
+    [v2.2](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html),
+    and [v2.3](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html)
+    Contributing guide. Updated the [basic template](https://devdocs.magento.com/guides/v2.2/contributor-guide/templates/basic_template.html)
+    for DevDocs contributions.
+  versions: 2.x
+  type: Major update
+  date: Sep 14 2018
+- description: Updated the 2.3 [Swagger reference](https://devdocs.magento.com/swagger/index_23.html)
+    to include Open Source, MSI, Commerce, and B2B endpoints.
+  versions: 2.3.x
+  type: Technical changes
+  date: Sep 14 2018
+- description: __MFTF 2.3.6 updates:__<br/>Added MAGENTO_CLI_COMMAND_PATH to the [configuration](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.3/configuration.html).<br/>Fixed
+    the `grabId` test step in the [deleteData](https://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/2.3/test/actions.html#deletedata)
+    examples.<br/>Added an option to the [`mftf` CLI](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.3/commands/mftf.html)
+    to remove previously generated suites and tests.<br/>The [`testCaseId` annotation](https://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/2.3/test/annotations.html#testcaseid)
+    is now automatically prepended to `title` for the test identification.<br/>Added
+    `skipReadiness` to the [MFTF actions](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.2/test/actions.html).<br/>[Test
+    data](https://devdocs.magento.com/guides/v2.3/magento-functional-testing-framework/2.3/data.html#persist-a-data-entity-as-a-prerequisite-of-a-test)
+    no longer needs to be specific to scope.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Sep 14 2018
+- description: Added a note regarding developer mode for the Developer configuration
+    options in the admin in [Configuration best practices](https://devdocs.magento.com/guides/v2.2/performance-best-practices/configuration.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Sep 12 2018
+- description: Update the Welcome page for the [Magento Commerce Cloud guide](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html)
+    and moved the location of the Cloud Guide links to the top navigation bar.
+  versions: 2.x
+  type: Major update
+  date: Sep 10 2018
+- description: Added documentation for the GraphQL [storeConfig endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/store-config.html).
+  versions: 2.3.x
+  type: New topic
+  date: Sep 10 2018
+- description: The [SCD_STRATEGY](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-build.html#scd_strategy)
+    build and deploy environment variable for Magento Commerce Cloud now works for
+    multiple  threads.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: Sep 6 2018
+- description: Updated file names in [Web API functional testing](https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html)
+  versions: 2.3.x
+  type: Technical changes
+  date: Sep 5 2018
+- description: Added a note about filtered product attributes in [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html)
+  versions: 2.3.x
+  type: Technical changes
+  date: Sep 5 2018
+- description: You can specify [configuration types](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html)
+    when running the `app:config:dump` command.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Sep 5 2018
+- description: Replaced all references to the `composer create-project --repository-url`
+    flag with `composer create-project --repository`.
+  versions: 2.x
+  type: Technical changes
+  date: Sep 5 2018
+- description: Updated [CustomAttributeMetadata endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/custom-attribute-metadata.html)
+    to include the new `attribute_options` object.
+  versions: 2.3.x
+  type: Technical changes
+  date: Sep 4 2018
+- description: Added [REST reference documentation for MSI](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-sources.html)
+  versions: 2.3.x
+  type: New topic
+  date: Sep 4 2018
+- description: Removed Fastly VCL snippet for extending the Admin timeout. Magento
+    Commerce Cloud Admin users can configure the timeout from the [Magento Admin UI](https://devdocs.magento.com/guides/v2.2/cloud/access-acct/fastly.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Sep 4 2018
+- description: The [How migration works](https://devdocs.magento.com/guides/v2.2/migration/migration-overview-how.html)
+    topic was updated to clarify the migration process.
+  versions: 2.x
+  type: Technical changes
+  date: Aug 30 2018
+- description: Added instructions for accessing the [New Relic account and managing
+    account users](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)  for
+    the New Relic APM service available with Magento Commerce Cloud.
+  versions: 2.1.x, 2.2.x
+  type: Major update
+  date: Aug 29 2018
+- description: Update the magento-cloud [CLI instructions for deleting an environment](https://devdocs.magento.com/guides/v2.1/cloud/env/environments-start.html#env-delete).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Aug 27 2018
+- description: Updated [Generate a local REST reference](https://devdocs.magento.com/guides/v2.2/rest/generate-local.html)
+    to include additional display options.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: Aug 22 2018
+- description: Corrected the list of attributes in an HTTP header in [OAuth-based
+    authentication](https://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-oauth.html).
+  versions: 2.x
+  type: Technical changes
+  date: Aug 22 2018
+- description: Documented a more secure method of [adding authentication credentials]({{page.baseurl}}/cloud/access-acct/first-time-setup_import-prepare.html#auth-json)
+    to a Cloud project.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Aug 22 2018
+- description: Add information about installing the Google reCAPTCHA and Two-Factor
+    Authentication extensions to the [Magento Commerce Cloud Store configuration documentation](https://devdocs.magento.com/guides/v2.2/cloud/configure/configuration-overview.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Aug 21 2018
+- description: Updated [Generate a local REST reference](https://devdocs.magento.com/guides/v2.1/rest/generate-local.html)
+    to include non-default options.
+  versions: 2.x
+  type: Technical changes
+  date: Aug 21 2018
+- description: "[Update topic to reflect backward-incompatible changes made in 2.3
+    regarding controllers and CSRF protection](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html)"
+  versions: 2.3.x
+  type: Major update
+  date: Aug 21 2018
+- description: Added information about breadcrumbs in the [GraphQL category](https://devdocs.magento.com/guides/v2.3/graphql/reference/categories.html)
+    topic.
+  versions: 2.3.x
+  type: Major update
+  date: Aug 20 2018
+- description: 'MFTF 2.3: Added example test steps for each [action](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/2.3/test/actions.html).'
+  versions: 2.2.x
+  type: Major update
+  date: Aug 17 2018
+- description: Updated all GitHub labels used for community contributions and added
+    information on the Magento Contributor Assistant in the [Contributor Guide](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+  versions: 2.x
+  type: Major update
+  date: Aug 16 2018
+- description: Improve instructions for [configuring multi-site URLs](https://devdocs.magento.com/guides/v2.2/cloud/project/project-multi-sites.html)
+    with Magento Commerce Cloud.
+  versions: 2.1.x, 2.2.x
+  type: Technical changes
+  date: Aug 14 2018
+- description: Updated the Fastly plugin version requirement for Fastly image optimization
+    to version 1.2.62.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Aug 14 2018
+- description: Added [Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html)
+    topic.
+  versions: 2.3.x
+  type: New topic
+  date: Aug 14 2018
+- description: Added topics on [Asynchronous web endpoints](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html)
+    and [Bulk operation status endpoints](https://devdocs.magento.com/guides/v2.3/rest/operation-status-endpoints.html).
+  versions: 2.3.x
+  type: New topic
+  date: Aug 14 2018
+- description: Update [nginx](https://devdocs.magento.com/guides/v2.2/install-gde/prereq/nginx.html)
+    PHP versions and Composer installation steps
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Aug 13 2018
+- description: Added Events to [WYSIWYG component](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/ui-wysiwyg.html).<br/>
+    Updated list of methods in [Add Custom Editor](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/components/wysiwyg/add-custom-editor/index.html#step-3-create-editor-adapter).
+  versions: 2.3.x
+  type: Major update
+  date: Aug 09 2018
+- description: Added CLI enable/disable commands for profiler in [Enable profiling
+    (MAGE_PROFILER)](https://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/mage-profiler.html)
+    for 2.2 and 2.3
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Aug 08 2018
+- description: Added the [Order Processing for MSI tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/inventory/index.html)
+  versions: 2.3.x
+  type: New topic
+  date: Aug 08 2018
+- description: Corrected the path of the `PUT /V1/companyCredits/:id` [endpoint](https://devdocs.magento.com/guides/v2.2/b2b/credit-manage.html#update-a-company-credit-limit).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: Aug 06 2018
+- description: Updated the Inbound and Outbound [Integration environment IP address
+    tables](https://devdocs.magento.com/guides/v2.2/cloud/env/environments-start.html#ipaddress).
+  versions: 2.x
+  type: Technical changes
+  date: Aug 06 2018
+- description: Added the topic [Custom routes](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/webapi/custom-routes.html).
+  versions: 2.3.x
+  type: New topic
+  date: Aug 03 2018
+- description: Added the topic [Operation Status Search](https://devdocs.magento.com/guides/v2.3/rest/operation-status-search.html).
+  versions: 2.3.x
+  type: New topic
+  date: Aug 03 2018
+- description: Updated the [Magento Functional Testing Framework documentation](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html)
+    due to the MFTF 2.3.0 release.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Aug 02 2018
+- description: Added Magento Cloud [v2.1](https://devdocs.magento.com/guides/v2.1/cloud/release-notes/cloud-tools.html)
+    and [v2.2](https://devdocs.magento.com/guides/v2.2/cloud/release-notes/cloud-tools.html)
+    release notes for `ece-tools` package v2002.0.13
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: Aug 04 2018
+- description: Updated the [Configure Docker](https://devdocs.magento.com/guides/v2.2/cloud/reference/docker-config.html)
+    documentation to include instructions for deploying to a read-only file system.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: Aug 02 2018
+- description: Added the capability to [clean static files](https://devdocs.magento.com/guides/v2.2/cloud/env/variables-deploy.html#clean_static_files)
+    generated during the build phase when deploying your site with Magento Commerce
+    Cloud.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Jul 31 2018
+- description: Added information on porting code contributions to [Code Contributions](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing.html)
+  versions: 2.x
+  type: Major update
+  date: Jul 30 2018
+- description: Added database maintenance scheduling information to the [Performance
+    Best Practices for Configuration](https://devdocs.magento.com/guides/v2.2/performance-best-practices/configuration.html)
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Jul 30 2018
+- description: Reorganized and refreshed the [Cloud Upgrades and Patches section](https://devdocs.magento.com/guides/v2.2/cloud/project/project-upgrade-parent.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: Jul 26 2018
+- description: Added local file inclusion (LFI) and remote code execution (RCE) protection
+    guidelines to the [Code Magento Standards](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: Jul 25 2018
+- description: Updated [Definition of Done](https://devdocs.magento.com/guides/v2.2/contributor-guide/contributing_dod.html)
+    with examples and guidelines.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: Jul 25 2018
+- description: Consolidated and simplified the Composer [installation instructions](https://devdocs.magento.com/guides/v2.2/install-gde/composer.html)
+    for Magento.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: Jul 23 2018
+- description: Improved the Docker configuration process to set up a Magento Commerce
+    Cloud development environment in your local workstation using ece-tools v2002.0.13
+    or later. Also added support for Redis, Varnish, and SSL services. See the [Magento
+    Commerce (Cloud) v2002.0.13 Release Notes](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Jul 23 2018
+- description: Added the [CLI instructions](https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html)
+    for upgrading Magento to 2.3.
+  versions: 2.3.x
+  type: Major update
+  date: Jul 20 2018
+- description: Added [installation instructions](https://devdocs.magento.com/guides/v2.3/release-notes/2.3.0-alpha-install.html)
+    for Commerce 2.3 Alpha.
+  versions: 2.3.x
+  type: Major update
+  date: Jul 20 2018
+- description: Updated [location](https://devdocs.magento.com/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html#mftf-tests)
+    of the MFTF tests.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: Jul 18 2018
+- description: The default username for new Magento Commerce Cloud accounts has been
+    changed from `Admin` to the Project Owner email address.
+  versions: 2.x
+  type: Technical changes
+  date: Jul 17 2018
+- description: Changed the default value for the [SKIP_HTML_MINIFICATION global variable](https://devdocs.magento.com/guides/v2.1/cloud/env/variables-global.html#skip_html_minification)
+    to `true` to minimize downtime during deployment.
+  versions: v2.2.1, v2.2.x, v2.2.3
+  type: Technical changes
+  date: Jul 13 2018
+- description: Enhanced the [hooks property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks)
+    so that you can customize the build phase further by using the `generate` and
+    `transfer` commands to perform additional actions when specifically building code
+    or moving files.
+  versions: 2.1.x, 2.2.x
+  type: Major update
+  date: Jul 12 2018
+- description: Added MSI and bulk API endpoints to [List of REST endpoints by module](https://devdocs.magento.com/guides/v2.3/rest/list.html)
+  versions: 2.3.x
+  type: Technical changes
+  date: Jul 12 2018
+- description: Added [Security information](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#15-security)
+    to Coding Standards [Technical Guidelines](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html).
+  versions: 2.2.x
+  type: Major update
+  date: Jul 09 2018
+- description: The new [URL Rewrite module](https://devdocs.magento.com/guides/v2.2/cloud/configure/import-url-rewrites.html)
+    helps to manage redirects in Magento Cloud without losing SEO rankings and traffic.
+  versions: 2.2.x
+  type: Major update
+  date: Jul 06 2018
+- description: We split the build phase into two separate processes so that you can
+    use hooks to apply custom changes to the generated static content before packaging
+    the application for deployment. The build:generate process generates code, applies
+    patches, and generates static content. The build:transfer process deploys the
+    application. See [Application hooks](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html).
+  versions: v2.1.4 and later, 2.2.x, 2.3.x
+  type: Major update
+  date: Jul 5 2018
+- description: Added information to set up and configure [Fastly Image Optimization](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-image-optimization.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: Jun 29 2018
+- description: Update the Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html)
+    to reflect the recent base template changes for version 2.1 and 2.2.
+  versions: 2.1.x, 2.2.x
+  type: Technical changes
+  date: Jun 28 2018
+- description: Added [Magento Commerce Release Notes (1.14 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ee1.14_release-notes.html)
+    and [Magento Open Source Release Notes (1.9 and later)](https://devdocs.magento.com/guides/m1x/ce19-ee114/ce1.9_release-notes.html).
+  versions: ''
+  type: Major update
+  date: Jun 27 2018
+- description: Added Magento Commerce and Open Source 2.1.14 Release Notes. See [Magento
+    Commerce 2.1.14 Release Notes](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.14EE.html)
+    and [Magento Open Source 2.1.14](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.14CE.html)
+    for more information.
+  versions: 2.1.x
+  type: New topic
+  date: Jun 27 2018
+- description: Added Magento Commerce and Open Source 2.2.5 Release Notes. See [Magento
+    Commerce 2.2.5 Release Notes](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.5EE.html)
+    and [Magento Open Source 2.2.5](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.5CE.html)
+    for more information.
+  versions: 2.2.x
+  type: New topic
+  date: Jun 27 2018
+- description: Added the backward incompatible changes for the Magento 2.1.14 release
+    in [OpenSource](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html).
+  versions: 2.1.x
+  type: Major update
+  date: Jun 27 2018
+- description: Added the backward incompatible changes for the Magento 2.2.5 release
+    in [OpenSource](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html).
+  versions: 2.2.x
+  type: Major update
+  date: Jun 27 2018
+- description: Added a new solution section for Redis to an [installation troubleshooting](https://devdocs.magento.com/guides/v2.1/install-gde/trouble/tshoot_wrong-mysql.html)
+    topic.
+  versions: 2.1.x
+  type: Major update
+  date: Jun 25 2018
+- description: There is a new Cloud workflow to [add a `robots.txt` file and generate
+    a `sitemap.xml` file]({{ site.baseurl }}/guides/v2.2/cloud/trouble/robots-sitemap.html)
+    for a single domain configuration without requiring a change to the infrastructure.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Jun 13 2018
+- description: Now you can [change store locales]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#change-locales)
+    when using SCD_ON_DEMAND without using the exporting and importing configuration
+    process.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Jun 13 2018
+- description: The new ece-tools command—`docker:build`—generates a [Docker Compose]({{
+    site.baseurl }}/guides/v2.2/cloud/reference/docker-config.html) configuration.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: Jun 09 2018
+- description: Added a topic about the [Magento binding syntax]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/concepts/magento-bindings.html).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: Jun 07 2018
+- description: Added a new topic describing how to [enable/disable logging]({{ site.baseurl
+    }}/guides/v2.2/config-guide/cli/logging.html) with the Magento CLI.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: Jun 04 2018
+- description: Updated the storage capacity information for Magento Commerce Cloud
+    Pro architecture information in the [Production Technology Stack]({{ site.baseurl
+    }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack)
+    documentation for Magento Cloud [v2.1]({{ site.baseurl }}/guides/v2.1/cloud/architecture/pro-architecture.html#production-technology-stack),
+    [v2.2]({{ site.baseurl }}/guides/v2.2/cloud/architecture/pro-architecture.html#production-technology-stack),
+    and [v2.3]({{ site.baseurl }}/guides/v2.3/cloud/architecture/pro-architecture.html#production-technology-stack).
+  versions: 2.x
+  type: Technical changes
+  date: Jun 04 2018
+- description: "[These changes]({{ site.baseurl }}/guides/v2.1/config-guide/multi-site/ms_nginx.html)
+    show users how to simplify Nginx configs to host multiple Magento websites and
+    store views with one virtual host file. It allows to that Nginx configuration
+    to stay much cleaner, and more maintainable."
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Jun 1 2018
+- description: Contribution with fix to the custom entry point script in [MAGE_DIRS]({{
+    site.baseurl }}/guides/v2.1/config-guide/bootstrap/mage-dirs.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 29 2018
+- description: Updated the GraphQL [Products endpoint]({{ site.baseurl }}/guides/v2.3/graphql/reference/products.html)
+    to include functionality contributed by community members.
+  versions: 2.3.x
+  type: Technical changes
+  date: May 23 2018
+- description: Added a new Cloud command—module:refresh—to enable missing modules
+    the same way that it is done automatically during a build. See [Build and deploy
+    on local in Build phase]({{ site.baseurl }}/guides/v2.2/cloud/live/live-sanity-check.html#build).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 23 2018
+- description: Added [Handling a REST API response]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/metadata.html#rest-response)
+    to the MFTF Metadata.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 22 2018
+- description: Added descriptions for the [new `magento config:set lock-env` and `lock-config`
+    options]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
+  versions: 2.2.x
+  type: Technical changes
+  date: May 22 2018
+- description: Removed `setup:cache:{command}` and `setup:indexer:{command}`from [config-cli-subcommands.md]({{
+    site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands.html),  as
+    they do not exist. Replaced with `cache:{command}` and `indexer:{command}` commands.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 21 2018
+- description: "[Updated]({{ site.baseurl }}/guides/v2.2/config-guide/multi-site/ms_nginx.html)
+    to show a way to pass the MAGE_RUN_TYPE and MAGE_RUN_CODE Nginx variables into
+    PHP, and include the $MAGE_RUN_TYPE in the Nginx vhost files to show how one could
+    specify website vs store."
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 15 2018
+- description: Added filter attribute information in [GraphQL Product]({{ site.baseurl
+    }}/guides/v2.3/graphql/reference/products.html)
+  versions: 2.3.x
+  type: Technical changes
+  date: May 10 2018
+- description: Added configuration info for [creating nginx virtual hosts]({{ site.baseurl
+    }}/guides/v2.0/config-guide/multi-site/ms_nginx.html#ms-nginx-vhosts) on Tutorial—Set
+    up multiple websites or stores with nginx page.
+  versions: 2.x
+  type: Technical changes
+  date: May 10 2018
+- description: Updated the Cloud build and deploy [environment variable]({{ site.baseurl
+    }}/guides/v2.1/cloud/env/variables-intro.html) descriptions and samples.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 08 2018
+- description: You must bypass Fastly when profiling with [Blackfire]({{ site.baseurl
+    }}/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production
+    environment.
+  versions: 2.1.x, 2.2.x
+  type: Technical changes
+  date: May 07 2018
+- description: Added the [Reference architecture]({{ site.baseurl }}/guides/v2.2/performance-best-practices/reference-architecture.html)
+    topic
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: May 07 2018
+- description: Contributed to [Linking properties of UI components]({{ page.baseurl
+    }}/ui_comp_guide/concepts/ui_comp_linking_concept.html).
+  versions: 2.x
+  type: Technical changes
+  date: May 07 2018
+- description: You must bypass Fastly when profiling with [Blackfire]({{ site.baseurl
+    }}/guides/v2.2/cloud/project/project-integrate-blackfire.html) in your Cloud Production
+    environment.
+  versions: 2.1.x, 2.2.x
+  type: Technical changes
+  date: May 07 2018
+- description: You can trigger a [redeploy]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html)
+    of your Cloud environment.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 05 2018
+- description: Updated the example in [Example_logging database activity]({{ site.baseurl
+    }}/guides/v2.2/config-guide/log/log-db.html)
+  versions: 2.2.x
+  type: Technical changes
+  date: May 04 2018
+- description: Updated the backward incompatible changes between _2.2.0_ and _2.3-develop_
+    for [OpenSource]({{ site.baseurl }}/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: May 02 2018
+- description: Fixed the severity values in [MFTF annotations]({{ page.baseurl }}/magento-functional-testing-framework/release-2/test/annotations.html).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 02 2018
+- description: Describes the highlights, fixed issues, and community contributions
+    for Magento Open Source and Commerce 2.2.4. See [Magento Open Source 2.2.4 Release
+    Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.4CE.html)
+    and [Magento Commerce 2.2.4 Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.4EE.html)
+    for more information.
+  versions: 2.2.x
+  type: New topic
+  date: May 02 2018
+- description: Contributed a section about [Using PHP short tags in template PHTML
+    files]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/templates/template-override.html#short-tags).
+  versions: 2.2.x
+  type: Technical changes
+  date: May 02 2018
+- description: Added "custom database port" to the optional parameters section in
+    the [Migration Guide]({{ site.baseurl }}/guides/v2.2/migration/migration-tool-configure.html#migration-configure).
+  versions: 2.x
+  type: Technical changes
+  date: May 02 2018
+- description: Describes the highlights, fixed issues, and community contributions
+    for Magento Open Source and Commerce 2.1.13. See [Magento Open Source 2.1.13 Release
+    Notes]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.13CE.html)
+    and [Magento Commerce 2.1.13 Release Notes]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.13EE.html)
+    for more information.
+  versions: 2.1.x
+  type: New topic
+  date: May 02 2018
+- description: "[Magento 2.x GDPR compliance]({{ site.baseurl }}/guides/v2.2/architecture/gdpr/magento-2x.html)<br/>[Magento
+    1.x GDPR compliance]({{ site.baseurl }}/guides/v2.2/architecture/gdpr/magento-1x.html)"
+  versions: 2.x
+  type: New topic
+  date: May 01 2018
+- description: Added the [development environment recommendations]({{ page.baseurl
+    }}/performance-best-practices/development-environment.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: May 01 2018
+- description: Documented the [Redis Sentinel settings]({{ site.baseurl }}/guides/v2.2/config-guide/redis/redis-session.html).
+  versions: 2.3.x
+  type: Technical changes
+  date: May 01 2018
+- description: Added a new topic [Suite]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/suite.html)
+    to the MFTF Guide along with documentation updates related to the 2.2.0 release
+    of the framework.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: Apr 28 2018
+- description: Updates from the 2018 Imagine Docathon.
+  versions: 2.x
+  type: Technical changes
+  date: Apr 27 2018
+- description: Added [Error code mapping]({{ site.baseurl }}/guides/v2.3/payments-integrations/payment-gateway/error-code-mapper.html)
+  versions: 2.3.x
+  type: New topic
+  date: Apr 25 2018
+- description: Added the ability to configure a read-only connection to a non-master
+    node to receive read-only traffic for [Redis]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html#redisuseslaveconnection)
+    and for [MariaDB]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html#mysqluseslaveconnection).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New
+  date: Apr 24 2018
+- description: New [Smart wizards]({{ site.baseurl }}/guides/v2.2/cloud/env/smart-wizards.html)
+    help you to verify your Cloud configuration follows best practices.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New
+  date: Apr 24 2018
+- description: Added [Marketplace EQP API]({{ site.baseurl }}/guides/v2.2/marketplace/eqp/api.html)
+    reference documentation.
+  versions: 2.x
+  type: New topic
+  date: Apr 21 2018
+- description: We added a new topic about [Community Maintainers]({{ site.baseurl
+    }}/guides/v2.2/contributor-guide/devdocs-maintainers.html) for the devdocs repository.
+  versions: 2.x
+  type: New topic
+  date: Apr 20 2018
+- description: Added documentation for the [schema.graphqls]({{ site.baseurl }}/guides/v2.3/graphql/develop/create-graphqls-file.html)
+    and completely revised the [resolvers]({{ site.baseurl }}/guides/v2.3/graphql/develop/resolvers.html)
+    documentation. Also added new reference articles.
+  versions: 2.3.x
+  type: Major updates
+  date: Apr 13 2018
+- description: Clarified the [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html)
+    procedures.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Apr 10 2018
+- description: Updated information about how long we store [snapshots]({{ site.baseurl
+    }}/guides/v2.2/cloud/project/project-webint-snap.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: Apr 10 2018
+- description: Added the [Performance Best Practices]({{ site.baseurl }}/guides/v2.2/performance-best-practices/index.html)
+    guide. It replaces the information formerly in the topic Magento Optimization
+    Guide.
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: Apr 10 2018
+- description: Changed [CLI examples]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html)
+    to include the `bin/magento` syntax and added guidance on adding `bin` to your
+    system `PATH` to run commands from anywhere.
+  versions: 2.x
+  type: Updated
+  date: Apr 09 2018
+- description: Removed the deprecated `--dry-run` CLI option from the [Deploy static
+    view files topic]({{ site.baseurl }}/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html).
+  versions: 2.2.x
+  type: Updated
+  date: Apr 09 2018
+- description: Added a topic about [Metadata]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/metadata.html)
+    to the MFTF Guide.
+  versions: 2.2.x, 2.3.x
+  type: New
+  date: Apr 05 2018
+- description: Removed a confusing and obsolete topic from the [Onboarding tasks]({{
+    site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html) section of
+    the Magento Commerce (Cloud) guide.
+  versions: 2.x
+  type: Updated
+  date: Apr 04 2018
+- description: Updated the [2.2 Programming Best Practices]({{ site.baseurl }}/guides/v2.2/ext-best-practices/extension-coding/common-programming-bp.html)
+    topic with information about using the `after` plugin.
+  versions: 2.2.x
+  type: Updated
+  date: Apr 03 2018
+- description: Added the `WARM_UP_PAGES` variable for customizing the list of pages
+    to use to pre-load the cache. Available in the new [Post-deploy variables]({{
+    site.baseurl }}/guides/v2.1/cloud/env/variables-post-deploy.html) topic.
+  versions: 2.1.x, 2.2.x
+  type: New
+  date: Apr 02 2018
+- description: Added an example of pushing logs with syslog using the .magento.env.yaml
+    file. See the new [Logging handlers]({{ page.baseurl }}/cloud/env/log-handlers.html)
+    topic.
+  versions: 2.1.x, 2.2.x
+  type: New
+  date: Apr 02 2018
+- description: Added Elasticsearch 5.2 to the list of supported version in the [Magento
+    Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-elastic.html)
+    guide.
+  versions: 2.2.x, 2.3.x
+  type: Updated
+  date: Apr 02 2018
+- description: You can pre-load the cache using the new [`post_deploy` hook]({{ site.baseurl
+    }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#hooks).
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Apr 02 2018
+- description: Added the `SKIP_HTML_MINIFICATION` environment variable to the Cloud
+    [Environment variables reference]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-intro.html)
+    that skips copying the static view files in the `var/view_preprocessed` directory.
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Apr 02 2018
+- description: Added the new CRYPT_KEY environment variable to the [Deploy variables
+    reference]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html) as
+    a way to supply cryptographic key to another environment when moving a database.
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Apr 02 2018
+- description: Reorganized the Cloud [Configure environments]({{ site.baseurl }}/guides/v2.2/cloud/env/environments.html)
+    section of the Cloud documentation. It is easier to distinguish the Application,
+    Cloud, Build, and Deploy variables. The variable names also appear in each right-side
+    page navigation for easier selection.<br/>Added the `SCD_ON_DEMAND` environment
+    variable to generate static content when requested.
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Apr 02 2018
+- description: Added a new topic for [extending the Data Migration Tool]({{ site.baseurl
+    }}/guides/v2.2/migration/extend-the-tool.html).
+  versions: 2.x
+  type: New
+  date: Apr 02 2018
+- description: Removed references to VPN connections from the [Magento Commerce (Cloud)
+    guide]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html#vpn)
+    because they are not currently supported.
+  versions: 2.x
+  type: Updated
+  date: Mar 30 2018
+- description: Updated references to Fastly IP addresses in the [Magento Commerce
+    (Cloud) guide]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html) with the list
+    of preferred IP addresses provided by Fastly.
+  versions: 2.x
+  type: Updated
+  date: Mar 30 2018
+- description: Added a link to the Private Packagist documentation in the [Package
+    a component]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/package/package_module.html)
+    topic.
+  versions: 2.x
+  type: Updated
+  date: Mar 26 2018
+- description: Added new options to `generate:tests` in [Robo commands]({{ site.baseurl
+    }}/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html#generate).
+  versions: 2.2.x, 2.3.x
+  type: Updated
+  date: Mar 21 2018
+- description: Added a cross reference about Redis to the [memcache]({{ site.baseurl
+    }}/guides/v2.2/config-guide/memcache/memcache.html) topic.
+  versions: 2.x
+  type: Updated
+  date: Mar 21 2018
+- description: Added a [descriptive video]({{ site.baseurl }}/guides/v2.0/contributor-guide/contributing.html)
+    showing how to keep your fork updated with the latest changes.
+  versions: 2.x
+  type: Updated
+  date: Mar 20 2018
+- description: Removed unnecessary guidance to run `npm update` after `npm install`
+    when [Installing and Configuring Grunt]({{ site.baseurl }}/guides/v2.0/frontend-dev-guide/css-topics/css_debug.html#grunt_prereq).
+  versions: 2.x
+  type: Updated
+  date: Mar 20 2018
+- description: Replaced the list of minor releases in the [Technology Stack]({{ site.baseurl
+    }}/guides/v2.0/architecture/tech-stack.html) topic with a generic reference to
+    system requirements
+  versions: 2.x
+  type: Updated
+  date: Mar 20 2018
+- description: Added a section for backward incompatible changes between 2.0.17-2.0.18
+    in [OpenSource]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/open-source.html#releases-2_0_17-2_0_18)
+    and [Commerce]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html#releases-2_0_17-2_0_18).
+  versions: 2.0.x
+  type: Updated
+  date: Mar 16 2018
+- description: Added a section for backward incompatible changes between 2.1.11-2.1.12
+    in [OpenSource]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html#releases-2_1_11-2_1_12)
+    and [Commerce]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html#releases-2_1_11-2_1_12).
+  versions: 2.1.x
+  type: Updated
+  date: Mar 16 2018
+- description: Added a section for backward incompatible changes between 2.2.2-2.2.3
+    in [OpenSource]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#releases-2_2_2-2_2_3)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html#releases-2_2_2-2_2_3).
+  versions: 2.2.x
+  type: Updated
+  date: Mar 16 2018
+- description: Removed reference to minor versions of Magento in the [Extension Developer
+    Guide]({{ site.baseurl }}/guides/v2.0/extension-dev-guide/build/build.html).
+  versions: 2.x
+  type: Updated
+  date: Mar 15 2018
+- description: 'The MFTF 2.1.0 has been released where we: <br/>[updated a CLI command
+    `generate`]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/commands/robo.html#generate),
+    <br/>[added a data type support for an argument of action group]({{ site.baseurl
+    }}/guides/v2.2/magento-functional-testing-framework/release-2/test/action-groups.html#data-type-usage),
+    <br/>[added a new action `selectMultipleOptions`]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/test/actions.html#selectmultipleoptions),
+    <br>[updated principles in Assertions]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#principles)<br/>
+    [added a new assertions `assertArrayIsSorted`]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/test/assertions.html#assertarrayIssorted)'
+  versions: 2.2.x, 2.3 pre-release
+  type: Updated
+  date: Mar 13 2018
+- description: Added support for PHP 7.1 in the [Magento Commerce (Cloud) Guide]({{
+    site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
+  versions: 2.2.x
+  type: Updated
+  date: Mar 12 2018
+- description: Added the force (`-f`) option to the static content deployment command
+    in the [B2B installation]({{ site.baseurl }}/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html)
+    topic.
+  versions: ''
+  type: Updated
+  date: Mar 09 2018
+- description: Updated the [Magento Commerce (Cloud) Guide Configure routes]({{ site.baseurl
+    }}/guides/v2.2/cloud/project/project-conf-files_routes.html) topic to deprecate
+    the `:php` endpoint and to note that now you can use the dot (\.) symbol to separate
+    the subdomain instead of using the triple dash (\-\-\-).
+  versions: 2.2.x
+  type: Updated
+  date: Mar 09 2018
+- description: Removed old content related to the [multi-tenant code compiler]({{
+    site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html).
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Mar 07 2018
+- description: Added a CodeTriage badge to the [Contributor Guide]({{ site.baseurl
+    }}/guides/v2.0/contributor-guide/contributing.html).
+  versions: 2.x
+  type: Updated
+  date: Mar 01 2018
+- description: Release Notes for Magento 2.0.18 [Open Source]({{ site.baseurl }}/guides/v2.0/release-notes/ReleaseNotes2.0.18CE.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.0/release-notes/ReleaseNotes2.0.18EE.html).
+  versions: 2.0.x
+  type: New
+  date: Feb 27 2018
+- description: Release Notes for Magento 2.1.12 [Open Source]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12CE.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.1/release-notes/ReleaseNotes2.1.12EE.html).
+  versions: 2.1.x
+  type: New
+  date: Feb 27 2018
+- description: Release Notes 2.2.3 [Open Source]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3CE.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotes2.2.3EE.html)
+  versions: 2.2.x
+  type: New
+  date: Feb 27 2018
+- description: Added supported MySQL technologies to the [MySQL]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/mysql.html)
+    topic.
+  versions: 2.2.x
+  type: Updated
+  date: Feb 27 2018
+- description: Updated the [DevDocs contributions](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md)
+    topic and published a new list of suggested topics for community contributions.
+  versions: 2.x
+  type: Updated
+  date: Feb 27 2018
+- description: Formatting to improve consistency in the [Configuration Guide]({{ site.baseurl
+    }}/guides/v2.0/config-guide/bootstrap/magento-modes.html).
+  versions: ''
+  type: Updated
+  date: Feb 26 2018
+- description: Added upgrade path for Magento Cloud metapackage.
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Feb 23 2018
+- description: Added reference and [examples]({{ site.baseurl }}/guides/v2.2/cloud/env/working-with-variables.html#redis)
+    for two, new [environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/variables-deploy.html)—`CACHE_CONFIGURATION`
+    and `SESSION_CONFIGURATION`—that help with customizing Redis storage and default
+    caching configuration.
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Feb 20 2018
+- description: Listed the `adminhtml` option in the [Observers best practices]({{
+    site.baseurl }}/guides/v2.0/ext-best-practices/extension-coding/observers-bp.html)
+    topic.
+  versions: 2.x
+  type: Updated
+  date: Feb 09 2018
+- description: The [MFTF-2 Guide]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-2/introduction.html)
+    has been added to Magento 2.2 documentation
+  versions: 2.2.x
+  type: Updated
+  date: Feb 09 2018
+- description: Learn how to customize and extend the acceptance functional tests using
+    [Merging]({{ site.baseurl }}/guides/v2.3/magento-functional-testing-framework/release-2/merging.html)
+    in the MFTF 2.
+  versions: 2.3 pre-release
+  type: New
+  date: Feb 07 2018
+- description: We added a [new troubleshooting topic]({{ site.baseurl }}/guides/v2.2/cloud/trouble/message-queues.html)
+    to help customers resolve an issue with message queues.
+  versions: 2.2.x
+  type: New
+  date: Feb 07 2018
+- description: We added a [new troubleshooting topic]({{ site.baseurl }}/guides/v2.2/cloud/trouble/site-availability.html)
+    to help customers identify and resolve site availability issue related to Redis.
+  versions: 2.x
+  type: New
+  date: Feb 01 2018
+- description: Updated documentation about [how to create a payment token]({{ site.baseurl
+    }}/guides/v2.2/payments-integrations/vault/payment-token.html).
+  versions: 2.2.x
+  type: Updated
+  date: Jan 31 2018
+- description: Release notes for Magento Commerce (Cloud) [`ece-tools v2002.0.8`]({{
+    site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208).
+  versions: 2.2.x
+  type: Updated
+  date: Jan 31 2018
+- description: We added instructions for [managing message queues]({{ site.baseurl
+    }}/guides/v2.2/cloud/env/working-with-variables.html#manage-message-queues) on
+    Magento Commerce (Cloud) using the `CRON_CONSUMERS_RUNNER` environment variable.
+  versions: 2.2.x
+  type: Updated
+  date: Jan 31 2018
+- description: We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools
+    v2002.0.8`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-tools.html#v200208).
+    You no longer need to update the `vendor/magento/ece-patches` package separately.
+  versions: 2.2.x
+  type: Updated
+  date: Jan 31 2018
+- description: You can now [manage build and deploy actions]({{ site.baseurl }}/guides/v2.2/cloud/project/magento-env-yaml.html)
+    across all your environments—including Pro Staging and Production—using a `.magento.env.yaml`
+    file.
+  versions: 2.2.x
+  type: New
+  date: Jan 31 2018
+- description: You can now unlock specific stuck cron jobs in Magento Commerce (Cloud)
+    with the [cron:unlock]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html)
+    command instead of stopping and re-launching all of them.
+  versions: 2.2.x
+  type: Updated
+  date: Jan 31 2018
+- description: The deployment process creates backup files for the configuration files.
+    You can restore the configuration files using the [restore]({{ site.baseurl }}/guides/v2.2/cloud/trouble/restore-configuration-files.html)
+    command.
+  versions: 2.2.x
+  type: Updated
+  date: Jan 31 2018
+- description: 'MFTF 1.0: Updated descriptions for the `before` and `after` attributes
+    in [Actions]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/release-1/cest/actions.html)'
+  versions: 2.2.x
+  type: Updated
+  date: Jan 23 2018
+- description: 'Advanced Reporting: added more details to [Prerequisites]({{ site.baseurl
+    }}/guides/v2.2/advanced-reporting/overview.html)'
+  versions: 2.2.x
+  type: Updated
+  date: Jan 22 2018
+- description: We updated the [quarterly contributors]({{ site.baseurl }}/guides/v2.2/contributor-guide/quarterly-contributors.html)
+    page for Q4 2018.
+  versions: 2.x
+  type: Updated
+  date: Jan 18 2018
+- description: 'MFTF: Updated [actions]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/cest/actions.html)
+    and added [Changelog]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/changelog.html)'
+  versions: 2.2.x
+  type: Updated
+  date: Jan 12 2018
+- description: Added information about the index prefix when [configuring Elasticsearch]({{
+    site.baseurl }}/guides/v2.2/config-guide/elasticsearch/configure-magento.html),
+    which is necessary when using a single Elasticsearch instance with multiple Magento
+    installations, like Staging and Production environments.
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Jan 10 2018
+- description: Created a [new topic]({{ site.baseurl }}/guides/v2.1/cloud/env/working-with-variables.html)
+    describing different scenarios for working with environment variables to the Magento
+    Commerce (Cloud) guide. For example, connecting an existing search or AMQP-based
+    service to your Magento site.<br/>Added guidance for using these variables in
+    the [Set up RabbitMQ]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)
+    and [Set up Elasticsearch]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-elastic.html)
+    topics.
+  versions: 2.1.x, 2.2.x
+  type: New and Updated
+  date: Jan 10 2018
+- description: "[Added Magento Shipping release notes]({{ site.baseurl }}/guides/v2.2/release-notes/ReleaseNotesMagentoShipping2.2.x.html)"
+  versions: 2.2.x
+  type: New
+  date: Jan 05 2018
+- description: We added code examples to help explain the following [Technical Guidelines]({{
+    site.baseurl }}/guides/v2.2/coding-standards/technical-guidelines.html) related
+    to class design:<br/>- 2.4. All dependencies MUST be requested by the most generic
+    type that is required by the client object.<br/>- 2.6. Inheritance SHOULD NOT
+    be used. Composition SHOULD be used for code reuse.<br/>- 2.1.4 Temporal coupling
+    MUST be avoided.
+  versions: 2.x
+  type: Updated
+  date: Jan 03 2018
+- description: Added details about backward incompatible changes between 2.0.0 and
+    2.2.0 in [Open Source]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#200---220-)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html#200---220-)
+  versions: 2.2.x
+  type: Updated
+  date: Dec 24 2017
+- description: "[Action Groups in the MFTF]({{ site.baseurl }}/guides/v2.2/magento-functional-testing-framework/cest/action-groups.html)"
+  versions: 2.2.x
+  type: New
+  date: Dec 22 2017
+- description: Added a new section in the Magento Commerce (Cloud) guide for release
+    notes related to the [`ece-patches`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-patches.html)
+    Composer package.
+  versions: 2.2.x
+  type: New, Updated
+  date: Dec 20 2017
+- description: Published release notes for the Magento Commerce (Cloud) [`ece-tools
+    2002.0.7`]({{ site.baseurl }}/guides/v2.2/cloud/composer-packages/ece-tools.html#v200207)
+    Composer package.
+  versions: 2.2.x
+  type: Updated
+  date: Dec 20 2017
+- description: Added a new topic about setting up the [Bitbucket integration]({{ site.baseurl
+    }}/guides/v2.2/cloud/integrations/bitbucket-integration.html) for Magento Commerce
+    (Cloud).
+  versions: 2.x
+  type: New
+  date: Dec 18 2017
+- description: You must prepend [environment variables]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#variables)
+    with `env:` when using the Magento Commerce (Cloud) Project Web Interface to override
+    configuration settings.
+  versions: 2.x
+  type: Updated
+  date: Dec 14 2017
+- description: 'Advanced reporting: [Overview]({{ site.baseurl }}/guides/v2.2/advanced-reporting/overview.html),
+    [Modules]({{ site.baseurl }}/guides/v2.2/advanced-reporting/modules.html), [Data
+    collection]({{ site.baseurl }}/guides/v2.2/advanced-reporting/data-collection.html),
+    [Report XML]({{ site.baseurl }}/guides/v2.2/advanced-reporting/report-xml.html)'
+  versions: 2.2.x
+  type: New
+  date: Dec 13 2017
+- description: Added info about backward incompatible changes ([Open Source 2.1.10
+    - 2.1.11]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce 2.1.10-2.1.11]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html);
+    [Open Source 2.2.1 - 2.2.2]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce 2.2.1-2.2.2]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html);
+    [B2B]({{ site.baseurl }}/guides/v2.2/release-notes/changes/b2b_changes.html))
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Dec 13 2017
+- description: "[Magento Functional Testing Framework Guide]({{ site.baseurl }}/mftf/2.2/introduction.html)"
+  versions: 2.2.x
+  type: New
+  date: Dec 08 2017
+- description: "[Instant Purchase module]({{ site.baseurl }}/guides/v2.2/mrg/ce/instant-purchase/)"
+  versions: 2.2.x
+  type: New
+  date: Dec 07 2017
+- description: Revised guidance on which environments are limited to 5-minute cron
+    intervals in the Magento Commerce (Cloud) guide. See [Configure cron settings
+    in the Magento Admin]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html#add-cron)
+    for more information.
+  versions: 2.2.x
+  type: Updated
+  date: Dec 06 2017
+- description: Added a new topic to the Magento Commerce (Cloud) guide about [configuring
+    email and Slack notifications]({{ site.baseurl }}/guides/v2.2/cloud/env/setup-notifications.html)
+    for build/deploy actions in an environment.
+  versions: 2.2.x
+  type: New
+  date: Dec 06 2017
+- description: Updated the following Magento Commerce (Cloud) topics to include details
+    about static content compression during build/deploy phases:<br/>- [Configuration
+    Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-confman-scd-over)<br/>-
+    [Deployment process]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html)
+  versions: 2.2.x
+  type: Updated
+  date: Dec 06 2017
+- description: Magento Commerce (Cloud) will now auto-generate an `app/etc/config.php`
+    file if it doesn't detect one in your project directory during the build phase.
+    Updated references to configuration management in the [Deployment process]({{
+    site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html) topic.
+  versions: 2.2.x
+  type: Updated
+  date: Dec 06 2017
+- description: Replaced references to the `mysqldump` command with the new [`vendor/bin/ece-tools
+    db-dump`]({{ site.baseurl }}/guides/v2.2/cloud/project/project-webint-snap.html#db-dump)
+    CLI command for Staging and Production environments in the Magento Commerce (Cloud)
+    guide
+  versions: 2.2.x
+  type: Updated
+  date: Dec 06 2017
+- description: "[Tech guidelines: Added strict mode requirement 1.3.1]({{ site.baseurl
+    }}/guides/v2.2/coding-standards/technical-guidelines.html#1-basic-programming-principles)"
+  versions: 2.2.x
+  type: Updated
+  date: Dec 05 2017
+- description: Added a [new troubleshooting section]({{ site.baseurl }}/guides/v2.2/cloud/trouble/reset-cron-jobs.html)
+    to the Magento Commerce (Cloud) cron topic describing how to reset Magento cron
+    jobs
+  versions: 2.2.x
+  type: Updated
+  date: Nov 30 2017
+- description: Revised and added new content for Magento Commerce (Cloud) for custom
+    Fastly VCLs including [Custom Fastly VCL snippets]({{ site.baseurl }}/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
+    [Custom whitelist VCL]({{ site.baseurl }}/guides/v2.2/cloud/cdn/fastly-vcl-whitelist.html),
+    [Custom blacklist VCL]({{ site.baseurl }}/guides/v2.2/cloud/cdn/fastly-vcl-blacklist.html),
+    [Custom extend Admin timeout VCL]({{ site.baseurl }}/guides/v2.2/cloud/cdn/configure-fastly.html#bulkaction),
+    [Custom redirect to Wordpress VCL]({{ site.baseurl }}/guides/v2.2/cloud/cdn/fastly-vcl-wordpress.html),
+    and [Custom block bad referer VCL]({{ site.baseurl }}/guides/v2.2/loud/cdn/fastly-vcl-badreferer.html).
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: New
+  date: Nov 29 2017
+- description: Update content for Magento Commerce (Cloud) for [Composer]({{ site.baseurl
+    }}/guides/v2.2/cloud/reference/cloud-composer.html) commands and files, add new
+    content for [Git]({{ site.baseurl }}/guides/v2.2/cloud/reference/git-integration.html),
+    added Security Scan Tool info to [Go live and launch]({{ site.baseurl }}/guides/v2.2/cloud/live/live.html),
+    add .gitignore info to [Project structure]({{ site.baseurl }}/guides/v2.2/cloud/project/project-start.html),
+    add notes to [Patch Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html),
+    update information for upgrading Fastly in [Upgrade Magento Commerce (Cloud)]({{
+    site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html), and updated redirects
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 29 2017
+- description: Updated the [Devdocs Quarterly Contributors]({{ site.baseurl }}/guides/v2.2/contributor-guide/quarterly-contributors.html)
+    page for Q3 2017
+  versions: ''
+  type: Updated
+  date: Nov 29 2017
+- description: Updated Magento Commerce (Cloud) content for MS SQL Server drivers
+    in [Configure your environments]({{ site.baseurl }}/guides/v2.2/cloud/env/environments.html#sqldriver)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 27 2017
+- description: Updated and added content for Magento Commerce (Cloud) including [Theme
+    troubleshooting]({{ site.baseurl }}/guides/v2.2/cloud/trouble/theme-troubleshooting.html),
+    POP locations for [Set up Fastly]({{ site.baseurl }}/guides/v2.2/cloud/access-acct/fastly.html),
+    notes to [Set up cron jobs]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html),
+    security for [Manage branches with the Project Web Interface]({{ site.baseurl
+    }}/guides/v2.2/cloud/project/project-webint-branch.html), worker information for
+    [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html),
+    and branch information in [Pro architecture]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-arch.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 27 2017
+- description: Update troubleshooting content for [EAV and extension attributes]({{
+    site.baseurl }}/guides/v2.2/extension-dev-guide/attributes.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 27 2017
+- description: Updated Magento Commerce (Cloud) for [Import existing code into a project]({{
+    site.baseurl }}/guides/v2.2/cloud/access-acct/first-time-setup_import-first-steps.html),
+    [Prepare your existing Magento Commerce code]({{ site.baseurl }}/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html),
+    [Import code and data to Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 22 2017
+- description: Added detailed backward incompatible changes descriptions for deltas
+    of minor releases (Open Source [2.0.0 - 2.1.0]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html)
+    and [2.1.0-2.2.0]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html);
+    Commerce  [2.0.0 - 2.1.0]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html)
+    and [2.1.0-2.2.0]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html))
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Nov 21 2017
+- description: Removed detailed backward incompatible changes for deltas 2.0.7-2.1.0
+    and 2.1.9-2.2.0
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Nov 17 2017
+- description: 'Updated the recommended Fastly module version 1.2.33 for Magento Commerce
+    (Cloud): [Fastly]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-fastly.html),
+    [Technologies and requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html),
+    and [Magento Commerce (Cloud) third party licenses]({{ site.baseurl }}/guides/v2.2/release-notes/thirdparty-mccloud.html)'
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 15 2017
+- description: Updated content for Magento Commerce (Cloud) including Configuration
+    Management for [2.1.X]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html)
+    and [2.2.X]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html), Deployment
+    Process [2.0.X]({{ site.baseurl }}/guides/v2.0/cloud/reference/discover-deploy.html),
+    [2.1.X]({{ site.baseurl }}/guides/v2.1/cloud/reference/discover-deploy.html),
+    and [2.2.X]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 14 2017
+- description: Updated [Set up Fastly]({{ site.baseurl }}/guides/v2.2/cloud/access-acct/fastly.html)
+    and [Fastly troubleshooting]({{ site.baseurl }}/guides/v2.2/cloud/cdn/trouble-fastly.html)
+    for Magento Commerce (Cloud) for handling existing Fastly accounts
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 14 2017
+- description: Updated how to [Configure Xdebug]({{ site.baseurl }}/guides/v2.2/cloud/howtos/debug.html)
+    for Magento Commerce (Cloud).
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 13 2017
+- description: Updated [Subscriptions and plans]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html)
+    with information on options you can purchase including AWS Managed VPN Connection
+    Service access
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 13 2017
+- description: 'Published backward incompatible changes: [Open Source 2.0.16-2.0.17]({{
+    site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/open-source.html),
+    [Open Source 2.1.9-2.1.10]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html),
+    [Open Source 2.2.0-2.2.1]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce 2.0.16-2.0.17]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html),
+    [Commerce 2.1.9-2.1.10]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html),
+    [Commerce 2.2.0-2.2.1]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)'
+  versions: 2.0.x, 2.1.x, 2.2.x
+  type: Updated
+  date: Nov 09 2017
+- description: Updated [Set up Magento B2B]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-b2b.html)
+    with additional documentation links and error message updates for Magento Commerce
+    (Cloud)
+  versions: 2.2.x
+  type: Updated
+  date: Nov 09 2017
+- description: Updated Magento Commerce (Cloud) information for [Blackfire.io]({{
+    site.baseurl }}/guides/v2.2/cloud/project/project-integrate-blackfire.html) module
+    enablement and environment naming and [New Relic APM]({{ site.baseurl }}/guides/v2.2/cloud/project/new-relic.html)
+    for their university information
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 09 2017
+- description: Added the ability to open a search results page when searching with
+    the top bar. When entering a search term or phrase on any page, hit enter to open
+    a full results page with faceted search options.
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 07 2017
+- description: Updated [Magento application environment variables]({{ site.baseurl
+    }}/guides/v2.2/cloud/env/environment-vars_magento.html) and [Deployment process]({{
+    site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html) with scopes
+    and SCD_STRATEGY variable for Magento Commerce (Cloud) 2.2.1
+  versions: 2.2.x
+  type: Updated
+  date: Nov 07 2017
+- description: Updated [New Relic APM]({{ site.baseurl }}/guides/v2.2/cloud/project/new-relic.html)
+    license and environment information for Magento Commerce (Cloud)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 06 2017
+- description: Update relationship name for [RabbitMQ]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)
+    service for Magento Commerce (Cloud)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 06 2017
+- description: Update Magento Commerce (Cloud) content for deploy commands in [Deploy
+    code and migrate static files and data]({{ site.baseurl }}/guides/v2.2/cloud/live/stage-prod-migrate.html)for
+    new and existing Pro plans and [Magento application environment variables]({{
+    site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 06 2017
+- description: Updated Fastly troubleshooting and supported features for Magento Commerce
+    (Cloud) in [Fastly]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-fastly.html)
+    and [Fastly troubleshooting]({{ site.baseurl }}/guides/v2.2/cloud/cdn/trouble-fastly.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Nov 03 2017
+- description: "[Added guideline on mocking auto-generated factories in Unit tests]({{
+    site.baseurl }}/guides/v2.1/test/testing.html#unit)"
+  versions: 2.0.x, 2.1.x
+  type: Updated
+  date: Oct 31 2017
+- description: Updated Magento Commerce (Cloud) content for Fastly including [Fastly]({{
+    site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-fastly.html), [Set up
+    Fastly]({{ site.baseurl }}/guides/v2.2/cloud/access-acct/fastly.html), [Custom
+    Fastly VCL snippets]({{ site.baseurl }}/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
+    and [Troubleshoot Fastly]({{ site.baseurl }}/guides/v2.2/cloud/cdn/trouble-fastly.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Oct 30 2017
+- description: Add [B2B module set up]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-b2b.html)
+    information for Magento Commerce (Cloud)
+  versions: 2.2.x
+  type: New
+  date: Oct 27 2017
+- description: Update SSH tunneling info to Magento Commerce (Cloud) in [SSH and sFTP]({{
+    site.baseurl }}/guides/v2.2/cloud/env/environments-ssh.html) and [Manage branches
+    with the CLI]({{ site.baseurl }}/guides/v2.2/cloud/env/environments-start.html).
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Oct 25 2017
+- description: Update database troubleshooting for Magento Commerce (Cloud) in Migrate
+    and deploy static files and data for [2.1]({{ site.baseurl }}/guides/v2.1/cloud/live/stage-prod-migrate.html)
+    and [2.2]({{ site.baseurl }}/guides/v2.2/cloud/live/stage-prod-migrate.html)
+  versions: 2.1.x, 2.2.x
+  type: Updated
+  date: Oct 24 2017
+- description: Add new content for trial Onboarding Portal for Magento Commerce (Cloud)
+    including [Subscription and plans]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-plans.html),
+    [Onboarding tasks]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-tasks.html),
+    [Onboarding Portal management]({{ site.baseurl }}/guides/v2.2/cloud/onboarding/onboarding-portal.html),
+    [Prepare project environments]({{ site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html),
+    and [Welcome to Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: New
+  date: Oct 23 2017
+- description: Updated content for Magento Commerce (Cloud) for the updated Pro projects
+    in [Manage your project]({{ site.baseurl }}/guides/v2.2/cloud/project/projects.html),
+    [Add Staging and Production to Pro projects]({{ site.baseurl }}/guides/v2.2/cloud/trouble/pro-env-management.html),
+    [Deploy your store]({{ site.baseurl }}/guides/v2.2/cloud/live/stage-prod-live.html),
+    [Deployment process]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html),
+    [Prepare to deploy to Staging and Production]({{ site.baseurl }}/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html),
+    and [Test deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/stage-prod-test.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Oct 20 2017
+- description: Added [more information about docroot]({{ site.baseurl }}/guides/v2.2/install-gde/basics/basics_docroot.html)
+    and created a [new tutorial]({{ site.baseurl }}/guides/v2.2/install-gde/tutorials/change-docroot-to-pub.html)
+    for modifying your web server's docroot to enhance the security of your Magento
+    installation
+  versions: 2.x
+  type: Updated, New
+  date: Oct 18 2017
+- description: 'Update Magento Commerce (Cloud) content for new features for Pro plan:
+    [Manage your project]({{ site.baseurl }}/guides/v2.2/cloud/project/projects.html),
+    [Add Staging and Production to Pro projects]({{ site.baseurl }}/guides/v2.2/cloud/trouble/pro-env-management.html),
+    [Configure your project]({{ site.baseurl }}/guides/v2.2/cloud/project/project-webint-basic.html),
+    [Create and manage users]({{ site.baseurl }}/guides/v2.2/cloud/project/user-admin.html),
+    [Manage branches with the Interface]({{ site.baseurl }}/guides/v2.2/cloud/project/project-webint-branch.html),
+    [Magento Cloud CLI reference]({{ site.baseurl }}/guides/v2.2/cloud/reference/cli-ref-topic.html),
+    [Welcome to Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html),
+    [Starter architecture]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/starter-architecture.html),
+    and [Pro architecture]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-arch.html)'
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Oct 18 2017
+- description: Update Magento Commerce (Cloud) content for [Starter develop and deploy
+    workflow]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html),
+    [Pro develop and deploy workflow]({{ site.baseurl }}/guides/v2.2/cloud/welcome/discover-workflow.html),
+    [Install Magento]({{ site.baseurl }}/guides/v2.2/cloud/before/before-setup-env-install.html),
+    [Configuration management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)
+    and [Example of managing system-specific settings]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-initial.html),
+    [Upgrade Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html),
+    and [Welcome to Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/bk-cloud.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Oct 17 2017
+- description: Add [cron]({{ site.baseurl }}/guides/v2.2/cloud/configure/setup-cron-jobs.html)
+    and [sFTP]({{ site.baseurl }}/guides/v2.2/cloud/env/environments-ssh.html#sftp)
+    content for Magento Commerce (Cloud)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: New
+  date: Oct 12 2017
+- description: "[Added overview of DocBlock annotations usage in integration tests]({{
+    site.baseurl }}/guides/v2.2/test/integration/annotations.html)"
+  versions: 2.0.x, 2.1.x, 2.2.x
+  type: New
+  date: Oct 11 2017
+- description: Update Magento Commerce (Cloud) content for [Prepare project environments]({{
+    site.baseurl }}/guides/v2.2/cloud/before/before-project-owner.html), [First-time
+    local development setup]({{ site.baseurl }}/guides/v2.2/cloud/access-acct/first-time-setup.html),
+    [Clone and branch the project]({{ site.baseurl }}/guides/v2.2/cloud/before/before-setup-env-2_clone.html),
+    [Deployment process]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-deploy.html),
+    and [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Oct 11 2017
+- description: Published backward incompatible changes between 2.0.15 and 2.0.16 versions
+    in [Open Source]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.0.x
+  type: Updated
+  date: Oct 10 2017
+- description: "[Update Magento Commerce (Cloud) 2.2 Release Notes with changes in
+    deployment]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/CloudReleaseNotes2.2.html#deploy)"
+  versions: 2.2.x
+  type: Updated
+  date: Oct 06 2017
+- description: Updated Magento Commerce (Cloud) content for [services.yaml]({{ site.baseurl
+    }}/guides/v2.2/cloud/project/project-conf-files_services.html), [Elasticsearch]({{
+    site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-elastic.html),
+    [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html),
+    [Redis]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-redis.html),
+    [MySQL]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-mysql.html),
+    and [RabbitMQ]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_services-rabbit.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Oct 06 2017
+- description: Added a new option to the [`bin/magento migrate:data`]({{ site.baseurl
+    }}/guides/v2.2/migration/migration-migrate-data.html) command in the _Migration
+    Guide_.<br/>Added an example of [configuring the Data Migration Tool to use TLS]({{
+    site.baseurl }}/guides/v2.2/migration/migration-tool-configure.html) (e.g., private/public
+    keys) to connect to MySQL in the _Migration Guide_.
+  versions: 2.2.x
+  type: Updated
+  date: Oct 03 2017
+- description: "[Update Admin account password change on project provision and creation
+    for Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.0/cloud/onboarding/onboarding-tasks.html)"
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Sep 27 2017
+- description: Published backward incompatible changes between 2.2.0 and 2.1.9 versions
+    in [Open Source]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.2.x
+  type: Updated
+  date: Sep 27 2017
+- description: Add third party license information for Magento Commerce (Cloud) [2.0.X]({{
+    site.baseurl }}/guides/v2.0/release-notes/thirdparty-mccloud.html), [2.1.X]({{
+    site.baseurl }}/guides/v2.1/release-notes/thirdparty-mccloud.html), and [2.2]({{
+    site.baseurl }}/guides/v2.2/release-notes/thirdparty-mccloud.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: New
+  date: Sep 27 2017
+- description: Added new topics for [installing any extension from the command line]({{
+    site.baseurl }}/guides/v2.2/comp-mgr/install-extensions.html) and [installing
+    the B2B extension specifically]({{ site.baseurl }}/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html)
+  versions: 2.2.x
+  type: New
+  date: Sep 26 2017
+- description: Updated Magento Commerce (Cloud) 2.2 content for [upgrade instructions]({{
+    site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html), [Configuration
+    Management and Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html),
+    [Magento application variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html),
+    [.magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html),
+    and [requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html)
+  versions: 2.2.x
+  type: Updated
+  date: Sep 26 2017
+- description: "[Updated Fastly snippet examples and process for adding new VCL snippets]({{
+    site.baseurl }}/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html)"
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Sep 20 2017
+- description: HHVM compatibility removed in [tech-stack]({{ site.baseurl }}/guides/v2.2/architecture/tech-stack.html).
+  versions: 2.2.x
+  type: Updated
+  date: Sep 14 2017
+- description: Updated backward incompatible changes after 2.2.0 RC3.0 in [Open Source]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.2.x
+  type: Updated
+  date: Sep 14 2017
+- description: "[Added a rule set for the PHP_CodeSniffer]({{ site.baseurl }}/guides/v2.2/coding-standards/code-standard-sniffers.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Sep 13 2017
+- description: "[Added troubleshooting information for Redis.]({{ site.baseurl }}/guides/v2.1/cloud/trouble/redis-troubleshooting.html)"
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: New
+  date: Sep 11 2017
+- description: Updated database dump commands for [patching]({{ site.baseurl }}/guides/v2.2/cloud/project/project-patch.html)
+    and [upgrading]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html)
+    Magento Commerce Cloud, and for [Migrate and deploy]({{ site.baseurl }}/guides/v2.2/cloud/live/stage-prod-migrate.html)
+    content.
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Sep 08 2017
+- description: "[Updated custom Fastly VCL snippet information]({{ site.baseurl }}/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html)"
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: Updated
+  date: Sep 08 2017
+- description: "[Added troubleshooting information for generating and adding sitemap.xml
+    and robots.txt.]({{ site.baseurl }}/guides/v2.2/cloud/trouble/robots-sitemap.html)"
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: New
+  date: Sep 08 2017
+- description: Updated content for [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html)
+    and [corresponding examples]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-initial.html)
+    for in Magento Commerce (Cloud).
+  versions: 2.2.x
+  type: Updated
+  date: Sep 08 2017
+- description: "[Versioning]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/versioning/)<br/>[Codebase
+    Changes]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/versioning/codebase-changes.html)<br/>[Module
+    version dependency]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/versioning/dependencies.html)"
+  versions: 2.x
+  type: New and Updated
+  date: Sep 05 2017
+- description: Updated backward incompatible changes after 2.2.0 RC2.3 in [Open Source]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.2.x
+  type: Updated
+  date: Sep 04 2017
+- description: Added information for Magento Commerce (Cloud) Starter [architecture]({{
+    site.baseurl }}/guides/v2.2/cloud/basic-information/starter-architecture.html)
+    and [development and deploy workflow]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/starter-develop-deploy-workflow.html),
+    and Pro [architecture]({{ site.baseurl }}/guides/v2.2/cloud/reference/discover-arch.html)
+    and [development and deploy workflow]({{ site.baseurl }}/guides/v2.2/cloud/welcome/discover-workflow.html)
+  versions: 2.0.x, 2.1.x, 2.2.x
+  type: Updated
+  date: Sep 01 2017
+- description: "[Updated information on Magento encryption keys]({{ site.baseurl }}/guides/v2.2/cloud/trouble/trouble-crypt-key-variable.html)"
+  versions: 2.0.x, 2.1.x, 2.2.x
+  type: Updated
+  date: Sep 01 2017
+- description: "[Added explanation of AggregatedFieldDataConverter]({{ site.baseurl
+    }}/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Aug 30 2017
+- description: Added information for Fastly [set up]({{ site.baseurl }}/guides/v2.2/cloud/basic-information/cloud-fastly.html),
+    [custom VCL snippets]({{ site.baseurl }}/guides/v2.2/cloud/cdn/cloud-vcl-custom-snippets.html),
+    and [troubleshooting]({{ site.baseurl }}/guides/v2.2/cloud/cdn/trouble-fastly.html)
+  versions: 2.0.x, 2.1.x, 2.2.x, 2.x
+  type: New
+  date: Aug 28 2017
+- description: Added backward incompatible changes for 2.2.0 RC2.2 in [Open Source]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.2.x
+  type: Updated
+  date: Aug 28 2017
+- description: Added backward incompatible changes for 2.2.0 RC2.1 in [Open Source]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.2.x
+  type: Updated
+  date: Aug 22 2017
+- description: "[Frontend Product Repository]({{ site.baseurl }}/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html)<br/>[Render
+    prices on frontend with Ui component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/howto/price_rendering.html)<br/>[Added
+    backward incompatible changes]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/index.html#recently-viewed-and-recently-compared-widgets)<br/>[Updated
+    the list of REST endpoints]({{ site.baseurl }}/guides/v2.2/rest/list.html#catalog)"
+  versions: 2.2.x
+  type: New and Updated
+  date: Aug 21 2017
+- description: "[Rendering prices with UI Components]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/howto/price_rendering.html)<br/>[Frontend
+    Product Repository]({{ site.baseurl }}/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html)"
+  versions: 2.2.x
+  type: New
+  date: Aug 21 2017
+- description: "[Elasticsearch update]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Aug 21 2017
+- description: Added backward incompatible changes for 2.2.0 RC2.0 in [Open Source]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.2.x
+  type: Updated
+  date: Aug 18 2017
+- description: Added [Composer-based installation instructions]({{ site.baseurl }}/guides/v2.2/release-notes/release-candidate/install.html)
+    for 2.2.0 RC 2.0.
+  versions: 2.2.x
+  type: Updated
+  date: Aug 16 2017
+- description: "[Updated backward incompatible changes]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/index.html#advanced-section-in-system-configurations)"
+  versions: 2.2.x
+  type: Updated
+  date: Aug 14 2017
+- description: "[Updated docs about config.php being in .gitignore]({{ site.baseurl
+    }}/guides/v2.2/config-guide/config/config-php.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Aug 11 2017
+- description: Major revisions for deployment content
+  versions: 2.0.x, 2.1.x, 2.2.x
+  type: Updated
+  date: Aug 11 2017
+- description: Added backward incompatible changes for delta of 2.1.8 and 2.1.7 versions
+    in [Open Source]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.1.x
+  type: Updated
+  date: Aug 10 2017
+- description: Added a [new topic]({{ site.baseurl }}/guides/v2.1/install-gde/prereq/nginx.html)
+    describing how to install Magento 2 on an nginx web server (Ubuntu 16 and CentOS
+    7).
+  versions: 2.x
+  type: New
+  date: Aug 08 2017
+- description: Added backward incompatible changes for 2.2.0 RC1.8 in [Open Source]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)
+    and [Commerce]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)
+  versions: 2.2.x
+  type: Updated
+  date: Aug 07 2017
+- description: "[Migrating data to Cloud: add triggers to DB dump command]({{ site.baseurl
+    }}/guides/v2.2/cloud/live/stage-prod-migrate.html#cloud-live-migrate-db)"
+  versions: 2.x
+  type: Updated
+  date: Aug 03 2017
+- description: "[Added generated BICs for delta RC1.6-RC1.5]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Jul 31 2017
+- description: "[Migration Best Practices: use a copy of your DB when testing migration]({{
+    site.baseurl }}/guides/v2.1/migration/migration-overview-practices.html)<br/>[Migration
+    Plan: recommendations on system upgrade, dry run, cron jobs, changes in migrated
+    data]({{ site.baseurl }}/guides/v2.1/migration/migration-plan.html)<br/>[Data
+    Migration Tool Preconditions: avoid creating new entities in Magento 2 before
+    migration]({{ site.baseurl }}/guides/v2.1/migration/migration-tool-preconditions.html)"
+  versions: 2.x
+  type: Updated
+  date: Jul 28 2017
+- description: "[Added generated BICs for delta RC1.5-RC1.4]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Jul 24 2017
+- description: "[Technical Guidelines 2.2]({{ site.baseurl }}/guides/v2.1/coding-standards/technical-guidelines.html)"
+  versions: 2.2.x
+  type: New
+  date: Jul 21 2017
+- description: "[Added BICs for delta Magento CE 2.2.0 RC1.4-RC1.3]({{ site.baseurl
+    }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)<br/>[Added
+    BICs for delta Magento EE 2.2.0 RC1.4-RC1.3]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Jul 17 2017
+- description: "[Backward compatible changes for delta Magento 2.2.0 RC1.3 and RC1.2]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#changes-220rc13)"
+  versions: 2.2.x
+  type: Updated
+  date: Jul 12 2017
+- description: Fix code example on the video tutorial page
+  versions: 2.x
+  type: Updated
+  date: Jul 10 2017
+- description: 'Cron groups: run twice when using the command line'
+  versions: 2.x
+  type: Updated
+  date: Jul 07 2017
+- description: "[Added tables with BICs for delta 2.2.0-RC1.2 and 2.2.0-RC1.1]({{
+    site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html)"
+  versions: 2.2.x
+  type: Updated
+  date: Jul 07 2017
+- description: "[Added known issues to Jasmine tests]({{ site.baseurl }}/guides/v2.1/test/js/jasmine.html#known-issues-and-solutions)"
+  versions: 2.x
+  type: Updated
+  date: Jul 05 2017
+- description: Added BIC about moved directories
+  versions: 2.2.x
+  type: Updated
+  date: Jul 03 2017
+- description: '[2.2.x Release Information]({{ site.baseurl }}/guides/v2.2/release-notes/bk-release-notes.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Magento CE 2.2 Release Candidate Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/release-notes-2-2-prerelease1-CE.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Magento EE 2.2 Release Candidate Release Notes]({{ site.baseurl }}/guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Magento 2.2 backward incompatible changes]({{ site.baseurl }}/guides/v2.2/release-notes/backward-incompatible-changes/index.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Change to a released version]({{ site.baseurl }}/guides/v2.2/install-gde/install/cli/dev_downgrade.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Check the Magento database status]({{ site.baseurl }}/guides/v2.2/install-gde/install/cli/install-cli-subcommands-db-status.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Enable or disable maintenance mode]({{ site.baseurl }}/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Overview of ownership and permissions]({{ site.baseurl }}/guides/v2.2/install-gde/install/file-sys-perms-over.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Configure the Magento application]({{ site.baseurl }}/guides/v2.2/install-gde/install/post-install-config.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Update installation dependencies]({{ site.baseurl }}/guides/v2.2/install-gde/install/prepare-install.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Installation quick reference (tutorial)]({{ site.baseurl }}/guides/v2.2/install-gde/install-quick-ref.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Overview of ownership and permissions]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/file-sys-perms-over.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Set pre-installation ownership and permissions]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/file-system-perms.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Get the Magento CE metapackage]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/integrator_install_ce.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Get the Magento EE metapackage]({{ site.baseurl }}/guides/v2.2/install-gde/prereq/integrator_install_ee.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[(Easy) Install the Magento archive on your server]({{ site.baseurl
+    }}/guides/v2.2/install-gde/prereq/zip_install.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Magento 2.2.x technology stack requirements]({{ site.baseurl }}/guides/v2.2/install-gde/system-requirements-tech.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Access issues]({{ site.baseurl }}/guides/v2.2/install-gde/trouble/php/tshoot_access-main.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Exceptions during installation]({{ site.baseurl }}/guides/v2.2/install-gde/trouble/tshoot_exceptions.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Errors installing optional sample data]({{ site.baseurl }}/guides/v2.2/install-gde/trouble/tshoot_sample-data.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Cannot write to the generated/code directory]({{ site.baseurl }}/guides/v2.2/install-gde/trouble/tshoot_var-gen-perms.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Configuration Guide]({{ site.baseurl }}/guides/v2.2/config-guide/bk-config-guide.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Database caching]({{ site.baseurl }}/guides/v2.2/config-guide/cache/caching-database.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Static Content Signing]({{ site.baseurl }}/guides/v2.2/config-guide/cache/static-content-signing.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Magento''s deployment configuration]({{ site.baseurl }}/guides/v2.2/config-guide/config/config-php.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Pipeline Deployment]({{ site.baseurl }}/guides/v2.2/config-guide/deployment/index.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Single machine deployment]({{ site.baseurl }}/guides/v2.2/config-guide/deployment/single-machine.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Configure 2.2 message queues]({{ site.baseurl }}/guides/v2.2/config-guide/mq/config-mq.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: "[Migrate message queue configuration]({{ site.baseurl }}/guides/v2.2/config-guide/mq/queue-migration.html)"
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Magento Optimization Guide]({{ site.baseurl }}/guides/v2.2/config-guide/prod/prod_perf-optimize.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: "[Configure Magento to use Varnish]({{ site.baseurl }}/guides/v2.2/config-guide/varnish/config-varnish-magento.html)"
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[Advanced Varnish configuration]({{ site.baseurl }}/guides/v2.2/config-guide/varnish/config-varnish-advanced.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Import Magento EE into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html){:target="_blank"}'
+  versions: 2.0, 2.1, 2.2
+  type: Updated
+  date: June 29 2017
+- description: '[Prepare your existing Magento EE system]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html){:target="_blank"}'
+  versions: 2.0, 2.1, 2.2
+  type: Updated
+  date: June 29 2017
+- description: '[Resolve issues with encryption key]({{ page.baseurl }}/cloud/trouble/trouble-crypt-key-variable.html){:target="_blank"}'
+  versions: 2.0, 2.1, 2.2
+  type: New
+  date: June 29 2017
+- description: '[Go live]({{ page.baseurl }}/cloud/live/live.html){:target="_blank"}'
+  versions: 2.0, 2.1, 2.2
+  type: Updated
+  date: June 29 2017
+- description: '[Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html){:target="_blank"}'
+  versions: 2.0, 2.1, 2.2
+  type: Updated
+  date: June 27 2017
+- description: '[B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[How CSS and Less files are preprocessed and how to debug them]({{
+    site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Compile Less using Grunt]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Layout overview]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Common layout customization tasks]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Templates XSS security]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/templates/template-security.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Uninstall a storefront theme]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/themes/theme-uninstall.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Additional tools for frontend developers]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/tools/tools_overview.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Using Grunt for Magento tasks]({{ site.baseurl }}/guides/v2.2/frontend-dev-guide/tools/using_grunt.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Using the new structure in UI components XML configuration]({{ site.baseurl
+    }}/guides/v2.2/ui_comp_guide/best-practices/semantic_config.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Magento custom Knockout.js bindings]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/concepts/knockout-bindings.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[UI components XML configuration structure]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmlconfig_structure.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Declare a custom UI component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/howto/new_component_declaration.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Advanced Reporting modules]({{ site.baseurl }}/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[B2B modules]({{ site.baseurl }}/guides/v2.2/mrg/b2b/B2b.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Magento_Signifyd module]({{ site.baseurl }}/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Upgrade the Magento application and modules]({{ site.baseurl }}/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Command-line upgrade]({{ site.baseurl }}/guides/v2.2/comp-mgr/cli/cli-upgrade.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Run the Extension Manager]({{ site.baseurl }}/guides/v2.2/comp-mgr/extens-man/extensman-checklist.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Run the Module Manager]({{ site.baseurl }}/guides/v2.2/comp-mgr/module-man/compman-checklist.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Prerequisites]({{ site.baseurl }}/guides/v2.2/comp-mgr/prereq/prereq_compman.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Run System Upgrade]({{ site.baseurl }}/guides/v2.2/comp-mgr/upgrader/upgrade-checklist.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Signifyd fraud protection]({{ site.baseurl }}/guides/v2.2/payments-integrations/signifyd/signifyd.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Swagger documentation]({{ site.baseurl }}/swagger/index_22.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[List of REST endpoints by module]({{ site.baseurl }}/guides/v2.2/rest/list.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[List of service names per module]({{ site.baseurl }}/guides/v2.2/rest/rest_endpoints.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[SOAP Reference]({{ site.baseurl }}/guides/v2.2/soap/bk-soap.html){:target="_blank"}'
+  versions: '2.2'
+  type: Updated
+  date: June 23 2017
+- description: '[The di.xml file]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/build/di-xml-file.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Bulk Operations]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/bulk-operations.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Example bulk operations implementation]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/implement-bulk.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Code generation]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/code-generation.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Configuration importers]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/configuration/importers.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Sensitive and environment settings]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Serialize Library]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/framework/serializer.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Indexer optimization]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/indexer-batch.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Plugins (Interceptors)]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Searching with Repositories]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[XSS prevention strategies]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/xss-protection.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Functional Testing Framework Configuration]({{ site.baseurl }}/guides/v2.2/mtf/configuration.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Test suite in the Functional Testing Framework]({{ site.baseurl }}/guides/v2.2/mtf/features/test_suite.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Typified element]({{ site.baseurl }}/guides/v2.2/mtf/mtf_entities/mtf_typified-element.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Quick start. Prepare Magento application]({{ site.baseurl }}/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_magento.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Writing secure code]({{ site.baseurl }}/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Serialized to JSON data upgrade]({{ site.baseurl }}/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[JavaScript Logger]({{ site.baseurl }}/guides/v2.2/javascript-dev-guide/javascript/js_logger.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Customize the list of shipping methods]({{ site.baseurl }}/guides/v2.2/howdoi/checkout/checkout_shipping_methods.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Clear directories during development]({{ site.baseurl }}/guides/v2.2/howdoi/php/php_clear-dirs.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Add custom fields that influence other Checkout fields]({{ site.baseurl
+    }}/guides/v2.1/howdoi/checkout/checkout_custom_checkbox.html){:target="_blank"}'
+  versions: 2.0, 2.1
+  type: New
+  date: June 8 2017
+- description: '[JavaScript unit testing with Jasmine]({{ site.baseurl }}/guides/v2.2/test/js/jasmine.html){:target="_blank"}'
+  versions: '2.2'
+  type: New
+  date: June 23 2017
+- description: '[Magento custom Knockout.js bindings]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/knockout-bindings.html){:target="_blank"}'
+  versions: '2.1'
+  type: New
+  date: May 25 2017
+- description: '[Description and configuration options of the mostly used Magento
+    UI components]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/components-intro.html){:target="_blank"}'
+  versions: '2.1'
+  type: New
+  date: Apr 28 2017
+- description: '[Install a third-party storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-install.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Apr 27 2017
+- description: '[Uninstall a storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-uninstall.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Apr 27 2017
+- description: 'Payments integrations: [response validators]({{ page.gdeurl }}payments-integrations/payment-gateway/response-validator.html){:target="_blank"}
+    and [payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html){:target="_blank"}'
+  versions: 2.0, 2.1.x
+  type: Updated
+  date: Apr 27 2017
+- description: '[Technical guidelines for working with Events]({{ page.baseurl }}/coding-standards/technical-guidelines/technical-guidelines.html#events){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Apr 19 2017
+- description: '[Migration: Follow-up after running the Data Migration Tool]({{ page.baseurl
+    }}/migration/migration-migrate-follow-up.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Apr 14 2017
+- description: '[Coding standards technical guidelines]({{ site.gdeurl21 }}coding-standards/technical-guidelines.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Apr 1 2017
+- description: '[Update sample contribution template]({{ page.baseurl }}/contributor-guide/templates/basic_template.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Apr 1 2017
+- description: '[Update performance test data]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Mar 21 2017
+- description: '[Versioning and compatibility]({{ page.baseurl }}/extension-dev-guide/versioning/index.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Mar 31 2017
+- description: '[How to test a block]({{ page.baseurl }}/mtf/mtf_entities/mtf_block.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Mar 24 2017
+- description: '[Tutorial: Order processing]({{ site.gdeurl21 }}/rest/tutorials/orders/order-intro.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Mar 23 2017
+- description: '[Magento U video tutorials]({{ site.baseurl }}/videos){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Mar 15 2017
+- description: '[Top quarterly devdocs contributors]({{ page.baseurl }}/contributor-guide/quarterly-contributors.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Mar 15 2017
+- description: '[Community contribution to adding attributes to an entity]({{ page.baseurl
+    }}/extension-dev-guide/extension_attributes/adding-attributes.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: March 15 2017
+- description: '[Tutorial on copying fieldsets](ext-best-practices/tutorials/copy-fieldsets.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Mar 9 2017
+- description: '[Backward incompatible changes now includes Magento 2.0.x, added tables]({{
+    page.baseurl }}/release-notes/backward-incompatible-changes/index.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Mar 9 2017
+- description: '[Import a Magento EE project into {{site.data.var.ece}} (MECE)]({{
+    page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Mar 1 2017
+- description: '[MECE configuration management]({{ site.gdeurl21 }}cloud/live/sens-data-over.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Mar 3 2017
+- description: '[Reorganize and update how to get started with an MECE environment]({{
+    page.baseurl }}/cloud/before/before-setup-env-1_get-start.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Mar 3 2017
+- description: '[Reorganize and correct issues with MECE workspace]({{ page.baseurl
+    }}/cloud/before/before-workspace.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Mar 2 2017
+- description: "[Magento Functional Test Framework scenario test]({{ page.baseurl
+    }}/mtf/mtf_entities/mtf_scenariotest.html)"
+  versions: 2.x
+  type: New
+  date: Mar 3 2017
+- description: '[{{site.data.var.ece}} (MECE) deployment]({{ page.baseurl }}/cloud/reference/discover-deploy.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Feb 23 2017
+- description: '[How to use logs to troubleshoot MECE]({{ page.baseurl }}/cloud/trouble/environments-logs.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Feb 23 2017
+- description: '[How to SSH in to an MECE integration, staging, or production system]({{
+    page.baseurl }}/cloud/env/environments-ssh.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Feb 23 2017
+- description: '[Set up multiple MECE database users]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html#cloud-appyaml-mysqlusers){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Feb 21 2017
+- description: '[MECE 2.1.5 and 2.0.13 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.5.html){:target="_blank"}'
+  versions: 2.1.5
+  type: New
+  date: Feb 21 2017
+- description: '[Magento Community Edition (CE) 2.1.5 Release Notes]({{ site.gdeurl21
+    }}release-notes/ReleaseNotes2.1.5CE.html){:target="_blank"}'
+  versions: 2.1.5
+  type: New
+  date: Feb 21 2017
+- description: '[Magento Enterprise Edition (EE) 2.1.5 Release Notes]({{ site.gdeurl21
+    }}release-notes/ReleaseNotes2.1.5EE.html){:target="_blank"}'
+  versions: 2.1.5
+  type: New
+  date: Feb 21 2017
+- description: '[Magento CE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13CE.html){:target="_blank"}'
+  versions: 2.0.13
+  type: New
+  date: Feb 21 2017
+- description: '[Magento EE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13EE.html){:target="_blank"}'
+  versions: 2.0.13
+  type: New
+  date: Feb 21 2017
+- description: '[How {{site.data.var.ece}} uses Composer]({{ page.baseurl }}/cloud/reference/cloud-composer.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Feb 17 2017
+- description: '[Prohibit usage of DocBlock templates, add License Notice and Copyright]({{
+    page.baseurl }}/coding-standards/docblock-standard-general.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Feb 11 2017
+- description: '[How to create a Fastly error or maintenance page]({{ page.baseurl
+    }}/cloud/cdn/cloud-fastly-custom-response.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Feb 10 2017
+- description: '[{{site.data.var.ece}} 2.1.4 and 2.0.12 Release Notes]({{ page.baseurl
+    }}/cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Feb 7 2017
+- description: '[Magento Community Edition (CE) 2.0.12 Release Notes]({{ site.gdeurl
+    }}release-notes/ReleaseNotes2.0.12CE.html){:target="_blank"}'
+  versions: 2.0.x
+  type: New
+  date: Feb 7 2017
+- description: '[Magento Enterprise Edition (EE) 2.0.12 Release Notes]({{ site.gdeurl
+    }}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}'
+  versions: 2.0.x
+  type: New
+  date: Feb 7 2017
+- description: '[Magento CE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4CE.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Feb 7 2017
+- description: '[Magento EE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4EE.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Feb 7 2017
+- description: '[Clarify file system permissions for production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Jan 27 2017
+- description: '[Corrected instructions to set up multiple websites or stores on {{site.data.var.ece}}]({{
+    page.baseurl }}/cloud/project/project-multi-sites.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Jan 31 2017
+- description: '[Asynchronous module definition and RequireJS concepts]({{ page.baseurl
+    }}/javascript-dev-guide/javascript/requirejs_concept.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Jan 25 2017
+- description: '[Added information about the RequireJS library]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Jan 26 2017
+- description: '[Data Migration Guide troubleshooting]({{ page.baseurl }}/migration/migration-troubleshooting.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Jan 20 2017
+- description: '[Updated `@deprecated` tag and added requirements for `@inheritdoc`]({{
+    page.baseurl }}/coding-standards/docblock-standard-general.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Jan 20 2017
+- description: '[Functional Testing Framework isolation management tutorial]({{ page.baseurl
+    }}/mtf/features/isolation.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Jan 18 2017
+- description: "[How to test a patch on {{site.data.var.ece}}]({{ page.baseurl }}/cloud/howtos/patch-magento.html)"
+  versions: 2.x
+  type: Updated
+  date: Jan 10 2017
+- description: '[Add `type` prefixes and product, project in description of `composer.json`]({{
+    page.baseurl }}/extension-dev-guide/build/composer-integration.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Jan 9 2017
+- description: '[Docblock coding standard]({{ page.baseurl }}/coding-standards/docblock-standard-general.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Jan 6 2017
+- description: '[Use payment vault in the Admin]({{ site.gdeurl21 }}payments-integrations/vault/admin-integration.html){:target="_blank"}'
+  versions: 2.1.x
+  type: Updated
+  date: Jan 6 2017
+- description: '[Magento UI components explained]({{ site.gdeurl21 }}ui_comp_guide/ui_component_explained.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Dec 30 (includes week ending Dec 23)
+- description: '[Magento Community Edition (CE) 2.1.3 Release Notes]({{ site.gdeurl21
+    }}release-notes/ReleaseNotes2.1.3CE.html){:target="_blank"}'
+  versions: 2.1.3
+  type: New
+  date: Dec 16 2016
+- description: '[Magento CE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11CE.html){:target="_blank"}'
+  versions: 2.0.11
+  type: New
+  date: Dec 16 2016
+- description: '[Magento Enterprise Edition (EE) 2.1.3 Release Notes]({{ site.gdeurl21
+    }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}'
+  versions: 2.1.3
+  type: New
+  date: Dec 16 2016
+- description: '[Magento EE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html){:target="_blank"}'
+  versions: 2.0.11
+  type: New
+  date: Dec 16 2016
+- description: '[Configure the Magento functional testing framework]({{ page.baseurl
+    }}/mtf/configuration.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Dec 16 2016
+- description: '[Add custom integrations and vault payments to the Magento payment
+    provider gateway]({{ page.baseurl }}/payments-integrations/bk-payments-integrations.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Dec 9 2016
+- description: '[Set up the Magento application to use multiple stores]({{ page.baseurl
+    }}/config-guide/multi-site/ms_over.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Dec 2 2016
+- description: '[Set up multiple Magento stores on {{site.data.var.ece}}]({{ page.baseurl
+    }}/cloud/project/project-multi-sites.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Dec 2 2016
+- description: '[Install the Magento data migration tool]({{ page.baseurl }}/migration/migration-tool-install.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Dec 2 2016
+- description: '[Upgrade the Magento data migration tool]({{ page.baseurl }}/migration/migration-tool-upgrade.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Dec 2 2016
+- description: '[Add REST APIs for Magento Enterprise Edition]({{ page.baseurl }}/rest/list.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Dec 2 2016
+- description: '[Add REST API endpoints for Magento EE]({{ page.baseurl }}/rest/rest_endpoints.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Dec 2 2016
+- description: '[Use Jasmine for JavaScript unit testing]({{ page.baseurl }}/test/js/jasmine.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Nov 25 2016
+- description: '[Use adapters with third-party libraries]({{ page.baseurl }}/extension-dev-guide/adapters.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Nov 25 2016
+- description: '[Debug the Fastly extension with {{site.data.var.ece}}]({{ page.baseurl
+    }}/cloud/cdn/trouble-fastly.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Nov 25 2016
+- description: '[{{site.data.var.ece}} requirements]({{ page.baseurl }}/cloud/requirements/cloud-requirements.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Nov 18 2016
+- description: '[Data migration toolkit directory structure]({{ page.baseurl }}/migration/migration-tool-internal-spec.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Nov 18 2016
+- description: '[Added information about the `@import` directive and usage]({{ page.baseurl
+    }}/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Nov 18 2016
+- description: '[How to use adapters with third-party libraries]({{ page.baseurl }}/extension-dev-guide/adapters.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Nov 11 2016
+- description: '[Added detail about {{site.data.var.ece}} (MECE) deployment]({{ page.baseurl
+    }}/cloud/reference/discover-deploy.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Nov 4 2016
+- description: "[Where MECE logs are located]({{ page.baseurl }}/cloud/env/environments-logs.html)"
+  versions: 2.x
+  type: New
+  date: Nov 4 2016
+- description: '[Tutorial on setting up a custom cron job and cron group]({{ page.baseurl
+    }}/config-guide/cron/custom-cron-tut.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Nov 4 2016
+- description: "[Troubleshoot OPcache-related error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_opcache.html)"
+  versions: 2.x
+  type: New
+  date: Nov 4 2016
+- description: '[UI components linking properties]({{ site.gdeurl21 }}ui_comp_guide/concepts/ui_comp_linking_concept.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Nov 4 2016
+- description: '{{site.data.var.ece}} (MECE) [added descriptions of build and deployment
+    scripts and other improvements to deployment]({{ page.baseurl }}/cloud/reference/discover-deploy.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 28 2016
+- description: '[MECE added description of build and deployment logs in staging and
+    production]({{ page.baseurl }}/cloud/env/environments-logs.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 28 2016
+- description: '[MECE how to patch the Magento software]({{ page.baseurl }}/cloud/howtos/patch-magento.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 28 2016
+- description: '[MECE how to upgrade the Magento software]({{ page.baseurl }}/cloud/howtos/upgrade-magento.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 28 2016
+- description: '[Magento Functional Test Framework (FTF) create a report]({{ page.baseurl
+    }}/mtf/features/reporting.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 28 2016
+- description: '[DataSource UI component]({{ site.gdeurl21 }}ui_comp_guide/concepts/ui_comp_data_source.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Oct 28 2016
+- description: '[Home page for Magento 2.x system requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 28 2016
+- description: '[Home page for Magento 2.x technical bulletins]({{ site.baseurl }}/magento-techbull.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 28 2016
+- description: '[Home page for Magento 2.x third-party license agreements]({{ site.baseurl
+    }}/magento-third-party.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 28 2016
+- description: '[Using code sniffers]({{ page.baseurl }}/coding-standards/code-standard-sniffers.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 28 2016
+- description: '[Updated cron group options]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html){:target="_blank"}
+    (`use_separate_process` applies to 2.1.x only)'
+  versions: 2.x
+  type: Updated
+  date: Oct 21 2016
+- description: '[{{site.data.var.ece}} (MECE) Release Notes home page]({{ page.baseurl
+    }}/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 21 2016
+- description: '[MECE 2.1.2 and 2.0.10 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.2.html){:target="_blank"}'
+  versions: 2.0.10, 2.1.2
+  type: New
+  date: Oct 21 2016
+- description: '[Added HTTP response codes to Web API topic]({{ page.baseurl }}/get-started/gs-web-api-response.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 21 2016
+- description: '[System requirements home page]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 21 2016
+- description: "[How to apply the SUPEE-8788 security patch]({{ site.m1xgdeurl }}other/ht_install-patches.html#apply-8788)"
+  versions: 1.x
+  type: Updated
+  date: Oct 21 2016
+- description: '[Magento CE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10CE.html){:target="_blank"}'
+  versions: 2.0.x
+  type: New
+  date: Oct 14 2016
+- description: '[Magento EE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html){:target="_blank"}'
+  versions: 2.0.x
+  type: New
+  date: Oct 14 2016
+- description: '[Magento CE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2CE.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Oct 14 2016
+- description: '[Magento EE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Oct 14 2016
+- description: '[Proposed outline for evolving UI Components guide]({{ site.gdeurl21
+    }}ui_comp_guide/ui_comp_outline_proposed.html){:target="_blank"}'
+  versions: 2.1.x
+  type: New
+  date: Oct 14 2016
+- description: '[Preventing cache poisoning]({{ page.baseurl }}/config-guide/secy/secy-headers.html){:target="_blank"}'
+  versions: See topic
+  type: New
+  date: Oct 14 2016
+- description: '[Updated system requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 14 2016
+- description: '[JSON responses added by Tim Reynolds]({{ site.m1xgdeurl }}api/rest/Resources/resource_customer_addresses.html){:target="_blank"}'
+  versions: 1.x
+  type: Updated
+  date: Oct 14 2016
+- description: '[JSON responses added by Tim Reynolds]({{ site.m1xgdeurl }}api/rest/Resources/resource_customers.html){:target="_blank"}'
+  versions: 1.x
+  type: Updated
+  date: Oct 14 2016
+- description: '[Magento CE 1.9.3 release notes]({{ site.m1xgdeurl }}ce19-ee114/ce1.9_release-notes.html){:target="_blank"}'
+  versions: 1.x
+  type: New
+  date: Oct 14 2016
+- description: '[Magento EE 1.14.3 release notes]({{ site.m1xgdeurl }}ce19-ee114/ee1.14_release-notes.html){:target="_blank"}'
+  versions: 1.x
+  type: New
+  date: Oct 14 2016
+- description: '[Updated system requirements]({{ site.m1xgdeurl }}system-requirements.html){:target="_blank"}'
+  versions: 1.x
+  type: Updated
+  date: Oct 14 2016
+- description: '[Indexing]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html){:target="_blank"}
+    (add information about improving indexing performance)'
+  versions: 2.x
+  type: Updated
+  date: Oct 7 2016
+- description: '[Magento 2 documentation resources for {{site.data.var.ece}} (MECE)]({{
+    page.baseurl }}/cloud/bk-cloud.html{:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 7 2016
+- description: '[MECE environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 7 2016
+- description: '[MECE add more information about project directory structure]({{ page.baseurl
+    }}/cloud/project/project-start.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 7 2016
+- description: '[MECE completely revise new environment setup]({{ page.baseurl }}/cloud/before/before-setup-env-1_get-start.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 7 2016
+- description: '[MECE responsibilities of the account owner]({{ page.baseurl }}/cloud/before/before-project-owner.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 7 2016
+- description: '[MECE Magento file system owner for local development]({{ page.baseurl
+    }}/cloud/before/before-workspace-file-sys-owner.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 7 2016
+- description: '[MECE setting MySQL `auto_increment_increment=3`]({{ page.baseurl
+    }}/cloud/before/before-workspace-php.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 7 2016
+- description: '[MECE moving from integration to staging and production]({{ page.baseurl
+    }}/cloud/live/stage-prod-over.html){:target="_blank"} (see also associated topics)'
+  versions: 2.x
+  type: New
+  date: Oct 7 2016
+- description: '[Added info about using tokens in authentication requests]({{ page.baseurl
+    }}/get-started/authentication/gs-authentication-token.html){:target="_blank"}'
+  versions: 2.x
+  type: Updated
+  date: Oct 7 2016
+- description: '[How to programmatically create a category with custom attributes]({{
+    page.baseurl }}/rest/catalog-notes.html){:target="_blank"}'
+  versions: 2.x
+  type: New
+  date: Oct 7 2016

@@ -71,7 +71,7 @@ You might need to add a dictionary for the default language (en_US) in the follo
 - if you want to replace certain strings from the <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use "Compare" instead of "Add to Compare".
 - if you want your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to be ready for localization. 
 
-For practical illustration of creating a dictionary for a theme for both cases, see the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.
+For practical illustration of creating a dictionary for a theme for both cases, see the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Example theme translation dictionary</a> topic.
 
 ## Manually translate words and phrases   {#m2devgde-xlate-translating}
 
