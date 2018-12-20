@@ -36,7 +36,7 @@ To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file.
 1. Run the `deploy` command to get localization changes:
 
     ```bash
-    php bin/magento setup:static-content:deploy
+     bin/magento setup:static-content:deploy
     ```
 
 ## Results 
