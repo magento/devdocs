@@ -21,7 +21,7 @@ chmod u+x bin/magento
 
 To optionally enter all commands on one line, enter the following assuming Magento is installed in `/var/www/html/magento2`:
 ```bash
-cd /var/www/html/magento2 && find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var vendor pub/static pub/media app/etc -type d -exec chmod g+w {} + && chmod u+x bin/magento
+cd /var/www/html/magento2 && chmod -R g+w var vendor pub/static pub/media app/etc && chmod u+x bin/magento
 ```
 
 After you set file system permissions, manually clear the `var/cache`, `var/page_cache`, and `var/generation` directories.
