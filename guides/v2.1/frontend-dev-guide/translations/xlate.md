@@ -75,7 +75,7 @@ For an example of creating a dictionary for a theme for both cases, see [Example
 
 Translating the names, titles and phrases used in Magento involves the following steps:
 
-1.	Generate a dictionary of your instance using the [translation dictionary tool]. Fully review [Translation dictionaries and packages] to best understand all steps, commands, and best practices for generating the dictionary.
+1.	Generate a dictionary of your instance using the [translation dictionary tool]. Fully review [Translation dictionaries and packages] to understand all steps, commands, and best practices for generating the dictionary.
 1.	Translate the terms.
 1.	If desired, package your translations in a [language package].
 
@@ -151,7 +151,7 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 ## Community Engineering Translations project {#translations-project}
 
-Community Engineering accepts translation contributions through the [Magento CrowdIn project] to localize all UI strings. Various meet ups and contribution days include developers contributing translations.
+Community Engineering accepts translation contributions through the [Magento CrowdIn project] to localize all UI strings. Various Meet Magento and Contribution Day events include developers contributing translations.
 
 1. Create a [CrowdIn account] and join the [Magento CrowdIn project].
 1. Browse and select a language. A percentage displays tracking translation progress overall and per section of the Magento Admin.

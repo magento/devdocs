@@ -121,7 +121,7 @@ Language packages are located in a directory under `app/i18n/<VendorName>` in th
 -   [`language.xml`](#config-cli-subcommands-xlate-pack-meta-xml) meta-information file
 
 {:.bs-callout .bs-callout-info}
-The entire path must be all lowercase. For an example, see the [`de_de` language package.
+You must lowercase the entire path. For example, see [`de_de`].
 
 To create these files:
 
@@ -138,7 +138,7 @@ To create these files:
 
 When declaring a language package in the `language.xml` configuration file, you must specify the sequence of the language inheritance for this package.
 
-Language inheritance enables you to create a new translation based on an existing one (the existing translation is referred to as the _parent_). The child translations override the parent. However, if the child translation fails to upload or display, the parent is used. If a child translation lacks a phrase or a word, this phrase or word is taken from the parent {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}. [Examples of language package inheritance](#m2devgde-xlate-inheritancework).
+Language inheritance enables you to create a new translation called a _child_ based on an existing translation called a _parent_. The child translations override the parent. However, if the child translation fails to upload or display or is missing a phrase or word, Magento uses the parent {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}. [Examples of language package inheritance](#m2devgde-xlate-inheritancework).
 
 To declare a package, specify the following information:
 
@@ -165,9 +165,9 @@ If necessary, you can specify several parent packages. The parent packages are a
 
 #### Example of language inheritance {#m2devgde-xlate-inheritancework}
 
-It is possible a language package descends from two other packages, and that those packages also have parent and "grandparent" packages.
+Suppose a language package inherits from two other packages, and that those packages also have parent and "grandparent" packages.
 
-If a language package descends from two packages, its `language.xml` might look like the following:
+If a language package inherits from two packages, its `language.xml` might look like the following:
 
 ```xml
 <language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/Language/package.xsd">
@@ -182,8 +182,8 @@ If a language package descends from two packages, its `language.xml` might look 
 
 In the preceding example:
 
--   `language_package_one` descends from `en_au_package` and `en_au_package` descends from `en_ie_package`
--   `language_package_two` descends from `en_ca_package` and `en_ca_package` descends from `en_us_package`
+-   `language_package_one` inherits from `en_au_package` and `en_au_package` inherits from `en_ie_package`
+-   `language_package_two` inherits from `en_ca_package` and `en_ca_package` inherits from `en_us_package`
 
 If the Magento application cannot find word or phrase in the `en_GB` package, it looks in other packages in following sequence:
 
@@ -321,7 +321,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 [ISO 639-1]: http://www.iso.org/iso/home/standards/language_codes.htm
 [ISO 3166]: http://www.iso.org/iso/country_codes.htm
 [registers]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
-[`de_de` language package]: {{ site.mage2000url }}app/i18n/magento/de_de/registration.php
+[`de_de`]: {{ site.mage2000url }}app/i18n/magento/de_de/registration.php
 [`composer.json`]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html
 [`registration.php`]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Magento\Test\Integrity\App\Language\CircularDependencyTest]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php
