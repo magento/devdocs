@@ -94,7 +94,7 @@ The three `quantity` values sum up to 0 (-25 + 5 + 20). Note that Magento does n
 
 ## Removing processed reservations
 
-Magento provides the `inventory_cleanup_reservations` cron job to clear the reservation table. By default, it runs daily at midnight, though the times and frequency can be configured. The cron job runs a script that queries the database to find complete reservation sequences in which the sum of quantity values is 0. When all reservations for a given product that originated on the same day (or other configured time) have been compensated, Magento subsequently deletes these reservations all at once.
+Magento provides the `inventory_cleanup_reservations` cron job to clear the reservation table. By default, it runs daily at midnight, though you can configure the times and frequency. The cron job runs a script that queries the database to find complete reservation sequences in which the sum of quantity values is 0. When all reservations for a given product that originated on the same day (or other configured time) have been compensated, Magento subsequently deletes these reservations all at once.
 
 Often, all initial reservations produced in a single day cannot compensated that same day.  This situation could occur when a customer places an order minutes before the cron job begins or makes the purchase with an offline payment method, such as a bank transfer. The compensated reservation sequences remain in the database until they have all been compensated. This practice does not interfere with reservation calculations, because the total for each reservation is 0.
 
