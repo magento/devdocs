@@ -43,8 +43,8 @@ Localizing Magento storefronts and the Admin panel gives your company global pre
 		Use and distribute the dictionary as a standalone component (similar to modules and themes).
 *	Customize the default strings in Magento. For example, changing "Add to Wish List" to "Wish List".
 *	Use ready-to-use language packages prepared by other users or create your own. The [Magento Marketplace] offers language packs to download and install.
-*	Create localizations based on existing, or parent, translations using [language inheritance]. Inheritance means (among other things) that if you missed or omitted localizing some phrases or terms, parent translations are used.
-*	Customize your translations further by creating more than one version of a translation for the same language.
+*	Localize strings based on existing, or parent, translations using [language inheritance]. 
+*	Customize your translations further by creating more than one version of a translation for the same language to cover dialects and different phrasing.
 *	Contribute to [Magento translations](#translations-project) through [Magento CrowdIn project] with Magento Community Engineering. We encourage translation contributions and efforts in the project for future language packs. 
 
 Depending on your needs, you can use the existing [language packages](#m2devgde-xlate-languagepack), [translate Magento by yourself](#m2devgde-xlate-translating), or [contribute](#translations-project).
