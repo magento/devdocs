@@ -156,7 +156,7 @@ Community Engineering accepts translation contributions through the [Magento Cro
 1. Create a [CrowdIn account] and join the [Magento CrowdIn project].
 1. Browse and select a language. A percentage displays tracking translation progress overall and per section of the Magento Admin.
 1. Expand and locate an area of UI text strings to translate. Strings marked red need a translation, and marked green have existing translations.
-1. Enter or review translations for strings. For more information, see the [CrowdIn knowledge base].
+ 1. Enter or review translations for strings as described in the [CrowdIn knowledge base].
 
 Magento admins will review and approve translations as available. The project may include package creation and further support using the contributed and approved translations. 
 
