@@ -9,7 +9,7 @@ This Community collection of resources links to blog posts, podcasts, presentati
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
-Another community based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List][0]
+ Another community-based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List][0]
 
 Do you know of a popular resource about Magento 2 that has been released/published within the past year?
 Does it fill gaps in our current docs and provide important information?
