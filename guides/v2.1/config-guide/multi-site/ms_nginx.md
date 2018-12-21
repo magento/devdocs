@@ -183,10 +183,12 @@ To modify the `nginx.conf.sample` file:
     ```
 
 2. Update the `nginx.conf.sample` file with the following two lines before the include statement:
+
     ```terminal
         fastcgi_param MAGE_RUN_TYPE $MAGE_RUN_TYPE;
         fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
     ```
+
 An example updated PHP entry point for the main application looks like:
 
 ```terminal
