@@ -188,6 +188,7 @@ To modify the `nginx.conf.sample` file:
         fastcgi_param MAGE_RUN_CODE $MAGE_RUN_CODE;
     ```
 An example updated PHP entry point for the main application looks like:
+
 ```terminal
 # PHP entry point for main application
 
