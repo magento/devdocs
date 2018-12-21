@@ -50,23 +50,30 @@ We recommend adding at least one account through Blackfire to manage all access,
 
 We recommend enabling Blackfire in all of your active environments, including the Integration environment. See [Configure Blackfire to run in all Magento Cloud environments](https://support.blackfire.io/blackfire-on-magento-cloud/getting-started/step-3-configure-blackfire-to-run-in-all-magento-cloud-environments).
 
-### Pre-requisites
+### Prerequisites
 
-1. You have set up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html). (`magento-cloud` CLI v1.23 or newer)
-1. You have to be a Super User / admin for the entire project.
-1. You have the `MAGENTO_CLOUD_APPLICATION` environment variable set for your project in your staging or production environment. You can check this with the follwowing command:
-   ```
-   magento-cloud ssh 'PRO="$(env | grep -v SSH_ORIGINAL_COMMAND | grep MAGENTO_CLOUD_APPLICATION)"; [[ -n "$PRO" ]] && echo "MAGENTO_CLOUD_APPLICATION exists" || echo "MAGENTO_CLOUD_APPLICATION does not exist; contact {{site.data.var.ece}} support"'
-   ```
+-   You must be an [account owner]({{ page.baseurl }}/cloud/project/user-admin.html) or have super user access.
+-   Set up your [local workspace]({{ page.baseurl }}/cloud/before/before-workspace.html). (`magento-cloud` CLI v1.23 or newer)
+-   Set the `MAGENTO_CLOUD_APPLICATION` environment variable in Staging or Production environment.
 
-If you do not meet all requirements, please reach out to your {{site.data.var.ece}} account manager.
+    Use the following to verify the settings:
+    
+    ```
+    magento-cloud ssh 'PRO="$(env | grep -v SSH_ORIGINAL_COMMAND | grep MAGENTO_CLOUD_APPLICATION)"; [[ -n "$PRO" ]] && echo "MAGENTO_CLOUD_APPLICATION exists" || echo "MAGENTO_CLOUD_APPLICATION does not exist; contact {{site.data.var.ece}} support"'
+    ```
+
+If you do not meet all requirements, contact your {{site.data.var.ece}} account manager.
 
 ### Setup Blackfire
 
-1.  Open your terminal and locate your Magento Cloud project.
-1.  Execute the following command: `magento-cloud blackfire:setup`.
+1.  From the terminal, log in to your {{site.data.var.ece}} project.
+1.  Configure Blackfire using the `magento-cloud` CLI.
 
-This command will automatically configure Blackfire on all environments and activate automated profiling each time changes are applied to an environment (code change, merge, deploy, etc.). You may be asked which {{site.data.var.ece}} project you wish to set up and for your [Blackfire client credentials](https://blackfire.io/my/settings/credentials).
+    ```bash
+    magento-cloud blackfire:setup
+    ```
+
+    The `blackfire:setup` command automatically configures Blackfire on all environments and activates automated profiling each time you apply and commit changes to an environment. If prompted, provide the {{site.data.var.ece}} project ID and your [Blackfire client credentials](https://blackfire.io/my/settings/credentials).
 
 ## To enable Blackfire on local workspace
 
@@ -89,7 +96,7 @@ If you use a reverse proxy, cache, or CDN, you must grant Blackfire access to yo
 
 ### HTTP Cache configuration
 
-If you use the HTTP cache with `cookies`, update your `.magento.app.yaml` file to allow the `__blackfire` cookie name to pass through the cache. For example:
+If you use the HTTP cache with `cookies`, update your `.magento.app.yaml` file to enable the `__blackfire` cookie name to pass through the cache. For example:
 
 > `.magento.app.yaml`
 
@@ -98,8 +105,6 @@ cache:
     enabled: true
     cookies: [“/SESS.*/“, “__blackfire”]
 ```
-
-## Advanced Configuration and Troubleshooting
 
 ### Add Blackfire to .magento.app.yaml {#magentoappyaml}
 
@@ -140,7 +145,8 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 	magento-cloud environment:checkout <environment_ID>
 	```
 
-	You can also create a new branch using the `magento-cloud environment:branch` command.
+	Also, you can create a new branch using the `magento-cloud environment:branch` command.
+
 1.  Back up the environment using a snapshot.
 
 	```bash
@@ -175,7 +181,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 
 ### Changing from the default route {#route}
 
-If you need to specify a different route to use instead of the default route, change the route in the Blackfire _Magento Cloud Integration_ page (expand _Advanced Settings_ to reveal the route selection setting) to the desired route from your `routes.yaml` file. 
+Instead of using the default route, you can change the route in the Blackfire _Magento Cloud Integration_ page (expand _Advanced Settings_ to reveal the route selection setting) to the desired route from your `routes.yaml` file. 
 
 ## Profile your store {#profile}
 
@@ -206,7 +212,7 @@ You can verify that Blackfire works using a browser extension or the CLI. For ex
 
 ## Automate performance testing
 
-After completing the [Blackfire Integration](#dev), Blackfire will execute performance tests automatically each time you push code to an active branch, merge a branch or deploy to staging or production. This adds [no overhead](https://blackfire.io/docs/reference-guide/analyzing-call-graphs#understanding-blackfire-overhead) and has no impact on the deployment process. You can also activate [Blackfire's automated performance testing](#automation) via the Blackfire/New Relic integration, and other options.
+After completing the [Blackfire Integration](#dev), Blackfire runs performance tests automatically each time you push code to an active branch, merge a branch, or deploy to Staging or Production environments. This adds [no overhead](https://blackfire.io/docs/reference-guide/analyzing-call-graphs#understanding-blackfire-overhead) and has no impact on the deployment process. Also, you can activate [Blackfire's automated performance testing](#automation) using the Blackfire/New Relic integration, and other options.
 
 By simply defining a set of key requests for Blackfire to profile— `/home`, `/checkout`, `/checkout/payment`—Blackfire can notify you if your code complies with established [code performance recommendations](https://blackfire.io/docs/reference-guide/recommendations). The following is a sample build report with recommendations:
 
@@ -238,7 +244,7 @@ See the Blackfire documentation on [Writing tests](https://blackfire.io/docs/coo
 
 Once you create and deploy your `.blackfire.yml` file, you can enable Blackfire to run your tests automatically in various ways:
 
--  **Automated builds on Integration**—Whenever you push code on an Integration, Staging or Production branch, Blackfire automatically runs your tests. You can receive a notification of the results in various ways, such as a commit status level when using GitHub or Bitbucket. See Blackfire notifications.
+-  **Automated builds on Integration**—Whenever you push code on an Integration, Staging, or Production branch, Blackfire automatically runs your tests. You can receive a notification of the results in various ways, such as a commit status level when using GitHub or Bitbucket. See Blackfire notifications.
 -   **Automated builds using a webhook**—Blackfire offers a very flexible way to start builds using a webhook, which can target any endpoint. See [Start building a webhook](https://blackfire.io/docs/reference-guide/builds-and-integrations#start-build-using-a-webhook).
 -   **Automated builds with the Blackfire/New Relic integration**—Blackfire and New Relic are very complementary. New Relic monitors the overall traffic performance, and Blackfire profiles much deeper into the PHP code. See [What is the difference between Blackfire and New Relic](https://support.blackfire.io/questions-about-blackfire/what-is-blackfire/what-is-the-difference-between-blackfire-and-new-relic-and-other-apms). You can configure New Relic to fire Blackfire builds whenever relevant. See [New Relic](https://blackfire.io/docs/integrations/new-relic).
 
