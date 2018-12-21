@@ -489,56 +489,56 @@ It contains one or more `value` elements.
 
 Declares a data type for items within `<array>`.
 
-1. Example of an array with value of a primitive data type:
+#### Example of an array with value of a primitive data type
 
-   - Metadata declaration of the operation schema:
+Metadata declaration of the operation schema:
 
-    ```xml
-    <array key="tax_rate_ids">
-        <value>integer</value>
-    </array>
-    ```
+```xml
+<array key="tax_rate_ids">
+    <value>integer</value>
+</array>
+```
 
-    The value can contain one or more items.
+The value can contain one or more items.
 
-   - Data entity with the corresponding assignment:
+Data entity with the corresponding assignment:
 
-    ```xml
-    <array key="tax_rate_ids">
-        <item>1</item>
-        <item>2</item>
-    </array>
-    ```
+```xml
+<array key="tax_rate_ids">
+    <item>1</item>
+    <item>2</item>
+</array>
+```
 
-   - Resulted JSON request:
+- Resulted JSON request:
 
-    ```json
-    "tax_rate_ids":
-        [
-            "item": 1,
-            "item": 2
-        ]
-    ```
+```json
+"tax_rate_ids":
+    [
+        "item": 1,
+        "item": 2
+    ]
+```
 
-2. Example of an array containing data entities:
+#### Example of an array containing data entities
 
-    ```xml
-    <array key="product_options">
-        <value>product_option</value>
-    </array>
-    ```
+```xml
+<array key="product_options">
+    <value>product_option</value>
+</array>
+```
 
-    The value declares the `product_options` array that contains one or more entities of the `product_option` data type.
+The value declares the `product_options` array that contains one or more entities of the `product_option` data type.
 
-3. Example of an array containing a particular data field:
+#### Example of an array containing a particular data field
 
-    ```xml
-    <array key="tax_rate_ids">
-        <value>tax_rate.id</value>
-    </array>
-    ```
+```xml
+<array key="tax_rate_ids">
+    <value>tax_rate.id</value>
+</array>
+```
 
-    The value declares the `tax_rate_ids` array that contains one or more `id` fields of the `tax_rate` data type entity.
+The value declares the `tax_rate_ids` array that contains one or more `id` fields of the `tax_rate` data type entity.
 
 ### header {#header-tag}
 
