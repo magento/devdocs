@@ -1,8 +1,8 @@
 ---
 group: frontend-developer-guide
 subgroup: G_Translate
-title: Create a translation dictionary for a theme
-menu_title: Create a translation dictionary for a theme, illustration
+title: Example theme translation dictionary
+menu_title: Example theme translation dictionary, illustration
 menu_order: 2
 functional_areas:
   - Frontend
