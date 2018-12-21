@@ -9,7 +9,7 @@ This Community collection of resources links to blog posts, podcasts, presentati
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
-Another community based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List][0]{:target="_blank"}
+Another community based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List][0]
 
 Do you know of a popular resource about Magento 2 that has been released/published within the past year?
 Does it fill gaps in our current docs and provide important information?
@@ -25,7 +25,7 @@ See our collection of best and leading practices, common solutions, and more in 
 
 ## Community Engineering Slack
 
-To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us request at [engcom@adobe.com][] or [self signup][].
+To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
 
 
 We have channels for each project. These channels are recommended for new members:
@@ -91,7 +91,6 @@ We have channels for each project. These channels are recommended for new member
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [Magento Community Engineering Slack]: https://magentocommeng.slack.com
-[engcom@magento.com]: mailto:engcom@adobe.com
 [self signup]: https://tinyurl.com/engcom-slack
 [general]: https://magentocommeng.slack.com/messages/C4YS78WE6
 [github]: https://magentocommeng.slack.com/messages/C7KB93M32
