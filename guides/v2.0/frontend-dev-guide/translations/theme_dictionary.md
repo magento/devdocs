@@ -47,7 +47,7 @@ That is why the recommended flow for adding custom strings is the following:
 1. <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Generate the dictionary</a> for your theme.
 2. Change the necessary values in the right column, or add rows if the strings you want to replace are not in the dictionary. The i18n tool does not create a dictionary, if the theme files do not contain any strings for translation. In this case, add the file manually. 
 
-See the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic for the practical illustration of the  procedure.
+See the <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Example theme translation dictionary</a> topic for the practical illustration of the  procedure.
 
 ### Custom strings and dictionaries for not default locales
 
@@ -66,4 +66,4 @@ The default values (keys) are used in the left column.
 ## Recommended reading ##
 
 - <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translations overview</a>
--  <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a>
+-  <a href="{{ page.baseurl }}/frontend-dev-guide/translations/translate_practice.html">Example theme translation dictionary</a>
