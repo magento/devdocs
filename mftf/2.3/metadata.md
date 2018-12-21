@@ -9,7 +9,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
 In this topic we talk about handling entities that you need in your tests (such as categories, products, wish lists, and similar) using the MFTF.
-Using data handling actions like [createData], [deleteData], [updateData], and [getData], you are able to create, delete, update, and read entities for your tests.
+Using data handling actions like [`createData`], [`deleteData`], [`updateData`], and [`getData`], you are able to create, delete, update, and read entities for your tests.
 The framework enables you to send HTTP requests with these statically defined data entities:
 
 - [Sending a REST API request][rest request]
