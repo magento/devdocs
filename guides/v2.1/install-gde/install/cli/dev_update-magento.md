@@ -36,4 +36,8 @@ To update the Magento software if you're a contributing developer:
 
 5.	Update the Magento database:
 
-		php <your Magento install dir>/bin/magento setup:upgrade
+		<your Magento install dir>/bin/magento setup:upgrade
+
+6.  Clean the cache:
+
+    bin/magento cache:clean

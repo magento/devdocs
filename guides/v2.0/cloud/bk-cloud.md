@@ -8,14 +8,8 @@ menu_order: 10
 menu_node: parent
 redirect_from:
   - /guides/v2.0/cloud/access-acct/resources.html
-  - /guides/v2.1/cloud/access-acct/resources.html
-  - /guides/v2.2/cloud/access-acct/resources.html
   - /guides/v2.0/cloud/welcome/get-help.html
-  - /guides/v2.1/cloud/welcome/get-help.html
-  - /guides/v2.2/cloud/welcome/get-help.html
   - /guides/v2.0/cloud/welcome/10000-ft-overview.html
-  - /guides/v2.1/cloud/welcome/10000-ft-overview.html
-  - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 functional_areas:
   - Cloud
 ---

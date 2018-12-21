@@ -6,7 +6,6 @@ menu_order: 6
 menu_title: DropdownDialog widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 ## Overview
 
