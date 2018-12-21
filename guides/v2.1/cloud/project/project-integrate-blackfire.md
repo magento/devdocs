@@ -162,7 +162,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 
 #### Next, modify the `.magento.app.yaml` file:
 
-1.  Use a text editor to locate and edit `<project root dir>/.magento.app.yaml` file in your branch.
+1.  Use a text editor to locate and edit the `<project root dir>/.magento.app.yaml` file in your branch.
 	
 1.  Enter `- name: blackfire` in the `extensions` block under `runtime`.
 
@@ -262,7 +262,7 @@ When you configure at least one way of triggering builds with Blackfire, you can
 
 ## Blackfire support
 
-If you continue to experience problems, you can contact Blackfire support and provide output.
+If you continue to experience problems, save your log files and contact Blackfire support.
 
 {: .bs-callout .bs-callout-warning}
 Blackfire does not provide technical support for Starter accounts.
