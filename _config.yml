@@ -45,6 +45,7 @@ defaults:
     scope:
       path: ""
     values:
+      lang: en
       layout: default
       github_repo: https://github.com/magento/devdocs/
       github_files: https://github.com/magento/devdocs/blob/master/
@@ -86,6 +87,21 @@ defaults:
       group: module-reference-guide-2_3
       github_link: false
       feedback_link: false
+  -
+    scope:
+      path: guides/v2.0
+    values:
+      sitemap: false
+  -
+    scope:
+      path: guides/v2.1
+    values:
+      sitemap: false
+  -
+    scope:
+      path: guides/v2.2
+    values:
+      sitemap: false
 
 ##########################
 # Plugins and extensions #
@@ -96,6 +112,7 @@ defaults:
 # This list doesn't include custom plugins.
 #
 plugins:
+  - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
 

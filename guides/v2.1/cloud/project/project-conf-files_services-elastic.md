@@ -63,18 +63,6 @@ elasticsearch:
       - lang-python
 ```
 
-For example, if you are using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you should add the following plugins:
-
-```yaml
-elasticsearch:
-   type: elasticsearch:2.4
-   disk: 1024
-   configuration:
-    plugins:
-      - analysis-icu
-      - analysis-phonetic
-```
-
 The following are supported Elasticsearch plugins for version 2.4:
 
 * `analysis-icu`: ICU Analysis Plugin, Support ICU Unicode text analysis
@@ -93,11 +81,12 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 * `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
+{:.bs-callout .bs-callout-info}
+ElasticSuite is a third party plugin and is not officially supported by Magento. If you use [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you must add the `analysis-icu` and `analysis-phonetic` plugins to the `services.yaml` file.
 
-For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
+For documentation on plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
 
-## Verify environment-related relationships {#cloud-es-config-mg}
+## Verify relationships
 
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
