@@ -59,7 +59,7 @@ See these resources on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a
 [Magento Component Manager]: {{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
 [Web Setup Wizard]: https://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
 [Package your component]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html
-[Install your component]: {{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html
+[Install your component]: {{ page.baseurl }}/comp-mgr/module-man/compman-checklist.html
 [Install using Composer]: {{ page.baseurl }}/install-gde/install/sample-data-after-composer.html
 [Magento Marketplace Extension Quality Program Coding Standard]: https://github.com/magento/marketplace-eqp
 [PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
