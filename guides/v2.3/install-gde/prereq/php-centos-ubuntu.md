@@ -261,6 +261,88 @@ To install PHP 7.1 on Ubuntu 14 or 16:
     [Zend Modules]
     Zend OPcache
     ```
+### PHP 7.2 on Ubuntu {#instgde-prereq-php71-ubuntu}
+
+To install PHP 7.2 on Ubuntu 16 or 18:
+
+1.	Enter the following commands in the order shown:
+
+		sudo apt-get -y update
+		sudo add-apt-repository ppa:ondrej/php
+		sudo apt-get -y update
+		sudo apt-get install -y php7.2 libapache2-mod-php7.2 php7.2-common php7.2-gd php7.2-mysql php7.2-curl php7.2-intl php7.2-xsl php7.2-mbstring php7.2-zip php7.2-bcmath php7.2-iconv php7.2-soap
+
+    The last command installs all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions).
+    The `bcmath` extension is required for {{site.data.var.ee}} only.
+
+2.	Verify that PHP 7.2 is installed properly:
+
+		php -v
+
+    The following response indicates that PHP 7.1.7 is installed:
+
+		PHP 7.2.13-1+ubuntu18.10.1+deb.sury.org+1 (cli) (built: Dec  7 2018 08:08:06) ( NTS )
+                Copyright (c) 1997-2018 The PHP Group
+                Zend Engine v3.2.0, Copyright (c) 1998-2018 Zend Technologies with Zend OPcache v7.2.13-1+ubuntu18.10.1+deb.sury.org+1, Copyright (c) 1999-2018, by Zend Technologies with Xdebug v2.6.1, Copyright (c) 2002-2018, by Derick Rethans
+
+    {:.bs-callout .bs-callout-info}
+    The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
+
+3.	Verify that all [required PHP extensions]({{ page.baseurl }}/install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+
+		php -me
+
+    You should see output similar to the following:
+    ```
+    [PHP Modules]
+    bcmath
+    calendar
+    Core
+    ctype
+    curl
+    date
+    dom
+    exif
+    fileinfo
+    filter
+    ftp
+    gd
+    gettext
+    hash
+    iconv
+    intl
+    json
+    libxml
+    mbstring
+    mysqli
+    mysqlnd
+    openssl
+    pcntl
+    pcre
+    PDO
+    pdo_mysql
+    Phar
+    readline
+    Reflection
+    session
+    SimpleXML
+    soap
+    sockets
+    SPL
+    standard
+    tokenizer
+    wddx
+    xml
+    xmlreader
+    xmlwriter
+    xsl
+    Zend OPcache
+    zip
+    zlib
+
+    [Zend Modules]
+    Zend OPcache
+    ```
 
 #### Next
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
