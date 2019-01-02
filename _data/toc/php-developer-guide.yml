@@ -189,7 +189,7 @@ pages:
               url: /extension-dev-guide/declarative-schema/data-patches.html
 
         - label: Web APIs
-          include_versions: [2.3"]
+          include_versions: ["2.3"]
           children:
 
             - label: Configure services as web APIs
