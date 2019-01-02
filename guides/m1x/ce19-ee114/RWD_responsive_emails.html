@@ -22,6 +22,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 <div id="content">
 
@@ -308,7 +309,6 @@
     <h3 id="email-css-noninline">Using Non-Inline Styles to Customize Email CSS</h3>
     <p>There are certain CSS styles that can't be applied inline, such as media queries styles. These styles must be in a <code>&lt;style type=&quot;text/css&quot;&gt;&lt;/style&gt;</code> tag.</p>
     <p>To understand how non-inline styles are included, see line 7 in <code>app/locale/en_US/template/email/html/header.html</code>:
-        <script src="https://gist.github.com/xcomSteveJohnson/df32b6bcde86318d33fc.js"></script>
     <p>The variable <code>&#123;&#123;var non_inline_styles}}</code> loads CSS from several sources:</p>
     <ul>
         <li>The contents of <code>email-non-inline.css</code>.<br>

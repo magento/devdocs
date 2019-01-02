@@ -1,12 +1,9 @@
 ---
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Use REST APIs
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: get-started/rest_front.md
-redirect_from: /guides/v1.0/get-started/rest_front.html
 ---
 
 The Magento REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} defines a set of functions that a developer can use to perform requests and receive responses. These interactions are performed using the HTTP protocol.

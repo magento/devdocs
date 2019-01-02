@@ -1,13 +1,11 @@
 ---
-group: cloud
+group: cloud-guide
 title: Deploy variables
-version: 2.1
-github_link: cloud/env/variables-deploy.md
 functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -15,10 +13,7 @@ stage:
     DEPLOY_VARIABLE_NAME: value
 ```
 
-For more information about customizing the build and deploy process:
-
--  [Manage build and deploy actions](http://devdocs.magento.com/guides/v2.1/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
+{% include cloud/customize-build-deploy.md %}
 
 ### `CACHE_CONFIGURATION`
 
@@ -61,15 +56,19 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Cleans the [generated static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) when you perform an action such as enabling or disabling a component. We recommend the default value _true_ in development. The supported values are `true` and `false`.
+Enables or disables cleaning [static content files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview) generated during the build or deploy phase. We recommend the default value _true_ in development. If you make modifications to static content through a separate process, set the value to _false_.
+
+-   **`true`**—Removes all existing static content before deploying the updated static content.
+-   **`false`**—The deployment only overwrites existing static content files if the generated content contains a newer version.
 
 ```yaml
 stage:
   deploy:
-    CLEAN_STATIC_FILES: false
+    CLEAN_STATIC_FILES: true
 ```
 
-Failure to clear static view files might result in issues if there are multiple files with the same name and you do not clear all of them. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, if you do not clear static files and there is more than one file named `logo.gif` that are different, fallback might cause the wrong file to display.
+Failure to clean static view files before deploying can cause problems if you
+deploy updates to existing files without removing the previous versions. Because of [static file fallback]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) rules, fallback operations can display the wrong file if the directory contains multiple versions of the same file.
 
 ### `CRYPT_KEY`
 
@@ -83,7 +82,7 @@ Use the Project Web UI to set this value. When you move the database from one en
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-If you defined a database in the [relationships property](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
+If you defined a database in the [relationships property]({{ site.baseurl }}/guides/v2.2/cloud/project/project-conf-files_magento-app.html#relationships) of the `.magento.app.yaml` file, you can customize your database connections for deployment.
 
 ```yaml
 stage:
@@ -104,12 +103,33 @@ stage:
       _merge: true
 ```
 
+### `ENABLE_GOOGLE_ANALYTICS`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Enables and disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
+
+-   **`true`**—Enables Google Analytics on Staging and Integration environments.
+-   **`false`**—Disables Google Analytics on Staging and Integration environments.
+
+Add the `ENABLE_GOOGLE_ANALYTICS` environment variable to the `deploy` stage in the `.magento.env.yaml` file:
+
+```yaml
+stage:
+  deploy:
+    ENABLE_GOOGLE_ANALYTICS: true 
+```
+
+{:.bs-callout .bs-callout-info}
+The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
+
 ### `GENERATED_CODE_SYMLINK`
 
 -  **Default**—`true`
 -  **Version**—Magento 2.1.x
 
-Generates symlinks for the `var/generation` and `var/di` generated folders. 
+Generates symlinks for the `var/generation` and `var/di` generated folders.
 
 ```yaml
 stage:
@@ -194,7 +214,7 @@ The read-only connection is not available for use in the Integration environment
 -  **Default**—`6`
 -  **Version**—Magento 2.1.4 and later
 
-Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
+Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
 ```yaml
 stage:
@@ -212,7 +232,7 @@ Themes include numerous files. Set this variable to `true` if you want to skip c
 ```yaml
 stage:
   deploy:
-    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme" 
+    SCD_EXCLUDE_THEMES: "magento/luma, magento/my-theme"
 ```
 
 ### `SCD_MATRIX`
@@ -222,13 +242,13 @@ stage:
 
 You can configure specific locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
-The following example deploys the `magento/backend` theme with three locales:
+The following example deploys the `Magento/backend` theme with three locales:
 
 ```yaml
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend":
+      "Magento/backend":
         language:
           - en_US
           - fr_FR
@@ -241,12 +261,12 @@ Also, you can choose to _not_ deploy a theme:
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend": [ ]
+      "Magento/backend": [ ]
 ```
 
 ### `SCD_THREADS`
 
--  **Default**: 
+-  **Default**:
     -  `1`—Starter environments and Pro Integration environments
     -  `3`—Pro Staging and Production environments
 -  **Version**—Available in all versions
@@ -303,7 +323,7 @@ Configure Redis session storage. You must specify the `save`, `redis`, `host`, `
 stage:
   deploy:
     SESSION_CONFIGURATION:
-      redis: 
+      redis:
         bot_first_lifetime: 100
         bot_lifetime: 10001
         database: 0
@@ -336,7 +356,7 @@ stage:
 
 Set to `true` to skip static content deployment during the deploy phase.
 
-We recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
+We recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:
@@ -349,7 +369,11 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time.
+
+If you generate static content during the build phase, it creates a symlink to the content folder.
+If you generate static content during the deploy phase, it writes directly to the content folder.
+Generating static content on demand disables this variable.
 
 ```yaml
 stage:
@@ -377,7 +401,7 @@ You should set this variable to `false` _only_ in Staging or Production environm
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="\_blank"} debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+ Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
 
 ```yaml
 stage:

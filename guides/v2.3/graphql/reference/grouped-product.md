@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: GroupedProduct endpoint
-version: 2.3
-github_link: graphql/reference/grouped-product.md
 ---
 
 The `GroupedProduct` endpoint defines which grouped product-specific attributes are returned when performing a `products` search.

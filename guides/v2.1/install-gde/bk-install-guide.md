@@ -1,17 +1,14 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: How to get the Magento software
 landing-page: Installation Guide
 menu_title: How to get the Magento software
 menu_node:
 menu_order: 1
-version: 2.1
-github_link: install-gde/bk-install-guide.md
 redirect_from:
   - /guides/v2.0/install-gde/continue.html
   - /guides/v2.1/install-gde/continue.html
-  - /guides/v1.0/install-gde/bk-install-guide.html
   - /guides/v2.0/install-gde/install/install-merchbeta.html
 functional_areas:
   - Install
@@ -19,15 +16,15 @@ functional_areas:
   - Setup
 ---
 
-## Magento software installation
-
-Hi, we're glad you're among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation.
+You are among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation.
 
 We have some resources here to help get you started using the eCommerce platform of the future&mdash;Magento 2.
 
 It’s what we do.
 
 ## How to get the Magento software {#install-get-software}
+
+Check the availability of exciting new features and releases, and learn how you can obtain them, on our [Magento 2.3 product availability page](https://devdocs.magento.com/availability.html).
 
 Consult the following table for how to get started installing {{site.data.var.ce}} or {{site.data.var.ee}}.
 
@@ -60,7 +57,7 @@ Consult the following table for how to get started installing {{site.data.var.ce
 			<li>Uses Composer to update package dependencies; uses <code>composer create-project</code> to get the Magento metapackage.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
 		<li>Upgrades the Magento application and extensions using the Web Setup Wizard or command line.</li></ol>
-		<td><p><a href="{{ page.baseurl }}/install-gde/prereq/integrator_install.html">Get the metapackage</a></p></td>
+		<td><p><a href="{{ page.baseurl }}/install-gde/composer.html">Get the metapackage</a></p></td>
 	</td>
 
 	</tr>
@@ -69,7 +66,7 @@ Consult the following table for how to get started installing {{site.data.var.ce
 		<td><p>Contributes to the Magento codebase, files bugs, and customizes the Magento software. Highly technical, has their own Magento development server, understands Composer and GitHub.</p>
 			<p>Enables you to install the Magento software and extensions using either the <a href="{{ page.baseurl }}/install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">command line</a>.</p>
 			<p>You <em>cannot</em> use Magento in a production environment.</p>
-      <p>You <em>cannot</em> use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Composer and git commands</a>.</p></td>
+      <p>You <em>cannot</em> use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Composer and Git commands</a>.</p></td>
 		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
 			<li>Uses Composer to update package dependencies.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>

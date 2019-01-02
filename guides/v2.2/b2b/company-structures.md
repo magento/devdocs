@@ -1,14 +1,12 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Manage company structures
 menu_title: Manage company structures
 menu_order: 15
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: company
-github_link: b2b/company-structures.md
 functional_areas:
   - B2B
   - Integration
@@ -209,7 +207,7 @@ Admin (structure_id = 2)
 
 **Sample Usage**
 
-`GET /V1/heirarchy/2`
+`GET /V1/hierarchy/2`
 
 **Payload**
 
@@ -286,7 +284,6 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 **Response**
 
 `[]` (an empty array)
-
 
 ## Related information
 

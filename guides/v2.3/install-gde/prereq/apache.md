@@ -1,34 +1,33 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Apache
 menu_title: Apache
 menu_order: 1
-version: 2.1
-github_link: install-gde/prereq/apache.md
-redirect_from: /guides/v1.0/install-gde/prereq/apache.html
 functional_areas:
   - Install
   - System
   - Setup
 ---
 
-<h2 id="apache-support">Apache versions supported</h2>
+## Apache versions supported {#apache-support}
 
 Magento requires Apache 2.2.x or 2.4.x.
 
-<h2 id="apache-help-beginner">Help if you're just starting out</h2>
+## Help if you're just starting out {#apache-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{page.baseurl }}/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{page.baseurl }}/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{page.baseurl }}/install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{page.baseurl }}/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	[Is the Magento software installed already?]({{page.baseurl }}/install-gde/basics/basics_magento-installed.html)
+*	[What is the software that the Magento server needs to run?]({{page.baseurl }}/install-gde/basics/basics_software.html)
+*	[What operating system is my server running?]({{page.baseurl }}/install-gde/basics/basics_os-version.html)
+*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl }}/install-gde/basics/basics_login.html)
 
-<h2 id="apache-help-rewrite">Important: Apache rewrites and .htaccess</h2>
-This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration file, <code>.htaccess</code></a>.
+## Important: Apache rewrites and .htaccess {#apache-help-rewrite}
 
-Magento uses server rewrites and <code>.htaccess</code> to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
+This topic discusses how to enable Apache 2.2 rewrites and specify a setting for the [distributed configuration file, `.htaccess`](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}.
+
+Magento uses server rewrites and `.htaccess` to provide directory-level instructions for Apache. The following instructions are included in all of the other sections in this topic as well.
 
 {% collapsible Click to show Apache 2.4 instructions %}
 {% include install/allowoverrides24.md %}
@@ -38,12 +37,11 @@ Magento uses server rewrites and <code>.htaccess</code> to provide directory-lev
 {% include install/allowoverrides22.md %}
 {% endcollapsible %}
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Failure to enable these settings typically results in no styles displaying on your storefront or Admin.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+Failure to enable these settings typically results in no styles displaying on your storefront or Admin.
 
-<h2 id="install-prereq-apache-verify">Verify the Apache version</h2>
+## Verify the Apache version {#install-prereq-apache-verify}
+
 To verify the Apache version you're currently running, enter:
 
 	apache2 -v
@@ -51,20 +49,21 @@ To verify the Apache version you're currently running, enter:
 The result displays similar to the following:
 
 	Server version: Apache/2.2.22 (Ubuntu)
-	Server built:   Jul 22 2014 14:35:32
+	Server built: Jul 22 2014 14:35:32
 
 *	If Apache is *not* installed, see:
-	*	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
-	*	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
+	*	[Installing or upgrading Apache on Ubuntu](#install-prereq-apache-ubuntu)
+	*	[Installing Apache on CentOS]{#install-prereq-apache-centos}
 *	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.6, see the next section
 
-<h2 id="install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</h2>
+## Installing or upgrading Apache on Ubuntu {#install-prereq-apache-ubuntu}
+
 The following sections discusses how to install or upgrade Apache:
 
 *	Install Apache
 *	Upgrade to Apache 2.4 on Ubuntu 12 to use PHP 7+
 
-<h3 id="install-prereq-apache-ubuntu-install">Installing Apache on Ubuntu 16, 14, or 12</h3>
+### Installing Apache on Ubuntu 16, 14, or 12 {#install-prereq-apache-ubuntu-install}
 {% collapsible Click to show/hide content %}
 To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu 12&mdash;Apache 2.2):
 
@@ -79,7 +78,7 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 	The result displays similar to the following:
 
 		Server version: Apache/2.4.18 (Ubuntu)
-		Server built:   2016-04-15T18:00:57
+		Server built: 2016-04-15T18:00:57
 
 3.	Enable rewrites and `.htaccess` as discussed in the following sections.
 
@@ -90,12 +89,13 @@ To install the default version of Apache (Ubuntu 14, 16&mdash;Apache 2.4, Ubuntu
 {% include install/allowoverrides22.md %}
 
 #### Next steps
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP Ubuntu</a>)
-*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
+
+*	[Solving 403 (Forbidden) errors](#apache-error)
+*	Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
+*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 {% endcollapsible %}
 
-<h3 id="install-prereq-apache-ubuntu-upgrade">Upgrading Apache on Ubuntu 12</h3>
+### Upgrading Apache on Ubuntu 12 {#install-prereq-apache-ubuntu-upgrade}
 {% collapsible Click to show/hide content %}
 To use PHP 5.6 on Ubuntu 12, you must upgrade Apache to version 2.4. (By default, Ubuntu 12 comes with Apache 2.2.)
 
@@ -111,10 +111,8 @@ To upgrade to Apache 2.4:
 
 		apt-get install -y apache2
 
-	<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>If the <code>apt-get install</code> command fails because of unmet dependencies, consult a resource like <a href="http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa" target="_blank">http://askubuntu.com</a>.</p></span>
-	</div>
+{:.bs-callout .bs-callout-info}
+If the 'apt-get install' command fails because of unmet dependencies, consult a resource like [http://askubuntu.com](http://askubuntu.com/questions/140246/how-do-i-resolve-unmet-dependencies-after-adding-a-ppa){:target="_blank"}.
 
 3.	Verify the installation.
 
@@ -123,7 +121,7 @@ To upgrade to Apache 2.4:
 	Messages similar to the following should display:
 
 		Server version: Apache/2.4.10 (Ubuntu)
-		Server built:   Jul 22 2014 22:46:25
+		Server built: Jul 22 2014 22:46:25
 
 4.	Continue with the next section.
 
@@ -131,19 +129,21 @@ To upgrade to Apache 2.4:
 {% include install/allowoverrides24.md %}
 
 #### Next steps
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP Ubuntu</a>)
-*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
+
+*	[Solving 403 (Forbidden) errors](#apache-error)
+*	Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
+*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 {% endcollapsible %}
 
-<h2 id="install-prereq-apache-centos">Installing Apache on CentOS 6 or 7</h2>
+## Installing Apache on CentOS 6 or 7 {#install-prereq-apache-centos}
 
 {% collapsible Click to install Apache on CentOS 6 or 7 %}
-Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in <code>.htaccess</code>, which Magento uses to specify rewrite rules.
+Magento requires Apache use server rewrites. You must also specify the type of directives that can be used in `.htaccess`, which Magento uses to specify rewrite rules.
 
-Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify <code>.htaccess</code> directives.
+Installing and configuring Apache is basically a three-step process: install the software, enable rewrites, and specify `.htaccess` directives.
 
-<h3 id="apache-install-centos">Installing Apache</h3>
+### Installing Apache {#apache-install-centos}
+
 1.	Install Apache 2 if you haven't already done so.
 
 		yum -y install httpd
@@ -155,38 +155,37 @@ Installing and configuring Apache is basically a three-step process: install the
 	Messages similar to the following display to confirm the installation was successful:
 
 		Server version: Apache/2.2.15 (Unix)
-		Server built:   Oct 16 2014 14:48:21
+		Server built: Oct 16 2014 14:48:21
 
 3.	Continue with the next section.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+Even though Apache 2.4 is provided by default with CentOS 7, you configure it like Apache 2.2. See the following section.
 
 ### Enable rewrites and .htaccess for Apache 2.2 (including CentOS 7)
 {% include install/allowoverrides22.md %}
 
 #### Next steps
-*	<a href="#403-apache">Solving 403 (Forbidden) errors</a>
-*	Continue with the next prerequisite (<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP Ubuntu</a>)
-*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
+
+*	[Solving 403 (Forbidden) errors](#apache-error)
+*	Continue with the next prerequisite ([PHP Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu))
+*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 {% endcollapsible %}
 
-<h2 id="403-apache">Solving 403 (Forbidden) errors</h2>
+## Solving 403 (Forbidden) errors {#apache-error}
 
 {% collapsible Click to install solve 403 errors %}
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
 
-*	<a href="#install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</a>
-*	<a href="#install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</a>
+*	[Solving 403 Forbidden errors for Apache 2.4](#apache-error-2-4)
+*	[Solving 403 Forbidden errors for Apache 2.2](#apache-error-2-2)
 
+#### Solving 403 Forbidden errors for Apache 2.4 {#apache-error-2-4}
 
-<h4 id="install-apache-403_2.4">Solving 403 Forbidden errors for Apache 2.4</h4>
-To enable web site visitors to access your site, use one of the <a href="http://httpd.apache.org/docs/2.4/howto/access.html" target="_blank">Require directives</a>.
+To enable website visitors to access your site, use one of the [Require directives](http://httpd.apache.org/docs/2.4/howto/access.html){:target="_blank"}.
 
 For example:
-	
+
 	<Directory /var/www/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride <value from Apache site>
@@ -194,17 +193,15 @@ For example:
 		Require all granted
 	</Directory>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order" target="_blank">Apache documentation</a>.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.4/mod/mod_access_compat.html#order){:target="_blank"}.
 
+#### Solving 403 Forbidden errors for Apache 2.2 {#apache-error-2-2}
 
-<h4 id="install-apache-403_2.2">Solving 403 Forbidden errors for Apache 2.2</h4>
-To enable web site visitors to access your site, use the <a href="http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow" target="_blank">Allow directive</a>.
+To enable website visitors to access your site, use the [Allow directive](http://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#allow){:target="_blank"}.
 
 For example:
-	
+
 	<Directory /var/www/>
 		Options Indexes FollowSymLinks MultiViews
 		AllowOverride <value from Apache site>
@@ -212,19 +209,15 @@ For example:
 		Allow from all
 	</Directory>
 
-<div class="bs-callout bs-callout-info" id="info">
-	<span class="glyphicon-class">
-	<p>The preceding values for <code>Order</code> might not work in all cases. For more information, see the <a href="https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order" target="_blank">Apache documentation</a>.</p></span>
-</div>
+{:.bs-callout .bs-callout-info}
+The preceding values for `Order` might not work in all cases. For more information, see the [Apache documentation](https://httpd.apache.org/docs/2.2/mod/mod_authz_host.html#order){:target="_blank"}.
 {% endcollapsible %}
-
 
 #### Related topics:
 
-*	<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">PHP&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">PHP&mdash;CentOS</a>
-*	<a href="{{page.baseurl }}/install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl }}/install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl }}/install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a>
-
+*	[PHP&mdash;Ubuntu]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
+*	[PHP&mdash;CentOS]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
+*	[MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
+*	[Configuring security options]({{page.baseurl }}/install-gde/prereq/security.html)
+*	[Installing optional software]({{page.baseurl }}/install-gde/prereq/optional.html)
+*	[Determine your installation or upgrade path]({{ page.baseurl }}/install-gde/bk-install-guide.html)

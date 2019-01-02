@@ -5,9 +5,6 @@ title: DocBlock standard
 landing-page: Coding standards
 menu_title: DocBlock standard
 menu_order: 4
-version: 2.1
-github_link: coding-standards/docblock-standard-general.md
-redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
 functional_areas:
   - Standards
 ---
@@ -122,9 +119,8 @@ If description or short description happens to be the first one after DocBlock o
 
 ### License Notice and Copyright
 
-<div class="bs-callout bs-callout-info" id="info">
+{: .bs-callout .bs-callout-info }
 This section is applicable to Magento core files only. Please follow it if you are a contributing developer.
-</div>
 
 Any file in Magento source should have a header with license and copyright notice.
 Exceptions are files with format that doesn't support comments, and so no meta information can be added.
@@ -258,7 +254,6 @@ class Csv extends \Magento\Framework\Profiler\AdapterAbstract
 require_once __DIR__ . '/../../functions.php';
 {% endhighlight %}
 
-
 ### Classes and interfaces
 {:#classes-interfaces}
 
@@ -308,7 +303,6 @@ protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $nu
 }
 {% endhighlight %}
 
-
 ### Class attributes
 {:#class-attributes}
 
@@ -328,7 +322,6 @@ class Profiler
      */
     protected static $instance = null;
 {% endhighlight %}
-
 
 ### Functions and methods
 {:#functions-methods}
@@ -419,7 +412,6 @@ protected function merge($configFiles)
     $this->_dom = $domConfig->getDom();
 }
 {% endhighlight %}
-
 
 #### Divergence in @throws tag
 {:#throws}
@@ -527,7 +519,6 @@ class Profiler
     const NESTING_SEPARATOR = '->';
 {% endhighlight %}
 
-
 ### DocBlock templates
 {:#DocBlock-templates}
 
@@ -612,7 +603,7 @@ class LimitedMutableClass implements MutableInterface
 ### @api tag
 {:#api}
 
-The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/extension-dev-guide/backward-compatibility.html).
+The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
  If the `@api` tag is applied at the file level, then all methods within the file are part of the public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
@@ -712,7 +703,6 @@ Specifically, this is possible when a PHP-file composed from multiple file inclu
  */
 {% endhighlight %}
 
-
 ### Other tags
 {:#other-tags}
 
@@ -736,7 +726,6 @@ If there are two or more tags together in one DocBlock, their values may be padd
  * @link   http://example.com
  */
 {% endhighlight %}
-
 
 ### Formatting consistency
 {:#format-consistency}

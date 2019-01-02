@@ -1,13 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 03_install
 title: During installation, Reflection Exception error
 menu_title: During installation, Reflection Exception error
 menu_node:
 menu_order: 25
-version: 2.1
-github_link: install-gde/trouble/tshoot_wrong-mysql.md
-redirect_from: /guides/v1.0/install-gde/trouble/tshoot_wrong-mysql.html
 functional_areas:
   - Install
   - System
@@ -25,8 +22,15 @@ During the installation, a  message similar to the following displays:
 
 Clear all directories and files under Magento's `var` subdirectory and install the Magento software again.
 
-As the <a href="{{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> or as a user with `root` privileges, enter the following commands:
+As the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) or as a user with `root` privileges, enter the following commands:
 
 	cd <your Magento install directory>/var
 	rm -rf cache/* di/* generation/* page_cache/*
 
+#### Redis
+
+If you use Redis and still get an error, clear the Redis cache as follows:
+
+```bash
+redis-cli FLUSHALL
+```

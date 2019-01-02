@@ -1,11 +1,9 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: Optimization
 title: Magento Optimization Guide
 menu_title: Magento Optimization Guide
 menu_order: 100
-version: 2.0
-github_link: config-guide/prod/prod_perf-optimize.md
 functional_areas:
   - Configuration
   - System
@@ -67,7 +65,7 @@ Edit your `apcu.ini` file to include the following:
 
 	extension=apcu.so
 	[apcu]
-	acp.enabled = 1
+	apc.enabled = 1
 
 ### Server - Redis Configuration & Tuning
 
@@ -81,10 +79,10 @@ Estimate a memory size to fit the total number of effective skus, product pages 
 
 ### Magento - Performance Optimizations
 
-Enable these performance optimizations to improve the store front responsiveness of your Magento instance.
+Enable these performance optimizations to improve the storefront responsiveness of your Magento instance.
 
 
-Go to the Admin in default of developer mode and change the following settings for store front asset optimization:
+Go to the Admin in default of developer mode and change the following settings for storefront asset optimization:
 
 #### Stores -> Configuration -> Advanced -> Developer
 
@@ -106,10 +104,9 @@ Go to the Admin in default of developer mode and change the following settings f
 
 Set all indexers to "Update on Schedule" mode.
 
-
 ### Production Mode
 
-Switching to production mode improves store front responsiveness and prevents long initial page load times that can occur in default mode.
+Switching to production mode improves storefront responsiveness and prevents long initial page load times that can occur in default mode.
 
 Run the following commands to switch to production mode:
 

@@ -1,11 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_NegotiableQuote module
 menu_title: NegotiableQuote
 menu_order: 160
-version: 2.2
-github_link: mrg/b2b/NegotiableQuote.md
 functional_areas:
   - B2B
 ---
@@ -58,4 +56,4 @@ For more information, see [UI Listing/Grid Component]({{ page.baseurl }}/ui_comp
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release](http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html).
+You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{ site.baseurl }}/guides/v2.2/release-notes/changes/b2b_changes.html).

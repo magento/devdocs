@@ -1,12 +1,6 @@
 ---
-group: config-guide
-subgroup: 09_Redis
+group: configuration-guide
 title: Use Redis for the Magento page and default cache
-menu_title: Use Redis for the Magento page and default cache
-menu_order: 5
-menu_node:
-version: 2.2
-github_link: config-guide/redis/redis-pg-cache.md
 functional_areas:
   - Configuration
   - System
@@ -58,6 +52,14 @@ where
 </td>
 <td>0</td>
 </tr>
+<tr>
+<td>cache-backend-redis-password</td>
+<td>password</td>
+<td>
+<p>Configuring a <strong>Redis password</strong> enables one of its built-in security features: the auth command, which requires clients to authenticate to access the database. The <strong>password</strong> is configured directly in Redis's configuration file, <code>/etc/redis/redis.conf</code>, which you should still have open from the previous step.</p>
+</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
@@ -66,7 +68,6 @@ where
 The following example enables Redis default caching, sets the host to `redis.example.com` and assigns the database number to 0. All other parameters are set to the default value.
 
 `bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=0`
-
 
 ## Configure Redis page caching
 
@@ -110,9 +111,15 @@ where
 <td>0</td>
 </tr>
 <tr>
+<td>page-cache-redis-password</td>
+<td>password</td>
+<p>Configuring a <strong>Redis password</strong> enables one of its built-in security features: the auth command, which requires clients to authenticate to access the database. The <strong>password</strong> is configured directly in Redis's configuration file, <code>/etc/redis/redis.conf</code>, which you should still have open from the previous step.</p>
+<td>0</td>
+</tr>
+<tr>
 <td>page-cache-redis-compress-data</td>
 <td>compress_data</td>
-<td>Required only for the full page cache. Set to <code>1</code> to compress the full page cache. Redis chooses a compression algorithm in the following order, based on availability: <a href="https://github.com/google/snappy" target="_blank">snappy</a>, <a href="https://github.com/Cyan4973/lz4" target="_blank">l4z</a>, or <a href="http://oldhome.schmorp.de/marc/liblzf.html" target="_blank">lzf</a>. If none of them available, Redis uses gzip.</td>
+<td>Required only for the full page cache. Set to <code>1</code> to compress the full page cache. Redis chooses a compression algorithm in the following order, based on availability: <a href="https://github.com/google/snappy">snappy</a>, <a href="https://github.com/Cyan4973/lz4">l4z</a>, or <a href="http://oldhome.schmorp.de/marc/liblzf.html">lzf</a>. If none of them available, Redis uses gzip.</td>
 <td>0</td>
 </tr>
 </tbody>
@@ -129,33 +136,27 @@ The following example enables Redis page caching, sets the host to `redis.exampl
 As a result of the two example commands, Magento adds lines similar to the following to `<Magento install dir>app/etc/env.php`:
 
 ```
-'cache' =>
-  array(
-    'frontend' =>
-      array(
-        'default' =>
-          array(
+'cache' => [
+    'frontend' => [
+        'default' => [
             'backend' => 'Cm_Cache_Backend_Redis',
-            'backend_options' =>
-              array(
+            'backend_options' => [
                 'server' => 'redis.example.com',
                 'database' => '0',
                 'port' => '6379'
-              ),
-        ),
-        'page_cache' =>
-          array(
+            ],
+        ],
+        'page_cache' => [
             'backend' => 'Cm_Cache_Backend_Redis',
-            'backend_options' =>
-              array(
+            'backend_options' => [
                 'server' => 'redis.example.com',
                 'port' => '6379',
                 'database' => '1',
                 'compress_data' => '0'
-              )
-        )
-    )
-  ),
+            ]
+        ]
+    ]
+],
 ```
 
 ## Basic verification {#redis-verify}
@@ -165,5 +166,5 @@ As a result of the two example commands, Magento adds lines similar to the follo
 #### Related topics
 
 *	[Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
-*  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
-*  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>
+* [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

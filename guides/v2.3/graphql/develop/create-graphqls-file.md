@@ -1,12 +1,10 @@
 ---
 group: graphql
-version: 2.3
 title: Define the GraphQL schema for a module
-github_link: graphql/develop/create-graphqls-file.md
 redirect_from: graphql/develop/configure-graphql-xml.html
 ---
 
-Each module that adds to or extends from a GraphQL schema can do so by placing a `schema.graphqls` file in its `etc` directory. Magento Core adds GraphQl modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.
+Each module that adds to or extends from a GraphQL schema can do so by placing a `schema.graphqls` file in its `etc` directory. Magento Core adds [`GraphQl`]({{ site.mage2300url }}app/code/Magento/GraphQl) modules based on the purpose of the schema being extended/added and the core modules they depend on. For example, the CustomerGraphQl module adds a query to the graphql endpoint to view customer data and relies on the Customer core module.
 
 A GraphQL module's `schema.graphqls` file defines how the attributes defined in the module can be used in a GraphQL query. If your module's attributes are completely self-contained, then the `schema.graphqls` file defines the query, the interfaces used, the data types of all the attributes, and any enumerations that restrict the possible attribute contents. If your module simply extends another module (such as Catalog), then you must define those attributes and ensure that the other module can load your attributes.
 
@@ -17,7 +15,7 @@ The `<module_name>/etc/schema.graphqls` file:
 * Points to the resolvers that verify and process the query data and response
 * Serves as the source for displaying the schema in a GraphQL browser
 
-The base `schema.graphqls` file, located in the `app/code/GraphQl/etc/` directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
+The base `schema.graphqls` file, located in the `app/code/Magento/GraphQl/etc/` directory, provides the necessary structure for all GraphQL queries, including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
 
 To illustrate how to configure the `schema.graphqls` file, let's suppose you have a module named Volumizer that calculates the volume of a product, given its height, width, and depth. We'll assume this module extends the Catalog module.
 
@@ -34,8 +32,8 @@ type Query {
         filter: ProductFilterInput,
         pageSize: Int = 20,
         currentPage: Int = 1,
-        sort: ProductSortInput)
-     ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
+        sort: ProductSortInput
+    ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
 }
 ```
 
@@ -89,7 +87,7 @@ In a `schema.graphqls` file, the output `Interface` defines top-level attributes
 
 ### Define the output interface
 
-In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, `Price` output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a `typeResolver` to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/resolvers.html) for more information.
+In many cases, the response contains data that was either not available as input, or was transformed in some manner from the input. For example, when you specify a price in an input filter, Magento evaluates it as a Float value. However, `Price` output objects contain a Float value, a currency value, and possibly minimum/maximum values and tax adjustments. You can define a `typeResolver` to point to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html) for more information.
 
 The following example defines module-specific output attributes for the Volumizer module.
 
@@ -102,7 +100,7 @@ interface ProductInterface @typeResolver(class: "\\Path\\To\\typeResolver\\Class
 }
 ```
 
-The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/resolvers.html) for more information.
+The `typeResolver` parameter specifies the path to the Resolver object, which interprets the GraphQL query. If your module contains only attributes that extend another module, then this parameter is optional. Otherwise, it is required. See [Resolvers]({{ page.baseurl }}/graphql/develop/resolvers.html) for more information.
 
 The `v_volume` attribute is defined as a `VolumeWithUnit` object. This object might be defined as follows:
 
@@ -121,10 +119,10 @@ You can optionally define enumerations to help prevent input errors. Magento cap
 
 ``` php
 enum VolumeUnitEnum {
-  IN3
-  FT3
-  CM3
-  M3
+    IN3
+    FT3
+    CM3
+    M3
 }
 ```
 
@@ -136,4 +134,8 @@ You can describe any attribute, type definition, or other entity within a `schem
 
 For example:
 
-`sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")`
+```
+sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
+url_key: String @doc(description: "The url key assigned to the product")
+product_count: Int @doc(description: "The number of products")
+```

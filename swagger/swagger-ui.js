@@ -8,7 +8,7 @@
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 this["Handlebars"]["templates"]["apikey_button_view"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
-  return "<!--div class='auth_button' id='apikey_button'><img class='auth_icon' alt='apply api key' src='images/apikey.jpeg'></div-->\n<div class='auth_container' id='apikey_container'>\n  <div class='key_input_container'>\n    <div class='auth_label'><label for='input_apiKey_entry'>"
+  return "<!--div class='auth_button' id='apikey_button'><img class='auth_icon' alt='apply API key' src='images/apikey.jpeg'></div-->\n<div class='auth_container' id='apikey_container'>\n  <div class='key_input_container'>\n    <div class='auth_label'><label for='input_apiKey_entry'>"
     + escapeExpression(((helper = (helper = helpers.keyName || (depth0 != null ? depth0.keyName : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"keyName","hash":{},"data":data}) : helper)))
     + "</label></div>\n    <input placeholder='api_key' class='auth_input' id='input_apiKey_entry' name='apiKey' type='text'/>\n    <div class='auth_submit'><a class='auth_submit_button' id='apply_api_key' href='#' data-sw-translate>apply</a></div>\n  </div>\n</div>\n";
 },"useData":true});
@@ -1398,7 +1398,7 @@ SwaggerClient.prototype.buildFromSpec = function (response) {
         self.models,
         self.clientAuthorizations);
 
-      // bind self operation's execute command to the api
+      // bind self operation's execute command to theAPI
       _.forEach(tags, function (tag) {
         var clientProperty = _.indexOf(reservedClientTags, tag) > -1 ? '_' + tag : tag;
         var apiProperty = _.indexOf(reservedApiTags, tag) > -1 ? '_' + tag : tag;
@@ -1847,7 +1847,7 @@ SuperagentHttpClient.prototype.execute = function (obj) {
     } else if (res && obj.on && obj.on.response) {
       var possibleObj;
 
-      // Already parsed by by superagent?
+      // Already parsed by superagent?
       if(res.body && Object.keys(res.body).length > 0) {
         possibleObj = res.body;
       } else {
@@ -3051,7 +3051,7 @@ SwaggerSpecConverter.prototype.setDocumentationLocation = function (location) {
 };
 
 /**
- * converts a resource listing OR api declaration
+ * converts a resource listing ORAPI  declaration
  **/
 SwaggerSpecConverter.prototype.convert = function (obj, clientAuthorizations, callback) {
   // not a valid spec
@@ -10840,7 +10840,7 @@ jQuery.event = {
 			// If event changes its type, use the special event handlers for the changed type
 			special = jQuery.event.special[ type ] || {};
 
-			// If selector defined, determine special event api type, otherwise given type
+			// If selector defined, determine special eventAPI  type, otherwise given type
 			type = ( selector ? special.delegateType : special.bindType ) || type;
 
 			// Update special based on newly reset type
@@ -11069,7 +11069,7 @@ jQuery.event = {
 			if ( (!special._default || special._default.apply( eventPath.pop(), data ) === false) &&
 				jQuery.acceptData( elem ) ) {
 
-				// Call a native DOM method on the target with the same name name as the event.
+				// Call a native DOM method on the target with the same name as the event.
 				// Don't do default actions on window, that's where global variables be (#6170)
 				if ( ontype && jQuery.isFunction( elem[ type ] ) && !jQuery.isWindow( elem ) ) {
 

@@ -1,12 +1,14 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 5. Create the personalization option
+subtitle: Create a configurable product tutorial
 menu_title: Step 5. Create the personalization option
 menu_order: 50
 level3_subgroup: configurable-product-tutorial
-version: 2.2
-github_link: rest/tutorials/configurable-product/create-personalization-option.md
+return_to:
+  title: REST tutorials
+  url: rest/tutorials/index.html
 functional_areas:
   - Integration
 ---
@@ -60,17 +62,16 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
   ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/options-section.png)
 
-* On the Luma store front page, search for `Champ`. Then click on the Champ Tee product.
+* On the Luma storefront page, search for `Champ`. Then click on the Champ Tee product.
 
   ![Search results]({{ page.baseurl }}/rest/images/add-your-name.png)
 
-  <div class="bs-callout bs-callout-info" id="info" markdown="1">
+  {:.bs-callout .bs-callout-info}
   If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
-  </div>
 
   ## Congratulations! You've finished.
   {:.no_toc}
 
   ## Related topics
 
-  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/get-started/order-tutorial/order-intro.html)
+  * [Order Processing with REST APIs Tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html)

@@ -1,20 +1,14 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 01_Introduction
 title: PHP Developer Guide
 landing-page: PHP Developer Guide
 menu_title: Introduction
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: extension-dev-guide/bk-extension-dev-guide.md
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/bk-extension-dev-guide.html
   - /guides/v2.0/mktpl-quickstart/bk-marketplace-qs.html
   - /guides/v2.0/mktpl-quickstart/intro-moreinfo.html
-  - /guides/v2.1/mktpl-quickstart/bk-marketplace-qs.html
-  - /guides/v2.2/mktpl-quickstart/intro-moreinfo.html
-  - /guides/v2.1/mktpl-quickstart/intro-moreinfo.html
 ---
 
 The {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Developer Guide contains information for developers who want to know more about developing or modifying Magento components. With this knowledge you can extend or customize any of the existing components in the Magento application. You can also create components that introduce new functionality and distribute them to merchants.
@@ -29,9 +23,8 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 
 * <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">*Language packages*</a> assist in internationalization(i18n) and localization by providing translations for strings that display on the storefront and Admin.
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 compliant</a> structure when building a module.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must follow a [PSR-4 compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 #### Related topics
 

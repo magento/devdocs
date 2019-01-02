@@ -1,12 +1,6 @@
 ---
-group: config-guide
-subgroup: 09_Varnish
+group: configuration-guide
 title: Troubleshooting 503 errors
-menu_title: Troubleshooting 503 errors
-menu_order: 500
-menu_node:
-version: 2.2
-github_link: config-guide/varnish/tshoot-varnish-503.md
 functional_areas:
   - Configuration
   - System
@@ -22,9 +16,8 @@ If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache
 
 To resolve this issue, increase the default value of the `http_resp_hdr_len` parameter in your Varnish configuration file. The `http_resp_hdr_len` parameter specifies the max header length _within_ the total default response size of 323768 bytes.
 
-<div class="bs-callout bs-callout-info" id="info">
-	If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default response size using the `http_resp_size` parameter.
-</div>
+{:.bs-callout .bs-callout-info}
+If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default response size using the `http_resp_size` parameter.
 
 1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
 
@@ -67,10 +60,10 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 
 If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
-This situation could happen because the default health check has a `timeout` value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is consindered unhealthy. Varnish serves stale content when the server is unhealthy.
+This situation could happen because the default health check has a `timeout` value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is considered unhealthy. Varnish serves stale content when the server is unhealthy.
 
 Because Admin is accessed through Varnish, you cannot log in to Admin to enable caching (unless Magento becomes healthy again).  However, you can use the following command to enable cache:
 
     bin/magento cache:enable
 
-For more information about using the command line, see <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a>.
+For more information about using the command line, see [Get started with command-line configuration]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands.html).

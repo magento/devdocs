@@ -1,13 +1,7 @@
 ---
-group: arch-guide
-subgroup: Architectural Basics
+group: architecture-guide
 title: Architectural basics overview
 menu_title: Architectural basics
-menu_node: parent
-menu_order: 1
-version: 2.1
-github_link: architecture/archi_perspectives/ABasics_intro.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/ABasics_intro.html
 ---
 
 Magento incorporates the core architectural principles of object-oriented, PHP-based applications. Comprehensive discussions of these general principles exist both on-line and in printed form.
@@ -23,10 +17,10 @@ The following discussion focuses on how these topics apply directly to Magento:
 
 ## Related topics
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html" target="_blank">Architectural diagrams</a>
+[Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
-<a href="{{ page.baseurl }}/architecture/tech-stack.html" target="_blank">Technology stack</a>
+[Technology stack]({{page.baseurl}}/architecture/tech-stack.html)
 
-<a href="{{ page.baseurl }}/architecture/tech-stack.html" target="_blank">Stack basics</a>
+[Stack basics]({{page.baseurl}}/architecture/tech-stack.html)
 
-<a href="{{ page.baseurl }}/architecture/versioning.html" target="_blank">Versioning</a>
+[Versioning]({{page.baseurl}}/extension-dev-guide/versioning/)

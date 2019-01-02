@@ -1,8 +1,6 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Software recommendations
-version: 2.2
-github_link: performance-best-practices/software.md
 functional_areas:
   - Configuration
   - System
@@ -50,20 +48,23 @@ We recommend limiting the list of active PHP extensions to those that are requir
 * `php-bcmath`
 * `php-cli`
 * `php-common`
+* `php-curl`
 * `php-gd`
 * `php-intl`
 * `php-mbstring`
 * `php-mcrypt`
 * `php-opcache`
+* `php-openssl`
 * `php-pdo`
 * `php-soap`
 * `php-xml`
+* `php-xsl`
+* `php-zip`
 
 Adding more extensions increases library load times.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The presence of any profiling and debugging extensions can negatively impact the response time of your pages. As an example, an active xDebug module without any debug session can increase the page response time by up to 30%.
-</div>
 
 ### PHP Settings
 
@@ -104,10 +105,9 @@ You should also configure the number of threads for input request processing, as
 
 Web server | Attribute name | Location | Related information
 --- | --- | --- | ---
-Nginx | `worker_collections` | `/etc/nginx/nginx.conf` (Debian) | [Tuning NGINX for Performance](https://www.nginx.com/blog/tuning-nginx/)
+Nginx | `worker_connections` | `/etc/nginx/nginx.conf` (Debian) | [Tuning NGINX for Performance](https://www.nginx.com/blog/tuning-nginx/)
 Apache 2.2 | `MaxClients` | `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache Performance Tuning](http://httpd.apache.org/docs/2.2/misc/perf-tuning.html)
 Apache 2.4 | `MaxRequestWorkers` |  `/etc/httpd/conf/httpd.conf` (CentOS) | [Apache MPM Common Directives](https://httpd.apache.org/docs/2.4/mod/mpm_common.html#maxrequestworkers )
-
 
 ## MySQL
 
@@ -148,6 +148,7 @@ At the end of the `if` statement for PURGE requests in the `vcl_recv` subroutine
 
 ``` javascript
 # static files are cacheable. remove SSL flag and cookie
+
 if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$") {
   unset req.http.Https;
   unset req.http./* {{ ssl_offloaded_header }} */;
@@ -161,6 +162,7 @@ The updated `if` block should look like the following:
 ``` javascript
 # validate if we need to cache it and prevent from setting cookie
 # images, css and js are cacheable by default so we have to remove cookie also
+
 if (beresp.ttl > 0s && (bereq.method == "GET" || bereq.method == "HEAD")) {
   unset beresp.http.set-cookie;
 if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)(\?|$)") {
@@ -173,7 +175,7 @@ if (bereq.url !~ "\.(ico|css|js|jpg|jpeg|png|gif|tiff|bmp|gz|tgz|bz2|tbz|mp3|ogg
 
 Restart the Varnish server to flush cached assets whenever you upgrade your site or deploy/update assets.
 
-## Cacheing and session servers
+## Caching and session servers
 
 Magento provides a number of options to store your cache and session data, including Redis, Memcache, filesystem, and database. Some of these options are discussed below.
 
@@ -185,6 +187,5 @@ If you plan to serve all your traffic with just one web node, it does not make s
 
 For a multiple web nodes setup, Redis is the best option. Because Magento actively caches lots of data for better performance, pay attention to your network channel between the web nodes and the Redis server. You do not want the channel to become a bottleneck for request processing.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you need to serve hundreds and thousands of simultaneous requests, you may need a channel of up to 1 Gbit (or even wider)  to your Redis server.
-</div>
+{: .bs-callout .bs-callout-info }
+If you need to serve hundreds and thousands of simultaneous requests, you may need a channel of up to 1 Gbit (or even wider) to your Redis server.

@@ -1,13 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: o_mapping
 title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
 menu_order: 8
-version: 2.0
-github_link: migration/migration-tool-internal-spec.md
-redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
 functional_areas:
   - Tools
 ---
@@ -18,11 +15,11 @@ This section describes an implementation details of Data Migration Tool and how 
 
 ### Repositories {#repositories}
 
-Data Migration Tool repository <a href="https://github.com/magento/data-migration-tool" target="&#95;blank">migration-tool</a>
+Data Migration Tool repository [migration-tool](https://github.com/magento/data-migration-tool){: target="_blank"}
 
 ### System requirements {#system-requirements}
 
-Same as for <a href="http://devdocs.magento.com/guides/v1.0/install-gde/system-requirements.html" target="&#95;blank">Magento 2</a>
+Same as for [Magento 2]({{ page.baseurl }}/install-gde/system-requirements2.html){: target="_blank"}
 
 ## Internal structure {#migrate-is}
 
@@ -113,7 +110,7 @@ Script that runs migration process is located at magento-root/bin/magento
 
 The Schema for configuration file `config.xsd` is placed under `etc/directory`. Default configuration file `config.xml.dist` is created for each version of Magento 1.x. It is placed in separate directories under `etc/`.
 
-Default configuration file can be replaced by custom one using CLI (see <a href="{{ page.baseurl }}/migration/migration-migrate.html">--config <code>&lt;value&gt;</code> parameter</a>).
+Default configuration file can be replaced by custom one using CLI (see [--config `<value>` parameter]({{ page.baseurl }}/migration/migration-migrate.html)).
 
 Configuration file has the following structure:
 {% highlight xml %}
@@ -399,6 +396,7 @@ Options:
 </table>
 
 #### Wildcards
+
 To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.t.c), you can use wildcard functionality. Just put * symbol instead of repeating part (e.g. document_name_*) and this mask will cover all source or destination documents that meet this mask.
 
 #### URL Rewrite Step

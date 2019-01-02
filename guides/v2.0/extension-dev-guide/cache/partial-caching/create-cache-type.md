@@ -1,17 +1,12 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Create a cache type
 menu_title: Create a cache type
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: extension-dev-guide/cache/partial-caching/create-cache-type.md
 redirect_from:
   - /guides/v2.0/config-guide/cache/caching-cache-type.html
-  - /guides/v2.1/config-guide/cache/caching-cache-type.html
-  - /guides/v2.2/config-guide/cache/caching-cache-type.html
-  - /guides/v2.3/config-guide/cache/caching-cache-type.html
 ---
 
 A *cache type* enables you to specify what is cached and enables merchants to clear that {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %} using the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}Cache{% endglossarytooltip %} Management page in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
@@ -46,9 +41,8 @@ We suggest you locate classes that extend [Magento\Framework\Cache\Frontend\Deco
 
 For example, look at [Magento\Eav\Model\Cache\Type][type] to understand more about the EAV cache type.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Please help us improve this topic by suggesting details using the <strong>Edit this page in GitHub</strong> link at the top of the page. </p>
-</div>
+{: .bs-callout .bs-callout-info }
+Please help us improve this topic by suggesting details using the **Edit this page in GitHub** link at the top of the page.
 
 [tagscope]: {{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
 [type]: {{ site.mage2000url }}app/code/Magento/Eav/Model/Cache/Type.php

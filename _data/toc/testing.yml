@@ -52,7 +52,7 @@ pages:
         - label: Running Unit Tests in CLI
           url: /test/unit/unit_test_execution_cli.html
 
-        - label: Running Unit Tests in PHPStorm
+        - label: Running Unit Tests in PhpStorm
           url: /test/unit/unit_test_execution_phpstorm.html
 
         - label: Writing Testable Code

@@ -1,14 +1,12 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Negotiable quote checkout
 menu_title: Negotiable quote checkout
 menu_order: 34
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: nq
-github_link: b2b/negotiable-checkout.md
 functional_areas:
   - B2B
   - Integration
@@ -22,7 +20,7 @@ The same rule is applied when the quote has the proposed shipping price and the 
 
 The following diagram illustrates the workflow for {{site.data.var.b2b}} negotiable quote checkouts:
 
-![Checkout process]({{ page.baseurl }}/b2b/images/quote-checkout-process.png)
+![Checkout process]({{ site.baseurl }}/common/images/b2b/quote-checkout-process.png)
 
 ## Manage shipping addresses
 
@@ -607,7 +605,7 @@ An order ID, such as `83`
 
 ### Return payment information
 
-This call returns payment information and all information from the `totals` object.
+This call returns returns payment information and all information from the `totals` object.
 
 **Sample Usage**
 

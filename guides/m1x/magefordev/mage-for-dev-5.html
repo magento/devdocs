@@ -17,6 +17,7 @@
 <a name="top"></a>
 
 <img src="{{ site.baseurl }}/common/images/m1x/m1xheader.png" width="1024" alt="header" />
+{% include m1x/eol_message.html %}
 
 
 
@@ -164,7 +165,7 @@ CREATE TABLE `blog_posts` (
 
 <pre>$model = Mage::getModel('weblog/blogpost');</pre>
 
-<p>The first part of the URI you pass into get Model is the <a href="http://alanstorm.com/2009/img/magento-book/weblogGetModel.png">Model Group Name</a>. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded agains conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.</p>
+<p>The first part of the URI you pass into get Model is the <a href="http://alanstorm.com/2009/img/magento-book/weblogGetModel.png">Model Group Name</a>. Because it is a good idea to follow conventions, this should be the (lowercase) name of your module, or to be safeguarded against conflicts use the packagename and modulename (also in lowercase). The second part of the URI is the lowercase version of your Model name.</p>
 
 <p>So, let's add the following XML to our module's `config.xml`.</p>
 <pre>
@@ -286,7 +287,7 @@ public function testModelAction() {
 
 <pre>Warning: include(Magentotutorial/Weblog/Model/Resource/Blogpost.php) [function.include]: failed to open stream: No such file ....</pre>
 
-<p>As you've likely intuited, we need to add a resource class for our Model. <strong>Every</strong> Model has its own resource class. Add the following class at at the following location</p>
+<p>As you've likely intuited, we need to add a resource class for our Model. <strong>Every</strong> Model has its own resource class. Add the following class at the following location</p>
 
 <pre>File: app/code/local/Magentotutorial/Weblog/Model/Resource/Blogpost.php</pre>
 <pre>
@@ -387,7 +388,7 @@ public function createNewPostAction() {
 
 <pre>http://example.com/weblog/index/createNewPost</pre>
 
-<p>You should now see an additional saved post in you database table. Next, try the following to edit your post</p>
+<p>You should now see an additional saved post in your database table. Next, try the following to edit your post</p>
 
 <pre>
 public function editFirstPostAction() {

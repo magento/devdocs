@@ -1,11 +1,9 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: concepts
 title: Linking properties of UI components
 menu_title: Linking properties of UI components
 menu_order: 100
-version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_linking_concept.md
 ---
 
 ## Linking properties implementation
@@ -138,7 +136,7 @@ Example of using `listens` in a component's `.js` file :
 }
 {% endhighlight js%}
 
-Here the local `visibilityChanged` property is a method that will be called when the `visibility` property of the `provider` component changes. It recieves the new value as an argument. If the local property is not a function, it will be set to the new value.
+Here the local `visibilityChanged` property is a method that will be called when the `visibility` property of the `provider` component changes. It receives the new value as an argument. If the local property is not a function, it will be set to the new value.
 The external property has to be an observable in order for `listens` to have any effect.
 
 

@@ -1,5 +1,5 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 090_configure
 title: Set up Solr service
 menu_title: Set up Solr service
@@ -7,11 +7,7 @@ menu_order: 80
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
-version: 2.0
-github_link: cloud/project/project-conf-files_services-solr.md
 redirect_from:
-  - /guides/v2.1/project/project-conf-files_services-solr.html
-  - /guides/v2.2/project/project-conf-files_services-solr.html
 functional_areas:
   - Cloud
   - Setup
@@ -27,7 +23,7 @@ recovery, centralized configuration, and more.
 Solr uses the Lucene Java search {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for full-text indexing and search. Your applications interact with Solr using:
 
 * [HTTP POST](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5){:target="_blank"} in JSON, [XML](http://wiki.apache.org/solr/UpdateXmlMessages){:target="_blank"}, CSV, or binary formats to index documents
-* [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3){:target="_blank"} to retrieve search results back as >[JSON](http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29){:target="_blank"}, XML, or a variety of other formats including Python, Ruby, [PHP](http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29){:target="_blank"}, [CSV](http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29){:target="_blank"}, binary, and so on
+* [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3){:target="_blank"} to retrieve search results back as [JSON](http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29){:target="_blank"}, XML, or a variety of other formats including Python, Ruby, [PHP](http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29){:target="_blank"}, [CSV](http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29){:target="_blank"}, binary, and so on
 
 We support Solr version 4.10 for {{site.data.var.ece}}.
 
@@ -38,6 +34,7 @@ For more information about Solr, see the following:
 * [Solr FAQ](http://wiki.apache.org/solr/FAQ){:target="_blank"}
 
 ## Add Solr in services.yaml and .magento.app.yaml {#settings}
+
 To enable Solr, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
 
 {% highlight yaml %}
@@ -68,6 +65,7 @@ relationships:
 Merge and deploy the code to set the configurations for Solr. For information on how these changes affect your environments, see [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html).
 
 ## Verify environment-related relationships {#cloud-es-config-mg}
+
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 To verify this information used for configurations and settings:
@@ -110,6 +108,7 @@ foreach ($relationships['solr'] as $endpoint) {
 {% endhighlight %} -->
 
 #### Related topics
-*	[`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
+
+* [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)
 * [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 * [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)

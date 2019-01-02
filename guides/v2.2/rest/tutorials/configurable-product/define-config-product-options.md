@@ -1,12 +1,14 @@
 ---
 layout: tutorial
-group: rest
+group: rest-api
 title: Step 4. Define configurable product options
+subtitle: Create a configurable product tutorial
 menu_title: Step 4. Define configurable product options
 menu_order: 40
 level3_subgroup: configurable-product-tutorial
-version: 2.2
-github_link: rest/tutorials/configurable-product/define-config-product-options.md
+return_to:
+  title: REST tutorials
+  url: rest/tutorials/index.html
 functional_areas:
   - Integration
 ---
@@ -51,7 +53,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 **Endpoint**
 
-`POST <host>/V1/configurable-products/MS-Champ/child`
+`POST <host>/rest/default/V1/configurable-products/MS-Champ/child`
 
 **Payload**
 
@@ -71,7 +73,7 @@ The call to link a simple (child) product to the configurable product accepts on
 
 ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
 
-* On the Luma store front page, search for `Champ`.
+* On the Luma storefront page, search for `Champ`.
 
 ![Search results]({{ page.baseurl }}/rest/images/search-results.png)
 

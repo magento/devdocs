@@ -1,20 +1,17 @@
 ---
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Migrate changes
 menu_title: Migrate changes
 menu_node:
 menu_order: 3
-version: 2.1
-github_link: migration/migration-migrate-delta.md
-redirect_from: /guides/v1.0/migration/migration-migrate-delta.html
 functional_areas:
   - Tools
 ---
 
 ## Overview
 
-Incremental migration enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
+The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) and triggers (for tracking changes) in the Magento 1 database during the [migration of data]({{ page.baseurl }}/migration/migration-migrate-data.html). These deltalog tables and triggers are essential to ensuring that you migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
 
 * data that customers added via {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (created orders, reviews, changes in customer profiles, etc.)
 
@@ -34,16 +31,14 @@ To start migrating incremental changes, run:
 
     bin/magento migrate:delta [-r|--reset] {<path to config.xml>}
 
-where;
+where
 
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Incremental migration runs continuously until you stop it by pressing CTRL+C.</p></span>
-</div>
+{: .bs-callout .bs-callout-info }
+Incremental migration runs continuously until you stop it by pressing CTRL+C.
 
 ## Migrate data created by 3rd party extensions {#migrate-delta-external-extensions}
 
@@ -59,6 +54,6 @@ If an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endg
 
 ## Related topics
 
-* <a href="{{ page.baseurl }}/migration/migration-manually.html">Data that needs to be migrated manually</a>
+* [Data that needs to be migrated manually]({{ page.baseurl }}/migration/migration-manually.html)
 
-* <a href="{{ page.baseurl }}/migration/migration-migrate-after.html">End migration</a>
+* [End migration]({{ page.baseurl }}/migration/migration-migrate-after.html)

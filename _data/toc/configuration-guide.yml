@@ -4,7 +4,6 @@ pages:
       url: /config-guide/bk-config-guide.html
 
     - label: Security settings
-      url: /config-guide/secy/secy.html
       children:
         - label: Secure cron.php to run in a browser
           url: /config-guide/secy/secy-cron.html
@@ -14,6 +13,14 @@ pages:
 
         - label: Prevent cache poisoning
           url: /config-guide/secy/secy-headers.html
+
+        - label: Two-Factor Authentication
+          url: /security/two-factor-authentication.html
+          include_versions: ["2.1", "2.2"]
+
+        - label: Google reCAPTCHA
+          url: /security/google-recaptcha.html
+          include_versions: ["2.1", "2.2"]
 
     - label: Magento application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
@@ -32,7 +39,7 @@ pages:
           url: /config-guide/bootstrap/mage-profiler.html
 
     - label: Pipeline Deployment
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       url: /config-guide/deployment/
       children:
 
@@ -66,11 +73,8 @@ pages:
             - label: Using environment variables
               url: /config-guide/deployment/pipeline/example/environment-variables.html
 
-            - label: Using rsync
-              url: /config-guide/deployment/pipeline/example/rsync.html
-
     - label: Single machine deployment
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       url: /config-guide/deployment/single-machine.html
 
     - label: Command line configuration
@@ -81,7 +85,7 @@ pages:
           url: /config-guide/cli/config-cli-subcommands.html
 
         - label: Logging
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /config-guide/cli/logging.html
 
         - label: Manage the cache
@@ -99,6 +103,10 @@ pages:
         - label: Set the Magento mode
           url: /config-guide/cli/config-cli-subcommands-mode.html
 
+        - label: Start message queue consumers
+          include_versions: ["2.3"]
+          url: /config-guide/cli/config-cli-subcommands-queue.html
+
         - label: URN highlighter
           url: /config-guide/cli/config-cli-subcommands-urn.html
 
@@ -106,7 +114,7 @@ pages:
           url: /config-guide/cli/config-cli-subcommands-depen.html
 
         - label: Configuration management
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           children:
 
             - label: Export the configuration
@@ -125,7 +133,7 @@ pages:
           children:
 
             - label: Static files deployment strategies
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
               url: /config-guide/cli/config-cli-subcommands-static-deploy-strategies.html
 
             - label: Deploy static view files
@@ -160,44 +168,40 @@ pages:
           url: /config-guide/config/config-create.html
 
         - label: Disable module output
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /config-guide/config/disable-module-output.html
 
         - label: Configuration reference
-          versions: ["2.1", "2.2", "2.3"]
+          exclude_versions: ["2.0"]
           children:
 
             - label: Sensitive and system-specific
               url: /config-guide/prod/config-reference-sens.html
-              versions: ["2.1", "2.2", "2.3"]
 
             - label: Payment configuration paths reference
               url: /config-guide/prod/config-reference-payment.html
-              versions: ["2.1", "2.2", "2.3"]
 
             - label: Other configuration paths reference
               url: /config-guide/prod/config-reference-most.html
-              versions: ["2.1", "2.2", "2.3"]
 
             - label: Magento Commerce for B2B Extension configuration paths reference
               url: /config-guide/prod/config-reference-b2b.html
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
 
             - label: .gitignore reference
               url: /config-guide/prod/config-reference-gitignore.html
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
 
             - label: Use environment variables to override configuration settings
               url: /config-guide/prod/config-reference-var-name.html
-              versions: ["2.1", "2.2", "2.3"]
 
             - label: config.php reference
               url: /config-guide/prod/config-reference-configphp.html
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
 
             - label: env.php reference
               url: /config-guide/prod/config-reference-envphp.html
-              versions: ["2.2", "2.3"]
+              include_versions: ["2.2", "2.3"]
 
     - label: Configure caching
       url: /config-guide/cache.html
@@ -210,7 +214,7 @@ pages:
           url: /config-guide/cache/cache-options.html
 
         - label: Static content signing
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /config-guide/cache/static-content-signing.html
 
     - label: Configure Redis
@@ -237,11 +241,11 @@ pages:
           url: /config-guide/varnish/config-varnish-magento.html
 
         - label: Advanced Varnish configuration
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /config-guide/varnish/config-varnish-advanced.html
 
         - label: How Magento cache clearing works with multiple Varnish instances
-          versions: ["2.2", "2.3"]
+          include_versions: ["2.2", "2.3"]
           url: /config-guide/varnish/use-multiple-varnish-cache.html
 
         - label: Final verification
@@ -296,7 +300,7 @@ pages:
       url: /config-guide/db-profiler/db-profiler.html
 
     - label: Install and configure Elasticsearch (Magento Commerce only)
-      versions: ["2.1","2.2"]
+      include_versions: ["2.1","2.2"]
       url: /config-guide/elasticsearch/es-overview.html
       children:
 
@@ -313,7 +317,7 @@ pages:
           url: /config-guide/elasticsearch/configure-magento.html
 
     - label: Install and configure Elasticsearch
-      versions: ["2.3"]
+      include_versions: ["2.3"]
       url: /config-guide/elasticsearch/es-overview.html
       children:
 
@@ -329,9 +333,8 @@ pages:
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
 
-
     - label: Message Queues (Magento Commerce only)
-      versions: ["2.0","2.1", "2.2"]
+      include_versions: ["2.0","2.1", "2.2"]
       url: /config-guide/mq/rabbitmq-overview.html
       children:
 
@@ -339,7 +342,7 @@ pages:
           url: /config-guide/mq/manage-mysql.html
 
     - label: Message Queues
-      versions: ["2.3"]
+      include_versions: ["2.3"]
       url: /config-guide/mq/rabbitmq-overview.html
       children:
 
@@ -347,7 +350,7 @@ pages:
           url: /config-guide/mq/manage-mysql.html
 
     - label: Install and configure Solr (Magento Commerce only)
-      versions: ["2.0","2.1"]
+      include_versions: ["2.0","2.1"]
       url: /config-guide/solr/solr-overview.html
       children:
 
@@ -388,7 +391,7 @@ pages:
 
     - label: Deploy Magento to production
       url: /config-guide/prod/prod.html
-      versions: ["2.0","2.1"]
+      include_versions: ["2.0","2.1"]
       children:
 
         - label: Magento ownership and permissions in development and production
@@ -401,10 +404,10 @@ pages:
           url: /config-guide/prod/single-machine-deployment.html
 
     - label: Optimization
-      versions: ["2.0", "2.1"]
+      include_versions: ["2.0", "2.1"]
       children:
         - label: Magento Optimization Guide
           url: /config-guide/prod/prod_perf-optimize.html
         - label: Development environment recommendations
-          versions: ["2.1"]
+          include_versions: ["2.1"]
           url: /config-guide/prod/development-environment.html

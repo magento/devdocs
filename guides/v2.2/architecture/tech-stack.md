@@ -1,12 +1,9 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Basics
 title: Technology stack
 menu_title: Technology stack
 menu_order: 2
-version: 2.2
-github_link: architecture/tech-stack.md
-redirect_from: /guides/v1.0/extension-dev-guide/tech-stack.html
 ---
 
 ## Overview
@@ -33,20 +30,20 @@ Magento's highly modular structure includes the following open-source technologi
 
 *	Varnish
 
-### Cache Storage
+### Cache storage
 
 *	Redis
 *	Memcache
 
 ### Search
 
-* Solr ({{site.data.var.ee}} (formerly Enterprise Edition (EE)) only)
-* Elasticsearch ({{site.data.var.ee}} (formerly Enterprise Edition (EE)) 2.1.x only)
+* Solr ({{site.data.var.ee}})
+* Elasticsearch ({{site.data.var.ee}} - 2.1.x only)
 
 ### Additional technologies
 
 *	HTML5
-*	CSS3 (LESS {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} pre-processor)
+*	CSS3 (Less {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} pre-processor)
 *	{% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} (primary {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} library)
 *	RequireJS (library that helps load JavaScript resources on demand)
 *	Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)
@@ -70,4 +67,5 @@ This framework is located in the `dev/tests` directory. The functional testing f
 For more information, see the [Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html) guide.
 
 ## Related topics
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>
+
+[Architectural basics]({{ page.baseurl }}/architecture/archi_perspectives/ABasics_intro.html)
