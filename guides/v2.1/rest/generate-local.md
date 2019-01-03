@@ -32,6 +32,14 @@ The generated Swagger documentation provides the capability to test REST request
 {:.bs-callout .bs-callout-info}
 The **Try it out!** feature is not available on Swagger documentation published on the Magento devdocs website.
 
+### REST reference for Asynchronous API
+
+In addition to standard Swagger you can also generate live REST Asynchronous API documentation. To create this documentation, add `?type=async` parameter in standard Swagger URL: 
+
+`http://<magento_host>/swagger?type=async`
+
+This will return you information about all resources available for Asynchronous REST API.
+
 ## Return the JSON schema for one or more services
 
 You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to
