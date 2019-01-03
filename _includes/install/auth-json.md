@@ -1,4 +1,4 @@
-Accessing the Magento 2 GitHub repository requires authentication. The command `composer install` will fail without it. Requirements to authenticate:
+ Accessing the Magento 2 GitHub repository requires authentication. The command `composer install` fails without it. Requirements to authenticate include:
 
 1. Magento authentication keys
 1. GitHub personal access token
