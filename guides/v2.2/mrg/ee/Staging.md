@@ -1,13 +1,11 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 20_Enterprise Edition
 ee_only: true
 title: Magento_Staging module
 menu_title: Staging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/Staging.md
 ---
 
 
@@ -82,7 +80,7 @@ You can customize a grid using the standard grid settings located above the grid
 
 #### Timeline/Grid view UI components
 
-You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a [simple grid](devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html) with the following custom settings:
+You can manipulate the timeline view and the grid view of a dashboard in the `app\code\Magento\Staging\view\adminhtml\ui_component\staging_update_grid.xml` configuration file as a [simple grid]({{ site.gdeurl22 }}ui_comp_guide/components/ui-listing-grid.html) with the following custom settings:
 
 - in `listingToolbar`
     - `template` declares a legend for a timeline, which is an overloading template that provides a grid/timeline view switcher.
@@ -158,6 +156,7 @@ The lower expandable list in the form represent types of [staging](#staging) ent
 Each one is a grid of corresponding entities assigned to the campaign.
 
 #### Remove a campaign
+
 Only empty [campaign](#campaign) can be deleted, that is performed by the cron. In other words, if you delete all updates from the campaign, it will be deleted automatically according to the cron settings.
 
 ### Update
@@ -278,7 +277,7 @@ cron group configuration is set in `etc/crontab.xml`.
 
 When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data is loaded for the open page only.
 
-[Learn more about indexing in Magento.]({{ page.baseurl }}/mrg/indexing.html)
+[Learn more about indexing in Magento.]({{ site.gdeurl22 }}extension-dev-guide/indexing.html)
 
 ### Data migration
 

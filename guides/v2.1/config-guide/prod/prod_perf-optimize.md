@@ -1,11 +1,6 @@
 ---
-group: config-guide
-subgroup: Optimization
+group: configuration-guide
 title: Magento Optimization Guide
-menu_title: Magento Optimization Guide
-menu_order: 100
-version: 2.1
-github_link: config-guide/prod/prod_perf-optimize.md
 functional_areas:
   - Configuration
   - System
@@ -67,7 +62,7 @@ Edit your `apcu.ini` file to include the following:
 
 	extension=apcu.so
 	[apcu]
-	acp.enabled = 1
+	apc.enabled = 1
 
 ### Server - Redis Configuration & Tuning
 
@@ -92,8 +87,8 @@ Go to the Admin in default of developer mode and change the following settings f
 | ------------------- | -------------------------- | ------ |
 | Grid Settings       | Asynchronous indexing      | Enable |
 | CSS Settings        | Minify CSS Files           | Yes    |
-| Javascript Settings | Minify JavaScript Files    | Yes    |
-| Javascript Settings | Enable JavaScript Bundling | Yes    |
+| JavaScript Settings | Minify JavaScript Files    | Yes    |
+| JavaScript Settings | Enable JavaScript Bundling | Yes    |
 | Template Settings   | Minify HTML                | Yes    |
 
 #### Stores -> Configuration -> Sales -> Sales Emails
@@ -106,16 +101,15 @@ Go to the Admin in default of developer mode and change the following settings f
 
 Set all indexers to "Update by Schedule" mode.
 
-
 ### Production Mode
 
 Switching to production mode improves storefront responsiveness and prevents long initial page load times that can occur in default mode.
 
 Run the following commands to switch to production mode:
 
-~~~
+```bash
 bin/magento deploy:mode:set production
-~~~
+```
 
 [composer-install]: {{ page.baseurl }}/install-gde/composer.html
 [zip-install]: {{ page.baseurl }}/install-gde/prereq/zip_install.html

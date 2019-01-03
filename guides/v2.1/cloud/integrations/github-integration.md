@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: GitHub integration
-version: 2.1
-github_link: cloud/integrations/github-integration.md
 functional_areas:
   - Cloud
   - Setup
@@ -10,7 +8,7 @@ functional_areas:
 
 The GitHub integration enables you to manage your {{site.data.var.ece}} environments directly from your GitHub repository. The integration manages content already in GitHub and synchronizes it with {{site.data.var.ee}}. Before you begin, your project and environments must be in a GitHub repository.
 
-We strongly recommend you use a *private* GitHub repository.
+{% include cloud/note-private-repo.md %}
 
 This integration enables you to:
 
@@ -21,9 +19,11 @@ This integration enables you to:
 You must obtain a GitHub token and a webhook to continue the process.
 
 ## Generate a GitHub token
-You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/){:target="\_blank"}.
+
+You must be a member of a group with write-access to the GitHub repository, so that you can _push_ to the repository. See [GitHub: Create](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
 
 ## Enable the GitHub integration
+
 This section discusses how to enable the GitHub integration.
 
 {% include cloud/cli-get-started.md %}
@@ -68,6 +68,7 @@ This section discusses how to enable the GitHub integration.
 5.	Copy the Payload {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} displayed by the command and continue with the next section.
 
 ## Add the webhook {#cloud-int-gh-hook}
+
 To add the webhook to your GitHub repository:
 
 1.	In your GitHub repository, click **Settings** as the following figure shows.
@@ -91,6 +92,7 @@ To add the webhook to your GitHub repository:
 5.	Click **Add webhook**
 
 ## Verify it works {#cloud-int-gh-verify}
+
 To verify the integration works:
 
 1.	Make a change in the GitHub repository with which you integrated.

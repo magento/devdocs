@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Retrieving detailed attributes
 menu_title: Retrieving detailed attributes
 ---
@@ -10,6 +9,7 @@ search across multiple objects return detailed information about individual obje
 This document lists the PHP, REST, and SOAP calls that indicate they return detailed information, but might not. It also provides the call that returns the detailed data.
 
 ## Contents
+
 * TOC
 {:toc}
 
@@ -101,7 +101,6 @@ PHP | `InvoiceRepositoryInterface::getList($searchCriteria)` | `InvoiceRepositor
 REST | `/V1/invoices`	| `/V1/invoices/{id}`
 SOAP | `salesInvoiceRepositoryV1GetList` | `salesInvoiceRepositoryV1Get`
 
-
 ### Magento\Sales\Api\OrderItemRepositoryInterface {#OrderItemRepositoryInterface}
 
 Language | Does not return detailed attributes | Returns detailed attributes
@@ -117,7 +116,6 @@ Language | Does not return detailed attributes | Returns detailed attributes
 PHP | `OrderRepositoryInterface::getList($searchCriteria)` | `OrderRepositoryInterface::get($id)`
 REST | `/V1/orders`	| `/V1/orders/{id}`
 SOAP | `salesOrderRepositoryV1GetList` | `salesOrderRepositoryV1GetList`
-
 
 ### Magento\Sales\Api\ShipmentRepositoryInterface {#ShipmentRepositoryInterface}
 

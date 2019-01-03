@@ -1,10 +1,8 @@
 ---
-group: integration-testing
+group: testing
 title: Running Integration Tests
-version: 2.1
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
-github_link: test/integration/integration_test_execution.md
 redirect_from:
  - /guides/v2.0/test/integration/integration_test_setup.html
  - /guides/v2.1/test/integration/integration_test_setup.html
@@ -21,7 +19,7 @@ functional_areas:
 ---
 
 Integration tests require the Magento runtime environment, so they need a little preparation before they can be executed.
-Once the system is prepared, the tests can be executed using either the command line interface or within an IDE like PHPStorm.
+Once the system is prepared, the tests can be executed using either the command line interface or within an IDE like PhpStorm.
 
 ### Set up the integration test framework
 
@@ -36,13 +34,13 @@ This option can be used for running the tests locally during development or on r
 
 Please refer to [Running Integration Tests in the CLI][cli run] for further information.
 
-### PHPStorm IDE
+### PhpStorm IDE
 
-Running the integration tests inside an IDE like PHPStorm IDE is convenient during development. This is mostly used when writing a new integration test.
+Running the integration tests inside an IDE like PhpStorm IDE is convenient during development. This is mostly used when writing a new integration test.
 
 Other than convenience, there is no benefit over running the tests on the console.
 
-Refer to [Running Integration Tests in PHPStorm][phpstorm run] for further information.
+Refer to [Running Integration Tests in PhpStorm][phpstorm run] for further information.
 
 ## Prepare integration test execution {#setup}
 
@@ -57,10 +55,8 @@ These prerequisites are required:
 
 By default, for every integration test run, the test framework installs a fresh Magento test database.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Do not use the same database as the real Magento instance.
-    Any data (products, customers, orders, and everything else) will be lost!</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Do not use the same database as the real Magento instance. Any data (products, customers, orders, and everything else) will be lost!
 
 For safety reasons it is recommended to use a dedicated database user for running the tests. That database user should not have access to any other databases.
 Here are examples of SQL commands that create a test database and a dedicated test user account:
@@ -101,9 +97,8 @@ return [
 ];
 ```
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Leave all the settings that do not start with <code>db-</code> at their default values.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Leave all the settings that do not start with `db-` at their default values.
 
 ### Adjust the PHPUnit configuration file
 
@@ -293,9 +288,9 @@ exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or di
 
 There are many ways this problem can be resolved, but the easiest is to run the tests in the virtual machine as well.
 
-## Run integration tests in PHPStorm {#phpstorm-run}
+## Run integration tests in PhpStorm {#phpstorm-run}
 
-When writing new integration tests or during debugging, it is convenient to execute tests from within the PHPStorm IDE.
+When writing new integration tests or during debugging, it is convenient to execute tests from within the PhpStorm IDE.
 
 Ensure you have [prepared the integration test environment][setup] before starting.
 
@@ -303,14 +298,15 @@ Ensure you have [prepared the integration test environment][setup] before starti
 
 Setting up a run configuration for integration tests is very similar to creating a run configuration for unit tests.
 
-Refer to [Running Unit Tests in PHPStorm][phpstorm run] for instructions about how to create a basic run configuration.
+Refer to [Running Unit Tests in PhpStorm][phpstorm run] for instructions about how to create a basic run configuration.
 Then configure the integration test configuration file to be used.
 
 #### Use the integration test configuration file
 
 The only difference in the run configuration is that the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the directory `dev/tests/integration` has to be selected.
 
-<img src="{{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png" alt="Integration Test Class run configuration">{:width="600px"}
+![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){: width="600px"}
+
 
 <!-- LINK DEFINITIONS -->
 

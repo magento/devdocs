@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Composer
-version: 2.1
-github_link: cloud/reference/cloud-composer.md
 redirect_from:
   - /guides/v2.0/cloud/cloud-composer.html
   - /guides/v2.1/cloud/cloud-composer.html
@@ -10,11 +8,12 @@ functional_areas:
   - Cloud
   - Upgrade
 ---
-We use [Composer](https://getcomposer.org/doc){:target="\_blank"} to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+We use [Composer](https://getcomposer.org/doc) to manage {{site.data.var.ece}} dependencies and upgrades and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
 
 Composer manages required libraries and dependencies for your project and installs them in the `vendor` directory.
 
 ## Composer files
+
 For {{site.data.var.ece}}, we use the `composer.json` and `composer.lock` files, located in the project root directory, to manage the modules list, packages, dependencies, and so on for determining upgrades, patches, hotfixes, and more.
 
 Magento extension and module developers use the `composer.json` file to manage product installations and upgrades. See [Install, manage, and upgrade extensions]({{ page.baseurl }}/cloud/howtos/install-components.html).
@@ -38,13 +37,14 @@ The workflow is as follows:
 During the [build phase]({{ page.baseurl }}/cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
 ## magento/magento-cloud-metapackage {#cloud-composer-cloudmeta}
-`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type){:target="_blank"} and does not contain any code.
+`magento/magento-cloud-metapackage` should be the only package in the `require` section of your `composer.json`. This is a [_metapackage_](https://getcomposer.org/doc/04-schema.md#type) and does not contain any code.
 
 The metapackage depends on the appropriate versions of [`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig) and [`magento/product-enterprise-edition`](#cloud-composer-prodee). At any given version, this package requires the same version of `magento/product-enterprise-edition`. Therefore, to use {{site.data.var.ee}} version 2.1.4, for example, `composer.json` must specify a requirement for `magento/magento-cloud-metapackage` version 2.1.4.
 
 This package depends on a floating version of `magento/magento-cloud-configuration` (abbreviated _MCC_). It depends on the major and minor version of MCC that correspond to the specified {{site.data.var.ee}} version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running `composer update`.
 
 ## magento/magento-cloud-configuration (MCC) {#cloud-composer-cloudconfig}
+
 This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:
 
  * `pre-deploy.php`
@@ -64,12 +64,15 @@ We release updated MCC code to add a new patch or to improve the build and deplo
 To check for patches, you can check the `vendor/magento/magento-cloud-configuration/patches` folder.
 
 ## magento/product-enterprise-edition {#cloud-composer-prodee}
+
 This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on.
 
 ## vendor/magento/ece-tools {#ece-tools}
-The`ece-tools`package is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
+
+The `{{site.data.var.ct}}` package is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
 
 ## Base packages and file marshalling
+
 Magento contains two base packages, `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} entry points, and so on.
 
 These files are location-dependent, and cannot reside in the `vendor` directory. They are distributed as part of the base packages, and they rely on hooks located in the `magento/magento-composer-installer` package, which marshals them to the appropriate locations.

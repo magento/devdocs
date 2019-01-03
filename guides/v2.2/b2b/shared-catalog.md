@@ -1,14 +1,12 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Integrate with the SharedCatalog module
 menu_title: Integrate with the SharedCatalog module
 menu_order: 21
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
-github_link: b2b/shared-catalog.md
 functional_areas:
   - B2B
   - Catalog
@@ -28,4 +26,4 @@ Custom shared catalogs can be assigned to companies only. They cannot be set for
 * [Manage shared catalogs]({{ page.baseurl }}/b2b/shared-cat-manage.html)
 * [Assign categories and products]({{ page.baseurl }}/b2b/shared-cat-product-assign.html)
 * [Assign companies]({{ page.baseurl }}/b2b/shared-cat-company.html)
-* [Manage prices for multiple products]({{ page.baseurl }}/rest/catalog-pricing.html)
+* [Manage prices for multiple products]({{ page.baseurl }}/rest/modules/catalog-pricing.html)

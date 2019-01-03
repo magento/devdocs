@@ -1,12 +1,6 @@
 ---
-group: config-guide
-subgroup: 047_single-machine
+group: configuration-guide
 title: Single machine deployment
-menu_title: Single machine deployment
-menu_node: parent
-menu_order: 2000
-version: 2.2
-github_link: config-guide/deployment/single-machine.md
 redirect_from:
   - /guides/v2.2/config-guide/prod/single-machine-deployment.html
 functional_areas:
@@ -27,10 +21,9 @@ For less technical users, i.e. business users, we recommend using the [System Up
 * You installed Magento using [Composer][8] or a [compressed archive][7].
 * You are directly applying updates to the server.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 This guide does not apply if you used `git clone` to install Magento.
 Contributing developers should use [this guide][6] to update their Magento installation.
-</div>
 
 ## Deployment steps
 
@@ -63,19 +56,23 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 6. Update the database schema and data:
 
-        php bin/magento setup:upgrade
+        bin/magento setup:upgrade
 
 7. Compile the code:
 
-        php bin/magento setup:di:compile
+        bin/magento setup:di:compile
 
 8. Deploy static content:
 
-        php bin/magento setup:static-content:deploy
+        bin/magento setup:static-content:deploy
+
+9. Clean the cache:
+
+        bin/magento cache:clean
 
 9. Exit maintenance mode:
 
-        php bin/magento maintenance:disable
+        bin/magento maintenance:disable
 
 ## Alternative deployment strategies
 
@@ -102,4 +99,4 @@ In Magento 2.2, a near-zero downtime deployment model will be available for a va
 [8]: {{ page.baseurl }}/install-gde/composer.html
 [9]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
-[11]: {{ site.baseurl }}/community/resources/#installdeploy
+[11]: {{ site.baseurl }}/community/resources/resources.html#installdeploy

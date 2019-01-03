@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ![How Magento installation works]({{ site.baseurl }}/common/images/install_diagram.png){:width="1100px"}
 
 The diagram shows the following:
@@ -20,10 +18,8 @@ The diagram shows the following:
 
 	*	If you want to contribute to the {{site.data.var.ce}} codebase or customize the Magento application, [clone]({{ page.baseurl }}/install-gde/prereq/dev_install.html) the Magento 2 GitHub repository. (This method requires familiarity with both GitHub and Composer.)
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage.</p>
-		<p>If you clone the GitHub repository, you <em>cannot</em> use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using <a href="{{ page.baseurl }}/install-gde/install/cli/dev_options.html">Composer and git commands</a>.</p>
-	</div>
+	{:.bs-callout .bs-callout-info}
+	To be able to use the Web Setup Wizard to install or upgrade the Magento software, or to manage extensions you get from Magento Marketplace, you must either get a compressed archive or a Composer metapackage. If you clone the GitHub repository, you *cannot* use the Web Setup Wizard to upgrade the Magento software and extensions. You must upgrade using [Composer and Git commands]({{ page.baseurl }}/install-gde/install/cli/dev_options.html).
 
 3.	Install the Magento software using either the Web Setup Wizard or command line.
 
@@ -34,4 +30,3 @@ The diagram shows the following:
 	If the step fails because prerequisite software isn't set up correctly, review our [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html).
 
 4.	Verify the installation by viewing your storefront and the Magento Admin.
-</div>

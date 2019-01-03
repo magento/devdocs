@@ -1,10 +1,8 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Magento cache overview
 menu_title: Magento cache overview
 menu_order: 10
-version: 2.0
-github_link: frontend-dev-guide/cache_for_frontdevs.md
 functional_areas:
   - Frontend
 ---
@@ -12,6 +10,7 @@ functional_areas:
 {% include cache/page-cache-overview.md%}
 
 ## Cache types
+
 The following cache types mostly have impact on frontend development process:
 
 | Cache type "friendly" name | Cache type code name | Description                                                                                                                                                                                                                                                                                                                                       |
@@ -22,9 +21,7 @@ The following cache types mostly have impact on frontend development process:
 | Translations               | `translate`          | Merged translations from all modules.                                                                                                                                                                                                                                                                                                             |
 
 <div class="bs-callout bs-callout-info" id="info" markdown ="1">
-<span class="glyphicon-class">
 The full list of cache types can be found in the [Overview of cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over) topic.
-</span>
 </div>
 
 ## Clean cache {#clean_cache}

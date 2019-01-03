@@ -1,8 +1,6 @@
 ---
-group: jstf
+group: testing
 title: JavaScript unit testing with Jasmine
-version: 2.1
-github_link: test/js/jasmine.md
 redirect_from:
   - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
   - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
@@ -272,7 +270,7 @@ npm install
 {:target="_blank"}
 [`app/code/Magento/Ui/base/js/grid/columns/actions.test.js`]: {{ site.mage2100url }}dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/grid/columns/actions.test.js
 {:target="_blank"}
-[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
+[Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html
 {:target="_blank"}
 [fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
 {:target="_blank"}

@@ -1,11 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Security
 title: Non-secure functions
 menu_title: Non-secure functions
 menu_order: 2100
-version: 2.2
-github_link: extension-dev-guide/security/non-secure-functions.md
 ---
 
 ## Overview

@@ -1,8 +1,6 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Image Uploader
-version: 2.1
-github_link: pattern-library/getting-user-input/image_uploader/image_uploader.md
 ---
 The Image uploader provides the ability for users to upload a single image, or group of images, to the application, most commonly images associated with Products (during the Product Creation process). These images may serve as thumbnail images, detailed Product images, images to within a product gallery, etc.
 
@@ -40,7 +38,7 @@ To upload a video to the Magento Admin application the user taps the "Add Video"
 
 ![](img/image-uploader-video-button.jpg)
 
-![](img/image-uploader-video-uploaded.jpg.jpg)
+![](img/image-uploader-video-uploaded.jpg)
 
 A video settings panel is revealed that allows the user to provide the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} location of the video, write a description and upload a preview image for the video. The user taps the "Save" button to upload the information.
 

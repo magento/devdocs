@@ -1,14 +1,9 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 3_Widgets
 title: QuickSearch widget
-menu_order: 13
-menu_title: QuickSearch widget
-version: 2.1
-github_link: javascript-dev-guide/widgets/widget_quickSearch.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
 functional_areas:
   - Search
 ---
@@ -17,26 +12,25 @@ functional_areas:
 
 The quickSearch {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
 
-The suggest widget source is <a href="{{ site.mage2000url }}app/code/Magento/Search/view/frontend/web/form-mini.js" target="_blank"><code>&lt;Magento_Search_module_dir&gt;/view/frontend/web/form-mini.js</code></a>.
+The suggest widget source is [`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`].
 
 ## Initialize the quickSearch widget {#quicksearch_init}
-For information about how to initialize a widget in a JS component or `.phtml` template, see the <a href="{{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html" target="_blank">Initialize JavaScript</a> topic.
 
+For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
 ## Options {#quicksearch_options}
-<ul>
-<li><a href="#q_autocomplete">autocomplete</a></li>
-<li><a href="#q_formSelector">formSelector</a></li>
-<li><a href="#q_minSearchLength">minSearchLength</a></li>
-<li><a href="#q_responseFieldElements">responseFieldElements</a></li>
-<li><a href="#q_searchLabel">searchLabel</a></li>
-<li><a href="#q_selectClass">selectClass</a></li>
-<li><a href="#q_submitBtn">submitBtn</a></li>
-<li><a href="#q_template">template</a></li>
-</ul>
+
+-   [autocomplete](#q_autocomplete)
+-   [formSelector](#q_formSelector)
+-   [minSearchLength](#q_minSearchLength)
+-   [responseFieldElements](#q_responseFieldElements)
+-   [searchLabel](#q_searchLabel)
+-   [selectClass](#q_selectClass)
+-   [submitBtn](#q_submitBtn)
+-   [template](#q_template)
 
 
-### <code>autocomplete</code> {#q_autocomplete}
+### `autocomplete` {#q_autocomplete}
 Attaches the `autocomplete` attribute to the search field.
 
 **Type**: String
@@ -46,7 +40,7 @@ Attaches the `autocomplete` attribute to the search field.
 **Accepted values**: `off`, `on`
 
 
-### <code>formSelector</code> {#q_formSelector}
+### `formSelector` {#q_formSelector}
 The form selector containing the search input field.
 
 **Type**: String 
@@ -54,42 +48,42 @@ The form selector containing the search input field.
 **Default value**: No form by default.
 
 
-### <code>minSearchLength</code> {#q_minSearchLength}
+### `minSearchLength` {#q_minSearchLength}
 Minimum number of characters required before the auto suggest triggers.
 
 **Type**: Integer
 
 **Default value**: `2`
 
-### <code>responseFieldElements</code> {#q_responseFieldElements}
+### `responseFieldElements` {#q_responseFieldElements}
 Selector for the response elements.
 
 **Type**: String
 
 **Default Value**: `ul li`
 
-### <code>searchLabel</code> {#q_searchLabel}
+### `searchLabel` {#q_searchLabel}
 Selector of a search input label.
 
 **Type**: String
 
 **Default value**: `[data-role=minisearch-label]`
 
-### <code>selectClass</code> {#q_selectClass}
+### `selectClass` {#q_selectClass}
 Class assigned to the selected suggested term.
 
 **Type**: String
 
 **Default value**: `selected`
 
-### <code>submitBtn</code> {#q_submitBtn}
+### `submitBtn` {#q_submitBtn}
 Disable the submit button. 
 
 **Type**: String
 
 **Default value**: `button[type="submit"]`
 
-### <code>template</code> {#q_template}
+### `template` {#q_template}
 Template responsible for rendering returned data (suggested terms).
 
 **Type**: String
@@ -97,3 +91,5 @@ Template responsible for rendering returned data (suggested terms).
 **Default value**: `<li></li>` element.
 
 
+[`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`]: {{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js
+[Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

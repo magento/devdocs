@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Readiness check with multiple extension updates
 menu_title: Readiness check with multiple extension updates
@@ -7,13 +7,12 @@ menu_node:
 menu_order: 8
 level3_menu_node: level3child
 level3_subgroup: readiness
-version: 2.2
-github_link: comp-mgr/extens-man/extensman-readiness-multi.md
 functional_areas:
   - Upgrade
 ---
 
 ## Readiness check with multiple extension updates {#extensman-readiness-multi}
+
 If you're updating multiple extensions, the readiness check displays success and failure as discussed in this topic.
 
 ### Successful readiness check {#extensman-readiness-multi-success}
@@ -60,12 +59,12 @@ Messages similar to the following display if a readiness check fails.
 
 In the event of failure, see one of the following sections:
 
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/updater.html">Updater check failure</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/cron.html">Cron script check failure</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html">Component dependency check failure</a>
-*	<a href="{{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a>
-*	<a href="{{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html">PHP settings errors</a>
-*	<a href="{{ page.baseurl }}/install-gde/system-requirements.html">PHP extensions check failure</a>
+*	[Updater check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/updater.html)
+*	[Cron script check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/cron.html)
+*	[Component dependency check failure]({{ page.baseurl }}/comp-mgr/trouble/cman/component-depend.html)
+*	[PHP version readiness check issues]({{ page.baseurl }}/comp-mgr/trouble/cman/php-version.html)
+*	[PHP settings errors]({{ page.baseurl }}/install-gde/trouble/php/tshoot_php-set.html)
+*	[PHP extensions check failure]({{ page.baseurl }}/install-gde/system-requirements.html)
 
 {% endcollapsible %}
 

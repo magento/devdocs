@@ -1,13 +1,11 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: PHP 5.6 or 7.0&mdash;Ubuntu
 menu_title: PHP 5.6 or 7.0&mdash;Ubuntu
 menu_order: 23
 level3_menu_node: level3child
 level3_subgroup: php
-version: 2.1
-github_link: install-gde/prereq/php-ubuntu.md
 functional_areas:
   - Install
   - System
@@ -18,12 +16,14 @@ functional_areas:
 If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/install-gde/prereq/apache.html) first.
 
 ## PHP versions supported {#php-support}
+
 {% include install/php_2.1.md %}
 
 {:.bs-callout .bs-callout-info}
-Magento 2.1.x does not support PHP 5.5.
+For versions 2.1.16 and later, Magento supports PHP 7.1 for the 2.1.x release line. The other supported PHP versions remain valid and unchanged.
 
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
+
 If you're new to all this and need some help getting started, we suggest the following:
 
 *	[Is the Magento software installed already?]({{ page.baseurl }}/install-gde/basics/basics_magento-installed.html)
@@ -32,6 +32,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 *	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{ page.baseurl }}/install-gde/basics/basics_login.html)
 
 ## Verify PHP is installed {#ubuntu-verify-php}
+
 To verify if PHP is installed already, enter `php -v`. If PHP is installed, messages similar to the following display:
 
 	PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
@@ -40,7 +41,7 @@ To verify if PHP is installed already, enter `php -v`. If PHP is installed, mess
     with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 {:.bs-callout .bs-callout-info}
-The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 If PHP is installed, continue with the next prerequisite, [MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html).
 
@@ -75,7 +76,7 @@ If PHP is *not* installed, see one of the following sections:
     	  with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
 
 	{:.bs-callout .bs-callout-info}
-  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -104,7 +105,7 @@ If PHP is *not* installed, see one of the following sections:
     	with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
 	{:.bs-callout .bs-callout-info}
-  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
+  	The preceding message confirms that the `Zend OPcache` is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="_blank"}.
 
 3.	Continue with [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
 
@@ -114,6 +115,7 @@ If PHP is *not* installed, see one of the following sections:
 [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html)
 
 #### Related topics
+
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 5.6 or 7.0&mdash;CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html)

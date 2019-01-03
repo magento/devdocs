@@ -1,5 +1,5 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Configure message queue topology
 menu_title: Configure message queue topology
@@ -7,8 +7,6 @@ menu_order: 18
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.0
-github_link: extension-dev-guide/message-queues/config-mq.md
 redirect_from: /guides/v2.0/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration
@@ -16,13 +14,13 @@ functional_areas:
   - Setup
 ---
 
-<div class="bs-callout bs-callout-warning">
-  <p>The message queue topology can only be configured after {{site.data.var.ce}} has been installed and before {{site.data.var.ee}} has been installed. </p>
-</div>
+{: .bs-callout .bs-callout-warning }
+The message queue topology can only be configured after {{site.data.var.ce}} has been installed and before {{site.data.var.ee}} has been installed.
 
 Each module that is to be a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} must be configured as such. If you want a module to use the MQF, create a `<module>/etc/queue.xml` file and define the publisher, consumers, exchanges and bindings.
 
 ## Edit the <code>queue.xml</code> file
+
 The `queue.xml` file can contain the following elements:
 
 + publisher
@@ -30,7 +28,7 @@ The `queue.xml` file can contain the following elements:
 + consumer
 + bind
 
-<h3>Required elements</h3>
+### Required elements
 
 Each `queue.xml` file must contain the following lines:
 
@@ -45,7 +43,8 @@ Each `queue.xml` file must contain the following lines:
 
 {% endhighlight %}
 
-<h3>publisher element</h3>
+### publisher element
+
 The `publisher` element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.
 <table>
 <tr>
@@ -53,7 +52,7 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 <tr>
 <td>name</td>
-<td>A unique identifer for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
+<td>A unique identifier for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
 </tr>
 <tr>
 <td>connection</td>
@@ -65,7 +64,8 @@ The `publisher` element configures the type of connection and the exchange to pu
 </tr>
 </table>
 
-<h3>topic element</h3>
+### topic element
+
 Configuring the `topic` element defines the interface that processes the message and assigns a publisher.
 <table>
 <tr>
@@ -90,7 +90,8 @@ Configuring the `topic` element defines the interface that processes the message
 </tr>
 </table>
 
-<h3>consumer element</h3>
+### consumer element
+
 Each `consumer` elements maps the receiver of a message to a specific queue. The `class` and `method` parameters indicate what receives and processes the message.
 <table>
 <tr>
@@ -122,7 +123,8 @@ Each `consumer` elements maps the receiver of a message to a specific queue. The
 </tr>
 </table>
 
-<h3>bind element</h3>
+### bind element
+
 The `bind` elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.
 
 <table>
@@ -158,6 +160,7 @@ The `bind` elements link topics to queues and exchanges, defining the message qu
 {% endhighlight %}
 
 #### Related Topics
-*	<a href="{{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html">Message Queues Overview</a>
-*	<a href="{{ page.baseurl }}/config-guide/mq/manage-mysql.html">Manage message queues</a>
-*	<a href="{{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a>
+
+*	[Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+*	[Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql.html)
+*	[Install RabbitMQ]({{ page.baseurl }}/install-gde/prereq/install-rabbitmq.html)

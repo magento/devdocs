@@ -1,17 +1,13 @@
 ---
-group: install2
+group: installation-guide
 subgroup: Getting Started
 title: How to get the Magento software
 landing-page: Installation Guide
 menu_title: How to get the Magento software
 menu_node:
 menu_order: 1
-version: 2.0
-github_link: install-gde/bk-install-guide.md
 redirect_from:
   - /guides/v2.0/install-gde/continue.html
-  - /guides/v2.1/install-gde/continue.html
-  - /guides/v1.0/install-gde/bk-install-guide.html
   - /guides/v2.0/install-gde/install/install-merchbeta.html
 functional_areas:
   - Install

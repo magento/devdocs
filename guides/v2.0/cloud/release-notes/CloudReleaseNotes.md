@@ -7,8 +7,6 @@ menu_order: 325
 menu_node:
 level3_menu_node: level3parent
 level3_subgroup: mccloud-relnotes
-version: 2.0
-github_link: cloud/release-notes/CloudReleaseNotes.md
 functional_areas:
   - Cloud
 ---
@@ -27,10 +25,10 @@ The following Release Notes are available:
 *	[Magento Enterprise Cloud Edition version 2.1.3 and 2.0.11]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.3.html)
 *	[Magento Enterprise Cloud Edition version 2.1.2 and 2.0.10]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.2.html)
 
-
-
 ## Test your upgrade locally
+
 To test and implement your {{site.data.var.ece}} upgrade, see [Test a Magento upgrade]({{ page.baseurl }}/cloud/project/project-upgrade.html).
 
 ## Magento Enterprise Edition Release Notes
+
 For information about Magento Commerce, see [Magento 2.1 Release Notes]({{ site.gdeurl21 }}release-notes/release-notes.html).

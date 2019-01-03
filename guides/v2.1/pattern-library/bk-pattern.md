@@ -1,10 +1,7 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Admin Design Pattern Library
 landing-page: Pattern Library
-version: 2.1
-github_link: pattern-library/bk-pattern.md
-redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
 ---
 ## What is a design pattern?
 
@@ -26,12 +23,10 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 * [Slide-out Panels, Modal Windows, and Overlays](containers/slideouts-modals-overlays/slideouts-modals-overalys.html)
 * [Tabs](containers/tabs/tabs.html)
 
-
 ### Controls
 
 * [Buttons](controls/buttons/buttons.html)
 * [Button Bar](controls/button-bar/button-bar.html)
-
 
 ### Displaying and Dealing with Data
 
@@ -55,7 +50,7 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 ### Navigation
 
 * [Links](navigation/links/links.html)
-* [Wizard](navigation/wizard/wizard.htm)
+* [Wizard](navigation/wizard/wizard.html)
 
 ### Templates
 

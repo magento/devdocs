@@ -1,19 +1,13 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 120_env
 title: Manage branches with the CLI
 menu_title: Manage branches with the CLI
 menu_order: 2
 menu_node:
-version: 2.0
-github_link: cloud/env/environments-start.md
 redirect_from:
   - /guides/v2.0/cloud/before/integration-ip-addr.html
-  - /guides/v2.1/cloud/before/integration-ip-addr.html
-  - /guides/v2.2/cloud/before/integration-ip-addr.html
   - /guides/v2.0/cloud/env/environment-tutorial-env-merge.html
-  - /guides/v2.1/cloud/env/environment-tutorial-env-merge.html
-  - /guides/v2.2/cloud/env/environment-tutorial-env-merge.html
 functional_areas:
   - Cloud
 ---
@@ -23,6 +17,7 @@ When managing with your environment, you will tend to use the Magento CLI and SS
 To manage the branches and environments with the Project Web Interface, see [Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html).
 
 ## Common Magento CLI commands {#env-start-comm}
+
 The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage integration environments. You may notice these commands are similar to Git commands. The `magento-cloud` versions directly connect with Magento Git, the Magento ECE project, and provide Git features.
 
 All commands are shown with required options only. Get help for any `magento-cloud` command by appending `--help`.
@@ -66,11 +61,13 @@ An environment name _cannot_ include characters reserved for your Linux shell or
 For a full list of Magento cloud CLI commands, see the Magento cloud [Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html)
 
 ## Get started creating branches {#getstarted}
+
 To begin, you'll need a branch to work in.
 
 {% include cloud/cli-get-started.md %}
 
 ## Merge a branch {#merge}
+
 After completing development, you can merge this branch to the parent. The following instructions provide an example.
 
 1.	Complete code in your local branch.
@@ -91,11 +88,11 @@ After completing development, you can merge this branch to the parent. The follo
 		magento-cloud environment:merge master
 
 ## Optionally delete the environment {#env-delete}
+
 Before you delete an environment, make sure you don't need it anymore. You cannot recover a deleted environment later.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You cannot delete the <code>master</code> environment of any project.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You cannot delete the `master` environment of any project.
 
 You must be a [project administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-env), or [Project Owner]({{ page.baseurl }}/cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
@@ -142,11 +139,11 @@ To delete a environment:
 
 Wait for the environment to delete.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>To activate the environment later, use the <code>magento-cloud environment:activate</code> command.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+To activate the environment later, use the `magento-cloud environment:activate` command.
 
 ## Integration environment IP addresses {#ipaddress}
+
 The following table lists incoming and outgoing IP addresses used by {{site.data.var.ece}} [Integration environments]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 If you have a corporate firewall that blocks outgoing SSH connections, you can add the inbound IP addresses to your whitelist.
@@ -187,6 +184,7 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </table>
 
 ## Interact with environments via CLI {#commands}
+
 After setting up your [set up SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html), you can interact with services and modify settings through your local to a remote environment.
 
 The following steps provide an example of accessing a database:
@@ -198,5 +196,6 @@ The following steps provide an example of accessing a database:
 {% include cloud/ssh-tunnel.md %}
 
 #### Related topics
+
 *	[Manage branches with the Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-branch.html)
 *	[Magento Cloud CLI reference]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html)

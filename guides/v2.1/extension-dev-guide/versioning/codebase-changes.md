@@ -1,11 +1,9 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Versioning
 title: Codebase changes
 menu_title: Codebase changes
 menu_order: 1300
-version: 2.1
-github_link: extension-dev-guide/versioning/codebase-changes.md
 redirect_from:
   - /guides/v2.0/architecture/back-compatibility.html
   - /guides/v2.1/architecture/back-compatibility.html
@@ -100,7 +98,7 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | Changed method signature                                                                             | MAJOR          |
 |                                                             | Last argument added                                                                                  | MINOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Javascript class** (marked with `@api`                    | New class                                                                                            | MINOR          |
+| **JavaScript class** (marked with `@api`                    | New class                                                                                            | MINOR          |
 |                                                             | New method added                                                                                     | MINOR          |
 |                                                             | Class removed                                                                                        | MAJOR          |
 |                                                             | Method removed                                                                                       | MAJOR          |

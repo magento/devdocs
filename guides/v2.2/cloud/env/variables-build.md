@@ -1,14 +1,12 @@
 ---
-group: cloud
+group: cloud-guide
 title: Build variables
-version: 2.2
-github_link: cloud/env/variables-build.md
 functional_areas:
   - Cloud
   - Configuration
 ---
 
-The following _build_ variables control actions in the build phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
+The following _build_ variables control actions in the build phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Insert these variables in the `build` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -16,12 +14,10 @@ stage:
     BUILD_VARIABLE_NAME: value
 ```
  
-For more information about customizing the build and deploy process:
+{% include cloud/customize-build-deploy.md %}
 
--  [Manage build and deploy actions]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
-
-{% include note.html type="info" content="You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket." %}
+{: .bs-callout .bs-callout-info}
+You can still use the `build_options.ini` file, but we recommend using the `.magento.env.yaml` file instead because it centralizes the management of build and deploy actions across all of your environments—including Pro Staging and Production—without requiring a support ticket.
 
 The following variables were removed in v2.2:
 
@@ -33,7 +29,7 @@ The following variables were removed in v2.2:
 -  **Default**—`6`
 -  **Version**—Magento 2.1.4 and later
 
-Specifies which [gzip](https://www.gnu.org/software/gzip){:target="\_blank"} compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
+Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
 
 ```yaml
 stage:
@@ -94,7 +90,7 @@ Use these options _only_ if you have more than one locale:
 
 -  `standard`—deploys all static view files for all packages.
 -  `quick`—minimizes deployment time. This is the default command option, if not specified.
--  `compact`—conserves disk space on the server and overrides the value for `scd_threads` with a value of `1`. This strategy does not work with multi-threads.
+-  `compact`—conserves disk space on the server. In Magento version 2.2.4 and earlier, this setting overrides the value for `scd_threads` with a value of `1`.
 
 ```yaml
 stage:
@@ -126,9 +122,9 @@ To further reduce deployment time, we recommend using [Configuration Management]
 
 Set to `true` to skip static content deployment during the build phase.
 
-If you are already deploying static content during the build phase with [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html), you may want to turn it off for a quick build test.
+If you already deploy static content during the build phase with [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html), you can skip static content deployment for a quick build test.
 
-We do not recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
+We do not recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:
@@ -141,7 +137,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
- Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html){:target="\_blank"} debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
+ Enables or disables the [Symfony](https://symfony.com/doc/current/console/verbosity.html) debug verbosity level for your logs. Choose the level of detail provided in the logs: `-v`, `-vv`, or `-vvv`.
  
 ```yaml
 stage:

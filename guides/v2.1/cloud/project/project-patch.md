@@ -1,8 +1,6 @@
 ---
-group: cloud
+group: cloud-guide
 title: Apply custom patches
-version: 2.1
-github_link: cloud/project/project-patch.md
 functional_areas:
   - Cloud
   - Upgrade
@@ -12,6 +10,7 @@ Sometimes we provide a custom patch to address a specific issue. Also, third-par
 {% include cloud/note-upgrade.md %}
 
 #### To apply and test a custom patch:
+
 You can only apply patches during the build phase of redeployment.
 
 1.  On your local workstation, create a branch based on the `integration` branch.
@@ -44,6 +43,6 @@ You can only apply patches during the build phase of redeployment.
     php ./bin/magento cache:clean
     ```
 
-    You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
+    You can also clean the cache using the [Magento Admin Cache Management](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 
 1.  Test the patch, make any necessary changes.

@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: G_Translate
-title: Create a translation dictionary for a theme
-menu_title: Create a translation dictionary for a theme, illustration
+title: Example theme translation dictionary
+menu_title: Example theme translation dictionary, illustration
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/translations/translate_practice.md
 functional_areas:
   - Frontend
 ---
@@ -14,7 +12,8 @@ functional_areas:
 
 This topic is a step-by-step illustration of creating a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
-<h2 id="theme">Changing default strings</h2>
+## Changing default strings   {#theme}
+
 OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme.
 Among the other changes, they want to rephrase certain strings used in the Blank theme and modules for the default locale. 
 
@@ -33,9 +32,7 @@ Change <b>Add to Wish List</b> label to <b>Wishlist</b>
 
 The following image shows a page where the strings meant to be changed are used:
 
-<div style="border: 1px solid #ABABAB">
-<img width="700px" src="{{ site.baseurl }}/common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed">
-</div>
+![Product page where the Add to Compare string is displayed]({{ site.baseurl }}/common/images/fdg_trans_bag.png){: width="700px"}
 
 To override the strings, OrangeCo plan to use the en_US dictionary file. 
 
@@ -71,9 +68,7 @@ When the OrangeCo apply the orange theme, the custom strings are used instead de
 
 For example:
 
-<div style="border: 1px solid #ABABAB">
-<img width="700px" src="{{ site.baseurl }}/common/images/fdg_translations_bag2.png" alt="Product page where the customized Compare string is displayed"> 
-</div>
+![Product page where the customized Compare string is displayed]({{ site.baseurl }}/common/images/fdg_translations_bag2.png){: width="700px"} 
 
 ## Recommended reading
 

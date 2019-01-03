@@ -1,8 +1,6 @@
 ---
-group: pattern
+group: admin-pattern-library
 title: Tree Pattern
-version: 2.1
-github_link: pattern-library/displaying-data/tree/tree.md
 ---
 This topic contains various types of Tree structures used in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items.
 
@@ -19,6 +17,7 @@ The tree consists of two main "Anchors" and "Links":
 ![](img/treecomponents.jpg)
 
 ### Anchors
+
 Anchors are items that always contain at least one child item and offer "expand" / "collapse" functionality by hiding or revealing its direct children.
 
 ### Link
@@ -115,7 +114,7 @@ _Note:_ The "Expand All/Collapse All" control can appear simultaneously with the
 
 * Checked – if the parent state is changed from "unchecked" to "checked" state
 * Unchecked – if the parent state is changed from "checked" to "unchecked" state
-* Partial Selection – if parent has a partial selection state, clicking on it will unselect all the child items.
+* Partial Selection – if parent has a partial selection state, clicking on it will deselect all the child items.
 
 ## Drag and Arrange
 

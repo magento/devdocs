@@ -1,11 +1,9 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: troubleshoot
 title: Debug UI components JavaScript
 menu_title: Debug UI components JavaScript
 menu_order: 1
-version: 2.1
-github_link: ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.md
 ---
 
 ## Overview
@@ -43,7 +41,7 @@ A simple example:
 
 To retrieve the context within markup, you can also use the instance of Knockout:
 
-At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html) `knockout`.
+At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html) `knockout`.
 
 {%highlight js%}
 var ko = require('knockout');

@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: BundleProduct endpoint
-version: 2.3
-github_link: graphql/reference/bundle-product.md
 ---
 
 The `BundleProduct` endpoint defines which bundle product-specific attributes are returned when performing a `products` search.

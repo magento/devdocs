@@ -1,14 +1,12 @@
 ---
 group: graphql
 title: Overview
-version: 2.3
 landing-page: GraphQL Developer's Guide
-github_link: graphql/index.md
 ---
 
-[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for front-end development.
+[GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
 
-The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build](https://github.com/magento/magento2/blob/{{ page.guide_version }}-develop/app/code/Magento) to explore and try it out for yourself.
+The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build]({{ site.mage2300url }}app/code/Magento) to explore and try it out for yourself.
 
 ## The current state of Magento GraphQL
 
@@ -19,13 +17,13 @@ GraphQL allows you to define the structure of the data that you need, and the se
 A GraphQL-enabled module handles externally-defined attributes differently than other Magento modules. We used the following techniques to manage product-related attributes, but you are free to use alternate methods:
 
 * **EAV attributes** are explicitly declared in the `schema.graphqls` files.
-For example, the [`Catalogschema.graphqls`](https://github.com/magento/magento2/blob/{{ page.guide_version }}-develop/app/code/Magento/CatalogGraphQl/etc/schema.graphqls) file declares multiple EAV attributes.
+For example, the [`Catalogschema.graphqls`]({{ site.mage2300url }}app/code/Magento/CatalogGraphQl/etc/schema.graphqls) file declares multiple EAV attributes.
 
 * **Custom attributes** are treated as dynamic attributes that might or might not be present. Therefore, they are not declared in the schema. Instead, we've implemented a reader that queries the database and gets any declared custom attributes. These attributes can be declared in the schema if you know they'll always be present.
 
 * **Extension attributes** can be declared in a `schema.graphqls` file or by a custom reader, but they should be declared in a separate `*GraphQl` module. The attributes should extend from the resolver that fetches that model's data.
 
-You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the front end.
+You can explicitly define EAV attributes in the schema, while a module's attribute reader adds custom attributes to the configuration of the module. The reader queries the database to find attributes and processes them so that they can be read by the XML reader. The custom attributes become available to the frontend.
 
 The current GraphQL codebase also supports the following features:
 
@@ -54,3 +52,7 @@ GraphiQL is an in-browser tool for writing, validating, and testing GraphQL quer
 ![GraphiQL browser]({{ page.baseurl }}/graphql/images/graphql-browser.png)
 
 To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available at [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html).
+
+
+{:.bs-callout .bs-callout-info}
+You can access the GraphQL introspection feature only if your Magento instance is in developer mode. [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) describes how to check and change the mode.

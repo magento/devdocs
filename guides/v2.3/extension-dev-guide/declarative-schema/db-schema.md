@@ -1,18 +1,15 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Configure declarative schema
-version: 2.3
-github_link: extension-dev-guide/declarative-schema/db-schema.md
 ---
 
 Before Magento 2.3, extension developers were required to write code (PHP scripts) to change the database schema. The following types of scripts existed before Magento 2.3:
 
-* InstallData and InstallSchema scripts, which are executed on a clean (empty) database
-* UpgradeData and UpgradeSchema incremental scripts, which supplement an existing Magento database
-* Recurring scripts, which are executed each time you install or upgrade Magento
+* InstallData and InstallSchema scripts, which are executed the first time a module is installed.
+* UpgradeData and UpgradeSchema incremental scripts, which supplement an existing module schema.
+* Recurring scripts, which are executed each time you install or upgrade Magento.
 
-Each script iteratively adds changes. During the installation process, Magento applies only those changes that have not been applied yet. For example, if you have Magento 2.1.8 installed and the latest version is 2.1.11, then the upgrade scripts for
-2.1.9, 2.1.10, and 2.1.11 will be applied, in order, when you upgrade to 2.1.11. That procedure is called _migration setup_ or _migration scripts_.
+Each script iteratively adds changes. During the installation process, upgrade scripts apply only those changes that have not been applied yet. For example, if you have a module with version 2.1.8 installed and the latest version is 2.1.11, then the upgrade script changes for 2.1.9, 2.1.10, and 2.1.11 will be applied, in order, when you upgrade to 2.1.11. Each upgrade script is responsible for checking the required version for each change to apply. The Magento installation only knows that a module has an upgrade script, not what versions it affected. That procedure is called _migration setup_ or _migration scripts_.
 
 The main disadvantage of this approach is that Magento applies changes blindly. For example, in one version a new database column might be introduced, only to be removed in the next. _Declarative setup_ eliminates this type of unnecessary work.
 
@@ -24,14 +21,28 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 ```xml
 <table name="catalog_product_entity_datetime" resource="default" engine="innodb"
            comment="Catalog Product Datetime Attribute Backend Table">
-        <column xsi:type="int" name="value_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
-        <column xsi:type="smallint" name="attribute_id" padding="5" unsigned="true" nullable="false" identity="false"default="0" comment="Attribute ID"/>
-        <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
-        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0"/>
-        <column xsi:type="datetime" name="value" on_update="false" nullable="true" comment="Value"/>
-        <constraint xsi:type="primary" name="PRIMARY">
-            <column name="value_id"/>
-        </constraint>
+    <column xsi:type="int" name="value_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
+    <column xsi:type="smallint" name="attribute_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Attribute ID"/>
+    <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
+    <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0"/>
+    <column xsi:type="datetime" name="value" on_update="false" nullable="true" comment="Value"/>
+    <constraint xsi:type="primary" referenceId="PRIMARY">
+        <column name="value_id"/>
+    </constraint>
+    <constraint xsi:type="foreign" referenceId="CAT_PRD_ENTT_DTIME_ATTR_ID_EAV_ATTR_ATTR_ID" table="catalog_product_entity_datetime" column="attribute_id" referenceTable="eav_attribute" referenceColumn="attribute_id" onDelete="CASCADE"/>
+    <constraint xsi:type="foreign" referenceId="CAT_PRD_ENTT_DTIME_ENTT_ID_CAT_PRD_ENTT_ENTT_ID" table="catalog_product_entity_datetime" column="entity_id" referenceTable="catalog_product_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+    <constraint xsi:type="foreign" referenceId="CATALOG_PRODUCT_ENTITY_DATETIME_STORE_ID_STORE_STORE_ID" table="catalog_product_entity_datetime" column="store_id" referenceTable="store" referenceColumn="store_id" onDelete="CASCADE"/>
+    <constraint xsi:type="unique" referenceId="CATALOG_PRODUCT_ENTITY_DATETIME_ENTITY_ID_ATTRIBUTE_ID_STORE_ID">
+        <column name="entity_id"/>
+        <column name="attribute_id"/>
+        <column name="store_id"/>
+    </constraint>
+    <index referenceId="CATALOG_PRODUCT_ENTITY_DATETIME_ATTRIBUTE_ID" indexType="btree">
+        <column name="attribute_id"/>
+    </index>
+    <index referenceId="CATALOG_PRODUCT_ENTITY_DATETIME_STORE_ID" indexType="btree">
+        <column name="store_id"/>
+    </index>
 </table>
 ```
 
@@ -39,16 +50,15 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
 
 The `<Module_Vendor>/<Module_Name>/etc/db_schema.xml` file declares a module's database structure.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PHPStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
-</div>
+{: .bs-callout .bs-callout-info }
+If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html), you can use the PhpStorm autocomplete feature after choosing a node's `xsi:type`. This will also allow you to view which attributes are available on each line of your `db_schema.xml` file
 
 ### Top-level node
 
 The `schema` node defines the location of the `schema.xsd`  file.
 
 `<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="urn:magento:setup:Model/Declaration/Schema/etc/schema.xsd">`
+  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">`
 
 ### `table` node
 
@@ -57,10 +67,11 @@ A table node can contain the following attributes:
 
 Attribute | Description
 --- | ---
-`name` | The name of the table.
+`name` | The name of the table
 `engine` | SQL engine. This value must be `innodb` or `memory`.
 `resource` | The database shard on which to install the table. This value must be `default`, `quote`, or `sales`.
-`comment` | Table comment.
+`comment` | Table comment
+{:style="table-layout:auto;"}
 
  A `table` node can contain three types of subnodes:
 
@@ -148,18 +159,19 @@ Example:
 
 #### `constraint` subnode
 
-The `constraint` subnode is represented by 3 different types:
+The `constraint` subnode always contains the following attributes:
 
-* `primary`
-* `unique`
-* `foreign`
+Attribute | Description
+--- | ---
+`type` | One of `primary`, `unique`, or `foreign`
+`referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
 
-The `primary` and `unique` constraints are called "internal" constraints, because they can be applied only to the scope of the table where they are created. Internal constraints define the `name` attribute and contain one or more `column` subnodes. Each subnode defines a constrained column.
+The `primary` and `unique` constraints are called "internal" constraints, because they can be applied only to the scope of the table where they are created. Internal constraints define one or more `column` subnodes. Each subnode defines a constrained column.
 
 The following example shows the format of an internal constraint.
 
 ```xml
-<constraint xsi:type="primary" name="PRIMARY">
+<constraint xsi:type="primary" referenceId="PRIMARY">
     <column name="entity_id"/>
 </constraint>
 ```
@@ -168,19 +180,36 @@ The `foreign` constraint is similar to foreign keys in SQL. This type of constra
 
 Attribute | Description
 --- | ---
-`column` | A column in the current table that refers to a specific column in another table.
-`referenceTable` | The table being referenced.
-`referenceColumn`| A column in the `referenceTable`.
-`onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`.
+`table` | The name of the current table
+`column` | A column in the current table that refers to a specific column in another table
+`referenceTable` | The table being referenced
+`referenceColumn`| A column in the `referenceTable`
+`onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
+{:style="table-layout:auto;"}
 
 Example:
 
 ```xml
-<constraint xsi:type="foreign" name="COMPANY_CREDIT_COMPANY_ID_DIRECTORY_COUNTRY_COUNTRY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
+<constraint xsi:type="foreign" referenceId="COMPANY_CREDIT_COMPANY_ID_DIRECTORY_COUNTRY_COUNTRY_ID" table="company_credit" column="company_id" referenceTable="company" referenceColumn="entity_id" onDelete="CASCADE"/>
 ```
+
 #### `index` subnode
 
-The `index` subnode has the same structure as internal constraints but contains different logic. While constraints are used for defining limitations, indexes are used for speeding up DQL operations.
+The `index` subnode has the same structure as internal constraints but contains different logic. While constraints are used for defining limitations, indexes are used for speeding up DQL operations. The following attributes define an index:
+
+Attribute | Description
+--- | ---
+`referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
+`indexType` | The value must be `btree`, `fulltext`, or `hash`
+{:style="table-layout:auto;"}
+
+Example:
+
+```xml
+<index referenceId="NEWSLETTER_SUBSCRIBER_CUSTOMER_ID" indexType="btree">
+    <column name="customer_id"/>
+</index>
+```
 
 ## Perform common database operations
 
@@ -188,49 +217,105 @@ This section shows how to perform common database operations using declarative s
 
 ### Create a table
 
-The following example creates the `table_name` table with five columns. The `id` column is the primary key.
+The following example creates the `declarative_table` table with four columns. The `id_column` column is the primary key.
 
-![Create Table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/declaration-create-table.png)
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
++    <table name="declarative_table">
++        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
++        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
++        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
++        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
++        <constraint xsi:type="primary" referenceId="PRIMARY">
++            <column name="id_column"/>
++        </constraint>
++    </table>
+</schema>
+```
 
 ### Drop a table
 
-In the following example, the `table_name` table was completely removed from the `db-schema.xml` file. To drop a table declared in another module, redeclare it with the `disabled` attribute set to `true`.
+In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file. To drop a table declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
-![Drop Table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/drop-declarative-table.png)
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+-    <table name="declarative_table">
+-        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+-        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+-        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+-        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+-        <constraint xsi:type="primary" referenceId="PRIMARY">
+-            <column name="id_column"/>
+-        </constraint>
+-    </table>
+</schema>
+```
 
 ### Rename a table
 
 Table renaming is not supported. However, you can remove an unneeded table declaration and add a new one. Data will be persisted in a CSV dump, but the data will not be added to the new table automatically. You can add the data manually by using data/recurring patches.
 
-### Create a foreign key
-
-In the following example, the selected `constraint` node defines the characteristics of the `FL_ALLOWED_SEVERITIES` foreign key.
-
-![Create Foreign Key]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/create-fk.png)
-
-### Drop a foreign key
-
-The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleting its `constraint` node. To drop a constraint declared in another module, redeclare it with the `disabled` attribute set to `true`.
-
-![Drop Foreign Key]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/drop-fk.png)
-
 ### Add a column to table
 
 The following example adds the `date_closed` column.
 
-![Add column to table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/add-column.png)
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
++       <column xsi:type="timestamp" name="date_closed" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>
+```
 
 ### Drop a column from a table
 
 The following example removes the  `date_closed` column by deleting its `column` node. To drop a column declared in another module, redeclare it with the `disabled` attribute set to `true`.
 
-![Drop column from table]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/remove-column.png)
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+-       <column xsi:type="timestamp" name="date_closed" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>
+```
 
 ### Change the column type
 
 The following example changes the `type` of the `title` column from `varchar` to  `tinytext`.
 
-![Change column type]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/change-column-type.png)
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+-       <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
++       <column xsi:type="tinytext" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>
+```
 
 ### Rename a column
 
@@ -248,10 +333,103 @@ onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
 
 ### Add an index
 
-The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
+The following example adds the `INDEX_SEVERITY` index to the `declarative_table` table.
 
-![Add index]({{ page.baseurl }}/extension-dev-guide/declarative-schema/images/add-index.png)
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="tinytext" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
++       <index name="INDEX_SEVERITY" indexType="btree">
++           <column name="severity"/>
++       </index>
+    </table>
+</schema>
+```
+### Create a foreign key
 
+In the following example, the selected `constraint` node defines the characteristics of the `FL_ALLOWED_SEVERITIES` foreign key.
+
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
++       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
++               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
++               onDelete="CASCADE"/>
+    </table>
+</schema>
+```
+
+### Drop a foreign key
+
+The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleting its `constraint` node. To drop a constraint declared in another module, redeclare it with the `disabled` attribute set to `true`.
+
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+-       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
+-               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
+-               HonDelete="CASCADE"/>
+    </table>
+</schema>
+```
+
+### Recreate a foreign key
+
+In this example, Module A defines a new table with primary key `id_column`. Module B declares its own schema, in which it creates a new column (`new_id_column`) and changes the primary index to this column. 
+Module B disables the original primary key and sets a new primary key with a `referenceId` value that is different from PRIMARY. Although this value is different, the real name of the primary key in the database remains PRIMARY.
+
+ **Module A declaration**
+
+```xml
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>
+```
+
+ **Module B declaration**
+
+```xml
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="declarative_table">
+        <column xsi:type="int" name="new_id_column" padding="10" unsigned="true" nullable="false"
+                comment="New Entity Id"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY" disabled="true"/>
+        <constraint xsi:type="primary" referenceId="NEW_PRIMARY">
+            <column name="new_id_column"/>
+        </constraint>
+    </table>
+</schema>
+```
 
 ## Other tasks
 
@@ -259,12 +437,6 @@ The following example adds the `INDEX_SEVERITY` index to the `table_name` table.
 
 When a module is disabled from the Admin console, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
 
-<!--
-### Truncate a table
-
-**Developer question:** This section is empty
-
--->
 
 [How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html
 [Db Schema Autocomplete]:{{ page.baseurl }}/extension-dev-guide/declarative-schema/images/db-schema-autocomplete.png

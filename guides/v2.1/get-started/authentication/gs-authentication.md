@@ -1,13 +1,10 @@
 ---
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: Authentication
 menu_title: Authentication
 menu_order: 1
 menu_node: parent
-version: 2.1
-github_link: get-started/authentication/gs-authentication.md
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication.html
 functional_areas:
   - Integration
 ---
@@ -27,23 +24,26 @@ Permissions required to access particular resource are configured in the `webapi
 
 
 User type | Accessible resources (defined in webapi.xml)
+--- | ---
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
-Customer | Resources with `anonymous` or `self` permission.
-Guest user | Resources with `anonymous` permission.
-
+Customer | Resources with `anonymous` or `self` permission
+Guest user | Resources with `anonymous` permission
+{:style="table-layout:auto;"}
 
 ### Relation between acl.xml and webapi.xml
+
 The <code>acl.xml</code> file defines the access control list (ACL) for a given {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. It defines available set of permissions to access the resources.
 `acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} role resources or third party Integration's access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
 
 #### Sample customer acl.xml
-For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's <code><a href="{{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml" target="_blank">acl.xml</a></code>.
+
+For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml).
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 
 #### Sample (truncated) customer webapi.xml
 
-{% highlight XML %}
+``` xml
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group -->
@@ -87,17 +87,16 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 ..........
 .....
 ...
-{% endhighlight %}
+```
 
 For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with `Magento_Customer::group` authorization can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest).
 
 {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 A guest or anonymous is a special permission that doesn't need to be defined in `acl.xml` (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in `webapi.xml` can be accessed without the need for authentication.
-
+<br/><br/>
 Similarly, self is a special access used if you already have an authenticated session with the system. Self access enables a user to access resources they own. For example, `GET /V1/customers/me` fetches the logged-in customer's details. This is typically useful for JavaScript-based widgets.
-</div>
 
 ### Web API clients and authentication methods
 
@@ -179,3 +178,5 @@ Proceed to the authentication method for your preferred client:
 * JavaScript {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} on the Magento Admin or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. [Session-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 * [Extension attribute authentication]({{ page.baseurl }}/extension-dev-guide/attributes.html)
+
+* [Configure services as web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html)

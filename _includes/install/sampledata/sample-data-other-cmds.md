@@ -1,5 +1,3 @@
-<div markdown="1">
-
 ## Remove sample data modules or update sample data {#instgde-prereq-sample-intro}
 
 This topic discusses how to:
@@ -11,12 +9,13 @@ This topic discusses how to:
 
 ## First steps {#sample-first}
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
 ## Remove sample data modules {#inst-sample-remove}
+
 Enter the following command:
 
-	magento sampledata:remove 
+	magento sampledata:remove
 
 <!-- where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
 
@@ -24,11 +23,12 @@ The complete list of sample data modules follows:
 
 {% include install/sampledata/sample-data_list-of-modules.md %} -->
 
-<h2 id="inst-sample-reset">Prepare to update sample data</h2>
+## Prepare to update sample data   {#inst-sample-reset}
+
 This command enables you to update sample data before you update the Magento application.
 
 To prepare sample data for updating, enter the following command:
 
 	magento sampledata:reset
 
-After that, <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.
+After that, [update the Magento application]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update).

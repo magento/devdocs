@@ -1,12 +1,10 @@
 ---
-group: install_wiz
+group: installation-guide
 subgroup: Wizard
 title: Step 2. Add a Database
 menu_title: Step 2. Add a Database
 menu_node:
 menu_order: 3
-version: 2.1
-github_link: install-gde/install/web/install-web_2-db.md
 functional_areas:
   - Install
   - System
@@ -14,7 +12,7 @@ functional_areas:
 ---
 
 ## Before you begin
-{% include install/before-you-begin-web.html %}
+{% include install/before-you-begin-web.md %}
 
 {% include install/web/install-web_2-db.md %}
 

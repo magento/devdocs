@@ -172,11 +172,11 @@ pages:
         - label: Translate theme strings
           url: /frontend-dev-guide/translations/translate_theory.html
 
-        - label: Create a translation dictionary for a theme, illustration
+        - label: Example theme translation dictionary
           url: /frontend-dev-guide/translations/translate_practice.html
 
     - label: Tools
-      versions: ["2.2", "2.3"]
+      include_versions: ["2.2", "2.3"]
       url: /frontend-dev-guide/tools/tools_overview.html
       children:
 

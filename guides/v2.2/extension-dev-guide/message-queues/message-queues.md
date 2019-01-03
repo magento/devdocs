@@ -1,9 +1,7 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 title: Message Queues
 ee_only: True
-version: 2.2
-github_link: extension-dev-guide/message-queues/message-queues.md
 redirect_from: /guides/v2.2/extension-dev-guide/message-queues.html
 ---
 
@@ -14,7 +12,6 @@ In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional
 A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
 See [Configure message queues] for information about setting up the message queue system.
-
 
 ## Send a message from the publisher to a queue
 
@@ -31,7 +28,8 @@ In an MySQL adapter environment, when a message is published to multiple queues,
 The procedure for instantiating a consumer differs, depending on which message queue system is being used.
 
 ### RabbitMQ
-This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`)listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
+
+This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
 {% highlight php startinline=true %}
 $this->consumerFactory->get('customer_created_listener')

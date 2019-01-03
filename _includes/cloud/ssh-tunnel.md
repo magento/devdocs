@@ -17,6 +17,7 @@ To build a tunnel, you must know the name of the app to which to tunnel. Use the
 For information on the command, you can enter `magento-cloud apps --help`.
 
 ### Set up the SSH tunnel {#tunnel-setup}
+
 Use the following command:
 
 	magento-cloud tunnel:open -e <environment ID> --app <app name>
@@ -37,11 +38,13 @@ Messages similar to the following display:
 	Close tunnels with: magento-cloud tunnel:close
 
 ### Get tunnel information {#tunnel-info}
+
 To display information about your tunnel, enter:
 
 	magento-cloud tunnel:info -e <environment ID>
 
 ### Connect to services {#tunnel-services}
+
 Now you can connect to services as if they were running locally.
 
 For example, to connect to the database, use the following command:

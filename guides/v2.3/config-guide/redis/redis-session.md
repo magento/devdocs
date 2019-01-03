@@ -1,8 +1,6 @@
 ---
-group: config-guide
+group: configuration-guide
 title: Use Redis for session storage
-version: 2.3
-github_link: config-guide/redis/redis-session.md
 functional_areas:
   - Configuration
   - System
@@ -70,7 +68,7 @@ where
 <td>persistent_identifier</td>
 <td>
 <p>Unique string to enable persistent connections (for example, <code>sess-db0</code>).</p>
-<p><a href="https://github.com/nicolasff/phpredis/issues/70" target="_blank">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p>
+<p><a href="https://github.com/nicolasff/phpredis/issues/70">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p>
 </td>
 <td>empty</td>
 </tr>
@@ -87,8 +85,8 @@ where
 <td>session-save-redis-compression-threshold</td>
 <td>compression_threshold</td>
 <td>
-<p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features" target="_blank"><code>suhosin.session.encrypt = On</code></a>).</p>
-<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18" target="_blank">Known issue with strings of more than 64KB</a>.</p>
+<p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features"><code>suhosin.session.encrypt = On</code></a>).</p>
+<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18">Known issue with strings of more than 64KB</a>.</p>
 </td>
 <td>2048</td>
 </tr>
@@ -262,6 +260,9 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
       )
     ),
 ```
+
+{: .bs-callout .bs-callout-info }
+TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
 ## Basic verification {#redis-verify}
 

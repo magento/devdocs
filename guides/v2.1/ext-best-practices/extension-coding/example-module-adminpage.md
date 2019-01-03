@@ -1,11 +1,9 @@
 ---
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 02_Extension-Coding
 title: Creating a Magento admin page
 menu_title: Creating a Magento admin page
 menu_order: 1000
-version: 2.1
-github_link: ext-best-practices/extension-coding/example-module-adminpage.md
 functional_areas:
   - Standards
 ---
@@ -27,7 +25,6 @@ mkdir -p MyCompany/ExampleAdminNewPage
 ~~~
 
 This command creates the `MyCompany` company directory and the `ExampleAdminNewPage` module directory. The latter will be the root directory for the module we will create.
-
 
 ### Initial boilerplate files
 
@@ -118,6 +115,7 @@ The following parts make up the generated page request link to the **Hello World
 * `helloworld` - This specifies the name of the controller to use.
 * `index` - In the XML file, since the action for the controller is not specified, Magento uses the default value `index`.
 
+[//]: # (Stop list rendering before collapsible, see: https://github.com/magento/devdocs/issues/2655)
 {% collapsible File content for menu.xml %}
   {% highlight xml %}
     <?xml version="1.0"?>
@@ -218,7 +216,7 @@ These files belong in the `view/adminhtml` directory because the Magento admin a
 
 This file defines the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} and structure of the index page for the HelloWorld controller. It sets the title to "Greetings" and instructs Magento to use the `helloworld.phtml` template as the content in a `Magento\Backend\Block\Template` block class.
 
-The name of this file uses the following pattern: *frontName*\_*controller*\_*action*.xml
+The name of this file uses the following pattern: *routeId*\_*controller*\_*action*.xml
 
 {% collapsible File content for exampleadminnewpage_helloworld_index.xml %}
   {% highlight xml %}
@@ -276,7 +274,7 @@ The module is now complete. Your module's directory structure under `app/code` s
         `-- <a href="#registrationphp">registration.php</a>
   </pre>
   <script>
-    //Javascript to make the code blocks open on anchor click
+    //JavaScript to make the code blocks open on anchor click
     $(document).ready(function(){
       var anchor = window.location.hash.substring(1);
       if(anchor)
@@ -300,6 +298,7 @@ Now that the module is code-complete, run the following commands to install it:
 2. `bin/magento module:enable MyCompany_ExampleAdminNewPage` - If necessary, run this to enable the disabled module.
 3. `bin/magento setup:upgrade` - This command will properly register the module with Magento.
 4. `bin/magento setup:di:compile` - This command compiles classes used in dependency injections.
+5. `bin/magento cache:clean` - This command cleans the cache.
 
 Once the module installation has completed, the link to the **Hello World** page should appear in the **Greetings** section under **Content** in the left navigation in the admin area. Clicking this link will take you to a page that looks like the one pictured below.
 

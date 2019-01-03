@@ -1,8 +1,6 @@
 ---
-group: compman
+group: software-update-guide
 title: Upgrade the Magento application and modules
-version: 2.2
-github_link: comp-mgr/bk-compman-upgrade-guide.md
 functional_areas:
   - Upgrade
 ---
@@ -16,7 +14,7 @@ functional_areas:
 
 This topic discusses the ways you can:
 
-*	Upgrade (that is, *patch*) the Magento software from version {{ page.version }}.0 to {{ page.version }}.1, for example
+*	Upgrade (that is, *patch*) the Magento software from version {{ page.guide_version }}.0 to {{ page.guide_version }}.1, for example
 *	Update any of the following:
 
 	*	Modules (also referred to as *extensions*; extend Magento capabilities)
@@ -41,14 +39,11 @@ The way you upgrade (that is, patch) the Magento application depends on how you 
 __System upgrade__ refers to updating the Magento 2.x core modules and other installed modules.
 To migrate from Magento 1.x to Magento 2, see the [Migration Guide].
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{:.bs-callout .bs-callout-warning}
 For upgrade or update, you must use the same authentication keys you used to install the Magento software.
+<br/><br/>
 For example, you *cannot* use {{ce}} authentication keys to update or upgrade {{ee}} or vice versa.
-You also *cannot* use:
-
-- Another user\'s authentication keys
-- [Shared account] authentication keys
-</div>
+You also *cannot* use another user's authentication keys or [Shared account] authentication keys.
 
 #### Next step
 

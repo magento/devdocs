@@ -1,12 +1,10 @@
 ---
-group: install_trouble
+group: installation-guide
 subgroup: 02_access
 title: Access issues
 menu_title: Access issues
 menu_node: parent
 menu_order: 1
-version: 2.1
-github_link: install-gde/trouble/php/tshoot_access-main.md
 functional_areas:
   - Install
   - System

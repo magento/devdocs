@@ -1,12 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Troubleshoot cron
 menu_title: Troubleshoot cron
 menu_node:
 menu_order: 7
-version: 2.0
-github_link: comp-mgr/trouble/cman/cron.md
 functional_areas:
   - Upgrade
 ---

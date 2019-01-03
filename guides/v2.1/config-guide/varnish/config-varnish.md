@@ -1,12 +1,6 @@
 ---
-group: config-guide
-subgroup: 09_Varnish
+group: configuration-guide
 title: Configure and use Varnish
-menu_title: Configure and use Varnish
-menu_order: 1
-menu_node: parent
-version: 2.1
-github_link: config-guide/varnish/config-varnish.md
 functional_areas:
   - Configuration
   - System
@@ -29,6 +23,7 @@ For more information about Varnish, see:
 *	[Varnish and Website Performance]
 
 ## Varnish topology diagram {#varnish-arch}
+
 The following figure shows a basic view of Varnish in your Magento topology.
 
 ![Basic Varnish diagram]
@@ -40,6 +35,7 @@ As the web server returns assets, cacheable assets are stored in Varnish. Any su
 Assets cached by Varnish expire at a configurable interval or are replaced by newer versions of the same assets. You can also clear the cache manually either using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or the [`magento cache:clean`] command.
 
 ## Process overview {#config-varnish-process}
+
 This topic discusses how to initially install Varnish with a minimal set of parameters and test that it works. Then you'll export a Varnish configuration from the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and test it again.
 
 The process can be summarized as follows:
@@ -56,6 +52,7 @@ The process can be summarized as follows:
 * This topic is written for Varnish on CentOS and Apache 2.2. If you're setting up Varnish in a different environment, some commands are likely different. Consult Varnish documentation for more information.
 
 ## Known issues {#config-varnish-issues}
+
 We know of the following issues with Varnish:
 
 *	[Varnish does not support SSL]
@@ -84,22 +81,22 @@ We know of the following issues with Varnish:
 
 <!-- Link Definitions -->
 [Varnish Cache]: https://www.varnish-cache.org/
-{:target="_blank"}
+[Install Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish-install.html 
 [Redis]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
 [database]: {{ page.baseurl }}/config-guide/database/database.html
 [Wikipedia]: https://en.wikipedia.org/wiki/Varnish_%28software%29
-{:target="_blank"}
+
 [The Big Varnish Picture]: https://www.varnish-cache.org/docs/trunk/users-guide/intro.html
-{:target="_blank"}
+
 [Varnish startup options]: https://www.varnish-cache.org/docs/trunk/reference/varnishd.html#ref-varnishd-options
-{:target="_blank"}
+
 [Varnish and Website Performance]: https://www.varnish-cache.org/docs/trunk/users-guide/performance.html#users-performance
-{:target="_blank"}
+
 [`magento cache:clean`]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html
 [Varnish does not support SSL]: https://www.varnish-cache.org/docs/3.0/phk/ssl.html
-{:target="_blank"}
+
 [SSL termination proxy]: https://en.wikipedia.org/wiki/TLS_termination_proxy
-{:target="_blank"}
+
 
 <!-- image Definitions -->
 [Basic Varnish diagram]: {{ site.baseurl }}/common/images/varnish_basic.png

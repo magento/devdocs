@@ -1,14 +1,12 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Assign categories and products to a shared catalog
 menu_title: Assign categories and products
 menu_order: 23
-version: 2.2
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: shared
-github_link: b2b/shared-cat-product-assign.md
 functional_areas:
   - B2B
   - Catalog
@@ -25,9 +23,8 @@ The shared catalog configuration process includes assigning categories and produ
 
 The `sharedCatalogCategoryManagementV1` service is based on `catalogCategoryManagementV1`. To view a store's category structure, call `GET /V1/categories`.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Products that are defined within a category are not included when you assign a category to a shared catalog. You must add products separately.
-</div>
 
 **Service name**
 
@@ -43,9 +40,8 @@ GET  /V1/sharedCatalog/:id/categories
 
 **Category parameters**
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Although you can specify other parameters defined within a `categories` object, the `id` is the only one used to assign or unassign a category to a shared catalog.
-</div>
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
@@ -155,9 +151,8 @@ GET  /V1/sharedCatalog/:id/products
 
 **Category parameters**
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Although you can specify other parameters defined within a `products` object, the `sku` is the only one used to assign or unassign a product to a shared catalog.
-</div>
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---

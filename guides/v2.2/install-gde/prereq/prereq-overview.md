@@ -1,12 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: Prerequisites
 title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
-version: 2.2
-github_link: install-gde/prereq/prereq-overview.md
 functional_areas:
   - Install
   - System
@@ -22,7 +20,7 @@ Before you install Magento, you must do all of the following:
 *	Make sure you can back up your entire system at various points during the installation so you can roll back in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues.
 
 {:.bs-callout .bs-callout-info}
-We assume you're installing the Magento 2 software in a _development environment_, which means you have [root user](http://www.linfo.org/root.html){:target="&#95;blank"} access to the machine _and_ that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
+We assume you're installing the Magento 2 software in a _development environment_, which means you have [root user](http://www.linfo.org/root.html){:target="_blank"} access to the machine _and_ that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
 
 We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems.
 
@@ -105,6 +103,7 @@ To install or upgrade MySQL, see [MySQL]({{ page.baseurl }}/install-gde/prereq/m
 [Choose how to install the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
 
 #### Related topics
+
 *	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 *	[Apache]({{ page.baseurl }}/install-gde/prereq/apache.html)
 *	[PHP 7.0 or 7.1&mdash;Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)

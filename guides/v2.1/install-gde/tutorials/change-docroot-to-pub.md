@@ -1,20 +1,17 @@
 ---
-group: install2
+group: installation-guide
 title: Modify docroot to improve security
-version: 2.1
-github_link: install-gde/tutorials/change-docroot-to-pub.md
 ---
 
 If you installed Magento in Apache's default docroot `/var/www/html`, the Magento file system is vulnerable because it's accessible from a browser. This topic describes how to change the Apache [docroot]({{ page.baseurl }}/install-gde/basics/basics_docroot.html) on an existing Magento instance to serve files from the Magento `pub/` directory, which is more secure.
 
 Serving files from the `pub/` directory prevents site visitors from accessing the Web Setup Wizard and other sensitive areas of the Magento file system from a browser.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+{: .bs-callout .bs-callout-warning }
 If you're accustomed to using the Web Setup Wizard during development, be aware that you won't be able to access it when serving files from the `pub/` directory.
-</div>
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-If you're using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2200url }}nginx.conf.sample){:target="\_blank"} file included in the Magento installation directory, you're probably already serving files from the `pub/` directory.
+If you're using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2200url }}nginx.conf.sample){:target="_blank"} file included in the Magento installation directory, you're probably already serving files from the `pub/` directory.
 
 The sample configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory; assuming you've referenced the `nginx.conf.sample` in the server block that defines your site. For example, see the last line in the following configuration:
 
@@ -31,11 +28,11 @@ The sample configuration overrides your server's docroot settings to serve files
               set $MAGE_ROOT /var/www/html/magento2ce;
               include /var/www/html/magento2ce/nginx.conf.sample;
     }
-
 </div>
 
 ## Before you begin
-To complete this tutorial, you'll need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="\_blank"} stack:
+
+To complete this tutorial, you'll need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
 
 -   Linux
 -   Apache (2.2+)
@@ -43,11 +40,11 @@ To complete this tutorial, you'll need access to a working Magento installation 
 -   PHP (5.6 or 7.0)
 -   Magento (2.0+)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 Refer to [Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html) and the [Installation Guide]({{ page.baseurl }}/install-gde/bk-install-guide.html) for more information.
-</div>
 
 ## 1. Edit your server configuration
+
 The name and location of your virtual host file depends on which version of Apache you're running. This example shows the name and location of the virtual host file on Apache v2.4.
 
 1.  Log in to your Magento server.
@@ -76,11 +73,11 @@ The name and location of your virtual host file depends on which version of Apac
         systemctl restart apache2  
 
 ## 2. Update your base URL
+
 If you appended a directory name to your server's hostname or IP address to create the base URL when you installed Magento (for example `http://192.168.33.10/magento2`), you'll need to remove it.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 Replace `192.168.33.10` with your server's hostname.
-</div>
 
 1.  Log in to the Magento database:
 
@@ -114,13 +111,14 @@ Switching between modes is an important step in verifying that your server confi
 5.  Refresh your browser and verify that the storefront displays properly.
 
 ## 4. Verify the storefront
+
 Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser to verify that everything is working.
 
 1.  Open a web browser and enter your server's hostname or IP address in the address bar. For example, http://192.168.33.10.
 
     The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
-    <img src="{{ site.baseurl }}/common/images/install-success_store.png" width="450px" alt="Magento storefront which verifies a successful installation">
+    ![Magento storefront which verifies a successful installation]({{ site.baseurl }}/common/images/install-success_store.png){:.width="450px"}
 
     Refer to the [troubleshooting section]({{ page.baseurl }}/install-gde/trouble/tshoot_no-styles.html) if the page displays a 404 (Not Found) or fails to load other assets like images, CSS, and JS.
 
@@ -128,7 +126,7 @@ Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{%
 
     If you see a 404 or the "Access denied" message, you've successfully restricted access to the Magento file system.
 
-    <img src="{{ site.baseurl }}/common/images/access-denied.png" alt="Access denied">
+    ![Access denied]({{ site.baseurl }}/common/images/access-denied.png)
 
 ## Congratulations! You're finished.
 {:.no_toc}

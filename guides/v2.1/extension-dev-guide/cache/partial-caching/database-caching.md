@@ -1,12 +1,10 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 08_Partial caching
 title: Create custom cache engines
 menu_title: Create custom cache engines
 menu_order: 9
 menu_node:
-version: 2.1
-github_link: extension-dev-guide/cache/partial-caching/database-caching.md
 redirect_from:
   -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html
@@ -25,11 +23,13 @@ Database caching&mdash;like file-based caching&mdash; works well in a developmen
 Varnish is designed to accelerate the HTTP protocol.
 
 ## Prerequisites {#mage-cache-db-prereq}
+
 Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
 
 We provide [sample configurations] at the end of this topic.
 
 ## Database caching using the `default` cache frontend {#mage-cache-db-di}
+
 To enable database caching using the `default` frontend, you must modify `<your Magento install dir>/app/etc/di.xml`, which is the global deployment injection configuration for the Magento application.
 
 To modify `di.xml`:
@@ -96,6 +96,7 @@ To modify `di.xml`:
 7.	Continue with [Verify database caching is working].
 
 ## Database caching using a custom cache frontend {#mage-cache-db-env}
+
 This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
 
 {:.bs-callout .bs-callout-info #info}
@@ -135,6 +136,7 @@ To enable database caching using a custom cache frontend, you must modify `<your
 5.	Continue with the next section.
 
 ## Verify database caching is working {#mage-cache-db-verify}
+
 To verify database caching is working, clear the current cache directories, go to any cacheable page in a web browser, and verify that data is written to the database and not to the file system.
 
 Use the following steps:
@@ -171,8 +173,8 @@ Use the following steps:
 
 	![Sample contents of the cache tag table with database caching enabled]
 
-
 ## Configuration examples {#mage-cache-db-config}
+
 This section contains code sample snippets to refer to when configuring database caching.
 
 ### Sample `di.xml` for the default cache frontend {#mage-cache-db-config-default}
@@ -257,7 +259,7 @@ This section contains code sample snippets to refer to when configuring database
 
 <!-- Link references -->
 [Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
-[associate cache frontends with cache types]: {{ page.baseurl }}/config-guide/config/caching_frontend-cache-types.html
+[associate cache frontends with cache types]: {{ page.baseurl }}/config-guide/cache/cache-types.html
 [sample configurations]: #mage-cache-db-config
 [Magento file system owner]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html
 [Verify database caching is working]: #mage-cache-db-verify

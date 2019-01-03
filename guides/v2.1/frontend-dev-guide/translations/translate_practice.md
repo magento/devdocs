@@ -1,84 +1,63 @@
 ---
-group: fedg
-subgroup: G_Translate
-title: Create a translation dictionary for a theme
-menu_title: Create a translation dictionary for a theme, illustration
-menu_order: 2
-version: 2.1
-github_link: frontend-dev-guide/translations/translate_practice.md
+group: frontend-developer-guide
+title: Example theme translation dictionary
 functional_areas:
   - Frontend
 ---
 
-## What's in this topic
-
-This topic is a step-by-step illustration of creating a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} <a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms">dictionary</a> for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
+This topic is a step-by-step tutorial to create a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} [dictionary] for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
 
 ## Changing default strings {#theme}
-OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme.
-Among the other changes, they want to rephrase certain strings used in the Blank theme and modules for the default locale. 
+
+OrangeCo created a custom `orange` theme that inherits from the Magento Blank theme. When customizing their theme, they want to rephrase certain strings used in the Blank theme and modules for the default locale. 
 
 Namely, they need the following changes:
-<ul>
-<li>
-Change <b>Add to Cart</b> label to <b>Purchase</b>
-</li>
-<li>
-Change <b>Add to Compare</b> label to <b>Compare</b>
-</li>
-<li>
-Change <b>Add to Wish List</b> label to <b>Wishlist</b>
-</li>
-</ul>
+-   Change **Add to Cart** label to **Purchase**
+-   Change **Add to Compare** label to **Compare**
+-   Change **Add to Wish List** label to **Wishlist**
 
-The following image shows a page where the strings meant to be changed are used:
 
-<div style="border: 1px solid #ABABAB">
-<img width="700px" src="{{ site.baseurl }}/common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed">
-</div>
+The following image shows a page where the current strings are used:
 
-To override the strings, OrangeCo plan to use the en_US dictionary file. 
+![Product page where the Add to Compare string is displayed]
 
-So OrangeCo take the following steps:
+To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file. 
 
-<ol>
+1. Run the [i18n (internationalization) tool] to generate the en_US dictionary for the `orange` theme:
+    ```bash
+    php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
+    ```
+1. Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file and add the following rows:
+    ```text
+    "Add to Cart", "Purchase"
+    "Add to Compare", "Compare"
+    "Add to Wish List", "Wishlist"
+    ```
+1. Run the `deploy` command to get localization changes:
 
-<li>
-Run the <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">i18n (internationalization) tool</a> to generate the en_US dictionary for the <code>orange</code> theme:
-<pre>
-{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}php{% endglossarytooltip %} magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
-</pre>
-</li>
-<li>
+    ```bash
+     bin/magento setup:static-content:deploy
+    ```
 
-Open the newly generated <code>magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv</code> file and add the following rows:
+## Results 
 
-<pre>
-"Add to Cart", "Purchase"
-"Add to Compare", "Compare"
-"Add to Wish List", "Wishlist"
-</pre>
-</li>
-
-</ol>
-
-Now you can run deploy command to get changes of localization,
-<pre>
-php bin/magento setup:static-content:deploy
-</pre>
-
-When the OrangeCo apply the orange theme, the custom strings are used instead default ones. 
+When OrangeCo applies the orange theme, the custom strings are used instead of the default. 
 
 For example:
 
-<div style="border: 1px solid #ABABAB">
-<img width="700px" src="{{ site.baseurl }}/common/images/fdg_translations_bag2.png" alt="Product page where the customized Compare string is displayed"> 
-</div>
+![Product page where the customized Compare string is displayed]
 
-##  Recommended reading 
+##  Additional information 
 
-<ul>
-<li><a href="{{ page.baseurl }}/frontend-dev-guide/translations/xlate.html">Translations overview</a></li>
-<li><a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict">Translation dictionaries and language packages</a></li>
-<li><a href="{{ page.baseurl }}/frontend-dev-guide/translations/theme_dictionary.html">Using translation dictionary to customize strings</a></li>
-</ul>
+-   [Translations overview]
+-   [Translation dictionaries and language packages]
+-   [Usetranslation dictionary to customize strings]
+
+
+[dictionary]: {{ page.baseurl }}/frontend-dev-guide/translations/xlate.html#translate_terms
+[Product page where the Add to Compare string is displayed]: {{site.baseurl}}/common/images/fdg_trans_bag.png
+[i18n (internationalization) tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
+[Product page where the customized Compare string is displayed]: {{site.baseurl}}/common/images/fdg_translations_bag2.png
+[Translation dictionaries and language packages]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
+[Use translation dictionary to customize strings]: {{page.baseurl}}/frontend-dev-guide/translations/theme_dictionary.html
+[Translations overview]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html

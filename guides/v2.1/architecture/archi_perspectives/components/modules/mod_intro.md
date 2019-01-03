@@ -1,11 +1,8 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Module overview
 menu_title: Module overview
-version: 2.1
-github_link: architecture/archi_perspectives/components/modules/mod_intro.md
 redirect_from:
-  - /guides/v1.0/architecture/modules/mod_intro.html
   - /guides/v2.0/architecture/modules/mod_intro.html
 ---
 
@@ -25,7 +22,6 @@ The purpose of each module is to provide specific product features by implementi
 
 A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: [themes]({{page.baseurl}}/frontend-dev-guide/themes/theme-overview.html), [libraries]({{page.baseurl}}/architecture/archi_perspectives/third-party-libs.html), and [language packages]({{page.baseurl}}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack).
 
-
 ## Where do modules live?
 
 Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-name>`, where `<type>` can be one of the following values:
@@ -41,13 +37,12 @@ Inside this folder, you will find all the code related to this module, including
 
 ## Working with modules
 
-Magento developers, administrators, and anyone building a Magento web site will want to review all relevant topics surrounding their particular goals and use cases.
+Magento developers, administrators, and anyone building a Magento website will want to review all relevant topics surrounding their particular goals and use cases.
 
 See [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) for specific instructions on extending modules 
 
 
 See [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html) for information on implementing themes and other components.
-
 
 ## Related topics {#arch-modules-related}
 
