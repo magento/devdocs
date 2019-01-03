@@ -32,9 +32,8 @@ If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento softw
 
 This section discusses how to get current code by cloning [Magento's GitHub repository](https://github.com/magento/magento2){:target="_blank"} and checking out branches. You can either checkout a release branch or a development branch:
 
-*	Release branches, like `2.1.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool]({{page.baseurl}}/migration/bk-migration-guide.html).
-
-*	Development branches, like `2.2-develop`, contain the latest changes.
+- Release branches, like `2.1.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool]({{page.baseurl}}/migration/bk-migration-guide.html).
+- Development branches, like `2.2-develop`, contain the latest changes.
 
 Currently, the `2.2-develop` branch is the default, but you can checkout a release branch, like `2.1.0`, after cloning.
 
