@@ -23,7 +23,7 @@ Follow this guide to [get Magento authentication keys]({{ page.baseurl }}/instal
 ### Create `auth.json` file
 
 1. Log in to your Magento server as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2. Create the file `auth.json` in the user's home directory. For example, if `magento_user` your Unix username then create `/home/magento_user/.composer/auth.json`.
+ 2. Create the `auth.json` file in the user's home directory. For example, if `magento_user` is your Unix username, then create `/home/magento_user/.composer/auth.json`.
 
 ### Edit `auth.json` file
 
