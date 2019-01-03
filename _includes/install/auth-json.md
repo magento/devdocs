@@ -4,9 +4,9 @@
 1. GitHub personal access token
 1. Composer `auth.json` file
 
-### Get Magento authentication keys
+### Create Magento authentication keys
 
-Follow this guide to [get Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
+Follow this guide to [create Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
  ### Create a GitHub personal access token
 
