@@ -13,12 +13,8 @@ Follow this guide to [get Magento authentication keys]({{ page.baseurl }}/instal
 {:.bs-callout .bs-callout-info}
  The Composer auth file requires the `github-oauth` property, but do not create a GitHub OAuth App. Create a personal access token instead.
 
-1. Go to your [GitHub personal access tokens](https://github.com/settings/tokens) settings.
-2. Click "Generate New Token".
-3. Type a useful description. Example: "Composer auth for example.com"
-4. Select all checkboxes in the `repo` scope.
-5. Click "Generate Token".
-6. Save your token now. It cannot be recovered later.
+Follow this guide to [create a GitHub personal access token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/).
+
 
 ### Create `auth.json` file
 
