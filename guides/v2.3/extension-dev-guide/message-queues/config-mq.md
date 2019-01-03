@@ -232,7 +232,7 @@ The `connection` element is a subnode of the `publisher` element. There must not
 | disabled             | Determines whether this queue is disabled. The default value is `false`. |
 
 {: .bs-callout .bs-callout-warning }
-Be aware, that for each `topic` only one `publisher` can be enabled at the same time
+You cannot enable more than one `publisher` for each `topic`.
 
 ### Updating `queue.xml` {#updatequeuexml}
 
