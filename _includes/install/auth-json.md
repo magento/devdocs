@@ -8,7 +8,7 @@
 
 Follow this guide to [get Magento authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
 
-### Get GitHub personal access token
+ ### Create a GitHub personal access token
 
 {:.bs-callout .bs-callout-info}
 The Composer auth file requires the `github-oauth` property, but do not create a GitHub OAuth App. It's simpler to create a personal access token.
