@@ -34,11 +34,11 @@ The **Try it out!** feature is not available on Swagger documentation published 
 
 ### REST reference for Asynchronous API
 
-In addition to standard Swagger you can also generate live REST Asynchronous API documentation. To create this documentation, add `?type=async` parameter in standard Swagger URL: 
+You can also use Swagger to generate live asynchronous API REST documentation. To create this documentation, add the `?type=async` parameter to the standard Swagger URL: 
 
 `http://<magento_host>/swagger?type=async`
 
-This will return you information about all resources available for Asynchronous REST API.
+Swagger returns information about all resources available for asynchronous REST APIs.
 
 ## Return the JSON schema for one or more services
 
