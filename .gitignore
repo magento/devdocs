@@ -12,6 +12,7 @@
 !/.github
 !/.github/**
 
+/*.yml
 !/_config.yml
 !/_config.prod.yml
 !/_config.checks.yml
