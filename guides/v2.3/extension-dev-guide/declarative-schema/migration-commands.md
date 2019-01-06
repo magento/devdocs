@@ -82,9 +82,9 @@ To help prevent data loss, you can specify command line options that dump all th
 
 Magento provides options to the `setup:install` and `setup:upgrade` commands that enable safe installations and rollbacks:
 
-`--safe-mode` - Creates a data dump during the installation or upgrade process.
+`--safe-mode=1` - Creates a data dump during the installation or upgrade process.
 
-`--data-restore` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore`.
+`--data-restore=1` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore=1`.
 
 
 Several types of operations have an effect on data dumps and rollbacks.
