@@ -220,7 +220,7 @@ See [amOnPage docs on codeception.com](http://codeception.com/docs/modules/WebDr
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional|
+`url`|string|optional| A path to the page relative to the MAGENTO_BASE_URL.
 `stepKey`|string|required|A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -241,7 +241,7 @@ See [amOnSubdomain docs on codeception.com](http://codeception.com/docs/modules/
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional|
+`url`|string|optional| The name of the subdomain.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -266,7 +266,7 @@ See [amOnUrl docs on codeception.com](http://codeception.com/docs/modules/WebDri
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional|
+`url`|string|optional| Absolute URL to be used in subsequent steps.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -285,8 +285,8 @@ See [appendField docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector used to identify the form field.
+`userInput`|string|optional| Value to append to the form field.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -343,7 +343,7 @@ See [checkOption docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -363,7 +363,7 @@ Equivalent to using [`<fillField>`](#fillfield) with an empty string.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|required|
+`selector`|string|required| The selector identifying the corresponding HTML element to be cleared.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -382,7 +382,7 @@ See [click docs on codeception.com](http://codeception.com/docs/modules/WebDrive
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `selectorArray`|string|optional| Selects an element as a key value array. See [strict locator](http://codeception.com/docs/modules/WebDriver#locating-elements){:target="_blank"}.
 `userInput`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
@@ -408,10 +408,10 @@ See [clickWithLeftButton docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`selectorArray`|string|optional|
-`x`|string|optional|
-`y`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Selects an element as a key value array. See [strict locator]
+`x`|string|optional| The x-axis value in pixels for the click location.
+`y`|string|optional| The y-axis value in pixels for the click location.
 `stepKey`|string|required|A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -440,10 +440,10 @@ See [clickWithRightButton docs on codeception.com](http://codeception.com/docs/m
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`selectorArray`|string|optional|
-`x`|string|optional|
-`y`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Selects an element as a key value array. See [strict locator]
+`x`|string|optional| The x-axis value in pixels for the click location.
+`y`|string|optional| The y-axis value in pixels for the click location.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -528,9 +528,9 @@ Conditionally clicks on an element if, and only if, another element is visible o
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`dependentSelector`|string|optional|
-`visible`|boolean|optional|
+`selector`|string|optional| The selector identifying the HTML element to be clicked.
+`dependentSelector`|string|optional| The selector of the HTML element whose visibility is checked for to activate the click.
+`visible`|boolean|optional| Determines whether the conditional click is activated by the element being visible or hidden.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -550,8 +550,8 @@ To create an entity, the MFTF makes a `POST` request to the Magento API accordin
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`entity`|string|required|
-`storeCode`|string|optional|
+`entity`|string|required| Type of entity to be created.
+`storeCode`|string|optional| ID of the store within which the data is created.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -584,7 +584,7 @@ For example, a complex Product object may contain within it a pointer (an ID) to
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`createDataKey`|string|required|
+`createDataKey`|string|required| Name of the required entity.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -617,7 +617,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `createDataKey`|string|optional| Reference to `stepKey` of the `createData` action .
 `url`|string|optional| REST API route to send a DELETE request.
-`storeCode`|string|optional|
+`storeCode`|string|optional| ID of the store from which to delete the data.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -654,9 +654,9 @@ See [the codeception.com documentation for more information about this action](h
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`selector`|string|optional|
-`selectorArray`|string|optional|
+`userInput`|string|optional| Value for the form field.
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Array of selectors to evaluate.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -675,7 +675,7 @@ See [dontSeeCheckboxIsChecked docs on codeception.com](http://codeception.com/do
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -694,8 +694,8 @@ See [dontSeeCookie docs on codeception.com](http://codeception.com/docs/modules/
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`userInput`|string|optional| Value for the form field.
+`parameterArray`|string|optional| Parameters to search for within the cookie.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -719,7 +719,7 @@ See [dontSeeCurrentUrlEquals docs on codeception.com](http://codeception.com/doc
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional|
+`url`|string|optional| URL to be compared with the current URL.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -757,8 +757,8 @@ See [dontSeeElement docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`parameterArray`|string|optional| Parameters to search for within the selected element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -777,7 +777,7 @@ See [dontSeeElementInDOM docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `parameterArray`|string|optional|
 `attributeArray`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
@@ -798,7 +798,7 @@ See [dontSeeInCurrentUrl docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional|
+`url`|string|optional| String to search for within the current URL.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -817,9 +817,9 @@ See [dontSeeInField docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`selectorArray`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Array of selectors to be searched.
+`userInput`|string|optional| Value for the form field.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -838,8 +838,8 @@ See [dontSeeInFormFields docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`parameterArray`|string|optional| Array of name/value pairs of the form fields to check against.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -858,7 +858,7 @@ See [dontSeeInPageSource docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Value for the form field.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -877,7 +877,7 @@ See [dontSeeInSource docs on codeception.com](http://codeception.com/docs/module
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`html`|string|optional|
+`html`|string|optional| HTML code to search for within the source code.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -896,7 +896,7 @@ See [dontSeeInTitle docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Value to be located in the page title.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -933,8 +933,8 @@ See [dontSeeLink docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`url`|string|optional|
+`userInput`|string|optional| Text of the link field to search for.
+`url`|string|optional| Value of the href attribute to search for.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -958,8 +958,8 @@ See [dontSeeOptionIsSelected docs on codeception.com](http://codeception.com/doc
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding select element.
+`userInput`|string|optional| Name of the option to look for.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -978,7 +978,7 @@ See [doubleClick docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1024,7 +1024,7 @@ See [executeInSelenium docs on codeception.com](http://codeception.com/docs/modu
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`function`|string|optional|
+`function`|string|optional| Name of Selenium function to run.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1043,7 +1043,7 @@ See [executeJS docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`function`|string|optional|
+`function`|string|optional| Javascript to be executed.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1065,9 +1065,9 @@ See [fillField docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`selectorArray`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Array of name/value pairs with which to populate the form.
+`userInput`|string|optional| Value for the form field.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1084,7 +1084,7 @@ Attribute|Type|Use|Description
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Value for the form field.
 `locale`|string|optional|
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
@@ -1119,9 +1119,9 @@ Gets an entity (for example, a category), from the Magento API according to the 
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`storeCode`|string|optional|
+`storeCode`|string|optional| Identifier of the store from which to get the data.
 `index`|integer|optional|
-`entity`|string|required|
+`entity`|string|required| Name of the entity from which to get the data.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1146,8 +1146,8 @@ See [grabAttributeFrom docs on codeception.com](http://codeception.com/docs/modu
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| Name of tag attribute to grab.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1167,8 +1167,8 @@ See [grabCookie docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`userInput`|string|optional| Name of the cookie to grab.
+`parameterArray`|string|optional| Array of cookie parameters to grab.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1214,8 +1214,8 @@ See [grabMultiple docs on codeception.com](http://codeception.com/docs/modules/W
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| Name of the tag attribute to grab.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1260,7 +1260,7 @@ See [grabTextFrom docs on codeception.com](http://codeception.com/docs/modules/W
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1276,12 +1276,12 @@ To access this value, use `{$grabTitle}` in later actions. -->
 
 ### grabValueFrom
 
-See [grabValueFrom docs on codeception.com](http://codeception.com/docs/modules/WebDriver#grabValueFrom){:target="_blank"}.
+See [grabValueFrom docs on codeception.com](https://codeception.com/docs/modules/WebDriver#grabValueFrom){:target="_blank"}.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`selectorArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Array of selectors for the form fields to be selected.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1301,7 +1301,7 @@ See [loadSessionSnapshot docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Name of saved cookie.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1341,11 +1341,16 @@ See [makeScreenshot docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Name of PNG file to be created.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
 `after`|string|optional| `stepKey` of preceding action.
+
+{% include note.html
+      type="info"
+      content="The makeScreenshot action does not automatically add the screenshot to Allure reports."
+      %}
 
 #### Example
 
@@ -1412,10 +1417,10 @@ See [moveMouseOver docs on codeception.com](http://codeception.com/docs/modules/
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `selectorArray`|string|optional|
-`x`|string|optional|
-`y`|string|optional|
+`x`|string|optional| Number of pixels on the x-axis to offset from the selected element.
+`y`|string|optional| Number of pixels on the y-axis to offset from the selected element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1438,7 +1443,7 @@ Attribute|Type|Use|Description
 Attribute|Type|Use|Description
 ---|---|---|---
 `userInput`|string|optional|
-`locale`|string|optional|
+`locale`|string|optional| PHP locale value to be set.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1477,7 +1482,7 @@ Parses float number with thousands separator.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Float value to be parsed.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1507,8 +1512,8 @@ See [performOn docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`function`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`function`|string|optional| Function or Actions to be taken on the selected element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1520,9 +1525,9 @@ See [pressKey docs on codeception.com](http://codeception.com/docs/modules/WebDr
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| Key to be pressed.
+`parameterArray`|string|optional| Array of keys to be pressed and functions to be run for the action.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1582,8 +1587,8 @@ See [resetCookie docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`userInput`|string|optional| Name of the cookie to be reset.
+`parameterArray`|string|optional| Array of key/values to get reset within the cookie.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1607,8 +1612,8 @@ See [resizeWindow docs on codeception.com](http://codeception.com/docs/modules/W
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`width`|string|optional|
-`height`|string|optional|
+`width`|string|optional| The new width of the window in pixels.
+`height`|string|optional| The new height of the window in pixels.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1627,7 +1632,7 @@ See [saveSessionSnapshot docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Name of snapshot where cookies are to be saved.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1646,10 +1651,10 @@ See [scrollTo docs on codeception.com](http://codeception.com/docs/modules/WebDr
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `selectorArray`|string|optional|
-`x`|string|optional|
-`y`|string|optional|
+`x`|string|optional| x offset of the element to be scrolled to.
+`y`|string|optional| y offset of the element to be scrolled to.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1722,9 +1727,9 @@ See [see docs on codeception.com](http://codeception.com/docs/modules/WebDriver#
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`selector`|string|optional|
-`selectorArray`|string|optional|
+`userInput`|string|optional| The text to be searched for within the selector.
+`selector`|string|optional| The selector identifying the corresponding HTML element to be searched for.
+`selectorArray`|string|optional| Array of selectors to be searched for.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1743,7 +1748,7 @@ See [seeCheckboxIsChecked docs on codeception.com](http://codeception.com/docs/m
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1762,8 +1767,8 @@ See [seeCookie docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`userInput`|string|optional| Name of the cookie to be searched for.
+`parameterArray`|string|optional| Cookie parameters to be searched for.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1787,7 +1792,7 @@ See [seeCurrentUrlEquals docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional|
+`url`|string|optional| Full url to be searched for.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1825,9 +1830,9 @@ See [seeElement docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`selectorArray`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Array of selectors to be searched for.
+`parameterArray`|string|optional| Array of parameters to be searched for within the selector.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1846,8 +1851,8 @@ See [seeElementInDOM docs on codeception.com](http://codeception.com/docs/module
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`parameterArray`|string|optional| Array of parameters to be searched for within the selected element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1866,7 +1871,7 @@ See [seeInCurrentUrl docs on codeception.com](http://codeception.com/docs/module
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional|
+`url`|string|optional| String to be searched for within the current URL.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1885,9 +1890,9 @@ See [seeInField docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`selectorArray`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`selectorArray`|string|optional| Array of selectors to be searched.
+`userInput`|string|optional| Value to be searched for within the selected form field.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1906,8 +1911,8 @@ See [seeInFormFields docs on codeception.com](http://codeception.com/docs/module
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`parameterArray`|string|optional| Array of parameters to be searched for within the selector.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1926,7 +1931,7 @@ See [seeInPageSource docs on codeception.com](http://codeception.com/docs/module
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`html`|string|optional|
+`html`|string|optional| HTML code to be searched for within the document.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1945,7 +1950,7 @@ See [seeInPopup docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| String to be searched for within the popup
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1964,7 +1969,7 @@ See [seeInSource docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`html`|string|optional|
+`html`|string|optional| HTML code to be searched for within the page source.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1983,7 +1988,7 @@ See [seeInTitle docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| String to be searched for within the current page title.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2002,8 +2007,8 @@ See [seeLink docs on codeception.com](http://codeception.com/docs/modules/WebDri
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`url`|string|optional|
+`userInput`|string|optional| String to be searched for within the text of the link.
+`url`|string|optional| Hyperlink to be searched.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2027,9 +2032,9 @@ See [seeNumberOfElements docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| Number of instances of the specified selector to be found.
+`parameterArray`|string|optional| Array of parameters to be searched for within the selector.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2053,8 +2058,8 @@ See [seeOptionIsSelected docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| The name of the option that should be selected.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2073,9 +2078,9 @@ See [selectOption docs on codeception.com](http://codeception.com/docs/modules/W
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| The name of the option to be selected.
+`parameterArray`|string|optional| Array of options to be selected.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2118,9 +2123,9 @@ See [setCookie docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`parameterArray`|string|optional|
-`value`|string|optional|
+`userInput`|string|optional| The name of the cookie to be set.
+`parameterArray`|string|optional| Array of name/value pairs to be set within the cookie.
+`value`|string|optional| Value to be written to the cookie.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2139,9 +2144,9 @@ See [submitForm docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`parameterArray`|string|optional|
-`button`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`parameterArray`|string|optional| An array of form field names and their corresponding values.
+`button`|string|optional| Selector for the form submit button.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2160,8 +2165,8 @@ See [switchToIFrame docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| The name of the IFrame to set focus to.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2180,7 +2185,7 @@ See [switchToNextTab docs on codeception.com](http://codeception.com/docs/module
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Offset of the tab to open, usually a number.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2204,7 +2209,7 @@ See [switchToPreviousTab docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| Number of tabs to go back.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2228,7 +2233,7 @@ See [switchToWindow docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| The name of new window to be opened.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2247,7 +2252,7 @@ See [typeInPopup docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
+`userInput`|string|optional| String to be added to the current popup.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2266,7 +2271,7 @@ See [uncheckOption docs on codeception.com](http://codeception.com/docs/modules/
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2285,9 +2290,9 @@ See [unselectOption docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`userInput`|string|optional|
-`parameterArray`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`userInput`|string|optional| The name of the option to deselect.
+`parameterArray`|string|optional| Array of options to be unselected.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2323,9 +2328,9 @@ Only the fields that you want to update are set.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`storeCode`|string|optional|
-`entity`|string|required|
-`createDataKey`|string|required|
+`storeCode`|string|optional| ID of the store in which to apply the updated data.
+`entity`|string|required| The name of the updateData entity being created.
+`createDataKey`|string|required| Key of the data entity to be updated.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2339,7 +2344,7 @@ See [wait docs on codeception.com](http://codeception.com/docs/modules/WebDriver
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`time`|string|optional|
+`time`|string|optional| The number of seconds to wait.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2358,7 +2363,7 @@ Wait for all AJAX calls to finish.
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`time`|string|optional|
+`time`|string|optional| The number of seconds to wait for Ajax calls to finish.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2377,9 +2382,9 @@ See [waitForElementChange docs on codeception.com](http://codeception.com/docs/m
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`function`|string|optional|
-`time`|string|optional|
+`selector`|string|optional| The selector identifying the HTML element to be changed.
+`function`|string|optional| The function to be run after the element changes.
+`time`|string|optional| The number of seconds to wait for the change. Default is 30.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2398,8 +2403,8 @@ See [waitForElement docs on codeception.com](http://codeception.com/docs/modules
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`time`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`time`|string|optional| The number of seconds to wait for the element to appear.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2418,8 +2423,8 @@ See [waitForElementNotVisible docs on codeception.com](http://codeception.com/do
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`time`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`time`|string|optional| The number of seconds to wait for the element to become non-visible.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2438,8 +2443,8 @@ See [waitForElementVisible docs on codeception.com](http://codeception.com/docs/
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`selector`|string|optional|
-`time`|string|optional|
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`time`|string|optional| The number of seconds to wait for the element to appear.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2458,8 +2463,8 @@ See [waitForJS docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`function`|string|optional|
-`time`|string|optional|
+`function`|string|optional| The function to be run after all javascript finishes.
+`time`|string|optional| The number of seconds to wait for javascript to finish.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2510,7 +2515,7 @@ Wait for AJAX, Magento loading overlays, and `document.readyState == "complete"`
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`time`|string|optional|
+`time`|string|optional| Number of seconds to wait for the page to load.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2529,9 +2534,9 @@ See [waitForText docs on codeception.com](http://codeception.com/docs/modules/We
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`time`|string|optional|
-`selector`|string|optional|
+`userInput`|string|optional| The string to wait for.
+`time`|string|optional| The number of seconds to wait for the text to appear.
+`selector`|string|optional| The selector identifying the corresponding HTML element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
