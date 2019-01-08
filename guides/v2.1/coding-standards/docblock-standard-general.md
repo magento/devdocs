@@ -559,7 +559,7 @@ interface MutableInterface
      * Get value
      *
      * Returns 0, if no value is available
-     *
+     * 
      * @return int
      */
     public function getVal();
@@ -592,7 +592,8 @@ class LimitedMutableClass implements MutableInterface
     /**
      * Set value
      *
-     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
+     * Sets 0 in case the value is bigger than max allowed value.
+     * @inheritdoc
      */
     public function setVal($value)
     {
