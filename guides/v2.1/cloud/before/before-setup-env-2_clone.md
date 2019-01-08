@@ -79,7 +79,7 @@ Some Git commands cannot complete an action in your {{site.data.var.ece}} projec
 We recommend changing the environment-level variables for the Magento Admin URL and administrator account. It is a best practice to configure these settings for security reasons prior to branching from the cloned `master` environment. All branches created from the `master` branch inherit the environment-level variables and their values.
 
 -  **ADMIN_EMAIL**—An email address for the administrative user. This address is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails.
--  **ADMIN_USERNAME**—A hard-coded username for the administrative user that can create other users. This username links to the Project Owner email address. You can use this value, or change it to another secure username.
+-  **ADMIN_USERNAME**—A username for the administrative user with the ability to create other users, including administrative users. This username defaults to the Project Owner email address. You can use the default value, or change it to a secure username.
 -  **ADMIN_PASSWORD**—A password for the administrative user. When the project was created, the Project Owner received a default password in email.
 -  **ADMIN_URL**— The relative URL to access the Admin panel, such as `<domain>/admin`. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
