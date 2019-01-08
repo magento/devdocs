@@ -78,4 +78,4 @@ Use the [`@magentoDbIsolation`][] annotation to keep the database integrity safe
 
 <!-- Link definitions -->
 
-[`@magentoDbIsolation`]: ./magentoDbIsolation.html
+[`@magentoDbIsolation`]: ./magento-db-isolation.html

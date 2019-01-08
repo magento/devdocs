@@ -110,4 +110,4 @@ Do not rely on and do not modify an application state from within a fixture, bec
 
 <!-- Link definitions -->
 
-[magentoAppIsolation]: magentoAppIsolation.html
+[magentoAppIsolation]: magento-app-isolation.html
