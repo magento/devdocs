@@ -23,7 +23,7 @@ The {{site.data.var.ee}} project is a Git repository of Magento code with a mast
 The following instructions use a combination of Magento Cloud CLI commands and Git commands to clone a `master` environment from your project to your local workstation. To see a full list of Magento Cloud CLI commands, use the `magento-cloud list` command.
 
 {: .bs-callout .bs-callout-info}
-Some Git commands cannot complete an action in your {{site.data.var.ece}} project. For example, you can create a new branch using a Git command, but you cannot create and activate a new environment using the `git checkout -b <branch-name>` command. You must create an environment using the `magento-cloud environment:branch <branch-name>` command for the environment to become _active_. Alternatively, you can use the Project Web UI to create active environments. See [Magento CLI reference]({{page.baseurl}}/cloudreference/cli-ref-topic.html).
+Some Git commands cannot complete an action in your {{site.data.var.ece}} project. For example, you can create a new branch using a Git command, but you cannot create and activate a new environment using the `git checkout -b <branch-name>` command. You must create an environment using the `magento-cloud environment:branch <branch-name>` command for the environment to become _active_. Alternatively, you can use the Project Web UI to create active environments. See [Magento CLI reference]({{page.baseurl}}/cloud/reference/cli-ref-topic.html).
 
 #### To clone a project master environment:
 
@@ -86,7 +86,7 @@ We recommend changing the environment-level variables for the Magento Admin URL 
 {:.bs-callout .bs-callout-info}
 Make note of any updated values so that you can use them to install Magento from the command line and to verify the installation.
 
-#### To view existing variables:
+#### To view existing variables: {#variablelist}
 
 If you are not sure that the `master` branch has all Magento Admin variables and settings configured, you can view a list of existing variables:
 
@@ -148,7 +148,7 @@ Alternatively, you can add or update variables in the Project Web Interface.
 
 1.  Click **Add variable**. After you add the variable, wait until deployment completes.
 
-## Create a branch for development
+## Create a branch for development {#branch}
 
 After cloning your project and updating the Magento administrator account configuration, you can branch for development. As stated earlier, you must create an environment using the `magento-cloud environment:branch <branch-name>` command or the Project Web Interface for the environment to become _active_.
 
