@@ -318,7 +318,7 @@ vendor/bin/mftf run:test LoginCustomerTest StorefrontCreateCustomerTest
 
 ### `run:failed`
 
-Generates and executes failed tests.
+Regenerates and reruns tests that previously failed.
 
 This command cleans up previously generated tests. It generates and runs the tests listed in `dev/tests/acceptance/tests/_output/failed`.
 For more details about `failed`, refer to [Reporting][].

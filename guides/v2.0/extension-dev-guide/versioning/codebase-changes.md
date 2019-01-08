@@ -6,11 +6,7 @@ menu_title: Codebase changes
 menu_order: 1300
 redirect_from:
   - /guides/v2.0/architecture/back-compatibility.html
-  - /guides/v2.1/architecture/back-compatibility.html
-  - /guides/v2.2/architecture/back-compatibility.html
   - /guides/v2.0/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.1/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.2/extension-dev-guide/backward-compatibility.html
 ---
 
 Every Magento version release include a change in the codebase.

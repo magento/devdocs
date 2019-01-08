@@ -2,7 +2,6 @@
 group: php-developer-guide
 title: Name your component
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_component.html
 ---

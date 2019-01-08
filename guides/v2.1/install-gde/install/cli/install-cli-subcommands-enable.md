@@ -2,7 +2,6 @@
 group: installation-guide
 title: Enable or disable modules
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-subcommands-enable.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-enable.html
 functional_areas:
   - Install
@@ -50,7 +49,15 @@ For important information about enabling and disabling modules, see [About enabl
 
 If you enabled one or more modules, run the following command to update the database:
 
-	magento setup:upgrade
+```bash
+bin/magento setup:upgrade
+```
+
+Then clean the cache:
+
+```bash
+bin/magento cache:clean
+```
 
 ## About enabling and disabling modules {#instgde-cli-subcommands-enable-modules}
 {% include install/enable-disable-modules.md %}

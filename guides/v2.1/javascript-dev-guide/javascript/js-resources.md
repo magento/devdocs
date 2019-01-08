@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: JavaScript resources in Magento
 redirect_from:
  - /guides/v2.0/config-guide/config/js-resources.html
- - /guides/v1.0/config-guide/config/js-resources.html
  - /guides/v2.2/javascript-dev-guide/javascript/requirejs_concept.html
 ---
 
@@ -51,7 +50,7 @@ JS resources are accessed using relative paths.
 
 **Example 2**
 
-- File actual location: `app/code/design/frontend/Magento/blank/web/js/theme.js`
+- File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
 - File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
 - Called in script:
     ```javascript
@@ -160,6 +159,6 @@ The `baseUrl` parameter for RequireJS is specified in the following files:
 ## Related reading
 
 [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-[RequireJS library]: http://requirejs.org
-[inheriting]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
-[shim]: http://requirejs.org/docs/api.html#config-shim
+[RequireJS library](http://requirejs.org)
+[inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)
+[shim](http://requirejs.org/docs/api.html#config-shim)
