@@ -606,9 +606,9 @@ class View extends Template
 
 6.4.4.10. Service data interfaces MUST NOT contain any business logic. They SHOULD represent a container of data that is transferable over the wire. All the business logic SHOULD be moved to services.
 
-6.4.1. Domain/business logic MUST be executed on the Service Contracts layer
+6.4.4.11. Domain/business logic MUST be executed on the service contracts layer
 
-6.4.1.1. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in `global` area
+6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in `global` area of configuration
 
 ## 7. Configuration
 
