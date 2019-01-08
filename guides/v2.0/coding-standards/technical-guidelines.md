@@ -529,7 +529,7 @@ class View extends Template
 
 6.4.1. Location of API interfaces
 
-6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. The other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module namess must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. The other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module names MUST end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
 
 6.4.1.2. Service interfaces that should be exposed as web APIs MUST be placed under the `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
 
