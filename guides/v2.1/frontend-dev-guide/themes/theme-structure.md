@@ -8,7 +8,7 @@ functional_areas:
 
 ## What's in this topic {#theme-structure-intro}
 
-A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html#theme-gen-overview) is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html) is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 ## Magento theme location {#theme-structure-loc}
 {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} repository.
@@ -77,13 +77,13 @@ The directories and files structure described below is the most extended one. It
     </tr>
     <tr>
       <td colspan="1">
-        <code>/&lt;Vendor&gt;_&lt;Module&gt;/web/css/source</code>
+        <code>/&lt;Vendor&gt;_&lt;Module&gt;/web/css/</code>
       </td>
       <td colspan="1">
         optional
       </td>
       <td colspan="1">
-          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code>.
+          Module-specific styles (<code>.css</code> and/or <code>.less</code> files). General styles for the module are in the <code>_module.less</code> file, and styles for widgets are in <code>_widgets.less</code><br/><br/>Ex: [Module_Theme]({{ site.mage2100url }}app/code/Magento/Theme/view/frontend/web/css) or description field should be corrected.
       </td>
     </tr>
     <tr>
@@ -150,7 +150,7 @@ The directories and files structure described below is the most extended one. It
       <td colspan="1">
         <code>/media</code>
       </td>
-      <td colspan="1">required</td>
+      <td colspan="1">Optional</td>
       <td colspan="1">
         This directory contains a theme preview (a screenshot of your theme).
       </td>
@@ -271,7 +271,7 @@ A set of theme files that are returned by the server to a browser as is, without
 <theme_dir>/
 ├── media/
 ├── web
-│	├── css/ (except the &quot;source&quot; sub-directory)
+│	├── css/ (except the "source" sub-directory)
 │	├── fonts/
 │	├── images/
 │	├── js/

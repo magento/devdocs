@@ -134,14 +134,9 @@
     - label: Magento Testing Guide
       url: /test/testing.html
 
-    - label: Functional Acceptance Testing
-      url: /mftf/2.2/introduction.html
-      include_versions: ['2.2']
-      versionless: true
-
-    - label: Functional Acceptance Testing
+    - label: Functional Acceptance Testing (MFTF)
       url: /mftf/2.3/introduction.html
-      include_versions: ['2.3']
+      exclude_versions: ['2.0', '2.1']
       versionless: true
 
     - label: Functional Testing

@@ -16,13 +16,8 @@ You must be authorized for {{site.data.var.ee}} to perform the tasks discussed i
 
 Before continuing, complete all tasks discussed in [Prerequisites].
 
-In addition, you might need to install the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} [`bcmath`] extension, which is required by {{site.data.var.ee}}. Examples follow:
-
-*	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
-*	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
-
 {:.bs-callout .bs-callout-info}
-Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com){:target="_blank"} if you have questions.
+Make sure you are authorized for {{site.data.var.ee}} access before you continue. Contact [Magento Support](http://support.magentocommerce.com) if you have questions.
 
 ## Start System Upgrade from the Magento Admin {#compman-access}
 
@@ -46,9 +41,19 @@ To run System Upgrade:
 
        From the list, click the version to which to upgrade. Typically, you'll choose the most recent version (indicated by **(latest)**.)
 
-After the upgrade completes, restart Varnish if you use it for page caching.
+After the upgrade completes:
 
-	service varnish restart
+1. Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+   ```bash
+   bin/magento cache:clean
+   ```
+
+2. Restart Varnish if you use it for page caching.
+
+   ```bash
+   service varnish restart
+   ```
 
 #### Errors
 
@@ -73,10 +78,8 @@ From here, your upgrade is the same as any other upgrade. Continue with [Step 1.
 
 <!-- Link Definitions -->
 [Prerequisites]: {{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html
-[`bcmath`]: http://php.net/manual/en/book.bc.php
-{:target="_blank"}
+[`bcmath`]: http://php.net/manual/en/book.bc.php{:target="_blank"}
 [Magento Support]: http://support.magentocommerce.com
-{:target="_blank"}
 [authentication keys]: {{ page.baseurl }}/install-gde/prereq/connect-auth.html
 [troubleshooting]: {{ page.baseurl }}/comp-mgr/trouble/cman/were-sorry.html
 [Error upgrading from CE to EE]: {{ page.baseurl }}/comp-mgr/trouble/cman/ce-ee-upgrade.html

@@ -9,7 +9,7 @@ This Community collection of resources links to blog posts, podcasts, presentati
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
-Another community based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List][0]{:target="_blank"}
+ Another community-based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List][0]
 
 Do you know of a popular resource about Magento 2 that has been released/published within the past year?
 Does it fill gaps in our current docs and provide important information?
@@ -25,7 +25,7 @@ See our collection of best and leading practices, common solutions, and more in 
 
 ## Community Engineering Slack
 
-To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us request at [engcom@magento.com][] or [self signup][].
+ To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us a request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
 
 
 We have channels for each project. These channels are recommended for new members:
@@ -44,6 +44,8 @@ We have channels for each project. These channels are recommended for new member
 - *Statistics* [Magestats][32] by [Marcel Hauri][33]
 - *Videos* [Magento Dev Channel with Max Pronko][34] by [Max Pronko][35]
 - *Courses* [Magento Courses][36] by [Max Pronko][35]
+- *Videos* [Mage2Katas][47] by [Vinai Kopp][48]
+- *Blog posts* [The Magento Blog][54]  by Fooman
 
 ## Magento APIs
 
@@ -52,30 +54,36 @@ We have channels for each project. These channels are recommended for new member
 
 ## Install/deploy
 
+- *GitHub* [Magento 2 Docker][37] by [Mark Shust][38] (supports Magento 2.3.0, PHP 7.2, Elasticsearch)
 - *Presentation* [48 Hour Launches and Other Lessons Learned With Large-Scale Digital Transformations][29] by Joshua Warren of Creatuity
-- *Blog post* [Magento 2 - Launch Checklist][21] by Syed Muneeb Ul Hasan 
-- *Presentation* [Magento 2 Deployment: What you should know][4] by Olga KopyLova
+- *Blog post* [Magento 2 - Launch Checklist][21] by [Syed Muneeb Ul Hasan][42]
+- *Presentation* [Magento 2 Deployment: What you should know][4] by [Olga KopyLova][43]
 - *Blog post* [Magento 2 deployment without the downtime][5] by Robert Egginton
-- *Blog post* [Deploying Magento 2 - History & Overview][6] by Matthias Walter
-- *Blog post* [Deploying Magento 2 using Capistrano][17] by David Alger
-- *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by Nick Rigby
-- *GitHub* [Magento 2 Docker][18]
+- *Blog post* [Deploying Magento 2 - History & Overview][6] by [Matthias Walter][44]
+- *Blog post* [Deploying Magento 2 using Capistrano][17] by [David Alger][45]
+- *Blog post* [Deploying Magento 2 with Composer and Envoyer][16] by [Nick Rigby][46]
+- *GitHub* [Magento 2 Docker][18] by meanbee
+- *GitHub* [Magento 2 Dockergento][39] by ModestCoders
+- *Presentation* [Zero Downtime in Magento 2, Is it Possible?][40] by [Óscar Recio][41]
 
-## Automated Testing
+## Testing
 
-- *Presentation* [Writing testable code][10] by Vinai Kopp (**Bonus:** [Video Presentation][11])
-- *Book* [Test Driven Magento Extension Development][12] by Allan MacGregor
+- *Blog post* [Unit testing in Magento 2][49] by [Inchoo]
+- *Blog post* [Magento2 Functional Testing Framework(MFTF)][51] by [WelKul][52]
+- *Blog post* [A Quick Guide to Automation Test in Magento 2][53] by Luong Ngoc Son
+- *Presentation* [Writing testable code][10] by [Vinai Kopp][48] (**Bonus:** [Video Presentation][11])
 - *Blog post* [Integration Tests with Magento 2][19] by Andreas von Studnitz
 
 ## Mastering Magento 2
 
+- *Blog post* [10 Practical Rules to Build High Quality Magento 2 Module][20] by Max Pronko
+- *Presentation* [Stop Flushing the F#@king Cache, Indexing and Caching in Magento 2][22] by John Hughes]
+- *Blog* [Alan Storm blog][55]
 - *Book* [Magento 2 DIY][7] by Viktor Khliupko
 - *Book* [Magento 2 Cookbook][8] by Ray Bogman and Vladimir Kerkhoff
 - *Presentation* [Staging and Preview][9] by Igor Melnykov
 - *Blog post* [Introducing UI Components][13] by Alan Storm
 - *Presentation* [Micro Services][14] by Ivan Chepurnyi
-- *Blog post* [10 Practical Rules to Build High Quality Magento 2 Module][20] by Max Pronko
-- *Presentation* [Stop Flushing the F#@king Cache, Indexing and Caching in Magento 2][22] by John Hughes
 
 ## Performance
 
@@ -83,7 +91,6 @@ We have channels for each project. These channels are recommended for new member
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [Magento Community Engineering Slack]: https://magentocommeng.slack.com
-[engcom@magento.com]: mailto:engcom@magento.com
 [self signup]: https://tinyurl.com/engcom-slack
 [general]: https://magentocommeng.slack.com/messages/C4YS78WE6
 [github]: https://magentocommeng.slack.com/messages/C7KB93M32
@@ -126,3 +133,22 @@ We have channels for each project. These channels are recommended for new member
 [34]: https://www.youtube.com/maxpronko
 [35]: https://twitter.com/max_pronko
 [36]: https://www.maxpronko.com/all-courses/
+[37]: https://github.com/markoshust/docker-magento
+[38]: https://twitter.com/markshust
+[39]: https://github.com/ModestCoders/magento2-dockergento
+[40]: https://www.slideshare.net/OscarRecioSoria/zero-downtime-in-magento-2-is-it-possible
+[41]: https://twitter.com/osrecio
+[42]: https://twitter.com/syed_muneebb
+[43]: https://twitter.com/buskamuza
+[44]: https://twitter.com/mat_walter
+[45]: https://twitter.com/blackbooker
+[46]: https://twitter.com/nick_rigby
+[47]: http://mage2katas.com/
+[48]: https://twitter.com/VinaiKopp
+[49]: https://inchoo.net/magento-2/unit-testing-magento-2/
+[50]: https://inchoo.net/blog/
+[51]: https://webkul.com/blog/magento2-functional-testing-mftf/
+[52]: https://webkul.com/blog/
+[53]: https://bsscommerce.com/confluence/a-quick-guide-to-automation-test-in-magento-2/
+[54]: https://store.fooman.co.nz/blog
+[55]: https://alanstorm.com/

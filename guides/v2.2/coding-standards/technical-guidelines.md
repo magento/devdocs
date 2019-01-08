@@ -534,7 +534,77 @@ class View extends Template
 
 ### 6.4. Service Contracts (Application) layer
 
-We are reviewing this section and will publish it soon.
+6.4.1. Location of API interfaces
+
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. The other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module namess must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
+
+6.4.1.2. Service interfaces that should be exposed as web APIs MUST be placed under the `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
+
+6.4.1.3. All other APIs, including explicit extension points such as Chain or Composite implementations, MUST be placed under `MyModuleApi/Model`. 
+
+6.4.2. Service Interface Structure
+
+6.4.2.1. Methods that have similar names MUST serve similar purposes across different services, but they still MAY have different signatures.
+
+6.4.2.2. Service contracts SHOULD NOT be used for read scenarios on the storefront. Instead, GraphQL SHOULD be used for storefront scenarios. Check out [web API technical vision]({{ page.baseurl }}/coding-standards/technical-vision/webapi.html) for more details.
+
+6.4.2.3. Each service interface SHOULD declare a single public method. An interface name SHOULD reflect the task or action to be performed. For example, `Magento\InventoryApi\Api\StockSourceLinksDeleteInterface::execute(array $links)`. The only exception is a Repository API, which MAY be added for convenience and MUST be limited to singular CRUD operations and `getList($searchCriteria)`.
+
+6.4.3. Service Method Signature
+
+6.4.3.1. Strict typing is enforced for Service and Data interfaces located under `MyCompany/MyModuleApi/Api`. Only the following types are allowed:
+
+* Scalar types: `string` (including Date and DateTime); `int`; `float`; `boolean`
+
+* Data interfaces
+
+* One-dimensional indexed arrays of scalars or data interfaces: for example `string[]`, `\MyCompany\MyModuleApi\Api\Data\SomeInterface[]`. Hash maps (associative arrays) are not supported.
+
+* Nullable scalars or data interfaces: for example `string|null`. Using just `null` is prohibited.
+
+* `void`
+
+6.4.3.2. Service contracts SHOULD support batch data processing. For example, an entity persisting method SHOULD accept an array of entities to persist instead of a single entity. Customizations implemented through plugins SHOULD be adjusted respectively. 
+
+6.4.3.3. Batch retrieval operations MUST accept `SearchCriteriaInterface` and return `SearchResultInterface` to support pagination.
+
+6.4.3.4. Batch operations that modify state MUST accept an array of entities and return a response object that contains:
+
+* An array of successfully processed items
+
+* An array of items with retriable errors
+
+* An array of items with non-retriable errors
+
+6.4.3.5. Batch operations that modify state SHOULD be implemented in the most performant manner and SHOULD NOT load modified entities to generate response. 
+
+6.4.3.6. Asynchronous invocation of the command services SHOULD be supported by the web API framework.
+
+6.4.3.7. Operation UUID MAY be provided by the client during service invocation. UUID MUST allow the client to get the operation status information.
+
+6.4.3.8. Data objects returned by service contracts SHOULD be fully loaded to ensure consistency.
+
+6.4.4. Service Implementation
+
+6.4.4.1. Service data interfaces SHOULD extend from `Magento\Framework\Api\ExtensibleDataInterface`. The only exception is when extensibility is not desired, such as in case of value-objects.
+
+6.4.4.2. Extensible data interfaces MUST NOT form hierarchies. If interface `MyInterface` extends `ExtensibleDataInterface`, there must be no interfaces extending `MyInterface`. Otherwise, a list of extension attributes will be shared for all extensible interfaces in the hierarchy.
+
+6.4.4.3. Service implementations and plugins MUST NOT rely on storage-specific integrity features, such as foreign key constraints.
+
+6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links. 
+
+6.4.4.5. During update operations, web APIs using the`PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.
+
+6.4.4.6. If a service method needs to modify the argument, the original argument object MUST NOT be modified and its copy SHOULD be modified instead. 
+
+6.4.4.7. Services SHOULD NOT apply ACL rules to methods or returned data.
+
+6.4.4.8. If a store has multiple scopes (websites, stores), then each call MUST persist an entity in a single scope only. If an entity needs to be saved in multiple scopes, then multiple calls SHOULD be made.
+
+6.4.4.9. Service contracts SHOULD NOT apply presentation layer formatting to the returned data.
+
+6.4.4.10. Service data interfaces MUST NOT contain any business logic. They SHOULD represent a container of data that is transferable over the wire. All the business logic SHOULD be moved to services.
 
 6.4.1. Domain/business logic MUST be executed on the Service Contracts layer
 
@@ -592,7 +662,7 @@ We are reviewing this section and will publish it soon.
 
 8.6. A module MUST NOT contain references to {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resources.
 
-8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
+8.7. A component MUST NOT rely either on dependencies of dependencies or on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
 
 ## 9. Browser-Server interaction in web application
 
@@ -624,23 +694,27 @@ We are reviewing this section and will publish it soon.
 
 10.2. Only private content SHOULD be rendered in browser.
 
-10.3. All module dependencies of a RequireJS module MUST be declared in the module's definition header. No direct calls to `require` SHOULD be made unless the list of modules to be loaded is dynamic.
+10.3. All module dependencies of a RequireJS module MUST be declared in the module's definition header.
+
+10.3.1 No direct calls to `require` SHOULD be made unless the list of modules to be loaded is dynamic.
+
+10.3.2 Code MUST NOT make use of the synchronous form of `require` (`require('moduleIdentifier')`).
 
 10.4. The [W3C Content Security Policy] MUST be followed.
 
 10.5. ESLint [rules][rules] SHOULD BE followed.
 
-10.5.1. ES5 SHOULD be used as a JS standard.
+10.5.1. ECMAScript 5.1 SHOULD be used as a JS standard.
 
-10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
+10.5.2. Language features (closures, WeakMaps, etc) MUST be used for private state. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
+10.5.3. All uses of XMLHttpRequest (including jQuery's `$.ajax`) MUST be asynchronous.
 
-10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
+10.5.4. New global properties MUST not be added (either through explicit `window` assignment or `var` in the top scope). The RequireJS module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Re-declaration of function names MUST NOT be used.
+10.5.6. Code MUST NOT re-declare any identifiers already declared in a reachable scope (re-assignment is acceptable).
 
 ## 11. Testing
 
@@ -729,7 +803,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.3.1. Sanitize input; escape output.
 
-15.3.2. Follow [templates XSS security guidelines](https://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html) for escaping output.
+15.3.2. Follow [templates XSS security guidelines]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) for escaping output.
 
 15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
 
@@ -751,7 +825,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.6.1. Exceptions/Notices/Warnings should be caught and logged.
 
-15.6.2. No error output should be displayed to user, some standard message should appear instead.
+15.6.2. Error output should not be displayed to the user. Display standard messages to inform the user.
 
 15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
 
@@ -761,21 +835,25 @@ class SampleEventObserverThatModifiesInputs
 
 15.7.2. All data manipulation requests should be made with POST requests.
 
-15.8. Frequently update the third-party libraries used in the project/component to eliminate known vulnerabilities.
+15.8. Frequently update third-party libraries used in the project/component to eliminate known vulnerabilities.
 
 15.9. Local File Inclusion (LFI) protection.
 
-15.9.1. SHOULD NOT trust user-submitted requests containing path and file name.
+15.9.1. User-submitted requests containing path and file name SHOULD NOT be trusted.
 
-15.9.2. SHOULD sanitize user-submitted path and file values to remove dot-dot-slash from the request.
+15.9.2. User-submitted path and file values SHOULD be sanitized to remove dot-dot-slash from the request.
 
 15.10. Remote Code Execution (RCE) protection.
 
-15.10.1. SHOULD NOT use eval(), passthru(), system(), shell_exec(), serialize(), unserialize(), md5(), srand(), mt_srand()
+15.10.1. `eval()`, `passthru()`, `system()`, `shell_exec()`, `serialize()`, `unserialize()`, `md5()`, `srand()`, `mt_srand()` SHOULD NOT be used.
 
-15.10.2. SHOULD NOT directly pass user-submitted values to include*(), require*(), create_function(), fopen(), preg_replace()
+15.10.2. User-submitted values SHOULD NOT be passed directly to `include*()`, `require*()`, `create_function()`, `fopen()`, `preg_replace()`.
 
-15.10.3. SHOULD NOT use variable functions if the variable values are submitted by the user.
+15.10.3. Variable functions SHOULD NOT be used if the variable values are submitted by the user.
+
+15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
+
+15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 

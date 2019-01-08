@@ -32,8 +32,8 @@ type Query {
         filter: ProductFilterInput,
         pageSize: Int = 20,
         currentPage: Int = 1,
-        sort: ProductSortInput)
-     ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
+        sort: ProductSortInput
+    ): Products @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Products")
 }
 ```
 
@@ -119,10 +119,10 @@ You can optionally define enumerations to help prevent input errors. Magento cap
 
 ``` php
 enum VolumeUnitEnum {
-  IN3
-  FT3
-  CM3
-  M3
+    IN3
+    FT3
+    CM3
+    M3
 }
 ```
 
@@ -134,9 +134,8 @@ You can describe any attribute, type definition, or other entity within a `schem
 
 For example:
 
-`sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
-
+```
+sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
 url_key: String @doc(description: "The url key assigned to the product")
-
 product_count: Int @doc(description: "The number of products")
-`
+```

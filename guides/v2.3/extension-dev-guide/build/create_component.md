@@ -2,7 +2,6 @@
 group: php-developer-guide
 title: Name your component
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_component.html
 ---
@@ -39,7 +38,7 @@ Avoid using "Ui" for your custom module name, because the `%Vendor%_Ui` notation
 ## Add the component's `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
-In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies:
+In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies:
 
 * If a component has `composer.json` *and* the component was installed using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
 * If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.

@@ -116,14 +116,14 @@ The alert widget implements a single event: the `always` callback.
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
 
-[Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
-[`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/alert.js
-[Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseur}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
-[JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
+[Magento modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
+[`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/modal/alert.js
+[Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
+[JavaScript initialization]: {{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html
 [actions]: #alert_actions
 [autoOpen]: #alert_autoopen
 [clickableOverlay]: #alert_clickableOverlay
 [content]: #alert_content
 [focus]: #alert_focus
 [title]: #alert_title
-[navigation of the modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html#key_navigation
+[navigation of the modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

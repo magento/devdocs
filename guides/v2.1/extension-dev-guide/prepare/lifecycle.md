@@ -155,7 +155,7 @@ This class makes final modifications to the database store after data has been i
 | **Interface**  | [`InstallDataInterface`] |
 | **Method**     | `install()`              |
 
-**Example:** InstallDataInterface.php
+**Example:** RecurringData.php
 
 ``` php
 class \VendorName\ModuleName\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface
@@ -286,7 +286,7 @@ Avoid this situation by not including dependencies in your uninstall event class
 
 * Magento's [versioning policy]
 
-[versioning policy]: {{ page.baseurl }}/architecture/versioning.html
+[versioning policy]: {{ page.baseurl }}/extension-dev-guide/versioning/
 [schema upgrade]: #schema-upgrade
 [`InstallSchemaInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php
 [`UpgradeSchemaInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php

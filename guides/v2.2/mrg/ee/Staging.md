@@ -277,7 +277,7 @@ cron group configuration is set in `etc/crontab.xml`.
 
 When update is applied, the indexer handles it according to the actual indexing mode. In a preview mode, indexing is not applied. Data is loaded for the open page only.
 
-[Learn more about indexing in Magento.]({{ page.baseurl }}/mrg/indexing.html)
+[Learn more about indexing in Magento.]({{ site.gdeurl22 }}extension-dev-guide/indexing.html)
 
 ### Data migration
 

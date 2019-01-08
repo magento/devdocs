@@ -301,7 +301,7 @@ Example:
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
 [generic layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen
-[handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#handle
+[handle]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms
 [templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
 [app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
 [app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml

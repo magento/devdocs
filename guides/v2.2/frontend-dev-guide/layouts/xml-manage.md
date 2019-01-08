@@ -392,7 +392,7 @@ To replace an element, [remove it] and add a new one.
 
 
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
-[remove it]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rem
+[remove it]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rmv
 [Layout instructions]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html
 [Extend a layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html
 [Locate templates, layouts, and styles]: {{page.baseurl}}/frontend-dev-guide/themes/debug-theme.html

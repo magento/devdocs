@@ -71,9 +71,11 @@ lib/web
     │    │    │    ├── _typography.less
     │    │    │    ├── _utilities.less
     │    │    │    └── _variables.less
+    │    │    └── _email-variables.less
     │    │    └── _extend.less
     │    │    └── _theme.less
     │    │    └── _variables.less
+    │    │    └── _widgets.less
     │    └── styles.less
     ├── fonts/
     │    └── Blank-Theme-Icons/ (Library custom icons font)

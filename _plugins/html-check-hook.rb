@@ -8,23 +8,38 @@ require 'html-proofer'
 require 'yaml'
 
 Jekyll::Hooks.register :site, :post_write do |site|
+  # Do nothing unless serving mode is enabled
+  next unless site.config['serving']
 
-  # If 'jekyll serve' has been run, read options for html-proofer
-  # in '_config.checks.yml' and merge the 'url_ignore' list with 'excludes'
-  # from Jekyll configurtiuon
-  #
-  if site.config['serving'] == true
-    begin
-      checks_config = YAML.load_file('_config.checks.yml')
-      jekyll_excludes = site.config['exclude']
-      jekyll_excludes_as_regex = jekyll_excludes.map { |item| /#{item}/ }
-      checks_config['html-proofer'][:url_ignore].push(jekyll_excludes_as_regex).flatten!.uniq!
-      options = checks_config['html-proofer']
-      # Run html-proofer to check the jekyll destination directory
-      HTMLProofer.check_directory(site.dest, options).run
-    rescue
-      puts
-      puts 'Fix the broken links before you commit the changes.'.blue
+  # Do nothing unless 'site.check_links' is set
+  next unless site.config['check_links']
+
+  # Do not exit when html-proofer raises an error
+  begin
+    # Check 'url_ignore' in '_config.checks.yml'
+    # and add 'excludes' from Jekyll configurtiuon.
+    #
+    checks_config = YAML.load_file('_config.checks.yml')
+    url_ignore = checks_config.dig('html-proofer', :url_ignore)
+    jekyll_excludes = site.config['exclude']
+    jekyll_excludes_as_regex = jekyll_excludes.map { |item| Regexp.new Regexp.escape(item) }
+
+    if url_ignore
+      url_ignore.push(jekyll_excludes_as_regex).flatten!.uniq!
+    else
+      checks_config['html-proofer'].merge!({ url_ignore: jekyll_excludes_as_regex })
     end
+
+    # Read configuration options for html-proofer
+    options = checks_config['html-proofer']
+
+    # Run html-proofer to check the jekyll destination directory
+    HTMLProofer.check_directory(site.dest, options).run
+
+  # Show the message when html-proofer fails.
+  # Expected that it fails when it finds broken links.
+  rescue StandardError => msg
+    puts msg
+    puts 'Fix the broken links before you push the changes to remote branch.'.blue
   end
 end

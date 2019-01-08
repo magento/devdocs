@@ -12,10 +12,10 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 1.  Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
     ```
-    composer require magento/extension-b2b
+    composer require magento/extension-b2b=^1.0
     ```
 
-    If you get an error when trying to install the B2B module for local instance of Magento Commerce (for example: `[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).`), you need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of you public_key and private_key for `username` and `password`:
+    If you get an error when trying to install the B2B module for a local instance of Magento Commerce (for example: `[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).`), you need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your public_key and private_key for `username` and `password`:
 
     ```
     {
@@ -32,12 +32,17 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
 3.  Run the following commands after Composer finishes updating modules:
 
+{: .bs-callout .bs-callout-info }
+In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
+
     ```
     bin/magento setup:upgrade
 
     bin/magento setup:di:compile
 
     bin/magento setup:static-content:deploy -f
+
+    bin/magento cache:clean
     ```
 
 {: .bs-callout .bs-callout-info }

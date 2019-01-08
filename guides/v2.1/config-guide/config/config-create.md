@@ -11,7 +11,7 @@ functional_areas:
 
 To extend an existing configuration type, you need only create a configuration file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-For example, to add an event observer, you create `app/etc/events.xml` and declare a new observer.
+For example, to add an event observer, you create `app/code/{VendorName}/{ModuleName}/etc/events.xml` and declare a new observer.
 
 Because the event configuration type already exists in Magento, the loader and the `events.xsd` validating schema are already present and functional.
 
@@ -34,12 +34,12 @@ For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
-To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2000url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
+To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2100url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
 
-*  `$fileResolver`. Implements `\Magento\Framework\Config\FileResolverInterface`. This parameter lists the files containing the configurations of your custom type.
-*  `$converter`. Implements `\Magento\Framework\Config\ConverterInterface`. This parameter converts the XML into the internal array representation of the configurations.
-*  `$schemaLocator`. Implements `\Magento\Framework\Config\SchemaLocatorInterface`. This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
-*  `$validationState`. Implements `\Magento\Framework\Config\ValidationStateInterface`. This parameter defines whether a configuration file should be validated. 
+*  `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2100url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
+*  `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2100url }}lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
+*  `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2100url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
+*  `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2100url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated. 
 *  `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
 *  `$idAttributes`. Array of node attribute IDs.
 

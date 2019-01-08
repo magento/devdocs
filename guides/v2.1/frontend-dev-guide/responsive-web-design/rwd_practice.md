@@ -38,7 +38,7 @@ After OrangeCo [applies their theme]({{ page.baseurl }}/frontend-dev-guide/theme
 
 ![responsive practice 2]
 
-(compare to the [same page for the Blank theme]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex).)
+(compare to the [same page for the Blank theme]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_mobile.html).)
 
 
 [`/Magento_Catalog/web/css/source/module/_listings.less`]: {{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less
