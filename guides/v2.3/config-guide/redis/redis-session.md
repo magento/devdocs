@@ -41,7 +41,6 @@ Important: If you use Redis for more than one type of caching, the database numb
 Known issue with strings of more than 64KB.|2048|
 |session-save-redis-compression-lib|compression_library|Options: gzip, lzf, lz4 or snappy.|gzip|
 |session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:
-
 0 (emergency: only the most severe errors)
 1 (alert: immediate action required)
 2 (critical: application component unavailable)
