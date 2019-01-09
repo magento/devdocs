@@ -11,6 +11,8 @@ These features and extensions were developed as part of the [Multi Source Invent
 
 Inventory Management installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features.
 
+We recommend installing according to [Install Magento Using Composer]({{ page.baseurl }}/install-gde/composer.html). You must install with a metapackage to receive all Inventory Management modules.
+
 The Inventory Management installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
 
 ``` json

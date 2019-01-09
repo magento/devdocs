@@ -11,7 +11,13 @@
 # The plugin is disabled in serving mode.
 #
 Jekyll::Hooks.register :pages, :post_init do |page|
-  next if page.site.config['serving'] or page.name == 'redirect.html'
+  # Do nothing in serving mode
+  next if page.site.config['serving']
+
+  # Do nothing for redirects
+  next if page.name == 'redirect.html'
+
+  # Glossary. Create variables to be used in the script.
   site_url = page.site.config['url']
   site_baseurl = page.site.baseurl
   default_version = page.site.config['version']
@@ -19,6 +25,8 @@ Jekyll::Hooks.register :pages, :post_init do |page|
   data = page.data
   pattern_to_replace = %r{/guides/v2\.[0-2]}
   page_canonical_url = data['canonical_url']
+
+  # Create the 'canonical_url' parameter and assign a value to it.
   if page_canonical_url.nil?
     relative_page_canonical_url =
       if page_url.start_with? pattern_to_replace

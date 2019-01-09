@@ -1,10 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 170_trouble
 title: Fastly troubleshooting
-menu_title: Fastly troubleshooting
-menu_order: 20
-menu_node:
 redirect_from:
    - /guides/v2.1/cloud/trouble/trouble_fastly.html
    - /guides/v2.2/cloud/trouble/trouble_fastly.html
@@ -284,5 +280,5 @@ Then activate the version you want active:
   
 <!-- Link definitions -->
 
-  [Custom 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages.png
+  [Custom 503 error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-custom-synthetic-pages-edit-html.png
   {: width="650px"}
