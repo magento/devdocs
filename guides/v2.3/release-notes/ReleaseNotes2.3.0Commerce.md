@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 28 and last updated on December 13,2018.*
+*Release notes published November 28 and last updated on January 9,2019.*
 
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
 
@@ -23,9 +23,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG (or Page Builder. See the  `Page Builder` discussion below. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
 
-* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. Registered participants can install PageBuilder Beta on Magento 2.3.0 Commerce code. <br>
-For more detail, check [Magento 2.3 product availability](https://devdocs.magento.com/availability.html) and [Magento blog](https://magento.com/blog/magento-news/magento-2.3-new-tools-fuel-your-growth-2019). Magento Commerce customers interested in being Early Adopters can contact <PageBuilderEAP@adobe.com> to request access.
-
+* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. Registered participants can install PageBuilder Beta on Magento 2.3.0 Commerce code. See check [Magento 2.3 product availability](https://devdocs.magento.com/availability.html) and [Magento blog](https://magento.com/blog/magento-news/magento-2.3-new-tools-fuel-your-growth-2019).
 
 ### Improved developer experience
 
