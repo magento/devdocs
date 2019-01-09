@@ -28,38 +28,40 @@ content="You must create a controller for `searchUrl`. If you'd like to use othe
   <tr>
     <td><code>imports</code></td>
     <td>Defines from where the component receives its data</td>
-    <td>
-    {% highlight javascript %}imports: {
-        options: '${ $.optionsConfig.name }:options'
-    }{% endhighlight %}</td>
+<td markdown="1">
+```js
+imports: {
+    options: '${ $.optionsConfig.name }:options'
+}
+```
+</td>
     <td>Yes</td>
   </tr>
   <tr>
     <td><code>actions</code></td>
     <td>Modifies the default actions by renaming their storefront labels</td>
-    <td><code>
-        {% highlight javascript %}
-        actions: [
-            {
-                value: 'selectAll',
-                label: $t('Select all')
-            },
-            {
-                value: 'deselectAll',
-                label: $t('Deselect all')
-            }, 
-            {
-                value: 'selectPage',
-                label: $t('Select all on this page')
-            },
-            {
-                value: 'deselectPage',
-                label: $t('Deselect all on this page')
-            }
-        ]
-        {% endhighlight %}
-        </code>
-    </td>
+<td markdown="1">
+```js
+actions: [
+    {
+        value: 'selectAll',
+        label: $t('Select all')
+    },
+    {
+        value: 'deselectAll',
+        label: $t('Deselect all')
+    }, 
+    {
+        value: 'selectPage',
+        label: $t('Select all on this page')
+    },
+    {
+        value: 'deselectPage',
+        label: $t('Deselect all on this page')
+    }
+]
+```
+</td>
     <td>Yes</td>
   </tr>  
 </table>
@@ -129,24 +131,23 @@ The following configuration can be passed in as arguments:
 
 > `<Magento_Cms>/view/adminhtml/ui_component/cms_page_listing.xml`
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-            <filterSelect name="uiSelect">
-                <argument name="optionsProvider" xsi:type="configurableObject">
-                    <argument name="class" xsi:type="string">Magento\Cms\Model\Page\Source\PageLayout</argument>
-                </argument>
-                <argument name="data" xsi:type="array">
-                    <item name="config" xsi:type="array">
-                        <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
-                        <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
-                        <item name="dataScope" xsi:type="string">uiSelect</item>
-                        <item name="label" xsi:type="string" translate="true">uiSelect</item>
-                    </item>
-                </argument>
-            </filterSelect>
+    <filterSelect name="uiSelect">
+        <argument name="optionsProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magento\Cms\Model\Page\Source\PageLayout</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
+                <item name="template" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                <item name="dataScope" xsi:type="string">uiSelect</item>
+                <item name="label" xsi:type="string" translate="true">uiSelect</item>
+            </item>
+        </argument>
+    </filterSelect>
 </listing>
-{% endhighlight %}
-
+```
 
 ### Configured select component view
 
