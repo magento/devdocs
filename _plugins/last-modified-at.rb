@@ -15,10 +15,10 @@ Jekyll::Hooks.register :pages, :post_init do |page|
   # Do nothing for redirects
   next if page.name == 'redirect.html'
 
-  page_path = File.realpath page.path
+  real_filepath = File.realpath page.path
 
   # Read date of the last committ and assign it to last_modified_at parameter
   # of the page.
   page.data['last_modified_at'] =
-    `git log -1 --format=%cd --date=iso -- #{page_path}`.strip
+    `git log -1 --format=%cd --date=iso -- #{real_filepath}`.strip
 end
