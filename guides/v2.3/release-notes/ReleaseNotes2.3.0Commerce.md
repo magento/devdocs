@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 28 and last updated on January 9,2019.*
+*Release notes published November 28 and last updated on January 9, 2019.*
 
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
 
