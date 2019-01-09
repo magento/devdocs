@@ -266,7 +266,7 @@ Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/bla
 
 #### To prepare log output for Blackfire support:
 
-If you continue to experience problems, save your log files and contact Blackfire support.
+If you continue to experience problems, prepare your log files and contact Blackfire support.
 
 1. Display startup errors and save the output.
 
