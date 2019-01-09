@@ -346,7 +346,7 @@ The following example adds the `INDEX_SEVERITY` index to the `declarative_table`
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
-+       <index name="INDEX_SEVERITY" indexType="btree">
++       <index referenceId="INDEX_SEVERITY" indexType="btree">
 +           <column name="severity"/>
 +       </index>
     </table>
