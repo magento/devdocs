@@ -3,11 +3,6 @@
   display: none;
 }
 
-// Fix the $ symbol to work with the new code markup
-.language-bash .rouge-table {
-  display: inline;
-}
-
 // Show line numbers for specific languages
 .language-json,
 .language-php,
