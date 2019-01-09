@@ -16,9 +16,9 @@ For full details on integrations, also review [Configuring Blackfire on Magento 
 
 Blackfire includes the following [environments](https://blackfire.io/docs/reference-guide/environments) through their site:
 
--  `Magento Cloud (<your instance reference>)`—Integration and Development
--  `Magento Cloud (<your instance reference>)`—Staging
--  `Magento Cloud (<your instance reference>)`—Production
+-  `Magento Cloud (<your-instance-reference>)`—Integration and Development
+-  `Magento Cloud (<your-instance-reference>)`—Staging
+-  `Magento Cloud (<your-instance-reference>)`—Production
 
 **For Pro**:
 -  You must bypass the Fastly service in your Production environment when profiling with Blackfire. See [Bypassing Reverse Proxy, Cache, and Content Delivery Networks (CDN)](https://blackfire.io/docs/reference-guide/configuration#bypassing-reverse-proxy-cache-and-content-delivery-networks-cdn).
@@ -137,7 +137,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 1.  List environments in the project.
 
 	```bash
-	magento-cloud environment:list -p <project_ID>
+	magento-cloud environment:list -p <project-ID>
 	```
 
 1.  Verify current branch.
@@ -149,7 +149,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 1.  If necessary, check out an existing branch.
 
 	```bash
-	magento-cloud environment:checkout <environment_ID>
+	magento-cloud environment:checkout <environment-ID>
 	```
 
 	Also, you can create a new branch using the `magento-cloud environment:branch` command.
@@ -157,7 +157,7 @@ We recommend working in a branch and creating a snapshot prior to installing. If
 1.  Back up the environment using a snapshot.
 
 	```bash
-	magento-cloud snapshot:create -e <environment_ID>
+	magento-cloud snapshot:create -e <environment-ID>
 	```
 
 #### Next, modify the `.magento.app.yaml` file:
@@ -262,10 +262,7 @@ When you configure at least one way of triggering builds with Blackfire, you can
 
 ## Blackfire support
 
-If you continue to experience problems, save your log files and contact Blackfire support.
-
-{: .bs-callout .bs-callout-warning}
-Blackfire does not provide technical support for Starter accounts.
+Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-enterprise-for-magento-cloud-pro) and [Premium support for Starter](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-premium-for-magento-cloud-starter). If you continue to experience problems, save your log files and contact Blackfire support.
 
 #### To prepare log output for Blackfire support:
 
