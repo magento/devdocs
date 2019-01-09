@@ -34,7 +34,7 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 
 ## Usage
 
-As was mentioned above, there are two ways to declare fixtures:
+As mentioned above, there are two ways to declare fixtures:
 
 - as a PHP script file that is used by other tests and test cases.
 - as a local method that is used by other tests in the test cases.
@@ -88,7 +88,7 @@ The integration testing framework interacts with a database to revert the applie
 
 ### Fixture rollback
 
-The fixtures that contains database transactions only are reverted automatically.
+A fixture that contains database transactions only are reverted automatically.
 Otherwise, when a fixture creates files or performs any actions other than database transaction, provide the corresponding rollback logic.
 Rollbacks are run after reverting all the fixtures related to database transactions.
 

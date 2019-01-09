@@ -20,8 +20,8 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
  */
 ```
 
-- `<script_filename>` is a filename of the PHP script
-- `<method_name>` is a name of the method declared in the current class
+- `<script_filename>` is a filename of the PHP script.
+- `<method_name>` is a name of the method declared in the current class.
 
 ## Principles
 
@@ -30,7 +30,7 @@ To set up a date fixture, use the `@magentoDataFixture` annotation.
 3. A method that implements a data fixture must be declared as `public` and `static`.
 4. Fixtures declared at a test level have a higher priority then fixtures declared at a test case level.
 5. Test case fixtures are applied to each test in the test case, unless a test has its own fixtures declared.
-6. Annotation declaration at a test case level doesn't affect tests that have their own annotation declarations.
+6. Annotation declaration at a test case level does not affect tests that have their own annotation declarations.
 
 ## Usage
 
@@ -88,7 +88,7 @@ The integration testing framework interacts with a database to revert the applie
 
 ### Fixture rollback
 
-The fixtures that contains database transactions only are reverted automatically.
+A fixture that contain database transactions only are reverted automatically.
 Otherwise, when a fixture creates files or performs any actions other than database transaction, provide the corresponding rollback logic.
 Rollbacks are run after reverting all the fixtures related to database transactions.
 

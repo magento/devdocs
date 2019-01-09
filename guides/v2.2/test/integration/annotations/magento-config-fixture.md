@@ -22,8 +22,8 @@ To set the Magento configuration values for individual tests and revert them aft
 
 ## Principles
 
-1. The `@magentoConfigFixture` is available at a test method level only.
-   It is not available on a test case level.
+1. The `@magentoConfigFixture` is available at the test method level only.
+   It is not available on the test case level.
 2. A test can contain several configuration options.
 
 ## Example

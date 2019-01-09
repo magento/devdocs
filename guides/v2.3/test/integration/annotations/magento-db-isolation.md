@@ -6,9 +6,9 @@ title: Database isolation annotation
 To isolate database changes between tests, the Integration testing framework (ITF) implements the `@magentoDbIsolation` annotation.
 When the `@magentoDbIsolation` is enabled, the ITF:
 
-- starts a database transaction before the test/test case
-- avoids a database commit during the test/test case
-- restores the database after the test/test case
+- starts a database transaction before the test/test case.
+- avoids a database commit during the test/test case.
+- restores the database after the test/test case.
 
 ## Format
 
@@ -22,7 +22,7 @@ Database isolation annotation:
 
 ## Test case declaration
 
-Use test case declaration when a sequence of tests introduces changes to the database and relies on the changes made by each other.
+Use test case declarations when a sequence of tests introduces changes to the database and relies on the changes made by each other.
 For example, typical CRUD tests: _create -> read -> update -> delete_.
 Every next test relies on a database state after the previous one.
 If at any point of that sequence (after creation) the test fails, the database will be polluted with test data.

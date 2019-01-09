@@ -66,7 +66,7 @@ Test class ancestors                                 | Test case (class) | Test 
 
 You can use non-isolated tests unless they do not modify or utilize the same application areas such as:
 
-- same attributes of an application object
+- same attributes of an application object.
 - same paths in a current configuration or current scope (for example "store").
 
 {:.bs-callout .bs-callout-tip}
