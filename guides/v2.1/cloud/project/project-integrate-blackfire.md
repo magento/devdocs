@@ -262,9 +262,11 @@ When you configure at least one way of triggering builds with Blackfire, you can
 
 ## Blackfire support
 
-Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-enterprise-for-magento-cloud-pro) and [Premium support for Starter](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-premium-for-magento-cloud-starter). If you continue to experience problems, save your log files and contact Blackfire support.
+Blackfire provides [Enterprise support for Pro](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-enterprise-for-magento-cloud-pro) and [Premium support for Starter](https://support.blackfire.io/blackfire-on-magento-cloud/blackfire-premium-for-magento-cloud-starter).
 
 #### To prepare log output for Blackfire support:
+
+If you continue to experience problems, save your log files and contact Blackfire support.
 
 1. Display startup errors and save the output.
 
