@@ -21,173 +21,44 @@ where
 
 `--session-save-redis-<parameter_name>=<parameter_value>` is a list of parameter/value pairs that configure session storage:
 
-<table>
-<tbody>
-<tr>
-<th>Command line Parameter</th>
-<th>Parameter name</th>
-<th>Meaning</th>
-<th>Default value</th>
-</tr>
-<tr>
-<td>session-save-redis-host</td>
-<td>host</td>
-<td>
-<p>Fully qualified hostname, IP address, or absolute path if using UNIX sockets.</p>
-</td>
-<td>localhost</td>
-</tr>
-<tr>
-<td>session-save-redis-port</td>
-<td>port</td>
-<td>Redis server listen port.</td>
-<td>6379</td>
-</tr>
-<tr>
-<td>session-save-redis-password</td>
-<td>password</td>
-<td>Specifies a password if your Redis server requires authentication.</td>
-<td>empty</td>
-</tr>
-<tr>
-<td>session-save-redis-timeout</td>
-<td>timeout</td>
-<td>
-<p>Connection timeout, in seconds.</p>
-</td>
-<td>2.5</td>
-</tr>
-<tr>
-<td>session-save-redis-persistent-id</td>
-<td>persistent_identifier</td>
-<td>
-<p>Unique string to enable persistent connections (for example, <code>sess-db0</code>).</p>
-<p><a href="https://github.com/nicolasff/phpredis/issues/70">Known issues with <code>phpredis</code> and <code>php-fpm</code></a>.</p>
-</td>
-<td>empty</td>
-</tr>
-<tr>
-<td>session-save-redis-db</td>
-<td>database</td>
-<td>
-<p>Unique Redis database number, which is recommended to protect against data loss.</p>
-<p><strong>Important</strong>: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2. </p>
-</td>
-<td>0</td>
-</tr>
-<tr>
-<td>session-save-redis-compression-threshold</td>
-<td>compression_threshold</td>
-<td>
-<p>Set to <code>0</code> to disable compression (recommended when <a href="http://suhosin.org/stories/howtos.html#encryption-features"><code>suhosin.session.encrypt = On</code></a>).</p>
-<p><a href="https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18">Known issue with strings of more than 64KB</a>.</p>
-</td>
-<td>2048</td>
-</tr>
-<tr>
-<td>session-save-redis-compression-lib</td>
-<td>compression_library</td>
-<td>Options: <code>gzip</code>, <code>lzf</code>, <code>lz4</code> or <code>snappy</code>.</td>
-<td>gzip</td>
-</tr>
-<tr>
-<td>session-save-redis-log-level</td>
-<td>log_level</td>
-<td>
-<p>Set to any of the following, listed in order from least verbose to most verbose:</p>
-<ul>
-<li><code>0</code> (emergency: only the most severe errors)</li>
-<li><code>1</code> (alert: immediate action required)</li>
-<li><code>2</code> (critical: application component unavailable)</li>
-<li><code>3</code> (error: runtime errors, not critical but must be monitored)</li>
-<li><code>4</code> (warning: additional information, recommended)</li>
-<li><code>5</code> (notice: normal but significant condition)</li>
-<li><code>6</code> (info: informational messages)</li>
-<li><code>7</code> (debug: the most information for development or testing only)</li>
-</ul>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>session-save-redis-max-concurrency</td>
-<td>max_concurrency</td>
-<td>
-<p>Maximum number of processes that can wait for a lock on one session. For large production clusters, set this to at least 10% of the number of PHP processes.</p>
-</td>
-<td>6</td>
-</tr>
-<tr>
-<td>session-save-redis-break-after-frontend</td>
-<td>break_after_frontend</td>
-<td>
-<p>Number of seconds to wait before trying to break the lock for frontend (that is, storefront) session.</p>
-</td>
-<td>5</td>
-</tr>
-<tr>
-<td>session-save-redis-break-after-adminhtml</td>
-<td>break_after_adminhtml</td>
-<td>
-<p>Number of seconds to wait before trying to break the lock for an adminhtml (that is, Magento Admin) session.</p>
-</td>
-<td>30</td>
-</tr>
-<tr>
-<td>session-save-redis-first-lifetime</td>
-<td>first_lifetime</td>
-<td>
-<p>Lifetime, in seconds, of session for non-bots on the first write, or use <code>0</code> to disable.</p>
-</td>
-<td>600</td>
-</tr>
-<tr>
-<td>session-save-redis-bot-first-lifetime</td>
-<td>bot_first_lifetime</td>
-<td>
-<p>Lifetime, in seconds, of session for bots on the first write, or use <code>0</code> to disable.</p>
-</td>
-<td>60</td>
-</tr>
-<tr>
-<td>session-save-redis-bot-lifetime</td>
-<td>bot_lifetime</td>
-<td>
-<p>Lifetime, in seconds, of session for bots on subsequent writes, or use <code>0</code> to disable.</p>
-</td>
-<td>7200</td>
-</tr>
-<tr>
-<td>session-save-redis-disable-locking</td>
-<td>disable_locking</td>
-<td>
-<p>Disable session locking entirely.</p>
-</td>
-<td>0 (false)</td>
-</tr>
-<tr>
-<td>session-save-redis-min-lifetime</td>
-<td>min_lifetime</td>
-<td>
-<p>Minimum session lifetime, in seconds.</p>
-</td>
-<td>60</td>
-</tr>
-<tr>
-<td>session-save-redis-max-lifetime</td>
-<td>max_lifetime</td>
-<td>
-<p>Maximum session lifetime, in seconds.</p>
-</td>
-<td>2592000 (720 hours)</td>
-</tr>
-</tbody>
-</table>
+|Command line Parameter|Parameter name|Meaning|Default value|
+|--- |--- |--- |--- |
+|session-save-redis-host|host|Fully qualified hostname, IP address, or absolute path if using UNIX sockets.|localhost|
+|session-save-redis-port|port|Redis server listen port.|6379|
+|session-save-redis-password|password|Specifies a password if your Redis server requires authentication.|empty|
+|session-save-redis-timeout|timeout|Connection timeout, in seconds.|2.5|
+|session-save-redis-persistent-id|persistent_identifier|Unique string to enable persistent connections (for example, sess-db0).
+[Known issues with phpredis and php-fpm](https://github.com/nicolasff/phpredis/issues/70").
+|session-save-redis-db|database|Unique Redis database number, which is recommended to protect against data loss.
+Important: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
+|session-save-redis-compression-threshold|compression_threshold|Set to 0 to disable compression (recommended when [suhosin.session.encrypt = On](http://suhosin.org/stories/howtos.html#encryption-features).
+Known issue with strings of more than 64KB.|2048|
+|session-save-redis-compression-lib|compression_library|Options: gzip, lzf, lz4 or snappy.|gzip|
+|session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:
+
+0 (emergency: only the most severe errors)
+1 (alert: immediate action required)
+2 (critical: application component unavailable)
+3 (error: runtime errors, not critical but must be monitored)
+4 (warning: additional information, recommended)
+5 (notice: normal but significant condition)
+6 (info: informational messages)
+7 (debug: the most information for development or testing only)|1|
+|session-save-redis-max-concurrency|max_concurrency|Maximum number of processes that can wait for a lock on one session. For large production clusters, set this to at least 10% of the number of PHP processes.|6|
+|session-save-redis-break-after-frontend|break_after_frontend|Number of seconds to wait before trying to break the lock for frontend (that is, storefront) session.|5|
+|session-save-redis-break-after-adminhtml|break_after_adminhtml|Number of seconds to wait before trying to break the lock for an adminhtml (that is, Magento Admin) session.|30|
+|session-save-redis-first-lifetime|first_lifetime|Lifetime, in seconds, of session for non-bots on the first write, or use 0 to disable.|600|
+|session-save-redis-bot-first-lifetime|bot_first_lifetime|Lifetime, in seconds, of session for bots on the first write, or use 0 to disable.|60|
+|session-save-redis-bot-lifetime|bot_lifetime|Lifetime, in seconds, of session for bots on subsequent writes, or use 0 to disable.|7200|
+|session-save-redis-disable-locking|disable_locking|Disable session locking entirely.|0 (false)|
+|session-save-redis-min-lifetime|min_lifetime|Minimum session lifetime, in seconds.|60|
+|session-save-redis-max-lifetime|max_lifetime|Maximum session lifetime, in seconds.|2592000 (720 hours)|
 
 ### Example command
 
-The following example sets Redis as the session data store, sets the host to `redis.example.com`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
+The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
 
-`bin/magento setup:config:set --session-save=redis --session-save-redis-host=redis.example.com --session-save-redis-log-level=3 --session-save-redis-db=2`
+`bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=3 --session-save-redis-db=2`
 
 ### Result
 
@@ -198,7 +69,7 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
       'save' => 'redis',
       'redis' =>
       array (
-        'host' => 'redis.example.com',
+        'host' => '127.0.0.1',
         'port' => '6379',
         'password' => '',
         'timeout' => '2.5',
@@ -218,7 +89,6 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
         'max_lifetime' => '2592000'
       )
     ),
-    
 {: .bs-callout .bs-callout-info }
 TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
@@ -228,5 +98,5 @@ TTL for session records use the value for Cookie Lifetime, which is configured i
 
 #### Related topics
 
- *  [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
- *  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+* [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
+* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
