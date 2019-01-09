@@ -40,17 +40,7 @@ Important: If you use Redis for more than one type of caching, the database numb
 |session-save-redis-compression-threshold|compression_threshold|Set to 0 to disable compression (recommended when [suhosin.session.encrypt = On](http://suhosin.org/stories/howtos.html#encryption-features).
 Known issue with strings of more than 64KB.|2048|
 |session-save-redis-compression-lib|compression_library|Options: gzip, lzf, lz4 or snappy.|gzip|
-|session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:
-
-- 0 (emergency: only the most severe errors)
-- 1 (alert: immediate action required)
-- 2 (critical: application component unavailable)
-- 3 (error: runtime errors, not critical but must be monitored)
-- 4 (warning: additional information, recommended)
-- 5 (notice: normal but significant condition)
-- 6 (info: informational messages)
-- 7 (debug: the most information for development or testing only)|1|
-  
+|session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:<br/>0 (emergency: only the most severe errors)<br/>1 (alert: immediate action required)<br/>2 (critical: application component unavailable)<br/>3 (error: runtime errors, not critical but must be monitored)<br/>4 (warning: additional information, recommended)<br/>5 (notice: normal but significant condition)<br/>6 (info: informational messages)<br/>7 (debug: the most information for development or testing only)|1|
 |session-save-redis-max-concurrency|max_concurrency|Maximum number of processes that can wait for a lock on one session. For large production clusters, set this to at least 10% of the number of PHP processes.|6|
 |session-save-redis-break-after-frontend|break_after_frontend|Number of seconds to wait before trying to break the lock for frontend (that is, storefront) session.|5|
 |session-save-redis-break-after-adminhtml|break_after_adminhtml|Number of seconds to wait before trying to break the lock for an adminhtml (that is, Magento Admin) session.|30|
