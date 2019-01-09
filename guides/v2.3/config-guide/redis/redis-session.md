@@ -57,10 +57,10 @@ Known issue with strings of more than 64KB.|2048|
 
 ### Example command
 
-The following example sets Redis as the session data store, sets the host to `redis.example.com`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
+The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
 
 ```bash
-bin/magento setup:config:set --session-save=redis --session-save-redis-host=redis.example.com --session-save-redis-log-level=3 --session-save-redis-db=2
+bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=3 --session-save-redis-db=2
 ```
 
 ### Result
