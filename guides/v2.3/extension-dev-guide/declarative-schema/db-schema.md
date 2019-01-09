@@ -391,7 +391,7 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
         </constraint>
 -       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
 -               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
--               HonDelete="CASCADE"/>
+-               onDelete="CASCADE"/>
     </table>
 </schema>
 ```
