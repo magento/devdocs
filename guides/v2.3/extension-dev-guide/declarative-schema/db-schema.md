@@ -69,7 +69,7 @@ Attribute | Description
 --- | ---
 `name` | The name of the table
 `engine` | SQL engine. This value must be `innodb` or `memory`.
-`resource` | The database shard on which to install the table. This value must be `default`, `quote`, or `sales`.
+`resource` | The database shard on which to install the table. This value must be `default`, `checkout`, or `sales`.
 `comment` | Table comment
 {:style="table-layout:auto;"}
 
