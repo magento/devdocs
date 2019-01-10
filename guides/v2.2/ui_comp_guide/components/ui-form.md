@@ -217,7 +217,7 @@ To create an instance of the Form component, you need to do the following:
 3. Create the DataProvider class for the entity that implements DataProviderInterface
 * Add a component in Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} as a node: `<uiComponent name="customer_form"/>`
 
-{% highlight xml %}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
@@ -226,7 +226,7 @@ To create an instance of the Form component, you need to do the following:
         </referenceContainer>
     </body>
 </page>
-{% endhighlight %}
+```
 
 ### Configure the component
 
@@ -237,7 +237,7 @@ Component could be configured in two ways:
 
 Create configuration file: `<your module root dir>view/base/ui_component/customer_form.xml`
 
-{% highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -252,7 +252,7 @@ Create configuration file: `<your module root dir>view/base/ui_component/custome
             <item name="navContainerName" xsi:type="string">left</item>
         </item>
 ...
-{% endhighlight%}
+```
 
 Nodes are optional and contain parameters required for component:
 
@@ -264,7 +264,7 @@ Nodes are optional and contain parameters required for component:
 
 Add a description of the fields in the form using components and Field Fieldset:
 
-{%highlight xml%}
+```xml
 ...
 <fieldset name="customer">
    <argument name="data" xsi:type="array">
@@ -283,11 +283,11 @@ Add a description of the fields in the form using components and Field Fieldset:
         </argument>
     </field>
 …
-{% endhighlight%}
+```
 
 To group components you can use the component container as in example below:
 
-{% highlight xml%}
+```xml
 <container name="container_group">
     <argument name="data" xsi:type="array">
         <item name="type" xsi:type="string">group</item>
@@ -308,7 +308,7 @@ To group components you can use the component container as in example below:
     ...
     </field>
 </container>
-{% endhighlight %}
+```
 
 ### Configure DataSource
 
@@ -318,7 +318,7 @@ DataSource aggregates an object of class implements the interface `\Magento\Fram
 
 An example of the configuration of the DataSource object:
 
-{% highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         ...
@@ -358,7 +358,7 @@ An example of the configuration of the DataSource object:
         </argument>
     </dataSource>
 </form>
-{% endhighlight %}
+```
 
 Component configuration:
 
@@ -381,7 +381,7 @@ To replace all instances, globally, of a UI Form with a custom implementation re
 
 `app/code/Magento/Ui/view/base/ui_component/etc/definition.xml`
 
-{% highlight xml%}
+```xml
 <form class="Magento\Ui\Component\Form">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -389,7 +389,7 @@ To replace all instances, globally, of a UI Form with a custom implementation re
         </item>
     </argument>
 </form>
-{% endhighlight %}
+```
 
 #### Single replacement
 
@@ -397,7 +397,7 @@ To replace one instance of a UI Form Component redefine link to a constructor in
 
 `app/code/Magento/Customer/view/base/ui_component/customer_form.xml`
 
-{% highlight xml%}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -405,7 +405,7 @@ To replace one instance of a UI Form Component redefine link to a constructor in
         </item>
         </argument>
 </form>
-{% endhighlight %}
+```
 
 ## Source files
 

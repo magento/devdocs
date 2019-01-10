@@ -1,8 +1,6 @@
 ---
 group: ui-components-guide
-subgroup: components
 title: MassActions component
-menu_title: MassActions component
 ---
 
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
@@ -97,7 +95,7 @@ Dependency on the following components:
 
 ### Redefine the link to the template
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -106,11 +104,11 @@ Dependency on the following components:
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```
 
 ### Specify action with confirmation
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -128,13 +126,13 @@ Dependency on the following components:
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 ### Action with a custom callback
 
 Callback is provided by another component.
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -152,13 +150,13 @@ Callback is provided by another component.
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 ### Instance replacement (one instance of a component)
 
 Redefine link to constructor.
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -166,7 +164,7 @@ Redefine link to constructor.
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```
 
 ## Source files
 

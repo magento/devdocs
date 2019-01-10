@@ -123,4 +123,4 @@ The following code sample defines a data patch class that has a dependency.
 ## Will old scripts work in newer versions?
 
 Old scripts will work with new versions of Magento. However, if you want to convert your old scripts to the new format,
-implement `\Magento\Setup\Model\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.
+implement `\Magento\Framework\Setup\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.
