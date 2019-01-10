@@ -24,7 +24,7 @@ When you're developing Magento components (modules, themes, and language package
 
 | Directory | Description |
 | --- | --- |
-| `var/page_cache` | Cached pages from the full page cahe mechanism. This directory is empty if you use a third-party HTTP accelerator such as Varnish. |
+| `var/page_cache` | Cached pages from the full page cache mechanism. This directory is empty if you use a third-party HTTP accelerator such as Varnish. |
 | `var/cache` | All cacheable objects _except the page cache_. This directory is empty if you use a third-party cache storage such as Redis. |
 | `var/composer_home` | Home directory for Setup Wizard artifacts. Do not touch this directory unless you are an experienced developer familiar with the Magento plug-in system. |
 | `generated/code` | Contains [generated code][] |
