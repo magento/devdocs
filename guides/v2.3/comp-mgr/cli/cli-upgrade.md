@@ -145,10 +145,7 @@ _Optional_—If the Magento updater is installed (it is located in `<Magento ins
 1. Move the project to the `<Magento install dir>/update` directory:
 
    ```bash
-   mkdir update
-   ```
-   ```bash
-   mv temp_dir/update <Magento install dir>/update
+   mv temp_dir/update .
    ```
    ```bash
    rm -rf temp_dir
