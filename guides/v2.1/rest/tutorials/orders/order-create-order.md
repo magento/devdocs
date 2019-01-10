@@ -37,8 +37,8 @@ When you submit payment information, Magento creates an order and sends an order
 **Payload**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
 	"paymentMethod": {
     	    	"method": "banktransfer"
@@ -57,7 +57,8 @@ When you submit payment information, Magento creates an order and sends an order
     	    	"lastname": "Doe"
 	 }
 }
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 **Response**
@@ -87,8 +88,8 @@ Not applicable
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
     "applied_rule_ids": "1",
     "base_currency_code": "USD",
@@ -1569,8 +1570,8 @@ Not applicable
         ]
     }
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 ### Verify this step {#verify-step}
