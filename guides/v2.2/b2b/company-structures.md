@@ -19,7 +19,7 @@ Company teams allow you to group company users by location, job responsibilities
 
 **REST Endpoints**
 
-```json
+```
 POST /V1/team/:companyId
 PUT /V1/team/:teamId
 GET /V1/team/:teamId
@@ -136,6 +136,7 @@ Not applicable
 
 **Response**
 {% collapsible Show code sample %}
+
 ```json
 {
     "items": [
@@ -181,7 +182,7 @@ You can use REST endpoints to retrieve the current structure and move teams and 
 
 **REST Endpoints**
 
-```json
+```
 GET /V1/hierarchy/:id
 PUT /V1/hierarchy/move/:id
 ```
@@ -212,8 +213,8 @@ Not applicable
 **Response**
 
 {% collapsible Show code sample %}
-```json
 
+```json
 [
   {
     "structure_id": 6,
@@ -257,7 +258,6 @@ Not applicable
     "entity_type": "customer",
     "structure_parent_id": 0
   }
-
 ```
 
 {% endcollapsible %}
