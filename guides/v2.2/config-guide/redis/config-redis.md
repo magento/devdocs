@@ -34,7 +34,7 @@ You can find more information about configuring Redis from the following:
 * [David Alger](http://davidalger.com/development/magento/configuring-magento-2-to-use-redis-cache-backend/)
 * [TechyTalk](http://www.techytalk.info/configuring-cache-storage-backends-magento-2-redis/)
 
-#### Next
+## Next
 
 * [Use Redis for the Magento page and default cache]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html)
 * [Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)

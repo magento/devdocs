@@ -17,34 +17,35 @@ Following is a sample configuration that causes Magento to use Redis for both th
 
 Add a configuration similar to the following to `<your Magento install dir>app/etc/env.php`:
 
-	'cache' =>
-	array(
-	   'frontend' =>
-	   array(
-	      'default' =>
-	      array(
-	         'backend' => 'Cm_Cache_Backend_Redis',
-	         'backend_options' =>
-	         array(
-	            'server' => '127.0.0.1',
-	            'database' => '0',
-	            'port' => '6379'
-	            ),
-	    ),
-	    'page_cache' =>
-	    array(
-	      'backend' => 'Cm_Cache_Backend_Redis',
-	      'backend_options' =>
-	       array(
-	         'server' => '127.0.0.1',
-	         'port' => '6379',
-	         'database' => '1',
-	         'compress_data' => '0'
-	       )
-	    )
-	  )
-	),
-
+```php?start_inline=1
+ 'cache' =>
+   array(
+    'frontend' =>
+       array(
+        'default' =>
+           array(
+           'backend' => 'Cm_Cache_Backend_Redis',
+           'backend_options' =>
+           array(
+              'server' => '127.0.0.1',
+              'database' => '0',
+              'port' => '6379'
+              ),
+      ),
+      'page_cache' =>
+      array(
+        'backend' => 'Cm_Cache_Backend_Redis',
+        'backend_options' =>
+         array(
+           'server' => '127.0.0.1',
+           'port' => '6379',
+           'database' => '1',
+           'compress_data' => '0'
+         )
+      )
+    )
+  ),
+```
 where
 
 |Parameter|Meaning|
@@ -61,8 +62,8 @@ where
 
 {% include config/redis-verify.md %}
 
-#### Related topics
+## Related topics
 
-*	[Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
+* [Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
 * [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
 * [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)

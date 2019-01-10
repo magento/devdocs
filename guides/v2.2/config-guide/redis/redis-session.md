@@ -13,7 +13,9 @@ Magento now provides command line options to configure Redis session storage. In
 
 Run the `setup:config:set` command and specify Redis-specific parameters.
 
+```bash
 `bin/magento setup:config:set --session-save=redis --session-save-redis-<parameter_name>=<parameter_value>...`
+```
 
 where
 
@@ -34,16 +36,7 @@ Important: If you use Redis for more than one type of caching, the database numb
 |session-save-redis-compression-threshold|compression_threshold|Set to 0 to disable compression (recommended when [suhosin.session.encrypt = On](http://suhosin.org/stories/howtos.html#encryption-features).
 Known issue with strings of more than 64KB.|2048|
 |session-save-redis-compression-lib|compression_library|Options: gzip, lzf, lz4 or snappy.|gzip|
-|session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:
-
-0 (emergency: only the most severe errors)
-1 (alert: immediate action required)
-2 (critical: application component unavailable)
-3 (error: runtime errors, not critical but must be monitored)
-4 (warning: additional information, recommended)
-5 (notice: normal but significant condition)
-6 (info: informational messages)
-7 (debug: the most information for development or testing only)|1|
+|session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:<br/>0 (emergency: only the most severe errors)<br/>1 (alert: immediate action required)<br/>2 (critical: application component unavailable)<br/>3 (error: runtime errors, not critical but must be monitored)<br/>4 (warning: additional information, recommended)<br/>5 (notice: normal but significant condition)<br/>6 (info: informational messages)<br/>7 (debug: the most information for development or testing only)|1|
 |session-save-redis-max-concurrency|max_concurrency|Maximum number of processes that can wait for a lock on one session. For large production clusters, set this to at least 10% of the number of PHP processes.|6|
 |session-save-redis-break-after-frontend|break_after_frontend|Number of seconds to wait before trying to break the lock for frontend (that is, storefront) session.|5|
 |session-save-redis-break-after-adminhtml|break_after_adminhtml|Number of seconds to wait before trying to break the lock for an adminhtml (that is, Magento Admin) session.|30|
@@ -53,17 +46,21 @@ Known issue with strings of more than 64KB.|2048|
 |session-save-redis-disable-locking|disable_locking|Disable session locking entirely.|0 (false)|
 |session-save-redis-min-lifetime|min_lifetime|Minimum session lifetime, in seconds.|60|
 |session-save-redis-max-lifetime|max_lifetime|Maximum session lifetime, in seconds.|2592000 (720 hours)|
+{:style="table-layout:auto;"}
 
 ### Example command
 
 The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
 
+```bash
 `bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=3 --session-save-redis-db=2`
+```
 
 ### Result
 
 Magento adds lines similar to the following to `<your Magento install dir>app/etc/env.php`:
 
+```php?start_inline=1
     'session' =>
     array (
       'save' => 'redis',
@@ -89,6 +86,7 @@ Magento adds lines similar to the following to `<your Magento install dir>app/et
         'max_lifetime' => '2592000'
       )
     ),
+```
 {: .bs-callout .bs-callout-info }
 TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
 
@@ -96,7 +94,7 @@ TTL for session records use the value for Cookie Lifetime, which is configured i
 
 {% include config/redis-verify.md %}
 
-#### Related topics
+## Related topics
 
 * [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
 * [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
