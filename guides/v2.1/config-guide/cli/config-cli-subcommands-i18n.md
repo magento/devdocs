@@ -32,7 +32,7 @@ To begin translating, use a command to generate a dictionary `.csv` file with a 
 
 Generate the dictionary and translate:
 
-1.  Extract translatable words and phrases from enabled components using the translati9on collection command. Content extracts into a `.csv` file.
+1.  Extract translatable words and phrases from enabled components using the translation collection command. Content extracts into a `.csv` file.
 1.  Translate the existing words and phrases. You can also add additional custom terms as needed.
 
 You have options for using the translated dictionary:

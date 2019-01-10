@@ -43,7 +43,7 @@ The Expandable Column component can be used in {% glossarytooltip 29ddb393-ca22-
 
 Component's options are set in the configuration `.xml` file as follows:
 
-{% highlight xml %}
+```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
     <argument name="data" xsi:type="array">
         <item name="options" xsi:type="object">Magento\Catalog\Model\Product\Attribute\Source\Status</item>
@@ -54,7 +54,7 @@ Component's options are set in the configuration `.xml` file as follows:
         </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 ## Dependencies
 

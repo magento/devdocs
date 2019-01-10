@@ -2246,7 +2246,7 @@ entries:
   versions: 2.x
   type: Updated
   date: March 15 2017
-- description: '[Tutorial on copying fieldsets](ext-best-practices/tutorials/copy-fieldsets.html)'
+- description: '[Tutorial on copying fieldsets](https://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/copy-fieldsets.html)'
   versions: 2.x
   type: New
   date: Mar 9 2017
