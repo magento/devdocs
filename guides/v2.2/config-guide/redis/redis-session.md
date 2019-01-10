@@ -14,7 +14,7 @@ Magento now provides command line options to configure Redis session storage. In
 Run the `setup:config:set` command and specify Redis-specific parameters.
 
 ```bash
-`bin/magento setup:config:set --session-save=redis --session-save-redis-<parameter_name>=<parameter_value>...`
+bin/magento setup:config:set --session-save=redis --session-save-redis-<parameter_name>=<parameter_value>...
 ```
 
 where
@@ -50,7 +50,7 @@ where
 The following example sets Redis as the session data store, sets the host to `127.0.0.1`, sets the log level to 3, and sets the database number to 2. All other parameters are set to the default value.
 
 ```bash
-`bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=3 --session-save-redis-db=2`
+bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.0.0.1 --session-save-redis-log-level=3 --session-save-redis-db=2
 ```
 
 ### Result

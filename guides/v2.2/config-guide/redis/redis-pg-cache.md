@@ -16,7 +16,7 @@ You must  [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.htm
 Run the `setup:config:set` command and specify parameters that specific to Redis default caching.
 
 ```bash
-`bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-<parameter_name>=<parameter_value>...`
+bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-<parameter_name>=<parameter_value>...
 ```
 
 where
@@ -38,7 +38,7 @@ where
 The following example enables Redis default caching, sets the host to `127.0.0.1` and assigns the database number to 0. Redis uses default values for all other parameters.
 
 ```bash
-`bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=127.0.0.1 --cache-backend-redis-db=0`
+bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=127.0.0.1 --cache-backend-redis-db=0
 ```
 
 ## Configure Redis page caching
@@ -46,7 +46,7 @@ The following example enables Redis default caching, sets the host to `127.0.0.1
 To configure Redis page caching on Magento, run the `setup:config:set` command with additional parameters.
 
 ```bash
-`bin/magento setup:config:set --page-cache=redis --page-cache-redis-<parameter_name>=<parameter_value>...`
+bin/magento setup:config:set --page-cache=redis --page-cache-redis-<parameter_name>=<parameter_value>...
 ```
 
 where
@@ -68,7 +68,7 @@ where
 The following example enables Redis page caching, sets the host to `127.0.0.1` and assigns the database number to 1. All other parameters are set to the default value.
 
 ```bash
-`bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=127.0.0.1 --page-cache-redis-db=1`
+bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=127.0.0.1 --page-cache-redis-db=1
 ```
 
 ## Results
