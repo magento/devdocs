@@ -64,12 +64,12 @@ See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/g
 
 **Payload**
 
-{% highlight json %}
+```json
 {
-"username": "admin",
-"password": "123123q"
+  "username": "admin",
+  "password": "123123q"
 }
-{% endhighlight %}
+```
 
 **Response**
 

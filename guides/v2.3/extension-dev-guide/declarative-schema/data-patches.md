@@ -3,13 +3,13 @@ group: php-developer-guide
 title: Develop data and schema patches
 ---
 
-A data patch is a class that contains data modification instructions. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Data/<Patch_Name>.php` file and implements `\Magento\Setup\Model\Patch\DataPatchInterface`.
+A data patch is a class that contains data modification instructions. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Data/<Patch_Name>.php` file and implements `\Magento\Framework\Setup\Patch\DataPatchInterface`.
 
-A schema patch contains custom schema modification instructions. These modifications can be complex. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Schema/<Patch_Name>.php` file and implements `\Magento\Setup\Model\Patch\SchemaPatchInterface`.
+A schema patch contains custom schema modification instructions. These modifications can be complex. It is defined in a `<Vendor>/<Module_Name>/Setup/Patch/Schema/<Patch_Name>.php` file and implements `\Magento\Framework\Setup\Patch\SchemaPatchInterface`.
 
 Unlike the declarative schema approach, patches will only be applied once. A list of applied patches is stored in the `patch_list` database table. An unapplied patch will be applied when running the `setup:upgrade` from the Magento CLI. 
 
-Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement `\Magento\Setup\Model\Patch\PatchRevertableInterface`.
+Optionally, if you plan to enable rollback for your patch during module uninstallation, then you must implement `\Magento\Framework\Setup\Patch\PatchRevertableInterface`.
 
 The declarative schema approach removes the version from the `setup_module` table (in a backward compatible way), leaving only the Composer version. Therefore, you can create all new patches and modules without specifying a `setup_module` version.
 
@@ -39,8 +39,8 @@ The following code sample defines a data patch class that has a dependency.
 
     namespace Magento\DummyModule\Setup\Patch\Data;
 
-    use Magento\Setup\Model\Patch\DataPatchInterface;
-    use Magento\Setup\Model\Patch\PatchRevertableInterface;
+    use Magento\Framework\Setup\Patch\DataPatchInterface;
+    use Magento\Framework\Setup\Patch\PatchRevertableInterface;
 
     /**
      */
@@ -123,4 +123,4 @@ The following code sample defines a data patch class that has a dependency.
 ## Will old scripts work in newer versions?
 
 Old scripts will work with new versions of Magento. However, if you want to convert your old scripts to the new format,
-implement `\Magento\Setup\Model\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.
+implement `\Magento\Framework\Setup\Patch\PatchVersionInterface`. This interface allows you to specify the setup version of the module in your database. If the version of the module is higher than the version specified in your patch, then the patch is skipped. If the version in the database is equal or lower, then the patch installs.

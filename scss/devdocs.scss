@@ -1,7 +1,15 @@
-// Import all the variables (this is a copy of devdocs-theme variables)
-@import 'variables';
+.home-contributors {
+  margin-bottom: 2em;
+}
 
-// Files to import
-@import 'partials/home';
-@import 'partials/contributors';
-@import 'partials/list-icons';
+.message-banner {
+    margin: 0;
+}
+
+redoc[spec-url] table {
+  table-layout: auto;
+}
+
+redoc[spec-url] .menu-subitems .menu-item-title{
+  text-transform: none;
+}

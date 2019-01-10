@@ -5,18 +5,12 @@
 html-proofer:
   :disable_external: true
   :only_4xx: true
-  :checks_to_ignore:
-  - ImageCheck
-  - ScriptCheck
+  :empty_alt_ignore: true
   :allow_hash_ref: true
   :error_sort: :desc
   :parallel:
     :in_processes: 3
   :file_ignore:
   - !ruby/regexp /guides\/m1x/
-  - !ruby/regexp /template\.html/
-  - !ruby/regexp /videos/
-  - !ruby/regexp /whats-new\.html/
-  :url_ignore:
   - !ruby/regexp /guides\/v2\.0/
-  - !ruby/regexp /src\//
+  - !ruby/regexp /videos\//

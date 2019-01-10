@@ -131,11 +131,6 @@ kramdown:
   syntax_highlighter_opts:
     css_class: highlighter
 
-# LiveReload monitors changes in the file system and refreshes browser when Jekyll is in serving mode.
-# http://livereload.com/
-#
-livereload: true
-
 # Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
 #
 algolia:
@@ -202,7 +197,6 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
-  - gulpfile.js
   - package.json
   - package-lock.json
   - Rakefile
