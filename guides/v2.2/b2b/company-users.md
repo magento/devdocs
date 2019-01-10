@@ -1,12 +1,7 @@
 ---
 group: b2b-developer-guide
-subgroup: 10_REST
 title: Manage company users
-menu_title: Manage company users
-menu_order: 13
-ee_only: True
-level3_menu_node: level3child
-level3_subgroup: company
+ee_only: true
 functional_areas:
   - B2B
   - Integration
@@ -27,10 +22,10 @@ This section describes the REST endpoints used to manage company users.
 
 **REST Endpoints**
 
-{% highlight json %}
+```
 POST /V1/customers/
 PUT /V1/customers/:customerId
-{% endhighlight %}
+```
 
 **Company user parameters**
 
@@ -56,8 +51,7 @@ The `POST /V1/customers` call creates a Magento customer. B2B extends the `custo
 
 Add the `company_attributes` code block to the payload that is required to create a standard customer.
 
-{% highlight json %}
-
+```json
 "extension_attributes": {
    "company_attributes": {
    "company_id": 2,
@@ -66,11 +60,11 @@ Add the `company_attributes` code block to the payload that is required to creat
    "telephone": "512-555-3322"
    }
 }
-{% endhighlight %}
+```
 
 Full example:
 
-{% highlight json %}
+```json
 {
 	"customer": {
 		"email": "mshaw@example.com",
@@ -86,11 +80,11 @@ Full example:
 		}
 	}
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 13,
   "group_id": 1,
@@ -114,7 +108,7 @@ Full example:
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Modify a company user
 
@@ -129,7 +123,7 @@ If you change the `status` to inactive, the account is locked. If the company us
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "customer": {
     "id": 13,
@@ -145,11 +139,11 @@ If you change the `status` to inactive, the account is locked. If the company us
       }
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 13,
   "group_id": 1,
@@ -171,7 +165,7 @@ If you change the `status` to inactive, the account is locked. If the company us
     }
   }
 }
-{% endhighlight %}
+```
 
 ### Delete a company user
 
