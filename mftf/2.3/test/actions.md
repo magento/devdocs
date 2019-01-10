@@ -1354,6 +1354,9 @@ Attribute|Type|Use|Description
 <makeScreenshot userInput="example" stepKey="screenshotPage"/>
 ```
 
+{:.bs-callout .bs-callout-info}
+This action does not add a screenshot to the Allure [report](../reporting.html).
+
 ### maximizeWindow
 
 See [maximizeWindow docs on codeception.com](http://codeception.com/docs/modules/WebDriver#maximizeWindow){:target="_blank"}.

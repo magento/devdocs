@@ -112,7 +112,6 @@ defaults:
 # This list doesn't include custom plugins.
 #
 plugins:
-  - jekyll-last-modified-at
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
@@ -131,11 +130,6 @@ kramdown:
   toc_levels: 2..3
   syntax_highlighter_opts:
     css_class: highlighter
-
-# LiveReload monitors changes in the file system and refreshes browser when Jekyll is in serving mode.
-# http://livereload.com/
-#
-livereload: true
 
 # Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
 #
@@ -203,7 +197,6 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
-  - gulpfile.js
   - package.json
   - package-lock.json
   - Rakefile

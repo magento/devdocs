@@ -7,7 +7,6 @@ menu_order: 1
 menu_node: parent
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_overview.html
- - /guides/v1.0/frontend-dev-guide/javascript/js_overview.html
 ---
 
 By default, the Magento application uses the <a href="http://requirejs.org/" target="_blank">RequireJS file and module loader</a> to optimize the time of loading pages with included {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} files, and to manage dependencies of JavaScript resources.

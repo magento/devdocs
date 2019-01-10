@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.0 Release Notes
 ---
 
-*Release notes published November 28, 2018.*
+*Release notes published November 28 and last updated on December 13, 2018.*
 
 We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
@@ -13,9 +13,11 @@ We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This 
 
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
-
-* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
+* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
+  	
+	MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+   * [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation 
+   * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions 
 
 
 
@@ -42,6 +44,9 @@ We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This 
 * Cache flush ACL provides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches. 
 
 * 2FA/CAPTCHA protects the Admin panel against stolen passwords and affects stores against bots. 
+
+
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.7, 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
 
 
 ### Core bundled extension enhancements
@@ -106,11 +111,10 @@ We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This 
 
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.6. 
 
-### Issues fixed in 2.3.0 Alpha
-
-The following issues, which were identified in our 2.3.0 Alpha code base, have been fixed in this Beta release:
 
 ### Installation, upgrade, deployment
+
+<!---MAGETWO-94173 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
 
 <!---MAGETWO-86717 -->* All existing installation and data scripts have been converted into declarative schema data patches for easier deployment. 
 
@@ -243,17 +247,6 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 <!---ENGCOM-2919 -->* The **Enter** button on the customer grid now filters the table as expected. Previously, clicking **Enter**  did not filter contents but simply changed the display to the next page of the grid.  *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request  [17650](https://github.com/magento/magento2/pull/17650)*. [GitHub-17789](https://github.com/magento/magento2/issues/17789)
 
 <!--- ENGCOM-870 -->* The **Report an Issue** link on Admin pages now opens in a new tab. *Fix submitted by [Danilo Argentiero](https://github.com/DaniloEmpire) in pull request  [14016](https://github.com/magento/magento2/pull/14016)*. [GitHub-14010](https://github.com/magento/magento2/issues/14010)
-
-
-
-
-### Banner (now Dynamic Block)
-
-<!---MAGETWO-71816-->* The Magento CMS banner has been renamed to dynamic block to better represent this feature. Banners from **Content** > **Banners** have been renamed across the Admin and the code base. Correspondingly, the Magento widget banner rotator type (from **Content** > **Widget** > **Widget type**) has been renamed to dynamic blocks rotator. 
-
-
-<!---MAGETWO-42047-->* You can now create dynamic block (formerly banners) content from the WYSIWYG editor. You can create store-specific content for dynamic blocks  by switching between scopes using the Magento Scope Selector.
-
 
 
 
@@ -2225,6 +2218,8 @@ The following issues, which were identified in our 2.3.0 Alpha code base, have b
 
 
 ## Known issues
+
+**Known issue:** After installing a module and running `setup:upgrade`, you must run `cache:clean config`.
 
 **Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > **Other Settings ** > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
 

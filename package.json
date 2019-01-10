@@ -1,34 +1,28 @@
 {
   "name": "Devdocs",
   "scripts": {
-    "start": "gulp"
+    "scss": "node-sass --source-map=0 --omit-source-map-url -o common/css scss --output-style=compressed",
+    "autoprefixer": "postcss -u autoprefixer -r common/css/devdocs.css --map=0",
+    "uglify": "uglifyjs js/*.js -o common/js/devdocs.js && uglifyjs common/js/*.js -m -c -o common/js/devdocs.min.js --source-map=0",
+    "jekyll": "bundle exec jekyll build",
+    "serve": "browser-sync start --server '_site' --files '_site/common/css/*.css, _site/common/js/*.js'",
+    "build:js": "uglifyjs js/app.js -o common/js/devdocs.min.js",
+    "build:css": "npm run scss && npm run autoprefixer",
+    "build:html": "npm run jekyll",
+    "watch:html": "nodemon -e md,html --ignore _site/ -x 'npm run build:html'",
+    "watch:css": "nodemon -e scss -x 'npm run build:css && cp -r common/css/ _site/common/css/'",
+    "watch:all": "npm-run-all --parallel watch:html watch:css serve",
+    "start": "npm run watch:all"
   },
   "devDependencies": {
-    "browser-sync": "latest",
-    "del": "latest",
-    "gulp": "latest",
-    "gulp-autoprefixer": "latest",
-    "gulp-compass": "latest",
-    "gulp-concat": "latest",
-    "gulp-consolidate": "latest",
-    "gulp-front-matter": "latest",
-    "gulp-imagemin": "latest",
-    "gulp-include": "latest",
-    "gulp-jekyll": "latest",
-    "gulp-minify-css": "latest",
-    "gulp-rename": "latest",
-    "gulp-sass": "latest",
-    "gulp-shell": "latest",
-    "gulp-sourcemaps": "latest",
-    "gulp-uglify": "latest",
-    "gulp-util": "latest",
-    "run-sequence": "latest"
+    "autoprefixer": "^9.3.1",
+    "browser-sync": "^2.26.3",
+    "node-sass": "^4.10.0",
+    "nodemon": "^1.18.7",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^6.0.1",
+    "uglify-js": "^3.4.9"
   },
-  "dependencies": {
-    "gulp-install": "latest",
-    "gulp-ruby-sass": "latest",
-    "highlight.js": "latest",
-    "node-sass": "latest"
-  },
+  "dependencies": {},
   "private": true
 }

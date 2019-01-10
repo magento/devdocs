@@ -2,7 +2,6 @@
 group: installation-guide
 title: (Contributor) Clone the Magento repository
 redirect_from:
-  - /guides/v1.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/prereq/composer.html
 functional_areas:
@@ -33,22 +32,18 @@ If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento softw
 
 This section discusses how to get current code by cloning [Magento's GitHub repository](https://github.com/magento/magento2){:target="_blank"} and checking out branches. You can either checkout a release branch or a development branch:
 
-*	Release branches, like `2.1.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool]({{page.baseurl}}/migration/bk-migration-guide.html).
-
-*	Development branches, like `2.2-develop`, contain the latest changes.
+- Release branches, like `2.1.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool]({{page.baseurl}}/migration/bk-migration-guide.html).
+- Development branches, like `2.2-develop`, contain the latest changes.
 
 Currently, the `2.2-develop` branch is the default, but you can checkout a release branch, like `2.1.0`, after cloning.
 
 {:.bs-callout .bs-callout-info}
 Refer to [GitHub's documentation](https://help.github.com/articles/cloning-a-repository-from-github/){:target="_blank"} for instructions on cloning a repository.
 
-### Creating an authorization file {#instgde-prereq-compose-clone-auth}
+## Create a Composer authentication file {#instgde-prereq-compose-clone-auth}
 
-The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, [generate authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html), after which you create an `auth.json` file in the home directory of the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-
-#### Create `auth.json`
 {% include install/auth-json.md %}
 
-#### Next step
+## Next step
 
 After completing the tasks discussed on this page, see [Update installation dependencies]({{page.baseurl}}/install-gde/install/prepare-install.html).

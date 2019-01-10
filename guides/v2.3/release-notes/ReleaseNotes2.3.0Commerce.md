@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.0 Release Notes
 ---
 
-*Release notes published November 28, 2018.*
+*Release notes published November 28 and last updated on January 9, 2019.*
 
 We are pleased to present Magento Commerce 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.  
 
@@ -14,13 +14,16 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 ### Merchant tool enhancements
 
-* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. See [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for more information. MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+* **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
+  	
+	MSI is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
+   * [Inventory Management overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation 
+   * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions 
 
 
-* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG or Page Builder. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
+* **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG (or Page Builder. See the  `Page Builder` discussion below. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
 
-* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. PageBuilder Beta code will be available in 2018 Q4. Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  Watch this space for more information about participating in the PageBuilder Beta program plus installation instructions. 
-
+* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. Registered participants can install PageBuilder Beta on Magento 2.3.0 Commerce code. See check [Magento 2.3 product availability](https://devdocs.magento.com/availability.html) and [Magento blog](https://magento.com/blog/magento-news/magento-2.3-new-tools-fuel-your-growth-2019).
 
 ### Improved developer experience
 
@@ -47,6 +50,8 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 * Cache flush ACL provides granular access to cache management settings to prevent accidental changes that could potentially affect system performance. This ACL also lets merchants control which administrative users can clear site caches. 
 
 * 2FA/CAPTCHA protects the Admin panel against stolen passwords and affects stores against bots. 
+
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.7, 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
 
 
 ### Core bundled extension enhancements
@@ -77,7 +82,6 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * Added support for PHP 7.2 and dropped support for PHP 5.6
 
-#### Magento Shipping
 
 #### Magento Shipping
 
@@ -127,6 +131,8 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 
 ### Installation, upgrade, deployment
+
+<!---MAGETWO-94173 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
  
 <!---MAGETWO-86717 -->* All existing installation and data scripts have been converted into declarative schema data patches for easier deployment. 
 
@@ -2289,6 +2295,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 ## Known issues
 
+**Known issue:** After installing a module and running `setup:upgrade`, you must run `cache:clean config`.
 
 **Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > **Other Settings ** > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
 
@@ -2306,6 +2313,8 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 * Only tables and columns are currently supported. 
 
 * Renaming of tables is not supported. 
+
+
 
 ## Community contributions
 

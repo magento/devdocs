@@ -6,7 +6,6 @@ menu_title: (Contributor) Clone the Magento repository
 menu_order: 1
 menu_node: parent
 redirect_from:
-  - /guides/v1.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/install/composer-clone.html
   - /guides/v2.0/install-gde/prereq/composer.html
 functional_areas:
@@ -44,14 +43,11 @@ This section discusses how to get current code by cloning the Magento GitHub's d
 
 Currently, the `develop` branch is the default but you can checkout a release branch like `2.1.0` after cloning.
 
-### Creating an authorization file {#instgde-prereq-compose-clone-auth}
+## Create a Composer authentication file {#instgde-prereq-compose-clone-auth}
 
-The Magento 2 GitHub repository requires you to authenticate. The `composer install` commands fails if you do not. To authenticate, <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an `auth.json` file in the home directory of the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-
-#### Create `auth.json`
 {% include install/auth-json.md %}
 
-### How to clone the Magento 2 GitHub repository {#instgde-prereq-compose-clone-ways}
+## How to clone the Magento 2 GitHub repository {#instgde-prereq-compose-clone-ways}
 
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
 
@@ -63,7 +59,7 @@ See one of the following section:
 *	<a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a>
 *	<a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a>
 
-#### Clone with SSH   {#instgde-prereq-compose-clone-ssh}
+### Clone with SSH {#instgde-prereq-compose-clone-ssh}
 
 To clone the Magento GitHub repository using the SSH protocol:
 
@@ -110,7 +106,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 4.	Continue with <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.
 
-#### Clone with HTTPS   {#instgde-prereq-compose-clone-https}
+### Clone with HTTPS   {#instgde-prereq-compose-clone-https}
 
 To clone the Magento GitHub repository using the HTTPS protocol:
 
@@ -145,7 +141,7 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 		git checkout tags/2.1.0 -b 2.1.0
 
-#### Next step
+## Next step
 
 After completing the tasks discussed on this page, see <a href="{{ page.baseurl }}/install-gde/install/prepare-install.html">Update installation dependencies</a>.
 

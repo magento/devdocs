@@ -33,10 +33,10 @@ Let’s go through each step.
 
 As Magento is modular based, we start the process by creating a new module called `Learning_ClothingMaterial`.
 
-```
-$ cd <magento2_root>/app/code
-$ mkdir Learning
-$ mkdir Learning/ClothingMaterial
+```bash
+cd <magento2_root>/app/code
+mkdir Learning
+mkdir Learning/ClothingMaterial
 ```
 
 Now, create two files:
@@ -44,7 +44,8 @@ Now, create two files:
 `etc/module.xml`
 
 {% collapsible Show code %}
-{% highlight xml %}
+
+```xml
 <?xml version="1.0"?>
 <!--
 /**
@@ -57,15 +58,15 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
   <module name="Learning_ClothingMaterial" setup_version="0.0.1">
   </module>
 </config>
-{% endhighlight %}
-{% endcollapsible %}
+```
 
-<br/>
+{% endcollapsible %}
 
 `registration.php`
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+
+```php?start_inline=1
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -75,7 +76,8 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     'Learning_ClothingMaterial',
     __DIR__
 );
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 ## Step 2 Create an InstallData script
@@ -87,8 +89,8 @@ Therefore we use InstallData instead of InstallSchema.
 Create the file `app/code/Learning/ClothingMaterial/Setup/InstallData.php`:
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
 
+```php?start_inline=1
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -153,10 +155,9 @@ class InstallData implements InstallDataInterface
         );
     }
 }
-{% endhighlight %}
-{% endcollapsible %}
+```
 
-<br/>
+{% endcollapsible %}
 
 Let’s take a minute to look at the code.
 
@@ -194,8 +195,8 @@ Next, we need to create the source model:
 `app/code/Learning/ClothingMaterial/Model/Attribute/Source/Material.php`
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
 
+```php?start_inline=1
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -224,11 +225,9 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Source\AbstractSource
         return $this->_options;
     }
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
-
-<br/>
 
 As the name implies, the `getAllOptions` method provides a list of all available options.
 
@@ -239,8 +238,8 @@ Now we will create a backend model:
 `app/code/Learning/ClothingMaterial/Model/Attribute/Backend/Material.php`
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
 
+```php?start_inline=1
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -267,11 +266,9 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Backend\AbstractBacke
         return true;
     }
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
-
-<br/>
 
 In our example, we implement only the `validate()` method.
 
@@ -287,7 +284,8 @@ Make sure to check the `eav_attribute_set` table for the right ID.
 And finally, we create a frontend model to make our value bold:
 
 {% collapsible Show code %}
-{% highlight php startinline=true %}
+
+```php?start_inline=1
 namespace Learning\ClothingMaterial\Model\Attribute\Frontend;
 
 class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend
@@ -298,10 +296,9 @@ class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFron
         return "<b>$value</b>";
     }
 }
-{% endhighlight %}
-{% endcollapsible %}
+```
 
-<br/>
+{% endcollapsible %}
 
 As with the backend model, this is also a very simple class.
 
@@ -309,9 +306,9 @@ As with the backend model, this is also a very simple class.
 
 Now we can run our code and check the results:
 
-```
-$ cd <magento2_root>
-$ php bin/magento setup:upgrade
+```bash
+cd <magento2_root>
+php bin/magento setup:upgrade
 ```
 
 After you run this, the new attribute should have been added to the database.

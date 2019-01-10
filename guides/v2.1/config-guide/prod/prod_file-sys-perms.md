@@ -11,7 +11,7 @@ functional_areas:
 
 This section discusses how to set up the owner or owners of the Magento file system for a development and production system. Before you continue, review the concepts discussed in [Overview of file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
-This topic focuses on Magento development and production systems. If you're installing Magento, see [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
+This topic focuses on Magento development and production systems. If you are installing Magento, see [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
 The sections that follow discuss requirements for one or two Magento file system owners. That means:
 
@@ -47,7 +47,7 @@ You can set these permissions using either the command line or a file manager ap
 
 ### Set up one owner for production mode {#mage-owner-one-prod}
 
-When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
+When you are ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
 *	`vendor`
 *	`app/code`
@@ -60,18 +60,24 @@ When you're ready to deploy your site to production, you should remove write acc
 
 To update components, install new components, or to upgrade the Magento software, all of the preceding directories must be read-write.
 
-#### Make code files and directories read-only
+#### Make code files and directories read-only:
 
-To remove writable permissions to files and directories from the web server user's group:
+To remove write permissions to files and directories from the web server user's group:
 
-1.	Log in to your Magento server.
-2.	Change to your Magento installation directory.
-3.	Enter the following command to change to production mode:
+1.  Log in to your Magento server.
 
-		php bin/magento deploy:mode:set production
-3.	Enter the following command:
+1.  Change to your Magento installation directory.
 
-		find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+1.  Change to production mode.
+
+    ```bash
+    php bin/magento deploy:mode:set production
+    ```
+
+1.  Remove write permissions to the following directories.
+
+    ```bash
+    find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 #### Make code files and directories writable:
 
@@ -138,7 +144,7 @@ To set `setgid` and permissions for developer mode:
 
 ### Two Magento file system owners in production mode {#mage-owner-two-prod}
 
-When you're ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
+When you are ready to deploy your site to production, you should remove write access from files in the following directories for improved security:
 
 *	`vendor`
 *	`app/code`

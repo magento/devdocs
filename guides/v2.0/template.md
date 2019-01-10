@@ -36,11 +36,6 @@ PROVIDE TEXT HERE FOR NEXT SECTION.
 
 ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE"></p>
 
-## Related topics   {#book-related}
-
-* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
-* [Title of related topic]({{ page.baseurl }}/_____/_____.html)
-
 ## Collapsible Content
 
 ### Examples
