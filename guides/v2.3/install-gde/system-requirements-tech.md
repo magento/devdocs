@@ -62,7 +62,7 @@ The [PHP installation instructions](prereq/php-centos-ubuntu.html) include a ste
 * [spl](http://php.net/manual/en/book.spl.php){:target="_blank"}
 *	[libxml](http://php.net/manual/en/book.libxml.php){:target="_blank"}
 *	[xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
-*	[azip](http://php.net/manual/en/book.zip.php){:target="_blank"}
+*	[zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 *	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
 *	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
