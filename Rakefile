@@ -26,7 +26,12 @@ task preview: %w[install clean] do
   puts 'Generating devdocs locally ... '.magenta
   if File.exist?('_config.local.yml')
     print 'enabled the additional configuration parameters from _config.local.yml: $ '.magenta
-    sh 'bundle exec jekyll serve --incremental --open-url --livereload --trace --config _config.yml,_config.local.yml'
+    sh 'bundle exec jekyll serve --incremental \
+                                 --open-url \
+                                 --livereload \
+                                 --trace \
+                                 --config _config.yml,_config.local.yml \
+                                 --plugins _plugins,_checks'
   else
     Rake::Task['preview:all'].invoke
   end
