@@ -41,7 +41,7 @@ You can either checkout a release branch or a development branch:
 
 * Development branches, like `2.x-develop`, contain the latest changes.
 
-You can checkout a specific release branch after cloning the lastest code.
+You can checkout a specific release branch after cloning the latest code.
 
 {:.bs-callout .bs-callout-info}
 Refer to [GitHub's documentation][]{:target="_blank"} for instructions on cloning a repository.
