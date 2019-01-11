@@ -1,5 +1,25 @@
 # frozen_string_literal: true
 
+# Custom class to find double forward slashes in URLs.
+
+class DoubleSlash < ::HTMLProofer::Check
+
+  def slash?
+    @link.href.match /\w\/\//
+  end
+
+  def run
+    @html.css('a').each do |node|
+      @link = create_element(node)
+      line = node.line
+
+      if slash?
+        return add_issue("Remove double forward slashes from URL", line: line)
+      end
+    end
+  end
+end
+
 # Helper methods to configure  and run html-proofer
 module LinkChecker
   # Run html-proofer to check the generated HTML pages
