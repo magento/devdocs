@@ -2,9 +2,10 @@
 
 # Custom class to find double forward slashes in URLs.
 
-class DoubleSlash < ::HTMLProofer::Check
+class DoubleSlashCheck < ::HTMLProofer::Check
 
   def slash?
+    return false if @link.href.nil?
     @link.href.match /\w\/\//
   end
 
@@ -14,7 +15,7 @@ class DoubleSlash < ::HTMLProofer::Check
       line = node.line
 
       if slash?
-        return add_issue("Remove double forward slashes from URL", line: line)
+        return add_issue("Remove double forward slashes from URLs", line: line)
       end
     end
   end
