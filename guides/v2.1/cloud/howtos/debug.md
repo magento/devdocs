@@ -288,7 +288,7 @@ The method you choose is up to you. You have the following options:
 
 *	Check out code from Git and run `composer install`
 
-	This method works unless `composer.json` references packages in private repositories to which you don't have access. This method results in getting the entire Magento codebase.
+	This method works unless `composer.json` references packages in private repositories to which you do not have access. This method results in getting the entire Magento codebase.
 
 *	Copy the `vendor`, `app`, `pub`, `lib`, and `setup` directories
 
