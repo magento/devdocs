@@ -37,11 +37,11 @@ You cannot have a live store that accepts orders and so on.
 This section discusses how to get current code by cloning [Magento's GitHub repository][]{:target="_blank"} and checking out branches.
 You can either checkout a release branch or a development branch:
 
-* Release branches, like `2.1.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool][].
+* Release branches, like `2.x.0`, are more stable. You _must_ use a release branch with the [Data Migration Tool][].
 
-* Development branches, like `2.2-develop`, contain the latest changes.
+* Development branches, like `2.x-develop`, contain the latest changes.
 
-Currently, the `2.2-develop` branch is the default, but you can checkout a release branch, like `2.1.0`, after cloning.
+You can checkout a specific release branch after cloning the lastest code.
 
 {:.bs-callout .bs-callout-info}
 Refer to [GitHub's documentation][]{:target="_blank"} for instructions on cloning a repository.
