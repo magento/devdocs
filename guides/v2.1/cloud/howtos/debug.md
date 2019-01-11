@@ -10,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-We recommend using Xdebug for your PHP debugging. The following sections detail how to configure Xdebug and PhpStorm to work locally with settings in your environments. You can use any IDE of your choice. Please see the vendor documentation for those applications for further configuration information.
+We recommend using Xdebug for your PHP debugging. The following sections detail how to configure Xdebug and PhpStorm to work locally with settings in your environments. You can use any IDE of your choice. See the vendor documentation for those applications for further configuration information.
 
 To set up Xdebug, you need to [configure](#configure) a file in your Git repo, configure your IDE PhpStorm, and set up port forwarding. You will configure settings in the `magento.app.yaml` file. After editing, you can push the Git changes across all Starter environments and Pro Integration environments to enable Xdebug. To push these settings to Pro plan Staging and Production environments, you must enter a ticket.
 
@@ -144,7 +144,7 @@ To troubleshoot the connection:
 
 #### Port forwarding on Windows {#portwindows}
 
-To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use other applications such as Cygwin. For more information on other applications, please see the vendor documentation provided with those applications.
+To set up port forwarding (SSH tunneling) on Windows, you will configure your Windows terminal application. For this example, we walk through creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). You can use other applications such as Cygwin. For more information on other applications, see the vendor documentation provided with those applications.
 
 To set up an SSH tunnel on Windows using Putty:
 
@@ -231,7 +231,7 @@ To start debugging, use the following commands with the environment URL:
 
         ?XDEBUG_SESSION_STOP=KEY
 
-Please note, `XDEBUG_SESSION_START`passed by `POST` requests are not supported at this time.
+Note, `XDEBUG_SESSION_START`passed by `POST` requests are not supported at this time.
 
 ## Debug CLI commands {#debugcli}
 
