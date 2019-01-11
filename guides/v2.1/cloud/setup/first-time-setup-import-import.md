@@ -251,7 +251,7 @@ To add your {{site.data.var.ee}} encryption key:
 1.  Save your changes to `env.php` and exit the text editor.
 
     {:.bs-callout .bs-callout-info}
-    Make sure to add this key to the `env.php` file for all environments: Integration, Staging, and Production.
+    You must add this key to the `env.php` file for all environments: Integration, Staging, and Production.
 
 ## Import media {#media}
 
@@ -298,7 +298,7 @@ To verify everything imported properly, perform the following tasks in your loca
     ```
 
 1.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the username and password of your {{site.data.var.ee}} system.
-1.  Make sure settings in the Admin are the same as your {{site.data.var.ee}} system.
+1.  Verify the settings in the Admin are the same as your {{site.data.var.ee}} system.
 1.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
-1.  Make sure categories, products, and so on display as you expect.
+1.  Confirm that categories, products, and other content display as expected.
 1.  Test everything thoroughly.

@@ -19,7 +19,7 @@ functional_areas:
 
 To develop, deploy, and test {{site.data.var.ece}}, you need to setup your local environment and clone your project's master Git branch. This local environment provides a development system for your custom code, extensions, and configurations to push for active testing in one of the Integration environments.
 
-This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps or have an existing Magento developer environment, make sure to review the expected results to continue to the next. Some configurations and workflows differ for {{site.data.var.ee}} than a typical Enterprise Edition installation.
+This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps or have an existing Magento developer environment, use the following to review the expected results to continue to the next step. Some configurations and workflows differ for {{site.data.var.ee}} than a typical Enterprise Edition installation.
 
 ## Set up an account {#newaccount}
 

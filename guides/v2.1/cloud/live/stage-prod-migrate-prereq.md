@@ -20,7 +20,7 @@ This information is broken down into prerequisite steps for [Starter](#starter) 
 
 ## Starter plan projects {#starter}
 
-For Starter, make sure all of your code is merged into a single development branch to test prior to deployment to Production. Due to all of your branches and environments being on a PaaS infrastructure, you only need access information for Master Production and other environments as needed. This access information includes your store URLs and SSH link.
+For Starter, verify all of your code merged into a single development branch to test prior to deployment to Production. Due to all of your branches and environments being on a PaaS infrastructure, you only need access information for Master Production and other environments as needed. This access information includes your store URLs and SSH link.
 
 You can deploy to your environments, including all .yaml configuration files, migrate files and data, all through CLI commands using SSH.
 
@@ -41,7 +41,7 @@ You can locate your URLs through the Project Web Interface. For each selected en
 
 ## Pro plan projects {#pro}
 
-For Pro plan projects, make sure to complete all development and merging of your code to the `master` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
+For Pro plan projects, you must merge your completed development code to the `integration` environment branch. Only the Integration environment branch can deploy to Staging, then Production.
 
 {% include cloud/wings-management.md %}
 

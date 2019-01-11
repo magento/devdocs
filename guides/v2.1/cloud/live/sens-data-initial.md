@@ -151,7 +151,7 @@ Before you can change settings on the Integration environment, delete `app/etc/c
 
 To delete `config.local.php`:
 
-1.	On your local workstation, make sure you're on the `master` branch.
+1.	On your local workstation, check out the `master` branch.
 2.	SSH to the integration server:
 
 		magento-cloud ssh

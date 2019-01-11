@@ -43,14 +43,14 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
         composer update
 
-    You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, make sure no additional spaces are included. Spaces could cause the following error:
+    You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, do not introduce additional spaces. Spaces could cause the following error:
 
         InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
 
 5. Add the new B2B files to Git:
 
         git add setup dev pub lib && git commit -a -m "b2b"
-5. Enable all missing modules,including B2B, for updating.
+5. Enable all missing modules, including B2B, for updating.
 
         ./vendor/bin/ece-tools module:refresh
 

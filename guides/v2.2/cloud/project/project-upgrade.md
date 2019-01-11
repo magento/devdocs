@@ -22,7 +22,7 @@ Prepare your environment with the following tasks:
 {% include cloud/note-ece-tools-package.md %}
 
 ### Upgrade PHP version
-{{site.data.var.ece}} 2.2 supports PHP 7.1 and later. Make sure to upgrade the version of PHP on your local development workspace as well. For more information, see the following:
+{{site.data.var.ece}} 2.2 supports PHP 7.1 and later. You can upgrade the version of PHP on your local development workspace.
 
 * [PHP]({{ site.baseurl }}/guides/v2.2/cloud/before/before-workspace-magento-prereqs.html#php) information for your local Magento workstation
 * [Migrating PHP](http://php.net/manual/en/migration71.php)

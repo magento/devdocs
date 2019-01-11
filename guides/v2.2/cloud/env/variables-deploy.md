@@ -77,7 +77,7 @@ deploy updates to existing files without removing the previous versions. Because
 -  **Default**—`cron_run = false`, `max_messages = 1000`
 -  **Version**—Magento 2.2.0 and later
 
-Use this environment variable to make sure message queues are running after a deployment.
+Use this environment variable to confirm message queues are running after a deployment.
 
 -   `cron_run`—A boolean value that enables or disables the `consumers_runner` cron job (default = `false`).
 -   `max_messages`—A number specifying the maximum number of messages each consumer must process before terminating (default = `1000`). Although we do not recommend it, you can use `0` to prevent the consumer from terminating.
