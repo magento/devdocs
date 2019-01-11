@@ -16,7 +16,7 @@ functional_areas:
 #### Previous step:
 [Set up the Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html)
 
-The {{site.data.var.ee}} project is a Git repository of Magento code with a master origin. You can develop your custom code and add extensions using an active branch that you clone in your local workstation. Each **active** environment includes a database and services to fully access the Magento site and store in the Integration environment.
+The {{site.data.var.ece}} project is a Git repository of Magento code. Each **active** branch in the Integration environment includes a database and services to fully access the Magento site and store. You can clone the project and create an **active** branch from the Integration environment to develop code and add extensions using your local workstation.
 
 ## Clone the project
 
@@ -29,7 +29,7 @@ Some Git commands cannot complete an action in your {{site.data.var.ece}} projec
 
 1.  Log in to your local workstation with a [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html) account.
 
-1.  Change to the web server or virtual host _docroot_.
+1.  Change to the web server or virtual host _docroot_ directory.
 
 1.  Log in to the Magento Cloud CLI.
 
