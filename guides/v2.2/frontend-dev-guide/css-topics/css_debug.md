@@ -63,8 +63,8 @@ The following table describes the grunt commands you can use to perform differen
 Grunt task | Action 
 ---------- | ------- 
 grunt clean | Removes the theme related static files in the `pub/static` and `var` directories.
-grunt exec | Republishes symlinks to the source files to the `pub/static/frontend///` directory.
-grunt less | Compiles `.css` files using the symlinks published in the `pub/static/frontend///` directory.
+grunt exec | Republishes symlinks to the source files to the `pub/static/fronte/` directory.
+grunt less | Compiles `.css` files using the symlinks published in the `pub/static/fronte/` directory.
 grunt watch | Tracks the changes in the source files, recompiles `.css` files, and reloads the page in the browser.
 {:style="table-layout:auto"}
 
