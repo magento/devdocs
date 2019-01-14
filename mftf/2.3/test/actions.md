@@ -778,8 +778,7 @@ See [dontSeeElementInDOM docs on codeception.com](http://codeception.com/docs/mo
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
-`parameterArray`|string|optional|
-`attributeArray`|string|optional|
+`parameterArray`|string|optional| Array of parameters to search for within the selector.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1084,8 +1083,8 @@ Attribute|Type|Use|Description
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional| Value for the form field.
-`locale`|string|optional|
+`userInput`|string|optional| Value for the money form field.
+`locale`|string|optional| The PHP locale value for the store.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1421,7 +1420,7 @@ See [moveMouseOver docs on codeception.com](http://codeception.com/docs/modules/
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
-`selectorArray`|string|optional|
+`selectorArray`|string|optional| Array of selectors.
 `x`|string|optional| Number of pixels on the x-axis to offset from the selected element.
 `y`|string|optional| Number of pixels on the y-axis to offset from the selected element.
 `stepKey`|string|required| A unique identifier of the action.
@@ -1445,8 +1444,8 @@ Attribute|Type|Use|Description
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional|
-`locale`|string|optional| PHP locale value to be set.
+`userInput`|string|optional| Value of the expected locale.
+`locale`|string|optional| Number of the locale value to be set.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
