@@ -50,7 +50,7 @@ To remove the component:
 
         composer remove <component-name>:<version>
 
-    If the following message displays, you don't need to do anything further:
+    If the following message displays, you do not need to do anything further:
 
     	Package "<name>:<version>" listed for update is not installed. Ignoring.
 
