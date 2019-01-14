@@ -4,13 +4,85 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: 2018-12-20 14:21:59 -0600
+updated: 2019-01-14 14:11:39 -0600
 entries:
+- description: Updated the [availability timeline](https://devdocs.magento.com/availability)
+    for the Amazon Sales Channel extension.
+  versions: 'N/A'
+  type: Major update
+  date: January 10, 2019
+  link: https://github.com/magento/devdocs/pull/3552
+- description: "Added new topics to Integrations Testing Framework annotations
+    describing:<br/>- [@magentoAppArea](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/magento-app-area.html)<br/>-
+    [@magentoAppIsolation](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/magento-app-isolation.html)<br/>-
+    [@magentoCache](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/magento-cache.html)<br/>-
+    [@magentoComponentsDir](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/magento-components-dir.html)<br/>-
+    [@magentoConfigFixture](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/magento-config-fixture.html)<br/>-
+    [@magentoDataFixture](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/magento-data-fixture.html)<br/>-
+    [@magentoDbIsolation](https://devdocs.magento.com/guides/v2.3/test/integration/annotations/magento-db-isolation.html)"
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: January 10, 2019
+  link: https://github.com/magento/devdocs/pull/2665
+- description: Rewrite the [developer installation](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/dev_install.html)
+    topic for clarity and readability.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: January  4, 2019
+  link: https://github.com/magento/devdocs/pull/3512
+- description: Added information about [generating a local Swagger instance](https://devdocs.magento.com/guides/v2.3/rest/generate-local.html)
+    that lists asynchronous APIs.
+  versions: 2.3.x
+  type: Technical changes
+  date: January  3, 2019
+  link: https://github.com/magento/devdocs/pull/3513
+- description: Updated the [Blackfire.io integration](https://devdocs.magento.com/guides/v2.2/cloud/project/project-integrate-blackfire.html)
+    topic to include the `blackfire:setup` command for Magento Cloud CLI.
+  versions: 2.3.x
+  type: Technical changes
+  date: December 21, 2018
+  link: https://github.com/magento/devdocs/pull/3484
+- description: MFTF 2.3.12 was released:<br/>- Added more documentation with examples
+    for [`<value>`](https://devdocs.magento.com/mftf/2.3/metadata.html#value-tag)
+    in metadata array.<br/>- Added use of reference to data field in `url` of [metadata
+    operation](https://devdocs.magento.com/mftf/2.3/metadata.html#operation-tag).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: December 21, 2018
+  link: https://github.com/magento/devdocs/pull/3431
+- description: Added information about retrieving Fastly credentials from project
+    environment variables and updated information about how to manage Magento Commerce
+    Cloud project domains associated with an existing Fastly account. See [Get Fastly
+    credentials](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: December 21, 2018
+  link: https://github.com/magento/devdocs/pull/3479
+- description: Updated links and information for [Test your component](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/validate/test-module.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: December 21, 2018
+  link: https://github.com/magento/devdocs/pull/3489
+- description: Updated Translations content and added information for Community Engineering
+    in [Translations overview](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/translations/xlate.html),
+    [Use translation dictionary to customize strings](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/translations/theme_dictionary.html),
+    [Translate theme strings](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/translations/translate_theory.html),
+    [Example theme translation dictionary](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/translations/translate_practice.html),
+    and [Translation dictionaries and language packages](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-i18n.html).
+  versions: 2.x
+  type: Major update
+  date: December 20, 2018
+  link: https://github.com/magento/devdocs/pull/3487
+- description: Added a topic about Inventory Management [reservations](https://devdocs.magento.com/guides/v2.3/inventory/reservations.html)
+  versions: 2.3.x
+  type: New topic
+  date: December 20, 2018
+  link: https://github.com/magento/devdocs/pull/3454
 - description: Added a missing parameter to the message queue consumer [reference
     documentation](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-queue.html).
   versions: 2.x
   type: Major update
-  date: December 15 2018
+  date: December 15, 2018
   link: https://github.com/magento/devdocs/pull/3456
 - description: Added information for the `setup:di:compile` step for [Install extensions
     from the command line](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html),
@@ -18,7 +90,7 @@ entries:
     and [Create an integration](https://devdocs.magento.com/guides/v2.2/get-started/create-integration.html).
   versions: 2.2.x, 2.3.x
   type: Technical changes
-  date: December 15 2018
+  date: December 15, 2018
   link: https://github.com/magento/devdocs/pull/3466
 - description: Added a note in Cloud guide about using PHP constants with certain
     versions of the `symfony/yaml` package.
@@ -2389,7 +2461,7 @@ entries:
 - description: '[Magento UI components explained](https://devdocs.magento.com/guides/v2.1/ui_comp_guide/ui_component_explained.html)'
   versions: 2.1.x
   type: New
-  date: Dec 30 (includes week ending Dec 23)
+  date: Dec 30 2016
 - description: '[Magento Community Edition (CE) 2.1.3 Release Notes](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.3CE.html)'
   versions: 2.1.3
   type: New
