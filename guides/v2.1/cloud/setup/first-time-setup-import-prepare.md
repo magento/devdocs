@@ -206,7 +206,7 @@ You must paste the encryption key into your {{site.data.var.ece}} `env.php` file
 
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
 
-The following command example compresses the dump so it does not significantly interfere with traffic from in live site. The dump file is named `db.sql.gz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
+The following example compresses the dump so that it does not significantly interfere with traffic from a live site. The dump file is named `db.sql.gz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
 
 1. In your existing environment, create a database dump.
 
