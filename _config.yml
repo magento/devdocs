@@ -197,7 +197,6 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
-  - gulpfile.js
   - package.json
   - package-lock.json
   - Rakefile

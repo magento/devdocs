@@ -69,7 +69,7 @@ Attribute | Description
 --- | ---
 `name` | The name of the table
 `engine` | SQL engine. This value must be `innodb` or `memory`.
-`resource` | The database shard on which to install the table. This value must be `default`, `quote`, or `sales`.
+`resource` | The database shard on which to install the table. This value must be `default`, `checkout`, or `sales`.
 `comment` | Table comment
 {:style="table-layout:auto;"}
 
@@ -346,7 +346,7 @@ The following example adds the `INDEX_SEVERITY` index to the `declarative_table`
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id_column"/>
         </constraint>
-+       <index name="INDEX_SEVERITY" indexType="btree">
++       <index referenceId="INDEX_SEVERITY" indexType="btree">
 +           <column name="severity"/>
 +       </index>
     </table>
@@ -391,7 +391,7 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
         </constraint>
 -       <constraint xsi:type="foreign" referenceId="FL_ALLOWED_SEVERITIES" table="declarative_table" 
 -               column="severity" referenceTable="severities" referenceColumn="severity_identifier" 
--               HonDelete="CASCADE"/>
+-               onDelete="CASCADE"/>
     </table>
 </schema>
 ```
