@@ -24,7 +24,7 @@ entries:
   type: New topic
   date: January 10, 2019
   link: https://github.com/magento/devdocs/pull/2665
-- description: Rewrite the [developer installation](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/dev_install.html)
+- description: Rewrote the [developer installation](https://devdocs.magento.com/guides/v2.3/install-gde/prereq/dev_install.html)
     topic for clarity and readability.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
