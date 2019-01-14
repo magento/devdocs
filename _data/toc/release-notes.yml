@@ -16,6 +16,9 @@ pages:
         - label: Magento Commerce 2.3.0 Release Notes
           url: /release-notes/ReleaseNotes2.3.0Commerce.html
 
+        - label: Magento Inventory Management Release Notes
+          url: /release-notes/releasenotes-inventory-management.html
+
     - label: 2.2 Release Notes
       include_versions: ["2.2"]
       children:
