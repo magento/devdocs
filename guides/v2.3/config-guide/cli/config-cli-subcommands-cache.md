@@ -24,7 +24,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
       <td><p>Configuration</p></td>
       <td><p>config</p></td>
       <td><p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
-	<p>Clean or flush this cache type after modifying configuration files.</p></td>
+      <p>Clean or flush this cache type after modifying configuration files.</p></td>
     </tr>
     <tr>
       <td><p>Layout</p></td>
@@ -178,6 +178,9 @@ To purge out-of-date items from the cache, you can *clean* or *flush* cache type
 -   Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.
 
     Disabled cache types are not cleaned.
+
+    {:.bs-callout .bs-callout-tip}
+    Always clean the cache after upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, or installing {{site.data.var.b2b}} or any module.
 
 -   Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
 

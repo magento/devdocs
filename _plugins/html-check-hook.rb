@@ -21,11 +21,13 @@ Jekyll::Hooks.register :site, :post_write do |site|
     #
     checks_config = YAML.load_file('_config.checks.yml')
     url_ignore = checks_config.dig('html-proofer', :url_ignore)
-    unless url_ignore.nil?
-      jekyll_excludes = site.config['exclude']
-      jekyll_excludes_as_regex = jekyll_excludes.map { |item| Regexp.new Regexp.escape(item) }
+    jekyll_excludes = site.config['exclude']
+    jekyll_excludes_as_regex = jekyll_excludes.map { |item| Regexp.new Regexp.escape(item) }
+
+    if url_ignore
       url_ignore.push(jekyll_excludes_as_regex).flatten!.uniq!
-      checks_config['html-proofer'][:url_ignore] = url_ignore
+    else
+      checks_config['html-proofer'].merge!({ url_ignore: jekyll_excludes_as_regex })
     end
 
     # Read configuration options for html-proofer
@@ -36,7 +38,8 @@ Jekyll::Hooks.register :site, :post_write do |site|
 
   # Show the message when html-proofer fails.
   # Expected that it fails when it finds broken links.
-  rescue StandardError
+  rescue StandardError => msg
+    puts msg
     puts 'Fix the broken links before you push the changes to remote branch.'.blue
   end
 end

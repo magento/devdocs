@@ -50,7 +50,7 @@ JS resources are accessed using relative paths.
 
 **Example 2**
 
-- File actual location: `app/code/design/frontend/Magento/blank/web/js/theme.js`
+- File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
 - File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
 - Called in script:
     ```javascript

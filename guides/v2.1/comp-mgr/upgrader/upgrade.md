@@ -29,13 +29,21 @@ Messages similar to the following display in the Console Log:
 
 {% endcollapsible %}
 
+## Clean the Magento cache
+
+Clean the Magento cache:
+
+```bash
+bin/magento cache:clean
+```
+
 ## Manually clear directories
 
 After the upgrade completes, manually clear `var` subdirectories:
 
 	rm -rf <Magento install dir>/var/cache/*
 	rm -rf <Magento install dir>/var/page_cache/*
-	rm -rf <Magento install dir>/var/generation/* 
+	rm -rf <Magento install dir>/var/generation/*
 
 ## Restart Varnish
 
@@ -55,7 +63,7 @@ After you finish your upgrade, errors might display.
 *	On a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page, the following error might display:
 
 		We can't find products matching the selection.
-	
+
 If any of the preceding errors display, perform all of the following tasks.
 
 {% include install/sampledata/file-sys-perms-digest.md %}
