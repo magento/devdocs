@@ -31,8 +31,12 @@ Additional folders can be added for configuration and other ancillary functions 
 
 * `Api`: contains any PHP classes exposed to the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 * `Console`: contains CLI commands. For more info, see [Add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html).
+* `CustomerData`: contains section files.
+* `Helper`: contains aggregated functionality.
 * `i18n`: contains localization files.
+* `Observer`: contains files for executing commands from the listener.
 * `Plugin`: contains any needed [plug-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html).
+* `UI`: contains data generation files.
 * `view`: contains view files, including static view files, design templates, email templates, and layout files.
 
 ### Theme file structure
