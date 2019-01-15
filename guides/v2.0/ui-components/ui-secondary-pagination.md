@@ -22,7 +22,7 @@ Example:
 
 `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <container name="page_listing_top">
         <paging name="listing_paging">
@@ -38,7 +38,7 @@ Example:
         </paging>
     </container>
 </listing>
-{% endhighlight %}
+```
 
 The configuration of the component can include:
 

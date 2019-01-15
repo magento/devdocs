@@ -22,6 +22,9 @@ The `X-Frame-Options` header enables you to specify whether or not a browser sho
 *	`ALLOW-FROM <uri>`: Page can be displayed only in a frame on the specified origin.
 
 {: .bs-callout .bs-callout-warning }
+The Chrome and Safari browsers do not support the `ALLOW-FROM` option. [Browser Compatibility](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options#Browser_compatibility) provides details about this feature.
+
+{: .bs-callout .bs-callout-warning }
 For security reasons, Magento strongly recommends against running the Magento storefront in a frame.
 
 ## Implement `X-Frame-Options`
