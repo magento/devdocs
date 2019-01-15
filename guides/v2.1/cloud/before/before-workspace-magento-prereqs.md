@@ -77,7 +77,7 @@ When you're working with the Magento Cloud CLI, local environment settings come 
 
 To set `memory_limit`:
 
-Before working with your {{site.data.var.ece}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+Before working with your {{site.data.var.ece}} project, set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
 1.	Find your `php.ini` file using the following command:
 

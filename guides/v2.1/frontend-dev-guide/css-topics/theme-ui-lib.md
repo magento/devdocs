@@ -145,15 +145,15 @@ The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-
 
 <!-- Link definitions -->
 
-[`lib/web/css/docs/source/README.md`]: {{ site.mage2100url }}/lib/web/css/docs/source/README.md
+[`lib/web/css/docs/source/README.md`]: {{ site.mage2100url }}lib/web/css/docs/source/README.md
 
-[`lib/web/css/docs`]: {{ site.mage2100url }}/lib/web/css/docs
+[`lib/web/css/docs`]: {{ site.mage2100url }}lib/web/css/docs
 
-[`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables/_breadcrumbs.less
+[`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2100url }}lib/web/css/source/lib/variables/_breadcrumbs.less
 
-[`lib/web/css/source/lib/variables`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables
+[`lib/web/css/source/lib/variables`]: {{ site.mage2100url }}lib/web/css/source/lib/variables
 
-[`lib/web/css`]: {{ site.mage2100url }}/lib/web/css
+[`lib/web/css`]: {{ site.mage2100url }}lib/web/css
 
 [embedded documentation]: #docs
 [inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
