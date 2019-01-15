@@ -8,7 +8,7 @@ menu_order: 8
 
 ## Overview of code generation   {#codegen-over}
 
-The Magento application generates code to create non-existent classes. As an example, look at the [\\Magento\\Customer\\Model\\Resource\\AddressRepository]({{ site.mage2000url }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php){: target="_blank"} constructor. A snippet follows:
+The Magento application generates code to create non-existent classes. As an example, look at the [\\Magento\\Customer\\Model\\Resource\\AddressRepository]({{ site.mage2000url }}app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php){: target="_blank"} constructor. A snippet follows:
 
 	...
 	    public function __construct(
