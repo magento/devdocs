@@ -22,9 +22,9 @@ If you're accustomed to using the Web Setup Wizard during development, be aware 
 
 ## A note about nginx
 
-If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2200url }}nginx.conf.sample){:target="_blank"} file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
+If you are using [nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) and the [`nginx.conf.sample`]({{ site.mage2200url }}nginx.conf.sample) file included in the Magento installation directory, you are probably already serving files from the `pub/` directory.
 
-The sample configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory, assuming you have referenced the `nginx.conf.sample` in the server block that defines your site. For example, see the last line in the following configuration:
+When used in your server block that defines your site, the `nginx.conf.sample` configuration overrides your server's docroot settings to serve files from Magento's `pub/` directory. For example, see the last line in the following configuration:
 ```bash
     # /etc/nginx/sites-available/magento
 
@@ -40,6 +40,7 @@ The sample configuration overrides your server's docroot settings to serve files
               include /var/www/html/magento2ce/nginx.conf.sample;
     }
 ```
+
 ## Before you begin
 
 To complete this tutorial, you will need access to a working Magento installation running on a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack:
