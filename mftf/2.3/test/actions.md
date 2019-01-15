@@ -220,7 +220,7 @@ See [amOnPage docs on codeception.com](http://codeception.com/docs/modules/WebDr
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional| A path to the page relative to the MAGENTO_BASE_URL.
+`url`|string|optional| A path to the page relative to the `MAGENTO_BASE_URL`.
 `stepKey`|string|required|A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -266,7 +266,7 @@ See [amOnUrl docs on codeception.com](http://codeception.com/docs/modules/WebDri
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional| Absolute URL to be used in subsequent steps.
+`url`|string|optional| The absolute URL to be used in subsequent steps.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -409,7 +409,7 @@ See [clickWithLeftButton docs on codeception.com](http://codeception.com/docs/mo
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
-`selectorArray`|string|optional| Selects an element as a key value array. See [strict locator]
+`selectorArray`|string|optional| Selects an element as a key value array; See [strict locator].
 `x`|string|optional| The x-axis value in pixels for the click location.
 `y`|string|optional| The y-axis value in pixels for the click location.
 `stepKey`|string|required|A unique identifier of the action.
@@ -441,7 +441,7 @@ See [clickWithRightButton docs on codeception.com](http://codeception.com/docs/m
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
-`selectorArray`|string|optional| Selects an element as a key value array. See [strict locator]
+`selectorArray`|string|optional| Selects an element as a key value array; See [strict locator].
 `x`|string|optional| The x-axis value in pixels for the click location.
 `y`|string|optional| The y-axis value in pixels for the click location.
 `stepKey`|string|required| A unique identifier of the action.
@@ -1042,7 +1042,7 @@ See [executeJS docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`function`|string|optional| Javascript to be executed.
+`function`|string|optional| JavaScript to be executed.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1515,7 +1515,7 @@ See [performOn docs on codeception.com](http://codeception.com/docs/modules/WebD
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
-`function`|string|optional| Function or Actions to be taken on the selected element.
+`function`|string|optional| Function or actions to be taken on the selected element.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1794,7 +1794,7 @@ See [seeCurrentUrlEquals docs on codeception.com](http://codeception.com/docs/mo
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`url`|string|optional| Full url to be searched for.
+`url`|string|optional| The full URL to be searched for.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1952,7 +1952,7 @@ See [seeInPopup docs on codeception.com](http://codeception.com/docs/modules/Web
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`userInput`|string|optional| String to be searched for within the popup
+`userInput`|string|optional| String to be searched for within the popup.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2294,7 +2294,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
 `userInput`|string|optional| The name of the option to deselect.
-`parameterArray`|string|optional| Array of options to be unselected.
+`parameterArray`|string|optional| Array of options to be deselected.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2331,7 +2331,7 @@ Only the fields that you want to update are set.
 Attribute|Type|Use|Description
 ---|---|---|---
 `storeCode`|string|optional| ID of the store in which to apply the updated data.
-`entity`|string|required| The name of the updateData entity being created.
+`entity`|string|required| The name of the `updateData` entity being created.
 `createDataKey`|string|required| Key of the data entity to be updated.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
@@ -2426,7 +2426,7 @@ See [waitForElementNotVisible docs on codeception.com](http://codeception.com/do
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
-`time`|string|optional| The number of seconds to wait for the element to become non-visible.
+`time`|string|optional| The number of seconds to wait for the element to become not visible.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -2465,8 +2465,8 @@ See [waitForJS docs on codeception.com](http://codeception.com/docs/modules/WebD
 
 Attribute|Type|Use|Description
 ---|---|---|---
-`function`|string|optional| The function to be run after all javascript finishes.
-`time`|string|optional| The number of seconds to wait for javascript to finish.
+`function`|string|optional| The function to be run after all JavaScript finishes.
+`time`|string|optional| The number of seconds to wait for JavaScript to finish.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
