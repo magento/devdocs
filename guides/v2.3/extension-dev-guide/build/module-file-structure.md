@@ -31,6 +31,7 @@ Additional folders can be added for configuration and other ancillary functions 
 
 * `Api`: contains any PHP classes exposed to the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 * `Console`: contains CLI commands. For more info, see [Add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html).
+* `Cron`: contains cron job definitions.
 * `CustomerData`: contains section files.
 * `Helper`: contains aggregated functionality.
 * `i18n`: contains localization files.
