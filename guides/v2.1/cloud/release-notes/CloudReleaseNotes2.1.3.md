@@ -66,7 +66,7 @@ This section discusses how to update your [integration]({{ page.baseurl }}/cloud
 
 Elasticsearch is supported by Magento Cloud Enterprise Edition 2.1.x only.
 
-If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you don't need to do this because Elasticsearch is already the default search engine.
+If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you do not need to do this because Elasticsearch is already the default search engine.
 
 To use Elasticsearch on a [staging]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) or [production]({{ page.baseurl }}/cloud/architecture/cloud-architecture.html) system, open a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) and request Elasticsearch.
 
