@@ -39,8 +39,10 @@ When the request for my_page comes, the server does the following:
 
 1. Determines which UI components are used in this particular layout. In the example, the UI components that are used are defined in the `my_form` component’s `.xml` declaration file.
 2. Searches the `.xml` files with name `my_form` among all modules. The server then merges all the `my_form .xml` file(s) into a single configuration object, thus overriding the common properties, so that the latest `my_form .xml` file always has the highest priority.
-1. Merges the resulting configuration (from Step 2 above) with the configuration from the UI module `definition.xml`. The UI module `definition.xml` configuration file has the lowest priority, and is overwritten by the merged configuration of all `my_form.xml` files.
-2. Translates the resulting configuration into JSON format and adds it to response body the following way:
+3. Merges the resulting configuration (from Step 2 above) with the configuration from the UI module `definition.xml`. The UI module `definition.xml` configuration file has the lowest priority, and is overwritten by the merged configuration of all `my_form.xml` files.
+4. Translates the resulting configuration into JSON format
+5. Merges in changes specified in .php modifiers
+6. Delivers the JSON object to the browser usimg a script tag with type="text/x-magento-init"
 
 ```html
 <script type="text/x-magento-init">{"*": {"Magento_Ui/js/core/app":{<JSON_configuration>}}}</script>
