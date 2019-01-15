@@ -384,7 +384,7 @@ Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
 `selectorArray`|string|optional| Selects an element as a key value array. See [strict locator](http://codeception.com/docs/modules/WebDriver#locating-elements){:target="_blank"}.
-`userInput`|string|optional|
+`userInput`|string|optional| Data to be sent with the click.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
 `before`|string|optional| `stepKey` of action that must be executed next.
@@ -1119,7 +1119,7 @@ Gets an entity (for example, a category), from the Magento API according to the 
 Attribute|Type|Use|Description
 ---|---|---|---
 `storeCode`|string|optional| Identifier of the store from which to get the data.
-`index`|integer|optional|
+`index`|integer|optional| The index in the returned data array.
 `entity`|string|required| Name of the entity from which to get the data.
 `stepKey`|string|required| A unique identifier of the action.
 `skipReadiness`|boolean|optional| A flag to skip the readiness check.
@@ -1654,7 +1654,7 @@ See [scrollTo docs on codeception.com](http://codeception.com/docs/modules/WebDr
 Attribute|Type|Use|Description
 ---|---|---|---
 `selector`|string|optional| The selector identifying the corresponding HTML element.
-`selectorArray`|string|optional|
+`selectorArray`|string|optional| Array of selectors to return.
 `x`|string|optional| x offset of the element to be scrolled to.
 `y`|string|optional| y offset of the element to be scrolled to.
 `stepKey`|string|required| A unique identifier of the action.
