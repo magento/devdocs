@@ -1,1 +1,0 @@
-../../v2.2/security/google-recaptcha.md
