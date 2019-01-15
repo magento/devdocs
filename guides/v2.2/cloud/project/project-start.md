@@ -49,7 +49,7 @@ In Production, each node in the three-node cluster has a `/tmp` directory that i
 
 ## Ignoring files
 
-We include a base `.gitignore` file with the {{site.data.var.ece}} project repository. See the latest [.gitignore file in the magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.gitignore). You can add an ignored file when staging a commit by using the `-f` (force) option:
+We include a base `.gitignore` file with the {{site.data.var.ece}} project repository. See the latest [.gitignore file in the magento-cloud repository](https://github.com/magento/magento-cloud/blob/master/.gitignore). If you need to add a file that is in the ignore list, you can use the `-f` (force) option when staging a commit:
 
 ```bash
 git add <path/filename> -f
@@ -80,7 +80,7 @@ Logs from the deploy hook are located on the server in the following locations:
 
 The value of `<project-ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`. Using that example, the deploy log is located at `/var/log/platform/yw1unoukjcawe_stg/post_deploy.log`.
 
-For Pro, you have a three-node structure. Each node contains logs with specific information for that node. For example, on the Production environment for the `yw1unoukjcawe` project, the deploy logs have the following locations:
+Pro projects have a three-node structure. Each node contains logs with specific information for that node. For example, on the Production environment for the `yw1unoukjcawe` project, the deploy logs have the following locations:
 
 -  **Node 1**: `/var/log/platform/1.yw1unoukjcawe/post_deploy.log`
 -  **Node 2**: `/var/log/platform/2.yw1unoukjcawe/post_deploy.log`
@@ -88,7 +88,7 @@ For Pro, you have a three-node structure. Each node contains logs with specific 
 
 The log for each deployment appends to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment. The following is a condensed example of log output that you can use for troubleshooting:
 
-```xml
+```terminal
 Re-deploying environment project-integration-ID
   Executing post deploy hook for service `mymagento`
     [2019-01-03 19:44:11] NOTICE: Starting post-deploy.  
@@ -102,6 +102,7 @@ Re-deploying environment project-integration-ID
     [2019-01-03 19:44:32] INFO: Warming up failed: http://integration-id-project.us.magentosite.cloud/
     [2019-01-03 19:44:32] NOTICE: Post-deploy is complete.  
 ```
+{: .no-copy}
 
 The deploy log contains start and stop messages for each hook, such as `Start deploy.` and `Deployment complete.`.
 
@@ -109,7 +110,7 @@ The deploy log contains start and stop messages for each hook, such as `Start de
 
 To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/ProjectID`.
 
-For Pro plan Staging, the project ID has `_stg` at the end. For example, if you receive 500 errors in Staging and want to review the NGINX logs, you can log in using SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`. For Pro plan Production, there are three nodes to check for logs.
+For Pro plan Staging, the project ID has `_stg` at the end. For example, if you receive `500` errors in Staging and want to review the NGINX logs, you can log in using SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`. For Pro plan Production, there are three nodes to check for logs.
 
 ## Change base template
 
