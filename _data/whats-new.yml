@@ -2302,7 +2302,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Mar 24 2017
-- description: '[Tutorial: Order processing](https://devdocs.magento.com/guides/v2.1//rest/tutorials/orders/order-intro.html)'
+- description: '[Tutorial: Order processing](https://devdocs.magento.com/guides/v2.1/rest/tutorials/orders/order-intro.html)'
   versions: 2.1.x
   type: New
   date: Mar 23 2017
