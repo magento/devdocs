@@ -59,7 +59,7 @@ To prepare, verify that your settings and environment variables are correct.
 
 ### Verify code
 
-We strongly recommend working in your local development environment, deploying to Integration, deploying to Staging, and, finally, deploying to Production. All code should match 100% across each of these environments. Before submitting a ticket, make sure you sync your code. This process creates a new branch of code for Staging and Production environments.
+We strongly recommend working in your local development environment, deploying to Integration, deploying to Staging, and, finally, deploying to Production. All code should match 100% across each of these environments. You must sync your code before submitting a ticket. This process creates a new branch of code for Staging and Production environments.
 
 If you have additional code, such as new extensions in your Production environment without following this workflow, then deployments from Integration or Staging **overwrite** your Production code.
 

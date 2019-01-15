@@ -34,7 +34,7 @@ To cut over to the new site:
 
 ## Test the live store {#test}
 
-Complete a few UAT tests in your live store to make sure everything is loading and actions complete correctly. For a list of tests, see [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
+Complete a few UAT tests in your live store to confirm everything is loading and actions complete correctly. For a list of tests, see [Test deployment]({{ page.baseurl }}/cloud/live/stage-prod-test.html).
 
 ## Post-Launch {#postlaunch}
 
