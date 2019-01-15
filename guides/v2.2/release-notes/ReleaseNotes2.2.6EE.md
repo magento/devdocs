@@ -1168,7 +1168,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 	* `app/code/Magento/Sales/view/adminhtml/templates/order/totals.phtml`. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16891](https://github.com/magento/magento2/pull/16891)*. 
 
 
-<!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code//Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`). *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16889](https://github.com/magento/magento2/pull/16889)*. 
+<!-- ENGCOM-2404 -->* Improved product gallery block helper code (`app/code/Catalog/Block/Adminhtml/Product/Helper/Form/Gallery.php`). *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16889](https://github.com/magento/magento2/pull/16889)*. 
 
 <!-- ENGCOM-2388 -->* Removed duplicated string from `app/code/Magento/ProductVideo/i18n/en_US.csv`. *Fix submitted by [Valerij Ivashchenko](https://github.com/likemusic) in pull request [16882](https://github.com/magento/magento2/pull/16882)*. 
 

@@ -124,7 +124,7 @@ Managing store configuration is a complex task mostly up to you. What locales do
 
 We **strongly recommend** using the `scd-dump` command to generate a `config.local.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
-To fully understand the process, please see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
+To fully understand the process, see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
 The **Starter plan** environment high-level overview of this process:
 
