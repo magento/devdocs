@@ -20,7 +20,7 @@ At this time, Two-Factor Authentication can be installed only from the command l
 
 ## Install 2FA
 
-The 2FA extension installs when you install or upgrade to Magento Open Source or Commerce 2.3.X. 
+The 2FA extension installs when you install or upgrade to Magento Open Source or Commerce 2.3.X. This extensions installs like a Core Bundled Extension (CBE).
 
 ## Configure and manage 2FA
 
