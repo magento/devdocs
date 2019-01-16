@@ -23,7 +23,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
 **Payload**
 ``` json
-{
+[{
   "option": {
     "product_sku": "MS-Champ",
     "title": "Add Your Name (Max 15 Characters)",
@@ -35,7 +35,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
     "sku": "Personalized",
     "max_characters": 15
   }
-}
+}]
 
 ```
 
