@@ -59,7 +59,7 @@ git add <path/filename> -f
 
 The `/var/log` directory contains logs for all environments. Use the `magento-cloud ssh` command to log in to the environment to access the `/var/log` directory.
 
-For Pro, the deployment log for Staging and Production is in `/var/log/platform` directory. Magento-specific logs are in the `<magento-root-dir>/var/log` directory.
+For Pro, the deployment log for Staging and Production is in the `/var/log/platform` directory. Magento-specific logs are in the `<magento-root-dir>/var/log` directory. Pro projects have a three-node structure and each node contains logs with specific information for that node.
 
 {:.bs-callout .bs-callout-tip}
 You can also [set up log-based Slack and email notifications]({{ page.baseurl }}/cloud/env/setup-notifications.html).
@@ -70,17 +70,15 @@ After pushing changes to your environment, you can observe the build results in 
 
 ### Deploy logs
 
-You can review these logs via SSH into the environment. Change to the directories listed below to review the logs.
-
-Logs from the deploy hook are located on the server in the following locations:
+You can review the logs from the deploy hook in the following directories:
 
 -  **Integration**: `/var/log/deploy.log`
 -  **Staging**: `/var/log/platform/<project-ID>_stg/post_deploy.log`
 -  **Production**: `/var/log/platform/<node-{1|2|3}>.<project-ID>/post_deploy.log`
 
-The value of `<project-ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`. Using that example, the deploy log is located at `/var/log/platform/yw1unoukjcawe_stg/post_deploy.log`.
+The value of `<project-ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`. Using that example, the deploy log is: `/var/log/platform/yw1unoukjcawe_stg/post_deploy.log`
 
-Pro projects have a three-node structure. Each node contains logs with specific information for that node. For example, on the Production environment for the `yw1unoukjcawe` project, the deploy logs have the following locations:
+Pro projects have a three-node structure and each node contains logs with specific information for that node. For example, on the Production environment for the `yw1unoukjcawe` project, the deploy logs have the following locations:
 
 -  **Node 1**: `/var/log/platform/1.yw1unoukjcawe/post_deploy.log`
 -  **Node 2**: `/var/log/platform/2.yw1unoukjcawe/post_deploy.log`
@@ -104,13 +102,13 @@ Re-deploying environment project-integration-ID
 ```
 {: .no-copy}
 
-The deploy log contains start and stop messages for each hook, such as `Start deploy.` and `Deployment complete.`.
+The deploy log contains start and stop messages for each hook: such as `Start deploy.` and `Deployment complete.`
 
 ### Application logs
 
-To review other application logs in Staging or Production, you can access and review those logs in `/var/log/platform/ProjectID`.
+You can access and review other application logs, such as 'redis-server-<project-ID>', in the `/var/log/platform/ProjectID_stg/` directory for Staging or the `/var/log/platform/ProjectID/` directory for Production.
 
-For Pro plan Staging, the project ID has `_stg` at the end. For example, if you receive `500` errors in Staging and want to review the NGINX logs, you can log in using SSH to the Staging environment and locate the logs in `/var/log/platform/ProjectID_stg`. For Pro plan Production, there are three nodes to check for logs.
+Pro projects have a three-node structure and each node contains logs with specific information for that node.
 
 ## Change base template
 
