@@ -13,6 +13,12 @@ Inventory Management installs with Magento Open Source or Commerce with all feat
 
 We recommend installing according to [Install Magento Using Composer]({{ page.baseurl }}/install-gde/composer.html). You must install with a metapackage to receive all Inventory Management modules.
 
+The following line in the `composer.json` metapackage installs Inventory Management:
+
+``` json
+        magento/inventory-composer-metapackage = ^1.0.3
+```
+
 The Inventory Management installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
 
 ``` json
@@ -108,6 +114,33 @@ To disable Inventory Management, see the instructions for [Enable or disable mod
         'Magento_InventorySourceSelectionApi' => 0,
         'Magento_InventoryShippingAdminUi' => 0,
 ```
+
+## Upgrade Inventory Management
+
+When upgrading an existing 2.1.X or 2.2.X Magento installation to Magento 2.3.X, Inventory Management modules will be disabled by default. This is a precaution to prevent Backward Incompatible upgrade and to better support Magento Order Management (OMS).
+
+Currently, Order Management does not support Inventory Management (future development planned). When upgrading, Inventory Management modules will be disabled to allow MCOM and Magento 2.3.X to work seamlessly.
+
+To enable Inventory Management modules:
+
+1. Edit the `<Magento_installation_directory>/composer.json` file. 
+1. Modify all Inventory modules from `0` to `1` to enable.
+1. Update the database:
+
+   ``` php
+   bin/magento setup:upgrade
+   ```  
+
+1. Clean the cache:
+
+   ``` php
+   bin/magento cache:clean
+   ```  
+
+See the following guides for more information on upgrades:
+
+* [Software Update Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
+* [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
 
 ## Additional information
 
