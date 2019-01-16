@@ -92,10 +92,20 @@ To link all simple products to configurable is enough to execute one call where 
 
 ``` json
 {
-    "bulk_uuid": "98c46050-cd66-4b49-9d45-69bfa04efc98",
+    "bulk_uuid": "e78042d1-de13-4260-8f56-d5dd13f89e3c",
     "request_items": [
         {
             "id": 0,
+            "data_hash": null,
+            "status": "accepted"
+        },
+        {
+            "id": 1,
+            "data_hash": null,
+            "status": "accepted"
+        },
+        {
+            "id": 2,
             "data_hash": null,
             "status": "accepted"
         }
