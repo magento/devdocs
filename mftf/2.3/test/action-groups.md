@@ -182,7 +182,7 @@ MFTF resolves `{{myCustomEntity.field1}}` the same as it would in a `selector` o
 
 Structuring an action group properly increases code reusability and readability. 
 
-Starting with an action group like:
+Starting with an action group such as:
 
 ```xml
 <actionGroup name="CreateCategory">
@@ -203,7 +203,7 @@ Starting with an action group like:
 ```
 {: .no-copy}
 
-It can be reworked into more manageable pieces as below. These smaller steps are easier to read, update and reuse. 
+It can be reworked into more manageable pieces as below. These smaller steps are easier to read, update, and reuse. 
 
 ```xml
 <actionGroup name="GoToCategoryGridAndAddNewCategory">
