@@ -33,7 +33,7 @@ We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This 
 
 * **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
 
-* **Updates to Magento's tech stack (including upgraded PHP support to maintain PCI compliance)** include upgrades to Redis, MySQL, Elasticsearch, compatibility with PHP 7.2.x. 
+* **Updates to Magento's tech stack (including upgraded PHP support to maintain PCI compliance)** include upgrades to Redis, MySQL, Elasticsearch and compatibility with PHP 7.2.x. 
 
 
 
