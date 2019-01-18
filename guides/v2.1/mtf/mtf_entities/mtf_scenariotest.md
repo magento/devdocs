@@ -294,7 +294,7 @@ class LoginCustomerOnFrontendStep implements TestStepInterface
  
 ### `constructor()` method  {#constructor-method}
 
-You may optionally use the `constructor()` method which injects data to be used by `run()`. The data may include classes like pages, variation data, data returned by previous executed steps, etc.
+Optionally, you may use the `constructor()` method, which injects data to be used by `run()`. The data may include classes like pages, variation data, data returned by previous executed steps, etc.
 
 On the previous example the `constructor()`:
 

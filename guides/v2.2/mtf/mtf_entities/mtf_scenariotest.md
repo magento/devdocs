@@ -205,7 +205,7 @@ An example of `Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`:
 
 ### `constructor()` method  {#constructor-method}
 
-You may use the `constructor()` method which injects data to be used by `run()`. The data may include classes such as pages, variation data, data returned by previous executed steps, etc.
+Optionally, you may use the `constructor()` method, which injects data to be used by `run()`. The data may include classes such as pages, variation data, data returned by previous executed steps, etc.
 
 In the previous example the `constructor()`:
 
