@@ -23,7 +23,7 @@ If you have questions, open an issue and ask us. We look forward to hearing from
 
 -  [Follow @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
 -  [E-mail us](mailto:DL-Magento-Doc-Feedback@magento.com)
--  [Visit our documentation site](https://devdocs.magento.com), built using [GitHub pages](https://pages.github.com/).
+-  [Visit our documentation site](https://devdocs.magento.com).
 
 ### Ruby environment
 
