@@ -199,7 +199,7 @@ An example of `Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep`:
 
 {% collapsible Show/hide example %}
 ```php
-{%remote_markdown https://raw.githubusercontent.com/magento/magento2/2.3-develop/dev/tests/functional/tests/app/Magento/Customer/Test/TestStep/LoginCustomerOnFrontendStep.php%}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.2/dev/tests/functional/tests/app/Magento/Customer/Test/TestStep/LoginCustomerOnFrontendStep.php %}
 ```
 {% endcollapsible %}
 
