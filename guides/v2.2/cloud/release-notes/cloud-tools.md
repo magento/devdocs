@@ -5,8 +5,9 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.3/cloud/release-notes/CloudReleaseNotes.html
 ---
-
 
 <!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
