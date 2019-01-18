@@ -13,7 +13,7 @@ functional_areas:
 The [REST API documentation][] published here on the Magento 2 Developer Documentation {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} describes the REST APIs that are available on the latest release of Magento 2.
 
 This documentation uses [ReDoc][] to organize and present schema files that follow an [Open-API specifications][].
-The schema files this tool uses is generated from a running instance of Magento {{page.guide_version}}, and
+The schema files used by this tool are basically generated from a running instance of Magento {{page.guide_version}}, and
 it represents the state of the code at the time the file was generated.
 
 You can also create a dynamic REST API documentation set on your server with live data.
