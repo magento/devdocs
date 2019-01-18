@@ -264,7 +264,7 @@ You may have to close and reopen the Git Bash application after the Choco instal
     bundle install
     ```
 
-1.  Build site.
+1.  Build the site.
 
     ```bash
     bundle exec jekyll serve
