@@ -211,7 +211,7 @@ If you have Ruby installed on the workstation, then you can skip this installati
     -  In the Windows CMD console, type `echo %path%`.
 
 >  **NOTE**  
->  If you encounter problems with Ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `c:\ProgramData\chocolatey\bin` folder.
+>  If you encounter problems with Ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `C:\ProgramData\chocolatey\bin` folder.
 
 ### Install Git for Windows
 
