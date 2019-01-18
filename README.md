@@ -116,7 +116,7 @@ This command:
 
 -  Checks your environment based on the dependencies listed in the `Gemfile.lock` file.
 -  Removes the `_site/` directory, which contains previously generated preview files.
--  Generates a new preview and opens the landing page in a web browsers.
+-  Generates a new preview and opens the landing page in a web browser.
 -  Checks the `_site/` directory for broken hyperlinks.
 
 Press **Ctrl**+**C** in the serve terminal to stop the server.
