@@ -250,7 +250,7 @@ You may have to close and reopen the Git Bash application after the Choco instal
     git clone git@github.com:magento/devdocs.git
     ```
 
-1.  Change to the `devdocs` directory.
+1.  Change to the `devdocs/` directory.
 
 1.  Install [Bundler](https://bundler.io).
 
