@@ -159,7 +159,7 @@ To ignore the `_config.local.yml` file, use the `rake preview:all` command.
 
 ## Build using Vagrant
 
-Optionally, you can deploy the DevDocs site using [Vagrant](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
+Optionally, you can build the DevDocs site using [Vagrant](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
 
 ## Build DevDocs in Windows
 
