@@ -100,4 +100,4 @@ More information about [asp_tags](http://php.net/manual/en/ini.core.php#ini.asp-
 
 Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings][]
 
-[Required PHP settings]: {{ page.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html
+[Required PHP settings]: {{ page.baseurl }}/install-gde/prereq/php-settings.html
