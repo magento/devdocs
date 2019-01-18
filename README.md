@@ -50,7 +50,7 @@ You must clone the repository and install the dependencies before building the s
     $ git clone git@github.com:magento/devdocs.git
     ```
 
-1.  Change to the `devdocs` directory.
+1.  Change to the `devdocs/` directory.
 
 1.  Install the project dependencies using Bundler.
 
