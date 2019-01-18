@@ -25,7 +25,7 @@ If you have SSH keys, a directory listing is displayed similar to the following:
 
 	id_rsa  id_rsa.pub  known_hosts
 
-If you don't have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
+If you do not have SSH keys, you need to generate the keys for adding to your Magento ECE account and GitHub account. See [Create a new SSH key pair](#ssh-create-new-key-pair).
 
 If you already have SSH keys, continue to:
 * [Add a public SSH key to your Magento account](#ssh-add-to-account) section
@@ -121,7 +121,7 @@ To add an SSH key using the Project Web Interface:
 
 1.	Copy your SSH public key to the clipboard.
 
-	If you don't already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
+	If you do not already have SSH keys on that machine, see [GitHub documentation](https://help.github.com/articles/generating-an-ssh-key) to create them.
 2.	Login and access your project through the [Project Web Interface](https://accounts.magento.cloud).
 3.	In your selected branch, an icon displays if you do not have an SSH key added.
 
