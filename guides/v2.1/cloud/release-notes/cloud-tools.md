@@ -7,7 +7,6 @@ functional_areas:
   - Configuration
 redirect_from:
    - /guides/v2.1/cloud/release-notes/CloudReleaseNotes.html
-   - /guides/v2.3/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 
