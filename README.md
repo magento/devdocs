@@ -195,7 +195,7 @@ After running the script at the command line, you can install any required exten
 
 #### Install Ruby extension
 
-If you have Ruby installed on the workstation, then you can skip this installation.
+If you have Ruby installed on the workstation, then you can skip this section.
 
 1.  Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
 
