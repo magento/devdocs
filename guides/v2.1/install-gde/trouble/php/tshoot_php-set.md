@@ -65,7 +65,7 @@ To increase your PHP memory limit:
 
 ### max-input-vars error due to large forms
 
-Some configurations with a high number of storeviews, products, attributes, or options may generate forms that exceed a PHP limit.
+Configurations with a high number of storeviews, products, attributes, or options can generate forms that exceed the preset PHP limit.
 If the number of values being sent surpasses the `max-input-vars` limit set within `php.ini` (default is 1000), some data will not be transferred. This limit may manifest by some values not being updated in the database. 
 When this occurs, a warning appears in the PHP log:
 
