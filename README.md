@@ -258,7 +258,7 @@ You may have to close and reopen the Git Bash application after the Choco instal
     gem install bundle
     ```
 
-1.  Install gem executables required for building the site.
+1.  Install the project dependencies using Bundler.
 
     ```bash
     bundle install
