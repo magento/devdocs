@@ -81,7 +81,7 @@ Configuration file: /Users/user/github/devdocs/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-The site Server address URL http://127.0.0.1:4000/ opens in a browser so you can preview the content.
+The site server URL http://127.0.0.1:4000/ opens in a browser so you can preview the content.
 
 Press **Ctrl**+**C** in the serve terminal to stop the server.
 
