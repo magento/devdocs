@@ -62,6 +62,19 @@ To increase your PHP memory limit:
 	*	nginx (both CentOS and Ubuntu): `service nginx restart`
 8.	Try the installation again.
 
+
+### max-input-vars error due to large forms
+
+Some configurations with a high number of storeviews, products, attributes, or options may generate forms that exceed a PHP limit.
+If the number of values being sent surpasses the `max-input-vars` limit set within `php.ini` (default is 1000), some data will not be transferred. This limit may manifest by some values not being updated in the database. 
+There may also be a warning in the PHP log:
+
+```bash
+PHP message: PHP Warning: Unknown: Input variables exceeded 1000. To increase the limit change max_input_vars in php.ini.
+```
+ There is no 'proper' value for `max-input-vars`; it depends on the size and complexity of your configuration. Modify the value in the `php.ini` file as needed. See [Required PHP settings][].
+
+
 ### xdebug maximum function nesting level error {#trouble-php-xdebug}
 
 See [During installation, xdebug maximum function nesting level error]({{ page.baseurl }}/install-gde/trouble/php/tshoot_xdebug.html).
@@ -85,4 +98,6 @@ Multiple templates have syntax for support abstract level on templates (use diff
 
 More information about [asp_tags](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}.
 
-Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde/prereq/php-settings.html).
+Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings][]
+
+[Required PHP settings]: {{ page.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html
