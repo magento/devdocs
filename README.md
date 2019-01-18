@@ -153,7 +153,7 @@ Generating the entire website can take up to 15 minutes, depending on your envir
 
 If you do not have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake tool generates all versions of the documentation.
 
-To disable link checking, add `check_links: false` to `_config.local.yml` file.
+To disable link checking, add `check_links: false` to the `_config.local.yml` file.
 
 To ignore the `_config.local.yml` file, use the `rake preview:all` command.
 
