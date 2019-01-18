@@ -10,13 +10,13 @@ Our goal is to provide the Magento community with comprehensive and quality tech
 
 ## Building this site
 
-The website uses [GitHub Pages](https://pages.github.com/) tools for building with the [Jekyll](https://jekyllrb.com/) static website generator, which requires a [Ruby environment](#ruby-environment).
+The website uses [GitHub Pages](https://pages.github.com/) tools for building with the [Jekyll](https://jekyllrb.com/) static website generator, which requires a Ruby environment.
 
-There are several methods available to build our site:
+After verifying your [Ruby environment](#ruby-environment), continue with one of the following methods:
 
--  [Build using Jekyll](#build-using-jekyll)
--  [Build using a Docker container](#build-using-docker) (Mac, Linux)
--  [Build using a Vagrant virtual machine](#build-using-vagrant)
+-  [Build DevDocs using Jekyll](#local-build-using-jekyll)
+-  [Minimize local build time](#minimize-local-build-time)
+-  [Build DevDocs using a Vagrant virtual machine](#build-using-vagrant)
 -  [Build DevDocs in Windows](#build-devdocs-in-windows) (Not supported)
 
 If you have questions, open an issue and ask us. We look forward to hearing from you!
@@ -40,15 +40,17 @@ $ ruby -v
 ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-darwin18]
 ```
 
-### Preparing your local environment
+## Local build using Jekyll
 
-You only need to use the following steps one time.
+You only need to perform the following steps one time.
 
 1.  Clone the repository.
 
     ```shell
     git clone git@github.com:magento/devdocs.git
     ```
+
+1.  Change to the `devdocs` directory.
 
 1.  Install the project dependencies using Bundler.
 
@@ -57,7 +59,7 @@ You only need to use the following steps one time.
     ```
 
     > **Note**  
-    >[Bundler](https://bundler.io/) a tool installed by RubyGems that manages installation dependencies.
+    >[Bundler](https://bundler.io/), installed by RubyGems, is a tool that manages installation dependencies.
 
 #### To build the site using a Jekyll command:
 
@@ -88,7 +90,7 @@ Press **Ctrl**+**C** in the serve terminal to stop the server.
 
 #### To build the site using rake shortcuts:
 
-We use the Ruby tool [rake](https://github.com/ruby/rake) to automate build tasks. For example, you can use a rake task to check required dependencies and start the Jekyll server:
+We use the Ruby tool [rake](https://github.com/ruby/rake) to automate build tasks. For example, you can use a rake task, such as `preview`, to check required dependencies and start the Jekyll server:
 
 ```shell
 $ rake preview
@@ -112,12 +114,12 @@ Server running... press ctrl-c to stop.
 
 This command:
 
--  Checks your environment according to the dependencies listed in the `Gemfile.lock` file.
+-  Checks your environment based on the dependencies listed in the `Gemfile.lock` file.
 -  Removes the `_site/` directory, which contains previously generated preview files.
 -  Generates a new preview and opens the landing page in a web browsers.
 -  Checks the `_site/` directory for broken hyperlinks.
 
-Press Ctrl+C in the serve terminal to stop the server.
+Press **Ctrl**+**C** in the serve terminal to stop the server.
 
 ### Minimize local build time
 
@@ -147,7 +149,7 @@ Generating the entire website can take up to 15 minutes, depending on your envir
       - /Rakefile
     ```
 
-1.  Preview the site using the [`rake preview`](#using-rake) command.
+1.  Preview the site using the `rake preview` command.
 
 If you do not have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake tool generates all versions of the documentation.
 
@@ -155,37 +157,9 @@ To disable link checking, add `check_links: false` to `_config.local.yml` file.
 
 To ignore the `_config.local.yml` file, use the `rake preview:all` command.
 
-## Build using Docker
-
-This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).
-
-To use Docker and Docker Compose, first download and install Docker for the appropriate operating system, and then install Docker Compose to execute the `docker-compose.yml` configuration file.
-
-1.  Install Docker.
-
-    -  [Docker for Mac](https://docs.docker.com/docker-for-mac/install/)
-    -  [Docker for Windows](https://docs.docker.com/docker-for-windows/install/)
-
-1.  Install [Docker-Compose](https://docs.docker.com/compose/install/).
-
-#### To build the site using Docker:
-
-1. Using [git](https://git-scm.com/), [clone](https://help.github.com/articles/cloning-a-repository/) this repository.
-2. Navigate to the resulting directory.
-3. Run `docker-compose up` to initialize the build process. Refer [here](https://docs.docker.com/compose/gettingstarted/#step-4-build-and-run-your-app-with-compose) for more details on the use of `docker-compose`.
-4. Visit `http://localhost:4000/` in a web browser, and you should be presented with a local copy of the Magento DevDocs. The configuration for the local port (`4000` by default) is found in the [docker-compose.yml](https://github.com/magento/devdocs/blob/develop/docker-compose.yml) file. If another port is desired, please refer [here](https://docs.docker.com/compose/compose-file/compose-file-v2/#ports) for further details regarding Docker Compose port mapping.
-
-### Addressing Problems With Docker Build
-
-1.  Verify that the Docker engine is installed for the appropriate operating system.
-1.  Verify that Docker Compose is installed.
-1.  Verify that this repository has been cloned.
-1.  Verify that the correct Docker Compose command(s) have been used in the same directory as the `docker-compose.yml` file.
-1.  If there are still problems, open an [Issue](https://help.github.com/articles/creating-an-issue/) on this repository.
-
 ## Build using Vagrant
 
-You can deploy the DevDoc site using [Vagrant](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
+Optionally, you can deploy the DevDocs site using [Vagrant](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
 
 ## Build DevDocs in Windows
 
