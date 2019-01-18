@@ -173,7 +173,7 @@ class YourTestStep implements TestStepInterface
     (
         // data that are required for this step along with other dependencies.
     ) {
-        // all required classes (fixtures, pages, etc.) have to be assigned here.
+        // all required classes (fixtures, pages, etc.) are assigned here.
     };
 
     public function run()
