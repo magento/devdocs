@@ -64,7 +64,7 @@ To set up routes in a staging or production environment, you must create a [Supp
 
 In the Admin panel, set up your {{site.data.var.ee}} websites, stores, and store views. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
-Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
+It is important to name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
 
 ### Modify the `magento-vars.php` file
 
