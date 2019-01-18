@@ -158,7 +158,7 @@ The example defines the following test steps and their sequence:
 
 ## Test step class  {#test-step}
 
-All test steps are located in `<module>/Test/TestStep` as PHP classes with the following format:
+The `<module>/Test/TestStep` directory contains each test step as a PHP class with the following format:
 
 ```php
 <?php
@@ -171,7 +171,7 @@ class YourTestStep implements TestStepInterface
 {
     public function __construct
     (
-        // data that is required for this step, along with other dependencies.
+        // data and other dependencies required for this step.
     ) {
         // all required classes (fixtures, pages, etc.) are assigned here.
     };
