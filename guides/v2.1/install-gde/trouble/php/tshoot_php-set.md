@@ -98,6 +98,6 @@ Multiple templates have syntax for support abstract level on templates (use diff
 
 More information about [asp_tags](http://php.net/manual/en/ini.core.php#ini.asp-tags){:target="_blank"}.
 
-Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings][]
+Edit `php.ini` and set `asp_tags = off`. For more information, see [Required PHP settings][].
 
 [Required PHP settings]: {{ page.baseurl }}/guides/v2.3/install-gde/prereq/php-settings.html
