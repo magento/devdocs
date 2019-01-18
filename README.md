@@ -29,9 +29,9 @@ If you have questions, open an issue and ask us. We look forward to hearing from
 
 Jekyll requires a Ruby environment. The Mac and Ubuntu operating systems provide Ruby, but you can choose to upgrade the version or use a version manager to control version scope.
 
-[Ruby](https://www.ruby-lang.org/en/documentation/installation)—Supported versions: 2.3, 2.4, 2.5
-[RubyGems](https://rubygems.org/pages/download)—packaging system for Ruby
-[rbenv](https://github.com/rbenv/rbenv)—Optional, but useful for managing one or more Ruby versions concurrently
+-  [Ruby](https://www.ruby-lang.org/en/documentation/installation)—Supported versions: 2.3, 2.4, 2.5
+-  [RubyGems](https://rubygems.org/pages/download)—packaging system for Ruby
+-  [rbenv](https://github.com/rbenv/rbenv)—Optional, but useful for managing one or more Ruby versions concurrently
 
 #### To check your Ruby version:
 
@@ -42,12 +42,12 @@ ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-darwin18]
 
 ## Local build using Jekyll
 
-You only need to perform the following steps one time.
+You must clone the repository and install the dependencies before building the site. You only need to perform the following steps once:
 
 1.  Clone the repository.
 
     ```shell
-    git clone git@github.com:magento/devdocs.git
+    $ git clone git@github.com:magento/devdocs.git
     ```
 
 1.  Change to the `devdocs` directory.
@@ -55,7 +55,7 @@ You only need to perform the following steps one time.
 1.  Install the project dependencies using Bundler.
 
     ```shell
-    bundle install
+    $ bundle install
     ```
 
     > **Note**  
@@ -63,10 +63,10 @@ You only need to perform the following steps one time.
 
 #### To build the site using a Jekyll command:
 
-The following command builds the HTML and opens the site in a browser.
+The following Jekyll command builds the HTML and opens the site in a browser.
 
 ```shell
-bundle exec jekyll serve --open-url
+$ bundle exec jekyll serve --open-url
 ```
 
 ```
