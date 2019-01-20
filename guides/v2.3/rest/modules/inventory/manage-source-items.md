@@ -41,7 +41,7 @@ Unassigning a source clears all quantity data. For this example, this is OK, bec
 
 **Sample usage**
 
-`POST V1/inventory/source-items-delete`
+`POST <host>/rest/default/V1/inventory/source-items-delete`
 
 **Payload**
 
@@ -72,7 +72,7 @@ The following example assigns `1000` units of product `new_product1` to the `cen
 
 **Sample usage**
 
-`POST V1/inventory/source-items`
+`POST <host>/rest/default/V1/inventory/source-items`
 
 **Payload**
 

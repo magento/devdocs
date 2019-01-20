@@ -70,7 +70,7 @@ Requesting a negotiable quote requires an admin authorization token.
 
 **Sample Usage**
 
-`POST V1/negotiableQuote/request`
+`POST <host>/rest/default/V1/negotiableQuote/request`
 
 **Payload**
 
