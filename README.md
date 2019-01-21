@@ -12,7 +12,7 @@ Our goal is to provide the Magento community with comprehensive and quality tech
 
 The website uses [GitHub Pages](https://pages.github.com/) tools for building with the [Jekyll](https://jekyllrb.com/) static website generator, which requires a Ruby environment.
 
-After verifying your [Ruby environment](#ruby-environment), continue with one of the following methods:
+After verifying your [Ruby environment](#ruby-environment), continue with one of the following:
 
 -  [Build DevDocs using Jekyll](#local-build-using-jekyll)
 -  [Minimize local build time](#minimize-local-build-time)
@@ -83,7 +83,7 @@ Configuration file: /Users/user/github/devdocs/_config.yml
 
 The site server URL http://127.0.0.1:4000/ opens in a browser so you can preview the content.
 
-Press **Ctrl**+**C** in the serve terminal to stop the server.
+Press **Ctrl**+**C** in the terminal to stop the server.
 
 > **TIP**  
 >When you use the `--incremental` option, you can leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. If you make changes to a YML configuration file, you have to stop the server and run the command again.
@@ -119,7 +119,7 @@ This command:
 -  Generates a new preview and opens the landing page in a web browser.
 -  Checks the `_site/` directory for broken hyperlinks.
 
-Press **Ctrl**+**C** in the serve terminal to stop the server.
+Press **Ctrl**+**C** in the terminal to stop the server.
 
 ### Minimize local build time
 
