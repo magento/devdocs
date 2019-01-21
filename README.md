@@ -217,7 +217,7 @@ If you have Ruby installed on the workstation, then you can skip this section.
 
 Use [Git for Windows](https://gitforwindows.org/) to prevent interference with the existing Windows environment and to have _Git Bash_ and _Git GUI_ launch commands available on the shortcut menu.
 
-Open the Git Setup file downloaded from the Git for Windows site and use the following settings during installation wizard:
+Open the Git Setup file downloaded from the Git for Windows site and use the following settings during the installation wizard:
 
 -  select **Use Git from Git Bash only**
 -  select **Checkout as-is, commit Unix-style line endings**
