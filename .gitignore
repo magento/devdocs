@@ -2,6 +2,7 @@
 ######################
 /*.db
 .DS_Store
+/*.history
 
 # Config and output files #
 ###########################
