@@ -2716,7 +2716,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Oct 7 2016
-- description: '[Magento 2 documentation resources for Magento Commerce Cloud (MECE)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html'
+- description: '[Magento 2 documentation resources for Magento Commerce Cloud (MECE)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html)'
   versions: 2.x
   type: New
   date: Oct 7 2016
