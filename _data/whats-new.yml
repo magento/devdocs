@@ -4,8 +4,45 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: 2019-01-14 14:11:39 -0600
+updated: 2019-01-22 14:30:23 -0600
 entries:
+- description: Added a [section](https://devdocs.magento.com/guides/v2.3/install-gde/trouble/php/tshoot_php-set.html#max-input-vars-error-due-to-large-forms)
+    discussing the max-input-vars value in php.ini.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: January 18, 2019
+  link: https://github.com/magento/devdocs/pull/3596
+- description: Added a [section](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#optimizing-action-group-structures)
+    that describes how to better optimize action groups for readability and reusability.
+  versions: 2.3.x
+  type: Major update
+  date: January 17, 2019
+  link: https://github.com/magento/devdocs/pull/3584
+- description: Added upgrade information for [Manage Inventory Management modules](https://devdocs.magento.com/guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html)
+    (MSI community project).
+  versions: 2.3.x
+  type: Technical changes
+  date: January 16, 2019
+  link: https://github.com/magento/devdocs/pull/3583
+- description: Added section to Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html)
+    about how to change the base template.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: January 16, 2019
+  link: https://github.com/magento/devdocs/pull/3578
+- description: Updated installation information for [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html)
+    and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.3/security/google-recaptcha.html)
+    extensions for 2.3.0.
+  versions: 2.3.x
+  type: Major update
+  date: January 15, 2019
+  link: https://github.com/magento/devdocs/pull/3577
+- description: Refreshed the Cloud topic for [cloning and branching a project](https://devdocs.magento.com/guides/v2.1/cloud/before/before-setup-env-2_clone.html)
+    for local development.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: January 14, 2019
+  link: https://github.com/magento/devdocs/pull/3570
 - description: Updated the [availability timeline](https://devdocs.magento.com/availability)
     for the Amazon Sales Channel extension.
   versions: 'N/A'
