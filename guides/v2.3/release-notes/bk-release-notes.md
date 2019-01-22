@@ -21,7 +21,7 @@ The ece-tools package is a scalable deployment tool that simplifies the {{ sit
 
 See [Release Notes for ece-tools]{{ page.baseurl }}/cloud/release-not4es/cloud-tools.html) for the latest updates and improvements to the ece-tools package as well as information about Magento Commerce Cloud upgrades and patches.
 
-{: .bs-callout .bs-callout-info } We recommend installing full [{{site.data.var.ece}} upgrades]({{ site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html) for important security updates. Full upgrades include all associated patches and hotfixes.
+{: .bs-callout .bs-callout-info } We recommend installing full {{site.data.var.ece}} upgrades for important security updates. Full upgrades include all associated patches and hotfixes.
 
 
 ## Third-party license agreements
