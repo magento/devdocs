@@ -178,6 +178,57 @@ MFTF resolves `{{myCustomEntity.field1}}` the same as it would in a `selector` o
     <argument name="relevantString" value="{{myCustomEntity.field1}}"/>
 </actionGroup>
 ```
+## Optimizing action group structures
+
+Structuring an action group properly increases code reusability and readability. 
+
+Starting with an action group such as:
+
+```xml
+<actionGroup name="CreateCategory">
+    <arguments>
+        <argument name="categoryEntity" defaultValue="_defaultCategory"/>
+    </arguments>
+    <seeInCurrentUrl url="{{AdminCategoryPage.url}}" stepKey="seeOnCategoryPage"/>
+    <click selector="{{AdminCategorySidebarActionSection.AddSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
+    <see selector="{{AdminHeaderSection.pageTitle}}" userInput="New Category" stepKey="seeCategoryPageTitle"/>
+    <fillField selector="{{AdminCategoryBasicFieldSection.CategoryNameInput}}" userInput="{{categoryEntity.name}}" stepKey="enterCategoryName"/>
+    <click selector="{{AdminCategorySEOSection.SectionHeader}}" stepKey="openSEO"/>
+    <fillField selector="{{AdminCategorySEOSection.UrlKeyInput}}" userInput="{{categoryEntity.name_lwr}}" stepKey="enterURLKey"/>
+    <click selector="{{AdminCategoryMainActionsSection.SaveButton}}" stepKey="saveCategory"/>
+    <seeElement selector="{{AdminCategoryMessagesSection.SuccessMessage}}" stepKey="assertSuccess"/>
+    <seeInTitle userInput="{{categoryEntity.name}}" stepKey="seeNewCategoryPageTitle"/>
+    <seeElement selector="{{AdminCategorySidebarTreeSection.categoryInTree(categoryEntity.name)}}" stepKey="seeCategoryInTree"/>
+</actionGroup>
+```
+{: .no-copy}
+
+It can be reworked into more manageable pieces as below. These smaller steps are easier to read, update, and reuse. 
+
+```xml
+<actionGroup name="GoToCategoryGridAndAddNewCategory">
+    <seeInCurrentUrl url="{{AdminCategoryPage.url}}" stepKey="seeOnCategoryPage"/>
+    <click selector="{{AdminCategorySidebarActionSection.AddSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
+    <see selector="{{AdminHeaderSection.pageTitle}}" userInput="New Category" stepKey="seeCategoryPageTitle"/>
+</actionGroup>
+
+<actionGroup name="FillInBasicCategoryFields">
+    <arguments>
+        <argument name="categoryEntity" defaultValue="_defaultCategory"/>
+    </arguments>
+    <fillField selector="{{AdminCategoryBasicFieldSection.CategoryNameInput}}" userInput="{{categoryEntity.name}}" stepKey="enterCategoryName"/>
+    <click selector="{{AdminCategorySEOSection.SectionHeader}}" stepKey="openSEO"/>
+    <fillField selector="{{AdminCategorySEOSection.UrlKeyInput}}" userInput="{{categoryEntity.name_lwr}}" stepKey="enterURLKey"/>
+</actionGroup>
+
+<actionGroup name="SaveAndVerifyCategoryCreation">
+    <click selector="{{AdminCategoryMainActionsSection.SaveButton}}" stepKey="saveCategory"/>
+    <seeElement selector="{{AdminCategoryMessagesSection.SuccessMessage}}" stepKey="assertSuccess"/>
+    <seeInTitle userInput="{{categoryEntity.name}}" stepKey="seeNewCategoryPageTitle"/>
+    <seeElement selector="{{AdminCategorySidebarTreeSection.categoryInTree(categoryEntity.name)}}" stepKey="seeCategoryInTree"/>
+</actionGroup>
+```
+{: .no-copy}
 
 ## Elements reference
 
