@@ -12,7 +12,7 @@ functional_areas:
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
 
 {:.bs-callout .bs-callout-info}
-Popular windows development servers such as WAMP/XAMPP were supported in the past, however as of V2.3, they will not run correctly due to changes that break pathing.
+Popular windows development servers such as WAMP/XAMPP may have unoffically worked in the past, however as of V2.3, they will not run correctly due to changes that break pathing.
 
 ### Memory requirement
 
