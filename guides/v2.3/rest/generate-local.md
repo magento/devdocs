@@ -57,6 +57,8 @@ To return information about all services:
 {:.bs-callout .bs-callout-info}
 You must specify an authorization token for an {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
 
+{:.bs-callout .bs-callout-info}
+If you want to get JSON schema for Asynchronous API, base url will look like: `http://<magento_host>/rest/<store_code>/async/schema`
 
 ## Return the complete JSON schema
 
