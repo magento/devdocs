@@ -31,7 +31,9 @@ stage:
   build:
     SCD_COMPRESSION_LEVEL: 4
 ```
-### `SCD_EXCLUDE_THEMES`
+### `SCD_EXCLUDE_THEMES` @deprecated 
+{: .bs-callout .bs-callout-warning }
+Use SCD_MATRIX variable instead.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
