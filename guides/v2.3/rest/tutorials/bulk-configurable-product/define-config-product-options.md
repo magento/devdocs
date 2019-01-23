@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 3. Define configurable product options
-subtitle: Create a configurable product using the Bulk APIs
+subtitle: Create a configurable product using the bulk APIs
 menu_title: Step 3. Define configurable product options
 menu_order: 30
 level3_subgroup: bulk-configurable-product-tutorial

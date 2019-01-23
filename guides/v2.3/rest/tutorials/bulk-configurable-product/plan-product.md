@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 1. Plan the product
-subtitle: Create a configurable product using the Bulk APIs
+subtitle: Create a configurable product using the bulk APIs
 menu_title: Step 1. Plan the product
 menu_order: 10
 level3_subgroup: bulk-configurable-product-tutorial
