@@ -3,8 +3,6 @@ group: rest-api
 title: Manage prices for multiple products
 functional_areas:
   - Integration
-redirect_from: /guides/v2.2/rest/catalog-pricing.html
-
 ---
 
 Magento provides REST endpoints that allow you to update multiple special prices, tier prices, base prices, or cost values with a single call.

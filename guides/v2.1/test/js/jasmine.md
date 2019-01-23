@@ -3,7 +3,6 @@ group: testing
 title: JavaScript unit testing with Jasmine
 redirect_from:
   - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
-  - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
 functional_areas:
   - Testing
   - test
