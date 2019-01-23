@@ -26,7 +26,7 @@ To install the Magento application, see <a href="{{page.baseurl }}/install-gde/b
 For more details about PHP verification, installation and configuration (<a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu">Ubuntu</a>, <a href="{{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos">CentOS</a>).
 
 {: .bs-callout .bs-callout-warning }
-In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out.
+In `php.ini` file, make sure `extension=php_openssl.dll` is not commented out. (NOTE Windows env is not oficially supported)
 
 #### Check if the Functional Testing Framework has been already installed {#mtf_install_pre_mtf-check}
 
