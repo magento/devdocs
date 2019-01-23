@@ -17,7 +17,7 @@ Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x]({{ sit
 
 ## {{site.data.var.ece}}
 
-The ece-tools package is a scalable deployment tool that simplifies the {{ site.data.var.ece }} upgrade process by providing commands to backup the database, apply custom patches, and verify environment packages, and more. The package also contains scripts and Magento Commerce Cloud commands to help manage your code and automatically build and deploy your projects. 
+The ece-tools package is a scalable deployment tool that simplifies the {{ site.data.var.ece }} upgrade process by providing commands to backup the database, apply custom patches, and verify environment packages, and more. The package also contains scripts and {{site.data.var.ece}} commands to help manage your code and automatically build and deploy your projects. 
 
 See [Release Notes for ece-tools]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html) for the latest updates and improvements to the ece-tools package as well as information about {{site.data.var.ece}} upgrades and patches.
 
