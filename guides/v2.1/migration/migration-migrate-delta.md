@@ -17,6 +17,8 @@ The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) 
 
 * all operations with orders in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel
 
+* !The Tool will not migrate new products or categories. These must be migrated manually
+
 ## Before you start: routine preparations
 
 1. Log in to Magento server as [the file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
