@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 3. Define configurable product options
-subtitle: Create a configurable product tutorial
+subtitle: Create a configurable product using the Bulk APIs
 menu_title: Step 3. Define configurable product options
 menu_order: 30
 level3_subgroup: bulk-configurable-product-tutorial
@@ -13,21 +13,21 @@ functional_areas:
   - Integration
 ---
 
-Now that we've created all the Champ Tee products, we need to assign `size` as the configurable attribute and link the simple products to the configurable product.
+ Now that we've created all the Champ Tee products, we need to assign `size` as the configurable attribute and link the simple products to the configurable product.
 
 ## Set the configurable attribute
 
-The `POST async/bulk/V1/configurable-products/bySku/options` call assigns the specified `attribute_id` to be the configurable attribute. The `sku` of the configurable product have to be specified in each object payload as separate attribute.
+ The `POST async/bulk/V1/configurable-products/bySku/options` call assigns the specified `attribute_id` to be the configurable attribute. The `sku` of the configurable product has to be specified in each object payload as separate attributes.
 
-The value assigned to the `value_index` must be unique within the system.
+ The value assigned to the `value_index` must be unique within the system.
 
-**Endpoint**
+ **Endpoint**
 
-`POST <host>/rest/default/async/bulk/V1/configurable-products/bySku/options`
+ `POST <host>/rest/default/async/bulk/V1/configurable-products/bySku/options`
 
-**Payload**
+ **Payload**
 
-``` json
+ ``` json
 [{
   "sku": "MS-Champ",
   "option": {
@@ -44,9 +44,9 @@ The value assigned to the `value_index` must be unique within the system.
 }]
 ```
 
-**Response**
+ **Response**
 
-``` json
+ ``` json
 {
     "bulk_uuid": "98c46050-cd66-4b49-9d45-69bfa04efc78",
     "request_items": [
@@ -62,15 +62,15 @@ The value assigned to the `value_index` must be unique within the system.
 
 ## Link the simple products to the configurable product
 
-To link all simple products to configurable is enough to execute one call where payload contains array of simple products
+ Now that you have set the configurable attribute, you can link all simple products to the configurable product and execute a single call with a payload that contains an array of simple products.
 
-**Endpoint**
+ **Endpoint**
 
-`POST <host>/rest/default/async/bulk/V1/configurable-products/MS-Champ/child`
+ `POST <host>/rest/default/async/bulk/V1/configurable-products/MS-Champ/child`
 
-**Payload**
+ **Payload**
 
-``` json
+ ``` json
 [
   {
     "sku": "MS-Champ",
@@ -88,9 +88,9 @@ To link all simple products to configurable is enough to execute one call where 
 ]
 ```
 
-**Response**
+ **Response**
 
-``` json
+ ``` json
 {
     "bulk_uuid": "e78042d1-de13-4260-8f56-d5dd13f89e3c",
     "request_items": [
@@ -116,17 +116,17 @@ To link all simple products to configurable is enough to execute one call where 
 
 ## Verify this step
 
-* Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
+ * Log in to the Luma website and select **Catalog > Products**. Click on the **Champ Tee** configurable product and expand the **Configurations** section.
 
-![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
+ ![Product page with configurable and simple products]({{ page.baseurl }}/rest/images/configurations-section.png)
 
-* On the Luma storefront page, search for `Champ`.
+ * On the Luma storefront page, search for `Champ`.
 
-![Search results]({{ page.baseurl }}/rest/images/search-results.png)
+ ![Search results]({{ page.baseurl }}/rest/images/search-results.png)
 
-* Call `GET /V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
+ * Call `GET /V1/products/MS-Champ`. The response includes the `configurable_product_options` and `configurable_product_links` arrays.
 
-```json
+ ```json
 ...
 "configurable_product_options": [
     {
