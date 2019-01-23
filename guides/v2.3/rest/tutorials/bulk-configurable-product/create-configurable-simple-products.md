@@ -2,8 +2,8 @@
 layout: tutorial
 group: rest-api
 title: Step 2. Create the configurable and simple products
-subtitle: Create a configurable product tutorial
-menu_title: Step 2. Create the configurable anb simple products
+subtitle: Create a configurable product using the Bulk APIs
+menu_title: Step 2. Create the configurable and simple products
 menu_order: 20
 level3_subgroup: bulk-configurable-product-tutorial
 return_to:
@@ -13,20 +13,20 @@ functional_areas:
   - Integration
 ---
 
-As we are using BULK API for product creation operations there are no sense to execute multiple calls for products creation anymore. So we have to prepare information for Configurable and Simple products, and then execute only one request for create all necessary products.
+By providing configurable and simple product information, you can use the bulk API to create all necessary products with a single call.
 
 ### Configurable product
 
-We have the information we need to create the Champ Tee configurable product.
+Some notes about the configurable product payload example:
 
-The sample payload does not contain the price or the size. These attributes will be defined in the simple products.
+* We have the information we need to create the Champ Tee configurable product.
+* The sample payload does not contain the price or the size as these are defined in the simple products section.
+* The `visibility` attribute is set to 4, which allows customers to find the product by browsing or searching. Each simple product defined in the payload can override the `visibility` attribute.
 
-The `visibility` attribute is set to 4, meaning the product can be found by browsing or searching. This value will be changed for the simple products.
 
+### Simple products 
 
-### Simple Products 
-
-The payloads for creating a simple product and a configurable product are identical, with the following exceptions:
+ The payloads for creating a simple product and a configurable product are identical, with the following exceptions:
 
 * The simple product `sku` appends the configurable option (the size in this tutorial) to the configurable product `sku`.
 * The `name` indicates the size.
@@ -34,21 +34,21 @@ The payloads for creating a simple product and a configurable product are identi
 * The `visibility` is set to `1`, indicating the simple product should not be displayed on the store.
 * The `price` and `size` attributes are specified.
 
-Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
+ Although it's not required, the simple product payload also includes `stock_item` information. By default, the Luma store hides out-of-stock items, so adding stock will make the Champ Tee visible on the website.
 
-{:.bs-callout .bs-callout-info}
-Before you using this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
+ {:.bs-callout .bs-callout-info}
+Before you use this code sample, verify that the attribute values are the same in your installation. See [Get the list of attributes defined in an attribute searchCriteria]({{ page.baseurl }}/rest/tutorials/configurable-product/plan-product.html#get-attributes) for more information.
 
-{:.bs-callout .bs-callout-info}
-Payload contains as configurable product as also simple products.
+ {:.bs-callout .bs-callout-info}
+The payload contains both the configurable product and the simple products.
 
-**Endpoint**
+ **Endpoint**
 
-`POST <host>/rest/default/async/bulk/V1/products`
+ `POST <host>/rest/default/async/bulk/V1/products`
 
-**Payload**
+ **Payload**
 
-``` json
+ ``` json
 [{
   "product": {
     "sku": "MS-Champ",
@@ -156,13 +156,12 @@ Payload contains as configurable product as also simple products.
     ]
   }
 },
-// ...... other simple products are coming here .......
+// ...... specify other simple products here .......
 ]
 ```
 
-**Response**
+ **Response**
 
-{% collapsible Show code sample %}
 ``` json
 {
     "bulk_uuid": "c08a2b99-4be2-4b28-af7e-56e9664e0b39",
@@ -186,16 +185,15 @@ Payload contains as configurable product as also simple products.
     "errors": false
 }
 ```
-{% endcollapsible %}
 
-{:.bs-callout .bs-callout-info}
-Information about response fields you can find in [BULK API]({{ page.baseurl }}/rest/bulk-endpoints.html) section and if you want to check status of operations please API for [Bulk operation status endpoints]({{ page.baseurl }}/rest/operation-status-endpoints.html)
+ {:.bs-callout .bs-callout-info}
+For information about response fields, see the [Bulk API]({{ page.baseurl }}/rest/bulk-endpoints.html) section. To check the status of operations, see the API for [Bulk operation status endpoints]({{ page.baseurl }}/rest/operation-status-endpoints.html).
 
 
 ## Verify this step
 
-* Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
+ * Log in to the Luma website and select **Catalog > Products**. The product appears in the grid.
 
-  ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
+   ![Product page with configurable product]({{ page.baseurl }}/rest/images/products-page.png)
 
-* On the Luma storefront page, search for `Champ`. No results are returned.
+ * On the Luma storefront page, search for `Champ`. No results are returned.
