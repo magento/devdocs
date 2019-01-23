@@ -11,6 +11,9 @@ functional_areas:
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
 
+{:.bs-callout .bs-callout-info}
+Popular windows development servers such as WAMP/XAMPP were supported in the past, however as of V2.3, they will not run correctly due to changes that break pathing.
+
 ### Memory requirement
 
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}/comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
