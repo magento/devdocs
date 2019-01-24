@@ -78,4 +78,4 @@ Archive the original `<Magento_install_dir>/app/etc/config.php` file. Then add t
 
 Here, the `array` beneath `modules_disable_output` contains a list of modules. A value of `1` disables output for that module.
 
-As a sample result of this configuration, customers can no longer sign up to receive newsletters.
+As a sample result of this configuration, customers can no longer review products.
