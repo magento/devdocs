@@ -6,8 +6,7 @@ menu_title: Magento Commerce (Cloud) 2.2.1 Release Notes
 menu_order: 380
 level3_menu_node:
 level3_subgroup:
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
+
 ---
 
 We are pleased to present {{site.data.var.ece}} 2.2.1. This release includes numerous functional fixes and enhancements.
