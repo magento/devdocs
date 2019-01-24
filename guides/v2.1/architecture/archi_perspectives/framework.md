@@ -33,7 +33,7 @@ The Framework is responsible for operations that are useful for potentially all 
 Here is the Magento Framework folder structure:
 
 
-```bash
+```terminal
 vendor/
     ../magento
         ../framework
@@ -58,27 +58,29 @@ The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust rang
 
 |Namespace|Purpose|
 |--- |--- |
-|Magento\Framework\DataObject|Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.|
-|Magento\Framework\Model|Contains base Model classes that almost all Magento Model classes extend from.|
-|Magento\Framework\Model\AbstractModel||
-|Magento\Framework\Model\ResourceModel\AbstractResource||
-|Magento\Framework\Controller|Contains classes to help return different types of results (for example, JSON and redirects).|
-|Magento\Framework\View|Contains code to render pages and layouts.|
-|Magento\Framework\Data|Contains additional classes that handle forms.|
-|Magento\Framework\Url|Contains code to look up other pages in Magento.|
+|`Magento\Framework\DataObject`|Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.|
+|`Magento\Framework\Model`|Contains base Model classes that almost all Magento Model classes extend from.|
+|`Magento\Framework\Model\AbstractModel`||
+|`Magento\Framework\Model\ResourceModel\AbstractResource`||
+|`Magento\Framework\Controller`|Contains classes to help return different types of results (for example, JSON and redirects).|
+|`Magento\Framework\View`|Contains code to render pages and layouts.|
+|`Magento\Framework\Data`|Contains additional classes that handle forms.|
+|`Magento\Framework\Url`|Contains code to look up other pages in Magento.|
+{:style="table-layout:auto;"}
 
 Other namespaces under `Magento\Framework` that will interest extension developers:
 
 |Namespace|Purpose|
 |--- |--- |
-|Magento\Framework\ObjectManager|Used to provide dependency injection.|
-|Magento\Framework\App|Contains framework code that has knowledge about the Magento application. This code bootstraps the application and reads in the initial configuration. It also contains the entry point to the command line tools, the web application, and the cron job. And finally, it routes requests while providing the deployment context (such as reading in the configuration for the database configuration, languages, caching systems).|
-|Magento\Framework\Api|Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Marketplace extensions).|
-|Magento\Framework\Config|Contains the generic configuration reader. Each config file has its own specialized reader extending these classes.|
-|Magento\Framework\Filesystem|Contains classes that handle reading from and writing to the file system.|
-|Magento\Framework\HTTP\PhpEnvironment||
-|Magento\Framework\Session||
-|Magento\Framework\Stdlib\Cookie|Code to handle the HTTP request/responses as well as session/cookies is found here.|
-|Magento\Framework\Exception|Contains the basic exceptions that are thrown throughout the Magento codebase.|
-|Magento\Framework\Event|Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.|
-|Magento\Framework\Validator|Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.|
+|`Magento\Framework\ObjectManager`|Used to provide dependency injection.|
+|`Magento\Framework\App`|Contains framework code that has knowledge about the Magento application. This code bootstraps the application and reads in the initial configuration. It also contains the entry point to the command line tools, the web application, and the cron job. And finally, it routes requests while providing the deployment context (such as reading in the configuration for the database configuration, languages, caching systems).|
+|`Magento\Framework\Api`|Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Marketplace extensions).|
+|`Magento\Framework\Config`|Contains the generic configuration reader. Each config file has its own specialized reader extending these classes.|
+|`Magento\Framework\Filesystem`|Contains classes that handle reading from and writing to the file system.|
+|`Magento\Framework\HTTP\PhpEnvironment`||
+|`Magento\Framework\Session`||
+|`Magento\Framework\Stdlib\Cookie`|Code to handle the HTTP request/responses as well as session/cookies is found here.|
+|`Magento\Framework\Exception`|Contains the basic exceptions that are thrown throughout the Magento codebase.|
+|`Magento\Framework\Event`|Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.|
+|`Magento\Framework\Validator`|Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.|
+{:style="table-layout:auto;"}
