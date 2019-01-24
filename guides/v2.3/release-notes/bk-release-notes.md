@@ -15,7 +15,7 @@ Interested in the Magento 2.1.x and 2.2.x releases? Check out the [2.1.x]({{ sit
 
 *	Overview of [backward-incompatible changes]({{page.baseurl}}/release-notes/backward-incompatible-changes/index.html) between the 2.2 and 2.3 releases
 
-## {{site.data.var.ece}}{#cloud-updates}
+## {{site.data.var.ece}} {#cloud-updates}
 
 The ece-tools package is a scalable deployment tool that simplifies the {{ site.data.var.ece }} upgrade process by providing commands to backup the database, apply custom patches, verify environment packages, and more. The package also contains scripts and {{site.data.var.ece}} commands to help manage your code and automate the project build and deploy process.
 
