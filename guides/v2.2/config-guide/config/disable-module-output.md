@@ -79,7 +79,7 @@ Archive the original `<Magento_install_dir>/app/etc/config.php` file. Then add t
 Here:
 
  - The `array` beneath `modules_disable_output` contains a list of modules. 
- - `Magento_Review` specifies which module to disable output for
+ - `Magento_Review` specifies which module to disable output for.
  - `1` is the flag that disables output for the `Magento_Review` module.
 
 As a sample result of this configuration, customers can no longer review products.
