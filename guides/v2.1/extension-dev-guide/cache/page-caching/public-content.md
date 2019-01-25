@@ -21,50 +21,32 @@ redirect_from:
 
 By default, all pages in Magento are cacheable, but you can disable caching if necessary (e.g., payment method return page, debug page, or AJAX data source).
 
-## Disable caching
+## Caching
 
-To disable caching, add a `cacheable="false"` attribute to any block in your layout.
+If you need to refresh data every second consider using a cache.
+Requesting content from the cache is faster than generating it for every request.
+
+Only `GET` and `HEAD` methods are cacheable.
+
+### Disable or enable caching
+
+Add a `cacheable="false"` attribute to any block in your layout to disable caching:
 
 ``` xml
 <block class="Magento\Paypal\Block\Payflow\Link\Iframe" template="payflowlink/redirect.phtml" cacheable="false"/>
 ```
 
-{: .bs-callout .bs-callout-info }
 Magento disables page caching if at least one non-cacheable block is present in the layout.
 
-You can also disable caching with HTTP headers. Use the controller to return an object that contains methods for manipulating the cache:
+You can also disable caching with HTTP headers.
+Use a controller to return an object that contains methods for manipulating the cache.
 
-``` php?start_inline=1
-class DynamicController extends \Magento\Framework\App\Action\Action
-{
-    protected $pageFactory;
-
-    public function __construct(
-        \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
-    ) {
-        parent::__construct($context);
-        $this->pageFactory = $resultPageFactory;
-    }
-
-    /**
-     * This action render random number for each request
-     */
-    public function execute()
-    {
-        $page = $this->pageFactory->create();
-        //We are using HTTP headers to control various page caches (varnish, fastly, built-in php cache)
-        $page->setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0', true);
-
-        return $page;
-    }
-}
-```
-
-## Define caching policy
+### Define caching behavior
 
 You can use the Admin to define caching policies or you can define them programmatically in a controller:
 
+> Example
+
 ``` php?start_inline=1
 class DynamicController extends \Magento\Framework\App\Action\Action
 {
@@ -92,13 +74,9 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 }
 ```
 
-{:.bs-callout .bs-callout-info}
-Take caching into account if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.
-Only GET and HEAD methods are cacheable.
-
 ## Configure page variations
 
-Most caching servers and proxies use a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} as a key for cache records; however, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
+Most caching servers and proxies use a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} as a key for cache records. However, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
 
 -   Collisions in cache storage
 -   Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visible in public, etc.)

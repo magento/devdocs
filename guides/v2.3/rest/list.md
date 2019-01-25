@@ -354,6 +354,8 @@ Additions since 2.2 are marked with hash characters (#).
 
     #GET    /V1/inventory/get-product-salable-quantity/:sku/:stockId
     #GET    /V1/inventory/is-product-salable/:sku/:stockId
+    #GET    /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQty
+    #GET    /V1/inventory/stock-resolver/:type/:code
 
 ### InventorySourceSelectionApi
     #GET   /V1/inventory/source-selection-algorithm-list
