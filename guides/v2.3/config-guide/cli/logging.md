@@ -11,17 +11,19 @@ functional_areas:
 
 ## Debug logging
 
-By default, Magento writes debug logs to the `var/log/debug.log` file inside the Magento application directory.
+By default, Magento writes to the debug log (`<install_directory>/var/log/debug.log`) when it is in default or develop mode, but not when it is in production mode. 
+
+The `bin/magento config:set` command allows you to enable or disable debug logging for current mode. As of Magento 2.3.1, the `dev/debug/debug_logging 0 | 1` parameter is no longer valid. Instead, you must specify the `--enable-debug-logging=true | false` parameter. 
 
 #### To enable debug logging:
 
-1. Use the `config:set` command to change the `dev/debug/debug_logging` database value to `1`.
+1. Use the `config:set` command to enable debug logging for the current mode.
 
     ```bash
-    bin/magento config:set dev/debug/debug_logging 1
+    bin/magento config:set --enable-debug-logging=true
     ```
 
-1. Flush the cache.
+2. Flush the cache.
 
     ```bash
     bin/magento cache:flush
@@ -29,10 +31,10 @@ By default, Magento writes debug logs to the `var/log/debug.log` file inside the
 
 #### To disable debug logging:
 
-1. Use the `config:set` command to change the `dev/debug/debug_logging` database value to `0`.
+1. Use the `config:set` command to disable debug logging for the current mode..
 
     ```bash
-    bin/magento config:set dev/debug/debug_logging 0
+    bin/magento config:set --enable-debug-logging=false
     ```
 
 1. Flush the cache.

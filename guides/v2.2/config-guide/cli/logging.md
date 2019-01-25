@@ -11,14 +11,30 @@ functional_areas:
 
 ## Debug logging
 
-By default, Magento writes debug logs to the `var/log/debug.log` file inside the Magento application directory.
+By default, Magento writes to the debug log (`<install_directory>/var/log/debug.log`) when it is in default or develop mode, but not when it is in production mode. 
 
-To enable debug logging:
+The `bin/magento config:set` command allows you to enable or disable debug logging for current mode. As of Magento 2.2.8, the `dev/debug/debug_logging 0 | 1` argument is no longer valid. Instead, you must specify the argument `--enable-debug-logging=true | false`. 
 
-1. Use the `config:set` command to change the `dev/debug/debug_logging` database value to `1`.
+#### To enable debug logging:
+
+1. Use the `config:set` command to enable debug logging for the current mode.
 
     ```bash
-    bin/magento config:set dev/debug/debug_logging 1
+    bin/magento config:set --enable-debug-logging=true
+    ```
+
+2. Flush the cache.
+
+    ```bash
+    bin/magento cache:flush
+    ```
+
+#### To disable debug logging:
+
+1. Use the `config:set` command to disable debug logging for the current mode.
+
+    ```bash
+    bin/magento config:set --enable-debug-logging=false
     ```
 
 1. Flush the cache.
@@ -27,19 +43,6 @@ To enable debug logging:
     bin/magento cache:flush
     ```
 
-To disable debug logging:
-
-1. Use the `config:set` command to change the `dev/debug/debug_logging` database value to `0`.
-
-    ```bash
-    bin/magento config:set dev/debug/debug_logging 0
-    ```
-
-1. Flush the cache.
-
-    ```bash
-    bin/magento cache:flush
-    ```
 
 ## Database logging
 
@@ -56,7 +59,7 @@ To enable database logging:
     bin/magento dev:query-log:disable
     ```
 
-1. Flush the cache.
+2. Flush the cache.
 
     ```bash
     bin/magento cache:flush
