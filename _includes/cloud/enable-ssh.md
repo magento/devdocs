@@ -53,6 +53,7 @@ To create an SSH key pair:
 	For Mac or Linux:
 
 		$ eval "$(ssh-agent -s)"
+
 	For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
 		Host *
