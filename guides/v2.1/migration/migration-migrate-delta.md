@@ -17,7 +17,8 @@ The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) 
 
 * all operations with orders in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel
 
-* !The Tool will not migrate new products or categories. These must be migrated manually
+{: .bs-callout .bs-callout-info }
+All new or updated entities entered through the Admin panel like products or categories are not included into incremental migration and will not be migrated.
 
 ## Before you start: routine preparations
 
