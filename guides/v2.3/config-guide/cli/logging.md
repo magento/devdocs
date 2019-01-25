@@ -20,7 +20,7 @@ As of Magento 2.3.1, you can no longer use the `bin/magento config:set dev/debug
 
 #### To enable debug logging:
 
-1. Use the `config:set` command to enable debug logging for the current mode.
+1. Use the `setup:config:set` command to enable debug logging for the current mode.
 
     ```bash
     bin/magento setup:config:set --enable-debug-logging=true
@@ -34,7 +34,7 @@ As of Magento 2.3.1, you can no longer use the `bin/magento config:set dev/debug
 
 #### To disable debug logging:
 
-1. Use the `config:set` command to disable debug logging for the current mode.
+1. Use the `setup:config:set` command to disable debug logging for the current mode.
 
     ```bash
     bin/magento setup:config:set --enable-debug-logging=false
