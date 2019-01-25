@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 3. Define configurable product options
-subtitle: Create a configurable product using the bulk APIs
+subtitle: Create a configurable product using bulk APIs
 menu_title: Step 3. Define configurable product options
 menu_order: 30
 level3_subgroup: bulk-configurable-product-tutorial
@@ -11,13 +11,15 @@ return_to:
   url: rest/tutorials/index.html
 functional_areas:
   - Integration
+contributor_name: comwrap GmbH
+contributor_link: http://comwrap.com/  
 ---
 
  Now that we've created all the Champ Tee products, we need to assign `size` as the configurable attribute and link the simple products to the configurable product.
 
 ## Set the configurable attribute
 
- The `POST async/bulk/V1/configurable-products/bySku/options` call assigns the specified `attribute_id` to be the configurable attribute. The `sku` of the configurable product has to be specified in each object payload as separate attributes.
+ The `POST async/bulk/V1/configurable-products/bySku/options` call assigns the specified `attribute_id` to be the configurable attribute.
 
  The value assigned to the `value_index` must be unique within the system.
 
@@ -62,7 +64,7 @@ functional_areas:
 
 ## Link the simple products to the configurable product
 
- Now that you have set the configurable attribute, you can link all simple products to the configurable product and execute a single call with a payload that contains an array of simple products.
+Now that you have set the configurable attribute to be `sku`, you can link all simple products to the configurable product and execute a single call with a payload that contains an array of simple products. To do this, specify the `sku` of the configurable product, and the `childSku` of each simple product.
 
  **Endpoint**
 
