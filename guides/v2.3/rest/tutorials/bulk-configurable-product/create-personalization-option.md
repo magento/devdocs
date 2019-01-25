@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 4. Create the personalization option
-subtitle: Create a configurable product using the bulk APIs
+subtitle: Create a configurable product using bulk APIs
 menu_title: Step 4. Create the personalization option
 menu_order: 40
 level3_subgroup: bulk-configurable-product-tutorial
@@ -11,6 +11,8 @@ return_to:
   url: rest/tutorials/index.html
 functional_areas:
   - Integration
+contributor_name: comwrap GmbH
+contributor_link: http://comwrap.com/ 
 ---
 
  Let's add a text box to the product page that allows the customer to add his name (up to 15 characters) to the back of the shirt.

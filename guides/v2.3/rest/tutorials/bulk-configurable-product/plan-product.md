@@ -2,7 +2,7 @@
 layout: tutorial
 group: rest-api
 title: Step 1. Plan the product
-subtitle: Create a configurable product using the bulk APIs
+subtitle: Create a configurable product using bulk APIs
 menu_title: Step 1. Plan the product
 menu_order: 10
 level3_subgroup: bulk-configurable-product-tutorial
@@ -11,6 +11,8 @@ return_to:
   url: rest/tutorials/index.html
 functional_areas:
   - Integration
+contributor_name: comwrap GmbH
+contributor_link: http://comwrap.com/ 
 ---
 
  To create a configurable product programmatically, you'll need to know the following:
