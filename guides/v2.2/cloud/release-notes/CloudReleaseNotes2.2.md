@@ -8,11 +8,14 @@ level3_menu_node:
 level3_subgroup:
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
+
 ---
 
 We are pleased to present {{site.data.var.ece}} 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 To fully upgrade {{site.data.var.ece}}, see [Upgrade Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html). Specific steps and vital information for upgrading from 2.0.X and 2.1.X are included. For specific changes for deployments, see [Changes in Deployment](#deploy).
+
+{% include cloud/note-ece-tools-release-info.md %}
 
 ## Highlights {#highlights}
 
