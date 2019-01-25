@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.1/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 
