@@ -182,10 +182,10 @@ pages:
             - label: Custom blacklist VCL
               url: /cloud/cdn/fastly-vcl-blacklist.html
 
-            - label: Custom redirect to WordPress VCL
+            - label: Set up redirects to WordPress
               url: /cloud/cdn/fastly-vcl-wordpress.html
 
-            - label: Custom block bad referer VCL
+            - label: Block referrer spam
               url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting

@@ -1,7 +1,7 @@
 ---
 group: cloud-guide
 subgroup: 090_configure
-title: Custom redirect to Wordpress VCL
+title: Set up redirects to WordPress using Fastly
 redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-wordpress.html
    - /guides/v2.2/cloud/configure/fastly-vcl-wordpress.html
@@ -11,62 +11,123 @@ functional_areas:
   - Setup
 ---
 
-This example details how to redirect to another backend using an Edge Dictionary and VCL. You may have a separate Wordpress blog for all of your store's blog entries, kept separate from your store. For this example, you are trying to check the first part of the incoming path and redirect the visitor to your Wordpress backend. You would create an Edge Dictionary called `wordpress_urls` with a list of paths to redirect traffic.
+You can configure URL redirects from your Magento store to a site hosted on another backend using Fastly Edge Dictionaries with custom VCL snippets. The following example shows how to redirect incoming requests from a {{ site.data.var.ee }} store (`staging.example.com`) to a separate WordPress site (`customer.example.com`) that hosts related content like blog posts and customer stories.
 
-You must have the following information to complete this VCL code snippet:
 
-* Create an Edge Dictionary in your environments
-* Account access and URL to the Magento Admin for the Staging or Production environment
+{: .bs-callout .bs-callout-info}
+We recommend adding custom VCL configurations to a Staging environment where you can test them before running against Production.
 
-{:.bs-callout .bs-callout-info}
-This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+**Prerequisites**
+
+-  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.md). 
+
+-  Get credentials to access both the Fastly API and the Admin UI for your {{ site.data.var.ece }} environment.
+
+-  Identify the URL paths that you want to redirect to the WordPress backend.
+
+-  Use the Fastly API to add the following configuration settings to the Fastly service configuration: 
+
+   -  Add the WordPress host to the Fastly backend configuration, for example `customer.example.com`.
+
+   -  Attach the following request condition to the Wordpress backend. Incoming requests that meet this condition redirect to the WordPress backend.
+
+     ```json
+      req.http.X-WP == “1”
+     ```
+	 
+     See the [Fastly API reference](https://docs.fastly.com/api/config#) for details on configuring the backend and request condition.
 
 ## Create Wordpress Edge Dictionary {#edge-dictionary}
 
-Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of URLs to redirect to a Wordpress backend. You may only want to create the edge dictionary in your Production environment. You can also create it in Staging for testing if needed.
+Edge Dictionaries create key-value pairs accessible to VCL functions during VCL snippet processing. In this example, you create an edge dictionary that provides the list of URL paths that you want to redirect from your store to the WordPress backend. 
 
-1. Log in to the Magento Admin.
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
-3. Expand the **Edge dictionaries** section.
-4. Click **Add container**. You need to create a container to hold up to 1,000 key-value pairs.
-5. On the container, enter a Dictionary name. For this example, use the name `wordpress_urls`.
-6. Select the checkbox for **Activate after the change** if you want to the dictionary after creating or editing the container.
-7. Add key-value pairs in the new dictionary. For this example, enter the URLs for your blog that should be redirected to your Wordpress backend. Enter a value of 1.
+1.  Log in to the Admin UI.
 
-For more information on using Edge Dictionaries with your VCL snippets, see Fastly's [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries) and their example [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/creating-and-using-dictionaries#custom-vcl-examples).
+1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
 
-## Create wordpress.json {#vcl}
+1.  Expand the **Edge dictionaries** section.
 
-For this example, you may only want to run it against the Production server. You can also add it to Staging for testing.
+1.  Create the Edge Dictionary container:
 
-Create an `wordpress.json` file with the following JSON content:
+    - Click **Add container**.
 
+    -  On the *Container* page, enter a Dictionary name. For this example, use the name `wordpress_urls`.
+
+    -  Select **Activate after the change** to enable the dictionary after you create it.
+
+    -  Click **Upload** to add the dictionary to your Fastly service configuration.
+
+1.  Add the list of URLs for redirection to the the `wordpress_urls` dictionary:
+
+    -  Click the Settings icon for the `wordpress_urls` dictonary.
+
+       ![Configure Edge Dictionary]
+
+    -  Add and save key-value pairs in the new dictionary. For this example, each **Key** is a URL path that you want to redirect to the WordPress backend, and the **Value** is 1. 
+       
+	   ![Add Edge Dictionary Items]
+	 
+    -  Click **Cancel** to return to the system configuration page.
+
+
+## Create a VCL snippet for the WordPress redirect {#vcl}
+
+The following example shows the code for a custom VCL snippet that evaluates incoming requests to determine whether they require redirection to the WordPress backend you added to the Fastly service configuration.
+ 
 ```json
 {
   "name": "wordpress",
   "dynamic": "0",
   "type": "recv",
   "priority": "5",
-  "content": "if ( req.url.path ~ \"^\\/?([^:\/\\s]+).*$\" ) { if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" ) { set req.http.X-WP = \"1\"; } }"
+  "content": "if ( req.url.path ~ \"^\\/?([^\/?]+)") { if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" ) { set req.http.X-WP = \"1\"; } }"
 }
-```
+````
 
-Review the following values for the code to determine if you need to make changes:
+Review the values in the example to determine if you need to make changes:
 
-* `name`: Name for the VCL snippet. For this example, we used the name `wordpress`.
-* `priority`: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and check for URLs that should be redirected. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.
-* `type`: For this VCL, we use `recv`, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.
-* `content`: The code that runs. The code extracts the first part `mypath` of the path `/mypath/someotherpath`.  It then compares that path against the Edge Dictionary `wordpress_urls`. If a match is found, the visitor is redirected to the Wordpress backend.
+  -  `name`: Name for the VCL snippet. For this example, we used the name `wordpress`.
+  
+  -  `dynamic`: Value 0 indicates that this is a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets)  that you upload to the versioned VCL for the Fastly configuration.
 
-{:.bs-callout .bs-callout-info}
-The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
+  -  `priority`: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and check for URLs that should be redirected. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.
 
-## Configure Wordpress {#wordpress}
+  -  `type`: For this VCL, we use `recv`, which places it in the vcl_recv subroutine below the boilerplate VCL and above any objects.
 
-For this VCL snippet to work, you also need to attach a condition to the Wordpress backend to handle this request:
+  -  `content`: The code that runs. The code extracts the first part `mypath` of the path `/mypath/someotherpath`.  It then compares that path against the Edge Dictionary `wordpress_urls`. If a match is found, the visitor is redirected to the Wordpress backend.
 
-	req.http.X-WP == “1”
+You can add the custom VCL snippet to your Fastly service configuration from the Admin UI (requires Fastly module 1.2.58 or later). If you do not have access to the Admin UI, you can save the JSON code example in a file and uploading it using the Faslty API. See [Creating a VCL snippet using the Fastly API](https://docs.fastly.com/vcl/vcl-snippets/using-regular-vcl-snippets/#via-the-api). 
 
-## Finish adding the VCL {#complete}
 
-When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+#### To add the custom VCL snippet from the Admin UI
+
+1.  From the Magento Admin UI, navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
+
+1.  Expand the **Custom VCL snippet** section.
+
+1.  Click **Create Custom Snippet**.
+
+1.  Complete the snippet form as shown in the following figure:
+
+    ![Create VCL Snippet]
+
+1.  After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
+
+1. After the upload completes, clear the cache according to the notification at the top of the page.
+
+
+{: .bs-callout .bs-callout-info}
+Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_HOME/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically any time you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.html#automated-custom-vcl-snippets-deployment) in the Fastly-Magento module documentation. 
+
+
+[Add Edge Dictionary Container]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edge-dictionary-example.png
+{: width="650px"}
+
+[Configure Edge Dictionary]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edge-dictionary-configure.png
+{: width="650px"}
+
+[Add Edge Dictionary Items]: {{site.baseurl}}/common/images/cloud/cloud-fastly-edge-dictionary-add-items.png
+{: width="650px"}
+[Create VCL Snippet]: {{site.baseurl}}/common/images/cloud/cloud-fastly-create-vcl-snippet.png
+{: width="650px"}
+
