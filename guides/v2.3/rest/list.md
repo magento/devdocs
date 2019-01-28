@@ -348,12 +348,14 @@ Additions since 2.2 are marked with hash characters (#).
 
     #GET    /V1/inventory/low-quantity-notification/:sourceCode/:sku
     #POST   /V1/inventory/low-quantity-notification
-    #DELETE /V1/inventory/low-quantity-notification
+    #POST   /V1/inventory/low-quantity-notifications-delete
 
 ### InventorySalesApi
 
     #GET    /V1/inventory/get-product-salable-quantity/:sku/:stockId
     #GET    /V1/inventory/is-product-salable/:sku/:stockId
+    #GET    /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQty
+    #GET    /V1/inventory/stock-resolver/:type/:code
 
 ### InventorySourceSelectionApi
     #GET   /V1/inventory/source-selection-algorithm-list
