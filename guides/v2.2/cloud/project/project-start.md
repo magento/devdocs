@@ -73,16 +73,16 @@ After pushing changes to your environment, you can observe the build results in 
 You can review the logs from the deploy hook in the following directories:
 
 -  **Integration**: `/var/log/deploy.log`
--  **Staging**: `/var/log/platform/<project-ID>_stg/post_deploy.log`
--  **Production**: `/var/log/platform/<node-{1|2|3}>.<project-ID>/post_deploy.log`
+-  **Staging**: `/var/log/platform/<project-ID>_stg/deploy.log`
+-  **Production**: `/var/log/platform/<node-{1|2|3}>.<project-ID>/deploy.log`
 
-The value of `<project-ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`. Using that example, the deploy log is: `/var/log/platform/yw1unoukjcawe_stg/post_deploy.log`
+The value of `<project-ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging environment user is `yw1unoukjcawe_stg` and the Production environment user is `yw1unoukjcawe`. Using that example, the deploy log is: `/var/log/platform/yw1unoukjcawe_stg/deploy.log`
 
 Pro projects have a three-node structure and each node contains logs with specific information for that node. For example, on the Production environment for the `yw1unoukjcawe` project, the deploy logs have the following locations:
 
--  **Node 1**: `/var/log/platform/1.yw1unoukjcawe/post_deploy.log`
--  **Node 2**: `/var/log/platform/2.yw1unoukjcawe/post_deploy.log`
--  **Node 3**: `/var/log/platform/3.yw1unoukjcawe/post_deploy.log`
+-  **Node 1**: `/var/log/platform/1.yw1unoukjcawe/deploy.log`
+-  **Node 2**: `/var/log/platform/2.yw1unoukjcawe/deploy.log`
+-  **Node 3**: `/var/log/platform/3.yw1unoukjcawe/deploy.log`
 
 The log for each deployment appends to this file. Check the timestamps on log entries to verify and locate the logs you want for a specific deployment. The following is a condensed example of log output that you can use for troubleshooting:
 
