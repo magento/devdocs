@@ -95,8 +95,15 @@ pages:
     versionless: true
 
   - label: Best practices
-    url: /mftf/2.3/best-practices.html
     versionless: true
+    children:
+
+      - label: Best practices
+        url: /mftf/2.3/best-practices.html
+        versionless: true
+      - label: Tips and Tricks
+        url: /mftf/2.3/tip-tricks.html
+        versionless: true
 
   - label: Troubleshooting
     url: /mftf/2.3/troubleshooting.html
