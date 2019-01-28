@@ -133,6 +133,31 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     integrationAdminTokenServiceV1
     integrationCustomerTokenServiceV1
 
+### InventoryApi
+    inventoryApiSourceRepositoryV1
+    inventoryApiGetSourcesAssignedToStockOrderedByPriorityV1
+    inventoryApiStockRepositoryV1
+    inventoryApiGetStockSourceLinksV1
+    inventoryApiStockSourceLinksSaveV1
+    inventoryApiStockSourceLinksDeleteV1
+    inventoryApiSourceItemRepositoryV1
+    inventoryApiSourceItemsSaveV1
+    inventoryApiSourceItemsDeleteV1
+    
+### InventoryLowQuantityNotificationApi
+    inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
+    inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
+    inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
+    
+### InventorySalesApi
+    inventorySalesApiIsProductSalableV1
+    inventorySalesApiIsProductSalableForRequestedQtyV1
+    inventorySalesApiStockResolverV1
+    
+### InventorySourceSelectionApi
+    inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
+    inventorySourceSelectionApiSourceSelectionServiceV1
+
 ### Quote
     quoteBillingAddressManagementV1
     quoteCartItemRepositoryV1
