@@ -2550,7 +2550,7 @@ Attribute|Type|Use|Description
 ```
 ### waitForPwaElementVisibleType
 
-Waits up to given time for a PWA Element to appear on the screen.
+Waits up to the given 'time' for a PWA Element to appear on the screen.
 
 Attribute|Type|Use|Description
 ---|---|---|---
