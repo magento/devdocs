@@ -76,8 +76,8 @@ log:
 -   `min_level`—Minimum log level for notification messages. We recommend using `info`.
 
 {:.bs-callout .bs-callout-info}
-Magento 2.1.x is hardly depends on Monolog version 1.16.0 which has an issue with sending messages to the Slack.
-To avoid this issue add next line into require section of the compose.json file `"monolog/monolog": "1.18.1 as 1.16.0"` and run composer update.
+Magento 2.1.x can have problem with sending messages to the Slack.
+To fix this issue add next line into require section of the compose.json file `"monolog/monolog": "1.18.1 as 1.16.0"` and run composer update.
 
 ### Example email configuration
 
