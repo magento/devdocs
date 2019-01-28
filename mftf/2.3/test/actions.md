@@ -2531,7 +2531,7 @@ Attribute|Type|Use|Description
 ```
 ### waitForPwaElementNotVisibleType
 
-Waits up to given time for a PWA Element to disappear from the screen.
+Waits up to the given `time` for a PWA Element to disappear from the screen.
 
 Attribute|Type|Use|Description
 ---|---|---|---
