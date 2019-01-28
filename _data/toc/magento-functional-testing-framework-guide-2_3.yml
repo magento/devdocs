@@ -101,7 +101,7 @@ pages:
       - label: Best practices
         url: /mftf/2.3/best-practices.html
         versionless: true
-      - label: Tips and Tricks
+      - label: Tips and tricks
         url: /mftf/2.3/tip-tricks.html
         versionless: true
 

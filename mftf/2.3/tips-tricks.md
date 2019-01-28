@@ -1,5 +1,5 @@
 ---
-title: MFTF Tips and Tricks
+title: MFTF Tips and tricks
 ---
 
 Sometimes, little changes can make a big difference in your project. Here are some test writing tips to keep everything running smoothly.
@@ -128,7 +128,7 @@ BAD:
 When building selectors for form elements, start with the parent context of the form element.
 Then specify the element `name` attribute in your selector to ensure the correct element is targeted.
 
-To build selector for an input, use the pattern: `{{section_selector}} {{input_selector}}` or for a button: `{{section_selector}} {{button_selector}}`
+To build a selector for an input, use the pattern: `{{section_selector}} {{input_selector}}` or for a button: `{{section_selector}} {{button_selector}}`
 
 Example:
 ```xml
@@ -162,7 +162,7 @@ BAD:
 
 ## Use descriptive stepKey names
 
-Make `stepKeys` descriptive as possible. This helps with readability and clarity.
+Make `stepKeys` values as descriptive as possible. This helps with readability and clarity.
 Do not use numbers to make a `stepKey` unique.
 
 {:style="color:green"}
@@ -201,7 +201,7 @@ BAD:
 
 **Exception:**
 
-Use numbers in stepKeys when order is important, such as with testing sort order.
+Use numbers within `stepKeys` when order is important, such as with testing sort order.
 
 ```xml
 <createData entity="BasicMsiStock1" stepKey="createCustomStock1"/>
