@@ -348,7 +348,7 @@ Additions since 2.2 are marked with hash characters (#).
 
     #GET    /V1/inventory/low-quantity-notification/:sourceCode/:sku
     #POST   /V1/inventory/low-quantity-notification
-    #DELETE /V1/inventory/low-quantity-notification
+    #POST   /V1/inventory/low-quantity-notifications-delete
 
 ### InventorySalesApi
 
