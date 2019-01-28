@@ -2529,6 +2529,83 @@ Attribute|Type|Use|Description
 <!-- Wait up to 30 seconds for the current page to fully load before continuing. -->
 <waitForPageLoad stepKey="waitForPageLoad"/>
 ```
+### waitForPwaElementNotVisibleType
+
+Waits up to given time for a PWA Element to disappear from the screen.
+
+Attribute|Type|Use|Description
+---|---|---|---
+`time`|string|optional| Number of seconds to wait for the element to disappear.
+`selector`|string|required| The selector identifying the corresponding HTML element.
+`stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| A flag to skip the readiness check.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
+#### Example
+
+```xml
+<!-- Wait for the PWA element to disappear. -->
+<waitForPwaElementNotVisibleType time="1" stepKey="waitForPwaElementNotVisibleType"/>
+```
+### waitForPwaElementVisibleType
+
+Waits up to given time for a PWA Element to appear on the screen.
+
+Attribute|Type|Use|Description
+---|---|---|---
+`time`|string|optional| Number of seconds to wait for the selected element.
+`selector`|string|required| The selector identifying the corresponding HTML element.
+`stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| A flag to skip the readiness check.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
+#### Example
+
+```xml
+<!-- Wait for the selected element to appear. -->
+<waitForPwaElementVisibleType stepKey="waitForPwaElementVisibleType"/>
+```
+
+### waitForPwaElementNotVisibleType
+
+Waits for a PWA Element to disappear from the screen.
+
+Attribute|Type|Use|Description
+---|---|---|---
+`time`|string|optional| Number of seconds to wait for the element to disappear.
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| A flag to skip the readiness check.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
+#### Example
+
+```xml
+<!-- Wait up to 5 seconds for the element to disappear. -->
+<waitForPwaElementNotVisibleType time="5" stepKey="waitForPwaElementNotVisibleType"/>
+```
+### waitForPwaElementVisibleType
+
+Waits for a PWA Element to appear on the screen..
+
+Attribute|Type|Use|Description
+---|---|---|---
+`time`|string|optional| Number of seconds to wait for the element to appear.
+`selector`|string|optional| The selector identifying the corresponding HTML element.
+`stepKey`|string|required| A unique identifier of the action.
+`skipReadiness`|boolean|optional| A flag to skip the readiness check.
+`before`|string|optional| `stepKey` of action that must be executed next.
+`after`|string|optional| `stepKey` of preceding action.
+
+#### Example
+
+```xml
+<!-- Wait up to 5 seconds for the element to appear. -->
+<waitForPwaElementVisibleType stepKey="waitForPwaElementVisibleType"/>
+```
 
 ### waitForText
 
