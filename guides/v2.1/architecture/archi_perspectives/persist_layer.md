@@ -14,7 +14,7 @@ If you expect to return multiple items from a database query, then you would imp
 
 A simple resource model defines and interacts with a single table.
 
-However, some objects have a vast number of attributes, or they could have a set related objects that have varying numbers of attributes. In these cases, the objects are constructed using **Entity-Attribute-Value (EAV)** models. 
+However, some objects have a vast number of attributes, or they could have a set related objects that have varying numbers of attributes. In these cases, the objects are constructed using **Entity-Attribute-Value (EAV)** models.
 
 Any model that uses an EAV resource has its attributes spread out over a number of MySQL tables.
 

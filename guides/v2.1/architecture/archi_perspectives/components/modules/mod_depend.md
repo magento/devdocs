@@ -50,4 +50,3 @@ Example: Module A declares a dependency upon Module B. Thus, in Module A's `modu
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
 
 [Types of module dependencies]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend_types.html)
-

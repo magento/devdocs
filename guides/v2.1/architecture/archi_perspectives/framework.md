@@ -32,13 +32,8 @@ The Framework is responsible for operations that are useful for potentially all 
 
 Here is the Magento Framework folder structure:
 
-
-<<<<<<< Updated upstream
 ```terminal
 vendor/
-=======
-`vendor/
->>>>>>> Stashed changes
     ../magento
         ../framework
 lib/
@@ -59,7 +54,6 @@ The `vendor/magento/framework` directory maps to the `Magento\Framework` {% glos
 
 The Magento Framework (`lib/internal/Magento/Framework/`) provides a robust range of functionality. If you are an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developer, you may be interested in this subset of Framework namespaces.
 
-<<<<<<< Updated upstream
 |Namespace|Purpose|
 |--- |--- |
 |`Magento\Framework\DataObject`|Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.|
@@ -88,122 +82,3 @@ Other namespaces under `Magento\Framework` that will interest extension develope
 |`Magento\Framework\Event`|Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.|
 |`Magento\Framework\Validator`|Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.|
 {:style="table-layout:auto;"}
-=======
-<table>
-   <tbody>
-      <tr style="background-color: lightgray">
-         <th>Namespace</th>
-         <th>Purpose</th>
-      </tr>
-      <tr>
-         <td><code>Magento\Framework\DataObject</code>
-         </td>
-         <td>Provides standard functionality for storing and retrieving data through magic methods. This is the base class for many Magento classes.</td>
-      </tr><tr>
-         <td><code>Magento\Framework\Model</code>
-         </td>
-         <td>Contains base Model classes that almost all Magento Model classes extend from.</td>
-      </tr><tr>
-         <td><code>Magento\Framework\Model\AbstractModel</code>
-         </td>
-         <td />
-      </tr>
-      <tr>
-         <td><code>Magento\Framework\Model\ResourceModel\AbstractResource</code></td>
-         <td />
-      </tr>
-      <tr>
-         <td><code>Magento\Framework\Controller</code></td>
-         <td>Contains classes to help return different types of results (for example, JSON and redirects).</td>
-      </tr>
-      <tr>
-         <td><code>Magento\Framework\View</code></td>
-         <td>Contains code to render pages and layouts.</td>
-      </tr><tr>
-         <td><code>Magento\Framework\Data</code></td>
-         <td>Contains additional classes that handle forms.</td>
-      </tr><tr>
-         <td><code>Magento\Framework\Url</code></td>
-         <td>Contains code to look up other pages in Magento.</td>
-      </tr>
-   </tbody>
-</table>
-
-Other namespaces under `Magento\Framework` that will interest extension developers:
-
-<table>
-    <tbody>
-        <tr style="background-color: lightgray">
-            <th>Namespace</th>
-            <th>Purpose</th>
-        </tr>
-      <tr>
-         <td><code>Magento\Framework\ObjectManager</code>
-         </td>
-         <td>Used to provide <i>dependency injection</i>. </td>
-      </tr>
-	  <tr>
-         <td><code>Magento\Framework\App</code>
-         </td>
-         <td>Contains framework code that has knowledge about the Magento application. This code bootstraps the application and reads in the initial configuration. It also contains the entry point to the command line tools, the web application, and the cron job. And finally, it routes requests while providing the deployment context (such as reading in the configuration for the database configuration, languages, caching systems).
-</td>
-</tr>
-<tr>
-	<td>
-		<code>Magento\Framework\Api</code>
-	</td>
-	<td>Contains base classes for advanced functionality of extendable objects through the system (that is, objects that can be extended to add new data through Magento Marketplace extensions).</td>
-</tr>
-<tr>
-	<td>
-		<code>Magento\Framework\Config</code>
-	</td>
-	<td>Contains the generic configuration reader. Each config file has its own specialized reader extending these classes.</td>
-</tr>
-<tr>
-	<td>
-		<code>Magento\Framework\Filesystem</code>
-	</td>
-	<td>Contains classes that handle reading from and writing to the file system.</td>
-</tr>
-	<tr>
-		<td>
-			<code>Magento\Framework\HTTP\PhpEnvironment</code>
-		</td>
-		<td />
-	</tr>
-	<tr>
-		<td>
-			<code>Magento\Framework\Session</code>
-		</td>
-		<td />
-	</tr>
-	<tr>
-		<td>
-			<code>Magento\Framework\Stdlib\Cookie</code>
-		</td>
-		<td>Code to handle the HTTP request/responses as well as session/cookies is found here.</td>
-	</tr>
-	<tr>
-		<td>
-			<code>Magento\Framework\Exception</code>
-		</td>
-		<td>Contains the basic exceptions that are thrown throughout the Magento codebase.</td>
-	</tr>
-	<tr>
-		<td>
-			<code>Magento\Framework\Event</code>
-		</td>
-		<td>Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.
-		</td>
-	</tr>
-		<tr>
-			<td>
-				<code>Magento\Framework\Validator</code>
-			</td>
-			<td>Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.
-			</td>
-		</tr>
-	</tbody>
-</table>
->>>>>>> Stashed changes

@@ -50,7 +50,7 @@ Magento 1 stores customer information in the `customer_entity` and `customer_add
 
 #### `customer_entity` and reference tables
 
-The following columns in the `customer_entity`table contain customer information:
+The following columns in the `customer_entity` table contain customer information:
 
 Column | Data type
 --- | ---

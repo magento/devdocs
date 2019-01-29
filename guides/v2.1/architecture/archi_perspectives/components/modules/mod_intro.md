@@ -14,7 +14,7 @@ Modules and themes are the units of customization in Magento. Modules provide bu
 
 The Magento Framework provides a set of core logic: {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code, libraries, and the basic functions that are inherited by the modules and other components.
 
-## Module purpose
+## Purpose of a module
 
 The purpose of each module is to provide specific product features by implementing new functionality or extending the functionality of other modules. Each module is designed to function independently, so the inclusion or exclusion of a particular module does not typically affect the functionality of other modules.
 
@@ -22,12 +22,12 @@ The purpose of each module is to provide specific product features by implementi
 
 A module is a directory that contains the PHP and {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: [themes]({{page.baseurl}}/frontend-dev-guide/themes/theme-overview.html), [libraries]({{page.baseurl}}/architecture/archi_perspectives/third-party-libs.html), and [language packages]({{page.baseurl}}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack).
 
-## Where do modules live?
+## Module locations
 
 Modules typically live in the `vendor` directory of a Magento installation, in a directory with the following PSR-0 compliant format: `vendor/<vendor>/<type>-<module-name>`, where `<type>` can be one of the following values:
- - **`module`** - for modules (`module-customer-import-export`)
- - **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
- - **`language`** - for language packs (`language-de_de`)
+  **`module`** - for modules (`module-customer-import-export`)
+  **`theme`** - for frontend and admin themes (`theme-frontend-luma` or `theme-adminhtml-backend`)
+  **`language`** - for language packs (`language-de_de`)
 
 For example, the Customer Import/Export module of Magento can be found at `vendor/magento/module-customer-import-export`.
 
@@ -39,8 +39,7 @@ Inside this folder, you will find all the code related to this module, including
 
 Magento developers, administrators, and anyone building a Magento website will want to review all relevant topics surrounding their particular goals and use cases.
 
-See [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) for specific instructions on extending modules 
-
+See [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) for specific instructions on extending modules.
 
 See [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html) for information on implementing themes and other components.
 
@@ -51,4 +50,3 @@ See [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-d
 [Modules and areas]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html)
 
 [Module location and naming conventions]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_conventions.html)
-

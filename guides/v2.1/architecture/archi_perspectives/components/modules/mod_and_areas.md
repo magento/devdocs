@@ -54,9 +54,8 @@ Magento processes a URL request by first stripping off the base URL. The first p
 
 After the area name, the URI segment specifies the *frontname*. When an HTTP request arrives, Magento extracts the handle from the URL and interprets it as follows: `[frontName]/[controller folder]/[controller class]` where `frontName` is a value defined in the module. For example, in `catalog/product/view`, `catalog` is the name of the module used, `product` is the controller folder, and `view` is the controller class.   For deeper directory structures, the controller folders are separated with `_` (for example, `catalog/product_compare/add` for `Magento/Catalog/Controller/Product/Compare/Add.php`).
 
-Note that only the **execute()** method of any given controller is executed. 
+Note that only the **execute()** method of any given controller is executed.
 
 ## Related topics {#m2arch-module-related}
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
-
