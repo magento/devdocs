@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-You can configure URL redirects from your Magento store to a site hosted on another backend using Fastly Edge Dictionaries with custom VCL snippets. The following example shows how to redirect incoming requests from a {{ site.data.var.ee }} store (`staging.example.com`) to a separate WordPress site (`customer.example.com`) that hosts related content like blog posts and customer stories.
+You can configure redirects from your Magento store to a site hosted on another backend using Fastly Edge Dictionaries with custom VCL snippets. The following example shows how to redirect incoming requests from a {{ site.data.var.ee }} store (`staging.example.com`) to a separate WordPress site (`customer.example.com`) that hosts related content like blog posts and customer stories.
 
 
 {: .bs-callout .bs-callout-info}
@@ -19,7 +19,7 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 **Prerequisites**
 
--  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.md). 
+-  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
 
 -  Get credentials to access both the Fastly API and the Admin UI for your {{ site.data.var.ece }} environment.
 
