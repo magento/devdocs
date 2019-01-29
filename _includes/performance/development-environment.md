@@ -2,10 +2,10 @@
 
 Many developers tend to disable all caches on their developer instances.
 We recommend only cleaning caches, without disabling all caches.
-Magento runs more efficiently when you [clean the caches] instead of disabling them completely.
+Magento runs more efficiently when you [clean the caches][] instead of disabling them completely.
 Most types of caches are rarely invalidated during development.
 
-If you [disable the caches], we recommend only disabling Page and Block caches in development instances.
+If you [disable the caches][], we recommend only disabling Page and Block caches in development instances.
 Remember to enable all caches during testing.
 
 ## Commands to avoid in the development mode
