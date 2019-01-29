@@ -42,7 +42,7 @@ Avoid creating these dependencies:
 * Undeclared
 * Incorrect
 
-## Dependencies between modules in different product layers {#m2devgde-moddep-diff-layer}
+## Dependencies between modules in different presentation layers {#m2devgde-moddep-diff-layer}
 
 You can build dependencies between the modules belonging to different layers.
 

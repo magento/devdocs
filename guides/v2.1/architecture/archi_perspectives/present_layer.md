@@ -54,7 +54,7 @@ The View layer calls code from the Model to get information about the state of t
 
 ## Presentation layer flow
 
-Web users interact with components of the presentation layer to select actions that initiate calls to the underlying product layers.
+Web users interact with components of the presentation layer to select actions that initiate calls to the underlying service layer.
 Presentation layer components make calls to the Service layer, which in turn sends requests to the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}Domain{% endglossarytooltip %} (or business logic) layer.
 
 ## Related topics {#related}
