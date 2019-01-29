@@ -2529,7 +2529,7 @@ Attribute|Type|Use|Description
 <!-- Wait up to 30 seconds for the current page to fully load before continuing. -->
 <waitForPageLoad stepKey="waitForPageLoad"/>
 ```
-### waitForPwaElementNotVisibleType
+### waitForPwaElementNotVisible
 
 Waits up to the given `time` for a PWA Element to disappear from the screen.
 
@@ -2546,9 +2546,9 @@ Attribute|Type|Use|Description
 
 ```xml
 <!-- Wait for the PWA element to disappear. -->
-<waitForPwaElementNotVisibleType time="1" stepKey="waitForPwaElementNotVisibleType"/>
+<waitForPwaElementNotVisible time="1" stepKey="waitForPwaElementNotVisible"/>
 ```
-### waitForPwaElementVisibleType
+### waitForPwaElementVisible
 
 Waits up to the given 'time' for a PWA Element to appear on the screen.
 
@@ -2565,7 +2565,7 @@ Attribute|Type|Use|Description
 
 ```xml
 <!-- Wait for the selected element to appear. -->
-<waitForPwaElementVisibleType stepKey="waitForPwaElementVisibleType"/>
+<waitForPwaElementVisible stepKey="waitForPwaElementVisible"/>
 ```
 
 ### waitForText
