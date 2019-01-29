@@ -27,7 +27,7 @@ Magento themes organize both the visual aspect of your storefront and certain as
 
 Each {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience.
 
-For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide]({{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html).
+For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide][].
 
 ## View model
 
@@ -47,7 +47,7 @@ Blocks can generate their content using static HTML, Knockout JS scripts, and PH
 ## How Presentation code calls other layers
 
 Presentation code typically calls service contracts, particularly for a storefront.
-However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the *business logic* layer.
+However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the *domain* layer.
 For example, the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI screens are often tightly linked to a specific implementation and are not generic across implementations.
 
 The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.
@@ -62,3 +62,6 @@ Presentation layer components make calls to the Service layer, which in turn sen
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
+
+<!-- Link definitions -->
+[Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html

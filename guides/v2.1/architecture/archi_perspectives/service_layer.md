@@ -6,7 +6,7 @@ menu_title: Service layer
 
 ## What is a Service layer?
 
-The service layer provides a bridge between the presentation layer and the model layer of {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} logic and resource-specific data.
+The service layer provides a bridge between the presentation layer and the domain layer.
 This is implemented using *service contracts*, which are defined using {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interfaces.
 
 In general, the service layer:
@@ -43,9 +43,9 @@ The service contract of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e14
 
 This directory contains:
 
-* Service interfaces in the `/Api` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the module ([Catalog API][catalog-api]).
+* Service interfaces in the `/Api` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the module ([Catalog API][catalog-api][]).
 
-* Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data]).
+* Data (or *entity*) interfaces in the `Api/Data` directory ([Catalog API/Data][catalog-api-data][]).
   Data entities* are data structures passed to and returned from service interfaces.
   
   Files in the data directory contain `get()` and `set()` methods for entries in the entity table and extension attributes.
