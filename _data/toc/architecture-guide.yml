@@ -10,23 +10,11 @@ pages:
         - label: Extensibility and modularity
           url: /architecture/extensibility.html
 
-        - label: Ease of frontend customization
+        - label: Frontend customization
           url: /architecture/frontend_custom_strategies.html
-
-        - label: Global features that support extensibility
-          url: /architecture/global_extensibility_features.html
-
-        - label: Security
-          url: /architecture/security_intro.html
-
-        - label: Storefront customization strategies
-          url: /architecture/storefront_customization.html
 
         - label: Architectural diagrams
           url: /architecture/archi_perspectives/arch_diagrams.html
-
-        - label: Technology stack
-          url: /architecture/tech-stack.html
 
     - label: Architectural layers
       url: /architecture/archi_perspectives/ALayers_intro.html
@@ -44,7 +32,7 @@ pages:
         - label: Persistence layer
           url: /architecture/archi_perspectives/persist_layer.html
 
-    - label: Components
+    - label: Modularity
       url: /architecture/archi_perspectives/components/AComponents.html
       children:
 
@@ -68,9 +56,6 @@ pages:
 
     - label: Magento Framework
       url: /architecture/archi_perspectives/framework.html
-
-    - label: Third-party libraries
-      url: /architecture/archi_perspectives/third-party-libs.html
 
     - label: GDPR compliance
       include_versions: ["2.1", "2.2", "2.3"]
