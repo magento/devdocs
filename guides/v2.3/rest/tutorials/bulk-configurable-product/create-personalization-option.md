@@ -64,7 +64,7 @@ contributor_link: http://comwrap.com/
 
  * On the Luma storefront page, search for `Champ`. Then click on the Champ Tee product.
 
-   ![Search results]({{ page.baseurl }}/rest/images/add-your-name2.png)
+   ![Search results]({{ page.baseurl }}/rest/images/add-your-name.png)
 
    {:.bs-callout .bs-callout-info}
   If the personalization option is not displayed, go to the **Champ Tee** configuration product page in Admin and set  **Stock Status** to **In Stock**.
