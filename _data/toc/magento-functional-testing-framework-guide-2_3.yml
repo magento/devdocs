@@ -102,7 +102,7 @@ pages:
         url: /mftf/2.3/best-practices.html
         versionless: true
       - label: Tips and tricks
-        url: /mftf/2.3/tip-tricks.html
+        url: /mftf/2.3/tips-tricks.html
         versionless: true
 
   - label: Troubleshooting
