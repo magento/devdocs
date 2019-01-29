@@ -15,7 +15,7 @@ The REST tutorials provide an introduction to Magento web APIs. In general, the 
 
 * The [**configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/configurable-product/config-product-intro.html) helps you plan then create a configurable product and its component simple products.
 
-* The [**bulk API configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/bulk-configurable-product/config-product-intro.html) demonstrates how to perform actions on a large scale; such as, creating multiple customers and products, changing prices across an inventory, and assigning large groups of products to a specific warehouse, all within a single call.
+* The [**bulk API configurable product** tutorial]({{ page.baseurl }}/rest/tutorials/bulk-configurable-product/config-product-intro.html) demonstrates how to create configurable products using the bulk API.
 
 ## Complete these prerequisites
 
