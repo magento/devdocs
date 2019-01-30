@@ -133,7 +133,7 @@ We have channels for each project. These channels are recommended for new member
 [34]: https://www.youtube.com/maxpronko
 [35]: https://twitter.com/max_pronko
 [36]: https://www.maxpronko.com/all-courses/
-[37]: https://github.com/markoshust/docker-magento
+[37]: https://github.com/markshust/docker-magento
 [38]: https://twitter.com/markshust
 [39]: https://github.com/ModestCoders/magento2-dockergento
 [40]: https://www.slideshare.net/OscarRecioSoria/zero-downtime-in-magento-2-is-it-possible
