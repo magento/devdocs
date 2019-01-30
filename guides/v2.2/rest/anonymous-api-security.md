@@ -69,6 +69,7 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Open Source | Customer | /V1/customers | POST |
 | Open Source | Customer | /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken | GET |
 | Open Source | Customer | /V1/customers/password | PUT |
+| Open Source | Customer | /V1/customers/resetPassword | POST |
 | Open Source | Customer | /V1/customers/isEmailAvailable | POST |
 | Open Source | Directory | /V1/directory/countries | GET |
 | Open Source | Directory | /V1/directory/countries/:countryId | GET |
