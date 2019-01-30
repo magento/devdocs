@@ -29,7 +29,7 @@ The following table provides several examples:
  
 Synchronous route | Bulk route
 --- | ---
-`PUT /V1/product/:sku/options/:optionId` | `PUT /V1/product/bySku/options/byOptionId`
+`PUT /V1/product/:sku/options/:optionId` | `PUT async/bulk/V1/product/bySku/options/byOptionId`
 `POST /V1/carts/:quoteId/items` | `POST async/bulk/V1/carts/byQuoteId/items`
 
 {:.bs-callout .bs-callout-info}
@@ -45,28 +45,32 @@ The payload of a bulk request contains an array of request bodies. For example, 
 		"email": "mshaw@example.com",
 		"firstname": "Melanie Shaw",
 		"lastname": "Doe"
-	}
+	},
+	"password": "Strong-Password"
 },
 {
 	"customer": {
 		"email": "bmartin@example.com",
 		"firstname": "Bryce",
 		"lastname": "Martin"
-	}
+	},
+	"password": "Strong-Password"
 },
 {
 	"customer": {
 		"email": "bmartin@example.com",
 		"firstname": "Bryce",
 		"lastname": "Martin"
-	}
+	},
+	"password": "Strong-Password"
 },
 {
 	"customer": {
 		"email": "tgomez@example.com",
 		"firstname": "Teresa",
 		"lastname": "Gomez"
-	}
+	},
+	"password": "Strong-Password"
 }
 ]
 ```
