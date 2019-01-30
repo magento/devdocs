@@ -40,15 +40,19 @@ $ ruby -v
 ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-darwin18]
 ```
 
+#### To update RubyGems:
+
+It is import to update the packaging system so that you use a compatible version of Bundler.
+
+```shell
+$ gem update --system
+```
+
 ## Local build using Jekyll
 
 You must clone the repository and install the dependencies before building the site. You only need to perform the following steps once:
 
 1.  Clone the repository.
-
-    ```shell
-    $ git clone git@github.com:magento/devdocs.git
-    ```
 
 1.  Change to the `devdocs/` directory.
 
@@ -86,7 +90,7 @@ The site server URL http://127.0.0.1:4000/ opens in a browser so you can preview
 Press **Ctrl**+**C** in the terminal to stop the server.
 
 > **TIP**  
->When you use the `--incremental` option, you can leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. If you make changes to a YML configuration file, you have to stop the server and run the command again.
+>When you use the `--incremental` option, you can leave the serve terminal open and running and it automatically regenerates the site. Use the `--livereload` option to automatically refresh browsers. If you make changes to a YML configuration file, you have to stop the server and run the command again.
 
 #### To build the site using rake shortcuts:
 
@@ -202,8 +206,10 @@ If you have Ruby installed on the workstation, then you can skip this section.
 1.  Install the ruby extension:
 
     ```cmd
-    choco install ruby
+    choco install ruby --version 2.4.3.1
     ```
+
+    The latest version of Ruby (2.6) is not compatible, so you may have to specify a compatible version. 
 
 1.  Verify the environment variables were added properly:
 
@@ -228,6 +234,8 @@ Although you can install Git using Chocolatey, we chose to install _Git for Wind
 
 #### Set up SSH key
 
+This is important if you choose to clone the repository using SSH instead of HTTPS.
+
 1.  Open Git Bash. The **Git Bash** executable is on the shortcut menu.
 
 1.  Create a working directory for your Git repositories and change to the new directory.
@@ -246,41 +254,9 @@ You may have to close and reopen the Git Bash application after the Choco instal
 
 1.  Change to the directory you created for Git repositories and clone the DevDocs repository.
 
-    ```bash
-    git clone git@github.com:magento/devdocs.git
-    ```
-
 1.  Change to the `devdocs/` directory.
 
-1.  Install [Bundler](https://bundler.io).
-
-    ```bash
-    gem install bundle
-    ```
-
-1.  Install the project dependencies using Bundler.
-
-    ```bash
-    bundle install
-    ```
-
-1.  Build the site.
-
-    ```bash
-    bundle exec jekyll serve
-    ```
-
-    ```terminal
-    Configuration file: C:/Users/Administrator/mage/devdocs/_config.yml
-                Source: C:/Users/Administrator/mage/devdocs
-           Destination: C:/Users/Administrator/mage/devdocs/_site
-     Incremental build: disabled. Enable with --incremental
-          Generating...
-                        done in 643.551 seconds.
-     Auto-regeneration: enabled for 'C:/Users/Administrator/mage/devdocs'
-        Server address: http://127.0.0.1:4000/
-      Server running... press ctrl-c to stop.
-    ```
+1.  Now, you can continue to [Build DevDocs using Jekyll](#local-build-using-jekyll).
 
 >  **NOTE**  
 >  The `.bash_profile` file CAN be created and managed using Git Bash, which is useful for aliases and other customizations. This file is in the `users/Administrator` folder.
