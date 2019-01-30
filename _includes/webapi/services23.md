@@ -36,7 +36,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     analyticsLinkProviderV1
 
 ### AsynchronousOperations
-    asynchronousOperationsBulkStatusV1
+    asynchronousOperationsOperationRepositoryV1
 
 ### Backend
     backendModuleServiceV1
