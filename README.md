@@ -1,89 +1,100 @@
 # Magento Developer Documentation
 
-Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2 releases. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
+Welcome! This repository contains the latest Magento developer documentation for ongoing Magento 2 releases. To learn more about contributing to Magento 2 code, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
-## Contributors
+## Contributing to the documentation
 
-Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish that goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for improving Magento documentation.
+Our goal is to provide the Magento community with comprehensive and quality technical documentation. We believe that to accomplish our goal we need experts from the community to share their knowledge with us and each other. We are thankful to all of our contributors for helping to improve the Magento documentation.
 
 ![DevDocs contributors](https://raw.githubusercontent.com/wiki/magento/magento2/images/dev_docs_contributors.png)
 
 ## Building this site
 
-The website uses [GitHub Pages](https://pages.github.com/) tools for building with the [Jekyll](https://jekyllrb.com/) static website generator on top of it.
-The toolkit requires a Ruby environment to be run.
+The website uses [GitHub Pages](https://pages.github.com/) tools for building with the [Jekyll](https://jekyllrb.com/) static website generator, which requires a Ruby environment.
 
-There are several options available depending on what type and level of virtualization you want to use:
+After verifying your [Ruby environment](#ruby-environment), continue with one of the following:
 
-- [Installing the project dependencies locally](#build-using-jekyll)
-- [Using a Docker container](#build-using-docker) (Mac, Linux)
-- [Using a Vagrant virtual machine](#build-using-vagrant)
+-  [Build DevDocs using Jekyll](#local-build-using-jekyll)
+-  [Minimize local build time](#minimize-local-build-time)
+-  [Build DevDocs using a Vagrant virtual machine](#build-using-vagrant)
+-  [Build DevDocs in Windows](#build-devdocs-in-windows) (Not supported)
 
-## Installing the project dependencies locally
+If you have questions, open an issue and ask us. We look forward to hearing from you!
 
-### Prerequisites
+-  [Follow @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
+-  [E-mail us](mailto:DL-Magento-Doc-Feedback@magento.com)
+-  [Visit our documentation site](https://devdocs.magento.com).
 
-#### Ruby
+### Ruby environment
 
-Recommended version: 2.5.
+Jekyll requires a Ruby environment. The Mac and Ubuntu operating systems provide Ruby, but you can choose to upgrade the version or use a version manager to control version scope.
 
-Supported versions: 2.3, 2.4, 2.5.
+-  [Ruby](https://www.ruby-lang.org/en/documentation/installation)—Supported versions: 2.3, 2.4, 2.5
+-  [RubyGems](https://rubygems.org/pages/download)—packaging system for Ruby
+-  [rbenv](https://github.com/rbenv/rbenv)—Optional, but useful for managing one or more Ruby versions concurrently
 
-macOS and Ubuntu usually provide Ruby by default.
-
-To check Ruby version on your environment, run in your terminal:
+#### To check your Ruby version:
 
 ```shell
 $ ruby -v
 ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-darwin18]
 ```
 
-See the [Ruby website](https://www.ruby-lang.org/en/documentation/installation) for installation instructions.
+#### To update RubyGems:
 
-*Windows installation using package manager*:  See [Build DevDocs in Windows](#build-devdocs-in-windows)
-
-#### Packaging system
-
-RubyGems is a packaging system in Ruby.
-
-Update the RubyGems:
+It is import to update the packaging system so that you use a compatible version of Bundler.
 
 ```shell
-gem update --system
+$ gem update --system
 ```
 
-### Installation
+## Local build using Jekyll
 
-1. Clone the repository.
-2. Install the project dependencies using Bundler:
+You must clone the repository and install the dependencies before building the site. You only need to perform the following steps once:
+
+1.  Clone the repository.
+
+1.  Change to the `devdocs/` directory.
+
+1.  Install the project dependencies using Bundler.
+
+    ```shell
+    $ bundle install
+    ```
+
+    > **Note**  
+    >[Bundler](https://bundler.io/), installed by RubyGems, is a tool that manages installation dependencies.
+
+#### To build the site using a Jekyll command:
+
+The following Jekyll command builds the HTML and opens the site in a browser.
 
 ```shell
-$ bundle install
-<truncated output>
-Using parallel 1.12.1
-Using yell 2.0.7
-Using html-proofer 3.9.3
-Using progressbar 1.10.0
-Using verbal_expressions 0.1.5
-Using jekyll-algolia 1.4.8
-Using launchy 2.4.3
-Bundle complete! 5 Gemfile dependencies, 99 gems now installed.
-Use `bundle info [gemname]` to see where a bundled gem is installed.
+$ bundle exec jekyll serve --open-url
 ```
 
->**Note**
->[Bundler](https://bundler.io/) is a tool to manage installation dependencies.
->It is installed as a part of the [packaging system update](#packaging-system).
+```
+Configuration file: /Users/user/github/devdocs/_config.yml
+            Source: /Users/user/github/devdocs
+       Destination: /Users/user/github/devdocs/_site
+ Incremental build: enabled
+      Generating... 
+                    done in 43.806 seconds.
+ Auto-regeneration: enabled for '/Users/user/github/devdocs'
+    Server address: http://127.0.0.1:4000/
+  Server running... press ctrl-c to stop.
+```
 
-Once you have completed preparing your environment, you can build locally and review the site in your browser.
+The site server URL http://127.0.0.1:4000/ opens in a browser so that you can preview the content.
 
-### Build locally
+Press **Ctrl**+**C** in the terminal to stop the server.
 
-#### Build using rake
+> **TIP**  
+>When you use the `--incremental` option, you can leave the serve terminal open and running and it automatically regenerates the site. Use the `--livereload` option to automatically refresh browsers. If you make changes to a YML configuration file, you have to stop the server and run the command again.
 
-[rake](https://github.com/ruby/rake) is a Ruby tool that helps to automate tasks.
+#### To build the site using rake shortcuts:
 
-Run the rake task that checks required dependencies and starts the Jekyll server:
+We use the Ruby tool [rake](https://github.com/ruby/rake) to automate build tasks. For example, you can use a rake task, such as `preview`, to check required dependencies and start the Jekyll server:
 
 ```shell
 $ rake preview
@@ -107,171 +118,145 @@ Server running... press ctrl-c to stop.
 
 This command:
 
-- Checks your environment according to the dependencies in `Gemfile.lock`.
-- Removes the `_site/` directory, which contains previously generated preview files.
-- Generates a new preview and opens the landing page in a web browsers.
-- Checks the `_site/` directory for broken hyperlinks.
+-  Checks your environment based on the dependencies listed in the `Gemfile.lock` file.
+-  Removes the `_site/` directory, which contains previously generated preview files.
+-  Generates a new preview and opens the landing page in a web browser.
+-  Checks the `_site/` directory for broken hyperlinks.
 
-To stop the server, press `Ctrl+C` in the serve terminal.
+Press **Ctrl**+**C** in the terminal to stop the server.
 
-If rake fails on your environment, generate the preview [using the jekyll directly](#using-jekyll).
+### Minimize local build time
 
-#### Build using jekyll
+Generating the entire website can take up to 15 minutes, depending on your environment. If you want to preview only selected directories, you can exclude all directories that you do not need using the `_config.local.yml` configuration file.
 
-To generate a local preview, run:
+1.  Create a `_config.local.yml` file at the root of the project directory and exclude all versions except the one that you want to preview.
 
-```shell
-$ bundle exec jekyll serve --incremental --livereload
+    The following example generates the Magento 2.2 version of the documentation:
 
-Configuration file: /Users/username/Github/devdocs/_config.yml
-            Source: /Users/username/Github/devdocs
-        Destination: /Users/username/Github/devdocs/_site
-    Incremental build: enabled
-        Generating...
-                    done in x.x seconds.
-    Auto-regeneration: enabled for '/Users/username/Github/devdocs'
-    Server address: http://127.0.0.1:4000//
-    Server running... press ctrl-c to stop.
-```
-
-Use the **Server address** URL `http://127.0.0.1:4000/` in a browser to preview the content.
-
-To stop the server, press `Ctrl+C` in the serve terminal.
-
-> ***TIP***
-> Leave the serve terminal open and running. Every time you save changes to a file, it automatically regenerates the site so you can test the output immediately. Using the `--incremental` option limits re-generation to pages that have changed. `--livereload` refreshes the changed HTML page in your browser after each cycle of re-generation.
-
-### How to minimize build time locally
-
-Generation of the entire website can take up to 15 minutes depending on your environment.
-If you want to preview only selected directories, you can exclude all directories that you don't need using additional configuration file `_config.local.yml`, which is tracked by `rake preview` task by default.
-
-1. Create a `_config.local.yml` file at the root of the project directory and exclude all versions except the one that you want to preview.
-   The following example will generate Magento 2.2 documentation and the documentation located at the root of the project such as `mftf`.
-
-   ```yaml
+    ```yaml
     exclude:
-     - /community/
-     - /swagger/
-     - /vagrant/
-     - /guides/m1x/
-     - /guides/v2.0/
-     - /guides/v2.1/
+      - /community/
+      - /swagger/
+      - /vagrant/
+      - /guides/m1x/
+      - /guides/v2.0/
+      - /guides/v2.1/
     # - /guides/v2.2/
-     - /guides/v2.3/
+      - /guides/v2.3/
 
     # Excluded in config.yml
-     - /scss/
-     - /bin/
-     - /node_modules/
-     - /vendor/
-     - /.*
-     - /Rakefile
-   ```
+      - /scss/
+      - /bin/
+      - /node_modules/
+      - /vendor/
+      - /.*
+      - /Rakefile
+    ```
 
-2. Run [`rake preview`](#using-rake)
+1.  Preview the site using the `rake preview` command.
 
-If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
+If you do not have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake tool generates all versions of the documentation.
 
-To disable link checking, add `check_links: false` to `_config.local.yml`.
+To disable link checking, add `check_links: false` to the `_config.local.yml` file.
 
-To ignore the `_config.local.yml`, run `rake preview:all`.
-
-## Build using Docker
-
-This repository comes with the necessary configuration files for building a local copy of the Magento DevDocs with [Docker](https://docs.docker.com/), using [Docker Compose](https://docs.docker.com/compose/overview/).
-
-To use Docker and Docker Compose, first download and install Docker for the appropriate operating system, and then install Docker Compose to execute the `docker-compose.yml` configuration file.
-
-### Docker for Mac
-
-- Refer [here](https://docs.docker.com/docker-for-mac/install/) for the official installation instructions.
-
-### Docker for Windows
-
-- Refer [here](https://docs.docker.com/docker-for-windows/install/) for the official installation instructions.
-
-### Docker Compose
-
-- Refer [here](https://docs.docker.com/compose/install/) for the official installation instructions.
-
-### Execution Steps
-
-1. Using [git](https://git-scm.com/), [clone](https://help.github.com/articles/cloning-a-repository/) this repository.
-2. Navigate to the resulting directory.
-3. Run `docker-compose up` to initialize the build process. Refer [here](https://docs.docker.com/compose/gettingstarted/#step-4-build-and-run-your-app-with-compose) for more details on the use of `docker-compose`.
-4. Visit `http://localhost:4000/` in a web browser, and you should be presented with a local copy of the Magento DevDocs. The configuration for the local port (`4000` by default) is found in the [docker-compose.yml](https://github.com/magento/devdocs/blob/develop/docker-compose.yml) file. If another port is desired, please refer [here](https://docs.docker.com/compose/compose-file/compose-file-v2/#ports) for further details regarding Docker Compose port mapping.
-
-### Addressing Problems With Docker Build
-
-1. Verify that the Docker engine is installed for the appropriate operating system.
-2. Verify that Docker Compose is installed.
-3. Verify that this repository has been cloned.
-4. Verify that the correct Docker Compose command(s) have been used in the same directory as the `docker-compose.yml` file.
-5. If there are still problems, please open an [Issue](https://help.github.com/articles/creating-an-issue/) on this repository.
+To ignore the `_config.local.yml` file, use the `rake preview:all` command.
 
 ## Build using Vagrant
 
-You can deploy the devdocs site locally using [this Vagrant project](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
+Optionally, you can build the DevDocs site using [Vagrant](https://github.com/magento-devdocs/vagrant-for-magento-devdocs).
 
-***
+## Build DevDocs in Windows
 
-If you have questions, open an issue and ask us. We're looking forward to hearing from you!
+Some of the technologies we use to develop DevDocs are not compatible with Windows, such as [Jekyll](https://jekyllrb.com/docs/windows/). For this reason, we do not support DevDocs management in Windows; however, we have documented the following procedures to build the DevDocs in a Windows environment. Any further use of this setup or troubleshooting is up to you. 
 
-- [Follow @MagentoDevDocs](https://twitter.com/MagentoDevDocs)
-- [E-mail us](mailto:DL-Magento-Doc-Feedback@magento.com)
-- [Visit our documentation site](https://devdocs.magento.com), built using [GitHub pages](https://pages.github.com/).
+Download software:
 
-## Build on Windows
-
-Windows does not provide the out-of-the-box Ruby, so we recommend to use a virtual environment with Docker or Vagrant described above.
-But if none of the ways work for you, consider using the following tools.
-
-- [Git for Windows](https://git-scm.com/download)
-- [Chocolatey](https://chocolatey.org)
+-  [Git for Windows](https://gitforwindows.org)
+-  [Chocolatey](https://chocolatey.org/install)
 
 ### Install Chocolatey
 
-1. Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
+Only Administrators can use Chocolatey features. You can use the Administrator account, or you can use the "Run as Administrator" function on the shortcut menu.
 
-2. [Install Chocolatey](https://chocolatey.org/install).
+1.  Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
 
-3. Verify Chocolatey was added to the environment variables. In the Windows CMD console, type `echo %path%`.
-   You should see `C:\ProgramData\chocolatey\bin` in the path.
+1.  [Install Chocolatey](https://chocolatey.org/install).
 
-4. Close and reopen the command prompt before using `choco` commands.
+    ```cmd
+    @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+    ```
 
-### Install Ruby package
+1.  Verify Chocolatey was added to the environment variables:
 
-1. Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
+    -  In the Windows UI, open search and type `path`.
+    -  In the Windows CMD console, type `echo %path%`.
+    
+    You should see `C:\ProgramData\chocolatey\bin` in the path.
 
-1. Install the ruby package:
+1.  Close and reopen the command prompt before using `choco` commands.
 
-   ```shell
-   > choco install ruby --version 2.5.3.101
-   ```
+After running the script at the command line, you can install any required extensions. Chocolatey has many extensions available, similar to Homebrew for MacOS. As a best practice, only use extensions labeled as a "trusted package". You can install editors, such as Nano and Notepad++, using Chocolatey, as well.
 
-    Reopen the Command prompt to enable the installation.
+### Install Ruby extension
 
-> **NOTE**  
-> If you encounter problems with Ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `c:\ProgramData\chocolatey\bin` folder.
+If you have Ruby installed on the workstation, then you can skip this section.
 
-1. Install the Ruby development kit
+1.  Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
 
-   ```shell
-   ridk install
-   1 - MSYS2 base installation
-   2 - MSYS2 system update (optional)
-   3 - MSYS2 and MINGW development toolchain
+1.  Install the ruby extension:
 
-   Which components shall be installed? If unsure press ENTER [1,2,3]
-   ```
+    ```cmd
+    choco install ruby --version 2.4.3.1
+    ```
 
-   Press *Enter*. Same for similar requests until the installation is complete.
+    The latest version of Ruby (2.6) is not compatible, so you may have to specify a compatible version. See [Ruby environment](#ruby-environment).
+
+1.  Verify the environment variables were added properly:
+
+    -  In the Windows UI, open search and type `path`.
+    -  In the Windows CMD console, type `echo %path%`.
+
+>  **NOTE**  
+>  If you encounter problems with Ruby, or the `gem` command is not recognized, you can install the `rubyinstaller-devkit.exe` development kit located in the `C:\ProgramData\chocolatey\bin` folder.
+
+### Install Git for Windows
+
+Use [Git for Windows](https://gitforwindows.org/) to prevent interference with the existing Windows environment and to have _Git Bash_ and _Git GUI_ launch commands available on the shortcut menu.
+
+Open the Git Setup file downloaded from the Git for Windows site and use the following settings during the installation wizard:
+
+-  select **Use Git from Git Bash only**
+-  select **Checkout as-is, commit Unix-style line endings**
+-  select your preferred editor (can use Nano, Notepad++, or VIM)
+-  select **Enable symbolic links**
+
+Although you can install Git using Chocolatey, we chose to install _Git for Windows_ independently for more control of the installation settings.
+
+### Set up SSH key
+
+This is important if you choose to clone the repository using SSH instead of HTTPS.
+
+1.  Open Git Bash. The **Git Bash** executable is on the shortcut menu.
+
+1.  Create a working directory for your Git repositories and change to the new directory.
+
+    ```bash
+    mkdir <directory-name>
+    ```
+
+1.  Follow the [Generating a new SSH](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) instructions.
 
 ### Clone and build the DevDocs repository
 
-Refer to [Installing the project dependencies locally](#installing-the-project-dependencies-locally).
+You may have to close and reopen the Git Bash application after the Choco installations.
 
-> **NOTE**  
-> You can create and manage the `.bash_profile` file using Git Bash, which is useful for aliases and customization. This file is in the `users/Administrator` directory.
+1.  Open Git Bash. The **Git Bash** executable is on the shortcut menu.
+
+1.  Change to the directory you created for Git repositories and clone the DevDocs repository.
+
+1.  Change to the `devdocs/` directory.
+
+1.  Now, you can continue to [Build DevDocs using Jekyll](#local-build-using-jekyll).
+
+>  **NOTE**  
+>  The `.bash_profile` file CAN be created and managed using Git Bash, which is useful for aliases and other customizations. This file is in the `users/Administrator` folder.
