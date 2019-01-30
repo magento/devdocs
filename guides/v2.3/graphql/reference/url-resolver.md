@@ -27,7 +27,7 @@ Attribute |  Data Type | Description
 {
  urlResolver(url:"joust-duffle-bag.html") {
    id
-   relative_url
+   canonical_url
    type
  }
 }
@@ -40,7 +40,7 @@ Attribute |  Data Type | Description
   "data": {
     "urlResolver": {
       "id": 1,
-      "relative_url": "catalog/product/view/id/1",
+      "canonical_url": "catalog/product/view/id/1",
       "type": "PRODUCT"
     }
   }
