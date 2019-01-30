@@ -85,7 +85,7 @@ Configuration file: /Users/user/github/devdocs/_config.yml
   Server running... press ctrl-c to stop.
 ```
 
-The site server URL http://127.0.0.1:4000/ opens in a browser so you can preview the content.
+The site server URL http://127.0.0.1:4000/ opens in a browser so that you can preview the content.
 
 Press **Ctrl**+**C** in the terminal to stop the server.
 
@@ -197,7 +197,7 @@ Only Administrators can use Chocolatey features. You can use the Administrator a
 
 After running the script at the command line, you can install any required extensions. Chocolatey has many extensions available, similar to Homebrew for MacOS. As a best practice, only use extensions labeled as a "trusted package". You can install editors, such as Nano and Notepad++, using Chocolatey, as well.
 
-#### Install Ruby extension
+### Install Ruby extension
 
 If you have Ruby installed on the workstation, then you can skip this section.
 
@@ -209,7 +209,7 @@ If you have Ruby installed on the workstation, then you can skip this section.
     choco install ruby --version 2.4.3.1
     ```
 
-    The latest version of Ruby (2.6) is not compatible, so you may have to specify a compatible version. 
+    The latest version of Ruby (2.6) is not compatible, so you may have to specify a compatible version. See [Ruby environment](#ruby-environment).
 
 1.  Verify the environment variables were added properly:
 
@@ -232,7 +232,7 @@ Open the Git Setup file downloaded from the Git for Windows site and use the fol
 
 Although you can install Git using Chocolatey, we chose to install _Git for Windows_ independently for more control of the installation settings.
 
-#### Set up SSH key
+### Set up SSH key
 
 This is important if you choose to clone the repository using SSH instead of HTTPS.
 
