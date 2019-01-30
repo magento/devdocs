@@ -6,26 +6,9 @@ Sometimes, little changes can make a big difference in your project. Here are so
 
 <!-- {% raw %} -->
 
-## Use descriptive variable names
+## Actions and action groups
 
-Use descriptive variable names to increase readability.
-It makes the code easier to follow and update.
-
- {:style="color:green"}
-GOOD:
-
-```xml
-<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{storeName}}')]" parameterized="true"/>
-```
-
-{:style="color:red"}
-BAD:
-
-```xml
-<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{var1}}')]" parameterized="true"/>
-```
-
-## Always specify a default value for action group arguments
+### Always specify a default value for action group arguments
 
 Whenever possible, specify a `defaultValue` for action group arguments.
 
@@ -67,7 +50,7 @@ BAD:
 </actionGroup>
 ```
 
-## Build tests from action groups
+### Build tests from action groups
 
 Build your tests using action groups, even if an action group contains a single action.
 For extension developers, this will make it easier to extend or customize tests.
@@ -122,45 +105,7 @@ BAD:
     <seeElement selector="{{StorefrontProductMediaSection.productImageFullscreen(ClamberWatch.productImage)}}" stepKey="seeFullscreenProductImage" />
 </test>
 ```
-
-## Build selectors in proper order
-
-When building selectors for form elements, start with the parent context of the form element.
-Then specify the element `name` attribute in your selector to ensure the correct element is targeted.
-
-To build a selector for an input, use the pattern: `{{section_selector}} {{input_selector}}` or for a button: `{{section_selector}} {{button_selector}}`
-
-Example:
-```xml
-<div class="admin__field _required" data-bind="css: $data.additionalClasses, attr: {'data-index': index}, visible: visible" data-index="name">
-    <div class="admin__field-label" data-bind="visible: $data.labelVisible">
-        <span data-bind="attr: {'data-config-scope': $data.scopeLabel}, i18n: label" data-config-scope="[STORE VIEW]">Product Name</span>
-    </div>
-    <div class="admin__field-control" data-bind="css: {'_with-tooltip': $data.tooltip, '_with-reset': $data.showFallbackReset && $data.isDifferedFromDefault}">
-        <input class="admin__control-text" type="text" name="product[name]" aria-describedby="notice-EXNI71H" id="EXNI71H" maxlength="255" data-bind="
-            attr: {
-                name: inputName,
-                placeholder: placeholder,
-                maxlength: 255}"/>
-    </div>
-</div>
-```
-
-{:style="color:green"}
-GOOD:
-
-```xml
-<element name="productName" type="input" selector="*[data-index='product-details'] input[name='product[name]']"/>
-```
-
-{:style="color:red"}
-BAD:
-
-```xml
-<element name="productName" type="input" selector=".admin__field[data-index=name] input"/>
-```
-
-## Use descriptive stepKey names
+### Use descriptive stepKey names
 
 Make `stepKeys` values as descriptive as possible. This helps with readability and clarity.
 Do not use numbers to make a `stepKey` unique.
@@ -210,7 +155,91 @@ Use numbers within `stepKeys` when order is important, such as with testing sort
 <createData entity="BasicMsiStock4" stepKey="createCustomStock4"/>
 ```
 
-## Do not use click with checkboxes
+## Selectors
+
+### Build selectors in proper order
+
+When building selectors for form elements, start with the parent context of the form element.
+Then specify the element `name` attribute in your selector to ensure the correct element is targeted.
+
+To build a selector for an input, use the pattern: `{{section_selector}} {{input_selector}}` or for a button: `{{section_selector}} {{button_selector}}`
+
+Example:
+```xml
+<div class="admin__field _required" data-bind="css: $data.additionalClasses, attr: {'data-index': index}, visible: visible" data-index="name">
+    <div class="admin__field-label" data-bind="visible: $data.labelVisible">
+        <span data-bind="attr: {'data-config-scope': $data.scopeLabel}, i18n: label" data-config-scope="[STORE VIEW]">Product Name</span>
+    </div>
+    <div class="admin__field-control" data-bind="css: {'_with-tooltip': $data.tooltip, '_with-reset': $data.showFallbackReset && $data.isDifferedFromDefault}">
+        <input class="admin__control-text" type="text" name="product[name]" aria-describedby="notice-EXNI71H" id="EXNI71H" maxlength="255" data-bind="
+            attr: {
+                name: inputName,
+                placeholder: placeholder,
+                maxlength: 255}"/>
+    </div>
+</div>
+```
+
+{:style="color:green"}
+GOOD:
+
+```xml
+<element name="productName" type="input" selector="*[data-index='product-details'] input[name='product[name]']"/>
+```
+
+{:style="color:red"}
+BAD:
+
+```xml
+<element name="productName" type="input" selector=".admin__field[data-index=name] input"/>
+```
+
+### Build selectors with appropriate specificity
+
+Selectors that are too general might sweep up unexpected elements.
+Elements that are overly specific are less flexible and may fail if unexpected DOM changes occur.
+
+When possible, select the first parent tag and then specify the desired element within that selection.
+This reduces the amount of the DOM it needs to parse.
+
+ {:style="color:green"}
+GOOD:
+```html
+ form[name='myform'] > input[name='firstname']
+
+ //*[@id='container'][@class='dashboard-title']
+ ```
+
+ {:style="color:red"}
+BAD:
+```html
+ input[name='firstname']
+
+ //*[@id='container']/*[@class='dashboard-advanced-reports']/*[@class='dashboard-advanced- reports-description']/*[@class='dashboard-title']
+ ```
+
+## General tips 
+
+### Use descriptive variable names
+
+Use descriptive variable names to increase readability.
+It makes the code easier to follow and update.
+
+ {:style="color:green"}
+GOOD:
+
+```xml
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{storeName}}')]" parameterized="true"/>
+```
+
+{:style="color:red"}
+BAD:
+
+```xml
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{var1}}')]" parameterized="true"/>
+```
+
+### Use proper checkbox actions
 
 When working with input type `checkbox`, do not use the `click` action; use `checkOption` or `uncheckOption` instead.
 
