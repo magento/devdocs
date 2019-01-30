@@ -16,8 +16,8 @@ The REST low-quantity notification endpoints manage the values that merchants se
 **Service names**
 
 ```
-inventoryLowQuantityNotificationApiGetSourceItemConfigurationSaveV1
 inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
+inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
 inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
 ```
 
