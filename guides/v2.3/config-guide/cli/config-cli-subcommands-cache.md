@@ -121,19 +121,20 @@ To view the status of the cache, enter
 A sample follows:
 
                 config: 1
-                layout: 1
-            block_html: 1
-           collections: 1
-                db_ddl: 1
+		layout: 1
+	    block_html: 1
+	   collections: 1
+	    reflection: 1
+		db_ddl: 1
        compiled_config: 1
-                   eav: 1
-             full_page: 1
-             translate: 1
+		   eav: 1
+ customer_notification: 1
     config_integration: 1
 config_integration_api: 1
- customer_notification: 1
+	     full_page: 1
      config_webservice: 1
-                vertex: 1
+	     translate: 1
+		vertex: 1
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
 
@@ -202,15 +203,16 @@ Sample result:
 	layout
 	block_html
 	collections
+	reflection
 	db_ddl
 	compiled_config
-	customer_notification
 	eav
-	full_page
-	translate
+	customer_notification
 	config_integration
 	config_integration_api
+	full_page
 	config_webservice
+	translate
 	vertex
 
 {:.bs-callout .bs-callout-info}
