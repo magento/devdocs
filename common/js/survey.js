@@ -10,7 +10,7 @@ $(function() {
     if ( !localStorage.getItem(surveyName) ) {
 
       // Build banner text
-      var $banner = $('<div class="bs-callout" style="display:none; text-align:left; max-width: 1024px;"><h2>Hello Magento Cloud Developers!</h2><p>Magento Cloud team is eager to learn about your experience with Magento Cloud implementation, who</p><ol><li>Are involved in On-boarding, Provisioning, Development, Deployment, and Go-live phases of Cloud implementation and site development lifecycle.</li><li>Perform activities like Hardware hand-off from Magento to partner; Configure cloud environments; Configure tools (i.e. Fastly, New Relic, Blackfire); and Manage Code pipeline Deployments.</li></ol> <button data-href="https://www.surveymonkey.com/r/Cloud_Devdocs_Recruitment" class="btn btn-primary btn-large">OK, I will Participate</button> <button class="btn btn-large">No, thanks</button> </div>');
+      var $banner = $('<div class="bs-callout" style="display:none; text-align:left; max-width: 1024px;"><h2>Cloud developers, we need your help!</h2><p>The Magento team wants to learn about your experience with Magento Commerce Cloud implementation.<br /> Please sign up for an interview session to share your feedback.</p> <button data-href="https://www.surveymonkey.com/r/Cloud_Devdocs_Recruitment" class="btn btn-primary btn-large">OK, I will help</button> <button class="btn btn-large">No, thanks</button> </div>');
       
       // Assign events
       $banner.find('a, button').on('click', function () {
