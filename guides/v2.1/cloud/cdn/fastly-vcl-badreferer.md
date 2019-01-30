@@ -18,7 +18,7 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 **Prerequisites**
 
--  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.md). 
+-  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
 
 -  Get credentials to access the Admin UI for your {{ site.data.var.ece }} environment.
 
