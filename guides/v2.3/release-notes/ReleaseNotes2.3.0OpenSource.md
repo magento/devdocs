@@ -1798,7 +1798,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- ENGCOM-1007 -->* Magento now displays text on the New Cart Rules page correctly. Previously, labels listed in the Store View Specific Labels section of this page was sometimes truncated or duplicated. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14231](https://github.com/magento/magento2/pull/14231)*. [GitHub-12231](https://github.com/magento/magento2/issues/12231)
 
-<!---ENGCOM-2654 -->* Magento now removes unneeded PDF files after generation. Previously, Magento saved a copy of every generated invoice PDF in `/var`.  *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17280](https://github.com/magento/magento2/pull/17280)*.  [GitHub-3535](https://github.com/magento/magento2/issues/3535), [GitHub-14517](https://github.com/magento/magento2/issues/14517)
+<!---ENGCOM-2654 -->* Magento now removes unnecessary PDF files after generation. Previously, Magento saved a copy of every generated invoice PDF in `/var`.  *Fix submitted by [Tiago Sampaio](https://github.com/tiagosampaio) in pull request [17280](https://github.com/magento/magento2/pull/17280)*.  [GitHub-3535](https://github.com/magento/magento2/issues/3535), [GitHub-14517](https://github.com/magento/magento2/issues/14517)
 
 <!--- MAGETWO-87066 -->*  Magento no longer throws an error when a merchant sends an invoice for an order that contains grouped products. Previously, Magento invoiced the order but threw an error, and did not send the email. [GitHub-5105](https://github.com/magento/magento2/issues/5105) 
 
@@ -1832,7 +1832,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-93692 -->* You can now use wildcard values in coupon codes. 
 
-<!---ENGCOM-1201 -->* We’ve fixed an error in discount calculations that prevented merchants from creating a rule that set a tex rate and 100% discount. Previously, when a tax rule was applied, and a  100% discount was also applied during check out, the shopping cart displayed a negative grand total. *Fix submitted by [Stanislav Ilnytskyi](https://github.com/ilnytskyi) in pull request [14468](https://github.com/magento/magento2/pull/14468)*. [GitHub-10790](https://github.com/magento/magento2/issues/10790)
+<!---ENGCOM-1201 -->* We’ve fixed an error in discount calculations that prevented merchants from creating a rule that set a tax rate and 100% discount. Previously, when a tax rule was applied, and a  100% discount was also applied during check out, the shopping cart displayed a negative grand total. *Fix submitted by [Stanislav Ilnytskyi](https://github.com/ilnytskyi) in pull request [14468](https://github.com/magento/magento2/pull/14468)*. [GitHub-10790](https://github.com/magento/magento2/issues/10790)
 
 
 ### Sample data
@@ -1942,7 +1942,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 ### Staging
 
-<!-- MAGETWO-93719 -->* Magento now rolls  back updated changes to their pre-update state  when a merchant deletes an active scheduled update. Previously, some products were removed from their assigned categories (and categories were removed from the Amdin) when an active product update was deleted.  
+<!-- MAGETWO-93719 -->* Magento now rolls  back updated changes to their pre-update state  when a merchant deletes an active scheduled update. Previously, some products were removed from their assigned categories (and categories were removed from the Admin) when an active product update was deleted.  
 
 <!-- MAGETWO-93706 -->* You can now successfully re-order a configurable product. Previously, a schedule update for one configurable product affected other ordered configurable products. 
 
