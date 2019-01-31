@@ -80,7 +80,7 @@ defaults:
       functional_areas:
         - Test
 
-    - 
+  - 
     scope:
       path: page-builder
     values:
