@@ -6,8 +6,7 @@ menu_title: Magento Commerce (Cloud) 2.2.1 Release Notes
 menu_order: 380
 level3_menu_node:
 level3_subgroup:
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
+
 ---
 
 We are pleased to present {{site.data.var.ece}} 2.2.1. This release includes numerous functional fixes and enhancements.
@@ -77,7 +76,7 @@ For all known {{site.data.var.ee}} 2.2.1  issues, see [Magento Commerce 2.2.1 Re
 //...
 </code>
 
-* The `ADMIN_EMAIL` variable must be set for new and existing projects. We require that you configure the `ADMIN_EMAIL` environment variable for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see [Change the Magento Admin URL, username, and password on master]({{ site.baseurl }}/guides/v2.2/cloud/before/before-setup-env-2_clone.html#setvariables).
+* The `ADMIN_EMAIL` variable must be set for new and existing projects. We require that you configure the `ADMIN_EMAIL` environment variable for deployments, including new installations and upgrades. You can set this variable through the Project Web Interface.  For instructions, see [Change the Magento Admin URL, username, and password on master]({{ site.baseurl }}/guides/v2.2/cloud/before/before-setup-env-2_clone.html).
 
 ## Community contributions {#community}
 
