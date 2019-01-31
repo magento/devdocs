@@ -66,7 +66,7 @@ You can use the following key-value pairs in JSON snippets in VCL files and in `
   <tr>
     <td>dynamic</td>
     <td>
-      Indicates if this is a [dynamic snippet](https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets) or [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets).
+      Indicates if this is a <a href="https://docs.fastly.com/guides/vcl-snippets/using-dynamic-vcl-snippets">dynamic snippet</a> or <a href="https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets">regular snippet</a>.
     </td>
   </tr>
   <tr>
