@@ -16,11 +16,9 @@ pages:
 
         - label: Two-Factor Authentication
           url: /security/two-factor-authentication.html
-          include_versions: ["2.1", "2.2"]
 
         - label: Google reCAPTCHA
           url: /security/google-recaptcha.html
-          include_versions: ["2.1", "2.2"]
 
     - label: Magento application initialization and bootstrap
       url: /config-guide/bootstrap/magento-bootstrap.html
@@ -102,6 +100,10 @@ pages:
 
         - label: Set the Magento mode
           url: /config-guide/cli/config-cli-subcommands-mode.html
+
+        - label: Start message queue consumers
+          include_versions: ["2.3"]
+          url: /config-guide/cli/config-cli-subcommands-queue.html
 
         - label: URN highlighter
           url: /config-guide/cli/config-cli-subcommands-urn.html

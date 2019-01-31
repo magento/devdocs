@@ -55,7 +55,7 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 
 ## Getting argument values from layout {#getter}
 
-Arguments values set in a layout file can be accessed in templates using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. There are more details in the [Layout instructions article]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#getter).
+Arguments values set in a layout file can be accessed in templates using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. There are more details in the [Layout instructions article]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html).
 
 ## Related reading
 

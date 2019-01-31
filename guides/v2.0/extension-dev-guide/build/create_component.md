@@ -5,7 +5,6 @@ title: Name your component
 menu_title: Name your component
 menu_order: 6000
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_component.html
 ---
@@ -22,7 +21,7 @@ Before you continue, make sure you have completed all of the following tasks:
 *   Created the [configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html) you'll need
 *   [Registered]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component
 
-## Add the component's `module.xml` file {#module-xml}
+## Add the component's `module.xml` file {#add-component-xml}
 
 Declare the component itself by adding a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml file in the `/etc` folder of your component.
 
@@ -42,7 +41,7 @@ Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code>
 ## Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
-In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
+In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
 
 In particular:
 

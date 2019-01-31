@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
   - Configuration
 ---
-The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global stage]({{ page.baseurl }}/cloud/env/variables-intro.html#global-variables). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
+The following _deploy_ variables control actions in the deploy phase and can inherit and override values from the [Global variables]({{ page.baseurl }}/cloud/env/variables-global.html). Also, you can override the [ADMIN variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html). Insert these variables in the `deploy` stage of the `.magento.env.yaml` file:
 
 ```yaml
 stage:
@@ -13,10 +13,7 @@ stage:
     DEPLOY_VARIABLE_NAME: value
 ```
 
-For more information about customizing the build and deploy process:
-
--  [Manage build and deploy actions]({{ site.baseurl }}/guides/v2.1/cloud/project/magento-env-yaml.html)
--  [Deployment process]({{ page.baseurl }}/cloud/reference/discover-deploy.html)
+{% include cloud/customize-build-deploy.md %}
 
 ### `CACHE_CONFIGURATION`
 
@@ -105,6 +102,27 @@ stage:
       some_config: 'some_new_value'
       _merge: true
 ```
+
+### `ENABLE_GOOGLE_ANALYTICS`
+
+-  **Default**—`false`
+-  **Version**—Magento 2.1.4 and later
+
+Enables and disables Google Analytics when deploying to Staging and Integration environments. By default, Google Analytics is true only for the Production environment. Set this value to `true` to enable Google Analytics in the Staging and Integration environments.
+
+-   **`true`**—Enables Google Analytics on Staging and Integration environments.
+-   **`false`**—Disables Google Analytics on Staging and Integration environments.
+
+Add the `ENABLE_GOOGLE_ANALYTICS` environment variable to the `deploy` stage in the `.magento.env.yaml` file:
+
+```yaml
+stage:
+  deploy:
+    ENABLE_GOOGLE_ANALYTICS: true 
+```
+
+{:.bs-callout .bs-callout-info}
+The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
 
 ### `GENERATED_CODE_SYMLINK`
 
@@ -224,13 +242,13 @@ stage:
 
 You can configure specific locales per theme as long as the theme is not excluded using the `SCD_EXCLUDE_THEMES` variable during deployment. This is ideal if you want to speed up the deployment process by reducing the amount of unnecessary theme files. For example, you can deploy the _magento/backend_ theme in English and a custom theme in other languages.
 
-The following example deploys the `magento/backend` theme with three locales:
+The following example deploys the `Magento/backend` theme with three locales:
 
 ```yaml
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend":
+      "Magento/backend":
         language:
           - en_US
           - fr_FR
@@ -243,7 +261,7 @@ Also, you can choose to _not_ deploy a theme:
 stage:
   deploy:
     SCD_MATRIX:
-      "magento/backend": [ ]
+      "Magento/backend": [ ]
 ```
 
 ### `SCD_THREADS`
@@ -338,7 +356,7 @@ stage:
 
 Set to `true` to skip static content deployment during the deploy phase.
 
-We recommend using this option, because running static content deployment during the deployment phase can greatly increase deployment times and downtime for your live site.
+We recommend setting this option to `true` because running static content deployment during the deploy phase can significantly increase deployment times and downtime for your live site.
 
 ```yaml
 stage:
@@ -351,7 +369,11 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time. Setting `SCD_ON_DEMAND` to `true` disables this variable.
+Generates symlinks for static content. This setting is vital in the Pro Production environment for the three-node cluster. When this variable is set to `false`, it must copy every file during the deployment, which increases deployment time.
+
+If you generate static content during the build phase, it creates a symlink to the content folder.
+If you generate static content during the deploy phase, it writes directly to the content folder.
+Generating static content on demand disables this variable.
 
 ```yaml
 stage:

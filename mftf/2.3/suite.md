@@ -1,5 +1,5 @@
 ---
-mftf-release: 2.3.0
+mftf-release: 2.3.9
 redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/suite.html
 ---
 
@@ -66,11 +66,11 @@ The format of a suite:
 Using suites enables test writers to consolidate conditions that are shared between tests.
 The code lives in one place and executes once per suite.
 
-* Set up preconditions and postconditions using [actions] in [`<before>`] and [`<after>`] correspondingly, just similar to use in a [test].
-* Clean up after suites just like after tests.
-The MFTF enforces the presence of both `<before>` and `<after>` if either is present.
-* Do not reference in the subsequent tests to data that was persisted in the preconditions.
-Referencing to `$stepKey.field$` of these actions is not valid.
+- Set up preconditions and postconditions using [actions] in [`<before>`] and [`<after>`] correspondingly, just similar to use in a [test].
+- Clean up after suites just like after tests.
+  The MFTF enforces the presence of both `<before>` and `<after>` if either is present.
+- Do not reference in the subsequent tests to data that was persisted in the preconditions.
+  Referencing to `$stepKey.field$` of these actions is not valid.
 
 ## Test writing
 
@@ -79,24 +79,33 @@ Such test is generated in context of the suite that contains it.
 You cannot isolate this test from preconditions of the suite; it cannot be used outside of the suite at the same time.
 
 There are several ways to generate and execute your new test in the context of a suite:
+
 - Edit the appropriate `suite.xml` to include your test only and run:
+
   ```bash
-  vendor/bin/mftf group <suiteName>
+  vendor/bin/mftf run:group <suiteName>
   ```
+
 - Temporarily add a group to your test like `<group value="foo">` and run:
+
   ```bash
-  vendor/bin/mftf group foo
+  vendor/bin/mftf run:group foo
   ```
+
 - To limit generation to your suite/test combination, run in conjunction with the above:
+
   ```bash
   vendor/bin/mftf generate:suite <suite>
   ```
+
 - To generate any combination of suites and tests, use [`generate:tests`] with the `--tests` flag.
 
 ## Examples
 
 ### Enabling/disabling WYSIWYG in suite conditions
+
 <!-- {{raw}} -->
+
 ```xml
 <suites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Suite/etc/suiteSchema.xsd">
     <suite name="WYSIWYG">
@@ -122,6 +131,7 @@ There are several ways to generate and execute your new test in the context of a
     </suite>
 </suites>
 ```
+
 <!-- {{endraw}} -->
 This example declares a suite with the name `WYSIWYG`.
 The suite enables WYSIWYG *before* running tests.
@@ -160,6 +170,7 @@ This suite includes all tests that contain the `<group value="WYSIWYG"/>` annota
 This example declares a suite with the name `Cache`.
 
 Preconditions:
+
 1. It disables the Magento instance cache entirely before running the included tests.
 2. After the testing, it re-enables the cache.
 
@@ -187,6 +198,7 @@ The suite includes a specific test `SomeCacheRelatedTest` and every `<test>` tha
 ```
 
 This example declares a suite with the name `PaypalConfiguration`:
+
 - `<before>` block persists a Paypal Configuration enabling all tests in this suite to run under the newly reconfigured Magento instance.
 - `<after>` block deletes the persisted configuration, returning Magento to its initial state.
 - The suite includes all tests from the `Catalog` module, except the `PaypalIncompatibleTest` test.
@@ -228,30 +240,33 @@ It may contain test steps with any [actions] and [action groups].
 
 ### include {#include-tag}
 
-A set of filters to be used for including tests into the suite.
+A set of filters that you can use to specify which tests to include in the test suite.
 
 It may contain filters by:
-* test which names a specific `<test>`.
-* group which refers to a declared `group` annotation.
-* module which refers to `test` files under a specific Magento Module.
 
-The element may contain [`<test>`], [`<group>`], and [`<module>`].
+- test which names a specific `<test>`.
+- group which refers to a declared `group` annotation.
+- module which refers to `test` files under a specific Magento Module.
+
+The element can contain [`<test>`], [`<group>`], and [`<module>`].
 
 ### exclude {#exclude-tag}
 
-A set of filters to be used for excluding tests from the suite.
+A set of filters that you can use to specify which tests to exclude in the test suite.
 
 There two types of behavior:
+
 1. Applying filters to the included tests when the suite contains [`<include>`] filters.
-The MFTF will exclude tests from the previously included set and generate the remaining tests in the suite.
+   The MFTF will exclude tests from the previously included set and generate the remaining tests in the suite.
 2. Applying filter to all tests when the suite does not contain [`<include>`] filters.
-The MFTF will generate all existing tests except the excluded.
-In this case, the custom suite will contain all generated tests except excluded, and the _default_ suite will contain the excluded tests only. 
+   The MFTF will generate all existing tests except the excluded.
+   In this case, the custom suite will contain all generated tests except excluded, and the _default_ suite will contain the excluded tests only.
 
 It may contain filters by:
-* test which names a specific `<test>`.
-* group which refers to a declared `group` annotation.
-* module which refers to `test` files under a specific Magento Module.
+
+- test which names a specific `<test>`.
+- group which refers to a declared `group` annotation.
+- module which refers to `test` files under a specific Magento Module.
 
 The element may contain [`<test>`], [`<group>`], and [`<module>`].
 
@@ -260,7 +275,7 @@ The element may contain [`<test>`], [`<group>`], and [`<module>`].
 Attributes|Type|Use|Description
 ---|---|---|---
 `name`|string|required|Filtering a test by its name.
-`remove`|boolean|optional|Removing the filter during merging. 
+`remove`|boolean|optional|Removing the filter during merging.
 
 ### group {#group-tag}
 

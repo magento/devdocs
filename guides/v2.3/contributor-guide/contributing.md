@@ -270,7 +270,7 @@ The tool includes configuration settings through the gear icon located top right
 
 ![Magento Porting Tool Settings]({{ site.baseurl }}/common/images/porting-tool-setting.png){:width="600px"}
 
-### Manual porting {#manual-porting}
+### Manual porting {#porting-manual}
 
 When manually porting, you use git commands to create branches and pull requests. This option may require a strong understanding of git.
 

@@ -50,7 +50,7 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 ### Navigation
 
 * [Links](navigation/links/links.html)
-* [Wizard](navigation/wizard/wizard.htm)
+* [Wizard](navigation/wizard/wizard.html)
 
 ### Templates
 

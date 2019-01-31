@@ -418,7 +418,7 @@ Used as follows:
 <update handle="{name_of_handle_to_include}"/>
 ```
 
-The specified [handle]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#handle) is "included" and executed recursively.
+The specified [handle]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html#layout-over-terms) is "included" and executed recursively.
 
 ### argument {#argument}
 

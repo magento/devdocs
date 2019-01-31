@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: JavaScript
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_overview.html
- - /guides/v1.0/frontend-dev-guide/javascript/js_overview.html
 ---
 
 By default, the Magento application uses the [RequireJS file and module loader] to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.

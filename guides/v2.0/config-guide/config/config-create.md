@@ -14,7 +14,7 @@ functional_areas:
 
 To extend an existing configuration type, you need only create a configuration file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-For example, to add an event observer, you create `app/etc/events.xml` and declare a new observer.
+For example, to add an event observer, you create `app/code/{VendorName}/{ModuleName}/etc/events.xml` and declare a new observer.
 
 Because the event configuration type already exists in Magento, the loader and the `events.xsd` validating schema are already present and functional.
    

@@ -3,8 +3,6 @@ group: cloud-guide
 title: Patch Magento Commerce (Cloud)
 redirect_from:
   - /guides/v2.0/cloud/howtos/patch-magento.html
-  - /guides/v2.1/cloud/howtos/patch-magento.html
-  - /guides/v2.2/cloud/howtos/patch-magento.html
 functional_areas:
   - Cloud
   - Upgrade

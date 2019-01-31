@@ -8,7 +8,7 @@ functional_areas:
 ---
 
 {:.bs-callout .bs-callout-warning}
-We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-tools.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
+We merged `vendor/magento/ece-patches` with [`vendor/magento/ece-tools v2002.0.8`]({{ site.baseurl }}/guides/v2.2/cloud/release-notes/cloud-release-archive.html#v200208). You no longer need to update the `vendor/magento/ece-patches` package separately.
 
 {% include cloud/ece-patches.md %}
 
@@ -52,4 +52,4 @@ This package is no longer compatible with other versions of {{site.data.var.ece}
 
 ### Initial release
 
-Initial release of `ece-tools` for {{site.data.var.ece}} 2.2.0.
+Initial release of `{{site.data.var.ct}}` for {{site.data.var.ece}} 2.2.0.

@@ -11,11 +11,14 @@ functional_areas:
 
 ## Overview
 
-The incremental migration tool installs deltalog tables (with prefix m2_cl_*) and triggers to Magento 1 database during the [migration of data]({{ page.baseurl }}/migration/migration-migrate-data.html). It enables you to migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
+The incremental migration tool installs deltalog tables (with prefix `m2_cl_*`) and triggers (for tracking changes) in the Magento 1 database during the [migration of data]({{ page.baseurl }}/migration/migration-migrate-data.html). These deltalog tables and triggers are essential to ensuring that you migrate only the changes made in Magento 1 since the last time you migrated data. These changes are:
 
 * data that customers added via {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} (created orders, reviews, changes in customer profiles, etc.)
 
 * all operations with orders in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel
+
+{: .bs-callout .bs-callout-info }
+All new or updated entities entered through the Admin panel, like products and categories, are not included in incremental migration and will not be migrated.
 
 ## Before you start: routine preparations
 
@@ -36,12 +39,6 @@ where
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
 
 * `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
-
-You must have the tables the migration initially created in the Magento 1 database in order to perform and retain the delta migration. If you wipe the Magento 1 database and try to do the delta, it will fail with the following error: 
-
-    Deltalog for customer_entity is not installed
-
-As an example, if you have Magento 1 on one server and Magento 2 on another that can't access the live Magento 1 database, you may need to copy the Magento 1 database over. In this case if you drop and overwrite the database, you will lose those special tables.
 
 {: .bs-callout .bs-callout-info }
 Incremental migration runs continuously until you stop it by pressing CTRL+C.

@@ -6,7 +6,6 @@ menu_title: Create the Magento database schema
 menu_node:
 menu_order: 15
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-subcommands-db.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands-db.html
 functional_areas:
   - Install

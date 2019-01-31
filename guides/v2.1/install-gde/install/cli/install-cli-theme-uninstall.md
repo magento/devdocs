@@ -2,7 +2,6 @@
 group: installation-guide
 title: Uninstall themes Composer packages
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-theme-uninstall.html
   - /guides/v2.0/install-gde/install/install-cli-theme-uninstall.html
 functional_areas:
   - Install

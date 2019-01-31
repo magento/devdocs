@@ -62,7 +62,7 @@ The [PHP installation instructions](prereq/php-centos-ubuntu.html) include a ste
 * [spl](http://php.net/manual/en/book.spl.php){:target="_blank"}
 *	[libxml](http://php.net/manual/en/book.libxml.php){:target="_blank"}
 *	[xsl](http://php.net/manual/en/book.xsl.php){:target="_blank"}
-*	[azip](http://php.net/manual/en/book.zip.php){:target="_blank"}
+*	[zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 *	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
 *	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 
@@ -121,7 +121,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 *	[php_xdebug 2.5.x](http://xdebug.org/download.php){:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
 {:.bs-callout .bs-callout-info}
-There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug]({{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).
+There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug]({{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html).
 
 * [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
 *	PHPUnit (as a command-line tool) 6.2.0

@@ -9,6 +9,7 @@ redirect_from:
   - /guides/v2.0/architecture/versioning.html
   - /guides/v2.1/architecture/versioning.html
   - /guides/v2.2/architecture/versioning.html
+  - /guides/v2.3/architecture/versioning.html
 ---
 
 Magento software and Magento module releases have their own unique version number.

@@ -96,7 +96,7 @@ In the _magento2/dev/tests/acceptance_ directory, edit the `.env` file to match 
 * `MAGENTO_BASE_URL` must contain a domain name of the Magento instance that will be tested.
 Example: `MAGENTO_BASE_URL=http://magento.test`
 
-* `MAGENTO_BACKEND_NAME` must contain a relative pass of the Admin area.
+* `MAGENTO_BACKEND_NAME` must contain the relative path to the Admin area.
 Example: `MAGENTO_BACKEND_NAME=admin`
 
 * `MAGENTO_ADMIN_USERNAME` must contain the username required for authorization in the Admin area.

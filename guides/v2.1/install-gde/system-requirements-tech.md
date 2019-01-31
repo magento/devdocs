@@ -42,6 +42,9 @@ MariaDB and Percona are compatible with Magento because we support MySQL 5.6 API
 
 {% include install/php_2.1.md %}
 
+{:.bs-callout .bs-callout-info}
+For versions 2.1.16 and later, Magento supports PHP 7.1 for the 2.1.x release line. The other supported PHP versions remain valid and unchanged.
+
 PHP documentation: [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html){:target="_blank"}, [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html){:target="_blank"}
 
 #### Required PHP extensions:
@@ -121,7 +124,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 {:.bs-callout .bs-callout-info}
 There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the storefront or Magento Admin after installation.
 
-For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug).
+For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html).
 
 *	PHPUnit (as a command-line tool) 4.1 or later
 

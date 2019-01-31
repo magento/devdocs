@@ -40,4 +40,4 @@ After you get the Commerce software:
 
 ## Upgrade from an earlier version
 
-To upgrade to Magento Commerce 2.1 from an earlier version, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}/release-notes/tech_bull_21-upgrade.html).
+To upgrade to Magento Commerce 2.1 from an earlier version, see [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_21-upgrade.html).

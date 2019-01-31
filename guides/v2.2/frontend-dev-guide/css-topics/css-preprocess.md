@@ -123,7 +123,7 @@ See the [Compile LESS with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topi
 
 ### Client-side LESS compilation {#client-side}
 
-The client-side compilation flow is similar to server-side. The difference is in the set of files, published to `pub/static` on the [last step](#compile_last). In the client-side mode, the following files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
+The client-side compilation flow is similar to [server-side](#server-side). The difference is in the set of files, published to `pub/static` on the last step. In the client-side mode, the following files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
 
 -   root source (.less) files with resolved `@magento_import` directive
 -   [symlinks](http://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`

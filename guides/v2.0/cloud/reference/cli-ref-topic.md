@@ -9,7 +9,6 @@ functional_areas:
   - Cloud
 redirect_from:
   - /guides/v2.0/cloud/cli-ref/cli-ref-topic.html
-  - /guides/v2.1/cloud/cli-ref/cli-ref-topic.html
 ---
 
 The Magento Cloud CLI is a cloud-specific version of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.

@@ -2,14 +2,13 @@
 group: ui-components-guide
 title: Overview of UI components
 redirect_from:
-  - /guides/v2.1/ui-components/ui-component.html
   - /guides/v2.2/ui-components/ui-component.html
-  - /guides/v2.1/ui-components/ui-definition.html
-  - /guides/v2.1/ui-components/ui-secondary.html
-  - /guides/v2.1/ui-components/ui_components_js.html
-  - /guides/v2.1/ui-components/ui-listing-grid.html
-  - /guides/v2.1/ui_comp_guide/concepts/ui_comp_architecture_concept.html
-  - /guides/v2.1/ui_comp_guide/ui_component_explained.html
+  - /guides/v2.2/ui-components/ui-definition.html
+  - /guides/v2.2/ui-components/ui-secondary.html
+  - /guides/v2.2/ui-components/ui_components_js.html
+  - /guides/v2.2/ui-components/ui-listing-grid.html
+  - /guides/v2.2/ui_comp_guide/concepts/ui_comp_architecture_concept.html
+  - /guides/v2.2/ui_comp_guide/ui_component_explained.html
 ---
 
 ## Overview of UI components
@@ -60,7 +59,7 @@ With Magento, you may apply different approaches to implementing a UI element, a
 
 We recommend using UI components as much as possible and tend to do the same in Magento core.
 
-UI components work well together: they communicate with each other via the [uiRegistry service]({{ page.baseurl }}/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry) that tracks their asynchronous initialization. Therefore, if we need to extend something that has already been implemented as a hierarchy of UI components or add a new feature that should interact with other UI components, it's easier and more effective to use a UI component.
+UI components work well together: they communicate with each other via the [uiRegistry service]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiregistry.html#debug_uiregistry) that tracks their asynchronous initialization. Therefore, if we need to extend something that has already been implemented as a hierarchy of UI components or add a new feature that should interact with other UI components, it's easier and more effective to use a UI component.
 
 ## What is a UI component?
 

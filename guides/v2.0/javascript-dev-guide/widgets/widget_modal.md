@@ -6,7 +6,6 @@ menu_order: 10
 menu_title: Modal widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_modal.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
 ## Overview   {#modal_overview}

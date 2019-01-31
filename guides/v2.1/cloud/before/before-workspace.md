@@ -19,13 +19,13 @@ functional_areas:
 
 To develop, deploy, and test {{site.data.var.ece}}, you need to setup your local environment and clone your project's master Git branch. This local environment provides a development system for your custom code, extensions, and configurations to push for active testing in one of the Integration environments.
 
-This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps or have an existing Magento developer environment, make sure to review the expected results to continue to the next. Some configurations and workflows differ for {{site.data.var.ee}} than a typical Enterprise Edition installation.
+This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you already completed some of these steps or have an existing Magento developer environment, review the following for expected results and continue to the next step. Some configurations and workflows differ for {{site.data.var.ee}} than a typical Enterprise Edition installation.
 
 ## Set up an account {#newaccount}
 
-To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Magento Commerce (Cloud) account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
+To begin working with a project and develop your store, you should have received an e-mail invitation to [create a {{site.data.var.ece}} account](https://accounts.magento.cloud). The account provides access to your project for Magento development and deployment across all supported environments.
 
-You should receive an e-mail invitation to verify and access the project. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
+You should receive an e-mail invitation to verify and access the project. If you do not see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
 
 When logged in, your project should open with a `master` branch to work with.
 

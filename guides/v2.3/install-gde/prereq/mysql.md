@@ -305,7 +305,7 @@ To configure a MySQL database instance:
 
     We recommend you configure your database instance as appropriate for your business. When configuring your database, please keep the following in mind:
     
-    -   Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl }}/config-guide/prod/prod_perf-optimize.html) for more information.
+    -   Indexers require higher `tmp_table_size` and `max_heap_table_size` values (e.g., 64M). If you configure the `batch_size` parameter, you can adjust that value along with the table size settings to improve indexer performance. Refer to the [Magento Optimization Guide]({{page.baseurl }}/performance-best-practices/configuration.html) for more information.
     
     -   For optimal performance, make sure all MySQL and Magento index tables can be kept in memory (e.g., configure `innodb_buffer_pool_size`).
 

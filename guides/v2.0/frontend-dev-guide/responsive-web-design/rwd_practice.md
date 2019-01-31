@@ -46,4 +46,4 @@ After OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply
 
 <p><img src="{{ site.baseurl }}/common/images/rwd_practice.jpg"></p>
 
-(compare to the <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_blank_ex" target="_blank">same page for the Blank theme</a>.)
+(compare to the <a href="{{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_mobile.html" target="_blank">same page for the Blank theme</a>.)

@@ -11,6 +11,9 @@ Looking for [2.0.x Release Notes]({{site.gdeurl}}release-notes/bk-release-notes.
 
 ## Magento 2.1.0 Release Notes
 
+* [{{site.data.var.ce}} 2.1.16 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.16CE.html)
+* [{{site.data.var.ee}} 2.1.16 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.16EE.html)
+
 * [{{site.data.var.ce}} 2.1.15 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.15CE.html)
 * [{{site.data.var.ee}} 2.1.15 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.15EE.html)
 

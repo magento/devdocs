@@ -1,12 +1,7 @@
 ---
 group: b2b-developer-guide
-subgroup: 10_REST
 title: Manage company credit
-menu_title: Manage company credit
-menu_order: 18
-level3_menu_node: level3child
-level3_subgroup: credit
-ee_only: True
+ee_only: true
 functional_areas:
   - B2B
   - Integration
@@ -26,12 +21,12 @@ When you create a company, the credit limit is set to 0. Use the `PUT /V1/compan
 
 **REST Endpoints**
 
-{% highlight json %}
+```
 PUT /V1/companyCredits/:id
 GET /V1/companyCredits/:creditId
 GET /V1/companyCredits/company/:companyId
 GET /V1/companyCredits/
-{% endhighlight %}
+```
 
 **Company credit parameters**
 
@@ -60,7 +55,7 @@ This call changes the company's credit limit to $1000. The `available_limit` par
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "creditLimit": {
   "id": 2,
@@ -69,11 +64,11 @@ This call changes the company's credit limit to $1000. The `available_limit` par
   "currency_code": "USD"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
     "id": 2,
     "company_id": 2,
@@ -83,7 +78,7 @@ This call changes the company's credit limit to $1000. The `available_limit` par
     "exceed_limit": false,
     "available_limit": 1000
 }
-{% endhighlight %}
+```
 
 ### Get details about a company's credit limit using credit ID
 
@@ -103,7 +98,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 2,
   "company_id": 2,
@@ -113,7 +108,7 @@ Not applicable
   "exceed_limit": false,
   "available_limit": 500
 }
-{% endhighlight %}
+```
 
 ### Get details about a company's credit limit using company ID
 
@@ -133,7 +128,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 2,
   "company_id": 2,
@@ -143,7 +138,7 @@ Not applicable
   "exceed_limit": false,
   "available_limit": 500
 }
-{% endhighlight %}
+```
 
 ### Search credit IDs
 
@@ -162,7 +157,8 @@ Not applicable
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
+
+```json
 {
     "items": [
         {
@@ -207,7 +203,8 @@ Not applicable
     },
     "total_count": 3
 }
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 ## Balance operations
@@ -220,10 +217,10 @@ The company's outstanding balance can be updated as the buyer makes payments, pu
 
 **REST Endpoints**
 
-{% highlight json %}
+```
 POST /V1/companyCredits/:creditId/decreaseBalance
 POST /V1/companyCredits/:creditId/increaseBalance
-{% endhighlight %}
+```
 
 **Balance Parameters**
 
@@ -254,14 +251,14 @@ This call increases the company credit with an Allocate, Update, Refund, Revert,
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "value": 250,
   "currency": "USD",
   "operationType": 2,
   "comment": "update limit"
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -277,14 +274,14 @@ This call decreases the company credit with an Update (operation type = 2), Purc
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "value": 250,
   "currency": "USD",
   "operationType": 4,
   "comment": "issue refund"
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -298,10 +295,10 @@ A Reimburse transaction can be updated to include a purchase order and comment.
 `companyCreditCreditHistoryManagementV1`
 
 **REST Endpoints**
-{% highlight json %}
+```
 GET /V1/companyCredits/history
 PUT /V1/companyCredits/history/:historyId
-{% endhighlight %}
+```
 
 ### Save the credit history
 
@@ -313,12 +310,12 @@ This call updates the credit history to specify a purchase order number.
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "purchaseOrder": "A12345",
   "comment": "Adding PO info"
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -340,7 +337,8 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 Not applicable
 
 **Response**
-{% highlight json %}
+
+```json
 {
     "items": [
         {
@@ -394,7 +392,7 @@ Not applicable
     },
     "total_count": 2
 }
-{% endhighlight %}
+```
 
 ## Related information
 

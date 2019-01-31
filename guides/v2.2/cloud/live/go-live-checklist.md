@@ -8,7 +8,7 @@ functional_areas:
 
 ## Pre-Launch Checklist {#checklist}
 
-Prior to launch and switching the DNS, you can download and follow the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ site.baseurl }}/cloud/live/stage-prod-live.html).
+Prior to launch and switching the DNS, you can download and follow the [Checklist]({{ site.baseurl }}/common/pdf/Pre-Launch.Checklist_4_23_2018.docx) and all tests for your deployed site or store. See an overview of the complete deployment process for Starter and Pro at [Deploy your store]({{ page.baseurl }}/cloud/live/stage-prod-live.html).
 
 ## Completely test in Production {#test}
 

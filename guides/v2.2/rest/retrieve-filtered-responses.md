@@ -75,7 +75,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
 
 `GET http://<host>/rest/default/V1/shipment/2?fields=items[name,qty,sku]`
 
-{% highlight json %}
+```json
 "items": [
    {
      "name": "Minerva LumaTech&trade; V-Tee-XS-Blue",
@@ -83,7 +83,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
      "sku": "WS08-XS-Blue",
    }
  ]
- {% endhighlight %}
+```
 
 ## Nested objects
 
@@ -95,7 +95,7 @@ This example returns only the following:
 
 `GET http://<host>/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]`
 
-{% highlight json %}
+```json
 {
   "sku": "MT12"
   "name": "Cassius Sparring Tank"
@@ -110,7 +110,7 @@ This example returns only the following:
       }
   }
 }
-{% endhighlight %}
+```
 
 ## POST operation
 

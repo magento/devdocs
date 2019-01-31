@@ -4,7 +4,6 @@ subgroup: 1_Javascript
 title: Use custom JavaScript
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/custom_js.html
- - /guides/v1.0/frontend-dev-guide/javascript/custom_js.html
 ---
 
 ## Overview {#custom_js_overview}
@@ -162,6 +161,6 @@ $(mage.apply);
 #### Related topic
 
 - [JavaScript resources in Magento]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
-- [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html)
+- [About AMD modules and RequireJS]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html)
   
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

@@ -7,7 +7,6 @@ menu_node:
 menu_order: 5
 redirect_from: 
   - /guides/v2.0/release-notes/tech_bull_jan_22_16.html
-  - /guides/v2.1/release-notes/tech_bull_201-upgrade.html
 ---
 
 This bulletin informs you of the following issues:
