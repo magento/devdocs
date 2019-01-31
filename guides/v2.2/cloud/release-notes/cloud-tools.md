@@ -5,8 +5,9 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.3/cloud/release-notes/CloudReleaseNotes.html
 ---
-
 
 <!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
@@ -213,8 +214,6 @@ The release notes include:
 
 {:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
-
-#### New features
 
 -  {:.new}**Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{ page.baseurl }}/cloud/env/variables-deploy.html#redis_use_slave_connection) and for <!--MAGECLOUD-143 --> [MariaDB]({{ page.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection)).
 
