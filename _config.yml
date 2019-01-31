@@ -80,6 +80,14 @@ defaults:
       functional_areas:
         - Test
 
+    - 
+    scope:
+      path: page-builder
+    values:
+      layout: default
+      group: page-builder
+      strip_title: true
+
   -
     scope:
       path: guides/v2.3/mrg
@@ -115,6 +123,11 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+
+optional_front_matter:
+  remove_originals: true
 
 # Settings for the jekyll-titles-from-headings plugin.
 # For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
