@@ -18,7 +18,7 @@ A common suggestion is to use a value of `022` in the `magento_umask` file, whic
 
 To set `magento_umask`:
 
-1. In Terminal, log in to your Magento server, or switch to, the [Magento file system owner][].
+1. In a command line terminal, log in to your Magento server as a [Magento file system owner][].
 2. `cd` into `<your Magento install dir>`.
 3. Use the following command to create a `magento_umask` file and write `umask` value to it.
    ```bash 
