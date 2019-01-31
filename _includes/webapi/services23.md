@@ -143,17 +143,18 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     inventoryApiSourceItemRepositoryV1
     inventoryApiSourceItemsSaveV1
     inventoryApiSourceItemsDeleteV1
-    
+
 ### Inventory low quantity notification
     inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
     inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
     inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
-    
+
 ### Inventory sales
+    inventorySalesApiGetProductSalabilityV1
     inventorySalesApiIsProductSalableV1
     inventorySalesApiIsProductSalableForRequestedQtyV1
     inventorySalesApiStockResolverV1
-    
+
 ### Inventory source selection
     inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
     inventorySourceSelectionApiSourceSelectionServiceV1
