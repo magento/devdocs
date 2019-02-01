@@ -185,7 +185,7 @@ pages:
             - label: Set up redirects to WordPress
               url: /cloud/cdn/fastly-vcl-wordpress.html
 
-            - label: Block referrer spam
+            - label: Block referral spam
               url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
