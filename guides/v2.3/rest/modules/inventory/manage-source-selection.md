@@ -260,7 +260,7 @@ Name | Description
 
 **Sample usage**
 
-GET /V1/inventory/get-distance?source[lat]=30.271129&source[lng]=-97.7437&destination[lat]=39.290882&destination[lng]=-76.610759
+`GET /V1/inventory/get-distance?source[lat]=30.271129&source[lng]=-97.7437&destination[lat]=39.290882&destination[lng]=-76.610759`
 
 **Payload**
 
@@ -268,7 +268,7 @@ None
 
 **Response**
 
-The distance, in meters
+The distance, in kilometers
 
 ### Get the latitude and longitude of the shipping address
 
