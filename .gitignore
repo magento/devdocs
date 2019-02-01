@@ -19,7 +19,6 @@
 !/_config.stage.yml
 
 *.bat
-*.sh
 /tmp/
 !/**/samples/*.sh
 /vendor/
