@@ -5,8 +5,9 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.3/cloud/release-notes/CloudReleaseNotes.html
 ---
-
 
 <!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
@@ -86,13 +87,9 @@ The release notes include:
 
     -   Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
 
-        -   ADMIN_EMAIL is not set on upgrade.
+        -  Environment configuration contains incorrect values for deploy or cloud variables.
 
-        -   ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.
-
-        -   Environment configuration contains incorrect values for deploy or cloud variables.
-
-        -   <!--MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{site.data.var.ece}}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
+        -  <!--MAGECLOUD-2600-->The Elasticsearch version on the cloud infrastructure is incompatible with the version of the elasticsearch/elasticsearch module supported by {{ site.data.var.ece }}. See the [Elasticsearch troubleshooting article](https://support.magento.com/hc/en-us/articles/360015758471-Deployment-fails-or-interrupts-with-cloud-log-error-Elasticsearch-version-is-not-compatible-with-current-version-of-magento) in the Magento Support Knowledgebase.
 
     -   <!--MAGECLOUD-2173-->Fixed an issue with the shared configuration settings in the `app/etc/config.php` file that caused `recursion detected` errors during deployment.
 
@@ -219,8 +216,6 @@ The release notes include:
 
 {:.bs-callout .bs-callout-info}
 The ece-tools version 2002.0.11 is required for 2.2.4 compatibility.
-
-#### New features
 
 -  {:.new}**Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{ page.baseurl }}/cloud/env/variables-deploy.html#redis_use_slave_connection) and for <!--MAGECLOUD-143 --> [MariaDB]({{ page.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection)).
 

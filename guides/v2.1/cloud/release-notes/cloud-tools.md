@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.1/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 
@@ -85,10 +87,6 @@ The release notes include:
     -   <!--MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved.
 
     -   Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
-
-       -  ADMIN_EMAIL is not set on upgrade.
-
-       -  ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.
 
        -  Environment configuration contains incorrect values for deploy or cloud variables.
 

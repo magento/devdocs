@@ -53,7 +53,7 @@ To remove these test builds, you can use the `magento-cloud local:clean` command
 
 ## Push code to Git and Integration {#push}
 
-Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
+Before you continue, push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
 
 #### To prepare your code and branch:
 

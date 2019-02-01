@@ -14,6 +14,7 @@ require 'colorator'
 # Load ruby files with helper methods from the 'rakelib/' directory
 require_relative 'rakelib/link-checker.rb'
 require_relative 'rakelib/converter.rb'
+require_relative 'rakelib/double-slash-check.rb'
 
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
@@ -26,7 +27,12 @@ task preview: %w[install clean] do
   puts 'Generating devdocs locally ... '.magenta
   if File.exist?('_config.local.yml')
     print 'enabled the additional configuration parameters from _config.local.yml: $ '.magenta
-    sh 'bundle exec jekyll serve --incremental --open-url --livereload --trace --config _config.yml,_config.local.yml'
+    sh 'bundle exec jekyll serve --incremental \
+                                 --open-url \
+                                 --livereload \
+                                 --trace \
+                                 --config _config.yml,_config.local.yml \
+                                 --plugins _plugins,_checks'
   else
     Rake::Task['preview:all'].invoke
   end
