@@ -35,46 +35,58 @@ If you already have SSH keys, continue to:
 
 Use the `ssh-keygen` command to create an SSH key pair. `ssh-keygen` is typically installed on Linux systems.
 
-To create an SSH key pair:
+#### To create an SSH key pair:
 
-1. The command syntax follows, entering the email used for your GitHub account:
+1.  The command syntax follows, entering the email used for your GitHub account:
 
-		ssh-keygen -t rsa
+    ```bash
+    ssh-keygen -t rsa
+    ```
 
-	GitHub also uses the key length `-b 4096` in the command.
-	Follow the prompts to complete the key.
+    GitHub also uses the key length `-b 4096` in the command. Follow the prompts to complete the key.
 
-2. When prompted to "Enter a file in which to save the key," press Enter to save the file to the default location. The prompt displays the location.
+1.  When prompted to "Enter a file in which to save the key," press **Enter** to save the file to the default location. The prompt displays the location.
 
-3. When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.
+1.  When prompted to enter a secure passphrase, enter a phrase to use like a password. Make note of this passphrase. You may be requested to enter it depending on tasks you complete using a terminal during development.
 
-4. After creating the SSH key pair, start the ssh-agent:
+1.  After creating the SSH key pair, start the ssh-agent:
 
-	For Mac or Linux:
+    For Mac or Linux:
 
-		$ eval "$(ssh-agent -s)"
-	For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+    ```bash
+    eval "$(ssh-agent -s)"
+    ```
+	
+    For Mac, you can edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
 
-		Host *
-			AddKeysToAgent yes
-			UseKeychain yes
-			IdentityFile ~/.ssh/id_rsa
+    ```
+    Host *
+        AddKeysToAgent yes
+        UseKeychain yes
+        IdentityFile ~/.ssh/id_rsa
+    ```
 
-	For Windows:
+    For Windows:
 
-		$ eval $(ssh-agent -s)
+    ```shell
+    eval $(ssh-agent -s)
+    ```
 
-5. Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
+1.  Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
 
-	For Mac:
+    For Mac:
 
-		ssh-add -K ~/.ssh/id_rsa
+    ```bash
+    ssh-add -K ~/.ssh/id_rsa
+    ```
 
-	For Windows or Linux:
+    For Windows or Linux:
 
-		ssh-add ~/.ssh/id_rsa
+    ```shell
+    ssh-add ~/.ssh/id_rsa
+    ```
 
-6. [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) The instructions include Mac, Windows, and Linux.
+1.  [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) The instructions include Mac, Windows, and Linux.
 
 ### Test the SSH keys {#test}
 
