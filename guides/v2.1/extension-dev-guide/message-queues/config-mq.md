@@ -52,7 +52,7 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 
 {% highlight xml %}
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
 <topic name="synchronous.rpc.test" request="string" response="string">
     <handler name="processRpcRequest" type="Magento\TestModuleSynchronousAmqp\Model\RpcRequestHandler" method="process"/>
 </topic>
@@ -91,7 +91,7 @@ maxMessages | Specifies the maximum number of messages to consume.
 ## Sample `queue.xml` file ##
 
 {% highlight xml %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
 <broker topic="synchronous.rpc.test" type="amqp" exchange="magento">
     <queue consumer="synchronousRpcTestConsumer" name="synchronous.rpc.test" consumerInstance="Magento\Framework\MessageQueue\Rpc\Consumer"/>
 </broker>
