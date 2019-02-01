@@ -1,9 +1,9 @@
 ---
 group: cloud-guide
-title: Site availability
+title: Testing Store
 functional_areas:
   - Cloud
-  - Configuration
+  - Testing
   - Services
 ---
 
