@@ -144,6 +144,11 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     inventoryApiSourceItemsSaveV1
     inventoryApiSourceItemsDeleteV1
 
+### InventoryDistanceBasedSourceSelectionApi
+    inventoryDistanceBasedSourceSelectionApiGetDistanceProviderCodeV1
+    inventoryDistanceBasedSourceSelectionApiGetDistanceV1
+    inventoryDistanceBasedSourceSelectionApiGetLatLngFromAddressV1
+
 ### InventoryLowQuantityNotificationApi
     inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
     inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
