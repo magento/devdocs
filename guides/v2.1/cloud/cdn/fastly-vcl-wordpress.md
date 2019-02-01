@@ -11,7 +11,9 @@ functional_areas:
   - Setup
 ---
 
-After you set up Fastly services on your {{ site.data.var.ece }} project environments, you can use the custom VCL snippets feature to block referral spam](https://en.wikipedia.org/wiki/Referrer_spam) from your sites. The following example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet
+After you set up Fastly services on your {{ site.data.var.ece }} project environments, you can use the custom VCL snippets feature to block [referral spam](https://en.wikipedia.org/wiki/Referrer_spam) from your sites.
+
+The following example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet
 to redirect incoming requests from a {{ site.data.var.ee }} store (`staging.example.com`) to a separate WordPress site (`customer.example.com`) that hosts related content like blog posts and customer stories.
 
 
@@ -30,11 +32,12 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
    -  Add the WordPress host to the Fastly backend configuration, for example `customer.example.com`.
 
-   -  Attach the following request condition to the Wordpress backend. Incoming requests that meet this condition redirect to the WordPress backend.
+   -  Attach the following request condition to the Wordpress backend.
 
      ```json
       req.http.X-WP == “1”
      ```
+	 Incoming requests that match this condition, which is set through the custom VCL snippet, redirect to the WordPress backend. 
 	 
      See the [Fastly API reference](https://docs.fastly.com/api/config#) for details on configuring the backend and request condition.
 
