@@ -2,7 +2,7 @@
 group: cloud-guide
 subgroup: 170_trouble
 title: Testing Store
-menu_title: Troubleshoot deployment
+menu_title: Testing Store
 menu_order: 3
 menu_node:
    - /guides/v2.1/cloud/access-acct/trouble.html
