@@ -87,6 +87,8 @@ defaults:
       layout: default
       group: page-builder
       strip_title: true
+      github_link: false
+      feedback_link: false
 
   -
     scope:
