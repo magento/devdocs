@@ -4,6 +4,9 @@ title: Code Contributions
 redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
 
+{:.bs-callout .bs-callout-tip}
+Interested in becoming an open source Contributor to Magento?  Click here to join our [Slack workspace](https://tinyurl.com/engcom-slack). Come say hi in #general, follow the #announcements, and browse for more channels!
+
 The following topics are included in this guide:
 
 - [Contribute to Magento 2 code](#contribute)
