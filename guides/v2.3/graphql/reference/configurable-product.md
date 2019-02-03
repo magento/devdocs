@@ -52,7 +52,9 @@ The following query returns information about configurable product `WH01`, which
           }
         }
       }
-      category_ids
+      categories {
+        id
+      }
       ... on ConfigurableProduct {
         configurable_options {
           id
@@ -73,7 +75,9 @@ The following query returns information about configurable product `WH01`, which
         variants {
           product {
             id
-            category_ids
+            categories {
+        			id
+      			}
             name
             sku
             attribute_set_id
@@ -87,11 +91,7 @@ The following query returns information about configurable product `WH01`, which
                   currency
                 }
               }
-            }
-            category_links {
-              position
-              category_id
-            }
+            }            
           }
           attributes {
             label
