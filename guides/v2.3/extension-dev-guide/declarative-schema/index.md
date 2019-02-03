@@ -11,7 +11,7 @@ Declarative Schema aims to simplify the Magento installation and upgrade process
 
 When a customer upgrades Magento to a version several releases ahead of the installed version, the upgrade script for each intermediate release still executes. Developers were required to fully understand what each install and upgrade script contained. They needed to account for this complexity when creating extensions.
 
-The new declarative schema approach allows developers to declare the final desired state of the database and has the system adjust to it automatically, without performing redundant operations. Developers are no longer forced to write scripts for each new version. In addition, this approach allows data be deleted when a module is uninstalled.
+The new declarative schema approach allows developers to declare **the final desired state of the database** and has the system adjust to it automatically, without performing redundant operations. Developers are no longer forced to write scripts for each new version. In addition, this approach allows data be deleted when a module is uninstalled.
 
 
 {:.bs-callout .bs-callout-info}
