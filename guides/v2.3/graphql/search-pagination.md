@@ -223,16 +223,16 @@ The following search finds all products that were added after the specified time
 {
   products(
     filter: {
-        created_at: {
-          gt: "2017-11-01 00:00:00"
-        }
+      created_at: {
+        gt: "2017-11-01 00:00:00"
       }
-      pageSize: 25
-      sort: {
-        price: DESC
-      }
-    )
-    {
+    }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
     total_count
     items {
       name
