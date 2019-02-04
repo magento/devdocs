@@ -12,25 +12,25 @@ You can use the `Magento\CmsUrlRewrite\Observer\ProcessUrlRewriteSavingObserver`
 
 ``` php
 /**
-    * Generate urls for UrlRewrite and save it in storage
-    *
-    * @param \Magento\Framework\Event\Observer $observer
-    * @return void
-    */
-   public function execute(EventObserver $observer)
-   {
-       /** @var \Magento\MyModule\Model\Page $myEntityPage  */
-       $page = $observer->getEvent()->getObject();
+ * Generate urls for UrlRewrite and save it in storage
+ *
+ * @param \Magento\Framework\Event\Observer $observer
+ * @return void
+ */
+public function execute(EventObserver $observer)
+{
+    /** @var \Magento\MyModule\Model\Page $myEntityPage  */
+    $page = $observer->getEvent()->getObject();
 
-       if ($page->isDeleted()) {
-           $this->urlPersist->deleteByData(
-               [
-                   UrlRewrite::ENTITY_ID => $page->getId(),
-                   UrlRewrite::ENTITY_TYPE => MyEntityPageUrlRewriteGenerator::ENTITY_TYPE,
-               ]
-           );
-       }
-   }
+    if ($page->isDeleted()) {
+        $this->urlPersist->deleteByData(
+            [
+                UrlRewrite::ENTITY_ID => $page->getId(),
+                UrlRewrite::ENTITY_TYPE => MyEntityPageUrlRewriteGenerator::ENTITY_TYPE,
+            ]
+        );
+    }
+}
 ```
 See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html) for more information about creating an observer.
 

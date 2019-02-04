@@ -133,16 +133,16 @@ define([
             myRowTemplateConfig: {
                 parent: '${ $.name }',
                 nodeTemplate: 'my_row_template_component_name'
-        }
-    },
+            }
+        },
 
-    addRow: function (rowIndex) {
-        var objectFromTemplate,
-            myRowTemplateConfig = this.myRowTemplateConfig;
+        addRow: function (rowIndex) {
+            var objectFromTemplate,
+                myRowTemplateConfig = this.myRowTemplateConfig;
 
-        myRowTemplateConfig.name = rowIndex;
-        objectFromTemplate = utils.template(myRowTemplateConfig);
-        layout([objectFromTemplate]);
+            myRowTemplateConfig.name = rowIndex;
+            objectFromTemplate = utils.template(myRowTemplateConfig);
+            layout([objectFromTemplate]);
         }
     });
 });
