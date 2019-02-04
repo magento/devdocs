@@ -608,7 +608,7 @@ class View extends Template
 
 6.4.4.11. Domain/business logic MUST be executed on the service contracts layer
 
-6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in `global` area of configuration
+6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in the `global` area of configuration.
 
 ## 7. Configuration
 
