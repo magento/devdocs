@@ -5,7 +5,7 @@ redirect_from: /guides/v2.0/contributor-guide/contributing.html
 ---
 
 {:.bs-callout .bs-callout-tip}
-Interested in becoming an open source Contributor to Magento?  Click here to join our [Slack workspace](https://tinyurl.com/engcom-slack). Come say hi in #general, follow the #announcements, and browse for more channels!
+Interested in becoming an open source Contributor to Magento?  Click here to join our [Slack workspace](https://tinyurl.com/engcom-slack). Join us in [#general](https://magentocommeng.slack.com/messages/C4YS78WE6), follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
 
 The following topics are included in this guide:
 
