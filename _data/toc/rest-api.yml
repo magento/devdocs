@@ -101,6 +101,11 @@ pages:
         url: /rest/tutorials/configurable-product/config-product-intro.html
         include_versions: ["2.2", "2.3"]
 
+      - label: Create a configurable product using bulk APIs
+        class: tutorial
+        url: /rest/tutorials/bulk-configurable-product/config-product-intro.html
+        include_versions: ["2.3"]
+
     - label: Modules
       children:
 
