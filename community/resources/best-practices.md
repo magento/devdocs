@@ -27,7 +27,7 @@ The DevDocs and Magento teams verified and provide the following best practices 
     We also recommend the [Magento Marketplace Help Center](https://marketplacesupport.magento.com/hc/en-us) for extension questions.
 - [Programming Best Practices](https://devdocs.magento.com/guides/v2.3/ext-best-practices/extension-coding/common-programming-bp.html)
 - [Observers Best Practices](https://devdocs.magento.com/guides/v2.3/ext-best-practices/extension-coding/observers-bp.html)
-- [Theme development best practices](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
+- [Theme Development Best Practices](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
 - [Performance Best Practices](https://devdocs.magento.com/guides/v2.3/performance-best-practices/)
 - [Best Practices for Store Configuration](https://devdocs.magento.com/guides/v2.3/cloud/configure/configure-best-practices.html) for Commerce Cloud
 - [Deployment process](https://devdocs.magento.com/guides/v2.3/cloud/reference/discover-deploy.html) for Commerce Cloud
