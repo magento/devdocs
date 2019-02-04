@@ -65,7 +65,7 @@ The following call returns information about the logged-in customer.
 
 **Request**
 
-{% highlight json %}
+``` text
 {
   customer
   {
@@ -74,19 +74,19 @@ The following call returns information about the logged-in customer.
     suffix
     email
     id
-      addresses{
-        firstname
-        lastname
-        street
-        city
-        region_id
-        postcode
-        country_id
-        telephone
+    addresses {
+      firstname
+      lastname
+      street
+      city
+      region_id
+      postcode
+      country_id
+      telephone
     }
-   }
+  }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -100,17 +100,17 @@ The following call returns information about the logged-in customer.
       "email": "jdoe@example.com",
       "id": 3,
       "addresses": [
-        {
-          "firstname": "John",
-          "lastname": "Doe",
-          "street": [
-            "123 Elm Street"
-          ],
-          "city": "Anytown",
-          "region_id": 57,
-          "postcode": "78758",
-          "country_id": "US",
-          "telephone": "512 555-1212"
+       {
+         "firstname": "John",
+         "lastname": "Doe",
+         "street": [
+           "123 Elm Street"
+         ],
+         "city": "Anytown",
+         "region_id": 57,
+         "postcode": "78758",
+         "country_id": "US",
+         "telephone": "512 555-1212"
         }
       ]
     }
