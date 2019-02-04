@@ -506,7 +506,7 @@ class View extends Template
 
 6.1.2. Every application layer (Presentation, Service Contracts, Data Access) MUST process (handle or re-throw) exceptions of the underlying layer.
 
-6.2.5. Configuration for the presentation layer MUST be declared in corresponding application area. This includes events and plugins that customize presentation layer
+6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area. This includes events and plugins that customize the presentation layer.
 
 ### 6.2. Presentation layer
 
