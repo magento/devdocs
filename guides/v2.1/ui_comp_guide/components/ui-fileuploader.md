@@ -1,8 +1,6 @@
 ---
 group: ui-components-guide
-subgroup: components
 title: FileUploader component
-menu_title: FileUploader component
 ---
 
 The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload/wiki) plugin used in Magento. This component integrates file upload functionality with UI components.
@@ -181,7 +179,7 @@ The File Uploader component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf
 
 Here is an example of how File Uploader component integrates with [Form]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html) component:
 
-{% highlight xml %}
+```xml
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     ...
     <fieldset name="foo">
@@ -205,7 +203,7 @@ Here is an example of how File Uploader component integrates with [Form]({{ site
         </field>
     </fieldset>
 </form>
-{% endhighlight %}
+```
 
 ## Source files
 

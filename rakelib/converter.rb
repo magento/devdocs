@@ -52,14 +52,15 @@ module Converter
 
   # Locate the output directory, and convert the latest markdown file to HTML.
   def self.to_html
-    last_md = FileList["#{LinkChecker::DIR}/*.md"].last
+    latest_md =
+      FileList["#{LinkChecker::DIR}/*.md"].max_by { |file| File.mtime file }
 
-    print "Reading the #{last_md} ... ".magenta
+    print "Reading the #{latest_md} ... ".magenta
     # Change a file extension to .html
-    html_file = last_md.ext('html')
+    html_file = latest_md.ext('html')
     File.open(html_file, 'w') do |file|
       print 'converting to HTML ... '.magenta
-      file.write kramdown(content(last_md))
+      file.write kramdown(content(latest_md))
       file.write CSS
     end
 
