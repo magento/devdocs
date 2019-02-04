@@ -30,7 +30,7 @@ The DevDocs and Magento teams verified and provide the following best practices 
 - [Theme Development Best Practices](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/theme-best-practice.html)
 - [Performance Best Practices](https://devdocs.magento.com/guides/v2.3/performance-best-practices/)
 - [Best Practices for Store Configuration](https://devdocs.magento.com/guides/v2.3/cloud/configure/configure-best-practices.html) for Commerce Cloud
-- [Deployment process](https://devdocs.magento.com/guides/v2.3/cloud/reference/discover-deploy.html) for Commerce Cloud
+- [Deployment Process](https://devdocs.magento.com/guides/v2.3/cloud/reference/discover-deploy.html) for Commerce Cloud
 
 ## Want to contribute?
 
