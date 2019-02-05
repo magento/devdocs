@@ -20,7 +20,7 @@ The `search` element is optional, but it can be used with or without filters. Ea
 
 The `filter` element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.
 
-Search filters are logically ANDed unless an `OR` statement is specified. The search query can contain unlimited number of nested `OR` clauses. However, you cannot perform a logical `OR` across two `AND` clauses, such as (A AND B) OR (X AND Y).
+Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two AND clauses, such as (A AND B) OR (X AND Y).
 
 ### Search fields
 
@@ -47,6 +47,7 @@ Magento GraphQL clause | SQL equivalent
 `gt: "value"`	| <code><i>field</i> > 'value'</code>
 `gteq: "value"`	| <code><i>field</i> >= 'value'</code>
 `lteq: "value"`	| <code><i>field</i> <= 'value'</code>
+`moreq: "value"` | <code><i>field</i> >= 'value'</code>
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
 `finset: [1, 2, 3]`	| <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
