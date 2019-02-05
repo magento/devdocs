@@ -35,7 +35,7 @@ The release notes include:
 
     -   You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
 
--   {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963 --> **New environment variable**—Added the RESOURCE_CONFIGURATION environment variable to map a resource name to a database connection.
+-   {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963 --> **New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
 
 ## v2002.0.15
 
