@@ -36,6 +36,8 @@ The release notes include:
 
     -   You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
 
+-   {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963 --> **New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+
 ## v2002.0.15
 
 -   {:.new}**Docker Updates**—
@@ -58,7 +60,7 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
--   {:.new}<!--MAGECLOUD-2879-->**New Environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics).
+-   {:.new}<!--MAGECLOUD-2879-->**New environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics).
 
 -   {:.fix}<!-- MAGECLOUD-2923 -->Fixed an issue that removed customized cron configurations from the `env.php` file after a redeployment. Now, custom cron configurations safely remain in the `env.php` file.
 

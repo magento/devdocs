@@ -209,6 +209,26 @@ You must have a Redis service configured in the `.magento.app.yaml` file and in 
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
+### `RESOURCE_CONFIGURATION`
+
+-  **Default**—Not set
+-  **Version**—Magento 2.1.4 and later
+
+Maps a resource name to a database connection. This configuration corresponds to the `resource` section of the `env.php` file.
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    RESOURCE_CONFIGURATION: 
+      _merge: false 
+      default_setup:
+        connection: default
+```
+
 ### `SCD_COMPRESSION_LEVEL`
 
 -  **Default**—`6` (build stage) or `4` (deploy stage)
