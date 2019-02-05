@@ -86,43 +86,39 @@ The tasks discussed in this section require the following:
 
 This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested.
 
-1.	Log in to your Magento server as a user with `root` privileges.
-2.	_CentOS_: Enter the following commands in the order shown:
+1. Log in to your Magento server as a user with `root` privileges.
+1. _CentOS_: Enter the following commands in the order shown:
 
-		rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-		vim /etc/yum.repos.d/Elasticsearch.repo
-
-    Add the following:
-
-    ```
-    [elasticsearch-5.2]
-    name=Elasticsearch repository for 5.2 packages
-    baseurl=https://artifacts.elastic.co/packages/5.2/yum
-    gpgcheck=1
-    gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-    enabled=1
-    autorefresh=1
-    type=rpm-md
+    ```bash
+    sudo yum install java-1.8.0-openjdk
     ```
 
-    Enter the following commands:
+    ```bash
+    curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.2.0.rpm
+    ```
+  
+    ```bash
+    sudo rpm -i elasticsearch-5.2.0.rpm
+    ```
 
-		yum -y install elasticsearch
-		chkconfig --add elasticsearch
+1. _Ubuntu_: Install the Elasticsearch 5.2 version using the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/deb.html)
 
-3.	_Ubuntu_: Install the Elasticsearch 5.2 version using the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/deb.html)
+1. Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html) for more information.
+1. Start Elasticsearch:
 
-4.	Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html) for more information.
-5.	Start Elasticsearch:
+    ```bash
+    sudo service elasticsearch start
+    ```
 
-    `service elasticsearch start`
-6.  Verify that Elasticsearch is working by entering the following command on the server on which it's running:
+1. Verify that Elasticsearch is working by entering the following command on the server on which it's running:
 
-    `curl -XGET '<host>:9200/_cat/health?v&pretty'`
+    ```bash
+    curl -XGET '<host>:9200/_cat/health?v&pretty'
+    ```
 
     A message similar to the following is displayed:
 
-    ```
+    ```terminal
     epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
     1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
     ```
