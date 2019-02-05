@@ -32,10 +32,10 @@ Using [Elasticsearch](https://www.elastic.co) as your {% glossarytooltip 8d40d66
 
 ### Supported versions {#es-spt-versions}
 
-{{site.data.var.ee}} 2.3.x supports the following Elasticsearch versions:
+{{site.data.var.ce}} 2.3.x supports the following Elasticsearch versions:
 
-* Elasticsearch [5.2](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
-* Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
+* Elasticsearch [5.2](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2)
+* Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5)
 
 ### Recommended configuration {#es-arch}
 
@@ -84,6 +84,7 @@ The tasks discussed in this section require the following:
 
 ### Install Elasticsearch 5.2 {#es-install-es5}
 
+{:.bs-callout .bs-callout-info}
 This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested.
 
 1. Log in to your Magento server as a user with `root` privileges.
