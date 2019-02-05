@@ -231,7 +231,7 @@ The read-only connection is not available for use in the Integration environment
 -  **Default**—Not set
 -  **Version**—Magento 2.1.4 and later
 
-Maps a resource name to a database connection. This corresponds to the `resource` section of the `env.php` file.
+Maps a resource name to a database connection. This configuration corresponds to the `resource` section of the `env.php` file.
 
 {% include cloud/merge-configuration.md %}
 
