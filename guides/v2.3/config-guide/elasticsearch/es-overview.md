@@ -34,7 +34,7 @@ Using [Elasticsearch](https://www.elastic.co) as your {% glossarytooltip 8d40d66
 
 {{site.data.var.ee}} 2.3.x supports the following Elasticsearch versions:
 
-* Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
+* Elasticsearch [5.2](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
 * Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
 
 ### Recommended configuration {#es-arch}
@@ -73,18 +73,18 @@ The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
 *	[Install the Java Software Development Kit (JDK)](#prereq-java)
-*	[Install Elasticsearch 5.x](#es-install-es5)
+*	[Install Elasticsearch 5.2](#es-install-es5)
 *	[Install Elasticsearch 2.x](#es-install-es)
-*	[Upgrade from Elasticsearch 2.x to 5.x](#es-upgrade5)
+*	[Upgrade from Elasticsearch 2.x to 5.2](#es-upgrade5)
 *	[Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
 
 {% include config/solr-elastic-selinux.md %}
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch 5.x {#es-install-es5}
+### Install Elasticsearch 5.2 {#es-install-es5}
 
-This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested.
+This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.2, but 5.2 has been tested.
 
 1.	Log in to your Magento server as a user with `root` privileges.
 2.	_CentOS_: Enter the following commands in the order shown:
@@ -95,9 +95,9 @@ This section discusses how to install Elasticsearch 5.2 from their repository. Y
     Add the following:
 
     ```
-    [elasticsearch-5.x]
-    name=Elasticsearch repository for 5.x packages
-    baseurl=https://artifacts.elastic.co/packages/5.x/yum
+    [elasticsearch-5.2]
+    name=Elasticsearch repository for 5.2 packages
+    baseurl=https://artifacts.elastic.co/packages/5.2/yum
     gpgcheck=1
     gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
     enabled=1
