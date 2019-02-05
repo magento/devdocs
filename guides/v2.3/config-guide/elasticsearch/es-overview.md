@@ -14,29 +14,28 @@ functional_areas:
 
 ## Elasticsearch overview {#overview}
 
-In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co) for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
+Using [Elasticsearch](https://www.elastic.co) as your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search solution provides the following benefits:
 
-*	Elasticsearch performs quick and advanced searches on products in the catalog
-*	Elasticsearch Analyzers support multiple languages
-*	Supports stop words and synonyms
-*	Indexing does not impact customers until reindex is completed
+* Quick and advanced searches on products in the catalog
+* Support for multiple languages
+* Support for stop words and synonyms
+* Indexing does not impact customers until reindex is completed
 
-	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers
+  Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers.
 
-*	Accurate, performant, scalable
-*	Works well out of the box
-*	Easy to horizontally scale
-*	Supports real-time data and analysis
-*	Can be used as a document-oriented data store
-*	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
+* Accurate, performant, and scalable
+* Works well out of the box
+* Easy to horizontally scale
+* Supports real-time data and analysis
+* Can be used as a document-oriented data store
+* Applications in framework beyond search, including reporting, personalization, performance, and storage
 
 ### Supported versions {#es-spt-versions}
-{{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
 
-*	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
-*	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
+{{site.data.var.ee}} 2.3.x supports the following Elasticsearch versions:
 
-Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
+* Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
+* Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
 
 ### Recommended configuration {#es-arch}
 
