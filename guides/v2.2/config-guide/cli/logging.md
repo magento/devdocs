@@ -1,6 +1,7 @@
 ---
 group: configuration-guide
 title: Logging
+
 functional_areas:
   - Configuration
   - System
@@ -44,12 +45,11 @@ As of Magento 2.2.8, you can no longer use the `bin/magento config:set dev/debug
     bin/magento cache:flush
     ```
 
-
 ## Database logging
 
 By default, Magento writes database activity logs to the `var/debug/db.log` file inside the Magento application directory.
 
-To enable database logging:
+#### To enable database logging:
 
 1. Use the `dev:query-log` command to enable or disable database logging.
 
@@ -60,7 +60,47 @@ To enable database logging:
     bin/magento dev:query-log:disable
     ```
 
+1. Flush the cache.
+
+    ```bash
+    bin/magento cache:flush
+    ```
+
+## Cron logging
+
+With the release of version 2.3.1, Magento now creates a separate `cron` log. 
+Magento recently made cron logging more verbose, which provided more information but lengthened the `system.log` considerably. 
+Moving `cron` info to a dedicated log makes both logs easier to read.
+
+By default, Magento writes `cron` info to `<install_directory>/var/log/cron.log`.
+
+## Syslog logging
+
+By default, Magento writes _syslog_ logs to the operating system `syslog` file.
+
+#### To enable syslog logging:
+
+1. Use the `config:set` command to change the `dev/syslog/syslog_logging` database value to `1`.
+
+    ```bash
+    bin/magento config:set dev/syslog/syslog_logging 1
+    ```
+
 2. Flush the cache.
+
+    ```bash
+    bin/magento cache:flush
+    ```
+
+#### To disable syslog logging:
+
+1. Use the `config:set` command to change the `dev/syslog/syslog_logging` database value to `0`.
+
+    ```bash
+    bin/magento config:set dev/syslog/syslog_logging 0
+    ```
+
+1. Flush the cache.
 
     ```bash
     bin/magento cache:flush

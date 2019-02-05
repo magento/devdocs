@@ -57,6 +57,7 @@ By default, Magento writes database activity logs to the `var/debug/db.log` file
     ```bash
     bin/magento dev:query-log:enable
     ```
+    
     ```bash
     bin/magento dev:query-log:disable
     ```
@@ -71,7 +72,7 @@ By default, Magento writes database activity logs to the `var/debug/db.log` file
 
 With the release of version 2.3.1, Magento now creates a separate `cron` log. 
 Magento recently made cron logging more verbose, which provided more information but lengthened the `system.log` considerably. 
-Moving `cron` info to a dedicated log will make both logs easier to read.
+Moving `cron` info to a dedicated log makes both logs easier to read.
 
 By default, Magento writes `cron` info to `<install_directory>/var/log/cron.log`.
 
@@ -87,7 +88,7 @@ By default, Magento writes _syslog_ logs to the operating system `syslog` file.
     bin/magento config:set dev/syslog/syslog_logging 1
     ```
 
-1. Flush the cache.
+2. Flush the cache.
 
     ```bash
     bin/magento cache:flush
