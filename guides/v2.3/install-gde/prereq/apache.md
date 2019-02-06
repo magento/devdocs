@@ -174,7 +174,6 @@ Even though Apache 2.4 is provided by default with CentOS 7, you configure it li
 
 ## Solving 403 (Forbidden) errors {#apache-error}
 
-{% collapsible Click to install solve 403 errors %}
 If you encounter 403 Forbidden errors when trying to access the Magento site, you can update your Apache configuration or your virtual host configuration to enable visitors to the site as discussed in one of the following sections:
 
 *	[Solving 403 Forbidden errors for Apache 2.4](#apache-error-2-4)
