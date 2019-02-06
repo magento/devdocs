@@ -91,7 +91,7 @@ With configuration above, the Inline Edit will be enabled. But it also must star
             </item>
         </item>
     </argument>
-</column>
+</columns>
 {% endhighlight%}
 
 Note that this is not the configuration of the Inline Edit itself, but the configuration of the Column component, to interact with the Inline Edit.
