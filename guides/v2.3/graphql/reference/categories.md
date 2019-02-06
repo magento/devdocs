@@ -7,7 +7,7 @@ The `category` endpoint allows you to search for a single category definition or
 
 ## Query structure
 
-```
+``` text
 category (
    id: int
 ): CategoryTree
@@ -84,7 +84,7 @@ The following query returns information about category ID `20` and four levels o
 
 **Request**
 
-```
+``` text
 {
   category(id: 20) {
     products {
@@ -96,6 +96,11 @@ The following query returns information about category ID `20` and four levels o
     }
     children_count
     children {
+      id
+      level
+      name
+      path
+      children {
         id
         level
         name
@@ -110,15 +115,10 @@ The following query returns information about category ID `20` and four levels o
             level
             name
             path
-            children {
-              id
-              level
-              name
-              path
-            }
           }
         }
       }
+    }
   }
 }
 ```
@@ -204,7 +204,7 @@ The following query returns breadcrumb information about the women's tops catego
 
 **Request**
 
-```
+``` text
 {
   category (
    id: 25
