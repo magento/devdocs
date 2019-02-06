@@ -116,11 +116,8 @@ For detailed information on hits and misses, see Fastly's [Understanding cache H
 
 Check the returned response headers and values:
 
-*	Fastly-Magento-VCL-Uploaded should be present
 *	X-Magento-Tags should be returned
 *	Fastly-Module-Enabled should be either Yes or the Fastly extension version number
-*	X-Cache should be either `HIT` or `HIT, HIT`
-*	x-cache-hits should be 1,1
 *	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
 * [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) should be `cache`
 
@@ -200,9 +197,11 @@ If the module is not installed, you need to install in an Integration environmen
 
 During installation and configuration, you should have uploaded the Fastly VCL. These are the base VCL snippets provided by the Fastly module, not custom VCL snippets you create. For instructions, see [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
-### X-Cache includes MISS {#xcache-miss}
+### X-Cache contains only MISS, no HIT {#xcache-miss}
 
-If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
+The `X-Cache` that contains `HIT` (`HIT, HIT` or `HIT, MISS`) means Fastly returns the cached content successfully.
+
+If `X-Cache` is `MISS, MISS`, and does not contain `HIT`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
 
 If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
 
