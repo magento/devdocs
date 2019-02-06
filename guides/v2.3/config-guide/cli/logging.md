@@ -82,10 +82,14 @@ By default, Magento writes _syslog_ logs to the operating system `syslog` file.
 
 #### To enable syslog logging:
 
-1. Use the `config:set` command to change the `dev/syslog/syslog_logging` database value to `1`.
+As of Magento 2.3.1, enabling the syslog must be done via the Magento CLI. 
+The setting in the Admin panel has been removed.
+Logging to `syslog` is always enabled for developer and default modes, but disabled for production mode; even on Cloud where only production mode is supported.
+
+1. Use the `setup:config:set` command to change the `dev/syslog/syslog_logging` database value to `true`.
 
     ```bash
-    bin/magento config:set dev/syslog/syslog_logging 1
+    bin/magento setup:config:set --enable-syslog-logging=true 
     ```
 
 2. Flush the cache.
@@ -96,10 +100,10 @@ By default, Magento writes _syslog_ logs to the operating system `syslog` file.
 
 #### To disable syslog logging:
 
-1. Use the `config:set` command to change the `dev/syslog/syslog_logging` database value to `0`.
+1. Use the `setup:config:set` command to change the `dev/syslog/syslog_logging` database value to `false`.
 
     ```bash
-    bin/magento config:set dev/syslog/syslog_logging 0
+    bin/magento setup:config:set --enable-syslog-logging=false 
     ```
 
 1. Flush the cache.
