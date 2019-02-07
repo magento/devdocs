@@ -1,8 +1,6 @@
 ---
 group: ui-components-guide
-subgroup: components
 title: MultiselectColumn component
-menu_title: MultiselectColumn component
 ---
 
 The MultiselectColumn component implements a column with checkboxes for selecting records. It also provides controls for selecting multiple records.
@@ -70,7 +68,7 @@ Sample of code where component configurations are performed:
 
 Current implementation:
 
-{% highlight javascript %}
+```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -82,13 +80,13 @@ Current implementation:
          </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 Example of configuration modifications:
 
 * Redefining the link to the template
 
-{% highlight javascript %}
+```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
     <argument name="data" xsi:type="array">
         ...
@@ -97,11 +95,11 @@ Example of configuration modifications:
         </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 * Redefining the name of the property which represents record identifier
 
-{% highlight javascript %}
+```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
     <argument name="data" xsi:type="array">
         ...
@@ -110,11 +108,11 @@ Example of configuration modifications:
         </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 * Redefining a property data source
 
-{% highlight javascript %}
+```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
     <argument name="data" xsi:type="array">
         ...
@@ -125,7 +123,7 @@ Example of configuration modifications:
         </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 ### Add a new component
 
@@ -133,7 +131,7 @@ Instance Replacement: One Instance of a Component
 
 * Redefine the link to constructor:
 
-{% highlight javascript %}
+```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -141,7 +139,7 @@ Instance Replacement: One Instance of a Component
         </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 ## Source files
 

@@ -54,7 +54,7 @@ The following code snippet from [Magento's Luma theme][luma-view-xml] shows the 
 
 {% collapsible Show example %}
 
-{% highlight xml %}
+```xml
 <vars module="Js_Bundle">
     <var name="bundle_size">1MB</var>
 </vars>
@@ -108,7 +108,7 @@ The following code snippet from [Magento's Luma theme][luma-view-xml] shows the 
     <item type="directory">Lib::mage/adminhtml</item>
     <item type="directory">Lib::mage/backend</item>
 </exclude>
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 

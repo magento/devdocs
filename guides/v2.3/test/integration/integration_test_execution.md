@@ -266,7 +266,7 @@ This happens if the integration tests are executed from the wrong directory.
 #### Could not read "dev/tests/integration/phpunit.xml"
 
 This error happens if the integration tests are executed from a different directory than `dev/tests/integration`.
-To fix the issue, change to the `dev/tests/integration` directory, adjust any relative paths accoridngly, and run the tests again.
+To fix the issue, change to the `dev/tests/integration` directory, adjust any relative paths accordingly, and run the tests again.
 
 #### Unable to connect to MySQL
 

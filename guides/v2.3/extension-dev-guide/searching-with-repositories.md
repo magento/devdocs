@@ -17,7 +17,7 @@ This means that every method call should not rely on previous calls nor should i
 Any field contained in the repository class must also be stateless.
 
 If your repository needs to provide functionality that requires state, such as for caching,  use the registry pattern.
-A good example that uses this pattern is the [`CustomerRepository`]({{ site.mage2100url }}/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php) class.
+A good example that uses this pattern is the [`CustomerRepository`]({{ site.mage2100url }}app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php) class.
 
 ### Search Criteria {#m2devgde-search-criteria}
 
