@@ -9,7 +9,7 @@ This Community collection of resources links to blog posts, podcasts, presentati
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
- Another community-based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List][0]
+Another community-based resource, focused on describing the Magento 2 environment, is the [Magento 2 Awesome List][0].
 
 Do you know of a popular resource about Magento 2 that has been released/published within the past year?
 Does it fill gaps in our current docs and provide important information?
@@ -25,19 +25,24 @@ See our collection of best and leading practices, common solutions, and more in 
 
 ## Community Engineering Slack
 
- To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us a request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
+To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us a request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
 
 
 We have channels for each project. These channels are recommended for new members:
 
+- [announcements][]: Introduce yourself and get quick updates for Magento Community Engineering
 - [general][]: Open chat for introductions and Magento 2 questions
+- [appdesign][]: Open chat for Magento architecture and [technical guidelines][]
+- [coding-standards][]: Open chat for developing [coding standards][] for Magento
 - [github][]: Support for GitHub issues, pull requests, and processes
 - [public-backlog][]: Discussions of the Magento 2 backlog
 - [devdocs][]: Documentation contribution support
 
 ## Resources and guides
 
+- *Video* [How to contribute during Magento Contribution Days][57] by [Max Pronko][35]
 - *GitHub* [Magento Resources][23] curated list by [Alessandro Ronchi][30]
+- *Blog posts* [Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design][56] by [Mark Shust][38]
 - *Videos* [Mage2.tv][24] 
 - *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
 - *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
@@ -90,12 +95,17 @@ We have channels for each project. These channels are recommended for new member
 -  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
+[technical guidelines]: https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html
+[coding standards]: https://devdocs.magento.com/guides/v2.3/coding-standards/bk-coding-standards.html
 [Magento Community Engineering Slack]: https://magentocommeng.slack.com
 [self signup]: https://tinyurl.com/engcom-slack
 [general]: https://magentocommeng.slack.com/messages/C4YS78WE6
 [github]: https://magentocommeng.slack.com/messages/C7KB93M32
 [public-backlog]: https://magentocommeng.slack.com/messages/CCV3J3RV5
 [devdocs]: https://magentocommeng.slack.com/messages/CAN932A3H
+[appdesign]: https://magentocommeng.slack.com/messages/CBSL1DF8B
+[coding-standards]: https://magentocommeng.slack.com/messages/CFC88F1C6
+[announcements]: https://magentocommeng.slack.com/messages/C7FA71S3V
 [0]: https://github.com/DavidLambauer/awesome-magento2 
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
@@ -133,7 +143,7 @@ We have channels for each project. These channels are recommended for new member
 [34]: https://www.youtube.com/maxpronko
 [35]: https://twitter.com/max_pronko
 [36]: https://www.maxpronko.com/all-courses/
-[37]: https://github.com/markoshust/docker-magento
+[37]: https://github.com/markshust/docker-magento
 [38]: https://twitter.com/markshust
 [39]: https://github.com/ModestCoders/magento2-dockergento
 [40]: https://www.slideshare.net/OscarRecioSoria/zero-downtime-in-magento-2-is-it-possible
@@ -152,3 +162,5 @@ We have channels for each project. These channels are recommended for new member
 [53]: https://bsscommerce.com/confluence/a-quick-guide-to-automation-test-in-magento-2/
 [54]: https://store.fooman.co.nz/blog
 [55]: https://alanstorm.com/
+[56]: https://markshust.com/
+[57]: https://www.youtube.com/watch?v=ceNeYpCEmys
