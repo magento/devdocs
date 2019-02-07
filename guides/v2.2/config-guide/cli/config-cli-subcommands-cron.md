@@ -59,7 +59,7 @@ You must run cron twice: the first time to discover tasks to run and the second 
 
 ## Logging
 
-With Magento 2.3.1, `cron` job information is moved from `system.log` and into a separate `cron.log`.
+All `cron` job information has moved from `system.log` into a separate `cron.log`.
 By default, the cron information can be found at `<install_directory>/var/log/cron.log`. 
 All exceptions from cron jobs are logged by `\Magento\Cron\Observer\ProcessCronQueueObserver::execute`.
 
@@ -75,11 +75,13 @@ In addition to being logged in `cron.log`:
 include note.html
 type='info'
 content='All cron data is also written to the `cron_schedule` table in the Magento database. The table provides a history of cron jobs, including:
+
 - Job ID and code
 - Status
 - Created date
 - Scheduled date
 - Executed date
 - Finished date
+
 To see records in the table, log in to the Magento database on the command line and enter `SELECT * from cron_schedule;`.'
 %}

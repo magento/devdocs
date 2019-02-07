@@ -79,11 +79,11 @@ By default, Magento writes `cron` info to `<install_directory>/var/log/cron.log`
 ## Syslog logging
 
 By default, Magento writes _syslog_ logs to the operating system `syslog` file.
+As of Magento 2.3.1, you must use the `magento` command to enable or disable the syslog.
+The setting in the Magento Admin has been removed.
 
 #### To enable syslog logging:
 
-As of Magento 2.3.1, enabling the syslog must be done via the Magento CLI. 
-The setting in the Admin panel has been removed.
 Logging to `syslog` is always enabled for developer and default modes, but disabled for production mode; even on Cloud where only production mode is supported.
 
 1. Use the `setup:config:set` command to change the `dev/syslog/syslog_logging` database value to `true`.
