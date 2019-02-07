@@ -32,7 +32,7 @@ pages:
         - label: Persistence layer
           url: /architecture/archi_perspectives/persist_layer.html
 
-    - label: Modularity
+    - label: Modules
       url: /architecture/archi_perspectives/components/AComponents.html
       children:
 
@@ -51,11 +51,17 @@ pages:
         - label: Module dependencies
           url: /architecture/archi_perspectives/components/modules/mod_depend.html
 
-        - label: Module dependency types
-          url: /architecture/archi_perspectives/components/modules/mod_depend_types.html
-
     - label: Magento Framework
       url: /architecture/archi_perspectives/framework.html
+
+    - label: Technical vision
+      url: /architechture/tech-vision.html
+      children:
+
+        - label: Coding Standards
+          url: /coding-standards/bk-coding-standards.html
+        - label: Web Api
+          url: /architecture/webapi-vision.html
 
     - label: GDPR compliance
       include_versions: ["2.1", "2.2", "2.3"]

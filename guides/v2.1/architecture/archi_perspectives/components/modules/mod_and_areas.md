@@ -40,7 +40,7 @@ Each area declares itself within a module. All resources specific for an area ar
 
 You can enable or disable an area within a module. If this module is enabled, it injects an area's routers into the general application's routing process. If this module is disabled, Magento will not load an area's routers and, as a result, an area's resources and specific functionality are not available.
 
-### Quick view of module/area interactions
+### Module/area interaction guidelines
 
 * Modules should not depend on other modules' areas.
 

@@ -14,7 +14,7 @@ The presentation layer contains both view elements **(layouts, blocks, templates
 
 Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Three types of Magento users interact with presentation layer code:
 
-* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the (`frontend`) area.
+* **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation. These users work within the `frontend` area.
 
 * **System administrators** customizing a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
 
@@ -29,14 +29,21 @@ Each {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossa
 
 For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide][].
 
+## GraphQL
+
+GraphQL is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
+
+GraphQL allows you to define the structure of the data that you need, and the server returns only the data you request. Each GraphQL-capable module contains a declarative schema that defines the syntax for queries that the module supports, as well as the attributes that can be returned. If you run a REST call such as GET /V1/products/:sku on a simple product, the system might fetch more than 100 lines of data. If all you need is the current price, the call has returned significantly more information than you need. With GraphQL, a query against the same SKU could return just the price.
+
+More information can be found in the [GraphQL Developer Guide][]
+
 ## View model
 
 Magento generates the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} for a page to display to a user from a tree of view elements.
 
 View elements fall into two main categories: blocks and containers.
 
-* **Blocks** can generate {% glossarytooltip f7550977-2132-4155-a5e0-d000fcfea866 %}dynamic content{% endglossarytooltip %} and can contain named child view elements that are similar to arguments being passed in.
-(The `as` attribute holds the child view element names for the parent block to reference them)
+* **Blocks** can generate {% glossarytooltip f7550977-2132-4155-a5e0-d000fcfea866 %}dynamic content{% endglossarytooltip %} and can contain named child view elements that are similar to arguments being passed in. The `as` attribute holds the child view element names for the parent block to reference them.
 
 * **Containers** collect an ordered group of children view elements.
 
@@ -65,3 +72,4 @@ Presentation layer components make calls to the Service layer, which in turn sen
 
 <!-- Link definitions -->
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
+[GraphQL Developer Guide]: {{page.baseurl}}/graphql/

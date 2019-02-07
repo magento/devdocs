@@ -6,7 +6,19 @@ menu_title: Magento Framework
 
 ## Overview
 
-The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.
+The Magento Framework controls how application components interact, including:
+
+* request flow
+
+* routing
+
+* indexing
+
+* caching
+
+* {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} handling
+
+ It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.
 
 This primarily {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} software component is organized into logical groups called *libraries*, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
 (Although the Magento Framework does not contain resource models, it does contain a {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} of code to help implement a resource model.)
