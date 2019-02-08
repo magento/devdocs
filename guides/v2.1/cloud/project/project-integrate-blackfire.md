@@ -271,7 +271,7 @@ If you continue to experience problems, prepare your log files and contact Black
 1. Display startup errors and save the output.
 
     ```bash
-    magento-cloud ssh -- php -d display_startup_errors=on --ri blackfire
+    magento-cloud ssh "php -d display_startup_errors=on --ri blackfire"
     ```
 
 1.  Create a temporary log file.
@@ -289,7 +289,7 @@ If you continue to experience problems, prepare your log files and contact Black
 1. Start a profile/build again and collect the logs.
 
     ```bash
-    magento-cloud ssh -- cat /tmp/blackfire.log > blackfire.log
+    magento-cloud ssh "cat /tmp/blackfire.log" > blackfire.log
     ```
 
 1.  Send output and logs to support@blackfire.io.
