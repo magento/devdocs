@@ -8,7 +8,7 @@ Previously, you accessed Pro Staging and Production environments by using an SSH
 To add these environments to the Project Web Interface, review this entire document, complete a few preparatory steps, and submit a ticket. Your ticket is added to a queue for updating _existing_ Pro projects. The process may take time to complete, so check your ticket for details, timing, and other important information.
 
 {:.bs-callout .bs-callout-info}
-The Staging and Production environments for **New projects provisioned October 23, 2017 and later** are in the Project Web Interface. You must contact your Customer Success Manager to convert a project created before this date.
+The Staging and Production environments for **New projects provisioned October 23, 2017 and later** are in the Project Web UI. You must contact your Customer Success Manager to convert a project created before this date.
  
 ## New Features
 
