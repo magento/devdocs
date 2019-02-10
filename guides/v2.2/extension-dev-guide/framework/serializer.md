@@ -132,5 +132,3 @@ Here is an example:
 ...
 
 {% endhighlight %}
-
-
