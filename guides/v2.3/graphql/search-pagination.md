@@ -20,7 +20,7 @@ The `search` element is optional, but it can be used with or without filters. Ea
 
 The `filter` element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.
 
-Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two `and` clauses, such as (A AND B) OR (X AND Y).
+Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two AND clauses, such as (A AND B) OR (X AND Y).
 
 ### Search fields
 
@@ -53,11 +53,11 @@ Magento GraphQL clause | SQL equivalent
 
 `to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
 
-`gt` and `lt` can be used in the same search term. For example, `qty: {lt: "10" gt: "20"}`.
+`gt` and `lt` can be used in the same search term. For example, `qty: {gt: "10" lt: "20"}`.
 
 ## Specifying pagination
 
-Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
+Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
 
 The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
 
