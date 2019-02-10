@@ -21,8 +21,8 @@ This article describes the following typical {% glossarytooltip 73ab5daa-5857-40
 - [Reference a block](#xml-manage-ref-block)
 - [Use block object methods to set block properties](#layout_markup_block-properties)
 - [Rearrange elements](#layout_markup_rearrange)
-- [Remove elements](#layout_markup_remove_elements)
-- [Replace elements](#layout_markup_replace_elements)
+- [Add functionality to existing elements](#layout_markup_add_to_elements)
+- [Modify functionality with plugins (interceptors)](#layout_markup_modify_with_plugins)
 
 
 {:.bs-callout .bs-callout-info}
@@ -344,75 +344,7 @@ This would make the product page look like following:
 To learn how to locate the layout file you need to customize, see [Locate templates, layouts, and styles].
 
 
-## Remove elements {#layout_markup_remove_elements}
-
-Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
-
-**Example**: remove the Compare Products {% glossarytooltip 31751771-8163-434b-88bc-c5f94d859fc3 %}sidebar{% endglossarytooltip %} block from all store pages. 
-
-This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
-
-```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-...
-        <referenceContainer name="sidebar.additional">
-            <block class="Magento\Catalog\Block\Product\Compare\Sidebar" name="catalog.compare.sidebar" template="product/compare/sidebar.phtml"/>
-        </referenceContainer>
-...
-    </body>
-</page>
-```
-
-
-To remove the block, add the extending `default.xml` in your theme:
-`<theme_dir>/Magento_Catalog/layout/default.xml`
-
-In this file, reference the element having added the `remove` attribute:
-
-```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-    <body>
-...
-        <referenceBlock name="catalog.compare.sidebar" remove="true" />
-...
-    </body>
-</page>
-```
-
-## Replace elements {#layout_markup_replace_elements}
-
-Elements can be replaced with custom blocks by one of the following methods below:
-
- * Remove the old `<block>` and substitute it with a new `<block>` with the same reference and path  
- * Override the `<block>` definition through the class preference method
-
-**Example 1**: substitute the Product View attributes `<block>` of a store catalog with a new `<block>` of the same name across all content pages of the website.
-
-The following block, which is our old block, is declared in `app/design/frontend/catalog/product_view_attributes/layout/local.xml`:
-
-```xml
-<block type="catalog/product_view_attributes" name="product.attributes" as="additional" template="catalog/product/view/attributes.phtml">
-    <action method="addToParentGroup"><group>detailed_info</group></action>
-    <action method="setTitle" translate="value"><value>Additional Information</value></action>
-</block>
-```
-You can replace this block in `layout.xml` with a custom block that uses the same name, as follows:
-
-```xml
-<block type="attributesasgroup/groupview" name="product.attributes" as="additional" template="webguys/attributesasgroup/groupview.phtml">
-    <action method="addToParentGroup"><group>detailed_info</group></action>
-    <action method="setTitle" translate="value"><value>Additional Information</value></action>
-</block>
-```
-
-As a final note, it is important that your block be defined on the backend side. If it is not defined, Magento will not understand which block you are referencing to it. This will mean that Magento will not properly render the content that is located inside your block.
-
-For instance, in order for the new block in the above case to be processed properly, Magento needs `Namespace_Modulename_Block_Groupview` to be defined at `app/code/local/Namespace/Modulename/Block/Groupview.php` (where `Namespace_Modulename` stands for your custom module name).
-
-Some block definitions do not contain an explicit name attribute, which means you cannot override the block from a layout XML file. For these blocks, you can add functionality through ViewModels or modify functionality through plugins (interceptors).
-
-**Example 2**: add functionality with a ViewModel inserted into the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`.
+## Add functionality to existing elements {#layout_markup_add_to_elements}
 
 Let us say that we want to add functionality to a core template with custom logic using a ViewModel in the `cart/item/default.phtml` template found in `Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml`:
 
@@ -420,15 +352,13 @@ Let us say that we want to add functionality to a core template with custom logi
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 <body>
-    <referenceBlock name="Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml" template="Magento_Checkout::cart/item/default.phtml" />
+    <referenceBlock cart.renderer="Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml">
         <arguments>
            <argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
         </arguments>
     </referenceBlock>
 </body>
 ```
-
-Even though the scope for the template path is based on the block class, changing the block's class with a class preference in your `di.xml` file could lead to problems when overriding your template in a theme. To prevent this, the best way to change the template's module scope is to include a namespace in the template name, similar to how the core does in `checkout_cart_item_renderers.xml` (i.e. `Magento_Checkout::cart/item/default.phtml`).
 
 You would also have to implement the right interface in your viewModel class (i.e. `ArgumentInterface`):
 
@@ -443,12 +373,13 @@ class Class implements \Magento\Framework\View\Element\Block\ArgumentInterface
     }
 }
 ```
+## Modify functionality with plugins (interceptors) {#layout_markup_modify_with_plugins}
 
-To substitute or extend the behavior of original, public methods for any class or interface, we can make use of plugins, or interceptors, which are classes that modify the behavior of public class functions by intercepting a function call and running code before, after, or around that function call. 
+To substitute or extend the behavior of original, public methods for any class or interface, we can make use of plugins, or interceptors, which are classes that modify the behavior of public class functions by intercepting a function call and running code before, after, or around that function call in the form of listeners. 
 
-This interception approach reduces conflicts among extensions that change the behavior of the same class or method, with a Plugin class implementation changing only the behavior of a class function, not the class itself.
+This interception approach reduces conflicts among extensions that change the behavior of the same class or method, with a Plugin class implementation changing only the behavior of a class function, rather than overriding the entire class.
 
-The di.xml file in your module declares a plugin for a class object in the following manner:
+In order to use plugins (interceptors), we must first define them in the di.xml of the module:
 
 ```xml
 <config>
@@ -458,30 +389,98 @@ The di.xml file in your module declares a plugin for a class object in the follo
 </config>
 ```
 
-You must specify the following elements: type name (a class or interface which the plugin observes), plugin name (an arbitrary plugin name that identifies a plugin that is also used to merge the configurations for the plugin), and plugin type (name of a plugin’s class or its virtual type; use the following naming convention when you specify this element: \Vendor\Module\Plugin\<ClassName>).
+Before listeners are used whenever we want to change the arguments of an original method or wish to add additional behavior before an original method is called. They do not need a return value.
 
-Now we have to verify that the block actually exists even if you don't need to do anything with it. To do this we can create a skeleton block, which serves to change the scope of the old block definition:
+Around listeners are used when we want to change both the arguments and the returned values of an original method or add new behavior before and after an original method is called. Because of this, return values are required.
+
+After listeners are used when we want to change the values returned by an original method or want to add some behavior after an original method is called. As such, they also require return values.
+
+Let us say we want to change the behavior of an addProduct method in the Magento\Checkout\Model\Cart module by adding plugins. We first define the di.xml of this module as the following:
+
+```xml
+<config>
+    <type name="Magento\Checkout\Model\Cart">
+        <plugin name="MagentoCart" type="Magento\Test\Model\Cart" sortOrder="1" />
+    </type>
+</config>
+```
+
+Now in the Magento\Test\Model\Cart directory, we will create our plugin in a file we will call Cart.php. To call the before listener, it is customary to add the prefix 'before' to the method name, meaning we can call something like the following:
 
 ```php
 <?php
-namespace Vendor\Module\Block\Checkout\Cart\Item;
-class Renderer extends \Magento\Checkout\Block\Cart\Item\Renderer {}
+     
+    namespace Magento\Test\Model;
+ 
+    class Cart
+    {
+        public function beforeAddProduct(
+            \Magento\Checkout\Model\Cart $subject,
+            $productInfo,
+            $requestInfo = null
+        ) {
+            $requestInfo['qty'] = 10; // increasing quantity to 10
+            return array($productInfo, $requestInfo);
+        }
+    }
 ```
 
-The template attribute on the block will now default to the module of the skeleton block rather than the core module of the original block. 
+Often we use before listeners when we want to change parameters of a method. In this case, we are setting the quantity to 10, meaning it will now always add 10 of a product whenever a product is added to the cart. 
 
-Now all you need to do is add your template like you would if you were doing a normal template override from layout. In this case, that path will be `Vendor/Module/view/frontend/templates/cart/item/default.phtml`.
+If we wanted to add an around listener to the same addProduct method, we could use the same file. Since we want to call an around listener, we would want to add the prefix 'around' to the method name, giving us the following:
+
+```php
+<?php
+     
+    namespace Magento\Test\Model;
+ 
+    class Cart
+    {
+        public function aroundAddProduct(
+            \Magento\Checkout\Model\Cart $subject,
+            \Closure $proceed,
+            $productInfo,
+            $requestInfo = null
+        ) {
+            $requestInfo['qty'] = 10; // setting quantity to 10
+            $result = $proceed($productInfo, $requestInfo);
+            // change result here
+            return $result;
+        }
+    }
+```
+
+For an around listener, the return value is formed in such way that the parameters following the $closure parameter in the around listener method definition are passed to the $closure function call in a sequential order.
+
+Finally, let us say that we want to change the behavior of the getName method of Magento\Catalog\Model\Product with an after listener. Assuming we have properly set the di.xml file of the Magento\Catalog\Model\Product module with the plugin, we can create a file called Product.php in the Magento\Test\Model. 
+
+Similar to the other listeners, an after listener is usually called by adding a designated prefix, which is ‘after’ in this case, to the method name. We can then get the corresponding after listener for our getName method:
+
+```php
+<?php
+     
+    namespace Magento\Test\Model;
+ 
+    class Product
+    {
+        public function afterGetName(\Magento\Catalog\Model\Product $subject, $result) {
+            return "Apple ".$result; // Adding Apple in product name
+        }
+    }
+```
 
 #### Related topics:
 
 *	[Layout instructions]
 *	[Extend a layout]
+*	[Plugins (interceptors)]
 
 
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
 [remove it]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_rmv
 [Layout instructions]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html
 [Extend a layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-extend.html
+[Plugins (interceptors)]: {{page.baseurl}}/extension-dev-guide/plugins.html
 [Locate templates, layouts, and styles]: {{page.baseurl}}/frontend-dev-guide/themes/debug-theme.html
 [Conditional comments]: http://en.wikipedia.org/wiki/Conditional_comment
 [`<referenceContainer>`]: {{page.baseurl}}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref
