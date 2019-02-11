@@ -40,7 +40,7 @@ Currently, Inventory Management supports only the default SSA for priority. Thir
 
 **Sample usage**
 
-`GET http://<host>/rest/us/V1/inventory/source-selection-algorithm-list`
+`GET <host>/rest/<store_code>/V1/inventory/source-selection-algorithm-list`
 
 **Payload**
 
@@ -66,7 +66,7 @@ The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algo
 
 **Sample usage**
 
-`POST /V1/inventory/source-selection-algorithm-result`
+`POST <host>/rest/<store_code>/V1/inventory/source-selection-algorithm-result`
 
 **inventoryRequest parameters**
 
