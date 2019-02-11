@@ -50,14 +50,6 @@ To update the MFTF from the previous minor version:
    ```bash
    composer install
    ```
-1. Remove the `vendor/` directory at `magento2/dev/tests/acceptance/`:
-   ```bash
-   rm -rf dev/tests/acceptance/vendor/
-   ```
-1. Install dependencies at that level:
-   ```bash
-   composer install -d dev/tests/acceptance/
-   ```
 1. Run the `upgrade:tests` using the new command line tool:
    ```bash
    vendor/bin/mftf upgrade:tests app
