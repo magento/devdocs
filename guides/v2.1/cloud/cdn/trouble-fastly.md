@@ -114,7 +114,7 @@ If you do not have DNS set up for a public hostname, enter a command similar to 
 
 For detailed information on hits and misses, see Fastly's [Understanding cache HIT and MISS headers with shielded services](https://docs.fastly.com/guides/performance-tuning/understanding-cache-hit-and-miss-headers-with-shielded-services).
 
-Check the returned response headers and values:
+Verify that the returned response headers and values contain the following content:
 
 *	Includes  the `X-Magento-Tags` header
 *	The `Fastly-Module-Enabled` value is either `Yes` or the version number of the Fastly-Magento module installed in your {{ site.data.var.ece }} environment
