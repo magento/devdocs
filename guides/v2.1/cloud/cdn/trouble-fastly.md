@@ -116,7 +116,7 @@ For detailed information on hits and misses, see Fastly's [Understanding cache H
 
 Check the returned response headers and values:
 
-*	X-Magento-Tags should be returned
+*	Includes  the `X-Magento-Tags` header
 *	The `Fastly-Module-Enabled` value is either `Yes` or the version number of the Fastly-Magento module installed in your {{ site.data.var.ece }} environment
 *	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
 * [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) setting is `cache`
