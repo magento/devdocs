@@ -119,7 +119,7 @@ Check the returned response headers and values:
 *	X-Magento-Tags should be returned
 *	Fastly-Module-Enabled should be either Yes or the Fastly extension version number
 *	[Cache-Control: max-age](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9) should be greater than 0
-* [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) should be `cache`
+* [Pragma](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32) setting is `cache`
 
 The following example shows the correct values for `Pragma`, `X-Magento-Tags`, and `Fastly-Module-Enabled`.
 
