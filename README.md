@@ -32,7 +32,7 @@ $ ruby -v
 **MacOS users**
 
 1. Install Homebrew. See the [Homebrew site](https://brew.sh) for instructions.
-2. Use Homebrew to install the latest stable version of Ruby:
+1. Use Homebrew to install the latest stable version of Ruby:
 
    ```
    $ brew install ruby
@@ -175,20 +175,20 @@ Only Administrators can use Chocolatey features. You can use the Administrator a
 
 1.  Open the **Command Prompt** using **Run as Administrator** in the shortcut menu.
 
-2.  [Install Chocolatey](https://chocolatey.org/install).
+1.  [Install Chocolatey](https://chocolatey.org/install).
 
     ```cmd
     @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
     ```
 
-3.  Verify Chocolatey was added to the environment variables:
+1.  Verify Chocolatey was added to the environment variables:
 
     -  In the Windows UI, open search and type `path`.
     -  In the Windows CMD console, type `echo %path%`.
     
     You should see `C:\ProgramData\chocolatey\bin` in the path.
 
-4.  Close and reopen the command prompt before using `choco` commands.
+1.  Close and reopen the command prompt before using `choco` commands.
 
 After running the script at the command line, you can install any required extensions. Chocolately has many extensions available, similar to Homebrew for MacOS. As a best practice, only use extensions labeled as a "trusted package". You can install editors, such as Nano and Notepad++, using Chocolatey, as well.
 
