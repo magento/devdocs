@@ -84,7 +84,7 @@ The setting in the Magento Admin has been removed.
 
 ### To enable syslog logging
 
-Logging to `syslog` is always enabled for developer and default modes, but disabled for production mode; even on Cloud where only production mode is supported.
+Logging to `syslog` is disabled by default.
 
 1. Use the `setup:config:set` command to change the `dev/syslog/syslog_logging` database value to `true`.
 
