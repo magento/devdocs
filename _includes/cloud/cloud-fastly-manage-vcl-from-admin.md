@@ -1,0 +1,1 @@
+After adding a snippet from the Admin UI, you can manage it from the Custom VCL snippets option in the Fastly configuration. See [Managing VCL snippets from the Admin UI]({{ page.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html).
