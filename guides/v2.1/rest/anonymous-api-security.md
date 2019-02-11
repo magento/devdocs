@@ -70,6 +70,7 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | CE | Customer | /V1/customers | POST |
 | CE | Customer | /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken | GET |
 | CE | Customer | /V1/customers/password | PUT |
+| CE | Customer | /V1/customers/resetPassword | POST |
 | CE | Customer | /V1/customers/isEmailAvailable | POST |
 | CE | Directory | /V1/directory/currency | GET |
 | CE | Directory | /V1/directory/countries | GET |
