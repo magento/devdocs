@@ -201,7 +201,7 @@ During installation and configuration, you should have uploaded the Fastly VCL. 
 
 The `X-Cache` that contains `HIT` (`HIT, HIT` or `HIT, MISS`) means Fastly returns the cached content successfully.
 
-If `X-Cache` is `MISS, MISS`, and does not contain `HIT`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
+If the `X-Cache` header is `MISS, MISS` and does not contain `HIT`, run  the `curl` command again to make sure the page was not recently purged from the cache.
 
 If you get the same result, use the [`curl` commands](#curl) and verify the [response headers](#response-headers):
 
