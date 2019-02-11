@@ -131,6 +131,27 @@ plugins:
 optional_front_matter:
   remove_originals: true
 
+# Configuration options for the jekyll-relative-links plugin. 
+# Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
+
+relative_links:
+  exclude:
+    - _includes
+    - _videos
+    - codelinks
+    - community
+    - guides
+    - mftf
+    - redoc
+    - tmp
+    - 404.md
+    - availability.md
+    - magento-techbull.md
+    - magento-third-party.md
+    - search
+    - system-requirements.md
+    - whats-new.md
+
 # Settings for the jekyll-titles-from-headings plugin.
 # For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
 #
