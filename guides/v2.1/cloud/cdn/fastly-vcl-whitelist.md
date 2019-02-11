@@ -1,7 +1,7 @@
 ---
 group: cloud-guide
 subgroup: 090_configure
-title: Custom whitelist VCL
+title: Secure Magento Admin access by IP
 redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-whitelist.html
    - /guides/v2.2/cloud/configure/fastly-vcl-whitelist.html
@@ -11,6 +11,12 @@ functional_areas:
   - Setup
 ---
 
+After you set up Fastly services on your {{ site.data.var.ece }} project environments, you can use the Fastly service to to block referral spam](https://en.wikipedia.org/wiki/Referrer_spam) from your sites. The follwoing example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet to return a `403 Forbidden` error on requests from a domain known for sending fake traffic.
+
+
+You can add additional security to the Admin UI for your {{ site.data.var.ece }} project using a [Fastly Access Control List (ACL) Dictionary](https://docs.fastly.com/guides/access-control-lists/about-acls) with a custom VCL snippet. The following example shows how to set up an allow list with access control list for a specified set of IP addresses  allow specified IP addresses with a list of client IP addresses that you want 
+
+configure Fastly services to allow use a Fastly Access Control List and custom VCL snippet to conr
 You may only want to allow specific client IPs access to your Magento Admin. To whitelist and allow these IPs access, you can create an Edge ACL through the Magento Admin with a list of IPs and create a VCL snippet with code to verify client IPs. Any IP not matching the allow list is restricted with a 403 Forbidden error.
 
 You must have the following information to complete this VCL code snippet:
@@ -18,6 +24,14 @@ You must have the following information to complete this VCL code snippet:
 * List of client IPs to allow access
 * Account access and URL to the Magento Admin for the Staging or Production environment
 * URL for the Magento Admin. If you changed this URL from `/admin`, you will need to modify the code in this example.
+
+**Prerequisites**
+
+-  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
+
+-  Get credentials to access the Admin UI for your {{ site.data.var.ece }} environment.
+
+-  List of client IPs to allow access.
 
 {:.bs-callout .bs-callout-info}
 This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
