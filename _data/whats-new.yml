@@ -4,8 +4,123 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: 2019-01-14 14:11:39 -0600
+updated: Mon Feb  4 13:40:53 2019
 entries:
+- description: Added information about domain- versus presentation-specific logic
+    to the [Technical Guidelines](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html).
+  versions: 2.x
+  type: Major update
+  date: February  4, 2019
+  link: https://github.com/magento/devdocs/pull/3316
+- description: Clarified the process for creating the [magento_umask](https://devdocs.magento.com/guides/v2.3/install-gde/install/post-install-umask.html)
+    file.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: January 31, 2019
+  link: https://github.com/magento/devdocs/pull/3667
+- description: Removed incorrect information about changes to deploy phase validation
+    checks in the Magento Commerce Cloud [Release notes for ece-tools, v2002.0.14](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002014).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: January 31, 2019
+  link: https://github.com/magento/devdocs/pull/3664
+- description: Corrected the command syntax in the [log preparation instructions](https://devdocs.magento.com/guides/v2.3/cloud/project/project-integrate-blackfire.html#blackfire-support)  for
+    troubleshooting Blackfire issues.
+  versions: 2.x
+  type: Technical changes
+  date: January 30, 2019
+  link: https://github.com/magento/devdocs/pull/3586
+- description: Adds two new PWA actions to the Actions reference guide for the MFTF
+    2.3.13 release:<br/>[waitforPwaElementNotVisibleType](https://devdocs.magento.com/mftf/2.3/test/actions.html#waitforpwaelementnotvisible)<br/>[waitforPwaElementVisibleType](https://devdocs.magento.com/mftf/2.3/test/actions.html#waitforpwaelementvisible)
+  versions: 2.3.x
+  type: Major update
+  date: January 29, 2019
+  link: https://github.com/magento/devdocs/pull/3633
+- description: Added a new REST tutorial about using the bulk API.
+  versions: 2.3.x
+  type: New topic
+  date: January 29, 2019
+  link: https://github.com/magento/devdocs/pull/3580
+- description: Adds a new [Tips and Tricks](https://devdocs.magento.com/mftf/2.3/tips-tricks.html)
+    page to the MFTF guide.
+  versions: 2.3.1
+  type: New topic
+  date: January 29, 2019
+  link: https://github.com/magento/devdocs/pull/3635
+- description: Added [new tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/bulk-configurable-product/config-product-intro.html)
+    about how to use the REST bulk API.
+  versions: 2.3.x
+  type: New topic
+  date: January 29, 2019
+  link: https://github.com/magento/devdocs/pull/3638
+- description: Added Inventory Management service names to the [SOAP Reference](https://devdocs.magento.com/guides/v2.3/soap/bk-soap.html)
+  versions: 2.3.x
+  type: Major update
+  date: January 28, 2019
+  link: https://github.com/magento/devdocs/pull/3630
+- description: "[Corrected the route](https://devdocs.magento.com/guides/v2.3/rest/list.html)
+    of the `POST   /V1/inventory/low-quantity-notifications-delete` endpoint."
+  versions: 2.3.x
+  type: Technical changes
+  date: January 28, 2019
+  link: https://github.com/magento/devdocs/pull/3627
+- description: Updated Magento Commerce and Magento Commerce Cloud release information
+    to remove obsolete topics and add links to current Magento Commerce Cloud release
+    information in [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html).
+  versions: 2.x
+  type: Major update
+  date: January 24, 2019
+  link: https://github.com/magento/devdocs/pull/3595
+- description: Updated the Magento Commerce Cloud Release Information with link to
+    Magento Commerce Cloud release information in the [Release Notes for ece-tools](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html)
+    topic.
+  versions: 2.3.x
+  type: Technical changes
+  date: January 23, 2019
+  link: https://github.com/magento/devdocs/pull/3603
+- description: Corrected the name of the Magento Commerce Cloud Staging and Production
+    deploy log.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: January 23, 2019
+  link: https://github.com/magento/devdocs/pull/3611
+- description: Added a [section](https://devdocs.magento.com/guides/v2.3/install-gde/trouble/php/tshoot_php-set.html#max-input-vars-error-due-to-large-forms)
+    discussing the max-input-vars value in php.ini.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: January 18, 2019
+  link: https://github.com/magento/devdocs/pull/3596
+- description: Added a [section](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#optimizing-action-group-structures)
+    that describes how to better optimize action groups for readability and reusability.
+  versions: 2.3.x
+  type: Major update
+  date: January 17, 2019
+  link: https://github.com/magento/devdocs/pull/3584
+- description: Added upgrade information for [Manage Inventory Management modules](https://devdocs.magento.com/guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html)
+    (MSI community project).
+  versions: 2.3.x
+  type: Technical changes
+  date: January 16, 2019
+  link: https://github.com/magento/devdocs/pull/3583
+- description: Added section to Cloud [Project structure](https://devdocs.magento.com/guides/v2.2/cloud/project/project-start.html)
+    about how to change the base template.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: January 16, 2019
+  link: https://github.com/magento/devdocs/pull/3578
+- description: Updated installation information for [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.3/security/two-factor-authentication.html)
+    and [Google reCAPTCHA](https://devdocs.magento.com/guides/v2.3/security/google-recaptcha.html)
+    extensions for 2.3.0.
+  versions: 2.3.x
+  type: Major update
+  date: January 15, 2019
+  link: https://github.com/magento/devdocs/pull/3577
+- description: Refreshed the Cloud topic for [cloning and branching a project](https://devdocs.magento.com/guides/v2.1/cloud/before/before-setup-env-2_clone.html)
+    for local development.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: January 14, 2019
+  link: https://github.com/magento/devdocs/pull/3570
 - description: Updated the [availability timeline](https://devdocs.magento.com/availability)
     for the Amazon Sales Channel extension.
   versions: 'N/A'
@@ -2679,7 +2794,7 @@ entries:
   versions: 2.x
   type: Updated
   date: Oct 7 2016
-- description: '[Magento 2 documentation resources for Magento Commerce Cloud (MECE)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html'
+- description: '[Magento 2 documentation resources for Magento Commerce Cloud (MECE)](https://devdocs.magento.com/guides/v2.2/cloud/bk-cloud.html)'
   versions: 2.x
   type: New
   date: Oct 7 2016

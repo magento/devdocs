@@ -13,3 +13,12 @@ redoc[spec-url] table {
 redoc[spec-url] .menu-subitems .menu-item-title{
   text-transform: none;
 }
+
+// Add $ to the bash code examples
+// TODO: remove this and use theme css after refactoring
+.language-bash.highlighter-rouge code:before {
+  display: inline;
+  content: '$';
+  margin-right: 5px;
+  user-select: none;
+}

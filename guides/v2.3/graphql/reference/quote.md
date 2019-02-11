@@ -19,7 +19,7 @@ The `createEmptyCart` mutation creates an empty shopping cart for a guest or log
 
 **Request**
 
-``` json
+``` text
 mutation {
   createEmptyCart
 }
