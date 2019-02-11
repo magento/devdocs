@@ -18,6 +18,7 @@ Merging operates at the XML tag level, triggered by our parser when there are tw
 Your update (XML node with changes) must have the same attribute `name` as its base node (the target object to be changed).
 
 For example:
+
 * All tests with `<test name="SampleTest>` will be merged into one.
 * All pages with `<page name="SamplePage>` will be merged into one.
 * All sections with `<section name="SampleAction">` will be merged into one.
@@ -38,7 +39,7 @@ If a [`<test>`][tests] must be skipped due to a module completely invalidating a
 
 Learn more about running tests with different options using [`mftf`] or [`codecept`] commands.
 
-**Example**
+### Example
 
 Skip the `AdminLoginTest` test in the `.../Backend/Test/AdminLoginTest.xml` file while merging with the `.../Foo/Test/AdminLoginTest.xml` file:
 
@@ -304,7 +305,7 @@ The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-    <section name="BaseBackendSection"/>    
+    <section name="BaseBackendSection"/>
     <section name="AnotherBackendSection"/>
     <section name="NewExtensionSection"/>
 </page>
@@ -316,7 +317,7 @@ The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-    <section name="BaseBackendSection"/>    
+    <section name="BaseBackendSection"/>
     <section name="AnotherBackendSection"/>
 </page>
 ```

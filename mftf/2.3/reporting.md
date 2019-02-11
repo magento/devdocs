@@ -44,6 +44,7 @@ In our case, there is an issue with PHP library loading.
 ```terminal
 PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/pecl/20160303/php_intl.dll' - dlopen(/usr/local/lib/php/pecl/20160303/php_intl.dll, 9): image not found in Unknown on line 0
 ```
+
 {: .no-copy }
 
 Next, the MFTF returns `DEPRECATION` reports alerting you that required test components are missing in XML test definitions.
@@ -54,6 +55,7 @@ DEPRECATION: Test AdminAbleToShipPartiallyInvoicedItemsTest is missing required 
 DEPRECATION: Test AdminRemoveProductWeeeAttributeOptionTest is missing required annotations.{"testName":"AdminRemoveProductWeeeAttributeOptionTest","missingAnnotations":"stories"}
 Generate Tests Command Run
 ```
+
 {: .no-copy }
 
 `Generate Tests Command Run` indicates the moment when the MFTF has run the tests generation command actually.
@@ -101,6 +103,7 @@ Scenario --
  I see in current url "/admin/admin"
  PASSED
 ```
+
 {: .no-copy }
 
 The running test is `AdminLoginTestCest`, which is `Admin login test` (this text is generated from the test name but with the `Cest` part excluded).
@@ -150,6 +153,7 @@ full_page
  I am on page "/admin/admin/auth/logout/"
 --------------------------------------------------------------------------------
 ```
+
 {: .no-copy }
 
 The general test details and scenario has the same format as in the Passed test.
@@ -194,6 +198,7 @@ Time: 52.43 seconds, Memory: 16.00MB
 There was 1 failure:
 ---------
 ```
+
 {: .no-copy }
 
 First you see warnings and deprecations.
@@ -249,6 +254,7 @@ full_page
  19. $I->magentoCLI("config:set admin/security/use_form_key 0") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:50
  18. $I->saveScreenshot() at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:63
 ```
+
 {: .no-copy }
 
 - `1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test` - the failed Codeception test is *AdminMenuNavigationWithSecretKeysTestCest*. It references to the PHP class that implemented the failed test.
@@ -276,6 +282,7 @@ Finally, the report finishes with fairly self-descriptive lines.
 FAILURES!
 Tests: 2, Assertions: 3, Failures: 1.
 ```
+
 {: .no-copy }
 
 The MFTF encountered failures due to the last test run, that included *2* tests with *3* assertions.

@@ -12,7 +12,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 ## Define Locator::functions in elements
 
-Codeception has a set of very useful [Locator functions](http://codeception.com/docs/reference/Locator) that may be used by elements inside a [section](../section.html).
+ has a set of very useful [Locator functions](http://codeception.com/docs/reference/Locator) that may be used by elements inside a [section](../section.html).
 
 Declare an element with a `locatorFunction`:
 ```xml

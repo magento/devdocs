@@ -79,7 +79,6 @@ There are several XML elements that are used in `<tests>` in the MFTF.
 
 `<test>` is a set of steps, including [actions] and [assertions][assertion]. It is a sequence of test steps that define test flow within a test method.
 
-
 Attribute|Type|Use|Description
 ---|---|---|---
 `name`|string|optional|The test identifier.
@@ -103,8 +102,8 @@ Allure annotations provide metadata for reporting.
 
 `<before>` may contain these child elements:
 
- * Any [`<action>`][actions]
- * [`<actionGroup>`]
+* Any [`<action>`][actions]
+* [`<actionGroup>`]
 
 ### after {#after-tag}
 
@@ -113,8 +112,8 @@ The steps are run in both successful **and** failed test runs.
 
 `<after>` may contain:
 
- * Any [`<action>`][actions]
- * [`<actionGroup>`]
+* Any [`<action>`][actions]
+* [`<actionGroup>`]
 
 ### actionGroup {#actiongroup-tag}
 
