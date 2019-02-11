@@ -231,7 +231,7 @@ stage:
 
 ### `SCD_COMPRESSION_LEVEL`
 
--  **Default**—`6` (build stage) or `4` (deploy stage)
+-  **Default**—`4`
 -  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
