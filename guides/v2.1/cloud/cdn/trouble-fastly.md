@@ -194,7 +194,7 @@ Check the Fastly configuration setting in the Magento Admin UI for each environm
     Connection to service name <service name> has been successfully established. Please, save configuration and clear cache.
     ```
     
-    Verify that the *service name* value matches the service name for the project environment you are configuring. If it does not match, or if you get an error, the Fastly credentials are invalid. Submit a Support ticket to request the correct credentials.
+    If you get an error, submit a Support ticket to request correct credentials.
     
 1.  In the terminal, edit your `composer.json` and verify that the following Fastly module information is included:
 
@@ -244,15 +244,15 @@ If the issue persists, another extension is likely resetting these headers. Repe
 
 1.  Click **Flush Magento Cache**.
 
-1.  Complete the following steps to identify extensions that are causing issues with the Fastly headers: 
+1.  Complete the following steps for each extension potentially causing issues with Fastly headers: 
 
     - Enable one extension at a time, saving the configuration and flushing the Magento cache.
     
-    -  Try the [`curl` commands](#curl) and verify the [response headers](#response-headers).
+    - Run the [`curl` commands](#curl) to verify the [response headers](#response-headers).
+    
+    Repeat this process for each extension. If the Fastly response headers no longer display, you have identified the extension causing issues with Fastly.
 
-1.  Repeat steps 8 and 9 to enable and test the `curl` commands. When the Fastly headers no longer display, you have found the extension causing issues with Fastly.
-
-When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates for 3rd party extension developers to work with Fastly caching.
+When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates to make third-party extensions work with Fastly caching.
 
 ## Purges do not process {#purge}
 
