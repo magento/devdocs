@@ -344,6 +344,12 @@ Additions since 2.2 are marked with hash characters (#).
     #POST   /V1/inventory/source-items
     #POST   /V1/inventory/source-items-delete
 
+### InventoryCatalogApi
+
+    #POST   /V1/inventory/bulk-product-source-assign
+    #POST   /V1/inventory/bulk-product-source-unassign
+    #POST   /V1/inventory/bulk-product-source-transfer
+
 ### InventoryDistanceBasedSourceSelectionApi
 
     #GET    /V1/inventory/get-distance-provider-code
