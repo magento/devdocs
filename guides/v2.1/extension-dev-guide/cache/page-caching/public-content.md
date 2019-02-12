@@ -38,6 +38,9 @@ Add a `cacheable="false"` attribute to any block in your layout to disable cachi
 
 Magento disables page caching if at least one non-cacheable block is present in the layout.
 
+{: .bs-callout .bs-callout-warning }
+Using `cacheable="false"` inside the `default.xml` file disables caching for all pages on the site.
+
 You can also disable caching with HTTP headers.
 Use a controller to return an object that contains methods for manipulating the cache.
 
