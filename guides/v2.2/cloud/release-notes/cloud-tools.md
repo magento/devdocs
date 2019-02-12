@@ -38,7 +38,7 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963 -->**New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
 
--   {:.fix}<!-- MAGECLOUD-3035 -->?
+-   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship.
 
 -   {:.fix}<!-- MAGECLOUD-3003 -->Fixed a validation issue with the database configuration that caused the deploy process to fail.
 
@@ -46,11 +46,11 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-2904 -->Fixed the validation process to prevent a problem that occurred when SCD_MATRIX ignored a theme value that contained different character cases.
 
--   {:.fix}<!-- MAGECLOUD-2851 -->?
+-   {:.fix}<!-- MAGECLOUD-2851 -->Fixed an issue with processing malformed JSON variables. Now, when there is a syntax error caused by a JSON variable, a warning appears in the `cloud.log` file and deployment continues using the default variable.
 
 -   {:.fix}<!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
 
--   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a connection error that occurred during deployment immediately after disabling the Redis service.
+-   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a Redis connection error that occurred during deployment immediately after disabling the Redis service.
 
 ## v2002.0.15
 
