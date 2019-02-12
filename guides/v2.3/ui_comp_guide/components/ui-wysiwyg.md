@@ -50,11 +50,9 @@ Wysiwyg-specific options:
     <td><code>ui/form/element/wysiwyg</code></td>
   </tr>
   <tr>
-    <td><code>links</code>
-<li>
-<code>value</code>
-</li>
-</td>
+    <td><div><code>links</code></div>
+        <div><code>value</code></div>
+    </td>
     <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
     <td>Object<br />String</td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>

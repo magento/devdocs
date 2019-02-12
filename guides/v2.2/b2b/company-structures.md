@@ -1,12 +1,7 @@
 ---
 group: b2b-developer-guide
-subgroup: 10_REST
 title: Manage company structures
-menu_title: Manage company structures
-menu_order: 15
-ee_only: True
-level3_menu_node: level3child
-level3_subgroup: company
+ee_only: true
 functional_areas:
   - B2B
   - Integration
@@ -24,13 +19,13 @@ Company teams allow you to group company users by location, job responsibilities
 
 **REST Endpoints**
 
-{% highlight json %}
+```
 POST /V1/team/:companyId
 PUT /V1/team/:teamId
 GET /V1/team/:teamId
 DELETE /V1/team/:teamId
 GET /V1/team/
-{% endhighlight %}
+```
 
 
 **Company team parameters**
@@ -51,14 +46,14 @@ A newly-created team is placed under Company Admin in the company hierarchy.
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "team": {
     "name": "Western District",
     "description": "Buyers from the California office"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -74,14 +69,14 @@ You can only change the name or description of a team.
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "team": {
   	"id": 4,
     "name": "Western Region"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -101,13 +96,13 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "id": 4,
   "name": "Western Region",
   "description": "Buyers from the California office"
 }
-{% endhighlight %}
+```
 
 ### Delete a team
 
@@ -141,7 +136,8 @@ Not applicable
 
 **Response**
 {% collapsible Show code sample %}
-{% highlight json %}
+
+```json
 {
     "items": [
         {
@@ -170,7 +166,8 @@ Not applicable
     },
     "total_count": 2
 }
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 ## Company hierarchies
@@ -185,10 +182,10 @@ You can use REST endpoints to retrieve the current structure and move teams and 
 
 **REST Endpoints**
 
-{% highlight json %}
+```
 GET /V1/hierarchy/:id
 PUT /V1/hierarchy/move/:id
-{% endhighlight %}
+```
 
 ### Return all information about the company hierarchy
 
@@ -216,8 +213,8 @@ Not applicable
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 [
   {
     "structure_id": 6,
@@ -261,8 +258,8 @@ Not applicable
     "entity_type": "customer",
     "structure_parent_id": 0
   }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 ### Assign a new parent to teams and company users
@@ -275,11 +272,11 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "newParentId": 7
 }
-{% endhighlight %}
+```
 
 **Response**
 

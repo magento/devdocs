@@ -63,7 +63,7 @@ You must set read-write permissions for the web server group before you install 
 cd /var/www/html/<magento install directory>
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-chown -R :www-data . // Ubuntu
+chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
 ```
 
