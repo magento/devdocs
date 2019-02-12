@@ -265,7 +265,7 @@ Sample result:
 ```bash
 Changed cache status:
     db_ddl: 1 -> 0
-    full_page: 1 -> 0
+ full_page: 1 -> 0
 ```
 
 {:.bs-callout .bs-callout-info}
