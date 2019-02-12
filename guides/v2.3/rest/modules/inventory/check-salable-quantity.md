@@ -54,7 +54,7 @@ None
 
 **Response**
 
-An integer indicating the salable quanity of the product, such as `75`.
+An integer indicating the salable quantity of the product, such as `75`.
 
 
 ## Check whether a product is salable
@@ -77,7 +77,7 @@ None
 
 ## Check whether a product is salable for a specified quantity
 
-This call indicates whether a product is salable for the specified quantity and stock ID. 
+This call indicates whether a product is salable for the specified quantity and stock ID.
 
 **Sample usage**
 
