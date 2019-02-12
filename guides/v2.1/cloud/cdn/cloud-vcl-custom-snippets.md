@@ -32,7 +32,7 @@ We recommend using custom VCL snippets with Edge Dictionaries and Access Control
 The dictionary and ACL data is deployed to the Fastly Edge nodes accessible across network regions. Additionally, the data can be updated dynamically across the network without requiring you to redeploy the VCL code for your staging or production environment.
 
 {: .bs-callout .bs-callout-info}
-You must [set up Fastly](#install-configure) before you can add custom VCL snippets.
+You must [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) before you can add custom VCL snippets.
 
 ## Custom VCL snippet examples and tutorials
 
@@ -120,7 +120,7 @@ The  following steps outline the process for adding custom VCL snippets to your 
 
 -  If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets), we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs.
 
--  When you create and manage custom VCL snippets, make sure that you are using the credentials for the correct environment to avoid changing the wrong Fastly service configuration.
+-  When you manage customm VCL snippets, verify that you are using the correct Fastly API key and service ID for the project environment to avoid modifying the wrong Fastly service configuration.
 
 #### Step 1: Locate the active VCL  version {#list}
 
