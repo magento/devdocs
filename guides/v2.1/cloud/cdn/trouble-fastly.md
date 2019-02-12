@@ -191,7 +191,7 @@ Check the Fastly configuration setting in the Magento Admin UI for each environm
 
 1.  Ensure that the **Caching application** has *Fastly CDN* selected.
 
-1.  Click on **Fastly Configuration**. Ensure that the *Fastly Service ID* and *Fastly API token* fields contain the values for your Fastly credentials. (See [Get Fastly credentials]({{ page.baseurl }} /cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+1.  Click on **Fastly Configuration**. Ensure that the *Fastly Service ID* and *Fastly API token* fields contain the values for your Fastly credentials. (See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-creds).
 
 1.  Click **Test credentials**. 
 
