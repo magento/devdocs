@@ -8,6 +8,44 @@ Sometimes, little changes can make a big difference in your project. Here are so
 
 ## Actions and action groups
 
+## Use parameterized selectors in action groups with argument references
+
+Clarity and readability are important factors in good test writing.
+Having to parse through unreadable code can be time consuming. Save time by writing clearly.
+The good example clearly shows what the selector arguments refer to.
+In the bad example we see two parameters being passed into the selector with little clue as to their purpose.
+
+**Why?** The next person maintaining the test or extending it may not be able to understand what the parameters are referencing.
+
+{:style="color:green"}
+Good
+
+```xml
+<test>
+    <actionGroup ref="VerifyOptionInProductStorefront" stepKey="verifyConfigurableOption" after="AssertProductInStorefrontProductPage">
+        <argument name="attributeCode" value="$createConfigProductAttribute.default_frontend_label$"/>
+        <argument name="optionName" value="$createConfigProductAttributeOption1.option[store_labels][1][label]$"/>
+    </actionGroup>
+</test>
+
+<actionGroup name="VerifyOptionInProductStorefront">
+    <arguments>
+        <argument name="attributeCode" type="string"/>
+        <argument name="optionName" type="string"/>
+    </arguments>
+    <seeElement selector="{{StorefrontProductInfoMainSection.attributeOptionByAttributeID(attributeCode, optionName)}}" stepKey="verifyOptionExists"/>
+</actionGroup>
+```
+
+{:style="color:red"}
+Bad
+
+```xml
+<test>
+    <seeElement selector="{{StorefrontProductInfoMainSection.attributeOptionByAttributeID($createConfigProductAttribute.default_frontend_label$, $createConfigProductAttributeOption1.option[store_labels][1][label]$)}}" stepKey="verifyOptionExists"/>
+</test>
+```
+
 ### Perform the most critical actions first in the `<after>` block
 
 Perform non-browser driving actions first. These are more likely to succeed as no UI is involved.
