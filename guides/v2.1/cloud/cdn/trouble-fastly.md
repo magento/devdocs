@@ -165,11 +165,13 @@ The output for cURL commands can be lengthy. The following is a summary only:
 
 ## Determine if VCL is not uploaded {#vcl-uploaded}
 
-To determine if the default VCL snippets are not uploaded, check the following:
+If you see any of the following issues, it may indicate that the default VCL has not been uploaded:
 
-* **Top level navigation does not work**: The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
-* **Pages are not caching**: By default Fastly doesn’t cache pages with Set-Cookies. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This may also happen if page block in a template is marked uncacheable. If this occurs, it's due to a 3rd party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
-* **Geo-location/GeoIP does not work**: The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
+-  **Top level navigation does not work**—The top level navigation relies on Edge Side Includes (ESI) processing which is not enabled by default. When you upload the Magento VCL snippets during configuration, ESIs are enabled. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
+
+-  **Pages are not caching**—By default Fastly does not cache pages with the `Set-Cookies` header. Magento sets Cookies even on cacheable pages (TTL > 0). Magento Fastly VCL strips those cookies on cacheable pages. This can also happen if page block in a template is marked uncacheable. If this happens, it is caused by a third-party module or Magento extension blocking or removing the Magento headers. See [X-Cache missed section](#xcache-miss) for details.
+
+-  **Geo-location/GeoIP does not work**— The uploaded Magento Fastly VCL snippets append the country code to the URL. See [Upload Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets).
 
 ## Resolve errors found by cURL {#curl}
 
@@ -177,26 +179,45 @@ This section provides suggestions for resolving errors you might find using the 
 
 ### Fastly-Module-Enabled is not present {#no-module}
 
-If you don't receive a "yes" for the `Fastly-Module-Enabled` in the response headers, you need to verify the Fastly module is installed and selected.
+If you do not see `Fastly-Module-Enabled: yes` in the response headers, check to see if the Fastly-Magento module is installed and enabled:
 
-To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
+####To verify that Fastly is enabled in Staging and Production
 
-1. Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
-3. Ensure Fastly CDN is selected.
-4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
-5. Edit your `composer.json` and ensure the Fastly module is included with version. This file has all modules listed with versions.
+Check the Fastly configuration setting in the Magento Admin UI for each environment:
 
-	* In the "require" section, you should have `"fastly/magento2": <version number>`
-	* In the "repositories" section, you should have:
+1.  Log into the Admin console for Staging and Production using the Admin URL. You can get the Admin URL from the Project Web UI.
 
-			"fastly-magento2": {
-						"type": "vcs",
-						"url": "https://github.com/fastly/fastly-magento2.git"
-				}
-6. If you use [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
+1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 
-	If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
+1.  Ensure that the **Caching application** has *Fastly CDN* selected.
+
+1.  Click on **Fastly Configuration**. Ensure that the *Fastly Service ID* and *Fastly API token* fields contain the values for your Fastly credentials. (See [Get Fastly credentials]({{ page.baseurl }} /cloud/cdn/configure-fastly.html#cloud-fastly-creds).
+
+1.  Click **Test credentials**. 
+
+    If the credentials are valid, the system returns a message:
+    
+    ```
+    Connection to service name <service name> has been successfully established. Please, save configuration and clear cache.
+    ```
+    
+    Verify that the *service name* value matches the service name for the project environment you are configuring. If it does not match, or if you get an error, the Fastly credentials are invalid. Submit a Support ticket to request the correct credentials.
+    
+1.  In the terminal, edit your `composer.json` and verify that the following Fastly module information is included:
+
+    -  The `"require"` section has `"fastly/magento2": <version number>`
+
+    -  The `"repositories"` section specifies the location for module source files:
+       ```
+         "repositories": {
+        "fastly-magento2": {
+            "type": "git",
+            "url": "https://github.com/fastly/fastly-magento2.git"
+        }
+       ```
+1.  If you use [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm), you should have a configuration file. Edit the `app/etc/config.app.php` (2.0, 2.1) or `app/etc/config.php` (2.2) file and make sure the setting `'Fastly_Cdn' => 1` is correct. The setting should not be `'Fastly_Cdn' => 0` (meaning disabled).
+
+If you enabled Fastly, delete the configuration file and run the `bin/magento magento-cloud:scd-dump` command to update. For a walk-through of this file, see [Example of managing system-specific settings]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
 If the module is not installed, you need to install in an Integration environment branch and deployed to Staging and Production. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html) for instructions.
 
@@ -218,15 +239,25 @@ If you get the same result, use the [`curl` commands](#curl) and verify the [res
 
 If the issue persists, another extension is likely resetting these headers. Repeat the following procedure in Staging to disable extensions to find which one is causing the issue. After you locate the extension(s) causes issues, you will need to disable the extension(s) in Production.
 
-1.	Log in to the Magento Admin on your Staging or Production site.
-2.	Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
-3.	In the Disable Modules Output section in the right pane, locate and disable all of your extensions*.
-5.	Click **Save Config**.
-6.	Click **System** > **Tools** > **Cache Management**.
-7.	Click **Flush Magento Cache**.
-8.	Now enable one extension at a time, saving the configuration and flushing the Magento cache.
-9.	Try the [`curl` commands](#curl) and verify the [response headers](#response-headers).
-10.	Repeat steps 8 and 9 to enable and test the `curl` commands. When the Fastly headers no longer display, you have found the extension causing issues with Fastly.
+1.  Log in to the Magento Admin on your Staging or Production site.
+
+1.  Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Advanced**.
+
+1.  In the Disable Modules Output section in the right pane, locate and disable all of your extensions*.
+
+1.  Click **Save Config**.
+
+1.  Click **System** > **Tools** > **Cache Management**.
+
+1.  Click **Flush Magento Cache**.
+
+1.  Complete the following steps to identify extensions that are causing issues with the Fastly headers: 
+
+    - Enable one extension at a time, saving the configuration and flushing the Magento cache.
+    
+    -  Try the [`curl` commands](#curl) and verify the [response headers](#response-headers).
+
+1.  Repeat steps 8 and 9 to enable and test the `curl` commands. When the Fastly headers no longer display, you have found the extension causing issues with Fastly.
 
 When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates for 3rd party extension developers to work with Fastly caching.
 
@@ -238,44 +269,63 @@ If you attempt to use a Fastly purge option, and it does not process, you may ha
 
 Verify if you have the correct Fastly Service ID and API token in your environment. If you have Staging credentials in Production, the purges may not process or process incorrectly.
 
-1. Log in to your local Magento Admin as an administrator.
-2. Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
-3. Expand **Fastly Configuration** and verify the Fastly Service ID and API token for your environment.
-4. If you modify the values, click **Test Credentials**.
+1.  Log in to your local Magento Admin as an administrator.
+
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
+
+1.  Expand **Fastly Configuration** and verify the Fastly Service ID and API token for your environment.
+
+1.  If you modify the values, click **Test Credentials**.
 
 ### Check VCL snippets {#snippets}
 
 If the credentials are correct, you may have issues with your VCLs. To list and review your VCLs per service, enter the following API call in a terminal:
 
-	curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/snippet -H "Fastly-Key: <FASTLY_API_TOKEN>"
+```
+curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/snippet -H "Fastly-Key: <FASTLY_API_TOKEN>"
+```
 
-Review the list of VCLs. If you have issues with the default VCLs from Fastly, you can upload again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets). For editing your custom VCLs, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+If you have issues with the default VCLs from Fastly, you can upload them again or verify the content per the [Fastly default VCLs](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets). If you have issues with your custom VCL, you can edit your custom VCL snippet and upload them again. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
-## Activating a deactivated version {#activate}
+## Activate and deactivate VCL version {#activate}
 
-Using `curl` commands and APIs, you can activate, deactivate, and delete a version and service. If you have deactivated a service, you have deactivated the version without leaving any version active.
+Using `curl` commands and APIs, you can activate, deactivate, and delete a VCL version and service. If you deactivate a service, you have deactivated the version without leaving any version active.
 
-1. List and find a version you want to activate. For a fully deactivated service, all of the versions will have a flag of `active: false`.
+#### Activate a VCL version
 
+1.  List and find the version to activate. For a fully deactivated service, all VCL versions have a flag of `active: false`.
+
+    ```
     curl -X GET -s https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version -H "Fastly-Key: <FASTLY_API_TOKEN>"
+    ```
 
-2. Use the following command to validate all snippets for the version you want to activate:
+1.  Use the following command to validate all snippets for the version you want to activate:
 
-  	curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/validate
+    ```
+    curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X GET https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/validate
+    ```
+    Fastly should return: `"status": "ok"`.
 
-  Fastly should return: `"status": "ok"`.
+1.  To activate a deactivated VCL version, enter the Service ID and Version in the following command:
 
-3. To activate a deactivated Version, enter the Service ID and Version in the following command:
+    ```
+    curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/activate
+    ```
 
-	   curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate
+#### Activate an older VCL version
 
-If you want to activate an older version, you need to deactivate the currently active version:
+If the service has a currenty active VCL version, you must deactivate it before you can activate an older version.
 
-  curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/deactivate
+1.  To activate an older VCL version, run the following command to deactivate the currently active version:
+    ```
+    curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Editable Version #>/deactivate
+    ```
 
-Then activate the version you want active:
+1.  Run the following command to activate the version you want active:
 
-  curl -H "Fastly-Key: {FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate
+    ```
+    curl -H "Fastly-Key: <FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/{FASTLY_SERVICE_ID}/version/{Editable Version #}/activate
+    ```
   
 <!-- Link definitions -->
 
