@@ -350,6 +350,12 @@ Additions since 2.2 are marked with hash characters (#).
     #POST   /V1/inventory/bulk-product-source-unassign
     #POST   /V1/inventory/bulk-product-source-transfer
 
+### InventoryDistanceBasedSourceSelectionApi
+
+    #GET    /V1/inventory/get-distance-provider-code
+    #GET    /V1/inventory/get-distance
+    #GET    /V1/inventory/get-latlng-from-address
+
 ### InventoryLowQuantityNotificationApi
 
     #GET    /V1/inventory/low-quantity-notification/:sourceCode/:sku
