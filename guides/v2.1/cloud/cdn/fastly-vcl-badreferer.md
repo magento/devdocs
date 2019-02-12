@@ -125,7 +125,7 @@ You can add the custom VCL snippet to your Fastly service configuration from the
 
 Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit your custom VCL snippet to fix the issue. Then,  upload the VCL again.
 
-After adding a snippet, you can manage it from the Custom VCL snippets option in the Fastly configuration. See [Managing VCL snippets from the Admin UI]({{ page.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html).
+{% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
 
 {: .bs-callout .bs-callout-info}

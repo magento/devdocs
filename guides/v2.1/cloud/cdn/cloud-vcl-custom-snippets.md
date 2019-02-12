@@ -114,9 +114,13 @@ The  following steps outline the process for adding custom VCL snippets to your 
 
 **Best practices and recommendations**
 
--   The default VCL snippets that you uploaded when you [enabled Fastly in your environment]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) include a prepended name of `magentomodule_` with a priority of `50`. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also, consider the priority of your custom snippets and whether they should override the default snippets.
--   Do not forget to _always_ locate and clone the active version, and edit the bash script with the new version! _Version_ is not part of your VCL snippet files.
--   If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets), we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs.
+-  The default VCL snippets that you uploaded when you [enabled Fastly in your environment]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) include a prepended name of `magentomodule_` with a priority of `50`. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also, consider the priority of your custom snippets and whether they should override the default snippets.
+
+-  Do not forget to _always_ locate and clone the active version, and edit the bash script with the new version! _Version_ is not part of your VCL snippet files.
+
+-  If you want to override values and settings from the [default Fastly VCL snippets](https://github.com/fastly/fastly-magento2/tree/master/etc/vcl_snippets), we recommend creating a new snippet with updated values and code with a higher priority value of `100`. You should not try to override default VCLs.
+
+-  When you create and manage custom VCL snippets, make sure that you are using the credentials for the correct environment to avoid changing the wrong Fastly service configuration.
 
 #### Step 1: Locate the active VCL  version {#list}
 
