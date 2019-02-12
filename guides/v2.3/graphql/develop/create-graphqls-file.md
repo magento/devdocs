@@ -106,7 +106,7 @@ The `v_volume` attribute is defined as a `VolumeWithUnit` object. This object mi
 
 ``` php
 type VolumeWithUnit {
-    caclulated_volume: Float
+    calculated_volume: Float
     unit: VolumeUnitEnum
 }
 ```
