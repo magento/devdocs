@@ -50,7 +50,7 @@ The following guidelines may answer most of your questions and help you get star
 *  Check [existing pull requests](https://github.com/magento/devdocs/pulls) and make sure you are not duplicating work!
 *  For large contributions or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This may further prevent duplicate or unnecessary effort.
 *  Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
-*  [Chunk small/medium changes](#tips-for-writing-content) into a single PR. This helps us to efficiently and effectively facilitate your contribution.
+*  [Chunk many small/medium changes](#tips-for-writing-content) into one or two PRs. This helps us to efficiently and effectively facilitate your contribution.
 
     *   The DevDocs team can find the best home for your new topics and add it to the navigation.
     *   If a topic has a symlink, you can remove it with Git commands and add a new file. Copy and paste a previous version of the topic to get started.
@@ -64,7 +64,7 @@ Use the following guidelines to help you with the writing process:
 -   Define the goal of your topic. What exactly do you want to teach the reader?
 -   Make the title of your topic reflect the content.
 -   Keep your sentences concise and try to separate conceptual information from procedural steps.
--   Batch several small changes into a single pull request to ensure your contributions get approved and merged quickly. Have several typo fixes across documentation? Batch them into on PR.
+-   Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions get approved and merged quickly. Have several typo fixes across documentation? Batch them into on PR.
 -   Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"The log captures commands, output..."_.
 -   Use notes to alert readers about important details.
 -   Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
