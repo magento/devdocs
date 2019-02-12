@@ -47,7 +47,7 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-2904 -->Fixed the validation process to prevent a problem that occurred when SCD_MATRIX ignored a theme value that contained different character cases.
 
--   {:.fix}<!-- MAGECLOUD-2851 -->Fixed an issue with processing malformed JSON variables. Now, when there is a syntax error caused by a JSON variable, a warning appears in the `cloud.log` file and deployment continues using the default variable.
+-   {:.fix}<!-- MAGECLOUD-2851 -->Fixed an issue with processing malformed JSON variables. Now, if a JSON variable causes a syntax error, a warning appears in the `cloud.log` file and deployment continues using the default variable.
 
 -   {:.fix}<!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
 
