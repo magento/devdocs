@@ -109,7 +109,6 @@ The following search returns items that contain the word `yoga` or `pants`. The 
     page_info {
       page_size
       current_page
-      total_pages
     }
   }
 }
@@ -148,9 +147,7 @@ The response for each item includes the `name`, `sku`, `price` and `description`
     items {
       name
       sku
-      description {
-        html
-      }
+      description
       price {
         regularPrice {
           amount {
