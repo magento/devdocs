@@ -4,8 +4,15 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Feb  4 13:40:53 2019
+updated: Mon Feb 11 11:37:45 2019
 entries:
+- description: Added MFTF tips:<br/>-[Perform the most critical actions first in the
+    `<after>` block](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#perform-the-most-critical-actions-first-in-the-after-block)<br/>-[When
+    to use `see` versus `seeElement`](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#when-to-use-see-vs-seeelement)
+  versions: 2.3.x
+  type: Major update
+  date: February  8, 2019
+  link: https://github.com/magento/devdocs/pull/3711
 - description: Added information about domain- versus presentation-specific logic
     to the [Technical Guidelines](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html).
   versions: 2.x
