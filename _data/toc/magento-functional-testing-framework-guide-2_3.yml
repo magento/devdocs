@@ -55,6 +55,10 @@ pages:
     url: /mftf/2.3/data.html
     versionless: true
 
+  - label: Debugging
+    url: /mftf/2.3/debugging.html
+    versionless: true
+
   - label: Metadata
     url: /mftf/2.3/metadata.html
     versionless: true
