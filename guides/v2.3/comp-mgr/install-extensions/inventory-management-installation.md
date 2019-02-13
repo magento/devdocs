@@ -11,7 +11,7 @@ These features and extensions were developed as part of the [Multi Source Invent
 
 Inventory Management installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features.
 
-We recommend installing according to [Install Magento Using Composer]({{ page.baseurl }}/install-gde/composer.html). You must install with a metapackage to receive all Inventory Management modules.
+We recommend installing according to [Install Magento Using Composer]({{page.baseurl}}/install-gde/composer.html). You must install with a metapackage to receive all Inventory Management modules.
 
 The following line in the `composer.json` metapackage installs Inventory Management:
 
@@ -79,7 +79,7 @@ You may need to disable Inventory Management modules to:
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 
-To disable Inventory Management, see the instructions for [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
+To disable Inventory Management, see the instructions for [Enable or disable modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
 
 ``` json
         'Magento_Inventory' => 0,
@@ -155,13 +155,13 @@ When upgrading from previous releases of Inventory Management to the latest vers
 
 See the following guides for more information on upgrades:
 
-* [Software Update Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
-* [Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
+* [Software Update Guide]({{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html)
+* [Enable or disable modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html)
 
 ## Additional information
 
 See the following guides for more information on Inventory Management:
 
-* [Release Notes]({{ page.baseurl }}/inventory/release-notes.html)
-* [Inventory Management]({{ page.baseurl }}/inventory/index.html) overview for developer resources
+* [Release Notes]({{page.baseurl}}/inventory/release-notes.html)
+* [Inventory Management]({{page.baseurl}}/inventory/index.html) overview for developer resources
 * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) in the Magento 2 User Guides for merchant information
