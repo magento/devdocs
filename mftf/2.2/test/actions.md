@@ -167,10 +167,10 @@ Learn more in [Using data returned by test actions](../data.html#use-returned-da
 
 The following test actions handle data entities using [metadata](../metadata.html):
 
-* [createData](#createData)
-* [deleteData](#deleteData)
-* [updateData](#updateData)
-* [getData](#getData)
+* [createData](#createdata)
+* [deleteData](#deletedata)
+* [updateData](#updatedata)
+* [getData](#getdata)
 
 Learn more in [Handling a REST API response](../metadata.html#rest-response).
 

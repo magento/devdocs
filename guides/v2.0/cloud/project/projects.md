@@ -9,7 +9,6 @@ functional_areas:
   - Cloud
 redirect_from:
   - /guides/v2.0/cloud/admin/administer.html
-  - /guides/v2.1/cloud/admin/administer.html
 ---
 
 The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.

@@ -6,7 +6,6 @@ menu_order: 1
 menu_node: parent
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/jquery-widgets-about.html
- - /guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html
 ---
 
 The Magento system uses a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.

@@ -5,7 +5,6 @@ title: Package a component
 menu_title: Package a component
 menu_order: 2
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/package_module.html
   - /guides/v2.0/extension-dev-guide/package_module.html
 ---
 

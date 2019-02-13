@@ -161,7 +161,7 @@ pages:
           url: /cloud/cdn/configure-fastly.html
           exclude_versions: ["2.0"]
           children:
-            - label: Customize response pages
+            - label: Customize error pages
               url: /cloud/cdn/cloud-fastly-custom-response.html
 
         - label: Managed Cloud WAF
