@@ -13,190 +13,35 @@ functional_areas:
 
 Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types:
 
-<table>
-  <tbody>
-    <tr>
-      <th>Cache type "friendly" name</th>
-      <th>Cache type code name</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>
-        <p>Configuration</p>
-      </td>
-      <td>
-        <p>config</p>
-      </td>
-      <td>
-        <p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
-        <p>Clean or flush this cache type after modifying configuration files.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Layout</p>
-      </td>
-      <td>
-        <p>layout</p>
-      </td>
-      <td>
-        <p>Compiled page layouts (that is, the layout components from all components).</p>
-        <p>Clean or flush this cache type after modifying layout files.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Block HTML output</p>
-      </td>
-      <td>
-        <p>block_html</p>
-      </td>
-      <td>
-        <p>HTML page fragments per block.</p>
-        <p>Clean or flush this cache type after modifying the view layer.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Collections data</p>
-      </td>
-      <td>
-        <p>collections</p>
-      </td>
-      <td>
-        <p>Results of database queries.</p>
-        <p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-        <p>Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>DDL</p>
-      </td>
-      <td>
-        <p>db_ddl</p>
-      </td>
-      <td>
-        <p>Database schema. </p>
-        <p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-        <p>Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)</p>
-        <p>One way to update the database schema automatically is using the <a href="{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html">magento setup:db-schema:upgrade</a> command.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Compiled Config</p>
-      </td>
-      <td>
-        <p> compiled_config </p>
-      </td>
-      <td>
-        <p>Compilation configuration</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Entity attribute value (EAV)</p>
-      </td>
-      <td>
-        <p>eav</p>
-      </td>
-      <td>
-        <p>Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).</p>
-        <p>You should not typically need to clean or flush this cache type.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Page cache</p>
-      </td>
-      <td>
-        <p>full_page</p>
-      </td>
-      <td>
-        <p>Generated HTML pages. </p>
-        <p>If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. </p>
-        <p>Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Reflection</p>
-      </td>
-      <td>
-        <p>reflection</p>
-      </td>
-      <td>Removes a dependency between the Webapi module and the Customer module.</td>
-    </tr>
-    <tr>
-      <td>
-        <p>Translations</p>
-      </td>
-      <td>
-        <p>translate</p>
-      </td>
-      <td>
-        <p>After merging translations from all modules, the merger cache will be cleaned.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Integration configuration</p>
-      </td>
-      <td>
-        <p>config_integration</p>
-      </td>
-      <td>
-        <p>Compiled integrations.</p>
-        <p>Clean or flush this cache after changing or adding integrations.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Integration API configuration</p>
-      </td>
-      <td>
-        <p>config_integration_api</p>
-      </td>
-      <td>
-        <p>Compiled integration APIs configuration of the Store’s Integrations.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Web services configuration</p>
-      </td>
-      <td>
-        <p>config_webservice</p>
-      </td>
-      <td>
-        <p>Caching the Web API Structure.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Customer Notification</p>
-      </td>
-      <td>
-        <p>customer_notification</p>
-      </td>
-      <td>
-        <p>Temporary notifications that appear in the user interface.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p>Vertex tax calculation data</p>
-      </td>
-      <td>
-        <p>vertex</p>
-      </td>
-      <td>
-        <p>Compiled tax calculation data in the shopping cart based on the tax profile of each product.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+|Cache type "friendly" name|Cache type code name|Description|
+|--- |--- |--- |
+|Configuration|config|Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. 
+        Clean or flush this cache type after modifying configuration files.|
+|Layout|layout|Compiled page layouts (that is, the layout components from all components).
+        Clean or flush this cache type after modifying layout files.|
+|Block HTML output|block_html|HTML page fragments per block.
+        Clean or flush this cache type after modifying the view layer.|
+|Collections data|collections|Results of database queries.
+        If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. 
+        Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.|
+|DDL|db_ddl|Database schema. 
+        If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. 
+        Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)
+        One way to update the database schema automatically is using the magento setup:db-schema:upgrade command.|
+|Compiled Config|compiled_config|Compilation configuration|
+|Entity attribute value (EAV)|eav|Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).
+        You should not typically need to clean or flush this cache type.|
+|Page cache|full_page|Generated HTML pages. 
+        If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. 
+        Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.|
+|Reflection|reflection|Removes a dependency between the Webapi module and the Customer module.|
+|Translations|translate|After merging translations from all modules, the merger cache will be cleaned.|
+|Integration configuration|config_integration|Compiled integrations.
+        Clean or flush this cache after changing or adding integrations.|
+|Integration API configuration|config_integration_api|Compiled integration APIs configuration of the Store’s Integrations.|
+|Web services configuration|config_webservice|Caching the Web API Structure.|
+|Customer Notification|customer_notification|Temporary notifications that appear in the user interface.|
+|Vertex tax calculation data|vertex|Compiled tax calculation data in the shopping cart based on the tax profile of each product.|
 
 ## View the cache status
 
