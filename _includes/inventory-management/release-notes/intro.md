@@ -4,6 +4,8 @@
 
 {{site.data.var.im}} is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
+See the following documentation:
+
 - [{{site.data.var.im}} overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation
 - [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
 - [Manage Inventory Management modules]({{page.baseurl}}/comp-mgr/install-extensions/inventory-management-installation.html) for module maintenance and upgrades
