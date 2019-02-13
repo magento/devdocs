@@ -23,7 +23,7 @@ A dependency in a comment is also a dependency.
 
 Command options:
 
-	magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
+	bin/magento info:dependencies:{show-modules|show-modules-circular|show-framework} [-d|--directory="<path>"] [-o|--output="<path and filename"]
 
 The following table explains this command's options, parameters, and values.
 

@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.7 Release Notes
 
 ---
 
-*Patch code and release notes were published on November 28, 2018.*
+*Release notes published November 28 and last updated on December 10, 2018.*
 
 
 
@@ -72,7 +72,10 @@ This release includes improvements to general usability of the core code plus en
 
 ### Community contribution highlights
 
-Highlights of community contributions include these fixes::
+Highlights of community contributions include these fixes:
+
+* **Bulk Web APIs**  allow all existing REST APIs to accept payloads with multiple entities. These community-contributed bulk APIs support more efficient and scalable implementations that eliminate round-trip network overhead. Like asynchronous APIs, bulk web APIs can be used in conjunction with queues that have also been migrated to {{site.data.var.ce}}. [See Bulk endpoints](https://devdocs.magento.com/guides/v2.3/rest/bulk-endpoints.html) for more information. 
+
 
 <!-- MAGETWO-86712 -->* The email server no longer throws an exception when a customer places an order using a PayPal payment method. Previously, when a customer checked out using PayPal, Magento placed the order, but the email server threw an exception. Thanks to community member [Jason Woods](https://github.com/driskell)!
 
@@ -84,7 +87,7 @@ Highlights of community contributions include these fixes::
 
 
 
-Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
 
 ## Functional fixes
@@ -93,6 +96,8 @@ In addition to security enhancements, this release contains the following functi
 
 
 ### Installation, setup, and deployment
+
+<!---MAGETWO-94174 -->* Magento backup functionality is no longer enabled by default, and the code has been deprecated. See [Back up and roll back the file system, media, and database](https://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-backup.html) for more information on backup strategies. 
 
 <!-- MAGETWO-95591 -->* Customer attribute management issues that merchants  experienced after upgrading to Magento 2.2.6 have been resolved. Previously, after upgrading their stores to Magento 2.2.6, merchants could not create and save a new multiselect or dropdown customer custom attribute, and  existing customer attributes  no longer appeared for editing within the customer's account on the storefront.
 
@@ -677,7 +682,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

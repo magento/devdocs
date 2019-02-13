@@ -13,7 +13,7 @@
 
     {% if page.github_link %}
     <div class="github-link">
-      <a class="improve-page" href="{{ page.github_files }}{{ page.path }}" target="_blank">
+      <a class="improve-page" href="{{ page.github_files }}{{ page.path }}" target="_blank" rel="noopener">
         Edit this page on GitHub
       </a>
     </div>
@@ -21,7 +21,7 @@
 
     {% if page.feedback_link %}
     <div class="new-issue">
-      <a href="{{ page.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank">
+      <a href="{{ page.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank" rel="noopener">
         Give us feedback
       </a>
     </div>

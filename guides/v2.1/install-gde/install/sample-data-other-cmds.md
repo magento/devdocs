@@ -1,5 +1,5 @@
 ---
-group: SampleData
+group: installation-guide
 subgroup: T_SampleData
 title: Remove sample data modules or update sample data
 menu_title: Remove sample data modules or update sample data

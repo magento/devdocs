@@ -155,7 +155,7 @@ This class makes final modifications to the database store after data has been i
 | **Interface**  | [`InstallDataInterface`] |
 | **Method**     | `install()`              |
 
-**Example:** InstallDataInterface.php
+**Example:** RecurringData.php
 
 ``` php
 class \VendorName\ModuleName\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface

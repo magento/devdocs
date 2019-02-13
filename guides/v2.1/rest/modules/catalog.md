@@ -44,8 +44,7 @@ Third-party modules may define other custom attributes.
 
 The following example uses the `POST V1/categories` call to assign four custom attributes to the "My New Category" category.
 
-{% highlight json %}
-
+```json
 {
 "category": {
     "parent_id": 2,
@@ -77,4 +76,4 @@ The following example uses the `POST V1/categories` call to assign four custom a
       ]
     }
 }
-{% endhighlight %}
+```

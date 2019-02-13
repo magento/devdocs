@@ -30,7 +30,7 @@ To remove the Magento crontab:
 2.  Change to the Magento installation directory.
 3.  Enter the following command:
 
-      php bin/magento cron:remove
+        php bin/magento cron:remove
 
 {:.bs-callout .bs-callout-info}
 This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ MAGENTO END` comments in your crontab.

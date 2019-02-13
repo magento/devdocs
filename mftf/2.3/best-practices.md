@@ -5,10 +5,10 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/best-practi
 
 # Best practices
 
-_This topic was updated due to the {{page.mftf-release}} MFTF release._
+_This topic was updated due to the {{ page.mftf-release }} MFTF release._
 {: style="text-align: right"}
 
-Check out our best practices below to ensure you're getting the absolute most out of the Magento Functional Testing Framework.
+Check out our best practices below to ensure you are getting the absolute most out of the Magento Functional Testing Framework.
 
 ## Action group
 
@@ -133,13 +133,13 @@ Define these three elements and reference them by name in the tests.
 
 1. Use actions such as [`<waitForElementVisible>`], [`<waitForLoadingMaskToDisappear>`], and [`<waitForElement>`] to wait the exact time required for the test step.
  Try to avoid using the [`<wait>`] action, because it forces the test to wait for the time you specify. You may not need to wait so long to proceed.
-2. Keep your tests short and granular for target testing, easier reviews, and easier merge conflict resolution.
+1. Keep your tests short and granular for target testing, easier reviews, and easier merge conflict resolution.
  It also helps you to identify the cause of test failure.
-3. Use comments to keep tests readable and maintainable:
-- Keep the inline `<!-- XML comments -->` and [`<comment>`] tags up to date.
-  It helps to inform the reader of what you are testing and to yield a more descriptive Allure report.
-- Explain in comments unclear or tricky test steps.
-4. Refer to [sections] instead of writing selectors.
+1. Use comments to keep tests readable and maintainable:
+   - Keep the inline `<!-- XML comments -->` and [`<comment>`] tags up to date.
+     It helps to inform the reader of what you are testing and to yield a more descriptive Allure report.
+   - Explain in comments unclear or tricky test steps.
+1. Refer to [sections] instead of writing selectors.
 
 ## Test step merging order
 
