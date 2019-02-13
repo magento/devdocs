@@ -96,7 +96,9 @@ This section walks through debugging CLI commands.
    * **Remote** select Docker
      * **Server** select `Docker Cloud` from previous step
      * **Image name** select *magento/magento-cloud-docker-php:7.x-cli*
-   * **Additional** > **Debugger extension** enter `xdebug`
+   * **Additional** > **Debugger extension**:
+     * For Windows enter `xdebug`
+     * For Mac/Linux enter `xdebug.so`
    * Click refresh button to ensure that interpreter and xdebug configured properly.
    
    Save changes.     
