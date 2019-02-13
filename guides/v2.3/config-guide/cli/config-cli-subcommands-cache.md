@@ -15,29 +15,17 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 
 |Cache type "friendly" name|Cache type code name|Description|
 |--- |--- |--- |
-|Configuration|config|Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. 
-        Clean or flush this cache type after modifying configuration files.|
-|Layout|layout|Compiled page layouts (that is, the layout components from all components).
-        Clean or flush this cache type after modifying layout files.|
-|Block HTML output|block_html|HTML page fragments per block.
-        Clean or flush this cache type after modifying the view layer.|
-|Collections data|collections|Results of database queries.
-        If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. 
-        Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.|
-|DDL|db_ddl|Database schema. 
-        If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. 
-        Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.)
-        One way to update the database schema automatically is using the magento setup:db-schema:upgrade command.|
+|Configuration|config|Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. Clean or flush this cache type after modifying configuration files.|
+|Layout|layout|Compiled page layouts (that is, the layout components from all components). Clean or flush this cache type after modifying layout files.|
+|Block HTML output|block_html|HTML page fragments per block. Clean or flush this cache type after modifying the view layer.|
+|Collections data|collections|Results of database queries. If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. Clean or flush this cache type if your custom module uses logic that results in cache entries that Magento cannot clean.|
+|DDL|db_ddl|Database schema. If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. Clean or flush this cache type after you make custom changes to the database schema. (In other words, updates that Magento does not make itself.) One way to update the database schema automatically is using the magento setup:db-schema:upgrade command.|
 |Compiled Config|compiled_config|Compilation configuration|
-|Entity attribute value (EAV)|eav|Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on).
-        You should not typically need to clean or flush this cache type.|
-|Page cache|full_page|Generated HTML pages. 
-        If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. 
-        Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.|
+|Entity attribute value (EAV)|eav|Metadata related to EAV attributes (for example, store labels, links to related PHP code, attribute rendering, search settings, and so on). You should not typically need to clean or flush this cache type.|
+|Page cache|full_page|Generated HTML pages. If necessary, Magento cleans up this cache automatically, but third-party developers can put any data in any segment of the cache. Clean or flush this cache type after modifying code level that affects HTML output. It’s recommended to keep this cache enabled because caching HTML improves performance significantly.|
 |Reflection|reflection|Removes a dependency between the Webapi module and the Customer module.|
 |Translations|translate|After merging translations from all modules, the merger cache will be cleaned.|
-|Integration configuration|config_integration|Compiled integrations.
-        Clean or flush this cache after changing or adding integrations.|
+|Integration configuration|config_integration|Compiled integrations. Clean or flush this cache after changing or adding integrations.|
 |Integration API configuration|config_integration_api|Compiled integration APIs configuration of the Store’s Integrations.|
 |Web services configuration|config_webservice|Caching the Web API Structure.|
 |Customer Notification|customer_notification|Temporary notifications that appear in the user interface.|
