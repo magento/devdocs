@@ -280,12 +280,13 @@ The `LogInAsAdminTest` result corresponds to:
 
 ## Merge Action groups
 
-Merging action groups allows you to extend existing tests by reusing existing action groups.
+Merging action groups allows you to extend existing tests by reusing existing action groups, while customizing them for your specific needs.
 
 ### Use Case 1
 
-Here is an action group for selecting customerGroup in the Cart Price Rules section.
-The controls changes drastically in B2B, so it was abstracted to an action group, so it could be easily changed if B2B is enabled.
+Here is an action group for selecting `customerGroup` in the `Cart Price Rules` section.
+The controls change drastically in the B2B version, so it was abstracted to an action group.
+This way it could be easily changed if B2B is enabled.
 
 ```xml
 <actionGroup name="selectNotLoggedInCustomerGroup">
