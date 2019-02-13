@@ -3,7 +3,7 @@ group: software-update-guide
 title: Manage Inventory Management modules
 ---
 
-Inventory Management modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in Magento 2.3.X Open Source and Commerce.
+Inventory Management modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in Magento 2.3.X Open Source, Commerce, and Commerce Cloud.
 
 These features and extensions were developed as part of the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi) through the Magento Community Engineering program.
 
@@ -16,7 +16,7 @@ We recommend installing according to [Install Magento Using Composer]({{ page.ba
 The following line in the `composer.json` metapackage installs Inventory Management:
 
 ``` json
-        magento/inventory-composer-metapackage = ^1.0.3
+        magento/inventory-composer-metapackage = ^1.1.0
 ```
 
 The Inventory Management installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
@@ -58,6 +58,11 @@ The Inventory Management installation process makes the following changes to the
         'Magento_InventorySourceSelection' => 1,
         'Magento_InventorySourceSelectionApi' => 1,
         'Magento_InventoryShippingAdminUi' => 1,
+        'Magento_InventoryDistanceBasedSourceSelection' => 1,
+        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 1,
+        'Magento_InventoryDistanceBasedSourceSelectionApi' => 1,
+        'Magento_InventoryElasticSearch' => 1,
+        'Magento_InventorySetupFixtureGenerator' => 1,
 ```
 
 ## Enable Inventory Management features
@@ -113,6 +118,11 @@ To disable Inventory Management, see the instructions for [Enable or disable mod
         'Magento_InventorySourceSelection' => 0,
         'Magento_InventorySourceSelectionApi' => 0,
         'Magento_InventoryShippingAdminUi' => 0,
+        'Magento_InventoryDistanceBasedSourceSelection' => 0,
+        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 0,
+        'Magento_InventoryDistanceBasedSourceSelectionApi' => 0,
+        'Magento_InventoryElasticSearch' => 0,
+        'Magento_InventorySetupFixtureGenerator' => 0,
 ```
 
 ## Upgrade Inventory Management
@@ -137,6 +147,8 @@ To enable Inventory Management modules:
    bin/magento cache:clean
    ```  
 
+Upgrade from previous releases of Inventory Management to the latest following extension upgrade steps. 
+
 See the following guides for more information on upgrades:
 
 * [Software Update Guide]({{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html)
@@ -146,5 +158,6 @@ See the following guides for more information on upgrades:
 
 See the following guides for more information on Inventory Management:
 
+* [Release Notes]({{ page.baseurl }}/inventory/release-notes.html)
 * [Inventory Management]({{ page.baseurl }}/inventory/index.html) overview for developer resources
 * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) in the Magento 2 User Guides for merchant information

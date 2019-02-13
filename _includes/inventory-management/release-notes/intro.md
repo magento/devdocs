@@ -6,3 +6,8 @@
 
 - [{{site.data.var.im}} overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation
 - [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
+
+The release notes include:
+
+-   {:.new}New features
+-   {:.fix}Fixes and improvements
