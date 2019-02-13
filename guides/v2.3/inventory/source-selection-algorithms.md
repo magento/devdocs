@@ -10,18 +10,47 @@ The **Source Selection Algorithm (SSA)** recommends how to fulfill partial and f
 * Should the shipments originate from the closest source?
 * Should the fastest shipping method with the shortest delivery time be used, even if it's not the cheapest?
 
-Magento 2.3 provides the priority-based SSA only. Third party developers can create their own algorithms to 
-help merchants decide which shipping option best meets their needs.
+Magento provides the following algorithms:
+
+* Source priority
+* Distance priority
+
+Third party developers can create additional algorithms to help merchants decide which shipping option best meets their needs.
 
 Magento does not enforce or save the results of SSA recommendations. The recommendations reflect conditions at the moment when the algorithm runs, but conditions change over time. For example, the amount of in-stock products will always fluctuate, and shipping costs might change. The merchant can also modify the recommendations by adjusting quantities for deduction or even by re-assigning the shipment's sources of origin.  
 
-## The priority algorithm
+## Source Priority algorithm
 
-Inventory Management defines the priority algorithm, which recommends delivering products from sources having the highest priority. The `SourceSelectionServiceInterface` accepts an `InventoryRequestInterface` object, which in turn contains the stock ID and a list of items to be shipped. Each item contains only the SKU and quantity. Other potentially relevant data, such as shipping address, is not included, because the priority algorithm does not need it. 
+Custom stocks include an assigned list of sources to sell and ship available product inventory through the storefront. This algorithm uses the order of assigned sources in your stock to make recommendations.
 
-Additional input data might be needed for more sophisticated algorithms. For example, an algorithm that calculates distance would need the shipping address and all data entered for the source (GPS or full address). That's why `InventoryRequestInterface` implements `ExtensibleDataInterface` interfaces, which can be extended with custom input parameters.
+When run, the algorithm:
+
+* Works through the configured order of sources at the stock level starting at the top
+* Skips any disabled sources
+* Continues down the list until the order shipment is filled
+* Recommends a quantity to ship and source per product based on the order in the list, available quantity, and quantity ordered
+
+## Distance Priority algorithm
+
+The Distance Priority algorithm compares the location of the shipping destination address with each source location to determine the closest source to fulfill shipments. The distance may be determined by physical distance or time spent traveling from one location to another, using imported database location data or Google directions (driving, walking, or bicycling).
+
+You have two options for calculating distance:
+
+**Google MAP:** Uses Google Maps Platform services to calculate the distance and time between the shipping destination address and source locations. This option uses the source's Latitude and Longitude (GPS coordinates) and may use the street address depending on the computation mode. You must provide a Google API key with Geocoding API and Distance Matrix API enabled. This option requires a Google billing plan and may incur charges through Google.
+
+**Offline Calculation:** Calculates the distance using downloaded and imported geocodes to determine the closest source to the shipping destination address. The geocodes are derived from the city, state, country, and postal code of both the shipping address and the source. 
+
+To support offline calculations, Magento provides a command that downloads country-specific geocode data from [geonames.org](https://geonames.org) and imports this information into the database. 
+
+We recommend entering full street address and GPS coordinate information in your sources if using the Distance Priority algorithm. Google MAP uses your GPS coordinates and your street address. Offline Calculation uses the city, state, country, and zip codes.
+
+{% include config/cli-inventory.md %}
 
 ## SSA interfaces
+
+The source priority algorithm recommends delivering products from sources having the highest priority. The `SourceSelectionServiceInterface` accepts an `InventoryRequestInterface` object, which in turn contains the stock ID and a list of items to be shipped. Each item contains only the SKU and quantity. Other potentially relevant data, such as shipping address, is not included, because the priority algorithm does not need it.
+
+Additional input data might be needed for more sophisticated algorithms, such as the Distance Priority algorithm. In this case, the algorithm needs the shipping address and all data entered for the source (GPS or full address). That's why `InventoryRequestInterface` implements `ExtensibleDataInterface` interfaces, which can be extended with custom input parameters.
 
 Currently, Inventory Management deducts stock from the appropriate source after the merchant creates a shipment for an order. However, that's not flexible enough--a developer might want to introduce customizations and launch the SSA when the customer proceeds to checkout. Running the SSA at this point could provide the customer more accurate shipping costs. Note in this case, the `Order` object has not created yet, and the system must instead rely on the `Quote` object.
 
@@ -35,6 +64,8 @@ Use these interfaces to create your own SSA:
 * [GetSourceSelectionAlgorithmListInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php) returns the list of data interfaces that represent registered SSAs
 * [SourceSelectionAlgorithmInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Api/Data/SourceSelectionAlgorithmInterface.php) represents a single SSA
 * [SourceSelectionInterface](https://github.com/magento-engcom/msi/blob/2.3.0-release/app/code/Magento/InventorySourceSelectionApi/Model/SourceSelectionInterface.php) returns the SSA result for the specified `inventoryRequest`
+* [GetDistanceInterface](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventoryDistanceBasedSourceSelectionApi/Api/GetDistanceInterface.php)  - returns the distance between the source and the shipping address in kilometers without specifying the units. To change this behavior, provide your own implementation for
+`\Magento\InventoryDistanceBasedSourceSelection\Model\DistanceProvider\GoogleMap\GetDistance`.
 
 ## Develop a custom algorithm
 
