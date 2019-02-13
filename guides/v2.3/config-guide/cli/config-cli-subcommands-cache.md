@@ -24,7 +24,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
       <td><p>Configuration</p></td>
       <td><p>config</p></td>
       <td><p>Magento collects configuration from all modules, merges it, and saves the merged result to the cache. This cache also contains store-specific settings stored in the file system and database. </p>
-	<p>Clean or flush this cache type after modifying configuration files.</p></td>
+      <p>Clean or flush this cache type after modifying configuration files.</p></td>
     </tr>
     <tr>
       <td><p>Layout</p></td>
@@ -79,7 +79,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
     <tr>
       <td><p>Translations</p></td>
       <td><p>translate</p></td>
-      <td><p>Merged translations from all modules.</p></td>
+      <td><p>After merging translations from all modules, the merger cache will be cleaned.</p></td>
     </tr>
     <tr>
       <td><p>Integration configuration</p></td>
@@ -90,14 +90,23 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
     <tr>
       <td><p>Integration API configuration</p></td>
       <td><p>config_integration_api</p></td>
-      <td><p>Compiled integration APIs.</p></td>
+      <td><p>Compiled integration APIs configuration of the Store’s Integrations.</p></td>
     </tr>
     <tr>
       <td><p>Web services configuration</p></td>
       <td><p>config_webservice</p></td>
-      <td><p>Web API structure.</p></td>
+      <td><p>Caching the Web API Structure.</p></td>
     </tr>
-
+    <tr>
+      <td><p>Customer Notification</p></td>
+      <td><p>customer_notification</p></td>
+      <td><p>Temporary notifications that appear in the user interface.</p></td>
+    </tr>
+    <tr>
+      <td><p>Vertex tax calculation data</p></td>
+      <td><p>vertex</p></td>
+      <td><p>Compiled tax calculation data in the shopping cart based on the tax profile of each product.</p></td>
+    </tr>
   </tbody>
 </table>
 
@@ -122,7 +131,9 @@ A sample follows:
              translate: 1
     config_integration: 1
 config_integration_api: 1
+ customer_notification: 1
      config_webservice: 1
+                vertex: 1
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
 
@@ -168,6 +179,9 @@ To purge out-of-date items from the cache, you can *clean* or *flush* cache type
 
     Disabled cache types are not cleaned.
 
+    {:.bs-callout .bs-callout-tip}
+    Always clean the cache after upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, or installing {{site.data.var.b2b}} or any module.
+
 -   Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
 
 Flush cache types if you've already tried cleaning the cache and you're still having issues that you cannot isolate.
@@ -190,12 +204,14 @@ Sample result:
 	collections
 	db_ddl
 	compiled_config
+	customer_notification
 	eav
 	full_page
 	translate
 	config_integration
 	config_integration_api
 	config_webservice
+	vertex
 
 {:.bs-callout .bs-callout-info}
 You can also clean and flush cache types in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.

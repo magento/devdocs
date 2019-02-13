@@ -7,7 +7,6 @@ menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: modules
 redirect_from:
-  - /guides/v1.0/architecture/modules/mod_intro.html
   - /guides/v2.0/architecture/modules/mod_intro.html
 ---
 

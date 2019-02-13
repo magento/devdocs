@@ -86,7 +86,7 @@ Follow this procedure to edit the `Carrier.php` file to use the new shipping met
 
 See [USPS® Announces September Rate Change, Reclassification for First-Class Mail Parcels](http://www.pitneybowes.com/us/blog/usps-announces-september-rate-change-first-class-mail-parcels.html) for more information on this and other recent USPS rate and classification changes. 
 
-### Acknowlegments
+### Acknowledgments
 
 Thanks to [ShipperHQ](https://shipperhq.com/) for bringing this issue to our attention!
 

@@ -8,6 +8,9 @@ pages:
     - label: Inventory management architecture
       url: /inventory/architecture.html
 
+    - label: Reservations
+      url: /inventory/reservations.html
+
     - label: Source selection algorithms
       url: /inventory/source-selection-algorithms.html
 

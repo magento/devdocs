@@ -3,9 +3,6 @@ group: cloud-guide
 title: Configure environments
 redirect_from:
   - /guides/v2.0/cloud/deploy/configure-deploy.html
-  - /guides/v2.1/cloud/deploy/configure-deploy.html
-  - /guides/v2.2/cloud/deploy/configure-deploy.html
-  - /guides/v2.3/cloud/deploy/configure-deploy.html
 functional_areas:
   - Cloud
 ---

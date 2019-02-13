@@ -273,11 +273,14 @@ Use the following steps to install your module:
 
 2. Run the following command to generate the new code.
 
+{: .bs-callout .bs-callout-info }
+In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
+
     <code>bin/magento setup:di:compile</code>
 
 ## Check your integration   {#check}
 
-Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
+Log in to Magento and navigate to **System > Extensions > Integrations**. The integration should be displayed in the grid.
 
 ## Integrate with your application {#integrate}
 

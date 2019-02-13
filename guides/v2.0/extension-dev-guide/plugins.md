@@ -5,8 +5,6 @@ title: Plugins (Interceptors)
 menu_title: Plugins (Interceptors)
 menu_order: 10
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/plugins.html
-  - /guides/v1.0/config-guide/config/plugins.html
 ---
 
 ### Overview

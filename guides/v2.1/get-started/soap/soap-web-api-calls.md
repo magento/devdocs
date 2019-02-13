@@ -6,7 +6,6 @@ menu_title: Use SOAP Services
 menu_order: 1
 menu_node: parent
 redirect_from:
-  - /guides/v1.0/rest/soap/soap-web-api-calls.html
   - /guides/v2.0/get-started/soap/soap-front.html
 
 ---
@@ -89,7 +88,7 @@ $wsdlUrl = 'http://magento.ll/soap/default?wsdl=1&services=testModule1AllSoapAnd
 $serviceArgs = array("id"=>1);
 
 $context = stream_context_create($opts);
-$soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'context' => $context]);
+$soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'stream_context' => $context]);
 
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
