@@ -153,6 +153,12 @@ To enable Inventory Management modules:
 
 When upgrading from previous releases of Inventory Management to the latest version, follow normal extension upgrade steps. 
 
+For the latest, update your metapackage version:
+
+``` json
+        magento/inventory-composer-metapackage = ^1.1.0
+```
+
 See the following guides for more information on upgrades:
 
 * [Software Update Guide]({{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html)
