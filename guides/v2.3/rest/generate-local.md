@@ -40,6 +40,7 @@ You can also use Swagger to generate live asynchronous API REST documentation. T
 
 Swagger returns information about all resources available for asynchronous REST APIs.
 
+
 ## Return the JSON schema for one or more services
 
 You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to
@@ -57,12 +58,12 @@ To return information about all services:
 {:.bs-callout .bs-callout-info}
 You must specify an authorization token for an {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} user to return information for most endpoints. See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html) for more information.
 
-{:.bs-callout .bs-callout-info}
-If you want to get JSON schema for Asynchronous API, base url will look like: `http://<magento_host>/rest/<store_code>/async/schema`
 
 ## Return the complete JSON schema
 
 To return the complete JSON schema, specify the `?services=all` parameter in the URL. The default `store_code` is `all`, but you can also specify `default` or a store code defined on the system. For example: `http://<magento_host>/rest/default/schema?services=all`
+
+The base URL for returning the asynchronous schema is `http://<magento_host>/rest/<store_code>/async/schema`.
 
 ## Related topics
 
