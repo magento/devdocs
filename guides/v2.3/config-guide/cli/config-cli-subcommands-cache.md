@@ -135,7 +135,7 @@ Where `[type]` is a space-separated list of cache types. Omitting `[type]` clean
 
 Sample result:
 
-```bash
+```terminal
    Flushed cache types:
    config
    layout
