@@ -32,24 +32,24 @@ The following diagram shows the structure of an MFTF test case:
 The format of `<tests>` is:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+   <?xml version="1.0" encoding="UTF-8"?>
 
-<tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
-        <test name="" insertBefore="" insertAfter="">
-            <annotations>
-                <!-- TEST ANNOTATIONS -->
-            </annotations>
-            <before>
-                <!-- ACTIONS AND ACTION GROUPS PERFORMED BEFORE THE TEST -->
-            </before>
-            <after>
-                <!-- ACTIONS AND ACTION GROUPS PERFORMED AFTER THE TEST -->
-            </after>
-            <!-- TEST ACTIONS, ACTION GROUPS, AND ASSERTIONS-->
-        </test>
-    </tests>
-</config>
+   <tests xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd">
+         <test name="" insertBefore="" insertAfter="">
+               <annotations>
+                  <!-- TEST ANNOTATIONS -->
+               </annotations>
+               <before>
+                  <!-- ACTIONS AND ACTION GROUPS PERFORMED BEFORE THE TEST -->
+               </before>
+               <after>
+                  <!-- ACTIONS AND ACTION GROUPS PERFORMED AFTER THE TEST -->
+               </after>
+               <!-- TEST ACTIONS, ACTION GROUPS, AND ASSERTIONS-->
+         </test>
+      </tests>
+   </config>
 ```
 
 ## Principles

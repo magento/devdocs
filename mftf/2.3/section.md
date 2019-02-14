@@ -37,16 +37,16 @@ The following diagram shows the XML structure of an MFTF section:
 The format of a `<section>` is:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+   <?xml version="1.0" encoding="UTF-8"?>
 
-<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="">
-        <element name="" type="" selector="" />
-        <element name="" type="" selector="" parameterized="true"/>
-        <element name="" type="" selector="" timeout=""/>
-    </section>
-</sections>
+   <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+      <section name="">
+         <element name="" type="" selector="" />
+         <element name="" type="" selector="" parameterized="true"/>
+         <element name="" type="" selector="" timeout=""/>
+      </section>
+   </sections>
 ```
 
 ## Principles
@@ -64,15 +64,15 @@ The following conventions apply to MFTF sections:
 Example (`.../Catalog/Section/AdminCategorySidebarActionSection.xml` file):
 
 ```xml
-<?xml version="1.0" encoding="utf-8"?>
+   <?xml version="1.0" encoding="utf-8"?>
 
-<sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
-    <section name="AdminCategorySidebarActionSection">
-        <element name="addRootCategoryButton" type="button" selector="#add_root_category_button" timeout="30"/>
-        <element name="addSubcategoryButton" type="button" selector="#add_subcategory_button" timeout="30"/>
-    </section>
-</sections>
+   <sections xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/SectionObject.xsd">
+      <section name="AdminCategorySidebarActionSection">
+         <element name="addRootCategoryButton" type="button" selector="#add_root_category_button" timeout="30"/>
+         <element name="addSubcategoryButton" type="button" selector="#add_subcategory_button" timeout="30"/>
+      </section>
+   </sections>
 ```
 
 This example uses a `AdminCategorySidebarActionSection` section. All sections with same name will be merged during test generation.
@@ -86,8 +86,8 @@ The following is an example of a call in test:
 {%raw%}
 
 ```xml
-<!-- Click on the button with locator "#add_subcategory_button" on the web page-->
-<click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
+   <!-- Click on the button with locator "#add_subcategory_button" on the web page-->
+   <click selector="{{AdminCategorySidebarActionSection.addSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
 ```
 
 ## Elements reference
@@ -127,9 +127,9 @@ The section element code declaration containing the timeout attribute:
 > StorefrontSigninSection.xml
 
 ```xml
-...
-<element name="signIn" type="button" selector="#signIn" timeout="30"/>
-...
+   ...
+   <element name="signIn" type="button" selector="#signIn" timeout="30"/>
+   ...
 ```
 
 The test step that covers the use case:
@@ -137,9 +137,9 @@ The test step that covers the use case:
 > StorefrontSigninTest.xml
 
 ```xml
-...
-<click selector="{{StorefrontSigninSection.signIn}}" ../>
-...
+   ...
+   <click selector="{{StorefrontSigninSection.signIn}}" ../>
+   ...
 ```
 
 Whenever the `signIn` button is used in a test, the MFTF will add a 30 second `waitForPageLoad` action immediately after the `click`.

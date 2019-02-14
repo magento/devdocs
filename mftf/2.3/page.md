@@ -38,15 +38,15 @@ The following diagram shows the XML structure of an MFTF page:
 The format of `<page>` is:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+   <?xml version="1.0" encoding="UTF-8"?>
 
-<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/PageObject.xsd">
-    <page name="" url="" module="" area="">
-        <section name=""/>
-        <section name=""/>
-    </page>
-</pages>
+   <pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:mftf:Page/etc/PageObject.xsd">
+      <page name="" url="" module="" area="">
+         <section name=""/>
+         <section name=""/>
+      </page>
+   </pages>
 ```
 
 ## Principles
@@ -69,17 +69,17 @@ These examples demonstrate explicit and parameterized pages and include informat
 Example (_Catalog/Page/AdminCategoryPage.xml_ file):
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+   <?xml version="1.0" encoding="UTF-8"?>
 
-<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
-    <page name="AdminCategoryPage" url="catalog/category/" module="Magento_Catalog" area="admin">
-        <section name="AdminCategorySidebarActionSection"/>
-        <section name="AdminCategorySidebarTreeSection"/>
-        <section name="AdminCategoryBasicFieldSection"/>
-        <section name="AdminCategorySEOSection"/>
-    </page>
-</pages>
+   <pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+      <page name="AdminCategoryPage" url="catalog/category/" module="Magento_Catalog" area="admin">
+         <section name="AdminCategorySidebarActionSection"/>
+         <section name="AdminCategorySidebarTreeSection"/>
+         <section name="AdminCategoryBasicFieldSection"/>
+         <section name="AdminCategorySEOSection"/>
+      </page>
+   </pages>
 ```
 
 In this example, the _Catalog/Page/AdminCategoryPage.xml_ file declares a page with the name `AdminCategoryPage`.
@@ -98,7 +98,7 @@ The following is an example of a call in test:
 {%raw%}
 
 ```xml
-<amOnPage url="{{AdminCategoryPage.url}}" stepKey="navigateToAdminCategory"/>
+   <amOnPage url="{{AdminCategoryPage.url}}" stepKey="navigateToAdminCategory"/>
 ```
 
 ### Parameterized page
@@ -106,14 +106,14 @@ The following is an example of a call in test:
 Example (_Catalog/Page/StorefrontCategoryPage.xml_ file):
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
+   <?xml version="1.0" encoding="UTF-8"?>
 
-<pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
-    <page name="StorefrontCategoryPage" url="/{{var1}}.html" module="Magento_Catalog" parameterized="true" area="storefront">
-        <section name="StorefrontCategoryMainSection"/>
-    </page>
-</pages>
+   <pages xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../../../../../..dev/tests/acceptance/vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Page/etc/PageObject.xsd">
+      <page name="StorefrontCategoryPage" url="/{{var1}}.html" module="Magento_Catalog" parameterized="true" area="storefront">
+         <section name="StorefrontCategoryMainSection"/>
+      </page>
+   </pages>
 ```
 
 This example shows the page with the name `StorefrontCategoryPage`.
@@ -122,7 +122,7 @@ It will be merged with the other `StorefrontCategoryPage` pages from other modul
 The following is an example of a call in test:
 
 ```xml
-<amOnPage url="{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}" stepKey="navigateToCategoryPage"/>
+   <amOnPage url="{{StorefrontCategoryPage.url($$createPreReqCategory.name$$)}}" stepKey="navigateToCategoryPage"/>
 ```
 
 The `StorefrontCategoryPage` page is declared as parameterized, where the `url` contains a `{{var1}}` parameter.
