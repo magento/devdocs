@@ -139,6 +139,19 @@ To force the test framework to regenerate the cache and the other files, remove 
 rm -r dev/tests/integration/tmp/sandbox-*
 ```
 
+#### RABBITMQ_MANAGEMENT_PORT constant
+
+Default value:
+```xml
+<const name="RABBITMQ_MANAGEMENT_PORT" value="15672"/>
+```
+
+The [RabbitMQ Management Plugin](https://www.rabbitmq.com/management.html) APIs are accessible on port `15672` by
+default and this constant provides configuration when the test environment is not using the default. Tests depending on
+`Magento\TestFramework\Helper\Amqp`, often used for validating queue and exchange status, depend on the management
+plugin being enabled. Beginning in v2.3.1 the helper no longer assumes RabbitMQ is running on `localhost` and will use
+the connection configuration defined in `env.php`.
+
 #### PHP memory_limit
 
 The default `phpunit.xml.dist` file does not contain any PHP `memory_limit` settings.
