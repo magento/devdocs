@@ -59,7 +59,7 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 **Endpoint**
 
-`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
+`GET http://<host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
 
 **Scope**
 
@@ -85,7 +85,7 @@ Use the same endpoint to check the quantity available for product `24-WB03`.
 
 **Endpoint**
 
-`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
+`GET http://<host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
 
 **Scope**
 
@@ -227,4 +227,4 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 ## Verify this step {#verify-step}
 
-Sign in as the customer at `http:<host>/us` and click on the shopping cart. All the items you added display in the cart.
+Sign in as the customer at `http://<host>/us` and click on the shopping cart. All the items you added display in the cart.
