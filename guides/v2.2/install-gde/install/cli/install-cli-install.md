@@ -146,7 +146,7 @@ Messages similar to the following display to indicate a successful installation:
 	[SUCCESS]: Magento installation complete.
 	[SUCCESS]: Admin Panel URI: /admin_puu71q
 
-#### Example 3— Basic install without admin user account
+#### Example 2— Basic install without admin user account
 
 In {{ site.data.var.ee }} version 2.2.8 and later, you have the option to install Magento without creating the Magento administrator user as shown in the following example.
 
@@ -167,8 +167,9 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 ````
 
 After installation you can create an admin user using the `admin:user:create` command:	
-[Create or edit an administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator)	
-#### Example 2—Install with additional options)
+[Create or edit an administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html#create-or-edit-an-administrator)
+	
+#### Example 3—Install with additional options
 
 The following example installs Magento with the following options:
 
