@@ -24,3 +24,7 @@ ct: ece-tools
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
 # is the variable value.
+
+# Magento-developed extension (MDE) variables
+
+im: Inventory Management

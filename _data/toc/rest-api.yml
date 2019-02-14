@@ -35,6 +35,18 @@ pages:
               url: /redoc/2.3/guest-rest-api.html
               versionless: true
 
+            - label: Asynchronous Admin REST endpoints
+              url: /redoc/2.3/async-admin-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Customer REST endpoints
+              url: /redoc/2.3/async-customer-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Guest REST endpoints
+              url: /redoc/2.3/async-guest-rest-api.html
+              versionless: true
+
         - label: List of REST endpoints by module
           url: /rest/list.html
 

@@ -115,7 +115,7 @@ Here is an example:
 
 {% highlight php startinline %}
 
-```
+...
 /**
  * @param mixed $data
  * @return string
@@ -129,8 +129,6 @@ Here is an example:
     }
     return \serialize($data);
 }
-```
+...
 
 {% endhighlight %}
-
-
