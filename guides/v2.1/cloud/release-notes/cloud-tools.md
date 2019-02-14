@@ -38,7 +38,7 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963 --> **New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
 
--   {:.fix}<!--MAGECLOUD-2573/MAGECLOUD-2848-->Improved security when managing credentials for the Magento Admin user. You can no longer use environment variables (ADMIN_EMAIL, ADMIN_USERNAME, ADMIN_PASSWORD) to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html).
+-   {:.fix}<!--MAGECLOUD-2573/MAGECLOUD-2848-->Improved security when managing credentials for the Magento Admin user. You can no longer use environment variables (`ADMIN_EMAIL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`) to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html).
 
 ## v2002.0.15
 
