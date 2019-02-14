@@ -36,15 +36,15 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 
 To view the status of the cache, enter
 
-```terminal
-bin/magento cache:status
+```bash
+   bin/magento cache:status
 ```
 
 <!-- where `--bootstrap=` is a URL-encoded associative array of Magento [application bootstrap parameters]({{ page.baseurl }}/config-guide/bootstrap/magento-how-to-set.html#config-bootparam-overview) and values. -->
 
 A sample follows:
 
-```terminal
+```bash
                 config: 1
                 layout: 1
             block_html: 1
@@ -73,9 +73,9 @@ You can clean (also referred to as _flush_ or _refresh_) cache types using eithe
 
 Command options:
 
-```terminal
-bin/magento cache:enable [type] ... [type]
-bin/magento cache:disable [type] ... [type]
+```bash
+   bin/magento cache:enable [type] ... [type]
+   bin/magento cache:disable [type] ... [type]
 ```
 
 Where omitting `[type]` enables or disables all cache types at the same time. The `type` option is a space-separated list of cache types.
@@ -84,22 +84,22 @@ Where omitting `[type]` enables or disables all cache types at the same time. Th
 
 To list cache types and their status:
 
-```terminal
-bin/magento cache:status
+```bash
+   bin/magento cache:status
 ```
 
 For example, to disable the full page cache and the DDL cache:
 
-```terminal
-bin/magento cache:disable db_ddl full_page
+```bash
+   bin/magento cache:disable db_ddl full_page
 ```
 
 Sample result:
 
-```terminal
-Changed cache status:
-    db_ddl: 1 -> 0
- full_page: 1 -> 0
+```bash
+   Changed cache status:
+       db_ddl: 1 -> 0
+    full_page: 1 -> 0
 ```
 
 {:.bs-callout .bs-callout-info}
@@ -122,36 +122,36 @@ Flush cache types if you've already tried cleaning the cache and you're still ha
 
 Command usage:
 
-```terminal
-bin/magento cache:clean [type] ... [type]
-bin/magento cache:flush [type] ... [type]
+```bash
+   bin/magento cache:clean [type] ... [type]
+   bin/magento cache:flush [type] ... [type]
 ```
 
 Where `[type]` is a space-separated list of cache types. Omitting `[type]` cleans or flushes all cache types at the same time. For example, to flush all cache types, enter
 
-```terminal
-bin/magento cache:flush
+```bash
+   bin/magento cache:flush
 ```
 
 Sample result:
 
-```terminal
-Flushed cache types:
-config
-layout
-block_html
-collections
-reflection
-db_ddl
-compiled_config
-eav
-customer_notification
-config_integration
-config_integration_api
-full_page
-config_webservice
-translate
-vertex
+```bash
+   Flushed cache types:
+   config
+   layout
+   block_html
+   collections
+   reflection
+   db_ddl
+   compiled_config
+   eav
+   customer_notification
+   config_integration
+   config_integration_api
+   full_page
+   config_webservice
+   translate
+   vertex
 ```
 
 {:.bs-callout .bs-callout-info}
