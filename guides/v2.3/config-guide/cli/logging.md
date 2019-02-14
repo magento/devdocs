@@ -29,7 +29,7 @@ As of Magento 2.3.1, you can no longer use the `bin/magento config:set dev/debug
 2. Flush the cache.
 
     ```bash
-    bin/magento cache:flush
+       bin/magento cache:flush
     ```
 
 ### To disable debug logging
@@ -43,7 +43,7 @@ As of Magento 2.3.1, you can no longer use the `bin/magento config:set dev/debug
 1. Flush the cache.
 
     ```bash
-    bin/magento cache:flush
+       bin/magento cache:flush
     ```
 
 ## Database logging
@@ -55,17 +55,17 @@ By default, Magento writes database activity logs to the `var/debug/db.log` file
 1. Use the `dev:query-log` command to enable or disable database logging.
 
     ```bash
-    bin/magento dev:query-log:enable
+       bin/magento dev:query-log:enable
     ```
 
     ```bash
-    bin/magento dev:query-log:disable
+       bin/magento dev:query-log:disable
     ```
 
 1. Flush the cache.
 
     ```bash
-    bin/magento cache:flush
+       bin/magento cache:flush
     ```
 
 ## Cron logging
@@ -95,7 +95,7 @@ Logging to `syslog` is disabled by default.
 2. Flush the cache.
 
     ```bash
-    bin/magento cache:flush
+       bin/magento cache:flush
     ```
 
 ### To disable syslog logging
