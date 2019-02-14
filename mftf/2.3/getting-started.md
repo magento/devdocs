@@ -187,7 +187,7 @@ cd dev/tests/acceptance
 ```
 
 ```bash
-../../../vendor/bin/codecept run functional
+vendor/bin/codecept run functional
 ```
 
 See more commands in [`codecept`][].

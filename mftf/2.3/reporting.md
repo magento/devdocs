@@ -86,18 +86,18 @@ It enables `Modules: \Magento\FunctionalTestingFramework\Module\MagentoWebDriver
 The next chunk of the log reports about test execution of the first test:
 
 ```terminal
-   AdminLoginTestCest: Admin login test
-   Signature: Magento\AcceptanceTest\_default\Backend\AdminLoginTestCest:AdminLoginTest
-   Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminLoginTestCest.php:AdminLoginTest
-   Scenario --
-   I am on page "/admin/admin"
-   I fill field "#username","admin"
-   I fill field "#login","123123q"
-   I click ".actions .action-primary"
-   I wait for page load 30
-   I close admin notification
-   I see in current url "/admin/admin"
-   PASSED
+AdminLoginTestCest: Admin login test
+Signature: Magento\AcceptanceTest\_default\Backend\AdminLoginTestCest:AdminLoginTest
+Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminLoginTestCest.php:AdminLoginTest
+Scenario --
+I am on page "/admin/admin"
+I fill field "#username","admin"
+I fill field "#login","123123q"
+I click ".actions .action-primary"
+I wait for page load 30
+I close admin notification
+I see in current url "/admin/admin"
+PASSED
 ```
 
 The running test is `AdminLoginTestCest`, which is `Admin login test` (this text is generated from the test name but with the `Cest` part excluded).
@@ -112,49 +112,49 @@ It means that all test steps were processed as expected.
 The second test fails with the following report:
 
 ```terminal
-   AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
-   Signature: Magento\AcceptanceTest\_default\Backend\AdminMenuNavigationWithSecretKeysTestCest:AdminMenuNavigationWithSecretKeysTest
-   Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
-   Scenario --
-   I magento cli "config:set admin/security/use_form_key 1"
-   Value was saved.
-   I magento cli "cache:clean config full_page"
-   Cleaned cache types:
-   config
-   full_page
-   I am on page "/admin/admin"
-   I wait for page load
-   I fill field "#username","admin"
-   I fill field "#login","123123q"
-   I click ".actions .action-primary"
-   I wait for page load 30
-   I close admin notification
-   I click "//li[@id='menu-magento-backend-stores']"
-   I wait for loading mask to disappear
-   I click "#nav li[data-ui-id='menu-magento-config-system-config']"
-   I wait for page load
-   I see current url matches "~\/admin\/system_config\/~"
-   I see "#something"
-   I save screenshot
-   FAIL
+AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
+Signature: Magento\AcceptanceTest\_default\Backend\AdminMenuNavigationWithSecretKeysTestCest:AdminMenuNavigationWithSecretKeysTest
+Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
+Scenario --
+I magento cli "config:set admin/security/use_form_key 1"
+Value was saved.
+I magento cli "cache:clean config full_page"
+Cleaned cache types:
+config
+full_page
+I am on page "/admin/admin"
+I wait for page load
+I fill field "#username","admin"
+I fill field "#login","123123q"
+I click ".actions .action-primary"
+I wait for page load 30
+I close admin notification
+I click "//li[@id='menu-magento-backend-stores']"
+I wait for loading mask to disappear
+I click "#nav li[data-ui-id='menu-magento-config-system-config']"
+I wait for page load
+I see current url matches "~\/admin\/system_config\/~"
+I see "#something"
+I save screenshot
+FAIL
 
-   I magento cli "config:set admin/security/use_form_key 0"
-   Value was saved.
-   I magento cli "cache:clean config full_page"
-   Cleaned cache types:
-   config
-   full_page
-   I am on page "/admin/admin/auth/logout/"
-   --------------------------------------------------------------------------------
+I magento cli "config:set admin/security/use_form_key 0"
+Value was saved.
+I magento cli "cache:clean config full_page"
+Cleaned cache types:
+config
+full_page
+I am on page "/admin/admin/auth/logout/"
+--------------------------------------------------------------------------------
 ```
 
 The general test details and scenario has the same format as in the Passed test.
 The interesting part starts near the `FAIL` line.
 
 ```terminal
-   I see "#something"
-   I save screenshot
-   FAIL
+I see "#something"
+I save screenshot
+FAIL
 ```
 
 When a test step fails, the MFTF always saves a screenshot of the web page with the failing state immediately after the failure occurs.
@@ -182,13 +182,13 @@ Actions after `FAIL` are run as a part of the [`after`][] hook of the test.
 After the MFTF completed test execution, it generates a general report about test results along with detailed information about each fail.
 
 ```terminal
-   --------------------------------------------------------------------------------
-   DEPRECATION: Calling the "Symfony\Component\BrowserKit\Client::getInternalResponse()" method before the "request()" one is deprecated since Symfony 4.1 and will throw an exception in 5.0. /Users/.../magento2ce/vendor/symfony/browser-kit/Client.php:208
+--------------------------------------------------------------------------------
+DEPRECATION: Calling the "Symfony\Component\BrowserKit\Client::getInternalResponse()" method before the "request()" one is deprecated since Symfony 4.1 and will throw an exception in 5.0. /Users/.../magento2ce/vendor/symfony/browser-kit/Client.php:208
 
-   Time: 52.43 seconds, Memory: 16.00MB
+Time: 52.43 seconds, Memory: 16.00MB
 
-   There was 1 failure:
-   ---------
+There was 1 failure:
+---------
 ```
 
 First you see warnings and deprecations.
@@ -201,48 +201,48 @@ And, finally, that there was `1 failure`.
 Next, the report provides details about the test failure.
 
 ```terminal
-   ---------
-   1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
-   Test  tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
-   Step  See "#something"
-   Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../
-   --> DASHBOARD
-   SALES
-   CATALOG
-   CUSTOMERS
-   MARKETING
-   CONTENT
-   REPORTS
-   STORES
-   SYSTEM
-   FIND PARTNERS & EXTENSIONS
-   Configuration
-   admin
-   1
-   Store View: Default Config
-   What is this?
-   Save Config
-   Country Options
-   State Options
-   Locale Options
-   Store Information
-   Store Name
-   Store Phone Number
-   Store Hours of Operation
-   Countr
-   [Content too long to display. See complete response in '/Users/dmytroshevtsov/Projects/vagrant/vagrant-magento/magento2ce/dev/tests/acceptance/tests/_output/' directory]
-   --> contains "#something".
+---------
+1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
+Test  tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
+Step  See "#something"
+Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../
+--> DASHBOARD
+SALES
+CATALOG
+CUSTOMERS
+MARKETING
+CONTENT
+REPORTS
+STORES
+SYSTEM
+FIND PARTNERS & EXTENSIONS
+Configuration
+admin
+1
+Store View: Default Config
+What is this?
+Save Config
+Country Options
+State Options
+Locale Options
+Store Information
+Store Name
+Store Phone Number
+Store Hours of Operation
+Countr
+[Content too long to display. See complete response in '/Users/dmytroshevtsov/Projects/vagrant/vagrant-magento/magento2ce/dev/tests/acceptance/tests/_output/' directory]
+--> contains "#something".
 
-   Scenario Steps:
+Scenario Steps:
 
-   23. $I->amOnPage("/admin/admin/auth/logout/") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:54
-   22. // Cleaned cache types:
-   config
-   full_page
-   21. $I->magentoCLI("cache:clean config full_page") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:52
-   20. // Value was saved.
-   19. $I->magentoCLI("config:set admin/security/use_form_key 0") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:50
-   18. $I->saveScreenshot() at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:63
+23. $I->amOnPage("/admin/admin/auth/logout/") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:54
+22. // Cleaned cache types:
+config
+full_page
+21. $I->magentoCLI("cache:clean config full_page") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:52
+20. // Value was saved.
+19. $I->magentoCLI("config:set admin/security/use_form_key 0") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:50
+18. $I->saveScreenshot() at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:63
 ```
 
 - `1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test` - the failed Codeception test is *AdminMenuNavigationWithSecretKeysTestCest*. It references to the PHP class that implemented the failed test.
@@ -255,9 +255,9 @@ Next, the report provides details about the test failure.
 - `Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../` - the fail occurred on the web page `<MAGENTO_BASE_URL>/admin/admin/system_config/index/key/678b7ba922c.../`.
 
 ```terminal
-   --> ...
-   [Content too long to display. See complete response in '/../../magento2/dev/tests/acceptance/tests/_output/' directory]
-   --> contains "#something".
+--> ...
+[Content too long to display. See complete response in '/../../magento2/dev/tests/acceptance/tests/_output/' directory]
+--> contains "#something".
 ```
 
 The web page is too long to be reported in the CLI, and it is stored at *'/../../magento2/dev/tests/acceptance/tests/_output/'*.
@@ -267,8 +267,8 @@ The failing test assertion is that the web page contains *contains* a CSS locato
 Finally, the report finishes with fairly self-descriptive lines.
 
 ```terminal
-   FAILURES!
-   Tests: 2, Assertions: 3, Failures: 1.
+FAILURES!
+Tests: 2, Assertions: 3, Failures: 1.
 ```
 
 The MFTF encountered failures due to the last test run, that included *2* tests with *3* assertions.
@@ -286,19 +286,19 @@ The following commands are relative to the Magento installation directory.
 To generate a report to the `allure-report/` at the current directory:
 
 ```bash
-   allure generate dev/tests/acceptance/tests/_output/allure-result
+allure generate dev/tests/acceptance/tests/_output/allure-result
 ```
 
 To generate a report to a particular directory, use the `-o` option:
 
 ```bash
-   allure generate dev/tests/acceptance/tests/_output/allure-result -o dev/tests/acceptance/tests/_output/allure-report
+allure generate dev/tests/acceptance/tests/_output/allure-result -o dev/tests/acceptance/tests/_output/allure-report
 ```
 
 To launch the generated report in a web browser:
 
 ```bash
-   allure open dev/tests/acceptance/tests/_output/allure-report
+allure open dev/tests/acceptance/tests/_output/allure-report
 ```
 
 {% include note.html
@@ -308,7 +308,7 @@ By default, Allure generates reports in the `allure-report/` at the current dire
 For example, if you run the command without `-o` flag while you are in the `magento2/` directory, Allure will generate a report at the `magento2/allure-report/` directory.
 
 ```bash
-   allure generate dev/tests/acceptance/tests/_output/allure-result
+allure generate dev/tests/acceptance/tests/_output/allure-result
 ```
 
 Example of file structure after the command run:
@@ -325,7 +325,7 @@ Example of file structure after the command run:
 And if you run the `open` command with no arguments while you are in the same directory (`magento2/`):
 
 ```bash
-   allure open
+allure open
 ```
 
 Allure would attempt to open a generated report at the `magento2/allure-report/` directory.'
@@ -334,13 +334,13 @@ Allure would attempt to open a generated report at the `magento2/allure-report/`
 To clean up existing reports before generation (for example after getting new results), use the `--clean` flag:
 
 ```bash
-   allure generate dev/tests/acceptance/tests/_output/allure-result --clean
+allure generate dev/tests/acceptance/tests/_output/allure-result --clean
 ```
 
 To generate the HTML Allure report in a temporary folder and open the report in your default web browser:
 
 ```bash
-   allure serve dev/tests/acceptance/tests/_output/allure-results/
+allure serve dev/tests/acceptance/tests/_output/allure-results/
 ```
 
 Refer to the [Reporting section][] for more Allure CLI details.

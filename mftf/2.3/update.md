@@ -28,13 +28,13 @@ To update the MFTF to the latest patch:
 1. Get the latest framework version using Composer:
 
    ```bash
-      composer update
+   composer update
    ```
 
 1. Generate the updated tests:
 
    ```bash
-      vendor/bin/mftf generate:tests
+   vendor/bin/mftf generate:tests
    ```
 
 ## Update the MFTF from 2.2
@@ -45,25 +45,25 @@ To update the MFTF from the previous minor version:
 1. Starting at the `magento2/` root directory remove the `vendor/` directory:
 
    ```bash
-      rm -rf vendor/
+   rm -rf vendor/
    ```
 
 1. Get the latest framework version from the Composer dependencies:
 
    ```bash
-      composer install
+   composer install
    ```
 
 1. Run the `upgrade:tests` using the new command line tool:
 
    ```bash
-      vendor/bin/mftf upgrade:tests app
+   vendor/bin/mftf upgrade:tests app
    ```
 
 1. If you are using Phpstorm, update the urn catalog:
 
    ```bash
-      vendor/bin/mftf generate:urn-catalog .idea/
+   vendor/bin/mftf generate:urn-catalog .idea/
    ```
 
 1. Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version.
@@ -73,7 +73,7 @@ To update the MFTF from the previous minor version:
 1. Generate newly pulled tests:
 
    ```bash
-      vendor/bin/mftf generate:tests
+   vendor/bin/mftf generate:tests
    ```
 
 <!-- Link Definitions -->

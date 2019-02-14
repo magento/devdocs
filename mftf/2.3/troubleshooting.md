@@ -36,9 +36,9 @@ For headless browsing, the [Headless Chrome](https://developers.google.com/web/u
 You are seeing an "unhandled inspector error" exception:
 
 ```terminal
-   [Facebook\WebDriver\Exception\UnknownServerException]
-   unknown error: undhandled inspector error: {"code":-32601, "message":
-   "'Network.deleteCookie' wasn't found"} ....
+[Facebook\WebDriver\Exception\UnknownServerException]
+unknown error: undhandled inspector error: {"code":-32601, "message":
+"'Network.deleteCookie' wasn't found"} ....
 ```
 
 ![Screenshot with the exception](./img/trouble-chrome232.png)
