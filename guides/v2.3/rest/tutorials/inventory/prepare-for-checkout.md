@@ -188,7 +188,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
         "items_qty": 71,
         "items": [
             {
-                "item_id": 3,
+                "item_id": 5,
                 "price": 32,
                 "base_price": 32,
                 "qty": 20,
@@ -211,7 +211,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Voyage Yoga Bag"
             },
             {
-                "item_id": 4,
+                "item_id": 6,
                 "price": 36,
                 "base_price": 36,
                 "qty": 50,
@@ -234,7 +234,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
                 "name": "Driven Backpack"
             },
             {
-                "item_id": 5,
+                "item_id": 7,
                 "price": 22,
                 "base_price": 22,
                 "qty": 1,
