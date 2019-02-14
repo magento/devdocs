@@ -75,6 +75,9 @@ Command options:
 
 ```bash
    bin/magento cache:enable [type] ... [type]
+```
+
+```bash
    bin/magento cache:disable [type] ... [type]
 ```
 
@@ -124,6 +127,9 @@ Command usage:
 
 ```bash
    bin/magento cache:clean [type] ... [type]
+```
+
+```bash
    bin/magento cache:flush [type] ... [type]
 ```
 
