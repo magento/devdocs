@@ -96,7 +96,7 @@ For example, to disable the full page cache and the DDL cache:
 
 Sample result:
 
-```bash
+```terminal
    Changed cache status:
        db_ddl: 1 -> 0
     full_page: 1 -> 0
