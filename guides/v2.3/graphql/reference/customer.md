@@ -39,7 +39,7 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
 
-### CustomerAddress object
+### CustomerAddress object {#customerAddress}
 
 The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the Customer object.
 
@@ -125,7 +125,7 @@ The following call returns information about the logged-in customer.
 ```
 ## Mutation
 
-Use `Customer` mutations to update server-side data, such as adding a new customer or modififying attributes for an existing customer.
+Use `Customer` mutations to update server-side data, such as adding a new customer or modifying attributes for an existing customer.
 
 The following fields describe the available `Customer` mutations with Magento's GraphQL API.
 
@@ -212,7 +212,7 @@ mutation {
             lastname: "Loblaw"
             email: "bobloblaw@example.com"
             password: "b0bl0bl@w"
-          	is_subscribed: true
+            is_subscribed: true
         }
     ) {
         customer {
@@ -248,7 +248,7 @@ mutation {
 
 Creates the customer's address.
 
-Uses the `CustomerAddressInput` attribute (link to CustomerAddress object).
+Uses the [`CustomerAddressInput`](#customerAddress) attribute.
 
 ## Example usage
 
@@ -384,9 +384,9 @@ mutation {
 ```
 ### revokeCustomerToken object
 
-Revokes the customer's token. (WHY WOULD YOU WANT TO DO THIS?)
+Revokes the customer's token.
 
-Returns the `RevokeCustomerTokenOutput` Boolean (successful - 0, unsuccessful - 1).
+Returns the `RevokeCustomerTokenOutput` Boolean.
 
 ## Example usage
 
@@ -397,7 +397,7 @@ The following call revokes the customer's token.
 ``` text
 mutation {
     revokeCustomerToken {
-        result
+    result
     }
 }
 ```
@@ -408,7 +408,7 @@ mutation {
 {
   "data": {
     "revokeCustomerToken": {
-      "result": true
+    "result": true
     }
   }
 }
