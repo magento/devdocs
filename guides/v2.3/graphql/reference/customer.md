@@ -5,9 +5,9 @@ title: Customer endpoint
 
 Magento's GraphQL API provides queries and mutations to help you retrieve and update your customer's information.
 
-The `Customer` endpoint returns information about a customer account.
-
 Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html). To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.
+
+The `Customer` endpoint returns information about a customer account.
 
 Use queries to read server-side data, such as retrieving a specific customer's address.
 
@@ -17,7 +17,7 @@ The following fields describe the available `Customer` queries with Magento's Gr
 
 `customer: Customer`
 
-## Customer object
+### Customer object
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -142,7 +142,6 @@ Attribute |  Data Type | Description
 `currentPassword` | String | The customer's current password
 `newPassword` | String | The customer's new password
 
-
 ## Example usage
 
 The following call updates the customer's password.
@@ -152,8 +151,8 @@ The following call updates the customer's password.
 ``` text
 mutation {
   changeCustomerPassword(
-    currentPassword: "Password1",
-    newPassword: "Password2"
+    currentPassword: "roni_cost3@example.com",
+    newPassword: "roni_cost4@example.com"
   ) {
     id
     email
@@ -167,7 +166,16 @@ mutation {
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "changeCustomerPassword": {
+      "id": 1,
+      "email": "roni_cost@example.com",
+      "firstname": "Veronica",
+      "lastname": "Costello"
+    }
+  }
+}
 ```
 
 ### createCustomer object
@@ -200,10 +208,10 @@ The following call creates a new customer.
 mutation {
     createCustomer(
         input: {
-            firstname: "{$newFirstname}"
-            lastname: "{$newLastname}"
-            email: "{$newEmail}"
-            password: "{$currentPassword}"
+            firstname: "Bob"
+            lastname: "Loblaw"
+            email: "bobloblaw@example.com"
+            password: "b0bl0bl@w"
           	is_subscribed: true
         }
     ) {
@@ -221,7 +229,19 @@ mutation {
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "createCustomer": {
+      "customer": {
+        "id": 5,
+        "firstname": "Bob",
+        "lastname": "Loblaw",
+        "email": "bobloblaw@example.com",
+        "is_subscribed": true
+      }
+    }
+  }
+}
 ```
 
 ### createCustomerAddress object
@@ -237,24 +257,37 @@ The following call creates an address for the specified customer.
 **Request**
 
 ``` text
-mutation{
+mutation {
   createCustomerAddress(input: {
-    prefix: "Mr."
-    firstname: "John"
-    middlename: "A"
-    lastname: "Smith"
-    telephone: "123456789"
-    street: ["Line 1", "Line 2"]
-    city: "Test City"
     region: {
-        region_id: 1
+        region: "Arizona"
+        region_id: 4
+        region_code: "AZ"
     }
     country_id: US
-    postcode: "9999"
+    street: ["123 Main Street"]
+    telephone: "7777777777"
+    postcode: "77777"
+    city: "Phoenix"
+    firstname: "Bob"
+    lastname: "Loblaw"
     default_shipping: true
     default_billing: false
   }) {
     id
+    customer_id
+    region {
+      region
+      region_id
+      region_code
+    }
+    country_id
+    street
+    telephone
+    postcode
+    city
+    default_shipping
+    default_billing
   }
 }
 ```
@@ -262,7 +295,28 @@ mutation{
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "createCustomerAddress": {
+      "id": 4,
+      "customer_id": 5,
+      "region": {
+        "region": "Arizona",
+        "region_id": 4,
+        "region_code": "AZ"
+      },
+      "country_id": "US",
+      "street": [
+        "123 Main Street"
+      ],
+      "telephone": "7777777777",
+      "postcode": "77777",
+      "city": "Phoenix",
+      "default_shipping": true,
+      "default_billing": false
+    }
+  }
+}
 ```
 ### deleteCustomerAddress object
 
@@ -278,14 +332,18 @@ The following call deletes a customer's address.
 
 ``` text
 mutation {
-  deleteCustomerAddress(id: {$addressId})
+  deleteCustomerAddress(id: 4)
 }
 ```
 
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "deleteCustomerAddress": true
+  }
+}
 ```
 ### generateCustomerToken object
 
@@ -305,8 +363,8 @@ The following call creates a new customer token.
 ``` text
 mutation {
 	generateCustomerToken(
-        email: "{$userName}"
-        password: "{$password}"
+        email: "bobloblaw@example.com"
+        password: "b0bl0bl@w"
     ) {
         token
     }
@@ -316,7 +374,13 @@ mutation {
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "generateCustomerToken": {
+      "token": "ar4116zozoagxty1xjn4lj13kim36r6x"
+    }
+  }
+}
 ```
 ### revokeCustomerToken object
 
@@ -332,30 +396,30 @@ The following call revokes the customer's token.
 
 ``` text
 mutation {
-                revokeCustomerToken {
-                    result
-                }
-            }
+    revokeCustomerToken {
+        result
+    }
+}
 ```
 
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "revokeCustomerToken": {
+      "result": true
+    }
+  }
+}
 ```
 ### updateCustomer object
 
-Updates the customer's personal information. Use the `CustomerInput` argument with the following additional attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`gender`| Int | The customer's gender (Male - 1, Female - 2)
-`password`| Int | The customer's password
-
+Updates the customer's personal information using the `CustomerInput` object.
 
 ## Example usage
 
-The following call updates the gender and city for a specific customer.
+The following call updates the first and last name and email address for a specific customer.
 
 **Request**
 
@@ -363,10 +427,10 @@ The following call updates the gender and city for a specific customer.
 mutation {
     updateCustomer(
         input: {
-            firstname: "{$newFirstname}"
-            lastname: "{$newLastname}"
-            email: "{$newEmail}"
-            password: "{$currentPassword}"
+            firstname: "Robert"
+            lastname: "Loblaws"
+            email: "robloblaws@example.com"
+            password: "b0bl0bl@w"
         }
     ) {
         customer {
@@ -381,7 +445,17 @@ mutation {
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "updateCustomer": {
+      "customer": {
+        "firstname": "Robert",
+        "lastname": "Loblaws",
+        "email": "robloblaws@example.com"
+      }
+    }
+  }
+}
 ```
 ### updateCustomerAddress object
 
@@ -389,7 +463,7 @@ Updates the customer's address.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`id` | Int | The ID assigned to the customer
+`id` | Int | The ID assigned to the address object
 `CustomerAddressInput` | [CustomerAddresses] | An array containing the customer’s shipping and billing addresses
 
 ## Example usage
@@ -400,7 +474,7 @@ The following call updates the customer's address.
 
 ``` text
 mutation {
-  updateCustomerAddress(id:{$addressId}, input: {
+  updateCustomerAddress(id:3, input: {
     city: "New City"
     postcode: "5555"
   }) {
@@ -412,5 +486,11 @@ mutation {
 **Response**
 
 ``` json
-
+{
+  "data": {
+    "updateCustomerAddress": {
+      "id": 3
+    }
+  }
+}
 ```
