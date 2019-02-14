@@ -21,18 +21,18 @@ The uiClass class introduces the architecture of UI components through the follo
 
   As an example:
 ```js
-	defaults: {
-		myFirstProperty: 0,
-		mySecondProperty: 1
-	}
+defaults: {
+    myFirstProperty: 0,
+    mySecondProperty: 1
+}
 
-	//Before executing initConfig method:
-	console.log(this.myFirstProperty) // Undefined
-	console.log(this.mySecondProperty) // Undefined
+//Before executing initConfig method:
+console.log(this.myFirstProperty) // Undefined
+console.log(this.mySecondProperty) // Undefined
 
-	//After executing initConfig method:
-	console.log(this.myFirstProperty) // 0
-	console.log(this.mySecondProperty) // 1
+//After executing initConfig method:
+console.log(this.myFirstProperty) // 0
+console.log(this.mySecondProperty) // 1
 ```
 
 * The `initialize()` method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.
@@ -40,22 +40,22 @@ The uiClass class introduces the architecture of UI components through the follo
 As an example:
 
 ```js
-	initialize: function () {
-		%yourMethodName%();
+initialize: function () {
+    %yourMethodName%();
 
-		return this;
-	}
+    return this;
+}
 ```
 
 * The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
 As an example:
 
 ```js
-	initialize: function () {
-		this._super(); //_super will call parent's `initialize` method here
+initialize: function () {
+    this._super(); //_super will call parent's `initialize` method here
 
-		return this;
-	}
+    return this;
+}
 ```
 
 ### Commonly used uiClass properties {#uiclass_properties}
@@ -64,11 +64,11 @@ The `defaults` property declares the list of properties of a UI component's inst
 
 As an example:
 ```js
-	defaults: {
-		%yourCustomProperty%: '',
-		imports: {
-            %yourCustomProperty%: '%anotherComponentLink%',
-            disabled: 'checked'
-        },
-	}
+defaults: {
+    %yourCustomProperty%: '',
+    imports: {
+        %yourCustomProperty%: '%anotherComponentLink%',
+        disabled: 'checked'
+    }
+}
 ```

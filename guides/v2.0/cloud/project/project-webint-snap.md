@@ -7,7 +7,6 @@ menu_order: 30
 menu_node:
 redirect_from:
   - /guides/v2.0/cloud/admin/admin-snap.html
-  - /guides/v2.1/cloud/admin/admin-snap.html
 functional_areas:
   - Cloud
 ---

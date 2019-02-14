@@ -6,7 +6,6 @@ menu_title: 503 (Service Unavailable) errors accessing Magento software in a web
 menu_node:
 menu_order: 3
 redirect_from:
-  - /guides/v1.0/install-gde/trouble/tshoot_mod_access_compat.html
   - /guides/v2.0/install-gde/trouble/tshoot_mod_access_compat.html
 functional_areas:
   - Install

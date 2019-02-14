@@ -25,7 +25,7 @@ You can configure the Magento application in any of the following ways:
 
 	*	[Set up Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
 	* [Set up caching]({{ page.baseurl }}/config-guide/cache.html)
-	*	[Set up database caching]({{ page.baseurl }}/config-guide/cache/caching-database.html)
+	*	[Set up database caching]({{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html)
 	*	[Set up Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)
 
 *	Session storage

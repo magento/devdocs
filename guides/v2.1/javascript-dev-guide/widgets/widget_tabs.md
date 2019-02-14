@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Tabs widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 ## Overview {#fedg_tabs-widget_overview}

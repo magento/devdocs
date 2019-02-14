@@ -16,6 +16,7 @@ When you're installing new purchases from Magento Marketplace, the page displays
 
 ![]({{ site.baseurl }}/common/images/compman_new-purchases-step3install.png){: width="500px"}
 
+## Install the component
 
 If the list of purchases is correct, click **Install**.
 
@@ -78,3 +79,11 @@ When the installation is complete, a page similar to the following displays:
 
 
 Click **Back to Setup Tool**.
+
+## Clean the cache
+
+Clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+```bash
+bin/magento cache:clean
+```

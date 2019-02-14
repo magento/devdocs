@@ -19,6 +19,8 @@ The scope of the change determines whether the MAJOR, MINOR, or PATCH number inc
 ## Public vs private code changes
 
 A Magento module's codebase consists of public and private code.
+Public code includes Public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}(indicated by the `@api` docblock tag) and Public Customization Points.
+Private code is not accessible via the API: classes and constants marked as [private][].
 
 Changes in public code always trigger MINOR or MAJOR version increases.
 
@@ -30,7 +32,7 @@ If this is unavoidable, you must depend on the patch version of the core modules
 
 ## API and customization points
 
-Public code includes Public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}(indicated by the `@api` docblock tag) and Public Customization Points.
+
 
 Modules call APIs to create new application scenarios.
 Modifications that break the API will trigger an increase in a module's MAJOR version.
@@ -163,3 +165,5 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | Index added/changed                                                                                  | PATCH          |
 |                                                             | Foreign key added                                                                                    | MAJOR          |
 |                                                             | Temporary tables added/removed/changed                                                               | PATCH          |
+
+[private]: http://php.net/manual/en/language.oop5.visibility.php
