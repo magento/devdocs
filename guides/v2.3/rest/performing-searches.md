@@ -33,6 +33,7 @@ Condition | Notes
 `lteq` | Less than or equal
 `moreq` | More or equal
 `neq` | Not equal
+`nfinset` | A value within a not set of values
 `nin` | Not in. The `value` can contain a comma-separated list of values.
 `notnull` | Not null
 `null` | Null
