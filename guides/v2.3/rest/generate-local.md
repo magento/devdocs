@@ -62,6 +62,8 @@ You must specify an authorization token for an {% glossarytooltip 29ddb393-ca22-
 
 To return the complete JSON schema, specify the `?services=all` parameter in the URL. The default `store_code` is `all`, but you can also specify `default` or a store code defined on the system. For example: `http://<magento_host>/rest/default/schema?services=all`
 
+The base URL for returning the asynchronous schema is `http://<magento_host>/rest/<store_code>/async/schema`.
+
 ## Related topics
 
 [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html)
