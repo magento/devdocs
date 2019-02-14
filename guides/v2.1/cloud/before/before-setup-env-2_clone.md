@@ -84,7 +84,7 @@ We recommend changing the environment-level variables for the Magento Admin URL 
 -  **ADMIN_URL**— The relative URL to access the Admin panel, such as `<domain>/admin`. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
 {:.bs-callout .bs-callout-info}
-Make note of any updated values so that you can use them to install Magento from the command line and to verify the installation. The values for the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` variables are used only for installation. You cannot use the environment variables to update admin credentials during upgrades.
+Make note of any updated values so that you can use them to install Magento from the command line and to verify the installation. The values for the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` variables are used only for installation. These values are ignored on upgrade.
 
 #### To view existing variables: {#variablelist}
 
