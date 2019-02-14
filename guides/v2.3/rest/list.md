@@ -344,16 +344,30 @@ Additions since 2.2 are marked with hash characters (#).
     #POST   /V1/inventory/source-items
     #POST   /V1/inventory/source-items-delete
 
+### InventoryCatalogApi
+
+    #POST   /V1/inventory/bulk-product-source-assign
+    #POST   /V1/inventory/bulk-product-source-unassign
+    #POST   /V1/inventory/bulk-product-source-transfer
+
+### InventoryDistanceBasedSourceSelectionApi
+
+    #GET    /V1/inventory/get-distance-provider-code
+    #GET    /V1/inventory/get-distance
+    #GET    /V1/inventory/get-latlng-from-address
+
 ### InventoryLowQuantityNotificationApi
 
     #GET    /V1/inventory/low-quantity-notification/:sourceCode/:sku
     #POST   /V1/inventory/low-quantity-notification
-    #DELETE /V1/inventory/low-quantity-notification
+    #POST   /V1/inventory/low-quantity-notifications-delete
 
 ### InventorySalesApi
 
     #GET    /V1/inventory/get-product-salable-quantity/:sku/:stockId
     #GET    /V1/inventory/is-product-salable/:sku/:stockId
+    #GET    /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQty
+    #GET    /V1/inventory/stock-resolver/:type/:code
 
 ### InventorySourceSelectionApi
     #GET   /V1/inventory/source-selection-algorithm-list

@@ -44,9 +44,9 @@ The Managed Cloud WAF filters HTTP and HTTPS traffic (GET and POST requests) aga
 
 When the Managed Cloud WAF is enabled, it filters all web and admin traffic against the WAF rules and WAF blocks any web request that triggers a WAF rule. When a request is blocked, the requestor sees a default `403 Forbidden` error page that includes a reference ID for the blocking event.
 
-![WAF error response page]
+![WAF error page]
 
-You can customize this error response page from the Magento Admin UI. See [Customize the WAF response page]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html#customize-the-waf-response-page). 
+You can customize this error response page from the Magento Admin UI. See [Customize the WAF response page]({{ page.baseurl }}/cloud/cdn/cloud-fastly-custom-response.html#customize-the-waf-error-page). 
 
 If your {{ site.data.var.ee }} admin page or storefront returns a `403 Forbidden` error page in response to a legitimate URL request, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket). Copy the reference ID from the error response page and paste it into the ticket description.
 
@@ -68,7 +68,7 @@ The standard Magento Cloud WAF powered by Fastly does not support the following 
 Althought the WAF does not allow you to block or allow traffic based on IP addresses, you can add access control lists (ACL) and custom VCL snippets to your Fastly service to specify the IP addresses and VCL logic for blocking or allowing traffic. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 
-[WAF error response page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
+[WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
 {:width="550px"}
 
 

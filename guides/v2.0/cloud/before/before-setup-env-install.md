@@ -6,8 +6,6 @@ menu_title: Install Magento
 menu_order: 50
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-perms.html
-  - /guides/v2.1/cloud/before/before-setup-env-perms.html
-  - /guides/v2.2/cloud/before/before-setup-env-perms.html
 functional_areas:
   - Cloud
   - Install

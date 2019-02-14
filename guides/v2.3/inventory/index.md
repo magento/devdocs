@@ -24,7 +24,7 @@ The following terms are important as you work with Inventory Management APIs:
 
 * **Sources** represent physical locations that store and ship available products. These locations can include warehouses, brick-and-mortar stores, distribution centers, and drop shippers. (Any location can be designated as a source for virtual products.)
 
-* **Stocks** map a sales channel (currently limited to websites) to source locations and on-hand inventory. A stock can map to multiple sales channel, but a sales channel can be assigned to only one stock.
+* **Stocks** map a sales channel (currently limited to websites) to source locations and on-hand inventory. A stock can map to multiple sales channels, but a sales channel can be assigned to only one stock.
 
 * **Aggregate Salable Quantity** is the total virtual inventory that can be sold through a sales channel. The amount is calculated across all sources assigned to a stock.
 
@@ -37,7 +37,7 @@ The following diagram illustrates the relationship between source stocks, aggreg
 
 ![Source and aggregate stock](images/inventory-diagram-stock.png)
 
-In this diagram, a bicycle merchant has inventory for a touring bike in a warehouse and two stores. He has three stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the warehouse and flagship store sources for a salable quantity of 50. The touring bike can be shipped from either the warehouse or the flagship store, but not the King Street store. The German (DE) webstore same stock draws from the same aggregate stock as the UK webstore.
+In this diagram, a bicycle merchant has inventory for a touring bike in a warehouse and two stores. He has three stocks with configured website sales channels and sources. When a customer shops through the UK website, Magento aggregates bike inventory from the warehouse and flagship store sources for a salable quantity of 50. The touring bike can be shipped from either the warehouse or the flagship store, but not the King Street store. The German (DE) web store same stock draws from the same aggregate stock as the UK web store.
 
 
 ## Important Inventory Management objects
@@ -54,6 +54,8 @@ When merchants are ready to make a partial or full shipment, they select the sou
 
 ## Related information
 
-[Order Processing with Multi Source Inventory]({{ page.baseurl }}/rest/tutorials/inventory/index.html) is a tutorial that uses REST calls to illustrate the life cycle of an order in an Multi Source Inventory environment.
+[Order Processing with Inventory Management]({{ page.baseurl }}/rest/tutorials/inventory/index.html) is a tutorial that uses REST calls to illustrate the life cycle of an order in an Multi Source Inventory environment.
 
 [Manage sources]({{ page.baseurl }}/rest/modules/inventory/manage-sources.html) is the starting point for REST reference documentation.
+
+[Manage Inventory Management modules]({{ page.baseurl }}/comp-mgr/install-extensions/inventory-management-installation.html) is an overview of modules installed for Inventory Management.

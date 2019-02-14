@@ -7,8 +7,6 @@ menu_order: 10
 menu_node:
 redirect_from:
   - /guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html
-  - /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html
-  - /guides/v2.2/cloud/access-acct/first-time-setup_dir-structure.html
 functional_areas:
   - Cloud
   - Configuration

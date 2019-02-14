@@ -6,7 +6,6 @@ menu_title: During installation, fatal PDO error displays
 menu_node:
 menu_order: 21
 redirect_from:
-  - /guides/v1.0/install-gde/trouble/tshoot_pdo.html
   - /guides/v2.0/install-gde/trouble/tshoot_pdo.html
 functional_areas:
   - Install

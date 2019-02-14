@@ -6,7 +6,6 @@ menu_order: 13
 menu_title: QuickSearch widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_quickSearch.html
 functional_areas:
   - Search
 ---
