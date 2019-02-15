@@ -46,16 +46,16 @@ Skip the `AdminLoginTest` test in the `.../Backend/Test/AdminLoginTest.xml` file
 ```xml
 <tests ...>
     <test name="AdminLoginTest">
-            <annotations>
-                <features value="Admin Login"/>
-                <stories value="Login on the Admin Login page"/>
-                <title value="You should be able to log into the Magento Admin backend."/>
-                <description value="You should be able to log into the Magento Admin backend."/>
-                <severity value="CRITICAL"/>
-                <testCaseId value="MAGETWO-71572"/>
-                <group value="example"/>
-                <group value="login"/>
-            </annotations>
+        <annotations>
+            <features value="Admin Login"/>
+            <stories value="Login on the Admin Login page"/>
+            <title value="You should be able to log into the Magento Admin backend."/>
+            <description value="You should be able to log into the Magento Admin backend."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MAGETWO-71572"/>
+            <group value="example"/>
+            <group value="login"/>
+        </annotations>
         <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
         <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
         <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
@@ -71,11 +71,11 @@ Create the `.../Foo/Test/AdminLoginTest.xml` file:
 ```xml
 <tests ...>
     <test name="AdminLoginTest">
-            <annotations>
-                <skip>
-                    <issueId value="Issue#"/>
-                </skip>
-            </annotations>
+       <annotations>
+          <skip>
+             <issueId value="Issue#"/>
+          </skip>
+       </annotations>
     </test>
 </tests>
 ```
@@ -84,19 +84,19 @@ The `AdminLoginTest` result corresponds to:
 
 ```xml
 <test name="AdminLoginTest">
-        <annotations>
-            <features value="Admin Login"/>
-            <stories value="Login on the Admin Login page"/>
-            <title value="You should be able to log into the Magento Admin backend."/>
-            <description value="You should be able to log into the Magento Admin backend."/>
-            <severity value="CRITICAL"/>
-            <testCaseId value="MAGETWO-71572"/>
-            <group value="example"/>
-            <group value="login"/>
-            <skip>
-                <issueId value="Issue#"/>
-            </skip>
-        </annotations>
+    <annotations>
+        <features value="Admin Login"/>
+        <stories value="Login on the Admin Login page"/>
+        <title value="You should be able to log into the Magento Admin backend."/>
+        <description value="You should be able to log into the Magento Admin backend."/>
+        <severity value="CRITICAL"/>
+        <testCaseId value="MAGETWO-71572"/>
+        <group value="example"/>
+        <group value="login"/>
+      <skip>
+         <issueId value="Issue#"/>
+      </skip>
+    </annotations>
     <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
     <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
     <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
@@ -295,9 +295,9 @@ Create the `.../FooBackend/Page/BaseBackendPage.xml` file:
 
 ```xml
 <pages ...>
-      <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-         <section name="NewExtensionSection"/>
-      </page>
+   <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+      <section name="NewExtensionSection"/>
+   </page>
 </pages>
 ```
 
