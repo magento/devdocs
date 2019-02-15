@@ -3,23 +3,24 @@ group: graphql
 title: Customer endpoint
 ---
 
-Magento's GraphQL API provides queries and mutations to help you retrieve and update your customer's information.
+The `Customer` endpoint contains information about a customer account accessible through queries and mutations.
 
-Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html). To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.
+Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html). To successfully return or modify information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls.
 
-The `Customer` endpoint returns information about a customer account.
+## Queries
+Use queries to read server-side data, such as a specific customer's address.
 
-Use queries to read server-side data, such as retrieving a specific customer's address.
-
-The following fields describe the available `Customer` queries with Magento's GraphQL API.
-
-## Query structure
+### Query structure
 
 `customer: Customer`
 
-### Customer object
+### Query fields
+The following tables list the fields used for queries.
 
-Attribute |  Data Type | Description
+### Customer attributes
+The customer object can contain the following attributes:
+
+Attribute |  Data Type | Description 
 --- | --- | ---
 `addresses` | [CustomerAddresses]  | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
@@ -65,7 +66,7 @@ Attribute |  Data Type | Description
 `telephone` | String | The telephone number
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
-## Example usage
+### Example usage
 
 The following call returns information about the logged-in customer.
 
@@ -123,26 +124,61 @@ The following call returns information about the logged-in customer.
   }
 }
 ```
-## Mutation
 
-Use `Customer` mutations to update server-side data, such as adding a new customer or modifying attributes for an existing customer.
-
-The following fields describe the available `Customer` mutations with Magento's GraphQL API.
+## Mutations
+Use mutations to update server-side data, such as adding a new customer or modifying attributes for an existing customer.
 
 ### Mutation structure
-
 `mutation: Customer`
 
-### changeCustomerPassword object
+### Mutation fields
+The following tables list the fields used for mutations.
 
-Changes the password for the logged-in customer.
+### Change customer password
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `currentPassword` | String | The customer's current password
 `newPassword` | String | The customer's new password
 
-## Example usage
+### Create customer
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`dob` | String | The customer’s date of birth
+`email` | String | The customer’s email address. Required
+`firstname` | String | The customer’s first name
+`gender` | Int | The customer's gender (Male - 1, Female - 2)
+`is_subscribed` | Boolean | The customer's new password
+`lastname` | String | The customer’s last name
+`middlename` | String | The customer’s middle name
+`password` | String | The customer's password
+`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
+`suffix` | String | A value such as Sr., Jr., or III
+`taxvat` | String | The customer’s Tax/VAT number (for corporate customers)
+
+### Modify customer address
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`id` | Int | The ID assigned to the address object
+`CustomerAddressInput` | [CustomerAddresses] | An array containing the customer’s shipping and billing addresses
+
+### Generate customer token
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`email` | String | The customer's email address
+`password` | String | The customer's password
+
+## Manage customers
+You can use these mutations to create a new customer or modify personal information for an existing customer.
+
+### changeCustomerPassword object
+
+Changes the password for the logged-in customer.
+
+### Example usage
 
 The following call updates the customer's password.
 
@@ -182,23 +218,7 @@ mutation {
 
 Creates a new customer account.
 
-Uses the `CustomerInput` attribute, which contains the following attributes.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`dob` | String | The customer’s date of birth
-`email` | String | The customer’s email address. Required
-`firstname` | String | The customer’s first name
-`gender` | Int | The customer's gender (Male - 1, Female - 2)
-`is_subscribed` | Boolean | The customer's new password
-`lastname` | String | The customer’s last name
-`middlename` | String | The customer’s middle name
-`password` | String | The customer's password
-`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`suffix` | String | A value such as Sr., Jr., or III
-`taxvat` | String | The customer’s Tax/VAT number (for corporate customers)
-
-## Example usage
+### Example usage
 
 The following call creates a new customer.
 
@@ -244,13 +264,59 @@ mutation {
 }
 ```
 
+### updateCustomer object
+
+Updates the customer's personal information.
+
+### Example usage
+
+The following call updates the first and last name and email address for a specific customer.
+
+**Request**
+
+``` text
+mutation {
+    updateCustomer(
+        input: {
+            firstname: "Robert"
+            lastname: "Loblaws"
+            email: "robloblaws@example.com"
+            password: "b0bl0bl@w"
+        }
+    ) {
+        customer {
+            firstname
+            lastname
+            email
+        }
+    }
+}
+```
+
+**Response**
+
+``` json
+{
+  "data": {
+    "updateCustomer": {
+      "customer": {
+        "firstname": "Robert",
+        "lastname": "Loblaws",
+        "email": "robloblaws@example.com"
+      }
+    }
+  }
+}
+```
+
+## Manage customer addresses
+Use these mutations to create or modify the customer's address.
+
 ### createCustomerAddress object
 
 Creates the customer's address.
 
-Uses the [`CustomerAddressInput`](#customerAddress) attribute.
-
-## Example usage
+### Example usage
 
 The following call creates an address for the specified customer.
 
@@ -318,13 +384,45 @@ mutation {
   }
 }
 ```
+
+### updateCustomerAddress object
+
+Updates the customer's address.
+
+### Example usage
+
+The following call updates the customer's address.
+
+**Request**
+
+``` text
+mutation {
+  updateCustomerAddress(id:3, input: {
+    city: "New City"
+    postcode: "5555"
+  }) {
+    id
+  }
+}
+```
+
+**Response**
+
+``` json
+{
+  "data": {
+    "updateCustomerAddress": {
+      "id": 3
+    }
+  }
+}
+```
+
 ### deleteCustomerAddress object
 
-Deletes the customer's address.
+Uses the customer's address `id` to delete the address.
 
-Uses the customer's address `id` attribute to delete the address.
-
-## Example usage
+### Example usage
 
 The following call deletes a customer's address.
 
@@ -345,16 +443,14 @@ mutation {
   }
 }
 ```
+## Manage customer tokens
+Use these mutations to create or revoke a customer's token.
+
 ### generateCustomerToken object
 
 Creates a new customer token.
 
-Attribute |  Data Type | Description
---- | --- | ---
-`email` | String | The customer's email address
-`password` | String | The customer's password
-
-## Example usage
+### Example usage
 
 The following call creates a new customer token.
 
@@ -386,9 +482,7 @@ mutation {
 
 Revokes the customer's token.
 
-Returns the `RevokeCustomerTokenOutput` Boolean.
-
-## Example usage
+### Example usage
 
 The following call revokes the customer's token.
 
@@ -409,87 +503,6 @@ mutation {
   "data": {
     "revokeCustomerToken": {
     "result": true
-    }
-  }
-}
-```
-### updateCustomer object
-
-Updates the customer's personal information using the `CustomerInput` object.
-
-## Example usage
-
-The following call updates the first and last name and email address for a specific customer.
-
-**Request**
-
-``` text
-mutation {
-    updateCustomer(
-        input: {
-            firstname: "Robert"
-            lastname: "Loblaws"
-            email: "robloblaws@example.com"
-            password: "b0bl0bl@w"
-        }
-    ) {
-        customer {
-            firstname
-            lastname
-            email
-        }
-    }
-}
-```
-
-**Response**
-
-``` json
-{
-  "data": {
-    "updateCustomer": {
-      "customer": {
-        "firstname": "Robert",
-        "lastname": "Loblaws",
-        "email": "robloblaws@example.com"
-      }
-    }
-  }
-}
-```
-### updateCustomerAddress object
-
-Updates the customer's address.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`id` | Int | The ID assigned to the address object
-`CustomerAddressInput` | [CustomerAddresses] | An array containing the customer’s shipping and billing addresses
-
-## Example usage
-
-The following call updates the customer's address.
-
-**Request**
-
-``` text
-mutation {
-  updateCustomerAddress(id:3, input: {
-    city: "New City"
-    postcode: "5555"
-  }) {
-    id
-  }
-}
-```
-
-**Response**
-
-``` json
-{
-  "data": {
-    "updateCustomerAddress": {
-      "id": 3
     }
   }
 }
