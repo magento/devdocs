@@ -314,12 +314,12 @@ allure generate dev/tests/acceptance/tests/_output/allure-result
 Example of file structure after the command run:
 
 ```terminal
-   magento2
-   ├── allure-report
-   ├── app
-   ├── bin
-   ├── dev
-   ├── ...
+magento2
+├── allure-report
+├── app
+├── bin
+├── dev
+├── ...
 ```
 
 And if you run the `open` command with no arguments while you are in the same directory (`magento2/`):
