@@ -8,7 +8,7 @@ Sometimes, little changes can make a big difference in your project. Here are so
 
 ## Actions and action groups
 
-## Use parameterized selectors in action groups with argument references
+### Use parameterized selectors in action groups with argument references
 
 Clarity and readability are important factors in good test writing.
 Having to parse through unreadable code can be time consuming. Save time by writing clearly.
