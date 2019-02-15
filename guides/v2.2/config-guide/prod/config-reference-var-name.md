@@ -103,7 +103,7 @@ The following table summarizes how to find website or store view value in the Ad
 | Description  | Path in Magento Admin | Variable name |
 |--------------|--------------|----------------------|
 | Create, edit, delete store views | **Stores** > **All Stores** | `CONFIG__STORES__<STORE_VIEW_CODE>__<SYSTEM__VARIABLE__NAME>`  |
-| Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITE__<WEBSITE_CODE>__<SYSTEM__VARIABLE__NAME>` |
+| Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITES__<WEBSITE_CODE>__<SYSTEM__VARIABLE__NAME>` |
 
 For example, to find a website or store view scope value in the Admin:
 
@@ -199,10 +199,10 @@ To find the variable name for the shipping country origin:
 
 	Find the scope in the [database](#deploy-system-vars-scopes) as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
 
-	For example, the scope might be `CONFIG__WEBSITE__DEFAULT`.
+	For example, the scope might be `CONFIG__WEBSITES__DEFAULT`.
 2.	The rest of the variable name is `SHIPPING__ORIGIN__COUNTRY_ID`.
 
-**Result**: The variable name is `CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
+**Result**: The variable name is `CONFIG__WEBSITES__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
 
 ## How to use environment variables
 
