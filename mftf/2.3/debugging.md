@@ -13,7 +13,7 @@ This is straightforward to do once you create a basic Debug Configuration.
 ## Prerequisites
 
 - [Xdebug][]
-- PHPUnit configured for use in [PHPStorm]
+- PHPUnit configured for use in [PHPStorm][]
 
 ## Creating Debug Configuration with PHPStorm
 
