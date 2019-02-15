@@ -241,46 +241,59 @@ Create configuration file: `<your module root dir>view/base/ui_component/custome
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="provider" xsi:type="string">customer_form.customer_form_data_source</item>
-            </item>
-            <item name="deps" xsi:type="string">customer_form.customer_form_data_source</item>
+            <item name="provider" xsi:type="string">customer_form.customer_form_data_source</item>
         </item>
         <item name="label" xsi:type="string" translate="true">Customer Information</item>
-        <item name="layout" xsi:type="array">
-            <item name="type" xsi:type="string">tabs</item>
-            <item name="navContainerName" xsi:type="string">left</item>
-        </item>
+        <item name="reverseMetadataMerge" xsi:type="boolean">true</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save_and_continue" class="Magento\Customer\Block\Adminhtml\Edit\SaveAndContinueButton"/>
+            <button name="save" class="Magento\Customer\Block\Adminhtml\Edit\SaveButton"/>
+            <button name="reset" class="Magento\Customer\Block\Adminhtml\Edit\ResetButton"/>
+            <button name="order" class="Magento\Customer\Block\Adminhtml\Edit\OrderButton"/>
+            <button name="resetPassword" class="Magento\Customer\Block\Adminhtml\Edit\ResetPasswordButton"/>
+            <button name="unlock" class="Magento\Customer\Block\Adminhtml\Edit\UnlockButton"/>
+            <button name="invalidateToken" class="Magento\Customer\Block\Adminhtml\Edit\InvalidateTokenButton"/>
+            <button name="delete" class="Magento\Customer\Block\Adminhtml\Edit\DeleteButton"/>
+            <button name="back" class="Magento\Customer\Block\Adminhtml\Edit\BackButton"/>
+        </buttons>
+        <layout>
+            <navContainerName>left</navContainerName>
+            <type>tabs</type>
+        </layout>
+        <deps>
+            <dep>customer_form.customer_form_data_source</dep>
+        </deps>
 ...
 ```
 
 Nodes are optional and contain parameters required for component:
 
-* js_config -> deps - sets the dependency on component initialization
+* settings -> deps - sets the dependency on component initialization
 
-* js_config -> config -> provider - specifies the name of the component data
+* js_config -> provider - specifies the name of the component data
 
-* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
+* settings -> layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
 
 Add a description of the fields in the form using components and Field Fieldset:
 
 ```xml
 ...
 <fieldset name="customer">
-   <argument name="data" xsi:type="array">
-       <item name="config" xsi:type="array">
-           <item name="label" xsi:type="string" translate="true">Account Information</item>
-       </item>
-   </argument>
-   <field name="entity_id">
-       <argument name="data" xsi:type="array">
-               <item name="config" xsi:type="array">
-               <item name="visible" xsi:type="boolean">false</item>
-               <item name="dataType" xsi:type="string">text</item>
-               <item name="formElement" xsi:type="string">input</item>
-               <item name="source" xsi:type="string">customer</item>
-           </item>
+    <settings>
+        <label translate="true">Account Information</label>
+    </settings>
+    <field name="entity_id" formElement="input">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="source" xsi:type="string">customer</item>
+            </item>
         </argument>
+        <settings>
+            <dataType>text</dataType>
+            <visible>false</visible>
+        </settings>
     </field>
 …
 ```
@@ -288,17 +301,14 @@ Add a description of the fields in the form using components and Field Fieldset:
 To group components you can use the component container as in example below:
 
 ```xml
-<container name="container_group">
+<container name="container_group" component="Magento_Ui/js/form/components/group" sortOrder="20">
     <argument name="data" xsi:type="array">
         <item name="type" xsi:type="string">group</item>
-        <item name="js_config" xsi:type="array">
-            <item name="component" xsi:type="string">Magento_Ui/js/form/components/group</item>
-        </item>
         <item name="config" xsi:type="array">
             <item name="label" xsi:type="string" translate="true">Group</item>
             <item name="required" xsi:type="boolean">true</item>
             <item name="dataScope" xsi:type="boolean">false</item>
-            <item name="sortOrder" xsi:type="number">20</item>
+            <item name="validateWholeGroup" xsi:type="boolean">true</item>
         </item>
     </argument>
     <field name="group_id">
@@ -324,38 +334,21 @@ An example of the configuration of the DataSource object:
         ...
     </argument>
     <dataSource name="customer_form_data_source">
-        <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Customer\Model\Customer\DataProvider</argument>
-            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
-            <argument name="meta" xsi:type="array">
-                <item name="customer" xsi:type="array">
-                    <item name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Account Information</item>
-                    </item>
-                </item>
-                <item name="address" xsi:type="array">
-                    <item name="is_collection" xsi:type="boolean">true</item>
-                    <item name="config" xsi:type="array">
-                        <item name="label" xsi:type="string" translate="true">Addresses</item>
-                    </item>
-                </item>
-            </argument>
-            <argument name="data" xsi:type="array">
-                <item name="js_config" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
-                </item>
-                <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="string">customer/index/save</item>
-                    <item name="validate_url" xsi:type="string">customer/index/validate</item>
-                </item>
-            </argument>
-        </argument>
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <validateUrl path="customer/index/validate"/>
+            <submitUrl path="customer/index/save"/>
+        </settings>
+        <dataProvider class="Magento\Customer\Model\Customer\DataProvider" name="customer_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
     </dataSource>
 </form>
 ```
