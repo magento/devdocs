@@ -17,7 +17,7 @@ This is straightforward to do once you create a basic Debug Configuration.
 
 ## Creating Debug Configuration with PHPStorm
 
-1. Download the Codeception Framework plugin for PHPStorm (`PhpStorm->Preferences->Plugins`).
+1. If not already installed, download the Codeception Framework plugin for PHPStorm (`PhpStorm->Preferences->Plugins`).
 1. Click `Edit Configurations` on the configuration dropdown.
 1. Click `+` and select `Codeception` from the available types.
 1. Find the `Custom Working Directory` option and set the path to your `dev/tests/acceptance/` directory.
@@ -27,7 +27,6 @@ If you get a warning `Path to Codeception for local machine is not configured.`:
 1. Click `Fix`, then `+`, and select `Codeception Local`.
 1. Click `...` and locate `/vendor/bin/codecept` in your Magento installation folder.
 
-At this point, you have a couple choices in how to select the test you want to debug.
 The easiest method of tagging a test for debugging is the following:
 
 - In your Debug configuration, locate `Test Runner options:` and set `--group testDebug`.
