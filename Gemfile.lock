@@ -68,7 +68,11 @@ GEM
       nokogiri (~> 1.6)
       progressbar (~> 1.9)
       verbal_expressions (~> 0.1.5)
+    jekyll-optional-front-matter (0.3.0)
+      jekyll (~> 3.0)
     jekyll-redirect-from (0.14.0)
+      jekyll (~> 3.3)
+    jekyll-relative-links (0.6.0)
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
@@ -124,7 +128,9 @@ DEPENDENCIES
   html-proofer
   jekyll
   jekyll-algolia (~> 1.0)
+  jekyll-optional-front-matter
   jekyll-redirect-from
+  jekyll-relative-links
   jekyll-sitemap
   jekyll-titles-from-headings
   launchy
