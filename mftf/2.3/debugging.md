@@ -20,6 +20,7 @@ This is straightforward to do once you create a basic Debug Configuration.
 1. If not already installed, download the Codeception Framework plugin for PHPStorm (`PhpStorm->Preferences->Plugins`).
 1. Click `Edit Configurations` on the configuration dropdown.
 1. Click `+` and select `Codeception` from the available types.
+1. Change `Test Scope` to `Type` and select `functional` from the `Type:` dropdown.
 1. Find the `Custom Working Directory` option and set the path to your `dev/tests/acceptance/` directory.
 
 If you get a warning `Path to Codeception for local machine is not configured.`:
