@@ -23,52 +23,60 @@ This ensures that the MFTF is up to date.
 
 To update the MFTF to the latest patch:
 
-1. Verify that the Magento [WYSIWYG settings](getting-started.html#wysiwyg-settings) and [Security settings](getting-started.html#security-settings) are set appropriately.
-1. Check details about backward incompatible changes in the [Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md) and update your new or customized tests.
+1. Verify that the Magento [WYSIWYG settings][] and [Security settings][] are set appropriately.
+1. Check details about backward incompatible changes in the [Changelog][] and update your new or customized tests.
 1. Get the latest framework version using Composer:
 
-	```bash
-	composer update
-	```
+   ```bash
+   composer update
+   ```
 
 1. Generate the updated tests:
 
-	```bash
-	vendor/bin/robo generate:tests
-	```
+   ```bash
+   vendor/bin/mftf generate:tests
+   ```
 
 ## Update the MFTF from 2.2
 
 To update the MFTF from the previous minor version:
 
-1. When you update Magento, verify that the Magento [WYSIWYG settings](getting-started.html#wysiwyg-settings) and [Security settings](getting-started.html#security-settings) are set appropriately.
+1. When you update Magento, verify that the Magento [WYSIWYG settings][] and [Security settings][] are set appropriately.
 1. Starting at the `magento2/` root directory remove the `vendor/` directory:
+
    ```bash
    rm -rf vendor/
    ```
+
 1. Get the latest framework version from the Composer dependencies:
+
    ```bash
    composer install
    ```
-1. Remove the `vendor/` directory at `magento2/dev/tests/acceptance/`:
-   ```bash
-   rm -rf dev/tests/acceptance/vendor/
-   ```
-1. Install dependencies at that level:
-   ```bash
-   composer install -d dev/tests/acceptance/
-   ```
+
 1. Run the `upgrade:tests` using the new command line tool:
+
    ```bash
    vendor/bin/mftf upgrade:tests app
    ```
+
 1. If you are using Phpstorm, update the urn catalog:
+
    ```bash
    vendor/bin/mftf generate:urn-catalog .idea/
    ```
+
 1. Update your own tests, including data, metadata, and so on, if they contain tags that are unsupported in the newer version.
-Check details about backward incompatible changes and review new MFTF release documentation in the [Changelog](https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md).
+
+   Check details about backward incompatible changes and review new MFTF release documentation in the [Changelog][].
+
 1. Generate newly pulled tests:
+
    ```bash
    vendor/bin/mftf generate:tests
    ```
+
+<!-- Link Definitions -->
+[Changelog]: https://github.com/magento/magento2-functional-testing-framework/blob/master/CHANGELOG.md
+[WYSIWYG settings]: getting-started.html#wysiwyg-settings
+[Security settings]: getting-started.html#security-settings
