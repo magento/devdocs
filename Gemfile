@@ -17,4 +17,6 @@ group :jekyll_plugins do
   gem 'jekyll-redirect-from'
   gem 'jekyll-sitemap'
   gem 'jekyll-titles-from-headings'
+  gem 'jekyll-relative-links'
+  gem 'jekyll-optional-front-matter'
 end
