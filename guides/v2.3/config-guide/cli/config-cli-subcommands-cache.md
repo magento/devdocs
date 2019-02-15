@@ -29,7 +29,6 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 |Integration API configuration|config_integration_api|Compiled integration APIs configuration of the Store’s Integrations.|
 |Web services configuration|config_webservice|Caching the Web API Structure.|
 |Customer Notification|customer_notification|Temporary notifications that appear in the user interface.|
-|Vertex tax calculation data|vertex|Compiled tax calculation data in the shopping cart based on the tax profile of each product.|
 {:style="table-layout:auto;"}
 
 ## View the cache status
@@ -59,7 +58,6 @@ config_integration_api: 1
              full_page: 1
      config_webservice: 1
              translate: 1
-                vertex: 1
 ```
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
@@ -157,7 +155,6 @@ Sample result:
    full_page
    config_webservice
    translate
-   vertex
 ```
 
 {:.bs-callout .bs-callout-info}
