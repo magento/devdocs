@@ -20,7 +20,7 @@ You are unable to upload file input using the MFTF actions and are seeing the fo
 
 ```terminal
 [Facebook\WebDriver\Exception\NoSuchDriverException]
-   No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
+No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
 ```
 
 #### Reason
