@@ -11,13 +11,25 @@ following project environment variables to override the configuration settings
 for the administrative user account to access the Admin UI. See [Change the Magento ADMIN variables]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#change-the-magento-admin-variables).
 
 
-| Variable        | Description                                                                                                                                                                                                                                                                                            |
+**Admin credentials**
+
+Use the ADMIN variables in the following table to override credentials for the Magento Admin user during installation. 
+
+If you want to change the values after installation, connect to your environment using ssh and use the the Magento CLI [`admin:user` command`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.htm) to create or edit the Magento Admin user credentials.
+
+| Variable        | Description                                                                                                                                                                                                                                                                           |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ADMIN credentials| `ADMIN_USERNAME`—A username for the administrative user with the ability to create other users, including administrative users. During initial project provisioning, the username defaults to the {{ site.data.var.ece }} License Owner email address. You can use the default value, or change it to a secure username.<br><br>`ADMIN_EMAIL`—Email address for the administrative user. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails.<br><br>`ADMIN_PASSWORD`—Password for the administrative user. When the project is created a random password is generated and an email is sent to the {{ site.data.var.ece }} License Owner. During project creation, the License Owner should have already changed the password. You might need to contact the License Owner for the updated password.|
-| `ADMIN_LOCALE`    | Default—`en_US` Specifies the default locale used by the Magento Admin.|
-| `ADMIN_URL`       | The relative URL to access the Admin panel. For example: `/admin`. For security reasons, we recommend you choose a value other than `admin`,`backend`, or another term that is easy to guess.|                              |
+| `ADMIN_USERNAME`|A username for the administrative user with the ability to create other users, including administrative users. During initial project provisioning, the username defaults to the {{ site.data.var.ece }} License Owner email address. You can use the default value, or change it to a secure username.|
+|`ADMIN_EMAIL`|Email address for the administrative user. This address is used to send password reset notifications.|
+|`ADMIN_PASSWORD`|Password for the administrative user. When the project is created a random password is generated and an email is sent to the {{ site.data.var.ece }} License Owner. During project creation, the License Owner should have already changed the password. You might need to contact the License Owner for the updated password.|
+| `ADMIN_LOCALE`    | Default—`en_US` Specifies the default locale used by the Magento Admin.
 {:style="table-layout:auto;"}
 
 
-{:.bs-callout .bs-callout-info}
-The values for the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` variables are used only for installation. These values are ignored on upgrades.
+**Admin URL**
+
+Use the following environment variable to secure access to your Magento Admin UI. If specified, this value overrides the default URL during installation.
+
+**`ADMIN_URL`**—The relative URL to access the Magento Admin UI. For example: `/admin`. For security reasons, we recommend that you choose a value other than `admin`,`backend`, or another term that is easy to guess.
+
+If you need to change the Admin URL after installation, connect to your environment using ssh and use the Magento CLI [`magento setup:config`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html) command to change the URL. 

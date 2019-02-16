@@ -69,14 +69,31 @@ The install command uses the following format:
 magento setup:install --<option>=<value> ... --<option>=<value>
 ```
 
-The following table describes the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).
+The following tables describe the installation option names and values. For example installation commands. see [Sample localhost installations](#install-cli-example).
 
 {:.bs-callout .bs-callout-info}
 Any options that contain spaces or special characters must be enclosed in either single or double quotes.
 
+
+**Admin credentials**
+
+The following options specify the user information and credentials for the Magento admin user. 
+
+In Magento Commerce version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, all admin credential variables are required. See [Sample localhost installations](#install-cli-example).
+
 |Name|Value|Required?|
 |--- |--- |--- |
-|admin credentials|User information and credentials for the Magento admin user.<br><br>`--admin-firstname`—Magento administrator user's first name.<br><br>`--admin-lastname`—Magento administrator user's last name.<br><br>`--admin-email`—Magento administrator user's e-mail address.<br><br>`--admin-user`—Magento administrator username.<br><br>`--admin-password`—Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`<br><br>**Note:** In Magento Commerce version 2.2.8 and later, you can create the Magento admin user during or after installation. If you create the user during installation, you must specify a value for all admin credential variables. See [Sample localhost installations](#install-cli-example).|No|
+|`--admin-firstname`|Magento administrator user's first name.|No|
+|`--admin-lastname`|Magento administrator user's last name.|No|
+|`--admin-email`|Magento administrator user's e-mail address.|No|
+|`--admin-user`|Magento administrator username.|No|
+|`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|No|
+{:style="table-layout:auto;"}
+
+**Site, database, and RabbitMQ configuration options**
+
+|Name|Value|Required?|
+|--- |--- |--- |
 |`--base-url`|Base URL to use to access your Magento Admin and storefront in any of the following formats:<br><br>`http[s]://<host or ip>/<your Magento install dir>/`.<br><br>**Note:** The scheme (http:// or https://) and a trailing slash are both required.<br><br>`<your Magento install dir>` is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be magento2 or it might be blank.<br><br>To access Magento on localhost, you can use either `http://127.0.0.1/<your Magento install dir>/` or `http://127.0.0.1/<your Magento install dir>/`.<br><br>- `{{base_url}}` which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the hostname magento.example.com, you can install the Magento software with `--base-url={{base_url}}` and access the Magento Admin with a URL like http://magento.example.com/admin.|No|
 |`--backend-frontname`|Uniform Resource Identifier (URI) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.<br><br>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.<br><br>The URI displays at the end of the installation. You can display it later at any time using the magento info:adminuri command.<br><br>If you choose to enter a value, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (`_`) only.|No|
 |`--db-host`|Use any of the following:<br><br>- The database server's fully qualified hostname or IP address.<br><br>- `localhost` (default) or `127.0.0.1` if your database server is on the same host as your web server.localhost means the MySQL client library uses UNIX sockets to connect to the database. `127.0.0.1` causes the client library to use the TCP protocol. For more information about sockets, see the [PHP PDO_MYSQL documentation](http://php.net/manual/en/ref.pdo-mysql.php).<br><br>**Note:** You can optionally specify the database server port in its hostname like www.example.com:9000|No|
