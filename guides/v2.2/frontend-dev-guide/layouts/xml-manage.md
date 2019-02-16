@@ -352,7 +352,7 @@ Let us say that we want to add functionality to a core template with custom logi
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
 <body>
-    <referenceBlock cart.renderer="Magento/Checkout/view/frontend/layout/checkout_cart_item_renderers.xml">
+    <referenceBlock name="checkout.cart.item.renderers.default">
         <arguments>
            <argument name="viewModel" xsi:type="object">Vendor\CustomModule\ViewModel\Class</argument>
         </arguments>
@@ -384,7 +384,7 @@ In order to use plugins (interceptors), we must first define them in the di.xml 
 ```xml
 <config>
     <type name="{ObservedType}">
-      <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="false" />
+      <plugin name="{pluginName}" type="{PluginClassName}" />
     </type>
 </config>
 ```
@@ -400,17 +400,17 @@ Let us say we want to change the behavior of an addProduct method in the Magento
 ```xml
 <config>
     <type name="Magento\Checkout\Model\Cart">
-        <plugin name="MagentoCart" type="Magento\Test\Model\Cart" sortOrder="1" />
+        <plugin name="MagentoCart" type="Company\Sample\Model\Cart" />
     </type>
 </config>
 ```
 
-Now in the Magento\Test\Model\Cart directory, we will create our plugin in a file we will call Cart.php. To call the before listener, it is customary to add the prefix 'before' to the method name, meaning we can call something like the following:
+Now in the Company\Sample\Model\Cart directory, we will create our plugin in a file we will call Cart.php. To call the before listener, it is customary to add the prefix 'before' to the method name, meaning we can call something like the following:
 
 ```php
 <?php
      
-    namespace Magento\Test\Model;
+    namespace Company\Sample\Model;
  
     class Cart
     {
@@ -432,7 +432,7 @@ If we wanted to add an around listener to the same addProduct method, we could u
 ```php
 <?php
      
-    namespace Magento\Test\Model;
+    namespace Company\Sample\Model;
  
     class Cart
     {
@@ -452,14 +452,14 @@ If we wanted to add an around listener to the same addProduct method, we could u
 
 For an around listener, the return value is formed in such way that the parameters following the $closure parameter in the around listener method definition are passed to the $closure function call in a sequential order.
 
-Finally, let us say that we want to change the behavior of the getName method of Magento\Catalog\Model\Product with an after listener. Assuming we have properly set the di.xml file of the Magento\Catalog\Model\Product module with the plugin, we can create a file called Product.php in the Magento\Test\Model. 
+Finally, let us say that we want to change the behavior of the getName method of Magento\Catalog\Model\Product with an after listener. Assuming we have properly set the di.xml file of the Magento\Catalog\Model\Product module with the plugin, we can create a file called Product.php in the Company\Sample\Model. 
 
 Similar to the other listeners, an after listener is usually called by adding a designated prefix, which is ‘after’ in this case, to the method name. We can then get the corresponding after listener for our getName method:
 
 ```php
 <?php
      
-    namespace Magento\Test\Model;
+    namespace Company\Sample\Model;
  
     class Product
     {
