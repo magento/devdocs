@@ -15,7 +15,7 @@ for the administrative user account to access the Admin UI. See [Change the Mage
 
 Use the ADMIN variables in the following table to override credentials for the Magento Admin user during installation. 
 
-If you want to change the values after installation, connect to your environment using ssh and use the the Magento CLI [`admin:user` command`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.htm) to create or edit the Magento Admin user credentials.
+If you want to change the values after installation, connect to your environment using ssh and use the the Magento CLI [`admin:user` command`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html) to create or edit the Magento Admin user credentials.
 
 | Variable        | Description                                                                                                                                                                                                                                                                           |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
