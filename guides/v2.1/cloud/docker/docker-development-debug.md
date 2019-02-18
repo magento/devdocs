@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Docker development configure Xdebug
+title: Configure Xdebug for Docker
 functional_areas:
 - Cloud
 - Setup
@@ -8,105 +8,132 @@ functional_areas:
 - Debug
 ---
 
-We recommend using Xdebug for your PHP debugging. The following sections detail how to configure Xdebug and PhpStorm to debug locally in your docker local environment.
+Xdebug is an extension for debugging your PHP. The following explains how to configure Xdebug and PhpStorm to debug in your local Docker environment.
 
-To enable Xdebug, you need to [configure](#configure) `docker/global.php` file during launching [Docker Environment]({{ page.baseurl }}/cloud/docker/docker-config.html).
+If you use Microsoft Windows, take the following steps before continuing:
 
+1.  Open your Docker settings.
+1.  Select the **Expose daemon on tcp://localhost:2375 without TLS** checkbox.
+1.  Wait for the settings to apply.
 
-## Configure Docker {#docker}
+## Enable Xdebug
 
-### For Windows
+To enable Xdebug, you must configure your `docker/global.php` file at the time you configure your local workstation to [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html) and **before** you convert the PHP configuration files to Docker ENV files. 
 
-1. Open docker settings.
-2. Select checkbox near `Expose daemon on tcp://localhost:2375 without TLS`
-3. Wait for settings applied.
+Update the `docker/global.php` file with the following changes:
 
-## Configure Xdebug {#configure}
+```php
+<?php
 
-To configure Xdebug, you need to do modify next options in `docker/global.php` file during launching [Docker Environment]({{ page.baseurl }}/cloud/docker/docker-config.html#configure_docker_global_variables).
+return [
+    // Enable Xdebug
+    'PHP_ENABLE_XDEBUG' => true,
+    // Add the name of the server created in the IDE
+    'PHP_IDE_CONFIG' => 'serverName=myServer',
+    // Modify the remote host according to your OS
+    'XDEBUG_CONFIG' => 'remote_host=host.docker.internal',
+];
+```
 
-* set `PHP_ENABLE_XDEBUG` option to true to enable Xdebug
-* modify `remote_host` in `XDEBUG_CONFIG` option according to your OS, for Windows `remote_host=host.docker.internal`
-* modify `PHP_IDE_CONFIG` option if you want to change `serverName` this is name of your server created in IDE
-* you can change any Xdebug configuration in `XDEBUG_CONFIG` option. For example, for changing `xdebug.remote_port`: `'XDEBUG_CONFIG' => 'remote_host=host.docker.internal remote_port=9002'`
+You can change any Xdebug configuration in `XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:
 
+```
+'XDEBUG_CONFIG' => 'remote_host=host.docker.internal remote_port=9002',
+```
 
-### Configure PhpStorm {#phpstorm}
+#### To configure PhpStorm to work with Xdebug:
 
-You need to configure [PhpStorm](https://www.jetbrains.com/phpstorm/) to properly work with Xdebug.
+1.  In your PhpStorm project, open the settings panel.
 
-1. Open your PhpStorm project.
-2. Open the settings for PhpStorm.
+    -  Mac: select **File** > **Preferences**
+    -  Windows/Linux: select **File** > **Settings**
 
-    * On Mac, select **File** > **Preferences**.
-    * On Windows/Linux, select **File** > **Settings**.
-3. Expand and locate **Languages & Frameworks** > **PHP** > **Servers** section in settings.
-4. Add a server configuration. Click the + to add a server. Notice at the top, it will show the project name in grey, just for reference. This will create a "server" configuration.
-5. Configure settings for the new server:
+1.  In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.
 
-    * **Name**: enter the same as the `serverName` in `PHP_IDE_CONFIG` option from `docker/global.php` file.
-    * **Host**: enter `localhost`
-    * **Port**: enter 80
-    * **Debugger**: set to Xdebug in the drop-down
-6. Select the **Use path mappings** option. In the files/directories, the root of the project displays that you opened for the added server.
-7. In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} and add value of `MAGENTO_ROOT` option, `/var/www/magento` by default.
-8. Change Xdebug port to 9001 **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port**, apply changes  
+1.  Click the **+** to add a server configuration. The project name is in grey at the top.
 
+1.  Configure the following settings for the new server configuration:
 
-## For debugging web requests {#webrequests}
+    -  **Name**: Enter the name used for the `serverName` in `PHP_IDE_CONFIG` option from `docker/global.php` file
+    -  **Host**: Enter `localhost`
+    -  **Port**: Enter `80`
+    -  **Debugger**: Select `Xdebug`
 
-The following steps help you debug web requests.
+1.  Select **Use path mappings**. In the files/directories, the root of the project for the `serverName` displays.
 
+1.  In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} and add a value to the `MAGENTO_ROOT` option. The default value is `/var/www/magento`
 
-1. Open your PhpStorm project and in the top navigation bar, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"}  (**Start listening**)
-1. Put some breakpoints in `pub/index.php` file 
-1. Install debug extension in browser, click **Debug** to enable.
-1. Open `https://localhost` in browser with enabled debug in extension. 
-1. PhpStorm should catch Xdebug connection and you are able to start debugging of web requests.
+1.  Change the Xdebug port to 9001 in the **Languages & Frameworks** > **PHP** > **Debug** > **Xdebug** > **Debug Port** panel.
 
-### Example set up on Chrome {#chrome}
+1.  Click **Apply**.
 
-This section discusses how to use Xdebug in Chrome using the Xdebug Helper extension. For information about Xdebug tools for other browsers, consult the browser documentation.
+## Using Xdebug
 
-To use Xdebug Helper with Chrome:
+The following steps describe debugging web requests and CLI commands.
 
-1.	Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) from the Chrome store.
-1.	Enable the extension in Chrome as shown in the following figure.
-	![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)
-1.	In Chrome, right-click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
-1.	From the pop-up menu, click **Options**.
-1.	From the **IDE Key** list, click **PhpStorm**.
-1.	Click **Save**.
-	![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}
+#### To debug web requests:
+
+1.  In your PhpStorm project, click ![Start listening for connections]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-start-listening.png){:width="25px"} (**Start listening**) in the top navigation bar.
+
+1.  Add breakpoints in the `pub/index.php` file.
+
+1.  Install the debug extension in the browser and click **Debug** to enable.
+
+1.  In the browser, open the `https://localhost` URL with enabled debug in extension. 
+
+1.  When PhpStorm recognizes the Xdebug connection, you can begin debugging web requests.
+
+#### To debug CLI commands:
+
+You can debug any Magento command or PHP script using the following steps.
+
+1.  In your PhpStorm project, open the **Build, Extension, Deployment** > **Docker** panel and click `+` to add a new Docker server and update the following settings:
+
+    -   **Name**: Docker Cloud
+    -   **Connect to Docker daemon with**:
+        - For Windows, select **TCP socket** and update **Engine Api Url** with `tcp://localhost:2375`
+        - For Mac,
+
+1.  In the **Languages & Frameworks** > **PHP** > **Cli Interpreter** panel, click **[...]**.
    
-	
-	
-## Debug CLI commands {#debugcli}
+1.  Click **[+]** to add and configure a new Cli Interpreter from your Docker image. Update the following settings:
 
-This section walks through debugging CLI commands.
-
-1. Open PhpStorm
-1. Go to **Build, Extension, Deployment** > **Docker** click on `+` to add new Docker server:
-      * **Name**: Docker Cloud
-      * **Connect to Docker daemon with**:
-      	 * For Windows select `TCP socket` and fill **Engine Api Url** with `tcp://localhost:2375`
-1. Create new Cli Interpreter from your docker image **Languages & Frameworks** > **PHP** > **Cli Interpreter** click **[...]** button.
-   Click **[+]** to add and configure new interpreter
-   * **Name** enter name for new interpreter `Magento cloud docker cli`
-   * **Remote** select Docker
-     * **Server** select `Docker Cloud` from previous step
-     * **Image name** select *magento/magento-cloud-docker-php:7.x-cli*
-   * **Additional** > **Debugger extension**:
-     * For Windows enter `xdebug`
-     * For Mac/Linux enter `xdebug.so`
-   * Click refresh button to ensure that interpreter and xdebug configured properly.
+    -   **Name**: Enter a name for the new interpreter, such as `Magento cloud docker cli`.
+    -   **Remote**: Select `Docker`
+        -   **Server**: Select `Docker Cloud` from previous step
+        -   **Image name**: Select `magento/magento-cloud-docker-php:7.x-cli`
+    -   **Additional** > **Debugger extension**:
+        -   For Windows, enter `xdebug`
+        -   For Mac/Linux, enter `xdebug.so`
+    -   Click **Refresh** to verify that the interpreter and Xdebug are configured properly.
    
-   Save changes.     
-1. Open Run/Debug Configuration window and add new **Php script**:
-  * **Name**: enter `bin/magento`	
-  * **Configuration** > **File**: select path to `bin/magento` file in your local environment.
-  
-1. Put some breakpoints in `bin/magento` file and debug Php script created in previous step.
-1. You can debug any magento command or php script using described steps.
+1.  Click **Save**.
 
+1.  Open the _Run/Debug Configuration_ window and add a new **PHP script** with the following settings:
+
+    -   **Name**: Enter `bin/magento`
+    -   **Configuration** > **File**: Select the path to the `bin/magento` file in your local environment.
   
+1.  Add breakpoints in the `bin/magento` file and the debug PHP script created in the previous step.
+
+## Using Xdebug Helper
+
+The following steps describe how to work with Chrome using the Xdebug Helper extension.
+
+#### To use Xdebug Helper with Chrome:
+
+1.  Install the [Xdebug Helper extension](https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en) from the Chrome store.
+
+1.  Enable the extension in Chrome as shown in the following figure.
+
+    ![Enable the Xdebug extension in Chrome]({{ site.baseurl }}/common/images/install_docker_php-storm_xdebug-chrome.png)
+
+1.  In _Chrome_, click ![Xdebug helper icon]({{ site.baseurl }}/common/images/cloud-xdebug_helper-icon.png){:width="25px"} in the Chrome toolbar.
+
+1.  From the _Xdebug helper_ menu, click **Options**.
+
+1.  From the _IDE Key_ list, select **PhpStorm**.
+
+1.  Click **Save**.
+
+    ![Xdebug Helper options]({{ site.baseurl }}/common/images/cloud-xdebug_helper-options.png){:width="400px"}

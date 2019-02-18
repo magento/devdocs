@@ -70,9 +70,8 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     ```bash
     cp docker/global.php.dist docker/global.php
     ```
-    
-    {#configure_docker_global_variables}
-    Edit `docker/global.php` if you want to [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html) or change other configuration.
+
+1.  _Optional_: Configure the Docker global variables in the `docker/global.php` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1. Convert the PHP configuration files to Docker ENV files.
 
