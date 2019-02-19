@@ -1,0 +1,909 @@
+files:
+- filename: BraintreeCreditCardOnCheckoutTest
+    features: 'Braintree'
+    title: 'Use saved for Braintree credit card on checkout with selecting billing address'
+    description: 'Use saved for Braintree credit card on checkout with selecting billing address'
+- filename: AdminSwitchWYSIWYGOptionsTest
+    features: 'Cms'
+    title: 'Admin should able to switch between versions of TinyMCE'
+    description: 'Admin should able to switch between versions of TinyMCE'
+- filename: NewProductsListWidgetTest
+    features: 'Widget'
+    title: 'Admin should be able to set products as new so that they show up in the Catalog New Products List Widget'
+    description: 'Admin should be able to set products as new so that they show up in the Catalog New Products List Widget'
+- filename: NewProductsListWidgetTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminCreateInvoiceTest
+    features: 'Sales'
+    title: 'Admin should be able to create an invoice'
+    description: 'Admin should be able to create an invoice'
+- filename: EndToEndB2CAdminTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminCreateOrderWithMinimumAmountEnabledTest
+    features: 'Sales'
+    title: 'Admin order is not restricted by 'Minimum Order Amount' configuration.'
+    description: 'Admin should be able to create an order regardless of the minimum order amount.'
+- filename: AdminSubmitsOrderWithAndWithoutEmailTest
+    features: 'Sales'
+    title: 'Email is required to create an order from Admin Panel'
+    description: 'Admin should not be able to submit orders without an email address'
+- filename: AdminSubmitConfigurableProductOrderTest
+    features: 'Sales'
+    title: 'Create Order in Admin and update product configuration'
+    description: 'Create Order in Admin and update product configuration'
+- filename: CreditMemoTotalAfterShippingDiscountTest
+    features: 'Sales'
+    title: 'Verify credit memo grand total after shipping discount is applied via Cart Price Rule'
+    description: 'Verify credit memo grand total after shipping discount is applied via Cart Price Rule'
+- filename: AdminAddDefaultVideoSimpleProductTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminRemoveDefaultVideoSimpleProductTest
+    features: ''
+    title: ''
+    description: ''
+- filename: GuestCheckoutWithEnabledPersistentTest
+    features: 'Persistent'
+    title: 'Guest Checkout with Enabled Persistent'
+    description: 'Checkout data must be restored after page checkout reload.'
+- filename: ConfigurationTest
+    features: 'Backend'
+    title: 'Verify that Allow Dynamic Media URLs setting is removed from configuration page'
+    description: 'Verify that Allow Dynamic Media URLs setting is removed from configuration page'
+- filename: EndToEndB2CGuestUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdvanceCatalogSearchSimpleProductTest
+    features: 'CatalogSearch'
+    title: ''
+    description: ''
+- filename: EndToEndB2CLoggedInUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminRemoveDefaultImageSimpleProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to remove default images from a Simple Product'
+    description: 'Admin should be able to remove default images from a Simple Product'
+- filename: AdminMultipleWebsitesUseDefaultValuesTest
+    features: 'Catalog'
+    title: 'Use Default Value checkboxes should be checked for new website scope'
+    description: 'Use Default Value checkboxes for product attribute should be checked for new website scope'
+- filename: AdminUnassignProductAttributeFromAttributeSetTest
+    features: 'Catalog'
+    title: 'Admin should be able to unassign attributes from an attribute set'
+    description: 'Admin should be able to unassign attributes from an attribute set'
+- filename: AdminRemoveDefaultVideoVirtualProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to remove default product video from a Virtual Product'
+    description: 'Admin should be able to remove default product video from a Virtual Product'
+- filename: StorefrontProductWithEmptyAttributeTest
+    features: 'Catalog'
+    title: 'Product attribute is not visible on storefront if it is empty'
+    description: 'Product attribute should not be visible on storefront if it is empty'
+- filename: EndToEndB2CGuestUserTest
+    features: 'End to End scenarios'
+    title: 'You should be able to pass End to End B2C Guest User scenario'
+    description: 'User browses catalog, searches for product, adds product to cart, adds product to wishlist, compares products, uses coupon code and checks out.'
+- filename: VerifyChildCategoriesShouldNotIncludeInMenuTest
+    features: 'Catalog'
+    title: 'Customer should not see categories that are not included in the menu'
+    description: 'Customer should not see categories that are not included in the menu'
+- filename: AdminCreateSimpleProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to create a Simple Product'
+    description: 'Admin should be able to create a Simple Product'
+- filename: SaveProductWithCustomOptionsSecondWebsiteTest
+    features: 'Save a product with Custom Options and assign to a different website'
+    title: 'You should be able to save a product with custom options assigned to a different website'
+    description: 'Custom Options should not be split when saving the product after assigning to a different website'
+- filename: SimpleProductTwoCustomOptionsTest
+    features: 'Catalog'
+    title: 'Admin should be able to create simple product with two custom options'
+    description: 'Admin should be able to create simple product with two custom options'
+- filename: AdminCreateDropdownProductAttributeTest
+    features: 'Catalog'
+    title: 'Admin should be able to create dropdown product attribute'
+    description: 'Admin should be able to create dropdown product attribute'
+- filename: VerifyDefaultWYSIWYGToolbarOnProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to see default toolbar display on Description content area'
+    description: 'Admin should be able to see default toolbar display on Description content area'
+- filename: AdminProductGridFilteringByDateAttributeTest
+    features: 'Catalog'
+    title: 'Verify Set Product as new Filter input on Product Grid doesn't getreset to currentDate'
+    description: 'Data input in the new from date filter field should not change'
+- filename: DeleteCategoriesTest
+    features: 'Catalog'
+    title: 'Admin should be able to delete the default root category and subcategories and still see products in the storefront'
+    description: 'Admin should be able to delete the default root category and subcategories and still see products in the storefront'
+- filename: AdminAddDefaultImageSimpleProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to add default image for a Simple Product'
+    description: 'Admin should be able to add default images for a Simple Product'
+- filename: VerifyTinyMCEv4IsNativeWYSIWYGOnCatalogTest
+    features: 'Catalog'
+    title: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Catalog Page'
+    description: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Catalog Page'
+- filename: AdminSimpleProductSetEditContentTest
+    features: 'Catalog'
+    title: 'Admin should be able to set/edit product Content when editing a simple product'
+    description: 'Admin should be able to set/edit product Content when editing a simple product'
+- filename: AdminUpdateCategoryStoreUrlKeyTest
+    features: 'SEO-friendly URL Key Update'
+    title: 'SEO-friendly URL should update regardless of scope or redirect change.'
+    description: 'SEO-friendly URL should update regardless of scope or redirect change.'
+- filename: AdminRemoveDefaultImageVirtualProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to remove default images from a Virtual Product'
+    description: 'Admin should be able to remove default images from a Virtual Product'
+- filename: AdminRequiredFieldsHaveRequiredFieldIndicatorTest
+    features: ''
+    title: 'Required fields should have the required asterisk indicator '
+    description: 'Verify that Required fields should have the required indicator icon next to the field name'
+- filename: AdvanceCatalogSearchVirtualProductTest
+    features: 'Catalog'
+    title: 'Guest customer should be able to advance search virtual product with product name'
+    description: 'Guest customer should be able to advance search virtual product with product name'
+- filename: AdminVirtualSetEditRelatedProductsTest
+    features: 'Catalog'
+    title: 'Admin should be able to set/edit Related Products information when editing a virtual product'
+    description: 'Admin should be able to set/edit Related Products information when editing a virtual product'
+- filename: AdminAssignProductAttributeToAttributeSetTest
+    features: 'Catalog'
+    title: 'Admin should be able to assign attributes to an attribute set'
+    description: 'Admin should be able to assign attributes to an attribute set'
+- filename: AdminMoveAnchoredCategoryTest
+    features: 'Catalog'
+    title: 'Admin should be able to move a category via categories tree and changes should be applied on frontend without a forced cache cleaning'
+    description: 'Admin should be able to move a category via categories tree and changes should be applied on frontend without a forced cache cleaning'
+- filename: StorefrontPurchaseProductCustomOptionsDifferentStoreViewsTest
+    features: 'Catalog'
+    title: 'Admin should be able to sell products with different variants of their own'
+    description: 'Admin should be able to sell products with different variants of their own'
+- filename: AdminAddImageToWYSIWYGProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to add image to WYSIWYG Editor on Product Page'
+    description: 'Admin should be able to add image to WYSIWYG Editor on Product Page'
+- filename: EndToEndB2CAdminTest
+    features: 'End to End scenarios'
+    title: 'Pass End to End B2C Admin scenario'
+    description: 'Admin creates products, creates and manages categories, creates promotions, creates an order, processes an order, processes a return, uses admin grids'
+- filename: NewProductsListWidgetVirtualProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to set Virtual Product as new so that it shows up in the Catalog New Products List Widget'
+    description: 'Admin should be able to set Virtual Product as new so that it shows up in the Catalog New Products List Widget'
+- filename: AdminCreateSimpleProductWithUnicodeTest
+    features: 'Catalog'
+    title: 'Admin should be able to create a unicode named simple product'
+    description: 'Admin should be able to create a unicode named simple product'
+- filename: AdminConfigureProductImagePlaceholderTest
+    features: 'Configuration'
+    title: 'Admin is able to configure product placeholder images'
+    description: 'Admin should be able to configure the images used for product image placeholders. The configured placeholders should be seen on the frontend when an image has no image.'
+- filename: AdminRemoveImageFromCategoryTest
+    features: 'Catalog'
+    title: 'Admin should be able to remove image from a Category'
+    description: 'Admin should be able to remove image from a Category'
+- filename: AdminAddDefaultVideoSimpleProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to add default product video for a Simple Product'
+    description: 'Admin should be able to add default product video for a Simple Product'
+- filename: AdvanceCatalogSearchSimpleProductTest
+    features: 'Catalog'
+    title: 'Guest customer should be able to advance search simple product with product name'
+    description: 'Guest customer should be able to advance search simple product with product name'
+- filename: AdminEditTextEditorProductAttributeTest
+    features: 'Catalog'
+    title: 'Admin should be able to switch between two versions of TinyMCE'
+    description: 'Admin should be able to switch between two versions of TinyMCE'
+- filename: AdminVirtualProductSetEditContentTest
+    features: 'Catalog'
+    title: 'Admin should be able to set/edit product Content when editing a virtual product'
+    description: 'Admin should be able to set/edit product Content when editing a virtual product'
+- filename: AdminMassChangeProductsStatusTest
+    features: 'Catalog'
+    title: 'Admin should be able to mass change products status'
+    description: 'Admin should be able to mass change products status'
+- filename: AdminMassUpdateProductAttributesStoreViewScopeTest
+    features: 'Catalog'
+    title: 'Admin should be able to mass update product attributes in store view scope'
+    description: 'Admin should be able to mass update product attributes in store view scope'
+- filename: AdminAddDefaultImageVirtualProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to add default images for a Virtual Product'
+    description: 'Admin should be able to add default images for a Virtual Product'
+- filename: AdminMassUpdateProductAttributesMissingRequiredFieldTest
+    features: 'Catalog'
+    title: 'Mass update product attributes - missing required field'
+    description: 'Mass update product attributes - missing required field'
+- filename: StorefrontProductsCompareWithEmptyAttributeTest
+    features: 'Catalog'
+    title: 'Product attribute is not visible on product compare page if it is empty'
+    description: 'Product attribute should not be visible on the product compare page if it is empty for all products that are being compared, not even displayed as N/A'
+- filename: AdminCreateCategoryFromProductPageTest
+    features: 'Catalog'
+    title: 'Admin should be able to create category from the product page'
+    description: 'Admin should be able to create category from the product page'
+- filename: AdminCreateCategoryTest
+    features: 'Catalog'
+    title: 'Admin should be able to create a Category'
+    description: 'Admin should be able to create a Category'
+- filename: AdminCreateProductDuplicateUrlkeyTest
+    features: 'Catalog'
+    title: 'Admin should see an error when trying to save a product with a duplicate URL key'
+    description: 'Admin should see an error when trying to save a product with a duplicate URL key'
+- filename: AdminSimpleProductImagesTest
+    features: 'Catalog'
+    title: 'Admin should be able to add images of different types and sizes to Simple Product'
+    description: 'Admin should be able to add images of different types and sizes to Simple Product'
+- filename: AdminSimpleProductEditUiTest
+    features: 'Catalog'
+    title: 'UI elements on the simple product edit screen should be organized as expected'
+    description: 'Admin should be able to use simple product UI in expected manner'
+- filename: AdminApplyTierPriceToProductTest
+    features: 'Catalog'
+    title: 'You should be able to apply tier price to a product.'
+    description: 'You should be able to apply tier price to a product.'
+- filename: AdminProductStatusAttributeDisabledByDefaultTest
+    features: 'Catalog'
+    title: 'Verify the default option value for product Status attribute is set correctly during product creation'
+    description: 'The default option value for product Status attribute is set correctly during product creation'
+- filename: AdminRemoveDefaultVideoSimpleProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to remove default product video from a Simple Product'
+    description: 'Admin should be able to remove default product video from a Simple Product'
+- filename: AdminAddImageToWYSIWYGCatalogTest
+    features: 'Catalog'
+    title: 'Admin should be able to add image to WYSIWYG Editor on Catalog Page'
+    description: 'Admin should be able to add image to WYSIWYG Editor on Catalog Page'
+- filename: NewProductsListWidgetSimpleProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to set Simple Product as new so that it shows up in the Catalog New Products List Widget'
+    description: 'Admin should be able to set Simple Product as new so that it shows up in the Catalog New Products List Widget'
+- filename: AdminAddDefaultVideoVirtualProductTest
+    features: 'Catalog'
+    title: 'Admin should be able to add default product video for a Virtual Product'
+    description: 'Admin should be able to add default product video for a Virtual Product'
+- filename: AdminMassUpdateProductAttributesGlobalScopeTest
+    features: 'Catalog'
+    title: 'Admin should be able to mass update product attributes in global scope'
+    description: 'Admin should be able to mass update product attributes in global scope'
+- filename: VerifyTinyMCEv4IsNativeWYSIWYGOnProductTest
+    features: 'Catalog'
+    title: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Product Page'
+    description: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Product Page'
+- filename: AdminCreateRootCategoryAndSubcategoriesTest
+    features: 'Catalog'
+    title: 'Admin should be able to create a Root Category and a Subcategory'
+    description: 'Admin should be able to create a Root Category and a Subcategory'
+- filename: EndToEndB2CLoggedInUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminAddImageForCategoryTest
+    features: 'Catalog'
+    title: 'Admin should be able to add image to a Category'
+    description: 'Admin should be able to add image to a Category'
+- filename: CheckTierPricingOfProductsTest
+    features: 'Shopping Cart'
+    title: 'Checking 'Tier Pricing' of Products and 'Price' (without discount) in the Order of B2B Store View'
+    description: 'Checking 'Tier Pricing' of Products and 'Price' (without discount) in the Order of B2B Store View'
+- filename: AdminSimpleSetEditRelatedProductsTest
+    features: 'Catalog'
+    title: 'Admin should be able to set/edit Related Products information when editing a simple product'
+    description: 'Admin should be able to set/edit Related Products information when editing a simple product'
+- filename: AdminSpecifyLayerNavigationConfigurationTest
+    features: 'LayerNavigation'
+    title: 'Admin should be able to uncheck Default Value checkbox for dependent field'
+    description: 'Admin should be able to uncheck Default Value checkbox for dependent field'
+- filename: StorefrontTaxInformationInShoppingCartForCustomerPhysicalQuoteTest
+    features: 'Tax'
+    title: 'Tax information are updating/recalculating on fly in shopping cart for Customer with default addresses (physical quote)'
+    description: 'Tax information are updating/recalculating on fly in shopping cart for Customer with default addresses (physical quote)'
+- filename: StorefrontTaxInformationInShoppingCartForGuestPhysicalQuoteTest
+    features: 'Tax'
+    title: 'Tax information are updating/recalculating on fly in shopping cart for Guest (physical quote)'
+    description: 'Tax information are updating/recalculating on fly in shopping cart for Guest (physical quote)'
+- filename: StorefrontTaxQuoteCheckoutTest
+    features: 'Tax'
+    title: 'Tax for Virtual Product Quote should be recalculated according to inputted data on Checkout flow for Guest Customer'
+    description: 'Tax for Virtual Product Quote should be recalculated according to inputted data on Checkout flow for Guest Customer'
+- filename: StorefrontTaxInformationInShoppingCartForCustomerVirtualQuoteTest
+    features: 'Tax'
+    title: 'Tax information are updating/recalculating on fly in shopping cart for Customer with default addresses (virtual quote)'
+    description: 'Tax information are updating/recalculating on fly in shopping cart for Customer with default addresses (virtual quote)'
+- filename: StorefrontTaxQuoteCartTest
+    features: 'Tax'
+    title: 'Tax for Simple Product Quote should be recalculated in Shopping Cart for Logged in Customer with Default Address'
+    description: 'Tax for Simple Product Quote should be recalculated in Shopping Cart for Logged in Customer with Default Address'
+- filename: StorefrontTaxInformationInShoppingCartForGuestVirtualQuoteTest
+    features: 'Tax'
+    title: 'Tax information are updating/recalculating on fly in shopping cart for Guest (virtual quote)'
+    description: 'Tax information are updating/recalculating on fly in shopping cart for Guest (virtual quote)'
+- filename: StorefrontBundleProductDetailsTest
+    features: 'Bundle'
+    title: 'Customer should be able to see basic bundle product details'
+    description: 'Customer should be able to see basic bundle product details'
+- filename: AdminRemoveDefaultImageBundleProductTest
+    features: 'Bundle'
+    title: 'Admin should be able to remove default images from a Bundle Product'
+    description: 'Admin should be able to remove default images from a Bundle Product'
+- filename: AdminEditRelatedBundleProductTest
+    features: 'Bundle'
+    title: 'Admin should be able to set/edit Related Products information when editing a bundle product'
+    description: 'Admin should be able to set/edit Related Products information when editing a bundle product'
+- filename: StorefrontGoToDetailsPageWhenAddingToCartTest
+    features: 'Bundle'
+    title: 'Customer should be taken to bundle product details page when clicking “Add to Cart” button'
+    description: 'Customer should be taken to bundle product details page when clicking “Add to Cart” button'
+- filename: NewBundleProductSelectionTest
+    features: 'Bundle'
+    title: 'Admin should be able to select a “Bundle Product” product type when adding a new product'
+    description: 'Admin should be able to select a “Bundle Product” product type when adding a new product'
+- filename: AdminAddDefaultImageBundleProductTest
+    features: 'Bundle'
+    title: 'Admin should be able to add default images for a Bundle Product'
+    description: 'Admin should be able to add default images for a Bundle Product'
+- filename: StorefrontCustomerSelectAndSetBundleOptionsTest
+    features: 'Bundle'
+    title: 'Customer should be able to select customisable bundle product options and set quantity for them'
+    description: 'Customer should be able to select customisable bundle product options and set quantity for them'
+- filename: AdminBasicBundleProductAttributesTest
+    features: 'Bundle'
+    title: 'Admin should be able to set/edit all the basic product attributes when creating/editing a bundle product'
+    description: 'Admin should be able to set/edit all the basic product attributes when creating/editing a bundle product'
+- filename: StorefrontVerifyDynamicBundleProductPricesForCombinationOfOptionsTest
+    features: 'Bundle'
+    title: 'Verify dynamic bundle product prices for combination of options'
+    description: 'Verify prices for various configurations of Dynamic Bundle product'
+- filename: EndToEndB2CAdminTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminBundleProductSetEditContentTest
+    features: 'Bundle'
+    title: 'Admin should be able to set/edit product Content when editing a bundle product'
+    description: 'Admin should be able to set/edit product Content when editing a bundle product'
+- filename: StorefrontBundleCartTest
+    features: 'Bundle'
+    title: 'Customer should not be able to add a Bundle Product to the cart without selecting options'
+    description: 'Customer should not be able to add a Bundle Product to the cart without selecting options'
+- filename: AdminAddDefaultVideoBundleProductTest
+    features: 'Bundle'
+    title: 'Admin should be able to add default video for a Bundle Product'
+    description: 'Admin should be able to add default video for a Bundle Product'
+- filename: AdvanceCatalogSearchBundleProductTest
+    features: 'Bundle'
+    title: 'Guest customer should be able to advance search Bundle product with product name'
+    description: 'Guest customer should be able to advance search Bundle product with product name'
+- filename: EnableDisableBundleProductStatusTest
+    features: 'Bundle'
+    title: 'Admin should be able to change a bundle product status to Enabled/Disabled'
+    description: 'Admin should be able to change a bundle product status to Enabled/Disabled'
+- filename: BundleProductFixedPricingTest
+    features: 'Bundle'
+    title: 'Admin should be able to apply fixed pricing for Bundled Product'
+    description: 'Admin should be able to apply fixed pricing for Bundled Product'
+- filename: AdminAttributeSetSelectionTest
+    features: 'Bundle'
+    title: 'Admin should be able to select/edit the “Attributes Set” when creating/editing a bundle product'
+    description: 'Admin should be able to select/edit the “Attributes Set” when creating/editing a bundle product'
+- filename: StorefrontEditBundleProductTest
+    features: 'Bundle'
+    title: 'Customer should be able to change chosen options for Bundle Product when clicking Edit button in Shopping Cart page'
+    description: 'Customer should be able to change chosen options for Bundle Product when clicking Edit button in Shopping Cart page'
+- filename: AdminAddBundleItemsTest
+    features: 'Bundle'
+    title: 'Admin should be able to add/edit bundle items when creating/editing a bundle product'
+    description: 'Admin should be able to add/edit bundle items when creating/editing a bundle product'
+- filename: AdminProductBundleCreationTest
+    features: 'Bundle'
+    title: 'Admin should be able to save and publish a bundle product'
+    description: 'Admin should be able to save and publish a bundle product'
+- filename: MassEnableDisableBundleProductsTest
+    features: 'Bundle'
+    title: 'Admin should be able to mass change bundle products status to Enabled/Disabled'
+    description: 'Admin should be able to mass change bundle products status to Enabled/Disabled'
+- filename: NewProductsListWidgetBundleProductTest
+    features: 'Bundle'
+    title: 'Admin should be able to set Bundle Product as new so that it shows up in the Catalog New Products List Widget'
+    description: 'Admin should be able to set Bundle Product as new so that it shows up in the Catalog New Products List Widget'
+- filename: AdminRemoveDefaultVideoBundleProductTest
+    features: 'Bundle'
+    title: 'Admin should be able to remove default video from a Bundle Product'
+    description: 'Admin should be able to remove default video from a Bundle Product'
+- filename: StorefrontAdminEditDataTest
+    features: 'Bundle'
+    title: 'Customer should be able to see chosen options for Bundle Product in Shopping Cart when Option Title is edited in Admin'
+    description: 'Customer should be able to see chosen options for Bundle Product in Shopping Cart when Option Title is edited in Admin'
+- filename: AdminLoginTest
+    features: 'Backend'
+    title: 'Admin should be able to log into the Magento Admin backend'
+    description: 'Admin should be able to log into the Magento Admin backend'
+- filename: AdminMenuNavigationWithSecretKeysTest
+    features: 'Backend'
+    title: 'Admin should be able to navigate between menu options with secret url keys enabled'
+    description: 'Admin should be able to navigate between menu options with secret url keys enabled'
+- filename: EndToEndB2CAdminTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdvanceCatalogSearchDownloadableProductTest
+    features: 'Downloadable'
+    title: 'Guest customer should be able to advance search Downloadable product with product name'
+    description: 'Guest customer should be able to advance search Downloadable product with product name'
+- filename: AdminRemoveDefaultVideoDownloadableProductTest
+    features: 'Downloadable'
+    title: 'Admin should be able to remove default video from a Downloadable Product'
+    description: 'Admin should be able to remove default video from a Downloadable Product'
+- filename: AdminAddDefaultVideoDownloadableProductTest
+    features: 'Downloadable'
+    title: 'Admin should be able to add default video for a Downloadable Product'
+    description: 'Admin should be able to add default video for a Downloadable Product'
+- filename: EndToEndB2CAdminTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminDownloadableSetEditRelatedProductsTest
+    features: 'Downloadable'
+    title: 'Admin should be able to set/edit Related Products information when editing a downloadable product'
+    description: 'Admin should be able to set/edit Related Products information when editing a downloadable product'
+- filename: AdminRemoveDefaultImageDownloadableProductTest
+    features: 'Downloadable'
+    title: 'Admin should be able to remove default images from a Downloadable Product'
+    description: 'Admin should be able to remove default images from a Downloadable Product'
+- filename: AdminDownloadableProductSetEditContentTest
+    features: 'Downloadable'
+    title: 'Admin should be able to set/edit product Content when editing a downloadable product'
+    description: 'Admin should be able to set/edit product Content when editing a downloadable product'
+- filename: NewProductsListWidgetDownloadableProductTest
+    features: 'Downloadable'
+    title: 'Admin should be able to set Downloadable Product as new so that it shows up in the Catalog New Products List Widget'
+    description: 'Admin should be able to set Downloadable Product as new so that it shows up in the Catalog New Products List Widget'
+- filename: AdminAddDefaultImageDownloadableProductTest
+    features: 'Downloadable'
+    title: 'Admin should be able to add default images for a Downloadable Product'
+    description: 'Admin should be able to add default images for a Downloadable Product'
+- filename: EndToEndB2CGuestUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: CheckoutSpecificDestinationsTest
+    features: 'Checkout'
+    title: 'Check that top destinations can be removed after a selection was previously saved'
+    description: 'Check that top destinations can be removed after a selection was previously saved'
+- filename: AddressStateFieldForUKCustomerRemainOptionAfterRefreshTest
+    features: 'Checkout'
+    title: 'Address State Field For UK Customers Remain Option even After Browser Refresh'
+    description: 'Address State Field For UK Customers Remain Option even After Browser Refresh'
+- filename: StorefrontCustomerCheckoutTest
+    features: 'Checkout'
+    title: 'Customer Checkout'
+    description: 'Should be able to place an order as a customer.'
+- filename: CheckCheckoutSuccessPageTest
+    features: 'Checkout'
+    title: 'Customer Checkout'
+    description: 'To be sure that other elements of Success page are shown for placed order as registered Customer.'
+- filename: NoErrorCartCheckoutForProductsDeletedFromMiniCartTest
+    features: 'Checkout'
+    title: 'Delete product from Checkout'
+    description: 'No error from cart should be thrown for product deleted from minicart'
+- filename: AddressStateFieldShouldNotAcceptJustIntegerValuesTest
+    features: 'Checkout'
+    title: 'Guest Checkout'
+    description: 'Address State field should not allow just integer values'
+- filename: StorefrontGuestCheckoutTest
+    features: 'Checkout'
+    title: 'Guest Checkout'
+    description: 'Should be able to place an order as a Guest.'
+- filename: EndToEndB2CLoggedInUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: IdentityOfDefaultBillingAndShippingAddressTest
+    features: 'Customer'
+    title: 'Checking assignment of default billing address after placing an orde'
+    description: 'In 'Address book' field 'Default Billing Address' should be the same as 'Default Shipping Address''
+- filename: CaptchaFormsDisplayingTest
+    features: 'Captcha'
+    title: 'Captcha forms displaying'
+    description: 'Captcha forms displaying'
+- filename: AdminRemoveDefaultVideoGroupedProductTest
+    features: 'GroupedProduct'
+    title: 'Admin should be able to remove default video from a Grouped Product'
+    description: 'Admin should be able to remove default video from a Grouped Product'
+- filename: AdminGroupedSetEditRelatedProductsTest
+    features: 'GroupedProduct'
+    title: 'Admin should be able to set/edit Related Products information when editing a grouped product'
+    description: 'Admin should be able to set/edit Related Products information when editing a grouped product'
+- filename: NewProductsListWidgetGroupedProductTest
+    features: 'GroupedProduct'
+    title: 'Admin should be able to set Grouped Product as new so that it shows up in the Catalog New Products List Widget'
+    description: 'Admin should be able to set Grouped Product as new so that it shows up in the Catalog New Products List Widget'
+- filename: AdvanceCatalogSearchGroupedProductTest
+    features: 'GroupedProduct'
+    title: 'Guest customer should be able to advance search Grouped product with product name'
+    description: 'Guest customer should be able to advance search Grouped product with product name'
+- filename: AdminGroupedProductSetEditContentTest
+    features: 'GroupedProduct'
+    title: 'Admin should be able to set/edit product Content when editing a grouped product'
+    description: 'Admin should be able to set/edit product Content when editing a grouped product'
+- filename: AdminRemoveDefaultImageGroupedProductTest
+    features: 'GroupedProduct'
+    title: 'Admin should be able to remove default images from a Grouped Product'
+    description: 'Admin should be able to remove default images from a Grouped Product'
+- filename: EndToEndB2CAdminTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminAddDefaultImageGroupedProductTest
+    features: 'GroupedProduct'
+    title: 'Admin should be able to add default images for a Grouped Product'
+    description: 'Admin should be able to add default images for a Grouped Product'
+- filename: AdminAddDefaultVideoGroupedProductTest
+    features: 'GroupedProduct'
+    title: 'Admin should be able to add default video for a Grouped Product'
+    description: 'Admin should be able to add default video for a Grouped Product'
+- filename: AdminAddWidgetToWYSIWYGWithCatalogProductLinkTypeTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS page with widget type- Catalog product link'
+    description: 'Admin should be able to create a CMS page with widget type- Catalog product link'
+- filename: AdminCreateCmsPageTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS Page'
+    description: 'Admin should be able to create a CMS Page'
+- filename: VerifyTinyMCEv4IsNativeWYSIWYGOnBlockTest
+    features: 'Cms'
+    title: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Block'
+    description: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Block'
+- filename: AdminCreateCmsBlockTest
+    features: 'Cms'
+    title: 'Admin should be able to duplicate a CMS block'
+    description: 'Admin should be able to duplicate a CMS block'
+- filename: VerifyTinyMCEv4IsNativeWYSIWYGOnCMSPageTest
+    features: 'Cms'
+    title: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on CMS Page'
+    description: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on CMS Page'
+- filename: AdminAddImageToWYSIWYGCMSTest
+    features: 'Cms'
+    title: 'Admin should be able to add image to WYSIWYG content of CMS Page'
+    description: 'Admin should be able to add image to WYSIWYG content of CMS Page'
+- filename: AdminAddWidgetToWYSIWYGWithCMSPageLinkTypeTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS page with widget type- CMS page link'
+    description: 'Admin should be able to create a CMS page with widget type- CMS page link'
+- filename: AdminAddImageToCMSPageTinyMCE3Test
+    features: 'Cms'
+    title: 'Verify that admin is able to upload image to a CMS Page with TinyMCE3 enabled'
+    description: 'Verify that admin is able to upload image to CMS Page with TinyMCE3 enabled'
+- filename: AdminAddWidgetToWYSIWYGBlockTest
+    features: 'Cms'
+    title: 'Admin should be able to add widget to WYSIWYG content of Block'
+    description: 'Admin should be able to add widget to WYSIWYG content Block'
+- filename: AdminAddWidgetToWYSIWYGWithRecentlyComparedProductsTypeTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS page with widget type- Recently Compared Products'
+    description: 'Admin should be able to create a CMS page with widget type- Recently Compared Products'
+- filename: AdminAddWidgetToWYSIWYGWithCatalogCategoryLinkTypeTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS page with widget type- Catalog category link'
+    description: 'Admin should be able to create a CMS page with widget type- Catalog category link'
+- filename: AdminAddWidgetToWYSIWYGWithRecentlyViewedProductsTypeTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS page with widget type- Recently Viewed Products'
+    description: 'Admin should be able to create a CMS page with widget type- Recently Viewed Products'
+- filename: AdminAddWidgetToWYSIWYGWithCMSStaticBlockTypeTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS page with widget type- CMS Static Block'
+    description: 'Admin should be able to create a CMS page with widget type- CMS Static Block'
+- filename: AdminAddVariableToWYSIWYGBlockTest
+    features: 'Cms'
+    title: 'Admin should be able to add variable to WYSIWYG content of Block'
+    description: 'You should be able to add variable to WYSIWYG content Block'
+- filename: AdminAddImageToWYSIWYGBlockTest
+    features: 'Cms'
+    title: 'Admin should be able to add image to WYSIWYG content of Block'
+    description: 'Admin should be able to add image to WYSIWYG content of Block'
+- filename: AdminAddVariableToWYSIWYGCMSTest
+    features: 'Cms'
+    title: 'Admin should be able to insert the default Magento variable into content of WYSIWYG on CMS Pages'
+    description: 'Admin should be able to insert the default Magento variable into content of WYSIWYG on CMS Pages'
+- filename: AdminAddWidgetToWYSIWYGWithCatalogProductListTypeTest
+    features: 'Cms'
+    title: 'Admin should be able to create a CMS page with widget type- Catalog product list'
+    description: 'Admin should be able to create a CMS page with widget type- Catalog product list'
+- filename: ThemeTest
+    features: 'Theme'
+    title: 'Magento Rush theme should not be available in Themes grid'
+    description: 'Magento Rush theme should not be available in Themes grid'
+- filename: StorefrontFilterByTextSwatchTest
+    features: 'Swatches'
+    title: 'Customers can filter products using text swatches'
+    description: 'Customers can filter products using text swatches'
+- filename: StorefrontSwatchProductWithFileCustomOptionTest
+    features: 'ConfigurableProduct'
+    title: 'Configurable product with swatch option and file custom option'
+    description: 'Configurable product with swatch option and file custom option. When adding to cart with an invalid filetype, the correct error message is shown, and options remain selected.'
+- filename: StorefrontFilterByImageSwatchTest
+    features: 'Swatches'
+    title: 'Customers can filter products using image swatches'
+    description: 'Customers can filter products using image swatches'
+- filename: AdminCreateVisualSwatchTest
+    features: 'Swatches'
+    title: 'Admin can create product attribute with picked color swatch'
+    description: 'Admin can create product attribute with picked color swatch'
+- filename: AdminCreateVisualSwatchWithNonValidOptionsTest
+    features: 'Swatches'
+    title: 'Admin should be able to create swatch product attribute'
+    description: 'Admin should be able to create swatch product attribute'
+- filename: AdminCreateImageSwatchTest
+    features: 'Swatches'
+    title: 'Admin can create product attribute with image swatch'
+    description: 'Admin can create product attribute with image swatch'
+- filename: AdminCreateTextSwatchTest
+    features: 'Swatches'
+    title: 'Admin can create product attribute with text swatch'
+    description: 'Admin can create product attribute with text swatch'
+- filename: StorefrontFilterByVisualSwatchTest
+    features: 'Swatches'
+    title: 'Customers can filter products using visual swatches'
+    description: 'Customers can filter products using visual swatches '
+- filename: StorefrontInactiveCatalogRuleTest
+    features: 'CatalogRule'
+    title: 'Customer should not see the catalog price rule promotion if status is inactive'
+    description: 'Customer should not see the catalog price rule promotion if status is inactive'
+- filename: AdminDeleteCatalogPriceRuleTest
+    features: 'CatalogRule'
+    title: 'Admin should be able to delete catalog price rule'
+    description: 'Admin should be able to delete catalog price rule'
+- filename: AdminCreateCatalogPriceRuleTest
+    features: 'CatalogRule'
+    title: 'Admin should be able to create a catalog price rule applied as a percentage of original (for simple product)'
+    description: 'Admin should be able to create a catalog price rule applied as a percentage of original (for simple product)'
+- filename: AdminApplyCatalogRuleByCategoryTest
+    features: 'CatalogRule'
+    title: 'Admin should be able to apply the catalog rule by category'
+    description: 'Admin should be able to apply the catalog rule by category'
+- filename: AdminAddVariableToWYSIWYGNewsletterTest
+    features: 'Newsletter'
+    title: 'Admin should be able to add variable to WYSIWYG Editor of Newsletter'
+    description: 'Admin should be able to add variable to WYSIWYG Editor Newsletter'
+- filename: AdminAddWidgetToWYSIWYGNewsletterTest
+    features: 'Newsletter'
+    title: 'Admin should be able to add widget to WYSIWYG Editor of Newsletter'
+    description: 'Admin should be able to add widget to WYSIWYG Editor Newsletter'
+- filename: AdminAddImageToWYSIWYGNewsletterTest
+    features: 'Newsletter'
+    title: 'Admin should be able to add image to WYSIWYG content of Newsletter'
+    description: 'Admin should be able to add image to WYSIWYG content Newsletter'
+- filename: VerifyTinyMCEv4IsNativeWYSIWYGOnNewsletterTest
+    features: 'Newsletter'
+    title: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Newsletter'
+    description: 'Admin should see TinyMCEv4.6 is the native WYSIWYG on Newsletter'
+- filename: VerifySubscribedNewsletterDisplayedTest
+    features: 'Newsletter'
+    title: 'Newsletter subscription when user is registered on 2 stores'
+    description: 'Newsletter subscription when user is registered on 2 stores'
+- filename: AdminConfigurableProductCreateTest
+    features: 'ConfigurableProduct'
+    title: 'admin should be able to create a configurable product with attributes'
+    description: 'admin should be able to create a configurable product with attributes'
+- filename: ConfigurableProductAttributeNameDesignTest
+    features: 'Product Customizable Option'
+    title: 'Generation of configurable products with an attribute named 'design''
+    description: 'Generation of configurable products with an attribute named 'design''
+- filename: AdminConfigurableProductOutOfStockTest
+    features: 'ConfigurableProduct'
+    title: 'Configurable Product goes 'Out of Stock' if all associated Simple Products are 'Out of Stock''
+    description: 'Configurable Product goes 'Out of Stock' if all associated Simple Products are 'Out of Stock''
+- filename: EndToEndB2CGuestUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminConfigurableProductUpdateAttributeTest
+    features: 'ConfigurableProduct'
+    title: 'Admin should be able to update existing attributes of a configurable product'
+    description: 'Admin should be able to update existing attributes of a configurable product'
+- filename: AdminRemoveDefaultImageConfigurableTest
+    features: 'ConfigurableProduct'
+    title: 'Admin should be able to remove default images from a Configurable Product'
+    description: 'Admin should be able to remove default images from a Configurable Product'
+- filename: NewProductsListWidgetConfigurableProductTest
+    features: 'ConfigurableProduct'
+    title: 'Admin should be able to set Configurable Product as new so that it shows up in the Catalog New Products List Widget'
+    description: 'Admin should be able to set Configurable Product as new so that it shows up in the Catalog New Products List Widget'
+- filename: AdminAddDefaultImageConfigurableTest
+    features: 'ConfigurableProduct'
+    title: 'Admin should be able to add default images for a Configurable Product'
+    description: 'Admin should be able to add default images for a Configurable Product'
+- filename: EndToEndB2CAdminTest
+    features: ''
+    title: ''
+    description: ''
+- filename: ConfigurableProductPriceAdditionalStoreViewTest
+    features: 'ConfigurableProductPriceStoreFront'
+    title: 'Configurable product prices should not disappear on storefront for additional store'
+    description: 'Configurable product price should not disappear for additional stores on frontEnd if disabled for default store'
+- filename: AdminConfigurableProductSetEditContentTest
+    features: 'ConfigurableProduct'
+    title: 'Admin should be able to set/edit product Content when editing a configurable product'
+    description: 'Admin should be able to set/edit product Content when editing a configurable product'
+- filename: AdminConfigurableSetEditRelatedProductsTest
+    features: 'ConfigurableProduct'
+    title: 'Admin should be able to set/edit Related Products information when editing a configurable product'
+    description: 'Admin should be able to set/edit Related Products information when editing a configurable product'
+- filename: AdminConfigurableProductDeleteTest
+    features: 'ConfigurableProduct'
+    title: 'admin should be able to delete a configurable product'
+    description: 'admin should be able to delete a configurable product'
+- filename: StorefrontConfigurableProductDetailsTest
+    features: 'ConfigurableProduct'
+    title: 'Guest customer should see basic Configurable Product details'
+    description: 'Guest customer should see basic Configurable Product details'
+- filename: StorefrontConfigurableProductViewTest
+    features: 'ConfigurableProduct'
+    title: 'customer should see the configurable product in the category grid'
+    description: 'customer should see the configurable product in the category grid'
+- filename: AdminConfigurableProductSearchTest
+    features: 'ConfigurableProduct'
+    title: 'admin should be able to search for a configurable product'
+    description: 'admin should be able to search for a configurable product'
+- filename: AdminRelatedProductsTest
+    features: 'ConfigurableProduct'
+    title: 'Admin should be able to promote products as related'
+    description: 'Admin should be able to promote products as related'
+- filename: AdvanceCatalogSearchConfigurableTest
+    features: 'ConfigurableProduct'
+    title: 'Guest customer should be able to advance search configurable product with product name'
+    description: 'Guest customer should be able to advance search configurable product with product name'
+- filename: StorefrontConfigurableProductChildSearchTest
+    features: 'ConfigurableProduct'
+    title: 'Guest customer should be able to search configurable product by attributes of child products'
+    description: 'Guest customer should be able to search configurable product by attributes of child products'
+- filename: StorefrontConfigurableProductWithFileCustomOptionTest
+    features: 'ConfigurableProduct'
+    title: 'Correct error message and redirect with invalid file option'
+    description: 'Configurable product has file custom option. When adding to cart with an invalid filetype, the correct error message is shown, and options remain selected.'
+- filename: AdminConfigurableProductUpdateTest
+    features: 'ConfigurableProduct'
+    title: 'admin should be able to bulk update attributes of configurable products'
+    description: 'admin should be able to bulk update attributes of configurable products'
+- filename: EndToEndB2CLoggedInUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminCreateAndDeleteBackupsTest
+    features: 'Backup'
+    title: 'Create and delete backups'
+    description: 'An admin user can create a backup of each type and delete each backup.'
+- filename: ProductQuickSearchUsingElasticSearchTest
+    features: 'Search'
+    title: 'Product quick search doesn't throw exception after ES is chosen as search engine'
+    description: 'Verify no elastic search exception is thrown when searching for product before catalogsearch reindexing'
+- filename: StorefrontCreateCustomerTest
+    features: 'Customer'
+    title: 'Admin should be able to create a customer via the storefront'
+    description: 'Admin should be able to create a customer via the storefront'
+- filename: AddingProductWithExpiredSessionTest
+    features: 'Module/ Catalog'
+    title: 'Adding a product to cart from category page with an expired session'
+    description: 'Adding a product to cart from category page with an expired session'
+- filename: AdminResetCustomerPasswordTest
+    features: 'Customer'
+    title: ''
+    description: 'Admin should be able to reset customer password'
+- filename: StorefrontPersistedCustomerLoginTest
+    features: 'Customer'
+    title: 'Persisted customer should be able to login from storefront'
+    description: 'Persisted customer should be able to login from storefront'
+- filename: AdminCreateCustomerTest
+    features: 'Customer'
+    title: 'Admin should be able to create a customer'
+    description: 'Admin should be able to create a customer'
+- filename: EndToEndB2CLoggedInUserTest
+    features: 'End to End scenarios'
+    title: 'You should be able to pass End to End B2C Logged In User scenario'
+    description: 'New user signup and browses catalog, searches for product, adds product to cart, adds product to wishlist, compares products, uses coupon code and checks out.'
+- filename: StorefrontRemoveProductsFromWishlistUsingSidebarTest
+    features: 'Wishlist'
+    title: 'Remove products from the wishlist using the sidebar.'
+    description: 'Products removed from wishlist and a customer remains on the same page.'
+- filename: StorefrontAddMultipleStoreProductsToWishlistTest
+    features: 'Wishlist'
+    title: 'Customer should be able to add products to wishlist from different stores'
+    description: 'All products added to wishlist should be visible on any store. Even if product visibility was set to 'Not Visible Individually' for this store'
+- filename: StorefrontAddProductsToCartFromWishlistUsingSidebarTest
+    features: 'Wishlist'
+    title: 'Add products from the wishlist to the cart using the sidebar.'
+    description: 'Products added to the cart from wishlist and a customer remains on the same page.'
+- filename: StorefrontDeletePersistedWishlistTest
+    features: 'Wishlist'
+    title: 'Customer should be able to delete a persistent wishlist'
+    description: 'Customer should be able to delete a persistent wishlist'
+- filename: ConfigurableProductChildImageShouldBeShownOnWishListTest
+    features: 'Wishlist'
+    title: 'When user add Configurable child product to WIshlist then child product image should be shown in Wishlist'
+    description: 'When user add Configurable child product to WIshlist then child product image should be shown in Wishlist'
+- filename: StorefrontUpdateWishlistTest
+    features: 'Wishlist'
+    title: 'Displaying of message after Wish List update'
+    description: 'Displaying of message after Wish List update'
+- filename: EndToEndB2CLoggedInUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: AdminConfigurationEnableDisableAnalyticsTest
+    features: 'Analytics'
+    title: 'Enable Disable Advanced Reporting'
+    description: 'An admin user can enable/disable Advanced Reporting.'
+- filename: AdminConfigurationBlankIndustryTest
+    features: 'Analytics'
+    title: 'Try to save empty Magento Advanced Reporting vertical'
+    description: 'An admin user cannot save a blank industry setting on the Advanced Reporting configuration page.'
+- filename: AdminConfigurationPermissionTest
+    features: 'Analytics'
+    title: 'Advanced Reporting configuration permission'
+    description: 'An admin user without Analytics permissions should not be able to see the Advanced Reporting configuration page.'
+- filename: AdminConfigurationTimeToSendDataTest
+    features: 'Analytics'
+    title: 'Time of the day to collect data'
+    description: 'An admin user can change the time of the day to collect data setting on the Advanced Reporting configuration page.'
+- filename: AdminConfigurationIndustryTest
+    features: 'Analytics'
+    title: 'Set Magento Advanced reporting industry'
+    description: 'An admin user can change the industry setting on the Advanced Reporting configuration page.'
+- filename: AdminCreateStoreViewTest
+    features: 'Store'
+    title: 'Admin should be able to create a store view'
+    description: 'Admin should be able to create a store view'
+- filename: AdminCreateStoreGroupTest
+    features: 'Store'
+    title: 'Admin should be able to create a store group'
+    description: 'Admin should be able to create a store group'
+- filename: AdminCreateCartPriceRuleForGeneratedCouponTest
+    features: 'SalesRule'
+    title: 'Admin should be able to create a cart price rule for auto generated coupon codes'
+    description: 'Admin should be able to create a cart price rule for auto generated coupon codes'
+- filename: AdminCreateFixedAmountWholeCartDiscountTest
+    features: 'SalesRule'
+    title: 'Admin should be able to create a cart price rule of type Fixed amount discount for whole cart'
+    description: 'Admin should be able to create a cart price rule of type Fixed amount discount for whole cart'
+- filename: EndToEndB2CGuestUserTest
+    features: ''
+    title: ''
+    description: ''
+- filename: CartPriceRuleForConfigurableProductTest
+    features: 'SalesRule'
+    title: 'Checking Cart Price Rule for configurable products'
+    description: 'Checking Cart Price Rule for configurable products'
+- filename: AdminCreateFixedAmountDiscountTest
+    features: 'SalesRule'
+    title: 'Admin should be able to create a cart price rule of type Fixed amount discount'
+    description: 'Admin should be able to create a cart price rule of type Fixed amount discount'
+- filename: AdminCreateCartPriceRuleForCouponCodeTest
+    features: 'SalesRule'
+    title: 'Admin should be able to create a cart price rule for a specific coupon code'
+    description: 'Admin should be able to create a cart price rule for a specific coupon code'
+- filename: AdminCreatePercentOfProductPriceTest
+    features: 'SalesRule'
+    title: 'Admin should be able to create a cart price rule of type Percent of product price discount'
+    description: 'Admin should be able to create a cart price rule of type Percent of product price discount'
+- filename: PriceRuleCategoryNestingTest
+    features: 'SalesRule'
+    title: 'Category nesting level must be the same as were created in categories.'
+    description: 'Category nesting level must be the same as were created in categories.'
+- filename: AdminCreateBuyXGetYFreeTest
+    features: 'SalesRule'
+    title: 'Admin should be able to create a cart price rule of type Buy X get Y free'
+    description: 'Admin should be able to create a cart price rule of type Buy X get Y free'
+- filename: EndToEndB2CLoggedInUserTest
+    features: ''
+    title: ''
+    description: ''
