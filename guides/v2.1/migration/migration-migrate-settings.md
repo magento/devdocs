@@ -20,6 +20,8 @@ According to our data migration [order]({{ page.baseurl }}/migration/migration-m
 
 2. Change to the Magento `/bin` directory or make sure it is added to your system PATH.
 
+3. Make sure Magento is deployed in Default Mode (Developer Mode will cause validation errors in the Migration Tool)
+
 See the [First steps]({{ page.baseurl }}/migration/migration-migrate.html#migration-command-run-first) section for more details.
 
 ## Run the settings migration command {#migrate-data-cmd}
