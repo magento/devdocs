@@ -12,7 +12,7 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 We do not recommend using Codeception commands directly as they can break the MFTF basic workflow.
 All the Codeception commands you need are wrapped using the [`mftf` tool][].
 
-To run the Codeception testing framework commands directly, change your directory to `dev/tests/acceptance`.
+To run the Codeception testing framework commands directly, change your directory to the `<Magento root>`.
 
 ## Usage examples
 
@@ -22,13 +22,13 @@ Run all the generated tests:
 vendor/bin/codecept run functional
 ```
 
-Run all tests without the `<group value="skip"/>` [annotation](../test/annotations.html):
+Run all tests without the `<group value="skip"/>` [annotation][]:
 
 ```bash
 vendor/bin/codecept run functional --skip-group skip
 ```
 
-Run all tests with the `<group value="example"/>` [annotation](../test/annotations.html) but with no `<group value="skpip"/>`:
+Run all tests with the `<group value="example"/>` [annotation][] but with no `<group value="skpip"/>`:
 
 ```bash
 vendor/bin/codecept run functional --group example --skip-group skip
@@ -45,14 +45,14 @@ vendor/bin/codecept run
 {: .bs-callout .bs-callout-info }
 The following documentation corresponds to Codeception 2.3.8.
 
-```
+```bash
 Full reference:
 
- Arguments:
+Arguments:
    suite                 suite to be tested
    test                  test to be run
 
-  Options:
+Options:
    -o, --override=OVERRIDE Override config values (multiple values allowed)
    --config (-c)         Use custom path for config
    --report              Show output in compact style
@@ -85,7 +85,7 @@ Full reference:
    --no-interaction (-n) Do not ask any interactive question.
 ```
 
-
 <!-- Link definitions -->
 
 [`mftf` tool]: mftf.html
+[annotation]: ../test/annotations.html

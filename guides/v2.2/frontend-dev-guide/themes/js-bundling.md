@@ -18,7 +18,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
     ```bash
     php bin/magento deploy:mode:set production
     ```
- 
+
 2. Enable JavaScript bundling:
 
     ```bash
@@ -30,7 +30,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
     ```bash
     php -f bin/magento config:set dev/js/minify_files 1
     ```
- 
+
 4. Enable cache busting on static file URLs. This ensures users get the latest version of the assets anytime they update:
 
     ```bash
@@ -41,7 +41,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 
 ## How bundling works in Magento
 
-When you enable bundling, Magento combines hundreds of JavaScript files into just a few JavaScript bundles and downloads those bundles for each page. Because the browser downloads the bundles sychronously, page rendering *is* blocked until all bundles finish downloading. But the time saved from reducing server requests from hundreds to just a few, usually offsets the cost of downloading the bundles synchronously.
+When you enable bundling, Magento combines hundreds of JavaScript files into just a few JavaScript bundles and downloads those bundles for each page. Because the browser downloads the bundles synchronously, page rendering *is* blocked until all bundles finish downloading. But the time saved from reducing server requests from hundreds to just a few, usually offsets the cost of downloading the bundles synchronously.
 
 ### Excluding files
 
