@@ -141,7 +141,7 @@ Weeks 12 to 22 | One backup per month
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 
 -  **Recovery Point Objective (RPO)**—is 6 hours (maximum time to last backup).
--  **Recover Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
+-  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large EBS volumes take more time to restore.
 
 ### Production technology stack
 

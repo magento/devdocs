@@ -83,7 +83,6 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | CE | Integration | /V1/integration/customer/token | POST |
 | CE | Quote | /V1/guest-carts/:cartId | GET |
 | CE | Quote | /V1/guest-carts | POST |
-| CE | Quote | /V1/guest-carts/:cartId | PUT |
 | CE | Quote | /V1/guest-carts/:cartId/order | PUT |
 | CE | Quote | /V1/guest-carts/:cartId/shipping-methods | GET |
 | CE | Quote | /V1/guest-carts/:cartId/estimate-shipping-methods | POST |
