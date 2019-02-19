@@ -30,6 +30,6 @@ If you want to change the values after installation, connect to your environment
 
 Use the following environment variable to secure access to your Magento Admin UI. If specified, this value overrides the default URL during installation.
 
-**`ADMIN_URL`**—The relative URL to access the Magento Admin UI. For example: `/admin`. For security reasons, we recommend that you choose a value other than `admin`,`backend`, or another term that is easy to guess.
+**`ADMIN_URL`**—The relative URL to access the Magento Admin UI. For example: `/admin`. For security reasons, we recommend that you choose a value other than `admin`, `backend`, or another term that is easy to guess.
 
 If you need to change the Admin URL after installation, connect to your environment using ssh and use the Magento CLI [`magento setup:config`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html) command to change the URL. 
