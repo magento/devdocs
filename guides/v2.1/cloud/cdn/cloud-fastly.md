@@ -149,7 +149,7 @@ instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/c
 
 Fastly supports forcing unencrypted requests to TLS through the Force TLS
 feature. Set up a secure base URL in Magento and turn on the Force TLS option
-in the Fastly extension. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md).
+in the Fastly CDN module. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md).
 
 ## GeoIP service support {#geoip}
 
