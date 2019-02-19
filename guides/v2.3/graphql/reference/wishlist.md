@@ -5,15 +5,11 @@ title: Wish list endpoint
 
 The Wish list endpoint returns the contents of a customer's wish list.
 
-## Query structure
-
-`wishlist: WishlistOutput`
-
 ### Wish list attributes
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [Wishlistitem] | An array of items in the customer's wish list
+`items` | [Wishlistitem](#wishlistitem) | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `name` | String | When multiple wish lists are enabled, the name the customer assigns to the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
@@ -26,8 +22,12 @@ Attribute | Data type | Description
 `added_at` | String | The time when the customer added the item to the wish list
 `description` | String | The customer's comment about this item
 `id` | Int | The wish list item ID
-`product` | <a href="{{ page.baseurl }}/guides/v2.3/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+`product` | <a href="{{ page.baseurl }}/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this wish list item
+
+## Query syntax
+
+`wishlist: WishlistOutput`
 
 ## Example usage
 
