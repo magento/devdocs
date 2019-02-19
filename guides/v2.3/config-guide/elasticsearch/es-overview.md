@@ -14,29 +14,28 @@ functional_areas:
 
 ## Elasticsearch overview {#overview}
 
-In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co) for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
+Using [Elasticsearch](https://www.elastic.co) as your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search solution provides the following benefits:
 
-*	Elasticsearch performs quick and advanced searches on products in the catalog
-*	Elasticsearch Analyzers support multiple languages
-*	Supports stop words and synonyms
-*	Indexing does not impact customers until reindex is completed
+* Quick and advanced searches on products in the catalog
+* Support for multiple languages
+* Support for stop words and synonyms
+* Indexing does not impact customers until reindex is completed
 
-	Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers
+  Elasticsearch returns search results based on the last generated index until the new one has been completely indexed so there's no disruption to customers.
 
-*	Accurate, performant, scalable
-*	Works well out of the box
-*	Easy to horizontally scale
-*	Supports real-time data and analysis
-*	Can be used as a document-oriented data store
-*	Applications in framework beyond search&mdash;reporting, personalization, performance, and storage
+* Accurate, performant, and scalable
+* Works well out of the box
+* Easy to horizontally scale
+* Supports real-time data and analysis
+* Can be used as a document-oriented data store
+* Applications in framework beyond search, including reporting, personalization, performance, and storage
 
 ### Supported versions {#es-spt-versions}
-{{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
 
-*	Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
-*	Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
+{{site.data.var.ce}} 2.3.x supports the following Elasticsearch versions:
 
-Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 5.1. (Before version 2.2.3, Magento used PHP client version 2.0.)
+* Elasticsearch [5.2](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2)
+* Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5)
 
 ### Recommended configuration {#es-arch}
 
@@ -74,56 +73,53 @@ The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
 *	[Install the Java Software Development Kit (JDK)](#prereq-java)
-*	[Install Elasticsearch 5.x](#es-install-es5)
+*	[Install Elasticsearch 5.2](#es-install-es5)
 *	[Install Elasticsearch 2.x](#es-install-es)
-*	[Upgrade from Elasticsearch 2.x to 5.x](#es-upgrade5)
+*	[Upgrade from Elasticsearch 2.x to 5.2](#es-upgrade5)
 *	[Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
 
 {% include config/solr-elastic-selinux.md %}
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch 5.x {#es-install-es5}
+### Install Elasticsearch 5.2 {#es-install-es5}
 
+{:.bs-callout .bs-callout-info}
 This section discusses how to install Elasticsearch 5.2 from their repository. You can select a more recent version of 5.x, but 5.2 has been tested.
 
-1.	Log in to your Magento server as a user with `root` privileges.
-2.	_CentOS_: Enter the following commands in the order shown:
+1. Log in to your Magento server as a user with `root` privileges.
+1. _CentOS_: Enter the following commands in the order shown:
 
-		rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-		vim /etc/yum.repos.d/Elasticsearch.repo
-
-    Add the following:
-
-    ```
-    [elasticsearch-5.x]
-    name=Elasticsearch repository for 5.x packages
-    baseurl=https://artifacts.elastic.co/packages/5.x/yum
-    gpgcheck=1
-    gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-    enabled=1
-    autorefresh=1
-    type=rpm-md
+    ```bash
+    sudo yum install java-1.8.0-openjdk
     ```
 
-    Enter the following commands:
+    ```bash
+    curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.2.0.rpm
+    ```
+  
+    ```bash
+    sudo rpm -i elasticsearch-5.2.0.rpm
+    ```
 
-		yum -y install elasticsearch
-		chkconfig --add elasticsearch
+1. _Ubuntu_: Install the Elasticsearch 5.2 version using the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/deb.html)
 
-3.	_Ubuntu_: Install the Elasticsearch 5.2 version using the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/deb.html)
+1. Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html) for more information.
+1. Start Elasticsearch:
 
-4.	Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/settings.html) for more information.
-5.	Start Elasticsearch:
+    ```bash
+    sudo service elasticsearch start
+    ```
 
-    `service elasticsearch start`
-6.  Verify that Elasticsearch is working by entering the following command on the server on which it's running:
+1. Verify that Elasticsearch is working by entering the following command on the server on which it's running:
 
-    `curl -XGET '<host>:9200/_cat/health?v&pretty'`
+    ```bash
+    curl -XGET '<host>:9200/_cat/health?v&pretty'
+    ```
 
     A message similar to the following is displayed:
 
-    ```
+    ```terminal
     epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks
     1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
     ```

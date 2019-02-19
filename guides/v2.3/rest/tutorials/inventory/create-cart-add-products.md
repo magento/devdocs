@@ -39,7 +39,7 @@ None
 
 **Response**
 
-The response is the `quoteId`: 4
+The response is the `quoteId`: 3
 
 ## Check for product availability
 
@@ -59,7 +59,7 @@ The `get-product-salable-quantity` endpoint indicates how many items are availab
 
 **Endpoint**
 
-`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
+`GET http://<host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB01/2`
 
 **Scope**
 
@@ -85,7 +85,7 @@ Use the same endpoint to check the quantity available for product `24-WB03`.
 
 **Endpoint**
 
-`GET http://<host>rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
+`GET http://<host>/rest/us/V1/inventory/get-product-salable-quantity/24-WB03/2`
 
 **Scope**
 
@@ -134,7 +134,7 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
   "cartItem": {
     "sku": "24-WB01",
     "qty": 20,
-    "quote_id": "4"
+    "quote_id": "3"
   }
 }
 ```
@@ -145,12 +145,12 @@ Note the `item_id` for use in subsequent steps.
 
 ``` json
 {
-    "item_id": 3,
+    "item_id": 5,
     "sku": "24-WB01",
     "qty": 20,
     "name": "Voyage Yoga Bag",
     "product_type": "simple",
-    "quote_id": "4"
+    "quote_id": "3"
 }
 ```
 
@@ -165,7 +165,7 @@ Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources
   "cartItem": {
     "sku": "24-WB03",
     "qty": 50,
-    "quote_id": "4"
+    "quote_id": "3"
   }
 }
 ```
@@ -176,13 +176,13 @@ Note the `item_id` for use in subsequent steps.
 
 ``` json
 {
-    "item_id": 4,
+    "item_id": 6,
     "sku": "24-WB03",
     "qty": 50,
     "name": "Driven Backpack",
     "price": 36,
     "product_type": "simple",
-    "quote_id": "4"
+    "quote_id": "3"
 }
 ```
 
@@ -197,7 +197,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
   "cartItem": {
     "sku": "240-LV06",
     "qty": 1,
-    "quote_id": "4"
+    "quote_id": "3"
   }
 }
 ```
@@ -206,13 +206,13 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 ``` json
 {
-    "item_id": 5,
+    "item_id": 7,
     "sku": "240-LV06",
     "qty": 1,
     "name": "Yoga Adventure",
     "price": 22,
     "product_type": "downloadable",
-    "quote_id": "4",
+    "quote_id": "3",
     "product_option": {
         "extension_attributes": {
             "downloadable_option": {
@@ -227,4 +227,4 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 ## Verify this step {#verify-step}
 
-Sign in as the customer at `http:<host>/us` and click on the shopping cart. All the items you added display in the cart.
+Sign in as the customer at `http://<host>/us` and click on the shopping cart. All the items you added display in the cart.
