@@ -32,7 +32,7 @@ If you write and contribute a full topic, we will add your name (or your company
 1. When ready, push your branch to your fork.
 1. Create a PR to the [magento/devdocs repo](https://github.com/magento/devdocs). Fill out as much info as possible and link any GitHub issues.
 
-   In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use the version-specific integration branch (`2.3.1-integration`).
+   In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, like `2.3.1-integration`.
 
 The DevDocs team and Maintainers will review the PR and help with formatting and navigation.
 
