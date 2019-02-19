@@ -4,8 +4,40 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Feb 11 11:37:45 2019
+updated: Tue Feb 19 10:45:50 2019
 entries:
+- description: Added [Use parameterized selectors in action groups with argument references](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#use-parameterized-selectors-in-action-groups-with-argument-references)
+    to Tips and Tricks.
+  versions: 2.3.x
+  type: Major update
+  date: February 15, 2019
+  link: https://github.com/magento/devdocs/pull/3754
+- description: "[Debugging](https://devdocs.magento.com/mftf/2.3/debugging.html) topic
+    added to the MFTF guide."
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: February 15, 2019
+  link: https://github.com/magento/devdocs/pull/3755
+- description: Updated the Inventory Management [REST tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/inventory/index.html),
+    [REST reference](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html)
+    and [developer information](https://devdocs.magento.com/guides/v2.3/inventory/source-selection-algorithms.html)
+    to include the Distance Priority Source Selection Algorithm. Added [Import geocodes
+    for Inventory Management](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-inventory.html).
+  versions: 2.3.x
+  type: Major update
+  date: February 12, 2019
+  link: https://github.com/magento/devdocs/pull/3668
+- description: Added reference information for [asynchronous REST endpoints](https://devdocs.magento.com/redoc/2.3/)
+  versions: 2.3.x
+  type: New topic
+  date: February 12, 2019
+  link: https://github.com/magento/devdocs/pull/3731
+- description: Added [MSI 1.1.0](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html)
+    release notes.
+  versions: 2.3.x
+  type: New topic
+  date: February 12, 2019
+  link: https://github.com/magento/devdocs/pull/3569
 - description: Added MFTF tips:<br/>-[Perform the most critical actions first in the
     `<after>` block](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#perform-the-most-critical-actions-first-in-the-after-block)<br/>-[When
     to use `see` versus `seeElement`](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#when-to-use-see-vs-seeelement)
