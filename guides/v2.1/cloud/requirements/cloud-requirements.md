@@ -81,7 +81,7 @@ You cannot upgrade the software, but you can configure the following services:
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
 {:.bs-callout .bs-callout-info}
-See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version compatibility information. 
+See [Magento 2.1.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version compatibility information. 
 
 For Staging and Production environments, you use the Fastly CDN for Magento2 extension for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento).
 
