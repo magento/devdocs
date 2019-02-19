@@ -14,7 +14,7 @@ As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.co
 
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
 
-## Get started 
+## Get started
 
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
 
@@ -28,12 +28,13 @@ If you write and contribute a full topic, we will add your name (or your company
 ![Contributing workflow](https://devdocs.magento.com/common/images/contribute-write-submit-pr.png)
 
 1. Create a new branch on your fork. Use a name that best describes the work, or references a GitHub issue number.
-1. Edit or create markdown (`.md`) files in your branch. 
+1. Edit or create markdown (`.md`) files in your branch.
 1. When ready, push your branch to your fork.
 1. Create a PR to the [magento/devdocs repo](https://github.com/magento/devdocs). Fill out as much info as possible and link any GitHub issues.
 
-The DevDocs team and Maintainers will review the PR and help with formatting and navigation. 
+   In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use the version-specific integration branch (`2.3.1-integration`).
 
+The DevDocs team and Maintainers will review the PR and help with formatting and navigation.
 
 **Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the PR provides a link. We require a signed form and agreement to the terms for contribution.
 
@@ -94,7 +95,6 @@ group: install2
 title: Continue with your installation
 ---
 ```
-
 
 > Key-value pair reference:
 
