@@ -85,7 +85,7 @@ See [Magento 2.3.x technology stack requirements]({{ page.baseurl }}/install-gde
 
 For Staging and Production environments, you use the Fastly CDN for Magento2 extension for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento).
 
-For information about configuring the software versions to use in your implementation, see the documentation for the following {{ site.data.var.ece }} configuration files:
+For information about configuring the software versions to use in your implementation, see the following {{ site.data.var.ece }} configuration files:
 
 *	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 *	[`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
