@@ -32,8 +32,16 @@ This version also provides a `docker:config:convert` command to convert PHP conf
 You must have the following software installed on your local workstation:
 
 -  PHP version 7.0 or later
+    -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
+    -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
 -  [Composer](https://getcomposer.org)
 -  [Docker](https://www.docker.com/get-started)
+
+Before you begin, you must add the following hostname to your `/etc/hosts` file:
+
+```
+127.0.0.1 magento2.docker
+```
 
 #### To launch Docker:
 
@@ -101,9 +109,9 @@ You must have the following software installed on your local workstation:
 
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
-    -  [`http://localhost`](http://localhost)
+    -  [`http://magento2.docker`](http://magento2.docker)
 
-    -  [`https://localhost`](https://localhost)
+    -  [`https://magento2.docker`](https://magento2.docker)
 
 #### To stop containers and restore them afterwards:
 
