@@ -81,4 +81,4 @@ pages:
               url: /graphql/reference/url-resolver.html
 
             - label: Wish list endpoint
-              durl: /graphql/reference/wishlist.html
+              url: /graphql/reference/wishlist.html
