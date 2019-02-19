@@ -20,7 +20,7 @@ If you use Microsoft Windows, take the following steps before continuing:
 
 To enable Xdebug, you must configure your `docker/global.php` file at the time you configure your local workstation to [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html) and **before** you convert the PHP configuration files to Docker ENV files. 
 
-Update the `docker/global.php` file with the following changes:
+Add or update the following variables in the `docker/global.php` file:
 
 ```php
 <?php
@@ -30,7 +30,7 @@ return [
     'PHP_ENABLE_XDEBUG' => true,
     // Add the name of the server created in the IDE
     'PHP_IDE_CONFIG' => 'serverName=myServer',
-    // Modify the remote host according to your OS
+    // Modify the remote Docker host according to your OS
     'XDEBUG_CONFIG' => 'remote_host=host.docker.internal',
 ];
 ```
@@ -91,8 +91,8 @@ You can debug any Magento command or PHP script using the following steps.
 
     -   **Name**: Docker Cloud
     -   **Connect to Docker daemon with**:
-        - For Windows, select **TCP socket** and update **Engine Api Url** with `tcp://localhost:2375`
-        - For Mac,
+        -   For _Windows_, select **TCP socket** and update **Engine Api Url** with `tcp://localhost:2375`
+        -   For _Mac_, select **Docker for Mac** [default]
 
 1.  In the **Languages & Frameworks** > **PHP** > **Cli Interpreter** panel, click **[...]**.
    
