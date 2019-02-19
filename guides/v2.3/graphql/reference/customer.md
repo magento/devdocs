@@ -14,15 +14,12 @@ Use queries to read server-side data, such as a specific customer's address.
 
 `customer: Customer`
 
-### Query fields
-The following tables list the fields used for queries.
-
 ### Customer attributes
 The customer object can contain the following attributes:
 
 Attribute |  Data Type | Description 
 --- | --- | ---
-`addresses` | [CustomerAddresses]  | An array containing the customer's shipping and billing addresses
+`addresses` | [CustomerAddress](#customerAddress)  | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
 `default_billing` | String | The ID assigned to the billing address
 `default_shipping` | String | The ID assigned to the shipping address
@@ -40,7 +37,7 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer's Tax/VAT number (for corporate customers)
 
-### CustomerAddress object {#customerAddress}
+### Customer address attributes {#customerAddress}
 
 The values assigned to attributes such as `firstname` and `lastname` in this object may be different from those defined in the Customer object.
 
@@ -59,7 +56,7 @@ Attribute |  Data Type | Description
 `middlename` | String | The middle name of the person associated with the shipping/billing address
 `postcode` | String | The customer's ZIP or postal code
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`region` | CustomerAddressesRegion | An object containing the region name, region code, and region ID
+`region` | CustomerAddressRegion | An object containing the region name, region code, and region ID
 `region_id` | Int | A number that uniquely identifies the state, province, or other area
 `street` | [String] | An array of strings that define the street number and name
 `suffix` | String | A value such as Sr., Jr., or III
@@ -130,7 +127,7 @@ Use mutations to update server-side data, such as adding a new customer or modif
 
 ### Manage customers
 
-You can use these mutations to create a new customer or modify personal information for an existing customer.
+You can use customer mutations to create a new customer or modify personal information for an existing customer. See [manage customer address](#managecustomeraddress) to modify a customer's address.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -247,13 +244,13 @@ mutation {
 }
 ```
 
-### Manage customer address
+### Manage customer address {#managecustomeraddress}
 Use these mutations to create or modify the customer's address.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int | The ID assigned to the address object
-`CustomerAddressInput` | [CustomerAddresses] | An array containing the customer’s shipping and billing addresses
+`CustomerAddressInput` | [CustomerAddress](#customerAddress) | An array containing the customer’s shipping and billing addresses
 
 #### Create customer address
 
@@ -342,7 +339,7 @@ Updates the customer's address.
 
 ##### Example usage
 
-The following call updates the customer's address.
+The following call updates the customer's city and postcode.
 
 **Request**
 
