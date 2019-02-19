@@ -96,7 +96,7 @@ You cannot upgrade the operating system and web server software to a new version
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento).
+In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 You use the following files to configure the software versions that you want to use in your implementation.
 

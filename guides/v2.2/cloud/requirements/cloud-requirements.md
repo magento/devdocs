@@ -82,7 +82,7 @@ You cannot upgrade the software, but you can configure the following services:
 {:.bs-callout .bs-callout-info}
 See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version requirements. 
 
-For Staging and Production environments, you use the Fastly CDN for Magento2 extension for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento).
+For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 
