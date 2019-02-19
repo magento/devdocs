@@ -10,7 +10,7 @@ Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-sta
 ## Queries
 Use queries to read server-side data, such as a specific customer's address.
 
-### Query structure
+### Query syntax
 
 `customer: Customer`
 
@@ -128,20 +128,9 @@ The following call returns information about the logged-in customer.
 ## Mutations
 Use mutations to update server-side data, such as adding a new customer or modifying attributes for an existing customer.
 
-### Mutation structure
-`mutation: Customer`
+### Manage customers
 
-### Mutation fields
-The following tables list the fields used for mutations.
-
-### Change customer password
-
-Attribute |  Data Type | Description
---- | --- | ---
-`currentPassword` | String | The customer's current password
-`newPassword` | String | The customer's new password
-
-### Create customer
+You can use these mutations to create a new customer or modify personal information for an existing customer.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -157,68 +146,14 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer’s Tax/VAT number (for corporate customers)
 
-### Modify customer address
-
-Attribute |  Data Type | Description
---- | --- | ---
-`id` | Int | The ID assigned to the address object
-`CustomerAddressInput` | [CustomerAddresses] | An array containing the customer’s shipping and billing addresses
-
-### Generate customer token
-
-Attribute |  Data Type | Description
---- | --- | ---
-`email` | String | The customer's email address
-`password` | String | The customer's password
-
-## Manage customers
-You can use these mutations to create a new customer or modify personal information for an existing customer.
-
-### changeCustomerPassword object
-
-Changes the password for the logged-in customer.
-
-### Example usage
-
-The following call updates the customer's password.
-
-**Request**
-
-``` text
-mutation {
-  changeCustomerPassword(
-    currentPassword: "roni_cost3@example.com",
-    newPassword: "roni_cost4@example.com"
-  ) {
-    id
-    email
-    firstname
-    middlename
-    lastname
-  }
-}
-```
-
-**Response**
-
-``` json
-{
-  "data": {
-    "changeCustomerPassword": {
-      "id": 1,
-      "email": "roni_cost@example.com",
-      "firstname": "Veronica",
-      "lastname": "Costello"
-    }
-  }
-}
-```
-
-### createCustomer object
-
+#### Create a customer
 Creates a new customer account.
 
-### Example usage
+##### Syntax
+
+`mutation: createCustomer`
+
+##### Example usage
 
 The following call creates a new customer.
 
@@ -263,12 +198,15 @@ mutation {
   }
 }
 ```
-
-### updateCustomer object
+#### Update a customer
 
 Updates the customer's personal information.
 
-### Example usage
+##### Syntax
+
+`mutation: updateCustomer`
+
+##### Example usage
 
 The following call updates the first and last name and email address for a specific customer.
 
@@ -309,14 +247,23 @@ mutation {
 }
 ```
 
-## Manage customer addresses
+### Manage customer address
 Use these mutations to create or modify the customer's address.
 
-### createCustomerAddress object
+Attribute |  Data Type | Description
+--- | --- | ---
+`id` | Int | The ID assigned to the address object
+`CustomerAddressInput` | [CustomerAddresses] | An array containing the customer’s shipping and billing addresses
+
+#### Create customer address
 
 Creates the customer's address.
 
-### Example usage
+##### Syntax
+
+`mutation: createCustomerAddress`
+
+##### Example usage
 
 The following call creates an address for the specified customer.
 
@@ -385,11 +332,15 @@ mutation {
 }
 ```
 
-### updateCustomerAddress object
+#### Update customer address
 
 Updates the customer's address.
 
-### Example usage
+##### Syntax
+
+`mutation: updateCustomerAddress`
+
+##### Example usage
 
 The following call updates the customer's address.
 
@@ -417,12 +368,15 @@ mutation {
   }
 }
 ```
-
-### deleteCustomerAddress object
+#### Delete customer address
 
 Uses the customer's address `id` to delete the address.
 
-### Example usage
+##### Syntax
+
+`mutation: deleteCustomerAddress`
+
+##### Example usage
 
 The following call deletes a customer's address.
 
@@ -443,14 +397,25 @@ mutation {
   }
 }
 ```
-## Manage customer tokens
+
+### Manage customer tokens
+
 Use these mutations to create or revoke a customer's token.
 
-### generateCustomerToken object
+Attribute |  Data Type | Description
+--- | --- | ---
+`email` | String | The customer's email address
+`password` | String | The customer's password
+
+#### Generate a customer token
 
 Creates a new customer token.
 
-### Example usage
+##### Syntax
+
+`mutation: generateCustomerToken`
+
+##### Example usage
 
 The following call creates a new customer token.
 
@@ -478,11 +443,16 @@ mutation {
   }
 }
 ```
-### revokeCustomerToken object
+
+#### Revoke a customer token
 
 Revokes the customer's token.
 
-### Example usage
+##### Syntax
+
+`mutation: remokeCustomerToken`
+
+##### Example usage
 
 The following call revokes the customer's token.
 
@@ -503,6 +473,55 @@ mutation {
   "data": {
     "revokeCustomerToken": {
     "result": true
+    }
+  }
+}
+```
+
+### Change customer password
+
+Changes the password for the logged-in customer.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`currentPassword` | String | The customer's current password
+`newPassword` | String | The customer's new password
+
+##### Syntax
+
+`mutation: changeCustomerPassword`
+
+##### Example usage
+
+The following call updates the customer's password.
+
+**Request**
+
+``` text
+mutation {
+  changeCustomerPassword(
+    currentPassword: "roni_cost3@example.com",
+    newPassword: "roni_cost4@example.com"
+  ) {
+    id
+    email
+    firstname
+    middlename
+    lastname
+  }
+}
+```
+
+**Response**
+
+``` json
+{
+  "data": {
+    "changeCustomerPassword": {
+      "id": 1,
+      "email": "roni_cost@example.com",
+      "firstname": "Veronica",
+      "lastname": "Costello"
     }
   }
 }
