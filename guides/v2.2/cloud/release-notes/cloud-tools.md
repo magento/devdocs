@@ -38,6 +38,8 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963 -->**New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
 
+-   {:.new}<!--MAGECLOUD-2903-->**Environment configuration check**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
+
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
 -   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship.
