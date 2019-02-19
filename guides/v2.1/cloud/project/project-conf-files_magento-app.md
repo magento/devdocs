@@ -254,7 +254,7 @@ Describes processes that are triggered on a schedule. We recommend you run `cron
 -  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 -  `cmd`—The command to execute.
 
-A Cron job is well suited for the following tasks:
+A cron job is well suited for the following tasks:
 
 -  They need to happen on a fixed schedule, not continually.
 -  The task itself is not especially long, as a running cron job will block a new deployment.
