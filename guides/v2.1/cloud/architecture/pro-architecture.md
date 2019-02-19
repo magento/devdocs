@@ -150,7 +150,7 @@ Weeks 12 to 22 | One backup per month
 
 -  **Recovery Point Objective (RPO)**—is 1 hour for the first 24 hours; after
 the initial period, the RPO is 6 hours (maximum time to last backup).
--  **Recover Time Objective (RTO)**—depends on the size of the storage. Large
+-  **Recovery Time Objective (RTO)**—depends on the size of the storage. Large
 EBS volumes take more time to restore.
 
 ### Production technology stack
