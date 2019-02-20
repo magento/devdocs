@@ -28,7 +28,7 @@ vendor/bin/mftf --version
 
 ## Versioning Policy
 
-MFTF versioning policy follows guidelines from [Semantic Versioning](https://semver.org/).
+MFTF versioning policy follows [Semantic Versioning](https://semver.org/) guidelines.
 
 ### 3-component version numbers
 
