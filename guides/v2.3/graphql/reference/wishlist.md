@@ -3,7 +3,10 @@ group: graphql
 title: Wish list endpoint
 ---
 
-The Wish list endpoint returns the contents of a customer's wish list.
+The Wish list endpoint defines the contents of a customer's wish list.
+
+## Query
+Use Wish list queries to retrieve information about a customer's wish list. 
 
 ### Wish list attributes
 
@@ -70,7 +73,7 @@ The following query returns the customer's wish list:
         {
           "id": 1,
           "qty": 1,
-          "description": null,
+          "description": "My first priority",
           "added_at": "2019-02-20 14:38:02",
           "product": {
             "sku": "MJ09",
@@ -92,3 +95,6 @@ The following query returns the customer's wish list:
   }
 }
 ```
+## Mutations
+
+Wish list mutations will be added in a future release.
