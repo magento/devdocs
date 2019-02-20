@@ -70,7 +70,7 @@ The release notes include:
 
     -  {:.new}<!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION)**—New variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
-    -  {:fix}<!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if you specified a URL for a non-default domain in the WARM_UP_PAGES environment variable, the post-deploy process failed to preload the cache for that page and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`.
+    -  {:fix}<!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: ``ERROR: Warming up failed: <uri>`. 
 
     -   <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
 
