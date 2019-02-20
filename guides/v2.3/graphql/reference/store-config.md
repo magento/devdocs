@@ -9,42 +9,61 @@ The `storeConfig` endpoint defines information about a store's configuration; su
 
 `storeConfig: StoreConfig`
 
-## Supported attributes
+## Supported storeConfig attributes
 
-Attribute |  Data Type | Description | Implementation
---- | --- | --- | ---
-`absolute_footer` | String | Footer Miscellaneous HTML | Theme
-`base_currency_code` | String | The code representing the currency in which Magento processes all payment transactions, such as `USD` | storeConfig
-`base_link_url` | String | A fully-qualified URL that is used to create relative links to the `base_url` | storeConfig
-`base_static_url` | String | The fully-qualified URL that specifies the location of static view files, such as `http://magentohost.example.com/pub/static/` | storeConfig
-`base_media_url` | String | The fully-qualified URL that specifies the location of user media files, such as `http://magentohost.example.com/pub/media/` | storeConfig
-`base_url` | String | The store's fully-qualified base URL, such as `http://magentohost.example.com/` | storeConfig
-`code` | String | A unique identifier for the store | storeConfig
-`copyright` | String | Copyright | Theme
-`default_display_currency_code` | String | The code representing the currency displayed on the store, such as `USD` | storeConfig
-`default_description` | String | Default Meta Description | Theme
-`default_keywords` | String | Default Meta Keywords | Theme
-`default_title` | String | Default Page Title | Theme
-`demonotice` | Int | Display Demo Store Notice | Theme
-`head_includes` | String | Scripts and Style Sheets | Theme
-`header_logo_src` | String | Logo Image | Theme
-`head_shortcut_icon` | String | Favicon Icon | Theme
-`id` | Integer | The ID number assigned to the store | storeConfig
-`locale` | String | The store's locale, such as `en_US` | storeConfig
-`logo_alt` | String | Logo Image Alt | Theme
-`logo_height` | Int | Logo Attribute Height | Theme
-`logo_width` | Int | Logo Attribute Width | Theme
-`secure_base_link_url` | String | A fully-qualified URL that is used to create relative links to the `base_url` | storeConfig
-`secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files, such as `https://magentohost.example.com/pub/media/` | storeConfig
-`secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files, such as `https://magentohost.example.com/pub/static/` | storeConfig
-`secure_base_url` | String | The store's fully-qualified secure base URL, such as `https://magentohost.example.com/` | storeConfig
-`timezone` | String | The store's time zone, such as `America/Chicago` | storeConfig
-`title_prefix` | String | Page Title Prefix | Theme
-`title_suffix` | String | Page Title Suffix | Theme
-`website_id` | Integer | The ID number assigned to the parent website  | storeConfig 
-`weight_unit` | String | The weight unit for products, such as `lbs` or `kgs` | storeConfig
-`welcome` | String | Welcome Text | Theme
+Attribute |  Data Type | Description
+--- | --- | ---
+`base_currency_code` | String | The code representing the currency in which Magento processes all payment transactions, such as `USD`
+`base_link_url` | String | A fully-qualified URL that is used to create relative links to the `base_url`
+`base_static_url` | String | The fully-qualified URL that specifies the location of static view files, such as `http://magentohost.example.com/pub/static/`
+`base_media_url` | String | The fully-qualified URL that specifies the location of user media files, such as `http://magentohost.example.com/pub/media/`
+`base_url` | String | The store's fully-qualified base URL, such as `http://magentohost.example.com/`
+`code` | String | A unique identifier for the store
+`default_display_currency_code` | String | The code representing the currency displayed on the store, such as `USD`
+`id` | Integer | The ID number assigned to the store
+`locale` | String | The store's locale, such as `en_US`
+`secure_base_link_url` | String | A fully-qualified URL that is used to create relative links to the `base_url`
+`secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files, such as `https://magentohost.example.com/pub/media/`
+`secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files, such as `https://magentohost.example.com/pub/static/`
+`secure_base_url` | String | The store's fully-qualified secure base URL, such as `https://magentohost.example.com/`
+`timezone` | String | The store's time zone, such as `America/Chicago`
+`website_id` | Integer | The ID number assigned to the parent website  
+`weight_unit` | String | The weight unit for products, such as `lbs` or `kgs`
 {:style="table-layout:auto;"}
+
+## Supported theme attributes
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`absolute_footer` | String | Footer Miscellaneous HTML
+`copyright` | String | Copyright
+`default_description` | String | Default Meta Description
+`default_keywords` | String | A comma-separated list of keywords
+`default_title` | String | Default page title
+`demonotice` | Int | Display Demo Store Notice
+`head_includes` | String | Scripts and Style Sheets
+`header_logo_src` | String | Logo Image
+`head_shortcut_icon` | String | Favicon Icon
+`logo_alt` | String | Logo Image Alt
+`logo_height` | Int | Logo Attribute Height
+`logo_width` | Int | Logo Attribute Width
+`title_prefix` | String | Page Title Prefix
+`title_suffix` | String | Page Title Suffix
+`welcome` | String | Welcome Text
+{:style="table-layout:auto;"}
+
+## Supported cms attributes
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`cms_home_page` | String | CMS Home Page
+`cms_no_cookies` | String | CMS No Cookies Page
+`cms_no_route` | String | CMS No Route Page
+`front` | String | Default Web URL
+`no_route` | String | Default No-route URL
+`show_cms_breadcrumbs` | Int | Show Breadcrumbs for CMS Pages
+{:style="table-layout:auto;"}
+
 
 ## Example usage
 
