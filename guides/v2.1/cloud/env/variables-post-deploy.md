@@ -28,4 +28,5 @@ stage:
        - "index.php"
        - "index.php/customer/account/create"
 ```
+
 If your project is configured with [mulitple domains]({{ page.baseurl }}/cloud/project/project-multi-sites.html), the cache is preloaded for pages on all domains.
