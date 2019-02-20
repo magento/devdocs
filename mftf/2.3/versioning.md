@@ -56,7 +56,7 @@ MFTF versioning policy follows [Semantic Versioning](https://semver.org/) guidel
 ### X release - major
 
   Major version **X** MUST be incremented if any backwards incompatible changes are introduced to a test or test entity.
-  It MAY include minor and patch level changes. Patch and minor version MUST be reset to 0 when major version is incremented.
+  It can include minor and patch level changes. You must reset the patch and minor version to 0 when you change the major version.
 
 ## Incompatible entity attribute changes
 
