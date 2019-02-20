@@ -24,18 +24,20 @@ MFTF versioning policy follows [Semantic Versioning](https://semver.org/) guidel
 
 ### 3-component version numbers
 
+Version numbering schemes help users to understand the scope of the changes made a new release.
+
 X.Y.Z
 | | |
-| | +-- Backward Compatible changes (Patch release - bug fixes)
-| +---- Backward Compatible changes (Minor release - new command)
-+------ Backward Incompatible changes (Major release - new features)
+| | +-- Backward Compatible changes (Patch release - bug fixes, small additions)
+| +---- Backward Compatible changes (Minor release - small new features, bug fixes)
++------ Backward Incompatible changes (Major release - new features and/or major changes)
 
 For example:
 
-- Magento 2 shipped with MFTF 2.3.9
+- Magento 2 ships with MFTF 2.3.9
 - A patch is added to fix a bug: 2.3.10 (Increment Z = backward compatible change)
-- New action command was added: 2.4.0 (Increment Y, set Z to 0 = backward compatible change)
-- Another bug fix: 2.4.1 (Increment Z = backward compatible change)
+- New action command added: 2.4.0 (Increment Y, set Z to 0 = backward compatible change)
+- New action added: 2.4.1 (Increment Z = backward compatible change)
 - Major new features added to MFTF to support changes in Magento codebase: 3.0.0. (Increment X, reset Y and Z to 0 = backward incompatible change)
 
 ### Z release - patch
