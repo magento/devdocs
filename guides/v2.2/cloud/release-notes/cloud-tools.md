@@ -36,7 +36,7 @@ The release notes include:
     -   You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
     -   <!-- MAGECLOUD-3030 -->Added a new Docker container to address a problem with the SSL termination for Varnish. The Hitch container allows Varnish to function over HTTPS.
 
--  {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963/MAGECLOUD-3048-->**New environment variables**—
+-  {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963/MAGECLOUD-3048-->**Environment variable updates**—
  
     -  Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
 
