@@ -10,7 +10,7 @@ Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-sta
 ## Queries
 Use queries to read server-side data, such as a specific customer's address.
 
-### Query syntax
+### Syntax
 
 `customer: Customer`
 
@@ -129,6 +129,11 @@ Use mutations to update server-side data, such as adding a new customer or modif
 
 You can use customer mutations to create a new customer or modify personal information for an existing customer. See [manage customer address](#managecustomeraddress) to modify a customer's address.
 
+* Create a customer
+* Update an existing customer
+
+**Manage customers attributes**
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `dob` | String | The customer’s date of birth
@@ -246,6 +251,12 @@ mutation {
 
 ### Manage customer address {#managecustomeraddress}
 Use these mutations to create or modify the customer's address.
+
+* Create a customer's address
+* Update a customer's address
+* Delete a customer's address 
+
+**Manage customer address attibutes**
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -399,6 +410,11 @@ mutation {
 
 Use these mutations to create or revoke a customer's token.
 
+* Generate a customer's token
+* Revoke a customer's token
+
+**Manage customer tokens attributes**
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `email` | String | The customer's email address
@@ -478,6 +494,10 @@ mutation {
 ### Change customer password
 
 Changes the password for the logged-in customer.
+
+* Change a customer's password
+
+**Change customer password attributes**
 
 Attribute |  Data Type | Description
 --- | --- | ---
