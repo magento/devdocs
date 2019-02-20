@@ -39,7 +39,7 @@ Mark the method with the `@deprecated` tag instead of removing it.
 
 Continue returning the same results from the method if possible, so the old functionality is preserved.
 
-If you need to remove the existing functionality and you do not need alternative implementation, you SHOULD change the method code to
+If you need to remove the existing functionality and there is no alternative implementation, you MUST change the method code to
 
 ```php
 trigger_error('Function is deprecated', E_USER_WARNING);
