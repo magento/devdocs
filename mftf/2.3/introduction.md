@@ -92,6 +92,7 @@ utils                           // The test-running utilities.
 .credentials.example            // Example file for credentials to be used by the third party integrations (generated while running 'bin/mftf build:project'; should be filled with the appropriate credentials in the corresponding sandboxes).
 .gitignore                      // List of files ignored by git.
 .htaccess.sample                // Access settings for the Apache web server to perform the Magento CLI commands.
+RoboFile.php                    // TO BE DEPRECATED SINCE MFTF 3.0. The MFTF CLI commands configuration for Robo task runner.
 codeception.dist.yml            // Codeception configuration (generated while running 'bin/mftf build:project')
 ```
 
