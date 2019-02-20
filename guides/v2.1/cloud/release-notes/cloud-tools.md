@@ -46,7 +46,7 @@ The release notes include:
     
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
--   {:.fix}<!-- MAGECLOUD-3104 -->Fixed a compression issue when generating assets during the build phase by moving the compression task to the beginning of the `build:transfer` section of the build phase.
+-   {:.fix}<!-- MAGECLOUD-3104 -->Fixed a compression issue when generating assets during builds by moving the compression task to the beginning of the `build:transfer` section of the build phase.
 
 -   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship.
 
