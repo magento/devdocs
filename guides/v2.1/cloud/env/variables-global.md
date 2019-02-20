@@ -79,7 +79,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 
-Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ page.baseurl }}/config-guide/secy/secy-xframe.html) header configuration for the {{ site.data.var.ee }} site. This option determines how the browser can render a page in a `<frame>`, `<iframe>`, or `<object>`:
+Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ page.baseurl }}/config-guide/secy/secy-xframe.html) header configuration for your {{ site.data.var.ee }} site. This configuration controls how the browser renders a page in a `<frame>`, `<iframe>`, or `<object>`. Use one of the following options:
 
 - `DENY`: Page cannot be displayed in a frame.
 - `SAMEORIGIN`: (The default Magento setting.) Page can be displayed only in a frame on the same origin as the page itself.
