@@ -143,7 +143,7 @@ __Use case__: Create two similar tests where the second one contains two additio
     <test name="AlternativeLogInAsAdminTest" extends="LogInAsAdminTest">
         <before>
             <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe" before="clickLogin"/>
-            <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl" after="clickLogin"/>      
+            <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl" after="clickLogin"/>
         </before>
     </test>
 </tests>
@@ -330,7 +330,6 @@ __Use case__: Create an entity named `DivPanelGreen`, which is similar to the `D
 ### Add a data entry
 
 __Use case__: Create an entity named `DivPanelGreen`, which is similar to the `DivPanel` entity, except that it has a specific panel color.
-
 
 > Entities with "extends":
 

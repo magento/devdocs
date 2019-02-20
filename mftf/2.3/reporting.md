@@ -44,7 +44,6 @@ In our case, there is an issue with PHP library loading.
 ```terminal
 PHP Warning:  PHP Startup: Unable to load dynamic library '/usr/local/lib/php/pecl/20160303/php_intl.dll' - dlopen(/usr/local/lib/php/pecl/20160303/php_intl.dll, 9): image not found in Unknown on line 0
 ```
-{: .no-copy }
 
 Next, the MFTF returns `DEPRECATION` reports alerting you that required test components are missing in XML test definitions.
 
@@ -54,7 +53,6 @@ DEPRECATION: Test AdminAbleToShipPartiallyInvoicedItemsTest is missing required 
 DEPRECATION: Test AdminRemoveProductWeeeAttributeOptionTest is missing required annotations.{"testName":"AdminRemoveProductWeeeAttributeOptionTest","missingAnnotations":"stories"}
 Generate Tests Command Run
 ```
-{: .no-copy }
 
 `Generate Tests Command Run` indicates the moment when the MFTF has run the tests generation command actually.
 
@@ -92,16 +90,15 @@ AdminLoginTestCest: Admin login test
 Signature: Magento\AcceptanceTest\_default\Backend\AdminLoginTestCest:AdminLoginTest
 Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminLoginTestCest.php:AdminLoginTest
 Scenario --
- I am on page "/admin/admin"
- I fill field "#username","admin"
- I fill field "#login","123123q"
- I click ".actions .action-primary"
- I wait for page load 30
- I close admin notification
- I see in current url "/admin/admin"
- PASSED
+I am on page "/admin/admin"
+I fill field "#username","admin"
+I fill field "#login","123123q"
+I click ".actions .action-primary"
+I wait for page load 30
+I close admin notification
+I see in current url "/admin/admin"
+PASSED
 ```
-{: .no-copy }
 
 The running test is `AdminLoginTestCest`, which is `Admin login test` (this text is generated from the test name but with the `Cest` part excluded).
 Its test signature is `Magento\AcceptanceTest\_default\Backend\AdminLoginTestCest:AdminLoginTest` that matches a `className:methodName` format using namespaces.
@@ -119,46 +116,45 @@ AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret key
 Signature: Magento\AcceptanceTest\_default\Backend\AdminMenuNavigationWithSecretKeysTestCest:AdminMenuNavigationWithSecretKeysTest
 Test: tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
 Scenario --
- I magento cli "config:set admin/security/use_form_key 1"
- Value was saved.
- I magento cli "cache:clean config full_page"
- Cleaned cache types:
+I magento cli "config:set admin/security/use_form_key 1"
+Value was saved.
+I magento cli "cache:clean config full_page"
+Cleaned cache types:
 config
 full_page
- I am on page "/admin/admin"
- I wait for page load
- I fill field "#username","admin"
- I fill field "#login","123123q"
- I click ".actions .action-primary"
- I wait for page load 30
- I close admin notification
- I click "//li[@id='menu-magento-backend-stores']"
- I wait for loading mask to disappear
- I click "#nav li[data-ui-id='menu-magento-config-system-config']"
- I wait for page load
- I see current url matches "~\/admin\/system_config\/~"
- I see "#something"
- I save screenshot
- FAIL
+I am on page "/admin/admin"
+I wait for page load
+I fill field "#username","admin"
+I fill field "#login","123123q"
+I click ".actions .action-primary"
+I wait for page load 30
+I close admin notification
+I click "//li[@id='menu-magento-backend-stores']"
+I wait for loading mask to disappear
+I click "#nav li[data-ui-id='menu-magento-config-system-config']"
+I wait for page load
+I see current url matches "~\/admin\/system_config\/~"
+I see "#something"
+I save screenshot
+FAIL
 
- I magento cli "config:set admin/security/use_form_key 0"
- Value was saved.
- I magento cli "cache:clean config full_page"
- Cleaned cache types:
+I magento cli "config:set admin/security/use_form_key 0"
+Value was saved.
+I magento cli "cache:clean config full_page"
+Cleaned cache types:
 config
 full_page
- I am on page "/admin/admin/auth/logout/"
+I am on page "/admin/admin/auth/logout/"
 --------------------------------------------------------------------------------
 ```
-{: .no-copy }
 
 The general test details and scenario has the same format as in the Passed test.
 The interesting part starts near the `FAIL` line.
 
 ```terminal
- I see "#something"
- I save screenshot
- FAIL
+I see "#something"
+I save screenshot
+FAIL
 ```
 
 When a test step fails, the MFTF always saves a screenshot of the web page with the failing state immediately after the failure occurs.
@@ -194,7 +190,6 @@ Time: 52.43 seconds, Memory: 16.00MB
 There was 1 failure:
 ---------
 ```
-{: .no-copy }
 
 First you see warnings and deprecations.
 The `DEPRECATION` here is thrown by an MFTF dependency (Symfony) that is out of the scope for test writers and should be considered by MFTF contributors.
@@ -208,9 +203,9 @@ Next, the report provides details about the test failure.
 ```terminal
 ---------
 1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test
- Test  tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
- Step  See "#something"
- Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../
+Test  tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:AdminMenuNavigationWithSecretKeysTest
+Step  See "#something"
+Fail  Failed asserting that  on page /admin/admin/system_config/index/key/678b7ba922c.../
 --> DASHBOARD
 SALES
 CATALOG
@@ -240,16 +235,15 @@ Countr
 
 Scenario Steps:
 
- 23. $I->amOnPage("/admin/admin/auth/logout/") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:54
- 22. // Cleaned cache types:
+23. $I->amOnPage("/admin/admin/auth/logout/") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:54
+22. // Cleaned cache types:
 config
 full_page
- 21. $I->magentoCLI("cache:clean config full_page") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:52
- 20. // Value was saved.
- 19. $I->magentoCLI("config:set admin/security/use_form_key 0") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:50
- 18. $I->saveScreenshot() at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:63
+21. $I->magentoCLI("cache:clean config full_page") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:52
+20. // Value was saved.
+19. $I->magentoCLI("config:set admin/security/use_form_key 0") at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:50
+18. $I->saveScreenshot() at tests/functional/Magento/FunctionalTest/_generated/default/AdminMenuNavigationWithSecretKeysTestCest.php:63
 ```
-{: .no-copy }
 
 - `1) AdminMenuNavigationWithSecretKeysTestCest: Admin menu navigation with secret keys test` - the failed Codeception test is *AdminMenuNavigationWithSecretKeysTestCest*. It references to the PHP class that implemented the failed test.
 
@@ -276,7 +270,6 @@ Finally, the report finishes with fairly self-descriptive lines.
 FAILURES!
 Tests: 2, Assertions: 3, Failures: 1.
 ```
-{: .no-copy }
 
 The MFTF encountered failures due to the last test run, that included *2* tests with *3* assertions.
 *1* assertion fails.
