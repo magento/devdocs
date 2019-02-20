@@ -40,7 +40,7 @@ The release notes include:
  
     -  Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
 
-    -  Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables/global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
+    -  Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
 -   {:.new}<!--MAGECLOUD-2903-->**Environment configuration check**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
 

@@ -41,7 +41,7 @@ The release notes include:
  
     -  Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
 
-    -  Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables/global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
+    -  Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
