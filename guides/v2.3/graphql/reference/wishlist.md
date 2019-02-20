@@ -25,7 +25,7 @@ Attribute | Data type | Description
 `product` | <a href="{{ page.baseurl }}/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this wish list item
 
-## Query syntax
+## Syntax
 
 `wishlist: WishlistOutput`
 
@@ -62,11 +62,32 @@ The following query returns the customer's wish list:
 {
   "data": {
     "wishlist": {
-      "items_count": 0,
+      "items_count": 2,
       "name": "Wish List",
       "sharing_code": "KAXDj0HlM7Y2s58mllsVhSJvRj4fWIZj",
       "updated_at": "2019-02-13 22:47:45",
-      "items": []
+      "items": [
+        {
+          "id": 1,
+          "qty": 1,
+          "description": null,
+          "added_at": "2019-02-20 14:38:02",
+          "product": {
+            "sku": "MJ09",
+            "name": "Taurus Elements Shell"
+          }
+        },
+        {
+          "id": 2,
+          "qty": 1,
+          "description": null,
+          "added_at": "2019-02-20 14:38:28",
+          "product": {
+            "sku": "MSH11",
+            "name": "Arcadio Gym Short"
+          }
+        }
+      ]
     }
   }
 }
