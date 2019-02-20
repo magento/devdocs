@@ -97,7 +97,8 @@ For more information, see [Running Unit Tests][].
 
 Please refer to the article [Writing testable code][] for more information on what to keep in mind when starting with TDD.
   
-The `bin/magento` tool provides a common entry point to execute any of the tests, which can be useful for continuous integration. Please see the [System Administrators Guide on Running Tests][] for more information.
+The `bin/magento` tool provides a common entry point to execute any of the tests, which can be useful for continuous integration.
+Please see the [System Administrators Guide on Running Tests][] for more information.
 
 ## Where to find the tests in the file system
 
