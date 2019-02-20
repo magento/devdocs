@@ -65,7 +65,9 @@ The release notes include:
 
 -   {:.fix}**Environment variable updates**—Changed the following environment variables:
 
-    -   {:.new}<!-- MAGECLOUD-3026 & 2963 -->**New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+    -  {:.new}<!-- MAGECLOUD-3026 & MAGECLOUD-2963-->Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+
+    -  {:.new}<!-- MAGECLOUD-3048 -->Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
     -   <!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
 
