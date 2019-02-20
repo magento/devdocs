@@ -1,12 +1,12 @@
 ---
 group: graphql
-title: Wish list endpoint
+title: Wishlist endpoint
 ---
 
-The Wish list endpoint defines the contents of a customer's wish list.
+The Wishlist endpoint defines the contents of a customer's wish list.
 
 ## Query
-Use Wish list queries to retrieve information about a customer's wish list. 
+Use Wishlist queries to retrieve information about a customer's wish list. 
 
 ### Wish list attributes
 

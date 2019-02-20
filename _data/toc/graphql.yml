@@ -80,5 +80,5 @@ pages:
             - label: urlResolver endpoint
               url: /graphql/reference/url-resolver.html
 
-            - label: Wish list endpoint
+            - label: Wishlist endpoint
               url: /graphql/reference/wishlist.html
