@@ -72,6 +72,9 @@ pages:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
 
+            - label: Configure Xdebug for Docker
+              url: /cloud/docker/docker-development-debug.html
+
             - label: Docker quick reference
               url: /cloud/docker/docker-quick-reference.html
 

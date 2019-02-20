@@ -34,12 +34,15 @@ The release notes include:
 
 -   {:.new}**Docker updates**—
 
-    -   You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
     -   <!-- MAGECLOUD-3030 -->Added a new Docker container to address a problem with the SSL termination for Varnish. The Hitch container allows Varnish to function over HTTPS.
 
--   {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963 -->**New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+    -   <!-- MAGECLOUD-3025 -->
 
--   {:.new}<!--MAGECLOUD-2903-->**Environment configuration check**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
+    -   <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
+
+    -   <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
+
+    -   <!-- MAGECLOUD-2883 -->
 
 -   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship.
 
@@ -47,19 +50,25 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-2956 -->Updated the constraint with the appropriate version of the `symfony/yaml` package to use with [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants). Constant parsing does not work when using a `symfony/yaml` package version earlier than 3.2.
 
--   {:.fix}<!-- MAGECLOUD-2904 -->Fixed the validation process to prevent a problem that occurred when SCD_MATRIX ignored a theme value that contained different character cases.
+-   {:.new}<!--MAGECLOUD-2903-->**Environment configuration check**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
 
 -   {:.fix}<!-- MAGECLOUD-2851 -->Fixed an issue with processing malformed JSON variables. Now, if a JSON variable causes a syntax error, a warning appears in the `cloud.log` file and deployment continues using the default variable.
 
--   {:.fix}<!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
-
 -   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a connection error that occurred during deployment immediately after disabling the Redis service.
 
--   {:.fix}<!--MAGECLOUD-2573/MAGECLOUD-2848-->**Changes to ADMIN environment variable behavior**- 
-  
-    -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use environment variables (`ADMIN_EMAIL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`) to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+-   {:.fix}<!-- MAGECLOUD-2573/MAGECLOUD-2848 -->**Changes to ADMIN environment variable behavior**- 
 
-    -  ADMIN_EMAIL is no longer required when upgrading or applying patches.
+    -   Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use environment variables (`ADMIN_EMAIL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`) to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+
+    -   ADMIN_EMAIL is no longer required when upgrading or applying patches.
+
+-   {:.fix}**Environment variable updates**—Changed the following environment variables:
+
+    -   {:.new}<!-- MAGECLOUD-3026 & 2963 -->**New environment variable**—Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+
+    -   <!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
+
+    -   <!-- MAGECLOUD-2904 -->Fixed the validation process to prevent a problem that occurred when SCD_MATRIX ignored a theme value that contained different character cases.
 
 ## v2002.0.15
 
@@ -81,7 +90,7 @@ The release notes include:
 
     -   <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
--   {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
+-   {:.new}<!-- MAGECLOUD-2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
 -   {:.new}<!--MAGECLOUD-2879-->**New environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics).
 
