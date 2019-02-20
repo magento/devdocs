@@ -66,13 +66,15 @@ The release notes include:
 
 -   {:.fix}**Environment variable updates**—Changed the following environment variables:
 
-    -  {:.new}<!-- MAGECLOUD-3026 & MAGECLOUD-2963-->Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+    -  {:.new}<!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—New variable to map a resource name to a database connection. 
 
-    -  {:.new}<!-- MAGECLOUD-3048 -->Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
+    -  {:.new}<!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION)**—New variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
-    -   <!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
+    -  {:fix}<!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if you specified a URL for a non-default domain in the WARM_UP_PAGES environment variable, the post-deploy process failed to preload the cache for that URL and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`.
 
-    -   <!-- MAGECLOUD-2904 -->Fixed the validation process to prevent a problem that occurred when SCD_MATRIX ignored a theme value that contained different character cases.
+    -   <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
+
+    -   <!-- MAGECLOUD-2904 -->**SCD_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
 
 ## v2002.0.15
 
