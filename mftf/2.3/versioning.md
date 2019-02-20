@@ -19,7 +19,7 @@ However, removing or changing a `<group />` annotation is considered a backward 
 
 ## Find your MFTF version number
 
-To find the current version of MFTF you are using, run the Magento CLI command:
+To find the version of MFTF that you are using, run the Magento CLI command:
 
 ```bash
 cd <magento_root>/
