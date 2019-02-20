@@ -60,7 +60,7 @@ MFTF versioning policy follows [Semantic Versioning](https://semver.org/) guidel
 
 ## Incompatible entity attribute changes
 
-Changing any of the following attributes will cause a backward incompatible change.
+Changing any of the following entity attributes or actions introduces a backward incompatible change.
 
 ### Test entity
   
