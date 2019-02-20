@@ -4,7 +4,7 @@ title: Versioning Policy for MFTF
 
 This documemt describes the versioning policy for the Magento Functional Testing Framework (MFTF), including the version numbering schema.
 
-## Backwards Compatibility Definition
+## Backward Compatibility
 
 Backwards compatibility is when a test undergoes changes, but achieves the same results as before and remains compatible with potential test customizations.
 
