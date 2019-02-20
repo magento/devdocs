@@ -49,7 +49,7 @@ MFTF versioning policy follows [Semantic Versioning](https://semver.org/) guidel
   
 ### Y release - minor
 
-  Minor version **Y** MUST be incremented if a new, backwards compatible test or test entity is introduced.
+  Minor version **Y** MUST be incremented if a new, backward compatible test or test entity is introduced.
   It MUST be incremented if any test or test entity is marked as deprecated.
   It MAY include patch level changes. Patch version MUST be reset to 0 when minor version is incremented.
 
