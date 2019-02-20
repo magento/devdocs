@@ -51,48 +51,53 @@ The top node can have nested nodes. Every nested node is regarded as a separate 
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">category_form.category_form_data_source</item>
-            <item name="deps" xsi:type="string">category_form.category_form_data_source</item>
         </item>
         <item name="label" xsi:type="string" translate="true">Category Information</item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
-        <item name="buttons" xsi:type="array">
-            <item name="delete" xsi:type="string">Magento\Catalog\Block\Adminhtml\Category\Edit\DeleteButton</item>
-            <item name="save" xsi:type="string">Magento\Catalog\Block\Adminhtml\Category\Edit\SaveButton</item>
-        </item>
-        <item name="config" xsi:type="array">
-            <item name="dataScope" xsi:type="string">data</item>
-            <item name="namespace" xsi:type="string">category_form</item>
-        </item>
         <item name="reverseMetadataMerge" xsi:type="boolean">true</item>
     </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Magento\Catalog\Block\Adminhtml\Category\Edit\SaveButton"/>
+            <button name="delete" class="Magento\Catalog\Block\Adminhtml\Category\Edit\DeleteButton"/>
+        </buttons>
+        <namespace>category_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>category_form.category_form_data_source</dep>
+        </deps>
+    </settings>
     <dataSource name="category_form_data_source">
-        <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Catalog\Model\Category\DataProvider</argument>
-            <argument name="name" xsi:type="string">category_form_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="url" path="catalog/category/save"/>
-                    <item name="validate_url" xsi:type="url" path="catalog/category/validate"/>
-                </item>
-            </argument>
-        </argument>
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
+        <settings>
+            <validateUrl path="catalog/category/validate"/>
+            <submitUrl path="catalog/category/save"/>
+        </settings>
+        <dataProvider class="Magento\Catalog\Model\Category\DataProvider" name="category_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
     </dataSource>
-    <fieldset name="general">
-        <field name="id">
+    <fieldset name="general" sortOrder="5">
+        <settings>
+            <collapsible>false</collapsible>
+            <label/>
+        </settings>
+        <field name="id" formElement="hidden">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="dataType" xsi:type="string">text</item>
-                    <item name="formElement" xsi:type="string">hidden</item>
                     <item name="source" xsi:type="string">category</item>
                 </item>
             </argument>
+            <settings>
+                <dataType>text</dataType>
+            </settings>
         </field>
     </fieldset>
 </form>

@@ -18,6 +18,7 @@ Merging operates at the XML tag level, triggered by our parser when there are tw
 Your update (XML node with changes) must have the same attribute `name` as its base node (the target object to be changed).
 
 For example:
+
 * All tests with `<test name="SampleTest>` will be merged into one.
 * All pages with `<page name="SamplePage>` will be merged into one.
 * All sections with `<section name="SampleAction">` will be merged into one.
@@ -38,23 +39,23 @@ If a [`<test>`][tests] must be skipped due to a module completely invalidating a
 
 Learn more about running tests with different options using [`mftf`] or [`codecept`] commands.
 
-**Example**
+### Example
 
 Skip the `AdminLoginTest` test in the `.../Backend/Test/AdminLoginTest.xml` file while merging with the `.../Foo/Test/AdminLoginTest.xml` file:
 
 ```xml
 <tests ...>
     <test name="AdminLoginTest">
-            <annotations>
-                <features value="Admin Login"/>
-                <stories value="Login on the Admin Login page"/>
-                <title value="You should be able to log into the Magento Admin backend."/>
-                <description value="You should be able to log into the Magento Admin backend."/>
-                <severity value="CRITICAL"/>
-                <testCaseId value="MAGETWO-71572"/>
-                <group value="example"/>
-                <group value="login"/>
-            </annotations>
+        <annotations>
+            <features value="Admin Login"/>
+            <stories value="Login on the Admin Login page"/>
+            <title value="You should be able to log into the Magento Admin backend."/>
+            <description value="You should be able to log into the Magento Admin backend."/>
+            <severity value="CRITICAL"/>
+            <testCaseId value="MAGETWO-71572"/>
+            <group value="example"/>
+            <group value="login"/>
+        </annotations>
         <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
         <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
         <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
@@ -70,11 +71,11 @@ Create the `.../Foo/Test/AdminLoginTest.xml` file:
 ```xml
 <tests ...>
     <test name="AdminLoginTest">
-            <annotations>
-                <skip>
-                    <issueId value="Issue#"/>
-                </skip>
-            </annotations>
+       <annotations>
+          <skip>
+             <issueId value="Issue#"/>
+          </skip>
+       </annotations>
     </test>
 </tests>
 ```
@@ -83,19 +84,19 @@ The `AdminLoginTest` result corresponds to:
 
 ```xml
 <test name="AdminLoginTest">
-        <annotations>
-            <features value="Admin Login"/>
-            <stories value="Login on the Admin Login page"/>
-            <title value="You should be able to log into the Magento Admin backend."/>
-            <description value="You should be able to log into the Magento Admin backend."/>
-            <severity value="CRITICAL"/>
-            <testCaseId value="MAGETWO-71572"/>
-            <group value="example"/>
-            <group value="login"/>
-            <skip>
-                <issueId value="Issue#"/>
-            </skip>
-        </annotations>
+    <annotations>
+        <features value="Admin Login"/>
+        <stories value="Login on the Admin Login page"/>
+        <title value="You should be able to log into the Magento Admin backend."/>
+        <description value="You should be able to log into the Magento Admin backend."/>
+        <severity value="CRITICAL"/>
+        <testCaseId value="MAGETWO-71572"/>
+        <group value="example"/>
+        <group value="login"/>
+      <skip>
+         <issueId value="Issue#"/>
+      </skip>
+    </annotations>
     <amOnPage url="{{AdminLoginPage.url}}" stepKey="amOnAdminLoginPage"/>
     <fillField selector="{{AdminLoginFormSection.username}}" userInput="{{_ENV.MAGENTO_ADMIN_USERNAME}}" stepKey="fillUsername"/>
     <fillField selector="{{AdminLoginFormSection.password}}" userInput="{{_ENV.MAGENTO_ADMIN_PASSWORD}}" stepKey="fillPassword"/>
@@ -259,13 +260,13 @@ The `LogInAsAdminTest` result corresponds to:
 
 ```xml
 <test name="LogInAsAdminTest">
-        <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
-        <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
-        <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
-        <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
-        <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
-        <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
-        <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
+   <amOnPage url="{{AdminLoginPage}}" stepKey="navigateToAdmin"/>
+   <fillField selector="{{AdminLoginFormSection.username}}" userInput="admin" stepKey="fillUsername"/>
+   <fillField selector="{{AdminLoginFormSection.password}}" userInput="password" stepKey="fillPassword"/>
+   <click selector="{{AdminLoginFormSection.signIn}}" stepKey="clickLogin"/>
+   <checkOption selector="{{AdminLoginFormSection.rememberMe}}" stepKey="checkRememberMe"/>
+   <seeInCurrentUrl url="admin/admin/dashboard/" stepKey="seeAdminUrl"/>
+   <see userInput="Lifetime Sales" stepKey="seeLifetimeSales"/>
 </test>
 ```
 
@@ -294,9 +295,9 @@ Create the `.../FooBackend/Page/BaseBackendPage.xml` file:
 
 ```xml
 <pages ...>
-    <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-        <section name="NewExtensionSection"/>
-    </page>
+   <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
+      <section name="NewExtensionSection"/>
+   </page>
 </pages>
 ```
 
@@ -304,9 +305,9 @@ The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-    <section name="BaseBackendSection"/>    
-    <section name="AnotherBackendSection"/>
-    <section name="NewExtensionSection"/>
+   <section name="BaseBackendSection"/>
+   <section name="AnotherBackendSection"/>
+   <section name="NewExtensionSection"/>
 </page>
 ```
 
@@ -316,8 +317,8 @@ The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-    <section name="BaseBackendSection"/>    
-    <section name="AnotherBackendSection"/>
+   <section name="BaseBackendSection"/>
+   <section name="AnotherBackendSection"/>
 </page>
 ```
 
@@ -325,7 +326,7 @@ Create the `.../FooBackend/Page/BaseBackendPage.xml` file:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-    <section name="AnotherBackendSection" remove="true"/>
+   <section name="AnotherBackendSection" remove="true"/>
 </page>
 ```
 
@@ -333,7 +334,7 @@ The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-    <section name="BaseBackendSection"/>
+   <section name="BaseBackendSection"/>
 </page>
 ```
 
@@ -350,11 +351,11 @@ Add `mergeElement` to the `AdminLoginFormSection`:
 
 ```xml
 <sections ...>
-    <section name="AdminLoginFormSection">
-        <element name="username" type="input" selector="#username"/>
-        <element name="password" type="input" selector="#login"/>
-        <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
-    </section>
+   <section name="AdminLoginFormSection">
+      <element name="username" type="input" selector="#username"/>
+      <element name="password" type="input" selector="#login"/>
+      <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+   </section>
 </sections>
 ```
 
@@ -362,9 +363,9 @@ Create the `.../FooBackend/Section/AdminLoginFormSection.xml` file:
 
 ```xml
 <sections ...>
-    <section name="AdminLoginFormSection">
-        <element name="mergeElement" type="input" selector="#selector"/>
-    </section>
+   <section name="AdminLoginFormSection">
+      <element name="mergeElement" type="input" selector="#selector"/>
+   </section>
 </sections>
 ```
 
@@ -372,10 +373,10 @@ The `AdminLoginFormSection` result corresponds to:
 
 ```xml
 <section name="AdminLoginFormSection">
-    <element name="username" type="input" selector="#username"/>
-    <element name="password" type="input" selector="#login"/>
-    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
-    <element name="mergeElement" type="input" selector="#selector"/>
+   <element name="username" type="input" selector="#username"/>
+   <element name="password" type="input" selector="#login"/>
+   <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+   <element name="mergeElement" type="input" selector="#selector"/>
 </section>
 ```
 
@@ -386,11 +387,11 @@ Remove `username` from the `AdminLoginFormSection`:
 
 ```xml
 <sections ...>
-    <section name="AdminLoginFormSection">
-        <element name="username" type="input" selector="#username"/>
-        <element name="password" type="input" selector="#login"/>
-        <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
-    </section>
+   <section name="AdminLoginFormSection">
+      <element name="username" type="input" selector="#username"/>
+      <element name="password" type="input" selector="#login"/>
+      <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+   </section>
 </sections>
 ```
 
@@ -398,9 +399,9 @@ Create the `.../FooBackend/Section/AdminLoginFormSection.xml` file:
 
 ```xml
 <sections ...>
-    <section name="AdminLoginFormSection">
-        <element name="username" type="input" remove="true"/>
-    </section>
+   <section name="AdminLoginFormSection">
+      <element name="username" type="input" remove="true"/>
+   </section>
 </sections>
 ```
 
@@ -408,8 +409,8 @@ The `AdminLoginFormSection` result corresponds to:
 
 ```xml
 <section name="AdminLoginFormSection">
-    <element name="password" type="input" selector="#login"/>
-    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+   <element name="password" type="input" selector="#login"/>
+   <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
 </section>
 ```
 
@@ -420,11 +421,11 @@ Update `username` in the `AdminLoginFormSection` (the `.../Backend/Section/Admin
 
 ```xml
 <sections ...>
-    <section name="AdminLoginFormSection">
-        <element name="username" type="input" selector="#username"/>
-        <element name="password" type="input" selector="#login"/>
-        <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
-    </section>
+   <section name="AdminLoginFormSection">
+      <element name="username" type="input" selector="#username"/>
+      <element name="password" type="input" selector="#login"/>
+      <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+   </section>
 </sections>
 ```
 
@@ -432,9 +433,9 @@ Create the `.../FooBackend/Section/AdminLoginFormSection.xml` file:
 
 ```xml
 <sections ...>
-    <section name="AdminLoginFormSection">
-        <element name="username" type="input" selector="#newSelector"/>
-    </section>
+   <section name="AdminLoginFormSection">
+      <element name="username" type="input" selector="#newSelector"/>
+   </section>
 </sections>
 ```
 
@@ -442,9 +443,9 @@ The `AdminLoginFormSection` result corresponds to:
 
 ```xml
 <section name="AdminLoginFormSection">
-    <element name="username" type="input" selector="#newSelector"/>
-    <element name="password" type="input" selector="#login"/>
-    <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
+   <element name="username" type="input" selector="#newSelector"/>
+   <element name="password" type="input" selector="#login"/>
+   <element name="signIn" type="button" selector=".actions .action-primary" timeout="30"/>
 </section>
 ```
 
@@ -462,10 +463,10 @@ Add `<data key="thirdField">field3</data>` to the `_defaultSample` (the `.../Sam
 
 ```xml
 <entities ...>
-    <entity name="_defaultSample" type="testData">
-        <data key="firstField">field1</data>
-        <data key="secondField">field2</data>
-    </entity>
+   <entity name="_defaultSample" type="testData">
+      <data key="firstField">field1</data>
+      <data key="secondField">field2</data>
+   </entity>
 </entities>
 ```
 
@@ -473,9 +474,9 @@ Create the `.../FooSample/Data/SampleData.xml` file:
 
 ```xml
 <entities ...>
-    <entity name="sampleData" type="testData">
-        <data key="thirdField">field3</data>
-    </entity>
+   <entity name="sampleData" type="testData">
+      <data key="thirdField">field3</data>
+   </entity>
 </entities>
 ```
 
@@ -483,9 +484,9 @@ The `_defaultSample` result corresponds to:
 
 ```xml
 <entity name="_defaultSample" type="testData">
-    <data key="firstField">field1</data>
-    <data key="secondField">field2</data>
-    <data key="thirdField">field3</data>
+   <data key="firstField">field1</data>
+   <data key="secondField">field2</data>
+   <data key="thirdField">field3</data>
 </entity>
 ```
 
@@ -496,10 +497,10 @@ Change `firstField` to `<data key="firstField">overrideField</data>` in the `_de
 
 ```xml
 <entities ...>
-    <entity name="_defaultSample" type="testData">
-        <data key="firstField">field1</data>
-        <data key="secondField">field2</data>
-    </entity>
+   <entity name="_defaultSample" type="testData">
+      <data key="firstField">field1</data>
+      <data key="secondField">field2</data>
+   </entity>
 </entity>
 ```
 
@@ -507,9 +508,9 @@ Create the `.../FooSample/Data/SampleData.xml` file:
 
 ```xml
 <entities ...>
-    <entity name="_defaultSample" type="testData">
-        <data key="firstField">overrideField</data>
-    </entity>
+   <entity name="_defaultSample" type="testData">
+      <data key="firstField">overrideField</data>
+   </entity>
 </entity>
 ```
 
@@ -517,8 +518,8 @@ The `_defaultSample` results corresponds to:
 
 ```xml
 <entity name="_defaultSample" type="testData">
-    <data key="firstField">overrideField</data>
-    <data key="secondField">field2</data>
+   <data key="firstField">overrideField</data>
+   <data key="secondField">field2</data>
 </entity>
 ```
 

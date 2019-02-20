@@ -1,5 +1,5 @@
 <div class="bs-callout bs-callout-info" markdown="1">
-[Find out your version](./introduction.html#find-version) of the MFTF.
+[Find out your version]({{site.baseurl}}/mftf/2.3/introduction.html#find-version) of the MFTF.
 If your version is 2.2, see the [MFTF 2.2 documentation]({{site.baseurl}}/mftf/2.2/introduction.html).
 
 {% assign packages_2_3 = site.data.codebase.v2_3.open-source.composer_lock.packages-dev %}
