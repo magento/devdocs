@@ -139,12 +139,12 @@ The customer `id` is `3`.
 
 ``` json
 {
-    "id": 5,
+    "id": 3,
     "group_id": 1,
-    "default_billing": "5",
-    "default_shipping": "5",
-    "created_at": "2018-11-12 21:38:45",
-    "updated_at": "2018-11-12 21:38:45",
+    "default_billing": "3",
+    "default_shipping": "3",
+    "created_at": "2019-01-28 20:53:45",
+    "updated_at": "2019-01-28 20:53:46",
     "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
@@ -153,8 +153,8 @@ The customer `id` is `3`.
     "website_id": 2,
     "addresses": [
         {
-            "id": 5,
-            "customer_id": 5,
+            "id": 3,
+            "customer_id": 3,
             "region": {
                 "region_code": "NY",
                 "region": "New York",

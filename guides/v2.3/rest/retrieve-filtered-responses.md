@@ -43,7 +43,7 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 
 The following example returns only the customer first name, last name, and the entire `billing_address` object from a specified order. Do not include brackets `[]` after an object name when you want to return all of the object's contents.
 
-`GET http:/<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
+`GET http://<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
 
 ```json
 {

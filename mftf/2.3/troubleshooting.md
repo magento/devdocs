@@ -18,7 +18,7 @@ Troubleshoot your WebDriver issues on various browsers.
 
 You are unable to upload file input using the MFTF actions and are seeing the following exception:
 
-```
+```terminal
 [Facebook\WebDriver\Exception\NoSuchDriverException]
 No active session with ID e56f9260-b366-11e7-966b-db3e6f35d8e1
 ```
@@ -35,7 +35,7 @@ For headless browsing, the [Headless Chrome](https://developers.google.com/web/u
 
 You are seeing an "unhandled inspector error" exception:
 
-```
+```terminal
 [Facebook\WebDriver\Exception\UnknownServerException]
 unknown error: undhandled inspector error: {"code":-32601, "message":
 "'Network.deleteCookie' wasn't found"} ....
