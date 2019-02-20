@@ -40,20 +40,15 @@ For example:
 
 ### Z release - patch
 
-Patch version **Z** MUST be incremented if only backward compatible changes to tests are introduced.
-For example, a fix which aims to resolve test flakiness might:
-
-- Update an unreliable selector.
-- Add a wait for an element.
-- Update a data entity value.
+Patch version **Z** MUST be incremented if only backward compatible changes are introduced.
   
 ### Y release - minor
 
-Minor version **Y** MUST be incremented if a new, backward compatible test or test entity is introduced.
+Minor version **Y** MUST be incremented if new, backward compatible features are introduced.
 It MUST be incremented if any test or test entity is marked as deprecated.
 It MAY include patch level changes. Patch version MUST be reset to 0 when minor version is incremented.
 
 ### X release - major
 
-A major release introduces backward incompatible changes to a test or test entity. This MUST increment the major version number.
+A major release introduces backward incompatible changes. This MUST increment the major version number.
 It can include minor and patch level changes. You must reset the patch and minor version to 0 when you change the major version.
