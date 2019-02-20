@@ -38,9 +38,9 @@ Fastly provides the following services to optimize and secure content delivery o
 
 We highly recommend using Fastly for your CDN, security, and image optimization needs, unless you are using {{ site.data.var.ee}} in a headless deployment. 
 
-## Fastly CDN module for Magento
+## Fastly CDN module for Magento 2
 
-Fastly services for {{ site.data.var.ece }} use the [Fastly CDN for Magento module](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master` branch). 
+Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master` branch). 
 
 On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly]({{ page.baseurl}}/cloud/cdn/configure-fastly.html#upgrade).
 
@@ -149,7 +149,7 @@ instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/c
 
 Fastly supports forcing unencrypted requests to TLS through the Force TLS
 feature. Set up a secure base URL in Magento and turn on the Force TLS option
-in the Fastly extension. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md).
+in the Fastly CDN module. For details and instructions, see the Fastly [Force TLS guide](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/FORCE-TLS.md).
 
 ## GeoIP service support {#geoip}
 
