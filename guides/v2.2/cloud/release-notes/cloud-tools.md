@@ -33,16 +33,15 @@ The release notes include:
 
 -   {:.new}**Docker updates**—
 
-    -   You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
     -   <!-- MAGECLOUD-3030 -->Added a new Docker container to address a problem with the SSL termination for Varnish. The Hitch container allows Varnish to function over HTTPS.
 
--  {:.new}<!-- MAGECLOUD-3026/MAGECLOUD-2963/MAGECLOUD-3048-->**Environment variable updates**—
- 
-    -  Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+    -   <!-- MAGECLOUD-3025 -->
 
-    -  Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
+    -   <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
 
--   {:.new}<!--MAGECLOUD-2903-->**Environment configuration check**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
+    -   <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
+
+    -   <!-- MAGECLOUD-2883 -->
 
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
@@ -52,19 +51,27 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-2956 -->Updated the constraint with the appropriate version of the `symfony/yaml` package to use with [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants). Constant parsing does not work when using a `symfony/yaml` package version earlier than 3.2.
 
--   {:.fix}<!-- MAGECLOUD-2904 -->Fixed the validation process to prevent a problem that occurred when SCD_MATRIX ignored a theme value that contained different character cases.
+-   {:.new}<!--MAGECLOUD-2903-->**Environment configuration check**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
 
 -   {:.fix}<!-- MAGECLOUD-2851 -->Fixed an issue with processing malformed JSON variables. Now, if a JSON variable causes a syntax error, a warning appears in the `cloud.log` file and deployment continues using the default variable.
 
--   {:.fix}<!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
+-   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a connection error that occurred during deployment immediately after disabling the Redis service.
 
--   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a Redis connection error that occurred during deployment immediately after disabling the Redis service.
+-   {:.fix}<!-- MAGECLOUD-2573/MAGECLOUD-2848 -->**Changes to ADMIN environment variable behavior**—
 
--   {:.fix}<!--MAGECLOUD-2573/MAGECLOUD-2848-->**Changes to ADMIN environment variable behavior**—
-  
-    -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use environment variables (`ADMIN_EMAIL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`) to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+    -   Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use environment variables (`ADMIN_EMAIL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`) to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
-    -  ADMIN_EMAIL is no longer required when upgrading or applying patches.
+    -   ADMIN_EMAIL is no longer required when upgrading or applying patches.
+
+-   {:.fix}**Environment variable updates**—Changed the following environment variables:
+
+    -  {:.new}<!-- MAGECLOUD-3026 & MAGECLOUD-2963-->Added the [RESOURCE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration) to map a resource name to a database connection.
+
+    -  {:.new}<!-- MAGECLOUD-3048 -->Added the [X_FRAME_CONFIGURATION environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#X_FRAME_CONFIGURATION) to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
+
+    -   <!-- MAGECLOUD-2823 -->Updated the `SCD_COMPRESSION_LEVEL` environment variable default values for the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{page.baseurl}}/cloud/env/variables-deploy.html).
+
+    -   <!-- MAGECLOUD-2904 -->Fixed the validation process to prevent a problem that occurred when SCD_MATRIX ignored a theme value that contained different character cases.
 
 ## v2002.0.15
 
