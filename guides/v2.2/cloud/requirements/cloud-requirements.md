@@ -71,18 +71,18 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
 
-This software is *not* upgradable but versions for the following software is configurable:
+You cannot upgrade the software, but you can configure the following services:
 
-* [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) 7.0 and 7.1
-* [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) 5.6 and 5.7
-* [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
-* [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) 3.5
-* [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, 2.4, and 5.2
+* [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
+* [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+* [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+* [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+* [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
 {:.bs-callout .bs-callout-info}
-Elasticsearch 5.2 is only available for 2.2.3 and higher.
+See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version requirements. 
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
+For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
 
