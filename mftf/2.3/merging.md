@@ -278,7 +278,7 @@ The `LogInAsAdminTest` result corresponds to:
 </test>
 ```
 
-## Merge Action groups
+## Merge action groups
 
 Merging action groups allows you to extend existing tests by reusing existing action groups, while customizing them for your specific needs.
 
