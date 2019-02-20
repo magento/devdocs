@@ -82,7 +82,8 @@ For more information, please see the [Extension Developer Guide on JavaScript Te
   
 ## Static
 
-Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices. They usually are executed during continuous integration using the `bin/magento` tool.
+Static code analysis checks that PHP code follows the Magento 2 coding standards and best practices.
+They are executed during continuous integration using the `bin/magento` tool.
 
 Please see the [`magento dev:tests:run`][] documentation for more information, using the test type `static`.
 
