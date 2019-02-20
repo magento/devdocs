@@ -51,7 +51,7 @@ The listing component requires the data source to be properly configured and ass
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <dataSource name="cms_page_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">PageGridDataProvider</argument>
+            <argument name="class" xsi:type="string">Magento\Cms\Ui\Component\DataProvider</argument>
             <argument name="name" xsi:type="string">cms_page_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">page_id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
