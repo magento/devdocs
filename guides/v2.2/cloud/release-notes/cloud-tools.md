@@ -59,7 +59,7 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a connection error that occurred during deployment immediately after disabling the Redis service.
 
--   {:.new}<!--MAGECLOUD-2925-->**Logging changes**—Updated the Updated the [log level]({{ page.baseurl }}/cloud//env/log-handlers.html#log-levels) for the following build and deploy process events from `Info` to `Notice`:
+-   {:.new}<!--MAGECLOUD-2925-->**Logging changes**—Updated the Updated the [log level]({{ page.baseurl }}/cloud/env/log-handlers.html#log-levels) for the following build and deploy process events from `Info` to `Notice`:
 
     -  Begin and end of the process for reconciling installed modules in `composer.json` with shared configuration settings in the ` app/etc/config.php` file
 	
