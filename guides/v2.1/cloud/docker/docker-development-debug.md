@@ -45,8 +45,8 @@ You can change any Xdebug configuration using the`XDEBUG_CONFIG` option. For exa
 
 1.  In your PhpStorm project, open the settings panel.
 
-    -  Mac: select **File** > **Preferences**
-    -  Windows/Linux: select **File** > **Settings**
+    -  _Mac OS X_—Select **File** > **Preferences**.
+    -  _Windows/Linux_—Select **File** > **Settings**.
 
 1.  In the _Settings_ panel, expand and locate the **Languages & Frameworks** > **PHP** > **Servers** section.
 
@@ -77,7 +77,7 @@ The following steps describe debugging web requests and CLI commands.
 
 1.  Add breakpoints in the `pub/index.php` file.
 
-1.  Install the debug extension in the browser and click **Debug** to enable.
+1.  Install the debug extension in the browser, and then click **Debug** to enable.
 
 1.  In the browser, open the `https://localhost` URL. 
 
@@ -91,8 +91,8 @@ You can debug any Magento command or PHP script using the following steps.
 
     -   **Name**—Enter a name for the server, for example `Docker Cloud`.
     -   **Connect to Docker daemon with**—
-        -   Windows—Select **TCP socket** and update **Engine Api Url** with `tcp://localhost:2375`.
-        -   For _Mac_, select **Docker for Mac** [default]
+        -   _Windows_—Select **TCP socket** and update **Engine Api Url** with `tcp://localhost:2375`.
+        -   _Mac OS X_—Select **Docker for Mac**. [_default_]
 
 1.  In the **Languages & Frameworks** > **PHP** > **Cli Interpreter** panel, click **[...]**.
    
@@ -118,7 +118,7 @@ You can debug any Magento command or PHP script using the following steps.
 
 ## Using Xdebug Helper
 
-The following steps describe how to work with Chrome using the Xdebug Helper extension.
+You can install and use the Xdebug Helper Chrome extension to debug your PhP code from the browser.
 
 #### To use Xdebug Helper with Chrome:
 
