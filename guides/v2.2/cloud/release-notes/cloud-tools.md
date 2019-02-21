@@ -33,7 +33,7 @@ The release notes include:
 
 -   {:.new}**Docker updates**—
 
-    -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in Docker is the same as the default configuration in the Cloud template.
+    -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
 
     -   <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
 
@@ -57,31 +57,31 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a connection error that occurred during deployment immediately after disabling the Redis service.
 
--   {:.new}<!--MAGECLOUD-2925-->**Logging changes**—Updated the Updated the [log level]({{ page.baseurl }}/cloud/env/log-handlers.html#log-levels) for the following build and deploy process events from `Info` to `Notice`:
+-   {:.new}<!--MAGECLOUD-2925-->**Logging changes**—Updated the [log level]({{ page.baseurl }}/cloud/env/log-handlers.html#log-levels) from `Info` to `Notice` for the following build and deploy process events:
 
-    -  Begin and end of the process for reconciling installed modules in `composer.json` with shared configuration settings in the ` app/etc/config.php` file
-	
-	  -  Begin and end of the configuration validation process
-	
-	  -  Begin and end of the `setup:di:compile` process for generating classes
+    -   Begin and end of the process for reconciling installed modules in `composer.json` with shared configuration settings in the `app/etc/config.php` file
+
+    -   Begin and end of the configuration validation process
+
+    -   Begin and end of the `setup:di:compile` process for generating classes
 
 -  {:.new}**New environment variables**—
 
-    -  <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection. 
+    -   <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection. 
 
-    -  <!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global environment variable]({{ page.baseurl }}/cloud/env/variables-global.html#x_frame_configuration)**—Use this variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
+    -   <!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global variable]({{ page.baseurl }}/cloud/env/variables-global.html#x_frame_configuration)**—Use this variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
 
 -   {:.fix}**Environment variable updates**—Changed the following environment variables:
 
-    -  <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`. 
+    -   <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`
 
     -   <!-- MAGECLOUD-2823 -->**SCD\_COMPRESSION\_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{ page.baseurl }}/cloud/env/variables-deploy.html).
 
     -   <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
-    
-    -  <!--MAGECLOUD-2573/MAGECLOUD-2848 -->**ADMIN variables**—
 
-        -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+    -  <!-- MAGECLOUD-2573/MAGECLOUD-2848 -->**ADMIN variables**—
+
+        -   Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
         -   ADMIN_EMAIL is no longer required when upgrading or applying patches.
 
