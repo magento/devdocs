@@ -17,15 +17,15 @@ If a merchant used the Admin to disable a module's output in a previous release,
 
 ## Disable module output in a pipeline deployment
 
-To disable module output in pipeline or any other deployment with multiple instances of Magento:
+To disable module output in the pipeline deployment or any other deployment, with multiple instances of Magento:
 
 1. Edit the `Backend` module's `config.xml` file.
 1. Export the configuration changes.
 
 ### Edit the `Backend` module's `config.xml` file
 
-Archive the original `config.xml` file. 
-Then add lines similar to the following to the `<Magento_install_dir>/vendor/magento/module-backend/etc/config.xml` file, directly under the `<default>` element:
+1. Archive the original `config.xml` file.
+1. Add lines similar to the following to the `<Magento_install_dir>/vendor/magento/module-backend/etc/config.xml` file, directly under the `<default>` element:
 
 ```xml
 <advanced>
@@ -48,7 +48,7 @@ As a sample result of this configuration, customers can no longer sign up to rec
 Run the following command to export the configuration changes:
 
 ```bash
-magento app:config:dump
+bin/magento app:config:dump
 ```
 
 The results are written to the `<Magento_install_dir>/app/etc/config.php` file.
@@ -65,8 +65,8 @@ For more information about this command, see [Export the configuration]({{ page.
 
 The procedure for disabling module output on a single instance of Magento is easier because the changes don't have to be distributed.
 
-Archive the original `<Magento_install_dir>/app/etc/config.php` file.
-Then add the `advanced` and `modules_disable_output` sections to the `config.php` file (if they don't already exist):
+1. Archive the original `<Magento_install_dir>/app/etc/config.php` file.
+1. Add the `advanced` and `modules_disable_output` sections to the `config.php` file (if they don't already exist):
 
 ```php
 'system' =>
@@ -87,10 +87,5 @@ Then add the `advanced` and `modules_disable_output` sections to the `config.php
   ),
 ```
 
-Here:
-
-- The `array` beneath `modules_disable_output` contains a list of modules.
-- `Magento_Review` specifies which module to disable output for.
-- `1` is the flag that disables output for the `Magento_Review` module.
-
-As a sample result of this configuration, customers can no longer review products.
+In this example, output for the `Magento_Review` module has been disabled and customers can no longer review products.
+To re-enable output, set the value to `0`.
