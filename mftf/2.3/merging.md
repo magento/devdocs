@@ -8,7 +8,14 @@ redirect_from: /guides/v2.3/magento-functional-testing-framework/2.3/merging.htm
 _This topic was updated due to the {{page.mftf-release}} MFTF release._
 {: style="text-align: right"}
 
-The MFTF allows you to merge test components defined in XML files, such as [tests], [pages][page], [sections], and [data].
+The MFTF allows you to merge test components defined in XML files, such as:
+
+- [`<tests>`][]
+- [`<pages>`][]
+- [`<sections>`][]
+- [`<data>`][]
+- `<action groups>`
+
 You can create, delete, or update the component.
 It is useful for supporting rapid test creation for extensions and customizations.
 
@@ -19,12 +26,13 @@ Your update (XML node with changes) must have the same attribute `name` as its b
 
 For example:
 
-* All tests with `<test name="SampleTest>` will be merged into one.
-* All pages with `<page name="SamplePage>` will be merged into one.
-* All sections with `<section name="SampleAction">` will be merged into one.
-* All data entities with `<entity name="sampleData" type="sample">` will be merged into one.
+- All tests with `<test name="SampleTest>` will be merged into one.
+- All pages with `<page name="SamplePage>` will be merged into one.
+- All sections with `<section name="SampleAction">` will be merged into one.
+- All data entities with `<entity name="sampleData" type="sample">` will be merged into one.
+- All action groups with `<actionGroup name="selectNotLoggedInCustomerGroup">` will be merged into one.
 
-Although a file name doesn't influence merging, we recommend using the same file names in merging updates.
+Although a file name does not influence merging, we recommend using the same file names in merging updates.
 This makes it easier to search later on.
 
 ## Add a test
@@ -270,6 +278,38 @@ The `LogInAsAdminTest` result corresponds to:
 </test>
 ```
 
+## Merge action groups
+
+Merging action groups allows you to extend existing tests by reusing existing action groups, while customizing them for your specific needs.
+
+### Use case
+
+Here is an action group for selecting `customerGroup` in the `Cart Price Rules` section.
+The controls change drastically in the B2B version, so it was abstracted to an action group so that it may be easily changed if B2B is enabled.
+
+> Action group for selecting `customerGroup` in the `Cart Price Rules` section:
+
+```xml
+<actionGroup name="selectNotLoggedInCustomerGroup">
+    <selectOption selector="{{AdminCartPriceRulesFormSection.customerGroups}}" userInput="NOT LOGGED IN" stepKey="selectCustomerGroup"/>
+</actionGroup>
+```
+
+> B2B Merge file
+
+```xml
+<!-- name matches -->
+<actionGroup name="selectNotLoggedInCustomerGroup">
+    <!-- removes the original action -->
+    <remove keyForRemoval="selectCustomerGroup"/>
+    <!-- adds in sequence of actions to be performed instead-->
+    <click selector="{{AdminCartPriceRulesFormSection.customerGroups}}" stepKey="expandCustomerGroups"/>
+    <fillField selector="{{AdminCartPriceRulesFormSection.customerGroupsInput}}" userInput="NOT LOGGED IN" stepKey="fillCustomerGroups"/>
+    <click selector="{{AdminCartPriceRulesFormSection.customerGroupsFirstResult}}" stepKey="selectNotLoggedInGroup"/>
+    <click selector="{{AdminCartPriceRulesFormSection.customerGroupsDoneBtn}}" stepKey="closeMultiSelect"/>
+</actionGroup>
+```
+
 ## Merge pages
 
 Use [page] merging to add or remove [sections] in your module.
@@ -305,9 +345,10 @@ The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-   <section name="BaseBackendSection"/>
-   <section name="AnotherBackendSection"/>
-   <section name="NewExtensionSection"/>
+
+    <section name="BaseBackendSection"/>
+    <section name="AnotherBackendSection"/>
+    <section name="NewExtensionSection"/>
 </page>
 ```
 
@@ -317,8 +358,8 @@ The `BaseBackendPage` result corresponds to:
 
 ```xml
 <page name="BaseBackendPage" url="admin" area="admin" module="Magento_Backend">
-   <section name="BaseBackendSection"/>
-   <section name="AnotherBackendSection"/>
+    <section name="BaseBackendSection"/>
+    <section name="AnotherBackendSection"/>
 </page>
 ```
 
@@ -527,8 +568,8 @@ The `_defaultSample` results corresponds to:
 
 [`codecept`]: ./commands/codeception.html
 [`mftf`]: ./commands/mftf.html
-[data]: ./data.html
+[`<data>`]: ./data.html
 [elements]: ./section.html#element-tag
-[page]: ./page.html
-[sections]: ./section.html
-[tests]: ./test.html
+[`<pages>`]: ./page.html
+[`<sections>`]: ./section.html
+[`<tests>`]: ./test.html
