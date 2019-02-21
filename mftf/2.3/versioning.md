@@ -52,5 +52,5 @@ It MAY include patch level changes. Patch version MUST be reset to 0 when minor 
 
 ### X release - major
 
-A major release introduces backward incompatible changes. This MUST increment the major version number.
+Major version **X** MUST be incremented for a release that introduces backward incompatible changes.
 It can include minor and patch level changes. You must reset the patch and minor version to 0 when you change the major version.
