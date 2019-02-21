@@ -46,7 +46,7 @@ Patch version **Z** MUST be incremented for a release that introduces only backw
   
 ### Y release - minor
 
-Minor version **Y** MUST be incremented if new, backward compatible features are introduced.
+Minor version **Y** MUST be incremented for a release that introduces new, backward compatible features.
 It MUST be incremented if any test or test entity is marked as deprecated.
 It MAY include patch level changes. Patch version MUST be reset to 0 when minor version is incremented.
 
