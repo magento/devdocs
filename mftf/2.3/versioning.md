@@ -42,7 +42,7 @@ For example:
 
 ### Z release - patch
 
-Patch version **Z** MUST be incremented if only backward compatible changes are introduced.
+Patch version **Z** MUST be incremented for a release that introduces only backward compatible changes.
   
 ### Y release - minor
 
