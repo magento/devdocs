@@ -110,7 +110,7 @@ companyTeamRepositoryV1
 configurableProductConfigurableProductManagementV1
 ```
 
-### Company credit
+### CompanyCredit
 
 ```
 companyCreditCreditBalanceManagementV1
@@ -119,7 +119,7 @@ companyCreditCreditLimitManagementV1
 companyCreditCreditLimitRepositoryV1
 ```
 
-### Negotiable quotes
+### NegotiableQuote
 
 ```
 negotiableQuoteAttachmentContentManagementV1
@@ -137,7 +137,7 @@ negotiableQuoteShippingInformationManagementV1
 negotiableQuoteShippingMethodManagementV1
 ```
 
-### Shared catalog
+### SharedCatalog
 
 ```
 sharedCatalogCategoryManagementV1

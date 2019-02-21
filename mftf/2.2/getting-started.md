@@ -22,8 +22,42 @@ Make sure that you've installed and set up the following software:
 
 ### Recommendations
 
-We recommend using [PhpStorm 2017](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
+We recommend using [PhpStorm 2017.1 or newer](https://www.jetbrains.com/phpstorm/) for your integrated development environment (IDE).
 They recently added support for [Codeception Test execution](https://blog.jetbrains.com/phpstorm/2017/03/codeception-support-comes-to-phpstorm-2017-1/), which is helpful when debugging.
+
+## Install Magento {#install-magento}
+
+Use instructions below to install Magento.
+
+### Step 1. Clone the `magento2` source code repository {#clone-magento}
+
+```bash
+git clone https://github.com/magento/magento2.git
+```
+
+or
+
+```bash
+git clone git@github.com:magento/magento2.git
+```
+
+### Step 2. Install dependencies {#install-dependencies}
+
+Checkout the Magento version that you are going to test.
+
+```bash
+cd magento2/
+```
+
+```bash
+git checkout 2.2-develop
+```
+
+Install the Magento application.
+
+```bash
+composer install
+```
 
 ## Prepare Magento
 
@@ -56,19 +90,7 @@ To enable the **Admin Account Sharing** setting, to avoid unpredictable logout d
 
 Follow these steps in a command line interface to set up the MFTF on your system.
 
-### Step 1. Clone the `magento2` source code repository
-
-```bash
-git clone https://github.com/magento/magento2.git
-```
-
-or
-
-```bash
-git clone git@github.com:magento/magento2.git
-```
-
-### Step 2. Install dependencies
+### Step 1. Install dependencies
 
 ```bash
 cd magento2/dev/tests/acceptance
@@ -77,7 +99,7 @@ cd magento2/dev/tests/acceptance
 composer install
 ```
 
-### Step 3. Build the project
+### Step 2. Build the project
 
 In _magento2/dev/tests/acceptance_, run the following command:
 
@@ -89,7 +111,7 @@ vendor/bin/robo build:project
 To avoid typing `vendor/bin` every time, add your `<absolute path to acceptance dir>/vendor/bin` value to `PATH`.
 When added, you should be able to run the `robo`, `codecept`, and `phpunit` commands.
 
-### Step 4. Edit environment settings
+### Step 3. Edit environment settings
 
 In the _magento2/dev/tests/acceptance_ directory, edit the `.env` file to match your system. Use the following parameters, which are required to launch tests.
 
@@ -123,7 +145,7 @@ Example:
 http://127.0.0.1:4444/wd/hub
 ```
 
-### Step 5. Make `command.php` visible in the Magento testing environment
+### Step 4. Make `command.php` visible in the Magento testing environment
 
 In your Magento installation, navigate to the _magento2/dev/tests/acceptance_ directory and run the following command to allow MFTF to send Magento CLI commands to your Magento instance.
 
@@ -134,7 +156,7 @@ cp .htaccess.sample .htaccess
 {: .bs-callout .bs-callout-warning }
 If you do not have access to your Magento installation and cannot complete the above steps you will not be able to run tests using Magento CLI commands.
 
-### Step 6. Generate existing tests
+### Step 5. Generate existing tests
 
 In the `magento2/dev/tests/acceptance` directory, run the following command to generate tests as PHP classes from XML files:
 
@@ -142,7 +164,7 @@ In the `magento2/dev/tests/acceptance` directory, run the following command to g
 vendor/bin/robo generate:tests
 ```
 
-### Step 7. Run tests
+### Step 6. Run tests
 
 To run tests, you need a running Selenium server and a [`codecept`][codecept] or a [`robo`][robo] command with required parameters.
 
@@ -168,7 +190,7 @@ vendor/bin/codecept run
 
 See more commands in [`robo`](commands/robo.html) and [`codecept`](commands/codeception.html).
 
-### Step 8. Generate reports {#allure}
+### Step 7. Generate reports {#allure}
 
 Install [Allure](https://docs.qameta.io/allure/latest/), a tool that generates testing reports in HTML.
 Testing reports are generated in a CLI during testing.
