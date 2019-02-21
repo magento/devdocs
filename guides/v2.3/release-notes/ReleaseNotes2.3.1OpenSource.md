@@ -133,8 +133,9 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 * Update PayPal Express Checkout to checkout.js v4
 
-* Accept.js library is now used for Authorize.NET payments. 
-<!--- MAGETWO-95068-->* **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
+* Accept.js library is now used for Authorize.Net payments. 
+
+* <!--- MAGETWO-95068-->* **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
 
 
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13. 
@@ -282,7 +283,7 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- MAGETWO-91658-->* Magento now uses the configured default sort order  during checkout to calculate totals. Previously, Magento ignored the configured order and used `Sub Total > Shipping > Discount > Tax > Grand Total` to calculate order totals. 
 
-<!--- MAGETWO-91530-->* Magento now displays informative error messages when an order paid for with Authorize.net fails. 
+<!--- MAGETWO-91530-->* Magento now displays informative error messages when an order paid for with Authorize.Net fails. 
 
 <!--- MAGETWO-71375-->* Magento now displays the correct status for orders with zero subtotals. Previously, new order status appeared as pending when it was processing. 
 
@@ -1001,22 +1002,10 @@ Form what i found out by looking around in the code, the parameter `"___store"` 
 
 <!--- ENGCOM-3956-->* The `updateCustomerAddress` mutation now updates the region ID as expected. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19663](https://github.com/magento/graphql-ce/pull/312)*. [GitHub-270](https://github.com/magento/magento2/issues/270)
 
+<!--- ENGCOM-4153-->* A configurable product query correctly returns the label associated with a configurable option. *Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request [17424](https://github.com/magento/graphql-ce/pull/346)*. [GitHub-250](https://github.com/magento/magento2/issues/250)
 
+<!--- ENGCOM-2964-->* Store configuration queries now return CMS and theme attributes. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [182](https://github.com/magento/graphql-ce/pull/182)*. [GitHub-128](https://github.com/magento/magento2/issues/128)
 
-<!--- ENGCOM-4153-->* 
-Configurable Options Label doesn't return the Store View Label
-This PR added functionality to show store label in label response
-
-Request: Store Label "Custom Color", Default Store Label "Color"
-
-query to get store view label
-
-*Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request [17424](https://github.com/magento/graphql-ce/pull/346)*. [GitHub-250](https://github.com/magento/magento2/issues/250)
-
-
-<!--- ENGCOM-2964-->* 
-
-*Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [182](https://github.com/magento/graphql-ce/pull/182)*. [GitHub-128](https://github.com/magento/magento2/issues/128)
 
 
 ### Import/export
@@ -1069,7 +1058,7 @@ Magento now displays an informative error message if images are not imported as 
 
 ### Infrastructure
 
-<!--- ENGCOM-3690-->* `transparent.js` has relocated, and orders can now be created from the Admin using PayflowPro and authorize.net. Previously, orders created from the Admin using PayflowPro failed, and Magento displayed an informative message indicating an invalid account number. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19764](https://github.com/magento/magento2/pull/19764)*. [GitHub-19763](https://github.com/magento/magento2/issues/19763)
+<!--- ENGCOM-3690-->* `transparent.js` has relocated, and orders can now be created from the Admin using PayflowPro and Authorize.Net. Previously, orders created from the Admin using PayflowPro failed, and Magento displayed an informative message indicating an invalid account number. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19764](https://github.com/magento/magento2/pull/19764)*. [GitHub-19763](https://github.com/magento/magento2/issues/19763)
 
 <!--- ENGCOM-3598-->* json_encode errors are now caught and logged in console.log. Previously, the JSON serializer threw an error, which blocked all frontend behavior, *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [16154](https://github.com/magento/magento2/pull/16154)*. [GitHub-14937](https://github.com/magento/magento2/issues/14937)
 
@@ -1151,7 +1140,7 @@ The configurale product
 
 <!--- MAGETWO-95821-->* When a  customer selects PayPal as a payment method but then applies a gift card, Magento now reverts to zero subtotal checkout. Previously, the order failed at the review step if a gift card were applied. 
 
-<!--- MAGETWO-91526-->* Orders created with eway as a payment method now contain the same credit card information, which isincluded in the Authorize.net response. Previously, the order did not contain any information regarding credit card. 
+<!--- MAGETWO-91526-->* Orders created with eway as a payment method now contain the same credit card information, which isincluded in the Authorize.Net response. Previously, the order did not contain any information regarding credit card. 
 
 <!--- MAGETWO-97243-->* Magento now displays successful orders paid for with eWay. Previously, Magento did not display completed errors even after the transaction was accepted by eWay. 
 
@@ -1159,11 +1148,11 @@ The configurale product
 
 <!--- ENGCOM-3156-->* You can now use REST to create an order without payment. Previously, when using REST to submit an order without a payment, Magento threw an error. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18521](https://github.com/magento/magento2/pull/18521)*. [GitHub-15652](https://github.com/magento/magento2/issues/15652)
 
-<!--- ENGCOM-3646-->* Payment methods are now grouped properly in the core source model. `\Magento\Payment\Model\Config\Source\Allmethods` class in the Magento core can be used as source model for backend configuration fields. It displays available payment methods grouped by payment provider. We've added groups for previously missing payment options (PayPal, Authorize.net, and  Braintree methods). *Fix submitted by [Wojtek Naruniec](https://github.com/wojtekn) in pull request [19665](https://github.com/magento/magento2/pull/19665)*. [GitHub-19664](https://github.com/magento/magento2/issues/19664)
+<!--- ENGCOM-3646-->* Payment methods are now grouped properly in the core source model. `\Magento\Payment\Model\Config\Source\Allmethods` class in the Magento core can be used as source model for backend configuration fields. It displays available payment methods grouped by payment provider. We've added groups for previously missing payment options (PayPal, Authorize.Net, and  Braintree methods). *Fix submitted by [Wojtek Naruniec](https://github.com/wojtekn) in pull request [19665](https://github.com/magento/magento2/pull/19665)*. [GitHub-19664](https://github.com/magento/magento2/issues/19664)
 
 <!--- ENGCOM-3840-->* Fixed misalignment of the save-for-later checkbox on the Admin create order credit card details page. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [20233](https://github.com/magento/magento2/pull/20233)*. [GitHub-20232](https://github.com/magento/magento2/issues/20232)
 
-<!--- MC-4239-->* The authorize.net payment method has been migrated to the `accept.js` API on both the storefront and Admin. 
+<!--- MC-4239-->* The Authorize.Net payment method has been migrated to the `accept.js` API on both the storefront and Admin. 
 
 <!--- MC-5235-->* PayPal Express Checkout has been updated to the JSv4​. This API replaces the deprecated API Express Checkout - NVP/SOAP. This update provides Magento with a single integration but with multiple payment options that merchants can choose when activating the integration​. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html)
 
@@ -1201,7 +1190,7 @@ The configurale product
 
 <!--- ENGCOM-4129-->* Magento now refreshes reports statistics as expected when you select the **Refresh Lifetime Statistics** option from the Actions menu of the **Reports** > **Refresh Statistics** page. Previously, you were redirected to a 404 page when you selected this menu option. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [20820](https://github.com/magento/magento2/pull/20820)*. [GitHub-20819](https://github.com/magento/magento2/issues/20819)
 
-<!--- ENGCOM-3257-->* Magento now displays correct prices for products at checkout when a custoer uses a credit card and authorize.net is enabled. Previously, order items had the original price of $0.0. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [18768](https://github.com/magento/magento2/pull/18768)*. [GitHub-16050](https://github.com/magento/magento2/issues/16050)
+<!--- ENGCOM-3257-->* Magento now displays correct prices for products at checkout when a custoer uses a credit card and Authorize.Net is enabled. Previously, order items had the original price of $0.0. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [18768](https://github.com/magento/magento2/pull/18768)*. [GitHub-16050](https://github.com/magento/magento2/issues/16050)
 
 
 
@@ -1369,8 +1358,6 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 <!--- MAGETWO-91525-->* Updates containing zero objects are now removed as expected from the dashboard. Previously, Magento did not remove updates with zero objects.
 
 <!--- MAGETWO-96106-->* You can now successfully create a CMS static block and schedule it for a staging update. Previously, after the update, Magento displayed an empty container on top of the page instead of the CMS content block. 
-
-<!--- MAGETWO-97866-->* Products are now marked as new  on the storefront when you set a product "As New" in the product page or from a scheduled update. Previously, dates shown in database did not match the dates in the update on the store in deployments running the `en_GB` locale. 
 
 
 
