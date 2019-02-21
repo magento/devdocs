@@ -43,9 +43,9 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
--   {:.fix}<!-- MAGECLOUD-3104 -->Fixed a compression issue when generating assets during the build phase by moving the compression task to the beginning of the `build:transfer` section of the build phase.
+-   {:.new}<!-- MAGECLOUD-3104 -->Now, you can minify and bundle your static assets, and the native process to generate assets during the build phase occurs at the beginning of the `build:transfer` section. See the section that describes a [customized build process for hooks]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).
 
--   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship.
+-   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship. Also, this fix addresses an issue that occurred during the configuration process of MBI for Starter. For Starter, this upgrade is a "must have" for using MBI.
 
 -   {:.fix}<!-- MAGECLOUD-3003 -->Fixed a validation issue with the database configuration that caused the deploy process to fail.
 
@@ -73,9 +73,9 @@ The release notes include:
 
 -   {:.fix}**Environment variable updates**—Changed the following environment variables:
 
-    -   <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`
+    -   <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`
 
-    -   <!-- MAGECLOUD-2823 -->**SCD\_COMPRESSION\_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{ page.baseurl }}/cloud/env/variables-deploy.html).
+    -   <!-- MAGECLOUD-2823 -->**SCD\_COMPRESSION\_LEVEL build and deploy variable**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html) content.
 
     -   <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
 

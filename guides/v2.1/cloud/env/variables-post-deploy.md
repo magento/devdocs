@@ -20,7 +20,8 @@ stage:
 -  **Default**— `index.php`
 -  **Version**—Magento 2.1.4 and later
 
-Customize the list of pages used to preload the cache in the `post_deploy` stage. 
+Customize the list of pages used to preload the cache in the `post_deploy` stage.
+
 ```yaml
 stage:
   post-deploy: 
@@ -29,4 +30,15 @@ stage:
        - "index.php/customer/account/create"
 ```
 
-If your project is configured with [multiple domains]({{ page.baseurl }}/cloud/project/project-multi-sites.html), the cache is preloaded for pages on all domains.
+You must configure the post-deploy hook. See [hooks section of the `.magento.app.yaml` file]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).
+
+Also, you can configure the cache to preload pages for [multiple domains]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
+
+```yaml
+stage:
+  post-deploy:
+    WARM_UP_PAGES:
+      - 'test'
+      - 'http://example1.com/test'
+      - 'http://example2.com/test'
+```
