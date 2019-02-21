@@ -34,7 +34,7 @@ X.Y.Z
 
 For example:
 
-- Magento 2 ships with MFTF 2.3.9
+- Magento 2 ships with MFTF version 2.3.9
 - A patch is added to fix a bug: 2.3.10 (Increment Z = backward compatible change)
 - New action command added: 2.4.0 (Increment Y, set Z to 0 = backward compatible change)
 - New action added: 2.4.1 (Increment Z = backward compatible change)
