@@ -34,16 +34,14 @@ The release notes include:
 
 -   {:.new}**Docker updates**—
 
-    -   <!-- MAGECLOUD-3030 -->Added a new Docker container to address a problem with the SSL termination for Varnish. The Hitch container allows Varnish to function over HTTPS.
-    
-    -   <!-- MAGECLOUD-3025 -->
-    
+    -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
+
     -   <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
 
     -   <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
 
-    -   <!-- MAGECLOUD-2883 -->
-    
+    -   <!-- MAGECLOUD-2883 -->Fixed an issue with web service permissions when generating the `docker-compose.yml` file.
+
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
 -   {:.fix}<!-- MAGECLOUD-3104 -->Fixed a compression issue when generating assets during builds by moving the compression task to the beginning of the `build:transfer` section of the build phase.
@@ -65,7 +63,7 @@ The release notes include:
     -   Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use environment variables (`ADMIN_EMAIL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`) to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
     -   ADMIN_EMAIL is no longer required when upgrading or applying patches.
-	
+
 -  {:.new}**New environment variables**—
 
     -  <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection. 
