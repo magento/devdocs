@@ -10,11 +10,11 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 The MFTF allows you to merge test components defined in XML files, such as:
 
-- [tests]
-- [pages][page]
-- [sections]
-- [data]
-- action groups
+- [`<tests>`][]
+- [`<pages>`][]
+- [`<sections>`][]
+- [`<data>`][]
+- `<action groups>`
 
 You can create, delete, or update the component.
 It is useful for supporting rapid test creation for extensions and customizations.
@@ -285,16 +285,19 @@ Merging action groups allows you to extend existing tests by reusing existing ac
 ### Use case
 
 Here is an action group for selecting `customerGroup` in the `Cart Price Rules` section.
-The controls change drastically in the B2B version, so it was abstracted to an action group so that it may be easily changed if B2B is enabled. 
-This way it could be easily changed if B2B is enabled.
+The controls change drastically in the B2B version, so it was abstracted to an action group so that it may be easily changed if B2B is enabled.
+
+> Action group for selecting `customerGroup` in the `Cart Price Rules` section:
 
 ```xml
 <actionGroup name="selectNotLoggedInCustomerGroup">
     <selectOption selector="{{AdminCartPriceRulesFormSection.customerGroups}}" userInput="NOT LOGGED IN" stepKey="selectCustomerGroup"/>
 </actionGroup>
+```
 
-B2B Merge file
+> B2B Merge file
 
+```xml
 <!-- name matches -->
 <actionGroup name="selectNotLoggedInCustomerGroup">
     <!-- removes the original action -->
@@ -565,8 +568,8 @@ The `_defaultSample` results corresponds to:
 
 [`codecept`]: ./commands/codeception.html
 [`mftf`]: ./commands/mftf.html
-[data]: ./data.html
+[`<data>`]: ./data.html
 [elements]: ./section.html#element-tag
-[page]: ./page.html
-[sections]: ./section.html
-[tests]: ./test.html
+[`<pages>`]: ./page.html
+[`<sections>`]: ./section.html
+[`<tests>`]: ./test.html
