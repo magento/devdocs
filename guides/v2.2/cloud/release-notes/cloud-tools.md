@@ -81,7 +81,7 @@ The release notes include:
 
     -  <!-- MAGECLOUD-2904 -->**SCD_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
 
-    -  <!--MAGECLOUD-2573/MAGECLOUD-2848 --> **ADMIN variables**—
+    -  <!--MAGECLOUD-2573/MAGECLOUD-2848 -->**ADMIN variables**—
 
        -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
