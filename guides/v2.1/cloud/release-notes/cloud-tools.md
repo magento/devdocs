@@ -34,7 +34,7 @@ The release notes include:
 
 -   {:.new}**Docker updates**—
 
-    -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in Docker is the same as the default configuration in the Cloud template.
+    -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
 
     -   <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
 
