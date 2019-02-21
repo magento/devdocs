@@ -35,7 +35,7 @@ return [
 ];
 ```
 
-You can change any Xdebug configuration in `XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:
+You can change any Xdebug configuration using the`XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:
 
 ```
 'XDEBUG_CONFIG' => 'remote_host=host.docker.internal remote_port=9002',
@@ -59,7 +59,7 @@ You can change any Xdebug configuration in `XDEBUG_CONFIG` option. For example, 
     -  **Port**: Enter `80`
     -  **Debugger**: Select `Xdebug`
 
-1.  Select **Use path mappings**. In the files/directories, the root of the project for the `serverName` displays.
+1.  Select **Use path mappings**. In the _File/Directory_ pane, the root of the project for the `serverName` displays.
 
 1.  In the **Absolute path on the server** column, click ![Edit]({{ site.baseurl }}/common/images/install_docker_php-storm-edit.png){:width="15px"} and add a value to the `MAGENTO_ROOT` option. The default value is `/var/www/magento`
 
@@ -79,7 +79,7 @@ The following steps describe debugging web requests and CLI commands.
 
 1.  Install the debug extension in the browser and click **Debug** to enable.
 
-1.  In the browser, open the `https://localhost` URL with enabled debug in extension. 
+1.  In the browser, open the `https://localhost` URL. 
 
 1.  When PhpStorm recognizes the Xdebug connection, you can begin debugging web requests.
 
@@ -105,14 +105,14 @@ You can debug any Magento command or PHP script using the following steps.
     -   **Additional** > **Debugger extension**:
         -   For Windows, enter `xdebug`
         -   For Mac/Linux, enter `xdebug.so`
-    -   Click **Refresh** to verify that the interpreter and Xdebug are configured properly.
+    -   Click **Refresh** to verify that the interpreter and Xdebug extension are configured properly.
    
 1.  Click **Save**.
 
 1.  Open the _Run/Debug Configuration_ window and add a new **PHP script** with the following settings:
 
     -   **Name**: Enter `bin/magento`
-    -   **Configuration** > **File**: Select the path to the `bin/magento` file in your local environment.
+    -   **Configuration** > **File**—Select the path to the `bin/magento` file in your local environment.
   
 1.  Add breakpoints in the `bin/magento` file and the debug PHP script created in the previous step.
 
