@@ -77,15 +77,15 @@ The release notes include:
 
     -  <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`. 
 
-    -   <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{ page.baseurl }}/cloud/env/variables-deploy.html).
+    -  <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{ page.baseurl }}/cloud/env/variables-deploy.html).
 
-    -   <!-- MAGECLOUD-2904 -->**SCD_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
-	
-    -   <!--MAGECLOUD-2573/MAGECLOUD-2848 --> **ADMIN variables**—
-		
-		-  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+    -  <!-- MAGECLOUD-2904 -->**SCD_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
 
-       -   ADMIN_EMAIL is no longer required when upgrading or applying patches.
+    -  <!--MAGECLOUD-2573/MAGECLOUD-2848 --> **ADMIN variables**—
+
+       -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+
+        -   ADMIN_EMAIL is no longer required when upgrading or applying patches.
 
 
 ## v2002.0.15
