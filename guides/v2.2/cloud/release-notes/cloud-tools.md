@@ -33,15 +33,13 @@ The release notes include:
 
 -   {:.new}**Docker updates**—
 
-    -   <!-- MAGECLOUD-3030 -->Added a new Docker container to address a problem with the SSL termination for Varnish. The Hitch container allows Varnish to function over HTTPS.
-
-    -   <!-- MAGECLOUD-3025 -->
+    -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in Docker is the same as the default configuration in the Cloud template.
 
     -   <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
 
     -   <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
 
-    -   <!-- MAGECLOUD-2883 -->
+    -   <!-- MAGECLOUD-2883 -->Fixed an issue with web service permissions when generating the `docker-compose.yml` file.
 
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
@@ -63,9 +61,9 @@ The release notes include:
 
     -  Begin and end of the process for reconciling installed modules in `composer.json` with shared configuration settings in the ` app/etc/config.php` file
 	
-	-  Begin and end of the configuration validation process
+	  -  Begin and end of the configuration validation process
 	
-	-  Begin and end of the `setup:di:compile` process for generating classes
+	  -  Begin and end of the `setup:di:compile` process for generating classes
 
 -  {:.new}**New environment variables**—
 
@@ -77,16 +75,15 @@ The release notes include:
 
     -  <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl}}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`. 
 
-    -  <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{ page.baseurl }}/cloud/env/variables-deploy.html).
+    -   <!-- MAGECLOUD-2823 -->**SCD\_COMPRESSION\_LEVEL build and deploy variable**—Updated the default values for SCD compression level on the [build stage]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy stage]({{ page.baseurl }}/cloud/env/variables-deploy.html).
 
-    -  <!-- MAGECLOUD-2904 -->**SCD_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
-
+    -   <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
+    
     -  <!--MAGECLOUD-2573/MAGECLOUD-2848 -->**ADMIN variables**—
 
-       -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+        -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
         -   ADMIN_EMAIL is no longer required when upgrading or applying patches.
-
 
 ## v2002.0.15
 
@@ -173,7 +170,6 @@ The release notes include:
     -   <!--MAGECLOUD--2358-->**Varnish service support**— Added a Varnish image, which is deployed automatically to a Docker container. After deployment, you can manually configure Varnish following Magento best practices. See [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html).
 
     -   <!--MAGECLOUD--2360-->Secure site access—Added SSL support to access your {{site.data.var.ee}} store and Admin panel.
-
 
 -   {:.fix}<!--MAGECLOUD-2205-->**Improved {{site.data.var.ece}} extension support**—Downgraded the minimum version requirement for the guzzlehttp/guzzle package in the {{site.data.var.ece}} [composer.json file]({{ page.baseurl }}/cloud/reference/cloud-composer.html) to version 6.2 so that the `{{site.data.var.ct}}` package is compatible with more extensions.
 
