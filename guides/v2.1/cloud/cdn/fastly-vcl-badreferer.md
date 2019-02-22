@@ -78,7 +78,7 @@ Review the code to determine if you need to change any values:
 
   -  `priority`—Determines when the VCL snippet runs. The priority is set to 5 so that this snippet code runs before any of the default Magento VCL snippets (`magentomodule_*`) that have a priority of 50.
 
-  -  `type`—This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
+  -  `type`—Specifies a location for inserting the snippet in the versioned VCL code. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
  
   -  `content`—The snippet of VCL code to run in one line, without line breaks.
   
