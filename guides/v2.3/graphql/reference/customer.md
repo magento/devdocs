@@ -126,11 +126,9 @@ The following call returns information about the logged-in customer.
 Use mutations to update server-side data, such as adding a new customer or modifying attributes for an existing customer.
 
 ### Manage customers
+{:.no_toc}
 
 You can use customer mutations to create a new customer or modify personal information for an existing customer. See [manage customer address](#managecustomeraddress) to modify a customer's address.
-
-* Create a customer
-* Update an existing customer
 
 **Manage customers attributes**
 
@@ -250,11 +248,9 @@ mutation {
 ```
 
 ### Manage customer address {#managecustomeraddress}
-Use these mutations to create or modify the customer's address.
+{:.no_toc}
 
-* Create a customer's address
-* Update a customer's address
-* Delete a customer's address 
+Use these mutations to create or modify the customer's address.
 
 **Manage customer address attibutes**
 
@@ -407,11 +403,9 @@ mutation {
 ```
 
 ### Manage customer tokens
+{:.no_toc}
 
 Use these mutations to create or revoke a customer's token.
-
-* Generate a customer's token
-* Revoke a customer's token
 
 **Manage customer tokens attributes**
 
@@ -494,8 +488,6 @@ mutation {
 ### Change customer password
 
 Changes the password for the logged-in customer.
-
-* Change a customer's password
 
 **Change customer password attributes**
 
