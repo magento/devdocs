@@ -14,7 +14,7 @@ functional_areas:
 After you set up Fastly services on your {{ site.data.var.ece }} project environments, you can use custom VCL snippets to block [referral spam](https://en.wikipedia.org/wiki/Referrer_spam) from your sites. The following example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet to return a `403 Forbidden` error on requests from domains known for sending fake traffic.
 
 {: .bs-callout .bs-callout-info}
-We recommend adding custom VCL configurations to a Staging environment where you can test them before runningrunning them against the Production environment.
+We recommend adding custom VCL configurations to a Staging environment where you can test them before running them against the Production environment.
 
 **Prerequisites**
 
