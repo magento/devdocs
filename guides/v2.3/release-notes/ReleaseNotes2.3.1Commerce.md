@@ -9,7 +9,7 @@ We are pleased to present Magento Commerce 2.3.1. This release includes numerous
 
 ## Highlights
 
-Magento Commerce 2.3.1 includes a wealth of new features as well as over 200 functional fixes  to the core product. Community contributions include approximately 200 fixes and 300 pull requests. Look for the following highlights in this release:
+Magento Commerce 2.3.1 includes a wealth of new features, over 200 functional fixes to the core product, and over 30 security enhancements. Community contributions include approximately 200 fixes and 300 pull requests. Look for the following highlights in this release:
 
 
 ### Merchant tool enhancements
@@ -20,7 +20,14 @@ Magento Commerce 2.3.1 includes a wealth of new features as well as over 200 fun
 
 #### PageBuilder
 
-**PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS.  Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  
+**PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing HTML or CSS.  
+
+
+See xxx for  tutorials on using this 
+
+xxx describes the relationship between PB and PWA. 
+
+
 
 Powerful set of content types to compose various types of pages  
 Easy drag&drop positioning of all content elements for intuitive page editing 
@@ -37,9 +44,9 @@ Content editing limited to certain website areas. Limited PWA theme support.
 
 #### Inventory Management
 
-* **Support for Elasticsearch and MSI inventory**. All site searches return correct products and quantities when Elasticsearch is used as the search engine (only default option from 2.3+)  Searches return results from Stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!  
+* **Support for Elasticsearch and MSI inventory**. All site searches return correct products and quantities when Elasticsearch is used as the search engine (only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!  
 
-* **Distance-based Source Selection Algorithm option**. Merchants can reduce fulfillment cost by shipping orders from closest inventory locations 
+* **Distance-based source selection algorithm (SSA) option**. Merchants can reduce fulfillment cost by shipping orders from closest inventory locations.  
 
 	•	A new Source Selection Algorithm (SSA) that can be enabled by merchants  
 	•	Adds another shipping option beyond Priority-based algorithm that shipped in 2.3.0  
@@ -177,7 +184,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MC-6275-->* 
 
-The `bin/magento setup:config:set --enable-syslog-logging=true|false` configuration parameter has been added to replace xxx.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
+The `bin/magento setup:config:set --enable-syslog-logging=true|false` command now provides the functionality that Magento previously provided in .  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
 
 
 
@@ -474,6 +481,7 @@ The `bin/magento setup:config:set --enable-syslog-logging=true|false` configurat
 
 <!--- ENGCOM-4093-->* Magento now displays currency symbols as expected for products in the Cost column of the Admin catalog list.  *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20907](https://github.com/magento/magento2/pull/20907)*. [GitHub-20906](https://github.com/magento/magento2/issues/20906)
 
+<!--- ENGCOM-3698-->* Magento now displays breadcrumbs in proper format. Previously, subcategories did not appear in breadcrumbs. *Fix submitted by [Brandon Brown](https://github.com/Yamaha32088) in pull request [19781](https://github.com/magento/magento2/pull/19781)*. [GitHub-7967](https://github.com/magento/magento2/issues/7967)
 
 
 
@@ -523,6 +531,10 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 
 ### Cleanup and simple code refactoring
+
+
+<!--- ENGCOM-3966-->* Fixed misalignment of the confirmation pop-up window that Magento displays in mobile view when you delete a product from your shopping cart. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [20196](https://github.com/magento/magento2/pull/20196)*. [GitHub-20176](https://github.com/magento/magento2/issues/20176)
+
 
 <!--- ENGCOM-3449-->* The `addExpressionFieldToSelect` method no longer modifies columns and instead insert expression into `_fieldsToSelect` private variable (just as `addFieldToSelect` does). *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request [19180](https://github.com/magento/magento2/pull/19180)*. [GitHub-17635](https://github.com/magento/magento2/issues/17635)
 
@@ -615,9 +627,14 @@ Previously, when you reopened these categories, no checkboxes were checked.
 <!--- ENGCOM-3891-->* Fixed irregularities with  updating order status. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20349](https://github.com/magento/magento2/pull/20349)*. [GitHub-19258](https://github.com/magento/magento2/issues/19258)
 
 
-<!--- ENGCOM-3822-->* 
+<!--- ENGCOM-3822-->* Fixed issue with 
+
+
 
 *Fix submitted by [Ravi chandra](https://github.com/ravi-chandra3197) in pull request [19812](https://github.com/magento/magento2/pull/19812)*. [GitHub-17926](https://github.com/magento/magento2/issues/17926)
+
+
+The ui-component field validation error not opening accordion tab that owns the field
 
 Fixed The ui-component field validation error not opening accordion tab that owns the field (field does not get focused)
 
@@ -934,37 +951,7 @@ more serious situations with non-visible errors have been encountered on specifi
 <!--- ENGCOM-3389-->* The note that describes the **Use in Layered Navigation: Filterable (no results)**  property now better describes the property. *Fix submitted by [Vladyslav Podorozhnyi](https://github.com/vpodorozh) in pull request [19037](https://github.com/magento/magento2/pull/19037)*. [GitHub-14007](https://github.com/magento/magento2/issues/14007)
 
 
-
-
-<!--- ENGCOM-3231 3258-->* 
-
-*Fix submitted by [Peter O'Callaghan](https://github.com/pocallaghan) in pull request [18412](https://github.com/magento/magento2/pull/18412)*. [GitHub-18357](https://github.com/magento/magento2/issues/18357)
-
-
-SQL error when table prefix used
-
-Hard-coded table names cause errors if a table prefix, passing the table name to getTable resolves this.
-
-
-checkout_agreement_store doesn't exist
-
-Steps to reproduce
-Starting from Magento CE 2.2.5
-created a terms and conditions (Store-->Terms and conditions)
-upgrade from 2.2.5 to 2.2.6
-The Terms and conditions created are not visible in admin (Store-->Terms and conditions)
-
-Expected result
-I can edit the old terms and conditions
-I can insert a new terms and conditions
-
-Actual result
-old terms and conditions are not visible
-In production mode I can add a new terms and conditions but is not visible in admin
-In developer mode there is an exception:
-
-
-
+<!--- ENGCOM-3258-->* Magento no longer throws SQL errors when table prefixes are used. *Fix submitted by [Peter O'Callaghan](https://github.com/pocallaghan) in pull request [18412](https://github.com/magento/magento2/pull/18412)*. [GitHub-18357](https://github.com/magento/magento2/issues/18357)
 
 
 
@@ -978,37 +965,13 @@ In developer mode there is an exception:
 
 <!--- ENGCOM-3379-->* Fixed the rendering of the check notifications counters icon on the Admin. *Fix submitted by [Abrar Pathan](https://github.com/abrarpathan19) in pull request [19053](https://github.com/magento/magento2/pull/19053)*. [GitHub-18887](https://github.com/magento/magento2/issues/18887)
 
+<!--- ENGCOM-3624-->* 'old_path: new_path' path mappings have been added for JavaScript files have been relocated to `requirejs-config.js`. *Fix submitted by [rbayet](https://github.com/rbayet) in pull request [19583](https://github.com/magento/magento2/pull/19583)*. [GitHub-19291](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
-<!--- ENGCOM-3624-->* 
-
-JavaScript files have been refactored to 
-Some JS files are direct children of web rather than web/js. This does not follow instructions from the dev docs thus is confusing.
-
-
-*Fix submitted by [rbayet](https://github.com/rbayet) in pull request [19583](https://github.com/magento/magento2/pull/19583)*. [GitHub-19291](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
-
-The issue #16302 has been fixed both in 2.2.x and 2.3.x lines but only the fix in 2.2.x is BC compatible by providing and "old_path : new_path" mapping in the requirejs-config.js.
-
-This means any reference to 'Magento_Payment/transparent' in a third party extension's JS component define() dependency will point correctly to 'Magento_Payment/js/transparent'.
-
-On the other hand, in the 2.3.x line, the changes are simply 
-
-Some JS files are direct children of web rather than web/js. This does not follow instructions from the dev docs thus is confusing.
+<!--- ENGCOM-3632-->* Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19135](https://github.com/magento/magento2/pull/19135)*. [GitHub-18941](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/18941)
 
 
 
 
-
-<!--- ENGCOM-3632-->* 
-
-*Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19135](https://github.com/magento/magento2/pull/19135)*. [GitHub-18941](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/18941)
-
-
-Calling getCurrentUrl on Store will wrongly add `"___store"` parameter
-
-I have the config "store code in URL" set to "yes" but when i use the method "getCurrentUrl" on a Store type variable i get the current URL but with the parameter `"___store=[code]"` in it, if the current store is not the one requested in the URL.
-I want to use the getCurrentUrl method in order to redirect the user to the correct store based on some custom logic (like the browser language), but i don't want any additional parameters to be in the URL.
-Form what i found out by looking around in the code, the parameter `"___store"` is mandatory when the config "use store code in URL" is set to "no" but not when it's set to "yes", as in my case. The store code is already in the URL (as set in system config) and it's not necessary to add any other parameters in the URL to remark this.
 
 
 <!--- ENGCOM-3644-->* The **Click for price** button on the home page now works as expected. *Fix submitted by [Ravi chandra](https://github.com/ravi-chandra3197) in pull request [19663](https://github.com/magento/magento2/pull/19663)*. [GitHub-15922](https://github.com/magento/magento2/issues/15922)
@@ -1137,7 +1100,14 @@ Magento now displays an informative error message if images are not imported as 
 
 <!--- ENGCOM-3666-->* A syntax error in `magento2/lib/internal/Magento/Framework/Cache/Backend/Database.php` has been corrected. *Fix submitted by [Nirav Kadiya](https://github.com/ssp58bleuciel) in pull request [19634](https://github.com/magento/magento2/pull/19634)*. [GitHub-13309](https://github.com/magento/magento2/issues/13309)
 
- 
+ <!--- ENGCOM-3364-->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
+
+
+
+
+
+
+
 
 ### Integration
 
@@ -1641,6 +1611,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+{% include release-notes/engcomm-2-3-1-issues.md %}
 
 ### System requirements
 

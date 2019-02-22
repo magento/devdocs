@@ -458,6 +458,9 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- ENGCOM-4093-->* Magento now displays currency symbols as expected for products in the Cost column of the Admin catalog list.  *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20907](https://github.com/magento/magento2/pull/20907)*. [GitHub-20906](https://github.com/magento/magento2/issues/20906)
 
+<!--- ENGCOM-3698-->* Magento now displays breadcrumbs in proper format. Previously, subcategories did not appear in breadcrumbs. *Fix submitted by [Brandon Brown](https://github.com/Yamaha32088) in pull request [19781](https://github.com/magento/magento2/pull/19781)*. [GitHub-7967](https://github.com/magento/magento2/issues/7967)
+
+
 
 ### CatalogInventory
 
@@ -504,6 +507,8 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 
 ### Cleanup and simple code refactoring
+
+<!--- ENGCOM-3966-->* Fixed misalignment of the confirmation pop-up window that Magento displays in mobile view when you delete a product from your shopping cart. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [20196](https://github.com/magento/magento2/pull/20196)*. [GitHub-20176](https://github.com/magento/magento2/issues/20176)
 
 <!--- ENGCOM-3449-->* The `addExpressionFieldToSelect` method no longer modifies columns and instead insert expression into `_fieldsToSelect` private variable (just as `addFieldToSelect` does). *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request [19180](https://github.com/magento/magento2/pull/19180)*. [GitHub-17635](https://github.com/magento/magento2/issues/17635)
 
@@ -905,6 +910,7 @@ more serious situations with non-visible errors have been encountered on specifi
 
 <<!--- ENGCOM-3389-->* The note that describes the **Use in Layered Navigation: Filterable (no results)**  property now better describes the property. *Fix submitted by [Vladyslav Podorozhnyi](https://github.com/vpodorozh) in pull request [19037](https://github.com/magento/magento2/pull/19037)*. [GitHub-14007](https://github.com/magento/magento2/issues/14007)
 
+<!--- ENGCOM-3258-->* Magento no longer throws SQL errors when table prefixes are used. *Fix submitted by [Peter O'Callaghan](https://github.com/pocallaghan) in pull request [18412](https://github.com/magento/magento2/pull/18412)*. [GitHub-18357](https://github.com/magento/magento2/issues/18357)
 
 
 
@@ -914,31 +920,9 @@ more serious situations with non-visible errors have been encountered on specifi
 
 <!--- ENGCOM-3379-->* Fixed the rendering of the check notifications counters icon on the Admin. *Fix submitted by [Abrar Pathan](https://github.com/abrarpathan19) in pull request [19053](https://github.com/magento/magento2/pull/19053)*. [GitHub-18887](https://github.com/magento/magento2/issues/18887)
 
+<!--- ENGCOM-3624-->* 'old_path: new_path' path mappings have been added for JavaScript files have been relocated to `requirejs-config.js`. *Fix submitted by [rbayet](https://github.com/rbayet) in pull request [19583](https://github.com/magento/magento2/pull/19583)*. [GitHub-19291](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
-
-<!--- ENGCOM-3624-->* 
-
-*Fix submitted by [rbayet](https://github.com/rbayet) in pull request [19583](https://github.com/magento/magento2/pull/19583)*. [GitHub-19291](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
-
-The issue #16302 has been fixed both in 2.2.x and 2.3.x lines but only the fix in 2.2.x is BC compatible by providing and "old_path : new_path" mapping in the requirejs-config.js.
-
-This means any reference to 'Magento_Payment/transparent' in a third party extension's JS component define() dependency will point correctly to 'Magento_Payment/js/transparent'.
-
-On the other hand, in the 2.3.x line, the changes are simply 
-
-Some JS files are direct children of web rather than web/js. This does not follow instructions from the dev docs thus is confusing.
-
-
-<!--- ENGCOM-3632-->* 
-
-*Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19135](https://github.com/magento/magento2/pull/19135)*. [GitHub-18941](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/18941)
-
-
-Calling getCurrentUrl on Store will wrongly add `"___store"` parameter
-
-I have the config "store code in URL" set to "yes" but when i use the method "getCurrentUrl" on a Store type variable i get the current URL but with the parameter `"___store=[code]"` in it, if the current store is not the one requested in the URL.
-I want to use the getCurrentUrl method in order to redirect the user to the correct store based on some custom logic (like the browser language), but i don't want any additional parameters to be in the URL.
-Form what i found out by looking around in the code, the parameter `"___store"` is mandatory when the config "use store code in URL" is set to "no" but not when it's set to "yes", as in my case. The store code is already in the URL (as set in system config) and it's not necessary to add any other parameters in the URL to remark this.
+<!--- ENGCOM-3632-->* Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19135](https://github.com/magento/magento2/pull/19135)*. [GitHub-18941](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/18941)
 
 
 <!--- ENGCOM-3644-->* The **Click for price** button on the home page now works as expected. *Fix submitted by [Ravi chandra](https://github.com/ravi-chandra3197) in pull request [19663](https://github.com/magento/magento2/pull/19663)*. [GitHub-15922](https://github.com/magento/magento2/issues/15922)
@@ -1068,7 +1052,10 @@ Magento now displays an informative error message if images are not imported as 
 
 <!--- ENGCOM-3666-->* A syntax error in `magento2/lib/internal/Magento/Framework/Cache/Backend/Database.php` has been corrected. *Fix submitted by [Nirav Kadiya](https://github.com/ssp58bleuciel) in pull request [19634](https://github.com/magento/magento2/pull/19634)*. [GitHub-13309](https://github.com/magento/magento2/issues/13309)
 
- 
+<!--- ENGCOM-3364-->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
+
+
+
 
 ### Integration
 
@@ -1545,6 +1532,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+{% include release-notes/engcomm-2-3-1-issues.md %}
 
 
 
