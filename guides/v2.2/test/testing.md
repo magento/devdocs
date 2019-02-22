@@ -104,16 +104,36 @@ Please see the [System Administrators Guide on Running Tests][] for more informa
 
 Each of the test types listed above corresponds to a subdirectory in `<magento2 root dir>/dev/tests`.
 
-    dev/tests  
-    ├── acceptance      (since v2.2.4)
-    ├── api-functional  
-    ├── functional  
-    ├── integration  
-    ├── js  
-    ├── static  
-    └── unit  
+```xml
+<repo_root>
+    <dev/tests/>
+        acceptance      (since v2.2.4)
+        api-functional  
+        functional  
+        integration  
+        js/jasmine
+        setup-integration  
+        static  
+        unit  
+```
 
-Each one of these test types has different requirements that must be satisfied before they can be executed.  
+Each one of these test types has different requirements that must be satisfied before they can be executed.
+
+MFTF tests are kept within its respective `<Module>` folder:
+
+```xml
+<repo_root>/
+   <Module1>
+      Test/
+      Unit/
+      Integration/
+      Mftf/
+         TestSuite/
+            composer.json
+   <Module2>
+   <Module1SampleData>
+   <Module2SampleData>
+```
 
 <!-- Link Definitions -->
 [Magento definition of done]: https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing_dod.html
