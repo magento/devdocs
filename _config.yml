@@ -80,6 +80,16 @@ defaults:
       functional_areas:
         - Test
 
+  - 
+    scope:
+      path: page-builder
+    values:
+      layout: default
+      group: page-builder
+      strip_title: true
+      github_link: false
+      feedback_link: false
+
   -
     scope:
       path: guides/v2.3/mrg
@@ -115,6 +125,32 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+
+optional_front_matter:
+  remove_originals: true
+
+# Configuration options for the jekyll-relative-links plugin. 
+# Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
+
+relative_links:
+  exclude:
+    - _includes
+    - _videos
+    - codelinks
+    - community
+    - guides
+    - mftf
+    - redoc
+    - tmp
+    - 404.md
+    - availability.md
+    - magento-techbull.md
+    - magento-third-party.md
+    - search
+    - system-requirements.md
+    - whats-new.md
 
 # Settings for the jekyll-titles-from-headings plugin.
 # For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
@@ -130,11 +166,6 @@ kramdown:
   toc_levels: 2..3
   syntax_highlighter_opts:
     css_class: highlighter
-
-# LiveReload monitors changes in the file system and refreshes browser when Jekyll is in serving mode.
-# http://livereload.com/
-#
-livereload: true
 
 # Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
 #
@@ -202,7 +233,6 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
-  - gulpfile.js
   - package.json
   - package-lock.json
   - Rakefile

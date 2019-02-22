@@ -26,7 +26,7 @@ If you already know the extension's Composer name and version, skip this step an
 
 To get the extension's Composer name and version from the Magento Marketplace:
 
-1.  Log in to [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} with the username and password you used to purchase the extension.
+1.  Log in to [Magento Marketplace](https://marketplace.magento.com) with the username and password you used to purchase the extension.
 
 2.  In the upper-right corner, click **Your name** > **My Profile**.
 
@@ -66,7 +66,9 @@ Add the extension's name and version to your `composer.json` file:
 
 To verify that the extension installed properly, run the following command:
 
-	bin/magento module:status
+```bash
+bin/magento module:status
+```
 
 By default, the extension is probably disabled:
 
@@ -100,6 +102,9 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 
 3.  Recompile your Magento project:
 
+    {: .bs-callout .bs-callout-info }
+		In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
+
 		bin/magento setup:di:compile
 
 4.  Verify that the extension is enabled:
@@ -114,7 +119,13 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 		List of disabled modules:
 		None
 
-5.  Configure the extension in Admin as needed.
+5. Clean the cache:
+
+   ```bash
+   bin/magento cache:clean
+   ```
+
+6.  Configure the extension in Admin as needed.
 
 {:.bs-callout .bs-callout-tip}
 If you encounter errors when loading the storefront in a browser, use the following command to clear the cache:

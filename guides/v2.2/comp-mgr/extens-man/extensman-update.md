@@ -17,7 +17,7 @@ This step displays if you're updating extensions. The following figure shows an 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}/common/images/extensman_update-step.png" width="350px" alt="Click update to complete the task">
 
-To complete the update, click **Update**. 
+To complete the update, click **Update**.
 
 ### Success
 
@@ -64,11 +64,14 @@ Generating autoload files
 [2016-07-27 15:38:36 CDT] Composer update completed successfully
 {% endhighlight %}
 
+If the update is successful, clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+```bash
+bin/magento cache:clean
+```
+
 ### Failure
 
 If the update fails, click **Rollback** to restore an earlier backup. Messages display in the Console Log as shown in the following figure.
 
 ![If the component update fails, you can roll back]({{ site.baseurl }}/common/images/cman_update-fail.png)
-
-
-
