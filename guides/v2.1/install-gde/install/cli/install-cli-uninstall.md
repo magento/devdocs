@@ -32,7 +32,7 @@ To update the Magento software:
 The way you reinstall the Magento application from the command line depends on your role:
 
 * If you installed the software from an archive or if you used 'composer-create-project', see [Reinstall Magento Software][].
-* If you're a contributing developer (that is, you started using `composer clone`), see [Contributing developers—update, reinstall Magento][].
+* If you're a contributing developer (that is, you started using `git clone`), see [Contributing developers—update, reinstall Magento][].
 
 ## Uninstall the Magento software {#instgde-install-uninstall}
 
@@ -46,7 +46,7 @@ bin/magento setup:uninstall
 
 The following message displays to confirm a successful uninstallation:
 
-```bash
+```terminal
 [SUCCESS]: Magento uninstallation complete.
 ```
 
