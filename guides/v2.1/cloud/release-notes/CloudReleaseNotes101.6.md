@@ -8,7 +8,7 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
 redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes101.6.html
+  - /guides/v2.1/cloud/release-notes/CloudReleaseNotes101.6.html
 functional_areas:
   - Cloud
 ---
