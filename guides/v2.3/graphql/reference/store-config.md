@@ -3,7 +3,7 @@ group: graphql
 title: Store endpoint
 ---
 
-The `Store` endpoint defines information about a store's configuration.
+The `Store` endpoint defines information about a store's configuration. You can query a non-default store by [changing the header]({{ page.baseurl }}/guides/v2.3/graphql/send-request.html) in your GraphQL request.
 
 ## Query structure
 
@@ -35,17 +35,17 @@ Attribute |  Data Type | Description
 
 ### Supported theme attributes
 
-Use the `theme` attributes to retrieve information about the store's thematic elements; such as, footer and header information, copyright text, and logo information.
+Use the `theme` attributes to retrieve information about the store's thematic elements; such as, footer and header information, copyright text, and logo information. These attributes are defined in the `ThemeGraphQl` module.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`absolute_footer` | String | Contains scripts that must be included in the HTML before the closing &lt;body&gt; tag
+`absolute_footer` | String | Contains scripts that must be included in the HTML before the closing `<body>` tag
 `copyright` | String | The copyright statement that appears at the bottom of each page
 `default_description` | String | The description that provides a summary of your site for search engine listings and should not be more than 160 characters in length
 `default_keywords` | String | A series of keywords that describe your store, each separated by a comma
 `default_title` | String | The title that appears at the title bar of each page when viewed in a browser
-`demonotice` | Int | Controls the display of the demo store notice at the top of the page. Options include: Yes / No
-`head_includes` | String | Contains scripts that must be included in the HTML before the closing &lt;head&gt; tag
+`demonotice` | Int | Controls the display of the demo store notice at the top of the page. Options: `0` (No) or `1` (Yes)
+`head_includes` | String | Contains scripts that must be included in the HTML before the closing `<head>` tag
 `header_logo_src` | String | The path to the logo that appears in the header
 `head_shortcut_icon` | String | Uploads the small graphic image that appears in the address bar and tab of the browser
 `logo_alt` | String | The Alt text that is associated with the logo
@@ -58,7 +58,7 @@ Attribute |  Data Type | Description
 
 ### Supported CMS attributes
 
-Use the `cms` attributes to retrieve information about the store's default pages.
+Use the `cms` attributes to retrieve information about the store's default pages. These attributes are defined in the `CmsGraphQl` module.
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -67,7 +67,7 @@ Attribute |  Data Type | Description
 `cms_no_route` | String | Identifies a specific CMS page that you want to appear when a 404 “Page Not Found” error occurs
 `front` | String | Indicates the landing page that is associated with the base URL
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
-`show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: Yes / No
+`show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
 {:style="table-layout:auto;"}
 
 
