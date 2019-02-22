@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Manage prices for multiple products
+redirect_from: /guides/v2.2/rest/catalog-pricing.html
 functional_areas:
   - Integration
 ---

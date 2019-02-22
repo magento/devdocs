@@ -1,6 +1,7 @@
 ---
 group: rest-api
 title: Catalog module
+redirect_from: /guides/v2.0/rest/catalog-notes.html
 functional_areas:
   - Integration
   - Catalog
