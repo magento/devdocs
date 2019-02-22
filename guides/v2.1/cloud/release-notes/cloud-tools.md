@@ -44,7 +44,7 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
 
--   {:.new}<!-- MAGECLOUD-3104 -->Now, you can minify and bundle your static assets, and the native process to generate assets during the build phase occurs at the beginning of the `build:transfer` section. See the section that describes a [customized build process for hooks]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks ).
+-   {:.new}<!-- MAGECLOUD-3104 -->The compression process in deploying static content now includes all assets—natively generated or customized—and occurs during the build phase at the beginning of the [`build:transfer` section]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks). Previously, the compression process occurred before applying custom minification and bundling of static assets.
 
 -   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship. Also, this fix addresses an issue that occurred during the configuration process of MBI for Starter. For Starter, this upgrade is a "must have" for using MBI.
 
