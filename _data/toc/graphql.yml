@@ -74,7 +74,7 @@ pages:
             - label: Quote endpoint
               url: /graphql/reference/quote.html
 
-            - label: storeConfig endpoint
+            - label: Store endpoint
               url: /graphql/reference/store-config.html
 
             - label: urlResolver endpoint
