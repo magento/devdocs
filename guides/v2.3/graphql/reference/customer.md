@@ -148,14 +148,14 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer’s Tax/VAT number (for corporate customers)
 
-#### Create a customer
+### Create a customer
 Creates a new customer account.
 
-##### Syntax
+#### Syntax
 
 `mutation: createCustomer`
 
-##### Example usage
+#### Example usage
 
 The following call creates a new customer.
 
@@ -200,15 +200,15 @@ mutation {
   }
 }
 ```
-#### Update a customer
+### Update a customer
 
 Updates the customer's personal information.
 
-##### Syntax
+#### Syntax
 
 `mutation: updateCustomer`
 
-##### Example usage
+#### Example usage
 
 The following call updates the first and last name and email address for a specific customer.
 
@@ -263,15 +263,15 @@ Attribute |  Data Type | Description
 `id` | Int | The ID assigned to the address object
 `CustomerAddressInput` | [CustomerAddress](#customerAddress) | An array containing the customer’s shipping and billing addresses
 
-#### Create customer address
+### Create customer address
 
 Creates the customer's address.
 
-##### Syntax
+#### Syntax
 
 `mutation: createCustomerAddress`
 
-##### Example usage
+#### Example usage
 
 The following call creates an address for the specified customer.
 
@@ -340,15 +340,15 @@ mutation {
 }
 ```
 
-#### Update customer address
+### Update customer address
 
 Updates the customer's address.
 
-##### Syntax
+#### Syntax
 
 `mutation: updateCustomerAddress`
 
-##### Example usage
+#### Example usage
 
 The following call updates the customer's city and postcode.
 
@@ -376,15 +376,15 @@ mutation {
   }
 }
 ```
-#### Delete customer address
+### Delete customer address
 
 Uses the customer's address `id` to delete the address.
 
-##### Syntax
+#### Syntax
 
 `mutation: deleteCustomerAddress`
 
-##### Example usage
+#### Example usage
 
 The following call deletes a customer's address.
 
@@ -420,15 +420,15 @@ Attribute |  Data Type | Description
 `email` | String | The customer's email address
 `password` | String | The customer's password
 
-#### Generate a customer token
+### Generate a customer token
 
 Creates a new customer token.
 
-##### Syntax
+#### Syntax
 
 `mutation: generateCustomerToken`
 
-##### Example usage
+#### Example usage
 
 The following call creates a new customer token.
 
@@ -457,15 +457,15 @@ mutation {
 }
 ```
 
-#### Revoke a customer token
+### Revoke a customer token
 
 Revokes the customer's token.
 
-##### Syntax
+#### Syntax
 
 `mutation: remokeCustomerToken`
 
-##### Example usage
+#### Example usage
 
 The following call revokes the customer's token.
 
@@ -504,11 +504,11 @@ Attribute |  Data Type | Description
 `currentPassword` | String | The customer's current password
 `newPassword` | String | The customer's new password
 
-##### Syntax
+#### Syntax
 
 `mutation: changeCustomerPassword`
 
-##### Example usage
+#### Example usage
 
 The following call updates the customer's password.
 
