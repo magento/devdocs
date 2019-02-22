@@ -123,7 +123,7 @@ You can add the custom VCL snippet to your Fastly service configuration from the
 
 1. After the upload completes, refresh the cache according to the notification at the top of the page.
 
-Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit your custom VCL snippet to fix the issue. Then,  upload the VCL again.
+Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit your custom VCL snippet to fix the issue. Then, upload the VCL again.
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
