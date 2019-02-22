@@ -44,7 +44,7 @@ The examples and instructions included in the {{ site.data.var.ece }} documentat
 
 You can create and manage custom VCL snippets from the Magento Admin UI or by using the Fastly API:
 
-- [Magento Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui)—We recommend using the Magento Admin UI to create, add, and manage VCL snippets because it automates the process of cloning the active VCL code (VCL version) for editing, saving and validating the custom VCL snippet, inserting the snippet into the VCL version, and uploading the new VCL version to Fastly. Additionally, you can create, view, and manage snippets from the UI without submitting multiple API requests and manually managing the active VCL version.
+- [Magento Admin UI](#manage-vcl-snippets-from-the-admin-ui)—We recommend using the Magento Admin UI to create, add, and manage VCL snippets because it automates the process of cloning the active VCL code (VCL version) for editing, saving and validating the custom VCL snippet, inserting the snippet into the VCL version, and uploading the new VCL version to Fastly. Additionally, you can create, view, and manage snippets from the UI without submitting multiple API requests and manually managing the active VCL version.
 
 - [Fastly API](#manage-vcl-snippets-using-the-api)—When you create and manage snippets using the Fastly API, you submit multiple API requests to complete the process to clone the active VCL version, create, validate, add, and manage VCL snippets, and to manage the active VCL version uploaded to Fastly. Use this method if you cannot access the Admin UI, for example if your site is down, and you need to update the Fastly VCL version.
 
