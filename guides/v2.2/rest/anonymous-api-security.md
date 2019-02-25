@@ -88,7 +88,6 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Open Source | Quote | /V1/guest-carts/:cartId/items/:itemId | DELETE |
 | Open Source | Quote | /V1/guest-carts | POST |
 | Open Source | Quote | /V1/guest-carts/:cartId/order | PUT |
-| Open Source | Quote | /V1/guest-carts/:cartId | PUT |
 | Open Source | Quote | /V1/guest-carts/:cartId | GET |
 | Open Source | Quote | /V1/guest-carts/:cartId/collect-totals | PUT |
 | Open Source | Quote | /V1/guest-carts/:cartId/totals | GET |
