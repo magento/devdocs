@@ -102,9 +102,9 @@ Please see the [System Administrators Guide on Running Tests][] for more informa
 
 ## Where to find the tests in the file system
 
-Each of the test types listed above corresponds to a subdirectory in `<magento2 root dir>/dev/tests`.
+Each test type described above corresponds to a subdirectory in `<magento2 root dir>/dev/tests`, as shown here:
 
-```xml
+```tree
 <repo_root>
     <dev/tests/>
         acceptance      (since v2.2.4)
@@ -117,22 +117,24 @@ Each of the test types listed above corresponds to a subdirectory in `<magento2 
         unit  
 ```
 
-Each one of these test types has different requirements that must be satisfied before they can be executed.
+Each of these test types must satisfy different requirements before the MFTF can execute them.
 
-MFTF tests are kept within its respective `<Module>` folder:
+MFTF tests are kept within its respective Module folder:
 
-```xml
-<repo_root>/
-   <Module1>
-      Test/
-      Unit/
-      Integration/
-      Mftf/
-         TestSuite/
-            composer.json
-   <Module2>
-   <Module1SampleData>
-   <Module2SampleData>
+```tree
+<extension_repo_root>
+├── <Module1>
+│   ├── ...
+│   ├── Test
+│   │   ├── Unit
+│   │   ├── Integration
+│   │   └── Mftf
+│   │       ├── TestSuite
+│   │       └── composer.json
+│   └── ...
+├── <Module2>
+├── <Module1SampleData>
+└── <Module2SampleData>
 ```
 
 <!-- Link Definitions -->
