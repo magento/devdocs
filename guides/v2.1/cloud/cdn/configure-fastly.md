@@ -82,18 +82,18 @@ If you need to change the Fastly API key credential for a project environment fo
 
 ### Multiple Fastly accounts and assigned domains {#domain}
 
-Fastly only allows you to assign an apex domain and associated subdomains to one Fastly service and account. If you have an existing Fastly account that links the same apex and subdomains used for your {{ site.data.var.ece }}, remove those domains from the existing account before submitting the request to add Fastly services to your project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
+Fastly only allows you to assign an apex domain and associated subdomains to one Fastly service and account. If you have an existing Fastly account that links the same apex and subdomains used for your {{ site.data.var.ece }}, you have the following options:
 
-If you have other sites hosted on the same apex subdomain and want to continue managing Fastly services from the existing account, you can leave the apex domain linked to that account and transfer the subdomains for your project to the {{ site.data.var.ece }} Fastly service account. To use this type of configuration, you must submit a Fastly support ticket requesting delegation of the apex domain.
+-  Remove the apex and subdomains from the existing account before submitting the request to add Fastly services to your project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
 
-For example, for a project with the following conditions and requirements, you would submit a [Fastly support ticket](https://fastly.zendesk.com/hc/en-us/articles/204950779-Filing-support-tickets) to delegate `testweb.com` to Magento, including the {{ site.data.var.ece }} project ID in the ticket:
+   Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}. 
 
--  The {{ site.data.var.ece }} project uses the `storeprod.testweb.com` and `storestaging.testweb.com` subdomains
--  The `test.web.com` apex domain is assigned to an existing Fastly account
--  Continue managing Fastly services for the apex domain using the existing Fastly account
--  Enable Magento to configure Fastly services for `storeprod.testweb.com` and `sotrestaging.testweb.com` on the {{ site.data.var.ece }} Fastly account.
+- Submit a support ticket to request domain delegation, designating which account manages the apex and each subdomain.
 
-After Fastly updates the configuration, continue with the steps to [Get Fastly credentials](#cloud-fastly-creds).
+  Use this option if your apex domain has multiple subdomains for Magento and non-Magento sites that you want to link to different Fastly accounts. For example, to continue linking `testweb.com` and `www.testweb.com` to the existing Fastly account and link your project subdomains to the Fastly account for {{ site.data.var.ece }}, submit a Fastly support ticket requesting that these subdomains (`mcstaging.testweb.com` and `mcprod.testweb.com`) be delegated from the existing account to the Magento account. Include your project ID in the ticket.  
+
+If your apex domain is already linked to a {{ site.data.var.ece }} Fastly service account, and you need to link associated subdomains to another Fastly account, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that these subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. 
+
 
 ## Get started {#cloud-fastly-start}
 
