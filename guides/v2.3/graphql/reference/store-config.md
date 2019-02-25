@@ -3,7 +3,7 @@ group: graphql
 title: Store endpoint
 ---
 
-The `Store` endpoint defines information about a store's configuration. You can query a non-default store by [changing the header]({{ page.baseurl }}/guides/v2.3/graphql/send-request.html) in your GraphQL request.
+The `Store` endpoint defines information about a store's configuration. You can query a non-default store by [changing the header]({{ page.baseurl }}/graphql/send-request.html) in your GraphQL request.
 
 ## Query structure
 
