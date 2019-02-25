@@ -95,11 +95,12 @@ Fastly only allows you to assign an apex domain and associated subdomains to one
 #### To request domain delegation
 
 **Scenario 1**
+
 If an apex domain (for example, `testweb.com` and `www.testweb.com`) is linked to an existing Fastly account, and you need to link your project subdomains to the Fastly account for {{ site.data.var.ece }}, submit a Fastly support ticket requesting that these subdomains (for example, `mcstaging.testweb.com` and `mcprod.testweb.com`) be delegated from the existing account to the Magento account. Include your Magento project ID in the ticket.  
 
 **Scenario 2**
-If your apex domain (for example,`testweb.com` and `www.testweb.com`) is linked to a {{ site.data.var.ece }} Fastly service account, and you need to link associated subdomains (for example,`service.testweb.com` and `news.testweb.com`) to another Fastly account, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that these subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include your Magento project ID in the ticket. 
 
+If your apex domain (for example,`testweb.com` and `www.testweb.com`) links to a {{ site.data.var.ece }} Fastly service account, and you need to link associated subdomains (for example,`service.testweb.com` and `news.testweb.com`) to another Fastly account, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that these subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include your the service ID for the Fastly account in the ticket.
 
 ## Get started {#cloud-fastly-start}
 
