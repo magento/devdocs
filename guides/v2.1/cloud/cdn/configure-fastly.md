@@ -88,7 +88,7 @@ Fastly only allows you to assign an apex domain and associated subdomains to one
 
    Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}. 
 
-- Submit a support ticket to request domain delegation, designating which account manages the apex and each subdomain.
+- Submit a support ticket to request domain delegation so that apex and subdomains can be linked to different accounts. 
 
   Use this option if your apex domain has multiple subdomains for Magento and non-Magento sites that you want to link to different Fastly accounts.
 
