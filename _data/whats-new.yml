@@ -4,8 +4,38 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Feb 19 10:45:50 2019
+updated: Mon Feb 25 10:43:52 2019
 entries:
+- description: Removed improper git commands for composer reinstall in [Uninstall
+    and Reinstall Magento](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)
+    and links to correct instructions.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: February 22, 2019
+  link: https://github.com/magento/devdocs/pull/3802
+- description: Added the section [Merge action groups](http://devdocs.magento.com/mftf/2.3/merging.html#merge-action-groups)
+    to the Merging page in the MFTF guide.
+  versions: 2.3.x
+  type: Major update
+  date: February 21, 2019
+  link: https://github.com/magento/devdocs/pull/3792
+- description: Added the missing `cache` command in [Disable Module Output](https://devdocs.magento.com/guides/v2.2/config-guide/config/disable-module-output.html#export-the-configuration-changes).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: February 21, 2019
+  link: https://github.com/magento/devdocs/pull/3799
+- description: Added a [Versioning](https://devdocs.magento.com/mftf/2.3/versioning.html)
+    topic to the MFTF guide.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: February 21, 2019
+  link: https://github.com/magento/devdocs/pull/3781
+- description: Added information about testing strategies to the [Magento Testing
+    Guide](https://devdocs.magento.com/guides/v2.3/test/testing.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: February 20, 2019
+  link: https://github.com/magento/devdocs/pull/3791
 - description: Added [Use parameterized selectors in action groups with argument references](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#use-parameterized-selectors-in-action-groups-with-argument-references)
     to Tips and Tricks.
   versions: 2.3.x
