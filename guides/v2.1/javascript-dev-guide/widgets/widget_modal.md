@@ -27,6 +27,7 @@ The design patterns for the modal pop-up windows in the Admin are described in t
 ## Initialize the modal widget {#modal_initialize}
 
 To initialize the widget in your script, use the following general notation:
+
 ```javascript
 $('#modal_content').modal({
     <option1>: <value1>,

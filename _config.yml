@@ -80,6 +80,16 @@ defaults:
       functional_areas:
         - Test
 
+  - 
+    scope:
+      path: page-builder
+    values:
+      layout: default
+      group: page-builder
+      strip_title: true
+      github_link: false
+      feedback_link: false
+
   -
     scope:
       path: guides/v2.3/mrg
@@ -115,6 +125,32 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+
+optional_front_matter:
+  remove_originals: true
+
+# Configuration options for the jekyll-relative-links plugin. 
+# Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
+
+relative_links:
+  exclude:
+    - _includes
+    - _videos
+    - codelinks
+    - community
+    - guides
+    - mftf
+    - redoc
+    - tmp
+    - 404.md
+    - availability.md
+    - magento-techbull.md
+    - magento-third-party.md
+    - search
+    - system-requirements.md
+    - whats-new.md
 
 # Settings for the jekyll-titles-from-headings plugin.
 # For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
@@ -142,6 +178,10 @@ algolia:
     - guides/m1x/**/*.md
     - swagger
     - redoc
+  # Index HTML elements, especially code samples.
+  nodes_to_index: 'p,li,td,code'
+  # Indexing fails if this isn't set because some of our records are very large.
+  max_record_size: 400000
 
 google:
   analytics: UA-66243208-1

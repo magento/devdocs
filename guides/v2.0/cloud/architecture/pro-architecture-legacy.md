@@ -103,7 +103,7 @@ We highly recommend testing every merchant and customer interaction in the Stagi
 
 ## Production environment {#cloud-arch-prod}
 
-The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring triple-redundant, high-availability nodes for continuous access and failover protection for your customers.
+The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers.
 
 #### Branches
 
@@ -116,9 +116,9 @@ We highly recommend testing every merchant and customer interaction in the Stagi
 
 ### Advantage of redundant hardware
 
-Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a triple-redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
+Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
 
-Because of our unique, triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IP addresses, so having more than one fixed IP address is not a problem.
+Because of our unique, redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IP addresses, so having more than one fixed IP address is not a problem.
 
 These three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
@@ -156,7 +156,7 @@ The following figure shows the technology used in the Production environment:
 
 ![Production technology stack]({{ site.baseurl }}/common/images/cloud_stack-diagram.png)
 
-{{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
+{{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
 In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
 
