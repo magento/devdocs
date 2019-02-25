@@ -100,7 +100,7 @@ If an apex domain (for example, `testweb.com` and `www.testweb.com`) is linked t
 
 **Scenario 2**
 
-If your apex domain (for example,`testweb.com` and `www.testweb.com`) links to a {{ site.data.var.ece }} Fastly service account, and you need to link associated subdomains (for example,`service.testweb.com` and `news.testweb.com`) to another Fastly account, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that these subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include your the service ID for the Fastly account in the ticket.
+If your apex domain (for example,`testweb.com` and `www.testweb.com`) links to a {{ site.data.var.ece }} Fastly service account, and you need to link associated subdomains (for example,`service.testweb.com` and `news.testweb.com`) to another Fastly account, submit a [Magento support ticket](https://support.magento.com/hc/en-us/articles/360000913794#submit-ticket) requesting that these subdomains be delegated from the {{ site.data.var.ece }} Fastly service account to the Fastly account. Include the service ID for the Fastly account in the ticket.
 
 ## Get started {#cloud-fastly-start}
 
