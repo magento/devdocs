@@ -28,11 +28,9 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 Edge Dictionaries create key-value pairs accessible to VCL functions during VCL snippet processing. In this example, you create an edge dictionary that provides the list of referrer websites to block.
 
-1.  Log in to the Admin UI for your {{ site.data.var.ece }} project environment.
+1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**.
 
-1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
-
-1.  Expand the **Edge dictionaries** section.
+1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
 
 1.  Create the Dictionary container:
 
@@ -89,11 +87,13 @@ Review the code to determine if you need to change any values:
 
 You can add the custom VCL snippet to your Fastly service configuration from the Admin UI (requires Fastly module 1.2.58 or later). If you do not have access to the Admin UI, you can save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API](https://docs.fastly.com/vcl/vcl-snippets/using-regular-vcl-snippets/#via-the-api).
 
-#### To add the custom VCL snippet from the Admin UI
+## Add the custom VCL snippet
 
-1.  From the Magento Admin UI, navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
+Complete these steps to add the custom VCL snippet from the Magento Admin UI:
 
-1.  Expand the **Custom VCL snippet** section.
+1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**.
+
+1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 
 1.  Click **Create Custom Snippet**.
 
@@ -121,7 +121,7 @@ You can add the custom VCL snippet to your Fastly service configuration from the
 
 1.  After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section.
 
-1. After the upload completes, refresh the cache according to the notification at the top of the page.
+1.  After the upload completes, refresh the cache according to the notification at the top of the page.
 
 Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit your custom VCL snippet to fix the issue. Then, upload the VCL again.
 
