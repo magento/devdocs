@@ -32,6 +32,9 @@ The release notes include:
 
 ## v2002.0.16
 
+{:.bs-callout .bs-callout-info}
+The `{{site.data.var.ct}}` version 2002.0.16 is required for Magento 2.1.17 and later.
+
 -   {:.new}**Docker updates**—
 
     -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
@@ -74,15 +77,15 @@ The release notes include:
 
 -   {:.fix}**Environment variable updates**—Changed the following environment variables:
 
-    -   <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES post-deploy variable]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`
+    -   <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`
 
-    -  <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL build and deploy variable**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html) content.
-	
-    -  <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the SCD_MATRIX variable to control theme configuration.
+    -   <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_compression_level) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_compression_level) content.
 
-    -  <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases.
+    -   <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the SCD_MATRIX variable to control theme configuration. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_exclude_themes) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_exclude_themes) content.
 
-    -  <!-- MAGECLOUD-2573/MAGECLOUD-2848 --> **ADMIN variables**—
+    -   <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_matrix) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) content.
+
+    -   <!-- MAGECLOUD-2573/MAGECLOUD-2848 --> **ADMIN variables**—
 
         -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the ADMIN_EMAIL, ADMIN_USERNAME, and ADMIN_PASSWORD environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
 
@@ -229,7 +232,7 @@ The release notes include:
 ## v2002.0.12
 
 {:.bs-callout .bs-callout-info}
-The`{{site.data.var.ct}}`version 2002.0.12 now supports Magento 2.1.14.
+The `{{site.data.var.ct}}` version 2002.0.12 now supports Magento 2.1.14.
 
 -   {:.new}<!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `{{site.data.var.ct}}` repository.
 
@@ -270,7 +273,7 @@ The`{{site.data.var.ct}}`version 2002.0.12 now supports Magento 2.1.14.
 ## v2002.0.11
 
 {:.bs-callout .bs-callout-info}
-The`{{site.data.var.ct}}`version 2002.0.11 now supports Magento 2.1.13.
+The `{{site.data.var.ct}}` version 2002.0.11 now supports Magento 2.1.13.
 
 -   {:.new}**Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{ page.baseurl }}/cloud/env/variables-deploy.html#redis_use_slave_connection) and for <!--MAGECLOUD-143 --> [MariaDB]({{ page.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection)).
 
