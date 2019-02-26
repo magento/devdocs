@@ -48,7 +48,7 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 
 ### Apex and subdomains already in Fastly {#domains}
 
-If the apex domain and subdomains for your {{ site.data.var.ece }} project are already managed by a Fastly account with an assigned Service ID, you cannot launch until you update your Fastly account configuration. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/configure-fastly.htmlconfigure-fastly.html#domain).
+If the apex domain and subdomains for your {{ site.data.var.ece }} project are already managed by a Fastly account with an assigned Service ID, you cannot launch until you update your Fastly account configuration. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#domain).
 
 ## Locate Service ID {#service-id}
 
