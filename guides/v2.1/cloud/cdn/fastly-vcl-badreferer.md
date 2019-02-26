@@ -28,9 +28,9 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 Edge Dictionaries create key-value pairs accessible to VCL functions during VCL snippet processing. In this example, you create an edge dictionary that provides the list of referrer websites to block.
 
-1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**.
+1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
+1.  Expand **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
 
 1.  Create the Dictionary container:
 
@@ -91,9 +91,9 @@ You can add the custom VCL snippet to your Fastly service configuration from the
 
 Complete these steps to add the custom VCL snippet from the Magento Admin UI:
 
-1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**.
+1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
+1.  Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 
 1.  Click **Create Custom Snippet**.
 

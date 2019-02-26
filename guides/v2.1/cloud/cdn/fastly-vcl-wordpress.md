@@ -108,9 +108,9 @@ You can add the custom VCL snippet to your Fastly service configuration from the
 
 Complete these steps to add the custom VCL snippet from the Magento Admin UI:
 
-1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**.
+1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
+1.  Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 
 1.  Click **Create Custom Snippet**.
 

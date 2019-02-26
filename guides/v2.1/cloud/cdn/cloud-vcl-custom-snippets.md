@@ -46,7 +46,7 @@ You can create and manage custom VCL snippets from the Magento Admin UI or by us
 
 - [Magento Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets that you have added from the Admin UI.
 
-- [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Admin UI, for example if your site is down, and you need to update the Fastly VCL version, or modify a VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
+- [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Admin UI. For example, if the site is down and you need to troubleshoot the Fastly service configuration or add a custom VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
 
 
   ### Example VCL snippet code {#vcl-curl}
@@ -261,7 +261,7 @@ After you add a custom VCL snippet, Fastly inserts the snippet in the VCL versio
     curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/activate -X PUT
     ```
 
-### API quick reference for VCL snippets {#st}
+### API quick reference for VCL snippets {#manage-vcl}
 
 These API request examples use exported environment variables to provide the credentials to authenticate with Fastly. For details on these commands, see the [Fastly API reference](https://docs.fastly.com/api/config#vcl).
 
