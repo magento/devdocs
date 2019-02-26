@@ -13,6 +13,9 @@ pages:
         - label: Searches and pagination
           url: /graphql/search-pagination.html
 
+        - label: Mutations
+          url: /graphql/mutations.html
+
     - label: Development
       children:
         - label: Define the GraphQL schema for a module
