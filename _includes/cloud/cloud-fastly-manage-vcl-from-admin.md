@@ -11,7 +11,7 @@ Complete these steps to modify a custom VCL snippet from the
 1.  In the _Action_ column, click the settings icon next to the snippet to edit.
 
 {: .bs-callout .bs-callout-warning}
-The *Custom VCL snippets* UI option shows only the snippets added through the Admin UI. If custom VCL snippets were added using the Fastly API, [manage them using the API](#manage-vcl).
+The *Custom VCL snippets* UI option shows only the snippets added through the Admin UI. You must use the Fastly API to [manage custom snippets added through the API]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).
 
 
 ## Delete the custom VCL snippet
@@ -26,7 +26,7 @@ You can delete custom VCL snippet code from your Fastly configuration by uploadi
 
 	- Upload the VCL to Fastly to apply your changes.
 	
-- Use the Fastly API [Delete custom VCL snippet]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vclmanage-vcl) operation 
+- Use the Fastly API [Delete custom VCL snippet]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-vcl) operation 
  to delete the snippet completely, or submit a Magento support ticket to request deletion.
 
 
