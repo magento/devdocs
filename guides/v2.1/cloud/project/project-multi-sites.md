@@ -30,7 +30,7 @@ After successfully creating and testing the local installation to use multiple s
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
 {:.bs-callout .bs-callout-info}
-To set up routes in a staging or production environment, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
 
 #### To configure routes in an integration environment:
 
