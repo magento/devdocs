@@ -25,11 +25,11 @@ mutation myCreateCustomer{
 
 In this example, `myCreateCustomer` identifies your implementation.  `CustomerInput` is a non-nullable object that defines a customer. (The exclamation point indicates the value is non-nullable.) `CustomerOutput` defines which fields to return. 
 
-Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `id`.
+Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed as input to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `id`.
 
 
 ```text
-mutation myCreateCustomerV1{
+mutation myCreateCustomerNoVariables{
     createCustomer(
         input: {
             firstname: "Melanie"
@@ -37,7 +37,8 @@ mutation myCreateCustomerV1{
             email: "mshaw@example.com"
             password: "Password1"
         }
-    ) {
+    ) 
+    {
         customer {
             id
         }
@@ -50,15 +51,14 @@ The mutation returns the customer ID:
 ```json
 {
   "data": {
-    "createCustomer": {
-      "customer": {
-        "id": 2
-      }
+      "createCustomer": {
+          "customer": {
+              "id": 2
+            }
+        }
     }
-  }
 }
 ```
-
 
 ## Mutation input
 
@@ -66,10 +66,11 @@ A mutation can require either an object as input (as shown above) or one or more
 
 ```text
 mutation myGenerateCustomerToken{
-	generateCustomerToken(
+    generateCustomerToken(
         email: "mshaw@example.com"
         password: "Password1"
-    ) {
+    )
+    {
         token
     }
 }
@@ -86,10 +87,11 @@ Specifying variables in a mutation can help increase code re-use. Consider the f
 The following example declares the `$CustomerInput` variable. It is referenced in the `input` statement.
 
 ```text
-mutation myCreateCustomerV2($CustomerInput: CustomerInput!){
+mutation myCreateCustomerWithVariables($CustomerInput: CustomerInput!){
     createCustomer(
         input: $CustomerInput
-    ) {
+    )
+    {
         customer {
             id
         }
@@ -101,16 +103,16 @@ The `$CustomerInput` variable is defined as a JSON object:
 
 ```json
 {
-  "CustomerInput": {
-      "firstname": "Melanie",
-      "lastname": "Shaw",
-      "email": "mshaw@example.com",
-      "password": "Password1"
+"CustomerInput": {
+    "firstname": "Melanie",
+    "lastname": "Shaw",
+    "email": "mshaw@example.com",
+    "password": "Password1"
    }
 }
 ```
 
-This example updates the email of the customer using two scalar variables (`$email`, `$password`). The variables are defined separately.
+This example updates the customer's email using two scalar variables (`$email`, `$password`). 
 
 ```text
 mutation myUpdateCustomer($email: String!, $password: String!){
@@ -119,7 +121,8 @@ mutation myUpdateCustomer($email: String!, $password: String!){
             email: $email
             password: $password
         }
-    ) {
+    )
+    {
         customer {
             id
             email
@@ -128,9 +131,11 @@ mutation myUpdateCustomer($email: String!, $password: String!){
 }
 ```
 
+The variables are defined separately.
+
 ```json
 {
-  "email": "melanie.shaw@example.com",
-  "password": "Password1"
+    "email": "melanie.shaw@example.com",
+    "password": "Password1"
 }
-```x
+```
