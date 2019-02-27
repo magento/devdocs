@@ -44,7 +44,7 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 
 1.  Log in to the Admin UI for your {{ site.data.var.ece }} project environment.
 
-1.  Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
 1.  Expand **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
 
@@ -52,7 +52,7 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 
     - Click **Add container**.
 
-    -  On the *Container* page, enter a **Dictionary name**. For this example, use the name `wordpress_urls`.
+    -  On the *Container* page, enter a **Dictionary name**—`wordpress_urls`.
 
     -  Select **Activate after the change** to enable the dictionary after you create it.
 
@@ -69,6 +69,10 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 	   ![Add Edge Dictionary Items]
 	 
     -  Click **Cancel** to return to the system configuration page.
+	
+1.  Click **Save Config**.
+
+1.  Refresh the cache according to the notification at the top of the page.
 	
 For more information about Edge Dictionaries, see [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) and [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in the Fastly documentation.
 

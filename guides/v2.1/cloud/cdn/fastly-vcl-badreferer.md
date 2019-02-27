@@ -36,7 +36,7 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 
     - Click **Add container**.
 
-    -  On the *Container* page, enter a **Dictionary name**. For this example, use the name `referrer_blocklist`.
+    -  On the *Container* page, enter a **Dictionary name**—`referrer_blocklist`.
 
     -  Select **Activate after the change** to deploy your changes to the version of the Fastly service configuration that you are editing.
 
@@ -51,6 +51,10 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
        ![Add bad referrer dictionary items]
 	 
     -  Click **Cancel** to return to the system configuration page.
+	
+1.  Click **Save Config**.
+
+1.  Refresh the cache according to the notification at the top of the page.
 	
 For more information about Edge Dictionaries, see [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) and [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in the Fastly documentation.
 

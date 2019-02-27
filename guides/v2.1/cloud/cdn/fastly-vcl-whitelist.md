@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-You can add additional security to the Admin UI for your {{ site.data.var.ece }} project using a [Fastly Access Control List (ACL) Dictionary](https://docs.fastly.com/guides/access-control-lists/about-acls) with a custom VCL snippet. The following example shows how to use a custom VCL snippet with a Fastly Edge (ACL) to filter access to the Admin UI by client IP.  
+The following example shows how to use a custom VCL snippet with a [Fastly Access Control List (ACL)](https://docs.fastly.com/guides/access-control-lists/about-acls) to manage access to the Admin UI for a {{ site.data.var.ece }} project environment. 
 
 **Prerequisites**
 
@@ -27,17 +27,32 @@ Edge ACLs create IP lists for managing access to your site. In this example, you
 
 1.  Log in to the Admin UI for your {{ site.data.var.ece }} project environment.
 
-1.  Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  Expand **Full Page Cache** > **Fastly Configuration** > **ACL*.
+1.  Expand **Full Page Cache** > **Fastly Configuration** > **ACL**.
 
-1. Click **Add ACL** to create a list. For this example, name the list "allowlist".
+1.  Create the ACL container:
 
-1. Add the list of IP addresses that will be allowed access to the Admin UI.
+    - Click **Add ACL**.
 
-1. Optionally, select the Negated checkbox if needed.
+    -  On the *ACL Container* page, enter a **ACL name**—`allowlist`.
 
-You will use the Edge ACL by name in your VCL snippet code. 
+    -  Select **Activate after the change** to deploy your changes to the version of the Fastly service configuration that you are editing.
+
+    -  Click **Upload** to attach the ACL to your Fastly service configuration.
+
+1. Add the list of IP addresses allowed to access the Admin UI
+
+   -  Click the Settings icon for the `allowlist` ACL.
+   
+   -  Add and save the *IP Value* for each client IP address.
+   
+   -  Click **Cancel** to return to the system configuration page.
+
+1.  Click **Save Config**.
+
+1.  Refresh the cache according to the notification at the top of the page.
+
 
 ## Create allowlist.json {#vcl}
 
