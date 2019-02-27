@@ -178,7 +178,7 @@ Complete the following configuration steps in Staging and Production environment
 
 1.	After configuring the caching options, click **Save Config** at the top of the page.
 
-1.	Clear the cache according to the notification. Then, navigate back to **Stores** > **Configuration** > **Advanced** > **System** >
+1.	Clear the cache according to the notification. Then, navigate back to **Stores** > **Settings** > **Configuration** > **Advanced** > **System** >
 **Fastly Configuration** to continue configuring Fastly.
 
 Configure the following features and enable additional [configuration options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options):
