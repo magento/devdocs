@@ -23,7 +23,7 @@ The following example shows how to use a custom VCL snippet with a [Fastly Acces
 
 ## Create Edge ACL for allowing client IPs {#edge-acl}
 
-Edge ACLs create IP lists for managing access to your site. In this example, you create an Edge ACL with client IP addresses allowed to access the Admin UI for your project environment. 
+Edge ACLs create IP lists for managing access to your site. In this example, you create an Edge ACL and add the list of client IP addresses allowed to access the Admin UI for your project environment. 
 
 1.  Log in to the Admin UI for your {{ site.data.var.ece }} project environment.
 
@@ -74,7 +74,7 @@ Review the following values for the code to determine if you need to make change
 
 -  `name`—Name for the VCL snippet. For this example, `allowlist`.
 
--  `priority`—Determines when the VCL snippet runs. The priority  is `5` to immediately run and check for whitelisted, allowed IPs. The snippet runs  before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
+-  `priority`—Determines when the VCL snippet runs. The priority  is `5` to immediately run and check whether a Admin UI requests are coming from an allowed IP adderess. The snippet runs before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
 
 -  `type`—Specifies Specifies a location to insert the snippet in the versioned VCL code. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
 
