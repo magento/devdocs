@@ -11,49 +11,37 @@ functional_areas:
   - Setup
 ---
 
-After you set up Fastly services on your {{ site.data.var.ece }} project environments, you can use the Fastly service to to block referral spam](https://en.wikipedia.org/wiki/Referrer_spam) from your sites. The follwoing example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet to return a `403 Forbidden` error on requests from a domain known for sending fake traffic.
-
-
-You can add additional security to the Admin UI for your {{ site.data.var.ece }} project using a [Fastly Access Control List (ACL) Dictionary](https://docs.fastly.com/guides/access-control-lists/about-acls) with a custom VCL snippet. The following example shows how to set up an allow list with access control list for a specified set of IP addresses  allow specified IP addresses with a list of client IP addresses that you want 
-
-configure Fastly services to allow use a Fastly Access Control List and custom VCL snippet to conr
-You may only want to allow specific client IPs access to your Magento Admin. To whitelist and allow these IPs access, you can create an Edge ACL through the Magento Admin with a list of IPs and create a VCL snippet with code to verify client IPs. Any IP not matching the allow list is restricted with a 403 Forbidden error.
-
-You must have the following information to complete this VCL code snippet:
-
-* List of client IPs to allow access
-* Account access and URL to the Magento Admin for the Staging or Production environment
-* URL for the Magento Admin. If you changed this URL from `/admin`, you will need to modify the code in this example.
+You can add additional security to the Admin UI for your {{ site.data.var.ece }} project using a [Fastly Access Control List (ACL) Dictionary](https://docs.fastly.com/guides/access-control-lists/about-acls) with a custom VCL snippet. The following example shows how to use a custom VCL snippet with a Fastly Edge (ACL) to filter access to the Admin UI by client IP.  
 
 **Prerequisites**
 
--  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
+-  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
 
 -  Get credentials to access the Admin UI for your {{ site.data.var.ece }} environment.
 
 -  List of client IPs to allow access.
 
-{:.bs-callout .bs-callout-info}
-This information is just the code portion for setting up your VCL. Use this information with [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
-
 ## Create Edge ACL for allowing client IPs {#edge-acl}
 
-Edge ACLs create IP lists for managing access for your VCL snippet. For this example, create an Edge ACL of IPs to whitelist and enable access to your site. Then create a custom VCL snippet to manage access.
+Edge ACLs create IP lists for managing access to your site. In this example, you create an Edge ACL with client IP addresses allowed to access the Admin UI for your project environment. 
 
-If you want to allow access to Staging and Production, create the Edge ACL in both Magento Admins with the same name. You can have different IPs in the two environments. The VCL snippet code will apply to both environments.
+1.  Log in to the Admin UI for your {{ site.data.var.ece }} project environment.
 
-1. Log in to the Magento Admin.
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
-3. Expand the **Edge ACL** section.
-4. Click **Add ACL** to create a list. For this example, name the list "allowlist".
-5. Enter IP values in the list. Any client IPs added to this list will be allowed access to the site.
-6. Optionally, select the Negated checkbox if needed.
+1.  Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-You will use the Edge ACL by name in your VCL snippet code.
+1.  Expand **Full Page Cache** > **Fastly Configuration** > **ACL*.
+
+1. Click **Add ACL** to create a list. For this example, name the list "allowlist".
+
+1. Add the list of IP addresses that will be allowed access to the Admin UI.
+
+1. Optionally, select the Negated checkbox if needed.
+
+You will use the Edge ACL by name in your VCL snippet code. 
 
 ## Create allowlist.json {#vcl}
 
-To allow only whitelisted IPs access to Staging and Production environments, you can use the same VCL snippet file without edits.
+The following custom VCL snippet code (JSON format) filters requests to the Admin UI and allows access if the client IP address matches an address in the `allowlist` ACL. 
 
 Create an `allowlist.json` file with the following JSON content:
 
@@ -69,19 +57,56 @@ Create an `allowlist.json` file with the following JSON content:
 
 Review the following values for the code to determine if you need to make changes:
 
-* `name`: Name for the VCL snippet. For this example, we used the name `allowlist`.
-* `priority`: Determines the order VCL snippets call. You want to set the priority to 5 to immediately run and check for whitelisted, allowed IPs. This priority runs the snippet immediately and before any of the uploaded and default Magento VCL snippets (magentomodule) that have a priority of 50.
-* `type`: For this VCL, we use `recv`, which places it in the vcl_recv subroutine by below the boilerplate VCL and above any objects.
-* `content`: The snippet of VCL code to run, which verifies the client IP. The following occurs in this code:
+-  `name`—Name for the VCL snippet. For this example, `allowlist`.
 
-  * If the IP is in the Edge ACL, it is allowed access. If not, they receive a 403 Forbidden error.
-  * If your URL for your Magento Admin was changed, make sure to edit `/admin` with the new URL. For example, `/company-admin`.
-  * In the code sample, the condition `!req.http.Fastly-FF` is important when using Origin Shielding. Do not remove or edit this code.
+-  `priority`—Determines when the VCL snippet runs. The priority  is `5` to immediately run and check for whitelisted, allowed IPs. The snippet runs  before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
 
-{:.bs-callout .bs-callout-info}
-The default VCL snippets you uploaded included a prepended name of `magentomodule_` with a priority of 50. For your custom VCL snippets, **do not use the `magentomodule_` name**. Also consider the priority of your custom snippets if they should override the default snippets.
+-  `type`—Specifies Specifies a location to insert the snippet in the versioned VCL code. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
 
-## Finish adding the VCL {#complete}
+-  `content`—The snippet of VCL code to run. In this example, the code filters requests to the Admin UI and allows access if the client IP address matches an address in the `allowlist` ACL. If the address doesn't match the request is blocked with a `403 Forbidden` error.
 
-When saved, continue creating other VCLs. You can then run the bash script, then validate and activate your VCLs to complete the process. For complete steps, see [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+   If the URL for your Magento Admin was changed, replace the sample value `/admin` with the URL for youre environment. For example, `/company-admin`.
+   
+In the code sample, the condition `!req.http.Fastly-FF` is important when using Origin Shielding. Do not remove or edit this code.
+
+Add the custom VCL snippet to your Fastly service configuration from the Admin UI (requires Fastly module 1.2.58 or later). If you cannot access the Admin UI, save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API]({{  page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html(#manage-custom-vcl-snippets-using-the-api).
+
+## Add the custom VCL snippet {#add-whitelist-vcl}
+
+Complete these steps to add the custom VCL snippet from the Magento Admin UI:
+
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+
+1.  Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
+
+1.  Click **Create Custom Snippet**.
+
+1.  Add the VCL snippet values:
+
+    -  Enter the **Name** (`allowlist`).
+
+    -  Select the **Type** (`recv`).
+
+	-  Set the **Priority** (`5`)
+	
+    -  Add the **VCL** snippet content:
+
+	   ```
+	   if ((req.url ~ "^/admin") && !(client.ip ~ allowlist) && !req.http.Fastly-FF) { error 403 "Forbidden";
+	   ```
+
+1.  Click **Create** to generate the VCL snippet file with the name pattern `type_priority_name.vcl`, for example `recv_5_allowlist.vcl`
+
+	      ![Create VCL Snippet]
+	
+1.  After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section to add the file to the Fastly service configuration.
+
+ 1.  After the upload completes, refresh the cache according to the notification at the top of the page.
+
+Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit the custom VCL snippet to fix the issue. Then, upload the VCL again.
+
+{% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
+
+{: .bs-callout .bs-callout-info}
+Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically when you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md#automated-custom-vcl-snippets-deployment) in the Fastly CDN for Magento 2 module documentation. 
 

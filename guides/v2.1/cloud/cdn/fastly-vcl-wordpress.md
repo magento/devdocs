@@ -11,8 +11,6 @@ functional_areas:
   - Setup
 ---
 
-After you set up Fastly services on your {{ site.data.var.ece }} project environments, you can use the custom VCL snippets feature to block [referral spam](https://en.wikipedia.org/wiki/Referrer_spam) from your sites.
-
 The following example shows how to use a [Fastly Edge Dictionary](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) with a custom VCL snippet to redirect incoming requests from a {{ site.data.var.ee }} store (`staging.example.com`) to a separate WordPress site (`customer.example.com`) that hosts related content like blog posts and customer stories.
 
 
@@ -21,13 +19,13 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 **Prerequisites**
 
--  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
+-  Configure the {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
 
 -  Get credentials to access both the Fastly API and the Admin UI for your {{ site.data.var.ece }} environment.
 
--  Identify the URL paths that you want to redirect to the WordPress backend.
+-  Identify the URL paths to redirect to the WordPress backend.
 
--  Use the Fastly API to add the following configuration settings to the Fastly service configuration: 
+-  Use the Fastly API to add the following configuration settings: 
 
    -  Add the WordPress host to the Fastly backend configuration, for example `customer.example.com`.
 
@@ -42,13 +40,13 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 ## Create an Edge Dictionary of WordPress paths {#edge-dictionary}
 
-Edge Dictionaries create key-value pairs accessible to VCL functions during VCL snippet processing. In this example, you create an edge dictionary that provides the list of URL paths that you want to redirect from your store to the WordPress backend. 
+Edge Dictionaries create key-value pairs accessible to VCL functions during VCL snippet processing. In this example, you create an edge dictionary that provides the list of URL paths that to redirect from your store to the WordPress backend. 
 
 1.  Log in to the Admin UI for your {{ site.data.var.ece }} project environment.
 
-1.  Navigate to **Stores** > **Configuration** > **Advanced** > **System**.
+1.  Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
-1.  In the right pane, expand the following sections: **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
+1.  Expand **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
 
 1.  Create the Dictionary container:
 
@@ -66,16 +64,18 @@ Edge Dictionaries create key-value pairs accessible to VCL functions during VCL 
 
        ![Configure Edge Dictionary]
 
-    -  Add and save key-value pairs in the new dictionary. For this example, each **Key** is a URL path that you want to redirect to the WordPress backend, and the **Value** is 1.
+    -  Add and save key-value pairs in the new dictionary. For this example, each **Key** is a URL path to redirect to the WordPress backend, and the **Value** is 1.
        
 	   ![Add Edge Dictionary Items]
 	 
     -  Click **Cancel** to return to the system configuration page.
+	
+For more information about Edge Dictionaries, see [Creating and using Edge Dictionaries](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api) and [custom VCL snippets](https://docs.fastly.com/guides/edge-dictionaries/working-with-dictionaries-using-the-api#custom-vcl-examples) in the Fastly documentation.
 
 ## Create a VCL snippet for the WordPress redirect {#vcl}
 
-The following custom VCL snippet code (JSON format) evaluates incoming requests and redirects those with a path a 
-included in the `wordpress_urls` edge dictionary to the WordPress backend specified in the Fastly service configuration.
+The following custom VCL snippet code (JSON format) evaluates incoming requests and redirects those matching a path 
+ in the `wordpress_urls` edge dictionary to the WordPress backend specified in the Fastly service configuration.
 
 
 ```json
@@ -88,20 +88,20 @@ included in the `wordpress_urls` edge dictionary to the WordPress backend specif
 }
 ```
 
-Review the code to determine if you need to change any values:
+Review the example code and change values as needed: 
 
--  `name`—Name for the VCL snippet. For this example, we used the name `wordpress_redirect`.
+-  `name`—Name for the VCL snippet. For this example, we used `wordpress_redirect`.
   
--  `dynamic`—Value 0 indicates a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) that you upload to the versioned VCL for the Fastly configuration.
+-  `dynamic`—Value 0 indicates a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) to upload to the versioned VCL for the Fastly configuration.
 
--  `priority`—Determines when the VCL snippet runs. The priority is set to 5 so that this snippet code runs before any of the default Magento VCL snippets (`magentomodule_*`) that have a priority of 50.
+-  `priority`—Determines when the VCL snippet runs. The priority  is `5` to run this snippet code runs before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
 
--  `type`—Specifies the location for inserting the generated snippet. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
+-  `type`—Specifies Specifies a location to insert the snippet in the versioned VCL code. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
 
--  `content`—When the VCL code in this example runs, it extracts the first part segment of the path `/mypath/someotherpath`, and then compares that path (`mypath`) to the values in the `wordpress_urls` dictionary. Requests with matching paths are redirected to the WordPress backend. See the [Fastly VCL reference](https://docs.fastly.com/vcl/reference/) for information about creating Fastly VCL code snippets.
+-  `content`—When the VCL code in this example runs, it extracts the first part segment of the path `/mypath/someotherpath`, and then compares the path (`mypath`) to the paths in the `wordpress_urls` dictionary. Requests with matching paths are redirected to the WordPress backend. See the [Fastly VCL reference](https://docs.fastly.com/vcl/reference/) for information about creating Fastly VCL code snippets.
  
 
-You can add the custom VCL snippet to your Fastly service configuration from the Admin UI (requires Fastly module 1.2.58 or later). If you do not have access to the Admin UI, you can save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API](https://docs.fastly.com/vcl/vcl-snippets/using-regular-vcl-snippets/#via-the-api). 
+Add the custom VCL snippet to your Fastly service configuration from the Admin UI (requires Fastly module 1.2.58 or later). If you cannot access the Admin UI, save the JSON code example in a file and upload it using the Fastly API. See [Creating a VCL snippet using the Fastly API]({{  page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html(#manage-custom-vcl-snippets-using-the-api).
 
 
 ## Add the custom VCL snippet
@@ -124,7 +124,7 @@ Complete these steps to add the custom VCL snippet from the Magento Admin UI:
 	
 	- Add the **VCL** snippet content:
 
-      ```html
+      ```
       if ( req.url.path ~ "^/?([^/?]+)")
 	    {
 		  if ( table.lookup(wordpress_urls, re.group.1, \"NOTFOUND\") != \"NOTFOUND\" )
@@ -141,7 +141,7 @@ Complete these steps to add the custom VCL snippet from the Magento Admin UI:
 
 1.  After the upload completes, refresh the cache according to the notification at the top of the page.
 
-Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit your custom VCL snippet to fix the issue. Then, upload the VCL again.
+Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit the custom VCL snippet to fix the issue. Then, upload the VCL again.
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 

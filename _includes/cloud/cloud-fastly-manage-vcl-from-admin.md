@@ -1,8 +1,8 @@
 ## Modify the custom VCL snippet
 
-Complete thes following steps to modify a custom VCL snippet from the Magento Admin UI.
+Complete the following steps to modify a custom VCL snippet from the Magento Admin UI.
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
+1.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
 1.  Expand **Full Page Cache** > **Fastly Configuration** > **Custom VCL Snippets**.
 
