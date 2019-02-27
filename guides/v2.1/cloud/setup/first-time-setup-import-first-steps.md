@@ -57,20 +57,20 @@ To find {{site.data.var.ece}} database access information:
 
         echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
 
-        <pre class="no-copy">database" : [
-              {
-                 "username" : "user",
-                 "query" : {
+        database" : [
+            {
+                "username" : "user",
+                "query" : {
                     "is_master" : true
-                 },
-                 "path" : "main",
-                 "port" : 3306,
-                 "host" : "database.internal",
-                 "password" : "",
-                 "scheme" : "mysql",
-                 "ip" : "192.0.2.150"
-              }
-           ]</pre>
+                },
+                "path" : "main",
+                "port" : 3306,
+                "host" : "database.internal",
+                "password" : "",
+                "scheme" : "mysql",
+                "ip" : "192.0.2.150"
+            }
+        ]
 
 In the previous example, the database name is `main`, the listen port is `3306`, the hostname is `database.internal`, the root username is `user`, and the user has no password.
 
