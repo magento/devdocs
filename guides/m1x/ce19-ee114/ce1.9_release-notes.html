@@ -32,6 +32,7 @@
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
 
+<li><a href="#ce19-1941">Magento Open Source 1.9.4.1 Release Notes</a></li>
 <li><a href="#ce19-1940">Magento Open Source 1.9.4.0 Release Notes</a></li>
 <li><a href="#ce19-19310">Magento Open Source 1.9.3.10 Release Notes</a></li>
 <li><a href="#ce19-1939">Magento Open Source 1.9.3.9 Release Notes</a></li>
@@ -59,6 +60,47 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use Magento Open Source 1.9.3.0 or later for <em>all new Magento Open Source installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+<h2 id="ce19-1941">Magento Open Source 1.9.4.1 Release Notes</h2>
+ <p>This version (or patch SUPEE-10975, which applies to older versions of Magento) provides resolution of multiple critical security issues and functional fixes. These critical security issues include remote code execution (RCE),  cross-site scripting (XSS), and cross-site request forgery (CSRF) issues. This release also provides support for PHP 7.2.</p>
+
+<p>We recommend upgrading your Magento store to this latest version.  See  <a href="https://magento.com/security/patches/supee-10888" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
+
+<h3>Fixed issues and enhancements</h3>
+<ul>
+<li><!-- MPERF-9389 --> Layered navigation now works as expected when full page cache and block caching are enabled. Previously, you could not clear layered navigation filters when these features were enabled. </li>
+
+<li><!-- MPERF-9939 --> Errors caused by problematic PHP error logging have been resolved. Previously, Magento displayed excessive and unnecessary 404 errors. </li>
+
+<li><!-- MPERF-10481 --></li>
+
+<li><!-- MPERF-10340 --> Magento now displays the following message when an invalid character is used,  <code>Attribute code is invalid. Please use only letters (a-z), numbers (0-9) or underscore(_) in this field, first character should be a letter. Do not use "event" for an attribute code</code>. Previously, Magento did not flag invalid attribute codes. </li>
+
+<li><!-- MPERF-10361 --> You can now add to the cart products with custom options for which the <b>custom option</b> checkbox has not been checked. Previously, Magento did not add the product to the cart, and displayed this message, <code>Cannot add the item to shopping cart</code>.</li>
+
+<li><!-- MPERF-10265 --> URL redirects for products now work as expected. Previously, when you selected a product from the Category page and <bold>Add URL Redirect</bold> has been enabled, Magento redirected users to <bold>URL Redirect Information</bold> and threw this error, <code>exception 'Mage_Core_Exception' with message 'Invalid block type: Mage_Adminhtml_Block_Empty_Edit_Form' in /var/www/mee56.regression/app/Mage.php:580</code></li>
+
+<li><!-- MPERF-10318 --> Magento now displays payment information during the confirmation step of check out and successfully processes an order when inline translation is enabled. Previously, Magento did not display this payment information during check out, and the order was not completed.  </li>
+
+<li><!-- MPERF-10321 --> You can now create a staging website when development mode is enabled. Previously, Magento threw an error after you added a website from  <bold>System</bold> > <bold>Content Staging</bold> > <bold>Staging Websites</bold>. 
+</li>
+
+
+<li><!-- MPERF-10360 --> You can now successfully delete a website by clicking <b>Delete Website</b> as expected. Previously, when you clicked this button, Magento threw a fatal error. </li>
+
+<li><!-- MPERF-10397 --> You can now add a banner by clicking <b>Add Banner</b> from the Admin. Previously, Magento threw an error when you clicked this button. </li>
+
+<li><!-- MPERF-10415 --> Magento no longer throws an <code>Undefined index: is_recurring</code> error when when you try to save a product when deploying Magento with development mode enabled.  </li>
+
+</ul>
+
+<h3>Known issues</h3>
+<ul>
+<li>Guests cannot access cart contents created before updating to this version of Magento.</li>
+<li>You cannot save custom widgets that were created by helper methods in layout updates.</li>
+</ul>
+
+
 
 
 
