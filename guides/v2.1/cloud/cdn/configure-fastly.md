@@ -84,7 +84,7 @@ If you need to change the Fastly API key credential for a project environment fo
 
 Fastly only allows you to assign an apex domain and associated subdomains to one Fastly service and account. If you have an existing Fastly account that links the same apex and subdomains used for your {{ site.data.var.ece }}, you have the following options:
 
--  Remove the apex and subdomains from the existing account before submitting the request to add Fastly services to your project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
+-  Remove the apex and subdomains from the existing account before requesting Fastly service credentials for your {{ site.data.var.ece}} project environments. See [Working with Domains](https://docs.fastly.com/guides/basic-configuration/working-with-domains) in the Fastly documentation.
 
    Use this option to link the apex domain and all subdomains to the Fastly service account for {{ site.data.var.ece }}. 
 
