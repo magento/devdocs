@@ -180,7 +180,7 @@ algolia:
     - redoc
   # Index HTML elements, especially code samples.
   nodes_to_index: 'p,li,td,code'
-  # Override 10KB default and use our aloowed max of 20KB
+  # Override 10KB default and use our allowed max of 20KB
   max_record_size: 20000
 
 google:
