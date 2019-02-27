@@ -242,6 +242,19 @@ stage:
     SCD_COMPRESSION_LEVEL: 5
 ```
 
+### `SCD_COMPRESSION_TIMEOUT`
+
+-  **Default**—`600`
+-  **Version**—Magento 2.1.4 and later
+
+Specifies maximum execution time, in seconds, for static content compression command. Compression command will be interrupted if not finished until timeout.
+
+```yaml
+stage:
+  deploy:
+    SCD_COMPRESSION_TIMEOUT: 800
+```
+
 ### `SCD_EXCLUDE_THEMES` 
 
 {: .bs-callout .bs-callout-warning }
