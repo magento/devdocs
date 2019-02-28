@@ -64,6 +64,15 @@ defaults:
     values:
       layout: video
 
+  - 
+    scope:
+      path: mbi
+    values:
+      layout: default
+      group: mbi
+      github_link: false
+      feedback_link: false
+
   -
     scope:
       path: mftf/2.2
