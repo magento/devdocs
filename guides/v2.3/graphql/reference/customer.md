@@ -5,7 +5,7 @@ title: Customer endpoint
 
 The `Customer` endpoint contains information about a customer account accessible through queries and mutations.
 
-Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html). To successfully return or modify information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls.
+To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 ## Queries
 Use queries to read server-side data, such as a specific customer's address.
@@ -14,7 +14,7 @@ Use queries to read server-side data, such as a specific customer's address.
 
 `customer: Customer`
 
-### Customer attributes
+### Customer attributes {#customerAttributes}
 The customer object can contain the following attributes:
 
 Attribute |  Data Type | Description 
@@ -24,7 +24,7 @@ Attribute |  Data Type | Description
 `default_billing` | String | The ID assigned to the billing address
 `default_shipping` | String | The ID assigned to the shipping address
 `dob` | String | The customer's date of birth
-`email` | String | The customer's email address. Required
+`email` | String | The customer's email address
 `firstname` | String | The customer's first name
 `group_id` | Int | The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale), and 3 (Retailer)
 `id` | Int | The ID assigned to the customer
@@ -56,16 +56,26 @@ Attribute |  Data Type | Description
 `middlename` | String | The middle name of the person associated with the shipping/billing address
 `postcode` | String | The customer's ZIP or postal code
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
-`region` | CustomerAddressRegion | An object containing the region name, region code, and region ID
+`region` | [CustomerAddressRegion](#customerAddressRegion) | An object that defines the customer's state or province
 `region_id` | Int | A number that uniquely identifies the state, province, or other area
 `street` | [String] | An array of strings that define the street number and name
 `suffix` | String | A value such as Sr., Jr., or III
 `telephone` | String | The telephone number
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
+### Customer address region attributes {#customerAddressRegion}
+
+The `CustomerAddressRegion` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`region_code` | String | The address region code
+`region` | String | The state or province name
+`region_id` | Int | Uniquely identifies the region
+
 ### Example usage
 
-The following call returns information about the logged-in customer.
+The following call returns information about the logged-in customer. Provide the customer's token in the header section of the query.
 
 **Request**
 
@@ -132,16 +142,18 @@ You can use customer mutations to create a new customer or modify personal infor
 
 **Manage customers attributes**
 
+The following table lists the attributes you can use as input for mutations that create or update customers. The [Customer attributes](#customerAttributes) table lists the attributes Magento returns.
+
 Attribute |  Data Type | Description
 --- | --- | ---
 `dob` | String | The customer’s date of birth
-`email` | String | The customer’s email address. Required
-`firstname` | String | The customer’s first name
+`email` | String | The customer’s email address. Required to create a customer
+`firstname` | String | The customer’s first name. Required to create a customer
 `gender` | Int | The customer's gender (Male - 1, Female - 2)
 `is_subscribed` | Boolean | The customer's new password
-`lastname` | String | The customer’s last name
+`lastname` | String | The customer’s last name. Required to create a customer
 `middlename` | String | The customer’s middle name
-`password` | String | The customer's password
+`password` | String | The customer's password. Required to create a customer
 `prefix` | String | An honorific, such as Dr., Mr., or Mrs.
 `suffix` | String | A value such as Sr., Jr., or III
 `taxvat` | String | The customer’s Tax/VAT number (for corporate customers)
@@ -151,7 +163,7 @@ Creates a new customer account.
 
 #### Syntax
 
-`mutation: createCustomer`
+`mutation: createCustomer(input: CustomerInput!): CustomerOutput`
 
 #### Example usage
 
@@ -204,11 +216,11 @@ Updates the customer's personal information.
 
 #### Syntax
 
-`mutation: updateCustomer`
+`mutation: updateCustomer(input: CustomerInput!): CustomerOutput`
 
 #### Example usage
 
-The following call updates the first and last name and email address for a specific customer.
+The following call updates the first name and email address for a specific customer.
 
 **Request**
 
@@ -216,15 +228,13 @@ The following call updates the first and last name and email address for a speci
 mutation {
     updateCustomer(
         input: {
-            firstname: "Robert"
-            lastname: "Loblaws"
-            email: "robloblaws@example.com"
-            password: "b0bl0bl@w"
+            firstname: "Rob"
+            email: "robloblaw@example.com"
+
         }
     ) {
         customer {
             firstname
-            lastname
             email
         }
     }
@@ -238,9 +248,8 @@ mutation {
   "data": {
     "updateCustomer": {
       "customer": {
-        "firstname": "Robert",
-        "lastname": "Loblaws",
-        "email": "robloblaws@example.com"
+        "firstname": "Rob",
+        "email": "robloblaw@example.com"
       }
     }
   }
@@ -252,12 +261,35 @@ mutation {
 
 Use these mutations to create or modify the customer's address.
 
-**Manage customer address attibutes**
+#### Manage customer address attibutes
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `id` | Int | The ID assigned to the address object
-`CustomerAddressInput` | [CustomerAddress](#customerAddress) | An array containing the customer’s shipping and billing addresses
+`CustomerAddressInput` | [CustomerAddress](#customerAddressInput) | An array containing the customer’s shipping and billing addresses
+
+#### Customer address input attributes {#customerAddressInput}
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`city` | String | The city or town
+`company` | String | The customer's company
+`country_id` | String | The customer's country
+`custom_attributes` | CustomerAddressAttributesInput | Address custom attributes
+`customer_id` | Int | The customer ID
+`default_billing` | Boolean | Indicates whether the address is the default billing address
+`default_shipping` | Boolean | Indicates whether the address is the default shipping address
+`fax` | String | The fax number
+`firstname` | String | The first name of the person associated with the shipping/billing address
+`lastname` | String | The family name of the person associated with the shipping/billing address
+`middlename` | String | The middle name of the person associated with the shipping/billing address
+`postcode` | String | The customer's ZIP or postal code
+`prefix` | String | An honorific, such as Dr., Mr., or Mrs.
+`region` | [CustomerAddressRegion](#customerAddressRegion) | An object that defines the customer's state or province
+`street` | [String] | An array of strings that define the street number and name
+`suffix` | String | A value such as Sr., Jr., or III
+`telephone` | String | The telephone number
+`vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
 ### Create customer address
 
@@ -265,7 +297,7 @@ Creates the customer's address.
 
 #### Syntax
 
-`mutation: createCustomerAddress`
+`mutation: createCustomerAddress(input: CustomerAddressInput!): CustomerAddress`
 
 #### Example usage
 
@@ -342,7 +374,7 @@ Updates the customer's address.
 
 #### Syntax
 
-`mutation: updateCustomerAddress`
+`mutation: updateCustomerAddress(id: Int!input: CustomerAddressInput): CustomerAddress`
 
 #### Example usage
 
@@ -357,6 +389,8 @@ mutation {
     postcode: "5555"
   }) {
     id
+    city
+    postcode
   }
 }
 ```
@@ -367,18 +401,20 @@ mutation {
 {
   "data": {
     "updateCustomerAddress": {
-      "id": 3
+      "id": 3,
+      "city": "New City",
+      "postcode": 5555
     }
   }
 }
 ```
 ### Delete customer address
 
-Uses the customer's address `id` to delete the address.
+Deletes the specified customer address.
 
 #### Syntax
 
-`mutation: deleteCustomerAddress`
+`mutation: deleteCustomerAddress(id: Int!): Boolean`
 
 #### Example usage
 
@@ -420,7 +456,7 @@ Creates a new customer token.
 
 #### Syntax
 
-`mutation: generateCustomerToken`
+`mutation: generateCustomerToken(email: String!password: String!): CustomerToken`
 
 #### Example usage
 
@@ -457,7 +493,7 @@ Revokes the customer's token.
 
 #### Syntax
 
-`mutation: remokeCustomerToken`
+`mutation: revokeCustomerToken: RevokeCustomerTokenOutput`
 
 #### Example usage
 
@@ -498,7 +534,7 @@ Attribute |  Data Type | Description
 
 #### Syntax
 
-`mutation: changeCustomerPassword`
+`mutation: changeCustomerPassword(currentPassword: String!newPassword: String!): Customer`
 
 #### Example usage
 
@@ -514,9 +550,6 @@ mutation {
   ) {
     id
     email
-    firstname
-    middlename
-    lastname
   }
 }
 ```
@@ -528,9 +561,7 @@ mutation {
   "data": {
     "changeCustomerPassword": {
       "id": 1,
-      "email": "roni_cost@example.com",
-      "firstname": "Veronica",
-      "lastname": "Costello"
+      "email": "roni_cost@example.com"
     }
   }
 }
