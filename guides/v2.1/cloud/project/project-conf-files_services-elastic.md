@@ -20,7 +20,7 @@ functional_areas:
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until the reindex operation completes
 
-We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more. For {{site.data.var.ece}} 2.0.X, you can use [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
+We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more.
 
 {:.bs-callout .bs-callout-info}
 If you're upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
