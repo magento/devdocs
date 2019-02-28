@@ -10,8 +10,8 @@ pages:
         - label: GraphQL request headers
           url: /graphql/send-request.html
 
-        - label: Searches and pagination
-          url: /graphql/search-pagination.html
+        - label: Queries
+          url: /graphql/queries.html
 
         - label: Mutations
           url: /graphql/mutations.html
