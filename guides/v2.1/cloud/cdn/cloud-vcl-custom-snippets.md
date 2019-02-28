@@ -49,7 +49,7 @@ You can create and manage custom VCL snippets from the Magento Admin UI or by us
 - [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Magento Admin UI. For example, if the site is down and you need to troubleshoot the Fastly service configuration or add a custom VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
 
 
-  ### Example VCL snippet code {#vcl-curl}
+ ### Example VCL snippet code {#vcl-curl}
 
   The following example shows the JSON code for a custom VCL snippet that filters traffic by client IP address.
 
