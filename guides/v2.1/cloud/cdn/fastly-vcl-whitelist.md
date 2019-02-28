@@ -80,7 +80,7 @@ Review the following values for the code to determine if you need to make change
 
 -  `content`—The snippet of VCL code to run. In this example, the code filters requests to the Admin UI and allows access if the client IP address matches an address in the `allowlist` ACL. If the address doesn't match the request is blocked with a `403 Forbidden` error.
 
-   If the URL for your Magento Admin was changed, replace the sample value `/admin` with the URL for youre environment. For example, `/company-admin`.
+   If the URL for your Magento Admin was changed, replace the sample value `/admin` with the URL for your environment. For example, `/company-admin`.
    
 In the code sample, the condition `!req.http.Fastly-FF` is important when using Origin Shielding. Do not remove or edit this code.
 
