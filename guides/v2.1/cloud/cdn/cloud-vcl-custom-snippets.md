@@ -76,7 +76,7 @@ You can create and manage custom VCL snippets from the Magento Admin UI or by us
 
   | Value      | Description                                                
   |------------|------------------------------------------------------------------------------------------------------------------------------
-  | `service_id` | The Fastly Service ID for a specific Staging or Production environment. This ID is assigned when your project is added to the {{ site.data.var. ece }} Fastly service account. See [Get credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).   
+  | `service_id` | The Fastly Service ID for a specific Staging or Production environment. This ID is assigned when your project is added to the {{ site.data.var.ece }} Fastly service account. See [Get credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).   
   | `API_KEY`  | The API Key to access your Fastly account. See [Get credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).      
   | `number`    | The number of the VCL version that the snippet is added to. Fastly uses *Editable Version #* in their example values. If you add custom snippets from the API, you include the version number in the API request. If you add custom VCL from the Magento Admin UI, the version is provided for you. 
   | `type`       | Specifies a location for inserting the generated snippet, such as init (above subroutines) and recv (within subroutines). See Fastly VCL snippet object values for information on these values. See the Fastly [VCL snippets](https://docs.fastly.com/api/config#api-section-snippet) reference.
@@ -111,7 +111,7 @@ The following walk-through shows you how to create regular VCL snippet files and
 
 -  Configure your {{ site.var.data.ece }} environment for Fastly services. See [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html). 
 
--  [Get Fastly API credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) to authenticate requests to the Fastly API. Make sure that you get the credentials for the correct environment, Staging or Production.
+-  [Get Fastly API credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html) to authenticate requests to the Fastly API. Make sure that you get the credentials for the correct environment: Staging or Production.
 
 -  Save Fastly service credentials as bash environment variables that you can use in cURL commands:
  
@@ -148,13 +148,13 @@ The following steps outline the process for adding custom VCL snippets to your F
 
 Use the Fastly API [get version](https://docs.fastly.com/api/config#version_dfde9093f4eb0aa2497bbfd1d9415987) operation to get the active VCL version number:
 
-```
+```bash
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/active
 ```
 
 In the JSON response, note the active VCL version number returned in the `number` key, for example `"number": 99`. You need the version number when you clone the VCL for editing.
 
-```
+```json
 {
   "testing": false,
   "locked": true,
@@ -172,18 +172,18 @@ In the JSON response, note the active VCL version number returned in the `number
 
 Save the active version number in a bash environment variable for use in subsequent API requests:
 
-```
+```bash
 export FASTLY_VERSION_ACTIVE=<Version>
 ```
 #### Step 2: Clone the active VCL version and all snippets {#clone}
 
 Before you can add or modify custom VCL snippets, you must create a copy of the active VCL version for editing. Use the Fastly API [clone ](https://docs.fastly.com/api/config#version_7f4937d0663a27fbb765820d4c76c709) operation:  
 
-    curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION_ACTIVE/clone -X PUT
+    ```curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_VERSION_ACTIVE/clone -X PUT```
 	
 In the JSON response, the version number is incremented, and the *active* key value is `false`. You can modify the new, inactive VCL version locally.
 
-```
+```json
 {
   "testing": false,
   "locked": false,
@@ -201,14 +201,14 @@ In the JSON response, the version number is incremented, and the *active* key va
 
 Save the new version number in a bash environment variable for use in subsequent commands:
 
-    export FASTLY_EDIT_VERSION_=<Version>
+   ```export FASTLY_EDIT_VERSION_=<Version>```
 
 
 #### Step 3: Create a custom VCL snippets {#create-snippet}
 
 Create and save your custom VCL code in a JSON file with the following content and format:
 
-```
+```json
 {
   "name": "<name>",
   "dynamic": "0",
@@ -228,15 +228,15 @@ The values include:
 
 -   `priority`—A value from `1` to `100` that determines when the custom VCL snippet code runs. Custom VCL snippets with lower values run first.
 
-     All default VCL code from the Fastly VCL module has a `priority` of `50`. If you want an action to occur last or to override the default VCL code, use a higher number, such as `100`. To run custom VCL snippet code immediately, set the priority to a lower code occur immediately, use a lower value, such as `5`.
+     All default VCL code from the Fastly VCL module has a `priority` of `50`. If you want an action to occur last or to override the default VCL code, use a higher number, such as `100`. To run custom VCL snippet code immediately, set the priority to a lower value, such as `5`.
 	 
--   `content`—The snippet of VCL code to run in one line, without line breaks. (See [Example custom VCL snippet](#vcl-curl).)
+-   `content`—The snippet of VCL code to run in one line, without line breaks. See [Example custom VCL snippet](#vcl-curl).
 
 #### Step 4: Add VCL snippet to Fastly configuration {#add-snippet}
 
 Use the Fastly API [create snippet](https://docs.fastly.com/api/config#snippet_41e0e11c662d4d56adada215e707f30d) operation to add the custom VCL snippet to the VCL version.
 
-```
+```bash
 curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/$FASTLY_EDIT_VERSION/snippet -H 'Content-Type: application/json' -X POST --data @<filename.json>
 ```
 
