@@ -44,9 +44,9 @@ The examples and instructions in the {{ site.data.var.ece }} documentation expla
 
 You can create and manage custom VCL snippets from the Magento Admin UI or by using the Fastly API:
 
-- [Magento Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets that you have added from the Admin UI.
+- [Magento Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui)—We recommend using the Magento Admin UI to manage custom VCL snippets because it automates the process to validate and upload the custom snippet and apply your changes to the Fastly service configuration. Additionally, you can view and edit the custom VCL snippets added to the Fastly service configuration from the Admin UI.
 
-- [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Admin UI. For example, if the site is down and you need to troubleshoot the Fastly service configuration or add a custom VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
+- [Fastly API](#manage-custom-vcl-snippets-using-the-api)—Manage custom VCL snippets using the API if you cannot access the Magento Admin UI. For example, if the site is down and you need to troubleshoot the Fastly service configuration or add a custom VCL snippet. Additionally, some operations can only be completed using the API, for example reactivating an older VCL version or viewing all the VCL snippets included in a specified the VCL version. See [API quick reference for VCL snippets](#manage-vcl).
 
 
   ### Example VCL snippet code {#vcl-curl}
@@ -90,14 +90,15 @@ You can create and manage custom VCL snippets from the Magento Admin UI or by us
 
 ## Manage custom VCL snippets from the Admin UI
 
-You can [add custom VCL snippets](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md) from the *Fastly Configuration* > *Custom VCL Snippets* section in the Admin UI.
+You can [add custom VCL snippets](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.md) from the *Fastly Configuration* > *Custom VCL Snippets* section in the Magento Admin UI.
 
 ![Manage custom VCL snippets]
 
-The *Custom VCL snippets* view shows only the snippets added through the Admin UI. If snippets are added using the Fastly API, [manage them using the API](#manage-vcl).
+The *Custom VCL snippets* view shows only the snippets added through the Magento Admin UI. If snippets are added using the Fastly API, [manage them using the API](#manage-vcl).
 
-See the following examples that show how to create and manage custom VCL snippets using the Admin UI:
+See the following examples that show how to create and manage custom VCL snippets from the Magento Admin UI:
 
+- [Secure access to the Magento Admin UI]({{ page.baseurl }}/cloud/cdn/fastly-vcl-whitelist.html)
 - [Set up redirects to WordPress using Fastly]({{ page.baseurl }}/cloud/cdn/fastly-vcl-wordpress.html)
 - [Block referral spam]({{ page.baseurl }}/cloud/cdn/fastly-vcl-badreferer.html)
 
@@ -266,7 +267,7 @@ After you add a custom VCL snippet, Fastly inserts the snippet in the VCL versio
 These API request examples use exported environment variables to provide the credentials to authenticate with Fastly. For details on these commands, see the [Fastly API reference](https://docs.fastly.com/api/config#vcl).
 
 {: .bs-callout .bs-callout-info}
-Use these commands to manage snippets that you added using the Fastly API. If you added snippets from the Admin UI, see [Manage VCL snippets using the Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui).
+Use these commands to manage snippets that you added using the Fastly API. If you added snippets from the Magento Admin UI, see [Manage VCL snippets using the Admin UI](#manage-custom-vcl-snippets-from-the-admin-ui).
 
 - **Get active VCL version number**
 

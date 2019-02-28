@@ -182,7 +182,7 @@ pages:
             - label: Block referral spam
               url: /cloud/cdn/fastly-vcl-badreferer.html
 
-            - label: Secure Magento Admin access
+            - label: Secure access to the Magento Admin UI
               url: /cloud/cdn/fastly-vcl-whitelist.html
 
             - label: Custom blacklist VCL

@@ -162,7 +162,7 @@ Make sure to use the correct credentials.
 
 Complete the following configuration steps in Staging and Production environments:
 
-1.	Log in to your local Magento Admin UI as an administrator.
+1.	Log in to your Magento Admin UI.
 
 1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 

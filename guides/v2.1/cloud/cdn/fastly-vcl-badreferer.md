@@ -28,6 +28,8 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 Edge Dictionaries create key-value pairs accessible to VCL functions during VCL snippet processing. In this example, you create an edge dictionary that provides the list of referrer websites to block.
 
+{% include cloud/admin-ui-login-step.md %}
+
 1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
 1.  Expand **Full Page Cache** > **Fastly Configuration** > **Edge dictionaries**.
@@ -72,15 +74,16 @@ The following custom VCL snippet code (JSON format) checks incoming requests and
   "content": "set req.http.Referer-Host = regsub(req.http.Referer, \"^https?://?([^:/\\s]+).*$\", \"\\1\"); if (table.lookup(referrer_blocklist, req.http.Referer-Host)) { error 403 \"Forbidden\"; }"
 }
 ```
+
 Review the example code and change values as needed: 
 
   -  `name`—Name for the VCL snippet. For this example, we used `block_bad_referrer`.
   
   -  `dynamic`—Value 0 indicates a [regular snippet](https://docs.fastly.com/guides/vcl-snippets/using-regular-vcl-snippets) to upload to the versioned VCL for the Fastly configuration.
 
-  -  `priority`—Determines when the VCL snippet runs. The priority  is `5` to run this snippet code runs before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
+  -  `priority`—Determines when the VCL snippet runs. The priority  is `5` to run this snippet code before any of the default Magento VCL snippets (`magentomodule_*`) assigned a priority of 50.
 
-  -  `type`—Specifies a location to insert the snippet in the versioned VCL code. This VCL is a `recv` snippet type which adds the snippet code to the `vcl_recv` subroutine below the default Fastly VCL code and above any objects.
+  -  `type`—Specifies a location to insert the snippet in the VCL version. In this example, the VCL snippet is a `recv` snippet. When the snippet is inserted into the VCL version, it is added to the `vcl_recv` subroutine,  below the default Fastly VCL code and above any objects.
  
   -  `content`—The snippet of VCL code to run in one line, without line breaks.
   
@@ -93,7 +96,7 @@ Add the custom VCL snippet to your Fastly service configuration from the Admin U
 
 ## Add the custom VCL snippet
 
-Complete these steps to add the custom VCL snippet from the Magento Admin UI:
+{% include cloud/admin-ui-login-step.md %}
 
 1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 
@@ -103,13 +106,13 @@ Complete these steps to add the custom VCL snippet from the Magento Admin UI:
 
 1.  Add the VCL snippet values:
 
-    - Add the snippet **Name**, `block_bad_referrer`.
+    - **Name**—`block_bad_referrer`
 
-    - Set the snippet **Type**, `recv`
+    - **Type**—`recv`
 
-    - Set the **Priority**, `5`
+    - **Priority**—`5`
 	
-    - Add the **VCL** snippet content:
+    - **VCL** snippet content—
 
       ```
       set req.http.Referer-Host = regsub(req.http.Referer, 
@@ -127,13 +130,13 @@ Complete these steps to add the custom VCL snippet from the Magento Admin UI:
 
 1.  After the upload completes, refresh the cache according to the notification at the top of the page.
 
-Fastly validates the updated version of the VCL code during the upload process. If the validation fails, edit your custom VCL snippet to fix the issue. Then, upload the VCL again.
+Fastly validates the updated VCL version during the upload process. If the validation fails, edit your custom VCL snippet to fix any issues. Then, upload the VCL again.
 
 {% include cloud/cloud-fastly-manage-vcl-from-admin.md %}
 
 
 {: .bs-callout .bs-callout-info}
-Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically any time you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.html#automated-custom-vcl-snippets-deployment) in the Fastly-Magento module documentation.
+Instead of manually uploading custom VCL snippets, you can add snippets to the `$MAGENTO_CLOUD_APP_DIR/var/vcl_snippets_custom` directory in your environment. Snippets in this directory upload automatically any time you click *upload VCL to Fastly* in the Admin UI. See [Automated custom VCL snippets deployment](https://github.com/fastly/fastly-magento2/blob/master/Documentation/Guides/CUSTOM-VCL-SNIPPETS.html#automated-custom-vcl-snippets-deployment) in the Fastly CDN module for Magento 2 documentation.
 
 
 
