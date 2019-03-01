@@ -64,6 +64,14 @@ defaults:
     values:
       layout: video
 
+  - 
+    scope:
+      path: mbi
+    values:
+      group: mbi
+      github_link: false
+      feedback_link: false
+
   -
     scope:
       path: mftf/2.2
@@ -84,9 +92,7 @@ defaults:
     scope:
       path: page-builder
     values:
-      layout: default
       group: page-builder
-      strip_title: true
       github_link: false
       feedback_link: false
 
@@ -178,6 +184,10 @@ algolia:
     - guides/m1x/**/*.md
     - swagger
     - redoc
+  # Index HTML elements, especially code samples.
+  nodes_to_index: 'p,li,td,code'
+  # Override 10KB default and use our allowed max of 20KB
+  max_record_size: 20000
 
 google:
   analytics: UA-66243208-1

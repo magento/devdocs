@@ -113,6 +113,10 @@ pages:
     url: /mftf/2.3/troubleshooting.html
     versionless: true
 
+  - label: Versioning
+    url: /mftf/2.3/versioning.html
+    versionless: true
+
   - label: Contribution guidelines
     url: https://github.com/magento/magento2-functional-testing-framework/blob/master/.github/CONTRIBUTING.md
     versionless: true
