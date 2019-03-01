@@ -21,9 +21,9 @@ Magento has not implemented all possible customizable product options for GraphQ
 
 Field | Type | Description
 --- | --- | ---
-`title` |  String | The display name for this option
 `required` | Boolean | Indicates whether the option is required
 `sort_order` | Int | The order in which the option is displayed
+`title` |  String | The display name for this option
 
 ## CustomizableAreaOption object
 
@@ -31,8 +31,8 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableAreaValue` | An object that defines a text area
 `product_sku` | String | The Stock Keeping Unit of the base product
+`value` | `CustomizableAreaValue` | An object that defines a text area
 
 ### CustomizableAreaValue object
 
@@ -40,10 +40,10 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`price` | Float | The price assigned to this option
-`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
-`sku` | String | The Stock Keeping Unit for this option
 `max_characters` | Int | The maximum number of characters that can be entered for this customizable option
+`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
+`price` | Float | The price assigned to this option
+`sku` | String | The Stock Keeping Unit for this option
 
 ## CustomizableDateOption object
 
@@ -51,8 +51,8 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableDateValue` | An object that defines a date field in a customizable option.
 `product_sku` | String | The Stock Keeping Unit of the base product
+`value` | `CustomizableDateValue` | An object that defines a date field in a customizable option.
 
 ### CustomizableDateValue object
 
@@ -79,11 +79,11 @@ Field | Type | Description
 Field | Type | Description
 --- | --- | ---
 `option_type_id` | Int | The ID assigned to the value
-`price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
+`price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
-`title` | String | The display name for this option
 `sort_order` | Int | The order in which the option is displayed
+`title` | String | The display name for this option
 
 ## CustomizableFieldOption object
 
@@ -91,8 +91,8 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableFieldValue` | An object that defines a text field
 `product_sku` | String | The Stock Keeping Unit of the base product
+`value` | `CustomizableFieldValue` | An object that defines a text field
 
 ### CustomizableFieldValue object
 
@@ -100,10 +100,10 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`price` | Float | The price of the custom value
-`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
-`sku` | String | The Stock Keeping Unit for this option
 `max_characters` | Int | The maximum number of characters that can be entered for this customizable option
+`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
+`price` | Float | The price of the custom value
+`sku` | String | The Stock Keeping Unit for this option
 
 ## CustomizableFileOption object
 
@@ -111,8 +111,8 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`value` | `CustomizableFileValue` | An object that defines a file name
 `product_sku` | String | The Stock Keeping Unit of the base product
+`value` | `CustomizableFileValue` | An object that defines a file name
 
 ### CustomizableFileValue object
 
@@ -120,12 +120,12 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`price` | Float | The price assigned to this option
-`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
-`sku` | String | The Stock Keeping Unit for this option
 `file_extension` | String | The file extension to accept
 `image_size_x` | Int | The maximum width of an image
 `image_size_y` | Int | The maximum height of an image
+`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
+`price` | Float | The price assigned to this option
+`sku` | String | The Stock Keeping Unit for this option
 
 ## CustomizableRadioOption object
 
@@ -142,10 +142,8 @@ Field | Type | Description
 Field | Type | Description
 --- | --- | ---
 `option_type_id` | Int | The ID assigned to the value
-`price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
+`price` | Float | The price assigned to this option
 `sku` | String | The Stock Keeping Unit for this option
-`title` | String | The display name for this option
 `sort_order` | Int | The order in which the option is displayed
-
-## Example usage
+`title` | String | The display name for this option
