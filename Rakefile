@@ -57,5 +57,5 @@ task build: %w[clean] do
   puts 'Built!'.green
 end
 
-# desc 'Pull docs from external repositories'
-# task init: %w[multirepo:init]
+desc 'Pull docs from external repositories'
+task init: %w[multirepo:init]
