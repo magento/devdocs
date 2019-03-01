@@ -12,7 +12,7 @@ Use queries to read server-side data, such as a specific customer's address.
 
 ### Syntax
 
-`customer: Customer`
+`{customer: {Customer}}`
 
 ### Customer attributes {#customerAttributes}
 The customer object can contain the following attributes:
@@ -163,7 +163,7 @@ Creates a new customer account.
 
 #### Syntax
 
-`mutation: createCustomer(input: CustomerInput!): CustomerOutput`
+`mutation: {createCustomer(input: CustomerInput!) {CustomerOutput}}`
 
 #### Example usage
 
@@ -216,7 +216,7 @@ Updates the customer's personal information.
 
 #### Syntax
 
-`mutation: updateCustomer(input: CustomerInput!): CustomerOutput`
+`mutation: {updateCustomer(input: CustomerInput!) {CustomerOutput}}`
 
 #### Example usage
 
@@ -297,7 +297,7 @@ Creates the customer's address.
 
 #### Syntax
 
-`mutation: createCustomerAddress(input: CustomerAddressInput!): CustomerAddress`
+`mutation: {createCustomerAddress(input: CustomerAddressInput!) {CustomerAddress}}`
 
 #### Example usage
 
@@ -374,7 +374,7 @@ Updates the customer's address.
 
 #### Syntax
 
-`mutation: updateCustomerAddress(id: Int!input: CustomerAddressInput): CustomerAddress`
+`mutation: {updateCustomerAddress(id: Int!input: CustomerAddressInput) {CustomerAddress}}`
 
 #### Example usage
 
@@ -414,7 +414,7 @@ Deletes the specified customer address.
 
 #### Syntax
 
-`mutation: deleteCustomerAddress(id: Int!): Boolean`
+`mutation: {deleteCustomerAddress(id: Int!) {Boolean}}`
 
 #### Example usage
 
@@ -456,7 +456,7 @@ Creates a new customer token.
 
 #### Syntax
 
-`mutation: generateCustomerToken(email: String!password: String!): CustomerToken`
+`mutation: {generateCustomerToken(email: String!password: String!) {CustomerToken}}`
 
 #### Example usage
 
@@ -493,7 +493,7 @@ Revokes the customer's token.
 
 #### Syntax
 
-`mutation: revokeCustomerToken: RevokeCustomerTokenOutput`
+`mutation: {revokeCustomerToken: RevokeCustomerTokenOutput}`
 
 #### Example usage
 
@@ -534,7 +534,7 @@ Attribute |  Data Type | Description
 
 #### Syntax
 
-`mutation: changeCustomerPassword(currentPassword: String!newPassword: String!): Customer`
+`mutation: {changeCustomerPassword(currentPassword: String!newPassword: String!) {Customer}}`
 
 #### Example usage
 
