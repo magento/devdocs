@@ -23,7 +23,7 @@ Field | Type | Description
 
 The following query returns information about downloadable product `24-WG085_Group`, which is defined in the sample data.
 
-{% highlight json %}
+``` text
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
@@ -49,4 +49,4 @@ The following query returns information about downloadable product `24-WG085_Gro
     }
   }
 }
-{% endhighlight %}
+```

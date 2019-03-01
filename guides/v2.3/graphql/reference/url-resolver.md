@@ -23,7 +23,7 @@ Attribute |  Data Type | Description
 
 **Request**
 
-{% highlight json %}
+``` text
 {
  urlResolver(url:"joust-duffle-bag.html") {
    id
@@ -31,11 +31,11 @@ Attribute |  Data Type | Description
    type
  }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+``` json
 {
   "data": {
     "urlResolver": {
@@ -45,4 +45,4 @@ Attribute |  Data Type | Description
     }
   }
 }
-{% endhighlight %}
+```

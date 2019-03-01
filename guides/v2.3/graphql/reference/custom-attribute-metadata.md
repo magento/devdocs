@@ -29,7 +29,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 **Request**
 
-{% highlight json %}
+```text
 {
  customAttributeMetadata(
    attributes: {
@@ -48,11 +48,11 @@ The following query returns the attribute type for various custom and EAV attrib
    }
  }
 }
- {% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
   "data": {
     "customAttributeMetadata": {
@@ -128,4 +128,4 @@ The following query returns the attribute type for various custom and EAV attrib
     }
   }
 }
-{% endhighlight %}
+```

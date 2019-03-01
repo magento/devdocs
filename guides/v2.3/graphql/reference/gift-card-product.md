@@ -36,7 +36,7 @@ Field | Type | Description
 
 The following query returns information about gift card product `GiftCard25`. (It is not defined in the sample data.)
 
-{% highlight json %}
+``` text
 {
    products(filter: {sku: {eq: "GiftCard25"}})
    {
@@ -65,4 +65,4 @@ The following query returns information about gift card product `GiftCard25`. (I
        }
    }
 }
-{% endhighlight %}
+```

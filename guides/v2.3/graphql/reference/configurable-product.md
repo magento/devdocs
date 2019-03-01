@@ -35,7 +35,7 @@ Field | Type | Description
 
 The following query returns information about configurable product `WH01`, which is defined in the sample data.
 
-{% highlight json %}
+```text
 {
   products(filter: {sku: {eq: "WH01"}}) {
     items {
@@ -103,4 +103,4 @@ The following query returns information about configurable product `WH01`, which
     }
   }
 }
-{% endhighlight %}
+```
