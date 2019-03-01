@@ -16,14 +16,14 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`id` | Int | The configurable option ID number assigned by the system
-`attribute_id` | String | The ID assigned to the attribute
 `attribute_code` | String | A string that identifies the attribute
+`attribute_id` | String | The ID assigned to the attribute
+`id` | Int | The configurable option ID number assigned by the system
+`is_use_default` | Boolean | Indicates whether the option is the default
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
-`is_use_default` | Boolean | Indicates whether the option is the default
-`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product
 `product_id` | Int | This is the same as a product's 'id' field
+`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product
 
 ## ConfigurableProductOptionsValues
 
@@ -35,7 +35,7 @@ Field | Type | Description
 
 The following query returns information about configurable product `WH01`, which is defined in the sample data.
 
-{% highlight json %}
+```text
 {
   products(filter: {sku: {eq: "WH01"}}) {
     items {
@@ -103,4 +103,4 @@ The following query returns information about configurable product `WH01`, which
     }
   }
 }
-{% endhighlight %}
+```
