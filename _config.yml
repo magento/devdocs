@@ -64,6 +64,14 @@ defaults:
     values:
       layout: video
 
+  - 
+    scope:
+      path: mbi
+    values:
+      group: mbi
+      github_link: false
+      feedback_link: false
+
   -
     scope:
       path: mftf/2.2
@@ -84,9 +92,7 @@ defaults:
     scope:
       path: page-builder
     values:
-      layout: default
       group: page-builder
-      strip_title: true
       github_link: false
       feedback_link: false
 
