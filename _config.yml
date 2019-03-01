@@ -180,8 +180,8 @@ algolia:
     - redoc
   # Index HTML elements, especially code samples.
   nodes_to_index: 'p,li,td,code'
-  # Indexing fails if this isn't set because some of our records are very large.
-  max_record_size: 400000
+  # Override 10KB default and use our allowed max of 20KB
+  max_record_size: 20000
 
 google:
   analytics: UA-66243208-1
