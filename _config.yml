@@ -68,7 +68,6 @@ defaults:
     scope:
       path: mbi
     values:
-      layout: default
       group: mbi
       github_link: false
       feedback_link: false
@@ -93,9 +92,7 @@ defaults:
     scope:
       path: page-builder
     values:
-      layout: default
       group: page-builder
-      strip_title: true
       github_link: false
       feedback_link: false
 
