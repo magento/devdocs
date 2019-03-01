@@ -21,6 +21,7 @@ Magento has not implemented all possible customizable product options for GraphQ
 
 Field | Type | Description
 --- | --- | ---
+`option_id` | Int |  The ID assigned to the option
 `required` | Boolean | Indicates whether the option is required
 `sort_order` | Int | The order in which the option is displayed
 `title` |  String | The display name for this option
@@ -147,3 +148,27 @@ Field | Type | Description
 `sku` | String | The Stock Keeping Unit for this option
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
+
+## Example usage
+
+The following query returns information about the customizable options configured for the product with a `sku` of `xyz`.
+
+```json
+  products(filter: {sku: {eq: "xyz"}}) {
+    items {
+      id
+      name
+      sku
+      type_id
+      ... on CustomizableProductInterface {
+        options {
+          title
+          required
+          sort_order
+          option_id
+        }
+      }
+    }
+  }
+}
+```
