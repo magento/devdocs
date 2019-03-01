@@ -153,7 +153,7 @@ Field | Type | Description
 
 The following query returns information about the customizable options configured for the product with a `sku` of `xyz`.
 
-```json
+```text
   products(filter: {sku: {eq: "xyz"}}) {
     items {
       id
