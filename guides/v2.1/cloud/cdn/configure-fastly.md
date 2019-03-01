@@ -185,11 +185,9 @@ Make sure to use the correct credentials.
 
 Complete the following configuration steps in Staging and Production environments:
 
-1.	Log in to your local Magento Admin as an administrator.
+1.	Log in to your Magento Admin UI.
 
-1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
-
-1.	In the right pane, expand **Full Page Cache**.
+1.	Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System** and expand **Full Page Cache**.
 
 	![Expand to select Fastly]({{ site.baseurl }}/common/images/cloud_fastly_menu.png){:width="650px"}
 
