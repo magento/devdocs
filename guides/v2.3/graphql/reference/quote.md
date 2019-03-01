@@ -14,10 +14,10 @@ Use the `Cart` query to retrieve information about a particular cart.
 
 ### Syntax
 
-`cart: Cart`
+`cart(cart_id: String!): Cart`
 
 ### Cart attributes
-The cart object can contain the following attributes:
+The `Cart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -25,15 +25,15 @@ Attribute |  Data Type | Description
 `billing_address` | [CartAddress](#cartAddressAttributes) | Contains the billing address specified in the customer's cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 `items` | [CartItemInterface](#cartItemsInterface) | Contains the items in the customer's cart
-`shipping_addresses` | [CartAddress] | Contains one or more shipping addresses
+`shipping_addresses` | [CartAddress](#cartAddressAttributes) | Contains one or more shipping addresses
 
 ### Cart address attributes {#cartAddressAttributes}
-The cart address object can contain the following attributes:
+The `CartAddress` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`address_type` | [AddressTypeEnum] | Specifies if the type of address is shipping or billing
-`cart_items` | [CartItemQuantity] | An array of the cart item IDs and quantity of each item
+`address_type` | AddressTypeEnum | Specifies if the type of address is SHIPPING or BILLING
+`cart_items` | CartItemQuantity | Contains the cart item IDs and quantity of each item
 `city` | String | The city specified for the shipping or billing address 
 `company` | String | The company specified for the shipping or billing address
 `country` | [CartAddressCountry] | The country code and label for the shipping or billing address
@@ -42,12 +42,12 @@ Attribute |  Data Type | Description
 `items_weight` | Float | The total weight of the items in the cart
 `lastname` | String | The customer's last name
 `postcode` | String | The postal code for the shipping or billing address
-`region` | [CartAddressRegion] | An object containing the region name, region code, and region ID
+`region` | CartAddressRegion | An object containing the region name, region code, and region ID
 `street` | [String] | The street for the shipping or billing address
 `telephone` | String | The telephone number for the shipping or billing address
 
 ### Cart item interface attributes {#cartItemsInterface}
-The cart item interface object can contain the following attributes:
+The `CartItemInterface` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -57,17 +57,16 @@ Attribute |  Data Type | Description
 
 <!--
 ### Add configurable items to cart
-
-The following fields describe the `AddConfigurableProductsToCart` attributes.
+The `AddConfigurableProductsToCart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cartItems` | [ConfigurableProductCartItemInput] | Contains either shipping or billing information
+`cartItems` | [ConfigurableProductCartItemInput](#configProdCartItemInput) | Contains either shipping or billing information
 `cart_id` | String | The customer's email address
 
-### Configurable product cart item input
+### Configurable product cart item input {#configProdCartItemInput}
 
-The following fields describe the `ConfigurableProductCartItemInput` attributes.
+The `ConfigurableProductCartItemInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -111,23 +110,24 @@ The following returns information about a cart given a `cart_id`. Note that the 
   "data": {
     "cart": {
       "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
-      "billing_address": {
+      "items": [
+        {
+         "id": "22",
+         "qty": 1
+        }
+      ],
+      "billing_address": 
+      {
         "lastname": "Roll",
         "firstname": "Bob",
         "postcode": "78759"
       },
-      "items": [
-        {
-          "id": "22",
-          "qty": 1
-        }
-      ],
       "shipping_addresses": [
         {
-          "company": "Magento",
-          "postcode": "78759",
-          "lastname": "Roll",
-          "firstname": "Bob"
+         "company": "Magento",
+         "postcode": "78759",
+         "lastname": "Roll",
+         "firstname": "Bob"
         }
       ]
     }
@@ -144,7 +144,7 @@ The `createEmptyCart` mutation creates an empty shopping cart for a guest or log
 
 #### Syntax
 
-`mutation: createEmptyCart`
+`mutation: createEmptyCart: String`
 
 #### Example usage
 
@@ -170,13 +170,14 @@ The response is the quote ID, which is sometimes called the cart ID. The remaini
 }
 ```
 
-### Adding and removing coupons from a cart
+### Add and remove coupons from a cart
 {:.no_toc}
 
 You can use mutations to add or remove coupons from a specified cart.
 
 ### Coupon attributes
-The coupon object can contain the following attributes:
+{:.no_toc}
+The add and remove coupon from cart objects can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -189,7 +190,7 @@ Adds a coupon code to a cart.
 
 #### Syntax
 
-`mutation: applyCouponToCart`
+`mutation: applyCouponToCart(input: ApplyCouponToCartInput): ApplyCouponToCartOutput`
 
 #### Example usage
 
@@ -232,7 +233,7 @@ Removes a coupon from the specified cart.
 
 #### Syntax
 
-`mutation: removeCouponFromCart`
+`mutation: removeCouponFromCart(input: RemoveCouponFromCartInput): RemoveCouponFromCartOutput`
 
 #### Example usage
 
@@ -274,7 +275,7 @@ mutation {
 Adds simple items to a specific cart.
 
 ### Add simple products to cart attributes
-The Add simple products to cart object can contain the following attributes:
+The `addSimpleProductsToCart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -283,7 +284,7 @@ Attribute |  Data Type | Description
 
 #### Syntax
 
-`mutation: addSimpleProductsToCart`
+`mutation: addSimpleProductsToCart(input: AddSimpleProductsToCartInput): AddSimpleProductsToCartOutput`
 
 #### Example usage
 
@@ -308,6 +309,12 @@ mutation {
   ) {
     cart {
       cart_id
+      items {
+        product {
+          name
+        }
+        qty
+      }
     }
   }
 }
@@ -320,7 +327,15 @@ mutation {
   "data": {
     "addSimpleProductsToCart": {
       "cart": {
-        "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
+        "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
+        "items": [
+          {
+            "product": {
+              "name": "Joust Duffle Bag"
+            },
+            "qty": 2
+          }
+        ]
       }
     }
   }
@@ -348,25 +363,25 @@ mutation {
 
 You can set the billing and shipping addresses on a cart and specify shipping methods.
 
-### Set billing address on cart attributes
-The Set billing address on cart object can contain the following attributes:
+### Set the billing address on cart attributes
+The `SetBillingAddressOnCart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`billing_address` | [BillingAddressInput](#billingAddressInput) | The list of items to add to the cart
+`billing_address` | [BillingAddressInput](#billingAddressInput) | The billing address for a specific cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 
-### Set billing address input attributes {#billingAddressInput}
-The Set billing address input object can contain the following attributes:
+### Set the billing address input attributes {#billingAddressInput}
+The `SetBillingAddressInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`address` | [CartAddressInput](#cartAddressInput) | The list of items to add to the cart
+`address` | [CartAddressInput](#cartAddressInput) | The billing address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
 `use_for_shipping` | Boolean | Specifies whether to use the billing address for the shipping address (`True`/`False`)
 
 ### Cart address input attributes {#cartAddressInput}
-The Cart address input object can contain the following attributes:
+The `CartAddressInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -388,7 +403,7 @@ Use the `setBillingAddressOnCart` mutation to set a new billing address for a sp
 
 #### Syntax
 
-`mutation: setBillingAddressOnCart`
+`mutation: setBillingAddressOnCart(input: SetBillingAddressOnCartInput): SetBillingAddressOnCartOutput`
 
 #### Example usage
 
@@ -463,7 +478,7 @@ Use the `setShippingAddressesOnCart` mutation to set a new shipping address for 
 
 #### Syntax
 
-`mutation: setShippingAddressOnCart`
+`mutation: setShippingAddressesOnCart(input: SetShippingAddressesOnCartInput): SetShippingAddressesOnCartOutput`
 
 #### Example usage
 
