@@ -14,7 +14,7 @@ Use the `Cart` query to retrieve information about a particular cart.
 
 ### Syntax
 
-`cart(cart_id: String!): Cart`
+`{cart(cart_id: String!) {Cart}}`
 
 ### Cart attributes
 The `Cart` object can contain the following attributes:
@@ -136,19 +136,12 @@ The following returns information about a cart given a `cart_id`. Note that the 
 ```
 
 ## Mutations
-Use the `quote` mutations to create a cart, apply or remove a coupon from a cart, add products to a cart, and set shipping and billing information to a cart.
-
-### Create an empty cart {#createEmptyCart}
 
 The `createEmptyCart` mutation creates an empty shopping cart for a guest or logged in customer. If you are creating a cart for a logged in customer, you must include the customer's authorization token in the header of the request.
 
 #### Syntax
 
-`mutation: createEmptyCart: String`
-
-#### Example usage
-
-The following call creates a new, empty shopping cart.
+`mutation: {createEmptyCart: String}`
 
 **Request**
 
@@ -190,7 +183,7 @@ Adds a coupon code to a cart.
 
 #### Syntax
 
-`mutation: applyCouponToCart(input: ApplyCouponToCartInput): ApplyCouponToCartOutput`
+`mutation: {applyCouponToCart(input: ApplyCouponToCartInput) {ApplyCouponToCartOutput}}`
 
 #### Example usage
 
@@ -233,7 +226,7 @@ Removes a coupon from the specified cart.
 
 #### Syntax
 
-`mutation: removeCouponFromCart(input: RemoveCouponFromCartInput): RemoveCouponFromCartOutput`
+`mutation: {removeCouponFromCart(input: RemoveCouponFromCartInput){ RemoveCouponFromCartOutput}}`
 
 #### Example usage
 
@@ -279,12 +272,12 @@ The `addSimpleProductsToCart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cartItems` | [SimpleProductCartItemInput] | The list of items to add to the cart
+`cartItems` | SimpleProductCartItemInput | The list of items to add to the cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 
 #### Syntax
 
-`mutation: addSimpleProductsToCart(input: AddSimpleProductsToCartInput): AddSimpleProductsToCartOutput`
+`mutation: {addSimpleProductsToCart(input: AddSimpleProductsToCartInput) {AddSimpleProductsToCartOutput}}`
 
 #### Example usage
 
@@ -361,7 +354,7 @@ mutation {
 ### Updating billing and shipping information
 {:.no_toc}
 
-You can set the billing and shipping addresses on a cart and specify shipping methods.
+You can set the billing and shipping addresses on a cart.
 
 ### Set the billing address on cart attributes
 The `SetBillingAddressOnCart` object can contain the following attributes:
@@ -403,7 +396,7 @@ Use the `setBillingAddressOnCart` mutation to set a new billing address for a sp
 
 #### Syntax
 
-`mutation: setBillingAddressOnCart(input: SetBillingAddressOnCartInput): SetBillingAddressOnCartOutput`
+`mutation: {setBillingAddressOnCart(input: SetBillingAddressOnCartInput) {SetBillingAddressOnCartOutput}}`
 
 #### Example usage
 
@@ -478,7 +471,7 @@ Use the `setShippingAddressesOnCart` mutation to set a new shipping address for 
 
 #### Syntax
 
-`mutation: setShippingAddressesOnCart(input: SetShippingAddressesOnCartInput): SetShippingAddressesOnCartOutput`
+`mutation: {setShippingAddressesOnCart(input: SetShippingAddressesOnCartInput) {SetShippingAddressesOnCartOutput}}`
 
 #### Example usage
 
@@ -529,59 +522,7 @@ mutation {
 ```json
 {
   "data": {
-    "setShippingAddressesOnCart": {
-      "cart": {
-        "shipping_addresses": [
-          {
-            "firstname": "test firstname",
-            "lastname": "test lastname",
-            "company": "test company",
-            "street": [
-              "test street 1",
-              "test street 2"
-            ],
-            "city": "test city",
-            "postcode": "887766",
-            "telephone": "88776655"
-          }
-        ]
-      }
-    }
+    "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
   }
 }
 ```
-
-<!--
-### Set shipping method on cart
-**CAN'T GET THIS TO WORK**
-
-**Request**
-
-``` text
-mutation {
-  setShippingMethodsOnCart(input: 
-    {
-      cart_id: "OOJVZU6tSSQ8vLoXqx9pDMZili3uQ8Hi", 
-      shipping_methods: [
-        {
-          shipping_method_code: "flatrate"
-          shipping_carrier_code: "UPS"
-          cart_address_id: 1
-        }
-      ]}) {
-    
-    cart {
-      cart_id,
-      addresses {
-        selected_shipping_method {
-          code
-          label
-        }
-      }
-    }
-  }
-}
-```
-
-**Response**
--->
