@@ -15,9 +15,9 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`qty` | Float | The quantity of this grouped product item
 `position` | Int | The relative position of this item compared to the other group items
 `product` | `ProductInterface` | The ProductInterface object, which contains details about this product option
+`qty` | Float | The quantity of this grouped product item
 
 ## Sample Query
 
