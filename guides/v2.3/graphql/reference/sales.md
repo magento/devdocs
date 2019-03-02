@@ -21,7 +21,7 @@ The `CustomerOrders` object contains the `items` attribute.
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [`[CustomerOrder]`](#customerOrderAttributes) | An array of customer orders;
+`items` | [`[CustomerOrder]`](#customerOrderAttributes) | An array of customer orders
 
 ### Customer order items attributes {#customerOrderAttributes}
 
