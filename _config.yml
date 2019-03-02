@@ -69,7 +69,7 @@ defaults:
       path: mbi
     values:
       group: mbi
-      github_link: false
+      github_files: https://github.com/magento/devdocs-mbi/blob/master/
       feedback_link: false
 
   -
