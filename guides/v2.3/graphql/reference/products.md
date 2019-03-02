@@ -174,11 +174,10 @@ Attribute | Data type | Description
 `custom_design_to` | String| The date at which a theme is no longer applied to the product page
 `custom_layout` | String | The name of a custom layout
 `custom_layout_update` | String | XML code that is applied as a layout update to the product page
-`description` | String | Detailed information about the product. The value can include simple HTML tags
+`description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
-`image` | String | The relative path for the main image on the product page
-`image_label` | String | The label assigned to a product image
+`image` | ProductImage | An object that contains the URL and label for the main image on the product page
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the Rma module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
@@ -193,18 +192,16 @@ Attribute | Data type | Description
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
 `price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
 `product_links` | [ProductLinks] | An array of [ProductLinks](#ProductLinks) objects
-`short_description` | String | A short description of the product. Its use depends on the store's theme.
+`short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
-`small_image` | String | The relative path to the small image, which is used on catalog pages
-`small_image_label` | String | The label assigned to a product's small image
+`small_image` | ProductImage | An object that contains the URL and label for the small image used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
 `stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
-`thumbnail` | String | The relative path to the product's thumbnail image
-`thumbnail_label` | String | The label assigned to a product's thumbnail image
+`thumbnail` | ProductImage | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
