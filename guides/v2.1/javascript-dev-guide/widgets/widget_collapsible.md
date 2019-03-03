@@ -129,7 +129,6 @@ Multiple types are supported:
 Initialize the collapsible with the animate option specified:
 
 ```javascript
-
 $("#element").collapsible({ animate: 1000});
 $("#element").collapsible({ animate: {duration:1000,easing:"easeOutCubic"});
 ```
