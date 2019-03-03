@@ -21,7 +21,7 @@ A query contains the following elements:
 * The optional keyword `query`. If no keyword is specified at the beginning of a request, the processor assumes the request is a query.
 * An operation name for your local implementation. This name is required if you include variables. Otherwise, it is optional.
 * The query name
-* The terms to search for. The terms can be in the form of objects, attributes, or a combination. Queries that don't require search terms obtain their context from the customer's authorization token or store ID, both of which are specified in the header of the call. 
+* The terms to search for. The terms can be in the form of objects, attributes, or a combination. Queries that don't require search terms obtain their context from the customer's authorization token or store ID, both of which are specified in the header of the call.
 * The output object, which specifies which data the query returns.
 
 The following example shows the structure of the `cart` query:
@@ -32,7 +32,7 @@ query myCartQuery{
 }
 ```
 
-In the preceding example, `myCartQuery` identifies your implementation of the `cart` query.  `cart_id` is a non-nullable string that defines the cart to query. (The exclamation point indicates the value is non-nullable.) The `Cart` output object defines which fields to return. 
+In the preceding example, `myCartQuery` identifies your implementation of the `cart` query.  `cart_id` is a non-nullable string that defines the cart to query. (The exclamation point indicates the value is non-nullable.) The `Cart` output object defines which fields to return.
 
 Now let's fully define a query:
 
@@ -93,7 +93,7 @@ The following example shows the query response:
 {:.bs-callout .bs-callout-tip}
 Magento will not run a query that is too complex. The number of fields, objects, and nodes are factors in determining the complexity of a query.
 
-## Query variables 
+## Query variables
 
 Specifying variables in a query can help increase code re-use. Consider the following requirements when generating a query that contains one or more variables:
 
@@ -167,21 +167,21 @@ The following table lists available condition types and provides the SQL stateme
 
 Magento GraphQL clause | SQL equivalent
 --- | ---
-`eq: "value"`	| <code><i>field</i> = 'value'</code>
+`eq: "value"` | <code><i>field</i> = 'value'</code>
 `neq: "value"` |<code><i>field</i> != 'value'</code>
-`like: "value%"`	| <code><i>field</i> LIKE 'value%'</code>
-`nlike: "value%"`	|<code><i>field</i> NOT LIKE 'value%'</code>
-`in: [1, 2, 3] `	| <code><i>field</i> IN (1, 2, 3)</code>
-`nin: [1, 2, 3]`	| <code><i>field</i> NOT IN (1, 2, 3)</code>
-`notnull: true`	| <code><i>field</i> IS NOT NULL</code>
-`null: true`	| <code><i>field</i> IS NULL</code>
-`lt: "value"`	| <code><i>field</i> < 'value'</code>
-`gt: "value"`	| <code><i>field</i> > 'value'</code>
-`gteq: "value"`	| <code><i>field</i> >= 'value'</code>
-`lteq: "value"`	| <code><i>field</i> <= 'value'</code>
+`like: "value%"` | <code><i>field</i> LIKE 'value%'</code>
+`nlike: "value%"` |<code><i>field</i> NOT LIKE 'value%'</code>
+`in: [1, 2, 3]` | <code><i>field</i> IN (1, 2, 3)</code>
+`nin: [1, 2, 3]` | <code><i>field</i> NOT IN (1, 2, 3)</code>
+`notnull: true` | <code><i>field</i> IS NOT NULL</code>
+`null: true` | <code><i>field</i> IS NULL</code>
+`lt: "value"` | <code><i>field</i> < 'value'</code>
+`gt: "value"` | <code><i>field</i> > 'value'</code>
+`gteq: "value"` | <code><i>field</i> >= 'value'</code>
+`lteq: "value"` | <code><i>field</i> <= 'value'</code>
 `moreq: "value"` | <code><i>field</i> >= 'value'</code>
 `from: "value1"` `to: "value2"` | <code><i>field</i> BETWEEN 'value1' AND 'value2'</code>
-`finset: [1, 2, 3]`	| <code>FINSET(<i>field</i>, '1, 2, 3')</code>
+`finset: [1, 2, 3]` | <code>FINSET(<i>field</i>, '1, 2, 3')</code>
 
 `to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
 
@@ -191,7 +191,7 @@ Magento GraphQL clause | SQL equivalent
 
 Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
 
-The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
+The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned.
 
 The `currentPage` attribute specifies which page of results to return. If no value is specified, the first page is returned. If you specify a value that is greater than the number of available pages, an error is returned.
 
