@@ -31,7 +31,7 @@ To manage your project, environment, and branches, see:
 The following sections detail more about project and environment variables:
 
 *	[Overview of environment variables]({{ page.baseurl }}/cloud/env/variables-intro.html)
-*	[Magento Commerce (Cloud) environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
+*	[{{site.data.var.ece}} environment variables]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html)
 *	[Magento application environment variables]({{ page.baseurl }}/cloud/env/environment-vars_magento.html)
 *	[Configuration management]({{ page.baseurl }}/cloud/live/sens-data-over.html)
 *	[Example of configuration management]({{ page.baseurl }}/cloud/live/sens-data-initial.html)
@@ -53,7 +53,7 @@ With your {{site.data.var.ece}} account created, you can log into the Project We
 
 Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html), and [Blackfire]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) services. The project details display information for your project plan and important licenses and tokens for these integrations. Only the Account Owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
 
-* [Fastly](https://https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects.
+* [Fastly](https://https://www.fastly.com/) provides content delivery (CDN), image optimization, and security services (DDoS and WAF) for your {{ site.data.var.ece }} projects. See [Get Fastly credentials]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
@@ -61,7 +61,8 @@ Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), 
 
 To review your integration tokens, IDs, and more:
 
-1. As the {{site.data.var.ece}} Account Owner, log in to your Magento Commerce project.
+1. As the {{site.data.var.ece}} Account Owner, log in to your project.
+
 2. In the upper right corner, click **&lt;your name>** > **Account Settings**.
 
 	![Go to account settings]({{ site.baseurl }}/common/images/cloud_acct-settings-option.png)
@@ -123,6 +124,17 @@ You can manage variables and settings for Production, Staging, and Integration e
 This displays the following page, which enables you to configure settings, [variables]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html, [routes]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html), and [users]({{ page.baseurl }}/cloud/project/user-admin.html).
 
 ![configure environments]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
+
+### Environment configuration variables
+On the *Variables* tab, you can view, create, and manage environment variables for your project. For example, after we add your project to the {{ site.data.var.ece }} Fastly service account, you can view the Fastly API key and service ID credentials as shown in the following example:
+
+![Environment variables fastly credentials]({{ site.baseurl }}/common/images/cloud/cloud-project-web-ui-environment-variables.png)
+
+You can also [list and review]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#variablelist) environment variables using the following Magento Cloud CLI command. 
+
+```bash
+magento-cloud variable:get -e <environment ID>
+ ```
 
 ## Configure the project
 

@@ -6,6 +6,9 @@ After you pass all readiness checks, you can back up:
 
 Backups are stored in the `var/backups` directory and can be restored at any time using the [`magento setup:rollback`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html#instgde-cli-uninst-mod-roll) or using the Magento Admin.
 
+{:.bs-callout .bs-callout-note}
+Magento backup features must be enabled. For more information and commands, see [Enable backups]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html#enable-backups).
+
 To back up:
 
 1.	Select the checkbox of each item to back up and click **Create Backup**.
@@ -25,4 +28,4 @@ The following page displays to confirm a successful backup.
 
 ![A page displays to confirm your backup was a success]({{ site.baseurl }}/common/images/extensman_backup-success.png){:width="650px"}
 
-If errors display, see [Troubleshoot backups]({{ page.baseurl }}/comp-mgr/trouble/cman/tshoot_backup.html)
+If errors display, see [Troubleshoot backups]({{ page.baseurl }}/comp-mgr/trouble/cman/tshoot_backup.html).

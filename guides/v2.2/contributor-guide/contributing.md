@@ -19,6 +19,9 @@ The following topics are included in this guide:
 - [Labels applied by the Community Engineering Team](#labels)
 - [Contribution awards and points](#points)
 
+{:.bs-callout .bs-callout-tip}
+Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://tinyurl.com/engcom-slack), in the [#general](https://magentocommeng.slack.com/messages/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
+
 ## Contribute to Magento 2 code {#contribute}
 
 Use the [fork](#fork) and [pull](#pull_request) model to contribute to the Magento 2 codebase.
@@ -271,7 +274,7 @@ The tool includes configuration settings through the gear icon located top right
 
 ![Magento Porting Tool Settings]({{ site.baseurl }}/common/images/porting-tool-setting.png){:width="600px"}
 
-### Manual porting {#manual-porting}
+### Manual porting {#porting-manual}
 
 When manually porting, you use Git commands to create branches and pull requests. This option may require a strong understanding of Git.
 

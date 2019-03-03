@@ -3,6 +3,7 @@
   "info": { "version": "2.3", "title": "Magento Admin API - All inclusive" },
   "host": "magento2.vagrant12",
   "basePath": "/rest/default",
+  "produces": ["application/json"],
   "schemes": ["http"],
   "tags": [
     { "name": "addresses/{addressId}" },

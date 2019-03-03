@@ -12,7 +12,7 @@ functional_areas:
 
 The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.
 
-The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
+The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Always review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
 {% include cloud/note-pro-using-yaml.md %}
 
@@ -91,7 +91,7 @@ Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allo
 Our default configuration allows the following:
 
 -  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
--  From the `/pub/static` and `/pub/media` paths, any file can be accessed
+-  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
 
@@ -189,7 +189,7 @@ nodejs:
 ### `hooks`
 Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
--   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command to make sure custom-generated content makes it to the deployment phase.
+-   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command so that custom-generated content continues to the deployment phase.
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 -   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
@@ -214,11 +214,13 @@ Also, you can customize the build phase further by using the `generate` and `tra
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
+        set -e
         php ./vendor/bin/ece-tools build:generate
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
 
+-  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
 -  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
 -  `build:transfer`—transfers generated code and static content to the final destination.
 
@@ -252,7 +254,7 @@ Describes processes that are triggered on a schedule. We recommend you run `cron
 -  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 -  `cmd`—The command to execute.
 
-A Cron job is well suited for the following tasks:
+A cron job is well suited for the following tasks:
 
 -  They need to happen on a fixed schedule, not continually.
 -  The task itself is not especially long, as a running cron job will block a new deployment.

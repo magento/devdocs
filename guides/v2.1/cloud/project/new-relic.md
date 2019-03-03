@@ -21,7 +21,7 @@ By default, the {site.data.var.ece}} Pro plan includes New Relic on the Staging 
 
 
 {:.bs-callout .bs-callout-info}
-Your Magento Commerce Cloud account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
+Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software.
 
 ## New Relic account credentials
 

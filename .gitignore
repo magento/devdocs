@@ -15,12 +15,18 @@
 /*.yml
 !/_config.yml
 !/_config.prod.yml
+!/_config.checks.yml
+!/_config.stage.yml
 
 *.bat
-*.sh
 /tmp/
-!/**/samples/*.sh
 /vendor/
 /node_modules/
 
 _algolia_api_key
+
+# Docs from different repositories #
+###################################
+
+/mbi/
+/page-builder/

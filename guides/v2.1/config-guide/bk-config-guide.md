@@ -22,7 +22,7 @@ You can configure the Magento application in any of the following ways:
 	*   [Set up caching]({{ page.baseurl }}/config-guide/cache.html)
 	*	[Use Redis for the Magento page and default cache]({{ page.baseurl }}/config-guide/redis/redis-pg-cache.html)
 	*	[Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
-	*	[Set up database caching]({{ page.baseurl }}/config-guide/cache/caching-database.html)
+	*	[Set up database caching]({{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html)
 
 *	Magento in production
 

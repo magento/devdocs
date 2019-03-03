@@ -7,13 +7,13 @@ The `products` endpoint allows you to search for catalog items.
 
 ## Query structure
 
-``` json
+``` text
 products(
-search: String
-filter: ProductFilterInput
-pageSize: Int
-currentPage: Int
-sort: ProductSortInput
+    search: String
+    filter: ProductFilterInput
+    pageSize: Int
+    currentPage: Int
+    sort: ProductSortInput
 ): Products
 ```
 Each query attribute is defined below:
@@ -32,12 +32,16 @@ Attribute |  Description
 
 The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
 
-{% highlight json %}
+``` text
 filter: {
-       sku: {like: "24-MB%"}
-       price: {lt: "50"}
-       }
-{% endhighlight %}
+  sku: {
+    like: "24-MB%"
+  }
+  price: {
+    lt: "50"
+  }
+}
+```
 
 See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information about the operators.
 
@@ -150,7 +154,7 @@ The `items` that are returned in a `ProductInterface` array can also contain att
 
 * Custom and extension attributes defined in any attribute set
 * The attribute is defined in the [PhysicalProductInterface](#PhysicalProductInterface) or [CustomizableOptionInterface]({{ page.baseurl }}/graphql/reference/customizable-option-interface.html)
-* Product types that define their own implementation of `ProductInterface`, including
+* Product types that define their own implementation of `ProductInterface` including:
   * [BundleProduct]({{ page.baseurl }}/graphql/reference/bundle-product.html)
   * [ConfigurableProduct]({{ page.baseurl }}/graphql/reference/configurable-product.html)
   * [DownloadableProduct]({{ page.baseurl }}/graphql/reference/downloadable-product.html)
@@ -184,6 +188,7 @@ Attribute | Data type | Description
 `name` | String | The product name. Customers use this name to identify the product.
 `new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
 `new_to_date` | String | The end date for new product listings
+`only_x_left_in_stock` | Float | The remaining quantity of this item
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
 `page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
 `price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
@@ -195,6 +200,7 @@ Attribute | Data type | Description
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
+`stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
 `thumbnail` | String | The relative path to the product's thumbnail image
@@ -372,34 +378,34 @@ You can review several general interest `products` queries at [Searches and pagi
 
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-{% highlight json %}
+``` text
 {
-    products (
-        filter: {
-            sku: {
-                like:"24-WB%"
-            }
-        }
-        pageSize: 20
-        currentPage: 1
-        sort: {
-            name: DESC
-        }
-    )
-    {
-        items {
-            sku
-        }
-        filters {
-            name
-            filter_items_count
-            request_var
-            filter_items {
-                label
-                value_string
-                items_count
-            }
-        }
+  products (
+    filter: {
+      sku: {
+        like:"24-WB%"
+      }
     }
+    pageSize: 20
+    currentPage: 1
+    sort: {
+      name: DESC
+    }
+  )
+  {
+    items {
+      sku
+    }
+    filters {
+      name
+      filter_items_count
+      request_var
+      filter_items {
+        label
+        value_string
+        items_count
+      }
+    }
+  }
 }
-{% endhighlight %}
+```

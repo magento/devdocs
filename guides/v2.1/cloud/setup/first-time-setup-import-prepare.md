@@ -66,11 +66,11 @@ Add these files to your {{site.data.var.ee}} code:
         ![View the raw version of the file]({{ site.baseurl }}/common/images/cloud_cloud-git_raw.png){:width="600px"}
     3.  In your {{site.data.var.ee}} project, open a text editor in the {{site.data.var.ee}} installation directory (for example, `/var/www/html/magento2`).
     4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
-    5.  Make sure the file is named `.magento.app.yaml` when you save the file.
+    5.  Save the file using the name: `.magento.app.yaml`
     6.  Repeat these tasks for the other files.
 
-        * Make sure to create `magento-vars.php` in the Magento root directory.
-        * Make sure to create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
+        * Create `magento-vars.php` in the Magento root directory.
+        * Create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 
 When you push your code, all services are configured into the associated environment per active branch of code. These files affect all Starter environments and all Pro Integration environments. To update these settings in Pro Staging and Production, you need to enter a ticket.
 
@@ -206,7 +206,7 @@ You must paste the encryption key into your {{site.data.var.ece}} `env.php` file
 
 Create a database dump and transfer the data from an existing database. You will import this data to your {{site.data.var.ece}} database.
 
-The following command example compresses the dump so it doesn't significantly interfere with traffic from in live site. The dump file is named `db.sql.gz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
+The following example compresses the dump so that it does not significantly interfere with traffic from a live site. The dump file is named `db.sql.gz`. You may want to include the date in the file name if you do multiple dumps over time. Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
 
 1. In your existing environment, create a database dump.
 
@@ -223,4 +223,4 @@ The following command example compresses the dump so it doesn't significantly in
 To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}/cloud/setup/first-time-setup-import-first-steps.html#db-creds).
 
 #### Next step
-[Import Magento Commerce into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)
+[Import {{site.data.var.ee}} into {{site.data.var.ece}}]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html)

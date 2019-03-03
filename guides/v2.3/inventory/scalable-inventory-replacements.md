@@ -3,14 +3,13 @@ group: inventory
 title: Deprecated ScalableInventory entities
 ---
 
-{:.bs-callout .bs-callout-info}
-This topic is a draft.
+The `ScalableInventory` module is part of Magento Commerce. Its original purpose was to perform inventory processing asynchronously, moving the computation of quantities to a worker that processed the calculations later.
+This functionality was limited in that the asynchronous processing could be performed on backordered products only. 
 
-The following `ScalableInventory` interfaces have been deprecated. We will include information about replacement interfaces soon.   
+Inventory Management creates reservations for all orders, not just those on backorder. All quantities are calculated asynchronously. 
 
-## Interfaces
+The following `ScalableInventory` interfaces have been deprecated. They cannot be mapped to new interfaces. The Inventory Management architecture eliminates the need for this functionality.
 
-Interface | Replacement
---- | ---
-ItemInterface | TBD
-ItemsInterface | TBD
+
+* `ItemInterface` 
+* `ItemsInterface`

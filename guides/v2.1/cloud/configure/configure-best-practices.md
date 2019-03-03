@@ -27,18 +27,18 @@ The following are tips to help create, update, and manage promotions and campaig
 * A promotion can be part of a campaign. A campaign cannot be a part of a promotion. You can have lists of promotions as price rules to use multiples times, with multiple campaigns.
 * When you create a promotion, it will always create an initial campaign that is inactive. It will have a start date but not an end date. You can ignore this initial campaign. You can Schedule a New Update with the correct campaign schedule and make it active.
 * A campaign has a start and end date, not a promotion. The Scheduler that appears when you create a promotion does not configure the start and end dates for the promotion. It allows you so schedule your campaign this promotion is associated with while you are on the promotion’s configuration page.
-* You cannot directly edit in Staged Content. If you need to edit settings and options in the campaign, you will need to edit the original or a replica and push to overwrite in Staged Content. For example, if you don't an end date for a campaign, you must edit the original and push to update.
+* You cannot directly edit in Staged Content. If you need to edit settings and options in the campaign, you will need to edit the original or a replica and push to overwrite in Staged Content. For example, if you do not an end date for a campaign, you must edit the original and push to update.
 
 ## Advanced Pricing and Staged Content {#adv-pricing}
 
 This information is helpful for {{site.data.var.ece}} 2.1.X and 2.2.X.
 
-Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_guide/catalog/settings-advanced-advanced-pricing.html) for products through the Products > Catalogs area of the Magento Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
+Typically, you can set [Advanced Pricing](http://docs.magento.com/m2/ee/user_guide/catalog/pricing-advanced.html) for products through the **Products** > **Catalogs** area of the Magento Admin. With Staged Content, you need to complete a few extra steps to add the pricing to a promotion and campaign.
 
 To edit Advanced Pricing and update Content Staging:
 
 1. Log into the Magento Admin.
-2. Navigate to **Products** > **Catalog** > and select a product and edit.
+2. Navigate to **Products** > **Catalog** and select a product and edit.
 3. In the Pricing tab, select **Advanced Pricing**. Edit the price and Save changes.
 4. At the top of the page, click **Schedule New Update**.
 5. Create a new promotion for the product.

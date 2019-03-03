@@ -27,7 +27,7 @@ We'll periodically add more cache alternatives so watch this space.
 Magento uses the following caching terminology:
 
 * *Frontend*: Similar to an interface or gateway to cache storage, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.
-* *Cache types*: Can be one of the types provided with Magento or you can <a href="{{ page.baseurl }}/config-guide/cache/caching-cache-type.html">create your own</a>.
+* *Cache types*: Can be one of the types provided with Magento or you can <a href="{{ page.baseurl }}/extension-dev-guide/cache/partial-caching/create-cache-type.html">create your own</a>.
 * *Backend*: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a>
 * *Two-level backend*: Stores cache records in two backends&mdash;a faster one and a slower one.
 

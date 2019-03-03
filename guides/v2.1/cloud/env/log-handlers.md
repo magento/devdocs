@@ -7,9 +7,9 @@ functional_areas:
   - Configuration
 ---
 
-You can configure logging handlers to send messages to a remote logging server. Logging handler pushes build and deploy logs to other systems, similarly to the way you can push logs to Slack and email. Simply enable a _syslog_ handler, which is ideal for logging messages related to hardware, or a Graylog Extended Log Format (GELF) handler, which is ideal for logging messages from software applications.
+You can configure logging handlers to send messages to a remote logging server. A logging handler pushes build and deploy logs to other systems, similarly to the way you push logs to Slack and email. You can enable a _syslog_ handler, which is ideal for logging messages related to hardware, or a Graylog Extended Log Format (GELF) handler, which is ideal for logging messages from software applications.
 
-The following example configures both of these handlers by adding the configuration to the `.magento.env.yaml` file. For the minimum logging level (`min_level`), see [Set up notifications—Log levels]({{ page.baseurl }}/cloud/env/setup-notifications.html#log-levels).
+The following example configures both of these handlers by adding the configuration to the `.magento.env.yaml` file. For the minimum logging level (`min_level`) values, see [Log levels](#log-levels).
 
 ```yaml
 log:
@@ -47,3 +47,16 @@ log:
         port: <udp-port>
         chunk_size: 1024
 ```
+
+### Log levels
+
+Log levels determine the level of detail in notification messages. The following log level categories include every log level below it. For example, a `debug` level includes logging from every level, whereas an `alert` level only shows alerts and emergencies.
+
+-   **debug**—detailed debug information
+-   **info**—interesting events, such as a user login or SQL log
+-   **notice**—normal, but significant events
+-   **warning**—exceptional occurrences that are not errors, such as the use of a deprecated API or poor use of an API
+-   **error**—run-time errors that do not require immediate action
+-   **critical**—critical conditions, such as an unavailable application component or an unexpected exception
+-   **alert**—immediate action required—such as a website is down or the database is unavailable—that triggers an SMS alert
+-   **emergency**—system is unusable

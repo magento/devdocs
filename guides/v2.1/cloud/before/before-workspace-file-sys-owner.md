@@ -33,7 +33,7 @@ To give the user a password, enter the following command as a user with `root` p
 Follow the prompts on your screen to create a password for the user.
 
 {: .bs-callout .bs-callout-warning}
-If you do not have `root` privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
+If you do not have `root` privileges on your Magento server, you can use another local user account. Confirm that the user has a strong password and continue with [Put the Magento file system owner in the web server group](#install-update-depend-user-add2group).
 
 For example, to create a user named `magento_user` and give the user a password, enter:
 
@@ -41,15 +41,23 @@ For example, to create a user named `magento_user` and give the user a password,
 	sudo passwd magento_user
 
 {: .bs-callout .bs-callout-warning}
-Because the point of creating this user is to provide added security, make sure you create a strong password.
+Because the point of creating this user is to provide added security, it is essential that you create a strong password.
 
 ## Find the web server user's group {#install-update-depend-user-findgroup}
 
 To find the web server user's group:
 
-*	CentOS: `egrep -i '^user|^group' /etc/httpd/conf/httpd.conf`
+*	CentOS: 
 
-	Typically, the user and group name are both `apache`
+    ```bash
+    grep -E -i '^user|^group' /etc/httpd/conf/httpd.conf
+    ```
+    or
+    ```bash
+    grep -Ei '^user|^group' /etc/httpd/conf/httpd.conf
+    ```
+	
+Typically, the user and group name are both `apache`
 *	Ubuntu: `ps aux | grep apache` to find the apache user, then `groups <apache user>` to find the group
 
 	Typically, the username and the group name are both `www-data`

@@ -69,7 +69,7 @@ This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% end
 
 ## vendor/magento/ece-tools {#ece-tools}
 
-The`ece-tools`package is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project.  It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
+The `{{site.data.var.ct}}` package is compatible with Magento version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your Cloud projects.
 
 ## Base packages and file marshalling
 

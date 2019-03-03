@@ -61,11 +61,18 @@ pages:
 
         - label: Other objects
           children:
+
+            - label: CMS endpoints
+              url: /graphql/reference/cms.html
+              
             - label: CustomAttributeMetadata endpoint
               url: /graphql/reference/custom-attribute-metadata.html
 
             - label: Customer endpoint
               url: /graphql/reference/customer.html
+
+            - label: Quote endpoint
+              url: /graphql/reference/quote.html
 
             - label: storeConfig endpoint
               url: /graphql/reference/store-config.html

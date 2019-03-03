@@ -98,14 +98,13 @@ In server-side Less compilation mode, to have your changes applied, clear `pub/s
 {:.bs-callout .bs-callout-info}
 You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
 
-
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the [Grunt JavaScript task runner](http://gruntjs.com/).
 
 See the [Compile Less with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html) topic for details on how to install, configure, and use Grunt.
 
 ### Client-side Less compilation {#client-side}
 
-The client-side compilation flow is similar to the server-side flow. The difference is in the set of files, published to `pub/static` on the [last step](#compile_last). In the client-side mode, these files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
+The client-side compilation flow is similar to the [server-side](#server-side) flow. The difference is in the set of files, published to `pub/static` on the last step. In the client-side mode, these files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
 
 *   Root source (.less) files with resolved `@magento_import` directive
 *   [Symlinks](http://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`

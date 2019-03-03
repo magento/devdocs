@@ -16,7 +16,7 @@
 		export PATH=$PATH:/var/www/html/magento2/bin
 
 {:.bs-callout .bs-callout-info}
-You can also run the commands in the following ways:</p>
+You can also run the commands in the following ways:
 -   `cd <your Magento install dir>/bin` and run them as `./magento <command name>`
--   `php &lt;your Magento install dir>/bin/magento <command name>``
+-   `php <your Magento install dir>/bin/magento <command name>`
 -   `<your Magento install dir>` is a subdirectory of your web server's docroot. [Need help locating the docroot?]({{ page.baseurl }}/install-gde/basics/basics_docroot.html)

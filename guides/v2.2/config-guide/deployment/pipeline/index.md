@@ -17,7 +17,7 @@ You can optionally use other deployment methods, including:
 *	Secure copying with SCP or rsync
 *	[Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano)
 *	The [Deployer tool](https://deployer.org/)
-*	Other methods discussed on the [Community resources page]({{ site.baseurl }}/community/resources/#installdeploy)
+*	Other methods discussed on the [Community resources page]({{ site.baseurl }}/community/resources/resources.html#installdeploy)
 
 ## Manage the configuration
 

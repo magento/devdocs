@@ -22,7 +22,7 @@ There are two ways to upgrade your Magento application to the 2.3 version:
 The upgrade scenario is the same for each of these options (both utilize Composer and a command line interface) from the system's point of view. However, if you upgrade using the script several of the steps are automated.
 
 {:.bs-callout .bs-callout-warning}
-Both scenarios require that you comply with the [Pre-upgrade checklist].
+Both scenarios require that you comply with the [Prerequisites].
 
 {:.bs-callout .bs-callout-info}
 If you cloned the Magento 2 GitHub repository, you **cannot** use this method to upgrade. Instead, see [Update the Magento application] for upgrade instructions.
@@ -47,7 +47,7 @@ Complete the following prerequisites to prepare your environment before starting
 ## Upgrade using the command line {#upgrade-cli-upgr}
 
 Using the more manual process of upgrading via the command line allows you to track and control exactly what's being changed in the upgrade. If you previously made updates to the same values that the upgrade script affects, the script will override those values, so using the manual process is the best approach. Upgrading using the script process is a bit easier and less intensive, if you have not made updates to values that the script affects.
-   
+
 ### Backup `composer.json`
 
 Backup the existing `composer.json` file in the Magento installation directory.
@@ -59,7 +59,7 @@ Specify needed packages and remove any unneeded ones before proceeding with the 
 #### Deactivate the {{ ce }} update
 
 _Optional_—If you are upgrading from {{ ce }} to {{ ee }}, deactivate the {{ ce }} update:
- 
+
 ```bash
 composer remove magento/product-community-edition --no-update
 ```
@@ -128,7 +128,7 @@ _Optional_—If the Magento updater is installed (it is located in `<Magento ins
 
 1. Backup and remove the old updater, in the `<Magento install dir>/update` directory.
 1. Create a Composer project.
-   
+
    _{{ ce }} version 2.3.0:_
     ```bash
     composer create-project --repository=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
@@ -145,10 +145,7 @@ _Optional_—If the Magento updater is installed (it is located in `<Magento ins
 1. Move the project to the `<Magento install dir>/update` directory:
 
    ```bash
-   mkdir update
-   ```
-   ```bash
-   mv temp_dir/update <Magento install dir>/update
+   mv temp_dir/update .
    ```
    ```bash
    rm -rf temp_dir
@@ -167,7 +164,15 @@ Updating the metadata in `composer.json` file is entirely superficial, not funct
 composer update
 ```
 
-### Clear caches and generated content
+### Clean the Magento cache
+
+After applying an update, you must clean the cache.
+
+```bash
+bin/magento cache:clean
+```
+
+### Manually clear caches and generated content
 
 Clear the `var` and `generated` subdirectories:
 
@@ -183,7 +188,7 @@ rm -rf <Magento install dir>/generated/code/*
 
 {:.bs-callout .bs-callout-info}
 If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
-    
+
 ### Update the database schema and data
 
 ```bash
@@ -216,7 +221,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
    * `<your Magento install dir>/var/page_cache`
    * `<your Magento install dir>/generated/code`
 1. Check your storefront in your web browser again.
-   
+
 ## Upgrade using the script {#upgrade-cli-script}
 
 Upgrading your Magento installation with our script, which makes the upgrade process semi-automated, is the preferred method—it's easy, quick, and efficient.
@@ -248,7 +253,7 @@ php -f pre_composer_update_2.3.php -- --help
 ### Run the script
 
 ```bash
-php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' <options>
+php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' --repo=https://repo.magento.com/ <options>
 ```
 
 ### Apply updates
@@ -273,7 +278,7 @@ rm -rf <Magento install dir>/generated/code/*
 
 {:.bs-callout .bs-callout-info}
 If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
-    
+
 ### Update the database schema and data
 
 ```bash
@@ -313,7 +318,7 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [custom maintenance mode page]: {{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html
 [Enable or disable maintenance mode]: {{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
-[script]: https://raw.githubusercontent.com/magento/magento2/2.3-develop/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
+[script]: https://raw.githubusercontent.com/magento/magento2/2.3.0/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
 {:target="_blank"}
 [system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
 [System Upgrade utility]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
@@ -321,5 +326,5 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 [Update the Magento application]: {{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html
 [Upgrade using the command line]: #upgrade-cli-upgr
 [Upgrade using the script]: #upgrade-cli-script
-[Pre-upgrade checklist]: #pre-upgrade-checklist
+[Prerequisites]: #prerequisites
 [the manual process]: #upgrade-cli-upgr

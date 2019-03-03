@@ -53,7 +53,7 @@ To run System Upgrade:
 
 #### Error
 
-The following error can indicate one of several issues, including that you haven't entered your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html) in the Magento Admin:
+The following error can indicate one of several issues, including that you haven't entered your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) in the Magento Admin:
 
 ![]({{ site.baseurl }}/common/images/upgr-sorry.png)
 

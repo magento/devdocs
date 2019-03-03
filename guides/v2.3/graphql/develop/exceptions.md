@@ -7,7 +7,7 @@ The WebApi module has an implementation to “mask” `LocalizedExceptions` so t
 
 You should implement the `\GraphQL\Error\ClientAware` interface to handle errors in your module that are directly related to a GraphQL field having an anticipated exception. If you don't, the client will not receive useful messages. However, you should ensure that you don't implement the `ClientAware` interface for too many exceptions. Doing this risks exposing sensitive data to the client.
 
-Magento provides the following exception classes in `Magento\Framework\GraphQl\Exception`. The exception category string
+Magento provides the following exception classes in `Magento\Framework\GraphQl\Exception`.
 
 Class | Exception category | Description
 --- | --- | ---

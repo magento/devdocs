@@ -24,11 +24,12 @@ design_config_grid                       Design Config Grid
 customer_grid                            Customer Grid
 catalog_category_product                 Category Products
 catalog_product_category                 Product Categories
-catalog_product_price                    Product Price
-catalog_product_attribute                Product EAV
 catalogrule_rule                         Catalog Rule Product
+catalog_product_attribute                Product EAV
+inventory                                Inventory
 catalogrule_product                      Catalog Product Rule
 cataloginventory_stock                   Stock
+catalog_product_price                    Product Price
 catalogsearch_fulltext                   Catalog Search
 ```
 
@@ -68,6 +69,7 @@ Sample result:
 | Category Products    | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
 | Customer Grid        | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
 | Design Config Grid   | Ready            | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:52 |
+| Inventory            | Ready            | Save      |                     |
 | Product Categories   | Reindex required | Schedule  | idle (0 in backlog) | 2018-06-28 09:45:53 |
 | Product EAV          | Reindex required | Save      |                     |                     |
 | Product Price        | Reindex required | Save      |                     |                     |
@@ -80,7 +82,7 @@ Sample result:
 Use this command to reindex all or selected indexers one time only.
 
 {:.bs-callout .bs-callout-info}
-This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-bkg).
+This command reindexes one time only. To keep indexers up-to-date, you must set up a [cron job]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html).
 
 Command options:
 
@@ -105,20 +107,23 @@ bin/magento indexer:reindex
 Sample result:
 
 ```
+Design Config Grid index has been rebuilt successfully in <time>
+Customer Grid index has been rebuilt successfully in <time>
 Category Products index has been rebuilt successfully in <time>
 Product Categories index has been rebuilt successfully in <time>
-Product Price index has been rebuilt successfully in <time>
-Product EAV index has been rebuilt successfully in <time>
-Stock index has been rebuilt successfully in <time>
 Catalog Rule Product index has been rebuilt successfully in <time>
+Product EAV index has been rebuilt successfully in <time>
+Inventory index has been rebuilt successfully in <time>
 Catalog Product Rule index has been rebuilt successfully in <time>
+Stock index has been rebuilt successfully in <time>
+Product Price index has been rebuilt successfully in <time>
 Catalog Search index has been rebuilt successfully in <time>
 ```
 
 {:.bs-callout .bs-callout-info}
-Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Content for 2.3:  To reduce processing time, see the next section for reindexing in parallel mode. -->
+Reindexing all indexers can take a long time for stores with large numbers of products, customers, categories, and promotional rules. <!-- Add to docs in 2.3.1 - MAGEDOC-3020:  To reduce processing time, see the next section for reindexing in parallel mode. -->
 
-<!-- Content for 2.3:
+<!-- Add to docs in 2.3.1 - MAGEDOC-3020
 ### Reindex in parallel mode {#config-cli-subcommands-index-reindex-parallel}
 
 Indexers are scoped and multi-threaded to support reindexing in parallel mode. This feature reduces processing time. It parallelizes by the indexer's dimension and executes across multiple threads.
@@ -165,13 +170,16 @@ bin/magento indexer:show-mode
 Sample result:
 
 ```
+Design Config Grid:                                Update on Save
+Customer Grid:                                     Update on Save
 Category Products:                                 Update on Save
 Product Categories:                                Update on Save
-Product Price:                                     Update on Save
-Product EAV:                                       Update on Save
-Stock:                                             Update on Save
 Catalog Rule Product:                              Update on Save
+Product EAV:                                       Update on Save
+Inventory:                                         Update on Save
 Catalog Product Rule:                              Update on Save
+Stock:                                             Update on Save
+Product Price:                                     Update on Save
 Catalog Search:                                    Update on Save
 ```
 
@@ -220,5 +228,5 @@ Index mode for Indexer Product Categories was changed from 'Update on Save' to '
 * [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
 * [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
 * [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
-* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html")
+* [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)
 * [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)

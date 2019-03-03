@@ -30,7 +30,7 @@ After successfully creating and testing the local installation to use multiple s
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
 {:.bs-callout .bs-callout-info}
-To set up routes in a staging or production environment, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to set up routes in the Staging or Production environment.
 
 #### To configure routes in an integration environment:
 
@@ -64,45 +64,7 @@ To set up routes in a staging or production environment, you must create a [Supp
 
 In the Admin panel, set up your {{site.data.var.ee}} websites, stores, and store views. See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
 
-#### To retrieve Admin login information:
-
-1.  On your local workstation, log in as the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
-
-1.  Change to your {{site.data.var.ee}} base directory.
-
-1.  Log in to your account.
-
-    ```bash
-    magento-cloud login
-    ```
-
-1.  List the environments.
-
-    ```bash
-    magento-cloud environment:list
-    ```
-
-1.  Check out your environment.
-
-    ```bash
-    magento-cloud environment:checkout <environment-ID>
-    ```
-
-1.  Access the public URLs:
-
-    ```bash
-    magento-cloud environment:url
-    ```
-
-1.  View Admin login information in the variable list.
-
-    ```bash
-    magento-cloud variable:list
-    ```
-
-Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
-
-See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html).
+It is important to name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.
 
 ### Modify the `magento-vars.php` file
 

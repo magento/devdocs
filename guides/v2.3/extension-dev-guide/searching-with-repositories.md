@@ -8,7 +8,7 @@ functional_areas:
 ### What is a repository? {#m2devgde-repository-intro}
 
 Repositories give service requestors the ability to perform create, read, update, and delete (CRUD) operations on entities or a list of entities.
-A repository is an example of a [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer.
+A repository is an example of a [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html), and its implementation is part of the domain layer.
 
 #### Repository state
 
@@ -17,7 +17,7 @@ This means that every method call should not rely on previous calls nor should i
 Any field contained in the repository class must also be stateless.
 
 If your repository needs to provide functionality that requires state, such as for caching,  use the registry pattern.
-A good example that uses this pattern is the [`CustomerRepository`]({{ site.mage2100url }}/app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php) class.
+A good example that uses this pattern is the [`CustomerRepository`]({{ site.mage2100url }}app/code/Magento/Customer/Model/ResourceModel/CustomerRepository.php) class.
 
 ### Search Criteria {#m2devgde-search-criteria}
 
@@ -125,7 +125,7 @@ The search engine determines the maximum number of results that a query can retu
 A Collection Processor is an implementation of the [`CollectionProcessorInterface`]({{ site.mage2300url }}lib/internal/Magento/Framework/Api/SearchCriteria/CollectionProcessorInterface.php) interface that unifies the application of custom filters, sorting, and paginating.
 It contains a one method process that applies a Search Criteria object to an abstract database collection.
 
-You can use [virtual typing]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#configuring-a-type) in your `di.xml` file to specify the processors used in the Collection Processor.
+You can use [virtual typing]({{ page.baseurl }}/extension-dev-guide/depend-inj.html#dependency-types) in your `di.xml` file to specify the processors used in the Collection Processor.
 
 #### Filter Processor
 

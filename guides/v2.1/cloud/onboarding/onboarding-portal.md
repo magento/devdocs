@@ -91,4 +91,4 @@ When you are ready to launch your sites and stores, work through Launch options:
 * [Manage your project]({{ page.baseurl }}/cloud/project/projects.html)
 * [Starter architecture]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html)
 * [Pro architecture]({{ page.baseurl }}/cloud/architecture/pro-architecture.html)
-* [Welcome to Magento Commerce (Cloud)]({{ page.baseurl }}/cloud/bk-cloud.html)
+* [Welcome to {{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html)
