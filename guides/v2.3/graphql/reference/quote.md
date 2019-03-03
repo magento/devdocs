@@ -55,26 +55,6 @@ Attribute |  Data Type | Description
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) | Contains attributes that are common to all types of products
 `qty` | Float | The number of items in the cart
 
-<!--
-### Add configurable items to cart
-The `AddConfigurableProductsToCart` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`cartItems` | [ConfigurableProductCartItemInput](#configProdCartItemInput) | Contains either shipping or billing information
-`cart_id` | String | The customer's email address
-
-### Configurable product cart item input {#configProdCartItemInput}
-
-The `ConfigurableProductCartItemInput` object can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`customizable_options` | [ConfigurableProductCartItemInput] | Contains either shipping or billing information
-`data` | String | The customer's email address
-`variant_sku` | String | The customer's email address
--->
-
 ### Example usage
 
 The following returns information about a cart given a `cart_id`. Note that the `cart_id` specified is for demonstration purposes only. You will need to [generate](#createEmptyCart) your own `cart_id` for this example to work.
@@ -86,22 +66,23 @@ The following returns information about a cart given a `cart_id`. Note that the 
   cart(cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C") {
     cart_id
     billing_address {
-      lastname,
-      firstname,
+      lastname
+      firstname
       postcode
-     }
+    }
     items {
-      id,
+      id
       qty
     }
     shipping_addresses {
-			company
+      company
       postcode
       lastname
-      firstname      
+      firstname
     }
   }
 }
+
 ```
 **Response**
 
@@ -136,6 +117,9 @@ The following returns information about a cart given a `cart_id`. Note that the 
 ```
 
 ## Mutations
+
+### Create an empty cart {#createEmptyCart}
+{:.no_toc}
 
 The `createEmptyCart` mutation creates an empty shopping cart for a guest or logged in customer. If you are creating a cart for a logged in customer, you must include the customer's authorization token in the header of the request.
 
@@ -334,22 +318,6 @@ mutation {
   }
 }
 ```
-<!--
-## Add configurable products to cart
-
-**THIS DOES NOT SEEM TO BE IMPLEMENTED YET**
-
-**Request**
-
-```text
-
-```
-
-**Response**
-
-```json
-
-```-->
 
 ### Updating billing and shipping information
 {:.no_toc}
@@ -390,7 +358,7 @@ Attribute |  Data Type | Description
 `street` | [String] | The street for the billing address
 `telephone` | String | The telephone number for the billing address
 
-### Set billing address on cart
+### Set the billing address on a cart
 
 Use the `setBillingAddressOnCart` mutation to set a new billing address for a specific cart.
 
@@ -411,16 +379,16 @@ mutation {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
       billing_address: {
          address: {
-          firstname: "test firstname"
-          lastname: "test lastname"
-          company: "test company"
-          street: ["test street 1", "test street 2"]
-          city: "test city"
-          region: "test region"
-          postcode: "887766"
-          country_code: "US"
-          telephone: "88776655"
-          save_in_address_book: false
+            firstname: "Bob"
+            lastname: "Roll"
+            company: "Magento"
+            street: ["Magento Pkwy", "Main Street"]
+            city: "Austin"
+            region: "TX"
+            postcode: "78758"
+            country_code: "US"
+            telephone: "8675309"
+            save_in_address_book: False
          }
       }
     }
@@ -448,16 +416,16 @@ mutation {
     "setBillingAddressOnCart": {
       "cart": {
         "billing_address": {
-          "firstname": "test firstname",
-          "lastname": "test lastname",
-          "company": "test company",
+          "firstname": "Bob",
+          "lastname": "Roll",
+          "company": "Magento",
           "street": [
-            "test street 1",
-            "test street 2"
+            "Magento Pkwy",
+            "Main Street"
           ],
-          "city": "test city",
-          "postcode": "887766",
-          "telephone": "88776655"
+          "city": "Austin",
+          "postcode": "78758",
+          "telephone": "8675309"
         }
       }
     }
@@ -465,7 +433,7 @@ mutation {
 }
 ```
 
-### Set shipping address on cart
+### Set the shipping address on cart
 
 Use the `setShippingAddressesOnCart` mutation to set a new shipping address for a specific cart.
 
@@ -483,20 +451,20 @@ The following example creates a new shipping address for a specific cart.
 mutation {
   setShippingAddressesOnCart(
     input: {
-      cart_id: "OOJVZU6tSSQ8vLoXqx9pDMZili3uQ8Hi"
+      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
       shipping_addresses: [
         {
           address: {
-            firstname: "test firstname"
-            lastname: "test lastname"
-            company: "test company"
-            street: ["test street 1", "test street 2"]
-            city: "test city"
-            region: "test region"
-            postcode: "887766"
+            firstname: "Bob"
+            lastname: "Roll"
+            company: "Magento"
+            street: ["Magento Pkwy", "Main Street"]
+            city: "Austin"
+            region: "TX"
+            postcode: "78758"
             country_code: "US"
-            telephone: "88776655"
-            save_in_address_book: false
+            telephone: "8675309"
+            save_in_address_book: False
           }
         }
       ]
