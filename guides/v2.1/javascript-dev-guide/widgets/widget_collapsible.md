@@ -129,6 +129,7 @@ Multiple types are supported:
 Initialize the collapsible with the animate option specified:
 
 ```javascript
+
 $("#element").collapsible({ animate: 1000});
 $("#element").collapsible({ animate: {duration:1000,easing:"easeOutCubic"});
 ```
@@ -398,7 +399,7 @@ Specifies if the state is saved in the local storage if the browser supports it.
 
 **Type**: Boolean
 
-**Default value**: `true`
+**Default value**: `false`
 
 Initialize the collapsible widget with the `saveState` option specified:
 ```javascript
