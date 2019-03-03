@@ -147,7 +147,6 @@ The response is the quote ID, which is sometimes called the cart ID. The remaini
 ```
 
 ### Adding simple products to a cart
-{:.no_toc}
 
 Adds simple items to a specific cart.
 
