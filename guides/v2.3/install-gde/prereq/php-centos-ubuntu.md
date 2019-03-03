@@ -83,7 +83,6 @@ To install PHP 7.1 on CentOS 6 or 7:
 		yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
 
 	{:.bs-callout .bs-callout-info}
-  The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
 
 4.	Restart Apache:
 
