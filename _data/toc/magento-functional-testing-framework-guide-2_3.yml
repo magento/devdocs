@@ -55,6 +55,10 @@ pages:
     url: /mftf/2.3/data.html
     versionless: true
 
+  - label: Debugging
+    url: /mftf/2.3/debugging.html
+    versionless: true
+
   - label: Metadata
     url: /mftf/2.3/metadata.html
     versionless: true
@@ -95,11 +99,22 @@ pages:
     versionless: true
 
   - label: Best practices
-    url: /mftf/2.3/best-practices.html
     versionless: true
+    children:
+
+      - label: Best practices
+        url: /mftf/2.3/best-practices.html
+        versionless: true
+      - label: Tips and tricks
+        url: /mftf/2.3/tips-tricks.html
+        versionless: true
 
   - label: Troubleshooting
     url: /mftf/2.3/troubleshooting.html
+    versionless: true
+
+  - label: Versioning
+    url: /mftf/2.3/versioning.html
     versionless: true
 
   - label: Contribution guidelines

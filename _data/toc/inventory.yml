@@ -19,3 +19,6 @@ pages:
 
     - label: Deprecated ScalableInventory entities
       url: /inventory/scalable-inventory-replacements.html
+
+    - label: Release notes
+      url: /inventory/release-notes.html
