@@ -16,6 +16,10 @@ Although this release includes these security enhancements, no confirmed attacks
 See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.8) have been ported to 2.3.1, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 
+Note:
+
+
+
 ## Highlights
 
 In addition to over 30 critical security fixes, look for the following highlights in this release:
@@ -28,6 +32,8 @@ This release includes improvements to general usability of the core code plus en
 
 #### General improvements
 
+* **Elasticsearch 6.x is now supported**. (Elasticsearch 5.x will reach end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). Thanks to community members xxx for this contribution!
+* 
 
 
 ### Community contribution highlights
@@ -179,8 +185,6 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 <!-- MAGETWO-96374 -->* In a multi-website instance, with a category that contains products belonging to different websites, when the product sort order in a category is changed at the store-view level, the products that belong to a different website gets unassigned from the category.
 
 <!-- MAGETWO-90930 -->* Magento now correctly displays the greater than operator (>) when you configure the catalog products list widget for a CMS block.
-
-<!-- MAGETWO-73840 -->* Anomalies in the display of videos in product descriptions have been corrected. Previously, the size of the videos did not match the proportions dispalyed in the WYSIWYG editor. 
 
 <!-- ENGCOM-3312 -->* You can now insert multiple catalog product list widgets in a CMS page.
 
@@ -948,6 +952,8 @@ This causes incorrect sorting by price
 
 <!-- MAGETWO-93947 -->* The product page's Recently View section no longer displays the name of the current product. 
 
+<!-- ENGCOM-4037 -->* Fixed alignment of options on the admin edit widget page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20270](https://github.com/magento/magento2/pull/20270)*. [GitHub-20113](https://github.com/magento/magento2/issues/20113)
+
 
 ### Wishlist
 
@@ -980,6 +986,7 @@ This release includes substantial community contributions: over 100 GitHub issue
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+{% include release-notes/engcomm-2-2-8-issues.md %}
 
 
 ### Partner contributions
