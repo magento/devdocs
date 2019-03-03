@@ -29,7 +29,7 @@ Name | Description | Type
 --- | --- | ---
 `sku` | The SKU of the product | String
 `stock_id` | The ID of the stock the product is assigned to | Integer
-`requestedQty` | The requested quantity of products | Integer
+`requestedQty` | The requested quantity of products | Float
 `type` | The type of sales channel the stock is assigned to. For 2.3, this value must be `website`. | String
 `code` | The code of the sales channel (website) | String
 {:style="table-layout:auto;"}
@@ -54,7 +54,7 @@ None
 
 **Response**
 
-An integer indicating the salable quanity of the product, such as `75`.
+An integer indicating the salable quantity of the product, such as `75`.
 
 
 ## Check whether a product is salable
@@ -77,7 +77,7 @@ None
 
 ## Check whether a product is salable for a specified quantity
 
-This call indicates whether a product is salable for the specified quantity and stock ID. 
+This call indicates whether a product is salable for the specified quantity and stock ID.
 
 **Sample usage**
 

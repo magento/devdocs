@@ -12,9 +12,9 @@ require 'launchy'
 require 'colorator'
 
 # Load ruby files with helper methods from the 'rakelib/' directory
-require_relative 'rakelib/link-checker.rb'
-require_relative 'rakelib/converter.rb'
-require_relative 'rakelib/double-slash-check.rb'
+require_relative 'rakelib/lib/link-checker.rb'
+require_relative 'rakelib/lib/converter.rb'
+require_relative 'rakelib/lib/double-slash-check.rb'
 
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
@@ -56,3 +56,6 @@ task build: %w[clean] do
   sh 'bundle exec jekyll build --verbose --trace'
   puts 'Built!'.green
 end
+
+desc 'Pull docs from external repositories'
+task init: %w[multirepo:init]

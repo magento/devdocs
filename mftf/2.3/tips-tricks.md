@@ -6,26 +6,121 @@ Sometimes, little changes can make a big difference in your project. Here are so
 
 <!-- {% raw %} -->
 
-## Use descriptive variable names
+## Actions and action groups
 
-Use descriptive variable names to increase readability.
-It makes the code easier to follow and update.
+### Use parameterized selectors in action groups with argument references
 
- {:style="color:green"}
-GOOD:
+Clarity and readability are important factors in good test writing.
+Having to parse through unreadable code can be time consuming. Save time by writing clearly.
+The good example clearly shows what the selector arguments refer to.
+In the bad example we see two parameters being passed into the selector with little clue as to their purpose.
+
+**Why?** The next person maintaining the test or extending it may not be able to understand what the parameters are referencing.
+
+{:style="color:green"}
+Good
 
 ```xml
-<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{storeName}}')]" parameterized="true"/>
+<test>
+    <actionGroup ref="VerifyOptionInProductStorefront" stepKey="verifyConfigurableOption" after="AssertProductInStorefrontProductPage">
+        <argument name="attributeCode" value="$createConfigProductAttribute.default_frontend_label$"/>
+        <argument name="optionName" value="$createConfigProductAttributeOption1.option[store_labels][1][label]$"/>
+    </actionGroup>
+</test>
+
+<actionGroup name="VerifyOptionInProductStorefront">
+    <arguments>
+        <argument name="attributeCode" type="string"/>
+        <argument name="optionName" type="string"/>
+    </arguments>
+    <seeElement selector="{{StorefrontProductInfoMainSection.attributeOptionByAttributeID(attributeCode, optionName)}}" stepKey="verifyOptionExists"/>
+</actionGroup>
 ```
 
 {:style="color:red"}
-BAD:
+Bad
 
 ```xml
-<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{var1}}')]" parameterized="true"/>
+<test>
+    <seeElement selector="{{StorefrontProductInfoMainSection.attributeOptionByAttributeID($createConfigProductAttribute.default_frontend_label$, $createConfigProductAttributeOption1.option[store_labels][1][label]$)}}" stepKey="verifyOptionExists"/>
+</test>
 ```
 
-## Always specify a default value for action group arguments
+### Perform the most critical actions first in the `<after>` block
+
+Perform non-browser driving actions first. These are more likely to succeed as no UI is involved.
+In the good example, `magentoCLI` and `deleteData` are run first to ensure a proper state.
+In the bad example, we perform some heavy UI steps first.
+
+**Why?** If something goes wrong there, then the critical `magentoCLI` commands may not get a chance to run, leaving Magento configured incorrectly for any upcoming tests.
+
+{:style="color:green"}
+Good:
+
+```xml
+<after>
+    <magentoCLI command="indexer:set-mode" arguments="schedule" stepKey="setIndexerMode"/>
+    <magentoCLI command="config:set catalog/frontend/flat_catalog_category 0" stepKey="setFlatCatalogCategory"/>
+    <deleteData createDataKey="category" stepKey="deleteCategory"/>
+    <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewEn">
+        <argument name="customStore" value="customStoreEN"/>
+    </actionGroup>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewFr">
+        <argument name="customStore" value="customStoreFR"/>
+    </actionGroup>
+    <actionGroup ref="logout" stepKey="logout"/>
+</after>
+```
+
+{:style="color:red"}
+Bad:
+
+```xml
+<after>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewEn">
+        <argument name="customStore" value="customStoreEN"/>
+    </actionGroup>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewFr">
+        <argument name="customStore" value="customStoreFR"/>
+    </actionGroup>
+    <deleteData createDataKey="category" stepKey="deleteCategory"/>
+    <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+    <magentoCLI command="config:set catalog/frontend/flat_catalog_category 0" stepKey="setFlatCatalogCategory"/>
+    <magentoCLI command="indexer:set-mode" arguments="schedule" stepKey="setIndexerMode"/>
+    <actionGroup ref="logout" stepKey="logout"/>
+</after>
+```
+
+### When to use see vs. seeElement
+
+Use `see` and `seeElement` wisely.
+If you need to see some element and verify that the text inside is shown correctly, use the `see` action.
+If you need to verify that element present on page, use `seeElement`.
+But never use `seeElement` and build a xPath which contains the expected text.
+
+**Why?** For `see` it will output something similar to this:
+`Failed asserting that any element by #some_selector contains text "some_text"`
+And for `seeElement` it will output something like this:
+`Element by #some_selector is not visible.`
+There is a subtle distinction: The first is a failure but it is the desired result: a 'positive failure'.
+The second is a proper result of the action.
+
+{:style="color:green"}
+Good:
+
+```xml
+<see selector="//div[@data-element='content']//p" userInput="SOME EXPECTED TEXT" stepKey="seeSlide1ContentStorefront"/>
+```
+
+{:style="color:red"}
+Bad:
+
+```xml
+<seeElement selector="//div[@data-element='content']//p[.='SOME EXPECTED TEXT']" stepKey="seeSlide1ContentStorefront"/>
+```
+
+### Always specify a default value for action group arguments
 
 Whenever possible, specify a `defaultValue` for action group arguments.
 
@@ -67,10 +162,11 @@ BAD:
 </actionGroup>
 ```
 
-## Build tests from action groups
+### Build tests from action groups
 
 Build your tests using action groups, even if an action group contains a single action.
-For extension developers, this will make it easier to extend or customize tests.
+
+**Why?** For extension developers, this will make it easier to extend or customize tests.
 Extending a single action group will update all tests that use this group.
 This improves maintainability as multiple instances of a failure can be fixed with a single action group update.
 
@@ -123,14 +219,70 @@ BAD:
 </test>
 ```
 
-## Build selectors in proper order
+### Use descriptive stepKey names
+
+Make `stepKeys` values as descriptive as possible.
+Do not use numbers to make a `stepKey` unique.
+
+**Why?** This helps with readability and clarity.
+
+{:style="color:green"}
+GOOD:
+
+```xml
+<click selector="{{StorefrontNavigationSection.topCategory(SimpleSubCategory.name)}}" stepKey="clickSimpleSubCategoryLink" />
+<waitForPageLoad stepKey="waitForSimpleSubCategoryPageLoad" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(SimpleProduct.urlKey)}}" stepKey="clickSimpleProductLink" />
+<waitForPageLoad stepKey="waitForSimpleProductPageLoad" />
+
+<!-- Perform some actions / Assert product page -->
+
+<click selector="{{StorefrontNavigationSection.topCategory(CustomCategory.name)}}" stepKey="clickCustomCategoryLink" />
+<waitForPageLoad stepKey="waitForCustomCategoryPageLoad" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(CustomSimpleProduct.urlKey)}}" stepKey="clickCustomSimpleProductLink" />
+<waitForPageLoad stepKey="waitForCustomSimpleProductPageLoad" />
+```
+
+{:style="color:red"}
+BAD:
+
+```xml
+<click selector="{{StorefrontNavigationSection.topCategory(SimpleSubCategory.name)}}" stepKey="clickCategoryLink1" />
+<waitForPageLoad stepKey="waitForPageLoad1" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(SimpleProduct.urlKey)}}" stepKey="clickProductLink1" />
+<waitForPageLoad stepKey="waitForPageLoad2" />
+
+<!-- Perform some actions / Assert product page -->
+
+<click selector="{{StorefrontNavigationSection.topCategory(CustomCategory.name)}}" stepKey="clickCategoryLink2" />
+<waitForPageLoad stepKey="waitForPageLoad3" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(CustomSimpleProduct.urlKey)}}" stepKey="clickProductLink2" />
+<waitForPageLoad stepKey="waitForPageLoad4" />
+```
+
+**Exception:**
+
+Use numbers within `stepKeys` when order is important, such as with testing sort order.
+
+```xml
+<createData entity="BasicMsiStock1" stepKey="createCustomStock1"/>
+<createData entity="BasicMsiStock2" stepKey="createCustomStock2"/>
+<createData entity="BasicMsiStock3" stepKey="createCustomStock3"/>
+<createData entity="BasicMsiStock4" stepKey="createCustomStock4"/>
+```
+
+## Selectors
+
+### Build selectors in proper order
 
 When building selectors for form elements, start with the parent context of the form element.
 Then specify the element `name` attribute in your selector to ensure the correct element is targeted.
-
 To build a selector for an input, use the pattern: `{{section_selector}} {{input_selector}}` or for a button: `{{section_selector}} {{button_selector}}`
 
+**Why?** Traversing the DOM takes a finite amount of time and reducing the scope of the selector makes the selector lookup as efficient as possible.
+
 Example:
+
 ```xml
 <div class="admin__field _required" data-bind="css: $data.additionalClasses, attr: {'data-index': index}, visible: visible" data-index="name">
     <div class="admin__field-label" data-bind="visible: $data.labelVisible">
@@ -160,59 +312,56 @@ BAD:
 <element name="productName" type="input" selector=".admin__field[data-index=name] input"/>
 ```
 
-## Use descriptive stepKey names
+### Build selectors with appropriate specificity
 
-Make `stepKeys` values as descriptive as possible. This helps with readability and clarity.
-Do not use numbers to make a `stepKey` unique.
+Selectors that are too general might sweep up unexpected elements.
+When possible, select the first parent tag and then specify the desired element within that selection.
 
-{:style="color:green"}
+**Why?** Elements that are overly specific are less flexible and may fail if unexpected DOM changes occur. It also reduces the amount of the DOM it needs to parse.
+
+ {:style="color:green"}
+GOOD:
+
+```html
+ form[name='myform'] > input[name='firstname']
+
+ //*[@id='container'][@class='dashboard-title']
+ ```
+
+ {:style="color:red"}
+BAD:
+
+```html
+ input[name='firstname']
+
+ //*[@id='container']/*[@class='dashboard-advanced-reports']/*[@class='dashboard-advanced- reports-description']/*[@class='dashboard-title']
+ ```
+
+## General tips
+
+### Use descriptive variable names
+
+Use descriptive variable names to increase readability.
+**Why?** It makes the code easier to follow and update.
+
+ {:style="color:green"}
 GOOD:
 
 ```xml
-<click selector="{{StorefrontNavigationSection.topCategory(SimpleSubCategory.name)}}" stepKey="clickSimpleSubCategoryLink" />
-<waitForPageLoad stepKey="waitForSimpleSubCategoryPageLoad" />
-<click selector="{{StorefrontCategoryMainSection.productLinkByHref(SimpleProduct.urlKey)}}" stepKey="clickSimpleProductLink" />
-<waitForPageLoad stepKey="waitForSimpleProductPageLoad" />
-
-<!-- Perform some actions / Assert product page -->
-
-<click selector="{{StorefrontNavigationSection.topCategory(CustomCategory.name)}}" stepKey="clickCustomCategoryLink" />
-<waitForPageLoad stepKey="waitForCustomCategoryPageLoad" />
-<click selector="{{StorefrontCategoryMainSection.productLinkByHref(CustomSimpleProduct.urlKey)}}" stepKey="clickCustomSimpleProductLink" />
-<waitForPageLoad stepKey="waitForCustomSimpleProductPageLoad" />
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{storeName}}')]" parameterized="true"/>
 ```
-
 
 {:style="color:red"}
 BAD:
-```xml
-<click selector="{{StorefrontNavigationSection.topCategory(SimpleSubCategory.name)}}" stepKey="clickCategoryLink1" />
-<waitForPageLoad stepKey="waitForPageLoad1" />
-<click selector="{{StorefrontCategoryMainSection.productLinkByHref(SimpleProduct.urlKey)}}" stepKey="clickProductLink1" />
-<waitForPageLoad stepKey="waitForPageLoad2" />
-
-<!-- Perform some actions / Assert product page -->
-
-<click selector="{{StorefrontNavigationSection.topCategory(CustomCategory.name)}}" stepKey="clickCategoryLink2" />
-<waitForPageLoad stepKey="waitForPageLoad3" />
-<click selector="{{StorefrontCategoryMainSection.productLinkByHref(CustomSimpleProduct.urlKey)}}" stepKey="clickProductLink2" />
-<waitForPageLoad stepKey="waitForPageLoad4" />
-```
-
-**Exception:**
-
-Use numbers within `stepKeys` when order is important, such as with testing sort order.
 
 ```xml
-<createData entity="BasicMsiStock1" stepKey="createCustomStock1"/>
-<createData entity="BasicMsiStock2" stepKey="createCustomStock2"/>
-<createData entity="BasicMsiStock3" stepKey="createCustomStock3"/>
-<createData entity="BasicMsiStock4" stepKey="createCustomStock4"/>
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{var1}}')]" parameterized="true"/>
 ```
 
-## Do not use click with checkboxes
+### Use proper checkbox actions
 
 When working with input type `checkbox`, do not use the `click` action; use `checkOption` or `uncheckOption` instead.
+**Why?** A click does not make it clear what the ending state will be; it will simply toggle the current state. Using the proper actions will ensure the expected state of the checkbox.
 
 {:style="color:green"}
 GOOD:

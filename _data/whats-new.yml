@@ -4,8 +4,77 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Feb  4 13:40:53 2019
+updated: Mon Feb 25 10:43:52 2019
 entries:
+- description: Removed improper git commands for composer reinstall in [Uninstall
+    and Reinstall Magento](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)
+    and links to correct instructions.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: February 22, 2019
+  link: https://github.com/magento/devdocs/pull/3802
+- description: Added the section [Merge action groups](http://devdocs.magento.com/mftf/2.3/merging.html#merge-action-groups)
+    to the Merging page in the MFTF guide.
+  versions: 2.3.x
+  type: Major update
+  date: February 21, 2019
+  link: https://github.com/magento/devdocs/pull/3792
+- description: Added the missing `cache` command in [Disable Module Output](https://devdocs.magento.com/guides/v2.2/config-guide/config/disable-module-output.html#export-the-configuration-changes).
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: February 21, 2019
+  link: https://github.com/magento/devdocs/pull/3799
+- description: Added a [Versioning](https://devdocs.magento.com/mftf/2.3/versioning.html)
+    topic to the MFTF guide.
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: February 21, 2019
+  link: https://github.com/magento/devdocs/pull/3781
+- description: Added information about testing strategies to the [Magento Testing
+    Guide](https://devdocs.magento.com/guides/v2.3/test/testing.html).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: February 20, 2019
+  link: https://github.com/magento/devdocs/pull/3791
+- description: Added [Use parameterized selectors in action groups with argument references](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#use-parameterized-selectors-in-action-groups-with-argument-references)
+    to Tips and Tricks.
+  versions: 2.3.x
+  type: Major update
+  date: February 15, 2019
+  link: https://github.com/magento/devdocs/pull/3754
+- description: "[Debugging](https://devdocs.magento.com/mftf/2.3/debugging.html) topic
+    added to the MFTF guide."
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: February 15, 2019
+  link: https://github.com/magento/devdocs/pull/3755
+- description: Updated the Inventory Management [REST tutorial](https://devdocs.magento.com/guides/v2.3/rest/tutorials/inventory/index.html),
+    [REST reference](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html)
+    and [developer information](https://devdocs.magento.com/guides/v2.3/inventory/source-selection-algorithms.html)
+    to include the Distance Priority Source Selection Algorithm. Added [Import geocodes
+    for Inventory Management](https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-inventory.html).
+  versions: 2.3.x
+  type: Major update
+  date: February 12, 2019
+  link: https://github.com/magento/devdocs/pull/3668
+- description: Added reference information for [asynchronous REST endpoints](https://devdocs.magento.com/redoc/2.3/)
+  versions: 2.3.x
+  type: New topic
+  date: February 12, 2019
+  link: https://github.com/magento/devdocs/pull/3731
+- description: Added [MSI 1.1.0](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html)
+    release notes.
+  versions: 2.3.x
+  type: New topic
+  date: February 12, 2019
+  link: https://github.com/magento/devdocs/pull/3569
+- description: Added MFTF tips:<br/>-[Perform the most critical actions first in the
+    `<after>` block](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#perform-the-most-critical-actions-first-in-the-after-block)<br/>-[When
+    to use `see` versus `seeElement`](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#when-to-use-see-vs-seeelement)
+  versions: 2.3.x
+  type: Major update
+  date: February  8, 2019
+  link: https://github.com/magento/devdocs/pull/3711
 - description: Added information about domain- versus presentation-specific logic
     to the [Technical Guidelines](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html).
   versions: 2.x
