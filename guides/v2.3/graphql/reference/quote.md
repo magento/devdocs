@@ -119,7 +119,6 @@ The following returns information about a cart given a `cart_id`. Note that the 
 ## Mutations
 
 ### Create an empty cart {#createEmptyCart}
-{:.no_toc}
 
 The `createEmptyCart` mutation creates an empty shopping cart for a guest or logged in customer. If you are creating a cart for a logged in customer, you must include the customer's authorization token in the header of the request.
 
@@ -147,106 +146,7 @@ The response is the quote ID, which is sometimes called the cart ID. The remaini
 }
 ```
 
-### Add and remove coupons from a cart
-{:.no_toc}
-
-You can use mutations to add or remove coupons from a specified cart.
-
-### Coupon attributes
-{:.no_toc}
-The add and remove coupon from cart objects can contain the following attributes:
-
-Attribute |  Data Type | Description
---- | --- | ---
-`cart_id` | String | The unique ID that identifies the customer's cart
-`coupon_code` | String | The coupon code
-
-### Apply coupon to cart
-
-Adds a coupon code to a cart.
-
-#### Syntax
-
-`mutation: {applyCouponToCart(input: ApplyCouponToCartInput) {ApplyCouponToCartOutput}}`
-
-#### Example usage
-
-The following call adds a coupon code called `test2019` to a cart.
-
-**Request**
-
-``` text
-mutation {
-  applyCouponToCart(input: {cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C", coupon_code: "test2019"}) {
-    cart {
-      applied_coupon {
-        code
-      }
-    }
-  }
-}
-```
-
-**Response**
-
-```json
-{
-  "data": {
-    "applyCouponToCart": {
-      "cart": {
-        "applied_coupon": {
-          "code": "test2019"
-        }
-      }
-    }
-  }
-}
-
-```
-
-### Remove coupon from cart
-
-Removes a coupon from the specified cart.
-
-#### Syntax
-
-`mutation: {removeCouponFromCart(input: RemoveCouponFromCartInput){ RemoveCouponFromCartOutput}}`
-
-#### Example usage
-
-The following example removes a coupon from the cart.
-
-**Request**
-
-``` text
-mutation {
-  removeCouponFromCart(input: {cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"}) {
-    cart {
-      applied_coupon {
-        code
-      }
-    }
-  }
-}
-```
-
-**Response**
-
-```json
-{
-  "data": {
-    "removeCouponFromCart": {
-      "cart": {
-        "applied_coupon": {
-          "code": "test2019"
-        }
-      }
-    }
-  }
-}
-```
-
-### Adding products to cart
+### Adding simple products to a cart
 {:.no_toc}
 
 Adds simple items to a specific cart.
@@ -433,7 +333,7 @@ mutation {
 }
 ```
 
-### Set the shipping address on cart
+### Set the shipping address on a cart
 
 Use the `setShippingAddressesOnCart` mutation to set a new shipping address for a specific cart.
 
@@ -491,6 +391,105 @@ mutation {
 {
   "data": {
     "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
+  }
+}
+```
+
+### Add and remove coupons from a cart
+{:.no_toc}
+
+You can use mutations to add or remove coupons from a specified cart.
+
+### Coupon attributes
+{:.no_toc}
+The add and remove coupon from cart objects can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`cart_id` | String | The unique ID that identifies the customer's cart
+`coupon_code` | String | The coupon code
+
+### Apply coupon to cart
+
+Adds a coupon code to a cart.
+
+#### Syntax
+
+`mutation: {applyCouponToCart(input: ApplyCouponToCartInput) {ApplyCouponToCartOutput}}`
+
+#### Example usage
+
+The following call adds a coupon code called `test2019` to a cart.
+
+**Request**
+
+``` text
+mutation {
+  applyCouponToCart(input: {cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C", coupon_code: "test2019"}) {
+    cart {
+      applied_coupon {
+        code
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "applyCouponToCart": {
+      "cart": {
+        "applied_coupon": {
+          "code": "test2019"
+        }
+      }
+    }
+  }
+}
+
+```
+
+### Remove coupon from cart
+
+Removes a coupon from the specified cart.
+
+#### Syntax
+
+`mutation: {removeCouponFromCart(input: RemoveCouponFromCartInput){ RemoveCouponFromCartOutput}}`
+
+#### Example usage
+
+The following example removes a coupon from the cart.
+
+**Request**
+
+``` text
+mutation {
+  removeCouponFromCart(input: {cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"}) {
+    cart {
+      applied_coupon {
+        code
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "removeCouponFromCart": {
+      "cart": {
+        "applied_coupon": {
+          "code": "test2019"
+        }
+      }
+    }
   }
 }
 ```
