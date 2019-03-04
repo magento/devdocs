@@ -20,7 +20,7 @@ The `search` element is optional, but it can be used with or without filters. Ea
 
 The `filter` element defines which search criteria to use to find the desired results. As with a REST call, each filter defines the field to be searched, the condition type, and the search value.
 
-Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two `and` clauses, such as (A AND B) OR (X AND Y).
+Search filters are logically ANDed unless an `or` statement is specified. The search query can contain unlimited number of nested `or` clauses. However, you cannot perform a logical `or` across two AND clauses, such as (A AND B) OR (X AND Y).
 
 ### Search fields
 
@@ -53,11 +53,11 @@ Magento GraphQL clause | SQL equivalent
 
 `to` and `from` must always be used together. These condition types can be used in the same search term. For example, `qty: {from: "10" to: "20"}`.
 
-`gt` and `lt` can be used in the same search term. For example, `qty: {lt: "10" gt: "20"}`.
+`gt` and `lt` can be used in the same search term. For example, `qty: {gt: "10" lt: "20"}`.
 
 ## Specifying pagination
 
-Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP requests.
+Magento's GraphQL implementation of pagination uses offsets so that it operates in the same manner as REST and SOAP API requests.
 
 The `pageSize` attribute specifies the maximum number of items to return. If no value is specified, 20 items are returned. 
 
@@ -71,7 +71,7 @@ The `sort` object allows you to specify which field or fields to use for sorting
 
 In the following example, Magento returns a list of items that are sorted in order of decreasing price. If two or more items have the same price, the items are listed in alphabetic order by name.
 
-```
+``` text
 sort: {
   price: DESC
   name:  ASC
@@ -86,32 +86,31 @@ The following sections provide examples of each type of search. These examples u
 
 The following search returns items that contain the word `yoga` or `pants`. The Catalog Search index contains search terms taken from the product `name`, `description`, `short_description` and related attributes.
 
-``` json
+``` text
 {
-    products(
-      search: "Yoga pants"
-      pageSize: 10
-    )
-    {
-        total_count
-        items {
-          name
-          sku
-          price {
-            regularPrice {
-              amount {
-                value
-                currency
-              }
-            }
+  products(
+    search: "Yoga pants"
+    pageSize: 10
+  )
+  {
+    total_count
+    items {
+      name
+      sku
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
           }
         }
-        page_info {
-          page_size
-          current_page
-          total_pages
-        }
       }
+    }
+    page_info {
+      page_size
+      current_page
+    }
+  }
 }
 ```
 
@@ -127,13 +126,17 @@ The following sample query returns a list of products that meets the following c
 
 The response for each item includes the `name`, `sku`, `price` and `description` only. Up to 25 results are returned at a time, in decreasing order of price.
 
-``` json
+``` text
 {
   products(
     search: "Messenger"
     filter: {
-      sku: {like: "24-MB%"}
-      price: {lt: "50"}
+      sku: {
+        like: "24-MB%"
+      }
+      price: {
+        lt: "50"
+      }
     }
     pageSize: 25
     sort: {
@@ -141,22 +144,19 @@ The response for each item includes the `name`, `sku`, `price` and `description`
     }
   )
   {
-    items
-      {
-        name
-        sku
-        description {
-          html
-        }
-        price {
-          regularPrice {
-            amount {
-              value
-              currency
-            }
+    items {
+      name
+      sku
+      description
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
           }
         }
       }
+    }
     total_count
     page_info {
       page_size
@@ -216,35 +216,37 @@ The query returns the following:
 
 The following search finds all products that were added after the specified time (midnight, November 1, 2017).
 
-``` json
+``` text
 {
   products(
     filter: {
-        created_at: {gt: "2017-11-01 00:00:00"}
+      created_at: {
+        gt: "2017-11-01 00:00:00"
       }
-      pageSize: 25
-      sort: {
-        price: DESC
-      }
-    )
-    {
-      total_count
-      items {
-        name
-        sku
-        price {
-          regularPrice {
-            amount {
-              value
-              currency
-            }
+    }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
+    total_count
+    items {
+      name
+      sku
+      price {
+        regularPrice {
+          amount {
+            value
+            currency
           }
         }
       }
-      page_info {
-        page_size
-        current_page
-      }
+    }
+    page_info {
+      page_size
+      current_page
+    }
   }
 }
 ```
@@ -253,17 +255,21 @@ The following search finds all products that were added after the specified time
 
 The following example searches for all products whose `sku` begins with the string `24-MB` or whose `name` ends with `Bag`.
 
-``` json
+``` text
 {
   products(
     filter: {
       or: {
-        sku: {like: "24-MB%"}
-        name: {like: "%Bag"}
+        sku: {
+          like: "24-MB%"
+        }
+        name: {
+          like: "%Bag"
+        }
       }
     }
     pageSize: 25
-      sort: {
+    sort: {
       price: DESC
     }
   )
@@ -295,39 +301,45 @@ The query returns 8 items.
 
 This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the product is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
-``` json
+``` text
 {
-    products(
-      filter: {
-          price: {from: "40" to: "49.99"}
-          name: {like: "%Orange"}
-            or: {
-              sku: {like: "WSH%29%"}
-       	 }
-        }
-        pageSize: 25
-          sort: {
-          price: DESC
-        }
-    )
-    {
-        total_count
-        items {
-          name
-          sku
-          price {
-            regularPrice {
-              amount {
-                value
-              }
-            }
-          }
-        }
-        page_info {
-          page_size
-          current_page
+  products(
+    filter: {
+      price: {
+        from: "40" to: "49.99"
+      }
+      name: {
+        like: "%Orange"
+      }
+      or: {
+        sku: {
+          like: "WSH%29%"
         }
       }
+    }
+    pageSize: 25
+    sort: {
+      price: DESC
+    }
+  )
+  {
+    total_count
+    items {
+      name
+      sku
+      price {
+        regularPrice {
+          amount {
+            value
+          }
+        }
+      }
+    }
+    page_info {
+      page_size
+      current_page
+    }
+  }
 }
 ```
 

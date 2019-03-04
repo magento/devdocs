@@ -29,3 +29,16 @@ stage:
        - "index.php"
        - "index.php/customer/account/create"
 ```
+
+You must configure the post-deploy hook. See [hooks section of the `.magento.app.yaml` file]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks).
+
+Also, you can configure the cache to preload pages for [multiple domains]({{ page.baseurl }}/cloud/project/project-multi-sites.html).
+
+```yaml
+stage:
+  post-deploy:
+    WARM_UP_PAGES:
+      - 'test'
+      - 'http://example1.com/test'
+      - 'http://example2.com/test'
+```

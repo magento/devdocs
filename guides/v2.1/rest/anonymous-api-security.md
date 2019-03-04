@@ -53,7 +53,7 @@ include note.html
 type='warning'
 content='Preventing anonymous access to these endpoints could cause third-party integrations to fail. If a third-party integration calls any of these endpoints, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.
 
-To disable this feature, log in to the Admin panel and navigate to **Stores** > **Configuration** > **Services** > **Magento Web API** > **Web API Security**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.'
+To disable this feature, log in to the Admin panel and navigate to **Stores** > **Settings** > **Configuration** > **Services** > **Magento Web API** > **Web API Security**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.'
 %}
 
 If the list of endpoints that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension's `di.xml` file to update or replace the functionality defined in the WebapiSecurity module.
@@ -70,6 +70,7 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | CE | Customer | /V1/customers | POST |
 | CE | Customer | /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken | GET |
 | CE | Customer | /V1/customers/password | PUT |
+| CE | Customer | /V1/customers/resetPassword | POST |
 | CE | Customer | /V1/customers/isEmailAvailable | POST |
 | CE | Directory | /V1/directory/currency | GET |
 | CE | Directory | /V1/directory/countries | GET |
@@ -82,7 +83,6 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | CE | Integration | /V1/integration/customer/token | POST |
 | CE | Quote | /V1/guest-carts/:cartId | GET |
 | CE | Quote | /V1/guest-carts | POST |
-| CE | Quote | /V1/guest-carts/:cartId | PUT |
 | CE | Quote | /V1/guest-carts/:cartId/order | PUT |
 | CE | Quote | /V1/guest-carts/:cartId/shipping-methods | GET |
 | CE | Quote | /V1/guest-carts/:cartId/estimate-shipping-methods | POST |

@@ -1,16 +1,14 @@
 # The hook runs html-proofer with options defined in the
-#  _checks/html-check-config.yml file
+#  _config.checks.yml file
 #
 # For more details about html-proofer, refer to: https://github.com/gjtorikian/html-proofer
 # For more details about Jekyll hooks, refer to: https://jekyllrb.com/docs/plugins/hooks/
 #
 require 'html-proofer'
 require 'yaml'
+require_relative '../rakelib/double-slash-check.rb'
 
 Jekyll::Hooks.register :site, :post_write do |site|
-  # Do nothing unless serving mode is enabled
-  next unless site.config['serving']
-
   # Do nothing unless 'site.check_links' is set
   next unless site.config['check_links']
 

@@ -27,7 +27,7 @@ The XML format for the `actionGroups` declaration is:
 <?xml version="1.0" encoding="UTF-8"?>
 
 <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+        xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
     <actionGroup name="">
         <arguments>
             <argument name=""/>
@@ -57,7 +57,7 @@ To create the `<actionGroup>` declaration:
     <?xml version="1.0" encoding="UTF-8"?>
 
     <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+            xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
         <actionGroup name="LoginToAdminActionGroup">
     ...
         </actionGroup>
@@ -88,7 +88,7 @@ To create the `<actionGroup>` declaration:
     <?xml version="1.0" encoding="UTF-8"?>
 
     <actionGroups xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/testSchema.xsd">
+            xsi:noNamespaceSchemaLocation="urn:magento:mftf:Test/etc/actionGroupSchema.xsd">
         <actionGroup name="LoginToAdminActionGroup">
             <arguments>
                 <argument name="adminUser" defaultValue="_defaultAdmin"/>
@@ -179,6 +179,60 @@ MFTF resolves `{{myCustomEntity.field1}}` the same as it would in a `selector` o
 </actionGroup>
 ```
 
+## Optimizing action group structures
+
+Structuring properly an action group increases code reusability and readability.
+
+Starting with an action group such as:
+
+```xml
+<actionGroup name="CreateCategory">
+    <arguments>
+        <argument name="categoryEntity" defaultValue="_defaultCategory"/>
+    </arguments>
+    <seeInCurrentUrl url="{{AdminCategoryPage.url}}" stepKey="seeOnCategoryPage"/>
+    <click selector="{{AdminCategorySidebarActionSection.AddSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
+    <see selector="{{AdminHeaderSection.pageTitle}}" userInput="New Category" stepKey="seeCategoryPageTitle"/>
+    <fillField selector="{{AdminCategoryBasicFieldSection.CategoryNameInput}}" userInput="{{categoryEntity.name}}" stepKey="enterCategoryName"/>
+    <click selector="{{AdminCategorySEOSection.SectionHeader}}" stepKey="openSEO"/>
+    <fillField selector="{{AdminCategorySEOSection.UrlKeyInput}}" userInput="{{categoryEntity.name_lwr}}" stepKey="enterURLKey"/>
+    <click selector="{{AdminCategoryMainActionsSection.SaveButton}}" stepKey="saveCategory"/>
+    <seeElement selector="{{AdminCategoryMessagesSection.SuccessMessage}}" stepKey="assertSuccess"/>
+    <seeInTitle userInput="{{categoryEntity.name}}" stepKey="seeNewCategoryPageTitle"/>
+    <seeElement selector="{{AdminCategorySidebarTreeSection.categoryInTree(categoryEntity.name)}}" stepKey="seeCategoryInTree"/>
+</actionGroup>
+```
+
+{: .no-copy}
+
+It can be reworked into more manageable pieces, as below. These smaller steps are easier to read, update, and reuse.
+
+```xml
+<actionGroup name="GoToCategoryGridAndAddNewCategory">
+    <seeInCurrentUrl url="{{AdminCategoryPage.url}}" stepKey="seeOnCategoryPage"/>
+    <click selector="{{AdminCategorySidebarActionSection.AddSubcategoryButton}}" stepKey="clickOnAddSubCategory"/>
+    <see selector="{{AdminHeaderSection.pageTitle}}" userInput="New Category" stepKey="seeCategoryPageTitle"/>
+</actionGroup>
+
+<actionGroup name="FillInBasicCategoryFields">
+    <arguments>
+        <argument name="categoryEntity" defaultValue="_defaultCategory"/>
+    </arguments>
+    <fillField selector="{{AdminCategoryBasicFieldSection.CategoryNameInput}}" userInput="{{categoryEntity.name}}" stepKey="enterCategoryName"/>
+    <click selector="{{AdminCategorySEOSection.SectionHeader}}" stepKey="openSEO"/>
+    <fillField selector="{{AdminCategorySEOSection.UrlKeyInput}}" userInput="{{categoryEntity.name_lwr}}" stepKey="enterURLKey"/>
+</actionGroup>
+
+<actionGroup name="SaveAndVerifyCategoryCreation">
+    <click selector="{{AdminCategoryMainActionsSection.SaveButton}}" stepKey="saveCategory"/>
+    <seeElement selector="{{AdminCategoryMessagesSection.SuccessMessage}}" stepKey="assertSuccess"/>
+    <seeInTitle userInput="{{categoryEntity.name}}" stepKey="seeNewCategoryPageTitle"/>
+    <seeElement selector="{{AdminCategorySidebarTreeSection.categoryInTree(categoryEntity.name)}}" stepKey="seeCategoryInTree"/>
+</actionGroup>
+```
+
+{: .no-copy}
+
 ## Elements reference
 
 ### actionGroups {#actiongroups-tag}
@@ -188,7 +242,7 @@ The `<actionGroups>` element is a root element that contains XML configuration a
 Attribute|Value|Description
 ---|---|---
 `xmlns:xsi`|`"http://www.w3.org/2001/XMLSchema-instance"`|Tells the XML parser to validate this document against a schema.
-`xsi:noNamespaceSchemaLocation`|`"../../../../../../vendor/magento/magento2-functional-testing-framework/src/Magento/FunctionalTestingFramework/Test/etc/testSchema.xsd"`|Relative path to the corresponding schema.
+`xsi:noNamespaceSchemaLocation`|`"urn:magento:mftf:Test/etc/actionGroupSchema.xsd"`|Relative path to the corresponding schema.
 
 It may contain one or more `<actionGroup>`.
 

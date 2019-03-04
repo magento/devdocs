@@ -7,7 +7,7 @@ The `products` endpoint allows you to search for catalog items.
 
 ## Query structure
 
-``` json
+``` text
 products(
     search: String
     filter: ProductFilterInput
@@ -32,12 +32,16 @@ Attribute |  Description
 
 The `ProductFilterInput` object defines the filters to be used in the search. A filter contains at least one attribute, a comparison operator, and the value that is being searched for. The following example filter searches for products that has a `sku` that contains the string `24-MB` with a `price` that's less than `50`.
 
-{% highlight json %}
+``` text
 filter: {
-    sku: {like: "24-MB%"}
-    price: {lt: "50"}
+  sku: {
+    like: "24-MB%"
+  }
+  price: {
+    lt: "50"
+  }
 }
-{% endhighlight %}
+```
 
 See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information about the operators.
 
@@ -374,34 +378,34 @@ You can review several general interest `products` queries at [Searches and pagi
 
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-{% highlight json %}
+``` text
 {
-    products (
-        filter: {
-            sku: {
-                like:"24-WB%"
-            }
-        }
-        pageSize: 20
-        currentPage: 1
-        sort: {
-            name: DESC
-        }
-    )
-    {
-        items {
-            sku
-        }
-        filters {
-            name
-            filter_items_count
-            request_var
-            filter_items {
-                label
-                value_string
-                items_count
-            }
-        }
+  products (
+    filter: {
+      sku: {
+        like:"24-WB%"
+      }
     }
+    pageSize: 20
+    currentPage: 1
+    sort: {
+      name: DESC
+    }
+  )
+  {
+    items {
+      sku
+    }
+    filters {
+      name
+      filter_items_count
+      request_var
+      filter_items {
+        label
+        value_string
+        items_count
+      }
+    }
+  }
 }
-{% endhighlight %}
+```

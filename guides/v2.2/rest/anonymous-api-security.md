@@ -51,7 +51,7 @@ include note.html
 type='warning'
 content='Preventing anonymous access to these endpoints could cause third-party integrations to fail. If a third-party integration calls any of these endpoints, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.
 
-To disable this feature, log in to the Admin panel and navigate to **Stores** > **Configuration** > **Services** > **Magento Web API** > **Web API Security**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.'
+To disable this feature, log in to the Admin panel and navigate to **Stores** > **Settings** > **Configuration** > **Services** > **Magento Web API** > **Web API Security**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.'
 %}
 
 If the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension's `di.xml` file to update or replace the functionality defined in the WebapiSecurity module.
@@ -69,6 +69,7 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Open Source | Customer | /V1/customers | POST |
 | Open Source | Customer | /V1/customers/:customerId/password/resetLinkToken/:resetPasswordLinkToken | GET |
 | Open Source | Customer | /V1/customers/password | PUT |
+| Open Source | Customer | /V1/customers/resetPassword | POST |
 | Open Source | Customer | /V1/customers/isEmailAvailable | POST |
 | Open Source | Directory | /V1/directory/countries | GET |
 | Open Source | Directory | /V1/directory/countries/:countryId | GET |
@@ -87,7 +88,6 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Open Source | Quote | /V1/guest-carts/:cartId/items/:itemId | DELETE |
 | Open Source | Quote | /V1/guest-carts | POST |
 | Open Source | Quote | /V1/guest-carts/:cartId/order | PUT |
-| Open Source | Quote | /V1/guest-carts/:cartId | PUT |
 | Open Source | Quote | /V1/guest-carts/:cartId | GET |
 | Open Source | Quote | /V1/guest-carts/:cartId/collect-totals | PUT |
 | Open Source | Quote | /V1/guest-carts/:cartId/totals | GET |
@@ -104,5 +104,5 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Commerce | GiftCardAccount | /V1/carts/guest-carts/:cartId/giftCards | POST |
 | Commerce | GiftCardAccount | /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode | GET |
 | Commerce | GiftRegistry | /V1/guest-giftregistry/:cartId/estimate-shipping-methods | POST |
-| Commerce | WorldPay | /V1/worldpay-guest-carts/{cartId}/payment-information | POST
+| Commerce | WorldPay | /V1/worldpay-guest-carts/:cartId/payment-information | POST
 {:style="table-layout:auto;"}
