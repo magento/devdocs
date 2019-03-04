@@ -90,7 +90,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
 ### Required system dependencies
 
-Magento uses system tools for some of its operations. These applications should be installed:
+Magento requires the following system tools for some of its operations:
 
 * [bash][]
 * [gzip][]
