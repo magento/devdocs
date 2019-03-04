@@ -117,7 +117,7 @@ content="GraphQL automatically filters out a product attribute if ALL of the fol
 
 The system returns a `Products` object containing the following information:
 
-``` json
+``` text
 items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
