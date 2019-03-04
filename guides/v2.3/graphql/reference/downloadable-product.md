@@ -3,7 +3,7 @@ group: graphql
 title: DownloadableProduct endpoint
 ---
 
-The `DownloadableProduct` endpoint defines which downloadable product-specific attributes are returned when performing a `products` search. You also can return a list of purchased downloadable products for the logged-in customer.
+The `DownloadableProduct` endpoint defines which downloadable product-specific attributes are returned when performing a `products` search. You also can return a list of purchased downloadable products for the [logged-in customer](#customerDownloadProduct).
 
 ## Downloadable product
 The `DownloadableProduct` object contains the following attributes:
@@ -157,11 +157,11 @@ The following query returns information about downloadable product `240-LV04`, w
 }
 ```
 
-## Customer Downloadable Product
+## Customer Downloadable Product {#customerDownloadProduct}
 Use the `CustomerDownloadableProduct` query to retrieve the list of purchased downloadable products for the logged-in customer.
 
 ### Syntax
-`customerDownloadableProducts: CustomerDownloadableProducts`
+`{customerDownloadableProducts: {CustomerDownloadableProducts}}`
 
 ### Customer downloadable products object
 The `CustomerDownloadableProducts` object contains the following attribute.
