@@ -3,20 +3,22 @@ group: graphql
 title: DownloadableProduct endpoint
 ---
 
-The `DownloadableProduct` endpoint defines which downloadable product-specific attributes are returned when performing a `products` search.
+The `DownloadableProduct` endpoint defines which downloadable product-specific attributes are returned when performing a `products` search. You also can return a list of purchased downloadable products for the logged-in customer.
 
-## DownloadableProduct object
+## Downloadable product
+The `DownloadableProduct` object contains the following attributes:
 
-Field | Type | Description
+Attributes | Type | Description
 --- | --- | ---
 `downloadable_product_links` | `DownloadableProductLinks` | An array containing information about the links for this downloadable product
 `downloadable_product_samples` | `DownloadableProductSamples` | An array containing information about samples of this downloadable product
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 
-## DownloadableProductSamples object
+## Downloadable product samples
+The `DownloadableProductSamples` object contains the following attributes:
 
-Field | Type | Description
+Attributes | Type | Description
 --- | --- | ---
 `id` | Int | The unique ID for the downloadable product sample
 `sample_file` | String | The relative path to the downloadable sample
@@ -25,9 +27,10 @@ Field | Type | Description
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the sample
 
-## DownloadableProductLinks object
+## Downloadable productLinks
+The `DownloadableProductLinks` object contains the following attributes:
 
-Field | Type | Description
+Attributes | Type | Description
 --- | --- | ---
 `id` | Int | The unique ID for the link to the downloadable product
 `is_shareable` | Boolean | Indicates whether the link is shareable
@@ -40,9 +43,11 @@ Field | Type | Description
 `sort_order` | Int | A number indicating the sort order
 `title` | String | The display name of the link
 
-## Sample Query
+## Example usage
 
 The following query returns information about downloadable product `240-LV04`, which is defined in the sample data.
+
+**Request**
 
 ```text
 {
@@ -89,4 +94,135 @@ The following query returns information about downloadable product `240-LV04`, w
        }
    }
 }
+```
+**Response**
+
+```json
+{
+  "data": {
+    "products": {
+      "items": [
+        {
+          "id": 47,
+          "name": "Beginner's Yoga",
+          "sku": "240-LV04",
+          "type_id": "downloadable",
+          "price": {
+            "regularPrice": {
+              "amount": {
+                "value": 6,
+                "currency": "USD"
+              }
+            }
+          },
+          "links_title": "Downloads",
+          "links_purchased_separately": 0,
+          "downloadable_product_links": [
+            {
+              "id": 1,
+              "sample_url": null,
+              "sample_type": null,
+              "is_shareable": false,
+              "number_of_downloads": 0,
+              "sort_order": 1,
+              "title": "Beginner's Yoga",
+              "link_type": "FILE",
+              "price": 6
+            }
+          ],
+          "downloadable_product_samples": [
+            {
+              "title": "Trailer #1",
+              "sort_order": 1,
+              "sample_type": "FILE",
+              "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+            },
+            {
+              "title": "Trailer #2",
+              "sort_order": 1,
+              "sample_type": "FILE",
+              "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+            },
+            {
+              "title": "Trailer #3",
+              "sort_order": 1,
+              "sample_type": "FILE",
+              "sample_file": "/l/u/luma_background_-_model_against_fence_4_sec_.mp4"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
+```
+
+## Customer Downloadable Product
+Use the `CustomerDownloadableProduct` query to retrieve the list of purchased downloadable products for the logged-in customer.
+
+### Syntax
+`customerDownloadableProducts: CustomerDownloadableProducts`
+
+### Customer downloadable products object
+The `CustomerDownloadableProducts` object contains the following attribute.
+
+Attributes | Type | Description
+--- | --- | ---
+`items` | [CustomerDownloadableProduct](#custDownloadProduct) | List of purchased downloadable items
+
+### Customer downloadable product object {#custDownloadProduct}
+The `CustomerDownloadableProduct` object contains the following attributes:
+
+Attributes | Type | Description
+--- | --- | ---
+`date` | String | The date and time the purchase was made
+`download_url` | String | The fully qualified URL to the download file
+`order_increment_id` | String | The purchase order ID
+`remaining_downloads` | String | Determines the number of times the customer can download the product
+`status` | String | Determines the stage in the order workflow when the download becomes available. Options are `Pending` and `Invoiced`
+
+### Example usage
+The following example returns the list of purchased downloadable products for the logged-in customer.
+
+**Request**
+
+```text
+{
+  customerDownloadableProducts {
+    items {
+      date
+      download_url
+      order_increment_id
+      remaining_downloads
+      status
+    }
+  }
+}
+```
+
+**Response**
+```json
+{
+  "data": {
+    "customerDownloadableProducts": {
+      "items": [
+        {
+          "date": "2019-03-04 20:48:32",
+          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
+          "order_increment_id": "000000004",
+          "remaining_downloads": "Unlimited",
+          "status": "pending"
+        },
+        {
+          "date": "2019-03-04 20:48:32",
+          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
+          "order_increment_id": "000000004",
+          "remaining_downloads": "Unlimited",
+          "status": "pending"
+        }
+      ]
+    }
+  }
+}
+
 ```

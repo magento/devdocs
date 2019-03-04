@@ -3,24 +3,25 @@ group: graphql
 title: ConfigurableProduct endpoint
 ---
 
-The `ConfigurableProduct` endpoint defines queries and mutations for configurable products.
+The `ConfigurableProduct` endpoint defines a query and mutation for configurable products.
 
 ## Query
 The `products` query returns configurable product-specific information when you perform a `products` search.
 
 ### Syntax
 
-`products(filter: {sku: {eq: "WH01"}})`
-???ASK KEVIN???
+`products(filter: {sku: {eq: "$ConfigurableProductSkuName"}})`
 
-### ConfigurableProduct
+### Configurable product
+The `ConfigurableProduct` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
 `configurable_product_links` | SimpleProduct | An array of linked simple products
-`configurable_product_options` | ConfigurableProductOptions | An array of linked simple product items
+`configurable_product_options` | [ConfigurableProductOptions](#configProdOptions) | An array of linked simple product items
 
-### ConfigurableProductOptions
+### Configurable product options {#configProdOptions}
+The `ConfigurableProductOptions` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
@@ -31,9 +32,10 @@ Attribute | Type | Description
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
 `product_id` | Int | This is the same as a product's 'id' field
-`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product
+`values` | [ConfigurableProductOptionsValues](#configProdOptionsValues) | An array that defines the value_index codes assigned to the configurable product
 
-### ConfigurableProductOptionsValues
+### Configurable product options values {#configProdOptionsValues}
+The `ConfigurableProductOptionsValues` object contains the following attribute:
 
 Field | Type | Description
 --- | --- | ---
@@ -116,7 +118,7 @@ The following `products` query returns `ConfigurableProduct` information about t
 
 ```
 
-**{% collapsible Response %}**
+{% collapsible Response %}
 
 ``` json
 {
@@ -903,7 +905,7 @@ Attribute | Type | Description
 `cartItems` | [ConfigurableProductCartItemInput](#configProdCartItemInput) | An array of configurable items to add to the cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 
-### Configurable product cart item input{#configProdCartItemInput}
+### Configurable product cart item input {#configProdCartItemInput}
 The `ConfigurableProductCartItemInput` object contains the following attributes:
 
 Attribute | Type | Description
@@ -912,15 +914,15 @@ Attribute | Type | Description
 `data` | [CartItemDetailsInput](#cartItemDetailsInput) | An object that contains the quantity and SKU of the configurable product
 `variant_sku` | String | The SKU of the simple product
 
-### Customizable option input{#customOptionInput}
+### Customizable option input {#customOptionInput}
 The `CustomizableOptionInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int | The ID of the product
-`value` | String | ???
+`id` | Int | The ID of the customizable option
+`value` | String | The value of the customizable option. For example, if color was the customizable option, a possible value could be `black`
 
-### Cart item details input{#cartItemDetailsInput}
+### Cart item details input {#cartItemDetailsInput}
 The `CartItemDetailsInput` object contains the following attributes:
 
 Attribute | Type | Description
@@ -929,8 +931,8 @@ Attribute | Type | Description
 `sku` | String | The SKU of the configurable product
 
 
-#### Example usage
-The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html#createEmptyCart) by creating an empty cart.
+### Example usage
+The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote.html#createEmptyCart) by creating an empty cart.
 
 **Request**
 
