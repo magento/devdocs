@@ -19,6 +19,7 @@ The `EntityUrl` output object contains the `id`, `canonical_url`, and `type` att
 
 Attribute |  Data Type | Description
 --- | --- | ---
+
 `canonical_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
 `id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID.
 `type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
