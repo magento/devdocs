@@ -42,7 +42,7 @@ Continue returning the same results from the method if possible, so the old func
 If you need to remove the existing functionality and there is no alternative implementation, you MUST change the method code to
 
 ```php
-trigger_error('THE_REASON_FOR_CHANGE', E_USER_WARNING);
+trigger_error('THE_REASON_FOR_CHANGE', E_USER_ERROR);
 ```
 
 #### Introduction of a method to a class or interface
