@@ -126,7 +126,7 @@ The `<action>` instruction is deprecated. If the method implementation allows, u
 
 Calls public methods on the block API.
 
-**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.</p>
+**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
 
 
 Example:
