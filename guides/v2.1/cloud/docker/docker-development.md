@@ -33,22 +33,21 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
 
 The web container works with the [PHP-FPM](https://php-fpm.org) to serve PHP code, the **DB** image for the local database, and the **Varnish** image to send requests and cache the results.
 
-### CLI container
+### CLI containers
 
-The CLI container is based on a PHP-CLI image that provides `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations. The CLI container depends on the **DB** image for the local database and the **Redis** image.
+There are few CLI containers based on a PHP-CLI image that provides `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations.
 
 -  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
+-  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
 -  `cron`—extends the CLI container to run cron
 
     -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
     -  Cron only works with CLI container to run `./bin/magento cron:run` command
 
--  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
-
 As an example, to run the `{{site.data.var.ct}}` ideal-state command:
 
 ```bash
-docker-compose run cli ece-command wizard:ideal-state
+docker-compose run deploy ece-command wizard:ideal-state
 ...
  - Your application does not have the "post_deploy" hook enabled.
 The configured state is not ideal
@@ -61,7 +60,7 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 #### View cron log
 
 ```bash
-docker-compose run cli bash -c "cat /var/www/magento/var/log/magento.cron.log"
+docker-compose run deploy bash -c "cat /var/www/magento/var/log/magento.cron.log"
 ```
 
 ### Database container
@@ -78,3 +77,16 @@ Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.
 
 You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
 
+## Sendmail service
+
+You can send emails from your Docker environment when you enable `sendmail` in the `docker/global.php` configuration file:
+
+```terminal
+ENABLE_SENDMAIL=true
+```
+
+After you update a configuration file, you must convert the file to a Docker ENV file to include your updates the next time you launch your Docker environment:
+
+```bash
+./vendor/bin/ece-tools docker:config:convert
+```
