@@ -65,7 +65,7 @@ pages:
         - label: Other objects
           children:
 
-            - label: CMS endpoints
+            - label: CMS endpoint
               url: /graphql/reference/cms.html
               
             - label: CustomAttributeMetadata endpoint
@@ -83,7 +83,7 @@ pages:
             - label: Store endpoint
               url: /graphql/reference/store-config.html
 
-            - label: urlResolver endpoint
+            - label: UrlRewrite endpoint
               url: /graphql/reference/url-resolver.html
 
             - label: Wishlist endpoint
