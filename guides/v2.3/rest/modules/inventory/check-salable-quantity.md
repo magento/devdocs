@@ -29,7 +29,7 @@ Name | Description | Type
 --- | --- | ---
 `sku` | The SKU of the product | String
 `stock_id` | The ID of the stock the product is assigned to | Integer
-`requestedQty` | The requested quantity of products | Integer
+`requestedQty` | The requested quantity of products | Float
 `type` | The type of sales channel the stock is assigned to. For 2.3, this value must be `website`. | String
 `code` | The code of the sales channel (website) | String
 {:style="table-layout:auto;"}

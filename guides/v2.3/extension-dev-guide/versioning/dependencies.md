@@ -70,6 +70,13 @@ Use this table to set the appropriate version dependency on a module based on ho
 |                                                             | Add a plugin to the class                                                                               | MAJOR              |
 |                                                             | Configure class preference in `di.xml`                                                                  | MAJOR              |
 |                                                             | Configure constructor argument in `di.xml`                                                              | MAJOR              |
+|                                                             | Use class constant                                                                                      | MAJOR              |
+| ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
+| **PHP Class** (NOT marked with `@api`)                      | Inject in a constructor                                                                                 | PATCH              |
+|                                                             | Extend from an abstract class                                                                           | PATCH              |
+|                                                             | Configure class preference in `di.xml`                                                                  | PATCH              |
+|                                                             | Configure constructor argument in `di.xml`                                                              | PATCH              |
+|                                                             | Use class constant                                                                                      | PATCH              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **JavaScript Interface** (marked with `@api`)               | Inject in a constructor and/or call methods                                                             | MAJOR              |
 |                                                             | Implement the interface                                                                                 | MINOR              |

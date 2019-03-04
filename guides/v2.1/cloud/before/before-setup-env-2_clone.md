@@ -78,13 +78,13 @@ Some Git commands cannot complete an action in your {{site.data.var.ece}} projec
 
 We recommend changing the environment-level variables for the Magento Admin URL and administrator account. It is a best practice to configure these settings for security reasons prior to branching from the cloned `master` environment. All branches created from the `master` branch inherit the environment-level variables and their values.
 
--  **ADMIN_EMAIL**—An email address for the administrative user. This address is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails.
--  **ADMIN_USERNAME**—A username for the administrative user with the ability to create other users, including administrative users. This username defaults to the Project Owner email address. You can use the default value, or change it to a secure username.
--  **ADMIN_PASSWORD**—A password for the administrative user. When the project was created, the Project Owner received a default password in email.
+-  **ADMIN_EMAIL**—An email address for the administrative user. This address is used to send password reset notifications.
+-  **ADMIN_USERNAME**—A username for the administrative user with the ability to create other users, including administrative users. This username defaults to the License Owner email address. You can use the default value, or change it to a secure username.
+-  **ADMIN_PASSWORD**—A password for the administrative user. When the project was created, the License Owner received a default password in email.
 -  **ADMIN_URL**— The relative URL to access the Admin panel, such as `<domain>/admin`. For security reasons, we recommend you choose a value other than `admin` or `backend` or another term that is easy to guess.
 
 {:.bs-callout .bs-callout-info}
-Make note of any updated values so that you can use them to install Magento from the command line and to verify the installation.
+Make note of any updated values so that you can use them to install Magento from the command line and to verify the installation. The values for the `ADMIN_EMAIL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` variables are used only for installation.
 
 #### To view existing variables: {#variablelist}
 
@@ -142,7 +142,7 @@ Alternatively, you can add or update variables in the Project Web Interface.
 
 1.  Click **Add Variable**.
 
-1.  Enter the **Name** and **Value** for the variable. For example, enter `ADMIN_EMAIL` and your Project Owner email address or another accessible email for resetting the password for the default admin account.
+1.  Enter the **Name** and **Value** for the variable. For example, enter `ADMIN_EMAIL` and your License Owner email address or another accessible email for resetting the password for the default admin account.
 
 	![Project variable]({{ site.baseurl }}/common/images/cloud_project_variable.png)
 

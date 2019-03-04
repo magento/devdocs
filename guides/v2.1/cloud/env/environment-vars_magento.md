@@ -8,16 +8,27 @@ functional_areas:
 
 Users that have administrative access to the {{site.data.var.ece}} project can use the
 following project environment variables to override the configuration settings
-for the administrative user account and Admin panel. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
+for the administrative user account to access the Admin UI. See [Change the Magento ADMIN variables]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#change-the-magento-admin-variables).
 
+## Admin credentials
 
-| Variable        | Description                                                                                                                                                                                                                                                                                            |
+Use the ADMIN variables in the following table to override credentials for the Magento Admin user during installation. 
+
+If you want to change the values after installation, connect to your environment using ssh and use the the Magento CLI [`admin:user` command]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html) to create or edit the Magento Admin user credentials.
+
+| Variable        | Default | Description                                                                                                                                                                                                                                                                           |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ADMIN_FIRSTNAME | First name of the administrative user.                                                                                                                                                                                                                                                                 |
-| ADMIN_LASTNAME  | Last name of the administrative user.                                                                                                                                                                                                                                                                  |
-| ADMIN_EMAIL     | Email address for the administrative user. This value is required for upgrading and patching {{site.data.var.ece}} and is used to send password reset emails.                                                                                                                                          |
-| ADMIN_LOCALE    | Default—`en_US` Specifies the default locale used by the Magento Admin.                                                                                                                                                                                                                                |
-| ADMIN_PASSWORD  | Password for the administrative user. When the project is created a random password is generated and an email is sent to the Project Owner. During project creation, the Project Owner should have already changed the password. You might need to contact the Project Owner for the updated password. |
-| ADMIN_URL       | The relative URL to access the Admin panel. For example: `/admin`. For security reasons, we recommend you choose a value other than `admin`,`backend`, or another term that is easy to guess.                                                                                                          |
-| ADMIN_USERNAME  | Username for the administrative user. The administrative user can create other users, including other administrative users. The default hardcoded username is the Project Owner email address. You can use this value, or change it to another secure username.                                        |
+| `ADMIN_USERNAME`| License Owner email address | A username for the administrative user with the ability to create other users, including administrative users.|
+|`ADMIN_EMAIL`| | Email address for the administrative user. This address is used to send password reset notifications.|
+|`ADMIN_PASSWORD`| | Password for the administrative user. When the project is created a random password is generated and an email is sent to the {{ site.data.var.ece }} License Owner. During project creation, the License Owner should have already changed the password. You might need to contact the License Owner for the updated password.|
+| `ADMIN_LOCALE`    | `en_US` | The default locale used by the Magento Admin.
 {:style="table-layout:auto;"}
+
+
+## Admin URL
+
+Use the following environment variable to secure access to your Magento Admin UI. If specified, this value overrides the default URL during installation.
+
+`ADMIN_URL`—The relative URL to access the Magento Admin UI. The default URL is `/admin`. For security reasons, Magento recommends that you change the default to a unique, custom Admin URL that is not easy to guess.
+
+If you need to change the Admin URL after installation, connect to your environment using ssh and use the Magento CLI [`magento setup:config`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html) command to change the URL.
