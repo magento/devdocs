@@ -4,6 +4,7 @@ namespace :multirepo do
     # sh './scripts/docs-from-code.sh mftf git@github.com:magento/magento2-functional-testing-framework.git master'
     # sh './scripts/docs-from-code.sh page-builder git@github.com:magento/magento2-page-builder.git master'
     sh './scripts/docs-from-code.sh mbi git@github.com:magento/devdocs-mbi.git master'
+    sh './scripts/docs-from-code.sh guides/m1x git@github.com:magento/devdocs-m1.git master false'
   end
 
   desc 'Add multirepo docs providing arguments "dir", "repo", and "branch". Example: rake multirepo:add dir=mftf repo=git@github.com:magento-devdocs/magento2-functional-testing-framework.git branch=docs-in-code'
