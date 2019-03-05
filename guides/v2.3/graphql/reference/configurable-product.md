@@ -3,14 +3,21 @@ group: graphql
 title: ConfigurableProduct endpoint
 ---
 
-The `ConfigurableProduct` endpoint defines a query and mutation for configurable products.
+The `ConfigurableProduct` endpoint defines a mutation for adding configurable products to a cart. It also extends the `ProductInterface` so that attributes that are specific to configurable products can be queried in a `products` search.
 
 ## Query
 The `products` query returns configurable product-specific information when you perform a `products` search.
 
 ### Syntax
+Add the following inline fragment to the output section of your products query to return information specific to configurable products:
 
-`products(filter: {sku: {eq: "$ConfigurableProductSkuName"}})`
+```text
+... on ConfigurableProduct {
+  configurable_options {
+   <attributes>
+  }
+}
+```
 
 ### Configurable product
 The `ConfigurableProduct` object contains the following attributes:
@@ -18,7 +25,7 @@ The `ConfigurableProduct` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `configurable_product_links` | SimpleProduct | An array of linked simple products
-`configurable_product_options` | [ConfigurableProductOptions](#configProdOptions) | An array of linked simple product items
+`configurable_product_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
 
 ### Configurable product options {#configProdOptions}
 The `ConfigurableProductOptions` object contains the following attributes:
@@ -32,7 +39,7 @@ Attribute | Type | Description
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
 `product_id` | Int | This is the same as a product's 'id' field
-`values` | [ConfigurableProductOptionsValues](#configProdOptionsValues) | An array that defines the value_index codes assigned to the configurable product
+`values` | [[ConfigurableProductOptionsValues]](#configProdOptionsValues) | An array that defines the value_index codes assigned to the configurable product
 
 ### Configurable product options values {#configProdOptionsValues}
 The `ConfigurableProductOptionsValues` object contains the following attribute:
@@ -902,7 +909,7 @@ The `AddConfigurableProductsToCartInput` object contains the following attribute
 
 Attribute | Type | Description
 --- | --- | ---
-`cartItems` | [ConfigurableProductCartItemInput](#configProdCartItemInput) | An array of configurable items to add to the cart
+`cartItems` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 
 ### Configurable product cart item input {#configProdCartItemInput}

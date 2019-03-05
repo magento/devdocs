@@ -3,15 +3,26 @@ group: graphql
 title: DownloadableProduct endpoint
 ---
 
-The `DownloadableProduct` endpoint defines which downloadable product-specific attributes are returned when performing a `products` search. You also can return a list of purchased downloadable products for the [logged-in customer](#customerDownloadProduct).
+The `DownloadableProduct` endpoint defines a query that returns a list of purchased downloadable products for the [logged-in customer](#customerDownloadProduct). It also extends the `ProductInterface` so that attributes that are specific to downloadable products can be queried in a `products` search.
+
+### Syntax
+Add the following inline fragment to the output section of your products query to return information specific to downloadable products:
+
+```text
+... on DownloadableProduct {
+  items {
+   <attributes>
+  }
+}
+```
 
 ## Downloadable product
 The `DownloadableProduct` object contains the following attributes:
 
 Attributes | Type | Description
 --- | --- | ---
-`downloadable_product_links` | `DownloadableProductLinks` | An array containing information about the links for this downloadable product
-`downloadable_product_samples` | `DownloadableProductSamples` | An array containing information about samples of this downloadable product
+`downloadable_product_links` | [`DownloadableProductLinks`] | An array containing information about the links for this downloadable product
+`downloadable_product_samples` | [`DownloadableProductSamples`] | An array containing information about samples of this downloadable product
 `links_purchased_separately` | Int | A value of 1 indicates that each link in the array must be purchased separately
 `links_title` | String | The heading above the list of downloadable products
 
@@ -168,7 +179,7 @@ The `CustomerDownloadableProducts` object contains the following attribute.
 
 Attributes | Type | Description
 --- | --- | ---
-`items` | [CustomerDownloadableProduct](#custDownloadProduct) | List of purchased downloadable items
+`items` | [[CustomerDownloadableProduct]](#custDownloadProduct) | List of purchased downloadable items
 
 ### Customer downloadable product object {#custDownloadProduct}
 The `CustomerDownloadableProduct` object contains the following attributes:
