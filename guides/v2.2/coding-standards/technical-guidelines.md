@@ -455,6 +455,8 @@ class View extends Template
 
 4.4. Plugins MUST be stateless.
 
+4.5. Plugins SHOULD NOT change a state of an intercepted object.
+
 ## 5. Exceptions
 
 5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:
@@ -611,6 +613,12 @@ class View extends Template
 6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in the `global` area of configuration.
 
 6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.
+
+6.4.4.14. A service contract SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
+
+6.4.4.15. A service contract MUST NOT depend on layer that invokes it.
+          Example, a service that manages products MUST NOT invoke component that manages Admin notification messages.
+
 
 ## 7. Configuration
 
@@ -780,6 +788,8 @@ class SampleEventObserverThatModifiesInputs
 
 {:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
+
+14.3. Events SHOULD NOT change a state of observable objects.
 
 ## 15. Security
 
