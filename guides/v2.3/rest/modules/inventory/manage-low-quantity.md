@@ -16,8 +16,8 @@ The REST low-quantity notification endpoints manage the values that merchants se
 **Service names**
 
 ```
-inventoryLowQuantityNotificationApiGetSourceItemConfigurationSaveV1
 inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
+inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
 inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
 ```
 
@@ -34,7 +34,7 @@ POST /V1/inventory/low-quantity-notifications-delete
 Name | Description | Type | Requirements
 --- | --- | --- | ---
 `source_code` | The product's assigned source code  | String | Required to create or delete a threshold
-`notify_stock_qty` | The threshold at which Magento notifies the merchant that the salable quantity of a product is low. | Number | Required to create a threshold
+`notify_stock_qty` | The threshold at which Magento notifies the merchant that the salable quantity of a product is low. | Float | Required to create a threshold
 `sku` | The SKU of the affected product   | String | Required for to create or delete a threshold
 
 

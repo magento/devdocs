@@ -35,6 +35,18 @@ pages:
               url: /redoc/2.3/guest-rest-api.html
               versionless: true
 
+            - label: Asynchronous Admin REST endpoints
+              url: /redoc/2.3/async-admin-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Customer REST endpoints
+              url: /redoc/2.3/async-customer-rest-api.html
+              versionless: true
+
+            - label: Asynchronous Guest REST endpoints
+              url: /redoc/2.3/async-guest-rest-api.html
+              versionless: true
+
         - label: List of REST endpoints by module
           url: /rest/list.html
 
@@ -100,6 +112,11 @@ pages:
         class: tutorial
         url: /rest/tutorials/configurable-product/config-product-intro.html
         include_versions: ["2.2", "2.3"]
+
+      - label: Create a configurable product using bulk APIs
+        class: tutorial
+        url: /rest/tutorials/bulk-configurable-product/config-product-intro.html
+        include_versions: ["2.3"]
 
     - label: Modules
       children:
