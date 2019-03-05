@@ -5,7 +5,7 @@ redirect_from:
   - /guides/v2.3/graphql/search-pagination.html
 ---
 
-A GraphQL query retrieves data from the Magento server in a similar manner as a REST GET call. However, Magento GraphQL queries are not meant to be as comprehensive as their REST counterparts. The main purpose of the Magento GraphQL queries is to allow a mobile app or browser to render a wide variety of information, including the following:
+A GraphQL query retrieves data from the Magento server in a similar manner as a REST GET call. The current set of Magento GraphQL queries allow a mobile app or browser to render a wide variety of information, including the following:
 
 * A set of products to be displayed. This can include the entire catalog or those that match customer-specified criteria.
 * Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wishlists, order history, and other sensitive data.
@@ -13,6 +13,8 @@ A GraphQL query retrieves data from the Magento server in a similar manner as a 
 * Store configuration values, including theme and CMS settings, the currency code, and supported countries.
 
 The Magento REST GET endpoints retrieve a wide variety of information on behalf of the merchant. Many of these endpoints are for retrieving backend information. For example, the `GET /V1/customers/search` endpoint can be used to find a subset of customers that meet certain criteria, such as those that live in a particular state or have a birthday this month.  Likewise, the `GET /V1/invoices` endpoint can return all the recently-generated invoices. This type of functionality is not required for the frontend, so it is not available in GraphQL queries. The queries are designed to improve the customer's user experience by quickly retrieving the data needed to render pages.
+
+Over time, the Magento GraphQL queries will duplicate the functionality of all storefront-facing GET calls, while making it possible to query more data in one request. The main difference will be that GraphQL will support storefront use cases, while REST will support admin use cases.
 
 ## Structure of a query
 
