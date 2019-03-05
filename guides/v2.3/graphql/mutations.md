@@ -5,6 +5,8 @@ title: Mutations
 
 While GraphQL queries perform read operations, mutations change the data. A mutation can create, update, or delete objects and fields. In REST terminology, queries operate like `GET` requests, while mutations are similar to `POST`, `PUT`, and `DELETE`.
 
+## Structure of a mutation
+
 A mutation contains the following elements:
 
 * The keyword `mutation`
@@ -23,7 +25,7 @@ mutation myCreateCustomer{
 }
 ```
 
-In this example, `myCreateCustomer` identifies your implementation.  `CustomerInput` is a non-nullable object that defines a customer. (The exclamation point indicates the value is non-nullable.) `CustomerOutput` defines which fields to return. 
+In this example, `myCreateCustomer` identifies your implementation.  `CustomerInput` is a non-nullable object that defines a customer. (The exclamation point indicates the value is non-nullable.) The `CustomerOutput` object defines which fields to return. 
 
 Now let's take a look at a fully-defined mutation. This time, we'll specify the minimum fields needed as input to create a customer (`firstname`, `lastname`, `email`, and `password`). We could include the same fields in the output, but GraphQL allows you to return only the data you need, which is the customer `id`.
 
@@ -78,7 +80,7 @@ mutation myGenerateCustomerToken{
 
 ## Mutation variables
 
-Specifying variables in a mutation can help increase code re-use. Consider the following steps when creating a mutation that contains one or more variables:
+Specifying variables in a mutation can help increase code re-use. Consider the following requirements when generating a mutation that contains one or more variables:
 
 * All variables must be declared up-front, immediately after the operation name.
 * Variables are typed: they can be scalar or an object.
