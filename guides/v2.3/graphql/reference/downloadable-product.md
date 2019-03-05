@@ -5,8 +5,80 @@ title: DownloadableProduct endpoint
 
 The `DownloadableProduct` endpoint defines a query that returns a list of purchased downloadable products for the [logged-in customer](#customerDownloadProduct). It also extends the `ProductInterface` so that attributes that are specific to downloadable products can be queried in a `products` search.
 
+## Customer Downloadable Product {#customerDownloadProduct}
+Use the `CustomerDownloadableProduct` query to retrieve the list of purchased downloadable products for the logged-in customer.
+
 ### Syntax
-Add the following inline fragment to the output section of your products query to return information specific to downloadable products:
+`{customerDownloadableProducts: {CustomerDownloadableProducts}}`
+
+### Customer downloadable products object
+The `CustomerDownloadableProducts` object contains the following attribute.
+
+Attribute | Type | Description
+--- | --- | ---
+`items` | [[CustomerDownloadableProduct]](#custDownloadProduct) | List of purchased downloadable items
+
+### Customer downloadable product object {#custDownloadProduct}
+The `CustomerDownloadableProduct` object contains the following attributes:
+
+Attribute | Type | Description
+--- | --- | ---
+`date` | String | The date and time the purchase was made
+`download_url` | String | The fully qualified URL to the download file
+`order_increment_id` | String | The purchase order ID
+`remaining_downloads` | String | Determines the number of times the customer can download the product
+`status` | String | Determines the stage in the order workflow when the download becomes available. Options are `Pending` and `Invoiced`
+
+### Example usage
+The following example returns the list of purchased downloadable products for the logged-in customer.
+
+**Request**
+
+```text
+{
+  customerDownloadableProducts {
+    items {
+      date
+      download_url
+      order_increment_id
+      remaining_downloads
+      status
+    }
+  }
+}
+```
+
+**Response**
+```json
+{
+  "data": {
+    "customerDownloadableProducts": {
+      "items": [
+        {
+          "date": "2019-03-04 20:48:32",
+          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
+          "order_increment_id": "000000004",
+          "remaining_downloads": "Unlimited",
+          "status": "pending"
+        },
+        {
+          "date": "2019-03-04 20:48:32",
+          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
+          "order_increment_id": "000000004",
+          "remaining_downloads": "Unlimited",
+          "status": "pending"
+        }
+      ]
+    }
+  }
+}
+```
+
+## Downloadable product query
+The `DownloadableProduct` query returns downloadable product information when you perform a `products` search.
+
+### Syntax
+Add the following inline fragment to the output section of your `products` query to return information specific to downloadable products:
 
 ```text
 ... on DownloadableProduct {
@@ -19,7 +91,7 @@ Add the following inline fragment to the output section of your products query t
 ## Downloadable product
 The `DownloadableProduct` object contains the following attributes:
 
-Attributes | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `downloadable_product_links` | [`DownloadableProductLinks`] | An array containing information about the links for this downloadable product
 `downloadable_product_samples` | [`DownloadableProductSamples`] | An array containing information about samples of this downloadable product
@@ -29,7 +101,7 @@ Attributes | Type | Description
 ## Downloadable product samples
 The `DownloadableProductSamples` object contains the following attributes:
 
-Attributes | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `id` | Int | The unique ID for the downloadable product sample
 `sample_file` | String | The relative path to the downloadable sample
@@ -41,7 +113,7 @@ Attributes | Type | Description
 ## Downloadable productLinks
 The `DownloadableProductLinks` object contains the following attributes:
 
-Attributes | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `id` | Int | The unique ID for the link to the downloadable product
 `is_shareable` | Boolean | Indicates whether the link is shareable
@@ -166,74 +238,4 @@ The following query returns information about downloadable product `240-LV04`, w
     }
   }
 }
-```
-
-## Customer Downloadable Product {#customerDownloadProduct}
-Use the `CustomerDownloadableProduct` query to retrieve the list of purchased downloadable products for the logged-in customer.
-
-### Syntax
-`{customerDownloadableProducts: {CustomerDownloadableProducts}}`
-
-### Customer downloadable products object
-The `CustomerDownloadableProducts` object contains the following attribute.
-
-Attributes | Type | Description
---- | --- | ---
-`items` | [[CustomerDownloadableProduct]](#custDownloadProduct) | List of purchased downloadable items
-
-### Customer downloadable product object {#custDownloadProduct}
-The `CustomerDownloadableProduct` object contains the following attributes:
-
-Attributes | Type | Description
---- | --- | ---
-`date` | String | The date and time the purchase was made
-`download_url` | String | The fully qualified URL to the download file
-`order_increment_id` | String | The purchase order ID
-`remaining_downloads` | String | Determines the number of times the customer can download the product
-`status` | String | Determines the stage in the order workflow when the download becomes available. Options are `Pending` and `Invoiced`
-
-### Example usage
-The following example returns the list of purchased downloadable products for the logged-in customer.
-
-**Request**
-
-```text
-{
-  customerDownloadableProducts {
-    items {
-      date
-      download_url
-      order_increment_id
-      remaining_downloads
-      status
-    }
-  }
-}
-```
-
-**Response**
-```json
-{
-  "data": {
-    "customerDownloadableProducts": {
-      "items": [
-        {
-          "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NTcwMTEwMCAxNTUxNzMyNTEyMTExNTE%2C/",
-          "order_increment_id": "000000004",
-          "remaining_downloads": "Unlimited",
-          "status": "pending"
-        },
-        {
-          "date": "2019-03-04 20:48:32",
-          "download_url": "http://magento2.vagrant93/downloadable/download/link/id/MC44NzM0OTkwMCAxNTUxNzMyNTEyMjEyNTA%2C/",
-          "order_increment_id": "000000004",
-          "remaining_downloads": "Unlimited",
-          "status": "pending"
-        }
-      ]
-    }
-  }
-}
-
 ```
