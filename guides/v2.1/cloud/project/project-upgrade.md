@@ -9,8 +9,6 @@ functional_areas:
 ---
 You can upgrade the core {{site.data.var.ee}} code base to version 2.1. If you need to upgrade from a version older than 2.1, you must upgrade to a supported version first.
 
-It is a best practice to verify the `ADMIN_EMAIL` variable, because it is required for upgrading and patching {{site.data.var.ece}}. See [Set environment and project variables]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var).
-
 {% include cloud/note-upgrade.md %}
 
 {% include cloud/note-ece-tools-package.md %}

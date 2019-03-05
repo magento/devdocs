@@ -16,6 +16,7 @@ products(
     sort: ProductSortInput
 ): Products
 ```
+
 Each query attribute is defined below:
 
 Attribute |  Description
@@ -49,7 +50,7 @@ Magento processes the attribute values specified in  a `ProductFilterInput` as  
 
 The following attributes can be used to create filters. See the [Response](#Response) section for information about each attribute.
 
-```
+``` text
 country_of_manufacture
 created_at
 custom_design
@@ -87,6 +88,8 @@ thumbnail
 thumbnail_label
 tier_price
 updated_at
+url_key
+url_path
 weight
 ```
 
@@ -114,13 +117,13 @@ content="GraphQL automatically filters out a product attribute if ALL of the fol
 
 The system returns a `Products` object containing the following information:
 
-{% highlight json %}
+``` text
 items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
 filters: [LayerFilter]
 sort_fields: SortFields
-{% endhighlight %}
+```
 
 Each attribute is described below:
 
@@ -145,6 +148,7 @@ When a product requires a filter attribute that is not a field on its output sch
   </arguments>
 </type>
 ```
+
 This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids` attributes.
 
 ## ProductInterface {#ProductInterface}
@@ -206,6 +210,9 @@ Attribute | Data type | Description
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
+`url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewrite` module
+`url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewrite` module
+`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
 `website_ids` | [Int] | An array of website IDs in which the product is available
 {:style="table-layout:auto;"}
 
@@ -342,7 +349,7 @@ Field | Type | Description
 
 ### LayerFilterItemInterface
 
-`LayerFilterItemInterface ` contains an array of items that match the terms defined in the filter.
+`LayerFilterItemInterface` contains an array of items that match the terms defined in the filter.
 
 Field | Type | Description
 --- | --- | ---
