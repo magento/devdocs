@@ -33,7 +33,7 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 
 You will see either:
 
-![]({{ site.baseurl }}/common/images/elastic_test-success.png")
+<img src="{{ site.baseurl }}/common/images/elastic_test-success.png">
 
 Magento successfully connected to the Elasticsearch server.
 Continue with:
@@ -43,7 +43,7 @@ Continue with:
 
 or you will see:
 
-![]({{ site.baseurl }}/common/images/elastic_test-fail.png")
+<img src="{{ site.baseurl }}/common/images/elastic_test-fail.png">
 
 If so, try the following:
 
