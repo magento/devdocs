@@ -25,6 +25,13 @@ The following code modifications are forbidden for all code (both `@api` and no
 {: .bs-callout .bs-callout-info }
 The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
 
+### Composer
+
+#### Introduction of a new dependency from an existing module
+
+Introduction of a new dependency from an existing module can be treated as a backward incompatible change.
+There is no guarantee that the required module will be enabled at a particular instance. As a result, such dependency will not be satisfied.
+
 ### PHP
 
 The following is a list of prohibited {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code changes and possible alternative implementations.
@@ -106,6 +113,10 @@ Do not modify a method argument type.
 #### Modifying the types of thrown exceptions
 
 Do not modify the types of thrown exceptions unless a new {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is a sub-type of the old one.
+
+#### Throwing a new type of exception from an existing method
+
+A new type of exception SHOULD NOT be thrown from an existing method. The existing clients of the method may not expect such behavioural change, as a result, will not be able to properly handle an exceptional case.
 
 #### Adding a constructor parameter
 
