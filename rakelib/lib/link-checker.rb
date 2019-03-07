@@ -11,7 +11,7 @@ module LinkChecker
   # Ignore baseurl if $branch is available in environment
   def self.options
     config = YAML.load_file('_config.checks.yml')
-    baseurl = ENV['branch']
+    baseurl = ENV['BUILD_NUMBER']
     return config['html-proofer'] unless baseurl
     url_swap = { url_swap: { %r{\A/#{baseurl}} => '' } }
     config['html-proofer'].merge(url_swap)
