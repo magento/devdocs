@@ -1,6 +1,4 @@
 label: Page Builder
-url: /page-builder/docs/
-versionless: true
 pages:
 - label: Getting started
   url: /page-builder/docs/getting-started/introduction.html
