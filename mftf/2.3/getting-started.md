@@ -92,7 +92,7 @@ If you want to set up the MFTF as a standalone tool, refer to [Set up a standalo
 Install the MFTF.
 
 ```bash
-composer install -d dev/tests/acceptance/
+composer install
 ```
 
 ### Step 1. Build the project   {#build-project}
