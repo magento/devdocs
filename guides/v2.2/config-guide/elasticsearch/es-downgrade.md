@@ -10,7 +10,9 @@ functional_areas:
 
 The Magento 2.2.8 update adds support for Elasticsearch (ES) 6.x.
 Magento still provides connectivity for ES 2.x and 5.x but this will need to be specifically enabled.
+
 If you need to run Magento 2.2.8 with Elasticsearch 2.x or 5.x, you must change the Elasticsearch [PHP client][] version.
+
 Both ES 2.x and 5.x are [End of Life][].
 Running ES 2.x is strongly discouraged.
 

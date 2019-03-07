@@ -51,7 +51,7 @@ Magento 2.2.8 uses [Elasticsearch PHP client][] version 6.
 
 The following figure shows our recommended configuration. All of the tasks we discuss assume you have configured your system this way.
 
-![](../../../../common/images/elastic_config.png){:width="300px"}
+![Elasticsearch Configuraton](../../../../common/images/elastic_config.png){:width="300px"}
 
 The preceding diagram shows:
 
@@ -97,7 +97,7 @@ The tasks discussed in this section require the following:
 1. Log in to your Magento server as a user with `root` privileges.
 1. _CentOS_: Install Elasticsearch 6.x using the [Elasticsearch RPM documentation][]
 
-1. _Ubuntu_: Install Elasticsearch 6.x version using the [Elasticsearch Ubuntu documentation][]
+1. _Ubuntu_: Install Elasticsearch 6.x using the [Elasticsearch Ubuntu documentation][]
 
 1. Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch][] for more information.
 

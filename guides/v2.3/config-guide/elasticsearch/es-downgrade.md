@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Downgrade Elasticsearch Module
+title: Change Elasticsearch Client
 functional_areas:
   - Configuration
   - Search
@@ -8,32 +8,38 @@ functional_areas:
   - Setup
 ---
 
-The Magento 2.3.1 update only supports Elasticsearch 5.x and 6.6.x.
-If you need to run Magento 2.3.1 with Elasticsearch 2.x, you must downgrade the Elasticsearch module to the older version.
+The Magento 2.3.1 update adds support for Elasticsearch (ES) 6.x.
+Magento still provides connectivity for ES 2.x and 5.x but this will need to be specifically enabled.
 
-## Downgrade the Elasticsearch Module
+If you need to run Magento 2.3.1 with Elasticsearch 2.x or 5.x, you must change the Elasticsearch [PHP client][] version.
 
-1. With a text editor, open the composer.json file located in the `<Magento root>` .
+Both ES 2.x and 5.x are [End of Life][].
+Running ES 2.x is strongly discouraged.
 
-```bash
-cd <Magento root>
-vim ./composer.json
-```
+## Change the Elasticsearch Client version
 
-1. Find the following line:
-
-```json
-"elasticsearch/elasticsearch": "~2.0|~5.1|~6.1"
-```
-
-1. Edit the line, removing the reference to 6.1 and save the file.
-
-```json
-"elasticsearch/elasticsearch": "~2.0|~5.1"
-```
-
-1. Run the Composer update command to pull in the correct module version.
+If you need to work with Elasticsearch 5.x, run the following command:
 
 ```bash
-composer update
+composer require "elastic/elasticsearch:~5.1"
 ```
+
+If you need to work with Elasticsearch 2.x, run the following command:
+
+```bash
+composer require "elastic/elasticsearch:~2.0"
+```
+
+To re-enable Elasticsearch 6.x, run the following command:
+
+```bash
+composer require "elastic/elasticsearch:~6.1"
+```
+
+Then configure Elasticsearch within [Magento Admin][].
+
+<!-- Link Definitions -->
+
+[End of Life]: https://www.elastic.co/support/eol
+[PHP client]: https://github.com/elastic/elasticsearch-php
+[Magento Admin]: https://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html

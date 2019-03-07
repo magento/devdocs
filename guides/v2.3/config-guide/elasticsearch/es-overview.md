@@ -34,7 +34,7 @@ Using [Elasticsearch][] as your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386
 
 {: .bs-callout .bs-callout-warning}
 Magento 2.3.1 adds support for Elasticsearch 6.x and it is enabled by default.
-Magento still provides modules for Elasticsearch 2.x and 5.x but these must be enabled in order to use these versions.
+Magento still provides connectivity for Elasticsearch 2.x and 5.x but these must be enabled in order to use these versions.
 Elasticsearch 2.x is still supported but strongly discouraged.
 If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch php client.
 Follow the instructions in [Change Elasticsearch Client][].
@@ -99,7 +99,7 @@ The tasks discussed in this section require the following:
 1. Log in to your Magento server as a user with `root` privileges.
 1. _CentOS_: Install Elasticsearch 6.x using the [Elasticsearch RPM documentation][]
 
-1. _Ubuntu_: Install Elasticsearch 6.x version using the [Elasticsearch Ubuntu documentation][]
+1. _Ubuntu_: Install Elasticsearch 6.x using the [Elasticsearch Ubuntu documentation][]
 
 1. Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch][] for more information.
 
