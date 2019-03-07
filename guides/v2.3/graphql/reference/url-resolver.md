@@ -53,17 +53,17 @@ The following query returns information about the URL containing `joust-duffle-b
 
 ``` text
 {
- urlResolver(url:"joust-duffle-bag.html") {
-   id
-   canonical_url
-   type
- }
+  urlResolver(url: "joust-duffle-bag.html") {
+    id
+    canonical_url
+    type
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "urlResolver": {
@@ -99,7 +99,7 @@ The following product query returns URL rewrite information about the Joust Duff
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "products": {

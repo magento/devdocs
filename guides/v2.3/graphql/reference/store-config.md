@@ -104,7 +104,7 @@ The following call returns all details of a store's configuration.
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "storeConfig": {
@@ -147,7 +147,7 @@ The following query returns information about the store's default title, keyword
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "storeConfig": {
@@ -180,7 +180,7 @@ The following query returns information about the store's content pages.
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "storeConfig": {

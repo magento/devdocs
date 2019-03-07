@@ -31,28 +31,25 @@ The following query returns the attribute type for various custom and EAV attrib
 
 ```text
 {
- customAttributeMetadata(
-   attributes: {
-     attribute_code: "color"
-     entity_type: "4"
-   }
- ) {
-   items {
-     attribute_code
-     entity_type
-     attribute_type
-     attribute_options {
-       value
-       label
-     }
-   }
- }
+  customAttributeMetadata(
+    attributes: { attribute_code: "color", entity_type: "4" }
+  ) {
+    items {
+      attribute_code
+      entity_type
+      attribute_type
+      attribute_options {
+        value
+        label
+      }
+    }
+  }
 }
 ```
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "customAttributeMetadata": {

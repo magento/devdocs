@@ -81,8 +81,7 @@ The following call returns information about the logged-in customer. Provide the
 
 ``` text
 {
-  customer
-  {
+  customer {
     firstname
     lastname
     suffix
@@ -104,7 +103,7 @@ The following call returns information about the logged-in customer. Provide the
 
 **Response**
 
-``` json
+```
 {
   "data": {
     "customer": {
@@ -173,29 +172,29 @@ The following call creates a new customer.
 
 ``` text
 mutation {
-    createCustomer(
-        input: {
-            firstname: "Bob"
-            lastname: "Loblaw"
-            email: "bobloblaw@example.com"
-            password: "b0bl0bl@w"
-            is_subscribed: true
-        }
-    ) {
-        customer {
-            id
-            firstname
-            lastname
-            email
-            is_subscribed
-        }
+  createCustomer(
+    input: {
+      firstname: "Bob"
+      lastname: "Loblaw"
+      email: "bobloblaw@example.com"
+      password: "b0bl0bl@w"
+      is_subscribed: true
     }
+  ) {
+    customer {
+      id
+      firstname
+      lastname
+      email
+      is_subscribed
+    }
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "createCustomer": {
@@ -226,24 +225,18 @@ The following call updates the first name and email address for a specific custo
 
 ``` text
 mutation {
-    updateCustomer(
-        input: {
-            firstname: "Rob"
-            email: "robloblaw@example.com"
-
-        }
-    ) {
-        customer {
-            firstname
-            email
-        }
+  updateCustomer(input: { firstname: "Rob", email: "robloblaw@example.com" }) {
+    customer {
+      firstname
+      email
     }
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "updateCustomer": {
@@ -307,22 +300,20 @@ The following call creates an address for the specified customer.
 
 ``` text
 mutation {
-  createCustomerAddress(input: {
-    region: {
-        region: "Arizona"
-        region_id: 4
-        region_code: "AZ"
+  createCustomerAddress(
+    input: {
+      region: { region: "Arizona", region_id: 4, region_code: "AZ" }
+      country_id: US
+      street: ["123 Main Street"]
+      telephone: "7777777777"
+      postcode: "77777"
+      city: "Phoenix"
+      firstname: "Bob"
+      lastname: "Loblaw"
+      default_shipping: true
+      default_billing: false
     }
-    country_id: US
-    street: ["123 Main Street"]
-    telephone: "7777777777"
-    postcode: "77777"
-    city: "Phoenix"
-    firstname: "Bob"
-    lastname: "Loblaw"
-    default_shipping: true
-    default_billing: false
-  }) {
+  ) {
     id
     customer_id
     region {
@@ -343,7 +334,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "createCustomerAddress": {
@@ -384,10 +375,7 @@ The following call updates the customer's city and postcode.
 
 ``` text
 mutation {
-  updateCustomerAddress(id:3, input: {
-    city: "New City"
-    postcode: "5555"
-  }) {
+  updateCustomerAddress(id: 3, input: { city: "New City", postcode: "5555" }) {
     id
     city
     postcode
@@ -397,7 +385,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "updateCustomerAddress": {
@@ -430,7 +418,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "deleteCustomerAddress": true
@@ -466,18 +454,15 @@ The following call creates a new customer token.
 
 ``` text
 mutation {
-	generateCustomerToken(
-        email: "bobloblaw@example.com"
-        password: "b0bl0bl@w"
-    ) {
-        token
-    }
+  generateCustomerToken(email: "bobloblaw@example.com", password: "b0bl0bl@w") {
+    token
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "generateCustomerToken": {
@@ -503,15 +488,15 @@ The following call revokes the customer's token.
 
 ``` text
 mutation {
-    revokeCustomerToken {
+  revokeCustomerToken {
     result
-    }
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "revokeCustomerToken": {
@@ -556,7 +541,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "changeCustomerPassword": {

@@ -56,7 +56,7 @@ The following `products` query returns `ConfigurableProduct` information about t
 
 ```text
 {
-  products(filter: {sku: {eq: "WH01"}}) {
+  products(filter: { sku: { eq: "WH01" } }) {
     items {
       id
       attribute_set_id
@@ -116,12 +116,11 @@ The following `products` query returns `ConfigurableProduct` information about t
     }
   }
 }
-
 ```
 
 {% collapsible Response %}
 
-``` json
+``` text
 {
   "data": {
     "products": {
@@ -709,13 +708,7 @@ mutation {
     input: {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
       cartItems: [
-        {
-          variant_sku: "MH02"
-          data: {
-            qty: 2
-            sku: "MH02-XS-Black"
-          }
-        }
+        { variant_sku: "MH02", data: { qty: 2, sku: "MH02-XS-Black" } }
       ]
     }
   ) {
@@ -732,15 +725,15 @@ mutation {
             option_label
           }
         }
+      }
     }
-  }
   }
 }
 ```
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "addConfigurableProductsToCart": {

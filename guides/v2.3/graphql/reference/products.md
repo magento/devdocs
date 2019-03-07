@@ -384,19 +384,12 @@ The following query returns layered navigation for products that have a `sku` co
 
 ``` text
 {
-  products (
-    filter: {
-      sku: {
-        like:"24-WB%"
-      }
-    }
+  products(
+    filter: { sku: { like: "24-WB%" } }
     pageSize: 20
     currentPage: 1
-    sort: {
-      name: DESC
-    }
-  )
-  {
+    sort: { name: DESC }
+  ) {
     items {
       sku
     }
