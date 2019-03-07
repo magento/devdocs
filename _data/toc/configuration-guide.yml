@@ -318,6 +318,9 @@ pages:
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
 
+        - label: Change Elasticsearch client
+          url: /config-guide/elasticsearch/es-downgrade.html
+
     - label: Install and configure Elasticsearch
       include_versions: ["2.3"]
       url: /config-guide/elasticsearch/es-overview.html
@@ -334,6 +337,9 @@ pages:
 
         - label: Configure Magento to use Elasticsearch
           url: /config-guide/elasticsearch/configure-magento.html
+
+        - label: Change Elasticsearch client
+          url: /config-guide/elasticsearch/es-downgrade.html
 
     - label: Message Queues (Magento Commerce only)
       include_versions: ["2.0","2.1", "2.2"]
