@@ -77,8 +77,23 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
   * [More information about PayPal]({{page.baseurl}}/install-gde/system-requirements_tls1-2.html)
   * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
+	*	[More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
-## Mail server
+### Required system dependencies
+
+Magento requires the following system tools for some of its operations:
+
+* [bash][]
+* [gzip][]
+* [lsof][]
+* [mysql][]
+* [mysqldump][]
+* [nice][]
+* [php][]
+* [sed][]
+* [tar][]
+
+### Mail server
 
 Mail Transfer Agent (MTA) or an SMTP server
 
@@ -106,7 +121,15 @@ Mail Transfer Agent (MTA) or an SMTP server
 
   These [master databases]({{page.baseurl}}/config-guide/multi-master/multi-master.html) provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
 
-## Optional but recommended
+### Unsupported Operating Systems
+
+Magento is mainly supported on Linux and Unix operating systems.
+Magento is not supported on:
+
+* Windows OS
+* Mac OS
+
+### Optional but recommended
 
 * [php_xdebug 2.5.x](http://xdebug.org/download.php){:target="_blank"} or later (development environments only; can have an adverse effect on performance)
 
@@ -114,4 +137,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug]({{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html).
 
 * [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
-* PHPUnit (as a command-line tool) 6.2.0
+*	PHPUnit (as a command-line tool) 6.2.0
+
+[bash]: https://www.gnu.org/software/bash/
+[gzip]: https://www.gzip.org/
+[lsof]: https://linux.die.net/man/8/lsof
+[mysql]: https://www.mysql.com/
+[mysqldump]: https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html
+[nice]: https://linux.die.net/man/1/nice
+[php]: http://www.php.net/
+[sed]: https://www.gnu.org/software/sed/manual/sed.html
+[tar]: https://linux.die.net/man/1/tar
