@@ -7,7 +7,7 @@ The `GiftCardProduct` endpoint defines which gift card-specific attributes are r
 
 ## GiftCardProduct object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `allow_message` | Boolean | Indicates whether the customer can provide a message to accompany the gift card.
 `allow_open_amount` | Boolean | Indicates whether customers have the ability to set the value of the gift card.
@@ -24,7 +24,7 @@ Field | Type | Description
 
 ## GiftCardAmounts object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `attribute_id` | Int | An internal attribute ID.
 `value_id` | Int | An ID that is  assigned to each unique gift card amount.

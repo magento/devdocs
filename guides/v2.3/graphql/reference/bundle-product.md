@@ -7,7 +7,7 @@ The `BundleProduct` endpoint defines which bundle product-specific attributes ar
 
 ## BundleProduct object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `dynamic_price` | Boolean | Indicates whether the bundle product has a dynamic price
 `dynamic_sku` | Boolean | Indicates whether the bundle product has a dynamic SKU
@@ -18,7 +18,7 @@ Field | Type | Description
 
 ## BundleItem object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `option_id` | Int | An ID assigned to each type of item in a bundle product
 `options`  | BundleItemOption | An array of additional options for this bundle item
@@ -30,7 +30,7 @@ Field | Type | Description
 
 ##  BundleItemOption object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `can_change_quantity` | Boolean | Indicates whether the customer can change the number of items for this option
 `id` | Int | The ID assigned to the bundled item option
