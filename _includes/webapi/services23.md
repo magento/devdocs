@@ -81,6 +81,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
 
 ### CatalogInventory
     catalogInventoryStockRegistryV1
+    catalogInventoryStockItemApi
 
 ### Checkout
     checkoutGuestPaymentInformationManagementV1
@@ -110,6 +111,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     customerCustomerRepositoryV1
     customerGroupManagementV1
     customerGroupRepositoryV1
+    customerCustomerGroupConfigV1
 
 ### Directory
     directoryCountryInformationAcquirerV1
