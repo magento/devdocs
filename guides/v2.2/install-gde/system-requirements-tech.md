@@ -111,7 +111,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 {: .bs-callout .bs-callout-warning}
 Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol).
-If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
+If you must run Elasticsearch 2.x or 5.x with Magento 2.2.8, you must change the Elasticsearch client version.
 Follow the instructions in [Change Elasticsearch Client]({{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html).
 
 * RabbitMQ 3.5.x (compatible with 2.0 and later)
