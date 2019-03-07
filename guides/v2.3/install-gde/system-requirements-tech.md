@@ -91,17 +91,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 
   {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 
-  * Elasticsearch [6.6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1){:target="_blank"}
-  * Elasticsearch [5.2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
+  * Elasticsearch [6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1){:target="_blank"}
 
-    Magento 2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 6.1. (Before version 2.3, Magento used PHP client version 5.2.)
+    Magento 2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 6.1.
 
 {: .bs-callout .bs-callout-warning}
-Magento 2.3.1 updates the Elasticsearch module.
-This update will only support Elasticsearch versions 5.x and 6.6.x.
-Elasticsearch 2.x is not compatible with the Magento 2.3.1 module.
-If you must run Elasticsearch 2.x with Magento 2.3.1, you must downgrade the Elasticsearch module.
-Follow the instructions in [Downgrade Elasticsearch Module][].
+Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol).
+If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
+Follow the instructions in [Change Elasticsearch Module][].
 
 * RabbitMQ 3.7.x (compatible with 2.0 and later)
 

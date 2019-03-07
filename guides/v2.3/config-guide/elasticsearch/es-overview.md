@@ -33,18 +33,17 @@ Using [Elasticsearch][] as your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386
 ### Supported versions {#es-spt-versions}
 
 {: .bs-callout .bs-callout-warning}
-Magento 2.3.1 updates the Elasticsearch module.
-This update will only support Elasticsearch versions 5.x and 6.6.x.
-Elasticsearch 2.x is not compatible with the Magento 2.3.1 module.
-If you must run Elasticsearch 2.x with Magento 2.3.1, you must downgrade the Elasticsearch module.
-Follow the instructions in [Downgrade Elasticsearch Module][].
+Magento 2.3.1 adds support for Elasticsearch 6.x and it is enabled by default.
+Magento still provides modules for Elasticsearch 2.x and 5.x but these must be enabled in order to use these versions.
+Elasticsearch 2.x is still supported but strongly discouraged.
+If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch php client.
+Follow the instructions in [Change Elasticsearch Client][].
 
 {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 
-* Elasticsearch [6.6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1)
-* Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2)
+* Elasticsearch [6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-1-1)
 
-Magento 2.3.1 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php) version 6. (Before version 2.3.1, Magento used PHP client version 5.2.)
+Magento 2.3.1 uses [Elasticsearch PHP client][] version 6. (Before version 2.3.1, Magento used PHP client version 5.2.)
 
 ### Recommended configuration {#es-arch}
 
@@ -95,16 +94,16 @@ The tasks discussed in this section require the following:
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch 6.6 {#es-install-es6}
+### Install Elasticsearch 6.x {#es-install-es6}
 
 1. Log in to your Magento server as a user with `root` privileges.
-1. _CentOS_: Install Elasticsearch 6.56 using the [Elasticsearch RPM documentation][]
+1. _CentOS_: Install Elasticsearch 6.x using the [Elasticsearch RPM documentation][]
 
-1. _Ubuntu_: Install Elasticsearch 6.6 version using the [Elasticsearch Ubuntu documentation][]
+1. _Ubuntu_: Install Elasticsearch 6.x version using the [Elasticsearch Ubuntu documentation][]
 
 1. Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch][] for more information.
 
-1. Start Elasticsearch:
+1. If not already running, start Elasticsearch:
 
     ```bash
     sudo service elasticsearch start
@@ -157,7 +156,8 @@ For additional information, see [Elasticsearch documentation][]{:target="_blank"
 [Configuring Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/settings.html
 [End of Life]: https://www.elastic.co/support/eol
 [Upgrading Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
-[Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/5.2/restart-upgrade.html
+[Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/current/restart-upgrade.html
 [Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
 [Elasticsearch RPM documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/rpm.html
-[Downgrade Elasticsearch Module]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
+[Change Elasticsearch Client]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
+[Elasticsearch PHP client]: https://github.com/elastic/elasticsearch-php

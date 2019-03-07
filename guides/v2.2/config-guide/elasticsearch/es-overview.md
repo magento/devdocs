@@ -9,13 +9,13 @@ functional_areas:
   - Setup
 ---
 
-* [Configure nginx and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
-* [Configure Apache and Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
-* [Configure Elasticsearch stopwords]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html)
+* [Configure nginx and Elasticsearch][]
+* [Configure Apache and Elasticsearch][]
+* [Configure Elasticsearch stopwords][]
 
 ## Elasticsearch overview {#overview}
 
-In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co) for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
+In Magento 2.2, you can use [Elasticsearch][] for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 * Elasticsearch performs quick and advanced searches on products in the catalog
 * Elasticsearch Analyzers support multiple languages
@@ -34,18 +34,18 @@ In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elast
 ### Supported versions {#es-spt-versions}
 
 {: .bs-callout .bs-callout-warning}
-Magento 2.3.1 updates the Elasticsearch module.
-This update will only support Elasticsearch versions 5.x and 6.6.x.
-Elasticsearch 2.x is not compatible with the Magento 2.3.1 module.
-If you must run Elasticsearch 2.x with Magento 2.3.1, you must downgrade the Elasticsearch module.
-Follow the instructions in [Downgrade Elasticsearch Module][].
+Magento 2.2.8 adds support for Elasticsearch 6.x and it is enabled by default.
+Magento still provides modules for Elasticsearch 2.x and 5.x but these must be enabled in order to use these versions.
+Elasticsearch 2.x is still supported but strongly discouraged.
+If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch php client.
+Follow the instructions in [Downgrade Elasticsearch Client][].
 
 {{site.data.var.ee}} version 2.2.x supports the following Elasticsearch versions:
 
-* Elasticsearch [6.6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1)
-* Elasticsearch [5.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2)
+* Elasticsearch [6.6.x][]
 
-Magento 2.2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php) version 6. (Before version 2.2.3, Magento used PHP client version 5.2.)
+Magento 2.2.8 uses [Elasticsearch PHP client][] version 6.
+(Before version 2.2.3, Magento used PHP client version 5.1.)
 
 ### Recommended configuration {#es-arch}
 
@@ -57,7 +57,8 @@ The preceding diagram shows:
 
 * The Magento application and Elasticsearch are installed on different hosts.
 
-  Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work. (Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html).)
+  Running on separate hosts is secure, enables Elasticsearch to be scaled, and is necessary for proxying to work.
+  Clustering Elasticsearch is beyond the scope of this guide but you can find more information in the [Elasticsearch documentation][].
 * Each host has its own web server; the web servers don't have to be the same.
 
   For example, the Magento application can run Apache and Elasticsearch can run nginx.
@@ -81,56 +82,36 @@ Search requests are processed as follows:
 
 The tasks discussed in this section require the following:
 
-* [Firewall and SELinux](#firewall-selinux)
-* [Install the Java Software Development Kit (JDK)](#prereq-java)
-* [Install Elasticsearch 6](#es-install-es6)
-* [Install Elasticsearch 2.x](#es-install-es)
-* [Upgrade from Elasticsearch 2.x to 5.x](#es-upgrade6)
-* [Configure Magento to use Elasticsearch]({{page.baseurl}}/config-guide/elasticsearch/configure-magento.html)
+* [Firewall and SELinux][]
+* [Install the Java Software Development Kit (JDK)][]
+* [Install Elasticsearch 6][]
+* [Upgrade from Elasticsearch 2.x/5.x to 6.x][]
+* [Configure Magento to use Elasticsearch][]
 
 {% include config/solr-elastic-selinux.md %}
 
 {% include config/install-java8.md %}
 
-### Install Elasticsearch 6 {#es-install-es6}
-
-This section discusses how to install Elasticsearch 6.6 from their repository.
+### Install Elasticsearch 6.x {#es-install-es6}
 
 1. Log in to your Magento server as a user with `root` privileges.
-1. _CentOS_: Enter the following commands in the order shown:
+1. _CentOS_: Install Elasticsearch 6.x using the [Elasticsearch RPM documentation][]
 
-   rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
-   vim /etc/yum.repos.d/Elasticsearch.repo
+1. _Ubuntu_: Install Elasticsearch 6.x version using the [Elasticsearch Ubuntu documentation][]
 
-    Add the following:
+1. Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch][] for more information.
 
-    ```bash
-    [elasticsearch-5.x]
-    name=Elasticsearch repository for 6.x packages
-    baseurl=https://artifacts.elastic.co/packages/6.x/yum
-    gpgcheck=1
-    gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-    enabled=1
-    autorefresh=1
-    type=rpm-md
-    ```
-
-    Enter the following commands:
+1. If not already running, start Elasticsearch:
 
     ```bash
-    yum -y install elasticsearch
-    chkconfig --add elasticsearch
+    sudo service elasticsearch start
     ```
 
-1. _Ubuntu_: Install the Elasticsearch 6 version using the [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/6.6/deb.html)
+1. Verify that Elasticsearch is working by entering the following command on the server on which it is running:
 
-1. Optionally, configure Elasticsearch as needed. See [Configuring Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/6.6/settings.html) for more information.
-1. Start Elasticsearch:
-
-    `service elasticsearch start`
-1. Verify that Elasticsearch is working by entering the following command on the server on which it's running:
-
-    `curl -XGET '<host>:9200/_cat/health?v&pretty'`
+    ```bash
+    curl -XGET '<host>:9200/_cat/health?v&pretty'
+    ```
 
     A message similar to the following is displayed:
 
@@ -139,43 +120,19 @@ This section discusses how to install Elasticsearch 6.6 from their repository.
     1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
     ```
 
-### Install Elasticsearch 2.x {#es-install-es}
+## Upgrade from Elasticsearch 2.x/5x to 6.x {#es-upgrade6}
 
-To install Elasticsearch 2.x, follow the [Elasticsearch Installation documentation][]
+Refer to [Upgrading Elasticsearch][] for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.
 
-1. Open the [Elasticsearch configuration file](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings), `elasticsearch.yml`, in a text editor.
-
-   For example, it might be located in `/etc/elasticsearch` or `<elasticsearch install dir>/config`.
-
-1. Save your changes to `elasticsearch.yml` and exit the text editor.
-
-1. Optionally configure the [Elasticsearch service](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html).
-1. Start Elasticsearch:
-
-   ```bash
-   service elasticsearch start
-   ```
-
-1. Verify that Elasticsearch is working by entering the following command on the server on which it's running:
-
-   curl -i localhost:9200/_cluster/health
-
-   Messages similar to the following display if Elasticsearch is running:
-
-   {"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
-
-## Upgrade from Elasticsearch 2.x to 6.6.x {#es-upgrade6}
-
-Refer to [Upgrading Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/setup-upgrade.html) for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.
-
-Upgrading from 2.x to 6.6.x requires a full cluster restart. See [Full cluster restart upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/5.2/restart-upgrade.html) for details.
+Upgrading from 2.x to 6.x requires a full cluster restart.
+See [Full cluster restart upgrade][] for details.
 
 {:.bs-callout .bs-callout-info}
-Elasticsearch 6.6.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java) to check which version of JDK is installed.
+Elasticsearch 6.x requires JDK 1.8 or higher. Elasticsearch 2.x requires JDK 1.7 or higher. See [Install the Java Software Development Kit (JDK)](#prereq-java) to check which version of JDK is installed.
 
 ## Additional resources {#es-resources}
 
-For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html)
+For additional information, see [Elasticsearch documentation][]
 
 ### Next
 
@@ -184,5 +141,20 @@ For additional information, see [Elasticsearch documentation](https://www.elasti
 * [Configure Magento to use Elasticsearch]({{ page.baseurl }}/config-guide/elasticsearch/configure-magento.html)
 
 <!-- Link Definitions -->
-[Downgrade Elasticsearch Module]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
-[Elasticsearch Installation documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/2.4/setup.html
+[Downgrade Elasticsearch Client]: {{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html
+[Elasticsearch Installation documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html
+[Configure nginx and Elasticsearch]: {{ page.baseurl }}/config-guide/elasticsearch/es-config-nginx.html
+[Configure Apache and Elasticsearch]: {{ page.baseurl }}/config-guide/elasticsearch/es-config-apache.html
+[Configure Elasticsearch stopwords]: {{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html
+[Elasticsearch]: https://www.elastic.co
+[Elasticsearch PHP client]: https://github.com/elastic/elasticsearch-php
+[6.6.x]: https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1
+[Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/guide/current/distributed-cluster.html
+[Firewall and SELinux]: #firewall-selinux
+[Install the Java Software Development Kit (JDK)]: #prereq-java
+[Install Elasticsearch 6]: #es-install-es6
+[Upgrade from Elasticsearch 2.x/5.x to 6.x]: #es-upgrade6
+[Configure Magento to use Elasticsearch]: {{page.baseurl}}/config-guide/elasticsearch/configure-magento.html
+[Upgrading Elasticsearch]: https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html
+[Full cluster restart upgrade]: https://www.elastic.co/guide/en/elasticsearch/reference/6.1/restart-upgrade.html
+[Elasticsearch documentation]: https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
