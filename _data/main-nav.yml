@@ -137,7 +137,7 @@
       url: /test/testing.html
 
     - label: Functional Acceptance Testing (MFTF)
-      url: /mftf/2.3/introduction.html
+      url: /mftf/docs/introduction.html
       exclude_versions: ['2.0', '2.1']
       versionless: true
 
