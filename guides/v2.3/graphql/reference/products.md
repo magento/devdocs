@@ -275,7 +275,7 @@ Attribute | Type | Description
 
 `MediaGalleryEntry` defines characteristics about images and videos associated with a specific product.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `id` | Int | The identifier assigned to the object
 `media_type` | String | `image` or `video`
@@ -292,7 +292,7 @@ Field | Type | Description
 
 `ProductMediaGalleryEntriesContent` contains an image in base64 format and basic information about the image.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `base64_encoded_data` | String | The image in base64 format
 `type` | String | The MIME type of the file, such as `image/png`
@@ -303,7 +303,7 @@ Field | Type | Description
 
 `ProductMediaGalleryEntriesVideoContent` contains a link to a video file and basic information about the video.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `media_type` | String | Must be `external-video`
 `video_provider` | String | Optionally describes the video source
@@ -317,7 +317,7 @@ Field | Type | Description
 
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `customer_group_id` | Int | The ID of the customer group
 `qty` | Float | The number of items that must be purchased to qualify for tier pricing
@@ -330,7 +330,7 @@ Field | Type | Description
 
 `PhysicalProductInterface`defines the weight of all tangible products.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
 {:style="table-layout:auto;"}
@@ -339,7 +339,7 @@ Field | Type | Description
 
 The `LayerFilter` object can be returned in a response to help create layered navigation on your app.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `name` | String | The layered navigation filter name
 `request_var` | String | The request variable name for the filter query
@@ -351,7 +351,7 @@ Field | Type | Description
 
 `LayerFilterItemInterface` contains an array of items that match the terms defined in the filter.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `label` | String | The label applied to a filter
 `value_string` | String | The value for filter request variable to be used in a query
@@ -362,7 +362,7 @@ Field | Type | Description
 
 The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `default` | String | The default sort field
 `options` | `SortField` | An array that contains all the fields you can use for sorting
@@ -370,7 +370,7 @@ Field | Type | Description
 
 ### SortField object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `value` | String | The attribute name or code to use as the sort field
 `label` | String | The attribute's label
@@ -384,19 +384,12 @@ The following query returns layered navigation for products that have a `sku` co
 
 ``` text
 {
-  products (
-    filter: {
-      sku: {
-        like:"24-WB%"
-      }
-    }
+  products(
+    filter: { sku: { like: "24-WB%" } }
     pageSize: 20
     currentPage: 1
-    sort: {
-      name: DESC
-    }
-  )
-  {
+    sort: { name: DESC }
+  ) {
     items {
       sku
     }

@@ -52,7 +52,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "customAttributeMetadata": {

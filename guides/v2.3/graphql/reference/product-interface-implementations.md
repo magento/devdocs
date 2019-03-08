@@ -18,7 +18,7 @@ Product type | Implements | Has product-specific attributes?
 
 To return attributes that are specific to a product type, append a structure similar to the following to the end of the `Products` output object:
 
-{% highlight json %}
+```text
 ... on <ProductType> {
   items{
     <ProductType-attribute1>
@@ -26,11 +26,11 @@ To return attributes that are specific to a product type, append a structure sim
     ...
     }
   }
-  {% endhighlight %}
+```
 
 For example, to return `GroupedProduct` attributes, construct your query like this:
 
-{% highlight json %}
+```text
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
@@ -56,4 +56,4 @@ For example, to return `GroupedProduct` attributes, construct your query like th
     }
   }
 }
-{% endhighlight %}
+```

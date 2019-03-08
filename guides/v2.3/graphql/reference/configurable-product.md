@@ -56,7 +56,7 @@ The following `products` query returns `ConfigurableProduct` information about t
 
 ```text
 {
-  products(filter: {sku: {eq: "WH01"}}) {
+  products(filter: { sku: { eq: "WH01" } }) {
     items {
       id
       attribute_set_id
@@ -116,12 +116,11 @@ The following `products` query returns `ConfigurableProduct` information about t
     }
   }
 }
-
 ```
 
 {% collapsible Response %}
 
-``` json
+``` text
 {
   "data": {
     "products": {
@@ -732,15 +731,15 @@ mutation {
             option_label
           }
         }
+      }
     }
-  }
   }
 }
 ```
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "addConfigurableProductsToCart": {

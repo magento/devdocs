@@ -82,11 +82,10 @@ The following returns information about a cart given a `cart_id`. Note that the 
     }
   }
 }
-
 ```
 **Response**
 
-```json
+```text
 {
   "data": {
     "cart": {
@@ -169,7 +168,7 @@ The following example adds two Joust Duffle Bags to the cart.
 **Request**
 
 ``` text
-mutation {  
+mutation {
   addSimpleProductsToCart(
     input: {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C", 
@@ -180,7 +179,7 @@ mutation {
             sku: "24-MB01"
           }
         }
-      ]
+       ]
     }
   ) {
     cart {
@@ -198,7 +197,7 @@ mutation {
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "addSimpleProductsToCart": {
@@ -277,18 +276,18 @@ mutation {
     input: {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
       billing_address: {
-         address: {
-            firstname: "Bob"
-            lastname: "Roll"
-            company: "Magento"
-            street: ["Magento Pkwy", "Main Street"]
-            city: "Austin"
-            region: "TX"
-            postcode: "78758"
-            country_code: "US"
-            telephone: "8675309"
-            save_in_address_book: False
-         }
+        address: {
+          firstname: "Bob"
+          lastname: "Roll"
+          company: "Magento"
+          street: ["Magento Pkwy", "Main Street"]
+          city: "Austin"
+          region: "TX"
+          postcode: "78758"
+          country_code: "US"
+          telephone: "8675309"
+          save_in_address_book: False
+        }
       }
     }
   ) {
@@ -309,7 +308,7 @@ mutation {
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "setBillingAddressOnCart": {
@@ -386,7 +385,7 @@ mutation {
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
@@ -424,7 +423,12 @@ The following call adds a coupon code called `test2019` to a cart.
 
 ``` text
 mutation {
-  applyCouponToCart(input: {cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C", coupon_code: "test2019"}) {
+  applyCouponToCart(
+    input: {
+      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
+      coupon_code: "test2019"
+    }
+  ) {
     cart {
       applied_coupon {
         code
@@ -436,7 +440,7 @@ mutation {
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "applyCouponToCart": {
@@ -448,7 +452,6 @@ mutation {
     }
   }
 }
-
 ```
 
 ### Remove coupon from cart
@@ -467,7 +470,7 @@ The following example removes a coupon from the cart.
 
 ``` text
 mutation {
-  removeCouponFromCart(input: {cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"}) {
+  removeCouponFromCart(input: { cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C" }) {
     cart {
       applied_coupon {
         code
@@ -479,7 +482,7 @@ mutation {
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "removeCouponFromCart": {
