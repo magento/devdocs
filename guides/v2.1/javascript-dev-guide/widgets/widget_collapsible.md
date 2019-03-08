@@ -398,7 +398,7 @@ Specifies if the state is saved in the local storage if the browser supports it.
 
 **Type**: Boolean
 
-**Default value**: `true`
+**Default value**: `false`
 
 Initialize the collapsible widget with the `saveState` option specified:
 ```javascript
