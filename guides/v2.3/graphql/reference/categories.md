@@ -206,7 +206,9 @@ The following query returns breadcrumb information about the women's tops catego
 
 ``` text
 {
-  category(id: 25) {
+  category (
+   id: 25
+) {
     id
     level
     name

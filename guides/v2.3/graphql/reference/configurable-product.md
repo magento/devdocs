@@ -708,7 +708,13 @@ mutation {
     input: {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
       cartItems: [
-        { variant_sku: "MH02", data: { qty: 2, sku: "MH02-XS-Black" } }
+        {
+          variant_sku: "MH02"
+          data: {
+            qty: 2
+            sku: "MH02-XS-Black"
+          }
+        }
       ]
     }
   ) {

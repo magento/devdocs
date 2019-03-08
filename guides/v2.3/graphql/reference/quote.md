@@ -171,8 +171,15 @@ The following example adds two Joust Duffle Bags to the cart.
 mutation {
   addSimpleProductsToCart(
     input: {
-      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
-      cartItems: [{ data: { qty: 2, sku: "24-MB01" } }]
+      cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C", 
+      cartItems: [
+        {
+          data: {
+            qty: 2
+            sku: "24-MB01"
+          }
+        }
+       ]
     }
   ) {
     cart {

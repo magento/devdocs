@@ -225,13 +225,19 @@ The following call updates the first name and email address for a specific custo
 
 ``` text
 mutation {
-  updateCustomer(input: { firstname: "Rob", email: "robloblaw@example.com" }) {
+  updateCustomer(
+    input: {
+      firstname: "Rob"
+      email: "robloblaw@example.com"
+    }
+    ) {
     customer {
       firstname
       email
     }
   }
 }
+
 ```
 
 **Response**
@@ -300,20 +306,22 @@ The following call creates an address for the specified customer.
 
 ``` text
 mutation {
-  createCustomerAddress(
-    input: {
-      region: { region: "Arizona", region_id: 4, region_code: "AZ" }
-      country_id: US
-      street: ["123 Main Street"]
-      telephone: "7777777777"
-      postcode: "77777"
-      city: "Phoenix"
-      firstname: "Bob"
-      lastname: "Loblaw"
-      default_shipping: true
-      default_billing: false
-    }
-  ) {
+  createCustomerAddress(input: {
+    region: {
+        region: "Arizona"
+        region_id: 4
+        region_code: "AZ"
+      }
+    country_id: US
+    street: ["123 Main Street"]
+    telephone: "7777777777"
+    postcode: "77777"
+    city: "Phoenix"
+    firstname: "Bob"
+    lastname: "Loblaw"
+    default_shipping: true
+    default_billing: false
+    }) {
     id
     customer_id
     region {
@@ -375,7 +383,10 @@ The following call updates the customer's city and postcode.
 
 ``` text
 mutation {
-  updateCustomerAddress(id: 3, input: { city: "New City", postcode: "5555" }) {
+  updateCustomerAddress(id:3, input: {
+    city: "New City"
+    postcode: "5555"
+  }) {
     id
     city
     postcode
@@ -454,9 +465,12 @@ The following call creates a new customer token.
 
 ``` text
 mutation {
-  generateCustomerToken(email: "bobloblaw@example.com", password: "b0bl0bl@w") {
+	generateCustomerToken(
+    email: "bobloblaw@example.com"
+    password: "b0bl0bl@w"
+    ) {
     token
-  }
+    }
 }
 ```
 
