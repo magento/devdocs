@@ -147,7 +147,7 @@ pages:
     url: /page-builder/docs/migration/migrate-custom-content-types-from-bluefoot.html
     versionless: true
 
-- label: Changelog
+- label: Release notes
   url: /page-builder/docs/release-notes.html
   versionless: true
 
