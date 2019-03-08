@@ -148,7 +148,7 @@ pages:
     versionless: true
 
 - label: Changelog
-  url: /page-builder/docs/CHANGELOG.html
+  url: /page-builder/docs/release-notes.html
   versionless: true
 
 - label: Component status
