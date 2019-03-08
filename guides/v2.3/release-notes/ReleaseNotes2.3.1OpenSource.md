@@ -16,6 +16,7 @@ Magento Commerce 2.3.1 includes a wealth of new features as well as over 200 fun
 
 <!--- MAGETWO-95299-->* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920x1200  without compressing and downsizing the images first. Previously, when a merchant uploaded a high quality product image (larger than 1920X1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. 
 
+* <!--- MAGETWO-95068-->* **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
 
 
 #### PageBuilder
@@ -103,39 +104,35 @@ Major improvements in Coverage, Developer Experience, and Security   
 * Over 30 security fixes to core Magento code
 
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.7, 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.8, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 ### Performance
 
-* Magento now supports customer accounts with more than 3,000 addresses. 
+* **Magento now supports customer accounts with more than 3,000 addresses**. Multiple code enhancements contribute to this performance boost: 
 
-* The customer addresses edit page in the Admin was redesigned to include an addresses grid instead of a simple list.  <!--- MAGETWO-95249 -->*
+	* Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
 
-* Order creation page in Admin was fixed (MC-5683) and now works without any performance issues and slowdowns for customer accounts with 3000 addresses.  
+	* The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
 
-* Checkout page was fixed (MC-5681) and now it is possible to checkout successfully for accounts with 3000 addresses.  
-
-* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. <!--- MAGETWO-94347-->
+	* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. <!--- MAGETWO-94347-->
    
-
-
 
 ### Core bundled extension enhancements
 
 
 
-### Other improvements
+### Infrastructure improvements
 
 
 * Magento now supports Redis 5.0. <!--- MC-5201 -->*
 
-* Magento now uses the latest version of the DHL schema for DHL shipping methods
+
+* Magento now uses the latest version of the DHL schema for DHL shipping methods. 
 
 * Update PayPal Express Checkout to checkout.js v4
 
 * Accept.js library is now used for Authorize.Net payments. 
 
-* <!--- MAGETWO-95068-->* **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
 
 
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13. 
@@ -221,6 +218,7 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- ENGCOM-3561-->* Fixed icon behavior on product customization page. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19405](https://github.com/magento/magento2/pull/19405)*. [GitHub-19399](https://github.com/magento/magento2/issues/19399)
 
+<!--- ENGCOM-4054-->* The **Reload Data** button on the Admin now works as expected. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [20803](https://github.com/magento/magento2/pull/20803)*. [GitHub-20802](https://github.com/magento/magento2/issues/20802)
 
 
 
@@ -968,7 +966,7 @@ more serious situations with non-visible errors have been encountered on specifi
 
 <!--- ENGCOM-4081-->* Category levels are now calculated correctly. *Fix submitted by [Roman Kis](https://github.com/kisroman) in pull request [337](https://github.com/magento/graphql-ce/pull/337)*. [GitHub-336](https://github.com/magento/magento2/issues/336)
 
-<!--- ENGCOM-4077-->* You can now use create a customer. *Fix submitted by [Stepan Furman](https://github.com/Stepa4man) in pull request [254](https://github.com/magento/graphql-ce/pull/254)*. [GitHub-248](https://github.com/magento/magento2/issues/248)
+<!--- ENGCOM-4077-->* You can now create a customer. *Fix submitted by [Stepan Furman](https://github.com/Stepa4man) in pull request [254](https://github.com/magento/graphql-ce/pull/254)*. [GitHub-248](https://github.com/magento/magento2/issues/248)
 
 <!--- ENGCOM-2967-->* You can now add simple products to a cart. *Fix submitted by [Roman Glushko](https://github.com/roma-glushko) in pull request [170](https://github.com/magento/graphql-ce/pull/170)*. [GitHub-141](https://github.com/magento/magento2/issues/141)
 
@@ -1042,7 +1040,7 @@ Magento now displays an informative error message if images are not imported as 
 
 ### Infrastructure
 
-<!--- ENGCOM-3690-->* `transparent.js` has relocated, and orders can now be created from the Admin using PayflowPro and Authorize.Net. Previously, orders created from the Admin using PayflowPro failed, and Magento displayed an informative message indicating an invalid account number. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19764](https://github.com/magento/magento2/pull/19764)*. [GitHub-19763](https://github.com/magento/magento2/issues/19763)
+<!--- ENGCOM-3690-->* `transparent.js` has been relocated, and orders can now be created from the Admin using PayflowPro and Authorize.Net. Previously, orders created from the Admin using PayflowPro failed, and Magento displayed an informative message indicating an invalid account number. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19764](https://github.com/magento/magento2/pull/19764)*. [GitHub-19763](https://github.com/magento/magento2/issues/19763)
 
 <!--- ENGCOM-3598-->* json_encode errors are now caught and logged in console.log. Previously, the JSON serializer threw an error, which blocked all frontend behavior, *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [16154](https://github.com/magento/magento2/pull/16154)*. [GitHub-14937](https://github.com/magento/magento2/issues/14937)
 
@@ -1147,7 +1145,21 @@ The configurale product
 
 ### Performance
 
-<!--- MAGETWO-95249 94346-->* New customer address handling improves the handling of large number of addresses on Admin customer details page. `\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asnchronous management of customer addresses. 
+<!--- MAGETWO-95249 94346-->* New customer address handling improves the handling of large number of addresses on Admin customer details page. T
+
+Customer Addresses tab now contains default billing address and default shipping address ui component blocks, customer addresses listing or grid and customer address form on modal window. 
+
+Customer addresses grid represents listing ui component with filters, grid search, mass delete action. Each customer addresss row has set of actions: edit address, set address as default billing, set address as default shipping, delete address. 
+Customer address form represents form to create, update, delete customer address with customer address attributes. 
+All actions on customer addresses tab are performed asynchronously with AJAX. 
+Now you need to create customer in Magento admin first to be able to add addresses to the customer. 
+Customer addresses functionality in Magento admin was rewritten with ui components to increase performance of the platform, to be able to manage customers with 3000 and more addresses. You can now handle large customer addresses profiles with new customer address listing as it does not perform heavy operations with loading customer and address collections. 
+
+
+
+
+
+`\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asnchronous management of customer addresses. 
 
 
 ### Product video
