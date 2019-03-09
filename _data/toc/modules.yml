@@ -1,0 +1,7 @@
+label: Modules Guide
+pages:
+    - label: BlueFoot CMS
+      children:
+
+        - label: Iconography
+          url: /modules/bluefoot-cms/iconography.html

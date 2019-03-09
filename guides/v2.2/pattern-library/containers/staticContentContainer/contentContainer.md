@@ -1,0 +1,1 @@
+../../../../v2.1/pattern-library/containers/staticContentContainer/contentContainer.md

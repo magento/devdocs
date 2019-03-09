@@ -1,0 +1,1 @@
+../../../v2.2/install-gde/basics/basics-parent.md

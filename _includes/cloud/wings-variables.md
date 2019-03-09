@@ -1,0 +1,1 @@
+If you want to add the same variables to your Integration, Staging, and Production environments, we recommend adding all of the variables one at a time to the Integration environment. After you finish adding variables, push the changes to the Staging and Production environments.

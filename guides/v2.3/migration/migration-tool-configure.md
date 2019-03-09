@@ -1,0 +1,1 @@
+../../v2.2/migration/migration-tool-configure.md

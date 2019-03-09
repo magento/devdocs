@@ -1,0 +1,1 @@
+../../v2.2/b2b/company-object.md

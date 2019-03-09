@@ -1,40 +1,33 @@
-.DS_Store
-_site/
-=======
 # OS generated files #
 ######################
+/*.db
 .DS_Store
-.DS_Store?
-/.DS_Store
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
 # Config and output files #
 ###########################
-_site
-CNAME
-_config.yml
-/Readme.md
-=======
-ignore
-/_config.yml
-/_config.steve.yml
-/_config.diane.yml
-/_config.brad.yml
-/_config.olena.yml
-/_config.sasha.yml
-/_config.tana.yml
-/_config.gen.yml
-/_config.public.yml
-/gen_public.bat
-/_config.internal.yml
-/gen_internal.bat
-_config.internalM18.yml
-jkM18.bat
-/Readme.md
-jk.bat
-gen.bat
 
+/_site/
+
+/.*
+!/.github
+!/.github/**
+
+/*.yml
+!/_config.yml
+!/_config.prod.yml
+!/_config.checks.yml
+!/_config.stage.yml
+
+*.bat
+/tmp/
+/vendor/
+/node_modules/
+
+_algolia_api_key
+
+# Docs from different repositories #
+###################################
+
+/mbi/
+/page-builder/
+/guides/m1x/

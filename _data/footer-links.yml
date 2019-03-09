@@ -1,0 +1,21 @@
+- label: Become a Contributor
+  url: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
+
+- label: Glossary
+  url: https://magento.github.io/glossary/index.html?audience=developer
+
+- label: Privacy Policy
+  url: https://magento.com/legal/terms/privacy/
+
+- label: Terms of Service
+  url: https://magento.com/legal/terms/
+
+- label: License/Trademark FAQ
+  url: https://magento.com/legal/licensing/
+
+- label: Release Notes
+  url: /release-notes/bk-release-notes.html
+
+- label: Third-Party Licenses
+  url: /magento-third-party.html
+  versionless: true

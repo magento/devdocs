@@ -1,0 +1,1 @@
+../v2.1/bk-get-started-magento.md
