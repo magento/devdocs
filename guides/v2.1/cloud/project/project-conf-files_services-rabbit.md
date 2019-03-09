@@ -29,7 +29,7 @@ To enable RabbitMQ, add the following code with your installed version and alloc
 
 ```yaml
 rabbitmq:
-    type: rabbitmq
+    type: rabbitmq:3.5 ( or other supported version )
     disk: 1024
 ```
 
