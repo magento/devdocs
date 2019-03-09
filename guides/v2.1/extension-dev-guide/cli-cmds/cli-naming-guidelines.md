@@ -26,7 +26,7 @@ For example, in `bin/magento setup:upgrade`, `bin/magento` is the command's name
 
 If you have a Magento installation handy, enter the following to display the current list of commands:
 
-	php <your Magento install dir>/bin/magento --list
+	php <your Magento install dir>/bin/magento list
 
 #### Format: `group:[subject:]action`
 
