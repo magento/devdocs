@@ -35,36 +35,6 @@ pages:
 
     - label: Reference
       children:
-        - label: Products endpoint
-          url: /graphql/reference/products.html
-          children:
-            - label: Product interface implementations
-              url: /graphql/reference/product-interface-implementations.html
-
-            - label: CustomizableOptionInterface
-              url: /graphql/reference/customizable-option-interface.html
-
-            - label: BundleProduct endpoint
-              url: /graphql/reference/bundle-product.html
-
-            - label: Category endpoint
-              url: /graphql/reference/categories.html
-
-            - label: ConfigurableProduct endpoint
-              url: /graphql/reference/configurable-product.html
-
-            - label: DownloadableProduct endpoint
-              url: /graphql/reference/downloadable-product.html
-
-            - label: GiftCardProduct endpoint
-              url: /graphql/reference/gift-card-product.html
-
-            - label: GroupedProduct endpoint
-              url: /graphql/reference/grouped-product.html
-
-        - label: Other objects
-          children:
-
             - label: CMS endpoint
               url: /graphql/reference/cms.html
               
@@ -73,6 +43,33 @@ pages:
 
             - label: Customer endpoint
               url: /graphql/reference/customer.html
+
+            - label: Products endpoint
+              url: /graphql/reference/products.html
+              children:
+                - label: Product interface implementations
+                  url: /graphql/reference/product-interface-implementations.html
+
+                - label: CustomizableOptionInterface
+                  url: /graphql/reference/customizable-option-interface.html
+
+                - label: BundleProduct endpoint
+                  url: /graphql/reference/bundle-product.html
+
+                - label: Category endpoint
+                  url: /graphql/reference/categories.html
+
+                - label: ConfigurableProduct endpoint
+                  url: /graphql/reference/configurable-product.html
+
+                - label: DownloadableProduct endpoint
+                  url: /graphql/reference/downloadable-product.html
+
+                - label: GiftCardProduct endpoint
+                  url: /graphql/reference/gift-card-product.html
+
+                - label: GroupedProduct endpoint
+                  url: /graphql/reference/grouped-product.html
 
             - label: Quote endpoint
               url: /graphql/reference/quote.html
