@@ -20,8 +20,19 @@ Any model that uses an EAV resource has its attributes spread out over a number 
 
 The `Customer`,`Catalog` and `Order` resource models use EAV attributes.
 
+## XML Declaritive schema
+
+With Magento 2.3, we introduced Declaritive XML Schemas.
+These are XML files that are used to specify the final state of the database.
+These files replace PHP update scripts that were required when upgrading a module.
+These files allow you to skip the progressive upgrade scripts and jump right to the final state of the database.
+
+Read more about writing [declarative XML schemas][].
+
 ## Related topics {#related}
 
 [Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
-
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
+
+<!-- Link Definitions -->
+[declarative XML schemas]: https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/db-schema.html

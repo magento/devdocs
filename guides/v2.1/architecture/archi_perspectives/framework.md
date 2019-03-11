@@ -44,7 +44,7 @@ The Framework is responsible for operations that are useful for potentially all 
 
 Here is the Magento Framework folder structure:
 
-```terminal
+```tree
 vendor/
     ../magento
         ../framework

@@ -3,7 +3,7 @@ group: architecture-guide
 title: Module overview
 menu_title: Module overview
 redirect_from:
-  - /guides/v2.0/architecture/modules/mod_intro.html
+  - /guides/v2.1/architecture/modules/mod_conventions.html
 ---
 
 ## What is a Magento module? {#arch-modules-overview}
@@ -36,6 +36,21 @@ For example, the Customer Import/Export module of Magento can be found at `vendo
 If you are creating a new module for distribution, create the `app/code/<vendor>/<type>-<module-name>` directory and the required directories within it.
 
 Inside this folder, you will find all the code related to this module, including the `etc/module.xml` file, which contains the name and version of the module, as well as any dependencies.
+
+### Module location conventions {#m2arch-module-conventions-location}
+
+The following table shows the *recommended* location within the Magento file system for specific components.
+
+(A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must include a `registration.php` file in its root folder.)
+
+We refer to a component's root directory as the top-level directory in which you develop component code. Typically, this directory is located in one of the following directories relative to the Magento root directory:
+
+|Entity|Location|
+|---|---|
+|Code base of your custom module|`/app/code/<Vendor>/<Module>`|
+|Custom theme files (storefront)|`/app/design/frontend/<Vendor>/<theme>`|
+|Custom theme files (modules)|`<Module>/<theme>`|
+|If you want to use a library|`/lib/<Vendor_Library>`|
 
 ## Working with modules
 

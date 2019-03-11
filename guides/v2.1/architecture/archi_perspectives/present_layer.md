@@ -59,6 +59,13 @@ For example, the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin
 
 The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.
 
+## Progressive web apps
+
+Progressive Web Apps (PWA) is a way to present a Magento storefront via a set of React javascript components.
+Using Magento as a headless backend, you can use PWA components to make mobile friendly frontends.
+
+Read more about [Magento PWA][].
+
 ## Presentation layer flow
 
 Web users interact with components of the presentation layer to select actions that initiate calls to the underlying service layer.
@@ -73,3 +80,4 @@ Presentation layer components make calls to the Service layer, which in turn sen
 <!-- Link definitions -->
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
 [GraphQL Developer Guide]: {{page.baseurl}}/graphql/
+[Magento PWA]: https://magento-research.github.io/pwa-studio/technologies/overview/
