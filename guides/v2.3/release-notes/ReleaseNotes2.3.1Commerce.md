@@ -14,9 +14,7 @@ This release includes substantial contributions from our robust, productive comm
 The bulk of the code that we describe in these release notes belongs to the Magento platform core, which is updated quarterly. Magento also develops extensions that are released independently of this core code. Here is the list of these Magento-developed extensions that are compatible with Magento Commerce 2.3.1: 
 
 * PageBuilder
-
 * Inventory Management
-
 * Progressive Web Applications (PWA) Studio
 
 
@@ -50,9 +48,7 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 
 * **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
 
-* **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders. 
-
-See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
+* **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders.  See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
 
 
 
@@ -79,13 +75,13 @@ This release contains over 30 security fixes to core Magento code. See [Magento 
 
 ### Performance
 
-* **Magento now supports customer accounts with more than 3,000 addresses**. Multiple code enhancements contribute to this performance boost: 
+**Magento now supports customer accounts with more than 3,000 addresses**. Multiple code enhancements contribute to this performance boost: 
 
-	* Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
+* Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
 
-	* The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
+* The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
 
-	* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. <!--- MAGETWO-94347-->
+* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. <!--- MAGETWO-94347-->
    
 [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. 
 
@@ -98,9 +94,12 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
-* Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->*
+* Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
-* Magento now supports **Redis 5.0**. <!--- MC-5201 -->*
+* Magento now supports **Redis 5.0**. <!--- MC-5201 -->
+
+* Expected backup and restoration functionality has been restored and MySQL View support is supported while preserving backward compatibility with pre-existing modules. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
+
 
 * Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->* 
 
@@ -1084,6 +1083,8 @@ Magento now displays an informative error message if images are not imported as 
 <!--- ENGCOM-4389 -->* Magento now supports Elasticsearch 6.0. *Fix submitted by [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*.  
 
 <!--- MC-5201 -->* Magento now supports Redis 5.0. 
+
+<!--- ENGCOM-4392 -->* Expected backup and restoration functionality has been restored and MySQL View support is supported while preserving backward compatibility with pre-existing modules. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
 
 
 <!--- ENGCOM-3690-->* `transparent.js` has relocated, and orders can now be created from the Admin using PayflowPro and Authorize.Net. Previously, orders created from the Admin using PayflowPro failed, and Magento displayed an informative message indicating that an account number was invalid. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19764](https://github.com/magento/magento2/pull/19764)*. [GitHub-19763](https://github.com/magento/magento2/issues/19763)
