@@ -1,6 +1,6 @@
 ---
 group: php-developer-guide
-title: WebApi Request Processors Pool
+title: WebApi request processors pool
 contributor_name: Comwrap GmbH
 contributor_link: https://www.comwrap.com
 functional_areas:
@@ -9,10 +9,36 @@ functional_areas:
 
 The Request Processors Pool routes WebApi requests. It is located in the Magento_WebApi module: `Magento\Webapi\Controller\Rest\RequestProcessorPool`
 
-Single processors are defined in `webapi_rest/di.xml`
+Magento defines the following processors: 
 
-Synchronous Requests Processor example:
-```
+Processor name | Class | URL Pattern | Description
+--- | --- | --- | ---
+`sync` | `Magento\Webapi\Controller\Rest\SynchronousRequestProcessor` | `/^\\/V\\d+/`| Executes the corresponding service contract.
+`syncSchema` | `Magento\Webapi\Controller\Rest\SchemaRequestProcessor` | `schema` | Delivers the schema needed for generating Swagger documentation.
+`async` | `Magento\WebapiAsync\Controller\Rest\AsynchronousRequestProcessor` | `/^\\/async(\\/V.+)/` | Performs an asynchronous API request. It executes `Magento\AsynchronousOperations\Model\MassSchedule::publishMass`, which places a single message in the queue.
+`asyncSchema` | `Magento\WebapiAsync\Controller\Rest\AsynchronousSchemaRequestProcessor` | `async/schema` | Delivers the schema needed for generating Swagger documentation for asynchronous endpoints.
+`asyncBulk` | `Magento\WebapiAsync\Controller\Rest\VirtualType\AsynchronousBulkRequestProcessor` | `/^\\/async\/bulk(\\/V.+)/` | Performs a bulk API request by executing `Magento\AsynchronousOperations\Model\MassSchedule::publishMass`, which places multiple messages in the queue.
+`asyncBulkSchema` | `Magento\WebapiAsync\Controller\Rest\VirtualType\AsynchronousBulkSchemaRequestProcessor` | `async/bulk/schema` | Currently not used. Reserved for future use.
+
+{: .bs-callout .bs-callout-info }
+`async` and `asyncBulk` are sharing the same processor but have different url patterns.
+
+## Create a new processor
+
+To create a custom processor, you must perform the following tasks: 
+
+* Define the custom processor in `webapi_rest/di.xml`.
+* Create a processor class and implement the `Magento\Webapi\Controller\Rest\RequestProcessorInterface` interface.
+* Define the processing rules in the `canProcess` method.
+* Create the processor logic in the `process` method.
+
+
+### Define the custom processors
+
+Processors must be defined in a module's `webapi_rest/di.xml` file. The following example shows the definition of the default `sync` processor:
+
+
+```xml
 <type name="Magento\Webapi\Controller\Rest\RequestProcessorPool">
     <arguments>
         <argument name="requestProcessors" xsi:type="array">
@@ -22,9 +48,11 @@ Synchronous Requests Processor example:
 </type>
 ```
 
-Processor always has to implement `Magento\Webapi\Controller\Rest\RequestProcessorInterface` interface.
+## Create the processor class
 
-```
+A custom processor must implement the `Magento\Webapi\Controller\Rest\RequestProcessorInterface` interface, as shown below:
+
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
@@ -60,17 +88,14 @@ interface RequestProcessorInterface
      */
     public function canProcess(\Magento\Framework\Webapi\Rest\Request $request);
 }
-
 ```
 
-Interface consists of the following methods:
+The `canProcess(\Magento\Framework\Webapi\Rest\Request $request)` method defines whether the current request can be processed. Currently, all implemented processors match current request URLs with the defined patterns. 
 
-`canProcess(\Magento\Framework\Webapi\Rest\Request $request)` - this method defines if current processor can be processed. Currently all implemented processors are matching current request URL with defined patterns. 
+For example, `Magento\WebapiAsync\Controller\Rest\AsynchronousRequestProcessor` processes asynchronous calls, such as `<host>/rest/async/V1/products`.
 
-Example:
 
-* Request URL: `MAGENTO_URL/rest/async/V1/products` will be executed by processor `Magento\WebapiAsync\Controller\Rest\AsynchronousRequestProcessor`:
-```
+``` php
 const PROCESSOR_PATH = "/^\\/async(\\/V.+)/";
 
 .....
@@ -90,30 +115,4 @@ public function canProcess(\Magento\Framework\Webapi\Rest\Request $request)
 .....
 ```
 
-`process(\Magento\Framework\Webapi\Rest\Request $request)` - executes processor logic.
-
-
-### Predefined processors
-
-Magento defines the following processors: 
-
-Processor name | Class | URL Pattern | Description
---- | --- | --- | ---
-`sync` | `Magento\Webapi\Controller\Rest\SynchronousRequestProcessor` | `/^\\/V\\d+/`| Executes the corresponding service contract.
-`syncSchema` | `Magento\Webapi\Controller\Rest\SchemaRequestProcessor` | `schema` | Delivers the schema needed for generating Swagger documentation.
-`async` | `Magento\WebapiAsync\Controller\Rest\AsynchronousRequestProcessor` | `/^\\/async(\\/V.+)/` | Asynchronous API request. Executes `Magento\AsynchronousOperations\Model\MassSchedule::publishMass` which places a single message in the queue.
-`asyncSchema` | `Magento\WebapiAsync\Controller\Rest\AsynchronousSchemaRequestProcessor` | `async/schema` | Delivers the schema needed for generating Swagger dcoumentation for asynchronous endpoints.
-`asyncBulk` | `Magento\WebapiAsync\Controller\Rest\VirtualType\AsynchronousBulkRequestProcessor` | `/^\\/async\/bulk(\\/V.+)/` | Bulk API request. Executes `Magento\AsynchronousOperations\Model\MassSchedule::publishMass`, which places multiple messages in the queue.
-`asyncBulkSchema` | `Magento\WebapiAsync\Controller\Rest\VirtualType\AsynchronousBulkSchemaRequestProcessor` | `async/bulk/schema` | Currently not used. Reserved to future use.
-
-{: .bs-callout .bs-callout-info }
-`async` and `asyncBulk` are sharing the same processor but different url patterns.
-
-### Modifications
-
-To provide a new processors: 
-
-* Define the new processor in `webapi_rest/di.xml`.
-* Create a processor class and implement the `Magento\Webapi\Controller\Rest\RequestProcessorInterface` interface.
-* Define the processing rule in the `canProcess` method.
-* Create the processor logic in the `process` method.
+The `process(\Magento\Framework\Webapi\Rest\Request $request)` method executes processor logic.
