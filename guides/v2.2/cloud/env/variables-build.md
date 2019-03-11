@@ -39,6 +39,9 @@ stage:
 
 ### `SCD_EXCLUDE_THEMES`
 
+{: .bs-callout .bs-callout-warning }
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
+
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
 

@@ -64,6 +64,14 @@ defaults:
     values:
       layout: video
 
+  - 
+    scope:
+      path: mbi
+    values:
+      group: mbi
+      github_files: https://github.com/magento/devdocs-mbi/blob/master/
+      github_repo: https://github.com/magento/devdocs-mbi/
+
   -
     scope:
       path: mftf/2.2
@@ -79,6 +87,14 @@ defaults:
       group: magento-functional-testing-framework-guide-2_3
       functional_areas:
         - Test
+
+  - 
+    scope:
+      path: page-builder
+    values:
+      group: page-builder
+      github_link: false
+      feedback_link: false
 
   -
     scope:
@@ -115,6 +131,32 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
   - jekyll-titles-from-headings
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+
+optional_front_matter:
+  remove_originals: true
+
+# Configuration options for the jekyll-relative-links plugin. 
+# Exclude all .md directories and files except page-builder/ to prevent painfully long build times.
+
+relative_links:
+  exclude:
+    - _includes
+    - _videos
+    - codelinks
+    - community
+    - guides
+    - mftf
+    - redoc
+    - tmp
+    - 404.md
+    - availability.md
+    - magento-techbull.md
+    - magento-third-party.md
+    - search
+    - system-requirements.md
+    - whats-new.md
 
 # Settings for the jekyll-titles-from-headings plugin.
 # For more details about the plugin, refer to https://github.com/benbalter/jekyll-titles-from-headings
@@ -142,6 +184,10 @@ algolia:
     - guides/m1x/**/*.md
     - swagger
     - redoc
+  # Index HTML elements, especially code samples.
+  nodes_to_index: 'p,li,td,code'
+  # Override 10KB default and use our allowed max of 20KB
+  max_record_size: 20000
 
 google:
   analytics: UA-66243208-1

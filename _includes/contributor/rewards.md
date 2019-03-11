@@ -29,7 +29,7 @@ Achievement | Points | Description
 | ------------ | --- | --- |
 Improvement| 10 | Contribution contains code improvements, refactoring, or a bug fix.
 Port | 5 | Contribution ports an existing solution between release lines. The author of the original PR receives an additional **5 points** when another person contributes the ported Pull Request.
-Code Cleanup | 1 | Contribution contains code cleanup such as typos, inline documentation, coding style, remove unused code, and so on.
+Code Cleanup | 1 | Contribution contains code cleanup such as typos, inline documentation, coding style, remove unused code, minor style/design fixes, and so on.
 {:style="table-layout:auto;"}
 
 ### Additional achievements
@@ -46,6 +46,7 @@ Test coverage | 10 | Contribution contains fix or improvement and new tests or t
 MFTF test coverage| 10 | Contribution contains MFTF tests
 Bug fix | 10 | Contribution fixes one or more known issues from GitHub
 Author of Ported Issue | 5 | Additional points for a contribution that ports (up or back port) a previous PR across release lines by another contributor
+Issue Triage | 3 | Public issue report is verified and confirmed
 {:style="table-layout:auto;"}
 
 ## DevDocs awards and points
