@@ -1,0 +1,161 @@
+label: Page Builder
+versionless: true
+pages:
+- label: Getting started
+  url: /page-builder/docs/getting-started/introduction.html
+  versionless: true
+  children:
+  - label: Install Page Builder
+    url: /page-builder/docs/getting-started/install-pagebuilder.html
+    versionless: true
+
+  - label: Activate Page Builder
+    url: /page-builder/docs/getting-started/activate-pagebuilder.html
+    versionless: true
+
+  - label: View Page Builder
+    url: /page-builder/docs/getting-started/view-pagebuilder.html
+    versionless: true
+
+- label: Create content type
+  versionless: true
+  children:
+  - label: Overview
+    url: /page-builder/docs/create-basic-content-type/overview.html
+    versionless: true
+
+  - label: Step 1. Add configuration
+    url: /page-builder/docs/create-basic-content-type/step-1-add-configuration.html
+    versionless: true
+
+  - label: Step 2. Add templates
+    url: /page-builder/docs/create-basic-content-type/step-2-add-templates.html
+    versionless: true
+
+  - label: Step 3. Add components
+    url: /page-builder/docs/create-basic-content-type/step-3-add-components.html
+    versionless: true
+
+  - label: Step 4. Add form
+    url: /page-builder/docs/create-basic-content-type/step-4-add-form.html
+    versionless: true
+
+  - label: Step 5. Add styles
+    url: /page-builder/docs/create-basic-content-type/step-5-add-styles.html
+    versionless: true
+
+  - label: Step 6. Add an icon
+    url: /page-builder/docs/create-basic-content-type/step-6-add-icon.html
+    versionless: true
+
+  - label: What's next?
+    url: /page-builder/docs/create-basic-content-type/whats-next.html
+    versionless: true
+
+- label: Configurations
+  versionless: true
+  children:
+  - label: Content type configuration
+    url: /page-builder/docs/configurations/content-type-configuration.html
+    versionless: true
+
+  - label: Additional configurations
+    url: /page-builder/docs/configurations/additional-configurations.html
+    versionless: true
+
+  - label: Panel configurations
+    url: /page-builder/docs/configurations/panel-configurations.html
+    versionless: true
+
+  - label: Icons and images
+    url: /page-builder/docs/configurations/icons-and-images.html
+    versionless: true
+
+  - label: Block chooser
+    url: /page-builder/docs/configurations/block-chooser-configuration.html
+    versionless: true
+
+  - label: Full-width page layouts
+    url: /page-builder/docs/configurations/full-width-page-layout-configuration.html
+    versionless: true
+
+  - label: Responsive layouts
+    url: /page-builder/docs/configurations/responsive-layout-configuration.html
+    versionless: true
+
+  - label: Storefront customization
+    url: /page-builder/docs/configurations/storefront-configuration.html
+    versionless: true
+
+  - label: Selector configuration
+    url: /page-builder/docs/configurations/selector-configuration.html
+    versionless: true
+
+  - label: Product conditions
+    url: /page-builder/docs/configurations/product-conditions-configuration.html
+    versionless: true
+
+  - label: Server-side rendered previews
+    url: /page-builder/docs/configurations/server-side-rendered-previews.html
+    versionless: true
+
+- label: How tos
+  versionless: true
+  children:
+  - label: How to develop a container content type
+    url: /page-builder/docs/how-to/how-to-develop-container-content-type.html
+    versionless: true
+
+  - label: How to use the Image Uploader
+    url: /page-builder/docs/how-to/how-to-use-image-uploader.html
+    versionless: true
+
+  - label: How to add inline text editing
+    url: /page-builder/docs/how-to/how-to-add-inline-text-editing.html
+    versionless: true
+
+  - label: How to add a custom toolbar
+    url: /page-builder/docs/how-to/how-to-add-custom-toolbar.html
+    versionless: true
+
+  - label: How to convert product attribute fields to use Page Builder
+    url: /page-builder/docs/how-to/how-to-convert-product-attributes-to-use-pagebuilder.html
+    versionless: true
+
+- label: Reference
+  versionless: true
+  children:
+  - label: Architecture
+    url: /page-builder/docs/reference/architecture.html
+    versionless: true
+
+  - label: Events
+    url: /page-builder/docs/reference/events.html
+    versionless: true
+
+  - label: Knockout bindings
+    url: /page-builder/docs/reference/knockout-bindings.html
+    versionless: true
+
+- label: Migration to Page Builder
+  versionless: true
+  children:
+  - label: Migrate from BlueFoot
+    url: /page-builder/docs/migration/migrate-from-bluefoot.html
+    versionless: true
+
+  - label: Migrate custom content types from BlueFoot
+    url: /page-builder/docs/migration/migrate-custom-content-types-from-bluefoot.html
+    versionless: true
+
+- label: Release notes
+  url: /page-builder/docs/release-notes.html
+  versionless: true
+
+- label: Component status
+  url: /page-builder/docs/comp-status2.html
+  versionless: true
+
+- label: Contribution guide
+  url: https://github.com/magento/magento2-page-builder/blob/develop/CONTRIBUTING.md
+  versionless: true

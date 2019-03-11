@@ -98,29 +98,25 @@ To enable the GitHub integration for your environment:
 
 5.	Copy the Payload {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} displayed by the command and continue with the next section.
 
-## Add the webhook {#cloud-int-gh-hook}
+## Add the webhook in GitHub
 
-To add the webhook to your GitHub repository:
+In order to communicate events—such as a push—with your Cloud Git server, you need to create a webhook for your GitHub repository:
 
-1.	In your GitHub repository, click **Settings** as the following figure shows.
+1.  In your GitHub repository, click the **Settings** tab.
 
-	![Go to your GitHub's account settings]({{ site.baseurl }}/common/images/cloud_github-acct-settings.png){:width="650px"}
-2.	In the left navigation bar, click **Webhooks & services**.
-3.	In the right pane, click **Add webhook** as the following figure shows.
+1.  In the left navigation bar, click **Webhooks**.
 
-	![Add the webhook to your account]({{ site.baseurl }}/common/images/cloud_github-acct-webhook.png){:width="650px"}
-4.	Enter the following information:
+1.  In the _Webhooks_ pane, click **Add webhook**.
 
-	*	**Payload URL**: Enter the URL displayed by the command in the preceding section.
-	*	**Content type**: Click **application/json**
-	*	**Secret**: Enter a verification secret.
-	*	**Which events would you like to trigger this webhook?**: Click **Send me everything**
-	*	Select the **Active** checkbox.
+1.  In the _Webhooks/Add webhook_ form, edit the following fields:
 
-	The following figure shows an example:
+    -  **Payload URL**: Enter the URL returned when you enabled the GitHub integration.
+    -  **Content type**: Choose **application/json** from the list.
+    -  **Secret**: Enter a verification secret.
+    -  **Which events would you like to trigger this webhook?**: Select **Send me everything**.
+    -  Select the **Active** checkbox.
 
-	![Add the webhook to your account]({{ site.baseurl }}/common/images/cloud_github-acct-webhook2.png){:width="650px"}
-5.	Click **Add webhook**
+1.  Click **Add webhook**.
 
 ## Verify it works {#cloud-int-gh-verify}
 
