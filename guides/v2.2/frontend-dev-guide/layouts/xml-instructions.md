@@ -52,7 +52,7 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 |:------- |:------ |:------ |:------ |
 | `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | class name | no |
 |`name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
-| `before` | Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
+| `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no | 
@@ -126,7 +126,7 @@ The `<action>` instruction is deprecated. If the method implementation allows, u
 
 Calls public methods on the block API.
 
-**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.</p>
+**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
 
 
 Example:
@@ -206,7 +206,7 @@ Sets the declared block or container element as a child of another element in th
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
-For removing blocks or containers, use the `<remove>` attribute for [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
+For removing blocks or containers, use the `remove` attribute for [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
 
 Example of usage:
 

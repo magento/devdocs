@@ -87,13 +87,16 @@ We walk you through everything you need to do and know.
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#database)
-*	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
+*	Test with the correct file permissions in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
 *	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+
+{:.bs-callout .bs-callout-info}
+{{ site.data.var.ece }} supports production and maintenance modes only.
 
 ## Development and testing {#cloud-req-devtest}
 
