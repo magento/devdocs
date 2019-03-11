@@ -3,108 +3,77 @@ group: release-notes
 title: Magento Open Source 2.3.1 Release Notes
 ---
 
-*Release notes published .*
+*Release notes published March 26, 2019.*
 
-We are pleased to present Magento Open Source 2.3.1. This release includes numerous functional fixes and enhancements.  
+We are pleased to present Magento Open Source 2.3.1. This release includes numerous functional fixes and enhancements plus over thirty security enhancements.  
+
+This release includes substantial contributions from our robust, productive community. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with the Magento core code that is released quarterly,  keep in mind that several of these projects are also released independently. Bug fixes are documented in separate release notes for each project.
+
+The bulk of the code that we describe in these release notes belongs to the Magento platform core, which is updated quarterly. Magento also develops extensions that are released independently of this core code. Here is the list of these Magento-developed extensions that are compatible with Magento Commerce 2.3.1: 
+
+* PageBuilder
+
+* Inventory Management
+
+* Progressive Web Applications (PWA) Studio
+
+
+
+
 
 ## Highlights
 
-Magento Commerce 2.3.1 includes a wealth of new features as well as over 200 functional fixes  to the core product. Community contributions include approximately 200 fixes and 300 pull requests. Look for the following highlights in this release:
+Magento Commerce 2.3.1 includes a wealth of new features, over 200 functional fixes to the core product, and over 30 security enhancements. Community contributions include approximately 200 fixes and 300 pull requests. Look for the following highlights in this release:
+
 
 
 ### Merchant tool enhancements
 
-<!--- MAGETWO-95299-->* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920x1200  without compressing and downsizing the images first. Previously, when a merchant uploaded a high quality product image (larger than 1920X1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. 
-
-* <!--- MAGETWO-95068-->* **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
-
-
-#### PageBuilder
-
-**PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS.  Registered participants will be able to install PageBuilder Beta on Magento 2.3.0 Commerce code.  
-
-Powerful set of content types to compose various types of pages  
-Easy drag&drop positioning of all content elements for intuitive page editing 
-Adjustable column grid system for endless page layouts 
-In-line text editing and drag-in images for prompt quick changes 
-Blended content and commerce experience with ability to include products into any place of the content  
-Scheduling content created in PageBuilder to any time in the future  
-True WYSIWYG that shows the content styled and positioned the same way as on the storefront 
-
-enable merchants to create compelling shopping experiences without writing a line of HTML & CSS 
-
-Content editing limited to certain website areas. Limited PWA theme support. 
-
-
-#### Inventory Management
-
-* **Support for Elasticsearch and MSI inventory**. All site searches return correct products and quantities when Elasticsearch is used as the search engine (only default option from 2.3+)  Searches return results from Stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!  
-
-* **Distance-based Source Selection Algorithm option**. Merchants can reduce fulfillment cost by shipping orders from closest inventory locations 
-
-	•	A new Source Selection Algorithm (SSA) that can be enabled by merchants  
-	•	Adds another shipping option beyond Priority-based algorithm that shipped in 2.3.0  
-	•	Calculates shortest distance for deliveries using address geocoding via Google Maps API  
-	•	Allows merchant to enter specific Google Maps API key in configuration  
-	•	Fallback option uses open source database of Post/ZIPcode Lat/Long to calculate distances without requiring any external API calls  
-	•	Fallback option can be downloaded for each active country where merchant has operations  
-	•	Distance-based SSA makes recommendations for shipments, but merchant retains full control over each order  
-	•	As distances are calculated at the time of shipping, there is no performance degradation during checkout  
-	•	Community-developed feature  
-
-Limitation: Google Geocoding API is free up to 2,500 calls/day – higher volume is priced on volume
-
-* **Enhancements to mass inventory transfers**. Mass inventory transfers from admin panel are performant, even in bulk
-	•	Optimized performance for mass inventory transfer from the product grid  
-	•	Enables bulk transfer more quickly and prevents locking of admin screen  
-	•	Compatible with asynchronous processing (message queue)  
-	•	Configurable asynchronous batch size in admin settings  
-	•	Default setting for asynchronous processing changed to Enabled (was Disabled by default in 2.3.0)  
-	•	All features community-developed 
-
-* **In-store pickup fulfillment option for MSI**. Reduce shipping cost and increase customer satisfaction with in-store pickup option 
-	•	Allows merchants to enable in-store pickup for selected sources in MSI  
-	•	Customers can select pickup option and preferred pickup location during checkout  
-	•	Checkout time is reduced because shipping address is no longer required input  
-	•	Merchant controls when “Ready for Pickup” notification is sent to customer  
-	•	Store pickup orders have a higher reservation priority than shipped orders, to prevent insufficient inventory available in sources to fulfill shipped orders  
-	•	Community-developed feature.  
-
-Limitations: In low stock situations, merchants need to transfer inventory from alternate sources before notifying customer  
+* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920x1200  without compressing and downsizing the images first. Previously, when a merchant uploaded a high quality product image (larger than 1920X1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. <!--- MAGETWO-95299-->
 
 * **Improved order creation workflow in the Admin**. When placing an order in Admin, there were excessive processing steps made whenever a billing or a shipping field is updated. Which created delays and frustrations when customer representatives were working with customers to place an order.  SOlution: Order creation flow in Admin has been improved and there are no any delays when editing Billing and Shipping address fields any more. All the processing happens only once when Payment and Shipping information is being populated. 
 
-
 * **Skip URL rewrites multiplication**. Currently when saving a category with lots of products assigned to it (about 1000), there is large amount of data generated and saved into URL rewrites tables which causes performance issues (it is not possible to save a category due to time-out).  Solution: There is a new store view level configuration option "Generate URL Rewrites for Products on Category Save" added to "Configuration->Catalog->Catalog->Search Engine Optimization" section for turning on/off the product URL Rewrites functionality when saving a category. By default the URL rewrites functionality is turned on (set to "Yes"), which means that URL Rewrites are generated as is now, when it is set to "No" the “category/product” URLs are not generated on category save, but when we try to use these URLs on storefront they still works as it is now.  
+
+* **Page Builder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. See Page Builder release notes and [Page Builder](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html). 
+
+
+#### Inventory Management 1.1.0 (Community-developed feature!)
+
+The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management:
+
+* **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!  
+
+* **Distance Priority source selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html).
+
+* **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
+
+* **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders. 
+
+See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
+
+
+
 
 ### Improved developer experience
 
-<!--- MC-5465-->* **Automation of upgrade process dependency assessment**. A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers had to perform this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. 
+* **Automation of upgrade process dependency assessment**. A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers performed this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. <!--- MC-5465-->
+
+* **Progressive Web Apps (PWA) Studio** is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://magento-research.github.io/pwa-studio/).
 
 
 
 #### GraphQL
 
-Major improvements in Coverage, Developer Experience, and Security   
+Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address), products (set swatch color),  and customers (create customer account). See GraphQL Release Notes for information about specific fixes and acknowledgements to community contributors. 
 
-•	Checkout  
-	•	 Create empty Cart  
-	•	 Fetch guest/registered shopper Cart  
-	•	 Add simple product to Cart  
-	•	 Add configurable product to Cart  
-	•	 Add/Remove Coupons to/from Cart  
-	•	 Set Shipping Address on Cart  
-	•	 Products  
-	•	 Swatch color code/image data  
-	•	 Customer  
-	•	 Create customer account 
+
 
 ### Substantial security enhancements
 
-* Over 30 security fixes to core Magento code
+This release contains over 30 security fixes to core Magento code. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.8, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 
-See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.8, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 ### Performance
 
@@ -116,26 +85,83 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 	* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. <!--- MAGETWO-94347-->
    
-
-### Core bundled extension enhancements
-
+[Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. 
 
 
 ### Infrastructure improvements
 
+Infrastructure improvements are core enhancements that underlie both merchant and developer features. 
 
-* Magento now supports Redis 5.0. <!--- MC-5201 -->*
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of March 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. 
 
+Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
-* Magento now uses the latest version of the DHL schema for DHL shipping methods. 
+* Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->*
 
-* Update PayPal Express Checkout to checkout.js v4
+* Magento now supports **Redis 5.0**. <!--- MC-5201 -->*
 
-* Accept.js library is now used for Authorize.Net payments. 
+* Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->* 
 
+* Update PayPal Express Checkout to `checkout.js v4`. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
+* <!--- MAGETWO-95068-->* **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
 
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13. 
+
+
+
+### Bundled extension enhancements
+
+This relase of mafgento includes extensions developed by third-party vendors. 
+
+#### Amazon Pay
+
+* Added **multi-currency support** for  EU and U.K. merchants. See [Use multi-currency](https://amzn.github.io/amazon-payments-magento-2-plugin/configuration.html#use-multi-currency) for anintriduction to using this new feature with Magento 2.x.  <!--- BUNDLE-1762-->
+
+
+#### dotdigital Engagement Cloud (formerly dotmailer)
+
+* dotmailer has been rebranded as dotdigital Engagement Cloud.
+
+* Support for Marketing preferences has been added to the customer account dashboard area. 
+
+* If enabled, we now display the customer consent text in the customer's account dashboard area as the general subscription text.
+
+* The abandoned cart and automation process now benefits from a retry function if contacts are pending in dotdigital Engagement Cloud.
+
+
+
+#### Magento Shipping
+
+New features for Magento 2.3.1 include:
+
+* **Shipment Cancellation**.  You can now cancel a shipment that has not yet been dispatched by accessing the shipment and clicking **Cancel Shipment**. 
+
+* **Portal Access via Magento**. You can now access the Magento Shipping portal directly from Magento using the Magento Shipping credentials that are stored in your Magento instance.
+
+
+Enhancements to existing features include:
+
+* Multiple improvements to the Shipment workflow user experience. 
+
+* **Batch Processing**. Error messaging and field validation has been added to the batch processing workflow. See xxx for a description of other enhancements to batch processing.  
+
+* **Collection Points**. Available Collection Points have been expanded to cater for both FedEx Hold at Locations and UPS Access Points.
+
+* Significant user interface changes have been made to the list of locations displayed during checkout. Opening and closing hours are now included when provided by the carrier.
+
+* **Click & Collect**. The list of Click & Collect locations in checkout has been brought in line with the new Collection Points list. For a description of the new Collection Points list, see xxx. 
+
+* **Carrier Specific Packaging**. Carrier-specific packaging has been added for FedEx. These packages will be available for selection during shipping if a FedEx carrier is configured.
+
+* **Qualification Experience**. The three Qualification experiences (Ship to Address, Click & Collect, and Collection Points) have been restructured and are now available as outcomes in a single Qualification experience.
+
+* **Security**. We've closed scenarios that could allow for third-party code execution.
+
+* **Magento Cart Price Rules**. Cart price rules can now be applied to Magento Shipping.
+
+* **Dispatch**. We've added additional workflow capabilities during the dispatch process to cater for future carriers.
+
 
 
 

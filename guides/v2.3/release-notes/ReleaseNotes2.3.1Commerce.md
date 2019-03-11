@@ -3,9 +3,21 @@ group: release-notes
 title: Magento Commerce 2.3.1 Release Notes
 ---
 
-*Release notes published .*
+*Release notes published March 26, 2019.*
 
-We are pleased to present Magento Commerce 2.3.1. This release includes numerous functional fixes and enhancements.  
+We are pleased to present Magento Commerce 2.3.1. This release includes numerous functional fixes and enhancements plus over thirty security enhancements.  
+
+This release includes substantial contributions from our robust, productive community. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with the Magento core code that is released quarterly,  keep in mind that several of these projects are also released independently. Bug fixes are documented in separate release notes for each project.
+
+
+
+The bulk of the code that we describe in these release notes belongs to the Magento platform core, which is updated quarterly. Magento also develops extensions that are released independently of this core code. Here is the list of these Magento-developed extensions that are compatible with Magento Commerce 2.3.1: 
+
+* PageBuilder
+
+* Inventory Management
+
+* Progressive Web Applications (PWA) Studio
 
 
 
@@ -25,7 +37,7 @@ Magento Commerce 2.3.1 includes a wealth of new features, over 200 functional fi
 
 * **Skip URL rewrites multiplication**. Currently when saving a category with lots of products assigned to it (about 1000), there is large amount of data generated and saved into URL rewrites tables which causes performance issues (it is not possible to save a category due to time-out).  Solution: There is a new store view level configuration option "Generate URL Rewrites for Products on Category Save" added to "Configuration->Catalog->Catalog->Search Engine Optimization" section for turning on/off the product URL Rewrites functionality when saving a category. By default the URL rewrites functionality is turned on (set to "Yes"), which means that URL Rewrites are generated as is now, when it is set to "No" the “category/product” URLs are not generated on category save, but when we try to use these URLs on storefront they still works as it is now.  
 
-
+* **Page Builder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. See Page Builder release notes and [Page Builder](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html). 
 
 
 #### Inventory Management 1.1.0 (Community-developed feature!)
@@ -34,9 +46,9 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 
 * **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!  
 
-* **Distance-based source selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html). 
+* **Distance Priority source selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html).
 
-* **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized for speed and to reduce locking of the Admin during transfers. 
+* **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
 
 * **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders. 
 
@@ -47,7 +59,10 @@ See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3
 
 ### Improved developer experience
 
-**Automation of upgrade process dependency assessment**. A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers performed this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. <!--- MC-5465-->
+* **Automation of upgrade process dependency assessment**. A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers performed this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. <!--- MC-5465-->
+
+* **Progressive Web Apps (PWA) Studio** is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://magento-research.github.io/pwa-studio/).
+
 
 
 #### GraphQL
@@ -79,7 +94,9 @@ This release contains over 30 security fixes to core Magento code. See [Magento 
 
 Infrastructure improvements are core enhancements that underlie both merchant and developer features. 
 
-* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of March 28, 2019. Magento released a patch in late February to address this issue on existing installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). Note that `accept.js` library is now used for Authorize.Net payments. 
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of March 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. 
+
+Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
 * Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->*
 
@@ -97,7 +114,7 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 ### Bundled extension enhancements
 
-Vendor-developed extensions 
+This relase of mafgento includes extensions developed by third-party vendors. 
 
 #### Amazon Pay
 
@@ -146,16 +163,6 @@ Enhancements to existing features include:
 * **Magento Cart Price Rules**. Cart price rules can now be applied to Magento Shipping.
 
 * **Dispatch**. We've added additional workflow capabilities during the dispatch process to cater for future carriers.
-
-
-### Interested in other Magento projects?
-
-The bulk of the code that we describe in these release notes belongs to the Magento core, which is updated quarterly. Magento also develops extensions that are released independently of this core code. Here is the list of these Magento-developed extensions  that are compatible with Magento Commerce 2.3.1.
-
-* **Page Builder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. See Page Builder release notes and [Page Builder](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html). 
-
-* **Progressive Web Apps (PWA) Studio** is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.x. See [Magento PWA Documentation](https://magento-research.github.io/pwa-studio/).
-
 
 
 
@@ -278,7 +285,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-97131-->* A logged-in user can now log out, log in as a guest, and then check out when persistent cart is enabled. Previously, under these circumstances, the customer logged in as guest could not check out, and Magento displayed this error, `No such entity with cartId = null`. 
 
-<!--- MAGETWO-97315-->* Magento now implements shared catalog settings for the display and purchase of products that are  contained in the catalog. 
+<!--- MAGETWO-97315-->* Magento now correctly displays pricing for configurable products when permissions are set to prevent adding products to cart from a category. 
 
 
 ### CAPTCHA
@@ -620,7 +627,6 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-4001-->* Fixed misalignment of **Schedule Update From** field on the Admin category page when displayed in a browser set to 768 x 1147 resolution. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20403](https://github.com/magento/magento2/pull/20403)*. [GitHub-20402](https://github.com/magento/magento2/issues/20402)
 
-<!--- ENGCOM-4079-->* Added argument PHPDoc comment missing from `Magento\BundleGraphQl\Model\Resolver\Options\Collection::addParentFilterData()`. *Fix submitted by [Dominic Fernando](https://github.com/dominicfernando) in pull request [20403](https://github.com/magento/graphql-ce/pull/329)*. [GitHub-20402](https://github.com/magento/magento2/issues/20402)
 
 <!--- ENGCOM-4052-->* The Widget Options left navigation block on the Add New widget Page now displays correctly in tablet view. *Fix submitted by [dipti2jcommerce](https://github.com/dipti2jcommerce) in pull request [20493](https://github.com/magento/magento2/pull/20493)*. [GitHub-20492](https://github.com/magento/magento2/issues/20492)
 
@@ -632,40 +638,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3891-->* Fixed irregularities with updating order status. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20349](https://github.com/magento/magento2/pull/20349)*. [GitHub-19258](https://github.com/magento/magento2/issues/19258)
 
-
-<!--- ENGCOM-3822-->* Fixed issue with 
-
-
-
-*Fix submitted by [Ravi chandra](https://github.com/ravi-chandra3197) in pull request [19812](https://github.com/magento/magento2/pull/19812)*. [GitHub-17926](https://github.com/magento/magento2/issues/17926)
-
-
-The ui-component field validation error not opening accordion tab that owns the field
-
-Fixed The ui-component field validation error not opening accordion tab that owns the field (field does not get focused)
-
-The ui-component field validation error not opening accordion tab that owns the field (field does not get focused)
-
-
-The issue of event not triggering properly on every call causes issues with Form Validation 'error' events where certain errors don't get properly highlighted when error message is not set properly or does not change. In case rest of the UI state around the error has been changed, the element that caused the actual error, no longer gets highlighted correctly.
-
-In most typical cases this can be encountered when either:
-
-When editing entities where some previously optional field was changed to be required.
-Editing entities that were created by a integration.
-... or basically any way you could end up with having entities where required value was reset/blanked in the backend.
-The steps provided might feel a bit illogical and odd, but serve still to illustrate the issue; similar,
-more serious situations with non-visible errors have been encountered on specific projects with 3rd party modules (mostly relates to integrations and data imports that deliver data where some required fields end up being empty when editing forms in admin).
-
-
-
-
-
-
-
-
-
-
+<!--- ENGCOM-3822-->* The `ui-component` validation 'error' event now bubbles upwards when an abstract element is nested in a field set. *Fix submitted by [Ravi chandra](https://github.com/ravi-chandra3197) in pull request [19812](https://github.com/magento/magento2/pull/19812)*. [GitHub-17926](https://github.com/magento/magento2/issues/17926)
 
 
 
@@ -1025,7 +998,9 @@ more serious situations with non-visible errors have been encountered on specifi
 
 ### GraphQL
 
-<!--- ENGCOM-4007-->* The storeConfig query returns results as expected. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [318](https://github.com/magento/graphql-ce/pull/318)*. [GitHub-317]( https://github.com/magento/graphql-ce/issues/317)
+<!--- ENGCOM-4079-->* Added argument PHPDoc comment missing from `Magento\BundleGraphQl\Model\Resolver\Options\Collection::addParentFilterData()`. *Fix submitted by [Dominic Fernando](https://github.com/dominicfernando) in pull request [20403](https://github.com/magento/graphql-ce/pull/329)*. 
+
+<!--- ENGCOM-4007-->* The storeConfig query returns results as expected. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [318](https://github.com/magento/graphql-ce/pull/318)*. [GitHub-317]( https://github.com/magento/magento2/issues/317)
 
 <!--- ENGCOM-4081-->* Category levels are now calculated correctly. *Fix submitted by [Roman Kis](https://github.com/kisroman) in pull request [337](https://github.com/magento/graphql-ce/pull/337)*. [GitHub-336](https://github.com/magento/magento2/issues/336)
 
@@ -1694,7 +1669,7 @@ For more information, see [System Requirements]({{site.baseurl}}/magento-system-
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3.0  using Composer.
+You can install Magento Commerce 2.3.1  using Composer.
 
 ## Migration toolkits
 
