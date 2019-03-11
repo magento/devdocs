@@ -3,7 +3,7 @@ group: graphql
 title: Directory endpoint
 ---
 
-To retrieve country and regional directory information, use the `country`, `countries`, and `currency` endpoints.
+To retrieve country and regional directory information, use the `country`, `countries`, and `currency` queries.
 
 ### Country attributes {#countryAttributes}
 
@@ -152,7 +152,7 @@ query {
 ```
 
 ## Countries
-Use the `countries` endpoint to return all countries in which the entity can do business.
+Use the `countries` query to return all countries in which the entity can do business.
 
 #### Syntax
 
@@ -278,7 +278,7 @@ In this example, the response is intentionally truncated.
 ```
 
 ## Currency
-Use the `currency` endpoint to return information about the store's currency configuration.
+Use the `currency` query to return information about the store's currency configuration.
 
 #### Syntax
 
