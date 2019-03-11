@@ -3,7 +3,7 @@ group: graphql
 title: Directory endpoint
 ---
 
-To retrieve country and regional information, use the `country`, `countries`, and `currency` endpoints.
+To retrieve country and regional directory information, use the `country`, `countries`, and `currency` endpoints.
 
 ### Country attributes {#countryAttributes}
 
@@ -19,7 +19,7 @@ Attribute | Data type | Description
 `two_letter_abbreviation` | String | The two-letter abbreviation of the country, such as `US`
 {:style="table-layout:auto;"}
 
-### Region {#region}
+### Region attributes {#region}
 
 The `region` object provides the following attributes:
 
@@ -30,7 +30,7 @@ Attribute | Data type | Description
 `name` | String | The name of the region, such as `Texas`
 {:style="table-layout:auto;"}
 
-### Countries attributes {#}
+### Countries attributes
 
 The `countries` object provides the following attributes:
 
@@ -39,13 +39,13 @@ Attribute | Data type | Description
 `Country` | [[Country]](#countryAttributes)| Provides information for all countries specified in the store
 {:style="table-layout:auto;"}
 
-### Currency attributes {#}
+### Currency attributes
 
 The `currency` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`available_currency_codes` | [[String]] | An array of currencies accepted by the store
+`available_currency_codes` | [String] | An array of currencies accepted by the store
 `base_currency_code` | String | The base currency set for the store, such as USD
 `base_currency_symbol` | String | The symbol for the specified base currency, such as $
 `default_display_currecy_code` | String | Specifies if the currency code is set as the store's default
@@ -63,14 +63,14 @@ Attribute | Data type | Description
 `rate` | Float | The exchange rate for the store's default currency
 {:style="table-layout:auto;"}
 
-### Country query
+## Country
 Use the `country` query to retrieve information about a specific country.
 
-## Syntax
+#### Syntax
 
 `{country(id: String) {Country}}`
 
-## Example usage
+### Example usage
 
 The following query returns information about Australia.
 
@@ -151,14 +151,14 @@ query {
 }
 ```
 
-## Countries endpoint
+## Countries
 Use the `countries` endpoint to return all countries in which the entity can do business.
 
-## Syntax
+#### Syntax
 
 `{countries[country] {Countries}}`
 
-## Example usage
+### Example usage
 
 The following query returns all countries listed for the current instance of Magento:
 
@@ -277,14 +277,14 @@ In this example, the response is intentionally truncated.
       },
 ```
 
-## Currency endpoint
+## Currency
 Use the `currency` endpoint to return information about the store's currency configuration.
 
- ## Syntax
+#### Syntax
 
 `{currency {Currency}}`
 
-## Example usage
+### Example usage
 
 The following query returns the currency for the current instance of Magento:
 

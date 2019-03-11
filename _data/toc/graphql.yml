@@ -44,6 +44,9 @@ pages:
             - label: Customer endpoint
               url: /graphql/reference/customer.html
 
+            - label: Directory endpoint
+              url: /graphql/reference/directory.html
+
             - label: Products endpoint
               url: /graphql/reference/products.html
               children:
