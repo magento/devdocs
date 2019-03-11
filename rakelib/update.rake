@@ -27,6 +27,14 @@ namespace :update do
     sh 'git pull'
   end
 
+  desc 'Update Magento 1 docs'
+  task :pb do
+    puts 'Updating Page Builder docs'.magenta
+    abort 'Cannot find the "page-builder" directory' unless Dir.exist? 'page-builder'
+    sh 'cd page-builder'
+    sh 'git pull'
+  end
+
   desc 'Update devdocs master'
   task :devdocs do
     puts 'Updating devdocs'.magenta
@@ -36,5 +44,5 @@ namespace :update do
   end
 
   desc 'Update devodcs and subrepos'
-  task all: %w[devdocs m1 mbi]
+  task all: %w[devdocs m1 mbi pb]
 end
