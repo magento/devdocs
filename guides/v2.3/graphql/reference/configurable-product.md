@@ -5,6 +5,9 @@ title: ConfigurableProduct endpoint
 
 The `ConfigurableProduct` endpoint defines a mutation for adding configurable products to a cart. It also extends the `ProductInterface` so that attributes that are specific to configurable products can be queried in a `products` search.
 
+{:.bs-callout .bs-callout-tip}
+The mutations defined in this topic are not supported in Magento 2.3.1, but will be supported in a future release.
+
 ## Query
 The `products` query returns configurable product-specific information when you perform a `products` search.
 
