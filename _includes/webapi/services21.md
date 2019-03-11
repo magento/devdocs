@@ -69,7 +69,6 @@ The Web APIs for {{site.data.var.ee}} are available on Commerce installations on
 
 ### CatalogInventory
     catalogInventoryStockRegistryV1
-    catalogInventoryStockItemApi
 
 ### Checkout
     checkoutGuestPaymentInformationManagementV1
