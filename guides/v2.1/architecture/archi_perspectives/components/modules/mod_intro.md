@@ -72,7 +72,7 @@ See [Frontend Developer Guide][] for information on implementing themes and othe
 [Github repo]: https://github.com/magento/magento2/tree/2.3-develop/app/code/Magento
 [Module dependencies]: {{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend.html
 [Modules and areas]: {{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_and_areas.html
-[Module location and naming conventions]: {{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_conventions.html
+[Module location and naming conventions]: {{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html
 [PHP Developer Guide]: {{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
 [themes]: {{page.baseurl}}/frontend-dev-guide/themes/theme-overview.html

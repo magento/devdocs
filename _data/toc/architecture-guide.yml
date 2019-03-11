@@ -10,7 +10,7 @@ pages:
         - label: Architectural diagrams
           url: /architecture/archi_perspectives/arch_diagrams.html
         
-        - label: Extensibility and modularity
+        - label: Modularity and Extensibility
           url: /architecture/extensibility.html
 
         - label: Frontend customization

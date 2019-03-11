@@ -79,5 +79,5 @@ Presentation layer components make calls to the Service layer, which in turn sen
 
 <!-- Link definitions -->
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
-[GraphQL Developer Guide]: {{page.baseurl}}/graphql/
+[GraphQL Developer Guide]: https://devdocs.magento.com/guides/v2.3/graphql/
 [Magento PWA]: https://magento-research.github.io/pwa-studio/technologies/overview/
