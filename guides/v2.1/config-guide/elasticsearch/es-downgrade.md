@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Change Elasticsearch Client
+title: Change the Elasticsearch Client
 functional_areas:
   - Configuration
   - Search
@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-The Magento 2.1 only supports Elasticsearch 2.0, which has reached [End of Life][].
+Magento 2.1 only supports Elasticsearch 2.0, which has reached [End of Life][].
 
 <!-- Link Definitions -->
 

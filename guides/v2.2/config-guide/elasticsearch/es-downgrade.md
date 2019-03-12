@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Change Elasticsearch Client
+title: Change the Elasticsearch Client
 functional_areas:
   - Configuration
   - Search
@@ -8,8 +8,8 @@ functional_areas:
   - Setup
 ---
 
-The Magento 2.2.8 update adds support for Elasticsearch (ES) 6.x.
-Magento still provides connectivity for ES 2.x and 5.x but this will need to be specifically enabled.
+Magento 2.2.8 adds support for Elasticsearch (ES) 6.x.
+Magento still provides connectivity for ES 2.x and 5.x, but you must manually enable this support.
 
 If you need to run Magento 2.2.8 with Elasticsearch 2.x or 5.x, you must change the Elasticsearch [PHP client][] version.
 
@@ -21,7 +21,7 @@ Running ES 2.x is strongly discouraged.
 If you need to work with Elasticsearch 5.x, run the following command:
 
 ```bash
-composer require "elastic/elasticsearch:~5.1"
+composer require "elastic/elasticsearch:~5.2"
 ```
 
 If you need to work with Elasticsearch 2.x, run the following command:

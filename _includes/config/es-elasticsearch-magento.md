@@ -22,10 +22,10 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 
 |Option|Description|
 |--- |--- |
-|Elasticsearch Server Hostname|Enter the fully qualified hostname or IP address of the machine running Elasticsearch. {{site.data.var.ece}}: Get this value from your integration system.|
-|Elasticsearch Server Port|Enter the Elasticsearch web server proxy port. In our example, the port is 8080 but if you're using a secure proxy, it's typically 443. {{site.data.var.ece}}: Get this value from your integration system.|
-|Elasticsearch Index Prefix|Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
-|Enable Elasticsearch HTTP Auth|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
+|**Elasticsearch** Server Hostname|Enter the fully qualified hostname or IP address of the machine running Elasticsearch. {{site.data.var.ece}}: Get this value from your integration system.|
+|**Elasticsearch Server Port**|Enter the Elasticsearch web server proxy port. In our example, the port is 8080 but if you're using a secure proxy, it's typically 443. {{site.data.var.ece}}: Get this value from your integration system.|
+|**Elasticsearch Index Prefix**|Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
+|**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
 {:style="table-layout:auto;"}
 
 {:start="4"}
@@ -38,8 +38,8 @@ You will see either:
 Magento successfully connected to the Elasticsearch server.
 Continue with:
 
-* [Configure Apache and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-apache.html)
-* [Configure nginx and Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-config-nginx.html)
+* [Configure Apache and Elasticsearch]({{ site.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
+* [Configure nginx and Elasticsearch]({{ site.baseurl }}/config-guide/elasticsearch/es-config-nginx.html)
 
 or you will see:
 
@@ -51,7 +51,7 @@ If so, try the following:
 * If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.
 * Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.
 In particular, make sure you started Elasticsearch as a user with `root` privileges.
-* Make sure that [UNIX firewall and SELinux]({{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#firewall-selinux) are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.
+* Make sure that [UNIX firewall and SELinux]({{ site.baseurl }}/config-guide/elasticsearch/es-overview.html#firewall-selinux) are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.
 * Verify the value of the **Elasticsearch Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
 * Use the command `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
   For example, to see if Elasticsearch is running on its default port, use the following command:

@@ -122,7 +122,7 @@ The tasks discussed in this section require the following:
     1519701563 03:19:23  elasticsearch green           1         1      0   0    0    0        0             0
     ```
 
-## Upgrade from Elasticsearch 2.x/5.x to 6.x {#es-upgrade6}
+## Upgrading Elasticsearch {#es-upgrade6}
 
 Refer to [Upgrading Elasticsearch][] for full instructions on backing up your data, detecting potential migration issues, and testing upgrades before deploying to production.
 
