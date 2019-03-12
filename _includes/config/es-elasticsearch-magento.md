@@ -8,6 +8,8 @@ Elasticsearch 2.x is still available but strongly discouraged. Versions 2.x and 
 If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client.
 Follow the instructions in [Change the Elasticsearch Client]({{page.baseurl}}/config-guide/elasticsearch/es-downgrade.html).
 
+## Configure Elasticsearch within Magento
+
 To configure Magento to use Elasticsearch:
 
 1. Log in to the Magento Admin as an administrator.
@@ -23,7 +25,7 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 |Option|Description|
 |--- |--- |
 |**Elasticsearch** Server Hostname|Enter the fully qualified hostname or IP address of the machine running Elasticsearch. {{site.data.var.ece}}: Get this value from your integration system.|
-|**Elasticsearch Server Port**|Enter the Elasticsearch web server proxy port. In our example, the port is 8080 but if you're using a secure proxy, it's typically 443. {{site.data.var.ece}}: Get this value from your integration system.|
+|**Elasticsearch Server Port**|Enter the Elasticsearch web server proxy port. In our example, the port is 8080 but if you are using a secure proxy, it is typically 443. {{site.data.var.ece}}: Get this value from your integration system.|
 |**Elasticsearch Index Prefix**|Enter the Elasticsearch index prefix. If you use a single Elasticsearch instance for more than one Magento installation (Staging and Production environments), you must specify a unique prefix for each installation. Otherwise, you can use the default prefix magento2.|
 |**Enable Elasticsearch HTTP Auth**|Click **Yes** only if you enabled authentication for your Elasticsearch server. If so, provide a username and password in the provided fields.|
 {:style="table-layout:auto;"}
@@ -59,7 +61,7 @@ In particular, make sure you started Elasticsearch as a user with `root` privile
   If Elasticsearch is running on port 9200, it displays similar to the following:
   `tcp        0      0 :::9200            :::*          LISTEN`
 
-### Reindexing catalog search and refreshing the full page cache {#es-reindex}
+## Reindexing catalog search and refreshing the full page cache {#es-reindex}
 
 After you change Magento's Elasticsearch configuration, you must reindex the catalog search index and refresh the full page cache using the Admin or command line.
 

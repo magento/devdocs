@@ -30,6 +30,9 @@ If you need to work with Elasticsearch 2.x, run the following command:
 composer require "elastic/elasticsearch:~2.0"
 ```
 
+{:.bs-callout .bs-callout-info}
+Version 6.x is the latest suported version.
+
 To re-enable Elasticsearch 6.x, run the following command:
 
 ```bash
