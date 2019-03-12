@@ -54,20 +54,21 @@ The [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]
 * [curl](http://php.net/manual/en/book.curl.php)
 * [dom](http://php.net/manual/en/book.dom.php)
 * [gd](http://php.net/manual/en/book.image.php), [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php) (or later) or both
+* [hash](http://php.net/manual/en/book.hash.php)
+* [iconv](http://php.net/manual/en/book.iconv.php)
 * [intl](http://php.net/manual/en/book.intl.php)
+* [json](http://php.net/manual/en/book.json.php)
+* [libxml](http://php.net/manual/en/book.libxml.php)
 * [mbstring](http://php.net/manual/en/book.mbstring.php)
 * [mcrypt](http://php.net/manual/en/book.mcrypt.php)
-* [hash](http://php.net/manual/en/book.hash.php)
 * [openssl](http://php.net/manual/en/book.openssl.php)
 * [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php)
 * [SimpleXML](http://php.net/manual/en/book.simplexml.php)
 * [soap](http://php.net/manual/en/book.soap.php)
 * [spl](http://php.net/manual/en/book.spl.php)
-* [libxml](http://php.net/manual/en/book.libxml.php)
 * [xsl](http://php.net/manual/en/book.xsl.php)
 * [zip](http://php.net/manual/en/book.zip.php)
-* [json](http://php.net/manual/en/book.json.php)
-* [iconv](http://php.net/manual/en/book.iconv.php)
+
 
 #### PHP OPcache
 
