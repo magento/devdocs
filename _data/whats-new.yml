@@ -4,8 +4,37 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Mar  4 13:13:10 2019
+updated: Mon Mar 11 10:18:26 2019
 entries:
+- description: Added a technical guideline [6.4.4.13](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#64-service-contracts-application-layer).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: March  5, 2019
+  link: https://github.com/magento/devdocs/pull/3870
+- description: Moved source files of the Magento 1 documentation to [magento/devdocs-m1](https://github.com/magento/devdocs-m1).
+  versions: 1.x
+  type: Major update
+  date: March  5, 2019
+  link: https://github.com/magento/devdocs/pull/3868
+- description: Corrected the data type for the `company_id` and `available_limit`
+    parameters for the [company credit API operations](https://devdocs.magento.com/guides/v2.3/b2b/credit-manage.html)
+    in Magento Commerce for B2B.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: March  5, 2019
+  link: https://github.com/magento/devdocs/pull/3865
+- description: Update [community contribution guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#porting)
+    about porting
+  versions: 2.x
+  type: Major update
+  date: March  4, 2019
+  link: https://github.com/magento/devdocs/pull/3850
+- description: Fixed the incorrect `composer install` command in [Set up an Embedded
+    MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#setup-framework).
+  versions: 2.3.x
+  type: Technical changes
+  date: March  4, 2019
+  link: https://github.com/magento/devdocs/pull/3863
 - description: Added a section about [Required System Dependencies](http://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-system-dependencies)<br/>Added
     a section about [Unsupported Operating Systems](http://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#unsupported-operating-systems)
   versions: 2.3.x
