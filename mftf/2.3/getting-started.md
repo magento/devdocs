@@ -22,38 +22,9 @@ Make sure that you have the following software installed and configured on your 
 {:.bs-callout .bs-callout-tip}
 [PhpStorm] supports [Codeception test execution][], which is helpful when debugging.
 
-## Prepare Magento  {#prepare-magento}
+## Install Magento {#install-magento}
 
-Configure the following settings in Magento as described below.
-
-### WYSIWYG settings    {#wysiwyg-settings}
-
-A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}.
-
-To disable the WYSIWYG and enable the web driver to process these fields as simple text areas:
-
-1. Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2. Navigate to **Stores \> Configuration \> General \> Content Management**.
-3. In the WYSIWYG Options section set the **Enable WYSIWYG Editor** option to **Disabled Completely**.
-4. Click **Save Config**.
-
-{: .bs-callout .bs-callout-tip }
-When you want to test the WYSIWYG functionality, re-enable WYSIWYG in your test [suite][].
-
-### Security settings   {#security-settings}
-
-To enable the **Admin Account Sharing** setting, to avoid unpredictable logout during a testing session, and disable the **Add Secret Key in URLs** setting, to open pages using direct URLs:
-
-1. Navigate to **Stores \> Configuration \> Advanced \> {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} \> Security**.
-2. Set **Admin Account Sharing** to **Yes**.
-3. Set **Add Secret Key to URLs** to **No**.
-4. Click **Save Config**.
-
-## Set up an embedded MFTF {#setup-framework}
-
-This is a default setup that you would need to start using the MFTF to cover your Magento project with functional testing.
-It installs the framework using an existing Composer dependency such as `magento/magento2-functional-testing-framework`.
-If you want to set up the MFTF as a standalone tool, refer to [Set up a standalone MFTF][].
+Use instructions below to install Magento.
 
 ### Step 1. Clone the `magento2` source code repository {#clone-magento}
 
@@ -85,13 +56,46 @@ Install the Magento application.
 composer install
 ```
 
+## Prepare Magento  {#prepare-magento}
+
+Configure the following settings in Magento as described below.
+
+### WYSIWYG settings    {#wysiwyg-settings}
+
+A Selenium web driver cannot enter data to fields with {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %}.
+
+To disable the WYSIWYG and enable the web driver to process these fields as simple text areas:
+
+1. Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
+2. Navigate to **Stores \> Configuration \> General \> Content Management**.
+3. In the WYSIWYG Options section set the **Enable WYSIWYG Editor** option to **Disabled Completely**.
+4. Click **Save Config**.
+
+{: .bs-callout .bs-callout-tip }
+When you want to test the WYSIWYG functionality, re-enable WYSIWYG in your test suite.
+
+### Security settings   {#security-settings}
+
+To enable the **Admin Account Sharing** setting, to avoid unpredictable logout during a testing session, and disable the **Add Secret Key in URLs** setting, to open pages using direct URLs:
+
+1. Navigate to **Stores \> Configuration \> Advanced \> {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} \> Security**.
+2. Set **Admin Account Sharing** to **Yes**.
+3. Set **Add Secret Key to URLs** to **No**.
+4. Click **Save Config**.
+
+## Set up an embedded MFTF {#setup-framework}
+
+This is a default setup that you would need to start using the MFTF to cover your Magento project with functional testing.
+It installs the framework using an existing Composer dependency such as `magento/magento2-functional-testing-framework`.
+If you want to set up the MFTF as a standalone tool, refer to [Set up a standalone MFTF][].
+
 Install the MFTF.
 
 ```bash
-composer install -d dev/tests/acceptance/
+composer install
 ```
 
-### Step 3. Build the project   {#build-project}
+### Step 1. Build the project   {#build-project}
 
 In the Magento project root, run:
 
@@ -120,7 +124,7 @@ See [`generate:urn-catalog`][] for more details.'
 You can simplify command entry by adding the  absolute  path to the `vendor/bin` directory path to your PATH environment variable.
 After adding the path, you can run `mftf` without having to include `vendor/bin`.
 
-### Step 4. Edit environmental settings   {#environment-settings}
+### Step 2. Edit environmental settings   {#environment-settings}
 
 In the `magento2/dev/tests/acceptance/` directory, edit the `.env` file to match your system.
 
@@ -147,7 +151,7 @@ If the `MAGENTO_BASE_URL` contains a subdirectory like `http://magento.test/mage
 
 Learn more about environmental settings in [Configuration][].
 
-### Step 5. Enable the Magento CLI commands
+### Step 3. Enable the Magento CLI commands
 
 In the `magento2/dev/tests/acceptance` directory, run the following command to enable the MFTF to send Magento CLI commands to your Magento instance.
 
@@ -155,7 +159,7 @@ In the `magento2/dev/tests/acceptance` directory, run the following command to e
 cp dev/tests/acceptance/.htaccess.sample dev/tests/acceptance/.htaccess
 ```
 
-### Step 6. Generate and run tests   {#run-tests}
+### Step 4. Generate and run tests   {#run-tests}
 
 To run tests, you need a running Selenium server and [`mftf`][] commands.
 
@@ -198,7 +202,7 @@ vendor/bin/mftf run:test AdminLoginTest --remove
 
 See more commands in [`mftf`][].
 
-### Step 7. Generate reports    {#reports}
+### Step 5. Generate reports    {#reports}
 
 During testing, the MFTF generates test reports in CLI.
 You can generate visual representations of the report data using [Allure Framework][].

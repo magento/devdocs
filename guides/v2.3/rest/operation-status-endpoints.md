@@ -45,7 +45,7 @@ Field name | Data type | Description
   ],
   "user_type": 2,
   "bulk_id": "fbfca270-7a90-4c4e-9f32-d6cf3728cdc7",
-  "description": "Topic async.V1.products.sku.PUT",
+  "description": "Topic async.magento.catalog.api.productrepositoryinterface.save.put",
   "start_time": "2018-07-12 16:07:53",
   "user_id": 1,
   "operation_count": 1

@@ -10,8 +10,11 @@ pages:
         - label: GraphQL request headers
           url: /graphql/send-request.html
 
-        - label: Searches and pagination
-          url: /graphql/search-pagination.html
+        - label: Queries
+          url: /graphql/queries.html
+
+        - label: Mutations
+          url: /graphql/mutations.html
 
     - label: Development
       children:
@@ -32,37 +35,7 @@ pages:
 
     - label: Reference
       children:
-        - label: Products endpoint
-          url: /graphql/reference/products.html
-          children:
-            - label: Product interface implementations
-              url: /graphql/reference/product-interface-implementations.html
-
-            - label: CustomizableOptionInterface
-              url: /graphql/reference/customizable-option-interface.html
-
-            - label: BundleProduct endpoint
-              url: /graphql/reference/bundle-product.html
-
-            - label: Category endpoint
-              url: /graphql/reference/categories.html
-
-            - label: ConfigurableProduct endpoint
-              url: /graphql/reference/configurable-product.html
-
-            - label: DownloadableProduct endpoint
-              url: /graphql/reference/downloadable-product.html
-
-            - label: GiftCardProduct endpoint
-              url: /graphql/reference/gift-card-product.html
-
-            - label: GroupedProduct endpoint
-              url: /graphql/reference/grouped-product.html
-
-        - label: Other objects
-          children:
-
-            - label: CMS endpoints
+            - label: CMS endpoint
               url: /graphql/reference/cms.html
               
             - label: CustomAttributeMetadata endpoint
@@ -71,11 +44,47 @@ pages:
             - label: Customer endpoint
               url: /graphql/reference/customer.html
 
+            - label: Directory endpoint
+              url: /graphql/reference/directory.html
+
+            - label: Products endpoint
+              url: /graphql/reference/products.html
+              children:
+                - label: Product interface implementations
+                  url: /graphql/reference/product-interface-implementations.html
+
+                - label: CustomizableOptionInterface
+                  url: /graphql/reference/customizable-option-interface.html
+
+                - label: BundleProduct endpoint
+                  url: /graphql/reference/bundle-product.html
+
+                - label: Category endpoint
+                  url: /graphql/reference/categories.html
+
+                - label: ConfigurableProduct endpoint
+                  url: /graphql/reference/configurable-product.html
+
+                - label: DownloadableProduct endpoint
+                  url: /graphql/reference/downloadable-product.html
+
+                - label: GiftCardProduct endpoint
+                  url: /graphql/reference/gift-card-product.html
+
+                - label: GroupedProduct endpoint
+                  url: /graphql/reference/grouped-product.html
+
             - label: Quote endpoint
               url: /graphql/reference/quote.html
 
-            - label: storeConfig endpoint
+            - label: Sales endpoint
+              url: /graphql/reference/sales.html
+
+            - label: Store endpoint
               url: /graphql/reference/store-config.html
 
-            - label: urlResolver endpoint
+            - label: UrlRewrite endpoint
               url: /graphql/reference/url-resolver.html
+
+            - label: Wishlist endpoint
+              url: /graphql/reference/wishlist.html

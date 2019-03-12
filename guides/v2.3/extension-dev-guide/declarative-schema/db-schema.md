@@ -24,7 +24,7 @@ The following example, extracted from the `Catalog/etc/db_schema.xml` file, defi
     <column xsi:type="int" name="value_id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
     <column xsi:type="smallint" name="attribute_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Attribute ID"/>
     <column xsi:type="smallint" name="store_id" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Store ID"/>
-    <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0"/>
+    <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="false" default="0" comment="Entity ID"/>
     <column xsi:type="datetime" name="value" on_update="false" nullable="true" comment="Value"/>
     <constraint xsi:type="primary" referenceId="PRIMARY">
         <column name="value_id"/>
@@ -236,7 +236,7 @@ The following example creates the `declarative_table` table with four columns. T
 
 ### Drop a table
 
-In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file. To drop a table declared in another module, redeclare it with the `disabled` attribute set to `true`.
+In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file.
 
 ```diff
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -255,7 +255,35 @@ In the following example, the `declarative_table` table was completely removed f
 
 ### Rename a table
 
-Table renaming is not supported. However, you can remove an unneeded table declaration and add a new one. Data will be persisted in a CSV dump, but the data will not be added to the new table automatically. You can add the data manually by using data/recurring patches.
+Table renaming is supported. The declarative schema will create a new table with the new name and drop the table with the old name.  
+Renaming a table via `RENAME TABLE` is *NOT* supported.  
+To migrate data from another table, specify the `onCreate` attribute on the `table` declaration, and add specify the source table name:
+
+```xml
+onCreate="migrateDataFromAnotherTable(catalog_category_entity)"
+```
+
+Please note that migrating data from another table and renaming columns at the same time is not supported.
+
+This declarative process of renaming a table is not fast. If you need to migrate lots of data quickly you can create a CSV table dump using the `--safe-mode=1` and add the data manually by using data/recurring patches.
+
+```diff
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
++    <table name="new_declarative_table" onCreate="migrateDataFromAnotherTable(declarative_table)">
+-    <table name="declarative_table">
+        <column xsi:type="int" name="id_column" padding="10" unsigned="true" nullable="false" comment="Entity Id"/>
+        <column xsi:type="int" name="severity" padding="10" unsigned="true" nullable="false" comment="Severity code"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Title"/>
+        <column xsi:type="timestamp" name="time_occurred" padding="10" comment="Time of event"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id_column"/>
+        </constraint>
+    </table>
+</schema>
+```
+
+When renaming a table, remember to regenerate the `db_schema_whitelist.json` file so it contains the new name in addition to the old one.
 
 ### Add a column to table
 
@@ -319,17 +347,12 @@ The following example changes the `type` of the `title` column from `varchar` to
 
 ### Rename a column
 
-To rename a column, delete the original column declaration and create a new one. In the new declaration, use the `onCreate` attribute to specify which column to migrate data from. Use the following construction to migrate data from the same table.
+To rename a column, delete the original column declaration and create a new one. In the new column declaration, use the `onCreate` attribute to specify which column to migrate data from. Use the following construction to migrate data from the same table.
 
 ```xml
 onCreate="migrateDataFrom(entity_id)"
 ```
-
-To migrate data from another table, specify a value similar to the following:
-
-```xml
-onCreate="migrateDataFromAnotherTable(catalog_category_entity,entity_id)"
-```
+When renaming a column, remember to regenerate the `db_schema_whitelist.json` file so it contains the new name in addition to the old one.
 
 ### Add an index
 
@@ -435,7 +458,8 @@ Module B disables the original primary key and sets a new primary key with a `re
 
 ### Disable a module
 
-When a module is disabled from the Admin console, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
+When a module is disabled in `app/etc/config.php`, its database schema configuration is no longer read on upgrade or install. As a result, subsequent system upgrades rebuild the database schema without the module's tables, columns, or other elements.
+Please note that the `db_schema_whitelist.json` file of disabled modules is still read during upgrades of installs, so the declarative schema system can perform the necessary operations.
 
 
 [How to generate urns?]:{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html
