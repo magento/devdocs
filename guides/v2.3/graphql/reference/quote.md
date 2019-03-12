@@ -9,6 +9,9 @@ A quote represents the contents of a customer's shopping cart. It is responsible
 * Determining estimated shipping costs
 * Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
+{:.bs-callout .bs-callout-tip}
+Except for `createEmptyCart`, the mutations defined in this topic are not supported in Magento 2.3.1 and earlier, but will be supported in a future release.
+
 ## Query
 Use the `Cart` query to retrieve information about a particular cart.
 
