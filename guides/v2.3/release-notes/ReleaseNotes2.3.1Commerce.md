@@ -7,19 +7,7 @@ title: Magento Commerce 2.3.1 Release Notes
 
 We are pleased to present Magento Commerce 2.3.1. This release includes numerous functional fixes and enhancements plus over thirty security enhancements.  
 
-This release includes substantial contributions from our robust, productive community. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with the Magento core code that is released quarterly,  keep in mind that several of these projects are also released independently. Bug fixes are documented in separate release notes for each project.
-
-
-
-The bulk of the code that we describe in these release notes belongs to the Magento platform core, which is updated quarterly. Magento also develops extensions that are released independently of this core code. Here is the list of these Magento-developed extensions that are compatible with Magento Commerce 2.3.1: 
-
-* PageBuilder
-* Inventory Management
-* Progressive Web Applications (PWA) Studio
-
-
-
-
+This release includes substantial contributions from  community members. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with quarterly releases of the Magento core code,several of these projects (for example, PageBuilder and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are not documented in these core release notes but in a separate project-specific set of notes.
 
 ## Highlights
 
@@ -29,12 +17,10 @@ Magento Commerce 2.3.1 includes a wealth of new features, over 200 functional fi
 
 ### Merchant tool enhancements
 
-* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920x1200  without compressing and downsizing the images first. Previously, when a merchant uploaded a high quality product image (larger than 1920X1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. <!--- MAGETWO-95299-->
+* **Improved order creation workflow in the Admin**. The Admin order creation workflow has been refactored to eliminate delays when editing billing and shipping addresses. Processing of these fields now happens only after they are populated. 
 
-* **Improved order creation workflow in the Admin**. When placing an order in Admin, there were excessive processing steps made whenever a billing or a shipping field is updated. Which created delays and frustrations when customer representatives were working with customers to place an order.  SOlution: Order creation flow in Admin has been improved and there are no any delays when editing Billing and Shipping address fields any more. All the processing happens only once when Payment and Shipping information is being populated. 
-
-* **Skip URL rewrites multiplication**. Currently when saving a category with lots of products assigned to it (about 1000), there is large amount of data generated and saved into URL rewrites tables which causes performance issues (it is not possible to save a category due to time-out).  Solution: There is a new store view level configuration option "Generate URL Rewrites for Products on Category Save" added to "Configuration->Catalog->Catalog->Search Engine Optimization" section for turning on/off the product URL Rewrites functionality when saving a category. By default the URL rewrites functionality is turned on (set to "Yes"), which means that URL Rewrites are generated as is now, when it is set to "No" the “category/product” URLs are not generated on category save, but when we try to use these URLs on storefront they still works as it is now.  
-
+* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920 x 1200  without first compressing and downsizing the images. Previously, when a merchant uploaded a high quality product image (larger than 1920 x 1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. <!--- MAGETWO-95299-->
+  
 * **Page Builder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. See Page Builder release notes and [Page Builder](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html). 
 
 
@@ -42,7 +28,7 @@ Magento Commerce 2.3.1 includes a wealth of new features, over 200 functional fi
 
 The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management:
 
-* **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!  
+* **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature! 
 
 * **Distance Priority source selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html).
 
@@ -81,9 +67,7 @@ This release contains over 30 security fixes to core Magento code. See [Magento 
 
 * The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
 
-* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. <!--- MAGETWO-94347-->
-   
-[Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. 
+* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. <!--- MAGETWO-94347-->
 
 
 ### Infrastructure improvements
@@ -98,7 +82,7 @@ Information about the deprecation of Authorize.Net Direct Post can be found [her
 
 * Magento now supports **Redis 5.0**. <!--- MC-5201 -->
 
-* Expected backup and restoration functionality has been restored and MySQL View support is supported while preserving backward compatibility with pre-existing modules. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
+* You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
 
 
 * Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->* 
@@ -113,11 +97,11 @@ Information about the deprecation of Authorize.Net Direct Post can be found [her
 
 ### Bundled extension enhancements
 
-This relase of mafgento includes extensions developed by third-party vendors. 
+This release of Magento includes extensions developed by third-party vendors. 
 
 #### Amazon Pay
 
-* Added **multi-currency support** for  EU and U.K. merchants. See [Use multi-currency](https://amzn.github.io/amazon-payments-magento-2-plugin/configuration.html#use-multi-currency) for anintriduction to using this new feature with Magento 2.x.  <!--- BUNDLE-1762-->
+* Added **multi-currency support** for  EU and U.K. merchants. See [Use multi-currency](https://amzn.github.io/amazon-payments-magento-2-plugin/configuration.html#use-multi-currency) for an introduction to using this new feature with Magento 2.x.  <!--- BUNDLE-1762-->
 
 
 #### dotdigital Engagement Cloud (formerly dotmailer)
@@ -164,7 +148,11 @@ Enhancements to existing features include:
 * **Dispatch**. We've added additional workflow capabilities during the dispatch process to cater for future carriers.
 
 
+#### Vertex
 
+* Added support for B2C VAT.
+
+* Added support for configurable logging.
 
 
 ## Fixed issues
@@ -208,7 +196,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 ### Amazon Pay
 
-<!--- BUNMDLE-1762-->*  Fixed a bug where the Magento order ID was not always correctly represented in Amazon Pay order details.
+<!--- BUNDLE-1762-->*  Fixed a bug where the Magento order ID was not always correctly represented in Amazon Pay order details.
 
 
 
@@ -369,7 +357,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-96379 -->* The Cart Price Rule page now displays correct counter values for the grid as well as accurate pagination. 
 
-<!--- MAGETWO-91784-->* Magento no longer permits you to use the up and down arrow keys to enter negative numers when entering a credit card number on the payment information page during checkout.
+<!--- MAGETWO-91784-->* Magento no longer permits you to use the up and down arrow keys to enter negative numbers when entering a credit card number on the payment information page during checkout.
 
 
 
@@ -760,9 +748,6 @@ Previously, when you reopened these categories, no checkboxes were checked.
 <!--- ENGCOM-4114-->* The Swagger definition for `eav-data-attribute-option-interface` has been corrected. Previously, when you created a REST call to an endpoint that returns an object of `eav-data-attribute-option-interface` and `is_default` is set to `true`, `is_default` returns an object instead of the expected Boolean. *Fix submitted by [Hiren Patel](https://github.com/hiren-wagento) in pull request [20913](https://github.com/magento/magento2/pull/20913)*. [GitHub-18525](https://github.com/magento/magento2/issues/18525)
 
 <!--- ENGCOM-4165-->* `crontab` now updates all currency rates daily  as expected. Previously, crontab updated only a subset of the enabled currencies. *Fix submitted by [Denis Papec](https://github.com/denispapec) in pull request [18981](https://github.com/magento/magento2/pull/18981)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
-
-
-### dotmailer
 
 
 

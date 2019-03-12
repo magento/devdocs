@@ -7,18 +7,7 @@ title: Magento Open Source 2.3.1 Release Notes
 
 We are pleased to present Magento Open Source 2.3.1. This release includes numerous functional fixes and enhancements plus over thirty security enhancements.  
 
-This release includes substantial contributions from our robust, productive community. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with the Magento core code that is released quarterly,  keep in mind that several of these projects are also released independently. Bug fixes are documented in separate release notes for each project.
-
-The bulk of the code that we describe in these release notes belongs to the Magento platform core, which is updated quarterly. Magento also develops extensions that are released independently of this core code. Here is the list of these Magento-developed extensions that are compatible with Magento Commerce 2.3.1: 
-
-* PageBuilder
-
-* Inventory Management
-
-* Progressive Web Applications (PWA) Studio
-
-
-
+This release includes substantial contributions from our productive and engaged community members. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with quarterly releases of the Magento core code,several of these projects (for example, PageBuilder and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are not documented in these core release notes but in a separate project-specific set of notes.
 
 
 ## Highlights
@@ -29,26 +18,21 @@ Magento Commerce 2.3.1 includes a wealth of new features, over 200 functional fi
 
 ### Merchant tool enhancements
 
-* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920x1200  without compressing and downsizing the images first. Previously, when a merchant uploaded a high quality product image (larger than 1920X1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. <!--- MAGETWO-95299-->
+* **Improved order creation workflow in the Admin**. The Admin order creation workflow has been refactored to eliminate delays when editing billing and shipping addresses. Processing of these fields now happens only after they are populated. 
 
-* **Improved order creation workflow in the Admin**. When placing an order in Admin, there were excessive processing steps made whenever a billing or a shipping field is updated. Which created delays and frustrations when customer representatives were working with customers to place an order.  SOlution: Order creation flow in Admin has been improved and there are no any delays when editing Billing and Shipping address fields any more. All the processing happens only once when Payment and Shipping information is being populated. 
-
-* **Skip URL rewrites multiplication**. Currently when saving a category with lots of products assigned to it (about 1000), there is large amount of data generated and saved into URL rewrites tables which causes performance issues (it is not possible to save a category due to time-out).  Solution: There is a new store view level configuration option "Generate URL Rewrites for Products on Category Save" added to "Configuration->Catalog->Catalog->Search Engine Optimization" section for turning on/off the product URL Rewrites functionality when saving a category. By default the URL rewrites functionality is turned on (set to "Yes"), which means that URL Rewrites are generated as is now, when it is set to "No" the “category/product” URLs are not generated on category save, but when we try to use these URLs on storefront they still works as it is now.  
-
-* **Page Builder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. See Page Builder release notes and [Page Builder](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html). 
-
-
+* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920 x 1200  without first compressing and downsizing the images. Previously, when a merchant uploaded a high quality product image (larger than 1920 x 1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. <!--- MAGETWO-95299-->
+  
 #### Inventory Management 1.1.0 (Community-developed feature!)
 
 The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management:
 
-* **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature!  
+* **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature! 
 
 * **Distance Priority source selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html).
 
 * **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
 
-* **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
+* **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders.  See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
 
 
 
@@ -66,7 +50,6 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address), products (set swatch color),  and customers (create customer account). See GraphQL Release Notes for information about specific fixes and acknowledgements to community contributors. 
 
 
-
 ### Substantial security enhancements
 
 This release contains over 30 security fixes to core Magento code. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.8, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
@@ -81,9 +64,8 @@ This release contains over 30 security fixes to core Magento code. See [Magento 
 
 * The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
 
-* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. <!--- MAGETWO-94347-->
-   
-[Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. 
+* Magento now displays the list of additional customer addresses contained in the storefront customer address book  as a grid, which has improved performance for customers with many additional addresses associated with their accounts. [Address Book](https://docs.magento.com/m2/ee/user_guide/customers/account-dashboard-address-book.html) describes how to use this enhanced feature. <!--- MAGETWO-94347-->
+
 
 
 ### Infrastructure improvements
@@ -94,9 +76,12 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
-* Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->*
+* Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
 * Magento now supports **Redis 5.0**. <!--- MC-5201 -->
+
+* You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
+
 
 * Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->* 
 
@@ -107,14 +92,13 @@ Information about the deprecation of Authorize.Net Direct Post can be found [her
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13. 
 
 
-
 ### Bundled extension enhancements
 
-This relase of mafgento includes extensions developed by third-party vendors. 
+This release of Magento includes extensions developed by third-party vendors. 
 
 #### Amazon Pay
 
-* Added **multi-currency support** for  EU and U.K. merchants. See [Use multi-currency](https://amzn.github.io/amazon-payments-magento-2-plugin/configuration.html#use-multi-currency) for anintriduction to using this new feature with Magento 2.x.  <!--- BUNDLE-1762-->
+* Added **multi-currency support** for  EU and U.K. merchants. See [Use multi-currency](https://amzn.github.io/amazon-payments-magento-2-plugin/configuration.html#use-multi-currency) for an introduction to using this new feature with Magento 2.x.  <!--- BUNDLE-1762-->
 
 
 #### dotdigital Engagement Cloud (formerly dotmailer)
@@ -160,8 +144,11 @@ Enhancements to existing features include:
 
 * **Dispatch**. We've added additional workflow capabilities during the dispatch process to cater for future carriers.
 
+#### Vertex
 
+* Added support for B2C VAT.
 
+* Added support for configurable logging.
 
 ## Fixed issues
 
@@ -313,7 +300,7 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- MAGETWO-91517-->* Magento no longer removes the billing and shipping address information for an order when a customer cancels an order by clicking **Cancel and Return** when  using PayPal Website Payments Pro Hosted Solution. Previously, when a customer placed an order and then clicked the **Cancel and Return** link, Magento removed the billing/shipping address and displayed an error.
 
-<!--- MAGETWO-91596-->* You can now update the quantity of grouped product  if the quantity field was left empty when initially added to an Admin order by SKU. Previously, under these circumstances, you could not uodate the quantity. 
+<!--- MAGETWO-91596-->* You can now update the quantity of grouped product  if the quantity field was left empty when initially added to an Admin order by SKU. Previously, under these circumstances, you could not update the quantity. 
 
 <!--- MAGETWO-91733-->* After a session expires, and a customer refreshes the page, Magento displays an empty shopping cart and logs out the customer as expected. Previously, Magento displayed an empty shopping cart but the minicart still displayed the selected items, and if the customer refreshed the page again, the shopping cart displayed the items. 
 
@@ -323,7 +310,7 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- ENGCOM-3721-->* Fixed alignment issue with dropdown menu on the minicart. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19508](https://github.com/magento/magento2/pull/19508)*. [GitHub-19507](https://github.com/magento/magento2/issues/19507)
 
-<!--- ENGCOM-3769-->* Fixed alignment issue with radio uttons on the shopping cart page. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [20022](https://github.com/magento/magento2/pull/20022)*. [GitHub-20021](https://github.com/magento/magento2/issues/20021)
+<!--- ENGCOM-3769-->* Fixed alignment issue with radio buttons on the shopping cart page. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [20022](https://github.com/magento/magento2/pull/20022)*. [GitHub-20021](https://github.com/magento/magento2/issues/20021)
 
 <!--- ENGCOM-3578-->* `\Magento\Checkout\Observer\SalesQuoteSaveAfterObserver` now updates the checkout session quote ID as needed. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19425](https://github.com/magento/magento2/pull/19425)*. [GitHub-19424](https://github.com/magento/magento2/issues/19424)
 
@@ -337,7 +324,7 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- ENGCOM-4019-->* Magento no longer throws a console error during a guest checkout when the list of allowed countries is changed from the Admin. *Fix submitted by [Govind Sharma](https://github.com/GovindaSharma) in pull request [20634](https://github.com/magento/magento2/pull/20634)*. [GitHub-20631](https://github.com/magento/magento2/issues/20631)
 
-<!--- ENGCOM-4032-->* The title of the shipping method nolonger overlaps with **Edit** on the checkoout page. *Fix submitted by [Yashwant Rokde](https://github.com/yashwant2jcommerce) in pull request [20428](https://github.com/magento/magento2/pull/20428)*. [GitHub-20427](https://github.com/magento/magento2/issues/20427)
+<!--- ENGCOM-4032-->* The title of the shipping method no longer overlaps with **Edit** on the checkout page. *Fix submitted by [Yashwant Rokde](https://github.com/yashwant2jcommerce) in pull request [20428](https://github.com/magento/magento2/pull/20428)*. [GitHub-20427](https://github.com/magento/magento2/issues/20427)
 
 <!--- ENGCOM-3984-->* The **Close** button on the minicart now longer overlaps with the shipping section when the checkout page is opened on a mobile device. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20615](https://github.com/magento/magento2/pull/20615)*. [GitHub-20614](https://github.com/magento/magento2/issues/20614)
 
