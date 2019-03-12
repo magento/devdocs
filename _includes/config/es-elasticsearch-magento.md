@@ -90,7 +90,7 @@ Enter the following command to reindex all indexers:
 bin/magento indexer:reindex
 ```
 
-1. Wait while the reindexing completes.
+1. Wait until reindexing completes.
 
 {:.bs-callout .bs-callout-info}
 Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Elasticsearch.
