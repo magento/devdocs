@@ -19,7 +19,7 @@ To configure Magento to use Elasticsearch:
 
 ![]({{ site.baseurl }}/common/images/elastic_choose-in-admin-es6.png){:width="650px"}
 
-The following table discusses only the configuration options required to test the connection with Magento.
+The following table lists the required configuration options to configure and test the connection with Magento.
 Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.
 
 |Option|Description|
@@ -92,7 +92,7 @@ Enter the following command to reindex all indexers:
 bin/magento indexer:reindex
 ```
 
-1. Wait while the reindexing completes.
+1. Wait until reindexing completes.
 
 {:.bs-callout .bs-callout-info}
 Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html) before you start using Elasticsearch.
