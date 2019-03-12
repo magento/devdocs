@@ -35,7 +35,7 @@ In Magento 2.2, you can use [Elasticsearch][] for searching your {% glossarytool
 
 {: .bs-callout .bs-callout-warning}
 Magento 2.2.8 adds support for Elasticsearch 6.x, and it is enabled by default.
-Magento still provides modules for Elasticsearch 2.x and 5.x but these must be enabled in order to use these versions.
+Magento still provides modules for Elasticsearch 2.x and 5.x, but these must be enabled in order to use these versions.
 Elasticsearch 2.x is still supported but strongly discouraged.
 If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch php client.
 Follow the instructions in [Downgrade Elasticsearch Client][].
