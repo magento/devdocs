@@ -17,7 +17,7 @@ To configure Magento to use Elasticsearch:
 
 ![]({{ site.baseurl }}/common/images/elastic_choose-in-admin-es6.png){:width="650px"}
 
-The following table discusses only the configuration options required to test the connection with Magento.
+The following table lists the required configuration options to configure and test the connection with Magento.
 Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.
 
 |Option|Description|
