@@ -86,7 +86,7 @@ We provide two methods for creating and managing snapshots:
 1.  List all available snapshots.
 
     ```
-    magento-cloud snapshots:list
+    magento-cloud snapshot:list
     ```
 
     The list returns information about the available snapshots:

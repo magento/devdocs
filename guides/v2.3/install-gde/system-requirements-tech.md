@@ -47,7 +47,7 @@ Magento, with assistance from our community, is implementing PHP 7.2 compatibili
 {:.bs-callout .bs-callout-info}
 The [PHP installation instructions](prereq/php-centos-ubuntu.html) include a step for installing these extensions.
 
-*	[bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"} ({{site.data.var.ee}} only)
+*	[bc-math](http://php.net/manual/en/book.bc.php){:target="_blank"}
 * [ctype](http://php.net/manual/en/book.ctype.php){:target="_blank"}
 *	[curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
 * [dom](http://php.net/manual/en/book.dom.php){:target="_blank"}
