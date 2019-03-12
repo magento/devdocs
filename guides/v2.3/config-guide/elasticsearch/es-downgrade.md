@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Change Elasticsearch Client
+title: Change the Elasticsearch Client
 functional_areas:
   - Configuration
   - Search
