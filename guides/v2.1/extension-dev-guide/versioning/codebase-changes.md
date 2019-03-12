@@ -79,6 +79,8 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | New required method argument                                                                         | MAJOR          |
 |                                                             | Removed the last argument for a method                                                               | MINOR          |
 |                                                             | Changed a method signature (excluding last argument removal)                                         | MAJOR          |
+|                                                             | New method exception (excluding subtypes of existing exceptions)                                     | MAJOR          |
+|                                                             | New method exception (subtypes of an existing one)                                                   | PATCH          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
 | **PHP Class** (marked with `@api`)                          | New Class                                                                                            | MINOR          |
 |                                                             | New method added                                                                                     | MINOR          |
@@ -91,6 +93,8 @@ Use this table to understand what changes Magento can make and which version num
 |                                                             | Removed a non-last constructor argument                                                              | MAJOR          |
 |                                                             | Removed a last constructor argument                                                                  | PATCH          |
 |                                                             | Changed format of the returned method result                                                         | MAJOR          |
+|                                                             | New method exception (excluding subtypes of existing exceptions)                                     | MAJOR          |
+|                                                             | New method exception (subtypes of an existing one)                                                   | PATCH          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
 | **JavaScript Interface** (marked with `@api`)               | New interface                                                                                        | MINOR          |
 |                                                             | New method added                                                                                     | MINOR          |

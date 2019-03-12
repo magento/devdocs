@@ -66,6 +66,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 |                                                             | Implement the interface                                                                                 | MINOR              |
 |                                                             | Re-define the interface preference in `di.xml`                                                          | MINOR              |
 |                                                             | Add a plugin to the interface                                                                           | MAJOR              |
+|                                                             | Catching method exception                                                                               | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **PHP Class** (marked with `@api`)                          | Inject in a constructor                                                                                 | MAJOR              |
 |                                                             | Extend from an abstract class                                                                           | MAJOR              |
@@ -73,12 +74,14 @@ Use this table to set the appropriate version dependency on a module based on ho
 |                                                             | Configure class preference in `di.xml`                                                                  | MAJOR              |
 |                                                             | Configure constructor argument in `di.xml`                                                              | MAJOR              |
 |                                                             | Use class constant                                                                                      | MAJOR              |
+|                                                             | Catching method exception                                                                               | MAJOR              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **PHP Class** (NOT marked with `@api`)                      | Inject in a constructor                                                                                 | PATCH              |
 |                                                             | Extend from an abstract class                                                                           | PATCH              |
 |                                                             | Configure class preference in `di.xml`                                                                  | PATCH              |
 |                                                             | Configure constructor argument in `di.xml`                                                              | PATCH              |
 |                                                             | Use class constant                                                                                      | PATCH              |
+|                                                             | Catching method exception                                                                               | PATCH              |
 | ----------------------------------------------------------- | -------------------------------------------------------------------                                     | ------------------ |
 | **JavaScript Interface** (marked with `@api`)               | Inject in a constructor and/or call methods                                                             | MAJOR              |
 |                                                             | Implement the interface                                                                                 | MINOR              |
