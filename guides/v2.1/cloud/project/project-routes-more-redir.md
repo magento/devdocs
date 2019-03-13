@@ -103,12 +103,12 @@ http://{default}/:
        paths:
           "/from":
           to: "http://{default}/to"
-          partial: true
+          prefix: true
 ```
 
-In the preceding example, if `partial` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
+In the preceding example, if `prefix` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
 
-If `partial` is set to `false`, `/from` triggers a redirect, but `/from/another/path` does not.
+If `prefix` is set to `false`, `/from` triggers a redirect, but `/from/another/path` does not.
 
 {% endcollapsible %}
 

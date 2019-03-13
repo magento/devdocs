@@ -254,3 +254,12 @@ pages:
 
         - label: Magento Commerce (Cloud) third-party licenses
           url: /release-notes/thirdparty-mccloud.html
+    
+    - label: Inventory management
+      url: /release-notes/inventory-management.html
+      exclude_versions: ["2.0", "2.1", "2.2"]
+
+    - label: Page Builder
+      url: /page-builder/docs/release-notes.html
+      exclude_versions: ["2.0", "2.1", "2.2"]
+      versionless: true

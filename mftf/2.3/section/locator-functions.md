@@ -12,9 +12,10 @@ _This topic was updated due to the {{page.mftf-release}} MFTF release._
 
 ## Define Locator::functions in elements
 
-Codeception has a set of very useful [Locator functions](http://codeception.com/docs/reference/Locator) that may be used by elements inside a [section](../section.html).
+ Codeception has a set of very useful [Locator functions](http://codeception.com/docs/reference/Locator) that may be used by elements inside a [section](../section.html).
 
 Declare an element with a `locatorFunction`:
+
 ```xml
 <element name="simpleLocator" type="button" locatorFunction="Locator::contains('label', 'Name')"/>
 ```
@@ -39,8 +40,8 @@ Given the above element definitions, you call the elements in a test just like a
 
 ```xml
 <test name="LocatorFuctionTest">
-    <click selector="{{LocatorFunctionSection.simpleLocator}}" stepKey="SimpleLocator"/>
-    <click selector="{{LocatorFunctionSection.simpleLocatorTwoParam('string1', 'string2')}}" stepKey="TwoParamLiteral"/>
+   <click selector="{{LocatorFunctionSection.simpleLocator}}" stepKey="SimpleLocator"/>
+   <click selector="{{LocatorFunctionSection.simpleLocatorTwoParam('string1', 'string2')}}" stepKey="TwoParamLiteral"/>
 </test>
 ```
 

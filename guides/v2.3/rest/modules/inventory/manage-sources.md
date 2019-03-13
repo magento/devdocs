@@ -41,8 +41,8 @@ Name | Description | Type | Requirements
 `contact_name` | The name of the contact for the source	| String | Optional
 `enabled` | Indicates whether the source is enabled. The default value is `true`.	| Boolean | Optional
 `description` | A description of the source	(Maximum: 1000 characters)| String | Optional
-`latitude` | The latitude of the source's physical location. The value, along with the `longitude` value, could be used to determine the closest source to a customer's shipping address. | Number | Optional
-`longitude` |The latitude of the source's physical location.	| Number | Optional
+`latitude` | The latitude of the source's physical location. The value, along with the `longitude` value, could be used to determine the closest source to a customer's shipping address. | Float | Optional
+`longitude` |The latitude of the source's physical location.	| Float | Optional
 `country_id` | The country ID of the source's physical location	| String | Required for all POST and PUT calls.
 `region_id` | The region ID of the state or province of the source 	| Integer | Optional
 `region` | The region name for countries whose provinces are not defined in Magento	| String | Optional
