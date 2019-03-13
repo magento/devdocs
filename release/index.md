@@ -36,106 +36,69 @@ See [Magento Software Lifecycle Policy] and [Versioning].
 | **{{site.data.var.ece}} Tools (aka ECE-Tools)** | Available now                                                                                                                                                          | [Composer](https://devdocs.magento.com/guides/v2.3/cloud/project/ece-tools-update.html)                                      |
 | **PWA Studio**                                  | Available now including support for {{site.data.var.ece}}                                                                                                              | [Documentation](https://magento-research.github.io/pwa-studio/) and [GitHub](https://github.com/magento-research/pwa-studio) |
 | **Magento Shipping**                            | Available now                                                                                                                                                          | Merchants on Magento 2.2.2+ can use the [onboarding process](https://account.magento.com/shipping/onboarding/start)          |
-| **Page Builder**                                | Early access closed. GA expected in March 2019 with 2.3.1 GA                                                                                          | Bundled with Magento Commerce 2.3.x                                                                                          |
+| **Page Builder**                                | Early access closed. GA expected in March 2019 with 2.3.1 GA                                                                                                           | Bundled with Magento Commerce 2.3.x                                                                                          |
 | **Amazon Sales Channel**                        | Early access closed<br><br>Regional availability expected in first half of 2019 (US, Canada, Mexico)<br><br>EMEA and APAC availability expected in second half of 2019 | N/A<br><br>Magento Marketplace                                                                                               |
 | **Google Ad Channel**                           | Early access TBD<br><br>General availability expected in first half of 2019                                                                                            | TBD<br><br>Magento Marketplace                                                                                               |
 
 ## Support and compatibility
 
-The following table shows whether a Magento product or extension is supported by—or compatible with—a version of {{site.data.var.ee}}.
+The following table shows the release status of a Magento extension version relative to the 2.3.x release line of {{site.data.var.ee}}.
 
-[**Editorial note:** Reusing existing icons as placeholders; not intended to be final.]
-
-- {:.new} **Supported**—Define "supported"
-- {:.fix} **Compatible**—Define "compatible"
+- {:.new} **Stable**—This version is supported.
+- {:.fix} **Release candidate**—This version is compatible.
 
 <table>
   <tbody>
     <tr>
       <td class="blank"></td>
-      <!-- <th style="text-align:center">{{site.data.var.ee}}</th> -->
       <th style="text-align:center">2.3.0</th>
       <th style="text-align:center">2.3.1</th>
-      <th style="text-align:center">2.3.2</th>
-      <th style="text-align:center">2.3.3</th>
     </tr>
     <tr>
-      <td colspan="5"><strong>Amazon Sales Channel</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">1.0.0</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-    </tr>
-    <tr>
-      <td colspan="5"><strong>Google Ad Channel</strong></td>
+      <td colspan="3"><strong>Amazon Sales Channel</strong></td>
     </tr>
     <tr>
       <td style="text-align:right">1.0.0</td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
     </tr>
     <tr>
-      <td colspan="5"><strong>Business Intelligence</strong></td>
+      <td colspan="3"><strong>Google Ad Channel</strong></td>
     </tr>
     <tr>
-      <td style="text-align:right">x.x.x</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
+      <td style="text-align:right">1.0.0</td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
     </tr>
     <tr>
-      <td colspan="5"><strong>Magento Shipping</strong></td>
+      <td colspan="3"><strong>Magento Shipping</strong></td>
     </tr>
     <tr>
       <td style="text-align:right">x.x.x</td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
     </tr>
     <tr>
-      <td colspan="5"><strong>Multi Source Inventory</strong></td>
+      <td colspan="3"><strong>Multi Source Inventory</strong></td>
     </tr>
     <tr>
       <td style="text-align:right">1.1.0</td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
     </tr>
     <tr>
-      <td colspan="5"><strong>Order Management</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">1.230</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-    </tr>
-    <tr>
-      <td colspan="5"><strong>Page Builder</strong></td>
+      <td colspan="3"><strong>Page Builder</strong></td>
     </tr>
     <tr>
       <td style="text-align:right">1.0.0</td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
       <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
     </tr>
     <tr>
-      <td colspan="5"><strong>PWA Studio</strong></td>
+      <td colspan="3"><strong>PWA Studio</strong></td>
     </tr>
     <tr>
       <td style="text-align:right">2.0.0</td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
       <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
       <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
     </tr>
