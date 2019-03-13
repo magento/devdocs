@@ -27,7 +27,7 @@ This information is just the code portion for setting up your VCL. Use this info
 Edge Dictionaries create key-value pairs for running against your VCL snippet. For example, you may want to build a dictionary of URLs to redirect to a Wordpress backend. You may only want to create the edge dictionary in your Production environment. You can also create it in Staging for testing if needed.
 
 1. Log in to the Magento Admin.
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
+2. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
 3. Expand the **Edge dictionaries** section.
 4. Click **Add container**. You need to create a container to hold up to 1,000 key-value pairs.
 5. On the container, enter a Dictionary name. For this example, use the name `referer_blocklist`.
