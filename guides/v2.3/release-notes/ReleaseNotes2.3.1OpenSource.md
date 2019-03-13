@@ -72,13 +72,15 @@ This release contains over 30 security fixes to core Magento code. See [Magento 
 
 Infrastructure improvements are core enhancements that underlie both merchant and developer features. 
 
-* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of March 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. 
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. 
 
 Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
 * Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
 * Magento now supports **Redis 5.0**. <!--- MC-5201 -->
+
+* Magento support for PHP has changed slightly as a result of expanding our Elasticsearch support in this release. Magento 2.3.1 is compatible with PHP 7.2.x  and certified (tested)  on PHP 7.2.11.
 
 * You can now isolate and extract MySQL Views from regular database tables with no negative effects on database backup and restoration. Support for MySQL Views was introduced in 2.3.0 with unexpected consequences to the default database backups and restore mechanism. This fix restores expected  backup and restore functionality while preserving MySQL View support the backward compatibility with legacy inventory. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. Thank you, Stepan!
 
