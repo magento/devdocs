@@ -74,7 +74,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
 
 To set the compilation mode:
 
-1.  In the Magento Admin, navigate to **Stores** > **Configuration** > **Advanced** > **Developer**.
+1.  In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Developer**.
 2.  In the **Store View** dropdown field, select **Default Config**.
 3.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  Click **Save Config**.
