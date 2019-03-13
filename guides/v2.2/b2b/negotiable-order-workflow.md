@@ -184,6 +184,13 @@ You can also set shipping and billing information after initiating a negotiable 
 
 `POST /V1/carts/mine/shipping-information`
 
+**Headers**
+
+```
+Content-Type application/json
+Authorization Bearer <customer token>
+```
+
 **Payload**
 
 ```json
