@@ -249,6 +249,9 @@ Your form must then use a data provider that inherits from `ModifierPoolDataProv
  */
 namespace Test\Module\Model;
 
+use Magento\Ui\DataProvider\Modifier\PoolInterface;
+use Test\Module\Model\ResourceModel\WysiwygContent\CollectionFactory;
+
 /**
  * Class DataProvider
  */
@@ -258,10 +261,10 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         $name,
         $primaryFieldName,
         $requestFieldName,
-        Test\Module\Model\ResourceModel\WysiwygContent\CollectionFactory $collectionFactory,
+        CollectionFactory $collectionFactory,
         array $meta = [],
         array $data = [],
-        \Magento\Ui\DataProvider\Modifier\PoolInterface $pool
+        PoolInterface $pool = null
     ) {
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data, $pool);
         $this->collection = $collectionFactory->create();
