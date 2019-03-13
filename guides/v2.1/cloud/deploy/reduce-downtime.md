@@ -1,0 +1,30 @@
+---
+group: cloud-guide
+title: Reduce downtime
+functional_areas:
+  - Cloud
+  - Deploy
+  - SCD
+---
+
+{{site.data.var.ece}} runs Magento in [_maintenance_ mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#maintenance-mode) during the deploy phase, which takes your site offline until the deployment is complete. The length of time your Production site is in maintenance mode depends on the size of the site, the amount of changes applied during the deployment, and the configuration for static content deployment.
+
+Use the following steps to help reduce the amount of downtime your store experiences during an update to Production:
+
+1.  [Upgrade to the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) or [update the `{{site.data.var.ct}}` version]({{page.baseurl}}/cloud/project/ece-tools-update.html)  
+    Your {{site.data.var.ece}} project must have the latest `{{site.data.var.ct}}` package so that you have the tools available to configure an optimal deployment. If you have the latest `{{site.data.var.ct}}`, continue to the next step.
+
+1.  [Configure static content deployment]({{page.baseurl}}/cloud/deploy/static-content-deployment.html)  
+    If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. A failure during the build phase prevents deployment, which prevents downtime. Enable your project to deploy static content during the **build** phase to prevent downtime if a failure occurs.
+    
+    You can test your project configuration by [running the ideal state wizard]({{page.baseurl}}/cloud/deploy/smart-wizards.html#verifying-an-ideal-configuration).
+
+1.  [Configure the post-deploy hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks)  
+    You must configure the post-deploy hook to clean and warm the cache. Customize the list of pages used to preload the cache with the [WARM_UP_PAGES environment variable]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages).
+
+1.  [Reduce theme files]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_matrix)  
+    You can reduce the amount of unnecessary theme files by configuring the SCD\_MATRIX environment variable.
+
+1.  [Speed up static content deployment]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads)  
+    You can speed up the deployment process by increasing the threads with the SCD\_THREADS environment variable.
+
