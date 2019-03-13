@@ -85,6 +85,13 @@ The buyer can add, update, or delete items from the quote under the following co
 
 `POST /V1/carts/mine/items`
 
+**Headers**
+
+```
+Content-Type application/json
+Authorization Bearer <customer token>
+```
+
 **Payload**
 
 ```json
