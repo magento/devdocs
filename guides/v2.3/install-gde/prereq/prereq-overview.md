@@ -15,19 +15,18 @@ functional_areas:
 
 Before you install Magento, you must do all of the following:
 
-*	Set up one or more hosts that meet the [Magento system requirements]({{page.baseurl}}/install-gde/system-requirements.html).
-*	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
-*	Make sure you can back up your entire system at various points during the installation so you can roll back in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues.
+* Set up one or more hosts that meet the [Magento system requirements]({{page.baseurl}}/install-gde/system-requirements.html).
+* If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
+* Make sure you can back up your entire system at various points during the installation so you can roll back in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues.
 
 {:.bs-callout .bs-callout-info}
-We assume you're installing the Magento 2 software in a <em>development environment</em>, which means you have [root user](http://www.linfo.org/root.html) access to the machine <em>and</em> that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
+We assume you're installing the Magento 2 software in a **development environment**, which means you have [root user](http://www.linfo.org/root.html) access to the machine **and** that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
 
 We strongly recommend you update and upgrade your operating system software. These upgrades can provide security and software fixes that might prevent future problems. Don't know what any of this means? Check out our [installation overview page]({{page.baseurl}}/install-gde/bk-install-guide.html).
 
-
 Enter the following commands as a user with `root` privileges:
 
-*	Ubuntu
+* Ubuntu
 
 ```bash
 apt-get update
@@ -119,9 +118,9 @@ To install or upgrade MySQL, see [MySQL]({{page.baseurl}}/install-gde/prereq/mys
 
 #### Related topics
 
-*	[MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
-*	[Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
-*	[PHP&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
-*	[PHP&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
-*	[Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
-*	[How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
+* [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+* [Apache]({{page.baseurl}}/install-gde/prereq/apache.html)
+* [PHP&mdash;Ubuntu]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-ubuntu)
+* [PHP&mdash;CentOS]({{page.baseurl}}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
+* [Installing optional software]({{page.baseurl}}/install-gde/prereq/optional.html)
+* [How to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
