@@ -29,13 +29,17 @@ Enter the following commands as a user with `root` privileges:
 
 *	Ubuntu
 
-		apt-get update
-		apt-get upgrade
+```bash
+apt-get update
+apt-get upgrade
+```
 
-*	CentOS
+* CentOS
 
-		yum -y update
-		yum -y upgrade
+```bash
+yum -y update
+yum -y upgrade
+```
 
 ## Prerequisite check {#instgde-prereq-check}
 
@@ -49,47 +53,61 @@ Ubuntu: `apache2 -v`
 
 You must run Apache version 2.2 or 2.4 as the following result indicates:
 
-	Server version: Apache/2.2.15 (Unix)
-	Server built:   Jul 23 2014 14:17:29
+```bash
+Server version: Apache/2.2.15 (Unix)
+Server built:   Jul 23 2014 14:17:29
+```
 
 To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/apache.html).
 
 ### PHP
 
 {:.bs-callout .bs-callout-info}
-Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases. If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
+Magento 2.3.1 supports PHP 7.2.11.
+All 3rd party libraries now support PHP 7.2.
+If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
-	php -v
+```bash
+php -v
+```
 
 You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 7.1.x or 7.2.x as the following result indicates:
 
-	PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
-    Copyright (c) 1997-2017 The PHP Group
-    Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
+```bash
+PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
+  Copyright (c) 1997-2017 The PHP Group
+  Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
+```
 
 See [PHP](/guides/v2.3/install-gde/prereq/php-centos-ubuntu.html) for info on installing PHP for CentOS or Ubuntu.
 
 ### MySQL
 
-	mysql -u <database root user or database owner name> -p
+```bash
+mysql -u <database root user or database owner name> -p
+```
 
 For example:
 
-	mysql -u magento -p
+```bash
+mysql -u magento -p
+```
 
 You must run MySQL version 5.6 or later as the following result indicates:
 
-		Welcome to the MySQL monitor.  Commands end with ; or \g.
-		Your MySQL connection id is 871
-		Server version: 5.6.21 MySQL Community Server (GPL)
+```bash
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 871
+Server version: 5.6.21 MySQL Community Server (GPL)
 
-		Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
+Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
-		Oracle is a registered trademark of Oracle Corporation and/or its
-		affiliates. Other names may be trademarks of their respective
-		owners.
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+```
 
-		Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 Enter `exit` at the `mysql>` prompt to exit.
 
