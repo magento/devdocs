@@ -37,7 +37,6 @@ You will see either:
 
 <img src="{{ site.baseurl }}/common/images/elastic_test-success.png">
 
-Magento successfully connected to the Elasticsearch server.
 Continue with:
 
 * [Configure Apache and Elasticsearch]({{ site.baseurl }}/config-guide/elasticsearch/es-config-apache.html)
