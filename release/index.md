@@ -40,7 +40,7 @@ See [Magento Software Lifecycle Policy] and [Versioning].
 | **Amazon Sales Channel**                        | Early access closed<br><br>Regional availability expected in first half of 2019 (US, Canada, Mexico)<br><br>EMEA and APAC availability expected in second half of 2019 | N/A<br><br>Magento Marketplace                                                                                               |
 | **Google Ad Channel**                           | Early access TBD<br><br>General availability expected in first half of 2019                                                                                            | TBD<br><br>Magento Marketplace                                                                                               |
 
-## Support and compatibility
+## Extension stability
 
 The following table shows the release status of a Magento extension version relative to the 2.3.x release line of {{site.data.var.ee}}.
 
