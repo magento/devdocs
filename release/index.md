@@ -11,7 +11,7 @@ Magento releases security and functional patches for each supported release line
 The following guidelines apply to patch releases:
 
 - All supported versions receive security fixes.
-- Older versions receive fewer functional fixes
+- Older versions receive fewer functional fixes.
 - Changes that could break extensions or code compatibility should be avoided. For example, code written for 2.2.0 should still work on 2.2.7.
 - We reserve the right to implement major changes or release additional patches or hotfixes to address major security issues. On the module level, these are mostly PATCH level changes, sometimes MINOR level changes.
 - Patches may include new features as long as they are not expected to break other code. The new feature can be included in the core code or as an extension, like Page Builder.
