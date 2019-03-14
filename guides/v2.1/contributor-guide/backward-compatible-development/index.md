@@ -29,7 +29,7 @@ The rules listed do not apply to customization code (e.g. Plugins, Observers, JS
 
 #### Introduction of a new dependency from an existing module
 
-Introduction of a new dependency from an existing module can be treated as a backward incompatible change.
+The introduction of a new dependency from an existing module can be treated as a backward incompatible change.
 There is no guarantee that the required module will be enabled at a particular instance. As a result, such dependency will not be satisfied.
 
 ### PHP
@@ -116,7 +116,7 @@ Do not modify the types of thrown exceptions unless a new {% glossarytooltip 53d
 
 #### Throwing a new type of exception from an existing method
 
-A new type of exception SHOULD NOT be thrown from an existing method. The existing clients of the method may not expect such behavioural change, as a result, will not be able to properly handle an exceptional case.
+A new type of exception SHOULD NOT be thrown from an existing method. The existing clients of the method may not expect this behavioural change. As a result, it will not handle the exception properly.
 
 #### Adding a constructor parameter
 
