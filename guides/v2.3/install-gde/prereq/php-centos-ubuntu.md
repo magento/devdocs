@@ -83,7 +83,6 @@ To install PHP 7.1 on CentOS 6 or 7:
 		yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
 
 	{:.bs-callout .bs-callout-info}
-  The <code>bcmath</code> extension is required for {{site.data.var.ee}} only.
 
 4.	Restart Apache:
 
@@ -191,7 +190,6 @@ To install PHP 7.1 on Ubuntu 14 or 16:
 		sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1-common php7.1-gd php7.1-mysql php7.1-curl php7.1-intl php7.1-xsl php7.1-mbstring php7.1-zip php7.1-bcmath php7.1-iconv php7.1-soap
 
     The last command installs all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions).
-    The `bcmath` extension is required for {{site.data.var.ee}} only.
 
 2.	Verify that PHP 7.1 is installed properly:
 

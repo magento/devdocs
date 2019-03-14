@@ -114,7 +114,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Reports
 
-<!--- ENGCOM-2764 -->* The Year-to-date dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17496](https://github.com/magento/magento2/pull/17496)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!--- ENGCOM-2764 -->* The Year-to-date dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17496](https://github.com/magento/magento2/pull/17496)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 ### Review
