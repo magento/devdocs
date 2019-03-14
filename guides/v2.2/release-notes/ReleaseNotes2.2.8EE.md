@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.8 Release Notes
 
 ---
 
-*Patch code and release notes were published on .*
+*Patch code and release notes were published on March 26, 2019.*
 
 
 
@@ -16,32 +16,61 @@ Although this release includes these security enhancements, no confirmed attacks
 See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.8) have been ported to 2.3.1, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 
-Note:
-
-
 
 ## Highlights
 
-In addition to over 30 critical security fixes, look for the following highlights in this release:
+Magento Commerce 2.2.8 includes over 200 functional fixes to the core product, and over 30 security enhancements. Community contributions include approximately 200 fixes and 300 pull requests. Look for the following highlights in this release:
+
+### Merchant tool enhancements
+
+* **Improved order creation workflow in the Admin**. The Admin order creation workflow has been refactored to eliminate delays when editing billing and shipping addresses. Processing of these fields now happens only after they are populated. <!-- MAGETWO-96174 --> 
+
+* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920 x 1200  without first compressing and downsizing the images. Previously, when a merchant uploaded a high quality product image (larger than 1920 x 1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. <!-- MAGETWO-95299 --> 
+  
+### Substantial security enhancements
+
+This release contains over 30 security fixes to core Magento code. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.8, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 
-### Core code highlights
+### Infrastructure improvements
 
-This release includes improvements to general usability of the core code plus enhancements to . 
+* **Magento now supports **Elasticsearch 6.0**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
+ 
 
-
-#### General improvements
-
-* **Elasticsearch 6.x is now supported**. (Elasticsearch 5.x will reach end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). Thanks to community members xxx for this contribution!
-* 
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. Magento released a patch in late February to address this issue on existing installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). Note that `accept.js` library is now used for Authorize.Net payments. <!-- MAGETWO-98129-->* 
 
 
-### Community contribution highlights
 
-Highlights of community contributions include these fixes:
+* The shipping and billing data that a user enters during checkout nows persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
 
-Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
+### Bundled extension enhancements
+
+This release of Magento includes extensions developed by third-party vendors. 
+
+
+#### dotdigital Engagement Cloud (formerly dotmailer)
+
+* dotmailer has been rebranded as dotdigital Engagement Cloud.
+
+#### Magento Shipping
+
+* Multiple improvements to the Shipment workflow user experience. 
+
+* **Batch Processing**. Error messaging and field validation has been added to the batch processing workflow. See xxx for a description of other enhancements to batch processing.  
+
+* **Carrier Specific Packaging**. Carrier-specific packaging has been added for FedEx. These packages will be available for selection during shipping if a FedEx carrier is configured.
+
+* **Security**. We've closed scenarios that could allow for third-party code execution.
+
+* **Magento Cart Price Rules**. Cart price rules can now be applied to Magento Shipping.
+
+
+#### Vertex
+
+* Added support for B2C VAT.
+
+* Added support for configurable logging.
 
 ## Functional fixes
 
@@ -412,6 +441,10 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 fixed store wise product filter issue
 
+Unable to get product attribute value for store-view scope type in product collection loaded for a specific store.
+
+
+
 
 *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19911](https://github.com/magento/magento2/pull/19911)*. [GitHub-18374](https://github.com/magento/magento2/issues/18374)
 
@@ -592,6 +625,7 @@ fixed store wise product filter issue
 <!-- ENGCOM-3025 -->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [passtet](https://github.com/passtet) in pull request [17984](https://github.com/magento/magento2/pull/17984)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
 
+
 ### Integration
 
 <!-- ENGCOM-3102 -->* The Last logged In value displayed on the customer account page on the Admin is now updated as expected when a customer is authenticated through REST. *Fix submitted by [Prakash](https://github.com/prakashpatel07) in pull request [17978](https://github.com/magento/magento2/pull/17978)*. [GitHub-17488](https://github.com/magento/magento2/issues/17488)
@@ -612,6 +646,14 @@ fixed store wise product filter issue
 <!-- MAGETWO-85162 -->* You can now filter products based on color. 
 
 
+### Magento Shipping
+
+* Updating an order destination prior to creating a shipment  now results in the shipment being sent to the new destination.
+
+* Shipments that contain the same item across multiple packages will now correctly update the shipped amount.
+
+
+
 
 ### Newsletter
 
@@ -620,8 +662,6 @@ fixed store wise product filter issue
 <!-- MAGETWO-88736 -->* Magento now permits only one newsletter subscription per email address. Previously, when a website had multiple store views, a customer could subscribe multiple times to a newsletter with one email address. 
 
 <!-- MAGETWO-82530 -->* Magento now displays an informative `You have unsubscribed` message when you click the unsubscribe link in the newsletter email. 
-
-<!-- ENGCOM-3579 -->*  Magento now sets the correct store_id for each store when a customer subscribes to a newsletter from more than one store. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [19426](https://github.com/magento/magento2/pull/19426)*. [GitHub-19172](https://github.com/magento/magento2/issues/19172)
 
 <!-- ENGCOM-3680 -->*  A logged-in user who already has an account can now use the footer to sign up for a newsletter subscription. Previously, this user received an error message, and Magento did not subscribed her to the newsletter. *Fix submitted by [Ravi chandra](https://github.com/ravi-chandra3197) in pull request [18912](https://github.com/magento/magento2/pull/18912)*. [GitHub-8952](https://github.com/magento/magento2/issues/8952)
 
@@ -664,7 +704,11 @@ fixed store wise product filter issue
 
 ### Pricing
 
-<!-- MAGETWO-95721 -->* Removing Special Price changes final_price, min_price, max_price to 0.00
+<!-- MAGETWO-95721 -->* 
+
+
+
+Removing Special Price changes final_price, min_price, max_price to 0.00
 This causes incorrect sorting by price
 
 
@@ -716,6 +760,9 @@ This causes incorrect sorting by price
 <!-- MAGETWO-94232 -->* Return attributes that have the **Values Required** attribute  set to **no** no longer break the storefront display of those attributes.
 
 <!-- MAGETWO-72953 -->* Magento now displays the correct amount in the **Remaining Quantity** field after Magento has processed a return.
+
+<!-- MAGETWO-97009 -->* Administrators can now process returns when an RMA request includes a required image attribute. 
+
 
 
 
@@ -793,7 +840,7 @@ This causes incorrect sorting by price
 
 <!-- MAGETWO-86396 -->* Searching for a synonym that contains a hyphen and number now returns the same results as any other search term in the group
 
-<!-- ENGCOM-3811 -->* An unneeded, mistyped `saveHandler` has been removed from thew CatalogSearch indexer declaration. 	*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
+<!-- ENGCOM-3811 -->* A mistyped `saveHandler` has been removed from thew CatalogSearch indexer declaration. 	*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
 
 
 ### Shipping 
@@ -970,8 +1017,9 @@ This causes incorrect sorting by price
 <!-- ENGCOM-3291 -->* The `id_prefix` option for the cache frontend, which is used to prefix cache keys, is now set when Magento is installed. Previously, the performance of all websites in multisite deployments was uneven due to the previous mechanism used to prefix cache keys. *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
 
-## Known issues
+## Known issue
 
+**Issue**:  Cart Price rules that were created with undefined end dates (that is, with **To** field left empty) are not displayed as expected on the Staging dashboard after after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
 
 
 

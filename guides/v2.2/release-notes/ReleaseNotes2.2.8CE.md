@@ -5,10 +5,11 @@ title: Magento Open Source 2.2.8 Release Notes
 
 ---
 
-*Patch code and release notes were published on .*
+*Patch code and release notes were published on March 26, 2019.*
 
 
 We are pleased to present Magento Open Source 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and over 350 community-submitted pull requests. 
+
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -16,29 +17,61 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1
 
 
 
-
-
 ## Highlights
 
-In addition to over 30 critical security fixes, look for the following highlights in this release:
+Magento Open Source 2.2.8 includes over 200 functional fixes to the core product, and over 30 security enhancements. Community contributions include approximately 200 fixes and 300 pull requests. Look for the following highlights in this release:
+
+### Merchant tool enhancements
+
+* **Improved order creation workflow in the Admin**. The Admin order creation workflow has been refactored to eliminate delays when editing billing and shipping addresses. Processing of these fields now happens only after they are populated. 96174
+
+* **Ability to upload PDP images without compression and downsizing**. Merchants can now upload PDP images larger than 1920 x 1200  without first compressing and downsizing the images. Previously, when a merchant uploaded a high quality product image (larger than 1920 x 1200), Magento resized and compressed the image. Merchants can now set requirements for resizing and compression as well as compression quality and target width and height. 95299
+  
+### Substantial security enhancements
+
+This release contains over 30 security fixes to core Magento code. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.0) have been ported to 2.2.8, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 
-### Core code highlights
+### Infrastructure improvements
 
-This release includes improvements to general usability of the core code plus enhancements to wishlist and shipping features. 
+* **Magento now supports **Elasticsearch 6.0**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
+ 
 
-
-#### General improvements
-
-
-
-### Community contribution highlights
-
-Highlights of community contributions include these fixes:
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. Magento released a patch in late February to address this issue on existing installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). Note that `accept.js` library is now used for Authorize.Net payments.
 
 
 
+### Bundled extension enhancements
 
+This release of Magento includes extensions developed by third-party vendors. 
+
+
+#### dotdigital Engagement Cloud (formerly dotmailer)
+
+* dotmailer has been rebranded as dotdigital Engagement Cloud.
+
+#### Magento Shipping
+
+* Multiple improvements to the Shipment workflow user experience. 
+
+* **Batch Processing**. Error messaging and field validation has been added to the batch processing workflow. See xxx for a description of other enhancements to batch processing.  
+
+* **Carrier Specific Packaging**. Carrier-specific packaging has been added for FedEx. These packages will be available for selection during shipping if a FedEx carrier is configured.
+
+* **Security**. We've closed scenarios that could allow for third-party code execution.
+
+* **Magento Cart Price Rules**. Cart price rules can now be applied to Magento Shipping.
+
+
+#### Vertex
+
+* Added support for B2C VAT.
+
+* Added support for configurable logging.
+
+## Functional fixes
+
+In addition to security enhancements, this release contains the following functional fixes. 
 
 
 ## Fixes
