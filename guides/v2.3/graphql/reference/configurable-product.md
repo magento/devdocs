@@ -6,7 +6,7 @@ title: ConfigurableProduct endpoint
 The `ConfigurableProduct` endpoint extends the `ProductInterface` so that attributes that are specific to configurable products can be queried in a `products` search.
 
 {:.bs-callout .bs-callout-tip}
-The mutation defined in this topic is not supported in Magento 2.3.1 and earlier, but will be supported in a future release.
+The mutation defined in this topic is available in the 2.3-develop branch of the [graphql-ce repository](https://github.com/magento/graphql-ce).
 
 ## Query
 The `products` query returns configurable product-specific information when you perform a `products` search.

@@ -10,7 +10,7 @@ A quote represents the contents of a customer's shopping cart. It is responsible
 * Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
 {:.bs-callout .bs-callout-tip}
-Except for `createEmptyCart`, the mutations defined in this topic are not supported in Magento 2.3.1 and earlier, but will be supported in a future release.
+Except for `createEmptyCart`, the mutations defined in this topic are available in the 2.3-develop branch of the [graphql-ce repository](https://github.com/magento/graphql-ce).
 
 ## Query
 Use the `Cart` query to retrieve information about a particular cart.
