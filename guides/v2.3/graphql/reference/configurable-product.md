@@ -9,8 +9,23 @@ The `ConfigurableProduct` endpoint defines which configurable product-specific a
 
 Field | Type | Description
 --- | --- | ---
-`configurable_product_links` | SimpleProduct | An array of linked simple products
-`configurable_product_options` | ConfigurableProductOptions | An array of linked simple product items
+`variants` | ConfigurableVariant | An array of variants of products
+`configurable_options` | ConfigurableProductOptions | An array of linked simple product items
+
+## ConfigurableVariant
+
+Field | Type | Description
+--- | --- | ---
+`attributes` | ConfigurableAttributeOption | ConfigurableAttributeOption contains the value_index (and other related information) assigned to a configurable product option
+`product` | SimpleProduct | An array of linked simple products
+
+## ConfigurableAttributeOption
+
+Field | Type | Description
+--- | --- | ---
+`label` | String | A string that describes the configurable attribute option
+`code` | String | The ID assigned to the attribute
+`value_index` | Int | A unique index number assigned to the configurable product option
 
 ## ConfigurableProductOptions
 
