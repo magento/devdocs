@@ -20,6 +20,7 @@ The uiClass class introduces the architecture of UI components through the follo
 * The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. This resulting configuration is then set as first level properties in the current UI component instance.
 
   As an example:
+
 ```js
 defaults: {
     myFirstProperty: 0,

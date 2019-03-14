@@ -86,7 +86,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 <!--- 60543 -->* The **Print Shipping Label** link now displays on the product frontend. Previously, the layout for the "Shipping and Tracking" block did not work properly. 
 
 
-<!--- 60822 -->* Enabling  **Admin > Stores > Configuration > Advanced > Developer > Merge CSS files** no longer degrades product performance. Previously, enabling this setting slowed down both frontend and Admin processes. [GitHub-4321](https://github.com/magento/magento2/issues/4321)
+<!--- 60822 -->* Enabling  **Admin > Stores > Settings > Configuration > Advanced > Developer > Merge CSS files** no longer degrades product performance. Previously, enabling this setting slowed down both frontend and Admin processes. [GitHub-4321](https://github.com/magento/magento2/issues/4321)
 
 
 <!--- 61060 -->*  Magento no longer generates incorrect URLs in the site map when the **Use Secure URLs in Admin** setting is set to **Yes**. [GitHub-8644](https://github.com/magento/magento2/issues/8644)  
