@@ -124,7 +124,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-85125 -->* Magento now loads the company profile, roles, and permissions sections of a company account when **Enable Reward Points Functionality** is set to **no** in the Admin, and you flush cache storage. 
 
-<!-- MAGETWO-88254 -->* Tier pricing remains in effect when you add a product with tier pricing  to an order from the Admin. Previously, Magento converted tier prices to non-discounted product prices when you added more products to the order, applyied a custom price to one of the products, or applied a coupon code to the order. 
+<!-- MAGETWO-88254 -->* Tier pricing remains in effect when you add a product with tier pricing  to an order from the Admin. Previously, Magento converted tier prices to non-discounted product prices when you added more products to the order, applied a custom price to one of the products, or applied a coupon code to the order. 
 
 <!-- MAGETWO-90835 -->* You can now filter customers by status. Previously, Magento threw a SQL ERROR when you clicked on **Apply Filters** after setting the filter to status. 
 
@@ -153,7 +153,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
-<!-- ENGCOM-3392 -->* Magento now correctly calculates fixed tier price discount for prpoducts with special prices. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18743](https://github.com/magento/magento2/pull/18743)*. [GitHub-18652](https://github.com/magento/magento2/issues/18652)
+<!-- ENGCOM-3392 -->* Magento now correctly calculates fixed tier price discount for products with special prices. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18743](https://github.com/magento/magento2/pull/18743)*. [GitHub-18652](https://github.com/magento/magento2/issues/18652)
 
 
 <!-- MAGETWO-69650 -->* Products no longer display discounted prices in the shopping cart unless discounts have been applied or special or tiered prices are in effect.
@@ -172,7 +172,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-73449 -->* Changes to product images made under the All Stores scope now affect product images at the store-view level
 
-<!-- MAGETWO-93149 -->* You can now successfully change and save product order when you use a rule that implements a `contains` condition operator in Virtual Merchandiser. Previousl, Magento did not save product position as expected. 
+<!-- MAGETWO-93149 -->* You can now successfully change and save product order when you use a rule that implements a `contains` condition operator in Virtual Merchandiser. Previously, Magento did not save product position as expected. 
 
 <!-- MAGETWO-91070 -->* Category pages now display products  when swatch images are missing. Previously, Magento did not display these products, and the console displayed this error message, `Error: [object Object]`.
 
@@ -241,7 +241,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3826 -->* Deleting an image from **Admin** > **Catalog** > **Categories** now deletes the image as expected. Previously, the deleted image remained in `pub\media\catalog\category`. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [20178](https://github.com/magento/magento2/pull/20178)*. [GitHub-16198](https://github.com/magento/magento2/issues/16198)
 
-<!-- MAGETWO-95898 -->* Magento now successfully updates product quantities in the minishopping cart for a product that has **Qty Uses Decimals** and **Enable Qty Increments** are enabled. Previously, Magento did not update the product quantity, but diplayed this error, `You can buy this product only in quantities of 1.1 at a time`. 
+<!-- MAGETWO-95898 -->* Magento now successfully updates product quantities in the mini-shopping cart for a product that has **Qty Uses Decimals** and **Enable Qty Increments** are enabled. Previously, Magento did not update the product quantity, but diplayed this error, `You can buy this product only in quantities of 1.1 at a time`. 
 
 <!-- MAGETWO-94988 -->* Product images on the storefront are now identical in size, width, height, and DPI to the  image as specified for upload in the Admin. 
 
