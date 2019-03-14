@@ -172,7 +172,7 @@ This section discusses how to set system variables.
 
 The following table shows a few sample variables.
 
-| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name |
+| Description  | Path in Magento Admin (omitting **Stores** > **Settings** > **Configuration**) | Variable name |
 |--------------|--------------|----------------------|
 | Elasticsearch server hostname  | Catalog > **Catalog**, **Elasticsearch Server Hostname**   |  `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME` |
 | Elasticsearch server port |  Catalog > **Catalog**, **Elasticsearch Server Port** | `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT`  |
