@@ -132,7 +132,7 @@ Use this table to understand what changes Magento can make and which version num
 | | Topic arguments modified | MAJOR|
 | | Consumer removed | MINOR|
 | | New topic published| MINOR|
-| **Layout handles declared by modules**| New layoutpage handle | MINOR|
+| **Layout handles declared by modules**| New layout page handle | MINOR|
 | | New container/block added to handle| MINOR|
 | | Removed/renamed container/block| MAJOR|
 | | Removed layout handle| MAJOR|
