@@ -29,8 +29,7 @@ The rules listed do not apply to customization code (e.g. Plugins, Observers, JS
 
 #### Introducing a new dependency from an existing module
 
-The introduction of a new dependency from an existing module can be treated as a backward incompatible change.
-There is no guarantee that the required module will be enabled at a particular instance. As a result, such dependency will not be satisfied.
+Introducing a new dependency from an existing module is a backward incompatible change because we cannot guarantee when Magento will enable the required module. As a result, we cannot satisfy the dependency in this way.
 
 ### PHP
 
