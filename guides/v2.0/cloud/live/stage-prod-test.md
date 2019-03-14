@@ -76,7 +76,7 @@ Check the returned response headers and values:
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
 1. Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
+2. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 3. Ensure Fastly CDN is selected.
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
 
