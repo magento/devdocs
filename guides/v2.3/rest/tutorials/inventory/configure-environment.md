@@ -97,7 +97,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
 To make it easier to locate products and log in as a customer later in this tutorial, configure Magento to add the store code to the URL.
 
-1. Click **Stores** > **Configuration** > **Web** and expand the **Url Options** section.
+1. Click **Stores** > **Settings** > **Configuration** > **Web** and expand the **Url Options** section.
 2. Change the value of **Add Store Code to Urls** to **Yes**.
 3. Click **Save Config**.
 
