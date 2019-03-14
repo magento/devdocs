@@ -9,7 +9,7 @@ title: Magento Commerce 2.2.8 Release Notes
 
 
 
-We are pleased to present Magento Commerce 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and over 100 community-submitted pull requests. 
+We are pleased to present Magento Commerce 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and  285 community-submitted pull requests. 
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -36,10 +36,7 @@ This release contains over 30 security fixes to core Magento code. See [Magento 
 
 * **Magento now supports **Elasticsearch 6.0**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
  
-
-* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. Magento released a patch in late February to address this issue on existing installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). Note that `accept.js` library is now used for Authorize.Net payments. <!-- MAGETWO-98129-->* 
-
-
+* Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage (announcement). See [Authorize.Net Direct Post](https://docs.magento.com/m2/2.2/ee/user_guide/payment/authorize-net-direct-post.html) for a discussion of this deprecation and the steps you need to take to add the new key you’ll need after deprecation.  <!-- MAGETWO-98129-->* 
 
 * The shipping and billing data that a user enters during checkout nows persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
 
@@ -437,16 +434,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 <!-- ENGCOM-3215 -->* Magento no longer throws an SQL Join error when you use a custom EAV entity  with the `standard eav_entity` entity table. Previously, this usage resulted in an integrity constraint violation. *Fix submitted by [Oleksii Lisovyi](https://github.com/oleksii-lisovyi) in pull request [18566](https://github.com/magento/magento2/pull/18566)*. [GitHub-18532](https://github.com/magento/magento2/issues/18532)
 
 
-<!-- ENGCOM-3732 -->* 
-
-fixed store wise product filter issue
-
-Unable to get product attribute value for store-view scope type in product collection loaded for a specific store.
-
-
-
-
-*Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19911](https://github.com/magento/magento2/pull/19911)*. [GitHub-18374](https://github.com/magento/magento2/issues/18374)
+<!-- ENGCOM-3732 -->* You can now retrieve the  product attribute value for store-view scope types in the product collection that is loaded for a specific store. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19911](https://github.com/magento/magento2/pull/19911)*. [GitHub-18374](https://github.com/magento/magento2/issues/18374)
 
 
 
@@ -639,7 +627,9 @@ Unable to get product attribute value for store-view scope type in product colle
 <!-- MAGETWO-97000 -->* Layered navigation for Elasticsearch now includes all product sizes. If the **Filterable (with results)** option is set for a product attribute then: 
 
 	* Layered navigation includes only those filters for which matching products can be found. 
+
 	* Any attribute value that already applies to all products shown in the list should still appear as an available filter.
+
 	* Attribute values with a count of zero (0) product matches are omitted from the list of available filters. 
 
 
@@ -704,19 +694,15 @@ Unable to get product attribute value for store-view scope type in product colle
 
 ### Pricing
 
-<!-- MAGETWO-95721 -->* 
+<!-- MAGETWO-95721 -->* Sorting by price now works as expected. Previously, when a merchant removed a special price or a simple product, the `final_price`, `min_price` and `max_price` attributes of the `catalog_product_index_price` table was changed to 0.0000 instead of reverting back to the original price. 
 
-
-
-Removing Special Price changes final_price, min_price, max_price to 0.00
-This causes incorrect sorting by price
 
 
 ### Quote
 
 <!-- MAGETWO-91332 -->* You can now request a quote on a storefront running on iOS 11.3.1.
 
-<!-- MAGETWO-95180 -->* Merchants can now create new user roles that do not have  access to Quotes.
+<!-- MAGETWO-95180 -->* Merchants can now create new user roles that do not have  access to quotes.
 
 <!-- ENGCOM-3314 -->* You can now use REST to set billing information for a customer (`customerId`) with an existing address. Previously, Magento threw an exception during address validation. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18872](https://github.com/magento/magento2/pull/18872)*. [GitHub-17485](https://github.com/magento/magento2/issues/17485)
 
@@ -802,7 +788,6 @@ This causes incorrect sorting by price
 
 <!-- MAGETWO-96141 -->* You can now remove a custom price from a product during order creation from the Admin. 
 
-
 <!-- ENGCOM-3734 -->* Fixed alignment of the **Update Qty** button on the sales order invoice. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19804](https://github.com/magento/magento2/pull/19804)*. [GitHub-19796](https://github.com/magento/magento2/issues/19796)
 
 <!-- ENGCOM-4017 -->*  Fixed alignment of the currenc value rate field on credit memos created from the Admin. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20613](https://github.com/magento/magento2/pull/20613)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
@@ -845,7 +830,7 @@ This causes incorrect sorting by price
 
 ### Shipping 
 
-<!-- MAGETWO-c -->* Magento now uses  shipping table rates from the correct store in multistore deployments. 
+<!-- MAGETWO-c -->* Magento now uses the  shipping table rate from the correct store in multistore deployments. 
 
 <!-- MAGETWO-73894 -->* You can now use `GET .V1/shipments` to search for shipments that contain a shipping label. Previously, using this call  caused Magento to throw an exception. [GitHub-6668](https://github.com/magento/magento2/issues/6668)
 
@@ -854,13 +839,6 @@ This causes incorrect sorting by price
 <!-- MAGETWO-96156 -->* Shipments created through REST now return tracking information as expected. Previously, Magento created shipment notifications without a tracking number when shipment was created using REST. 
 
 <!-- MAGETWO-95497 -->* Magento now correctly handles U.K. shipping addresses in multisite deployments where the default store's  **Allowed Countries** setting is US only but the store from which the order is placed supports U. K. shipping. Previously, Magento did not complete the order set to ship to a U.K. address, and Magento displayed this error, `Please check the shipping address information. Invalid value of "GB" provided for the countryId field`.
-
-
-
-
-
-
-
 
 <!-- ENGCOM-4042 -->*  Fixed misalignment of elements on the shipping information page that Magento displays when you click **Check Out with Multiple Addresses** from the shopping cart. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20739](https://github.com/magento/magento2/pull/20739)*. [GitHub-20563](https://github.com/magento/magento2/issues/20563)
 
@@ -1019,7 +997,7 @@ This causes incorrect sorting by price
 
 ## Known issue
 
-**Issue**:  Cart Price rules that were created with undefined end dates (that is, with **To** field left empty) are not displayed as expected on the Staging dashboard after after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
+**Issue**:  Cart Price rules that were created with undefined end dates (that is, with the  **To** field left empty) are not displayed as expected on the Staging dashboard after after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
 
 
 
