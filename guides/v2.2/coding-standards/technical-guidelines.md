@@ -506,9 +506,13 @@ class View extends Template
 
 6.1.1. Application SHOULD be structured in compliance with the [CQRS principle].
 
-6.1.2. Every application layer (Presentation, Service Contracts, Data Access) MUST process (handle or re-throw) exceptions of the underlying layer.
+6.1.2. Every application layer (Presentation, Service Contracts, Data Access) 
+    MUST process (handle or re-throw) exceptions of the underlying layer.
 
-6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area. This includes events and plugins that customize the presentation layer.
+6.1.3. A layer MUST NOT depend on layer that invokes it.
+          Example, a service that manages products MUST NOT invoke component 
+          that manages Admin notification messages 
+          because message manager is particular example of presentation layer.
 
 ### 6.2. Presentation layer
 
@@ -523,6 +527,9 @@ class View extends Template
 6.2.3. All actions MUST return the `ResultInterface` implementation.
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
+
+6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area.
+    This includes events and plugins that customize the presentation layer.
 
 ###  6.3. Data Access (Persistence) layer
 
@@ -615,10 +622,6 @@ class View extends Template
 6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.
 
 6.4.4.14. A service contract SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
-
-6.4.4.15. A service contract MUST NOT depend on layer that invokes it.
-          Example, a service that manages products MUST NOT invoke component that manages Admin notification messages.
-
 
 ## 7. Configuration
 
