@@ -44,8 +44,8 @@ See [Magento Software Lifecycle Policy] and [Versioning].
 
 The following table shows the release status of a Magento extension version relative to the 2.3.x release line of {{site.data.var.ee}}.
 
-- {:.new} **Stable**—Indicates an extension version that has been tested by Magento as part of a Commerce release.
-- {:.fix} **Release candidate**—Indicates an extension version that has _not_ been tested by Magento as part of a Commerce release.
+- {:.new} **Stable**—Indicates an extension version that has been tested by Magento as part of a {{site.data.var.ee}} release.
+- {:.fix} **Release candidate**—Indicates an extension version that has _not_ been tested by Magento as part of a {{site.data.var.ee}} release.
 
 <table>
   <tbody>
