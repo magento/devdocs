@@ -10,6 +10,10 @@ functional_areas:
 ## Operating systems (Linux x86-64)
 
 Linux distributions, such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and similar.
+Magento is not supported on:
+
+* Windows OS
+* Mac OS
 
 ## Memory requirement
 
@@ -39,7 +43,9 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 ## PHP
 
 {:.bs-callout .bs-callout-info}
-Magento, with assistance from our community, is implementing PHP 7.2 compatibility for the 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases. If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
+Magento 2.3.1 is certified for PHP 7.2.11.
+All 3rd party libraries now support PHP 7.2.
+ If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
 {% include install/php_2.3.md %}
 
@@ -77,7 +83,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
   * [More information about PayPal]({{page.baseurl}}/install-gde/system-requirements_tls1-2.html)
   * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
-	*	[More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
+  * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Required system dependencies
 
@@ -106,10 +112,14 @@ Mail Transfer Agent (MTA) or an SMTP server
 
   {{site.data.var.ee}} version 2.3.x supports the following Elasticsearch versions:
 
-  * Elasticsearch [5.2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-5-2-2){:target="_blank"}
-  * Elasticsearch [2.x](https://www.elastic.co/downloads/past-releases/elasticsearch-2-4-5){:target="_blank"}
+  * Elasticsearch [6.x](https://www.elastic.co/downloads/past-releases/elasticsearch-6-6-1){:target="_blank"}
 
-    Magento 2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 5.2. (Before version 2.3, Magento used PHP client version 5.1.)
+    Magento 2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 6.1.
+
+{: .bs-callout .bs-callout-warning}
+Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol).
+If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
+Follow the instructions in [Change Elasticsearch Module][].
 
 * RabbitMQ 3.7.x (compatible with 2.0 and later)
 
@@ -121,14 +131,6 @@ Mail Transfer Agent (MTA) or an SMTP server
 
   These [master databases]({{page.baseurl}}/config-guide/multi-master/multi-master.html) provide scalability advantages for different functional areas of the Magento application such as checkout, orders, and all remaining Magento2 application tables.
 
-### Unsupported Operating Systems
-
-Magento is mainly supported on Linux and Unix operating systems.
-Magento is not supported on:
-
-* Windows OS
-* Mac OS
-
 ### Optional but recommended
 
 * [php_xdebug 2.5.x](http://xdebug.org/download.php){:target="_blank"} or later (development environments only; can have an adverse effect on performance)
@@ -137,7 +139,7 @@ Magento is not supported on:
 There is a known issue with `xdebug` that can affect Magento installations or access to the storefront or Magento Admin after installation. For details, see [Known issue with xdebug]({{page.baseurl}}/install-gde/trouble/tshoot_install-issues.html).
 
 * [`mcrypt`](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
-*	PHPUnit (as a command-line tool) 6.2.0
+* PHPUnit (as a command-line tool) 6.2.0
 
 [bash]: https://www.gnu.org/software/bash/
 [gzip]: https://www.gzip.org/
