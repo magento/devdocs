@@ -496,7 +496,7 @@ class View extends Template
 
 5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a `try` block and the corresponding `finally` block. In the `finally` sections, all resources SHOULD be properly released.
 
-5.17. `LocalizedException` SHOULD only be thrown in the Presentation layer (Controllers, Blocks).
+5.17. Exceptions which need to be displayed to the user MUST be sub-types of `LocalizedException`. Any other types of exceptions MUST be wrapped with `LocalizedException` before being displayed to the user.
 
 ## 6. Application layers
 
