@@ -119,7 +119,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-85125 -->* Magento now loads the company profile, roles, and permissions sections of a company account when **Enable Reward Points Functionality** is set to **no** in the Admin, and you flush cache storage. 
 
-<!-- MAGETWO-88254 -->* Tier pricing remains in effect when you add a product with tier pricing  to an order from the Admin. Previously, Magento converted tier prices to non-discounted product prices when you added more products to the order, applyied a custom price to one of the products, or applied a coupon code to the order. 
+<!-- MAGETWO-88254 -->* Tier pricing remains in effect when you add a product with tier pricing  to an order from the Admin. Previously, Magento converted tier prices to non-discounted product prices when you added more products to the order, applied a custom price to one of the products, or applied a coupon code to the order. 
 
 <!-- MAGETWO-90835 -->* You can now filter customers by status. Previously, Magento threw a SQL ERROR when you clicked on **Apply Filters** after setting the filter to status. 
 
@@ -148,7 +148,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Catalog
 
-<!-- ENGCOM-3392 -->* Magento now correctly calculates fixed tier price discount for prpoducts with special prices. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18743](https://github.com/magento/magento2/pull/18743)*. [GitHub-18652](https://github.com/magento/magento2/issues/18652)
+<!-- ENGCOM-3392 -->* Magento now correctly calculates fixed tier price discount for products with special prices. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18743](https://github.com/magento/magento2/pull/18743)*. [GitHub-18652](https://github.com/magento/magento2/issues/18652)
 
 
 <!-- MAGETWO-69650 -->* Products no longer display discounted prices in the shopping cart unless discounts have been applied or special or tiered prices are in effect.
@@ -167,7 +167,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-73449 -->* Changes to product images made under the All Stores scope now affect product images at the store-view level
 
-<!-- MAGETWO-93149 -->* You can now successfully change and save product order when you use a rule that implements a `contains` condition operator in Virtual Merchandiser. Previousl, Magento did not save product position as expected. 
+<!-- MAGETWO-93149 -->* You can now successfully change and save product order when you use a rule that implements a `contains` condition operator in Virtual Merchandiser. Previously, Magento did not save product position as expected. 
 
 <!-- MAGETWO-91070 -->* Category pages now display products  when swatch images are missing. Previously, Magento did not display these products, and the console displayed this error message, `Error: [object Object]`.
 
@@ -190,7 +190,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3158 -->* Magento no longer changes the attribute type of 'backend_type' from `varchar` to `int` when the product associated with the attribute is saved or updated in the Admin. *Fix submitted by [Bartosz Kubicki](https://github.com/bartoszkubicki) in pull request [18196](https://github.com/magento/magento2/pull/18196)*. [GitHub-9219](https://github.com/magento/magento2/issues/9219)
 
-<!-- ENGCOM-3171 -->* Magento now validates the quantity of items in th shoppng cart against the **Maximum Qty Allowed in Shopping Cart** setting. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18552](https://github.com/magento/magento2/pull/18552)*. [GitHub-18477](https://github.com/magento/magento2/issues/18477)
+<!-- ENGCOM-3171 -->* Magento now validates the quantity of items in th shopping cart against the **Maximum Qty Allowed in Shopping Cart** setting. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18552](https://github.com/magento/magento2/pull/18552)*. [GitHub-18477](https://github.com/magento/magento2/issues/18477)
 
 <!-- ENGCOM-3193 -->* When a new customer is created, Magento sets a value of zero for any custom attribute if no other value is explicitly provided. Previously, if no value was explicitly assigned, Magento did not save the custom attribute with any value. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16915](https://github.com/magento/magento2/pull/16915)*. [GitHub-14510](https://github.com/magento/magento2/issues/14510)
 
@@ -236,7 +236,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3826 -->* Deleting an image from **Admin** > **Catalog** > **Categories** now deletes the image as expected. Previously, the deleted image remained in `pub\media\catalog\category`. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [20178](https://github.com/magento/magento2/pull/20178)*. [GitHub-16198](https://github.com/magento/magento2/issues/16198)
 
-<!-- MAGETWO-95898 -->* Magento now successfully updates product quantities in the minishopping cart for a product that has **Qty Uses Decimals** and **Enable Qty Increments** are enabled. Previously, Magento did not update the product quantity, but diplayed this error, `You can buy this product only in quantities of 1.1 at a time`. 
+<!-- MAGETWO-95898 -->* Magento now successfully updates product quantities in the mini-shopping cart for a product that has **Qty Uses Decimals** and **Enable Qty Increments** are enabled. Previously, Magento did not update the product quantity, but displayed this error, `You can buy this product only in quantities of 1.1 at a time`. 
 
 <!-- MAGETWO-94988 -->* Product images on the storefront are now identical in size, width, height, and DPI to the  image as specified for upload in the Admin. 
 
@@ -278,7 +278,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-72877 -->* Magento now displays the correct status for orders with zero subtotals. Previously, new order status appeared as pending when it was processing. 
 
-<!-- MAGETWO-62841 -->*  Magento no longer permits you to use the up and down arrow keys to enter negative numers when entering a credit card number on the payment information page during checkout.
+<!-- MAGETWO-62841 -->*  Magento no longer permits you to use the up and down arrow keys to enter negative numbers when entering a credit card number on the payment information page during checkout.
 
 <!-- MAGETWO-86477 -->* Magento now displays informative error messages when an order paid for with Authorize.Net fails.
 
@@ -1023,6 +1023,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 
 ### System requirements
+
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
 
 
@@ -1032,6 +1033,7 @@ See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/ins
 
 
 ## Migration toolkits
+
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
 
 The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.2.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.

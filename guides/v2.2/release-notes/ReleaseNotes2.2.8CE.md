@@ -195,7 +195,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3158 -->* Magento no longer changes the attribute type of 'backend_type' from `varchar` to `int` when the product associated with the attribute is saved or updated in the Admin. *Fix submitted by [Bartosz Kubicki](https://github.com/bartoszkubicki) in pull request [18196](https://github.com/magento/magento2/pull/18196)*. [GitHub-9219](https://github.com/magento/magento2/issues/9219)
 
-<!-- ENGCOM-3171 -->* Magento now validates the quantity of items in th shoppng cart against the **Maximum Qty Allowed in Shopping Cart** setting. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18552](https://github.com/magento/magento2/pull/18552)*. [GitHub-18477](https://github.com/magento/magento2/issues/18477)
+<!-- ENGCOM-3171 -->* Magento now validates the quantity of items in th shopping cart against the **Maximum Qty Allowed in Shopping Cart** setting. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18552](https://github.com/magento/magento2/pull/18552)*. [GitHub-18477](https://github.com/magento/magento2/issues/18477)
 
 <!-- ENGCOM-3193 -->* When a new customer is created, Magento sets a value of zero for any custom attribute if no other value is explicitly provided. Previously, if no value was explicitly assigned, Magento did not save the custom attribute with any value. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [16915](https://github.com/magento/magento2/pull/16915)*. [GitHub-14510](https://github.com/magento/magento2/issues/14510)
 
@@ -241,7 +241,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3826 -->* Deleting an image from **Admin** > **Catalog** > **Categories** now deletes the image as expected. Previously, the deleted image remained in `pub\media\catalog\category`. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [20178](https://github.com/magento/magento2/pull/20178)*. [GitHub-16198](https://github.com/magento/magento2/issues/16198)
 
-<!-- MAGETWO-95898 -->* Magento now successfully updates product quantities in the mini-shopping cart for a product that has **Qty Uses Decimals** and **Enable Qty Increments** are enabled. Previously, Magento did not update the product quantity, but diplayed this error, `You can buy this product only in quantities of 1.1 at a time`. 
+<!-- MAGETWO-95898 -->* Magento now successfully updates product quantities in the mini-shopping cart for a product that has **Qty Uses Decimals** and **Enable Qty Increments** are enabled. Previously, Magento did not update the product quantity, but displayed this error, `You can buy this product only in quantities of 1.1 at a time`. 
 
 <!-- MAGETWO-94988 -->* Product images on the storefront are now identical in size, width, height, and DPI to the  image as specified for upload in the Admin. 
 
@@ -283,7 +283,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-72877 -->* Magento now displays the correct status for orders with zero subtotals. Previously, new order status appeared as pending when it was processing. 
 
-<!-- MAGETWO-62841 -->*  Magento no longer permits you to use the up and down arrow keys to enter negative numers when entering a credit card number on the payment information page during checkout.
+<!-- MAGETWO-62841 -->*  Magento no longer permits you to use the up and down arrow keys to enter negative numbers when entering a credit card number on the payment information page during checkout.
 
 <!-- MAGETWO-86477 -->* Magento now displays informative error messages when an order paid for with Authorize.Net fails.
 
