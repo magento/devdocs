@@ -25,7 +25,7 @@ Deployment strategies differ based on whether you choose to generate static cont
 
 ### Setting the SCD on build
 
-Generating static content during the build phase with minified HTML is the optimal configuration for **zero-downtime** deployments, also known as the **ideal state**. Instead of copying files to a mounted drive, it creates a symlink from the `./init/pub/static` directory.
+Generating static content during the build phase with minified HTML is the optimal configuration for [**zero-downtime** deployments]({{page.baseurl}}/cloud/deploy/reduce-downtime.html), also known as the **ideal state**. Instead of copying files to a mounted drive, it creates a symlink from the `./init/pub/static` directory.
 
 By default, the [STATIC_CONTENT_SYMLINK environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#static_content_symlink) is set to `true`. After generating the static content during the build phase, it creates a symlink to the content folder.
 
