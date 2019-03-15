@@ -12,7 +12,7 @@ Depending upon your role and purpose for learning about Magento, there are sever
 
 The following diagram illustrates the components of Magento, and shows the "layers" or tiers in the Magento product.
 
-![]({{page.baseurl}}/common/images/archi_diagrams_current.png)
+![]({{site.baseurl}}/common/images/archi_diagrams_current.png)
 
 ## Related topics
 
