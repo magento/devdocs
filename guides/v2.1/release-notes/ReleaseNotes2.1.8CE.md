@@ -213,7 +213,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69152 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member [Pieter Hoste](https://github.com/hostep){:target="_blank"} in pull request [9540](https://github.com/magento/magento2/pull/9540){:target="_blank"}.*
 
-<!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member [Rafael Kassner](https://github.com/kassner){:target="_blank"} in pull request [9661](https://github.com/magento/magento2/pull/9661){:target="_blank"}.*
+<!--- 69236 -->* The Store Configuration page (**Stores > Settings > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member [Rafael Kassner](https://github.com/kassner){:target="_blank"} in pull request [9661](https://github.com/magento/magento2/pull/9661){:target="_blank"}.*
 
 ### Import/Export
 
