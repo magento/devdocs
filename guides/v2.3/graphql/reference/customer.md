@@ -26,7 +26,7 @@ Attribute |  Data Type | Description
 `dob` | String | The customer's date of birth
 `email` | String | The customer's email address
 `firstname` | String | The customer's first name
-`gender` | Int | The customer's gender(Male - 1, Female - 2)
+`gender` | Int | The customer's gender (Male - 1, Female - 2)
 `group_id` | Int | The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale), and 3 (Retailer)
 `id` | Int | The ID assigned to the customer
 `is_subscribed` | Boolean | Indicates whether the customer is subscribed to the company's newsletter
