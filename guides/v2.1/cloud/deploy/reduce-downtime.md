@@ -15,7 +15,7 @@ Use the following steps to help reduce the amount of downtime your store experie
     Your {{site.data.var.ece}} project must have the latest `{{site.data.var.ct}}` package so that you have the tools available to configure an optimal deployment. If you have the latest `{{site.data.var.ct}}`, continue to the next step.
 
 1.  [Configure static content deployment]({{page.baseurl}}/cloud/deploy/static-content-deployment.html)  
-    If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. A failure during the build phase prevents deployment, which prevents downtime. Enable your project to deploy static content during the **build** phase to prevent downtime if a failure occurs.
+    If static content deployment fails in the deploy phase, your site gets stuck in maintenance mode. A failure during the build phase prevents deployment, which prevents downtime. [Generating static content during the build phase with minified HTML]({{page.baseurl}}/cloud/deploy/static-content-deployment.html#setting-the-scd-on-build) is the optimal configuration for zero-downtime deployments, also known as the ideal state, and _prevents_ downtime if a failure occurs.
     
     You can test your project configuration by [running the ideal state wizard]({{page.baseurl}}/cloud/deploy/smart-wizards.html#verifying-an-ideal-configuration).
 
