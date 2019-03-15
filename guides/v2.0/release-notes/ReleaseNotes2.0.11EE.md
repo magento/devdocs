@@ -148,7 +148,7 @@ We address the following functional issues in this release.
 
 <!--- 57103-->* We've fixed an issue with how the Customer Segments report calculates the same customer on two websites. 
 
-<!--- 57384, 39489 -->* You can now make Return Merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
+<!--- 57384, 39489 -->* You can now make Return Merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} (RMA) comments visible from the storefront by setting **Stores > Settings > Configuration > Sales > RMA Settings > Enable RMA on Storefront**. 
 
 <!--- 57036-->* You can now upload changes to the `robots.txt` file from the Magento Admin. 
 
@@ -161,7 +161,7 @@ We address the following functional issues in this release.
 
 <!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
 
-<!--- 58498-->* The **Need to Confirm** option on **Stores > Configuration > Customers > Newsletter** now works as expected. 
+<!--- 58498-->* The **Need to Confirm** option on **Stores > Settings > Configuration > Customers > Newsletter** now works as expected. 
 
 ### Gift cards
 {:.no_toc} 

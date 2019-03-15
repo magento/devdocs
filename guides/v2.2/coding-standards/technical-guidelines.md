@@ -610,6 +610,8 @@ class View extends Template
 
 6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in the `global` area of configuration.
 
+6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.
+
 ## 7. Configuration
 
 7.1. An Application Instance consists of:

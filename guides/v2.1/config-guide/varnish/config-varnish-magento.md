@@ -10,7 +10,7 @@ functional_areas:
 To configure Magento to use Varnish:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2.	Click **STORES** > **Configuration** > **ADVANCED** > **System** > **Full Page Cache**.
+2.	Click **STORES** > **Settings** > **Configuration** > **ADVANCED** > **System** > **Full Page Cache**.
 3.	From the **Caching Application** list, click **Varnish Caching**.
 4.	Enter a value in the **TTL for public content** field.
 5.	Expand **Varnish Configuration** and enter the following information:
