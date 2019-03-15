@@ -99,7 +99,7 @@ The Magento indexing mechanism uses the status value in reindex triggering proce
 
 Reindexing can be performed in two modes:
 
-*	Update on Save: index tables are updated immediately after the dictionary data is changed.  
+*	Update on Save: index tables are updated immediately after the dictionary data is changed.
 *	Update by Schedule: index tables are updated by cron job according to the configured schedule.
 
 To set these options:
