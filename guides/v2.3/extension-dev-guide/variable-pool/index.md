@@ -8,7 +8,7 @@ These values are defined in [`di.xml`] files or created through the Admin interf
 
 ## Configuration variables
 
-Configuration variables are values that are set in the Admin area under the **Stores > Configuration** section.
+Configuration variables are values that are set in the Admin area under the **Stores > Settings > Configuration** section.
 
 The default list of variable paths available to the Variable Insertion Dialog is defined in the `di.xml` file in the [Variable module].
 This list can be extended by adding more entries to the `configPaths` argument for the `Magento\Variable\Mode\Source\Variables` class in your module's `di.xml` file.

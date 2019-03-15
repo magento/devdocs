@@ -48,14 +48,7 @@ When a 503 error occurs, Fastly returns the reason on the error and maintenance 
 
 ### Apex and subdomains already in Fastly {#domains}
 
-If your apex domain and subdomains are already managed by a Fastly account with an assigned Service ID, you cannot launch until you do the following:
-
-* Remove the apex domain and subdomains from an existing Fastly account, may include removing or changing the CNAME record
-* Complete configurations and CNAME for the Fastly account and Service ID we provide
-
-Fastly only allows one apex domain and all subdomains assigned to a single Fastly service and account. For example, if you have the apex domain of mystore.com with subdomains of shoes.mystore.com and socks.mystore.com managed by an existing Fastly account, you need to remove them from that account before going live with Fastly and {{site.data.var.ece}}.
-
-For details, review your Fastly accounts and [documentation](https://docs.fastly.com/) to remove the domains. This may include removing and updating CNAME records and more.
+If the apex domain and subdomains for your {{ site.data.var.ece }} project are already managed by a Fastly account with an assigned Service ID, you cannot launch until you update your Fastly account configuration. See [Multiple Fastly accounts and assigned domains]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#domain).
 
 ## Locate Service ID {#service-id}
 
@@ -185,7 +178,7 @@ If you don't receive a "yes" for the `Fastly-Module-Enabled` in the response hea
 To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
 
 1. Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
+2. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
 3. Ensure Fastly CDN is selected.
 4. Click on **Fastly Configuration**. Ensure the Fastly Service ID and Fastly API token are entered (your Fastly credentials). Verify you have the correct credentials entered for the Staging and Production environment. Click **Test credentials** to help.
 5. Edit your `composer.json` and ensure the Fastly module is included with version. This file has all modules listed with versions.

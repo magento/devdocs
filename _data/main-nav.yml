@@ -29,7 +29,7 @@
     - label: Installation Guide
       url: /install-gde/bk-install-guide.html
 
-    - label: Extension Update and System Upgrade Guide
+    - label: Software Update Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
       exclude_versions: ['2.0', '2.1']
 
@@ -100,7 +100,7 @@
         - label: Admin Style Guide
           url: /design-styleguide/bk-styleguide.html
 
-        - label: Magento PWA Documentation Site
+        - label: PWA Documentation Site
           url: https://magento-research.github.io/pwa-studio/
           include_versions: ['2.3']
 
@@ -124,9 +124,11 @@
           url: /marketplace/eqp/api.html
           exclude_versions: ['2.0']
 
-        - label: Magento BI Import REST API
-          url: https://developers.rjmetrics.com/
+        - label: Business Intelligence Import API
+          url: /mbi/docs/getting-started.html
           exclude_versions: ['2.0']
+          versionless: true
+
 
 - label: Testing
   children:
@@ -176,6 +178,11 @@
 
     - label: Order Management
       url: http://omsdocs.magento.com/en/
+
+    - label: Page Builder
+      url: /page-builder/docs/index.html
+      exclude_versions: ['2.0', '2.1', '2.2']
+      versionless: true
 
     - label: Payment Integrations
       url: /payments-integrations/bk-payments-integrations.html

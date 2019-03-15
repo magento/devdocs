@@ -16,7 +16,7 @@ Fastly provides the following services to optimize and secure content delivery o
 	
    -  Cache your site pages, assets, CSS, and more in backend data centers that you set up to reduce bandwith load and costs
 	
-   -  Create [edge and ACL dictionaries with VCL snippets](#custom-vcl) (Varnish 2.1 compliant) to modify how caching responds to requests
+   -  Use [Fastly custom VCL snippets]({{ page.baseurl}}/cloud/cdn/cloud-vcl-custom-snippets.html) (Varnish 2.1 compliant) to modify how caching responds to requests
 
    -  Configure [purge options]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#purge) to clear generated content
    
@@ -105,45 +105,6 @@ After you have [set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.htm
 you can create [custom VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html)
 using these edge dictionaries and ACLs.
 
-### Edge dictionaries {#dictionary}
-
-Save key-value pairs on Fastly Edge nodes of dictionary containers and items to
-invoke with VCL snippets in your site. You have up to 1,000 entries per
-dictionary.
-
-You create an edge dictionary then add items to it of a key and its value. For
-example, you could create an edge dictionary of banned bad refer sites from
-accessing your site. The key-value pairs would be the refer site URLs
-(www.example.com) and a value of 1. Then create a custom VCL snippet to return
-a 403 Forbidden to those sites when they access your site.
-
-Another example routes to a different WordPress backend for an edge dictionary
-of WordPress URLs.
-
-### Edge ACLs {#acl}
-
-ACLs are access control lists that allow you to manage IP addresses to allow or
-block access to resources. You can use edge ACLs with VCL snippets to block or allow
-access by IP address. For example, use edge ACLs and a custom VCL snippet
-to white list IPs to access your site.
-
-### VCL snippets {#vcl}
-
-With edge dictionaries and edge ACLs, you can create custom Varnish Configuration
-Language (VCL) snippets to Fastly and your site. VCL snippets are small chunks
-of logic and code that can be included directly into your service configuration.
-They are generated, compiled, and transmitted to all Fastly caches, loaded, and
-activated without waiting for maintenance windows without server downtime.
-
-For a few examples, you can create VCL snippets to:
-
-* Block access to the site using an edge dictionary of domains
-* Whitelist and allow access using an edge ACL
-* Redirect blog links from your store to a blog site
-* Extend timeouts for Fastly and Magento
-
-After you have [set up Fastly](#install-configure), we provide detailed
-instructions on creating [custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 ## Force TLS {#tls}
 
