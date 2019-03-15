@@ -252,7 +252,7 @@ Based on the status returned, use the following instructions to update the Fastl
 
 -  `Module is disabled`—If the Fastly module is disabled, update the environment configuration on an Integration branch in your local environment to enable it. Then, push the changes to Staging and Production. See [Manage extensions]({{ page.baseurl }}/cloud/howtos/install-components.html#manage).
 
--  `Module does not exist`—If the module does not exist [install and configure the extension in an Integration branch]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-start}). After installation completes, enable and configure the module.
+-  `Module does not exist`—If the module does not exist [install and configure the extension in an Integration branch]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#cloud-fastly-start). After installation completes, enable and configure the module.
   
    If you use [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html#cloud-config-specific-recomm), verify that Fastly CDN is enabled (`Fastly_CDN=> 1`) in the following configuration files before you push changes to the Production or Staging environment:
 
