@@ -37,6 +37,12 @@ GraphQL allows you to define the structure of the data that you need, and the se
 
 More information can be found in the [GraphQL Developer Guide][]
 
+## Progressive Web Apps
+
+The Magento Progressive Web App (PWA) Studio project is a set of developer tools that allow you to develop, deploy, and maintain a PWA storefront on top of Magento 2.
+
+You can read more about how PWA works with Magento in the [PWA Studio docs][]
+
 ## View model
 
 Magento generates the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} for a page to display to a user from a tree of view elements.
@@ -81,3 +87,4 @@ Presentation layer components make calls to the Service layer, which in turn sen
 [Frontend Developer Guide]: {{page.baseurl}}/frontend-dev-guide/bk-frontend-dev-guide.html
 [GraphQL Developer Guide]: https://devdocs.magento.com/guides/v2.3/graphql/
 [Magento PWA]: https://magento-research.github.io/pwa-studio/technologies/overview/
+[PWA Studio docs]: https://magento-research.github.io/pwa-studio/
