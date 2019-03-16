@@ -85,7 +85,7 @@ The `config.local.php` file includes the following settings and configuration va
 <tbody>
 <tr>
 <th style="width:250px;">Description</th>
-<th>Path in Magento Admin: Stores > Configuration > ...</th>
+<th>Path in Magento Admin: Stores > Settings > Configuration > ...</th>
 </tr>
 <tr>
 <td>Store locale</td>

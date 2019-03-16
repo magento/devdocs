@@ -101,7 +101,7 @@ In this example, the `'Hello %1'` string is added to the dictionary when the i18
 
 [i18n tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
 [generating the dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
-[.phtml template]: {{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html
-custom email templates]: {{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-theme
-[directive]: {{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#localization
-[added using the Admin panel]: {{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-admin
+[.phtml template]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
+[custom email templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#customize-email-theme
+[directive]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#localization
+[added using the Admin panel]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#customize-email-admin
