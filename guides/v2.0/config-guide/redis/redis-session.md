@@ -13,7 +13,7 @@ functional_areas:
 
 ## Prerequisite   {#reds-cache-prereq}
 
-Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
+If Redis will be used for default or page caching, you must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
 {: .bs-callout .bs-callout-info }
 You can use Redis for session storage in Magento versions 2.0.6 and later only.
@@ -22,6 +22,7 @@ You can use Redis for session storage in Magento versions 2.0.6 and later only.
 
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
+```php?start_inline=1
     'session' =>
     array (
       'save' => 'redis',
@@ -47,6 +48,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
         'max_lifetime' => '2592000'
       )
     ),
+```
 
 where
 
