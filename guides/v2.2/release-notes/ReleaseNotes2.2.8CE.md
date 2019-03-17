@@ -109,7 +109,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-3777-->* Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19910](https://github.com/magento/magento2/pull/19910)*. [GitHub-19285](https://github.com/magento/magento2/issues/19285)
 
-<!-- ENGCOM-3903 -->* Corrected alignment of the **Detailed Rating** field on the Edit Review page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20272](https://github.com/magento/magento2/pull/20272)*. [GitHub-20120](https://github.com/magento/magento2/issues/20120)
 
 <!-- ENGCOM-3868 -->* `CustomerRepository::getList()` now loads custom attributes named `company`. *Fix submitted by [Govind Sharma](https://github.com/GovindaSharma) in pull request [20284](https://github.com/magento/magento2/pull/20284)*. [GitHub-17759](https://github.com/magento/magento2/issues/17759)
 
@@ -211,7 +210,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-93673 -->*  You can now use an attribute set on the product create page after moving the attributes from one attribute group to another.
 
-<!-- MAGETWO-96258 -->*  **Sorting by a price** for configurable products on category pages now works correctly when the **Display Out of Stock Products** is enabled.
+<!-- MAGETWO-96258 -->*  **Sorting by a price** for configurable products on category pages now works correctly when the **Display Out of Stock Products** setting is enabled.
 
 <!-- MAGETWO-96374 -->* In a multi-website instance, with a category that contains products belonging to different websites, when the product sort order in a category is changed at the store-view level, the products that belong to a different website gets unassigned from the category.
 
@@ -221,9 +220,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3373 -->* Performance has improved for sessions where  customers browse many product pages. (This performance boost is a result of replacing the jQuery `localStorage` API  with native `localStorage` in `app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js` and  `app/code/Magento/Catalog/view/frontend/web/js/product/storage/ids-storage.js`.) *Fix submitted by [Oleksandr Miroshnichenko](https://github.com/omiroshnichenko) in pull request [19014](https://github.com/magento/magento2/pull/19014)*. [GitHub-17813](https://github.com/magento/magento2/issues/17813)
 
-<!-- ENGCOM-3738 -->* Corrected misspelled argument name `allowDrug` to `allowDrag` in `vendor/magento/module-catalog/view/adminhtml/templates/catalog/product/attribute/set/main.phtml`.
 
-<!-- ENGCOM-3766 -->* Corrected formatting issue on **Catalog** > **Category** > **Product** > **Assign products** page.
 
 <!-- ENGCOM-3790 -->* Magento now correctly imports  `product_type` drop-down attributes. Previously, Magento displayed an error message indicating that values for these attributes were incorrect during import. 
 
@@ -308,6 +305,13 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 ### Clean up and minor refactoring
 
+<!-- ENGCOM-3738 -->* Corrected misspelled argument name `allowDrug` to `allowDrag` in `vendor/magento/module-catalog/view/adminhtml/templates/catalog/product/attribute/set/main.phtml`.
+
+<!-- ENGCOM-3766 -->* Corrected formatting issue on **Catalog** > **Category** > **Product** > **Assign products** page.
+
+<!-- ENGCOM-3903 -->* Corrected alignment of the **Detailed Rating** field on the Edit Review page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20272](https://github.com/magento/magento2/pull/20272)*. [GitHub-20120](https://github.com/magento/magento2/issues/20120)
+
+
 <!-- ENGCOM-3540 -->* Corrected the logic in JavaScript for the **Add to cart** button  and `last-order-items.js`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19357](https://github.com/magento/magento2/pull/19357)*. [GitHub-13157](https://github.com/magento/magento2/issues/13157)
 
 <!-- ENGCOM-4014 -->* Fixed misalignment of logo on the Admin home page. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20544](https://github.com/magento/magento2/pull/20544)*. [GitHub-20399](https://github.com/magento/magento2/issues/20399)
@@ -344,7 +348,17 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-4090 -->*  Fixed the alignment of the **Apply discount** button  on the checkout page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20837](https://github.com/magento/magento2/pull/20837)*. [GitHub-20137](https://github.com/magento/magento2/issues/20137)
 
+<!-- ENGCOM-3935 -->* Fixed checkbox alignment on the account information page. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19646](https://github.com/magento/magento2/pull/19646)*. [GitHub-19645](https://github.com/magento/magento2/issues/19645)
 
+<!-- ENGCOM-3882 -->* Corrected alignment of the store switcher in Tab view. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20325](https://github.com/magento/magento2/pull/20325)*. [GitHub-20158](https://github.com/magento/magento2/issues/20158)
+
+<!-- ENGCOM-3934 -->* Corrected the alignment of Contact us area accessed from the storefront page footers. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [20455](https://github.com/magento/magento2/pull/20455)*. [GitHub-19800](https://github.com/magento/magento2/issues/19800)
+
+<!-- ENGCOM-3185 -->* Fixed the misalignment of the calendar icon on the advanced pricing page. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [18593](https://github.com/magento/magento2/pull/18593)*. [GitHub-18581](https://github.com/magento/magento2/issues/18581)
+
+<!-- ENGCOM-3734 -->* Fixed alignment of the **Update Qty** button on the sales order invoice. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19804](https://github.com/magento/magento2/pull/19804)*. [GitHub-19796](https://github.com/magento/magento2/issues/19796)
+
+<!-- ENGCOM-4017 -->*  Fixed alignment of the currency value rate field on credit memos created from the Admin. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20613](https://github.com/magento/magento2/pull/20613)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
 
 
 ### Configurable products
@@ -451,7 +465,6 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- ENGCOM-3921 -->* Fixed icon behavior on product customization page. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19400](https://github.com/magento/magento2/pull/19400)*. [GitHub-19399](https://github.com/magento/magento2/issues/19399)
 
-<!-- ENGCOM-3935 -->* Fixed checkbox alignment on the account information page. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19646](https://github.com/magento/magento2/pull/19646)*. [GitHub-19645](https://github.com/magento/magento2/issues/19645)
 
 <!-- ENGCOM-3740 -->* Newly added links on the customer dashboard are now shown as current as expected when the link path has been constructed from both default and new elements. Previously, the link was added, but not shown in the current state as expected. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [19927](https://github.com/magento/magento2/pull/19927)*. [GitHub-19099](https://github.com/magento/magento2/issues/19099)
 
@@ -490,9 +503,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-89377 -->* You can now create a customer without a phone number when **Show Telephone** is set to optional. Previously, Magento displayed an informative error message and did not let you create the customer. 
 
-<!-- ENGCOM-3882 -->* Corrected alignment of the store switcher in Tab view. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20325](https://github.com/magento/magento2/pull/20325)*. [GitHub-20158](https://github.com/magento/magento2/issues/20158)
 
-<!-- ENGCOM-3934 -->* Corrected the alignment of Contact us area accessed from the storefront page footers. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [20455](https://github.com/magento/magento2/pull/20455)*. [GitHub-19800](https://github.com/magento/magento2/issues/19800)
  
 <!-- ENGCOM-3507 -->* Resolved issues with pager style. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19296](https://github.com/magento/magento2/pull/19296)*. [GitHub-19286](https://github.com/magento/magento2/issues/19286)
 
@@ -503,8 +514,6 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 <!-- ENGCOM-2938 -->* The menu on category pages accessed from the Admin now work as expected when you change from mobile to desktop view. *Fix submitted by [Emanuel Arcos](https://github.com/emanuelarcos) in pull request [17990](https://github.com/magento/magento2/pull/17990)*. [GitHub-5402](https://github.com/magento/magento2/issues/5402)
 
 <!-- ENGCOM-3054 -->* The WYSIWYG editor now correctly parses directives of files that contain special characters in their URLs. Previously, the editor did not decode base64 special chars. *Fix submitted by [adammada](https://github.com/adammada) in pull request [18215](https://github.com/magento/magento2/pull/18215)*. [GitHub-18138](https://github.com/magento/magento2/issues/18138)
-
-<!-- ENGCOM-3185 -->* Fixed the misalignment of the calendar icon on the advanced pricing page. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [18593](https://github.com/magento/magento2/pull/18593)*. [GitHub-18581](https://github.com/magento/magento2/issues/18581)
 
 <!-- ENGCOM-3200 -->* Navigation arrows in the fotorama zoom now work as expected. *Fix submitted by [Luuk Schakenraad](https://github.com/luukschakenraad) in pull request [18595](https://github.com/magento/magento2/pull/18595)*. [GitHub-18585](https://github.com/magento/magento2/issues/18585)
 
@@ -585,7 +594,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-95653 -->* Magento now retains product order within a category after import. 
 
-<!-- MAGETWO-74012 -->* You can now provide your own sample data file for a custom module in <code><your-module>/Files/Sample/<your_sample.csv></code>. Previously, this custom sample file had to be placed in the ImportExport module. [GitHub-6553](https://github.com/magento/magento2/issues/6553)
+<!-- MAGETWO-74012 -->* You can now provide your own sample data file for a custom module in `your_module/Files/Sample/your_sample.csv`. Previously, this custom sample file had to be placed in the ImportExport module. [GitHub-6553](https://github.com/magento/magento2/issues/6553)
 
 <!-- MAGETWO-95535 -->* Imported images of all sizes no longer revert to the default placeholder size after import. 
 
@@ -666,7 +675,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-94260 -->* Magento now displays the correct billing address in the order confirmation email when  **Paypal Express Checkout** is enabled. Previously, Magento displayed the shipping address instead of the billing address. 
 
-<!-- MAGETWO-96587 -->* When an order placed with PayPal fails during checkout, Magento no longer process payment for the order. Previously, orders that failed during the checkout when being processed through PayPal were processed. 
+<!-- MAGETWO-96587 -->* When an order placed with PayPal fails during checkout, Magento no longer processes payment for the order. Previously, orders that failed during the checkout when being processed through PayPal were processed. 
 
 <!-- ENGCOM-3997 -->*  Magento now identifies shipping method in the Shipping section of the order review page for orders that are paid with using PayPal Express. *Fix submitted by [Nirav Kadiya](https://github.com/ssp58bleuciel) in pull request [19655](https://github.com/magento/magento2/pull/19655)*. [GitHub-14712](https://github.com/magento/magento2/issues/14712)
 
@@ -782,13 +791,10 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-96141 -->* You can now remove a custom price from a product during order creation from the Admin. 
 
-<!-- ENGCOM-3734 -->* Fixed alignment of the **Update Qty** button on the sales order invoice. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19804](https://github.com/magento/magento2/pull/19804)*. [GitHub-19796](https://github.com/magento/magento2/issues/19796)
-
-<!-- ENGCOM-4017 -->*  Fixed alignment of the currenc value rate field on credit memos created from the Admin. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20613](https://github.com/magento/magento2/pull/20613)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
 
 <!-- ENGCOM-3998 -->*  The order view invoice template is now displayed properly on the ipad. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20546](https://github.com/magento/magento2/pull/20546)*. [GitHub-20373](https://github.com/magento/magento2/issues/20373)
 
-<!-- ENGCOM-3999 -->* Access restrictions on the order API are now enforced as expected. Previously, adminstrators with restricted privileges had complete access to orders. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20542](https://github.com/magento/magento2/pull/20542)*. [GitHub-20169](https://github.com/magento/magento2/issues/20169)
+<!-- ENGCOM-3999 -->* Access restrictions on the order API are now enforced as expected. Previously, administrators with restricted privileges had complete access to orders. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20542](https://github.com/magento/magento2/pull/20542)*. [GitHub-20169](https://github.com/magento/magento2/issues/20169)
 
 <!-- ENGCOM-3939 -->* Updates to related products now appear as expected in both the storefront product page and the Admin product edit page. Previously, the storefront displayed product updates, but not all related product updates showed up in the Admin. *Fix submitted by [Prince Patel](https://github.com/mageprince) in pull request [20508](https://github.com/magento/magento2/pull/20508)*. [GitHub-19899](https://github.com/magento/magento2/issues/19899)
 
@@ -819,7 +825,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-86396 -->* Searching for a synonym that contains a hyphen and number now returns the same results as any other search term in the group
 
-<!-- ENGCOM-3811 -->* A mistyped `saveHandler` has been removed from thew CatalogSearch indexer declaration. 	*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
+<!-- ENGCOM-3811 -->* A mistyped `saveHandler` has been removed from the CatalogSearch indexer declaration. 	*Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [19984](https://github.com/magento/magento2/pull/19984)*. [GitHub-19982](https://github.com/magento/magento2/issues/19982)
 
 
 ### Shipping 
@@ -958,7 +964,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-85683 -->* Magento now correctly renders apostrophes as entered in text fields. 
 
-<!-- MAGETWO-93947 -->* The product page's Recently View section no longer displays the name of the current product. 
+<!-- MAGETWO-93947 -->* The product page's Recently Viewed section no longer displays the name of the current product. 
 
 <!-- ENGCOM-4037 -->* Fixed alignment of options on the Admin edit widget page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20270](https://github.com/magento/magento2/pull/20270)*. [GitHub-20113](https://github.com/magento/magento2/issues/20113)
 
