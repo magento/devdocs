@@ -272,4 +272,4 @@ Complete these steps to use PhpStorm to run unit tests:
 [`run_js_tests.php` script]: #process-overview
 [PhpStorm]: #phpstorm
 [Start the JsTestDriver server]: #start-jstestdriver-server
-[Jasmine]: ./jasmine.html
+[Jasmine]: {{page.baseurl}}/test/js/jasmine.html

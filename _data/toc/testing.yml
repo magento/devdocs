@@ -40,6 +40,10 @@ pages:
         - label: Jasmine
           url: /test/js/jasmine.html
 
+        - label: JsTestDriver
+          versions: ["2.1"]
+          url: /test/js/test_js-unit.html
+
     - label: PHP Unit Testing
       children:
 
