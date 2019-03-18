@@ -129,13 +129,13 @@ Fastly API requests are passed through the Fastly extension to get a response fr
 1.  In a terminal, use the following `curl` command to test your live site URL:
 
     ```bash
-curl http://www.mymagento.biz -vo /dev/null -H Fastly-Debug:1`
+curl https://<live URL> -vo /dev/null -H Fastly-Debug:1
     ```
 
 	  If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
    
     ```bash
-curl http://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve]
+curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
     ```
 
 1.  In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
@@ -163,7 +163,7 @@ If the Fastly service returns incorrect headers, submit a Fastly API request dir
 
        ```bash
        curl http[s]://<your domain>.com -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
-      ```
+       ```
 
     - **Production**
 
@@ -301,7 +301,7 @@ If the issue persists, another extension is likely resetting these headers. Repe
     
     - Run the [`curl` commands](#curl) to verify the [response headers](#response-headers).
     
-    Repeat this process for each extension. If the Fastly response headers no longer displays, you have identified the extension causing issues with Fastly.
+    Repeat this process for each extension. If the Fastly response headers no longer display, you have identified the extension causing issues with Fastly.
 
 After you identify the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates to make third-party extensions work with Fastly caching.
 
