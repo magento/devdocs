@@ -28,6 +28,9 @@ pages:
         - label: Create an Admin theme
           url: /frontend-dev-guide/themes/admin_theme_create.html
 
+        - label: Apply Scheduling Design Changes
+          url: /frontend-dev-guide/themes/scheduling_design.html
+
         - label: Apply an Admin theme
           url: /frontend-dev-guide/themes/admin_theme_apply.html
 
