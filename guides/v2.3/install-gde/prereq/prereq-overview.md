@@ -57,7 +57,7 @@ To install or upgrade Apache, see [Apache]({{page.baseurl}}/install-gde/prereq/a
 ### PHP
 
 {:.bs-callout .bs-callout-info}
-Magento, with assistance from our community, is implementing PHP 7.2 compatibility for our upcoming 2.3.0 release. Any backward-incompatibility issues will be resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases. If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
+Magento, with assistance from our community, implemented PHP 7.2 compatibility for our [2.3.0 release](/guides/v2.3/release-notes/bk-release-notes.html). Any backward-incompatibility issues are resolved in this release, and all 3rd party libraries now support PHP 7.2. Fully tested 7.2 support will be delivered in following patch releases. If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 
 	php -v
 

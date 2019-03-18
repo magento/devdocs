@@ -45,7 +45,7 @@ This call returns the available quantity of a product assigned to the specified 
 Name | Description | Type
 --- | --- | ---
 `sku` | The SKU of the product | String
-`stock_id` | The ID of the stock the product is assigned to
+`stock_id` | The ID of the stock the product is assigned to | Integer
 {:style="table-layout:auto;"}
 
 **Payload**
