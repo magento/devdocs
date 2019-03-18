@@ -1,0 +1,25 @@
+versions:
+  - 2.3.0
+  - 2.3.1
+extension:
+  -
+    name: MSI
+    versions:
+      - 
+        name: 1.0.0
+        support:
+          2.3.0: stable
+          2.3.1: stable
+      - 
+        name: 1.0.1
+        support:
+          2.3.0: stable
+          2.3.1: release candidate
+  -
+    name: Page Builder
+    versions:
+      - 
+        name: 1.0.0
+        support:
+          2.3.0: stable
+          2.3.1: stable

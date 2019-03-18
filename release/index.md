@@ -44,66 +44,7 @@ See [Magento Software Lifecycle Policy] and [Versioning].
 
 The following table shows the release status of a Magento extension version relative to the 2.3.x release line of {{site.data.var.ee}}.
 
-- {:.new} **Stable**—Indicates an extension version that has been tested by Magento as part of a {{site.data.var.ee}} release.
-- {:.fix} **Release candidate**—Indicates an extension version that has _not_ been tested by Magento as part of a {{site.data.var.ee}} release.
-
-<table>
-  <tbody>
-    <tr>
-      <td class="blank"></td>
-      <th style="text-align:center">2.3.0</th>
-      <th style="text-align:center">2.3.1</th>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Amazon Sales Channel</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">1.0.0</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Google Ad Channel</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">1.0.0</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Magento Shipping</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">x.x.x</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Multi Source Inventory</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">1.1.0</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>Page Builder</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">1.0.0</td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/new.svg"></td>
-    </tr>
-    <tr>
-      <td colspan="3"><strong>PWA Studio</strong></td>
-    </tr>
-    <tr>
-      <td style="text-align:right">2.0.0</td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-      <td style="text-align:center"><img src="/i/icons/fix.svg"></td>
-    </tr>
-  </tbody>
-</table>
+{% include compatibility.html data=site.data.compatibility %}
 
 <!-- Link definitiona -->
 

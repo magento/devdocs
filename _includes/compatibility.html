@@ -1,0 +1,59 @@
+{% assign versionsNumber = include.data.versions.size %}
+
+<table class="compatibility-table">
+    <colgroup>
+      <col>
+      <col class="versions" span="{{ versionsNumber}}">
+    </colgroup>
+  <thead>
+    <tr class="magento-version">
+      <th>&nbsp;</th>
+    {% for version in include.data.versions %}
+      <th>{{version}}</th>
+    {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for extension in include.data.extension %}
+    <tr class="extension-name">
+      <th >{{ extension.name }}</th>
+      {% for version in include.data.versions %}
+      <th></th>
+      {% endfor %}
+    </tr>
+    
+    {% for extensionVersion in extension.versions %}
+    <tr  class="extension-version">
+      <td>{{ extensionVersion.name }}</td>
+      {% for version in include.data.versions %}
+      <td>{{ extensionVersion.support[version] }}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
+
+<style>
+.compatibility-table {
+  table-layout: auto;
+  overflow: hidden;
+}
+.compatibility-table td {
+  position: relative;
+
+}
+.compatibility-table .versions {
+  border-left: 1px solid #ccc;
+}
+
+.compatibility-table .magento-version th { 
+  padding: 5px 15px
+}
+
+.compatibility-table .extension-name th { 
+  padding: 5px 15px
+}
+
+
+</style>
