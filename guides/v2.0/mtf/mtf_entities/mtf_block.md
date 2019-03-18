@@ -429,7 +429,7 @@ Magento can show you a full class name of the block and path to the {% glossaryt
 To enable this feature follow:
 
 1. Log in to {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as administrator
-1. Follow **STORES > Configuration**
+1. Follow **STORES > Settings > Configuration**
 1. Change **Store View** to **Main Website** (the template path and block name will only appear for current website)
 1. Follow **ADVANCED > Developer**
 1. Expand the **Debug** tab
