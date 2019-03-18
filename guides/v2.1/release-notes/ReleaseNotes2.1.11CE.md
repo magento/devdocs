@@ -104,7 +104,7 @@ Look for the following highlights in this release:
 
 ### General
 
-<!--- MAGETWO-83760 -->* The  **Stores > Configuration > General > Design** page now displays as expected. [GitHub-5256](https://github.com/magento/magento2/issues/5256)
+<!--- MAGETWO-83760 -->* The  **Stores > Settings > Configuration > General > Design** page now displays as expected. [GitHub-5256](https://github.com/magento/magento2/issues/5256)
 
 <!--- MAGETWO-72206 -->* After confirming a customer’s account, the Magento welcome message now displays the customer's first and last name.
 
