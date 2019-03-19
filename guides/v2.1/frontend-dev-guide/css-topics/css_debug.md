@@ -67,6 +67,8 @@ grunt clean | Removes the theme related static files in the `pub/static` and `va
 grunt exec | Republishes symlinks to the source files to the `pub/static/frontend/` directory.
 grunt less | Compiles `.css` files using the symlinks published in the `pub/static/frontend/` directory.
 grunt watch | Tracks the changes in the source files, recompiles `.css` files, and reloads the page in the browser.
+grunt exec:mytheme | Republishes symlinks only for the specified theme.
+grunt less:mytheme | Compiles .css files using the symlinks published only for the specified theme..
 {:style="table-layout:auto"}
 
 ## Use cases of tracking changes using Grunt {#use_cases}
