@@ -1,6 +1,7 @@
 ---
 group: inventory
 title: Release Notes
+redirect_from: /guides/v2.3/release-notes/release-management.html
 ---
 
 *Release notes published January 2019.*
