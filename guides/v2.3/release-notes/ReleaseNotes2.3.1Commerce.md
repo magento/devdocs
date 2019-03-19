@@ -5,9 +5,9 @@ title: Magento Commerce 2.3.1 Release Notes
 
 *Release notes published March 26, 2019.*
 
-We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and and over 30 security enhancements. 
+We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
-This release includes significant contributions from our community members. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with quarterly releases of the Magento core code,several of these projects (for example, Page Builder and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are not documented in these core release notes but in a separate project-specific set of notes.
+This release includes significant contributions from our community members. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are not documented in these core release notes but in separate project-specific sets of notes.
 
 ## Highlights
 
@@ -79,7 +79,7 @@ Community contributions for this release include major additions to cart actions
 This release contains over 30 security fixes to core Magento code. See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.3.1) have been ported to 2.2.8, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
 
-### Performance
+### Performance boosts
 
 #### Magento now supports customer accounts with more than 3,000 addresses
 
@@ -273,7 +273,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3621-->* Fixed alignment of the bundle product information on the configure product page for a bundle product  when creating a new order. *Fix submitted by [Abrar Pathan](https://github.com/abrarpathan19) in pull request [19502](https://github.com/magento/magento2/pull/19502)*. [GitHub-19501](https://github.com/magento/magento2/issues/19501)
 
-<!--- ENGCOM-3948-->* Fixed alignment of the bundle product radio button on the product page when you click **Customize** and **Add to cart**. *Fix submitted by [parag2jcommerce](https://github.com/parag2jcommerce) in pull request [20519](https://github.com/magento/magento2/pull/20519)*. [GitHub-20518](https://github.com/magento/magento2/issues/20518)
+<!--- ENGCOM-3948-->* Fixed alignment of the bundle product radio button on the product page when you click **Customize** and **Add to cart**. *Fix submitted by [Parag Chavare](https://github.com/parag2jcommerce) in pull request [20519](https://github.com/magento/magento2/pull/20519)*. [GitHub-20518](https://github.com/magento/magento2/issues/20518)
 
 <!--- ENGCOM-3487 3585-->* Magento now adds all selected values to the cart when a customer adds a bundle product option using an input type checkbox. Previously, if a bundle product had three values, Magento added only two options to the cart. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [19261](https://github.com/magento/magento2/pull/19261) and pull request [19437](https://github.com/magento/magento2/pull/19437)*. [GitHub-19205](https://github.com/magento/magento2/issues/19205)
 
@@ -308,7 +308,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 ### CAPTCHA
 
-<!--- MAGETWO-94052-->* CAPTCHA now appears as expected in the Log in popup window.
+<!--- MAGETWO-94052-->* CAPTCHA now appears as expected in the Log in pop-up window.
 
 
 ### Cart and checkout
@@ -359,7 +359,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3386-->* Magento now validates the shipping address of a logged-in user using the default shipping address during checkout. *Fix submitted by [StasKozar](https://github.com/StasKozar) in pull request [19038](https://github.com/magento/magento2/pull/19038)*. [GitHub-18990](https://github.com/magento/magento2/issues/18990)
 
-<!--- ENGCOM-3971-->* Fixed issue displaying numbers that exceed two digits in the **Qty:** box of the **Proceed to Checkout** pop up. *Fix submitted by [parag2jcommerce](https://github.com/parag2jcommerce) in pull request [20612](https://github.com/magento/magento2/pull/20612)*. [GitHub-20611](https://github.com/magento/magento2/issues/20611)
+<!--- ENGCOM-3971-->* Fixed issue displaying numbers that exceed two digits in the **Qty:** box of the **Proceed to Checkout** pop up. *Fix submitted by [Parag Chavare](https://github.com/parag2jcommerce) in pull request [20612](https://github.com/magento/magento2/pull/20612)*. [GitHub-20611](https://github.com/magento/magento2/issues/20611)
 
 <!--- ENGCOM-3861-->* Fixed alignment of the details label on the order page in mobile view. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20301](https://github.com/magento/magento2/pull/20301)*. [GitHub-20299](https://github.com/magento/magento2/issues/20299)
 
@@ -384,7 +384,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 <!--- MAGETWO-95939 -->* Administrators with appropriate permissions can now manage customer shopping carts from the Admin. Previously, when an administrator clicked **Manage Shopping Cart** from **Admin** > **Customers** > **Customer**, Magento threw an error. 
 
 
-#### Cart Price rules
+### Cart Price rules
 
 <!--- MAGETWO-96379 -->* The Cart Price Rule page now displays correct counter values for the grid as well as accurate pagination. 
 
@@ -495,9 +495,9 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3913-->* Magento now correctly sorts configurable products with tier prices or swatches on both the storefront and Admin. Previously, storefront sorting did not match Admin sorting. *Fix submitted by [vshatylo](https://github.com/vshatylo) in pull request [20407](https://github.com/magento/magento2/pull/20407)*. [GitHub-12194](https://github.com/magento/magento2/issues/12194)
 
-<!--- ENGCOM-3951-->* Fixed misalignment of the title of the order page that is accessed when you check a recent order in the sidebar of listing  or account pages. *Fix submitted by [parag2jcommerce](https://github.com/parag2jcommerce) in pull request [20501](https://github.com/magento/magento2/pull/20501)*. [GitHub-20500](https://github.com/magento/magento2/issues/20500)
+<!--- ENGCOM-3951-->* Fixed misalignment of the title of the order page that is accessed when you check a recent order in the sidebar of listing  or account pages. *Fix submitted by [Parag Chavare](https://github.com/parag2jcommerce) in pull request [20501](https://github.com/magento/magento2/pull/20501)*. [GitHub-20500](https://github.com/magento/magento2/issues/20500)
 
-<!--- ENGCOM-4031-->* Fixed misalignment of  tab content on product pages in mobile view. *Fix submitted by [parag2jcommerce](https://github.com/parag2jcommerce) in pull request [20469](https://github.com/magento/magento2/pull/20469)*. [GitHub-20468](https://github.com/magento/magento2/issues/20468)
+<!--- ENGCOM-4031-->* Fixed misalignment of  tab content on product pages in mobile view. *Fix submitted by [Parag Chavare](https://github.com/parag2jcommerce) in pull request [20469](https://github.com/magento/magento2/pull/20469)*. [GitHub-20468](https://github.com/magento/magento2/issues/20468)
 
 <!--- MAGETWO-97625-->* Magento now correctly duplicates video files when a merchant duplicates a product with an associated video. Previously, the video was duplicated as an image, not a video, and the merchant had to delete the image and re-add the video using **Add Video**.
 
@@ -632,7 +632,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3854-->* Fixed  misalignment of the product option fields in the order summary of the checkout page. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20138](https://github.com/magento/magento2/pull/20138)*. [GitHub-20134](https://github.com/magento/magento2/issues/20134)
 
-<!--- ENGCOM-4053-->* Fixed misalignment of fields on the configure product page that is accessed from the wishlist. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [20558](https://github.com/magento/magento2/pull/20138)*. [GitHub-20760](https://github.com/magento/magento2/issues/20760)
+<!--- ENGCOM-4053-->* Fixed misalignment of fields on the configure product page that is accessed from the wishlist. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [20558](https://github.com/magento/magento2/pull/20558)*. [GitHub-20760](https://github.com/magento/magento2/issues/20760)
 
 <!--- ENGCOM-4036-->* Removed excessive white space from the top of CMS pages when displayed in mobile view. *Fix submitted by [ranee2jcommerce](https://github.com/ranee2jcommerce) in pull request [20756](https://github.com/magento/magento2/pull/20756)*. [GitHub-20755](https://github.com/magento/magento2/issues/20755)
 
@@ -640,7 +640,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-4066-->* Fixed misalignment of the **View and Edit Cart** link in the minicart. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20383](https://github.com/magento/magento2/pull/20383)*. [GitHub-20382](https://github.com/magento/magento2/issues/20382)
 
-<!--- ENGCOM-4016-->* Fixed misalignment of values in the currency rate column in the Order & Account Information area of the New Memo page. *Fix submitted by [dipti2jcommerce](https://github.com/dipti2jcommerce) in pull request [20610](https://github.com/magento/magento2/pull/20610)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
+<!--- ENGCOM-4016-->* Fixed misalignment of values in the currency rate column in the Order & Account Information area of the New Memo page. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20610](https://github.com/magento/magento2/pull/20610)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
 
 <!--- ENGCOM-3952-->* Added missing PHPDoc comments for methods throughout the code base. *Fix submitted by [Leandro F. L.](https://github.com/lfluvisotto) in pull request [19826](https://github.com/magento/magento2/pull/19826)*. 
 
@@ -649,7 +649,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 <!--- ENGCOM-4001-->* Fixed misalignment of **Schedule Update From** field on the Admin category page when displayed in a browser set to 768 x 1147 resolution. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20403](https://github.com/magento/magento2/pull/20403)*. [GitHub-20402](https://github.com/magento/magento2/issues/20402)
 
 
-<!--- ENGCOM-4052-->* The Widget Options left navigation block on the Add New widget Page now displays correctly in tablet view. *Fix submitted by [dipti2jcommerce](https://github.com/dipti2jcommerce) in pull request [20493](https://github.com/magento/magento2/pull/20493)*. [GitHub-20492](https://github.com/magento/magento2/issues/20492)
+<!--- ENGCOM-4052-->* The Widget Options left navigation block on the Add New widget Page now displays correctly in tablet view. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20493](https://github.com/magento/magento2/pull/20493)*. [GitHub-20492](https://github.com/magento/magento2/issues/20492)
 
 <!--- ENGCOM-3764-->* Fixed misalignment of logo on Admin home page. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19792](https://github.com/magento/magento2/pull/19792)*. [GitHub-19791](https://github.com/magento/magento2/issues/19791)
 
@@ -702,7 +702,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3387-->* The reset password link in the password reset mail sent to customers when they click **Reset password** on the login page now permits customers to reset their password as expected.  *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [19026](https://github.com/magento/magento2/pull/19026)*. [GitHub-18256](https://github.com/magento/magento2/issues/18256)
 
-<!--- ENGCOM-3014-->* Magento now maintains alphabetical order for customer groups when you filter customers by group in the Admin.  Previously, groups were sorted by ID. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [18117](https://github.com/magento/magento2/pull/18117)*. 
+<!--- ENGCOM-3014-->* Magento now maintains alphabetical order for customer groups when you filter customers by group in the Admin.  Previously, groups were sorted by ID. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [18117](https://github.com/magento/magento2/pull/18117)*. [GitHub-18101](https://github.com/magento/magento2/issues/18101)
 
 <!--- ENGCOM-3068-->* Merchants can now edit a customer account if the customer's password has expired. *Fix submitted by [Dmytro Cheshun](https://github.com/dmytro-ch) in pull request [18308](https://github.com/magento/magento2/pull/18308)*. [GitHub-18162](https://github.com/magento/magento2/issues/18162)
 
@@ -764,7 +764,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- MAGETWO-96975-->*  `_sleep` and `__wakeup` have been removed, and a new `PHP.MD` rule has been added to discourage PHP serialization.
 
-<!--- ENGCOM-3857-->* Magento now validates new addresses when created from the address book telephone field on the My Account dashboard page. *Fix submitted by [dipti2jcommerce](https://github.com/dipti2jcommerce) in pull request [20262](https://github.com/magento/magento2/pull/20262)*. [GitHub-20261](https://github.com/magento/magento2/issues/20261)
+<!--- ENGCOM-3857-->* Magento now validates new addresses when created from the address book telephone field on the My Account dashboard page. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20262](https://github.com/magento/magento2/pull/20262)*. [GitHub-20261](https://github.com/magento/magento2/issues/20261)
 
 
 
@@ -967,7 +967,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3624-->* 'old_path: new_path' path mappings have been added for JavaScript files that have been relocated to `requirejs-config.js`. *Fix submitted by [rbayet](https://github.com/rbayet) in pull request [19583](https://github.com/magento/magento2/pull/19583)*. [GitHub-19291](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
-<!--- ENGCOM-3632-->* Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19135](https://github.com/magento/magento2/pull/19135)*. [GitHub-18941](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/18941)
+<!--- ENGCOM-3632-->* Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19135](https://github.com/magento/magento2/pull/19135)*. [GitHub-18941](https://github.com/magento/magento2/issues/18941), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
 
 
@@ -1080,7 +1080,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- MAGETWO-58210-->* The import process now supports `add_update` along with the default behavior `append`.  [GitHub-6193](https://github.com/magento/magento2/issues/6193)
 
-<!--- ENGCOM-3083-->* The upsert category process during product import now generates freshly created category URL rewrites globally and not just for the default scope. Previously, Magento created URL rewrites for the default website scope only. *Fix submitted by [utietze](https://github.com/utietze) in pull request [18271](https://github.com/magento/magento2/pull/18271)*. [GitHub-18234](https://github.com/magento/magento2/issues/18234)
+<!--- ENGCOM-3083-->* The upsert category process during product import now generates freshly created category URL rewrites globally and not just for the default scope. Previously, Magento created URL rewrites for the default website scope only. *Fix submitted by [utietze](https://github.com/ulftietze) in pull request [18271](https://github.com/magento/magento2/pull/18271)*. [GitHub-18234](https://github.com/magento/magento2/issues/18234)
 
 <!--- ENGCOM-3823-->* Magento now indicates correct stock status (in stock/out-of-stock) after importing products that have an indicated quantity but a status of out-of-stock from a CSV file. Previously, Magento imported the product quantity correctly, but not the stock status. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [20180](https://github.com/magento/magento2/pull/20180)*. [GitHub-15950](https://github.com/magento/magento2/issues/15950)
 
@@ -1295,7 +1295,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3837-->* You can now add a product review from the Admin.  Previously, when you clicked **New Review**, Magento displayed this error, `Error message showing : A technical problem with the server created an error. Try again to continue what you were doing. If the problem persists, try again later`. *Fix submitted by [Suneet K.](https://github.com/suneet64) in pull request [20146](https://github.com/magento/magento2/pull/20146)*. [GitHub-20122](https://github.com/magento/magento2/issues/20122)
 
-<!--- ENGCOM-3835-->* Fixed rendering of the **Add your text** link on the Product page. *Fix submitted by [Nainesh](https://github.com/nainesh2jcommerce) in pull request [20224](https://github.com/magento/magento2/pull/20224)*. [GitHub-20221](https://github.com/magento/magento2/issues/20221)
+<!--- ENGCOM-3835-->* Fixed rendering of the **Add your text** link on the Product page. *Fix submitted by [Nainesh Waghale](https://github.com/nainesh2jcommerce) in pull request [20224](https://github.com/magento/magento2/pull/20224)*. [GitHub-20221](https://github.com/magento/magento2/issues/20221)
 
 <!--- ENGCOM-4096-->* Pending Reviews are now correctly labeled under **System** > **User Roles** > **Add New Role** > **Role Resources**, and Magento now displays a new Pending reviews menu under **Marketing** > **User Content**. Previously, Magento displayed the Reviews menu twice.  *Fix submitted by [Piyush Dankhara](https://github.com/dankhrapiyush) in pull request [20936](https://github.com/magento/magento2/pull/20936)*. [GitHub-20924](https://github.com/magento/magento2/issues/20924)
 
@@ -1489,7 +1489,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 <!--- ENGCOM-3920-->* You can now change an attribute type from swatch to dropdown without using data.  Previously, changing an attribute type from swatch to dropdown deleted swatch options for all attributes. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [20421](https://github.com/magento/magento2/pull/20421)*. [GitHub-20396](https://github.com/magento/magento2/issues/20396)
 
 
-<!--- ENGCOM-3943-->* Fixed styles on Add Swatch page. 
+<!--- ENGCOM-3943-->* Fixed styles on the Add Swatch page. 
 
 
 
@@ -1589,7 +1589,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 <!--- MAGETWO-91531-->* Product URLs are now based on the configuration information from the Admin, not the order of records in the database. Previously, the order of records in the database affected the generated URL, and some products showed category paths for product URLS when **Use Categories Path for Product URLs** was set to **no**. 
 
-<!--- ENGCOM-3925-->* The import process now retains permanent redirects for outdated product URLs as expected. Previously, the import process removed these redirects, and when you tried to open the changed product by the old URL key,  Magento displayed a 404 page. *Fix submitted by [Ankur](https://github.com/ankur-cedcoss) in pull request [20344](https://github.com/magento/magento2/pull/20344)*. [GitHub-20282](https://github.com/magento/magento2/issues/20282)
+<!--- ENGCOM-3925-->* The import process now retains permanent redirects for outdated product URLs as expected. Previously, the import process removed these redirects, and when you tried to open the changed product by the old URL key,  Magento displayed a 404 page. *Fix submitted by [Ankur](https://github.com/verma-ankur) in pull request [20344](https://github.com/magento/magento2/pull/20344)*. [GitHub-20282](https://github.com/magento/magento2/issues/20282)
 
 
 ### VAT
@@ -1624,7 +1624,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 <!--- ENGCOM-3922-->* You can now remove a comment from a wishlist product as expected. Previously, Magento did not remove the comment, even after you clicked **Update Wish List**. *Fix submitted by [Khodu](https://github.com/khodu) in pull request [20247](https://github.com/magento/magento2/pull/20247)*. [GitHub-20245](https://github.com/magento/magento2/issues/20245)
 
-<!--- ENGCOM-3912-->* Corrected misalignment of the Edit and remove item links on the wish list page when displayed  on a screen with a resolution of 640 x 767. *Fix submitted by [Nainesh](https://github.com/nainesh2jcommerce) in pull request [20400](https://github.com/magento/magento2/pull/20400)*. [GitHub-20399](https://github.com/magento/magento2/issues/20399)
+<!--- ENGCOM-3912-->* Corrected misalignment of the Edit and remove item links on the wish list page when displayed  on a screen with a resolution of 640 x 767. *Fix submitted by [Nainesh Waghale](https://github.com/nainesh2jcommerce) in pull request [20400](https://github.com/magento/magento2/pull/20400)*. [GitHub-20399](https://github.com/magento/magento2/issues/20399)
 
 <!--- ENGCOM-3569-->* Pagination controls on the wishlist page have been restored. *Fix submitted by [Ratnesh Kumar](https://github.com/webkul-ratnesh) in pull request [19305](https://github.com/magento/magento2/pull/19305)*. [GitHub-19292](https://github.com/magento/magento2/issues/19292)
 
