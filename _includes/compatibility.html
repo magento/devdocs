@@ -1,59 +1,63 @@
 {% assign versionsNumber = include.data.versions.size %}
 
 <table class="compatibility-table">
-    <colgroup>
-      <col>
-      <col class="versions" span="{{ versionsNumber}}">
-    </colgroup>
   <thead>
     <tr class="magento-version">
       <th>&nbsp;</th>
     {% for version in include.data.versions %}
-      <th>{{version}}</th>
+      <th>Magento {{version}}</th>
     {% endfor %}
     </tr>
   </thead>
+  {% for extension in include.data.extension %}
   <tbody>
-    {% for extension in include.data.extension %}
     <tr class="extension-name">
-      <th >{{ extension.name }}</th>
-      {% for version in include.data.versions %}
-      <th></th>
-      {% endfor %}
+      <th colspan="{{ versionsNumber | plus: 1 }}">{{ extension.name }}</th>
     </tr>
-    
     {% for extensionVersion in extension.versions %}
-    <tr  class="extension-version">
-      <td>{{ extensionVersion.name }}</td>
+    <tr class="extension-version">
+      <td>{{ extension.name }} {{ extensionVersion.name }}</td>
       {% for version in include.data.versions %}
-      <td>{{ extensionVersion.support[version] }}</td>
+      <td><span class="pill {{ extensionVersion.support[version] | replace: ' ', '-' }}">{{ extensionVersion.support[version] | capitalize }}</span></td>
       {% endfor %}
     </tr>
-    {% endfor %}
     {% endfor %}
   </tbody>
+  {% endfor %}
 </table>
 
 <style>
 .compatibility-table {
   table-layout: auto;
-  overflow: hidden;
 }
-.compatibility-table td {
-  position: relative;
 
+.compatibility-table .pill {
+  display: block;
+  max-width: 140px;
+  padding: 5px;
+  background: #008330;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.3;
 }
-.compatibility-table .versions {
-  border-left: 1px solid #ccc;
+.compatibility-table .release-candidate {
+  background: #BF732D;
+}
+.compatibility-table .not-supported {
+  background: #C9252D;
 }
 
 .compatibility-table .magento-version th { 
-  padding: 5px 15px
+  padding: 5px 15px;
+}
+
+.extension-version:hover {
+  background: rgba(20,115,230,10%);
 }
 
 .compatibility-table .extension-name th { 
-  padding: 5px 15px
+  padding: 5px 15px;
 }
-
-
 </style>
