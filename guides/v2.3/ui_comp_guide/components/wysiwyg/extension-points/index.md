@@ -326,7 +326,7 @@ In your module's [`di.xml`] file, you can define a [virtual type] of this class 
 
 If your implementation does not require any modifications to the configuration, you can use the default implementation:
 
-`Magento\Cms\Mode\WysiwygDefaultConfig`
+`Magento\Cms\Model\WysiwygDefaultConfig`
 
 **Example di.xml file entry for TinyMCE3 editor:**
 
