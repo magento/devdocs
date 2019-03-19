@@ -20,6 +20,12 @@ pages:
       include_versions: ["2.2"]
       children:
 
+        - label: Magento Open Source 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8CE.html
+
+        - label: Magento Commerce 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8EE.html
+
         - label: Magento Open Source 2.2.7 Release Notes
           url: /release-notes/ReleaseNotes2.2.7CE.html
 
