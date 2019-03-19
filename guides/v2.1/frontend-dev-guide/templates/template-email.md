@@ -386,6 +386,12 @@ In order to support the translation of content, all strings in emails are output
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
 
+The directive supports multiple named parameters, separated by spaces. For example:
+
+    {% raw %}
+    {{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
+    {% endraw %}
+
 Please note, that variable assignment must not contain spaces. 
 
 Correct:
