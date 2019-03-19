@@ -69,7 +69,7 @@ See [Create a publisher]( {{ page.baseurl }}/extension-dev-guide/message-queues/
 
 When a consumer processes a message, it must notify the system of its status. The status can be OPEN, COMPLETE, RETRIABLY_FAILED, and NOT_RETRIABLY_FAILED.
 
-To send this notification, use `OperationManagementInterface::changeOperationStatus($operationId, $status, $message = null, $data = null)`.
+To send this notification, use `OperationManagementInterface::changeOperationStatus($operationId, $status, $errorCode = null, $message = null, $data = null)`.
 
 #### Handling Recoverable Exceptions
 

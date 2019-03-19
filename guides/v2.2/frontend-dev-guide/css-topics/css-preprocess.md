@@ -60,7 +60,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
     When your application is not in the production mode, you can set Magento to compile `.less` files in a browser, using the [native `less.js` library]
 
 To set the compilation mode, do the following:
-1.  In the Magento Admin, navigate to **Stores** > **Configuration** > ADVANCED > **Developer**.
+1.  In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
 2.  In the **Store View** drop-down field, select **Default Config**.
 3.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  To save the settings, click **Save Config**.
