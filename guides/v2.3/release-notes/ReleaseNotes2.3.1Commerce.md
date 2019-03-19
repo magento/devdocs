@@ -2,7 +2,7 @@
 group: release-notes
 title: Magento Commerce 2.3.1 Release Notes
 ---
-
+F
 *Release notes published March 26, 2019.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
@@ -100,9 +100,8 @@ Multiple code enhancements contribute to this performance boost:
 Infrastructure improvements are core enhancements that underlie both merchant and developer features. 
 
 
-* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. 
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
-Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
 * Accept.js library is now used for Authorize.NET payments.
 
@@ -203,7 +202,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-96428-->* The `bin/magento app:config:dump` command now disables all input fields as expected. 
 
-<!--- ENGCOM-3280-->* Admin users that have been assigned a backup module role resource can now access the backup controller as expected. s*Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [18816](https://github.com/magento/magento2/pull/18816)*. [GitHub-18150](https://github.com/magento/magento2/issues/18150)
+<!--- ENGCOM-3280-->* Administrators  that have been assigned a backup module role resource can now access the backup controller as expected. s*Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [18816](https://github.com/magento/magento2/pull/18816)*. [GitHub-18150](https://github.com/magento/magento2/issues/18150)
 
 <!--- ENGCOM-3160-->* The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by [Logan Stellway](https://github.com/loganstellway) in pull request [18393](https://github.com/magento/magento2/pull/18393)*. [GitHub-18131](https://github.com/magento/magento2/issues/18131)
 
@@ -211,7 +210,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-91764-->* Excessive timeouts no longer result from the discrepancy between storefront and Admin uses of HTTPS. The storefront now  uses HTTPS exclusively while the Admin uses HTTP. 
 
-<!--- ENGCOM-3786-->* The `config:set --lock-config` command  now acts as expected on all scopes. Previously, after this command was run, admin users were not able to change the configuration for the default store, but could still change it for other scopes. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [19880](https://github.com/magento/magento2/pull/19880)*. [GitHub-19609](https://github.com/magento/magento2/issues/19609)
+<!--- ENGCOM-3786-->* The `config:set --lock-config` command  now acts as expected on all scopes. Previously, after this command was run, administrators were not able to change the configuration for the default store, but could still change it for other scopes. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [19880](https://github.com/magento/magento2/pull/19880)*. [GitHub-19609](https://github.com/magento/magento2/issues/19609)
 
 <!--- ENGCOM-3701-->* Magento now skips disabled modules  when compiling static content. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19751](https://github.com/magento/magento2/pull/19751)*. [GitHub-19605](https://github.com/magento/magento2/issues/19605)
 
@@ -295,7 +294,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-91661-->* Menus now close as expected from the Quick Order page in mobile view.
 
-<!--- MAGETWO-94887-->* Magento no longer displays a duplicate **Add product** button when you change currency from the Order currency dropdown menu while creating an order from the Admin. 
+<!--- MAGETWO-94887-->* Magento no longer displays a duplicate **Add product** button when you change currency from the Order currency drop-down menu while creating an order from the Admin. 
 
 <!--- MAGETWO-96598-->* Merchants can now add a product to the default public catalog,  and the product can be accessed by the product URL on the storefront. Previously, Magento did not add the product to the shared catalog and instead displayed this error, `Requested categories don't exist`. 
 
@@ -325,13 +324,13 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-95935-->* Customer address attribute validation during checkout now permits spaces. 
 
-<!--- MAGETWO-96812-->* Clicking multiple times on the minicart icon no longer logs out the current customer. Previously, when a logged-in customer added a product to the cart and then clicked the shopping cart icon multiple times, Magento displayed an empty shopping cart and logged out the customer. 
+<!--- MAGETWO-96812-->* Clicking multiple times on the mini cart icon no longer logs out the current customer. Previously, when a logged-in customer added a product to the cart and then clicked the shopping cart icon multiple times, Magento displayed an empty shopping cart and logged out the customer. 
 
 <!--- MAGETWO-95848-->* Customers can now configure options for a configurable product after adding it to their shopping cart.  Previously, under these circumstances, Magento threw a fatal error.
 
 <!--- MAGETWO-95739-->* Magento now validates zip codes for new addresses as expected when the **My billing and shipping address are the same** option is unchecked. 
 
-<!--- MAGETWO-94427-->* Magento now updates the minicart as expected when an administrator updates the product from the Admin. Previously, if a product that had been added to the shopping cart was subsequently disabled from the Admin,  the product was still displayed in the cart.
+<!--- MAGETWO-94427-->* Magento now updates the mini cart as expected when an administrator updates the product from the Admin. Previously, if a product that had been added to the shopping cart was subsequently disabled from the Admin,  the product was still displayed in the cart.
 
 <!--- MAGETWO-91658-->* Magento now uses the configured default sort order  during checkout to calculate totals. Previously, Magento ignored the configured order and used **Sub Total** > **Shipping** > **Discount** > **Tax** > **Grand Total** to calculate order totals. 
 
@@ -345,13 +344,13 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-91596-->* You can now update the quantity of grouped products  if the quantity field was left empty when initially added to an Admin order by SKU. Previously, under these circumstances, you could not update the quantity. 
 
-<!--- MAGETWO-91733-->* After a session expires, and a customer refreshes the page, Magento displays an empty shopping cart and logs out the customer as expected. Previously, Magento displayed an empty shopping cart but the minicart still displayed the selected items, and if the customer refreshed the page again, the shopping cart displayed the items. 
+<!--- MAGETWO-91733-->* After a session expires, and a customer refreshes the page, Magento displays an empty shopping cart and logs out the customer as expected. Previously, Magento displayed an empty shopping cart but the mini cart still displayed the selected items, and if the customer refreshed the page again, the shopping cart displayed the items. 
 
 <!--- MAGETWO-91636-->* Tooltips that are available from the checkout page on mobile devices are now displayed properly. Previously, customers had to scroll to access the tooltip. 
 
-<!--- ENGCOM-3706-->* Fixed problem with overlapping UI elements on the cart page when accessed from the minicart. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19839](https://github.com/magento/magento2/pull/19839)*. [GitHub-19836](https://github.com/magento/magento2/issues/19836)
+<!--- ENGCOM-3706-->* Fixed problem with overlapping UI elements on the cart page when accessed from the mini cart. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19839](https://github.com/magento/magento2/pull/19839)*. [GitHub-19836](https://github.com/magento/magento2/issues/19836)
 
-<!--- ENGCOM-3721-->* Fixed alignment issue with the drop-down menu on the minicart. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19508](https://github.com/magento/magento2/pull/19508)*. [GitHub-19507](https://github.com/magento/magento2/issues/19507)
+<!--- ENGCOM-3721-->* Fixed alignment issue with the drop-down menu on the mini cart. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19508](https://github.com/magento/magento2/pull/19508)*. [GitHub-19507](https://github.com/magento/magento2/issues/19507)
 
 <!--- ENGCOM-3769-->* Fixed alignment issue with radio buttons on the shopping cart page. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [20022](https://github.com/magento/magento2/pull/20022)*. [GitHub-20021](https://github.com/magento/magento2/issues/20021)
 
@@ -369,13 +368,13 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-4032-->* The title of the shipping method no longer overlaps with **Edit** on the checkout page. *Fix submitted by [Yashwant Rokde](https://github.com/yashwant2jcommerce) in pull request [20428](https://github.com/magento/magento2/pull/20428)*. [GitHub-20427](https://github.com/magento/magento2/issues/20427)
 
-<!--- ENGCOM-3984-->* The **Close** button on the minicart no longer overlaps with the shipping section when the checkout page is opened on a mobile device. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20615](https://github.com/magento/magento2/pull/20615)*. [GitHub-20614](https://github.com/magento/magento2/issues/20614)
+<!--- ENGCOM-3984-->* The **Close** button on the mini cart no longer overlaps with the shipping section when the checkout page is opened on a mobile device. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20615](https://github.com/magento/magento2/pull/20615)*. [GitHub-20614](https://github.com/magento/magento2/issues/20614)
 
 <!--- ENGCOM-3818-->* Fixed the alignment of the **Apply discount** button  on the checkout page. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20144](https://github.com/magento/magento2/pull/20144)*. [GitHub-20137](https://github.com/magento/magento2/issues/20137)
 
-<!--- MAGETWO-95312-->* Fixed minicart layout issues. 
+<!--- MAGETWO-95312-->* Fixed mini cart layout issues. 
 
-<!--- MAGETWO-97968-->* The minicart is now updated as expected when a product in the cart is disabled. 
+<!--- MAGETWO-97968-->* The mini cart is now updated as expected when a product in the cart is disabled. 
 
 <!--- ENGCOM-3938 -->* Fixed problems with the display of the tooltip drop-down pointer on the checkout page in tablet view. *Fix submitted by [ranee2jcommerce](https://github.com/ranee2jcommerce) in pull request [20488](https://github.com/magento/magento2/pull/20488)*. [GitHub-20487](https://github.com/magento/magento2/issues/20487)
 
@@ -638,7 +637,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3991-->* Fixed misalignment of the advanced search page's price field in mobile view. *Fix submitted by [Govind Sharma](https://github.com/GovindaSharma) in pull request [20159](https://github.com/magento/magento2/pull/20159)*. [GitHub-20157](https://github.com/magento/magento2/issues/20157)
 
-<!--- ENGCOM-4066-->* Fixed misalignment of the **View and Edit Cart** link in the minicart. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20383](https://github.com/magento/magento2/pull/20383)*. [GitHub-20382](https://github.com/magento/magento2/issues/20382)
+<!--- ENGCOM-4066-->* Fixed misalignment of the **View and Edit Cart** link in the mini cart. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20383](https://github.com/magento/magento2/pull/20383)*. [GitHub-20382](https://github.com/magento/magento2/issues/20382)
 
 <!--- ENGCOM-4016-->* Fixed misalignment of values in the currency rate column in the Order & Account Information area of the New Memo page. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20610](https://github.com/magento/magento2/pull/20610)*. [GitHub-20609](https://github.com/magento/magento2/issues/20609)
 
@@ -896,6 +895,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3571-->* Fixed misalignemnt of the attribute set name heading border on the Attribute sets pop-up window. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [19414](https://github.com/magento/magento2/pull/19414)*. [GitHub-19371](https://github.com/magento/magento2/issues/19371)
 
+<!--- ENGCOM-3960-->* Fixed misalignment of elements on the shipping information page that Magento displays when you click **Check Out with Multiple Addresses** from the shopping cart. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20564](https://github.com/magento/magento2/pull/20564)*. [GitHub-20563](https://github.com/magento/magento2/issues/20563)
 
 
 
@@ -1278,7 +1278,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 ### Reports
 
 
-<!--- MAGETWO-91553-->* Admin users with their role scope set to `custom` can now view the abandoned carts report.
+<!--- MAGETWO-91553-->* Administrators with their role scope set to `custom` can now view the abandoned carts report.
 
 <!--- ENGCOM-3560-->* Magento no longer displays a negative number in the dashboard to represent a canceled order. *Fix submitted by [Nirav Patel](https://github.com/niravkrish) in pull request [19372](https://github.com/magento/magento2/pull/19372)*. [GitHub-18754](https://github.com/magento/magento2/issues/18754)
 
@@ -1639,6 +1639,15 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 **Issue**:  Cart Price rules that were created with undefined end dates (that is, with the **To** field left empty) are not displayed as expected on the Staging dashboard after after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
 
 
+**Issue**: The Web Setup Wizard is not available from the Admin under these conditions: 
+
+* base URLs are set to HTTP.
+
+* **Use Secure URLs in Admin** is set to **on**.
+
+* HTTPS is disabled.
+
+**Workaround**: You must enable HSTS from **Stores** > **General** > **Web** > **BaseUrls (Secure)**. <!--- MC-15003-->
 
 
 ## Community contributions

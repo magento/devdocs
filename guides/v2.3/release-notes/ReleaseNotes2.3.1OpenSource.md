@@ -92,9 +92,7 @@ This release includes over 30 security enhancements that help close cross-site s
 
 Infrastructure improvements are core enhancements that underlie both merchant and developer features. 
 
-* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. 
-
-Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
 
 * Accept.js library is now used for Authorize.NET payments.
@@ -190,45 +188,21 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MAGETWO-96428-->* The `bin/magento app:config:dump` command now disables all input fields as expected. 
 
-<!--- ENGCOM-3280-->* Admin users that have been assigned a backup module role resource can now access the backup controller as expected. s*Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [18816](https://github.com/magento/magento2/pull/18816)*. [GitHub-18150](https://github.com/magento/magento2/issues/18150)
+<!--- ENGCOM-3280-->* Administrators that have been assigned a backup module role resource can now access the backup controller as expected. s*Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [18816](https://github.com/magento/magento2/pull/18816)*. [GitHub-18150](https://github.com/magento/magento2/issues/18150)
 
 <!--- ENGCOM-3160-->* The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by [Logan Stellway](https://github.com/loganstellway) in pull request [18393](https://github.com/magento/magento2/pull/18393)*. [GitHub-18131](https://github.com/magento/magento2/issues/18131)
 
-<!--- MAGETWO-96107-->* Magento no longer displays an extraneous blank option in the country dropdown menu. 
+<!--- MAGETWO-96107-->* Magento no longer displays an extraneous blank option in the country drop-down menu. 
 
 <!--- MAGETWO-91764-->* The front-end  now  uses HTTPS exclusively and back-end  uses HTTP without resulting in excessive redirects. 
 
-<!--- ENGCOM-3786-->* The `config:set --lock-config` command  now acts as expected on all scopes. Previously, after this command was run, admin users were not able to change the configuration for the default store, but could still change it for other scopes. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [19880](https://github.com/magento/magento2/pull/19880)*. [GitHub-19609](https://github.com/magento/magento2/issues/19609)
+<!--- ENGCOM-3786-->* The `config:set --lock-config` command  now acts as expected on all scopes. Previously, after this command was run, administrators were not able to change the configuration for the default store, but could still change it for other scopes. *Fix submitted by [Mahesh Singh](https://github.com/maheshWebkul721) in pull request [19880](https://github.com/magento/magento2/pull/19880)*. [GitHub-19609](https://github.com/magento/magento2/issues/19609)
 
 <!--- ENGCOM-3701-->* Magento now skips disabled modules  when compiling static content. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19751](https://github.com/magento/magento2/pull/19751)*. [GitHub-19605](https://github.com/magento/magento2/issues/19605)
 
 <!--- MC-5620-->* The `bin/magento setup:upgrade --convert-old-scripts=1` command now supports the conversion of indexes and constraints.  
 
-
-
-
-
-<!--- MC-6275-->* 
-
-On a real instance, under load after, cache clean there is a conflict of simultaneous write of the Redis cache for the system configuration
-
-The new <code>'bin/magento setup:config:set --enable-syslog-logging=true|false'</code>  parameter 
-
-Previously, simultaneous write operations to the Redis cache for the system configuration resulted in conflicts. See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
-
-
-Check if there is some information in DevDocs about "syslog logging", the setting for this feature has been removed from the system configuration. A new parameter has been introduced 'bin/magento setup:config:set --enable-syslog-logging=true|false'
-
-
-On a real instance, under load after, cache clean there is a conflict of simultaneous write of the Redis cache for the system configuration
-
-
-
-
-### AdminGWS
-
-<!--- MAGETWO-91617-->* Magento now updates the reports table as expected when a new administrator with restricted privileges logs in and selects **Report** > **Products** > **Ordered**. Previously, Magento did not generate this report, and logged an error in `var/log/system.log`. 
-
+<!--- MC-6275-->* The commands to enable and disable debug logging have changed to `bin/magento setup:config:set --enable-debug-logging=true | false`. The previous commands, `bin/magento config:set dev/debug/debug_logging 0 | 1` are no longer supported.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
 
 
 
@@ -307,13 +281,13 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- MAGETWO-95935-->* Customer address attribute validation during checkout now permits spaces. 
 
-<!--- MAGETWO-96812-->* Clicking multiple times on the minicart icon no longer logs out the current customer. Previously, when a logged-in customer added a product to the cart and then clicked the shopping cart icon multiple times, Magento displayed an empty shopping cart and logged out the customer. 
+<!--- MAGETWO-96812-->* Clicking multiple times on the mini cart icon no longer logs out the current customer. Previously, when a logged-in customer added a product to the cart and then clicked the shopping cart icon multiple times, Magento displayed an empty shopping cart and logged out the customer. 
 
 <!--- MAGETWO-95848-->* Customers can now configure options for a configurable product after adding it to their shopping cart.  Previously, under these circumstances, Magento threw a fatal error.
 
 <!--- MAGETWO-95739-->* Magento now validates zip codes for new addresses as expected when the **My billing and shipping address are the same** option is unchecked. 
 
-<!--- MAGETWO-94427-->* Magento now updates the minicart as expected when an administrator updates the product from the Admin. Previously, if a product that had been added to the shopping cart was subsequently disabled from the Admin,  the product was still displayed in the cart.
+<!--- MAGETWO-94427-->* Magento now updates the mini cart as expected when an administrator updates the product from the Admin. Previously, if a product that had been added to the shopping cart was subsequently disabled from the Admin,  the product was still displayed in the cart.
 
 <!--- MAGETWO-91658-->* Magento now uses the configured default sort order  during checkout to calculate totals. Previously, Magento ignored the configured order and used `Sub Total > Shipping > Discount > Tax > Grand Total` to calculate order totals. 
 
@@ -327,13 +301,13 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- MAGETWO-91596-->* You can now update the quantity of grouped product  if the quantity field was left empty when initially added to an Admin order by SKU. Previously, under these circumstances, you could not update the quantity. 
 
-<!--- MAGETWO-91733-->* After a session expires, and a customer refreshes the page, Magento displays an empty shopping cart and logs out the customer as expected. Previously, Magento displayed an empty shopping cart but the minicart still displayed the selected items, and if the customer refreshed the page again, the shopping cart displayed the items. 
+<!--- MAGETWO-91733-->* After a session expires, and a customer refreshes the page, Magento displays an empty shopping cart and logs out the customer as expected. Previously, Magento displayed an empty shopping cart but the mini cart still displayed the selected items, and if the customer refreshed the page again, the shopping cart displayed the items. 
 
 <!--- MAGETWO-91636-->* Tooltips that are available from the checkout page on mobile devices are now displayed properly. Previously, customers had to scroll to access the tooltip. 
 
-<!--- ENGCOM-3706-->* Fixed problem with overlapping UI elements on the cart page when accessed from the minicart. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19839](https://github.com/magento/magento2/pull/19839)*. [GitHub-19836](https://github.com/magento/magento2/issues/19836)
+<!--- ENGCOM-3706-->* Fixed problem with overlapping UI elements on the cart page when accessed from the mini cart. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19839](https://github.com/magento/magento2/pull/19839)*. [GitHub-19836](https://github.com/magento/magento2/issues/19836)
 
-<!--- ENGCOM-3721-->* Fixed alignment issue with dropdown menu on the minicart. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19508](https://github.com/magento/magento2/pull/19508)*. [GitHub-19507](https://github.com/magento/magento2/issues/19507)
+<!--- ENGCOM-3721-->* Fixed alignment issue with drop-down menu on the mini cart. *Fix submitted by [Kajal Solanki](https://github.com/speedy008) in pull request [19508](https://github.com/magento/magento2/pull/19508)*. [GitHub-19507](https://github.com/magento/magento2/issues/19507)
 
 <!--- ENGCOM-3769-->* Fixed alignment issue with radio buttons on the shopping cart page. *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [20022](https://github.com/magento/magento2/pull/20022)*. [GitHub-20021](https://github.com/magento/magento2/issues/20021)
 
@@ -351,17 +325,17 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- ENGCOM-4032-->* The title of the shipping method no longer overlaps with **Edit** on the checkout page. *Fix submitted by [Yashwant Rokde](https://github.com/yashwant2jcommerce) in pull request [20428](https://github.com/magento/magento2/pull/20428)*. [GitHub-20427](https://github.com/magento/magento2/issues/20427)
 
-<!--- ENGCOM-3984-->* The **Close** button on the minicart now longer overlaps with the shipping section when the checkout page is opened on a mobile device. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20615](https://github.com/magento/magento2/pull/20615)*. [GitHub-20614](https://github.com/magento/magento2/issues/20614)
+<!--- ENGCOM-3984-->* The **Close** button on the mini cart now longer overlaps with the shipping section when the checkout page is opened on a mobile device. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20615](https://github.com/magento/magento2/pull/20615)*. [GitHub-20614](https://github.com/magento/magento2/issues/20614)
 
 <!--- ENGCOM-3818-->* Fixed the alignment of the **Apply discount** button  on the checkout page. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20144](https://github.com/magento/magento2/pull/20144)*. [GitHub-20137](https://github.com/magento/magento2/issues/20137)
 
-<!--- MAGETWO-95312-->* Fixed minicart layout issues. 
+<!--- MAGETWO-95312-->* Fixed mini cart layout issues. 
 
-<!--- MAGETWO-97968-->* The minicart is now updated as expected when a product in the cart is disabled. 
+<!--- MAGETWO-97968-->* The mini cart is now updated as expected when a product in the cart is disabled. 
 
 <!--- ENGCOM-3153 -->* Magento no longer displays a console error when a customer selects one-step checkout. Previously, Magento displayed this JavaScript error, `Cannot read property 'code' of undefined`. *Fix submitted by [Ihor Sviziev](https://github.com/ihor-sviziev) in pull request [18494](https://github.com/magento/magento2/pull/18494)*. [GitHub-18164](https://github.com/magento/magento2/issues/18164)
 
-<!--- ENGCOM-3938 -->* Fixed problems with the display of the tooltip dropdown pointer on the checkout page in tablet view. *Fix submitted by [ranee2jcommerce](https://github.com/ranee2jcommerce) in pull request [20488](https://github.com/magento/magento2/pull/20488)*. [GitHub-20487](https://github.com/magento/magento2/issues/20487)
+<!--- ENGCOM-3938 -->* Fixed problems with the display of the tooltip drop-down pointer on the checkout page in tablet view. *Fix submitted by [ranee2jcommerce](https://github.com/ranee2jcommerce) in pull request [20488](https://github.com/magento/magento2/pull/20488)*. [GitHub-20487](https://github.com/magento/magento2/issues/20487)
 
 
 
@@ -511,6 +485,7 @@ On a real instance, under load after, cache clean there is a conflict of simulta
 
 <!--- ENGCOM-3771-->* Magento no longer increments stock for products for which stock managing has been disabled. Previously, Magento increased the product quantity count when a order failed if **Manage Stock** was disabled. *Fix submitted by [Oleksii Gorbulin](https://github.com/agorbulin) in pull request [19997](https://github.com/magento/magento2/pull/19997)*. [GitHub-19482](https://github.com/magento/magento2/issues/19482)
 
+<!--- MAGETWO-96377-->* In a multi-website instance, with a category that contains products belonging to different websites, when the product sort order in a category is changed at the store-view level, the products that belong to a different website gets unassigned from the category.
 
 
 
@@ -573,7 +548,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3852-->* Hamburger menus no longer appear on page that do not have menus. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20214](https://github.com/magento/magento2/pull/20214)*. [GitHub-20210](https://github.com/magento/magento2/issues/20210)
 
-<!--- ENGCOM-3842-->* Fixed issue where dropdown toggle arrow did not close as expected on product page. *Fix submitted by [Nirav Patel](https://github.com/niravkrish) in pull request [20241](https://github.com/magento/magento2/pull/20241)*. [GitHub-20240](https://github.com/magento/magento2/issues/20240)
+<!--- ENGCOM-3842-->* Fixed issue where drop-down toggle arrow did not close as expected on product page. *Fix submitted by [Nirav Patel](https://github.com/niravkrish) in pull request [20241](https://github.com/magento/magento2/pull/20241)*. [GitHub-20240](https://github.com/magento/magento2/issues/20240)
 
 <!--- ENGCOM-3847-->* The Send email confirmation popup **Close** button no longer overlaps with content. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [19986](https://github.com/magento/magento2/pull/19986)*. [GitHub-19985](https://github.com/magento/magento2/issues/19985)
 
@@ -619,7 +594,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3991-->* Fixed misalignment of the advanced search page's price field in mobile view. *Fix submitted by [Govind Sharma](https://github.com/GovindaSharma) in pull request [20159](https://github.com/magento/magento2/pull/20159)*. [GitHub-20157](https://github.com/magento/magento2/issues/20157)
 
-<!--- ENGCOM-4066-->* Fixed misalignment of the View and Edit Cart link in the minicart. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20383](https://github.com/magento/magento2/pull/20383)*. [GitHub-20382](https://github.com/magento/magento2/issues/20382)
+<!--- ENGCOM-4066-->* Fixed misalignment of the View and Edit Cart link in the mini cart. *Fix submitted by [Rajneesh Gupta](https://github.com/irajneeshgupta) in pull request [20383](https://github.com/magento/magento2/pull/20383)*. [GitHub-20382](https://github.com/magento/magento2/issues/20382)
 
 <!--- ENGCOM-4052-->* The Widget Options left navigation block on the Add New widget Page now displays correctly in tablet view. *Fix submitted by [Dipti](https://github.com/dipti2jcommerce) in pull request [20493](https://github.com/magento/magento2/pull/20493)*. [GitHub-20492](https://github.com/magento/magento2/issues/20492)
 
@@ -631,7 +606,6 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-4001-->* Fixed misalignment of **Schedule Update From** field on the Admin category page when displayed in a browser set to 768 x 1147 resolution. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20403](https://github.com/magento/magento2/pull/20403)*. [GitHub-20402](https://github.com/magento/magento2/issues/20402)
 
-<!--- ENGCOM-4079-->* Added argument PHPDoc comment missing from `Magento\BundleGraphQl\Model\Resolver\Options\Collection::addParentFilterData()`. *Fix submitted by [Dominic Fernando](https://github.com/dominicfernando) in pull request [20403](https://github.com/magento/graphql-ce/pull/329)*. [GitHub-20402](https://github.com/magento/magento2/issues/20402)
 
 <!--- ENGCOM-4130-->* Fixed misalignment of reviews under My Recent Reviews area of the My account dashboard. *Fix submitted by [Priti](https://github.com/priti2jcommerce) in pull request [20801](https://github.com/magento/magento2/pull/20801)*. [GitHub-20800](https://github.com/magento/magento2/issues/20800)
 
@@ -851,6 +825,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 #### Cache framework
 
+
 <!--- MAGETWO-95853-->* The images cache can now be flushed from the Admin (**Admin** > **System** > **Cache Management** and click **Flush Catalog Images Cache**). Previously, you could not delete the directory, and Magento displayed an error on the cache management page. 
 
 <!--- MAGETWO-91694-->* Magento now removes disabled products as expected from the flat product table when **Catalog Flat Product** is enabled. 
@@ -978,11 +953,6 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 
 
-### Google Tag Manager
-
-<!--- MAGETWO-96378-->* The Google Tag Manager `AddToCart` event now fires reliably on the product page when **Stores** > **Configuration** > **Sales** > **Checkout** > **Redirect to Shopping Cart**is set to  **yes**. 
-
-
 ### GraphQL
 
 <!--- ENGCOM-4007-->* The storeConfig query returns results as expected. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [318](https://github.com/magento/graphql-ce/pull/318)*. [GitHub-317](https://github.com/magento/magento2/issues/317)
@@ -1061,6 +1031,10 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 ### Infrastructure
 
+<!--- ENGCOM-4389 -->* Magento now supports Elasticsearch 6.0. *Fix submitted by [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*.  
+
+<!--- MC-5201 -->* Magento now supports Redis 5.0. 
+
 <!--- ENGCOM-3690-->* `transparent.js` has been relocated, and orders can now be created from the Admin using PayflowPro and Authorize.Net. Previously, orders created from the Admin using PayflowPro failed, and Magento displayed an informative message indicating an invalid account number. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19764](https://github.com/magento/magento2/pull/19764)*. [GitHub-19763](https://github.com/magento/magento2/issues/19763)
 
 <!--- ENGCOM-4392 -->* Expected backup and restoration functionality has been restored and MySQL View support is supported while preserving backward compatibility with pre-existing modules. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. 
@@ -1085,6 +1059,13 @@ Previously, when you reopened these categories, no checkboxes were checked.
 <!--- ENGCOM-3355-->* The Last logged In value displayed on the customer account page on the Admin is now updated as expected when a customer is authenticated through REST. *Fix submitted by [Prakash](https://github.com/prakashpatel07) in pull request [18973](https://github.com/magento/magento2/pull/18973)*. [GitHub-17488](https://github.com/magento/magento2/issues/17488)
 
 <!--- ENGCOM-3053-->* Integrations are no longer reset after running the `bin/magento setup:upgrade` command. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [18273](https://github.com/magento/magento2/pull/18273)*. [GitHub-12095](https://github.com/magento/magento2/issues/12095)
+
+
+### Magento Shipping
+
+* Updating an order destination prior to creating a shipment  now results in the shipment being sent to the new destination.
+
+* Shipments that contain the same item across multiple packages will now correctly update the shipped amount.
 
 
 ### MSRP
@@ -1172,21 +1153,13 @@ The configurale product
 
 ### Performance
 
-<!--- MAGETWO-95249 94346-->* New customer address handling improves the handling of large number of addresses on Admin customer details page. T
+<!--- MAGETWO-95249 94346-->* New customer address handling improves the processing of many addresses on the Admin customer details page. This functionality was rewritten with UI components to increase platform performance, which in turn faciliates the management of customers with 3000 and more addresses. This refactoring includes these changes:
 
-Customer Addresses tab now contains default billing address and default shipping address ui component blocks, customer addresses listing or grid and customer address form on modal window. 
+	* All actions on the Customer Addresses tab are now performed asynchronously with AJAX. This tab now contains the default billing address and default shipping address UI component blocks, customer addresses listing or grid, and customer address form in a modal window.
 
-Customer addresses grid represents listing ui component with filters, grid search, mass delete action. Each customer addresss row has set of actions: edit address, set address as default billing, set address as default shipping, delete address. 
-Customer address form represents form to create, update, delete customer address with customer address attributes. 
-All actions on customer addresses tab are performed asynchronously with AJAX. 
-Now you need to create customer in Magento admin first to be able to add addresses to the customer. 
-Customer addresses functionality in Magento admin was rewritten with ui components to increase performance of the platform, to be able to manage customers with 3000 and more addresses. You can now handle large customer addresses profiles with new customer address listing as it does not perform heavy operations with loading customer and address collections. 
+	* `\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asynchronous management of customer addresses. 
 
 
-
-
-
-`\Magento\Customer\Model\Customer\DataProvider` has been replaced by `\Magento\Customer\Model\Customer\DataProviderWithDefaultAddresses` to support the asnchronous management of customer addresses. 
 
 
 ### Product video
@@ -1307,12 +1280,6 @@ Customer addresses functionality in Magento admin was rewritten with ui componen
 <!--- ENGCOM-3225-->* The `transportBuilderByStore` class has been removed. Previously, this class was the cause of undesired repeat emails. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [18471](https://github.com/magento/magento2/pull/18471)*. [GitHub-7739](https://github.com/magento/magento2/issues/7739)
 
 <!--- ENGCOM-3484-->* Magento now displays bundle options  on the Items Ordered tab of the My Account order page. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [19254](https://github.com/magento/magento2/pull/19254)*. [GitHub-16434](https://github.com/magento/magento2/issues/16434)
-
-
-### SalesArchive
-
-<!--- MAGETWO-96022-->* Archived orders no longer reappear in the Order Management table after cron runs. 
-
 
 
 
@@ -1527,7 +1494,18 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 <!--- ENGCOM-3569-->* Pagination controls on the wishlist page have been restored. *Fix submitted by [Ratnesh Kumar](https://github.com/webkul-ratnesh) in pull request [19305](https://github.com/magento/magento2/pull/19305)*. [GitHub-19292](https://github.com/magento/magento2/issues/19292)
 
 
+## Known issue
 
+**Issue**: The Web Setup Wizard is not available from the Admin under these conditions: 
+
+* base URLs are set to HTTP.
+
+* **Use Secure URLs in Admin** is set to **on**.
+
+* HTTPS is disabled.
+
+**Workaround**: You must enable HSTS from **Stores** > **General** > **Web** > **BaseUrls (Secure)**. 
+<!--- MC-15003-->
 
 ## Community contributions
 
