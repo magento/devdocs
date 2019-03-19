@@ -314,7 +314,7 @@ Magento returns all active tier prices for the specified list of `skus`.
 
 **Sample Usage**
 
-`V1/products/tier-prices-information`
+`POST <host>/rest/<store_code>/V1/products/tier-prices-information`
 
 **Payload**
 

@@ -247,7 +247,7 @@ This call increases the company credit with an Allocate, Update, Refund, Revert,
 
 **Sample Usage**
 
-`V1/companyCredits/2/increaseBalance`
+`POST <host>/rest/<store_code>/V1/companyCredits/2/increaseBalance`
 
 **Payload**
 
@@ -270,7 +270,7 @@ This call decreases the company credit with an Update (operation type = 2), Purc
 
 **Sample Usage**
 
-`V1/companyCredits/2/decreaseBalance`
+`POST <host>/rest/<store_code>/V1/companyCredits/2/decreaseBalance`
 
 **Payload**
 
