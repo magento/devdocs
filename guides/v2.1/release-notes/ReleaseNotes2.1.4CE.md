@@ -64,7 +64,7 @@ We address the following functional issues in this release.
 <!--- 62229-->* Magento now displays the price of out-of-stock products.  Previously, it did not display the price of out-of-stock products on the product page.
 
 
-<!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}.  
+<!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Settings > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}.  
 
 
 <!--- 60248-->* Information set by the **Default Billing Address** and **Default Shipping Address** checkboxes on the Customer page are now saved correctly.
@@ -200,7 +200,7 @@ We address the following functional issues in this release.
 
 
 
-<!---60599-->* **Issue**: You cannot use a negative value in the **Quantity** field for a product, even when you activate back orders (**Stores > Configuration > Catalog > Inventory > Product Stock Options > Backorders = Allow Qty Below 0**) [(GITHUB-7401)](https://github.com/magento/magento2/issues/7401){:target="_blank"}
+<!---60599-->* **Issue**: You cannot use a negative value in the **Quantity** field for a product, even when you activate back orders (**Stores > Settings > Configuration > Catalog > Inventory > Product Stock Options > Backorders = Allow Qty Below 0**) [(GITHUB-7401)](https://github.com/magento/magento2/issues/7401){:target="_blank"}
 
 
   

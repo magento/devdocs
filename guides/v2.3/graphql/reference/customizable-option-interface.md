@@ -24,6 +24,7 @@ Field | Type | Description
 `title` |  String | The display name for this option
 `required` | Boolean | Indicates whether the option is required
 `sort_order` | Int | The order in which the option is displayed
+`option_id` | Int | Option ID
 
 ## CustomizableAreaOption object
 
