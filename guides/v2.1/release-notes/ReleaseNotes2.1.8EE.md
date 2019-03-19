@@ -126,7 +126,7 @@ This release includes both improvements we've made internally and those submitte
 
 ### General
 
-<!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System > Index management**, reindexing failed.
+<!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System** > Tools > **Index Management**, reindexing failed.
 
 <!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
 
