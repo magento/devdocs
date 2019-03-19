@@ -30,7 +30,7 @@ entries:
   type: Major update
   date: March 15, 2019
   link: https://github.com/magento/devdocs/pull/3871
-- description: Updated the [Fastly troubleshooting](https://devdocs.magento.com/guides/v2.3/cloud/cdn/trouble-fastly.html
+- description: Updated [Fastly troubleshooting](https://devdocs.magento.com/guides/v2.3/cloud/cdn/trouble-fastly.html
     ) in the Magento Commerce Cloud Guide:<br/>- Corrected information about Fastly
     response headers and values<br/>- Added information about rolling back Fastly
     service configuration changes using the Fastly API<br/>- Re-organized troubleshooting
