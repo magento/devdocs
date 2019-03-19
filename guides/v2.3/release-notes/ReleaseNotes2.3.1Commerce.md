@@ -120,7 +120,7 @@ Information about the deprecation of Authorize.Net Direct Post can be found [her
 
 * Update PayPal Express Checkout to `checkout.js v4`. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
-* <!--- MAGETWO-95068-->* **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
+* <!--- MAGETWO-95068-->**Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
 
 * Upgrade of Magento Functional Test Framework (MFTF) to 2.3.13. 
 
@@ -1114,7 +1114,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3666-->* A syntax error in `magento2/lib/internal/Magento/Framework/Cache/Backend/Database.php` has been corrected. *Fix submitted by [Nirav Kadiya](https://github.com/ssp58bleuciel) in pull request [19634](https://github.com/magento/magento2/pull/19634)*. [GitHub-13309](https://github.com/magento/magento2/issues/13309)
 
- <!--- ENGCOM-3364-->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
+<!--- ENGCOM-3364-->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
 
 
