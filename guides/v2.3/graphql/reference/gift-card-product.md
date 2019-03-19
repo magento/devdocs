@@ -7,7 +7,7 @@ The `GiftCardProduct` endpoint defines which gift card-specific attributes are r
 
 ## GiftCardProduct object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `allow_message` | Boolean | Indicates whether the customer can provide a message to accompany the gift card.
 `allow_open_amount` | Boolean | Indicates whether customers have the ability to set the value of the gift card.
@@ -24,7 +24,7 @@ Field | Type | Description
 
 ## GiftCardAmounts object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `attribute_id` | Int | An internal attribute ID.
 `value_id` | Int | An ID that is  assigned to each unique gift card amount.
@@ -38,31 +38,30 @@ The following query returns information about gift card product `GiftCard25`. (I
 
 ``` text
 {
-   products(filter: {sku: {eq: "GiftCard25"}})
-   {
-       items{
-           id
-           type_id
-           name
-           sku
-           }
-           ... on GiftCardProduct {
-            allow_message
-            message_max_length
-            allow_open_amount
-            open_amount_min
-            open_amount_max
-            is_returnable
-            is_redeemable
-            giftcard_type
-            giftcard_amounts{
-              value_id
-              website_id
-              value
-              attribute_id
-              website_value
-           }
-       }
-   }
+  products(filter: { sku: { eq: "GiftCard25" } }) {
+    items {
+      id
+      type_id
+      name
+      sku
+    }
+    ... on GiftCardProduct {
+      allow_message
+      message_max_length
+      allow_open_amount
+      open_amount_min
+      open_amount_max
+      is_returnable
+      is_redeemable
+      giftcard_type
+      giftcard_amounts {
+        value_id
+        website_id
+        value
+        attribute_id
+        website_value
+      }
+    }
+  }
 }
 ```

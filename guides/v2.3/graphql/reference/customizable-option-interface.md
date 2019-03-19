@@ -19,7 +19,7 @@ Magento has not implemented all possible customizable product options for GraphQ
 
 `CustomizableOptionInterface` can contain the following attributes:
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `option_id` | Int |  The ID assigned to the option
 `required` | Boolean | Indicates whether the option is required
@@ -30,7 +30,7 @@ Field | Type | Description
 
 `CustomizableAreaOption` contains information about a text area that is defined as part of a customizable option.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `product_sku` | String | The Stock Keeping Unit of the base product
 `value` | `CustomizableAreaValue` | An object that defines a text area
@@ -39,7 +39,7 @@ Field | Type | Description
 
 `CustomizableAreaValue` defines the attributes of a product whose page contains a customized text area.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `max_characters` | Int | The maximum number of characters that can be entered for this customizable option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
@@ -50,7 +50,7 @@ Field | Type | Description
 
 `CustomizableDateOption` contains information about a date picker that is defined as part of a customizable option.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `product_sku` | String | The Stock Keeping Unit of the base product
 `value` | `CustomizableDateValue` | An object that defines a date field in a customizable option.
@@ -59,7 +59,7 @@ Field | Type | Description
 
 `CustomizableDateValue` defines the attributes of a product whose page contains a customized date picker.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `price` | Float | The price assigned to this option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
@@ -69,7 +69,7 @@ Field | Type | Description
 
 `CustomizableDropDownOption` contains information about a drop down menu that is defined as part of a customizable option.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `value` | `CustomizableDropDownValue` | An array that defines the set of options for a drop down menu
 
@@ -77,7 +77,7 @@ Field | Type | Description
 
 `CustomizableDropDownValue` defines the attributes of a product whose page contains a customized drop down menu.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `option_type_id` | Int | The ID assigned to the value
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
@@ -90,7 +90,7 @@ Field | Type | Description
 
 `CustomizableFieldOption` contains information about a text field that is defined as part of a customizable option.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `product_sku` | String | The Stock Keeping Unit of the base product
 `value` | `CustomizableFieldValue` | An object that defines a text field
@@ -99,7 +99,7 @@ Field | Type | Description
 
 `CustomizableFieldValue` defines the attributes of a product whose page contains a customized text field.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `max_characters` | Int | The maximum number of characters that can be entered for this customizable option
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
@@ -110,7 +110,7 @@ Field | Type | Description
 
 `CustomizableFileOption` contains information about a file picker that is defined as part of a customizable option.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `product_sku` | String | The Stock Keeping Unit of the base product
 `value` | `CustomizableFileValue` | An object that defines a file name
@@ -119,7 +119,7 @@ Field | Type | Description
 
 `CustomizableFileValue` defines the attributes of a product whose page contains a customized file picker.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `file_extension` | String | The file extension to accept
 `image_size_x` | Int | The maximum width of an image
@@ -132,7 +132,7 @@ Field | Type | Description
 
 `CustomizableRadioOption` contains information about a set of radio buttons that are defined as part of a customizable option.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `value` | `CustomizableRadioValue` | An array that defines a set of radio buttons
 
@@ -140,7 +140,7 @@ Field | Type | Description
 
 `CustomizableRadioValue` defines the attributes of a product whose page contains a customized set of radio buttons.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `option_type_id` | Int | The ID assigned to the value
 `price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC

@@ -49,7 +49,7 @@ The following example returns the list of purchased downloadable products for th
 ```
 
 **Response**
-```json
+```text
 {
   "data": {
     "customerDownloadableProducts": {
@@ -134,53 +134,50 @@ The following query returns information about downloadable product `240-LV04`, w
 
 ```text
 {
-  products(filter:
-    {sku: {eq:"240-LV04"}}
-  	)
-  {
-       items{
-           id
-           name
-           sku
-           type_id
-        price{
-        regularPrice{
-          amount{
+  products(filter: { sku: { eq: "240-LV04" } }) {
+    items {
+      id
+      name
+      sku
+      type_id
+      price {
+        regularPrice {
+          amount {
             value
             currency
           }
         }
       }
-           ... on DownloadableProduct {
-            links_title
-            links_purchased_separately
+      ... on DownloadableProduct {
+        links_title
+        links_purchased_separately
 
-            downloadable_product_links{
-              id
-              sample_url
-              sample_type
-              is_shareable
-              number_of_downloads
-              sort_order
-              title
-              link_type
-              price
-            }
-            downloadable_product_samples{
-              title
-              sort_order
-              sort_order
-              sample_type
-              sample_file
-            }
-           }
-       }
-   }
+        downloadable_product_links {
+          id
+          sample_url
+          sample_type
+          is_shareable
+          number_of_downloads
+          sort_order
+          title
+          link_type
+          price
+        }
+        downloadable_product_samples {
+          title
+          sort_order
+          sort_order
+          sample_type
+          sample_file
+        }
+      }
+    }
+  }
 }
 ```
 **Response**
 
-```json
+```text
 {
   "data": {
     "products": {

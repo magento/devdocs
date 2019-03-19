@@ -17,7 +17,7 @@ Use queries to read server-side data, such as a specific customer's address.
 ### Customer attributes {#customerAttributes}
 The customer object can contain the following attributes:
 
-Attribute |  Data Type | Description 
+Attribute |  Data Type | Description
 --- | --- | ---
 `addresses` | [CustomerAddress](#customerAddress)  | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
@@ -26,6 +26,7 @@ Attribute |  Data Type | Description
 `dob` | String | The customer's date of birth
 `email` | String | The customer's email address
 `firstname` | String | The customer's first name
+`gender` | Int | The customer's gender (Male - 1, Female - 2)
 `group_id` | Int | The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale), and 3 (Retailer)
 `id` | Int | The ID assigned to the customer
 `is_subscribed` | Boolean | Indicates whether the customer is subscribed to the company's newsletter
@@ -81,8 +82,7 @@ The following call returns information about the logged-in customer. Provide the
 
 ``` text
 {
-  customer
-  {
+  customer {
     firstname
     lastname
     suffix
@@ -104,7 +104,7 @@ The following call returns information about the logged-in customer. Provide the
 
 **Response**
 
-``` json
+```
 {
   "data": {
     "customer": {
@@ -173,29 +173,29 @@ The following call creates a new customer.
 
 ``` text
 mutation {
-    createCustomer(
-        input: {
-            firstname: "Bob"
-            lastname: "Loblaw"
-            email: "bobloblaw@example.com"
-            password: "b0bl0bl@w"
-            is_subscribed: true
-        }
-    ) {
-        customer {
-            id
-            firstname
-            lastname
-            email
-            is_subscribed
-        }
+  createCustomer(
+    input: {
+      firstname: "Bob"
+      lastname: "Loblaw"
+      email: "bobloblaw@example.com"
+      password: "b0bl0bl@w"
+      is_subscribed: true
     }
+  ) {
+    customer {
+      id
+      firstname
+      lastname
+      email
+      is_subscribed
+    }
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "createCustomer": {
@@ -226,24 +226,24 @@ The following call updates the first name and email address for a specific custo
 
 ``` text
 mutation {
-    updateCustomer(
-        input: {
-            firstname: "Rob"
-            email: "robloblaw@example.com"
-
-        }
-    ) {
-        customer {
-            firstname
-            email
-        }
+  updateCustomer(
+    input: {
+      firstname: "Rob"
+      email: "robloblaw@example.com"
     }
+    ) {
+    customer {
+      firstname
+      email
+    }
+  }
 }
+
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "updateCustomer": {
@@ -312,7 +312,7 @@ mutation {
         region: "Arizona"
         region_id: 4
         region_code: "AZ"
-    }
+      }
     country_id: US
     street: ["123 Main Street"]
     telephone: "7777777777"
@@ -322,7 +322,7 @@ mutation {
     lastname: "Loblaw"
     default_shipping: true
     default_billing: false
-  }) {
+    }) {
     id
     customer_id
     region {
@@ -343,7 +343,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "createCustomerAddress": {
@@ -397,7 +397,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "updateCustomerAddress": {
@@ -430,7 +430,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "deleteCustomerAddress": true
@@ -467,17 +467,17 @@ The following call creates a new customer token.
 ``` text
 mutation {
 	generateCustomerToken(
-        email: "bobloblaw@example.com"
-        password: "b0bl0bl@w"
+    email: "bobloblaw@example.com"
+    password: "b0bl0bl@w"
     ) {
-        token
+    token
     }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "generateCustomerToken": {
@@ -503,15 +503,15 @@ The following call revokes the customer's token.
 
 ``` text
 mutation {
-    revokeCustomerToken {
+  revokeCustomerToken {
     result
-    }
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "revokeCustomerToken": {
@@ -556,7 +556,7 @@ mutation {
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "changeCustomerPassword": {

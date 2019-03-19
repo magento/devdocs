@@ -58,7 +58,7 @@ The following query returns the order history of the logged in customer.
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "customerOrders": {

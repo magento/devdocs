@@ -29,7 +29,7 @@ Attribute |  Data Type | Description
 
 The `products` query can request details about the `UrlRewrite` object.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
 `url` | String | The request URL
@@ -39,7 +39,7 @@ Field | Type | Description
 
 The `HttpQueryParameter` object provides details about target path parameters.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `name` | String | The parameter name, such as `id`
 `value` | String | The value assigned to the parameter
@@ -53,17 +53,17 @@ The following query returns information about the URL containing `joust-duffle-b
 
 ``` text
 {
- urlResolver(url:"joust-duffle-bag.html") {
-   id
-   canonical_url
-   type
- }
+  urlResolver(url: "joust-duffle-bag.html") {
+    id
+    canonical_url
+    type
+  }
 }
 ```
 
 **Response**
 
-``` json
+``` text
 {
   "data": {
     "urlResolver": {
@@ -99,7 +99,7 @@ The following product query returns URL rewrite information about the Joust Duff
 
 **Response**
 
-```json
+```text
 {
   "data": {
     "products": {
