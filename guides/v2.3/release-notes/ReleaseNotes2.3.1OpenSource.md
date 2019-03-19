@@ -28,7 +28,7 @@ The Admin order creation workflow has been refactored to eliminate delays when e
 
 #### Inventory Management 1.1.0 (Community-developed feature!)
 
-The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
+The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for information about specific fixes and acknowledgements to community contributors.
 
 #### Support for Elasticsearch and Inventory Management
 
@@ -1507,6 +1507,10 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 **Workaround**: You must enable HSTS from **Stores** > **General** > **Web** > **BaseUrls (Secure)**. 
 <!--- MC-15003-->
+
+**Issue**: For Inventory Management, asynchronous migration of data between sources will encounter issues due to changes in Asynchronous APIs with topic names reflecting PHP class and method names. 
+
+**Workaround**: We recommend using synchronous operations, setting **Run asynchronously** to "No". To configure, see [Configure Global Options](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) in the Magento User Guide.
 
 ## Community contributions
 
