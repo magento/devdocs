@@ -153,7 +153,7 @@ If the headers do not have the correct values, see the following information:
 
 ### Bypass Fastly to check Staging and Production sites {#cloud-test-stage}
 
-If the Fastly service returns incorrect headers, submit a Fastly API request directly to the origin server, bypassing the Fastly CDN service.  You bypass Fastly by adding the following option to your Fastly API request: `-H "Host:<URL>"`. Replace `<URL>` with the URL for the Staging or Production site. 
+If the Fastly service returns incorrect headers, submit a Fastly API request directly to the origin server, bypassing the Fastly CDN service.
 
 #### To check the response headers:
 
@@ -162,7 +162,7 @@ If the Fastly service returns incorrect headers, submit a Fastly API request dir
     -  **Staging**
 
        ```bash
-       curl http[s]://<your domain>.com -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
+       curl http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
        ```
 
     - **Production**
@@ -178,12 +178,19 @@ If the Fastly service returns incorrect headers, submit a Fastly API request dir
       ```bash
       curl http[s]:<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
       ```
+      
+    For example, if you have a public URL www.mymagento.biz, enter a command similar to the following to test the production site:
+      
+    ```bash
+   curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -H Fastly-Debug:1
+    ```
 
-      If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:  
+    If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:  
 
-      ```bash
-      curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
-      ```
+    ```bash
+ curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
+    ```
+   
  2. In the response, check for errors in the [cache HIT and MISS headers](#response-headers).
 
 ### Check cache HIT and MISS response headers {#response-headers}
