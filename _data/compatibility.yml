@@ -3,7 +3,7 @@ versions:
   - 2.3.1
 extension:
   -
-    name: MSI
+    name: Multi Source Inventory
     versions:
       - 
         name: 1.0.1

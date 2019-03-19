@@ -28,3 +28,7 @@
 <script type="text/javascript">_satellite.pageBottom();</script>
 
 {% endif %}
+
+{% if page.url contains "cloud/" %}
+<script type="text/javascript" src="{{ site.baseurl }}/common/js/survey.js"></script>
+{% endif %}
