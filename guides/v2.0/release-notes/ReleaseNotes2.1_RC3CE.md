@@ -103,7 +103,7 @@ Magento Open Source 2.1 includes several new and exciting features:
 <!--- 54186-->* {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} validation now works as expected when you add a product to a shopping cart. Previously, if a validation error occurred during this task, Magento would still submit the form. 
  
 
-<!--- 54242-->*  Grid view pagination (as configured from Stores > Configuration > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} > Catalog >Storefront)  now works as expected. [(GITHUB-3861)](https://github.com/magento/magento2/issues/3861){: target="_blank"}
+<!--- 54242-->*  Grid view pagination (as configured from Stores > Settings > Configuration > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} > Catalog >Storefront)  now works as expected. [(GITHUB-3861)](https://github.com/magento/magento2/issues/3861){: target="_blank"}
 
 <!--- 53139-->*  Magento now correctly displays prices for products with several configurable price options. 
 
