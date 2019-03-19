@@ -156,7 +156,7 @@ For `version`, the currently supported values are [version tags](https://github.
 
 **Admin access:**
 
-- http://i-xxx.engcom.dev.magento.com/admin
+- https://i-{$number}-{$version}.instances.magento-community.engineering/admin
 - Admin Credentials:
     - Username: admin
     - Password: 123123q
