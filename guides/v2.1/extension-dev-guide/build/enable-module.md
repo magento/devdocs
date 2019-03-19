@@ -20,7 +20,7 @@ After you have built the component and are ready to enable it in your Magento en
 
    Where `Component_Name` is the name of the component you are enabling.
 
-1. Check under `Stores->Configuration->Advanced->Advanced` that the component is present.
+1. Check under **System** > **Tools** > **Web Setup Wizard** > **Module Manager** that the component is present.
 
 ## Order of operations
 
