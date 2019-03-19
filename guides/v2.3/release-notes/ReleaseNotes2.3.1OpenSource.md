@@ -28,7 +28,7 @@ The Admin order creation workflow has been refactored to eliminate delays when e
 
 #### Inventory Management 1.1.0 (Community-developed feature!)
 
-The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management:
+The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
 
 #### Support for Elasticsearch and Inventory Management
 
@@ -41,12 +41,6 @@ Merchants can enable this algorithm to reduce fulfillment costs by shipping orde
 #### Enhancements to mass inventory transfers
 
 Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
-
-#### In-store pickup fulfillment option
-
-Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders.  See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
-
-
 
 
 
