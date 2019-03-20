@@ -65,7 +65,8 @@ You can use before methods to change the arguments of an observed method by retu
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
-``` PHP
+{% highlight php startinline=true %}
+
 namespace My\Module\Plugin;
 
 class ProductAttributesUpdater
@@ -75,7 +76,8 @@ class ProductAttributesUpdater
         return ['(' . $name . ')'];
     }
 }
-```
+
+{% endhighlight %}
 
 #### After methods
 
@@ -85,7 +87,7 @@ You can use these methods to change the result of an observed method by modifyin
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
-``` PHP
+{% highlight php startinline=true %}
 
 namespace My\Module\Plugin;
 
@@ -96,13 +98,14 @@ class ProductAttributesUpdater
         return '|' . $result . '|';
     }
 }
-```
+{% endhighlight %}
 
 After methods have access to all the arguments of their observed methods. When the observed method completes, Magento passes the result and arguments to the next after method that follows. If observed method does not return a result (`@return void`), then it passes `null` to the next after method.
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2100url }}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
-``` PHP
+{% highlight php startinline=true %}
+
 namespace My\Module\Plugin;
 
 class AuthLogger
@@ -126,13 +129,13 @@ class AuthLogger
         $this->logger->debug('User ' . $username . ' signed in.');
     }
 }
-```
+{% endhighlight %}
 
 After methods do not need to declare all the arguments of their observed methods except those that the method uses and any arguments from the observed method that come before those used arguments.
 
 The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 
-``` PHP
+{% highlight php startinline=true %}
 
 class WebsitesLogger
 {
@@ -148,8 +151,7 @@ class WebsitesLogger
         $this->logger->log('Updated websites: ' . implode(', ',  $websiteIds));
     }
 }
-
-```
+{% endhighlight %}
 
 In the example, the `afterUpdateWebsites` function uses the variable `$websiteIds`, so it declares that variable as an argument. It also declares `$productIds` because it comes before `$websiteIds` in the parameter signature of the observed method. The after method did not list `$type` because it did not use it inside the method nor does it come before `$websiteIds`.
 
@@ -172,7 +174,7 @@ If the around method does not call the `callable`, it will prevent the execution
 
 Below is an example of an around method adding behavior before and after an observed method:
 
-``` PHP
+{% highlight php startinline=true %}
 namespace My\Module\Plugin;
 
 class ProductAttributesUpdater
@@ -193,13 +195,13 @@ class ProductAttributesUpdater
         return $returnValue;
     }
 }
-```
+{% endhighlight %}
 
 When you wrap a method which accepts arguments, your plugin must also accept those arguments and you must forward them when you invoke the <code>proceed</code> callable. You must be careful to match the default parameters and type hints of the original signature of the method.
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
-``` PHP
+{% highlight php startinline=true %}
 namespace My\Module\Model;
 
 class MyUtility
@@ -209,11 +211,11 @@ class MyUtility
         //do something
     }
 }
-```
+{% endhighlight %}
 
 If you wrapped this method with a plugin like below:
 
-``` PHP
+{% highlight php startinline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityUpdater
@@ -223,13 +225,13 @@ class MyUtilityUpdater
       //do something
     }
 }
-```
+{% endhighlight %}
 
 Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
-``` PHP
+{% highlight php startinline=true %}
 namespace My\Module\Plugin;
 
 class MyUtilityUpdater
@@ -240,7 +242,7 @@ class MyUtilityUpdater
       $proceed(...$args);
     }
 }
-```
+{% endhighlight %}
 
 ### Prioritizing plugins
 
