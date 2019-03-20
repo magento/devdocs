@@ -9,7 +9,7 @@ title: Magento Commerce 2.1.17 Release Notes
 *Release notes published March 26, 2019.*
 
 
-We are pleased to present Magento Commerce  2.1.17. This release includes  multiple enhancements to product security. 
+We are pleased to present {{site.data.var.ee}} 2.1.17. This release includes  multiple enhancements to product security. 
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
