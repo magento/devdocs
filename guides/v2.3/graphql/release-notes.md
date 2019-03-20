@@ -23,7 +23,7 @@ These release notes include:
     - Mutations in the [DownloadableProduct]({{ page.baseurl}}/graphql/reference/downloadable-product.html) endpoint that allows you to add downloadable products to a cart.
     - A query in the [Sales endpoint]({{page.baseurl}}/graphql/reference/sales.html) that returns a list of customer orders.
     - The [Wishlist endpoint]({{page.baseurl}}/graphql/reference/wishlist.html), which includes a query that returns a list of items in the customer's wish list.
-    - Queries in the [Store endpoint]({{page.baseurl}}/graphql/reference/store.html) for returning information about a store's theme and CMS configuration.
+    - Queries in the [Store endpoint]({{page.baseurl}}/graphql/reference/store-config.html) for returning information about a store's theme and CMS configuration.
    
 - {:.new} **Added variable support in queries and mutations.** See [Queries]({{page.baseurl}}/graphql/queries.html) and [Mutations]({{page.baseurl}}/graphql/mutations.html) for examples that work with the Luma sample data. 
 
