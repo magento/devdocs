@@ -30,7 +30,7 @@ entries:
   date: March  4, 2019
   link: https://github.com/magento/devdocs/pull/3850
 - description: Fixed the incorrect `composer install` command in [Set up an Embedded
-    MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#setup-framework).
+    MFTF](https://devdocs.magento.com/mftf/getting-started.html#setup-framework).
   versions: 2.3.x
   type: Technical changes
   date: March  4, 2019
@@ -1659,7 +1659,7 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Dec 13 2017
-- description: "[Magento Functional Testing Framework Guide](https://devdocs.magento.com/mftf/2.2/introduction.html)"
+- description: "[Magento Functional Testing Framework Guide](https://devdocs.magento.com/mftf/introduction.html)"
   versions: 2.2.x
   type: New
   date: Dec 08 2017
