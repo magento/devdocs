@@ -82,7 +82,7 @@ In addition to security enhancements, this release contains the following functi
 ### General
 
 
-<!--- ENGCOM-2805 -->* When editing an Admin user role, Magento now displays the Customer Groups section under the Customers section as expected. Previously, Magento displayed the Customer Groups section under the **Stores** > **Other settings** section. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
+<!--- ENGCOM-2805 -->* When editing an Admin user role, Magento now displays the Customer Groups section under the **Customers** section as expected. Previously, Magento displayed the Customer Groups section under the **Stores** > **Other settings** section. *Fix submitted by [Jignesh Baldha](https://github.com/jignesh-baldha) in pull request [17629](https://github.com/magento/magento2/pull/17629)*. [GitHub-16499](https://github.com/magento/magento2/issues/16499)
 
 
 <!--- ENGCOM-2975 -->* The dropdown menu of available countries that is accessible throughout both the storefront and Admin is now populated as expected. *Fix submitted by [Nilesh Lokhande](https://github.com/nilesh2jcommerce) in pull request [17194](https://github.com/magento/magento2/pull/17194)*. [GitHub-2146](https://github.com/magento/magento2/issues/2146)
@@ -107,7 +107,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Reports
 
-<!--- ENGCOM-2764 -->* The Year-to-date dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17496](https://github.com/magento/magento2/pull/17496)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!--- ENGCOM-2764 -->* The Year-to-date dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** > **Year-To-Date Starts** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17496](https://github.com/magento/magento2/pull/17496)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 ### Review
