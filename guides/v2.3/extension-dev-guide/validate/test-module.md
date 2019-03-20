@@ -52,7 +52,7 @@ See these resources for testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16
 
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
-[Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/introduction.html
+[Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/docs/introduction.html
 [register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Magento Component Manager]: {{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
 [Web Setup Wizard]: https://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
