@@ -11,11 +11,14 @@ title: Magento Commerce 2.1.17 Release Notes
 
 We are pleased to present Magento Commerce  2.1.17. This release includes  multiple enhancements to product security. 
 
-Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions, so we recommend that you upgrade your Magento software to the latest version as soon as possible.
+Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
+
+
+## Highlights
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.17) have been ported to 2.3.1, 2.2.8, 1.14.4.1, and 1.9.4.1, as appropriate. 
 
-## Highlights
+### Note about changes to the Authorize.Net extension
 
 Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage (announcement).
 
