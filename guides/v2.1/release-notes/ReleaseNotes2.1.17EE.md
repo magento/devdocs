@@ -3,13 +3,10 @@ group: release-notes
 title: Magento Commerce 2.1.17 Release Notes
 ---
 
-*	TOC
-{:toc}
-
 *Release notes published March 26, 2019.*
 
 
-We are pleased to present Magento Commerce  2.1.17. This release includes  multiple enhancements to product security. 
+We are pleased to present {{site.data.var.ee}}  2.1.17. This release includes  multiple enhancements to product security. 
 
 Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
@@ -20,7 +17,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1
 
 ### Note about changes to the Authorize.Net extension
 
-Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage (announcement).
+Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5-based hash usage.
 
 This will result in Magento merchants not being able to use Authorize.Net Direct Post  to process payments. To avoid disruption and to continue processing payments, merchants need to apply a patch provided by Magento and add a Signature Key (SHA-512) in the Magento Admin configuration settings. Magento released this patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html).
 
