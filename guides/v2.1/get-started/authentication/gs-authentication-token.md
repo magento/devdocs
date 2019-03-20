@@ -22,7 +22,7 @@ When a merchant creates and activates an integration, Magento generates a consum
 
 Use the following steps to generate an access token:
 
-1. Log in to Admin and click **System > Extensions > Integrations** to display the Integrations page.
+1. Log in to Admin and click **System** > **Extensions** > **Integrations** to display the Integrations page.
 2. Click **Add New Integration** to display the New Integration page.
 3. Enter a unique name for the integration in the **Name** field. Then enter your admin password in the **Your Password** field. Leave all other fields blank.
 4. Click the API tab. Select the Magento resources the integration can access. You can select all resources, or select a custom list.
@@ -47,7 +47,7 @@ Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminToken
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
 {:style="table-layout:auto;"}
 
-For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Configuration > Services > OAuth > Access Token Expiration**.
+For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 A cron job that runs hourly removes all expired tokens.
 

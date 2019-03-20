@@ -4,8 +4,44 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Mar 11 10:18:26 2019
+updated: Tue Mar 19 16:29:20 2019
 entries:
+- description: Added information about message queues to [Magento APIs](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/#magento-apis).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: March 18, 2019
+  link: https://github.com/magento/devdocs/pull/3932
+- description: Updated definition of [Exceptions 5.17](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#5-exceptions).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: March 15, 2019
+  link: https://github.com/magento/devdocs/pull/3871
+- description: Updated the [Fastly troubleshooting](https://devdocs.magento.com/guides/v2.3/cloud/cdn/trouble-fastly.html
+    ) information in the Magento Commerce Cloud Guide:<br/>- Corrected information
+    about Fastly response headers and values<br/>- Added information about rolling
+    back Fastly service configuration changes using the Fastly API<br/>- Re-organized
+    troubleshooting sections for easier navigation<br/>- Cleaned up language and formatting
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: March 15, 2019
+  link: https://github.com/magento/devdocs/pull/3699
+- description: Updated the [Cloud Architecture comparison chart](https://devdocs.magento.com/guides/v2.3/cloud/architecture/cloud-architecture.html).
+  versions: 2.x
+  type: Technical changes
+  date: March 15, 2019
+  link: https://github.com/magento/devdocs/pull/3893
+- description: Updated Elasticsearch version support information for Magento Commerce
+    Cloud to include version 5.2. support.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: March 13, 2019
+  link: https://github.com/magento/devdocs/pull/3916
+- description: Fixed the [Command name](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-naming-guidelines.html#cli-name)
+    in the Command Naming Guidelines.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: March 11, 2019
+  link: https://github.com/magento/devdocs/pull/3903
 - description: Added a technical guideline [6.4.4.13](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#64-service-contracts-application-layer).
   versions: 2.2.x, 2.3.x
   type: Major update
