@@ -10,7 +10,7 @@ title: Magento Open Source 2.1.17 Release Notes
 *Release notes published March 26, 2019.*
 
 
-We are pleased to present Magento Open Source 2.1.17. This release includes multiple enhancements to product security. 
+We are pleased to present {{site.data.var.ce}} 2.1.17. This release includes multiple enhancements to product security. 
 
 This release include security enhancements that help close cross-site scripting, arbitrary code execution, and sensitive data disclosure vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
