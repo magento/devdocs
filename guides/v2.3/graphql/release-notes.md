@@ -10,7 +10,7 @@ GraphQL is a flexible and performant API that allows you to build custom front-e
 The **[Magento GraphQL](https://github.com/magento/graphql-ce) project** is a Magento Community Engineering special project open to contributors.
 To take part and contribute, see the [Magento GraphQL](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
-These release notes include:
+These release notes can include:
 
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
@@ -30,14 +30,13 @@ These release notes include:
 - {:.new} **Added functionality to support complex Catalog features.** This version supports:
   - Specifying absolute image paths for [products]({{page.baseurl}}/graphql/reference/products.html) and including extended image information
   - Rendering fields that use WYSIWYG text
-  - URL rewrites for products​ are now supported
+  - URL rewrites for products​
 
 - {:.new} **GraphQL framework enhancements**, including:
-  - Mutations that retrieve and revoke  [customer tokens]({{page.baseurl}}/graphql/reference/customer.html).
-  - Page Builder and WYSIWYG fields support complex structure for PWA scenarios.
-  - Magento now calculates the complexity of queries and mutations and returns an error message if a query or mutation is deemed too complex.
-  - Variable support in [queries]({{page.baseurl}}/graphql/queries.html) and [mutations]({{page.baseurl}}/graphql/mutations.html).
-  - Queries in the [Store endpoint]({{page.baseurl}}/graphql/reference/store-config.html) return information about a store's theme and CMS configuration.
-  - Introspection queries are allowed by default in production mode.
+  - Mutations that retrieve and revoke [customer tokens]({{page.baseurl}}/graphql/reference/customer.html)
+  - Page Builder and WYSIWYG fields support complex structures for PWA scenarios
+  - Magento now calculates the complexity of queries and mutations and returns an error message if a query or mutation is deemed too complex
+  - Variable support in [queries]({{page.baseurl}}/graphql/queries.html) and [mutations]({{page.baseurl}}/graphql/mutations.html)
+  - Queries in the [Store endpoint]({{page.baseurl}}/graphql/reference/store-config.html) return information about a store's theme and CMS configuration
   - GraphQL tests are integrated with Travis CI​
-  - GraphQL browsers now display fields and objects alphabetically.
+  - GraphQL browsers now display fields and objects alphabetically
