@@ -270,7 +270,7 @@ openFileBrowser: function (o) {
         storeId = this.config['store_id'] !== null ? this.config['store_id'] : 0,
         frameDialog = jQuery(o.win.frameElement).parents('[role="dialog"]'),
         wUrl = this.config['files_browser_window_url'] +
-            'target_element_id/' + this.id + '/' +
+            'target_element_id/' + this.getId() + '/' +
             'store/' + storeId + '/';
 
     this.mediaBrowserOpener = o.win;
@@ -326,7 +326,7 @@ In your module's [`di.xml`] file, you can define a [virtual type] of this class 
 
 If your implementation does not require any modifications to the configuration, you can use the default implementation:
 
-`Magento\Cms\Mode\WysiwygDefaultConfig`
+`Magento\Cms\Model\WysiwygDefaultConfig`
 
 **Example di.xml file entry for TinyMCE3 editor:**
 

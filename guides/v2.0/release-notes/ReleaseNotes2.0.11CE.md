@@ -146,7 +146,7 @@ We address the following functional issues in this release.
 <!--- 62032-->* We've fixed an error with an unexpected empty default website during website creation.  
 
 
-<!--- 58498-->* The **Need to Confirm** option on **Stores > Configuration > Customers > Newsletter** now requires a customer to confirm his subsciption. 
+<!--- 58498-->* The **Need to Confirm** option on **Stores > Settings > Configuration > Customers > Newsletter** now requires a customer to confirm his subsciption. 
 
 ### Images
 {:.no_toc} 

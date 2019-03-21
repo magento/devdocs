@@ -30,7 +30,7 @@ class BaseFactory
   /**
    * @var \Magento\Framework\ObjectManagerInterface
    */
-  private $_objectManager;
+  protected $_objectManager;
 
   /**
    * @param \Magento\Framework\ObjectManagerInterface $objectManager

@@ -73,7 +73,7 @@ We support and deploy the following services for you:
 
 *	[`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) version `10.0`
 *	[`redis`]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) versions `2.8` and `3.0`
-*	[`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) version `1.4`, `1.7`, and `2.4`
+*	[`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) version `1.4`, `1.7`, `2.4`, and `5.2`
 *	[`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) version `3.5`
 
 ### `disk` {#cloud-yaml-services-disk}

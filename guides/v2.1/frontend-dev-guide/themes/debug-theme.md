@@ -16,7 +16,7 @@ To locate the template that is responsible for a specific part of the {% glossar
 
 To enable template hints:
 
-1. Click **Stores** > **Configuration** > ADVANCED > **Developer**.
+1. Click **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
 
 2. In the **Scope** dropdown in the upper-left corner select the view for which you want the template hints.
 
