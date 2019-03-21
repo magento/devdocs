@@ -21,10 +21,10 @@ Magento has not implemented all possible customizable product options for GraphQ
 
 Attribute | Type | Description
 --- | --- | ---
-`option_id` | Int |  The ID assigned to the option
+`title` |  String | The display name for this option
 `required` | Boolean | Indicates whether the option is required
 `sort_order` | Int | The order in which the option is displayed
-`title` |  String | The display name for this option
+`option_id` | Int |  The ID assigned to the option
 
 ## CustomizableAreaOption object
 

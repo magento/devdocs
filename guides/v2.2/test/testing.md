@@ -143,7 +143,7 @@ MFTF tests are kept within its respective Module folder:
 [Web API Functional]: https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html
 [Integration]: https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html
 [performance toolkit]: https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html
-[JavaScript]: https://devdocs.magento.com/guides/v2.3/test/js/test_js-unit.html
+[JavaScript]: https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html
 [PhpCs]: https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-sniffers.html
 [PhpMd]: https://phpmd.org/
 [Magento backward compatibility policy]: https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/
@@ -151,7 +151,7 @@ MFTF tests are kept within its respective Module folder:
 [Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/2.2/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Running Integration Tests]: {{ page.baseurl }}/test/integration/integration_test_execution.html
-[Extension Developer Guide on JavaScript Tests]: {{ page.baseurl }}/test/js/test_js-unit.html
+[Extension Developer Guide on JavaScript Tests]: {{ page.baseurl }}/test/js/jasmine.html
 [`magento dev:tests:run`]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html
 [test-driven development]: https://en.wikipedia.org/wiki/Test-driven_development
 [Running Unit Tests]: {{ page.baseurl }}/test/unit/unit_test_execution.html
