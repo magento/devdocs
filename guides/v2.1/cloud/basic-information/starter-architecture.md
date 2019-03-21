@@ -67,11 +67,10 @@ The Production and Staging environments include the following technologies. You 
 * Nginx web server speaking to PHP-FPM, one instance with multiple workers
 * Redis server
 * Elasticsearch for searching for {{site.data.var.ece}} 2.1 and later
-* Solr search is supported for {{site.data.var.ece}} 2.0
 
 ### Services {#cloud-arch-services}
 
-{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
+{{site.data.var.ece}} currently supports the following services: PHP, MySQL (MariaDB), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.
 
 Each service runs in its own secure container. Containers are managed together in the project. Some services are built-in, such as the following:
 
@@ -93,12 +92,11 @@ You cannot upgrade the operating system and web server software to a new version
 
 * [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 * [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
-* [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
 * [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
 * [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 * [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-In the Staging and Production environments, you use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. See [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
+In the Staging and Production environments, you use Fastly for CDN and caching. When your environment is initially provisioned, we install the latest version of the Fastly CDN extension for Magento. You can upgrade the extension to get the latest bug fixes and improvements. See [Fastly CDN module for Magento 2]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
 
 You use the following files to configure the software versions that you want to use in your implementation.
 

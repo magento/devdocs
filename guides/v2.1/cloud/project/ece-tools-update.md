@@ -4,6 +4,8 @@ title: Update ece-tools version
 redirect_from:
   - guides/v2.1/cloud/composer-packages/ece-tools.html
   - guides/v2.2/cloud/composer-packages/ece-tools.html
+  - guides/v2.1/cloud/composer-packages/ece-tools-update.html
+  - guides/v2.2/cloud/composer-packages/ece-tools-update.html
 functional_areas:
   - Cloud
   - Upgrade

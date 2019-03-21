@@ -55,7 +55,7 @@ Remember that this data provider is still, technically speaking, a completely se
 A good way to keep configuration data out of the javascript is to declare a "provider" in the base component's XML so it will be able to find that data provider component. Under the `<argument name="data" />` node, add a node like this (where `[ComponentName]` is the name of the component):
 
 ```xml
-<item name="config" xsi:type="array">
+<item name="js_config" xsi:type="array">
     <item name="provider" xsi:type="string">[ComponentName].[ComponentName]_data_source</item>
 </item>
 ```

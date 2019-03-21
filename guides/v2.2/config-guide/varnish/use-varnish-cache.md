@@ -24,9 +24,9 @@ After you've installed and configured Varnish to work with Magento, the followin
 
 	For example, anything you do in the Admin in:
 
-	*	**STORES** > **Configuration** > GENERAL > **General**
-	*	**STORES** > **Configuration** > GENERAL > **Currency Setup**
-	*	**STORES** > **Configuration** > GENERAL > **Store Email Addresses**
+	*	**STORES** > **Settings** > **Configuration** > GENERAL > **General**
+	*	**STORES** > **Settings** > **Configuration** > GENERAL > **Currency Setup**
+	*	**STORES** > **Settings** > **Configuration** > GENERAL > **Store Email Addresses**
 
 	When Magento detects such a change, a message displays informing you to refresh the cache. To do this, see [Refresh the Magento cache](#use-varnish-magento-purge).
 
@@ -54,4 +54,4 @@ You can then purge Varnish hosts when you refresh the Magento cache (also referr
 
 To refresh the cache using the Admin, click **SYSTEM** > Tools > **Cache Management**, then click **Flush Magento Cache** at the top of the page. (You can also refresh individual cache types.)
 
-To refresh the cache using the command line, you typically use the [`magento cache:clean <type>`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean)</a> command as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+To refresh the cache using the command line, you typically use the [`magento cache:clean <type>`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean) command as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).

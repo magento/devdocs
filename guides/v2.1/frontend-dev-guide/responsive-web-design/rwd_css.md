@@ -34,7 +34,7 @@ You can change these breakpoints and add new ones in your custom theme. For inst
 
 ## Media queries in Magento default themes {#lib_rwd}
 
-The Blank and Luma theme styles are based on the [Magento UI library]({{ page.baseurl }}/frontend-dev-guide//css-topics/theme-ui-lib.html). The library uses [CSS3 media queries](http://en.wikipedia.org/wiki/Media_queries), an extension of the `@media` rule, to adapt the layout to the screen width.
+The Blank and Luma theme styles are based on the [Magento UI library]. The library uses [CSS3 media queries](http://en.wikipedia.org/wiki/Media_queries), an extension of the `@media` rule, to adapt the layout to the screen width.
 
 The approach implemented in the Magento UI library, uses `@media-common` style group separation and `.media-width()` mixins which can be used in any `.less` file in a theme, as many times as needed, but it is invoked only once, in `lib/web/css/source/lib/_responsive.less`. The resulting `styles-m.css` and `styles-l.css` both have only one call of each media query with all the rules there, instead of multiple calls for the same query.
 

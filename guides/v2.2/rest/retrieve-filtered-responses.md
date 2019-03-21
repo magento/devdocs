@@ -43,7 +43,7 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 
 The following example returns only the customer first name, last name, and the entire `billing_address` object from a specified order. Do not include brackets `[]` after an object name when you want to return all of the object's contents.
 
-`GET http:/<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
+`GET http://<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
 
 ```json
 {
@@ -75,7 +75,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
 
 `GET http://<host>/rest/default/V1/shipment/2?fields=items[name,qty,sku]`
 
-{% highlight json %}
+```json
 "items": [
    {
      "name": "Minerva LumaTech&trade; V-Tee-XS-Blue",
@@ -83,7 +83,7 @@ The following example returns only the `name`, `qty`, and `sku` fields defined i
      "sku": "WS08-XS-Blue",
    }
  ]
- {% endhighlight %}
+```
 
 ## Nested objects
 
@@ -95,7 +95,7 @@ This example returns only the following:
 
 `GET http://<host>/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]`
 
-{% highlight json %}
+```json
 {
   "sku": "MT12"
   "name": "Cassius Sparring Tank"
@@ -110,7 +110,7 @@ This example returns only the following:
       }
   }
 }
-{% endhighlight %}
+```
 
 ## POST operation
 

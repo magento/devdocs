@@ -5,6 +5,8 @@ functional_areas:
   - Cloud
   - Setup
   - Configuration
+redirect_from:
+   - /guides/v2.1/cloud/release-notes/CloudReleaseNotes.html
 ---
 
 
@@ -28,6 +30,67 @@ The release notes include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
+## v2002.0.16
+
+{:.bs-callout .bs-callout-info}
+The `{{site.data.var.ct}}` version 2002.0.16 is required for Magento 2.1.17 and later.
+
+-   {:.new}**Docker updates**—
+
+    -   <!-- MAGECLOUD-3025 -->Now, the default service configuration generated in the Docker environment is the same as the default configuration in the Cloud template.
+
+    -   <!-- MAGECLOUD-2907 -->You can send mail from your Docker environment using the [`sendmail` service]({{page.baseurl}}/cloud/docker/docker-development.html#sendmail-service).
+
+    -   <!-- MAGECLOUD-2891 -->Added the ability to [configure Xdebug]({{page.baseurl}}/cloud/docker/docker-development-debug.html) to debug in the Cloud Docker environment.
+
+    -   <!-- MAGECLOUD-2883 -->Fixed an issue with web service permissions when generating the `docker-compose.yml` file.
+
+-   {:.new}<!-- MAGECLOUD-2392 -->**Upgrade improvement**—Added validation to confirm that the `autoload` property in the `composer.json` file contains required configuration changes before upgrading to {{ site.data.var.ee }} v2.3. See [Upgrade Magento version]({{site.baseurl }}/guides/v2.3/cloud/project/project-upgrade.html).
+
+-   {:.new}<!-- MAGECLOUD-3104 -->The compression process in deploying static content now includes all assets—natively generated or customized—and occurs during the build phase at the beginning of the [`build:transfer` section]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html#hooks). Previously, the compression process occurred before applying custom minification and bundling of static assets.
+
+-   {:.fix}<!-- MAGECLOUD-3035 -->Fixed a database connection error that occurred during deployment immediately after configuring an additional database and service relationship. Also, this fix addresses an issue that occurred during the configuration process of MBI for Starter. For Starter, this upgrade is a "must have" for using MBI.
+
+-   {:.fix}<!-- MAGECLOUD-3003 -->Fixed a validation issue with the database configuration that caused the deploy process to fail.
+
+-   {:.fix}<!-- MAGECLOUD-2956 -->Updated the constraint with the appropriate version of the `symfony/yaml` package to use with [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants). Constant parsing does not work when using a `symfony/yaml` package version earlier than 3.2.
+
+-   {:.new}<!--MAGECLOUD-2903-->**Environment configuration checks**—Added validation to check the PHP version and warn users if they are not using the latest recommended version.
+
+-   {:.fix}<!-- MAGECLOUD-2851 -->Fixed an issue with processing malformed JSON variables. Now, if a JSON variable causes a syntax error, a warning appears in the `cloud.log` file and deployment continues using the default variable.
+
+-   {:.fix}<!-- MAGECLOUD-2747 -->Fixed a connection error that occurred during deployment immediately after disabling the Redis service.
+
+-   {:.new}<!--MAGECLOUD-2925-->**Logging changes**—Updated the [log level]({{ page.baseurl }}/cloud/env/log-handlers.html#log-levels)  from `Info` to `Notice` for the following build and deploy process events:
+
+    -   Begin and end of the process for reconciling installed modules in `composer.json` with shared configuration settings in the `app/etc/config.php` file
+
+    -   Begin and end of the configuration validation process
+
+    -   Begin and end of the `setup:di:compile` process for generating classes
+
+-  {:.new}**New environment variables**—
+
+    -   <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection. 
+
+    -   <!-- MAGECLOUD-3048 -->**[X_FRAME_CONFIGURATION global variable]({{ page.baseurl }}/cloud/env/variables-global.html#x_frame_configuration)**—Use this variable to change the `X-Frame-Options` header configuration for rendering a {{ site.data.var.ee }} page in a `<frame>`, `<iframe>`, or `<object>`.
+
+-   {:.fix}**Environment variable updates**—Changed the following environment variables:
+
+    -   <!-- MAGECLOUD-2466 -->**[WARM_UP_PAGES]({{ page.baseurl }}/cloud/env/variables-post-deploy.html)**—Added the capability to preload the cache for specified pages on all domains defined for a {{ site.data.var.ee }} store. Previously, if your site was configured with multiple domains, the post-deploy process failed to preload the cache for the specified pages on non-default domains and returned the following error in the post-deploy log: `ERROR: Warming up failed: <uri>`
+
+    -   <!-- MAGECLOUD-2823 -->**SCD_COMPRESSION_LEVEL**—Updated the documentation and the sample `.magento.env.yaml` file with the correct default values for SCD compression level. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_compression_level) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_compression_level) content.
+
+    -   <!--MAGECLOUD-2882-->**SCD_EXCLUDE_THEMES**——This environment variable is deprecated. Use the SCD_MATRIX variable to control theme configuration. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_exclude_themes) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_exclude_themes) content.
+
+    -   <!-- MAGECLOUD-2904 -->**SCD\_MATRIX**—Fixed the validation process to prevent a problem that occurred when the SCD_MATRIX ignored a theme value that contained different character cases. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_matrix) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_matrix) content.
+
+    -   <!-- MAGECLOUD-2573/MAGECLOUD-2848 --> **ADMIN variables**—
+
+        -  Improved security when managing credentials for the Magento Admin user using environment variables. You can no longer use the ADMIN_EMAIL, ADMIN_USERNAME, and ADMIN_PASSWORD environment variables to override admin credentials during upgrades. If you cannot access the Admin panel, use the *Forgot password* feature or the Magento CLI `admin:user:create` command to create a new admin user. See [Access your Magento Admin panel]({{ page.baseurl }}/cloud/onboarding/onboarding-tasks.html#admin).
+
+        -  ADMIN_EMAIL is no longer required when upgrading or applying patches.
+
 ## v2002.0.15
 
 -   {:.new}**Docker Updates**—
@@ -48,9 +111,9 @@ The release notes include:
 
     -   <!-- MAGECLOUD-2577 -->Now you have the DB dump capability when using the Cloud Docker [database container]({{page.baseurl}}/cloud/docker/docker-development.html#database-container). Also, you can [share files]({{page.baseurl}}/cloud/docker/docker-development.html#sharing-data-between-host-machine-and-container) between a host machine and a container using the `docker/mnt` directory.
 
--   {:.new}<!-- MAGECLOUD- 2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
+-   {:.new}<!-- MAGECLOUD-2575 -->**Configure with PHP constants**—Added support for [PHP constants]({{page.baseurl}}/cloud/project/magento-env-yaml.html#php-constants) in the `.magento.env.yaml` configuration file.
 
--   {:.new}<!--MAGECLOUD-2879-->**New Environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics).
+-   {:.new}<!--MAGECLOUD-2879-->**New environment variable**—By default, only the Production environment has Google Analytics enabled. You can enable Google Analytics on the Staging and Integration environments using the  [ENABLE_GOOGLE_ANALYTICS environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#enable_google_analytics).
 
 -   {:.fix}<!-- MAGECLOUD-2923 -->Fixed an issue that removed customized cron configurations from the `env.php` file after a redeployment. Now, custom cron configurations safely remain in the `env.php` file.
 
@@ -79,10 +142,6 @@ The release notes include:
     -   <!--MAGECLOUD-2603-->Now maintenance mode is enabled at the start of the deploy phase and disabled at the end. If the deployment fails, the site remains in maintenance mode until the deployment issues are resolved.
 
     -   Reworked the deploy phase validation checks to downgrade the error level for the following deployment issues from `CRITICAL` to `WARNING` so that the deployment completes. Previously, these issues caused the deployment to fail.
-
-       -  ADMIN_EMAIL is not set on upgrade.
-
-       -  ADMIN_EMAIL or ADMIN_USERNAME is associated with another account.
 
        -  Environment configuration contains incorrect values for deploy or cloud variables.
 
@@ -173,7 +232,7 @@ The release notes include:
 ## v2002.0.12
 
 {:.bs-callout .bs-callout-info}
-The`{{site.data.var.ct}}`version 2002.0.12 now supports Magento 2.1.14.
+The `{{site.data.var.ct}}` version 2002.0.12 now supports Magento 2.1.14.
 
 -   {:.new}<!-- MAGECLOUD-2250 -->**Docker Compose for Cloud**—Added a new command—`docker:build`—to generate a [Docker Compose]({{ page.baseurl }}/cloud/docker/docker-config.html) configuration from the Cloud `{{site.data.var.ct}}` repository.
 
@@ -214,7 +273,7 @@ The`{{site.data.var.ct}}`version 2002.0.12 now supports Magento 2.1.14.
 ## v2002.0.11
 
 {:.bs-callout .bs-callout-info}
-The`{{site.data.var.ct}}`version 2002.0.11 now supports Magento 2.1.13.
+The `{{site.data.var.ct}}` version 2002.0.11 now supports Magento 2.1.13.
 
 -   {:.new}**Configuring read-only connections to non-master nodes**—This release adds the ability to configure a read-only connection to a non-master node to receive read-only traffic (for <!--MAGECLOUD-143 -->[Redis]({{ page.baseurl }}/cloud/env/variables-deploy.html#redis_use_slave_connection) and for <!--MAGECLOUD-143 --> [MariaDB]({{ page.baseurl }}/cloud/env/variables-deploy.html#mysql_use_slave_connection)).
 

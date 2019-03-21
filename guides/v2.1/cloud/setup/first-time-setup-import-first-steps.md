@@ -47,30 +47,37 @@ You must enter all {{site.data.var.ece}} commands on the machine on which your C
 
 You need your {{site.data.var.ece}} database name and credentials so that you can import your {{site.data.var.ee}} data. You can find the name and credentials for your {{site.data.var.ece}} database in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable.
 
-To find {{site.data.var.ece}} database access information:
+#### To find {{site.data.var.ece}} database access information:
 
-1.  Log in to your remote repository using  [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+1.  Log in to your remote repository using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
-        magento-cloud ssh -p <project ID> -e <environment ID>
+    ```bash
+    magento-cloud ssh -p <project-ID> -e <environment-ID>
+    ```
 
 1.  List all database information:
 
-        echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+    ```bash
+    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+    ```
 
-        <pre class="no-copy">database" : [
-              {
-                 "username" : "user",
-                 "query" : {
+    ```terminal
+        database" : [
+            {
+                "username" : "user",
+                "query" : {
                     "is_master" : true
-                 },
-                 "path" : "main",
-                 "port" : 3306,
-                 "host" : "database.internal",
-                 "password" : "",
-                 "scheme" : "mysql",
-                 "ip" : "192.0.2.150"
-              }
-           ]</pre>
+                },
+                "path" : "main",
+                "port" : 3306,
+                "host" : "database.internal",
+                "password" : "",
+                "scheme" : "mysql",
+                "ip" : "192.0.2.150"
+            }
+        ]
+    ```
+    {: .no-copy}
 
 In the previous example, the database name is `main`, the listen port is `3306`, the hostname is `database.internal`, the root username is `user`, and the user has no password.
 

@@ -6,8 +6,6 @@ landing-page: GraphQL Developer's Guide
 
 [GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
 
-The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build]({{ site.mage2300url }}app/code/Magento) to explore and try it out for yourself.
-
 ## The current state of Magento GraphQL
 
 Most of the development team's work thus far has been devoted to building the GraphQL infrastructure and enhancing the ability to query products. The complexity of the Catalog module made it the ideal candidate for early development. It supports all product types as well as extension, custom, and EAV attributes.
@@ -47,7 +45,7 @@ In the near future, we'll roll out the following features:
 
 ## How to access GraphQL
 
-GraphiQL is an in-browser tool for writing, validating, and testing GraphQL queries. You can download an extension from your browser's app store. The following image shows a sample query, its response, and the GraphQL browser
+GraphiQL is an in-browser tool for writing, validating, and testing GraphQL queries. You can download an extension from your browser's app store. For the Google Chrome browser, the [ChromeiQL extension](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij?hl=en) will do the job. The following image shows a sample query, its response, and the GraphQL browser
 
 ![GraphiQL browser]({{ page.baseurl }}/graphql/images/graphql-browser.png)
 

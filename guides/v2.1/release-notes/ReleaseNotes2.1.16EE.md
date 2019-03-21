@@ -114,7 +114,7 @@ In addition to security enhancements, this release contains the following functi
 
 ### Reports
 
-<!--- ENGCOM-2764 -->* The Year-to-date dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17496](https://github.com/magento/magento2/pull/17496)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!--- ENGCOM-2764 -->* The Year-to-date dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17496](https://github.com/magento/magento2/pull/17496)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 ### Review
@@ -192,17 +192,17 @@ The following table highlights contributions made by Partners. This table lists 
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
 
 
 ## Installation
 
-See [How to get the Magento software](http://devdocs.magento.com/guides/v2.1/install-gde/bk-install-guide.html) for comprehensive information about Magento 2.1.x installation and setup. 
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.1/install-gde/bk-install-guide.html) for comprehensive information about Magento 2.1.x installation and setup. 
 
 
 ## Migration toolkits 
 
-The Magento [Data Migration Tool](http://devdocs.magento.com/guides/v2.1/migration/bk-migration-guide.html) helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install Data Migration Tool](http://devdocs.magento.com/guides/v2.1/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
+The Magento [Data Migration Tool]({{ site.baseurl }}/guides/v2.1/migration/bk-migration-guide.html) helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  [Install Data Migration Tool]({{ site.baseurl }}/guides/v2.1/migration/migration-tool-install.html). Consider exploring or contributing to the [Magento Data Migration repository](https://github.com/magento/data-migration-tool).
 
 An updated version of this toolkit is typically available several days after the patch release.
 

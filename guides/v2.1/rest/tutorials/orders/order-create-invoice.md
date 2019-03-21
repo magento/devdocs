@@ -37,12 +37,12 @@ where `3` is the `orderid`
 `Authorization` `Bearer <administrator token>`
 
 **Payload**
-{% highlight json %}
+```json
 {
   "capture": true,
   "notify": true
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -71,8 +71,8 @@ Not applicable
 You will use the `order_item_id` values to create a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} in the next step.
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
     "base_currency_code": "USD",
     "base_discount_amount": 0,
@@ -288,8 +288,8 @@ You will use the `order_item_id` values to create a {% glossarytooltip c8f00e9d-
     ],
     "comments": []
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 ### Verify this step {#verify-step}
