@@ -1,12 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Set up Elasticsearch service
-menu_title: Set up Elasticsearch service
-menu_order: 70
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: services
 functional_areas:
   - Cloud
   - Setup
@@ -23,7 +17,7 @@ functional_areas:
 We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more.
 
 {:.bs-callout .bs-callout-info}
-If you're upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
+If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
 
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
@@ -82,7 +76,7 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
 {:.bs-callout .bs-callout-info}
-ElasticSuite is a third party plugin and is not officially supported by Magento. If you use [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you must add the `analysis-icu` and `analysis-phonetic` plugins to the `services.yaml` file.
+Magento does not support the ElasticSuite third-party plugin.
 
 For documentation on plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
 
