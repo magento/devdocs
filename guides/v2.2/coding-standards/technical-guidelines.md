@@ -101,7 +101,7 @@ class Config
 ---
 
 2.2.2. Factories SHOULD be used for object instantiation instead of `new` keyword. An object SHOULD be replaceable for testing or extensibility purposes.
-Exception: DTOs. There is no behavior in DTOs, so there is no reason for its replaceability.
+Exception: [DTOs](https://en.wikipedia.org/wiki/Data_transfer_object). There is no behavior in DTOs, so there is no reason for its replaceability.
 Tests can create real DTOs for stubs. 
 Data interfaces,  Exceptions and `Zend_Db_Expr` are examples of DTOs.
 
