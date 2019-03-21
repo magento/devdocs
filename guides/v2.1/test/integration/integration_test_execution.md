@@ -70,8 +70,7 @@ Replace the example database and username, and the example password, with someth
 
 ### Configure the framework to use the test database
 
-The Magento 2 integration test framework comes with a configuration file template, 
-`mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist`.
+The Magento 2 integration test framework comes with a configuration file template, `mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist`.
 
 Copy this file to
 `mage2ce/dev/tests/integration/etc/install-config-mysql.php`
@@ -196,6 +195,7 @@ By default, if no additional arguments are specified, the test configuration exe
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit
 ```
@@ -220,6 +220,7 @@ For example, it is common to only execute a single test suite from the `phpunit.
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit --testsuite "Memory Usage Tests"
 ```
@@ -231,6 +232,7 @@ To execute only the tests within a specific directory (for example an extension)
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration
 ```
@@ -243,6 +245,7 @@ Pass the path to the file containing the test class as an argument to `phpunit`:
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 ```
@@ -254,6 +257,7 @@ Running only a single test within a test class can be done by specifying the tes
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit --filter 'testOnlyThisOneIsExecuted' ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 ```
@@ -275,14 +279,15 @@ The {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossaryt
 This problem most commonly crops up during development with Vagrant or Docker, where the Magento DB is running on a virtual machine.
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.
 
-The error usually looks something like :
+The error usually looks something like:
+
 ```bash
 phpunit
 ```
 
 > Expected log
 
-```
+```bash
 exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129
 ```
 
@@ -306,7 +311,6 @@ Then configure the integration test configuration file to be used.
 The only difference in the run configuration is that the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the directory `dev/tests/integration` has to be selected.
 
 ![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){: width="600px"}
-
 
 <!-- LINK DEFINITIONS -->
 

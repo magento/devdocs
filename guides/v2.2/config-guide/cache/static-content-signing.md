@@ -32,7 +32,7 @@ This changes the URL of the static files and forces the browser to load the new 
 
 Magento enables this feature by default, and we recommend keeping this feature enabled to prevent issues related to browsers serving up old static resources.
 
-You can find the configuration for this feature in [**Stores > System > Configuration > Advanced > Developer > Static Files Settings**](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html).
+You can find the configuration for this feature in [**Stores** > Settings > Configuration > **Advanced** > **Developer** > **Static Files Settings**](http://docs.magento.com/m2/ee/user_guide/system/static-file-signature.html).
 
 ![Static Files Settings]({{ site.baseurl }}/common/images/static-files-settings.png)
 

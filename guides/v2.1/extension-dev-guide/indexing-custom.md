@@ -131,7 +131,7 @@ Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sa
 
 These settings start `<VendorName>\Merchandizing\Model\Indexer\Popular::execute` method every time an order is changed.
 
-After this, please refresh the cache and go to **System > [Index Management](https://docs.magento.com/m2/ce/user_guide/system/index-management.html)** through the Admin to verify the custom indexer result.
+After this, please refresh the cache and go to **System** > Tools > [**Index Management**](https://docs.magento.com/m2/ce/user_guide/system/index-management.html) through the Admin to verify the custom indexer result.
 
 ![Custom indexer modes]({{ site.baseurl }}/common/images/custom-indexer-magento2.jpg){:width="600px"}
 
