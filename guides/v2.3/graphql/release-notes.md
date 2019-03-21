@@ -7,7 +7,7 @@ title: Release Notes
 
 GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento-research/pwa-studio) (PWA), and mobile apps for Magento.
 
-The **[Magento GraphQL](https://github.com/magento/graphql-ce) project** is a Magento Community Engineering special project open to contributors. 
+The **[Magento GraphQL](https://github.com/magento/graphql-ce) project** is a Magento Community Engineering special project open to contributors.
 To take part and contribute, see the [Magento GraphQL](https://github.com/magento/graphql-ce) repository and [wiki](https://github.com/magento/graphql-ce/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C8076E0KS) channel (or [self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
 These release notes include:
@@ -17,18 +17,27 @@ These release notes include:
 
 ## {{site.data.var.ce}} 2.3.1
 
-- {:.new} **Added queries and mutations.** {{site.data.var.ce}} Contributions include:
-    - Mutations in the [Customer endpoint]({{page.baseurl}}/graphql/reference/customer.html) for creating and updating customers, managing customer addresses, managing customer tokens, and changing customer passwords.
-    - Queries to return information about the countries and currency assigned to the store in the [Directory endpoint]({{ page.baseurl}}/graphql/reference/directory.html)
-    - Mutations in the [DownloadableProduct]({{ page.baseurl}}/graphql/reference/downloadable-product.html) endpoint that allows you to add downloadable products to a cart.
-    - A query in the [Sales endpoint]({{page.baseurl}}/graphql/reference/sales.html) that returns a list of customer orders.
-    - The [Wishlist endpoint]({{page.baseurl}}/graphql/reference/wishlist.html), which includes a query that returns a list of items in the customer's wish list.
-    - Queries in the [Store endpoint]({{page.baseurl}}/graphql/reference/store-config.html) for returning information about a store's theme and CMS configuration.
-   
-- {:.new} **Added variable support in queries and mutations.** See [Queries]({{page.baseurl}}/graphql/queries.html) and [Mutations]({{page.baseurl}}/graphql/mutations.html) for examples that work with the Luma sample data. 
+- {:.new} **Added mutations and queries that allow customers to manage My Account information.** Specific capabilities include:
+  - Create [customer]({{page.baseurl}}/graphql/reference/customer.html) account
+  - Change account information
+  - Manage billing and shipping addresses
+  - Change customer password
+  - Manage newsletter subscriptions
+  - Create [wish lists]({{page.baseurl}}/graphql/reference/wishlist.html)
+  - View [order history]({{page.baseurl}}/graphql/reference/sales.html)
+  - View [downloadable products]({{page.baseurl}}/graphql/reference/downloadable-product.html)
 
-- {:.new} **Introspection is now allowed in production mode.**. Previously, introspection was only available in developer mode.
+- {:.new} **Added functionality to support complex Catalog features.** This version supports:
+  - Specifying absolute image paths for [products]({{page.baseurl}}/graphql/reference/products.html) and including extended image information
+  - Rendering fields that use WYSIWYG text
+  - URL rewrites for products​ are now supported
 
-- {:.new} **The system now calculates the complexity of queries and mutations.** Magento returns an error message if a query or mutation is deemed too complex. This feature helps reduce vulnerabilities that may occur from issuing highly complex queries.
-
-- {:.new} **GraphQL browsers now display fields and objects alphabetically.**
+- {:.new} **GraphQL framework enhancements**, including:
+  - Mutations that retrieve and revoke  [customer tokens]({{page.baseurl}}/graphql/reference/customer.html).
+  - Page Builder and WYSIWYG fields support complex structure for PWA scenarios.
+  - Magento now calculates the complexity of queries and mutations and returns an error message if a query or mutation is deemed too complex.
+  - Variable support in [queries]({{page.baseurl}}/graphql/queries.html) and [mutations]({{page.baseurl}}/graphql/mutations.html).
+  - Queries in the [Store endpoint]({{page.baseurl}}/graphql/reference/store-config.html) return information about a store's theme and CMS configuration.
+  - Introspection queries are allowed by default in production mode.
+  - GraphQL tests are integrated with Travis CI​
+  - GraphQL browsers now display fields and objects alphabetically.
