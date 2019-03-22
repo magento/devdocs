@@ -25,7 +25,7 @@ See the [Reindex in parallel mode section]({{ page.baseurl }}/config-guide/cli/c
 
 ## Caches
 
-When you launch your store in production, activate all the caches from the **System > Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.
+When you launch your store in production, activate all the caches from the **System** > Tools > **Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.
 
 ## Asynchronous email notifications
 

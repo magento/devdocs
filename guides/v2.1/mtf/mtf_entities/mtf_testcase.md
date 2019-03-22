@@ -70,10 +70,11 @@ In the following example, the test includes preconditions and test steps. Precon
  *
  * @param CatalogProductSimple $initialProduct
  * @param CatalogProductSimple $product
+ * @param Store|null $store
  * @param string $configData
  * @return array
  */
-public function test(CatalogProductSimple $initialProduct, CatalogProductSimple $product, $configData = '')
+public function test(CatalogProductSimple $initialProduct, CatalogProductSimple $product, Store $store = null, $configData = '')
 {
     $this->configData = $configData;
     // Preconditions
@@ -85,16 +86,23 @@ public function test(CatalogProductSimple $initialProduct, CatalogProductSimple 
         ? $product->getDataFieldConfig('category_ids')['source']->getCategories()[0]
         : $initialCategory;
     $this->objectManager->create(
-        'Magento\Config\Test\TestStep\SetupConfigurationStep',
+        \Magento\Config\Test\TestStep\SetupConfigurationStep::class,
         ['configData' => $configData]
     )->run();
     // Steps
     $filter = ['sku' => $initialProduct->getSku()];
     $this->productGrid->open();
     $this->productGrid->getProductGrid()->searchAndOpen($filter);
+    if ($store) {
+        $this->editProductPage->getFormPageActions()->changeStoreViewScope($store);
+    }
     $this->editProductPage->getProductForm()->fill($product);
     $this->editProductPage->getFormPageActions()->save();
-    return ['category' => $category];
+    return [
+        'category' => $category,
+        'stores' => isset($store) ? [$store] : [],
+        'productNames' => isset($productName) ? $productName : [],
+    ];
 }
 
 ```
