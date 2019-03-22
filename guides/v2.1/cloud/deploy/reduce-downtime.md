@@ -9,7 +9,9 @@ functional_areas:
 
 {{site.data.var.ece}} runs Magento in [_maintenance_ mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#maintenance-mode) during the deploy phase, which takes your site offline until the deployment is complete. The length of time your Production site is in maintenance mode depends on the size of the site, the amount of changes applied during the deployment, and the configuration for static content deployment.
 
-Use the following steps to help reduce the amount of downtime your store experiences during an update to Production:
+During the deployment process, all connections queue for up to 5 minutes preserving any active sessions and pending actions, such as adding to cart or checkout. After deployment, the queue is released and connections continue without interruption. To use this _connection hold_ to your advantage and reduce your downtime to zero, you must configure your project to employ the most efficient deploy strategy possible: SCD on build with HTML minification.
+
+Use the following steps to help reduce the amount of time it takes your store to deploy an update to Production:
 
 1.  [Upgrade to the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html) or [update the `{{site.data.var.ct}}` version]({{page.baseurl}}/cloud/project/ece-tools-update.html)  
     Your {{site.data.var.ece}} project must have the latest `{{site.data.var.ct}}` package so that you have the tools available to configure an optimal deployment. If you have the latest `{{site.data.var.ct}}`, continue to the next step.
