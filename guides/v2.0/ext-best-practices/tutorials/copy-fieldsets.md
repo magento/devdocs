@@ -58,7 +58,7 @@ For copying the fieldset, we'll observe the `sales_model_service_quote_submit_be
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="sales_model_service_quote_submit_before">
-        <observer name="[modulename]_sales_model_service_quote_submit_before" instance="Vendor\Module\Observer\SaveOrderBeforeSalesModelQuoteObserver" />
+        <observer name="[vendor]_[module]_sales_model_service_quote_submit_before" instance="Vendor\Module\Observer\SaveOrderBeforeSalesModelQuoteObserver" />
     </event>
 </config>
 {% endhighlight %}
