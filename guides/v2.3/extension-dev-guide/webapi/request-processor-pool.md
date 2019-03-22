@@ -7,11 +7,11 @@ functional_areas:
   - Configuration
 ---
 
-The Request Processors Pool routes WebApi requests. It is located in the Magento_WebApi module: `Magento\Webapi\Controller\Rest\RequestProcessorPool`
+The request processors pool routes WebApi requests. It is located in the Magento_WebApi module: `Magento\Webapi\Controller\Rest\RequestProcessorPool`
 
 Magento defines the following processors: 
 
-Processor name | Class | URL Pattern | Description
+Processor name | Class | URL pattern | Description
 --- | --- | --- | ---
 `sync` | `Magento\Webapi\Controller\Rest\SynchronousRequestProcessor` | `/^\\/V\\d+/`| Executes the corresponding service contract.
 `syncSchema` | `Magento\Webapi\Controller\Rest\SchemaRequestProcessor` | `schema` | Delivers the schema needed for generating Swagger documentation.
@@ -21,7 +21,7 @@ Processor name | Class | URL Pattern | Description
 `asyncBulkSchema` | `Magento\WebapiAsync\Controller\Rest\VirtualType\AsynchronousBulkSchemaRequestProcessor` | `async/bulk/schema` | Currently not used. Reserved for future use.
 
 {: .bs-callout .bs-callout-info }
-`async` and `asyncBulk` are sharing the same processor but have different url patterns.
+`async` and `asyncBulk` share the same processor but have different URL patterns.
 
 ## Create a new processor
 
@@ -33,7 +33,7 @@ To create a custom processor, you must perform the following tasks:
 * Create the processor logic in the `process` method.
 
 
-### Define the custom processors
+### Define the custom processor
 
 Processors must be defined in a module's `webapi_rest/di.xml` file. The following example shows the definition of the default `sync` processor:
 
@@ -79,7 +79,7 @@ interface RequestProcessorInterface
     public function process(\Magento\Framework\Webapi\Rest\Request $request);
 
     /**
-     * Method should return true for all the request current processor can process.
+     * Method should return true for all the requests the current processor can process.
      *
      * Invoked in the loop for all registered request processors. The first one wins.
      *
