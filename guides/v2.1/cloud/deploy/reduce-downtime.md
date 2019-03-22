@@ -20,7 +20,9 @@ Use the following steps to help reduce the amount of downtime your store experie
     You can test your project configuration by [running the ideal state wizard]({{page.baseurl}}/cloud/deploy/smart-wizards.html#verifying-an-ideal-configuration).
 
 1.  [Configure the post-deploy hook]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks)  
-    You must configure the post-deploy hook to clean and warm the cache. Customize the list of pages used to preload the cache with the [WARM_UP_PAGES environment variable]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages).
+    You must configure the post-deploy hook to clean and warm the cache. By default, cache clean occurs during the deploy phase when the site is down. Moving the cache clean to the post-deploy phase means that your cache remains live until the deploy phase is complete, and then you can safely clean the cache.
+
+    Customize the list of pages used to preload the cache with the [WARM_UP_PAGES environment variable]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages).
 
 1.  [Reduce theme files]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_matrix)  
     You can reduce the amount of unnecessary theme files by configuring the SCD\_MATRIX environment variable.
