@@ -7,9 +7,9 @@ functional_areas:
   - SCD
 ---
 
-{{site.data.var.ece}} runs Magento in [_maintenance_ mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#maintenance-mode) during the deploy phase, which takes your site offline until the deployment is complete. The length of time your Production site is in maintenance mode depends on the size of the site, the amount of changes applied during the deployment, and the configuration for static content deployment.
+{{site.data.var.ece}} runs Magento in [_maintenance_ mode]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#maintenance-mode) during the deploy phase, which takes your site offline until the deployment is complete. The length of time your Production site is in maintenance mode depends on the size of the site, the number of changes applied during the deployment, and the configuration for static content deployment.
 
-During the deployment process, all connections queue for up to 5 minutes preserving any active sessions and pending actions, such as adding to cart or checkout. After deployment, the queue is released and connections continue without interruption. To use this _connection hold_ to your advantage and reduce your downtime to zero, you must configure your project to employ the most efficient deploy strategy possible: SCD on build with HTML minification.
+During the deployment process, all connections queue for up to 5 minutes preserving any active sessions and pending actions, such as adding to cart or checkout. After deployment, the queue is released and connections continue without interruption. To use this _connection hold_ to your advantage and reduce downtime to zero, you must configure your project to use the most efficient deploy strategy—SCD on build with HTML minification.
 
 Use the following steps to help reduce the amount of time it takes your store to deploy an update to Production:
 
@@ -30,5 +30,5 @@ Use the following steps to help reduce the amount of time it takes your store to
     You can reduce the amount of unnecessary theme files by configuring the SCD\_MATRIX environment variable.
 
 1.  [Speed up static content deployment]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_threads)  
-    You can speed up the deployment process by increasing the threads with the SCD\_THREADS environment variable.
+    You can speed up the deployment process by updating the  SCD\_THREADS environment variable to increase the number of threads for static content deployment.
 
