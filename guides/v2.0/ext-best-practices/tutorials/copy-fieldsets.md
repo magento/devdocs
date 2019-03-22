@@ -17,7 +17,7 @@ In this tutorial, you will learn to copy custom data from a {% glossarytooltip 7
 
 The following code defines a simple [extension attribute][1] named `demo` for the Cart and Order objects.
 
-**extension_attributes.xml**
+**etc/extension_attributes.xml**
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Api/etc/extension_attributes.xsd">
@@ -36,7 +36,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
 The following code adds the `demo` field to the `sales_convert_quote` fieldset with the `to_order` aspect.
 The code snippet in the next step uses the name of the fieldset and aspect to specify which fields to copy.
 
-**fieldset.xml**
+**etc/fieldset.xml**
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataObject/etc/fieldset.xsd">
@@ -53,45 +53,61 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 ## Step 3: Copy the fieldset
 {:#step-3}
 
+For copying the fieldset, we'll observe the `sales_model_service_quote_submit_before` event by using the following code in our `events.xml` file:
+
+{% highlight xml %}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="sales_model_service_quote_submit_before">
+        <observer name="[modulename]_sales_model_service_quote_submit_before" instance="Vendor\Module\Observer\SaveOrderBeforeSalesModelQuoteObserver" />
+    </event>
+</config>
+{% endhighlight %}
+
 The following code snippets highlight the code pieces needed to copy a fieldset using the `\Magento\Framework\DataObject\Copy` class.
 
-{% highlight php startinline %}
-...
+```php
+<?php
+namespace Vendor\Module\Observer;
 
-/**
- * @var \Magento\Framework\DataObject\Copy
- */
-protected $objectCopyService;
+use Magento\Framework\Event\ObserverInterface;
 
-...
-
-/**
- * @param \Magento\Framework\DataObject\Copy $objectCopyService
-  ...
- */
-public function __construct(
-  \Magento\Framework\DataObject\Copy $objectCopyService,
-  ...
-) {
-    $this->objectCopyService = $objectCopyService;
-    ...
-  }
-
-...
-
-/**
- * @param $quote \Magento\Quote\Api\Data\CartInterface
- * @param $order \Magento\Sales\Api\Data\Order
- */
-private function copyQuoteToOrder($quote, $order)
+class SaveOrderBeforeSalesModelQuoteObserver implements ObserverInterface
 {
-  ...
-  $copy->copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);
-  ...
+...
+    /**
+     * @var \Magento\Framework\DataObject\Copy
+     */
+    protected $objectCopyService;
+
+    ...
+
+    /**
+     * @param \Magento\Framework\DataObject\Copy $objectCopyService
+      ...
+     */
+    public function __construct(
+      \Magento\Framework\DataObject\Copy $objectCopyService,
+      ...
+    ) {
+        $this->objectCopyService = $objectCopyService;
+        ...
+    }
+
+    /**
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    private function execute(\Magento\Framework\Event\Observer $observer)
+    {
+      /* @var Magento\Sales\Model\Order $order */
+      $order = $observer->getEvent()->getData('order');
+      /* @var Magento\Quote\Model\Quote $quote */
+      $quote = $observer->getEvent()->getData('quote');
+      $this->objectCopyService->copyFieldsetToTarget('sales_convert_quote', 'to_order', $quote, $order);
+      ...
+    }
 }
 
-...
-{% endhighlight %}
+```
 
 
 In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].
