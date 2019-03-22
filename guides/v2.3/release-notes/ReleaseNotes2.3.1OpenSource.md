@@ -1528,15 +1528,13 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
 
-
+{% include release-notes/engcomm-2-3-1-partner.md %}
 
 ### Individual contributor contributions
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
 {% include release-notes/engcomm-2-3-1-issues.md %}
-
-
 
 ### System requirements
 

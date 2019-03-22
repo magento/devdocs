@@ -1008,7 +1008,7 @@ The following table identifies contributions from our community members. This ta
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
 
-
+{% include release-notes/engcomm-2-2-8-partner.md %}
 
 ### System requirements
 Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html).
