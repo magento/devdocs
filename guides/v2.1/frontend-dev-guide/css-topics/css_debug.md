@@ -65,7 +65,7 @@ Grunt task | Action
 ---------- | ------- 
 grunt clean | Removes the theme related static files in the `pub/static` and `var` directories.
 grunt exec | Republishes symlinks to the source files to the `pub/static/frontend/` directory. Use `grunt exec:<theme>` to republish symlinks for a specific theme.
-grunt less | Compiles `.css` files using the symlinks published in the `pub/static/frontend/` directory.
+grunt less | Compiles CSS files using the symlinks published in the `pub/static/frontend/` directory. Use `grunt less:<theme>` to use the symlinks published for a specific theme.
 grunt watch | Tracks the changes in the source files, recompiles `.css` files, and reloads the page in the browser.
 grunt exec:mytheme | Republishes symlinks only for the specified theme.
 grunt less:mytheme | Compiles .css files using the symlinks published only for the specified theme..
