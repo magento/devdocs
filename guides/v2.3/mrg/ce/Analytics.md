@@ -32,7 +32,7 @@ The subscription to the MBI service is enabled during the installation process o
 
 ## Analytics Settings
 
-Configuration settings for the Analytics module can be modified in the Admin Panel on the Stores > Configuration page under the General > Advanced Reporting tab.
+Configuration settings for the Analytics module can be modified in the Admin Panel on the Stores > Settings > Configuration page under the General > Advanced Reporting tab.
 
 The following options can be adjusted:
 * Advanced Reporting Service (Enabled/Disabled)
