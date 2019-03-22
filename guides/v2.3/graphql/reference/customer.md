@@ -5,7 +5,7 @@ title: Customer endpoint
 
 The `Customer` endpoint returns information about a customer account.
 
-Currently, GraphQL relies on [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html). To successfully return information about a customer, you must be logged in as a customer in the same browser you are using to make GraphQL calls. The GraphQL call returns information about this customer.
+Currently, GraphQL relies on [token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html). To successfully return information about a customer, you must set the customer token in the [request headers]({{ page.baseurl }}/graphql/send-request.html) to make GraphQL calls. The GraphQL call returns information about this customer.
 
 ## Query structure
 
