@@ -55,6 +55,7 @@ Generating SCD on demand is optimal for a development workflow in the Integratio
 
 When using the SCD on-demand strategy, it helps to preload the cache with pages you expect to request, such as the home page. Add your list of expected pages in the [WARM_UP_PAGES]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) environment variable in the post-deploy stage of the `.magento.env.yaml` file.
 
+{: .bs-callout .bs-callout-warning}
 Do not use the SCD on-demand strategy in the Production environment.
 
 ### Skipping SCD
