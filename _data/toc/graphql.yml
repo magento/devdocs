@@ -88,3 +88,6 @@ pages:
 
             - label: Wishlist endpoint
               url: /graphql/reference/wishlist.html
+              
+    - label: Release Notes
+      url: /graphql/release-notes.html
