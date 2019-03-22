@@ -18,7 +18,7 @@
     <tr class="extension-version">
       <td>{{ extension.name }} {{ extensionVersion.name }}</td>
       {% for version in include.data.versions %}
-      <td><span class="pill {{ extensionVersion.support[version] | replace: ' ', '-' }}">{{ extensionVersion.support[version] | capitalize }}</span></td>
+      <td><span class="status-light {{ extensionVersion.support[version] | replace: ' ', '-' }}">{{ extensionVersion.support[version] | capitalize }}</span></td>
       {% endfor %}
     </tr>
     {% endfor %}
@@ -31,28 +31,13 @@
   table-layout: auto;
 }
 
-.compatibility-table .pill {
-  display: block;
-  max-width: 140px;
-  padding: 5px;
-  background: #008330;
-  color: #fff;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 13px;
-  line-height: 1.3;
-}
-.compatibility-table .release-candidate {
-  background: #BF732D;
-}
-.compatibility-table .not-supported {
-  background: #C9252D;
-}
-
 .compatibility-table .magento-version th { 
   padding: 5px 15px;
+  background: none;
 }
-
+.extension-version {
+  transition: all .2s;
+}
 .extension-version:hover {
   background: rgba(20,115,230,10%);
 }
@@ -60,4 +45,36 @@
 .compatibility-table .extension-name th { 
   padding: 5px 15px;
 }
+
+.status-light {
+  height: 32px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.status-light::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 12px;
+}
+
+.status-light.stable::before {
+  background: rgb(45, 157, 120);
+}
+
+.status-light.release-candidate::before {
+  background: rgb(230, 134, 25);
+}
+
+.status-light.not-supported {
+  font-style: italic;
+}
+
+.status-light.not-supported::before {
+  background: rgb(179, 179, 179);
+}
+
 </style>
