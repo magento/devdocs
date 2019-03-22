@@ -15,7 +15,7 @@ The following topics can help you to better understand how to optimize the deplo
     There are three phases in the Cloud deployment process, and you can use the strengths and weaknesses of each phase to your advantage.
 
 -  [Reduce downtime]({{page.baseurl}}/cloud/deploy/reduce-downtime.html)  
-    Follow simple steps to reduce the amount of downtime your store experiences during an update.
+    Understand what happens during deployment and follow simple steps to reduce the amount of downtime your store experiences during an update to the Production environment.
 
 -  [Static content deployment]({{page.baseurl}}/cloud/deploy/static-content-deployment.html)  
     The best way to optimize your Cloud deployment is to control how and when to generate static content.
