@@ -1,6 +1,7 @@
 ---
 group: release-notes
 title: Magento Open Source third-party licenses
+redirect_from: magento-third-party.html
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_3/open-source/composer_lock.json' file
