@@ -21,4 +21,4 @@ The following topics can help you to better understand how to optimize the deplo
     The best way to optimize your Cloud deployment is to control how and when to generate static content.
 
 -  [Smart wizards]({{page.baseurl}}/cloud/deploy/smart-wizards.html)  
-    The `{{site.data.var.ct}}` package provides the smart wizard commands to quickly evaluate your Cloud configuration.
+    The `{{site.data.var.ct}}` package provides the smart wizard commands to quickly evaluate your project configuration.
