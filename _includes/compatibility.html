@@ -1,4 +1,8 @@
 {% assign versionsNumber = include.data.versions.size %}
+{% assign extensions = include.data.extension %}
+{% if include.extension %}
+{% assign extensions = include.data.extension | where: "name", include.extension %}
+{% endif %}
 
 <table class="compatibility-table">
   <thead>
@@ -9,7 +13,7 @@
     {% endfor %}
     </tr>
   </thead>
-  {% for extension in include.data.extension %}
+  {% for extension in extensions %}
   <tbody>
     <tr class="extension-name">
       <th colspan="{{ versionsNumber | plus: 1 }}">{{ extension.name }}</th>
@@ -25,6 +29,10 @@
   </tbody>
   {% endfor %}
 </table>
+
+**Stable**{: .status-light.stable } – version that has been tested by Magento as part of a Commerce release.
+
+**Release&nbsp;candidate**{: .status-light.release-candidate } – version that has _not_ been tested by Magento as part of a Commerce release.
 
 <style>
 .compatibility-table {

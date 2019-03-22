@@ -46,10 +46,6 @@ The following table shows the release status of a Magento extension version rela
 
 {% include compatibility.html data=site.data.compatibility %}
 
-**Stable**{: .status-light.stable } – version that has been tested by Magento as part of a Commerce release.
-
-**Release&nbsp;candidate**{: .status-light.release-candidate } – version that has _not_ been tested by Magento as part of a Commerce release.
-
 <!-- Link definitions -->
 
 [Versioning]: https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/
