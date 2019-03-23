@@ -90,3 +90,126 @@ The following query returns information about downloadable product `240-LV04`, w
    }
 }
 {% endhighlight %}
+
+## Mutation Query
+There are two possible scenarios to purchase a downloadable product.
+
+**Scenario #1**
+Links of downloadable product can be purchased separately (*Links can be purchased separately* option is checked).  
+
+![Links can be purchased separately]({{ page.baseurl }}/graphql/images/graphql-downloadable-product-links.png)
+
+Please use `downloadable_product_links` parameter to specify links of downloadable product which should be purchased. 
+
+If you want to buy a downloadable product with a single particular link then please use this query:  
+{% highlight json %}
+mutation {
+  addDownloadableProductsToCart(
+    input: {
+      cart_id: "{{CART_ID}}"
+      cartItems: {
+        data: {
+          sku: "{{PRODUCT_SKU}}",
+          qty: 1
+        }
+        downloadable_product_links: [
+          {
+          	link_id: {{LINK1_ID}}
+          }          
+        ]
+      }
+    }
+  ) {
+    cart {
+      items {
+        id
+        qty
+        ... on DownloadableCartItem {
+          downloadable_product_links {
+            title
+            price
+          }
+        }
+      }
+    }
+  }
+}
+{% endhighlight %}
+
+Input parameters clarification
+
+Value | Example | Description
+--- | ---
+{{CART_ID}} | cFgGG3t6cKbbXYatWrWYRkdbHxicOHZv | Cart unique id - `quote_id_mask`.`masked_id` 
+{{PRODUCT_SKU}} | 240-LV09 | Product SKU
+{{LINK1_ID}} | 12 | Link entity id - `downloadable_link`.`link_id`
+
+If you want to buy a downloadable product with few links then the query is:
+{% highlight json %}
+mutation {
+  addDownloadableProductsToCart(
+    input: {
+      cart_id: "{{CART_ID}}"
+      cartItems: {
+        data: {
+          sku: "{{PRODUCT_SKU}}",
+          qty: 1
+        }
+        downloadable_product_links: [
+          {
+          	link_id: {{LINK1_ID}}
+          }          
+          {
+          	link_id: {{LINK2_ID}}
+          }          
+        ]
+      }
+    }
+  ) {
+    cart {
+      items {
+        id
+        qty
+        ... on DownloadableCartItem {
+          downloadable_product_links {
+            title
+            price
+          }
+        }
+      }
+    }
+  }
+}
+{% endhighlight %}
+
+**Scenario #2**
+Links of downloadable product can not be purchased separately (*Links can be purchased separately* option is unchecked) and when you add such downloadable product into cart then all assinged to this product links will be purchased automatically.
+
+{% highlight json %}
+mutation {
+  addDownloadableProductsToCart(
+    input: {
+      cart_id: "{{CART_ID}}"
+      cartItems: {
+        data: {
+          sku: "{{PRODUCT_SKU}}",
+          qty: 1
+        }
+      }
+    }
+  ) {
+    cart {
+      items {
+        id
+        qty
+        ... on DownloadableCartItem {
+          downloadable_product_links {
+            title
+            price
+          }
+        }
+      }
+    }
+  }
+}
+{% endhighlight %}
