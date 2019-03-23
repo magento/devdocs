@@ -6,6 +6,10 @@ functional_areas:
   - test
 ---
 
+{: .bs-callout .bs-callout-warning }
+JsTestDriver was removed in Magento 2.2.4.
+It is recommended that [Jasmine][] be used instead.
+
 ## Preface
 
 Magento {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} unit tests use the external [JsTestDriver test library]. The tests are implemented using the external [JsTestDriver API] and have their own [jsunit.requirejsUtil framework].
@@ -268,3 +272,4 @@ Complete these steps to use PhpStorm to run unit tests:
 [`run_js_tests.php` script]: #process-overview
 [PhpStorm]: #phpstorm
 [Start the JsTestDriver server]: #start-jstestdriver-server
+[Jasmine]: {{page.baseurl}}/test/js/jasmine.html

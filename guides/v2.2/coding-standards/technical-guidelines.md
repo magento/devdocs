@@ -496,7 +496,7 @@ class View extends Template
 
 5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a `try` block and the corresponding `finally` block. In the `finally` sections, all resources SHOULD be properly released.
 
-5.17. `LocalizedException` SHOULD only be thrown in the Presentation layer (Controllers, Blocks).
+5.17. Exceptions which need to be displayed to the user MUST be sub-types of `LocalizedException`. Any other types of exceptions MUST be wrapped with `LocalizedException` before being displayed to the user.
 
 ## 6. Application layers
 
@@ -609,6 +609,8 @@ class View extends Template
 6.4.4.11. Domain/business logic MUST be executed on the service contracts layer.
 
 6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in the `global` area of configuration.
+
+6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.
 
 ## 7. Configuration
 

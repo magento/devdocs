@@ -110,6 +110,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     customerCustomerRepositoryV1
     customerGroupManagementV1
     customerGroupRepositoryV1
+    customerCustomerGroupConfigV1
 
 ### Directory
     directoryCountryInformationAcquirerV1
@@ -148,6 +149,11 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     inventoryCatalogApiBulkSourceAssignV1
     inventoryCatalogApiBulkSourceUnassignV1
     inventoryCatalogApiBulkInventoryTransferV1
+
+### InventoryDistanceBasedSourceSelectionApi
+    inventoryDistanceBasedSourceSelectionApiGetDistanceProviderCodeV1
+    inventoryDistanceBasedSourceSelectionApiGetDistanceV1
+    inventoryDistanceBasedSourceSelectionApiGetLatLngFromAddressV1
 
 ### InventoryLowQuantityNotificationApi
     inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1

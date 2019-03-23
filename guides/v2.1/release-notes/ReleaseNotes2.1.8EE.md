@@ -126,7 +126,7 @@ This release includes both improvements we've made internally and those submitte
 
 ### General
 
-<!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System > Index management**, reindexing failed.
+<!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System** > Tools > **Index Management**, reindexing failed.
 
 <!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
 
@@ -208,7 +208,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 67753 -->* Dynamic dragging-and-dropping of rows now works correctly. *Fix submitted by community member [Navarr Barnier](https://github.com/navarr){:target="_blank"} in pull request [9376](https://github.com/magento/magento2/pull/9376){:target="_blank"}.*
 
 
-<!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member [Rafael Kassner](https://github.com/kassner){:target="_blank"} in pull request [9661](https://github.com/magento/magento2/pull/9661){:target="_blank"}.*
+<!--- 69236 -->* The Store Configuration page (**Stores > Settings > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member [Rafael Kassner](https://github.com/kassner){:target="_blank"} in pull request [9661](https://github.com/magento/magento2/pull/9661){:target="_blank"}.*
 
 <!--- 69234 -->* We've removed a previously published fix that corrected a problem using the TinyMCE editor to select and edit images. [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fix submitted by community member [Pieter Hoste](https://github.com/hostep){:target="_blank"} in pull request [9655](https://github.com/magento/magento2/pull/9655){:target="_blank"}.*
 

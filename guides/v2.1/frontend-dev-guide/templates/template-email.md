@@ -123,8 +123,9 @@ Some email clients (for example, Gmail) support only CSS styles that have been a
 ### Inline styles {#inline-styles}
 
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains an `inlinecss` directive:
-
-    {% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
+```
+{% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
+```
 
 The `inlinecss` directive tells Magento which files to apply as inline styles on the email template. 
 
@@ -326,20 +327,21 @@ To customize your logo using a theme:
    Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
   
    Example:
-   
-       {% raw %}
-       {{if logo_width}}
-           width="{{var logo_width}}"
-       {{else}}
-           width="200"
-       {{/if}}
-       
-       {{if logo_height}}
-           height="{{var logo_height}}"
-       {{else}}
-           height="100"
-       {{/if}}
-       {% endraw %}
+   ```
+   {% raw %}
+   {{if logo_width}}
+       width="{{var logo_width}}"
+   {{else}}
+       width="200"
+   {{/if}}
+
+   {{if logo_height}}
+       height="{{var logo_height}}"
+   {{else}}
+       height="100"
+   {{/if}}
+   {% endraw %}
+   ```
    
    You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.
 
@@ -380,25 +382,35 @@ The sales emails are configured to display all of the above values, if they're c
 ## Localization {#localization}
 
 In order to support the translation of content, all strings in emails are output using the `trans` directive. Example: 
-
-    {% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
-    {% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
+```
+{% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
+{% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
+```
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
+
+The directive supports multiple named parameters, separated by spaces. For example:
+```
+{% raw %}
+{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
+{% endraw %}
+```
 
 Please note, that variable assignment must not contain spaces. 
 
 Correct:
-
-    {% raw %}
-    {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
-    {% endraw %}
+```
+{% raw %}
+{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+{% endraw %}
+```
 
 Incorrect:
-
-    {% raw %}
-    {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
-    {% endraw %}
+```
+{% raw %}
+{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
+{% endraw %}
+```
 
 {:.bs-callout .bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.
