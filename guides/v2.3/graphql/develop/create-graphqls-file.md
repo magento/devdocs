@@ -47,6 +47,71 @@ type Query {
 
 If all your module's attributes are extension attributes for existing modules, then no query definition is required. In this case, the attributes point to the other module's query definition.
 
+When you want to implement a create/update/delete operations through GraphQl then you should use a `mutation` query. The following example shows the definitions for the `createEmptyCart` mutation query.
+``` json
+type Mutation {
+    createEmptyCart: String @resolver(class: "\\Magento\\QuoteGraphQl\\Model\\Resolver\\CreateEmptyCart") @doc(description:"Creates an empty shopping cart for a guest or logged in user")
+}
+```
+
+To invoke `createEmptyCart` mutation query in GraphQl client please use: 
+``` json
+mutation {
+   createEmptyCart
+}
+```
+
+In the result you will get something like this:
+``` json
+{
+  "data": {
+    "createEmptyCart": "PDZzRHRxEMdqKtmYB8KHDPA3a5tJvl9v"
+  }
+}
+```
+
+where 
+``` json
+PDZzRHRxEMdqKtmYB8KHDPA3a5tJvl9v
+``` 
+is the unique identifier of shopping cart. Magento stores this value in `masked_id` field of `quote_id_mask` table.
+
+After that you can use shopping cart identifier in different queries and mutations. 
+For example, in the `query` to retrieve shopping cart content:
+``` json
+{
+  cart(cart_id: "PDZzRHRxEMdqKtmYB8KHDPA3a5tJvl9v") {
+    items {
+      __typename
+      id
+      qty
+    }
+  }
+}
+``` 
+
+or in the `mutation` when you want to update a quantity of added to cart product:
+``` json
+mutation {
+  updateCartItems(input: {
+    cart_id: "PDZzRHRxEMdqKtmYB8KHDPA3a5tJvl9v"
+    cart_items: [
+      {
+        cart_item_id: 130
+        quantity: 2
+      }
+    ]
+  }) {
+    cart {
+      items {
+        id
+        qty
+      }
+    }
+  }
+}
+``` 
+
 ## Declare input attributes
 
 You must explicitly define each attribute that can be used as input in a GraphQL query. In the simplest cases, you can create a single `type` definition that includes all the input, output, and sorting attributes for an object. This might not be possible if your module performs calculations, or otherwise has attributes that aren't available at the time of the query.
