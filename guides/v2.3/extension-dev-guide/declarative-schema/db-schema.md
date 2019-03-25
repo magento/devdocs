@@ -236,7 +236,7 @@ The following example creates the `declarative_table` table with four columns. T
 
 ### Drop a table
 
-In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file. To drop a table declared in another module, redeclare it with the `disabled` attribute set to `true`.
+In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file.
 
 ```diff
 <schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

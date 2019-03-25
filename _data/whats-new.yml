@@ -4,8 +4,182 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon Feb 25 10:43:52 2019
+updated: Mon Mar 25 12:12:47 2019
 entries:
+- description: Added a new topic in Cloud Optimize deployment called [Reduce downtime](https://devdocs.magento.com/guides/v2.3/cloud/deploy/reduce-downtime.html)
+    to explain the zero downtime concept.
+  versions: 2.2.x
+  type: New topic
+  date: March 25, 2019
+  link: https://github.com/magento/devdocs/pull/4005
+- description: Added the [WebApi request processors pool](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/webapi/request-processor-pool.html)
+    topic.
+  versions: 2.3.x
+  type: New topic
+  date: March 22, 2019
+  link: https://github.com/magento/devdocs/pull/3523
+- description: Backporting the [WebApi request processors pool](https://devdocs.magento.com/guides/v2.2/extension-dev-guide/webapi/request-processor-pool.html)
+    topic from the Magento 2.3 documentation.
+  versions: 2.2.x
+  type: New topic
+  date: March 22, 2019
+  link: https://github.com/magento/devdocs/pull/4002
+- description: Updated the note in the [Cloud Elasticsearch service](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services-elastic.html#elasticsearch-plugins)
+    topic to state that Magento does not support ElasticSuite third-party plugin.
+  versions: 2.2.x
+  type: Technical changes
+  date: March 21, 2019
+  link: https://github.com/magento/devdocs/pull/3985
+- description: Updated install commands for Google reCAPTCHA for [2.1](https://devdocs.magento.com/guides/v2.1/security/google-recaptcha.html)
+    and [2.2](https://devdocs.magento.com/guides/v2.2/security/google-recaptcha.html).
+  versions: 2.1.x, 2.2.x
+  type: Technical changes
+  date: March 19, 2019
+  link: https://github.com/magento/devdocs/pull/3961
+- description: Added information about message queues to [Magento APIs](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/#magento-apis).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: March 18, 2019
+  link: https://github.com/magento/devdocs/pull/3932
+- description: Updated definition of [Exceptions 5.17](https://devdocs.magento.com/guides/v2.2/coding-standards/technical-guidelines.html#5-exceptions).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: March 15, 2019
+  link: https://github.com/magento/devdocs/pull/3871
+- description: Updated the [Fastly troubleshooting](https://devdocs.magento.com/guides/v2.3/cloud/cdn/trouble-fastly.html
+    ) information in the Magento Commerce Cloud Guide:<br/>- Corrected information
+    about Fastly response headers and values<br/>- Added information about rolling
+    back Fastly service configuration changes using the Fastly API<br/>- Re-organized
+    troubleshooting sections for easier navigation<br/>- Cleaned up language and formatting
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: March 15, 2019
+  link: https://github.com/magento/devdocs/pull/3699
+- description: Updated the [Cloud Architecture comparison chart](https://devdocs.magento.com/guides/v2.3/cloud/architecture/cloud-architecture.html).
+  versions: 2.x
+  type: Technical changes
+  date: March 15, 2019
+  link: https://github.com/magento/devdocs/pull/3893
+- description: Updated Elasticsearch version support information for Magento Commerce
+    Cloud to include version 5.2. support.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: March 13, 2019
+  link: https://github.com/magento/devdocs/pull/3916
+- description: Fixed the [Command name](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/cli-cmds/cli-naming-guidelines.html#cli-name)
+    in the Command Naming Guidelines.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: March 11, 2019
+  link: https://github.com/magento/devdocs/pull/3903
+- description: Added a technical guideline [6.4.4.13](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#64-service-contracts-application-layer).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: March  5, 2019
+  link: https://github.com/magento/devdocs/pull/3870
+- description: Moved source files of the Magento 1 documentation to [magento/devdocs-m1](https://github.com/magento/devdocs-m1).
+  versions: 1.x
+  type: Major update
+  date: March  5, 2019
+  link: https://github.com/magento/devdocs/pull/3868
+- description: Corrected the data type for the `company_id` and `available_limit`
+    parameters for the [company credit API operations](https://devdocs.magento.com/guides/v2.3/b2b/credit-manage.html)
+    in Magento Commerce for B2B.
+  versions: 2.2.x, 2.3.x
+  type: Technical changes
+  date: March  5, 2019
+  link: https://github.com/magento/devdocs/pull/3865
+- description: Update [community contribution guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#porting)
+    about porting
+  versions: 2.x
+  type: Major update
+  date: March  4, 2019
+  link: https://github.com/magento/devdocs/pull/3850
+- description: Fixed the incorrect `composer install` command in [Set up an Embedded
+    MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#setup-framework).
+  versions: 2.3.x
+  type: Technical changes
+  date: March  4, 2019
+  link: https://github.com/magento/devdocs/pull/3863
+- description: Added a section about [Required System Dependencies](http://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#required-system-dependencies)<br/>Added
+    a section about [Unsupported Operating Systems](http://devdocs.magento.com/guides/v2.3/install-gde/system-requirements-tech.html#unsupported-operating-systems)
+  versions: 2.3.x
+  type: Major update
+  date: March  4, 2019
+  link: https://github.com/magento/devdocs/pull/3864
+- description: Update [community contribution guidelines](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#porting)
+    about porting
+  versions: 2.x
+  type: Major update
+  date: March  4, 2019
+  link: https://github.com/magento/devdocs/pull/3850
+- description: Fixed the incorrect `composer install` command in [Set up an Embedded
+    MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#setup-framework).
+  versions: 2.3.x
+  type: Technical changes
+  date: March  4, 2019
+  link: https://github.com/magento/devdocs/pull/3863
+- description: Migrated the Magento Business Intelligence (MBI) [Import API documentation](https://devdocs.magento.com/mbi/docs/getting-started.html)
+    from the RJMetrics domain to the Magento domain.
+  versions: '2.x'
+  type: Major update
+  date: March  1, 2019
+  link: https://github.com/magento/devdocs/pull/3841
+- description: "-  Updated the [Custom VCL snippets](https://devdocs.magento.com/guides/v2.3/cloud/cdn/cloud-vcl-custom-snippets.html)
+    with instructions for using the Magento Admin UI to create and manage VCL snippets.<br/>-
+    \ Updated and corrected the following examples for using Fastly Edge Dictionaries
+    and custom VCL snippets to manage request routing for Magento Commerce Cloud traffic:
+    [Set up redirects to WordPress backend](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-wordpress.html),
+    [Block referrer spam](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-badreferer.html),
+    and [Secure access to the Admin UI by client IP address](https://devdocs.magento.com/guides/v2.3/cloud/cdn/fastly-vcl-whitelist.html).
+    Included prerequisites and instructions for  adding VCL snippets from the Admin
+    UI or Fastly API."
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: March  1, 2019
+  link: https://github.com/magento/devdocs/pull/3623
+- description: Updated the [GitHub integration topic](https://devdocs.magento.com/guides/v2.2/cloud/integrations/github-integration.html).
+  versions: 2.x
+  type: Technical changes
+  date: March  1, 2019
+  link: https://github.com/magento/devdocs/pull/3843
+- description: Updated example for requesting domain delegation when configuring Fastly
+    services for a Magento Commerce Cloud project. See [Multiple Fastly accounts and
+    assigned domains](https://devdocs.magento.com/guides/v2.3/cloud/cdn/configure-fastly.html#domain).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: February 28, 2019
+  link: https://github.com/magento/devdocs/pull/3814
+- description: Update Commerce, PWA, and Page Builder [product availability](https://devdocs.magento.com/availability)
+  versions: 2.3.x
+  type: Major update
+  date: February 28, 2019
+  link: https://github.com/magento/devdocs/pull/3833
+- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.16.](http://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002016)<br/>-
+    Updated the Cloud Docker content with information about using the [`sendmail`
+    service](http://devdocs.magento.com/cloud/docker/docker-development.html#sendmail-service).<br/>- Updated
+    the Cloud Docker content to explain how to [configure Xdebug](http://devdocs.magento.com/guides/v2.3/cloud/docker/docker-development-debug.html).<br/>-
+    Added two new environment variables: [RESOURCE_CONFIGURATION deploy variable](http://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html)
+    and [X_FRAME_CONFIGURATION global variable](http://devdocs.magento.com/guides/v2.3/cloud/env/variables-global.html)<br/>-
+    Updated the [ADMIN variables](https://devdocs.magento.com/guides/v2.3/cloud/env/environment-vars_magento.html)
+    and clarified the usage of ADMIN variables in the [Access your Magento Admin panel](https://devdocs.magento.com/guides/v2.3/cloud/onboarding/onboarding-tasks.html)
+    page.<br/>- Added an example for preloading pages from multiple domains in the
+    [WARM_UP_PAGES post-deploy variable](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-post-deploy.html#warm_up_page).<br/>-
+    Deprecated SCD_EXCLUDE_THEMES environment variable.<br/>- Clarified the [backup
+    and retention](https://devdocs.magento.com/guides/v2.3/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery)
+    statements regarding the most recent 24-hour period.'
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: February 26, 2019
+  link: https://github.com/magento/devdocs/pull/3788
+- description: Updated data types for Inventory Management [Check salable quantities](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/check-salable-quantity.html),
+    [Manage low-quantity notifications](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-low-quantity.html),
+    [Manage source items](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-items.html),
+    and [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html)
+  versions: 2.3.x
+  type: Technical changes
+  date: February 26, 2019
+  link: https://github.com/magento/devdocs/pull/3804
 - description: Removed improper git commands for composer reinstall in [Uninstall
     and Reinstall Magento](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)
     and links to correct instructions.

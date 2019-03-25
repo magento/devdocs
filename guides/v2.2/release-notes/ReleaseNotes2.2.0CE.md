@@ -1122,7 +1122,7 @@ This release includes substantial improvements to Magento caching, image process
 <!--- 65404 -->* Magento no longer creates redundant objects when initializing a configurable product on the Category page.
 
 
-<!--- 65403 -->* You can now disable swatches for both the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Configuration > Catalog > Storefront > Show Swatches in Product List**.
+<!--- 65403 -->* You can now disable swatches for both the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Settings > Configuration > Catalog > Storefront > Show Swatches in Product List**.
 
 <!--- 65402 -->* We've optimized the logic that Magento uses to validate swatch attributes.
 
