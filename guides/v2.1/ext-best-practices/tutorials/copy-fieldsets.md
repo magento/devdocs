@@ -38,7 +38,7 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
 
 **etc/fieldset.xml**
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DataObject/etc/fieldset.xsd">
   <scope id="global">
     <fieldset id="sales_convert_quote">
@@ -48,20 +48,20 @@ The code snippet in the next step uses the name of the fieldset and aspect to sp
     </fieldset>
   </scope>
 </config>
-{% endhighlight %}
+```
 
 ## Step 3: Copy the fieldset
 {:#step-3}
 
 For copying the fieldset, we'll observe the `sales_model_service_quote_submit_before` event by using the following code in our `etc/events.xml`:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="sales_model_service_quote_submit_before">
         <observer name="[vendor]_[module]_sales_model_service_quote_submit_before" instance="Vendor\Module\Observer\SaveOrderBeforeSalesModelQuoteObserver" />
     </event>
 </config>
-{% endhighlight %}
+```
 
 The following code snippets highlight the code pieces needed to copy a fieldset using the `\Magento\Framework\DataObject\Copy` class.
 
