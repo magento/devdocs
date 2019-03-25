@@ -164,22 +164,16 @@ The following table defines the `ProductInterface` attributes and objects.
 
 Attribute | Data type | Description
 --- | --- | ---
-`attribute_set_id` | Int | The attribute set assigned to the product
-`canonical_url` | String  | The canonical URL for the product
+
+`attribute_set_id` | Int | The ID number assigned to the product
+`canonical_url` | String  | Canonical URL
 `categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
-`custom_design` | String | A theme that can be applied to the product page
-`custom_design_from` | String | The beginning date when a theme is applied to the product page
-`custom_design_to` | String| The date at which a theme is no longer applied to the product page
-`custom_layout` | String | The name of a custom layout
-`custom_layout_update` | String | XML code that is applied as a layout update to the product page
 `description` | String | Detailed information about the product. The value can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
-`image` | String | The relative path for the main image on the product page
-`image_label` | String | The label assigned to a product image
-`is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the Rma module.
+`image` | ProductImage | The relative path to the main image on the product page
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
@@ -188,28 +182,20 @@ Attribute | Data type | Description
 `name` | String | The product name. Customers use this name to identify the product.
 `new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
 `new_to_date` | String | The end date for new product listings
-`only_x_left_in_stock` | Float | The remaining quantity of this item
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-`page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
-`price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
+`price` | ProductPrices | A [ProductPrices](#ProductPrices) object, indicating the price of an item
 `product_links` | [ProductLinks] | An array of [ProductLinks](#ProductLinks) objects
-`short_description` | String | A short description of the product. Its use depends on the store's theme.
+`short_description` | ComplexTextValue | A short description of the product. Its use depends on the theme.
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
-`small_image` | String | The relative path to the small image, which is used on catalog pages
-`small_image_label` | String | The label assigned to a product's small image
+`small_image` | ProductImage | The relative path to the small image, which is used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
-`special_price` | Float |  The discounted price of the product
+`special_price` | Float | The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
-`stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`.
-`swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
-`tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
-`thumbnail` | String | The relative path to the product's thumbnail image
-`thumbnail_label` | String | The label assigned to a product's thumbnail image
+`thumbnail` | ProductImage | The relative path to the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
-`type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
+`type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`, `grouped`, or `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
-`website_ids` | [Int] | An array of website IDs in which the product is available
 {:style="table-layout:auto;"}
 
 ### ProductPrices object {#ProductPrices}
