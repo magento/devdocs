@@ -20,7 +20,7 @@ Return the contents of one or more CMS blocks:
 Attribute | Data type | Description
 --- | --- | ---
 `id` | Int | The ID of a CMS page
-`identifiers` | Array | An array containing a comma-separated list of block identifiers
+`identifiers` | [String] | An array containing a comma-separated list of block identifiers
 {:style="table-layout:auto;"}
 
 ### CmsPage output attributes 
