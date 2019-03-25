@@ -1,7 +1,7 @@
 ---
 group: community
 title: Community Resources
-redirect_from: 
+redirect_from:
   - /community/resources/index.html
 ---
 
@@ -37,14 +37,19 @@ We have channels for each project. These channels are recommended for new member
 - [github][]: Support for GitHub issues, pull requests, and processes
 - [public-backlog][]: Discussions of the Magento 2 backlog
 - [devdocs][]: Documentation contribution support
+- [cloud][]: Open chat for cloud questions
+- [graphql][]: Open chat for graphql contribution
+- [pwa][]: Open chat for Progressive Web Applications contribution
+- [msi][]: Open chat for Multi-Source Inventory contribution
+- [mftf][]: Open chat for Magento Functional Testing Framework(MFTF) contribution
 
 ## Resources and guides
 
 - *Video* [How to contribute during Magento Contribution Days][57] by [Max Pronko][35]
 - *GitHub* [Magento Resources][23] curated list by [Alessandro Ronchi][30]
 - *Blog posts* [Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design][56] by [Mark Shust][38]
-- *Videos* [Mage2.tv][24] 
-- *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27] 
+- *Videos* [Mage2.tv][24]
+- *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27]
 - *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
 - *Statistics* [Magestats][32] by [Marcel Hauri][33]
 - *Videos* [Magento Dev Channel with Max Pronko][34] by [Max Pronko][35]
@@ -92,7 +97,7 @@ We have channels for each project. These channels are recommended for new member
 
 ## Performance
 
--  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda 
+-  *Presentation* [Premium performance with PHP 7 and Varnish][15] by Miguel Balparda
 
 [contribute]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [technical guidelines]: https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html
@@ -103,10 +108,15 @@ We have channels for each project. These channels are recommended for new member
 [github]: https://magentocommeng.slack.com/messages/C7KB93M32
 [public-backlog]: https://magentocommeng.slack.com/messages/CCV3J3RV5
 [devdocs]: https://magentocommeng.slack.com/messages/CAN932A3H
+[cloud]: https://magentocommeng.slack.com/messages/C8CBB6K9V
+[graphql]: https://magentocommeng.slack.com/messages/C8076E0KS
+[pwa]: https://magentocommeng.slack.com/messages/C71HNKYS2
+[msi]: https://magentocommeng.slack.com/messages/C5FU5E2HY
+[mftf]: https://magentocommeng.slack.com/messages/C82DDUSNP
 [appdesign]: https://magentocommeng.slack.com/messages/CBSL1DF8B
 [coding-standards]: https://magentocommeng.slack.com/messages/CFC88F1C6
 [announcements]: https://magentocommeng.slack.com/messages/C7FA71S3V
-[0]: https://github.com/DavidLambauer/awesome-magento2 
+[0]: https://github.com/DavidLambauer/awesome-magento2
 [1]: https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
 [2]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-joshua-warren-magento-2-integrations
 [3]: http://www.slideshare.net/vrann/mage-titans-usa-2016-magentofacebookrabbitmq
