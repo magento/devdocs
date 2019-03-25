@@ -65,44 +65,8 @@ pages:
 - label: How-Tos
   versionless: true
   children:
-  - label: How to add additional configurations
-    url: /page-builder/docs/how-to/how-to-add-additional-configurations.html
-    versionless: true
-
   - label: How to customize the panel
     url: /page-builder/docs/how-to/how-to-customize-panel.html
-    versionless: true
-
-  - label: How to add icons and images
-    url: /page-builder/docs/how-to/how-to-add-icons-images.html
-    versionless: true
-
-  - label: How to add a block chooser
-    url: /page-builder/docs/how-to/how-to-add-block-chooser.html
-    versionless: true
-
-  - label: How to use full-width layouts
-    url: /page-builder/docs/how-to/how-to-use-full-width-layouts.html
-    versionless: true
-
-  - label: How to change breakpoints
-    url: /page-builder/docs/how-to/how-to-change-breakpoints.html
-    versionless: true
-
-  - label: How to customize selectors
-    url: /page-builder/docs/how-to/how-to-customize-selectors.html
-    versionless: true
-
-  - label: How to apply product conditions
-    url: /page-builder/docs/how-to/how-to-apply-product-conditions.html
-    versionless: true
-
-  - label: How to use server-side previews
-    url: /page-builder/docs/how-to/how-to-use-server-side-previews.html
-    versionless: true
-
-  - label: How to create a container content type
-    url: /page-builder/docs/how-to/how-to-create-container-content-type.html
     versionless: true
 
   - label: How to add an image uploader
@@ -120,6 +84,42 @@ pages:
   - label: How to add a custom toolbar
     url: /page-builder/docs/how-to/how-to-add-custom-toolbar.html
     versionless: true
+
+  - label: How to add icons and images
+    url: /page-builder/docs/how-to/how-to-add-icons-images.html
+    versionless: true
+
+  - label: How to change breakpoints
+    url: /page-builder/docs/how-to/how-to-change-breakpoints.html
+    versionless: true
+
+  - label: How to add additional configurations
+    url: /page-builder/docs/how-to/how-to-add-additional-configurations.html
+    versionless: true
+
+  - label: How to add a block chooser
+    url: /page-builder/docs/how-to/how-to-add-block-chooser.html
+    versionless: true
+
+  - label: How to use full-width layouts
+    url: /page-builder/docs/how-to/how-to-use-full-width-layouts.html
+    versionless: true
+
+  - label: How to customize selectors
+    url: /page-builder/docs/how-to/how-to-customize-selectors.html
+    versionless: true
+
+  - label: How to apply product conditions
+    url: /page-builder/docs/how-to/how-to-apply-product-conditions.html
+    versionless: true
+
+  - label: How to use server-side previews
+    url: /page-builder/docs/how-to/how-to-use-server-side-previews.html
+    versionless: true
+
+#  - label: How to create a container content type
+#    url: /page-builder/docs/how-to/how-to-create-container-content-type.html
+#    versionless: true
 
   - label: How to use Page Builder for product attributes
     url: /page-builder/docs/how-to/how-to-use-pagebuilder-for-product-attributes.html
