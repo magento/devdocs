@@ -27,7 +27,7 @@ The following guidelines apply to minor releases:
 {:.bs-callout .bs-callout-info}
 See [Magento Software Lifecycle Policy] and [Versioning].
 
-## Product availability
+## Extension availability
 
 | Product                                         | Availability                                                                                                                                                           | How to get it                                                                                                                |
 |-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -42,7 +42,7 @@ See [Magento Software Lifecycle Policy] and [Versioning].
 
 ## Product stability
 
-The following table shows the release status of Magento extension and product versions relative to the 2.3.x release line of {{site.data.var.ee}}.
+The following table shows the release status of Magento extension versions relative to the 2.3.x release line of {{site.data.var.ee}}.
 
 {% include compatibility.html data=site.data.compatibility %}
 

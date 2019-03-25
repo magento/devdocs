@@ -36,16 +36,3 @@ extension:
         support:
           2.3.0: stable
           2.3.1: stable
-  -
-    name: PWA Studio
-    versions:
-      -
-        name: 2.0.0
-        support:
-          2.3.0: release candidate
-          2.3.1: not supported
-      - 
-        nasme: 2.1.0
-        support:
-          2.3.0: stable
-          2.3.1: stable
