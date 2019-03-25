@@ -20,7 +20,7 @@ Do you know what a "terminal" application is? Do you know what operating system 
 Topics include:
 
 *	[Choose how to get the Magento software]({{ page.baseurl }}/install-gde/bk-install-guide.html)
-*	[System requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
+*	[System requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
 *	[Prerequisites]({{ page.baseurl }}/install-gde/prereq/prereq-overview.html)
 *	[The Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 

@@ -9,6 +9,7 @@ The diagram shows the following:
 	*	[2.0.x system requirements]({{ site.gdeurl }}install-gde/system-requirements.html)
 	*	[2.1.x system requirements]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
 	*	[2.2.x system requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)
+	*	[2.3.x system requirements]({{ site.gdeurl23 }}install-gde/system-requirements-tech.html)	
 
 2.	Get the Magento software.
 

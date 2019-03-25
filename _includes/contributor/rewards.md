@@ -46,6 +46,7 @@ Test coverage | 10 | Contribution contains fix or improvement and new tests or t
 MFTF test coverage| 10 | Contribution contains MFTF tests
 Bug fix | 10 | Contribution fixes one or more known issues from GitHub
 Author of Ported Issue | 5 | Additional points for a contribution that ports (up or back port) a previous PR across release lines by another contributor
+Issue Triage | 3 | Public issue report is verified and confirmed
 {:style="table-layout:auto;"}
 
 ## DevDocs awards and points
