@@ -64,7 +64,7 @@ elasticsearch:
 ```
 
 {:.bs-callout .bs-callout-info}
-ElasticSuite is a third-party plugin and is not officially supported by Magento. If you use [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you must add the `analysis-icu` and `analysis-phonetic` plugins to the `services.yaml` file.
+Magento does not support the ElasticSuite third-party plugin.
 
 See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/index.html).
 
