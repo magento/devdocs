@@ -47,7 +47,7 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 
 #### Automation of upgrade process dependency assessment
 
-A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers performed this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. <!--- MC-5465-->
+A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade.  <!--- MC-5465-->
 
 
 
@@ -58,7 +58,7 @@ PWA Studio is a set of developer tools that allow you to develop, deploy, and ma
 
 #### GraphQL
 
-Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address), products (set swatch color),  and customers (create customer account). See [Release Notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for information about specific fixes and acknowledgements to community contributors.  
+Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address)  and customers (create customer account). See [Release Notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for information about specific fixes and acknowledgements to community contributors.  
 
 
 ### Substantial security enhancements
@@ -1020,7 +1020,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3364-->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
-* The generated topic names that are used by message queues are now based on service contract names. The Asynchronous Web API module uses a message queue as the  communication mechanism between API endpoints and the consumers that process requests. In previous implementations,  topic names were generated based on the URLs of the REST API. Currently,  topic names reflect the PHP class and method names that should be invoked to handle processing. This new naming is more semantic and allows the reuse for other Magento services.
+* Message queue topic names generated as a result of asynchronous and bulk REST calls are now based on service contract names. Currently,  topic names reflect the PHP class and method names that should be invoked to handle processing. For example, a topic that was named using the older conventions (`async.V1.customers.POST`) might be named `async.magento.customer.api.accountmanagementinterface.createaccount.post`. This new naming is more semantic and allows the reuse for other Magento services.
 
 
 

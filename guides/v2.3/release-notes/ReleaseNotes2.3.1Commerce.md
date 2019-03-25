@@ -63,7 +63,7 @@ PWA Studio is a set of developer tools that allow you to develop, deploy, and ma
 
 #### GraphQL
 
-Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address), products (set swatch color),  and customers (create customer account). See [Release Notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for information about specific fixes and acknowledgements to community contributors. 
+Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address)  and customers (create customer account). See [Release Notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for information about specific fixes and acknowledgements to community contributors. 
 
 
 ### Substantial security enhancements
@@ -185,7 +185,7 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MC-6275-->* The commands to enable and disable debug logging have changed to `bin/magento setup:config:set --enable-debug-logging=true | false`. The previous commands, `bin/magento config:set dev/debug/debug_logging 0 | 1` are no longer supported.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
 
-<!--- MC-5465-->* A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers had to perform this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. 
+<!--- MC-5465-->* A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. 
 
 <!--- ENGCOM-3291-->* Magento now sets the `id_prefix` option on prefix cache keys for the cache frontend during installation. If this option is not set, Magento uses the first 12 bits of the md5 hash of the absolute path to the Magento `app/etc` directory. But if this value is not exactly the same on all web servers, cache invalidation will not work.  *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
@@ -1087,7 +1087,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3364-->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
-* The generated topic names that are used by message queues are now based on service contract names. The Asynchronous Web API module uses a message queue as the  communication mechanism between API endpoints and the consumers that process requests. In previous implementations,  topic names were generated based on the URLs of the REST API. Currently,  topic names reflect the PHP class and method names that should be invoked to handle processing. This new naming is more semantic and allows the reuse for other Magento services.
+* Message queue topic names generated as a result of asynchronous and bulk REST calls are now based on service contract names. Currently,  topic names reflect the PHP class and method names that should be invoked to handle processing. For example, a topic that was named using the older conventions (`async.V1.customers.POST`) might be named `async.magento.customer.api.accountmanagementinterface.createaccount.post`. This new naming is more semantic and allows the reuse for other Magento services.
 
 
 ### Integration
