@@ -7,7 +7,7 @@ title: Magento Open Source 2.3.1 Release Notes
 
 We are pleased to present Magento Open Source 2.3.1. This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
-This release includes significant contributions from our community members. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features are bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are not documented in these core release notes but in separate project-specific sets of notes.
+This release includes significant contributions from our community members. These contributions range from minor clean-up of core code to the development of substantial features such as Inventory Management and GraphQL. Although code for these features is bundled with quarterly releases of the Magento core code, several of these projects (for example, Page Builder and Progressive Web Applications (PWA) Studio) are also released independently. Bug fixes for these projects are not documented in these core release notes but in separate project-specific sets of notes.
 
 
 ## Highlights
@@ -30,21 +30,13 @@ The Admin order creation workflow has been refactored to eliminate delays when e
 
 The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management:
 
-#### Support for Elasticsearch and Inventory Management
+* **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature! 
 
-All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature! 
+* **Distance Priority Source Selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html).
 
-#### Distance Priority Source Selection algorithm (SSA) option
+* **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
 
-Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html).
-
-#### Enhancements to mass inventory transfers
-
-Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
-
-#### In-store pickup fulfillment option
-
-Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders.  See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
+* **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders.  See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
 
 
 
@@ -66,7 +58,7 @@ PWA Studio is a set of developer tools that allow you to develop, deploy, and ma
 
 #### GraphQL
 
-Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address), products (set swatch color),  and customers (create customer account). See GraphQL Release Notes for information about specific fixes and acknowledgements to community contributors. 
+Community contributions for this release include major additions to cart actions (create cart, populate cart, set shipping address), products (set swatch color),  and customers (create customer account). See [Release Notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for information about specific fixes and acknowledgements to community contributors.  
 
 
 ### Substantial security enhancements
@@ -77,7 +69,7 @@ This release includes over 30 security enhancements that help close cross-site s
 
 ### Performance boosts
 
-**Magento now supports customer accounts with more than 3,000 addresses**. Multiple code enhancements contribute to this performance boost: 
+**Magento now supports customer accounts with more than 3,000 addresses**. Multiple code enhancements  contribute to this performance boost: 
 
 * Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
 
@@ -92,12 +84,14 @@ This release includes over 30 security enhancements that help close cross-site s
 
 Infrastructure improvements are core enhancements that underlie both merchant and developer features. 
 
-* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Note also that `accept.js` library is now used for Authorize.Net payments. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
+* This release includes a **new Authorize.Net extension** to replace the Authorize.Net Direct Post module, which implemented an MD5-based hash that Authorize.Net will no longer support as of June 28, 2019. See [Authorize.Net](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net.html) for information on configuring and using this new extension. Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html). Note that Magento released a patch in late February to address this issue on pre-2.3.1 installations of Magento, which is discussed in [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). 
 
 
 * Accept.js library is now used for Authorize.NET payments.
 
 * Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
+
+* Update PayPal Express Checkout to `checkout.js v4`. This introduces a modernized checkout flow, faster checkout performance, and new payment options in a single integration that does not have to be updated as new payment methods become available. It also unlocks new payment options including Venmo and PayPal Credit. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
 * Magento now supports **Redis 5.0**. <!--- MC-5201 -->
 
@@ -108,7 +102,6 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 * Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->* 
 
-* Update PayPal Express Checkout to `checkout.js v4`. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
 * <!--- MAGETWO-95068--> **Checkout information now persists after a cart update**. Information previously entered by a customer during check out (such as shipping address) now persists after the customer updates their shopping cart. Previously, when a customer updated their shopping cart, all information previously entered during check out (such as shipping address) was deleted. 
 
@@ -560,7 +553,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3901-->* Corrected rendering of the apply discount code field in the Tab portrait view of the cart page. *Fix submitted by [Ajay Ajabale](https://github.com/ajay2jcommerce) in pull request [20281](https://github.com/magento/magento2/pull/20281)*. [GitHub-20278](https://github.com/magento/magento2/issues/20278)
 
-<!--- ENGCOM-3899-->* Fixed issue where the horizontal scrokll bar did not appear as expected on the compare products page in mobile view. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20368](https://github.com/magento/magento2/pull/20368)*. [GitHub-20367](https://github.com/magento/magento2/issues/20367)
+<!--- ENGCOM-3899-->* Fixed issue where the horizontal scroll bar did not appear as expected on the compare products page in mobile view. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20368](https://github.com/magento/magento2/pull/20368)*. [GitHub-20367](https://github.com/magento/magento2/issues/20367)
 
 <!--- ENGCOM-3936-->* Added missing bottom border to list of customizable options on the product page accessed from the Admin. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [20498](https://github.com/magento/magento2/pull/20498)*. [GitHub-20497](https://github.com/magento/magento2/issues/20497)
 
@@ -913,7 +906,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3588-->* The **Select All** and **Select Visible** buttons on the notification page now work as expected. Previously, these buttons behaved the same. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [19302](https://github.com/magento/magento2/pull/19302)*. [GitHub-19285](https://github.com/magento/magento2/issues/19285)
 
-<<!--- ENGCOM-3389-->* The note that describes the **Use in Layered Navigation: Filterable (no results)**  property now better describes the property. *Fix submitted by [Vladyslav Podorozhnyi](https://github.com/vpodorozh) in pull request [19037](https://github.com/magento/magento2/pull/19037)*. [GitHub-14007](https://github.com/magento/magento2/issues/14007)
+<!--- ENGCOM-3389-->* The note that describes the **Use in Layered Navigation: Filterable (no results)**  property now better describes the property. *Fix submitted by [Vladyslav Podorozhnyi](https://github.com/vpodorozh) in pull request [19037](https://github.com/magento/magento2/pull/19037)*. [GitHub-14007](https://github.com/magento/magento2/issues/14007)
 
 <!--- ENGCOM-3258-->* Magento no longer throws SQL errors when table prefixes are used. *Fix submitted by [Peter O'Callaghan](https://github.com/pocallaghan) in pull request [18412](https://github.com/magento/magento2/pull/18412)*. [GitHub-18357](https://github.com/magento/magento2/issues/18357)
 
@@ -925,7 +918,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3379-->* Fixed the rendering of the check notifications counters icon on the Admin. *Fix submitted by [Abrar Pathan](https://github.com/abrarpathan19) in pull request [19053](https://github.com/magento/magento2/pull/19053)*. [GitHub-18887](https://github.com/magento/magento2/issues/18887)
 
-<!--- ENGCOM-3624-->* 'old_path: new_path' path mappings have been added for JavaScript files have been relocated to `requirejs-config.js`. *Fix submitted by [rbayet](https://github.com/rbayet) in pull request [19583](https://github.com/magento/magento2/pull/19583)*. [GitHub-19291](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
+<!--- ENGCOM-3624-->* `old_path: new_path` path mappings have been added for JavaScript files have been relocated to `requirejs-config.js`. *Fix submitted by [rbayet](https://github.com/rbayet) in pull request [19583](https://github.com/magento/magento2/pull/19583)*. [GitHub-19291](https://github.com/magento/magento2/issues/19291), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
 <!--- ENGCOM-3632-->* Calling `getCurrentUrl` on a store no longer adds the  `___store` parameter when **store code in URL** is set to **yes** and the current store is not the same store requested in the URL. *Fix submitted by [Nazar](https://github.com/Nazar65) in pull request [19135](https://github.com/magento/magento2/pull/19135)*. [GitHub-18941](https://github.com/magento/magento2/issues/18941), [GitHub-16302](https://github.com/magento/magento2/issues/16302)
 
@@ -959,37 +952,6 @@ Previously, when you reopened these categories, no checkboxes were checked.
 ### Google Analytics
 
 <!--- ENGCOM-3058-->* `referenceContainer` has been changed to `referenceBlock` in the Google Analytics module. *Fix submitted by [Petar Sambolek](https://github.com/sambolek) in pull request [18290](https://github.com/magento/magento2/pull/18290)*. [GitHub-16497](https://github.com/magento/magento2/issues/16497)
-
-
-
-### GraphQL
-
-<!--- ENGCOM-4007-->* The storeConfig query returns results as expected. *Fix submitted by [Burlacu Vasilii](https://github.com/vasilii-b) in pull request [318](https://github.com/magento/graphql-ce/pull/318)*. [GitHub-317](https://github.com/magento/magento2/issues/317)
-
-<!--- ENGCOM-4081-->* Category levels are now calculated correctly. *Fix submitted by [Roman Kis](https://github.com/kisroman) in pull request [337](https://github.com/magento/graphql-ce/pull/337)*. [GitHub-336](https://github.com/magento/magento2/issues/336)
-
-<!--- ENGCOM-4077-->* You can now create a customer. *Fix submitted by [Stepan Furman](https://github.com/Stepa4man) in pull request [254](https://github.com/magento/graphql-ce/pull/254)*. [GitHub-248](https://github.com/magento/magento2/issues/248)
-
-<!--- ENGCOM-2967-->* You can now add simple products to a cart. *Fix submitted by [Roman Glushko](https://github.com/roma-glushko) in pull request [170](https://github.com/magento/graphql-ce/pull/170)*. [GitHub-141](https://github.com/magento/magento2/issues/141)
-
-<!--- ENGCOM-3077-->* Added the ability to revoke a customer’s access token. *Fix submitted by [Arturo Iglesias](https://github.com/ArturoI) in pull request [195](https://github.com/magento/graphql-ce/pull/195)*. [GitHub-160](https://github.com/magento/magento2/issues/160)
-
-<!--- ENGCOM-3537-->* Renamed several data types in the `SendFriendGraphQl` module to give them names that are unique across the system. *Fix submitted by [Alexandr Voronoy](https://github.com/VoronoyAlexandr) in pull request [262](https://github.com/magento/graphql-ce/pull/262)*. [GitHub-260](https://github.com/magento/magento2/issues/260)
-
-<!--- ENGCOM-3496-->* Replaced `GraphQlInputException` with `LocalizedException` in multiple modules. *Fix submitted by [Bartłomiej](https://github.com/bartekszymanski) in pull request [234](https://github.com/magento/graphql-ce/pull/189)*. [GitHub-211](https://github.com/magento/magento2/issues/189)
-
-<!--- ENGCOM-3474-->* Added API-functional tests for setting the shipping method for cart. *Fix submitted by [Yaroslav Rogoza](https://github.com/rogyar) in pull request [240](https://github.com/magento/graphql-ce/pull/240)*. [GitHub-211](https://github.com/magento/magento2/issues/211)
-
-<!--- ENGCOM-3446-->* Applied code review comments for a pull request that was merged early. *Fix submitted by [DocSchoko](https://github.com/DocSchoko) in pull request [225](https://github.com/magento/graphql-ce/pull/225)*. [GitHub-222](https://github.com/magento/magento2/issues/222)
-
-<!--- ENGCOM-3071-->* Corrected an issue that caused queries requesting the root category to return empty results. *Fix submitted by [Martin Hansen](https://github.com/mhhansen) in pull request [121](https://github.com/magento/graphql-ce/pull/121)*. [GitHub-102](https://github.com/magento/magento2/issues/102)
-
-<!--- ENGCOM-3956-->* The `updateCustomerAddress` mutation now updates the region ID as expected. *Fix submitted by [Patrick McLain](https://github.com/pmclain) in pull request [19663](https://github.com/magento/graphql-ce/pull/312)*. [GitHub-270](https://github.com/magento/magento2/issues/270)
-
-<!--- ENGCOM-4153-->* A configurable product query correctly returns the label associated with a configurable option. *Fix submitted by [Sergiy](https://github.com/sergiy-v) in pull request [17424](https://github.com/magento/graphql-ce/pull/346)*. [GitHub-250](https://github.com/magento/magento2/issues/250)
-
-<!--- ENGCOM-2964-->* Store configuration queries now return CMS and theme attributes. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [182](https://github.com/magento/graphql-ce/pull/182)*. [GitHub-128](https://github.com/magento/magento2/issues/128)
-
 
 
 ### Import/export
@@ -1048,7 +1010,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-4392 -->* Expected backup and restoration functionality has been restored and MySQL View support is supported while preserving backward compatibility with pre-existing modules. *Fix submitted by community member  [Stepan Furman](https://github.com/Stepa4man) in pull request [21151](https://github.com/magento/magento2/pull/21151)*. 
 
-<!--- ENGCOM-3598-->* json_encode errors are now caught and logged in console.log. Previously, the JSON serializer threw an error, which blocked all frontend behavior, *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [16154](https://github.com/magento/magento2/pull/16154)*. [GitHub-14937](https://github.com/magento/magento2/issues/14937)
+<!--- ENGCOM-3598-->* `json_encode` errors are now caught and logged in console.log. Previously, the JSON serializer threw an error, which blocked all frontend behavior, *Fix submitted by [Tommy Quissens](https://github.com/quisse) in pull request [16154](https://github.com/magento/magento2/pull/16154)*. [GitHub-14937](https://github.com/magento/magento2/issues/14937)
 
 <!--- ENGCOM-3589-->* `app/bootstrap.php` has been updated to correctly define supported PHP versions. *Fix submitted by [Fabrizio Balliano](https://github.com/fballiano) in pull request [19455](https://github.com/magento/magento2/pull/19455)*. [GitHub-19453](https://github.com/magento/magento2/issues/19453)
 
@@ -1058,6 +1020,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 <!--- ENGCOM-3364-->* Magento no longer throws an error when you send an email from the command line. Previously, Magento threw an exception because `$debugHintsPath` was missing. *Fix submitted by [p-bystritsky](https://github.com/p-bystritsky) in pull request [18991](https://github.com/magento/magento2/pull/18991)*. [GitHub-10440](https://github.com/magento/magento2/issues/10440)
 
+* The generated topic names that are used by message queues are now based on service contract names. The Asynchronous Web API module uses a message queue as the  communication mechanism between API endpoints and the consumers that process requests. In previous implementations,  topic names were generated based on the URLs of the REST API. Currently,  topic names reflect the PHP class and method names that should be invoked to handle processing. This new naming is more semantic and allows the reuse for other Magento services.
 
 
 
@@ -1089,7 +1052,7 @@ The configurale product
 
 ### Newsletter
 
-<!--- ENGCOM-3460-->* Magento now sets the correct store_id for each store when a customer subscribes to a newsletter from more than one stor. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [19195](https://github.com/magento/magento2/pull/19195)*. [GitHub-19172](https://github.com/magento/magento2/issues/19172)
+<!--- ENGCOM-3460-->* Magento now sets the correct `store_id` for each store when a customer subscribes to a newsletter from more than one stor. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [19195](https://github.com/magento/magento2/pull/19195)*. [GitHub-19172](https://github.com/magento/magento2/issues/19172)
 
 <!--- ENGCOM-3266-->* Customers are no longer unsubscribed to a newsletter as a result of a password reset email request when **Newsletter Need to Confirm** is set to **yes** on the Admin. *Fix submitted by [Janak Bhimani](https://github.com/janakbhimani) in pull request [18795](https://github.com/magento/magento2/pull/18795)*. [GitHub-17954](https://github.com/magento/magento2/issues/17954)
 
