@@ -36,8 +36,8 @@ Attribute | Data type | Description
 `path_in_store`| String | Category path in the store
 `position`| Int | The position of the category relative to other categories at the same level in tree
 `product_count`| Int | The number of products in the category
-`updated_at`| String | Timestamp indicating when the category was updated
 `products(PageSize, currentPage, sort)` | `CategoryProducts` | The list of products assigned to the category
+`updated_at`| String | Timestamp indicating when the category was updated
 `url_key`| String | The url key assigned to the category
 `url_path`| String | The url path assigned to the category
 
