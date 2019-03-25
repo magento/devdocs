@@ -20,7 +20,7 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 | PHP           | `--php`    | 7.1           | 7.0, 7.1, 7.2
 | NGINX         | `--nginx`  | latest        | 1.9, latest
 | MariaDB       | `--db`     | 10            | 10.0, 10.1, 10.2
-| Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2
+| Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2, 6.5
 | RabbitMQ      | `--rmq`    | 3.5           | 3.5, 3.7
 | Redis         | `--redis`  | 3.2           | 3.0, 3.2, 4.0
 {:style="table-layout:auto;"}

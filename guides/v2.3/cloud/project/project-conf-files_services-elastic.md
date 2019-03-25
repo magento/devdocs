@@ -14,13 +14,10 @@ functional_areas:
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until the reindex operation completes
 
-{{site.data.var.ee}} supports Elasticsearch version 5.2.
-
-{:.bs-callout .bs-callout-info}
-Elasticsearch 5.2 is only available for 2.2.3 and later. If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es). See [Elasticsearch information]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html) to learn more.
+{{site.data.var.ee}} v2.3 supports Elasticsearch version 5.2. {{site.data.var.ee}}v2.3.1 and later supports Elasticsearch version 6.x. For additional details, see [Elasticsearch information]({{ page.baseurl }}/config-guide/elasticsearch/es-overview.html) to learn more.
 
 {:.bs-callout .bs-callout-warning}
-If you prefer using an existing search service, such as Elasticsearch, instead of relying on the default Cloud configuration, you can use the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
+If you prefer to use an existing search service instead of relying on the default Cloud configuration, you can use the [`SEARCH_CONFIGURATION`]({{ page.baseurl }}/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
 
 #### To enable Elasticsearch:
 
@@ -28,7 +25,7 @@ If you prefer using an existing search service, such as Elasticsearch, instead o
 
     ```yaml
     elasticsearch:
-        type: elasticsearch:5.2
+        type: elasticsearch:6.5
         disk: 1024
     ```
 
@@ -55,7 +52,7 @@ Optionally, you can add plugins with the `.magento/services.yaml` file. For exam
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:5.2
+   type: elasticsearch:6.5
    disk: 1024
    configuration:
     plugins:
@@ -66,7 +63,7 @@ elasticsearch:
 {:.bs-callout .bs-callout-info}
 Magento does not support the ElasticSuite third-party plugin.
 
-See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/5.2/index.html).
+See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/current/index.html).
 
 ## Verify relationships
 

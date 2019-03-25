@@ -14,7 +14,7 @@ functional_areas:
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until the reindex operation completes
 
-We support Elasticsearch versions 1.4, 1.7, 2.4, and 5.2. The default version is 2.4. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. See [Elasticsearch information]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html).
+We support Elasticsearch versions 1.4, 1.7, 2.4, 5.2. The default version is 5.2. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. See [Elasticsearch information]({{ site.baseurl }}/guides/v2.2/config-guide/elasticsearch/es-overview.html).
 
 {:.bs-callout .bs-callout-info}
 Elasticsearch 5.2 is only available for 2.2.3 and later. If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
@@ -55,7 +55,7 @@ Optionally, you can add plugins with the `.magento/services.yaml` file. For exam
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:2.4
+   type: elasticsearch:5.2
    disk: 1024
    configuration:
     plugins:
