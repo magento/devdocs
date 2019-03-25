@@ -300,7 +300,6 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- ENGCOM-3971-->* Fixed issue displaying numbers than exceed two digits in the **Qty:** box of the **Proceed to Checkout** pop up. *Fix submitted by [Parag Chavare](https://github.com/parag2jcommerce) in pull request [20612](https://github.com/magento/magento2/pull/20612)*. [GitHub-20611](https://github.com/magento/magento2/issues/20611)
 
-<!--- ENGCOM-3861-->* Fixed alignment of the details label on the order page in mobile view. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20301](https://github.com/magento/magento2/pull/20301)*. [GitHub-20299](https://github.com/magento/magento2/issues/20299)
 
 <!--- ENGCOM-3864-->* Added a missing space between the title of the workflow step and the saved address on the first page of the checkout process. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20306](https://github.com/magento/magento2/pull/20306)*. [GitHub-20304](https://github.com/magento/magento2/issues/20304)
 
@@ -497,6 +496,9 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 
 ### Cleanup and simple code refactoring
+
+<!--- ENGCOM-3861-->* Fixed alignment of the details label on the order page in mobile view. *Fix submitted by [Arvinda kumar](https://github.com/cedarvinda) in pull request [20301](https://github.com/magento/magento2/pull/20301)*. [GitHub-20299](https://github.com/magento/magento2/issues/20299)
+
 
 <!--- ENGCOM-3835-->* Fixed rendering of the **Add your text** link on the Product page. *Fix submitted by [Nainesh Waghale](https://github.com/nainesh2jcommerce) in pull request [20224](https://github.com/magento/magento2/pull/20224)*. [GitHub-20221](https://github.com/magento/magento2/issues/20221)
 
@@ -1225,8 +1227,6 @@ The configurale product
 
 <!--- MAGETWO-96400-->* The Sales table now displays company information in billing and shipping addresses. 
 
-<!--- MAGETWO-96987-->* Magento no longer adds giftwrap tax to the credit memo twice. 
-
 <!--- MAGETWO-94424-->*  Magento now displays product price and shipping costs in the default currency that was configured for that specific website for orders created from the Admin. Previously, when you have multi-site configuration with different default currencies for each website, the product and shipping prices shown while creating an admin order are incorrect. 
 
 <!--- ENGCOM-3828-->* Magento now displays a success message when you create an order through the Admin and the **create shipment** and **Email copy of invoice** checkboxes are checked. *Fix submitted by [Surabhi Srivastava](https://github.com/Surabhi-Cedcoss) in pull request [20142](https://github.com/magento/magento2/pull/20142)*. [GitHub-19942](https://github.com/magento/magento2/issues/19942)
@@ -1505,10 +1505,7 @@ The following table identifies contributions from our community members. This ta
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html)
-
-
- For more information, see [System Requirements]({{site.baseurl}}/magento-system-requirements.html){:target="_blank"}.
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{site.baseurl}}/magento-system-requirements.html).
 
 ### Installation and upgrade instructions
 
