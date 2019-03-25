@@ -52,7 +52,7 @@ To implement what is discussed in this guide, you need a working Magento install
 
 To use this guide, you must be familiar with:
 
-*	CSS and CSS 3
+*	CSS, CSS 3, and LESS
 *	HTML and HTML 5
 *	{% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %}
 *	{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}
