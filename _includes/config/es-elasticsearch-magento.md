@@ -35,7 +35,7 @@ Unless you changed Elasticsearch server settings, the defaults should work. Skip
 
 You will see either:
 
-<img src="{{ site.baseurl }}/common/images/elastic_test-success.png">
+![]({{ site.baseurl }}/common/images/elastic_test-success.png)
 
 Continue with:
 
@@ -44,7 +44,7 @@ Continue with:
 
 or you will see:
 
-<img src="{{ site.baseurl }}/common/images/elastic_test-fail.png">
+![]({{ site.baseurl }}/common/images/elastic_test-fail.png)
 
 If so, try the following:
 
@@ -56,7 +56,11 @@ In particular, make sure you started Elasticsearch as a user with `root` privile
 * Verify the value of the **Elasticsearch Server Hostname** field. Make sure the server is available. You can try the server's IP address instead.
 * Use the command `netstat -an | grep **listen-port**` command to verify that the port specified in the **Elasticsearch Server Port** field is not being used by another process.
   For example, to see if Elasticsearch is running on its default port, use the following command:
-  `netstat -an | grep 9200`
+  
+  ```bash
+  netstat -an | grep 9200
+  ```
+
   If Elasticsearch is running on port 9200, it displays similar to the following:
   `tcp        0      0 :::9200            :::*          LISTEN`
 
