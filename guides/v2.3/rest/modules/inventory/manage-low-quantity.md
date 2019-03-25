@@ -44,7 +44,7 @@ The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of 
 
 **Sample usage**
 
-`POST /V1/inventory/low-quantity-notification`
+`POST <host>/rest/<store_code>/V1/inventory/low-quantity-notification`
 
 **Payload**
 
@@ -79,9 +79,9 @@ An empty array `[]`
 
 This call returns the `notify_stock_qty` for the specified source and SKU.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/low-quantity-notification/reno_wh/sp1`
+`GET <host>/rest/<store_code>/V1/inventory/low-quantity-notification/reno_wh/sp1`
 
 **Payload**
 
@@ -104,7 +104,7 @@ The `POST /V1/inventory/low-quantity-notifications-delete` endpoint deletes the 
 
 **Sample usage**
 
-`POST /V1/inventory/low-quantity-notifications-delete`
+`POST <host>/rest/<store_code>/V1/inventory/low-quantity-notifications-delete`
 
 **Payload**
 
