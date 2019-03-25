@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: category endpoint
+title: Category Endpoint
 ---
 
 The `category` endpoint allows you to search for a single category definition or the entire category tree. To return multiple category levels in a single call, define the response so that it contains up to ten nested `children` options. You cannot return the entire category tree if it contains more than 10 sublevels unless the `queryDepth` parameter in the GraphQL `di.xml` file has been reconfigured. 
@@ -25,23 +25,21 @@ The query returns a `CategoryTree` object, which implements `CategoryInterface`.
 
 Attribute | Data type | Description
 --- | --- | ---
-`id` | Int | An ID that uniquely identifies the category
+`breadcrumbs` | `Breadcrumb` | Breadcrumbs, parent categories info
+`created_at`| String | Timestamp indicating when the category was created
+`default_sort_by`| String | The attribute to use for sorting
 `description`| String | An optional description of the category
+`id` | Int | An ID that uniquely identifies the category
+`level` | Int | Indicates the depth of the category within the tree
 `name`| String | The display name of the category
-`path`| String | The path to the category, as a string of category IDs, separated by slashes (/). For example, `1/2/20`
+`path`| String | Category Path. The path to the category, as a string of category IDs, separated by slashes (/). For example, `1/2/20`
 `path_in_store`| String | Category path in the store
+`position`| Int | The position of the category relative to other categories at the same level in tree
+`product_count`| Int | The number of products in the category
+`updated_at`| String | Timestamp indicating when the category was updated
+`products(PageSize, currentPage, sort)` | `CategoryProducts` | The list of products assigned to the category
 `url_key`| String | The url key assigned to the category
 `url_path`| String | The url path assigned to the category
-`position`| Int | The position of the category relative to other categories at the same level in tree
-`level` | Int | Indicates the depth of the category within the tree
-`created_at`| String | Timestamp indicating when the category was created
-`updated_at`| String | Timestamp indicating when the category was updated
-`product_count`| Int | The number of products in the category
-`default_sort_by`| String | The attribute to use for sorting
-`products(<attributes>)` | `CategoryProducts` | The list of products assigned to the category
-`breadcrumbs` | `Breadcrumb` | A `Breadcrumb` object contains information the categories that comprise the breadcrumb trail for the specified category
-`children` | `CategoryTree` | A `CategoryTree` object that contains information about a child category. You can specify up to 10 levels of child categories.
-
 
 #### CategoryProducts object
 
