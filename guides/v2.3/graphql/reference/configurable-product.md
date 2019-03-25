@@ -9,8 +9,8 @@ The `ConfigurableProduct` endpoint defines which configurable product-specific a
 
 Field | Type | Description
 --- | --- | ---
-`configurable_product_links` | SimpleProduct | An array of linked simple products
-`configurable_product_options` | ConfigurableProductOptions | An array of linked simple product items
+`variants` | ConfigurableVariant | An array of linked simple products
+`configurable_options` | ConfigurableProductOptions | An array of linked simple product items
 
 ## ConfigurableProductOptions
 
@@ -21,7 +21,7 @@ Field | Type | Description
 `attribute_code` | String | A string that identifies the attribute
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
-`is_use_default` | Boolean | Indicates whether the option is the default
+`use_default` | Boolean | Indicates whether the option is the default
 `values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product
 `product_id` | Int | This is the same as a product's 'id' field
 
@@ -30,6 +30,10 @@ Field | Type | Description
 Field | Type | Description
 --- | --- | ---
 `value_index` | Int | A unique index number assigned to the configurable product option
+`label` | String | The label of the product
+`default_label` | String | The label of the product on the default store
+`store_label` | String | The label of the product on the current store
+`use_default_value` | Boolean | Indicates whether to use the default_label
 
 ## Sample Query
 
