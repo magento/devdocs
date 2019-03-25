@@ -35,16 +35,16 @@ The Admin order creation workflow has been refactored to eliminate delays when e
 
 #### Inventory Management 1.1.0 (Community-developed feature!)
 
-The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management:
+The Multi-Source Inventory (MSI) community project has added multiple new features to this release of Inventory Management. See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/inventory/release-notes.html) for information about specific fixes and acknowledgements to community contributors.
 
 * **Support for Elasticsearch and Inventory Management**. All site searches now return correct products and quantities when Elasticsearch is used as the search engine. (As of this release, only default option from 2.3+)  Searches return results from stock assigned to the website. Advanced features are supported, including filtering search results. Community-developed feature! 
 
 * **Distance Priority Source Selection algorithm (SSA) option**. Merchants can enable this algorithm to reduce fulfillment costs by shipping orders from the closest inventory locations. This SSA option uses address geocoding through the Google Maps API to calculate the shortest distance for deliveries. See [Manage source selection algorithms](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/manage-source-selection.html).
 
-* **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking of the Admin during transfers. 
 
+* **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking during transfers.   
+ 
 * **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders.  See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
-
 
 
 
@@ -1618,6 +1618,9 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 **Workaround**: You must enable HSTS from **Stores** > **General** > **Web** > **BaseUrls (Secure)**. <!--- MC-15003-->
 
+**Issue**: For Inventory Management, asynchronous migration of data between sources will encounter issues due to changes in Asynchronous APIs with topic names reflecting PHP class and method names. 
+
+**Workaround**: We recommend using synchronous operations, setting **Run asynchronously** to "No". To configure, see [Configure Global Options](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) in the Magento User Guide.
 
 ## Community contributions
 
@@ -1633,6 +1636,7 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 The following table highlights contributions made by Partners. This table lists the Partner who contributed the pull request, the external pull request, and the GitHub issue number associated with it (if available). 
 
+{% include release-notes/engcomm-2-3-1-partner.md %}
 
 ### Individual contributor contributions
 

@@ -56,7 +56,7 @@ See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/g
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/integration/admin/token`
+`POST <host>/rest/<store_code>/V1/integration/admin/token`
 
 **Headers**
 

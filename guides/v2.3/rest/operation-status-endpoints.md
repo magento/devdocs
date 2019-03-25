@@ -45,9 +45,9 @@ Field name | Data type | Description
   ],
   "user_type": 2,
   "bulk_id": "fbfca270-7a90-4c4e-9f32-d6cf3728cdc7",
-  "description": "Topic async.V1.products.sku.PUT",
+  "description": "Topic async.magento.catalog.api.productrepositoryinterface.save.put",
   "start_time": "2018-07-12 16:07:53",
-  "user_id": null,
+  "user_id": 1,
   "operation_count": 1
 }
 ```
@@ -86,7 +86,7 @@ Field name | Data type | Description
     {
       "id": 4,
       "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-      "topic_name": "async.V1.customers.POST",
+      "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
       "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"mshaw@example.com\\\",\\\"firstname\\\":\\\"Melanie Shaw\\\",\\\"lastname\\\":\\\"Doe\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
       "result_serialized_data": null,
       "status": 3,
@@ -96,7 +96,7 @@ Field name | Data type | Description
     {
       "id": 5,
       "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-      "topic_name": "async.V1.customers.POST",
+      "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
       "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"bmartin@example.com\\\",\\\"firstname\\\":\\\"Bryce\\\",\\\"lastname\\\":\\\"Martin\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
       "result_serialized_data": null,
       "status": 3,
@@ -106,7 +106,7 @@ Field name | Data type | Description
     {
       "id": 6,
       "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-      "topic_name": "async.V1.customers.POST",
+      "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
       "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"bmartin@example.com\\\",\\\"firstname\\\":\\\"Bryce\\\",\\\"lastname\\\":\\\"Martin\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
       "result_serialized_data": null,
       "status": 3,
@@ -116,7 +116,7 @@ Field name | Data type | Description
     {
       "id": 7,
       "bulk_uuid": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-      "topic_name": "async.V1.customers.POST",
+      "topic_name": "async.magento.customer.api.accountmanagementinterface.createaccount.post",
       "serialized_data": "{\"entity_id\":null,\"entity_link\":\"\",\"meta_information\":\"{\\\"customer\\\":{\\\"email\\\":\\\"tgomez@example.com\\\",\\\"firstname\\\":\\\"Teresa\\\",\\\"lastname\\\":\\\"Gomez\\\"},\\\"password\\\":\\\"Password1\\\",\\\"redirectUrl\\\":\\\"\\\"}\"}",
       "result_serialized_data": null,
       "status": 3,
@@ -126,7 +126,7 @@ Field name | Data type | Description
   ],
   "user_type": 2,
   "bulk_id": "c43ed402-3dd3-4100-92e2-dc5852d3009b",
-  "description": "Topic async.V1.customers.POST",
+  "description": "Topic async.magento.customer.api.accountmanagementinterface.createaccount.post",
   "start_time": "2018-07-11 20:07:14",
   "user_id": null,
   "operation_count": 4
