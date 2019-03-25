@@ -41,15 +41,20 @@ To get the Magento metapackage:
 
     **{{site.data.var.ce}}**
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-community-edition <install-directory-name>
+    composer create-project --repository=https://repo.magento.com/magento/project-community-edition:<version-tag> <install-directory-name>
     ```
 
     **{{site.data.var.ee}}**
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
+    composer create-project --repository=https://repo.magento.com/magento/project-enterprise-edition:<version-tag> <install-directory-name>
     ```
 
     When prompted, enter your Magento authentication keys. Your _public key_ is your username; your _private key_ is your password.
+
+    To install {{site.data.var.ce}} version 2.2.2 run in current folder:
+    ```bash
+    composer create-project --repository=https://repo.magento.com/magento/project-community-edition:2.2.2 .
+    ```
 
     If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 

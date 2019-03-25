@@ -51,7 +51,7 @@ This call changes the company's credit limit to $1000. The `available_limit` par
 
 **Sample Usage**
 
-`PUT /V1/companyCredits/2`
+`PUT <host>/rest/<store_code>/V1/companyCredits/2`
 
 **Payload**
 
@@ -90,7 +90,7 @@ This call returns data on the credit limit for the specified credit ID.
 
 **Sample Usage**
 
-`GET /V1/companyCredits/2`
+`GET <host>/rest/<store_code>/V1/companyCredits/2`
 
 **Payload**
 
@@ -120,7 +120,7 @@ This call returns information about the credit limit for a specified company.
 
 **Sample Usage**
 
-`GET /V1/companyCredits/company/2`
+`GET <host>/rest/<store_code>/V1/companyCredits/company/2`
 
 **Payload**
 
@@ -148,7 +148,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET  /V1/companyCredits?searchCriteria[filter_groups][0][filters][0][field]=balance&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/companyCredits?searchCriteria[filter_groups][0][filters][0][field]=balance&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 
@@ -247,7 +247,7 @@ This call increases the company credit with an Allocate, Update, Refund, Revert,
 
 **Sample Usage**
 
-`V1/companyCredits/2/increaseBalance`
+`POST <host>/rest/<store_code>/V1/companyCredits/2/increaseBalance`
 
 **Payload**
 
@@ -270,7 +270,7 @@ This call decreases the company credit with an Update (operation type = 2), Purc
 
 **Sample Usage**
 
-`V1/companyCredits/2/decreaseBalance`
+`POST <host>/rest/<store_code>/V1/companyCredits/2/decreaseBalance`
 
 **Payload**
 
@@ -306,7 +306,7 @@ This call updates the credit history to specify a purchase order number.
 
 **Sample Usage**
 
-`PUT /V1/companyCredits/history/6`
+`PUT <host>/rest/<store_code>/V1/companyCredits/history/6`
 
 **Payload**
 
@@ -330,7 +330,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET /V1/companyCredits/history?searchCriteria[filter_groups][0][filters][0][field]=credit_limit&searchCriteria[filter_groups][0][filters][0][value]=500&searchCriteria[filter_groups][0][filters][0][condition_type]=gt`
+`GET <host>/rest/<store_code>/V1/companyCredits/history?searchCriteria[filter_groups][0][filters][0][field]=credit_limit&searchCriteria[filter_groups][0][filters][0][value]=500&searchCriteria[filter_groups][0][filters][0][condition_type]=gt`
 
 **Payload**
 
