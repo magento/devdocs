@@ -56,7 +56,7 @@ You can set multiple special prices in a single call, as shown in the example be
 
 **Sample Usage**
 
-`POST /V1/products/special-price`
+`POST <host>/rest/<store_code>/V1/products/special-price`
 
 **Payload**
 
@@ -99,7 +99,7 @@ The following call returns the special price information for three SKU values.
 
 **Sample Usage**
 
-`POST /V1/products/special-price-information`
+`POST <host>/rest/<store_code>/V1/products/special-price-information`
 
 **Payload**
 
@@ -147,7 +147,7 @@ If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Mag
 
 **Sample Usage**
 
-`POST /V1/products/special-price-delete`
+`POST <host>/rest/<store_code>/V1/products/special-price-delete`
 
 **Payload**
 
@@ -229,7 +229,7 @@ The `POST /V1/products/tier-prices` call adds new tier prices or updates existin
 
 **Sample Usage**
 
-`POST /V1/products/tier-prices`
+`POST <host>/rest/<store_code>/V1/products/tier-prices`
 
 **Payload**
 
@@ -277,7 +277,7 @@ The following example removes the $10 tier price for `sku` 24-UG04 and changes t
 
 **Sample Usage**
 
-`PUT /V1/products/tier-prices`
+`PUT <host>/rest/<store_code>/V1/products/tier-prices`
 
 **Payload**
 
@@ -314,7 +314,7 @@ Magento returns all active tier prices for the specified list of `skus`.
 
 **Sample Usage**
 
-`V1/products/tier-prices-information`
+`POST <host>/rest/<store_code>/V1/products/tier-prices-information`
 
 **Payload**
 
@@ -372,7 +372,7 @@ You must specify each tier price that is to be deleted. You can delete multiple 
 
 **Sample Usage**
 
-`POST /V1/products/tier-prices-delete`
+`POST <host>/rest/<store_code>/V1/products/tier-prices-delete`
 
 **Payload**
 
@@ -432,7 +432,7 @@ The following example sets the base price for a simple and a downloadable produc
 
 **Sample Usage**
 
-`POST /V1/products/base-prices`
+`POST <host>/rest/<store_code>/V1/products/base-prices`
 
 **Payload**
 
@@ -463,7 +463,7 @@ The following example returns the base prices for a simple and a downloadable pr
 
 **Sample Usage**
 
-`POST /V1/products/base-prices-information`
+`POST <host>/rest/<store_code>/V1/products/base-prices-information`
 
 **Payload**
 ``` json
@@ -526,7 +526,7 @@ The following example sets the cost value for a simple and a downloadable produc
 
 **Sample Usage**
 
-`POST /V1/products/cost`
+`POST <host>/rest/<store_code>/V1/products/cost`
 
 **Payload**
 
@@ -557,7 +557,7 @@ The following example returns the cost values for a simple and a downloadable pr
 
 **Sample Usage**
 
-`POST /V1/products/cost-information`
+`POST <host>/rest/<store_code>/V1/products/cost-information`
 
 **Payload**
 ``` json
@@ -592,7 +592,7 @@ The following example deletes the previously-defined cost values for a simple an
 
 **Sample Usage**
 
-`POST /V1/products/cost-delete`
+`POST <host>/rest/<store_code>/V1/products/cost-delete`
 
 **Payload**
 ``` json
