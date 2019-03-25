@@ -43,7 +43,7 @@ Currently, Inventory Management supports only the default SSA for priority. Thir
 
 **Sample usage**
 
-`GET http://<host>/rest/us/V1/inventory/source-selection-algorithm-list`
+`GET <host>/rest/us/V1/inventory/source-selection-algorithm-list`
 
 **Payload**
 
@@ -74,7 +74,7 @@ The `POST V1/inventory/source-selection-algorithm-result` endpoint uses the algo
 
 **Sample usage**
 
-`POST /V1/inventory/source-selection-algorithm-result`
+`POST <host>/rest/<store_code>/V1/inventory/source-selection-algorithm-result`
 
 **inventoryRequest parameters**
 
@@ -231,11 +231,11 @@ Magento provides several endpoints to help determine GPS coordinates.
 
 ### Get the distance provider code
 
-The ` GET /V1/inventory/get-distance-provider-code` endpoint returns the configured distance provider for the Distance Priority algorithm. The value can be `google` or `offline`.
+The `GET /V1/inventory/get-distance-provider-code` endpoint returns the configured distance provider for the Distance Priority algorithm. The value can be `google` or `offline`.
 
 **Sample usage**
 
-` GET /V1/inventory/get-distance-provider-code`
+`GET <host>/rest/<store_code>/V1/inventory/get-distance-provider-code`
 
 **Payload**
 

@@ -24,7 +24,7 @@ Currently, Magento supports SSAs based on priority and on distance. Third-party 
 
 **Endpoint**
 
-`GET http://<host>/rest/us/V1/inventory/source-selection-algorithm-list`
+`GET <host>/rest/us/V1/inventory/source-selection-algorithm-list`
 
 **Scope**
 
@@ -65,7 +65,7 @@ This tutorial does not consider complications such selling out of products or ba
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/inventory/source-selection-algorithm-result`
+`POST <host>/rest/us/V1/inventory/source-selection-algorithm-result`
 
 **Scope**
 

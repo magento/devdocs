@@ -211,21 +211,21 @@ class MyUtility
 }
 ```
 
-If you wrapped this method with a plugin like below:
+You should wrap this method with a plugin like below:
 
 ``` PHP
 namespace My\Module\Plugin;
 
 class MyUtilityUpdater
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, SomeType $obj)
+    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, SomeType $obj = null)
     {
       //do something
     }
 }
 ```
 
-Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
+Note if you miss <code>= null</code> and Magento calls the original method with <code>null</code>, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 

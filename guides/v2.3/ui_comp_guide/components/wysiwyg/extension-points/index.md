@@ -270,7 +270,7 @@ openFileBrowser: function (o) {
         storeId = this.config['store_id'] !== null ? this.config['store_id'] : 0,
         frameDialog = jQuery(o.win.frameElement).parents('[role="dialog"]'),
         wUrl = this.config['files_browser_window_url'] +
-            'target_element_id/' + this.id + '/' +
+            'target_element_id/' + this.getId() + '/' +
             'store/' + storeId + '/';
 
     this.mediaBrowserOpener = o.win;

@@ -42,7 +42,7 @@ Only one stock can be mapped to each sales channel. If you assign a sales channe
 
 **Sample usage**
 
-`POST /V1/inventory/stocks`
+`POST <host>/rest/<store_code>/V1/inventory/stocks`
 
 **Payload**
 
@@ -72,9 +72,9 @@ You can change the name of a custom stock and its associated sales channels. Eac
 
 If you change a sales channel between stocks, we recommend that you first complete any open orders and shipments that may need access to the assigned sources.
 
-**Sample usage**
+**Sample Usage**
 
-`PUT /V1/inventory/stocks/4`
+`PUT <host>/rest/<store_code>/V1/inventory/stocks/4`
 
 **Payload**
 
@@ -102,9 +102,9 @@ A `stock_id`, such as `4`.
 
 This call returns detailed information about the specified stock.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/stocks/4`
+`GET <host>/rest/<store_code>/V1/inventory/stocks/4`
 
 **Payload**
 
@@ -132,9 +132,9 @@ None
 
 You cannot delete a stock if it is assigned to a sales channel. You can unassign a stock's sales channels by omitting the `sales_channels` array in a `PUT /V1/inventory/stocks/:stockId` call.
 
-**Sample usage**
+**Sample Usage**
 
-`DELETE /V1/inventory/stocks/4`
+`DELETE <host>/rest/<store_code>/V1/inventory/stocks/4`
 
 **Payload**
 
@@ -154,7 +154,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET /V1/inventory/stocks?searchCriteria[filter_groups][0][filters][0][field]=name&searchCriteria[filter_groups][0][filters][0][value]=%25Stock%25&searchCriteria[filter_groups][0][filters][0][condition_type]=like`
+`GET <host>/rest/<store_code>/V1/inventory/stocks?searchCriteria[filter_groups][0][filters][0][field]=name&searchCriteria[filter_groups][0][filters][0][value]=%25Stock%25&searchCriteria[filter_groups][0][filters][0][condition_type]=like`
 
 **Payload**
 

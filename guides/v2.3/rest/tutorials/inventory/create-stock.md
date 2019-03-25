@@ -27,7 +27,7 @@ The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/stocks`
+`POST <host>/rest/all/V1/inventory/stocks`
 
 **Scope**
 

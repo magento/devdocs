@@ -28,7 +28,7 @@ You can specify any of the following fields to filter on operation statuses:
 The following call returns bulk operations that contain an error that cannot be retried.
 
 ```
-GET http://<magento_host>/rest/V1/bulk/?
+GET <host>/rest/<store_code>/V1/bulk/?
 searchCriteria[filter_groups][0][filters][0][field]=status&
 searchCriteria[filter_groups][0][filters][0][value]=3&
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq
