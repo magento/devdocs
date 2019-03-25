@@ -26,7 +26,7 @@ This example creates a full invoice. You can create a partial invoice by adding 
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/order/3/invoice`
+`POST <host>/rest/<store_code>/V1/order/3/invoice`
 
 where `3` is the `orderid`
 
@@ -54,7 +54,7 @@ An invoice is structurally similar to an order, but an order contains more detai
 
 **Endpoint**
 
-`GET http://<host>/rest/default/V1/invoices/3`
+`GET <host>/rest/<store_code>/V1/invoices/3`
 
 **Headers**
 
