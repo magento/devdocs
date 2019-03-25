@@ -62,5 +62,39 @@ Display top level navigational items in mobile menu or all items.
 The Magento menu widget has all default <a href="http://api.jqueryui.com/menu/" target="_blank">jQuery UI menu widget</a> methods and events.
 
 
+## Code Sample {#menu_code_sample}
+
+The following example is just a sample to show how the widget is initialized and how the options can be passed during widget's initialization.
+
+```html
+<nav class="navigation" data-action="navigation">
+    <ul id="menu" data-mage-init='{"menu":{"responsive":true, "expanded":true, "delay": 200, "position":{"my":"left top","at":"left+10 top+30"}}}'>
+        <li class="level0 level-top ui-menu-item">Toys</li>
+        <li class="level0 level-top parent ui-menu-item">Electronics
+            <ul class="level0 submenu ui-menu ui-widget ui-widget-content ui-corner-all">
+                <li class="ui-menu-item"><a href="#">Home Entertainment</a></li>
+                <li class="ui-menu-item"><a href="#">Routers</a></li>
+            </ul>
+        </li>
+        <li class="level0 level-top ui-menu-item">Music
+            <ul class="level0 submenu ui-menu ui-widget ui-widget-content ui-corner-all">
+                <li class="ui-menu-item">
+                    <a href="#">Alternative</a>
+                </li>
+                <li class="ui-menu-item">
+                    <a href="#">Classic</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+```
+
+### Result
+
+As result we'll have a menu with given structure with some child items.
+
+![Menu Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/menu-widget-result.png)
+
 
 
