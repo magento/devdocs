@@ -11,9 +11,9 @@ Magento releases security and functional patches for each supported release line
 The following guidelines apply to patch releases:
 
 - All supported versions receive security fixes.
-- Older versions receive fewer functional fixes.
-- Changes that could break extensions or code compatibility should be avoided. For example, code written for 2.2.0 should still work on 2.2.7.
-- We reserve the right to implement major changes or release additional patches or hotfixes to address major security issues. On the module level, these are mostly PATCH level changes, sometimes MINOR level changes.
+- Newer versions receive full functional fixes and any enhancements. Fixes for high-severity functional issues are back-ported to older supported versions, but fixes for lower-severity issues are not necessarily back-ported.
+- Changes that could break extensions or code compatibility are avoided. For example, code written for 2.2.0 should still work on 2.2.7.
+- On an exceptional basis, breaking changes or additional patches or hotfixes may be released to address security issues. On the module level, these are mostly PATCH level changes, sometimes MINOR level changes.
 - Patches may include new features as long as they are not expected to break other code. The new feature can be included in the core code or as an extension, like Page Builder.
 
 Magento releases a large (minor version change – 2.2.0 -> 2.3.0) update about once a year.
@@ -40,9 +40,9 @@ See [Magento Software Lifecycle Policy] and [Versioning].
 | **Amazon Sales Channel**                        | Early access closed<br><br>Regional availability expected in first half of 2019 (US, Canada, Mexico)<br><br>EMEA and APAC availability expected in second half of 2019 | N/A<br><br>Magento Marketplace                                                                                               |
 | **Google Ad Channel**                           | Early access TBD<br><br>General availability expected in first half of 2019                                                                                            | TBD<br><br>Magento Marketplace                                                                                               |
 
-## Extension stability
+## Product stability
 
-The following table shows the release status of a Magento extension version relative to the 2.3.x release line of {{site.data.var.ee}}.
+The following table shows the release status of Magento extension and product versions relative to the 2.3.x release line of {{site.data.var.ee}}.
 
 {% include compatibility.html data=site.data.compatibility %}
 
