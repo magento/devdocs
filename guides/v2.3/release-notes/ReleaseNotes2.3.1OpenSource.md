@@ -69,8 +69,6 @@ This release includes over 30 security enhancements that help close cross-site s
 
 ### Performance boosts
 
-**Magento now supports customer accounts with more than 3,000 addresses**. Multiple code enhancements  contribute to this performance boost: 
-
 * Customer address handling has been rewritten with UI components that increase platform performance, which in turn streamlines the management of customers with 3000 and more addresses.  <!--- MAGETWO-94346 95249-->
 
 * The Admin order creation page now handles  customer accounts with 3000 addresses without performance issues.   <!--- MC-5683-->
