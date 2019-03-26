@@ -31,7 +31,7 @@ We'll ship 20 `24-WB01` items and 19 `24-WB03` items from the Baltimore warehous
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/order/3/ship`
+`POST <host>/rest/us/V1/order/3/ship`
 
 where `3` is the `orderid`
 
@@ -113,7 +113,7 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/shipment`
+`POST <host>/rest/us/V1/shipment`
 
 **Scope**
 
