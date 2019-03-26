@@ -17,5 +17,4 @@
   url: /release-notes/bk-release-notes.html
 
 - label: Third-Party Licenses
-  url: /magento-third-party.html
-  versionless: true
+  url: /release-notes/thirdparty_ce.html
