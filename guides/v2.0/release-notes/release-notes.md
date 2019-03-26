@@ -5,8 +5,6 @@ title: Magento 2.0 Release Notes
 menu_title: Magento 2.0 Release Notes
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: release-notes/release-notes.md
 ---
 
 ## Magento Open Source (formerly CE), Commerce (formerly EE), and Commerce Cloud (formally ECE) Release Notes

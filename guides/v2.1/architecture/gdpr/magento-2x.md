@@ -1,8 +1,6 @@
 ---
-group: arch-guide
+group: architecture-guide
 title: Magento 2.x GDPR compliance
-version: 2.1
-github_link: architecture/gdpr/magento-2x.md
 ---
 
 The European Union (EU) enacted [General Data Protection Regulation](https://www.eugdpr.org/) (GDPR) to give its citizens more control over their personal data. GDPR applies to any organization operating within the EU. It also applies to organizations outside of the EU that offer goods or services to customers or businesses in the EU.
@@ -107,7 +105,6 @@ Column | Data type
 `billing_vat_id` | varchar(255)
 `billing_company` | varchar(255)
 
-
 ### Address data
 
 Magento 2 stores these customer attributes:
@@ -130,7 +127,7 @@ Magento 2 stores these customer attributes:
 
 #### `customer_address_entity` and reference tables
 
-The following columns in the `customer_address_entity`table contain customer information:
+The following columns in the `customer_address_entity` table contain customer information:
 
 Column | Data type
 --- | ---

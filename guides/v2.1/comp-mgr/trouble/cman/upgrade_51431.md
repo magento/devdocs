@@ -1,17 +1,16 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Troubleshoot upgrade issues
 menu_title: Troubleshoot upgrade issues
 menu_node:
 menu_order: 5
-version: 2.1
-github_link: comp-mgr/trouble/cman/upgrade_51431.md
 functional_areas:
   - Upgrade
 ---
 
 ## Troubleshoot upgrade issues
+
 This section discusses upgrade issues to Magento version 2.0.4. Symptoms include any of the following errors during the upgrade process:
 
 ### `Strict Notice` exception
@@ -21,6 +20,7 @@ Error text follows:
 	Strict Notice: Declaration of Magento\Store\Model\ResourceModel\Website\Interceptor::afterLoad() should be compatible with Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad(Magento\Framework\DataObject $object) in /var/www/html/magento2ce/var/generation/Magento/Store/Model/ResourceModel/Website/Interceptor.php on line 7   
 
 ### PHP fatal error
+
 A snippet from this error follows:
 
 	PHP Fatal error:  Cannot instantiate interface Magento\Framework\MessageQueue\ConfigInterface in /var/www/html/eddie/project-enterprise-edition/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73
@@ -31,6 +31,7 @@ A snippet from this error follows:
 	... more ...
 
 ## Solution
+
 To resolve these errors, perform the following tasks:
 
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
@@ -70,23 +71,23 @@ To set file system permissions before upgrade:
 	*	One Magento user (typical of shared hosting):
 
 			cd <your Magento install dir>
-			find var -type f -exec chmod u+w {} \;
-			find var -type d -exec chmod u+w {} \;
+			find var -type f -exec chmod u+w {} +
+			find var -type d -exec chmod u+w {} +
 
 		If you don't have access to a command line, use a file manager tool provided by your hosting provider to set permissions.
 
 	*	Two Magento users:
 
 			cd <your Magento install dir>
-			find var -type f -exec chmod g+w {} \;
-			find var -type d -exec chmod g+ws {} \;
+			find var -type f -exec chmod g+w {} +
+			find var -type d -exec chmod g+ws {} +
 			chown -R :<web server group> .
 
 		For example, on CentOS where the web server group is typically `apache`:
 
 			cd /var/www/html/magento2
-			find var -type f -exec chmod g+w {} \;
-			find var -type d -exec chmod g+ws {} \;
+			find var -type f -exec chmod g+w {} +
+			find var -type d -exec chmod g+ws {} +
 			chown -R :apache .
 
 For additional details about file ownership and permissions, see [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).

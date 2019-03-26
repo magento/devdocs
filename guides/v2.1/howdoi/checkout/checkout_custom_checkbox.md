@@ -1,13 +1,11 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Add custom fields that influence other Checkout fields
 subtitle: Customize Checkout
 menu_order: 90
 level3_subgroup: checkout-tutorial
-version: 2.1
-github_link: howdoi/checkout/checkout_custom_checkbox.md
 functional_areas:
   - Checkout
 ---

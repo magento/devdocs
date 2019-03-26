@@ -5,8 +5,6 @@ title: Adding vault integration
 menu_title: Adding vault integration
 menu_order: 10
 menu_node: parent
-version: 2.1
-github_link: payments-integrations/vault/vault-intro.md
 functional_areas:
   - Integration
 ---

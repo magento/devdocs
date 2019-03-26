@@ -1,11 +1,9 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: List of REST endpoints by module
 menu_title: List of REST endpoints by module
 menu_order: 3
-version: 2.2
-github_link: rest/list.md
 functional_areas:
   - Integration
 ---
@@ -21,6 +19,7 @@ See [Integrate with B2B using REST]({{ page.baseurl }}/b2b/integrations.html) fo
 ### CustomerBalance
 
     POST   /V1/carts/mine/balance/apply
+    POST   /V1/carts/mine/balance/unapply
 
 ### GiftCardAccount
 

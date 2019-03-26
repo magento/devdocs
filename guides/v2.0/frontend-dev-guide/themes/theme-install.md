@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Install a third-party storefront theme
 menu_title: Install a third-party storefront theme
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/themes/theme-install.md
 functional_areas:
   - Frontend
   - Theme

@@ -5,8 +5,6 @@ title: Response Handler
 menu_title: Response Handler
 menu_node: 
 menu_order: 7
-version: 2.0
-github_link: payments-integrations/payment-gateway/response-handler.md
 ---
 
 Response Handler is the component of Magento payment provider gateway, that processes payment provider response. Typically, the response requires one of the following actions:
@@ -20,7 +18,6 @@ The response handler only modifies the order state, based on the {% glossarytool
 ## Interface
 
 Basic interface for a response handler is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Response/HandlerInterface.php)
-
 
 ### Useful implementations
 

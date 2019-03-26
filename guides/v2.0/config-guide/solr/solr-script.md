@@ -1,13 +1,11 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 15_Solr
 title: Prepare Solr for production
 menu_title: Prepare Solr for production
 menu_order: 3
 menu_node:
-version: 2.0
 ee_only: True
-github_link: config-guide/solr/solr-script.md
 functional_areas:
   - Configuration
   - Search
@@ -31,26 +29,26 @@ After you've tested the Solr solution, you should perform the following tasks to
 *	Consider scalability by <a href="https://cwiki.apache.org/confluence/display/solr/SolrCloud" target="_blank">clustering Solr</a>
 *	[Customize Solr](http://wiki.apache.org/solr){:target="_blank"}
 
-	<div class="bs-callout bs-callout-warning">
-		<p>Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the <a href="http://wiki.apache.org/solr/" target="_blank">Apache Solr Wiki</a>.</p>
+	<div class="bs-callout bs-callout-warning" markdown="1">
+	Customize the Solr search engine at your own risk. Magento supports only the options displayed in the Admin. Customizing the Solr engine itself, while potentially useful, can cause issues with Magento. If you encounter problems with your customizations, do not contact Magento Support; instead, consult the resources available from the [Apache Solr Wiki](http://wiki.apache.org/solr/){: target="_blank"}.
 	</div>
 *	If you choose to enable SELinux, set up <a href="http://wiki.centos.org/HowTos/SELinux" target="_blank">rules</a> to allow Magento and Solr to communicate with each other
 
 	SELinux settings are entirely up to you; Magento does not recommend either enabling it or disabling it. Because SELinux is very complex, make sure you have an experienced system administrator who can configure it.
 *	Script Solr startup and shutdown as discussed in <a href="#solr-script">Script Solr startup and shutdown</a>
 
-<h3 id="cores">Multiple core configuration</h3>
+### Multiple core configuration   {#cores}
 
 If you have created multiple cores, make sure the value of the `maxBooleanClauses` parameter is the same on each. This parameter is defined in each core's `solrconfig.xml` file. Solr uses the value defined for the core that initialized most recently as the value for all cores. The default value for the Magento installation is 10240.
 
 If one or more of the `maxBooleanClauses` parameters is set too low, the search results page could display no results.
 
-<h3 id="solr-script">Script Solr startup and shutdown</h3>
+### Script Solr startup and shutdown   {#solr-script}
+
 In a production environment, you should start and stop Solr using a script.
 
-<div class="bs-callout bs-callout-info" id="info">
-	<p>You must perform all tasks discussed in this section as a user with <code>root</code> privileges.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must perform all tasks discussed in this section as a user with `root` privileges.
 
 Create a script named <code>/etc/init.d/solr</code> with options similar to the following:
 
@@ -90,8 +88,8 @@ Create a script named <code>/etc/init.d/solr</code> with options similar to the 
 All parameters shown in the following table are required.
 
 <table>
-<col width="200">
-<col width="300">
+<col width="200" />
+<col width="300" />
 <tbody>
 <tr>
   <th>Value</th>
@@ -172,12 +170,14 @@ To complete the script:
 	Stop Solr: `/etc/init.d/solr stop`
 *	Restart Solr: `/etc/init.d/solr restart`
 
-<!-- <h2 id="next"></a>Next steps</h2>
+<!-- <h2 id=\"next\"></a>Next steps</h2>
+
 For additional information about Solr, see the following:
 
 *	For more information about performance, see "Using Solr as a Search Engine" in <a href="http://info.magento.com/rs/magentocommerce/images/Magento_PerformanceWhitepaper-EEv1-9.1.pdf" target="_blank">Maximizing Performance and Scalability with {{site.data.var.ee}}</a>
 *	<a href="http://wiki.apache.org/solr/#Operations_and_Production" target="_blank">Customize Solr</a> -->
 
-<!-- <h2 id="related">Related Information</h2>
+<!-- <h2 id=\"related\">Related Information</h2>
+
 *	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-faq" target="_blank">Frequently Asked Questions (FAQ) About Using Solr with {{site.data.var.ee}}</a>
 *	<a href="http://www.magentocommerce.com/knowledge-base/entry/solr-ee-best-practices" target="_blank">Solr and {{site.data.var.ee}} Best Practices</a> -->

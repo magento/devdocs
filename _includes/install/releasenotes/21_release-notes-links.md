@@ -1,4 +1,4 @@
-<div markdown="1">
+
 
 {% collapsibleh2 Magento Open Source 2.1 Release Notes %}
 *	[Version 2.1.12]({{ page.baseurl }}/release-notes/ReleaseNotes2.1.12CE.html){:target="_blank"}

@@ -1,15 +1,15 @@
-<div markdown="1">
-
 This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for {{site.data.var.ce}} (formerly Community Edition (CE) and {{site.data.var.ee}} (formerly Enterprise Edition (EE) as well.
 
 ## General category
+
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
 ### B2B Features paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **B2B Features**.
 
-| Name | Config path | Encrypted? | System-specific? | Sensitive? | 
-| -------------- | -------------- | -------------- | -------------- | -------------- | 
+| Name | Config path | Encrypted? | System-specific? | Sensitive? |
+| -------------- | -------------- | -------------- | -------------- | -------------- |
 | Enable Company | `btob/website_configuration/company_active` | | | |
 | Enable Shared Catalog | `btob/website_configuration/sharedcatalog_active` | | | |
 | Enable B2B Quote | `btob/website_configuration/negotiablequote_active` | | | |
@@ -19,9 +19,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Payment Methods | `btob/default_b2b_payment_methods/available_payment_methods` | | | |
 
 ## Customers category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
 
 ### Company configuration paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
@@ -59,19 +61,22 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Reverted Email Template | `company/email/credit_reverted_email_template` | | | |
 
 ### Requisition lists paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Requisition Lists**.
 
-| Name | Config path | Encrypted? | System-specific? | Sensitive? | 
+| Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |
 | Number of Requisition Lists | `requisitionlist/general/number_requisition_lists` | | | |
 
 ## Sales category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
 ### Sales Emails paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
-| Name | Config path | Encrypted? | System-specific? | Sensitive? | 
+| Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |
 | Enabled | `sales_email/quote/enabled` | | | |
 | Updated Quote Template (to Buyer) | `sales_email/quote/updated_buyer_template` | | | |
@@ -85,6 +90,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Send Quote Email Copy Method | `sales_email/quote/copy_method` | | | |
 
 ### Quotes paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Quotes**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
@@ -101,11 +107,11 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Maximum file size | `quote/attached_files/maximum_file_size` | | | |
 
 ## Payment method paths
+
 These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The available paths are determined by your choice of Merchant country.
-</div>
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |

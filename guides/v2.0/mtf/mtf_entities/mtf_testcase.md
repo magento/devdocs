@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Test case
-version: 2.0
-github_link: mtf/mtf_entities/mtf_testcase.md
 ---
 
 The Magento Functional Testing Framework supports two types of functional tests:
@@ -64,7 +62,7 @@ In the following example, the test includes preconditions and test steps. Precon
 - editing of the found product
 - saving of the edited product
 
-{% highlight php %}
+```php 
 
 <?php
 /**
@@ -99,7 +97,7 @@ public function test(CatalogProductSimple $initialProduct, CatalogProductSimple 
     return ['category' => $category];
 }
 
-{% endhighlight %}
+```
 
 A returned array is available in constraints within current variation.
 

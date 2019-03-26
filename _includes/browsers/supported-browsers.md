@@ -1,5 +1,3 @@
-<div markdown="1">
-
 Storefront and Admin:
 
 *	Internet Explorer 11 or later, Microsoft Edge, latest&ndash;1
@@ -11,4 +9,3 @@ Storefront and Admin:
 *	Chrome for mobile latest&ndash;1 (Android 4 or later) for mobile storefront
 
 Here, _latest&ndash;1_ means one major version earlier than the latest released version.
-</div>

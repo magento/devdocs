@@ -1,11 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_CompanyCredit module
 menu_title: CompanyCredit
 menu_order: 60
-version: 2.2
-github_link: mrg/b2b/CompanyCredit.md
 functional_areas:
   - B2B
 ---

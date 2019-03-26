@@ -1,12 +1,6 @@
 ---
-group: config-guide
-subgroup: 045_pipeline
+group: configuration-guide
 title: Technical Details
-menu_title: Technical Details
-menu_node:
-menu_order: 1200
-version: 2.2
-github_link: config-guide/deployment/pipeline/technical-details.md
 functional_areas:
   - Configuration
   - Deploy
@@ -181,7 +175,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
 
 This section discusses making the following configuration changes:
 
-*   Adding a website, store, and store view (**Stores** > **All Stores**)
+*   Adding a website, store, and store view (**Stores** > Settings >  **All Stores**)
 *   Changing the default email domain (**Stores** > Settings > **Configuration** > Customers > **Customer Configuration**)
 *   Setting the PayPal API Username and API password (**Stores** > Settings > **Configuration** > Sales > **Payment Methods** > **PayPal** > **Required PayPal Settings**)
 
@@ -292,9 +286,8 @@ File permissions and ownership must be consistent across development, build, and
     *   Development and build: [Set pre-installation ownership and permissions (two users)]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html#perms-private)
     *   Production: [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
 
-    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    {:.bs-callout .bs-callout-info}
     If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
-    </div>
 
 #### For more information
 

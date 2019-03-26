@@ -1,24 +1,20 @@
 ---
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
 menu_order: 20
-version: 2.0
-github_link: javascript-dev-guide/javascript/js_debug.md
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/js_debug.html
- - /guides/v1.0/frontend-dev-guide/javascript/js_debug.html
 functional_areas:
   - Testing
 ---
 
-<h2 id="js_debug_overview">Overview</h2>
+## Overview   {#js_debug_overview}
 
 This topic discusses how to define which {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components and widgets are used on a particular Magento store page.
 
-
-<h2 id="locate_widget">Locate JS components: walkthrough</h2>
+## Locate JS components: walkthrough   {#locate_widget}
 
 To locate scripts used for a certain element:
 
@@ -32,9 +28,8 @@ To locate scripts used for a certain element:
 To find the source file of the used script:
 <ol>
 <li>In the <code>&lt;head&gt;&lt;/head&gt;</code> section of the page source, click link to <code>requirejs-config.js</code> file. The file contains the Magento RequireJS configuration, collected from all modules of the current {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-<p>Alternatively, you can open the <code>requirejs-config.js</code> file from the file system: <code>pub/static/_requirejs/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;/requirejs-config.js</code></p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Alternatively, you can open the `requirejs-config.js` file from the file system: `pub/static/_requirejs/frontend/<Vendor>/<theme>/<locale>/requirejs-config.js`
 </div>
 </li>
 <li>In the <code>var config = {...}</code> section of <code>requirejs-config.js</code>, find the required script name, and view the path to its source file. This path is relative to certain directories, depending on whether it contains {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} reference:
@@ -49,8 +44,7 @@ To find the source file of the used script:
 </li>
 </ol>
 
-
-<h2>Locate JS component: example</h2>
+## Locate JS component: example
 
 As we discussed in the preceding section, you use browser debugging tools to define which JavaScript component or {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is used for an element. An example follows.
 To find what JS components are used for displaying the main navigation menu in the Luma theme:

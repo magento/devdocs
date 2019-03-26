@@ -1,13 +1,10 @@
 ---
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: Best practices and benchmarking
 menu_title: Best practices and benchmarking
 menu_node:
 menu_order: 1
-version: 2.0
-github_link: migration/migration-overview-practices.md
-redirect_from: /guides/v1.0/migration/migration-overview-practices.html
 functional_areas:
   - Tools
 ---

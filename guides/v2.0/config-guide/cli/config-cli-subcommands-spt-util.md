@@ -1,13 +1,11 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 04_CLI
 title: Run the support utilities
 menu_title: Run the support utilities (Magento Commerce only)
 menu_node:
 menu_order: 900
-version: 2.0
 ee_only: True
-github_link: config-guide/cli/config-cli-subcommands-spt-util.md
 functional_areas:
   - Configuration
   - System
@@ -17,7 +15,8 @@ functional_areas:
 {% include config/cli-intro.md %}
 
 ## Overview of the support utilities {#config-cli-spt-utils-over}
-The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="\_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
+
+The Magento support utilities (also referred to as the [*Data Collector*](http://docs.magento.com/m2/ee/user_guide/system/support-data-collector.html){:target="_blank"}) enable {{site.data.var.ee}} users to gather troubleshooting information about your system that can be used by our Support team.
 
 Magento Support uses these backups (also referred to as *dumps*) to analyze issues that require access to your code. A typical scenario follows:
 
@@ -35,6 +34,7 @@ Magento Support uses these backups (also referred to as *dumps*) to analyze issu
 The utilities can take several minutes to complete.
 
 ## Create a code backup {#config-cli-spt-utils-code}
+
 This command backs up code and compresses it in `tar.gz` format.
 
 {% include config/code-backup.md %}
@@ -56,6 +56,7 @@ For example, to create a code backup named `/var/www/html/magento2/var/log/mycod
 After the command completes, provide the code backup to Magento Support.
 
 ## Create a database backup {#config-cli-spt-utils-db}
+
 This command backs up the Magento database and compresses it in `tar.gz` format.
 
 {% include config/code-backup.md %}
@@ -76,6 +77,7 @@ After the command completes, provide the database backup to Magento Support.
 {% include install/sens-data.md %}
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
+
 We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or on the command line:
 
 	Utility lsof not found
@@ -108,15 +110,15 @@ To resolve issues with running the tools, make sure these applications are insta
 
 #### Related topics
 
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
--   <a href="{{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+-   [Manage the cache]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)
+-   [Manage the indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
+-   [Configure and run cron]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)
+-   [Code compiler]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)
+-   [URN highlighter]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-urn.html)
+-   [Dependency reports]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)
+-   [Translation dictionaries and language packages]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)
+-   [Deploy static view files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)
+-   [Create symlinks to LESS files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)
+-   [Run unit tests]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
+-   [Convert layout XML files]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)
+-   [Generate data for performance testing]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)

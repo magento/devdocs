@@ -4,16 +4,12 @@ subgroup:
 title: Introduction
 menu_title: Introduction
 menu_order: 1
-version: 2.0
-github_link: extension-dev-guide/introduction.md
-redirect_from: /guides/v1.0/extension-dev-guide/introduction.html
 
 ---
 
 This guide is for developers that are building a new *component* from scratch for custom {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of Magento functionality.
 
 ## Magento is made up of the following types of components:
-
 
 	*	Modules (extend Magento capabilities)
 	*	Themes (change the look and feel of your storefront and Admin)
@@ -28,18 +24,16 @@ A *package* is a component that is wrapped up in a distributable form. Usually y
 
 An *extension* is a component that are packaged for sale on Magento Marketplace.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Magento Marketplace is one way to distribute your components. This guide provide information about how to distribute your components using other means as well (such as a separate source control repository).
 
 
 
-<div class="bs-callout bs-callout-info" id="info">
-<p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR compliant</a> structure when building a module.</p>
-</div>
-
+{: .bs-callout .bs-callout-info }
+You must follow a [PSR compliant](http://www.php-fig.org/psr/psr-4/) structure when building a module.
 
 ## Magento module example
+
 Modules are declared in the `module.xml` file. Here is a minimal example:
 
 {% highlight XML %}

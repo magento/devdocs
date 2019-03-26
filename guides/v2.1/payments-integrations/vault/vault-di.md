@@ -4,8 +4,6 @@ subgroup: C_vault
 title: Vault DI configuration
 menu_title: Vault DI configuration
 menu_order: 3
-version: 2.1
-github_link: payments-integrations/vault/vault-di.md
 functional_areas:
   - Integration
 ---
@@ -49,7 +47,6 @@ Following is an example from Braintree configuration:
 </payment>
 {% endhighlight %}
 
-
 ## Add a gateway command for vault
 
 For payment actions, you need to create gateway commands for vault, and update the payment provider [command pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html). 
@@ -86,7 +83,6 @@ The following sample from Braintree configuration illustrates how to add the `au
     </arguments>
 </virtualType>
 {% endhighlight %}
-
 
 ## Add command manager
 

@@ -1,16 +1,13 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Configure product video
 menu_title: Configure product video
 menu_order: 100
-version: 2.0
-github_link: frontend-dev-guide/themes/product-video.md
 functional_areas:
   - Frontend
   - Theme
 ---
-
 
 ## What's in this topic
 
@@ -38,7 +35,7 @@ You can set the following product video options:
         Boolean
       </td>
       <td colspan="1">
-        0 <br>
+        0 <br />
 (video is not played on page load)
       </td>
     </tr>
@@ -52,7 +49,7 @@ Boolean
            
       </td>
 <td>
-0 <br>
+0 <br />
 (related videos are not displayed)
 </td>
     </tr>
@@ -66,7 +63,7 @@ Boolean
            
       </td>
 <td>
-0 <br>
+0 <br />
 (video is not automatically replayed)
 </td>
     </tr>

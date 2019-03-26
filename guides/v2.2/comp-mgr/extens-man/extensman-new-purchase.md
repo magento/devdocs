@@ -1,5 +1,5 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 06_UseExtMan
 title: Step 3. Install
 menu_title: Install
@@ -7,16 +7,17 @@ menu_node:
 menu_order: 25
 level3_menu_node: level3child
 level3_subgroup: step3-ext
-version: 2.2
-github_link: comp-mgr/extens-man/extensman-new-purchase.md
 functional_areas:
   - Upgrade
 ---
 
 ## Step 3. Install
+
 When you're installing new purchases from Magento Marketplace, the page displays similar to the following:
 
-<img src="{{ site.baseurl }}/common/images/extensman_new-purchases-step3install.png" width="500px">
+![]({{ site.baseurl }}/common/images/extensman_new-purchases-step3install.png){: width="500px"}
+
+### Install the purchase
 
 If the list of purchases is correct, click **Install**.
 
@@ -85,7 +86,7 @@ Module 'Magento_Store':
 Module 'Magento_SwatchesLayeredNavigation':
 ... more ...
 Module 'Magento_ThemeSampleData':
-Installing data... 
+Installing data...
 Module 'Magento_TaxImportExport':
 Module 'Magento_NewRelicReporting':
 Module 'Magento_CatalogSampleData':
@@ -95,6 +96,14 @@ Installing data...
 
 When the installation is complete, a page similar to the following displays:
 
-<img src="{{ site.baseurl }}/common/images/extensman_new-purchases_finish.png" width="200px">
+![]({{ site.baseurl }}/common/images/extensman_new-purchases_finish.png){: width="200px"}
 
 Click **Back to Setup Tool**.
+
+### Clean the cache
+
+If the update is successful, clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
+
+```bash
+bin/magento cache:clean
+```

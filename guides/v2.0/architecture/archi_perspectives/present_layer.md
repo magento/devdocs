@@ -1,12 +1,9 @@
 ---
-group: arch-guide
+group: architecture-guide
 subgroup: Architectural Layers
 title: Presentation Layer
 menu_title: Presentation layer
 menu_order: 1
-version: 2.0
-github_link: architecture/archi_perspectives/present_layer.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 ---
 
 ## What is the Magento Presentation layer?
@@ -30,7 +27,7 @@ Types of users and their associated areas include:
 * **Web users** interact with the storefront, where they can see the View model of data displayed by Magento and interact with product UI elements to request data for view and manipulation.
 These users work within the (`frontend`) area.
 
-* **System administrators** customizing a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the front end.
+* **System administrators** customizing a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} can indirectly manipulate the presentation layer by, for example, adding themes or widgets to the frontend.
 
 * **Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} calls** can be made through HTTP just like browser requests, and can be made via AJAX calls from the user interface.
 
@@ -41,7 +38,7 @@ Magento themes organize both the visual aspect of your storefront and certain as
 
 Each {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} resides in a unique directory and contains custom page layouts, templates, skins, and language files that work together to create a distinct user experience.
 
-For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the <a href="{{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a>.
+For an extensive introduction to theme elements and an overview of how to extend and override the default Magento themes, see the [Frontend Developer Guide]({{ page.baseurl }}/frontend-dev-guide/bk-frontend-dev-guide.html).
 
 ## View model
 
@@ -74,6 +71,6 @@ Presentation layer components make calls to the Service layer, which in turn sen
 
 ## Related topics {#related}
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+[Architectural diagrams]({{ page.baseurl }}/architecture/archi_perspectives/arch_diagrams.html)
 
-<a href="{{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+[Architectural layers overview]({{ page.baseurl }}/architecture/archi_perspectives/ALayers_intro.html)

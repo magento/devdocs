@@ -1,13 +1,10 @@
 ---
 group: release-notes
-version: 2.3
 title: Backward incompatible changes in Magento Commerce
-github_link: release-notes/backward-incompatible-changes/commerce.md
 ---
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
-</div>
 
 The changes are aggregated into two tables:
 
@@ -19,14 +16,13 @@ type="warning"
 content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
 
-## 2.2.0 - 2.3-develop
+## 2.2.0 - 2.3.0 {#releases-2_2_0-2_3_0}
 
-{% include note.html
-type="info"
-content='The following tables are updated when new commits are merged into the "2.3-develop" branch on a daily basis.'
-%}
+{% include backward-incompatible-changes/commerce/2.2.0-2.3.0.md %}
 
-{% include backward-incompatible-changes/commerce/2.2.0-develop.html %}
+## 2.1.0 - 2.3.0 {#releases-2_1_0-2_3_0}
+
+{% include backward-incompatible-changes/commerce/2.1.0-2.3.0.md %}
 
 <!-- LINK DEFINITIONS -->
 

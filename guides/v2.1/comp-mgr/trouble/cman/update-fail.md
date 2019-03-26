@@ -1,12 +1,10 @@
 ---
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Roll back after update failure
 menu_title: Roll back after update failure
 menu_node:
 menu_order: 110
-version: 2.1
-github_link: comp-mgr/trouble/cman/update-fail.md
 functional_areas:
   - Upgrade
 ---

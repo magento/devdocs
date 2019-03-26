@@ -1,17 +1,22 @@
-<div markdown="1">
- 
+The following steps provide an example of accessing a database:
+
 1.  SSH to the integration environment.
 
-        magento-cloud ssh
-2.  Find the database login information:
+    ```bash
+    magento-cloud ssh
+    ```
 
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+1.  Find the database login information:
+
+    ```bash
+    php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
+    ```
 
     Sample output follows:
 
-    <pre class="no-copy">
+    ```php
     Array
-	   (
+     (
           [0] => stdClass Object
             (
                [username] => user
@@ -22,16 +27,15 @@
                   (
                     [is_master] => 1
                   )
-
                [path] => main
                [scheme] => mysql
                [port] => 3306
             )
-        )</pre>
+        )
+    ```
 
 3.  Use the following command to connect to the database:
 
-
-	<pre class="no-copy">mysql --host=&lt;host> --user='&lt;database username>' --password='&lt;user password>' --port='&lt;port>' --database='&lt;path>'</pre>
-
-</div>
+    ```bash
+    mysql --host=<host> --user='<database username>' --password='<user password>' --port='<port>' --database='<path>'
+    ```

@@ -1,12 +1,10 @@
 ---
-group:  UI Library
+group: ui-library
 subgroup: C_Listing/Grid Secondary Components
 title: Pagination Component
 menu_title: Pagination Component
 menu_node:
 menu_order: 2
-version: 2.0
-github_link: ui-components/ui-secondary-pagination.md
 redirect_from: /guides/v2.0/ui-library/ui-secondary-pagination.html
 
 ---
@@ -15,7 +13,7 @@ The UI pagination component is a plugin for the listing component. Responsible f
 
 You can configure pagination in several ways:
 
-* Globally: using any module's <a href="{{ page.baseurl }}/ui-library/ui-definition.html">`view/*/ui_component/etc/definition.xml`</a> file. All settings declared in this file are applied to all component's instances.
+* Globally: using any module's [`view/*/ui_component/etc/definition.xml`]({{ page.baseurl }}/ui-library/ui-definition.html) file. All settings declared in this file are applied to all component's instances.
 * Locally: using concrete component instance configuration, such as `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
 To enable pagination for the listing component, the pagination component is declared as a child of the listing component in component instance configuration.
@@ -24,7 +22,7 @@ Example:
 
 `<Magento_Cms_module_dir>/view/adminhtml/ui_component/cms_page_listing.xml`
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <container name="page_listing_top">
         <paging name="listing_paging">
@@ -40,7 +38,7 @@ Example:
         </paging>
     </container>
 </listing>
-{% endhighlight %}
+```
 
 The configuration of the component can include:
 

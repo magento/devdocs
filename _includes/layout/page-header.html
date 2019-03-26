@@ -1,7 +1,5 @@
 <!-- page-header -->
 <section class="page-intro">
-	{% include layout/breadcrumbs.html %}
-
 	{% if page.ee_only == true %}
 		<span class="ee-only">{{site.data.var.ee}} only</span>
 	{% endif %}
@@ -11,7 +9,4 @@
 	{% endif %}
 
 	<h1 class="page-heading">{{ page.title }}</h1>
-
-  {% include tabs.md %}
-
 </section>

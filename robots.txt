@@ -1,2 +1,5 @@
+---
+layout: null
+---
 User-agent: *
-Disallow: /guides/v2.3/
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

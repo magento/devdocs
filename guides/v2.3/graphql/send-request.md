@@ -1,8 +1,6 @@
 ---
 group: graphql
-version: 2.3
 title: GraphQL request headers
-github_link: graphql/send-request.md
 ---
 
 Magento accepts the following headers in a GraphQL request:

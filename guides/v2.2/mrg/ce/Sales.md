@@ -1,11 +1,9 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 10_Community Edition
 title: Magento_Sales module
 menu_title: Sales
 menu_order: 1
-version: 2.2
-github_link: mrg/ce/Sales.md
 redirect_from:
  - /guides/v2.2/mrg/ce/Sales/description.html
  - /guides/v2.2/mrg/ce/Sales/dependencies.html
@@ -141,13 +139,13 @@ The service returns an identifier of the created Invoice.
 
 #### REST declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2200url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/invoice" method="POST">
     <service class="Magento\Sales\Api\InvoiceOrderInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::invoice" />
     </resources>
 </route>
 {% endhighlight %}
@@ -205,9 +203,6 @@ The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b
 |[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]{:target="_blank"}| An interface for sending notifications about new Invoice creation.
 |[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]{:target="_blank"}| An interface for validating service parameters and Invoice data object.
 |[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]{:target="_blank"}| An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.
-
-
-
 
 ## RefundInvoice
 
@@ -451,13 +446,13 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2200url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundInvoiceInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::sales_invoice" />
     </resources>
 </route>
 {% endhighlight %}
@@ -730,13 +725,13 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2200url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundOrderInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::creditmemo" />
     </resources>
 </route>
 {% endhighlight %}
@@ -950,13 +945,13 @@ The service returns the identifier of a created shipment.
 
 #### REST Declaration
 
-[`etc/webapi.xml`](https://github.com/magento/magento2/blob/2.2/app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2200url }}app/code/Magento/Sales/etc/webapi.xml)
 
 {% highlight xml %}
 <route url="/V1/order/:orderId/ship" method="POST">
     <service class="Magento\Sales\Api\ShipOrderInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::ship" />
     </resources>
 </route>
 {% endhighlight %}

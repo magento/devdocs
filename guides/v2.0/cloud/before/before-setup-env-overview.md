@@ -5,8 +5,6 @@ title: Overview of a Magento Developer Environment
 menu_title: Overview of a Magento Developer Environment
 menu_order:
 menu_node:
-version: 2.0
-github_link: cloud/before/before-setup-env-overview.md
 ---
 
 {::options syntax_highlighter="rouge" /}

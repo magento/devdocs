@@ -1,19 +1,13 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: InsertListing component
 menu_title: InsertListing component
-version: 2.1
-github_link: ui_comp_guide/components/ui-insertlisting.md
 ---
-## Overview
+
 The InsertListing component inserts [Listing]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html) into other components.
 
 ## Configuration options
-
-Extends all [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-InsertListing-specific configuration:
 
 <table>
   <tr>
@@ -130,8 +124,7 @@ InsertListing-specific configuration:
     </td>
     <td>
       Enable link between insertListing's externalValue and value.
-      Here <code>link</code> means the two-way <a href=
-      "{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
+      Here <code>link</code> means the two-way <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
       links property</a> of UI components, which allows immediate
       update.
     </td>
@@ -149,13 +142,13 @@ InsertListing-specific configuration:
     <td>
       With default <code>render_url(mui/index/render)</code>
       listing will be without buttons. For get a list with buttons
-      url must be changed to <code>mui/index/render_handle</code>
+      URL must be changed to <code>mui/index/render_handle</code>
       and next GET parameters:<br />
       buttons=1 (flag to get buttons)<br />
       handle= (buttons scope)
     </td>
     <td>
-      Url
+      URL
     </td>
     <td>
       <code>mui/index/render</code>
@@ -171,7 +164,7 @@ InsertListing-specific configuration:
       automatically set into <code>externalProvider.data</code>
     </td>
     <td>
-      Url
+      URL
     </td>
     <td>
       <code>mui/index/render</code>

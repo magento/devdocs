@@ -1,8 +1,6 @@
 ---
 group: release-notes
 title: Magento 2.1 backward incompatible changes
-github_link: release-notes/backward-incompatible-changes/index.md
-version: 2.1
 redirect_from: 
  - /guides/v2.1/release-notes/backward-incompatible-changes-2.1.html
  - /guides/v2.1/release-notes/backward-incompatible-changes.html
@@ -70,13 +68,13 @@ The following entities have new forms and design:
 * Sales Rule
 * {% glossarytooltip 3b0e248f-5571-48c0-9dde-efe1662fac6d %}Catalog Rules{% endglossarytooltip %}
 
-<div class="bs-callout bs-callout-info" id="info">
-<p><strong>Important information:</strong> Customizations that were performed with the old forms of the listed entities will be lost.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+**Important information:** Customizations that were performed with the old forms of the listed entities will be lost.
 
 ## Database Schema changes
 
 #### Staging ({{site.data.var.ee}} Only)
+
 The Staging modules introduce {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} changes for the following entities:
 
 *	Products

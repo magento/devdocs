@@ -1,16 +1,13 @@
 ---
 group: marketplace-api
 title: Users
-version: 2.1
-github_link: marketplace/eqp/users.md
 ---
 
 The `users` resource accesses and updates your user profile. You can also access reports you own.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 You cannot use this resource to create a new
 profile. You must create a new profile on the [Developer Portal](https://developer.magento.com).
-</div>
 
 ## Profile
 
@@ -207,7 +204,6 @@ PUT     /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 DELETE  /rest/v1/users/:mage_id/keys/:url_encoded_label_of_m2_key
 ```
 
-
 ### Get keys
 
 Use this API to return the keys associated with the specified `mage_id`.
@@ -262,16 +258,15 @@ curl -X GET \
 }
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
-For Magento 2 keys:
+#### Magento 2 keys
 
 * Each Composer key-pair has unique `label` and `is_enabled` flags to indicate whether the key is enabled.
 * A Composer key-pair is identified by `user_key` (username) and `password_key` (password) when prompted for Composer credentials.
 
-For Magento 1 keys:
+#### Magento 1 keys
+
 * Provides a list of product names and associated product keys, which can be used in the Magento Connect Manager to install extensions.
 * You cannot create, update, or delete these keys.
-</div>
 
 ### Create keys
 
@@ -329,12 +324,9 @@ curl -X POST \
 }
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
-
 * The API returns a batch response for each label.
 * A 200 OK HTTP response code indicates a successful update.
 * Any non-200 HTTP response code indicates an error. See the `message` field for details.
-</div>
 
 ### Update keys
 
@@ -400,6 +392,5 @@ GET /rest/v1/users/:mage_id/reports/sales
 GET /rest/v1/users/:mage_id/reports/refunds
 ```
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The Reports API specification is under design review. More details will be announced in the future..
-</div>

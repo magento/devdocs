@@ -1,13 +1,11 @@
 ---
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Integrate with B2B using REST
 menu_title: Integrate with B2B using REST
 menu_order: 1
 menu_node: parent
-version: 2.2
 ee_only: True
-github_link: b2b/integrations.md
 functional_areas:
   - B2B
   - Integration
@@ -112,7 +110,7 @@ companyTeamRepositoryV1
 configurableProductConfigurableProductManagementV1
 ```
 
-### Company credit
+### CompanyCredit
 
 ```
 companyCreditCreditBalanceManagementV1
@@ -121,7 +119,7 @@ companyCreditCreditLimitManagementV1
 companyCreditCreditLimitRepositoryV1
 ```
 
-### Negotiable quotes
+### NegotiableQuote
 
 ```
 negotiableQuoteAttachmentContentManagementV1
@@ -139,7 +137,7 @@ negotiableQuoteShippingInformationManagementV1
 negotiableQuoteShippingMethodManagementV1
 ```
 
-### Shared catalog
+### SharedCatalog
 
 ```
 sharedCatalogCategoryManagementV1

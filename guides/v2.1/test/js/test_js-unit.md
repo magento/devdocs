@@ -1,13 +1,14 @@
 ---
-group: jstf
+group: testing
 title: JavaScript testing with JsTestDriver
-version: 2.1
-github_link: test/js/test_js-unit.md
-redirect_from: /guides/v1.0/extension-dev-guide/test/test_js-unit.html
 functional_areas:
   - Testing
   - test
 ---
+
+{: .bs-callout .bs-callout-warning }
+JsTestDriver was removed in Magento 2.2.4.
+It is recommended that [Jasmine][] be used instead.
 
 ## Preface
 
@@ -118,7 +119,6 @@ To complete the unit tests, the PHP script completes this processing:
    * **Linux**. The script runs the `which firefox` command to determine the location of the Firefox executable in your PATH.
 3. If the script finds the browser executable and the `JsTestDriver.jar` file, it proceeds with the next step. Otherwise, the script fails.
 4. The script determines the order in which the JsTestDriver loads certain JavaScript files through the `jsTestDriverOrder.php` configuration file in the `<magento2_root_dir>/dev/tests/js` directory.
-
 
 ## Step 1. Before you begin {#test-prereqs}
 
@@ -272,3 +272,4 @@ Complete these steps to use PhpStorm to run unit tests:
 [`run_js_tests.php` script]: #process-overview
 [PhpStorm]: #phpstorm
 [Start the JsTestDriver server]: #start-jstestdriver-server
+[Jasmine]: {{page.baseurl}}/test/js/jasmine.html

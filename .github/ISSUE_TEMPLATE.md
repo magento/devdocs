@@ -1,29 +1,16 @@
-<!-- (REQUIRED) What is the nature of this issue? -->
-## This issue is a:
-- [ ] Bug on the website
-- [ ] New topic request
-- [ ] Topic clarification request
-- [ ] New DevDocs feature request
-- [ ] Other
+# General issue
 
-<!-- (REQUIRED) What is the issue/current behavior? -->
 ## Description:
 
-<!-- (OPTIONAL) What needs to be done to replicate this issue? (provide Gist if needed) -->
-### Steps to reproduce
+<!-- (REQUIRED) What is the issue/current behavior? -->
 
-1. First Step
-2. Second Step
-3. Etc.
-
-<!-- (REQUIRED) When this issue is resolved, what is the expected result/behavior? -->
-## Expected result:
-
-<!-- (OPTIONAL) What would a solution for this issue look like? -->
 ## Possible solutions:
 
-<!-- (OPTIONAL) What other information can you provide about this issue? -->
+<!-- (OPTIONAL) What would a solution for this issue look like? -->
+
 ## Additional information:
+
+<!-- (OPTIONAL) What other information can you provide about this issue? -->
 
 <!--
 Thank you for taking the time to report this issue!

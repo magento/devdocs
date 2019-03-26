@@ -1,5 +1,3 @@
-<div markdown="1">
-
 You can optionally enable more than one user to securely communicate by adding these users to your password file and to a group file you'll configure in the next section.
 
 To add another user to your password file, enter the following command as a user with `root` privileges:

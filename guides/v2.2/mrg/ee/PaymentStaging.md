@@ -1,13 +1,11 @@
 ---
-group: mrg
+group: module-reference-guide
 subgroup: 20_Enterprise Edition
 ee_only: true
 title: Magento_PaymentStaging module
 menu_title: PaymentStaging
 menu_order: 2
-version: 2.2
 ee_only: true
-github_link: mrg/ee/PaymentStaging.md
 ---
 
 

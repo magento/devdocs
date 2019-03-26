@@ -1,16 +1,13 @@
 ---
 group: coding-standards
 title: Web API technical vision
-version: 2.0
-github_link: coding-standards/technical-vision/webapi.md
 ---
 
 Web API is crucial for Magento because of the need to integrate with order management, customer management, and other enterprise management software systems.
 
 There are many headless Magento installations in which a merchant partially uses Magento functionality, while the other pieces of an eCommerce website are provided by other systems.
 
-See [more details](https://en.wikipedia.org/wiki/Web_API) about importance of web APIs in modern web applications.
-
+See [more details](https://en.wikipedia.org/wiki/Web_API) about the importance of web APIs in modern web applications.
 
 ### Components Dependencies
 
@@ -38,7 +35,6 @@ Any [service contract]({{ page.baseurl }}/extension-dev-guide/service-contracts/
 If the target module is called `MyModule`, then create the resolvers and configuration files in a new module called `MyModuleGraphQl`.
 
 See the [GraphQL documentation]({{ site.baseurl }}/guides/v2.3/graphql/index.html) for more information.
-
 
 #### Add a custom authentication mechanism
 

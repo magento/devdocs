@@ -1,12 +1,10 @@
 ---
-group: cloud
+group: cloud-guide
 subgroup: 170_trouble
 title: Troubleshooting
 menu_title: Troubleshooting
 menu_order: 1
 menu_node: parent
-version: 2.0
-github_link: cloud/trouble/trouble.md
 functional_areas:
   - Cloud
 ---

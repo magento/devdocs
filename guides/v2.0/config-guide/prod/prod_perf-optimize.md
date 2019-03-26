@@ -1,11 +1,9 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: Optimization
 title: Magento Optimization Guide
 menu_title: Magento Optimization Guide
 menu_order: 100
-version: 2.0
-github_link: config-guide/prod/prod_perf-optimize.md
 functional_areas:
   - Configuration
   - System
@@ -67,7 +65,7 @@ Edit your `apcu.ini` file to include the following:
 
 	extension=apcu.so
 	[apcu]
-	acp.enabled = 1
+	apc.enabled = 1
 
 ### Server - Redis Configuration & Tuning
 
@@ -105,7 +103,6 @@ Go to the Admin in default of developer mode and change the following settings f
 #### Stores -> Index Management
 
 Set all indexers to "Update on Schedule" mode.
-
 
 ### Production Mode
 

@@ -1,43 +1,37 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: B_Layouts
 title: Customizing layout illustration
 menu_title: Customizing layout illustration
 menu_order: 7
-version: 2.0
-github_link: frontend-dev-guide/layouts/layout-practice.md
-redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-practice.html
 functional_areas:
   - Frontend
 ---
 
-<h2>What's in this topic</h2>
+## What's in this topic
+
 This article features a step-by-step illustration of how a real-life {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.
 
-<h2>Moving customer account links</h2>
+## Moving customer account links
+
 In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_transform.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_transform.png)
 
 To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list. 
 
 The Orange {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from Blank, so by default the rendered header links {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} in Orange looks like following:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_code_before1.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_code_before1.png)
+
 <br>
 The markup, that is needed for a drop-down:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_code_after.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_code_after.png)
 
-<h4>Step 1: Define the blocks</h4>
+#### Step 1: Define the blocks
 
-OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the blocks responsible for displaying the header links are defined in `<Magento_Customer_module_dir>/view/frontend/layout/default.xml`:
+OrangeCo [applies the Luma theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html){: target="_blank"}. Using the approach described in [Locate templates, layouts, and styles]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html){: target="_blank"} they find out that the blocks responsible for displaying the header links are defined in `<Magento_Customer_module_dir>/view/frontend/layout/default.xml`:
 
 {%highlight xml%}
 ...
@@ -57,7 +51,7 @@ OrangeCo <a href="{{ page.baseurl }}/frontend-dev-guide/themes/theme-apply.html"
 ...
 {%endhighlight xml%}
 
-<h4>Step 2: Define the templates</h4>
+#### Step 2: Define the templates
 
 Similar to the way they defined the layout on the previous step, OrangeCo 
 defines the template which is used for rearranging the links:
@@ -104,11 +98,11 @@ defines the template which is used for rearranging the links:
 <?php endif; ?>
 {%endhighlight php%}
 
-<h4>Step 3: Extend the base layout to add a block</h4>
+#### Step 3: Extend the base layout to add a block
 
 OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
-So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:
+So the following [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html){: target="_blank"} layout is added in the Orange theme:
 
     app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 
@@ -126,7 +120,7 @@ So the following <a href="{{ page.baseurl }}/frontend-dev-guide/layouts/layout-e
 </page>
 {%endhighlight xml%}
 
-<h4>Step 4: Move links</h4>
+#### Step 4: Move links
 
 To move the links to the `header.links` block, OrangeCo adds an extending layout:
 
@@ -154,13 +148,9 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 
 Now the customer links look like following:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_screen2.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_screen2.png)
 
 <br>
 The last touch is adding styles:
 
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}/common/images/layout_screen3.png">
-</div>
+![]({{ site.baseurl }}/common/images/layout_screen3.png)

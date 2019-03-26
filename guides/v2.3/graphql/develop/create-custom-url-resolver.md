@@ -1,8 +1,6 @@
 ---
 group: graphql
-version: 2.3
 title: Create a custom GraphQL urlResolver service
-github_link: graphql/develop/create-custom-url-resolver.md
 ---
 
 
@@ -14,25 +12,25 @@ You can use the `Magento\CmsUrlRewrite\Observer\ProcessUrlRewriteSavingObserver`
 
 ``` php
 /**
-    * Generate urls for UrlRewrite and save it in storage
-    *
-    * @param \Magento\Framework\Event\Observer $observer
-    * @return void
-    */
-   public function execute(EventObserver $observer)
-   {
-       /** @var \Magento\MyModule\Model\Page $myEntityPage  */
-       $page = $observer->getEvent()->getObject();
+ * Generate urls for UrlRewrite and save it in storage
+ *
+ * @param \Magento\Framework\Event\Observer $observer
+ * @return void
+ */
+public function execute(EventObserver $observer)
+{
+    /** @var \Magento\MyModule\Model\Page $myEntityPage  */
+    $page = $observer->getEvent()->getObject();
 
-       if ($page->isDeleted()) {
-           $this->urlPersist->deleteByData(
-               [
-                   UrlRewrite::ENTITY_ID => $page->getId(),
-                   UrlRewrite::ENTITY_TYPE => MyEntityPageUrlRewriteGenerator::ENTITY_TYPE,
-               ]
-           );
-       }
-   }
+    if ($page->isDeleted()) {
+        $this->urlPersist->deleteByData(
+            [
+                UrlRewrite::ENTITY_ID => $page->getId(),
+                UrlRewrite::ENTITY_TYPE => MyEntityPageUrlRewriteGenerator::ENTITY_TYPE,
+            ]
+        );
+    }
+}
 ```
 See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html) for more information about creating an observer.
 
@@ -64,4 +62,4 @@ Update the `graphql.xml` and `events.xml` file in your module's `etc` directory 
 ## Related Topics
 
 * [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html)
-* [urlResolver endpoint]({{ page.baseurl }}/graphql/url-resolver.html)
+* [urlResolver endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html)

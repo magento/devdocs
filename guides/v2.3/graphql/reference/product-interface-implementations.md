@@ -1,8 +1,6 @@
 ---
 group: graphql
 title: Product interface implementations
-version: 2.3
-github_link: graphql/reference/product-interface-implementations.md
 ---
 
 Magento provides multiple product types, and most of these product types have specialized attributes that are not defined in the `ProductInterface`.
@@ -20,7 +18,7 @@ Product type | Implements | Has product-specific attributes?
 
 To return attributes that are specific to a product type, append a structure similar to the following to the end of the `Products` output object:
 
-{% highlight json %}
+```text
 ... on <ProductType> {
   items{
     <ProductType-attribute1>
@@ -28,11 +26,11 @@ To return attributes that are specific to a product type, append a structure sim
     ...
     }
   }
-  {% endhighlight %}
+```
 
 For example, to return `GroupedProduct` attributes, construct your query like this:
 
-{% highlight json %}
+```text
 {
   products(filter:
     {sku: {eq: "24-WG085_Group"}}
@@ -58,4 +56,4 @@ For example, to return `GroupedProduct` attributes, construct your query like th
     }
   }
 }
-{% endhighlight %}
+```

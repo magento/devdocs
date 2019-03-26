@@ -5,9 +5,6 @@ landing-page: Coding standards
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
-version: 2.1
-github_link: coding-standards/code-standard-demarcation.md
-redirect_from: /guides/v1.0/coding-standards/code-standard-demarcation.html
 functional_areas:
   - Standards
 ---
@@ -22,11 +19,13 @@ functional_areas:
    <li>Reinstate emphasis on using of {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} templates.</li>
    <li>Reinstate emphasis on decoupling HTML, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and JS from {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes.</li>
 </ul>
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.</p>
+
+Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.
 
 ## Semantics
 
 ### For attribute names and values you must use meaningful unabbreviated lowercase words comprised of Latin characters concatenated with a hyphen (`-`)
+
 <ul>
    <li>Helps simplify and unify naming conventions that are used to apply visual styles to page elements.</li>
 </ul>
@@ -42,7 +41,7 @@ functional_areas:
 
 **Unacceptable**
 ```html
-<section id="заголовок">
+<section id="some_id">
    <p> ... </p>
    <p> ... </p>
 </section>
@@ -54,6 +53,7 @@ functional_areas:
 ```
 
 ### Semantic representation may rely on ID attribute
+
 <ul>
    <li>Forces engineers to think about reusable page components instead of unique singleton components.</li>
    <li>Reduces long-term maintenance efforts.</li>
@@ -126,7 +126,6 @@ The following list will help you make a distinction between the actual meaning o
 
 ### You must use semantic HTML markup only, and must not use presentation markup.
 
-
 **Acceptable**:
 
 ```html
@@ -180,9 +179,9 @@ section[role="main"] { ... }
 ```
 
 ### You must not hard-code CSS styles in JavaScript files
-<div class="bs-callout bs-callout-info" id="info">
-   <p>Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.</p>
-</div>
+
+{: .bs-callout .bs-callout-info }
+Exception: CSS attributes where values must be calculated beyond the css-topics/LESS code.
 <ul>
    <li>Simplifies change of the default look and feel by adding CSS classes to and removing them from elements.</li>
    <li>Improves style extensibility.</li>
@@ -219,6 +218,7 @@ this.element.on('click', function() {
 ```
 
 ### You must not use inline CSS styles inside HTML tags
+
 <ul>
 <li>Improves style extensibility allowing engineers to overload styles easier by toggling classes.</li>
 <li>Enforces clean, strict separation between visual presentation and markup.</li>
@@ -306,8 +306,8 @@ HTML helper class names added in JavaScript REQUIRE underscore symbol ("_") at t
 <div class="sales-report hidden">Content</div>
 ```
 
-
 ### You must not select DOM elements based on HTML structure
+
 <ul>
 <li>Allows frontend teams to modify markup and themes without affecting business logic.</li></ul>
 
@@ -326,12 +326,14 @@ this.element.parent().find('[data-action="edit"]').data('entity_id');
 ```
 
 ### You must use jQuery templates to insert recurring markup into DOM structure
+
 <ul>
 <li>Reinstates emphasis on jQuery templates. For more information, see JavaScript Coding Best Practices.</li>
 <li>Reduces long-term maintenance efforts by having markup code stored in one place.</li>
 <li>Simplifies frontend debugging efforts.</li></ul>
 
 ### You must not hard-code inline JavaScript in PHP classes
+
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
@@ -391,10 +393,10 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 <?php echo $this->getAfterElementHtml(); ?>
 ```
 
-
 ## PHTML templates and PHP files
 
 ### You must not hard-code inline CSS styles in PHP classes
+
 <ul>
 <li>Reduces long-term maintenance efforts by having styles stored in one place.</li>
 <li>Simplifies debugging and reduces number of files to be modified.</li>
@@ -427,6 +429,7 @@ $fieldset->addField('new_category_parent', 'text', array(
 ```
 
 ### You must not hard-code inline JavaScript in PHP classes
+
 <ul>
 <li>Reduces long term maintenance by having frontend business logic stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>
@@ -469,6 +472,7 @@ jQuery('#{$htmlId}-suggest').treeSuggest({$selectorOptions});
 ```
 
 ### You must not hard-code HTML markup (used in the `<body>` tag) in PHP classes
+
 <ul>
 <li>Reduces long-term maintenance efforts by having markup stored in one place.</li>
 <li>Reduces the number of files to be modified.</li></ul>

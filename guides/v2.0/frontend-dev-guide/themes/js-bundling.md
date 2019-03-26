@@ -1,11 +1,9 @@
 ---
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: JavaScript Bundling
 menu_title: JavaScript Bundling
 menu_order: 9000
-version: 2.0
-github_link: frontend-dev-guide/themes/js-bundling.md
 functional_areas:
   - Frontend
   - Theme
@@ -21,13 +19,12 @@ Magento must be set to [production mode][production-mode] in order for bundling 
 To activate JavaScript bundling:
 
 1. Log in to the Admin area 
-2. Navigate to `Stores -> Configuration -> Advanced -> Developer -> Javascript Settings` 
-3. Set `Enable Javascript Bundling` to `Yes`.
+2. Navigate to `Stores -> Configuration -> Advanced -> Developer -> JavaScript Settings` 
+3. Set `Enable JavaScript Bundling` to `Yes`.
 
 To optimize bundling, set the following settings to `Yes`:
 
-* `Javascript Settings -> Merge JavaScript Files`
-* `Javascript Settings -> Minify Javascript Files`
+* `JavaScript Settings -> Minify JavaScript Files`
 * `Static Files Settings -> Sign Static Files`
 
 ## How bundling works in Magento
@@ -127,4 +124,4 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 3. Use the results of that comparison to build your exclude list.
 
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
-[luma-view-xml]:https://github.com/magento/magento2/blob/2.0/app/design/frontend/Magento/luma/etc/view.xml
+[luma-view-xml]:{{site.mage2bloburl}}2.0/app/design/frontend/Magento/luma/etc/view.xml

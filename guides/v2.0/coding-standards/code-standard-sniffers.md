@@ -5,8 +5,6 @@ title: Code sniffers
 landing-page: Coding standards
 menu_title: PHP code sniffers
 menu_order: 3
-version: 2.0
-github_link: coding-standards/code-standard-sniffers.md
 functional_areas:
   - Standards
 ---
@@ -18,8 +16,6 @@ We recommend the consistent use of a <i>code sniffer</i> to enhance the readabil
 Magento recommends the use of [PHP_CodeSniffer](http://pear.php.net/manual/en/package.php.php-codesniffer.faq.php){:target="_blank"}, the most popular code sniffer in use throughout the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} development community.
 PHP_CodeSniffer 1.4.0+ includes [PSR-1](http://www.php-fig.org/psr/psr-1/){:target="_blank"} and [PSR-2](http://www.php-fig.org/psr/psr-2/){:target="_blank"} standards, which are followed by Magento 2.
 You can configure PHP_CodeSniffer to use your own rules, too. The [Magento Extension Quality Program Coding Standard](https://github.com/magento/marketplace-eqp){:target="_blank"} provides specifications that you can use to configure your code sniffer of choice to bring your _PHP coding style closer to Magento PHP standards_.
-
-
 
 ### Code standards
 

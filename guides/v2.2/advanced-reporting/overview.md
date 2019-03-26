@@ -1,8 +1,6 @@
 ---
-group: reporting
+group: advanced-reporting
 title: Advanced Reporting
-version: 2.2
-github_link: advanced-reporting/overview.md
 functional_areas:
     - Reports
 ---
@@ -22,9 +20,8 @@ Magento collects data and sends this information to the MBI for analytics.
 
 The merchant can now click on the Go to Advanced Reporting button on the Admin dashboard to launch the advanced reporting features at `https://advancedreporting.rjmetrics.com/report`.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 The first synchronization of a Magento instance and the MBI can take up to a day to complete after the successful subscription.
-</div>
 
 ## Recommendations
 
@@ -33,7 +30,6 @@ To avoid system overload during its prime time, you can set the preferable time 
 ## Extensibility
 
 Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
-
 
 ## Related topics
 

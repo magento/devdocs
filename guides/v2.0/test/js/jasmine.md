@@ -1,11 +1,8 @@
 ---
-group: jstf
+group: testing
 title: JavaScript unit testing with Jasmine
-version: 2.0
-github_link: test/js/jasmine.md
 redirect_from:
   - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
-  - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
 functional_areas:
   - Testing
   - test
@@ -45,7 +42,7 @@ If the command fails with the error message:
 ```terminal
 /var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory
 ```
-install [fonctconfig library]:<br/>
+install [fontconfig library]:<br/>
 * CentOS:
   ```bash
   yum install fontconfig
@@ -279,7 +276,7 @@ npm install
 {:target="_blank"}
 [Deploy static view files]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict
 {:target="_blank"}
-[fonctconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
+[fontconfig library]: https://www.freedesktop.org/wiki/Software/fontconfig/
 {:target="_blank"}
 [Grunt]: http://gruntjs.com/
 {:target="_blank"}

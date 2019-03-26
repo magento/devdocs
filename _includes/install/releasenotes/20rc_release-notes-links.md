@@ -1,4 +1,4 @@
-<div markdown="1">
+
 
 {% collapsibleh3 Magento Open Source 2.1 Release Candidate Notes %} 
  

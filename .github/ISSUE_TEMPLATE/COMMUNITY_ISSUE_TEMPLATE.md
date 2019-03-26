@@ -1,4 +1,12 @@
+---
+name: Community engineering issue
+about: Create an issue related to a community engineering effort
+---
+
+# Community engineering issue
+
 <!-- (REQUIRED) Provide information for the doc request including any Community code issues or PRs, Magento versions, or devdoc pages. -->
+
 Type of Doc:
 - [ ] New topic
 - [ ] Topic Update, Devdoc link:
@@ -21,13 +29,13 @@ Notifications of Changes:
 - [ ] New REST endpoints or updated GraphQL query syntax?
 - [ ] New command line option?
 
+## Content
 
 <!-- (REQUIRED) What new information or updates are required for your Community contribution? -->
-## Content:
 
+## Additional information
 
 <!-- (OPTIONAL) What other information can you provide? -->
-## Additional information:
 
 
 <!--

@@ -1,28 +1,28 @@
 ---
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Name your component
 menu_title: Name your component
 menu_order: 6000
-version: 2.0
-github_link: extension-dev-guide/build/create_component.md
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_module.html
   - /guides/v2.0/extension-dev-guide/create_component.html
 ---
 
 ## Overview of naming a component {#overview-naming}
+
 You give a name to your component in its `composer.json` and `module.xml` files. These files also contain other required configuration parameters, such as the module's schema version.
 
 ## Prerequisites {#prereq}
+
 Before you continue, make sure you have completed all of the following tasks:
 
 *   Created a [file structure]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html)
 *   Created the [configuration files]({{ page.baseurl }}/extension-dev-guide/build/required-configuration-files.html) you'll need
 *   [Registered]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component
 
-## Add the component's `module.xml` file {#module-xml}
+## Add the component's `module.xml` file {#add-component-xml}
+
 Declare the component itself by adding a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml file in the `/etc` folder of your component.
 
 A component declares itself (that is, defines its name and existence) in the `module.xml` file, located in the Magento install directory at `<ComponentName>/etc/`.
@@ -41,7 +41,7 @@ Do not use "Ui" for your custom module name because the <code>%Vendor%_Ui</code>
 ## Add the components `composer.json` file {#add-composer-json}
 `composer.json` provides a component name and also specifies component dependencies.
 
-In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
+In addition, the [Component Manager]({{ page.baseurl }}/comp-mgr/module-man/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
 
 In particular:
 
@@ -94,16 +94,8 @@ where:
 * `license`&mdash;lists applicable licenses that apply to your component.
 * `autoload`&mdash;instructs composer to load the specified files.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
-</div>
-
-<!-- <div class="bs-callout bs-callout-info" id="info">
-  <p>Take a look at a <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-minimal"> sample module</a> created by the Magento Core Team. </p>
-  <p>The team is creating a <a href="https://github.com/magento/magento2-samples"> collection of samples</a> to demonstrate technologies introduced in Magento 2. You can edit your Magento 2 <code>composer.json</code> file to declare a dependency upon this package of sample modules, and then run <code>composer update</code> to download them. Look for more sample modules as we build them.</p>
- </div> -->
-
-
+{: .bs-callout .bs-callout-info }
+Magento does not currently support the [`path`](https://getcomposer.org/doc/05-repositories.md#path){: target="_blank"} repository.
 
 #### Next
 

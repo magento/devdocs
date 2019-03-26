@@ -5,11 +5,10 @@ title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100
 menu_node:
-version: 2.0
-github_link: cloud/project/admin-git-push.md
 ---
 
 # Step by step walk-through of `git push` output
+
 To better grasp what is happening here, we will show you what the output of the `git push` command might look like with {{site.data.var.ece}}.
 
 For this example, we use a sample PHP project with multiple data backends, MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a `composer.json` file. It uses the Ruby library `sass` to compile the SCSS during its build process.
@@ -28,11 +27,11 @@ This is what the output looks like:
     Writing objects: 100% (4/4), 428 bytes | 0 bytes/s, done.
     Total 4 (delta 3), reused 0 (delta 0)
 
-This was the normal output you would expect from a git server. If a conflict occurred, an error would have displayed and recommended resolving before pushing again.
+This was the normal output you would expect from a Git server. If a conflict occurred, an error would have displayed and recommended resolving before pushing again.
 
 ## Validating submodules
 
-{{site.data.var.ece}} supports git submodules and supports multiple applications. You can have multiple applications, each in its own git repository, but have a single production environment for all of them. In this case we only have a single application and no git submodule.
+{{site.data.var.ece}} supports Git submodules and supports multiple applications. You can have multiple applications, each in its own Git repository, but have a single production environment for all of them. In this case we only have a single application and no Git submodule.
 
 The output for each deployed application would have been similar to what you see below for a single application.
 

@@ -1,9 +1,7 @@
 ---
-group: mrg
+group: module-reference-guide
 title: Magento_SalesRuleStaging module
-version: 2.1
 ee_only: true
-github_link: mrg/ee/SalesRuleStaging.md
 ---
 
 The Magento_SalesRuleStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add sales rule updates to existing store campaigns. In other words, you can add and/or remove {% glossarytooltip 09569c6c-2e5c-4dd8-9c4b-ab299f324d42 %}sales rules{% endglossarytooltip %} for some period of time. These updates are shown on the campaign dashboard.
@@ -41,4 +39,4 @@ For more information about the Magento extension mechanism, see [Magento plug-in
 
 ## Additional information
 
-For more Magento 2 developer documentation, see [Magento 2 Developer Documentation]({{ site.baseurl }}). Also, you can track there [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+For more Magento 2 developer documentation, see [Magento 2 Developer Documentation]({{ site.baseurl }}/). Also, you can track there [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).

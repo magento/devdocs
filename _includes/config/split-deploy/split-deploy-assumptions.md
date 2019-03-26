@@ -1,5 +1,3 @@
-<div markdown="1">
-
 To use pipeline deployment, we assume you are:
 
 *	An experienced system integrator with excellent knowledge of Magento configuration options.
@@ -7,4 +5,4 @@ To use pipeline deployment, we assume you are:
 *	Somewhat knowledgeable about PHP programming.
 *	Experienced with source control methods.
 
-	To use pipeline deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you. 
+	To use pipeline deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you.

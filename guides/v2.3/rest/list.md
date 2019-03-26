@@ -1,11 +1,9 @@
 ---
-group: rest
+group: rest-api
 subgroup: A_rest
 title: List of REST endpoints by module
 menu_title: List of REST endpoints by module
 menu_order: 3
-version: 2.3
-github_link: rest/list.md
 functional_areas:
   - Integration
 ---
@@ -83,6 +81,7 @@ Additions since 2.2 are marked with hash characters (#).
 
 ### AsynchronousOperations
 
+    #GET    /V1/bulk
     #GET    /V1/bulk/:bulkUuid/detailed-status
     #GET    /V1/bulk/:bulkUuid/status
     #GET    /V1/bulk/:bulkUuid/operation-status/:status
@@ -325,6 +324,54 @@ Additions since 2.2 are marked with hash characters (#).
 
     POST   /V1/integration/admin/token
     POST   /V1/integration/customer/token
+
+### InventoryApi
+
+    #GET    /V1/inventory/sources
+    #GET    /V1/inventory/sources/:sourceCode
+    #POST   /V1/inventory/sources
+    #PUT    /V1/inventory/sources/:sourceCode
+    #GET    /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stockId
+    #GET    /V1/inventory/stocks
+    #GET    /V1/inventory/stocks/:stockId
+    #POST   /V1/inventory/stocks
+    #DELETE /V1/inventory/stocks/:stockId
+    #PUT    /V1/inventory/stocks/:stockId
+    #GET    /V1/inventory/stock-source-links
+    #POST   /V1/inventory/stock-source-links
+    #POST   /V1/inventory/stock-source-links-delete
+    #GET    /V1/inventory/source-items
+    #POST   /V1/inventory/source-items
+    #POST   /V1/inventory/source-items-delete
+
+### InventoryCatalogApi
+
+    #POST   /V1/inventory/bulk-product-source-assign
+    #POST   /V1/inventory/bulk-product-source-unassign
+    #POST   /V1/inventory/bulk-product-source-transfer
+
+### InventoryDistanceBasedSourceSelectionApi
+
+    #GET    /V1/inventory/get-distance-provider-code
+    #GET    /V1/inventory/get-distance
+    #GET    /V1/inventory/get-latlng-from-address
+
+### InventoryLowQuantityNotificationApi
+
+    #GET    /V1/inventory/low-quantity-notification/:sourceCode/:sku
+    #POST   /V1/inventory/low-quantity-notification
+    #POST   /V1/inventory/low-quantity-notifications-delete
+
+### InventorySalesApi
+
+    #GET    /V1/inventory/get-product-salable-quantity/:sku/:stockId
+    #GET    /V1/inventory/is-product-salable/:sku/:stockId
+    #GET    /V1/inventory/is-product-salable-for-requested-qty/:sku/:stockId/:requestedQty
+    #GET    /V1/inventory/stock-resolver/:type/:code
+
+### InventorySourceSelectionApi
+    #GET   /V1/inventory/source-selection-algorithm-list
+    #POST  /V1/inventory/source-selection-algorithm-result
 
 ### Quote
 

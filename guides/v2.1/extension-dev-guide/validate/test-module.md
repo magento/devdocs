@@ -1,62 +1,69 @@
 ---
-group: extension-dev-guide
-subgroup: 06_Validate
+group: php-developer-guide
 title: Test your component
-menu_title: Test your component
-menu_order: 2
-menu_node:
-version: 2.1
-github_link: extension-dev-guide/validate/test-module.md
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/dev-test.html
   - /guides/v2.1/mktpl-quickstart/dev-test.html
-  - /guides/v2.2/mktpl-quickstart/dev-test.html
 ---
 
 ## Unit and Integration Tests {#test-unit}
 
 Run the PHPUnit based Magento unit and integration tests.
-For more information see the <a href="{{ page.baseurl }}/test/testing.html">Magento Testing Overview</a>
+See the [Magento Testing Overview].
 
 ## Functional testing {#test-functional}
+
 For further testing with the Magento functional testing frameworks, see
-[Functional Testing Framework]({{ page.baseurl }}/mtf/mtf_introduction.html).
+[Functional Testing Framework].
 
-## Test using Community Edition {#test-comm}
-Test your component by deploying Magento Community Edition and adding the component to the project's <code>composer.json</code>.
+## Test using {{site.data.var.ce}} {#test-comm}
 
-{% highlight JSON %}
+Test your component by deploying {{site.data.var.ce}} and adding the component to the project's `composer.json`. To install, see [Install using Composer].
+
+```json
 "require": {
     "magento/magento-composer-installer": "*",
-    "magento/product-community-edition": "2.0.0",
     "yourvendorname/module-one": "0.1.1"
 },
-{% endhighlight %}
+```
 
-Remember to [register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) your component as well, adding the location of your component. Confirm that your component works as expected and Magento functionality is not compromised.
+[Register] your component, including the file location. Verify it works as expected, without compromising Magento functionality.
 
 ## Test installing your component {#test-install}
-Before you publish your component, you should test installing it using the <a href="{{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">Magento Component Manager</a> (part of the Magento Admin).
 
-One way to do this follows:
+Before you publish your component, test installing it using the [Magento Component Manager]. Access this feature through [Web Setup Wizard] in the Magento Admin.
 
-1.	<a href="{{ page.baseurl }}/extension-dev-guide/package/package_module.html">Package your component</a> in a GitHub repository that's accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
-2.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
+1.	[Package your component] in a GitHub repository that is accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+1.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
 	To create a static route, add a line similar to the following to your `hosts` file:
 
-		<IP or hostname of your GitHub repository> repo.magento.com
+		<IP or hostname of your GitHub repository> https://repo.magento.com
 
-3.	<a href="{{ page.baseurl }}/comp-mgr/module-man/compman-main-pg.html#compman-access" target="_blank">Install your component</a> exactly like a merchant.
-4.	Verify the component installed properly.
-
-
-
-
-
-
+1.	[Install your component], like a merchant. 
+1.	Verify it installed correctly.
 
 ## More information
-For more information on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components, see the following:
 
-* [Validating Magento Extensions](http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/){:target="_blank"}
+See these resources on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components:
+
+* [Magento Marketplace Extension Quality Program Coding Standard] provides a set of rules and sniffs for [PHP_CodeSniffer] tool
+* [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program] (video) from Magento Imagine 2017
+* [Extension Quality Program] in the Magento Marketplace User Guide
+* [01 The Module Skeleton Kata] (video) by [Mage2Katas]
+
+
+[Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
+[Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
+[register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
+[Magento Component Manager]: {{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
+[Web Setup Wizard]: https://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
+[Package your component]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html
+[Install your component]: {{ page.baseurl }}/comp-mgr/module-man/compman-checklist.html
+[Install using Composer]: {{ page.baseurl }}/install-gde/install/sample-data-after-composer.html
+[Magento Marketplace Extension Quality Program Coding Standard]: https://github.com/magento/marketplace-eqp
+[PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
+[Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program]: https://magento.com/resources/technical-deep-dive-how-pass-magento-marketplace-extension-quality-program
+[Extension Quality Program]: https://docs.magento.com/marketplace/user_guide/sellers/extension-quality-program.html
+[01 The Module Skeleton Kata]: https://www.youtube.com/watch?v=JvBWJ6Lm9MU)
+[Mage2Katas]: http://mage2katas.com/

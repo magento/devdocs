@@ -1,12 +1,10 @@
 ---
-group: install_pre
+group: installation-guide
 subgroup: S_Integrator
 title: Get the Magento Open Source metapackage
 menu_title: Get the Magento Open Source metapackage
 menu_order: 3
 menu_node:
-version: 2.0
-github_link: install-gde/prereq/integrator_install_ce.md
 functional_areas:
   - Install
   - System
@@ -21,16 +19,18 @@ To get the {{site.data.var.ce}} metapackage:
 2.	Change to the web server docroot directory, or to a directory you've configured as a virtual host docroot.
 3.	Enter the following command:
 
-		composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition <installation directory name>
+		composer create-project --repository=https://repo.magento.com/ magento/project-community-edition <installation directory name>
 
 	When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-community-edition` if you did not.
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If the following error displays, see <a href="{{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
-  		<pre>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory</pre>
-	</div>
+  <div class="bs-callout bs-callout-info" id="info" markdown="1">
+  If the following error displays, see [troubleshooting]({{ page.baseurl }}/install-gde/trouble/tshoot_composer-fail.html):
+  ```terminal
+  file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
+  ```
+  </div>
 
 4.	Continue with <a href="#perms-over">Set file system ownership and permissions</a>.
 
@@ -38,6 +38,7 @@ To get the {{site.data.var.ce}} metapackage:
 {% include install/file-system-perms-before.md %}
 
 #### Next step
+
 Install the Magento software:
 
 *	<a href="{{ page.baseurl }}/install-gde/install/cli/install-cli.html">Command line</a>

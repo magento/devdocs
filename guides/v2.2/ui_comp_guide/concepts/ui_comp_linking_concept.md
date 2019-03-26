@@ -1,9 +1,6 @@
 ---
-group: UI_Components_guide
-subgroup: concepts
+group: ui-components-guide
 title: Linking properties of UI components
-version: 2.2
-github_link: ui_comp_guide/concepts/ui_comp_linking_concept.md
 ---
 
 ## Overview
@@ -29,10 +26,10 @@ If the local value is a ko of io-es5 observable, the external entity will also b
 
 Example of setting `exports` in a component's `.js` file:
 
-```javascript
+```json
 {
-  'exports': {
-   'visible': '${ $.provider }:visibility'
+  "exports": {
+   "visible": "${ $.provider }:visibility"
   }
 }
 ```
@@ -51,7 +48,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
+For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2100url }}app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
 
 ## `imports` property
 The `imports` property is used for tracking changes of an external entity property. `imports`'s value is an object, composed of the following:
@@ -61,10 +58,10 @@ The `imports` property is used for tracking changes of an external entity proper
 
 Example of using `imports` in a component's `.js` file:
 
-```js
+```json
 {
-  'imports': {
-   'visible': '${ $.provider }:visibility'
+  "imports": {
+   "visible": "${ $.provider }:visibility"
   }
 }
 ```
@@ -83,7 +80,7 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2100url }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2100url }}app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
 
 ## `links` property
 
@@ -94,10 +91,10 @@ The `links` property is used for cross tracking properties changes: both linked 
 
 Example of using `links` in a component's `.js` file:
 
-```javascript
+```json
 {
-  'links': {
-   'visible': '${ $.provider }:visibility'
+  "links": {
+   "visible": "${ $.provider }:visibility"
   }
 }
 ```
@@ -126,10 +123,10 @@ The `listens` property is used to track the changes of a component's property. `
 
 Example of using `listens` in a component's `.js` file :
 
-```javascript
+```json
 {
-  'listens': {
-   '${ $.provider }:visibility': 'visibilityChanged'
+  "listens": {
+   "${ $.provider }:visibility": "visibilityChanged"
   }
 }
 ```

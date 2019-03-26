@@ -1,4 +1,5 @@
 ## Cacheable page checklist
+
 -   Pages use GET requests
 
 -   Pages render only cacheable blocks
@@ -12,6 +13,7 @@
 -   Declare a custom [context variable]({{ page.baseurl }}/extension-dev-guide/cache/page-caching/public-content.html#configure-page-variations) if you plan to show different public content with the same URL
 
 ## Non-cacheable page checklist
+
 -   Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)
 
 -   Blocks that can't be cached should be marked as non-cacheable in the layout. However, be aware that adding a non-cacheable block to a page prevents the full page cache from caching that page.

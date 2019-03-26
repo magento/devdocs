@@ -4,8 +4,6 @@ subgroup: C_vault
 title: Vault implementation for Admin
 menu_title: Vault implementation for Admin
 menu_order: 25
-version: 2.1
-github_link: payments-integrations/vault/admin-integration.md
 functional_areas:
   - Integration
 ---
@@ -127,6 +125,7 @@ Following is an example of such layout:
 According to this configuration the Magento_Vault {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} will render vault payments and all depending JS components will be created.
 
 ## Specific vault configuration for Admin
+
 You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 
 
 Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:

@@ -1,21 +1,13 @@
 ---
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: InsertForm component
 menu_title: InsertForm component
-version: 2.1
-github_link: ui_comp_guide/components/ui-form.md
 ---
-
-## Overview
 
 The InsertForm component inserts the [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) into other components.
 
-## Сonfiguration options
-
-Extends all [`uiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
-
-InsertForm-specific options:
+## Configuration options
 
 <table>
   <tr>
@@ -152,8 +144,7 @@ InsertForm-specific options:
     </td>
     <td>
       Enables link between insertForms's externalValue and value.
-      Here 'link' means the two-way <a href=
-      "{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
+      Here 'link' means the two-way <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
       links property</a> of UI components, which allows immediate
       update.
     </td>

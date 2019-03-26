@@ -1,12 +1,9 @@
-<div markdown="1">
-
 ## Overview of ownership and permissions {#umask-over}
+
 Even in a development environment, you want your Magento installation to be secure. To help prevent issues related to unauthorized people or processes doing potentially harmful things to your system, we recommend some guidelines related to file system ownership and permissions.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you're using an Magento version 2.0.5 or earlier, see <a href="{{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html">Appendix&mdash;Magento file system ownership and appendix (legacy)</a> instead of this topic.</p>
-  <p>In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+If you're using an Magento version 2.0.5 or earlier, see [Appendix&mdash;Magento file system ownership and appendix (legacy)]({{ page.baseurl }}/install-gde/install/legacy-file-system-perms.html) instead of this topic. In version 2.0.6 and later, Magento does not explicitly set file or directory permissions.
 
 This topic provides some basic information about our ownership and permissions guidelines. For additional information, see:
 
@@ -14,25 +11,25 @@ This topic provides some basic information about our ownership and permissions g
 *	[Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html)
 
 ### Magento file system owner
+
 We refer to the *Magento file system owner* as a user who owns and can write to files in the Magento file system.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento file system owner is sometimes referred to as the <em>command-line user</em>.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+The Magento file system owner is sometimes referred to as the *command-line user*.
 
 The Magento file system owner is any of the following:
 
-*	A single user, which is typical of shared hosting. 
+*	A single user, which is typical of shared hosting.
 
 	Shared hosting providers enable you to log in to the Magento server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.
 
-	If you use one Magento user, you have the option of setting a [umask](#restrict) to further restrict access, particularly in production. 
+	If you use one Magento user, you have the option of setting a [umask](#restrict) to further restrict access, particularly in production.
 
 *	Users that belong to a shared group, which is typical of private hosting or having your own Magento server.
 
 	In this situation, you typically *cannot* log in to the server as, or switch to, the web server user. Instead, you have separate users:
 
-	*	The web server user, which runs the Magento Admin and storefront. 
+	*	The web server user, which runs the Magento Admin and storefront.
 
 	*	A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
@@ -43,13 +40,13 @@ The Magento file system owner is any of the following:
 Before you install the Magento software, see [Set pre-installation ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html).
 
 ### Restrict access with a umask {#restrict}
+
 To tighten security, particularly in production on a shared hosting system, we provide a flexible to means to restrict access using a umask. A umask&mdash;also referred to as a *file system creation mask*&mdash;is a set of bits, each of which restricts how its corresponding permission is set for newly created files.
 
-<div class="bs-callout bs-callout-warning">
-    <p>File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.</p>
-</div>
+{:.bs-callout .bs-callout-warning}
+File system security is complex and extremely important. We strongly recommend you consult an experienced system administrator or network administrator before you decide what permissions to set. We provide a mechanism for you to use but a permissions strategy is up to you.
 
-Magento uses a three-bit mask, by default `002`, that you subtract from the UNIX defaults of 666 for files and 777 for directories. 
+Magento uses a three-bit mask, by default `002`, that you subtract from the UNIX defaults of 666 for files and 777 for directories.
 
 Here's what that means:
 
@@ -60,7 +57,7 @@ Here's what that means:
 For more information about `magento_umask`, see [Optionally set a umask]({{ page.baseurl }}/install-gde/install/post-install-umask.html).
 
 ## Permissions, ownership, and Magento modes
+
 We recommend different permissions and ownership for default mode, developer mode, and production mode.
 
 We discuss these recommendations in [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html).
-</div>

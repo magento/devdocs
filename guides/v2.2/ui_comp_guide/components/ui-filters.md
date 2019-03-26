@@ -1,26 +1,13 @@
 ---
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Filters component
-menu_title: Filters component
-version: 2.2
-github_link: ui_comp_guide/components/ui-filters.md
 ---
-
-## Overview
 
 The Filters component renders UI controls for filtering and applies filtering. Must be a child of the [Listing component]({{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html).
 
 See the [Admin Design Pattern Library (Filters)]({{ page.baseurl }}/pattern-library/filters/data-table-filters/filtering.html) topic for information about the UI design patterns that can be implemented using Filters component.
 
-## Structure
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
-
-## Filters configuration
-
-Extends all [uiCollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-Filters-specific configuration:
+## Configuration options
 
 <table>
   <tr>
@@ -38,8 +25,8 @@ Filters-specific configuration:
   <tr>
     <td><code>statefull</code></td>
     <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the <code>value</code> defines whether its saved.</td>
-    <td>{<br>[name: string]: boolean<br>}</td>
-    <td></td>
+    <td>{<br />[name: string]: boolean<br />}</td>
+    <td />
   </tr>
   <tr>
     <td><code>stickyTmpl</code></td>
@@ -63,14 +50,18 @@ Filters-specific configuration:
 
 ## Examples
 
-### Example 1: Add a new customer attribute and make it filterable
+### Add a new filterable customer attribute
 
 To add a new customer attribute to the customer grid and make it filterable, you need to follow these steps:
 
-1. Сreate view/adminhtml/ui_component/customer_listing.xml to add a column component
-2. Сreate the column component {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class which extends Magento\Ui\Component\Listing\Columns\Column
-3. Сreate etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
+1. Create view/adminhtml/ui_component/customer_listing.xml to add a column component
+2. Create the column component {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class which extends Magento\Ui\Component\Listing\Columns\Column
+3. Create etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
 4. Set is_used_in_grid to true for the attribute
 
-### Example 2: Add a custom calculated filter
-...
+## Source files
+
+Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
+
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
+

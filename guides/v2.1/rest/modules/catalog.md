@@ -1,8 +1,6 @@
 ---
-group: rest
+group: rest-api
 title: Catalog module
-version: 2.1
-github_link: rest/modules/catalog.md
 redirect_from: /guides/v2.0/rest/catalog-notes.html
 functional_areas:
   - Integration
@@ -46,8 +44,7 @@ Third-party modules may define other custom attributes.
 
 The following example uses the `POST V1/categories` call to assign four custom attributes to the "My New Category" category.
 
-{% highlight json %}
-
+```json
 {
 "category": {
     "parent_id": 2,
@@ -79,4 +76,4 @@ The following example uses the `POST V1/categories` call to assign four custom a
       ]
     }
 }
-{% endhighlight %}
+```

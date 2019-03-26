@@ -1,8 +1,6 @@
 ---
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Web Driver Replacement in the Functional Testing Framework
-version: 2.1
-github_link: mtf/features/webdriver.md
 ---
 
 ## Overview
@@ -28,12 +26,15 @@ To set up the Facebook web driver, use the following steps:
 2. In `<magento2_root_dir>/dev/tests/functional/composer.json`, move the `"facebook/webdriver": "dev-master"` entry from the `"suggest"` list to the `"require"` list.
 3. Run in your terminal:
 
-        cd <magento2_root_dir>/dev/tests/functional
-        composer update
+```bash
+cd <magento2_root_dir>/dev/tests/functional
+```
+```bash
+composer update
+```
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You still need to <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
 
 ## Add and setup a custom web driver
 
@@ -47,12 +48,15 @@ To setup the custom web driver, follow:
 1. In `<magento2_root_dir>/dev/tests/functional/etc/di.xml`, add the `<preference for="Magento\Mtf\Client\DriverInterface" type="Magento\Mtf\Client\Driver\<Your_driver>\Driver" />` element.
 2. In `<magento2_root_dir>/dev/tests/functional/composer.json`, add corresponding entry to the `"require"` list (if related module is available on [Packagist]). And run in your terminal:
 
-        cd <magento2_root_dir>/dev/tests/functional
-        composer update
+```bash
+cd <magento2_root_dir>/dev/tests/functional
+```
+```bash
+composer update
+```
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You still need to <a href="{{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium">run the Selenium Server</a> in order to run the tests, because at this point the test run procedure is not yet changed.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You still need to [run the Selenium Server]({{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium) in order to run the tests, because at this point the test run procedure is not yet changed.
 
 <!-- LINKS DEFINITION -->
 

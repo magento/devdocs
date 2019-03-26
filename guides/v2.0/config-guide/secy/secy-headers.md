@@ -1,12 +1,10 @@
 ---
-group: config-guide
+group: configuration-guide
 subgroup: 02_Security
 title: Prevent cache poisoning
 menu_title: Prevent cache poisoning
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: config-guide/secy/secy-headers.md
 functional_areas:
   - Configuration
   - System
@@ -22,11 +20,11 @@ This solution applies to the following Magento versions:
 *	2.0.10 and later
 *	2.1.2 and later
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>This topic is intended for experienced IIS administrators. </p>
-</div>
+{: .bs-callout .bs-callout-info }
+This topic is intended for experienced IIS administrators.
 
 ### Description
+
 The issue results if {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:
 
 *	`X-Rewrite-Url`
@@ -38,14 +36,14 @@ The issue results if {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}U
 If these headers are changed, the resulting URL and content are cached, resulting in potential vulnerabilities.
 
 ### Solution
+
 We provide the option to remove the values of all of the preceding headers based on the IIS server setting for `Enable_IIS_Rewrites`.
 
 *	If `Enable_IIS_Rewrites` is set to `0`,  the values of the headers are removed.
 *	If `Enable_IIS_Rewrites` is set to `1`, the values of the headers are left intact.
 
-	<div class="bs-callout bs-callout-warning">
-    	<p>If you set <code>Enable_IIS_Rewrites</code> to <code>1</code>, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.</p>
-       
+	<div class="bs-callout bs-callout-warning" markdown="1">
+	If you set `Enable_IIS_Rewrites` to `1`, you must not allow the values of the preceding headers to be altered before the request reaches the IIS web server.
 	</div>
 
 

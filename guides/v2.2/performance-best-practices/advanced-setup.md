@@ -1,8 +1,6 @@
 ---
-group: perf-best-practices
+group: performance-best-practices
 title: Advanced setup
-version: 2.2
-github_link: performance-best-practices/advanced-setup.md
 functional_areas:
   - Configuration
   - System
@@ -33,9 +31,8 @@ You can tune indexer performance by adjusting the index batching size variables.
 For example, if you are running a profile similar to B2B Medium, you can override the configuration value `batchRowsCount` in `app/code/Magento/catalog/etc/di.xml` and override the default value of `5000` to `1000`. This reduces the full indexing time from 4 hours down to 2 hours with a default MySQL configuration.
 
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 We have not enabled batching for the catalog rules indexer. Merchants with a large number of catalog rules need to adjust their MySQL configuration to optimize indexing time. In this case, editing your MySQL configuration file and allocating more memory to the TMP_TABLE_SIZE and MAX_HEAP_TABLE_SIZE configuration values (the default is 16M for both) will improve performance for this indexer, but will result in MySQL consuming more RAM.
-</div>
 
 ## Set up Redis
 
@@ -67,7 +64,7 @@ To configure additional databases, you must create an empty database and run one
 
 These commands migrate specific domain tables from the main database to a domain database. They also change the Magento configuration to allow corresponding connectivity and constraints processing.
 
-By having separate databases for checkout and Order Management, you can distribute the load between your database servers. You can serve more checkouts and process more orders per second without affecting the availability of your сatalog and other operations. We recommend splitting databases for periods of flash or active sales, or using them permanently for naturally high-load projects. Migration of present data between databases should be executed under the supervision of your system administrator.  Do not split databases while in Production mode.
+By having separate databases for checkout and Order Management, you can distribute the load between your database servers. You can serve more checkouts and process more orders per second without affecting the availability of your catalog and other operations. We recommend splitting databases for periods of flash or active sales, or using them permanently for naturally high-load projects. Migration of present data between databases should be executed under the supervision of your system administrator.  Do not split databases while in Production mode.
 
 In addition to master databases, Magento allows you to configure a number of slave databases (one for each data resource declared in the system). A slave database serves as a full replica of your main database, or one of your domain master databases. It is issued for read operations on a specific resource.
 

@@ -1,14 +1,12 @@
 ---
 layout: tutorial
-group: howdoi
+group: how-do-i
 subgroup:
 title: Customize the form configuration
 subtitle: Customize Product Creation Form
 menu_node:
 level3_subgroup: product-creation-form
 menu_order: 2
-version: 2.1
-github_link: howdoi/customize-form-configuration.md
 ---
 
 Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.

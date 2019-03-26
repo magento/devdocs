@@ -1,10 +1,8 @@
 ---
-group: fedg
+group: frontend-developer-guide
 title: Conventional notations used in this Guide
 menu_title: Conventional notations used in this Guide
 menu_order: 2
-version: 2.0
-github_link: frontend-dev-guide/conventions.md
 functional_areas:
   - Frontend
 ---
