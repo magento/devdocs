@@ -28,7 +28,7 @@ The DevDocs team :
 ![Multi-Repo and Writing Content]({{ site.baseurl }}/common/images/remote-doc-repo-developer.png) 
 
 1. Create a `docs` directory in the root of your public repository. If you have images, add an `images` sudirectory.
-1. Write simple markdown (`.md`) files using [Kramdown](https://kramdown.gettalong.org/syntax.html).
+1. Write simple markdown (`.md`) files using [kramdown](https://kramdown.gettalong.org/syntax.html).
 1. Contact [Lori Krell](mailto:lkrell@adobe.com) in Community Engineering with the following details:
     - Project name or feature
     - GitHub Repository link
@@ -41,7 +41,7 @@ The DevDocs team :
 
 The DevDocs team will help get your content ready for publication:
 
-1. Review and edit your content, including Kramdown formatting, Liquid tags, grammar, and more.
+1. Review and edit your content, including kramdown formatting, Liquid tags, grammar, and more.
 1. Connect your content to DevDocs navigation including custom table of contents and search facets.
 1. Configure automation for generating documentation on an automated cycle.
 

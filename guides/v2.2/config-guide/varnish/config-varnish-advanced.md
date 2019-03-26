@@ -70,7 +70,7 @@ On all other machines, the Magento instance must have access the primary machine
 
 Alternatively, {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} versioning can be turned off on all machines. This can be accessed from the Admin under **Stores > Settings > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** = **No**.
 
-Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System > Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
+Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System** > Tools > **Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 
     bin/magento cache:flush
 
