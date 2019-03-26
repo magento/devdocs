@@ -30,6 +30,7 @@ Attribute |  Data Type | Description
 `id` | Int | The ID assigned to the customer
 `addresses` | [CustomerAddresses]  | An array containing the customer's shipping and billing addresses
 `is_subscribed` | Boolean | Indicates whether the customer is subscribed to the company's newsletter
+`gender` | Int | The customer's gender(Male - 1, Female - 2)
 
 ### CustomerAddress object
 
