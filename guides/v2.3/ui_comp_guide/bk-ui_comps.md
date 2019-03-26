@@ -43,7 +43,7 @@ Basic components are declared in the [page layout files]({{ page.baseurl }}/fron
 All components can be configured both for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 {: .bs-callout .bs-callout-info }
-You need to configure styles manually for components on storefront.
+You need to configure styles manually for components on the storefront.
 
 ## When to use UI components?
 
@@ -74,11 +74,13 @@ UI component is a combination of:
 
 ### XML Declaration
 
-XML is widely used in Magento 2, which allows developers to easily reuse existing functionalities and add customizations.
+XML is widely used in Magento 2 which allows developers to easily reuse existing functionalities and add customizations.
 
-Comparing to XML layouts, UI components use more semantical approach to declare and configure user interface.
+Compared to XML layouts, UI components use a more semantical approach to declare and configure the user interface.
 
-An instance of UI component is usually based on the hierarchy of child UI components. For example:
+An instance of a UI component is usually based on the hierarchy of child UI components.
+
+For example:
 
 * the Form component has Fieldsets, Tabs, and inner fields
 
