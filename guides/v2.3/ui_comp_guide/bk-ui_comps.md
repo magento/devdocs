@@ -76,7 +76,7 @@ UI component is a combination of:
 
 XML is widely used in Magento 2, which allows developers to easily reuse existing functionalities and add customizations.
 
-Comparing to XML layouts, UI components use more semantical approach to declare and configure the user interface.
+Compared to XML layouts, UI components use a more semantical approach to declare and configure the user interface.
 
 An instance of a UI component is usually based on the hierarchy of child UI components.
 
