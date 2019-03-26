@@ -25,7 +25,7 @@ The following XSD file contains rules and limitations shared between all compone
 
 `<your module root dir>/Magento/Ui/etc/ui_definition.xsd`
 
-{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} developers cannot extend this XSD scheme and introduce new components but can customize existing ones.
+{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} developers cannot extend this XSD scheme and introduce new components, but can customize existing ones.
 
 ### General structure
 
