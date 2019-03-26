@@ -275,9 +275,7 @@ In this example, the response is intentionally truncated.
           }
         ]
       }
-    }
-  }
-}
+
 ```
 
 ## Currency
