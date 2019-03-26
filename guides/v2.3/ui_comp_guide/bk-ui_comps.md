@@ -78,7 +78,9 @@ XML is widely used in Magento 2, which allows developers to easily reuse existin
 
 Comparing to XML layouts, UI components use more semantical approach to declare and configure the user interface.
 
-An instance of a UI component is usually based on the hierarchy of child UI components. For example:
+An instance of a UI component is usually based on the hierarchy of child UI components.
+
+For example:
 
 * the Form component has Fieldsets, Tabs, and inner fields
 
