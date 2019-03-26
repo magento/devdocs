@@ -10,6 +10,13 @@ pages:
         - label: Component Status
           url: /release-notes/component-status.html
 
+
+        - label: Magento Open Source 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1OpenSource.html
+
+        - label: Magento Commerce 2.3.1 Release Notes
+          url: /release-notes/ReleaseNotes2.3.1Commerce.html
+
         - label: Magento Open Source 2.3.0 Release Notes
           url: /release-notes/ReleaseNotes2.3.0OpenSource.html
 
@@ -19,6 +26,12 @@ pages:
     - label: 2.2 Release Notes
       include_versions: ["2.2"]
       children:
+
+        - label: Magento Open Source 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8CE.html
+
+        - label: Magento Commerce 2.2.8 Release Notes
+          url: /release-notes/ReleaseNotes2.2.8EE.html
 
         - label: Magento Open Source 2.2.7 Release Notes
           url: /release-notes/ReleaseNotes2.2.7CE.html
@@ -81,6 +94,9 @@ pages:
         - label: Magento Open Source 2.1.x Release Notes
           children:
 
+            - label: Magento Open Source 2.1.17 Release Notes
+              url: /release-notes/ReleaseNotes2.1.17CE.html
+
             - label: Magento Open Source 2.1.16 Release Notes
               url: /release-notes/ReleaseNotes2.1.16CE.html
 
@@ -134,6 +150,9 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.17 Release Notes
+              url: /release-notes/ReleaseNotes2.1.17EE.html
 
             - label: Magento Commerce 2.1.16 Release Notes
               url: /release-notes/ReleaseNotes2.1.16EE.html
@@ -256,7 +275,7 @@ pages:
           url: /release-notes/thirdparty-mccloud.html
     
     - label: Inventory management
-      url: /release-notes/inventory-management.html
+      url: /inventory/release-notes.html
       exclude_versions: ["2.0", "2.1", "2.2"]
 
     - label: Page Builder
