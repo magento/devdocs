@@ -48,7 +48,7 @@ To determine the version of CentOS your server runs, enter the following command
 
 If you're already running CentOS 6.8 or later, no action is necessary. According to the [CentOS 6.8 changelog](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS6.8), "various applications now support TLS 1.2, i.e. OpenLDAP, yum, stunnel, vsftpd, git, postfix and others. Also TLS 1.2 has been enabled by default in various packages".
 
-(CentOS 7 has a newer version of `libcurl` that also includes default TLS 1.2.)
+(CentOS 7 has a newer version of `libcurl` that also defaults to TLS 1.2.)
 
 You have the following options:
 
