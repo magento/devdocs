@@ -71,7 +71,7 @@ In default mode:
 -   A symlink to a static view file is published to the `pub/static` directory for each requested file
 -   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view). In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
-For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
+For more information, see [Set the Magento mode and commands]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ## Developer mode
 
@@ -85,7 +85,7 @@ In developer mode:
 -   An {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is thrown in the error handler, rather than being logged
 -   An exception is thrown when an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} subscriber cannot be invoked
 
-For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
+For more information, see [Set the Magento mode and commands]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ## Production mode
 
@@ -109,7 +109,7 @@ If you are using {{site.data.var.ece}}, Magento applicationruns in maintenance m
 
 #### Next step
 
-To set a mode, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
+To set a mode, see [Set the Magento mode and commands]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 #### Related topic
 
