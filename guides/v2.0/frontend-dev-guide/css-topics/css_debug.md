@@ -19,6 +19,8 @@ The topic describes how to install, configure and use <a href="http://gruntjs.co
 
 Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
+Also Less compilation modes whould be **Server-side Less compilation** [mode]({{ page.baseurl }}/css-topics/css-preprocess.html).
+
 ## Installing and configuring Grunt {#grunt_prereq}
 
 Magento has built-in Grunt tasks configured, but there are still several prerequisite steps you need to take to be able to use it:
@@ -159,6 +161,8 @@ After you customize the content of any <code>.less</code> file, except the root 
 
 <li>After you <a href="{{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
 
+<li>After run <code>exec</code> command <code>clear</code> Magento <code>cache</code>, then run <code>watch</code> command.
+(It will help When we run exec some of the added custom jQuery not loading like product sliders, banners etc)</li>
 
 </ul>
 
