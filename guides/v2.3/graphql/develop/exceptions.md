@@ -11,6 +11,8 @@ Magento provides the following exception classes in `Magento\Framework\GraphQl\E
 
 Class | Exception category | Description
 --- | --- | ---
+`GraphQlAlreadyExistsException` | `graphql-already-exists` | Thrown when data already exists
+`GraphQlAuthenticationException` | `graphql-authentication` | Thrown when an authentication fails
 `GraphQlAuthorizationException` | `graphql-authorization` | Thrown when an authorization error occurs
 `GraphQlInputException` | `graphql-input` | Thrown when a query contains invalid input
 `GraphQlNoSuchEntityException` | `graphql-no-such-entity` | Thrown when an expected resource doesn't exist
