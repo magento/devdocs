@@ -95,7 +95,7 @@ query {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "country": {
@@ -185,7 +185,7 @@ query {
 
 In this example, the response is intentionally truncated.
 
-```text
+```json
 {
   "data": {
     "countries": [
@@ -308,7 +308,7 @@ query {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "currency": {
