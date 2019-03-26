@@ -30,6 +30,7 @@ Attribute |  Data Type | Description
 `id` | Int | The ID assigned to the customer
 `addresses` | [CustomerAddresses]  | An array containing the customer's shipping and billing addresses
 `is_subscribed` | Boolean | Indicates whether the customer is subscribed to the company's newsletter
+`gender` | Int | The customer's gender(Male - 1, Female - 2)
 
 ### CustomerAddress object
 
@@ -59,6 +60,16 @@ Attribute |  Data Type | Description
 `reward_update_notification` | Int | The number of the email template to use for notifications about reward updates. This attribute is defined in the Reward module.
 `reward_warning_notification` | Int | The number of the email template to use for notifications about rewards points expiring. This attribute is defined in the Reward module.
 
+### CustomerAddressRegion object
+
+CustomerAddressRegion defines the customer's state or province.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`region_code` | String | The address region code
+`region` | String | The state or province name
+`region_id` | Int | Uniquely identifies the region
+
 ## Example usage
 
 The following call returns information about the logged-in customer.
@@ -79,7 +90,11 @@ The following call returns information about the logged-in customer.
       lastname
       street
       city
-      region_id
+      region {
+        region_code
+        region
+        region_id
+      }
       postcode
       country_id
       telephone
@@ -107,7 +122,11 @@ The following call returns information about the logged-in customer.
            "123 Elm Street"
          ],
          "city": "Anytown",
-         "region_id": 57,
+         "region": {
+           "region_code": "MI",
+           "region": "Michigan",
+           "region_id": 33
+         }
          "postcode": "78758",
          "country_id": "US",
          "telephone": "512 555-1212"
