@@ -48,7 +48,7 @@ We have channels for each project. These channels are recommended for new member
 - *Video* [How to contribute during Magento Contribution Days][57] by [Max Pronko][35]
 - *GitHub* [Magento Resources][23] curated list by [Alessandro Ronchi][30]
 - *Blog posts* [Thoughts on Magento, PHP, JavaScript, Laravel, React, Docker, and user interface design][56] by [Mark Shust][38]
-- *Videos* [Mage2.tv][24]
+- *Videos* [Mage2.tv][24] by [Vinai Kopp][48]
 - *Podcast* [MageTalk][25] by [Phillip Jackson and Kalen][27]
 - *Vlog* [eCommerceAholic][26] by [TJ Gamble][28]
 - *Statistics* [Magestats][32] by [Marcel Hauri][33]
