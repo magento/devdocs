@@ -74,7 +74,7 @@ UI component is a combination of:
 
 ### XML Declaration
 
-XML is widely used in Magento 2, which allows developers to easily reuse existing functionalities and add customizations.
+XML is widely used in Magento 2 which allows developers to easily reuse existing functionalities and add customizations.
 
 Compared to XML layouts, UI components use a more semantical approach to declare and configure the user interface.
 
