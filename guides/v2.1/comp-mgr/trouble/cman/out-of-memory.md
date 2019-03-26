@@ -9,7 +9,7 @@ functional_areas:
   - Upgrade
 ---
 
-Sometimes, when you attempt to install or update an extension or the latest Magento 2.3.x version, you can encounter an error due to your system running out of physical memory. We recommend you create a swap file to avoid this error.
+You may encounter an error, caused by your system running out of physical memory, when you attempt to install or update an extension or the latest Magento 2.3.x version. We recommend you create a swap file to avoid this error.
 
 ### Symptom
 
