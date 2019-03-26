@@ -33,7 +33,7 @@ The `source_code` values will be used in subsequent steps.
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/sources`
+`POST <host>/rest/all/V1/inventory/sources`
 
 **Scope**
 
