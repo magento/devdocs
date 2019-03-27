@@ -7,11 +7,11 @@ functional_areas:
   - Setup
 ---
 
-## Prerequisite {#reds-cache-prereq}
+## Prerequisite
 
-If Redis will be used for default or page caching, you must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
+You must [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install) before continuing.
 
-## Configure Magento to use Redis for session storage {#config-redis-config}
+## Configure Magento to use Redis for session storage
 
 Magento now provides command line options to configure Redis session storage. In previous releases, you edited the `<Magento install dir>app/etc/env.php` file. The command line provides validation and is the recommended configuration method, but you can still edit the `env.php` file.
 
@@ -34,7 +34,7 @@ where
 |session-save-redis-password|password|Specifies a password if your Redis server requires authentication.|empty|
 |session-save-redis-timeout|timeout|Connection timeout, in seconds.|2.5|
 |session-save-redis-persistent-id|persistent_identifier|Unique string to enable persistent connections (for example, sess-db0).<br/>[Known issues with phpredis and php-fpm](https://github.com/nicolasff/phpredis/issues/70).
-|session-save-redis-db|database|Unique Redis database number, which is recommended to protect against data loss.<br/><br/><strong>Important</strong>: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
+|session-save-redis-db|database|Unique Redis database number, which is recommended to protect against data loss.<br/><br/>**Important**: If you use Redis for more than one type of caching, the database numbers must be different. It is recommended that you assign the default caching database number to 0, the page caching database number to 1, and the session storage database number to 2.|0|
 |session-save-redis-compression-threshold|compression_threshold|Set to 0 to disable compression (recommended when [suhosin.session.encrypt = On](http://suhosin.org/stories/howtos.html#encryption-features)).<br/>[Known issue with strings of more than 64KB](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/issues/18).|2048|
 |session-save-redis-compression-lib|compression_library|Options: gzip, lzf, lz4 or snappy.|gzip|
 |session-save-redis-log-level|log_level|Set to any of the following, listed in order from least verbose to most verbose:<br/>0 (emergency: only the most severe errors)<br/>1 (alert: immediate action required)<br/>2 (critical: application component unavailable)<br/>3 (error: runtime errors, not critical but must be monitored)<br/>4 (warning: additional information, recommended)<br/>5 (notice: normal but significant condition)<br/>6 (info: informational messages)<br/>7 (debug: the most information for development or testing only)|1|
@@ -96,7 +96,7 @@ TTL for session records use the value for Cookie Lifetime, which is configured i
 
 {% include config/redis-verify.md %}
 
-#### Related topics
+## Related topics
 
 * [Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
 * [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
