@@ -34,15 +34,17 @@ The release notes include:
 
 -   {:.new}**Service updates**—Supported by Magento versions 2.3.1 and later 2.3.x versions.
 
-    -<!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x.
-    -Added support for Redis version 5.0.
+    -   <!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x.
+
+    -   Added support for Redis version 5.0.
 
 -   {:.new}**New Docker images**—Added the following services to the Docker build:
 
-    -<!-- MAGECLOUD-3196 -->Elasticsearch 6.5
-    -<!-- MAGECLOUD-3223 -->Redis 5.0
+    -   <!-- MAGECLOUD-3196 -->Elasticsearch 6.5
 
--   {:.new}<!-- MAGECLOUD-2870 -->**New environment variable**—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the SCD_COMPRESSION_TIMEOUT environment variable. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_compression_timeout) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_compression_timeout) content.
+    -   <!-- MAGECLOUD-3223 -->Redis 5.0
+
+-   {:.new}<!-- MAGECLOUD-2870 -->**New environment variable**—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the **SCD_COMPRESSION_TIMEOUT** environment variable. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_compression_timeout) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_compression_timeout) content.
 
 -   {:.fix}<!-- MAGECLOUD-3246 -->Added the `--use-rewrites` option to the Magento install command so that it uses web server rewrites for generated links in the storefront and Admin access to improve security and customer experience.
 
