@@ -45,9 +45,9 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
 #### To launch Docker:
 
-1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud).
+1.  Download a Magento application template from the [Magento Cloud repository](https://github.com/magento/magento-cloud). Be careful to select the branch that corresponds with the Magento version.
 
-1.  Add your credentials to the `auth.json` file.
+1.  Add your [Magento access credentials]({{page.baseurl}}/install-gde/prereq/connect-auth.html) to the `auth.json` file.
 
 1.  Install the template dependencies.
 
