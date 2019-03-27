@@ -8,7 +8,7 @@ functional_areas:
 redirect_from:
    - /guides/v2.3/cloud/release-notes/CloudReleaseNotes.html
 ---
-<!-- 2.2 release notes -->
+<!-- 2.3 release notes -->
 
 <!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
@@ -32,7 +32,7 @@ The release notes include:
 
 ## v2002.0.17
 
--   {:.new}**Service updates**—Supported by Magento versions 2.2.8 and later 2.2.x versions.
+-   {:.new}**Service updates**—Supported by Magento versions 2.3.1 and later 2.3.x versions.
 
     -<!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x.
     -Added support for Redis version 5.0.

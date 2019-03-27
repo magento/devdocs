@@ -8,7 +8,7 @@ functional_areas:
 redirect_from:
    - /guides/v2.1/cloud/release-notes/CloudReleaseNotes.html
 ---
-
+<!-- 2.1 release notes -->
 
 <!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
@@ -32,11 +32,10 @@ The release notes include:
 
 ## v2002.0.17
 
--   {:.new}<!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x (requires Magento version 2.3.1).
+-   {:.new}**New Docker images**—Added the following services to the Docker build:
 
--   {:.new}<!-- MAGECLOUD-3196 -->**New Docker image**—Added an Elasticsearch version 6.5 image to the Docker environment.
-
--   {:.new}<!-- MAGECLOUD-3223 -->**New Docker image**—Added a Redis version 5.0 image to the Docker environment.
+    -<!-- MAGECLOUD-3196 -->Elasticsearch 6.5
+    -<!-- MAGECLOUD-3223 -->Redis 5.0
 
 -   {:.new}<!-- MAGECLOUD-2870 -->**New environment variable**—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the SCD_COMPRESSION_TIMEOUT environment variable. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_compression_timeout) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_compression_timeout) content.
 
