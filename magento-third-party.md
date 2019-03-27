@@ -8,7 +8,6 @@ menu_order: 1
 menu_node: parent
 ---
 
-## Magento third party licenses
 
 This page lists third party license agreements for the Magento application.
 
@@ -21,3 +20,13 @@ This page lists third party license agreements for the Magento application.
 
 *	[{{site.data.var.ce}} third-party licenses]({{ site.gdeurl21 }}release-notes/thirdparty_ce.html)
 *	[{{site.data.var.ee}} third-party licenses]({{ site.gdeurl21 }}release-notes/thirdparty_ee.html)
+
+## Magento 2.2.x
+
+*	[{{site.data.var.ce}} third-party licenses]({{ site.gdeurl22 }}release-notes/thirdparty_ce.html)
+*	[{{site.data.var.ee}} third-party licenses]({{ site.gdeurl22 }}release-notes/thirdparty_ee.html)
+
+## Magento 2.3.x
+
+*	[{{site.data.var.ce}} third-party licenses]({{ site.gdeurl23 }}release-notes/thirdparty_ce.html)
+*	[{{site.data.var.ee}} third-party licenses]({{ site.gdeurl23 }}release-notes/thirdparty_ee.html)
