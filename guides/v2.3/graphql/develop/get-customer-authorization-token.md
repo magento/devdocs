@@ -36,15 +36,4 @@ If you provided a correct customer's credentials then in the result you will get
  }
 ```
 
-Now, you can use that token to any of authorization queries/mutations. For example, you can retrieve information about customer's cart:
-```text
-{
-  cart(cart_id: "c9l4ihcgs45kz2c8h7bb2jp4mzyzz7q0") {
-    items {
-      __typename
-      id
-      qty
-    }
-  }
-}
-```
+Now, you can use that token to any of authorization queries/mutations. 
