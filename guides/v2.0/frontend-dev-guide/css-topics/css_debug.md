@@ -161,8 +161,6 @@ After you customize the content of any <code>.less</code> file, except the root 
 
 <li>After you <a href="{{ site.baseurl }}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>exec</code> command and reload the page.</li>
 
-<li>After run <code>exec</code> command <code>clear</code> Magento <code>cache</code>, then run <code>watch</code> command.
-(It will help When we run exec some of the added custom jQuery not loading like product sliders, banners etc)</li>
 
 </ul>
 
