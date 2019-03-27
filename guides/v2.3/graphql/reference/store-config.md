@@ -79,7 +79,7 @@ The following call returns all details of a store's configuration.
 
 **Request**
 
-``` text
+```text
 {
   storeConfig {
     id,
@@ -104,7 +104,7 @@ The following call returns all details of a store's configuration.
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "storeConfig": {
@@ -135,7 +135,7 @@ The following query returns information about the store's default title, keyword
 
 **Request**
 
-``` text
+```text
 {
   storeConfig {
     default_title,
@@ -147,7 +147,7 @@ The following query returns information about the store's default title, keyword
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "storeConfig": {
@@ -165,7 +165,7 @@ The following query returns information about the store's content pages.
 
 **Request**
 
-``` text
+```text
 {
   storeConfig {
     front,
@@ -180,7 +180,7 @@ The following query returns information about the store's content pages.
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "storeConfig": {
