@@ -25,7 +25,7 @@ If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configu
 
     ```yaml
     elasticsearch:
-        type: elasticsearch:5.2
+        type: elasticsearch:6.5
         disk: 1024
     ```
 
@@ -52,7 +52,7 @@ Optionally, you can add plugins with the `.magento/services.yaml` file. For exam
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:5.2
+   type: elasticsearch:6.5
    disk: 1024
    configuration:
     plugins:
