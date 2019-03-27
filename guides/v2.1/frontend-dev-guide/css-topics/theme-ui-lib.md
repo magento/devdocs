@@ -26,8 +26,7 @@ The Magento UI library provides the ability to customize and reuse the following
 *	pagination
 *	popups
 *	ratings
-*	sections
-*	tabs and accordions
+*	sections - tabs and accordions
 *	tables
 *	tooltips
 *	typography

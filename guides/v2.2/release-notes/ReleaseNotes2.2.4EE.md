@@ -702,7 +702,7 @@ Users of the CyberSource payment method should note that CyberSource uses the Ma
 
 ### Reports
 
-<!--- MAGETWO-84981 -->* The Products in Cart report is now accurate. Previously, if you created a Products in Cart report (**Open Reports > Marketing > Products in Cart**) after deleting a product from the catalog, the report displayed a blank list of products. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request 12539*.
+<!--- MAGETWO-84981 -->* The Products in Cart report is now accurate. Previously, if you created a Products in Cart report (**Open Reports** > Marketing > **Products in Cart**) after deleting a product from the catalog, the report displayed a blank list of products. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request 12539*.
 
 <!--- MAGETWO-88173 -->* You can now successfully export the Ordered Products report to a CSV file. Previously, the export file contained no report data.
 
