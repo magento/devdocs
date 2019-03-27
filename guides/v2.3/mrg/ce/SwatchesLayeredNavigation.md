@@ -24,5 +24,3 @@ The **Magento_SwatchesLayeredNavigation** module does not provide any specific s
 
 ## Specific Extension Points
 The **Magento_SwatchesLayeredNavigation** module does not provide any specific extension points. You can extend it using the Magento extension mechanism.
-
-
