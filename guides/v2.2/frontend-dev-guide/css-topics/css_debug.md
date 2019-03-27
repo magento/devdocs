@@ -12,6 +12,8 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 - Make sure you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 - Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
 
+Also Less compilation modes whould be **Server-side Less compilation** [mode]({{ page.baseurl }}/css-topics/css-preprocess.html).
+
 ## Adding themes to Grunt configuration {#add_theme}
 
 To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
