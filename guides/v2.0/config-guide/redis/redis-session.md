@@ -22,7 +22,6 @@ You can use Redis for session storage in Magento versions 2.0.6 and later only.
 
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
-php?start_inline=1
     'session' =>
     array (
       'save' => 'redis',
