@@ -42,7 +42,7 @@ The following query returns the order history of the logged in customer.
 
 **Request**
 
-``` text
+```text
 {
   customerOrders {
     items {
@@ -58,7 +58,7 @@ The following query returns the order history of the logged in customer.
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "customerOrders": {
