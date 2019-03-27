@@ -110,6 +110,11 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 ## Using client-side compilation mode
 
+When your Magento 2 instance is not in the production mode, you can implement the client-side compilation to compile .less files via the browser using the native less.js library.
+
+Despite the fact that this kind of approach allows to instantly update CSS/LESS themes as soon as the page is reloaded in a browser, this results in exceptionally slow response times even if you are working on the localhost.
+
+
 1. Navigate to your theme directory and create a `web/css/source/_extend.less` file.
 1. Log in to the Magento Admin.
 1. Click **STORES** > **Settings** > **Configuration** > **ADVANCED** > **Developer** > **Frontend development workflow** > **Workflow type**.
@@ -147,7 +152,7 @@ If you are using server-side compilation mode, you must [clean generated static 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
 {:.bs-callout .bs-callout-info}
-Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
+Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory and generate a new deployment for the changes to have the desired effect. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
 
 
 [create a theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-create.html
