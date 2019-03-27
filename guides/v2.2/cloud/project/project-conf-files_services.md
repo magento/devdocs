@@ -79,10 +79,10 @@ The `type` of your service in the format `type:version`
 
 We support and deploy the following services for you:
 
-*	[`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) version
+*	[`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
 *	[`redis`]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
-*	[`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) version
-*	[`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) version
+*	[`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+*	[`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 
 ### `disk` {#cloud-yaml-services-disk}
 
