@@ -1,12 +1,9 @@
 ---
-layout: default
-group: ext-best-practices
+group: extension-best-practices
 subgroup: Security
 title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
-version: 2.2
-github_link: ext-best-practices/security/writing-secure-code.md
 ---
 
 ## Overview
@@ -51,4 +48,4 @@ Avoid using these functions in your code.
 [9]:http://php.net/manual/en/function.mt-rand.php
 [10]:http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html
 [11]:http://php.net/manual/en/class.arrayobject.php
-[12]: {{page.baseurl}}extension-dev-guide/framework/serializer.html "Serialize Library"
+[12]: {{ page.baseurl }}/extension-dev-guide/framework/serializer.html "Serialize Library"

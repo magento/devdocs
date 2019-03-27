@@ -1,20 +1,17 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: D_Migrate using the data migration tool
 title: Follow-up (info and steps)
 menu_title: Follow-up (info and steps)
 menu_node:
 menu_order: 4
-version: 2.1
-github_link: migration/migration-migrate-follow-up.md
 functional_areas:
   - Tools
 ---
 
 ## Overview
 
-Some behaviour and logic of Magento 1 has been implemented differently in Magento 2. The Data Migration Tool takes care of it. Although, there are some migration aspects you should know about, and sometimes you must take minor steps for some functionalities to work smoothly after migration.
+Some behavior and logic of Magento 1 has been implemented differently in Magento 2. The Data Migration Tool takes care of it. Although, there are some migration aspects you should know about, and sometimes you must take minor steps for some functionalities to work smoothly after migration.
 
 ## Information
 

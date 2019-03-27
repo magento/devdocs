@@ -1,20 +1,17 @@
 ---
-layout: default
-group: b2b
+group: b2b-developer-guide
 subgroup: 10_REST
 title: Integrate with B2B using REST
 menu_title: Integrate with B2B using REST
 menu_order: 1
 menu_node: parent
-version: 2.2
 ee_only: True
-github_link: b2b/integrations.md
 functional_areas:
   - B2B
   - Integration
 ---
 
-This topic lists the REST endpoints and services that are provided with {{site.data.var.b2b}}. See [List of REST endpoints by module]({{page.baseurl}}rest/list.html) and [List of service names by module]({{page.baseurl}}rest/rest_endpoints.html) for the endpoints and services that Magento {{site.data.var.ee}} and {{site.data.var.ce}}.
+This topic lists the REST endpoints and services that are provided with {{site.data.var.b2b}}. See [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html) and [List of service names by module]({{ page.baseurl }}/rest/rest_endpoints.html) for the endpoints and services that Magento {{site.data.var.ee}} and {{site.data.var.ce}}.
 
 ## List of REST endpoints by module
 
@@ -113,7 +110,7 @@ companyTeamRepositoryV1
 configurableProductConfigurableProductManagementV1
 ```
 
-### Company credit
+### CompanyCredit
 
 ```
 companyCreditCreditBalanceManagementV1
@@ -122,7 +119,7 @@ companyCreditCreditLimitManagementV1
 companyCreditCreditLimitRepositoryV1
 ```
 
-### Negotiable quotes
+### NegotiableQuote
 
 ```
 negotiableQuoteAttachmentContentManagementV1
@@ -140,7 +137,7 @@ negotiableQuoteShippingInformationManagementV1
 negotiableQuoteShippingMethodManagementV1
 ```
 
-### Shared catalog
+### SharedCatalog
 
 ```
 sharedCatalogCategoryManagementV1
@@ -150,6 +147,6 @@ sharedCatalogSharedCatalogRepositoryV1
 ```
 
 ## Related Information
-[List of REST APIs by module]({{page.baseurl}}/rest/list.html)
+[List of REST APIs by module]({{ page.baseurl }}/rest/list.html)
 
-[List of service names by module]({{page.baseurl}}/rest/rest_endpoints.html)
+[List of service names by module]({{ page.baseurl }}/rest/rest_endpoints.html)

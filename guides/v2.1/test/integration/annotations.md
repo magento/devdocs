@@ -1,12 +1,10 @@
 ---
-layout: default
-group: integration-testing
-version: 2.1
+group: testing
 title: Using DocBlock Annotations
-github_link: test/integration/annotations.md
 ---
 
-DocBlock annotations help to declare context in your code. In addition to built-in [PHPUnit annotations], the Integration testing framework provides custom annotations described in this topic.
+DocBlock annotations help to declare context in your code. In addition to built-in [PHPUnit annotations][]
+, the Integration testing framework provides custom annotations described in this topic.
 
 ### Quick overview
 
@@ -38,4 +36,4 @@ This order is necessary to meet the requirement of setting up the store-scoped c
 
 <!-- LINK DEFINITIONS -->
 
-[PHPUnit annotations]: https://wiki.corp.magento.com/display/MAGE2/Custom+DocBlock+Annotations#CustomDocBlockAnnotations-RevertingAnnotation
+[PHPUnit annotations]: https://phpunit.readthedocs.io/en/7.4/annotations.html

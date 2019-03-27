@@ -1,9 +1,6 @@
 ---
-layout: default
-group: cloud
+group: cloud-guide
 title:  Restore configuration files
-version: 2.1
-github_link: cloud/trouble/restore-configuration-files.md
 functional_areas:
   - Cloud
   - Deploy
@@ -16,13 +13,12 @@ The deployment process creates a backup file for each configuration file:
 
 If you encounter problems resulting from a missing or altered configuration file, you can restore them using the ECE tools `backup:restore` command.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{:.bs-callout .bs-callout-info}
 The BAK files are a product of the deployment process. If you manually change a configuration file after the deployment, your changes are not reflected in the existing BAK files.
-</div>
 
 To restore the configuration files:
 
-1.  Log in to your remote repository using  [SSH]({{page.baseurl}}cloud/env/environments-ssh.html#ssh).
+1.  Log in to your remote repository using  [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 1.  List the available backup files.
 
     ```

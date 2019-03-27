@@ -1,37 +1,60 @@
 label: Testing
 pages:
     - label: Introduction
-      url: test/testing.html
+      url: /test/testing.html
 
-    - label: Integration Tests
+    - label: Integration testing
       children:
 
-        - label: Running Integration Tests
-          url: test/integration/integration_test_execution.html
+        - label: Running integration tests
+          url: /test/integration/integration_test_execution.html
 
         - label: Using DocBlock annotations
-          url: test/integration/annotations.html
+          url: /test/integration/annotations.html
+          children:
+
+          - label: '@magentoAppArea'
+            url: /test/integration/annotations/magento-app-area.html
+
+          - label: '@magentoAppIsolation'
+            url: /test/integration/annotations/magento-app-isolation.html
+
+          - label: '@magentoCache'
+            url: /test/integration/annotations/magento-cache.html
+
+          - label: '@magentoComponentsDir'
+            url: /test/integration/annotations/magento-components-dir.html
+
+          - label: '@magentoConfigFixture'
+            url: /test/integration/annotations/magento-config-fixture.html
+
+          - label: '@magentoDataFixture'
+            url: /test/integration/annotations/magento-data-fixture.html
+
+          - label: '@magentoDbIsolation'
+            url: /test/integration/annotations/magento-db-isolation.html
 
     - label: JavaScript Unit Testing
       children:
 
         - label: Jasmine
-          url: test/js/jasmine.html
+          url: /test/js/jasmine.html
 
         - label: JsTestDriver
-          url: test/js/test_js-unit.html
+          include_versions: ["2.1"]
+          url: /test/js/test_js-unit.html
 
     - label: PHP Unit Testing
       children:
 
         - label: Running Unit Tests
-          url: test/unit/unit_test_execution.html
+          url: /test/unit/unit_test_execution.html
 
         - label: Running Unit Tests in CLI
-          url: test/unit/unit_test_execution_cli.html
+          url: /test/unit/unit_test_execution_cli.html
 
-        - label: Running Unit Tests in PHPStorm
-          url: test/unit/unit_test_execution_phpstorm.html
+        - label: Running Unit Tests in PhpStorm
+          url: /test/unit/unit_test_execution_phpstorm.html
 
         - label: Writing Testable Code
-          url: test/unit/writing_testable_code.html
+          url: /test/unit/writing_testable_code.html

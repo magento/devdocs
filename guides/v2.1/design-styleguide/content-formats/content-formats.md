@@ -1,13 +1,10 @@
 ---
-layout: default
-group: styleguide
+group: admin-style-guide
 subgroup: Writing and Content
 title: Admin Content Formats
 menu_title: Content Formats
 menu_order: 7
 menu_node:
-version: 2.1
-github_link: design-styleguide/content-formats/content-formats.md
 functional_areas:
   - Content
 ---
@@ -17,7 +14,7 @@ For more specifics, use the [Magento Glossary](https://magento.github.io/glossar
 
 Avoid the following:
 
-* **Abbreviations for months and URLs.**  For details, see the [Dates]({{page.baseurl}}design-styleguide/number-formats/number-formats.html#dates-and-times) section in Number Formats.
+* **Abbreviations for months and URLs.**  For details, see the [Dates]({{ page.baseurl }}/design-styleguide/number-formats/number-formats.html#dates-and-times) section in Number Formats.
 
 * **Non-English words and abbreviations.** These are difficult to translate, and some users might be unfamiliar with them.
 
@@ -46,7 +43,7 @@ When in doubt, spell it out. If there’s a chance a reader doesn't know an abbr
   <li>Yes – “PDF, TIFF, HTML, JPG, CSS, XML”</li>
 </ul>
 </li>
-<li>Link format: Append the file type in parenthesis after the file name. For more details, see the [Labels Best Practices]({{page.baseurl}}design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html#labels-best-practices) section in Buttons and Links Usage.</li>
+<li>Link format: Append the file type in parenthesis after the file name. For more details, see the [Labels Best Practices]({{ page.baseurl }}/design-styleguide/buttons-and-links-usage/buttons-and-links-usage.html#labels-best-practices) section in Buttons and Links Usage.</li>
 </ul>
 
 ## Addresses
@@ -60,24 +57,24 @@ For United States, use these formats:
 <tr>
 <th>Basic</th>
 <th>International</th>
-<th>Basic +<br>Company Name</th>
-<th>Basic +<br>Address Line 2</th>
+<th>Basic +<br />Company Name</th>
+<th>Basic +<br />Address Line 2</th>
 </tr>
 <tr>
-<td>Ray Symmetry<br>
-1234 Barnacle Dr.<br>
+<td>Ray Symmetry<br />
+1234 Barnacle Dr.<br />
 Enid, TX 73701</td>
-<td>Ray Symmetry<br>
-1234 Barnacle Dr.<br>
-Enid, TX 73701<br>
+<td>Ray Symmetry<br />
+1234 Barnacle Dr.<br />
+Enid, TX 73701<br />
 USA</td>
-<td>Ray Symmetry<br>
-Company Name<br>
-1234 S Barnacle Dr.<br>
+<td>Ray Symmetry<br />
+Company Name<br />
+1234 S Barnacle Dr.<br />
 Enid, TX 73701</td>
-<td>Ray Symmetry<br>
-1234 Barnacle Dr.<br>
-PO Box 1234<br>
+<td>Ray Symmetry<br />
+1234 Barnacle Dr.<br />
+PO Box 1234<br />
 Enid, TX 73701</td>
 </tr>
 </tbody>

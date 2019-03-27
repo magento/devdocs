@@ -1,9 +1,6 @@
 ---
-layout: default
-group: reporting
+group: advanced-reporting
 title: Data collection for advanced reporting
-version: 2.2
-github_link: advanced-reporting/data-collection.md
 functional_areas:
     - Reports
 ---
@@ -12,14 +9,12 @@ A Magento instance collects data that the Magento Business Intelligence (MBI) se
 All the data are stored in an encrypted archive file which is securely transferred to the MBI.
 Data collection is declared in a configuration file `etc/analytics.xml`. It declares:
 
-- which report files must be included into the archive file
-- which provider classes must collect data for each report file
-- which report data configuration must be applied to collected data
+- Which report files must be included into the archive file.
+- Which provider classes must collect data for each report file.
+- Which report data configuration must be applied to collected data.
 
-<div class="bs-callout bs-callout-warning" markdown="1" >
-This topic serves to provide better understanding of how data collection works.
-Any changes in configuraton files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
-</div>
+{: .bs-callout .bs-callout-warning }
+This topic serves to provide better understanding of how data collection works. Any changes in configuration files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version.
 
 ## Example
 
@@ -58,12 +53,12 @@ An example of the `etc/analytics.xml` file:
 
 The example configuration file declares the following:
 
-*   The `modules.csv`, `store_config.csv`, `stores.csv` report files must be included into the archive file prepared for the MBI service.
+*   The `modules.csv`, `store_config.csv`, and `stores.csv` report files must be included in the archive file prepared for the MBI service.
 *   `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
  Provided data must be configured according to the `modules` report declarations defined in the `etc/reports.xml` file.
 *   `store_config.csv` must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
 *   `stores.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class.
- Provided data are configured according to the `store_config` report declarations defined in the `etc/reports.xml` file.
+ Provided data is configured according to the `store_config` report declarations defined in the `etc/reports.xml` file.
  Also, the report file must contain data provided by the `Magento\Analytics\Model\StoreConfigurationProvider` class.
 
 ## Extensibility
@@ -72,7 +67,7 @@ Configuration of data collection can be extended or changed in any module adding
 
 ## Structure
 
-The `etc/analytics.xsd` schema declares structure of the `etc/analytics.xml` file .
+The `etc/analytics.xsd` schema declares the structure of the `etc/analytics.xml` file.
 
 {% include_relative img/analytics_xsd.svg %}
 
@@ -151,7 +146,7 @@ It can contain parameters.
 |`name`|A provider name|`modules`|Required|
 |`class`|Full name of a class that provides data|`"Magento\Analytics\ReportXml\ReportProvider"`|Required|
 
-Currently there is only one report provider is available that is `Magento\Analytics\ReportXml\ReportProvider`.
+Currently there is only one report provider available that is `Magento\Analytics\ReportXml\ReportProvider`.
 
 ```xml
 ...
@@ -203,12 +198,12 @@ It cannot contain any parameters.
 
 ## Related topics
 
-[Modules providing advanced reporting][modules]
-
+ [Modules providing advanced reporting][modules]
+ 
 
 <!-- LINK DEFINITIONS -->
 
-[modules]: data-collection.html
+[modules]: modules.html
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics

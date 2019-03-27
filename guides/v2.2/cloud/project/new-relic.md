@@ -1,1 +1,1 @@
-../../../v2.0/cloud/project/new-relic.md
+../../../v2.1/cloud/project/new-relic.md

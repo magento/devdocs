@@ -1,14 +1,10 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: How migration works
 menu_title: How migration works
 menu_node:
 menu_order: 3
-version: 2.0
-github_link: migration/migration-overview-how.md
-redirect_from: /guides/v1.0/migration/migration-overview-how.html
 functional_areas:
   - Tools
 ---
@@ -51,8 +47,8 @@ For example, when you transform data from a {{site.data.var.ce}} 1.8.0.0 databas
 
 When differences are not declared in map files, then the Data Migration Tool displays an error and does not start.
 
-Mapping files are discussed in more detail in <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Technical Specification.</a>
+Mapping files are discussed in more detail in [ Data Migration Tool Technical Specification.]({{ page.baseurl }}/migration/migration-tool-internal-spec.html)
 
 ## Migration flow diagram
 
-<p><img src="{{ site.baseurl }}common/images/migration_flow.png" alt="Migration Flow"></p>
+<p><img src="{{ site.baseurl }}/common/images/migration_flow.png" alt="Migration Flow"></p>

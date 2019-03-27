@@ -1,22 +1,11 @@
 ---
-layout: default
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Select component
-menu_title: Select component
-version: 2.2
-github_link: ui_comp_guide/components/ui-select.md
 ---
-
-## Overview
 
 The Select component provides the interface for a list or a data set. With this component, the user can select only one item.
 
 ## Configuration options
-
-Extends all `abstract` configuration.
-
-Select-specific options:
 
 <table>
   <tr>

@@ -1,9 +1,6 @@
 ---
-layout: default
-group: config-guide
+group: configuration-guide
 title: Code compiler
-version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-compiler.md
 functional_areas:
   - Configuration
   - System
@@ -21,21 +18,21 @@ Code compilation includes the following (in no particular order):
 -   Repositories code generation (generated code for APIs)
 -   Service data attributes generation (generated {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} classes for data objects)
 
-You can find code compilation classes in the <a href="{{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="\_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
+You can find code compilation classes in the [\Magento\Setup\Module\Di\App\Task\Operation]({{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation) {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-The Magento software does not support the multi-tenant compiler, which includes the `magento setup:di:compile-multi-tenant` command.
-</div>
+{:.bs-callout .bs-callout-warning}
+The Magento software does not support the multi-tenant compiler, which includes the `bin/magento setup:di:compile-multi-tenant` command.
 
 #### To run the single-tenant compiler: {#config-cli-subcommands-single}
 
 ```
-magento setup:di:compile
+bin/magento setup:di:compile
 
 Generated code and dependency injection configuration successfully.
 ```
 
 #### To compile code before installing the Magento application: {#config-cli-subcommands-single-before}
+
 In some cases, you might want to compile code before you install the Magento application.
 
 1.  Enable the modules.
@@ -46,14 +43,14 @@ In some cases, you might want to compile code before you install the Magento app
 
     Use the `[-c|--clear-static-content]` option to clear {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %}. This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.
 
-    See [Enable modules]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-enable.html).
+    See [Enable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
 1.  Compile the code.
 
     ```
-    magento setup:di:compile
+    bin/magento setup:di:compile
 
     Generated code and dependency injection configuration successfully.
     ```
 
-To compile code without a database, see [Deploy static view files without installing Magento]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db).
+To compile code without a database, see [Deploy static view files without installing Magento]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db).

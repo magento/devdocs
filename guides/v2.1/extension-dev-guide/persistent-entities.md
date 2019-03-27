@@ -1,12 +1,9 @@
 ---
-layout: default
 group:
 subgroup:
 title: Persistent entities
 menu_title: Persistent entities
 menu_order: 1000
-version: 2.1
-github_link: extension-dev-guide/persistent-entities.md
 ---
 
 ### Overview
@@ -20,13 +17,15 @@ Starting in Magento 2.1, we no longer recommend using the deprecated save, load,
 In Magento, data interfaces, data models, and models all represent entities.
 
 #### Data Interfaces
+
 A data interface is the interface for an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} that reveals the data it contains to clients. For example, the [`\Magento\Customer\Api\Data\CustomerInterface`]({{ site.mage2100url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php){:target="_blank"} class contains get and set functions for customer entity-related data such as names and email.
 
-To allow the addition of [custom EAV attributes]({{page.baseurl}}extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\CustomAttributesDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php){:target="_blank"} class.
+To allow the addition of [custom EAV attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\CustomAttributesDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php){:target="_blank"} class.
 
-To allow the use of [extension attributes]({{page.baseurl}}extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\ExtensibleDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensibleDataInterface.php){:target="_blank"} class. We recommend using this approach when you define the data interface for your entity.
+To allow the use of [extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\ExtensibleDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensibleDataInterface.php){:target="_blank"} class. We recommend using this approach when you define the data interface for your entity.
 
 #### Data Models
+
 A data model is a class that implements a data interface and contains data that is accessible using setter and getter methods. [Repositories](#repositories) use data models and resource models for entity persistence. We recommend you put data model classes in the `Model/Data` directory inside your module's root directory.
 
 An example of a data model is the [`\Magento\Customer\Model\Data\Customer`]({{ site.mage2100url }}app/code/Magento/Customer/Model/Data/Customer.php){:target="_blank"} class.
@@ -39,9 +38,8 @@ Magento models extend the [`Magento\Framework\Model\AbstractModel`]({{ site.mage
 
 We recommend putting model classes in the `Model` directory inside your module's root directory.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-  Do not use the inherited `load`,`save`, `delete` methods from `AbstractModel` because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.
-</div>
+{: .bs-callout .bs-callout-warning }
+Do not use the inherited `load`,`save`, `delete` methods from `AbstractModel` because these deprecated methods will not be available in the future. Instead, Magento recommends using data interfaces and repositories for persisting entities.
 
 An example of a model is the [`\Magento\Customer\Model\Customer`]({{ site.mage2100url }}app/code/Magento/Customer/Model/Customer.php){:target="_blank"} class.
 
@@ -59,7 +57,7 @@ Resource models contain logic that allow entities to be persistent. They help de
 
 #### Persisting with resource models
 
-Repository functions should operate on data interfaces. In your repository functions, you can extract a [data model](#data-models) from the interface using the [`\Magento\Framework\Api\ExtensibleDataObjectConverter`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensibleDataObjectConverter.php){:target="_blank"} class to create and populate a resource model using a [factory]({{page.baseurl}}extension-dev-guide/factories.html). This resource model can then save, load, or delete an entity.
+Repository functions should operate on data interfaces. In your repository functions, you can extract a [data model](#data-models) from the interface using the [`\Magento\Framework\Api\ExtensibleDataObjectConverter`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/ExtensibleDataObjectConverter.php){:target="_blank"} class to create and populate a resource model using a [factory]({{ page.baseurl }}/extension-dev-guide/factories.html). This resource model can then save, load, or delete an entity.
 
 Example:
 
@@ -77,5 +75,5 @@ $customerResource->delete($customerModel);
 #### Related topics
 {:.no_toc}
 
-* [EAV and extension attributes]({{page.baseurl}}extension-dev-guide/attributes.html)
-* [Instantiating objects with factories]({{page.baseurl}}extension-dev-guide/factories.html)
+* [EAV and extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html)
+* [Instantiating objects with factories]({{ page.baseurl }}/extension-dev-guide/factories.html)

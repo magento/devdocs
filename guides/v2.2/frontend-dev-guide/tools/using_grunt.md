@@ -1,12 +1,6 @@
 ---
-layout: default
-group: fedg
-subgroup: I_TOOLS
+group: frontend-developer-guide
 title: Using Grunt for Magento tasks
-menu_order: 1
-menu_title: Using Grunt for Magento tasks
-version: 2.2
-github_link: frontend-dev-guide/tools/using_grunt.md
 functional_areas:
   - Frontend
   - Tools
@@ -15,17 +9,19 @@ functional_areas:
 The topic describes how to install and configure [Grunt JavaScript task runner](http://gruntjs.com/).
 
 ## Overview
-You can use Grunt to automatize any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files.
 
+You can use Grunt to automate any tasks you need, but out of the box Magento comes with pre-configured grunt tasks for compiling LESS files.
 
 ## Prerequisites
-Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
+
+Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
 ## Installing and configuring Grunt {#grunt_prereq}
 
 Magento has built-in Grunt tasks configured, but there are still several steps you need to take to be able to use it:
 
 1. Install [node.js](https://github.com/joyent/node/wiki/installing-node.js-via-package-manager) to any location on your machine.
+
 2. Install Grunt CLI tool globally. To do this, run the following command in a command prompt:
 
        npm install -g grunt-cli
@@ -34,10 +30,7 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 	- `package.json.sample` to `package.json`
 	- `Gruntfile.js.sample` to `Gruntfile.js`
 	- `grunt-config.json.sample` to `grunt-config.json`
-4. Provide path to grunt themes configuration in `grunt-config.json`:   
-	```
-    "themes": "dev/tools/grunt/configs/themes"
-    ```
+	
 4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
 
        cd your_Magento_instance_directory
@@ -57,6 +50,7 @@ The problem with using the default configuration files is that they can get over
 There are several ways to declare a custom configuration file.
 
 ### How to declare custom config file: Option 1
+
 To use a custom file for Grunt configuration:
 
 1. Copy the default configuration file to the preferred location in the Magento instance directory. Do not change the file name
@@ -65,13 +59,13 @@ To use a custom file for Grunt configuration:
 	* value: path to your custom file
 
    Example:
-   If your custom configuration file `themes.js` is located in the  custom `<magento_root>/dev/tools/grunt/configs/local-themes/` directory, add the following to `grunt-config.json`:
+   If your custom configuration file `local-themes.js` is located in the `<magento_root>/dev/tools/grunt/configs` directory, the following is already set in your `grunt-config.json`:
 
 
        {
-           "themes": "dev/tools/grunt/configs/local-themes/themes"
+           "themes": "dev/tools/grunt/configs/local-themes"
        }
-
+This path is also added to your .gitignore by default
 
 ### How to declare custom configuration file: Option 2
 
@@ -84,7 +78,6 @@ You can also use the other way to declare a custom config file:
    It must be added earlier, than the `get()` method with  this alias is called.
 
 2. In the `dev/tools/grunt/configs/` directory, create a copy of the default configuration file. Change its name by adding the ".loc" suffix. For example, your copy of `themes.js` will be `themes.loc.js`.
-
 
 ### How to use custom configuration file
 

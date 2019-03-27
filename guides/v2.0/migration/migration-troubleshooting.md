@@ -1,13 +1,10 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: F_troubleshooting
 title: Troubleshooting
 menu_title: Troubleshooting
 menu_node: parent
 menu_order: 6
-version: 2.0
-github_link: migration/migration-troubleshooting.md
 functional_areas:
   - Tools
 ---
@@ -36,7 +33,7 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"&#95;blank"}
+* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 
@@ -50,9 +47,8 @@ To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml
 </ignore>
 {% endhighlight %}
 
-<div class="bs-callout bs-callout-warning">
-   <p>Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.</p>
-</div>
+{: .bs-callout .bs-callout-warning }
+Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.
 
 ### Class does not exist but mentioned
 
@@ -63,7 +59,7 @@ Class <extension/class_name> does not exist but mentioned in:
 
 #### Explanation
 
-A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{ page.baseurl }}/migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 #### Possible solutions
 

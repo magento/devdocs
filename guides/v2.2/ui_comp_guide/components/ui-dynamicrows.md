@@ -1,22 +1,11 @@
 ---
-layout: default
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: DynamicRows component
-menu_title: DynamicRows component
-version: 2.2
-github_link: ui_comp_guide/components/ui-dynamicrows.md
 ---
-
-## Overview
 
 The DynamicRows component is a dynamic collection of records. The user can edit the records, change their position, and navigate through the collection.
 
-## DynamicRows configuration
-
-Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
-
-DynamicRows-specific  configuration:
+## Configuration options
 
 <table>
   <tr>
@@ -43,7 +32,7 @@ DynamicRows-specific  configuration:
     <td>
       Boolean
     </td>
-    <td></td>
+    <td />
   </tr>
   <tr>
     <td>

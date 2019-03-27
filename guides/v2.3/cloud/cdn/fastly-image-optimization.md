@@ -1,0 +1,1 @@
+../../../v2.2/cloud/cdn/fastly-image-optimization.md

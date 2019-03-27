@@ -1,17 +1,14 @@
 ---
-layout: default
-group: fedg
+group: frontend-developer-guide
 subgroup: A_Themes
 title: Adding custom favicons
 menu_title: Adding custom favicons
-version: 2.0
 menu_order: 7
-github_link: frontend-dev-guide/themes/favicon.md
 functional_areas:
   - Frontend
   - Theme
 ---
-<h2 id="favicon-intro">What's in this topic</h2>
+## What\'s in this topic   {#favicon-intro}
 
 This topic describes how to add custom favicons.
 
@@ -34,12 +31,11 @@ To add a custom favicon in the Magento Admin, do the following:
 2. In the **Store View** drop-down in the top left corner, select the scope for which you want to set a logo (a certain store view, the whole website, or default config).
 3. On the **Design** tab, expand the **HTML Head** options.
 4. Next to **Favicon Icon**, click **Choose file**, and select the file.
-   <img style="border: 1px solid #ABABAB" src="{{site.baseurl}}common/images/favicon_1.png">
+   <img style="border: 1px solid #ABABAB" src="{{ site.baseurl }}/common/images/favicon_1.png">
 
 5. Click **Save Config** in the upper right corner to save the changes.
 
 If caching is enabled in your Admin, you get a notification that refreshing certain {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types is required. Click the link provided in the notification, and then click **Flush Magento Cache**.
-
 
 ## Add custom favicons manually
 
@@ -61,7 +57,7 @@ For example, if you added a `favicon-32x32.png` icon and want it to be used as a
 
 {%endhighlight%}
 
-For your changes to be applied, clear the brower cache, and the following directories on the server (do not delete the `.htaccess` file!): 
+For your changes to be applied, clear the browser cache, and the following directories on the server (do not delete the `.htaccess` file!): 
 
 - `pub/static`
 - all directories under `var`

@@ -1,26 +1,23 @@
 ---
-layout: default
-group: get-started
+group: web-api
 subgroup: 40_Authentication
 title: OAuth-based authentication
 menu_title: OAuth-based authentication
 menu_order: 2
-version: 2.0
-github_link: get-started/authentication/gs-authentication-oauth.md
-redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-oauth.html
 functional_areas:
   - Integration
 ---
 
 Magento OAuth authentication is based on [OAuth 1.0a](https://tools.ietf.org/html/rfc5849), an open standard for secure {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.
 
-In Magento, a third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that uses OAuth for authentication is called an [_integration_]( {{page.baseurl}}/get-started/create-integration.html ). An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.
+In Magento, a third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that uses OAuth for authentication is called an [_integration_]( {{ page.baseurl }}/get-started/create-integration.html ). An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.
 
 As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.
 
 ## OAuth overview {#overview}
+
 The following diagram shows the OAuth authentication process. Each step is described further.
-![OAuth flow]({{page.baseurl}}get-started/authentication/images/oauthflow.png)
+![OAuth flow]({{ page.baseurl }}/get-started/authentication/images/oauthflow.png)
 
 
 1. **Create an integration**.  The merchant creates an integration from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Magento generates a consumer key and a consumer secret.
@@ -56,13 +53,13 @@ Activating the integration submits the credentials to the endpoint specified whe
 * `store_base_url` For example, `http://my-magento-store.com/`.
 * `oauth_verifier`
 * `oauth_consumer_key`
-* `oauth_consumer_key_secret`
+* `oauth_consumer_secret`
 
 Integrations use the `oauth_consumer_key` key to get a request token and the `oauth_verifier` to get an access token.
 
 ## OAuth handshake details {#oauth-handshake}
 
-The process of completing the Oauth handshake requires that you
+The process of completing the OAuth handshake requires that you
 
 * [Get a request token](#pre-auth-token)
 * [Get an access token](#get-access-token)
@@ -209,7 +206,7 @@ To generate the signature, you must use the HMAC-SHA1 signature method. The sign
 
 The scripts provided in this document simulate the Magento 2 [OAuth 1.0a](https://tools.ietf.org/html/rfc5849) token exchange flow. You can drop these scripts under the document root directory of your Magento application so that they can be exposed as endpoints that your Magento application can interact with to mimic the token exchange.
 
-The OAuth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib), which is the same lib used in the [Magento OAuth client](https://github.com/magento/magento2/blob/2.0/dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
+The OAuth client is extended from and attributed to [PHPoAuthLib](https://github.com/Lusitanian/PHPoAuthLib), which is the same lib used in the [Magento OAuth client]({{ site.mage2000url }}dev/tests/api-functional/framework/Magento/TestFramework/Authentication/Rest/OauthClient.php).
 
 To simulate the OAuth 1.0a token exchange flow:
 
@@ -242,7 +239,7 @@ session_start();
 
 /** Use $consumerKey to retrieve the following data in case it was stored in DB when received at "endpoint.php" */
 if ($consumerKey !== $_SESSION['oauth_consumer_key']) {
-    throw new \Exception("Consumer keys received on on different requests do not match.");
+    throw new \Exception("Consumer keys received on different requests do not match.");
 }
 
 $consumerSecret = $_SESSION['oauth_consumer_secret'];
@@ -510,10 +507,10 @@ class OauthClient extends AbstractService
 
 ## Related topics
 
-[Create an integration]( {{page.baseurl}}/get-started/create-integration.html )
+[Create an integration]( {{ page.baseurl }}/get-started/create-integration.html )
 
-[OAuth error codes]( {{page.baseurl}}/get-started/authentication/oauth-errors.html )
+[OAuth error codes]( {{ page.baseurl }}/get-started/authentication/oauth-errors.html )
 
-[Construct a request]( {{page.baseurl}}/get-started/gs-web-api-request.html )
+[Construct a request]( {{ page.baseurl }}/get-started/gs-web-api-request.html )
 
-[Configure services as web APIs]( {{page.baseurl}}/extension-dev-guide/service-contracts/service-to-web-service.html )
+[Configure services as web APIs]( {{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html )

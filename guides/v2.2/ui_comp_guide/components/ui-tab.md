@@ -1,24 +1,13 @@
 ---
-layout: default
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Tab component
-menu_title: Tab component
-version: 2.2
-github_link: ui_comp_guide/components/ui-tab.md
 ---
-
-## Overview
 
 The Tab component implements a tab content area.
 
-See the [Admin Design Pattern Library (Tabs)]({{page.baseurl}}pattern-library/containers/tabs/tabs.html) topic for information about the UI design patterns that can be implemented using the Tab component.
+See the [Admin Design Pattern Library (Tabs)]({{ page.baseurl }}/pattern-library/containers/tabs/tabs.html) topic for information about the UI design patterns that can be implemented using the Tab component.
 
 ## Configuration options
-
-Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) and `tab` configuration.
-
-Tab-specific options:
 
 <table>
   <tr>

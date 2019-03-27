@@ -1,14 +1,10 @@
 ---
-layout: default
-group: get-started
+group: web-api
 subgroup: 20_REST
 title: Status codes and responses
 menu_title: Status codes and responses
 menu_order: 3
 
-version: 2.0
-github_link: get-started/gs-web-api-response.md
-redirect_from: /guides/v1.0/get-started/gs-web-api-response.html
 ---
 
 ## REST responses {#rest-responses}
@@ -28,8 +24,7 @@ HTTP code | Meaning | Description
 404 | Not found | The specified REST endpoint does not exist. The caller can try again.
 405 | Not allowed | A request was made of a resource using a method that is not supported by that resource. For example, using GET on a form which requires data to be presented via POST, or using PUT on a read-only resource.
 406 | Not acceptable | The requested resource is only capable of generating content that is not acceptable according to the Accept headers sent in the request.
-500 | System Errors | If service implementation throws any other {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} like network errors, database communication, framework returns HTTP 500.
-
+500 | System Errors | If service implementation throws any other exception  like network errors, database communication, framework returns HTTP 500.
 
 ### Response payload {#response-payload}
 
@@ -73,6 +68,7 @@ For example, a `GET /V1/customers/:customerId` call returns the following payloa
 This JSON-formatted response body includes a `customer` object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.
 
 ### Error format {#error-format}
+
 When an error occurs, the response body contains an error code, error message, and optional parameters.
 
 Part | Description

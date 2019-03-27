@@ -1,9 +1,6 @@
 ---
-layout: default
 group: release-notes
-version: 2.3
 title: Backward incompatible changes in Magento Open Source
-github_link: release-notes/backward-incompatible-changes/open-source.md
 ---
 
 The changes are aggregated into two tables:
@@ -13,18 +10,18 @@ The changes are aggregated into two tables:
 
 {% include note.html
 type="warning"
-content="**Temporary issue**: Added docblock tags like [@deprecated] are defined as _Class was added_ or _Method has been added_."
+content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
 
-## 2.2.0 - 2.3-develop
+## 2.2.0 - 2.3.0 {#releases-2_2_0-2_3_0}
 
-{% include note.html
-type='info'
-content='This table is updated when new commits are merged into the "2.3-develop" branch on a daily basis.'
-%}
+{% include backward-incompatible-changes/open-source/2.2.0-2.3.0.md %}
 
-{% include backward-incompatible-changes/open-source/2.2.0-develop.html %}
+## 2.1.0 - 2.3.0 {#releases-2_1_0-2_3_0}
+
+{% include backward-incompatible-changes/open-source/2.1.0-2.3.0.md %}
 
 <!-- LINK DEFINITIONS -->
 
-[@deprecated]: {{page.baseurl}}coding-standards/docblock-standard-general.html#deprecated
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

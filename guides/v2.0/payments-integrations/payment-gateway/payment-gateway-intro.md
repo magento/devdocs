@@ -1,22 +1,19 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: A_gateway
 title: Magento payment provider gateway
 menu_title: Magento payment provider gateway 
 menu_node: parent
 menu_order: 1
-version: 2.0
-github_link: payments-integrations/payment-gateway/payment-gateway-intro.md
-
 ---
 
 ### What is Magento payment provider gateway
+
 The Magento payment provider gateway is a mechanism that allows you to integrate your stores with payment service providers. As a result, you can create and handle transactions based on order details.
 
 The following diagram shows a simplified interaction flow between Magento sales management and external payment service provider using Magento payment provider gateway: 
 
-![Payment Gateway Interaction]({{site.baseurl}}common/images/payments-integrations/pg_interaction_flow.png)
+![Payment Gateway Interaction]({{ site.baseurl }}/common/images/payments-integrations/pg_interaction_flow.png)
 
 Magento payment provider supports the following payment operations:
 
@@ -30,13 +27,13 @@ Magento payment provider supports the following payment operations:
 
 The topics of this chapter are conceptual and describe the components of the Magento payment provider gateway:
  
-* [Payment provider gateway structure]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-structure.html)
-* [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html)
-* [Gateway Command Pool]({{page.baseurl}}payments-integrations/payment-gateway/command-pool.html)
-* [Request Builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html)
-* [Gateway Client]({{page.baseurl}}payments-integrations/payment-gateway/gateway-client.html)
-* [Response Validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html)
-* [Response Handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html)
+* [Payment provider gateway structure]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-structure.html)
+* [Gateway Command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html)
+* [Gateway Command Pool]({{ page.baseurl }}/payments-integrations/payment-gateway/command-pool.html)
+* [Request Builder]({{ page.baseurl }}/payments-integrations/payment-gateway/request-builder.html)
+* [Gateway Client]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-client.html)
+* [Response Validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html)
+* [Response Handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html)
 
 #### Terms used {#terms}
 

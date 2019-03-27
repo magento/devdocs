@@ -1,28 +1,25 @@
 ---
-layout: default
-group: config-guide
+group: configuration-guide
 subgroup: 09_Redis
 title: Use Redis for session storage
 menu_title: Use Redis for session storage
 menu_order: 10
 menu_node:
-version: 2.0
-github_link: config-guide/redis/redis-session.md
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-<h2 id="reds-cache-prereq">Prerequisite</h2>
-Before you continue, [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install).
+## Prerequisite   {#reds-cache-prereq}
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can use Redis for session storage in Magento versions 2.0.6 and later only.</p></span>
-</div>
+Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-install).
 
-<h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
+{: .bs-callout .bs-callout-info }
+You can use Redis for session storage in Magento versions 2.0.6 and later only.
+
+## Configure Magento to use Redis for session storage   {#config-redis-config}
+
 Following is a sample configuration to add to `<your Magento install dir>app/etc/env.php`:
 
     'session' =>
@@ -62,7 +59,7 @@ where
 	</tr>
 <tr>
 	<td>host</td>
-	<td><p>Fully qualified host name, IP address, or absolute path if using UNIX sockets.</p></td>
+	<td><p>Fully qualified hostname, IP address, or absolute path if using UNIX sockets.</p></td>
 	<td>127.0.0.1</td>
 </tr>
 <tr>
@@ -164,11 +161,14 @@ where
 </tbody>
 </table>
 
+{: .bs-callout .bs-callout-info }
+TTL for session records use the value for Cookie Lifetime, which is configured in Admin. If Cookie Lifetime is set to 0 (the default is 3600), then Redis sessions expire in the number of seconds specified in min_lifetime (the default is 60). This discrepancy is due to differences in how Redis and session cookies interpret a lifetime value of 0. If that behavior is not desired, increase the value of min_lifetime.
+
 ## Basic verification {#redis-verify}
 
 {% include config/redis-verify.md %}
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>

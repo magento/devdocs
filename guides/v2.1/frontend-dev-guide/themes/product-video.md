@@ -1,17 +1,10 @@
 ---
-layout: default
-group: fedg
-subgroup: A_Themes
+group: frontend-developer-guide
 title: Configure product video
-menu_title: Configure product video
-menu_order: 100
-version: 2.1
-github_link: frontend-dev-guide/themes/product-video.md
 functional_areas:
   - Frontend
   - Theme
 ---
-
 
 ## What's in this topic
 
@@ -39,7 +32,7 @@ You can set the following product video options:
         Boolean
       </td>
       <td colspan="1">
-        0 <br>
+        0 <br />
 (video is not played on page load)
       </td>
     </tr>
@@ -53,7 +46,7 @@ Boolean
            
       </td>
 <td>
-0 <br>
+0 <br />
 (related videos are not displayed)
 </td>
     </tr>
@@ -67,18 +60,18 @@ Boolean
            
       </td>
 <td>
-0 <br>
+0 <br />
 (video is not automatically replayed)
 </td>
     </tr>
   </tbody>
 </table>
 
-The options are set in the `config.xml` of your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. 
+You can configure these options in your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module's{% endglossarytooltip %} `config.xml` file.
 
 Example:
 
-{%highlight xml%}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <catalog>
@@ -90,6 +83,6 @@ Example:
         </catalog>
     </default>
 </config>
-{%endhighlight%}
+```
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module.

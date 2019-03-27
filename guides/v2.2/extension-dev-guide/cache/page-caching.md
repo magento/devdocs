@@ -1,1 +1,1 @@
-../../../v2.0/extension-dev-guide/cache/page-caching.md
+../../../v2.1/extension-dev-guide/cache/page-caching.md

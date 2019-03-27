@@ -1,14 +1,10 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Preconditions
 menu_title: Preconditions
 menu_node:
 menu_order: 1
-version: 2.0
-github_link: migration/migration-tool-preconditions.md
-redirect_from: /guides/v1.0/migration/migration-tool-preconditions.html
 functional_areas:
   - Tools
 ---
@@ -17,11 +13,11 @@ Before starting migration, make sure the following requirements are met.
 
 ## Magento 2 system
 
-*	Set up your Magento 2 system so that it meets the [system requirements]({{page.baseurl}}install-gde/system-requirements.html){:target="_blank"}.
+*	Set up your Magento 2 system so that it meets the [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 	Use a topology and design that at least matches your existing Magento 1 system.
 
-*	[Install Magento 2]({{page.baseurl}}install-gde/bk-install-guide.html){:target="_blank"}.
+*	[Install Magento 2]({{ page.baseurl }}/install-gde/bk-install-guide.html){:target="_blank"}.
 
 ## Cron
 
@@ -51,4 +47,4 @@ You can also use the Magento [Code Migration Tool](https://github.com/magento/co
 
 ## Related topics
 
-* [Install the Data Migration Tool]({{page.baseurl}}migration/migration-tool-install.html)
+* [Install the Data Migration Tool]({{ page.baseurl }}/migration/migration-tool-install.html)

@@ -1,14 +1,10 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: E_manually
 title: Data that needs to be migrated manually
 menu_title: Data that needs to be migrated manually
 menu_node: parent
 menu_order: 5
-version: 2.0
-github_link: migration/migration-manually.md
-redirect_from: /guides/v1.0/migration/migration-manually.html
 functional_areas:
   - Tools
 ---
@@ -31,7 +27,7 @@ This section discusses how to manually migrate media files.
 
 ### Media files stored in the database
 
-This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{page.baseurl}}migration/migration-migrate-data.html">migration of data</a>:
+This section applies to you *only* if you store media files in the Magento database. This step should be performed before <a href="{{ page.baseurl }}/migration/migration-migrate-data.html">migration of data</a>:
 
 1.	Log in to the Magento 1 Admin Panel as an administrator.
 
@@ -65,12 +61,9 @@ You must manually re-create all:
 
 *	administrative user accounts and associate them with access privileges
 
-<div class="bs-callout bs-callout-info" id="info">
-    <p>
-        You may adjust the time zone for a database entity using the <code>\Migration\Handler\Timezone</code> handler. See the <a href="{{page.baseurl}}migration/migration-migrate-follow-up.html">Follow-up</a> section for more details.
-    </p>
-</div>
+{: .bs-callout .bs-callout-info }
+You may adjust the time zone for a database entity using the `\Migration\Handler\Timezone` handler. See the [Follow-up]({{ page.baseurl }}/migration/migration-migrate-follow-up.html) section for more details.
 
 ## Related topics
 
-* <a href="{{page.baseurl}}migration/migration-migrate-after.html">After migration</a>
+* <a href="{{ page.baseurl }}/migration/migration-migrate-after.html">After migration</a>

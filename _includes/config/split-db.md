@@ -1,6 +1,5 @@
-<div markdown="1">
-
 ## Set up additional master databases {#config-ee-multidb-master-masters}
+
 Create checkout and OMS master databases as follows:
 
 1.	Log in to your database server as any user.
@@ -9,7 +8,7 @@ Create checkout and OMS master databases as follows:
 		mysql -u root -p
 
 3.	Enter the MySQL `root` user's password when prompted.
-4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same user names and passwords:
+4.	Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
 		create database magento_quote;
 		GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
@@ -34,13 +33,15 @@ Create checkout and OMS master databases as follows:
 	If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
 
 ## Configure {{site.data.var.ee}} to use the master databases {#config-ee-multidb-master-cli}
+
 After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)
 
 ### First steps
 
-{% include install/first-steps-cli.html %}
+{% include install/first-steps-cli.md %}
 
-<h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
+### Configure the checkout database   {#config-ee-multidb-master-cli-check}
+
 Command syntax:
 
 	magento setup:db-schema:split-quote --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"
@@ -53,7 +54,8 @@ The following message displays to confirm a successful setup:
 
 	Migration has been finished successfully!
 
-<h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
+### Configure the OMS database   {#config-ee-multidb-master-cli-oms}
+
 Command syntax:
 
 	magento setup:db-schema:split-sales --host="<checkout db host or ip>" --dbname="<name>" --username="<checkout db username>" --password="<password>"

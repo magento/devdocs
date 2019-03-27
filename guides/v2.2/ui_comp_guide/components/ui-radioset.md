@@ -1,22 +1,11 @@
 ---
-layout: default
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Radioset component
-menu_title: Radioset component
-version: 2.2
-github_link: ui_comp_guide/components/ui-radioset.md
 ---
 
-## Overview
-
-The Radioset component is a shortcut for [Checkboxset]({{page.baseurl}}ui_comp_guide/components/ui-checkboxset.html), with the input type set to the radio button.
+The Radioset component is a shortcut for [Checkboxset]({{ page.baseurl }}/ui_comp_guide/components/ui-checkboxset.html), with the input type set to the radio button.
 
 ## Configuration options
-
-Extends all `abstract` configuration.
-
-Radioset-specific options:
 
 <table>
   <tr>
@@ -35,7 +24,7 @@ Radioset-specific options:
   </tr>
   <tr>
     <td>
-      <code>component&lt;.code&gt;</code>
+      <code>component&lt;code&gt;</code>
     </td>
     <td>
       The path to the component’s <code>.js</code> file in terms of

@@ -1,16 +1,10 @@
 ---
-layout: default
-group: contributor
-subgroup: contributor
+group: contributor-guide
 title: Backward compatible development
-menu_title: Backward compatible development
-menu_order: 1
-version: 2.0
-github_link: contributor-guide/backward-compatible-development/index.md
 ---
 This page describes rules and best practices for backward compatible development.
 
-## Backward Сompatibility Policy
+## Backward Compatibility Policy
 
 See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.
 
@@ -21,17 +15,15 @@ The core Magento team and contributing developers work in two release types
 2.  New patch release (product's PATCH release)
     - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  Backward Сompatibility Policy is not applied to Plugins, Observers and Setup Scripts.
-</div>
+{: .bs-callout .bs-callout-info }
+Backward Compatibility Policy is not applied to Plugins, Observers and Setup Scripts.
 
 ## Prohibited code changes
 
 The following code modifications are forbidden for all code (both `@api` and non `@api`) without approval of a Magento architect.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-  The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
-</div>
+{: .bs-callout .bs-callout-info }
+The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
 
 ### PHP
 
@@ -60,7 +52,7 @@ This interface is responsible for the `getList()` method, but `Magento\Catal
 
 * For a **PATCH** product release, do NOT mark the new interface with `@api`.
 * For a **MINOR** product release, an architect marks, or approves, the new interface with `@api` if applicable.
-   
+
 #### Removing static functions
 
 Do not remove static functions.
@@ -89,12 +81,12 @@ Declare the new method as private if possible.
 protected function updatePrice($price)
 {
     $this->updateScopedPrice($price);
-} 
+}
 
 private function updateScopedPrice($price, $storeId)
 {
     // Updated logic that takes into account $storeId
-} 
+}
 
 {% endhighlight %}
 {% endcollapsible %}
@@ -107,7 +99,7 @@ As an alternative, Create a new method with new interface following the alternat
 
 Create multiple methods to cover all use cases to avoid using optional parameters.
 
-#### Modifying the method argument type 
+#### Modifying the method argument type
 
 Do not modify a method argument type.
 
@@ -194,7 +186,7 @@ Do not remove or rename constants.
 #### Removing, renaming, or changing the type of event arguments
 
 Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} arguments.
-Do not change argument types. 
+Do not change argument types.
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding `@deprecated` annotation before dispatching the event.
 
 ### JS
@@ -259,7 +251,6 @@ The following is a list of prohibited changes to Magento functional and integrat
 * Changing a fixture format
 * Changing a fixture content (except changes forced by new functionality)
 
-
 ## Allowed Code Changes
 
 ### PHP
@@ -294,11 +285,10 @@ Adding an argument to an event is allowed.
 
    For example, issue fixes that change the setup/upgrade version in the unreleased `develop` branch are delivered first before being ported into the released branches.
    If the fix was made for a released branch, a pull request for porting it into the `develop` branch must be created with a high priority and delivered as soon as possible.
-   
+
 3. The setup version of a module must be higher than previous releases of the same module.
 
    For example, the setup version for a fix for the Magento_Catalog module is higher in the `develop` branch (2.1.3) than previous branch versions (2.0.2 and 2.1.2 for versions 2.0 and 2.1).
-
 
 ## Backport fixes with breaking changes to patch branches
 
@@ -343,7 +333,7 @@ Preserve `@api` tag when deprecating `@api`-marked code.
 
 ~~~
 /**
- * @deprecated because new api was introduced
+ * @deprecated because new API was introduced
  * @see \New\Api
  */
 ~~~
@@ -352,7 +342,7 @@ Preserve `@api` tag when deprecating `@api`-marked code.
 
 ~~~
 <!--
-@deprecated because new api was introduced
+@deprecated because new API was introduced
 @see NewApi
 -->
 ~~~
@@ -391,15 +381,15 @@ These backward incompatible changes do not need manual documentation:
 * Adding/removing a class/interface constant
 * Adding removing a class property
 
-Auto-generated [{{site.data.var.ce}} changes]({{page.baseurl}}release-notes/backward-incompatible-changes/open-source.html)
+Auto-generated [{{site.data.var.ce}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html)
 
-Auto-generated [{{site.data.var.ee}} changes]({{page.baseurl}}release-notes/backward-incompatible-changes/commerce.html)
+Auto-generated [{{site.data.var.ee}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html)
 
 ### Where to document
 
 In the [DevDocs repository][devdocs-repo], manually add backward incompatible changes to the following file:
 
-`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes/index.md` 
+`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes/index.md`
 
 Where: `<version>` is the MINOR version of the product (2.1, 2.2, 2.3, etc).
 
@@ -411,6 +401,6 @@ For example, when 2.2 is released, a new `backward-incompatible-changes.md` for 
 
 In order to update the page, create a PR to the DevDocs repository with your changes.
 
-[versioning]: {{page.baseurl}}extension-dev-guide/versioning/index.html
+[versioning]: {{ page.baseurl }}/extension-dev-guide/versioning/index.html
 [devdocs-repo]: https://github.com/magento/devdocs
 [2.2-bic-page]: https://github.com/magento/devdocs/blob/develop/guides/v2.2/release-notes/backward-incompatible-changes/index.md

@@ -1,12 +1,6 @@
 ---
-layout: default
-group: config-guide
-subgroup: Optimization
+group: configuration-guide
 title: Magento Optimization Guide
-menu_title: Magento Optimization Guide
-menu_order: 100
-version: 2.1
-github_link: config-guide/prod/prod_perf-optimize.md
 functional_areas:
   - Configuration
   - System
@@ -42,7 +36,7 @@ After running `setup:di:compile` to generate classes, use composer to update the
 
 Run the following [composer command][composer-dump-autoload] to generate an optimized composer class map that supports faster auto-loading.
 
-	composer dump-autoload -o
+	composer dump-autoload -o --apcu
 
 ### Server - PHP Configuration
 
@@ -63,6 +57,13 @@ If you are on a low memory machine and you do not have many extensions or custom
 	opcache.memory_consumption=64
 	opcache.max_accelerated_files=60000
 
+We recommend enabling the [PHP APCu extension][php-apcu] for maximum performance. This extension caches file locations for opened files, increasing performance for Magento server calls (including pages, ajax calls, and endpoints).
+Edit your `apcu.ini` file to include the following:
+
+	extension=apcu.so
+	[apcu]
+	apc.enabled = 1
+
 ### Server - Redis Configuration & Tuning
 
 #### Sessions
@@ -75,10 +76,10 @@ Estimate a memory size to fit the total number of effective skus, product pages 
 
 ### Magento - Performance Optimizations
 
-Enable these performance optimizations to improve the store front responsiveness of your Magento instance.
+Enable these performance optimizations to improve the storefront responsiveness of your Magento instance.
 
 
-Go to the Admin in default of developer mode and change the following settings for store front asset optimization:
+Go to the Admin in default of developer mode and change the following settings for storefront asset optimization:
 
 #### Stores -> Configuration -> Advanced -> Developer
 
@@ -86,8 +87,8 @@ Go to the Admin in default of developer mode and change the following settings f
 | ------------------- | -------------------------- | ------ |
 | Grid Settings       | Asynchronous indexing      | Enable |
 | CSS Settings        | Minify CSS Files           | Yes    |
-| Javascript Settings | Minify JavaScript Files    | Yes    |
-| Javascript Settings | Enable JavaScript Bundling | Yes    |
+| JavaScript Settings | Minify JavaScript Files    | Yes    |
+| JavaScript Settings | Enable JavaScript Bundling | Yes    |
 | Template Settings   | Minify HTML                | Yes    |
 
 #### Stores -> Configuration -> Sales -> Sales Emails
@@ -100,22 +101,22 @@ Go to the Admin in default of developer mode and change the following settings f
 
 Set all indexers to "Update by Schedule" mode.
 
-
 ### Production Mode
 
-Switching to production mode improves store front responsiveness and prevents long initial page load times that can occur in default mode.
+Switching to production mode improves storefront responsiveness and prevents long initial page load times that can occur in default mode.
 
 Run the following commands to switch to production mode:
 
-~~~
+```bash
 bin/magento deploy:mode:set production
-~~~
+```
 
-[composer-install]: {{page.baseurl}}install-gde/prereq/integrator_install.html
-[zip-install]: {{page.baseurl}}install-gde/prereq/zip_install.html
-[config-varnish]: {{page.baseurl}}config-guide/varnish/config-varnish.html
-[elasticsearch]: {{page.baseurl}}config-guide/elasticsearch/es-overview.html
+[composer-install]: {{ page.baseurl }}/install-gde/composer.html
+[zip-install]: {{ page.baseurl }}/install-gde/prereq/zip_install.html
+[config-varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
+[elasticsearch]: {{ page.baseurl }}/config-guide/elasticsearch/es-overview.html
 [php-fpm]: https://php-fpm.org/
-[redis-session]: {{page.baseurl}}config-guide/redis/redis-session.html
-[redis-default-cache]: {{page.baseurl}}config-guide/redis/redis-pg-cache.html
+[redis-session]: {{ page.baseurl }}/config-guide/redis/redis-session.html
+[redis-default-cache]: {{ page.baseurl }}/config-guide/redis/redis-pg-cache.html
 [composer-dump-autoload]: https://getcomposer.org/doc/03-cli.md#dump-autoload
+[php-apcu]: https://getcomposer.org/doc/articles/autoloader-optimization.md#optimization-level-2-b-apcu-cache

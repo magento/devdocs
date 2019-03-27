@@ -1,13 +1,10 @@
 ---
-layout: default
 group: payments-integrations
 subgroup: A_gateway
 title: Response Handler
 menu_title: Response Handler
 menu_node: 
 menu_order: 7
-version: 2.0
-github_link: payments-integrations/payment-gateway/response-handler.md
 ---
 
 Response Handler is the component of Magento payment provider gateway, that processes payment provider response. Typically, the response requires one of the following actions:
@@ -20,8 +17,7 @@ The response handler only modifies the order state, based on the {% glossarytool
 
 ## Interface
 
-Basic interface for a response handler is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Response/HandlerInterface.php)
-
+Basic interface for a response handler is [`Magento\Payment\Gateway\Response\HandlerInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Response/HandlerInterface.php)
 
 ### Useful implementations
 
@@ -29,7 +25,7 @@ Basic interface for a response handler is [`Magento\Payment\Gateway\Response\Han
 
 ### Example
 
-Example of a simple response handler ([`app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php`]({{site.mage2100url}}app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php)):
+Example of a simple response handler ([`app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php`]({{ site.mage2100url }}app/code/Magento/Braintree/Gateway/Response/PayPalDetailsHandler.php)):
 
 ``` php?start_inline=1
 class PayPalDetailsHandler implements HandlerInterface

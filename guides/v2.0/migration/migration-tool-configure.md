@@ -1,14 +1,10 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: C_DMTool
 title: Configure migration
 menu_title: Configure migration
 menu_node:
 menu_order: 4
-version: 2.0
-github_link: migration/migration-tool-configure.md
-redirect_from: /guides/v1.0/migration/migration-tool-configure.html
 functional_areas:
   - Tools
 ---
@@ -34,7 +30,7 @@ Before you migrate any data, you must create a `config.xml` configuration file f
 
 To create a configuration file:
 
-1.	Log in to your Magento server as, or switch to, the <a href="{{page.baseurl}}install-gde/prereq/apache-user.html">Magento file system owner</a>.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
 
 2.	Change to the following directory:
 
@@ -64,11 +60,11 @@ The `<crypt_key>` tag is mandatory to fill. It can be found in `local.xml` file 
 
 Optional parameters:
 
-*	Database user password: `password=<password>`
+* Database user password: `password=<password>`
+* Database custom port: `port=<port>`
+* Table prefix: `<source_prefix>`, `<dest_prefix>`
 
-*	Table prefix: `<source_prefix>`, `<dest_prefix>`
-
-For example, if your database owner's user name is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
+For example, if your database owner's username is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
 {% highlight xml %}
 <source>
@@ -195,7 +191,8 @@ Even though you will be working with `map.xml.dist` file most of the time, the f
 </tbody>
 </table>
 
-You can refer to <a href="{{page.baseurl}}migration/migration-tool-internal-spec.html"> Data Migration Tool Technical Specification</a> for more details.
+You can refer to [ Data Migration Tool Technical Specification]({{ page.baseurl }}/migration/migration-tool-internal-spec.html) for more details.
 
 ## Next step
-<a href="{{page.baseurl}}migration/migration-migrate-settings.html">Migrate using data migration tool</a>
+
+[Migrate using data migration tool]({{ page.baseurl }}/migration/migration-migrate-settings.html)

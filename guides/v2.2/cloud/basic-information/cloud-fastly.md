@@ -1,1 +1,0 @@
-../../../v2.0/cloud/basic-information/cloud-fastly.md

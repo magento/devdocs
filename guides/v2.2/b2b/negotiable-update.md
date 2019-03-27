@@ -1,15 +1,7 @@
 ---
-layout: default
-group: b2b
-subgroup: 10_REST
+group: b2b-developer-guide
 title: Update a negotiable quote
-menu_title: Update a negotiable quote
-menu_order: 33
-version: 2.2
-ee_only: True
-level3_menu_node: level3child
-level3_subgroup: nq
-github_link: b2b/negotiable-update.md
+ee_only: true
 functional_areas:
   - B2B
   - Integration
@@ -64,11 +56,11 @@ The `negotiated_price_type` can have one of the following values:
 
 **Sample Usage**
 
-`PUT /V1/negotiableQuote/6`
+`PUT <host>/rest/<store_code>/V1/negotiableQuote/6`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quote": {
       "id": 6,
@@ -80,7 +72,7 @@ The `negotiated_price_type` can have one of the following values:
       }
     }
 }
-{% endhighlight %}
+```
 
 ### Add a new quote item to the negotiable quote
 
@@ -91,11 +83,18 @@ The buyer can add, update, or delete items from the quote under the following co
 
 **Sample Usage**
 
-`POST /V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
+
+**Headers**
+
+```
+Content-Type application/json
+Authorization Bearer <customer token>
+```
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "cartItem": {
     "sku": "24-MB01",
@@ -103,11 +102,11 @@ The buyer can add, update, or delete items from the quote under the following co
     "quote_id": "7"
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
-{% highlight json %}
+```json
 {
     "item_id": 18,
     "sku": "24-MB01",
@@ -125,18 +124,17 @@ The buyer can add, update, or delete items from the quote under the following co
         }
     }
 }
-{% endhighlight %}
-
+```
 
 ### Change the quote expiration date
 
 **Sample Usage**
 
-`PUT /V1/negotiableQuote/6`
+`PUT <host>/rest/<store_code>/V1/negotiableQuote/6`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "quote": {
       "id": 6,
@@ -147,7 +145,7 @@ The buyer can add, update, or delete items from the quote under the following co
       }
     }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -155,7 +153,7 @@ The buyer can add, update, or delete items from the quote under the following co
 
 ## Related information
 
-* [Integrate with the NegotiableQuote module]({{page.baseurl}}b2b/negotiable-quote.html)
-* [Manage negotiable quotes]({{page.baseurl}}b2b/negotiable-manage.html)
-* [Negotiable quote checkout]({{page.baseurl}}b2b/negotiable-checkout.html)
-* [Place a negotiable quote order]({{page.baseurl}}b2b/negotiable-order-workflow.html)
+* [Integrate with the NegotiableQuote module]({{ page.baseurl }}/b2b/negotiable-quote.html)
+* [Manage negotiable quotes]({{ page.baseurl }}/b2b/negotiable-manage.html)
+* [Negotiable quote checkout]({{ page.baseurl }}/b2b/negotiable-checkout.html)
+* [Place a negotiable quote order]({{ page.baseurl }}/b2b/negotiable-order-workflow.html)

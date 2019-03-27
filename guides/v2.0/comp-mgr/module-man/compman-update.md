@@ -1,6 +1,5 @@
 ---
-layout: default
-group: compman
+group: software-update-guide
 subgroup: 05_UseCompMan
 title: Step 3. Component Update
 menu_title: Component Update
@@ -8,8 +7,6 @@ menu_node:
 menu_order: 10
 level3_menu_node: level3child
 level3_subgroup: step3
-version: 2.0
-github_link: comp-mgr/module-man/compman-update.md
 redirect_from: /guides/v2.0/comp-mgr/compman-update.html
 functional_areas:
   - Upgrade
@@ -17,14 +14,15 @@ functional_areas:
 
 This step displays if you're updating components. The following figure shows an example.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_update-step.png" width="350px" alt="Click update to complete the task">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}/common/images/cman_update-step.png" width="350px" alt="Click update to complete the task">
 
 To complete the update, click **Update**. 
 
 ### Success
+
 If the update is successful, a page similar to the following displays.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}common/images/cman_update-success.png" width="200px" alt="Your component update was successful">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="{{ site.baseurl }}/common/images/cman_update-success.png" width="200px" alt="Your component update was successful">
 
 Messages similar to the following display in the Console Log:
 
@@ -45,9 +43,10 @@ Messages similar to the following display in the Console Log:
 	[2015-07-31 19:42:05 CDT] Job "update {"require":[{"name":"magento/sample-module-updater-wizard","version":"3.0.0.0"}]}" has successfully completed
 
 ### Failure
+
 If the update fails, click **Rollback** to restore an earlier backup. Messages display in the Console Log as shown in the following figure.
 
-![If the component update fails, you can roll back]({{ site.baseurl }}common/images/cman_update-fail.png)
+![If the component update fails, you can roll back]({{ site.baseurl }}/common/images/cman_update-fail.png)
 
 
 

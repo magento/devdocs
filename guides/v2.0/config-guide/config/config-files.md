@@ -1,20 +1,17 @@
 ---
-layout: default
-group: config-guide
+group: configuration-guide
 subgroup: 07_conf
 title: Module configuration files
 menu_title: Module configuration files
 menu_order: 5
-version: 2.0
-github_link: config-guide/config/config-files.md
-redirect_from: /guides/v1.0/config-guide/config/config-files.html
 functional_areas:
   - Configuration
   - System
   - Setup
 ---
 
-<h2 id="config-files-overview">Overview of module configuration files</h2>
+## Overview of module configuration files   {#config-files-overview}
+
 The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
 You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
@@ -29,13 +26,15 @@ Following are common terms used in this topic:
       <dt>Configuration stage</dt>
       <dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
       <dt>Configuration scope</dt>
-      <dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>.</dd>
+      <dd>Complementary to a configuration stages, a scope defines the configuration type model. For example, <code>adminhtml</code> is an area scope that is loaded with at the stage with other modules' <code>adminhtml</code> configurations. For more information, see <a href="{{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>.</dd>
 </dl>
 
-<h2 id="config-files-loadmerge">Configuration load and merge</h2>
+## Configuration load and merge   {#config-files-loadmerge}
+
 This section discusses how configuration files are loaded and merged.
 
-<h3 id="config-files-load">How Magento loads configuration files</h3>
+### How Magento loads configuration files   {#config-files-load}
+
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
 * Primary configuration (<a href="{{ site.mage2000url }}app/etc/di.xml" target="_blank">app/etc/di.xml</a>). This file is used to bootstrap Magento.
@@ -46,7 +45,8 @@ Magento loads configuration files in the following order (all paths are relative
 
 *     `<component-name>`: Name of your component as defined in <a href="{{ site.mage2000url }}composer.json" target="_blank">composer.json</a>.
 
-<h3 id="config-files-load-merge-merge">Configuration file merge</h3>
+### Configuration file merge   {#config-files-load-merge-merge}
+
 Nodes in configuration files are merged based on their fully qualified XPaths, which has a special attribute defined in `$idAttributes` array declared as its identifier. This identifier must be unique for all nodes nested under the same parent node.
 
 Magento's merge algorithm follows:
@@ -57,17 +57,19 @@ Magento's merge algorithm follows:
 
 After configuration files are merged, the resulting document contains all nodes from the original files.
 
-<h2 id="config-files-classes">Configuration types, objects, and interfaces</h2>
+## Configuration types, objects, and interfaces   {#config-files-classes}
+
 The following sections provide information about configuration types, their corresponding configuration objects, and interfaces you can use to work with the objects:
 
 * <a href="#config-files-classes-objects">Configuration types and objects</a>
 * <a href="#config-files-classes-int">Configuration interfaces</a>
 
-<h3 id="config-files-classes-objects">Configuration types and objects</h3>
+### Configuration types and objects   {#config-files-classes-objects}
+
 The following table shows each configuration type and the Magento configuration object to which it relates.
 
 <table>
-      <tbody>
+      <tbody markdown="1">
             <tr>
                   <th>Configuration file</th>
                   <th>Description</th>
@@ -76,7 +78,7 @@ The following table shows each configuration type and the Magento configuration 
             </tr>
             <tr>
                   <td><code>config.php</code> and <code>env.php</code></td>
-                  <td><a href="{{page.baseurl}}config-guide/config/config-php.html">Deployment configuration</a></td>
+                  <td><a href="{{ page.baseurl }}/config-guide/config/config-php.html">Deployment configuration</a></td>
                   <td>Loads into memory when Magento initializes</td>
                   <td>Has no object, cannot be customized</td>
             </tr>
@@ -88,7 +90,7 @@ The following table shows each configuration type and the Magento configuration 
             </tr>
             <tr>
                   <td><code>di.xml</code></td>
-                  <td><a href="{{page.baseurl}}extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
+                  <td><a href="{{ page.baseurl }}/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
                   <td>primary, global, area</td>
                   <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
             </tr>
@@ -105,14 +107,15 @@ The following table shows each configuration type and the Magento configuration 
             </tr> -->
             <tr>
                   <td><code>routes.xml</code></td>
-                  <td><a href="{{page.baseurl}}extension-dev-guide/routing.html">Route</a> configuration</td>
+                  <td><a href="{{ page.baseurl }}/extension-dev-guide/routing.html">Route</a> configuration</td>
                   <td>area</td>
                   <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
             </tr>
       </tbody>
 </table>
 
-<h3 id="config-files-classes-int">Configuration interfaces</h3>
+### Configuration interfaces   {#config-files-classes-int}
+
 You can interact with configuration files using interfaces under <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.
 
 `Magento\Framework\Config` provides the following interfaces:
@@ -130,5 +133,5 @@ That is, the file system, database, other storage merges the configuration files
 
 #### Related topics
 
- *  <a href="{{page.baseurl}}config-guide/config/config-create.html">Create or extend configuration types</a>
- *  <a href="{{page.baseurl}}config-guide/config/config-php.html">Magento's deployment configuration</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-create.html">Create or extend configuration types</a>
+ *  <a href="{{ page.baseurl }}/config-guide/config/config-php.html">Magento's deployment configuration</a>

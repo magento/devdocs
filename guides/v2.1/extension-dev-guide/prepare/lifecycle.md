@@ -1,10 +1,7 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 title: Extension Lifecycle
 menu_title: Extension lifecycle
-version: 2.1
-github_link: extension-dev-guide/prepare/lifecycle.md
 ---
 
 This topic describes a module's lifecycle and how to create classes that execute code when your module is initialized, upgraded, or uninstalled.
@@ -127,7 +124,7 @@ class \VendorName\ModuleName\Setup\InstallData implements \Magento\Framework\Set
 
 ### Data upgrade
 
-Magento executes the data upgrade class when it detects an earlier version in the `schema_version` field for the module in the `setup_module` table.
+Magento executes the data upgrade class when it detects an earlier version in the `data_version` field for the module in the `setup_module` table.
 The purpose of this class is to fix corrupted data or populate a new data field after a schema change.
 
 | **Class name** | `UpgradeData`            |
@@ -142,7 +139,7 @@ class \VendorName\ModuleName\Setup\UpgradeData implements \Magento\Framework\Set
     /**
      * {@inheritdoc}
      */
-    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context);
+    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
         // Data upgrade logic
     }
@@ -158,7 +155,7 @@ This class makes final modifications to the database store after data has been i
 | **Interface**  | [`InstallDataInterface`] |
 | **Method**     | `install()`              |
 
-**Example:** InstallDataInterface.php
+**Example:** RecurringData.php
 
 ``` php
 class \VendorName\ModuleName\Setup\RecurringData implements \Magento\Framework\Setup\InstallDataInterface
@@ -289,15 +286,15 @@ Avoid this situation by not including dependencies in your uninstall event class
 
 * Magento's [versioning policy]
 
-[versioning policy]: {{page.baseurl}}architecture/versioning.html
+[versioning policy]: {{ page.baseurl }}/extension-dev-guide/versioning/
 [schema upgrade]: #schema-upgrade
-[`InstallSchemaInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php
-[`UpgradeSchemaInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php
-[`InstallDataInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallDataInterface.php
-[`UpgradeDataInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php
-[`ModuleDataSetupInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php
-[Customer module's InstallData.php]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Customer/Setup/InstallData.php
-[`ModuleContextInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php
-[User module's UpgradeData.php]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/User/Setup/UpgradeData.php
-[Component Manager]: {{page.baseurl}}comp-mgr/module-man/compman-uninst-final.html
-[`UninstallInterface`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php
+[`InstallSchemaInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallSchemaInterface.php
+[`UpgradeSchemaInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeSchemaInterface.php
+[`InstallDataInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/InstallDataInterface.php
+[`UpgradeDataInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UpgradeDataInterface.php
+[`ModuleDataSetupInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleDataSetupInterface.php
+[Customer module's InstallData.php]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/Customer/Setup/InstallData.php
+[`ModuleContextInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/ModuleContextInterface.php
+[User module's UpgradeData.php]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/User/Setup/UpgradeData.php
+[Component Manager]: {{ page.baseurl }}/comp-mgr/module-man/compman-uninst-final.html
+[`UninstallInterface`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/internal/Magento/Framework/Setup/UninstallInterface.php

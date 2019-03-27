@@ -1,14 +1,10 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: A_Overview
 title: Best practices and benchmarking
 menu_title: Best practices and benchmarking
 menu_node:
 menu_order: 1
-version: 2.0
-github_link: migration/migration-overview-practices.md
-redirect_from: /guides/v1.0/migration/migration-overview-practices.html
 functional_areas:
   - Tools
 ---
@@ -25,7 +21,7 @@ This section provides our best information about how to speed up and simplify yo
 
   Such data may include logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, etc.
 
-* **Follow our [General Rules for Successful Migration]({{page.baseurl}}migration/migration-migrate.html)** to avoid issues or conflicts.
+* **Follow our [General Rules for Successful Migration]({{ page.baseurl }}/migration/migration-migrate.html)** to avoid issues or conflicts.
 
 * To boost performance, you may **enable the `direct_document_copy` option** in your `config.xml`:
 

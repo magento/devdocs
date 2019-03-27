@@ -1,13 +1,7 @@
 ---
-layout: default
-group: arch-guide
-subgroup: Architectural Layers
+group: architecture-guide
 title: Persistence layer
 menu_title: Persistence layer
-menu_order: 4
-version: 2.1
-github_link: architecture/archi_perspectives/persist_layer.md
-redirect_from: /guides/v1.0/architecture/archi_perspectives/persist_layer.html
 ---
 
 Magento uses an active record pattern strategy for persistence. In this system, the model object contains a *resource model* that maps an object to one or more database rows. A resource model is responsible for performing functions such as:
@@ -24,10 +18,10 @@ However, some objects have a vast number of attributes, or they could have a set
 
 Any model that uses an EAV resource has its attributes spread out over a number of MySQL tables.
 
-The `Customer`,`Catalog` and `Order` resource models use EAV attributes.
+The `Customer`, `Catalog` and `Order` resource models use EAV attributes.
 
 ## Related topics {#related}
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a>
+[Architectural diagrams]({{page.baseurl}}/architecture/archi_perspectives/arch_diagrams.html)
 
-<a href="{{page.baseurl}}architecture/archi_perspectives/ALayers_intro.html">Architectural layers overview</a>
+[Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)

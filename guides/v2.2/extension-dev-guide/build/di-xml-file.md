@@ -1,17 +1,14 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: The di.xml file
 menu_title: The di.xml file
 menu_order: 1
-version: 2.2
-github_link: extension-dev-guide/build/di-xml-file.md
 ---
 
 ## Overview
 
-The `di.xml` file configures which [dependencies]({{page.baseurl}}extension-dev-guide/depend-inj.html) to inject by the [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html). You can also specify [sensitive configuration sensitive](#ext-di-sens) using `di.xml`.
+The `di.xml` file configures which [dependencies]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) are injected by the [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html). You can also specify [sensitive configuration settings](#ext-di-sens) using `di.xml`.
 
 ## Areas and application entry points
 
@@ -20,21 +17,21 @@ Magento reads all the `di.xml` configuration files declared in the system and me
 
 As a general rule, the area specific `di.xml` files should configure dependencies for the presentation layer, and your module's global `di.xml` file should configure the remaining dependencies.
 
-Magento loads The configuration in the following stages:
+Magento loads the configuration in the following stages:
 
 1. Initial (`app/etc/di.xml`)
 2. Global (`<moduleDir>/etc/di.xml`)
 3. Area-specific (`<moduleDir>/etc/<area>/di.xml`)
 
-During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html).
+During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html), each application entry point loads the appropriate `di.xml` files for the requested [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`](https://github.com/magento/magento2/blob/2.2/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
 
 ## Type configuration
 
@@ -63,6 +60,7 @@ The preceding example declares the following types:
 *	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 ### Virtual types
+
 A {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
 This allows you to use a customized class without affecting other classes that have a dependency on the original.
 
@@ -144,7 +142,7 @@ Node Format:
 
 : `<argument xsi:type="number">{numericValue}</argument>`
 
-Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:taget="_blank"}.
+Acceptable values for this type include: integers, floats, or [numeric strings](http://us3.php.net/is_numeric){:target="_blank"}.
 
 ---
 
@@ -182,24 +180,26 @@ This indicates a null value.
 
 Node Format:
 
-: ~~~
+: The node format is as follows:
+
+  ``` xml
   <argument xsi:type="array">
     <item name="someKey" xsi:type="<type>">someVal</item>
   </argument>
-  ~~~
+  ```
 
-Magento builds an array with elements corresponding to the items and passes it as the argument.
-The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
-
-When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
-
-When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
-
+  Magento builds an array with elements corresponding to the items and passes it as the argument.
+  The array can contain an infinite number of items, and each array item can be of any object type including an array itself.
+  
+  When Magento merges the configuration files for a given scope, array arguments with the same name get merged into a new array.
+  
+  When Magento loads a new configuration at a later time, either by a more specific scope or through code, then any array definitions in the new configuration will replace the loaded config instead of merging.
+  
 ---
 
 **Argument Examples:**
 
-{% highlight xml %}
+``` xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Example\Type">
         <arguments>
@@ -234,14 +234,13 @@ When Magento loads a new configuration at a later time, either by a more specifi
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
-<div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
+{:.bs-callout .bs-callout-info}
 **Merging and Arguments**
-
+<br/>
 During merging, arguments replace other arguments with the same name if their type is different.
 If the argument type is the same, then the newer argument replaces the old one.
-</div>
 
 ### Abstraction-implementation mappings
 
@@ -300,10 +299,10 @@ The lifestyle of an object determines the number of instances that can exist of 
 
 You can configure dependencies in Magento to have the following lifestyles:
 
-*	**singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
+*	**Singleton**(default) - One instance of this class exists. The object manager creates it at the first request.
 Requesting the class again returns the same instance.
 Disposing or ending the container registered to it releases the instance.
-*	**transient** - The object manager creates a new instance of the class for every request.
+*	**Transient** - The object manager creates a new instance of the class for every request.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 
@@ -322,7 +321,7 @@ Also, every instance of `Magento\Filesystem` will get separate instance of `$ada
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
 
-For multi-system deployments, such as the [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can specify the following types of configuration settings:
+For multi-system deployments, such as the [pipeline deployment model]({{ page.baseurl }}/config-guide/deployment/pipeline/), you can specify the following types of configuration settings:
 
 | shared          | Settings that are shared between systems using `app/etc/config.php` |
 | sensitive       | Settings that are restricted or confidential                        |
@@ -346,16 +345,16 @@ The following code sample is a template for specifying values as sensitive or sy
 
 Do not share sensitive or system-specific settings stored in `app/etc/env.php` between development and production systems.
 
-See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
+See [sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
 
 ### Information related to pipeline deployment
 
-*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
-*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html)
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}/config-guide/prod/config-reference-b2b.html)
 
 ## Related topics
 
-* [ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
-* [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
-* [Sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
+* [ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+* [Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
+* [Sensitive and environment settings]({{ page.baseurl }}/extension-dev-guide/configuration/sensitive-and-environment-settings.html)

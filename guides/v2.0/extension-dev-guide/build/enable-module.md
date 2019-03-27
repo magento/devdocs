@@ -1,12 +1,9 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 03_Build
 title: Enable or disable your component
 menu_title: Enable or disable your component
 menu_order: 8000
-version: 2.0
-github_link: extension-dev-guide/build/enable-module.md
 redirect_from: /guides/v2.0/extension-dev-guide/enable-module.html
 ---
 
@@ -26,18 +23,13 @@ where <code>Component_Name</code> is the name of the component you are enabling.
 <li>Check under <code>Stores->Configuration->Advanced->Advanced</code> that the component is present.</li>
 </ol>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <span class="glyphicon-class"></span>
-  <p>The general order of operations for <code>setup:upgrade</code> is:</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The general order of operations for `setup:upgrade` is:
 
-  <ol>
-    <li><strong>Schema install/upgrade.</strong></li>
-    <li><strong>Schema post-upgrade</strong>&#8212; handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.</li>
-    <li><strong>Data install/upgrade</strong> &#8212; installs the data. Taken from <code>setup/InstallData.php</code>.</li>
-  </ol>
+1.  **Schema install/upgrade.**
+2.  **Schema post-upgrade**— handles any additional updates. These recurring upgrades occur independently and regardless of any changes to the schema.
+3.  **Data install/upgrade** — installs the data. Taken from `setup/InstallData.php`.
 </div>
-
-
 
 ## Disable a component
 
@@ -46,4 +38,4 @@ To disable a component, enter the following at the command line:
     bin/magento module:disable --clear-static-content Component_Name
 
 
-For more on enabling and disabling components, see [enable or disable modules]({{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).
+For more on enabling and disabling components, see [enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable).

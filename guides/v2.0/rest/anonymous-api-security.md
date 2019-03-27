@@ -1,13 +1,10 @@
 ---
-layout: default
-group: rest
+group: rest-api
 subgroup: A_rest
 title: Restricting access to anonymous web APIs
 menu_title: Restricting access to anonymous web APIs
 menu_node:
 menu_order: 6
-version: 2.0
-github_link: rest/anonymous-api-security.md
 functional_areas:
   - Integration
 ---
@@ -20,7 +17,7 @@ For this reason, by default, Magento 2 now prevents anonymous users from accessi
 
 The following table lists the APIs that are no longer available to an anonymous user by default:
 
-| Product | Module | {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} | Action |
+| Product | Module | API | Action |
 | --- | --- | --- | --- |
 | CE | Catalog | /V1/products | GET |
 | CE | Catalog | /V1/products/:sku | GET |
@@ -54,9 +51,10 @@ The following table lists the APIs that are no longer available to an anonymous 
 | CE | Store | /V1/store/websites | GET |
 | CE | Store | /V1/store/storeConfigs | GET |
 
-<div class="bs-callout bs-callout-warning">
-    <p>Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.</p>
-    <p>To disable this feature, log in to the Admin panel and navigate to <b>Stores > Configuration > Services > Magento Web API > Web API Security</b>. Then select <b>Yes</b> from the <b>Allow Anonymous Guest Access</b> menu.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Preventing anonymous access to these APIs could cause third-party integrations to fail. If a third-party integration calls any of these web APIs, it will receive an authentication error instead of the expected response. In this case, you might need to disable this feature.
+
+To disable this feature, log in to the Admin panel and navigate to **Stores > Settings > Configuration > Services > Magento Web API > Web API Security**. Then select **Yes** from the **Allow Anonymous Guest Access** menu.
 </div>
 
 
@@ -84,7 +82,7 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | CE | GiftMessage | /V1/guest-carts/:cartId/gift-message/:itemId | POST |
 | CE | Integration | /V1/integration/admin/token | POST |
 | CE | Integration | /V1/integration/customer/token | POST |
-| CE | {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}Quote{% endglossarytooltip %} | /V1/guest-carts/:cartId | GET |
+| CE | Quote | /V1/guest-carts/:cartId | GET |
 | CE | Quote | /V1/guest-carts | POST |
 | CE | Quote | /V1/guest-carts/:cartId | PUT |
 | CE | Quote | /V1/guest-carts/:cartId/order | PUT |

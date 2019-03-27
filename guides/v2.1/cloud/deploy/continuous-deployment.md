@@ -1,13 +1,10 @@
 ---
-layout: default
-group: cloud
+group: cloud-guide
 subgroup: 160_deploy
 title: Continuous integration
 menu_title: Continuous integration
 menu_order: 15
 menu_node:
-version: 2.1
-github_link: cloud/deploy/continuous-deployment.md
 functional_areas:
   - Cloud
   - Deploy
@@ -15,7 +12,7 @@ functional_areas:
 
 Following your branching and development methodologies, you can easily develop new features, configure changes, and add extensions to continuously develop and deploy updates.
 
-Both Starter and Pro plan environments support continous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
+Both Starter and Pro plan environments support continuous integration for constant updates. This workflow supports releases multiple times a day or on a set schedule according to your business needs.
 
 * Create development branches with future features and changes
 * Test the code in your development environments
@@ -29,9 +26,9 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 * Keep your branches updated with the latest code for all developers to access and pull
 * Maintain commit comments to share with your developers and track branch work
 * Keep Staging as close to Production as possible with configurations, code, services, and data
-* Don't overfill a branch of development work, keep it streamlined to carefully implement and test code, extensions, etc
+* Do not overfill a branch of development work, keep it streamlined to carefully implement and test code, extensions, etc
 * Keep track of the order you follow for adding extensions to your code. Some extensions require very specific installation orders.
-* Don't push all of your extensions at once into Staging and Production. Add, push, and test extensions in groups to ensure they are stable.
+* Do not push all of your extensions at once into Staging and Production. Add, push, and test extensions in groups to ensure they are stable.
 * Use Magento Configuration Management to ensure configuration consistency
 
 ## Deployment best practices
@@ -48,7 +45,7 @@ We recommend the following best practices for {{site.data.var.ece}} environments
 
 ## Data best practices
 
-* Create a backup of your database and snapshot on a schedule or before pushing major updates. We provide snapshots of Production every 6 hours, but you may need to also backup Staging for constant iterations.
+* Create a backup of your database and snapshot on a schedule or before pushing major updates. We provide snapshots of the Pro Production environment according to a [progressive schedule]({{ page.baseurl }}/cloud/architecture/pro-architecture.html#backup-and-disaster-recovery), but you may need to backup your Staging environment for constant iterations.
 * Pull a data dump of your Production data into the Staging environment for extensive testing
 * Consider running scripts or pulling only specific tables to sanitize customer data from non-Production environments Staging
 

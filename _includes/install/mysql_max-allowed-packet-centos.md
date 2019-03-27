@@ -1,8 +1,6 @@
-<div markdown="1">
-
 	To increase the value, open `/etc/mysql.cnf` in a text editor and add search for `max_allowed_packet`. Set the value to `16M` or larger.
 
-	If it does not exist, add it before `[mysqld_safe]`. 
+	If it does not exist, add it before `[mysqld_safe]`.
 
 	Save your changes to `mysql.cnf`, close the text editor, and restart MySQL (`service mysqld restart`).
 

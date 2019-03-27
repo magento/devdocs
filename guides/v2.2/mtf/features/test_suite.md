@@ -1,9 +1,6 @@
 ---
-layout: default
-group: mtf-guide
+group: functional-testing-framework-guide
 title: Test suite in the Functional Testing Framework
-version: 2.2
-github_link: mtf/features/test_suite.md
 ---
 
 ## Overview {#overview}
@@ -357,10 +354,10 @@ class AssertProductView extends AbstractConstraint
 
 <!-- LINKS DEFINITION -->
 
-[test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
-[variation]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
-[constraint]: {{page.baseurl}}mtf/mtf_entities/mtf_constraint.html
-[data set]: {{page.baseurl}}mtf/mtf_entities/mtf_dataset.html
+[test case]: {{ page.baseurl }}/mtf/mtf_entities/mtf_testcase.html
+[variation]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
+[constraint]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
+[data set]: {{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html
 
 [`scope = "testsuite"`]: #scope-testsuite
 [`scope = "testcase"`]: #scope-testcase

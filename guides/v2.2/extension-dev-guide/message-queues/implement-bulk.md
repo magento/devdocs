@@ -1,6 +1,5 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Example bulk operations implementation
 menu_title: Example bulk operations implementation
@@ -8,8 +7,6 @@ menu_order: 29
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-version: 2.2
-github_link: extension-dev-guide/message-queues/implement-bulk.md
 redirect_from: /guides/v2.2/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services
@@ -230,9 +227,9 @@ class Consumer
         $serializedData = $operation->getSerializedData();
         $unserializedData = $this->jsonHelper->jsonDecode($serializedData);
         try {
-            //add here your own logic for async opertions
+            //add here your own logic for async operations
         } catch (\Zend_Db_Adapter_Exception  $e) {
-            //here sample how to process exceptions if they occured
+            //here sample how to process exceptions if they occurred
             $this->logger->critical($e->getMessage());
             //you can add here your own type of exception when operation can be retried
             if (
@@ -293,7 +290,7 @@ The message queue topology must be configured to implement bulk operations. Crea
 * `queue_publisher.xml`
 * `queue_topology.xml`
 
-For more information about the `di.xml` file, see [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html).
+For more information about the `di.xml` file, see [Dependency Injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html). For information the other files, see [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html).
 
 #### Create `communication.xml`
 
@@ -336,13 +333,16 @@ The `queue_consumer.xml` file defines the relationship between a queue and its c
 The `queue_publisher.xml` file defines the exchange where a topic is published. Create this file with the following contents:
 
 {% highlight xml %}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/consumer.xsd">
-    <consumer name="<consumer_name>" queue="<queue_name>" connection="amqp" consumerInstance="Magento\Framework\MessageQueue\Consumer" handler="Consumer_Class::Consumer_method"/>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/publisher.xsd">
+    <publisher topic="<topic_name>">
+        <connection name="amqp" exchange="<exchange>" />
+    </publisher>
 </config>
 {% endhighlight %}
 
 #### Create `queue_topology.xml`
-The `queuetopology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
+
+The `queue_topology.xml` file defines the message routing rules and declares queues and exchanges. Create this file with the following contents:
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/topology.xsd">
@@ -354,6 +354,6 @@ The `queuetopology.xml` file defines the message routing rules and declares queu
 
 #### Related Topics
 
-* [Message Queues Overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
-* [Bulk Operations]({{page.baseurl}}extension-dev-guide/message-queues/bulk-operations.html)
-* [Configure message queues]({{page.baseurl}}/extension-dev-guide/message-queues/config-mq.html)
+* [Message Queues Overview]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html)
+* [Bulk Operations]({{ page.baseurl }}/extension-dev-guide/message-queues/bulk-operations.html)
+* [Configure message queues]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html)

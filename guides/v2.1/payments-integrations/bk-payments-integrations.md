@@ -1,13 +1,10 @@
 ---
-layout: default
 group: payments-integrations
 subgroup:
 title: Payments Integrations
 menu_title: Get Started
 menu_order: 2
 menu_node: parent
-version: 2.1
-github_link: payments-integrations/bk-payments-integrations.md
 functional_areas:
   - Integration
 ---
@@ -18,6 +15,6 @@ This guide describes how the Magento payment provider gateway is implemented and
 
 The chapters of this guide are:
 
-* [Magento payment provider gateway]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html)
-* [How to add a custom payment method using Magento payment provider gateway]({{page.baseurl}}payments-integrations/base-integration/integration-intro.html)
-* [How to add vault for the custom payment method]({{page.baseurl}}payments-integrations/vault/vault-intro.html) 
+* [Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/payment-gateway/payment-gateway-intro.html)
+* [How to add a custom payment method using Magento payment provider gateway]({{ page.baseurl }}/payments-integrations/base-integration/integration-intro.html)
+* [How to add vault for the custom payment method]({{ page.baseurl }}/payments-integrations/vault/vault-intro.html) 

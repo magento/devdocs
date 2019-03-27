@@ -1,28 +1,43 @@
 ---
-layout: default
 group: release-notes
 title: Backward incompatible changes in Magento Commerce
-version: 2.1
-github_link: release-notes/backward-incompatible-changes/commerce.md
-redirect_from: guides/v2.1/release-notes/changes/ee_changes.html
+redirect_from: /guides/v2.1/release-notes/changes/ee_changes.html
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ee}} 2.1.
 
 All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
-</div>
 
 The changes are aggregated into two tables:
 
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-**Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.
-</div>
+{: .bs-callout .bs-callout-warning }
+When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
+
+## 2.1.16 - 2.1.17    {#releases-2_1_16-2_1_17}
+
+{% include backward-incompatible-changes/commerce/2.1.16-2.1.17.md %}
+
+## 2.1.15 - 2.1.16    {#releases-2_1_15-2_1_16}
+
+{% include backward-incompatible-changes/commerce/2.1.15-2.1.16.md %}
+
+## 2.1.14 - 2.1.15    {#releases-2_1_14-2_1_15}
+
+{% include backward-incompatible-changes/commerce/2.1.14-2.1.15.html %}
+
+## 2.1.13 - 2.1.14    {#releases-2_1_13-2_1_14}
+
+{% include backward-incompatible-changes/commerce/2.1.13-2.1.14.html %}
+
+## 2.1.12 - 2.1.13    {#releases-2_1_12-2_1_13}
+
+{% include backward-incompatible-changes/commerce/2.1.12-2.1.13.html %}
 
 ## 2.1.11 - 2.1.12    {#releases-2_1_11-2_1_12}
 
@@ -79,5 +94,5 @@ The changes are aggregated into two tables:
 <!-- LINK DEFINITIONS -->
 
 [changes in {{site.data.var.ce}}]: ./open-source.html
-
-[@deprecated]: {{page.baseurl}}coding-standards/docblock-standard-general.html#deprecated
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

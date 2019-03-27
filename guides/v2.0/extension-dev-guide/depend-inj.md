@@ -1,11 +1,7 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 title: Dependency injection
 menu_title: Dependency injection
-version: 2.0
-github_link: extension-dev-guide/depend-inj.md
-redirect_from: /guides/v1.0/extension-dev-guide/depend-inj.html
 ---
 
 Magento 2 uses [Dependency Injection] to replace functionality provided by the `Mage` class in Magento 1.x.
@@ -115,21 +111,21 @@ To get around this limitation, injectable objects can depend on [factories] that
 
 **Related topics**
 
-*	[The `di.xml` file]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html)
-*	[ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
-*	[Plugins]({{page.baseurl}}extension-dev-guide/plugins.html)
-*	[Routing]({{page.baseurl}}extension-dev-guide/routing.html)
-*	[Magento application initialization and bootstrap]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.html)
-* [Module Dependencies]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_depend.html)
-*	[Programming concepts]({{page.baseurl}}extension-dev-guide/api-concepts.html)
+*	[The `di.xml` file]({{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html)
+*	[ObjectManager]({{ page.baseurl }}/extension-dev-guide/object-manager.html)
+*	[Plugins]({{ page.baseurl }}/extension-dev-guide/plugins.html)
+*	[Routing]({{ page.baseurl }}/extension-dev-guide/routing.html)
+*	[Magento application initialization and bootstrap]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstrap.html)
+* [Module Dependencies]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_depend.html)
+*	[Programming concepts]({{ page.baseurl }}/extension-dev-guide/api-concepts.html)
 
 [Dependency Injection]: https://en.wikipedia.org/wiki/Dependency_injection
 [dependency inversion principle]: http://www.oodesign.com/dependency-inversion-principle.html
-[`di.xml`]: {{page.baseurl}}extension-dev-guide/build/di-xml-file.html
-[`ObjectManager`]: {{page.baseurl}}extension-dev-guide/object-manager.html
-[code compiler tool]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html
-[proxies]: {{page.baseurl}}extension-dev-guide/proxies.html
-[proxy]: {{page.baseurl}}extension-dev-guide/proxies.html
-[factories]: {{page.baseurl}}extension-dev-guide/factories.html
-[interceptors]: {{page.baseurl}}extension-dev-guide/plugins.html
-[`Product`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Catalog/Model/Product.php
+[`di.xml`]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html
+[`ObjectManager`]: {{ page.baseurl }}/extension-dev-guide/object-manager.html
+[code compiler tool]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html
+[proxies]: {{ page.baseurl }}/extension-dev-guide/proxies.html
+[proxy]: {{ page.baseurl }}/extension-dev-guide/proxies.html
+[factories]: {{ page.baseurl }}/extension-dev-guide/factories.html
+[interceptors]: {{ page.baseurl }}/extension-dev-guide/plugins.html
+[`Product`]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/Catalog/Model/Product.php

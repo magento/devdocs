@@ -1,20 +1,11 @@
 ---
-layout: default
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Text component
-menu_title: Text component
-version: 2.2
-github_link: ui_comp_guide/components/ui-text.md
 ---
 
-## Overview
+The Text component displays text data in the components like [Form]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html) and [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html).
 
-The Text component displays text data in the components like [Form]({{page.baseurl}}ui_comp_guide/components/ui-form.html) and [DynamicRows]({{page.baseurl}}ui_comp_guide/components/ui-dynamicrows.html).
-
-## Text configuration
-
-Extends all [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+## Configuration options
 
 <table>
   <tr>
@@ -43,7 +34,7 @@ Extends all [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement
   </tr>
   <tr>
     <td><code>links</code> <li><code>value</code></li></td>
-    <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
+    <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
     <td>Object<li>String</li></td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
   </tr>

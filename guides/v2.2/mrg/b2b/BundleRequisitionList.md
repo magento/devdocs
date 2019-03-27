@@ -1,12 +1,9 @@
 ---
-layout: default
-group: mrg
+group: module-reference-guide
 subgroup: 30_B2B
 title: Magento_BundleRequisitionList module
 menu_title: BundleRequisitionList
 menu_order: 30
-version: 2.2
-github_link: mrg/b2b/BundleRequisitionList.md
 ---
 
 ## Overview
@@ -27,14 +24,14 @@ The `Magento_BundleRequisitionList` module does not create any backward incompat
 
 ## Structure
 
-[Learn about a typical file structure for a Magento 2 module]({{page.baseurl}}extension-dev-guide/build/module-file-structure.html).
+[Learn about a typical file structure for a Magento 2 module]({{ page.baseurl }}/extension-dev-guide/build/module-file-structure.html).
 
 ### Layouts
 
 You can extend and override layouts in the `Magento\BundleRequisitionList\view\frontend\layout` directories.
 
-For more information about layouts, see the [Layout documentation]({{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html).
+For more information about layouts, see the [Layout documentation]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html).
 
 ## Additional information
 
-You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{page.baseurl}}release-notes/changes/b2b_changes.html).
+You can track [backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release]({{ page.baseurl }}/release-notes/changes/b2b_changes.html).

@@ -1,15 +1,15 @@
-<div markdown="1">
-
-This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for Magento Community Edition (CE) and Magento Enterprise Edition (EE) as well.
+This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for {{site.data.var.ce}} (formerly Community Edition (CE) and {{site.data.var.ee}} (formerly Enterprise Edition (EE) as well.
 
 ## General category
+
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
 ### B2B Features paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **B2B Features**.
 
-| Name | Config path | Encrypted? | System-specific? | Sensitive? | 
-| -------------- | -------------- | -------------- | -------------- | -------------- | 
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **B2B Features**.
+
+| Name | Config path | Encrypted? | System-specific? | Sensitive? |
+| -------------- | -------------- | -------------- | -------------- | -------------- |
 | Enable Company | `btob/website_configuration/company_active` | | | |
 | Enable Shared Catalog | `btob/website_configuration/sharedcatalog_active` | | | |
 | Enable B2B Quote | `btob/website_configuration/negotiablequote_active` | | | |
@@ -19,16 +19,18 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Payment Methods | `btob/default_b2b_payment_methods/available_payment_methods` | | | |
 
 ## Customers category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
 
 ### Company configuration paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
+
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|--------------|
 | Allow Company Registration from the Storefront | `company/general/allow_company_registration` | | | |
-| Company Registration Email Recipient | `company/email/company_registration` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
-| Send Company Registration Email Copy To | `company/email/company_registration_copy` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+| Company Registration Email Recipient | `company/email/company_registration` | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png)
+| Send Company Registration Email Copy To | `company/email/company_registration_copy` | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png)
 | Send Email Copy Method | `company/email/company_copy_method` | | | |
 | Default Company Registration Email | `company/email/company_notify_admin_template` | | | |
 | Customer-Related Emails | `company/email/heading_customer` | | | |
@@ -41,7 +43,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Default Customer Status Inactive Email | `company/email/customer_account_locked_template` | | | |
 | Company Status Change | `company/email/heading_company_status` | | | |
 | Company Status Change Email Recipient | `company/email/company_status_change` | | | |
-| Send Company Status Change Email Copy To | `company/email/company_status_change_copy` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+| Send Company Status Change Email Copy To | `company/email/company_status_change_copy` | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png)
 | Send Email Copy Method | `company/email/company_status_copy_method` | | | |
 | Default Company Status Change To Active 1 Email | `company/email/company_status_pending_approval_to_active_template` | | | |
 | Default Company Status Change To Active 2 Email | `company/email/company_status_rejected_blocked_to_active_template` | | | |
@@ -49,7 +51,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Default Company Status Change To Blocked Email | `company/email/company_status_blocked_template` | | | |
 | Default Company Status Change To Pending Approval Email | `company/email/company_status_pending_approval_template` | | | |
 | Company Credit | `company/email/heading_company_credit` | | | |
-| Company Credit Change Email Sender | `company/email/company_credit_change` |  | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+| Company Credit Change Email Sender | `company/email/company_credit_change` |  | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png)
 | Send Company Credit Change Email Copy To | `company/email/company_credit_change_copy` | | | |
 | Send Email Copy Method | `company/email/company_credit_copy_method` | | | |
 | Allocated Email Template | `company/email/credit_allocated_email_template` | | | |
@@ -59,19 +61,22 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Reverted Email Template | `company/email/credit_reverted_email_template` | | | |
 
 ### Requisition lists paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Requisition Lists**.
 
-| Name | Config path | Encrypted? | System-specific? | Sensitive? | 
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Requisition Lists**.
+
+| Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |
 | Number of Requisition Lists | `requisitionlist/general/number_requisition_lists` | | | |
 
 ## Sales category
+
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
 ### Sales Emails paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
-| Name | Config path | Encrypted? | System-specific? | Sensitive? | 
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
+
+| Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |
 | Enabled | `sales_email/quote/enabled` | | | |
 | Updated Quote Template (to Buyer) | `sales_email/quote/updated_buyer_template` | | | |
@@ -81,11 +86,12 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Quote Expiration (in 48 hrs) | `sales_email/quote/expire_two_days_template` | | | |
 | Quote Expiration (in 24 hrs) | `sales_email/quote/expire_one_day_template` | | | |
 | Expiration Date Reset | `sales_email/quote/expire_reset_template` | | | |
-| Send Quote Email Copy To | `sales_email/quote/copy_to` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+| Send Quote Email Copy To | `sales_email/quote/copy_to` | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png)
 | Send Quote Email Copy Method | `sales_email/quote/copy_method` | | | |
 
 ### Quotes paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Quotes**.
+
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Quotes**.
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |
@@ -101,11 +107,11 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Maximum file size | `quote/attached_files/maximum_file_size` | | | |
 
 ## Payment method paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+These configuration values are available in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
+
+{:.bs-callout .bs-callout-info}
 The available paths are determined by your choice of Merchant country.
-</div>
 
 | Name | Config path | Encrypted? | System-specific? | Sensitive? |
 | -------------- | -------------- | -------------- | -------------- | -------------- |

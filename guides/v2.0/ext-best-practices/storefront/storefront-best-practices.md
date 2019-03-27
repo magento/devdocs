@@ -1,23 +1,13 @@
 ---
-layout: default
-group: ext-best-practices
-subgroup: 03_Storefront
+group: extension-best-practices
 title: Storefront UI best practices
-menu_title: Storefront
-menu_order: 1
-menu_node: parent
-version: 2.0
-tabgroup: best-practices
-tablabel: Storefront
-tabweight: 40
-github_link: ext-best-practices/storefront/storefront-best-practices.md
 functional_areas:
   - Frontend
   - Theme
   - Standards
 ---
 
-The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{page.baseurl}}frontend-dev-guide/themes/theme-general.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 ### Clear your cache periodically
 
@@ -27,15 +17,15 @@ You can manage your cache in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024
 
 **Recommended Reading**
 
-* [Clear directories during development]({{page.baseurl}}howdoi/php/php_clear-dirs.html)
+* [Clear directories during development]({{ page.baseurl }}/howdoi/php/php_clear-dirs.html)
 
 ### Consider different resolutions/devices
 
-When developing your theme extension, you should check how it looks using different resolutions or devices. We recommend you apply [responsive web design(RWD)](https://en.wikipedia.org/wiki/Responsive_web_design){:target="_blank"} concepts to optimize the look and feel of your theme on different devices and resolutions. To help you with this task, both [Chrome](https://developer.chrome.com/devtools){:target="_blank"} and [FireFox](https://developer.mozilla.org/en-US/docs/Tools){:target="_blank"} web browsers have built in developer tools that allow you to view your theme under different resolutions.
+When developing your theme extension, you should check how it looks using different resolutions or devices. We recommend you apply [responsive web design(RWD)](https://en.wikipedia.org/wiki/Responsive_web_design){:target="_blank"} concepts to optimize the look and feel of your theme on different devices and resolutions. To help you with this task, both [Chrome](https://developer.chrome.com/devtools){:target="_blank"} and [Firefox](https://developer.mozilla.org/en-US/docs/Tools){:target="_blank"} web browsers have built in developer tools that allow you to view your theme under different resolutions.
 
 **Recommended Reading**
 
-* [How to make your theme responsive and mobile]({{page.baseurl}}frontend-dev-guide/responsive-web-design/rwd_overview.html)
+* [How to make your theme responsive and mobile]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html)
 
 ### Inherit and customise
 
@@ -43,4 +33,4 @@ There is a lot of work in building a theme extension for Magento from scratch. T
 
 **Recommended Reading**
 
-* [Theme inheritance]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html)
+* [Theme inheritance]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html)

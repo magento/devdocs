@@ -1,31 +1,27 @@
 ---
-layout: default
-group: cloud
+group: cloud-guide
 subgroup: 020_tech
 title: Magento Cloud CLI reference
 menu_title: Magento Cloud CLI
 menu_order: 30
 menu_node:
-version: 2.0
-github_link: cloud/reference/cli-ref-topic.md
 functional_areas:
   - Cloud
 redirect_from:
   - /guides/v2.0/cloud/cli-ref/cli-ref-topic.html
-  - /guides/v2.1/cloud/cli-ref/cli-ref-topic.html
 ---
 
 The Magento Cloud CLI is a cloud-specific version of the Magento CLI we provide supporting commands including Magento management and Git interactions. You can install and use these commands for all Starter environments and Pro Integration environments. You cannot use these commands on Pro plan Staging and Production environments.
 
 This reference lists all available commands, and a list of commonly used commands, for {{site.data.var.ece}}. You can also use Magento CLI commands as needed, using `bin/magento` for entering commands.
 
-You will [install]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html) the Magento Cloud CLI on your local when setting up your local environment for development.
+You will [install]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html) the Magento Cloud CLI on your local when setting up your local environment for development.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You must install the Magento Cloud CLI to your local workspace to issue commands. For details, see:
 
-* [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
-* [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+* [Install Magento prerequisites]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html)
+* [Enable SSH keys]({{ page.baseurl }}/cloud/before/before-workspace-ssh.html)
 </div>
 
 The following Magento Cloud CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Integration environments.
@@ -46,9 +42,8 @@ All listed commands include only the required information and options. These com
 `magento-cloud environment:list -p <project ID>`
 :	List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+{: .bs-callout .bs-callout-info }
 `magento-cloud environment:list` displays environment hierarchies whereas `git branch` does not. If you have any nested environments, use `magento-cloud environment:list`.
-</div>
 
 `magento-cloud environment:branch <name> <parent branch>`
 :	Create a new branch; the environment has both a name and an ID.
@@ -79,6 +74,7 @@ An environment name _cannot_ include characters reserved for your Linux shell or
 The `magento-cloud list` displays all available commands.
 
 ## Help for a command {#help}
+
 You can preface or append any command with `help` or `--help` to see more information on how to use that command.
 
 	$ magento-cloud domain:add --help
@@ -105,44 +101,19 @@ You can preface or append any command with `help` or `--help` to see more inform
 	 --shell (-s)          Launch the shell
 
 ## List of Magento CLI commands {#cloud-cli-commands}
+
 The following table provides an extensive list of Magento CLI commands for ECE accessed with `magento-cloud` To see a full list of commands, enter `magento-cloud list`. The listed commands are for Magento Cloud CLI version 1.11.1 and later.
 
 The following table lists general commands.
 
-<table>
-	<thead>
-				   <tr>
-	             <th style="width: 250px;">Command</th>
-	             <th>Description</th>
-	         </tr>
-	</thead>
-			<tbody>
-	 				<tr>
-	 				<td>clear-cache</td>
-	 				<td>Clears the cache for only the CLI.</td>
-	 				</tr>
-					<tr>
-	 				<td>docs</td>
-	 				<td>Provides a link for documentation. </td>
-	 				</tr>
-					<tr>
-	 				<td>help</td>
-	 				<td>Displays help information for the command.</td>
-	 				</tr>
-					<tr>
-	 				<td>list</td>
-	 				<td>Displays a list of all available commands in the Magento Cloud CLI.</td>
-	 				</tr>
-					<tr>
-	 				<td>multi</td>
-	 				<td>Executes a command on multiple projects entered as a command separated list for the <code>-p</code> parameter.</td>
-	 				</tr>
-					<tr>
-	 				<td>web</td>
-	 				<td>Opens a web UI based on the parameters you enter.</td>
-	 				</tr>
-			</tbody>
-</table>
+| Command | Description |
+|----------
+| clear-cache | Clears the cache for only the CLI. |
+| docs | Provides a link for documentation. |
+| help | Displays help information for the command. |
+| list | Displays a list of all available commands in the Magento Cloud CLI. |
+| multi | Executes a command on multiple projects entered as a command separated list for the `-p` parameter. |
+| web | Opens a web UI based on the parameters you enter. |
 
 
 The following table lists all commands for interacting with your environments and projects.
@@ -173,7 +144,7 @@ The following table lists all commands for interacting with your environments an
 	 				</tr>
 					<tr>
 					<td>auth-info</td>
-					<td>Display yourt account information</td>
+					<td>Display your account information</td>
 					</tr>
 					<tr>
 					<td>auth:login (login)</td>
@@ -314,7 +285,7 @@ The following table lists all commands for interacting with your environments an
 	 				<tr>
 	 				<td>local:build (build)</td>
 	 				<td><p>Builds the current project locally strictly to test the build without the full patch and commit process. This command allows you to build locally without patches just to check the build. We recommend you run this command separately in a different location. You should not commit the files from this build to Git.</p>
-          <p>You should only use this command to <a href="{{page.baseurl}}cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
+          <p>You should only use this command to <a href="{{ page.baseurl }}/cloud/live/live-sanity-check.html">test a local build</a>, not to build and deploy.</p></td>
 	 				</tr>
 	 				<tr>
 	 				<td>local:dir (dir)</td>
@@ -436,4 +407,5 @@ The following table lists all commands for interacting with your environments an
 </table>
 
 ## Upgrade Magento Cloud CLI {#upgrade}
+
 When you login to the Magento Cloud CLI, it checks for available updates. You can enter `y` for yes to upgrade. After upgrading, you can login and use the `magento-cloud list` command to see a list of all commands.

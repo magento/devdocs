@@ -1,28 +1,23 @@
 ---
-layout: default
 group: release-notes
 title: Backward incompatible changes in Magento Commerce
-version: 2.0
-github_link: release-notes/backward-incompatible-changes/commerce.md
-redirect_from: guides/v2.0/release-notes/changes/ee_changes.html
+redirect_from: /guides/v2.0/release-notes/changes/ee_changes.html
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ee}} 2.0.
 
 All changes are generated automatically using the codebase of corresponding releases in private repository that contains additional modules only.
 
-<div class="bs-callout bs-callout-info" markdown="1">
+{: .bs-callout .bs-callout-info }
 To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
-</div>
 
 The changes are aggregated into two tables:
 
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-**Temporary issue**: Added docblock tags like [@deprecated] are defined in **How Changed** as _Class was added_ or _Method has been added_.
-</div>
+{: .bs-callout .bs-callout-warning }
+When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
 
 ## 2.0.17 - 2.0.18 {#releases-2_0_17-2_0_18}
 
@@ -99,5 +94,5 @@ The changes are aggregated into two tables:
 <!-- LINK DEFINITIONS -->
 
 [changes in {{site.data.var.ce}}]: ./open-source.html
-
-[@deprecated]: {{page.baseurl}}coding-standards/docblock-standard-general.html#deprecated
+[@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
+[@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated

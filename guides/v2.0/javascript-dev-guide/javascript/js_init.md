@@ -1,28 +1,24 @@
 ---
-layout: default
-group: jsdg
+group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 menu_title: Calling and initializing JavaScript
 menu_order: 10
-version: 2.0
-github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:
-  - guides/v2.0/frontend-dev-guide/javascript/js_init.html
-  - guides/v1.0/frontend-dev-guide/javascript/js_init.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
 ---
 
-<h2 id="js_init_overview">Overview</h2>
+## Overview   {#js_init_overview}
 
-This topic talks about how to insert a [JavaScript component]({{site.gdeurl}}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
+This topic talks about how to insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates and `.js` files in Magento 2.
 
 It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.
 
 We strongly recommend that you use the described approaches and do not add inline {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}.
 
 ## Insert a JS component in a PHTML template {#init_phtml}
-Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
 
+Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.
 
 ### Declarative notation
 
@@ -46,7 +42,7 @@ When inserted in a certain element, the script is called only for this particula
 
 ##### How `data-mage-init` is processed {#init_process}
 
-On DOM ready, the `data-mage-init` attribute is parsed to extract components' names and configuration to be applied to the element.
+On DOM ready, the `data-mage-init` attribute is parsed to extract component names and configuration to be applied to the element.
 Depending on the type of the inserted JS component, processing is performed as follows:
 <ul>
 
@@ -81,7 +77,7 @@ return;
 Such a component does not require either <code>config</code> or <code>element</code>. The recommended way to declare such components is <a href="#init_script">using the &lt;script&gt; tag</a>.</li>
 </ul>
 
-#### Declarative notation using the `<script type="text/x-magento-init />` tag {decl_tag}
+#### Declarative notation using the `<script type="text/x-magento-init" />` tag
 
 To call a JS component on a HTML element without direct access to the element or with no relation to a certain element, use the `<script type="text/x-magento-init">` tag and attribute. The syntax is following:
 
@@ -126,7 +122,7 @@ The following is a working code sample of a widget call using `<script>`. Here t
 
 ### Imperative notation {#init_script}
 
-Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init` attribute, is the imperative notation. The syntax is following:
+Imperative notation allows using raw JavaScript code on the pages and executing particular business logic. The notation using the `<script>` tag, without the `type="text/x-magento-init"` attribute, is the imperative notation. The syntax is following:
 
 {%highlight html%}
 <script>
@@ -147,10 +143,9 @@ require([
 </script>
 {%endhighlight%}
 
-
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
-To call a widget in JS code, use a notation similar to the following ([accordion]({{site.gdeurl}}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
+To call a widget in JS code, use a notation similar to the following ([accordion]({{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html) widget is initialized on the `[data-role=example]` element as illustration):
 
 {%highlight js%}
 

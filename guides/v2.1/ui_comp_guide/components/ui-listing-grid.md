@@ -1,29 +1,19 @@
 ---
-layout: default
-group: UI_Components_guide
-subgroup: components
+group: ui-components-guide
 title: Listing (grid) component
-menu_title: Listing (grid) component
-version: 2.1
-github_link: ui_comp_guide/components/ui-listing-grid.md
 ---
 
-## Overview
-Listing is a [basic component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure) that implements grids, lists, and tiles with filtering, pagination, sorting, and other features.
+Listing is a [basic component]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) that implements grids, lists, and tiles with filtering, pagination, sorting, and other features.
 
-## Structure
+## Examples
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
-
-
-## Integration
+### Create an instance
 
 Example configuration of Listing component instance:
 
 `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
-
-{% highlight xml%}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="context" xsi:type="configurableObject">
         <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\Context</argument>
@@ -47,9 +37,9 @@ Example configuration of Listing component instance:
         </item>
     </argument>
 </listing>
-{% endhighlight %}
+```
 
-## DataSource
+### Configure DataSource
 
 DataSource is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} that provides data in specific format which is shared among all UI components. 
 
@@ -57,11 +47,11 @@ The listing component requires the data source to be properly configured and ass
 
 `<your module root dir>/Magento/Cms/view/adminhtml/ui_component/cms_page_listing.xml`
 
-{% highlight xml %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <dataSource name="cms_page_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">PageGridDataProvider</argument>
+            <argument name="class" xsi:type="string">Magento\Cms\Ui\Component\DataProvider</argument>
             <argument name="name" xsi:type="string">cms_page_listing_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">page_id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
@@ -77,4 +67,8 @@ The listing component requires the data source to be properly configured and ass
         </argument>
     </dataSource>
 </listing>    
-{% endhighlight %}    
+``` 
+
+## Source files
+
+- [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)

@@ -1,9 +1,6 @@
 ---
-layout: default
-group: jsdg
+group: javascript-developer-guide
 title: JavaScript mixins
-version: 2.1
-github_link: javascript-dev-guide/javascript/js_mixins.md
 ---
 
 A [mixin] is a class whose methods are added to, or mixed in, with another class.
@@ -79,9 +76,9 @@ The mixins configuration in the `requirejs-config.js` associates a target compon
 
 ### Example
 
-The following is an example of a `require-config.js` file that adds the `columns-mixins`, defined in the previous example, to the [grid column component].
+The following is an example of a `requirejs-config.js` file that adds the `columns-mixins`, defined in the previous example, to the [grid column component].
 
-**File:** `OrangeCompany/Sample/view/base/require-config.js`
+**File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
 
 ``` javascript
 var config = {
@@ -109,12 +106,12 @@ The following is a list of files in the [`Magento_CheckoutAgreement`] module tha
 * [Configure JS resources]
 
 [mixin]: https://en.wikipedia.org/wiki/Mixin
-[application area]: {{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html
+[application area]: {{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html
 [AMD module]: https://en.wikipedia.org/wiki/Asynchronous_module_definition
-[grid column component]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js
-[`view/frontend/requirejs-config.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/requirejs-config.js
-[`view/frontend/web/js/model/place-order-mixin.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js
-[`view/frontend/web/js/model/set-payment-information-mixin.js`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/set-payment-information-mixin.js
-[`Magento_CheckoutAgreement`]: https://github.com/magento/magento2/blob/{{page.guide_version}}/app/code/Magento/CheckoutAgreements
-[About AMD modules and RequireJS]: {{page.baseurl}}javascript-dev-guide/javascript/js-resources.html#requirejs-library
-[Configure JS resources]: {{page.baseurl}}javascript-dev-guide/javascript/js-resources.html
+[grid column component]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js
+[`view/frontend/requirejs-config.js`]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/requirejs-config.js
+[`view/frontend/web/js/model/place-order-mixin.js`]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js
+[`view/frontend/web/js/model/set-payment-information-mixin.js`]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/set-payment-information-mixin.js
+[`Magento_CheckoutAgreement`]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/CheckoutAgreements
+[About AMD modules and RequireJS]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html#requirejs-library
+[Configure JS resources]: {{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html

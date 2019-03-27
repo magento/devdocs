@@ -1,16 +1,13 @@
 ---
-layout: default
-group: cloud
+group: cloud-guide
 subgroup: 120_env
 title: Example setting variables
 menu_title: Example setting variables
 menu_order: 15
 menu_node:
-version: 2.1
-github_link: cloud/env/set-variables.md
 ---
 
-For security reasons, we strongly recommend you change the Magento Admin URI, administrator user name, and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
+For security reasons, we strongly recommend you change the Magento Admin URI, administrator username, and the administrator's password. This makes it harder for someone else to log in to the Magento Admin and change settings.
 
 Environment variables are inherited from the parent environment to child environments. You should make these changes in the `master` environment so all other environments start with the same values.
 
@@ -23,7 +20,7 @@ To change the Admin URI and administrator password:
 1.  Set the variable values.
 
         magento-cloud variable:set <name> <value> -e <environment ID>
-2.  To set the administrator's user name to `meister_x2U8` in the `master` environment, enter:
+2.  To set the administrator's username to `meister_x2U8` in the `master` environment, enter:
 
         magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
 3.  Wait for the project to redeploy.
@@ -54,7 +51,7 @@ To change the Admin URI and administrator password:
             http://master-k4wtvm7zogr5s.us.magentosite.cloud/ is served by application `mymagento`
             https://master-k4wtvm7zogr5s.us.magentosite.cloud/ is served by application `mymagento`
 
-    In this example, go to `http://master-k4wtvm7zogr5s.us.magentosite.cloud/magento_g8v10` and log in using the user name `admin` and password `admin_A456`
+    In this example, go to `http://master-k4wtvm7zogr5s.us.magentosite.cloud/magento_g8v10` and log in using the username `admin` and password `admin_A456`
 
 Optional: You can also create an environment and list the environment variables.
 

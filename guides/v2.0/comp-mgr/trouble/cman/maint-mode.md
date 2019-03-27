@@ -1,13 +1,10 @@
 ---
-layout: default
-group: compman
+group: software-update-guide
 subgroup: 50_trouble
 title: Maintenance mode options for upgrade
 menu_title: Maintenance mode options for upgrade
 menu_node:
 menu_order: 200
-version: 2.0
-github_link: comp-mgr/trouble/cman/maint-mode.md
 functional_areas:
   - Upgrade
 ---
@@ -16,9 +13,8 @@ This topic discusses how you can create a custom maintenance page to display to 
 
 Creating a custom page to which to {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} users prevents any access to the site and also informs your users that the site is undergoing maintenance.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>You must perform the tasks in this section as a user with <code>root</code> privileges.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+You must perform the tasks in this section as a user with `root` privileges.
 
 See one of the following sections for more information:
 
@@ -27,6 +23,7 @@ See one of the following sections for more information:
 *	[Custom maintenance page for nginx](#compman-trouble-maint-nginx)
 
 ## Create the custom maintenance page {#compman-trouble-maint-create}
+
 To create a maintenance page and redirect to it, first create a maintenance page named:
 
 *	Apache: `<web server docroot>/maintenance.html`
@@ -50,13 +47,16 @@ body
 </style>
 </head>
 <body>
-<h1>Temporarily offline</h1>
+
+# Temporarily offline
+
 <p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
 </body>
 </html>
 {% endhighlight %}
 
 ## Custom maintenance page for Apache {#compman-trouble-maint-apache}
+
 This section discusses how to create a custom maintenance page and how to redirect traffic to it.
 
 The example in this section shows how to modify the following files, which is one way to set up your maintenance page:
@@ -92,11 +92,12 @@ To redirect traffic to a custom maintenance page:
 4. Enter the following command:
 
 		touch <web server docroot>/maintenance.enable
-5.	[Upgrade your system]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+5.	[Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete `maintenance.enable`.
 
 ## Custom maintenance page for nginx {#compman-trouble-maint-nginx}
+
 This section discusses how to create a custom maintenance page and how to redirect traffic to it.
 
 To redirect traffic to a custom maintenance page:
@@ -141,7 +142,7 @@ To redirect traffic to a custom maintenance page:
 3. Reload the nginx configuration:
 
 		service nginx reload
-5.	[Upgrade your system]({{page.baseurl}}comp-mgr/upgrader/upgrade-start.html).
+5.	[Upgrade your system]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 7.	Test your site to make sure it functions correctly.
 6.	After the upgrade is done, delete or rename `maintenance.enable`
 5.	Reload the nginx configuration:

@@ -1,13 +1,6 @@
 ---
-layout: default
-group: config-guide
-subgroup: 12_cron
+group: configuration-guide
 title: Set up a custom cron job and cron group
-menu_title: Set up a custom cron job and cron group
-menu_order: 1
-menu_node: parent
-version: 2.1
-github_link: config-guide/cron/custom-cron.md
 functional_areas:
   - Configuration
   - System
@@ -21,12 +14,12 @@ If you use a Magento-provided cron group, you don't have to define a custom cron
 The Magento application provides the following cron groups:
 
 *	`default`, which contains most cron jobs
-*	`index`, which refreshes [indexers]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-index.html)
+*	`index`, which refreshes [indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)
 *	These topics are available in {{site.data.var.ee}} only
-	*	`staging`, which runs [Staging-related](http://docs.magento.com/m2/ee/user_guide/cms/content-staging.html){:target="_blank"} tasks
+	*	`staging`, which runs [Staging-related](http://docs.magento.com/m2/ee/user_guide/cms/content-staging.html) tasks
 	*	`catalog_event`, which runs tasks for target and shopping cart rules
 
 See the following topics for details:
 
-*	[Custom cron job and cron group reference]({{ page.baseurl }}config-guide/cron/custom-cron-ref.html)
-*	[Configure a custom cron job and cron group (tutorial)]({{ page.baseurl }}config-guide/cron/custom-cron-tut.html)
+*	[Custom cron job and cron group reference]({{ page.baseurl }}/config-guide/cron/custom-cron-ref.html)
+*	[Configure a custom cron job and cron group (tutorial)]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)

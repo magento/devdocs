@@ -1,14 +1,11 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: 99_Module Development
 title: Factories
 menu_title: Factories
 menu_order: 6
 contributor_name: Classy Llama
 contributor_link: http://www.classyllama.com/
-version: 2.0
-github_link: extension-dev-guide/factories.md
 ---
 
 ## Overview
@@ -54,20 +51,18 @@ class BaseFactory
 }
 {% endhighlight %}
 
-
 ## Writing factories
 
-Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an [automatically generated]({{page.baseurl}}extension-dev-guide/code-generation.html) class type.
-When you reference a factory in a class constructor, Magento's [object manager]({{page.baseurl}}extension-dev-guide/object-manager.html) generates the factory class if it does not exist.
+Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an [automatically generated]({{ page.baseurl }}/extension-dev-guide/code-generation.html) class type.
+When you reference a factory in a class constructor, Magento's [object manager]({{ page.baseurl }}/extension-dev-guide/object-manager.html) generates the factory class if it does not exist.
 
 Factories follow the naming convention `<class-type>Factory` where `<class-type>` is the name of the class the factory instantiates.
 
-For example the automatically generated `Magento\Cms\Model\BlockFactory` class is a factory that instantiates the class [`Magento\Cms\Model\Block`]({{site.mage2000url}}app/code/Magento/Cms/Model/Block.php).
-
+For example the automatically generated `Magento\Cms\Model\BlockFactory` class is a factory that instantiates the class [`Magento\Cms\Model\Block`]({{ site.mage2000url }}app/code/Magento/Cms/Model/Block.php).
 
 ## Using factories
 
-You can get the singleton instance of a factory for a specific model using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html){:target="_blank"}.
+You can get the singleton instance of a factory for a specific model using [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html){:target="_blank"}.
 
 The following example shows a class getting the `BlockFactory` instance through the constructor:
 
@@ -97,11 +92,11 @@ $resultItem = $this->itemFactory->create([
 
 Factories are smart enough to resolve dependencies and allow you to get the correct instance of an interface as defined in your module's `di.xml`.
 
-For example, in the [`CatalogInventory`]({{site.mage2000url}}app/code/Magento/CatalogInventory){:target="_blank"} module, the `di.xml` file contains the following entry:
+For example, in the [`CatalogInventory`]({{ site.mage2000url }}app/code/Magento/CatalogInventory){:target="_blank"} module, the `di.xml` file contains the following entry:
 
 {% highlight xml %}
 <preference for="Magento\CatalogInventory\Api\Data\StockItemInterface" type="Magento\CatalogInventory\Model\Stock\Item" />
 {% endhighlight %}
 
-It instructs Magento to use the specific [`Item`]({{site.mage2000url}}app/code/Magento/CatalogInventory/Model/Stock/Item.php){:target="_blank"} class wherever the [`StockItemInterface`]({{site.mage2000url}}app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php){:target="_blank"} is used.
+It instructs Magento to use the specific [`Item`]({{ site.mage2000url }}app/code/Magento/CatalogInventory/Model/Stock/Item.php){:target="_blank"} class wherever the [`StockItemInterface`]({{ site.mage2000url }}app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php){:target="_blank"} is used.
 When a class in that {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.

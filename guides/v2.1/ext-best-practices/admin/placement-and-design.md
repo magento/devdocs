@@ -1,12 +1,9 @@
 ---
-layout: default
-group: ext-best-practices
+group: extension-best-practices
 subgroup: 01_Admin
 title: Admin Panel Placement and Design
 menu_title: Admin Panel Placement and Design
 menu_order: 1
-version: 2.1
-github_link: ext-best-practices/admin/placement-and-design.md
 functional_areas:
   - Standards
 ---
@@ -19,33 +16,37 @@ Magento’s flexible platform lets you place an {% glossarytooltip 55774db9-bf9d
 
 We discourage practices that diminish the user experience in the Admin. The following design decisions that have been seen in some extensions create a negative user experience and should be avoided.
 
-### Icons in the Primary Navigation
+### Icons in the Primary Navigation {#icons-in-navigation}
+
 Icons should not be added to the primary navigation panel in the Admin. If every extension added its own icon to the primary navigation panel, the interface will quickly become cluttered and unusable.
 
 Icons should not be used in any of the navigation submenu panels to bring attention to your extension. Your navigation listing should conform to the look and feel of its surroundings and not look out of place.
 
 Your extension's settings and configuration area is an appropriate place to use icons.
 
-For more information about icon design and Magento's icon library, see the article about  [Iconography]({{page.baseurl}}design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
+For more information about icon design and Magento's icon library, see the article about  [Iconography]({{ page.baseurl }}/design-styleguide/iconography/iconography.html) in the Admin Style Guide book.
 
 ### Advertising in Navigation
+
 It is not appropriate to use the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} navigation for marketing or to {% glossarytooltip 9eb0e3fa-cb69-4e21-9ad0-cabeb98afcda %}cross-sell{% endglossarytooltip %} extensions after your extensions has been installed in Magento. A [new section](#feature-extensions) is under proposal that will possibly be more suitable for marketing and advertising content.
 
 Do not use the name of your company or marketing jargon as part of an extension name or the extension name itself in the Admin. You should create a unique feature name that users will understand because people usually search for extensions by feature or function keywords, not by a company or brand name.
 
 ## Placement guidelines for extension types
+
 From the list of extension types below, determine the type of extension you have and read the guidance for placement and style.
 
 *The names for the types of extensions listed below are for reference purposes only.*
 
 ### Standard Connector
+
 These extensions provide additional {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} over Magento's existing API and is responsible for providing settings between Magento and another system.
 
 **Placement**
 
-All required settings for this connector type should appear in the **Stores > Settings > Configuration** section. The actual listings for these extension settings should appear after all of Magento's listed settings. All the setting details and configurations should appear in the section to the right.
+All required settings for this connector type should appear in the **Stores** > **Settings** > **Configuration** section. The actual listings for these extension settings should appear after all of Magento's listed settings. All the setting details and configurations should appear in the section to the right.
 
-![Connector settings placement]({{ site.baseurl }}common/images/ext-best-practices/connector-settings-placement.png)
+![Connector settings placement]({{ site.baseurl }}/common/images/ext-best-practices/connector-settings-placement.png)
 
 **Style**
 
@@ -55,20 +56,22 @@ All required settings for this connector type should appear in the **Stores > Se
 ---
 
 ### Store Feature Connector
+
 These extensions are responsible for integrating with different systems and need additional
-settings displayed under specific entries in the **Store > Settings > Configuration** section.
+settings displayed under specific entries in the **Store** > **Settings** > **Configuration** section.
 
 **Placement**
 
-The settings for these extensions should be displayed under its respective parent section under the **Store > Settings > Configuration** section.
+The settings for these extensions should be displayed under its respective parent section under the **Store** > **Settings > **Configuration** section.
 
-For example, if the extension is for Shipping, then you can place it under **Store > Settings > Configuration > Sales > Shipping Settings**.
+For example, if the extension is for Shipping, then you can place it under **Store** > **Settings** > **Configuration** > **Sales** > **Shipping Settings**.
 
-![Store Feature Connector placement]({{site.baseurl}}common/images/ext-best-practices/store-feature-connector-placement.png)
+![Store Feature Connector placement]({{ site.baseurl }}/common/images/ext-best-practices/store-feature-connector-placement.png)
 
 ---
 
 ### Connector with additional features
+
 These extensions are responsible for integrating with different systems and need additional settings and configurations for synchronizing with these systems.
 
 **Placement**
@@ -77,7 +80,7 @@ If all the settings for an extension can be consolidated into one section, then 
 
 For example, if your extension is related to the "Reports" functionality then its settings should appear as a link under the Report Section in the Primary navigation.
 
-![Connector with additional features placement]({{site.baseurl}}common/images/ext-best-practices/additional-feature-placement.png)
+![Connector with additional features placement]({{ site.baseurl }}/common/images/ext-best-practices/additional-feature-placement.png)
 
 **Style**
 
@@ -94,12 +97,11 @@ These are extensions which provide additional functionality to Magento that do n
 
 There will be a new, dedicated section designed for such exclusive extensions. When feature-level extensions are installed, those extensions will live under this section. The exact final name of this new section has not been decided (we welcome your feedback), but in the image below it is named Extensions.
 
-![Feature Placement]({{site.baseurl}}common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
+![Feature Placement]({{ site.baseurl }}/common/images/ext-best-practices/feature-placement.png){:height="190px" width="350px"}
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The name and icon for this section is still TBD.</p>
-  <p>This new section is a future proposal, and we welcome feedback about if and how advertisements should be displayed here.</p>
-</div>
+{:.bs-callout .bs-callout-info}
+  The name and icon for this section is still TBD.
+  This new section is a future proposal, and we welcome feedback about if and how advertisements should be displayed here.
 
 Since this section is not yet available, you should place your extension in one of the previously mentioned areas where it would be the most appropriate.
 

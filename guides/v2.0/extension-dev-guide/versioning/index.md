@@ -1,17 +1,12 @@
 ---
-layout: default
-group: extension-dev-guide
+group: php-developer-guide
 subgroup: Versioning
 title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
-version: 2.0
-github_link: extension-dev-guide/versioning/index.md
 redirect_from: 
   - /guides/v2.0/architecture/versioning.html
-  - /guides/v2.1/architecture/versioning.html
-  - /guides/v2.2/architecture/versioning.html
 ---
 
 Magento software and Magento module releases have their own unique version number.
@@ -72,10 +67,10 @@ Or it can be used to declare a dependency on a particular version of a component
 
 The following example shows how versions are used with composer to install software and third-party extensions.
 
-This example uses several composer packages on the public github to simulate a merchant site, 2 core Magento modules, and a third-party extension.
+This example uses several composer packages on the public GitHub to simulate a merchant site, 2 core Magento modules, and a third-party extension.
 
 <ol>
-<li>Start by cloning the master branch from github.
+<li>Start by cloning the master branch from GitHub.
 
 
   This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
@@ -177,9 +172,9 @@ This example uses several composer packages on the public github to simulate a m
 
 [Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
 
-[version-dependencies]: {{page.baseurl}}extension-dev-guide/versioning/dependencies.html
-[codebase-changes]: {{page.baseurl}}extension-dev-guide/versioning/codebase-changes.html
+[version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
+[codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
 [semantic-versioning]: http://semver.org/
 [composer-versioning]: https://getcomposer.org/doc/04-schema.md#version
 [php-version-compare]: http://php.net/version_compare
-[composer-json]: {{page.baseurl}}extension-dev-guide/build/composer-integration.html
+[composer-json]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html

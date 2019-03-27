@@ -1,19 +1,15 @@
 ---
-layout: default
-group: migration
+group: migration-guide
 subgroup: B_Creating a migration plan
 title: Creating a migration plan
 menu_title: Creating a migration plan
 menu_node: parent
 menu_order: 2
-version: 2.0
-github_link: migration/migration-plan.md
-redirect_from: /guides/v1.0/migration/migration-plan.html
 functional_areas:
   - Tools
 ---
 
-To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will prove helpful.
+To migrate successfully and avoid issues, you need to thoroughly plan and test your migration. We hope the guidelines below will prove helpful.
 
 ## Before you start: Consider upgrade
 
@@ -80,7 +76,7 @@ In such migration testing, follow these steps:
 
 Sometimes you may want to have your Magento 2 store with different catalog structure, sales rules, CMS pages, etc. after migration.
 
-It is is important to practice caution while working through manual data changes. Mistakes will create errors in the incremental data migration step that follows.
+It is important to practice caution while working through manual data changes. Mistakes will create errors in the incremental data migration step that follows.
 
 For example, a product deleted from Magento 2: the one that has been bought on your live Magento 1 store and which is not available anymore in your Magento 2 store. Transferring data about such purchase might cause an error while running the Data Migration Tool in Delta mode.
 
@@ -94,9 +90,8 @@ You can stop transferring updates at any time by pressing `Ctrl+C`
 * Test your Magento 2 site during this time to catch any issues as soon as possible.
 In case of such issues, press `Ctrl+C` to stop incremental migration and start it again after issues are resolved
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
-</div>
+{: .bs-callout .bs-callout-info }
+Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.
 
 ## Step 7: Go live
 
@@ -120,7 +115,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 
 
 <!-- LINK ADDRESSES -->
-[Magento system requirements]: {{page.baseurl}}install-gde/system-requirements-tech.html
+[Magento system requirements]: {{ page.baseurl }}/install-gde/system-requirements-tech.html
 [Magento Marketplace]: https://marketplace.magento.com
-[Technical Specification]: {{page.baseurl}}migration/migration-tool-internal-spec.html
-[Configuration guide]: {{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html
+[Technical Specification]: {{ page.baseurl }}/migration/migration-tool-internal-spec.html
+[Configuration guide]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html

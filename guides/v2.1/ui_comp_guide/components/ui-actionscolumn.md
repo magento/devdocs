@@ -1,24 +1,13 @@
 ---
-layout: default
-group: UI_Components_guide
+group: ui-components-guide
 subgroup: components
 title: ActionsColumn component
 menu_title: ActionsColumn component
-version: 2.1
-github_link: ui_comp_guide/components/ui-actionscolumn.md
 ---
-
-## Overview
 
 The ActionsColumns component implements a table's column responsible for displaying and performing a list of record-related actions.
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
-
 ## Configuration options
-
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
-
-ActionsColumn-specific configuration:
 
 <table>
   <tr>
@@ -35,13 +24,13 @@ ActionsColumn-specific configuration:
   </tr>
   <tr>
     <td><code>draggable</code></td>
-    <td>Defines whether a user can change column's position in the table by grabbing column's header and draging it across the table.</td>
+    <td>Defines whether a user can change column's position in the table by grabbing column's header and dragging it across the table.</td>
     <td>Boolean</td>
     <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>fieldClass</code></td>
-    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>Additional CSS classes added to the column's field elements.</td>
     <td>{[name: string]: Boolean}</td>
     <td><code>{'data-grid-actions-cell': true}</code></td>
   </tr>
@@ -71,13 +60,13 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>callback</code></td>
     <td>Custom action's handler.</td>
-    <td><a href="{{page.baseurl}}ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a> | Array &lt;ColumnAction&gt;  </td>
+    <td><a href="{{ page.baseurl }}/ui_comp_guide/components/ui-column.html#column_action">ColumnAction</a> | Array &lt;ColumnAction&gt;  </td>
     <td>Optional</td>
   </tr>
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message shown before applying the action.</td>
-    <td><br>{<br>title: string;<br>message: string<br>}<br></td>
+    <td><br />{<br />title: string;<br />message: string<br />}<br /></td>
     <td>Optional</td>
   </tr>
   <tr>
@@ -99,3 +88,9 @@ ActionsColumn-specific configuration:
     <td>Required</td>
   </tr>
 </table>
+
+## Source files
+
+Extends [`Column`](/guides/v2.2/ui_comp_guide/components/ui-column.html):
+
+- [`app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
