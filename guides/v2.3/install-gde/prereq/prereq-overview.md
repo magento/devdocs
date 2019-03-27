@@ -30,6 +30,8 @@ Enter the following commands as a user with `root` privileges:
 
 ```bash
 apt-get update
+```
+```bash
 apt-get upgrade
 ```
 
@@ -37,6 +39,8 @@ apt-get upgrade
 
 ```bash
 yum -y update
+```
+```bash
 yum -y upgrade
 ```
 
@@ -52,7 +56,7 @@ Ubuntu: `apache2 -v`
 
 You must run Apache version 2.2 or 2.4 as the following result indicates:
 
-```bash
+```terminal
 Server version: Apache/2.2.15 (Unix)
 Server built:   Jul 23 2014 14:17:29
 ```
@@ -72,7 +76,7 @@ php -v
 
 You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 7.1.x or 7.2.x as the following result indicates:
 
-```bash
+```terminal
 PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
   Copyright (c) 1997-2017 The PHP Group
   Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
@@ -94,7 +98,7 @@ mysql -u magento -p
 
 You must run MySQL version 5.6 or later as the following result indicates:
 
-```bash
+```terminal
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 871
 Server version: 5.6.21 MySQL Community Server (GPL)
