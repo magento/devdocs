@@ -23,7 +23,7 @@ The module heavily depends on the Magento_Company module, which must be installe
 
 The module does not create any backward incompatible changes. Can be deactivated and uninstalled at any time.
 
-When the module is uninstalled, the other [ProductType]SharedCatalog modules won’t work.
+When the module is uninstalled, the other [ProductType]SharedCatalog modules won't work.
  
 ## Structure
  
