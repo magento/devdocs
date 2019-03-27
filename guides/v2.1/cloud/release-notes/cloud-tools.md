@@ -30,6 +30,20 @@ The release notes include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
+## v2002.0.17
+
+-   {:.new}<!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x (requires Magento version 2.3.1).
+
+-   {:.new}<!-- MAGECLOUD-3196 -->**New Docker image**—Added an Elasticsearch version 6.5 image to the Docker environment.
+
+-   {:.new}<!-- MAGECLOUD-3223 -->**New Docker image**—Added a Redis version 5.0 image to the Docker environment.
+
+-   {:.new}<!-- MAGECLOUD-2870 -->**New environment variable**—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the SCD_COMPRESSION_TIMEOUT environment variable. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_compression_timeout) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_compression_timeout) content.
+
+-   {:.fix}<!-- MAGECLOUD-3246 -->Added the `--use-rewrites` option to the Magento install command so that it uses web server rewrites for generated links in the storefront and Admin access to improve security and customer experience.
+
+-   {:.fix}<!-- MAGECLOUD-2895 -->Added timestamps to the `var/log/install_upgrade.log` file so that it shows dates for the Magento installation and upgrade events.
+
 ## v2002.0.16
 
 {:.bs-callout .bs-callout-info}
