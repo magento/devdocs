@@ -264,7 +264,7 @@ stage:
 -  **Default**—`600`
 -  **Version**—Magento 2.1.4 and later
 
-Specifies maximum execution time, in seconds, for static content compression command. Compression command will be interrupted if not finished until timeout.
+When the time it takes to compress the static assets exceeds the compression timeout limit, it interrupts the deployment process. Set the maximum execution time, in seconds, for the static content compression command.
 
 ```yaml
 stage:
