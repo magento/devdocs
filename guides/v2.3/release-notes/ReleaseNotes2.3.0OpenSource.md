@@ -7,9 +7,31 @@ title: Magento Open Source 2.3.0 Release Notes
 
 We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.2.8. **We strongly suggest that you install these full patches as soon as you can**.
+ 
+See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+
+Follow these steps to download and apply this patch:
+
+1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
+
+2. Select the Git-based option from **Select your format**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
 ## Highlights
 
 {{site.data.var.ce}} 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
+
+
+
 
 ### Merchant tool enhancements
 
