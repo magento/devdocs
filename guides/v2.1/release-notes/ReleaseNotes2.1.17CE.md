@@ -11,6 +11,25 @@ We are pleased to present {{site.data.var.ce}} 2.1.17. This release includes mul
 This release include security enhancements that help close cross-site scripting, arbitrary code execution, and sensitive data disclosure vulnerabilities as well as other security issues. No confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
 
 
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A SQL injection vulnerability has been identified in 2.1.x Magento code. To quickly protect your store from this vulnerability, you'll need to install patch PRODSECBUG-2198.  See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+ 
+Follow these steps to download and apply this patch:
+
+1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
+
+2. Select the Git-based option from **Select your format**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
+
+
 ## Highlights
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.17) have been ported to 2.3.1, 2.2.8, 1.14.4.1, and 1.9.4.1, as appropriate. 
