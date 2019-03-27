@@ -33,7 +33,7 @@ You can apply these levels of customization to your site, where the levels requi
     
     This is achieved using the Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} engine. No PHP coding is required to make layout changes, but the layout engine is moderately sophisticated.
     
-*   Finally, you can develop new modules to add new custom functionality to your site or to extend functionality provided by existing Magento or third party modules.
+*   Finally, you can develop new modules to add new custom functionality to your site or to extend the functionality provided by existing Magento or third party modules.
     
     This third level of customization is not addressed in this guide.
     

@@ -12,6 +12,28 @@ We are pleased to present Magento Commerce 2.3.0 General Availability. This rele
 Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
 
+
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A critical SQL injection vulnerability has been identified in pre-2.3.1 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.3.1. **We strongly suggest that you install these full patches as soon as you can**. 
+ 
+See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+Follow these steps to download and apply this patch:
+
+1. Access [My Account](https://account.magento.com/customer/account/login).
+
+2. Navigate to the **Downloads** tab. Select the Magento edition and version you need. 
+
+3. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
 ### Merchant tool enhancements
 
 * **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
