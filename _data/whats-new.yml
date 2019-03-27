@@ -4,8 +4,45 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Mar 26 10:38:40 2019
+updated: Wed Mar 27 18:03:03 2019
 entries:
+- description: Added information about backward incompatible changes in 2.3.1 release
+    for [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html#releases-2_3_0-2_3_1)
+    and [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html#releases-2_3_0-2_3_1).
+  versions: 2.3.1
+  type: Major update
+  date: March 27, 2019
+  link: https://github.com/magento/devdocs/pull/4047
+- description: Updated the [Module Reference Guide](https://devdocs.magento.com/guides/v2.3/mrg/intro.html)
+    topics.
+  versions: 2.3.1
+  type: Major update
+  date: March 27, 2019
+  link: https://github.com/magento/devdocs/pull/4072
+- description: Added information about backward incompatible changes in 2.1.17 release
+    for [Open Source](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/open-source.html#releases-2_1_16-2_1_17)
+    and [Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/backward-incompatible-changes/commerce.html#releases-2_1_16-2_1_17).
+  versions: 2.1.17
+  type: Technical changes
+  date: March 27, 2019
+  link: https://github.com/magento/devdocs/pull/4044
+- description: Added information about backward incompatible changes in 2.2.8 release
+    for [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/open-source.html#releases-2_2_7-2_2_8)
+    and [Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes/commerce.html#releases-2_2_7-2_2_8).
+  versions: 2.2.8
+  type: Major update
+  date: March 27, 2019
+  link: https://github.com/magento/devdocs/pull/4045
+- description: Updated [2.1.17](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.17CE.html),
+    [2.2.7](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.7CE.html),
+    [2.2.8](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html),
+    [2.3.0](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.0OpenSource.html),
+    and [2.3.1](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)
+    release notes with instructions for addressing a critical SQL injection vulnerability.
+  versions: 2.1.17, 2.2.8, 2.3.0, 2.3.1
+  type: Major update
+  date: March 26, 2019
+  link: https://github.com/magento/devdocs/pull/4049
 - description: Added [GraphQL release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html)
   versions: 2.3.1
   type: New topic
