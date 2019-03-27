@@ -40,7 +40,7 @@ If you specify a sales channel that is already assigned to another stock, Magent
 
 **Sample usage**
 
-`POST /V1/inventory/stock-source-links`
+`POST <host>/rest/<store_code>/V1/inventory/stock-source-links`
 
 **Payload**
 
@@ -73,7 +73,7 @@ The `POST /V1/inventory/stock-source-links-delete` endpoint breaks the link betw
 
 **Sample Usage**
 
-`POST /V1/inventory/stock-source-links-delete`
+`POST <host>/rest/<store_code>/V1/inventory/stock-source-links-delete`
 
 **Payload**
 
@@ -102,7 +102,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET /V1/inventory/stock-source-links?searchCriteria[filter_groups][0][filters][0][field]=stock_id&searchCriteria[filter_groups][0][filters][0][value]=4&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/inventory/stock-source-links?searchCriteria[filter_groups][0][filters][0][field]=stock_id&searchCriteria[filter_groups][0][filters][0][value]=4&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 
@@ -149,7 +149,7 @@ The `GET /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/:stock_
 
 **Sample Usage**
 
-`GET /V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/4`
+`GET <host>/rest/<store_code>/V1/inventory/get-sources-assigned-to-stock-ordered-by-priority/4`
 
 **Payload**
 

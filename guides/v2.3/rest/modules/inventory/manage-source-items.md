@@ -41,7 +41,7 @@ Unassigning a source clears all quantity data. For this example, this is OK, bec
 
 **Sample usage**
 
-`POST V1/inventory/source-items-delete`
+`POST <host>/rest/<store_code>/V1/inventory/source-items-delete`
 
 **Payload**
 
@@ -72,7 +72,7 @@ The following example assigns `1000` units of product `new_product1` to the `cen
 
 **Sample usage**
 
-`POST V1/inventory/source-items`
+`POST <host>/rest/<store_code>/V1/inventory/source-items`
 
 **Payload**
 
@@ -117,9 +117,9 @@ The following call returns all source items for `sku` = `new_product2`.
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/source-items?searchCriteria[filter_groups][0][filters][0][field]=sku&searchCriteria[filter_groups][0][filters][0][value]=new_product2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/inventory/source-items?searchCriteria[filter_groups][0][filters][0][field]=sku&searchCriteria[filter_groups][0][filters][0][value]=new_product2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 
