@@ -21,12 +21,12 @@ Each query attribute is defined below:
 
 Attribute |  Description
 --- | ---
-`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
 `pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
+`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 {:style="table-layout:auto;"}
 
 ## ProductFilterInput object {#ProductFilterInput}
@@ -129,11 +129,11 @@ Each attribute is described below:
 
 Attribute |  Description
 --- | ---
+`filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
 `items` | An array of products that match the specified search criteria.
 `page_info` | An object that includes the `page_info` and `currentPage` values specified in the query
-`total_count` | The number of products returned
-`filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
 `sort_fields` | An object that includes the default sort field and all available sort fields
+`total_count` | The number of products returned
 {:style="table-layout:auto;"}
 
 When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
@@ -243,8 +243,8 @@ A `Money` object defines a monetary value, including a numeric value and a curre
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`value` | Float | The price of the product
 `currency` | CurrencyEnum | A three-letter currency code, such as `USD` or `EUR`.
+`value` | Float | The price of the product
 {:style="table-layout:auto;"}
 
 ##### PriceAdjustment array {#PriceAdjustment}
@@ -264,11 +264,11 @@ Attribute |  Data Type | Description
 
 Attribute | Type | Description
 --- | --- | ---
-`sku` | String | The identifier of the linked product
 `link_type` | String | One of `related`, `associated`, `upsell`, or `crosssell`.
 `linked_product_sku` | String | The SKU of the linked product
 `linked_product_type` | String | The type of linked product (`simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`)
 `position` | Int | The position within the list of product links
+`sku` | String | The identifier of the linked product
 {:style="table-layout:auto;"}
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
@@ -277,14 +277,14 @@ Attribute | Type | Description
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int | The identifier assigned to the object
-`media_type` | String | `image` or `video`
-`label` | String | The "alt" text displayed on the UI when the user points to the image
-`position` | Int | The media item's position after it has been sorted
-`disabled` | Boolean | Whether the image is hidden from view
-`types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
-`file` | String | The path of the image on the server
 `content` | ProductMediaGalleryEntriesContent | Contains a [ProductMediaGalleryEntriesContent](#ProductMediaGalleryEntriesContent) object
+`disabled` | Boolean | Whether the image is hidden from view
+`file` | String | The path of the image on the server
+`id` | Int | The identifier assigned to the object
+`label` | String | The "alt" text displayed on the UI when the user points to the image
+`media_type` | String | `image` or `video`
+`position` | Int | The media item's position after it has been sorted
+`types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
 `video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
 {:style="table-layout:auto;"}
 
@@ -295,8 +295,8 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `base64_encoded_data` | String | The image in base64 format
-`type` | String | The MIME type of the file, such as `image/png`
 `name` | String | The file name of the image
+`type` | String | The MIME type of the file, such as `image/png`
 {:style="table-layout:auto;"}
 
 #### ProductMediaGalleryEntriesVideoContent object {#ProductMediaGalleryEntriesVideoContent}
@@ -320,9 +320,9 @@ The `ProductTierPrices` object defines a tier price, which is a quantity discoun
 Attribute | Type | Description
 --- | --- | ---
 `customer_group_id` | Int | The ID of the customer group
+`percentage_value` | Float | The percentage discount of the item
 `qty` | Float | The number of items that must be purchased to qualify for tier pricing
 `value` | Float | The price of the fixed price item
-`percentage_value` | Float | The percentage discount of the item
 `website_id` | Int | The ID assigned to the website
 {:style="table-layout:auto;"}
 
@@ -341,10 +341,10 @@ The `LayerFilter` object can be returned in a response to help create layered na
 
 Attribute | Type | Description
 --- | --- | ---
+`filter_items` |  [LayerFilterItemInterface] | An array of filter items
+`filter_items_count` | Int | The number of filter items in filter group
 `name` | String | The layered navigation filter name
 `request_var` | String | The request variable name for the filter query
-`filter_items_count` | Int | The number of filter items in filter group
-`filter_items` |  [LayerFilterItemInterface] | An array of filter items
 {:style="table-layout:auto;"}
 
 ### LayerFilterItemInterface
@@ -353,9 +353,9 @@ Attribute | Type | Description
 
 Attribute | Type | Description
 --- | --- | ---
+`items_count` | Int | The number of items the filter returned
 `label` | String | The label applied to a filter
 `value_string` | String | The value for filter request variable to be used in a query
-`items_count` | Int | The number of items the filter returned
 {:style="table-layout:auto;"}
 
 ## SortFields object
@@ -372,8 +372,8 @@ Attribute | Type | Description
 
 Attribute | Type | Description
 --- | --- | ---
-`value` | String | The attribute name or code to use as the sort field
 `label` | String | The attribute's label
+`value` | String | The attribute name or code to use as the sort field
 {:style="table-layout:auto;"}
 
 ## Sample query
