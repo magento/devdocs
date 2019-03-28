@@ -74,17 +74,9 @@ defaults:
 
   -
     scope:
-      path: mftf/2.2
+      path: mftf/docs
     values:
-      group: magento-functional-testing-framework-guide
-      functional_areas:
-        - Test
-
-  -
-    scope:
-      path: mftf/2.3
-    values:
-      group: magento-functional-testing-framework-guide-2_3
+      group: mftf
       functional_areas:
         - Test
 
@@ -147,7 +139,6 @@ relative_links:
     - codelinks
     - community
     - guides
-    - mftf
     - redoc
     - tmp
     - 404.md

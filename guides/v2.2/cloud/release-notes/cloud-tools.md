@@ -8,6 +8,7 @@ functional_areas:
 redirect_from:
    - /guides/v2.3/cloud/release-notes/CloudReleaseNotes.html
 ---
+<!-- 2.2 release notes -->
 
 <!-- Assigning liquid variables for placeholder values
 {% assign base_url = "{{base_url}}" %}
@@ -28,6 +29,29 @@ The release notes include:
 
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
+
+## v2002.0.17
+
+{:.bs-callout .bs-callout-info}
+The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: Magento Open Source Patches](https://magento.com/tech-resources/download#download2288).
+
+-   {:.new}**Service updates**—Supported by Magento versions 2.2.8 and later 2.2.x versions.
+
+    -   <!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x.
+
+    -   Added support for Redis version 5.0.
+
+-   {:.new}**New Docker images**—Added the following services to the Docker build:
+
+    -   <!-- MAGECLOUD-3196 -->Elasticsearch 6.5
+
+    -   <!-- MAGECLOUD-3223 -->Redis 5.0
+
+-   {:.new}<!-- MAGECLOUD-2870 -->**New environment variable**—Previously, there was a hard-coded timeout for SCD compression. Now you can configure the SCD compression timeout using the **SCD_COMPRESSION_TIMEOUT** environment variable. See the definitions in the [build variables]({{page.baseurl}}/cloud/env/variables-build.html#scd_compression_timeout) and the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_compression_timeout) content.
+
+-   {:.fix}<!-- MAGECLOUD-3246 -->Added the `--use-rewrites` option to the Magento install command so that it uses web server rewrites for generated links in the storefront and Admin access to improve security and customer experience.
+
+-   {:.fix}<!-- MAGECLOUD-2895 -->Added timestamps to the `var/log/install_upgrade.log` file so that it shows dates for the Magento installation and upgrade events.
 
 ## v2002.0.16
 
@@ -65,7 +89,7 @@ The release notes include:
 
     -   Begin and end of the `setup:di:compile` process for generating classes
 
--  {:.new}**New environment variables**—
+-   {:.new}**New environment variables**—
 
     -   <!-- MAGECLOUD-3026 & MAGECLOUD-2963-->**[RESOURCE_CONFIGURATION deploy variable]({{page.baseurl}}/cloud/env/variables-deploy.html#resource_configuration)**—Use this variable to map a resource name to a database connection. 
 
