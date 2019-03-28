@@ -77,6 +77,8 @@ defaults:
       path: mftf/docs
     values:
       group: mftf
+      github_files: https://github.com/magento/magento2-functional-testing-framework/blob/develop/
+      github_repo: https://github.com/magento/magento2-functional-testing-framework/
       functional_areas:
         - Test
 
