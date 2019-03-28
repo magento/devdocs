@@ -122,7 +122,7 @@ $productResource = Bootstrap::getObjectManager()->create(ProductResource::class)
 $productResource->save($product);
 ```
 
-To use this fixture in a test, add it to the test's annotation in the following way:
+To use this fixture in a test, add it to the test's annotation in the following manner:
 
 ```php
     /**
