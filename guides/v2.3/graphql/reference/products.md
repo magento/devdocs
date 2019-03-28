@@ -16,15 +16,16 @@ products(
     sort: ProductSortInput
 ): Products
 ```
+
 Each query attribute is defined below:
 
 Attribute |  Description
 --- | ---
-`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
+`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
-`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
-`currentPage` | Specifies which page of results to return. The default value is 1. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
-`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information.
+`pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 {:style="table-layout:auto;"}
 
@@ -43,13 +44,13 @@ filter: {
 }
 ```
 
-See [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html) for more information about the operators.
+See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information about the operators.
 
 Magento processes the attribute values specified in  a `ProductFilterInput` as  simple data types (strings, integers, booleans). However, returned attributes can be a different, complex, data type. For example, in a response, `price` is an object that contains a monetary value and a currency code.
 
 The following attributes can be used to create filters. See the [Response](#Response) section for information about each attribute.
 
-```
+```text
 country_of_manufacture
 created_at
 custom_design
@@ -87,6 +88,8 @@ thumbnail
 thumbnail_label
 tier_price
 updated_at
+url_key
+url_path
 weight
 ```
 
@@ -114,13 +117,13 @@ content="GraphQL automatically filters out a product attribute if ALL of the fol
 
 The system returns a `Products` object containing the following information:
 
-{% highlight json %}
+```text
 items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
 filters: [LayerFilter]
 sort_fields: SortFields
-{% endhighlight %}
+```
 
 Each attribute is described below:
 
@@ -145,6 +148,7 @@ When a product requires a filter attribute that is not a field on its output sch
   </arguments>
 </type>
 ```
+
 This example adds `field_to_sort` and `other_field_to_sort` attributes to the `additionalAttributes` array defined in the `ProductEntityAttributesForAst` class. The array already contains the `min_price`, `max_price`, and `category_ids` attributes.
 
 ## ProductInterface {#ProductInterface}
@@ -164,7 +168,6 @@ The following table defines the `ProductInterface` attributes and objects.
 
 Attribute | Data type | Description
 --- | --- | ---
-
 `attribute_set_id` | Int | The ID number assigned to the product
 `canonical_url` | String  | Canonical URL
 `categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
@@ -257,7 +260,7 @@ Attribute | Type | Description
 
 `MediaGalleryEntry` defines characteristics about images and videos associated with a specific product.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `id` | Int | The identifier assigned to the object
 `media_type` | String | `image` or `video`
@@ -274,7 +277,7 @@ Field | Type | Description
 
 `ProductMediaGalleryEntriesContent` contains an image in base64 format and basic information about the image.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `base64_encoded_data` | String | The image in base64 format
 `type` | String | The MIME type of the file, such as `image/png`
@@ -285,7 +288,7 @@ Field | Type | Description
 
 `ProductMediaGalleryEntriesVideoContent` contains a link to a video file and basic information about the video.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `media_type` | String | Must be `external-video`
 `video_provider` | String | Optionally describes the video source
@@ -299,7 +302,7 @@ Field | Type | Description
 
 The `ProductTierPrices` object defines a tier price, which is a quantity discount offered to a specific customer group.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `customer_group_id` | Int | The ID of the customer group
 `qty` | Float | The number of items that must be purchased to qualify for tier pricing
@@ -312,7 +315,7 @@ Field | Type | Description
 
 `PhysicalProductInterface`defines the weight of all tangible products.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
 {:style="table-layout:auto;"}
@@ -321,7 +324,7 @@ Field | Type | Description
 
 The `LayerFilter` object can be returned in a response to help create layered navigation on your app.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `name` | String | The layered navigation filter name
 `request_var` | String | The request variable name for the filter query
@@ -331,9 +334,9 @@ Field | Type | Description
 
 ### LayerFilterItemInterface
 
-`LayerFilterItemInterface ` contains an array of items that match the terms defined in the filter.
+`LayerFilterItemInterface` contains an array of items that match the terms defined in the filter.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `label` | String | The label applied to a filter
 `value_string` | String | The value for filter request variable to be used in a query
@@ -344,7 +347,7 @@ Field | Type | Description
 
 The `SortFields` object contains the default value for sort fields as well as all possible sort fields.
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `default` | String | The default sort field
 `options` | `SortField` | An array that contains all the fields you can use for sorting
@@ -352,7 +355,7 @@ Field | Type | Description
 
 ### SortField object
 
-Field | Type | Description
+Attribute | Type | Description
 --- | --- | ---
 `value` | String | The attribute name or code to use as the sort field
 `label` | String | The attribute's label
@@ -360,25 +363,18 @@ Field | Type | Description
 
 ## Sample query
 
-You can review several general interest `products` queries at [Searches and pagination in GraphQL]({{ page.baseurl }}/graphql/search-pagination.html).
+You can review several general interest `products` queries at [Queries]({{ page.baseurl }}/graphql/queries.html).
 
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-``` text
+```text
 {
-  products (
-    filter: {
-      sku: {
-        like:"24-WB%"
-      }
-    }
+  products(
+    filter: { sku: { like: "24-WB%" } }
     pageSize: 20
     currentPage: 1
-    sort: {
-      name: DESC
-    }
-  )
-  {
+    sort: { name: DESC }
+  ) {
     items {
       sku
     }

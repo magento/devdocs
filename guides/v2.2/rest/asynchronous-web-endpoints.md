@@ -48,7 +48,7 @@ Field name | Data type | Description
 
 The following call asynchronously changes the price of the product that has a `sku` of `24-MB01`:
 
-PUT /async/V1/products/24-MB01
+PUT <host>/rest/<store_code>/async/V1/products/24-MB01
 
 ## Payload 
 
