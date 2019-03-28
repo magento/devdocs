@@ -145,7 +145,7 @@ The service returns an identifier of the created Invoice.
 <route url="/V1/order/:orderId/invoice" method="POST">
     <service class="Magento\Sales\Api\InvoiceOrderInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::invoice" />
     </resources>
 </route>
 {% endhighlight %}
@@ -452,7 +452,7 @@ The service returns an identifier of a created Credit Memo.
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundInvoiceInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::sales_invoice" />
     </resources>
 </route>
 {% endhighlight %}
@@ -731,7 +731,7 @@ The service returns an identifier of a created Credit Memo.
 <route url="/V1/order/:orderId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundOrderInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::creditmemo" />
     </resources>
 </route>
 {% endhighlight %}
@@ -951,7 +951,7 @@ The service returns the identifier of a created shipment.
 <route url="/V1/order/:orderId/ship" method="POST">
     <service class="Magento\Sales\Api\ShipOrderInterface" method="execute"/>
     <resources>
-        <resource ref="Magento_Sales::sales" />
+        <resource ref="Magento_Sales::ship" />
     </resources>
 </route>
 {% endhighlight %}

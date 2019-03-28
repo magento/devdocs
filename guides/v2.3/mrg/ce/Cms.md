@@ -17,4 +17,3 @@ The Wysiwyg UI component is a customizable and configurable TinyMCE4 editor.
 The default implementation has the following customizations:
 
 * Magento Media Library support
-

@@ -13,7 +13,7 @@ Static content deployment (SCD) has a significant impact on the store deployment
 You can improve the SCD load time during the deployment process if you skip copying the static view files in the `var/view_preprocessed` directory and generate _minified_ HTML when requested. You can activate this by setting the [SKIP_HTML_MINIFICATION]({{page.baseurl}}/cloud/env/variables-global.html#skip_html_minification) global environment variable to `true` in the `.magento.env.yaml` file.
 
 {: .bs-callout .bs-callout-info}
-Beginning with the `{{site.data.var.ct}}` package version 2002.0.13, the default value for the SKIP_HTML_MINIFICATION variable is set to `false`.
+Beginning with the `{{site.data.var.ct}}` package version 2002.0.13, the default value for the SKIP_HTML_MINIFICATION variable is set to `true`.
 
 You can save **more** deployment time and disk space by reducing the amount of unnecessary theme files. For example, you can deploy the `magento/backend` theme in English and a custom theme in other languages. You can configure these theme settings with the [SCD_MATRIX]({{page.baseurl}}/cloud/env/variables-deploy.html#scd_matrix) environment variable.
 
@@ -25,7 +25,7 @@ Deployment strategies differ based on whether you choose to generate static cont
 
 ### Setting the SCD on build
 
-Generating static content during the build phase with minified HTML is the optimal configuration for **zero-downtime** deployments, also known as the **ideal state**. Instead of copying files to a mounted drive, it creates a symlink from the `./init/pub/static` directory.
+Generating static content during the build phase with minified HTML is the optimal configuration for [**zero-downtime** deployments]({{page.baseurl}}/cloud/deploy/reduce-downtime.html), also known as the **ideal state**. Instead of copying files to a mounted drive, it creates a symlink from the `./init/pub/static` directory.
 
 By default, the [STATIC_CONTENT_SYMLINK environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#static_content_symlink) is set to `true`. After generating the static content during the build phase, it creates a symlink to the content folder.
 
@@ -51,9 +51,12 @@ Generating static content requires access to themes and locales. Magento stores 
 
 ### Setting the SCD on demand
 
-Generating SCD on demand is optimal for a development workflow. It decreases deployment time so that you can quickly review your implementations and run integration tests. Enable the [SCD_ON_DEMAND]({{page.baseurl}}/cloud/env/variables-global.html#scd_on_demand) environment variable in the global stage of the `.magento.env.yaml` file. The SCD_ON_DEMAND variable overrides all other configurations related to SCD and clears existing content from the `~/pub/static` directory.
+Generating SCD on demand is optimal for a development workflow in the Integration environment. It decreases deployment time so that you can quickly review your implementations and run integration tests. Enable the [SCD_ON_DEMAND]({{page.baseurl}}/cloud/env/variables-global.html#scd_on_demand) environment variable in the global stage of the `.magento.env.yaml` file. The SCD_ON_DEMAND variable overrides all other configurations related to SCD and clears existing content from the `~/pub/static` directory.
 
 When using the SCD on-demand strategy, it helps to preload the cache with pages you expect to request, such as the home page. Add your list of expected pages in the [WARM_UP_PAGES]({{page.baseurl}}/cloud/env/variables-post-deploy.html#warm_up_pages) environment variable in the post-deploy stage of the `.magento.env.yaml` file.
+
+{: .bs-callout .bs-callout-warning}
+Do not use the SCD on-demand strategy in the Production environment.
 
 ### Skipping SCD
 

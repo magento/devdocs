@@ -6,6 +6,9 @@ title: 2.3.x Release Information
 
 ## Magento 2.3.x Release Notes
 
+* [{{site.data.var.ce}} 2.3.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.1OpenSource.html)
+* [{{site.data.var.ee}} 2.3.1 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.1Commerce.html)
+
 * [{{site.data.var.ce}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0OpenSource.html)
 * [{{site.data.var.ee}} 2.3.0 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.3.0Commerce.html)
 
