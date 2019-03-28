@@ -11,9 +11,8 @@ The topic describes how to install, configure and use [Grunt JavaScript task run
 
 ## Prerequisites
 
-Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
+The default mode [sets]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) the Less compilation [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html) to Server-side Less compilation.
 
-The default mode sets the Less compilation mode to Server-side Less compilation. 
 ## Installing and configuring Grunt {#grunt_prereq}
 
 Magento has built-in Grunt tasks configured, but there are still several prerequisite steps you need to take to be able to use it:
