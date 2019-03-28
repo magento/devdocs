@@ -16,5 +16,3 @@ The Magento\RequireJs module does not have any specific system requirements.
 
 ## Install
 The Magento\RequireJs module is installed automatically (using the native Magento Setup). No additional actions required.
-
-
