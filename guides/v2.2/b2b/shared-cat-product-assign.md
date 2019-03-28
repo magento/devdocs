@@ -48,7 +48,7 @@ The following example adds the Luma Gear category (`id=3`) as well as its subcat
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/assignCategories`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/assignCategories`
 
 **Payload**
 
@@ -83,7 +83,7 @@ The following example removes two categories from the shared catalog.
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/unassignCategories`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/unassignCategories`
 
 **Payload**
 
@@ -111,7 +111,7 @@ The `GET` call returns an array of catalog IDs.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/2/categories`
+`GET <host>/rest/<store_code>/V1/sharedCatalog/2/categories`
 
 **Payload**
 
@@ -159,7 +159,7 @@ The following example adds two products each in the Bags, Fitness Equipment, and
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/assignProducts`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/assignProducts`
 
 **Payload**
 
@@ -198,7 +198,7 @@ Unassigning a product does not remove it from its category or categories.
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/2/unassignProducts`
+`POST <host>/rest/<store_code>/V1/sharedCatalog/2/unassignProducts`
 
 **Payload**
 
@@ -222,7 +222,7 @@ The `GET` call returns an array of SKUs.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/2/products`
+`GET <host>/rest/<store_code>/V1/sharedCatalog/2/products`
 
 **Payload**
 
