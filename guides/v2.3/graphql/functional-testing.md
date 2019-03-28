@@ -88,7 +88,7 @@ The `\Magento\GraphQl\TestModule\GraphQlQueryTest.php` test case uses two test m
 
 ## Using fixtures
 
-Fixture is a part of the testing framework. Fixtures prepare a precondition in the system for further testing. For example, upon testing of adding a product to the shopping cart, the precondition is the product that can be used for the testing. 
+Fixtures, which are part of the testing framework, prepare a precondition in the system for further testing. For example, when you test the ability to add a product to the shopping cart, the precondition is that a product must be available for testing. 
 
 The following fixture creates a simple product with predefined attributes.
 
@@ -122,7 +122,7 @@ $productResource = Bootstrap::getObjectManager()->create(ProductResource::class)
 $productResource->save($product);
 ```
 
-To use this fixture in a test, it should be added to the test's annotation in the following way:
+To use this fixture in a test, add it to the test's annotation in the following way:
 
 ```php
     /**
@@ -134,11 +134,11 @@ To use this fixture in a test, it should be added to the test's annotation in th
     }
 ```
 
-Once the fixture added, it executes on every test run. 
+The fixture now executes on every test run. 
 
 Every fixture should have a rollback. The rollback is a set of operations that remove changes introduced by the fixture from the system once the test is completed. 
 
-The following fixture rollback removes the newly created product from the database.
+The following fixture rollback removes the newly-created product from the database.
 
 ```php
 <?php
@@ -168,5 +168,5 @@ $registry->register('isSecureArea', false);
 
 ```
 
-A fixture rollback filename should correspond the original fixture filename postfixed by `_rollback` keyword i.e `virtual_product_rollback.php`.
-The existing fixtures can be found in the `dev/tests/integration/testsuite/Magento/{ModuleName}/_files` directory. The good practice is to reuse the existing fixtures whenever it's possible. In case of creating a new fixture, it should have a proper rollback.
+A fixture rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. (For example, `virtual_product_rollback.php`.) 
+Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
