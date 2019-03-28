@@ -266,13 +266,13 @@ pages:
       children:
 
         - label: Magento Open Source third-party licenses
-          url: /release-notes/thirdparty_ce.html
+          url: /release-notes/packages-open-source.html
 
         - label: Magento Commerce third-party licenses
-          url: /release-notes/thirdparty_ee.html
+          url: /release-notes/packages-commerce.html
 
         - label: Magento Commerce (Cloud) third-party licenses
-          url: /release-notes/thirdparty-mccloud.html
+          url: /release-notes/packages-cloud.html
     
     - label: Inventory management
       url: /inventory/release-notes.html

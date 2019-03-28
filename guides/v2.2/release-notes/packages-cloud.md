@@ -1,6 +1,7 @@
 ---
 group: release-notes
-title: Magento Commerce Cloud third-party licenses
+title: Magento Commerce Cloud packages
+redirect-from: /guides/v2.2/release-notes/thirdparty-mccloud.html
 ---
 
 <!-- The 'packages' variable contains the 'packages' node of the '_data/codebase/v2_2/cloud/composer_lock.json' file
@@ -12,4 +13,4 @@ title: Magento Commerce Cloud third-party licenses
 <!-- The edition variable contains `ece` value from the the _data/var.yml file
 {% assign edition = site.data.var.ece %} -->
 
-{% include release-notes/third_party_libs.md %}
+{% include release-notes/packages.md %}

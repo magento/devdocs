@@ -1966,7 +1966,7 @@ entries:
 - description: 'Updated the recommended Fastly module version 1.2.33 for Magento Commerce
     (Cloud): [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
     [Technologies and requirements](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html),
-    and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html)'
+    and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)'
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 15 2017
@@ -2181,7 +2181,7 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Sep 27 2017
-- description: Add third party license information for Magento Commerce (Cloud) [2.0.X](https://devdocs.magento.com/guides/v2.0/release-notes/thirdparty-mccloud.html), [2.1.X](https://devdocs.magento.com/guides/v2.1/release-notes/thirdparty-mccloud.html), and [2.2](https://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html)
+- description: Add third party license information for Magento Commerce (Cloud) [2.0.X](https://devdocs.magento.com/guides/v2.0/release-notes/packages-cloud.html), [2.1.X](https://devdocs.magento.com/guides/v2.1/release-notes/packages-cloud.html), and [2.2](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Sep 27 2017
