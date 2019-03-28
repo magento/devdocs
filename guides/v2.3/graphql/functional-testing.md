@@ -93,10 +93,13 @@ dev/tests/integration/testsuite/Magento/Customer/_files/customer.php
 ```
 
 **Fixture rollback file**
-Each `fixture` should have a rollback for changes that have been created. Fixture's rollback locates in the same folder and has `_rollback` word in the file name. For example, a rollback for mentioned `customer` fixture is
+Fixture's rollback locates in the same folder and has `_rollback` word in the file name. For example, a rollback for mentioned `customer` fixture is
 ```
 dev/tests/integration/testsuite/Magento/Customer/_files/customer_rollback.php
 ```
+
+{:.bs-callout .bs-callout-info}
+Each `fixture` should have a rollback for changes that have been created.
 
 **Invoke fixture**
 To invoke fixture in your test please use `@magentoApiDataFixture` in the test annotation
