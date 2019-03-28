@@ -13,7 +13,6 @@ The topic describes how to install, configure, and use [Grunt JavaScript task ru
 - Install and configure Grunt as described in [Using Grunt for Magento tasks]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html)
 
 The default mode sets the Less compilation mode to Server-side Less compilation.
-
 ## Adding themes to Grunt configuration {#add_theme}
 
 To compile `.less` files, add your theme to `module.exports` in the Grunt configuration, either in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{ page.baseurl }}/frontend-dev-guide/tools/using_grunt.html#grunt_config). For example:
