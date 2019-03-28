@@ -32,6 +32,9 @@ The release notes include:
 
 ## v2002.0.17
 
+{:.bs-callout .bs-callout-info}
+The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: Magento Open Source Patches](https://magento.com/tech-resources/download#download2288).
+
 -   {:.new}**New Docker images**—Added the following services to the Docker build:
 
     -   <!-- MAGECLOUD-3196 -->Elasticsearch 6.5

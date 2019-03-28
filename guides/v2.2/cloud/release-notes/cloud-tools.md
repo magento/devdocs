@@ -32,6 +32,9 @@ The release notes include:
 
 ## v2002.0.17
 
+{:.bs-callout .bs-callout-info}
+The `{{site.data.var.ct}}` version 2002.0.17 includes an important security patch. See [Tech Resources: Magento Open Source Patches](https://magento.com/tech-resources/download#download2288).
+
 -   {:.new}**Service updates**—Supported by Magento versions 2.2.8 and later 2.2.x versions.
 
     -   <!-- MAGECLOUD-3196 -->Added support for Elasticsearch version 6.x.
