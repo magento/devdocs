@@ -70,8 +70,8 @@ pages:
     url: /page-builder/docs/create-custom-content-type/step-6-add-icon.html
     versionless: true
 
-  - label: What's next?
-    url: /page-builder/docs/create-custom-content-type/whats-next.html
+  - label: Summary
+    url: /page-builder/docs/create-custom-content-type/summary.html
     versionless: true
 
 - label: How-Tos
