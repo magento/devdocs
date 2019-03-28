@@ -15,7 +15,7 @@ The `urlResolver` query returns the canonical URL for a specified product, categ
 
 ### EntityUrl attributes
 
-The `EntityUrl` output object contains the `id`, `canonical_url`, and `type` attributes.
+The `EntityUrl` output object contains the `id`, `relative_url`, and `type` attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
