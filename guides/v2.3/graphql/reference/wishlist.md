@@ -12,14 +12,14 @@ Use Wishlist queries to retrieve information about a customer's wish list.
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [WishlistItem](#WishlistItem) | An array of items in the customer's wish list
+`items` | [WishlistItem](#wishlistitem) | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `name` | String | When multiple wish lists are enabled, the name the customer assigns to the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
 `updated_at` | String | The time of the last modification to the wish list
 {:style="table-layout:auto;"}
 
-### Wish list item attributes {#WishlistItem}
+### Wish list item attributes {#wishlistitem}
 
 Attribute | Data type | Description
 --- | --- | ---
