@@ -34,8 +34,23 @@ Following is a summary of the process:
 
 1.	Create a Command class (the recommended location is `<your component root dir>/Console/Command`).
 
-	See `app/code/Magento/CommandExample/Console/Command` for examples.
-2.	Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`).
+	See [`<Magento_Store_module_dir>/Console/Command/StoreListCommand.php`]({{ site.mage2300url }}app/code/Magento/Store/Console/Command/StoreListCommand.php) for example.
+2.	Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`):
+
+``` xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    ...
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="commandexample_somecommand" xsi:type="object">Magento\CommandExample\Console\Command\SomeCommand</item>
+            </argument>
+        </arguments>
+    </type>
+    ...
+</config>
+```
+
 3.	Clean the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and compiled code directories:
 
 		cd <your Magento install dir>/var

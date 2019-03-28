@@ -15,7 +15,7 @@ All asynchronous operations in {{site.data.var.ce}} are performed using the Linu
 
 ## Indexers
 
-An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System > Index Management** configuration page.
+An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System** > Tools > **Index Management** configuration page.
 
 <!--  Add to docs in 2.3.1 - MAGEDOC-3020
 We recommend that you use index parallelization and that you set threads count for the index process based on:
@@ -26,22 +26,22 @@ See the [Reindex in parallel mode section]({{ page.baseurl }}/config-guide/cli/c
 
 ## Caches
 
-When you launch your store in production, activate all the caches from the **System > Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.
+When you launch your store in production, activate all the caches from the **System** > Tools > **Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.
 
 ## Asynchronous email notifications
 
-Enabling the “Asynchronous email notifications” setting moves processes that handle checkout and order processing email notifications to the background. To enable this feature, go to **Stores > Configuration > Sales > Sales Emails > General Settings > Asynchronous Sending**. See [Sales Emails](http://docs.magento.com/m2/ce/user_guide/configuration/sales/sales-emails.html) in the _{{site.data.var.ce}} User Guide_ for more information.
+Enabling the “Asynchronous email notifications” setting moves processes that handle checkout and order processing email notifications to the background. To enable this feature, go to **Stores > Settings > Configuration > Sales > Sales Emails > General Settings > Asynchronous Sending**. See [Sales Emails](http://docs.magento.com/m2/ce/user_guide/configuration/sales/sales-emails.html) in the _{{site.data.var.ce}} User Guide_ for more information.
 
 ## Asynchronous order data processing
 
-There can be times when intensive sales on a storefront occur at the same time that Magento is performing intensive order processing. You can configure Magento to distinguish these two traffic patterns on the database level to avoid conflicts between read and write operations in the corresponding tables. You can store and index order data asynchronously. Orders are placed in temporary storage and moved in bulk to the Order Management grid without any collisions. You can activate this option from **Stores > Configuration > Advanced > Developer > Grid Settings > Asynchronous indexing**. See [Scheduled Grid Updates](http://docs.magento.com/m2/ce/user_guide/sales/order-grid-updates-schedule.html) in the _{{site.data.var.ce}} User Guide_ for more information.
+There can be times when intensive sales on a storefront occur at the same time that Magento is performing intensive order processing. You can configure Magento to distinguish these two traffic patterns on the database level to avoid conflicts between read and write operations in the corresponding tables. You can store and index order data asynchronously. Orders are placed in temporary storage and moved in bulk to the Order Management grid without any collisions. You can activate this option from **Stores > Settings > Configuration > Advanced > Developer > Grid Settings > Asynchronous indexing**. See [Scheduled Grid Updates](http://docs.magento.com/m2/ce/user_guide/sales/order-grid-updates-schedule.html) in the _{{site.data.var.ce}} User Guide_ for more information.
 
 {: .bs-callout .bs-callout-info }
 The **Developer** tab and options are only available in [Developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
 ## Deferred stock update
 
-In times of intensive sales,  Magento can defer stock updates related to orders. This minimizes the number of operations and speeds up the order placement process. However, this option is risky and can only be used when Backorders are activated in the store, because this option can lead to negative stock quantities. This option can bring significant performance improvement on Checkout flows for stores that can easily re-fill their stock on demand. To activate deferred stock updates on your Magento Commerce site, go to **Stores > Configuration > Catalog > Inventory > Product Stock Options > Use Deferred Stock Update**. See [Managing Inventory](http://docs.magento.com/m2/ee/user_guide/catalog/inventory.html) in the _{{site.data.var.ee}} User Guide_ for more information.
+In times of intensive sales,  Magento can defer stock updates related to orders. This minimizes the number of operations and speeds up the order placement process. However, this option is risky and can only be used when Backorders are activated in the store, because this option can lead to negative stock quantities. This option can bring significant performance improvement on Checkout flows for stores that can easily re-fill their stock on demand. To activate deferred stock updates on your Magento Commerce site, go to **Stores > Settings > Configuration > Catalog > Inventory > Product Stock Options > Use Deferred Stock Update**. See [Managing Inventory](http://docs.magento.com/m2/ee/user_guide/catalog/inventory.html) in the _{{site.data.var.ee}} User Guide_ for more information.
 
 {: .bs-callout .bs-callout-info }
 This option is available only if **Backorder with any mode** is activated.

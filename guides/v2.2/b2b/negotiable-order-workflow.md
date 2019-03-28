@@ -45,7 +45,7 @@ This example adds 15 Pursuit Lumaflex Tone Bands and 10 Harmony Lumaflex Strengt
 
 **Endpoint**
 
-`POST V1/carts/mine`
+`POST <host>/rest/default/V1/carts/mine`
 
 **Headers**
 
@@ -113,7 +113,7 @@ You can determine shipping costs after initiating a negotiable quote, but doing 
 
 **Endpoint**
 
-`POST V1/carts/mine/estimate-shipping-methods`
+`POST <host>/rest/default/V1/carts/mine/estimate-shipping-methods`
 
 **Headers**
 
@@ -183,6 +183,13 @@ You can also set shipping and billing information after initiating a negotiable 
 **Endpoint**
 
 `POST /V1/carts/mine/shipping-information`
+
+**Headers**
+
+```
+Content-Type application/json
+Authorization Bearer <customer token>
+```
 
 **Payload**
 
@@ -599,7 +606,7 @@ Initiating a negotiable quote places it in the `processing_by_admin` state.
 
 **Endpoint**
 
-`POST V1/negotiableQuote/request`
+`POST <host>/rest/default/V1/negotiableQuote/request`
 
 **Headers**
 

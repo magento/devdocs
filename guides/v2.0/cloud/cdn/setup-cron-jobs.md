@@ -87,7 +87,7 @@ You do not need to set this for Pro Staging and Production environments.
 To configure:
 
 1. Log into the Magento Admin in your deployed environment: all Starter environments and Pro Integration environments.
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System**. Expand the **Cron (Scheduled Tasks)** section.
+2. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System**. Expand the **Cron (Scheduled Tasks)** section.
 3. Expand the **Cron configuration options for group: index** section.
 4. For the **Missed if Not Run Within** setting, deselect the checkbox for Use system value. Change the value from 2 to 10 minutes.
 5. Expand the **Cron configuration options for group: staging** section.

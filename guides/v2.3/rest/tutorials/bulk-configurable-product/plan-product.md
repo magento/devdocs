@@ -61,7 +61,7 @@ Description | The Champ Tee keeps you cool and dry while you do your thing. Let 
  **Endpoint**
 
  ``` html
-GET <host>/index.php/rest/V1/eav/attribute-sets/list?
+GET <host>/rest/<store_code>/V1/eav/attribute-sets/list?
 searchCriteria[filter_groups][0][filters][0][field]=attribute_set_name&
 searchCriteria[filter_groups][0][filters][0][value]=Top&
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq

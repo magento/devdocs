@@ -70,7 +70,7 @@ Requesting a negotiable quote requires an admin authorization token.
 
 **Sample Usage**
 
-`POST V1/negotiableQuote/request`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/request`
 
 **Payload**
 
@@ -116,7 +116,7 @@ When the quote is submitted to the buyer:
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/submitToCustomer`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/submitToCustomer`
 
 **Payload**
 
@@ -143,7 +143,7 @@ The request can be applied to one or more quotes at the same time.
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/pricesUpdated`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/pricesUpdated`
 
 **Payload**
 
@@ -163,7 +163,7 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 
 **Sample Usage**
 
-`PUT /V1/negotiableQuote/3/shippingMethod`
+`PUT <host>/rest/<store_code>/V1/negotiableQuote/3/shippingMethod`
 
 **Payload**
 
@@ -191,7 +191,7 @@ When you decline a quote, all custom pricing will be removed from the quote. The
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/decline`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/decline`
 
 **Payload**
 
@@ -216,7 +216,7 @@ Magento returns all the comments associated with the specified quote ID. The com
 
 **Sample Usage**
 
-`GET /V1/negotiableQuote/87/comments`
+`GET <host>/rest/<store_code>/V1/negotiableQuote/87/comments`
 
 **Payload**
 
@@ -311,7 +311,7 @@ Use the `attachmentContent` call to retrieve the files (in base64 format) attach
 
 **Sample Usage**
 
-`GET /V1/negotiableQuote/attachmentContent`
+`GET <host>/rest/<store_code>/V1/negotiableQuote/attachmentContent`
 
 **Payload**
 

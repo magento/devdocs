@@ -7,5 +7,3 @@ title: Magento_EavGraphQl module
 # EavGraphQl
 
 **EavGraphQl** primarily provides the GraphQl module information to generate metadata for Eav attributes.
-
-
