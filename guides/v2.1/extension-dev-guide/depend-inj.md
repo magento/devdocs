@@ -51,17 +51,14 @@ class Builder
 {
     /**
      * @param \Magento\Backend\Model\Menu\Item\Factory $menuItemFactory
-     * @param \Magento\Backend\Model\Menu $menu
      */
     public function __construct(
         Magento\Backend\Model\Menu\Item\Factory $menuItemFactory,  // Service dependency
-        Magento\Backend\Model\Menu $menu  // Service dependency
     ) {
         $this->_itemFactory = $menuItemFactory;
-        $this->_menu = $menu;
     }
 
-    public function processCommand(\Magento\Backend\Model\Menu\Builder\CommandAbstract $command) // API param
+    public function processCommand(\Magento\Backend\Model\Menu\Builder\AbstractCommand $command) // API param
     {
         // processCommand Code
     }
