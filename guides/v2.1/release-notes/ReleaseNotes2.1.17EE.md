@@ -32,11 +32,11 @@ Follow these steps to download and apply this patch:
 6. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 
-## Apply patch Admin Dashboard Image-Charts  to address deprecation of Google Image Charts
+## Apply the Admin Dashboard Image-Charts patch to address deprecation of Google Image Charts
 
-Magento 2.x currently uses Google Image Charts to render static charts in Magento 2.x Admin dashboards. Google stopped supporting Google Image Charts on March 14, 2019, and Magento is providing the Admin Dashboard Image-Charts  patch to replace Google Image Charts with the Image-Charts free service. Users of Magento 2.x deployments will not be able to view static charts in Magento 2.x instances unless they download and apply this patch. 
+Magento 2.x currently uses Google Image Charts to render static charts in Admin dashboards. Google stopped supporting Google Image Charts on March 14, 2019, and Magento is providing the Admin Dashboard Image-Charts  patch to replace Google Image Charts with the Image-Charts free service. Users of Magento 2.x deployments will not be able to view static charts in Magento 2.x instances unless they download and apply this patch. 
  
-This patch is now available for download. See  [Switch from deprecated Google Image Charts to Image-Charts for Magento](https://support.magento.com/hc/en-us/articles/360024850172) for information on downloading and applying this patch. 
+See  [Switch from deprecated Google Image Charts to Image-Charts for Magento](https://support.magento.com/hc/en-us/articles/360024850172) for information on downloading and applying this patch. 
 
 
 ## Highlights
