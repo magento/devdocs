@@ -50,12 +50,10 @@ Magento processes the attribute values specified in  a `ProductFilterInput` as  
 
 The following attributes can be used to create filters. See the [Response](#Response) section for information about each attribute.
 
-``` text
+```text
+category_id
 country_of_manufacture
 created_at
-custom_design
-custom_design_from
-custom_design_to
 custom_layout
 custom_layout_update
 description
@@ -74,7 +72,6 @@ news_from_date
 news_to_date
 options_container
 or
-page_layout
 price
 required_options
 short_description
@@ -88,8 +85,6 @@ thumbnail
 thumbnail_label
 tier_price
 updated_at
-url_key
-url_path
 weight
 ```
 
@@ -173,16 +168,10 @@ Attribute | Data type | Description
 `categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
-`custom_design` | String | A theme that can be applied to the product page
-`custom_design_from` | String | The beginning date when a theme is applied to the product page
-`custom_design_to` | String| The date at which a theme is no longer applied to the product page
-`custom_layout` | String | The name of a custom layout
-`custom_layout_update` | String | XML code that is applied as a layout update to the product page
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
 `image` | ProductImage | An object that contains the URL and label for the main image on the product page
-`is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the Rma module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
@@ -191,29 +180,21 @@ Attribute | Data type | Description
 `name` | String | The product name. Customers use this name to identify the product.
 `new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
 `new_to_date` | String | The end date for new product listings
-`only_x_left_in_stock` | Float | The remaining quantity of this item
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-`page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
 `price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
-`product_links` | [ProductLinks] | An array of [ProductLinks](#ProductLinks) objects
+`product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
 `small_image` | ProductImage | An object that contains the URL and label for the small image used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
-`stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`.
-`swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
-`tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
 `thumbnail` | ProductImage | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
-`url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewrite` module
-`url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewrite` module
-`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
-`website_ids` | [Int] | An array of website IDs in which the product is available
+`websites` | [Website] | An array of websites in which the product is available
 {:style="table-layout:auto;"}
 
 ### ProductPrices object {#ProductPrices}
