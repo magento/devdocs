@@ -10,5 +10,3 @@ The Magento_OfflineShipping module implements the shipping methods which do not 
 *Table Rates
 *Store Pickup
 
-
-
