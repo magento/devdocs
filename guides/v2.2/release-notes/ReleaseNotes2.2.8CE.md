@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.8 Release Notes
 
 ---
 
-*Patch code and release notes were published on March 26, 2019.*
+*Release notes published on March 26, 2019 and last edited on March 29, 2019.*
 
 
 We are pleased to present Magento Open Source 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and 285 community-submitted pull requests. 
@@ -17,7 +17,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A critical SQL injection vulnerability has been identified in 2.2.x Magento code. A fix for this issue is included in Magento 2.2.8. However, if you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+A critical SQL injection vulnerability has been identified in 2.2.x Magento code. A fix for this issue is included in Magento 2.2.8. If you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  However, **we strongly encourage all merchants to stay up-to-date on security patches**. See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
 
 Follow these steps to download and apply this patch:
 
@@ -30,6 +30,17 @@ Follow these steps to download and apply this patch:
 5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
 6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
+
+## Apply patch Admin Dashboard Image-Charts  to address deprecation of Google Image Charts
+
+Magento 2.x currently uses Google Image Charts to render static charts in Magento 2.x Admin dashboards. Google stopped supporting Google Image Charts on March 14, 2019, and  Magento is providing the Admin Dashboard Image-Charts  patch to replace Google Image Charts with the Image-Charts free service. Users of Magento 2.x deployments will not be able to view static charts in Magento 2.x instances unless they download and apply this patch. 
+ 
+This patch is now available for download. See  [Switch from deprecated Google Image Charts to Image-Charts for Magento](https://support.magento.com/hc/en-us/articles/360024850172) for information on downloading and applying this patch. 
+
+
+
 
 ## Highlights
 
