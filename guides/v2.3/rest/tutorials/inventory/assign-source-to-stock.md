@@ -31,7 +31,7 @@ In this example, we configure the Baltimore warehouse to be the primary source f
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/stock-source-links`
+`POST <host>/rest/all/V1/inventory/stock-source-links`
 
 **Scope**
 
