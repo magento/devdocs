@@ -1964,7 +1964,7 @@ entries:
   type: Updated
   date: Nov 17 2017
 - description: 'Updated the recommended Fastly module version 1.2.33 for Magento Commerce
-    (Cloud): [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
+    Cloud: [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
     [Technologies and requirements](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html),
     and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)'
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
