@@ -16,7 +16,7 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `position` | Int | The relative position of this item compared to the other group items
-`product` | `product` | <a href="{{ page.baseurl }}/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
+`product` | <a href="{{ page.baseurl }}/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
  | The ProductInterface object, which contains details about this product option
 `qty` | Float | The quantity of this grouped product item
 
