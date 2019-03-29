@@ -161,7 +161,7 @@ If you need to import a remote CSS file in your `.less` source, use `url()` nota
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
 {%endhighlight%}
 
-TO include the <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html">font in your theme's</a> CSS files using the `@font-face` CSS rule for the fastest loading time.
+To [include the font]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) in your theme's CSS files, use the `@font-face` CSS rule for the fastest loading time.
 
 This way Magento will skip the `@import` directive while resolving paths to the local resources.
 
