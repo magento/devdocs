@@ -20,7 +20,7 @@ Magento releases a large (minor version change – 2.2.0 -> 2.3.0) update about 
 
 The following guidelines apply to minor releases:
 
-- Breaking changes are possible; code written for 2.2.x may no longer work with 2.3.x. For example, minor releases can introduce support for major system requirements and dependencies, like PHP.
+- Breaking changes are possible; code written for 2.2.x may no longer work with 2.3.x. For example, minor releases can introduce support for major system requirements and dependencies, such as PHP.
 - Module versions can vary. For example, some module changes are introduced in a new patch whereas others are introduced in a major release.
 - Minor release can include new features that may require additional work from partners during upgrade to ensure compatibility.
 
