@@ -1250,7 +1250,7 @@ This release includes substantial improvements to Magento caching, image process
 
 ### System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ page.baseurl }}/install-gde/system-requirements2.html).
+Our technology stack is built on PHP and MySQL. For more information, see  [System Requirements]({{ page.baseurl }}/install-gde/system-requirements).
 
 ### Installation and upgrade instructions
 
