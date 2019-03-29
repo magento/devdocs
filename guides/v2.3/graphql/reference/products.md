@@ -21,12 +21,12 @@ Each query attribute is defined below:
 
 Attribute |  Description
 --- | ---
-`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `filter` | Identifies which attributes to search for and return. This attribute is required. See [ProductFilterInput](#ProductFilterInput) for more information.
 `pageSize` | Specifies the maximum number of results to return at once. The default value is 20. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
-`Products` | An output object that contains the results of the query. See [Response](#Response) for details.
-`search` | Performs a full-text search using the specified key words. This attribute is optional. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
+`Products` | An output object that contains the results of the query. See [Response](#Response) for details.
 {:style="table-layout:auto;"}
 
 ## ProductFilterInput object {#ProductFilterInput}
