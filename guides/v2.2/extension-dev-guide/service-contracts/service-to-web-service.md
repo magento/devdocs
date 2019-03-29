@@ -225,7 +225,7 @@ If a service method argument is called `item`, there will be a problem during SO
     </route>
 ...
     <route url="/V1/customers/me/billingAddress" method="GET">
-        <service class="Magento\Customer\Service\V1\CustomerAddressServiceInterface" method="getDefaultBillingAddress"/>
+        <service class="Magento\Customer\Api\AccountManagementInterface" method="getDefaultBillingAddress"/>
         <resources>
             <resource ref="self"/>
         </resources>
