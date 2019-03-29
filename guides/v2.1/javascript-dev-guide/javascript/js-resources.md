@@ -13,7 +13,7 @@ This topic describes the general concepts of how {% glossarytooltip 312b4baf-15f
 
 To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
 
-RequireJS improves the perceived page load, time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
+RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
 
 ## Explore JavaScript resources {#m2devgde-js-resources-configuring}
 
