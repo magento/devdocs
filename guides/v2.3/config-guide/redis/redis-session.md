@@ -51,7 +51,7 @@ where
 |session-save-redis-sentinel-servers|sentinel_servers|List of Redis Sentinel servers, comma separated|empty|
 |session-save-redis-sentinel-verify-master|sentinel_verify_master|Verify Redis Sentinel master status flag|0 (false)|
 |session-save-redis-sentinel-connect-retires|sentinel_connect_retries|Connection retries for sentinels|5|
-{:style="table-layout:auto;"}
+
 
 ### Example command
 

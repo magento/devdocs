@@ -53,7 +53,7 @@ Magento_Company::users_view | View users and teams | 3
 Magento_Company::users_edit | Manage users and teams |  4
 Magento_Company::credit | Company credit | 2
 Magento_Company::credit_history | view | 3
-{:style="table-layout:auto;"}
+
 
 ## Manage company roles
 
@@ -83,7 +83,7 @@ Name | Description | Format | Requirements
 `role_name` | The label assigned to the role | string | Required to create a role
 `permissions` | A list of resources and permissions granted to the role. See the Permissions array table below for details. | Array[string] |  Required to create a role
 `company_id` | The company associated with this role  | integer | Required to create a role
-{:style="table-layout:auto;"}
+
 
 **Permissions array**
 
@@ -93,7 +93,7 @@ Name | Description | Format | Requirements
 `role_id` | The role ID to which the permission applies.  | integer | Required to create a role
 `resource_id` | The internal name of a Magento resource, such as `Magento_Sales::place_order`. | string | Required
 `permission` | Either `allow` or `deny`. | string | Required
-{:style="table-layout:auto;"}
+
 
 ### Create a role
 

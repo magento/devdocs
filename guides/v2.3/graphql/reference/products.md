@@ -27,7 +27,7 @@ Attribute |  Description
 `currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
-{:style="table-layout:auto;"}
+
 
 ## ProductFilterInput object {#ProductFilterInput}
 
@@ -134,7 +134,7 @@ Attribute |  Description
 `total_count` | The number of products returned
 `filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
 `sort_fields` | An object that includes the default sort field and all available sort fields
-{:style="table-layout:auto;"}
+
 
 When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
 
@@ -214,7 +214,7 @@ Attribute | Data type | Description
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewrite` module
 `url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
 `website_ids` | [Int] | An array of website IDs in which the product is available
-{:style="table-layout:auto;"}
+
 
 ### ProductPrices object {#ProductPrices}
 
@@ -225,7 +225,7 @@ Attribute |  Data Type | Description
 `maximalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value.
 `minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
 `regularPrice` | Price | The base price of a product.
-{:style="table-layout:auto;"}
+
 
 #### Price object {#Price}
 
@@ -235,7 +235,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
-{:style="table-layout:auto;"}
+
 
 ##### Money object {#Money}
 
@@ -245,7 +245,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `value` | Float | The price of the product
 `currency` | CurrencyEnum | A three-letter currency code, such as `USD` or `EUR`.
-{:style="table-layout:auto;"}
+
 
 ##### PriceAdjustment array {#PriceAdjustment}
 
@@ -256,7 +256,7 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
-{:style="table-layout:auto;"}
+
 
 #### ProductLinks object {#ProductLinks}
 
@@ -269,7 +269,7 @@ Attribute | Type | Description
 `linked_product_sku` | String | The SKU of the linked product
 `linked_product_type` | String | The type of linked product (`simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`)
 `position` | Int | The position within the list of product links
-{:style="table-layout:auto;"}
+
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 
@@ -286,7 +286,7 @@ Attribute | Type | Description
 `file` | String | The path of the image on the server
 `content` | ProductMediaGalleryEntriesContent | Contains a [ProductMediaGalleryEntriesContent](#ProductMediaGalleryEntriesContent) object
 `video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
-{:style="table-layout:auto;"}
+
 
 #### ProductMediaGalleryEntriesContent object {#ProductMediaGalleryEntriesContent}
 
@@ -297,7 +297,7 @@ Attribute | Type | Description
 `base64_encoded_data` | String | The image in base64 format
 `type` | String | The MIME type of the file, such as `image/png`
 `name` | String | The file name of the image
-{:style="table-layout:auto;"}
+
 
 #### ProductMediaGalleryEntriesVideoContent object {#ProductMediaGalleryEntriesVideoContent}
 
@@ -311,7 +311,7 @@ Attribute | Type | Description
 `video_title` | String | Required. The title of the video
 `video_description` | String | A description of the video
 `video_metadata` | String | Optional data about the video
-{:style="table-layout:auto;"}
+
 
 ### ProductTierPrices object {#ProductTier}
 
@@ -324,7 +324,7 @@ Attribute | Type | Description
 `value` | Float | The price of the fixed price item
 `percentage_value` | Float | The percentage discount of the item
 `website_id` | Int | The ID assigned to the website
-{:style="table-layout:auto;"}
+
 
 ## PhysicalProductInterface {#PhysicalProductInterface}
 
@@ -333,7 +333,7 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
-{:style="table-layout:auto;"}
+
 
 ## LayerFilter object
 
@@ -345,7 +345,7 @@ Attribute | Type | Description
 `request_var` | String | The request variable name for the filter query
 `filter_items_count` | Int | The number of filter items in filter group
 `filter_items` |  [LayerFilterItemInterface] | An array of filter items
-{:style="table-layout:auto;"}
+
 
 ### LayerFilterItemInterface
 
@@ -356,7 +356,7 @@ Attribute | Type | Description
 `label` | String | The label applied to a filter
 `value_string` | String | The value for filter request variable to be used in a query
 `items_count` | Int | The number of items the filter returned
-{:style="table-layout:auto;"}
+
 
 ## SortFields object
 
@@ -366,7 +366,7 @@ Attribute | Type | Description
 --- | --- | ---
 `default` | String | The default sort field
 `options` | `SortField` | An array that contains all the fields you can use for sorting
-{:style="table-layout:auto;"}
+
 
 ### SortField object
 
@@ -374,7 +374,7 @@ Attribute | Type | Description
 --- | --- | ---
 `value` | String | The attribute name or code to use as the sort field
 `label` | String | The attribute's label
-{:style="table-layout:auto;"}
+
 
 ## Sample query
 
