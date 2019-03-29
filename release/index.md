@@ -27,7 +27,7 @@ The following guidelines apply to minor releases:
 {:.bs-callout .bs-callout-info}
 See [Magento Software Lifecycle Policy] and [Versioning].
 
-## Extension availability
+## Product availability
 
 | Product                                         | Availability                                                                                                                                                           | How to get it                                                                                                                |
 |-------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
@@ -40,7 +40,7 @@ See [Magento Software Lifecycle Policy] and [Versioning].
 | **Amazon Sales Channel**                        | Early access closed<br><br>Regional availability expected in first half of 2019 (US, Canada, Mexico)<br><br>EMEA and APAC availability expected in second half of 2019 | N/A<br><br>Magento Marketplace                                                                                               |
 | **Google Ad Channel**                           | Early access TBD<br><br>General availability expected in first half of 2019                                                                                            | TBD<br><br>Magento Marketplace                                                                                               |
 
-## Product stability
+## Extension stability
 
 The following table shows the release status of Magento extension versions relative to the 2.3.x release line of {{site.data.var.ee}}.
 
