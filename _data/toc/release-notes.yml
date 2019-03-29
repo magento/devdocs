@@ -271,7 +271,7 @@ pages:
         - label: Magento Commerce packages
           url: /release-notes/packages-commerce.html
 
-        - label: Magento Commerce (Cloud) packages
+        - label: Magento Commerce Cloud packages
           url: /release-notes/packages-cloud.html
     
     - label: Inventory management
