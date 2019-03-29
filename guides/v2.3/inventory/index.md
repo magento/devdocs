@@ -52,10 +52,6 @@ In this diagram, a bicycle merchant has inventory for a touring bike in a wareho
 
 When merchants are ready to make a partial or full shipment, they select the source or sources from which to send the products. Customers typically want low-cost shipping and a guarantee of safe arrival of products, while the merchant needs to ensure minimal overhead for the inventory storage and shipping costs. Inventory Management includes an algorithm that takes these considerations into account and recommends the best shipping option or options. Magento provides an algorithm for Priority, using the source priority per stock, where each source is given a priority in the scope of a specific sales channel. Inventory Management also supports developer-provided extensions for other algorithms based on criteria such as cheapest shipping and closest GPS location.
 
-## Stability with Magento versions
-
-{% include compatibility.html data=site.data.compatibility extension="Multi Source Inventory" %}
-
 ## Related information
 
 [Order Processing with Inventory Management]({{ page.baseurl }}/rest/tutorials/inventory/index.html) is a tutorial that uses REST calls to illustrate the life cycle of an order in an Multi Source Inventory environment.
