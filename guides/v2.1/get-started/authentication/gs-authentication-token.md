@@ -22,7 +22,7 @@ When a merchant creates and activates an integration, Magento generates a consum
 
 Use the following steps to generate an access token:
 
-1. Log in to Admin and click **System > Extensions > Integrations** to display the Integrations page.
+1. Log in to Admin and click **System** > **Extensions** > **Integrations** to display the Integrations page.
 2. Click **Add New Integration** to display the New Integration page.
 3. Enter a unique name for the integration in the **Name** field. Then enter your admin password in the **Your Password** field. Leave all other fields blank.
 4. Click the API tab. Select the Magento resources the integration can access. You can select all resources, or select a custom list.
@@ -47,7 +47,7 @@ Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminToken
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
 {:style="table-layout:auto;"}
 
-For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Configuration > Services > OAuth > Access Token Expiration**.
+For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Stores** > **Settings** > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**.
 
 A cron job that runs hourly removes all expired tokens.
 
@@ -57,7 +57,7 @@ A access token request contains three basic elements:
 
 Component | Specifies
 --- | ---
-Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST https://magento.host/index.php/rest/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
+Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST <host>/rest/<store_code>/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
 Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
 Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1@example.com</username><password>customer1pw</password></login>`
 {:style="table-layout:auto;"}

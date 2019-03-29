@@ -129,13 +129,13 @@ Fastly API requests are passed through the Fastly extension to get a response fr
 1.  In a terminal, use the following `curl` command to test your live site URL:
 
     ```bash
-curl http://www.mymagento.biz -vo /dev/null -H Fastly-Debug:1`
+curl https://<live URL> -vo /dev/null -H Fastly-Debug:1
     ```
 
 	  If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
    
     ```bash
-curl http://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve]
+curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
     ```
 
 1.  In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
@@ -153,7 +153,7 @@ If the headers do not have the correct values, see the following information:
 
 ### Bypass Fastly to check Staging and Production sites {#cloud-test-stage}
 
-If the Fastly service returns incorrect headers, submit a Fastly API request directly to the origin server, bypassing the Fastly CDN service.  You bypass Fastly by adding the following option to your Fastly API request: `-H "Host:<URL>"`. Replace `<URL>` with the URL for the Staging or Production site. 
+If the Fastly service returns incorrect headers, submit a Fastly API request directly to the origin server, bypassing the Fastly CDN service.
 
 #### To check the response headers:
 
@@ -162,8 +162,8 @@ If the Fastly service returns incorrect headers, submit a Fastly API request dir
     -  **Staging**
 
        ```bash
-       curl http[s]://<your domain>.com -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
-      ```
+       curl http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
+       ```
 
     - **Production**
 
@@ -178,12 +178,19 @@ If the Fastly service returns incorrect headers, submit a Fastly API request dir
       ```bash
       curl http[s]:<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "Host:<URL>" -k -vo /dev/null -H Fastly-Debug:1
       ```
+      
+    For example, if you have a public URL www.mymagento.biz, enter a command similar to the following to test the production site:
+      
+    ```bash
+   curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -H Fastly-Debug:1
+    ```
 
-      If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:  
+    If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:  
 
-      ```bash
-      curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
-      ```
+    ```bash
+ curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
+    ```
+   
  2. In the response, check for errors in the [cache HIT and MISS headers](#response-headers).
 
 ### Check cache HIT and MISS response headers {#response-headers}
@@ -301,7 +308,7 @@ If the issue persists, another extension is likely resetting these headers. Repe
     
     - Run the [`curl` commands](#curl) to verify the [response headers](#response-headers).
     
-    Repeat this process for each extension. If the Fastly response headers no longer displays, you have identified the extension causing issues with Fastly.
+    Repeat this process for each extension. If the Fastly response headers no longer display, you have identified the extension causing issues with Fastly.
 
 After you identify the extension that is resetting Fastly headers, contact the extension developer for additional assistance. We cannot provide fixes or updates to make third-party extensions work with Fastly caching.
 
@@ -315,13 +322,13 @@ If custom VCL snippet updates or other Fastly configuration changes cause a {{ s
 1.  To get a list of the available VCL versions for a service, run the following command 
 
     ```bash
-curl -H "Fastly-Key: $FASTLY_API_TOKEN" https://api.fastly.com/service/$FASTLY_SERVICE_ID/version/
+curl -H "Fastly-Key: <FASTLY_API_TOKEN>" https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/
     ```
 
 1.  Run the following command to change the active VCL version to a specified version.
 
     ```bash
-    curl -H "Fastly-Key: <FASTLY_API_TOKEN}" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Version #>/activate
+    curl -H "Fastly-Key: <FASTLY_API_TOKEN>" -H 'Content-Type: application/json' -H "Accept: application/json" -X PUT https://api.fastly.com/service/<FASTLY_SERVICE_ID>/version/<Version #>/activate
     ```
 
 For details about using the Fastly API to review and manage VCL, see [Manage VCL using the API]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html#manage-custom-vcl-snippets-using-the-api).

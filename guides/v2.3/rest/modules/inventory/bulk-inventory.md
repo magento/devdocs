@@ -46,7 +46,7 @@ Name | Description | Type | Requirements
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-transfer`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-transfer`
 
 **Payload**
 
@@ -84,7 +84,7 @@ Name | Description | Type | Requirements
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-assign`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-assign`
 
 **Payload**
 
@@ -119,7 +119,7 @@ If you unassign all sources from a product, you will not be able to sell the pro
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-unassign`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-unassign`
 
 **Payload**
 
