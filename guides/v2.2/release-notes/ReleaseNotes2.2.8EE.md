@@ -1030,7 +1030,7 @@ If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Config
  
 1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section. 
  
-2. At the **UPS Type** field, clear the Use system value checkbox. Then, change `UPS Type` to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
+2. At the **UPS Type** field, clear the Use system value checkbox. Then, change **UPS Type** to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
 
 3. Tap **Save Config**.
 
