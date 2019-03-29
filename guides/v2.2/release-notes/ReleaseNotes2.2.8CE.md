@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.8 Release Notes
 
 ---
 
-*Patch code and release notes were published on March 26, 2019.*
+*Release notes published March 26, 2019 and updated on March 29, 2019.*
 
 
 We are pleased to present Magento Open Source 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and 285 community-submitted pull requests. 
@@ -107,7 +107,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-3104 -->* A new `cron.log` file dedicated to logging cron-related information has been added to Magento. This new log file reduces output previously sent to the `system.log` file, making it easier to find non-cron-related information in the `system.log` file. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [18389](https://github.com/magento/magento2/pull/18389)*. [GitHub-17190](https://github.com/magento/magento2/issues/17190)
 
-<!-- ENGCOM-3207 -->* The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by [Luuk Schakenraad](https://github.com/luukschakenraad) in pull request [18595](https://github.com/magento/magento2/pull/18595)*. [GitHub-18585](https://github.com/magento/magento2/issues/18585)
+<!-- ENGCOM-3207 -->* The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18659](https://github.com/magento/magento2/pull/18659)*. [GitHub-12969](https://github.com/magento/magento2/issues/12969)
 
 <!-- MAGETWO-95411 -->* You can now install Magento without first creating an administrator account. 
 
@@ -979,11 +979,24 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 <!-- ENGCOM-3291 -->* The `id_prefix` option for the cache frontend, which is used to prefix cache keys, is now set when Magento is installed. Previously, the performance of all websites in multisite deployments was uneven due to the previous mechanism used to prefix cache keys. *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
 
-## Known issue
+## Known issues
 
-Cart Price rules that were created with undefined end dates (that is, with the  **To** field left empty) are not displayed as expected on the Staging dashboard  after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
+**Issue**: Cart Price rules that were created with undefined end dates (that is, with the  **To** field left empty) are not displayed as expected on the Staging dashboard  after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
+
+**Issue**:  The CGI URL gateway in the UPS module has been updated from HTTP to HTTPS. Consequently, the UPS shipping method does not populate correctly. **Workaround**: Confirm that the Gateway URL uses the HTTPS protocol in the [UPS Shipping Method Configuration](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html). <!--- MAGETWO-98947-->
+
+*Updating an existing setting*:
+
+If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Configuration, you must manually change the protocol of the Gateway URL from HTTP to HTTPS. Example: `https://www.ups.com/using/services/rave/qcostcgi.cgi`
 
 
+*To configure UPS for the first time*: 
+ 
+1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section. 
+ 
+2. At the **UPS Type** field, clear the Use system value checkbox. Then, change `UPS Type` to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
+
+3. Tap **Save Config**.
 
 
 ## Community contributions

@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.1.17 Release Notes
 ---
 
-*Release notes published March 26, 2019.*
+*Release notes published March 26, 2019 and updated on March 29, 2019.*
 
 
 We are pleased to present {{site.data.var.ce}} 2.1.17. This release includes multiple enhancements to product security. 
@@ -43,7 +43,22 @@ This will result in Magento merchants not being able to use Authorize.Net Direct
 
 
 
+## Known issue
 
+**Issue**:  The CGI URL gateway in the UPS module has been updated from HTTP to HTTPS. Consequently, the UPS shipping method does not populate correctly. **Workaround**: Confirm that the Gateway URL uses the HTTPS protocol in the [UPS Shipping Method Configuration](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html). <!--- MAGETWO-98947-->
+
+*Updating an existing setting*:
+
+If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Configuration, you must manually change the protocol of the Gateway URL from HTTP to HTTPS. Example: `https://www.ups.com/using/services/rave/qcostcgi.cgi`
+
+
+*To configure UPS for the first time*: 
+ 
+1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section. 
+ 
+2. At the **UPS Type** field, clear the Use system value checkbox. Then, change `UPS Type` to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
+
+3. Tap **Save Config**.
 
 ## Installation
 

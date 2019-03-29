@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.1 Release Notes
 ---
 
-*Release notes published March 26, 2019.*
+*Release notes published March 26, 2019 and updated on March 29, 2019.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
@@ -1637,9 +1637,25 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 **Workaround**: You must enable HSTS from **Stores** > **General** > **Web** > **BaseUrls (Secure)**. <!--- MC-15003-->
 
-**Issue**: For Inventory Management, asynchronous migration of data between sources will encounter issues due to changes in Asynchronous APIs with topic names reflecting PHP class and method names. 
 
-**Workaround**: We recommend using synchronous operations, setting **Run asynchronously** to "No". To configure, see [Configure Global Options](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) in the Magento User Guide.
+**Issue**: For Inventory Management, asynchronous migration of data between sources will encounter issues due to changes in Asynchronous APIs with topic names reflecting PHP class and method names. **Workaround**: We recommend using synchronous operations, setting **Run asynchronously** to "No". To configure, see [Configure Global Options](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) in the Magento User Guide.
+
+**Issue**:  The CGI URL gateway in the UPS module has been updated from HTTP to HTTPS. Consequently, the UPS shipping method does not populate correctly. **Workaround**: Confirm that the Gateway URL uses the HTTPS protocol in the [UPS Shipping Method Configuration](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html). <!--- MAGETWO-98947-->
+
+*Updating an existing setting*:
+If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Configuration, you must manually change the protocol of the Gateway URL from HTTP to HTTPS. Example: `https://www.ups.com/using/services/rave/qcostcgi.cgi`
+
+ 
+*To configure UPS for the first time*: 
+ 
+1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section. 
+ 
+2. At the **UPS Type** field, clear the Use system value checkbox. Then, change `UPS Type` to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
+
+3. Tap **Save Config**.
+
+
+
 
 ## Community contributions
 
@@ -1669,7 +1685,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3.1  using Composer.
+You can install {{site.data.var.ee}} 2.3.1  using Composer.
 
 ## Migration toolkits
 
