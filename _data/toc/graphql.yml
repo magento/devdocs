@@ -30,7 +30,7 @@ pages:
         - label: Exception handling
           url: /graphql/develop/exceptions.html
 
-        - label: Get Customer Authorization Token
+        - label: Get customer authorization token
         url: /graphql/develop/get-customer-authorization-token.html
 
     - label: Functional testing

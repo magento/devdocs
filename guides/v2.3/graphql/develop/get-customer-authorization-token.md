@@ -1,22 +1,14 @@
 ---
 group: graphql
-title: How to Get Customer Authorization Token
+title: Get customer authorization token
 ---
 
-There are GraphQl queries that can not be successfully executed without customer authentication. GraphQl realizes customer authentication through 
-```text
-Bearer authorization-token
-```
-which we send in the `Authorization` request header field 
+To successfully retrieve information about a specific customer using GraphQL, you need to provide the customer's authentication token.
 
-![GraphiQL Authorization Bearer]({{ page.baseurl }}/graphql/images/graphql-authorization.png)
+The following example shows how to retrieve a customer's authorization token:
 
-It's very easy to get authorization token of your customer in GraphQl. So, for example we have a registered customer in Magento store
-```text
-customer@example.com/password
-```
+**Request**
 
-To get its authorization token please run the next `mutation` query:
 ```text
 mutation {
   generateCustomerToken(email: "customer@example.com", password: "password") {
@@ -25,7 +17,8 @@ mutation {
 }
 ```
 
-If you provided a correct customer's credentials then in the result you will get
+**Response**
+
 ```text
  {
    "data": {
@@ -36,4 +29,29 @@ If you provided a correct customer's credentials then in the result you will get
  }
 ```
 
-Now, you can use that token to any of authorization queries/mutations. 
+You can now use this token in the Authorization request header field for any queries and mutations.
+
+![GraphiQL Authorization Bearer]({{ page.baseurl }}/graphql/images/graphql-authorization.png)
+
+To revoke customer's token please use
+
+**Request**
+```text
+mutation {
+  revokeCustomerToken {
+    result
+  }
+}
+```
+
+**Response**
+
+```text
+{
+  "data": {
+    "revokeCustomerToken": {
+    "result": true
+    }
+  }
+}
+```
