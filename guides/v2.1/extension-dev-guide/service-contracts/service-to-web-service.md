@@ -224,7 +224,7 @@ If a service method argument is called `item`, there will be a problem during SO
     <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group Service-->
     <route url="/V1/customerGroups/:id" method="GET">
-        <service class="Magento\Customer\Api\GroupRepositoryInterface" method="get"/>
+        <service class="Magento\Customer\Api\GroupRepositoryInterface" method="getById"/>
         <resources>
             <resource ref="Magento_Customer::group"/>
         </resources>
@@ -274,7 +274,7 @@ If a service method argument is called `item`, there will be a problem during SO
       <td>
          <p>The interface that the route implements and the name of the web API method.</p>
          <p>The route implements the <code>Magento\Customer\Api\GroupRepositoryInterface</code> interface.</p>
-         <p>The web API method name is <code>get</code>.</p>
+         <p>The web API method name is <code>getById</code>.</p>
       </td>
    </tr>
    <tr>
