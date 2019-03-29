@@ -10,4 +10,4 @@ menu_node: parent
 
 *	[Magento Open Source third-party licenses]({{ page.baseurl }}/release-notes/packages-open-source.html)
 *	[Magento Commerce third-party licenses]({{ page.baseurl }}/release-notes/packages-commerce.html)
-*	[Magento Commerce (Cloud) third-party licenses]({{ page.baseurl }}/release-notes/packages-cloud.html)
+*	[Magento Commerce Cloud third-party licenses]({{ page.baseurl }}/release-notes/packages-cloud.html)
