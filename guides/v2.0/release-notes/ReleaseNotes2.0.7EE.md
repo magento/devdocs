@@ -32,7 +32,7 @@ Backward-incompatible changes are documented in [Magento 2.0 Backward Incompatib
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-[System Requirements]({{ page.baseurl }}/install-gde/system-requirements){: target="_blank"}.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){: target="_blank"}.
 
 ### Installation instructions
 

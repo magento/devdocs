@@ -39,7 +39,7 @@ If not, see the <a href="{{ page.baseurl }}/install-gde/bk-install-guide.html">I
 
 ## Installation part 1: Getting started
 
-1.	See the [system requirements]({{ page.baseurl }}/install-gde/system-requirements).
+1.	See the [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 2.	If your system lacks any requirements, see the prerequisites documentation:
 
 	*	<a href="{{ page.baseurl }}/install-gde/prereq/apache.html">Apache</a>
