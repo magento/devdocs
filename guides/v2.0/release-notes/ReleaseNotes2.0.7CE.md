@@ -20,7 +20,7 @@ The {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% 
 ### System requirements
 
 Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-[System Requirements]({{ page.baseurl }}/install-gde/system-requirements2.html){:target="_blank"}.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 ### Installation instructions
 
