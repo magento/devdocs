@@ -262,16 +262,16 @@ pages:
           url: /release-notes/changes/b2b_changes.html
           include_versions: ["2.2"]
 
-    - label: Third-party licenses
+    - label: Packages
       children:
 
-        - label: Magento Open Source third-party licenses
+        - label: Magento Open Source packages
           url: /release-notes/packages-open-source.html
 
-        - label: Magento Commerce third-party licenses
+        - label: Magento Commerce packages
           url: /release-notes/packages-commerce.html
 
-        - label: Magento Commerce (Cloud) third-party licenses
+        - label: Magento Commerce (Cloud) packages
           url: /release-notes/packages-cloud.html
     
     - label: Inventory management
