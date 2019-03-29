@@ -5,7 +5,7 @@ title: Magento Open Source 2.2.8 Release Notes
 
 ---
 
-*Patch code and release notes were published on March 26, 2019.*
+*Release notes published March 26, 2019 and updated on March 29, 2019.*
 
 
 We are pleased to present Magento Open Source 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and 285 community-submitted pull requests. 
@@ -30,6 +30,16 @@ Follow these steps to download and apply this patch:
 5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
 6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
+
+## PayPal Payflow Pro active carding activity update
+
+The PayPal Payflow Pro integration in Magento is being actively targeted by carding activity. Magento has resolved these carding activity issues by providing Composer packages  that update the CAPTCHA and Google reCAPTCHA extensions.  These packages  also include new options to run those checks on the PayPal Payflow Pro checkout form. See [PayPal Payflow Pro active carding activity](https://support.magento.com/hc/en-us/articles/360025515991)  for a full discussion of this issue and instructions on downloading these packages. **We strongly recommend that all merchants download and install these packages for the security of their storefronts**. 
+
+
+
+
 
 ## Highlights
 

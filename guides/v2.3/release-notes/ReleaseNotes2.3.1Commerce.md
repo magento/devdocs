@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Commerce 2.3.1 Release Notes
 ---
 
-*Release notes published March 26, 2019.*
+*Release notes published March 26, 2019 and updated on March 29, 2019.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
@@ -28,6 +28,12 @@ Follow these steps to download and apply this patch:
 5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
 6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+## PayPal Payflow Pro active carding activity update
+
+The PayPal Payflow Pro integration in Magento is being actively targeted by carding activity. Magento has resolved these carding activity issues by providing Composer packages  that update the CAPTCHA and Google reCAPTCHA extensions.  These packages  also include new options to run those checks on the PayPal Payflow Pro checkout form. See [PayPal Payflow Pro active carding activity](https://support.magento.com/hc/en-us/articles/360025515991)  for a full discussion of this issue and instructions on downloading these packages. **We strongly recommend that all merchants download and install these packages for the security of their storefronts**.
+
+
 
 ## Highlights
 
