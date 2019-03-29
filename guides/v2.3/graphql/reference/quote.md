@@ -1,9 +1,9 @@
 ---
 group: graphql
-title: quote endpoint
+title: Quote endpoint
 ---
 
-A quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
+A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
 
 * Tracking each item in the cart, including the quantity and base cost
 * Determining estimated shipping costs
@@ -26,7 +26,6 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `applied_coupon` | code | Contains the coupon code if used 
 `billing_address` | [CartAddress](#cartAddressAttributes) | Contains the billing address specified in the customer's cart
-`cart_id` | String | The unique ID that identifies the customer's cart
 `items` | [CartItemInterface](#cartItemsInterface) | Contains the items in the customer's cart
 `shipping_addresses` | [CartAddress](#cartAddressAttributes) | Contains one or more shipping addresses
 
@@ -67,7 +66,6 @@ The following returns information about a cart given a `cart_id`. Note that the 
 ``` text
 {
   cart(cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C") {
-    cart_id
     billing_address {
       lastname
       firstname
@@ -92,7 +90,6 @@ The following returns information about a cart given a `cart_id`. Note that the 
 {
   "data": {
     "cart": {
-      "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
       "items": [
         {
          "id": "22",
@@ -186,7 +183,6 @@ mutation {
     }
   ) {
     cart {
-      cart_id
       items {
         product {
           name
@@ -205,7 +201,6 @@ mutation {
   "data": {
     "addSimpleProductsToCart": {
       "cart": {
-        "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
         "items": [
           {
             "product": {
@@ -226,7 +221,7 @@ mutation {
 You can set the billing and shipping addresses on a cart.
 
 ### Set the billing address on cart attributes
-The `SetBillingAddressOnCart` object can contain the following attributes:
+The `setBillingAddressOnCart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -234,7 +229,7 @@ Attribute |  Data Type | Description
 `cart_id` | String | The unique ID that identifies the customer's cart
 
 ### Set the billing address input attributes {#billingAddressInput}
-The `SetBillingAddressInput` object can contain the following attributes:
+The `BillingAddressInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -250,7 +245,6 @@ Attribute |  Data Type | Description
 `city` | String | The city specified for the billing address 
 `company` | String | The company specified for the billing address
 `country_code` | String | The country code and label for the billing address
-`customer_notes` | String | Comments made to the customer that accompanies the order
 `firstname` | String | The customer's first name
 `lastname` | String | The customer's last name
 `postcode` | String | The postal code for the billing address
@@ -289,7 +283,7 @@ mutation {
           postcode: "78758"
           country_code: "US"
           telephone: "8675309"
-          save_in_address_book: False
+          save_in_address_book: false
         }
       }
     }
@@ -365,7 +359,7 @@ mutation {
             postcode: "78758"
             country_code: "US"
             telephone: "8675309"
-            save_in_address_book: False
+            save_in_address_book: false
           }
         }
       ]
