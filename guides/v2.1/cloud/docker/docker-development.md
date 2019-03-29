@@ -28,6 +28,8 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
     Based on version 3.5 and later
 -  **ElasticSearch**—[magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)  
     Based on version 1.7 and later
+    
+See the [service version values available]({{page.baseurl}}/cloud/docker/docker-config.html) for use when launching Docker.
 
 ### Web container
 
