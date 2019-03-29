@@ -208,7 +208,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see
-[System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 {: .bs-callout .bs-callout-info }
 Magento 2.1.2 requirements have changed slightly from 2.1.1. This release supports PHP 5.6.5 and above instead of 5.6.x.

@@ -281,7 +281,9 @@ The response for each item includes the `name`, `sku`, `price` and `description`
     items {
       name
       sku
-      description
+      description {
+        html
+      }
       price {
         regularPrice {
           amount {
