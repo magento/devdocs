@@ -172,6 +172,7 @@ Attribute | Data type | Description
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
 `image` | ProductImage | An object that contains the URL and label for the main image on the product page
+`is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the Rma module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
 `meta_description` | String | A brief overview of the product for search results listings, maximum 255 characters
@@ -189,11 +190,16 @@ Attribute | Data type | Description
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
+`swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
+`tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
 `thumbnail` | ProductImage | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
 `updated_at` | String | The timestamp indicating when the product was last updated
+`url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewrite` module
+`url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewrite` module
+`url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
 `websites` | [Website] | An array of websites in which the product is available
 {:style="table-layout:auto;"}
 
