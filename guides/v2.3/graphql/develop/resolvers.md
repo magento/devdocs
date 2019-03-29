@@ -11,12 +11,11 @@ You can view an example inside the [`\Magento\BundleGraphQl\Model\Resolver\Bundl
 
 A `Value` object wraps a callable object, and you can use [`\Magento\Framework\GraphQl\Query\Resolver\ValueFactory`]({{ site.mage2300url }}lib/internal/Magento/Framework/GraphQl/Query/Resolver/ValueFactory.php) to create a value.
 
-#### Requirements for the mutation 
+#### Mutation requirements  
 
-**Define the query**
-Like a regular GraphQl `query` you should define the GraphQL `mutation` in the `<module_name>/etc/schema.graphqls` file.
+Mutations are also defined within the `<module_name>/etc/schema.graphqls` file.
 
-**Syntax**
+**Mutation syntax**
 ```text
 type Mutation {
     mutationQueryName(inputParamName: MutationQueryInputType, inputParamName2: MutationQueryInputType2, ...): MutationQueryOutput @resolver(class: "Magento\\<module_name>\\Model\\Resolver\\MutationResolverModel") @doc(description:"Mutation query description")
@@ -26,7 +25,7 @@ type Mutation {
 Syntax option | Description
 --- | ---
 `mutationQueryName` | The name of mutation
-`inputParamName` | Mutation's input parameter(s). Mutation query can be without input parameter(s)
+`inputParamName` | Input parameters for the mutation (optional)
 `MutationQueryInputType` | The type of input parameter. For example, `String`, `Int`, `custom type`, etc
 `MutationQueryOutput` | Mutation's result type. For example, `String`, `Int`, `custom type`, etc
 `@resolver(class)` | Resolver's class
@@ -35,7 +34,7 @@ Syntax option | Description
 **Resolver class**
 Template for the GraphQl resolver query/mutation class
  
-```text
+```php
 <?php
 /**
  * Copyright © Magento, Inc. All rights reserved.
@@ -64,7 +63,7 @@ class MutationResolverModel implements ResolverInterface
 }
 ```
 
-**Example of usage**
+### Example usage
 
 The mutation query below creates an empty cart and returns a cart unique identifier
 ```text
@@ -73,7 +72,7 @@ type Mutation {
 }
 ```
 
-Please pay your attention that `MutationQueryInput` is not specified here and `MutationQueryOutput` is defined as `String` type.
+Notice that a `MutationQueryInput` parameter is not specified here and `MutationQueryOutput` is defined as `String` type.
 
 The next query creates a customer's account
 ```text
@@ -82,7 +81,7 @@ type Mutation {
 }
 ```
 
-Please note that `CustomerInput` is a required input parameter because of `!` char and defined as
+The `!` character indicates `CustomerInput` is a required input parameter. `CustomerInput` is defined as follows:
 ```text
 input CustomerInput {
     prefix: String @doc(description: "An honorific, such as Dr., Mr., or Mrs.")
@@ -150,7 +149,7 @@ mutation {
 }
 ```
 
-In the result you will get
+A sample response:
 ```text
 {
   "data": {
