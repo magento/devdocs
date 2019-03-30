@@ -42,7 +42,7 @@ A newly-created team is placed under Company Admin in the company hierarchy.
 
 **Sample Usage**
 
-`POST /V1/team/2`
+`POST <host>/rest/<store_code>/V1/team/2`
 
 **Payload**
 
@@ -65,7 +65,7 @@ You can only change the name or description of a team.
 
 **Sample Usage**
 
-`PUT /V1/team/4`
+`PUT <host>/rest/<store_code>/V1/team/4`
 
 **Payload**
 
@@ -88,7 +88,7 @@ The `GET` call returns the team `id`, `name`, and `description`.
 
 **Sample Usage**
 
-`GET /V1/team/4`
+`GET <host>/rest/<store_code>/V1/team/4`
 
 **Payload**
 
@@ -110,7 +110,7 @@ You cannot delete a team if members are assigned to it.
 
 **Sample Usage**
 
-`DELETE /V1/team/4`
+`DELETE <host>/rest/<store_code>/V1/team/4`
 
 **Payload**
 
@@ -128,7 +128,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq`
+`GET <host>/rest/<store_code>/V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq`
 
 **Payload**
 
@@ -204,7 +204,7 @@ Admin (structure_id = 2)
 
 **Sample Usage**
 
-`GET /V1/hierarchy/2`
+`GET <host>/rest/<store_code>/V1/hierarchy/2`
 
 **Payload**
 
@@ -268,7 +268,7 @@ The following example moves Bryce Martin (`structure_id = 4`) to the West team (
 
 **Sample Usage**
 
-`PUT /V1/hierarchy/move/5`
+`PUT <host>/rest/<store_code>/V1/hierarchy/move/5`
 
 **Payload**
 

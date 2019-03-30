@@ -23,7 +23,7 @@ The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to spe
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/bulk-product-source-transfer`
+`POST <host>/rest/all/V1/inventory/bulk-product-source-transfer`
 
 **Scope**
 

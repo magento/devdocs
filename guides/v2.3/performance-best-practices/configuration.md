@@ -15,7 +15,7 @@ All asynchronous operations in {{site.data.var.ce}} are performed using the Linu
 
 ## Indexers
 
-An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System > Index Management** configuration page.
+An indexer can run in either **Update on Save** or **Update on Schedule** mode. The **Update on Save** mode immediately indexes whenever your catalog or other data changes. This mode assumes a low intensity of update and browsing operations in your store. It can lead to significant delays and data unavailability during high loads. Magento recommends using **Update on Schedule** mode in production, because it stores information about data updates and performs indexation by portions in the background through a specific cron job. You can change the mode of each Magento indexer separately on the  **System** > Tools > **Index Management** configuration page.
 
 <!--  Add to docs in 2.3.1 - MAGEDOC-3020
 We recommend that you use index parallelization and that you set threads count for the index process based on:
@@ -26,7 +26,7 @@ See the [Reindex in parallel mode section]({{ page.baseurl }}/config-guide/cli/c
 
 ## Caches
 
-When you launch your store in production, activate all the caches from the **System > Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.
+When you launch your store in production, activate all the caches from the **System** > Tools > **Cache Management** page. We highly recommend using Varnish, as it is an efficient production page cache solution.
 
 ## Asynchronous email notifications
 
