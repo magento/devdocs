@@ -57,7 +57,7 @@ A access token request contains three basic elements:
 
 Component | Specifies
 --- | ---
-Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST https://magento.host/index.php/rest/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
+Endpoint |  A combination of the _server_ that fulfills the request, the web service, and the `resource` against which the request is being made.<br/><br/>For example, in the `POST <host>/rest/<store_code>/V1/integration/customer/token` endpoint:<br/>The server is `magento.host/index.php/`,<br/> the web service is `rest`.<br/> and the resource is `/V1/integration/customer/token`.
 Content type | The content type of the request body. Set this value to either `"Content-Type:application/json"` or `"Content-Type:application/xml"`.
 Credentials | The username and password for a Magento account.<br/><br/>To specify these credentials in a JSON request body, include code similar to the following in the call: <br/><br/>`{"username":"<USER-NAME>;", "password":"<PASSWORD>"}`<br/><br/>To specify these credentials in XML, include code similar to the following in the call:<br/><br/>`<login><username>customer1@example.com</username><password>customer1pw</password></login>`
 {:style="table-layout:auto;"}

@@ -23,7 +23,7 @@ The `GET /V1/store/storeViews` endpoint returns an array of store view IDs, alon
 
 **Endpoint**
 
-`GET http://<host>/rest/all/V1/store/storeViews`
+`GET <host>/rest/all/V1/store/storeViews`
 
 **Scope**
 
@@ -86,7 +86,7 @@ We can use the same customer definition presented in [Create a customer and gene
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/customers`
+`POST <host>/rest/us/V1/customers`
 
 **Scope**
 
@@ -190,7 +190,7 @@ By default, a customer token is valid for 1 hour. To change this value, click **
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/integration/customer/token`
+`POST <host>/rest/us/V1/integration/customer/token`
 
 **Scope**
 

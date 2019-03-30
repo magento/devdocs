@@ -1091,8 +1091,8 @@ Name  | Config path | EE only? |
 Workflow type | `dev/front_end_development_workflow/type` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Allow Symlinks | `dev/template/allow_symlink` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Minify Html | `dev/template/minify_html` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Enabled Template Path Hints for Storefront | `dev/debug/template_hints_storefront` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
-Enabled Template Path Hints for Admin | `dev/debug/template_hints_admin` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Enable Template Path Hints for Storefront | `dev/debug/template_hints_storefront` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Enable Template Path Hints for Admin | `dev/debug/template_hints_admin` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Add Block Names to Hints | `dev/debug/template_hints_blocks` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Log to File | `dev/debug/debug_logging` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Log to syslog | `dev/syslog/syslog_logging` |  |

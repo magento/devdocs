@@ -7,9 +7,31 @@ title: Magento Open Source 2.3.0 Release Notes
 
 We are pleased to present {{site.data.var.ce}} 2.3.0 General Availability. This release includes numerous functional fixes and enhancements.
 
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.2.8. **We strongly suggest that you install these full patches as soon as you can**.
+ 
+See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+
+Follow these steps to download and apply this patch:
+
+1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
+
+2. Select the Git-based option from **Select your format**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
 ## Highlights
 
 {{site.data.var.ce}} 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
+
+
+
 
 ### Merchant tool enhancements
 
@@ -1603,7 +1625,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-84980-->* The Products in Cart report no longer tries to retrieve the data of deleted products. Previously, when Magento tried to generate this report, it threw an exception. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request [12540](https://github.com/magento/magento2/pull/12540)*.
 
-<!--- MAGETWO-82176-->* Magento no longer throws a fatal error when you search for a customer from  **Reports > By Customers**. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+<!--- MAGETWO-82176-->* Magento no longer throws a fatal error when you search for a customer from  **Reports** > Reviews > **By Customers**. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
 <!--- MAGETWO-86260 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12952](https://github.com/magento/magento2/pull/12952)*. [GitHub-9969](https://github.com/magento/magento2/issues/9969)
 
