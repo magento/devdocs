@@ -199,7 +199,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 ## System requirements
 
 Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. See
-[System Requirements]({{ page.baseurl }}/install-gde/system-requirements2.html){:target="_blank"}.
+[System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 
 {% include install/releasenotes/ee_install_20.md %}
