@@ -11,11 +11,12 @@ You can view an example inside the [`\Magento\BundleGraphQl\Model\Resolver\Bundl
 
 A `Value` object wraps a callable object, and you can use [`\Magento\Framework\GraphQl\Query\Resolver\ValueFactory`]({{ site.mage2300url }}lib/internal/Magento/Framework/GraphQl/Query/Resolver/ValueFactory.php) to create a value.
 
-#### Mutation requirements  
+## Mutation requirements  
 
-Mutations are also defined within the `<module_name>/etc/schema.graphqls` file.
+Like queries, mutations are also defined within the `<module_name>/etc/schema.graphqls` file.
 
-**Mutation syntax**
+### Mutation syntax
+
 ```text
 type Mutation {
     mutationQueryName(inputParamName: MutationQueryInputType, inputParamName2: MutationQueryInputType2, ...): MutationQueryOutput @resolver(class: "Magento\\<module_name>\\Model\\Resolver\\MutationResolverModel") @doc(description:"Mutation query description")
@@ -66,6 +67,7 @@ class MutationResolverModel implements ResolverInterface
 ### Example usage
 
 The mutation query below creates an empty cart and returns a cart unique identifier
+
 ```text
 type Mutation {
     createEmptyCart: String @resolver(class: "\\Magento\\QuoteGraphQl\\Model\\Resolver\\CreateEmptyCart") @doc(description:"Creates an empty shopping cart for a guest or logged in user")
@@ -75,6 +77,7 @@ type Mutation {
 Notice that a `MutationQueryInput` parameter is not specified here and `MutationQueryOutput` is defined as `String` type.
 
 The next query creates a customer's account
+
 ```text
 type Mutation {
     createCustomer (input: CustomerInput!): CustomerOutput @resolver(class: "\\Magento\\CustomerGraphQl\\Model\\Resolver\\CreateCustomer") @doc(description:"Create customer account")
@@ -82,6 +85,7 @@ type Mutation {
 ```
 
 The `!` character indicates `CustomerInput` is a required input parameter. `CustomerInput` is defined as follows:
+
 ```text
 input CustomerInput {
     prefix: String @doc(description: "An honorific, such as Dr., Mr., or Mrs.")
@@ -98,14 +102,16 @@ input CustomerInput {
 }
 ```
 
-`createCustomer` mutation returns `CustomerOutput` object
+The `createCustomer` mutation returns `CustomerOutput` object
+
 ```text
 type CustomerOutput {
     customer: Customer!
 }
 ```
 
-There is `customer` parameter of `CustomerOutput` object is a type of `Customer` object:
+The `customer` parameter of the `CustomerOutput` object is a type of `Customer` object:
+
 ```text
 type Customer @doc(description: "Customer defines the customer name and address and other details") {
     created_at: String @doc(description: "Timestamp indicating when the account was created")
@@ -126,7 +132,8 @@ type Customer @doc(description: "Customer defines the customer name and address 
 }
 ```
 
-So, to create a new customer through `createCustomer` mutation
+The following example shows the `createCustomer` mutation in action:
+
 ```text
 mutation {
     createCustomer(
@@ -150,6 +157,7 @@ mutation {
 ```
 
 A sample response:
+
 ```text
 {
   "data": {
