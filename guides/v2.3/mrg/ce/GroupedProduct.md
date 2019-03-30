@@ -9,5 +9,3 @@ It can offer variations of a product, or group them by season or theme to create
 Products can be purchased separately or as a set.
 Each product purchased appears in the Shopping Cart as a separate item.
 This module extends the existing functionality of Magento_Catalog module by adding new product type.
-
-

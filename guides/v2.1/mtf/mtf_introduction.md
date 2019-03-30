@@ -74,7 +74,7 @@ For other tests please see the following topics:
 
 - [How to run unit and integration tests using `bin/magento` in continuous integration.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)
 
-- [More information about JavaScript unit tests.]({{ page.baseurl }}/test/js/test_js-unit.html)
+- [More information about JavaScript unit tests.]({{ page.baseurl }}/test/js/jasmine.html)
 
 - [More information about performance testing.]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)
 
