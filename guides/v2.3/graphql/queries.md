@@ -281,7 +281,9 @@ The response for each item includes the `name`, `sku`, `price` and `description`
     items {
       name
       sku
-      description
+      description {
+        html
+      }
       price {
         regularPrice {
           amount {
@@ -433,7 +435,7 @@ The query returns 8 items.
 
 #### Logical AND and OR search
 
-This query searches for products that have `name` that ends with `Orange` or has a `sku` that indicates the product is a pair of women’s shorts in size 29 (`WSH%29%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
+This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s shorts in size 10 (`WSH%10%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
 ``` text
 {
@@ -443,11 +445,11 @@ This query searches for products that have `name` that ends with `Orange` or has
         from: "40" to: "49.99"
       }
       name: {
-        like: "%Orange"
+        like: "%Short"
       }
       or: {
         sku: {
-          like: "WSH%29%"
+          like: "WSH%10%"
         }
       }
     }
@@ -477,4 +479,4 @@ This query searches for products that have `name` that ends with `Orange` or has
 }
 ```
 
-The query returns 4 items.
+The query returns 1 item.
