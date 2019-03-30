@@ -26,13 +26,13 @@ Syntax option | Description
 --- | ---
 `mutationQueryName` | The name of mutation
 `inputParamName` | Input parameters for the mutation (optional)
-`MutationQueryInputType` | The type of input parameter. For example, `String`, `Int`, `custom type`, etc
-`MutationQueryOutput` | Mutation's result type. For example, `String`, `Int`, `custom type`, etc
-`@resolver(class)` | Resolver's class
-`@doc(description)` | Mutation's description. Provides information what mutation does.
+`MutationQueryInputType` | The type of input parameter, such as `String`, `Int`, or a custom type, like `MyCustomInput`
+`MutationQueryOutput` | The mutation's result type, such as  `String`, `Int`, or a custom type, like `MyCustomOutput`
+`@resolver(class)` | The class of the resolver
+`@doc(description)` | Describes the purpose of the mutation
 
-**Resolver class**
-Template for the GraphQl resolver query/mutation class
+### Resolver class
+Use the following sample code as a template for the GraphQl resolver query/mutation class
  
 ```php
 <?php
