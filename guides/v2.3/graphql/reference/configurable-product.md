@@ -9,8 +9,8 @@ The `ConfigurableProduct` endpoint defines which configurable product-specific a
 
 Field | Type | Description
 --- | --- | ---
-`variants` | ConfigurableVariant | An array of variants of products
 `configurable_options` | ConfigurableProductOptions | An array of linked simple product items
+`variants` | ConfigurableVariant | An array of variants of products
 
 ## ConfigurableVariant
 
@@ -23,22 +23,22 @@ Field | Type | Description
 
 Field | Type | Description
 --- | --- | ---
-`label` | String | A string that describes the configurable attribute option
 `code` | String | The ID assigned to the attribute
+`label` | String | A string that describes the configurable attribute option
 `value_index` | Int | A unique index number assigned to the configurable product option
 
 ## ConfigurableProductOptions
 
 Field | Type | Description
 --- | --- | ---
-`id` | Int | The configurable option ID number assigned by the system
-`attribute_id` | String | The ID assigned to the attribute
 `attribute_code` | String | A string that identifies the attribute
+`attribute_id` | String | The ID assigned to the attribute
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
-`position` | Int | A number that indicates the order in which the attribute is displayed
+`id` | Int | The configurable option ID number assigned by the system
 `is_use_default` | Boolean | Indicates whether the option is the default
-`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product
+`position` | Int | A number that indicates the order in which the attribute is displayed
 `product_id` | Int | This is the same as a product's 'id' field
+`values` | ConfigurableProductOptionsValues | An array that defines the value_index codes assigned to the configurable product
 
 ## ConfigurableProductOptionsValues
 
