@@ -11,7 +11,7 @@ The `country` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`available_regions` | [[region]](#region) | An array of regions within a particular country
+`available_regions` | [[Region]](#region) | An array of regions within a particular country
 `full_name_english` | String | The name of the country in English
 `full_name_locale` | String | The locale name of the country
 `id` | String | A unique ID for the country
@@ -21,7 +21,7 @@ Attribute | Data type | Description
 
 ### Region attributes {#region}
 
-The `region` object provides the following attributes:
+The `Region` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
