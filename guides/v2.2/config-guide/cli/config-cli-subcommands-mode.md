@@ -56,7 +56,7 @@ Current application mode: {mode}. (Note: Environment variables may override this
 
 where:
 
-  -   **`{mode}`** can be either `default`, `developer` or `production`
+  -   **`{mode}`** can be either `default`, `developer`, or `production`
 
 ## Change modes {#config-mode-change}
 
