@@ -27,8 +27,23 @@ The `ConfigurableProduct` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`variants` | ConfigurableVariant | An array of linked simple products
 `configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
+`variants` | ConfigurableVariant | An array of variants of products
+
+## ConfigurableVariant
+
+Field | Type | Description
+--- | --- | ---
+`attributes` | ConfigurableAttributeOption | ConfigurableAttributeOption contains the value_index (and other related information) assigned to a configurable product option
+`product` | SimpleProduct | An array of linked simple products
+
+## ConfigurableAttributeOption
+
+Field | Type | Description
+--- | --- | ---
+`code` | String | The ID assigned to the attribute
+`label` | String | A string that describes the configurable attribute option
+`value_index` | Int | A unique index number assigned to the configurable product option
 
 ### Configurable product options {#configProdOptions}
 The `ConfigurableProductOptions` object contains the following attributes:
@@ -50,11 +65,11 @@ The `ConfigurableProductOptionsValues` object contains the following attribute:
 
 Attribute | Type | Description
 --- | --- | ---
-`value_index` | Int | A unique index number assigned to the configurable product option
-`label` | String | The label of the product
 `default_label` | String | The label of the product on the default store
+`label` | String | The label of the product
 `store_label` | String | The label of the product on the current store
 `use_default_value` | Boolean | Indicates whether to use the default_label
+`value_index` | Int | A unique index number assigned to the configurable product option
 
 ### Example usage
 
