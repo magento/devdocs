@@ -33,11 +33,12 @@ Condition | Notes
 `lteq` | Less than or equal
 `moreq` | More or equal
 `neq` | Not equal
+`nfinset` | A value that is not within a set of values
 `nin` | Not in. The `value` can contain a comma-separated list of values.
 `notnull` | Not null
 `null` | Null
 `to` | The end of a range. Must be used with `from`
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 `condition_type` is optional if the operator is `eq`.

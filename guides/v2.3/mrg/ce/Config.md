@@ -12,5 +12,3 @@ for each scope (there can be a default scope as well as scopes for each website 
 Modules can add items to be configured on the system configuration page by creating 
 system.xml files in their etc/adminhtml directories. These system.xml files get merged 
 to populate the forms in the config page.
-
-
