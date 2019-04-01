@@ -498,8 +498,6 @@ class View extends Template
 
 5.17. Exceptions which need to be displayed to the user MUST be sub-types of `LocalizedException`. Any other types of exceptions MUST be wrapped with `LocalizedException` before being displayed to the user.
 
-5.18. `LocalizedException`s SHOULD be thrown in the presentation layer only.
-
 ## 6. Application layers
 
 ### 6.1. All layers
