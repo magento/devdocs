@@ -26,7 +26,7 @@ See [Magento 2.2.x technology stack requirements]({{ page.baseurl }}/install-gde
 
 Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`: 
 
-```
+```bash
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
@@ -37,7 +37,7 @@ The kernel parameter `net.core.somaxconn` controls the maximum number of open so
 
 ## PHP
 
-Magento fully supports 7.2.11. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
+Magento 2.2 fully supports up to version 7.1.0. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
 
 ### PHP extensions
 
