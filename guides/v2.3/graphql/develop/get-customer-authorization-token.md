@@ -33,4 +33,4 @@ You can now use this token in the Authorization request header field for any que
 
 ![GraphiQL Authorization Bearer]({{ page.baseurl }}/graphql/images/graphql-authorization.png)
 
-To revoke customer's token please [revokeCustomerToken]({{ page.baseurl }}/graphql/reference/customer.html#revoke-a-customer-token).
+If necessary, you also can [revoke the customer's token]({{ page.baseurl }}/graphql/reference/customer.html#revoke-a-customer-token).
