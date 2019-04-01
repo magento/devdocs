@@ -57,7 +57,7 @@ Name | Description | Format | Requirements
 `reject_reason` | Specifies why a company's request to be a B2B customer is rejected | string | Optional
 `rejected_at` | A timestamp indicating when the company was rejected. | string | Optional
 `super_user_id` | The `customer_id` of the company administrator. When creating a company, the `customer_id` must already exist.  | integer | Required to create or update a company.
-{:style="table-layout:auto;"}
+
 
 ### Create a company
 

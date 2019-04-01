@@ -24,7 +24,7 @@ redirect_from:
 
 ## {{ group.name }}
 
-{:style="table-layout:auto;"}
+
 Description |	Versions |	Type	| Date
 ---|---|---|---{% for item in group.items %}
 {{ item.description }} | {{ item.versions }} | {{ item.type }} |
