@@ -134,8 +134,7 @@ Variables starting with `@` (without the underscore) are global, and are listed 
 
 ## Tabs and accordions set with CSS
 
-The implementation of tabs (accordion) only on mobile view and rest of the content as Tabs on desktop. 
-To achieve a nice and smooth effect.
+Use the accordion style for mobile and tab style for desktop.
 
 To set tabs and accordions using breakpoints, see the following example:
 ```less
