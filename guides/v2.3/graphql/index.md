@@ -45,11 +45,11 @@ In the near future, we'll roll out the following features:
 
 ## How to access GraphQL
 
-GraphiQL is an in-browser tool for writing, validating, and testing GraphQL queries. You can download an extension from your browser's app store. For the Google Chrome browser, the [ChromeiQL extension](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij?hl=en) will do the job. The following image shows a sample query, its response, and the GraphQL browser
+GraphQL is an in-browser tool for writing, validating, and testing GraphQL queries. You can download an extension from your browser's app store. For the Google Chrome browser, the [ChromeiQL extension](https://chrome.google.com/webstore/detail/chromeiql/fkkiamalmpiidkljmicmjfbieiclmeij?hl=en) will do the job. The following image shows a sample query, its response, and the GraphQL browser
 
-![GraphiQL browser]({{ page.baseurl }}/graphql/images/graphql-browser.png)
+![GraphQL browser]({{ page.baseurl }}/graphql/images/graphql-browser.png)
 
-To begin using GraphiQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available in [Queries]({{ page.baseurl }}/graphql/queries.html).
+To begin using GraphQL, set the GraphQL endpoint by entering `http://<magento2-3-server>/graphql` in the URL bar, then click **Set endpoint**. You can use the browser in the right column to determine how to set up a query. Additional examples are also available in [Queries]({{ page.baseurl }}/graphql/queries.html).
 
 
 {:.bs-callout .bs-callout-info}
