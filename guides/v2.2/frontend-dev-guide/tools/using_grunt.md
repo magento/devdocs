@@ -41,7 +41,7 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
 ## Grunt configuration file {#grunt_config}
 
-If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory.  The default configuration file for working with themes is `dev/tools/grunt/configs/themes.js` and Difine your theme in `themes.js` For example,
+If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. You can define your theme in the `themes.js` file located in the above directory. The following shows an example of how you can define your theme.
 
     Theme_Name: {
         area: 'frontend',
