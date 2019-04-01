@@ -12,10 +12,12 @@ The changes are aggregated into two tables:
 1. **Changes in classes** that contains backward incompatible changes made to the Magento classes
 2. **Changes in interfaces** that contains backward incompatible changes made to the Magento interfaces
 
-{% include note.html
-type="warning"
-content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
-%}
+{: .bs-callout .bs-callout-warning }
+When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. 
+
+## 2.2.7 - 2.2.8 {#releases-2_2_7-2_2_8}
+
+{% include backward-incompatible-changes/open-source/2.2.7-2.2.8.md %}
 
 ## 2.2.6 - 2.2.7 {#releases-2_2_6-2_2_7}
 

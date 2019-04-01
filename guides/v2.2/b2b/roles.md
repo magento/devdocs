@@ -103,7 +103,7 @@ All resources that are not explicitly allowed are denied. You must specify the `
 
 **Sample Usage**
 
-`POST /V1/company/role`
+`POST <host>/rest/<store_code>/V1/company/role`
 
 **Payload**
 
@@ -297,7 +297,7 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 **Sample Usage**
 
-`PUT /V1/company/role/6`
+`PUT <host>/rest/<store_code>/V1/company/role/6`
 
 **Payload**
 
@@ -495,7 +495,7 @@ This call returns the `id`, role name, and set of permissions defined within the
 
 **Sample Usage**
 
-`GET /V1/company/role/6`
+`GET <host>/rest/<store_code>/V1/company/role/6`
 
 **Payload**
 
@@ -672,7 +672,7 @@ You cannot delete a role if it is the only role defined within the company.
 
 **Sample Usage**
 
-`DELETE /V1/company/role/5`
+`DELETE <host>/rest/<store_code>/V1/company/role/5`
 
 **Payload**
 
@@ -690,7 +690,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET /V1/company/role?searchCriteria[filter_groups][0][filters][0][field]=company_id&searchCriteria[filter_groups][0][filters][0][value]=2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/company/role?searchCriteria[filter_groups][0][filters][0][field]=company_id&searchCriteria[filter_groups][0][filters][0][value]=2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 

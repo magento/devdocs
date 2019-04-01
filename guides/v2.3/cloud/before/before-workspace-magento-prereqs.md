@@ -194,7 +194,7 @@ To install the Magento Cloud CLI:
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
+* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
 * [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/composer.html)
 
 ## Additional options
