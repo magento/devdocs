@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: dcb189be6fd4e0ebc69dce7cd6cdeb3b960b3a9e
+  revision: 7a7f3798c51e6d9ea0fe2d419a13d945ed1406d8
   specs:
     devdocs (0.0.1)
       jekyll (~> 3.3)
@@ -96,7 +96,7 @@ GEM
     minitest (5.11.3)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    parallel (1.16.2)
+    parallel (1.17.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     progressbar (1.10.0)
