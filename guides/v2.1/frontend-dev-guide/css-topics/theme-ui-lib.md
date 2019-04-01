@@ -132,7 +132,7 @@ To call a mixin with parameter values different from default, set these values w
 Variables starting with `@_` are private mixin variables used only in this mixin.
 Variables starting with `@` (without the underscore) are global, and are listed in [`lib/web/css/source/lib/variables`].
 
-## Tabs and accordions set with css {#docs}
+## Tabs and accordions set with CSS {#docs}
 
 The implementation of tabs (accordion) only on mobile view and rest of the content as Tabs on desktop. 
 To achieve a nice and smooth effect.
