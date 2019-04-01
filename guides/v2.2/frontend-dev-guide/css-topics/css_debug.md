@@ -73,13 +73,13 @@ grunt watch | Tracks the changes in the source files, recompiles `.css` files, a
 The following shows which Grunt tasks to use for debugging:
 -   After you switch the compilation mode from client-side to server-side, run the `exec` command.
 -   After you customize the content of any `.less` file, except the root source files, run the `less` task and reload the page.
--   After you \[customize the root source files or move the files included to the root files\], run the `exec` command and reload the page.
+-   After you [customize the root source files or move the files included to the root files]{{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception, run the `exec` command and reload the page.
 -   After you run the `exec` command, run the `clear` command to `clear` the Magento cache, then run the `watch` command. Running the commands in this order will ensure that any custom jQuery attributes like product sliders, banners, etc are loaded correctly.
 
 If you have LiveReload installed, run the `grunt watch` command, and the flow is even simpler:
 
 -   After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes 
--   After you \[customize the root source files or move the files included to the root files\], run the `clean` and `exec` commands, which reloads the page in the browser.
+-   After you [customize the root source files or move the files included to the root files]{{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception, run the `clean` and `exec` commands, which reloads the page in the browser.
 
 
 ## CSS source maps {#source_maps}
@@ -94,8 +94,4 @@ CSS source maps solve this issue. They help to find the `.less` file, where the 
 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/with-map.png){:width="610px"}
 
-CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox. 
-
-
-[customize the root source files or move the files included to the root files]: {{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception
-[customize the root source files or move the files included to the root files]: {{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception
+CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox.
