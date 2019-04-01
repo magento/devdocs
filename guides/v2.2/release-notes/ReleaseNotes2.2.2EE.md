@@ -1107,7 +1107,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 
 
-For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements2.html).
+For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ### Installation and upgrade instructions
 

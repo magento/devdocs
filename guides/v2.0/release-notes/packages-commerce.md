@@ -1,11 +1,11 @@
 ---
 group: release-notes
 subgroup: 99_third
-menu_title: Magento Open Source third-party licenses
-menu_order: 1
+menu_title: Magento Commerce packages
+menu_order: 3
 ---
 
-This page contains links to license agreements of the third party components used within Magento Open Source.  Click the **License** links to view the end user license agreement for the corresponding software.
+This page contains links to license agreements of the third party components used within Magento Commerce (formerly Enterprise Edition).  Click the **License** links to view the end user license agreement for the corresponding software.
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
@@ -53,6 +53,12 @@ tedivm/jshrink || BSD-3-Clause|[Source](https://github.com/tedious/JShrink)|[Lic
 tubalmartin/cssmin || BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
 Zend Framework||BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
 Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/app/etc/modules/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
+elasticsearch/elasticsearch || Apache-2.0|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)
+guzzlehttp/ringphp || MIT|[Source](https://github.com/guzzle/RingPHP)|[License](https://github.com/guzzle/RingPHP/blob/master/LICENSE)
+guzzlehttp/streams || MIT|[Source](https://github.com/guzzle/streams)|[License](https://github.com/guzzle/streams/blob/master/LICENSE)
+solarium/solarium || NewBSD|[Source](https://github.com/solariumphp/solarium)|[License](https://github.com/solariumphp/solarium/blob/master/COPYING)
+php-amqplib/php-amqplib" |2.5.*| LGPL-2.1|[Source](https://github.com/php-amqplib/php-amqplib)|[License](https://github.com/php-amqplib/php-amqplib/blob/master/LICENSE)
+react/promise || MIT|[Source](https://github.com/reactphp/promise)|[License](https://github.com/reactphp/promise/blob/master/LICENSE)
 extjs |1.0.1|Open GPL 3.0 (when was included)|[Source](https://www.sencha.com/)|[License](https://www.gnu.org/licenses/lgpl.html)
 fotorama|4.6.4 |MIT|[Source](https://github.com/artpolikarpov/fotorama)|[License](https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE)
 jquery|1.11.0 |MIT|[Source](https://jquery.com/)|[License](https://jquery.org/license/)
