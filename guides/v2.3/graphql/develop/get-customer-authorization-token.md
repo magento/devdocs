@@ -19,7 +19,7 @@ mutation {
 
 **Response**
 
-```text
+```json
  {
    "data": {
      "generateCustomerToken": {
