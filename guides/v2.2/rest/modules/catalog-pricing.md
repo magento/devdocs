@@ -220,7 +220,7 @@ Name | Description | Format | Requirements
 `sku` | The SKU of the product | string | Required to set, update, or delete a tier price
 `skus` | An array of SKU values that is specified when retrieving a list of tier prices | array | Required for retrievals
 `customer_group` |  A specific customer group that qualifies to receive the tier price discount | string | Required to set, update, or delete a tier price
-`quantity` | The quantity that must be purchased to receive the tier price | integer | Required to set, update, or delete a tier price
+`quantity` | The quantity that must be purchased to receive the tier price | float | Required to set, update, or delete a tier price
 {:style="table-layout:auto;"}
 
 ### Set tier prices
