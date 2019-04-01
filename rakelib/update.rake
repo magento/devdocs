@@ -39,6 +39,16 @@ namespace :update do
     end
   end
 
+  desc 'Update MFTF docs'
+  task :mftf do
+    puts 'Updating MFTF docs'.magenta
+    abort 'Cannot find the "mftf" directory' unless Dir.exist? 'mftf'
+    Dir.chdir 'mftf' do
+      sh 'git remote -v'
+      sh 'git pull'
+    end
+  end
+
   desc 'Update devdocs master'
   task :devdocs do
     puts 'Updating devdocs'.magenta
@@ -49,8 +59,8 @@ namespace :update do
   end
 
   desc 'Update devodcs and subrepositories'
-  task all: %w[devdocs m1 mbi pb]
+  task all: %w[devdocs subrepos]
 
   desc 'Update subrepositories only'
-  task subrepos: %w[m1 mbi pb]
+  task subrepos: %w[m1 mbi pb mftf]
 end

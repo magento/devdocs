@@ -65,7 +65,7 @@ You can use before methods to change the arguments of an observed method by retu
 
 Below is an example of a before method modifying the `$name` argument before passing it on to the observed `setName` method.
 
-``` PHP
+```php
 namespace My\Module\Plugin;
 
 class ProductAttributesUpdater
@@ -85,7 +85,7 @@ You can use these methods to change the result of an observed method by modifyin
 
 Below is an example of an after method modifying the return value `$result` of an observed methods call.
 
-``` PHP
+```php
 
 namespace My\Module\Plugin;
 
@@ -102,7 +102,7 @@ After methods have access to all the arguments of their observed methods. When t
 
 Below is an example of an after method that accepts the `null` result and arguments from the observed `login` method for [`Magento\Backend\Model\Auth`]({{ site.mage2100url }}app/code/Magento/Backend/Model/Auth.php){:target="_blank"}:
 
-``` PHP
+```php
 namespace My\Module\Plugin;
 
 class AuthLogger
@@ -132,7 +132,7 @@ After methods do not need to declare all the arguments of their observed methods
 
 The following example is a class with an after method for [`\Magento\Catalog\Model\Product\Action::updateWebsites($productIds, $websiteIds, $type)`]({{ site.mage2100url }}app/code/Magento/Catalog/Model/Product/Action.php){:target="_blank"}:
 
-``` PHP
+```php
 
 class WebsitesLogger
 {
@@ -172,7 +172,7 @@ If the around method does not call the `callable`, it will prevent the execution
 
 Below is an example of an around method adding behavior before and after an observed method:
 
-``` PHP
+```php
 namespace My\Module\Plugin;
 
 class ProductAttributesUpdater
@@ -199,7 +199,7 @@ When you wrap a method which accepts arguments, your plugin must also accept tho
 
 For example, the following code defines a parameter of type <code>SomeType</code> which is nullable:
 
-``` PHP
+```php
 namespace My\Module\Model;
 
 class MyUtility
@@ -213,7 +213,7 @@ class MyUtility
 
 You should wrap this method with a plugin like below:
 
-``` PHP
+```php
 namespace My\Module\Plugin;
 
 class MyUtilityUpdater
@@ -229,7 +229,7 @@ Note if you miss <code>= null</code> and Magento calls the original method with 
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
-``` PHP
+```php
 namespace My\Module\Plugin;
 
 class MyUtilityUpdater

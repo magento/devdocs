@@ -9,5 +9,3 @@ This module is designed to extend existing functionality of Magento_Catalog modu
 
 Configurable Products let the customers select the variant they desire by choosing options.
 For example, store owner sells t-shirts in two colors and three sizes.
-
-

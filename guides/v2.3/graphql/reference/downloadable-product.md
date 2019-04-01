@@ -49,7 +49,7 @@ The following example returns the list of purchased downloadable products for th
 ```
 
 **Response**
-```text
+```json
 {
   "data": {
     "customerDownloadableProducts": {
@@ -177,7 +177,7 @@ The following query returns information about downloadable product `240-LV04`, w
 ```
 **Response**
 
-```text
+```json
 {
   "data": {
     "products": {

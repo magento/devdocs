@@ -38,7 +38,9 @@ Look for the following highlights in this release:
 
 #### Page Builder
 
-Page Builder is a drag-and-drop visual content editing tool that lets merchants customize content page layout and create shopping experiences that blend content and commerce without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. Page Builder is available on Magento Commerce only. See [Page Builder Release Notes](https://devdocs.magento.com/page-builder/docs/release-notes.html) and [Page Builder](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html). 
+Page Builder is a drag-and-drop visual content editing tool that lets merchants customize content page layout and create shopping experiences that blend content and commerce without writing HTML or CSS.  Page Builder provides merchants with a powerful set of content types to compose various types of pages and easy drag-and-drop positioning of all content elements for intuitive page editing. Page Builder is available on Magento Commerce only. See [Page Builder User Guide](https://docs.magento.com/m2/ee/user_guide/cms/page-builder.html) and [Page Builder Developer Documentation](https://devdocs.magento.com/page-builder/docs/index.html). 
+
+
 
 #### Improved order creation workflow in the Admin
 
@@ -63,9 +65,6 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 
 
 * **Enhancements to mass inventory transfers**. Bulk transfer of inventory has been optimized to improve processing speed and to reduce locking during transfers.   
- 
-* **In-store pickup fulfillment option**. Merchants can use Inventory Management to enable in-store pickup for selected sources, which can reduce shipping costs and increase customer satisfaction. Store pickup orders have a higher reservation priority than shipped orders, which prevents insufficient inventory available in sources to fulfill shipped orders.  See [Inventory Management Release Notes](https://devdocs.magento.com/guides/v2.3/release-notes/inventory-management.html) for information about specific fixes and acknowledgements to community contributors.
-
 
 
 ### Improved developer experience
@@ -115,7 +114,7 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 * Accept.js library is now used for Authorize.NET payments.
 
-* Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
+* Magento now supports **Elasticsearch 6.x**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
 * Update PayPal Express Checkout to `checkout.js v4`. This introduces a modernized checkout flow, faster checkout performance, and new payment options in a single integration that does not have to be updated as new payment methods become available. It also unlocks new payment options including Venmo and PayPal Credit. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
@@ -1088,7 +1087,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 ### Infrastructure
 
-<!--- ENGCOM-4389 -->* Magento now supports Elasticsearch 6.0. *Fix submitted by [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*.  
+<!--- ENGCOM-4389 -->* Magento now supports Elasticsearch 6.x. *Fix submitted by [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*.  
 
 <!--- MC-5201 -->* Magento now supports Redis 5.0. 
 
