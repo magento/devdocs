@@ -137,7 +137,7 @@ Variables starting with `@` (without the underscore) are global, and are listed 
 The implementation of tabs (accordion) only on mobile view and rest of the content as Tabs on desktop. 
 To achieve a nice and smooth effect.
 
-To set tabs and accordions with css lib use of Breakpoints. like in the following example:
+To set tabs and accordions using breakpoints, see the following example:
 ```less
 & when (@media-common = true) { 
     .product.data.items {
