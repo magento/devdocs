@@ -11,7 +11,7 @@ The topic describes how to install, configure and use [Grunt JavaScript task run
 
 ## Prerequisites
 
-Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
+Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The default mode sets the Less compilation mode to Server-side Less compilation.
 
 ## Installing and configuring Grunt {#grunt_prereq}
 
@@ -76,6 +76,7 @@ The following shows which Grunt tasks to use for debugging:
 -   After you switch the compilation mode from client-side to server-side, run the `exec` command.
 -   After you customize the content of any `.less` file, except the root source files, run the `less` task and reload the page.
 -   After you [customize the root source files or move the files included to the root files]({{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception), run the `exec` command and reload the page.
+-   After you run the `exec` command, run the `clear` command to `clear` the Magento cache, then run the `watch` command. Running the commands in this order will ensure that any custom jQuery attributes like product sliders, banners, etc are loaded correctly.
 
 If you have LiveReload installed, run the `grunt watch` command, and the flow is even simpler:
 -   After you customize the content of any `.less` file, changes are applied and the page reloads automatically. No additional changes are required.

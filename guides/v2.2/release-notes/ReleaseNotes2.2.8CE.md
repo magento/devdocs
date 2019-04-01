@@ -15,7 +15,21 @@ Although this release includes these security enhancements, no confirmed attacks
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.8) have been ported to 2.3.1, 2.1.17, 1.14.4.1, and 1.9.4.1, as appropriate.
 
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
+A critical SQL injection vulnerability has been identified in 2.2.x Magento code. A fix for this issue is included in Magento 2.2.8. However, if you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+Follow these steps to download and apply this patch:
+
+1. Access the Downloads page [here](https://magento.com/tech-resources/download#download2288).
+
+2. Select the Git-based option from **Select your format**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 ## Highlights
 
@@ -34,7 +48,7 @@ These releases include security enhancements that help close cross-site scriptin
 
 ### Infrastructure improvements
 
-* **Magento now supports Elasticsearch 6.0**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
+* **Magento now supports Elasticsearch 6.x**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
  
 
 * Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage. See [Authorize.Net Direct Post](https://docs.magento.com/m2/2.2/ee/user_guide/payment/authorize-net-direct-post.html) for a discussion of this deprecation and the steps you need to take to add the new key you’ll need after deprecation.  <!-- MAGETWO-98129-->* 
@@ -111,25 +125,6 @@ In addition to security enhancements, this release contains the following functi
 
 
 <!-- ENGCOM-3868 -->* `CustomerRepository::getList()` now loads custom attributes named `company`. *Fix submitted by [Govind Sharma](https://github.com/GovindaSharma) in pull request [20284](https://github.com/magento/magento2/pull/20284)*. [GitHub-17759](https://github.com/magento/magento2/issues/17759)
-
-
-### B2B
-
-<!-- MAGETWO-96442 -->*  Merchants can now add a product to the default public catalog,  and the product can be accessed by the product URL on the storefront. Previously, Magento did not add the product to the shared catalog and instead displayed this error, `Requested categories don't exist`. 
-
-<!-- MAGETWO-94884 -->* Magento no longer displays a duplicate **Add product** button when you change currency from the Order currency dropdown while creating an order from the Admin. 
-
-<!-- MAGETWO-94820 -->* Magento no longer deletes custom shared catalogs  when the user that created it is deleted. 
-
-<!-- MAGETWO-85125 -->* Magento now loads the company profile, roles, and permissions sections of a company account when **Enable Reward Points Functionality** is set to **no** in the Admin, and you flush cache storage. 
-
-<!-- MAGETWO-88254 -->* Tier pricing remains in effect when you add a product with tier pricing  to an order from the Admin. Previously, Magento converted tier prices to non-discounted product prices when you added more products to the order, applied a custom price to one of the products, or applied a coupon code to the order. 
-
-<!-- MAGETWO-90835 -->* You can now filter customers by status. Previously, Magento threw an SQL ERROR when you clicked on **Apply Filters** after setting the filter to status. 
-
-<!-- MAGETWO-94431 -->* Magento now displays products that merchants have added to the public catalog through **Product** > **Edit page** > **Shared Catalog**. Previously, these items appeared if added  through **Catalog** > **Shared Catalog**, but not through **Product** > **Edit page** > **Shared Catalog**. 
-
-<!-- MAGETWO-89296 -->* Menus now close as expected from the Quick Order page in mobile view.
 
 
 ### Bundle products
