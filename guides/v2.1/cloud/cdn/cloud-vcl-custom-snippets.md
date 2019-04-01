@@ -199,7 +199,7 @@ In the JSON response, the version number is incremented, and the *active* key va
 
 Save the new version number in a bash environment variable for use in subsequent commands:
 
-   ```export FASTLY_EDIT_VERSION_=<Version>```
+   ```export FASTLY_EDIT_VERSION=<Version>```
 
 
 #### Step 3: Create a custom VCL snippets {#create-snippet}
