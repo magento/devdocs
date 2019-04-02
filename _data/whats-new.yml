@@ -12,7 +12,7 @@ entries:
   type: New topic
   date: April  1, 2019
   link: https://github.com/magento/devdocs/pull/4052
-- description: Added section about mutations in [Resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html)
+- description: Added section about mutations in [Resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html).
   versions: 2.3.x
   type: Major update
   date: March 30, 2019
