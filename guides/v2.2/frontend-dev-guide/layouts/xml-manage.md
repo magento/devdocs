@@ -180,6 +180,18 @@ Example: add links to the page header panel.
 </referenceContainer>
 ```
 
+To wrap div or block using container see example:
+
+```xml
+<container name="some.container" as="someContainer" label="Some Container" htmlTag="div" htmlClass="some-container">
+  <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+            <arguments>
+                <argument name="css_class" xsi:type="string">header links</argument>
+            </arguments>
+        </block>
+</container>
+```
+
 ## Create a block {#xml-manage-block}
 
 Blocks are created (declared) using the `<block>` instruction.
