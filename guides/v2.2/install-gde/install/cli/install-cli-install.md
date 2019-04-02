@@ -56,7 +56,7 @@ You can run the following commands to find values for some required arguments:
 | Language           | magento info:language:list      |
 | Currency           | magento info:currency:list      |
 | Time zone          | php  magento info:timezone:list |
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 If an error displays when you run these commands, verify that you updated installation dependencies as discussed in [Update installation dependencies]({{ page.baseurl }}/install-gde/install/prepare-install.html).
@@ -88,7 +88,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--admin-email`|Magento administrator user's e-mail address.|Yes|
 |`--admin-user`|Magento administrator username.|Yes|
 |`--admin-password`|Magento administrator user password. The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character. We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, `--admin-password='A0b9%t3g'`|Yes|
-{:style="table-layout:auto;"}
+
 
 **Site, database, and RabbitMQ configuration options**
 
@@ -105,8 +105,8 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--currency`|Default currency to use in the storefront. (If you have not done so already, you can view the list of currencies by entering magento info:currency:list from the bin directory.)|No|
 |`--timezone`|Default time zone to use in the Admin and storefront. (If you have not done so already, you can view the list of time zones by entering magento info:timezone:list from the bin directory.)|No|
 |`--use-rewrites`|`1` means you use web server rewrites for generated links in the storefront and Admin.<br><br>`0` disables the use of web server rewrites. This is the default.|No|
-|`--use-secure`|`1` enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.<br><br>`0` disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be 0. This is the default.|Yes|
-|`--base-url-secure`|Secure base URL to use to access your Magento Admin and storefront in the following format: `http[s]://<host or ip>/<your Magento install dir>/`|Yes|
+|`--use-secure`|`1` enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.<br><br>`0` disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be 0. This is the default.|No|
+|`--base-url-secure`|Secure base URL to use to access your Magento Admin and storefront in the following format: `http[s]://<host or ip>/<your Magento install dir>/`|No|
 |`--use-secure-admin`|`1` means you use SSL to access the Magento Admin. Make sure your web server supports SSL before you select this option.<br><br>`0` means you do not use SSL with the Admin. This is the default.|No|
 |`--admin-use-security-key`|1 causes the Magento software to use a randomly generated key value to access pages in the Magento Admin and in forms. These key values help prevent cross-site script forgery attacks. This is the default.<br><br>`0` disables the use of the key.|No|
 |`--session-save`|Use any of the following:<br><br>- `db` to store session data in the database. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.<br><br>- `files` to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.<br><br>- `redis` to store session data in Redis. If you will be using Redis for default or page caching, Redis must be already installed. See Use Redis for session storage for additional information about configuring support for Redis.|No|
@@ -120,7 +120,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--amqp-password`|{{site.data.var.ee}} only. The password for connecting to RabbitMQ. Do not use the default password `guest`.|No|
 |`--amqp-virtualhost`|{{site.data.var.ee}} only. The virtual host for connecting to RabbitMQ. The default is `/`.|No|
 |`--amqp-ssl`|{{site.data.var.ee}} only. Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 To enable or disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).

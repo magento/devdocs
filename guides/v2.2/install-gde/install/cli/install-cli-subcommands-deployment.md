@@ -52,7 +52,7 @@ The following table discusses the meanings of installation parameters and values
 |`--key`|If you have one, specify a key to encrypt [sensitive data](#sens-data) in the Magento database. If you don't have one, Magento generates one for you.|No|
 |`--db-init-statements`|Advanced MySQL configuration parameter. Uses database initialization statements to run when connecting to the MySQL database.<br><br>Default is `SET NAMES utf8;`.<br><br>Consult a reference similar to [this one](http://dev.mysql.com/doc/refman/5.6/en/server-options.html) before you set any values.|No|
 |`--http-cache-hosts`|Comma-separated list of HTTP cache gateway hosts to which to send purge requests. (For example, Varnish servers.) Use this parameter to specify the host or hosts to purge in the same request. (It doesn't matter if you have only one host or many hosts.)<br><br>Format must be `<hostname or ip>:<listen port>`, where you can omit `<listen port>` if it's port 80. For example, `--http-cache-hosts=192.0.2.100,192.0.2.155:6081`. Do not separate hosts with a space character.|No|
-{:style="table-layout:auto;"}
+
 
 {% include install/sens-data.md %}
 

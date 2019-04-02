@@ -134,7 +134,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Tools/ Console                                 | <span class='status green'>Green</span> |
 | Tools/ Dev Tools                               | <span class='status green'>Green</span> |
 | Tools/ Web Server Configuration                | <span class='status green'>Green</span> |
-{:style="table-layout:auto"}
+
 
 ## EE Modules
 
@@ -177,7 +177,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ TargetRule                | <span class='status green'>Green</span> |
 | Module/ VersionsCms               | <span class='status green'>Green</span> |
 | Module/ VisualMerchandiser        | <span class='status green'>Green</span> |
-{:style="table-layout:auto"}
+
 
 ## B2B Modules
 
@@ -186,7 +186,7 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Company         | <span class='status green'>Green</span> |
 | Module/ NegotiableQuote | <span class='status green'>Green</span> |
 | Module/ SharedCatalog   | <span class='status green'>Green</span> |
-{:style="table-layout:auto"}
+
 
 ## Misc Modules
 
@@ -214,4 +214,4 @@ Issues that are not related to the 2.3 release are not part of this report.
 | Module/ Sales                     | <span class='status yellow'>Yellow</span> |
 | None                              | <span class='status green'>Green</span> |
 | Tools/ Utilities                  | <span class='status green'>Green</span> |
-{:style="table-layout:auto"}
+
