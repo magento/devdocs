@@ -20,7 +20,7 @@ To verify your split databases are working properly, perform the following tasks
 |--- |--- |
 |quote database is working|Add items to a cart. Verify that rows have been added to your quote database's quote, quote_address, and quote_item tables.|
 |sales database is working|Complete an order (any payment method, including check/money order). Verify that rows have been added to your sales database's sales_order_address, sales_order_item, and sales_order_payment tables.|
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-warning}
 You must back up the two additional database instances manually. Magento backs up only the main database instance. The [<code>'magento setup:backup --db</code>]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html) command and Magento Admin options do not back up the additional tables.
