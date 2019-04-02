@@ -26,7 +26,7 @@ HTTP code | Error code | Text representation | Description
 403 | 15 | `permission_denied` |The consumer does not authorized to access the resource.
 405 | 16 | `method_not_allowed` |The method is not supported or not allowed.
 403 | 17 | `consumer_key_invalid` |The Consumer Key is invalid.
-{:style="table-layout:auto;"}
+
 
 ## Related topic
 
