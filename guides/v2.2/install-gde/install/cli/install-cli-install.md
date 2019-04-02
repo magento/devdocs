@@ -122,6 +122,17 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--amqp-ssl`|{{site.data.var.ee}} only. Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 {:style="table-layout:auto;"}
 
+**Lock configuration options**
+
+|Name|Value|Required?|
+|--- |--- |--- |
+|`--lock-provider`|Lock provider name.<br><br>Available lock providers: `db`, `zookeeper`, `file`.<br><br>The default lock provider: `db`|No|
+|`--lock-db-prefix`|The specific db prefix to avoid lock conflicts when using `db` lock provider.<br><br>The default value: `NULL`|No|
+|`--lock-zookeeper-host`|Host and port to connect to Zookeeper cluster when you use `zookeeper` lock provider.<br><br>For example: `127.0.0.1:2181`|Yes, if you set `--lock-provider=zookeeper`|
+|`--lock-zookeeper-path`|The path where Zookeeper will save locks.<br><br>The default path is: `/magento/locks`|No|
+|`--lock-file-path`|The path where file locks will be saved.|Yes, if you set `--lock-provider=file`|
+{:style="table-layout:auto;"}
+
 {:.bs-callout .bs-callout-info}
 To enable or disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 
