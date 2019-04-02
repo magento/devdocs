@@ -22,7 +22,7 @@ If you want to change the values after installation, connect to your environment
 |`ADMIN_EMAIL`| | Email address for the administrative user. This address is used to send password reset notifications.|
 |`ADMIN_PASSWORD`| | Password for the administrative user. When the project is created a random password is generated and an email is sent to the {{ site.data.var.ece }} License Owner. During project creation, the License Owner should have already changed the password. You might need to contact the License Owner for the updated password.|
 | `ADMIN_LOCALE`    | `en_US` | The default locale used by the Magento Admin.
-{:style="table-layout:auto;"}
+
 
 
 ## Admin URL
