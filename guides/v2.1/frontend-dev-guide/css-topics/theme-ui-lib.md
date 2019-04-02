@@ -132,6 +132,25 @@ To call a mixin with parameter values different from default, set these values w
 Variables starting with `@_` are private mixin variables used only in this mixin.
 Variables starting with `@` (without the underscore) are global, and are listed in [`lib/web/css/source/lib/variables`].
 
+## Tabs and accordions set with CSS
+
+Use the accordion style for mobile and tab style for desktop.
+
+To set tabs and accordions using breakpoints, see the following example:
+```text
+& when (@media-common = true) { 
+    .product.data.items {
+        .lib-data-accordion();
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+    .product.data.items {
+        .lib-data-tabs();
+    }
+}
+```
+
 ## Embedded documentation {#docs}
 
 The detailed information about the Magento UI library is embedded in the code repository:
