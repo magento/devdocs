@@ -27,7 +27,7 @@ Attribute |  Description
 `currentPage` | Specifies which page of results to return. The default value is 1. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `sort` | Specifies which attribute to sort on, and whether to return the results in ascending or descending order. See [Queries]({{ page.baseurl }}/graphql/queries.html) for more information.
 `Products` | An output object that contains the results of the query. See [Response](#Response) for details.
-{:style="table-layout:auto;"}
+
 
 ## ProductFilterInput object {#ProductFilterInput}
 
@@ -50,12 +50,10 @@ Magento processes the attribute values specified in  a `ProductFilterInput` as  
 
 The following attributes can be used to create filters. See the [Response](#Response) section for information about each attribute.
 
-``` text
+```text
+category_id
 country_of_manufacture
 created_at
-custom_design
-custom_design_from
-custom_design_to
 custom_layout
 custom_layout_update
 description
@@ -74,7 +72,6 @@ news_from_date
 news_to_date
 options_container
 or
-page_layout
 price
 required_options
 short_description
@@ -88,8 +85,6 @@ thumbnail
 thumbnail_label
 tier_price
 updated_at
-url_key
-url_path
 weight
 ```
 
@@ -129,12 +124,11 @@ Each attribute is described below:
 
 Attribute |  Description
 --- | ---
+`filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
 `items` | An array of products that match the specified search criteria.
 `page_info` | An object that includes the `page_info` and `currentPage` values specified in the query
-`total_count` | The number of products returned
-`filters` | An array of layered navigation filters. These filters can be used to implement layered navigation on your app.
 `sort_fields` | An object that includes the default sort field and all available sort fields
-{:style="table-layout:auto;"}
+`total_count` | The number of products returned
 
 When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
 
@@ -173,11 +167,6 @@ Attribute | Data type | Description
 `categories` | [CategoryInterface] | The categories assigned to the product. See [categories endpoint]({{ page.baseurl }}/graphql/reference/categories.html) for more information
 `country_of_manufacture` | String | The product's country of origin
 `created_at` | String | Timestamp indicating when the product was created
-`custom_design` | String | A theme that can be applied to the product page
-`custom_design_from` | String | The beginning date when a theme is applied to the product page
-`custom_design_to` | String| The date at which a theme is no longer applied to the product page
-`custom_layout` | String | The name of a custom layout
-`custom_layout_update` | String | XML code that is applied as a layout update to the product page
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
@@ -191,18 +180,15 @@ Attribute | Data type | Description
 `name` | String | The product name. Customers use this name to identify the product.
 `new_from_date` | String | The beginning date for new product listings, and determines if the product is featured as a new product
 `new_to_date` | String | The end date for new product listings
-`only_x_left_in_stock` | Float | The remaining quantity of this item
 `options_container` | String | If the product has multiple options, determines where they appear on the product page
-`page_layout` | String | The page layout of the product page. Values are `1column-center`, `2columns-left`, `2columns-right`, and `3columns`
 `price` | ProductPrices | The price of an item. A `ProductPrice` object is returned. See [ProductPrices](#ProductPrices) for more information.
-`product_links` | [ProductLinks] | An array of [ProductLinks](#ProductLinks) objects
+`product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
 `small_image` | ProductImage | An object that contains the URL and label for the small image used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
-`stock_status` | ProductStockStatus | An enumeration describing the stock status of the product. Possible values are `IN_STOCK` and `OUT_OF_STOCK`.
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
 `thumbnail` | ProductImage | An object that contains the URL and label for the product's thumbnail image
@@ -213,8 +199,7 @@ Attribute | Data type | Description
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewrite` module
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewrite` module
 `url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
-`website_ids` | [Int] | An array of website IDs in which the product is available
-{:style="table-layout:auto;"}
+`websites` | [Website] | An array of websites in which the product is available
 
 ### ProductPrices object {#ProductPrices}
 
@@ -225,7 +210,7 @@ Attribute |  Data Type | Description
 `maximalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the highest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "to" value.
 `minimalPrice` | Price | Used for composite (bundle, configurable, grouped) products. This is the lowest possible final price for all the options defined within a composite product. If you're specifying a price range, this would be the "from" value.
 `regularPrice` | Price | The base price of a product.
-{:style="table-layout:auto;"}
+
 
 #### Price object {#Price}
 
@@ -235,7 +220,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `amount` | Money | The price of the product and its currency code. See [Money object](#Money).
 `adjustments` | [PriceAdjustment] | An array of [PriceAdjustment](#PriceAdjustment) objects.
-{:style="table-layout:auto;"}
+
 
 ##### Money object {#Money}
 
@@ -243,9 +228,8 @@ A `Money` object defines a monetary value, including a numeric value and a curre
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`value` | Float | The price of the product
 `currency` | CurrencyEnum | A three-letter currency code, such as `USD` or `EUR`.
-{:style="table-layout:auto;"}
+`value` | Float | The price of the product
 
 ##### PriceAdjustment array {#PriceAdjustment}
 
@@ -256,7 +240,7 @@ Attribute |  Data Type | Description
 `amount` | Money | The amount of the price adjustment and its currency code. See [Money object](#Money).
 `code` | PriceAdjustmentCodesEnum | One of `tax`, `weee`, or `weee_tax`.
 `description` | PriceAdjustmentDescriptionEnum | Indicates whether the entity described by the code attribute is included or excluded from the adjustment.
-{:style="table-layout:auto;"}
+
 
 #### ProductLinks object {#ProductLinks}
 
@@ -264,12 +248,11 @@ Attribute |  Data Type | Description
 
 Attribute | Type | Description
 --- | --- | ---
-`sku` | String | The identifier of the linked product
 `link_type` | String | One of `related`, `associated`, `upsell`, or `crosssell`.
 `linked_product_sku` | String | The SKU of the linked product
 `linked_product_type` | String | The type of linked product (`simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`)
 `position` | Int | The position within the list of product links
-{:style="table-layout:auto;"}
+`sku` | String | The identifier of the linked product
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 
@@ -277,16 +260,16 @@ Attribute | Type | Description
 
 Attribute | Type | Description
 --- | --- | ---
-`id` | Int | The identifier assigned to the object
-`media_type` | String | `image` or `video`
-`label` | String | The "alt" text displayed on the UI when the user points to the image
-`position` | Int | The media item's position after it has been sorted
-`disabled` | Boolean | Whether the image is hidden from view
-`types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
-`file` | String | The path of the image on the server
 `content` | ProductMediaGalleryEntriesContent | Contains a [ProductMediaGalleryEntriesContent](#ProductMediaGalleryEntriesContent) object
+`disabled` | Boolean | Whether the image is hidden from view
+`file` | String | The path of the image on the server
+`id` | Int | The identifier assigned to the object
+`label` | String | The "alt" text displayed on the UI when the user points to the image
+`media_type` | String | `image` or `video`
+`position` | Int | The media item's position after it has been sorted
+`types` | [String] | Array of image types. It can have the following values: `image`, `small_image`, `thumbnail`
 `video_content` | ProductMediaGalleryEntriesVideoContent | Contains a [ProductMediaGalleryEntriesVideoContent](#ProductMediaGalleryEntriesVideoContent) object
-{:style="table-layout:auto;"}
+
 
 #### ProductMediaGalleryEntriesContent object {#ProductMediaGalleryEntriesContent}
 
@@ -295,9 +278,8 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `base64_encoded_data` | String | The image in base64 format
-`type` | String | The MIME type of the file, such as `image/png`
 `name` | String | The file name of the image
-{:style="table-layout:auto;"}
+`type` | String | The MIME type of the file, such as `image/png`
 
 #### ProductMediaGalleryEntriesVideoContent object {#ProductMediaGalleryEntriesVideoContent}
 
@@ -311,7 +293,7 @@ Attribute | Type | Description
 `video_title` | String | Required. The title of the video
 `video_description` | String | A description of the video
 `video_metadata` | String | Optional data about the video
-{:style="table-layout:auto;"}
+
 
 ### ProductTierPrices object {#ProductTier}
 
@@ -320,11 +302,11 @@ The `ProductTierPrices` object defines a tier price, which is a quantity discoun
 Attribute | Type | Description
 --- | --- | ---
 `customer_group_id` | Int | The ID of the customer group
+`percentage_value` | Float | The percentage discount of the item
 `qty` | Float | The number of items that must be purchased to qualify for tier pricing
 `value` | Float | The price of the fixed price item
-`percentage_value` | Float | The percentage discount of the item
 `website_id` | Int | The ID assigned to the website
-{:style="table-layout:auto;"}
+
 
 ## PhysicalProductInterface {#PhysicalProductInterface}
 
@@ -333,7 +315,7 @@ Attribute | Type | Description
 Attribute | Type | Description
 --- | --- | ---
 `weight` | Float | The weight of the item, in units defined by the store
-{:style="table-layout:auto;"}
+
 
 ## LayerFilter object
 
@@ -341,11 +323,10 @@ The `LayerFilter` object can be returned in a response to help create layered na
 
 Attribute | Type | Description
 --- | --- | ---
+`filter_items` |  [LayerFilterItemInterface] | An array of filter items
+`filter_items_count` | Int | The number of filter items in filter group
 `name` | String | The layered navigation filter name
 `request_var` | String | The request variable name for the filter query
-`filter_items_count` | Int | The number of filter items in filter group
-`filter_items` |  [LayerFilterItemInterface] | An array of filter items
-{:style="table-layout:auto;"}
 
 ### LayerFilterItemInterface
 
@@ -353,10 +334,9 @@ Attribute | Type | Description
 
 Attribute | Type | Description
 --- | --- | ---
+`items_count` | Int | The number of items the filter returned
 `label` | String | The label applied to a filter
 `value_string` | String | The value for filter request variable to be used in a query
-`items_count` | Int | The number of items the filter returned
-{:style="table-layout:auto;"}
 
 ## SortFields object
 
@@ -366,15 +346,14 @@ Attribute | Type | Description
 --- | --- | ---
 `default` | String | The default sort field
 `options` | `SortField` | An array that contains all the fields you can use for sorting
-{:style="table-layout:auto;"}
+
 
 ### SortField object
 
 Attribute | Type | Description
 --- | --- | ---
-`value` | String | The attribute name or code to use as the sort field
 `label` | String | The attribute's label
-{:style="table-layout:auto;"}
+`value` | String | The attribute name or code to use as the sort field
 
 ## Sample query
 

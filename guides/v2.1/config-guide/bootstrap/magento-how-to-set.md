@@ -17,7 +17,7 @@ The following table discusses the bootstrap parameters you can set:
 | ------------------- | -------------------------------------------- |
 | MAGE_DIRS           | Specifies custom directory and URL paths     |
 | MAGE_PROFILER       | Enables dependency graphs and HTML profiling |
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 *   Not all bootstrap parameters are documented at this time.

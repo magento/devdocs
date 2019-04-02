@@ -7,8 +7,11 @@ pages:
 
     - label: Implementation
       children:
-        - label: GraphQL request headers
+        - label: GraphQL requests
           url: /graphql/send-request.html
+
+        - label: Get customer authorization token
+          url: /graphql/get-customer-authorization-token.html
 
         - label: Queries
           url: /graphql/queries.html
