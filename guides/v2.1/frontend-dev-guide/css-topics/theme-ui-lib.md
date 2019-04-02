@@ -137,7 +137,7 @@ Variables starting with `@` (without the underscore) are global, and are listed 
 Use the accordion style for mobile and tab style for desktop.
 
 To set tabs and accordions using breakpoints, see the following example:
-```less
+```text
 & when (@media-common = true) { 
     .product.data.items {
         .lib-data-accordion();
