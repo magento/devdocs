@@ -156,6 +156,6 @@ Use this table to understand what changes Magento can make and which version num
 | | Index added/changed| PATCH|
 | | Foreign key added| MAJOR|
 | | Temporary tables added/removed/changed | PATCH|
-  {:style="table-layout:auto;"}
+  
   
 [private]: http://php.net/manual/en/language.oop5.visibility.php
