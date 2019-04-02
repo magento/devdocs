@@ -34,7 +34,7 @@ The following table explains this command's options, parameters, and values.
 | `show-framework`        | Framework dependencies report.                                                                                       | Yes       |
 | `-d --directory`        | Path to the base directory to start searching for report data.                                                       | No        |
 | `-o --output`           | Specifies the absolute file system path and file name of the comma-separated value (csv) output file for the report. | No        |
-{:style="table-layout:auto;"}
+
 
 If no directory or filename is passed as an argument, the following application root is used as the default directory, and the following default filenames are used:
 
@@ -43,7 +43,7 @@ If no directory or filename is passed as an argument, the following application 
 | `magento info:dependencies:show-modules`          | `modules-dependencies.csv`          |
 | `magento info:dependencies:show-modules-circular` | `modules-circular-dependencies.csv` |
 | `magento info:dependencies:show-framework`        | `framework-dependencies.csv`        |
-{:style="table-layout:auto;"}
+
 
 ### Sample module dependencies report
 
