@@ -44,6 +44,18 @@ To ensure the stability of your customizations and prevent upgrades from overwri
         font-style: normal
     }
     ```
+## Overview of Magento's Icon CSS
+
+ To find the icon font files for the Magento Blank theme in `lib/web/fonts/Blank-Theme-Icons`
+
+ `lib/web/css/source/lib/variables/_typography.less` defines the font icon path and name, and in the Magento Blank theme web/css/source/_icons.less uses these to define the icon font face itself, to be used in all CSS declarations.
+
+ You can find LESS variables are defined to store, `lib/web/css/source/lib/variables/_icons.less`  the Unicode characters that correspond to the right font glyphs for each icon. 
+
+ The defined icon font face and the character variables are used throughout the theme LESS code to define icons, usually through a call to the `lib-icon-font` mixins. And you’ve successfully replaced the native icons with your own. 
+
+
+Using [IcoMoon](https://icomoon.io/app/), you can start with an imported font like Magento's native icons, make your desired tweaks.
 
 {:.bs-callout .bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.
