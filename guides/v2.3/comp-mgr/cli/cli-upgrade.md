@@ -142,8 +142,11 @@ _Optional_—If the Magento updater is installed (it is located in `<Magento ins
 
     {:.bs-callout .bs-callout-info}
       If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
-1. Move the project to the `<Magento install dir>/update` directory:
+1. Remove the old `update` directory and move the `temp_dir/update` to the `<Magento install dir>/update` directory:
 
+   ```bash
+   rm -rf update
+   ```
    ```bash
    mv temp_dir/update .
    ```

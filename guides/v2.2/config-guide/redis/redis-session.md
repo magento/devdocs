@@ -47,7 +47,7 @@ where
 |session-save-redis-disable-locking|disable_locking|Disable session locking entirely.|0 (false)|
 |session-save-redis-min-lifetime|min_lifetime|Minimum session lifetime, in seconds.|60|
 |session-save-redis-max-lifetime|max_lifetime|Maximum session lifetime, in seconds.|2592000 (720 hours)|
-{:style="table-layout:auto;"}
+
 
 ### Example command
 

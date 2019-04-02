@@ -100,7 +100,7 @@ where:
 |`--amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
 |`--amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
 |`--amqp-ssl`|Indicates whether to connect to RabbitMQ. The default is `false`. If you set the value to true, see Configure SSL for more information.|
-{:style="table-layout:auto;"}
+
 
 ## Configure SSL
 

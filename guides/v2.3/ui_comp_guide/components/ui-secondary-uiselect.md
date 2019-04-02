@@ -18,7 +18,7 @@ type="tip"
 content="You must create a controller for `searchUrl`. If you'd like to use other data for the request, you can override the `processRequest` method in your component."
 %}
 
-<table style="table-layout:auto;">
+<table>
   <tr>
     <th>Option</th>
     <th>Description</th>
@@ -93,7 +93,7 @@ actions: [
 |`showOpenLevelsActionIcon`|--- |Boolean|True|Optional|
 |`showTree`|--- |Boolean|False|Optional|
 |`validationLoading`|Displays a loading icon to show that the chosen option is loading; icon will show if the display is set to true|Boolean|False|Optional|
-{:style="table-layout:auto;"}
+
 
 
 The following configuration can be passed in as arguments:

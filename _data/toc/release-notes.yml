@@ -282,3 +282,7 @@ pages:
       url: /page-builder/docs/release-notes.html
       exclude_versions: ["2.0", "2.1", "2.2"]
       versionless: true
+
+    - label: GraphQL
+      url: /graphql/release-notes.html
+      exclude_versions: ["2.0", "2.1", "2.2"]
