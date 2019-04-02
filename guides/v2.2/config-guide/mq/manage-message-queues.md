@@ -1,6 +1,8 @@
 ---
 group: configuration-guide
 title: Manage message queues
+redirect_from:
+  - /guides/v2.2/config-guide/mq/manage-mysql.html
 functional_areas:
   - Configuration
   - System
@@ -37,7 +39,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 
 * Cron job `consumers_runner` is enabled
 * Cron job `consumers_runner` runs all defined consumers
-* Each consumer process 10000 messages and then terminate
+* Each consumer processes 1000 messages and then terminates
 
 #### Specific configuration
 
