@@ -11,24 +11,24 @@ The `country` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
-`available_regions` | [[region]](#region) | An array of regions within a particular country
+`available_regions` | [[Region]](#region) | An array of regions within a particular country
 `full_name_english` | String | The name of the country in English
 `full_name_locale` | String | The locale name of the country
 `id` | String | A unique ID for the country
 `three_letter_abbreviation` | String | The three-letter abbreviation of the country, such as `USA`
 `two_letter_abbreviation` | String | The two-letter abbreviation of the country, such as `US`
-{:style="table-layout:auto;"}
+
 
 ### Region attributes {#region}
 
-The `region` object provides the following attributes:
+The `Region` object provides the following attributes:
 
 Attribute | Data type | Description
 --- | --- | ---
 `code` | String | The two-letter code for the region, such as `TX` for Texas
 `id` | Int | A unique ID for the region
 `name` | String | The name of the region, such as `Texas`
-{:style="table-layout:auto;"}
+
 
 ### Countries attributes
 
@@ -37,7 +37,7 @@ The `countries` object provides the following attributes:
 Attribute | Data type | Description
 --- | --- | ---
 `Country` | [[Country]](#countryAttributes)| Provides information for all countries specified in the store
-{:style="table-layout:auto;"}
+
 
 ### Currency attributes
 
@@ -51,7 +51,7 @@ Attribute | Data type | Description
 `default_display_currecy_code` | String | Specifies if the currency code is set as the store's default
 `default_display_currecy_symbol` | String | Specifies if the currency symbol is set as the store's default
 `exchange_rates` | [[ExchangeRate]](#exchangeRateAttributes) | An array of exchange rates specified in the store
-{:style="table-layout:auto;"}
+
 
 ### Exchange rate attributes {#exchangeRateAttributes}
 
@@ -61,7 +61,7 @@ Attribute | Data type | Description
 --- | --- | ---
 `currency_to` | String | Specifies the store's default currency to exchange to
 `rate` | Float | The exchange rate for the store's default currency
-{:style="table-layout:auto;"}
+
 
 ## Country
 Use the `country` query to retrieve information about a specific country.

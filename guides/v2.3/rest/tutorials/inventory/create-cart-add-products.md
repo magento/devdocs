@@ -49,7 +49,7 @@ Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
 --- | --- | --- | ---
 `24-WB01` | 35 | 10 | 25
 `24-WB03` | 19 | 0 | 42
-{:style="table-layout:auto;"}
+
 
 Later in this step, we'll order 20 `24-WB01` items and 50 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
 

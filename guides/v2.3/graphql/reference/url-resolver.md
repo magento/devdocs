@@ -32,7 +32,7 @@ Attribute | Type | Description
 --- | --- | ---
 `parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
 `url` | String | The request URL
-{:style="table-layout:auto;"}
+
 
 ### HttpQueryParameter object {#HttpQueryParameter}
 
@@ -42,7 +42,7 @@ Attribute | Type | Description
 --- | --- | ---
 `name` | String | The parameter name, such as `id`
 `value` | String | The value assigned to the parameter
-{:style="table-layout:auto;"}
+
 
 ## Example usage
 
