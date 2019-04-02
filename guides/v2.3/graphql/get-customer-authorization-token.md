@@ -1,9 +1,11 @@
 ---
 group: graphql
 title: Get customer authorization token
+contributor_name: Alex Taranovskyi
+contributor_link: http://www.atwix.com/
 ---
 
-To successfully retrieve information about a specific customer using GraphQL, you need to provide the customer's authentication token.
+To successfully retrieve information about a specific customer using GraphQL, you need to provide the customer's authorization token.
 
 The following example shows how to retrieve a customer's authorization token:
 
@@ -23,7 +25,7 @@ mutation {
  {
    "data": {
      "generateCustomerToken": {
-       "token": "c9l4ihcgs45kz2c8h7bb2jp4mzyzz7q0"
+       "token": "hoyz7k697ubv5hcpq92yrtx39i7x10um"
      }
    }
  }
