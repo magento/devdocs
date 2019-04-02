@@ -29,6 +29,9 @@ pages:
       - label: Authorizenet
         url: /mrg/ce/Authorizenet.html
     
+      - label: AuthorizenetAcceptjs
+        url: /mrg/ce/AuthorizenetAcceptjs.html
+    
       - label: Backend
         url: /mrg/ce/Backend.html
     
@@ -149,6 +152,9 @@ pages:
       - label: Directory
         url: /mrg/ce/Directory.html
     
+      - label: DirectoryGraphQl
+        url: /mrg/ce/DirectoryGraphQl.html
+    
       - label: Downloadable
         url: /mrg/ce/Downloadable.html
     
@@ -166,6 +172,9 @@ pages:
     
       - label: Elasticsearch
         url: /mrg/ce/Elasticsearch.html
+    
+      - label: Elasticsearch6
+        url: /mrg/ce/Elasticsearch6.html
     
       - label: Email
         url: /mrg/ce/Email.html
@@ -190,6 +199,9 @@ pages:
     
       - label: GraphQl
         url: /mrg/ce/GraphQl.html
+    
+      - label: GroupedCatalogInventory
+        url: /mrg/ce/GroupedCatalogInventory.html
     
       - label: GroupedProduct
         url: /mrg/ce/GroupedProduct.html
@@ -220,6 +232,12 @@ pages:
     
       - label: MessageQueue
         url: /mrg/ce/MessageQueue.html
+    
+      - label: MsrpConfigurableProduct
+        url: /mrg/ce/MsrpConfigurableProduct.html
+    
+      - label: MsrpGroupedProduct
+        url: /mrg/ce/MsrpGroupedProduct.html
     
       - label: Multishipping
         url: /mrg/ce/Multishipping.html
@@ -296,6 +314,9 @@ pages:
       - label: SalesAnalytics
         url: /mrg/ce/SalesAnalytics.html
     
+      - label: SalesGraphQl
+        url: /mrg/ce/SalesGraphQl.html
+    
       - label: SalesInventory
         url: /mrg/ce/SalesInventory.html
     
@@ -316,6 +337,9 @@ pages:
     
       - label: SendFriend
         url: /mrg/ce/SendFriend.html
+    
+      - label: SendFriendGraphQl
+        url: /mrg/ce/SendFriendGraphQl.html
     
       - label: Shipping
         url: /mrg/ce/Shipping.html
@@ -358,6 +382,9 @@ pages:
     
       - label: Theme
         url: /mrg/ce/Theme.html
+    
+      - label: ThemeGraphQl
+        url: /mrg/ce/ThemeGraphQl.html
     
       - label: Tinymce3
         url: /mrg/ce/Tinymce3.html
@@ -415,10 +442,13 @@ pages:
     
       - label: WishlistAnalytics
         url: /mrg/ce/WishlistAnalytics.html
-
+    
+      - label: WishlistGraphQl
+        url: /mrg/ce/WishlistGraphQl.html
   - label: Commerce
+    include_versions: ["2.3"]
     children:
-      
+    
       - label: AdminGws
         url: /mrg/ee/AdminGws.html
     
@@ -643,71 +673,69 @@ pages:
     
       - label: Worldpay
         url: /mrg/ee/Worldpay.html
-  
   - label: B2B
     children:
-  
-    - label: B2b
-      url: /mrg/b2b/B2b.html
-  
-    - label: BundleNegotiableQuote
-      url: /mrg/b2b/BundleNegotiableQuote.html
-  
-    - label: BundleRequisitionList
-      url: /mrg/b2b/BundleRequisitionList.html
-  
-    - label: BundleSharedCatalog
-      url: /mrg/b2b/BundleSharedCatalog.html
-  
-    - label: Company
-      url: /mrg/b2b/Company.html
-  
-    - label: CompanyCredit
-      url: /mrg/b2b/CompanyCredit.html
-  
-    - label: CompanyGraphQl
-      url: /mrg/b2b/CompanyGraphQl.html
-  
-    - label: CompanyPayment
-      url: /mrg/b2b/CompanyPayment.html
-  
-    - label: ConfigurableNegotiableQuote
-      url: /mrg/b2b/ConfigurableNegotiableQuote.html
-  
-    - label: ConfigurableRequisitionList
-      url: /mrg/b2b/ConfigurableRequisitionList.html
-  
-    - label: ConfigurableSharedCatalog
-      url: /mrg/b2b/ConfigurableSharedCatalog.html
-  
-    - label: GiftCardNegotiableQuote
-      url: /mrg/b2b/GiftCardNegotiableQuote.html
-  
-    - label: GiftCardRequisitionList
-      url: /mrg/b2b/GiftCardRequisitionList.html
-  
-    - label: GiftCardSharedCatalog
-      url: /mrg/b2b/GiftCardSharedCatalog.html
-  
-    - label: GroupedRequisitionList
-      url: /mrg/b2b/GroupedRequisitionList.html
-  
-    - label: GroupedSharedCatalog
-      url: /mrg/b2b/GroupedSharedCatalog.html
-  
-    - label: NegotiableQuote
-      url: /mrg/b2b/NegotiableQuote.html
-  
-    - label: NegotiableQuoteSharedCatalog
-      url: /mrg/b2b/NegotiableQuoteSharedCatalog.html
-  
-    - label: QuickOrder
-      url: /mrg/b2b/QuickOrder.html
-  
-    - label: RequisitionList
-      url: /mrg/b2b/RequisitionList.html
-  
-    - label: SharedCatalog
-      url: /mrg/b2b/SharedCatalog.html
-  
-  
+    
+      - label: B2b
+        url: /mrg/b2b/B2b.html
+    
+      - label: BundleNegotiableQuote
+        url: /mrg/b2b/BundleNegotiableQuote.html
+    
+      - label: BundleRequisitionList
+        url: /mrg/b2b/BundleRequisitionList.html
+    
+      - label: BundleSharedCatalog
+        url: /mrg/b2b/BundleSharedCatalog.html
+    
+      - label: Company
+        url: /mrg/b2b/Company.html
+    
+      - label: CompanyCredit
+        url: /mrg/b2b/CompanyCredit.html
+    
+      - label: CompanyGraphQl
+        url: /mrg/b2b/CompanyGraphQl.html
+    
+      - label: CompanyPayment
+        url: /mrg/b2b/CompanyPayment.html
+    
+      - label: ConfigurableNegotiableQuote
+        url: /mrg/b2b/ConfigurableNegotiableQuote.html
+    
+      - label: ConfigurableRequisitionList
+        url: /mrg/b2b/ConfigurableRequisitionList.html
+    
+      - label: ConfigurableSharedCatalog
+        url: /mrg/b2b/ConfigurableSharedCatalog.html
+    
+      - label: GiftCardNegotiableQuote
+        url: /mrg/b2b/GiftCardNegotiableQuote.html
+    
+      - label: GiftCardRequisitionList
+        url: /mrg/b2b/GiftCardRequisitionList.html
+    
+      - label: GiftCardSharedCatalog
+        url: /mrg/b2b/GiftCardSharedCatalog.html
+    
+      - label: GroupedRequisitionList
+        url: /mrg/b2b/GroupedRequisitionList.html
+    
+      - label: GroupedSharedCatalog
+        url: /mrg/b2b/GroupedSharedCatalog.html
+    
+      - label: NegotiableQuote
+        url: /mrg/b2b/NegotiableQuote.html
+    
+      - label: NegotiableQuoteSharedCatalog
+        url: /mrg/b2b/NegotiableQuoteSharedCatalog.html
+    
+      - label: QuickOrder
+        url: /mrg/b2b/QuickOrder.html
+    
+      - label: RequisitionList
+        url: /mrg/b2b/RequisitionList.html
+    
+      - label: SharedCatalog
+        url: /mrg/b2b/SharedCatalog.html
+    
