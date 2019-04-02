@@ -10,6 +10,9 @@ pages:
         - label: GraphQL request headers
           url: /graphql/send-request.html
 
+        - label: Get customer authorization token
+          url: /graphql/get-customer-authorization-token.html
+
         - label: Queries
           url: /graphql/queries.html
 
@@ -29,9 +32,6 @@ pages:
 
         - label: Exception handling
           url: /graphql/develop/exceptions.html
-
-        - label: Get customer authorization token
-          url: /graphql/develop/get-customer-authorization-token.html
 
     - label: Functional testing
       url: /graphql/functional-testing.html
