@@ -14,7 +14,7 @@ The Fieldset component implements a container for visually-grouped form elements
 | `visible`           | Boolean | `true`  | Initial component's visibility. When set to `false`, the `display: none` CSS style is added to the component's DOM block. |
 | `additionalClasses` | Object  | {}      | Custom classes added to the component's DOM block.                                                                        |
 | `level`             | Integer |         | Explicitly indicates the level of nesting([date-level] attribute).                                                        |
-{:style="table-layout:auto;"}
+
 
 ### collapsible configuration
 
@@ -22,7 +22,7 @@ The Fieldset component implements a container for visually-grouped form elements
 | ------------- | ------- | ------- | --------------------------------------------------------------------------------- |
 | `collapsible` | Boolean | `false` | Enables/disables the collapsible functionality.                                   |
 | `opened`      | Boolean | `false` | Initial collapsible state. Applied when the collapsible functionality is enabled. |
-{:style="table-layout:auto;"}
+
 
 ## Source files
 

@@ -54,7 +54,7 @@ Name | Description | Type | Requirements
 `use_default_carrier_config` | Reserved for future use | Boolean | Optional
 `carrier_code` | Reserved for future use | String | Optional
 `position` | Reserved for future use | Integer | Optional
-{:style="table-layout:auto;"}
+
 
 ## Create a source
 
