@@ -43,7 +43,7 @@ pages:
               url: /install-gde/install-roadmap_part1.html
 
         - label: Magento system requirements
-          url: /install-gde/system-requirements2.html
+          url: /install-gde/system-requirements.html
           children:
 
             - label: Magento technology stack requirements

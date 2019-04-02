@@ -18,7 +18,7 @@ functional_areas:
 
 Code, test, and deploy across Integration, Staging, and finally Production environment for continuous integration of your store.
 
-For full release notes, see [Release Information]({{ page.baseurl }}/release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{ page.baseurl }}/release-notes/thirdparty-mccloud.html).
+For full release notes, see [Release Information]({{ page.baseurl }}/release-notes/bk-release-notes.html) and [Magento Commerce (Cloud) third-party licenses]({{ page.baseurl }}/release-notes/packages-cloud.html).
 
 ## {{site.data.var.ece}} plans and subscriptions {#plans}
 {{site.data.var.ece}} provides plan options based on the size of your business. Each plan includes {{site.data.var.ece}}, support, and Cloud-based hosting and infrastructure on a subscription basis.

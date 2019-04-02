@@ -83,7 +83,6 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
   * [More information about PayPal]({{page.baseurl}}/install-gde/system-requirements_tls1-2.html)
   * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
-  * [More information about `repo.magento.com`]({{ site.baseurl }}/guides/v2.1/release-notes/tech_bull_tls-repo.html)
 
 ### Required system dependencies
 
@@ -116,10 +115,10 @@ Mail Transfer Agent (MTA) or an SMTP server
 
     Magento 2.3 uses [Elasticsearch PHP client](https://github.com/elastic/elasticsearch-php){:target="_blank"} version 6.1.
 
-{: .bs-callout .bs-callout-warning}
-Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol).
-If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
-Follow the instructions in [Change Elasticsearch Module][].
+    {: .bs-callout .bs-callout-warning}
+    Magento still provides support for but does not recommend Elasticsearch [2.x and 5.x](https://www.elastic.co/support/eol).
+    If you must run Elasticsearch 2.x or 5.x with Magento 2.3.1, you must change the Elasticsearch client version.
+    Follow the instructions in [Change Elasticsearch Module][].
 
 * RabbitMQ 3.7.x (compatible with 2.0 and later)
 
@@ -150,3 +149,4 @@ There is a known issue with `xdebug` that can affect Magento installations or ac
 [php]: http://www.php.net/
 [sed]: https://www.gnu.org/software/sed/manual/sed.html
 [tar]: https://linux.die.net/man/1/tar
+[Change Elasticsearch Module]: https://devdocs.magento.com/guides/v2.3/config-guide/elasticsearch/es-downgrade.html

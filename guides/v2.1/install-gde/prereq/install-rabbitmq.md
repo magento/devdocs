@@ -98,7 +98,7 @@ where:
 |`amqp-user`|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
 |`amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
 |`amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
-{:style="table-layout:auto;"}
+
 
 ## Start the message queue consumers
 
