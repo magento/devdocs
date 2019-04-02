@@ -21,6 +21,8 @@ The `env.php` file contains the following sections:
 | `cache_types`     | Cache storage settings                         |
 | `install`         | The installation date                          |
 | `queue`           | [Message queues][message-queues] settings      |
+| `lock`            | Lock provider settings                         |
+
 
 [x-frame-options]: {{ page.baseurl }}/config-guide/secy/secy-xframe.html
 [magento-mode]: {{ page.baseurl }}/config-guide/bootstrap/magento-modes.html
