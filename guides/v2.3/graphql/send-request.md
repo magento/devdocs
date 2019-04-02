@@ -3,7 +3,7 @@ group: graphql
 title: GraphQL requests
 ---
 
-Magento GraphQL supports the HTTP GET and POST methods. You can send a query as a GET or POST request. GET requests can be cached, but Magento does not support cacheing POST requests. Mutations must be POST requests. 
+Magento GraphQL supports the HTTP GET and POST methods. You can send a query as a GET or POST request. GET requests can be cached, although Magento does not currently support this feature. Mutations must be POST requests. 
 
 You can optionally send a GET query request in a URL. In these requests, you must specify `query` as the query string. You might need to encode the query.  
 
