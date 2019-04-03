@@ -1,12 +1,8 @@
 ---
+title: Table list for M1 delta migration
 group: migration-guide
-subgroup: D_Migrate using the data migration tool
-title: Table list for M1 delta migration 
-menu_title: M1 Delta Migration Table List
-menu_node:
-menu_order: 5
 functional_areas:
-  - Tools
+    - Tools
 ---
 
 ## Overview
