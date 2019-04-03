@@ -63,8 +63,8 @@ The following table describes the grunt commands you can use to perform differen
 Grunt task | Action 
 ---------- | ------- 
 grunt clean | Removes the theme related static files in the `pub/static` and `var` directories.
-grunt exec | Republishes symlinks to the source files to the `pub/static/frontend/` directory.
-grunt less | Compiles `.css` files using the symlinks published in the `pub/static/frontend/` directory.
+grunt exec | Republishes symlinks to the source files to the `pub/static/frontend/` directory. Use `grunt exec:<theme>` to republish symlinks for a specific theme.
+grunt less | Compiles CSS files using the symlinks published in the `pub/static/frontend/` directory. Use `grunt less:<theme>` to use the symlinks published for a specific theme.
 grunt watch | Tracks the changes in the source files, recompiles `.css` files, and reloads the page in the browser.
 
 
@@ -94,4 +94,9 @@ CSS source maps solve this issue. They help to find the `.less` file, where the 
 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/with-map.png){:width="610px"}
 
-CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox.
+
+CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox. 
+
+
+[customize the root source files or move the files included to the root files]: {{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception
+[customize the root source files or move the files included to the root files]: {{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception
