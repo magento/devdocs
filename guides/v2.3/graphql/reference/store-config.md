@@ -31,7 +31,6 @@ Attribute |  Data Type | Description | Example
 `timezone` | String | Timezone of the store | `America/Chicago`
 `website_id` | Integer | The ID number assigned to the website store belongs | `1` 
 `weight_unit` | String | The unit of weight | `lbs`, `kgs`, etc
-{:style="table-layout:auto;"}
 
 ### Supported theme attributes
 
