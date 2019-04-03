@@ -5,9 +5,9 @@ title: Module version dependencies
 menu_title: Module version dependencies
 menu_order: 1200
 redirect_from:
-  - /guides/v2.0/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.1/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.2/extension-dev-guide/backward-compatibility.html
+- /guides/v2.0/extension-dev-guide/backward-compatibility.html
+- /guides/v2.1/extension-dev-guide/backward-compatibility.html
+- /guides/v2.2/extension-dev-guide/backward-compatibility.html
 ---
 
 Magento platform clients need notifications about breaking changes for their installed extensions and customizations when they upgrade their Magento installation.
@@ -15,9 +15,9 @@ Magento platform clients need notifications about breaking changes for their ins
 To achieve this, all third-party modules must obey the following rules:
 
 1. You must specify the dependency on all modules listed in the `require` section of your module's `composer.json` file.
-2. Do not specify a dependency on meta packages (e.g. `product-community-edition`).
-3. Specify a module's MAJOR and/or MINOR version number if you use any of that module's customization points.
-4. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
+1. Do not specify a dependency on meta packages (e.g. `product-community-edition`).
+1. Specify a module's MAJOR and/or MINOR version number if you use any of that module's customization points.
+1. Specify a module's MAJOR, MINOR, and PATCH versions if you call or customize a module's private code.
 
 ## Service Provider Interfaces
 

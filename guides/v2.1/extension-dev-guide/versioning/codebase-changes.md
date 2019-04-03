@@ -32,8 +32,6 @@ If this is unavoidable, you must depend on the patch version of the core modules
 
 ## API and customization points
 
-
-
 Modules call APIs to create new application scenarios.
 Modifications that break the API will trigger an increase in a module's MAJOR version.
 
@@ -50,13 +48,13 @@ Marking public code with `@deprecated` on a MINOR release indicates that Magento
 
 When Magento deprecates the API or customization point in favor of a new implementation, the `@see` annotation points to the new implementation.
 
-**Deprecated Code Example**
+### Deprecated Code Example
 
 {% highlight php startinline %}
 
 /**
- * @deprecated since 2.1.0
- * @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()
+- @deprecated since 2.1.0
+- @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()
  */
 public function save()
 {
@@ -72,90 +70,123 @@ Use this table to understand what changes Magento can make and which version num
 
 | API/Customization Point | Code Change| Version Change |
 | -------------- | ------------------- | -------------- |
-| **PHP Interface** (marked with `@api`)| New interface| MINOR|
-| | New method added | MINOR|
+| **PHP Interface** (marked with `@api`)| Changed a method signature (excluding last argument removal) | MAJOR|
+| | Interface added| MINOR|
 | | Interface removed| MAJOR|
+| | Method added | MINOR|
 | | Method removed | MAJOR|
-| | New required method argument | MAJOR|
-| | Removed the last argument for a method | MINOR|
-| | Changed a method signature (excluding last argument removal) | MAJOR|
 | | New method exception (excluding subtypes of existing exceptions) | MAJOR|
 | | New method exception (subtypes of an existing one) | PATCH|
-| **PHP Class** (marked with `@api`)| New Class| MINOR|
-| | New method added | MINOR|
+| | XXXX Removed an @api annotation| MAJOR|
+| | Removed the last argument for a method | MINOR|
+| | Required method argument added| MAJOR|
+| **PHP Class** (marked with `@api`)| Changed format of the returned method result | MAJOR|
+| | Class Added| MINOR|
 | | Class removed| MAJOR|
+| | Method added | MINOR|
 | | Method removed | MAJOR|
-| | New required method argument | MAJOR|
-| | Removed a non-last argument| MAJOR|
+| | New method exception (excluding subtypes of existing exceptions) | MAJOR|
+| | New method exception (subtypes of an existing one) | PATCH|
 | | New required constructor object argument | MINOR|
 | | New required constructor scalar argument (without pre-configured value)| MAJOR|
+| | New required method argument | MAJOR|
+| | Removed a non-last argument| MAJOR|
+| | XXXX Removed an @api annotation| MAJOR|
 | | Removed a non-last constructor argument| MAJOR|
 | | Removed a last constructor argument| PATCH|
-| | Changed format of the returned method result | MAJOR|
-| | New method exception (excluding subtypes of existing exceptions) | MAJOR|
-| | New method exception (subtypes of an existing one) | PATCH|
-| **JavaScript Interface** (marked with `@api`) | New interface| MINOR|
-| | New method added | MINOR|
+| **JavaScript Interface** (marked with `@api`) | Changed method signature | MAJOR|
+| | Interface added| MINOR|
 | | Interface removed| MAJOR|
-| | Method removed | MAJOR|
-| | New required method argument | MAJOR|
-| | Changed method signature | MAJOR|
 | | Last argument added| MINOR|
-| **JavaScript class** (marked with `@api`| New class| MINOR|
-| | New method added | MINOR|
-| | Class removed| MAJOR|
+| | Method added | MINOR|
 | | Method removed | MAJOR|
+| | XXXX Method renamed | MAJOR|
 | | New required method argument | MAJOR|
-| | New last method argument | MINOR|
-| | New event| MINOR|
-| | Renamed event| MAJOR|
-| | Removed event| MAJOR|
-| | New event property | MINOR|
+| | XXXX Removed an @api annotation| MAJOR|
+| | Static function removed| MINOR|
+| | Static function renamed| MINOR|
+| **JavaScript class** (marked with `@api`)| Changed event ordering | MAJOR|
 | | Changed event property | MAJOR|
-| | Removed event property | MAJOR|
-| | Changed event ordering | MAJOR|
-| **Virtual Type**| Virtual type removed | MAJOR|
-| | Virtual type added | MINOR|
-| **URL Paths** | Path removed | MAJOR|
-| | Removed/renamed a request parameter| MAJOR|
+| | Class added| MINOR|
+| | Class removed| MAJOR|
+| | XXXX Constant removed| MAJOR|
+| | XXXX Constant renamed| MAJOR|
+| | Event added| MINOR|
+| | Event removed| MAJOR|
+| | Event renamed| MAJOR|
+| | Event property added | MINOR|
+| | Event property removed | MAJOR|
+| | Method added | MINOR|
+| | Method removed | MAJOR|
+| | XXXX Modify default value for optional arguments in public and protected methods | MAJOR|
+| | XXXX New abstract method added to class| MINOR|
+| | New last method argument | MINOR|
+| | New required method argument | MAJOR|
+| | XXXX Rename public or protected properties| MAJOR|
+| | XXXX Removed an @api annotation| MAJOR|
+| | XXXX Removed public or protected properties| MAJOR|
+| **Virtual Type**| Virtual type added | MAJOR|
+| | Virtual type removed | MINOR|
+| **URL Paths** | New optional request parameter | MINOR|
 | | New required request parameter | MAJOR|
-| | New optional request parameter | MINOR|
-| **Console commands and their arguments**| Command removed| MAJOR|
-| | New required argument| MAJOR|
-| | Removed/renamed argument | MAJOR|
-| | New command exit code| MINOR|
-| | New command| MINOR|
-| **Less variables and mixins** | Removed variable | MAJOR|
-| | Removed mixin | MAJOR|
-| | New required mixin argument| MAJOR|
-| **Message queue topics and data types** | Topic removed| MAJOR|
+| | XXXX Modified the directory structure| MAJOR|
+| | Path removed | MAJOR|
+| | Request parameter removed| MAJOR|
+| | Request parameter renamed| MAJOR|
+| **Console commands and their arguments**| Argument removed | MAJOR|
+| | Argument renamed| MAJOR|
+| | XXXX Command added| MINOR|
+| | Command exit code added| MINOR|
+| | Command removed| MAJOR|
+| | Command modified| MINOR|
+| | Required argument added| MAJOR|
+| **Less variables and mixins** |XXXX Class removed | MAJOR|
+| | XXXX Class renamed| MAJOR|
+| | Mixin removed | MAJOR|
+| | Mixin renamed | MAJOR|
+| | Required mixin argument added| MAJOR|
+| | Variable removed| MAJOR|
+| | XXXX Variable renamed | MAJOR|
+| **Message queue topics and data types** | Consumer removed | MINOR|
+| | XXXX Topic added| MINOR|
 | | Topic arguments modified | MAJOR|
-| | Consumer removed | MINOR|
-| | New topic published| MINOR|
-| **Layout handles declared by modules**| New layout page handle | MINOR|
-| | New container/block added to handle| MINOR|
-| | Removed/renamed container/block| MAJOR|
-| | Removed layout handle| MAJOR|
+| | XXXX Topic name modified, except autogenerated names| MAJOR|
+| | Topic removed| MAJOR|
+| **Layout handles declared by modules**| Container/block added to handle| MINOR|
+| | Container/block removed| MAJOR|
+| | Container/block renamed| MAJOR|
+| | Layout handle added| MINOR|
+| | Layout handle removed| MAJOR|
+| | XXXX Layout handle renamed| MAJOR|
 | **Static and dynamic events triggered by a component**| Event argument removed | MAJOR|
 | | Event removed| MAJOR|
-| **Schema of configuration types introduced by module**| Schema file or configuration type renamed/removed| MAJOR|
+| | XXXX Event renamed| MAJOR|
+| **XML Schema of configuration types introduced by module**| Node/attribute removed | MAJOR|
+| | Node/attribute renamed | MAJOR|
 | | Obligatory node/attribute added| MAJOR|
-| | Node/attribute removed | MAJOR|
-| | New optional node/attribute added| MINOR|
+| | Optional node/attribute added| MINOR|
+| | Schema file or configuration type removed| MAJOR|
+| | Schema file or configuration type renamed| MAJOR|
 | **Structure of System Configuration fields used by module** | Config path removed/renamed| MAJOR|
-| **Database structure**| Table removed| MAJOR|
-| | Table added| MINOR|
-| | Column removed | MAJOR|
+| **Database structure**| Column to unique key added| MAJOR|
+| | Column from unique key removed | MAJOR|
 | | Column added | MINOR|
+| | Column removed | MAJOR|
 | | Compatible changes in column configuration (soften column constraints: increase size, make optional) | PATCH|
-| | Incompatible changes in column configuration | MAJOR|
-| | Primary key column added/removed | MAJOR|
-| | Added column to unique key | MAJOR|
-| | Removed column from unique key | MAJOR|
-| | Unique key added/removed | MAJOR|
-| | Index added/changed| PATCH|
+| | XXXX Default value modified| MAJOR|
+| | XXXX Field type modified| MAJOR|
 | | Foreign key added| MAJOR|
+| | Incompatible changes in column configuration | MAJOR|
+| | Index added| PATCH|
+| | Index changed| PATCH|
+| | Primary key column added | MAJOR|
+| | Primary key column removed | MAJOR|
+| | XXXX Property modified| MAJOR|
+| | XXXX Required field added | MAJOR|
+| | Table added| MINOR|
+| | Table removed| MAJOR|
+| | XXXX Table renamed| MINOR|
 | | Temporary tables added/removed/changed | PATCH|
-  
-  
+| | Unique key added | MAJOR|
+| | Unique key removed | MAJOR|
 [private]: http://php.net/manual/en/language.oop5.visibility.php

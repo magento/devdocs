@@ -10,10 +10,10 @@ See the [versioning][versioning] documentation for the definitions of MAJOR an
 
 The core Magento team and contributing developers work in two release types
 
-1.  New and significant release (product's MINOR release)
-    - Necessary MAJOR and MINOR changes are allowed, but the Magento architecture team ultimately decides what is allowed.
-2.  New patch release (product's PATCH release)
-    - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
+1. New and significant release (product's MINOR release)
+   - Necessary MAJOR and MINOR changes are allowed, but the Magento architecture team ultimately decides what is allowed.
+1. New patch release (product's PATCH release)
+   - PATCH changes are allowed, but MAJOR and MINOR changes are not allowed.
 
 {: .bs-callout .bs-callout-info }
 Backward Compatibility Policy is not applied to Plugins, Observers and Setup Scripts.
@@ -39,7 +39,7 @@ The following is a list of prohibited {% glossarytooltip bf703ab1-ca4b-48f9-b2b7
 
 Mark the class with the `@deprecated` tag instead of removing it, and mark all of its methods as deprecated so an IDE can highlight them as deprecated.
 
-#### Public and protected method removal 
+#### Public and protected method removal
 
 Mark the method with the `@deprecated` tag instead of removing it.
 
@@ -56,23 +56,23 @@ The old methods should proxy the calls to the new interface instead of duplicati
 For an example of an interface with an extracted method see the `Magento\Catalog\Api\CategoryListInterface`.
 This interface is responsible for the `getList()` method, but `Magento\Catalog\Api\CategoryRepositoryInterface` does not have that method.
 
-* For a **PATCH** product release, do NOT mark the new interface with `@api`.
-* For a **MINOR** product release, an architect marks, or approves, the new interface with `@api` if applicable.
+- For a **PATCH** product release, do NOT mark the new interface with `@api`.
+- For a **MINOR** product release, an architect marks, or approves, the new interface with `@api` if applicable.
 
 #### Removing static functions
 
 Do not remove static functions.
 
-#### Adding parameters in public methods 
+#### Adding parameters in public methods
 
 Deprecate the method and add a new method with the new parameter(s) instead of adding them to a public method.
 
 Follow the alternative implementation described earlier for introducing a new method to a class or interface.
 
 Reference the new method in a `@see` tag as a recommended replacement.
-Explain the reasons for replacing the old method with the new one (e.g., there is a bug in the old method). 
+Explain the reasons for replacing the old method with the new one (e.g., there is a bug in the old method).
 
-#### Adding parameters in protected methods 
+#### Adding parameters in protected methods
 
 Instead of adding parameters to protected methods, Create a new method with a new signature and deprecate the old method without changing it.
 
@@ -81,8 +81,8 @@ Declare the new method as private if possible.
 {% collapsible Example Code %}
 {% highlight php startinline %}
 /**
- * @deprecated This method is not intended for usage in child classes
- * @see updateScopedPrice($price, $storeId)
+- @deprecated This method is not intended for usage in child classes
+- @see updateScopedPrice($price, $storeId)
  */
 protected function updatePrice($price)
 {
@@ -97,7 +97,7 @@ private function updateScopedPrice($price, $storeId)
 {% endhighlight %}
 {% endcollapsible %}
 
-#### Modifying the default values of optional arguments in public and protected methods 
+#### Modifying the default values of optional arguments in public and protected methods
 
 This is forbidden because the default argument values of public or protected methods are part of the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} of the class/interface.
 
@@ -199,7 +199,9 @@ Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe 
 Do not change argument types.
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding `@deprecated` annotation before dispatching the event.
 
-Example code: 
+Example code:
+
+{% collapsible Example Code %}
 
 ```php?start_inline=1
 $transportObject = new DataObject($transport);
@@ -213,57 +215,7 @@ $this->eventManager->dispatch(
 );
 ```
 
-### JS
-
-The following is a list of prohibited JS code changes:
-
-* Removing or renaming an interface or class
-* Removing or renaming public or protected methods
-* Introducing a method to an interface
-* Introducing an abstract method to a class
-* Removing or renaming static functions
-* Adding non-optional arguments in public and protected methods
-* Modifying the default value for optional arguments in public and protected methods
-* Removing or renaming public or protected properties
-* Removing or renaming constants
-
-### XML Schema
-
-The following is a list of prohibited {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} Schema changes:
-
-* Adding an obligatory node
-* Adding an obligatory attribute
-* Removing or renaming an attribute or node type
-* Removing or renaming a configuration file
-
-### DB Schema
-
-The following is a list of prohibited DB Schema changes:
-
-* Modifying field type, default value, or property
-* Removing or renaming a table
-* Introducing a required field
-
-### CSS/Less
-
-The following is a list of prohibited CSS/Less changes:
-
-* Removing or renaming a class
-* Removing or renaming a mix-in
-* Removing or renaming a variable
-
-### Magento APIs
-
-The following is a list of prohibited Magento API changes:
-
-* Removing or renaming an event
-* Removing or renaming a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} handle
-* Removing or renaming a store configuration path
-* Modifying the directory structure
-* Removing an @api annotation
-* Modifying the Magento tool command argument list
-* Modifying or removing the Magento tool command
-* [Topic names for message queue]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html), except autogenerated names (e.g. topic names generated by [Asynchronous Web API](https://devdocs.magento.com/guides/v2.3/rest/asynchronous-web-endpoints.html). Autogenerated topic names should be treated as private implementation and may be changed at any time if needed.
+{% endcollapsible %}
 
 ### Translatable phrases
 
@@ -273,14 +225,14 @@ Do not modify any translatable phrase.
 
 The following is a list of prohibited changes to Magento functional and integration tests:
 
-* Changing a fixture format
-* Changing a fixture content (except changes forced by new functionality)
+- Changing a fixture format
+- Changing a fixture content (except changes forced by new functionality)
 
 ## Allowed Code Changes
 
 ### PHP
 
-#### Changing the value of a constant 
+#### Changing the value of a constant
 
 Changing the value of a constant is itself a backward compatible change.
 
@@ -305,13 +257,13 @@ Adding an argument to an event is allowed.
    For example, the module data/schema version for all patch releases of Magento 2.0 can change prior to the release of Magento 2.1.
    After 2.1 releases, the version cannot change for 2.0 patch releases, but it can change for 2.1 patch releases until Magento 2.2.
 
-2. Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
+1. Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
    In cases where an urgent fix was delivered in a previous minor version, treat the fix for the current unpublished version as a high priority task.
 
    For example, issue fixes that change the setup/upgrade version in the unreleased `develop` branch are delivered first before being ported into the released branches.
    If the fix was made for a released branch, a pull request for porting it into the `develop` branch must be created with a high priority and delivered as soon as possible.
 
-3. The setup version of a module must be higher than previous releases of the same module.
+1. The setup version of a module must be higher than previous releases of the same module.
 
    For example, the setup version for a fix for the Magento_Catalog module is higher in the `develop` branch (2.1.3) than previous branch versions (2.0.2 and 2.1.2 for versions 2.0 and 2.1).
 
@@ -321,9 +273,9 @@ Backward compatibility is more important than niceness and implementation effort
 
 Potential drawbacks:
 
-* It is double the work when it is necessary to implement different solutions for the `develop` branch (upcoming minor release) and patch release branches.
-* Inability to refactor code in patch releases
-* Effort for implementing fixes in patch releases may be higher due to necessary implementation workarounds.
+- It is double the work when it is necessary to implement different solutions for the `develop` branch (upcoming minor release) and patch release branches.
+- Inability to refactor code in patch releases
+- Effort for implementing fixes in patch releases may be higher due to necessary implementation workarounds.
 
 ## Refactoring classes that reach limit of coupling between objects
 
@@ -332,14 +284,14 @@ Poorly designed classes with too many responsibilities and dependencies should b
 Preserve public and protected class interfaces to maintain backward compatibility.
 Review and refactor the class such that parts of the logic go into smaller specialized classes without breaking backward compatibility.
 
-* Turn the existing class into a facade to prevent existing usages of the refactored methods from breaking.
-* The old public/protected methods should be marked as deprecated with the `@see` tag to suggest the new implementation for new usages.
-* Remove all unused private properties/methods.
-* Mark as deprecated unused protected properties.
+- Turn the existing class into a facade to prevent existing usages of the refactored methods from breaking.
+- The old public/protected methods should be marked as deprecated with the `@see` tag to suggest the new implementation for new usages.
+- Remove all unused private properties/methods.
+- Mark as deprecated unused protected properties.
   Remove the variable type indicated in the DocBlock to remove the dependency.
-* To preserve the constructor signature:
-    * Remove type hinting for unused parameters to remove dependency on their type.
-    * Add `@SuppressWarnings(PHPMD.UnusedFormalParameter)` for unused parameters.
+- To preserve the constructor signature:
+  - Remove type hinting for unused parameters to remove dependency on their type.
+  - Add `@SuppressWarnings(PHPMD.UnusedFormalParameter)` for unused parameters.
 
 ## Deprecation
 
@@ -400,8 +352,8 @@ Every piece of code that is deprecated MUST be covered by a static test that wil
 
 Deprecated code is preserved for the following time frames:
 
-* `@api` code: Until the next major version of the component
-* non-`@api` code: The next 2 minor releases or until a major release
+- `@api` code: Until the next major version of the component
+- non-`@api` code: The next 2 minor releases or until a major release
 
 ## Documentation of Backward Incompatible Changes
 
@@ -409,18 +361,18 @@ Backward incompatible changes must be approved by an architect and documented in
 
 Examples of these tasks include:
 
-* Changing the input/output values format of a method
-* Changing a value format in the DB
-* Changing XML files (layouts, configuration files, etc.)
+- Changing the input/output values format of a method
+- Changing a value format in the DB
+- Changing XML files (layouts, configuration files, etc.)
 
 Some changes are detected and documented by an automated tool.
 These backward incompatible changes do not need manual documentation:
 
-* Adding/removing a class/interface
-* Adding/removing a method
-* Modifying a method signature
-* Adding/removing a class/interface constant
-* Adding removing a class property
+- Adding/removing a class/interface
+- Adding/removing a method
+- Modifying a method signature
+- Adding/removing a class/interface constant
+- Adding removing a class property
 
 Auto-generated [{{site.data.var.ce}} changes]({{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html)
 
