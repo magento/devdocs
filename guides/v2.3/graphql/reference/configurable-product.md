@@ -762,7 +762,7 @@ mutation {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "addConfigurableProductsToCart": {

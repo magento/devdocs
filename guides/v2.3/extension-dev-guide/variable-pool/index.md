@@ -60,6 +60,7 @@ This list can be extended by adding more entries to the `configPaths` argument f
                     <item name="general/store_information/merchant_vat_number" xsi:type="string">1</item>
                 </item>
             </argument>
+            <argument name="configStructure" xsi:type="object">Magento\Config\Model\Config\Structure\Proxy</argument>
         </arguments>
     </type>
 </config>
