@@ -50,8 +50,7 @@ When Magento deprecates the API or customization point in favor of a new impleme
 
 ### Deprecated Code Example
 
-{% highlight php startinline %}
-
+```php
 /**
 - @deprecated since 2.1.0
 - @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()
@@ -60,8 +59,7 @@ public function save()
 {
     // ...
 }
-
-{% endhighlight %}
+```
 
 ## Version increase scenarios
 
