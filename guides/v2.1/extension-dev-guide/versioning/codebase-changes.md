@@ -187,4 +187,6 @@ Use this table to understand what changes Magento can make and which version num
 | | Temporary tables added/removed/changed | PATCH|
 | | Unique key added | MAJOR|
 | | Unique key removed | MAJOR|
+
+<!-- Link Definitions -->
 [private]: http://php.net/manual/en/language.oop5.visibility.php
