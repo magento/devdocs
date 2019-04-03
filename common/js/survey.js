@@ -10,7 +10,7 @@ $(function() {
     if ( !localStorage.getItem(surveyName) ) {
 
       // Build banner text
-      var $banner = $('<div class="bs-callout" style="display:none; text-align:left; max-width: 1024px; margin-top: 50px;"><h2>Hello Magento Community!</h2><p>Please share your feedback through this quick 5 minute survey.</p><p>Thank you in advance for participating. Your feedback is 100% confidential and will not be shared outside of Magento.</p> <button data-href="https://www.surveymonkey.com/r/CloudFeatures-C" class="btn btn-primary btn-large">OK, I will help</button> <button class="btn btn-large">No, thanks</button> </div>');
+      var $banner = $('<div class="bs-callout" style="display:none; text-align:left; max-width: 1024px; margin-top: 50px;"><h2>Hello Magento Community!</h2><p>Please share your feedback by taking this quick 5 minute survey.</p><p>Thank you in advance for participating. Your feedback is 100% confidential and will not be shared outside of Magento.</p> <button data-href="https://www.surveymonkey.com/r/CloudFeatures-C" class="btn btn-primary btn-large">OK, I will help</button> <button class="btn btn-large">No, thanks</button> </div>');
       
       // Assign events
       $banner.find('a, button').on('click', function () {
