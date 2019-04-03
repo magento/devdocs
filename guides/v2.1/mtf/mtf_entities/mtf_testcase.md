@@ -85,7 +85,11 @@ public function test(CatalogProductSimple $initialProduct, CatalogProductSimple 
     $category = $product->hasData('category_ids') && $product->getCategoryIds()[0]
         ? $product->getDataFieldConfig('category_ids')['source']->getCategories()[0]
         : $initialCategory;
-    $this->objectManager->create(
+    if ($store) {
+        $store->persist();
+        $productName[$store->getStoreId()] = $product->getName();
+    }
+    $this->testStepFactory->create(
         \Magento\Config\Test\TestStep\SetupConfigurationStep::class,
         ['configData' => $configData]
     )->run();
