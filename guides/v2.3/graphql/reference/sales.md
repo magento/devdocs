@@ -34,7 +34,7 @@ Attribute | Data type | Description
 `id` | Int | The ID assigned to the customer's order
 `increment_id` | String | An ID that indicates the sequence of the order in the customer's order history
 `status` | String | The status of the order, such as `open`, `processing`, or `closed`
-{:style="table-layout:auto;"}
+
 
 ## Example usage
 
