@@ -365,7 +365,7 @@ mutation {
             postcode: "78758"
             country_code: "US"
             telephone: "8675309"
-            save_in_address_book: False
+            save_in_address_book: false
           }
         }
       ]
@@ -391,7 +391,24 @@ mutation {
 ```text
 {
   "data": {
-    "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
+    "setShippingAddressesOnCart": {
+      "cart": {
+        "shipping_addresses": [
+          {
+            "firstname": "Bob",
+            "lastname": "Roll",
+            "company": "Magento",
+            "street": [
+              "Magento Pkwy",
+              "Main Street"
+            ],
+            "city": "Austin",
+            "postcode": "78758",
+            "telephone": "8675309"
+          }
+        ]
+      }
+    }
   }
 }
 ```
