@@ -96,7 +96,7 @@ CSS source maps solve this issue. They help to find the `.less` file, where the 
 
 CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable source maps displaying in your browser.
 
-Magento 2 has a base set of Variables that define commonly used aspects of a theme. Colors, fonts, style of page titles, and so on are defined in these variables. 
+Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on. 
 
 In `<magento-root>/lib/web/css/source/lib/variables` you will find a number of intuitively named LESS files. In each of these you can find values assigned to variables for many of the common elements in Magento 2. 
 
