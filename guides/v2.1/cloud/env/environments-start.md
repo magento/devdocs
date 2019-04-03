@@ -230,7 +230,7 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 </td>
 </tr>
 </table>
-{:style="table-layout:auto;"}
+
 
 ## Interact with environments via the Magento Cloud CLI {#commands}
 

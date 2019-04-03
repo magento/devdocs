@@ -13,7 +13,7 @@ Attribute |  Data Type | Description
 `attribute_options` | `AttributeOption` | A list of attribute options
 `attribute_type` | String | The data type of the attribute (Response only)
 `entity_type` | String | The type of entity that defines the attribute
-{:style="table-layout:auto;"}
+
 
 ### AttributeOption object
 
@@ -21,7 +21,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `label` | String | The name of an attribute option
 `value` | String | The value assigned to an attribute option
-{:style="table-layout:auto;"}
+
 
 ## Example usage
 
@@ -52,7 +52,7 @@ The following query returns the attribute type for various custom and EAV attrib
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "customAttributeMetadata": {

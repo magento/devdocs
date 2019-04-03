@@ -42,7 +42,7 @@ Parameter | Data type | Description
 `sku` | String | The SKU of the product
 `quantity` | Float | The number of items in this reservation
 `metadata` | String | The event type, object type, and object ID for this reservation. For example, `{"event_type":"order_placed","object_type":"order","object_id":"8"} `
-{:style="table-layout:auto;"}
+
 
 The metadata `event_type` can have the following values:
 
@@ -166,7 +166,7 @@ Interface | Description
 `GetProductSalableQtyInterface` | Returns the salable product quantity for the specified stock ID
 `IsProductSalableInterface` | Checks whether the product is salable
 `IsProductSalableForRequestedQtyInterface` |  Checks whether there is enough salable quantity to fulfill an order or place the product into a shopping cart 
-{:style="table-layout:auto;"}
+
 
 ## Web API support
 

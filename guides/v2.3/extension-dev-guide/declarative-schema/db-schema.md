@@ -71,7 +71,7 @@ Attribute | Description
 `engine` | SQL engine. This value must be `innodb` or `memory`.
 `resource` | The database shard on which to install the table. This value must be `default`, `checkout`, or `sales`.
 `comment` | Table comment
-{:style="table-layout:auto;"}
+
 
  A `table` node can contain three types of subnodes:
 
@@ -185,7 +185,7 @@ Attribute | Description
 `referenceTable` | The table being referenced
 `referenceColumn`| A column in the `referenceTable`
 `onDelete` | Foreign key trigger. The value must be `CASCADE`, `SET NULL`, or `NO ACTION`
-{:style="table-layout:auto;"}
+
 
 Example:
 
@@ -201,7 +201,7 @@ Attribute | Description
 --- | ---
 `referenceId` |  A custom identifier that is used only for relation mapping in the scope of `db_schema.xml` files. The real entity in the database has a system-generated name. The most convenient way to set the value of this attribute is to use the value that is written in the module's `db_schema_whitelist.json`  file when you [run the `generate-whitelist` command]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist).
 `indexType` | The value must be `btree`, `fulltext`, or `hash`
-{:style="table-layout:auto;"}
+
 
 Example:
 

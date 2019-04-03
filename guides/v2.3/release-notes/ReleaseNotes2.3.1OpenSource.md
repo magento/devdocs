@@ -3,7 +3,7 @@ group: release-notes
 title: Magento Open Source 2.3.1 Release Notes
 ---
 
-*Release notes published March 26, 2019.*
+*Release notes published March 26, 2019 and updated on March 29, 2019.*
 
 We are pleased to present Magento Open Source 2.3.1. This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
@@ -25,6 +25,13 @@ Follow these steps to download and apply this patch:
 5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
 6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
+## PayPal Payflow Pro active carding activity update
+
+The PayPal Payflow Pro integration in Magento is being actively targeted by carding activity. To resolve these carding activity issues, Magento has provided Composer packages that add an option for Google reCAPTCHA and CAPTCHA to the Payflow Pro checkout form. See [PayPal Payflow Pro active carding activity](https://support.magento.com/hc/en-us/articles/360025515991) for a full discussion of this issue and instructions on downloading these packages. **We strongly recommend that all Payflow Pro merchants download and install these packages to help enhance the security of their storefronts**.
+
+
 
 
 ## Highlights
@@ -97,7 +104,7 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 * Accept.js library is now used for Authorize.NET payments.
 
-* Magento now supports **Elasticsearch 6.0**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
+* Magento now supports **Elasticsearch 6.x**. *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*. Thank you, Romain! <!--- ENGCOM-4389 -->
 
 * Update PayPal Express Checkout to `checkout.js v4`. This introduces a modernized checkout flow, faster checkout performance, and new payment options in a single integration that does not have to be updated as new payment methods become available. It also unlocks new payment options including Venmo and PayPal Credit. See [PayPal Express Checkout](https://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html).
 
@@ -1012,7 +1019,7 @@ Previously, when you reopened these categories, no checkboxes were checked.
 
 ### Infrastructure
 
-<!--- ENGCOM-4389 -->* Magento now supports Elasticsearch 6.0. *Fix submitted by [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*.  
+<!--- ENGCOM-4389 -->* Magento now supports Elasticsearch 6.x. *Fix submitted by [Romain Ruaud](https://github.com/romainruaud) in pull request [21458](https://github.com/magento/magento2/pull/21458)*.  
 
 <!--- MC-5201 -->* Magento now supports Redis 5.0. 
 
