@@ -37,7 +37,7 @@ The kernel parameter `net.core.somaxconn` controls the maximum number of open so
 
 ## PHP
 
-Magento fully supports 7.2.11. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
+Magento 2.2 fully supports up to version 7.1.0. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
 
 ### PHP extensions
 
