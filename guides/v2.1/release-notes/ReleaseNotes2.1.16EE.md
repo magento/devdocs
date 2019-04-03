@@ -15,6 +15,29 @@ Although this release includes these security enhancements, no confirmed attacks
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.16) have been ported to 2.2.7, 1.14.4.0, and 1.9.4.0, as appropriate. 
 
+
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A critical SQL injection vulnerability has been identified in 2.1.x Magento code. To quickly protect your store from this vulnerability, you'll need to install patch PRODSECBUG-2198 and upgrade to this relesae (2.1.17). See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+
+Follow these steps to download and apply this patch:
+
+1. Access [My Account](https://account.magento.com/customer/account/login).
+
+2. Navigate to the **Downloads** tab. Select the Magento edition and version you need. 
+
+3. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
+
+
 ## Highlights
 
 Magento 2.1.16 contains over 30 security fixes and enhancements. See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for more information.
@@ -192,7 +215,7 @@ The following table highlights contributions made by Partners. This table lists 
 
 ## System requirements
 
-Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements2.html" target="_blank">System Requirements</a>.
+Our technology stack is built on PHP and MySQL. For more information, see <a href="{{ site.baseurl }}/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 
 ## Installation

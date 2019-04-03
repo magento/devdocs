@@ -20,5 +20,8 @@ pages:
     - label: Deprecated ScalableInventory entities
       url: /inventory/scalable-inventory-replacements.html
 
+    - label: Manage Inventory Management modules
+      url: /comp-mgr/install-extensions/inventory-management-installation.html
+
     - label: Release notes
       url: /inventory/release-notes.html

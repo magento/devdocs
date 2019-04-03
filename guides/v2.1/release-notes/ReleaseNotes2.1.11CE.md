@@ -181,7 +181,7 @@ Look for the following highlights in this release:
 
 ### Reports
 
-<!--- MAGETWO-82178 -->* You can now successfully search reports for a particular customer (**Reports > By Customers**). *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11523*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+<!--- MAGETWO-82178 -->* You can now successfully search reports for a particular customer (**Reports** > Reviews > **By Customers**). *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11523*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
 ### SalesRule
 

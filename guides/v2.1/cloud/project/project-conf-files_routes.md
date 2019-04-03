@@ -63,7 +63,7 @@ Property         | Description
 `cache:`         | Controls [caching for the route]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 `redirects:`     | Controls [redirect rules]({{ page.baseurl }}/cloud/project/project-routes-more-redir.html).
 `ssi:`           | Controls enabling of [Server Side Includes]({{ page.baseurl }}/cloud/project/project-routes-more-ssi.html).
-{:style="table-layout:auto;"}
+
 
 ## Simple routes
 
