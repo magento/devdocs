@@ -166,6 +166,10 @@ The reviewer should check whether the task meets the original acceptance criteri
 * All changes are documented properly
 * All changes are covered with automated tests
 * Determine if code changes caused any failure in continuous integration builds
+* All backward-incompatible changes on code level are approved by an architect. The following cases currently cause SVC failures but do NOT require architect approval:
+  * Adding optional parameter to the constructor, except for the classes explicitly ment for extension, like `AbstractExtensibleModel`
+  * Override of the method defined in parent class
+  * Removal of private constant
 
 The work cannot be considered as complete unless all the criteria are verified.
 
