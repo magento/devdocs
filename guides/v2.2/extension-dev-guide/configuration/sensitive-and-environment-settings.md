@@ -51,7 +51,7 @@ Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_
 
 ### Example: Sensitive settings
 
-{% highlight php startinline=true %}
+```xml
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="sensitive" xsi:type="array">
@@ -59,7 +59,7 @@ Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_
       </argument>
    </arguments>
 </type>
-{% endhighlight %}
+```
 
 After specifying the sensitive setting, use the following commands to verify it:
 
@@ -74,7 +74,7 @@ A message similar to the following is displayed:
 
 ### Example: System-specific settings
 
-{% highlight php startinline=true %}
+```xml
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="environment" xsi:type="array">
@@ -82,7 +82,7 @@ A message similar to the following is displayed:
       </argument>
    </arguments>
 </type>
-{% endhighlight %}
+```
 
 ### Sensitive, system-specific setting
 
