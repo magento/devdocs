@@ -170,3 +170,123 @@ $registry->register('isSecureArea', false);
 
 A fixture rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. (For example, `virtual_product_rollback.php`.) 
 Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
+
+## Expected exceptions
+Sometimes we need to cover a negative scenarious in our test and make sure that our functionality proper responses on them. There are two ways how you can define the expected exception message:
+  - in the body of test function
+  - in the test function annotation 
+
+#### Define exception message in the body of test
+```php
+public function testMyExceptionTest()
+{
+    ...
+    
+    self::expectExceptionMessage("Expected exception message goes here...");
+    
+    ...
+}
+
+```
+or 
+```php
+public function testMyExceptionTest()
+{
+    ...
+    
+    $this->expectExceptionMessage("Expected exception message goes here...");
+    
+    ...
+}
+
+```
+
+For example, if `customer A` wants to retrieve information about `customer B cart. In this situation, `customer A` will get an error - "`The current user cannot perform operations on cart "XXXXX`", where `XXXXX` - is an unique ID of `customer B` cart. See code below to understand how to cover this example with `expectExceptionMessage` function:
+
+```php
+    /**
+     * @magentoApiDataFixture Magento/Checkout/_files/quote_with_items_saved.php
+     */
+    public function testGetCartFromAnotherCustomer()
+    {
+        $reservedOrderId = 'test_order_item_with_items';
+        $this->quoteResource->load(
+            $this->quote,
+            $reservedOrderId,
+            'reserved_order_id'
+        );
+        $maskedQuoteId = $this->quoteIdToMaskedId->execute((int)$this->quote->getId());
+        $query = $this->prepareGetCartQuery($maskedQuoteId);
+        self::expectExceptionMessage("The current user cannot perform operations on cart \"$maskedQuoteId\"");
+        $this->graphQlQuery($query);
+    } 
+```
+
+#### Define expected exception message in test function annotation
+```php
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage Expected exception message goes here...
+     */
+```
+
+Let's imagine that customer wants to retrieve information about his own cart but he provides incorrect cart ID.
+
+**Query**
+```text
+{
+  cart(cart_id: "YYYYY") {
+    items {
+      __typename
+      id
+      qty
+    }
+  }
+}
+```
+
+**Result**
+```json
+{
+  "errors": [
+    {
+      "message": "Could not find a cart with ID \"YYYYY\"",
+      "category": "graphql-no-such-entity",
+      "locations": [
+        {
+          "line": 2,
+          "column": 3
+        }
+      ],
+      "path": [
+        "cart"
+      ]
+    }
+  ],
+  "data": {
+    "cart": null
+  }
+}
+```
+
+See the code below how to cover this example with `@expectExceptionMessage` annotation:
+```php
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage Could not find a cart with ID "non_existent_masked_id"
+     */
+    public function testGetNonExistentCart()
+    {
+        $maskedQuoteId = 'non_existent_masked_id';
+        $query = $this->prepareGetCartQuery($maskedQuoteId);
+        
+        $this->graphQlQuery($query);
+    }
+```
+
+There is a list of functions which you can use to cover expected exceptions:  
+- expectException
+- expectExceptionCode
+- expectExceptionMessage
+- expectExceptionMessageRegExp
+- expectExceptionObject
