@@ -2,16 +2,16 @@
 
 The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are available on {{site.data.var.ee}} installations only. {{site.data.var.ee}} installations automatically have access to all {{site.data.var.ce}} (formerly Magento Community Edition) web APIs.
 
-### Customer balance
+### CustomerBalance
     customerBalanceBalanceManagementV1
 
-### Gift cards
+### GiftCardAccount
     giftCardAccountGiftCardAccountManagementV1
     giftCardAccountGuestGiftCardAccountManagementV1
     giftRegistryGuestCartShippingMethodManagementV1
     giftRegistryShippingMethodManagementV1
 
-### Gift wrapping
+### GiftWrapping
     giftWrappingWrappingRepositoryV1
 
 ### Reward
@@ -36,12 +36,12 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     analyticsLinkProviderV1
 
 ### AsynchronousOperations
-    asynchronousOperationsBulkStatusV1
+    asynchronousOperationsOperationRepositoryV1
 
 ### Backend
     backendModuleServiceV1
 
-### Bundle product
+### Bundle
     bundleProductLinkManagementV1
     bundleProductOptionManagementV1
     bundleProductOptionRepositoryV1
@@ -79,7 +79,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     catalogSpecialPriceStorageV1 *
     catalogTierPriceStorageV1 *
 
-### Catalog inventory
+### CatalogInventory
     catalogInventoryStockRegistryV1
 
 ### Checkout
@@ -90,14 +90,14 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     checkoutShippingInformationManagementV1
     checkoutTotalsInformationManagementV1
 
-### Checkout agreements
+### CheckoutAgreements
     checkoutAgreementsCheckoutAgreementsRepositoryV1
 
-### CMS
+### Cms
     cmsBlockRepositoryV1
     cmsPageRepositoryV1
 
-### Configurable product
+### ConfigurableProduct
     configurableProductConfigurableProductManagementV1
     configurableProductLinkManagementV1
     configurableProductOptionRepositoryV1
@@ -110,6 +110,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     customerCustomerRepositoryV1
     customerGroupManagementV1
     customerGroupRepositoryV1
+    customerCustomerGroupConfigV1
 
 ### Directory
     directoryCountryInformationAcquirerV1
@@ -119,11 +120,11 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     downloadableLinkRepositoryV1
     downloadableSampleRepositoryV1
 
-### EAV
+### Eav
     eavAttributeSetManagementV1
     eavAttributeSetRepositoryV1
 
-### Gift message
+### GiftMessage
     giftMessageCartRepositoryV1
     giftMessageGuestCartRepositoryV1
     giftMessageGuestItemRepositoryV1
@@ -132,6 +133,42 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
 ### Integration
     integrationAdminTokenServiceV1
     integrationCustomerTokenServiceV1
+
+### InventoryApi
+    inventoryApiSourceRepositoryV1
+    inventoryApiGetSourcesAssignedToStockOrderedByPriorityV1
+    inventoryApiStockRepositoryV1
+    inventoryApiGetStockSourceLinksV1
+    inventoryApiStockSourceLinksSaveV1
+    inventoryApiStockSourceLinksDeleteV1
+    inventoryApiSourceItemRepositoryV1
+    inventoryApiSourceItemsSaveV1
+    inventoryApiSourceItemsDeleteV1
+
+### InventoryCatalogApi
+    inventoryCatalogApiBulkSourceAssignV1
+    inventoryCatalogApiBulkSourceUnassignV1
+    inventoryCatalogApiBulkInventoryTransferV1
+
+### InventoryDistanceBasedSourceSelectionApi
+    inventoryDistanceBasedSourceSelectionApiGetDistanceProviderCodeV1
+    inventoryDistanceBasedSourceSelectionApiGetDistanceV1
+    inventoryDistanceBasedSourceSelectionApiGetLatLngFromAddressV1
+
+### InventoryLowQuantityNotificationApi
+    inventoryLowQuantityNotificationApiGetSourceItemConfigurationV1
+    inventoryLowQuantityNotificationApiSourceItemConfigurationsSaveV1
+    inventoryLowQuantityNotificationApiDeleteSourceItemsConfigurationV1
+
+### InventorySalesApi
+    inventorySalesApiGetProductSalabilityV1
+    inventorySalesApiIsProductSalableV1
+    inventorySalesApiIsProductSalableForRequestedQtyV1
+    inventorySalesApiStockResolverV1
+
+### InventorySourceSelectionApi
+    inventorySourceSelectionApiGetSourceSelectionAlgorithmListV1
+    inventorySourceSelectionApiSourceSelectionServiceV1
 
 ### Quote
     quoteBillingAddressManagementV1
@@ -176,7 +213,7 @@ The Web APIs for {{site.data.var.ee}} (formerly Magento Enterprise Edition) are 
     salesShipOrderV1
     salesTransactionRepositoryV1
 
-### Sales rule
+### SalesRule
     salesRuleCouponManagementV1
     salesRuleCouponRepositoryV1
     salesRuleRuleRepositoryV1

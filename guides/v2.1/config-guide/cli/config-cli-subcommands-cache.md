@@ -27,7 +27,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 |Integration configuration|config_integration|Compiled integrations.<br><br>Clean or flush this cache after changing or adding integrations.|
 |Integration API configuration|config_integration_api|Compiled integration APIs.|
 |Web services configuration|config_webservice|Web API structure.|
-{:style="table-layout:auto;"}
+
 
 ## View the cache status
 

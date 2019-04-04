@@ -67,6 +67,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -91,6 +92,7 @@ Create the file `app/code/Learning/ClothingMaterial/Setup/InstallData.php`:
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -197,6 +199,7 @@ Next, we need to create the source model:
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -240,6 +243,7 @@ Now we will create a backend model:
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 /**
  * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
@@ -286,6 +290,7 @@ And finally, we create a frontend model to make our value bold:
 {% collapsible Show code %}
 
 ```php?start_inline=1
+<?php
 namespace Learning\ClothingMaterial\Model\Attribute\Frontend;
 
 class Material extends \Magento\Eav\Model\Entity\Attribute\Frontend\AbstractFrontend

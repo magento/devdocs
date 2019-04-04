@@ -20,9 +20,9 @@ This information is broken down into prerequisite steps for [Starter](#starter) 
 
 ## Starter plan projects {#starter}
 
-For Starter, make sure all of your code is merged into a single development branch to test prior to deployment to Production. Due to all of your branches and environments being on a PaaS infrastructure, you only need access information for Master Production and other environments as needed. This access information includes your store URLs and SSH link.
+For Starter, merge all code into one "staging" branch for testing prior to deploying to Production. All active branches and environments are part of the PaaS infrastructure and have access to information, such as store URLs and SSH link.
 
-You can deploy to your environments, including all .yaml configuration files, migrate files and data, all through CLI commands using SSH.
+You can deploy to your environments, including all YAML configuration files, migrate files and data, all through CLI commands using SSH.
 
 To prepare your environments for full deployment, you need:
 
@@ -31,7 +31,7 @@ To prepare your environments for full deployment, you need:
 
 ### Get your Starter access URLs and SSH information {#starter-urls}
 
-You can locate your URLs through the Project Web Interface. For each selected environment or branch, you will find an Access Site link. Your environments begin with Master, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.
+You can locate your URLs through the Project Web Interface. For each selected environment or branch, you have an Access Site link. Your environments begin with Master, which is Production, and any additional branches you create, including Staging (recommended) and development branches for custom code.
 
 1. Log in to [your {{site.data.var.ece}} account](https://accounts.magento.cloud).
 2. Select an environment.
@@ -41,7 +41,7 @@ You can locate your URLs through the Project Web Interface. For each selected en
 
 ## Pro plan projects {#pro}
 
-For Pro plan projects, make sure to complete all development and merging of your code to the `master` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
+For Pro plan projects, you must merge your completed development code to the `integration` branch. Only the Integration environment branch can deploy to Staging, then Production.
 
 {% include cloud/wings-management.md %}
 
@@ -53,7 +53,7 @@ For **first time setup** to migrate your database and deploy code to Staging or 
 
 If your project was created before October 23, 2017, you also need to set up [remote Git repositories](#pro-remote) on Staging and Production. Deployment targets are already set up on Staging and Production for projects created after October 23, 2017.
 
-If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
+If you have not done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/configure-fastly.html#upload-vcl-snippets) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
 ### Migrate your `.magento.app.yaml` file {#pro-yaml}
 
@@ -88,7 +88,7 @@ For Pro projects created **before October 23, 2017**, you would need to access t
 
 For Pro projects created **after October 23, 2017**, you do not need to complete this step. Your Staging and Production environments are branches of `master` with configured deployment targets. You can simply merge code to these environments from Integration `master`. You can also use the Project Web Interface to merge your code without SSH or Git commands.
 
-For Pro projects created **before October 23, 2017**, you will need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.
+For Pro projects created **before October 23, 2017**, you need to initially set up remote Git repositories for Staging and Production. For these classic Pro accounts, your Staging and Production environments have dedicated Git repositories. You only need to set these up once.
 
 When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them. Basically, you configure these remote repositories using these instructions to SSH into the environments and push code and migrate data and files using Git commands.
 

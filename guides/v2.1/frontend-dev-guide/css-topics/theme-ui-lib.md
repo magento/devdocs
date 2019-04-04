@@ -26,8 +26,7 @@ The Magento UI library provides the ability to customize and reuse the following
 *	pagination
 *	popups
 *	ratings
-*	sections
-*	tabs and accordions
+*	sections - tabs and accordions
 *	tables
 *	tooltips
 *	typography
@@ -133,6 +132,25 @@ To call a mixin with parameter values different from default, set these values w
 Variables starting with `@_` are private mixin variables used only in this mixin.
 Variables starting with `@` (without the underscore) are global, and are listed in [`lib/web/css/source/lib/variables`].
 
+## Tabs and accordions set with CSS
+
+Use the accordion style for mobile and tab style for desktop.
+
+To set tabs and accordions using breakpoints, see the following example:
+```text
+& when (@media-common = true) { 
+    .product.data.items {
+        .lib-data-accordion();
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+    .product.data.items {
+        .lib-data-tabs();
+    }
+}
+```
+
 ## Embedded documentation {#docs}
 
 The detailed information about the Magento UI library is embedded in the code repository:
@@ -145,15 +163,15 @@ The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-
 
 <!-- Link definitions -->
 
-[`lib/web/css/docs/source/README.md`]: {{ site.mage2100url }}/lib/web/css/docs/source/README.md
+[`lib/web/css/docs/source/README.md`]: {{ site.mage2100url }}lib/web/css/docs/source/README.md
 
-[`lib/web/css/docs`]: {{ site.mage2100url }}/lib/web/css/docs
+[`lib/web/css/docs`]: {{ site.mage2100url }}lib/web/css/docs
 
-[`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables/_breadcrumbs.less
+[`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2100url }}lib/web/css/source/lib/variables/_breadcrumbs.less
 
-[`lib/web/css/source/lib/variables`]: {{ site.mage2100url }}/lib/web/css/source/lib/variables
+[`lib/web/css/source/lib/variables`]: {{ site.mage2100url }}lib/web/css/source/lib/variables
 
-[`lib/web/css`]: {{ site.mage2100url }}/lib/web/css
+[`lib/web/css`]: {{ site.mage2100url }}lib/web/css
 
 [embedded documentation]: #docs
 [inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html

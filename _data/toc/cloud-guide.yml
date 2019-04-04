@@ -72,6 +72,9 @@ pages:
             - label: Launch Docker
               url: /cloud/docker/docker-config.html
 
+            - label: Configure Xdebug for Docker
+              url: /cloud/docker/docker-development-debug.html
+
             - label: Docker quick reference
               url: /cloud/docker/docker-quick-reference.html
 
@@ -172,21 +175,21 @@ pages:
           url: /cloud/cdn/fastly-image-optimization.html
           exclude_versions: ["2.0"]
 
-        - label: Custom Fastly VCL snippets
+        - label: Custom VCL snippets
           url: /cloud/cdn/cloud-vcl-custom-snippets.html
           exclude_versions: ["2.0"]
           children:
-            - label: Custom whitelist VCL
+            - label: Set up redirects to WordPress
+              url: /cloud/cdn/fastly-vcl-wordpress.html
+
+            - label: Block referral spam
+              url: /cloud/cdn/fastly-vcl-badreferer.html
+
+            - label: Secure access to the Magento Admin UI
               url: /cloud/cdn/fastly-vcl-whitelist.html
 
             - label: Custom blacklist VCL
               url: /cloud/cdn/fastly-vcl-blacklist.html
-
-            - label: Custom redirect to WordPress VCL
-              url: /cloud/cdn/fastly-vcl-wordpress.html
-
-            - label: Custom block bad referer VCL
-              url: /cloud/cdn/fastly-vcl-badreferer.html
 
         - label: Fastly troubleshooting
           url: /cloud/cdn/trouble-fastly.html
@@ -303,6 +306,9 @@ pages:
       children:
         - label: Cloud deployment process
           url: /cloud/deploy/cloud-deployment-process.html
+
+        - label: Reduce downtime
+          url: /cloud/deploy/reduce-downtime.html
 
         - label: Static content deployment
           url: /cloud/deploy/static-content-deployment.html

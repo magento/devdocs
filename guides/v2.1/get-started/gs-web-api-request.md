@@ -60,31 +60,29 @@ You specify input attributes in a JSON- or XML-formatted request body. For examp
 
 ```json
 {
-    "customers": {
-        "customer": {
-            "email": "user@example.com",
+    "customer": {
+        "email": "user@example.com",
+        "firstname": "John",
+        "lastname": "Doe"
+    },
+    "addresses": [
+        {
+            "defaultShipping": true,
+            "defaultBilling": true,
             "firstname": "John",
-            "lastname": "Doe"
-        },
-        "addresses": [
-            {
-                "defaultShipping": true,
-                "defaultBilling": true,
-                "firstname": "John",
-                "lastname": "Doe",
-                "region": {
-                    "regionCode": "CA",
-                    "region": "California",
-                    "regionId": 12
-                },
-                "postcode": "90001",
-                "street": ["Zoe Ave"],
-                "city": "Los Angeles",
-                "telephone": "555-000-00-00",
-                "countryId": "US"
-            }
-        ]
-    }
+            "lastname": "Doe",
+            "region": {
+                "regionCode": "CA",
+                "region": "California",
+                "regionId": 12
+            },
+            "postcode": "90001",
+            "street": ["Zoe Ave"],
+            "city": "Los Angeles",
+            "telephone": "555-000-00-00",
+            "countryId": "US"
+        }
+    ]
 }
 ```
 

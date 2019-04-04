@@ -18,6 +18,9 @@ The following topics are included in this guide:
 - [Labels applied by the Community Engineering Team](#labels)
 - [Contribution awards and points](#points)
 
+{:.bs-callout .bs-callout-tip}
+Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://tinyurl.com/engcom-slack), in the [#general](https://magentocommeng.slack.com/messages/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
+
 ## Contribute to Magento 2 code {#contribute}
 
 Use the [fork](#fork) and [pull](#pull_request) model to contribute to the Magento 2 codebase.
@@ -216,7 +219,7 @@ The command merges the listed related pull requests (`xxx`, `yyy`, `zzz`) into t
 
 ## Porting code contributions across Magento versions {#porting}
 
-In order to keep consistency between Magento release lines (2.1, 2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
+In order to keep consistency between Magento release lines (2.2, 2.3, etc), there are two techniques of code delivery: back-port and/or up-port. Every Magento Contributor, who wants to deliver their solution across all Magento versions, faces the same problem. How do you port fixes easily?
 
 We provide two options to create back-ports and up-ports for your code contributions:
 
@@ -224,15 +227,15 @@ We provide two options to create back-ports and up-ports for your code contribut
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of git
 
 {: .bs-callout .bs-callout-info }
-Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
+Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
 
 ### What are up-ports and back-ports?
 
 As a best practice, we recommend creating back-ports and up-ports for your code contributions.
 
-**Back-ports** (or Backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2 and 2.1.
+**Back-ports** (or Backports) contribute your code and fixes to a lower release line. You want to create a back-port if the issue exists in a lower release line. If you fixed an issue in a release line and there is a supported lower version, create a pull request to that lower release line to address the issue. For example, you may have contributed a fix to 2.3 and back-port to 2.2.
 
-**Up-ports** (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.1 and up-port to 2.2 and 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
+**Up-ports** (or Forwardports) contribute your code and fixes to a higher release line. You want to create an up-port if the issue exists in a higher release line. If you have an issue fixed in a non-latest release line, create a pull request to the latest branch in order to address that issue in an upcoming minor release. For example, you may have contributed a fix to 2.2 and up-port to 2.3. We recommend contributors create an up-port for every pull request delivered to a lower release line.
 
 ### Magento Porting Tool {#porting-tool}
 

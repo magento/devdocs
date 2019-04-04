@@ -28,7 +28,7 @@ functional_areas:
 
 Before you continue, you must do the following:
 
--   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
+-   Set up a server that meets our [system requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
 -   Create the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html)
 -   [Install Composer](https://getcomposer.org/download/){:target="_blank"}
 -   Obtain [authentication keys]({{page.baseurl}}/install-gde/prereq/connect-auth.html) for the Magento code repository
@@ -65,7 +65,7 @@ You must set read-write permissions for the web server group before you install 
 cd /var/www/html/<magento install directory>
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
 find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-chown -R :www-data . // Ubuntu
+chown -R :www-data . # Ubuntu
 chmod u+x bin/magento
 ```
 

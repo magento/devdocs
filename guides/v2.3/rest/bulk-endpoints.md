@@ -21,14 +21,14 @@ POST /async/bulk/V1/products
 POST /async/bulk/V1/customers
 ```
 
-Endpoint routes that contain input parameters require additional changes. For example, `PUT /V1/product/:sku/options/:optionId` contains the `:sku` and `:optionId` input parameters. The route of a bulk request cannot contain input parameters, so you must change the route so that it does not contain any. To do this, replace the colon (`:`) with `by` and change the first letter of the parameter to uppercase. 
+Endpoint routes that contain input parameters require additional changes. For example, `PUT /V1/products/:sku/media/:entryId` contains the `:sku` and `:entryId` input parameters. The route of a bulk request cannot contain input parameters, so you must change the route so that it does not contain any. To do this, replace the colon (`:`) with `by` and change the first letter of the parameter to uppercase.
 
  
 The following table provides several examples:
  
 Synchronous route | Bulk route
 --- | ---
-`PUT /V1/product/:sku/options/:optionId` | `PUT async/bulk/V1/product/bySku/options/byOptionId`
+`PUT /V1/products/:sku/media/:entryId` | `PUT async/bulk/V1/products/bySku/media/byEntryId`
 `POST /V1/carts/:quoteId/items` | `POST async/bulk/V1/carts/byQuoteId/items`
 
 {:.bs-callout .bs-callout-info}

@@ -105,7 +105,7 @@ Look for the following highlights in this release:
 
 ### General
 
-<!--- MAGETWO-83760 -->* The  **Stores > Configuration > General > Design** page now displays as expected. [GitHub-5256](https://github.com/magento/magento2/issues/5256)
+<!--- MAGETWO-83760 -->* The  **Stores > Settings > Configuration > General > Design** page now displays as expected. [GitHub-5256](https://github.com/magento/magento2/issues/5256)
 
 <!--- MAGETWO-72206 -->* After confirming a customer’s account, the Magento welcome message now displays the customer's first and last name.
 
@@ -184,7 +184,7 @@ Look for the following highlights in this release:
 
 ### Reports
 
-<!--- MAGETWO-82178 -->* You can now successfully search reports for a particular customer (**Reports > By Customers**). *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11523*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+<!--- MAGETWO-82178 -->* You can now successfully search reports for a particular customer (**Reports** > Reviews > **By Customers**). *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request 11523*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
 ### SalesRule
 

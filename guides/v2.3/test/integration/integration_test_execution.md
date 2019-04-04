@@ -60,7 +60,7 @@ Replace the example database, username, and password with something that matches
 
 ### Configure the framework for test environment
 
-The Magento 2 integration test framework comes with a configuration file template, 
+The Magento 2 integration test framework comes with a configuration file template
 `mage2ce/dev/tests/integration/etc/install-config-mysql.php.dist`.
 
 Copy this file to
@@ -139,6 +139,19 @@ To force the test framework to regenerate the cache and the other files, remove 
 rm -r dev/tests/integration/tmp/sandbox-*
 ```
 
+#### RABBITMQ_MANAGEMENT_PORT constant
+
+Default value:
+
+```xml
+<const name="RABBITMQ_MANAGEMENT_PORT" value="15672"/>
+```
+
+The [RabbitMQ Management Plugin][] APIs are accessible on port `15672` by default.
+This constant provides the configuration value when the test environment is not using the default.
+Tests depending on `Magento\TestFramework\Helper\Amqp`, often used for validating queue and exchange status, depend on the management plugin being enabled.
+Beginning in 2.3.1, the helper no longer assumes RabbitMQ is running on `localhost` and will use the connection configuration defined in `env.php`.
+
 #### PHP memory_limit
 
 The default `phpunit.xml.dist` file does not contain any PHP `memory_limit` settings.
@@ -195,6 +208,7 @@ By default, if no additional arguments are specified, the test configuration exe
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit
 ```
@@ -219,6 +233,7 @@ For example, it is common to only execute a single test suite from the `phpunit.
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit --testsuite "Memory Usage Tests"
 ```
@@ -230,6 +245,7 @@ To execute only the tests within a specific directory (for example an extension)
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration
 ```
@@ -242,6 +258,7 @@ Pass the path to the file containing the test class as an argument to `phpunit`:
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 ```
@@ -253,6 +270,7 @@ You can run only a single test within a test class by specifying the test class 
 ```bash
 cd dev/tests/integration
 ```
+
 ```bash
 ../../../vendor/bin/phpunit --filter 'testOnlyThisOneIsExecuted' ../../../app/code/Acme/Example/Test/Integration/ExampleTest.php
 ```
@@ -266,7 +284,7 @@ This happens if the integration tests are executed from the wrong directory.
 #### Could not read "dev/tests/integration/phpunit.xml"
 
 This error happens if the integration tests are executed from a different directory than `dev/tests/integration`.
-To fix the issue, change to the `dev/tests/integration` directory, adjust any relative paths accoridngly, and run the tests again.
+To fix the issue, change to the `dev/tests/integration` directory, adjust any relative paths accordingly, and run the tests again.
 
 #### Unable to connect to MySQL
 
@@ -275,13 +293,14 @@ This problem most commonly occurs during development with Vagrant or Docker, whe
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.
 
 The error usually looks something like this:
+
 ```bash
 phpunit
 ```
 
 > Expected log
 
-```
+```bash
 exception 'PDOException' with message 'SQLSTATE[HY000] [2002] No such file or directory' in /var/www/magento2/vendor/magento/zendframework1/library/Zend/Db/Adapter/Pdo/Abstract.php:129
 ```
 
@@ -306,11 +325,10 @@ The only difference in the run configuration is that the integration test `phpun
 
 ![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){: width="600px"}
 
-
 <!-- LINK DEFINITIONS -->
 
 [setup]: #setup
 [cli run]: #cli-run
 [phpstorm run]: {{ page.baseurl }}/test/unit/unit_test_execution_phpstorm.html
-
 [PHPUnit documentation]: https://phpunit.de/manual/4.1/en/appendixes.configuration.html
+[RabbitMQ Management Plugin]: https://www.rabbitmq.com/management.html
