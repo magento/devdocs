@@ -323,6 +323,7 @@ The following tables contain a `customer_id` column:
 * `magento_customersegment_customer`
 * `magento_reward`
 * `magento_rma`
+* `newsletter_subscriber`
 * `oauth_token`
 * `paypal_billing_agreement`
 * `persistent_session`
@@ -334,4 +335,3 @@ The following tables contain a `customer_id` column:
 * `salesrule_coupon_usage`
 * `salesrule_customer`
 * `wishlist`
-* `newsletter_subscriber`
