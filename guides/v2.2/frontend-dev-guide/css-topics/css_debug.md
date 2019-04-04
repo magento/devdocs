@@ -95,11 +95,11 @@ CSS source maps solve this issue. They help to find the `.less` file, where the 
 
 CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox. 
 
-Magento 2 has a base set of Variables that define commonly used aspects of a theme. Colors, fonts, style of page titles, and so on are defined in these variables. 
+Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on. 
 
-In `<magento-root>/lib/web/css/source/lib/variables` you will find a number of intuitively named LESS files. In each of these you can find values assigned to variables for many of the common elements in Magento 2.
+The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS files that define values assigned to variables for many of the common elements in Magento.
 
-To change/override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
+To change or override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
 
 ![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
 
