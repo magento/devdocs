@@ -96,6 +96,11 @@ CSS source maps solve this issue. They help to find the `.less` file, where the 
 
 CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable source maps displaying in your browser.
 
+The path to the CSS source maps configuration differs, depending on the browser.
+
+In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   
+
+
 Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on. 
 
 The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS files that define values assigned to variables for many of the common elements in Magento.
@@ -108,11 +113,6 @@ To change or override any of these variables, simply create a file in `<theme-di
 @navigation__background: @secondary__color__light; 
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
-
-The path to the CSS source maps configuration differs, depending on the browser.
-
-In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   
-
 
 [inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [LiveReload extension]: http://livereload.com/extensions/
