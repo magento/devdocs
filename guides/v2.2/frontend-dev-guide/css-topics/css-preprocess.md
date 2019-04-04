@@ -140,6 +140,8 @@ You can find the detailed information about the configuration and other options 
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
+Working in LESS files are compiled every page load on the client-side compilation mode. This results in exceptionally slow response times and horrible flash-of-unstyled-text.
+
 ##### When you need to clean static view files {#css_exception}
 
 There are certain types of changes, that require you to clear the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory and trigger the compilation and [publication] processes anew.
