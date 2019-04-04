@@ -22,7 +22,7 @@ Before you run this command, you must do all of the following *or* you must [ins
 
 ## Configure the lock {#instgde-cli-lockconfig}
 
-Since Magento 2.2.9 and 2.3.2 you can configure lock provider.
+Configure a lock provider to prevent the launch of duplicate cron jobs and cron groups. (Requires Magento 2.2.9 and later 2.2.x versions or version 2.3.2 and later.)
 
 Locks are used to prevent the launch of duplicate cron jobs and cron groups.
 
