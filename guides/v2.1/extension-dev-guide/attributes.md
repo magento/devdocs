@@ -43,7 +43,8 @@ Customer attributes are created inside of `InstallData` and `UpgradeData` script
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 
-{% highlight PHP inline=true %}
+```php
+<?php 
 namespace My\Module\Setup;
 
 use Magento\Customer\Model\Customer;
@@ -81,7 +82,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
         $this->attributeResource->save($attribute);
     }
 }
-{% endhighlight %}
+```
 
 ## Extension attributes {#extension}
 
