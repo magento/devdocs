@@ -180,7 +180,7 @@
       url: http://omsdocs.magento.com/en/
 
     - label: Page Builder
-      url: /page-builder/docs/index.html
+      url: /page-builder/main/docs/index.html
       exclude_versions: ['2.0', '2.1', '2.2']
       versionless: true
 
