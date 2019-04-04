@@ -61,6 +61,16 @@ The locale dictionary would use the default values (keys) in the left column fol
 "Card Verification Number",	<translation>
 ```
 
+Translations are applied in following manner:
+
+1. Module translations
+2. Theme translations
+3. Translation package
+4. Database translations
+
+Normally, database translation is good for overriding other translations whereever necessary.
+
+
 ## Additional information
 
 - [Translations overview]
