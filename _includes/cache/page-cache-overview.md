@@ -3,7 +3,7 @@
 Caching is one of the most effective ways to improve website performance. Generally speaking, there are two methods of caching content:
 
 -   Client-side (browser)
--   Server-side
+-   Server-side (Using Grunt tool)
 
 Retrieving stored ({% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cached{% endglossarytooltip %}) content from a previous request for the same client instead of requesting files from your server every time someone visits your site is a more efficient use of network bandwidth.
 
