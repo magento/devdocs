@@ -59,7 +59,7 @@ Magento 2 stores these customer attributes:
 
 #### `customer_entity` and reference tables
 
-The following columns in the `customer_entity`table contain customer information:
+The following columns in the `customer_entity` table contain customer information:
 
 Column | Data type
 --- | ---
@@ -84,7 +84,7 @@ Table | Column | Data type
 
 #### `customer_grid_flat` table
 
-The following columns in the `customer_grid_flat`table contain customer information:
+The following columns in the `customer_grid_flat` table contain customer information:
 
 Column | Data type
 --- | ---
@@ -172,8 +172,11 @@ Column | Data type
 `customer_gender` | int(11)
 `customer_group_id` | int(11)
 `customer_id` | int(10)
+`customer_is_guest` | int(5)
 `customer_lastname` | varchar(128)
 `customer_middlename` | varchar(128)
+`customer_note` | text
+`customer_note_notify` | int(5)
 `customer_prefix` | varchar(32)
 `customer_suffix` | varchar(32)
 `customer_taxvat` | varchar(32)
@@ -229,16 +232,21 @@ The following columns in the `quote` table contain customer information:
 
 Column | Data type
 --- | ---
-`customer_id` | int(10)
-`customer_email` | varchar(255)
-`customer_prefix` | varchar(40)
-`customer_firstname` | varchar(255)
-`customer_middlename` | varchar(40)
-`customer_lastname` | varchar(255)
 `customer_dob` | datetime
+`customer_email` | varchar(128)
+`customer_firstname` | varchar(128)
+`customer_gender` | int(11)
+`customer_group_id` | int(11)
+`customer_id` | int(10)
+`customer_is_guest` | int(5)
+`customer_lastname` | varchar(128)
+`customer_middlename` | varchar(128)
+`customer_note` | text
+`customer_note_notify` | int(5)
+`customer_prefix` | varchar(32)
+`customer_suffix` | varchar(32)
+`customer_taxvat` | varchar(32)
 `remote_ip` | varchar(32)
-`customer_taxvat` | varchar(255)
-`customer_gender` | varchar(255)
 
 #### `quote_address` table
 
@@ -326,3 +334,4 @@ The following tables contain a `customer_id` column:
 * `salesrule_coupon_usage`
 * `salesrule_customer`
 * `wishlist`
+* `newsletter_subscriber`
