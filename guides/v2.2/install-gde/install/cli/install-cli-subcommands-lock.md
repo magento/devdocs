@@ -1,6 +1,6 @@
 ---
 group: installation-guide
-title: Configure the lock
+title: Configure the lock provider
 functional_areas:
   - Install
   - System
