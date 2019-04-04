@@ -3,6 +3,7 @@ namespace :multirepo do
   task :init do
     sh './scripts/docs-from-code.sh mbi git@github.com:magento/devdocs-mbi.git master'
     sh './scripts/docs-from-code.sh page-builder git@github.com:magento-devdocs/magento2-page-builder.git develop'
+    sh './scripts/docs-from-code.sh page-builder-migration git@github.com:magento-devdocs/magento2-page-builder-data-migration.git 1.0.0-release'
     sh './scripts/docs-from-code.sh mftf git@github.com:magento/magento2-functional-testing-framework.git develop'
 
     # The last argument 'false' disables content filtering by sparse checkout.
