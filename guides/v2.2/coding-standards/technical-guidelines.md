@@ -455,7 +455,7 @@ class View extends Template
 
 4.4. Plugins MUST be stateless.
 
-4.5. Plugins SHOULD NOT change a state of an intercepted object.
+4.5. Plugins SHOULD NOT change the state of an intercepted object.
 
 ## 5. Exceptions
 
