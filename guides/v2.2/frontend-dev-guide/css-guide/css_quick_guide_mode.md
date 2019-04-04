@@ -144,6 +144,8 @@ If you are using server-side compilation mode, you must [clean generated static 
 1. Refresh the page and verify your changes.
 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
+    
+1. Always use veriable insted of hardcoded hard values like `color: red`
 
 {:.bs-callout .bs-callout-info}
-Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
+Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html). 
