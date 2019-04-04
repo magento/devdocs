@@ -9,7 +9,7 @@ You can optionally send a GET query request in a URL. In these requests, you mus
 
 `http://<host>/graphql?query=%7Bproducts(filter%3A%7Bsku%3A%7Blike%3A%2224-WB%25%22%7D%7D)%7Bitems%7Bsku%7D%7D%7D`
 
-The previous example is equivalent to the following query. You could send the query as either GET or POST request,
+The previous example is equivalent to the following query. You could send the query as either a GET or POST request,
 
 ```text
 {
