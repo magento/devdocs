@@ -102,11 +102,12 @@ The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS fi
 
 To change or override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
 
+![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
+
 ```
 @navigation__background: @secondary__color__light; 
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
-![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
 
 CSS source maps solve this issue. They help to find the .less file from the lib directory, where the style is specified. 
 
