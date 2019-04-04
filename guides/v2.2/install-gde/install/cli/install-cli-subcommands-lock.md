@@ -36,7 +36,7 @@ where the following table defines parameters and values.
 |--- |--- |--- |
 |`--lock-provider`|Lock provider name.<br><br>Available lock providers: `db`, `zookeeper`, `file`.<br><br>The default lock provider: `db`|No|
 |`--lock-db-prefix`|The specific db prefix to avoid lock conflicts when using the `db` lock provider.<br><br>The default value: `NULL`|No|
-|`--lock-zookeeper-host`|Host and port to connect to Zookeeper cluster when you use `zookeeper` lock provider.<br><br>For example: `127.0.0.1:2181`|Yes, if you set `--lock-provider=zookeeper`|
+|`--lock-zookeeper-host`|Host and port to connect to the Zookeeper cluster when you use the `zookeeper` lock provider.<br><br>For example: `127.0.0.1:2181`|Yes, if you set `--lock-provider=zookeeper`|
 |`--lock-zookeeper-path`|The path where Zookeeper saves locks.<br><br>The default path is: `/magento/locks`|No|
 |`--lock-file-path`|The path where file locks are saved.|Yes, if you set `--lock-provider=file`|
 {:style="table-layout:auto;"}
