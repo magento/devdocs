@@ -455,7 +455,7 @@ class View extends Template
 
 4.4. Plugins MUST be stateless.
 
-4.5. Plugins SHOULD NOT change the state of an intercepted object.
+4.5. Plugins SHOULD NOT change the state of an intercepted object (Intercepted object is `$subject`).
 
 ## 5. Exceptions
 
@@ -509,10 +509,8 @@ class View extends Template
 6.1.2. Every application layer (Presentation, Service Contracts, Data Access) 
     MUST process (handle or re-throw) exceptions of the underlying layer.
 
-6.1.3. A layer MUST NOT depend on layer that invokes it.
-          Example, a service that manages products MUST NOT invoke component 
-          that manages Admin notification messages 
-          because message manager is particular example of presentation layer.
+6.1.3. A layer MUST NOT depend on layer that invokes (above) it. A layer MUST only depend on a layer directly below it.
+[Magento architecture layers]({{site.baseurl}}/common/images/archi_diagrams_layers_alt4.jpg)
 
 ### 6.2. Presentation layer
 
@@ -869,6 +867,10 @@ class SampleEventObserverThatModifiesInputs
 15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
+
+## Cron 
+
+16.1. Cron job SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
