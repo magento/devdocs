@@ -109,8 +109,6 @@ To change or override any of these variables, simply create a file in `<theme-di
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
 
-CSS source maps solve this issue. They help to find the .less file from the lib directory, where the style is specified. 
-
 The path to the CSS source maps configuration differs, depending on the browser.
 
 In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   
