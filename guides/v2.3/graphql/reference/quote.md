@@ -491,7 +491,7 @@ mutation {
     "removeCouponFromCart": {
       "cart": {
         "applied_coupon": {
-          "code": "test2019"
+          "code": ""
         }
       }
     }
