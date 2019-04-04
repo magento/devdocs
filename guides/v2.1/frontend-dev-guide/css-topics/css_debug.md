@@ -98,7 +98,7 @@ CSS source maps are generated automatically when you compile CSS for your theme 
 
 Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on. 
 
-In `<magento-root>/lib/web/css/source/lib/variables` you will find a number of intuitively named LESS files. In each of these you can find values assigned to variables for many of the common elements in Magento 2. 
+The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS files that define values assigned to variables for many of the common elements in Magento.
 
 To change/override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
 
