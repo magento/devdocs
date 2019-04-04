@@ -99,13 +99,12 @@ In `<magento-root>/lib/web/css/source/lib/variables` you will find a number of i
 
 To change/override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
 
+![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
+
 ```
 @navigation__background: @secondary__color__light; 
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
-![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
-
-CSS source maps solve this issue. They help to find the .less file from the lib directory, where the style is specified.
 
 CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable the display of source maps in your browser. For example, in Chrome, you would open the Developer Tools, go to the **Settings** panel, select **Preferences**, then check the **Enable CSS source maps** checkbox. 
 
