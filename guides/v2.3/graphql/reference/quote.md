@@ -490,9 +490,7 @@ mutation {
   "data": {
     "removeCouponFromCart": {
       "cart": {
-        "applied_coupon": {
-          "code": ""
-        }
+        "applied_coupon": null
       }
     }
   }
