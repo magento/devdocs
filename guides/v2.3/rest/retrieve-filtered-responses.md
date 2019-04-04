@@ -29,7 +29,7 @@ All examples use {{site.data.var.ce}} sample data.
 
 The following example returns only the `sku`, `price`, and `name` for the specified product:
 
-`GET http://<host>/rest/default/V1/products/24-MB01?fields=sku,price,name`
+`GET <host>/rest/<store_code>/V1/products/24-MB01?fields=sku,price,name`
 
 ``` json
 {
@@ -43,7 +43,7 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 
 The following example returns only the customer first name, last name, and the entire `billing_address` object from a specified order. Do not include brackets `[]` after an object name when you want to return all of the object's contents.
 
-`GET http://<host>/rest/default/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
+`GET <host>/rest/<store_code>/V1/orders/2?fields=billing_address,customer_firstname,customer_lastname`
 
 ```json
 {
@@ -73,7 +73,7 @@ The following example returns only the customer first name, last name, and the e
 
 The following example returns only the `name`, `qty`, and `sku` fields defined in an `items` object from a specified shipment:
 
-`GET http://<host>/rest/default/V1/shipment/2?fields=items[name,qty,sku]`
+`GET <host>/rest/<store_code>/V1/shipment/2?fields=items[name,qty,sku]`
 
 ```json
 "items": [
@@ -93,7 +93,7 @@ This example returns only the following:
 * The entire `category_links` object, which is defined in `extension_attributes`
 * The `item_id` and `qty` fields of the `stock_item` object, which is also defined in `extension_attributes`
 
-`GET http://<host>/rest/default/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]`
+`GET <host>/rest/<store_code>/V1/products/MT12?fields=name,sku,extension_attributes[category_links,stock_item[item_id,qty]]`
 
 ```json
 {
@@ -116,7 +116,7 @@ This example returns only the following:
 
 The following POST operation and payload creates a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} category named `New Category`. Magento returns only the `id`, `parent_id`, and `name` attributes
 
-`POST http://<host>/rest/V1/categories?fields=id,parent_id,name`
+`POST <host>/rest/<store_code>/V1/categories?fields=id,parent_id,name`
 
 **Payload**
 
@@ -145,7 +145,7 @@ The [`searchCriteria` query parameter]({{ page.baseurl }}/rest/performing-search
 
 The following query returns only the `sku` and `name` parameters for product items whose `category_gear` attribute includes the value `86`.
 
-`GET http://<host>/rest/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&searchCriteria[filter_groups][0][filters][0][value]=86&searchCriteria[filter_groups][0][filters][0][condition_type]=finset&fields=items[sku,name]`
+`GET <host>/rest/<store_code>/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&searchCriteria[filter_groups][0][filters][0][value]=86&searchCriteria[filter_groups][0][filters][0][condition_type]=finset&fields=items[sku,name]`
 
 ``` json
 {

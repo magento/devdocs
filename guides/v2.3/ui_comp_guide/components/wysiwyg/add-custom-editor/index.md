@@ -100,7 +100,7 @@ In your module's `view/base/requirejs-config.php` file, add a shim configuration
 
 **Example:** CKEditor\CKEditor4\view\base\requirejs-config.php
 
-``` php
+``` json
 var config = {
     "shim": {
         "CKEditor_CKEditor4/js/ckeditor4/ckeditor": { "exports": "CKEDITOR" }

@@ -13,7 +13,7 @@ This component is a variation of the [FileUploader component]({{ page.baseurl }}
 | Title             | Type   | Default | Description                                                                    |
 | ----------------- | ------ | ------- | ------------------------------------------------------------------------------ |
 | `openDialogTitle` | String |   ---   | Defines the title that appears when opening the media browser dialog slideout. |
-{:style="table-layout:auto;"}
+
 
 ## Source files
 
