@@ -279,7 +279,7 @@ pages:
       exclude_versions: ["2.0", "2.1", "2.2"]
 
     - label: Page Builder
-      url: /page-builder/main/docs/release-notes.html
+      url: /page-builder/docs/release-notes.html
       exclude_versions: ["2.0", "2.1", "2.2"]
       versionless: true
 
