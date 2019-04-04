@@ -24,7 +24,7 @@ Name | Type | SKU | Quantity
 Voyage Yoga Bag | Simple | 24-WB01 | 100
 Driven Backpack | Simple | 24-WB03 | 100
 Yoga Adventure | Downloadable | 240-LV06 | Not applicable
-{:style="table-layout:auto;"}
+
 
 ## Unassign products from the default source
 
@@ -35,7 +35,7 @@ When you unassign a source from a product, all source data including inventory a
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/source-items-delete`
+`POST <host>/rest/all/V1/inventory/source-items-delete`
 
 **Scope**
 
@@ -78,7 +78,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/source-items`
+`POST <host>/rest/all/V1/inventory/source-items`
 
 **Scope**
 

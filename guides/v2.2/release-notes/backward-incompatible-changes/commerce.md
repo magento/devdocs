@@ -21,6 +21,10 @@ type="warning"
 content="When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_. "
 %}
 
+## 2.2.7 - 2.2.8 {#releases-2_2_7-2_2_8}
+
+{% include backward-incompatible-changes/commerce/2.2.7-2.2.8.md %}
+
 ## 2.2.6 - 2.2.7 {#releases-2_2_6-2_2_7}
 
 {% include backward-incompatible-changes/commerce/2.2.6-2.2.7.md %}
