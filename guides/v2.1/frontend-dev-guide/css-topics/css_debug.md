@@ -100,7 +100,7 @@ Magento has a base set of variables that define commonly used aspects of a theme
 
 The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS files that define values assigned to variables for many of the common elements in Magento.
 
-To change/override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
+To change or override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
 
 ```
 @navigation__background: @secondary__color__light; 
