@@ -3,11 +3,9 @@ group: release-notes
 title: Magento Open Source 2.1.17 Release Notes
 ---
 
-<<<<<<< HEAD
-*Release notes published on March 26, 2019 and last edited on March 29, 2019.*
-=======
-*Release notes published March 26, 2019 and updated on March 29, 2019.*
->>>>>>> 8141f1ba55c3ae3e8cb9d514a27b78f0a6c582d5
+
+*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
+
 
 
 We are pleased to present {{site.data.var.ce}} 2.1.17. This release includes multiple enhancements to product security. 
