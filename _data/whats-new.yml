@@ -4,8 +4,52 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Mar 27 18:03:03 2019
+updated: Tue Apr  2 11:41:12 2019
 entries:
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+    the customer's authorization token for GraphQL queries and mutations.
+  versions: 2.3.1
+  type: New topic
+  date: April  1, 2019
+  link: https://github.com/magento/devdocs/pull/4052
+- description: Added section about mutations in [Resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 30, 2019
+  link: https://github.com/magento/devdocs/pull/4096
+- description: Changed Third-party licenses topics to [Packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html)
+    and added a section with `magento/`-specific dependencies.
+  versions: 2.x
+  type: Major update
+  date: March 29, 2019
+  link: https://github.com/magento/devdocs/pull/4087
+- description: Moved the MFTF docs from `<devdocs root>/mftf/2.3/` to [`<devdocs root>/mftf/docs/`](https://devdocs.magento.com/mftf/docs/introduction.html).<br/>The
+    docs have been moved to the [MFTF repository](https://github.com/magento/magento2-functional-testing-framework).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/3898
+- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.17](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002017).<br/>-
+    Updated supported versions for Elasticsearch and Redis<br/>- Added two Docker
+    images: Elasticsearch 6.5 and Redis 5.0.<br/>- Improved initial [Docker launch
+    steps](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html).<br/>-
+    Added the SCD_COMPRESSION_TIMEOUT environment variable for [build](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-build.html#scd_compression_timeout)
+    and [deploy](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#scd_compression_timeout).'
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/4068
+- description: Added a section about fixtures in [GraphQL functional testing]( https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html)
+  versions: 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/3994
+- description: Added a new topic in Cloud Optimize deployment called [Reduce downtime](https://devdocs.magento.com/guides/v2.3/cloud/deploy/reduce-downtime.html)
+    to explain the zero downtime concept.
+  versions: 2.2.x
+  type: New topic
+  date: March 25, 2019
+  link: https://github.com/magento/devdocs/pull/4005
 - description: Added information about backward incompatible changes in 2.3.1 release
     for [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html#releases-2_3_0-2_3_1)
     and [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html#releases-2_3_0-2_3_1).
@@ -1964,9 +2008,9 @@ entries:
   type: Updated
   date: Nov 17 2017
 - description: 'Updated the recommended Fastly module version 1.2.33 for Magento Commerce
-    (Cloud): [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
+    Cloud: [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
     [Technologies and requirements](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html),
-    and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html)'
+    and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)'
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 15 2017
@@ -2181,7 +2225,7 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Sep 27 2017
-- description: Add third party license information for Magento Commerce (Cloud) [2.0.X](https://devdocs.magento.com/guides/v2.0/release-notes/thirdparty-mccloud.html), [2.1.X](https://devdocs.magento.com/guides/v2.1/release-notes/thirdparty-mccloud.html), and [2.2](https://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html)
+- description: Add third party license information for Magento Commerce (Cloud) [2.0.X](https://devdocs.magento.com/guides/v2.0/release-notes/packages-cloud.html), [2.1.X](https://devdocs.magento.com/guides/v2.1/release-notes/packages-cloud.html), and [2.2](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Sep 27 2017

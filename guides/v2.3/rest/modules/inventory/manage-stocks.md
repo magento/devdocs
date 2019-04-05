@@ -34,7 +34,7 @@ Name | Description | Type | Requirements
 `sales_channels` | Defines the sales channel for this stock. Currently, only websites are supported. | Array | Required for POST operations
 `type` | Defines the type of sales channel. This value must be `website`. | String | Required for POST operations
 `code` | Specifies a valid website code name | String | Required for POST operations
-{:style="table-layout:auto;"}
+
 
 ## Create a stock
 

@@ -17,7 +17,7 @@ Data Migration Tool repository [migration-tool](https://github.com/magento/data-
 
 ### System requirements {#system-requirements}
 
-Same as for [Magento2]({{ page.baseurl }}/install-gde/system-requirements2.html).
+Same as for [Magento2]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ## Internal structure {#migrate-is}
 

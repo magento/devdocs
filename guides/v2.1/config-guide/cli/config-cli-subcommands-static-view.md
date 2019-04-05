@@ -72,7 +72,7 @@ The following table explains this command's parameters and values.
 |--no-html-minify|Do not minify HTML files.| |No|
 |-s<br />-s quick<br />-s standard<br />-s compact|Define the deployment strategy. Use these options only if you have more than one locale. <br />Use the quick strategy to minimize deployment time. <br />Use the standard strategy to deploy all static view files for all packages. <br />Use the compact strategy to conserve disk space on the server.|quick|No|
 |--force (-f)|Deploy files in any mode. By default, the static content deployment tool can be run only in production mode. Use this option to run it in default or developer mode.|production|No|
-{:style="table-layout:auto;"}
+
 
 {: .bs-callout .bs-callout-info}
 If you specify values for both `<languages>` and `--language`, `<languages>` takes precedence.

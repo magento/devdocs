@@ -4,7 +4,9 @@ title: Magento Commerce 2.2.8 Release Notes
 
 ---
 
-*Release notes published March 26, 2019 and updated on March 29, 2019.*
+
+*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
+
 
 
 
@@ -18,7 +20,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A critical SQL injection vulnerability has been identified in 2.2.x Magento code. A fix for this issue is included in Magento 2.2.8. However, if you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+A critical SQL injection vulnerability has been identified in 2.2.x Magento code. A fix for this issue is included in Magento 2.2.8. If you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  However, **we strongly encourage all merchants to stay up-to-date on security patches**. See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
 
 
 Follow these steps to download and apply this patch:
@@ -35,6 +37,19 @@ Follow these steps to download and apply this patch:
 
 6. Refresh the cache from the Admin (**System** > **Cache Management**).
 
+
+
+
+## PayPal Payflow Pro active carding activity update
+
+The PayPal Payflow Pro integration in Magento is being actively targeted by carding activity. To resolve these carding activity issues, Magento has provided Composer packages that add an option for Google reCAPTCHA and CAPTCHA to the Payflow Pro checkout form. See [PayPal Payflow Pro active carding activity](https://support.magento.com/hc/en-us/articles/360025515991) for a full discussion of this issue and instructions on downloading these packages. **We strongly recommend that all Payflow Pro merchants download and install these packages to help enhance the security of their storefronts**.
+
+
+## Apply the Admin Dashboard Image-Charts patch to address deprecation of Google Image Charts
+
+Magento 2.x currently uses Google Image Charts to render static charts in Admin dashboards. Google stopped supporting Google Image Charts on March 14, 2019, and Magento is providing the Admin Dashboard Image-Charts  patch to replace Google Image Charts with the Image-Charts free service. Users of Magento 2.x deployments will not be able to view static charts in Magento 2.x instances unless they download and apply this patch. 
+ 
+See  [Switch from deprecated Google Image Charts to Image-Charts for Magento](https://support.magento.com/hc/en-us/articles/360024850172) for information on downloading and applying this patch. 
 
 ## Highlights
 
@@ -53,7 +68,7 @@ These releases include security enhancements that help close cross-site scriptin
 
 ### Infrastructure improvements
 
-* **Magento now supports Elasticsearch 6.0**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
+* **Magento now supports Elasticsearch 6.x**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
  
 * Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage. See [Authorize.Net Direct Post](https://docs.magento.com/m2/2.2/ee/user_guide/payment/authorize-net-direct-post.html) for a discussion of this deprecation and the steps you need to take to add the new key you’ll need after deprecation.  <!-- MAGETWO-98129-->* 
 

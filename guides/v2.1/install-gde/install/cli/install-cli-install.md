@@ -51,7 +51,7 @@ You can run the following commands to find values for some required arguments:
 | Currency           | magento info:currency:list      |
 | Time zone          | php  magento info:timezone:list |
 
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 If an error displays when you run these commands, make sure you updated installation dependencies as discussed in [Update installation dependencies](<{{ page.baseurl }}/install-gde/install/prepare-install.html>).
@@ -99,7 +99,7 @@ Any options that contain spaces or special characters must be enclosed in either
 | `--amqp-user`                    | {{site.data.var.ee}} only. The username for connecting to RabbitMQ. Do not use the default user `guest`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | No        |
 | `--amqp-password`                | {{site.data.var.ee}} only. The password for connecting to RabbitMQ. Do not use the default password `guest`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | No        |
 
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 To enable or disable modules after installing Magento, see [Enable and disable modules](<{{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html>).

@@ -93,7 +93,11 @@ The following call returns information about the logged-in customer. Provide the
       lastname
       street
       city
-      region_id
+      region {
+        region_code
+        region
+        region_id
+      }
       postcode
       country_id
       telephone
@@ -121,7 +125,11 @@ The following call returns information about the logged-in customer. Provide the
            "123 Elm Street"
          ],
          "city": "Anytown",
-         "region_id": 57,
+         "region": {
+           "region_code": "MI",
+           "region": "Michigan",
+           "region_id": 33
+         }
          "postcode": "78758",
          "country_id": "US",
          "telephone": "512 555-1212"
@@ -511,7 +519,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "revokeCustomerToken": {
@@ -556,7 +564,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "changeCustomerPassword": {
