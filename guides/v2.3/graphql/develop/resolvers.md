@@ -194,7 +194,7 @@ mutation {
 
 A sample response:
 
-```text
+```json
 {
   "data": {
     "createCustomer": {
