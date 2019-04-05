@@ -109,7 +109,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 ## Using client-side compilation mode
 
-When your Magento 2 instance is not in the production mode, you can implement the client-side compilation to compile .less files via the browser using the native less.js library.
+When your application is not in the production mode, you can set Magento to compile .less files in the browser, using the [native less library](http://lesscss.org/usage/#using-less-in-the-browser)
 
 Despite the fact that this kind of approach allows to instantly update CSS/LESS themes as soon as the page is reloaded in a browser, this results in exceptionally slow response times even if you are working on the localhost.
 
