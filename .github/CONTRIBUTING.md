@@ -40,9 +40,9 @@ In general, you should use `master` as the base branch when creating a PR. If yo
 Choose a contribution type:
 
 - [ ] New topic - An entirely new page.
-- [ ] Content update - A substantial update or addition to an existing page. New content section with its own heading.
-- [ ] Content fix or rewrite - Small text changes or fixes. A few new sentences that clarify a subject. Fixes/updates to source code or command examples.
-- [ ] Bug fix or improvement - Typos or other obvious small mistakes. Formatting issues such as extra spaces or a broken link.
+- [ ] Content update - A substantial update or addition to an existing page; new content section with its own heading.
+- [ ] Content fix or rewrite - Small text changes or fixes: a few new sentences that clarify a subject or fixes/updates to source code or command examples.
+- [ ] Bug fix or improvement - Typos or other obvious small mistakes and formatting issues, such as extra spaces or broken links.
 
 If you are updating an example from source code, include a link to the file in the repository.
 
