@@ -145,30 +145,29 @@ pages:
   versionless: true
   children:
 
-  - label: Overview
+  - label: Overview of content migration
     url: /page-builder-migration/docs/
     versionless: true
 
-  - label: Install the content migration tool
+  - label: Install the migration module
     url: /page-builder-migration/docs/install-data-migration.html
     versionless: true
 
-  - label: Migrate BlueFoot content
+  - label: Run the migration module
     url: /page-builder-migration/docs/migrate-from-bluefoot.html
     versionless: true
-    children:
 
-      - label: Migrate BlueFoot content types
-        url: /page-builder-migration/docs/migrate-from-bluefoot/content-type-renderers.html
-        versionless: true
+  - label: How content migration works
+    url: /page-builder-migration/docs/content-type-renderers.html
+    versionless: true
 
-      - label: Migrate BlueFoot custom content types
-        url: /page-builder-migration/docs/migrate-from-bluefoot/custom-content-types.html
-        versionless: true
+  - label: Migrate content from custom blocks
+    url: /page-builder-migration/docs/custom-content-types.html
+    versionless: true
 
-      - label: Migrate other Magento entities
-        url: /page-builder-migration/docs/migrate-from-bluefoot/other-magento-entities.html
-        versionless: true
+  - label: Migrate other BlueFoot content
+    url: /page-builder-migration/docs/other-magento-entities.html
+    versionless: true
 
 - label: Reference
   versionless: true
