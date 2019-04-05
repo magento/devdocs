@@ -1,0 +1,38 @@
+versions:
+  - 2.3.0
+  - 2.3.1
+extension:
+  -
+    name: Magento Shipping
+    versions:
+      - 
+        name: 1.4.6
+        support:
+          2.3.0: stable
+          2.3.1: stable
+      - 
+        name: 1.5.1
+        support:
+          2.3.0: stable
+          2.3.1: stable
+  -
+    name: Multi Source Inventory
+    versions:
+      - 
+        name: 1.1.0
+        support:
+          2.3.0: stable
+          2.3.1: stable
+      - 
+        name: 1.0.3
+        support:
+          2.3.0: stable
+          2.3.1: stable
+  -
+    name: Page Builder
+    versions:
+      - 
+        name: 1.0.0
+        support:
+          2.3.0: release candidate
+          2.3.1: stable
