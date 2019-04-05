@@ -15,7 +15,7 @@ This release include security enhancements that help close cross-site scripting,
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A SQL injection vulnerability has been identified in 2.1.x Magento code. To quickly protect your store from this vulnerability, you'll need to install patch PRODSECBUG-2198.  However, **we strongly encourage all merchants to stay up-to-date on security patches**. See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+A SQL injection vulnerability has been identified in 2.1.x Magento code. The fix for this vulnerability is not included in this patch release because the known attack path is not exploitable in this version. However, this release does contain the vulnerable code, and we strongly recommend that you proactively install the PRODSECBUG-2198 patch. **We strongly encourage all merchants to stay up-to-date on security patches**, and this means you should upgrade to or install Magento 2.1.17 **and** apply patch PRODSECBUG-2198.
  
 Follow these steps to download and apply this patch:
 
