@@ -20,6 +20,18 @@ Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instr
 
 The basic set of instructions is the same for all types of layout files. This topic describes these basic instructions. For details about how they are used in a particular layout file type, please refer to the [Layout file types] topic.
 
+## layout XML is merging order is following :
+
+* Module base files loaded.
+* Module area files loaded.
+* Sorted according to their module priority. (array index of module’s position in app/etc/config.php)
+  - If their priorities are equal, they are sorted according to their alphabetical priority.
+* Theme files. (parent theme to current theme)
+* Layout files loaded.
+  - Override files replaced.
+  - Layout XML in Themes.
+  - Theme override files replaced.
+
 ## Common layout instructions {#fedg_layout_xml-instruc_ex}
 
 Use the following layout instructions to customize your layout:
