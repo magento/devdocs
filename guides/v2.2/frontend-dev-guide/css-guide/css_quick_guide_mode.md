@@ -109,9 +109,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 ## Using client-side compilation mode
 
-When your application is not in the production mode, you can set Magento to compile .less files in the browser, using the [native less library](http://lesscss.org/usage/#using-less-in-the-browser)
-
-Despite the fact that this kind of approach allows to instantly update CSS/LESS themes as soon as the page is reloaded in a browser, this results in exceptionally slow response times even if you are working on the localhost.
+When your Magento instance is within the client side less compilation mode, simple changes are applied after saving or refreshing the page. For more sophisticated changes, you may need to manually clean the theme sub-directory in the `pub/static/frontend` directory and generate a new deployment for your changes to be displayed. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
 
 1. Navigate to your theme directory and create a `web/css/source/_extend.less` file.
 1. Log in to the Magento Admin.
