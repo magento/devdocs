@@ -24,11 +24,13 @@ The `Cart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`applied_coupon` | code | Contains the coupon code if used 
+`applied_coupon` | code | Contains the coupon code if used
+`available_payment_methods` | AvailablePaymentMethod | Available payment methods
 `billing_address` | [CartAddress](#cartAddressAttributes) | Contains the billing address specified in the customer's cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 `items` | [CartItemInterface](#cartItemsInterface) | Contains the items in the customer's cart
 `shipping_addresses` | [CartAddress](#cartAddressAttributes) | Contains one or more shipping addresses
+`selected_payment_method` | SelectedPaymentMethod | Selected payment method
 
 ### Cart address attributes {#cartAddressAttributes}
 The `CartAddress` object can contain the following attributes:
