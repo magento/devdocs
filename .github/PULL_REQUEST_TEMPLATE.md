@@ -9,7 +9,7 @@ List all files that this PR changes:
 - ...
 - ...
 
-## Source code URLS (remove if unused)
+## Links to source code (remove if unused)
 
 If this PR references a file in a Magento repository, add it here.
 
