@@ -150,4 +150,4 @@ Despite the fact that this kind of approach allows to instantly update CSS/LESS 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
 {:.bs-callout .bs-callout-info}
-Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
+Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. and generate a new deployment for the changes to have the desired effect. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
