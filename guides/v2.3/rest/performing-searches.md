@@ -38,7 +38,7 @@ Condition | Notes
 `notnull` | Not null
 `null` | Null
 `to` | The end of a range. Must be used with `from`
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 `condition_type` is optional if the operator is `eq`.

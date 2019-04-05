@@ -31,7 +31,7 @@ The following tables show the core routers that come with Magento:
 | [standard]   | 30         | The standard router                               |
 | [cms]        | 60         | Matches requests for CMS pages                    |
 | [default]    | 100        | The default router                                |
-{:style="table-layout:auto"}
+
 
 **`adminhtml` area routers:**
 
@@ -39,7 +39,7 @@ The following tables show the core routers that come with Magento:
 | --------- | ---------- | ------------------------------------------ |
 | [admin]   | 10         | Matches requests in the Magento admin area |
 | [default] | 100        | The default router for the admin area      |
-{:style="table-layout:auto"}
+
 
 ### Standard router
 

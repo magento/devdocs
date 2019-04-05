@@ -88,7 +88,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
         if (!isset($_SERVER['HTTP_HOST'])) {
            return false;
         }
-           return strpos(str_replace('.', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+           return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
     }
     if (isHttpHost("example.com")) {
         $_SERVER["MAGE_RUN_CODE"] = "default";
@@ -101,7 +101,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
     From:
 
     ```php
-    return strpos(str_replace('.', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+    return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
     ```
 
     To:

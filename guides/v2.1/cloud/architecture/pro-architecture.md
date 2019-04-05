@@ -144,7 +144,7 @@ Days 4 to 6 | One backup per day
 Weeks 2 to 6 | One backup per week
 Weeks 8 to 12 | One bi-weekly backup
 Weeks 12 to 22 | One backup per month
-{:style="table-layout:auto;"}
+
 
 {{site.data.var.ece}} creates the backup using snapshots to encrypted elastic block storage (EBS) volumes. An EBS snapshot is immediate, but the time it takes to write to the simple storage service (S3) depends on the volume of changes.
 

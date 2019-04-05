@@ -12,8 +12,8 @@ Attribute | Type | Description
 `allow_message` | Boolean | Indicates whether the customer can provide a message to accompany the gift card.
 `allow_open_amount` | Boolean | Indicates whether customers have the ability to set the value of the gift card.
 `color` | Int | The color of the product
-`giftcard_amounts` |  `GiftCardAmounts` | An array that contains information about the values and ID of a gift card.
-`giftcard_type`"  | `GiftCardTypeEnum` | Either VIRTUAL, PHYSICAL, or COMBINED
+`giftcard_amounts` | `GiftCardAmounts` | An array that contains information about the values and ID of a gift card.
+`giftcard_type` | `GiftCardTypeEnum` | Either VIRTUAL, PHYSICAL, or COMBINED
 `is_redeemable` | Boolean | Indicates whether the customer can redeem the value on the card for cash.
 `lifetime` | Int | The number of days after purchase until the gift card expires. A null value means there is no limit.
 `manufacturer` | Int | The manufacturer of the product
