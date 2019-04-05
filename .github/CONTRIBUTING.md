@@ -77,7 +77,7 @@ Use the following guidelines to help you with the writing process:
 - Define the goal of your topic. What exactly do you want to teach the reader?
 - Make the title of your topic reflect the content.
 - Keep your sentences concise and try to separate conceptual information from procedural steps.
-- Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions get approved and merged quickly. Have several typo fixes across several areas of documentation? Batch them into on PR.
+- Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions get approved and merged quickly. Have several typo fixes across several areas of documentation? Batch them into one PR.
 - Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"The log captures commands, output..."_.
 - Use notes to alert readers about important details.
 - Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
