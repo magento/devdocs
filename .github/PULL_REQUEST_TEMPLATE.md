@@ -11,7 +11,7 @@ List all files that this PR changes:
 
 ## Links to source code (remove if unused)
 
-If this PR references a file in a Magento repository, add it here.
+If this PR references a file in a Magento codebase repository, add it here.
 
 - ...
 - ...
