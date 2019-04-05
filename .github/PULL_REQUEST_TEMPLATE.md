@@ -1,6 +1,6 @@
 ## Purpose of this PR (required)
 
-Describe the goal and the types of changes this PR covers.
+Describe the goal and the type of changes this PR covers.
 
 ## Affected URLS (required)
 
