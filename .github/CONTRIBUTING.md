@@ -35,12 +35,12 @@ If you write and contribute a full topic, we will add your name (or your company
 
 Create a PR to the [magento/devdocs repo](https://github.com/magento/devdocs). Fill out as much information as possible and link any GitHub issues.
 
-In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, like `2.3.1-integration`.
+In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `2.3.1-integration`.
 
 Choose a contribution type:
 
 - [ ] New topic - An entirely new page.
-- [ ] Content update - A substantial update or addition to an existing page; new content section with its own heading.
+- [ ] Content update - A substantial update or addition to an existing page; new content section with a heading.
 - [ ] Content fix or rewrite - Small text changes or fixes: a few new sentences that clarify a subject or fixes/updates to source code or command examples.
 - [ ] Bug fix or improvement - Typos or other obvious small mistakes and formatting issues, such as extra spaces or broken links.
 
@@ -77,7 +77,7 @@ Use the following guidelines to help you with the writing process:
 - Define the goal of your topic. What exactly do you want to teach the reader?
 - Make the title of your topic reflect the content.
 - Keep your sentences concise and try to separate conceptual information from procedural steps.
-- Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions get approved and merged quickly. Have several typo fixes across several areas of documentation? Batch them into on PR.
+- Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions get approved and merged quickly. Have several typo fixes across several areas of documentation? Batch them into one PR.
 - Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"The log captures commands, output..."_.
 - Use notes to alert readers about important details.
 - Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
