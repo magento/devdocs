@@ -45,19 +45,19 @@ For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/tro
     ```yaml
     "http://{default}/":
         type: upstream
-	upstream: "mymagento:php"
+        upstream: "mymagento:php"
 
     "https://{default}/":
-	type: upstream
-	upstream: "mymagento:php"
+        type: upstream
+        upstream: "mymagento:php"
 
     "http://*.{default}/":
-	type: upstream
-	upstream: "mymagento:php"
+        type: upstream
+        upstream: "mymagento:php"
 
     "https://*.{default}/":
-	type: upstream
-	upstream: "mymagento:php"
+        type: upstream
+        upstream: "mymagento:php"
     ```
 
 1.  Save your changes to the `routes.yaml` file.
