@@ -23,3 +23,10 @@ If this PR references a file in a Magento codebase repository, add it here.
 
 - ...
 - ...
+
+<!-- 
+If you are fixing a Github issue, note it in the following format and the issue will automatically close when this PR is merged:
+Fixes #<IssueNumber>
+
+`master` is the default branch. Be sure to change the base if your PR is for another branch.
+-->
