@@ -43,7 +43,8 @@ Customer attributes are created inside of `InstallData` and `UpgradeData` script
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 
-{% highlight PHP inline=true %}
+```php
+<?php 
 namespace My\Module\Setup;
 
 use Magento\Customer\Model\Customer;
@@ -81,7 +82,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
         $this->attributeResource->save($attribute);
     }
 }
-{% endhighlight %}
+```
 
 ## Extension attributes {#extension}
 
@@ -203,7 +204,7 @@ The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInvent
 </config>
 {% endhighlight %}
 
-In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<magento_base_url>/rest/V1/products/<sku>` request will receive product information similar to the following:
+In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET <host>/rest/<store_code>/V1/products/<sku>` request will receive product information similar to the following:
 
     {
       "sku": "tshirt1",

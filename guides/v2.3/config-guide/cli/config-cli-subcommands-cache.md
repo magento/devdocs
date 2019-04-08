@@ -29,7 +29,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 |Integration API configuration|config_integration_api|Compiled integration APIs configuration of the Store’s Integrations.|
 |Web services configuration|config_webservice|Caching the Web API Structure.|
 |Customer Notification|customer_notification|Temporary notifications that appear in the user interface.|
-{:style="table-layout:auto;"}
+
 
 ## View the cache status
 

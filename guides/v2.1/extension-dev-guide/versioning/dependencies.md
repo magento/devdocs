@@ -104,4 +104,4 @@ Use this table to set the appropriate version dependency on a module based on ho
 | | Declare a foreign key on a module table | MAJOR|
 | | Declare a trigger on a module table | MAJOR|
 | | Read from table or write to table from a temporary table| PATCH|
-  {:style="table-layout:auto;"}
+  
