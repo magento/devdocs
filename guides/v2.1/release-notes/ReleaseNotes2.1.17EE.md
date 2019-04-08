@@ -3,6 +3,7 @@ group: release-notes
 title: Magento Commerce 2.1.17 Release Notes
 ---
 
+
 *Release notes published on March 26, 2019 and last edited on April 5, 2019.*
 
 
@@ -15,8 +16,7 @@ Although this release includes these security enhancements, no confirmed attacks
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A critical SQL injection vulnerability has been identified in 2.1.x Magento code. To quickly protect your store from this vulnerability, you'll need to install patch PRODSECBUG-2198 and upgrade to this relesae (2.1.17). However, **we strongly encourage all merchants to stay up-to-date on security patches**. See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
-
+A SQL injection vulnerability has been identified in 2.1.x Magento code. The fix for this vulnerability is not included in this patch release because the known attack path is not exploitable in this version. However, this release does contain the vulnerable code, and we strongly recommend that you proactively install the PRODSECBUG-2198 patch. **We strongly encourage all merchants to stay up-to-date on security patches**, and this means you should upgrade to or install Magento 2.1.17 **and** apply patch PRODSECBUG-2198.
 
 Follow these steps to download and apply this patch:
 
@@ -56,6 +56,22 @@ Magento’s implementation of the Authorize.Net Direct Post payment method curre
 
 This will result in Magento merchants not being able to use Authorize.Net Direct Post  to process payments. To avoid disruption and to continue processing payments, merchants need to apply a patch provided by Magento and add a Signature Key (SHA-512) in the Magento Admin configuration settings. Magento released this patch in late February to address this issue on pre-2.3.1 installations of Magento. See [Update Authorize.Net Direct Post from MD5 to SHA-512](https://support.magento.com/hc/en-us/articles/360024368392-Update-Authorize-Net-Direct-Post-from-MD5-to-SHA-512). Information about the deprecation of Authorize.Net Direct Post can be found [here](https://docs.magento.com/m2/ce/user_guide/payment/authorize-net-direct-post.html).
 
+## Known issue
+
+**Issue**:  The CGI URL gateway in the UPS module has been updated from HTTP to HTTPS. Consequently, the UPS shipping method does not populate correctly. **Workaround**: Confirm that the Gateway URL uses the HTTPS protocol in the [UPS Shipping Method Configuration](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html). <!--- MAGETWO-98947-->
+
+*Updating an existing setting*:
+
+If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Configuration, you must manually change the protocol of the Gateway URL from HTTP to HTTPS. Example: `https://www.ups.com/using/services/rave/qcostcgi.cgi`
+
+
+*To configure UPS for the first time*: 
+ 
+1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section. 
+ 
+2. At the **UPS Type** field, clear the Use system value checkbox. Then, change **UPS Type** to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
+
+3. Tap **Save Config**.
 
 
 ## Installation
