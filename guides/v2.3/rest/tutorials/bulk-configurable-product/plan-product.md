@@ -44,7 +44,7 @@ Pattern | Graphic Print
 Color | Gray
 Size | Configurable in small, medium, or large
 Description | The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10.
-{:style="table-layout:auto;"}
+
 
  A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are defined by the system.
 
@@ -118,7 +118,7 @@ Material | LumaTech  | 136 | `material` | 148
 Pattern | Graphic Print | 152 | `pattern` | 196
 Color | Gray | 93 | `color` | 52
 Size | Not applicable | 141 | `size` | 168 (small), 169 (medium), 170 (large)
-{:style="table-layout:auto;"}
+
 
  {:.bs-callout .bs-callout-warning}
 The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.

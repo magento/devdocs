@@ -27,8 +27,23 @@ The `ConfigurableProduct` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`configurable_product_links` | SimpleProduct | An array of linked simple products
-`configurable_product_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
+`configurable_options` | [[ConfigurableProductOptions]](#configProdOptions) | An array of linked simple product items
+`variants` | ConfigurableVariant | An array of variants of products
+
+## ConfigurableVariant
+
+Field | Type | Description
+--- | --- | ---
+`attributes` | ConfigurableAttributeOption | ConfigurableAttributeOption contains the value_index (and other related information) assigned to a configurable product option
+`product` | SimpleProduct | An array of linked simple products
+
+## ConfigurableAttributeOption
+
+Field | Type | Description
+--- | --- | ---
+`code` | String | The ID assigned to the attribute
+`label` | String | A string that describes the configurable attribute option
+`value_index` | Int | A unique index number assigned to the configurable product option
 
 ### Configurable product options {#configProdOptions}
 The `ConfigurableProductOptions` object contains the following attributes:
@@ -42,6 +57,7 @@ Attribute | Type | Description
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
 `product_id` | Int | This is the same as a product's 'id' field
+`use_default` | Boolean | Indicates whether the option is the default
 `values` | [[ConfigurableProductOptionsValues]](#configProdOptionsValues) | An array that defines the `value_index` codes assigned to the configurable product
 
 ### Configurable product options values {#configProdOptionsValues}
@@ -49,6 +65,10 @@ The `ConfigurableProductOptionsValues` object contains the following attribute:
 
 Attribute | Type | Description
 --- | --- | ---
+`default_label` | String | The label of the product on the default store
+`label` | String | The label of the product
+`store_label` | String | The label of the product on the current store
+`use_default_value` | Boolean | Indicates whether to use the default_label
 `value_index` | Int | A unique index number assigned to the configurable product option
 
 ### Example usage
@@ -742,7 +762,7 @@ mutation {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "addConfigurableProductsToCart": {
