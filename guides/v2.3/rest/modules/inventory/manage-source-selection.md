@@ -92,7 +92,7 @@ Name | Description | Type | Requirements
 `region` | The region code of the shipping address | String | Required for the Distance Priority SSA
 `city` | The city of the shipping address | String | Required for the Distance Priority SSA
 
-{:style="table-layout:auto;"}
+
 
 ### Source Priority Algorithm
 
