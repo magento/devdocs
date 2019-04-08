@@ -519,7 +519,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "revokeCustomerToken": {
@@ -564,7 +564,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "changeCustomerPassword": {

@@ -28,7 +28,7 @@ User type | Accessible resources (defined in webapi.xml)
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
 Customer | Resources with `anonymous` or `self` permission
 Guest user | Resources with `anonymous` permission
-{:style="table-layout:auto;"}
+
 
 ### Relation between acl.xml and webapi.xml
 
@@ -69,7 +69,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
             <resource ref="anonymous"/>
         </resources>
     </route>
-    <route url="/V1/customers/:id" method="PUT">
+    <route url="/V1/customers/:customerId" method="PUT">
         <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/>
         <resources>
             <resource ref="Magento_Customer::manage"/>

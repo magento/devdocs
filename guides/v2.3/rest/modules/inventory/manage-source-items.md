@@ -30,7 +30,7 @@ sku	| The SKU of an existing product | String | Required to assign or unassign a
 source_code	| The source to assign or unassign | String | Required to assign or unassign a source
 quantity	| The total amount of inventory available for this SKU and source | Float | Optional
 status	|  Indicates whether the product is out of stock (0) or in stock (1) | Integer | Optional
-{:style="table-layout:auto;"}
+
 
 ## Unassign products from a source
 

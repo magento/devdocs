@@ -24,7 +24,7 @@ Name | Type | SKU | Quantity
 Voyage Yoga Bag | Simple | 24-WB01 | 100
 Driven Backpack | Simple | 24-WB03 | 100
 Yoga Adventure | Downloadable | 240-LV06 | Not applicable
-{:style="table-layout:auto;"}
+
 
 ## Unassign products from the default source
 

@@ -67,7 +67,7 @@ The following table shows each configuration type and the Magento configuration 
 |`di.xml`|[Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration|primary, global, area|[\Magento\Framework\ObjectManager\Config]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php)|
 |`events.xml`|Event/observer configuration|global, area|[\Magento\Framework\Event]({{ site.mage2000url }}lib/internal/Magento/Framework/Event.php)|
 |`routes.xml`|[Route]({{ page.baseurl }}/extension-dev-guide/routing.html) configuration|area|[Magento\Framework\App\Route\Config]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php)|
-{:style="table-layout:auto;"}
+
 
 ### Configuration interfaces {#config-files-classes-int}
 
