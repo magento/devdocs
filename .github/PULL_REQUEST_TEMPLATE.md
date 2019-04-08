@@ -12,9 +12,7 @@ Note the scope of this PR by leaving one of the options below and deleting the o
 
 Describe the goal and the type of changes this PR covers.
 
-## Affected URLS (required)
-
-List all files that this PR changes:
+## Affected URLs (required)
 
 - ...
 - ...
