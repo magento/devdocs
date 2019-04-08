@@ -1,6 +1,6 @@
 ## Scope of this PR
 
-We set labels (and therefore points) based on the scope of changes with a PR.
+We set [labels](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs) based on the scope of changes with a PR.
 Note the scope of this PR by leaving one of the options below and deleting the others.
 
 - New Topic: Entirely new documents
