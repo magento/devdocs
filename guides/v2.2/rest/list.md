@@ -19,6 +19,7 @@ See [Integrate with B2B using REST]({{ page.baseurl }}/b2b/integrations.html) fo
 ### CustomerBalance
 
     POST   /V1/carts/mine/balance/apply
+    POST   /V1/carts/mine/balance/unapply
 
 ### GiftCardAccount
 

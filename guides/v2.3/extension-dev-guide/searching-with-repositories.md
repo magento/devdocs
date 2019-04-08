@@ -118,7 +118,7 @@ This object is an instance of a class that implements the interface [`SearchResu
 
 Search Result objects hold the Search Criteria object and the retrieved entities along with information about the total count of found entities regardless of any limitations set in the criteria.
 
-The search engine determines the maximum number of results that a query can return. For SQL searches, the maximum is the value  of the `PHP_INT_MAX` environment variable. For Elasticsearch, the value is defined in the `Elasticsearch/etc/di.xml` file. The default is 2147483647.
+The search engine determines the maximum number of results that a query can return. For SQL searches, the maximum is the value  of the `PHP_INT_MAX` environment variable. For Elasticsearch, the value is defined in the `Elasticsearch/etc/di.xml` file. The default is 10000.
 
 ### Search Criteria Unify Processing {#m2devgde-searchcriteria-unify-processing}
 
@@ -179,9 +179,9 @@ The example below uses {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %
                 <item name="category_id" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductCategoryFilter</item>
             </argument>
             <argument name="fieldMapping" xsi:type="array">
-                <item name="code" xsi:type="string">customer_group_code</item>
-                <item name="id" xsi:type="string">customer_group_id</item>
-                <item name="tax_class_name" xsi:type="string">class_name</item>
+                <item name="code" xsi:type="string">main_table.customer_group_code</item>
+                <item name="id" xsi:type="string">main_table.customer_group_id</item>
+                <item name="tax_class_name" xsi:type="string">tax_class_table.class_name</item>
             </argument>
         </arguments>
     </virtualType>
@@ -272,6 +272,7 @@ Below is an example of creating a Join Processor virtual type in the `di.xml` fi
   <arguments>
     <argument name="customJoins" xsi:type="array">
       <item name="rate.tax_calculation_rate_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\Rate</item>
+      <item name="rc.code" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\RateCode</item>
       <item name="ctc.customer_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CustomerTaxClass</item>
       <item name="ptc.product_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\ProductTaxClass</item>
       <item name="cd.customer_tax_class_id" xsi:type="object">Magento\Tax\Model\Api\SearchCriteria\JoinProcessor\CalculationData</item>
