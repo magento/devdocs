@@ -33,7 +33,7 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ### Create a pull request
 
-Create a PR to the [magento/devdocs repo](https://github.com/magento/devdocs). Fill out as much information as possible and link any GitHub issues.
+Create a PR to the [magento/devdocs repository](https://github.com/magento/devdocs). Fill out as much information as possible and link any GitHub issues.
 
 In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `2.3.1-integration`.
 
