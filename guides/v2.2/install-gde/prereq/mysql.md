@@ -28,8 +28,8 @@ Magento _strongly_ recommends you observe the following standard when you set up
 
 {:.bs-callout .bs-callout-warning} Magento 2 currently utilizes `CREATE TEMPORARY TABLE` statements inside transactions,
 which are [incompatible](https://dev.mysql.com/doc/refman/5.7/en/replication-gtids-restrictions.html) with database
-implementations utilizing GTID-based replication.
-(E.g., [Google Cloud SQL second-generation instances](https://cloud.google.com/sql/docs/features#differences).)
+implementations utilizing GTID-based replication, such as
+[Google Cloud SQL second-generation instances](https://cloud.google.com/sql/docs/features#differences).
 
 {:.bs-callout .bs-callout-info}
 If your web server and database server are on different hosts, perform the tasks discussed in this topic on the database server host then see [Set up a remote MySQL database connection]({{ page.baseurl }}/install-gde/prereq/mysql_remote.html).
