@@ -8,7 +8,7 @@ updated: Mon Apr  8 12:08:44 2019
 entries:
 - description: Added a new [product release information](https://devdocs.magento.com/release/)
     topic that describes Magento's release policy, product availability, and extension
-    stability
+    stability.
   versions: 2.3.x
   type: New topic
   date: April  5, 2019
