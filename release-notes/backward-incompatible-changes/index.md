@@ -8,12 +8,9 @@ This topic discusses the most important backward incompatible changes made after
 
 Be aware that no @api code has been modified.
 
-To see all backward incompatible changes follow:
+To see all backward incompatible changes refer to the [reference][]:
 
- - [{{site.data.var.ce}} backward incompatible changes][]
- - [{{site.data.var.ee}} backward incompatible changes][]
-
-For more information about backward compatibility, see [Magento’s backward compatibility policy][].
+For more information about backward compatibility, see [Magento backward compatibility policy][].
 
 ## Framework changes
 
@@ -32,9 +29,9 @@ For more information about backward compatibility, see [Magento’s backward com
 * The **Subproduct discounts** dropdown on a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} price rule was deleted, including **Apply** and **Discount Amount** subfields.
 
 |---
-| Setup version 2.0.0  | Setup version 2.0.1
-|-|:-
-| ![OLD - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule')
+| Setup version 2.0.0                                                                                                                               | Setup version 2.0.1                                                                                                                               |
+|---------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![OLD - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_200.png 'OLD - Adding a new catalog price rule') | ![NEW - Adding a new catalog price rule]({{ site.baseurl }}/common/images/backw_chang_cat_pr_rul_201.png 'NEW - Adding a new catalog price rule') |
 
 ### Flow changes
 
@@ -96,20 +93,9 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
   * A web page sends POST message with attribute `value = "true"` if the field is checked or `value = "false"` if it is not.
   * A server converts `value` attribute to the PHP `true/false` boolean type value.
 
-<table>
-  <tr>
-    <th><code>setup_version</code> version 2.0.3</th>
-    <th><code>setup_version</code> version 2.0.4</th>
-  </tr>
-  <tr>
-    <td>
-    Select option value (int, string)
-    </td>
-    <td>
-    String:{'true'|'false'}
-    </td>
-  </tr>
-</table>
+| `setup_version` version 2.0.3     | `setup_version` version 2.0.4 |
+|-----------------------------------|-------------------------------|
+| Select option value (int, string) | String:{'true' \| 'false'}    |
 
 * Checkboxes and radio buttons work as `on/off` fields.
 * Category products grid
@@ -140,13 +126,12 @@ When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09c
 
 <!-- LINK DEFINITIONS -->
 
-[Magento’s backward compatibility policy]: {{ site.baseurl }}/guides/v2.0/contributor-guide/backward-compatible-development/index.html
+[Magento backward compatibility policy]: {{ site.baseurl }}/guides/v2.0/contributor-guide/backward-compatible-development/index.html
 
 [`<magento2>/app/code/Magento/Catalog/etc/module.xml`]: {{site.mage2bloburl}}bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/etc/module.xml
 [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`]: {{site.mage2bloburl}}bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml
 
-[{{site.data.var.ce}} backward incompatible changes]: {{ page.baseurl }}/release-notes/backward-incompatible-changes/open-source.html
-[{{site.data.var.ee}} backward incompatible changes]: {{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html
+[reference]: {{ page.baseurl }}/release-notes/backward-incompatible-changes/index.html
 [Overview of UI components]: {{ page.baseurl }}/ui-components/ui-definition.html
 [more info about a form component]: {{ page.baseurl }}/ui-components/ui-form.html
 
