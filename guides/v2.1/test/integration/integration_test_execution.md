@@ -279,7 +279,7 @@ cd dev/tests/integration
 
 ## Common mistakes
 
-### Can't read files specified as arguments
+### Can not read files specified as arguments
 
 This happens if the integration tests are executed from a wrong directory.
 
