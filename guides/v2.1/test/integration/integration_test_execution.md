@@ -49,7 +49,7 @@ The root folder for the Magento integration tests suite —`<magento_root>/dev/t
 This folder contains the following sub-folders and files:
 
 - `framework/` – Integration testing framework scripts, configuration files and classes.
-- `Magento/` – A set of classes that actually implement the Magento integration tests framework.
+- `Magento/` – A set of classes that implement the Magento integration tests framework.
 - `bootstrap.php` – The PHPUnit bootstrap script.
 - `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing the Magento application.
 - `testsuite/` – The test suite.
