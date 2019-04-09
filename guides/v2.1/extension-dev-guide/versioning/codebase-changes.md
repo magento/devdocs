@@ -100,15 +100,15 @@ Use this table to understand what changes Magento can make and which version num
 | | Method removed | MAJOR|
 | | XXXX Method renamed | MAJOR|
 | | New required method argument | MAJOR|
-| | XXXX Removed an @api annotation| MAJOR|
+| | Removed an @api annotation| MAJOR|
 | | Static function removed| MINOR|
 | | Static function renamed| MINOR|
 | **JavaScript class** (marked with `@api`)| Changed event ordering | MAJOR|
 | | Changed event property | MAJOR|
 | | Class added| MINOR|
 | | Class removed| MAJOR|
-| | XXXX Constant removed| MAJOR|
-| | XXXX Constant renamed| MAJOR|
+| | Constant removed| MAJOR|
+| | Constant renamed| MAJOR|
 | | Event added| MINOR|
 | | Event removed| MAJOR|
 | | Event renamed| MAJOR|
@@ -116,13 +116,13 @@ Use this table to understand what changes Magento can make and which version num
 | | Event property removed | MAJOR|
 | | Method added | MINOR|
 | | Method removed | MAJOR|
-| | XXXX Levine Modify default value for optional arguments in public and protected methods | MAJOR|
+| | Modify default value for optional arguments in public and protected methods | MAJOR|
 | | XXXX New abstract method added to class| MINOR|
 | | New last method argument | MINOR|
 | | New required method argument | MAJOR|
-| | XXXX Rename public or protected properties| MAJOR|
-| | XXXX Removed an @api annotation| MAJOR|
-| | XXXX Removed public or protected properties| MAJOR|
+| | Rename public or protected properties| MAJOR|
+| | Removed an @api annotation| MAJOR|
+| | Removed public or protected properties| MAJOR|
 | **Virtual Type** | Virtual type added | MAJOR|
 | | Virtual type removed | MINOR|
 | **URL Paths** | New optional request parameter | MINOR|
@@ -138,13 +138,13 @@ Use this table to understand what changes Magento can make and which version num
 | | Command removed| MAJOR|
 | | Command modified| MINOR|
 | | Required argument added| MAJOR|
-| **Less variables and mixins** |XXXX Class removed | MAJOR|
-| | XXXX Class renamed| MAJOR|
+| **Less variables and mixins** |Class removed | MAJOR|
+| | Class renamed| MAJOR|
 | | Mixin removed | MAJOR|
 | | Mixin renamed | MAJOR|
 | | Required mixin argument added| MAJOR|
 | | Variable removed| MAJOR|
-| | XXXX Variable renamed | MAJOR|
+| | Variable renamed | MAJOR|
 | **Message queue topics and data types** | Consumer removed | MINOR|
 | | Topic added| MINOR|
 | | Topic arguments modified | MAJOR|
@@ -172,7 +172,7 @@ Use this table to understand what changes Magento can make and which version num
 | | Column added | MINOR|
 | | Column removed | MAJOR|
 | | Compatible changes in column configuration (soften column constraints: increase size, make optional) | PATCH|
-| | XXXX Default value modified| MAJOR|
+| | Default value modified| MAJOR|
 | | Field type modified| MAJOR|
 | | Foreign key added| MAJOR|
 | | Incompatible changes in column configuration | MAJOR|
