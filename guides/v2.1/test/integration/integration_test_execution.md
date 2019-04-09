@@ -44,7 +44,7 @@ Refer to [Running Integration Tests in PhpStorm][phpstorm run] for further infor
 
 ## Integration tests file structure
 
-The root folder for the Magento integration tests suite is `<magento_root>/dev/tests/integration`.
+The root folder for the Magento integration tests suite —`<magento_root>/dev/tests/integration`—contains the following sub-folders and files:
 
 This folder contains the following sub-folders and files:
 
