@@ -69,7 +69,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
             <resource ref="anonymous"/>
         </resources>
     </route>
-    <route url="/V1/customers/:id" method="PUT">
+    <route url="/V1/customers/:customerId" method="PUT">
         <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/>
         <resources>
             <resource ref="Magento_Customer::manage"/>
