@@ -67,15 +67,12 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
                 <order_status>processing</order_status>
                 <environment>sandbox</environment>
                 <allowspecific>0</allowspecific>
-                <sdk_url><![CDATA[https://js.braintreegateway.com/js/braintree-2.32.0.min.js]]></sdk_url>
+                <sdk_url><![CDATA[https://js.braintreegateway.com/js/braintree-2.25.0.min.js]]></sdk_url>
                 <public_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
                 <private_key backend_model="Magento\Config\Model\Config\Backend\Encrypted" />
                 <masked_fields>cvv,number</masked_fields>
                 <privateInfoKeys>avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</privateInfoKeys>
                 <paymentInfoKeys>cc_type,cc_number,avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</paymentInfoKeys>
-                <avs_ems_adapter>Magento\Braintree\Model\AvsEmsCodeMapper</avs_ems_adapter>
-                <cvv_ems_adapter>Magento\Braintree\Model\CvvEmsCodeMapper</cvv_ems_adapter>
-                <group>braintree</group>
             </braintree>
         </payment>
     </default>
