@@ -51,7 +51,7 @@ This folder contains the following sub-folders and files:
 - `framework/` – Integration testing framework scripts, configuration files and classes.
 - `Magento/` – A set of classes that actually implement the Magento integration tests framework.
 - `bootstrap.php` – The PHPUnit bootstrap script.
-- `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing Magento application.
+- `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing the Magento application.
 - `testsuite/` – The test suite.
 - `tmp/` – A writable directory for storing temporary data during tests execution.
 - `sandbox-<hash>/` – The folder where each Magento instance stores temporary and configuration data.
