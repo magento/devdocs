@@ -42,21 +42,6 @@ Other than convenience, there is no benefit over running the tests on the consol
 
 Refer to [Running Integration Tests in PhpStorm][phpstorm run] for further information.
 
-## Integration tests file structure
-
-The root folder for the Magento integration tests suite —`<magento_root>/dev/tests/integration`—contains the following sub-folders and files:
-
-This folder contains the following sub-folders and files:
-
-- `framework/` – Integration testing framework scripts, configuration files and classes.
-- `Magento/` – A set of classes that implement the Magento integration tests framework.
-- `bootstrap.php` – The PHPUnit bootstrap script.
-- `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing the Magento application.
-- `testsuite/` – The test suite.
-- `tmp/` – A writable directory for storing temporary data during tests execution.
-- `sandbox-<hash>/` – The folder where each Magento instance stores temporary and configuration data.
-- `phpunit.xml.dist` – A PHPUnit configuration file.
-
 ## Prepare integration test execution {#setup}
 
 Before the Magento integration test framework can be used, the test environment must be prepared.
@@ -321,11 +306,26 @@ Setting up a run configuration for integration tests is very similar to creating
 Refer to [Running Unit Tests in PhpStorm][phpstorm run] for instructions about how to create a basic run configuration.
 Then configure the integration test configuration file to be used.
 
-#### Use the integration test configuration file
+### Use the integration test configuration file
 
 The only difference in the run configuration is that the integration test `phpunit.xml.dist` or `phpunit.xml` configuration file from the directory `dev/tests/integration` has to be selected.
 
 ![Integration Test Class run configuration]({{ site.baseurl }}/common/images/phpstorm_run_config_class_integration_tests.png){: width="600px"}
+
+## Integration tests file structure
+
+The root folder for the Magento integration tests suite —`<magento_root>/dev/tests/integration`—contains the following sub-folders and files:
+
+This folder contains the following sub-folders and files:
+
+- `framework/` – Integration testing framework scripts, configuration files and classes.
+- `Magento/` – A set of classes that implement the Magento integration tests framework.
+- `bootstrap.php` – The PHPUnit bootstrap script.
+- `etc/install-config-<db_vendor>.php` – A configuration file that provides values for installing the Magento application.
+- `testsuite/` – The test suite.
+- `tmp/` – A writable directory for storing temporary data during test execution.
+- `sandbox-<hash>/` – The folder where each Magento instance stores temporary and configuration data.
+- `phpunit.xml.dist` – A PHPUnit configuration file.
 
 <!-- LINK DEFINITIONS -->
 
