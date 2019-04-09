@@ -1,14 +1,11 @@
 ---
 group: release-notes
 title: Magento 2.1 backward incompatible changes
-redirect_from: 
- - /guides/v2.1/release-notes/backward-incompatible-changes-2.1.html
- - /guides/v2.1/release-notes/backward-incompatible-changes.html
 ---
 
 ## Overview
 
-Magento 2.1 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.0 and 2.1.
+Magento 2.1 introduces changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight the changes between Magento 2.0 and 2.1.
 
 ## API Changes
 
