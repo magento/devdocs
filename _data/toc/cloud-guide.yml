@@ -307,7 +307,7 @@ pages:
         - label: Cloud deployment process
           url: /cloud/deploy/cloud-deployment-process.html
 
-        - label: Reduce downtime
+        - label: Zero downtime deployment
           url: /cloud/deploy/reduce-downtime.html
 
         - label: Static content deployment
