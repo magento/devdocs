@@ -79,18 +79,20 @@ The `web` property defines how your application is exposed to the web (in HTTP).
 
 You can specify the following attributes for the `web` property:
 
--  `document_root`: The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
--  `passthru`: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often `/index.php` or `/app.php`.
--  `index_files`: To use a static file (for example, `index.html`) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named `index.html` as an index file, your whitelist should include an element that matches the filename, like `- \.html$`.
--  `blacklist`: A list of files that should never be executed. Has no effect on static files.
--  `whitelist`: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
--  `expires`: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The `expires` directive and resulting headers are left out entirely if this is not set.
+Attribute | Description
+--------- | -----------
+`document_root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
+`passthru` | The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often `/index.php` or `/app.php`.
+`index_files` | To use a static file (for example, `index.html`) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named `index.html` as an index file, your whitelist should include an element that matches the filename, like `- \.html$`.
+`blacklist` | A list of files that should never be executed. Has no effect on static files.
+`whitelist` | A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
+`expires` | The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The `expires` directive and resulting headers are left out entirely if this is not set.
 
-Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allow everything to be accessed except a specific list, we accept a *whitelist*, which means that anything not matched will trigger a 404 error and will be passed through to your `passthru` URL.
+Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow access to everything not on a specific list, we accept a *whitelist*, which means that anything not matched will trigger a 404 error and will be passed through to your `passthru` URL.
 
 Our default configuration allows the following:
 
--  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
+-  From the root (`/`) path, only web and media can be accessed
 -  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
 The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
@@ -112,21 +114,24 @@ web:
             rules:
                 \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
                     allow: true
-                /robots\.txt$:
-                    allow: true
+                ^/sitemap(.*)\.xml$:
+                    passthru: "/media/sitemap$1.xml"
         "/media":
             root: "pub/media"
             allow: true
             scripts: false
-            passthru: "/index.php"
+            expires: 1y
+            passthru: "/get.php"
         "/static":
             root: "pub/static"
             allow: true
             scripts: false
+            expires: 1y
             passthru: "/front-static.php"
             rules:
                 ^/static/version\d+/(?<resource>.*)$:
                     passthru: "/static/$resource"
+
 ```
 
 ### `disk`
