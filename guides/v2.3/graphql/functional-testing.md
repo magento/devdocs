@@ -172,9 +172,9 @@ A fixture rollback filename should correspond to the original fixture filename p
 Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
 
 ## Expected exceptions
-In cases when it's necessary to cover negative scenarios in the test and make sure that testing functionality proper responses on them use the next ways to define the expected exception message:
-  - define exception message expectation in the body of test
-  - define expected exception message in test function annotation
+When it is necessary to cover negative test scenarios and ensure that testing elicits proper responses, define the expected exception message:
+  - in the body of test
+  - in test function annotation
 
 #### Define exception message expectation in the body of test
 
