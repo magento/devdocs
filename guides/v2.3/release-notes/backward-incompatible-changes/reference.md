@@ -1,6 +1,9 @@
 ---
 group: release-notes
 title: Full reference of the backward incompatible changes
+redirect_from: 
+- /guides/v2.3/release-notes/backward-incompatible-changes/commerce.html
+- /guides/v2.3/release-notes/backward-incompatible-changes/open-source.html
 ---
 
 The changes are aggregated into two tables:
