@@ -23,11 +23,15 @@ When the [@api] and [@deprecated] doc blocks tags are added to the code base, th
 
 {% include backward-incompatible-changes/commerce/2.2.0-2.3.0.md %}
 
+{% endcollapsibleh2 %}
+
 {% collapsibleh2 2.1.0 - 2.3.0 %}
 
 {% include backward-incompatible-changes/open-source/2.1.0-2.3.0.md %}
 
 {% include backward-incompatible-changes/commerce/2.1.0-2.3.0.md %}
+
+{% endcollapsibleh2 %}
 
 <!-- LINK DEFINITIONS -->
 
