@@ -172,11 +172,12 @@ A fixture rollback filename should correspond to the original fixture filename p
 Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
 
 ## Expected exceptions
-Sometimes we need to cover a negative scenarious in our test and make sure that our functionality proper responses on them. There are two ways how you can define the expected exception message:
-  - in the body of test function
-  - in the test function annotation 
+In cases when it's necessary to cover negative scenarios in the test and make sure that testing functionality proper responses on them use the next ways to define the expected exception message:
+  - define exception message expectation in the body of test
+  - define expected exception message in test function annotation
 
-#### Define exception message in the body of test
+#### Define exception message expectation in the body of test
+
 ```php
 public function testMyExceptionTest()
 {
@@ -198,8 +199,8 @@ public function testMyExceptionTest()
     
     ...
 }
-
 ```
+{% include note.html type="info" content="Please note that the exception message expectation should be defined before invoking a logic that generates the exception." %}
 
 For example, if `customer A` wants to retrieve information about `customer B cart. In this situation, `customer A` will get an error - "`The current user cannot perform operations on cart "XXXXX`", where `XXXXX` - is an unique ID of `customer B` cart. See code below to understand how to cover this example with `expectExceptionMessage` function:
 
@@ -223,6 +224,8 @@ For example, if `customer A` wants to retrieve information about `customer B car
 ```
 
 #### Define expected exception message in test function annotation
+As an alternative for calling `expectExceptionMessage` method use a predefined directive `@expectedExceptionMessage`:
+
 ```php
     /**
      * @expectedException \Exception
@@ -230,7 +233,7 @@ For example, if `customer A` wants to retrieve information about `customer B car
      */
 ```
 
-Let's imagine that customer wants to retrieve information about his own cart but he provides incorrect cart ID.
+Example: a customer wants to retrieve information about his own cart but he provides incorrect cart ID.
 
 **Query**
 ```text
