@@ -1,6 +1,9 @@
 ---
 group: release-notes
 title: Full reference of backward incompatible changes
+redirect_from: 
+- /guides/v2.0/release-notes/backward-incompatible-changes/commerce.html
+- /guides/v2.0/release-notes/backward-incompatible-changes/open-source.html
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ce}} 2.0.
