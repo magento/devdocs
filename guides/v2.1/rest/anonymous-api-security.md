@@ -46,7 +46,7 @@ The following table lists the endpoints that are no longer available to an anony
 | CE | Store | /V1/store/storeGroups | GET |
 | CE | Store | /V1/store/websites | GET |
 | CE | Store | /V1/store/storeConfigs | GET |
-{:style="table-layout:auto;"}
+
 
 {%
 include note.html
@@ -105,4 +105,4 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | EE | GiftCardAccount | /V1/carts/guest-carts/:cartId/giftCards | POST |
 | EE | GiftCardAccount | /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode | GET |
 | EE | GiftRegistry | /V1/guest-giftregistry/:cartId/estimate-shipping-methods | POST |
-{:style="table-layout:auto;"}
+

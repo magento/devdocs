@@ -4,8 +4,78 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Mar 27 18:03:03 2019
+updated: Mon Apr  8 12:08:44 2019
 entries:
+- description: Added a new [product release information](https://devdocs.magento.com/release/)
+    topic that describes Magento's release policy, product availability, and extension
+    stability.
+  versions: 2.3.x
+  type: New topic
+  date: April  5, 2019
+  link: https://github.com/magento/devdocs/pull/4098
+- description: Added a topic about [GraphQL debugging](https://devdocs.magento.com/guides/v2.3/graphql/develop/debugging.html).
+  versions: 2.3.x
+  type: New topic
+  date: April  3, 2019
+  link: https://github.com/magento/devdocs/pull/4013
+- description: Added information on Composer package updates to address PayPal Payflow
+    Pro carding activity issues to the Release Notes for 2.3.1 [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)/[Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html),
+    2.2.8 [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html)/[Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8EE.html),
+    and 2.1.17 [Open Source](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.17CE.html)/[Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.17EE.html).
+  versions: 2.x
+  type: Major update
+  date: April  2, 2019
+  link: https://github.com/magento/devdocs/pull/4103
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+    the customer's authorization token for GraphQL queries and mutations.
+  versions: 2.3.1
+  type: New topic
+  date: April  1, 2019
+  link: https://github.com/magento/devdocs/pull/4052
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+    the customer's authorization token for GraphQL queries and mutations.
+  versions: 2.3.1
+  type: New topic
+  date: April  1, 2019
+  link: https://github.com/magento/devdocs/pull/4052
+- description: Added section about mutations in [Resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 30, 2019
+  link: https://github.com/magento/devdocs/pull/4096
+- description: Changed Third-party licenses topics to [Packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html)
+    and added a section with `magento/`-specific dependencies.
+  versions: 2.x
+  type: Major update
+  date: March 29, 2019
+  link: https://github.com/magento/devdocs/pull/4087
+- description: Moved the MFTF docs from `<devdocs root>/mftf/2.3/` to [`<devdocs root>/mftf/docs/`](https://devdocs.magento.com/mftf/docs/introduction.html).<br/>The
+    docs have been moved to the [MFTF repository](https://github.com/magento/magento2-functional-testing-framework).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/3898
+- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.17](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002017).<br/>-
+    Updated supported versions for Elasticsearch and Redis<br/>- Added two Docker
+    images: Elasticsearch 6.5 and Redis 5.0.<br/>- Improved initial [Docker launch
+    steps](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html).<br/>-
+    Added the SCD_COMPRESSION_TIMEOUT environment variable for [build](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-build.html#scd_compression_timeout)
+    and [deploy](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#scd_compression_timeout).'
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/4068
+- description: Added a section about fixtures in [GraphQL functional testing]( https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html)
+  versions: 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/3994
+- description: Added a new topic in Cloud Optimize deployment called [Reduce downtime](https://devdocs.magento.com/guides/v2.3/cloud/deploy/reduce-downtime.html)
+    to explain the zero downtime concept.
+  versions: 2.2.x
+  type: New topic
+  date: March 25, 2019
+  link: https://github.com/magento/devdocs/pull/4005
 - description: Added information about backward incompatible changes in 2.3.1 release
     for [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html#releases-2_3_0-2_3_1)
     and [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html#releases-2_3_0-2_3_1).
@@ -221,7 +291,7 @@ entries:
   date: March  4, 2019
   link: https://github.com/magento/devdocs/pull/3850
 - description: Fixed the incorrect `composer install` command in [Set up an Embedded
-    MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#setup-framework).
+    MFTF](https://devdocs.magento.com/mftf/getting-started.html#setup-framework).
   versions: 2.3.x
   type: Technical changes
   date: March  4, 2019
@@ -239,7 +309,7 @@ entries:
   date: March  4, 2019
   link: https://github.com/magento/devdocs/pull/3850
 - description: Fixed the incorrect `composer install` command in [Set up an Embedded
-    MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#setup-framework).
+    MFTF](https://devdocs.magento.com/mftf/docs/getting-started.html#setup-framework).
   versions: 2.3.x
   type: Technical changes
   date: March  4, 2019
@@ -312,7 +382,7 @@ entries:
   type: Technical changes
   date: February 22, 2019
   link: https://github.com/magento/devdocs/pull/3802
-- description: Added the section [Merge action groups](http://devdocs.magento.com/mftf/2.3/merging.html#merge-action-groups)
+- description: Added the section [Merge action groups](http://devdocs.magento.com/mftf/docs/merging.html#merge-action-groups)
     to the Merging page in the MFTF guide.
   versions: 2.3.x
   type: Major update
@@ -323,7 +393,7 @@ entries:
   type: Technical changes
   date: February 21, 2019
   link: https://github.com/magento/devdocs/pull/3799
-- description: Added a [Versioning](https://devdocs.magento.com/mftf/2.3/versioning.html)
+- description: Added a [Versioning](https://devdocs.magento.com/mftf/docs/versioning.html)
     topic to the MFTF guide.
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -335,13 +405,13 @@ entries:
   type: Major update
   date: February 20, 2019
   link: https://github.com/magento/devdocs/pull/3791
-- description: Added [Use parameterized selectors in action groups with argument references](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#use-parameterized-selectors-in-action-groups-with-argument-references)
+- description: Added [Use parameterized selectors in action groups with argument references](https://devdocs.magento.com/mftf/docs/tips-tricks.html#use-parameterized-selectors-in-action-groups-with-argument-references)
     to Tips and Tricks.
   versions: 2.3.x
   type: Major update
   date: February 15, 2019
   link: https://github.com/magento/devdocs/pull/3754
-- description: "[Debugging](https://devdocs.magento.com/mftf/2.3/debugging.html) topic
+- description: "[Debugging](https://devdocs.magento.com/mftf/docs/debugging.html) topic
     added to the MFTF guide."
   versions: 2.2.x, 2.3.x
   type: Major update
@@ -368,8 +438,8 @@ entries:
   date: February 12, 2019
   link: https://github.com/magento/devdocs/pull/3569
 - description: Added MFTF tips:<br/>-[Perform the most critical actions first in the
-    `<after>` block](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#perform-the-most-critical-actions-first-in-the-after-block)<br/>-[When
-    to use `see` versus `seeElement`](https://devdocs.magento.com/mftf/2.3/tips-tricks.html#when-to-use-see-vs-seeelement)
+    `<after>` block](https://devdocs.magento.com/mftf/docs/tips-tricks.html#perform-the-most-critical-actions-first-in-the-after-block)<br/>-[When
+    to use `see` versus `seeElement`](https://devdocs.magento.com/mftf/docs/tips-tricks.html#when-to-use-see-vs-seeelement)
   versions: 2.3.x
   type: Major update
   date: February  8, 2019
@@ -399,7 +469,7 @@ entries:
   date: January 30, 2019
   link: https://github.com/magento/devdocs/pull/3586
 - description: Adds two new PWA actions to the Actions reference guide for the MFTF
-    2.3.13 release:<br/>[waitforPwaElementNotVisibleType](https://devdocs.magento.com/mftf/2.3/test/actions.html#waitforpwaelementnotvisible)<br/>[waitforPwaElementVisibleType](https://devdocs.magento.com/mftf/2.3/test/actions.html#waitforpwaelementvisible)
+    2.3.13 release:<br/>[waitforPwaElementNotVisibleType](https://devdocs.magento.com/mftf/docs/test/actions.html#waitforpwaelementnotvisible)<br/>[waitforPwaElementVisibleType](https://devdocs.magento.com/mftf/docs/test/actions.html#waitforpwaelementvisible)
   versions: 2.3.x
   type: Major update
   date: January 29, 2019
@@ -409,7 +479,7 @@ entries:
   type: New topic
   date: January 29, 2019
   link: https://github.com/magento/devdocs/pull/3580
-- description: Adds a new [Tips and Tricks](https://devdocs.magento.com/mftf/2.3/tips-tricks.html)
+- description: Adds a new [Tips and Tricks](https://devdocs.magento.com/mftf/docs/tips-tricks.html)
     page to the MFTF guide.
   versions: 2.3.1
   type: New topic
@@ -458,7 +528,7 @@ entries:
   type: Major update
   date: January 18, 2019
   link: https://github.com/magento/devdocs/pull/3596
-- description: Added a [section](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#optimizing-action-group-structures)
+- description: Added a [section](https://devdocs.magento.com/mftf/docs/test/action-groups.html#optimizing-action-group-structures)
     that describes how to better optimize action groups for readability and reusability.
   versions: 2.3.x
   type: Major update
@@ -526,9 +596,9 @@ entries:
   date: December 21, 2018
   link: https://github.com/magento/devdocs/pull/3484
 - description: MFTF 2.3.12 was released:<br/>- Added more documentation with examples
-    for [`<value>`](https://devdocs.magento.com/mftf/2.3/metadata.html#value-tag)
+    for [`<value>`](https://devdocs.magento.com/mftf/docs/metadata.html#value-tag)
     in metadata array.<br/>- Added use of reference to data field in `url` of [metadata
-    operation](https://devdocs.magento.com/mftf/2.3/metadata.html#operation-tag).
+    operation](https://devdocs.magento.com/mftf/docs/metadata.html#operation-tag).
   versions: 2.2.x, 2.3.x
   type: Major update
   date: December 21, 2018
@@ -721,7 +791,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: November 14 2018
-- description: 'MFTF 2.3.11: Added the [mftf run:failed](https://devdocs.magento.com/mftf/2.3/commands/mftf.html#runfailed)
+- description: 'MFTF 2.3.11: Added the [mftf run:failed](https://devdocs.magento.com/mftf/docs/commands/mftf.html#runfailed)
     command to rerun the previously failed tests.'
   versions: 2.3.x
   type: Major update
@@ -731,7 +801,7 @@ entries:
   versions: 2.3.x
   type: Major update
   date: November 14 2018
-- description: Added a topic about [Credentials in the MFTF](https://devdocs.magento.com/mftf/2.3/credentials.html).
+- description: Added a topic about [Credentials in the MFTF](https://devdocs.magento.com/mftf/docs/credentials.html).
   versions: 2.3.x
   type: New topic
   date: November  9 2018
@@ -749,7 +819,7 @@ entries:
   versions: 2.x
   type: Major update
   date: November  6 2018
-- description: Added [Reporting in the MFTF](https://devdocs.magento.com/mftf/2.3/reporting.html).
+- description: Added [Reporting in the MFTF](https://devdocs.magento.com/mftf/docs/reporting.html).
   versions: 2.3.x
   type: New topic
   date: November  2 2018
@@ -793,7 +863,7 @@ entries:
   versions: 2.1.x, 2.2.x, 2.3.x
   type: Major update
   date: October 22 2018
-- description: Added guidelines how to [Set up a standalone MFTF](https://devdocs.magento.com/mftf/2.3/getting-started.html#set-up-a-standalone-mftf).
+- description: Added guidelines how to [Set up a standalone MFTF](https://devdocs.magento.com/mftf/docs/getting-started.html#set-up-a-standalone-mftf).
   versions: 2.3.x
   type: Major update
   date: October 19 2018
@@ -832,7 +902,7 @@ entries:
   type: Major update
   date: October 10 2018
 - description: 'MFTF:<br/>- New release: [2.3.8](https://github.com/magento/magento2-functional-testing-framework/blob/develop/CHANGELOG.md)<br/>-
-    Changed obsolete `--lines` to `--time` in the [`mftf generate:tests`](https://devdocs.magento.com/mftf/2.3/commands/mftf.html#generatetests)'
+    Changed obsolete `--lines` to `--time` in the [`mftf generate:tests`](https://devdocs.magento.com/mftf/docs/commands/mftf.html#generatetests)'
   versions: 2.3.x
   type: Technical changes
   date: October 10 2018
@@ -846,9 +916,9 @@ entries:
   versions: 2.x
   type: New topic
   date: October  7 2018
-- description: MFTF 2.3.7 release:<br/>Updated the [pressKey](https://devdocs.magento.com/mftf/2.3/test/actions.html#presskey)
-    action.<br/>Updated the [action group argument](https://devdocs.magento.com/mftf/2.3/test/action-groups.html#data-type-usage)
-    syntax for a value based on data entity resolution.<br/>Added the [DEFAULT_TIMEZONE](https://devdocs.magento.com/mftf/2.3/configuration.html#default_timezone)
+- description: MFTF 2.3.7 release:<br/>Updated the [pressKey](https://devdocs.magento.com/mftf/docs/test/actions.html#presskey)
+    action.<br/>Updated the [action group argument](https://devdocs.magento.com/mftf/docs/test/action-groups.html#data-type-usage)
+    syntax for a value based on data entity resolution.<br/>Added the [DEFAULT_TIMEZONE](https://devdocs.magento.com/mftf/docs/configuration.html#default_timezone)
     configuration parameter.
   versions: 2.3.x
   type: Technical changes
@@ -1850,7 +1920,7 @@ entries:
   versions: 2.1.x, 2.2.x
   type: Updated
   date: Dec 13 2017
-- description: "[Magento Functional Testing Framework Guide](https://devdocs.magento.com/mftf/2.2/introduction.html)"
+- description: "[Magento Functional Testing Framework Guide](https://devdocs.magento.com/mftf/introduction.html)"
   versions: 2.2.x
   type: New
   date: Dec 08 2017
@@ -1964,9 +2034,9 @@ entries:
   type: Updated
   date: Nov 17 2017
 - description: 'Updated the recommended Fastly module version 1.2.33 for Magento Commerce
-    (Cloud): [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
+    Cloud: [Fastly](https://devdocs.magento.com/guides/v2.2/cloud/basic-information/cloud-fastly.html),
     [Technologies and requirements](https://devdocs.magento.com/guides/v2.2/cloud/requirements/cloud-requirements.html),
-    and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html)'
+    and [Magento Commerce (Cloud) third party licenses](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)'
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: Updated
   date: Nov 15 2017
@@ -2181,7 +2251,7 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Sep 27 2017
-- description: Add third party license information for Magento Commerce (Cloud) [2.0.X](https://devdocs.magento.com/guides/v2.0/release-notes/thirdparty-mccloud.html), [2.1.X](https://devdocs.magento.com/guides/v2.1/release-notes/thirdparty-mccloud.html), and [2.2](https://devdocs.magento.com/guides/v2.2/release-notes/thirdparty-mccloud.html)
+- description: Add third party license information for Magento Commerce (Cloud) [2.0.X](https://devdocs.magento.com/guides/v2.0/release-notes/packages-cloud.html), [2.1.X](https://devdocs.magento.com/guides/v2.1/release-notes/packages-cloud.html), and [2.2](https://devdocs.magento.com/guides/v2.2/release-notes/packages-cloud.html)
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Sep 27 2017
