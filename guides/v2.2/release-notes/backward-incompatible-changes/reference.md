@@ -1,6 +1,10 @@
 ---
 group: release-notes
 title: Full reference of the backward incompatible changes
+redirect_from: 
+- /guides/v2.2/release-notes/backward-incompatible-changes/commerce.html
+- /guides/v2.2/release-notes/backward-incompatible-changes/open-source.html
+- /guides/v2.2/release-notes/changes/b2b_changes.html
 ---
 
 This topic provides details about backward incompatible changes related to {{site.data.var.ce}} 2.2.
@@ -30,7 +34,7 @@ When the [@api] and [@deprecated] doc blocks tags are added to the code base, th
 
 {% include backward-incompatible-changes/open-source/2.2.5-2.2.6.html %}
 
-{% include backward-incompatible-changes/commerce/2.2.5-2.2.6.md %}
+{% include backward-incompatible-changes/commerce/2.2.5-2.2.6.html %}
 
 ## 2.2.4 - 2.2.5 {#releases-2_2_4-2_2_5}
 

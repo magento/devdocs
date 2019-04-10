@@ -1,7 +1,9 @@
 ---
 group: release-notes
 title: Backward incompatible changes in Magento Open Source
-redirect_from: /guides/v2.1/release-notes/changes/ce_changes.html
+redirect_from: 
+- /guides/v2.1/release-notes/backward-incompatible-changes/commerce.html
+- /guides/v2.1/release-notes/backward-incompatible-changes/open-source.html
 ---
 
 This topic provides details about backward incompatible changes made in {{site.data.var.ce}} 2.1.

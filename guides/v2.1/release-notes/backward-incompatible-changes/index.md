@@ -58,42 +58,42 @@ In release 2.1, Magento introduced a new way to build the {% glossarytooltip 29d
 
 The following entities have new forms and design:
 
-* Product
-* {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %}
-* CMS Page
-* {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %}
-* Sales Rule
-* {% glossarytooltip 3b0e248f-5571-48c0-9dde-efe1662fac6d %}Catalog Rules{% endglossarytooltip %}
+- Product
+- {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %}
+- CMS Page
+- {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %}
+- Sales Rule
+- {% glossarytooltip 3b0e248f-5571-48c0-9dde-efe1662fac6d %}Catalog Rules{% endglossarytooltip %}
 
 {: .bs-callout .bs-callout-info }
 **Important information:** Customizations that were performed with the old forms of the listed entities will be lost.
 
 ## Database Schema changes
 
-#### Staging ({{site.data.var.ee}} Only)
+### Staging ({{site.data.var.ee}} Only)
 
 The Staging modules introduce {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} changes for the following entities:
 
-*	Products
-*	Categories
-*	CMS Pages and Blocks
-* Cart and Catalog Price Rules
+- Products
+- Categories
+- CMS Pages and Blocks
+- Cart and Catalog Price Rules
 
 These changes are applied only if Staging modules are installed. For {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} modules (e.g. DownloadableProduct, ConfigurableProduct, Bundle etc.), relations between main {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} tables were changed which may affect code that manages SQL queries directly.
 
 ## Persistence management
 
-In Magento's 2.1 release, a new level of persistence management has been added, the [`EntityManager`]({{ site.mage2100url }}lib/internal/Magento/Framework/EntityManager/EntityManager.php){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} component. It allows decoupling from Magento's persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all "Magento 1-style" model events in a backward compatible manner.
+In Magento 2.1 release, a new level of persistence management has been added, the [`EntityManager`]({{ site.mage2100url }}lib/internal/Magento/Framework/EntityManager/EntityManager.php){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} component. It allows decoupling from Magento persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all "Magento 1-style" model events in a backward compatible manner.
 
 ### Data interfaces persistence
 
 In the 2.1 release, we introduce support for the persistence  of data interfaces for the following entities:
 
-* Product
-* Category
-* CMS Page
-* CMS Block
-* Sales Rule
-* Catalog Rule
+- Product
+- Category
+- CMS Page
+- CMS Block
+- Sales Rule
+- Catalog Rule
 
 This change may affect extensions that rely on implicit data of "Magento 1-style" models.
