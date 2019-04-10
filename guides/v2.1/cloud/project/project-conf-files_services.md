@@ -34,10 +34,6 @@ mysql:
 
 redis:
     type: redis:3.0
-
-solr:
-    type: solr:4.10
-    disk: 1024
 ```
 
 Modify this file to use specific and additional services in your deployment. See the [`type`](#cloud-yaml-services-type) section to see the services we support and deploy for you if you add them to the file.
@@ -46,26 +42,32 @@ Modify this file to use specific and additional services in your deployment. See
 
 To add a service, you add the following data to `services.yaml`:
 
-  name:
-     type: name:version
-     disk: value
+```yaml
+name:
+    type: name:version
+    disk: value
+```
 
 For example:
 
-  mysql:
-     type: mysql:10.0
-     disk: 2048
+```yaml
+mysql:
+    type: mysql:10.0
+    disk: 2048
+```
 
 ### `name` {#cloud-yaml-services-name}
 `name` identifies the service in the project. The `name` can consist only of lower case alphanumeric characters: `a`&ndash;`z` and `0`&ndash;`9`. For example, Redis is entered as redis.
 
 You can have multiple instances of each service type. For example, you could have multiple Redis instances. For example, we use multiple Redis instances, one for session and one for cache.
 
-  redis:
-     type: redis:3.0
+```yaml
+redis:
+    type: redis:3.0
 
-  redis2:
-     type: redis:3.0
+redis2:
+    type: redis:3.0
+```
 
 Be aware, if you rename a service in `services.yaml`, the following is **permanently removed**:
 
@@ -77,10 +79,10 @@ The `type` of your service in the format `type:version`
 
 We support and deploy the following services:
 
-*	[`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) version `10.0`
-*	[`redis`]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) versions `2.8` and `3.0`
-*	[`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) version `1.4`, `1.7`, and `2.4`
-*	[`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) version `3.5`
+*	[`mysql`]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+*	[`redis`]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+*	[`elasticsearch`]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
+*	[`rabbitmq`]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 
 ### `disk` {#cloud-yaml-services-disk}
 

@@ -31,3 +31,9 @@ _algolia_api_key
 /mbi/
 /page-builder/
 /guides/m1x/
+/mftf/
+
+# Docs from different branches #
+###################################
+
+/guides/v2.0/

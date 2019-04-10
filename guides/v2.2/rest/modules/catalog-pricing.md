@@ -44,7 +44,7 @@ Name | Description | Format | Requirements
 `skus` | An array of SKU values that is specified when retrieving a list of special prices | array | Required for retrievals
 `price_from` | The date and time the special price goes into effect. The date/time format is `YYYY-MM-DD hh:mm:ss`. The specified time must be later than the current time.  | string | Required in {{site.data.var.ee}}. Optional in {{site.data.var.ce}}.
 `price_to` | The date and time the special price ends. The date/time format is `YYYY-MM-DD hh:mm:ss` If no value is specified, the special price does not expire. | string | Optional
-{:style="table-layout:auto;"}
+
 
 ### Set special prices
 
@@ -195,7 +195,7 @@ Simple | fixed, discount
 Bundle | discount
 Virtual | fixed, discount
 Downloadable | fixed, discount
-{:style="table-layout:auto;"}
+
 
 **Service Name**
 
@@ -220,8 +220,7 @@ Name | Description | Format | Requirements
 `sku` | The SKU of the product | string | Required to set, update, or delete a tier price
 `skus` | An array of SKU values that is specified when retrieving a list of tier prices | array | Required for retrievals
 `customer_group` |  A specific customer group that qualifies to receive the tier price discount | string | Required to set, update, or delete a tier price
-`quantity` | The quantity that must be purchased to receive the tier price | integer | Required to set, update, or delete a tier price
-{:style="table-layout:auto;"}
+`quantity` | The quantity that must be purchased to receive the tier price | float | Required to set, update, or delete a tier price
 
 ### Set tier prices
 
@@ -417,7 +416,7 @@ Name | Description | Format | Requirements
 `store_id` | The store ID  to apply the base price | integer | Required to set a base price
 `sku` | The SKU of the product | string | Required to set a base price
 `skus` | An array of SKU values that is specified when retrieving a list of base prices | array | Required for retrievals
-{:style="table-layout:auto;"}
+
 
 ### Set base prices
 
@@ -512,7 +511,7 @@ Name | Description | Format | Requirements
 `store_id` | The store ID  to apply the cost value | integer | Required to set or delete a cost value
 `sku` | The SKU of the product | string | Required to set or delete a cost value
 `skus` | An array of SKU values that is specified when retrieving a list of cost values | array | Required for retrievals
-{:style="table-layout:auto;"}
+
 
 ### Set cost values
 
