@@ -123,6 +123,8 @@ When the [@api] and [@deprecated] doc blocks tags are added to the code base, th
 
 {% include backward-incompatible-changes/commerce/2.0.0-2.1.0.html %}
 
+{% endcollapsibleh2 %}
+
 <!-- LINK DEFINITIONS -->
 
 [magento/magento2]: https://github.com/magento/magento2
