@@ -768,6 +768,10 @@ class SampleEventObserverThatModifiesInputs
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
+## 16. SOA
+
+16.1. When creating an integration or adding new feature possibility of creating a new service MUST be considered.
+
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 [RFC2119]: https://tools.ietf.org/html/rfc2119
