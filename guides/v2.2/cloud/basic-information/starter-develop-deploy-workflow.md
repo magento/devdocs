@@ -43,6 +43,9 @@ For a new Starter Plan project, a `master` branch was cloned from the {{site.dat
 The format of the Git clone command is:
 ```bash
 git fetch origin
+```
+
+```bash
 git pull origin <environment ID>
 ```
 The first time you start working in branches for your Starter project, you need to create a `staging` branch. This creates a code branch matching the `master` branch that deploys to a Staging environment to test configuration and code changes before deploying to the Production environment.
