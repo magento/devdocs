@@ -254,7 +254,8 @@ When your theme changes are not visible even after clearing the cache, try redep
 
 ### Theme registration {#register_theme}
 
-After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database.
+After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database. If a theme is removed, the default theme will automatically be used, but the theme's
+database record is not automatically removed.
 
 ### Applying a theme
 
