@@ -1,6 +1,6 @@
 ---
 group: release-notes
-title: Backward incompatible changes in Magento Open Source
+title: Backward incompatible changes reference
 redirect_from: 
 - /guides/v2.1/release-notes/backward-incompatible-changes/commerce.html
 - /guides/v2.1/release-notes/backward-incompatible-changes/open-source.html
