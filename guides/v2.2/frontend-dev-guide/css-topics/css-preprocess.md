@@ -140,7 +140,7 @@ You can find the detailed information about the configuration and other options 
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
-Working in LESS files are compiled every page load on the client-side compilation mode. This results in exceptionally slow response times and horrible flash-of-unstyled-text.
+With client-side compilation mode enabled LESS files are compiled on every page load. This results in slow page loading performance.
 
 ##### When you need to clean static view files {#css_exception}
 
