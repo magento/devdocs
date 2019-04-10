@@ -1,27 +1,28 @@
 ---
-group: software-update-guide
-title: Manage Inventory Management modules
+group: extensions
+title: Inventory Management
+redirect_from: guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html
 ---
 
 Inventory Management modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in Magento 2.3.X Open Source, Commerce, and Commerce Cloud.
 
 These features and extensions were developed as part of the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi) through the Magento Community Engineering program.
 
-## Install Inventory Management
+## Install
 
 Inventory Management installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features.
 
-We recommend installing according to [Install Magento Using Composer]({{page.baseurl}}/install-gde/composer.html). You must install with a metapackage to receive all Inventory Management modules.
+We recommend installing according to [Install Magento Using Composer]({{site.baseurl}}/guides/v2.3/install-gde/composer.html). You must install with a metapackage to receive all Inventory Management modules.
 
 The following line in the `composer.json` metapackage installs Inventory Management:
 
-``` json
+```json
         magento/inventory-composer-metapackage = ^1.1.0
 ```
 
 The Inventory Management installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
 
-``` json
+```json
         'Magento_Inventory' => 1,
         'Magento_InventoryAdminUi' => 1,
         'Magento_InventoryApi' => 1,
@@ -79,9 +80,9 @@ You may need to disable Inventory Management modules to:
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 
-To disable Inventory Management, see the instructions for [Enable or disable modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
+To disable Inventory Management, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
 
-``` json
+```json
         'Magento_Inventory' => 0,
         'Magento_InventoryAdminUi' => 0,
         'Magento_InventoryApi' => 0,
@@ -139,13 +140,13 @@ To enable Inventory Management modules:
 1. Modify all Inventory modules from `0` to `1` to enable.
 1. Update the database:
 
-   ``` php
+   ```bash
    bin/magento setup:upgrade
    ```  
 
 1. Clean the cache:
 
-   ``` php
+   ```bash
    bin/magento cache:clean
    ```  
 
@@ -155,19 +156,19 @@ When upgrading from previous releases of Inventory Management to the latest vers
 
 For the latest, update your metapackage version:
 
-``` json
+```json
         magento/inventory-composer-metapackage = ^1.1.0
 ```
 
 See the following guides for more information on upgrades:
 
-* [Software Update Guide]({{page.baseurl}}/comp-mgr/bk-compman-upgrade-guide.html)
-* [Enable or disable modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html)
+* [Software Update Guide]({{site.baseurl}}/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
+* [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html)
 
 ## Additional information
 
 See the following guides for more information on Inventory Management:
 
-* [Release Notes]({{page.baseurl}}/inventory/release-notes.html)
-* [Inventory Management]({{page.baseurl}}/inventory/index.html) overview for developer resources
+* [Release Notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html)
+* [Inventory Management]({{site.baseurl}}/guides/v2.3/inventory/index.html) overview for developer resources
 * [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) in the Magento 2 User Guides for merchant information

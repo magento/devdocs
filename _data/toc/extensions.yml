@@ -1,0 +1,27 @@
+label: Magento extensions
+pages:
+
+
+  - label: Introduction
+    url: /extensions/
+    versionless: true
+
+  - label: Installation
+    url: /extensions/install/
+    versionless: true
+
+  - label: Amazon Sales Channel
+    url: /extensions/amazon-sales/
+    versionless: true
+
+  - label: Google Shopping Ads Channel
+    url: /extensions/google-shopping-ads/
+    versionless: true
+
+  - label: Inventory Management
+    url: /extensions/inventory-management/
+    versionless: true
+
+  - label: B2B
+    url: /extensions/b2b/
+    versionless: true
