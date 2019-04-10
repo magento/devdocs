@@ -19,6 +19,9 @@ The following topics are included in this guide:
 - [Labels applied by the Community Engineering Team](#labels)
 - [Contribution awards and points](#points)
 
+{:.bs-callout .bs-callout-tip}
+Connect with Magento Contributors and Maintainers to learn more about Magento contributions and special projects. Join us in our [Slack workspace](https://tinyurl.com/engcom-slack), in the [#general](https://magentocommeng.slack.com/messages/C4YS78WE6) channel, follow the [#announcements](https://magentocommeng.slack.com/messages/C7FA71S3V), and browse for more [channels](https://devdocs.magento.com/community/resources/resources.html#community-engineering-slack)!
+
 ## Contribute to Magento 2 code {#contribute}
 
 Use the [fork](#fork) and [pull](#pull_request) model to contribute to the Magento 2 codebase.
@@ -225,7 +228,7 @@ We provide two options to create back-ports and up-ports for your code contribut
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of Git
 
 {: .bs-callout .bs-callout-info }
-Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
+Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
 
 ### What are up-ports and back-ports?
 

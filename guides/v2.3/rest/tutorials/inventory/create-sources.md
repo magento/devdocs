@@ -27,18 +27,18 @@ This step requires an admin token. See [Generate the admin token]({{ page.baseur
 
 ## Create the first source
 
-The `POST V1/inventory/sources` endpoint creates the Baltimore Warehouse (`baltimore_wh`) source. The `name`, `source_code`, `country_id`, and `postcode` attributes are required. The value assigned to `source_code` cannot be changed.
+The `POST V1/inventory/sources` endpoint creates the Baltimore Warehouse (`baltimore_wh`) source. The `name`, `source_code`, `country_id`, and `postcode` attributes are required. The  `latitude`, `longitude`, and other address-related attributes enable the Distance Priority Source Selection Algorithm (SSA) to calculate the distance between the source and the shipping address. The value assigned to `source_code` cannot be changed.
 
 The `source_code` values will be used in subsequent steps.
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/sources`
+`POST <host>/rest/all/V1/inventory/sources`
 
 **Scope**
 
 `all` store views
-
+ 
 **Headers**
 
 `Content-Type`: `application/json`
@@ -56,8 +56,12 @@ The `source_code` values will be used in subsequent steps.
       "enabled" : true,
       "contact_name" : "Ethan Carter",
       "country_id" : "US",
-      "city" : "Baltimore"
-   }
+      "street": "901 Harford Rd.",
+      "city" : "Baltimore",
+      "region_id": 31,
+      "latitude": 39.290882,
+      "longitude": -76.610759
+      }
 }
 ```
 
@@ -82,8 +86,12 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
       "enabled" : true,
       "contact_name" : "Karen Chen",
       "country_id" : "US",
-      "city" : "Austin"
-   }
+      "street": "1822 W Braker Ln",
+      "city" : "Austin",
+      "region_id": 57,
+      "latitude": 30.271129,
+      "longitude": -97.7437
+      }
 }
 ```
 
@@ -98,7 +106,11 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
       "enabled" : true,
       "contact_name" : "Fred Wilson",
       "country_id" : "US",
-      "city" : "Reno"
+      "street": "1674 N Virginia St",
+      "city" : "Reno",
+      "region_id": 39,
+      "latitude": 39.526139,
+      "longitude": -119.812688
    }
 }
 ```
@@ -114,7 +126,11 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
       "enabled" : true,
       "contact_name" : "Angela Kohl",
       "country_id" : "DE",
-      "city" : "Berlin"
+      "street": "Am Nordbahnhof 5",
+      "city" : "Berlin",
+      "region_id": 82,
+      "latitude": 52.52343,
+      "longitude": 13.41144
    }
 }
 ```
@@ -130,7 +146,11 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
       "enabled" : true,
       "contact_name" : "Ralf Schneider",
       "country_id" : "DE",
-      "city" : "Frankfurt"
+      "street": "Frankfurt am Main, Stadt",
+      "city" : "Frankfurt",
+      "region_id": 86,
+      "latitude": 50.110645,
+      "longitude": 8.682092
    }
 }
 ```
@@ -148,7 +168,11 @@ This source will be used to fulfill virtual and downloadable products.
       "enabled" : true,
       "contact_name" : "Francine Helen",
       "country_id" : "US",
-      "city" : "Manhattan"
+      "street": "909 3rd Ave",
+      "city" : "New York",
+      "region_id": 43,
+      "latitude": 40.7571,
+      "longitude": -73.9657
    }
 }
 ```

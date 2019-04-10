@@ -23,7 +23,7 @@ The `GET /V1/store/storeViews` endpoint returns an array of store view IDs, alon
 
 **Endpoint**
 
-`GET http://<host>/rest/all/V1/store/storeViews`
+`GET <host>/rest/all/V1/store/storeViews`
 
 **Scope**
 
@@ -86,7 +86,7 @@ We can use the same customer definition presented in [Create a customer and gene
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/customers`
+`POST <host>/rest/us/V1/customers`
 
 **Scope**
 
@@ -139,12 +139,12 @@ The customer `id` is `3`.
 
 ``` json
 {
-    "id": 5,
+    "id": 3,
     "group_id": 1,
-    "default_billing": "5",
-    "default_shipping": "5",
-    "created_at": "2018-11-12 21:38:45",
-    "updated_at": "2018-11-12 21:38:45",
+    "default_billing": "3",
+    "default_shipping": "3",
+    "created_at": "2019-01-28 20:53:45",
+    "updated_at": "2019-01-28 20:53:46",
     "created_in": "US Store View",
     "email": "jdoe@example.com",
     "firstname": "Jane",
@@ -153,8 +153,8 @@ The customer `id` is `3`.
     "website_id": 2,
     "addresses": [
         {
-            "id": 5,
-            "customer_id": 5,
+            "id": 3,
+            "customer_id": 3,
             "region": {
                 "region_code": "NY",
                 "region": "New York",
@@ -190,7 +190,7 @@ By default, a customer token is valid for 1 hour. To change this value, click **
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/integration/customer/token`
+`POST <host>/rest/us/V1/integration/customer/token`
 
 **Scope**
 

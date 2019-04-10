@@ -181,7 +181,7 @@ Magento has removed the  Magento Social  Facebook integration, and no longer sup
 
 
 
-Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation](http://devdocs.magento.com/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
+Looking for more information on these new features as well as many others? Check out [Magento Developer Documentation]({{ site.baseurl }}/guides/v2.2/) and the [Magento Commerce User Guide](http://docs.magento.com/m2/ee/user_guide/getting-started.html).
 
 
 
@@ -1447,7 +1447,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 ### Store
 
-<!--  ENGCOM-1706 -->* Magento now adds the correct store code to product URLs in stores with more than one store view when  **Stores** > **Configuration** > **General** > **Web** > **Add Store Code to Urls** is set to **yes**. *Fix submitted by [Elias Kotlyar](https://github.com/EliasKotlyar) in pull request [15566](https://github.com/magento/magento2/pull/15566)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
+<!--  ENGCOM-1706 -->* Magento now adds the correct store code to product URLs in stores with more than one store view when  **Stores** > **Settings** > **Configuration** > **General** > **Web** > **Add Store Code to Urls** is set to **yes**. *Fix submitted by [Elias Kotlyar](https://github.com/EliasKotlyar) in pull request [15566](https://github.com/magento/magento2/pull/15566)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
 
 
 <!--  ENGCOM-1249 -->* Magento now displays store views as expected when you select **Stores** > **Terms and Conditions**. *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [14546](https://github.com/magento/magento2/pull/14546)*. [GitHub-13944](https://github.com/magento/magento2/issues/13944)
@@ -1913,7 +1913,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 ### Installation and upgrade instructions
 
-See [How to get the Magento software](http://devdocs.magento.com/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
+See [How to get the Magento software]({{ site.baseurl }}/guides/v2.2/install-gde/bk-install-guide.html) for complete installation and upgrade information.
 
 ## Migration toolkits
 The <a href="{{ page.baseurl }}/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

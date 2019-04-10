@@ -198,6 +198,9 @@ pages:
             - label: Set custom routes
               url: /extension-dev-guide/webapi/custom-routes.html
 
+            - label: WebApi request processors pool
+              url: /extension-dev-guide/webapi/request-processor-pool.html
+
         - label: Message Queues
           children:
 
@@ -230,6 +233,10 @@ pages:
         - label: Configure services as web APIs
           include_versions: ["2.0", "2.1", "2.2"]
           url: /extension-dev-guide/service-contracts/service-to-web-service.html
+
+        - label: WebApi request processors pool
+          include_versions: ["2.2"]
+          url: /extension-dev-guide/webapi/request-processor-pool.html
 
         - label: Clear directories during development
           url: /howdoi/php/php_clear-dirs.html

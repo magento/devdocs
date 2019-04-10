@@ -29,24 +29,24 @@ Name | Description | Type
 --- | --- | ---
 `sku` | The SKU of the product | String
 `stock_id` | The ID of the stock the product is assigned to | Integer
-`requestedQty` | The requested quantity of products | Integer
+`requestedQty` | The requested quantity of products | Float
 `type` | The type of sales channel the stock is assigned to. For 2.3, this value must be `website`. | String
 `code` | The code of the sales channel (website) | String
-{:style="table-layout:auto;"}
+
 
 ## Check the available quantity of a salable product
 
 This call returns the available quantity of a product assigned to the specified stock ID.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/get-product-salable-quantity/sp2/2`
+`GET <host>/rest/<store_code>/V1/inventory/get-product-salable-quantity/sp2/2`
 
 Name | Description | Type
 --- | --- | ---
 `sku` | The SKU of the product | String
-`stock_id` | The ID of the stock the product is assigned to
-{:style="table-layout:auto;"}
+`stock_id` | The ID of the stock the product is assigned to | Integer
+
 
 **Payload**
 
@@ -54,16 +54,16 @@ None
 
 **Response**
 
-An integer indicating the salable quanity of the product, such as `75`.
+An integer indicating the salable quantity of the product, such as `75`.
 
 
 ## Check whether a product is salable
 
 This call returns a boolean value that indicates whether the product from the specified stock is salable.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/is-product-salable/sp2/2`
+`GET <host>/rest/<store_code>/V1/inventory/is-product-salable/sp2/2`
 
 
 **Payload**
@@ -77,11 +77,11 @@ None
 
 ## Check whether a product is salable for a specified quantity
 
-This call indicates whether a product is salable for the specified quantity and stock ID. 
+This call indicates whether a product is salable for the specified quantity and stock ID.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/is-product-salable-for-requested-qty/sp2/2/30`
+`GET <host>/rest/<store_code>/V1/inventory/is-product-salable-for-requested-qty/sp2/2/30`
 
 **Payload**
 
@@ -100,9 +100,9 @@ None
 
 This call returns the stock ID associated with the specified sales channel type and name.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/stock-resolver/website/na_site`
+`GET <host>/rest/<store_code>/V1/inventory/stock-resolver/website/na_site`
 
 
 **Payload**

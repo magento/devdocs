@@ -10,5 +10,3 @@ title: Magento_User module
 reset user passwords, and invalidate access tokens.
 Different roles can be assigned to different users to define their permissions.
 For admin passwords, it enables setting lifetimes and locking them when expired or when a specified numbers of failures have occurred. It allows preventing password brute force attacks for system backend.
-
-

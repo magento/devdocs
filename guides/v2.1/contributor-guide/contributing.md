@@ -226,7 +226,7 @@ We provide two options to create back-ports and up-ports for your code contribut
 - [Manual porting](#porting-manual) - Manual process requiring a strong understanding of Git
 
 {: .bs-callout .bs-callout-info }
-Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for an already merged pull request.
+Creating back-ports and up-ports are recommended and a best practice, but not required to contribute code. Anyone can create a back-port and up-port for a merged pull request, however, original pull request authors receive higher priority if there are duplicate ports.
 
 ### What are up-ports and back-ports?
 
