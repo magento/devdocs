@@ -163,11 +163,11 @@ Other namespaces under `Magento\Framework` that will interest extension develope
             </td>
             <td>Contains the code that publishes synchronous events and that handles observers for any Magento event is handled here.</td>
         </tr>
-		<tr>
-			<td>
+        <tr>
+            <td>
 				<code>Magento\Framework\Validator</code>
-			</td>
+            </td>
             <td>Contains the code that validates data (currencies, not empty) and that handles observers for any Magento event.</td>
-		</tr>
+        </tr>
     </tbody>
 </table>

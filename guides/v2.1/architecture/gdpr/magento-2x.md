@@ -181,7 +181,7 @@ Column | Data type
 `customer_suffix` | varchar(32)
 `customer_taxvat` | varchar(32)
 `quote_address_id` | int(11)
-`remote_ip` | varchar(32)
+`remote_ip` | varchar(45)
 `x_forwarded_for` | varchar(32)
 
 #### `sales_order_address` table
@@ -233,19 +233,19 @@ The following columns in the `quote` table contain customer information:
 Column | Data type
 --- | ---
 `customer_dob` | datetime
-`customer_email` | varchar(128)
-`customer_firstname` | varchar(128)
-`customer_gender` | int(11)
-`customer_group_id` | int(11)
+`customer_email` | varchar(255)
+`customer_firstname` | varchar(255)
+`customer_gender` | varchar(255)
+`customer_group_id` | int(10)
 `customer_id` | int(10)
 `customer_is_guest` | int(5)
 `customer_lastname` | varchar(128)
-`customer_middlename` | varchar(128)
-`customer_note` | text
+`customer_middlename` | varchar(40)
+`customer_note` | varchar(128)
 `customer_note_notify` | int(5)
-`customer_prefix` | varchar(32)
-`customer_suffix` | varchar(32)
-`customer_taxvat` | varchar(32)
+`customer_prefix` | varchar(40)
+`customer_suffix` | varchar(40)
+`customer_taxvat` | varchar(255)
 `remote_ip` | varchar(32)
 
 #### `quote_address` table
