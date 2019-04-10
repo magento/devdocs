@@ -14,7 +14,7 @@ functional_areas:
 
 [Redis](http://redis.io) is an optional, backend cache solution that replaces the Zend Framework [Zend_Cache_Backend_File](http://framework.zend.com/apidoc/1.0/Zend_Cache/Backend/Zend_Cache_Backend_File.html), which is used in Magento 2 by default.
 
-We support Redis versions 2.8 and 3.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See [Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html).
+We support Redis versions 2.8, 3.0, and 5.0. Redis 3.0 supports up to 64 different databases per instance of the service, while 2.8 allows for only a single database. See [Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html).
 
 {% include cloud/service-config-integration-starter.md %}
 

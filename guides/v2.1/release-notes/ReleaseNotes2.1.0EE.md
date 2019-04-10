@@ -1214,7 +1214,7 @@ Our technology stack is built on PHP and MySQL. For details, see [Technology sta
 
 
 
-For more information, [System Requirements]({{ site.baseurl }}/magento-system-requirements.html){:target="_blank"}.
+For more information, [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 ### Installation and upgrade instructions
 

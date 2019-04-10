@@ -67,7 +67,7 @@ The Inventory Management installation process makes the following changes to the
 
 ## Enable Inventory Management features
 
-When installed or upgraded, the **Manage Stock** option in the Admin enables by default. This option enables inventory tracking and management, but does not affect module status. To disable modules, see the next section.
+When installed, upgraded, or updated, the **Manage Stock** option in the Admin enables by default. This option enables inventory tracking and management, but does not affect module status. To disable modules, see the next section.
 
 For more information on configurations, see [Enabling Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory.html) in the Magento 2 User Guide.
 
@@ -75,7 +75,7 @@ For more information on configurations, see [Enabling Inventory Management](http
 
 You may need to disable Inventory Management modules to:
 
-* Speed up the upgrade process for merchants currently on Magento 2.0/2.1/2.2 and migrating to 2.3.0.
+* Speed up the upgrade process for merchants currently on Magento 2.0.X/2.1.X/2.2.X and migrating to 2.3.X.
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 
@@ -129,7 +129,7 @@ To disable Inventory Management, see the instructions for [Enable or disable mod
 
 ### Previous Magento versions
 
-When upgrading an existing 2.1.X or 2.2.X Magento installation to Magento 2.3.X, Inventory Management modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
+When upgrading or updating an existing 2.1.X or 2.2.X Magento installation to Magento 2.3.X, Inventory Management modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
 
 Currently, Order Management does not support Inventory Management (future development planned). When upgrading, Inventory Management modules will be disabled to allow OMS and Magento 2.3.X to work seamlessly.
 
