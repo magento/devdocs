@@ -514,6 +514,8 @@ class View extends Template
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
 
+6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area. This includes events and plugins that customize the presentation layer.
+
 ###  6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
@@ -763,7 +765,7 @@ class SampleEventObserverThatModifiesInputs
 
 15.10.2. User-submitted values SHOULD NOT be passed directly to `include*()`, `require*()`, `create_function()`, `fopen()`, `preg_replace()`.
 
-15.10.3. Pattern parameter (first argument) of `preg_replace()` MUST BE escaped with `preg_quote()` if it's user-submitted value. User-submitted value can be passed directly as second parameter, but MUST BE escaped before it's used later in the application.
+15.10.3. The pattern parameter (first argument) of `preg_replace()` MUST BE escaped with `preg_quote()` if it has a user-submitted value. A user-submitted value can be passed directly as a second parameter, but MUST BE escaped before it is used later in the application.
 
 15.10.4. Variable functions SHOULD NOT be used if the variable values are submitted by the user.
 

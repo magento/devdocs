@@ -60,7 +60,14 @@ If you already have a sample module, you can use it; skip this step and the next
         drwxrwsr-x.   3 magento_user apache  4096 Oct 30 13:19 Test
 6.  Update the Magento database and schema:
 
-        php /var/www/html/magento2/bin/magento setup:upgrade
+    ```bash
+    bin/magento setup:upgrade
+    ```
+
+7. Clean the cache:
+   ```
+   bin/magento cache:clean
+   ```
 
 {% endcollapsible %}
 
@@ -71,7 +78,7 @@ Before you continue, make sure the sample module is registered and enabled.
 {% collapsible To verify the sample module: %}
 
 1.  Log in to the Magento Admin as an administrator.
-2.  Click **Stores** > **Configuration** > ADVANCED > **Advanced**.
+2.  Click **Stores** > **Settings** > **Configuration** > ADVANCED > **Advanced**.
 3.  In the right pane, under Disable Modules Output, look for **Magento_SampleMinimal** as the following figure shows.
 
     ![Verify your sample module]({{ site.baseurl }}/common/images/config_module-enabled.png){:width="900px"}
@@ -190,7 +197,7 @@ If the SQL command and system log contain no entries, run the `magento cron:run`
 
 ## Step 6 (optional): Set up a custom cron group
 
-This step shows how to optionally set up a custom cron group. You should set up a custom cron group you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
+ This step shows how to optionally set up a custom cron group. You should set up a custom cron group if you want your custom cron job to run on a different schedule than other cron jobs (typically, once per minute) or if you want several custom cron jobs to run with different settings.
 
 {% collapsible To set up a custom cron group: %}
 
@@ -233,7 +240,7 @@ This step shows how to verify your custom cron group using the {% glossarytoolti
 
         php /var/www/html/magento2/bin/magento cache:clean
 2.  Log in to the Magento Admin as an administrator.
-3.  Click **Stores** > **Configuration** > **Advanced** > **System**.
+3.  Click **Stores** > **Settings** > **Configuration** > **Advanced** > **System**.
 4.  In the right pane, expand **Cron**.
 
     Your cron group displays as follows:

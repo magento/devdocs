@@ -6,5 +6,3 @@ title: Magento_SalesRule module
 
 SalesRule module is responsible for managing and processing Promotion Shopping Cart Rules.
 
-
-

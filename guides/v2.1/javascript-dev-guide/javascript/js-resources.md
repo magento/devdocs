@@ -13,7 +13,7 @@ This topic describes the general concepts of how {% glossarytooltip 312b4baf-15f
 
 To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
 
-RequireJS improves the perceived page load, time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
+RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
 
 ## Explore JavaScript resources {#m2devgde-js-resources-configuring}
 
@@ -50,7 +50,7 @@ JS resources are accessed using relative paths.
 
 **Example 2**
 
-- File actual location: `app/code/design/frontend/Magento/blank/web/js/theme.js`
+- File actual location: `app/design/frontend/Magento/blank/Magento_Theme/web/js/theme.js`
 - File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
 - Called in script:
     ```javascript

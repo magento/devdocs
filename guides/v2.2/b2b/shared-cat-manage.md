@@ -1,12 +1,7 @@
 ---
 group: b2b-developer-guide
-subgroup: 10_REST
 title: Manage shared catalogs
-menu_title: Manage shared catalogs
-menu_order: 22
-ee_only: True
-level3_menu_node: level3child
-level3_subgroup: shared
+ee_only: true
 functional_areas:
   - B2B
   - Catalog
@@ -23,13 +18,13 @@ functional_areas:
 
 **REST Endpoints**
 
-{% highlight json %}
+```
 POST /V1/sharedCatalog
 PUT  /V1/sharedCatalog/:id
 GET  /V1/sharedCatalog/:sharedCatalogId
 DELETE  /V1/sharedCatalog/:sharedCatalogId
 GET  /V1/sharedCatalog/
-{% endhighlight %}
+```
 
 **Shared catalog parameters**
 
@@ -50,11 +45,11 @@ When B2B is enabled, the system creates a public shared catalog named `Default (
 
 **Sample Usage**
 
-`POST /V1/sharedCatalog`
+`POST <host>/rest/<store_code>/V1/sharedCatalog`
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "sharedCatalog": {
     "name": "Test",
@@ -63,7 +58,7 @@ When B2B is enabled, the system creates a public shared catalog named `Default (
     "tax_class_id": 3
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -75,10 +70,9 @@ You cannot change the `type` from public (`1`) to custom (`0`). If you need to r
 
 **Sample Usage**
 
-`PUT  /V1/sharedCatalog/2`
+`PUT <host>/rest/<store_code>/V1/sharedCatalog/2`
 
-{% highlight json %}
-
+```json
 {
   "sharedCatalog": {
     "id": 2,
@@ -89,7 +83,7 @@ You cannot change the `type` from public (`1`) to custom (`0`). If you need to r
     "tax_class_id": 3
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -101,7 +95,7 @@ This call returns information about the specified shared catalog.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/2`
+`GET <host>/rest/<store_code>/V1/sharedCatalog/2`
 
 **Payload**
 
@@ -109,7 +103,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
+```json
 {
     "id": 2,
     "name": "Custom shared catalog",
@@ -121,7 +115,7 @@ Not applicable
     "store_id": 0,
     "tax_class_id": 3
 }
-{% endhighlight %}
+```
 
 ### Delete a shared catalog
 
@@ -129,7 +123,7 @@ Only custom shared catalogs can be deleted. When a custom catalog is deleted, th
 
 **Sample Usage**
 
-`DELETE  /V1/sharedCatalog/2`
+`DELETE <host>/rest/<store_code>/V1/sharedCatalog/2`
 
 **Payload**
 
@@ -147,7 +141,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET V1/sharedCatalog?searchCriteria[filter_groups][0][filters][0][field]=type&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/sharedCatalog?searchCriteria[filter_groups][0][filters][0][field]=type&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 
@@ -155,8 +149,7 @@ Not applicable
 
 **Response**
 
-{% highlight json %}
-
+```json
 {
     "items": [
         {
@@ -186,8 +179,7 @@ Not applicable
     },
     "total_count": 1
 }
-
-{% endhighlight %}
+```
 
 ## Related information
 

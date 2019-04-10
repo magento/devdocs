@@ -53,7 +53,7 @@ Magento_Company::users_view | View users and teams | 3
 Magento_Company::users_edit | Manage users and teams |  4
 Magento_Company::credit | Company credit | 2
 Magento_Company::credit_history | view | 3
-{:style="table-layout:auto;"}
+
 
 ## Manage company roles
 
@@ -83,7 +83,7 @@ Name | Description | Format | Requirements
 `role_name` | The label assigned to the role | string | Required to create a role
 `permissions` | A list of resources and permissions granted to the role. See the Permissions array table below for details. | Array[string] |  Required to create a role
 `company_id` | The company associated with this role  | integer | Required to create a role
-{:style="table-layout:auto;"}
+
 
 **Permissions array**
 
@@ -93,7 +93,7 @@ Name | Description | Format | Requirements
 `role_id` | The role ID to which the permission applies.  | integer | Required to create a role
 `resource_id` | The internal name of a Magento resource, such as `Magento_Sales::place_order`. | string | Required
 `permission` | Either `allow` or `deny`. | string | Required
-{:style="table-layout:auto;"}
+
 
 ### Create a role
 
@@ -103,7 +103,7 @@ All resources that are not explicitly allowed are denied. You must specify the `
 
 **Sample Usage**
 
-`POST /V1/company/role`
+`POST <host>/rest/<store_code>/V1/company/role`
 
 **Payload**
 
@@ -297,7 +297,7 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 **Sample Usage**
 
-`PUT /V1/company/role/6`
+`PUT <host>/rest/<store_code>/V1/company/role/6`
 
 **Payload**
 
@@ -495,7 +495,7 @@ This call returns the `id`, role name, and set of permissions defined within the
 
 **Sample Usage**
 
-`GET /V1/company/role/6`
+`GET <host>/rest/<store_code>/V1/company/role/6`
 
 **Payload**
 
@@ -672,7 +672,7 @@ You cannot delete a role if it is the only role defined within the company.
 
 **Sample Usage**
 
-`DELETE /V1/company/role/5`
+`DELETE <host>/rest/<store_code>/V1/company/role/5`
 
 **Payload**
 
@@ -690,7 +690,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET /V1/company/role?searchCriteria[filter_groups][0][filters][0][field]=company_id&searchCriteria[filter_groups][0][filters][0][value]=2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/company/role?searchCriteria[filter_groups][0][filters][0][field]=company_id&searchCriteria[filter_groups][0][filters][0][value]=2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 

@@ -32,13 +32,18 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
 3.  Run the following commands after Composer finishes updating modules:
 
-    ```
+{: .bs-callout .bs-callout-info }
+In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
+
+    
     bin/magento setup:upgrade
 
     bin/magento setup:di:compile
 
     bin/magento setup:static-content:deploy -f
-    ```
+
+    bin/magento cache:clean
+    
 
 {: .bs-callout .bs-callout-info }
 After completing the installation, you must follow the [post-installation steps](#configure-b2b).
@@ -105,7 +110,7 @@ After installing the {{site.data.var.b2b}} extension and starting message consum
 {: .bs-callout .bs-callout-info }
 If you enable the **Shared Catalog** module, you must also enable the **Company** module. The **Quick Order** and **Requisition Lists** modules can be enabled/disabled independently.
 
-1.  Access the Magento Admin and click **Stores** > **Configuration** > **General** > **B2B Features**.
+1.  Access the Magento Admin and click **Stores** > **Settings** > **Configuration** > **General** > **B2B Features**.
 
 2.  Select **Yes** from the drop-down menus to enable B2B features:
 

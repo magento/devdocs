@@ -77,7 +77,7 @@ When you're working with the Magento Cloud CLI, local environment settings come 
 
 To set `memory_limit`:
 
-Before working with your {{site.data.var.ece}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+Before working with your {{site.data.var.ece}} project, set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
 1.	Find your `php.ini` file using the following command:
 
@@ -194,7 +194,7 @@ To install the Magento Cloud CLI:
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
+* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
 * [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/composer.html)
 
 ## Additional options

@@ -16,7 +16,7 @@ functional_areas:
 
 This step links the sources we created in Step 2 with the stocks we created in Step 3.
 
-Each stock can be assigned one or more sources. Magento uses these associations to calculate the virtual aggregated inventory per product.
+Each stock can be assigned one or more sources. Magento uses these associations to calculate the virtual aggregated inventory per product. 
 
 {:.bs-callout .bs-callout-tip}
 You must reindex and flush cache after performing this step.
@@ -31,7 +31,7 @@ In this example, we configure the Baltimore warehouse to be the primary source f
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/stock-source-links`
+`POST <host>/rest/all/V1/inventory/stock-source-links`
 
 **Scope**
 

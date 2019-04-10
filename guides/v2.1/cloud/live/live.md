@@ -30,8 +30,8 @@ We strongly recommend testing in these environments due to the complexity of you
 * Staging supports all Production services, features, database data, technology stack, architecture, and more. It mirrors Production, which means if errors occur in Staging, you have a **warning before it occurs in Production**.
 * Extensions may need to be installed and configured in a specific order. Some extensions touch similar pieces of code in the back and frontend, sometimes clashing and causing errors.
 * Extensions typically are heavily tested in [Developer mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html), not Production mode. When you move to Staging and use Production mode, you may find error and surprises between extensions, your custom code, and Magento.
-* Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local doesn't confirm it works perfectly in production.
-* Integration environments don't have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.
+* Configurations and code may work great in your developer Integration environments and run into issues in Staging and Production. Working in your local does not confirm it works perfectly in production.
+* Integration environments do not have all the incredible services available in Staging and Production, like Fastly, New Relic, and Blackfire.
 * [Fully test]({{ page.baseurl }}/cloud/live/stage-prod-test.html#loadtest) your site with a variety of tools in Staging for load, stress, performance, and site assets
 * Integration environments may only have databases populated with test data, not matching a production-like environment
 
@@ -57,7 +57,7 @@ To review the report:
 1. When the report completes, a notification displays.
 2. In the site row, select the report you want to view from the **Reports** column. The order is latest to oldest.
 
-The report lists issues including Failed Scans, Unidentified Results, and Successful Scans. Each entry provides detailed information for the scan, any issues to investigate, and actions to take. Some of these actions may require downloading and installing security patches. Make sure to add those via branches and Git pushes through your local.
+The report lists issues including Failed Scans, Unidentified Results, and Successful Scans. Each entry provides detailed information for the scan, a list of issues to investigate, and actions to take. Some of these actions may require downloading and installing security patches. You can add those to a development branch on your local workstation.
 
 Scan results include a general label that describes whether a site passed or failed plus detailed information about the checks performed. Failed indicates that the website contains a serious vulnerability, while unidentified suggests that a deeper review is required by your team or hosting provider to determine if further action is required. We also provide suggested remediation steps for each failed security test. Security scan results are protected and viewable only by the registered user, and notifications of scan completion are restricted to the users designated in the site registration process.
 

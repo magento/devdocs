@@ -121,15 +121,15 @@ If your payment method requires credit cards information, you might use the Mage
       <td>Returns the list of available credit card types.</td>
    </tr>
    <tr class="even">
-      <td><code>getIcons()</code></td>
+      <td><code>getIcons():bool</code></td>
       <td>Returns links to the images for available credit card types.</td>
    </tr>
    <tr class="odd">
-      <td><code>getCcMonths()</code></td>
+      <td><code>getCcMonths():object</code></td>
       <td>Retrieves the month of the credit card expiration date.</td>
    </tr>
    <tr class="even">
-      <td><code>getCcYears()</code></td>
+      <td><code>getCcYears():object</code></td>
       <td>Retrieves the year of the credit card expiration date.</td>
    </tr>
    <tr class="odd">
@@ -149,7 +149,7 @@ If your payment method requires credit cards information, you might use the Mage
       <td>Retrieves the CVV tooltip image HTML.</td>
    </tr>
    <tr class="even">
-      <td><code>getSsStartYears()</code></td>
+      <td><code>getSsStartYears():object</code></td>
       <td>Solo or Switch (Maestro) card start year.</td>
    </tr>
 </table>

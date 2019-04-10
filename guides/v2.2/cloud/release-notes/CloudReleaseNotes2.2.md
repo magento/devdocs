@@ -8,11 +8,14 @@ level3_menu_node:
 level3_subgroup:
 redirect_from:
   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
+
 ---
 
 We are pleased to present {{site.data.var.ece}} 2.2.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 To fully upgrade {{site.data.var.ece}}, see [Upgrade Magento Commerce (Cloud)]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html). Specific steps and vital information for upgrading from 2.0.X and 2.1.X are included. For specific changes for deployments, see [Changes in Deployment](#deploy).
+
+{% include cloud/note-ece-tools-release-info.md %}
 
 ## Highlights {#highlights}
 
@@ -30,7 +33,7 @@ Look for the following {{site.data.var.ece}} highlights in this release:
 
 * **Improvements to the {{site.data.var.ece}} deployment process**. This release includes new build and deployment variables. Users of earlier versions of {{site.data.var.ece}} will note that MCC has been replaced by ece-tools and ece-patches, which allows for patching your {{site.data.var.ece}} without requiring a full installation of base code and the patch. For more information, see [Magento application environment variables]({{ site.baseurl }}/guides/v2.2/cloud/env/environment-vars_magento.html), [Composer]({{ site.baseurl }}/guides/v2.2/cloud/reference/cloud-composer.html), and [Changes in Deployment](#deploy).
 
-* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries]({{ site.baseurl }}/guides/v2.2/release-notes/thirdparty-mccloud.html) have been upgraded to the latest stable version.
+* **Upgraded technology stack.**  {{site.data.var.ece}} recommends Fastly 1.2.33 and dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1 and Varnish 5, along with Redis 3.2 and MySQL 5.7. All [third-party libraries]({{ site.baseurl }}/guides/v2.2/release-notes/packages-cloud.html) have been upgraded to the latest stable version.
 
 * **Pipeline deployment**, a new deployment process, enables build and deployment stages to minimize production system downtime for site updates. This deployment expands on the previous Configuration Management for {{site.data.var.ece}}. To learn more, see [Configuration Management]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html) and [Pipeline Deployment]({{ page.baseurl }}/config-guide/deployment/pipeline/).
 
@@ -94,7 +97,7 @@ When upgrading to {{site.data.var.ece}} 2.2, consider the following changes in d
 
 * The command for generating `config.php` changed in 2.2 from `php bin/magento magento-cloud:scd-dump` to `php vendor/bin/m2-ece-scd-dump`.
 
-* `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project//project-upgrade.html#update-the-magentoappyaml-file). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
+* `.magento.app.yaml` has new build and deploy hooks. As part of your upgrade, you should update the `.magento.app.yaml` file with new build and deploy hooks and a set of environment variables. All actions completed by build and deploy are completed by these hooks. For instructions, see [Update .magento.app.yaml]({{ site.baseurl }}/guides/v2.2/cloud/project/project-upgrade.html#update-the-magentoappyaml-file). For additional technical information, we have removed pre-deployment tasks, refined build and deploy tasks, and modified build and deploy variables.
 
 * The deploy variable `GENERATED_CODE_SYMLINK` has been removed. The generated folders `var/generation` and `var/di` have been moved to a `generated/` read-only directory. The folder `var/generation` is now `generated/code` and `var/di` is now `generated/metapackage`.
 
@@ -117,7 +120,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 For {{site.data.var.ece}} requirements, see [Technologies and Requirements]({{ site.baseurl }}/guides/v2.2/cloud/requirements/cloud-requirements.html).
 
-The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ site.baseurl }}/magento-system-requirements.html).
+The {{site.data.var.ee}} technology stack is built on PHP and MySQL. For details, see [Technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) and [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ## Installation and upgrade instructions {#install-upgrade}
 

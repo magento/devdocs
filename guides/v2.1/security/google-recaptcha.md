@@ -20,14 +20,19 @@ Google reCAPTCHA reduces potential user error when entering a Captcha code and e
 Install the extension using the following Composer command:
 
 ``` bash
-composer require msp/recaptcha:2.0.0
+composer require msp/recaptcha
 ```
 
 To complete installation in an existing Magento instance, run the following commands to enable the module:
 
 ``` bash
-php bin/magento module:enable --all
-php bin/magento setup:upgrade
+bin/magento module:enable MSP_ReCaptcha
+```
+``` bash
+bin/magento setup:upgrade
+```
+```bash
+bin/magento cache:clean
 ```
 
 ## Configure reCAPTCHA

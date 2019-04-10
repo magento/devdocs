@@ -67,7 +67,7 @@ The table below shows examples of how the Knockout bindings map to their Magento
 |options        |`<select data-bind="options: optionsList"> </select>`                          | `<select options="optionsList"> </select>`                            |
 |selectedOptions|`<select data-bind="options: optionsList, selectedOptions: value"> </select>`  | `<select options="optionsList" selectedOptions="value"> </select>`    |
 |optionsText    |`<select data-bind="options: optionsList, optionsText: 'label'"> </select>`    | `<select options="optionsList" optionsText="'label'"> </select>`      |
-|optionsText    |`<select data-bind="options: optionsList, optionsValue: 'value'"> </select>`   | `<select options="optionsList" optionsValue="'value'"> </select>`     |
+|optionsValue    |`<select data-bind="options: optionsList, optionsValue: 'value'"> </select>`   | `<select options="optionsList" optionsValue="'value'"> </select>`     |
 |enable         |`<input data-bind="enable: isEnabled"/>`                                       | `<input enable="isEnabled"/>`                                         |
 |disable        |`<input data-bind="disable: !isEnabled"/>`                                     | `<input ko-disabled="!isEnabled"/>`                                   |
 |hasFocus       |`<input data-bind="hasFocus: onFocus"/>`                                       | `<input ko-focused="onFocus"/>`                                       |
@@ -76,4 +76,4 @@ The table below shows examples of how the Knockout bindings map to their Magento
 |checked        |`<input type="checkbox" data-bind="checked: isChecked"/>`                      | `<input type="checkbox" ko-checked="isChecked"/>`                     |
 |                |`<input type="radio" data-bind="value: value,checked: isSelected" />`                      | `<input type="radio" ko-checked="element.isSelected" ko-value="value" />`                     |
 |checkedValue   |`<input type="checkbox" data-bind="checkedValue: $data, checked: isChecked"/>` | `<input type="checkbox" checkedValue="$data" checked="isChecked"/>`   |
-{:style="table-layout:auto"}
+
