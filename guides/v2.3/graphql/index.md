@@ -26,7 +26,7 @@ You can explicitly define EAV attributes in the schema, while a module's attribu
 The current GraphQL codebase also supports the following features:
 
 * You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter the results. This is new functionality available only with GraphQL.
-* All product types are supported. Currently, previous versions supported simple and configurable products only.
+* Currently, All product types are supported. Previous versions support only simple and configurable products.
 * A product query returns complex price objects that include the amount, the currency code, and any adjustments.
 * You can query attributes of a logged-in customer. A session token provides authorization.
 * The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the `products` query.
