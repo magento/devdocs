@@ -148,4 +148,4 @@ If you are using server-side compilation mode, you must [clean generated static 
 1. Always use variables instead of hardcoded values like `color: red`
 
 {:.bs-callout .bs-callout-info}
-Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html). 
+Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
