@@ -77,15 +77,17 @@ To make the necessary changes, create [extending][extend] and [overriding][overr
 
 The Magento application processes layout files in the following order:
 
-1.	Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`.
-2.	Determines the sequence of [inherited] themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
-3.	Iterates the sequence of themes from last ancestor to current:
+1.	Module base files loaded.
+2.	Module area files loaded.
+3.	Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`. (If their priorities are equal, they are sorted according to their alphabetical priority.)
+4.	Determines the sequence of [inherited] themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
+5.	Iterates the sequence of themes from last ancestor to current:
 
 	a.	Adds all extending theme layout files to the list.
 
 	b.	Replaces overridden layout files in the list.
 
-4.	Merges all layout files from the list.
+6.	Merges all layout files from the list.
 
 Layout files that belong to inactive modules or modules with disabled output are ignored.
 {: .bs-callout .bs-callout-info #info}
