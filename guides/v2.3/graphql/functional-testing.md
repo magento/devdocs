@@ -96,7 +96,7 @@ A fixture consists of two files:
 {:.bs-callout .bs-callout-info}
 Each fixture should have a corresponding rollback file.
 
-Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. Place your custom fixture and rollback files in the corresponding location for your module.
+Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
 
 ### Fixture files
 
@@ -194,15 +194,12 @@ $registry->unregister('isSecureArea');
 $registry->register('isSecureArea', false);
 ```
 
-A fixture rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. (For example, `virtual_product_rollback.php`.) 
-Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
-
 ## Expected exceptions
 When it is necessary to cover negative test scenarios and ensure that testing elicits proper responses, define the expected exception message:
   - in the body of test
   - in test function annotation
 
-#### Define exception message expectation in the body of test
+### Define exception message expectation in the body of test
 
 ```php
 public function testMyExceptionTest()
@@ -226,7 +223,9 @@ public function testMyExceptionTest()
     ...
 }
 ```
-{% include note.html type="info" content="Please note that the exception message expectation should be defined before invoking a logic that generates the exception." %}
+
+{:.bs-callout .bs-callout-info}
+Please note that the exception message expectation should be defined before invoking a logic that generates the exception.
 
 For example, if `customer A` wants to retrieve information about `customer B cart. In this situation, `customer A` will get an error - "`The current user cannot perform operations on cart "XXXXX`", where `XXXXX` - is an unique ID of `customer B` cart. See code below to understand how to cover this example with `expectExceptionMessage` function:
 
@@ -249,7 +248,7 @@ For example, if `customer A` wants to retrieve information about `customer B car
     } 
 ```
 
-#### Define expected exception message in test function annotation
+### Define expected exception message in test function annotation
 As an alternative for calling `expectExceptionMessage` method use a predefined directive `@expectedExceptionMessage`:
 
 ```php
@@ -313,9 +312,9 @@ See the code below how to cover this example with `@expectExceptionMessage` anno
     }
 ```
 
-There is a list of functions which you can use to cover expected exceptions:  
-- expectException
-- expectExceptionCode
-- expectExceptionMessage
-- expectExceptionMessageRegExp
-- expectExceptionObject
+Use the following functions to cover expected exceptions:  
+- `expectException`
+- `expectExceptionCode`
+- `expectExceptionMessage`
+- `expectExceptionMessageRegExp`
+- `expectExceptionObject`
