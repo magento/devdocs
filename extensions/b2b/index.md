@@ -18,7 +18,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
     composer require magento/extension-b2b=^1.1
     ```
 
-    If you get an error when trying to install the B2B module for a local instance of Magento Commerce (for example: `[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).`), you need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your public_key and private_key for `username` and `password`:
+    If you get an error when trying to install the B2B module for a local instance of {{site.data.var.ee}} (for example: `[InvalidArgumentException] Could not find a matching version of package magento/extension-b2b. Check the package spelling, your version constraint and that the package is available in a stability which matches your minimum-stability (stable).`), you need to create an `auth.json` file in the Magento root directory and add the following code, using the actual values of your public_key and private_key for `username` and `password`:
 
     ```json
     {
@@ -91,7 +91,7 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
     ```
 
 {: .bs-callout .bs-callout-tip }
-Append `&` to the command to run it in the background, return to a prompt, and continue running commands (e.g., `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`).
+Append `&` to the command to run it in the background, return to a prompt, and continue running commands. For example: `bin/magento queue:consumers:start sharedCatalogUpdatePrice &`.
 
 Refer to [Manage message queues]({{ site.baseurl }}/guides/v2.3/config-guide/mq/manage-message-queues.html) for more information.
 

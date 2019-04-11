@@ -3,18 +3,14 @@ group: extensions
 title: Amazon Sales Channel
 ---
 
-The Amazon Sales Channel extension installs and adds Amazon Sales features to Magento. To review additional information, see the Magento Marketplace page.
-
-{:.bs-callout .bs-callout-info}
-Due to the technical nature of this installation, these instructions may require developer assistance.
+The Amazon Sales Channel extension installs and adds Amazon Sales features to Magento. To review additional information, see the [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html).
 
 ## Requirements
 
-- **Magento Instance**: Amazon Sales Channel can be installed on instances with Magento Open Source, Magento Commerce, and Magento Commerce Cloud versions, 2.2.X and 2.3.X. We do not support the extension on Magento 2.1 or Magento 1.
+- **Magento Instance**: Amazon Sales Channel can be installed on instances with {{site.data.var.ce}} and {{site.data.var.ee}} versions 2.2.X and 2.3.X. We do not support the extension on Magento 2.1 or Magento 1.
 - **Magento Web Account**: You should have a Magento web account, which is used to create and track an API key.
 - **API Key**: Get an Amazon Sales Channel API key through your Magento web account. The following instructions include these steps.
-- **Amazon accounts**: During onboarding, you will create and configure any required Amazon accounts and settings. Consider using email accounts for your business as the account will be the primary owner (admin) of the Amazon accounts you set in this integration.
-  - Amazon Account: We recommend using an Amazon account associated to your business or company.
+- **Amazon accounts**: During onboarding, you will create and configure an Amazon Seller account. Consider using email accounts for your business as the account will be the primary owner (admin) of the Amazon accounts you set in this integration.
 
 ## Install
 
@@ -22,13 +18,13 @@ See [Installation]({{site.baseurl}}/extensions/install/).
 
 The name of the extension is `magento/module/amazon`.
 
-## Add the Google API key
+## Add the Amazon API key
 
-To add the Google API Key:
+To add the Amazon API Key:
 
-1. On the Admin sidebar, tap **Marketing**. Then under Advertising Channels, tap **Google Shopping ads**.
+1. On the Admin sidebar, click **Marketing**. Then under **Channels**, click **Amazon**.
 
-    If you need an API Key, the following screen displays to walk through the process.
+    If you need an API Key, the following screen displays.
 
     ![Onboarding API Key Verification](../google-shopping-ads/images/onboard-apikey-step1.png)
 
@@ -38,11 +34,11 @@ To add the Google API Key:
 
 1. API keys are available through the **Api Portal** tab. Tap  to copy your key.
   
-    If you need to create a new key, enter a description like "Google Shopping ads" and tap **Add**. Copy this new key.
+    If you need to create a new key, enter a description like "Google Shopping ads" and click **Add**. Copy this new key.
 
     ![Copy or generate an API Key](../google-shopping-ads/images/config-api-portal.png)
 
-1. Return to the Magento Admin tab and tap **Add Key** on the Google welcome screen.
+1. Return to the Magento Admin tab and click **Add Key** on the Google welcome screen.
 
     A store configuration page opens to **Stores** > **Configuration** > **Sales** > **Sales Channel**.
 
@@ -52,4 +48,4 @@ To add the Google API Key:
 
     ![Add the API Key](../google-shopping-ads/images/config-api-key.png)
 
-1. On the Admin sidebar, tap **Marketing**. Then under Advertising Channels, tap **Google Shopping ads**. Magento verifies and validates the entered API key, continuing with onboarding.
+1. On the Admin sidebar, click **Marketing**. Then under **Channels**, click **Amazon**. Magento verifies and validates the entered API key, continuing with onboarding.

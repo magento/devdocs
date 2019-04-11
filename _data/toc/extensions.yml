@@ -11,17 +11,31 @@ pages:
     versionless: true
 
   - label: Amazon Sales Channel
-    url: /extensions/amazon-sales/
     versionless: true
+    children:
+    - label: Installation
+      url: /extensions/amazon-sales/
+      versionless: true
 
-  - label: Google Shopping Ads Channel
-    url: /extensions/google-shopping-ads/
+    - label: Release Notes
+      url: /extensions/amazon-sales/release-notes.html
+      versionless: true
+
+  - label: Google Shopping ads Channel
     versionless: true
+    children:
+    - label: Installation
+      url: /extensions/google-shopping-ads/
+      versionless: true
+    
+    - label: Release Notes
+      url: /extensions/google-shopping-ads/release-notes.html
+      versionless: true
 
-  - label: Inventory Management
+  - label: Inventory Management Installation
     url: /extensions/inventory-management/
     versionless: true
 
-  - label: B2B
+  - label: B2B Installation
     url: /extensions/b2b/
     versionless: true
