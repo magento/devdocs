@@ -11,7 +11,7 @@ Code that extends or customizes Magento behavior is called an extension. You can
 - Language packages (localize the storefront and Admin)
 
 {: .bs-callout .bs-callout-tip }
-This topic explains how to install extensions you purchase from the Magento Marketplace using the command line. You can use the same procedure to install _any_ extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
+This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
 To install an extension, you must:
 
