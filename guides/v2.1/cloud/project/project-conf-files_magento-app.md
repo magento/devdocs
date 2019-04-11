@@ -92,8 +92,8 @@ Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow 
 
 Our default configuration allows the following:
 
--  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed  
-    For versions 2.1.4 to 2.1.10, the rules entry for the `robots.txt` file:
+-  From the root (`/`) path, only web and media can be accessed.  
+    For versions 2.1.4 to 2.1.10, the following example shows the required rules entry for the `robots.txt` file:
     
     ```yaml
     /robots\.txt$:
