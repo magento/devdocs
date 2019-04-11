@@ -19,6 +19,9 @@ pages:
         - label: Mutations
           url: /graphql/mutations.html
 
+        - label: GraphQL Caching
+          url: /graphql/caching.html
+
     - label: Development
       children:
         - label: Define the GraphQL schema for a module
