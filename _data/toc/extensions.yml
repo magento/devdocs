@@ -6,14 +6,14 @@ pages:
     url: /extensions/
     versionless: true
 
-  - label: Installation
+  - label: General CLI installation
     url: /extensions/install/
     versionless: true
 
   - label: Amazon Sales Channel
     versionless: true
     children:
-    - label: Installation
+    - label: Install
       url: /extensions/amazon-sales/
       versionless: true
 
@@ -21,10 +21,17 @@ pages:
       url: /extensions/amazon-sales/release-notes.html
       versionless: true
 
+  - label: B2B
+    versionless: true
+    children:
+    - label: Install
+      url: /extensions/b2b/
+      versionless: true
+
   - label: Google Shopping ads Channel
     versionless: true
     children:
-    - label: Installation
+    - label: Install
       url: /extensions/google-shopping-ads/
       versionless: true
     
@@ -32,10 +39,13 @@ pages:
       url: /extensions/google-shopping-ads/release-notes.html
       versionless: true
 
-  - label: Inventory Management Installation
-    url: /extensions/inventory-management/
+  - label: Inventory Management
     versionless: true
+    children:
+    - label: Install
+      url: /extensions/inventory-management/
+      versionless: true
 
-  - label: B2B Installation
-    url: /extensions/b2b/
-    versionless: true
+    - label: Release Notes
+      url: /inventory/release-notes.html
+      exclude_versions: ['2.0', '2.1', '2.2']

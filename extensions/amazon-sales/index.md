@@ -1,6 +1,6 @@
 ---
 group: extensions
-title: Amazon Sales Channel
+title: Install Amazon Sales Channel
 ---
 
 The Amazon Sales Channel extension installs and adds Amazon Sales features to Magento. To review additional information, see the [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html).

@@ -1,6 +1,6 @@
 ---
 group: extensions
-title: Install extensions from the command line
+title: General CLI installation
 redirect_from: guides/v2.1/comp-mgr/install-extensions.html
 ---
 

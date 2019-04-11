@@ -1,14 +1,12 @@
 ---
 group: extensions
-title: Inventory Management
+title: Install Inventory Management
 redirect_from: guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html
 ---
 
 {{site.data.var.im}} modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in Magento 2.3.X Open Source, Commerce, and Commerce Cloud.
 
 These features and extensions were developed as part of the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi) through the Magento Community Engineering program.
-
-## Install
 
 {{site.data.var.im}} installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features.
 

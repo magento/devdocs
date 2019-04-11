@@ -1,6 +1,6 @@
 ---
 group: extensions
-title: B2B
+title: Install B2B
 ee_only: true
 redirect_from: 
  - guides/v2.2/comp-mgr/install-extensions/b2b-installation.html
@@ -9,8 +9,6 @@ redirect_from:
 
 {: .bs-callout .bs-callout-warning }
 The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v2.2.0 or later. You must install it after installing {{site.data.var.ee}}.
-
-## Install
 
 1. Change to your Magento installation directory and enter the following command to update your `composer.json` file and install the {{site.data.var.b2b}} extension:
 
