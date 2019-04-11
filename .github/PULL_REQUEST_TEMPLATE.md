@@ -7,7 +7,7 @@
 - __Technical__: Changes to technical content/code/processes/naming conventions (any change to technical content)
 - __Editorial__: Typos, grammatical inconsistencies, or minor rewrites
 
-<!-- Note the scope of this PR by leaving one of the options and deleting the others. -->
+<!-- Communicate the scope of your PR by leaving the applicable option(s) visible and deleting the others. -->
 
 ## Purpose of this PR
 
