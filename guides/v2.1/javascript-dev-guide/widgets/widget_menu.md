@@ -58,7 +58,7 @@ The Magento menu widget has all default [jQuery UI menu widget] methods and even
 
 ## Code Sample {#menu_code_sample}
 
-The following example is just a sample to show how the widget is initialized and how the options can be passed during widget's initialization.
+The following example shows how to initialize the widget and pass options during the initialization.
 
 ```html
 <nav class="navigation" data-action="navigation">
@@ -86,6 +86,6 @@ The following example is just a sample to show how the widget is initialized and
 
 ### Result
 
-As result we'll have a menu with given structure with some child items.
+The result is a menu with the child items, as shown here:
 
 ![Menu Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/menu-widget-result.png)
