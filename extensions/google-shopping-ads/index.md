@@ -16,7 +16,7 @@ Due to the technical nature of this installation, these instructions may require
 - **Google accounts**: During onboarding, you will create and configure any required Google accounts and settings. Consider using email accounts for your business as the account will be the primary owner (admin) of the Google, Google Merchant Center, and Google Ads accounts you set in this integration.
   - Google Account: We recommend using a Google account associated to your business or company.
   - Google Merchant Center Account: You will create these accounts during onboarding. You can use an existing GMC account. It will also have payment methods and complete purchases for Google Ads services for your company or business.
-  - Google Ads Account: You should not use an existing Google Ads accounts. If you plan on using the same email and contact information for this account with this integration, please change those settings with Google or use a different email account during onboarding.
+  - Google Ads Account: You should not use an existing Google Ads account. If you plan on using the same email and contact information for this account with this integration, change those settings with Google or use a different email account during onboarding.
 
 ## Install
 
