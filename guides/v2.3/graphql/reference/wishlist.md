@@ -63,7 +63,7 @@ The following query returns the customer's wish list:
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "wishlist": {
