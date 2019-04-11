@@ -145,6 +145,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
     
+{:.bs-callout .bs-callout-tip}
 1. Always use variables instead of hardcoded values like `color: red`
 
 {:.bs-callout .bs-callout-info}
