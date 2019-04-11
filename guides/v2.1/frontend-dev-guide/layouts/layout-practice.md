@@ -264,6 +264,24 @@ To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo 
             @_dropdown-list-pointer-position: right,
             @_dropdown-list-position-right: 0
         );
+
+         li {
+            a {
+                .lib-link(
+                @_link-color: #333,
+                @_link-text-decoration: none,
+                @_link-color-visited: #333,
+                @_link-text-decoration-visited: none,
+                @_link-color-hover: #333,
+                @_link-text-decoration-hover: none,
+                @_link-color-active: #333,
+                @_link-text-decoration-active: none
+                );
+                display: block;
+                line-height: 1.4;
+                padding: 8px;
+            }
+        }
     }
 }
 ```
