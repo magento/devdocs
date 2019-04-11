@@ -1,26 +1,28 @@
 ## Scope of this PR
 
-We set [labels](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs) based on the scope of changes with a PR.
+<!-- REQUIRED We set [labels](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs) based on the scope of changes with a PR. -->
 
-- New Topic: Entirely new documents
-- Major Update: Significant new info: new section in existing topic, etc.
-- Technical: Changes to technical content/code/processes/naming conventions (any change to technical content)
-- Editorial: Typos, grammatical inconsistencies, or minor rewrites
+- __New Topic__: Entirely new documents
+- __Major Update__: Significant new info: new section in existing topic, etc.
+- __Technical__: Changes to technical content/code/processes/naming conventions (any change to technical content)
+- __Editorial__: Typos, grammatical inconsistencies, or minor rewrites
 
-Note the scope of this PR by leaving one of the options and deleting the others.
+<!-- Communicate the scope of your PR by leaving the applicable option(s) visible and deleting the others. -->
 
-## Purpose of this PR (required)
+## Purpose of this PR
 
-Describe the goal and the type of changes this PR covers.
+<!-- REQUIRED Describe the goal and the type of changes this PR covers. -->
 
-## Affected URLs (required)
+## Affected URLs
+
+<!-- REQUIRED List the URLs you are changing. Not needed for large numbers of files. -->
 
 - ...
 - ...
 
-## Links to source code (remove if unused)
+## Links to source code
 
-If this PR references a file in a Magento codebase repository, add it here.
+<!--  REMOVE THIS SECTION IF NOT USED. If this PR references a file in a Magento codebase repository, add it here. -->
 
 - ...
 - ...
