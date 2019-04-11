@@ -3,23 +3,27 @@
 dir=$1
 repo=$2
 branch=$3
+sparse=$4
 
 echo "Creating a directory: $dir"
-mkdir "$dir"
+mkdir -p "$dir"
 cd "$dir" || exit
 
 echo 'Initiating git in the directory'
 git init
 
 echo "Adding a remote repository: $repo"
-git remote add origin -f "$repo"
+git remote add origin --fetch "$repo"
 
-echo 'Enabling sparse checkout'
-git config core.sparseCheckout true
+if $sparse; then
+  echo 'Enabling sparse checkout'
+  git config core.sparseCheckout true
 
-echo 'Adding /docs/* to sparse checkout'
-echo '/docs/*' >> .git/info/sparse-checkout
+  echo 'Adding /docs/* to sparse checkout'
+  echo '/docs/*' >> .git/info/sparse-checkout
+fi
 
 echo "Checkouting a branch: $branch"
 git checkout "$branch"
+
 cd ..

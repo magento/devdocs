@@ -60,7 +60,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
     When your application is not in the production mode, you can set Magento to compile `.less` files in a browser, using the [native `less.js` library]
 
 To set the compilation mode, do the following:
-1.  In the Magento Admin, navigate to **Stores** > **Configuration** > ADVANCED > **Developer**.
+1.  In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > ADVANCED > **Developer**.
 2.  In the **Store View** drop-down field, select **Default Config**.
 3.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  To save the settings, click **Save Config**.
@@ -83,7 +83,7 @@ For each CSS file included in the layouts, Less preprocessor does the following:
 
 In server-side Less compilation mode, to have your changes applied, you need to do the following:
 
-1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system.
+1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess).
 2. Clear the `var/cache` and `var/view_preprocessed` directories by deleting the directory in the file system. (if they already existed there).
 2. Trigger {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} compilation and publication. This can be done in one of the following ways:
 
@@ -176,6 +176,7 @@ If you need to import a remote CSS file in your `.less` source, use `url()` nota
 ```less
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
 ```
+To [include the font]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) in your theme's CSS files, use the `@font-face` CSS rule for the fastest loading time.
 
 This way Magento will skip the `@import` directive while resolving paths to the local resources.
 

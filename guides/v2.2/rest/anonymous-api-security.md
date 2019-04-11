@@ -44,7 +44,7 @@ The following table lists the APIs that are no longer available to an anonymous 
 | Open Source | Store | /V1/store/storeGroups | GET |
 | Open Source | Store | /V1/store/websites | GET |
 | Open Source | Store | /V1/store/storeConfigs | GET |
-{:style="table-layout:auto;"}
+
 
 {%
 include note.html
@@ -105,4 +105,4 @@ The following APIs remain accessible to anonymous users. Most of these must rema
 | Commerce | GiftCardAccount | /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode | GET |
 | Commerce | GiftRegistry | /V1/guest-giftregistry/:cartId/estimate-shipping-methods | POST |
 | Commerce | WorldPay | /V1/worldpay-guest-carts/:cartId/payment-information | POST
-{:style="table-layout:auto;"}
+

@@ -496,7 +496,9 @@ class View extends Template
 
 5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a `try` block and the corresponding `finally` block. In the `finally` sections, all resources SHOULD be properly released.
 
-5.17. `LocalizedException` SHOULD only be thrown in the Presentation layer (Controllers, Blocks).
+5.17. Exceptions which need to be displayed to the user MUST be sub-types of `LocalizedException`. Any other types of exceptions MUST be wrapped with `LocalizedException` before being displayed to the user.
+
+5.18. `LocalizedException`s SHOULD be thrown in the presentation layer only.
 
 ## 6. Application layers
 
@@ -536,7 +538,7 @@ class View extends Template
 
 6.4.1. Location of API interfaces
 
-6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. The other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module namess must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules, except when an existing module already contains Service Contracts in the ` Api` folder. Other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module names must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
 
 6.4.1.2. Service interfaces that should be exposed as web APIs MUST be placed under the `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
 
@@ -609,6 +611,8 @@ class View extends Template
 6.4.4.11. Domain/business logic MUST be executed on the service contracts layer.
 
 6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in the `global` area of configuration.
+
+6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.
 
 ## 7. Configuration
 
