@@ -80,7 +80,7 @@ To build a dependency on the third-party plugin, specify a [shim] in the followi
     ```javascript
     var config = {
         "shim": {
-        "3-rd-party-plugin": ["jquery"]
+           "3-rd-party-plugin": ["jquery"]
         }
     };
     ```
