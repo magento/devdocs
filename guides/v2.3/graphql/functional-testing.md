@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: GraphQL functional testing
+contributor_name: Atwix
+contributor_link: https://www.atwix.com/
 ---
 
 Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.
@@ -194,13 +196,16 @@ $registry->unregister('isSecureArea');
 $registry->register('isSecureArea', false);
 ```
 
-## Expected exceptions
+## Defining expected exceptions
+
 Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
 - The body of the test
 - The test function annotation
 
 ### Exception messages in the body of a test
-The following examples show two ways how to define expected exception message through `expectExceptionMessage` function.
+
+The following examples show two ways you can use the `expectExceptionMessage` function to define an expected exception message.
+
 ```php
 public function testMyExceptionTest()
 {
@@ -212,7 +217,9 @@ public function testMyExceptionTest()
 }
 
 ```
+
 or 
+
 ```php
 public function testMyExceptionTest()
 {
@@ -227,11 +234,13 @@ public function testMyExceptionTest()
 {:.bs-callout .bs-callout-info}
 Define the exception message before invoking logic that generates the exception.
 
-As an example, consider the case where `customer A` tries to retrieve information about `customer B`'s cart. In this situation, `customer A` will get an error:
+As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A will get an error:
 
 "`The current user cannot perform operations on cart "XXXXX`"
   
-where `XXXXX` - is an unique ID of `customer B`'s cart. The following shows how to cover this example with an `expectExceptionMessage` function:
+`XXXXX` is the unique ID of Customer B's cart. 
+
+The following sample shows how to cover this example with an `expectExceptionMessage` function:
 
 ```php
     /**
@@ -253,7 +262,8 @@ where `XXXXX` - is an unique ID of `customer B`'s cart. The following shows how 
 ```
 
 ### Exception messages in the annotation of a test function
-As an alternative for calling `expectExceptionMessage` method use a predefined directive `@expectedExceptionMessage`:
+
+You can also use a predefined directive such as `@expectedExceptionMessage` as an alternative way to call the `expectExceptionMessage` method:
 
 ```php
     /**
@@ -265,6 +275,7 @@ As an alternative for calling `expectExceptionMessage` method use a predefined d
 In the following query, a customer provides an incorrect cart ID while trying to retrieve information about his own cart.
 
 **Query**
+
 ```text
 {
   cart(cart_id: "YYYYY") {
@@ -278,6 +289,7 @@ In the following query, a customer provides an incorrect cart ID while trying to
 ```
 
 **Result**
+
 ```json
 {
   "errors": [
@@ -302,6 +314,7 @@ In the following query, a customer provides an incorrect cart ID while trying to
 ```
 
 The `@expectExceptionMessage` annotation provides the text for the exception in this test.
+
 ```php
     /**
      * @expectedException \Exception
@@ -316,7 +329,8 @@ The `@expectExceptionMessage` annotation provides the text for the exception in 
     }
 ```
 
-Use the following functions to cover expected exceptions:  
+Use the following functions to cover expected exceptions:
+
 - `expectException`
 - `expectExceptionCode`
 - `expectExceptionMessage`
