@@ -56,7 +56,7 @@ To add a permanent theme-independent logo:
 2. In the configuration record corresponding to your store view, click **Edit**.
 3. Expand the **Header** tab.
 4. In the **Logo Image** field browse to the logo file saved in your file system.
-6. Upload the file. Allowed file types: png, gif, jpg, jpeg. to applying .svg logo see the [link]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#logo_declare).
+6. Upload the file. Allowed file types: png, gif, jpg, jpeg. For adding .svg logo see the [link]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html#logo_declare).
 5. Optionally, specify the desired width, height, and the alternative text for the logo in the corresponding fields.
 7. Click **Save Configuration** or **Save and Continue**.
 7. If caching is enabled, [clear the cache](#theme-apply-clear).
