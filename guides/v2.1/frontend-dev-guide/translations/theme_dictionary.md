@@ -10,7 +10,7 @@ Modify default strings in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7
 
 ## How Magento applies locales
 
-When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} is changed for a store, Magento searches for translations in the corresponding dictionaries are applied in following manner:
+When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} is changed for a store, Magento searches for and applies translations in the corresponding dictionaries:
 
 1. Module translations: `<module_dir>/i18n/`
 1. Theme translations: 
