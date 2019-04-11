@@ -55,7 +55,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
  The defined icon font face and the character variables are used throughout the theme LESS code to define icons, usually through a call to the `lib-icon-font` mixins. And you’ve successfully replaced the native icons with your own. 
 
 
-Using [IcoMoon](https://icomoon.io/app/), you can start with an imported font like Magento's native icons, make your desired tweaks.
+To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
 
 {:.bs-callout .bs-callout-info}
 If your theme does not use the Magento UI library, include the font in your theme's CSS files using the `@font-face` CSS rule.
