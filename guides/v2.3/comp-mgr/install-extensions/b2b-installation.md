@@ -35,7 +35,7 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 {: .bs-callout .bs-callout-info }
 In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
 
-    ```
+    
     bin/magento setup:upgrade
 
     bin/magento setup:di:compile
@@ -43,7 +43,7 @@ In Production mode, you may receive a message to 'Please rerun Magento compile c
     bin/magento setup:static-content:deploy -f
 
     bin/magento cache:clean
-    ```
+    
 
 {: .bs-callout .bs-callout-info }
 After completing the installation, you must follow the [post-installation steps](#configure-b2b).

@@ -180,7 +180,7 @@ Use single quotes instead of double quotes for consistency.
 
 This is helpful when creating strings that include HTML:
 ``` javascript
-var msg = '&lt;span class="text">Hello World!&lt;/div>';
+var msg = '<span class="text">Hello World!</div>';
 ```
 
 ## Additional naming convention standards
