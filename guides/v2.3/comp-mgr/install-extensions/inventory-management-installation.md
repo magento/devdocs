@@ -75,7 +75,7 @@ For more information on configurations, see [Enabling Inventory Management](http
 
 You may need to disable Inventory Management modules to:
 
-* Speed up the upgrade process for merchants currently on Magento 2.0/2.1/2.2 and migrating to 2.3.0.
+* Speed up the upgrade process for merchants currently on Magento 2.0.X/2.1.X/2.2.X and migrating to 2.3.X.
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support Inventory Management interfaces. We plan to support this integration in a later release.
 

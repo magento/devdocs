@@ -4,8 +4,34 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Apr  2 11:41:12 2019
+updated: Mon Apr  8 12:08:44 2019
 entries:
+- description: Added a new [product release information](https://devdocs.magento.com/release/)
+    topic that describes Magento's release policy, product availability, and extension
+    stability.
+  versions: 2.3.x
+  type: New topic
+  date: April  5, 2019
+  link: https://github.com/magento/devdocs/pull/4098
+- description: Added a topic about [GraphQL debugging](https://devdocs.magento.com/guides/v2.3/graphql/develop/debugging.html).
+  versions: 2.3.x
+  type: New topic
+  date: April  3, 2019
+  link: https://github.com/magento/devdocs/pull/4013
+- description: Added information on Composer package updates to address PayPal Payflow
+    Pro carding activity issues to the Release Notes for 2.3.1 [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)/[Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html),
+    2.2.8 [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html)/[Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8EE.html),
+    and 2.1.17 [Open Source](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.17CE.html)/[Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.17EE.html).
+  versions: 2.x
+  type: Major update
+  date: April  2, 2019
+  link: https://github.com/magento/devdocs/pull/4103
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+    the customer's authorization token for GraphQL queries and mutations.
+  versions: 2.3.1
+  type: New topic
+  date: April  1, 2019
+  link: https://github.com/magento/devdocs/pull/4052
 - description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
     the customer's authorization token for GraphQL queries and mutations.
   versions: 2.3.1
@@ -897,7 +923,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: October  5 2018
-- description: Added a 2.3 [product availability](https://devdocs.magento.com/availability.html)
+- description: Added a 2.3 [product availability](https://devdocs.magento.com/release/#product-availability)
     topic.
   versions: 2.3.x
   type: New topic
