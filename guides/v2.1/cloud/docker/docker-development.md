@@ -62,7 +62,7 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 #### View cron log
 
 ```bash
-docker-compose run deploy bash -c "cat /var/www/magento/var/log/magento.cron.log"
+docker-compose run deploy bash -c "cat /var/www/magento/var/cron.log"
 ```
 
 ### Database container
