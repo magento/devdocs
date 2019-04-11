@@ -20,7 +20,7 @@ To configure Magento to use Varnish:
     |Access list|Enter the fully qualified hostname, IP address, or [Classless Inter-Domain Routing (CIDR)](https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking) notation IP address range for which to invalidate content.<br><br>[More information](https://www.varnish-cache.org/docs/3.0/tutorial/purging.html)|
     |Backend host|Enter the fully qualified hostname or IP address and listen port of the Varnish backend or origin server; that is, the server providing the content Varnish will accelerate. Typically, this is your web server.<br><br>[More information](https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html)|
     |Backend port|Origin server's listen port.|
-    {:style="table-layout:auto;"}
+    
 
 6.	Click **Save Config**.
 

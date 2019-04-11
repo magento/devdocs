@@ -1,37 +1,33 @@
-## This PR is a:
+## Scope of this PR
 
-- [ ] New topic
-- [ ] Content update
-- [ ] Content fix or rewrite
-- [ ] Bug fix or improvement
+We set [labels](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs) based on the scope of changes with a PR.
 
-## Summary
+- New Topic: Entirely new documents
+- Major Update: Significant new info: new section in existing topic, etc.
+- Technical: Changes to technical content/code/processes/naming conventions (any change to technical content)
+- Editorial: Typos, grammatical inconsistencies, or minor rewrites
 
-When this pull request is merged, it will...
+Note the scope of this PR by leaving one of the options and deleting the others.
 
-<!-- (REQUIRED) What does this PR change? -->
+## Purpose of this PR (required)
 
-## Additional information
+Describe the goal and the type of changes this PR covers.
 
-List all affected URLs 
+## Affected URLs (required)
 
 - ...
 - ...
 
-<!-- (REQUIRED) The Url that this PR will modify -->
+## Links to source code (remove if unused)
 
-<!-- (OPTIONAL) What other information can you provide about this PR? -->
+If this PR references a file in a Magento codebase repository, add it here.
 
-<!--
-Thank you for your contribution!
+- ...
+- ...
 
-Before submitting this pull request, please make sure you have read our Contribution Guidelines and your PR meets our contribution standards:
-https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
+<!-- 
+If you are fixing a Github issue, note it in the following format and the issue will automatically close when this PR is merged:
+Fixes #<IssueNumber>
 
-Please fill out as much information as you can about your PR to help speed up the review process.
-If your PR addresses an existing GitHub Issue, please refer to it in the title or Additional Information section to make the connection.
-
-We may ask you for changes in your PR in order to meet the standards set in our Contribution Guidelines. PR's that do not comply with our guidelines may be closed at the maintainers' discretion.
-
-Feel free to remove this section before creating this PR.
+`master` is the default branch. PRs to this branch should be for current devdocs content. Merged PRs to master go live on the site automatically. Work for future releases generally goes in the `develop` branch. Work with the devdocs team if you are unsure where to submit your PR.
 -->
