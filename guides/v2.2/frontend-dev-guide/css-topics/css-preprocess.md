@@ -98,8 +98,7 @@ Once you save your changes and run the next cli command in the root of your `<yo
 ```text
 bin/magento setup:static-content:deploy
 ``` 
-
-The tool pre-processes (including compilation) and publishes the static view files.
+the tool pre-processes (including compilation) and publishes the static view files.
 
 {:.bs-callout .bs-callout-info}
 NOTE: Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use -f option: 'bin/magento setup:static-content:deploy -f'
