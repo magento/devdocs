@@ -102,6 +102,19 @@ The path to the CSS source maps configuration differs, depending on the browser.
 In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   
 
 
+Magento has a base set of variables that define commonly used aspects of a theme; such as colors, fonts, style of page titles, and so on. 
+
+The `<magento-root>/lib/web/css/source/lib/variables` directory contains LESS files that define values assigned to variables for many of the common elements in Magento.
+
+To change or override any of these variables, simply create a file in `<theme-dir>/web/css/source/_theme.less` For example:
+
+![node declaration autocomplete]({{ site.baseurl }}/common/images/fdg/lib-map.png){:width="610px"}
+
+```
+@navigation__background: @secondary__color__light; 
+@font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+```
+
 [inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
 [LiveReload extension]: http://livereload.com/extensions/
 [node.js]: https://github.com/joyent/node/wiki/installing-node.js-via-package-manager

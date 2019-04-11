@@ -11,7 +11,7 @@ All GraphQL functional tests should inherit from the generic test case `Magento\
 
 The following test verifies that the schema returns the correct attribute type, given the `attribute_code` and corresponding `entity_type`.
 
-{% highlight php inline=true %}
+```php
 namespace Magento\GraphQl\Catalog;
 
 use Magento\TestFramework\TestCase\GraphQlAbstract;
@@ -75,8 +75,7 @@ QUERY;
         $attributeTypes = ['String', 'Int', 'Float','Boolean', 'Float'];
         $this->assertAttributeType($attributeTypes, $expectedAttributeCodes, $entityType, $response);
     }
-
-{% endhighlight %}
+```
 
 ## Using the default GraphQlQueryTest
 
@@ -85,10 +84,21 @@ The `\Magento\GraphQl\TestModule\GraphQlQueryTest.php` test case uses two test m
 * `TestModuleGraphQlQuery` - This bare-bones module defines a `testItem` endpoint with the queryable attributes `item_id` and `name`. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQuery`.
 * `TestModuleGraphQlQueryExtension` - This module extends `TestModuleGraphQlQuery`, adding the `integer_list` extension attribute. It's located at `<installdir>/dev/tests/api-functional/_files/TestModuleGraphQlQueryExtension`.
 
+## Creating fixtures
 
-## Using fixtures
+Fixtures, which are part of the testing framework, prepare preconditions in the system for further testing. For example, when you test the ability to add a product to the shopping cart, the precondition is that a product must be available for testing. 
 
-Fixtures, which are part of the testing framework, prepare a precondition in the system for further testing. For example, when you test the ability to add a product to the shopping cart, the precondition is that a product must be available for testing. 
+A fixture consists of two files:
+
+- The fixture file, which defines the test
+- A rollback file, which reverts the system to the state before the test was run
+
+{:.bs-callout .bs-callout-info}
+Each fixture should have a corresponding rollback file.
+
+Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. Place your custom fixture and rollback files in the corresponding location for your module.
+
+### Fixture files
 
 The following fixture creates a simple product with predefined attributes.
 
@@ -134,9 +144,26 @@ To use this fixture in a test, add it to the test's annotation in the following 
     }
 ```
 
-The fixture now executes on every test run. 
+You can also invoke multiple fixtures:
 
-Every fixture should have a rollback. The rollback is a set of operations that remove changes introduced by the fixture from the system once the test is completed. 
+```php
+    /**
+     * @magentoApiDataFixture Magento/Checkout/_files/quote_with_simple_product_saved.php
+     * @magentoApiDataFixture Magento/Customer/_files/customer.php
+     */
+    public function testSetNewBillingAddressByRegisteredCustomer()
+    {
+      // Test body
+    }
+```
+
+The specified fixtures will now execute on every test run. 
+
+### Rollback files 
+
+Every fixture should have a rollback file. A rollback is a set of operations that remove changes introduced by the fixture from the system once the test is completed. 
+
+The rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. For example, if the fixture file name is `virtual_product.php`, name the rollback file `virtual_product_rollback.php`. 
 
 The following fixture rollback removes the newly-created product from the database.
 
@@ -165,7 +192,6 @@ try {
 
 $registry->unregister('isSecureArea');
 $registry->register('isSecureArea', false);
-
 ```
 
 A fixture rollback filename should correspond to the original fixture filename postfixed by `_rollback` keyword. (For example, `virtual_product_rollback.php`.) 
