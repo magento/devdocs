@@ -195,12 +195,12 @@ $registry->register('isSecureArea', false);
 ```
 
 ## Expected exceptions
-When it is necessary to cover negative test scenarios and ensure that testing elicits proper responses, define the expected exception message:
-  - in the body of test
-  - in test function annotation
+Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
+- The body of the test
+- The test function annotation
 
-### Define exception message expectation in the body of test
-
+### Exception messages in the body of a test
+The following examples show two ways how to define expected exception message through `expectExceptionMessage` function.
 ```php
 public function testMyExceptionTest()
 {
@@ -225,9 +225,13 @@ public function testMyExceptionTest()
 ```
 
 {:.bs-callout .bs-callout-info}
-Please note that the exception message expectation should be defined before invoking a logic that generates the exception.
+Define the exception message before invoking logic that generates the exception.
 
-For example, if `customer A` wants to retrieve information about `customer B cart. In this situation, `customer A` will get an error - "`The current user cannot perform operations on cart "XXXXX`", where `XXXXX` - is an unique ID of `customer B` cart. See code below to understand how to cover this example with `expectExceptionMessage` function:
+As an example, consider the case where `customer A` tries to retrieve information about `customer B`'s cart. In this situation, `customer A` will get an error:
+
+"`The current user cannot perform operations on cart "XXXXX`"
+  
+where `XXXXX` - is an unique ID of `customer B`'s cart. The following shows how to cover this example with an `expectExceptionMessage` function:
 
 ```php
     /**
@@ -248,7 +252,7 @@ For example, if `customer A` wants to retrieve information about `customer B car
     } 
 ```
 
-### Define expected exception message in test function annotation
+### Exception messages in the annotation of a test function
 As an alternative for calling `expectExceptionMessage` method use a predefined directive `@expectedExceptionMessage`:
 
 ```php
@@ -258,7 +262,7 @@ As an alternative for calling `expectExceptionMessage` method use a predefined d
      */
 ```
 
-Example: a customer wants to retrieve information about his own cart but he provides incorrect cart ID.
+In the following query, a customer provides an incorrect cart ID while trying to retrieve information about his own cart.
 
 **Query**
 ```text
@@ -297,7 +301,7 @@ Example: a customer wants to retrieve information about his own cart but he prov
 }
 ```
 
-See the code below how to cover this example with `@expectExceptionMessage` annotation:
+The `@expectExceptionMessage` annotation provides the text for the exception in this test.
 ```php
     /**
      * @expectedException \Exception
