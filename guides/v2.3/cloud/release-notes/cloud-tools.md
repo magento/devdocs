@@ -32,7 +32,7 @@ The release notes include:
 
 ## v2002.0.18
 
--   {:.new}<!-- MAGECLOUD-3135 -->**New environment variable**—Added the `MAGENTO_CLOUD_LOCKS_DIR` environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} 2.2.9 and later 2.2.x versions and on v2.3.2 and later. See [Cloud variables]({{ page.baseurl }}/guides/v2.2/cloud/env/variables-cloud.html).
+-   {:.new}<!-- MAGECLOUD-3135 -->**New environment variable**—Added the `MAGENTO_CLOUD_LOCKS_DIR` environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} 2.2.9 and later 2.2.x versions and on v2.3.2 and later. See [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
 
 ## v2002.0.17
 
