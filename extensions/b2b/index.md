@@ -73,7 +73,7 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
 
     You should see the following consumers:
 
-    ```bash
+    ```terminal
     sharedCatalogUpdatePrice
     sharedCatalogUpdateCategoryPermissions
     ```
