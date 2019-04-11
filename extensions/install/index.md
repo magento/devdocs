@@ -4,7 +4,7 @@ title: Install extensions from the command line
 redirect_from: guides/v2.1/comp-mgr/install-extensions.html
 ---
 
-Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or another Magento extension distribution system. Extensions include:
+Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system. Extensions include:
 
 - Modules (extend Magento capabilities)
 - Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
