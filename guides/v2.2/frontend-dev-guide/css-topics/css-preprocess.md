@@ -94,7 +94,15 @@ Reloading the page only triggers compilation and publication of the styles used 
 
 ##### Debugging using the static view files deployment tool
 
-Once you save your changes and run the `magento setup:static-content:deploy` cli command from the `<your_Magento_instance>/bin` directory, the tool pre-processes (including compilation) and publishes the static view files.
+Once you save your changes and run the next cli command in the root of your `<your_Magento_instance>` directory:
+```text
+bin/magento setup:static-content:deploy
+``` 
+
+The tool pre-processes (including compilation) and publishes the static view files.
+
+{:.bs-callout .bs-callout-info}
+NOTE: Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use -f option: 'bin/magento setup:static-content:deploy -f'
 
 All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
 
