@@ -234,13 +234,13 @@ public function testMyExceptionTest()
 {:.bs-callout .bs-callout-info}
 Define the exception message before invoking logic that generates the exception.
 
-As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A will get an error:
+As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:
 
 "`The current user cannot perform operations on cart "XXXXX`"
   
 `XXXXX` is the unique ID of Customer B's cart. 
 
-The following sample shows how to cover this example with an `expectExceptionMessage` function:
+The following sample shows how to cover this scenario using an `expectExceptionMessage` function:
 
 ```php
     /**
