@@ -39,7 +39,7 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
 5. Open for edit `grunt-config.json` file. To avoid 
 ```text
-Cannot find module '/home/dev/sites/magento2/dev/tools/grunt/configs'
+Cannot find module '/<PATH_TO_MAGENTO2_STORE>/dev/tools/grunt/configs'
 ```
 
 error within grunt compilation provide path to your `dev/tools/grunt/configs/themes.js` file:
