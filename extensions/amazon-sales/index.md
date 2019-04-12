@@ -50,3 +50,6 @@ To add the Amazon API Key:
     ![Add the API Key](../google-shopping-ads/images/config-api-key.png)
 
 1. On the Admin sidebar, click **Marketing**. Then under **Channels**, click **Amazon**. Magento verifies and validates the entered API key, continuing with onboarding.
+
+
+See [Onboarding Amazon Sales Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/amazon-onboarding-home.html) to continue.

@@ -55,3 +55,5 @@ To add the Google API Key:
     ![Add the API Key](images/config-api-key.png)
 
 1. On the Admin sidebar, click **Marketing**. Then under Advertising Channels, click **Google Shopping ads**. Magento verifies and validates the entered API key, continuing with onboarding.
+
+See [Onboarding Google Shopping ads](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/onboarding-google.html) to continue.
