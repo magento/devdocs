@@ -63,6 +63,7 @@ Example: a gateway command for the authorize action is added for the Braintree v
         <argument name="client" xsi:type="object">Magento\Braintree\Gateway\Http\Client\TransactionSale</argument>
         <argument name="handler" xsi:type="object">BraintreeVaultResponseHandler</argument>
         <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\ResponseValidator</argument>
+        <argument name="errorMessageMapper" xsi:type="object">Magento\Braintree\Gateway\ErrorMapper\VirtualErrorMessageMapper</argument>
     </arguments>
 </virtualType>
 {% endhighlight %}
