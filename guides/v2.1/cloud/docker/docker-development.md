@@ -57,12 +57,12 @@ The configured state is not ideal
 
 ### Cron container
 
-The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start.
+The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
 #### View cron log
 
 ```bash
-docker-compose run deploy bash -c "cat /var/www/magento/var/log/magento.cron.log"
+docker-compose run deploy bash -c "cat /var/www/magento/var/cron.log"
 ```
 
 ### Database container

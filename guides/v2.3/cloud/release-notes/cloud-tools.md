@@ -34,6 +34,8 @@ The release notes include:
 
 -   {:.new}<!-- MAGECLOUD-3135 -->**New environment variable**—Added the `MAGENTO_CLOUD_LOCKS_DIR` environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} 2.2.9 and later 2.2.x versions and on v2.3.2 and later. See [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
 
+-   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
+
 ## v2002.0.17
 
 {:.bs-callout .bs-callout-info}
