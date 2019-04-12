@@ -3,6 +3,9 @@ group: extensions
 title: Install Google Shopping ads Channel
 ---
 
+{:.bs-callout .bs-callout-info}
+This is the a pre-release version of Google Shopping ads Channel documentation. Content in this version is subject to change.
+
 The Google Shopping ads extension installs and adds Google Shopping features to Magento. To review additional information, see the [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html).
 
 ## Requirements
@@ -31,12 +34,12 @@ To add the Google API Key:
 
     ![Onboarding API Key Verification](images/onboard-apikey-step1.png)
 
-1. Tap **Get API Key**. A new tab opens with [Magento Accounts](https://account.magento.com/customer/account/login) with the **Api Portal** tab open displaying the key.
+1. Click **Get API Key**. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **Api Portal** tab.
 
-1. You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register. This account should be part of your company or business.
+1. You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register.
 
-1. API keys are available through the **Api Portal** tab. Tap  to copy your key.
-  
+1. API keys are available through the **Api Portal** tab. Copy the key.
+
     If you need to create a new key, enter a description like "Google Shopping ads" and click **Add**. Copy this new key.
 
     ![Copy or generate an API Key](images/config-api-portal.png)
@@ -47,7 +50,7 @@ To add the Google API Key:
 
 1. In the Google Shopping ads section, paste the key you copied for **API key**.
 
-1. Tap **Save Config**.
+1. Click **Save Config**.
 
     ![Add the API Key](images/config-api-key.png)
 

@@ -3,6 +3,9 @@ group: extensions
 title: Install Amazon Sales Channel
 ---
 
+{:.bs-callout .bs-callout-info}
+This is the a pre-release version of Google Shopping ads Channel documentation. Content in this version is subject to change.
+
 The Amazon Sales Channel extension installs and adds Amazon Sales features to Magento. To review additional information, see the [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html).
 
 ## Requirements
@@ -24,27 +27,25 @@ To add the Amazon API Key:
 
 1. On the Admin sidebar, click **Marketing**. Then under **Channels**, click **Amazon**.
 
-    If you need an API Key, the following screen displays.
+    If you need an API Key, a page displays with links and instructions.
 
-    ![Onboarding API Key Verification](../google-shopping-ads/images/onboard-apikey-step1.png)
+1. Click **Get API Key**. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **Api Portal** tab.
 
-1. Tap **Get API Key**. A new tab opens with [Magento Accounts](https://account.magento.com/customer/account/login) with the **Api Portal** tab open displaying the key.
+1. You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register.
 
-1. You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register. This account should be part of your company or business.
+1. API keys are available through the **Api Portal** tab. Copy the key.
 
-1. API keys are available through the **Api Portal** tab. Tap  to copy your key.
-  
-    If you need to create a new key, enter a description like "Google Shopping ads" and click **Add**. Copy this new key.
+    If you need to create a new key, enter a description like "Amazon Sales Channel" and click **Add**. Copy this new key.
 
     ![Copy or generate an API Key](../google-shopping-ads/images/config-api-portal.png)
 
-1. Return to the Magento Admin tab and click **Add Key** on the Google welcome screen.
+1. Return to the Magento Admin tab and click **Add Key** on the Amazon welcome screen.
 
     A store configuration page opens to **Stores** > **Configuration** > **Sales** > **Sales Channel**.
 
-1. In the Google Shopping ads section, paste the key you copied for **API key**.
+1. In the Amazon Sales Channel section, paste the key you copied for **API key**.
 
-1. Tap **Save Config**.
+1. Click **Save Config**.
 
     ![Add the API Key](../google-shopping-ads/images/config-api-key.png)
 
