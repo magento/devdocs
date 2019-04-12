@@ -67,6 +67,9 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
     ```
     sharedCatalogUpdatePrice
     sharedCatalogUpdateCategoryPermissions
+    quoteItemCleaner
+    inventoryQtyCounter
+    async.operations.all
     ```
 
 2.  Start each consumer separately:
