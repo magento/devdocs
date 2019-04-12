@@ -18,7 +18,7 @@ pages:
       versionless: true
 
     - label: Release Notes
-      url: /extensions/amazon-sales/release-notes.html
+      url: /extensions/amazon-sales/release-notes/
       versionless: true
 
   - label: B2B
@@ -36,7 +36,7 @@ pages:
       versionless: true
 
     - label: Release Notes
-      url: /extensions/google-shopping-ads/release-notes.html
+      url: /extensions/google-shopping-ads/release-notes/
       versionless: true
 
   - label: Inventory Management

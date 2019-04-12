@@ -3,9 +3,6 @@ group: extensions
 title: Install Google Shopping ads Channel
 ---
 
-{:.bs-callout .bs-callout-info}
-This is the a pre-release version of Google Shopping ads Channel documentation. Content in this version is subject to change.
-
 The Google Shopping ads extension installs and adds Google Shopping features to Magento. To review additional information, see the [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html).
 
 ## Requirements
