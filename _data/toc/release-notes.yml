@@ -249,18 +249,13 @@ pages:
               url: /release-notes/cbe-support-info.html
 
     - label: Backward incompatible changes
-      url: /release-notes/backward-incompatible-changes/index.html
       children:
 
-        - label: Magento Open Source changes
-          url: /release-notes/backward-incompatible-changes/open-source.html
+        - label: Highlights
+          url: /release-notes/backward-incompatible-changes/index.html
 
-        - label: Magento Commerce changes
-          url: /release-notes/backward-incompatible-changes/commerce.html
-
-        - label: Magento Commerce for B2B changes
-          url: /release-notes/changes/b2b_changes.html
-          include_versions: ["2.2"]
+        - label: Reference
+          url: /release-notes/backward-incompatible-changes/reference.html
 
     - label: Packages
       children:
