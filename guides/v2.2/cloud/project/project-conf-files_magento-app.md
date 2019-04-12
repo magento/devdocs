@@ -82,13 +82,13 @@ You can specify the following attributes for the `web` property:
 Attribute | Description
 --------- | -----------
 `document_root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
-`passthru` | The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often `/index.php` or `/app.php`.
-`index_files` | To use a static file (for example, `index.html`) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named `index.html` as an index file, your whitelist should include an element that matches the filename, like `- \.html$`.
+`passthru` | The URL used in the event that a static file or PHP file cannot be found. This URL is typically the front controller for your applications, often `/index.php` or `/app.php`.
+`index_files` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
 `blacklist` | A list of files that should never be executed. Has no effect on static files.
 `whitelist` | A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
-`expires` | The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The `expires` directive and resulting headers are left out entirely if this is not set.
+`expires` | The number of seconds to cache whitelisted content in the browser. This attribute enables the cache-control and expires headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files.
 
-Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow access to everything not on a specific list, we accept a *whitelist*, which means that anything not matched will trigger a 404 error and will be passed through to your `passthru` URL.
+Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow access to everything not on a specific list, we accept a _whitelist_, which means that any request that does not match triggers a 404 error and passes through to the  URL specified by the `passthru` attribute.
 
 Our default configuration allows the following:
 
