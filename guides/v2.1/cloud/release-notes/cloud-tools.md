@@ -32,7 +32,7 @@ The release notes include:
 
 ## v2002.0.18
 
--   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [cron property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
+-   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
 ## v2002.0.17
 
