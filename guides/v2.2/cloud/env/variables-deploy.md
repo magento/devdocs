@@ -398,6 +398,45 @@ stage:
       _merge: true
 ```
 
+### `ELASTICSUITE_CONFIGURATION`
+
+-  **Default**—_Not set_
+-  **Version**—Magento 2.2.0 and later
+
+Use this variable to retain customized ElasticSuite service setting between deployments.
+All configs provided in this configuration are nested in main ElasticSuite config section 'system/default/smile_elasticsuite_core_base_settings'    
+
+```yaml
+stage:
+  deploy:
+    ELASTICSUITE_CONFIGURATION:
+      es_client:
+        servers: 'remote-host:9200'
+      indices_settings:
+        number_of_shards: 1
+        number_of_replicas: 0      
+```
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges a new value to the existing configuration:
+
+```yaml
+stage:
+deploy:
+  ELASTICSUITE_CONFIGURATION:
+      indices_settings:
+        number_of_shards: 3
+        number_of_replicas: 3
+      _merge: true
+```
+
+#### Known limitations
+There are some known issues you should be aware of once `ElasticSuite` module is installed:
+
+* Changing `search engine` to anything unlike `elasticsuite` would cause failed deploy with appropriate validation error
+* Removing `ElasticSearch` service would cause failed deploy with appropriate validation error
+
 ### `SESSION_CONFIGURATION`
 
 -  **Default**—_Not set_
