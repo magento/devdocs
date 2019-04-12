@@ -19,7 +19,8 @@ Use Magento command | `docker-compose run deploy magento <command>`
 Stop and remove Docker environment (removes volumes) | `docker-compose down -v`
 Stop Docker environment without destroying containers | `docker-compose stop`
 Resume Docker environment | `docker-compose start`
-
+List images | `docker-compose images`
+List containers and ports | `docker-compose ps`
 
 ## ece-tools
 

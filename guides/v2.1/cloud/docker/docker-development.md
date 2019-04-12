@@ -13,22 +13,18 @@ functional_areas:
 
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker) contains build information for the following Docker images:
 
--  **DB**  
-    Database based on MariaDB version 10
--  **FPM**—[magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)  
-    PHP-CLI: version 7 and later  
-    PHP-FPM: version 7 and later  
--  **NGINX**—[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)  
-    Web server based on NGINX version 1.9
--  **Redis**—[magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)  
-    Based on version 3.2 and later
--  **Varnish**—[magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)  
-    Based on the latest Varnish version and used for caching
--  **RabbitMQ**—[rabbitmq](https://hub.docker.com/_/rabbitmq)  
-    Based on version 3.5 and later
--  **ElasticSearch**—[magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)  
-    Based on version 1.7 and later
-    
+Image | Docker link | Version
+----- | ----------- | ----------
+**DB** | mariadb:10.0 | 10
+**FPM** | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php) | PHP-CLI: version 7 and later<br>PHP-FPM: version 7 and later
+**ElasticSearch** | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch) | 1.7 and later
+**NGINX** |[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx) | 1.9
+**RabbitMQ** | [rabbitmq](https://hub.docker.com/_/rabbitmq) | 3.5 and later
+**Redis** | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis) | 3.2 and later
+**TLS** | [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) | latest, depending on Varnish
+**Varnish** | [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish) | latest
+
+{:.bs-callout .bs-callout-info}
 See the [service version values available]({{page.baseurl}}/cloud/docker/docker-config.html) for use when launching Docker.
 
 ### Web container
@@ -59,7 +55,7 @@ The configured state is not ideal
 
 The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
-#### View cron log
+#### To view the cron log:
 
 ```bash
 docker-compose run deploy bash -c "cat /var/www/magento/var/cron.log"
@@ -74,6 +70,12 @@ The database container is based on the `mariadb:10` image.
 To import a database dump, place the SQL file into the `docker/mysql/docker-entrypoint-initdb.d` folder. The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
 
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `docker/mnt` directory and importing it inside the Docker container.
+
+### Varnish container
+
+The Varnish container is based on the `magento-cloud-docker-varnish` image. Varnish works on port 80.
+
+The TLS termination proxy container, based on the  [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) image, facilitates the Varnish SSL termination over HTTPS.
 
 ## Sharing data between host machine and container
 
