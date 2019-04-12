@@ -50,7 +50,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
 
  
 
- You can find LESS variables are defined to store, `lib/web/css/source/lib/variables/_icons.less`  the Unicode characters that correspond to the right font glyphs for each icon. 
+ The Unicode characters that correspond to the correct font glyphs for each icon are defined in the following `lib/web/css/source/lib/variables/_icons.less` file.
 
  The defined icon font face and the character variables are used throughout the theme LESS code to define icons, usually through a call to the `lib-icon-font` mixins. And you’ve successfully replaced the native icons with your own. 
 
