@@ -37,18 +37,13 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
        npm install
        npm update
 
-5. Open for edit `grunt-config.json` file. To avoid 
+5. Copy `dev/tools/grunt/configs/themes.js` to `dev/tools/grunt/configs/local-themes.js` to avoid  
+
 ```text
 Cannot find module '/<PATH_TO_MAGENTO2_STORE>/dev/tools/grunt/configs'
 ```
 
-error within grunt compilation provide path to your `dev/tools/grunt/configs/themes.js` file:
-
-```json
-{
-  "themes": "dev/tools/grunt/configs/themes.js"
-}
-```
+error within grunt compilation.
 
 6. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
 
