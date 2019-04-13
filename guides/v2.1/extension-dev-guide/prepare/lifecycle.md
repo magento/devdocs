@@ -181,37 +181,40 @@ If your installation or upgrade logic spans multiple classes, pass this resource
 class InstallData implements InstallDataInterface
 {
     /**
-     * @var CustomerFactory
+     * Customer setup factory
+     *
+     * @var CustomerSetupFactory
      */
     private $customerSetupFactory;
-
     /**
-     * @param CustomerFactory $customerSetupFactory
+     * Init
+     *
+     * @param CustomerSetupFactory $customerSetupFactory
      */
-    public function __construct(CustomerFactory $customerSetupFactory)
+    public function __construct(CustomerSetupFactory $customerSetupFactory)
     {
         $this->customerSetupFactory = $customerSetupFactory;
     }
-
     /**
      * {@inheritdoc}
      */
     public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
     {
-        /** @var Customer $customerSetup */
+        /** @var CustomerSetup $customerSetup */
         $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
-
         $setup->startSetup();
-
+		
         ...
-
-        $customerSetup->installEntities();
-
-        $customerSetup->installCustomerForms();
-
-        $disableAGCAttribute = $customerSetup->getEavConfig()->getAttribute('customer', 'disable_auto_group_change');
         
+        $customerSetup->installEntities();
+		
+        $customerSetup->installCustomerForms();
+		
+        $disableAGCAttribute = $customerSetup->getEavConfig()->getAttribute('customer', 'disable_auto_group_change');
+		
         ...
+        
+		$setup->endSetup();
     }
 }
 ```
