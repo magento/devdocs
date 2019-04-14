@@ -31,7 +31,7 @@ To add the Google API Key:
 
     ![Onboarding API Key Verification](images/apikey.png)
 
-1. Click **Get API Key**. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **Api Portal** tab.
+1. Click **Sign in** to access your Magento web account. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **Api Portal** tab.
 
     You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register.
 
@@ -63,4 +63,4 @@ If an update is available, a message displays when opening Google Shopping ads C
 
 Click update to check the extension in your account. You can download and install an updated .zip file for the extension.
 
-For complete update / upgrade instructions, see [Upgrade]({{site.baseurl}}/extensions/install/#upgrade-an-extension).
+For complete update / upgrade instructions, see [Upgrade an extension]({{site.baseurl}}/extensions/install/#upgrade-an-extension).
