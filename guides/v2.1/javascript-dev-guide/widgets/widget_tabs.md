@@ -244,6 +244,36 @@ Called before the content is opened.
 ### `dimensionsChanged` {#fedg_tabs_dimensionsChanged}
 Called after content is opened or closed.
 
+## Code Sample {#tabs_code_sample}
+
+The following example shows how to initialize the tabs widget and pass options during the initialization.
+The classes used are only for getting the same view as the tabs have it on product page.
+
+```html
+<div class="product data items"
+     data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}, "active": 1, "disabled": [2], "disabledState": "disabled"}}'>
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-cars">Cars</a>
+    </div>
+    <div id="tab-cars" class="item content" data-role="content">Cars content</div>
+    
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-movies">Movies</a>
+    </div>
+    <div id="tab-movies" class="item content" data-role="content">Movies content</div>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-music">Music</a>
+    </div>
+    <div id="tab-music" class="item content" data-role="content">Music Content</div>
+</div>
+```
+
+### Result
+
+The result are 3 tabs with its content, where the last tab is disabled based on our initialization options, as shown here:
+
+![Tabs Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/tabs-widget-result.png)
 
 [Magento collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [lib/web/mage/tabs.js]: {{site.mage2000url}}lib/web/mage/tabs.js
