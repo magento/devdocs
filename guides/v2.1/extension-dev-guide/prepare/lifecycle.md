@@ -203,17 +203,11 @@ class InstallData implements InstallDataInterface
         /** @var CustomerSetup $customerSetup */
         $customerSetup = $this->customerSetupFactory->create(['setup' => $setup]);
         $setup->startSetup();
-		
         ...
-        
-        $customerSetup->installEntities();
-		
+        $customerSetup->installEntities();	
         $customerSetup->installCustomerForms();
-		
         $disableAGCAttribute = $customerSetup->getEavConfig()->getAttribute('customer', 'disable_auto_group_change');
-		
         ...
-        
 		$setup->endSetup();
     }
 }
