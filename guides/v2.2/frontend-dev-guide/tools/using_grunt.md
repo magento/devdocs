@@ -26,30 +26,24 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
        npm install -g grunt-cli
 
-3. Rename the following files in your Magento root directory:
+3. Copy the following files in your Magento root directory:
 	- `package.json.sample` to `package.json`
 	- `Gruntfile.js.sample` to `Gruntfile.js`
 	- `grunt-config.json.sample` to `grunt-config.json`
-	
+		
 4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
 
        cd your_Magento_instance_directory
        npm install
        npm update
 
-5. Copy `dev/tools/grunt/configs/themes.js` to `dev/tools/grunt/configs/local-themes.js` to avoid  
-
-```text
-Cannot find module '/<PATH_TO_MAGENTO2_STORE>/dev/tools/grunt/configs'
-```
-
-error within grunt compilation.
-
-6. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
+5. (Optional) If you want to use Grunt for "watching" changes automatically, without reloading pages in a browser each time, install the [LiveReload extension](http://livereload.com/extensions/) in your browser.
 
 ## Grunt configuration file {#grunt_config}
 
-If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. You can define your theme in the `themes.js` file located in the above directory. The following shows an example of how you can define your theme.
+Copy `themes.js` to `local-themes.js` in the `dev/tools/grunt/configs/` directory.
+
+If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. You can define your theme in the `local-themes.js` file. The following shows an example of how you can define your theme.
 
 ```javascript
     Theme_Name: {
@@ -63,8 +57,6 @@ If installed as described above, Grunt will use the default configuration files 
         dsl: 'less'
     }
 ```
-
-The problem with using the default configuration files is that they can get overwritten during code updates, together with your changes in them. To avoid this, you can use custom configuration files. The ability to use custom configuration files is implemented by the file router mechanism added by Magento.
 
 ## Using custom Grunt configuration files
 
