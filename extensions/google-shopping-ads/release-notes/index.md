@@ -10,7 +10,7 @@ title: Google Shopping ads Channel Release Notes
 See the following documentation:
 
 - [Google Shopping ads Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-ad-channel.html) for merchant information and instructions
-- [Install]({{site.baseurl}}/extensions/amazon-sales/) Google Shopping ads Channel install for installation and API key information
+- [Install]({{site.baseurl}}/extensions/amazon-sales/) Google Shopping ads Channel  for installation, API key, and update information
 
 The release notes include:
 
@@ -21,7 +21,7 @@ The release notes include:
 
 Google Shopping ads Channel 1.0.0 is compatible with version 2.2.x and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
-- {:.new} **Simplified Onboarding and Maintenance**: Add GMC accounts with ease through a step-by-step process with detailed instructions available through the Magento Admin. 
+- {:.new} **Simplified Onboarding and Maintenance**: Add GMC accounts with ease through a step-by-step process with detailed instructions available through the Magento Admin.
 
 - {:.new} **All-in-one Advertising Solution**: Integrate and manage both Google Merchant Center (GMC) and Google Ads with your Magento catalog. Through the Magento Admin, complete onboarding to create your GMC account, claim and verify your website, set up shipping and tax rules, and map your Magento catalog to Google's requirements. Create your Google Ads account and start advertising Google Smart Shopping campaigns in one quick step.
 
@@ -30,5 +30,3 @@ Google Shopping ads Channel 1.0.0 is compatible with version 2.2.x and 2.3.x of 
 - {:.new} **Budgeting Ease with Google Ads**: As your advertising needs change, monitor Google advertising costs, Return on Ad Spend (ROAs), and conversions (total and monetary value). Manage your advertising from one dashboard, updating budgets and advertised products.
 
 - {:.new} **Advertise to Multiple Locales**: Add store views and languages to multi-language ads to international customers.
-
-- Known issue - Bundled Products with Dynamic Pricing: Google Shopping ads Channel does not support bundled products with dynamic pricing. If any product of the bundle is out-of-stock, the entire bundle returns as out-of-stock and cannot be synced to GMC or sold in Google Ads. <--! CHAN-3209 -->

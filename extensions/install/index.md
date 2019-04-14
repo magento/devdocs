@@ -4,7 +4,7 @@ title: General CLI installation
 redirect_from: guides/v2.1/comp-mgr/install-extensions.html
 ---
 
-Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system. 
+Code that extends or customizes Magento behavior is called an extension. You can optionally package and distribute extensions on the [Magento Marketplace](https://marketplace.magento.com) or another Magento extension distribution system.
 
 Extensions include:
 
@@ -154,3 +154,33 @@ Some extensions won't work properly unless you clear Magento-generated static vi
 If you encounter errors when loading the storefront in a browser, use the following command to clear the cache:
 <br/>
 `bin/magento cache:flush`
+
+## Upgrade an extension
+
+To update or upgrade an extension:
+
+1. Download the updated extension file from Marketplace or another extension developer.
+
+1. Export the contents to your Magento root.
+
+1. If a composer package exists for the extension, run one of the following.
+
+  Update per module name:
+
+  ```bash
+  composer update vendor/module-name
+  ```
+
+  Updater per version:
+
+  ```bash
+  composer require vendor/module-name ^x.x.x
+  ```
+
+1. Run the following commands to upgrade, deploy, and clean the cache.
+
+  ```bash
+  php bin/magento setup:upgrade --keep-generated
+  php bin/magento setup:static-content:deploy
+  php bin/magento cache:clean
+  ```

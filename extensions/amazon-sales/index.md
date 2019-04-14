@@ -27,11 +27,13 @@ To add the Amazon API Key:
 
 1. On the Admin sidebar, click **Marketing**. Then under **Channels**, click **Amazon**.
 
-    If you need an API Key, a page displays with links and instructions.
+    If you need an API Key, the following screen displays.
+
+    ![Onboarding API Key Verification](images/apikey.png)
 
 1. Click **Get API Key**. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **Api Portal** tab.
 
-1. You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register.
+    You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register.
 
 1. API keys are available through the **Api Portal** tab. Copy the key.
 
@@ -41,7 +43,7 @@ To add the Amazon API Key:
 
 1. Return to the Magento Admin tab and click **Add Key** on the Amazon welcome screen.
 
-    A store configuration page opens to **Stores** > **Configuration** > **Sales** > **Sales Channel**.
+    A store configuration page opens to **Stores** > **Configuration** > **Services** > **Channel**.
 
 1. In the Amazon Sales Channel section, paste the key you copied for **API key**.
 
