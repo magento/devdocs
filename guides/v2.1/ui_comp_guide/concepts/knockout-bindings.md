@@ -484,7 +484,7 @@ Binding's configuration that may include the following options:
 
 Adding the tooltip binding as an attribute:
 
-```javascript
+```html
 <div tooltip="
      trigger: '[data-tooltip-trigger=trigger]',
      action: 'click',
