@@ -22,7 +22,7 @@ If the list of purchases is correct, click **Install**.
 
 Messages display in the Console Log as your new purchases are installed. Following is a sample of some of these messages:
 
-```xml
+```terminal
 [2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has been started
 [2016-04-07 09:37:06 CDT] Magento maintenance mode is enabled.
 [2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has successfully completed
