@@ -1,9 +1,6 @@
 ---
 layout: full-width
 title: Magento product release information
-redirect_from: 
-  - /availability.html
-  - /availability
 ---
 
 Magento releases security and functional patches for each supported release line of {{site.data.var.ee}} every quarter.
