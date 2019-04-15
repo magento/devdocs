@@ -1,6 +1,8 @@
 ---
 group: graphql
 title: GraphQL functional testing
+contributor_name: Atwix
+contributor_link: https://www.atwix.com/
 ---
 
 Magento provides API functional tests that can verify extension points in GraphQL. These tests serve as an example for exposing new queries via GraphQL.
@@ -96,7 +98,7 @@ A fixture consists of two files:
 {:.bs-callout .bs-callout-info}
 Each fixture should have a corresponding rollback file.
 
-Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. Place your custom fixture and rollback files in the corresponding location for your module.
+Magento provides fixtures in the `dev/tests/integration/testsuite/Magento/<ModuleName>/_files` directory. Use these fixtures whenever possible. When you create your own fixture, also create a proper rollback.
 
 ### Fixture files
 
@@ -193,3 +195,144 @@ try {
 $registry->unregister('isSecureArea');
 $registry->register('isSecureArea', false);
 ```
+
+## Defining expected exceptions
+
+Your functional tests should include events that cause exceptions. Since your tests expect an exception to occur, set up your tests so that they elicit the proper responses. You can define expected exception messages either in:
+- The body of the test
+- The test function annotation
+
+### Exception messages in the body of a test
+
+The following examples show two ways you can use the `expectExceptionMessage` function to define an expected exception message.
+
+```php
+public function testMyExceptionTest()
+{
+    ...
+    
+    self::expectExceptionMessage("Expected exception message goes here...");
+    
+    ...
+}
+
+```
+
+or 
+
+```php
+public function testMyExceptionTest()
+{
+    ...
+    
+    $this->expectExceptionMessage("Expected exception message goes here...");
+    
+    ...
+}
+```
+
+{:.bs-callout .bs-callout-info}
+Define the exception message before invoking logic that generates the exception.
+
+As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:
+
+"`The current user cannot perform operations on cart "XXXXX`"
+  
+`XXXXX` is the unique ID of Customer B's cart. 
+
+The following sample shows how to cover this scenario using an `expectExceptionMessage` function:
+
+```php
+    /**
+     * @magentoApiDataFixture Magento/Checkout/_files/quote_with_items_saved.php
+     */
+    public function testGetCartFromAnotherCustomer()
+    {
+        $reservedOrderId = 'test_order_item_with_items';
+        $this->quoteResource->load(
+            $this->quote,
+            $reservedOrderId,
+            'reserved_order_id'
+        );
+        $maskedQuoteId = $this->quoteIdToMaskedId->execute((int)$this->quote->getId());
+        $query = $this->prepareGetCartQuery($maskedQuoteId);
+        self::expectExceptionMessage("The current user cannot perform operations on cart \"$maskedQuoteId\"");
+        $this->graphQlQuery($query);
+    } 
+```
+
+### Exception messages in the annotation of a test function
+
+You can also use a predefined directive such as `@expectedExceptionMessage` as an alternative way to call the `expectExceptionMessage` method:
+
+```php
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage Expected exception message goes here...
+     */
+```
+
+In the following query, a customer provides an incorrect cart ID while trying to retrieve information about his own cart.
+
+**Query**
+
+```text
+{
+  cart(cart_id: "YYYYY") {
+    items {
+      __typename
+      id
+      qty
+    }
+  }
+}
+```
+
+**Result**
+
+```json
+{
+  "errors": [
+    {
+      "message": "Could not find a cart with ID \"YYYYY\"",
+      "category": "graphql-no-such-entity",
+      "locations": [
+        {
+          "line": 2,
+          "column": 3
+        }
+      ],
+      "path": [
+        "cart"
+      ]
+    }
+  ],
+  "data": {
+    "cart": null
+  }
+}
+```
+
+The `@expectExceptionMessage` annotation provides the text for the exception in this test.
+
+```php
+    /**
+     * @expectedException \Exception
+     * @expectedExceptionMessage Could not find a cart with ID "non_existent_masked_id"
+     */
+    public function testGetNonExistentCart()
+    {
+        $maskedQuoteId = 'non_existent_masked_id';
+        $query = $this->prepareGetCartQuery($maskedQuoteId);
+        
+        $this->graphQlQuery($query);
+    }
+```
+
+Use the following functions to cover expected exceptions:
+
+- `expectException`
+- `expectExceptionCode`
+- `expectExceptionMessage`
+- `expectExceptionMessageRegExp`
+- `expectExceptionObject`
