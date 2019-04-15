@@ -375,7 +375,7 @@ Component's name by which to perform a lookup in the registry.
 **Aliases**: `[ko-scope]`, `<scope>`
 
 **Usage example**:
-```javascript
+```html
 <!-- as an attribute -->
 <div ko-scope="'name.of.component'"></div>
 
