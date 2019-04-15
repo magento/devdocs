@@ -413,7 +413,7 @@ Configuration for the `template` binding. If the provided value is a string, it 
 **Aliases:** `[render]`, `<render>`
 
 **Usage example**:
-```javascript
+```html
 <div data-bind="template: 'path/to/the/template'"></div>
 ```
 
