@@ -15,19 +15,21 @@ Customers can make purchases in two ways:
 - As a logged-in user
 - As a guest user who does not create an account
 
-If you want to place order as guest then skip this step.
+{:.bs-callout .bs-callout-tip}
+Skip this step if you want to place order as a guest user.
 
-If you want to place order as a new customer then you should use `createCustomer` mutation to register new customer in the store.
+If you want to place order as a new customer use `createCustomer` mutation to register new customer in the store.
 
 **Request**
+
 ```text
 mutation {
   createCustomer(
     input: {
-      firstname: "Bob"
-      lastname: "Loblaw"
-      email: "bobloblaw@example.com"
-      password: "b0bl0bl@w"
+      firstname: "John"
+      lastname: "Doe"
+      email: "john.doe@example.com"
+      password: "b1b2b3l@w+"
       is_subscribed: true
     }
   ) {
@@ -43,15 +45,16 @@ mutation {
 ```
 
 **Response**
+
 ```json
 {
   "data": {
     "createCustomer": {
       "customer": {
-        "id": 5,
-        "firstname": "Bob",
-        "lastname": "Loblaw",
-        "email": "bobloblaw@example.com",
+        "id": 6,
+        "firstname": "John",
+        "lastname": "Doe",
+        "email": "john.doe@example.com",
         "is_subscribed": true
       }
     }
@@ -59,27 +62,30 @@ mutation {
 }
 ```
 
-Check this ["Customer endpoint"]({{ page.baseurl }}/graphql/reference/customer.html#create-a-customer) page to get the additional information.
+Check ["Customer endpoint"]({{ page.baseurl }}/graphql/reference/customer.html#create-a-customer) page to get the additional information about `createCustomer` parameters.
 
 If you want to place order as a new customer or a registered customer then you should get customer's authorization token. Use `generateCustomerToken` mutation for that.
+
 **Request**
+
 ```text
 mutation {
-  generateCustomerToken(email: "bobloblaw@example.com", password: "b0bl0bl@w") {
+  generateCustomerToken(email: "john.doe@example.com", password: "b1b2b3l@w+") {
     token
   }
 }
 ``` 
 
 **Response**
+
 ```json
 {
-   "data": {
-     "generateCustomerToken": {
-       "token": "hoyz7k697ubv5hcpq92yrtx39i7x10um"
-     }
-   }
- }
+  "data": {
+    "generateCustomerToken": {
+      "token": "zuo7zor5jfldft2nmu2gtylnm8ui7e8t"
+    }
+  }
+}
 ``` 
 
-See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) topic to get more details.
+See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.

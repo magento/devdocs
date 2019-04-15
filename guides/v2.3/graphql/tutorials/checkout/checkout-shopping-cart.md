@@ -12,7 +12,9 @@ contributor_link: https://www.atwix.com/
 ---
 
 **Request**
-This mutation query creates an empty cart:
+
+The following mutation query creates an empty cart:
+
 ```text
 mutation {
   createEmptyCart
@@ -20,14 +22,16 @@ mutation {
 ```
 
 **Response**
+
 ```json
 {
   "data": {
-    "createEmptyCart": "gqjcFzgL8hNxxdrqLDEkMP487nOWBXOv"
+    "createEmptyCart": "A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h"
   }
 }
 ```
 
-If you create a shopping cart for the registered customer then you should send customer's authorization token in the `Authorization` parameter of the header:
+In the next tutorial steps the unique shopping cart identifier - `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be mentioned as `{{ CART_ID }}`.
 
-![GraphiQL Authorization Bearer]({{ page.baseurl }}/graphql/images/graphql-authorization.png)
+{:.bs-callout .bs-callout-info}
+Send customer's authorization token in the `Authorization` parameter of the header if you create a shopping cart for a registered customer. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
