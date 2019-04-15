@@ -3,7 +3,7 @@ title: Release policy
 group: release
 ---
 
-{{site.data.var.ee}} uses [semantic versioning](https://semver.org/):
+{{site.data.var.ee}} uses [semantic versioning](https://semver.org/). For example:
 
 - **MAJOR**—2
 - **MINOR**—2.3
