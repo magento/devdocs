@@ -498,7 +498,7 @@ Adding the tooltip binding as an attribute:
 
 Adding the tooltip binding as a node:
 
-```javascript
+```html
 <div data-bind="
     tooltip: {
         trigger: '[data-tooltip-trigger=trigger]',
