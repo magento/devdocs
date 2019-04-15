@@ -1,26 +1,19 @@
-## Scope of this PR
+## Purpose of this PR
 
-We set [labels](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs) based on the scope of changes with a PR.
+<!-- REQUIRED Describe the goal and the type of changes this PR covers. -->
 
-- New Topic: Entirely new documents
-- Major Update: Significant new info: new section in existing topic, etc.
-- Technical: Changes to technical content/code/processes/naming conventions (any change to technical content)
-- Editorial: Typos, grammatical inconsistencies, or minor rewrites
+This PR ...
 
-Note the scope of this PR by leaving one of the options and deleting the others.
+## Affected URLs
 
-## Purpose of this PR (required)
-
-Describe the goal and the type of changes this PR covers.
-
-## Affected URLs (required)
+<!-- REQUIRED List the URLs you are changing. Not needed for large numbers of files. -->
 
 - ...
 - ...
 
-## Links to source code (remove if unused)
+## Links to source code
 
-If this PR references a file in a Magento codebase repository, add it here.
+<!--  REMOVE THIS SECTION IF NOT USED. If this PR references a file in a Magento codebase repository, add it here. -->
 
 - ...
 - ...
