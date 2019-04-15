@@ -923,7 +923,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: October  5 2018
-- description: Added a 2.3 [product availability](https://devdocs.magento.com/availability.html)
+- description: Added a 2.3 [product availability](https://devdocs.magento.com/release/#product-availability)
     topic.
   versions: 2.3.x
   type: New topic
