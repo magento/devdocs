@@ -17,13 +17,21 @@ The Google Shopping ads extension installs and adds Google Shopping features to 
 
 ## Install
 
-See [Installation]({{site.baseurl}}/extensions/install/).
+Google Shopping ads Channel install is a `.zip` file available from the Magento Marketplace. It includes a composer.json which provides the name `magento/google-shopping-ads` and the available version.
 
-The name of the extension is `magento/google-shopping-ads`.
+1. Log in with your Magento web account.
+1. Click the **Marketplace** tab, then click **My Purchases**.
+1. Locate and select Google Shopping ads Channel.
+1. On the extension page, select the version from the drop-down menu.
+1. For the component name and version, click **Technical Details**.
+1. Click **Download**.
+1. Export the contents to your Magento root.
+1. Follow all instrutions for Extension [Installation]({{site.baseurl}}/extensions/install/).
+1. After installing, enter an API Key to complete configuration.
 
 ## Add the Google API key
 
-To add the Google API Key:
+To add the Google API key:
 
 1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Google Shopping ads**.
 
@@ -61,6 +69,12 @@ If an update is available, a message displays when opening Google Shopping ads C
 
 ![Update available](images/update.png)
 
-Click update to check the extension in your account. You can download and install an updated .zip file for the extension.
+1. Click **Update**.
+1. Log in with your Magento web account.
+1. Click the **Marketplace** tab, then click **My Purchases**.
+1. Locate and select Google Shopping ads Channel.
+1. On the extension page, select the version from the drop-down menu.
+1. For the component name and version, click **Technical Details**.
+1. Click **Download**.
 
-For complete update / upgrade instructions, see [Upgrade an extension]({{site.baseurl}}/extensions/install/#upgrade-an-extension).
+Complete the upgrade following the instructions [Upgrade an extension]({{site.baseurl}}/extensions/install/#upgrade-an-extension).

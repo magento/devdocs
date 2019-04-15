@@ -43,6 +43,7 @@ To get the extension's Composer name and version from the Magento Marketplace:
 
     ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
 
+
 {: .bs-callout .bs-callout-tip }
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
 
@@ -159,7 +160,7 @@ If you encounter errors when loading the storefront in a browser, use the follow
 
 To update or upgrade an extension:
 
-1. Download the updated extension file from Marketplace or another extension developer.
+1. Download the updated extension file from Marketplace or another extension developer. Take note of the module-name and version.
 
 1. Export the contents to your Magento root.
 
