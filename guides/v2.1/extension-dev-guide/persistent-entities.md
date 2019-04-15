@@ -70,7 +70,7 @@ $customerResource->save($customerModel);
 $customerResource->load($customerModel, $entityId);
 
 $customerResource->delete($customerModel);
-{% endhighlight %}
+```
 
 #### Related topics
 {:.no_toc}

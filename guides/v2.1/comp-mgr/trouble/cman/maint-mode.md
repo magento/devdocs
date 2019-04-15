@@ -53,7 +53,7 @@ body
 <p>We're down for a short time to perform maintenance on our site to give you the best possible experience. Check back soon!</p>
 </body>
 </html>
-{% endhighlight %}
+```
 
 ## Custom maintenance page for Apache {#compman-trouble-maint-apache}
 

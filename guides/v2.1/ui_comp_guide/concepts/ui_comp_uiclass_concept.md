@@ -37,7 +37,7 @@ The uiClass class introduces the architecture of UI components through the follo
 	After executing initConfig method:
 	console.log(this.myFirstProperty) // 0
 	console.log(this.mySecondProperty) // 1
-{%endhighlight%}
+```
 
 * The `initialize()` method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.
 
@@ -49,7 +49,7 @@ As an example:
 
 		return this;
 	}
-{%endhighlight%}
+```
 
 * The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
 As an example:
@@ -60,7 +60,7 @@ As an example:
 
 		return this;
 	}
-{%endhighlight%}
+```
 
 ### Commonly used uiClass properties {#uiclass_properties}
 
@@ -75,4 +75,4 @@ As an example:
             disabled: 'checked'
         },
 	}
-{%endhighlight%}
+```

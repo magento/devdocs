@@ -29,7 +29,7 @@ Component's options are set in the configuration `.xml` file as follows:
         </item>
     </argument>
 </modal>
-{%endhighlight%}
+```
 
 <table>
   <tr>
@@ -141,7 +141,7 @@ The following sample is an example of the configuration for a simple modal windo
         </item>
     </argument>
 </button>
-{%endhighlight%}
+```
 
 ## Source files
 

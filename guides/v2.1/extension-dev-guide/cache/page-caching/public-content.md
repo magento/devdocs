@@ -50,7 +50,7 @@ You can use the Admin to define caching policies or you can define them programm
 
 > Example
 
-``` php?start_inline=1
+```php
 class DynamicController extends \Magento\Framework\App\Action\Action
 {
     protected $pageFactory;
@@ -98,7 +98,7 @@ Magento generates a hash based on all context variables (`\Magento\Framework\App
 
 For example, let's declare a context variable that shows a drinks catalog and advertisement to adult customers only. The following code snippet will create a copy of every page in Magento for users under the age of 18.
 
-``` php?start_inline=1
+```php
 /**
  * Plugin on \Magento\Framework\App\Http\Context
  */
@@ -148,7 +148,7 @@ This section shows you how to tell Magento what cache to clear when you change a
 
 First, your entity {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
 
-``` php?start_inline=1
+```php
 use Magento\Framework\DataObject\IdentityInterface;
 class Product implements IdentityInterface
 {
@@ -170,7 +170,7 @@ class Product implements IdentityInterface
 
 Second, the block object must also implement `Magento/Framework/DataObject/IdentityInterface` as follows:
 
-``` php?start_inline=1
+```php
 class View extends AbstractProduct implements \Magento\Framework\DataObject\IdentityInterface
 {
     /**

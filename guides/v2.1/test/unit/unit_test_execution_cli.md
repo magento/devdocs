@@ -81,10 +81,10 @@ Find the following section:
     <ini name="date.timezone" value="America/Los_Angeles"/>
     <ini name="xdebug.max_nesting_level" value="200"/>
 </php>
-{%endhighlight%}
+```
 
 Add the following line in the `<php>` block to disable the PHP memory limit during test execution.
 
 {%highlight xml%}
 <ini name="memory_limit" value="-1"/>
-{%endhighlight%}
+```

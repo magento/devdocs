@@ -93,7 +93,7 @@ You may also add these two message consumers to the cron job (optional). For thi
 {%highlight xml%}
 * * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions &
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice &
-{%endhighlight%}
+```
 
 ### Specify parameters for message consumers
 

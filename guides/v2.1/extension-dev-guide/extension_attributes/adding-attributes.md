@@ -96,7 +96,7 @@ But if some entity doesn't have implementation to fetch extension attributes, we
 
 Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might look like this:
 
-``` php?start_inline=1
+```php
 
 use Magento\Catalog\Api\Data\ProductExtensionInterface;
 use Magento\Catalog\Api\Data\ProductInterface;

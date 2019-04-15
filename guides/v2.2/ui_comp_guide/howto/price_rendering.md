@@ -130,7 +130,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
         </column>
     </columns>
 </listing>
-{%endhighlight%}
+```
 
 A good example from the Magento codebase is the Catalog module's [`widget_recently_viewed.xml`][widget-recently-viewed-xml] file.
 
@@ -200,7 +200,7 @@ _comparePrices: function (firstPrice, secondPrice) {
 
     return 0;
 }
-{%endhighlight%}
+```
 
 The preceding code sample is based on the Catalog module's [`price-box` component][price-box].
 
@@ -263,7 +263,7 @@ getAdjustments: function () {
 
     return adjustments;
 }
-{%endhighlight%}
+```
 
 This code sample is based on the Catalog module's [`final-price` component][final-price].
 
@@ -295,7 +295,7 @@ If a product has a special price, it calls `getPrice` to get the value and rende
         </span>
     </span>
 </if>
-{%endhighlight%}
+```
 
 This example is based on the [`special_price.html` template file][special-price-html] for Magento Catalog.
 
@@ -312,7 +312,7 @@ The following is sample template code that is rendered for the tax adjustment co
           html="getTax($row())"><!-- You can implement self::getTax function how you want -->
     </span>
 </if>
-{%endhighlight%}
+```
 
 ## Related Topics
 

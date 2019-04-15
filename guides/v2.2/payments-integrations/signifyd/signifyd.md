@@ -40,7 +40,7 @@ Below is an example of mapping registration:
         </custom_payment>
     </payment>
 </default>
-{%endhighlight%}
+```
 
 These steps are enough to provide custom AVS/CVV mapping for payment integrations. Everything else, like mapper initialization, will be provided by the *Magento_Signifyd* infrastructure.
 
@@ -68,7 +68,7 @@ For example:
         </payment_method>
     </payment_method_list>
 </config>
-{%endhighlight%}
+```
 
 where:
 

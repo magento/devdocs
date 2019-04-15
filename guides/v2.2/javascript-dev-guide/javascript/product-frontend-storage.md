@@ -54,7 +54,7 @@ define([
     }
 
 }
-{% endhighlight %}
+```
 
 ## Use the repository
 
@@ -75,7 +75,7 @@ dataCollectionHandler: function(data){
 
 ...
 
-{% endhighlight %}
+```
 
 ## Get data from the server
 
@@ -93,7 +93,7 @@ idsStorageHandler: function(idsStorage, currency, storeId){
 
 ...
 
-{% endhighlight %}
+```
 
 | Parameter  | Description                                     |
 | ---------- | ----------------------------------------------- |
@@ -113,7 +113,7 @@ For UI Components, add this information in the [`dataProvider`][datasource-compo
 
 The following example is from the [recently-viewed widget][recently-viewed-widget]{:target="_blank"}:
 
-{% highlight xml %}
+```xml
 
 <argument name="dataProvider" xsi:type="configurableObject">
     <argument name="data" xsi:type="array">
@@ -132,7 +132,7 @@ The following example is from the [recently-viewed widget][recently-viewed-widge
     </argument>
 </argument>
 
-{% endhighlight %}
+```
 
 This sets the appropriate information inside the `updateRequestConfig` object in the product storage configuration(`productStorageConfig` in the example code).
 
@@ -189,7 +189,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
         'store_id': ... //integer
    }  
 ]
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 

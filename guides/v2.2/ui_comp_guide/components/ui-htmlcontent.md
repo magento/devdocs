@@ -66,7 +66,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
        </block>
     </htmlContent>
 </form>
-{%endhighlight%}
+```
 
 ### Render simple Magento block
 
@@ -77,7 +77,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
         <block class="Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry" name="giftregistry"/>
     </htmlContent>
 </form>
-{%endhighlight%}
+```
 
 ## Source files
 

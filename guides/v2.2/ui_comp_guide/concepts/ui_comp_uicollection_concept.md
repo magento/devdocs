@@ -22,7 +22,7 @@ The `uiCollection` class implements the following methods:
       childInstance.%customProperty% = 21;
       this.%currentComponentProperty% = 42;
   }
-  {%endhighlight%}
+ ```
 
 * The `destroy()` method removes the following for the child components and itself:
 	* link to the component in `uiRegistry`
@@ -34,14 +34,14 @@ The `uiCollection` class implements the following methods:
 
 {%highlight js%}
     this.destroy();
-{%endhighlight%}
+```
 
 * The `getChild()` method returns an element from the collection of child UI components.
 
   Example:
 {%highlight js%}
     this.getChild(childIndex)
-{%endhighlight%}
+```
 
   where `childIndex` is the value of the child element's `index` property.
 
@@ -60,7 +60,7 @@ console.log(this.elems());
 //   %uiComponentInstance 3 %,
 //   %uiComponentInstance 4 %
 // ]
-{%endhighlight%}
+```
 
 * `childDefaults` can be used to set the children defaults: properties from `childDefaults` are set into child elements' [`defaults` property]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html#uiclass_properties).
 
@@ -76,6 +76,6 @@ It looks like following:
 <each args="data: elems, as: 'element'">
     <render if="hasTemplate()"/>
 </each>
-{%endhighlight%}
+```
 
  Here `elems` is the collection of the child elements of `uiCollection`. As far as `elems` is the observable property, the templates of the components added to `elems` in the runtime, are also rendered.

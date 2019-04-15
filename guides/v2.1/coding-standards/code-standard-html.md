@@ -27,7 +27,7 @@ Use only spaces for indentation:
     <li>One</li>
     <li>Two</li>
 </ul>
-{%endhighlight%}
+```
 
 ## End of file
 
@@ -42,14 +42,14 @@ Always close self-closing tags.
 <br>
 <img src="image.png" alt="image">
 <input type="text" name="username">
-{%endhighlight%}
+```
 
 **Recommended**
 {%highlight html%}
 <br />
 <img src="image.png" alt="image" />
 <input type="text" name="username" />
-{%endhighlight%}
+```
 
 ## Line length
 
@@ -58,7 +58,7 @@ Avoid code lines longer than 120 characters. When using an editor, it is inconve
 **Inappropriate**
 {%highlight html%}
 <input data-bind="attr: { id: 'cart-item-'+item_id+'-qty', 'data-cart-item': item_id, 'data-item-qty': qty }, value: qty" type="number" size="4" class="item-qty cart-item-qty" maxlength="12"/>
-{%endhighlight%}
+```
 
 **Recommended**
 {%highlight html%}
@@ -71,7 +71,7 @@ Avoid code lines longer than 120 characters. When using an editor, it is inconve
        size="4"
        class="item-qty cart-item-qty"
        maxlength="12"/>
-{%endhighlight%}
+```
 
 ## Spaces around equals sign ("=")
 
@@ -80,12 +80,12 @@ Spaces around equals sign ("=") are acceptable, but not recommended. The code wi
 **Not recommended**
 {%highlight html%}
 <link rel = "stylesheet" href = "styles.css">
-{%endhighlight%}
+```
 
 **Recommended**
 {%highlight html%}
 <link rel="stylesheet" href="styles.css">
-{%endhighlight%}
+```
 
 ## Spaces and colon in attributes
 
@@ -95,12 +95,12 @@ Use no space before the colon and one space after the colon for the sake of read
 {%highlight html%}
 <span data-bind="i18n : 'Update'"></span>
 <span data-bind="i18n:'Update'"></span>
-{%endhighlight%}
+```
 
 **Recommended**
 {%highlight html%}
 <span data-bind="i18n: 'Update'"></span>
-{%endhighlight%}
+```
 
 ## Block-level elements
 
@@ -115,13 +115,13 @@ Use semantic class names and IDs. Avoid presentational class names.
 **Inappropriate**
 {%highlight html%}
 <button type="submit" class="button-green">Submit</button>
-{%endhighlight%}
+```
 
 **Recommended**
 {%highlight html%}
 
 <button type="submit" class="action-primary">Submit</button>
-{%endhighlight%}
+```
 
 ## Accessibility
 

@@ -81,7 +81,7 @@ interface RequestInterface
     public function getPathInfo();
     public function getParam($name);
 }
-{%endhighlight%}
+```
 
 Let's also assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
 
@@ -92,7 +92,7 @@ class HttpRequest implements RequestInterface
     public function getParam($name) {...}
     public function getParams() {...}
 }
-{%endhighlight%}
+```
 
 Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it is not part of the interface.  
 
@@ -116,7 +116,7 @@ class MyClass
         }
     }
 }
-{%endhighlight%}
+```
 
 This completely defeats the purpose of the interface. A better solution might be the following:
 
@@ -128,7 +128,7 @@ public function doSomething()
         // ... some more code
     }
 }
-{%endhighlight%}
+```
 
 The second example method `doSomething()` does not call the `getParams()` method. 
 
@@ -176,7 +176,7 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
         return $doc->getFieldValue() === $searchDoc->getFieldValue();
     });
 }
-{%endhighlight%}
+```
 
 The following example moves the comparison into a `matches()` method on the `Document` class instead.
 
@@ -187,7 +187,7 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
         return $searchDoc->matches($doc);
     });
 }
-{%endhighlight%}
+```
 
 ### The Law of Demeter
 
@@ -207,7 +207,7 @@ function isJsonResponse(Response $response)
     $headers = $response->getHeaders();
     return $headers->getByName('Content-Type') === 'application/json';
 }
-{%endhighlight%}
+```
 
 The solution is to add the method `isJsonResponse()` to the response object instead.
 

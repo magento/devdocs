@@ -108,7 +108,7 @@ Its implementation allows to add additional validators.
 
 First, create a new validator. It can be a simple class with the `__invoke` method, because `GeneralResponseValidator` calls the validator as a function:
 
-{% highlight php startinline=true %}
+```php
 class ErrorCodeValidator
 {
     /**
@@ -126,12 +126,12 @@ class ErrorCodeValidator
         return [false, $this->getErrorCodes($response->errors)];
     }
 }
-{% endhighlight %}
+```
 
 
 Then add the created validator to a list of validators in the `GeneralResponseValidator` class:
 
-{% highlight php startinline=true %}
+```php
 class GeneralResponseValidator extends AbstractValidator
 {
     public function __construct(
@@ -157,6 +157,6 @@ class GeneralResponseValidator extends AbstractValidator
         ];
     }
 }
-{% endhighlight %}
+```
 
 You can also add the validator as an anonymous function, but a separate class is better for testing purposes.

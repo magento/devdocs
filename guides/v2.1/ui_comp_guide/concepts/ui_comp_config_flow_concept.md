@@ -44,7 +44,7 @@ When the request for my_page comes, the server does the following:
 
 {%highlight html%}
 	<script type="text/x-magento-init">{"*": {"Magento_Ui/js/core/app":{<JSON_configuration>}}}</script>
-{%endhighlight%}
+```
 
 Now it is the client's turn to process this JSON and generate the UI component's instances. The flow is following:
 

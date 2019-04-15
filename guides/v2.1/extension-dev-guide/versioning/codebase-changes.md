@@ -32,8 +32,6 @@ If this is unavoidable, you must depend on the patch version of the core modules
 
 ## API and customization points
 
-
-
 Modules call APIs to create new application scenarios.
 Modifications that break the API will trigger an increase in a module's MAJOR version.
 
@@ -52,7 +50,7 @@ When Magento deprecates the API or customization point in favor of a new impleme
 
 **Deprecated Code Example**
 
-{% highlight php startinline %}
+```php
 
 /**
  * @deprecated since 2.1.0
@@ -62,8 +60,7 @@ public function save()
 {
     // ...
 }
-
-{% endhighlight %}
+```
 
 ## Version increase scenarios
 

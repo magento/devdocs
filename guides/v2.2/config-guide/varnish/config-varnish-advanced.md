@@ -164,7 +164,7 @@ sub vcl_backend_response {
     }
 }
 
-{% endhighlight %}
+```
 {% endcollapsible %}
 
 #### Final step

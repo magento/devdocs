@@ -22,7 +22,7 @@ If the list of purchases is correct, click **Install**.
 
 Messages display in the Console Log as your new purchases are installed. Following is a sample of some of these messages:
 
-{% highlight xml %}
+```xml
 [2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has been started
 [2016-04-07 09:37:06 CDT] Magento maintenance mode is enabled.
 [2016-04-07 09:37:06 CDT] Job "maintenance_mode {"enable":true}" has successfully completed
@@ -71,7 +71,7 @@ Please re-run Magento compile command
 [2016-04-07 14:38:15 UTC] Clearing cache...
 [2016-04-07 14:38:15 UTC] Cleaning static view files
 [2016-04-07 14:38:15 UTC] Job "setup:static:regenerate []" has been successfully completed
-{% endhighlight %}
+```
 
 When the installation is complete, a page similar to the following displays:
 
