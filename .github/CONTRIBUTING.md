@@ -37,12 +37,7 @@ Create a PR to the [magento/devdocs repository](https://github.com/magento/devdo
 
 In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `develop`.
 
-Choose a contribution type:
-
-- New Topic: Entirely new documents
-- Major Update: Significant new info: new section in existing topic, etc.
-- Technical: Changes to technical content/code/processes/naming conventions (any change to technical content)
-- Editorial: Typos, grammatical inconsistencies, or minor rewrites
+Provide links to devdocs for the files you are changing. This is not required if the list is long.
 
 If you are updating an example from source code, include a link to the file in the repository.
 
