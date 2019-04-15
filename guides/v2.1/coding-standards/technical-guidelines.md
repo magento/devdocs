@@ -53,7 +53,9 @@ Use [RFC2119] to interpret keywords like:
     </tr>
     <tr>
         <td>
+            
 ```php
+            
 class Config
 {
     private $data;
@@ -68,9 +70,12 @@ class Config
         return $this->data[$key];
     }
 }
+
 ```
-        </td>
-        <td>
+
+   </td>
+   <td>
+        
 ```php
 class Config
 {
@@ -85,9 +90,11 @@ class Config
         return $this->data[$key];
     }
 }
+
 ```
-        </td>
-    </tr>
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 ---
@@ -98,6 +105,7 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
+
 ```php
 class Composite
 {
@@ -136,7 +144,8 @@ class Composite
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
+      <td>
+          
 ```php
 
 class Config
@@ -150,8 +159,10 @@ class Config
     }
 }
 ```
-        </td>
-        <td>
+
+ </td>
+ <td>
+  
 ```php
 class Config
 {
@@ -175,8 +186,9 @@ class Config
     }
 }
 ```
-        </td>
-    </tr>
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -193,6 +205,7 @@ class Config
     </tr>
     <tr>
         <td>
+            
 ```php
 interface SessionAdapterInterface
 {}
@@ -208,8 +221,9 @@ class SessionManager
 
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
 ```
-        </td>
-        <td>
+   </td>
+   <td>
+    
 ```php
 interface SessionAdapterInterface
 {}
@@ -223,8 +237,9 @@ class SessionManager
     {}
 }
 ```
-        </td>
-    </tr>
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -241,6 +256,7 @@ class SessionManager
     </tr>
     <tr>
         <td>
+            
 ```php
 class AbstractController extends Action
 {
@@ -274,8 +290,10 @@ class Edit extends AbstractController
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 
 ```
-        </td>
-        <td>
+
+  </td>
+  <td>
+    
 ```php
 class Edit extends Action
 {
@@ -293,8 +311,9 @@ class Edit extends Action
 }
 
 ```
-        </td>
-    </tr>
+
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 
@@ -323,6 +342,7 @@ class Edit extends Action
     </tr>
     <tr>
         <td>
+            
 ```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
@@ -335,8 +355,9 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 // Method with out parameters that doesn’t return anything could be sign of temporal coupling.
 
 ```
-        </td>
-        <td>
+  </td>
+  <td>
+    
 ```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
@@ -348,8 +369,9 @@ echo $url->get($baseUrl, 'custom/path');
 // Only one way to use API, no temporal coupling.
 
 ```
-        </td>
-    </tr>
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -363,6 +385,7 @@ echo $url->get($baseUrl, 'custom/path');
     </tr>
     <tr>
         <td>
+            
 ```php
 class Edit extends Action
 {
@@ -384,8 +407,10 @@ class View extends Template
 }
 
 ```
-        </td>
-        <td>
+
+   </td>
+   <td>
+    
 ```php
 class Edit extends Action
 {
