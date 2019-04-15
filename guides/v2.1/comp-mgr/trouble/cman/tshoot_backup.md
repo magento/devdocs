@@ -19,7 +19,7 @@ A backup can fail for any of the following reasons:
 
 If the Magento backup functionality does not start or displays the following message, you need to enable the feature prior to backing up.
 
-```bash
+```terminal
 Backup functionality is disabled.
 Backup functionality is currently disabled. Please use other means for backups.
 ```
