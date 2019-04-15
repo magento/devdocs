@@ -94,11 +94,12 @@ Reloading the page only triggers compilation and publication of the styles used 
 
 ##### Debugging using the static view files deployment tool
 
-Once you save your changes and run the next cli command in the root of your `<your_Magento_instance>` directory:
-```text
+Once you save your changes, run the following command from your `<Magento_root>` directory:
+
+```bash
 bin/magento setup:static-content:deploy
 ``` 
-the tool pre-processes (including compilation) and publishes the static view files.
+The tool pre-processes (including compilation) and publishes the static view files.
 
 {:.bs-callout .bs-callout-info}
 NOTE: Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use -f option: 'bin/magento setup:static-content:deploy -f'
