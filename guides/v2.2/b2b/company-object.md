@@ -51,6 +51,12 @@ Name | Description | Format | Requirements
 `region` | State or province | string | Required to create or update a company.
 `region_id` | An ID assigned to a state or province | string  | Optional
 `postcode` | The company's ZIP or postal code | string  | Required to create or update a company.
+`job_title` | A string that describes the company user’s responsibilities. | string  | Required to create or update a company.
+`prefix` | A string that placed before name. | string  | Optional
+`firstname` | A string that placed before name. | string  | Required to create or update a company.
+`middlename` | A string that placed before name. | string  | Optional
+`lastname` | A string that placed before name. | string  | Required to create or update a company.
+`suffix` | A string that placed after name. | string  | Optional
 `telephone` | The company contact's phone number | string | Required to create or update a company.
 `customer_group_id`  | Defines the company's shared catalog. A value of `1` assigns the default shared catalog. | integer | Required to create or update a company.
 `sales_representative_id` | User ID of the Sales Representative for the company | integer | Optional
