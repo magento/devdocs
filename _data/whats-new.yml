@@ -534,7 +534,7 @@ entries:
   type: Major update
   date: January 17, 2019
   link: https://github.com/magento/devdocs/pull/3584
-- description: Added upgrade information for [Manage Inventory Management modules](https://devdocs.magento.com/guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html)
+- description: Added upgrade information for [Manage Inventory Management modules](https://devdocs.magento.com/extensions/inventory-management/)
     (MSI community project).
   versions: 2.3.x
   type: Technical changes
@@ -638,8 +638,8 @@ entries:
   date: December 15, 2018
   link: https://github.com/magento/devdocs/pull/3456
 - description: Added information for the `setup:di:compile` step for [Install extensions
-    from the command line](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html),
-    [Install the B2B extension](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html),
+    from the command line](https://devdocs.magento.com/extensions/install/),
+    [Install the B2B extension](https://devdocs.magento.com/extensions/b2b/),
     and [Create an integration](https://devdocs.magento.com/guides/v2.2/get-started/create-integration.html).
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -1702,7 +1702,7 @@ entries:
   type: Updated
   date: Mar 12 2018
 - description: Added the force (`-f`) option to the static content deployment command
-    in the [B2B installation](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html)
+    in the [B2B installation](https://devdocs.magento.com/extensions/b2b/)
     topic.
   versions: ''
   type: Updated
@@ -2255,8 +2255,8 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Sep 27 2017
-- description: Added new topics for [installing any extension from the command line](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html) and [installing
-    the B2B extension specifically](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html)
+- description: Added new topics for [installing any extension from the command line](https://devdocs.magento.com/extensions/install/) and [installing
+    the B2B extension specifically](https://devdocs.magento.com/extensions/b2b/)
   versions: 2.2.x
   type: New
   date: Sep 26 2017
