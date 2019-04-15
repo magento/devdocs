@@ -142,6 +142,7 @@ relative_links:
     - community
     - guides
     - redoc
+    - release
     - tmp
     - 404.md
     - availability.md
