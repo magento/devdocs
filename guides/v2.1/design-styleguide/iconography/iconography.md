@@ -94,7 +94,7 @@ Modern versions of assistive technologies will announce CSS generated content, a
 
 **Code sample:**
 
-```php
+```html
 <style>
   .icon-star:before { content: "★ "; }
 </style>
