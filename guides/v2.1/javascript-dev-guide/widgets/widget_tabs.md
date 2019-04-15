@@ -244,10 +244,10 @@ Called before the content is opened.
 ### `dimensionsChanged` {#fedg_tabs_dimensionsChanged}
 Called after content is opened or closed.
 
-## Code Sample
+## Code sample
 
 The following example shows how to initialize the tabs widget and pass options during the initialization.
-The classes used are only for getting the same view as the tabs have it on product page.
+This example uses the same CSS classes as the tabs on the product page.
 
 ```html
 <div class="product data items"
@@ -271,7 +271,7 @@ The classes used are only for getting the same view as the tabs have it on produ
 
 ### Result
 
-The result are 3 tabs with its content, where the last tab is disabled based on initialization options, as shown here:
+The result is three tabs with content, where the last tab is disabled based on initialization options, as shown here:
 
 ![Tabs Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/tabs-widget-result.png)
 
