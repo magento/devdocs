@@ -358,7 +358,7 @@ Configuration for the Resizable widget.
 
 **Usage example**:
 
-```javascript
+```html
 
 <div data-bind="resizable: {maxHeight: 200}"></div>
 ```
