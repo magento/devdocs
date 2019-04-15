@@ -27,7 +27,7 @@ If the update is successful, a page similar to the following displays.
 
 Messages similar to the following display in the Console Log:
 
-```xml
+```terminal
 [2016-07-27 20:36:03 UTC] Job "setup:maintenance:enable []" has started
 Enabled maintenance mode
 
