@@ -50,7 +50,7 @@ class MyClass
   }
 }
 
-{% endhighlight  %}
+```
 
 #### Creating new events
 

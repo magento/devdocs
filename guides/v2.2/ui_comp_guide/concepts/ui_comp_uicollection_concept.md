@@ -17,7 +17,7 @@ The `uiCollection` class implements the following methods:
 
   Example:
 
-  {%highlight js%}
+  ```javascript
   initElement: function (childInstance) {
       childInstance.%customProperty% = 21;
       this.%currentComponentProperty% = 42;
@@ -32,14 +32,14 @@ The `uiCollection` class implements the following methods:
 
   Example:
 
-{%highlight js%}
+```javascript
     this.destroy();
 ```
 
 * The `getChild()` method returns an element from the collection of child UI components.
 
   Example:
-{%highlight js%}
+```javascript
     this.getChild(childIndex)
 ```
 
@@ -51,7 +51,7 @@ The `uiCollection` class implements the following methods:
 
   Example:
 
-{%highlight js%}
+```javascript
 console.log(this.elems());
 
 // [
@@ -72,7 +72,7 @@ This template performs only one task: renders child templates if they exist.
 
 It looks like following:
 
-{%highlight html%}
+```html
 <each args="data: elems, as: 'element'">
     <render if="hasTemplate()"/>
 </each>

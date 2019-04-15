@@ -90,7 +90,7 @@ Refer to [Manage message queues]({{ page.baseurl }}/config-guide/mq/manage-mysql
 
 You may also add these two message consumers to the cron job (optional). For this, add these lines in your `crontab`:
 
-{%highlight xml%}
+```xml
 * * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions &
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice &
 ```

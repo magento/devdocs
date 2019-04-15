@@ -22,7 +22,7 @@ Use only spaces for indentation:
 * Continuation indent: 4 spaces
 
 **Recommended**
-{%highlight html%}
+```html
 <ul>
     <li>One</li>
     <li>Two</li>
@@ -38,14 +38,14 @@ Add a blank line at the end of file.
 Always close self-closing tags.
 
 **Inappropriate**
-{%highlight html%}
+```html
 <br>
 <img src="image.png" alt="image">
 <input type="text" name="username">
 ```
 
 **Recommended**
-{%highlight html%}
+```html
 <br />
 <img src="image.png" alt="image" />
 <input type="text" name="username" />
@@ -56,12 +56,12 @@ Always close self-closing tags.
 Avoid code lines longer than 120 characters. When using an editor, it is inconvenient to scroll right and left to read the HTML code. Align tag attributes one under another to increase code readability.
 
 **Inappropriate**
-{%highlight html%}
+```html
 <input data-bind="attr: { id: 'cart-item-'+item_id+'-qty', 'data-cart-item': item_id, 'data-item-qty': qty }, value: qty" type="number" size="4" class="item-qty cart-item-qty" maxlength="12"/>
 ```
 
 **Recommended**
-{%highlight html%}
+```html
 <input data-bind="attr: {
        id: 'cart-item-'+item_id+'-qty',
        'data-cart-item': item_id,
@@ -78,12 +78,12 @@ Avoid code lines longer than 120 characters. When using an editor, it is inconve
 Spaces around equals sign ("=") are acceptable, but not recommended. The code without spaces is easier to read.
 
 **Not recommended**
-{%highlight html%}
+```html
 <link rel = "stylesheet" href = "styles.css">
 ```
 
 **Recommended**
-{%highlight html%}
+```html
 <link rel="stylesheet" href="styles.css">
 ```
 
@@ -92,13 +92,13 @@ Spaces around equals sign ("=") are acceptable, but not recommended. The code wi
 Use no space before the colon and one space after the colon for the sake of readability.
 
 **Not recommended**
-{%highlight html%}
+```html
 <span data-bind="i18n : 'Update'"></span>
 <span data-bind="i18n:'Update'"></span>
 ```
 
 **Recommended**
-{%highlight html%}
+```html
 <span data-bind="i18n: 'Update'"></span>
 ```
 
@@ -113,12 +113,12 @@ Use appropriate HTML5 elements for blocks. The following diagram shows how to de
 Use semantic class names and IDs. Avoid presentational class names.
 
 **Inappropriate**
-{%highlight html%}
+```html
 <button type="submit" class="button-green">Submit</button>
 ```
 
 **Recommended**
-{%highlight html%}
+```html
 
 <button type="submit" class="action-primary">Submit</button>
 ```

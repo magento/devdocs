@@ -242,7 +242,7 @@ The name of this file uses the following pattern: *routeId*\_*controller*\_*acti
 This template file contains the actual page content for the **Hello World** page.
 
 {% collapsible File content for helloworld.phtml %}
-  {% highlight html %}
+```html
     <p>Hello World!</p>
  ```
 {% endcollapsible %}

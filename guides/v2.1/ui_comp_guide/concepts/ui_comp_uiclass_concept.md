@@ -16,7 +16,7 @@ The `uiClass` is an abstract class from which all components are extended. The `
 
 The uiClass class introduces the architecture of UI components through the following methods:
 
-*  The `extend()` method implements inheritance of UI components. The `extend()` returns new class. The `extend()` method gets a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} object as a parameter, and then extends the base object with the properties and methods of the argument's object. The properties of the argument's object have higher priority than base object's properties.
+* The `extend()` method implements inheritance of UI components. The `extend()` returns new class. The `extend()` method gets a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} object as a parameter, and then extends the base object with the properties and methods of the argument's object. The properties of the argument's object have higher priority than base object's properties.
    As an example:
     %componentName%.extend(%JavaScript_extender_object%);
 
@@ -24,42 +24,42 @@ The uiClass class introduces the architecture of UI components through the follo
 
   As an example:
 
-{%highlight js%}
-	defaults: {
-		myFirstProperty: 0,
-		mySecondProperty: 1
-	}
+```javascript
+defaults: {
+  myFirstProperty: 0,
+  mySecondProperty: 1
+}
 
-	Before executing initConfig method:
-	console.log(this.myFirstProperty) // Undefined
-	console.log(this.mySecondProperty) // Undefined
+Before executing initConfig method:
+console.log(this.myFirstProperty) // Undefined
+console.log(this.mySecondProperty) // Undefined
 
-	After executing initConfig method:
-	console.log(this.myFirstProperty) // 0
-	console.log(this.mySecondProperty) // 1
+After executing initConfig method:
+console.log(this.myFirstProperty) // 0
+console.log(this.mySecondProperty) // 1
 ```
 
 * The `initialize()` method is called during instantiation. It can be used to add custom functionality executed only once, during component instance creation.
 
 As an example:
 
-{%highlight js%}
-	initialize: function () {
-		%yourMethodName%();
+```javascript
+initialize: function () {
+  %yourMethodName%();
 
-		return this;
-	}
+  return this;
+}
 ```
 
 * The `_super()` method calls the parent UI component method with the same name as the `_super()` method's caller; if that method does not exists in the parent UI component, then the method tries to find it higher in the inheritance chain.
 As an example:
 
-{%highlight js%}
-	initialize: function () {
-		this._super(); //_super will call parent's `initialize` method here
+```javascript
+initialize: function () {
+  this._super(); //_super will call parent's `initialize` method here
 
-		return this;
-	}
+  return this;
+}
 ```
 
 ### Commonly used uiClass properties {#uiclass_properties}
@@ -67,12 +67,13 @@ As an example:
 The `defaults` property declares the list of properties of a UI component's instance. Also it declares communications between components if needed.
 
 As an example:
-{%highlight js%}
-	defaults: {
-		%yourCustomProperty%: '',
-		imports: {
-            %yourCustomProperty%: '%anotherComponentLink%',
-            disabled: 'checked'
-        },
-	}
+
+```javascript
+defaults: {
+  %yourCustomProperty%: '',
+  imports: {
+          %yourCustomProperty%: '%anotherComponentLink%',
+          disabled: 'checked'
+      },
+}
 ```

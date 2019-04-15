@@ -31,7 +31,7 @@ To create a maintenance page and redirect to it, first create a maintenance page
 
 Add to it the following contents:
 
-{% highlight html %}
+```html
 <!DOCTYPE html>
 <html>
 <head>

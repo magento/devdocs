@@ -35,7 +35,7 @@ Function that is invoked after the element is rendered.
 
 **Usage example**:
 
-{%highlight javascript%}
+```javascript
 <div afterRender="function (target, viewModel) {
     console.log('Rendered element:', target);
     console.log('Associated view model:', viewModel);
@@ -54,7 +54,7 @@ Defines whether the binding is enabled (`true`) or disabled (`false`).
 **Aliases**: `[autoselect]`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <!-- as an attribute -->
 <input type="text" autoselect/>
 
@@ -74,7 +74,7 @@ It also instantiates all bindings defined for the rendered elements in the scope
 **Aliases**: `[bindHtml]`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <div bindHtml="
     <div data-bind='text: \'String from the text binding\''></div>
 "></div>
@@ -169,7 +169,7 @@ Binding's configuration that may include the following properties:
 **Aliases**: `[collapsible]`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <div collapsible="openClass: false, closeOnOuter: false">
 ```
 
@@ -184,7 +184,7 @@ The `datepicker` binding is an adapter for the [mage/calendar.js]({{ page.baseur
 **Aliases**: -
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <input type="text" data-bind="datepicker: value"/>
 ```
 
@@ -200,7 +200,7 @@ Defines whether the element is visible (`true`) or hidden (`false`).
 **Aliases**: -
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <div data-bind="fadeVisible: isVisible">Foo Bar</div>
 <button click="function () { isVisible(!isVisible()); }">Toggle</button>
 ```
@@ -216,7 +216,7 @@ The `i18n` binding is used to translate a string according to the currently enab
 **Aliases**: `[translate]`, `<translate>`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <div data-bind="i18n: 'Translate as a standard knockout binding'"></div>
 
 <div translate="'Translate using the attribute'"></div>
@@ -237,7 +237,7 @@ A collection in which keys represent keyboard keys codes and values are callback
 **Aliases**: `[keyboard]`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <input type="text" keyboard="{
     13: function (e) {
         console.log('Enter key has been pressed!');
@@ -256,7 +256,7 @@ The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that i
 **Aliases**: -
 
 **Usage example**: creating modal window
-{%highlight javascript%}
+```javascript
 <div mageInit="{
     'Magento_Ui/js/modal/modal': {
         autoOpen: true,
@@ -278,7 +278,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 **Aliases**: -
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <select data-bind="
     optionsValue: 'value',
     optionsText: 'label',
@@ -313,7 +313,7 @@ Callback that is invoked when user clicks outside of the element.
 **Aliases**: `[outerClick]`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <div id="target" outerClick="function () {
     console.log('Clicked outside of the "target" node.');
 }">
@@ -333,7 +333,7 @@ Configuration that is passed to the Slider widget.
 **Aliases**: `[range]`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <div
     class="data-slider"
     range="{
@@ -358,7 +358,7 @@ Configuration for the Resizable widget.
 
 **Usage example**:
 
-{%highlight javascript%}
+```javascript
 
 <div data-bind="resizable: {maxHeight: 200}"></div>
 ```
@@ -375,7 +375,7 @@ Component's name by which to perform a lookup in the registry.
 **Aliases**: `[ko-scope]`, `<scope>`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <!-- as an attribute -->
 <div ko-scope="'name.of.component'"></div>
 
@@ -396,7 +396,7 @@ The `staticChecked` binding implements the behavior similar to the standard [`ch
 
 **Aliases:** `[staticChecked]`
 
-{%highlight javascript%}
+```javascript
 <input type="checkbox" data-bind="staticChecked: observable"/>
 ```
 
@@ -413,7 +413,7 @@ Configuration for the `template` binding. If the provided value is a string, it 
 **Aliases:** `[render]`, `<render>`
 
 **Usage example**:
-{%highlight javascript%}
+```javascript
 <div data-bind="template: 'path/to/the/template'"></div>
 ```
 
@@ -484,7 +484,7 @@ Binding's configuration that may include the following options:
 
 Adding the tooltip binding as an attribute:
 
-{%highlight javascript%}
+```javascript
 <div tooltip="
      trigger: '[data-tooltip-trigger=trigger]',
      action: 'click',
@@ -498,7 +498,7 @@ Adding the tooltip binding as an attribute:
 
 Adding the tooltip binding as a node:
 
-{%highlight javascript%}
+```javascript
 <div data-bind="
     tooltip: {
         trigger: '[data-tooltip-trigger=trigger]',

@@ -20,7 +20,7 @@ This section is responsible for holding all product data that come from the serv
 
 The following code snippet uses the [`Magento_Catalog/js/product/storage/storage-service`][storage-service]{:target="_blank"} to initialize the repository when the data storage cache itself initializes:
 
-{% highlight js %}
+```javascript
 define([
     'Magento_Catalog/js/product/storage/storage-service'
 ]), function(storage){
@@ -60,7 +60,7 @@ define([
 
 Subscribe a callback function to the product repository data to work with the cached data from recent server requests.
 
-{% highlight js %}
+```javascript
 
 ...
 
@@ -81,7 +81,7 @@ dataCollectionHandler: function(data){
 
 Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs. 
 
-{% highlight js %}
+```javascript
 
 ...
 
@@ -140,7 +140,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
 
 {% collapsible Show Object Structure %}
 
-{% highlight js %}
+```javascript
 [
    item_id: {
         //@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface

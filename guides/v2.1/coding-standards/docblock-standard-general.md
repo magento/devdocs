@@ -167,7 +167,7 @@ interface MetadataObjectInterface
 
 **Template for JS Files**
 
-{% highlight js %}
+```javascript
 
 /**
  * Copyright © Magento, Inc. All rights reserved.

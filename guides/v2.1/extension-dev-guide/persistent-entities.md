@@ -61,7 +61,7 @@ Repository functions should operate on data interfaces. In your repository funct
 
 Example:
 
-{% highlight php startinline=true%}
+```php
 $customerModel = $this->customerFactory->create(['data' => $customerData]);
 
 /** @var $customerResource \Magento\Customer\Model\ResourceModel\Customer */

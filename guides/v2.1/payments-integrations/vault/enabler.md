@@ -25,7 +25,7 @@ Add the vault enabling controls to the payment form. In the following example, a
 
 Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/template/payment/form.html)):
 
-{% highlight html %}
+```html
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
     <fieldset data-bind="attr: {class: 'fieldset payment items' + getCode(), id: 'payment_form_' + getCode()}">
         <legend class="legend">

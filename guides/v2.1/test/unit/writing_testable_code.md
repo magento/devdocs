@@ -75,7 +75,7 @@ To illustrate, assume there is a theoretical `RequestInterface` with two methods
 
 For example:
 
-{%highlight php startinline=true %}
+```php
 interface RequestInterface
 {
     public function getPathInfo();
@@ -85,7 +85,7 @@ interface RequestInterface
 
 Let's also assume there is a concrete implementation `HttpRequest` that also has a public method `getParams()` in addition to the two interface methods.
 
-{%highlight php startinline=true %}
+```php
 class HttpRequest implements RequestInterface
 {
     public function getPathInfo() {...}
@@ -96,7 +96,7 @@ class HttpRequest implements RequestInterface
 
 Any code that depends on `RequestInterface` should avoid using the `getParams()` method, because it is not part of the interface.  
 
-{%highlight php startinline=true %}
+```php
 class MyClass
 {
     /**
@@ -120,7 +120,7 @@ class MyClass
 
 This completely defeats the purpose of the interface. A better solution might be the following:
 
-{%highlight php startinline=true %}
+```php
 public function doSomething()
 {
     foreach (['foo', 'bar'] as $paramName) {
@@ -169,7 +169,7 @@ Try to use a few getters as possible. Instead, use methods that tell the objects
 
 Consider moving the code in that needs the value into a class that has the data available as the following example shows:
 
-{%highlight php startinline=true %}
+```php
 function extractMatchingDocuments(Document $searchDoc, array $documents)
 {
     return array_filter($documents, function (Document $doc) use ($searchDoc){
@@ -180,7 +180,7 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
 
 The following example moves the comparison into a `matches()` method on the `Document` class instead.
 
-{%highlight php startinline=true %}
+```php
 function extractMatchingDocuments(Document $searchDoc, array $documents)
 {
     return array_filter($documents, function (Document $doc) use ($searchDoc){
@@ -201,7 +201,7 @@ The principle explicitly states that no method can be called on objects that are
 
 The following example violates the Law of Demeter by calling the method `getByName()` on the return value of `getHeaders()`.
 
-{%highlight php startinline=true %}
+```php
 function isJsonResponse(Response $response)
 {
     $headers = $response->getHeaders();

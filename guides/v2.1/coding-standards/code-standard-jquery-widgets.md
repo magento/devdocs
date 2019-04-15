@@ -151,8 +151,7 @@ $('selector').mage('dialog', {
 
 * Widget communications must be handled by jQuery events
 
-  {% highlight html %}
-
+```html
 <body>
   ...
   <button data-mage-init="{button: {event: 'save', target:'[data-role=edit-form]'}}" />
@@ -162,11 +161,9 @@ $('selector').mage('dialog', {
   </form>
   ...
 </body>
-
  ```
 
  ```javascript
-
 // Declaration of the mage.form widget
 $.widget("mage.form," {
     _create: function() {
@@ -184,7 +181,6 @@ $.widget("mage.form," {
         }
     }
 });
-
  ```
 
 * You must use [DOM event bubbling][dom-event-bubbling]{:target="_blank"} to perform one-way communication between a child widget and its parent widget.
@@ -200,20 +196,20 @@ $.widget("mage.form," {
 
   For example:
 
-  ~~~
+```text
 /pub
   /lib
   /magento
     dropdown.js
     validation.js
     dialog.js 
-  ~~~
+```
 
 * Place Magento-specific widgets under the `<install dir>/app/code/<namespace>/<module-name>/view/<area-name>/js` directory.
 
   For example:
 
-  ~~~
+```text
 /app
   /code
     /Mage
@@ -223,7 +219,7 @@ $.widget("mage.form," {
             /js
               vde-block.js
               vde-container.js
-  ~~~
+```
 
 ## Architecture
 
@@ -231,7 +227,7 @@ $.widget("mage.form," {
   
   Properties without an underscore prefix are accessible using the jQuery Widget factory public API.
 
- ```javascript
+```javascript
 // Declaration of the backend.accordion widget
 $.widget('mage.accordion', {
     _create: function() {
@@ -239,7 +235,7 @@ $.widget('mage.accordion', {
         this.icon = $(this.options.icon).prependTo(this.header);
       }
 });
-   ```
+```
 
 * Start a widget's element selection with `this.element`
 * Widgets must not interact with DOM elements selected using `this.element.parent()`, `this.element('selector')`, or `this.element.closest('selector')`.

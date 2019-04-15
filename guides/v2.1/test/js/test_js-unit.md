@@ -182,7 +182,7 @@ The contents of `jsTestDriver.conf` resembles this:
 
 **Generated jsTestDriver.conf file:**
 
-{% highlight yaml %}
+```yaml
 server: http://localhost:9876
 proxy:
   - {matcher: "/lib/web/*", server: "http://localhost:9876/test/C:/git/magento2/lib/web/"}
@@ -251,7 +251,6 @@ Complete these steps to use PhpStorm to run unit tests:
      Before you can run the tests, click the red square icon in the **JsTestDriver Server** panel to stop the JsTestDriver server that runs in PhpStorm. You must also close the captured browser.
    * **One or more changed configuration files**
      Use the PHP interpreter at the command line to regenerate the `jsTestDriver.conf` file and run the tests.
-
 
 <!-- LINK DEFINITIONS -->
 

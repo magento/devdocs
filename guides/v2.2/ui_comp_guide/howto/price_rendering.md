@@ -48,7 +48,7 @@ For the purposes of this article, we will use a listing component to render simp
 
 The [XML configuration file][ui-component-declaration] for UI components shows the parent-child relationship between different UI components and tells Magento which template files to use when rendering.
 
-{%highlight xml%}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     ...
     <datasource>
@@ -138,7 +138,7 @@ A good example from the Magento codebase is the Catalog module's [`widget_recent
 
 In the following code sample, the `price-box` component aggregates and creates the `price` components for a specific product.
 
-{%highlight javascript%}
+```javascript
 /**
  * Retrieve array of prices, that should be rendered for specific product
  *
@@ -209,7 +209,7 @@ The preceding code sample is based on the Catalog module's [`price-box` componen
 In our example, each price is configured to have its own template, but they all share a common price component called `final-price`.
 This component is defined in the following code sample:
 
-{%highlight javascript%}
+```javascript
 /**
  * Retrieve specific template
  *
@@ -274,7 +274,7 @@ It calls the `hasSpecialPrice` function to check if a special price exists for a
 
 If a product has a special price, it calls `getPrice` to get the value and renders any adjustments configured for the price.
 
-{%highlight html%}
+```html
 <if args="isSalable($row()) && hasSpecialPrice($row())">
     <span class="special-price">
         <span class="price-container">
@@ -303,7 +303,7 @@ This example is based on the [`special_price.html` template file][special-price-
 
 The following is sample template code that is rendered for the tax adjustment component:
 
-{%highlight html%}
+```html
 <if args="displayBothPrices()">
     <span class="price-wrapper price-excluding-tax"
           attr="'data-label': $t('Excl. Tax')"

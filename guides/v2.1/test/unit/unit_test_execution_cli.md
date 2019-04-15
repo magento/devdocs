@@ -76,7 +76,7 @@ Copy the PHPUnit configuration file `dev/tests/unit/phpunit.xml.dist` to `dev/te
 
 Find the following section:
 
-{%highlight xml%}
+```xml
 <php>
     <ini name="date.timezone" value="America/Los_Angeles"/>
     <ini name="xdebug.max_nesting_level" value="200"/>
@@ -85,6 +85,6 @@ Find the following section:
 
 Add the following line in the `<php>` block to disable the PHP memory limit during test execution.
 
-{%highlight xml%}
+```xml
 <ini name="memory_limit" value="-1"/>
 ```

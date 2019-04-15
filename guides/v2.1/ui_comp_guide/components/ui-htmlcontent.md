@@ -55,7 +55,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 ### Render layout
 
-{%highlight xml%}
+```xml
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="customer_edit_tab_view">
@@ -72,7 +72,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 ### Render simple Magento block
 
-{%highlight xml%}
+```xml
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="giftregistry">

@@ -18,7 +18,7 @@ In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node
 
 Example of a basic {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} declaration:
 
-{%highlight xml%}
+```xml
 <referenceContainer name="page-container">
 	<uiComponent name="%instance_name%"/>
 </referenceContainer>
@@ -41,7 +41,7 @@ The top node can have nested nodes. Every nested node is regarded as a separate 
 
 ## Example of a basic component's configuration file
 
-{%highlight xml%}
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**

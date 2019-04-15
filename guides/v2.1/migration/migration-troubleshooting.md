@@ -111,7 +111,7 @@ This configuration adds a hash-string to the conflicting records of {% glossaryt
 
 ### Mismatch of entities
 
-{%highlight xml%}
+```xml
 Mismatch of entities in the document: <DOCUMENT>
 ```
 
