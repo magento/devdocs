@@ -32,7 +32,7 @@ Only `GET` and `HEAD` methods are cacheable.
 
 Add a `cacheable="false"` attribute to any block in your layout to disable caching:
 
-``` xml
+```xml
 <block class="Magento\Paypal\Block\Payflow\Link\Iframe" template="payflowlink/redirect.phtml" cacheable="false"/>
 ```
 

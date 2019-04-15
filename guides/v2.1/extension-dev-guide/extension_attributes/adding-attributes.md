@@ -16,7 +16,7 @@ The response to these requests will return objects with the following structure:
 
 ### Product response:
 
-``` xml
+```xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>
@@ -27,7 +27,7 @@ The response to these requests will return objects with the following structure:
 
 ### Product list response:
 
-``` xml
+```xml
 <products>
     <item>
         <id>1</id>
@@ -53,7 +53,7 @@ We can add scalar and non-scalar extension attributes.
 Scalar is a simple attribute.
 Non-scalar attributes can be represented by Data Object.
 
-``` php
+```php
 public function afterGet
 (
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
@@ -78,7 +78,7 @@ AfterGetList is similar to afterGet.
 
 Likewise, the `afterSave` plugin should manipulate the entity data before returning it:
 
-``` php
+```php
 public function afterSave
 (
     \Magento\Catalog\Api\ProductRepositoryInterface $subject,
@@ -140,7 +140,7 @@ class ProductAttributesLoad
 
 Now we need to bind our plugin to `ProductInterface`:
 
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Catalog\Api\Data\ProductInterface">
         <plugin name="ProductExtensionAttributeOperations" type="Magento\Catalog\Plugin\ProductAttributesLoad"/>
@@ -151,7 +151,7 @@ Now we need to bind our plugin to `ProductInterface`:
 ## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="first_custom_attribute" type="Magento\SomeModule\Api\Data\CustomDataInterface" />
@@ -161,7 +161,7 @@ For scalar attributes we can use next configuration:
 ```
 
 For non-scalar attributes:
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
@@ -171,7 +171,7 @@ For non-scalar attributes:
 
 In first case we will get the next result:
 
-``` xml
+```xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>
@@ -184,7 +184,7 @@ In first case we will get the next result:
 ```
 
 In second one:
-``` xml
+```xml
 <product>
     <id>1</id>
     <sku>some-sku</sku>

@@ -184,7 +184,7 @@ This section contains code sample snippets to refer to when configuring database
 
 `di.xml` snippet:
 
-``` xml
+```xml
 <type name="Magento\Framework\App\Cache\Frontend\Pool">
     <arguments>
         <argument name="frontendSettings" xsi:type="array">

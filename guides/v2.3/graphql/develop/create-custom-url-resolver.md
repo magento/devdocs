@@ -10,7 +10,7 @@ The `Magento\UrlRewrite` module converts URL rewrite requests to canonical URLs.
 
 You can use the `Magento\CmsUrlRewrite\Observer\ProcessUrlRewriteSavingObserver` class as the basis for saving URL rewrites. For deleting entries, create a `ProcessUrlRewriteDeleteObserver` class similar to the following:
 
-``` php
+```php
 /**
  * Generate urls for UrlRewrite and save it in storage
  *

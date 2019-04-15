@@ -18,7 +18,7 @@ The sequence of installing patches is handled through a dependency-based approac
 To define a dependency in a patch, add the method `public static function getDependencies()`
 to the patch class and return the class names of the patches this patch depends on. The dependency can be in any module.
 
-``` php
+```php
 public static function getDependencies()
 {
     return [

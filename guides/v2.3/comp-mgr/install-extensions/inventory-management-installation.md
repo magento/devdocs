@@ -15,13 +15,13 @@ We recommend installing according to [Install Magento Using Composer]({{page.bas
 
 The following line in the `composer.json` metapackage installs Inventory Management:
 
-``` json
+```json
         magento/inventory-composer-metapackage = ^1.1.0
 ```
 
 The Inventory Management installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
 
-``` json
+```json
         'Magento_Inventory' => 1,
         'Magento_InventoryAdminUi' => 1,
         'Magento_InventoryApi' => 1,
@@ -81,7 +81,7 @@ You may need to disable Inventory Management modules to:
 
 To disable Inventory Management, see the instructions for [Enable or disable modules]({{page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
 
-``` json
+```json
         'Magento_Inventory' => 0,
         'Magento_InventoryAdminUi' => 0,
         'Magento_InventoryApi' => 0,
@@ -139,13 +139,13 @@ To enable Inventory Management modules:
 1. Modify all Inventory modules from `0` to `1` to enable.
 1. Update the database:
 
-   ``` php
+   ```php
    bin/magento setup:upgrade
    ```  
 
 1. Clean the cache:
 
-   ``` php
+   ```php
    bin/magento cache:clean
    ```  
 
@@ -155,7 +155,7 @@ When upgrading from previous releases of Inventory Management to the latest vers
 
 For the latest, update your metapackage version:
 
-``` json
+```json
         magento/inventory-composer-metapackage = ^1.1.0
 ```
 

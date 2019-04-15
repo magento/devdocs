@@ -12,7 +12,7 @@ After you have built the component and are ready to enable it in your Magento en
 1. Disable the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} under `System->Cache Management`.
 1. Enter the following in the command line:
 
-   ``` bash
+   ```bash
    bin/magento module:enable --clear-static-content Component_Name
    bin/magento setup:upgrade
    bin/magento cache:clean

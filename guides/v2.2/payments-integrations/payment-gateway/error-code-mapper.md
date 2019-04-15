@@ -27,7 +27,7 @@ The files placed in the `adminhtml` and `frontend` directories ensure that custo
 
 The  [braintree_error_mapping.xml]({{ site.mage2200url }}app/code/Magento/Braintree/etc/braintree_error_mapping.xml) file provides an example  collection:
 
-``` xml
+```xml
 <mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Payment:etc/error_mapping.xsd">
     <message_list>
         <message code="81703" translate="true">Credit card type is not accepted by this merchant account.</message>
@@ -49,7 +49,7 @@ The message definitions are based on the [error_mapping.xsd]({{ site.mage2200url
 
 After you map the messages, you must specify the location of the error mapping file or files for the config reader. To do this, create a `virtualType` definition for `\Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader` in the module's `di.xml` file:
 
-``` xml
+```xml
 <virtualType name="Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader" type="Magento\Payment\Gateway\ErrorMapper\VirtualConfigReader">
     <arguments>
         <argument name="fileName" xsi:type="string">braintree_error_mapping.xml</argument>
@@ -59,7 +59,7 @@ After you map the messages, you must specify the location of the error mapping f
 
 Also, specify a config instance for the data reader. You can also provide your own `cacheId`, which allows you to store all parsed messages in a cache.
 
-``` xml
+```xml
 <virtualType name="Magento\Braintree\Gateway\ErrorMapper\VirtualMappingData" type="Magento\Payment\Gateway\ErrorMapper\MappingData">
     <arguments>
         <argument name="reader" xsi:type="object">Magento\Braintree\Gateway\ErrorMapper\VirtualConfigReader</argument>
@@ -70,7 +70,7 @@ Also, specify a config instance for the data reader. You can also provide your o
 
 Then customize the default `ErrorMessageMapper` via virtual type and specify the data reader:
 
-``` xml
+```xml
 <virtualType name="Magento\Braintree\Gateway\ErrorMapper\VirtualErrorMessageMapper" type="Magento\Payment\Gateway\ErrorMapper\ErrorMessageMapper">
     <arguments>
         <argument name="messageMapping" xsi:type="object">Magento\Braintree\Gateway\ErrorMapper\VirtualMappingData</argument>
@@ -81,7 +81,7 @@ Then customize the default `ErrorMessageMapper` via virtual type and specify the
 Because Braintree integration uses the default [`Magento\Payment\Gateway\Command\GatewayCommand`]({{ site.mage2200url }}app/code/Magento/Payment/Gateway/Command/GatewayCommand.php),
 inject the created mapper pool to the required [gateway command]({{ page.baseurl }}/payments-integrations/payment-gateway/gateway-command.html) as an argument:
 
-``` xml
+```xml
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
     <arguments>
         ...
