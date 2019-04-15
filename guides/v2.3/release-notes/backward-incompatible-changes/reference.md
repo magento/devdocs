@@ -1,10 +1,10 @@
 ---
 group: release-notes
-title: Backward incompatible changes in Magento Commerce
+title: Backward incompatible changes reference
+redirect_from: 
+- /guides/v2.3/release-notes/backward-incompatible-changes/commerce.html
+- /guides/v2.3/release-notes/backward-incompatible-changes/open-source.html
 ---
-
-{: .bs-callout .bs-callout-info }
-To track all changes in {{site.data.var.ee}}, consider [changes in {{site.data.var.ce}}].
 
 The changes are aggregated into two tables:
 
@@ -14,20 +14,35 @@ The changes are aggregated into two tables:
 {: .bs-callout .bs-callout-warning }
 When the [@api] and [@deprecated] doc blocks tags are added to the code base, they are recognized as _Class was added_ or _Method has been added_.
 
-## 2.3.0 - 2.3.1 {#releases-2_3_0-2_3_1}
+## 2.3.1 - 2.3-develop
+
+{% include backward-incompatible-changes/open-source/2.3.1-2.3-develop.html %}
+
+{% include backward-incompatible-changes/commerce/2.3.1-2.3-develop.html %}
+
+## 2.3.0 - 2.3.1
+
+{% include backward-incompatible-changes/open-source/2.3.0-2.3.1.md %}
 
 {% include backward-incompatible-changes/commerce/2.3.0-2.3.1.md %}
 
-## 2.2.0 - 2.3.0 {#releases-2_2_0-2_3_0}
+{% collapsibleh2 2.2.0 - 2.3.0 %}
+
+{% include backward-incompatible-changes/open-source/2.2.0-2.3.0.md %}
 
 {% include backward-incompatible-changes/commerce/2.2.0-2.3.0.md %}
 
-## 2.1.0 - 2.3.0 {#releases-2_1_0-2_3_0}
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 2.1.0 - 2.3.0 %}
+
+{% include backward-incompatible-changes/open-source/2.1.0-2.3.0.md %}
 
 {% include backward-incompatible-changes/commerce/2.1.0-2.3.0.md %}
 
+{% endcollapsibleh2 %}
+
 <!-- LINK DEFINITIONS -->
 
-[changes in {{site.data.var.ce}}]: ./open-source.html
 [@api]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#api
 [@deprecated]: {{ page.baseurl }}/coding-standards/docblock-standard-general.html#deprecated
