@@ -180,9 +180,9 @@ The example below uses {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %
                 <item name="category_id" xsi:type="object">Magento\Catalog\Model\Api\SearchCriteria\CollectionProcessor\FilterProcessor\ProductCategoryFilter</item>
             </argument>
             <argument name="fieldMapping" xsi:type="array">
-                <item name="code" xsi:type="string">customer_group_code</item>
-                <item name="id" xsi:type="string">customer_group_id</item>
-                <item name="tax_class_name" xsi:type="string">class_name</item>
+                <item name="code" xsi:type="string">main_table.customer_group_code</item>
+                <item name="id" xsi:type="string">main_table.customer_group_id</item>
+                <item name="tax_class_name" xsi:type="string">tax_class_table.class_name</item>
             </argument>
         </arguments>
     </virtualType>

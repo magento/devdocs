@@ -124,7 +124,7 @@ The following query returns information about category ID `20` and four levels o
 ```
 **Response**
 
-``` text
+```json
 {
   "data": {
     "category": {
@@ -224,7 +224,7 @@ The following query returns breadcrumb information about the women's tops catego
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "category": {
