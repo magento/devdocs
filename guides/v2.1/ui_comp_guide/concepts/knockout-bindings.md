@@ -333,7 +333,7 @@ Configuration that is passed to the Slider widget.
 **Aliases**: `[range]`
 
 **Usage example**:
-```javascript
+```html
 <div
     class="data-slider"
     range="{
