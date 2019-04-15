@@ -1,9 +1,9 @@
 ---
-title: Features and extensions
+title: Upcoming software availability and compatibility
 group: release
 ---
 
-Magento continually strives to find the right balance between making product upgrades simple and predictable and delivering improvements and new features to early adopters faster. Over the last year, we have refined how we deliver software to support this balance.  
+Magento continually strives to find the right balance between making product upgrades simple and predictable and delivering improvements and new features to early adopters faster. Over the last year, we have refined how we deliver software to support this balance. For additional information, refer to our [release policy]({{site.baseurl}}/extensions/policy/).
 
 ## Availability
 
@@ -20,7 +20,7 @@ The following table describes the status of Magento software availability and wh
 | **Amazon Sales Channel**                        | Early access closed<br><br>Regional availability expected in first half of 2019 (US, Canada, Mexico)<br><br>EMEA and APAC availability expected in second half of 2019 | Magento Marketplace                                                                                                          |
 | **Google Shopping Ads Channel**                 | Early access May 2019<br><br>General availability expected in first half of 2019                                                                                       | Magento Marketplace                                                                                                          |
 
-## Compatibility matrix
+## Compatibility
 
 Magento modules that have been built to be decoupled from the {{site.data.var.ee}} core release process; this allows us to release iterations of these modules faster to merchants who are willing to accept a little risk in exchange for earlier access to new features.
 
