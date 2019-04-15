@@ -10,7 +10,7 @@ title: Google Shopping ads Channel Release Notes
 See the following documentation:
 
 - [Google Shopping ads Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-ad-channel.html) for merchant information and instructions
-- [Install]({{site.baseurl}}/extensions/amazon-sales/) Google Shopping ads Channel  for installation, API key, and update information
+- [Install]({{site.baseurl}}/extensions/google-shopping-ads/) Google Shopping ads Channel  for installation, API key, and update information
 
 The release notes include:
 
