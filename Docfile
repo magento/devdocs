@@ -1,0 +1,5 @@
+The "guides/v2.0" directory contains all content from the "2.0" branch of the "magento/devdocs" repository.
+The "guides/m1x" directory contains all content from the "master" branch of the "magento/devdocs-m1" repository.
+The "mbi" directory contains only "docs" content from the "master" branch of the "magento/devdocs-mbi" repository.
+The "page-builder" directory contains only "docs" content from the "develop" branch of the "magento-devdocs/magento2-page-builder" repository.
+The "mftf" directory contains only "docs" content from the "develop" branch of the "magento/magento2-functional-testing-framework" repository.

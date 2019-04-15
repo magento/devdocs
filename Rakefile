@@ -15,6 +15,7 @@ require 'colorator'
 require_relative 'rakelib/lib/link-checker.rb'
 require_relative 'rakelib/lib/converter.rb'
 require_relative 'rakelib/lib/double-slash-check.rb'
+require_relative 'rakelib/lib/doc-config.rb'
 
 desc "Same as 'rake', 'rake preview'"
 task default: %w[preview]
