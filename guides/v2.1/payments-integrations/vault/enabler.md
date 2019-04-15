@@ -27,7 +27,7 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ sit
 
 {% highlight html %}
 <form id="co-transparent-form-braintree" class="form" data-bind="" method="post" action="#" novalidate="novalidate">
-    <fieldset data-bind="attr: {class: 'fieldset payment items' + getCode(), id: 'payment_form_' + getCode()}">
+    <fieldset data-bind="attr: {class: 'fieldset payment items ccard' + getCode(), id: 'payment_form_' + getCode()}">
         <legend class="legend">
             <span><!-- ko i18n: 'Credit Card Information'--><!-- /ko --></span>
         </legend>
