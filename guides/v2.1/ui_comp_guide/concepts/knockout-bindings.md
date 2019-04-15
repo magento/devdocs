@@ -396,7 +396,7 @@ The `staticChecked` binding implements the behavior similar to the standard [`ch
 
 **Aliases:** `[staticChecked]`
 
-```javascript
+```html
 <input type="checkbox" data-bind="staticChecked: observable"/>
 ```
 
