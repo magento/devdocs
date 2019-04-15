@@ -22,7 +22,7 @@ The following table describes the status of Magento software availability and wh
 
 ## Compatibility matrix
 
-Magento modules that have been built to be decoupled from the Magento Commerce core release process; this allows us to release iterations of these modules faster to merchants who are willing to accept a little risk in exchange for earlier access to new features.
+Magento modules that have been built to be decoupled from the {{site.data.var.ee}} core release process; this allows us to release iterations of these modules faster to merchants who are willing to accept a little risk in exchange for earlier access to new features.
 
 The following table shows the release status of Magento extension versions relative to the 2.3.x release line of {{site.data.var.ee}}.
 
