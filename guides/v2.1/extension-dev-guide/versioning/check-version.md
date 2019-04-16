@@ -11,27 +11,33 @@ Use any of the following ways to determine which version of Magento is installed
  - By viewing the `composer.lock` file
  
 ## Command line
+
 The following command returns the Magento version.
 
 **Command**
+
 ```bash
 bin/magento --version
 ```
 
 **Response**
+
 ```terminal
 Magento CLI version 2.3.0
 ```
 
 ## HTTP GET request
+
 An HTTP request returns less detailed information about the Magento version.
 
 **Request**
+
 ```text
 http://<magento2-store>/magento_version
 ```
 
 **Response**
+
 ```text
 Magento/2.3 (Community)
 ```
@@ -43,7 +49,8 @@ Login to Magento as a registered Admin user. The Magento version is displayed at
 ![Check the Magento version]({{ page.baseurl }}/extension-dev-guide/images/version.png)
 
 ## The `composer.lock` file
-Magento reads the current version from the `<Magento_root>/composer.lock` file. To determine the Magento version, search for `magento/product-community-edition` or `magento/product-enterprise-edition`, depending on which version of Magento is installed.
+
+If Magento was installed using the `composer install` command, you can search the the `<Magento_root>/composer.lock` file for `magento/product-community-edition` or `magento/product-enterprise-edition`, depending on which version of Magento is installed.
 
 ```json
   {
