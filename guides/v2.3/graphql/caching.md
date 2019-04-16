@@ -3,7 +3,7 @@ group: graphql
 title: GraphQL caching
 ---
 
-You can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and run retrieve large amounts of information from the database. However, with full-page caching enabled, a fully-generated page can be retrieved directly from the cache.
+You can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and run retrieve large amounts of information from the database.
 
 ## Cached queries
 
@@ -16,9 +16,20 @@ Magento caches the following queries:
 * `cmsPage`
 * `products`
 
-The following queries cannot be cached:
+Magento explicitly disallows caching the following queries.
 
 * `cart`
+* `country`
+* `countries`
+* `currency`
+* `customAttributeMetadata`
+* `customer`
+* `customerDownloadableProducts`
+* `customerOrders`
+* `customerPaymentTokens`
+* `storeConfig`
+* `urlResolver`
+* `wishlist`
 
 ## Caching with Varnish
 
@@ -53,9 +64,7 @@ sub vcl_hash {
 }
 ```
 
-{:.bs-callout .bs-callout-tip}
-The `X-Magento-Vary` cache cookie is no
+[Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) describes how to configure the `default.vcl` file.
 
-[Configure Varnish and your web server]({{ page.baseurl }}/config-guide/varnish/config-varnish-configure.html) provides more information about the `default.vcl` file.
-
-## Caching with 
+## X-Magento-Vary 
+The `X-Magento-Vary` cache cookie is not supported for GraphQL. The `Store` and `Content-Currency`  headers, along with the content language (which is deduced) determine the context.
