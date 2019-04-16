@@ -40,9 +40,9 @@ To force the Data Migration Tool to run from the beginning, use the `--reset` ar
 
 While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like this:
 
-{% highlight xml %}
+```xml
 Source documents are not mapped: <EXTENSION_TABLE>
-{% endhighlight %}
+```
 
 See the [Troubleshooting]({{ page.baseurl }}/migration/migration-troubleshooting.html) section of this guide for more information and recommendations.
 
@@ -66,11 +66,11 @@ You may tell the Data Migration Tool to ignore the problematic entities.
 
 To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 
-{% highlight xml %}
+```xml
 <ignore>
     <field>sales_order_address_id</field>
 </ignore>
-{% endhighlight %}
+```
 
 {: .bs-callout .bs-callout-warning }
 Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.
