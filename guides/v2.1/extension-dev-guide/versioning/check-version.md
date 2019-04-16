@@ -1,14 +1,16 @@
 ---
 title: Check the Magento version
+contributor_name: Atwix
+contributor_link: https://www.atwix.com/
 ---
 
-There are the next ways how to get a version of Magento store:
- - through command line
- - through HTTP GET request
- - from Magento backend (admin account is required)
- - from `composer.lock` file
+Use any of the following ways to determine which version of Magento is installed:
+ - From the command line
+ - With an HTTP GET request
+ - From within the Magento Admin
+ - By viewing the `composer.lock` file
  
-#### Command line
+## Command line
 The command below returns a full Magento version.
 
 **Command**
@@ -21,8 +23,8 @@ php bin/magento --version
 Magento CLI version 2.3.0
 ```
 
-#### HTTP GET request
-HTTP request allows to get a short information about Magento version.
+## HTTP GET request
+An HTTP request returns less detailed information about the Magento version.
 
 **Request**
 ```text
@@ -34,14 +36,14 @@ http://<magento2-store>/magento_version
 Magento/2.3 (Community)
 ```
 
-#### Magento backend
+## Magento Admin
 
-Login as a registered admin user into back-end side of your Magento store. Then go to the bottom of the page. Magento version will be displayed in the right corner above "Account Activity" and "Report an Issue" links:
+Login to Magento as a registered Admin user. The Magento version is displayed at the bottom right of the page, above the  **Account Activity** and **Report an Issue** links:
 
 ![Check the Magento version]({{ page.baseurl }}/extension-dev-guide/images/version.png)
 
-#### File `composer.lock`
-Please note that Magento reads current version from the `composer.lock` file that locates in the root of the store. If you want to get Magento version from this file then make search for `magento/product-community-edition` (if you use community edition) or `magento/product-enterprise-edition` (if you use commerce version):
+## The `composer.lock` file
+Magento reads the current version from the `<Magento_root>/composer.lock` file. To determine the Magento version, search for `magento/product-community-edition` or `magento/product-enterprise-edition`, depending on which version of Magento is installed.
 
 ```json
   {
