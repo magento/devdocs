@@ -66,8 +66,8 @@ The listing component requires the data source to be properly configured and ass
             </argument>
         </argument>
     </dataSource>
-</listing>    
-``` 
+</listing>
+```
 
 ## Source files
 

@@ -44,7 +44,7 @@ The following is an example of a mixin module that extends the `target` componen
 
 **File:** `OrangeCompany/Sample/view/base/web/js/columns-mixin.js`
 
-``` javascript
+```javascript
 
 define(function () {
  'use strict';
@@ -80,7 +80,7 @@ The following is an example of a `requirejs-config.js` file that adds the `colum
 
 **File:** `OrangeCompany/Sample/view/base/requirejs-config.js`
 
-``` javascript
+```javascript
 var config = {
  config: {
      mixins: {
