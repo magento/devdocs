@@ -11,6 +11,9 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
+{:.bs-callout .bs-callout-tip}
+Billing address must always be set.
+
 Use [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote.html#set-the-billing-address-on-cart-attributes) mutation query to set a billing address. GraphQl allows to add billing address in the next ways:
 - add new billing address
 - add new billing address and set it as a shipping addresses  
@@ -96,7 +99,9 @@ where
 }
 ```
 
-###
+### Add a new address for billing and shipping
+
+The following mutation adds a new billing address and sets it as a shipping address too.
 
 **Request**
 
@@ -106,19 +111,19 @@ mutation {
     input: {
       cart_id: "{{ CART_ID }}"
       billing_address: {
-         address: {
+        address: {
           firstname: "John"
-                lastname: "Doe"
-                company: "Company Name"
-                street: ["320 N Crescent Dr", "Beverly Hills"]
-                city: "Los Angeles"
-                region: "CA"
-                postcode: "90210"
-                country_code: "US"
-                telephone: "123-456-0000"
-                save_in_address_book: false
-         }
-#         use_for_shipping: true
+            lastname: "Doe"
+            company: "Company Name"
+            street: ["320 N Crescent Dr", "Beverly Hills"]
+            city: "Los Angeles"
+            region: "CA"
+            postcode: "90210"
+            country_code: "US"
+            telephone: "123-456-0000"
+            save_in_address_book: false
+          }
+          use_for_shipping: true
       }
     }
   ) {
@@ -157,6 +162,7 @@ mutation {
 ```
 
 **Response**
+
 ```json
 {
   "data": {
@@ -204,7 +210,6 @@ mutation {
 }
 ```
 
-
 ### Use the existing customer address
 
 **Request**
@@ -214,7 +219,7 @@ mutation {
     input: {
       cart_id: "{{ CART_ID }}"
       billing_address: {
-          customer_address_id: 937
+          customer_address_id: {{ CUSTOMER_ADDRESS_ID }}
       }
     }
   ) {
@@ -226,7 +231,9 @@ mutation {
   }
 }
 ```
+
 **Request**
+
 ```text
 mutation {
   setBillingAddressOnCart(
