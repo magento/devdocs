@@ -101,4 +101,14 @@ product_count: Int @doc(description: "The number of products")
 
 ## Query caching
 
-The `@cache` directive allows pages that include the results of the `products` and `category` queries to be cached. It is intended for internal use only.
+The `@cache` directive defines whether the results of certain queries can be cached. Queries relating to products, categories, and CMS may be cached. This directive is intended for internal use only. 
+
+Cachable queries are defined in the following manner:
+
+`@cache(cacheTag: "cms_b", cacheIdentityResolver: "Magento\\CmsGraphQl\\Model\\Resolver\\Block\\IdentityResolver")`
+
+The `cacheTag` value is a system-defined cache tag. The `cacheIdentityResolver` value points to the resolver responsible for caching.
+
+Queries that explicitly cannot be cached are designated in the with the following directive:
+
+`@cache(cacheable: false)`
