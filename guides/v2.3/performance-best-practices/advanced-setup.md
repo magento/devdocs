@@ -71,7 +71,7 @@ In addition to master databases, Magento allows you to configure a number of sla
 
 You can add a slave database by running the following command:
 
-``` bash
+```bash
 bin/magento setup:db-schema:add-slave
 ```
 

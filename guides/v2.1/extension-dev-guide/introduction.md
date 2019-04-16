@@ -36,13 +36,13 @@ You must follow a [PSR compliant](http://www.php-fig.org/psr/psr-4/) structure w
 
 Modules are declared in the `module.xml` file. Here is a minimal example:
 
-{% highlight XML %}
+```xml
     <?xml version="1.0"?>
         <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
       <module name="Magento_SampleMinimal" setup_version="2.0.0">
       </module>
     </config>
-{% endhighlight %}
+```
 
 ## What's Next?
 

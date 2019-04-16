@@ -132,7 +132,7 @@ Attribute |  Description
 
 When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
 
-``` xml
+```xml
 <type name="Magento\CatalogGraphQl\Model\Resolver\Products\FilterArgument\ProductEntityAttributesForAst" >
   <arguments>
     <argument name="additionalAttributes" xsi:type="array">
