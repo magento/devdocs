@@ -22,10 +22,10 @@ If you place order as a guest user you must set a quote email address. Use `setG
 mutation {
   setGuestEmailOnCart(input: {
     cart_id: "{{ CART_ID }}"
-    email: "guest_email@example.com"
+    email: "guest@example.com"
   }) {
     cart {
-      guest_email
+      email
     }
   }
 }
@@ -41,7 +41,7 @@ where
   "data": {
     "setGuestEmailOnCart": {
       "cart": {
-        "guest_email": "guest_email@example.com"
+        "email": "guest@example.com"
       }
     }
   }
