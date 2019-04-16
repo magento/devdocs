@@ -86,6 +86,27 @@ Attribute | Type | Description
 `sort_order` | Int | The order in which the option is displayed
 `title` | String | The display name for this option
 
+## CustomizableMultipleOption object
+
+`CustomizableMultipleOption` contains information about a multiselect that is defined as part of a customizable option.
+
+Attribute | Type | Description
+--- | --- | ---
+`value` | `CustomizableMultipleValue` | An array that defines the set of options for a multiselect
+
+### CustomizableMultipleValue object
+
+`CustomizableMultipleValue` defines the price and sku of a product whose page contains a customized multiselect.
+
+Attribute | Type | Description
+--- | --- | ---
+`option_type_id` | Int | The ID assigned to the value
+`price_type` | PriceTypeEnum | FIXED, PERCENT, or DYNAMIC
+`price` | Float | The price assigned to this option
+`sku` | String | The Stock Keeping Unit for this option
+`sort_order` | Int | The order in which the option is displayed
+`title` | String | The display name for this option
+
 ## CustomizableFieldOption object
 
 `CustomizableFieldOption` contains information about a text field that is defined as part of a customizable option.
