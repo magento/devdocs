@@ -60,7 +60,7 @@ The {{site.data.var.im}} installation process makes the following changes to the
         'Magento_InventoryDistanceBasedSourceSelection' => 1,
         'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 1,
         'Magento_InventoryDistanceBasedSourceSelectionApi' => 1,
-        'Magento_InventoryElasticSearch' => 1,
+        'Magento_InventoryElasticsearch' => 1,
         'Magento_InventorySetupFixtureGenerator' => 1,
 ```
 
@@ -120,7 +120,7 @@ To disable {{site.data.var.im}}, see the instructions for [Enable or disable mod
         'Magento_InventoryDistanceBasedSourceSelection' => 0,
         'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 0,
         'Magento_InventoryDistanceBasedSourceSelectionApi' => 0,
-        'Magento_InventoryElasticSearch' => 0,
+        'Magento_InventoryElasticsearch' => 0,
         'Magento_InventorySetupFixtureGenerator' => 0,
 ```
 
