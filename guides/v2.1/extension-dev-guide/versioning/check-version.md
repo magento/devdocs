@@ -11,15 +11,15 @@ Use any of the following ways to determine which version of Magento is installed
  - By viewing the `composer.lock` file
  
 ## Command line
-The command below returns a full Magento version.
+The following command returns the Magento version.
 
 **Command**
-```text  
-php bin/magento --version
+```bash
+bin/magento --version
 ```
 
 **Response**
-```text
+```terminal
 Magento CLI version 2.3.0
 ```
 
