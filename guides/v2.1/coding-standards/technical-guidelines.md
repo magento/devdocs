@@ -52,7 +52,7 @@ Use [RFC2119] to interpret keywords like:
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
+        <td markdown="1">
             
 ```php
             
@@ -74,7 +74,7 @@ class Config
 ```
 
    </td>
-   <td>
+   <td markdown="1">
         
 ```php
 class Config
@@ -144,7 +144,7 @@ class Composite
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-      <td>
+      <td markdown="1">
           
 ```php
 
@@ -161,7 +161,7 @@ class Config
 ```
 
  </td>
- <td>
+ <td markdown="1">
   
 ```php
 class Config
@@ -204,7 +204,7 @@ class Config
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
+        <td markdown="1">
             
 ```php
 interface SessionAdapterInterface
@@ -222,7 +222,7 @@ class SessionManager
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
 ```
    </td>
-   <td>
+   <td markdown="1">
     
 ```php
 interface SessionAdapterInterface
@@ -255,7 +255,7 @@ class SessionManager
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
+        <td markdown="1">
             
 ```php
 class AbstractController extends Action
@@ -292,7 +292,7 @@ class Edit extends AbstractController
 ```
 
   </td>
-  <td>
+  <td markdown="1">
     
 ```php
 class Edit extends Action
@@ -341,7 +341,7 @@ class Edit extends Action
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
+        <td markdown="1">
             
 ```php
 $url = new Url();
@@ -356,7 +356,7 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 
 ```
   </td>
-  <td>
+  <td markdown="1">
     
 ```php
 $url = new Url($baseUrl);
@@ -384,7 +384,7 @@ echo $url->get($baseUrl, 'custom/path');
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
+        <td markdown="1">
             
 ```php
 class Edit extends Action
@@ -409,7 +409,7 @@ class View extends Template
 ```
 
    </td>
-   <td>
+   <td markdown="1">
     
 ```php
 class Edit extends Action
