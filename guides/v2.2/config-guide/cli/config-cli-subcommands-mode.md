@@ -44,7 +44,7 @@ The easiest way to do that is to run this command as the [Magento file system ow
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:show
 ```
 
@@ -62,7 +62,7 @@ where:
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 ```
 
@@ -76,7 +76,7 @@ Examples follow.
 
 ### Change to production mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set production
 ```
 
@@ -137,7 +137,7 @@ When you change from production to developer mode, you should clear generated cl
 
 ### Change to default mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set default
 ```
 

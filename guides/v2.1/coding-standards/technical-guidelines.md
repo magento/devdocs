@@ -53,7 +53,9 @@ Use [RFC2119] to interpret keywords like:
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
+            
 class Config
 {
     private $data;
@@ -68,10 +70,13 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+
+```
+
+   </td>
+   <td>
+        
+```php
 class Config
 {
     private $data;
@@ -85,9 +90,11 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 ---
@@ -98,7 +105,8 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+
+```php
 class Composite
 {
     /**
@@ -136,8 +144,9 @@ class Composite
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+      <td>
+          
+```php
 
 class Config
 {
@@ -149,10 +158,12 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+ </td>
+ <td>
+  
+```php
 class Config
 {
     private $fileReader;
@@ -174,9 +185,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -193,7 +205,8 @@ class Config
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 interface SessionAdapterInterface
 {}
 
@@ -207,10 +220,11 @@ class SessionManager
 }
 
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td>
+    
+```php
 interface SessionAdapterInterface
 {}
 
@@ -222,9 +236,10 @@ class SessionManager
     public function __construct(SessionAdapterInterface $sessionAdapter)
     {}
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -241,7 +256,8 @@ class SessionManager
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 class AbstractController extends Action
 {
     // ...
@@ -273,10 +289,12 @@ class Edit extends AbstractController
 
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+  </td>
+  <td>
+    
+```php
 class Edit extends Action
 {
     public function __constructor(
@@ -292,9 +310,10 @@ class Edit extends Action
     }
 }
 
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 
@@ -323,7 +342,8 @@ class Edit extends Action
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
 echo $url->get('custom/path'); // prints full URL
@@ -334,10 +354,11 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 
 // Method with out parameters that doesn’t return anything could be sign of temporal coupling.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+  </td>
+  <td>
+    
+```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
 
@@ -347,9 +368,10 @@ echo $url->get($baseUrl, 'custom/path');
 
 // Only one way to use API, no temporal coupling.
 
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -363,7 +385,8 @@ echo $url->get($baseUrl, 'custom/path');
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 class Edit extends Action
 {
     public function execute()
@@ -383,10 +406,12 @@ class View extends Template
     }
 }
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+   </td>
+   <td>
+    
+```php
 class Edit extends Action
 {
     public function execute()
@@ -407,7 +432,7 @@ class View extends Template
 }
 // More flexible, no dependencies between classes, no temporal coupling.
 
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -669,7 +694,7 @@ We are reviewing this section and will publish it soon.
 14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+```php
 class SampleEventObserverThatModifiesInputs
 {
     /**

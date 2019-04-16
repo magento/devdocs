@@ -60,7 +60,7 @@ Description | The Champ Tee keeps you cool and dry while you do your thing. Let 
 
  **Endpoint**
 
- ``` html
+ ```html
 GET <host>/rest/<store_code>/V1/eav/attribute-sets/list?
 searchCriteria[filter_groups][0][filters][0][field]=attribute_set_name&
 searchCriteria[filter_groups][0][filters][0][value]=Top&
@@ -71,7 +71,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 
  The `attribute_set_id` for the Top attribute set is `9`.
 
- ``` json
+ ```json
 {
     "items": [
         {
