@@ -91,13 +91,13 @@ __Step 1.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}P
  
 __Step 2.__ Extend your class from the [default element](#basic_class) or the [Magento custom element](#magento_class) class
 
-``` php?start_inline=1 
+```php 
 class OptgroupselectElement extends SelectElement
 ```
 
 __Step 3.__ Redefine methods of the extended class according to your goals
 
-``` php?start_inline=1
+```php
 /**
  * Option group locator
  *
@@ -126,7 +126,7 @@ public function setValue($value)
 Typified elements are used in the [FTF blocks][].
 Use a `find()` method to find an element. This method is declared in the [SimpleElement][] class:
 
-``` php?start_inline=1
+```php
 /**
  * Find element using locator in context of current element
  *
@@ -143,7 +143,7 @@ public function find($selector, $strategy = Locator::SELECTOR_CSS, $type = null)
 
 The following code is an example of the `find()` method usage from the [\Magento\Catalog\Test\Block\Adminhtml\Category\Tree][] block:
 
-``` php?start_inline=1
+```php
 /**
  * Check category in category tree
  *

@@ -42,7 +42,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 The payload contains the shipping address.
 
 {% collapsible Show code sample %}
-``` json
+```json
 {  "address": {
       "region": "New York",
       "region_id": 43,
@@ -69,7 +69,7 @@ The payload contains the shipping address.
 Note that the cost for the `flatrate` shipping method is $15. The Sprite Yoga Companion Kit bundled product counts as one item. The Advanced Pilates & Yoga item does not have a shipping charge because the customer downloads this item.
 
 {% collapsible Show code sample %}
-``` json
+```json
 
 [
     {
@@ -119,7 +119,7 @@ Magento returns a list of payment options and calculates the order totals.
 **Payload**
 
 {% collapsible Show code sample %}
-``` json
+```json
 
 {  "addressInformation": {
 	  "shipping_address": {
@@ -166,7 +166,7 @@ The subtotal of the order is $160, and shipping charges are $5. The grand total 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} in the next step.
 
 {% collapsible Show code sample %}
-``` json
+```json
 
 {
     "payment_methods": [
