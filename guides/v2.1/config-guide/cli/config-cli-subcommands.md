@@ -29,7 +29,7 @@ You can run the commands in any of the following ways:
 
 ## Command summary {#config-cli-summary}
 
-The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
+The following table summarizes some of the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 {:.bs-callout .bs-callout-info}
 Before you run any of these commands, you must either [install the Magento application]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [enable some modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
@@ -47,7 +47,7 @@ Before you run any of these commands, you must either [install the Magento appli
 |[`magento dev:tests:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)|Runs automated tests|
 |[`magento dev:xml:convert`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)|Update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet|
 |[`magento setup:perf:generate-fixtures`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)|Generate data to use for performance testing.|
-|[`magento sampledata:install`]({{ page.baseurl }}/install-gde/install/sample-data.html#instgde-install-sample-enable-after)|Installs optional Magento sample data after you install the Magento application.<br><br>For more details about Magento sample data, see [Optional Magento sample data]({{ page.baseurl }}/install-gde/install/sample-data.html).|
+|[`magento sampledata:install`]({{ page.baseurl }}/install-gde/install/sample-data.html)|Installs optional Magento sample data after you install the Magento application.<br><br>For more details about Magento sample data, see [Optional Magento sample data]({{ page.baseurl }}/install-gde/install/sample-data.html).|
 
 ## Help commands {#config-cli-help}
 {% include install/cli_help-commands.md %}

@@ -38,28 +38,28 @@ A simple example:
 
 To retrieve the context within markup, you can also use the instance of Knockout:
 
-At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{ page.baseurl }}/javascript-dev-guide/javascript/requirejs_concept.html) `knockout`.
+At first we need to get a Knockout instance from the browser console. To do so, use the [RequireJS ID]({{ page.baseurl }}/javascript-dev-guide/javascript/js-resources.html) `knockout`.
 
-{%highlight js%}
+```javascript
 var ko = require('knockout');
-{%endhighlight%}
+```
 
 Now we have Knockout instance in the `ko` variable. We can use it to get a context of any DOM element.
 
-{%highlight js%}
+```javascript
 var context = ko.contextFor($0);
-{%endhighlight%}
+```
 
 , where `$0` is a [special variable](https://developers.google.com/web/tools/chrome-devtools/debug/command-line/command-line-reference#section-1) in browser console. It contains a link to a DOM element that is last inspected.
 
 For example:
-{%highlight js%}
+```javascript
 // Admin > Products > Catalog > Add Product
 // Inspect "Product Name"
 var fieldName = ko.contextFor($0).$data;
 
 console.log(fieldName.name); // product_form.product_form.product-details.container_name.name
-{%endhighlight%}
+```
 
 ## See also
 

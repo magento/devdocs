@@ -56,19 +56,23 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 6. Update the database schema and data:
 
-        php bin/magento setup:upgrade
+        bin/magento setup:upgrade
 
 7. Compile the code:
 
-        php bin/magento setup:di:compile
+        bin/magento setup:di:compile
 
 8. Deploy static content:
 
-        php bin/magento setup:static-content:deploy
+        bin/magento setup:static-content:deploy
+
+9. Clean the cache:
+
+        bin/magento cache:clean
 
 9. Exit maintenance mode:
 
-        php bin/magento maintenance:disable
+        bin/magento maintenance:disable
 
 ## Alternative deployment strategies
 
@@ -95,4 +99,4 @@ In Magento 2.2, a near-zero downtime deployment model will be available for a va
 [8]: {{ page.baseurl }}/install-gde/composer.html
 [9]: {{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html
 [10]: {{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
-[11]: {{ site.baseurl }}/community/resources/#installdeploy
+[11]: {{ site.baseurl }}/community/resources/resources.html#installdeploy

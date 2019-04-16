@@ -35,11 +35,11 @@ The public method `getSectionData` must return an array with data for private bl
 
 Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (`di.xml`):
 
-``` xml
+```xml
 <type name="Magento\Customer\CustomerData\SectionPoolInterface">
     <arguments>
         <argument name="sectionSourceMap" xsi:type="array">
-            <item name="compare-products" xsi:type="string">Magento\Catalog\CustomerData\CompareProducts</item>
+            <item name="custom-name" xsi:type="string">Vendor\ModuleName\CustomerData\ClassName</item>
         </argument>
     </arguments>
 </type>
@@ -56,7 +56,7 @@ Replace private data in blocks with placeholders (using [Knockout](http://knocko
 
 Initialize the component as follows:
 
-``` html
+```html
 <script type="text/x-magento-init">
     {"<css-selector>": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
 </script>
@@ -80,7 +80,7 @@ Specify actions that trigger cache invalidation for private content blocks in a 
 
 The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2000url }}app/code/Magento/Catalog/etc/frontend/sections.xml){:target="_blank"} to show you what the code is doing.
 
-``` xml
+```xml
 <?xml version="1.0"?>
 <!--
 /**
@@ -111,9 +111,9 @@ Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping ca
 
 Other examples:
 
--   [Checkout]({{ site.mage2000url }}app/code/Magento/Checkout/etc/frontend/sections.xml){:target="_blank"}
+- [Checkout]({{ site.mage2000url }}app/code/Magento/Checkout/etc/frontend/sections.xml){:target="_blank"}
 
--   [Customer]({{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/sections.xml){:target="_blank"}
+- [Customer]({{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/sections.xml){:target="_blank"}
 
 ## Version private content {#config-priv-vers}
 
@@ -121,12 +121,12 @@ Private content, which is stored in the browser local storage, uses the `private
 
 Versioning works as follows:
 
-1.  The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.
-2.  The server generates the `private_content_version` cookie for this user and returns the response to the browser.
-3.  {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} interprets the presence of the `private_content_version` cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.
-4.  The server's reply is cached in the browser's local storage.
+1. The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.
+2. The server generates the `private_content_version` cookie for this user and returns the response to the browser.
+3. {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} interprets the presence of the `private_content_version` cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.
+4. The server's reply is cached in the browser's local storage.
 
     Subsequent requests with the same data version are retrieved from local storage.
-5.  Any future HTTP POST or PUT request changes the value of `private_content_version` and results in the updated content being cached by the browser.
+5. Any future HTTP POST or PUT request changes the value of `private_content_version` and results in the updated content being cached by the browser.
 
 {% include cache/page-cache-checklists.md%}

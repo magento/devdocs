@@ -93,7 +93,7 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation after` to the class annotation, for example:
 
-``` php?start_inline=1
+```php
 /**
  * ...
  * @isolation after
@@ -109,7 +109,7 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation test after` to the class annotation, for example:
 
-``` php?start_inline=1
+```php
 /**
  * ...
  * @isolation test after
@@ -126,7 +126,7 @@ Example test: `test()`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`
 - Add `* @isolation before` to the `test()` method annotation, for example:
 
-``` php?start_inline=1
+```php
 
     /**
      * ...
@@ -144,7 +144,7 @@ Example test: `test()`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation before` to the class annotation and `* @isolation after` to the `test()` method annotation, for example:
 
-``` php?start_inline=1
+```php
 /**
  * ...
  * @isolation before
@@ -167,7 +167,7 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation none` to the class annotation, for example:
 
-``` php?start_inline=1
+```php
 /**
  * ...
  * @isolation none
@@ -184,7 +184,7 @@ Example test: `test()`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
 - Add `* @isolation none` to the `test()` method annotation, for example:
 
-``` php?start_inline=1
+```php
 
     /**
      * ...

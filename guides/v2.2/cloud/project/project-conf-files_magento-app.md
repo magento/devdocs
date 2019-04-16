@@ -12,7 +12,7 @@ functional_areas:
 
 The `.magento.app.yaml` file controls the way your application builds and deploys. Although {{site.data.var.ece}} supports multiple applications per project, typically, a project has a single application with the `.magento.app.yaml` file at the root of the repository.
 
-The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Make sure to review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
+The `.magento.app.yaml` has many default values, see [a sample `.magento.app.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml). Always review the `.magento.app.yaml` for your installed version. This file can differ across {{site.data.var.ece}} versions.
 
 {% include cloud/note-pro-using-yaml.md %}
 
@@ -79,21 +79,23 @@ The `web` property defines how your application is exposed to the web (in HTTP).
 
 You can specify the following attributes for the `web` property:
 
--  `document_root`: The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
--  `passthru`: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often `/index.php` or `/app.php`.
--  `index_files`: To use a static file (for example, `index.html`) to serve your application. This key expects a collection. For this to work, the static file(s) should be included in your whitelist. For example, to use a file named `index.html` as an index file, your whitelist should include an element that matches the filename, like `- \.html$`.
--  `blacklist`: A list of files that should never be executed. Has no effect on static files.
--  `whitelist`: A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
--  `expires`: The number of seconds whitelisted (that is, static) content should be cached by the browser. This enables the cache-control and expires headers for static content. The `expires` directive and resulting headers are left out entirely if this is not set.
+Attribute | Description
+--------- | -----------
+`document_root` | The path relative to the root of the application that is exposed on the web. Typical values include `/public` and `/web`.
+`passthru` | The URL used in the event that a static file or PHP file cannot be found. This URL is typically the front controller for your applications, often `/index.php` or `/app.php`.
+`index_files` | Static files, such as `index.html`, to serve your application. This key expects a collection. You must include the static file(s) in the whitelist as an index file, like `- \.html$`.
+`blacklist` | A list of files that should never be executed. Has no effect on static files.
+`whitelist` | A list of static files (as regular expressions) that can be served. Dynamic files (for example, PHP files) are treated as static files and have their source code served, but they are not executed.
+`expires` | The number of seconds to cache whitelisted content in the browser. This attribute enables the cache-control and expires headers for static content. If this value is not set, the `expires` directive and resulting headers are not included when serving static content files.
 
-Contrary to standard `.htaccess` approaches, which accept a *blacklist* and allow everything to be accessed except a specific list, we accept a *whitelist*, which means that anything not matched will trigger a 404 error and will be passed through to your `passthru` URL.
+Contrary to standard `.htaccess` approaches that accept a _blacklist_ and allow access to everything not on a specific list, we accept a _whitelist_, which means that any request that does not match triggers a 404 error and passes through to the  URL specified by the `passthru` attribute.
 
 Our default configuration allows the following:
 
--  From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
--  From the `/pub/static` and `/pub/media` paths, any file can be accessed
+-  From the root (`/`) path, only web and media can be accessed
+-  From the `~/pub/static` and `~/pub/media` paths, any file can be accessed
 
-The following displays the default set of web accessible locations associated with an entry in [`mounts`](#mounts):
+The following example shows the default configuration for a set of web-accessible locations associated with an entry in the  [`mounts` property](#mounts):
 
 ```yaml
  # The configuration of app when it is exposed to the web.
@@ -112,21 +114,24 @@ web:
             rules:
                 \.(css|js|map|hbs|gif|jpe?g|png|tiff|wbmp|ico|jng|bmp|svgz|midi?|mp?ga|mp2|mp3|m4a|ra|weba|3gpp?|mp4|mpe?g|mpe|ogv|mov|webm|flv|mng|asx|asf|wmv|avi|ogx|swf|jar|ttf|eot|woff|otf|html?)$:
                     allow: true
-                /robots\.txt$:
-                    allow: true
+                ^/sitemap(.*)\.xml$:
+                    passthru: "/media/sitemap$1.xml"
         "/media":
             root: "pub/media"
             allow: true
             scripts: false
-            passthru: "/index.php"
+            expires: 1y
+            passthru: "/get.php"
         "/static":
             root: "pub/static"
             allow: true
             scripts: false
+            expires: 1y
             passthru: "/front-static.php"
             rules:
                 ^/static/version\d+/(?<resource>.*)$:
                     passthru: "/static/$resource"
+
 ```
 
 ### `disk`
@@ -137,7 +142,7 @@ disk: 2048
 ```
 
 {:.bs-callout .bs-callout-info}
-The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB." %}
+The minimal recommended disk size is 256MB. If you see the error `UserError: Error building the project: Disk size may not be smaller than 128MB`, increase the size to 256MB.
 
 ### `mounts`
 An object whose keys are paths relative to the root of the application. The mount is a writable area on the disk for files. The following is a default list of mounts configured in the `magento.app.yaml` file using the `volume_id[/subpath]` syntax:
@@ -189,7 +194,7 @@ nodejs:
 ### `hooks`
 Use the `hooks` section to run shell commands during the build, deploy, and post-deploy phases:
 
--   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command to make sure custom-generated content makes it to the deployment phase.
+-   **`build`**—Execute commands _before_ packaging your application. Services, such as the database or Redis, are not available at this time since the application has not been deployed yet. You must add custom commands _before_ the default `php ./vendor/bin/ece-tools` command so that custom-generated content continues to the deployment phase.
 -   **`deploy`**—Execute commands _after_ packaging and deploying your application. You can access other services at this point. Since the default `php ./vendor/bin/ece-tools` command copies the `app/etc` directory to the correct location, you must add custom commands _after_ the deploy command to prevent custom commands from failing.
 -   **`post_deploy`**—Execute commands _after_ deploying your application and _after_ the container begins accepting connections. The `post_deploy` hook clears the cache and preloads (warms) the cache. You can customize the list of pages using the `WARM_UP_PAGES` variable in the [Post-deploy stage]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-post-deploy.html). It is available only for Pro projects that contain [Staging and Production environments in the Project Web UI]({{ page.baseurl }}/cloud/trouble/pro-env-management.html) and for Starter projects. Although not required, this works in tandem with the `SCD_ON_DEMAND` environment variable.
 
@@ -214,11 +219,13 @@ Also, you can customize the build phase further by using the `generate` and `tra
 hooks:
     # We run build hooks before your application has been packaged.
     build: |
+        set -e
         php ./vendor/bin/ece-tools build:generate
         # php /path/to/your/script
         php ./vendor/bin/ece-tools build:transfer
 ```
 
+-  `set -e`—causes hooks to fail on the first failed command, instead of the final failed command.
 -  `build:generate`—applies patches, validates configuration, generates DI, and generates static content if SCD is enabled for build phase.
 -  `build:transfer`—transfers generated code and static content to the final destination.
 
@@ -252,7 +259,7 @@ Describes processes that are triggered on a schedule. We recommend you run `cron
 -  `spec`—The cron specification. For Starter environments and Pro Integration environments, the minimum interval is once per five minutes and once per one minute in Pro Staging and Production environments. You need to complete [additional configurations]({{ page.baseurl }}/cloud/configure/setup-cron-jobs.html#add-cron) for crons in those environments.
 -  `cmd`—The command to execute.
 
-A Cron job is well suited for the following tasks:
+A cron job is well suited for the following tasks:
 
 -  They need to happen on a fixed schedule, not continually.
 -  The task itself is not especially long, as a running cron job will block a new deployment.

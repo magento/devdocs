@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Menu widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_menu.html
 ---
 ## Overview
 
@@ -56,3 +55,37 @@ The Magento menu widget has all default [jQuery UI menu widget] methods and even
 [lib/web/mage/menu.js]: {{site.mage2000url}}lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [jQuery UI menu widget]: http://api.jqueryui.com/menu/
+
+## Code Sample {#menu_code_sample}
+
+The following example shows how to initialize the widget and pass options during the initialization.
+
+```html
+<nav class="navigation" data-action="navigation">
+    <ul id="menu" data-mage-init='{"menu":{"responsive":true, "expanded":true, "delay": 200, "position":{"my":"left top","at":"left+10 top+30"}}}'>
+        <li class="level0 level-top ui-menu-item">Toys</li>
+        <li class="level0 level-top parent ui-menu-item">Electronics
+            <ul class="level0 submenu ui-menu ui-widget ui-widget-content ui-corner-all">
+                <li class="ui-menu-item"><a href="#">Home Entertainment</a></li>
+                <li class="ui-menu-item"><a href="#">Routers</a></li>
+            </ul>
+        </li>
+        <li class="level0 level-top ui-menu-item">Music
+            <ul class="level0 submenu ui-menu ui-widget ui-widget-content ui-corner-all">
+                <li class="ui-menu-item">
+                    <a href="#">Alternative</a>
+                </li>
+                <li class="ui-menu-item">
+                    <a href="#">Classic</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+```
+
+### Result
+
+The result is a menu with the child items, as shown here:
+
+![Menu Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/menu-widget-result.png)

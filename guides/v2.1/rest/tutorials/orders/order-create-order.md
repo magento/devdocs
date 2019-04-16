@@ -26,7 +26,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/payment-information`
+`POST <host>/rest/<store_code>/V1/carts/mine/payment-information`
 
 **Headers**
 
@@ -37,8 +37,8 @@ When you submit payment information, Magento creates an order and sends an order
 **Payload**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
 	"paymentMethod": {
     	    	"method": "banktransfer"
@@ -57,7 +57,8 @@ When you submit payment information, Magento creates an order and sends an order
     	    	"lastname": "Doe"
 	 }
 }
-{% endhighlight %}
+```
+
 {% endcollapsible %}
 
 **Response**
@@ -70,7 +71,7 @@ When you request an order object, the response contains full details about the o
 
 **Endpoint**
 
-`GET http://<host>/rest/default/V1/orders/3`
+`GET <host>/rest/<store_code>/V1/orders/3`
 
 where `3` is the `orderid`
 
@@ -87,8 +88,8 @@ Not applicable
 **Response**
 
 {% collapsible Show code sample %}
-{% highlight json %}
 
+```json
 {
     "applied_rule_ids": "1",
     "base_currency_code": "USD",
@@ -1569,8 +1570,8 @@ Not applicable
         ]
     }
 }
+```
 
-{% endhighlight %}
 {% endcollapsible %}
 
 ### Verify this step {#verify-step}

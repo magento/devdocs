@@ -5,7 +5,6 @@ title: Package a component
 menu_title: Package a component
 menu_order: 2
 redirect_from:
-  - /guides/v1.0/extension-dev-guide/package_module.html
   - /guides/v2.0/extension-dev-guide/package_module.html
 ---
 
@@ -49,7 +48,7 @@ We recommend metapackages refer to specific component versions. Do not use wildc
 The following example is a `composer.json` for a metapackage:
 
 
-{% highlight JSON %}
+```json
 
 {
     "name": "magento/product-community-edition",
@@ -91,13 +90,13 @@ The following example is a `composer.json` for a metapackage:
 }
 
 
-{% endhighlight %}
+```
 
 ### Sample composer.json file
 
 The following example is a `composer.json` file for a module:
 
-{% highlight JSON %}
+```json
 {
   "name": "magento/sample-module-newpage",
   "description": "A Magento 2 module that creates a new page",
@@ -119,7 +118,7 @@ The following example is a `composer.json` file for a module:
   }
 }
 
-{% endhighlight %}
+```
 
 ## Package and publish your extension {#packaging}
 
@@ -162,7 +161,7 @@ If you use the Setup Wizard, you must use the Magento Marketplace repository. A 
 3. Submit/register the package on your own repository. For example, it can be hosted as a reference to a code repository or submitted as a zip-archive.
 4. To use the private packaging repository in a project, add the following to your `composer.json`file:
 
-{% highlight JSON %}
+```json
 
 {
     "repositories": [
@@ -172,7 +171,7 @@ If you use the Setup Wizard, you must use the Magento Marketplace repository. A 
         }
     ]
 }
-{% endhighlight %}
+```
 
 All packages on the private repository can now be referenced within the `require` field.
 

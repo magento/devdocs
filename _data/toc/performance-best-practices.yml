@@ -2,7 +2,7 @@ label: Performance Best Practices
 include_versions: ["2.2", "2.3"]
 pages:
     - label: Introduction
-      url: /performance-best-practices/index.html
+      url: /performance-best-practices/introduction.html
 
     - label: Hardware recommendations
       url: /performance-best-practices/hardware.html

@@ -182,7 +182,7 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.text_field</item>
-                    <item name="label" xsi:type="string">Text Field</item>
+                    <item name="label" xsi:type="string" translate="true">Text Field</item>
                     <item name="sortOrder" xsi:type="string">1</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="string">true</item>
@@ -198,7 +198,7 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.checkbox_field</item>
-                    <item name="label" xsi:type="string">Checkbox Field</item>
+                    <item name="label" xsi:type="string" translate="true">Checkbox Field</item>
                     <item name="sortOrder" xsi:type="string">3</item>
                 </item>
                 <item name="select_field" xsi:type="array">
@@ -211,15 +211,15 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="options" xsi:type="array">
                         <item name="0" xsi:type="array">
-                            <item name="label" xsi:type="string">Please select value</item>
+                            <item name="label" xsi:type="string" translate="true">Please select value</item>
                             <item name="value" xsi:type="string"></item>
                         </item>
                         <item name="1" xsi:type="array">
-                            <item name="label" xsi:type="string">Value 1</item>
+                            <item name="label" xsi:type="string" translate="true">Value 1</item>
                             <item name="value" xsi:type="string">value_1</item>
                         </item>
                         <item name="2" xsi:type="array">
-                            <item name="label" xsi:type="string">Value 2</item>
+                            <item name="label" xsi:type="string" translate="true">Value 2</item>
                             <item name="value" xsi:type="string">value_2</item>
                         </item>
                     </item>
@@ -227,7 +227,7 @@ The following code sample shows configuration of the form that contains four fie
                     <item name="value" xsi:type="string">value_2</item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.select_field</item>
-                    <item name="label" xsi:type="string">Select Field</item>
+                    <item name="label" xsi:type="string" translate="true">Select Field</item>
                     <item name="sortOrder" xsi:type="string">2</item>
                 </item>
                 <item name="date_field" xsi:type="array">
@@ -240,7 +240,7 @@ The following code sample shows configuration of the form that contains four fie
                     </item>
                     <item name="provider" xsi:type="string">checkoutProvider</item>
                     <item name="dataScope" xsi:type="string">customCheckoutForm.date_field</item>
-                    <item name="label" xsi:type="string">Date Field</item>
+                    <item name="label" xsi:type="string" translate="true">Date Field</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="string">true</item>
                     </item>
@@ -253,7 +253,7 @@ The following code sample shows configuration of the form that contains four fie
 
 ### Dynamically defined forms {#dynamic_form}
 
-Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the **Admin > Stores > Configuration > Customers > Customer Configuration > Name and Address Options**.
+Dynamically defined, or dynamic, forms are the forms where the set or type of fields can change. For example, the fields displayed on the checkout form depend on the Admin settings: depending on the **Admin > Stores > Settings > Configuration > Customers > Customer Configuration > Name and Address Options**.
 
 For such forms, you must implement a [plugin]({{ page.baseurl }}/extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method.
 A plugin can add custom fields definitions to layout at run-time. The format of the field definition is the same as for fields defined in layout.

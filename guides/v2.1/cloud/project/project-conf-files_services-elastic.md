@@ -1,12 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Set up Elasticsearch service
-menu_title: Set up Elasticsearch service
-menu_order: 70
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: services
 functional_areas:
   - Cloud
   - Setup
@@ -20,10 +14,10 @@ functional_areas:
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until the reindex operation completes
 
-We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more. For {{site.data.var.ece}} 2.0.X, you can use [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html).
+We support Elasticsearch versions 1.4, 1.7, and 2.4. The recommended version is 2.4. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more.
 
 {:.bs-callout .bs-callout-info}
-If you're upgrading to Magento Commerce 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
+If you are upgrading to {{site.data.var.ee}} 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
 
 {:.bs-callout .bs-callout-warning}
 If you prefer using an existing search service, like Elasticsearch, instead of relying on {{site.data.var.ece}} to create it for you, use the [`SEARCH_CONFIGURATION`]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#search_configuration) environment variable to connect it to your site.
@@ -36,7 +30,7 @@ To enable Elasticsearch, add the following code with your installed version and 
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:1.7
+   type: elasticsearch:2.4
    disk: 1024
 ```
 
@@ -55,24 +49,12 @@ Optionally, you can add the plugins through the `.magento/services.yaml` file. F
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:1.7
-   disk: 1024
-   configuration:
-    plugins:
-      - analysis-icu
-      - lang-python
-```
-
-For example, if you are using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), you should add the following plugins:
-
-```yaml
-elasticsearch:
    type: elasticsearch:2.4
    disk: 1024
    configuration:
     plugins:
       - analysis-icu
-      - analysis-phonetic
+      - lang-python
 ```
 
 The following are supported Elasticsearch plugins for version 2.4:
@@ -93,11 +75,12 @@ The following are supported Elasticsearch plugins for version 2.4:
 * `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 * `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-If using [Smile ElasticSuite](https://github.com/Smile-SA/elasticsuite), the required plugins are `analysis-icu` and `analysis-phonetic`. Make sure to add these to the plugins section of `services.yaml.` See [Add Elasticsearch plugins](#addplugins).
+{:.bs-callout .bs-callout-info}
+Magento does not support the ElasticSuite third-party plugin.
 
-For full documentation on these plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
+For documentation on plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
 
-## Verify environment-related relationships {#cloud-es-config-mg}
+## Verify relationships
 
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
@@ -111,7 +94,7 @@ To verify this information used for configurations and settings:
 
         php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
 
-The response includes all relationships for services and configuration data for that environment. In the response, you will locate data similar to the following for Elasticsearch:
+The response includes all relationships for services and configuration data for that environment. In the response, you can locate data similar to the following for Elasticsearch:
 
 ```
 "elasticsearch" : [
@@ -122,7 +105,8 @@ The response includes all relationships for services and configuration data for 
          "port" : "9200"
       }
    ],
-```{: .no-copy}
+```
+{: .no-copy}
 
 ## Configure Elasticsearch for your site {#configure}
 

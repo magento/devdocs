@@ -6,8 +6,8 @@ menu_order: 1
 menu_node: parent
 ---
 
-The following pages contain links to license agreements of the third-party components used by Magento Community Edition (CE) and Enterprise Edition (EE).
+ The following pages contain links to license agreements of the third-party components used by {{ site.data.var.ce }} and {{ site.data.var.ee }}.
 
-*	[Magento Open Source third-party licenses]({{ page.baseurl }}/release-notes/thirdparty_ce.html)
-*	[Magento Commerce third-party licenses]({{ page.baseurl }}/release-notes/thirdparty_ee.html)
-*	[Magento Commerce (Cloud) third-party licenses]({{ page.baseurl }}/release-notes/thirdparty-mccloud.html)
+*	[Magento Open Source third-party licenses]({{ page.baseurl }}/release-notes/packages-open-source.html)
+*	[Magento Commerce third-party licenses]({{ page.baseurl }}/release-notes/packages-commerce.html)
+*	[Magento Commerce Cloud third-party licenses]({{ page.baseurl }}/release-notes/packages-cloud.html)

@@ -53,7 +53,9 @@ Use [RFC2119] to interpret keywords like:
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
+            
 class Config
 {
     private $data;
@@ -68,10 +70,13 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+
+```
+
+   </td>
+   <td>
+        
+```php
 class Config
 {
     private $data;
@@ -85,9 +90,11 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 ---
@@ -98,7 +105,8 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+
+```php
 class Composite
 {
     /**
@@ -136,8 +144,9 @@ class Composite
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+      <td>
+          
+```php
 
 class Config
 {
@@ -149,10 +158,12 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+ </td>
+ <td>
+  
+```php
 class Config
 {
     private $fileReader;
@@ -174,9 +185,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -193,7 +205,8 @@ class Config
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 interface SessionAdapterInterface
 {}
 
@@ -207,10 +220,11 @@ class SessionManager
 }
 
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td>
+    
+```php
 interface SessionAdapterInterface
 {}
 
@@ -222,9 +236,10 @@ class SessionManager
     public function __construct(SessionAdapterInterface $sessionAdapter)
     {}
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -241,7 +256,8 @@ class SessionManager
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 class AbstractController extends Action
 {
     // ...
@@ -273,10 +289,12 @@ class Edit extends AbstractController
 
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+  </td>
+  <td>
+    
+```php
 class Edit extends Action
 {
     public function __constructor(
@@ -292,9 +310,10 @@ class Edit extends Action
     }
 }
 
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 
@@ -323,7 +342,8 @@ class Edit extends Action
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
 echo $url->get('custom/path'); // prints full URL
@@ -334,10 +354,11 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 
 // Method with out parameters that doesn’t return anything could be sign of temporal coupling.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+  </td>
+  <td>
+    
+```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
 
@@ -347,9 +368,10 @@ echo $url->get($baseUrl, 'custom/path');
 
 // Only one way to use API, no temporal coupling.
 
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -363,7 +385,8 @@ echo $url->get($baseUrl, 'custom/path');
     </tr>
     <tr>
         <td>
-{% highlight php %}
+            
+```php
 class Edit extends Action
 {
     public function execute()
@@ -383,10 +406,12 @@ class View extends Template
     }
 }
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+   </td>
+   <td>
+    
+```php
 class Edit extends Action
 {
     public function execute()
@@ -407,7 +432,7 @@ class View extends Template
 }
 // More flexible, no dependencies between classes, no temporal coupling.
 
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -513,6 +538,8 @@ class View extends Template
 6.2.3. All actions MUST return the `ResultInterface` implementation.
 
 6.2.4. Actions MUST NOT reference blocks declared in layout.
+
+6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area. This includes events and plugins that customize the presentation layer.
 
 ###  6.3. Data Access (Persistence) layer
 
@@ -667,7 +694,7 @@ We are reviewing this section and will publish it soon.
 14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+```php
 class SampleEventObserverThatModifiesInputs
 {
     /**
@@ -694,6 +721,82 @@ class SampleEventObserverThatModifiesInputs
 
 {:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
+
+## 15. Security
+
+15.1. Use prepared statements for SQL queries.
+
+15.2. Broken Authentication protection.
+
+15.2.1. Where possible, implement multi-factor authentication to prevent automated, credential stuffing, brute force, and stolen credential re-use attacks.
+
+15.2.2. Do not ship or deploy with any default credentials, particularly for admin users.
+
+15.2.3. Implement weak-password checks, such as testing new or changed passwords against a list of the [top 10000 worst passwords](https://github.com/danielmiessler/SecLists/tree/master/Passwords).
+
+15.2.4. Align password length, complexity, and rotation policies with [NIST 800-63 B's guidelines in section 5.1.1 for Memorized Secrets](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecret) or other modern, evidence-based password policies.
+
+15.2.5. Ensure registration, credential recovery, and API pathways are hardened against account enumeration attacks by using the same messages for all outcomes.
+
+15.2.6. Limit or increasingly delay failed login attempts. Log all failures and alert administrators when credential stuffing, brute force, or other attacks are detected.
+
+15.2.7. Use a server-side, secure, built-in session manager that generates a new random session ID with high entropy after login. Session IDs should not be in the URL, be securely stored and invalidated after logout, idle, and absolute timeouts.
+
+15.3. Cross-Site Scripting (XSS) protection.
+
+15.3.1. Sanitize input; escape output.
+
+15.3.2. Follow [templates XSS security guidelines]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html) for escaping output.
+
+15.3.3. Incoming data should be casted to the expected type. String data should be validated/sanitized.
+
+15.3.4. Incoming string data length should be checked.
+
+15.3.5. Special characters, like null byte characters, should be dropped from Incoming string data.
+
+15.4. A module that introduces Admin Panel functionality should have ACL.
+
+15.5. Misconfiguration protection.
+
+15.5.1. Do not include/require unused libraries/frameworks.
+
+15.5.2. A segmented application architecture that provides effective, secure separation between components or tenants, with segmentation, containerization, or cloud security groups (ACLs).
+
+15.5.3. Sending security directives to clients, e.g. [Security Headers](https://www.owasp.org/index.php/OWASP_Secure_Headers_Project).
+
+15.6. Sensitive Data Exposure protection.
+
+15.6.1. Exceptions/Notices/Warnings should be caught and logged.
+
+15.6.2. Error output should not be displayed to the user. Display standard messages to inform the user.
+
+15.6.3. Logs should not be excessive, e.g. PDO exception contains MySQL credentials that should not be logged.
+
+15.7. Cross-Site Request Forgery (CSRF) protection.
+
+15.7.1. CSRF tokens mechanism should be utilized.
+
+15.7.2. All data manipulation requests should be made with POST requests.
+
+15.8. Frequently update third-party libraries used in the project/component to eliminate known vulnerabilities.
+
+15.9.1. User-submitted requests containing path and file name SHOULD NOT be trusted.
+
+15.9.2. User-submitted path and file values SHOULD be sanitized to remove dot-dot-slash from the request.
+
+15.10. Remote Code Execution (RCE) protection.
+
+15.10.1. `eval()`, `passthru()`, `system()`, `shell_exec()`, `serialize()`, `unserialize()`, `md5()`, `srand()`, `mt_srand()` SHOULD NOT be used.
+
+15.10.2. User-submitted values SHOULD NOT be passed directly to `include*()`, `require*()`, `create_function()`, `fopen()`, `preg_replace()`.
+
+15.10.3. The pattern parameter (first argument) of `preg_replace()` MUST BE escaped with `preg_quote()` if it has a user-submitted value. A user-submitted value can be passed directly as a second parameter, but MUST BE escaped before it is used later in the application.
+
+15.10.4. Variable functions SHOULD NOT be used if the variable values are submitted by the user.
+
+15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
+
+15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 

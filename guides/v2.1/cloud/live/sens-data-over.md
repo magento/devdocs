@@ -85,7 +85,7 @@ The `config.local.php` file includes the following settings and configuration va
 <tbody>
 <tr>
 <th style="width:250px;">Description</th>
-<th>Path in Magento Admin: Stores > Configuration > ...</th>
+<th>Path in Magento Admin: Stores > Settings > Configuration > ...</th>
 </tr>
 <tr>
 <td>Store locale</td>
@@ -124,7 +124,7 @@ Managing store configuration is a complex task mostly up to you. What locales do
 
 We **strongly recommend** using the `scd-dump` command to generate a `config.local.php` file. This file includes only the settings you configure without locking the default values. It also ensures that all extensions used in the Staging and Production environments do not break due to read-only configurations, especially Fastly.
 
-To fully understand the process, please see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
+To fully understand the process, see [our extensive example]({{ page.baseurl }}/cloud/live/sens-data-initial.html).
 
 The **Starter plan** environment high-level overview of this process:
 
@@ -188,7 +188,7 @@ To complete extensive changes:
 
 ## Change locales
 
-You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-intro.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
+You can change your store locales without following a complex configuration import and export process, _if_ you have [SCD_ON_DEMAND]({{ page.baseurl }}/cloud/env/variables-global.html#scd_on_demand) enabled. You can update the locales using the Admin panel.
 
 You can add another locale to the Staging or Production environment by enabling `SCD_ON_DEMAND` in an Integration branch, generate an updated `config.local.php` file with the new locale information, and copy the configuration file to the target environment.
 

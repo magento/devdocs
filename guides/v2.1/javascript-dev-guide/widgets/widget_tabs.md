@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Tabs widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 ## Overview {#fedg_tabs-widget_overview}
@@ -245,6 +244,36 @@ Called before the content is opened.
 ### `dimensionsChanged` {#fedg_tabs_dimensionsChanged}
 Called after content is opened or closed.
 
+## Code sample
+
+The following example shows how to initialize the tabs widget and pass options during the initialization.
+This example uses the same CSS classes as the tabs on the product page.
+
+```html
+<div class="product data items"
+     data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}, "active": 1, "disabled": [2], "disabledState": "disabled"}}'>
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-cars">Cars</a>
+    </div>
+    <div id="tab-cars" class="item content" data-role="content">Cars content</div>
+    
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-movies">Movies</a>
+    </div>
+    <div id="tab-movies" class="item content" data-role="content">Movies content</div>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-music">Music</a>
+    </div>
+    <div id="tab-music" class="item content" data-role="content">Music Content</div>
+</div>
+```
+
+### Result
+
+The result is three tabs with content, where the last tab is disabled based on initialization options, as shown here:
+
+![Tabs Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/tabs-widget-result.png)
 
 [Magento collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [lib/web/mage/tabs.js]: {{site.mage2000url}}lib/web/mage/tabs.js

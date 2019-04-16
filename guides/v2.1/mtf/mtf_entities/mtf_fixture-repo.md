@@ -377,7 +377,7 @@ Let's see the following example of configuration settings for [Authorize.Net mod
 
 ```
 
-Path to the `Authorizenet` UI form in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} is **STORES > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
+Path to the `Authorizenet` UI form in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} is **STORES > Settings > Configuration > SALES > Payment Methods > Authorize.net Direct Post**.
 
 This repository contains two data sets: `authorizenet` that covers seven fields, and `authorizenet_rollback` that covers one field.
 
@@ -481,7 +481,7 @@ After the repository generation
 
 you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
 
-``` php?start_inline=1
+```php
   
 $this->_data['default'] = [
   'firstname' => 'John',

@@ -74,7 +74,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
 
 To set the compilation mode:
 
-1.  In the Magento Admin, navigate to **Stores** > **Configuration** > **Advanced** > **Developer**.
+1.  In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Developer**.
 2.  In the **Store View** dropdown field, select **Default Config**.
 3.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  Click **Save Config**.
@@ -93,11 +93,10 @@ For each CSS file included in the layouts, Less preprocessor:
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
+In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess), and reload the store pages to trigger compilation and publication.
 
 {:.bs-callout .bs-callout-info}
 You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
-
 
 Alternatively, to streamline the process of applying and debugging styles customizations, in server-side compilation mode, you can use the [Grunt JavaScript task runner](http://gruntjs.com/).
 
@@ -105,7 +104,7 @@ See the [Compile Less with Grunt]({{ page.baseurl }}/frontend-dev-guide/css-topi
 
 ### Client-side Less compilation {#client-side}
 
-The client-side compilation flow is similar to the server-side flow. The difference is in the set of files, published to `pub/static` on the [last step](#compile_last). In the client-side mode, these files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
+The client-side compilation flow is similar to the [server-side](#server-side) flow. The difference is in the set of files, published to `pub/static` on the last step. In the client-side mode, these files are published to the `pub/static/frontend/<Vendor>/<theme>/<locale>` directory:
 
 *   Root source (.less) files with resolved `@magento_import` directive
 *   [Symlinks](http://en.wikipedia.org/wiki/Symbolic_link) to the root source file that do not contain `@magento_import`
@@ -155,6 +154,7 @@ If you need to import a remote CSS file in your `.less` source, use `url()` nota
 ```css
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
 ```
+To [include the font]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) in your theme's CSS files, use the `@font-face` CSS rule for the fastest loading time.
 
 In this instance, Magento will skip the `@import` directive while resolving paths to the local resources.
 

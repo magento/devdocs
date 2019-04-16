@@ -50,7 +50,7 @@ When using Vagrant, we also recommend the package [hostmanager](https://github.c
 
 ## Web server (local) {#webserver}
 
-We strongly recommend installing [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) for your web server on your local. While {{site.data.var.ee}} supports [Apache]({{ page.baseurl }}/install-gde/prereq/apache.html), {{site.data.var.ece}} uses Nginx. To have your local as close to cloud installations as possible, install and configure Nginx.
+Although {{ site.data.var.ee }} supports the Apache web server, {{ site.data.var.ece }} uses Nginx. To set up a local development environment that is as close to the cloud installation environment as possible, install and configure [Nginx]({{ page.baseurl }}/install-gde/prereq/nginx.html) as your local web server.
 
 ## PHP (local) {#php}
 
@@ -77,7 +77,7 @@ When you're working with the Magento Cloud CLI, local environment settings come 
 
 To set `memory_limit`:
 
-Before working with your {{site.data.var.ece}} project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+Before working with your {{site.data.var.ece}} project, set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
 1.	Find your `php.ini` file using the following command:
 
@@ -194,7 +194,7 @@ To install the Magento Cloud CLI:
 
 The requirements listed in this topic are specific to {{site.data.var.ece}} environments. You will also install {{site.data.var.ee}} on your VM or Docker container. For that installation, you should also review the following:
 
-* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements2.html)
+* [{{site.data.var.ee}} requirements]({{ page.baseurl }}/install-gde/system-requirements.html)
 * [(Integrator) Integrator installation]({{ page.baseurl }}/install-gde/composer.html)
 
 ## Additional options

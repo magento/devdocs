@@ -46,7 +46,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 
 ```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
             <arguments>
@@ -81,11 +81,12 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
         </referenceBlock>
     </body>
 </page>
+
 ```
 
 ## Add the new component to the checkout page layout {#add}
 
-Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
+Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#checkout).
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
@@ -115,4 +116,4 @@ return $jsLayout;
 If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.
 
 {: .bs-callout .bs-callout-info" }
-Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is not loaded.
+Disable vs remove a component: If you disable a component, it is loaded but not rendered. If you remove a component, it is removed and not loaded.

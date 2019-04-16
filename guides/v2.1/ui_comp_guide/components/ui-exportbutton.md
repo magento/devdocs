@@ -1,8 +1,6 @@
 ---
 group: ui-components-guide
-subgroup: components
 title: ExportButton component
-menu_title: ExportButton component
 ---
 
 The ExportButton component implements the ability to export grid data to the specified data format (cvs, xml, and so on).
@@ -63,9 +61,9 @@ The ExportButton component implements the ability to export grid data to the spe
 
 ### Configure component
 
-To enable the ExportButton сomponent, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
+To enable the ExportButton component, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
 
-{% highlight XML %}
+```xml
 <exportButton name="export_button">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -73,13 +71,13 @@ To enable the ExportButton сomponent, add the `exportButton` element with a `se
         </item>
     </argument>
 </exportButton>
-{% endhighlight %}
+```
 
 ### Use `sales_order_grid.xml`
 
 Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_grid.xml`
 
-{% highlight XML %}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <container name="listing_top">
         <exportButton name="export_button">
@@ -91,7 +89,7 @@ Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_gri
         </exportButton>
     </container>
 </listing>
-{% endhighlight %}
+```
 
 By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} and Excel {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} export data formats.
 
@@ -99,7 +97,7 @@ By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea
 
 To add new export format:
 
-* Add configuration data to ExportButton definition <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
+* Add configuration data to ExportButton definition <a href="{{site.mage2bloburl}}2.1/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml">`Magento/Ui/view/base/ui_component/etc/definition.xml`</a>
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`
 

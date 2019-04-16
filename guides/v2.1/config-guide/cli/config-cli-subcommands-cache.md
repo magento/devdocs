@@ -27,7 +27,7 @@ Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30
 |Integration configuration|config_integration|Compiled integrations.<br><br>Clean or flush this cache after changing or adding integrations.|
 |Integration API configuration|config_integration_api|Compiled integration APIs.|
 |Web services configuration|config_webservice|Web API structure.|
-{:style="table-layout:auto;"}
+
 
 ## View the cache status
 
@@ -84,6 +84,9 @@ To purge out-of-date items from the cache, you can *clean* or *flush* cache type
 -   Cleaning a cache type deletes all items from enabled Magento cache types only. In other words, this option does not affect other processes or applications because it cleans only the cache that Magento uses.
 
     Disabled cache types are not cleaned.
+
+	{:.bs-callout .bs-callout-tip}
+	Always clean the cache after upgrading versions of {{site.data.var.ce}} or {{site.data.var.ee}}, upgrading from {{site.data.var.ce}} to {{site.data.var.ee}}, or installing {{site.data.var.b2b}} or any module.
 
 -   Flushing a cache type purges the cache storage, which might affect other processes applications that are using the same storage.
 

@@ -8,7 +8,6 @@ menu_node: parent
 redirect_from: 
   - /guides/v2.0/architecture/versioning.html
   - /guides/v2.1/architecture/versioning.html
-  - /guides/v2.2/architecture/versioning.html
 ---
 
 Magento software and Magento module releases have their own unique version number.
@@ -51,19 +50,19 @@ The software version can be found in the source code of any {% glossarytooltip 3
 
 It can be declared as the version of the component:
 
-{% highlight JSON %}
+```json
 "name": "acme/foo",
 "version": 1.2.0
-{% endhighlight %}
+```
 
 Or it can be used to declare a dependency on a particular version of a component:
 
-{% highlight JSON %}
+```json
 "require": {
     "acme/foo": "1.2.*",
     "acme/bar": "2.2.0"
 }
-{% endhighlight %}
+```
 
 ### Version usage example
 
@@ -77,7 +76,7 @@ This example uses several composer packages on the public GitHub to simulate a m
 
   This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
 
-{% highlight JSON %}
+```json
 {
   "name": "myexamplestore/sample-site",
   "description": "A sample site",
@@ -87,14 +86,14 @@ This example uses several composer packages on the public GitHub to simulate a m
     "myexamplestore/product-bundle": "2.0.0-RC1"
     }
 }
-{% endhighlight %}
+```
 </li>
 
 <li>Run the <code>composer update</code> command. Core modules a & b are pulled down from the repository.</li>
 
 <li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
 
-{% highlight JSON %}
+```json
 {
   "name": "myexamplestore/sample-site",
   "description": "A sample site",
@@ -105,14 +104,14 @@ This example uses several composer packages on the public GitHub to simulate a m
     "myexamplestore/acme-extension": "~1.0"
     }
 }
-{% endhighlight %}
+```
 </li>
 
 <li>Run <code>composer update</code> and see the new extension downloaded.</li>
 
 <li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
 
-{% highlight JSON %}{
+```json{
   "name": "myexamplestore/sample-site",
   "description": "A sample site",
   "type": "project",
@@ -122,7 +121,7 @@ This example uses several composer packages on the public GitHub to simulate a m
     "myexamplestore/acme-extension": "~1.0"
     }
 }
-{% endhighlight %}
+```
 </li>
 
 <li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
@@ -132,7 +131,7 @@ This example uses several composer packages on the public GitHub to simulate a m
 
 <li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
 
-   {% highlight JSON %}
+  ```json
 {
   "name": "myexamplestore/sample-site",
   "description": "A sample site",
@@ -143,14 +142,14 @@ This example uses several composer packages on the public GitHub to simulate a m
     "myexamplestore/acme-extension": "~1.0"
     }
 }
-{% endhighlight %}
+```
 </li>
 
 <li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
 
 <li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
 
-{% highlight JSON %}
+```json
 {
   "name": "myexamplestore/sample-site",
   "description": "A sample site",
@@ -161,7 +160,7 @@ This example uses several composer packages on the public GitHub to simulate a m
     "myexamplestore/acme-extension": "~2.0"
     }
 }
-{% endhighlight %}
+```
 </li>
 
 <li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>

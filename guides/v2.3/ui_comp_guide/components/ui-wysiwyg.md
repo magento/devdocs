@@ -50,11 +50,9 @@ Wysiwyg-specific options:
     <td><code>ui/form/element/wysiwyg</code></td>
   </tr>
   <tr>
-    <td><code>links</code>
-<li>
-<code>value</code>
-</li>
-</td>
+    <td><div><code>links</code></div>
+        <div><code>value</code></div>
+    </td>
     <td><a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
     <td>Object<br />String</td>
     <td><code>${ $.provider }:${ $.dataScope }</code></td>
@@ -251,6 +249,9 @@ Your form must then use a data provider that inherits from `ModifierPoolDataProv
  */
 namespace Test\Module\Model;
 
+use Magento\Ui\DataProvider\Modifier\PoolInterface;
+use Test\Module\Model\ResourceModel\WysiwygContent\CollectionFactory;
+
 /**
  * Class DataProvider
  */
@@ -260,10 +261,10 @@ class DataProvider extends \Magento\Ui\DataProvider\ModifierPoolDataProvider
         $name,
         $primaryFieldName,
         $requestFieldName,
-        Test\Module\Model\ResourceModel\WysiwygContent\CollectionFactory $collectionFactory,
+        CollectionFactory $collectionFactory,
         array $meta = [],
         array $data = [],
-        \Magento\Ui\DataProvider\Modifier\PoolInterface $pool
+        PoolInterface $pool = null
     ) {
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data, $pool);
         $this->collection = $collectionFactory->create();

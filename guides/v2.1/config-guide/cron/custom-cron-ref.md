@@ -49,7 +49,7 @@ where:
 |`classpath`|Class to be instantiated (classpath).|
 |`method`|Method in `classpath` to call.|
 |`time`|Schedule in [cron format](http://www.nncron.ru/help/EN/working/cron-format.htm). Omit this parameter if the schedule is defined in the Magento database or other storage.|
-{:style="table-layout:auto;"}
+
 
 The resulting `crontab.xml` with two groups may look like this:
 
@@ -108,8 +108,8 @@ where:
 | `history_cleanup_every`    | Time (in minutes) that cron history is kept in the database.                                           |
 | `history_success_lifetime` | Time (in minutes) that the record of successfully completed cron jobs are kept in the database.        |
 | `history_failure_lifetime` | Time (in minutes) that the record of failed cron jobs are kept in the database.                        |
-| `use_separate_process`     | This feature is available only for Magento 2.1 and later.                                              |
-{:style="table-layout:auto;"}
+| `use_separate_process`     | Run this crongroup's jobs in a separate php process                                             |
+
 
 #### Related topic
 [Tutorial&mdash;configure custom cron jobs and cron groups]({{ page.baseurl }}/config-guide/cron/custom-cron-tut.html)

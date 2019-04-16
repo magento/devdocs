@@ -112,7 +112,7 @@ If you are using server-side compilation mode, you must [clean generated static 
 
 1. Navigate to your theme directory and create a `web/css/source/_extend.less` file.
 1. Log in to the Magento Admin.
-1. Click **STORES** > **Configuration** > **ADVANCED** > **Developer** > **Frontend development workflow** > **Workflow type**.
+1. Click **STORES** > **Settings** > **Configuration** > **ADVANCED** > **Developer** > **Frontend development workflow** > **Workflow type**.
 1. Change the Less compilation mode to client-side.
 1. [Clean static view files]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache).
 1. Change the color of the buttons by adding the following code in the `_extend.less` file:
@@ -147,8 +147,8 @@ If you are using server-side compilation mode, you must [clean generated static 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
 {:.bs-callout .bs-callout-info}
-Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html#css_debug_client).
+Simple changes are applied immediately in client-side compilation mode. For more sophisticated changes, you might need to manually clean the theme sub-directory in the `pub/static/frontend` directory. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
 
 
 [create a theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-create.html
-[two compilation modes]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html#Less
+[two compilation modes]: {{page.baseurl}}/frontend-dev-guide/css-topics/css-preprocess.html

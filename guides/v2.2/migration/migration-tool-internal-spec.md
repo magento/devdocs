@@ -17,7 +17,7 @@ Data Migration Tool repository [migration-tool](https://github.com/magento/data-
 
 ### System requirements {#system-requirements}
 
-Same as for [Magento2]({{ site.baseurl }}/guides/v1.0/install-gde/system-requirements.html)
+Same as for [Magento2]({{ page.baseurl }}/install-gde/system-requirements.html).
 
 ## Internal structure {#migrate-is}
 
@@ -111,7 +111,7 @@ The Schema for configuration file `config.xsd` is placed under `etc/directory`. 
 Default configuration file can be replaced by custom one using CLI (see [`--config <value>` parameter]({{ page.baseurl }}/migration/migration-migrate.html)).
 
 Configuration file has the following structure:
-``` xml
+```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="settings">
         <step title="Settings step">
@@ -174,7 +174,7 @@ You can also connect to a database using the TLS protocol (i.e., using public/pr
 
 For example:
 
-``` xml
+```xml
 <source>
     <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </source>
@@ -195,7 +195,7 @@ Steps related classes are located in the src/Migration/Step directory.
 
 To execute a Step class, the class must be defined in config.xml file.
 
-``` xml
+```xml
 <config xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="config.xsd">
     <steps mode="mode_name">
         <step title="Step Name">
@@ -211,7 +211,7 @@ To execute a Step class, the class must be defined in config.xml file.
 
 Every stage class must implement StageInterface.
 
-``` php
+```php
 class StageClass implements StageInterface
 {
   /**
@@ -231,7 +231,7 @@ Visualization of the running step is provided by Symfony's ProgressBar component
 
 Main methods for use are:
 
-``` xml
+```xml
 $this->progress->start();
 $this->progress->advance();
 $this->progress->finish();
@@ -274,7 +274,7 @@ Settings migration mode of this tool is used to transfer following entities:
 
 All store configuration keeps its data in core_config_data table in database. settings.xml file contains rules for this table that are applied during migration process. This file describes settings that should be ignored, renamed or should change their values. settings.xml file has the following structure:
 
-``` xml
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <settings xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="settings.xsd">
     <key>
@@ -301,7 +301,7 @@ Under node <code>&lt;value&gt;</code> there are rules that work with 'value' col
 
 ### Data migration mode
 
-In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If integrity check passed the Data Migration Tool installs deltalog tables (with prefix m2_cl_*) and corresponding triggers to Magento 1 database. And runs data migration stage of steps. When migration is completed without errors the volume check checks data consistency. It can show a warning message if you migrate live store. Do not worry, delta migration will take care of this incremental data. Next the most valuable migration steps are described. It is Map Step, URL Rewrite Step, EAV Step.
+In this mode most of the data will be migrated. Before data migration the integrity check stages run for each step. If the integrity check passes, the Data Migration Tool installs deltalog tables (with prefix `m2_cl_*`) and corresponding triggers to the Magento 1 database and runs data migration stage of steps. When migration is completed without errors, the volume check checks data consistency. It can show a warning message if you migrate the live store. Do not worry, delta migration will take care of this incremental data. The most valuable migration steps are Map, URL Rewrite, and EAV.
 
 #### Map Step
 
@@ -309,7 +309,7 @@ Map step is responsible for transferring most of data from Magento 1 to Magento 
 
 Map file has the next format:
 
-``` xml
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="map.xsd">
     <source>

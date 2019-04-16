@@ -30,7 +30,7 @@ We recommend working in a branch to add the B2B module and features to your impl
 
 ## Add B2B in the cloud {#add}
 
-You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions]({{ site.baseurl }}/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) in the B2B guide.
+You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions]({{ site.baseurl }}/extensions/b2b/) in the B2B guide.
 
 1. Open a terminal application.
 2. Change to your local development environment root directory.
@@ -43,14 +43,14 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
         composer update
 
-    You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, make sure no additional spaces are included. Spaces could cause the following error:
+    You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, do not introduce additional spaces. Spaces could cause the following error:
 
         InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
 
 5. Add the new B2B files to Git:
 
         git add setup dev pub lib && git commit -a -m "b2b"
-5. Enable all missing modules,including B2B, for updating.
+5. Enable all missing modules, including B2B, for updating.
 
         ./vendor/bin/ece-tools module:refresh
 

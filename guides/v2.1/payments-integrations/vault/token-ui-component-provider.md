@@ -16,7 +16,7 @@ The main logic for displaying tokens on checkout page is located in
 [Vault TokensConfigProvider]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to create a token component provider. It should implement the 
 [TokenUiComponentProviderInterface]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
 
-``` php?start_inline=1
+```php
 interface TokenUiComponentProviderInterface
 {
     const COMPONENT_DETAILS = 'details';
@@ -32,7 +32,7 @@ interface TokenUiComponentProviderInterface
 
 The basic implementation of the token {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} provider can be like following:
 
-``` php?start_inline=1
+```php
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 {
     /**
@@ -65,7 +65,7 @@ Having created the component provider, you need to add it to the list of availab
 
 In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvider` component provider is added to this list:
 
-{% highlight xml %}
+```xml
 <type name="Magento\Vault\Model\Ui\TokensConfigProvider">
     <arguments>
         <argument name="tokenUiComponentProviders" xsi:type="array">
@@ -73,7 +73,7 @@ In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvide
         </argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 ## JavaScript component for vault 
 
@@ -81,7 +81,7 @@ In your custom module directory, create the component’s `.js` file. It must be
 
 The component should extend [vault.js]({{ site.mage2100url }}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
-{% highlight javascript %}
+```javascript
 define([
     'Magento_Vault/js/view/payment/method-renderer/vault',
 ], function (VaultComponent) {
@@ -94,7 +94,7 @@ define([
         ...
     });
 });
-{% endhighlight %}
+```
 
 ## What's next
 

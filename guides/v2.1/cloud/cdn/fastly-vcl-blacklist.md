@@ -2,9 +2,6 @@
 group: cloud-guide
 subgroup: 090_configure
 title: Custom blacklist VCL
-menu_title: Custom blacklist VCL
-menu_order:
-menu_node:
 redirect_from:
    - /guides/v2.1/cloud/configure/fastly-vcl-blacklist.html
    - /guides/v2.2/cloud/configure/fastly-vcl-blacklist.html
@@ -31,7 +28,7 @@ Edge ACLs create IP lists for managing access for your VCL snippet. For this exa
 If you want to allow access to Staging and Production, create the Edge ACL in both Magento Admins with the same name. You can have different IPs in the two environments. The VCL snippet code will apply to both environments.
 
 1. Log in to the Magento Admin.
-2. Navigate to **Stores** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
+2. Navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Fastly Configuration**.
 3. Expand the **Edge ACL** section.
 4. Click **Add ACL** to create a list. For this example, name the list "blocklist".
 5. Enter IP values in the list. Any client IPs added to this list will be blocked access from the site.

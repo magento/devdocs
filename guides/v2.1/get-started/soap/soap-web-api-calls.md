@@ -6,7 +6,6 @@ menu_title: Use SOAP Services
 menu_order: 1
 menu_node: parent
 redirect_from:
-  - /guides/v1.0/rest/soap/soap-web-api-calls.html
   - /guides/v2.0/get-started/soap/soap-front.html
 
 ---
@@ -78,7 +77,7 @@ Protected SOAP resources can be accessed using bearer tokens (OAuth access token
 
 The following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script illustrates how to get an access token:
 
-{% highlight php %}
+```php
 <?php
 $opts = array(
             'http'=>array(
@@ -89,10 +88,10 @@ $wsdlUrl = 'http://magento.ll/soap/default?wsdl=1&services=testModule1AllSoapAnd
 $serviceArgs = array("id"=>1);
 
 $context = stream_context_create($opts);
-$soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'context' => $context]);
+$soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'stream_context' => $context]);
 
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
-{% endhighlight %}
+```
 
 ## Related topics {#related}
 

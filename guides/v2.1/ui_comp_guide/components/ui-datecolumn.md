@@ -7,7 +7,7 @@ menu_title: DateColumn component
 
 The DateColumn component implements a table column that displays dates.
 
-## Сonfiguration options
+## Configuration options
 
 <table>
   <tr>

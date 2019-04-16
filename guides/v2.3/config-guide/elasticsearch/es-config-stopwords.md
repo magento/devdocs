@@ -38,7 +38,8 @@ See one of the following topics for more information:
 
 To edit stopwords:
 
-1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html#install-update-depend-user-switch).
+1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html).
+
 2.	Use a text editor to open a stopword file in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
 	`.csv` files use the naming convention `stopwords_<locale_code>.csv`. For example, the German stopword file is named `stopwords_de_DE.csv`.
@@ -59,7 +60,8 @@ To edit stopwords:
 
 To add stopwords for a locale:
 
-1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html#install-update-depend-user-switch).
+1.	Log in to your Magento server, or switch to, the [Magento file system owner]({{page.baseurl}}/install-gde/prereq/apache-user.html).
+
 2.	Use a text editor to create a stopword file named `stopwords_<locale_code>.csv` in the `<your Magento install dir>/vendor/magento/module-elasticsearch/etc/stopwords` directory.
 
 	For example, to create stopwords for the Italian locale, name the file `stopwords_it_IT.csv`.
@@ -103,13 +105,13 @@ To change the directory:
 
 2.	Change the value of `fileDir` to the desired directory:
 
-{% highlight xml %}
+```xml
 
 <type name="Magento\Elasticsearch\SearchAdapter\Query\Preprocessor\Stopwords">
     <arguments>
         <argument name="fileDir" xsi:type="string">app/code/Magento/Elasticsearch/etc/stopwords</argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 Save your changes to `di.xml` and exit the text editor.

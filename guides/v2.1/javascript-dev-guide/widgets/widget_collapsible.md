@@ -4,7 +4,6 @@ subgroup: 3_Widgets
 title: Collapsible widget
 redirect_from:
  - /guides/v2.0/frontend-dev-guide/javascript/widget_collapsible.html
- - /guides/v1.0/frontend-dev-guide/javascript/widget_collapsible.html
 ---
 
 ## Overview
@@ -399,7 +398,7 @@ Specifies if the state is saved in the local storage if the browser supports it.
 
 **Type**: Boolean
 
-**Default value**: `true`
+**Default value**: `false`
 
 Initialize the collapsible widget with the `saveState` option specified:
 ```javascript

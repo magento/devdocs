@@ -18,7 +18,7 @@ Production mode also has better performance because static view files are popula
 {:.bs-callout .bs-callout-info}
 -   In version 2.0.6 and later, Magento does not explicitly set file or directory permissions when you switch between default, develop, and production modes.
 -   Unlike other Magento modes, developer and production modes are set in `env.php`.
--   [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production mode only.
+-   [{{site.data.var.ece}}]({{ page.baseurl }}/cloud/bk-cloud.html) supports production and maintenance modes only.
 
 Refer to [Magento ownership and permissions in development and production]({{ page.baseurl }}/config-guide/prod/prod_file-sys-perms.html) for more information.
 
@@ -44,21 +44,25 @@ The easiest way to do that is to run this command as the [Magento file system ow
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:show
 ```
 
 A message similar to the following displays:
 
 ```
-Current application mode: developer.
+Current application mode: {mode}. (Note: Environment variables may override this value.)
 ```
+
+where:
+
+  -   **`{mode}`** can be either `default`, `developer`, or `production`
 
 ## Change modes {#config-mode-change}
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 ```
 
@@ -72,7 +76,7 @@ Examples follow.
 
 ### Change to production mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set production
 ```
 
@@ -129,11 +133,11 @@ When you change from production to developer mode, you should clear generated cl
 
 	The following message displays:
 
-		Switched to developer mode.
+		Enabled developer mode.
 
 ### Change to default mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set default
 ```
 

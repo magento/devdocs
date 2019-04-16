@@ -6,7 +6,6 @@ menu_title: Partial caching
 menu_order: 1
 menu_node: parent
 redirect_from:
-  - /guides/v1.0/config-guide/cache/caching.html
   - /guides/v2.0/config-guide/config/caching.html
   - /guides/v2.2/config-guide/config/caching.html
 ---
@@ -20,7 +19,7 @@ To change the cache configuration, edit `<your Magento install dir>/app/etc/env.
 
 The cache configuration is an associative array similar to the following:
 
-{% highlight php startinline=true %}
+```php
 'cache_types' =>
 	array (
 		'config' => 1,
@@ -36,7 +35,7 @@ The cache configuration is an associative array similar to the following:
 		'config_integration_api' => 1,
 	),
 );
-{% endhighlight %}
+```
 
 The preceding lists all cache types and shows they are all enabled.
 
@@ -44,9 +43,9 @@ The preceding lists all cache types and shows they are all enabled.
 
 The following topics discuss how to set up caching:
 
-*	[Create a cache type]({{ page.baseurl }}/config-guide/cache/caching-cache-type.html)
+*	[Create a cache type]({{ page.baseurl }}/extension-dev-guide/cache/partial-caching/create-cache-type.html)
 *	[Create or extend configuration types]({{ page.baseurl }}/config-guide/config/config-create.html)
-*	[Associate cache frontends with cache types]({{ page.baseurl }}/config-guide/config/caching_frontend-cache-types.html)
-*	[Low-level cache options]({{ page.baseurl }}/config-guide/cache/caching_low-level.html)
+*	[Associate cache frontends with cache types]({{ page.baseurl }}/config-guide/cache/cache-types.html)
+*	[Low-level cache options]({{ page.baseurl }}/config-guide/cache/cache-options.html)
 *	[Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html)
 *	[Configure Redis]({{ page.baseurl }}/config-guide/redis/config-redis.html)

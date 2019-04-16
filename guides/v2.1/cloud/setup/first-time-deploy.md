@@ -20,9 +20,9 @@ functional_areas:
 [Install Magento]({{ page.baseurl }}/cloud/before/before-setup-env-install.html)
 
 {:.bs-callout .bs-callout-info}
-You only need to complete this step one time for a new **Pro project**. This code is already on `master` for the Starter project. As a best practice, you need to have the template Magento Commerce project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
+You only need to complete this step one time for a new **Pro project**. This code is already on `master` for the Starter project. As a best practice, you need to have the template {{site.data.var.ee}} project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
 
-After fully setting up your local workspace, for **Pro** you should have the cloned Integration `master` branch on your local. To finish your initial setup, we **strongly recommend fully deploying** `master` branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.
+After fully setting up your local workspace, for **Pro** you should have the cloned Integration `master` branch on your local. To finish your initial setup, we **strongly recommend fully deploying** `master` branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base {{site.data.var.ee}} application into those environments.
 
 This initial push provides the following benefits:
 
@@ -37,7 +37,7 @@ This initial push provides the following benefits:
 
 To deploy, you need the following:
 
-* A project with an unmodified Magento Commerce template `master` branch (projects created using the import option may encounter issues)
+* A project with an unmodified {{site.data.var.ee}} template `master` branch (projects created using the import option may encounter issues)
 * Staging and Production environments provisioned
 * SSH access to Staging and Production environments
 
@@ -45,7 +45,7 @@ To deploy, you need the following:
 
 If you need environments provisioned and SSH access, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
 
-To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.
+To request environment provisioning, you will need to have cleared a payment for the {{site.data.var.ece}} subscription and completed an on-boarding call with Magento.
 
 To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.
 

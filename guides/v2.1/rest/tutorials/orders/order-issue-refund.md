@@ -11,7 +11,6 @@ level3_subgroup: order-tutorial
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-issue-refund.html
   - /guides/v2.2/get-started/order-tutorial/order-issue-refund.html
-  - /guides/v2.3/get-started/order-tutorial/order-issue-refund.html
 functional_areas:
   - Integration
   - Orders
@@ -37,7 +36,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/order/5/refund`
+`POST <host>/rest/<store_code>/V1/order/5/refund`
 
 **Headers**
 
@@ -47,7 +46,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "items": [
     {
@@ -67,7 +66,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
     }
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 

@@ -60,31 +60,29 @@ You specify input attributes in a JSON- or XML-formatted request body. For examp
 
 ```json
 {
-    "customers": {
-        "customer": {
-            "email": "user@example.com",
+    "customer": {
+        "email": "user@example.com",
+        "firstname": "John",
+        "lastname": "Doe"
+    },
+    "addresses": [
+        {
+            "defaultShipping": true,
+            "defaultBilling": true,
             "firstname": "John",
-            "lastname": "Doe"
-        },
-        "addresses": [
-            {
-                "defaultShipping": true,
-                "defaultBilling": true,
-                "firstname": "John",
-                "lastname": "Doe",
-                "region": {
-                    "regionCode": "CA",
-                    "region": "California",
-                    "regionId": 12
-                },
-                "postcode": "90001",
-                "street": ["Zoe Ave"],
-                "city": "Los Angeles",
-                "telephone": "555-000-00-00",
-                "countryId": "US"
-            }
-        ]
-    }
+            "lastname": "Doe",
+            "region": {
+                "regionCode": "CA",
+                "region": "California",
+                "regionId": 12
+            },
+            "postcode": "90001",
+            "street": ["Zoe Ave"],
+            "city": "Los Angeles",
+            "telephone": "555-000-00-00",
+            "countryId": "US"
+        }
+    ]
 }
 ```
 
@@ -144,7 +142,7 @@ The following example builds a Customers Search request based on search criteria
 2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
 
-3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ site.baseurl }}/rest/list.html).
+3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html).
 
    The following example finds customers whose first name contains "ver" or whose last name contains "Costello". 
 

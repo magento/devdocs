@@ -6,6 +6,10 @@ functional_areas:
   - test
 ---
 
+{: .bs-callout .bs-callout-warning }
+JsTestDriver was removed in Magento 2.2.4.
+It is recommended that [Jasmine][] be used instead.
+
 ## Preface
 
 Magento {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} unit tests use the external [JsTestDriver test library]. The tests are implemented using the external [JsTestDriver API] and have their own [jsunit.requirejsUtil framework].
@@ -34,7 +38,7 @@ This organization enables testing of `RequireJS` modules without any additional 
 
 For example, `<magento2_root_dir>/dev/tests/js/testsuite/mage/requirejs/plugin/id-normalizer-test.js`:
 
-{% highlight JavaScript %}
+```javascript
 var IdNormalizerTest = TestCase('IdNormalizerTest');
 
 IdNormalizerTest.prototype.setUp = function() {
@@ -45,7 +49,7 @@ IdNormalizerTest.prototype.setUp = function() {
 
     this.normalizer = defineArgs[0]; // Now we have object to be tested
 };
-{% endhighlight %}
+```
 
 ## Configuration files {#config-files}
 
@@ -57,7 +61,7 @@ Both files reside in the `<magento2_root_dir>/dev/tests/js` directory.
 
 `<magento2_root_dir>/dev/tests/js/jsTestDriver.php.dist` specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code:
 
-{% highlight php startinline=true %}
+```php
 return array(
     'server' => 'http://localhost:9876',
     'proxy' => array(array('matcher' => '/lib/web/*', 'server' => '%s/test/%s/lib/web/')),
@@ -70,7 +74,7 @@ return array(
     'test' => array('/dev/tests/js/testsuite'),
     'serve' => array('/lib/web/mage/calendar')
 );
-{% endhighlight %}
+```
 
 For a description of these configuration parameters, see [Configuration file for test runner].
 
@@ -86,14 +90,14 @@ Parameters are the following:
 
 `<magento2_root_dir>/dev/tests/js/jsTestDriverOrder.php` specifies the order in which the JsTestDriver loads certain JavaScript files. It contains the following PHP code:
 
-{% highlight php startinline=true %}
+```php
 return array(
     '/lib/web/globalize/globalize.js',
     '/lib/web/jquery/jquery.js',
     '/lib/web/jquery/ui/jquery-ui.js',
     ...
 );
-{% endhighlight %}
+```
 
 The array applies load ordering to the files specified by the `load` parameter in the `jsTestDriver.php` or `jsTestDriver.php.dist` file.
 
@@ -178,7 +182,7 @@ The contents of `jsTestDriver.conf` resembles this:
 
 **Generated jsTestDriver.conf file:**
 
-{% highlight yaml %}
+```yaml
 server: http://localhost:9876
 proxy:
   - {matcher: "/lib/web/*", server: "http://localhost:9876/test/C:/git/magento2/lib/web/"}
@@ -192,7 +196,7 @@ test:
 serve:
   - ../../../lib/web/mage/calendar/calendar.js
   ...
-{% endhighlight %}
+```
 
 ## Step 4. Use PhpStorm to run unit tests {#phpstorm}
 
@@ -248,7 +252,6 @@ Complete these steps to use PhpStorm to run unit tests:
    * **One or more changed configuration files**
      Use the PHP interpreter at the command line to regenerate the `jsTestDriver.conf` file and run the tests.
 
-
 <!-- LINK DEFINITIONS -->
 
 <!-- Web links -->
@@ -268,3 +271,4 @@ Complete these steps to use PhpStorm to run unit tests:
 [`run_js_tests.php` script]: #process-overview
 [PhpStorm]: #phpstorm
 [Start the JsTestDriver server]: #start-jstestdriver-server
+[Jasmine]: {{page.baseurl}}/test/js/jasmine.html

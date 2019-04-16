@@ -47,30 +47,37 @@ You must enter all {{site.data.var.ece}} commands on the machine on which your C
 
 You need your {{site.data.var.ece}} database name and credentials so that you can import your {{site.data.var.ee}} data. You can find the name and credentials for your {{site.data.var.ece}} database in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable.
 
-To find {{site.data.var.ece}} database access information:
+#### To find {{site.data.var.ece}} database access information:
 
-1.  Log in to your remote repository using  [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
+1.  Log in to your remote repository using [SSH]({{ page.baseurl }}/cloud/env/environments-ssh.html#ssh).
 
-        magento-cloud ssh -p <project ID> -e <environment ID>
+    ```bash
+    magento-cloud ssh -p <project-ID> -e <environment-ID>
+    ```
 
 1.  List all database information:
 
-        echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+    ```bash
+    echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+    ```
 
-        <pre class="no-copy">database" : [
-              {
-                 "username" : "user",
-                 "query" : {
+    ```terminal
+        database" : [
+            {
+                "username" : "user",
+                "query" : {
                     "is_master" : true
-                 },
-                 "path" : "main",
-                 "port" : 3306,
-                 "host" : "database.internal",
-                 "password" : "",
-                 "scheme" : "mysql",
-                 "ip" : "192.0.2.150"
-              }
-           ]</pre>
+                },
+                "path" : "main",
+                "port" : 3306,
+                "host" : "database.internal",
+                "password" : "",
+                "scheme" : "mysql",
+                "ip" : "192.0.2.150"
+            }
+        ]
+    ```
+    {: .no-copy}
 
 In the previous example, the database name is `main`, the listen port is `3306`, the hostname is `database.internal`, the root username is `user`, and the user has no password.
 
@@ -95,7 +102,7 @@ The complete workflow for importing existing code includes the following steps:
 
 ## Create a new {{site.data.var.ece}} project {#cloud-import-proj}
 
-1.  Access your account. Open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your Magento Commerce account](https://accounts.magento.cloud).
+1.  Access your account. Open the email you received from Magento Cloud (accounts@magento.cloud) and click the _Access your project now_ link. Or you can log in to [your {{site.data.var.ee}} account](https://accounts.magento.cloud).
 
 1.  Click the _This project has no code yet_ link next to the project name.
 
@@ -122,4 +129,4 @@ The complete workflow for importing existing code includes the following steps:
 1.  After the project deploys, **Success** displays next to the name of your project.
 
 #### Next step
-[Prepare your existing Magento Commerce install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html)
+[Prepare your existing {{site.data.var.ee}} install]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html)

@@ -202,7 +202,7 @@ Each block has an identifier that includes selector and searching strategy. This
 
 You can use the `_rootElement` to find an element in the current block.
 
-Example from the [`WidgetInstance.php`](https://github.com/magento/magento2/blob/c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php) block:
+Example from the [`WidgetInstance.php`]({{site.mage2bloburl}}c08a78b50230e6840099530cd57bfaf13902f27d/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/Instance/Edit/Tab/WidgetInstance.php) block:
 
 ```php
 <?php
@@ -403,7 +403,7 @@ Magento can show you a full class name of the block and path to the {% glossaryt
 To enable this feature follow:
 
 1. Log in to {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as administrator
-1. Follow **STORES > Configuration**
+1. Follow **STORES > Settings > Configuration**
 1. Change **Store View** to **Main Website** (the template path and block name will only appear for current website)
 1. Follow **ADVANCED > Developer**
 1. Expand the **Debug** tab
@@ -591,13 +591,13 @@ It contains the `getOptions()` method that:
 
 * Calls the render if there is a render with the name `bundle`
 
-``` php?start_inline=1
+```php
 $this->callRender($typeId, 'getOptions', ['product' => $product])
 ```
 
 * Calls a default method if the render is absent
 
-``` php?start_inline=1
+```php
 $this->getCustomOptionsBlock()->getOptions($product);
 ```
  

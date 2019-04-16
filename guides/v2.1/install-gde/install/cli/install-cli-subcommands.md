@@ -6,7 +6,6 @@ menu_title: Get started with the command-line installation
 menu_node:
 menu_order: 2
 redirect_from:
-  - /guides/v1.0/install-gde/install/install-cli-subcommands.html
   - /guides/v2.0/install-gde/install/install-cli-subcommands.html
 functional_areas:
   - Install
@@ -50,7 +49,7 @@ Database (simplest way is to use magento setup:upgrade)|
 |`magento admin:user:create`|Creates a Magento administrator.|All of the following:<br><br>Deployment configuration<br><br>Enable at minimum the Magento_User and Magento_Authorization modules<br><br>Database (simplest way is to use magento setup:upgrade)|
 |`magento list`|Lists all available commands.|None|
 |`magento help`|Provides help for the specified command.|None|
-{:style="table-layout:auto;"}
+
 
 ## Help commands {#instgde-cli-help}
 {% include install/cli_help-commands.md %}

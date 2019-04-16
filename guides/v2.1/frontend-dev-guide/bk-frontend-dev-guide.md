@@ -33,11 +33,11 @@ You can apply these levels of customization to your site, where the levels requi
     
     This is achieved using the Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} engine. No PHP coding is required to make layout changes, but the layout engine is moderately sophisticated.
     
-*   Finally, you can develop new modules to add new custom functionality to your site or to extend functionality provided by existing Magento or third party modules.
+*   Finally, you can develop new modules to add new custom functionality to your site or to extend the functionality provided by existing Magento or third party modules.
     
     This third level of customization is not addressed in this guide.
     
-    See the Developers' Guide for details on how to develop new modules.
+    See the Developer Guide for details on how to develop new modules.
     
     This requires PHP programming knowledge in addition to knowledge of all of the preceding areas.
 
@@ -52,7 +52,7 @@ To implement what is discussed in this guide, you need a working Magento install
 
 To use this guide, you must be familiar with:
 
-*	CSS and CSS 3
+*	CSS, CSS 3, and LESS
 *	HTML and HTML 5
 *	{% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %}
 *	{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}
