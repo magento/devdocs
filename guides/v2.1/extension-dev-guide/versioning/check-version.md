@@ -50,7 +50,7 @@ Login to Magento as a registered Admin user. The Magento version is displayed at
 
 ## The `composer.lock` file
 
-If Magento was installed using the `composer install` command, you can search the the `<Magento_root>/composer.lock` file for `magento/product-community-edition` or `magento/product-enterprise-edition`, depending on which version of Magento is installed.
+If Magento was installed using the `composer install` command, you can search the `<Magento_root>/composer.lock` file for `magento/product-community-edition` or `magento/product-enterprise-edition`, depending on which version of Magento is installed.
 
 ```json
   {
