@@ -26,10 +26,17 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
        npm install -g grunt-cli
 
-3. Copy the following files in your Magento root directory:
-	- `package.json.sample` to `package.json`
-	- `Gruntfile.js.sample` to `Gruntfile.js`
-	- `grunt-config.json.sample` to `grunt-config.json`
+3. Copy the contents of the following files:
+	- `package.json.sample`
+	- `Gruntfile.js.sample`
+	- `grunt-config.json.sample`
+
+into appropriate ones 
+	- `package.json`
+	- `Gruntfile.js`
+	- `grunt-config.json`
+
+in your Magento root directory.
 
 4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
 
@@ -41,7 +48,7 @@ Magento has built-in Grunt tasks configured, but there are still several steps y
 
 ## Grunt configuration file {#grunt_config}
 
-Copy `themes.js` to `local-themes.js` in the `dev/tools/grunt/configs/` directory.
+Copy the contents of `themes.js` to `local-themes.js` in the `dev/tools/grunt/configs/` directory.
 
 If installed as described above, Grunt will use the default configuration files located in the `dev/tools/grunt/configs/` directory. You can define your theme in the `local-themes.js` file. The following shows an example of how you can define your theme.
 
