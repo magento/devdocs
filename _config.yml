@@ -143,6 +143,7 @@ relative_links:
     - extensions
     - guides
     - redoc
+    - release
     - tmp
     - 404.md
     - availability.md
