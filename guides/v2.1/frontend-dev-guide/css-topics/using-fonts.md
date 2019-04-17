@@ -52,7 +52,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
 
  The Unicode characters that correspond to the correct font glyphs for each icon are defined in the following `lib/web/css/source/lib/variables/_icons.less` file.
 
- The defined icon font face and the character variables are used throughout the theme LESS code to define icons, usually through a call to the `lib-icon-font` mixins. And you’ve successfully replaced the native icons with your own. 
+ By calling the `lib-icon-font` mixin, you can apply the icon font and character variables throughout the theme LESS code.
 
 
 To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
