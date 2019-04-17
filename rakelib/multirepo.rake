@@ -10,8 +10,8 @@ namespace :multirepo do
         ssh
       end
 
-    config = DocConfig.new.config
-    config.each do |subrepo|
+    content_map = DocConfig.new.content_map
+    content_map.each do |subrepo|
       sh "./scripts/docs-from-code.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}"
     end
   end
