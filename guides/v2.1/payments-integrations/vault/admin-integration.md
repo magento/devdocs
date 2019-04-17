@@ -20,10 +20,9 @@ There are more details about these steps in the following sections.
 
 [Similar to the storefront vault implementation]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
 
-
 Following is an example of a component provider for Admin:
 
-``` php?start_inline=1
+```php
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 {
     /**
@@ -56,7 +55,7 @@ There is no default component implementation for the Admin, so your component mu
 
 In the most cases, it is enough to implement getting payment code and setting public hash. This implementation might look like following:
 
-{% highlight javascript %}
+```javascript
 define([
     'jquery',
     'uiComponent'
@@ -94,7 +93,7 @@ define([
         }
     });
 });
-{% endhighlight %}
+```
 
 This component will set public hash to a hidden input, when a user sets payment token as active.
 
@@ -109,7 +108,7 @@ specify the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment me
 
 Following is an example of such layout:
 
-{% highlight xml%}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="order_create_billing_form">
@@ -120,7 +119,7 @@ Following is an example of such layout:
         </referenceBlock>
     </body>
 </page>
-{% endhighlight %}
+```
 
 According to this configuration the Magento_Vault {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} will render vault payments and all depending JS components will be created.
 
@@ -130,7 +129,7 @@ You might have specific request builders, response handlers or other entities fo
 
 Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeVaultAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
     <arguments>
         <argument name="builders" xsi:type="array">
@@ -142,7 +141,7 @@ Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 This configuration will be applied only in Admin panel.
 For more information about area-specific configuration see the [Configure payment method by area]({{ page.baseurl }}/payments-integrations/base-integration/admin-integration.html) topic.

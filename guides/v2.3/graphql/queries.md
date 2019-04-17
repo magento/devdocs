@@ -303,7 +303,7 @@ The response for each item includes the `name`, `sku`, `price` and `description`
 
 The query returns the following:
 
-``` json
+```json
 {
   "data": {
     "products": {

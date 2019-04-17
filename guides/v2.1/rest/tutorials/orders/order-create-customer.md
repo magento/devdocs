@@ -48,7 +48,7 @@ This example shows a simplified way of creating a customer account. Typically, y
 It is recommended that you substitute the value of the `email` parameter with a real email address so that you receive all notifications.
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
 	"customer": {
 		"email": "jdoe@example.com",
@@ -81,7 +81,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 Magento assigned this user `id` value of `2`.
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
   "id": 2,
   "group_id": 1,
@@ -142,7 +142,7 @@ By default, a customer token is valid for 1 hour. To change this value, log in t
 
 **Payload**
 
-``` json
+```json
 {
 "username": "jdoe@example.com",
 "password": "Password1"
