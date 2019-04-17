@@ -49,7 +49,13 @@ To redeploy with the correct authentication keys:
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<description of change>"
+    ```
+    
+    ```bash
     git push origin master
     ```
 
