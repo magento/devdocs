@@ -46,6 +46,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
     ```
 ## Overview of Magento's Icon CSS
 
+ You can find the Icon files from the  `lib/web/fonts/Blank-Theme-Icons` to the override fonts. 
  
  The Unicode characters that correspond to the correct font glyphs for each icon are defined in the following `lib/web/css/source/lib/variables/_icons.less` file.
 
