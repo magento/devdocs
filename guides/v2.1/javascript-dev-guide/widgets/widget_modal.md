@@ -140,7 +140,7 @@ Translated title for popup window.
 **Default value**: empty
 
 ### `trigger` {#modal_trigger}
-The element which triggers the modal.
+The element that triggers the modal.
 
 **Type**: String 
 
@@ -236,7 +236,7 @@ The following example shows how to initialize the modal widget and pass options 
 
 ### Result
 
-The result is a modal and a button (_Click Here_) which opens the modal.
+The result is a modal and a button (_Click Here_) that opens the modal.
 
 ![Modal Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/modal-widget-result.png)
 
