@@ -50,9 +50,6 @@ In addition to including custom fonts in your Magento Blank theme, you also can 
  
  The Unicode characters that correspond to the correct font glyphs for each icon are defined in the following `lib/web/css/source/lib/variables/_icons.less` file.
 
- By calling the `lib-icon-font` mixin, you can apply the icon font and character variables throughout the theme LESS code.
-
-
 To customize a font you import, consider using [IcoMoon](https://icomoon.io/app/).
 
 {:.bs-callout .bs-callout-info}
