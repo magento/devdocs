@@ -37,7 +37,9 @@ This command backs up code and compresses it in `tar.gz` format.
 
 Command options:
 
-	bin/magento support:backup:code [--name=<file name>] [-o|--output=<path>] [-l|--logs]
+```bash
+bin/magento support:backup:code [--name=<file name>] [-o|--output=<path>] [-l|--logs]
+```
 
 Where:
 
@@ -47,7 +49,9 @@ Where:
 
 For example, to create a code backup named `/var/www/html/magento2/var/log/mycodebackup.tar.gz`:
 
-	bin/magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+```bash
+bin/magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+```
 
 After the command completes, provide the code backup to Magento Support.
 
@@ -59,7 +63,9 @@ This command backs up the Magento database and compresses it in `tar.gz` format.
 
 Command options:
 
-	bin/magento support:backup:db [--name=<name>] [-o|--output=<path>] [-l|--logs] [-i|--ignore-sanitize]
+```bash
+bin/magento support:backup:db [--name=<name>] [-o|--output=<path>] [-l|--logs] [-i|--ignore-sanitize]
+```
 
 Where:
 
@@ -76,7 +82,9 @@ After the command completes, provide the database backup to Magento Support.
 
 We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or on the command line:
 
-	Utility lsof not found
+```terminal
+Utility lsof not found
+```
 
 Run the following commands in the order shown to display the paths to the applications used by the support utilities and Data Collector:
 
@@ -92,6 +100,7 @@ Run the following commands in the order shown to display the paths to the applic
 
 A sample follows:
 
+```terminal
 	gzip => /bin/gzip
 	lsof => /usr/sbin/lsof
 	mysqldump => /usr/bin/mysqldump
@@ -101,5 +110,6 @@ A sample follows:
 	sed => /bin/sed
 	bash => /bin/bash
 	mysql => /usr/bin/mysql
+```
 
 To resolve issues with running the tools, make sure these applications are installed and are in the web server user's `$PATH` environment variable.

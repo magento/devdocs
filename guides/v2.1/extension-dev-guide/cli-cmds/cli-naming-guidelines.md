@@ -26,7 +26,9 @@ For example, in `bin/magento setup:upgrade`, `bin/magento` is the command's name
 
 If you have a Magento installation handy, enter the following to display the current list of commands:
 
-	bin/magento list
+```bash
+bin/magento list
+```
 
 #### Format: `group:[subject:]action`
 
@@ -72,7 +74,9 @@ Arguments are values passed by the user in a specified order. The argument name 
 
 Example:
 
+```bash
 	magento dev:theme:create frontend vendor themename
+```
 
 where:
 
@@ -105,10 +109,12 @@ An option can also have a one-letter shortcut as an alternative to its full name
 
 For example,
 
+```bash
 	magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
 	magento dev:theme:create -p=Magento/luma frontend vendor themename
 	magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
 	magento module:disable -f Magento_Cms
+```
 
 Where:
 

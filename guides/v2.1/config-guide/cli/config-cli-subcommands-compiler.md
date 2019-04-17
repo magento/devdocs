@@ -29,11 +29,15 @@ In this release, the Magento software doesn't support the multi-tenant compiler 
 
 Run the command as follows (there are no options):
 
-	bin/magento setup:di:compile
+```bash
+bin/magento setup:di:compile
+```
 
 The following message displays to confirm success:
 
-	Generated code and dependency injection configuration successfully.
+```terminal
+Generated code and dependency injection configuration successfully.
+```
 
 ## Optional. Compile code before installing the Magento application {#config-cli-subcommands-single-before}
 
@@ -41,7 +45,9 @@ In some cases, you might want to compile code before you install the Magento app
 
 The following command enables all modules:
 
-	php bin/magento module:enable --all [-c|--clear-static-content]
+```bash
+php bin/magento module:enable --all [-c|--clear-static-content]
+```
 
 Use the optional `[-c|--clear-static-content]` option to clear {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %}. This is necessary if you've previously enabled or disabled modules and you must clear static content previously generated for them.
 
@@ -53,8 +59,12 @@ Use this command to compile code.
 
 Run the command as follows (there are no options):
 
-	bin/magento setup:di:compile
+```bash
+bin/magento setup:di:compile
+```
 
 The following message displays to confirm success:
 
+```terminal
 	Generated code and dependency injection configuration successfully.
+```

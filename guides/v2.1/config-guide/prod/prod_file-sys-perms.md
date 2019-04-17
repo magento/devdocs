@@ -70,14 +70,15 @@ To remove write permissions to files and directories from the web server user's 
 
 1.  Change to production mode.
 
-    ```bash
-    php bin/magento deploy:mode:set production
-    ```
+```bash
+php bin/magento deploy:mode:set production
+```
 
 1.  Remove write permissions to the following directories.
 
-    ```bash
-    find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+```bash
+find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} + && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+```
 
 #### Make code files and directories writable:
 
@@ -87,7 +88,9 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following commands:
 
-		chmod -R u+w .
+```bash
+chmod -R u+w .
+```
 
 ### Optionally set `magento_umask`
 
@@ -164,10 +167,15 @@ To remove writable permissions to files and directories from the web server user
 2.	Change to your Magento installation directory.
 3.	As the Magento file system owner, enter the following command to change to production mode:
 
-		php bin/magento deploy:mode:set production
+```bash
+php bin/magento deploy:mode:set production
+```
+
 3.	Enter the following command as a user with `root` privileges:
 
-		find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} + && chmod o-rwx app/etc/env.php
+```bash
+find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} + && chmod o-rwx app/etc/env.php
+```
 
 #### Make code files and directories writable:
 
@@ -177,6 +185,8 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following command:
 
-		find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} + && chmod o+rwx app/etc/env.php
+```bash
+find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} + && chmod o+rwx app/etc/env.php
+```
 
 {% endcollapsibleh2 %}

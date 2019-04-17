@@ -33,18 +33,28 @@ To change versions after cloning:
 1.	Log in to your Magento server as, or switch to, [the Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	Use the following command to uninstall the Magento software:
 
-		php <your Magento clone dir>/bin/magento setup:uninstall
+```bash
+php <your Magento clone dir>/bin/magento setup:uninstall
+```
+
 3.	Either remove your old Magento clone directory or [update the Magento software]({{ page.baseurl }}/install-gde/install/cli/dev_update-magento.html).
 4.	If you haven't already done so, clone the Magento 2 GitHub repository as follows:
 
-		git clone git@github.com:magento/magento2.git
+```bash
+git clone git@github.com:magento/magento2.git
+```
+
 5.	Change to [release tag](https://github.com/magento/magento2/tags){:target="_blank"} as follows:
 
-		git checkout tags/<tag name>  [-b <branch name>]
+```bash
+git checkout tags/<tag name>  [-b <branch name>]
+```
 
 	For example, to check out the 2.0.6 release tag in a new branch named `2.0.6`, enter
 
-		git checkout tags/2.0.6 -b 2.0.6
+```bash
+git checkout tags/2.0.6 -b 2.0.6
+```
 
 5.	Install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [Setup Wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html).
 
@@ -59,15 +69,21 @@ To change versions after cloning:
 		php <your Magento install dir>/bin/magento setup:backup --code --media --db
 3.	Change to [release tag](https://github.com/magento/magento2/tags){:target="_blank"} as follows:
 
-		git checkout tags/<tag name>  [-b <branch name>]
+```bash
+git checkout tags/<tag name>  [-b <branch name>]
+```
 
 	For example, to check out the 2.0.2 release tag in a new branch named `2.0.2`, enter
 
-		git checkout tags/2.0.2 -b 2.0.2
+```bash
+git checkout tags/2.0.2 -b 2.0.2
+```
 
 4.	Manually clear Magento `var` directories:
 
-		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/var/generation/*
+```bash
+rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/var/generation/*
+```
 
 5.	Install the Magento software in your new database instance.
 

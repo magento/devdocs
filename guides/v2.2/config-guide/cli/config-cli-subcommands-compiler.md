@@ -25,9 +25,11 @@ The Magento software does not support the multi-tenant compiler, which includes 
 
 #### To run the single-tenant compiler: {#config-cli-subcommands-single}
 
-```
+```bash
 bin/magento setup:di:compile
+```
 
+```terminal
 Generated code and dependency injection configuration successfully.
 ```
 
@@ -37,7 +39,7 @@ In some cases, you might want to compile code before you install the Magento app
 
 1.  Enable the modules.
 
-    ```
+    ```bash
     php bin/magento module:enable --all [-c|--clear-static-content]
     ```
 
@@ -47,9 +49,11 @@ In some cases, you might want to compile code before you install the Magento app
 
 1.  Compile the code.
 
-    ```
+    ```bash
     bin/magento setup:di:compile
+    ```
 
+    ```terminal
     Generated code and dependency injection configuration successfully.
     ```
 
