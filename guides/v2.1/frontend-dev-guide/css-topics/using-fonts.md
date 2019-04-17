@@ -46,10 +46,7 @@ To ensure the stability of your customizations and prevent upgrades from overwri
     ```
 ## Overview of Magento's Icon CSS
 
- To find the icon font files for the Magento Blank theme in `lib/web/fonts/Blank-Theme-Icons`
-
  
-
  The Unicode characters that correspond to the correct font glyphs for each icon are defined in the following `lib/web/css/source/lib/variables/_icons.less` file.
 
  By calling the `lib-icon-font` mixin, you can apply the icon font and character variables throughout the theme LESS code.
