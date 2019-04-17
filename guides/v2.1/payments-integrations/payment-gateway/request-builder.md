@@ -27,7 +27,7 @@ Builder composites are added using [dependency injection]({{ page.baseurl }}/ext
 
 Example of adding composite builders for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml)):
 
-{% highlight xml %}
+```xml
 ...
 <!--  is a builder composite comprising a number of builders -->
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
@@ -37,8 +37,11 @@ Example of adding composite builders for the Braintree payment provider ([`app/c
             <item name="payment" xsi:type="string">Magento\Braintree\Gateway\Request\PaymentDataBuilder</item>
             <item name="channel" xsi:type="string">Magento\Braintree\Gateway\Request\ChannelDataBuilder</item>
             <item name="address" xsi:type="string">Magento\Braintree\Gateway\Request\AddressDataBuilder</item>
+            <item name="vault" xsi:type="string">Magento\Braintree\Gateway\Request\VaultDataBuilder</item>
             <item name="3dsecure" xsi:type="string">Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder</item>
             <item name="device_data" xsi:type="string">Magento\Braintree\Gateway\Request\KountPaymentDataBuilder</item>
+            <item name="dynamic_descriptor" xsi:type="string">  Magento\Braintree\Gateway\Request\DescriptorDataBuilder</item>
+            <item name="store" xsi:type="string">Magento\Braintree\Gateway\Request\StoreConfigBuilder</item>
         </argument>
     </arguments>
 </virtualType>
@@ -52,7 +55,7 @@ Example of adding composite builders for the Braintree payment provider ([`app/c
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
+```
 
 (The code sample is from {{site.data.var.ce}} v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)
 

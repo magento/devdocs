@@ -40,7 +40,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `status` code of 3.
 
-``` json
+```json
 {
     "items": [
         {

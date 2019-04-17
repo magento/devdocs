@@ -19,7 +19,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
 
 **etc/extension_attributes.xml**
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Api/etc/extension_attributes.xsd">
   <extension_attributes for="Magento\Quote\Api\Data\CartInterface">
     <attribute code="demo" type="string" />
@@ -28,7 +28,7 @@ The following code defines a simple [extension attribute][1] named `demo` for th
       <attribute code="demo" type="string" />
   </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
 ## Step 2: Configure the fieldset
 {:#step-2}
