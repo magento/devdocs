@@ -23,7 +23,7 @@ See [Token-based authentication]({{ page.baseurl }}/get-started/authentication/g
 
 **Payload**
 
-``` json
+```json
 {
 "username": "admin",
 "password": "123123q"

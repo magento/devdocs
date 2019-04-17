@@ -301,8 +301,8 @@ class LayoutUpdates extends DataSource
 ```
 
 It is important to note that you should mention repository in data source class to use it for fixture field:
-   
-``` php
+
+```php
 $this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);
 ```
 
@@ -311,9 +311,10 @@ To apply the changes, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
-```   
+```
 
 ## Merge fixtures {#mtf_fixture_merge}
 
@@ -337,6 +338,7 @@ To apply the changes, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
@@ -371,7 +373,7 @@ To generate your new fixture PHP class, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
-
