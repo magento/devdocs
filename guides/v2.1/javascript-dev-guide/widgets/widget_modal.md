@@ -238,7 +238,7 @@ The following example shows how to initialize the modal widget and pass options 
 
 The result is a modal and a button (_Click Here_) which opens the modal.
 
-![Tabs Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/modal-widget-result.png)
+![Modal Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/modal-widget-result.png)
 
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
