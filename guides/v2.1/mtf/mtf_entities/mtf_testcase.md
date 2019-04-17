@@ -25,7 +25,7 @@ The `__prepare()` method can be useful to prepare the unchangeable data that is 
 
 This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
 
-``` php?start_inline=1
+```php
 public function __prepare(Customer $customer)
 {
     $customer->persist();
@@ -39,7 +39,7 @@ A returned argument `$customer` is available in the test and in [constraints][].
 
 The `__inject()` method is used to inject data in a test (usually to initialize a page). For an example:
 
-``` php?start_inline=1
+```php
 public function __inject(
     CatalogProductIndex $productGrid,
     CatalogProductEdit $editProductPage
@@ -85,7 +85,11 @@ public function test(CatalogProductSimple $initialProduct, CatalogProductSimple 
     $category = $product->hasData('category_ids') && $product->getCategoryIds()[0]
         ? $product->getDataFieldConfig('category_ids')['source']->getCategories()[0]
         : $initialCategory;
-    $this->objectManager->create(
+    if ($store) {
+        $store->persist();
+        $productName[$store->getStoreId()] = $product->getName();
+    }
+    $this->testStepFactory->create(
         \Magento\Config\Test\TestStep\SetupConfigurationStep::class,
         ['configData' => $configData]
     )->run();
@@ -115,7 +119,7 @@ When [constraints][] of the variation have been performed, you can use the `tear
 
 For example, the following code deletes a sales rule after each variation:
 
-``` php?start_inline=1
+```php
 public function tearDown()
 {
     $this->promoQuoteIndex->open();

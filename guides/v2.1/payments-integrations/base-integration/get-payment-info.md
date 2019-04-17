@@ -23,7 +23,7 @@ The Braintree payment provider requires the [payment method nonce](https://devel
 to process transactions, and our builder should send it for each authorization transaction. 
 Here is how the Braintree payment builder looks:
 
-``` php?start_inline=1
+```php
 class PaymentDataBuilder implements BuilderInterface
 {
     /**
@@ -63,8 +63,8 @@ So our {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{
 
 We can send to {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} any specific data, just need to override `getData()` method in
 [payment UI component]({{ site.mage2100url }}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
- 
-{% highlight javascript %}
+
+```javascript
 define(
     [..., 'Magento_Payment/js/view/payment/cc-form', ...],
     function (..., Component, ...) {
@@ -102,8 +102,8 @@ define(
         });
     }
 );
-{% endhighlight %}
- 
+```
+
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
 complicated. we need last step to retrieve data from {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in the backend. Magento provides some
 mechanisms called [Observers]({{ site.gdeurl21 }}extension-dev-guide/events-and-observers.html).
@@ -116,7 +116,7 @@ in the payment additional information. In most cases it will be enough to extend
 
 That's how observer might looks:
 
-``` php?start_inline=1
+```php
 class DataAssignObserver extends AbstractDataAssignObserver
 {
     const PAYMENT_METHOD_NONCE = 'payment_method_nonce';
@@ -157,17 +157,17 @@ class DataAssignObserver extends AbstractDataAssignObserver
 
 And this observer should be added to list of events (`Module_Name/etc/events.xml`):
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
     <event name="payment_method_assign_data_braintree">
         <observer name="braintree_gateway_data_assign" instance="Magento\Braintree\Observer\DataAssignObserver" />
     </event>
 </config>
-{% endhighlight %}
+```
 
 This {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} will be triggered in [Adapter::assignData()]({{ site.mage2100url }}app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
 
-``` php?start_inline=1
+```php
 public function assignData(\Magento\Framework\DataObject $data)
 {
     $this->eventManager->dispatch(
@@ -194,7 +194,7 @@ public function assignData(\Magento\Framework\DataObject $data)
 
 There are two events:
 
- * `payment_method_assign_data_payment_code`: specific for current method (placing order using this payment method)
- * `payment_method_assign_data`: global for all payments (place order)
- 
+ - `payment_method_assign_data_payment_code`: specific for current method (placing order using this payment method)
+ - `payment_method_assign_data`: global for all payments (place order)
+
 What type of event to use depends on your implementation, but in most cases it will be enough to use the event for current payment method.
