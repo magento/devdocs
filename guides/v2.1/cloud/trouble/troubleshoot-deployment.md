@@ -32,25 +32,27 @@ To redeploy with the correct authentication keys:
 4.	Change to the project root directory.
 5.	Open `auth.json` in a text editor.
 
-```json
-{
-   "http-basic": {
-      "repo.magento.com": {
-         "username": "<your public key>",
-         "password": "<your private key>"
-      }
-   }
-}
-```
+    ```json
+    {
+       "http-basic": {
+          "repo.magento.com": {
+             "username": "<your public key>",
+             "password": "<your private key>"
+          }
+       }
+    }
+    ```
 
 6.	Add the correct authentication keys.
 7.	Save your changes and exit the text editor.
 8.	Commit and merge your changes.
-```bash
-git add -A
-git commit -m "<description of change>"
-git push origin master
-```
+
+    ```bash
+    git add -A
+    git commit -m "<description of change>"
+    git push origin master
+    ```
+
 9.	Wait for the deployment to complete.
 
 Messages indicate whether deployment was successful. You can confirm a successful deployment by going to one of the **Environment routes** displayed on your screen.
