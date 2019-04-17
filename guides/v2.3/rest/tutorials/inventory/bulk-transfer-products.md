@@ -37,7 +37,7 @@ The `POST /V1/inventory/bulk-product-source-transfer` endpoint allows you to spe
 
 **Payload**
 
-``` json
+```json
 {
   "skus": [
     "24-WB03"
@@ -58,7 +58,7 @@ Use the same endpoint to bulk transfer the product to Austin.
 
 **Payload**
 
-``` json
+```json
 {
   "skus": [
     "24-WB03"
