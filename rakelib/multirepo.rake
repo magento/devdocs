@@ -8,6 +8,7 @@ namespace :multirepo do
     # The last argument 'false' disables content filtering by sparse checkout.
     # It covers cases when we need entire repository, not only the '/docs/' directory.
     sh './scripts/docs-from-code.sh guides/m1x git@github.com:magento/devdocs-m1.git master false'
+    sh './scripts/docs-from-code.sh guides/v2.0 git@github.com:magento/devdocs.git 2.0 false'
   end
 
   desc 'Add multirepo docs providing shell arguments "dir=<directory where to init a repo>", "repo=<SSH URL>", "branch=<branch to checkout>", "filter=<true/false>" ("true" by default) to 1) filter content if "true" or 2) add content from the entire repository if "false".'

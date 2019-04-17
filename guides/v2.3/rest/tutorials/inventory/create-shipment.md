@@ -47,7 +47,7 @@ where `3` is the `orderid`
 
 **Payload**
 
-``` json
+```json
 {
   "items": [
     {
@@ -81,7 +81,7 @@ Use the same endpoint to ship the remaining 31 `24-WB03` items from the Reno war
 
 **Payload**
 
-``` json
+```json
 {
   "items": [
     {
@@ -127,7 +127,7 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 
 **Payload**
 
-``` json
+```json
 {
   "entity": {
     "billing_address_id": 2,
@@ -162,7 +162,7 @@ Magento also supports the `POST /V1/shipment` endpoint for sending full or parti
 
 **Response**
 
-``` json
+```json
 {
     "created_at": "2018-08-02 21:14:43",
     "customer_id": 3,
@@ -208,7 +208,7 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 
 **Payload**
 
-``` json
+```json
 {
   "entity": {
     "customer_id": 3,
@@ -233,7 +233,7 @@ Use the same endpoint to ship the remaining 35 `sp2` items from the Reno warehou
 
 **Response**
 
-``` json
+```json
 {
     "created_at": "2018-08-02 22:22:23",
     "customer_id": 3,
