@@ -172,16 +172,13 @@ Column | Data type
 `customer_gender` | int(11)
 `customer_group_id` | int(11)
 `customer_id` | int(10)
-`customer_is_guest` | int(5)
 `customer_lastname` | varchar(128)
 `customer_middlename` | varchar(128)
-`customer_note` | text
-`customer_note_notify` | int(5)
 `customer_prefix` | varchar(32)
 `customer_suffix` | varchar(32)
 `customer_taxvat` | varchar(32)
 `quote_address_id` | int(11)
-`remote_ip` | varchar(45)
+`remote_ip` | varchar(32)
 `x_forwarded_for` | varchar(32)
 
 #### `sales_order_address` table
@@ -232,21 +229,16 @@ The following columns in the `quote` table contain customer information:
 
 Column | Data type
 --- | ---
-`customer_dob` | datetime
-`customer_email` | varchar(255)
-`customer_firstname` | varchar(255)
-`customer_gender` | varchar(255)
-`customer_group_id` | int(10)
 `customer_id` | int(10)
-`customer_is_guest` | int(5)
-`customer_lastname` | varchar(128)
-`customer_middlename` | varchar(40)
-`customer_note` | varchar(128)
-`customer_note_notify` | int(5)
+`customer_email` | varchar(255)
 `customer_prefix` | varchar(40)
-`customer_suffix` | varchar(40)
-`customer_taxvat` | varchar(255)
+`customer_firstname` | varchar(255)
+`customer_middlename` | varchar(40)
+`customer_lastname` | varchar(255)
+`customer_dob` | datetime
 `remote_ip` | varchar(32)
+`customer_taxvat` | varchar(255)
+`customer_gender` | varchar(255)
 
 #### `quote_address` table
 
@@ -323,7 +315,6 @@ The following tables contain a `customer_id` column:
 * `magento_customersegment_customer`
 * `magento_reward`
 * `magento_rma`
-* `newsletter_subscriber`
 * `oauth_token`
 * `paypal_billing_agreement`
 * `persistent_session`
