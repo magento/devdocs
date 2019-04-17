@@ -75,7 +75,7 @@ The following query returns information about the "404 Not Found" CMS page:
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "cmsPage": {
@@ -112,7 +112,7 @@ The following query returns information about the `login-data` block:
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "cmsBlocks": {

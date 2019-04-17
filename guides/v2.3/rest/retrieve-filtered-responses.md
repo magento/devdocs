@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Retrieve filtered responses for REST endpoints
-redirect_from: /guides/v2.2/howdoi/webapi/filter-response.html
 ---
 
 Some REST calls return dozens or even hundreds of parameters, and parsing through all this data can be unwieldy. In addition, mobile app developers might find the bandwidth needed to process a request to be excessive. To resolve these problems, Magento provides a query parameter-based syntax for REST requests that return partial responses.
@@ -31,7 +30,7 @@ The following example returns only the `sku`, `price`, and `name` for the specif
 
 `GET <host>/rest/<store_code>/V1/products/24-MB01?fields=sku,price,name`
 
-``` json
+```json
 {
   "sku": "24-MB01"
   "name": "Joust Duffle Bag"
@@ -147,7 +146,7 @@ The following query returns only the `sku` and `name` parameters for product ite
 
 `GET <host>/rest/<store_code>/V1/products/?searchCriteria[filter_groups][0][filters][0][field]=category_gear&searchCriteria[filter_groups][0][filters][0][value]=86&searchCriteria[filter_groups][0][filters][0][condition_type]=finset&fields=items[sku,name]`
 
-``` json
+```json
 {
 "items":
   {

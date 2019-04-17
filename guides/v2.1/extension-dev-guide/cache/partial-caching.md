@@ -19,7 +19,7 @@ To change the cache configuration, edit `<your Magento install dir>/app/etc/env.
 
 The cache configuration is an associative array similar to the following:
 
-{% highlight php startinline=true %}
+```php
 'cache_types' =>
 	array (
 		'config' => 1,
@@ -35,7 +35,7 @@ The cache configuration is an associative array similar to the following:
 		'config_integration_api' => 1,
 	),
 );
-{% endhighlight %}
+```
 
 The preceding lists all cache types and shows they are all enabled.
 
