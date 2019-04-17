@@ -12,7 +12,7 @@ A resolver requires the following arguments:
 - $value
 - $args
 
-``` php    
+```php    
     /**
      * Fetches the data from persistence models and format it according to the GraphQL schema.
      *

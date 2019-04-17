@@ -39,7 +39,7 @@ where `3` is the `orderid`
 
 **Payload**
 
-``` json
+```json
 {
   "capture": true,
   "notify": true
