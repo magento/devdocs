@@ -41,6 +41,7 @@ However, the dependency rules are different:
 }
 ```
 * If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
+
    **SPI dependency example**
 ```json
 {
@@ -50,7 +51,6 @@ However, the dependency rules are different:
     },
     ...
 }
-
 ```
 
 ## Determine module dependency

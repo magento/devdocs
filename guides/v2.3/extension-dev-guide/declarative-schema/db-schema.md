@@ -57,8 +57,10 @@ If you have enabled [URN highlighting]({{ page.baseurl }}/config-guide/cli/confi
 
 The `schema` node defines the location of the `schema.xsd`  file.
 
-`<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">`
+```xml
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+```
 
 ### `table` node
 
@@ -148,7 +150,7 @@ A column can have the following attributes:
 </tr>
 </table>
 
-For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory/setup/src/Magento/Setup/Model/Declaration/Schema/etc` directory.
+For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory>/setup/src/Magento/Setup/Model/Declaration/Schema/etc` directory.
 
 
 Example:
