@@ -15,17 +15,16 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 
 {{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator, you can overwrite a service version with the following optional parameters:
 
-| Service       | Key        | Default value | Possible values
-| ------------- | ---------- | ------------- | ----------------
-| PHP           | `--php`    | 7.1           | 7.0, 7.1, 7.2
-| NGINX         | `--nginx`  | latest        | 1.9, latest
-| MariaDB       | `--db`     | 10            | 10.0, 10.1, 10.2
-| Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2, 6.5
-| RabbitMQ      | `--rmq`    | 3.5           | 3.5, 3.7
-| Redis         | `--redis`  | 3.2           | 3.0, 3.2, 4.0, 5.0
+| Service       | Key        | Available versions
+| ------------- | ---------- | ------------------
+| PHP           | `--php`    | 7.0, 7.1, 7.2
+| NGINX         | `--nginx`  | 1.9, latest
+| MariaDB       | `--db`     | 10.0, 10.1, 10.2
+| Elasticsearch | `--es`     | 1.7, 2.4, 5.2, 6.5
+| RabbitMQ      | `--rmq`    | 3.5, 3.7
+| Redis         | `--redis`  | 3.0, 3.2, 4.0, 5.0
 
-
-This version also provides a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
+There is a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
 #### Prerequisites
 
