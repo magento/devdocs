@@ -16,12 +16,12 @@ The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-d
 Image | Docker link | Version
 ----- | ----------- | ----------
 **DB** | mariadb:10.0 | 10
-**FPM** | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php) | PHP-CLI: version 7 and later<br>PHP-FPM: version 7 and later
-**ElasticSearch** | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch) | 1.7 and later
+**FPM** | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php) | PHP-CLI: version 7<br>PHP-FPM: version 7
+**ElasticSearch** | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch) | 1.7
 **NGINX** |[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx) | 1.9
-**RabbitMQ** | [rabbitmq](https://hub.docker.com/_/rabbitmq) | 3.5 and later
-**Redis** | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis) | 3.2 and later
-**TLS** | [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) | latest, depending on Varnish
+**RabbitMQ** | [rabbitmq](https://hub.docker.com/_/rabbitmq) | 3.5
+**Redis** | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis) | 3.0
+**TLS** | [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) | latest
 **Varnish** | [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish) | latest
 
 {:.bs-callout .bs-callout-info}
