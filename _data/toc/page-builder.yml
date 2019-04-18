@@ -146,7 +146,7 @@ pages:
   children:
 
   - label: Overview of content migration
-    url: /page-builder-migration/docs/overview-content-migration.html
+    url: /page-builder-migration/docs/
     versionless: true
 
   - label: Install the migration module
