@@ -300,7 +300,7 @@ Attribute |  Data Type | Description
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
 
 
-### Customer address region attributes {#customerAddressAttributeInput}
+### Customer address attributes {#customerAddressAttributeInput}
 
 The `CustomerAddressAttributeInput` object can contain the following attributes:
 
