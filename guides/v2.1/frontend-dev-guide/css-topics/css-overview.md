@@ -15,8 +15,8 @@ Magento application provides a built-in Less UI library, which you can optionall
 To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} styles, you need to [create a custom design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). Then you can use one of the following approaches:
 
 *	If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files. 
-*	Create your own Less files using the built-in Less preprocessor. 
-*	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
+*	Create your own Less files using the built-in Less preprocessor, Compilation mode whould be server-side.
+*	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor but make sure compilation mode whould be client-side.
 
 ## Things to remember when working with styles
 
@@ -62,5 +62,3 @@ Other topics of this chapter describe the following:
 
 [The default view of a product page, with the orange Add to Cart button]: {{site.baseurl}}/common/images/css_over1.png
 [The customized view of a product page, with the grey Add to Cart button]: {{site.baseurl}}/common/images/css_over2.png
-
-
