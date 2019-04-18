@@ -19,7 +19,7 @@ All negotiable quote calls require an admin authorization token.
 
 **REST Endpoints**
 
-``` json
+```json
 POST /V1/negotiableQuote/request
 POST /V1/negotiableQuote/submitToCustomer
 POST /V1/negotiableQuote/decline
@@ -39,7 +39,7 @@ Name | Description | Format | Requirements
 `quoteName`	| The name of the quote to be created.	| string	| Required
 `comment`	| The comment to add to the quote.	| string | Optional
 `files` | An array of files to add to the quote | array | Optional
-{:style="table-layout:auto;"}
+
 
 The buyer or the seller can optionally attach up to 10 files to provide details about the quote. Each file must be converted into base64.
 
@@ -50,7 +50,7 @@ Name | Description | Format | Requirements
 `base64_encoded_data` | A string in base 64 that defines the contents of the added file | string | Required
 `type` | Defines the type of file, such as `text/plain` or `application/pdf`| string | Optional
 `name` | The name of the file to be uploaded, such as `quote.txt` or `quote.pdf`. | string | Required
-{:style="table-layout:auto;"}
+
 
 ### Request a negotiable quote
 
@@ -70,11 +70,11 @@ Requesting a negotiable quote requires an admin authorization token.
 
 **Sample Usage**
 
-`POST V1/negotiableQuote/request`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/request`
 
 **Payload**
 
-``` json
+```json
 {
   "quoteId": 3,
   "quoteName": "First quote",
@@ -116,11 +116,11 @@ When the quote is submitted to the buyer:
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/submitToCustomer`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/submitToCustomer`
 
 **Payload**
 
-``` json
+```json
 {
   "quoteId": 3,
   "comment": "It'd be our pleasure. Please proceed with your order."
@@ -143,11 +143,11 @@ The request can be applied to one or more quotes at the same time.
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/pricesUpdated`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/pricesUpdated`
 
 **Payload**
 
-``` json
+```json
 {
   "quoteIds": [3]
 }
@@ -163,11 +163,11 @@ To set the shipping method, the quote must be in the `created`, `processing_by_a
 
 **Sample Usage**
 
-`PUT /V1/negotiableQuote/3/shippingMethod`
+`PUT <host>/rest/<store_code>/V1/negotiableQuote/3/shippingMethod`
 
 **Payload**
 
-``` json
+```json
 {
   "shippingMethod": "fixedrate"
 }
@@ -191,11 +191,11 @@ When you decline a quote, all custom pricing will be removed from the quote. The
 
 **Sample Usage**
 
-`POST /V1/negotiableQuote/decline`
+`POST <host>/rest/<store_code>/V1/negotiableQuote/decline`
 
 **Payload**
 
-``` json
+```json
 {
   "quoteId": 80,
   "reason": "Your order is too large. "
@@ -216,7 +216,7 @@ Magento returns all the comments associated with the specified quote ID. The com
 
 **Sample Usage**
 
-`GET /V1/negotiableQuote/87/comments`
+`GET <host>/rest/<store_code>/V1/negotiableQuote/87/comments`
 
 **Payload**
 
@@ -224,7 +224,7 @@ Not applicable
 
 **Response**
 
-``` json
+```json
 [
   {
     "entity_id": 6,
@@ -311,7 +311,7 @@ Use the `attachmentContent` call to retrieve the files (in base64 format) attach
 
 **Sample Usage**
 
-`GET /V1/negotiableQuote/attachmentContent`
+`GET <host>/rest/<store_code>/V1/negotiableQuote/attachmentContent`
 
 **Payload**
 
@@ -319,7 +319,7 @@ Not applicable
 
 **Response**
 
-``` json
+```json
 {
   "quoteId": 2,
   "quoteName": "First quote",

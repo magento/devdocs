@@ -17,7 +17,7 @@ Use queries to read server-side data, such as a specific customer's address.
 ### Customer attributes {#customerAttributes}
 The customer object can contain the following attributes:
 
-Attribute |  Data Type | Description 
+Attribute |  Data Type | Description
 --- | --- | ---
 `addresses` | [CustomerAddress](#customerAddress)  | An array containing the customer's shipping and billing addresses
 `created_at` | String | Timestamp indicating when the account was created
@@ -26,6 +26,7 @@ Attribute |  Data Type | Description
 `dob` | String | The customer's date of birth
 `email` | String | The customer's email address
 `firstname` | String | The customer's first name
+`gender` | Int | The customer's gender (Male - 1, Female - 2)
 `group_id` | Int | The group assigned to the user. Default values are 0 (Not logged in), 1 (General), 2 (Wholesale), and 3 (Retailer)
 `id` | Int | The ID assigned to the customer
 `is_subscribed` | Boolean | Indicates whether the customer is subscribed to the company's newsletter
@@ -92,7 +93,11 @@ The following call returns information about the logged-in customer. Provide the
       lastname
       street
       city
-      region_id
+      region {
+        region_code
+        region
+        region_id
+      }
       postcode
       country_id
       telephone
@@ -120,7 +125,11 @@ The following call returns information about the logged-in customer. Provide the
            "123 Elm Street"
          ],
          "city": "Anytown",
-         "region_id": 57,
+         "region": {
+           "region_code": "MI",
+           "region": "Michigan",
+           "region_id": 33
+         }
          "postcode": "78758",
          "country_id": "US",
          "telephone": "512 555-1212"
@@ -510,7 +519,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "revokeCustomerToken": {
@@ -555,7 +564,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "changeCustomerPassword": {

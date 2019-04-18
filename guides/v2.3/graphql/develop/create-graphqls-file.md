@@ -25,7 +25,7 @@ A query definition can be one line, or it can be complex. If your module's query
 
 The following example shows the `products` query. The `type` is defined as a `Query`.  The `products` definitions define the keywords that are used to construct a query, as shown in [Queries]({{ page.baseurl }}/graphql/queries.html). The parameter definitions will be discussed in [Specify output attributes](#specify-output-attributes).
 
-``` php
+```text
 type Query {
     products (
         search: String,
@@ -39,7 +39,7 @@ type Query {
 
 In contrast, the `customer` query returns the `Customer` object associated with the current user. There is no need to define pagination information.
 
-``` php
+```text
 type Query {
     customer: Customer @resolver(class: "Magento\\CustomerGraphQl\\Model\\Resolver\\Customer")
 }
@@ -55,7 +55,7 @@ The theoretical Volumizer module extends `Catalog`. In this case, you would refe
 
 The following example defines three Volumizer attributes (`v_height`, `v_width`, `v_depth`) that must be specified as input to a query.
 
-``` php
+```text
 input ProductFilterInput {
   v_height: FilterTypeInput
   v_width: FilterTypeInput
@@ -69,7 +69,7 @@ You can also define which attributes can be used for sorting the search results.
 
 This example allows sorting on the `v_volume` attribute only.
 
-``` php
+```text
 input ProductSortInput {
     v_volume: SortEnum
 }
@@ -77,7 +77,7 @@ input ProductSortInput {
 
 `ProductSortInput` indicates that the attributes are available to catalog (Product) queries. If you specify a module-specific value such as `VolumizerSortInput`, then the attribute will be available only to queries processed by that module.
 
-`SortEnum` is defined in the base `schema.graphqls` file.
+`SortEnum` indicates whether to return results in ascending or descending order. For the definition see [`schema.graphqls`](https://github.com/magento/magento2/blob/2.3/app/code/Magento/GraphQl/etc/schema.graphqls) file.
 
 ## Specify output attributes {#specify-output-attributes}
 
@@ -91,7 +91,7 @@ In many cases, the response contains data that was either not available as input
 
 The following example defines module-specific output attributes for the Volumizer module.
 
-``` php
+```text
 interface ProductInterface @typeResolver(class: "\\Path\\To\\typeResolver\\Class"){
     v_height: Float
     v_width: Float
@@ -104,7 +104,7 @@ The `typeResolver` parameter specifies the path to the Resolver object, which in
 
 The `v_volume` attribute is defined as a `VolumeWithUnit` object. This object might be defined as follows:
 
-``` php
+```text
 type VolumeWithUnit {
     calculated_volume: Float
     unit: VolumeUnitEnum
@@ -117,7 +117,7 @@ The Volumizer module could return the `calculated_volume`, while the `unit` is a
 
 You can optionally define enumerations to help prevent input errors. Magento capitalizes all enumerated responses. If a value contains a dash (-), the system converts it to an underscore (_). This is done to maintain compliance with the GraphQL specification.
 
-``` php
+```text
 enum VolumeUnitEnum {
     IN3
     FT3
@@ -134,7 +134,7 @@ You can describe any attribute, type definition, or other entity within a `schem
 
 For example:
 
-```
+```text
 sku: FilterTypeInput @doc(description: "A number or code assigned to a product to identify the product, options, price, and manufacturer")
 url_key: String @doc(description: "The url key assigned to the product")
 product_count: Int @doc(description: "The number of products")

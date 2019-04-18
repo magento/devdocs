@@ -19,7 +19,7 @@ A testing typified element class in the FTF contains methods to be used in the t
 The most important methods are `setValue()` and `getValue()`. These methods are required when you work with a form.
 
 There are two types of testing typified elements: default typified elements and Magento custom typified elements.
- 
+
  * Default typified elements are the web elements that are typically used in a web application.
   
  * Magento custom typified elements are the web elements that are specific to the Magento application
@@ -67,11 +67,10 @@ Testing typified elements for Magento custom elements are stored in the `<magent
 ### Create {#create}
 
 __Step 1.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class in the `<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory
- 
+
  It must be named according to the following naming convention. Two capital letters in the name: the first letter and a capital `E` in the `Element.php`. For example: `OptgroupselectElement.php`.
- 
-{%highlight php %}
- 
+
+```php
  <?php
 
  namespace Magento\Mtf\Client\Element;
@@ -82,17 +81,17 @@ __Step 1.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}P
  {
     //
  }
-  {%endhighlight %}
- 
+```
+
 __Step 2.__ Extend your class from the [default element](#basic_class) or the [Magento custom element](#magento_class) class
 
-``` php?start_inline=1 
+```php
 class OptgroupselectElement extends SelectElement
 ```
 
 __Step 3.__ Redefine methods of the extended class according to your goals
 
-``` php?start_inline=1
+```php
 /**
  * Option group locator
  *
@@ -121,7 +120,7 @@ public function setValue($value)
 Typified elements are used in the [FTF blocks].
 Use a `find()` method to find an element. This method is declared in the [SimpleElement] class:
 
-``` php?start_inline=1
+```php
 /**
  * Find element using locator in context of current element
  *
@@ -138,7 +137,7 @@ public function find($selector, $strategy = Locator::SELECTOR_CSS, $type = null)
 
 The following code is an example of the `find()` method usage from the [\Magento\Catalog\Test\Block\Adminhtml\Category\Tree] block:
 
-``` php?start_inline=1
+```php
 /**
  * Check category in category tree
  *
@@ -162,7 +161,7 @@ Typified elements can be used in the [form mapping].
 
 The following code is a corresponding mapping with the typified element `optgroupselect` from the previous image:
 
-{%highlight xml%}
+```xml
 <mapping strict="0">
     <wrapper>store</wrapper>
     <fields>
@@ -176,14 +175,12 @@ The following code is a corresponding mapping with the typified element `optgrou
         </is_active>
     </fields>
 </mapping>
-{%endhighlight%}
-
+```
 
 <!-- PICTURE DEFINITIONS -->
 
 [A typified element mapping example in GUI]: {{ site.baseurl }}/common/images/ftf/mtf_typ_element_map_gui.png
 [A typified element example in the browser]: {{ site.baseurl }}/common/images/ftf/mtf_typ_element_brows.png
-
 
 <!-- LINK DEFINITIONS -->
 

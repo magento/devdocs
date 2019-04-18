@@ -9,7 +9,7 @@ functional_areas:
 
 In Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}/config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
 
-``` bash
+```bash
 bin/magento app:config:dump {config-types}
 ```
 
@@ -17,7 +17,7 @@ _config_types_ is a space-separated list of config types to dump. Available type
 
 The following example dumps scopes and themes only:
 
- ``` bash
+ ```bash
 bin/magento app:config:dump scopes themes
 ```
 

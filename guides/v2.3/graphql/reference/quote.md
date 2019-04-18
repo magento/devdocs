@@ -9,6 +9,9 @@ A quote represents the contents of a customer's shopping cart. It is responsible
 * Determining estimated shipping costs
 * Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
+{:.bs-callout .bs-callout-tip}
+Except for `createEmptyCart`, the mutations defined in this topic are available in the 2.3-develop branch of the [graphql-ce repository](https://github.com/magento/graphql-ce).
+
 ## Query
 Use the `Cart` query to retrieve information about a particular cart.
 
@@ -85,7 +88,7 @@ The following returns information about a cart given a `cart_id`. Note that the 
 ```
 **Response**
 
-```text
+```json
 {
   "data": {
     "cart": {
@@ -197,7 +200,7 @@ mutation {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "addSimpleProductsToCart": {
@@ -308,7 +311,7 @@ mutation {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "setBillingAddressOnCart": {
@@ -385,7 +388,7 @@ mutation {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
@@ -440,7 +443,7 @@ mutation {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "applyCouponToCart": {
@@ -482,7 +485,7 @@ mutation {
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "removeCouponFromCart": {

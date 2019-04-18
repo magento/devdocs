@@ -6,8 +6,6 @@ landing-page: GraphQL Developer's Guide
 
 [GraphQL](http://graphql.org/) is a data query language developed internally by Facebook in 2012 before being publicly released in 2015. Magento implements GraphQL to provide an alternative to REST and SOAP web APIs for frontend development.
 
-The Magento DevDocs team are excited that we can provide a preview of GraphQL well before the code is officially released. You can go to the [latest Magento 2.3 build]({{ site.mage2300url }}app/code/Magento) to explore and try it out for yourself.
-
 ## The current state of Magento GraphQL
 
 Most of the development team's work thus far has been devoted to building the GraphQL infrastructure and enhancing the ability to query products. The complexity of the Catalog module made it the ideal candidate for early development. It supports all product types as well as extension, custom, and EAV attributes.
@@ -28,7 +26,7 @@ You can explicitly define EAV attributes in the schema, while a module's attribu
 The current GraphQL codebase also supports the following features:
 
 * You can perform full text searches on products in a similar manner as REST and SOAP calls. You can also simultaneously perform a full text search and filter the results. This is new functionality available only with GraphQL.
-* All product types are supported. Currently, previous versions supported simple and configurable products only.
+* All product types are supported. Previous versions support only simple and configurable products.
 * A product query returns complex price objects that include the amount, the currency code, and any adjustments.
 * You can query attributes of a logged-in customer. A session token provides authorization.
 * The REST and SOAP APIs had separate endpoints for searching across all products and individual products. In GraphQL, all product searches use the `products` query.

@@ -19,7 +19,7 @@ most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payment
 
 In the integration with the Braintree payment provider, we use the `\Magento\Braintree\Block\Form` class as `formBlockType`. It allows displaying only card types available for configured countries:
 
-``` php?start_inline=1
+```php
 class Form extends Cc
 {
     /**
@@ -71,7 +71,7 @@ Then add the template to the billing form layout `sales_order_create_index.xml`.
 
 The following example adds the Braintree-specific template [`app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml`]({{ site.mage2100url }}app/code/Magento/Payment/view/adminhtml/templates/form/cc.phtml) to the [billing form layout in the Braintree module]({{ site.mage2100url }}app/code/Magento/Braintree/view/adminhtml/layout/sales_order_create_index.xml).
 
-{% highlight xml %}
+```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="order_create_billing_form">
@@ -83,7 +83,7 @@ The following example adds the Braintree-specific template [`app/code/Magento/Pa
         </referenceBlock>
     </body>
 </page>
-{% endhighlight %}
+```
 
 ## What's next
 

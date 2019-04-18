@@ -11,7 +11,7 @@ You can configure REST endpoints in your module to use custom routes (aliases) f
 
 To define custom routes, create an `etc/webapi_async.xml` file in your module that contains the following structure:
 
-``` xml
+```xml
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_WebapiAsync:etc/webapi_async.xsd">
     <route url="V1/widgets" method="POST" alias="createWidget" />
     <route url="async/bulk/V1/widget" method="PUT" alias="asyncBulkUpdateWidgets"/>

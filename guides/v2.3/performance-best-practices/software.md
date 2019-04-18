@@ -7,20 +7,18 @@ functional_areas:
   - Setup
 ---
 
-
-
 We recommend using the following software for production instances of Magento:
 
 * [PHP]({{page.baseurl}}/install-gde/system-requirements-tech.html#php)
-*	Nginx and [PHP-FPM](https://php-fpm.org/)
-*	[MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
+* Nginx and [PHP-FPM](https://php-fpm.org/)
+* [MySQL]({{page.baseurl}}/install-gde/prereq/mysql.html)
 * [Varnish cache]({{page.baseurl}}/config-guide/varnish/config-varnish.html)
 * [Elasticsearch & Elasticsearch Search Adapter]({{page.baseurl}}/config-guide/elasticsearch/es-overview.html)
 
 For multi-server deployments, or for merchants planning on scaling their business, we recommend the following:
 
-*	[Redis]({{page.baseurl}}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
-*	A separate Redis instance as your [default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
+* [Redis]({{page.baseurl}}/config-guide/redis/redis-session.html) for sessions (from 2.0.6+)
+* A separate Redis instance as your [default cache]({{page.baseurl}}/config-guide/redis/redis-pg-cache.html) (do not use this instance for page cache)
 
 See [Magento 2.2.x technology stack requirements]({{page.baseurl}}/install-gde/system-requirements-tech.html) for information about supported versions of each type of software.
 
@@ -28,18 +26,18 @@ See [Magento 2.2.x technology stack requirements]({{page.baseurl}}/install-gde/s
 
 Operating system configurations and optimizations are similar for Magento as other high-load web applications. As the number of concurrent connections handled by the server increases, the number of available sockets can become fully allocated. The Linux kernel supports a mechanism to "reuse" and "recycle" TCP connections. Be aware that more aggressive recycling than re-use may cause issues on the load balancers. To enable these kernel settings, set the following values in `/etc/sysctl.conf`: 
 
-```
+```terminal
 net.ipv4.tcp_tw_recycle = 1
 net.ipv4.tcp_tw_reuse = 1
 ```
 
-The kernel parameter `net.core.somaxconn` controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in `/etc/sysctl.conf`: 
+The kernel parameter `net.core.somaxconn` controls the maximum number of open sockets waiting for connections. This value can be safely increased to 1024, but it should be correlated with the ability of the server to handle this amount. To enable this kernel parameter, set the following value in `/etc/sysctl.conf`:
 
 `net.core.somaxconn = 1024`
 
 ## PHP
 
-Magento fully supports PHP 7.1. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
+Magento fully supports PHP 7.2.11. There are several factors to account for when configuring PHP to get maximum speed and efficiency on requests processing.
 
 ### PHP extensions
 
@@ -76,7 +74,7 @@ To guarantee successful execution of all Magento instances without dumping data 
 
 To get maximum speed out of Magento 2 on PHP7, you must activate the OpCache module and properly configure it. These settings are recommended for the module:
 
-```
+```bash
   opcache.memory_consumption=512MB
   opcache.max_accelerated_files=60000
   opcache.consistency_checks=0
@@ -88,7 +86,7 @@ When you fine-tune the memory allocation for opcache, take into account the size
 
 If you have a low-memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
-```
+```bash
 opcache.memory_consumption=64
 opcache.max_accelerated_files=60000
 ```
@@ -97,9 +95,9 @@ opcache.max_accelerated_files=60000
 
 Magento fully supports the Nginx and Apache web servers. Magento provides sample recommended configuration files in the  `<magento_home>/nginx.conf.sample` (Nginx) and  `<magento_home>.htaccess.sample` (Apache) files.  The Nginx sample contains settings for better performance and is designed so that little reconfiguration is required. Some of the main configuration best practices defined in the sample file include:
 
-*	Settings for caching static content in a browser
-*	Memory and execution time settings for PHP
-*	Content compression settings
+* Settings for caching static content in a browser
+* Memory and execution time settings for PHP
+* Content compression settings
 
 You should also configure the number of threads for input request processing, as listed below:
 
@@ -146,7 +144,7 @@ To store your assets in Varnish, add the following VCL entries in your `default.
 
 At the end of the `if` statement for PURGE requests in the `vcl_recv` subroutine, add:
 
-``` javascript
+```javascript
 # static files are cacheable. remove SSL flag and cookie
 
 if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$") {
@@ -159,7 +157,7 @@ if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tif
 In the `vcl_backend_response` subroutine, look for the `if` statement that unsets the cookie for `GET` or `HEAD` requests.
 The updated `if` block should look like the following:
 
-``` javascript
+```javascript
 # validate if we need to cache it and prevent from setting cookie
 # images, css and js are cacheable by default so we have to remove cookie also
 
