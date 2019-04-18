@@ -251,6 +251,15 @@ The directories and files structure described below is the most extended one. It
         The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, if the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
       </td>
     </tr>
+    <tr>
+      <td colspan="1">
+        <code>/dev/tools/grunt/configs/themes.js</code>
+      </td>
+      <td colspan="1">optional</td>
+      <td colspan="1">
+        You can define your theme in the <code>themes.js</code> to execute grunt tasks for compiling LESS files.
+      </td>
+    </tr>
   </tbody>
 </table>
 
