@@ -7,5 +7,3 @@ title: Magento_WebapiAsync module
 # WebapiAsync
 
 **WebapiAsync** Extends Webapi extension and provide functional to process asynchronous requests. It handle asynchronous requests, schedule, publish and consum bulk operations from queue.
-
-

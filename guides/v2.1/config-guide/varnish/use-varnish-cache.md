@@ -24,9 +24,9 @@ After you've installed and configured Varnish to work with Magento, the followin
 
 	For example, anything you do in the Admin in:
 
-	*	**STORES** > **Configuration** > GENERAL > **General**
-	*	**STORES** > **Configuration** > GENERAL > **Currency Setup**
-	*	**STORES** > **Configuration** > GENERAL > **Store Email Addresses**
+	*	**STORES** > **Settings** > **Configuration** > GENERAL > **General**
+	*	**STORES** > **Settings** > **Configuration** > GENERAL > **Currency Setup**
+	*	**STORES** > **Settings** > **Configuration** > GENERAL > **Store Email Addresses**
 
 	When Magento detects such a change, a message displays informing you to refresh the cache. Refer to the _Magento User Guide_ for more information about Magento cache management. .
 

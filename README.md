@@ -38,7 +38,7 @@ $ ruby -v
    $ brew install ruby
    ```
 
-**Unix, Windows and other OS users**
+**Unix, Windows, and other OS users**
 
 See the [Ruby site](https://www.ruby-lang.org/en/documentation/installation) for instructions.
 
@@ -142,7 +142,7 @@ The following example will generate Magento 2.2 documentation only.
    This command:
    * Checks your environment according to the dependencies in `Gemfile.lock`.
    * Removes the `_site/` directory, which contains previously generated preview files.
-   * Generates a new preview and opens the landing page in a web browsers.
+   * Generates a new preview and opens the landing page in a web browser.
 
 If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
 
@@ -154,11 +154,11 @@ You can deploy the devdocs site locally using [this Vagrant project](https://git
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!
 
-*	<a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
+*    <a href="https://twitter.com/MagentoDevDocs" class="twitter-follow-button" data-show-count="false">Follow @MagentoDevDocs</a>
 
-*	<a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
+*    <a href="mailto:DL-Magento-Doc-Feedback@magento.com">E-mail us</a>
 
-*	<a href="https://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
+*    <a href="https://devdocs.magento.com">Visit our documentation site</a>, built using [GitHub pages](https://pages.github.com/).
 
 ## Build DevDocs in Windows
 

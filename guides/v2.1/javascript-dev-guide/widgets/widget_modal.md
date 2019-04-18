@@ -27,10 +27,11 @@ The design patterns for the modal pop-up windows in the Admin are described in t
 ## Initialize the modal widget {#modal_initialize}
 
 To initialize the widget in your script, use the following general notation:
+
 ```javascript
 $('#modal_content').modal({
-    &lt;option1&gt;: &lt;value1&gt;,
-    &lt;option2&gt;: &lt;value2&gt;,
+    <option1>: <value1>,
+    <option2>: <value2>,
     ...
 });
 ```
@@ -49,6 +50,7 @@ The modal widget has the following options:
 -   [modalLeftMargin](#modal_modalLeftMargin)
 -   [responsive](#modal_responsive)
 -   [title](#modal_title)
+-   [trigger](#modal_trigger)
 -   [type](#modal_type)
 
 ### autoOpen {#modal_autoopen}
@@ -137,6 +139,12 @@ Translated title for popup window.
 
 **Default value**: empty
 
+### `trigger` {#modal_trigger}
+The element that triggers the modal.
+
+**Type**: String 
+
+**Default value**: empty
 
 ### `type` {#modal_type}
 
@@ -201,6 +209,36 @@ Called when the modal window is opened.
 - the TAB key: set focus to the next focusable element (looped inside the modal window)
 - the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
 
+## Code sample
+
+The following example shows how to initialize the modal widget and pass options during the initialization.
+
+```html
+<button type="button" class="action" data-trigger="trigger">
+    <span data-bind="i18n: 'Click Here'"></span>
+</button>
+<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Popup title',
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'buttons': [{
+                text: 'Submit',
+                class: 'action'
+            }]
+        }}">
+    <div class="content">
+        Popup Content
+    </div>
+</div>
+```
+
+### Result
+
+The result is a modal and a button (_Click Here_) that opens the modal.
+
+![Modal Widget]({{ site.baseurl }}/common/images/widget/modal-widget-result.png)
 
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html

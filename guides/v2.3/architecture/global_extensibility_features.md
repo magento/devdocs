@@ -49,7 +49,7 @@ Attribute type | Displayed by storefront?
 EAV | No
 Custom | Yes
 Extension | No
-{:style="table-layout:auto;"}
+
 
 Attribute types fall into three general categories:
 

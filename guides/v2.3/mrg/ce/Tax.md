@@ -36,4 +36,3 @@ The Magento_Tax module is installed automatically (using the native Magento inst
 
 ## Uninstall
 The Magento_Tax module should not be uninstalled; it is a required module.
-
