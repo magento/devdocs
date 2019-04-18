@@ -25,7 +25,7 @@ You can use a variety of options to customize deployment operations based on sto
 
 Run the following command to deploy static content:
 
-``` bash
+```bash
 bin/magento setup:static-content:deploy
 ```
 
@@ -40,13 +40,13 @@ When you preprocess and compile dependency injection (DI) instructions, Magento:
 
 Run the following command to preprocess and compile DI:
 
-``` bash
+```bash
 bin/magento setup:di:compile
 ```
 
 After compilation completes, we recommend running the following command:
 
-``` bash
+```bash
 composer dump-autoload -o --apcu
 ```
 
@@ -60,7 +60,7 @@ Finally, you need to place your store in Production mode. Production mode is spe
 
 You can also deploy static content, compile the content, and set the mode in one CLI command:
 
-``` bash
+```bash
 bin/magento deploy:mode:set production
 ```
 

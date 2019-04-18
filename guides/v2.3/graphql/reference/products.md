@@ -112,7 +112,7 @@ content="GraphQL automatically filters out a product attribute if ALL of the fol
 
 The system returns a `Products` object containing the following information:
 
-``` text
+```text
 items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
@@ -132,7 +132,7 @@ Attribute |  Description
 
 When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
 
-``` xml
+```xml
 <type name="Magento\CatalogGraphQl\Model\Resolver\Products\FilterArgument\ProductEntityAttributesForAst" >
   <arguments>
     <argument name="additionalAttributes" xsi:type="array">
@@ -361,7 +361,7 @@ You can review several general interest `products` queries at [Queries]({{ page.
 
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-``` text
+```text
 {
   products(
     filter: { sku: { like: "24-WB%" } }
