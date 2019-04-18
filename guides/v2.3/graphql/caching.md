@@ -33,7 +33,7 @@ Magento explicitly disallows caching the following queries.
 
 ## Caching with Varnish
 
-We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html)for more information.
+We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
 
 Magento 2.3.2 updates the `vcl_hash` subroutine in the template `varnish.vcl` file for both Varnish 4.x and 5.x. If you are upgrading to Magento 2.3.2, edit the `default.vcl` file on your system so that it matches the following sample:
 
@@ -68,3 +68,14 @@ sub vcl_hash {
 
 ## X-Magento-Vary 
 The `X-Magento-Vary` cache cookie is not supported for GraphQL. The `Store` and `Content-Currency`  headers, along with the content language (which is deduced) determine the context.
+
+## Response headers
+
+In developer mode, Magento returns several headers that could be useful for debugging caching problems. These headers are not specific to GraphQL.
+
+Header | Description
+--- |---
+`X-Magento=Cache-Debug` | HIT (the page was loaded from cache) or MISS (the page was not loaded from cache.
+`X-Magento-Tags` | A list of cache tags that correspond to the catalog, category, or CMS items returned in the query. Magento caches these items.
+
+## Cache invalidation

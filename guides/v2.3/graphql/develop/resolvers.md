@@ -112,7 +112,7 @@ type Mutation {
 
 Notice that a `MutationQueryInput` parameter is not specified here and `MutationQueryOutput` is defined as `String` type.
 
-The next query creates a customer's account
+The mutation to create a customer's account is more complex:
 
 ```text
 type Mutation {
@@ -207,5 +207,44 @@ A sample response:
       }
     }
   }
+}
+```
+
+## Identity resolvers
+
+If your module caches custom data beyond the default full page cache (which includes product, category, and CMS data), then you must create an identity resolver. 
+
+An `IdentityResolver` class implements `Magento\Framework\GraphQl\Query\IdentityResolverInterface`. The class must contain the `getIdentifiers(array $resolvedData)` method. The array is a set of cache tags.
+
+```php
+<?php
+declare(strict_types=1);
+namespace PathTo\Model\Resolver\MyModule;
+use Magento\Framework\GraphQl\Query\IdentityResolverInterface;
+/**
+ * Identity for multiple resolved categories
+ */
+class MyModuleIdentityResolver implements IdentityResolverInterface
+{
+    /**
+     * Get category IDs from resolved data
+     *
+     * @param array $resolvedData
+     * @return array
+     */
+    public function getIdentifiers(array $resolvedData): array
+    {
+       // Your code
+    }
+}
+```
+
+The module's `graphqls` file contains a pointer to this class as part of the `@cache` directive, as shown below:
+
+```text
+    category (
+        id: Int @doc(description: "Id of the category")
+    ): CategoryTree
+    @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\CategoryTree") @doc(description: "The category query searches for categories that match the criteria specified in the search and filter attributes") @cache(cacheTag: "cat_c", cacheIdentityResolver: "Magento\\CatalogGraphQl\\Model\\Resolver\\Category\\CategoryTreeIdentityResolver")
 }
 ```
