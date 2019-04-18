@@ -1,22 +1,27 @@
 function timeSince(date) {
-  var seconds = Math.floor((new Date() - date) / 1000);
+  
+  let buildString = function(number, intervalName) {
+    let pluralIntervalName = (number === 1) ? intervalName : intervalName + "s";
+    return number + " " + pluralIntervalName + " ago";
+  }
 
-  var interval = Math.floor(seconds / 31536000);
+  let seconds = Math.floor((new Date() - date) / 1000);
+  let interval = Math.floor(seconds / 31536000);
 
   if (interval > 1) {
-    return interval + " years ago";
+    return buildString(interval, "year");
   }
   interval = Math.floor(seconds / 2592000);
-  if (interval > 1) {
-    return interval + " months ago";
+  if (interval >= 1) {
+    return buildString(interval, "month");
   }
   interval = Math.floor(seconds / 86400);
   if (interval > 1) {
-    return interval + " days ago";
+    return buildString(interval, "day");
   }
   interval = Math.floor(seconds / 3600);
   if (interval > 1) {
-    return interval + " hours ago";
+    return buildString(interval, "hour");
   }
   return "Just now";
 }
@@ -26,7 +31,7 @@ var time = document.getElementById("last-modified-at");
 if (time) {
   let modifiedDate = new Date(time.getAttribute("datetime"));
 
-  if ( !isNaN(modifiedDate) ) {
+  if (!isNaN(modifiedDate)) {
     let modifiedTimeAgo = timeSince(modifiedDate);
     let modifiedDateString = time.innerText;
 
