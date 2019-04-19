@@ -20,6 +20,7 @@ Example:
 ```bash
 cd ~/magento2
 ```
+
 ```bash
 git clone git@github.com:magento/magento2-updater.git update
 ```
@@ -32,6 +33,7 @@ Install the dependencies using Composer:
 ```bash
 cd update
 ```
+
 ```bash
 composer install
 ```

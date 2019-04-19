@@ -42,6 +42,9 @@ As a work-around, complete the following:
 
     ```bash
     php bin/magento cache:flush
+    ```
+    
+    ```bash
     redis-cli -h <> -p <> flushall
     ```
 

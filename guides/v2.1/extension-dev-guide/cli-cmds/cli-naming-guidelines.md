@@ -111,8 +111,17 @@ For example,
 
 ```bash
 	magento dev:theme:create --parent=Magento/luma frontend arg1 arg2
+```
+
+```bash
 	magento dev:theme:create -p=Magento/luma frontend vendor themename
+```
+
+```bash
 	magento dev:theme:create --extend-from=Magento/luma frontend vendor themename
+```
+
+```bash	
 	magento module:disable -f Magento_Cms
 ```
 

@@ -28,8 +28,17 @@ The example Solr configuration is _not_ intended to be used in a production site
 
     ```bash
     cd <your Solr install dir>/example/solr
+    ```
+    
+    ```bash
     cp -R collection1 magento2
+    ```
+    
+    ```bash
     cd magento2
+    ```
+    
+    ```bash
     cp -R <your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* ./conf/
     ```
 
@@ -37,8 +46,17 @@ The example Solr configuration is _not_ intended to be used in a production site
 
     ```bash
     cd /opt/solr/solr/solr-4.10.4/example/solr
+    ```
+    
+    ```bash
     cp -R collection1 magento2
+    ```
+    
+    ```bash
     cd magento2
+    ```
+    
+    ```bash
     cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
     ```
 
@@ -75,6 +93,9 @@ The example Solr configuration is _not_ intended to be used in a production site
 
     ```bash
     cd <your Solr install dir>/example
+    ```
+    
+    ```bash
     java -jar start.jar
     ```
 

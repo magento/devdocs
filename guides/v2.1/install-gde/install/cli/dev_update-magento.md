@@ -21,6 +21,9 @@ To update the Magento software if you're a contributing developer:
 
     ```bash
     cd <magento_root>
+    ```
+    
+    ```bash
     cp composer.json composer.json.old
     ```
 

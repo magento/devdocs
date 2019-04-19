@@ -232,8 +232,10 @@ If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/
 
 1.  Convert tables from InnoDb to NDB type in dump files:
 
+    ```bash
         sed -ei 's/InnoDb/NDB/' <file name>.sql
-
+    ```
+    
 2.  Remove rows with a FULLTEXT key from dumps because NDB tables don't support FULLTEXT.
 
 #### Restore the data
@@ -242,8 +244,16 @@ Run the following commands:
 
 ```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/sales.sql
+```
+
+```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/sequence.sql
+```
+
+```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/salesarchive.sql
+
+```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/customercustomattributes.sql
 ```
 
@@ -285,8 +295,11 @@ ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
 Run the script as follows:
 
 1.  Log in to your MySQL database as the root or administrative user:
-
-        mysql -u root -p
+    
+    ```bash
+    mysql -u root -p
+    ```
+    
 2.  At the `mysql >` prompt, run the script as follows:
 it.
         source <path>/<script>.sql
@@ -303,23 +316,28 @@ This section discusses how to back up quote tables from the main Magento databas
 {% collapsible Click to back up and restore quote tables %}
 
 Run the following command from a command prompt:
-
+    
+    ```bash
     mysqldump -u <your database root username> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
-
+    ```
+    
 ### NDB requirement
 
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
 1.  Convert tables from InnoDb to NDB type in dump files:
-
+    
+    ```bash
         sed -ei 's/InnoDb/NDB/' <file name>.sql
+    ```
 
 2.  Remove rows with a FULLTEXT key from dumps because NDB tables don't support FULLTEXT.
 
 ### Restore tables to the quote database
 
+```bash
     mysql -u root -p magento_quote < /<path>/quote.sql
-
+```
 {% endcollapsible %}
 
 ## Drop sales and quote tables from the Magento database {#config-ee-multidb-drop}
