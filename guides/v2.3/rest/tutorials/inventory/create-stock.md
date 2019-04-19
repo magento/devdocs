@@ -43,7 +43,7 @@ The `POST V1/inventory/stocks` endpoint creates a stock. The `name`, `type`, and
 
 The `name` attribute is required.
 
-``` json
+```json
 
 {
   "stock": {
@@ -68,7 +68,7 @@ Magento returns the `stock_id`, such as `2`. The value will be used in subsequen
 
 Use the same endpoint to add another stock. The `stock_id` for `Europe Stock` is `3`.
 
-``` json
+```json
 {
   "stock": {
     "name": "Europe Stock",

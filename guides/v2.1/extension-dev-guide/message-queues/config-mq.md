@@ -50,7 +50,7 @@ disabled | Determines whether this handler is disabled. The default value is `fa
 
 The following sample defines two synchronous topics. The first topic is for RPC calls. The second uses a custom service interface.
 
-{% highlight xml %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
 <topic name="synchronous.rpc.test" request="string" response="string">
@@ -60,7 +60,7 @@ The following sample defines two synchronous topics. The first topic is for RPC 
     <handler name="processRemoteRequest" type="Magento\TestModuleSynchronousAmqp\Model\RpcRequestHandler" method="process"/>
 </topic>
 </config>
-{% endhighlight %}
+```
 
 ## Create the `queue.xml` file ##
 
@@ -90,7 +90,7 @@ maxMessages | Specifies the maximum number of messages to consume.
 
 ## Sample `queue.xml` file ##
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
 <broker topic="synchronous.rpc.test" type="amqp" exchange="magento">
     <queue consumer="synchronousRpcTestConsumer" name="synchronous.rpc.test" consumerInstance="Magento\Framework\MessageQueue\Rpc\Consumer"/>
@@ -99,7 +99,7 @@ maxMessages | Specifies the maximum number of messages to consume.
     <queue consumer="RemoteServiceTestConsumer" name="queue.magento.testModuleSynchronousAmqp.api.serviceInterface.execute" consumerInstance="Magento\Framework\MessageQueue\Rpc\Consumer"/>
 </broker>
 </config>
-{% endhighlight %}
+```
 
 #### Related Topics
 

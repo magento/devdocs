@@ -140,8 +140,10 @@ relative_links:
     - _videos
     - codelinks
     - community
+    - extensions
     - guides
     - redoc
+    - release
     - tmp
     - 404.md
     - availability.md

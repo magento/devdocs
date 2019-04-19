@@ -38,7 +38,7 @@ Keep in mind that the Magento_UI module contains these important files:
 When the request for my_page comes, the server does the following:
 
 1. Determines which UI components are used in this particular layout. In the example, the UI components that are used are defined in the `my_form` component’s `.xml` declaration file.
-2. Searches the `.xml` files with name `my_form` among all modules. The server then merges all the `my_form .xml` file(s) into a single configuration object, thus overriding the common properties, so that the latest `my_form .xml` file always has the highest priority.
+2. Searches the `.xml` files with name `my_form` among all modules. The server then merges all the `my_form.xml` file(s) into a single configuration object, thus overriding the common properties, so that the latest `my_form.xml` file always has the highest priority.
 1. Merges the resulting configuration (from Step 2 above) with the configuration from the UI module `definition.xml`. The UI module `definition.xml` configuration file has the lowest priority, and is overwritten by the merged configuration of all `my_form.xml` files.
 2. Translates the resulting configuration into JSON format and adds it to response body the following way:
 
@@ -50,7 +50,7 @@ Now it is the client's turn to process this JSON and generate the UI component's
 
 1. RequireJS requires `Magento_Ui/js/core/app` and passes [JSON configuration]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html#decl_tag) as a parameter.
 2. The `Magento_Ui/js/core/app` calls `layout.js `and passes the UI component’s configuration into the layout: `<Magento_Ui_module_dir>/view/base/web/js/core/renderer/layout.js`.
-3. `layout.js` creates instances of UI components. That means that each UI component’s configuration must have an explicitly declared `component` property in JSON. This property references the `.js` file. For example, our form has the component declared in JSON like this:	`"my_form":{"component":"Magento_Ui/js/form/form"}`
+3. `layout.js` creates instances of UI components. That means that each UI component’s configuration must have an explicitly declared the `component` property in JSON. This property references the `.js` file. For example, our form has the component declared in JSON like this: `"my_form":{"component":"Magento_Ui/js/form/form"}`
 So the instance of this class is created, and properties from the JSON overwrites the properties from the UI component’s `defaults` property. Then resulting properties become the first-level properties of the newly created UI component's instance, and the original `defaults` property is deleted.
 4. The UI components’ `.html` templates (if there are any) are rendered by Magento `knockout.js` template engine. This means, that [bootstrap.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/bootstrap.js) (required by `app.js`) passes our own [template engine]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js) for the Knockout.
 5. The `bootstrap.js` binds the component as a Model behind this View (template) using Knockout bindings. The UI components are now displayed on the page, and are fully interactive.
