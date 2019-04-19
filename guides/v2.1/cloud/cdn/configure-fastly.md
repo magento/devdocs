@@ -168,7 +168,7 @@ You cannot use the Fastly service in Integration environments.
 3.	Add, commit, and push the changes to your code repository with the following command:
 
     ```bash
-    git add -A; git commit -m "Install Fastly"; git push origin <branch name>
+    git add -A; git commit -m "Install Fastly" && git push origin <branch name>
     ```
 
 4. Merge the branch code with the `master` Integration branch.
