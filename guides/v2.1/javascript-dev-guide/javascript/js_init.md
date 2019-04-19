@@ -10,7 +10,7 @@ redirect_from:
 
 This topic describes different ways to call and initialize JavaScript in Magento 2:
 
-- Insert a [JavaScript component]({{ site.gdeurl }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates.
+- Insert a [JavaScript component]({{ site.gdeurl21 }}javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates.
 - Call Javascript components that require initialization in Javascript (`.js`) files.
 
 We strongly recommend that you use the described approaches and do not add inline {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %}.
@@ -128,7 +128,7 @@ require([
 
 ## Calling JS components requiring initialization in JS files {#js_widget_init}
 
-To call a widget in JS code, use a notation similar to the following ([accordion]({{ site.gdeurl }}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
+To call a widget in JS code, use a notation similar to the following ([accordion]({{ site.gdeurl21 }}frontend-dev-guide/javascript/widget_accordion.html) widget is intiialized on the `[data-role=example]` element as illustration):
 
 ```javascript
 $('[data-role=example]').accordion();
