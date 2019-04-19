@@ -31,7 +31,7 @@ After installation, we recommend the following:
 *	Take precautions against cross-site scripting (XSS) by [securing your templates]({{ page.baseurl }}/frontend-dev-guide/templates/template-security.html)
 <!-- Set up roles and restricted users (Admin) -->
 
-If you installed by [cloning the Magento repository]({{page.baseurl}}/install-gde/prereq/dev_install.html), make sure when you deploy Magento you only include files and folders that are required for the production environment. Files and folders that are not required can potentially expose security risks.
+If you installed by [cloning the Magento repository]({{page.baseurl}}/install-gde/prereq/dev_install.html), make sure that when you deploy Magento, you only include files and folders that are required for the production environment. Files and folders that are not required can potentially expose security risks.
 
 ## Enable Apache server rewrites {#post-install-rewrites}
 
