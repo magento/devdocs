@@ -109,7 +109,7 @@ If you are familiar with Magento, you may be concerned about how to get your con
 {{site.data.var.ece}} provides a set of two [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) commands that export configuration settings from your environment into a file. These commands are only available for **{{site.data.var.ece}} 2.2 and later**.
 
 * `php .vendor/bin/m2-ece-scd-dump`: Recommended. Exports only the configuration settings you have entered or modified from defaults into a configuration file.
-* `bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
+* `php bin/magento app:config:dump`: Exports every configuration setting, including modified and default, into a configuration file.
 
 The generated file is `app/etc/config.php`.
 

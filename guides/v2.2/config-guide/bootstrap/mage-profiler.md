@@ -58,17 +58,17 @@ To enable or disable the profiler:
   To enable the profiler using type `html` and create a flagfile:
 
   ```bash
-  bin/magento dev:profiler:enable html
+  php bin/magento dev:profiler:enable html
   ```
 
   To enable the profiler using type `csvfile` and create a flagfile:
 
   ```bash
-  bin/magento dev:profiler:enable csvfile
+  php bin/magento dev:profiler:enable csvfile
   ```
 
   To disable the profiler and remove the flagfile:
 
   ```bash
-  bin/magento dev:profiler:disable
+  php bin/magento dev:profiler:disable
   ```

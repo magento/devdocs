@@ -41,23 +41,29 @@ You need to add the module to `composer.json`. All extensions and modules must b
 5. Save the file.
 6. Update composer to pull all B2B files into your branch.
 
+    ```bash
         composer update
+    ```
 
     You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, do not introduce additional spaces. Spaces could cause the following error:
 
         InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
 
 5. Add the new B2B files to Git:
-
+    
+    ```bash
         git add setup dev pub lib && git commit -a -m "b2b"
+    ```
+            
 5. Enable all missing modules, including B2B, for updating.
 
         ./vendor/bin/ece-tools module:refresh
 
 6. Complete the upgrade with B2B using the following command:
 
-        bin/magento setup:upgrade
-
+    ```bash
+        php bin/magento setup:upgrade
+    ```
 
 If you have a config.php file as part of your deployment, you should also add the B2B module in the modules section of the file.
 
@@ -66,9 +72,14 @@ If you have a config.php file as part of your deployment, you should also add th
 3. In the modules list, add the B2B module.
 4. Save the file and update Git.
 
+    ```bash
         git add -f app/etc/config.php
+    ```
+    
+    ```bash
         git commit -a -m “Add config.php.”
-
+    ```
+    
 ## Configure and use B2B {#use}
 
 For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html). To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html).
