@@ -110,13 +110,13 @@ To find the values in the database:
 
 To set system-specific configuration values, use:
 
-``` bash
+```bash
 bin/magento config:set [--scope="..."] [--scope-code="..."] [-le | --lock-env] [-lc | --lock-config] path value
 ```
 
 To set sensitive configuration values, use:
 
-``` bash
+```bash
 bin/magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
 ```
 
@@ -153,19 +153,19 @@ Some examples for setting a store base {% glossarytooltip a05c59d3-77b9-47d0-92a
 
 Set the base URL for the default scope:
 
-``` bash
+```bash
 bin/magento config:set web/unsecure/base_url http://example.com/
 ```
 
 Set the base URL for the `base` website:
 
-``` bash
+```bash
 bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com/
 ```
 
 Set the base URL for the `test` store view:
 
-``` bash
+```bash
 bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
 ```
 
@@ -173,7 +173,7 @@ bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url ht
 
 If you use the `--lock-env`  option as follows, the command saves the configuration value in `<Magento base dir>/app/etc/env.php` and disables the field for editing this value in Admin.
 
-``` bash
+```bash
 bin/magento config:set --lock-env --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
 ```
 
@@ -184,7 +184,7 @@ The `env.php` file is system specific. You should not transfer it to another sys
 
 If you use the `--lock-config` option as follows, the configuration value is saved in `<Magento base dir>/app/etc/config.php`. The field for editing this value in Admin page is disabled.
 
-``` bash
+```bash
 bin/magento config:set --lock-config --scope=stores --scope-code=default web/url/use_store 1
 ```
 
@@ -197,7 +197,7 @@ You can transfer `config.php` to another system to use the same configuration va
 
 Command options:
 
-``` bash
+```bash
 bin/magento config:show [--scope[="..."]] [--scope-code[="..."]] path
 ```
 
@@ -214,7 +214,7 @@ The `bin/magento config:show` command displays the values of any [encrypted valu
 
 **Show all saved configurations**:
 
-``` bash
+```bash
 bin/magento config:show
 ```
 
@@ -228,7 +228,7 @@ analytics/subscription/enabled - 1</pre>
 
 **Show all saved configurations for the `base` website**:
 
-``` bash
+```bash
 bin/magento config:show --scope=websites --scope-code=base
 ```
 
@@ -239,7 +239,7 @@ general/region/state_required - AT,BR,CA</pre>
 
 **Show the base URL for the default scope**:
 
-``` bash
+```bash
 bin/magento config:show web/unsecure/base_url
 ```
 
@@ -249,7 +249,7 @@ Result:
 
 **Show the base URL for the `base` website**:
 
-``` bash
+```bash
 bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
 ```
 
@@ -260,7 +260,7 @@ Result:
 
 **Show the base URL for the `default` store**:
 
-``` bash
+```bash
 bin/magento config:show --scope=stores --scope-code=default web/unsecure/base_url
 ```
 

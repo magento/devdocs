@@ -54,7 +54,7 @@ Name | Description | Type | Requirements
 `use_default_carrier_config` | Reserved for future use | Boolean | Optional
 `carrier_code` | Reserved for future use | String | Optional
 `position` | Reserved for future use | Integer | Optional
-{:style="table-layout:auto;"}
+
 
 ## Create a source
 
@@ -62,11 +62,11 @@ The value of the `source_code` parameter can contain upper and lower case letter
 
 **Sample Usage**
 
-`POST /V1/inventory/sources`
+`POST <host>/rest/<store_code>/V1/inventory/sources`
 
 **Payload**
 
-``` json
+```json
 {
    "source" : {
       "name" : "Central Shipping Center",
@@ -101,11 +101,11 @@ This example updates the contact information (`contact_name`, `email`, and `phon
 
 **Sample Usage**
 
-`PUT /V1/inventory/sources/central`
+`PUT <host>/rest/<store_code>/V1/inventory/sources/central`
 
 **Payload**
 
-``` json
+```json
 {
    "source" : {
       "name": "Central Shipping Center",
@@ -130,7 +130,7 @@ This call returns detailed information about the specified source.
 
 **Sample Usage**
 
-`GET /V1/inventory/sources/central`
+`GET <host>/rest/<store_code>/V1/inventory/sources/central`
 
 
 **Payload**
@@ -139,7 +139,7 @@ None
 
 **Response**
 
-``` json
+```json
 {
     "source_code": "central",
     "name": "Central Shipping Center",
@@ -168,7 +168,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET /V1/inventory/sources?searchCriteria[filter_groups][0][filters][0][field]=country_id&searchCriteria[filter_groups][0][filters][0][value]=US&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/inventory/sources?searchCriteria[filter_groups][0][filters][0][field]=country_id&searchCriteria[filter_groups][0][filters][0][value]=US&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 
@@ -177,7 +177,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {

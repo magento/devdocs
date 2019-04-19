@@ -31,7 +31,7 @@ The following tables show the core routers that come with Magento:
 | [standard]   | 30         | The standard router                               |
 | [cms]        | 60         | Matches requests for CMS pages                    |
 | [default]    | 100        | The default router                                |
-{:style="table-layout:auto"}
+
 
 **`adminhtml` area routers:**
 
@@ -39,7 +39,7 @@ The following tables show the core routers that come with Magento:
 | --------- | ---------- | ------------------------------------------ |
 | [admin]   | 10         | Matches requests in the Magento admin area |
 | [default] | 100        | The default router for the admin area      |
-{:style="table-layout:auto"}
+
 
 ### Standard router
 
@@ -77,7 +77,7 @@ If you need route configuration data, use the Route [`Config`] class.
 
 To add your custom router to the list of routers for the `FrontController`, add the following entry in your module's `di.xml` file:
 
-``` xml
+```xml
 <type name="Magento\Framework\App\RouterList">
     <arguments>
         <argument name="routerList" xsi:type="array">
@@ -106,7 +106,7 @@ The location of the `routes.xml` file in a module, either `etc/frontend` or `etc
 
 The content of this file uses the following format:
 
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="%routerId%">
         <route id="%routeId%" frontName="%frontName%">
@@ -132,7 +132,7 @@ You can add a `before` or `after` parameter in the `module` entry to override or
 
 **Example: `routes.xml`**
 
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
         <route id="customer">
@@ -158,7 +158,7 @@ If you need to forward a request to another action in your class, use the `_forw
 
 **Example:**
 
-``` php
+```php
 $this->_forward('action', 'controller', 'Other_Module')
 ```
 
