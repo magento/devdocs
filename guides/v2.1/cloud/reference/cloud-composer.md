@@ -48,8 +48,8 @@ This package depends on a floating version of `magento/magento-cloud-configurati
 This package contains the following scripts and `magento` commands that automatically perform building and deployment of the codebase on the cloud environment:
 
  * `pre-deploy.php`
- * `php bin/magento magento-cloud:deploy`
- * `php bin/magento magento-cloud:build`
+ * `bin/magento magento-cloud:deploy`
+ * `bin/magento magento-cloud:build`
 
 `magento/magento-cloud-configuration` also contains patch files that are specific to Cloud.
 

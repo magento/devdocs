@@ -28,7 +28,7 @@ To install sample data:
 2.	In a terminal, enter the following commands:
 
     ```bash
-    <Magento root dir>/bin/magento sampledata:deploy
+    <magento_root>/bin/magento sampledata:deploy
     ```
 
 3.	Wait for components to update.

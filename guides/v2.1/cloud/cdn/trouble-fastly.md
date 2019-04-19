@@ -269,7 +269,7 @@ Based on the status returned, use the following instructions to update the Fastl
    If the module is not enabled (`Fastly_CDN => 0`) in the `config.php` file, delete the file and run the following command to update `config.php` with the latest configuration settings.
 
    ```bash
-   php bin/magento magento-cloud:scd-dump
+   bin/magento magento-cloud:scd-dump
    ```
 
 #### Fastly VCL has not been uploaded {#no-VCL}

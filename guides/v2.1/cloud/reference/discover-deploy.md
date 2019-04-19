@@ -97,7 +97,7 @@ During the build phase, the site is not in maintenance mode and will not be brou
 This phase builds the codebase and runs hooks in the `build` section of `.magento.app.yaml`. The default Magento build hook is the `magento-cloud:build` command and performs the following:
 
 -  Applies patches located in `vendor/magento/ece-patches`, as well as optional, project-specific patches in `m2-hotfixes`
--  Regenerates code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (that is, the `var/generation` and `var/di` directories) using `php bin/magento setup:di:compile`.
+-  Regenerates code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (that is, the `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
 -  Checks if the [`app/etc/config.php`]({{ page.baseurl }}/cloud/live/sens-data-over.html) file exists in the codebase. Magento auto-generates this file it does not detect it during the build phase and includes a list of modules and extensions. If it exists, the build phase continues as normal, compresses static files using `gzip`, and deploys the files, which reduces downtime in the deployment phase. Refer to [Magento build options]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-build.html) to learn about customizing or disabling file compression.
 
     {:.bs-callout .bs-callout-info}
@@ -149,9 +149,9 @@ Refer to [Magento deploy variables]({{ site.baseurl }}/guides/v2.1/cloud/env/var
 
 There are two default deploy hooks. The `pre-deploy.php` hook completes necessary cleanup and retrieval of resources and code generated in the build hook. The `php ./vendor/bin/m2-ece-deploy` hook runs a series of commands and scripts:
 
--  If Magento is **not installed**, it installs Magento with `php bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment, such as Redis and website URLs. **Important:** When you completed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
+-  If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment, such as Redis and website URLs. **Important:** When you completed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html) during setup, {{site.data.var.ee}} was installed and deployed across all environments.
 
--  If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`php bin/magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
+-  If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
 
 -  The script optionally generates static web content using the command [`magento setup:static-content:deploy`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).
 

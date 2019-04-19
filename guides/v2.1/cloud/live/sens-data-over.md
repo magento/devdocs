@@ -77,7 +77,7 @@ All system configurations are set during deployment according to the following o
 
 ## Configuration settings you can change {#cloud-clp-settings}
 
-The following table shows the configuration settings affected by the `php bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported.
+The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported.
 
 The `config.local.php` file includes the following settings and configuration values:
 

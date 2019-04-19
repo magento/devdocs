@@ -24,7 +24,7 @@ We merged `vendor/magento/ece-patches` with `vendor/magento/ece-tools` in this r
 
 -   <!-- MAGECLOUD-1372 -->**Backup configuration files**—The deployment process now automatically creates a backup of the `app/etc/env.php` and `app/etc/config.php` configuration files after deployment. We also added a [new CLI command]({{ site.baseurl }}/guides/v2.1/cloud/trouble/restore-configuration-files.html) to restore these configuration files from a backup.
 
--   <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `php bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
+-   <!-- MAGECLOUD-1491 -->**Troubleshooting validation errors**—We changed the command you must use to resolve validation errors when `config.php` does not contain enough data for static content deployment. Previously, the error message instructed you to run `bin/magento app:config:dump`. Now, you must run `php ./vendor/bin/ece-tools config:dump`.
 
 -   <!-- MAGECLOUD-1410 -->**New environment variables**—You can now use environment variables to connect custom [search]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#search_configuration) and [AMQP-based]({{ site.baseurl }}/guides/v2.1/cloud/env/variables-deploy.html#queue_configuration) services to your site.
 

@@ -101,15 +101,15 @@ To enable maintenance mode:
 4. Manually clear `var` subdirectories:
 
    ```bash
-   rm -rf <Magento install dir>/var/cache/*
+   rm -rf <magento_root>/var/cache/*
    ```
 
    ```bash
-   rm -rf <Magento install dir>/var/page_cache/*
+   rm -rf <magento_root>/var/page_cache/*
    ```
 
    ```bash
-   rm -rf <Magento install dir>/var/generation/*
+   rm -rf <magento_root>/var/generation/*
    ```
 
    <div class="bs-callout bs-callout-info" markdown="1">
@@ -119,13 +119,13 @@ To enable maintenance mode:
 4. Update the database schema and data:
 
    ```bash
-    bin/magento setup:upgrade
+    php bin/magento setup:upgrade
     ```
 
 5. Put your storefront online (that is, cancel maintenance mode):
 
    ```bash
-   bin/magento maintenance:disable
+   php bin/magento maintenance:disable
    ```
 
 6. Restart Varnish if you use it for page caching.
