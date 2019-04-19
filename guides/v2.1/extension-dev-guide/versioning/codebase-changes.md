@@ -6,11 +6,10 @@ menu_title: Codebase changes
 menu_order: 1300
 redirect_from:
   - /guides/v2.0/architecture/back-compatibility.html
-  - /guides/v2.1/architecture/back-compatibility.html
-  - /guides/v2.2/architecture/back-compatibility.html
+  - /guides/v2.1/architecture/back-compatibility.html	
   - /guides/v2.0/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.1/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.2/extension-dev-guide/backward-compatibility.html
+  - /guides/v2.1/extension-dev-guide/backward-compatibility.html	
+
 ---
 
 Every Magento version release include a change in the codebase.
@@ -32,8 +31,6 @@ If this is unavoidable, you must depend on the patch version of the core modules
 
 ## API and customization points
 
-
-
 Modules call APIs to create new application scenarios.
 Modifications that break the API will trigger an increase in a module's MAJOR version.
 
@@ -52,7 +49,7 @@ When Magento deprecates the API or customization point in favor of a new impleme
 
 **Deprecated Code Example**
 
-{% highlight php startinline %}
+```php
 
 /**
  * @deprecated since 2.1.0
@@ -62,8 +59,7 @@ public function save()
 {
     // ...
 }
-
-{% endhighlight %}
+```
 
 ## Version increase scenarios
 
@@ -156,6 +152,6 @@ Use this table to understand what changes Magento can make and which version num
 | | Index added/changed| PATCH|
 | | Foreign key added| MAJOR|
 | | Temporary tables added/removed/changed | PATCH|
-  {:style="table-layout:auto;"}
+  
   
 [private]: http://php.net/manual/en/language.oop5.visibility.php

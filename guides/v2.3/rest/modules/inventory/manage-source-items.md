@@ -30,7 +30,7 @@ sku	| The SKU of an existing product | String | Required to assign or unassign a
 source_code	| The source to assign or unassign | String | Required to assign or unassign a source
 quantity	| The total amount of inventory available for this SKU and source | Float | Optional
 status	|  Indicates whether the product is out of stock (0) or in stock (1) | Integer | Optional
-{:style="table-layout:auto;"}
+
 
 ## Unassign products from a source
 
@@ -45,7 +45,7 @@ Unassigning a source clears all quantity data. For this example, this is OK, bec
 
 **Payload**
 
-``` json
+```json
 {
 	"sourceItems": [{
 		"sku": "new_product1",
@@ -76,7 +76,7 @@ The following example assigns `1000` units of product `new_product1` to the `cen
 
 **Payload**
 
-``` json
+```json
 {
   "sourceItems": [{
   	"sku": "new_product1",
@@ -128,7 +128,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {

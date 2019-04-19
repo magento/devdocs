@@ -93,7 +93,11 @@ The following call returns information about the logged-in customer. Provide the
       lastname
       street
       city
-      region_id
+      region {
+        region_code
+        region
+        region_id
+      }
       postcode
       country_id
       telephone
@@ -121,7 +125,11 @@ The following call returns information about the logged-in customer. Provide the
            "123 Elm Street"
          ],
          "city": "Anytown",
-         "region_id": 57,
+         "region": {
+           "region_code": "MI",
+           "region": "Michigan",
+           "region_id": 33
+         }
          "postcode": "78758",
          "country_id": "US",
          "telephone": "512 555-1212"
@@ -275,7 +283,7 @@ Attribute |  Data Type | Description
 `city` | String | The city or town
 `company` | String | The customer's company
 `country_id` | String | The customer's country
-`custom_attributes` | CustomerAddressAttributesInput | Address custom attributes
+`custom_attributes` | [CustomerAddressAttributeInput](#customerAddressAttributeInput) | Address custom attributes
 `customer_id` | Int | The customer ID
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
@@ -290,6 +298,16 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `telephone` | String | The telephone number
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
+
+
+### Customer address attributes {#customerAddressAttributeInput}
+
+The `CustomerAddressAttributeInput` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`attribute_code` | String | Attribute code
+`value` | String | Attribute value
 
 ### Create customer address
 
@@ -511,7 +529,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "revokeCustomerToken": {
@@ -556,7 +574,7 @@ mutation {
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "changeCustomerPassword": {

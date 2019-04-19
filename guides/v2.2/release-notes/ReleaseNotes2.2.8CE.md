@@ -5,7 +5,9 @@ title: Magento Open Source 2.2.8 Release Notes
 
 ---
 
-*Patch code and release notes were published on March 26, 2019.*
+
+
+*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
 
 
 We are pleased to present Magento Open Source 2.2.8. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and 285 community-submitted pull requests. 
@@ -17,7 +19,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.3.1
 
 ## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
 
-A critical SQL injection vulnerability has been identified in 2.2.x Magento code. A fix for this issue is included in Magento 2.2.8. However, if you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+A critical SQL injection vulnerability has been identified in 2.2.x Magento code. A fix for this issue is included in Magento 2.2.8. If you cannot immediately apply the full patch, you can quickly protect your store from this vulnerability by installing patch PRODSECBUG-2198.  However, **we strongly encourage all merchants to stay up-to-date on security patches**. See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
 
 Follow these steps to download and apply this patch:
 
@@ -30,6 +32,25 @@ Follow these steps to download and apply this patch:
 5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
 6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
+
+
+
+
+
+## PayPal Payflow Pro active carding activity update
+
+The PayPal Payflow Pro integration in Magento is being actively targeted by carding activity. To resolve these carding activity issues, Magento has provided Composer packages that add an option for Google reCAPTCHA and CAPTCHA to the Payflow Pro checkout form. See [PayPal Payflow Pro active carding activity](https://support.magento.com/hc/en-us/articles/360025515991) for a full discussion of this issue and instructions on downloading these packages. **We strongly recommend that all Payflow Pro merchants download and install these packages to help enhance the security of their storefronts**.
+
+
+## Apply the Admin Dashboard Image-Charts patch to address deprecation of Google Image Charts
+
+Magento 2.x currently uses Google Image Charts to render static charts in Admin dashboards. Google stopped supporting Google Image Charts on March 14, 2019, and  Magento is providing the Admin Dashboard Image-Charts  patch to replace Google Image Charts with the Image-Charts free service. Users of Magento 2.x deployments will not be able to view static charts in Magento 2.x instances unless they download and apply this patch. 
+ 
+See  [Switch from deprecated Google Image Charts to Image-Charts for Magento](https://support.magento.com/hc/en-us/articles/360024850172) for information on downloading and applying this patch. 
+
+
 
 ## Highlights
 
@@ -48,7 +69,7 @@ These releases include security enhancements that help close cross-site scriptin
 
 ### Infrastructure improvements
 
-* **Magento now supports Elasticsearch 6.0**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
+* **Magento now supports Elasticsearch 6.x**. (Elasticsearch 5.x  reached end-of-life on March 11, 2019. For more information, see [Elastic Product End of Life Dates](https://www.elastic.co/support/eol). *Fix submitted by community member  [Romain Ruaud](https://github.com/romainruaud)*. Thank you, Romain!
  
 
 * Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage. See [Authorize.Net Direct Post](https://docs.magento.com/m2/2.2/ee/user_guide/payment/authorize-net-direct-post.html) for a discussion of this deprecation and the steps you need to take to add the new key you’ll need after deprecation.  <!-- MAGETWO-98129-->* 
@@ -107,7 +128,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-3104 -->* A new `cron.log` file dedicated to logging cron-related information has been added to Magento. This new log file reduces output previously sent to the `system.log` file, making it easier to find non-cron-related information in the `system.log` file. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [18389](https://github.com/magento/magento2/pull/18389)*. [GitHub-17190](https://github.com/magento/magento2/issues/17190)
 
-<!-- ENGCOM-3207 -->* The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by [Luuk Schakenraad](https://github.com/luukschakenraad) in pull request [18595](https://github.com/magento/magento2/pull/18595)*. [GitHub-18585](https://github.com/magento/magento2/issues/18585)
+<!-- ENGCOM-3207 -->* The `getHostUrl()` method has been updated to reference `HTTP_HOST` rather than `SERVER_PORT`. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18659](https://github.com/magento/magento2/pull/18659)*. [GitHub-12969](https://github.com/magento/magento2/issues/12969)
 
 <!-- MAGETWO-95411 -->* You can now install Magento without first creating an administrator account. 
 
@@ -979,11 +1000,24 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 <!-- ENGCOM-3291 -->* The `id_prefix` option for the cache frontend, which is used to prefix cache keys, is now set when Magento is installed. Previously, the performance of all websites in multisite deployments was uneven due to the previous mechanism used to prefix cache keys. *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
 
-## Known issue
+## Known issues
 
-Cart Price rules that were created with undefined end dates (that is, with the  **To** field left empty) are not displayed as expected on the Staging dashboard  after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
+**Issue**: Cart Price rules that were created with undefined end dates (that is, with the  **To** field left empty) are not displayed as expected on the Staging dashboard  after upgrading from Magento Open Source to Magento Commerce 2.3.1. <!--- MC-15317--> 
+
+**Issue**:  The CGI URL gateway in the UPS module has been updated from HTTP to HTTPS. Consequently, the UPS shipping method does not populate correctly. **Workaround**: Confirm that the Gateway URL uses the HTTPS protocol in the [UPS Shipping Method Configuration](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html). <!--- MAGETWO-98947-->
+
+*Updating an existing setting*:
+
+If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Configuration, you must manually change the protocol of the Gateway URL from HTTP to HTTPS. Example: `https://www.ups.com/using/services/rave/qcostcgi.cgi`
 
 
+*To configure UPS for the first time*: 
+ 
+1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section. 
+ 
+2. At the **UPS Type** field, clear the Use system value checkbox. Then, change **UPS Type** to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
+
+3. Tap **Save Config**.
 
 
 ## Community contributions

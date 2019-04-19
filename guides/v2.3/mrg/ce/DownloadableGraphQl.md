@@ -8,5 +8,3 @@ title: Magento_DownloadableGraphQl module
 
 **DownloadableGraphQl** provides type and resolver information for the GraphQl module
 to generate downloadable product information.
-
-

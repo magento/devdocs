@@ -27,7 +27,7 @@ Builder composites are added using [dependency injection]({{ page.baseurl }}/ext
 
 Example of adding composite builders for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml`]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml)):
 
-{% highlight xml %}
+```xml
 ...
 <!--  is a builder composite comprising a number of builders -->
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
@@ -56,4 +56,3 @@ Example of adding composite builders for the Braintree payment provider ([`app/c
         </argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
