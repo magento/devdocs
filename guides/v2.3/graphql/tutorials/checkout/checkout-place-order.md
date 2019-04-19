@@ -19,7 +19,7 @@ Use `placeOrder` mutation query to place order.
 **Request**
 ```text
 mutation {
-  placeOrder(input: {cart_id: "A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h"}) {
+  placeOrder(input: {cart_id: "{{ CART_ID }}"}) {
     order {
       order_id
     }
