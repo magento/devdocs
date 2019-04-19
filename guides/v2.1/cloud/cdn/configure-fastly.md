@@ -160,9 +160,9 @@ You cannot use the Fastly service in Integration environments.
 	* In the "repositories" section, you should have:
     
     ```json
-		"fastly-magento2": {
-					"url": "https://github.com/fastly/fastly-magento2.git"
-		}
+    "fastly-magento2": {
+        "url": "https://github.com/fastly/fastly-magento2.git"
+    }
     ```
     
 3.	Add, commit, and push the changes to your code repository with the following command:
