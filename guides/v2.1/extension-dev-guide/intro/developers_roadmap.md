@@ -17,7 +17,7 @@ To satisfy the minimum required elements for creating or customizing your Magent
 	{:.bs-callout .bs-callout-tip}
 	While you can manage dependencies on your own, it is a recommended and strongly encouraged best practice to use the `composer.json`.
 
-* [Register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) the component using `registration.php`.
+* [Register]({{ page.baseurl }}/extension-dev-guide/build/component-registration.html) the component using the `registration.php` file.
 * Use these component-specific XML definition files:
 	* Modules: [`module.xml`]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
 	* Themes: [`theme.xml`]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#fedg_create_theme_how-to_declare)
