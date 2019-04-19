@@ -192,13 +192,13 @@ To reindex using the command line:
 2.	Enter the following command to reindex all indexers:
 
 ```bash
-php <your Magento install dir>/bin/magento indexer:reindex
+php <magento_root>/bin/magento indexer:reindex
 ```
 
 	Enter the following command to reindex the catalog search index only:
 
 ```bash
-php <your Magento install dir>/bin/magento indexer:reindex catalogsearch_fulltext
+php <magento_root>/bin/magento indexer:reindex catalogsearch_fulltext
 ```
 
 3.	Wait while the indexers are reindexed.

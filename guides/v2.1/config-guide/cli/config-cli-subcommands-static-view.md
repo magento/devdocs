@@ -19,7 +19,7 @@ _ "Static" means it can be cached for a site (that is, the file is not dynamical
     Examples include images and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} generated from LESS.
 - "View" refers to the presentation layer (from MVC).
 
-Static view files are located in the `<your Magento install dir>/pub/static` directory, and some are cached in the `<your Magento install dir>/var/view_preprocessed` directory as well.
+Static view files are located in the `<magento_root>/pub/static` directory, and some are cached in the `<magento_root>/var/view_preprocessed` directory as well.
 
 Static view files deployment is affected by Magento modes as follows:
 
@@ -38,8 +38,8 @@ You can clean generated static view files in several ways. Refer to [Clean stati
 To deploy static view files:
 
 1.  Log in to the Magento server as, or [switch to], the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-2.  Delete the contents of `<your Magento install dir>/pub/static`.
-3.  Run the static view files deployment tool `<your Magento install dir>/bin/magento setup:static-content:deploy`.
+2.  Delete the contents of `<magento_root>/pub/static`.
+3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
     {: .bs-callout .bs-callout-info }
     If you enable static view file merging in the Magento Admin, the `pub/static` directory system must be writable.
@@ -106,7 +106,7 @@ Use the following steps:
 -   [Setup wizard]
 
 2.  Log in to the Magento server as, or [switch to], the Magento file system owner.
-3.  Delete the contents of `<your Magento install dir>/pub/static` directory.
+3.  Delete the contents of `<magento_root>/pub/static` directory.
 4.  [Run the static view files deployment tool].
 
 {: .bs-callout .bs-callout-info}

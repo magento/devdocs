@@ -23,7 +23,7 @@ You can upgrade Magento from the command line if you installed the software usin
 
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
 
-This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`.
+This section applies to you *only* if you set the Magento root directory to `<magento_root>/pub`.
 If you did not do this, skip this section and continue with the next section.
 
 If you use `pub/` as your Magento root directory:
@@ -45,7 +45,7 @@ To enable maintenance mode:
 1. Log in to your Magento server as, or switch to, the Magento file system owner.
 2. Enable maintenance mode:
    ```bash
-   php <your Magento install dir>/bin/magento maintenance:enable
+   php <magento_root>/bin/magento maintenance:enable
    ```
    For additional options, see [Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
 
@@ -127,6 +127,6 @@ To enable maintenance mode:
 
    1. Reset [file system ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html) as a user with `root` privileges.
    2. Clear the following directories and try again:
-      * `<your Magento install dir>/var/cache`
-      * `<your Magento install dir>/var/page_cache`
-      * `<your Magento install dir>/var/generation`
+      * `<magento_root>/var/cache`
+      * `<magento_root>/var/page_cache`
+      * `<magento_root>/var/generation`

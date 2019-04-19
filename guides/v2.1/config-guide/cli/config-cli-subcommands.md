@@ -15,7 +15,7 @@ functional_areas:
 1.  Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to the following directory:
 
-        cd <your Magento install dir>/bin
+        cd <magento_root>/bin
 
     Examples:
 
@@ -25,7 +25,7 @@ functional_areas:
 You can run the commands in any of the following ways:
 -   `php magento <command>`
 -   `./magento <command>`
--   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<your Magento install dir>/bin` to your system `PATH`)
+-   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
 
 ## Command summary {#config-cli-summary}
 

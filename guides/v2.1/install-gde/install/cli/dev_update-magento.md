@@ -20,7 +20,7 @@ To update the Magento software if you're a contributing developer:
 3. Save any changes you made to `composer.json` because the following steps will overwrite it:
 
 ```bash
-cd <your Magento install dir>
+cd <magento_root>
 cp composer.json composer.json.old
 ```
 
@@ -43,7 +43,7 @@ composer update
 5.	Update the Magento database:
 
 ```bash
-<your Magento install dir>/bin/magento setup:upgrade
+<magento_root>/bin/magento setup:upgrade
 ```
 
 6.  Clean the cache:

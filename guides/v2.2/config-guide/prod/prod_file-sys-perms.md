@@ -138,7 +138,7 @@ To set `setgid` and permissions for developer mode:
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Enter the following commands in the order shown:
 
-		cd <your Magento install dir>
+		cd <magento_root>
 		find var generated pub/static pub/media app/etc -type f -exec chmod g+w {} + && find var generated pub/static pub/media app/etc -type d -exec chmod g+ws {} +
 
 ### Two Magento file system owners in production mode {#mage-owner-two-prod}

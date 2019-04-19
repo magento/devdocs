@@ -114,7 +114,7 @@ When you change from production to developer mode, you should clear generated cl
 
 1.  If you're changing from production mode to developer mode, delete the contents of the `var/generation` and `var/di` directories:
 
-		rm -rf <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
+		rm -rf <magento_root>/var/di/* <magento_root>/var/generation/*
 
 2.  Set the mode:
 

@@ -81,7 +81,7 @@ After you have installed Magento, you need to set the file system permissions an
 1.  Enter the following commands in the order shown:
 
     ```bash
-    cd <your Magento install dir>
+    cd <magento_root>
     ```
 
     ```terminal

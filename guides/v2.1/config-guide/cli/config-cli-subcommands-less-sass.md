@@ -59,7 +59,7 @@ The following table explains this command's parameters and values.
 	</tbody>
 </table>
 
-For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<your Magento install dir>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
+For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<magento_root>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
 
 	bin/magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
 

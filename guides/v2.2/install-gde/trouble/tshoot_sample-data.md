@@ -43,7 +43,7 @@ Don't install sample data in production mode. Switch to developer mode and clear
 
 Enter the following commands in the order shown as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html):
 
-	cd <your Magento install dir>
+	cd <magento_root>
 	php bin/magento deploy:mode:set developer
 	rm -rf generated/code/* generated/metadata/*
 	php bin/magento sampledata:deploy
@@ -71,7 +71,7 @@ Other errors display, such as:
 
 There are known issues with using sample data with the Magento 2 develop branch. Use the master branch instead. You can switch to the master branch as follows:
 
-	cd <your Magento install dir>
+	cd <magento_root>
 	git checkout master
 	git pull origin master
 

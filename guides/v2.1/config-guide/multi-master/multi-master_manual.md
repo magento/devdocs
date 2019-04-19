@@ -424,8 +424,8 @@ The final step in manually splitting databases is to add connection and resource
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Back up your deployment configuration:
 
-        cp <your Magento install dir>/app/etc/env.php <your Magento install dir>/app/etc/env.php.orig
-2.  Open `<your Magento install dir>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
+        cp <magento_root>/app/etc/env.php <magento_root>/app/etc/env.php.orig
+2.  Open `<magento_root>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
 
 ### Update database connections
 
