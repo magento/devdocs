@@ -98,7 +98,6 @@ pages:
     - label: Tutorial
       class: tutorial
       url: /graphql/tutorials/checkout/index.html
-            include_versions: ["2.3"]
 
     - label: Release Notes
       url: /graphql/release-notes.html
