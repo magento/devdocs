@@ -44,21 +44,25 @@ The easiest way to do that is to run this command as the [Magento file system ow
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:show
 ```
 
 A message similar to the following displays:
 
 ```
-Current application mode: developer.
+Current application mode: {mode}. (Note: Environment variables may override this value.)
 ```
+
+where:
+
+  -   **`{mode}`** can be either `default`, `developer`, or `production`
 
 ## Change modes {#config-mode-change}
 
 Command usage:
 
-``` bash
+```bash
 bin/magento deploy:mode:set {mode} [-s|--skip-compilation]
 ```
 
@@ -72,7 +76,7 @@ Examples follow.
 
 ### Change to production mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set production
 ```
 
@@ -133,7 +137,7 @@ When you change from production to developer mode, you should clear generated cl
 
 ### Change to default mode
 
-``` bash
+```bash
 bin/magento deploy:mode:set default
 ```
 

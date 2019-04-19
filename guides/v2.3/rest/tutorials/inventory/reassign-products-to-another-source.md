@@ -24,7 +24,7 @@ Name | Type | SKU | Quantity
 Voyage Yoga Bag | Simple | 24-WB01 | 100
 Driven Backpack | Simple | 24-WB03 | 100
 Yoga Adventure | Downloadable | 240-LV06 | Not applicable
-{:style="table-layout:auto;"}
+
 
 ## Unassign products from the default source
 
@@ -49,7 +49,7 @@ When you unassign a source from a product, all source data including inventory a
 
 **Payload**
 
-``` json
+```json
 {
 	"sourceItems": [{
 		"sku": "24-WB01",
@@ -91,7 +91,7 @@ Now we can assign each product to one or more sources. The `POST V1/inventory/so
 
 **Payload**
 
-``` json
+```json
 {
   "sourceItems": [{
   	"sku": "24-WB01",

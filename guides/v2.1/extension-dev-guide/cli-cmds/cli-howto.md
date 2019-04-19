@@ -37,7 +37,7 @@ Following is a summary of the process:
 	See [`<Magento_Store_module_dir>/Console/Command/StoreListCommand.php`]({{ site.mage2300url }}app/code/Magento/Store/Console/Command/StoreListCommand.php) for example.
 2.	Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`):
 
-``` xml
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     ...
     <type name="Magento\Framework\Console\CommandList">

@@ -17,9 +17,9 @@ See [Configure message queues] for information about setting up the message queu
 
 The following code sends a message to the queue. The `publish` method is defined in `PublisherInterface`
 
-{% highlight php startinline=true %}
+```php
 $publisher->publish($topic, $message)
-{% endhighlight %}
+```
 
 In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
 
@@ -31,10 +31,10 @@ The procedure for instantiating a consumer differs, depending on which message q
 
 This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
-{% highlight php startinline=true %}
+```php
 $this->consumerFactory->get('customer_created_listener')
     ->process();
-{% endhighlight %}
+```
 
 ### MySQL adapter
 
@@ -51,7 +51,7 @@ Perform the following actions:
 
 The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.
 
-{% highlight php startinline=true %}
+```php
 'queue' =>
     array(
      'topics' => array(
@@ -59,7 +59,7 @@ The following sample introduces a runtime configuration that allows you to redef
         'order.created' => [publisher="default-rabitmq"],
     ),
 ),
-{% endhighlight %}
+```
 
 #### Related Topics
 

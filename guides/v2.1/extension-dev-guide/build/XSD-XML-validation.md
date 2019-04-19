@@ -48,18 +48,18 @@ where
 
 Use URN notation to reference schema from inside a XSD document:
 
-{% highlight XML %}
+```xml
 
 <xs:redefine schemaLocation="urn:magento:framework:Config/etc/view.xsd">
 
 
-{% endhighlight %}
+```
 
 The URN resolution is invoked automatically by the libxml engine. Register the URN resolver by using `libxml_set_external_entity_loader`:
 
-{% highlight XML %}
+```xml
 libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', 'registerEntityLoader']);
-{% endhighlight %}
+```
 
 {: .bs-callout .bs-callout-info }
 The relative path to other XSDs cannot be used from inside the XSD file, because the {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} loader fails to resolve the relative path.

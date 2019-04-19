@@ -32,7 +32,7 @@ Name | Description | Type | Requirements
 `stock_id`	| Stock ID | Integer | Required for POST operations
 `source_code`	| Source code of the link | String | Required for POST operations
 `priority`	| Priority of the link | Integer | Required when linking a stock to a source
-{:style="table-layout:auto;"}
+
 
 ## Link stocks and sources
 
@@ -111,7 +111,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {
@@ -158,7 +158,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 [
     {
         "source_code": "central",

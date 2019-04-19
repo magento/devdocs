@@ -7,7 +7,6 @@ menu_order: 100
 menu_node:
 redirect_from:
   - /guides/v2.0/mktpl-quickstart/mktpl-intro.html
-  - /guides/v2.1/mktpl-quickstart/mktpl-intro.html
   - /guides/v2.2/mktpl-quickstart/mktpl-intro.html
 ---
 
