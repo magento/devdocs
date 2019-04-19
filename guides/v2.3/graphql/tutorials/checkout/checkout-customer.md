@@ -2,11 +2,14 @@
 layout: tutorial
 group: graphql
 title: Step 1. Define customer
-subtitle: GraphQl checkout tutorial
+subtitle: GraphQL checkout tutorial
+level3_subgroup: graphql-checkout
 return_to:
-  title: GraphQl checkout tutorial
-  url: graphql/tutorials/index.html
-menu_order: 1
+  title: GraphQL Overview
+  url: graphql/index.html
+menu_order: 10
+functional_areas:
+  - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
@@ -74,7 +77,7 @@ mutation {
     token
   }
 }
-``` 
+```
 
 **Response**
 
@@ -86,6 +89,6 @@ mutation {
     }
   }
 }
-``` 
+```
 
 See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.

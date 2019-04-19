@@ -2,17 +2,20 @@
 layout: tutorial
 group: graphql
 title: Step 9. Set quote email (for guest only)
-subtitle: GraphQl checkout tutorial
+subtitle: GraphQL checkout tutorial
+level3_subgroup: graphql-checkout
 return_to:
-  title: GraphQl checkout tutorial
-  url: graphql/tutorials/index.html
-menu_order: 9
+  title: GraphQL Overview
+  url: graphql/index.html
+menu_order: 90
+functional_areas:
+  - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
 {:.bs-callout .bs-callout-tip}
-Skip this step if you place order as a registered customer. 
+Skip this step if you place order as a registered customer.
 
 If you place order as a guest user you must set a quote email address. Use `setGuestEmailOnCart` mutation query for that.
 
@@ -31,7 +34,7 @@ mutation {
 }
 ```
 
-where 
+where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Response**

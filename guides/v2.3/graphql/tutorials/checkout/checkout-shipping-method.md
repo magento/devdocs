@@ -2,11 +2,14 @@
 layout: tutorial
 group: graphql
 title: Step 6. Set shipping method
-subtitle: GraphQl checkout tutorial
+subtitle: GraphQL checkout tutorial
+level3_subgroup: graphql-checkout
 return_to:
-  title: GraphQl checkout tutorial
-  url: graphql/tutorials/index.html
-menu_order: 6
+  title: GraphQL Overview
+  url: graphql/index.html
+menu_order: 60
+functional_areas:
+  - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
@@ -43,7 +46,7 @@ query {
 }
 ```
 
-where 
+where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Response**
@@ -92,7 +95,7 @@ In the next tutorial steps value of `address_id` field - `937` will be mentioned
 
 **Request**
 
-The following mutation query assigns UPS "Ground" method. 
+The following mutation query assigns UPS "Ground" method.
 
 ```text
 mutation {
@@ -114,12 +117,12 @@ mutation {
           label
         }
       }
-    } 
+    }
   }
 }
 ```
 
-where 
+where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 `{{ CART_SHIPPING_ADDRESS_ID }}` - shipping address ID from the query above.
 

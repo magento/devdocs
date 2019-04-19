@@ -2,11 +2,14 @@
 layout: tutorial
 group: graphql
 title: Step 4. Set shipping address
-subtitle: GraphQl checkout tutorial
+subtitle: GraphQL checkout tutorial
+level3_subgroup: graphql-checkout
 return_to:
-  title: GraphQl checkout tutorial
-  url: graphql/tutorials/index.html
-menu_order: 4
+  title: GraphQL Overview
+  url: graphql/index.html
+menu_order: 40
+functional_areas:
+  - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
@@ -14,7 +17,7 @@ contributor_link: https://www.atwix.com/
 Use [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/reference/quote.html#set-the-shipping-address-on-a-cart) mutation query to set a shipping address. GraphQl allows to add shipping address in the next ways:
 - add new shipping address
 - use for shipping a defined billing address
-- use the existing customer's address from address book (available for registered customers) 
+- use the existing customer's address from address book (available for registered customers)
 
 ### New shipping address
 
@@ -66,7 +69,7 @@ mutation {
 }
 ```
 
-where 
+where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Response**
@@ -160,7 +163,7 @@ query {
 }
 ```
 
-Define `customer_address_id` to assign the existing customer address. 
+Define `customer_address_id` to assign the existing customer address.
 
 **Request**
 
@@ -187,7 +190,7 @@ mutation {
         }
         postcode
         telephone
-        country 
+        country
         {
           code
           label
@@ -199,7 +202,7 @@ mutation {
 }
 ```
 
-where 
+where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 `{{ CUSTOMER_ADDRESS_ID }}` - customer address ID (value from `entity_id` field of `customer_address_entity` table).
 

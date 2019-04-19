@@ -2,11 +2,14 @@
 layout: tutorial
 group: graphql
 title: Step 2. Create empty cart
-subtitle: GraphQl checkout tutorial
+subtitle: GraphQL checkout tutorial
+level3_subgroup: graphql-checkout
 return_to:
-  title: GraphQl checkout tutorial
-  url: graphql/tutorials/index.html
-menu_order: 2
+  title: GraphQL Overview
+  url: graphql/index.html
+menu_order: 20
+functional_areas:
+  - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---

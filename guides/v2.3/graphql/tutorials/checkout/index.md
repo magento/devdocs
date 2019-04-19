@@ -1,6 +1,15 @@
 ---
+layout: tutorial
 group: graphql
-title: GraphQl checkout tutorial
+title: GraphQL checkout tutorial
+menu_title: Initial tasks
+menu_order: 0
+level3_subgroup: graphql-checkout
+return_to:
+  title: GraphQL Overview
+  url: graphql/index.html
+functional_areas:
+  - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
@@ -8,8 +17,8 @@ contributor_link: https://www.atwix.com/
 This tutorial provides information how you can place order through GraphQl. Customers can make purchases in two ways:
 - As a logged-in user
 - As a guest user who does not create an account
- 
-Checkout process in GraphQl consists of the 10 steps. Some of them may be optional. 
+
+Checkout process in GraphQl consists of the 10 steps. Some of them may be optional.
 
 [Step 1. Define customer]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-customer.html) (create customer, use a registered customer account or place order as guest)
 [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shopping-cart.html)

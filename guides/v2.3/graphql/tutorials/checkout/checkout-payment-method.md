@@ -2,11 +2,14 @@
 layout: tutorial
 group: graphql
 title: Step 7. Set payment method
-subtitle: GraphQl checkout tutorial
+subtitle: GraphQL checkout tutorial
+level3_subgroup: graphql-checkout
 return_to:
-  title: GraphQl checkout tutorial
-  url: graphql/tutorials/index.html
-menu_order: 7
+  title: GraphQL Overview
+  url: graphql/index.html
+menu_order: 70
+functional_areas:
+  - Integration
 contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
@@ -26,7 +29,7 @@ query {
 }
 ```
 
-where 
+where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Response**
@@ -67,13 +70,13 @@ mutation {
 }
 ```
 
-where 
+where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 `checkmo` - code of "Check / Money order" payment method
 
 **Response**
 
-If operation has been successfully executed you will get the code of selected payment method in the response. 
+If operation has been successfully executed you will get the code of selected payment method in the response.
 
 ```json
 {
