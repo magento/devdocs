@@ -163,9 +163,6 @@ A task, when complete by the author, should be reviewed by another Magento commu
 The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 
 * There are no unauthorized backward-incompatible functional changes
-* All changes are documented properly
-* All changes are covered with automated tests
-* Determine if code changes caused any failure in continuous integration builds
 * All backward-incompatible changes on code level are approved by an architect. The following cases currently cause SVC failures but do NOT require architect approval:
   * Removal of private constant
   * Override of the method defined in parent class
@@ -180,6 +177,9 @@ The reviewer should check whether the task meets the original acceptance criteri
     * `\Magento\Framework\App\Action\AbstractAction`
     * `\Magento\Framework\View\Element\AbstractBlock`
     * `\Magento\Framework\View\Element\Template`
+* All changes are documented properly
+* All changes are covered with automated tests
+* Determine if code changes caused any failure in continuous integration builds
 
 The work cannot be considered as complete unless all the criteria are verified.
 
