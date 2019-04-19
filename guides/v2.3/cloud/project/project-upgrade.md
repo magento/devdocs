@@ -27,6 +27,8 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
     ```bash
     composer require magento/magento-cloud-metapackage <requiredversion> --no-update
     ```
+    
+    > Be sure to use the `">=2.3.1 <2.3.2"` syntax for the value of `<requiredversion>`. This is necessary, as failing to do so will not properly update the ECE Tool.
 
 1.  Update the project.
 
