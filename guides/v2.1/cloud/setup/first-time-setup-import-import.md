@@ -279,10 +279,16 @@ To import media files into your Cloud environment:
 
 On the Cloud environment, enter the following commands in the order shown:
 
+```bash
+php bin/magento setup:upgrade
 ```
-bin/magento setup:upgrade
-bin/magento magento setup:static-content:deploy
-bin/magento cache:clean
+
+```bash
+php bin/magento magento setup:static-content:deploy
+```
+
+```bash
+php bin/magento cache:clean
 ```
 
 After the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} flushes, enter `exit` to close the SSH tunnel.

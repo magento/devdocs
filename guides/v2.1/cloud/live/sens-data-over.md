@@ -27,7 +27,7 @@ Magento's store configurations are stored in the database. When updating configu
 
 After configuring your environment, generate the file using one of the following commands:
 
-* `bin/magento magento-cloud:scd-dump`: **Recommended**. Exports only modified configuration settings
+* `php bin/magento magento-cloud:scd-dump`: **Recommended**. Exports only modified configuration settings
 * `php ./vendor/bin/ece-tools config:dump`: Exports every configuration setting, including modified and default settings
 
 {:.bs-callout .bs-callout-warning}
@@ -41,7 +41,7 @@ If sensitive data is found in your configurations, it is generated as environmen
 
 ### Switching between commands {#commands}
 
-Can you switch between using `bin/magento magento-cloud:scd-dump` and `php ./vendor/bin/ece-tools config:dump`? Yes, you can.
+Can you switch between using `php bin/magento magento-cloud:scd-dump` and `php ./vendor/bin/ece-tools config:dump`? Yes, you can.
 
 For 2.1.4 and later (not 2.2.X), you can always delete the `config.local.php` file and regenerate it with either command. Remember, `scd-dump` only pulls configured values (not defaults) and `config:dump` captures all values (default and modified).
 
@@ -77,7 +77,7 @@ All system configurations are set during deployment according to the following o
 
 ## Configuration settings you can change {#cloud-clp-settings}
 
-The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported.
+The following table shows the configuration settings affected by the `php bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git. If you use `php ./vendor/bin/ece-tools config:dump`, all settings are exported.
 
 The `config.local.php` file includes the following settings and configuration values:
 
@@ -150,7 +150,7 @@ Complete all configurations for your stores in the Admin console:
 
   For example, for Pro on the Integration branch:
 
-    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "bin/magento magento-cloud:scd-dump"
+    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
 
 ### Step 2: Transfer and add the file to Git {#transfer-file}
 

@@ -278,7 +278,7 @@ A sample Magento cron job follows:
 crons:
     cronrun:
         spec: "* * * * *"
-        cmd: "bin/magento cron:run"
+        cmd: "php bin/magento cron:run"
 ```
 
 For {{site.data.var.ece}} 2.1.X, you can use only workers and [cron jobs](#crons). For {{site.data.var.ece}} 2.2.X, cron jobs launch consumers to process batches of messages, and do not require additional configuration.

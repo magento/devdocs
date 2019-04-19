@@ -111,10 +111,10 @@ You can debug any Magento command or PHP script using the following steps.
 
 1.  Open the _Run/Debug Configuration_ window and add a new **PHP script** with the following settings:
 
-    -   **Name**—Enter `bin/magento`.
-    -   **Configuration** > **File**—Select the path to the `bin/magento` file in your local environment.
+    -   **Name**—Enter `php bin/magento`.
+    -   **Configuration** > **File**—Select the path to the `php bin/magento` file in your local environment.
   
-1.  Add breakpoints in the `bin/magento` file and the debug PHP script created in the previous step.
+1.  Add breakpoints in the `php bin/magento` file and the debug PHP script created in the previous step.
 
 ## Using Xdebug Helper
 

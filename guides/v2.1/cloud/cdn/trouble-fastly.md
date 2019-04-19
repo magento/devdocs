@@ -252,7 +252,7 @@ This section provides suggestions for resolving errors returned when checking re
 If the Fastly module is not enabled (`Fastly-Module-Enabled: no`) or if the header is missing, [use SSH to log in]({{ page.baseurl }}/cloud/env/environments-ssh.html#magento-cli) to the project. Then, run the following command to check the module status.
     
 ```bash
-bin/magento module:status Fastly_Cdn
+php bin/magento module:status Fastly_Cdn
 ```
 
 Based on the status returned, use the following instructions to update the Fastly configuration.
@@ -269,7 +269,7 @@ Based on the status returned, use the following instructions to update the Fastl
    If the module is not enabled (`Fastly_CDN => 0`) in the `config.php` file, delete the file and run the following command to update `config.php` with the latest configuration settings.
 
    ```bash
-   bin/magento magento-cloud:scd-dump
+   php bin/magento magento-cloud:scd-dump
    ```
 
 #### Fastly VCL has not been uploaded {#no-VCL}

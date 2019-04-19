@@ -194,7 +194,9 @@ To verify the local, access the store using the URL you passed in the install co
 
 To change the URI for the Admin panel, use this command to locate it:
 
-	bin/magento info:adminuri
+	```bash
+	php bin/magento info:adminuri
+	```
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.
 

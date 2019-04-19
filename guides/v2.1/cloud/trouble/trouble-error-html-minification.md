@@ -17,9 +17,9 @@ This topic discusses solutions to typical issues you might experience by HTML mi
 ### Website load errors after scd-dump, build, and deploy
 
 <!-- This issue will be resolved with a later release. -->
-After using the command `bin/magento magento-cloud:scd-dump` to generate config.local.php, your website may encounter errors after build and deploy. When accessing the site, you may receive the error "failed to open stream: No such file or directory" for a series of files.
+After using the command `php bin/magento magento-cloud:scd-dump` to generate config.local.php, your website may encounter errors after build and deploy. When accessing the site, you may receive the error "failed to open stream: No such file or directory" for a series of files.
 
-The issue is due to an issue of enabling HTML minification and the setting in `config.local.php` when using `bin/magento magento-cloud:scd-dump`.
+The issue is due to an issue of enabling HTML minification and the setting in `config.local.php` when using `php bin/magento magento-cloud:scd-dump`.
 
 As a work-around, complete the following:
 
@@ -41,7 +41,7 @@ As a work-around, complete the following:
 3. Flush all caches.
 
     ```bash
-    bin/magento cache:flush
+    php bin/magento cache:flush
     redis-cli -h <> -p <> flushall
     ```
 

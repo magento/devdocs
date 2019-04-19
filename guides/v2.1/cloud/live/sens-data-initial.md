@@ -207,13 +207,13 @@ To generate a new file:
 2.	Create `config.local.php` on the integration server.
 
     ```bash
-    ssh <SSH URL> "bin/magento magento-cloud:scd-dump"
+    ssh <SSH URL> "php bin/magento magento-cloud:scd-dump"
     ```
 	
 For example,
 	
     ```bash
-    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "bin/magento magento-cloud:scd-dump"
+    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
     ```
 
 5.	If you haven't done so already, change to the project root directory.

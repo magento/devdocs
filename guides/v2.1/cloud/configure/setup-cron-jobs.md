@@ -27,7 +27,7 @@ You will add the cron job to `.magento.app.yaml` in the `crons` section. The gen
 crons:
     productcatalog:
         spec: '20 */3 * * *'
-        cmd: 'bin/magento indexer:reindex catalog_product_category'
+        cmd: 'php bin/magento indexer:reindex catalog_product_category'
 ```
 
 The following example is the default cron included for {{site.data.var.ece}}.
@@ -38,7 +38,7 @@ The following example is the default cron included for {{site.data.var.ece}}.
 crons:
     cronrun:
         spec: "* * * * *"
-        cmd: "bin/magento cron:run"
+        cmd: "php bin/magento cron:run"
 ```
 
 {:.bs-callout .bs-callout-info}
@@ -77,7 +77,7 @@ With the settings:
 
 *   `<path to php binary>` is `/usr/bin/php`
 *   `/app/abc123edf890` is the install directory, which includes the Project ID for this example
-*   `bin/magento indexer:reindex catalog_category_product` is the script actions
+*   `php bin/magento indexer:reindex catalog_category_product` is the script actions
 
 ## Add cron jobs to .magento.app.yaml {#add-cron}
 
@@ -94,7 +94,7 @@ We include a default cron job for Magento in the default file:
 crons:
     cronrun:
         spec: "* * * * *"
-        cmd: "bin/magento cron:run"
+        cmd: "php bin/magento cron:run"
 ```
 
 1.  Edit `.magento.app.yaml` in the root directory of the Magento code in the Git branch.
@@ -106,10 +106,10 @@ crons:
     crons:
         magento:
             spec: '* * * * *'
-            cmd: 'bin/magento cron:run'
+            cmd: 'php bin/magento cron:run'
         productcatalog:
             spec: '20 */3 * * *'
-            cmd: 'bin/magento indexer:reindex catalog_product_category'
+            cmd: 'php bin/magento indexer:reindex catalog_product_category'
     ```
 4.  Save the file and push updates to the Git branch.
 

@@ -131,7 +131,7 @@ updated settings and full VCL snippet uploading support.
 Don't configure the module in your local before building and deploying. You'll
 configure the module in those environments.
 
-We recommend using the `bin/magento magento-cloud:scd-dump` command for
+We recommend using the `php bin/magento magento-cloud:scd-dump` command for
 Configuration Management([2.1.X]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-config-specific-recomm),
 [2.2.X]({{ site.baseurl }}/guides/v2.2/cloud/live/sens-data-over.html#cloud-config-specific-recomm)).
 When you use the `app:config:dump` command, all configuration options for Fastly
@@ -151,7 +151,7 @@ You cannot use the Fastly service in Integration environments.
 3.	Enter the following command to fully update and clear the cache:
 
     ```bash
-    bin/magento setup:upgrade && bin/magento cache:clean
+    php bin/magento setup:upgrade && php bin/magento cache:clean
     ```
 
 4. Edit your composer.json and ensure the Fastly module is included with version.

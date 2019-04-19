@@ -87,7 +87,7 @@ To verify the extension installed properly, you can check its functionality in t
 1.  Enter the following command to display a list of enabled modules:
 
     ```bash
-    bin/magento module:status
+    php bin/magento module:status
     ```
 
 1.  Verify the extension is listed.
@@ -106,25 +106,25 @@ You can use CLI commands or directly edit `app/etc/config.php` to enable or disa
 1.  List all modules:
 
     ```bash
-    bin/magento module:status
+    php bin/magento module:status
     ```
 
 1.  Enable a module.
 
     ```bash
-    bin/magento module:enable <module name>
+    php bin/magento module:enable <module name>
     ```
 
 1.  Disable a module.
 
     ```bash
-    bin/magento module:disable <module name>
+    php bin/magento module:disable <module name>
     ```
 
 1.  Verify the status of a module:
 
     ```bash
-    bin/magento module:status
+    php bin/magento module:status
     ```
 
     Also, you can navigate to, and edit, the `app/etc/config.php` file to verify the module is disabled.
