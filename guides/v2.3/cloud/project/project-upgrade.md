@@ -22,7 +22,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 
 1.  Before completing the upgrade, you must [update the `autoload`]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
 
-1.  Change to your Magento root directory and set the upgrade version.
+1.  Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
     ```bash
     composer require magento/magento-cloud-metapackage <requiredversion> --no-update
