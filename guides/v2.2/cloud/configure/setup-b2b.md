@@ -56,7 +56,7 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
 6. Complete the upgrade with B2B using the following command:
 
-        php bin/magento setup:upgrade
+        bin/magento setup:upgrade
 
 
 If you have a config.php file as part of your deployment, you should also add the B2B module in the modules section of the file.

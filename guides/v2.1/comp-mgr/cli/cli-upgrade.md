@@ -105,11 +105,11 @@ To enable maintenance mode:
 
 4. Update the database schema and data:
    ```bash
-    php bin/magento setup:upgrade
+    bin/magento setup:upgrade
     ```
 5. Put your storefront online (that is, cancel maintenance mode):
    ```bash
-   php bin/magento maintenance:disable
+   bin/magento maintenance:disable
    ```
 6. Restart Varnish if you use it for page caching.
    ```bash

@@ -133,7 +133,7 @@ Before you continue, you must know the file system path to any patch we provided
 1.  Compile code and the dependency injection configuration:
 
     ```bash
-    php bin/magento  setup:di:compile
+    bin/magento  setup:di:compile
     ```
 	This command can take several minutes to complete and produces messages similar to the following:
 
@@ -171,20 +171,20 @@ We highly recommend having Magento already installed prior to deployment. During
 3.	Enter the following command:
 
 ```bash
-php bin/magento setup:upgrade
+bin/magento setup:upgrade
 ```
 
 	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 4.	Clean the Magento cache:
 
 ```bash
-php bin/magento cache:clean
+bin/magento cache:clean
 ```
 
 5.	Set the Magento application for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode):
 
 ```bash
-php bin/magento deploy:mode:set production
+bin/magento deploy:mode:set production
 ```
 
 If errors display, debug them if possible, [review logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html), or open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to get additional assistance.

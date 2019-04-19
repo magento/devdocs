@@ -29,5 +29,5 @@ php <magento_root>/bin/magento setup:upgrade
 
 3.	After the command completes, verify your upgrade was successful:
 ```bash
-php bin/magento --version
+bin/magento --version
 ```

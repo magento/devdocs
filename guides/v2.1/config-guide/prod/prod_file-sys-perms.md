@@ -71,7 +71,7 @@ To remove write permissions to files and directories from the web server user's 
 1.  Change to production mode.
 
 ```bash
-php bin/magento deploy:mode:set production
+bin/magento deploy:mode:set production
 ```
 
 1.  Remove write permissions to the following directories.
@@ -168,7 +168,7 @@ To remove writable permissions to files and directories from the web server user
 3.	As the Magento file system owner, enter the following command to change to production mode:
 
 ```bash
-php bin/magento deploy:mode:set production
+bin/magento deploy:mode:set production
 ```
 
 3.	Enter the following command as a user with `root` privileges:

@@ -27,7 +27,7 @@ Backup functionality is currently disabled. Please use other means for backups.
 Enter the following CLI command:
 
 ```bash
-php bin/magento config:set system/backup/functionality_enabled 1
+bin/magento config:set system/backup/functionality_enabled 1
 ```
 
 For additional information on backups, see [Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).

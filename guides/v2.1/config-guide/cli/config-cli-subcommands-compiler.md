@@ -46,7 +46,7 @@ In some cases, you might want to compile code before you install the Magento app
 The following command enables all modules:
 
 ```bash
-php bin/magento module:enable --all [-c|--clear-static-content]
+bin/magento module:enable --all [-c|--clear-static-content]
 ```
 
 Use the optional `[-c|--clear-static-content]` option to clear {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %}. This is necessary if you've previously enabled or disabled modules and you must clear static content previously generated for them.

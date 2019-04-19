@@ -47,9 +47,9 @@ Don't install sample data in production mode. Switch to developer mode and clear
 Enter the following commands in the order shown as the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html):
 
 	cd <magento_root>
-	php bin/magento deploy:mode:set developer
+	bin/magento deploy:mode:set developer
 	rm -rf var/generation/* var/di/*
-	php bin/magento sampledata:deploy
+	bin/magento sampledata:deploy
 
 ### Symptom (security) {#trouble-samp-secy}
 

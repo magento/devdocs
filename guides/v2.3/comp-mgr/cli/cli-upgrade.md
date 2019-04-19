@@ -195,13 +195,13 @@ If you use a cache storage other than the filesystem, such as Redis or Memcached
 ### Update the database schema and data
 
 ```bash
-php bin/magento setup:upgrade
+bin/magento setup:upgrade
 ```
 
 ### Disable maintenance mode
 
 ```bash
-php bin/magento maintenance:disable
+bin/magento maintenance:disable
 ```
 
 ### Restart Varnish
@@ -285,13 +285,13 @@ If you use a cache storage other than the filesystem, such as Redis or Memcached
 ### Update the database schema and data
 
 ```bash
-php bin/magento setup:upgrade
+bin/magento setup:upgrade
 ```
 
 ### Disable maintenance mode
 
 ```bash
-php bin/magento maintenance:disable
+bin/magento maintenance:disable
 ```
 
 ### Restart Varnish

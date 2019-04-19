@@ -94,7 +94,7 @@ We do not recommend upgrading to Magento 2.2.4 if you deploy across multiple web
 
 <!--- MAGETWO-85778 -->* You can specify a custom version for static files being deployed, and now nginx sample config files can match these custom  versions, too. *Fix submitted by [Scott Buchanan](https://github.com/scottsb) in pull request 12521*.
 
-<!--- MAGETWO-85274 -->* The `CrontabManager.php` file has been updated as follows: If `crontab` has already been populated, the `php bin/magento cron:install` command adds `#~ MAGENTO START` and the rest of code directly to the last row of crontab without any spaces. *Fix submitted by [Michele Fantetti](https://github.com/WaPoNe) in pull request*.
+<!--- MAGETWO-85274 -->* The `CrontabManager.php` file has been updated as follows: If `crontab` has already been populated, the `bin/magento cron:install` command adds `#~ MAGENTO START` and the rest of code directly to the last row of crontab without any spaces. *Fix submitted by [Michele Fantetti](https://github.com/WaPoNe) in pull request*.
 
 <!--- MAGETWO-85744 -->*  The `ext-bcmath` PHP extension is now required in Open Source. Previously, it was required for Commerce only. *Fix submitted by [Mobecls](https://github.com/Mobecls) in pull request 12768*.
 

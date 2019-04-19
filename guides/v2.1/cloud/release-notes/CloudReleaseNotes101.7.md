@@ -37,7 +37,7 @@ In `magento-cloud-configuration` releases 101.7.3, 101.7.4, 101.7.5, and 101.7.6
 
 ### 101.7.3 changes
 
-<!--- MAGECLOUD-782 -->* Magento no longer throws an error when only the default store issued.  Previously, when only the default store is used, Magento threw the following error when running `php bin/magento magento-cloud:scd-dump`:
+<!--- MAGECLOUD-782 -->* Magento no longer throws an error when only the default store issued.  Previously, when only the default store is used, Magento threw the following error when running `bin/magento magento-cloud:scd-dump`:
 
 		Exception]
   		Notice: Undefined index: stores in /app/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/Console/Command/SCDConfigDump.php on line 91

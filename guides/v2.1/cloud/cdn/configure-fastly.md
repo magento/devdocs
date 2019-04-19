@@ -151,7 +151,7 @@ You cannot use the Fastly service in Integration environments.
 3.	Enter the following command to fully update and clear the cache:
 
 ```bash
-php bin/magento setup:upgrade && php bin/magento cache:clean
+bin/magento setup:upgrade && bin/magento cache:clean
 ```
 
 4. Edit your composer.json and ensure the Fastly module is included with version.

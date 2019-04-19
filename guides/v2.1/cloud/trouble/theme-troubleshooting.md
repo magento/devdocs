@@ -18,7 +18,7 @@ To resolve, you need the SSH information and store URL available through the [Pr
 1.  Regenerate the image cache:
 
     ```bash
-    php bin/magento catalog:images:resize
+    bin/magento catalog:images:resize
     ```
 
 1.  Test the category pages through the store URL.

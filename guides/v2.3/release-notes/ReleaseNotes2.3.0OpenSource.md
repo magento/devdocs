@@ -1013,7 +1013,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!--- MAGETWO-70736-->* Magento can now generate unsecure URLs if the current URL is secure. [GitHub-6175](https://github.com/magento/magento2/issues/6175)
 
-<!--- MAGETWO-82235-->* The `php bin/magento app:config:dump` command no longer adds an extra space to multiline array values every time it runs. Previously, this command inserted extra spaces, which triggered Github to commit these files as changed. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [11452](https://github.com/magento/magento2/pull/11452)*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
+<!--- MAGETWO-82235-->* The `bin/magento app:config:dump` command no longer adds an extra space to multiline array values every time it runs. Previously, this command inserted extra spaces, which triggered Github to commit these files as changed. *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [11452](https://github.com/magento/magento2/pull/11452)*. [GitHub-11328](https://github.com/magento/magento2/issues/11328)
 
 <!--- MAGETWO-82007-->* The `StockItemCriteriaInterface` method `setProductsFilter` now accepts an array of IDs. Previously, this method accepted either a single integer or an array, but returned only one item. *Fix submitted by [Kirill Morozov](https://github.com/kirmorozov) in pull request [11503](https://github.com/magento/magento2/pull/11503)*.[GitHub-7678](https://github.com/magento/magento2/issues/7678)
 

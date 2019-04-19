@@ -38,7 +38,7 @@ The following example is the default cron included for {{site.data.var.ece}}.
 crons:
     cronrun:
         spec: "* * * * *"
-        cmd: "php bin/magento cron:run"
+        cmd: "bin/magento cron:run"
 ```
 
 {:.bs-callout .bs-callout-info}
@@ -94,7 +94,7 @@ We include a default cron job for Magento in the default file:
 crons:
     cronrun:
         spec: "* * * * *"
-        cmd: "php bin/magento cron:run"
+        cmd: "bin/magento cron:run"
 ```
 
 1.  Edit `.magento.app.yaml` in the root directory of the Magento code in the Git branch.
@@ -106,7 +106,7 @@ crons:
     crons:
         magento:
             spec: '* * * * *'
-            cmd: 'php bin/magento cron:run'
+            cmd: 'bin/magento cron:run'
         productcatalog:
             spec: '20 */3 * * *'
             cmd: 'bin/magento indexer:reindex catalog_product_category'
