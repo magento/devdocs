@@ -65,8 +65,8 @@ If you continue to encounter these issues after using this method of deployment,
 2. SSH to the server after deployment completes.
 3. Run the following command to reduce deployment threads: 
 
-```bash
-bin/magento setup:static-content:deploy -j 1
-```
+    ```bash
+    bin/magento setup:static-content:deploy -j 1
+    ```
 
 You can also set an environment variable for single thread deployment by default: `STATIC_CONTENT_THREADS = 1`.

@@ -79,7 +79,6 @@ This procedure corresponds to step 2 in the [recommended procedure]({{ page.base
 The following snippet from `config.local.php` shows an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
 ```php
-<pre class="no-copy">
  'general' => [
      'locale' => [
          'code' => 'en_GB',
@@ -104,8 +103,8 @@ The following snippet from `config.local.php` shows an example of changing the d
      ],
 
      ... more ...
-</pre>
 ```
+{: .no-copy}
 
 ## Push and deploy config.local.php to environments {#deploy}
 
@@ -158,21 +157,21 @@ To delete `config.local.php`:
 1.	On your local workstation, check out the `master` branch.
 2.	SSH to the integration server:
 
-```bash
-magento-cloud ssh
-```
+    ```bash
+    magento-cloud ssh
+    ```
 
 3.	Delete `config.local.php`.
 
-```bash
-rm app/etc/config.local.php
-```
+    ```bash
+    rm app/etc/config.local.php
+    ```
 
 4.	Close the SSH tunnel.
 
-```bash
-exit
-```
+    ```bash
+    exit
+    ```
 
 ### Change configuration values in Integration {#change-settings}
 
@@ -201,36 +200,36 @@ To generate a new file:
 
 1.	On your local workstation, find the integration server's SSH URL.
 
-```bash
-magento-cloud environment:ssh --pipe
-```
+    ```bash
+    magento-cloud environment:ssh --pipe
+    ```
 	
 2.	Create `config.local.php` on the integration server.
 
-```bash
-ssh <SSH URL> "bin/magento magento-cloud:scd-dump"
-```
+    ```bash
+    ssh <SSH URL> "bin/magento magento-cloud:scd-dump"
+    ```
 	
 For example,
 	
-```bash
-ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "bin/magento magento-cloud:scd-dump"
-```
+    ```bash
+    ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "bin/magento magento-cloud:scd-dump"
+    ```
 
 5.	If you haven't done so already, change to the project root directory.
 6.	Transfer `config.local.php` to your local workstation.
     
-```bash
-rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
-```
+    ```bash
+    rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
+    ```
     
 ### Push the changes to Git {#push-again}
 
 To push your changes, enter the following command:
 
-```bash
-git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
-```
+    ```bash
+    git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
+    ```
 
 Wait for deployment to complete.
 
