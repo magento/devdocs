@@ -81,13 +81,10 @@ where
     "removeCouponFromCart": {
       "cart": {
         "applied_coupon": {
-          "code": "{{ COUPON_CODE }}"
+          "applied_coupon": null
         }
       }
     }
   }
 }
 ```
-
-where 
-`{{ COUPON_CODE }}` - coupon code that has been applied to cart.
