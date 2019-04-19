@@ -51,7 +51,7 @@ To do this, take the following steps:
 2. In your `_responsive.less` file, add the `.media-width` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add). 
 
 {:.bs-callout .bs-callout-info}
-`@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.  
+The `@media-target` option may have one of the following values: `all`, `desktop` or `mobile`.  
 
 Example:
 ```less
