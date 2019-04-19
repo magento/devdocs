@@ -4,7 +4,7 @@ title: Magento Open Source 2.3.1 Release Notes
 ---
 
 
-*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
+*Release notes published on March 26, 2019 and last edited on April 18, 2019.*
 
 
 We are pleased to present Magento Open Source 2.3.1. This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
@@ -72,9 +72,6 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 
 ### Improved developer experience
 
-#### Automation of upgrade process dependency assessment
-
-A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade.  <!--- MC-5465-->
 
 
 
@@ -198,7 +195,6 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 ### Installation, upgrade, deployment
 
-<!--- MC-5465-->* A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers had to perform this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. 
 
 <!--- ENGCOM-3291-->* Magento now sets the `id_prefix` option on prefix cache keys for the cache frontend during installation. If this option is not set, Magento uses the first 12 bits of the md5 hash of the absolute path to the Magento `app/etc` directory. But if this value is not exactly the same on all web servers, cache invalidation will not work.  *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
