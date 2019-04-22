@@ -30,7 +30,7 @@ We recommend working in a branch to add the B2B module and features to your impl
 
 ## Add B2B in the cloud {#add}
 
-You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions]({{ site.baseurl }}/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html) in the B2B guide.
+You need to add the module to `composer.json`. All extensions and modules must be added to this file. These instructions are specific to {{site.data.var.ece}}. For more information, you can also review the [installation instructions]({{ site.baseurl }}/extensions/b2b/) in the B2B guide.
 
 1. Open a terminal application.
 2. Change to your local development environment root directory.

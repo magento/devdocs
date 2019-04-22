@@ -1,17 +1,8 @@
-## Scope of this PR
-
-<!-- REQUIRED We set [labels](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#devdocs) based on the scope of changes with a PR. -->
-
-- __New Topic__: Entirely new documents
-- __Major Update__: Significant new info: new section in existing topic, etc.
-- __Technical__: Changes to technical content/code/processes/naming conventions (any change to technical content)
-- __Editorial__: Typos, grammatical inconsistencies, or minor rewrites
-
-<!-- Communicate the scope of your PR by leaving the applicable option(s) visible and deleting the others. -->
-
 ## Purpose of this PR
 
 <!-- REQUIRED Describe the goal and the type of changes this PR covers. -->
+
+This PR ...
 
 ## Affected URLs
 
