@@ -63,8 +63,13 @@ Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_
 
 After specifying the sensitive setting, use the following commands to verify it:
 
-    bin/magento cache:clean
-    bin/magento app:config:dump
+```bash
+bin/magento cache:clean
+```
+
+```bash
+bin/magento app:config:dump
+```
 
 A message similar to the following is displayed:
 
