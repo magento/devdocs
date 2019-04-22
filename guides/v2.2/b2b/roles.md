@@ -65,7 +65,7 @@ The Company Admin controls the possible actions for each customer within the com
 
 **REST Endpoints**
 
-``` json
+```json
 POST /V1/company/role/
 PUT /V1/company/role/:id
 GET /V1/company/role/:roleId
@@ -107,7 +107,7 @@ All resources that are not explicitly allowed are denied. You must specify the `
 
 **Payload**
 
-``` json
+```json
 {
   "role": {
     "role_name":"Junior Buyer",
@@ -127,7 +127,7 @@ All resources that are not explicitly allowed are denied. You must specify the `
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
   "id": 6,
   "role_name": "Junior Buyer",
@@ -301,7 +301,7 @@ This example call adds access to all Negotiable Quote resources except "View quo
 
 **Payload**
 
-``` json
+```json
 {
   "role": {
     "id": 6,
@@ -326,7 +326,7 @@ This example call adds access to all Negotiable Quote resources except "View quo
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
   "id": 6,
   "role_name": "Junior Buyer",
@@ -504,7 +504,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
   "id": 6,
   "role_name": "Junior Buyer",
@@ -699,7 +699,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {

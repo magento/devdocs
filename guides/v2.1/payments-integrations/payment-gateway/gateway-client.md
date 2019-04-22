@@ -8,7 +8,7 @@ menu_order: 5
 
 Gateway Client is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that transfers the payload to the payment provider and gets the response.
 
-## Basic interface 
+## Basic interface
 
 The basic interface for a gateway client is [`Magento\Payment\Gateway\Http\ClientInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/Http/ClientInterface.php).
 
@@ -25,7 +25,7 @@ The following gateway client implementations can be used out-of-the-box:
 
 Following is the illustration of how a Zend client can be added in `di.xml`:
 
-{% highlight xml %}
+```xml
 ...
 <virtualType name="HtmlConverterZendClient" type="Magento\Payment\Gateway\Http\Client\Zend">
     <arguments>
@@ -34,7 +34,7 @@ Following is the illustration of how a Zend client can be added in `di.xml`:
     </arguments>
 </virtualType>
 ...
-{% endhighlight %}
+```
 
 ## Transfer Factory {#transfer_factory}
 
@@ -46,7 +46,7 @@ The basic Transfer Factory interface is [Magento\Payment\Gateway\Http\TransferFa
 
 The similar example of factory might looks like this:
 
-``` php?start_inline=1
+```php
  public function create(array $request)
  {
     return $this->transferBuilder
@@ -59,7 +59,7 @@ In this example transfer factory simply sets request data using Transfer Builder
 
 Following is an example of a more complicated behavior. Here transfer factory sets all required data to process requests using {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} credentials and all data is sent in JSON format.
 
-``` php?start_inline=1
+```php
 public function create(array $request)
 {
     return $this->transferBuilder
@@ -72,5 +72,3 @@ public function create(array $request)
         ->build();
 }
 ```
-
-

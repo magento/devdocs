@@ -43,7 +43,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 
 #### Sample (truncated) customer webapi.xml
 
-``` xml
+```xml
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group -->

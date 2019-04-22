@@ -676,7 +676,7 @@ Here we should recall [Step 3][], where the initial test case was created.
 
 An argument for the `test()` method is a [test object][] (a [fixture][]).
 
-``` php?start_inline=1
+```php
 /**
  * Create Synonym group test.
  *
@@ -691,7 +691,7 @@ public function test(Synonym $synonym)
 
 Now we can add page classes made in [Step 5][]:
 
-``` php?start_inline=1
+```php
 use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
 use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 ```
@@ -712,7 +712,7 @@ Let's code it!
 
 In the FTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 
-``` php?start_inline=1
+```php
 $this->synonymsIndex->open();
 ```
 
@@ -720,7 +720,7 @@ $this->synonymsIndex->open();
 
 To Click the "New Synonym Group" button, we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
 
-``` php?start_inline=1
+```php
 $this->synonymsIndex->getPageActionsBlock()->addNew();
 ```
 
@@ -730,7 +730,7 @@ $this->synonymsIndex->getPageActionsBlock()->addNew();
 
 To enter data in the form, we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
 
-``` php?start_inline=1
+```php
 $this->synonymsNew->getSynonymForm()->fill($synonym);
 ```
 
@@ -738,13 +738,13 @@ $this->synonymsNew->getSynonymForm()->fill($synonym);
 
 A `save()` method with parameters defined in a `formPageActions` block. Parameters are injected using a `getFormPageActions()` method from the `synonymsNew` page (generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` page class).
 
-``` php?start_inline=1
+```php
 $this->synonymsNew->getFormPageActions()->save();
 ```
 
 **Full `test()` definition**
 
-``` php?start_inline=1
+```php
 /**
  * Create Synonym group test.
  *
