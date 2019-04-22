@@ -80,7 +80,7 @@ The Magento application processes layout files in the following order:
 
 1. Module base files loaded.
 2. Module area files loaded.
-3. Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`. (If their priorities are equal, they are sorted according to their alphabetical priority.)
+3. Collects all layout files from modules. The order is determined by the modules order in the module list from the `app/etc/config.php` file. (If their priorities are equal, they are sorted according to their alphabetical priority.)
 4. Determines the sequence of [inherited] themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
 5. Iterates the sequence of themes from last ancestor to current:
 
