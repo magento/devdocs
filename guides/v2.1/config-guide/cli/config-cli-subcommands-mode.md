@@ -137,7 +137,7 @@ bin/magento deploy:mode:set developer
 
 The following message displays:
 
-```bash
+```terminal
 Switched to developer mode.
 ```
 
