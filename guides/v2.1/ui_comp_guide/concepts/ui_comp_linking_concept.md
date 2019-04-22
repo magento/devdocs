@@ -9,7 +9,7 @@ The following properties are used for linking observable properties and methods 
 
 - `exports`
 - `imports`
-- `links` 
+- `links`
 - `listens`
 
 These properties are processed by the `initLinks()` method of the [`uiElement` class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
@@ -122,8 +122,8 @@ For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site
 
 The `listens` property is used to track the changes of a component's property. `listens`'s value is an object, composed of the following:
 
-  - `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
-  - `value`: name of the internal method or property which listens to the changes.
+- `key`: name of the observable property or method which is tracked for changes. Can use [string templates](#string_templ).
+- `value`: name of the internal method or property which listens to the changes.
 
 Example of using `listens` in a component's `.js` file :
 
@@ -137,7 +137,6 @@ Example of using `listens` in a component's `.js` file :
 
 Here the local `visibilityChanged` property is a method that will be called when the `visibility` property of the `provider` component changes. It receives the new value as an argument. If the local property is not a function, it will be set to the new value.
 The external property has to be an observable in order for `listens` to have any effect.
-
 
 Example of using `listens` in a component's configuration `.xml` file:
 
@@ -163,25 +162,26 @@ When working with UI components, we often need to use the string representation 
 
 As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 
-    '${ $.provider }:foo' 
-    
+    '${ $.provider }:foo'
+
 If the string would be built at runtime it would be equivalent to `this.provider + ':foo'`.
 
 We can also build complex templates strings using this syntax, as follows:
 
 - Using variables from the other component:
 
-    ``` 
-    '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
-    ```
+```javascript
+'${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
+```
+
 - Calling several functions in one string: 
 
-    ```
-    '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
-    ```
+```javascript
+'${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
+```
 
 - Using inline conditions:
 
-    ```
-    '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
-    ``` 
+```javascript
+'${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
+```
