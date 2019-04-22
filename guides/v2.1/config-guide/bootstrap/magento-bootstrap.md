@@ -37,20 +37,20 @@ The assertions that the Magento application is installed and not in maintenance 
 
 Sample entry point script that modifies the bootstrap object:
 
-    ```php?start_inline=1
-    <?php
-    use Magento\Framework\App\Bootstrap;
-    require __DIR__ . '/app/bootstrap.php';
+```php
+<?php
+use Magento\Framework\App\Bootstrap;
+require __DIR__ . '/app/bootstrap.php';
 
-    $params = $_SERVER;
-    $params[Bootstrap::PARAM_REQUIRE_MAINTENANCE] = true; // default false
-    $params[Bootstrap::PARAM_REQUIRE_IS_INSTALLED] = false; // default true
-    $bootstrap = Bootstrap::create(BP, $params);
+$params = $_SERVER;
+$params[Bootstrap::PARAM_REQUIRE_MAINTENANCE] = true; // default false
+$params[Bootstrap::PARAM_REQUIRE_IS_INSTALLED] = false; // default true
+$bootstrap = Bootstrap::create(BP, $params);
 
-    /** @var \Magento\Framework\App\Http $app */
-    $app = $bootstrap->createApplication('Magento\Framework\App\Http');
-    $bootstrap->run($app);
-    ```
+/** @var \Magento\Framework\App\Http $app */
+$app = $bootstrap->createApplication('Magento\Framework\App\Http');
+$bootstrap->run($app);
+```
 
 ## Default exception handling {#config-boot-exception}
 

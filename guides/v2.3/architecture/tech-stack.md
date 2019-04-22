@@ -38,7 +38,7 @@ If you are interested in participating in Magento Community projects we welcome 
 
 ### Search
 
-* Elasticsearch ({{site.data.var.ee}} versions 2.1.x and 2.2.x, and Magento Open Source version 2.3x)
+* Elasticsearch ({{site.data.var.ee}} versions 2.1.x and 2.2.x, and Magento Open Source version 2.3.x)
 
 ### Additional technologies
 
