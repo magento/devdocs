@@ -181,7 +181,7 @@ This section contains code sample snippets to refer to when configuring database
 
 `di.xml` snippet:
 
-``` xml
+```xml
 <type name="Magento\Framework\App\Cache\Frontend\Pool">
     <arguments>
         <argument name="frontendSettings" xsi:type="array">
@@ -206,7 +206,7 @@ This section contains code sample snippets to refer to when configuring database
 ### Sample `env.php` for a custom cache frontend {#mage-cache-db-config-custom}
 `env.php` snippet that enables all cache types with a custom frontend named `magento_cache`:
 
-{% highlight php startinline=true %}
+```php
  'cache' => [
      'frontend' => [
         'magento_cache' => [
@@ -255,7 +255,7 @@ This section contains code sample snippets to refer to when configuring database
           ],
       ],
   ],
-{% endhighlight %}
+```
 
 <!-- Link references -->
 [Varnish]: {{ page.baseurl }}/config-guide/varnish/config-varnish.html
