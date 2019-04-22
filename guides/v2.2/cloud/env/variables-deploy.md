@@ -212,7 +212,7 @@ stage:
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—Magento 2.1.16 and later
 
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
@@ -223,6 +223,8 @@ stage:
 ```
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
+
+[ece-tools version 2002.0.18]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
