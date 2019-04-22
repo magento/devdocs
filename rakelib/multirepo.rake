@@ -1,14 +1,19 @@
 namespace :multirepo do
-  desc 'Add content from external repositories'
+  desc 'Create a file tree for devdocs website and get all required content'
   task :init do
-    sh './scripts/docs-from-code.sh mbi git@github.com:magento/devdocs-mbi.git master'
-    sh './scripts/docs-from-code.sh page-builder git@github.com:magento-devdocs/magento2-page-builder.git develop'
-    sh './scripts/docs-from-code.sh mftf git@github.com:magento/magento2-functional-testing-framework.git develop'
+    ssh = 'git@github.com:'
+    https = 'https://${token}@github.com/'
+    protocol =
+      if ENV['token']
+        https
+      else
+        ssh
+      end
 
-    # The last argument 'false' disables content filtering by sparse checkout.
-    # It covers cases when we need entire repository, not only the '/docs/' directory.
-    sh './scripts/docs-from-code.sh guides/m1x git@github.com:magento/devdocs-m1.git master false'
-    sh './scripts/docs-from-code.sh guides/v2.0 git@github.com:magento/devdocs.git 2.0 false'
+    content_map = DocConfig.new.content_map
+    content_map.each do |subrepo|
+      sh "./scripts/docs-from-code.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}"
+    end
   end
 
   desc 'Add multirepo docs providing shell arguments "dir=<directory where to init a repo>", "repo=<SSH URL>", "branch=<branch to checkout>", "filter=<true/false>" ("true" by default) to 1) filter content if "true" or 2) add content from the entire repository if "false".'
