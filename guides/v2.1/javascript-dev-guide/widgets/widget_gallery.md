@@ -39,7 +39,6 @@ Example of declarative initialization:
 ```javascript
 <script type="text/x-magento-init">
     {
-         {
         "<element_selector>": {
             "mage/gallery/gallery": {
                 "data": [{
@@ -71,6 +70,8 @@ Example of declarative initialization:
                     "nav": "<false/thumbs/dots>",
                     "loop": <true/false>,
                     "navdir": "<horizontal/vertical>",
+                    "navarrows": <true/false>,
+                    "navtype": "<slides/thumbs>",
                     "arrows": <true/false>,
                     "showCaption": <true/false>,
                     "transitionduration": <number>,
