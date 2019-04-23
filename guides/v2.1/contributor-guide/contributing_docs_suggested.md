@@ -3,7 +3,7 @@ group: contributor-guide
 title: Suggested topics for contribution
 redirect_from:
    - /guides/v2.1/contributor-guide/contributing_docs_suggested.html
-   - /guides/v2.1/howdoi/bk-how-do-i.html
+   - /guides/v2.1/howdoi/bk-how-do-i.html	
 
 ---
 

@@ -42,21 +42,23 @@ For Pro, you must create a [Support ticket]({{ page.baseurl }}/cloud/trouble/tro
 
 1.  Replace the contents with the following:
 
-		"http://{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    ```yaml
+    "http://{default}/":
+        type: upstream
+        upstream: "mymagento:php"
 
-		"https://{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    "https://{default}/":
+        type: upstream
+        upstream: "mymagento:php"
 
-		"http://*.{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    "http://*.{default}/":
+        type: upstream
+        upstream: "mymagento:php"
 
-		"https://*.{default}/":
-    		type: upstream
-    		upstream: "mymagento:php"
+    "https://*.{default}/":
+        type: upstream
+        upstream: "mymagento:php"
+    ```
 
 1.  Save your changes to the `routes.yaml` file.
 
@@ -88,7 +90,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
         if (!isset($_SERVER['HTTP_HOST'])) {
            return false;
         }
-           return strpos(str_replace('.', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+           return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
     }
     if (isHttpHost("example.com")) {
         $_SERVER["MAGE_RUN_CODE"] = "default";
@@ -101,7 +103,7 @@ Instead of configuring an NGINX virtual host, pass the `MAGE_RUN_CODE` and `MAGE
     From:
 
     ```php
-    return strpos(str_replace('.', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+    return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
     ```
 
     To:

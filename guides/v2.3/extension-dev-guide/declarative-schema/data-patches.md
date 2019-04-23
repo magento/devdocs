@@ -18,7 +18,7 @@ The sequence of installing patches is handled through a dependency-based approac
 To define a dependency in a patch, add the method `public static function getDependencies()`
 to the patch class and return the class names of the patches this patch depends on. The dependency can be in any module.
 
-``` php
+```php
 public static function getDependencies()
 {
     return [
@@ -30,7 +30,7 @@ public static function getDependencies()
 The following code sample defines a data patch class that has a dependency.
 
 
-{% highlight php startinline=true %}
+```php
 <?php
     /**
      * Copyright © Magento, Inc. All rights reserved.
@@ -118,7 +118,7 @@ The following code sample defines a data patch class that has a dependency.
             return [];
         }
     }
-{% endhighlight %}
+```
 
 ## Will old scripts work in newer versions?
 

@@ -49,7 +49,7 @@ Here `<VendorName>` is the name of the company providing the package and `<packa
 
 After you create your `registration.php` file and you are creating [your component's composer.json file]({{page.baseurl}}/extension-dev-guide/build/composer-integration.html), invoke your `registration.php` file in the `autoload` section of `composer.json`:
 
-``` json
+```json
 {
     "name": "Acme-vendor/bar-component",
     "autoload": {
@@ -61,7 +61,7 @@ After you create your `registration.php` file and you are creating [your compone
 
 ### Sample `registration.php` file {#register-sample}
 
-``` php
+```php
 <?php
 
 use Magento\Framework\Component\ComponentRegistrar;

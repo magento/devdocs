@@ -41,6 +41,7 @@ pages:
           url: /test/js/jasmine.html
 
         - label: JsTestDriver
+          include_versions: ["2.1"]
           url: /test/js/test_js-unit.html
 
     - label: PHP Unit Testing

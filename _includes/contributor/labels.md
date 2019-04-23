@@ -3,7 +3,6 @@
 
 Release line labels indicate the specific Magento release lines affected by the issue or PR. For example, if working on a fix for 2.2.6, you would apply the Release Line: 2.2. This effectively includes all releases in this line.
 
-* `Release Line: 2.1`
 * `Release Line: 2.2`
 * `Release Line: 2.3`
 
@@ -90,10 +89,9 @@ Labels applied to issues through verification and completion. For details on the
 * `Issue: Cannot Reproduce` - Gate 3 failed. The issue could not be reproduced or validated. Previous label `Cannot Reproduce`.
 * `Issue: Confirmed` - Gate 3 passed. Manual verification of the issue description and reproduction steps was confirmed. Previous label `G3 Passed`.
 * `Issue: Ready for Work` - Gate 4 passed. The issue is acknowledged and added to the backlog for open development. Previous label `acknowledged`.
-* `Reproduced on 2.1.x` - The Community Engineering Team reproduced the issue on latest 2.1.x release.
 * `Reproduced on 2.2.x` - The Community Engineering Team reproduced the issue on latest 2.2.x release.
 * `Reproduced on 2.3.x` - The Community Engineering Team reproduced the issue on latest 2.3.x release.
-* `Fixed in 2.1.x` - The issue has been fixed in one of the 2.1.x releases or in 2.1-develop branch and will be available with the upcoming patch release.
+
 * `Fixed in 2.2.x` - The issue has been fixed in one of the 2.2.x releases or in 2.2-develop branch and will be available with the upcoming patch release.
 * `Fixed in 2.3.x` - The issue has been fixed in one of the 2.3.x releases or in 2.3-develop branch and will be available with the upcoming patch release.
 * `non-issue` - A described behavior in the issue description is valid and shouldn't be changed in Magento code base.

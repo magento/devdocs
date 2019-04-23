@@ -29,7 +29,7 @@ You can specify any of the following fields to filter on operation statuses:
 The following call returns bulk operations that contain an error that cannot be retried.
 
 ```
-GET http://<magento_host>/rest/V1/bulk/?
+GET <host>/rest/<store_code>/V1/bulk/?
 searchCriteria[filter_groups][0][filters][0][field]=status&
 searchCriteria[filter_groups][0][filters][0][value]=3&
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq
@@ -41,7 +41,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 The operation with bulk UUID `c43ed402-3dd3-4100-92e2-dc5852d3009b` contains a `status` code of 3.
 
-``` json
+```json
 {
     "items": [
         {

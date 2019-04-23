@@ -6,7 +6,7 @@ branch=$3
 sparse=$4
 
 echo "Creating a directory: $dir"
-mkdir "$dir"
+mkdir -p "$dir"
 cd "$dir" || exit
 
 echo 'Initiating git in the directory'
@@ -25,4 +25,5 @@ fi
 
 echo "Checkouting a branch: $branch"
 git checkout "$branch"
+
 cd ..
