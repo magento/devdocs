@@ -31,7 +31,7 @@ Attribute |  Data Type | Description
 `timezone` | String | The store's time zone, such as `America/Chicago`
 `website_id` | Integer | The ID number assigned to the parent website  
 `weight_unit` | String | The weight unit for products, such as `lbs` or `kgs`
-{:style="table-layout:auto;"}
+
 
 ### Supported theme attributes
 
@@ -54,7 +54,7 @@ Attribute |  Data Type | Description
 `title_prefix` | String | A prefix that appears before the title to create a two- or three-part title
 `title_suffix` | String | A suffix that appears after the title to create a two-or three part title
 `welcome` | String | Text that appears in the header of the page and includes the name of customers who are logged in
-{:style="table-layout:auto;"}
+
 
 ### Supported CMS attributes
 
@@ -68,7 +68,7 @@ Attribute |  Data Type | Description
 `front` | String | Indicates the landing page that is associated with the base URL
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
 `show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
-{:style="table-layout:auto;"}
+
 
 
 ## Example usage
@@ -79,7 +79,7 @@ The following call returns all details of a store's configuration.
 
 **Request**
 
-``` text
+```text
 {
   storeConfig {
     id,
@@ -104,7 +104,7 @@ The following call returns all details of a store's configuration.
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "storeConfig": {
@@ -135,7 +135,7 @@ The following query returns information about the store's default title, keyword
 
 **Request**
 
-``` text
+```text
 {
   storeConfig {
     default_title,
@@ -147,7 +147,7 @@ The following query returns information about the store's default title, keyword
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "storeConfig": {
@@ -165,7 +165,7 @@ The following query returns information about the store's content pages.
 
 **Request**
 
-``` text
+```text
 {
   storeConfig {
     front,
@@ -180,7 +180,7 @@ The following query returns information about the store's content pages.
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "storeConfig": {

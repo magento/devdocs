@@ -159,7 +159,7 @@ This section shows the change made to `config.php` when you change the default w
 
 After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
 
-``` php
+```php
 'general' =>
     array (
         'locale' =>
@@ -194,7 +194,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` on
 
 `websites` array:
 
-``` php
+```php
       'new' =>
       array (
         'website_id' => '2',
@@ -208,7 +208,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` on
 
 `groups` array:
 
-``` php
+```php
       2 =>
       array (
         'group_id' => '2',
@@ -222,7 +222,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` on
 
 `stores` array:
 
-``` php
+```php
      'newview' =>
       array (
         'store_id' => '2',
@@ -237,7 +237,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` on
 
 `payment` array:
 
-``` php
+```php
       'payment' =>
       array (
         'paypal_express' =>

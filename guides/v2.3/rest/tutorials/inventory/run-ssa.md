@@ -42,7 +42,7 @@ Not applicable
 
 **Response**
 
-``` json
+```json
 [
     {
         "code": "distance",
@@ -79,7 +79,7 @@ This tutorial does not consider complications such selling out of products or ba
 
 **Payload**
 
-``` json
+```json
 {
     "inventoryRequest": {
         "stockId": 2,
@@ -105,10 +105,10 @@ Product | Source | Quantity
 `24-WB01` | Baltimore | 20
 `24-WB03` | Baltimore | 19
 `24-WB03` | Reno | 31
-{:style="table-layout:auto;"}
 
 
-``` json
+
+```json
 {
     "source_selection_items": [
         {

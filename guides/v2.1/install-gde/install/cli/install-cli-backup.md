@@ -29,7 +29,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 The Magento backup feature is disabled by default. To enable, enter the following CLI command:
 
-``` bash
+```bash
 bin/magento config:set system/backup/functionality_enabled 1
 ```
 
@@ -57,7 +57,7 @@ The command performs the following tasks:
     |`--code`|Backs up the Magento file system (excluding var and pub/static directories).|var/backups/<timestamp>\_filesystem.tgz|
     |`--media`|Back up the pub/media directory.|var/backups/<timestamp>\_filesystem_media.tgz|
     |`--db`|Back up the Magento 2 database.|var/backups/<timestamp>\_db.sql|
-    {:style="table-layout:auto;"}
+    
 
 3.	Takes the store out of maintenance mode.
 

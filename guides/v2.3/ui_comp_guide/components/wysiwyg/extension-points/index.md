@@ -330,7 +330,7 @@ If your implementation does not require any modifications to the configuration, 
 
 **Example di.xml file entry for TinyMCE3 editor:**
 
-``` xml
+```xml
 <type name="Magento\Cms\Model\Wysiwyg\CompositeConfigProvider">
     <arguments>
         <argument name="wysiwygConfigPostProcessor" xsi:type="array">

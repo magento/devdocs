@@ -17,27 +17,30 @@ When initializing the gallery Widget on an HTML element, magnifier initializatio
 
 ```javascript
 <script type="text/x-magento-init">
-"<element_selector>": {
-        "mage/gallery/gallery": {
-            "data": [{
-                "thumb": "<small_image_url>",
-                "img": "<small_image_url>",
-                "full": "<small_image_url>",
-                "caption": "<message>",
-                "isMain": "<true/false>"
-            }],
-            "mixins": ["magnifier/magnify"],
-            "magnifierOpts": {
-               "enabled": <true/false>,
-               "eventType": "<hover/click>",
-               "width": <number>,
-               "height": <number>,
-               "top": <number>,
-               "left": <number>,
-               "fullscreenzoom": <number>
+    {
+        "<element_selector>": {
+            "mage/gallery/gallery": {
+                "data": [{
+                    "thumb": "<small_image_url>",
+                    "img": "<small_image_url>",
+                    "full": "<small_image_url>",
+                    "caption": "<message>",
+                    "isMain": "<true/false>"
+                }],
+                "mixins": ["magnifier/magnify"],
+                "magnifierOpts": {
+                   "enabled": <true/false>,
+                   "eventType": "<hover/click>",
+                   "width": <number>,
+                   "height": <number>,
+                   "top": <number>,
+                   "left": <number>,
+                   "fullscreenzoom": <number>,
+                   "mode": "<outside/inside>"
+                }
             }
         }
-   }
+    }
 </script>
 ```
 
@@ -51,13 +54,13 @@ Enable magnifier.
 
 ### `height` {#opt_height}
 
-Height of the magnifier block in pixels. 
-            
+Height of the magnifier block in pixels.
+
 ### `hover` {#opt_hover}
 
 Action that activates zoom.
 
-Possible values: 
+Possible values:
 
 * `hover`
 * `click`
@@ -79,7 +82,7 @@ The value for the CSS `left` property for the magnifier block positioning.
 The value for the CSS `top` property for the magnifier block positioning.
 
 **Type**: Integer
-            
+
 
 ### `width` {#opt_width}
 
@@ -87,4 +90,11 @@ Width of the magnifier block in pixels.
 
 **Type**: Integer
 
+### `mode` {#opt_mode}
 
+Specifies whether to display magnified image inside / outside lens.
+
+Possible values:
+
+* `outside`
+* `inside`

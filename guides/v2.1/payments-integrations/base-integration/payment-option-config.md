@@ -37,7 +37,7 @@ Additionally to the default option, a payment method configuration can contain a
 
 Following is the illustration of such configuration (`config.xml` of the Braintree module)
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
@@ -62,7 +62,7 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
         </payment>
     </default>
 </config>
-{% endhighlight %}
+```
 
 ## What's next
 

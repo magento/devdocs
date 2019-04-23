@@ -12,12 +12,12 @@ Use Wishlist queries to retrieve information about a customer's wish list.
 
 Attribute | Data type | Description
 --- | --- | ---
-`items` | [Wishlistitem](#wishlistitem) | An array of items in the customer's wish list
+`items` | [WishlistItem](#wishlistitem) | An array of items in the customer's wish list
 `items_count` | Int | The number of items in the wish list
 `name` | String | When multiple wish lists are enabled, the name the customer assigns to the wish list
 `sharing_code` | String | An encrypted code that Magento uses to link to the wish list
 `updated_at` | String | The time of the last modification to the wish list
-{:style="table-layout:auto;"}
+
 
 ### Wish list item attributes {#wishlistitem}
 
@@ -28,7 +28,7 @@ Attribute | Data type | Description
 `id` | Int | The wish list item ID
 `product` | <a href="{{ page.baseurl }}/graphql/reference/products.html#ProductInterface">ProductInterface</a> | The ProductInterface contains attributes that are common to all types of products. Note that descriptions may not be available for custom and EAV attributes
 `qty` | Float | The quantity of this wish list item
-{:style="table-layout:auto;"}
+
 
 ## Syntax
 
@@ -63,7 +63,7 @@ The following query returns the customer's wish list:
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "wishlist": {

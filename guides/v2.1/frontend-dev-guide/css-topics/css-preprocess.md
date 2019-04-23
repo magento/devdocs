@@ -93,7 +93,7 @@ For each CSS file included in the layouts, Less preprocessor:
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
+In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess), and reload the store pages to trigger compilation and publication.
 
 {:.bs-callout .bs-callout-info}
 You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
@@ -154,6 +154,7 @@ If you need to import a remote CSS file in your `.less` source, use `url()` nota
 ```css
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
 ```
+To [include the font]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) in your theme's CSS files, use the `@font-face` CSS rule for the fastest loading time.
 
 In this instance, Magento will skip the `@import` directive while resolving paths to the local resources.
 

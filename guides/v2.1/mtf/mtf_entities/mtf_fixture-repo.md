@@ -481,7 +481,7 @@ After the repository generation
 
 you have the following code in the Customer repository (`<magento2>/dev/tests/functional/generated/Magento/Customer/Test/Repository/Customer.php`):
 
-``` php?start_inline=1
+```php
   
 $this->_data['default'] = [
   'firstname' => 'John',

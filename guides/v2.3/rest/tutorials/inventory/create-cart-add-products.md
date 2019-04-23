@@ -49,7 +49,7 @@ Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
 --- | --- | --- | ---
 `24-WB01` | 35 | 10 | 25
 `24-WB03` | 19 | 0 | 42
-{:style="table-layout:auto;"}
+
 
 Later in this step, we'll order 20 `24-WB01` items and 50 `24-WB03` items. We can see that we have enough salable items for both products, but let's check programmatically.
 
@@ -129,7 +129,7 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 
 **Payload**
 
-``` json
+```json
 {
   "cartItem": {
     "sku": "24-WB01",
@@ -143,7 +143,7 @@ In this call, we'll add 20 `24-WB01` items. This portion of the order can be ful
 
 Note the `item_id` for use in subsequent steps.
 
-``` json
+```json
 {
     "item_id": 5,
     "sku": "24-WB01",
@@ -160,7 +160,7 @@ Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources
 
 **Payload**
 
-``` json
+```json
 {
   "cartItem": {
     "sku": "24-WB03",
@@ -174,7 +174,7 @@ Use the same endpoint to add 50 items of `24-WB03` to the cart. Multiple sources
 Note the `item_id` for use in subsequent steps.
 
 
-``` json
+```json
 {
     "item_id": 6,
     "sku": "24-WB03",
@@ -192,7 +192,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 **Payload**
 
-``` json
+```json
 {
   "cartItem": {
     "sku": "240-LV06",
@@ -204,7 +204,7 @@ Finally, we'll add a single instance of a downloadable product to the cart.
 
 **Response**
 
-``` json
+```json
 {
     "item_id": 7,
     "sku": "240-LV06",
