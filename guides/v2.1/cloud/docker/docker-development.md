@@ -31,20 +31,21 @@ The web container works with the [PHP-FPM](https://php-fpm.org) to serve PHP cod
 
 ## CLI containers
 
-There are few CLI containers based on a PHP-CLI image that provides `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations.
+The following CLI containers, which are based on a PHP-CLI image, provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations:
 
 -  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
 -  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
 -  `cron`—extends the CLI container to run cron
 
     -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
-    -  Cron only works with CLI container to run `./bin/magento cron:run` command
+    -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
 
 #### To run the `{{site.data.var.ct}}` ideal-state command:
 
 ```bash
 docker-compose run deploy ece-command wizard:ideal-state
 ```
+
 Sample response:
 
 ```terminal
