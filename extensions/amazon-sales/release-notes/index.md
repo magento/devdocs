@@ -5,9 +5,6 @@ title: Amazon Sales Channel Release Notes
 
 *Release notes published April 2019.*
 
-{:.bs-callout .bs-callout-info}
-This is the a pre-release version of Google Shopping ads Channel documentation. Content in this version is subject to change.
-
 **Amazon Sales Channel** is now available with Magento 2.2.x and 2.3.x. Merchants can use Amazon Sales Channel to integrate with an Amazon Seller account to post and sell Magento products on Amazon.
 
 See the following documentation:
