@@ -331,8 +331,6 @@ echo $url->get($baseUrl, 'custom/path');
 // Only one way to use API, no temporal coupling.
 ```
 
-|
-
 {% endcollapsible %}
 
 ---
@@ -385,8 +383,6 @@ class View extends Template
 }
 // More flexible, no dependencies between classes, no temporal coupling.
 ```
-
-|
 
 {% endcollapsible %}
 
