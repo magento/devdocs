@@ -52,9 +52,10 @@ Use [RFC2119] to interpret keywords like:
 2.2. Object MUST be ready for use after instantiation. No additional public initialization methods are allowed.
 
 {% collapsible Examples: %}
-|Not recommended|Recommended|
-|--- |--- |
-| ```php
+
+### Not recommended
+
+```php
 class Config
 {
     private $data;
@@ -71,7 +72,9 @@ class Config
 }
 ```
 
-| ```php
+### Recommended
+
+```php
 class Config
 {
     private $data;
@@ -132,9 +135,8 @@ class Composite
 2.3.2. Events MUST NOT be triggered in constructors.
 
 {% collapsible Examples: %}
-|Not recommended|Recommended|
-|--- |--- |
-|
+
+### Not recommended
 
 ```php
 class Config
@@ -149,7 +151,7 @@ class Config
 }
 ```
 
-|
+### Recommended
 
 ```php
 class Config
@@ -185,9 +187,8 @@ class Config
 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.
 
 {% collapsible Examples: %}
-|Not recommended|Recommended|
-|--- |--- |
-|
+
+### Not recommended
 
 ```php
 interface SessionAdapterInterface
@@ -206,7 +207,7 @@ class SessionManager
 // restricts what types can be passed at the runtime.
 ```
 
-|
+### Recommended
 
 ```php
 interface SessionAdapterInterface
@@ -232,9 +233,8 @@ class SessionManager
 
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
-|Not recommended|Recommended|
-|--- |--- |
-|
+
+### Not Recommended
 
 ```php
 class AbstractController extends Action
@@ -270,7 +270,7 @@ class Edit extends AbstractController
 // more flexible, easy to understand, more testable.
 ```
 
-|
+### Recommended
 
 ```php
 class Edit extends Action
@@ -311,9 +311,8 @@ class Edit extends Action
 
 2.14. [Temporal coupling] MUST be avoided
 {% collapsible Example #1: %}
-|Not recommended|Recommended|
-|--- |--- |
-|
+
+### Not recommended
 
 ```php
 $url = new Url();
@@ -331,7 +330,7 @@ echo $url->get('custom/path'); // Throws exception,
 // return anything could be sign of temporal coupling.
 ```
 
-|
+### Recommended
 
 ```php
 $url = new Url($baseUrl);
@@ -351,9 +350,8 @@ echo $url->get($baseUrl, 'custom/path');
 ---
 
 {% collapsible Example #2: %}
-|Not recommended|Recommended|
-|--- |--- |
-|
+
+### Not recommended
 
 ```php
 class Edit extends Action
@@ -376,7 +374,7 @@ class View extends Template
 }
 ```
 
-|
+### Recommended
 
 ```php
 class Edit extends Action
@@ -502,7 +500,7 @@ You need to read configuration from different sources (like database or filesyst
 6.1.2. Every application layer (Presentation, Service Contracts, Data Access)
     MUST process (handle or re-throw) exceptions of the underlying layer.
 
-6.1.3. A layer MUST NOT depend on layer that invokes (above) it. A layer MUST only depend on a layer directly below it.
+6.1.3. A layer MUST NOT depend on a layer that invokes (above) it. A layer MUST only depend on a layer directly below it.
 ![Magento architecture layers]({{site.baseurl}}/common/images/archi_diagrams_layers_alt4.jpg)
 
 ### 6.2. Presentation layer
