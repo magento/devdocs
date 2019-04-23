@@ -177,8 +177,6 @@ class Config
 }
 ```
 
-|
-
 {% endcollapsible %}
 
 ---
@@ -221,8 +219,6 @@ class SessionManager
     {}
 }
 ```
-
-|
 
 {% endcollapsible %}
 
@@ -286,8 +282,6 @@ class Edit extends Action
     }
 }
 ```
-
-|
 
 {% endcollapsible %}
 
