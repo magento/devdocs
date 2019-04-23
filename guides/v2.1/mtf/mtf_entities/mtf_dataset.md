@@ -216,7 +216,7 @@ If a variable is assigned more than one value:
 
 the value is processed as an array:
 
-``` php?start_inline=1
+```php
 $price = [
     'data' => [
         'shopping_cart' => [

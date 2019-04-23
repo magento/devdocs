@@ -53,7 +53,7 @@ For example, enter the following commands on a Linux system if the Magento appli
 
 A sample result follows:
 
-{% highlight xml %}
+```xml
 total 1028
 drwxrwx---. 12 magento_user apache   4096 Jun  7 07:55 .
 drwxr-xr-x.  3 root         root     4096 May 11 14:29 ..
@@ -86,7 +86,7 @@ drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 setup
 drwxrwx---.  7 magento_user apache   4096 Jun  7 07:53 update
 drwxrws---. 11 magento_user apache   4096 Jun 13 16:05 var
 drwxrws---. 29 magento_user apache   4096 Jun  7 07:53 vendor
-{% endhighlight %}
+```
 
 In the preceding example, the Magento file system owner is `magento_user`. Directories in the Magento file system have `drwxrwx---` permissions (775) and files have `-rw-rw-rw-` permissions (664).
 

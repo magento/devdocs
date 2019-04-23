@@ -41,7 +41,7 @@ To set up a production machine:
 
 	A sample follows:
 
-	``` json
+	```json
 {
    "http-basic": {
          "repo.magento.com": {

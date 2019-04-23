@@ -35,7 +35,7 @@ Name | Description | Format | Requirements
 --- | --- | --- | ---
 `customer_id` | System-generated customer ID. | integer | Not applicable for create operations.
 `company_id` | System-generated company ID. | integer | Required to create or update a company user.
-`job_title` | A string that describes the company user's responsibilities. | Required to create or update a company.
+`job_title` | A string that describes the company user's responsibilities. | string | Required to create or update a company.
 `status` | Indicates whether the company user is active or inactive | integer | `0` - inactive; `1` - active
 `telephone`  |  Telephone number | string | Required to create a company user.
 
@@ -45,7 +45,7 @@ The `POST /V1/customers` call creates a Magento customer. B2B extends the `custo
 
 **Sample Usage**
 
-`POST /V1/customers`
+`POST <host>/rest/<store_code>/V1/customers`
 
 **Payload**
 
@@ -119,7 +119,7 @@ If you change the `status` to inactive, the account is locked. If the company us
 
 **Sample Usage**
 
-`PUT /V1/customers/13`
+`PUT <host>/rest/<store_code>/V1/customers/13`
 
 **Payload**
 
@@ -175,7 +175,7 @@ Magento locks the deleted user's quotes and changes their status to Closed. The 
 
 **Sample Usage**
 
-`DELETE /V1/customers/13`
+`DELETE <host>/rest/<store_code>/V1/customers/13`
 
 **Payload**
 

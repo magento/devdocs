@@ -17,7 +17,7 @@ For recommendations about modal windows usage from the UX point of view, see the
 
 Component's options are set in the configuration `.xml` file as follows:
 
-{%highlight xml%}
+```xml
  <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -28,7 +28,7 @@ Component's options are set in the configuration `.xml` file as follows:
         </item>
     </argument>
 </modal>
-{%endhighlight%}
+```
 
 <table>
   <tr>
@@ -81,7 +81,7 @@ Component's options are set in the configuration `.xml` file as follows:
 
 The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
-{%highlight xml%}
+```xml
 <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -140,7 +140,7 @@ The following sample is an example of the configuration for a simple modal windo
         </item>
     </argument>
 </button>
-{%endhighlight%}
+```
 
 ## Source files
 
