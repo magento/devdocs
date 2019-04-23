@@ -43,10 +43,14 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 The modal widget has the following options:
 -   [autoOpen](#modal_autoopen)
 -   [buttons](#modal_buttons)
+-   [closeText](#modal_closeText)
 -   [clickableOverlay](#modal_clickableOverlay)
 -   [focus](#modal_focus)
 -   [innerScroll](#modal_innerScroll)
+-   [modalAction](#modal_modalAction)
 -   [modalClass](#modal_modalClass)
+-   [modalCloseBtn](#modal_modalCloseBtn)
+-   [modalContent](#modal_modalContent)
 -   [modalLeftMargin](#modal_modalLeftMargin)
 -   [responsive](#modal_responsive)
 -   [title](#modal_title)
@@ -95,6 +99,14 @@ Close the modal window when a user clicks on the overlay.
 **Default value**: `true`
 
 
+### `closeText` {#modal_closeText}
+The close button text.
+
+**Type**: String 
+
+**Default value**: `$.mage.__('Close')`
+
+
 ### `focus` {#modal_focus}
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
 
@@ -117,6 +129,27 @@ Custom classes for modal window.
 **Type**: String 
 
 **Default value**: empty
+
+### `modalAction` {#modal_modalAction}
+The selector for all the custom action buttons.
+
+**Type**: String 
+
+**Default value**: `[data-role="action"]`
+
+### `modalCloseBtn` {#modal_modalCloseBtn}
+The selector for all the elements that can close the modal.
+
+**Type**: String 
+
+**Default value**: `[data-role="closeBtn"]`
+
+### `modalContent` {#modal_modalContent}
+The selector for element that is used for the modal's content.
+
+**Type**: String 
+
+**Default value**: `[data-role="content"]`
 
 ### `modalLeftMargin` {#modal_modalLeftMargin}
 Sets a margin between slide modal windows.
@@ -158,7 +191,9 @@ The type of window: popup or slide.
 
 The modal widget has the following methods:
 -   [closeModal()](#modal_close)
+-   [keyEventSwitcher()](#modal_keyEventSwitcher)
 -   [openModal()](#modal_open)
+-   [toggleModal()](#modal_toggleModal)
 
 ### `openModal()` {#modal_open}
 Open the modal window.
@@ -166,6 +201,14 @@ Open the modal window.
 
 ### `closeModal()` {#modal_close}
 Close the modal window.
+
+
+### `keyEventSwitcher()` {#modal_keyEventSwitcher}
+Listens for key events and calls handler function if it exists.
+
+
+### `toggleModal()` {#modal_toggleModal}
+Toggles the modal window.
 
 ## Events {#modal_events}
 
