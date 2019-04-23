@@ -105,9 +105,9 @@ The `@cache` directive defines whether the results of certain queries can be cac
 
 Cachable queries are defined in the following manner:
 
-`@cache(cacheTag: "cms_b", cacheIdentityResolver: "Magento\\CmsGraphQl\\Model\\Resolver\\Block\\IdentityResolver")`
+`@cache(cacheTag: "cms_b", cacheIdentity: "Magento\\CmsGraphQl\\Model\\Resolver\\Block\\Identity")`
 
-The `cacheTag` value is a system-defined cache tag. The `cacheIdentityResolver` value points to the resolver responsible for caching.
+The `cacheTag` value is a system-defined cache tag. The `cacheIdentity` value points to the class responsible for retrieving cache tags.
 
 Queries that explicitly cannot be cached are designated in the with the following directive:
 

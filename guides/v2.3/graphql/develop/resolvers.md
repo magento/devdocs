@@ -210,21 +210,24 @@ A sample response:
 }
 ```
 
-## Identity resolvers
+## Identity interface
 
-If your module caches custom data beyond the default full page cache (which includes product, category, and CMS data), then you must create an identity resolver. 
+If your module caches custom data beyond the default full page cache (which includes product, category, and CMS data), then you must create an `Identity` class for the module. 
 
-An `IdentityResolver` class implements `Magento\Framework\GraphQl\Query\IdentityResolverInterface`. The class must contain the `getIdentifiers(array $resolvedData)` method. The array is a set of cache tags.
+An `Identity` class implements `Magento\Framework\GraphQl\Query\Resolver\IdentityInterface`. The class must contain the `getIdentities(array $resolvedData)` method. The array is a set of cache identities.
 
 ```php
 <?php
 declare(strict_types=1);
-namespace PathTo\Model\Resolver\MyModule;
+
+namespace PathToModule\Model\Resolver\MyModule;
+
 use Magento\Framework\GraphQl\Query\IdentityResolverInterface;
+
 /**
- * Identity for multiple resolved categories
+ * Get identities from resolved data
  */
-class MyModuleIdentityResolver implements IdentityResolverInterface
+class Identity implements IdentityInterface
 {
     /**
      * Get category IDs from resolved data
@@ -232,7 +235,7 @@ class MyModuleIdentityResolver implements IdentityResolverInterface
      * @param array $resolvedData
      * @return array
      */
-    public function getIdentifiers(array $resolvedData): array
+    public function getIdentities(array $resolvedData): array
     {
        // Your code
     }
@@ -245,6 +248,6 @@ The module's `graphqls` file contains a pointer to this class as part of the `@c
     category (
         id: Int @doc(description: "Id of the category")
     ): CategoryTree
-    @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\CategoryTree") @doc(description: "The category query searches for categories that match the criteria specified in the search and filter attributes") @cache(cacheTag: "cat_c", cacheIdentityResolver: "Magento\\CatalogGraphQl\\Model\\Resolver\\Category\\CategoryTreeIdentityResolver")
+    @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\CategoryTree") @doc(description: "The category query searches for categories that match the criteria specified in the search and filter attributes") @cache(cacheTag: "cat_c", cacheIdentity: "Magento\\CatalogGraphQl\\Model\\Resolver\\Category\\CategoryTreeIdentity")
 }
 ```
