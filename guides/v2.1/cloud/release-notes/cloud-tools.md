@@ -38,6 +38,8 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
 
+-   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error. 
+
 ## v2002.0.17
 
 {:.bs-callout .bs-callout-info}
