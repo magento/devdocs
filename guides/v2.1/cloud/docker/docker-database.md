@@ -9,7 +9,7 @@ functional_areas:
 
 There are two ways to connect to the database. Before you begin, you can find the database credentials in the `database` section of the `docker/config.php` file. The examples below use the following default credentials:
 
-> Filename: `config.php`
+> Filename: `docker/config.php`
 
 ```php
 <?php
@@ -55,9 +55,9 @@ return [
     ```
     {: .no-copy}
 
-#### To connect to the database in local workstation:
+#### To connect to the database:
 
-1.  Find the port used by the database.
+1.  Find the port used by the database. The port may change each time you restart Docker.
 
     ```bash
     docker-compose ps
