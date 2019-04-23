@@ -15,22 +15,22 @@ Use the `storeConfig` attributes to retrieve information about the store's confi
 
 Attribute |  Data Type | Description | Example
 --- | --- | --- | ---
-`base_currency_code` | String | Base currency code | `USD`
-`base_link_url` | String | Base link URL for the store | `http://magentohost.example.com/`
-`base_static_url` | String | Base static URL for the store | `http://magentohost.example.com/pub/static/`
-`base_media_url` | String | Base media URL for the store | `http://magentohost.example.com/pub/media/`
-`base_url` | String | Base URL for the store | `http://magentohost.example.com/`
-`code` | String | A code assigned to the store to identify it | `default`
-`default_display_currency_code` | String | Default display currency code | `USD`
+`base_currency_code` | String | The code representing the currency in which Magento processes all payment transactions | `USD`
+`base_link_url` | String | A fully-qualified URL that is used to create relative links to the `base_url` | `http://magentohost.example.com/`
+`base_static_url` | String | The fully-qualified URL that specifies the location of static view files | `http://magentohost.example.com/pub/static/`
+`base_media_url` | String | The fully-qualified URL that specifies the location of user media files | `http://magentohost.example.com/pub/media/`
+`base_url` | String | The store's fully-qualified base URL | `http://magentohost.example.com/`
+`code` | String | A unique identifier for the store | `default`
+`default_display_currency_code` | String | The code representing the currency displayed on the store | `USD`
 `id` | Integer | The ID number assigned to the store | `1`
-`locale` | String | Store locale | `en_US`
-`secure_base_link_url` | String | Secure base link URL for the store | `https://magentohost.example.com/`
-`secure_base_media_url` | String | Secure base media URL for the store | `https://magentohost.example.com/pub/media/`
-`secure_base_static_url` | String | Secure base static URL for the store | `https://magentohost.example.com/pub/static/`
-`secure_base_url` | String | Secure base URL for the store | `https://magentohost.example.com/`
-`timezone` | String | Timezone of the store | `America/Chicago`
-`website_id` | Integer | The ID number assigned to the website store belongs | `1` 
-`weight_unit` | String | The unit of weight | `lbs`, `kgs`, etc
+`locale` | String | The store's locale | `en_US`
+`secure_base_link_url` | String | A secure fully-qualified URL that is used to create relative links to the `base_url` | `https://magentohost.example.com/`
+`secure_base_media_url` | String | The secure fully-qualified URL that specifies the location of user media files | `https://magentohost.example.com/pub/media/`
+`secure_base_static_url` | String | The secure fully-qualified URL that specifies the location of static view files | `https://magentohost.example.com/pub/static/`
+`secure_base_url` | String | The store's fully-qualified secure base URL | `https://magentohost.example.com/`
+`timezone` | String | The store's time zone | `America/Chicago`
+`website_id` | Integer | The ID number assigned to the parent website | `1` 
+`weight_unit` | String | The weight unit for products | `lbs`, `kgs`, etc
 
 ### Supported theme attributes
 
