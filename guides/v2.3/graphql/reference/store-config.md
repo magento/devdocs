@@ -67,19 +67,6 @@ Attribute |  Data Type | Description
 `no_route` | String | Contains the URL of the default page that you want to appear when if a 404 “Page not Found” error occurs
 `show_cms_breadcrumbs` | Int | Determines if a breadcrumb trail appears on all CMS pages in the catalog. Options: `0` (No) or `1` (Yes)
 
-### Supported website attributes
-
-Retrieves information about a website.
-
-Attribute |  Data Type | Description
---- | --- | ---
-`code` | String | A code assigned to the website to identify it
-`default_group_id` | String | The default group ID that the website has
-`id` | Int | The ID number assigned to the website
-`is_default` | Boolean | Specifies if this is the default website
-`name` | String | The website name. Websites use this name to identify it easier
-`sort_order` | Int | The attribute to use for sorting websites
-
 ## Example usage
 
 ### Query a store's configuation
@@ -204,15 +191,15 @@ The following query returns information about the store's content pages.
 }
 ```
 
-### Query of website
+### Include website information with `products` query results
 
-We can retrieve `Website` object from the [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface) only.
+The [ProductInterface]({{ page.baseurl }}/graphql/reference/products.html#ProductInterface) can include information about the `Website` object.
 
 **Request**
 
 ```text
 {
-    products(filter: {sku: {eq: "simple"}})
+    products(filter: {sku: {eq: "24-WB04"}})
     {
         items{
             websites { 
