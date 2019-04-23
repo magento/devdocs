@@ -3,7 +3,7 @@ group: graphql
 title: GraphQL caching
 ---
 
-You can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and run retrieve large amounts of information from the database.
+Magento can cache pages rendered from the results of certain GraphQL queries with [full-page caching]({{page.baseurl}}/extension-dev-guide/cache/page-caching.html). Full-page caching improves response time and reduces the load on the server. Without caching, each page might need to run blocks of code and run retrieve large amounts of information from the database. Only queries submitted with an HTTP GET operation can be cached. POST queries cannot be cached.
 
 ## Cached queries
 
@@ -15,6 +15,7 @@ Magento caches the following queries:
 * `cmsBlocks`
 * `cmsPage`
 * `products`
+* `urlResolver`
 
 Magento explicitly disallows caching the following queries.
 
@@ -28,8 +29,9 @@ Magento explicitly disallows caching the following queries.
 * `customerOrders`
 * `customerPaymentTokens`
 * `storeConfig`
-* `urlResolver`
 * `wishlist`
+
+[Define the GraphQL schema for a module]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) describes the syntax of a valid query.
 
 ## Caching with Varnish
 
@@ -79,3 +81,9 @@ Header | Description
 `X-Magento-Tags` | A list of cache tags that correspond to the catalog, category, or CMS items returned in the query. Magento caches these items.
 
 ## Cache invalidation
+
+Magento invalidates the cache when any of the following events occur:
+
+* When an change occurs to a specific entity or entities in aggregate. An increase in a product's price is a direct and obvious change. Applying a new tax class tax to products changes a set of products in aggregate.
+* When system configuration changes
+* When an administrator flushes or disables the cache from the Admin or with the `bin/magento cache` command
