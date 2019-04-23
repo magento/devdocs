@@ -54,9 +54,7 @@ Use [RFC2119] to interpret keywords like:
 {% collapsible Examples: %}
 |Not recommended|Recommended|
 |--- |--- |
-|
-
-```php
+| ```php
 class Config
 {
     private $data;
@@ -73,9 +71,7 @@ class Config
 }
 ```
 
-|
-
-```php
+| ```php
 class Config
 {
     private $data;
@@ -90,8 +86,6 @@ class Config
     }
 }
 ```
-
-|
 
 {% endcollapsible %}
 
