@@ -28,7 +28,7 @@ See our collection of best and leading practices, common solutions, and more in 
 To connect with Magento and the Community, join us on the [Magento Community Engineering Slack][]. If you are interested in joining Slack, or a specific channel, send us a request at [engcom@adobe.com](mailto:engcom@adobe.com) or [self signup][].
 
 
-We have channels for each project. These channels are recommended for new members:
+We have [channels][channels] for each project. These channels are recommended for new members:
 
 - [announcements][]: Introduce yourself and get quick updates for Magento Community Engineering
 - [general][]: Open chat for introductions and Magento 2 questions
@@ -37,11 +37,6 @@ We have channels for each project. These channels are recommended for new member
 - [github][]: Support for GitHub issues, pull requests, and processes
 - [public-backlog][]: Discussions of the Magento 2 backlog
 - [devdocs][]: Documentation contribution support
-- [cloud][]: Open chat for cloud questions
-- [graphql][]: Open chat for graphql contribution
-- [pwa][]: Open chat for Progressive Web Applications contribution
-- [msi][]: Open chat for Multi-Source Inventory contribution
-- [mftf][]: Open chat for Magento Functional Testing Framework(MFTF) contribution
 
 ## Resources and guides
 
@@ -108,11 +103,6 @@ We have channels for each project. These channels are recommended for new member
 [github]: https://magentocommeng.slack.com/messages/C7KB93M32
 [public-backlog]: https://magentocommeng.slack.com/messages/CCV3J3RV5
 [devdocs]: https://magentocommeng.slack.com/messages/CAN932A3H
-[cloud]: https://magentocommeng.slack.com/messages/C8CBB6K9V
-[graphql]: https://magentocommeng.slack.com/messages/C8076E0KS
-[pwa]: https://magentocommeng.slack.com/messages/C71HNKYS2
-[msi]: https://magentocommeng.slack.com/messages/C5FU5E2HY
-[mftf]: https://magentocommeng.slack.com/messages/C82DDUSNP
 [appdesign]: https://magentocommeng.slack.com/messages/CBSL1DF8B
 [coding-standards]: https://magentocommeng.slack.com/messages/CFC88F1C6
 [announcements]: https://magentocommeng.slack.com/messages/C7FA71S3V
@@ -174,3 +164,4 @@ We have channels for each project. These channels are recommended for new member
 [55]: https://alanstorm.com/
 [56]: https://markshust.com/
 [57]: https://www.youtube.com/watch?v=ceNeYpCEmys
+[channels]: https://github.com/magento/magento2/wiki/Slack-Channels
