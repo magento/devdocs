@@ -203,8 +203,7 @@ class SessionManager
     {}
 }
 
-// Breaks polymorphism principle,
-// restricts what types can be passed at the runtime.
+// Breaks polymorphism principle, restricts what types can be passed at the runtime.
 ```
 
 ### Recommended
@@ -266,8 +265,7 @@ class Edit extends AbstractController
     }
 }
 
-// Smaller classes, one responsibility,
-// more flexible, easy to understand, more testable.
+// Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 ```
 
 ### Recommended
@@ -319,15 +317,11 @@ $url = new Url();
 $url->setBaseUrl($baseUrl);
 echo $url->get('custom/path'); // prints full URL
 
-// Developer forgot or didn’t know that you need
-// to call setBaseUrl
+// Developer forgot or did not know that you need to call setBaseUrl
 $url = new Url();
-echo $url->get('custom/path'); // Throws exception,
-// which makes issue smaller. If it doesn't throw an
-// exception, it could lead to a hidden bug more likely.
+echo $url->get('custom/path'); // Throws exception, which makes issue smaller. If it does not throw an exception, it could lead to a hidden bug more likely.
 
-// Method with out parameters that doesn’t
-// return anything could be sign of temporal coupling.
+// Method with out parameters that does not return anything could be sign of temporal coupling.
 ```
 
 ### Recommended
@@ -395,8 +389,7 @@ class View extends Template
         return $product->getName();
     }
 }
-// More flexible, no dependencies between classes,
-// no temporal coupling.
+// More flexible, no dependencies between classes, no temporal coupling.
 ```
 
 |
