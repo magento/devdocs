@@ -243,9 +243,6 @@ Called when the modal window is closed.
 ### `opened` {#modal_opened}
 Called when the modal window is opened.
 
-### `always` {#modal_opened}
-....
-
 ## Keyboard navigation {#key_navigation}
 
 - the ESC key: close the current modal window
