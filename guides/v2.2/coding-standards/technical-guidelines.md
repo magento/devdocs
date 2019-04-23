@@ -52,21 +52,10 @@ Use [RFC2119] to interpret keywords like:
 2.2. Object MUST be ready for use after instantiation. No additional public initialization methods are allowed.
 
 {% collapsible Examples: %}
-<<<<<<< HEAD
 |Not recommended|Recommended|
 |--- |--- |
 |
 
-=======
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-   <td markdown="1">
-           
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 class Config
 {
@@ -83,15 +72,9 @@ class Config
     }
 }
 ```
-<<<<<<< HEAD
 
 |
 
-=======
-   </td>
-   <td markdown="1">
-    
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 class Config
 {
@@ -107,15 +90,9 @@ class Config
     }
 }
 ```
-<<<<<<< HEAD
 
 |
 
-=======
-   </td>
-  </tr>
-</table>
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 {% endcollapsible %}
 
 ---
@@ -127,11 +104,7 @@ class Config
 
 {% collapsible Example: %}
 
-<<<<<<< HEAD
 ``` php
-=======
-```php
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 class Composite
 {
     /**
@@ -165,21 +138,9 @@ class Composite
 2.3.2. Events MUST NOT be triggered in constructors.
 
 {% collapsible Examples: %}
-<<<<<<< HEAD
 |Not recommended|Recommended|
 |--- |--- |
 |
-=======
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-       <td markdown="1">
-           
-```php
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 
 ```php
 class Config
@@ -193,15 +154,9 @@ class Config
     }
 }
 ```
-<<<<<<< HEAD
 
 |
 
-=======
-   </td>
-   <td markdown="1">
-    
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 class Config
 {
@@ -226,14 +181,8 @@ class Config
 }
 ```
 
-<<<<<<< HEAD
 |
 
-=======
-  </td>
- </tr>
-</table>
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 {% endcollapsible %}
 
 ---
@@ -242,21 +191,10 @@ class Config
 2.4. All dependencies MUST be requested by the most generic type that is required by the client object.
 
 {% collapsible Examples: %}
-<<<<<<< HEAD
 |Not recommended|Recommended|
 |--- |--- |
 |
 
-=======
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td markdown="1">
-            
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 interface SessionAdapterInterface
 {}
@@ -270,20 +208,12 @@ class SessionManager
     {}
 }
 
-<<<<<<< HEAD
 // Breaks polymorphism principle,
 // restricts what types can be passed at the runtime.
 ```
 
 |
 
-=======
-// Breaks polymorphism principle, restricts what types can be passed at the runtime.
-```
-   </td>
-   <td markdown="1">
-    
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 interface SessionAdapterInterface
 {}
@@ -297,15 +227,9 @@ class SessionManager
     {}
 }
 ```
-<<<<<<< HEAD
 
 |
 
-=======
-   </td>
-  </tr>
-</table>
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 {% endcollapsible %}
 
 ---
@@ -314,21 +238,10 @@ class SessionManager
 
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
-<<<<<<< HEAD
 |Not recommended|Recommended|
 |--- |--- |
 |
 
-=======
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td markdown="1">
-            
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 class AbstractController extends Action
 {
@@ -365,13 +278,6 @@ class Edit extends AbstractController
 
 |
 
-<<<<<<< HEAD
-=======
-```
-   </td>
-   <td markdown="1">
-    
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 class Edit extends Action
 {
@@ -388,17 +294,9 @@ class Edit extends Action
     }
 }
 ```
-<<<<<<< HEAD
 
 |
 
-=======
-
-   </td>
-  </tr>
-</table>
-
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 {% endcollapsible %}
 
 ---
@@ -419,21 +317,10 @@ class Edit extends Action
 
 2.14. [Temporal coupling] MUST be avoided
 {% collapsible Example #1: %}
-<<<<<<< HEAD
 |Not recommended|Recommended|
 |--- |--- |
 |
 
-=======
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td markdown="1">
-            
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
@@ -452,13 +339,6 @@ echo $url->get('custom/path'); // Throws exception,
 
 |
 
-<<<<<<< HEAD
-=======
-```
-   </td>
-   <td markdown="1">
-    
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
@@ -472,33 +352,15 @@ echo $url->get($baseUrl, 'custom/path');
 
 |
 
-<<<<<<< HEAD
-=======
-```
-   </td>
-  </tr>
-</table>
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 {% endcollapsible %}
 
 ---
 
 {% collapsible Example #2: %}
-<<<<<<< HEAD
 |Not recommended|Recommended|
 |--- |--- |
 |
 
-=======
-<table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td markdown="1">
-            
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 class Edit extends Action
 {
@@ -520,15 +382,8 @@ class View extends Template
 }
 ```
 
-<<<<<<< HEAD
 |
 
-=======
-```
-   </td>
-   <td markdown="1">
-    
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 ```php
 class Edit extends Action
 {
@@ -548,16 +403,11 @@ class View extends Template
         return $product->getName();
     }
 }
-<<<<<<< HEAD
 // More flexible, no dependencies between classes,
 // no temporal coupling.
 ```
-|
-=======
-// More flexible, no dependencies between classes, no temporal coupling.
 
-```
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
+|
 
 {% endcollapsible %}
 
@@ -573,9 +423,12 @@ class View extends Template
 
 2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.
 
- {% collapsible Example: %}
- You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
+{% collapsible Example: %}
+
+You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
+
  {% endcollapsible %}
+
 ---
 2.17.3. Strategy SHOULD be used when there are multiple algorithms for performing an operation.
 
@@ -652,11 +505,11 @@ class View extends Template
 
 6.1.1. Application SHOULD be structured in compliance with the [CQRS principle].
 
-6.1.2. Every application layer (Presentation, Service Contracts, Data Access) 
+6.1.2. Every application layer (Presentation, Service Contracts, Data Access)
     MUST process (handle or re-throw) exceptions of the underlying layer.
 
 6.1.3. A layer MUST NOT depend on layer that invokes (above) it. A layer MUST only depend on a layer directly below it.
-[Magento architecture layers]({{site.baseurl}}/common/images/archi_diagrams_layers_alt4.jpg)
+![Magento architecture layers]({{site.baseurl}}/common/images/archi_diagrams_layers_alt4.jpg)
 
 ### 6.2. Presentation layer
 
@@ -689,7 +542,7 @@ class View extends Template
 
 6.4.1. Location of API interfaces
 
-6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules, except when an existing module already contains Service Contracts in the ` Api` folder. Other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module names must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules, except when an existing module already contains Service Contracts in the `Api` folder. Other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module names must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
 
 6.4.1.2. Service interfaces that should be exposed as web APIs MUST be placed under the `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
 
@@ -745,7 +598,7 @@ class View extends Template
 
 6.4.4.3. Service implementations and plugins MUST NOT rely on storage-specific integrity features, such as foreign key constraints.
 
-6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links. 
+6.4.4.4. Replacement strategy SHOULD be used to persist main entity fields/attributes, child entities, and relation links.
 
 6.4.4.5. During update operations, web APIs using the`PATCH` HTTP method and all action controllers that accept entities SHOULD pre-load them first, then merge the request data, and provide the full data to the service.
 
@@ -908,12 +761,8 @@ class View extends Template
 14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-<<<<<<< HEAD
 
 ``` php
-=======
-```php
->>>>>>> refs/remotes/akaplya/technical-guidelines-update
 class SampleEventObserverThatModifiesInputs
 {
     /**
@@ -937,6 +786,7 @@ class SampleEventObserverThatModifiesInputs
 ```
 
 {% endcollapsible %}
+
 ---
 
 {:start="14.2"}
