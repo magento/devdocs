@@ -68,6 +68,9 @@ Syntax option | Description
 `@resolver(class)` | The class of the resolver
 `@doc(description)` | Describes the purpose of the mutation
 
+{:.bs-callout .bs-callout-tip}
+It's a good practice to define a separate types for input/output data. It bring additional extension points, so every input/output type can be extended by adding additional fields to the definition.
+
 ### Resolver class
 Use the following sample code as a template for the GraphQl resolver query/mutation class
  
