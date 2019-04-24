@@ -254,6 +254,15 @@ Attribute | Type | Description
 `position` | Int | The position within the list of product links
 `sku` | String | The identifier of the linked product
 
+#### ProductImage object {#ProductImage}
+
+`ProductImage` contains information about image relative path, URL and label.
+
+Attribute | Type | Description
+--- | --- | ---
+`url` | String | The URL for the product image
+`label` | String | The label for the product image
+
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 
 `MediaGalleryEntry` defines characteristics about images and videos associated with a specific product.
