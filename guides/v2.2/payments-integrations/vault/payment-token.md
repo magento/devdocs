@@ -15,7 +15,7 @@ To retrieve and store token details, you need to implement a [response handler](
 
 Following sample is an example of the response handler implementation:
 
-``` php?start_inline=1
+```php
 
 use Magento\Vault\Api\Data\PaymentTokenFactoryInterface;
 use Magento\Vault\Api\Data\PaymentTokenInterface;

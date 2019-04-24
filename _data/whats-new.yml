@@ -4,8 +4,139 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Wed Mar 27 18:03:03 2019
+updated: Mon Apr 22 16:41:52 2019
 entries:
+- description: Added a [new code sample](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_modal.html#code-sample)
+    showing how to initialize a modal widget and pass options to it.
+  versions: 2.1.x, 2.3.x, 2.x
+  type: Major update
+  date: April 17, 2019
+  link: https://github.com/magento/devdocs/pull/4269
+- description: Added the ["Check the Magento version"](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/check-version.html)
+    topic.
+  versions: 2.x
+  type: New topic
+  date: April 17, 2019
+  link: https://github.com/magento/devdocs/pull/4152
+- description: Add a new [Magento Extensions](https://devdocs.magento.com/extensions/)
+    section for installing Magento-developed extensions, such as Google Shopping ads
+    Channel. Moved existing installation docs for B2B and MSI to new section.
+  versions: 2.x
+  type: New topic
+  date: April 15, 2019
+  link: https://github.com/magento/devdocs/pull/4214
+- description: Added a new [code sample](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_tabs.html#code-sample)
+    showing how to initialize and use a tabs widget.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: April 15, 2019
+  link: https://github.com/magento/devdocs/pull/4242
+- description: Updated the [default web accessible locations](https://devdocs.magento.com/guides/v2.2/cloud/project/project-conf-files_magento-app.html#web)
+    with the latest rules for the `robots.txt` file.
+  versions: 2.1.x, 2.2.x
+  type: Technical changes
+  date: April 12, 2019
+  link: https://github.com/magento/devdocs/pull/4205
+- description: Added [Integration tests file structure](https://devdocs.magento.com/guides/v2.1/test/integration/integration_test_execution.html#integration-tests-file-structure)
+    to the Running Integration Tests topic.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: April 11, 2019
+  link: https://github.com/magento/devdocs/pull/4197
+- description: Updated [backward incompatible changes topics](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/reference.html):<br/>-
+    Merged topics for open-source and commerce backward incompatible changes into
+    single topic.<br/>- Added a section for changes introduced to the 2.3-develop
+    branch codebase after 2.3.1 release.
+  versions: 2.x
+  type: Major update
+  date: April 11, 2019
+  link: https://github.com/magento/devdocs/pull/4226
+- description: Added code sample for [Menu widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_menu.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: April 11, 2019
+  link: https://github.com/magento/devdocs/pull/4026
+- description: Added section about exceptions to [GraphQL functional testing](https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html).
+  versions: 2.3.x
+  type: Major update
+  date: April 11, 2019
+  link: https://github.com/magento/devdocs/pull/4148
+- description: Added clarification about the location of Service Contracts in section
+    6.4.1.1 of the [Technical Guidelines](https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html)
+  versions: 2.x
+  type: Major update
+  date: April 10, 2019
+  link: https://github.com/magento/devdocs/pull/3524
+- description: Added a new [product release information](https://devdocs.magento.com/release/)
+    topic that describes Magento's release policy, product availability, and extension
+    stability.
+  versions: 2.3.x
+  type: New topic
+  date: April  5, 2019
+  link: https://github.com/magento/devdocs/pull/4098
+- description: Added a topic about [GraphQL debugging](https://devdocs.magento.com/guides/v2.3/graphql/develop/debugging.html).
+  versions: 2.3.x
+  type: New topic
+  date: April  3, 2019
+  link: https://github.com/magento/devdocs/pull/4013
+- description: Added information on Composer package updates to address PayPal Payflow
+    Pro carding activity issues to the Release Notes for 2.3.1 [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1OpenSource.html)/[Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/ReleaseNotes2.3.1Commerce.html),
+    2.2.8 [Open Source](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8CE.html)/[Commerce](https://devdocs.magento.com/guides/v2.2/release-notes/ReleaseNotes2.2.8EE.html),
+    and 2.1.17 [Open Source](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.17CE.html)/[Commerce](https://devdocs.magento.com/guides/v2.1/release-notes/ReleaseNotes2.1.17EE.html).
+  versions: 2.x
+  type: Major update
+  date: April  2, 2019
+  link: https://github.com/magento/devdocs/pull/4103
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+    the customer's authorization token for GraphQL queries and mutations.
+  versions: 2.3.1
+  type: New topic
+  date: April  1, 2019
+  link: https://github.com/magento/devdocs/pull/4052
+- description: Added a topic about [how to retrieve](https://devdocs.magento.com/guides/v2.3/graphql/get-customer-authorization-token.html)
+    the customer's authorization token for GraphQL queries and mutations.
+  versions: 2.3.1
+  type: New topic
+  date: April  1, 2019
+  link: https://github.com/magento/devdocs/pull/4052
+- description: Added section about mutations in [Resolvers](https://devdocs.magento.com/guides/v2.3/graphql/develop/resolvers.html).
+  versions: 2.3.x
+  type: Major update
+  date: March 30, 2019
+  link: https://github.com/magento/devdocs/pull/4096
+- description: Changed Third-party licenses topics to [Packages](https://devdocs.magento.com/guides/v2.3/release-notes/packages-open-source.html)
+    and added a section with `magento/`-specific dependencies.
+  versions: 2.x
+  type: Major update
+  date: March 29, 2019
+  link: https://github.com/magento/devdocs/pull/4087
+- description: Moved the MFTF docs from `<devdocs root>/mftf/2.3/` to [`<devdocs root>/mftf/docs/`](https://devdocs.magento.com/mftf/docs/introduction.html).<br/>The
+    docs have been moved to the [MFTF repository](https://github.com/magento/magento2-functional-testing-framework).
+  versions: 2.2.x, 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/3898
+- description: 'Updated the [Cloud Release notes for ece-tools version 2002.0.17](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002017).<br/>-
+    Updated supported versions for Elasticsearch and Redis<br/>- Added two Docker
+    images: Elasticsearch 6.5 and Redis 5.0.<br/>- Improved initial [Docker launch
+    steps](https://devdocs.magento.com/guides/v2.3/cloud/docker/docker-config.html).<br/>-
+    Added the SCD_COMPRESSION_TIMEOUT environment variable for [build](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-build.html#scd_compression_timeout)
+    and [deploy](https://devdocs.magento.com/guides/v2.3/cloud/env/variables-deploy.html#scd_compression_timeout).'
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/4068
+- description: Added a section about fixtures in [GraphQL functional testing]( https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html)
+  versions: 2.3.x
+  type: Major update
+  date: March 28, 2019
+  link: https://github.com/magento/devdocs/pull/3994
+- description: Added a new topic in Cloud Optimize deployment called [Reduce downtime](https://devdocs.magento.com/guides/v2.3/cloud/deploy/reduce-downtime.html)
+    to explain the zero downtime concept.
+  versions: 2.2.x
+  type: New topic
+  date: March 25, 2019
+  link: https://github.com/magento/devdocs/pull/4005
 - description: Added information about backward incompatible changes in 2.3.1 release
     for [Open Source](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/open-source.html#releases-2_3_0-2_3_1)
     and [Commerce](https://devdocs.magento.com/guides/v2.3/release-notes/backward-incompatible-changes/commerce.html#releases-2_3_0-2_3_1).
@@ -464,7 +595,7 @@ entries:
   type: Major update
   date: January 17, 2019
   link: https://github.com/magento/devdocs/pull/3584
-- description: Added upgrade information for [Manage Inventory Management modules](https://devdocs.magento.com/guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html)
+- description: Added upgrade information for [Manage Inventory Management modules](https://devdocs.magento.com/extensions/inventory-management/)
     (MSI community project).
   versions: 2.3.x
   type: Technical changes
@@ -568,8 +699,8 @@ entries:
   date: December 15, 2018
   link: https://github.com/magento/devdocs/pull/3456
 - description: Added information for the `setup:di:compile` step for [Install extensions
-    from the command line](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html),
-    [Install the B2B extension](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html),
+    from the command line](https://devdocs.magento.com/extensions/install/),
+    [Install the B2B extension](https://devdocs.magento.com/extensions/b2b/),
     and [Create an integration](https://devdocs.magento.com/guides/v2.2/get-started/create-integration.html).
   versions: 2.2.x, 2.3.x
   type: Technical changes
@@ -853,7 +984,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: October  5 2018
-- description: Added a 2.3 [product availability](https://devdocs.magento.com/availability.html)
+- description: Added a 2.3 [product availability](https://devdocs.magento.com/release/#availability)
     topic.
   versions: 2.3.x
   type: New topic
@@ -1632,7 +1763,7 @@ entries:
   type: Updated
   date: Mar 12 2018
 - description: Added the force (`-f`) option to the static content deployment command
-    in the [B2B installation](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html)
+    in the [B2B installation](https://devdocs.magento.com/extensions/b2b/)
     topic.
   versions: ''
   type: Updated
@@ -2185,8 +2316,8 @@ entries:
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Sep 27 2017
-- description: Added new topics for [installing any extension from the command line](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions.html) and [installing
-    the B2B extension specifically](https://devdocs.magento.com/guides/v2.2/comp-mgr/install-extensions/b2b-installation.html)
+- description: Added new topics for [installing any extension from the command line](https://devdocs.magento.com/extensions/install/) and [installing
+    the B2B extension specifically](https://devdocs.magento.com/extensions/b2b/)
   versions: 2.2.x
   type: New
   date: Sep 26 2017

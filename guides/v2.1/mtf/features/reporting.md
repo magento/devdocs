@@ -146,7 +146,7 @@ As you can see, a tag contains one required attribute `name`, where a name of ev
 
 A method that is used to dispatch events is defined in [`\Magento\Mtf\System\Event\EventManagerInterface`][EventManagerInterface]. The FTF uses its default implementation `\Magento\Mtf\System\Event\EventManager::dispatchEvent()`.
 
-``` php?start_inline=1
+```php
 $this->eventManager->dispatchEvent(['your_event_tag'], [$your_input_parameters]);
 ```
 
@@ -325,7 +325,7 @@ class WebapiResponse extends AbstractObserver
 
 Step 2. [Dispatch][dispatch] an event `webapi_failed` in the `\Magento\Tax\Test\Handler\TaxRule\WebApi::persist()` [handler] for failed responses.
 
-``` php?start_inline=1
+```php
 
 public function persist(FixtureInterface $fixture = null)
 {

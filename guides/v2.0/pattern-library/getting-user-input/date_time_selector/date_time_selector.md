@@ -1,1 +1,0 @@
-../../../../v2.1/pattern-library/getting-user-input/date_time_selector/date_time_selector.md
