@@ -11,7 +11,12 @@ Stylesheets are the main tool in responsive web design (RWD) implementation. Thi
 
 ## Mobile first
 
-In the Blank and Luma themes, the mobile first approach is used. It means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
+In the Blank and Luma themes, the mobile first approach is used. So, a correct order is:  
+- Mobile
+- Tablet
+- Desktop
+
+It means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
 
 The mobile and desktop styles are defined in separate files:
 
@@ -65,6 +70,7 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 //
 //  Mobile (style-m.css)
 //  _____________________________________________
+
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     // your code
 }
@@ -74,8 +80,17 @@ For grouping style rules in certain media queries the `.media-width()` mixin use
 }
 
 //
+//  Tablets
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__l) {
+    // your code
+}
+
+//
 //  Desktop (style-l.css)
 //  _____________________________________________
+
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     // your code
 }
