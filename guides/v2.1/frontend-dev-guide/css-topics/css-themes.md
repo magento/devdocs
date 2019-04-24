@@ -6,7 +6,7 @@ functional_areas:
   - Theme
 ---
 
-## What's in this topic {#fedg_css-in-themes_overview}
+## In this topic {#fedg_css-in-themes_overview}
 
 In the Magento application, CSS files are included in [layout files].
 
@@ -21,7 +21,7 @@ This topic describes how stylesheets are located by default in the Magento appli
 
 Conventionally, CSS and Less files are stored only in themes. {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} directories do not contain any default styles.
 
-In a [theme directory], stylesheets are stored in the following locations:
+In a [theme directory][], stylesheets are stored in the following locations:
 
 <table>
 <tr>
@@ -89,7 +89,7 @@ For example, the following illustrates how stylesheets are included in the defau
 </page>
 ```
 
-To include external Third party  css-source  add `<css src="Browser/URL/OF/CSS/External/Source"  src_type="url" rel="stylesheet" type="text/css"  />`
+To include an external CSS file, add `<css src="URL to External Source" src_type="url" rel="stylesheet" type="text/css" />` to the list.
 
 ```xml
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
