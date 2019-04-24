@@ -89,6 +89,18 @@ For example, the following illustrates how stylesheets are included in the defau
 </page>
 ```
 
+To include external Third party  css-source  add `<css src="Browser/URL/OF/CSS/External/Source"  src_type="url" rel="stylesheet" type="text/css"  />`
+
+```xml
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/styles-m.css" />
+        <css src="css/styles-l.css" media="screen and (min-width: 768px)"/>
+        <css src="css/print.css" media="print" />
+        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"  src_type="url" rel="stylesheet" type="text/css"  />
+    </head>
+</page>
+```
 
 {:.bs-callout .bs-callout-info}
 If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
