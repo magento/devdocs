@@ -78,6 +78,10 @@ Attribute | Data type | Description
 
 This `CategoryTree` object contains information about the next level of subcategories of the category specified in the original query.
 
+Attribute | Data type | Description
+--- | --- | ---
+`children` | [CategoryTree] | An array containing the next level of subcategories
+
 ## Sample Queries
 
 The following query returns information about category ID `20` and four levels of subcategories. In the sample data, category ID `20` is assigned to the "Women" category.
