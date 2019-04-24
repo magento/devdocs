@@ -88,13 +88,27 @@ Any new design related to Web API must satisfy the following constraints to keep
 
 **GraphQL**
 
-1. Unlimited nesting should be supported during requests for related entities. (For example, get Order => Order Items => Products => Related Products)
-1. Field filtration must be performed with SQL queries. Do not filter on the application layer after you've fetched all possible fields.
+1. Unlimited nesting should be supported during requests for related entities.
+(For example, get Order => Order Items => Products => Related Products) 
+1. Field filtration MUST be performed by the corresponding level. 
+Do not filter on the application layer after you've fetched all possible fields.
 1. Third-party customizations must be done separately for Service Contracts and for GraphQL
-1. For modularity purposes, GraphQL configuration must be declared in a separate module. For example, to expose GraphQL for the module `MyModule`, you must create the `schema.graphqls` file in the `MyModuleGraphQl` module.
-1. GraphQL is primarily designed for store-front one-page apps and mobile applications. It supports token and cookie authentication, as well as guest access to public queries
-1. All queries must return the 200 HTTP status code. If an error occurs, return the error in the response body. A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.
+1. For modularity purposes, GraphQL configuration must be declared in a separate module. 
+For example, to expose GraphQL for the module `MyModule`, you must create the `schema.graphqls` file in the `MyModuleGraphQl` module.
+1. GraphQL is primarily designed for store-front one-page apps and mobile applications.
+It supports token and cookie authentication, as well as guest access to public queries
+1. All queries must return the 200 HTTP status code.
+If an error occurs, return the error in the response body.
+A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.
 1. The Store code should be passed via headers.
+1. GraphQL types and interfaces SHOULD NOT expose internal IDs (like database identity fields).
+1. Resolvers SHOULD NOT rely on execution resultы of another resolvers except data declared by schema.
+    Schema is the only contract between resolvers of different levels.
+    Resolvers SHOULD NOT share state between themselves except allowed context.
+1. Query resolvers SHOULD support deferred execution to avoid the 
+    [N+1 problem](http://webonyx.github.io/graphql-php/data-fetching/#solving-n1-problem)
+    unless this contradicts domain logic.
+1. Mutations SHOULD be designed in manner to support batch mode unless this contradicts domain logic.
 
 **REST**
 

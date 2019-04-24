@@ -752,9 +752,7 @@ class View extends Template
 
 ## 12. Web API
 
-12.1. Both REST and SOAP API's MUST be exposed.
-
-12.2. All {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} GET endpoints MUST return lists of entities.
+[web API technical vision]({{ page.baseurl }}/coding-standards/technical-vision/webapi.html#model-consistency-constraints)
 
 ## 13. Command line interface (CLI)
 
@@ -874,24 +872,6 @@ class SampleEventObserverThatModifiesInputs
 15.11. Security capabilities SHOULD be implemented either on the Magento Framework level or in a dedicated module(s) and utilized by the entire application in a centralize manner.
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
-
-## 16. GraphQL
-
-16.1.1 GraphQL types and interfaces SHOULD NOT expose internal IDs (like database identity fields).
-16.1.2 Resolvers SHOULD NOT rely on execution result of another resolvers except data declared by schema.
-    Schema is the only contract between resolvers of different levels.
-    Resolvers SHOULD NOT share state between themselves.
-
-### 16.2 Queries
-
-16.2.1 Query resolvers SHOULD support deferred execution to avoid the 
-    [N+1 problem](http://webonyx.github.io/graphql-php/data-fetching/#solving-n1-problem)
-    unless this contradicts domain logic.
-
-### 16.3 Mutations
-
-16.3.1 Mutations SHOULD be designed in manner to receive/process multiple input arguments
-    unless this contradicts domain logic.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
