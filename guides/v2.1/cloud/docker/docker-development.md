@@ -1,22 +1,20 @@
 ---
 group: cloud-guide
-title: Docker development environment
+title: Docker container architecture
 functional_areas:
   - Cloud
-  - Setup
+  - Docker
   - Configuration
 ---
 
 {{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and {{site.data.var.ece}} `{{site.data.var.ct}}` package.
 
-## Container architecture
-
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker) contains build information for the following Docker images:
 
-Image | Docker link | Version
------ | ----------- | ----------
-**DB** | mariadb:10.0 | 10
-**FPM** | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php) | PHP-CLI: version 7<br>PHP-FPM: version 7
+Image | Docker link | Tag
+:---- | :---------- | ----------
+**DB** | [mariadb:10.0](https://hub.docker.com/_/mariadb) | 10
+**FPM**<br>PHP-CLI: version 7<br>PHP-FPM: version 7 | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
 **ElasticSearch** | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch) | 1.7
 **NGINX** |[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx) | 1.9
 **RabbitMQ** | [rabbitmq](https://hub.docker.com/_/rabbitmq) | 3.5
@@ -27,31 +25,37 @@ Image | Docker link | Version
 {:.bs-callout .bs-callout-info}
 See the [service version values available]({{page.baseurl}}/cloud/docker/docker-config.html) for use when launching Docker.
 
-### Web container
+## Web container
 
 The web container works with the [PHP-FPM](https://php-fpm.org) to serve PHP code, the **DB** image for the local database, and the **Varnish** image to send requests and cache the results.
 
-### CLI containers
+## CLI containers
 
-There are few CLI containers based on a PHP-CLI image that provides `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations.
+The following CLI containers, which are based on a PHP-CLI image, provide `magento-cloud` and `{{site.data.var.ct}}` commands to perform file system operations:
 
 -  `build`—extends the CLI container to perform operations with writable filesystem, similar to the build phase
 -  `deploy`—extends the CLI container to use read-only file system, similar to the deploy phase
 -  `cron`—extends the CLI container to run cron
 
     -  The `setup:cron:run` and `cron:update` commands are not available on Cloud and Docker for Cloud environment
-    -  Cron only works with CLI container to run `./bin/magento cron:run` command
+    -  Cron only works with the CLI container to run the `./bin/magento cron:run` command
 
-As an example, to run the `{{site.data.var.ct}}` ideal-state command:
+#### To run the `{{site.data.var.ct}}` ideal-state command:
 
 ```bash
 docker-compose run deploy ece-command wizard:ideal-state
+```
+
+Sample response:
+
+```terminal
 ...
  - Your application does not have the "post_deploy" hook enabled.
 The configured state is not ideal
 ```
+{: .no-copy}
 
-### Cron container
+## Cron container
 
 The Cron container is based on PHP-CLI images, and executes operations in the background immediately after the Docker environment start. It uses the cron configuration defined in the [`crons` property of the `.magento.app.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
@@ -61,17 +65,17 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 docker-compose run deploy bash -c "cat /var/www/magento/var/cron.log"
 ```
 
-### Database container
+## Database container
 
 The database container is based on the `mariadb:10` image.
 
-#### Importing a database dump
+### Importing a database dump
 
 To import a database dump, place the SQL file into the `docker/mysql/docker-entrypoint-initdb.d` folder. The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
 
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `docker/mnt` directory and importing it inside the Docker container.
 
-### Varnish container
+## Varnish container
 
 The Varnish container is based on the `magento-cloud-docker-varnish` image. Varnish works on port 80.
 
