@@ -216,7 +216,7 @@ The following example shows how to initialize the accordion widget and pass opti
 
 ### Result
 
-The result is a three sections with separate swapped content.
+The result is three sections with separate swapped content.
 
 ![Accordion Widget]({{ site.baseurl }}/common/images/widget/accordion-widget-result.png)
 
