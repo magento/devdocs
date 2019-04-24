@@ -148,7 +148,7 @@ A column can have the following attributes:
 </tr>
 </table>
 
-For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory/setup/src/Magento/Setup/Model/Declaration/Schema/etc` or `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc` directory. There are two possible places where the mentioned XSD files can be located. It depends on how Magento is installed.
+For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc` (If you have downloaded Magento from here https://magento.com/tech-resources/download) or `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc` directory (If you have installed via Github https://github.com/magento/magento2 or using composer). There are two possible places where the mentioned XSD files can be located. It depends on how Magento is installed.
 
 Example:
 
