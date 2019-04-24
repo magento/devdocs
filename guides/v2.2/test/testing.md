@@ -102,18 +102,40 @@ Please see the [System Administrators Guide on Running Tests][] for more informa
 
 ## Where to find the tests in the file system
 
-Each of the test types listed above corresponds to a subdirectory in `<magento2 root dir>/dev/tests`.
+Each test type described above corresponds to a subdirectory in `<magento2 root dir>/dev/tests`, as shown here:
 
-    dev/tests  
-    ├── acceptance      (since v2.2.4)
-    ├── api-functional  
-    ├── functional  
-    ├── integration  
-    ├── js  
-    ├── static  
-    └── unit  
+```tree
+<repo_root>
+    <dev/tests/>
+        acceptance      (since v2.2.4)
+        api-functional  
+        functional  
+        integration  
+        js/jasmine
+        setup-integration  
+        static  
+        unit  
+```
 
-Each one of these test types has different requirements that must be satisfied before they can be executed.  
+Each of these test types must satisfy different requirements before the MFTF can execute them.
+
+MFTF tests are kept within its respective Module folder:
+
+```tree
+<extension_repo_root>
+├── <Module1>
+│   ├── ...
+│   ├── Test
+│   │   ├── Unit
+│   │   ├── Integration
+│   │   └── Mftf
+│   │       ├── TestSuite
+│   │       └── composer.json
+│   └── ...
+├── <Module2>
+├── <Module1SampleData>
+└── <Module2SampleData>
+```
 
 <!-- Link Definitions -->
 [Magento definition of done]: https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing_dod.html
@@ -121,15 +143,15 @@ Each one of these test types has different requirements that must be satisfied b
 [Web API Functional]: https://devdocs.magento.com/guides/v2.3/get-started/web-api-functional-testing.html
 [Integration]: https://devdocs.magento.com/guides/v2.3/test/integration/integration_test_execution.html
 [performance toolkit]: https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli-subcommands-perf-data.html
-[JavaScript]: https://devdocs.magento.com/guides/v2.3/test/js/test_js-unit.html
+[JavaScript]: https://devdocs.magento.com/guides/v2.3/test/js/jasmine.html
 [PhpCs]: https://devdocs.magento.com/guides/v2.3/coding-standards/code-standard-sniffers.html
 [PhpMd]: https://phpmd.org/
 [Magento backward compatibility policy]: https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
-[Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/2.2/introduction.html
+[Magento Functional Testing Framework]: {{ site.baseurl }}/mftf/docs/introduction.html
 [Web API functional testing]: {{ page.baseurl }}/get-started/web-api-functional-testing.html
 [Running Integration Tests]: {{ page.baseurl }}/test/integration/integration_test_execution.html
-[Extension Developer Guide on JavaScript Tests]: {{ page.baseurl }}/test/js/test_js-unit.html
+[Extension Developer Guide on JavaScript Tests]: {{ page.baseurl }}/test/js/jasmine.html
 [`magento dev:tests:run`]: {{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html
 [test-driven development]: https://en.wikipedia.org/wiki/Test-driven_development
 [Running Unit Tests]: {{ page.baseurl }}/test/unit/unit_test_execution.html

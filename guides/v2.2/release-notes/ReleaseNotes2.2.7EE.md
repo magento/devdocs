@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.7 Release Notes
 
 ---
 
-*Release notes published November 28 and last updated on December 10, 2018.*
+*Release notes published November 28 and last updated on March 26, 2019.*
 
 
 
@@ -15,6 +15,26 @@ Although this release includes these security enhancements, no confirmed attacks
 
 See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7-and-2.1.16-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.2.7) have been ported to 2.1.16, 1.14.4.0, and 1.9.4.0, as appropriate.
 
+
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A SQL injection vulnerability has been identified in pre-2.2.8 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.2.8. **We strongly suggest that you install these full patches as soon as you can**. 
+ 
+See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+Follow these steps to download and apply this patch:
+
+1. Access [My Account](https://account.magento.com/customer/account/login).
+
+2. Navigate to the **Downloads** tab. Select the Magento edition and version you need. 
+
+3. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
 
 
 ## Highlights
@@ -51,7 +71,7 @@ This release includes improvements to general usability of the core code plus en
 
 #### B2B
 
-<!-- MAGETWO-94163 -->* Merchants can now successfully update product prices and currencies using **Admin** > **Stores** > **Configuration** > **Currency Setup**.
+<!-- MAGETWO-94163 -->* Merchants can now successfully update product prices and currencies using **Admin** > **Stores** > **Settings** > **Configuration** > **Currency Setup**.
 
 <!-- MAGETWO-89654 -->* Merchants can now create a Company with an optional regional setting. Previously, Magento displayed this message, `Error message: Invalid value of "" provided for the region_id field.`
 
@@ -104,7 +124,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-94764 -->* Fixed an issue with the shared configuration settings in `app/etc/config.php` that caused `recursion detected` errors during deployment.
 
-<!-- ENGCOM-2673 -->* You can now enable logs as expected (through the use of **Stores** > **Configuration** > **Advanced** > **Developer** > **Debug** > **Log to file**) when switching from production mode to developer mode. *Fix submitted by [Jay Ghosh](https://github.com/jayankaghosh) in pull request [15335](https://github.com/magento/magento2/pull/15335)*. [GitHub-13480](https://github.com/magento/magento2/issues/13480)
+<!-- ENGCOM-2673 -->* You can now enable logs as expected (through the use of **Stores** > **Settings** > **Configuration** > **Advanced** > **Developer** > **Debug** > **Log to file**) when switching from production mode to developer mode. *Fix submitted by [Jay Ghosh](https://github.com/jayankaghosh) in pull request [15335](https://github.com/magento/magento2/pull/15335)*. [GitHub-13480](https://github.com/magento/magento2/issues/13480)
 
 <!-- ENGCOM-2920 -->* You can now filter the customer grid without inadvertently triggering a next-page Ajax call. Previously, when you created an order from the Orders page and tried to filter the customer list, Magento did not filter the list, and displayed the next page of customer entries. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17870](https://github.com/magento/magento2/pull/17870)*. [GitHub-17789](https://github.com/magento/magento2/issues/17789)
 
@@ -345,7 +365,7 @@ product, and hung indefinitely while trying to add the product.
 
 ### Frameworks
 
-<!-- ENGCOM-2070 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [15942](https://github.com/magento/magento2/pull/15942)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
+<!-- ENGCOM-2070 -->* You can now set values for `MAX_IMAGE_WIDTH` and `MAX_IMAGE_HEIGHT` in **Stores** > **Settings** > **Configuration** > **Advanced** > **System** > **Images Configuration**, which supports the upload of larger images. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [15942](https://github.com/magento/magento2/pull/15942)*. [GitHub-13747](https://github.com/magento/magento2/issues/13747)
 
 <!-- ENGCOM-2915 -->* `functions.php` (which provides the custom Magento function <code>__()</code> to trigger translations) now resides in the Framework module. *Fix submitted by [Kristof, Fooman](https://github.com/fooman) in pull request [16800](https://github.com/magento/magento2/pull/16800)*. 
 
@@ -474,7 +494,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-86650 -->* The `.csv` export of the Abandoned Cart report now contains information about all abandoned carts as expected. Previously, this `.csv` file contained  only the first 20 rows of the report. 
 
-<!-- ENGCOM-2724 -->* The **Year-to-date** dropdown accessed from **Stores** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!-- ENGCOM-2724 -->* The **Year-to-date** dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected. *Fix submitted by [teddysie](https://github.com/teddysie) in pull request [17383](https://github.com/magento/magento2/pull/17383)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 <!-- MAGETWO- 73585-->* Wishlist reports are available on the Admin as expected. 
@@ -506,7 +526,7 @@ product, and hung indefinitely while trying to add the product.
 
 <!-- MAGETWO-94291 -->* Magento now displays product price and shipping costs in the default currency that was configured for that  specific website for orders created from the Admin. Previously, when you have multi-site configuration with different default currencies for each website, the product and shipping prices shown while creating an Admin order are incorrect.
 
-<!-- MAGETWO-94163 -->* Merchants can now successfully update product prices and currencies using **Admin** > **Stores** > **Configuration** > **Currency Setup**. 
+<!-- MAGETWO-94163 -->* Merchants can now successfully update product prices and currencies using **Admin** > **Stores** > **Settings** > **Configuration** > **Currency Setup**. 
 
 <!-- MAGETWO-88858 -->* Admin orders are no longer restricted by a minimum order amount. Previously, Magento required this minimum for both Admin and storefront users.
 

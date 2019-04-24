@@ -52,12 +52,12 @@ We recommend always adding a `name` to blocks. Otherwise, it is given a random n
 |:------- |:------ |:------ |:------ |
 | `class` | Name of a class that implements rendering of a particular block. An object of this class is responsible for actual rendering of block output. | class name | no |
 |`name` | Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code> | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Should start with a letter. Case-sensitive. | no |
-| `before` | Used to position the block</p> before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
+| `before` | Used to position the block before an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block before all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
 | `after` | Used to position the block after an element under the same parent. The element name or alias name is specified in the value. Use dash (-) to position the block after all other elements of its level of nesting. See [before and after attributes](#fedg_xml-instrux_before-after) for details. | Possible values: element name or dash (-) | no |
 | `template` | A template that represents the functionality of the block to which this attribute is assigned. | template file name | no |
 | `as` | An alias name that serves as identifier in the scope of the parent element. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no | 
 | `cacheable` | Defines whether a block element is cacheable. This can be used for development purposes and to make needed elements of the page dynamic. | `true` or `false` | no |
-{:style="table-layout:auto;"}
+
 
 To pass parameters use the [`<argument></argument>`](#argument) instruction. 
 
@@ -81,7 +81,7 @@ We recommend always adding a `name` to containers. Otherwise, it is given a rand
 | `htmlTag` | Output parameter. If specified, the output is wrapped into specified HTML tag. | Any valid HTML 5 tag. | no |
 | htmlId | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `id` value. | no |
 | `htmlClass` | Output parameter. If specified, the value is added to the wrapper element. If there is no wrapper element, this attribute has no effect. | Any valid HTML 5 `class` value. | no |
-{:style="table-layout:auto;"}
+
 
 Sample of usage in layout:
 ```xml
@@ -107,7 +107,7 @@ The following tables give a detailed description of the results you can get usin
 | `after` | Dash (-) | The block displays after all other elements in its parent node. |
 | `after` | [element name] | The block displays after the named element. |
 | `after` | empty value or [element name] is absent | Use the value of `before`. If that value is empty or absent as well, the block is considered as non-positioned. |
-{:style="table-layout:auto;"}
+
 
 #### Examples {#examples}
 
@@ -117,7 +117,7 @@ The following tables give a detailed description of the results you can get usin
 | Both `before` and `after` attributes are absent or empty | The element is considered as non-positioned. All other elements are positioned at their specified locations. The missing element displays at a random position that doesn't violate requirements for the positioned elements. |
 | Several elements have `before` or `after` set to dash (-) | All elements display at the top (or bottom, in case of the after attribute), but the ordering of group of these elements is undefined. |
 | The `before` or `after` attribute's value refers to an element that is not located in the parent node of the element being defined. | The element displays at a random location that doesn't violate requirements for the correctly positioned elements. |
-{:style="table-layout:auto;"}
+
 
 ### action {#fedg_layout_xml-instruc_ex_act}
 
@@ -126,7 +126,7 @@ The `<action>` instruction is deprecated. If the method implementation allows, u
 
 Calls public methods on the block API.
 
-**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.</p>
+**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
 
 
 Example:
@@ -147,7 +147,7 @@ Example:
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `method` | Name of the public method of the block class this tag is located in that is called during block generation. | block method name | yes |
-{:style="table-layout:auto;"}
+
 
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
@@ -162,7 +162,7 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 |:------- |:------ |:------ |:------ |
 | `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | true/false | no |
 | `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | true/false | no |
-{:style="table-layout:auto;"}
+
 
 - The `remove` attribute is optional and its default value is `false`.
 
@@ -201,12 +201,12 @@ Sets the declared block or container element as a child of another element in th
 | `destination` | Name of the target parent element. | element name | yes |
 | `as` | Alias name for the element in the new location. | 0-9, A-Z, a-z, underscore (_), period (.), dash (-). Case-sensitive. | no | 
 | `after` or `before` | Specifies the element's position relative to siblings. Use dash (-) to position the block before or after all other siblings of its level of nesting. If the attribute is omitted, the element is placed after all siblings. | element name | no |
-{:style="table-layout:auto;"}
+
 
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
-For removing blocks or containers, use the `<remove>` attribute for [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
+For removing blocks or containers, use the `remove` attribute for [`<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
 
 Example of usage:
 
@@ -246,7 +246,7 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
 | `name` | Argument name. | unique | yes |
 | `xsi:type` | Argument type. | `string|boolean|object|number|null|array` | yes |
 | `translate` | | `true|false` | no |
-{:style="table-layout:auto;"}
+
 
 To pass multiple arguments use the following construction:
 ```xml
