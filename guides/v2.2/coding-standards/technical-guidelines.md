@@ -772,14 +772,18 @@ class View extends Template
 
 {% collapsible Example: %}
 ```php
-class SampleEventObserverThatModifiesInputs implements \Magento\Framework\Event\ObserverInterface
+use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\App\DataObject;
+use Magento\Framework\Event\Observer;
+
+class SampleEventObserverThatModifiesInputs implements ObserverInterface
 {
     /**
-     * @param \Magento\Framework\Event\Observer $observer
+     * @param Observer $observer
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
-        /** @var \Magento\Framework\App\DataObject $transport */
+        /** @var DataObject $transport */
         $transport = $observer->getData('transport');
 
         if ($transport->getData('some_value') === true) {
