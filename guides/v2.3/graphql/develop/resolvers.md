@@ -71,6 +71,29 @@ Syntax option | Description
 {:.bs-callout .bs-callout-tip}
 It's a good practice to define a separate types for input/output data. It bring additional extension points, so every input/output type can be extended by adding additional fields to the definition.
 
+#### Example
+
+**Wrong approach**
+
+```text
+type Mutation {
+    mutationQueryName(param1: String, param2: Int, ...): MutationQueryOutput @resolver(class: "Magento\\<module_name>\\Model\\Resolver\\MutationResolverModel") @doc(description:"Mutation query description")
+}
+```
+
+**Correct approach**
+
+```text
+type Mutation {
+    mutationQueryName(inputParam: InputParamsType): MutationQueryOutput @resolver(class: "Magento\\<module_name>\\Model\\Resolver\\MutationResolverModel") @doc(description:"Mutation query description")
+}
+
+type InputParamsType {
+    param1: String
+    param2: Int
+}
+```
+
 ### Resolver class
 Use the following sample code as a template for the GraphQl resolver query/mutation class
  
