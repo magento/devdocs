@@ -333,7 +333,7 @@ The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Mage
 - The *url* type example:
 
 ```xml
-<argument name="shopping_cart_url" xsi:type="url" >checkout/cart/index</argument>
+<argument name="shopping_cart_url" xsi:type="url" path="checkout/cart/index" />
 ```
 
 - The *helper* type example:
