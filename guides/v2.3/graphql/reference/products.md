@@ -256,7 +256,7 @@ Attribute | Type | Description
 
 #### ProductImage object {#ProductImage}
 
-`ProductImage` contains information about image relative path, URL and label.
+`ProductImage` contains information about image URL and label.
 
 Attribute | Type | Description
 --- | --- | ---
