@@ -5,18 +5,19 @@ functional_areas:
   - Frontend
 ---
 
-## What's in this topic
+## In this topic
 
 Stylesheets are the main tool in responsive web design (RWD) implementation. This topic describes the mechanisms and approaches to building RWD used in the default Magento themes. To re-use them in your custom theme, make your theme [inherit]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html){:target="_blank"} from the Magento Blank theme.
 
 ## Mobile first
 
-In the Blank and Luma themes, the mobile first approach is used. So, a correct order is:  
+In the Blank and Luma themes, a "mobile first" approach is used. The order is:
+
 - Mobile
 - Tablet
 - Desktop
 
-It means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
+This means that the styles for mobile devices (screen width less than 768px) are extended by the styles for the higher breakpoints. As the result, the extra styles are never loaded when a store is viewed on a mobile device.
 
 The mobile and desktop styles are defined in separate files:
 
@@ -28,14 +29,14 @@ The mobile and desktop styles are defined in separate files:
 Breakpoints are used in the CSS code to set up the screen width at which the design switches from the mobile to the desktop version.
 
 The Blank and Luma themes use Less variables to implement the following [breakpoints]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms):
--   `@screen__xxs`: 320px
--   `@screen__xs`: 480px
--   `@screen__s`: 640px
--   `@screen__m`: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
--   `@screen__l`: 1024px
--   `@screen__xl`: 1440px
+- `@screen__xxs`: 320px
+- `@screen__xs`: 480px
+- `@screen__s`: 640px
+- `@screen__m`: 768px (in the Blank and Luma themes, this breakpoint switches between mobile and desktop views)
+- `@screen__l`: 1024px
+- `@screen__xl`: 1440px
 
-You can change these breakpoints and add new ones in your custom theme. For instructions see the [Add a new breakpoint]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html) topic.
+You can change these breakpoints or add new ones in your custom theme. For instructions see the [Add a new breakpoint]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html) topic.
 
 ## Media queries in Magento default themes {#lib_rwd}
 
