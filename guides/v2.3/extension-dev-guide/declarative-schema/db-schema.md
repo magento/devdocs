@@ -324,6 +324,7 @@ The following example removes the  `date_closed` column by deleting its `column`
     </table>
 </schema>
 ```
+Remember that it is possible to drop column only if it exists in `db_schema_whitelist.json`.
 
 ### Change the column type
 
@@ -418,6 +419,7 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
     </table>
 </schema>
 ```
+Remember that it is possible to drop a foreign key only if it exists in `db_schema_whitelist.json`.
 
 ### Recreate a foreign key
 
