@@ -31,16 +31,16 @@ If you know some unique property of the component that you need to find, you can
 var component = registry.get('%property% = %propertyValue%');
 ```
 
-**Example**
+**Example of usages**
 
-Example with getting component by full component name:
+The code below lists how to get a component by a full component name:
 
 ```js
 // Admin > Products > Catalog > Add Product
 var fieldName = registry.get('product_form.product_form.product-details.container_name.name');
 ```
 
-Example with getting component by some property value:
+The code below lists how to get a component by some property value:
 
 ```js
 // Admin > Products > Catalog > Add Product
