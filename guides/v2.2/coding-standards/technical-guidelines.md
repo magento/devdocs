@@ -772,7 +772,7 @@ class View extends Template
 
 {% collapsible Example: %}
 ```php
-class SampleEventObserverThatModifiesInputs
+class SampleEventObserverThatModifiesInputs implements \Magento\Framework\Event\ObserverInterface
 {
     /**
      * @param \Magento\Framework\Event\Observer $observer

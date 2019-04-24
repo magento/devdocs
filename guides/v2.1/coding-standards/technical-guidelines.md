@@ -690,7 +690,7 @@ We are reviewing this section and will publish it soon.
 
 {% collapsible Example: %}
 ```php
-class SampleEventObserverThatModifiesInputs
+class SampleEventObserverThatModifiesInputs implements \Magento\Framework\Event\ObserverInterface
 {
     /**
      * @param \Magento\Framework\Event\Observer $observer
