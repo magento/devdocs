@@ -8,7 +8,7 @@ functional_areas:
 After you [create a theme], you need to decide which Less compilation mode to use before changing styles. You can choose between [two compilation modes]:
 
 - Server-side compilation mode (default)
-- Client-side compilation mode (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development)
+- Client-side compilation mode (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development for small styles changes)
 
 The examples in this topic use the [simple approach]({{ page.baseurl }}/frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) for customizing theme styles. You make changes to the `_extend.less` file.
 
