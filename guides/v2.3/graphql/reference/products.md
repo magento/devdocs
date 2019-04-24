@@ -112,7 +112,7 @@ content="GraphQL automatically filters out a product attribute if ALL of the fol
 
 The system returns a `Products` object containing the following information:
 
-``` text
+```text
 items: [ProductInterface]
 page_info: SearchResultPageInfo
 total_count: Int
@@ -132,7 +132,7 @@ Attribute |  Description
 
 When a product requires a filter attribute that is not a field on its output schema, inject the attribute name into the class in a module's `di.xml` file.
 
-``` xml
+```xml
 <type name="Magento\CatalogGraphQl\Model\Resolver\Products\FilterArgument\ProductEntityAttributesForAst" >
   <arguments>
     <argument name="additionalAttributes" xsi:type="array">
@@ -199,7 +199,7 @@ Attribute | Data type | Description
 `url_key` | String | The part of the URL that identifies the product. This attribute is defined in the `CatalogUrlRewrite` module
 `url_path` | String | The part of the URL that precedes the `url_key`. This attribute is defined in the `CatalogUrlRewrite` module
 `url_rewrites` | [UrlRewrite] | A list of URL rewrites. See [UrlRewrite endpoint]({{ page.baseurl }}/graphql/reference/url-resolver.html#UrlRewrite) for more information and an example query
-`websites` | [Website] | An array of websites in which the product is available
+`websites` | [Website] | An array of websites in which the product is available. See [Store endpoint]({{ page.baseurl }}/graphql/reference/store-config.html#supported-website-attributes) for more information.
 
 ### ProductPrices object {#ProductPrices}
 
@@ -361,7 +361,7 @@ You can review several general interest `products` queries at [Queries]({{ page.
 
 The following query returns layered navigation for products that have a `sku` containing the string `24-WB`.
 
-``` text
+```text
 {
   products(
     filter: { sku: { like: "24-WB%" } }

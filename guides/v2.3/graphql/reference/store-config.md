@@ -32,6 +32,19 @@ Attribute |  Data Type | Description | Example
 `website_id` | Integer | The ID number assigned to the parent website | `1` 
 `weight_unit` | String | The weight unit for products | `lbs`, `kgs`, etc
 
+### Supported website attributes
+
+Use the `Website` attributes to retrieve information about the website's configuration; such as, website name, website code, and default group id.
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | A code assigned to the website to identify it
+`default_group_id` | String | The default group ID that the website has
+`id` | Integer | The ID number assigned to the store
+`name` | String | The website name. Websites use this name to identify it easier.
+`sort_order` | Integer | The attribute to use for sorting websites
+
+
 ### Supported theme attributes
 
 Use the `theme` attributes to retrieve information about the store's thematic elements; such as, footer and header information, copyright text, and logo information. These attributes are defined in the `ThemeGraphQl` module.
