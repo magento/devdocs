@@ -691,7 +691,6 @@ We are reviewing this section and will publish it soon.
 {% collapsible Example: %}
 ```php
 use Magento\Framework\Event\ObserverInterface;
-use Magento\Framework\App\DataObject;
 use Magento\Framework\Event\Observer;
 
 class SampleEventObserverThatModifiesInputs implements ObserverInterface
@@ -701,7 +700,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
      */
     public function execute(Observer $observer)
     {
-        /** @var DataObject $transport */
+        /** @var \Magento\Framework\App\DataObject $transport */
         $transport = $observer->getData('transport');
 
         if ($transport->getData('some_value') === true) {
