@@ -244,7 +244,7 @@ Used to pass an argument. Must be always enclosed in [`<arguments>`](#arguments)
 | Attribute | Description | Values | Required? |
 |:------- |:------ |:------ |:------ |
 | `name` | Argument name. | unique | yes |
-| `xsi:type` | Argument type. | `string|boolean|object|number|null|array` | yes |
+| `xsi:type` | Argument type. | `string|boolean|object|number|null|array|options|url|helper` | yes |
 | `translate` | | `true|false` | no |
 
 
@@ -257,18 +257,8 @@ To pass multiple arguments use the following construction:
 </arguments>
 ```
 
-To pass an argument that is an array use the following construction:
-
-```xml
-<argument name="custom_array" xsi:type="array">
-   <item name="array_key_one" xsi:type="string">First Item</item>
-   <item name="array_key_two" xsi:type="string">Second Item</item>
-   ...
-</argument>
-```
-
-Arguments values set in a layout file can be accessed in [templates] using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. The latter returns a boolean defining whether there's any value set. 
-`{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getSomeString()`.
+Arguments values set in a layout file can be accessed in [templates] using the `getData('{ArgumentName}')` and `hasData('{ArgumentName}')` methods. The latter returns a boolean defining whether there's any value set. 
+`{ArgumentName}` is obtained from the `name` attribute the following way: for getting the value of `<argument name="some_string">` the method name is `getData('some_string')`.
 
 Example:
 Setting a value of `css_class` in the `[app/code/Magento/Theme/view/frontend/layout/default.xml]` layout file:
@@ -279,11 +269,111 @@ Setting a value of `css_class` in the `[app/code/Magento/Theme/view/frontend/lay
 </arguments>
 ```
 
-
 Using the value of `css_class` in `[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]`:
 
 ```php
 $cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
+```
+
+#### Argument types examples
+
+As was described above the argument attribute can be added with different types.
+There are examples of all argument types.
+
+- The *string* type example:
+
+```xml
+<argument name="some_string" xsi:type="string" >Some String</argument>
+```
+
+- The *boolean* type example:
+
+```xml
+<argument name="is_active" xsi:type="boolean" >true</argument>
+```
+
+- The *object* type example:
+
+```xml
+<argument name="viewModel" xsi:type="object" >Vendor\CustomModule\ViewModel\Class</argument>
+```
+
+The `Vendor\CustomModule\ViewModel\Class` class should implement the `\Magento\Framework\View\Element\Block\ArgumentInterface` interface.
+
+- The *number* type example:
+
+```xml
+<argument name="some_number" xsi:type="number" >100</argument>
+```
+
+- The *null* type example:
+
+```xml
+<argument name="null_value" xsi:type="null" />
+```
+
+- The *array* type example:
+
+```xml
+<argument name="custom_array" xsi:type="array">
+   <item name="array_key_one" xsi:type="string">First Item</item>
+   <item name="array_key_two" xsi:type="string">Second Item</item>
+   ...
+</argument>
+```
+
+- The *options* type example:
+
+```xml
+<argument name="options" xsi:type="options" >Vendor\CustomModule\Source\Options\Class</argument>
+```
+
+The `Vendor\CustomModule\Source\Options\Class` class should implement the `\Magento\Framework\Data\OptionSourceInterface` interface.
+
+- The *url* type example:
+
+```xml
+<argument name="shopping_cart_url" xsi:type="url" >checkout/cart/index</argument>
+```
+
+- The *helper* type example:
+
+```xml
+<argument name="helper_method_result" xsi:type="helper" helper="Vendor\CustomModule\Helper\Class::someMethod" >
+    <param name="paramName">paramName</param>
+    ...
+</argument>
+```
+
+The *helper* can use only public methods. In this example the `someMethod()` method should be public.
+The argument with *helper* type can contain `param` items which can be passed as a helper method parameters.
+
+#### Obtain arguments examples in template
+
+These argument examples can be taken in the template like in the following example:
+
+```php
+<?php
+/** @var \Magento\Framework\View\Element\Template $block */
+
+/** @var string $someString */
+$someString = $block->getData('some_string');
+/** @var bool $isActive */
+$isActive = $block->getData('is_active');
+/** @var Vendor\CustomModule\ViewModel\Class|\Magento\Framework\View\Element\Block\ArgumentInterface $viewModel */
+$viewModel = $block->getData('viewModel');
+/** @var string|int|float $someNumber */
+$someNumber = $block->getData('some_number');
+/** @var null $nullValue */
+$nullValue = $block->getData('null_value');
+/** @var array $customArray */
+$customArray = $block->getData('custom_array');
+/** @var array $options */
+$options = $block->getData('options');
+/** @var string $shoppingCartUrl */
+$shoppingCartUrl = $block->getData('shopping_cart_url');
+/** @var mixed $helperMethodResult */
+$helperMethodResult = $block->getData('helper_method_result');
 ```
 
 ### arguments {#arguments}
