@@ -7,7 +7,7 @@ functional_areas:
   - Configuration
 ---
 
-There are two ways to connect to the database. Before you begin, you can find the database credentials in the `database` section of the `docker/config.php` file. The examples below use the following default credentials:
+There are two ways to connect to the database. Before you begin, you can find the database credentials in the `database` section of the `docker/config.php` file. The examples use the following default credentials:
 
 > Filename: `docker/config.php`
 
@@ -43,7 +43,7 @@ return [
     mysql --host=db --user=magento2 --password=magento2
     ```
 
-1.  Verify the connection.
+1.  Verify the version of the database service.
 
     ```mysql
     SELECT VERSION();
@@ -78,4 +78,14 @@ return [
     mysql -h127.0.0.1 -p32769 -umagento2 -pmagento2
     ```
 
-1.  Verify the connection.
+1.  Verify the version of the database service.
+
+    ```mysql
+    SELECT VERSION();
+    +--------------------------+
+    | VERSION()                |
+    +--------------------------+
+    | 10.0.38-MariaDB-1~xenial |
+    +--------------------------+
+    ```
+    {: .no-copy}
