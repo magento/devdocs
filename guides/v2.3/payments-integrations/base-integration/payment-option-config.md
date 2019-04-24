@@ -75,7 +75,7 @@ Following is the illustration of such configuration (`config.xml` of the Braintr
                 <paymentInfoKeys>cc_type,cc_number,avsPostalCodeResponseCode,avsStreetAddressResponseCode,cvvResponseCode,processorAuthorizationCode,processorResponseCode,processorResponseText,liabilityShifted,liabilityShiftPossible,riskDataId,riskDataDecision</paymentInfoKeys>
                 <avs_ems_adapter>Magento\Braintree\Model\AvsEmsCodeMapper</avs_ems_adapter>
                 <cvv_ems_adapter>Magento\Braintree\Model\CvvEmsCodeMapper</cvv_ems_adapter>
-                <group>braintree</group>
+                <group>braintree_group</group>
             </braintree>
         </payment>
     </default>
