@@ -25,7 +25,7 @@ Configure the command as described in [Gateway Command]({{ page.baseurl }}/payme
 
 Configuring the gateway command and adding it to command pool (`app/code/Magento/Braintree/etc/di.xml`):
 
-xml
+```xml
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
     <arguments>
         <argument name="commands" xsi:type="array">
@@ -43,14 +43,14 @@ xml
         <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\ResponseValidator</argument>
     </arguments>
 </virtualType>
-
+```
 
 In the command configuration we see that `BraintreeAuthorizeRequest` is specified as `requestBuilder`, that is a
 Let's look closer on the `requestBuilder` arguments. This argument value is a list of builders, builder composite.  
 
 The `BraintreeAuthorizeRequest` builder contains the following builders (`app/code/Magento/Braintree/etc/di.xml`):
 
-xml
+```xml
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
@@ -67,6 +67,7 @@ xml
             </argument>
         </arguments>
     </virtualType>
+```
 
 The most important builder in this pool is `Magento\Braintree\Gateway\Request\PaymentDataBuilder`, the `payment` builder. It is responsible for the payment information part of the request.  
 
