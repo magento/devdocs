@@ -324,7 +324,8 @@ The following example removes the  `date_closed` column by deleting its `column`
     </table>
 </schema>
 ```
-Remember that it is possible to drop column only if it exists in `db_schema_whitelist.json`.
+{: .bs-callout .bs-callout-info}
+It is possible to drop a column only if it exists in the `db_schema_whitelist.json` file.
 
 ### Change the column type
 
@@ -419,7 +420,8 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
     </table>
 </schema>
 ```
-Remember that it is possible to drop a foreign key only if it exists in `db_schema_whitelist.json`.
+{: .bs-callout .bs-callout-info}
+It is possible to drop a foreign key only if it exists in the `db_schema_whitelist.json` file.
 
 ### Recreate a foreign key
 
