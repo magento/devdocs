@@ -80,7 +80,7 @@ This `CategoryTree` object contains information about the next level of subcateg
 
 Attribute | Data type | Description
 --- | --- | ---
-`children` | CategoryTree | Child categories tree
+`children` | [CategoryTree] | An array containing the next level of subcategories
 
 ## Sample Queries
 
