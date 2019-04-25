@@ -234,6 +234,8 @@ The following example creates the `declarative_table` table with four columns. T
 </schema>
 ```
 
+When creating a new table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
+
 ### Drop a table
 
 In the following example, the `declarative_table` table was completely removed from the `db-schema.xml` file.
@@ -304,6 +306,8 @@ The following example adds the `date_closed` column.
     </table>
 </schema>
 ```
+
+When adding a new field into table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
 
 ### Drop a column from a table
 
