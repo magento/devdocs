@@ -17,9 +17,9 @@ These commands include:
 
 ## Resolve reservations inconsistencies
 
-[Reservations]({{ page.baseurl }}/rest/tutorials/inventory/reservations.html) place a salable quantity hold for product SKUs per stock. When you ship, add products, cancel, or refund an order, compensation reservations enter to place or clear these holds.
+[Reservations]({{ page.baseurl }}/inventory/reservations.html) place a salable quantity hold for product SKUs per stock. When you ship, add products, cancel, or refund an order, compensation reservations enter to place or clear these holds.
 
-Inventory Management provides two CLI commands to check and resolve reservation inconsistencies.
+Inventory Management provides two commands to check and resolve reservation inconsistencies.
 
 Inconsistencies in reservations may occur in the following situations:
 
@@ -31,7 +31,7 @@ We also recommend using these commands if you are upgrading to Magento v2.3.x fr
 
 ### List inconsistencies command
 
-The `list-inconsistencies` command detects and lists all reservation inconsistencies. Use the options to check completed or incomplete orders, or all.
+The `list-inconsistencies` command detects and lists all reservation inconsistencies. Use the command options to check only completed or incomplete orders, or all.
 
 ```bash
 bin/magento inventory:reservation:list-inconsistencies
@@ -39,34 +39,38 @@ bin/magento inventory:reservation:list-inconsistencies
 
 Command options:
 
-- `-c`, `--complete-orders` - Returns inconsistencies for only completed orders. Incorrect reservations may still be on hold for completed orders.
-- `-i`, `--incomplete-orders` - Returns inconsistencies for only incomplete orders (partially shipped, unshipped). Incorrect reservations may hold too much or not enough salable quantity for the orders.
-- `-r`, `--raw` - Returns inconsistences for all orders in raw output.
+- `-c`, `--complete-orders` - Returns inconsistencies for completed orders. Incorrect reservations may still be on hold for completed orders.
+- `-i`, `--incomplete-orders` - Returns inconsistencies for incomplete orders (partially shipped, unshipped). Incorrect reservations may hold too much or not enough salable quantity for the orders.
+- `-r`, `--raw` - Raw output.
 
-If no issues are found, this message returns: No order inconsistencies were found.
-
-Returned values are in `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` format:
+Responses using `-r` return in `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` format:
 
 - Order ID indicates the scope of the inconsistency.
 - SKU indicates the product with the inconsistency.
 - Quantity sets the amount to enter for the reservation compensation.
 - Stock ID defines to scope for stock, which uses the reservations to calculate salable quantity.
 
-Example responses:
+Examples:
 
-```text
+```terminal
+bin/magento inventory:reservation:list-inconsistencies
+
 Inconsistencies found on following entries:
 Order 172:
 - Product bike-123 should be compensated by +2.000000 for stock 1
 ```
 
-```text
+```terminal
+bin/magento inventory:reservation:list-inconsistencies -r
+
 172:bike-123:+2.000000:1
 ```
 
+If no issues are found, this message returns: No order inconsistencies were found.
+
 ### Create compensations command
 
-The `create-compensations` command creates compensation reservations using the returned list of inconsistencies. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
+The `create-compensations` command creates compensation reservations. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
 
 You can run both commands by piping `list-inconsistencies` and `create-compensations` to check and immediately create compensations. If not, you will need to provide the compensations using the format `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` such as `172:bike-123:+2.000000:1`.
 
@@ -76,16 +80,23 @@ bin/magento inventory:reservation:create-compensations
 
 Command options:
 
-- `-c`, `--complete-orders` - Creates reservations for only completed order inconsistencies.
-- `-i`, `--incomplete-orders` - Creates reservations for only incomplete order inconsistencies.
+- `-c`, `--complete-orders` - Creates reservations for completed order inconsistencies.
+- `-i`, `--incomplete-orders` - Creates reservations for incomplete order inconsistencies.
 - `-r`, `--raw` - Raw output.
-- `-d`, `--dry-run` - Simulates the reservation creation without affecting reservations. Use this option to get a test run of potential reservation compensations.
+- `-d`, `--dry-run` - Simulates reservation creation without applying reservations.
 
-Requested compendations must be provided using this format:  `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>`.
+Requested compensations must be provided using this format:  `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>`.
 
 If the format of the request is incorrect, the following message displays: A list of compensations needs to be defined as argument or STDIN.
 
 As reservations are entered, messages display indicating the updates by SKU, order, and stock.
+
+```terminal
+bin/magento inventory:reservation:create-compensations 172:bike-123:+2.000000:1
+
+Following reservations were created:
+- Product bike-123 was compensated by +2.000000 for stock 1
+```
 
 ### To check and resolve reservation inconsistencies
 
@@ -97,7 +108,7 @@ bin/magento inventory:reservation:list-inconsistencies -r | bin/magento inventor
 
 Example response:
 
-```text
+```terminal
 Following reservations were created:
 - Product bike-123 was compensated by +2.000000 for stock 1
 - Product bikehat-456 was compensated by +1.000000 for stock 1
@@ -111,7 +122,7 @@ bin/magento inventory:reservation:list-inconsistencies -r
 
 If no other issues are found, this message displays:
 
-```text
+```terminal
 No order inconsistencies were found.
 ```
 
