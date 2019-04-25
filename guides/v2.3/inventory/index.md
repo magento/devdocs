@@ -16,7 +16,7 @@ Inventory Management features include
 
 Merchants install Inventory Management as a Core Bundled Extension (CBE) with the name `magento/inventory-composer-metapackage`. It is included in all v2.3 installs and upgrades.
 
-**Magento Community Contribution** – Magento thanks the many contributors to the [Multi Source Inventory (MSI) project]( https://github.com/magento-engcom/msi), developing these features as part of the Magento Community Engineering program.
+**Magento Community Contribution** – Magento thanks the many contributors to the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi), developing these features as part of the Magento Community Engineering program.
 
 ## Terminology
 

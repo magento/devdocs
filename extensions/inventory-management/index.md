@@ -134,23 +134,25 @@ Currently, Order Management does not support {{site.data.var.im}} (future develo
 
 To enable {{site.data.var.im}} modules:
 
-1. Edit the `<Magento_installation_directory>/composer.json` file. 
+1. Edit the `<Magento_installation_directory>/composer.json` file.
 1. Modify all Inventory modules from `0` to `1` to enable.
 1. Update the database:
 
    ```bash
    bin/magento setup:upgrade
-   ```  
+   ```
 
 1. Clean the cache:
 
    ```bash
    bin/magento cache:clean
-   ```  
+   ```
+
+We also recommend using [Reservation Inconsistencies CLI commands]({{ page.baseurl }}/rest/tutorials/inventory/inventory-cli-reference.html) after upgrading. When upgrading, all of your products will be added to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
 
 ### Previous {{site.data.var.im}} versions
 
-When upgrading from previous releases of {{site.data.var.im}} to the latest version, follow normal extension upgrade steps. 
+When upgrading from previous releases of {{site.data.var.im}} to the latest version, follow normal extension upgrade steps.
 
 For the latest, update your metapackage version:
 

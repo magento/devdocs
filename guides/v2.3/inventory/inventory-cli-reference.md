@@ -12,45 +12,108 @@ Inventory Management provides CLI commands to manage inventory data and configur
 
 These commands include:
 
-- Checking and resolving reservations for product SKUs
+- Checking and resolving reservation inconsistencies affecting salable quantity
 - Adding geocodes for the Distance Priority algorithm
 
-## Resolve inconsistent reservations
+## Resolve reservations inconsistencies
 
-Reservations place a salable quantity hold for product SKUs per stock. When you ship, add products, cancel, or refund an order, compensation reservations enter to place or clear these holds. Inconsistencies in reservations may occur if you are upgrading to Magento v2.3.x from v.2.1.x or v2.2.x, mass transfering inventory with pending orders, removing sources from stocks with pending orders, etc.
+[Reservations]({{ page.baseurl }}/rest/tutorials/inventory/reservations.html) place a salable quantity hold for product SKUs per stock. When you ship, add products, cancel, or refund an order, compensation reservations enter to place or clear these holds.
 
-Inventory Management includes two CLI commands to check for inconsistent reservation and add compensation reservations to resolve the issues.
+Inventory Management provides two CLI commands to check and resolve reservation inconsistencies.
 
-#### To check for reservation inconsistencies
+Inconsistencies in reservations may occur in the following situations:
 
-Enter the following command to list all reservation inconsistencies. Using an option returns a list of reservations to update or create for completed or incomplete orders. Using the `raw` option checks for all inconsistencies.
+- Mass transfering inventory
+- Removing sources from stocks
+- Reassigning websites to different stocks
+
+We also recommend using these commands if you are upgrading to Magento v2.3.x from v.2.1.x or v2.2.x. When upgrading, all of your products will be added to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
+
+### List inconsistencies command
+
+The `list-inconsistencies` command detects and lists all reservation inconsistencies. Use the options to check completed or incomplete orders, or all. The `raw` option checks for all inconsistencies.
 
 ```bash
 bin/magento inventory:reservation:list-inconsistencies
 ```
 
-Options
-- `-c`, `-complete-orders` : Shows inconsistencies for only completed orders. Incorrect reservations may be on hold for completed reservations.
-- `-i`, `-incomplete-orders` : Shows inconsistencies for only incomplete orders (partially shipped, unshipped). Incorrect reservations may hold too much or not enough salable quantity for the order.
-- `-r`, `-raw` : Raw output of all inconsistences.
+Command options:
+
+- `-c`, `--complete-orders` - Returns inconsistencies for only completed orders. Incorrect reservations may still be on hold for completed orders.
+- `-i`, `--incomplete-orders` - Returns inconsistencies for only incomplete orders (partially shipped, unshipped). Incorrect reservations may hold too much or not enough salable quantity for the orders.
+- `-r`, `--raw` - Returns inconsistences for all orders in raw output.
 
 If no issues are found, this message returns: No order inconsistencies were found.
 
-#### To resolve reservation inconsistencies
+Returned values are in `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` format:
 
-After receiving a list of reservation issues, enter the following command to create compensation reservations using the returned list. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
+- Order ID indicates the scope of the inconsistency.
+- SKU indicates the product with the inconsistency.
+- Quantity sets the amount to enter for the reservation compensation.
+- Stock ID defines to scope for stock, which uses the reservations to calculate salable quantity.
+
+Example response:
+
+```text
+Inconsistencies found on following entries:
+Order 172:
+- Product bike-123 should be compensated by +2.000000 for stock 1
+```
+
+### Create compensations command
+
+After running `inventory:reservation:list-inconsistencies`, the `create-compensations` command creates compensation reservations using the returned list of inconsistencies. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
 
 ```bash
 bin/magento inventory:reservation:create-compensations
 ```
 
-Options
-- `compensations` : List of compensation arguments in format `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>`. This data is provided from the `inventory:reservation:list-inconsistencies` command.
-- `-r`, `raw` : Raw output.
+Command options:
+
+- `-c`, `--complete-orders` - Creates reservations for only completed orders inconsistencies.
+- `-i`, `--incomplete-orders` - Creates reservations for only incomplete orders inconsistencies.
+- `-r`, `raw` - Raw output.
+
+Requested compendations must be provided using this format:  `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>`.
 
 If the format of the request is incorrect, the following message displays: A list of compensations needs to be defined as argument or STDIN.
 
-As reservations are entered, messages display indicating the product by SKU was compensated for an amount for a stock ID.
+As reservations are entered, messages display indicating the updates by SKU, order, and stock.
+
+### To check and resolve reservation inconsistencies
+
+Check reservation inconsistencies for all orders:
+
+```bash
+bin/magento inventory:reservation:list-inconsistencies -r
+```
+
+Example response:
+
+```text
+172:bike-123:+2.000000:1
+172:bikehat-456:+1.000000:1
+```
+
+Create reservation compensations to resolve inconsistencies:
+
+```bash
+bin/magento inventory:reservation:create-compensations
+```
+
+Example response:
+
+```text
+Following reservations were created:
+- Product bike-123 was compensated by +2.000000 for stock 1
+- Product bikehat-456 was compensated by +1.000000 for stock 1
+```
+
+After updates complete, run the list command to verify:
+
+```bash
+bin/magento inventory:reservation:list-inconsistencies -r
+```
 
 ## Import geocodes
 
