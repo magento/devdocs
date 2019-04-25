@@ -307,7 +307,7 @@ The following example adds the `date_closed` column.
 </schema>
 ```
 
-When adding a new field into table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
+When adding a new column into table, remember to [generate]({{ page.baseurl}}/extension-dev-guide/declarative-schema/migration-commands.html#create-whitelist) the `db_schema_whitelist.json` file.
 
 ### Drop a column from a table
 
