@@ -84,6 +84,18 @@ Only one variant of translation can be used for a word or phrase in a package. O
 
 Anyone can submit inline translations on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the Text Editor. These inline translations overwrite a dictionary and save to your database (not in an instance's dictionary). Inline translations are theme-specific and do not apply if another theme is assigned.
 
+## How inline translation works
+
+The preferred way of translating the Storefront in Magento is by using the translation dictionaries (.csv files) and language packages in the Magento codebase.
+
+Magento Admin Panel offers a quick way feature for store administrators to update and translate text on the Storefront inline translation.
+
+Inline translations are stored in the database and are theme-specific, which means that they don't apply if another theme is selected for the Magento store after the inline translation is done. As a result, the inline translation should be done again by the store administrator if the theme is changed.
+
+In order to enable the inline translation, you should go to the **Stores > Configuration > Advanced > Developer > Translate Inline >** and you will see the drop-down menus to enable inline translation.
+
+You can not use the Inline translation feature in production mode.
+
 To save and reuse translations, we recommend localizing in a dictionary.
 
 ## Translation dictionaries {#m2devgde-xlate-dictionaries}
