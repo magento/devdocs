@@ -18,24 +18,31 @@ The following line in the `composer.json` metapackage installs Inventory Managem
         magento/inventory-composer-metapackage = ^1.1.0
 ```
 
-The {{site.data.var.im}} installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
+For a list of Inventory Management metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
+
+The {{site.data.var.im}} installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled. The following list includes all modules in Inventory Management 1.1.2.
 
 ```json
         'Magento_Inventory' => 1,
         'Magento_InventoryAdminUi' => 1,
         'Magento_InventoryApi' => 1,
+        'Magento_GraphQl' => 1,
         'Magento_InventoryBundleProduct' => 1,
         'Magento_InventoryBundleProductAdminUi' => 1,
-        'Magento_InventoryCatalog' => 1,
-        'Magento_InventorySales' => 1,
-        'Magento_InventoryCatalogAdminUi' => 1,
-        'Magento_InventoryCatalogApi' => 1,
-        'Magento_InventoryCatalogSearch' => 1,
+        'Magento_InventoryCache' => 1,
         'Magento_InventoryConfigurableProduct' => 1,
+        'Magento_InventoryCatalogApi' => 1,
+        'Magento_InventoryCatalog' => 1,
+        'Magento_InventoryCatalogAdminUi' => 1,
+        'Magento_InventoryCatalogSearch' => 1,
         'Magento_InventoryConfigurableProductAdminUi' => 1,
         'Magento_InventoryConfigurableProductIndexer' => 1,
         'Magento_InventoryConfiguration' => 1,
         'Magento_InventoryConfigurationApi' => 1,
+        'Magento_InventoryDistanceBasedSourceSelection' => 1,
+        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 1,
+        'Magento_InventoryDistanceBasedSourceSelectionApi' => 1,
+        'Magento_InventoryElasticsearch' => 1,
         'Magento_InventoryGroupedProduct' => 1,
         'Magento_InventoryGroupedProductAdminUi' => 1,
         'Magento_InventoryGroupedProductIndexer' => 1,
@@ -48,20 +55,19 @@ The {{site.data.var.im}} installation process makes the following changes to the
         'Magento_InventoryProductAlert' => 1,
         'Magento_InventoryReservations' => 1,
         'Magento_InventoryReservationsApi' => 1,
-        'Magento_InventoryCache' => 1,
+        'Magento_InventoryReservationsCli' => 1,
+        'Magento_InventorySales' => 1,
         'Magento_InventorySalesAdminUi' => 1,
         'Magento_InventorySalesApi' => 1,
         'Magento_InventorySalesFrontendUi' => 1,
+        'Magento_InventorySetupFixtureGenerator' => 1,
         'Magento_InventoryShipping' => 1,
+        'Magento_InventoryShippingAdminUi' => 1,
         'Magento_InventorySourceDeductionApi' => 1,
         'Magento_InventorySourceSelection' => 1,
         'Magento_InventorySourceSelectionApi' => 1,
-        'Magento_InventoryShippingAdminUi' => 1,
-        'Magento_InventoryDistanceBasedSourceSelection' => 1,
-        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 1,
-        'Magento_InventoryDistanceBasedSourceSelectionApi' => 1,
-        'Magento_InventoryElasticsearch' => 1,
-        'Magento_InventorySetupFixtureGenerator' => 1,
+        'Magento_InventoryLegacySynchronization' => 1,
+        'Magento_InventoryLegacySynchronizationAdminUi' => 1,
 ```
 
 ## Enable {{site.data.var.im}} features
@@ -134,23 +140,23 @@ Currently, Order Management does not support {{site.data.var.im}} (future develo
 
 To enable {{site.data.var.im}} modules:
 
-1. Edit the `<Magento_installation_directory>/composer.json` file. 
+1. Edit the `<Magento_installation_directory>/composer.json` file.
 1. Modify all Inventory modules from `0` to `1` to enable.
 1. Update the database:
 
    ```bash
    bin/magento setup:upgrade
-   ```  
+   ```
 
 1. Clean the cache:
 
    ```bash
    bin/magento cache:clean
-   ```  
+   ```
 
 ### Previous {{site.data.var.im}} versions
 
-When upgrading from previous releases of {{site.data.var.im}} to the latest version, follow normal extension upgrade steps. 
+When upgrading from previous releases of {{site.data.var.im}} to the latest version, follow normal extension upgrade steps.
 
 For the latest, update your metapackage version:
 
