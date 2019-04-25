@@ -34,6 +34,9 @@ To install a theme manually:
 
 To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) topic.
 
+{: .bs-callout .bs-callout-info }
+If a theme is loaded through Composer, that theme can be located anywhere on the file system, but in most cases will use the default vendor/ directory within Magento.
+
 ## Install a theme as an extension
 
 If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with **Web Setup Wizard**. For details, see [Install the Extension](http://docs.magento.com/marketplace/user_guide/quick-tour/install-extension.html).
