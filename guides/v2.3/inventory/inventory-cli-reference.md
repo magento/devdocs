@@ -76,7 +76,8 @@ Command options:
 
 - `-c`, `--complete-orders` - Creates reservations for only completed order inconsistencies.
 - `-i`, `--incomplete-orders` - Creates reservations for only incomplete order inconsistencies.
-- `-r`, `raw` - Raw output.
+- `-r`, `--raw` - Raw output.
+- `-d`, `--dry-run` - Simulates the reservation creation without affecting reservations. Use this option to get a test run of potential reservation compensations.
 
 Requested compendations must be provided using this format:  `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>`.
 
