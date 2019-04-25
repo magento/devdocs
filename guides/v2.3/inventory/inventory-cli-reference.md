@@ -27,7 +27,7 @@ Inconsistencies in reservations may occur in the following situations:
 - Removing sources from stocks
 - Reassigning websites to different stocks
 
-We also recommend using these commands if you are upgrading to Magento v2.3.x from v.2.1.x or v2.2.x. When upgrading, all of your products will be added to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
+We also recommend using these commands if you are upgrading from Magento v.2.1.x or v2.2.x to v2.3.x. During the upgrade process, Magento adds all of your products to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
 
 ### List inconsistencies command
 
