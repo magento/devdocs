@@ -66,7 +66,9 @@ Order 172:
 
 ### Create compensations command
 
-After running `inventory:reservation:list-inconsistencies`, the `create-compensations` command creates compensation reservations using the returned list of inconsistencies. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
+The `create-compensations` command creates compensation reservations using the returned list of inconsistencies. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
+
+You can run both commands by piping `list-inconsistencies` and `create-compensations` to check and immediately create compensations. If not, you will need to provide the compensations using the format `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` such as `172:bike-123:+2.000000:1`.
 
 ```bash
 bin/magento inventory:reservation:create-compensations
@@ -87,23 +89,10 @@ As reservations are entered, messages display indicating the updates by SKU, ord
 
 ### To check and resolve reservation inconsistencies
 
-Check reservation inconsistencies for all orders:
+Check reservation inconsistencies for all orders and create compensations by piping these commands together:
 
 ```bash
-bin/magento inventory:reservation:list-inconsistencies -r
-```
-
-Example response:
-
-```text
-172:bike-123:+2.000000:1
-172:bikehat-456:+1.000000:1
-```
-
-Create reservation compensations to resolve inconsistencies:
-
-```bash
-bin/magento inventory:reservation:create-compensations
+bin/magento inventory:reservation:list-inconsistencies -r | bin/magento inventory:reservation:create-compensations
 ```
 
 Example response:
@@ -118,6 +107,12 @@ After updates complete, run the list command to verify:
 
 ```bash
 bin/magento inventory:reservation:list-inconsistencies -r
+```
+
+If no other issues are found, this message displays:
+
+```text
+No order inconsistencies were found.
 ```
 
 ## Import geocodes
