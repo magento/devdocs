@@ -12,15 +12,23 @@ These features and extensions were developed as part of the [Multi Source Invent
 
 We recommend installing according to [Install Magento Using Composer]({{site.baseurl}}/guides/v2.3/install-gde/composer.html). You must install with a metapackage to receive all {{site.data.var.im}} modules.
 
-The following line in the `composer.json` metapackage installs Inventory Management:
+The following line in the `composer.json` metapackage installs Inventory Management, and upgrades to the latest:
 
 ```json
-        magento/inventory-composer-metapackage = ^1.1.0
+        magento/inventory-composer-metapackage = 1.1.2
+```
+
+To always install the latest, use the following:
+
+```json
+        magento/inventory-composer-metapackage = ^1.1.2
 ```
 
 For a list of Inventory Management metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
 
-The {{site.data.var.im}} installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled. The following list includes all modules in Inventory Management 1.1.2.
+The {{site.data.var.im}} installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
+
+The following list includes all modules in Inventory Management 1.1.2:
 
 ```json
         'Magento_Inventory' => 1,
@@ -43,6 +51,8 @@ The {{site.data.var.im}} installation process makes the following changes to the
         'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 1,
         'Magento_InventoryDistanceBasedSourceSelectionApi' => 1,
         'Magento_InventoryElasticsearch' => 1,
+        'Magento_InventoryExportStock' => 1,
+        'Magento_InventoryExportStockApi' => 1,
         'Magento_InventoryGroupedProduct' => 1,
         'Magento_InventoryGroupedProductAdminUi' => 1,
         'Magento_InventoryGroupedProductIndexer' => 1,
@@ -84,24 +94,31 @@ You may need to disable {{site.data.var.im}} modules to:
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
-To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
+To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json` (v1.1.2):
 
 ```json
         'Magento_Inventory' => 0,
         'Magento_InventoryAdminUi' => 0,
         'Magento_InventoryApi' => 0,
+        'Magento_GraphQl' => 0,
         'Magento_InventoryBundleProduct' => 0,
         'Magento_InventoryBundleProductAdminUi' => 0,
-        'Magento_InventoryCatalog' => 0,
-        'Magento_InventorySales' => 0,
-        'Magento_InventoryCatalogAdminUi' => 0,
-        'Magento_InventoryCatalogApi' => 0,
-        'Magento_InventoryCatalogSearch' => 0,
+        'Magento_InventoryCache' => 0,
         'Magento_InventoryConfigurableProduct' => 0,
+        'Magento_InventoryCatalogApi' => 0,
+        'Magento_InventoryCatalog' => 0,
+        'Magento_InventoryCatalogAdminUi' => 0,
+        'Magento_InventoryCatalogSearch' => 0,
         'Magento_InventoryConfigurableProductAdminUi' => 0,
         'Magento_InventoryConfigurableProductIndexer' => 0,
         'Magento_InventoryConfiguration' => 0,
         'Magento_InventoryConfigurationApi' => 0,
+        'Magento_InventoryDistanceBasedSourceSelection' => 0,
+        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 0,
+        'Magento_InventoryDistanceBasedSourceSelectionApi' => 0,
+        'Magento_InventoryElasticsearch' => 0,
+        'Magento_InventoryExportStock' => 0,
+        'Magento_InventoryExportStockApi' => 0,
         'Magento_InventoryGroupedProduct' => 0,
         'Magento_InventoryGroupedProductAdminUi' => 0,
         'Magento_InventoryGroupedProductIndexer' => 0,
@@ -114,20 +131,19 @@ To disable {{site.data.var.im}}, see the instructions for [Enable or disable mod
         'Magento_InventoryProductAlert' => 0,
         'Magento_InventoryReservations' => 0,
         'Magento_InventoryReservationsApi' => 0,
-        'Magento_InventoryCache' => 0,
+        'Magento_InventoryReservationsCli' => 0,
+        'Magento_InventorySales' => 0,
         'Magento_InventorySalesAdminUi' => 0,
         'Magento_InventorySalesApi' => 0,
         'Magento_InventorySalesFrontendUi' => 0,
+        'Magento_InventorySetupFixtureGenerator' => 0,
         'Magento_InventoryShipping' => 0,
+        'Magento_InventoryShippingAdminUi' => 0,
         'Magento_InventorySourceDeductionApi' => 0,
         'Magento_InventorySourceSelection' => 0,
         'Magento_InventorySourceSelectionApi' => 0,
-        'Magento_InventoryShippingAdminUi' => 0,
-        'Magento_InventoryDistanceBasedSourceSelection' => 0,
-        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 0,
-        'Magento_InventoryDistanceBasedSourceSelectionApi' => 0,
-        'Magento_InventoryElasticsearch' => 0,
-        'Magento_InventorySetupFixtureGenerator' => 0,
+        'Magento_InventoryLegacySynchronization' => 0,
+        'Magento_InventoryLegacySynchronizationAdminUi' => 0,
 ```
 
 ## Upgrade {{site.data.var.im}}

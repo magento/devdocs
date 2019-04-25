@@ -36,9 +36,11 @@ The release notes include:
 
 - {:.new} **Simplified UI for Assigned Sources** - To better display assigned sources and allow for modifying quantities, the Assigned Sources table in product views has been simplified. All sources list by source name, not by code. Hover over the name to see the code. The Notify Quantity threshold and actions have reduced text for use of use.
 
-- {:.new} **Magento B2B products support** - This release fully supports B2B products assigned to the default and custom sources. B2B merchants can fully use Single and Multi source features for Inventory Management. <!-- https://github.com/magento/partners-magento2ee/pull/18 https://github.com/magento-engcom/msi/issues/1828 -->
+- {:.new} **Magento B2B products support** - This release fully supports B2B products and features (including Quick Order). B2B merchants can fully use Single and Multi source features for Inventory Management, assigning products to default and custom sources and stocks without issues.  <!-- https://github.com/magento/partners-magento2ee/pull/18 https://github.com/magento-engcom/msi/issues/1828 -->
 
-- {:.fix} Properly return `source_code` in the response for the `/rest/V1/shipments` REST endpoint. <!-- https://github.com/magento-engcom/msi/pull/2142 -->
+- {:.new} **Export Aggregated Stock Service** - This release provides a new export aggregated stock service (retaining reservations in the system) to support external Sales Channels like Amazon, eBay, Google Shopping ads, etc.  <!-- https://github.com/magento-engcom/msi/pull/2067 -->
+
+- {:.fix} Return `source_code` in the response for the `/rest/V1/shipments` REST endpoint. <!-- https://github.com/magento-engcom/msi/pull/2142 -->
 
 - {:.fix} Resolved issue to correctly clear reservations and update product quantities after issuing a credit memo for an unshipped order. When you select the option to <!-- https://github.com/magento-engcom/msi/pull/2179 -->
 
