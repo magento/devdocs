@@ -89,7 +89,7 @@ Requested compensations must be provided using this format:  `<ORDER_INCREMENT_I
 
 If the format of the request is incorrect, the following message displays: A list of compensations needs to be defined as argument or STDIN.
 
-As reservations are entered, messages display indicating the updates by SKU, order, and stock.
+As the command creates reservations, it displays messages indicating the updates by SKU, order, and stock.
 
 ```terminal
 bin/magento inventory:reservation:create-compensations 172:bike-123:+2.000000:1
