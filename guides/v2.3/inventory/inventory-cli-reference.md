@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-Inventory Management provides CLI commands to manage inventory data and configuration settings.
+Inventory Management provides commands to manage inventory data and configuration settings.
 
 These commands include:
 
