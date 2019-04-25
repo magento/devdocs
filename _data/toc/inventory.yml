@@ -29,7 +29,6 @@ pages:
 
     - label: Inventory REST endpoints
       children:
-
         - label: Manage sources
           url: /rest/modules/inventory/manage-sources.html
 

@@ -19,7 +19,11 @@ These commands include:
 
 [Reservations]({{ page.baseurl }}/inventory/reservations.html) place a salable quantity hold for product SKUs per stock. When you ship, add products, cancel, or refund an order, compensation reservations enter to place or clear these holds.
 
-Inventory Management provides two commands to check and resolve reservation inconsistencies.
+Inventory Management provides two commands to check and resolve reservation inconsistencies:
+
+- [`inventory:reservation:list-inconsistencies`](#list-inconsistencies-command)
+- [`inventory:reservation:create-compensations`](#create-compensations-command)
+
 
 Inconsistencies in reservations may occur in the following situations:
 
@@ -72,7 +76,7 @@ If no issues are found, this message returns: No order inconsistencies were foun
 
 The `create-compensations` command creates compensation reservations. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
 
-You can run both commands by piping `list-inconsistencies` and `create-compensations` to check and immediately create compensations. If not, you will need to provide the compensations using the format `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` such as `172:bike-123:+2.000000:1`.
+To create reservations, provide compensations using the format `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` such as `172:bike-123:+2.000000:1`.
 
 ```bash
 bin/magento inventory:reservation:create-compensations
@@ -82,10 +86,8 @@ Command options:
 
 - `-c`, `--complete-orders` - Creates reservations for completed order inconsistencies.
 - `-i`, `--incomplete-orders` - Creates reservations for incomplete order inconsistencies.
-- `-r`, `--raw` - Raw output.
+- `-r`, `--raw` - Returns raw output.
 - `-d`, `--dry-run` - Simulates reservation creation without applying reservations.
-
-Requested compensations must be provided using this format:  `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>`.
 
 If the format of the request is incorrect, the following message displays: A list of compensations needs to be defined as argument or STDIN.
 
@@ -98,9 +100,7 @@ Following reservations were created:
 - Product bike-123 was compensated by +2.000000 for stock 1
 ```
 
-### To check and resolve reservation inconsistencies
-
-Check reservation inconsistencies for all orders and create compensations by piping these commands together:
+You can run both commands by piping `list-inconsistencies` and `create-compensations` to detect inconsistencies and immediately create compensations. Use the `-r` command option to generate and submit the raw data to `create-compensations`.
 
 ```bash
 bin/magento inventory:reservation:list-inconsistencies -r | bin/magento inventory:reservation:create-compensations
@@ -109,6 +109,8 @@ bin/magento inventory:reservation:list-inconsistencies -r | bin/magento inventor
 Example response:
 
 ```terminal
+bin/magento inventory:reservation:list-inconsistencies -r | bin/magento inventory:reservation:create-compensations
+
 Following reservations were created:
 - Product bike-123 was compensated by +2.000000 for stock 1
 - Product bikehat-456 was compensated by +1.000000 for stock 1
@@ -116,13 +118,9 @@ Following reservations were created:
 
 After updates complete, run the list command to verify:
 
-```bash
-bin/magento inventory:reservation:list-inconsistencies -r
-```
-
-If no other issues are found, this message displays:
-
 ```terminal
+bin/magento inventory:reservation:list-inconsistencies -r
+
 No order inconsistencies were found.
 ```
 
