@@ -23,7 +23,7 @@ pages:
     - label: Deprecated ScalableInventory entities
       url: /inventory/scalable-inventory-replacements.html
 
-    - label: Order processing with Inventory Management
+    - label: Order processing with Inventory Management tutorial
       class: tutorial
       url: /rest/tutorials/inventory/index.html
 
