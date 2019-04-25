@@ -31,7 +31,7 @@ We also recommend using these commands if you are upgrading to Magento v2.3.x fr
 
 ### List inconsistencies command
 
-The `list-inconsistencies` command detects and lists all reservation inconsistencies. Use the options to check completed or incomplete orders, or all. The `raw` option checks for all inconsistencies.
+The `list-inconsistencies` command detects and lists all reservation inconsistencies. Use the options to check completed or incomplete orders, or all.
 
 ```bash
 bin/magento inventory:reservation:list-inconsistencies
@@ -52,12 +52,16 @@ Returned values are in `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` format
 - Quantity sets the amount to enter for the reservation compensation.
 - Stock ID defines to scope for stock, which uses the reservations to calculate salable quantity.
 
-Example response:
+Example responses:
 
 ```text
 Inconsistencies found on following entries:
 Order 172:
 - Product bike-123 should be compensated by +2.000000 for stock 1
+```
+
+```text
+172:bike-123:+2.000000:1
 ```
 
 ### Create compensations command
@@ -70,8 +74,8 @@ bin/magento inventory:reservation:create-compensations
 
 Command options:
 
-- `-c`, `--complete-orders` - Creates reservations for only completed orders inconsistencies.
-- `-i`, `--incomplete-orders` - Creates reservations for only incomplete orders inconsistencies.
+- `-c`, `--complete-orders` - Creates reservations for only completed order inconsistencies.
+- `-i`, `--incomplete-orders` - Creates reservations for only incomplete order inconsistencies.
 - `-r`, `raw` - Raw output.
 
 Requested compendations must be provided using this format:  `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>`.
