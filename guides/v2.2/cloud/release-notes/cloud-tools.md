@@ -6,7 +6,7 @@ functional_areas:
   - Setup
   - Configuration
 redirect_from:
-   - /guides/v2.3/cloud/release-notes/CloudReleaseNotes.html
+   - /guides/v2.2/cloud/release-notes/CloudReleaseNotes.html
 ---
 <!-- 2.2 release notes -->
 
@@ -41,6 +41,8 @@ The release notes include:
 -   {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
 
 -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error. 
+
+-   {:.new}**New environment variable**—The new **ELASTICSUITE\_CONFIGURATION** environment variable retains your customized service settings between deployments. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#elasticsuite_configuration) content.
 
 ## v2002.0.17
 

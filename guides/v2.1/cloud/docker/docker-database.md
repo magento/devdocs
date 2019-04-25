@@ -11,9 +11,7 @@ There are two ways to connect to the database. Before you begin, you can find th
 
 > Filename: `docker/config.php`
 
-```php
-<?php
-
+```php?start_inline=1
 return [
     'MAGENTO_CLOUD_RELATIONSHIPS' => base64_encode(json_encode([
         'database' => [
@@ -25,7 +23,6 @@ return [
                 'port' => '3306'
             ],
         ],
-    ...
 ```
 {: .no-copy}
 

@@ -167,8 +167,11 @@ stage:
 
 **Known limitations**—
 
--   Changing the `search engine` to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
--   Removing the `ElasticSearch` service causes a deploy failure accompanied by an appropriate validation error
+-   Changing the search engine to any type other than `elasticsuite` causes a deploy failure accompanied by an appropriate validation error
+-   Removing the ElasticSearch service causes a deploy failure accompanied by an appropriate validation error
+
+{:.bs-callout .bs-callout-info}
+Magento does not support the ElasticSuite third-party plugin.
 
 ### `ENABLE_GOOGLE_ANALYTICS`
 
