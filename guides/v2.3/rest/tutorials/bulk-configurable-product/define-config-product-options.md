@@ -29,7 +29,7 @@ contributor_link: http://comwrap.com/
 
  **Payload**
 
- ``` json
+ ```json
 [{
   "sku": "MS-Champ",
   "option": {
@@ -48,7 +48,7 @@ contributor_link: http://comwrap.com/
 
  **Response**
 
- ``` json
+ ```json
 {
     "bulk_uuid": "98c46050-cd66-4b49-9d45-69bfa04efc78",
     "request_items": [
@@ -75,7 +75,7 @@ Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  Yo
 
  **Payload**
 
- ``` json
+ ```json
 [
   {
     "sku": "MS-Champ",
@@ -95,7 +95,7 @@ Bulk endpoint routes cannot contain input parameters, such as a `sku` value.  Yo
 
  **Response**
 
- ``` json
+ ```json
 {
     "bulk_uuid": "e78042d1-de13-4260-8f56-d5dd13f89e3c",
     "request_items": [

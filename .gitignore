@@ -8,15 +8,8 @@
 
 /_site/
 
-/.*
-!/.github
-!/.github/**
-
-/*.yml
-!/_config.yml
-!/_config.prod.yml
-!/_config.checks.yml
-!/_config.stage.yml
+_config.local.yml
+.jekyll-metadata
 
 *.bat
 /tmp/
@@ -30,6 +23,7 @@ _algolia_api_key
 
 /mbi/
 /page-builder/
+/page-builder-migration/
 /guides/m1x/
 /mftf/
 

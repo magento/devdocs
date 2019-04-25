@@ -37,6 +37,10 @@
     - label: Installation Guide
       url: /install-gde/bk-install-guide.html
 
+    - label: Magento Extensions Guide
+      url: /extensions/
+      versionless: true
+
     - label: Software Update Guide
       url: /comp-mgr/bk-compman-upgrade-guide.html
       exclude_versions: ['2.0', '2.1']
@@ -54,9 +58,6 @@
 
     - label: Migration Guide
       url: /migration/bk-migration-guide.html
-
-    - label: Magento Commerce (Cloud) Guide
-      url: /cloud/bk-cloud.html
 
     - label: Release Information
       url: /release-notes/bk-release-notes.html

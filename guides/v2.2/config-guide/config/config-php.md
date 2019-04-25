@@ -54,7 +54,7 @@ Examples:
 
 `config.php` snippet:
 
-{% highlight php startinline=true %}
+```php
 return array (
   'modules' =>
   array (
@@ -70,7 +70,7 @@ return array (
 ...
   ),
 );
-{% endhighlight %}
+```
 
 The value `1` or `0` indicates whether a module is enabled or disabled.
 

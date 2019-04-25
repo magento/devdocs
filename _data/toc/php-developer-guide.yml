@@ -277,6 +277,9 @@ pages:
       url: /extension-dev-guide/versioning/
       children:
 
+        - label: Check the Magento version
+          url: /extension-dev-guide/versioning/check-version.html
+
         - label: Module version dependencies
           url: /extension-dev-guide/versioning/dependencies.html
 
