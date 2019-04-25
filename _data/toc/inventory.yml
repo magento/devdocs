@@ -27,7 +27,7 @@ pages:
       class: tutorial
       url: /rest/tutorials/inventory/index.html
 
-    - label: Inventory REST
+    - label: Inventory REST endpoints
       children:
 
         - label: Manage sources
