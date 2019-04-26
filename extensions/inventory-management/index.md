@@ -4,24 +4,18 @@ title: Install Inventory Management
 redirect_from: guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html
 ---
 
-{{site.data.var.im}} modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in Magento 2.3.X Open Source, Commerce, and Commerce Cloud.
+{{site.data.var.im}} modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in 2.3.X {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 These features and extensions were developed as part of the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi) through the Magento Community Engineering program.
 
-{{site.data.var.im}} installs with Magento Open Source or Commerce with all features enabled by default. No additional steps are required for enabling these inventory features.
+{{site.data.var.im}} installs with Magento {{site.data.var.ce}} and {{site.data.var.ee}} with all features enabled by default. No additional steps are required for enabling these inventory features. Upgrades from v2.1.x or 2.2.x may require additional steps. See [Upgrade Inventory Management](#upgrade-inventory-management).
 
 We recommend installing according to [Install Magento Using Composer]({{site.baseurl}}/guides/v2.3/install-gde/composer.html). You must install with a metapackage to receive all {{site.data.var.im}} modules.
 
-The following line in the `composer.json` metapackage installs Inventory Management, and upgrades to the latest:
+The following line in the `composer.json` metapackage installs Inventory Management 1.1.2:
 
 ```json
         magento/inventory-composer-metapackage = 1.1.2
-```
-
-To always install the latest, use the following:
-
-```json
-        magento/inventory-composer-metapackage = ^1.1.2
 ```
 
 For a list of Inventory Management metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
@@ -90,7 +84,7 @@ For more information on configurations, see [Enabling Inventory Management](http
 
 You may need to disable {{site.data.var.im}} modules to:
 
-* Speed up the upgrade process for merchants currently on Magento 2.0.X/2.1.X/2.2.X and migrating to 2.3.X.
+* Speed up the upgrade process for merchants migrating from 2.0.X, 2.1.X, or 2.2.X to 2.3.X.
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
@@ -150,7 +144,7 @@ To disable {{site.data.var.im}}, see the instructions for [Enable or disable mod
 
 ### Previous Magento versions
 
-When upgrading or updating an existing 2.1.X or 2.2.X Magento installation to Magento 2.3.X, {{site.data.var.im}} modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
+When upgrading or updating an existing 2.1.X or 2.2.X Magento installation to Magento {{site.data.var.ce}} or {{site.data.var.ee}} 2.3.X, {{site.data.var.im}} modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
 
 Currently, Order Management does not support {{site.data.var.im}} (future development planned). When upgrading, {{site.data.var.im}} modules will be disabled to allow OMS and Magento 2.3.X to work seamlessly.
 
@@ -179,7 +173,7 @@ When upgrading from previous releases of {{site.data.var.im}} to the latest vers
 For the latest, update your metapackage version:
 
 ```json
-        magento/inventory-composer-metapackage = ^1.1.0
+        magento/inventory-composer-metapackage = 1.1.0
 ```
 
 See the following guides for more information on upgrades:
