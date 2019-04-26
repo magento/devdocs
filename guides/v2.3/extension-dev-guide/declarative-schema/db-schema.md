@@ -426,6 +426,7 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
     </table>
 </schema>
 ```
+
 {: .bs-callout .bs-callout-info}
 It is possible to drop a foreign key only if it exists in the `db_schema_whitelist.json` file.
 
