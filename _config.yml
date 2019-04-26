@@ -143,6 +143,7 @@ relative_links:
     - extensions
     - guides
     - redoc
+    - release
     - tmp
     - 404.md
     - availability.md
@@ -203,8 +204,8 @@ githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
 mage2000url: https://github.com/magento/magento2/blob/2.0/
 
 # 1.x variables
-m1xgdeurl: /guides/m1x/
-m1xgithuburl: https://github.com/magento/devdocs/blob/master/
+m1xgdeurl: /guides/m1x
+m1xgithuburl: https://github.com/magento/devdocs/blob/master
 
 # 2.1 variables
 gdeurl21: /guides/v2.1/

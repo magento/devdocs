@@ -15,6 +15,15 @@ Extensions include:
 {: .bs-callout .bs-callout-tip }
 This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
+Prior to installation, you may want to:
+
+1. Back up your database.
+1. Enable maintenance mode:
+
+    ```bash
+    bin/magento maintenance:enable
+    ```
+
 To install an extension, you must:
 
 1. Get an extension from the Magento Marketplace or another extension developer.
@@ -42,6 +51,7 @@ To get the extension's Composer name and version from the Magento Marketplace:
 1. Find the extension you want to install and click **Technical Details**.
 
     ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
+
 
 {: .bs-callout .bs-callout-tip }
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
@@ -159,7 +169,7 @@ If you encounter errors when loading the storefront in a browser, use the follow
 
 To update or upgrade an extension:
 
-1. Download the updated extension file from Marketplace or another extension developer.
+1. Download the updated extension file from Marketplace or another extension developer. Take note of the module-name and version.
 
 1. Export the contents to your Magento root.
 
