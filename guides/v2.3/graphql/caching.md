@@ -37,7 +37,9 @@ Magento explicitly disallows caching the following queries.
 
 We recommend setting up Varnish as a reverse proxy to serve the full page cache in a production environment. See [Configure and use Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html) for more information.
 
-Magento 2.3.2 updates the `vcl_hash` subroutine in the template `varnish.vcl` file for both Varnish 4.x and 5.x. If you are upgrading to Magento 2.3.2, edit the `default.vcl` file on your system so that it matches the following sample:
+Magento 2.3.2 updates the `vcl_hash` subroutine in the template `varnish.vcl` file and creates the `process_graphql_headers` subroutine for both Varnish 4.x and 5.x. To enable GraphQL caching, either generate a new template file, or edit the `default.vcl` file on your system to match the current default template.
+
+If you choose to edit an existing `default.vcl` file, update the `vcl_hash` subroutine to check whether the request URL contains `graphql`, as follows:
 
 ```text
 sub vcl_hash {
@@ -52,11 +54,8 @@ sub vcl_hash {
         hash_data(server.ip);
     }
 
-    if (req.http.Store) {
-        hash_data(req.http.Store);
-    }
-    if (req.http.Content-Currency) {
-        hash_data(req.http.Content-Currency);
+    if (req.url ~ "graphql") {
+        call process_graphql_headers;
     }
 
     # To make sure http users don't see ssl warning
@@ -66,7 +65,20 @@ sub vcl_hash {
 }
 ```
 
-[Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) describes how to configure the `default.vcl` file.
+Then add the `process_graphql_headers` subroutine:
+
+```text
+sub process_graphql_headers {
+    if (req.http.Store) {
+        hash_data(req.http.Store);
+    }
+    if (req.http.Content-Currency) {
+        hash_data(req.http.Content-Currency);
+    }
+}
+```
+
+[Configure Varnish and your web server]({{page.baseurl}}/config-guide/varnish/config-varnish-configure.html) further describes how to configure the `default.vcl` file.
 
 ## X-Magento-Vary 
 The `X-Magento-Vary` cache cookie is not supported for GraphQL. The `Store` and `Content-Currency`  headers, along with the content language (which is deduced) determine the context.
