@@ -8,9 +8,9 @@
 		<h4 class="guide-title">{{ toc.label }}</h4>
 		<div class="collapsible-navigation">
 		    <ul>
-		    {% for entry in toc.pages %}
-		    	{% include layout/nav-item.html section=entry %}
-		    {% endfor %}
+		    {%- for entry in toc.pages -%}
+		    	{% include layout/nav-item.html section=entry -%}
+		    {%- endfor -%}
 		    </ul>
 		</div>
 

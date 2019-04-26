@@ -29,7 +29,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 The Magento backup feature is disabled by default. To enable, enter the following CLI command:
 
-``` bash
+```bash
 bin/magento config:set system/backup/functionality_enabled 1
 ```
 

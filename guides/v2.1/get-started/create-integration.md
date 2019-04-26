@@ -73,7 +73,7 @@ To develop a module, you must:
 
     The following example demonstrates a minimal `composer.json` file.
 
-    ``` json
+    ```json
       {
          "name": "Vendor1_Module1",
          "description": "create integration from config",
@@ -212,7 +212,7 @@ If you pre-configure the integration, the values cannot be edited from the {% gl
 
 The file defines which API resources the integration has access to.
 
-``` xml
+```xml
 <integrations>
    <integration name="TestIntegration">
        <email></email>

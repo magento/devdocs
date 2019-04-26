@@ -144,7 +144,7 @@ To store your assets in Varnish, add the following VCL entries in your `default.
 
 At the end of the `if` statement for PURGE requests in the `vcl_recv` subroutine, add:
 
-``` javascript
+```javascript
 # static files are cacheable. remove SSL flag and cookie
 
 if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tiff|bmp|mp3|ogg|svg|swf|woff|woff2|eot|ttf|otf)$") {
@@ -157,7 +157,7 @@ if (req.url ~ "^/(pub/)?(media|static)/.*\.(ico|html|css|js|jpg|jpeg|png|gif|tif
 In the `vcl_backend_response` subroutine, look for the `if` statement that unsets the cookie for `GET` or `HEAD` requests.
 The updated `if` block should look like the following:
 
-``` javascript
+```javascript
 # validate if we need to cache it and prevent from setting cookie
 # images, css and js are cacheable by default so we have to remove cookie also
 
