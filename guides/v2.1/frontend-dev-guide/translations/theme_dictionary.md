@@ -17,7 +17,7 @@ When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endg
 	1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
 	1. `<current_theme_dir>/i18n/`
 1. Translation package: `app/i18n/`
-1. Magento database (It is good for overriding other translations whereever necessary)
+1. Magento database (translations located in this database take precedence and override translations stored in other locations.)
 
 If there are different translations for one string, the theme dictionary translations have priority over the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} translations, and child theme translations have priority over parent theme translations.
 
