@@ -32,7 +32,7 @@ The release notes include:
 
 ## v2002.0.18
 
--   {:.new}<!-- MAGECLOUD-3135 -->**New environment variable**—Added the `MAGENTO_CLOUD_LOCKS_DIR` environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} 2.2.5 and later versions. See [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
+-   {:.new}<!-- MAGECLOUD-3135 -->**New environment variable**—Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
 
 -   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
@@ -42,7 +42,9 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error. 
 
--   {:.new}**New environment variable**—The new **ELASTICSUITE\_CONFIGURATION** environment variable retains your customized service settings between deployments. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#elasticsuite_configuration) content.
+-   {:.new}<!-- MAGECLOUD-3205 -->**New environment variable**—The new **ELASTICSUITE\_CONFIGURATION** environment variable retains your customized service settings between deployments. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#elasticsuite_configuration) content.
+
+-   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
 ## v2002.0.17
 

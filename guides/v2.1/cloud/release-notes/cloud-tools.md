@@ -40,6 +40,9 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error.
 
+-   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
+
+
 ## v2002.0.17
 
 {:.bs-callout .bs-callout-info}

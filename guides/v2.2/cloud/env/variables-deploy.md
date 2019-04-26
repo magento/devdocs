@@ -394,12 +394,10 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**:
-    -  `1`—Starter environments and Pro Integration environments
-    -  `3`—Pro Staging and Production environments
+-  **Default**—Automatic
 -  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
+Sets the number of threads for static content deployment. The default value is set based on detected CPU threads. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set a thread value within the range from 1 to 4. For example:
 
 ```yaml
 stage:
