@@ -24,6 +24,12 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
 | Redis         | `--redis`  | 3.0, 3.2, 4.0, 5.0
 
+To adjust additional configuration, use next options:
+
+| Option       | Key              | Available values
+| ------------ | ---------------- | ------------------
+| Mode         | `--mode`, `-m`   | production, developer
+
 There is a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
 #### Prerequisites
@@ -54,25 +60,21 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     composer install
     ```
 
+##### Production mode (default)
+
 1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
 
     ```bash
     ./vendor/bin/ece-tools docker:build
     ```
 
-1.  Copy the raw configuration files.
+1.  _Optional_: Copy the raw configuration files.
 
     ```bash
     cp docker/config.php.dist docker/config.php
     ```
 
-    ```bash
-    cp docker/global.php.dist docker/global.php
-    ```
-
-1.  _Optional_: Configure the Docker global variables in the `docker/global.php` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
-
-1. Convert the PHP configuration files to Docker ENV files.
+1. _Optional_: Convert the PHP configuration files to Docker ENV files.
 
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
@@ -80,10 +82,11 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     This command generates the following Docker ENV files:
 
     * `docker/config.env`
-    * `docker/global.env`
 
     {: .bs-callout .bs-callout-info}
     The `{{site.data.var.ct}}` v2002.0.12 package does not support the `docker:config:convert` command.
+
+1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1.  Build files to containers and run in the background.
 
@@ -108,7 +111,68 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     {: .bs-callout .bs-callout-info}
     For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
-1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
+##### Developer mode (`--mode="developer"`)
+
+This mode is designed to support active development on your local environment. It requires manual installation of `docker-sync` for file synchronization.
+In this mode you will have full writable filesystem permissions. It generally may be slower than default mode because of additional file synchronization operations.
+
+1.  Install `docker-sync`
+
+    [Follow instruction](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)
+
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
+
+    ```bash
+    ./vendor/bin/ece-tools docker:build --mode="developer"
+    ```
+
+1.  _Optional_: Copy the raw configuration files.
+
+    ```bash
+    cp docker/config.php.dist docker/config.php
+    ```
+
+1. _Optional_: Convert the PHP configuration files to Docker ENV files.
+
+    ```bash
+    ./vendor/bin/ece-tools docker:config:convert
+    ```
+    This command generates the following Docker ENV files:
+
+    * `docker/config.env`
+
+    {: .bs-callout .bs-callout-info}
+    The `{{site.data.var.ct}}` v2002.0.12 package does not support the `docker:config:convert` command.
+
+1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
+
+1. Run `docker-sync`
+
+    ```bash
+    docker-sync start
+    ```
+
+1.  Build files to containers and run in the background.
+
+    ```bash
+    docker-compose up -d
+    ```
+
+1. Install Magento in your Docker environment.
+
+    - Deploy Magento in the Docker container:
+
+    ```bash
+    docker-compose up -d && \
+    docker-compose run deploy cloud-deploy && \
+    docker-compose run deploy magento-command deploy:mode:set developer && \
+    docker-compose run deploy magento-command cache:clean
+    ```
+    
+    {: .bs-callout .bs-callout-info}
+    This mode does note require `build` operation.
+
+#### Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
     -  [`http://magento2.docker`](http://magento2.docker)
 
@@ -134,4 +198,10 @@ Remove all components of your local Docker instance including containers, networ
 
 ```bash
 docker-compose down -v
+```
+
+#### To stop `docker-sync` daemon:
+
+```bash
+docker-sync stop
 ```
