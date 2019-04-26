@@ -47,9 +47,13 @@ The release notes include:
 - {:.fix} Resolved issue to correctly save quantity for configurable product children when entering quantities during product creation. <!-- https://github.com/magento-engcom/msi/pull/2158 -->
 
 
+### v1.1.2
+
+{{site.data.var.im}} 1.1.2 (module version: inventory-composer-metapackage = 1.1.2)  is compatible with version 2.3.2 and 2.3.1 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
 ### v1.1.0
 
-{{site.data.var.im}} 1.1.0 (module version: inventory-composer-metapackage = 1.1.0) is compatible with version 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+{{site.data.var.im}} 1.1.0 (module version: inventory-composer-metapackage = 1.1.0)  is compatible with version 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 - {:.new} **Distance Priority Algorithm** — The Distance Priority Algorithm is a new, out-of-the-box Source Selection Algorithm for distance-based shipping recommendations. This algorithm compares the location of the shipping destination address with source locations to determine the closest source to fulfill shipments. The distance may be determined by either physical distance or the time spent traveling from one location to another, using imported geocode location data or Google directions (driving, walking, or bicycling). See [Configuring Distance Priority Algorithm](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-distance-priority.html) in the _Magento Admin User Guide_.
 
