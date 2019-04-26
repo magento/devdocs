@@ -307,7 +307,7 @@ stage:
 -  **Default**—Automatic
 -  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. The default value is set based on detected CPU threads. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set a thread value within the range from 1 to 4. For example:
+Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
 ```yaml
 stage:
