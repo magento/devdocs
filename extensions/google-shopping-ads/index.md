@@ -33,6 +33,8 @@ Google Shopping ads Channel install is a `.zip` file available from the Magento 
 
 To add the Google API key:
 
+1. Log into the Magent Admin.
+
 1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Google Shopping ads**.
 
     If you need an API Key, the following screen displays.
