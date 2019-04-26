@@ -37,10 +37,10 @@ Reservation inconsistencies may occur when Inventory Management loses the initia
 
 The following configurations and events can cause reservation inconsistencies:
 
-- **Upgrade Magento to 2.3.x with orders not in a finite state (Complete, Canceled, or Closed).** Inventory Management will create compensational reservations for these orders, but it will not enter or have the initial reservation that deducts from the salable quantity.
+- **Upgrade Magento to 2.3.x with orders not in a final state (Complete, Canceled, or Closed).** Inventory Management will create compensational reservations for these orders, but it will not enter or have the initial reservation that deducts from the salable quantity. We recommend using these commands after upgrading to Magento v2.3.x from 2.1.x or 2.2.x. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
 - **You do not manage stock then later change this configuration.** You may start using 2.3.x with **Manage Stock** set to "No" in the Magento configuration. Magento does not place reservations at order placement and shipment events. If you later enable the **Manage Stock** configuration and some orders were created at that time, the Salable Qty would be corrupted with compensation reservation when you handle and fulfill that order.
 - **You re-assign the Stock for a Website while orders submit to that website**. The initial reservation enters for the initial stock and all compensational reservation enter to the new stock.
-- **The sum total of all reservations may not resolve to `0`.** All reservations in the scope of an Order in a finite state (Complete, Canceled, Closed) should resolve to `0`, clearing all salable quantity holds.
+- **The sum total of all reservations may not resolve to `0`.** All reservations in the scope of an Order in a final state (Complete, Canceled, Closed) should resolve to `0`, clearing all salable quantity holds.
 
 ### List inconsistencies command
 
@@ -83,7 +83,7 @@ If no issues are found, this message returns: No order inconsistencies were foun
 
 ### Create compensations command
 
-The `create-compensations` command creates compensation reservations. Depending on the issue, new reservations are created to either place or release a hold on salable quantity.
+The `create-compensations` command creates compensation reservations. Depending on the issue, new reservations are created to either place or release a hold on salable quantity. When these are generated, the metadata in the database indicates these are `"event_type":"manual_compensation"`.
 
 To create reservations, provide compensations using the format `<ORDER_INCREMENT_ID>:<SKU>:<QUANTITY>:<STOCK-ID>` such as `172:bike-123:+2.000000:1`.
 
