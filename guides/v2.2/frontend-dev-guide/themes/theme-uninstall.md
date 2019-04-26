@@ -42,6 +42,11 @@ Where:
 - `<dbname>`: your Magento database name
 - `<Vendor>/<theme>`: relative path to the theme directory
 
+To uninstall theme via phpMyAdmin in following manners:
+- Search the `theme` table from the database. 
+- you can view all the theme list.  
+- Delete spefied `theme` from the list.
+
 ## Uninstall a theme package {#uninstall_theme_pack}
 
 The flow for uninstalling a theme that is {% glossarytooltip b57038ca-7906-4fce-a00f-d614b81d5301 %}Composer package{% endglossarytooltip %} is different, depending on the way your Magento instance was installed.  
