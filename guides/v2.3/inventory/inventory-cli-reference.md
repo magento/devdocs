@@ -24,14 +24,23 @@ Inventory Management provides two commands to check and resolve reservation inco
 - [`inventory:reservation:list-inconsistencies`](#list-inconsistencies-command)
 - [`inventory:reservation:create-compensations`](#create-compensations-command)
 
+### What causes reservation inconsistencies?
 
-Inconsistencies in reservations may occur in the following situations:
+Inventory Management generates reservations for key events:
 
-- Mass transfering inventory
-- Removing sources from stocks
-- Reassigning websites to different stocks
+- Order placement (initial reservation)
+- Order shipment (compensation reservation)
+- Refund order or issue a credit memo (compensation reservation)
+- Order cancellation (compensation reservation)
 
-We also recommend using these commands if you are upgrading from Magento v.2.1.x or v2.2.x to v2.3.x. During the upgrade process, Magento adds all of your products to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
+Reservation inconsistencies may occur when Inventory Management loses the initial reservation and enters too many reservation compensations (overcompensating and leading to inconsistent amounts), or correctly places the initial reservation but loses compensational reservations.
+
+The following configurations and events can cause reservation inconsistencies:
+
+- **Upgrade Magento to 2.3.x with orders not in a finite state (Complete, Canceled, or Closed).** Inventory Management will create compensational reservations for these orders, but it will not enter or have the initial reservation that deducts from the salable quantity.
+- **You do not manage stock then later change this configuration.** You may start using 2.3.x with **Manage Stock** set to "No" in the Magento configuration. Magento does not place reservations at order placement and shipment events. If you later enable the **Manage Stock** configuration and some orders were created at that time, the Salable Qty would be corrupted with compensation reservation when you handle and fulfill that order.
+- **You re-assign the Stock for a Website while orders submit to that website**. The initial reservation enters for the initial stock and all compensational reservation enter to the new stock.
+- **The sum total of all reservations may not resolve to `0`.** All reservations in the scope of an Order in a finite state (Complete, Canceled, Closed) should resolve to `0`, clearing all salable quantity holds.
 
 ### List inconsistencies command
 
