@@ -11,6 +11,7 @@ See the following documentation:
 
 - [Google Shopping ads Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-ad-channel.html) for merchant information and instructions
 - [Install]({{site.baseurl}}/extensions/google-shopping-ads/) Google Shopping ads Channel  for installation, API key, and update information
+- [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html)
 
 The release notes include:
 
