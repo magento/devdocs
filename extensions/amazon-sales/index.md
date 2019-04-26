@@ -3,7 +3,7 @@ group: extensions
 title: Install Amazon Sales Channel
 ---
 
-The Amazon Sales Channel extension installs and adds Google Shopping features to Magento. To review additional information, see the [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html).
+The Amazon Sales Channel extension installs and adds features to integrate your Magento catalog with Amazon Seller Accounts to sell through the Amazon Marketplace. To review additional information, see the [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html).
 
 ## Requirements
 
@@ -71,7 +71,7 @@ You have the following options for configuring Amazon Sales Channel. You do not 
 
 1. For **Show Dashboard Chart**, set if you want to display or hide the chart. Your store dashboard provides a chart for reviewing data, sales, trends, etc.
 
-1. For **Clear Log History**, indicate the interval for clearing the collected logs. You have options for Once Daily, Once Weekly, and Once Monthly (default). 
+1. For **Clear Log History**, indicate the interval for clearing the collected logs. You have options for Once Daily, Once Weekly, and Once Monthly (default).
 
 1. Advanced users recommended: **Background Tasks (CRON) Source**. All background tasks are handled by CRON jobs using the Magento CRON. Advanced users can change this setting to Command Line (CLI) CRON.
 
