@@ -28,7 +28,7 @@ The release notes include:
 
 - {:.new} **Performance improvements for product operations** - Currently, when saving or deleting a product assigned to the Default Stock, the system synchronizes data with the Legacy Catalog Inventory. These improvements dramatically increased the performance and reduce the time to save for synchronous updates. A new [Legacy stock alignment](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) option runs these saves asynchronously for increased performance. We further increased performance for sorting sources when reviewing and selecting SSA options in shipments. <!-- https://github.com/magento-engcom/msi/pull/2056 https://github.com/magento-engcom/msi/pull/2090 -->
 
-- {:.new} **Added GraphQL support for MSI** - To support Inventory Management orders in GraphQL, Inventory Management includes a new `magento/module-inventory-graph-ql` module and attributes. The GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) includes the `only_x_left_in_stock` and `stock_status` attributes. <!-- https://github.com/magento-engcom/msi/pull/2124 -->
+- {:.new} **Added GraphQL support for Inventory Management** - This release installs a new `magento/module-inventory-graph-ql` module. The GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) also includes the `only_x_left_in_stock` and `stock_status` attributes for Inventory Management support. <!-- https://github.com/magento-engcom/msi/pull/2124 -->
 
 - {:.new} **Added a Partial Stock Transfer API** - Current bulk trasfer endpoints move all assigned quantity from an origin to destination source. The new `/rest/V1/inventory/bulk-partial-source-transfer` endpoint allows merchants to transfer partial stock from source-to-source as a bulk operation. Enter a request to the endpoint with the `sku`, `qty`, `origin_source_code`, and `destination_source_code` to transfer a specific amount of quantity. Transfers verify the source is assigned to the sku, enough quantity exists to transfer, etc. See [Inventory Bulk Actions](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/bulk-inventory.html). <!-- https://github.com/magento-engcom/msi/pull/2117 -->
 
@@ -45,11 +45,6 @@ The release notes include:
 - {:.fix} Resolved issue to correctly clear reservations and update product quantities after issuing a credit memo for an unshipped order. When you select the option to <!-- https://github.com/magento-engcom/msi/pull/2179 -->
 
 - {:.fix} Resolved issue to correctly save quantity for configurable product children when entering quantities during product creation. <!-- https://github.com/magento-engcom/msi/pull/2158 -->
-
-
-### v1.1.2
-
-{{site.data.var.im}} 1.1.2 (module version: inventory-composer-metapackage = 1.1.2)  is compatible with version 2.3.2 and 2.3.1 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 ### v1.1.0
 
