@@ -66,7 +66,7 @@ The value of the `source_code` parameter can contain upper and lower case letter
 
 **Payload**
 
-``` json
+```json
 {
    "source" : {
       "name" : "Central Shipping Center",
@@ -105,7 +105,7 @@ This example updates the contact information (`contact_name`, `email`, and `phon
 
 **Payload**
 
-``` json
+```json
 {
    "source" : {
       "name": "Central Shipping Center",
@@ -139,7 +139,7 @@ None
 
 **Response**
 
-``` json
+```json
 {
     "source_code": "central",
     "name": "Central Shipping Center",
@@ -177,7 +177,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {
