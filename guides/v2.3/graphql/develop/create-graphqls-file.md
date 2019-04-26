@@ -140,7 +140,7 @@ url_key: String @doc(description: "The url key assigned to the product")
 product_count: Int @doc(description: "The number of products")
 ```
 
-Use `@deprecated` directive to mark a query, mutation, or attribute as deprecated:
+Use the `@deprecated` directive to mark a query, mutation, or attribute as deprecated:
 
 ```text
 @deprecated(reason: "description")
