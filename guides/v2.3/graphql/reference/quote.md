@@ -289,7 +289,7 @@ mutation {
           postcode: "78758"
           country_code: "US"
           telephone: "8675309"
-          save_in_address_book: False
+          save_in_address_book: false
         }
       }
     }
