@@ -18,7 +18,7 @@ The following line in the `composer.json` metapackage installs Inventory Managem
         magento/inventory-composer-metapackage = ^1.1.0
 ```
 
-The {{site.data.var.im}} installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
+The {{site.data.var.im}} installation process makes the following changes to the `<Magento_installation_directory>/app/etc/config.php` file. A `1` value indicates the corresponding module is enabled.
 
 ```json
         'Magento_Inventory' => 1,
@@ -78,7 +78,7 @@ You may need to disable {{site.data.var.im}} modules to:
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
-To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json`:
+To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `config.php`:
 
 ```json
         'Magento_Inventory' => 0,
@@ -134,7 +134,7 @@ Currently, Order Management does not support {{site.data.var.im}} (future develo
 
 To enable {{site.data.var.im}} modules:
 
-1. Edit the `<Magento_installation_directory>/composer.json` file. 
+1. Edit the `<Magento_installation_directory>/app/etc/config.php` file. 
 1. Modify all Inventory modules from `0` to `1` to enable.
 1. Update the database:
 
