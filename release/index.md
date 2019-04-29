@@ -18,12 +18,12 @@ The following table describes the status of Magento software availability and wh
 | **Magento Shipping**                            | Available now                                                                                                                                        | Merchants on Magento 2.2.2+ can use the [onboarding process](https://account.magento.com/shipping/onboarding/start)          |
 | **Page Builder**                                | Available now                                                                                                                                        | Bundled with {{site.data.var.ee}} 2.3.x                                                                                      |
 | **Amazon Sales Channel**                        | Early access closed<br><br>Regional availability May 10, 2019 (US, Canada, Mexico)<br><br>EMEA and APAC availability expected in second half of 2019 | Magento Marketplace                                                                                                          |
-| **Google Shopping ads Channel**                 | Available now                                                                                                                                        | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)                                       |
+| **Google Shopping ads Channel 1.1.1**           | Available now for {{site.data.var.ece}} 2.2.4+ and 2.3.x                                                                                             | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)                                       |
 
 ## Compatibility
 
 Magento modules that have been built to be decoupled from the {{site.data.var.ee}} core release process; this allows us to release iterations of these modules faster to merchants who are willing to accept a little risk in exchange for earlier access to new features.
 
-The following table shows the release status of Magento extension versions relative to the 2.3.x release line of {{site.data.var.ee}}.
+The following table shows the release status of Magento extension versions relative to the 2.3.x release line of {{site.data.var.ee}} only.
 
 {% include compatibility.html data=site.data.compatibility %}
