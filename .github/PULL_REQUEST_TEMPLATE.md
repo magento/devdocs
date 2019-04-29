@@ -4,7 +4,7 @@
 
 This pull request (PR) ...
 
-## Affected devdocs pages
+## Affected DevDocs pages
 
 <!-- REQUIRED List the affected pages on devdocs.magento.com (URLs). Not needed for large numbers of files. -->
 
