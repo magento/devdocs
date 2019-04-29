@@ -23,5 +23,5 @@ If you are fixing a GitHub issue, note it using GitHub keyword format (https://h
 
 `master` is the default branch. Merged pull requests to `master` go live on the site automatically. Any requested changes to content on the `master` branch must be related to the released codebase. Any content related to future releases goes in the `develop` branch.
 
-See more details at the Contribution guidelines (https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
+See Contribution guidelines (https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) for more information.
 -->
