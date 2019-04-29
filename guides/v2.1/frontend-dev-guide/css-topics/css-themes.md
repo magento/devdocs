@@ -6,7 +6,7 @@ functional_areas:
   - Theme
 ---
 
-## What's in this topic {#fedg_css-in-themes_overview}
+## In this topic {#fedg_css-in-themes_overview}
 
 In the Magento application, CSS files are included in [layout files].
 
@@ -21,7 +21,7 @@ This topic describes how stylesheets are located by default in the Magento appli
 
 Conventionally, CSS and Less files are stored only in themes. {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} directories do not contain any default styles.
 
-In a [theme directory], stylesheets are stored in the following locations:
+In a [theme directory][], stylesheets are stored in the following locations:
 
 <table>
 <tr>
@@ -89,6 +89,18 @@ For example, the following illustrates how stylesheets are included in the defau
 </page>
 ```
 
+To include an external CSS file, add `<css src="URL to External Source" src_type="url" rel="stylesheet" type="text/css" />` to the list.
+
+```xml
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/styles-m.css" />
+        <css src="css/styles-l.css" media="screen and (min-width: 768px)"/>
+        <css src="css/print.css" media="print" />
+        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"  src_type="url" rel="stylesheet" type="text/css"  />
+    </head>
+</page>
+```
 
 {:.bs-callout .bs-callout-info}
 If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.
