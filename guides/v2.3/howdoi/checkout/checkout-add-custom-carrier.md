@@ -166,7 +166,7 @@ File specifies default values for custom shipping module options and shipping mo
                 <name>Custom Shipping Method Name</name>
                 <shipping_cost>10</shipping_cost>
                 <sallowspecific>0</sallowspecific>
-                <sort_order>999</sort_order>
+                <sort_order>15</sort_order>
                 <model>Vendor\CustomShipping\Model\Carrier\Customshipping</model>
             </customshipping>
         </carriers>
