@@ -134,8 +134,6 @@ To disable {{site.data.var.im}}, see the instructions for [Enable or disable mod
         'Magento_InventorySourceDeductionApi' => 0,
         'Magento_InventorySourceSelection' => 0,
         'Magento_InventorySourceSelectionApi' => 0,
-        'Magento_InventoryLegacySynchronization' => 0,
-        'Magento_InventoryLegacySynchronizationAdminUi' => 0,
 ```
 
 ## Upgrade {{site.data.var.im}}
