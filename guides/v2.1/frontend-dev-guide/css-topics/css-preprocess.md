@@ -93,7 +93,7 @@ For each CSS file included in the layouts, Less preprocessor:
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
+In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess), and reload the store pages to trigger compilation and publication.
 
 {:.bs-callout .bs-callout-info}
 You might also need to clear the `var/cache` and `var/view_preprocessed` directories.

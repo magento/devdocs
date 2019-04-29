@@ -43,13 +43,18 @@ For details about how to initialize the widget in a`.phtml` template, refer to t
 The modal widget has the following options:
 -   [autoOpen](#modal_autoopen)
 -   [buttons](#modal_buttons)
+-   [closeText](#modal_closeText)
 -   [clickableOverlay](#modal_clickableOverlay)
 -   [focus](#modal_focus)
 -   [innerScroll](#modal_innerScroll)
+-   [modalAction](#modal_modalAction)
 -   [modalClass](#modal_modalClass)
+-   [modalCloseBtn](#modal_modalCloseBtn)
+-   [modalContent](#modal_modalContent)
 -   [modalLeftMargin](#modal_modalLeftMargin)
 -   [responsive](#modal_responsive)
 -   [title](#modal_title)
+-   [trigger](#modal_trigger)
 -   [type](#modal_type)
 
 ### autoOpen {#modal_autoopen}
@@ -94,6 +99,14 @@ Close the modal window when a user clicks on the overlay.
 **Default value**: `true`
 
 
+### `closeText` {#modal_closeText}
+The close button text.
+
+**Type**: String 
+
+**Default value**: `$.mage.__('Close')`
+
+
 ### `focus` {#modal_focus}
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
 
@@ -117,6 +130,27 @@ Custom classes for modal window.
 
 **Default value**: empty
 
+### `modalAction` {#modal_modalAction}
+The selector for all the custom action buttons.
+
+**Type**: String 
+
+**Default value**: `[data-role="action"]`
+
+### `modalCloseBtn` {#modal_modalCloseBtn}
+The selector for all the elements that can close the modal.
+
+**Type**: String 
+
+**Default value**: `[data-role="closeBtn"]`
+
+### `modalContent` {#modal_modalContent}
+The selector for element that is used for the modal's content.
+
+**Type**: String 
+
+**Default value**: `[data-role="content"]`
+
 ### `modalLeftMargin` {#modal_modalLeftMargin}
 Sets a margin between slide modal windows.
 
@@ -138,6 +172,12 @@ Translated title for popup window.
 
 **Default value**: empty
 
+### `trigger` {#modal_trigger}
+The element that triggers the modal.
+
+**Type**: String 
+
+**Default value**: empty
 
 ### `type` {#modal_type}
 
@@ -151,7 +191,9 @@ The type of window: popup or slide.
 
 The modal widget has the following methods:
 -   [closeModal()](#modal_close)
+-   [keyEventSwitcher()](#modal_keyEventSwitcher)
 -   [openModal()](#modal_open)
+-   [toggleModal()](#modal_toggleModal)
 
 ### `openModal()` {#modal_open}
 Open the modal window.
@@ -159,6 +201,14 @@ Open the modal window.
 
 ### `closeModal()` {#modal_close}
 Close the modal window.
+
+
+### `keyEventSwitcher()` {#modal_keyEventSwitcher}
+Listens for key events and calls handler function if it exists.
+
+
+### `toggleModal()` {#modal_toggleModal}
+Toggles the modal window.
 
 ## Events {#modal_events}
 
@@ -193,15 +243,42 @@ Called when the modal window is closed.
 ### `opened` {#modal_opened}
 Called when the modal window is opened.
 
-### `always` {#modal_opened}
-....
-
 ## Keyboard navigation {#key_navigation}
 
 - the ESC key: close the current modal window
 - the TAB key: set focus to the next focusable element (looped inside the modal window)
 - the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)
 
+## Code sample
+
+The following example shows how to initialize the modal widget and pass options during the initialization.
+
+```html
+<button type="button" class="action" data-trigger="trigger">
+    <span data-bind="i18n: 'Click Here'"></span>
+</button>
+<div data-bind="mageInit: {
+        'Magento_Ui/js/modal/modal':{
+            'type': 'popup',
+            'title': 'Popup title',
+            'trigger': '[data-trigger=trigger]',
+            'responsive': true,
+            'buttons': [{
+                text: 'Submit',
+                class: 'action'
+            }]
+        }}">
+    <div class="content">
+        Popup Content
+    </div>
+</div>
+```
+
+### Result
+
+The result is a modal and a button (_Click Here_) that opens the modal.
+
+![Modal Widget]({{ site.baseurl }}/common/images/widget/modal-widget-result.png)
 
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
