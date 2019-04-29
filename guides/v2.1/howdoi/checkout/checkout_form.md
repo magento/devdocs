@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add a new input form to checkout
 subtitle: Customize Checkout
-menu_order: 8
+menu_order: 9
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout

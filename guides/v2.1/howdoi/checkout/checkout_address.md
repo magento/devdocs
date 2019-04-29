@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add a custom shipping address renderer
 subtitle: Customize Checkout
-menu_order: 10
+menu_order: 11
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
