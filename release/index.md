@@ -18,7 +18,7 @@ The following table describes the status of Magento software availability and wh
 | **Magento Shipping**                            | Available now                                                                                                                                        | Merchants on Magento 2.2.2+ can use the [onboarding process](https://account.magento.com/shipping/onboarding/start)          |
 | **Page Builder**                                | Available now                                                                                                                                        | Bundled with {{site.data.var.ee}} 2.3.x                                                                                      |
 | **Amazon Sales Channel**                        | Early access closed<br><br>Regional availability May 10, 2019 (US, Canada, Mexico)<br><br>EMEA and APAC availability expected in second half of 2019 | Magento Marketplace                                                                                                          |
-| **Google Shopping ads Channel**                 | Early access closed<br><br>General availability April 30, 2019                                                                                       | Magento Marketplace                                                                                                          |
+| **Google Shopping ads Channel**                 | Available now                                                                                                                                        | [Magento Marketplace](http://marketplace.magento.com/magento-google-shopping-ads.html)                                       |
 
 ## Compatibility
 
