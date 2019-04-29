@@ -205,12 +205,12 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
     /**
      * @var \Magento\Shipping\Model\Rate\ResultFactory
      */
-    protected $_rateResultFactory;
+    private $rateResultFactory;
 
     /**
      * @var \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory
      */
-    protected $_rateMethodFactory;
+    private $rateMethodFactory;
 
     /**
      * @param \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig
@@ -228,9 +228,10 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
         \Magento\Quote\Model\Quote\Address\RateResult\MethodFactory $rateMethodFactory,
         array $data = []
     ) {
-        $this->_rateResultFactory = $rateResultFactory;
-        $this->_rateMethodFactory = $rateMethodFactory;
         parent::__construct($scopeConfig, $rateErrorFactory, $logger, $data);
+
+        $this->rateResultFactory = $rateResultFactory;
+        $this->rateMethodFactory = $rateMethodFactory;
     }
 
     /**
@@ -246,10 +247,10 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
         }
 
         /** @var \Magento\Shipping\Model\Rate\Result $result */
-        $result = $this->_rateResultFactory->create();
+        $result = $this->rateResultFactory->create();
 
         /** @var \Magento\Quote\Model\Quote\Address\RateResult\Method $method */
-        $method = $this->_rateMethodFactory->create();
+        $method = $this->rateMethodFactory->create();
 
         $method->setCarrier($this->_code);
         $method->setCarrierTitle($this->getConfigData('title'));
