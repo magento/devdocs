@@ -516,7 +516,7 @@ Called before the content is opened.
 ### `dimensionsChanged` {#c_dimensionsChanged}
 Called after content is opened or closed.
 
-### Code sample
+#### Code sample
 
 The following example shows how to initialize the collapsible widget and pass options during the initialization.
 
