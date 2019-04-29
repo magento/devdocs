@@ -13,6 +13,7 @@ See the following documentation:
 - [{{site.data.var.im}} overview](https://devdocs.magento.com/guides/v2.3/inventory/index.html) for developer documentation
 - [Managing Inventory](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-management.html) for merchant information and instructions
 - [Install {{site.data.var.im}}]({{site.baseurl}}/extensions/inventory-management/) for module maintenance, updates, and upgrades
+- [Upcoming releases]({{site.baseurl}}/release/) for supported and compatible releases
 
 The release notes include:
 
@@ -22,15 +23,15 @@ The release notes include:
 
 ### v1.1.2
 
-{{site.data.var.im}} 1.1.2 (module version: inventory-composer-metapackage = 1.1.2) is compatible with version 2.3.2, 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
-
-- {:.new} **Performance improvements for product operations** - Currently, when saving or deleting a product assigned to the Default Stock, the system synchronizes data with the Legacy Catalog Inventory. These improvements dramatically increased the performance and reduced the time to save for synchronous updates. [Legacy stock alignment](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) gives you the option to run saves asynchronously for further increase performance. Additional performance improvements include sorting sources when reviewing and selecting SSA options in shipments. <!-- https://github.com/magento-engcom/msi/pull/2056 https://github.com/magento-engcom/msi/pull/2090 -->
-
-- {:.new} **Added GraphQL support for {{site.data.var.im}}** - This release installs a new `magento/module-inventory-graph-ql` module. The GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) also includes the `only_x_left_in_stock` and `stock_status` attributes for {{site.data.var.im}} support. <!-- https://github.com/magento-engcom/msi/pull/2124 -->
+{{site.data.var.im}} 1.1.2 (module version: `inventory-composer-metapackage = 1.1.2`) is supported with version 2.3.2 and compatible with version 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 - {:.new} **Added a Partial Stock Transfer API** - Current bulk trasfer endpoints move all assigned quantity from an origin to destination source. The new `/rest/V1/inventory/bulk-partial-source-transfer` endpoint allows merchants to transfer partial stock from source-to-source as a bulk operation. Enter a request to the endpoint with the `sku`, `qty`, `origin_source_code`, and `destination_source_code` to transfer a specific amount of quantity. Transfers verify the source is assigned to the sku, enough quantity exists to transfer, etc. See [Inventory Bulk Actions](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/bulk-inventory.html). <!-- https://github.com/magento-engcom/msi/pull/2117 -->
 
 - {:.new} **Added Reservation CLI** - New commands give you options to detect and resolve reservation inconsistencies. As orders submit and change status, {{site.data.var.im}} generates initial reservations and updates through compensation reservations. These commands return a list of detected inconsistencies by Order ID, SKU, and Stock ID and create reservations to resolve. See [Inventory CLI reference](https://devdocs.magento.com/guides/v2.3/inventory/inventory-cli-reference.html). <!-- https://github.com/magento-engcom/msi/pull/2199 https://github.com/magento-engcom/msi/pull/2184 https://github.com/magento-engcom/msi/pull/2171 https://github.com/magento-engcom/msi/pull/2148  -->
+
+- {:.new} **Performance improvements for sources and SSA options** -  Sorting and selecting sources during shipment caused performance degredation for stocks with high numbers of sources. This release provides significant performance improvements to list and sort available sources when reviewing and selecting SSA options in shipments. <!-- https://github.com/magento-engcom/msi/pull/2056 https://github.com/magento-engcom/msi/pull/2090 -->
+
+- {:.new} **Added GraphQL support for {{site.data.var.im}}** - This release installs a new `magento/module-inventory-graph-ql` module. The GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) also includes the `only_x_left_in_stock` and `stock_status` attributes for {{site.data.var.im}} support. <!-- https://github.com/magento-engcom/msi/pull/2124 -->
 
 - {:.new} **Simplified UI for Assigned Sources** - The Assigned Sources table in product pages has simplified content for easier updates and increased performance when displaying many sources. All sources list by source name (hover over for `source_code`).
 
@@ -46,7 +47,7 @@ The release notes include:
 
 ### v1.1.0
 
-{{site.data.var.im}} 1.1.0 (module version: inventory-composer-metapackage = 1.1.0)  is compatible with version 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+{{site.data.var.im}} 1.1.0 (module version: `inventory-composer-metapackage = 1.1.0`)  is supported and compatible with version 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. {{site.data.var.im}} 1.1.1 released only as a package name update, supported with version 2.3.1 and compatible with version 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 - {:.new} **Distance Priority Algorithm** — The Distance Priority Algorithm is a new, out-of-the-box Source Selection Algorithm for distance-based shipping recommendations. This algorithm compares the location of the shipping destination address with source locations to determine the closest source to fulfill shipments. The distance may be determined by either physical distance or the time spent traveling from one location to another, using imported geocode location data or Google directions (driving, walking, or bicycling). See [Configuring Distance Priority Algorithm](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-distance-priority.html) in the _Magento Admin User Guide_.
 
