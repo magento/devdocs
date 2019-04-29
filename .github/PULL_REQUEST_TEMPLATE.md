@@ -2,7 +2,7 @@
 
 <!-- REQUIRED Describe the goal and the type of changes this pull request covers. -->
 
-This pull request ...
+This pull request (PR) ...
 
 ## Affected devdocs pages
 
