@@ -53,7 +53,6 @@ Attribute | Type | Description
 `attribute_code` | String | A string that identifies the attribute
 `attribute_id` | String | The ID assigned to the attribute
 `id` | Int | The configurable option ID number assigned by the system
-`is_use_default` | Boolean | Indicates whether the option is the default
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
 `product_id` | Int | This is the same as a product's 'id' field
