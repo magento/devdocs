@@ -62,7 +62,7 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 #### To view the cron log:
 
 ```bash
-docker-compose run deploy bash -c "cat /var/www/magento/var/cron.log"
+docker-compose run deploy bash -c "cat /app/var/cron.log"
 ```
 
 ## Database container
@@ -87,14 +87,8 @@ You can share files easily between your machine and a Docker container by placin
 
 ## Sendmail service
 
-You can send emails from your Docker environment when you enable `sendmail` in the `docker/global.php` configuration file:
+You can send emails from your Docker environment when you enable `sendmail` in the `docker-compose.yml` configuration file:
 
-```terminal
+```yaml
 ENABLE_SENDMAIL=true
-```
-
-After you update a configuration file, you must convert the file to a Docker ENV file to include your updates the next time you launch your Docker environment:
-
-```bash
-./vendor/bin/ece-tools docker:config:convert
 ```
