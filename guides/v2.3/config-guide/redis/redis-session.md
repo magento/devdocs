@@ -51,7 +51,7 @@ where
 |session-save-redis-sentinel-servers|sentinel_servers|List of Redis Sentinel servers, comma separated|empty|
 |session-save-redis-sentinel-verify-master|sentinel_verify_master|Verify Redis Sentinel master status flag|0 (false)|
 |session-save-redis-sentinel-connect-retires|sentinel_connect_retries|Connection retries for sentinels|5|
-{:style="table-layout:auto;"}
+
 
 ### Example command
 
@@ -65,7 +65,7 @@ bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.
 
 Magento adds lines similar to the following to `<your Magento install dir>app/etc/env.php`:
 
-``` php?start_inline=1
+```php
     'session' =>
     array (
       'save' => 'redis',

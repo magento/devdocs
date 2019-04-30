@@ -37,7 +37,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Payload**
 
-``` json
+```json
 {
 	"paymentMethod": {
 		"method": "banktransfer"
