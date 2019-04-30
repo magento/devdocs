@@ -99,12 +99,10 @@ Now you are ready to run the tests.
 
 1. Copy `/dev/tests/api-functional/phpunit_rest.xml.dist` and `phpunit_soap.xml.dist` to `/dev/tests/api-functional/phpunit_rest.xml` and `phpunit_soap.xml`.
 
-	a. Specify your Magento instance URL as a value of `TESTS_BASE_URL` in `phpunit.xml`.
+2. Define the Magento instance URL as a value of `TESTS_BASE_URL`, Test Webservice User as value of `TESTS_WEBSERVICE_USER` and Test Webservice API key as value of `TESTS_WEBSERVICE_APIKEY` in copied file i.e. `phpunit_rest.xml` or `phpunit_soap.xml`.
 
-	b. Choose the required Web API adapter, `rest` or `soap`, to be used and specify it in `TESTS_WEB_API_ADAPTER`.
+3. Copy `/dev/tests/api-functional/config/install-config-mysql.php.dist` to `/dev/tests/api-functional/config/install-config-mysql.php`.
 
-2. Copy `/dev/tests/api-functional/config/install-config-mysql.php.dist` to `/dev/tests/api-functional/config/install-config-mysql.php`.
+4. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`. Specify the Magento database. The base URL to access this Magento instance must be specified copied file i.e. `phpunit_rest.xml` or `phpunit_soap.xml`.
 
-3. Configure your DB connection and install settings in `/dev/tests/api-functional/config/install-config-mysql.php`.  Specify the Magento database. The base URL to access this Magento instance must be specified in `phpunit.xml`.
-
-4. Run `phpunit` using the `/dev/tests/api-functional/phpunit.xml ` configuration file.
+5. Run `phpunit` using the `/dev/tests/api-functional/phpunit_rest.xml` or `/dev/tests/api-functional/phpunit_soap.xml` configuration file.
