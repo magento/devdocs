@@ -54,13 +54,14 @@ In this file, add the following code, having replaced placeholders with your the
 ```php
 <?php
 /**
- * Copyright © Magento, Inc. All rights reserved.
+ * Copyright © 2016 Magento. All rights reserved.
  * See COPYING.txt for license details.
  */
-
-use \Magento\Framework\Component\ComponentRegistrar;
-
-ComponentRegistrar::register(ComponentRegistrar::THEME, 'adminhtml/%vendor_dir/your_theme_dir%', // Example: 'adminhtml/Magento/backend', __DIR__);  
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::THEME,
+    'adminhtml/%vendor_dir/your_theme_dir%', // Example: 'adminhtml/Magento/backend'
+    __DIR__
+);   
 ```
 
 ## Optionally add `composer.json` {#make_composer}
