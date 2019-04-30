@@ -39,7 +39,7 @@ The release notes include:
 
 - {:.new} **Export Aggregated Stock Service** - This release provides a new export aggregated stock service (retaining reservations in the system) to support external Sales Channels like Amazon, eBay, Google Shopping ads, etc.  <!-- https://github.com/magento-engcom/msi/pull/2067 -->
 
-- {:.fix} Added `source_code` to the response for the `/rest/V1/shipments` REST endpoint. <!-- https://github.com/magento-engcom/msi/pull/2142 -->
+- {:.fix} Added `source_code` to the response for the GET `/V1/shipments` REST endpoint. <!-- https://github.com/magento-engcom/msi/pull/2142 -->
 
 - {:.fix} Resolved issue to correctly clear reservations and update product quantities after issuing a credit memo for an unshipped order. When you select the option to <!-- https://github.com/magento-engcom/msi/pull/2179 -->
 
