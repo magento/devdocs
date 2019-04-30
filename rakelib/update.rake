@@ -88,5 +88,5 @@ namespace :update do
   task all: %w[devdocs subrepos]
 
   desc 'Update subrepositories only'
-  task subrepos: %w[m1 mbi pb mftf v2_0]
+  task subrepos: %w[m1 mbi pb pbm mftf v2_0]
 end
