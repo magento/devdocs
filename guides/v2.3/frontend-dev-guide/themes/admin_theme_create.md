@@ -60,7 +60,7 @@ In this file, add the following code, having replaced placeholders with your the
 
 use \Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::THEME, 'adminhtml/Magento/backend', __DIR__); 
+ComponentRegistrar::register(ComponentRegistrar::THEME, 'adminhtml/%vendor_dir/your_theme_dir%', // Example: 'adminhtml/Magento/backend', __DIR__);  
 ```
 
 ## Optionally add `composer.json` {#make_composer}
