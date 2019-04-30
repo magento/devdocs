@@ -44,9 +44,9 @@ Where:
 - `<Vendor>/<theme>`: relative path to the theme directory
 
 To uninstall theme via phpMyAdmin in following manners:
-- Search the `theme` table from the database. 
-- you can view all the theme list.  
-- Delete spefied `theme` from the list.
+1. Search the `theme` table from the database. 
+2. you can view all the theme list.  
+3. Delete spefied `theme` from the list.
 
 ## Uninstall a theme package {#uninstall_theme_pack}
 
