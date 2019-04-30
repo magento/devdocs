@@ -42,7 +42,7 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
         InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
 
-5. Add the updated composer.json and composer.lock file to Git:
+1.  Add and commit the updated `composer.json` and `composer.lock` files.
 
         git add composer.json composer.lock && git commit -a -m "b2b"
 5. Enable all missing modules, including B2B, for updating.
