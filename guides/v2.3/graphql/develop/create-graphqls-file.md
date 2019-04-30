@@ -139,3 +139,19 @@ sku: FilterTypeInput @doc(description: "A number or code assigned to a product t
 url_key: String @doc(description: "The url key assigned to the product")
 product_count: Int @doc(description: "The number of products")
 ```
+
+Use the `@deprecated` directive to mark a query, mutation, or attribute as deprecated:
+
+```text
+@deprecated(reason: "description")
+```
+
+For example:
+
+```text
+type Query {
+    cmsPage (
+        id: Int @doc(description: "Id of the CMS page") @deprecated(reason: "Use `identifier`") @doc(description: "The CMS page ...")
+        identifier: String @doc(description: "Identifier of the CMS page")
+...
+```
