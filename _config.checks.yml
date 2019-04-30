@@ -11,6 +11,5 @@ html-proofer:
   :parallel:
     :in_processes: 3
   :file_ignore:
-  - !ruby/regexp /guides\/m1x/
   - !ruby/regexp /guides\/v2\.0/
   - !ruby/regexp /videos\//
