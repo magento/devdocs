@@ -36,7 +36,9 @@ You need to add the module to `composer.json`. All extensions and modules must b
 2. Change to your local development environment root directory.
 1.  Install the B2B module using composer.
 
-        composer require magento/extension-b2b
+    ```bash
+    composer require magento/extension-b2b
+    ```
 
     You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, do not introduce additional spaces. Spaces could cause the following error:
 
