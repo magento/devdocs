@@ -24,23 +24,23 @@ Now we have `uiRegistry` instance in the `registry` variable. We can use it to g
 var component = registry.get('%componentName%');
 ```
 
-The `uiRegistry` instance allows to search the component by some property. 
-If you know some unique property of the component that you need to find, you can use the following code to get this component:
+The `uiRegistry` instance allows you to search for components using property values. 
+If you know a unique property value of a component that you need to find, you can use the following code to get the component:
 
 ```js
 var component = registry.get('%property% = %propertyValue%');
 ```
 
-**Example of usages**
+**Examples**
 
-The code below lists how to get a component by a full component name:
+The following code shows how to get a component by a full component name:
 
 ```js
 // Admin > Products > Catalog > Add Product
 var fieldName = registry.get('product_form.product_form.product-details.container_name.name');
 ```
 
-The code below lists how to get a component by some property value:
+The following code shows how to get a component by a property value:
 
 ```js
 // Admin > Products > Catalog > Add Product
@@ -49,7 +49,7 @@ var fieldName = registry.get('index = name');
 fieldName = registry.get('inputName = product[name]');
 ```
 
-By this code, you will obtain the same JS component as with using the full component name.
+The previous example gets the same JS component as using the full component name.
 
 Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.
 
