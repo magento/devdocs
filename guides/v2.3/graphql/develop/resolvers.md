@@ -68,6 +68,7 @@ Syntax option | Description
 `@resolver(class)` | The class of the resolver
 `@doc(description)` | Describes the purpose of the mutation
 `@deprecated(reason: "description")` | Use `@deprecated` to mark a query, mutation, or attribute as deprecated
+`@cache(cacheTag: "cache_tag_name", cacheIdentity: "class")` | Use `@cache` to cache a particular content. Use `@cache(cacheable: false)` to avoid cache.
 
 ### Resolver class
 Use the following sample code as a template for the GraphQl resolver query/mutation class

@@ -155,3 +155,35 @@ type Query {
         identifier: String @doc(description: "Identifier of the CMS page")
 ...
 ```
+
+Use `@cache(cacheTag, cacheIdentity)` to cache a resolved content:
+
+```text
+@cache(cacheTag: "cache_tag_name", cacheIdentity: "class")
+```
+
+For example:
+
+```text
+type Query {
+    cmsPage (
+
+        ...
+
+    ): CmsPage @resolver(class: "Magento\\CmsGraphQl\\Model\\Resolver\\Page") @cache(cacheTag: "cms_p", cacheIdentity: "Magento\\CmsGraphQl\\Model\\Resolver\\Page\\Identity") @doc(description: "The CMS page ...")
+...
+```
+
+If a result should not be cached then use: 
+
+```text
+@cache(cacheable: false)
+```
+
+For example:
+
+```text
+type Query {
+    customerOrders: CustomerOrders @resolver(class: "Magento\\SalesGraphQl\\Model\\Resolver\\Orders") @doc(description: "List of customer orders") @cache(cacheable: false)
+}
+```
