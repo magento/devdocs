@@ -44,7 +44,9 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
 1.  Add and commit the updated `composer.json` and `composer.lock` files.
 
-        git add composer.json composer.lock && git commit -a -m "b2b"
+    ```bash
+    git add composer.json composer.lock && git commit -a -m "install b2b module"
+    ```
 5. Enable all missing modules, including B2B, for updating.
 
         ./vendor/bin/ece-tools module:refresh
