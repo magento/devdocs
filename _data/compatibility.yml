@@ -1,18 +1,30 @@
 versions:
+  - 2.2.4+
   - 2.3.0
   - 2.3.1
 extension:
+  - 
+    name: Google Shopping ads Channel
+    versions:
+      -
+        name: 1.1.1
+        support:
+          2.2.4+: general availability
+          2.3.0: general availability
+          2.3.1: general availability
   -
     name: Magento Shipping
     versions:
       - 
         name: 1.4.6
         support:
+          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
       - 
         name: 1.5.1
         support:
+          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
   -
@@ -21,11 +33,13 @@ extension:
       - 
         name: 1.1.0
         support:
+          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
       - 
         name: 1.0.3
         support:
+          2.2.4+: not supported
           2.3.0: general availability
           2.3.1: general availability
   -
@@ -34,5 +48,6 @@ extension:
       - 
         name: 1.0.0
         support:
+          2.2.4+: not supported
           2.3.0: open beta
           2.3.1: general availability
