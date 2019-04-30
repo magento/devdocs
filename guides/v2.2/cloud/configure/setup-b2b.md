@@ -34,7 +34,7 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
 1. Open a terminal application.
 2. Change to your local development environment root directory.
-3. Run composer to install B2B module into your branch.
+1.  Install the B2B module using composer.
 
         composer require magento/extension-b2b
 
