@@ -22,7 +22,9 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 | MariaDB       | `--db`     | 10.0, 10.1, 10.2
 | Elasticsearch | `--es`     | 1.7, 2.4, 5.2, 6.5
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
-| Redis         | `--redis`  | 3.0, 3.2, 4.0, 5.0
+| Redis         | `--redis`  | 3.2, 4.0, 5.0
+
+The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
 
 There is a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
