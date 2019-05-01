@@ -20,9 +20,6 @@ baseurl: ""
 version: "2.3"
 versions:
    -
-      name: "2.0"
-      url: /guides/v2.0/
-   -
       name: "2.1"
       url: /guides/v2.1/
    -
@@ -99,11 +96,6 @@ defaults:
       feedback_link: false
   -
     scope:
-      path: guides/v2.0
-    values:
-      sitemap: false
-  -
-    scope:
       path: guides/v2.1
     values:
       sitemap: false
@@ -177,6 +169,8 @@ algolia:
   files_to_exclude:
     - guides/m1x/**/*.html
     - guides/m1x/**/*.md
+    - guides/v2.0/**/*.html
+    - guides/v2.0/**/*.md
     - swagger
     - redoc
   # Index HTML elements, especially code samples.
@@ -197,11 +191,6 @@ check_links: true
 #
 # Magento 2 repository variable
 mage2bloburl: https://github.com/magento/magento2/blob/
-
-# 2.0 variables
-gdeurl: /guides/v2.0/
-githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
-mage2000url: https://github.com/magento/magento2/blob/2.0/
 
 # 1.x variables
 m1xgdeurl: /guides/m1x
@@ -238,6 +227,7 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
+  - guides/v2.0/
   - package.json
   - package-lock.json
   - Rakefile
