@@ -34,14 +34,11 @@ To install a theme manually:
 
 To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) topic.
 
-To install composer based theme:
-
 - Composer-based modules/themes will be located in the vendor/ directory and it can be stored anywhere in root.
 
-- Manually installed themes are stored in the app/design directory. If a theme is loaded through
-Composer, that theme can be located anywhere on the file system. 
+- Manually installed themes are stored in the app/design directory. If a theme is loaded through Composer, that theme can be located anywhere on the file system. 
 
-- When the application starts up, Composer executes each file included in the autoload.files section. registration.php then registers itself as a theme.
+- When the application starts up, Composer executes each file included in the `autoload.files` section. `registration.php` then registers itself as a theme.
 
 ## Install a theme as an extension
 
