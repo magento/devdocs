@@ -2,7 +2,7 @@ label: Page Builder
 versionless: true
 pages:
 - label: What is Page Builder?
-  url: /page-builder/docs/index.html
+  url: /page-builder/docs/
   versionless: true
 
 - label: 'Getting started'
