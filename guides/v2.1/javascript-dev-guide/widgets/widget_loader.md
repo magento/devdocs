@@ -57,7 +57,6 @@ An object that contains translations for loader text:
 Loader is subscribed to the following events:
 -   [processStart](#l_processStart)
 -   [processStop](#l_processStop)
--   [texts](#l_texts)
 
 ### `processStart` {#l_processStart}
 Display the loader. Can be triggered on any page element.
