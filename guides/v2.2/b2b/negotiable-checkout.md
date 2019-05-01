@@ -39,7 +39,7 @@ This call takes a full shipping address as input and estimates shipping fees. It
 
 **Sample Usage**
 
-`POST /V1/negotiable-carts/86/estimate-shipping-methods`
+`POST <host>/rest/<store_code>/V1/negotiable-carts/86/estimate-shipping-methods`
 
 **Payload**
 
@@ -90,7 +90,7 @@ This call takes an address ID as input and estimates shipping fees. It returns a
 
 **Sample Usage**
 
-`POST /V1/negotiable-carts/86/estimate-shipping-methods-by-address-id`
+`POST <host>/rest/<store_code>/V1/negotiable-carts/86/estimate-shipping-methods-by-address-id`
 
 **Payload**
 
@@ -129,7 +129,7 @@ In this call, you specify the shipping and billing addresses, as well as the sel
 
 **Sample Usage**
 
-`POST /V1/negotiable-carts/86/shipping-information`
+`POST <host>/rest/<store_code>/V1/negotiable-carts/86/shipping-information`
 
 **Payload**
 
@@ -357,7 +357,7 @@ This call assigns a billing address to the specified negotiable quote.
 
 **Sample Usage**
 
-`POST /V1/negotiable-carts/86/billing-address`
+`POST <host>/rest/<store_code>/V1/negotiable-carts/86/billing-address`
 
 **Payload**
 
@@ -390,9 +390,9 @@ This call assigns a billing address to the specified negotiable quote.
 
 This call returns the billing address for the specified negotiable quote.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/negotiable-carts/86/billing-address`
+`GET <host>/rest/<store_code>/V1/negotiable-carts/86/billing-address`
 
 **Payload**
 
@@ -443,7 +443,7 @@ If the initial quote applies a coupon to the totals, Magento ignores the coupon 
 
 **Sample Usage**
 
-PUT /V1/negotiable-carts/6/coupons/SAVE5
+`PUT <host>/rest/<store_code>/V1/negotiable-carts/6/coupons/SAVE5`
 
 **Payload**
 
@@ -474,7 +474,7 @@ If the initial quote applies a gift card to the totals, Magento ignores the gift
 
 **Sample Usage**
 
-`POST /V1/negotiable-carts/6/giftCards`
+`POST <host>/rest/<store_code>/V1/negotiable-carts/6/giftCards`
 
 **Payload**
 
@@ -498,7 +498,7 @@ This call removes a gift card that has been applied to a negotiable quote.
 
 **Sample Usage**
 
-`DELETE /V1/negotiable-carts/6/giftCards/00HELHQED6RV`
+`DELETE <host>/rest/<store_code>/V1/negotiable-carts/6/giftCards/00HELHQED6RV`
 
 **Payload**
 
@@ -530,7 +530,7 @@ This call sets payment information and the billing address for the negotiable qu
 
 **Sample Usage**
 
-`POST /V1/negotiable-carts/86/set-payment-information`
+`POST <host>/rest/<store_code>/V1/negotiable-carts/86/set-payment-information`
 
 **Payload**
 
@@ -567,7 +567,7 @@ This call sets payment information and the billing address for the negotiable qu
 
 **Sample Usage**
 
-`POST /V1/negotiable-carts/86/payment-information`
+`POST <host>/rest/<store_code>/V1/negotiable-carts/86/payment-information`
 
 **Payload**
 
@@ -604,7 +604,7 @@ This call returns returns payment information and all information from the `tota
 
 **Sample Usage**
 
-`GET /V1/negotiable-carts/86/payment-information`
+`GET <host>/rest/<store_code>/V1/negotiable-carts/86/payment-information`
 
 **Payload**
 
@@ -793,7 +793,7 @@ GET /V1/negotiable-carts/:cartId/totals
 
 **Sample Usage**
 
-`GET /V1/negotiable-carts/86/totals`
+`GET <host>/rest/<store_code>/V1/negotiable-carts/86/totals`
 
 **Payload**
 

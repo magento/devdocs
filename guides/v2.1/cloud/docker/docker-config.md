@@ -20,10 +20,10 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 | PHP           | `--php`    | 7.1           | 7.0, 7.1, 7.2
 | NGINX         | `--nginx`  | latest        | 1.9, latest
 | MariaDB       | `--db`     | 10            | 10.0, 10.1, 10.2
-| Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2
+| Elasticsearch | `--es`     | 2.4           | 1.7, 2.4, 5.2, 6.5
 | RabbitMQ      | `--rmq`    | 3.5           | 3.5, 3.7
-| Redis         | `--redis`  | 3.2           | 3.0, 3.2, 4.0
-{:style="table-layout:auto;"}
+| Redis         | `--redis`  | 3.2           | 3.0, 3.2, 4.0, 5.0
+
 
 This version also provides a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
 
@@ -32,14 +32,22 @@ This version also provides a `docker:config:convert` command to convert PHP conf
 You must have the following software installed on your local workstation:
 
 -  PHP version 7.0 or later
+    -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
+    -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
 -  [Composer](https://getcomposer.org)
 -  [Docker](https://www.docker.com/get-started)
 
+Before you begin, you must add the following hostname to your `/etc/hosts` file:
+
+```
+127.0.0.1 magento2.docker
+```
+
 #### To launch Docker:
 
-1.  Download a template from the [Magento Cloud repository](https://github.com/magento/magento-cloud).
+1.  Download a Magento application template from the [Magento Cloud repository](https://github.com/magento/magento-cloud). Be careful to select the branch that corresponds with the Magento version.
 
-1.  Add your credentials to the `auth.json` file.
+1.  Add your [Magento access credentials]({{page.baseurl}}/install-gde/prereq/connect-auth.html) to the `auth.json` file.
 
 1.  Install the template dependencies.
 
@@ -62,6 +70,8 @@ You must have the following software installed on your local workstation:
     ```bash
     cp docker/global.php.dist docker/global.php
     ```
+
+1.  _Optional_: Configure the Docker global variables in the `docker/global.php` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1. Convert the PHP configuration files to Docker ENV files.
 
@@ -101,9 +111,9 @@ You must have the following software installed on your local workstation:
 
 1.  Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
 
-    -  [`http://localhost`](http://localhost)
+    -  [`http://magento2.docker`](http://magento2.docker)
 
-    -  [`https://localhost`](https://localhost)
+    -  [`https://magento2.docker`](https://magento2.docker)
 
 #### To stop containers and restore them afterwards:
 

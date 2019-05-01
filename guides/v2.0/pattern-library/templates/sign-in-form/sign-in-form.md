@@ -1,1 +1,0 @@
-../../../../v2.1/pattern-library/templates/sign-in-form/sign-in-form.md

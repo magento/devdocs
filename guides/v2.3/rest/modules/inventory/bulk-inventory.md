@@ -42,11 +42,11 @@ Name | Description | Type | Requirements
 `originSource` | The current source of the SKUs | String | Required
 `destinationSource` | The target source for the SKUs. This source must be already defined. | String | Required
 `unassignFromOrigin` | If `true`, the current source is removed as a source for the products. If `false`, the original source is retained, but the products are marked as being out of stock with a quantity of 0. | Boolean | Required
-{:style="table-layout:auto;"}
+
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-transfer`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-transfer`
 
 **Payload**
 
@@ -80,11 +80,11 @@ Name | Description | Type | Requirements
 --- | --- | --- | ---
 `skus` | A comma-separated list of existing SKUs to assign | Array | Required
 `sourceCodes` | A comma-separated list of existing sources | Array | Required
-{:style="table-layout:auto;"}
+
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-assign`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-assign`
 
 **Payload**
 
@@ -119,7 +119,7 @@ If you unassign all sources from a product, you will not be able to sell the pro
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-unassign`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-unassign`
 
 **Payload**
 

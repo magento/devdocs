@@ -23,7 +23,7 @@ This example creates a full invoice.
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/order/3/invoice`
+`POST <host>/rest/us/V1/order/3/invoice`
 
 where `3` is the `orderid`
 
@@ -39,7 +39,7 @@ where `3` is the `orderid`
 
 **Payload**
 
-``` json
+```json
 {
   "capture": true,
   "notify": true

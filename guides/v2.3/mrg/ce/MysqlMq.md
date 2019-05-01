@@ -7,5 +7,3 @@ title: Magento_MysqlMq module
 # MysqlMq
 
 **MysqlMq** provides message queue implementation based on MySQL.
-
-

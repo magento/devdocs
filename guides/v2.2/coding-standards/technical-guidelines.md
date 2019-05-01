@@ -58,8 +58,9 @@ Use [RFC2119] to interpret keywords like:
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+   <td markdown="1">
+           
+```php
 class Config
 {
     private $data;
@@ -74,10 +75,11 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td markdown="1">
+    
+```php
 class Config
 {
     private $data;
@@ -91,9 +93,9 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 ---
@@ -104,7 +106,8 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+
+```php
 class Composite
 {
     /**
@@ -129,6 +132,7 @@ class Composite
     }
 }
 ```
+
 {% endcollapsible %}
 ---
 
@@ -142,8 +146,9 @@ class Composite
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+       <td markdown="1">
+           
+```php
 
 class Config
 {
@@ -155,10 +160,11 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td markdown="1">
+    
+```php
 class Config
 {
     private $fileReader;
@@ -180,9 +186,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+  </td>
+ </tr>
 </table>
 {% endcollapsible %}
 
@@ -198,8 +205,9 @@ class Config
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+            
+```php
 interface SessionAdapterInterface
 {}
 
@@ -213,10 +221,11 @@ class SessionManager
 }
 
 // Breaks polymorphism principle, restricts what types can be passed at the runtime.
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td markdown="1">
+    
+```php
 interface SessionAdapterInterface
 {}
 
@@ -228,9 +237,9 @@ class SessionManager
     public function __construct(SessionAdapterInterface $sessionAdapter)
     {}
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 
@@ -246,8 +255,9 @@ class SessionManager
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+            
+```php
 class AbstractController extends Action
 {
     // ...
@@ -279,10 +289,11 @@ class Edit extends AbstractController
 
 // Smaller classes, one responsibility, more flexible, easy to understand, more testable.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td markdown="1">
+    
+```php
 class Edit extends Action
 {
     public function __constructor(
@@ -297,11 +308,12 @@ class Edit extends Action
         $hash = $this->hashGenerator->generateHash($request);
     }
 }
+```
 
-{% endhighlight %}
-        </td>
-    </tr>
+   </td>
+  </tr>
 </table>
+
 {% endcollapsible %}
 
 ---
@@ -328,8 +340,9 @@ class Edit extends Action
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+            
+```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
 echo $url->get('custom/path'); // prints full URL
@@ -340,10 +353,11 @@ echo $url->get('custom/path'); // Throws exception, which makes issue smaller. I
 
 // Method with out parameters that doesn’t return anything could be sign of temporal coupling.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td markdown="1">
+    
+```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
 
@@ -353,9 +367,9 @@ echo $url->get($baseUrl, 'custom/path');
 
 // Only one way to use API, no temporal coupling.
 
-{% endhighlight %}
-        </td>
-    </tr>
+```
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 
@@ -368,8 +382,9 @@ echo $url->get($baseUrl, 'custom/path');
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+            
+```php
 class Edit extends Action
 {
     public function execute()
@@ -389,10 +404,11 @@ class View extends Template
     }
 }
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+   </td>
+   <td markdown="1">
+    
+```php
 class Edit extends Action
 {
     public function execute()
@@ -413,7 +429,7 @@ class View extends Template
 }
 // More flexible, no dependencies between classes, no temporal coupling.
 
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -496,7 +512,9 @@ class View extends Template
 
 5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a `try` block and the corresponding `finally` block. In the `finally` sections, all resources SHOULD be properly released.
 
-5.17. `LocalizedException` SHOULD only be thrown in the Presentation layer (Controllers, Blocks).
+5.17. Exceptions which need to be displayed to the user MUST be sub-types of `LocalizedException`. Any other types of exceptions MUST be wrapped with `LocalizedException` before being displayed to the user.
+
+5.18. `LocalizedException`s SHOULD be thrown in the presentation layer only.
 
 ## 6. Application layers
 
@@ -536,7 +554,7 @@ class View extends Template
 
 6.4.1. Location of API interfaces
 
-6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules. The other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module namess must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
+6.4.1.1. Service contract interfaces SHOULD be placed in separate API modules, except when an existing module already contains Service Contracts in the ` Api` folder. Other modules will depend on the API module, and implementations could be easily swapped via `di.xml`. API module names must end with the `Api` suffix. For example, if a module is named `MyModule`, its APIs SHOULD be declared in a module named `MyModuleApi`.
 
 6.4.1.2. Service interfaces that should be exposed as web APIs MUST be placed under the `MyModuleApi/Api` directory. Service data interfaces MUST be placed under `MyModuleApi/Api/Data`. Directories under `MyModuleApi/Api` SHOULD NOT be nested.
 
@@ -609,6 +627,8 @@ class View extends Template
 6.4.4.11. Domain/business logic MUST be executed on the service contracts layer.
 
 6.4.4.12. Any customizations to the domain/business logic MUST be executed on the Service Contracts layer, and so MUST be declared in the `global` area of configuration.
+
+6.4.4.13. A service contract MUST NOT rely on the execution context (application area). The service implementation MUST NOT depend on the application state.
 
 ## 7. Configuration
 
@@ -751,7 +771,7 @@ class View extends Template
 14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+```php
 class SampleEventObserverThatModifiesInputs
 {
     /**
