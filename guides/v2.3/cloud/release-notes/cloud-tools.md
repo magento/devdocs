@@ -32,15 +32,19 @@ The release notes include:
 
 ## v2002.0.18
 
+-   **Docker Updates**—
+
+    -   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
+
+    -   {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
+
+    -   {:.new}<!-- MAGECLOUD-3152 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
+
+    -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error.
+
 -   {:.new}<!-- MAGECLOUD-3135 -->**New environment variable**—Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
 
--   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
-
--   {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
-
 -   {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
-
--   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error. 
 
 -   {:.new}<!-- MAGECLOUD-3205 -->**New environment variable**—The new **ELASTICSUITE\_CONFIGURATION** environment variable retains your customized service settings between deployments. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#elasticsuite_configuration) content.
 

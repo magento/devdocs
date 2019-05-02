@@ -1,6 +1,6 @@
 ---
 group: cloud-guide
-title: Launch Docker configuration
+title: Launch Docker
 redirect_from:
   - /guides/v2.1/cloud/reference/docker-config.html
   - /guides/v2.2/cloud/reference/docker-config.html
@@ -11,9 +11,26 @@ functional_areas:
   - Configuration
 ---
 
-The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker compose configuration and deploy {{site.data.var.ece}} in a Docker container. 
+The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
-{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator, you can overwrite a service version with the following optional parameters:
+## Launch modes
+
+Mode is an additional configuration option for the Docker configuration generator (the `docker:build` command). You can launch your Docker environment in one of two modes:
+
+-   **production**—Production mode is the default configuration setting for launching the Docker environment. This option builds the Docker environment in production mode and verifies configured service versions.
+-   **developer**—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
+
+For example, the following command starts the Docker configuration generator for the developer mode:
+
+```bash
+./vendor/bin/ece-tools docker:build --mode="developer"
+```
+
+To skip the interactive mode, use the `-n, --no-interaction` option.
+
+## Service versions
+
+{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator (the `docker:build` command), you can overwrite a service version with the following optional parameters:
 
 | Service       | Key        | Available versions
 | ------------- | ---------- | ------------------
@@ -24,15 +41,13 @@ The `{{site.data.var.ct}}` package v2002.0.13 or later deploys to a read-only fi
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
 | Redis         | `--redis`  | 3.0, 3.2, 4.0, 5.0
 
-To adjust additional configuration, use next options:
+For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2:
 
-| Option       | Key              | Available values
-| ------------ | ---------------- | ------------------
-| Mode         | `--mode`, `-m`   | production, developer
+```bash
+./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
+```
 
-There is a `docker:config:convert` command to convert PHP configuration files to Docker ENV files.
-
-#### Prerequisites
+### Prerequisites
 
 You must have the following software installed on your local workstation:
 
@@ -41,6 +56,7 @@ You must have the following software installed on your local workstation:
     -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
 -  [Composer](https://getcomposer.org)
 -  [Docker](https://www.docker.com/get-started)
+-  [docker-sync](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)—file synchronization is required for developer mode
 
 Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
@@ -60,7 +76,11 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     composer install
     ```
 
-##### Production mode (default)
+1.  Continue with steps for [Production mode](#production-mode) or [Developer mode](#developer-mode).
+
+### Production mode
+
+Continue launching your Docker environment in the default _production_ mode.
 
 1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
 
@@ -79,6 +99,7 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
     ```
+
     This command generates the following Docker ENV files:
 
     * `docker/config.env`
@@ -94,7 +115,7 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     docker-compose up -d
     ```
 
-1. Install Magento in your Docker environment.
+1.  Install Magento in your Docker environment.
 
     - Build Magento in the Docker container:
 
@@ -111,14 +132,11 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     {: .bs-callout .bs-callout-info}
     For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
-##### Developer mode (`--mode="developer"`)
+### Developer mode
 
-This mode is designed to support active development on your local environment. It requires manual installation of `docker-sync` for file synchronization.
-In this mode you will have full writable filesystem permissions. It generally may be slower than default mode because of additional file synchronization operations.
+Continue launching your Docker environment in the _developer_ mode. The developer mode supports active development on your local environment.
 
-1.  Install `docker-sync`
-
-    [Follow instruction](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html)
+1.  Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html). If you have it installed, continue to the next step.
 
 1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
 
@@ -132,11 +150,12 @@ In this mode you will have full writable filesystem permissions. It generally ma
     cp docker/config.php.dist docker/config.php
     ```
 
-1. _Optional_: Convert the PHP configuration files to Docker ENV files.
+1.  _Optional_: Convert the PHP configuration files to Docker ENV files.
 
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
     ```
+
     This command generates the following Docker ENV files:
 
     * `docker/config.env`
@@ -146,7 +165,7 @@ In this mode you will have full writable filesystem permissions. It generally ma
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
-1. Run `docker-sync`
+1.  Start the file synchronization.
 
     ```bash
     docker-sync start
@@ -162,35 +181,33 @@ In this mode you will have full writable filesystem permissions. It generally ma
 
     - Deploy Magento in the Docker container:
 
-    ```bash
-    docker-compose up -d && \
-    docker-compose run deploy cloud-deploy && \
-    docker-compose run deploy magento-command deploy:mode:set developer && \
-    docker-compose run deploy magento-command cache:clean
-    ```
-    
+        ```bash
+        docker-compose up -d && \
+        docker-compose run deploy cloud-deploy && \
+        docker-compose run deploy magento-command deploy:mode:set developer && \
+        docker-compose run deploy magento-command cache:clean
+        ```
+
     {: .bs-callout .bs-callout-info}
-    This mode does note require `build` operation.
+    Developer mode does not require the `build` operation.
 
-#### Access your local Magento Cloud template by opening one of the following secure URLs in a browser:
+## Access local Magento Cloud template
+ 
+ by opening one of the following secure URLs in a browser:
 
-    -  [`http://magento2.docker`](http://magento2.docker)
+-  [`http://magento2.docker`](http://magento2.docker)
 
-    -  [`https://magento2.docker`](https://magento2.docker)
+-  [`https://magento2.docker`](https://magento2.docker)
 
-#### To stop containers and restore them afterwards:
+## Stop and start containers
 
-Suspend containers to continue your work later.
+You can stop containers and restore them afterwards using the following methods.
 
-```bash
-docker-compose stop
-```
-
-Start containers from suspended state.
-
-```bash
-docker-compose start
-```
+Action | Command
+------ | -------
+Suspend containers to continue your work later | `docker-compose stop`
+Start containers from a suspended state | `docker-compose start`
+Stop the synchronization daemon | `docker-sync stop`
 
 #### To stop and remove the Docker configuration:
 
