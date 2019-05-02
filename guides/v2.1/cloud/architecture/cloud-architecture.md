@@ -30,6 +30,7 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
           <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Pro</a></li>
+          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
     </tr>
@@ -90,11 +91,7 @@ For comparison, each plan includes the following infrastructure features and sup
           <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
-      <td>
-        <ul>
-          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
-        </ul>
-      </td>
+      <td class="blank"></td>
     </tr>
   </tbody>
 </table>
