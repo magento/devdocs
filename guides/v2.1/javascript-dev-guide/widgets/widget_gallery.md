@@ -472,7 +472,7 @@ The fullscreen and breakpoints options are set in a similar way:
 </var>
 ```
 
-For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
+For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2100url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
 
 ## Gallery API {#gallery_api}
 

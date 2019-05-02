@@ -37,7 +37,7 @@ The <code>acl.xml</code> file defines the access control list (ACL) for a given 
 
 #### Sample customer acl.xml
 
-For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml).
+For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2100url }}app/code/Magento/Customer/etc/acl.xml).
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 

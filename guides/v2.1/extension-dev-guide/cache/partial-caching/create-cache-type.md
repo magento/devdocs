@@ -45,5 +45,5 @@ For example, look at [Magento\Eav\Model\Cache\Type][type] to understand more abo
 {: .bs-callout .bs-callout-info }
 Please help us improve this topic by suggesting details using the **Edit this page in GitHub** link at the top of the page.
 
-[tagscope]: {{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
-[type]: {{ site.mage2000url }}app/code/Magento/Eav/Model/Cache/Type.php
+[tagscope]: {{ site.mage2100url }}lib/internal/Magento/Framework/Cache/Frontend/Decorator/TagScope.php
+[type]: {{ site.mage2100url }}app/code/Magento/Eav/Model/Cache/Type.php

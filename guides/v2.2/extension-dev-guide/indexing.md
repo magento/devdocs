@@ -42,7 +42,7 @@ The following components are involved in the indexing process:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="{{ site.mage2000url }}app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+		<td><a href="{{ site.mage2200url }}app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
 		<td>Implements:<ul>
 <li>indexer declaration</li>
 <li>indexer running</li>
@@ -50,7 +50,7 @@ The following components are involved in the indexing process:
 <li>indexer status</li></ul></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+		<td><a href="{{ site.mage2200url }}lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
 		<td><ul>
 <li>Allows tracking database changes for a certain {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} (product, {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}, etc.) and running change handler.</li>
 <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>

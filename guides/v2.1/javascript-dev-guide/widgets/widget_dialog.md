@@ -146,7 +146,7 @@ Beside default functionality, this method calls the `_mouseLeave()` and `_mouseE
 ### `close()` {#d_close}
 Beside default functionality, this method removes the classes from trigger and drop-down parent.Also clears the timeout if the latter exists.
 
-[lib/web/mage/dropdown.js]: {{ site.mage2000url }}lib/web/mage/dropdown.js
+[lib/web/mage/dropdown.js]: {{ site.mage2100url }}lib/web/mage/dropdown.js
 [Initialize JavaScript]: {{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html
 [`position`]: http://api.jqueryui.com/dialog/#option-position
 [height]: http://api.jqueryui.com/dialog/#option-height

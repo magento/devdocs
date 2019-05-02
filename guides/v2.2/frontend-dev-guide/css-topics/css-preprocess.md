@@ -37,9 +37,9 @@ The topic describes how stylesheets are preprocessed and compiled to {% glossary
             
             The root source files for the Blank theme:
             <ul>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less">Magento_Blank_theme_dir/web/css/styles-m.less</a></li>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less">Magento_Blank_theme_dir/web/css/styles-l.less</a></li>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less">Magento_Blank_theme_dir/web/css/print.less</a></li>
+                <li><a href="{{ site.mage2200url }}app/design/frontend/Magento/blank/web/css/styles-m.less">Magento_Blank_theme_dir/web/css/styles-m.less</a></li>
+                <li><a href="{{ site.mage2200url }}app/design/frontend/Magento/blank/web/css/styles-l.less">Magento_Blank_theme_dir/web/css/styles-l.less</a></li>
+                <li><a href="{{ site.mage2200url }}app/design/frontend/Magento/blank/web/css/print.less">Magento_Blank_theme_dir/web/css/print.less</a></li>
             </ul>
         </td>
     </tr>
