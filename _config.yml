@@ -90,6 +90,14 @@ defaults:
       github_link: false
       feedback_link: false
 
+  - 
+      scope:
+        path: page-builder-migration
+      values:
+        group: page-builder
+        github_link: false
+        feedback_link: false
+
   -
     scope:
       path: guides/v2.3/mrg

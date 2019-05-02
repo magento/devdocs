@@ -10,14 +10,14 @@ Modify default strings in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7
 
 ## How Magento applies locales
 
-When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} is changed for a store, Magento searches for translations in the corresponding dictionaries in the following locations:
+When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} is changed for a store, Magento searches for and applies translations in the corresponding dictionaries:
 
 1. Module translations: `<module_dir>/i18n/`
 1. Theme translations: 
 	1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
 	1. `<current_theme_dir>/i18n/`
 1. Translation package: `app/i18n/`
-1. Magento database
+1. Magento database (translations located in this database take precedence and override translations stored in other locations.)
 
 If there are different translations for one string, the theme dictionary translations have priority over the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} translations, and child theme translations have priority over parent theme translations.
 

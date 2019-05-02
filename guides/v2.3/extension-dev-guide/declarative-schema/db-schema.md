@@ -148,8 +148,10 @@ A column can have the following attributes:
 </tr>
 </table>
 
-For more information about each type, refer to the annotations in the corresponding XSD file. The XSD files are located in the `<Magento_root_directory/setup/src/Magento/Setup/Model/Declaration/Schema/etc` directory.
+For more information about each type, refer to the annotations in the corresponding XSD file. The location of the XSD file depends on how you installed Magento.
 
+- [Archive download]({{page.baseurl}}/install-gde/prereq/zip_install.html): `<Magento_root_directory/vendor/magento/framework/Setup/Declaration/Schema/etc` 
+- [Composer]({{page.baseurl}}/install-gde/composer.html) or [GitHub]({{page.baseurl}}/install-gde/prereq/dev_install.html) installation: `<Magento_root_directory/lib/internal/Magento/Framework/Setup/Declaration/Schema/etc`
 
 Example:
 
@@ -328,6 +330,8 @@ The following example removes the  `date_closed` column by deleting its `column`
     </table>
 </schema>
 ```
+{: .bs-callout .bs-callout-info}
+It is possible to drop a column only if it exists in the `db_schema_whitelist.json` file.
 
 ### Change the column type
 
@@ -422,6 +426,9 @@ The following example removes the  `FL_ALLOWED_SEVERITIES` foreign key by deleti
     </table>
 </schema>
 ```
+
+{: .bs-callout .bs-callout-info}
+It is possible to drop a foreign key only if it exists in the `db_schema_whitelist.json` file.
 
 ### Recreate a foreign key
 
