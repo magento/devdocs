@@ -86,5 +86,5 @@ Builds the more overflowing menu by cloning the main menu items.
 
 
 [jQuery UI Menu widget]: http://api.jqueryui.com/menu/
-[lib/web/mage/menu.js]: {{site.mage2001url}}lib/web/mage/menu.js
+[lib/web/mage/menu.js]: {{site.mage2100url}}lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

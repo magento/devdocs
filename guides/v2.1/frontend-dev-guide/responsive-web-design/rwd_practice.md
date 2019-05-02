@@ -41,7 +41,7 @@ After OrangeCo [applies their theme]({{ page.baseurl }}/frontend-dev-guide/theme
 (compare to the [same page for the Blank theme]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_mobile.html).)
 
 
-[`/Magento_Catalog/web/css/source/module/_listings.less`]: {{site.mage2001url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less
+[`/Magento_Catalog/web/css/source/module/_listings.less`]: {{site.mage2100url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less
 [responsive practice 1]: {{site.baseurl}}/common/images/rwd_pract1.png
 [responsive practice 2]: {{site.baseurl}}/common/images/rwd_practice.jpg
 
