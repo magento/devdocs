@@ -11,7 +11,7 @@ functional_areas:
 
 The Magento core development team uses [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"} and it is recommended that developers who create Magento extensions and customizations also use this standard.
 
-Magento Coding Standard provides the set of rules which cover following:
+The Magento Coding Standard provides a set of rules that covers the following:
 * [PSR-1]{:target="_blank"} and [PSR-2]{:target="_blank"} compliance
 * the use of insecure functions
 * unescaped output
