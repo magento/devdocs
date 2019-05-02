@@ -17,8 +17,8 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
 
 Mode is an additional configuration option for the Docker configuration generator (the `docker:build` command). You can launch your Docker environment in one of two modes:
 
--   **production**—Production mode is the default for launching the Docker environment. This builds the Docker environment and verifies configured service versions.
--   **developer**—Developer mode supports active development with full, writable filesystem permissions. This mode is slower than production mode because of additional file synchronization operations. This builds the Docker environment in developer mode and verifies configured service versions.
+-   **production**—Production mode is the default configuration setting for launching the Docker environment. This option builds the Docker environment in production mode and verifies configured service versions.
+-   **developer**—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
 
 For example, the following command starts the Docker configuration generator for the developer mode:
 
