@@ -4,6 +4,16 @@
     <div id="redoc-container"></div>
 </div>
 
+<style>
+redoc[spec-url] table {
+  table-layout: auto;
+}
+
+redoc[spec-url] .menu-subitems .menu-item-title{
+  text-transform: none;
+}
+</style>
+
 <script src="https://cdn.jsdelivr.net/npm/redoc@2.0.0-alpha.41/bundles/redoc.standalone.js"> </script>
 <script>
     Redoc.init('{{ page.specUrl }}', {
