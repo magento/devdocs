@@ -13,9 +13,24 @@ functional_areas:
 
 The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
+## Launch modes
+
+Mode is an additional configuration option for the Docker configuration generator (the `docker:build` command). You can launch your Docker environment in one of two modes:
+
+-   **production**—Production mode is the default for launching the Docker environment. This builds the Docker environment and verifies configured service versions.
+-   **developer**—Developer mode supports active development with full, writable filesystem permissions. This mode is slower than production mode because of additional file synchronization operations. This builds the Docker environment in developer mode and verifies configured service versions.
+
+For example, the following command starts the Docker configuration generator for the developer mode:
+
+```bash
+./vendor/bin/ece-tools docker:build --mode="developer"
+```
+
+To skip the interactive mode, use the `-n, --no-interaction` option.
+
 ## Service versions
 
-{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator, you can overwrite a service version with the following optional parameters:
+{{site.data.var.ece}} references the `.magento.app.yaml` and `.magento/services.yaml` configuration files to determine the services you need. When you start the Docker configuration generator (the `docker:build` command), you can overwrite a service version with the following optional parameters:
 
 | Service       | Key        | Available versions
 | ------------- | ---------- | ------------------
@@ -26,20 +41,11 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
 | Redis         | `--redis`  | 3.0, 3.2, 4.0, 5.0
 
-## Launch modes
-
-Mode is an additional configuration option for the `docker:build` command. You can launch your Docker environment in one of two modes:
-
--   **production**—Production mode is the default for launching the Docker environment. This builds the Docker environment and verifies configured service versions.
--   **developer**—Developer mode supports active development with full, writable filesystem permissions. This mode is slower than production mode because of additional file synchronization operations.
-
 For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2:
 
 ```bash
 ./vendor/bin/ece-tools docker:build --mode="developer" --php 7.2
 ```
-
-To skip the interactive mode, use the `-n, --no-interaction` option.
 
 ### Prerequisites
 
