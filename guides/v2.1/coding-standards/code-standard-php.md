@@ -9,23 +9,23 @@ functional_areas:
   - Standards
 ---
 
-The Magento core development team uses [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"} and it is recommended that developers who create Magento extensions and customizations also use this standard.
+The Magento core development team uses the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"}. We recommend that developers who create Magento extensions and customizations also use this standard.
 
 The Magento Coding Standard provides a set of rules that covers the following:
 * [PSR-1]{:target="_blank"} and [PSR-2]{:target="_blank"} compliance
-* the use of insecure functions
-* unescaped output
-* the use of deprecated PHP functions
+* The use of insecure functions
+* Unescaped output
+* The use of deprecated PHP functions
 * PHP code syntax
-* naming convention
-* the use of PHP superglobals
-* empty code blocks
-* improper exception handling
-* raw SQL queries and many other general PHP and Magento specific code issues.
+* Naming convention
+* The use of PHP superglobals
+* Empty code blocks
+* Improper exception handling
+* Raw SQL queries and many other general PHP and Magento-specific code issues.
 
-### Coding Standard Compliance
+### Coding standard compliance
 
-Developers should consistently use [PHP_CodeSniffer]{:target="_blank"} to enhance the readability of the code and ensure that it meets Magento Coding Standard. [PHP_CodeSniffer]{:target="_blank"} is the most popular tool in use throughout the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} development community.
+Developers should consistently use [PHP_CodeSniffer]{:target="_blank"} to enhance the readability of the code and ensure that it meets the Magento Coding Standard. [PHP_CodeSniffer]{:target="_blank"} is the most popular tool in use throughout the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} development community.
 It provides the mechanism of checking code compliance with specific coding standard.
 
 The set of Magento rules is located in [`ruleset.xml`][ruleset.xml]{:target="_blank"} file of Magento Coding Standard.
