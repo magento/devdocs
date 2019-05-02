@@ -38,7 +38,7 @@ The release notes include:
 
     -   {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
 
-    -   {:.new}<!-- MAGECLOUD-3152 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
+    -   {:.new}<!-- MAGECLOUD-3152 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
 
     -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error.
 
