@@ -52,7 +52,7 @@ Display top level navigational items in mobile menu or all items.
 The Magento menu widget has all default [jQuery UI menu widget] methods and events.
 
 
-[lib/web/mage/menu.js]: {{site.mage2000url}}lib/web/mage/menu.js
+[lib/web/mage/menu.js]: {{site.mage2001url}}lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [jQuery UI menu widget]: http://api.jqueryui.com/menu/
 

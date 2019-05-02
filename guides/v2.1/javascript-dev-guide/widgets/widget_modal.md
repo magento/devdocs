@@ -280,8 +280,8 @@ The result is a modal and a button (_Click Here_) that opens the modal.
 
 ![Modal Widget]({{ site.baseurl }}/common/images/widget/modal-widget-result.png)
 
-[`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js
-[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
-[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
+[`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{site.mage2001url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js
+[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2001url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
+[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{site.mage2001url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

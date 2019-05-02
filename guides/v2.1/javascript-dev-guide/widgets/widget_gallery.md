@@ -581,5 +581,5 @@ api.updateOptions([{
 
 
 [Fotorama widget]: http://fotorama.io/
-[lib/web/mage/gallery/gallery.js]: {{site.mage2000url}}lib/web/mage/gallery/gallery.js
-[lib/web/magnifier/magnify.js]: {{site.mage2000url}}lib/web/magnifier/magnify.js
+[lib/web/mage/gallery/gallery.js]: {{site.mage2001url}}lib/web/mage/gallery/gallery.js
+[lib/web/magnifier/magnify.js]: {{site.mage2001url}}lib/web/magnifier/magnify.js

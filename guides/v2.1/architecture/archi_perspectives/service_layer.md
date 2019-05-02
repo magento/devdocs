@@ -77,5 +77,5 @@ However, if the client code uses the interface definition only, no class change 
 
 [Architectural layers overview]({{page.baseurl}}/architecture/archi_perspectives/ALayers_intro.html)
 
-[catalog-api]: {{site.mage2000url}}app/code/Magento/Customer/Api
-[catalog-api-data]: {{site.mage2000url}}app/code/Magento/Customer/Api/Data
+[catalog-api]: {{site.mage2001url}}app/code/Magento/Customer/Api
+[catalog-api-data]: {{site.mage2001url}}app/code/Magento/Customer/Api/Data

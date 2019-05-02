@@ -91,5 +91,5 @@ Template responsible for rendering returned data (suggested terms).
 **Default value**: `<li></li>` element.
 
 
-[`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`]: {{site.mage2000url}}app/code/Magento/Search/view/frontend/web/form-mini.js
+[`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`]: {{site.mage2001url}}app/code/Magento/Search/view/frontend/web/form-mini.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
