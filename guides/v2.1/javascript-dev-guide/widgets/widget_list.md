@@ -37,7 +37,7 @@ Selector for the element used for item adding.
 
 **Type**: String
 
-**Default value**: `[data-button=remove]`
+**Default value**: `[data-button=add]`
 
 ### `destinationSelector` {#l_destinationSelector}
 Content destination selector.
@@ -72,7 +72,7 @@ Alert message displayed when maximum limit is reached.
 
 **Type**: String
 
-**Default value**: `[data-button=remove]`
+**Default value**: `null`
 
 ### `removeButton` {#l_removeButton}
 Selector for the element used for item removing. 
@@ -93,7 +93,7 @@ Class attached to the template wrapper.
 
 **Type**: String
 
-**Default value**: `[data-role=container]`
+**Default value**: `null`
 
 ### `templateWrapper` {#l_templateWrapper}
 Element holding the template.
