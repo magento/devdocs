@@ -4,8 +4,31 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue Apr 16 14:38:31 2019
+updated: Mon Apr 29 09:56:29 2019
 entries:
+- description: Added Amazon Sales Channel [installation guide](https://devdocs.magento.com/extensions/amazon-sales/)
+    and [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes).
+  versions: 2.2.x, 2.3.x
+  type: New topic
+  date: April 26, 2019
+  link: https://github.com/magento/devdocs/pull/4361
+- description: Added a new code sample showing how to use the [accordion widget](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_accordion.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: April 24, 2019
+  link: https://github.com/magento/devdocs/pull/4304
+- description: Added a [new code sample](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_modal.html#code-sample)
+    showing how to initialize a modal widget and pass options to it.
+  versions: 2.1.x, 2.3.x, 2.x
+  type: Major update
+  date: April 17, 2019
+  link: https://github.com/magento/devdocs/pull/4269
+- description: Added the ["Check the Magento version"](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/versioning/check-version.html)
+    topic.
+  versions: 2.x
+  type: New topic
+  date: April 17, 2019
+  link: https://github.com/magento/devdocs/pull/4152
 - description: Add a new [Magento Extensions](https://devdocs.magento.com/extensions/)
     section for installing Magento-developed extensions, such as Google Shopping ads
     Channel. Moved existing installation docs for B2B and MSI to new section.

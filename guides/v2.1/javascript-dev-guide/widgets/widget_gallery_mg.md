@@ -56,7 +56,7 @@ Enable magnifier.
 
 Height of the magnifier block in pixels.
 
-### `hover` {#opt_hover}
+### `eventType` {#opt_eventtype}
 
 Action that activates zoom.
 
@@ -82,7 +82,6 @@ The value for the CSS `left` property for the magnifier block positioning.
 The value for the CSS `top` property for the magnifier block positioning.
 
 **Type**: Integer
-
 
 ### `width` {#opt_width}
 

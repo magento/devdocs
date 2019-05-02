@@ -34,27 +34,21 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
 1. Open a terminal application.
 2. Change to your local development environment root directory.
-3. Use a text editor to edit `composer.json`.
-4. In the `require` section, add the following:
-
-        "magento/extension-b2b": "*"
-5. Save the file.
-6. Update composer to pull all B2B files into your branch.
+3.  Install the B2B module using composer.
 
     ```bash
-        composer update
+    composer require magento/extension-b2b
     ```
 
     You may be prompted to enter your Magento Authentication keys (public and private). If copying and pasting your keys, do not introduce additional spaces. Spaces could cause the following error:
 
         InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
 
-5. Add the new B2B files to Git:
-    
+4.  Add and commit the updated `composer.json` and `composer.lock` files.
+
     ```bash
-        git add setup dev pub lib && git commit -a -m "b2b"
+    git add composer.json composer.lock && git commit -a -m "install b2b module"
     ```
-            
 5. Enable all missing modules, including B2B, for updating.
 
         ./vendor/bin/ece-tools module:refresh
