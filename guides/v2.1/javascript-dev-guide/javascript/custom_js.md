@@ -20,7 +20,10 @@ To add a custom JS component (module), take the following steps:
 	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html). 
 	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled). 
 
-2. Optionally, in the corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource.
+2. Optionally, in the corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme, create a `requirejs-config.js` configuration file, if it does not yet exist there and set path for your resource. The RequireJS configuration file can be placed in one of the following locations:
+
+- Your theme: `<theme_dir>/<module_dir>`
+- Your module (depending on the needed area - **base**, **frontend**, **adminhtml**): `<module_dir>/view/<area>`
 
 ## Replace a default JS component {#js_replace}
 

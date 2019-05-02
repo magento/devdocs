@@ -67,7 +67,7 @@ class Example extends AbstractModifier
             ]
         ];
 
- return $meta;
+        return $meta;
     }
 
     /**
