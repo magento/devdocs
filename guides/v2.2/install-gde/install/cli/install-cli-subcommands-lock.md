@@ -22,17 +22,19 @@ Before you run this command, you must do all of the following *or* you must [ins
 
 ## Configure the lock {#instgde-cli-lockconfig}
 
-Configure a lock provider to prevent the launch of duplicate cron jobs and cron groups. (Requires Magento 2.2.9 and later 2.2.x versions or version 2.3.2 and later.)
+Configure a lock provider to prevent the launch of duplicate cron jobs and cron groups. (Requires Magento 2.2.5 and later 2.2.x versions or version 2.3.2 and later.)
 
 Magento uses the database to save locks by default. If you have multiple nodes on your Magento Commerce servers, we recommend using Zookeeper as the lock provider.
 
 If you are running Magento Commerce on the cloud infrastructure, you do not need to configure lock provider settings. Magento configures the file lock provider for Magento Commerce Pro projects during the provisioning process. See [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
 
-Command usage:
+> Command usage
 
-	magento setup:store-config:set [--<parameter_name>=<value>, ...]
+```bash
+magento setup:store-config:set [--<parameter_name>=<value>, ...]
+```
 
-where the following table defines parameters and values.
+> Parameter descriptions
 
 |Name|Value|Required?|
 |--- |--- |--- |
