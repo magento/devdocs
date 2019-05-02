@@ -38,17 +38,8 @@ In Production mode, you may receive a message to 'Please rerun Magento compile c
 
     ```bash
     bin/magento setup:upgrade
-    ```
-
-    ```bash
     bin/magento setup:di:compile
-    ```
-
-    ```bash
     bin/magento setup:static-content:deploy -f
-    ```
-
-    ```bash
     bin/magento cache:clean
     ```
 
@@ -71,9 +62,12 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
 
     You should see the following consumers:
 
-    ```terminal
+    ```bash
     sharedCatalogUpdatePrice
     sharedCatalogUpdateCategoryPermissions
+    quoteItemCleaner
+    inventoryQtyCounter
+    async.operations.all
     ```
 
 1. Start each consumer separately:
