@@ -133,7 +133,7 @@ The persistent header will reactivate when you scroll back up:
 
 ![](img/datatable14.jpg)
 
-For details about component's implementation see [Sticky Header Component]({{ site.baseurl }}/guides/v2.0/ui-components/ui-secondary-header.html).
+For details about component's implementation see [Sticky Header Component]({{ page.baseurl }}/ui-components/ui-secondary-header.html).
 
 ### Multiple Data-tables on Page
 

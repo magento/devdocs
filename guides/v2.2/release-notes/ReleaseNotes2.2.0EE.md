@@ -1115,7 +1115,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 This release includes substantial improvements to Magento caching, image processing, and re-indexing, among other enhancements.
 
 
-<!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see [Magento Optimization Guide]({{ site.baseurl }}/guides/v2.0/config-guide/prod/prod_perf-optimize.html)  for further details.
+<!--- 52660 -->* We've improved the speed of static asset deployment and now support a variety of asset deployment strategies that can be used to optimize speed and size of assets deployed. Indexers can now be run with 256M of PHP RAM and default MySQL configuration settings.  Developers can further tune memory usage to improve indexer performance (in some cases up to 100% improvement).  Please see [Magento Optimization Guide]({{ page.baseurl }}/config-guide/prod/prod_perf-optimize.html)  for further details.
 
 <!--- 55300, 55620, 54682-->* We've improved {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} performance when creating 2500 or more product variants.
 
