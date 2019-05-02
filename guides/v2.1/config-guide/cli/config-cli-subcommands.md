@@ -15,8 +15,10 @@ functional_areas:
 1.  Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to the following directory:
 
-        cd <magento_root>/bin
-
+    ```bash
+    cd <magento_root>/bin
+    ```
+    
     Examples:
 
       - Ubuntu: `cd /var/www/magento2/bin`

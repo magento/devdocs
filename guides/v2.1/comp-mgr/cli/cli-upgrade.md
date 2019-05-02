@@ -46,7 +46,7 @@ To enable maintenance mode:
 2. Enable maintenance mode:
    
    ```bash
-   php <magento_root>/bin/magento maintenance:enable
+   bin/magento maintenance:enable
    ```
    
    For additional options, see [Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html).
@@ -119,13 +119,13 @@ To enable maintenance mode:
 4. Update the database schema and data:
 
    ```bash
-    php bin/magento setup:upgrade
+    bin/magento setup:upgrade
     ```
 
 5. Put your storefront online (that is, cancel maintenance mode):
 
    ```bash
-   php bin/magento maintenance:disable
+   bin/magento maintenance:disable
    ```
 
 6. Restart Varnish if you use it for page caching.
