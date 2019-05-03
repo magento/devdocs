@@ -29,7 +29,7 @@ Generating static content during the build phase with minified HTML is the optim
 
 By default, the [STATIC_CONTENT_SYMLINK environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#static_content_symlink) is set to `true`. After generating the static content during the build phase, it creates a symlink to the content folder.
 
-Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must use the `config:dump` command in the {site.data.var.ct}} package to move locales to the file system. It reads the locales and saves them in the `app/etc/config.php` file.
+Generating static content requires access to themes and locales. Magento stores themes in the file system, which is accessible during the build phase; however, Magento stores locales in the database. The database is _not_ available during the build phase. In order to generate the static content during the build phase, you must use the `config:dump` command in the {{site.data.var.ct}} package to move locales to the file system. It reads the locales and saves them in the `app/etc/config.php` file.
 
 #### To configure your project to generate SCD on build:
 
