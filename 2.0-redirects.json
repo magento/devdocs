@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{%- for page in site.pages -%}
+  {% if page.redirect_from contains "guides/v2.0" %}
+    {% assign to=page.path %}
+    {% assign from=page.redirect_from %}
+{
+  "RoutingRules": [
+    {
+      "Condition": {
+         "KeyPrefixEquals": "{{ from }}" 
+       },
+       "Redirect": {
+         "HttpRedirectCode": "301",
+         "ReplaceKeyPrefixWith": "{{ to }}"
+       }
+    }
+ ]
+}
+  {% endif %}
+{%- endfor -%}
