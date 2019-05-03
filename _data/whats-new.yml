@@ -2353,7 +2353,7 @@ entries:
   versions: 2.2.x
   type: Updated
   date: Sep 14 2017
-- description: "[Added a rule set for the PHP_CodeSniffer](https://devdocs.magento.com/guides/v2.2/coding-standards/code-standard-sniffers.html)"
+- description: "[Added a rule set for the PHP_CodeSniffer](https://devdocs.magento.com/guides/v2.2/coding-standards/code-standard-php.html)"
   versions: 2.2.x
   type: Updated
   date: Sep 13 2017
