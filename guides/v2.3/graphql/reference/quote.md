@@ -385,7 +385,24 @@ mutation {
 ```json
 {
   "data": {
-    "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
+    "setShippingAddressesOnCart": {
+      "cart": {
+        "shipping_addresses": [
+          {
+            "firstname": "Bob",
+            "lastname": "Roll",
+            "company": "Magento",
+            "street": [
+              "Magento Pkwy",
+              "Main Street"
+            ],
+            "city": "Austin",
+            "postcode": "78758",
+            "telephone": "8675309"
+          }
+        ]
+      }
+    }
   }
 }
 ```
