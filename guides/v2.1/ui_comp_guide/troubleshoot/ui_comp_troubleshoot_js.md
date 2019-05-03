@@ -86,7 +86,7 @@ In the previous image, we can see three zones:
 
 ### Breakpoints
 
-A **breakpoint** is a point of code where the debugger will automatically pause the JavaScript execution process.
+A **breakpoint** is a line of code where the debugger will automatically pause the JavaScript execution process.
 For setting a breakpoint, we should click right on the code line number, like in the next image.
 
 ![Breakpoints]({{ site.baseurl }}/common/images/debugging-breakpoints.png)
