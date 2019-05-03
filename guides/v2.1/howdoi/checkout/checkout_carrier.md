@@ -36,7 +36,7 @@ In your `<your_module_dir>/view/frontend/web/js/model` directory, create a `.js`
 
 The script must implement the `getRules()` method.
 
-For example, the FedEx shipping method requires only two fields of the shipping address to be filled: **Country** and **Zip Code**. This is how the validation rules for FedEx look:
+For example, the FedEx shipping method requires only two fields of the shipping address to be filled: **Country**, **Zip Code** and **City**. This is how the validation rules for FedEx look:
 
 > _<Magento_Fedex_dir>/view/frontend/web/js/model/shipping-rates-validation-rules.js_
 
@@ -52,6 +52,9 @@ define(
                         'required': true
                     },
                     'country_id': {
+                        'required': true
+                    },
+                    'city': {
                         'required': true
                     }
                 };
