@@ -20,7 +20,7 @@ Backward Compatibility Policy is not applied to Plugins, Observers and Setup Scr
 
 ## Prohibited code changes
 
-The following code modifications are forbidden for `@api` code without approval of an assigned to the component **Magento architect**, **Product Manager** and **Engineering Manager**.
+The following modifications are forbidden for `@api` code without the approval of the **Magento architect**, **Product Manager** and **Engineering Manager** assigned to the component.
 
 {: .bs-callout .bs-callout-info }
 The rules listed do not apply to customization code (e.g. Plugins, Observers, JS Mixins, etc.).
