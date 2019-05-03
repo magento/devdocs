@@ -16,7 +16,7 @@ The `<module_name>/etc/schema.graphqls` file:
 * Serves as the source for displaying the schema in a GraphQL browser.
 * Defines which objects are cached.
 
-The base `schema.graphqls` file, located in the `app/code/Magento/GraphQl/etc/` directory, defines the basic structure of GraphQL queries and mutations. It also including definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
+The base `schema.graphqls` file, located in the `app/code/Magento/GraphQl/etc/` directory, defines the basic structure of GraphQL queries and mutations. It also includes definitions for comparison operators and paging information for search results. The `webonyx/graphql-php` library enforces the syntax of all `schema.graphqls` files.
 
 ## Define queries
 

@@ -11,7 +11,7 @@ An Identity class implements `Magento\Framework\GraphQl\Query\Resolver\IdentityI
 
 * Your implementation of the `getIdentities(array $resolvedData)` method. Generally, this method takes an array of query results and creates a new cache tag for each entity based on the original string and the unique identifier for each item to be cached. For example, the getIdentities method for the `CatalogGraphQl` component appends the product ID to the `cat_p` cache tag, such as `cat_p_1`, `cat_p_2`, and so on.
 
-Use following example as the basis for your custom `Identity` class:
+Use the following example as the basis for your custom `Identity` class:
 
 ```php
 <?php
@@ -41,7 +41,7 @@ class MyIdentity implements IdentityInterface
 }
 ```
 
-Use the `@cache` directive in your module’s [`graphqls` file]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) to specify the location to your `Identity` class Your module’s `graphqls` file must point to your `Identity` class, as shown below:
+Use the `@cache` directive in your module’s [`graphqls` file]({{page.baseurl}}/graphql/develop/create-graphqls-file.html) to specify the location to your `Identity` class. Your module’s `graphqls` file must point to your `Identity` class, as shown below:
 
 ```text
     category (
