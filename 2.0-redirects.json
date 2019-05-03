@@ -2,9 +2,9 @@
 layout: null
 ---
 {%- for page in site.pages -%}
-  {% if page.redirect_from contains "guides/v2.0" %}
-    {% assign to=page.path %}
-    {% assign from=page.redirect_from %}
+  {%- if page.redirect_from contains "guides/v2.0" -%}
+    {%- assign to=page.path | replace: ".md", ".html" -%}
+    {%- assign from=page.redirect_from | remove_first: "/" -%}
 {
   "RoutingRules": [
     {
@@ -18,5 +18,5 @@ layout: null
     }
  ]
 }
-  {% endif %}
+  {%- endif -%}
 {%- endfor -%}
