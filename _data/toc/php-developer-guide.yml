@@ -214,6 +214,9 @@ pages:
               include_versions: ["2.1", "2.2", "2.3"]
               url: /extension-dev-guide/message-queues/queue-migration.html
 
+            - label: Handling outdated in-memory object states
+              url: /extension-dev-guide/message-queues/refresh-config.html
+
             - label: Bulk operations
               include_versions: ["2.2", "2.3"]
               url: /extension-dev-guide/message-queues/bulk-operations.html

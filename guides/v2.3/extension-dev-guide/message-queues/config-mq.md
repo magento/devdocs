@@ -49,7 +49,7 @@ The following sample defines two synchronous topics. The first topic is for RPC 
 </config>
 ```
 
-### topic element###
+### topic element ###
 {:.no_toc}
 Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the `env.php` file.
 
