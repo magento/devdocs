@@ -260,7 +260,7 @@ pages:
 
             - label: Configure the lock provider
               url: /install-gde/install/cli/install-cli-subcommands-lock.html
-              include_versions: ["2.1","2.2","2.3"]
+              include_versions: ["2.2","2.3"]
               
             - label: Configure the store
               url: /install-gde/install/cli/install-cli-subcommands-store.html
