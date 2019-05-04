@@ -1,7 +1,6 @@
 ---
 group: rest-api
 title: Search using REST endpoints
-redirect_from: /guides/v2.2/howdoi/webapi/search-criteria.html
 ---
 
 POST, PUT, and DELETE requests to the REST Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} structure) in the body of the message.
@@ -38,7 +37,7 @@ Condition | Notes
 `notnull` | Not null
 `null` | Null
 `to` | The end of a range. Must be used with `from`
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 `condition_type` is optional if the operator is `eq`.

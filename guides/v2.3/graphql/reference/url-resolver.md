@@ -19,7 +19,6 @@ The `EntityUrl` output object contains the `id`, `canonical_url`, and `type` att
 
 Attribute |  Data Type | Description
 --- | --- | ---
-
 `canonical_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
 `id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID.
 `type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
@@ -33,7 +32,7 @@ Attribute | Type | Description
 --- | --- | ---
 `parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
 `url` | String | The request URL
-{:style="table-layout:auto;"}
+
 
 ### HttpQueryParameter object {#HttpQueryParameter}
 
@@ -43,7 +42,7 @@ Attribute | Type | Description
 --- | --- | ---
 `name` | String | The parameter name, such as `id`
 `value` | String | The value assigned to the parameter
-{:style="table-layout:auto;"}
+
 
 ## Example usage
 
@@ -51,7 +50,7 @@ The following query returns information about the URL containing `joust-duffle-b
 
 **Request**
 
-``` text
+```text
 {
   urlResolver(url: "joust-duffle-bag.html") {
     id
@@ -63,7 +62,7 @@ The following query returns information about the URL containing `joust-duffle-b
 
 **Response**
 
-``` text
+```json
 {
   "data": {
     "urlResolver": {
@@ -79,7 +78,7 @@ The following product query returns URL rewrite information about the Joust Duff
 
 **Request**
 
-``` text
+```text
 {
   products(search: "Joust") {
     items {
@@ -99,7 +98,7 @@ The following product query returns URL rewrite information about the Joust Duff
 
 **Response**
 
-```text
+```json
 {
   "data": {
     "products": {

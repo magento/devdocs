@@ -32,7 +32,7 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 | *Ui component*                        | JS component located in the `Magento_Ui` module, in the [app/code/Magento/Ui/view] directory. |
 | *jQuery UI widget*                    | A JS component/widget provided by the [jQuery UI library used in Magento]. |
 | *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are the jQuery widgets. |
-{:style="table-layout:auto"}
+
 
 
 [AMD module]: http://requirejs.org/docs/whyamd.html#amd

@@ -53,7 +53,7 @@ None
 
 An array containing a list of SSA codes, titles, and desriptions.
 
-``` json
+```json
 [
     {
         "code": "distance",
@@ -92,13 +92,13 @@ Name | Description | Type | Requirements
 `region` | The region code of the shipping address | String | Required for the Distance Priority SSA
 `city` | The city of the shipping address | String | Required for the Distance Priority SSA
 
-{:style="table-layout:auto;"}
+
 
 ### Source Priority Algorithm
 
 **Payload**
 
-``` json
+```json
 {
     "inventoryRequest": {
         "stockId": 2,
@@ -117,7 +117,7 @@ Name | Description | Type | Requirements
 
 **Response**
 
-``` json
+```json
 {
     "source_selection_items": [
         {
@@ -159,7 +159,7 @@ Name | Description | Type | Requirements
 
 **Payload**
 
-``` json
+```json
 {
     "inventoryRequest": {
         "stockId": 2,
@@ -187,7 +187,7 @@ Name | Description | Type | Requirements
 
 **Response**
 
-``` json
+```json
 {
     "source_selection_items": [
         {

@@ -24,7 +24,7 @@ Jekyll::Hooks.register :pages, :pre_render do |page, config|
   # Select pages that do not have name 'redirect.html' and their URL
   # starts with '/guides/v'. Get 'url' of each page and store them as an array.
   urls_filtered_by_pattern =
-    pages.filter do |site_page|
+    pages.select do |site_page|
       next if site_page.name == 'redirect.html'
       site_page.url.start_with? filtering_pattern
     end.map(&:url)
@@ -40,7 +40,7 @@ Jekyll::Hooks.register :pages, :pre_render do |page, config|
 
   # Get URLs for all versions of the topic
   versioned_urls =
-    urls_filtered_by_pattern.filter { |path| path.match full_path_pattern }
+    urls_filtered_by_pattern.select { |path| path.match full_path_pattern }
 
   # Define a regular expression to get a version number from URL
   # to the 'version_from_path' variable

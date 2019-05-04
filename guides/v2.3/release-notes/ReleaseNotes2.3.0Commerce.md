@@ -12,6 +12,28 @@ We are pleased to present Magento Commerce 2.3.0 General Availability. This rele
 Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of enhancements and fixes to the core product. Look for the following highlights in this release:
 
 
+
+## Apply patch PRODSECBUG-2198 to address critical SQL injection vulnerability
+
+A critical SQL injection vulnerability has been identified in pre-2.3.1 Magento code. To quickly protect your store from this vulnerability only, install patch PRODSECBUG-2198.  However, to protect against this vulnerability and others, you must upgrade to Magento Commerce or Open Source  2.3.1. **We strongly suggest that you install these full patches as soon as you can**. 
+ 
+See the description of  PRODSECBUG-2198  in the  [Magento Security Center](https://magento.com/security/patches/magento-2.3.1-2.2.8-and-2.1.17-security-update) for information on this vulnerability. 
+
+Follow these steps to download and apply this patch:
+
+1. Access [My Account](https://account.magento.com/customer/account/login).
+
+2. Navigate to the **Downloads** tab. Select the Magento edition and version you need. 
+
+3. Select **Support Patches and Security Patches**, then **PRODSECBUG-2198**.
+
+4. Download the patch and upload to a specific directory in your Magento installation such as `m2-hotfixes` (confirm  that the directory is not accessible publicly).
+
+5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
+
+6. Refresh the cache from the Admin (**System** > **Cache Management**).
+
+
 ### Merchant tool enhancements
 
 * **Inventory Management (provided by [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi))** is now available with Magento 2.3.0. It lets merchants manage inventory for all product types in a single warehouse and across complex shipping networks. Merchants can manage these locations as sources, tracking on-hand inventory quantities per product. Stocks map these sources and sales channels (websites) to provide an accurate, salable quantity as inventory pools for concurrent checkout and product reservations. Inventory Management also updates order and shipment options, giving you full control over your stock. 
@@ -23,7 +45,7 @@ Magento Commerce 2.3.0 includes a wealth of new features as well as hundreds of 
 
 * **CMS enhancements** include banner enhancements. You can now create banner content in native Magento WYSIWYG (or Page Builder. See the  `Page Builder` discussion below. (Within the product interface, we now use the term  “dynamic block” instead of  “banner”.) We've also updated the WYSIWYG editor to use TinyMCE 4.6. (TinyMCE is now integrated into Magento through an adapter that allows it to be replaced with any other WYSIWYG editor.) 
 
-* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. Registered participants can install PageBuilder Beta on Magento 2.3.0 Commerce code. See check [Magento 2.3 product availability](https://devdocs.magento.com/availability.html) and [Magento blog](https://magento.com/blog/magento-news/magento-2.3-new-tools-fuel-your-growth-2019).
+* **PageBuilder** is a drag-and-drop visual content editing tool that lets merchants customize the appearance of their storefront without writing any HTML or CSS. Registered participants can install PageBuilder Beta on {{site.data.var.ee}} 2.3.0 code. See check [Magento 2.3 product availability](https://devdocs.magento.com/release/#availability) and [Magento blog](https://magento.com/blog/magento-news/magento-2.3-new-tools-fuel-your-growth-2019).
 
 ### Improved developer experience
 
@@ -1655,7 +1677,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-84980-->* The Products in Cart report no longer tries to retrieve the data of deleted products. Previously, when Magento tried to generate this report, it threw an exception. *Fix submitted by [angelo983](https://github.com/angelo983) in pull request [12540](https://github.com/magento/magento2/pull/12540)*.
 
-<!--- MAGETWO-82176-->* Magento no longer throws a fatal error when you search for a customer from  **Reports > By Customers**. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
+<!--- MAGETWO-82176-->* Magento no longer throws a fatal error when you search for a customer from  **Reports** > Reviews > **By Customers**. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [11524](https://github.com/magento/magento2/pull/11524)*. [GitHub-10301](https://github.com/magento/magento2/issues/10301)
 
 <!--- MAGETWO-86260 -->* The cancel order and restore quote methods now accurately calculate the amount of stock to be returned to inventory when an order is canceled. Previously, when you canceled an order, some of these methods did not accurately calculate the amount of restored stock.  *Fix submitted by [Danny Verkade](https://github.com/dverkade) in pull request [12952](https://github.com/magento/magento2/pull/12952)*. [GitHub-9969](https://github.com/magento/magento2/issues/9969)
 

@@ -100,7 +100,7 @@ We can use the same customer definition presented in [Create a customer and gene
 
 **Payload**
 
-``` json
+```json
 {
    "customer" : {
       "lastname" : "Doe",
@@ -137,7 +137,7 @@ We can use the same customer definition presented in [Create a customer and gene
 
 The customer `id` is `3`.
 
-``` json
+```json
 {
     "id": 3,
     "group_id": 1,
@@ -202,7 +202,7 @@ By default, a customer token is valid for 1 hour. To change this value, click **
 
 **Payload**
 
-``` json
+```json
 {
 "username": "jdoe@example.com",
 "password": "Password1"

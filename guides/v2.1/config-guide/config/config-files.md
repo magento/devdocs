@@ -21,7 +21,7 @@ Following are common terms used in this topic:
 
 -   **Configuration stage**—Stages are defined as *primary*, *global*, and *area*. Each stage determines when configuration type is loaded and merged with same-named configuration types. For example, `module.xml` files are merged with other `module.xml` files. For more information, see [Configuration load and merge](#config-files-loadmerge).
 
--   **Configuration scope**—Complementary to a configuration stages, a scope defines the configuration type model. For example, `adminhtml` is an area scope that is loaded with at the stage with other modules' `adminhtml` configurations. For more information, see [Modules and areas]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
+-   **Configuration scope**—Complementary to configuration stages, a scope defines the configuration type model. For example, `adminhtml` is an area scope that is loaded with at the stage with other modules' `adminhtml` configurations. For more information, see [Modules and areas]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html).
 
 ## Configuration load and merge {#config-files-loadmerge}
 
@@ -67,11 +67,11 @@ The following table shows each configuration type and the Magento configuration 
 |`di.xml`|[Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration|primary, global, area|[\Magento\Framework\ObjectManager\Config]({{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php)|
 |`events.xml`|Event/observer configuration|global, area|[\Magento\Framework\Event]({{ site.mage2000url }}lib/internal/Magento/Framework/Event.php)|
 |`routes.xml`|[Route]({{ page.baseurl }}/extension-dev-guide/routing.html) configuration|area|[Magento\Framework\App\Route\Config]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php)|
-{:style="table-layout:auto;"}
+
 
 ### Configuration interfaces {#config-files-classes-int}
 
-You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2000url }}lib/internal/Magento/Framework/Config). You can also use these interfaces if you create a new configuration types.
+You can interact with configuration files using interfaces under [Magento\Framework\Config]({{ site.mage2000url }}lib/internal/Magento/Framework/Config). You can also use these interfaces if you create new configuration types.
 
 `Magento\Framework\Config` provides the following interfaces:
 

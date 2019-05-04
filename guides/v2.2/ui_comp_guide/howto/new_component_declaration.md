@@ -114,7 +114,7 @@ We copy the `<field>` configuration, remove the `<select>` node and its configur
 	                    	   component="path/to/the/custom/JS_component" 
                         	   template="path/to/the/custom/html_template">
                         <arguments name="data" xsi:type="array">
-                            <item name="options" xsi:type="">Magento\Store            \Model\System\Store</item>
+                            <item name="options" xsi:type="">Magento\Store\Model\System\Store</item>
                             <item name="config" xsi:type="array">
                                 <item name="customPropertyName" xsi:type="string">customPropertyValue</item>
                             </item>

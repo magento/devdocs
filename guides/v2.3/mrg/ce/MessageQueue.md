@@ -7,5 +7,3 @@ title: Magento_MessageQueue module
 # MessageQueue
 
 **MessageQueue** provides support of Advanced Message Queuing Protocol
-
-

@@ -34,7 +34,7 @@ Name | Description | Type | Requirements
 `sales_channels` | Defines the sales channel for this stock. Currently, only websites are supported. | Array | Required for POST operations
 `type` | Defines the type of sales channel. This value must be `website`. | String | Required for POST operations
 `code` | Specifies a valid website code name | String | Required for POST operations
-{:style="table-layout:auto;"}
+
 
 ## Create a stock
 
@@ -46,7 +46,7 @@ Only one stock can be mapped to each sales channel. If you assign a sales channe
 
 **Payload**
 
-``` json
+```json
 {
   "stock": {
     "name": "Central Stock",
@@ -78,7 +78,7 @@ If you change a sales channel between stocks, we recommend that you first comple
 
 **Payload**
 
-``` json
+```json
 {
   "stock": {
     "name": "St. Louis Stock",
@@ -112,7 +112,7 @@ None
 
 **Response**
 
-``` json
+```json
 {
   "stock": {
     "name": "St. Louis Stock",
@@ -163,7 +163,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {

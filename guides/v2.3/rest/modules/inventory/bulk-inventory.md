@@ -42,7 +42,7 @@ Name | Description | Type | Requirements
 `originSource` | The current source of the SKUs | String | Required
 `destinationSource` | The target source for the SKUs. This source must be already defined. | String | Required
 `unassignFromOrigin` | If `true`, the current source is removed as a source for the products. If `false`, the original source is retained, but the products are marked as being out of stock with a quantity of 0. | Boolean | Required
-{:style="table-layout:auto;"}
+
 
 **Sample usage**
 
@@ -80,7 +80,7 @@ Name | Description | Type | Requirements
 --- | --- | --- | ---
 `skus` | A comma-separated list of existing SKUs to assign | Array | Required
 `sourceCodes` | A comma-separated list of existing sources | Array | Required
-{:style="table-layout:auto;"}
+
 
 **Sample usage**
 
