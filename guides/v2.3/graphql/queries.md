@@ -444,10 +444,10 @@ This query searches for products that have `name` that ends with `Short` or has 
       price: {
         from: "40" to: "49.99"
       }
-      name: {
-        like: "%Short"
-      }
       or: {
+        name: {
+          like: "%Short"
+        }      
         sku: {
           like: "WSH%10%"
         }
@@ -479,4 +479,4 @@ This query searches for products that have `name` that ends with `Short` or has 
 }
 ```
 
-The query returns 1 item.
+The query returns 8 item.
