@@ -37,11 +37,11 @@ To add the Amazon Sales Channel API key:
 
     ![Onboarding API Key Verification](images/amazon-api-key.png)
 
-1. Click **Sign in** to access your Magento web account. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **Api Portal** tab.
+1. Click **Sign in** to access your Magento web account. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **API Portal** tab.
 
     You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register.
 
-1. API keys are available through the **Api Portal** tab. Copy the key.
+1. API keys are available through the **API Portal** tab. Copy the key.
 
     If you need to create a new key, enter a description like "Amazon Sales Channel" and click **Add**. Copy this new key.
 
