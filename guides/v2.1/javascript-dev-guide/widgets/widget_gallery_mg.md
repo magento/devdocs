@@ -101,7 +101,7 @@ Possible values:
 
 ## Configure magnifier options in `view.xml`
 
-Magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in `<theme_dir>/etc`.
+Magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in the `<theme_dir>/etc/` directory.
 
 The general magnifier options are set as follows:
 
@@ -113,4 +113,4 @@ The general magnifier options are set as follows:
 </var>
 ```
 
-For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L225).
+For an example of setting the gallery option, see the [view.xml]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L225) file in the Blank theme.
