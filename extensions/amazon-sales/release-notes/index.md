@@ -9,7 +9,7 @@ See the following documentation:
 
 - [Amazon Sales Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/amazon-sales-channel.html) for merchant information and instructions
 - [Amazon Sales Channel install]({{site.baseurl}}/extensions/amazon-sales/) for installation and API key information
-- [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html)
+- Amazon Sales Channel Marketplace page
 
 The release notes include:
 
