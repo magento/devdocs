@@ -29,7 +29,7 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
 
 To add the Amazon Sales Channel API key:
 
-1. Log into the Magent Admin.
+1. Log into the Magento Admin.
 
 1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Amazon Sales Channel**.
 
