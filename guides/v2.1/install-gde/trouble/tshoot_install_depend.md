@@ -39,11 +39,11 @@ Dependencies not installed. Please run 'composer install' under /setup directory
  PHP Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/html/magento2/app/bootstrap.php on line 56</pre>
 
 {:.bs-callout .bs-callout-info}
-If the Web Setup Wizard stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run <code>composer install</code> from the `<your Magento install dir>/setup` directory. The entire message is `Installation is incomplete. Check the console log for errors before trying again.`
+If the Web Setup Wizard stops, informs you that the installation is incomplete, but does not display an error in the console log, the likely cause is you did not run <code>composer install</code> from the `<magento_root>/setup` directory. The entire message is `Installation is incomplete. Check the console log for errors before trying again.`
 
 ### Description
 
-You must run `composer install` from *both* the `<your Magento install dir>` and `<your Magento install dir>/setup` directories before installer.
+You must run `composer install` from *both* the `<magento_root>` and `<magento_root>/setup` directories before installer.
 
 ### Suggestion
 

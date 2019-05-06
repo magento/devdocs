@@ -138,11 +138,11 @@ If you want to use parallelization you need to set one of available modes of dim
 For example, to set the mode by website run:
 
 ```bash
-php bin/magento indexer:set-dimensions-mode catalog_product_price website
+bin/magento indexer:set-dimensions-mode catalog_product_price website
 ```
 To check the current mode you can use next command: 
 ```bash
-php bin/magento indexer:show-dimensions-mode
+bin/magento indexer:show-dimensions-mode
 ```
 
 To reindex in parallel mode, run the reindex command using the environment variable `MAGE_INDEXER_THREADS_COUNT`, or add an environment variable to `env.php`. This variable sets the number of threads for the reindex processing.
