@@ -22,14 +22,14 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
 1. For the component name and version, click **Technical Details**.
 1. Click **Download**.
 1. Export the contents to your Magento root.
-1. Follow all instrutions for Extension [Installation]({{site.baseurl}}/extensions/install/).
+1. Follow all instructions for Extension [Installation]({{site.baseurl}}/extensions/install/).
 1. After installing, enter an API Key to complete configuration.
 
 ## Add the Amazon Sales Channel API key
 
 To add the Amazon Sales Channel API key:
 
-1. Log into the Magent Admin.
+1. Log into the Magento Admin.
 
 1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Amazon Sales Channel**.
 
@@ -37,11 +37,11 @@ To add the Amazon Sales Channel API key:
 
     ![Onboarding API Key Verification](images/amazon-api-key.png)
 
-1. Click **Sign in** to access your Magento web account. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **Api Portal** tab.
+1. Click **Sign in** to access your Magento web account. The [Magento Accounts](https://account.magento.com/customer/account/login) page loads, displaying the **API Portal** tab.
 
     You may need to login with your Magento web account credentials. If you need to create an account, visit [here](https://account.magento.com/customer/account/login) and register.
 
-1. API keys are available through the **Api Portal** tab. Copy the key.
+1. API keys are available through the **API Portal** tab. Copy the key.
 
     If you need to create a new key, enter a description like "Amazon Sales Channel" and click **Add**. Copy this new key.
 
@@ -63,7 +63,7 @@ See [Onboarding Amazon Sales Channel](https://docs.magento.com/m2/ce/user_guide/
 
 You have the following options for configuring Amazon Sales Channel. You do not need to modify these settings to begin onboarding and selling on Amazon. We recommend advanced administrators consider these options.
 
-1. Log into the Magent Admin.
+1. Log into the Magento Admin.
 
 1. On the Admin sidebar, click **Stores**. Then under **Settings**, click **Configuration**.
 
