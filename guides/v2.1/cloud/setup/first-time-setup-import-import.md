@@ -279,9 +279,15 @@ To import media files into your Cloud environment:
 
 On the Cloud environment, enter the following commands in the order shown:
 
-```
+```bash
 bin/magento setup:upgrade
+```
+
+```bash
 bin/magento magento setup:static-content:deploy
+```
+
+```bash
 bin/magento cache:clean
 ```
 

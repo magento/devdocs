@@ -27,7 +27,7 @@ Backup functionality is currently disabled. Please use other means for backups.
 Enter the following CLI command:
 
 ```bash
-php bin/magento config:set system/backup/functionality_enabled 1
+bin/magento config:set system/backup/functionality_enabled 1
 ```
 
 For additional information on backups, see [Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html).
@@ -52,4 +52,4 @@ Unfortunately, we can't recommend anything specific because of the variety of er
 
 If the backup fails or if all backup tests fail, it's possible the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html) doesn't have sufficient privileges and ownership of the Magento file system. For example, another user might own the files or the files might be read-only.
 
-Pay particular attention to file system permissions and ownership of the `<your Magento install dir>/var` directory and subdirectories. For more information, see [Set file system permissions and ownership]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html)
+Pay particular attention to file system permissions and ownership of the `<magento_root>/var` directory and subdirectories. For more information, see [Set file system permissions and ownership]({{ page.baseurl }}/install-gde/prereq/file-system-perms.html)
