@@ -435,7 +435,7 @@ The query returns 8 items.
 
 #### Logical AND and OR search
 
-This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s shorts in size 10 (`WSH%10%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
+This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s pants (`WP%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
 ``` text
 {
@@ -449,7 +449,7 @@ This query searches for products that have `name` that ends with `Short` or has 
           like: "%Short"
         }      
         sku: {
-          like: "WSH%10%"
+          like: "WP%"
         }
       }
     }
@@ -479,4 +479,4 @@ This query searches for products that have `name` that ends with `Short` or has 
 }
 ```
 
-The query returns 8 item.
+The query returns 14 item.
