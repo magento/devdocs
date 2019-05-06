@@ -54,7 +54,7 @@ sub vcl_hash {
         hash_data(server.ip);
     }
 
-    if (req.url ~ "graphql") {
+    if (req.url ~ "/graphql") {
         call process_graphql_headers;
     }
 
