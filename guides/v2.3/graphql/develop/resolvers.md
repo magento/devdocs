@@ -12,7 +12,7 @@ A resolver requires the following arguments:
 - $value
 - $args
 
-``` php    
+```php    
     /**
      * Fetches the data from persistence models and format it according to the GraphQL schema.
      *
@@ -67,6 +67,7 @@ Syntax option | Description
 `MutationQueryOutput` | The mutation's result type, such as  `String`, `Int`, or a custom type, like `MyCustomOutput`
 `@resolver(class)` | The class of the resolver
 `@doc(description)` | Describes the purpose of the mutation
+`@deprecated(reason: "description")` | Use `@deprecated` to mark a query, mutation, or attribute as deprecated
 
 ### Resolver class
 Use the following sample code as a template for the GraphQl resolver query/mutation class
@@ -194,7 +195,7 @@ mutation {
 
 A sample response:
 
-```text
+```json
 {
   "data": {
     "createCustomer": {

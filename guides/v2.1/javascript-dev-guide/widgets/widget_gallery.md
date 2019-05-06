@@ -39,7 +39,6 @@ Example of declarative initialization:
 ```javascript
 <script type="text/x-magento-init">
     {
-         {
         "<element_selector>": {
             "mage/gallery/gallery": {
                 "data": [{
@@ -71,6 +70,8 @@ Example of declarative initialization:
                     "nav": "<false/thumbs/dots>",
                     "loop": <true/false>,
                     "navdir": "<horizontal/vertical>",
+                    "navarrows": <true/false>,
+                    "navtype": "<slides/thumbs>",
                     "arrows": <true/false>,
                     "showCaption": <true/false>,
                     "transitionduration": <number>,
@@ -360,6 +361,25 @@ Sliding direction of thumbnails in the fullscreen view.
 
 - `vertical`
 - `horizontal`
+
+#### `fullscreen/navarrows` {#full_navarrows}
+
+Show/hide arrows in thumb navigation.
+
+**Type**: Boolean
+
+**Default value**: `true`
+
+#### `fullscreen/navtype` {#full_navtype}
+
+Type of navigation.
+
+**Possible values**:
+
+- `thumbs`
+- `slides`
+
+**Default value**: `thumbs`
 
 #### `fullscreen/navigation_carousel` {#full_carousel}
 

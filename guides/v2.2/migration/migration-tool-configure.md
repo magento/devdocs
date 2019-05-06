@@ -42,7 +42,7 @@ To create a configuration file:
 
 5.	Specify the following at minimum:
 
-``` xml
+```xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root"/>
 </source>
@@ -64,7 +64,7 @@ Optional parameters:
 
 For example, if your database owner's username is `root` with password `pass` and you use the prefix `magento1` in your Magento 1 database, use the following in `config.xml`:
 
-``` xml
+```xml
 <source>
     <database host="127.0.0.1" name="magento1" user="root" password="pass"/>
 </source>
@@ -89,7 +89,7 @@ You can also connect to a database using the TLS protocol (i.e., using public/pr
 
 For example:
 
-``` xml
+```xml
 <source>
     <database host="localhost" name="magento1" user="root" ssl_ca="/path/to/file" ssl_cert="/path/to/file" ssl_key="/path/to/file"/>
 </source>

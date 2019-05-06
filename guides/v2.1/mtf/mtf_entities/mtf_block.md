@@ -591,13 +591,13 @@ It contains the `getOptions()` method that:
 
 * Calls the render if there is a render with the name `bundle`
 
-``` php?start_inline=1
+```php
 $this->callRender($typeId, 'getOptions', ['product' => $product])
 ```
 
 * Calls a default method if the render is absent
 
-``` php?start_inline=1
+```php
 $this->getCustomOptionsBlock()->getOptions($product);
 ```
  

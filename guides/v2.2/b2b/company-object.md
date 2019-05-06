@@ -22,7 +22,7 @@ This section describes the REST endpoints used to manage `Company` objects.
 
 **REST Endpoints**
 
-``` json
+```json
 POST /V1/company/
 PUT /V1/company/:companyId
 GET /V1/company/:companyId
@@ -69,7 +69,7 @@ The following example creates a company and assigns the default shared catalog (
 
 **Payload**
 
-``` json
+```json
 {
   "company": {
     "company_name": "Test company",
@@ -91,7 +91,7 @@ The following example creates a company and assigns the default shared catalog (
 
 **Response**
 
-``` json
+```json
 {
   "id": 2,
   "company_name": "Test company",
@@ -129,7 +129,7 @@ The following call changes the company status to Rejected (`2`) and explains why
 
 **Payload**
 
-``` json
+```json
 {
   "company": {
   	"id": 2,
@@ -155,7 +155,7 @@ The following call changes the company status to Rejected (`2`) and explains why
 
 **Response**
 
-``` json
+```json
 {
   "id": 2,
   "company_name": "Test company",
@@ -196,7 +196,7 @@ None
 
 **Response**
 
-``` json
+```json
 {
   "id": 2,
   "status": 0,
@@ -258,7 +258,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {
