@@ -99,7 +99,7 @@ The following example shows how to install using the command line with the follo
 
 Optionally switch to [developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
-	cd <your Magento install dir>/bin
+	cd <magento_root>/bin
 	php magento deploy:mode:set developer
 
 {% endcollapsible %}

@@ -157,7 +157,7 @@ This section shows examples of managing the configuration so you can see how cha
 
 This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General** > **Locale Options**).
 
-After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
+After you make the change in the Admin, run `bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
 
 ```php
 'general' =>
@@ -179,7 +179,7 @@ This section discusses making the following configuration changes:
 *   Changing the default email domain (**Stores** > Settings > **Configuration** > Customers > **Customer Configuration**)
 *   Setting the PayPal API Username and API password (**Stores** > Settings > **Configuration** > Sales > **Payment Methods** > **PayPal** > **Required PayPal Settings**)
 
-After you make the change in the Admin, run `php bin/magento app:config:dump` on your development system. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
+After you make the change in the Admin, run `bin/magento app:config:dump` on your development system. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
 
 #### config.php
 
@@ -269,8 +269,8 @@ The default email domain system-specific configuration setting is written to `ap
 
 The PayPal settings are written to neither file because the `magento app:config:dump` command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:
 
-    php bin/magento config:sensitive:set paypal/wpp/api_username <username>
-    php bin/magento config:sensitive:set paypal/wpp/api_password <password>
+    bin/magento config:sensitive:set paypal/wpp/api_username <username>
+    bin/magento config:sensitive:set paypal/wpp/api_password <password>
 
 ## Prerequisite for your development, build, and production systems {#config-deploy-prereq}
 

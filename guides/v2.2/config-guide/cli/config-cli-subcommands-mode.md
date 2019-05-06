@@ -50,7 +50,7 @@ bin/magento deploy:mode:show
 
 A message similar to the following displays:
 
-```
+```terminal
 Current application mode: {mode}. (Note: Environment variables may override this value.)
 ```
 
@@ -125,15 +125,17 @@ When you change from production to developer mode, you should clear generated cl
 
 1.  If you're changing from production mode to developer mode, delete the contents of the `generated/code` and `generated/metadata` directories:
 
-		rm -rf <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
+    rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
 
 2.  Set the mode:
 
-		bin/magento deploy:mode:set developer
+    ```bash
+    bin/magento deploy:mode:set developer
+    ```
 
-	The following message displays:
+The following message displays:
 
-		Enabled developer mode.
+	Enabled developer mode.
 
 ### Change to default mode
 
