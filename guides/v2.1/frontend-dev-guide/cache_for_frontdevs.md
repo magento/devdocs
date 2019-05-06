@@ -56,4 +56,10 @@ You can clean generated static view files in any of the following ways:
 
 ## Clean static files {#clean_static}
 
-Besides the cached files, in theme development process developers also deal with other saved files - static view files that are preprocessed and published to the `var/view_preprocessed` and `pub/static` directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. While working theme development process through grunt tool After run `exec` command `clear` Magento `cache`, then run `watch` command. (It will help When we run exec some of the added custom jQuery not loading like product sliders, banners etc)
+Besides the cached files, in theme development process developers also deal with other saved files - static view files that are preprocessed and published to the `var/view_preprocessed` and `pub/static` directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories.
+
+-   Working theme development process through grunt tool After run following commands and It will help When we run `exec` some of the added custom jQuery not loading like product sliders, banners etc.
+
+    -   To execute theme : `grunt exec:<your_theme>`
+    -   Clear Magento cache : `php bin/magento clear:cache`
+    -   Then run : `grunt watch`
