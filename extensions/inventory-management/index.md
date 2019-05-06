@@ -4,7 +4,7 @@ title: Install Inventory Management
 redirect_from: guides/v2.3/comp-mgr/install-extensions/inventory-management-installation.html
 ---
 
-{{site.data.var.im}} modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in 2.3.X {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+{{site.data.var.im}} modules provide all inventory features and options for Single and Multi Source merchants to manage product quantities and stock for sales channels. These features are available in 2.3.x {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 These features and extensions were developed as part of the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi) through the Magento Community Engineering program.
 
@@ -82,7 +82,7 @@ For more information on configurations, see [Enabling Inventory Management](http
 
 You may need to disable {{site.data.var.im}} modules to:
 
-* Speed up the upgrade process for merchants migrating from 2.0.X, 2.1.X, or 2.2.X to 2.3.X.
+* Speed up the upgrade process for merchants migrating from 2.0.x, 2.1.x, or 2.2.x to 2.3.x.
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
@@ -140,9 +140,9 @@ To disable {{site.data.var.im}}, see the instructions for [Enable or disable mod
 
 ### Previous Magento versions
 
-When upgrading or updating an existing 2.1.X or 2.2.X Magento installation to Magento {{site.data.var.ce}} or {{site.data.var.ee}} 2.3.X, {{site.data.var.im}} modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
+When upgrading or updating an existing 2.1.x or 2.2.x Magento installation to Magento {{site.data.var.ce}} or {{site.data.var.ee}} 2.3.x, {{site.data.var.im}} modules will be disabled by default. This is a precaution to prevent backward incompatible upgrades and to better support Magento Order Management (OMS).
 
-Currently, Order Management does not support {{site.data.var.im}} (future development planned). When upgrading, {{site.data.var.im}} modules will be disabled to allow OMS and Magento 2.3.X to work seamlessly.
+Currently, Order Management does not support {{site.data.var.im}} (future development planned). When upgrading, {{site.data.var.im}} modules will be disabled to allow OMS and Magento 2.3.x to work seamlessly.
 
 To enable {{site.data.var.im}} modules:
 
