@@ -2,21 +2,30 @@
 layout: null
 ---
 {%- for page in site.pages -%}
-  {%- if page.redirect_from contains "guides/v2.0" -%}
-    {%- assign to=page.path | replace: ".md", ".html" -%}
-    {%- assign from=page.redirect_from | remove_first: "/" -%}
+{%- if page.redirect_from -%}
+{% assign from="" %}
+{% if page.redirect_from.first %}
+{%- for entry in page.redirect_from -%}
+  {% if entry contains "guides/v2.0" %}{% assign from=entry %}{% endif %}
+{%- endfor -%}
+{% elsif page.redirect_from contains "guides/v2.0" %}
+  {% assign from=page.redirect_from %}
+{% endif %}
+{%- if from != "" -%}
+{% assign to=page.url | prepend: site.baseurl %}
 {
-  "RoutingRules": [
+  "RoutingRules":[
     {
       "Condition": {
-         "KeyPrefixEquals": "{{ from }}" 
-       },
-       "Redirect": {
-         "HttpRedirectCode": "301",
-         "ReplaceKeyPrefixWith": "{{ to }}"
-       }
+        "KeyPrefixEquals": "{{ from }}" 
+      },
+      "Redirect": {
+        "HttpRedirectCode": "301",
+        "ReplaceKeyPrefixWith": "{{ to }}"
+      }
     }
- ]
-}
-  {%- endif -%}
+  ]
+},
+{%- endif -%}
+{%- endif -%}
 {%- endfor -%}
