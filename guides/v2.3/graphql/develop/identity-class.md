@@ -3,7 +3,7 @@ group: graphql
 title: Identity class
 ---
 
-If your module caches custom data beyond the default full page cache (which includes product, category, and CMS data), then you must create an `Identity` class for the module. Place this class in your module’s `Model/Resolver` directory.
+If you create a cacheable query (similar to those for product, category, and CMS data), then you must create an `Identity` class for the module. The class must return unique identifiers for cache tags that can be invalidated when an entity changes. Place this class in your module’s `Model/Resolver` directory.
 
 An Identity class implements `Magento\Framework\GraphQl\Query\Resolver\IdentityInterface`. Your Identity class must contain the following elements:
 
@@ -11,7 +11,7 @@ An Identity class implements `Magento\Framework\GraphQl\Query\Resolver\IdentityI
 
 * Your implementation of the `getIdentities(array $resolvedData)` method. Generally, this method takes an array of query results and creates a new cache tag for each entity based on the original string and the unique identifier for each item to be cached. For example, the getIdentities method for the `CatalogGraphQl` component appends the product ID to the `cat_p` cache tag, such as `cat_p_1`, `cat_p_2`, and so on.
 
-Use the following example as the basis for your custom `Identity` class:
+Use following example as the basis for your custom `Identity` class:
 
 ```php
 <?php
@@ -36,7 +36,15 @@ class MyIdentity implements IdentityInterface
      */
     public function getIdentities(array $resolvedData): array
     {
-       // Your code
+        $ids = [];
+        $items = $resolvedData['items'] ?? [];
+        foreach ($items as $item) {
+            $ids[] = sprintf('%s_%s', $this->cacheTag, $item['entity_id']);
+        }
+        if (!empty($ids)) {
+            array_unshift($ids, $this->cacheTag);
+        }
+        return $ids;
     }
 }
 ```
