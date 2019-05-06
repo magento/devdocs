@@ -39,7 +39,9 @@ To skip the interactive mode, use the `-n, --no-interaction` option.
 | MariaDB       | `--db`     | 10.0, 10.1, 10.2
 | Elasticsearch | `--es`     | 1.7, 2.4, 5.2, 6.5
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
-| Redis         | `--redis`  | 3.0, 3.2, 4.0, 5.0
+| Redis         | `--redis`  | 3.2, 4.0, 5.0
+
+The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
 
 For example, the following command starts the Docker configuration generator for the developer mode and specifies the PHP version 7.2:
 
