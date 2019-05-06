@@ -41,9 +41,17 @@ bin/magento cache:clean
 
 After the upgrade completes, manually clear `var` subdirectories:
 
+```bash
 	rm -rf <Magento install dir>/var/cache/*
+```
+
+```bash
 	rm -rf <Magento install dir>/var/page_cache/*
+```
+
+```bash
 	rm -rf <Magento install dir>/var/generation/*
+```
 
 ## Restart Varnish
 
@@ -74,7 +82,9 @@ Clear the `var/cache`, 	`var/page_cache`, `var/generation`
 
 A sample command follows:
 
+```bash
 	rm -rf var/cache/* var/page_cache/* var/generation/*
+```
 
 ### Access your storefront again
 

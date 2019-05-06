@@ -24,9 +24,11 @@ The following image shows a page where the current strings are used:
 To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file. 
 
 1. Run the [i18n (internationalization) tool] to generate the en_US dictionary for the `orange` theme:
+    
     ```bash
     php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
     ```
+    
 1. Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file and add the following rows:
     ```text
     "Add to Cart", "Purchase"
