@@ -37,11 +37,11 @@ Before you run any of these commands, you must either [install the Magento appli
 |Command|Description|
 |--- |--- |
 |[`magento cache:{enable/disable/clean/flush/status}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html)|Manages the cache|
-|[`magento indexer:{status/show-mode/set-mode/reindex/info}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)|Manages the indexers|
+|[`magento indexer:{status/show-mode/set-mode/reindex/info/reset/show-dimensions-mode/set-dimensions-mode}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html)|Manages the indexers|
 |[`magento cron:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cron.html)|Runs Magento cron jobs|
 |[`magento setup:di:compile`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-compiler.html)|Compiles all non-existent proxies and factories; and pre-compiles class definitions, inheritance information, and plug-in definitions for one store and website.|
 |[`magento info:dependencies:{show-modules/show-modules-circular/show-framework}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-depen.html)|Module dependencies, circular dependencies, and Magento framework dependencies.|
-|[`magento i18n:{collect-phrases/pack}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)|Creates a translation dictionary or a translation package|
+|[`magento i18n:{collect-phrases/pack/uninstall}`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-i18n.html)|Creates a translation dictionary or a translation package|
 |[`magento setup:static-content:deploy`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html)|Deploys static view files|
 |[`magento dev:source-theme:deploy`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-less-sass.html)|Creates CSS from LESS|
 |[`magento dev:tests:run`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-test.html)|Runs automated tests|
