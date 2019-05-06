@@ -71,7 +71,7 @@ You have the following options for configuring Amazon Sales Channel. You do not 
 
 1. Click **Sales Channels**, then **Global Settings**.
 
-1. For **Show Dashboard Chart**, set to "Yes" if you want to display the **Revenue** section on the store's dashboard screen. This section displays a graphical representation on the store's dashboard of the store's revenue for the time period defined in the drop-down . Options include Last 7 Days and Last 30 Days. 
+1. For **Show Dashboard Chart**, set to "Yes" if you want to display the **Revenue** section on the store's dashboard screen. 
 
 1. For **Clear Log History**, indicate the interval for clearing the collected logs. Options include Once Daily, Once Weekly, and Once Monthly (default).
 
