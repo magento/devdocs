@@ -3,7 +3,9 @@ group: extensions
 title: Install Amazon Sales Channel
 ---
 
-The Amazon Sales Channel extension installs and adds features to integrate your Magento catalog with Amazon Seller Accounts to sell through the Amazon Marketplace. To review additional information, see the [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html).
+The Amazon Sales Channel extension installs and adds features to integrate your Magento catalog with Amazon Seller Accounts to sell through the Amazon Marketplace. To review additional information, see the Amazon Sales Channel Marketplace page (coming soon).
+<!--- (http://marketplace.magento.com/magento-module-amazon.html)
+-->
 
 ## Requirements
 
@@ -31,7 +33,7 @@ To add the Amazon Sales Channel API key:
 
 1. Log into the Magento Admin.
 
-1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Amazon Sales Channel**.
+1. On the Admin sidebar, click **Marketing**. Then under **Channels**, click **Amazon**.
 
     If you need an API Key, the following screen displays.
 
@@ -47,15 +49,15 @@ To add the Amazon Sales Channel API key:
 
     ![Copy or generate an API Key](images/config-api-portal.png)
 
-1. Return to the Magento Admin tab and click **Add Key** on the Amazon welcome screen.
+1. Return to the Magento Admin tab and click **Add the key** on the Amazon welcome screen.
 
-    A store configuration page opens to **Stores** > **Configuration** > **Services** > **Channel**.
+    A store configuration page opens to **Stores** > **Configuration** > **Services** > **Magento Services**.
 
-1. In the Amazon Sales Channel section, paste the key you copied for **API key**.
+1. On the Api Keys screen, paste the key you copied for **Production API Key**.
 
 1. Click **Save Config**.
 
-1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Amazon Sales Channel**. Magento verifies and validates the entered API key, continuing with onboarding.
+1. On the Admin sidebar, click **Marketing**. Then under **Channels**, click **Amazon**. Magento verifies and validates the entered API key, continuing with onboarding.
 
 See [Onboarding Amazon Sales Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/amazon-onboarding-home.html) to continue.
 
@@ -69,9 +71,9 @@ You have the following options for configuring Amazon Sales Channel. You do not 
 
 1. Click **Sales Channels**, then **Global Settings**.
 
-1. For **Show Dashboard Chart**, set if you want to display or hide the chart. Your store dashboard provides a chart for reviewing data, sales, trends, etc.
+1. For **Show Dashboard Chart**, set to "Yes" if you want to display the **Revenue** section on the store's dashboard screen. 
 
-1. For **Clear Log History**, indicate the interval for clearing the collected logs. You have options for Once Daily, Once Weekly, and Once Monthly (default).
+1. For **Clear Log History**, indicate the interval for clearing the collected logs. Options include Once Daily, Once Weekly, and Once Monthly (default).
 
 1. Advanced users recommended: **Background Tasks (CRON) Source**. All background tasks are handled by CRON jobs using the Magento CRON. Advanced users can change this setting to Command Line (CLI) CRON.
 

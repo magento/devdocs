@@ -96,7 +96,7 @@ For example, to change to the `magento_user` and extract `MDVA-532.zip` into `/v
 
 {% collapsible To fix composer.lock: %}
 
-1.	As the Magento file system owner, open `<your Magento install dir>/composer.lock` in a text editor.
+1.	As the Magento file system owner, open `<magento_root>/composer.lock` in a text editor.
 2.	Change the following entry.
 
 	from:
