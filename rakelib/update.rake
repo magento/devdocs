@@ -42,6 +42,16 @@ namespace :update do
     end
   end
 
+  desc 'Update Page Builder Migration docs'
+  task :pbm do
+    puts 'Updating Page Builder Migration docs'.magenta
+    abort 'Cannot find the "page-builder-migration" directory' unless Dir.exist? 'page-builder-migration'
+    Dir.chdir 'page-builder-migration' do
+      sh 'git remote -v'
+      sh 'git pull'
+    end
+  end
+
   desc 'Update MFTF docs'
   task :mftf do
     puts 'Updating MFTF docs:'.magenta
@@ -78,5 +88,5 @@ namespace :update do
   task all: %w[devdocs subrepos]
 
   desc 'Update subrepositories only'
-  task subrepos: %w[m1 mbi pb mftf v2_0]
+  task subrepos: %w[m1 mbi pb pbm mftf v2_0]
 end
