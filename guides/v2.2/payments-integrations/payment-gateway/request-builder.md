@@ -40,7 +40,7 @@ Example of adding composite builders for the Braintree payment provider ([`app/c
             <item name="vault" xsi:type="string">Magento\Braintree\Gateway\Request\VaultDataBuilder</item>
             <item name="3dsecure" xsi:type="string">Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder</item>
             <item name="device_data" xsi:type="string">Magento\Braintree\Gateway\Request\KountPaymentDataBuilder</item>
-            <item name="dynamic_descriptor" xsi:type="string">  Magento\Braintree\Gateway\Request\DescriptorDataBuilder</item>
+            <item name="dynamic_descriptor" xsi:type="string">Magento\Braintree\Gateway\Request\DescriptorDataBuilder</item>
             <item name="store" xsi:type="string">Magento\Braintree\Gateway\Request\StoreConfigBuilder</item>
             <item name="merchant_account" xsi:type="string">Magento\Braintree\Gateway\Request\MerchantAccountDataBuilder</item>
         </argument>
@@ -56,7 +56,3 @@ Example of adding composite builders for the Braintree payment provider ([`app/c
         </argument>
     </arguments>
 </virtualType>
-```
-
-(The code sample is from {{site.data.var.ce}} v2.1. Although the payment provider gateway was added in v2.0, the particular default implementation using the gateway were added in v2.1)
-

@@ -5,9 +5,9 @@ landing-page: Pattern Library
 ---
 ## What is a design pattern?
 
-Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables and forms - that are standardized to be easily repeated and reused across a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or application.
+Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables, and forms - that are standardized to be easily repeated and reused across a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or application.
 
-Patterns include definitions, examples, instructions and specifications that break down spatial relationships and interactions / behaviors.
+Patterns include definitions, examples, instructions and specifications that break down spatial relationships, and interactions/behaviors.
 
 ## Why use patterns?
 
