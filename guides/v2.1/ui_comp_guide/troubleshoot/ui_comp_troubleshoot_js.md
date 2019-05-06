@@ -70,13 +70,13 @@ All modern browsers support “debugging” – a special UI in developer tools 
 
 ### Sources panel UI
 
-[DevTools] provides a lot of different tools for different tasks, and the **Sources** panel is where we debug JavaScript.
+[DevTools] provides a lot of different tools for different tasks, but the **Sources** panel is where you debug JavaScript.
 
 1. Open the required page in Chrome.
 2. Turn on developer tools with F12 (Windows, Linux) or Cmd+Opt+I (Mac).
-3. Select the `Sources` pane.
+3. Click the `Sources` tab.
 
-![Sources Pane]({{ site.baseurl }}/common/images/debugging-sources-pane.png)
+![Sources Panel]({{ site.baseurl }}/common/images/debugging-sources-pane.png)
 
 In the previous image, we can see three zones:
 
@@ -87,22 +87,22 @@ In the previous image, we can see three zones:
 ### Breakpoints
 
 A **breakpoint** is a line of code where the debugger will automatically pause the JavaScript execution process.
-For setting a breakpoint, we should click right on the code line number, like in the next image.
+To set a breakpoint, right click on the code line number (as shown in the next image).
 
 ![Breakpoints]({{ site.baseurl }}/common/images/debugging-breakpoints.png)
 
-We can always find a list of breakpoints in the right pane. That’s useful when we have many breakpoints in various files.
+You can always find a list of breakpoints in the right panel, which is useful when you have many breakpoints in various files.
 
 {: .bs-callout .bs-callout-info }
-By right clicking on the line number, allows us to create a conditional breakpoint, which triggers only when the given expression is truthy. That’s very handy when we need to stop only for certain function parameters.
+Right-clicking on the line number allows you to create a conditional breakpoint, which triggers only when the given expression is truthy. That’s helpful when you need to stop only for certain function parameters.
 
 ### Execution trace
 
-So, after setting the breakpoint, refresh the page and now lets explore the script tracing. As we can see in the next image, the script execution paused on the given breakpoint.
+After setting the breakpoint, refresh the page. Now, let's explore the script tracing. As you can see in the next image, the script execution paused on the given breakpoint.
 
 ![Execution Trace]({{ site.baseurl }}/common/images/debugging-execution-trace.png)
 
-As result, we are able to see what are the input param values and what the function returns. Moreover, we're also able to change the function's values on the fly.
+As result, you can see the input parameter values and what the function returns. Moreover, we're also able to change the function's values on the fly.
 
 ## See also
 
