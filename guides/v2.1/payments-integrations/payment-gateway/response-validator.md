@@ -1,10 +1,6 @@
 ---
 group: payments-integrations
-subgroup: A_gateway
 title: Response Validator
-menu_title: Response Validator
-menu_node:
-menu_order: 6
 ---
 
 Response Validator is a component of the Magento payment provider gateway that performs gateway response verification. This may include low level data formatting, security verification, and even execution of some business logic required by the store configuration.
@@ -22,7 +18,7 @@ A payment provider integration can have multiple response validators, that shoul
 ## Useful implementations
 
 * [\Magento\Payment\Gateway\Validator\AbstractValidator]({{ site.mage2100url }}app/code/Magento/Payment/Gateway/Validator/AbstractValidator.php): an abstract class with ability to create a Result object. Can be inherited from by particular response validator implementations.
-* [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{ site.mage2100url }}app/code/Magento/Payment/Gateway/Validator/ValidatorComposite.php): a chain of Validator objects, which are executed one by one and the result gets aggregated into one Result object.
+* [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{ site.mage2100url }}app/code/Magento/Payment/Gateway/Validator/ValidatorComposite.php): a chain of Validator objects, which are executed one by one and the result gets aggregated into one Result object. This chain can be configured to stop when certain validators fail.
 * [\Magento\Payment\Gateway\Validator\Result]({{ site.mage2100url }}app/code/Magento/Payment/Gateway/Validator/Result.php): base class for Result object. You still have an ability to create a Result of your own, but the default one covers the most amount of cases.
 
 ## Example

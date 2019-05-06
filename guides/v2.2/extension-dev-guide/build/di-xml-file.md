@@ -259,13 +259,13 @@ The `preference` node specifies the default implementation:
 This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\Core\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope.
 
 ```xml
-<!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml -->
+<!-- File: app/code/Magento/Backend/etc/adminhtml/di.xml -->
 <config>
     <preference for="Magento\Core\Model\UrlInterface" type="Magento\Backend\Model\Url" />
 </config>
 ```
 
-This mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} area.
+This mapping is in `app/code/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} area.
 
 ### Parameter configuration inheritance
 
