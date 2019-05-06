@@ -3,21 +3,21 @@ layout: null
 ---
 {%- for page in site.pages -%}
 {%- if page.redirect_from -%}
-{% assign from="" %}
+{% assign redirects = "" | split: "" %}
 {% if page.redirect_from.first %}
 {%- for entry in page.redirect_from -%}
-  {% if entry contains "guides/v2.0" %}{% assign from=entry %}{% endif %}
+{% if entry contains "guides/v2.0" %}{% assign redirects = redirects | push: entry %}{% endif %}
 {%- endfor -%}
 {% elsif page.redirect_from contains "guides/v2.0" %}
-  {% assign from=page.redirect_from %}
+{% assign redirects = redirects | push: page.redirect_from %}
 {% endif %}
-{%- if from != "" -%}
 {% assign to=page.url | prepend: site.baseurl %}
+{%- for redirect in redirects -%}
 {
   "RoutingRules":[
     {
       "Condition": {
-        "KeyPrefixEquals": "{{ from }}" 
+        "KeyPrefixEquals": "{{ redirect }}" 
       },
       "Redirect": {
         "HttpRedirectCode": "301",
@@ -26,6 +26,6 @@ layout: null
     }
   ]
 },
-{%- endif -%}
+{%- endfor -%}
 {%- endif -%}
 {%- endfor -%}
