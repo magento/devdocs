@@ -43,7 +43,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 ## Fixed issues
 ### Installation, setup, and deployment
 
-<!--- 58072 -->*  Magento no longer creates an `i18n` directory under the system root directory (`/`) when you run the `php bin/magento i18n:pack` command to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
+<!--- 58072 -->*  Magento no longer creates an `i18n` directory under the system root directory (`/`) when you run the `bin/magento i18n:pack` command to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
   
 
 ### Cart and checkout

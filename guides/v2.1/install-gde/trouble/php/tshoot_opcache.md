@@ -64,4 +64,4 @@ If you have more than one `opcache.ini`, modify all of them.
 
 6.	Regenerate DI configuration and all missing classes that can be auto-generated:
 
-	*	`php bin/magento setup:di:compile`
+	*	`bin/magento setup:di:compile`
