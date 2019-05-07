@@ -258,6 +258,10 @@ pages:
             - label: Update the Magento database schema and data
               url: /install-gde/install/cli/install-cli-subcommands-db-upgr.html
 
+            - label: Configure the lock provider
+              url: /install-gde/install/cli/install-cli-subcommands-lock.html
+              include_versions: ["2.2","2.3"]
+              
             - label: Configure the store
               url: /install-gde/install/cli/install-cli-subcommands-store.html
 
