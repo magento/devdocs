@@ -48,11 +48,7 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
 
--   **Environment variable updates**—
-
-    -   {:.new}<!-- MAGECLOUD-2822 -->Added the **SCD_MAX_EXECUTION_TIMEOUT** environment variable so you can increase the time to complete the static content deployment from the `.magento.env.yaml` file. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_max_execution_time), the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_max_execution_time), and the [global variables]({{ page.baseurl }}/cloud/env/variables-global.html#scd_max_execution_time).
-
-    -   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
+-   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
 -   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with the following patch error that appeared during the patch application process. 
 
