@@ -34,6 +34,7 @@ Enter in terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/
 ```
+
 ```bash
 composer update
 ```
