@@ -10,19 +10,18 @@ functional_areas:
 Magento 2 incorporates [Less](http://lesscss.org/), a CSS pre-processor that simplifies the management of complex CSS files.
 To define styles of a Magento store, you can use both - CSS and Less stylesheets.
 
-Magento application provides a built-in Less UI library, which you can optionally extend. 
+Magento application provides a built-in Less UI library, which you can optionally extend.
 
 To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} styles, you need to [create a custom design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). Then you can use one of the following approaches:
 
-*	If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files. 
-*	Create your own Less files using the built-in Less preprocessor. 
-*	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
+* If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files.
 
 ## Things to remember when working with styles
 
-Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
-
-If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for instructions how to do this.
+* Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
+* When creating your own Less files using the built-in Less preprocessor, compilation mode should be [server-side]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html).
+* When creating your own CSS files, including when using third-party CSS preprocessor, compilation mode whould be [client-side]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html).
+* If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for instructions how to do this.
 
 ## Change styles: walkthrough {#css_walk}
 
@@ -50,17 +49,15 @@ When OrangeCo [applies their theme]({{ page.baseurl }}/frontend-dev-guide/themes
 
 ![The customized view of a product page, with the grey Add to Cart button]
 
-## What's in this chapter {#css_topics}
+## In this chapter {#css_topics}
 
 Other topics of this chapter describe the following:
 
-* [Including CSS]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html): how stylesheets are organized and included to be used for store pages in the Magento application. 
+* [Including CSS]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html): how stylesheets are organized and included to be used for store pages in the Magento application.
 * [CSS Preprocessing]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html): how stylesheets are preprocessed and compiled
 * [Magento UI Library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html): how to use the Magento styles {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} in your custom themes
 * [Using Custom Fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html): how to add custom fonts 
-* [Customizing styles illustration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html): how to change a theme's color scheme using Magento UI library. 
+* [Customizing styles illustration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html): how to change a theme's color scheme using Magento UI library.
 
 [The default view of a product page, with the orange Add to Cart button]: {{site.baseurl}}/common/images/css_over1.png
 [The customized view of a product page, with the grey Add to Cart button]: {{site.baseurl}}/common/images/css_over2.png
-
-

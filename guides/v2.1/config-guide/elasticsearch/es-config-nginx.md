@@ -55,7 +55,9 @@ This section discusses how to specify who can access the {% glossarytooltip b14e
 
 	For example, if your proxy uses port 8080:
 
+    ```bash
 		curl -i http://localhost:8080/_cluster/health
+    ```
 
 	Messages similar to the following display to indicate success:
 

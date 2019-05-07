@@ -28,7 +28,7 @@ npm install
 {:#prepare-step6}
 
 ```bash
-php bin/magento setup:static-content:deploy -f
+bin/magento setup:static-content:deploy -f
 ```
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
