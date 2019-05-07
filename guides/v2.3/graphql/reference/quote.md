@@ -24,10 +24,22 @@ The `Cart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`applied_coupon` | code | Contains the coupon code if used 
+`applied_coupon` | AppliedCoupon | The `AppliedCoupon` object contains the code text attribute, which provides the coupon code
+`available_payment_methods` | AvailablePaymentMethod | Available payment methods
 `billing_address` | [CartAddress](#cartAddressAttributes) | Contains the billing address specified in the customer's cart
+`email` | String | The customer's email address
 `items` | [CartItemInterface](#cartItemsInterface) | Contains the items in the customer's cart
+`selected_payment_method` | SelectedPaymentMethod | Selected payment method
 `shipping_addresses` | [CartAddress](#cartAddressAttributes) | Contains one or more shipping addresses
+
+### Available Payment Method attributes
+
+the `AvailablePaymentMethod` object must contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | The payment method code
+`title` | String | The payment method title
 
 ### Cart address attributes {#cartAddressAttributes}
 The `CartAddress` object can contain the following attributes:
@@ -56,6 +68,16 @@ Attribute |  Data Type | Description
 `id` | String | ID of the item
 `product` | [ProductInterface]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) | Contains attributes that are common to all types of products
 `qty` | Float | The number of items in the cart
+
+## Selected Payment Method attributes
+
+the `SelectedPaymentMethod` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String | The payment method code
+`purchase_order_number` | String | The purchase order number
+`title` | String | The payment method title
 
 ### Example usage
 
