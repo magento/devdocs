@@ -40,6 +40,7 @@ To skip the interactive mode, use the `-n, --no-interaction` option.
 | Elasticsearch | `--es`     | 1.7, 2.4, 5.2, 6.5
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
 | Redis         | `--redis`  | 3.2, 4.0, 5.0
+| Node          | `--node`   | 6, 8, 10, 11
 
 The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
 
@@ -194,7 +195,7 @@ Continue launching your Docker environment in the _developer_ mode. The develope
     Developer mode does not require the `build` operation.
 
 ## Access local Magento Cloud template
- 
+
  by opening one of the following secure URLs in a browser:
 
 -  [`http://magento2.docker`](http://magento2.docker)
