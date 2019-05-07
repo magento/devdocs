@@ -151,7 +151,7 @@ Shorter methods do less, which in turn means they are easier to test. The same i
 
 As a rule of thumb, try to keep methods to five or fewer lines of code.
 
-### Each function has one function
+### Each function has one single purpose
 
 {: .bs-callout .bs-callout-info }
 Functions should do only one thing and they should do it very well.
