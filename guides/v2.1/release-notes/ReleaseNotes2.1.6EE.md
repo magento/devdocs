@@ -69,7 +69,7 @@ Users have encountered problems displaying images after upgrading their software
 
 **Workaround**: To correct problems with image loading, choose one of these two workarounds:
 
-* Run `php bin/magento catalog:images:resize`
+* Run `bin/magento catalog:images:resize`
 
 or 
 

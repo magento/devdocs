@@ -24,8 +24,13 @@ Clear all directories and files under Magento's `var` subdirectory and install t
 
 As the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) or as a user with `root` privileges, enter the following commands:
 
+    ```bash
 	cd <your Magento install directory>/var
+	```
+	
+	```bash
 	rm -rf cache/* di/* generation/* page_cache/*
+	```
 
 #### Redis
 
