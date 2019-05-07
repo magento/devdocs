@@ -17,6 +17,7 @@ Image | Docker link | Tag
 **FPM**<br>PHP-CLI: version 7<br>PHP-FPM: version 7 | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
 **ElasticSearch** | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch) | 1.7
 **NGINX** |[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx) | 1.9
+**Node** | [official Node Docker image](https://hub.docker.com/_/node/) | --
 **RabbitMQ** | [rabbitmq](https://hub.docker.com/_/rabbitmq) | 3.5
 **Redis** | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis) | 3.0
 **TLS** | [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) | latest
@@ -67,7 +68,7 @@ docker-compose run deploy bash -c "cat /app/var/cron.log"
 
 ## Node Container
 
-The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies or run any Node based command line tools.
+The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies or run any Node-based command line tools.
 
 ## Database container
 

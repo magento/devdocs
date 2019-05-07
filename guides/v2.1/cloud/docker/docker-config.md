@@ -34,14 +34,13 @@ To skip the interactive mode, use the `-n, --no-interaction` option.
 
 | Service       | Key        | Available versions
 | ------------- | ---------- | ------------------
-| PHP           | `--php`    | 7.0, 7.1, 7.2
-| NGINX         | `--nginx`  | 1.9, latest
-| Node.js       | `--node`   | 6, 8, 10, 11
-| MariaDB       | `--db`     | 10.0, 10.1, 10.2
 | Elasticsearch | `--es`     | 1.7, 2.4, 5.2, 6.5
+| MariaDB       | `--db`     | 10.0, 10.1, 10.2
+| NGINX         | `--nginx`  | 1.9, latest
+| Node          | `--node`   | 6, 8, 10, 11
+| PHP           | `--php`    | 7.0, 7.1, 7.2
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
 | Redis         | `--redis`  | 3.2, 4.0, 5.0
-| Node          | `--node`   | 6, 8, 10, 11
 
 The `docker:build` command runs in interactive mode and verifies the configured service versions. To skip the interactive mode, use the `-n, --no-interaction` option.
 
