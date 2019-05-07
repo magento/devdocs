@@ -35,7 +35,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 3. Enable maintenance mode using the command:
 
-        php bin/magento maintenance:enable
+        bin/magento maintenance:enable
 
 4. Apply updates to Magento or its components using the following command pattern:
 

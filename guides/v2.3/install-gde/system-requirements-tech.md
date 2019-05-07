@@ -43,7 +43,6 @@ Magento only uses MySQL features compatible with MariaDB. MariaDB may not be com
 ## PHP
 
 {:.bs-callout .bs-callout-info}
-Magento 2.3.1 is certified for PHP 7.2.11.
 All 3rd party libraries now support PHP 7.2.
  If you are interested in participating in Magento Community projects we welcome your help! See our [ZenHub board](https://app.zenhub.com/workspace/o/magento-engcom/php-7.2-support/boards?repos=116423356,116426364,115111902) for a full list of outstanding issues.
 

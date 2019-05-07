@@ -150,19 +150,26 @@ You cannot use the Fastly service in Integration environments.
 2.	Wait for dependencies to be updated.
 3.	Enter the following command to fully update and clear the cache:
 
-		php bin/magento setup:upgrade && php bin/magento cache:clean
+    ```bash
+    php bin/magento setup:upgrade && php bin/magento cache:clean
+    ```
+
 4. Edit your composer.json and ensure the Fastly module is included with version.
 
 	* In the "require" section, you should have `"fastly/magento2": <version number>`
 	* In the "repositories" section, you should have:
+    
+    ```json
+    "fastly-magento2": {
+        "url": "https://github.com/fastly/fastly-magento2.git"
+    }
+    ```
+    
+3.	Add, commit, and push the changes to your code repository with the following command:
 
-		"fastly-magento2": {
-					"url": "https://github.com/fastly/fastly-magento2.git"
-		}
-3.	Add, commit, and push the changes to your code repository with the following
-    command:
-
-		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
+    ```bash
+    git add -A; git commit -m "Install Fastly" && git push origin <branch name>
+    ```
 
 4. Merge the branch code with the `master` Integration branch.
 

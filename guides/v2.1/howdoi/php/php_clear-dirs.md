@@ -98,7 +98,7 @@ The following table provides guidelines on what you should clear and when.
 
 To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
 
-	rm -rf <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
+	rm -rf <magento_root>/var/di/* <magento_root>/var/generation/*
 
 You can also use the following command-line tools clear some directories for you. These commands perform other tasks as well; consult the linked documentation for more details.
 

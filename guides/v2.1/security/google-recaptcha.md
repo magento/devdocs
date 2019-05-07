@@ -28,9 +28,11 @@ To complete installation in an existing Magento instance, run the following comm
 ```bash
 bin/magento module:enable MSP_ReCaptcha
 ```
+
 ```bash
 bin/magento setup:upgrade
 ```
+
 ```bash
 bin/magento cache:clean
 ```
@@ -44,5 +46,5 @@ See the [Magento Admin User Guide](https://docs.magento.com/m2/ce/user_guide/sto
 The extension supports a command line option for disabling reCAPTCHA. Use this command when you cannot access the Magento Admin UI.
 
 ```bash
-php bin/magento msp:security:recaptcha:disable
+bin/magento msp:security:recaptcha:disable
 ```
