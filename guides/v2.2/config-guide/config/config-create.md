@@ -21,27 +21,27 @@ Your new `events.xml` is automatically collected from your module and merged wit
 
 To create new configuration type, you must add at minimum:
 
-*  {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files
-*  XSD validation schema
-*  A loader
+* {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files
+* XSD validation schema
+* A loader
 
 For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for a new search server that enables extensions to configure how its entities are indexed in that server, create:
 
-*  A loader.
-*  An XSD schema.
-*  Any other classes required for your new type to work.
-*  An appropriately named configuration file. For example, `search.xml`. This file is read and validated against your schema.
+* A loader.
+* An XSD schema.
+* Any other classes required for your new type to work.
+* An appropriately named configuration file. For example, `search.xml`. This file is read and validated against your schema.
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
 To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
 
-*  `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
-*  `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
-*  `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
-*  `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated. 
-*  `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
-*  `$idAttributes`. Array of node attribute IDs.
+* `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
+* `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
+* `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
+* `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2200url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated. 
+* `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
+* `$idAttributes`. Array of node attribute IDs.
 
     For example, to merge the XML files:
 
@@ -71,13 +71,11 @@ If you have an `events.xml` file and a first `events.xsd` file, the XSD files fo
 
 To ensure validation of an XML file by appropriate XSD file, you must add the Uniform Resource Name (URN) to the XSD file in the XML file. For example:
 
-	<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd">
-
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager:etc/config.xsd">
 
 Your IDE can validate your configuration files at both runtime and during development.
 
-#### Related topics
+### Related topics
 
-*  [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
-*  [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
+* [Module configuration files]({{ page.baseurl }}/config-guide/config/config-php.html)
+* [Magento's deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html)
