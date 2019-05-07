@@ -1,20 +1,16 @@
 ---
 layout: null
 ---
-{%- for page in site.pages -%}
-{%- if page.redirect_from -%}
-{% assign redirects = "" | split: "" %}
-{% if page.redirect_from.first %}
-{%- for entry in page.redirect_from -%}
-{% if entry contains "guides/v2.0" %}{% assign redirects = redirects | push: entry %}{% endif %}
-{%- endfor -%}
-{% elsif page.redirect_from contains "guides/v2.0" %}
-{% assign redirects = redirects | push: page.redirect_from %}
-{% endif %}
-{% assign to=page.url | prepend: site.baseurl %}
-{%- for redirect in redirects -%}
 {
-  "RoutingRules":[
+  "ErrorDocument": {
+     "Key": "404.html"
+   },
+   "IndexDocument": {
+     "Suffix": "index.html"
+   },
+   "RoutingRules": [
+    {%- for page in site.pages -%}
+    {%- if page.redirect_from -%}{% assign redirects = "" | split: "" %}{% if page.redirect_from.first %}{% for entry in page.redirect_from %}{% if entry contains "guides/v2.0" %}{% assign redirects = redirects | push: entry %}{% endif %}{% endfor %}{% elsif page.redirect_from contains "guides/v2.0" %}{% assign redirects = redirects | push: page.redirect_from %}{% endif %}{% assign to=page.url | prepend: site.baseurl %}{% for redirect in redirects %}
     {
       "Condition": {
         "KeyPrefixEquals": "{{ redirect }}" 
@@ -23,9 +19,7 @@ layout: null
         "HttpRedirectCode": "301",
         "ReplaceKeyPrefixWith": "{{ to }}"
       }
-    }
+    },
+    {%- endfor -%}{%- endif -%}{%- endfor -%}
   ]
-},
-{%- endfor -%}
-{%- endif -%}
-{%- endfor -%}
+}
