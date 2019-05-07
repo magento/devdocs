@@ -16,7 +16,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 1. From the Magento root directory, switch to production mode:
 
     ```bash
-    php bin/magento deploy:mode:set production
+    bin/magento deploy:mode:set production
     ```
 
 2. Enable JavaScript bundling:
