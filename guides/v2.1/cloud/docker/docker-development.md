@@ -65,6 +65,10 @@ The Cron container is based on PHP-CLI images, and executes operations in the ba
 docker-compose run deploy bash -c "cat /app/var/cron.log"
 ```
 
+## Node Container
+
+The Node container is based on the [official Node Docker image](https://hub.docker.com/_/node/). It can be used to install NPM dependencies or run any Node based command line tools.
+
 ## Database container
 
 The database container is based on the `mariadb:10` image.
@@ -83,7 +87,7 @@ The TLS termination proxy container, based on the  [magento/magento-cloud-docker
 
 ## Sharing data between host machine and container
 
-You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command. 
+You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
 
 ## Sendmail service
 
