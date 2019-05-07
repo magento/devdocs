@@ -215,6 +215,82 @@ mutation {
 }
 ```
 
+### Adding simple product with customizable options to a cart
+
+If a product has a customizable option, the option's value can be specified in the add to cart request.
+
+**Request**
+
+``` text
+mutation {
+  addSimpleProductsToCart (input: {
+    cart_id: "nu31JXR9DaqbdVqFDGnqjrMJmUnT3mzB"
+    cartItems: {
+      data: {
+        sku:"simple"
+        qty:1
+      },
+      customizable_options: [
+        {
+          id: 121
+          value: "field value"
+        }
+      ]
+    }
+  }) {
+    cart {
+      items {
+        product {
+         	name
+        }
+        qty
+        
+        ... on SimpleCartItem {
+          customizable_options {
+            label
+            values {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```text
+{
+  "data": {
+    "addSimpleProductsToCart": {
+      "cart": {
+        "items": [
+          {
+            "product": {
+              "name": "simple"
+            },
+            "qty": 2,
+            "customizable_options": [
+              {
+                "label": "Field Option",
+                "values": [
+                  {
+                    "value": "field value"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+
 ### Updating billing and shipping information
 {:.no_toc}
 
