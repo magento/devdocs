@@ -78,6 +78,7 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
     ```
+    
     This command generates the following Docker ENV files:
 
     * `docker/config.env`
