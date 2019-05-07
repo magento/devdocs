@@ -26,7 +26,7 @@ Condition | Notes
 `from` | The beginning of a range. Must be used with `to`
 `gt` | Greater than
 `gteq` |  Greater than or equal
-`in` | In. The `value` can contain a comma-separated list of values.
+`in` | In. The `value` can contain a comma-separated list of up 250 values.
 `like` | Like. The `value` can contain the SQL wildcard characters when `like` is specified.
 `lt` | Less than
 `lteq` | Less than or equal
