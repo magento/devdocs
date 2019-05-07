@@ -54,6 +54,9 @@ To update `composer.json`:
 
     ```bash
     composer require <component-name>:<version> --no-update
+    ```
+    
+    ```bash
     composer update
     ```
 
@@ -61,6 +64,9 @@ To update `composer.json`:
 
     ```bash
     composer require pixlee/magento2:1.0.1 --no-update
+    ```
+    
+    ```bash
     composer update
     ```
 
@@ -69,7 +75,13 @@ To update `composer.json`:
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<message>"
+    ```
+    
+    ```bash
     git push origin <environment ID>
     ```
 
@@ -153,7 +165,13 @@ You can use CLI commands or directly edit `app/etc/config.php` to enable or disa
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<message>"
+    ```
+    
+    ```bash
     git push origin <environment ID>
     ```
 
@@ -188,7 +206,13 @@ To update an extension:
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<message>"
+    ```
+    
+    ```bash
     git push origin <environment ID>
     ```
 
