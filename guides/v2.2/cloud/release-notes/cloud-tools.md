@@ -32,11 +32,13 @@ The release notes include:
 
 ## v2002.0.18
 
--   **Docker Updates**—
+-   {:.new}**Docker Updates**—
 
     -   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
     -   {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
+
+    -   {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
 
     -   {:.new}<!-- MAGECLOUD-3152 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
 
@@ -46,22 +48,23 @@ The release notes include:
 
     -   {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose _db-dump_ command erases existing dumps.
 
--   {:.new}<!-- MAGECLOUD-3135 -->**New environment variable**—Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
-
 -   {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
 
--   **Environment variable updates**—
+-   {:.new}**Environment variable updates**—
 
     -   {:.new}<!-- MAGECLOUD-3205 -->The new **ELASTICSUITE\_CONFIGURATION** environment variable retains your customized service settings between deployments. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#elasticsuite_configuration) content.
 
     -   {:.new}<!-- MAGECLOUD-2822 -->Added the **SCD_MAX_EXECUTION_TIMEOUT** environment variable so you can increase the time to complete the static content deployment from the `.magento.env.yaml` file. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_max_execution_time), the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_max_execution_time), and the [global variables]({{ page.baseurl }}/cloud/env/variables-global.html#scd_max_execution_time).
 
+    -   {:.new}<!-- MAGECLOUD-3135 -->—Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
+
     -   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
--   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with the following patch error that appeared during the patch application process. 
+-   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with the following patch error that appeared during the patch application process:
 
     ```terminal
-    Command git apply --check --reverse /app/vendor/magento/ece-tools/patches/MAGECLOUD-2820__implement_isolated_connections_mechanism__2.2.0.patch returned code 1```
+    Command git apply --check --reverse /app/vendor/magento/ece-tools/patches/MAGECLOUD-2820__implement_isolated_connections_mechanism__2.2.0.patch returned code 1
+    ```
     {: .no-copy}
 
 -   {:.fix}<!-- MAGECLOUD-3456 -->Added a patch that replaces _Google Image Charts_ with _Image-Charts_. See the DevBlog article [Google Image Charts deprecation and update for M1](https://community.magento.com/t5/Magento-DevBlog/Google-Image-Charts-deprecation-and-update-for-M1/ba-p/125006).

@@ -32,11 +32,13 @@ The release notes include:
 
 ## v2002.0.18
 
--   **Docker Updates**—
+-   {:.new}**Docker Updates**—
 
     -   {:.new}<!-- MAGECLOUD-3150 -->Now, the Docker environment supports the cron configuration defined in the [crons property of the .magento.app.yaml file]({{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#crons).
 
     -   {:.new}<!-- MAGECLOUD-2890 -->**New Docker Container**—Added a [TLS termination proxy container]({{page.baseurl}}/cloud/docker/docker-development.html#varnish-container) to facilitate the Varnish SSL termination over HTTPS.
+
+    -   {:.new}<!-- MAGECLOUD-3345 -->**New Docker Image**—Added a Node.js image to support Gulp and other capabilities, such as Jasmine JS Unit Testing.
 
     -   {:.new}<!-- MAGECLOUD-3152 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions.
 
@@ -50,10 +52,11 @@ The release notes include:
 
 -   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
--   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with the following patch error that appeared during the patch application process. 
+-   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with the following patch error that appeared during the patch application process:
 
     ```terminal
-    Command git apply --check --reverse /app/vendor/magento/ece-tools/patches/MAGECLOUD-2820__implement_isolated_connections_mechanism__2.2.0.patch returned code 1```
+    Command git apply --check --reverse /app/vendor/magento/ece-tools/patches/MAGECLOUD-2820__implement_isolated_connections_mechanism__2.2.0.patch returned code 1
+    ```
     {: .no-copy}
 
 -   {:.fix}<!-- MAGECLOUD-3456 -->Added a patch that replaces _Google Image Charts_ with _Image-Charts_. See the DevBlog article [Google Image Charts deprecation and update for M1](https://community.magento.com/t5/Magento-DevBlog/Google-Image-Charts-deprecation-and-update-for-M1/ba-p/125006).

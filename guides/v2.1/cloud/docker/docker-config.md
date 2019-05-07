@@ -36,6 +36,7 @@ To skip the interactive mode, use the `-n, --no-interaction` option.
 | ------------- | ---------- | ------------------
 | PHP           | `--php`    | 7.0, 7.1, 7.2
 | NGINX         | `--nginx`  | 1.9, latest
+| Node.js       | `--node`   | 6, 8, 10, 11
 | MariaDB       | `--db`     | 10.0, 10.1, 10.2
 | Elasticsearch | `--es`     | 1.7, 2.4, 5.2, 6.5
 | RabbitMQ      | `--rmq`    | 3.5, 3.7
