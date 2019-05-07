@@ -15,12 +15,13 @@ The `urlResolver` query returns the canonical URL for a specified product, categ
 
 ### EntityUrl attributes
 
-The `EntityUrl` output object contains the `id`, `canonical_url`, and `type` attributes.
+The `EntityUrl` output object contains the `id`, `relative_url`, and `type` attributes.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`canonical_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
+`canonical_url` | String | Deprecated. Use `relative_url` instead.
 `id` | Int | The ID assigned to the object associated with the specified `url`. This could be a product ID, category ID, or page ID.
+`relative_url` | String | The internal relative URL. If the specified  `url` is a redirect, the query returns the redirected URL, not the original.
 `type` | UrlRewriteEntityTypeEnum | The value of `UrlRewriteEntityTypeEnum` is one of PRODUCT, CATEGORY, or CMS_PAGE.
 `url` | String | The URL to resolve. Magento stores product and category URLs with the `.html` extension.  CMS URLs do not contain the extension.
 
@@ -33,7 +34,6 @@ Attribute | Type | Description
 `parameters` | [[`HttpQueryParameter`]](#HttpQueryParameter) | An array of target path parameters
 `url` | String | The request URL
 
-
 ### HttpQueryParameter object {#HttpQueryParameter}
 
 The `HttpQueryParameter` object provides details about target path parameters.
@@ -42,7 +42,6 @@ Attribute | Type | Description
 --- | --- | ---
 `name` | String | The parameter name, such as `id`
 `value` | String | The value assigned to the parameter
-
 
 ## Example usage
 
@@ -54,7 +53,7 @@ The following query returns information about the URL containing `joust-duffle-b
 {
   urlResolver(url: "joust-duffle-bag.html") {
     id
-    canonical_url
+    relative_url
     type
   }
 }
@@ -67,7 +66,7 @@ The following query returns information about the URL containing `joust-duffle-b
   "data": {
     "urlResolver": {
       "id": 1,
-      "canonical_url": "catalog/product/view/id/1",
+      "relative_url": "catalog/product/view/id/1",
       "type": "PRODUCT"
     }
   }

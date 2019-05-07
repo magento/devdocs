@@ -39,7 +39,7 @@ GET and DELETE requests are not supported.
 
 The payload of a bulk request contains an array of request bodies. For example, the minimal payload for creating four customers with `POST /async/bulk/V1/customers` would be structured as follows: 
 
-``` json
+```json
 [{
 	"customer": {
 		"email": "mshaw@example.com",
@@ -82,7 +82,7 @@ The second and third requests are duplicates.
 
 The response contains an array that indicates whether the call successfully added each request to the message queue. Although the duplicated request to create a customer will fail, Magento added it to the message queue successfully.
 
-``` json
+```json
 {
     "bulk_uuid": "799a59c0-09ca-4d60-b432-2953986c1c38",
     "request_items": [

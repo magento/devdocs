@@ -95,7 +95,7 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |Name|Value|Required?|
 |--- |--- |--- |
 |`--base-url`|Base URL to use to access your Magento Admin and storefront in any of the following formats:<br><br>`http[s]://<host or ip>/<your Magento install dir>/`.<br><br>**Note:** The scheme (http:// or https://) and a trailing slash are both required.<br><br>`<your Magento install dir>` is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be magento2 or it might be blank.<br><br>To access Magento on localhost, you can use either `http://127.0.0.1/<your Magento install dir>/` or `http://127.0.0.1/<your Magento install dir>/`.<br><br>- `{{base_url}}` which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the hostname magento.example.com, you can install the Magento software with `--base-url={{base_url}}` and access the Magento Admin with a URL like http://magento.example.com/admin.|Yes|
-|`--backend-frontname`|Uniform Resource Identifier (URI) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.<br><br>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.<br><br>The URI displays at the end of the installation. You can display it later at any time using the magento info:adminuri command.<br><br>If you choose to enter a value, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (`_`) only.|No|
+|`--backend-frontname`|Uniform Resource Identifier (URI) to access the Magento Admin. You can omit this parameter to let Magento generate a random URI for you with the following pattern <code>admin_jkhgdfq</code>.<br><br>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.<br><br>The URI displays at the end of the installation. You can display it later at any time using the magento info:adminuri command.<br><br>If you choose to enter a value, we recommend you not use a common word like admin, backend, and so on. The Admin URI can contain alphanumeric values and the underscore character (`_`) only.|No|
 |`--db-host`|Use any of the following:<br><br>- The database server's fully qualified hostname or IP address.<br><br>- `localhost` (default) or `127.0.0.1` if your database server is on the same host as your web server.localhost means the MySQL client library uses UNIX sockets to connect to the database. `127.0.0.1` causes the client library to use the TCP protocol. For more information about sockets, see the [PHP PDO_MYSQL documentation](http://php.net/manual/en/ref.pdo-mysql.php).<br><br>**Note:** You can optionally specify the database server port in its hostname like www.example.com:9000|Yes|
 |`--db-name`|Name of the Magento database instance in which you want to install the Magento database tables.<br><br>Default is `magento2`.|Yes|
 |`--db-user`|Username of the Magento database instance owner.<br><br>Default is `root`.|Yes|
@@ -121,6 +121,17 @@ In Magento Commerce version 2.2.8 and later, you can create the Magento admin us
 |`--amqp-virtualhost`|{{site.data.var.ee}} only. The virtual host for connecting to RabbitMQ. The default is `/`.|No|
 |`--amqp-ssl`|{{site.data.var.ee}} only. Indicates whether to connect to RabbitMQ. The default is `false`. See RabbitMQ for information about setting up SSL for RabbitMQ.|No|
 
+
+**Lock configuration options**
+
+|Name|Value|Required?|
+|--- |--- |--- |
+|`--lock-provider`|Lock provider name.<br><br>Available lock providers: `db`, `zookeeper`, `file`.<br><br>The default lock provider: `db`|No|
+|`--lock-db-prefix`|The specific db prefix to avoid lock conflicts when using `db` lock provider.<br><br>The default value: `NULL`|No|
+|`--lock-zookeeper-host`|Host and port to connect to Zookeeper cluster when you use `zookeeper` lock provider.<br><br>For example: `127.0.0.1:2181`|Yes, if you set `--lock-provider=zookeeper`|
+|`--lock-zookeeper-path`|The path where Zookeeper will save locks.<br><br>The default path is: `/magento/locks`|No|
+|`--lock-file-path`|The path where file locks will be saved.|Yes, if you set `--lock-provider=file`|
+{:style="table-layout:auto;"}
 
 {:.bs-callout .bs-callout-info}
 To enable or disable modules after installing Magento, see [Enable and disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
@@ -247,21 +258,3 @@ Messages like the following display if the installation is successful:
 	This type of setup is typical for shared hosting.
 *	[Verify the installation]({{ page.baseurl }}/install-gde/install/verify.html).
 
-#### Related topics
-
-*	[Remove sample data modules or update sample data]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-other.html)
-*	[Display or change the Admin URI]({{ page.baseurl }}/install-gde/install/cli/install-cli-adminurl.html)
-*	[Enable or disable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html)
-*	[Uninstall modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-mods.html)
-*	[Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html)
-*	[Enable or disable maintenance mode]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-maint.html)
-*	[Create the Magento database schema]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db.html)
-*	[Update the Magento database schema and data]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-db-upgr.html)
-*	[Configure the store]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-store.html)
-*	[Create a Magento administrator]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)
-*	[Back up and roll back the file system, media, and database]({{ page.baseurl }}/install-gde/install/cli/install-cli-backup.html)
-*	[Uninstall themes]({{ page.baseurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
-*	[Uninstall language packages]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall-langpk.html)
-*	[Uninstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall)
-*	[Update the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update)
-*	[Reinstall the Magento software]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall)

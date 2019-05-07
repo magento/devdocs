@@ -4,7 +4,7 @@ title: Magento Commerce 2.3.1 Release Notes
 ---
 
 
-*Release notes published on March 26, 2019 and last edited on April 5, 2019.*
+*Release notes published on March 26, 2019 and last edited on April 18, 2019.*
 
 We are pleased to present Magento Commerce 2.3.1.  This release includes over 200 functional fixes to the core product, over 500 pull requests contributed by the community, and  over 30 security enhancements. 
 
@@ -87,9 +87,6 @@ The Multi-Source Inventory (MSI) community project has added multiple new featur
 
 ### Improved developer experience
 
-#### Automation of upgrade process dependency assessment
-
-A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. Previously, developers performed this step manually by running the `https://devdocs.magento.com/guides/v2.3/comp-mgr/cli/cli-upgrade.html#upgrade-cli-script` upgrade script. <!--- MC-5465-->
 
 
 
@@ -222,7 +219,6 @@ We've fixed hundreds of issues in the Magento 2.3.1 core code.
 
 <!--- MC-6275-->* The commands to enable and disable debug logging have changed to `bin/magento setup:config:set --enable-debug-logging=true | false`. The previous commands, `bin/magento config:set dev/debug/debug_logging 0 | 1` are no longer supported.  See [Logging](https://devdocs.magento.com/guides/v2.3/config-guide/logging.html). 
 
-<!--- MC-5465-->* A new composer plugin `magento/composer-root-update-plugin` automatically updates all dependencies in `composer.json` during a Magento 2.x upgrade. 
 
 <!--- ENGCOM-3291-->* Magento now sets the `id_prefix` option on prefix cache keys for the cache frontend during installation. If this option is not set, Magento uses the first 12 bits of the md5 hash of the absolute path to the Magento `app/etc` directory. But if this value is not exactly the same on all web servers, cache invalidation will not work.  *Fix submitted by [Fabian Schmengler](https://github.com/schmengler) in pull request [18641](https://github.com/magento/magento2/pull/18641)*. [GitHub-15828](https://github.com/magento/magento2/issues/15828)
 
@@ -1655,9 +1651,25 @@ See [Filterable attributes](https://docs.magento.com/m2/ee/user_guide/catalog/na
 
 **Workaround**: You must enable HSTS from **Stores** > **General** > **Web** > **BaseUrls (Secure)**. <!--- MC-15003-->
 
-**Issue**: For Inventory Management, asynchronous migration of data between sources will encounter issues due to changes in Asynchronous APIs with topic names reflecting PHP class and method names. 
 
-**Workaround**: We recommend using synchronous operations, setting **Run asynchronously** to "No". To configure, see [Configure Global Options](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) in the Magento User Guide.
+**Issue**: For Inventory Management, asynchronous migration of data between sources will encounter issues due to changes in Asynchronous APIs with topic names reflecting PHP class and method names. **Workaround**: We recommend using synchronous operations, setting **Run asynchronously** to "No". To configure, see [Configure Global Options](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-options-global.html) in the Magento User Guide.
+
+**Issue**:  The CGI URL gateway in the UPS module has been updated from HTTP to HTTPS. Consequently, the UPS shipping method does not populate correctly. **Workaround**: Confirm that the Gateway URL uses the HTTPS protocol in the [UPS Shipping Method Configuration](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html). <!--- MAGETWO-98947-->
+
+*Updating an existing setting*:
+If UPS Type is set to `United Parcel Service` in the UPS Shipping Method Configuration, you must manually change the protocol of the Gateway URL from HTTP to HTTPS. Example: `https://www.ups.com/using/services/rave/qcostcgi.cgi`
+
+ 
+*To configure UPS for the first time*: 
+ 
+1. Navigate to **Stores**  > **Settings**  > **Configuration**  >  **Sales**  > **Shipping Methods**. Then, expand the **UPS** section. 
+ 
+2. At the **UPS Type** field, clear the Use system value checkbox. Then, change **UPS Type** to `United Parcel Service XML`. The Gateway URL populates correctly when this value is selected. 
+
+3. Tap **Save Config**.
+
+
+
 
 ## Community contributions
 
@@ -1687,7 +1699,7 @@ Our technology stack is built on PHP and MySQL. For more information, see [Syste
 
 ### Installation and upgrade instructions
 
-You can install Magento Commerce 2.3.1  using Composer.
+You can install {{site.data.var.ee}} 2.3.1  using Composer.
 
 ## Migration toolkits
 

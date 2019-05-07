@@ -48,8 +48,8 @@ Attribute | Data type | Description
 `available_currency_codes` | [String] | An array of currencies accepted by the store
 `base_currency_code` | String | The base currency set for the store, such as USD
 `base_currency_symbol` | String | The symbol for the specified base currency, such as $
-`default_display_currecy_code` | String | Specifies if the currency code is set as the store's default
-`default_display_currecy_symbol` | String | Specifies if the currency symbol is set as the store's default
+`default_display_currency_code` | String | Specifies if the currency code is set as the store's default
+`default_display_currency_symbol` | String | Specifies if the currency symbol is set as the store's default
 `exchange_rates` | [[ExchangeRate]](#exchangeRateAttributes) | An array of exchange rates specified in the store
 
 
@@ -298,8 +298,8 @@ query {
     currency {
         base_currency_code
         base_currency_symbol
-        default_display_currecy_code
-        default_display_currecy_symbol
+        default_display_currency_code
+        default_display_currency_symbol
         available_currency_codes
         exchange_rates {
             currency_to
@@ -317,8 +317,8 @@ query {
     "currency": {
       "base_currency_code": "USD",
       "base_currency_symbol": "$",
-      "default_display_currecy_code": null,
-      "default_display_currecy_symbol": null,
+      "default_display_currency_code": null,
+      "default_display_currency_symbol": null,
       "available_currency_codes": [
         "USD"
       ],

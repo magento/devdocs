@@ -1,9 +1,9 @@
 ---
 group: graphql
-title: quote endpoint
+title: Quote endpoint
 ---
 
-A quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
+A Quote represents the contents of a customer's shopping cart. It is responsible for performing tasks such as:
 
 * Tracking each item in the cart, including the quantity and base cost
 * Determining estimated shipping costs
@@ -88,7 +88,6 @@ The following returns information about a cart given a `cart_id`. Note that the 
 ``` text
 {
   cart(cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C") {
-    cart_id
     billing_address {
       lastname
       firstname
@@ -113,7 +112,6 @@ The following returns information about a cart given a `cart_id`. Note that the 
 {
   "data": {
     "cart": {
-      "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
       "items": [
         {
          "id": "22",
@@ -207,7 +205,6 @@ mutation {
     }
   ) {
     cart {
-      cart_id
       items {
         product {
           name
@@ -226,7 +223,6 @@ mutation {
   "data": {
     "addSimpleProductsToCart": {
       "cart": {
-        "cart_id": "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C",
         "items": [
           {
             "product": {
@@ -241,13 +237,89 @@ mutation {
 }
 ```
 
+### Adding simple product with customizable options to a cart
+
+If a product has a customizable option, the option's value can be specified in the add to cart request.
+
+**Request**
+
+``` text
+mutation {
+  addSimpleProductsToCart (input: {
+    cart_id: "nu31JXR9DaqbdVqFDGnqjrMJmUnT3mzB"
+    cartItems: {
+      data: {
+        sku:"simple"
+        qty:1
+      },
+      customizable_options: [
+        {
+          id: 121
+          value: "field value"
+        }
+      ]
+    }
+  }) {
+    cart {
+      items {
+        product {
+         	name
+        }
+        qty
+        
+        ... on SimpleCartItem {
+          customizable_options {
+            label
+            values {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```text
+{
+  "data": {
+    "addSimpleProductsToCart": {
+      "cart": {
+        "items": [
+          {
+            "product": {
+              "name": "simple"
+            },
+            "qty": 2,
+            "customizable_options": [
+              {
+                "label": "Field Option",
+                "values": [
+                  {
+                    "value": "field value"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+
 ### Updating billing and shipping information
 {:.no_toc}
 
 You can set the billing and shipping addresses on a cart.
 
 ### Set the billing address on cart attributes
-The `SetBillingAddressOnCart` object can contain the following attributes:
+The `setBillingAddressOnCart` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -255,7 +327,7 @@ Attribute |  Data Type | Description
 `cart_id` | String | The unique ID that identifies the customer's cart
 
 ### Set the billing address input attributes {#billingAddressInput}
-The `SetBillingAddressInput` object can contain the following attributes:
+The `BillingAddressInput` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -271,7 +343,6 @@ Attribute |  Data Type | Description
 `city` | String | The city specified for the billing address 
 `company` | String | The company specified for the billing address
 `country_code` | String | The country code and label for the billing address
-`customer_notes` | String | Comments made to the customer that accompanies the order
 `firstname` | String | The customer's first name
 `lastname` | String | The customer's last name
 `postcode` | String | The postal code for the billing address
@@ -310,7 +381,7 @@ mutation {
           postcode: "78758"
           country_code: "US"
           telephone: "8675309"
-          save_in_address_book: False
+          save_in_address_book: false
         }
       }
     }
@@ -386,7 +457,7 @@ mutation {
             postcode: "78758"
             country_code: "US"
             telephone: "8675309"
-            save_in_address_book: False
+            save_in_address_book: false
           }
         }
       ]
@@ -412,7 +483,24 @@ mutation {
 ```json
 {
   "data": {
-    "createEmptyCart": "6XZA7q1ooLEI0jLz8DfFrfruEqgxGzlt"
+    "setShippingAddressesOnCart": {
+      "cart": {
+        "shipping_addresses": [
+          {
+            "firstname": "Bob",
+            "lastname": "Roll",
+            "company": "Magento",
+            "street": [
+              "Magento Pkwy",
+              "Main Street"
+            ],
+            "city": "Austin",
+            "postcode": "78758",
+            "telephone": "8675309"
+          }
+        ]
+      }
+    }
   }
 }
 ```

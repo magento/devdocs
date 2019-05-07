@@ -126,6 +126,9 @@ If a service method argument is called `item`, there will be a problem during SO
             <li>
                <p><code>secure</code>. Optional. Boolean. Indicates that the route is accessible over only HTTPS. Any attempts to access this route over non-secure causes an exception.</p>
             </li>
+            <li>
+               <p><code>soapOperation</code>. Optional. String. Specifies the SOAP operation name to use instead of the interface's method name. Use this element to create multiple operations for the same service contract.</p>
+            </li>
          </ul>
       </td>
    </tr>
@@ -213,7 +216,7 @@ If a service method argument is called `item`, there will be a problem during SO
 ## Sample webapi.xml file {#sample-webapi}
 
 <p>This excerpt is from the <code>webapi.xml</code> file that defines the Customer service web API:</p>
-``` xml
+```xml
 <?xml version="1.0"?>
     <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group Service-->
@@ -305,7 +308,7 @@ If a service method argument is called `item`, there will be a problem during SO
    <code>paramOverriders</code> argument for <code>\Magento\Webapi\Controller\Rest\ParamsOverrider</code>. Parameter
    overriders must implement <code>\Magento\Framework\Webapi\Rest\Request\ParamOverriderInterface</code>. An
    example excerpt from <code>di.xml</code></p>
-``` xml
+```xml
 <type name="Magento\Webapi\Controller\Rest\ParamsOverrider">
     <arguments>
         <argument name="paramOverriders" xsi:type="array">
@@ -317,7 +320,7 @@ If a service method argument is called `item`, there will be a problem during SO
 <p>The above example create a new parameter override available for use in <code>webapi.xml</code>. The value passed for
    <code>%my_value%</code> will be the return value of
    <code>\VENDOR\MODULE\Controller\Rest\ParamOverriderMyValue::getOverriddenValue</code>. Example:</p>
-``` xml
+```xml
 <route url="/V1/example/me/service" method="GET">
     ...
     <data>

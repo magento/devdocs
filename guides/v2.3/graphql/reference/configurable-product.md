@@ -53,7 +53,6 @@ Attribute | Type | Description
 `attribute_code` | String | A string that identifies the attribute
 `attribute_id` | String | The ID assigned to the attribute
 `id` | Int | The configurable option ID number assigned by the system
-`is_use_default` | Boolean | Indicates whether the option is the default
 `label` | String | A string that describes the configurable product option. It is displayed on the UI.
 `position` | Int | A number that indicates the order in which the attribute is displayed
 `product_id` | Int | This is the same as a product's 'id' field
@@ -700,7 +699,7 @@ The `ConfigurableProductCartItemInput` object contains the following attributes:
 Attribute | Type | Description
 --- | --- | ---
 `customizable_options` | [CustomizableOptionInput](#customOptionInput) | An object that contains the ID and value of the product
-`data` | [CartItemDetailsInput](#cartItemDetailsInput) | An object that contains the quantity and SKU of the configurable product
+`data` | [CartItemInput](#cartItemInput) | An object that contains the quantity and SKU of the configurable product
 `variant_sku` | String | The SKU of the simple product
 
 ### Customizable option input {#customOptionInput}
@@ -711,8 +710,8 @@ Attribute | Type | Description
 `id` | Int | The ID of the customizable option
 `value` | String | The value of the customizable option. For example, if color was the customizable option, a possible value could be `black`
 
-### Cart item details input {#cartItemDetailsInput}
-The `CartItemDetailsInput` object contains the following attributes:
+### Cart item input {#cartItemInput}
+The `CartItemInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
