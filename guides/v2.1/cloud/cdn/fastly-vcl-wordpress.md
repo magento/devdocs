@@ -27,7 +27,7 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 -  Submit a support ticket requesting the following Fastly service configuration changes required to handle the redirects: 
 
-   -  Add the WordPress host to the Fastly backend configuration. Include the domain name for the project.
+   -  Add the WordPress host to the Fastly backend configuration. Include the domain name for the WordPress host.
 
    -  Attach the following request condition to the Wordpress backend.
 
