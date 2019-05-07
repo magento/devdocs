@@ -25,7 +25,7 @@ The Chrome and Safari browsers do not support the `ALLOW-FROM` option. [Browser 
 
 ## Implement `X-Frame-Options`
 
-Set a value for `X-Frame-Options` in `<your Magento install dir>/app/etc/env.php`. Following is the default value:
+Set a value for `X-Frame-Options` in `<magento_root>/app/etc/env.php`. Following is the default value:
 
 	  'x-frame-options' => 'SAMEORIGIN',
 

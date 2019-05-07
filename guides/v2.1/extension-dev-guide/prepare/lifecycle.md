@@ -250,7 +250,9 @@ class UpgradeData implements UpgradeDataInterface
 
 Magento executes the uninstall event class when your module is uninstalled using the [Component Manager] or with the following command line command:
 
-`bin/magento module:uninstall --remove-data <module_name>`
+```bash
+bin/magento module:uninstall --remove-data <module_name>
+```
 
 In this phase, your module should remove all traces of its existence in the database by dropping tables, deleting data, or restoring data.
 
