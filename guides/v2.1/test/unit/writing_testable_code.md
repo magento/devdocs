@@ -151,6 +151,62 @@ Shorter methods do less, which in turn means they are easier to test. The same i
 
 As a rule of thumb, try to keep methods to five or fewer lines of code.
 
+### Each function has one function
+
+{: .bs-callout .bs-callout-info }
+Functions should do only one thing and they should do it very well.
+
+Once you respect the [single responsibility principle][single-responsibility-principle]{:target="_blank"}, you will know exactly what you are testing and your functions will be smaller and clearer.
+Lets have a look at the following examples:
+
+```php
+// Wrong
+
+public function execute($customer) 
+{
+    $this->notifyCustomer($customer);
+}
+
+/**
+ * Save customer and notify by email
+ */
+public function notifyCustomer($customer) 
+{
+    $this->customerRepository->save($customer);
+    $this->email->sendEmail($customer->getEmail());
+}
+```
+
+In the bad example, you can see the `notifyCustomer` method, which does more than the method's name suggests you. Such method will be harder to maintain and can have some side effects you would not assume by its name.
+
+```php
+// Correct
+
+public function execute($customer) 
+{
+    $this->saveCustomer($customer);
+    $this->notifyCustomer($customer->getEmail());
+}
+
+/**
+ * Save Customer
+ */
+public function saveCustomer($customer) 
+{
+    $this->customerRepository->save($customer);
+}
+
+/**
+ * Notify customer by email
+ */
+public function notifyCustomer($email) 
+{
+    $this->email->sendEmail($email);
+}
+```
+
+In this correct example, you can see the `notifyCustomer` method was slightly refactored, and the only thing that it should do, is to notify the customer by email. The rest of the logic was moved into a separate method, which has its explanation name. 
+
 ### Testing private and protected methods
 
 When you see the need to write tests for `private` scope methods, it usually is a sign that the class under test is doing too much.  
@@ -227,3 +283,5 @@ Almost as a side effect, those classes are very easy to test.
 * [Clean Code](https://books.google.com/books/about/Clean_Code.html?id=dwSfGQAACAAJ){:target="_blank"} by Robert C. Martin
 * [Refactoring](http://martinfowler.com/books/refactoring.html){:target="_blank"} by Martin Fowler
 * [Growing Object Oriented Software Guided by Tests](http://www.growing-object-oriented-software.com){:target="_blank"} by Steve Freeman and Nat Pryce
+
+[single-responsibility-principle]: https://en.wikipedia.org/wiki/Single_responsibility_principle
