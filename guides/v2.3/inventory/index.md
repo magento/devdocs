@@ -5,7 +5,7 @@ landing-page: Inventory
 redirect_from: /guides/v2.3/inventory/overview.html
 ---
 
-Magento Open Source and Commerce v2.3 include new and expanded features and APIs for {{site.data.var.im}}. {{site.data.var.im}} replaces all core APIs in the Open Source `CatalogInventory` module and the `ScalableInventory` module in Commerce. It also provides additional APIs to extend and add functionality.
+{{site.data.var.ce}} and {{site.data.var.ee}} v2.3 include new and expanded features and APIs for {{site.data.var.im}}. {{site.data.var.im}} replaces all core APIs in the Open Source `CatalogInventory` module and the `ScalableInventory` module in Commerce. It also provides additional APIs to extend and add functionality.
 
 {{site.data.var.im}} features include
 
@@ -14,7 +14,7 @@ Magento Open Source and Commerce v2.3 include new and expanded features and APIs
 * Concurrent checkout protection
 * Shipment matching algorithms
 
-Merchants install {{site.data.var.im}} as part of v2.3.x installs and upgrades with the name `magento/inventory-composer-metapackage`. For details, see [Install {{site.data.var.im}}]({{site.baseurl}}/extensions/inventory-management/).
+Merchants install {{site.data.var.im}} as part of v2.3.x and upgrades with the name `magento/inventory-composer-metapackage`. For details, see [Install {{site.data.var.im}}]({{site.baseurl}}/extensions/inventory-management/).
 
 **Magento Community Contribution** – Magento thanks the many contributors to the [Multi Source Inventory (MSI) project](https://github.com/magento-engcom/msi), developing these features as part of the Magento Community Engineering program.
 
