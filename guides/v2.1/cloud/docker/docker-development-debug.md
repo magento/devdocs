@@ -18,7 +18,7 @@ If you use Microsoft Windows, take the following steps before continuing:
 
 ## Enable Xdebug
 
-To enable Xdebug, you must configure your `docker-compose.yaml` file at the time you configure your local workstation to [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html)
+To enable Xdebug, you must configure your `docker-compose.yaml` file at the time you configure your local workstation to [Launch Docker]({{ page.baseurl }}/cloud/docker/docker-config.html).
 
 ```yaml
 generic:
