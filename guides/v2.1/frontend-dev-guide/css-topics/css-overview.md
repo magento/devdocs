@@ -20,9 +20,19 @@ To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefron
 
 ## Things to remember when working with styles
 
-Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
+* Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
 
-If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for instructions how to do this.
+* If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for instructions how to do this.
+
+### CSS merging, minification and performance
+
+There are a couple options to help with CSS and site performance.
+
+* Merge CSS files to decrease the number of HTTP requests required to load the page. 
+
+* Minification of CSS files reduces the file size being sent. It does this by stripping white space within the file.
+
+To enable / disable these settings, go into Admin > **Stores** > Setting > **Configuration** > **Advanced** > **Developer** > **CSS Settings**.
 
 ## Change styles: walkthrough {#css_walk}
 
@@ -59,12 +69,6 @@ Other topics of this chapter describe the following:
 * [Magento UI Library]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html): how to use the Magento styles {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} in your custom themes
 * [Using Custom Fonts]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html): how to add custom fonts 
 * [Customizing styles illustration]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-practice.html): how to change a theme's color scheme using Magento UI library. 
-
-## CSS merging and minification
-
-The intention of merging is to decrease the number of HTTP requests. The purpose of minification is to make less number of bytes being transferred. Minification is valuable as it strips out whitespace which adds extra weight to the download request. Both of these provide performance boosts.
-
-To enable / disable these settings, go into Admin > Configuration > Advanced > Developer > CSS Settings.
 
 [The default view of a product page, with the orange Add to Cart button]: {{site.baseurl}}/common/images/css_over1.png
 [The customized view of a product page, with the grey Add to Cart button]: {{site.baseurl}}/common/images/css_over2.png
