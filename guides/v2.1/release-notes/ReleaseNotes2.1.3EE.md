@@ -211,7 +211,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `JavaScript Error: Uncaught RangeError: Maximum call stack size exceeded`. [(GITHUB-5573)](https://github.com/magento/magento2/issues/5573){:target="_blank"} 
 
-<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento install dir>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  [(GITHUB-5359)](https://github.com/magento/magento2/issues/5359){:target="_blank"}
+<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <magento_root>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  [(GITHUB-5359)](https://github.com/magento/magento2/issues/5359){:target="_blank"}
 
 
 <!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected during import. Previously, Magento did not remove these keys, which triggered a failure during import. This subsequently caused Magento to quickly reach the maximum error count, returning this error: "Maximum error count has been reached or system error is occurred!".  [(GITHUB-1471)](https://github.com/magento/magento2/issues/1471){:target="_blank"} 

@@ -26,17 +26,39 @@ The example Solr configuration is _not_ intended to be used in a production site
 
 1.  As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with {{site.data.var.ee}}:
 
-		cd <your Solr install dir>/example/solr
-		cp -R collection1 magento2
-		cd magento2
-		cp -R <your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* ./conf/
+    ```bash
+    cd <your Solr install dir>/example/solr
+    ```
+    
+    ```bash
+    cp -R collection1 magento2
+    ```
+    
+    ```bash
+    cd magento2
+    ```
+    
+    ```bash
+    cp -R <your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* ./conf/
+    ```
 
 	For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and {{site.data.var.ee}} is installed in <code>/var/www/magento/html/magento2ee</code>, enter:
 
-		cd /opt/solr/solr/solr-4.10.4/example/solr
-		cp -R collection1 magento2
-		cd magento2
-		cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
+    ```bash
+    cd /opt/solr/solr/solr-4.10.4/example/solr
+    ```
+    
+    ```bash
+    cp -R collection1 magento2
+    ```
+    
+    ```bash
+    cd magento2
+    ```
+    
+    ```bash
+    cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
+    ```
 
 	{:.bs-callout .bs-callout-info}
 	If you're prompted to overwrite files, try the command `\cp -R <your {{site.data.var.ee}} install dir>/vendor/magento/module-solr/conf/* .`.
@@ -69,8 +91,13 @@ The example Solr configuration is _not_ intended to be used in a production site
 
 	As a user with <code>root</code> privileges, enter the following command to start Solr:
 
-		cd <your Solr install dir>/example
-		java -jar start.jar
+    ```bash
+    cd <your Solr install dir>/example
+    ```
+    
+    ```bash
+    java -jar start.jar
+    ```
 
 	{:.bs-callout .bs-callout-warning}
 	This method for starting Solr is for convenience and testing purposes only. In a production environment, you should start and stop Solr using a script as discussed in [Script Solr startup and shutdown]({{ page.baseurl }}/config-guide/solr/solr-script.html#solr-script).
@@ -185,11 +212,15 @@ To reindex using the command line:
 1.	Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.	Enter the following command to reindex all indexers:
 
-		php <your Magento install dir>/bin/magento indexer:reindex
+    ```bash
+    php <magento_root>/bin/magento indexer:reindex
+    ```
 
 	Enter the following command to reindex the catalog search index only:
 
-		php <your Magento install dir>/bin/magento indexer:reindex catalogsearch_fulltext
+    ```bash
+    php <magento_root>/bin/magento indexer:reindex catalogsearch_fulltext
+    ```
 
 3.	Wait while the indexers are reindexed.
 

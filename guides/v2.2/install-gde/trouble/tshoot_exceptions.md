@@ -30,8 +30,8 @@ functional_areas:
 	
 #### Solution
 
-Clear the `<your Magento install dir>/generated/code` and other directories under `var` and `generated` as follows:
+Clear the `<magento_root>/generated/code` and other directories under `var` and `generated` as follows:
 
-	rm -rf <your Magento install dir>/generated/code/* <your Magento install dir>/generated/metadata/* <your Magento install dir>/var/cache/* 
+	rm -rf <magento_root>/generated/code/* <magento_root>/generated/metadata/* <magento_root>/var/cache/* 
 
 After clearing the directories, try the installation again.

@@ -246,7 +246,9 @@ Each image assigned to a product must be resized in accordance with image {% glo
 
 Command usage:
 
-`php <magento install dir>/bin/magento catalog:images:resize`
+```bash
+php <magento install dir>/bin/magento catalog:images:resize
+```
 
 This command has no arguments or options. A progress indicator displays while the command runs.
 
