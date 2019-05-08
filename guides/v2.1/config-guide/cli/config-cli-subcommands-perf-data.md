@@ -25,7 +25,7 @@ This gives you an idea about what the data looks like.
 
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
-Profiles are located in `<your Magento install dir>/setup/performance-toolkit/profiles/<ce or ee>`
+Profiles are located in `<magento_root>/setup/performance-toolkit/profiles/<ce or ee>`
 
 For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 

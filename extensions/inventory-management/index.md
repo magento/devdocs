@@ -146,7 +146,7 @@ Currently, Order Management does not support {{site.data.var.im}} (future develo
 
 To enable {{site.data.var.im}} modules:
 
-1. Edit the `<Magento_installation_directory>/composer.json` file.
+1. Edit the `<Magento_installation_directory>/app/etc/config.php` file.
 1. Modify all Inventory modules from `0` to `1` to enable.
 1. Update the database:
 

@@ -21,6 +21,7 @@ Enter in terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit
 ```
@@ -33,6 +34,7 @@ Enter in terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit --filter <name of test>
 ```

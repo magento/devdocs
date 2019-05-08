@@ -78,6 +78,7 @@ Enter in your terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
 ```
@@ -133,7 +134,6 @@ Let's check the functional tests for the Magento_Widget module.
 It contains a `StoreIds.php` data source, that is similar to what we need. It has the following code:
 
 ```php
-
 <?php
 
 namespace Magento\Widget\Test\Fixture\Widget;
@@ -270,7 +270,9 @@ Now we should change the fixture. Instead of `store_id` and `website_id`, we mus
 
 Then, we must regenerate the fixture to apply changes:
 
+```bash
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+```
 
 A new PHP class `Synonym.php` is generated in `<magento2_root_dir>/dev/tests/functional/generated/Magento/Search/Test/Fixture`.
 
