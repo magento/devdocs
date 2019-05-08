@@ -17,11 +17,8 @@ pages:
     - label: Inventory CLI reference
       url: /inventory/inventory-cli-reference.html
 
-    - label: Deprecated CatalogInventory entities
-      url: /inventory/catalog-inventory-replacements.html
-
-    - label: Deprecated ScalableInventory entities
-      url: /inventory/scalable-inventory-replacements.html
+    - label: Inventory API reference
+      url: /inventory/inventory-api-reference.html
 
     - label: Order processing with Inventory Management tutorial
       class: tutorial
