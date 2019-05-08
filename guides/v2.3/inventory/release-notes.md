@@ -23,7 +23,7 @@ The release notes include:
 
 ### v1.1.2 Beta
 
-{{site.data.var.im}} 1.1.2 Beta (module version: `inventory-composer-metapackage = 1.1.2`) is supported with version 2.3.2 and compatible with version 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+{{site.data.var.im}} 1.1.2 Beta (module version: `inventory-composer-metapackage = 1.1.2-beta2`) is supported with version 2.3.2 and compatible with version 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 - {:.new} **Added a Bulk Partial Stock Transfer Endpoint** - Current bulk trasfer endpoints move all assigned quantity from an origin to a destination source. The new `/rest/V1/inventory/bulk-partial-source-transfer` endpoint allows merchants to transfer partial stock from source-to-source as a bulk operation. Enter a request to the endpoint with the `sku`, `qty`, `origin_source_code`, and `destination_source_code` to transfer a specific amount of quantity. Transfers verify the source is assigned to the `sku`, enough quantity exists to transfer, etc. See [Inventory Bulk Actions](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/bulk-inventory.html). <!-- https://github.com/magento-engcom/msi/pull/2117 -->
 
@@ -42,6 +42,17 @@ The release notes include:
 - {:.fix} Resolved issue to correctly clear reservations and update product quantities after issuing a credit memo for an unshipped order. When you select the option to <!-- https://github.com/magento-engcom/msi/pull/2179 -->
 
 - {:.fix} Resolved issue to correctly save quantity for configurable product children when entering quantities during product creation. <!-- https://github.com/magento-engcom/msi/pull/2158 -->
+
+New modules for Inventory Management 1.1.2 Beta include:
+
+```php
+        'Magento_InventoryGraphQl' => 1,
+        'Magento_InventoryReservations' => 1,
+        'Magento_InventoryReservationsApi' => 1,
+        'Magento_InventoryReservationsCli' => 1,
+        'Magento_InventoryExportStock' => 0,
+        'Magento_InventoryExportStockApi' => 0,
+```
 
 ### v1.1.0
 

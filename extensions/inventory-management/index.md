@@ -18,25 +18,62 @@ The following line in the `composer.json` metapackage installs Inventory Managem
         magento/inventory-composer-metapackage = 1.1.0
 ```
 
-To install Inventory Management 1.1.2 Beta, update the following:
+To install {{site.data.var.im}} 1.1.2 Beta, update with the following:
 
 ```json
         magento/inventory-composer-metapackage = 1.1.2-beta2
 ```
 
-For a list of Inventory Management metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
+For a list of {{site.data.var.im}} metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
 
-The {{site.data.var.im}} installation process adds all modules to the `<Magento_installation_directory>/app/etc/config.php` file. A `1` value indicates the corresponding module is enabled. The entire list of modules include `Magento_Inventory` in the names.
-
-New modules for Inventory Management 1.1.2 Beta include:
+The {{site.data.var.im}} installation process adds all modules to the `<Magento_installation_directory>/app/etc/config.php` file. A `1` value indicates the corresponding module is enabled. The following list of modules are added (v1.1.2 Beta):
 
 ```php
-        'Magento_InventoryGraphQl' => 1,
-        'Magento_InventoryReservations' => 1,
-        'Magento_InventoryReservationsApi' => 1,
-        'Magento_InventoryReservationsCli' => 1,
+        'Magento_Inventory' => 0,
+        'Magento_InventoryAdminUi' => 0,
+        'Magento_InventoryApi' => 0,
+        'Magento_InventoryGraphQl' => 0,
+        'Magento_InventoryBundleProduct' => 0,
+        'Magento_InventoryBundleProductAdminUi' => 0,
+        'Magento_InventoryCache' => 0,
+        'Magento_InventoryConfigurableProduct' => 0,
+        'Magento_InventoryCatalogApi' => 0,
+        'Magento_InventoryCatalog' => 0,
+        'Magento_InventoryCatalogAdminUi' => 0,
+        'Magento_InventoryCatalogSearch' => 0,
+        'Magento_InventoryConfigurableProductAdminUi' => 0,
+        'Magento_InventoryConfigurableProductIndexer' => 0,
+        'Magento_InventoryConfiguration' => 0,
+        'Magento_InventoryConfigurationApi' => 0,
+        'Magento_InventoryDistanceBasedSourceSelection' => 0,
+        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 0,
+        'Magento_InventoryDistanceBasedSourceSelectionApi' => 0,
+        'Magento_InventoryElasticsearch' => 0,
         'Magento_InventoryExportStock' => 0,
         'Magento_InventoryExportStockApi' => 0,
+        'Magento_InventoryGroupedProduct' => 0,
+        'Magento_InventoryGroupedProductAdminUi' => 0,
+        'Magento_InventoryGroupedProductIndexer' => 0,
+        'Magento_InventoryImportExport' => 0,
+        'Magento_InventoryIndexer' => 0,
+        'Magento_InventoryLowQuantityNotification' => 0,
+        'Magento_InventoryLowQuantityNotificationAdminUi' => 0,
+        'Magento_InventoryLowQuantityNotificationApi' => 0,
+        'Magento_InventoryMultiDimensionalIndexerApi' => 0,
+        'Magento_InventoryProductAlert' => 0,
+        'Magento_InventoryReservations' => 0,
+        'Magento_InventoryReservationsApi' => 0,
+        'Magento_InventoryReservationsCli' => 0,
+        'Magento_InventorySales' => 0,
+        'Magento_InventorySalesAdminUi' => 0,
+        'Magento_InventorySalesApi' => 0,
+        'Magento_InventorySalesFrontendUi' => 0,
+        'Magento_InventorySetupFixtureGenerator' => 0,
+        'Magento_InventoryShipping' => 0,
+        'Magento_InventoryShippingAdminUi' => 0,
+        'Magento_InventorySourceDeductionApi' => 0,
+        'Magento_InventorySourceSelection' => 0,
+        'Magento_InventorySourceSelectionApi' => 0,
 ```
 
 ## Enable {{site.data.var.im}} features
