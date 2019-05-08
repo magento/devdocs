@@ -15,7 +15,9 @@ The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a rea
 
 ## Launch modes
 
-Mode is an additional configuration option for the Docker configuration generator (the `docker:build` command). You can launch your Docker environment in one of two modes:
+_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode does not affect the Magento mode. It determines the {{site.data.var.ece}} filesystem installation and read-only or read-write behavior.
+
+You can launch your Docker environment in one of the following modes:
 
 -   **production**—Production mode is the default configuration setting for launching the Docker environment. This option builds the Docker environment in production mode and verifies configured service versions.
 -   **developer**—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
