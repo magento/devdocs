@@ -53,7 +53,7 @@ Following is a summary of the process:
 
 3.	Clean the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and compiled code directories:
 
-		cd <your Magento install dir>/var
+		cd <magento_root>/var
 		rm -rf cache/* page_cache/* di/* generation/* 
 
 ## Add CLI commands using the Composer autoloader {#cli-autoload}

@@ -18,7 +18,7 @@ To update the updater application:
 
 	For example,
 
-		mv <your Magento install dir>/update <your Magento install dir>/old_update
+		mv <magento_root>/update <magento_root>/old_update
 3.	Change to your Magento 2 installation directory and enter the following command:
 
 		composer create-project magento/updater update --repository https://repo.magento.com

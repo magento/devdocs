@@ -20,12 +20,12 @@ extension:
         support:
           2.2.4+: not supported
           2.3.0: general availability
-          2.3.1: general availability
+          2.3.1: not supported
       - 
         name: 1.5.1
         support:
           2.2.4+: not supported
-          2.3.0: general availability
+          2.3.0: not supported
           2.3.1: general availability
   -
     name: Multi Source Inventory
