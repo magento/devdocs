@@ -16,20 +16,22 @@ Magento creates a reservation for each product when the following events occur:
 * A customer or merchant fully or partially cancels an order.
 * The merchant creates a shipment for a physical product.
 * The merchant creates an invoice for a virtual or downloadable product.
-* The merchant issues a creditmemo.
+* The merchant issues a credit memo.
 
 Reservations are append-only operations, similar to a log of events. The initial reservation is assigned a negative quantity value. All subsequent reservations created while processing the order are positive values. When the order is complete, the sum of all reservations for the product is 0.
 
 Before Magento can issue a reservation in response to a new order, it determines whether there are enough salable items to fulfill the order. The following quantities factor into the calculation:
 
-* **StockItem quantity**. The StockItem quantity is the aggregated amount of inventory from all the physical sources for the current sales channel. If the Baltimore source has 20 units of a product, the Austin source has 25 units of the same product, while the Reno source has 10, and all these sources are linked to Stock A, then the StockItem count for thus product is 55 (20 + 15 + 10). (When items are shipped, the Inventory indexer updates the quantities available at each source.)
+* **StockItem quantity**. The StockItem quantity is the aggregated amount of inventory from all the physical sources for the current sales channel. If the Baltimore source has 20 units of a product, the Austin source has 25 units of the same product, while the Reno source has 10, and all these sources are linked to Stock A, then the StockItem count for thus product is 55 (20 + 25 + 10). (When items are shipped, the Inventory indexer updates the quantities available at each source.)
 
 * **Outstanding reservations**. Magento totals all the initial reservations that have not been compensated. This number will always be negative. If customer A has a reservation for 10 items, and customer B has a reservation 5 for items, then outstanding reservations for the product total -15.
 
 Therefore, the merchant can fulfill an incoming order as long as the customer orders less than 40 (55 + -15) units.
 
+When you complete processing an order (Complete, Canceled, Closed), all reservations in the scope of that order should resolve to `0`. This clears all salable quantity holds.
+
 {: .bs-callout .bs-callout-info }
-Backorders and Minimum Quantity Threshold settings also affect the calculation of salable quantities, but they are outside the scope of this topic. For more information about these settings, see [Configuring Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-inventory-management.html) in the _Magento User Guide_.
+Backorders (with Out-of-Stock Thresholds) and Notify for Quantity Below Threshold settings also affect the calculation of salable quantities, but they are outside the scope of this topic. For more information about these settings, see [Configuring Inventory Management](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-inventory-management.html) in the _Magento User Guide_.
 
 ## Reservation objects
 
@@ -99,7 +101,7 @@ Magento provides the `inventory_cleanup_reservations` cron job to clear the rese
 Often, all initial reservations produced in a single day cannot compensated that same day.  This situation could occur when a customer places an order minutes before the cron job begins or makes the purchase with an offline payment method, such as a bank transfer. The compensated reservation sequences remain in the database until they have all been compensated. This practice does not interfere with reservation calculations, because the total for each reservation is 0.
 
 {: .bs-callout .bs-callout-info }
-{{site.data.var.im}} provides commands to detect and manage reservation inconsistencies. See [Inventory CLI reference](https://devdocs.magento.com/guides/v2.3/inventory/inventory-cli-reference.html).
+{{site.data.var.im}} provides commands to detect and manage reservation inconsistencies. See [Inventory CLI reference]({{page.baseurl}}/inventory/inventory-cli-reference.html).
 
 ## Interfaces and services
 
