@@ -24,3 +24,9 @@ content_map:
   repository: magento-devdocs/magento2-page-builder
   branch: develop
   filter: true
+-
+  directory: page-builder-migration
+  repository: magento-devdocs/magento2-page-builder-data-migration
+  branch: 1.0.0-release
+  filter: true
+  

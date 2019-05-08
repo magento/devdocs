@@ -129,13 +129,13 @@ Fastly API requests are passed through the Fastly extension to get a response fr
 1.  In a terminal, use the following `curl` command to test your live site URL:
 
     ```bash
-curl https://<live URL> -vo /dev/null -H Fastly-Debug:1
+    curl https://<live URL> -vo /dev/null -H Fastly-Debug:1
     ```
 
 	  If you have not set a static route or completed the DNS configuration for the domains on your live site, use the `--resolve` flag, which bypasses DNS name resolution.
    
     ```bash
-curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
+    curl https://<live URL> -vo /dev/null -H Fastly-Debug:1 [--resolve] <live URL hostname>:443:<live IP address>
     ```
 
 1.  In the response, verify the [headers](#response-headers) to ensure that Fastly is working. You should see following unique headers in the response:
@@ -182,13 +182,13 @@ If the Fastly service returns incorrect headers, submit a Fastly API request dir
     For example, if you have a public URL www.mymagento.biz, enter a command similar to the following to test the production site:
       
     ```bash
-   curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -H Fastly-Debug:1
+    curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -H 'Host: www.mymagento.biz' -vo /dev/null -H Fastly-Debug:1
     ```
 
     If you have not completed the DNS configuration for the public hostname, remove the `"Host:<URL>"` option as shown in the following example:  
 
     ```bash
- curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
+    curl -k https://www.mymagento.biz.c.sv7gVom4qrpek.ent.magento.cloud -vo /dev/null -H Fastly-Debug:1
     ```
    
  2. In the response, check for errors in the [cache HIT and MISS headers](#response-headers).

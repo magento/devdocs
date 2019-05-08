@@ -7,7 +7,7 @@ The Google Shopping ads extension installs and adds Google Shopping features to 
 
 ## Requirements
 
-- **Magento Instance**: Google Shopping ads Channel can be installed on instances with {{site.data.var.ce}} and {{site.data.var.ee}} versions 2.2.X and 2.3.X. We do not support the extension on Magento 2.1 or Magento 1.
+- **Magento Instance**: Google Shopping ads Channel can be installed on instances with {{site.data.var.ce}} and {{site.data.var.ee}} versions 2.2.4+ and 2.3.x. We do not support the extension on Magento 2.1 or Magento 1.
 - **Magento Web Account**: You should have a Magento web account, which is used to create and track an API key.
 - **API Key**: Get a Google Shopping ads API key through your Magento web account. The following instructions include these steps.
 - **Google accounts**: During onboarding, you will create and configure any required Google accounts and settings. Consider using email accounts for your business as the account will be the primary owner (admin) of the Google, Google Merchant Center and Google Ads accounts you set in this integration.
