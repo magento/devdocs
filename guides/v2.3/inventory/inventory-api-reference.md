@@ -119,9 +119,9 @@ The following services reside under the [`Magento/InventorySourceSelectionApi/Ap
 
 Service | Description
 --- | ---
-[`GetDefaultSourceSelectionAlgorithmCodeInterface`]  |  Service to get the default Source Selection Algorithm (SSA) code
-[`GetSourceSelectionAlgorithmListInterface`]  |  Service to get the entire Source Selection Algorithm (SSA) list
-[`SourceSelectionServiceInterface`]  |  Service to run a specified Source Selection Algorithm (SSA) based on provided Inventory Request object
+[`GetDefaultSourceSelectionAlgorithmCodeInterface`](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventorySourceSelectionApi/Api/GetDefaultSourceSelectionAlgorithmCodeInterface.php)  |  Service to get the default Source Selection Algorithm (SSA) code
+[`GetSourceSelectionAlgorithmListInterface`](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventorySourceSelectionApi/Api/GetSourceSelectionAlgorithmListInterface.php)  |  Service to get the entire Source Selection Algorithm (SSA) list
+[`SourceSelectionServiceInterface`](https://github.com/magento-engcom/msi/blob/2.3-develop/app/code/Magento/InventorySourceSelectionApi/Api/SourceSelectionServiceInterface.php)  |  Service to run a specified Source Selection Algorithm (SSA) based on provided Inventory Request object
 
 ## Inventory Export Aggregated Stock Data API
 
