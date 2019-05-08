@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: Getting Started
-title: Magento 2.1.x technology stack requirements
-menu_title: Magento 2.1.x technology stack requirements
-menu_node:
-menu_order: 2
+title: Magento 2.1 technology stack requirements
 redirect_from: /guides/v2.1/install-gde/system-requirements-2.1-tech.html
 functional_areas:
   - Install
@@ -42,7 +38,8 @@ MariaDB and Percona are compatible with Magento because we support MySQL 5.6 API
 
 ### PHP
 
-{% include install/php_2.1.md %}
+<!--{% assign supported_php_versions = site.data.codebase.v2_1.open-source.composer_lock.platform.php | split: "|" %}-->
+{% include install/php-versions-template.md %}
 
 {:.bs-callout .bs-callout-info}
 For versions 2.1.16 and later, Magento supports PHP 7.1 for the 2.1.x release line. The other supported PHP versions remain valid and unchanged.
@@ -51,21 +48,10 @@ PHP documentation: [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.htm
 
 #### Required PHP extensions
 
-* [bc-math](http://php.net/manual/en/book.bc.php) ({{site.data.var.ee}} only)
-* [curl](http://php.net/manual/en/book.curl.php)
-* [gd](http://php.net/manual/en/book.image.php), [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php) (or later) or both
-* [hash](http://php.net/manual/en/book.hash.php)
-* [intl](http://php.net/manual/en/book.intl.php)
-* [mbstring](http://php.net/manual/en/book.mbstring.php)
-* [mcrypt](http://php.net/manual/en/book.mcrypt.php)
-* [openssl](http://php.net/manual/en/book.openssl.php)
-* [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php)
-* [SimpleXML](http://php.net/manual/en/book.simplexml.php)
-* [soap](http://php.net/manual/en/book.soap.php)
-* [xml](http://php.net/manual/en/book.xml.php)
-* [xsl](http://php.net/manual/en/book.xsl.php)
-* [zip](http://php.net/manual/en/book.zip.php)
-* {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 only: [json](http://php.net/manual/en/book.json.php), [iconv](http://php.net/manual/en/book.iconv.php)
+<!--{% assign platform-req = site.data.codebase.v2_1.open-source.composer_lock.platform %}-->
+{% include install/php-extensions-template.md %}
+
+PHP 7 only: [json](http://php.net/manual/en/book.json.php), [iconv](http://php.net/manual/en/book.iconv.php)
 
 #### PHP OPcache
 
