@@ -11,7 +11,7 @@ functional_areas:
 
 The path to images and stylesheets is not correct, either because of an incorrect base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.
 
-Magento static assets are located under `<your Magento install dir>/pub/static/`, within the `frontend` and `adminhtml` directories).
+Magento static assets are located under `<magento_root>/pub/static/`, within the `frontend` and `adminhtml` directories).
 
 ### Solution
 

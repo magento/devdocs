@@ -18,7 +18,7 @@ The term *static view file* refers to the following:
 -   "Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} generated from LESS.
 -   "View" refers to presentation layer (from MVC).
 
-Static view files are located in the `<your Magento install dir>/pub/static` directory, and some are cached in the `<your Magento install dir>/var/view_preprocessed` directory as well.
+Static view files are located in the `<magento_root>/pub/static` directory, and some are cached in the `<magento_root>/var/view_preprocessed` directory as well.
 
 Static view files deployment is affected by Magento modes as follows:
 
@@ -35,8 +35,8 @@ You must write static view files to the Magento file system manually using the c
 To deploy static view files:
 
 1.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-2.  Delete the contents of `<your Magento install dir>/pub/static`, except for the `.htaccess` file. Do not delete this file.
-3.  Run the static view files deployment tool `<your Magento install dir>/bin/magento setup:static-content:deploy`.
+2.  Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
+3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 
 	{:.bs-callout .bs-callout-info}
@@ -341,7 +341,7 @@ Use the following steps:
     -   [Setup wizard]({{ page.baseurl }}/install-gde/install/web/install-web.html)
 
 2.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the Magento file system owner.
-3.  Delete the contents of `<your Magento install dir>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
+3.  Delete the contents of `<magento_root>/pub/static` directory, except for the `.htaccess` file. Do not delete this file.
 4.  [Run the static view files deployment tool](#config-cli-subcommands-staticview).
 
 ## Tip for developers customizing the static content deployment tool

@@ -48,7 +48,7 @@ Note that because the children containers can be any variations of other content
 
 **Height:** as needed
 
-This is used to clearly separate information for users to easily digest. The first row should be grey then, the rows alternate between grey and white.
+This is used to clearly separate information for users to easily digest. The first row should be grey, and then, the rows alternate between grey and white.
 
 ![](img/Var3-style.png)
 

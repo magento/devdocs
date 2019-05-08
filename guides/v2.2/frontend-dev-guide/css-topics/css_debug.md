@@ -110,5 +110,6 @@ To change or override any of these variables, simply create a file in `<theme-di
 @font-family__sans-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 ```
 
-[customize the root source files or move the files included to the root files]: {{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception
-[customize the root source files or move the files included to the root files]: {{site.baseurl}}/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html#css_exception
+[inherits]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
+[LiveReload extension]: http://livereload.com/extensions/
+[node.js]: https://github.com/nodejs/node/wiki

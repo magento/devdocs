@@ -56,7 +56,7 @@ Enable magnifier.
 
 Height of the magnifier block in pixels.
 
-### `hover` {#opt_hover}
+### `eventType` {#opt_eventtype}
 
 Action that activates zoom.
 
@@ -83,7 +83,6 @@ The value for the CSS `top` property for the magnifier block positioning.
 
 **Type**: Integer
 
-
 ### `width` {#opt_width}
 
 Width of the magnifier block in pixels.
@@ -98,3 +97,19 @@ Possible values:
 
 * `outside`
 * `inside`
+
+## Configure magnifier options in `view.xml`
+
+Magnifier options can be set in the `view.xml` configuration file of a theme. The file is conventionally located in the `<theme_dir>/etc/` directory.
+
+The general magnifier options are set as follows:
+
+```xml
+<var name="magnifier">
+    <var name="%magnifier_option1%">%option1_value%</var>
+    <var name="%magnifier_option2%">%option2_value%</var>
+...
+</var>
+```
+
+For an example of setting the gallery option, see the [view.xml]({{ site.mage2100url }}app/design/frontend/Magento/blank/etc/view.xml#L225) file in the Blank theme.

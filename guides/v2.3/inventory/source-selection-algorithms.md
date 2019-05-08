@@ -137,9 +137,7 @@ class InventoryRequestFromOrderFactory
         $stockId = (int)$this->stockByWebsiteIdResolver->execute((int)$websiteId)->getStockId();
         /** @var OrderItemInterface|OrderItem $orderItem */
         foreach ($order->getItems() as $orderItem) {
-            $itemSku = $orderItem->getSku() ?: $this->getSkusByProductIds->execute(
-                [$orderItem->getProductId()]
-            )[$orderItem->getProductId()];
+            $itemSku = $this->getSkuFromOrderItem->execute($orderItem);
             $qtyToDeliver = $orderItem->getQtyToShip();
             //check if order item is not delivered yet
             if ($orderItem->isDeleted()
