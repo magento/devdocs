@@ -23,7 +23,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
 ### Create the North America website
 
-1. Log in to Admin and select **Stores** > **All Stores**. Click **Create Website**, then assign the following values:
+1. Log in to Admin and select **Stores** > **Settings** > **All Stores**. Click **Create Website**, then assign the following values:
 
    Field | Value
    --- | ---
