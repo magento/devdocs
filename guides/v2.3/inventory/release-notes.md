@@ -21,7 +21,7 @@ The release notes include:
 -   {:.fix}Fixes and improvements
 -   {:.bug}Known issues
 
-### v1.1.2
+### v1.1.2 Beta
 
 {{site.data.var.im}} 1.1.2 (module version: `inventory-composer-metapackage = 1.1.2`) is supported with version 2.3.2 and compatible with version 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
