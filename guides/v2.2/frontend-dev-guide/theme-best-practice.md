@@ -18,7 +18,7 @@ These approaches give higher chances to avoid conflicts and issues with your the
 Some other customizations that can be performed using layout instructions are the following:
  
    * change the position of a block or container using `<move>` 
-   * remove a block or container using the `remove` or `display` attribute of the `<referenceBlock>/<referenceContainer>` instruction
+   * remove a block or container using the `remove` by value `true/false` or `display` by value `true/false` attribute of the `<referenceBlock>/<referenceContainer>` instruction
    * change the HTML tag or CSS class for the existing container using `<referenceContainer>` element 
    * add fonts, images, and JavaScript files in the `<theme_dir>/web/` directory
 
