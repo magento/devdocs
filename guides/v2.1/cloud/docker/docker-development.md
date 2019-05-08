@@ -7,21 +7,21 @@ functional_areas:
   - Configuration
 ---
 
-{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and {{site.data.var.ece}} `{{site.data.var.ct}}` package.
+{{site.data.var.ece}} provides a Docker environment option for those who use their local environment for development, test, or automation tasks. The {{site.data.var.ece}} Docker environment requires three, essential components: a {{site.data.var.ee}} v2 template, Docker Compose, and the {{site.data.var.ece}} `{{site.data.var.ct}}` package.
 
 The [Magento Cloud Docker repository](https://github.com/magento/magento-cloud-docker) contains build information for the following Docker images:
 
-Image | Docker link | Tag
-:---- | :---------- | ----------
-**DB** | [mariadb:10.0](https://hub.docker.com/_/mariadb) | 10
+Image               | Docker link
+:------------------ | :-------------------------------------------
+**DB**              | [mariadb:10.0](https://hub.docker.com/_/mariadb)
 **FPM**<br>PHP-CLI: version 7<br>PHP-FPM: version 7 | [magento/magento-cloud-docker-php](https://hub.docker.com/r/magento/magento-cloud-docker-php)
-**ElasticSearch** | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch) | 1.7
-**NGINX** |[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx) | 1.9
-**Node** | [official Node Docker image](https://hub.docker.com/_/node/) | --
-**RabbitMQ** | [rabbitmq](https://hub.docker.com/_/rabbitmq) | 3.5
-**Redis** | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis) | 3.0
-**TLS** | [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls) | latest
-**Varnish** | [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish) | latest
+**ElasticSearch**   | [magento/magento-cloud-docker-elasticsearch](https://hub.docker.com/r/magento/magento-cloud-docker-elasticsearch)
+**NGINX**           |[magento/magento-cloud-docker-nginx](https://hub.docker.com/r/magento/magento-cloud-docker-nginx)
+**Node**            | [official Node Docker image](https://hub.docker.com/_/node/)
+**RabbitMQ**        | [rabbitmq](https://hub.docker.com/_/rabbitmq)
+**Redis**           | [magento/magento-cloud-docker-redis](https://hub.docker.com/r/magento/magento-cloud-docker-redis)
+**TLS**             | [magento/magento-cloud-docker-tls](https://hub.docker.com/r/magento/magento-cloud-docker-tls)
+**Varnish**         | [magento/magento-cloud-docker-varnish](https://hub.docker.com/r/magento/magento-cloud-docker-varnish)
 
 {:.bs-callout .bs-callout-info}
 See the [service version values available]({{page.baseurl}}/cloud/docker/docker-config.html) for use when launching Docker.
@@ -74,9 +74,11 @@ The Node container is based on the [official Node Docker image](https://hub.dock
 
 The database container is based on the `mariadb:10` image.
 
-### Importing a database dump
+#### To import a database dump:
 
-To import a database dump, place the SQL file into the `docker/mysql/docker-entrypoint-initdb.d` folder. The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
+Place the SQL file into the `docker/mysql/docker-entrypoint-initdb.d` folder.
+
+The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
 
 Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `docker/mnt` directory and importing it inside the Docker container.
 

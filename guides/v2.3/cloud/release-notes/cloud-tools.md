@@ -42,11 +42,11 @@ The release notes include:
 
     -   {:.new}<!-- MAGECLOUD-3152/3511 -->**Docker build modes**—Now you can choose to launch the Docker environment in [Production mode or Developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). Developer mode supports active development with full, writable filesystem permissions. This improves the developer experience by providing an easier way to develop and sync extensions, for example.
 
-    -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue with Docker deploy failing if the cache is configured for a service that is not available. Now, you can remove a service from the `.magento/services.yaml` file and deploy without a _service not known_ error.
+    -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
-    -   {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{page.baseurl}}/cloud/docker/docker-config.html#service-versions) available for Docker.
+    -   {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{page.baseurl}}/cloud/docker/docker-config.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
 
-    -   {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose _db-dump_ command erases existing dumps.
+    -   {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose `db-dump` command that erased existing dumps.
 
 -   {:.fix}<!-- MAGECLOUD-3172 -->Fixed an issue that assigned Redis `session`, `default`, and `page_cache` cache storage to the same database ID.
 
@@ -56,16 +56,11 @@ The release notes include:
 
     -   {:.new}<!-- MAGECLOUD-2822 -->Added the **SCD_MAX_EXECUTION_TIMEOUT** environment variable so you can increase the time to complete the static content deployment from the `.magento.env.yaml` file. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_max_execution_time), the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_max_execution_time), and the [global variables]({{ page.baseurl }}/cloud/env/variables-global.html#scd_max_execution_time).
 
-    -   {:.new}<!-- MAGECLOUD-3135 -->—Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
+    -   {:.new}<!-- MAGECLOUD-3135 -->Added the **MAGENTO_CLOUD_LOCKS_DIR** environment variable to configure the path to the mount point for the lock provider on the cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups. This variable is supported on {{ site.data.var.ee }} version 2.2.5 and later and automatically configured. See the definition in [Cloud variables]({{ page.baseurl }}/cloud/env/variables-cloud.html).
 
     -   {:.fix}<!-- MAGECLOUD-3382 -->Changed the **SCD_THREAD** environment variable default values to automatically determine the optimal value based on the detected CPU thread count. See the updated definitions in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#scd_threads) and the [build variables]({{ page.baseurl }}/cloud/env/variables-build.html#scd_threads).
 
--   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with the following patch error that appeared during the patch application process:
-
-    ```terminal
-    Command git apply --check --reverse /app/vendor/magento/ece-tools/patches/MAGECLOUD-2820__implement_isolated_connections_mechanism__2.2.0.patch returned code 1
-    ```
-    {: .no-copy}
+-   {:.fix}<!-- MAGECLOUD-3383 -->Fixed an issue with a patch for DB Isolation Mechanism that caused an error when upgrading to {{site.data.var.ece}} version 2002.0.16.
 
 -   {:.fix}<!-- MAGECLOUD-3456 -->Added a patch that replaces _Google Image Charts_ with _Image-Charts_. See the DevBlog article [Google Image Charts deprecation and update for M1](https://community.magento.com/t5/Magento-DevBlog/Google-Image-Charts-deprecation-and-update-for-M1/ba-p/125006).
 

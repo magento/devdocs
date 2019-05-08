@@ -11,11 +11,11 @@ functional_areas:
   - Configuration
 ---
 
-The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system in the Docker container, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
+The `{{site.data.var.ct}}` package (version 2002.0.13 or later) deploys to a read-only file system by default in the Docker environment, which mirrors the read-only file system deployed in the Production environment. You can use the `docker:build` command in the `{{site.data.var.ct}}` package to generate the Docker Compose configuration and deploy {{site.data.var.ece}} in a Docker container.
 
 ## Launch modes
 
-_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode does not affect the Magento mode. It determines the {{site.data.var.ece}} filesystem installation and read-only or read-write behavior.
+_Mode_ is an additional configuration option for the Docker configuration generator (the `docker:build` command). This mode does not affect the Magento mode. It determines the {{site.data.var.ece}} file system installation and read-only or read-write behavior.
 
 You can launch your Docker environment in one of the following modes:
 
@@ -110,7 +110,7 @@ Continue launching your Docker environment in the default _production_ mode.
     * `docker/config.env`
 
     {: .bs-callout .bs-callout-info}
-    The `{{site.data.var.ct}}` v2002.0.12 package does not support the `docker:config:convert` command.
+    The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
@@ -137,9 +137,27 @@ Continue launching your Docker environment in the default _production_ mode.
     {: .bs-callout .bs-callout-info}
     For `{{site.data.var.ct}}` v2002.0.12, install Magento with the `docker-compose run cli magento-installer` command.
 
+1.  Configure and connect Varnish.
+
+    ```bash
+    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 -l
+    ```
+
+1.  Clear the cache.
+
+    ```bash
+    docker-compose run deploy magento-command cache:clean
+    ```
+
+1.  [Access the Magento instance](#access-magento-instance).
+
 ### Developer mode
 
 Continue launching your Docker environment in the _developer_ mode. The developer mode supports active development on your local environment.
+
+{: .bs-callout .bs-callout-info}
+The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
+
 
 1.  Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html). If you have it installed, continue to the next step.
 
@@ -164,9 +182,6 @@ Continue launching your Docker environment in the _developer_ mode. The develope
     This command generates the following Docker ENV files:
 
     * `docker/config.env`
-
-    {: .bs-callout .bs-callout-info}
-    The `{{site.data.var.ct}}` v2002.0.12 package does not support the `docker:config:convert` command.
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
@@ -196,9 +211,23 @@ Continue launching your Docker environment in the _developer_ mode. The develope
     {: .bs-callout .bs-callout-info}
     Developer mode does not require the `build` operation.
 
-## Access local Magento Cloud template
+1.  Configure and connect Varnish.
 
- by opening one of the following secure URLs in a browser:
+    ```bash
+    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 -l
+    ```
+
+1.  Clear the cache.
+
+    ```bash
+    docker-compose run deploy magento-command cache:clean
+    ```
+
+1.  [Access the Magento instance](#access-magento-instance).
+
+## Access Magento instance
+
+You can access the local Magento Cloud template by opening one of the following URLs in a browser:
 
 -  [`http://magento2.docker`](http://magento2.docker)
 

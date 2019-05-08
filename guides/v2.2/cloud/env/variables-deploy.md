@@ -138,7 +138,7 @@ stage:
 -  **Default**—_Not set_
 -  **Version**—Magento 2.2.0 and later
 
-Retains customized ElasticSuite service settings between deployments and uses it in the 'system/default/smile_elasticsuite_core_base_settings' section of the main ElasticSuite configuration.
+Retains customized ElasticSuite service settings between deployments and uses it in the 'system/default/smile_elasticsuite_core_base_settings' section of the main ElasticSuite configuration. If the ElasticSuite composer package is installed, this is configured automatically.
 
 ```yaml
 stage:
@@ -148,7 +148,7 @@ stage:
         servers: 'remote-host:9200'
       indices_settings:
         number_of_shards: 1
-        number_of_replicas: 0      
+        number_of_replicas: 0
 ```
 
 {% include cloud/merge-configuration.md %}
