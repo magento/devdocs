@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-Inventory Management provides commands to manage inventory data and configuration settings.
+{{site.data.var.im}} provides commands to manage inventory data and configuration settings.
 
 These commands include:
 
@@ -19,28 +19,28 @@ These commands include:
 
 [Reservations]({{ page.baseurl }}/inventory/reservations.html) place a salable quantity hold for product SKUs per stock. When you ship, add products, cancel, or refund an order, compensation reservations enter to place or clear these holds.
 
-Inventory Management provides two commands to check and resolve reservation inconsistencies:
+{{site.data.var.im}} provides two commands to check and resolve reservation inconsistencies:
 
 - [`inventory:reservation:list-inconsistencies`](#list-inconsistencies-command)
 - [`inventory:reservation:create-compensations`](#create-compensations-command)
 
 ### What causes reservation inconsistencies?
 
-Inventory Management generates reservations for key events:
+{{site.data.var.im}} generates reservations for key events:
 
 - Order placement (initial reservation)
 - Order shipment (compensation reservation)
 - Refund order or issue a credit memo (compensation reservation)
 - Order cancellation (compensation reservation)
 
-Reservation inconsistencies may occur when Inventory Management loses the initial reservation and enters too many reservation compensations (overcompensating and leading to inconsistent amounts), or correctly places the initial reservation but loses compensational reservations.
+Reservation inconsistencies may occur when {{site.data.var.im}} loses the initial reservation and enters too many reservation compensations (overcompensating and leading to inconsistent amounts), or correctly places the initial reservation but loses compensational reservations.
 
 The following configurations and events can cause reservation inconsistencies:
 
-- **Upgrade Magento to 2.3.x with orders not in a finite state (Complete, Canceled, or Closed).** Inventory Management will create compensational reservations for these orders, but it will not enter or have the initial reservation that deducts from the salable quantity.
+- **Upgrade Magento to 2.3.x with orders not in a final state (Complete, Canceled, or Closed).** {{site.data.var.im}} will create compensational reservations for these orders, but it will not enter or have the initial reservation that deducts from the salable quantity. We recommend using these commands after upgrading to Magento v2.3.x from 2.1.x or 2.2.x. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
 - **You do not manage stock then later change this configuration.** You may start using 2.3.x with **Manage Stock** set to "No" in the Magento configuration. Magento does not place reservations at order placement and shipment events. If you later enable the **Manage Stock** configuration and some orders were created at that time, the Salable Qty would be corrupted with compensation reservation when you handle and fulfill that order.
 - **You re-assign the Stock for a Website while orders submit to that website**. The initial reservation enters for the initial stock and all compensational reservation enter to the new stock.
-- **The sum total of all reservations may not resolve to `0`.** All reservations in the scope of an Order in a finite state (Complete, Canceled, Closed) should resolve to `0`, clearing all salable quantity holds.
+- **The sum total of all reservations may not resolve to `0`.** All reservations in the scope of an Order in a final state (Complete, Canceled, Closed) should resolve to `0`, clearing all salable quantity holds.
 
 ### List inconsistencies command
 
@@ -135,7 +135,7 @@ No order inconsistencies were found.
 
 ## Import geocodes
 
-Inventory Management provides the [Distance Priority](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-distance-priority.html) algorithm, which helps determine the best option for shipping a full or partial order. The algorithm uses GPS information or geocodes to calculate the distance between the source (a warehouse or other physical location) of each item in an order and the shipping address. Based on those results, the algorithm recommends which source should be used to ship out each item in the order.
+{{site.data.var.im}} provides the [Distance Priority](https://docs.magento.com/m2/ce/user_guide/catalog/inventory-configure-distance-priority.html) algorithm, which helps determine the best option for shipping a full or partial order. The algorithm uses GPS information or geocodes to calculate the distance between the source (a warehouse or other physical location) of each item in an order and the shipping address. Based on those results, the algorithm recommends which source should be used to ship out each item in the order.
 
 The merchant selects the provider of the GPS or geocode data required to calculate distances:
 
