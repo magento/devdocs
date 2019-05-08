@@ -18,12 +18,6 @@ The following line in the `composer.json` metapackage installs Inventory Managem
         magento/inventory-composer-metapackage = 1.1.0
 ```
 
-To install {{site.data.var.im}} 1.1.2 Beta, update with the following:
-
-```json
-        magento/inventory-composer-metapackage = 1.1.2-beta2
-```
-
 For a list of {{site.data.var.im}} metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
 
 The {{site.data.var.im}} installation process adds all modules to the `<Magento_installation_directory>/app/etc/config.php` file. A `1` value indicates the corresponding module is enabled. The following list of modules are added (v1.1.2 Beta):
@@ -180,6 +174,30 @@ See the following guides for more information on upgrades:
 
 * [Software Update Guide]({{site.baseurl}}/guides/v2.3/comp-mgr/bk-compman-upgrade-guide.html)
 * [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html)
+
+### Upgrade to v1.1.2 Beta
+
+Before installing, review the {{site.data.var.im}} [compatibility information]({{site.baseurl}}/release) for your Magento installation.
+
+The Composer minimum stability has to be changed to `beta` to support this pre-release: `"minimum-stability": "beta"`.
+
+To install 1.1.2-beta with Magento v2.3.0, update the package version in Composer. The following commands update and install beta:
+
+```terminal
+composer config minimum-stability beta
+composer config prefer-stable true
+composer require --no-update "magento/inventory-composer-metapackage:1.1.2-beta2"
+composer update
+```
+
+Magento v2.3.1 release has a strict version constraint for the Inventory Management package. The following commands adjust the Composer file with an inline alias, overriding the existing constraint, and update and install beta:
+
+```terminal
+composer config minimum-stability beta
+composer config prefer-stable true
+composer require --no-update "magento/inventory-composer-metapackage:1.1.2-beta2 as 1.1.1"
+composer update
+```
 
 ## Additional information
 
