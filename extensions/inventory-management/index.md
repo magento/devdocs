@@ -28,12 +28,15 @@ For a list of Inventory Management metapackage versions, see the [release notes]
 
 The {{site.data.var.im}} installation process adds all modules to the `<Magento_installation_directory>/app/etc/config.php` file. A `1` value indicates the corresponding module is enabled. The entire list of modules include `Magento_Inventory` in the names.
 
-The new modules for Inventory Management 1.1.2 Beta include:
+New modules for Inventory Management 1.1.2 Beta include:
 
 ```php
+        'Magento_InventoryGraphQl' => 1,
         'Magento_InventoryReservations' => 1,
         'Magento_InventoryReservationsApi' => 1,
         'Magento_InventoryReservationsCli' => 1,
+        'Magento_InventoryExportStock' => 0,
+        'Magento_InventoryExportStockApi' => 0,
 ```
 
 ## Enable {{site.data.var.im}} features
