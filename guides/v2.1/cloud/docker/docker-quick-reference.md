@@ -26,8 +26,8 @@ List containers and ports | `docker-compose ps`, or `docker ps`
 
 Action | Command
 :----- | :------
-Builds the docker environment in production mode by default and verifies configured service versions. | `docker:build`
-Builds the docker environment in developer mode. | `docker:build --mode="developer"`
+Builds the docker environment in [production mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes) by default and verifies configured service versions. | `docker:build`
+Builds the docker environment in [developer mode]({{page.baseurl}}/cloud/docker/docker-config.html#launch-modes). | `docker:build --mode="developer"`
 Convert PHP configuration files to Docker ENV files. | `docker:config:convert`
 
 The following example lists the `{{site.data.var.ct}}` Docker commands:
