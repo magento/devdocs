@@ -12,64 +12,28 @@ These features and extensions were developed as part of the [Multi Source Invent
 
 We recommend installing according to [Install Magento Using Composer]({{site.baseurl}}/guides/v2.3/install-gde/composer.html). You must install with a metapackage to receive all {{site.data.var.im}} modules.
 
-The following line in the `composer.json` metapackage installs Inventory Management 1.1.2:
+The following line in the `composer.json` metapackage installs Inventory Management:
 
 ```json
-        magento/inventory-composer-metapackage = 1.1.2
+        magento/inventory-composer-metapackage = 1.1.0
+```
+
+To install Inventory Management 1.1.2 Beta, update the following:
+
+```json
+        magento/inventory-composer-metapackage = 1.1.2-beta2
 ```
 
 For a list of Inventory Management metapackage versions, see the [release notes]({{site.baseurl}}/guides/v2.3/inventory/release-notes.html).
 
-The {{site.data.var.im}} installation process makes the following changes to the `<Magento_installation_directory>/composer.json` file. A `1` value indicates the corresponding module is enabled.
+The {{site.data.var.im}} installation process adds all modules to the `<Magento_installation_directory>/app/etc/config.php` file. A `1` value indicates the corresponding module is enabled. The entire list of modules include `Magento_Inventory` in the names.
 
-The following list includes all modules in Inventory Management 1.1.2:
+The new modules for Inventory Management 1.1.2 Beta include:
 
-```json
-        'Magento_Inventory' => 1,
-        'Magento_InventoryAdminUi' => 1,
-        'Magento_InventoryApi' => 1,
-        'Magento_GraphQl' => 1,
-        'Magento_InventoryBundleProduct' => 1,
-        'Magento_InventoryBundleProductAdminUi' => 1,
-        'Magento_InventoryCache' => 1,
-        'Magento_InventoryConfigurableProduct' => 1,
-        'Magento_InventoryCatalogApi' => 1,
-        'Magento_InventoryCatalog' => 1,
-        'Magento_InventoryCatalogAdminUi' => 1,
-        'Magento_InventoryCatalogSearch' => 1,
-        'Magento_InventoryConfigurableProductAdminUi' => 1,
-        'Magento_InventoryConfigurableProductIndexer' => 1,
-        'Magento_InventoryConfiguration' => 1,
-        'Magento_InventoryConfigurationApi' => 1,
-        'Magento_InventoryDistanceBasedSourceSelection' => 1,
-        'Magento_InventoryDistanceBasedSourceSelectionAdminUi' => 1,
-        'Magento_InventoryDistanceBasedSourceSelectionApi' => 1,
-        'Magento_InventoryElasticsearch' => 1,
-        'Magento_InventoryExportStock' => 1,
-        'Magento_InventoryExportStockApi' => 1,
-        'Magento_InventoryGroupedProduct' => 1,
-        'Magento_InventoryGroupedProductAdminUi' => 1,
-        'Magento_InventoryGroupedProductIndexer' => 1,
-        'Magento_InventoryImportExport' => 1,
-        'Magento_InventoryIndexer' => 1,
-        'Magento_InventoryLowQuantityNotification' => 1,
-        'Magento_InventoryLowQuantityNotificationAdminUi' => 1,
-        'Magento_InventoryLowQuantityNotificationApi' => 1,
-        'Magento_InventoryMultiDimensionalIndexerApi' => 1,
-        'Magento_InventoryProductAlert' => 1,
+```php
         'Magento_InventoryReservations' => 1,
         'Magento_InventoryReservationsApi' => 1,
         'Magento_InventoryReservationsCli' => 1,
-        'Magento_InventorySales' => 1,
-        'Magento_InventorySalesAdminUi' => 1,
-        'Magento_InventorySalesApi' => 1,
-        'Magento_InventorySalesFrontendUi' => 1,
-        'Magento_InventorySetupFixtureGenerator' => 1,
-        'Magento_InventoryShipping' => 1,
-        'Magento_InventoryShippingAdminUi' => 1,
-        'Magento_InventorySourceDeductionApi' => 1,
-        'Magento_InventorySourceSelection' => 1,
-        'Magento_InventorySourceSelectionApi' => 1,
 ```
 
 ## Enable {{site.data.var.im}} features
@@ -86,13 +50,13 @@ You may need to disable {{site.data.var.im}} modules to:
 * Use custom or third party inventory and order management modules.
 * Use [Magento Order Management](https://omsdocs.magento.com) for inventory and order management. The current Order Management connector does not support {{site.data.var.im}} interfaces. We plan to support this integration in a later release.
 
-To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `composer.json` (v1.1.2):
+To disable {{site.data.var.im}}, see the instructions for [Enable or disable modules]({{site.baseurl}}/guides/v2.3/install-gde/install/cli/install-cli-subcommands-enable.html). When complete, you should see the following modules and values in `<Magento_installation_directory>/app/etc/config.php` (v1.1.2 Beta):
 
-```json
+```php
         'Magento_Inventory' => 0,
         'Magento_InventoryAdminUi' => 0,
         'Magento_InventoryApi' => 0,
-        'Magento_GraphQl' => 0,
+        'Magento_InventoryGraphQl' => 0,
         'Magento_InventoryBundleProduct' => 0,
         'Magento_InventoryBundleProductAdminUi' => 0,
         'Magento_InventoryCache' => 0,

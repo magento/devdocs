@@ -4,7 +4,7 @@ title: Release Notes
 redirect_from: /guides/v2.3/release-notes/release-management.html
 ---
 
-**{{site.data.var.im}} (provided by the [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi) project)** is available with {{site.data.var.ce}} and {{site.data.var.ee}} 2.3.x. Merchants can use {{site.data.var.im}} to manage inventory for all product types in a single warehouse and across complex shipping networks. Manage these locations as sources, tracking on-hand inventory quantities per product. Stocks connect these sources with sales channels (websites) to provide an accurate salable quantity, calculating available on-hand products, pending orders (reservations), and configured thresholds. {{site.data.var.im}} also updates order and shipment options, giving you full control over your inventory and deducations at the source level.
+**{{site.data.var.im}} (provided by the [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi) project)** is available with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} 2.3.x. Merchants can use {{site.data.var.im}} to manage inventory for all product types in a single warehouse and across complex shipping networks. Manage these locations as sources, tracking on-hand inventory quantities per product. Stocks connect these sources with sales channels (websites) to provide an accurate salable quantity, calculating available on-hand products, pending orders (reservations), and configured thresholds. {{site.data.var.im}} also updates order and shipment options, giving you full control over your inventory and deducations at the source level.
 
 {{site.data.var.im}} is a Magento Community Engineering special project open to contributors. To take part and contribute, see the [MSI GitHub](https://github.com/magento-engcom/msi) repository and [wiki](https://github.com/magento-engcom/msi/wiki) to get started. Join us in our [Slack](https://magentocommeng.slack.com/messages/C5FU5E2HY) channel ([self signup](https://tinyurl.com/engcom-slack)) to discuss the project.
 
@@ -23,7 +23,7 @@ The release notes include:
 
 ### v1.1.2 Beta
 
-{{site.data.var.im}} 1.1.2 (module version: `inventory-composer-metapackage = 1.1.2`) is supported with version 2.3.2 and compatible with version 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+{{site.data.var.im}} 1.1.2 Beta (module version: `inventory-composer-metapackage = 1.1.2`) is supported with version 2.3.2 and compatible with version 2.3.1, and 2.3.0 of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 - {:.new} **Added a Bulk Partial Stock Transfer Endpoint** - Current bulk trasfer endpoints move all assigned quantity from an origin to a destination source. The new `/rest/V1/inventory/bulk-partial-source-transfer` endpoint allows merchants to transfer partial stock from source-to-source as a bulk operation. Enter a request to the endpoint with the `sku`, `qty`, `origin_source_code`, and `destination_source_code` to transfer a specific amount of quantity. Transfers verify the source is assigned to the `sku`, enough quantity exists to transfer, etc. See [Inventory Bulk Actions](https://devdocs.magento.com/guides/v2.3/rest/modules/inventory/bulk-inventory.html). <!-- https://github.com/magento-engcom/msi/pull/2117 -->
 
@@ -34,8 +34,6 @@ The release notes include:
 - {:.new} **Added GraphQL support for {{site.data.var.im}}** - This release installs a new `magento/module-inventory-graph-ql` module. The GraphQL [Products endpoint](https://devdocs.magento.com/guides/v2.3/graphql/reference/products.html) now includes the `only_x_left_in_stock` and `stock_status` attributes for {{site.data.var.im}} support. <!-- https://github.com/magento-engcom/msi/pull/2124 -->
 
 - {:.new} **Simplified UI for Assigned Sources** - The Assigned Sources table in product pages has simplified content for easier updates and increased performance when displaying many sources. All sources list by source name (hover over for `source_code`).
-
-- {:.new} **Magento B2B products support** - This release fully supports B2B products and features (including Quick Order). B2B merchants can fully use Single and Multi source features for {{site.data.var.im}}, assigning products to default and custom sources and stocks.  <!-- https://github.com/magento/partners-magento2ee/pull/18 https://github.com/magento-engcom/msi/issues/1828 -->
 
 - {:.new} **Export Aggregated Stock Service** - This release provides a new export aggregated stock service (retaining reservations in the system) to support external Sales Channels like Amazon, eBay, Google Shopping ads, etc.  <!-- https://github.com/magento-engcom/msi/pull/2067 -->
 
