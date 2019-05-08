@@ -132,7 +132,7 @@ When upgrading from previous releases of {{site.data.var.im}} to the latest vers
 
 For the latest, update your metapackage version:
 
-```php
+```json
         magento/inventory-composer-metapackage = 1.1.0
 ```
 
