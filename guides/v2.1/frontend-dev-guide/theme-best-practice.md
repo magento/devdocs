@@ -18,7 +18,7 @@ These approaches give higher chances to avoid conflicts and issues with your the
 Some other customizations that can be performed using layout instructions are the following:
  
    * change the position of a block or container using `<move>` 
-   * remove a block or container by assigning true value to remove attribute or by assigning false value to display attribute of the `<referenceBlock>/<referenceContainer>` instruction
+   * remove a block or container by assigning `true` value to `remove` attribute or by assigning `false` value to `display` attribute of the `<referenceBlock>/<referenceContainer>` instruction
    * reorder blocks and container using the `before/after` attributes of the `<referenceBlock>/<referenceContainer>` instruction
    * change the HTML tag or CSS class for the existing container using `<referenceContainer>` element
    
