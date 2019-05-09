@@ -1,22 +1,21 @@
 
-
 ## PHP version readiness check issues
 
 You might encounter the following issues with the PHP version readiness check:
 
-*	The check fails because you're using an unsupported PHP version.
+* The check fails because you're using an unsupported PHP version.
 
-	To solve this issue, use one of the supported versions listed in our [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
+To solve this issue, use one of the supported versions listed in our [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html).
 
-*	The check reports the incorrect PHP version.
+* The check reports the incorrect PHP version.
 
-	Typically, this happens only to advanced users who have multiple PHP versions installed. In some cases, the readiness check fails; in other cases, it might pass.
+Typically, this happens only to advanced users who have multiple PHP versions installed. In some cases, the readiness check fails; in other cases, it might pass.
 
-*	The PHP readiness check doesn't display the PHP version as the following figure shows.
+* The PHP readiness check doesn't display the PHP version as the following figure shows.
 
-	![]({{ site.baseurl }}/common/images/upgr-tshoot-no-cron.png)
+ ![]({{ site.baseurl }}/common/images/upgr-tshoot-no-cron.png)
 
-	This is a symptom of incorrect cron job setup. For more information, see [Set up cron jobs]({{ page.baseurl }}/install-gde/install/post-install-config.html#post-install-cron).
+This is a symptom of incorrect cron job setup. For more information, see [Set up cron jobs]({{ page.baseurl }}/install-gde/install/post-install-config.html#post-install-cron).
 
 ### PHP version is incorrect
 
