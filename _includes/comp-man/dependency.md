@@ -4,9 +4,9 @@
 
 We suggest you try the following solutions in the order shown:
 
-*	[Conflicting dependencies](#trouble-depend-conflict)
-*	[File system permissions issues](#trouble-depend-permission)
-*	[The Component Dependency Check status never changes](#trouble-depend-state)
+* [Conflicting dependencies](#trouble-depend-conflict)
+* [File system permissions issues](#trouble-depend-permission)
+* [The Component Dependency Check status never changes](#trouble-depend-state)
 
 ### Conflicting dependencies {#trouble-depend-conflict}
 
@@ -14,11 +14,12 @@ The message `We found conflicting component dependencies` displays if Composer c
 
 Following is a sample failure message:
 
-	We found conflicting component dependencies.
-
-	You are trying to update package(s) magento/module-sample-data to 1.0.0-beta
-	We've detected conflicts with the following packages:
-	- magento/sample-data version 0.74.0-beta15. Please try to update it to one of the following package versions: 0.74.0-beta16, 0.74.0-beta14, 0.74.0-beta13, 0.74.0-beta12, 0.74.0-beta11, 0.74.0-beta10, 0.74.0-beta9, 0.74.0-beta8, 0.74.0-beta7
+```terminal
+ We found conflicting component dependencies.
+ You are trying to update package(s) magento/module-sample-data to 1.0.0-beta
+ We've detected conflicts with the following packages:
+ - magento/sample-data version 0.74.0-beta15. Please try to update it to one of the following package versions: 0.74.0-beta16, 0.74.0-beta14, 0.74.0-beta13, 0.74.0-beta12, 0.74.0-beta11, 0.74.0-beta10, 0.74.0-beta9, 0.74.0-beta8, 0.74.0-beta7
+```
 
 {:.bs-callout .bs-callout-info}
 The message you see will likely be different.

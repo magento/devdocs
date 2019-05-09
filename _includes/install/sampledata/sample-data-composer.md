@@ -1,11 +1,10 @@
 
-
 This section discusses how to install sample data if you got the Magento software in any of the following ways:
 
-*   Downloaded a compressed archive from [Magento](https://magento.com/tech-resources/download).
+* Downloaded a compressed archive from [Magento](https://magento.com/tech-resources/download).
 
-    If you downloaded an archive from GitHub, this method won't work because the `composer.json` file doesn't contain the `repo.magento.com` URL.
-*   Used `composer create-project`
+  If you downloaded an archive from GitHub, this method won't work because the `composer.json` file doesn't contain the `repo.magento.com` URL.
+* Used `composer create-project`
 
 You can use this method of getting sample data for both {{site.data.var.ce}} or {{site.data.var.ee}}, but you must use the same [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) you used to install Magento.
 
@@ -39,9 +38,9 @@ You are required to [authenticate]({{ page.baseurl }}/install-gde/prereq/connect
 The following authentication error might display:
 
 ```terminal
-    [Composer\Downloader\TransportException]
-    The 'https://repo.magento.com/packages.json' URL required authentication.
-    You must be using the interactive console to authenticate
+[Composer\Downloader\TransportException]
+The 'https://repo.magento.com/packages.json' URL required authentication.
+You must be using the interactive console to authenticate
 ```
 
 If the error displays, change to your Magento installation directory and run `composer update`, which will prompt you for your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
