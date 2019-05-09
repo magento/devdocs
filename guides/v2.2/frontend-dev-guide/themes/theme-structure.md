@@ -191,6 +191,15 @@ The directories and files structure described below is the most extended one. It
     </tr>
     <tr>
       <td colspan="1">
+        <code>/lib/web/css/source/lib</code>
+      </td>
+      <td colspan="1">optional</td>
+      <td colspan="1">
+        Magento has built a library of mixins to attempt to simplify the task of theming common layout components.
+      </td>
+    </tr>
+    <tr>
+      <td colspan="1">
         <code>/web/fonts</code>
       </td>
       <td colspan="1">
