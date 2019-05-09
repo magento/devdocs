@@ -170,7 +170,7 @@ Attribute | Data type | Description
 `description` | ComplexTextValue | An object that contains detailed information about the product. The object can include simple HTML tags
 `gift_message_available` | String | Indicates whether a gift message is available
 `id` | Int | The ID number assigned to the product
-`image` | ProductImage | An object that contains the URL and label for the main image on the product page
+`image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the main image on the product page
 `is_returnable` | String | Indicates whether the product can be returned. This attribute is defined in the Rma module.
 `manufacturer` | Int | A number representing the product's manufacturer
 `media_gallery_entries` | [MediaGalleryEntry] | An array of [MediaGalleryEntry](#MediaGalleryEntry) objects
@@ -185,13 +185,13 @@ Attribute | Data type | Description
 `product_links` | [ProductLinksInterface] | An array of [ProductLinks](#ProductLinks) objects
 `short_description` | ComplexTextValue | An object that contains a short description of the product. Its use depends on the store's theme. The object can include simple HTML tags
 `sku` | String | A number or code assigned to a product to identify the product, options, price, and manufacturer
-`small_image` | ProductImage | An object that contains the URL and label for the small image used on catalog pages
+`small_image` | [ProductImage](#ProductImage) | An object that contains the URL and label for the small image used on catalog pages
 `special_from_date` | String | The beginning date that a product has a special price
 `special_price` | Float |  The discounted price of the product
 `special_to_date` | String | The end date that a product has a special price
 `swatch_image` | String | The file name of a swatch image. This attribute is defined in the Swatches module.
 `tax_class_id` | Int | An ID assigned to a tax class. This attribute is defined in the Tax module.
-`thumbnail` | ProductImage | An object that contains the URL and label for the product's thumbnail image
+`thumbnail` | [ProductImage](#ProductImage) | An object that contains the URL and label for the product's thumbnail image
 `tier_price` | Float | The price when tier pricing is in effect and the items purchased threshold has been reached
 `tier_prices` | [ProductTierPrices] | An array of [ProductTierPrices](#ProductTier) objects
 `type_id` | String | One of `simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`
@@ -253,6 +253,15 @@ Attribute | Type | Description
 `linked_product_type` | String | The type of linked product (`simple`, `virtual`, `bundle`, `downloadable`,`grouped`, `configurable`)
 `position` | Int | The position within the list of product links
 `sku` | String | The identifier of the linked product
+
+### ProductImage object {#ProductImage}
+
+`ProductImage` contains information about image URL and label.
+
+Attribute | Type | Description
+--- | --- | ---
+`url` | String | The URL for the product image
+`label` | String | The label for the product image
 
 ### MediaGalleryEntry object {#MediaGalleryEntry}
 

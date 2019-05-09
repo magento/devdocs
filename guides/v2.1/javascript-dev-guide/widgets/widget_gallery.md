@@ -362,6 +362,25 @@ Sliding direction of thumbnails in the fullscreen view.
 - `vertical`
 - `horizontal`
 
+#### `fullscreen/navarrows` {#full_navarrows}
+
+Show/hide arrows in thumb navigation.
+
+**Type**: Boolean
+
+**Default value**: `true`
+
+#### `fullscreen/navtype` {#full_navtype}
+
+Type of navigation.
+
+**Possible values**:
+
+- `thumbs`
+- `slides`
+
+**Default value**: `thumbs`
+
 #### `fullscreen/navigation_carousel` {#full_carousel}
 
 Display navigation thumbnails as carousel in the fullscreen view.
