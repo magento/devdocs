@@ -9,7 +9,7 @@ functional_areas:
 
 To configure Magento to use memcache:
 
-1.	Open `<your Magento install dir>/app/etc/env.php` in a text editor.
+1.	Open `<magento_root>/app/etc/env.php` in a text editor.
 2.	Locate the following:
 
         'session' =>

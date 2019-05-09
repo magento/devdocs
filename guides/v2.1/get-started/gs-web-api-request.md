@@ -3,7 +3,7 @@ group: web-api
 title: Construct a request
 ---
 
-To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<your Magento install dir>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} calls.
+To configure a web API, developers define some of the elements of each API call in the `<module root dir>/vendor/<vendor-name>/<module-name>/etc/webapi.xml` file, where `<vendor-name>` is your vendor name (for example, `magento`) and `<module-name>` is your module name (which exactly matches its definition in `composer.json`). For example, the web API for the Customer service is defined in the `<magento_root>/vendor/magento/module-customer/etc/webapi.xml` configuration file. Service data interfaces and builders define the required and optional parameters and the return values for the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} calls.
 
 ## Overview {#request-overview}
 
@@ -52,7 +52,7 @@ HTTP header | Description | Syntax
 
 ### Call payload {#payload}
 
-The call payload is set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
+The call payload is a set of input <i>parameters</i> and <i>attributes</i> that you supply with the request. API operations have both _required_ and _optional_ inputs.
 
 You specify input parameters in the URI. For example, in the `GET/V1/customers/:customerId` URI, you must specify the `customerId` template parameter. This parameter filters the response by the specified customer ID.
 

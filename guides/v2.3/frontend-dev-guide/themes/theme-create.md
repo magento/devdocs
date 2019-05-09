@@ -36,7 +36,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 To create the directory for your theme:
 
-1.	Go to `<your Magento install dir>/app/design/frontend`.
+1.	Go to `<magento_root>/app/design/frontend`.
 
 3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
 

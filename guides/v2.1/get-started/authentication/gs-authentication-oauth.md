@@ -61,7 +61,7 @@ The process of completing the OAuth handshake requires that you
 * [Get a request token](#pre-auth-token)
 * [Get an access token](#get-access-token)
 
-This process is known has a 2-legged OAuth handshake.
+This process is known as a 2-legged OAuth handshake.
 
 ### Get a request token {#pre-auth-token}
 

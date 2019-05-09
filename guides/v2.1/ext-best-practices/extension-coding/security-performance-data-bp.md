@@ -13,7 +13,7 @@ You should make sure that your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5
 ### Avoid using low-level functionality
   The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{ site.mage2100url }}lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.
 
-  For a list of discouraged low-level functions, we suggest you look at the [list of discouraged functions](https://github.com/magento/marketplace-eqp/blob/master/MEQP1/Sniffs/Security/DiscouragedFunctionSniff.php){:target="_blank"} for [Magento Extension Quality Program Coding Standard](https://github.com/magento/marketplace-eqp){:target="_blank"}.
+For a list of discouraged low-level functions, review the [`Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php`](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php){:target="_blank"} file and the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"}.
 
 ### Use wrappers instead of superglobal variables
   Make sure that your Magento application does not directly use any PHP superglobals such as:

@@ -31,8 +31,8 @@ Magento uses the following caching terminology:
 
 This topic discusses the following options for configuring caching:
 
-*   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's global {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration)
-*   Configuring your own custom cache frontend, which means you modify only `<your Magento install dir>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
+*   Modifying the provided `default` cache frontend, which means you modify only `<magento_root>/app/etc/di.xml` (the Magento application's global {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration)
+*   Configuring your own custom cache frontend, which means you modify only `<magento_root>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
 {:.bs-callout .bs-callout-info}
 Varnish requires no changes to the Magento configuration. For more information, see [Configure and use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html).

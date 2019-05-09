@@ -72,7 +72,7 @@ Contents of the file:
 To secure cron in Magento's `.htaccess` file:
 
 1.	Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-2.	Open `<your Magento install dir>/pub/.htaccess` in a text editor.
+2.	Open `<magento_root>/pub/.htaccess` in a text editor.
 
 	(Because `cron.php` is located in the `pub` directory, edit this `.htaccess` only.)
 
@@ -219,8 +219,8 @@ If you're using an Apache web server, you must remove the restriction from the `
 1.	Log in to your Magento server as a user with permissions to write to the Magento file system.
 2.	Open any of the following in a text editor (depending on your entry point to Magento):
 
-		<your Magento install dir>/pub/.htaccess
-		<your Magento install dir>/.htaccess
+		<magento_root>/pub/.htaccess
+		<magento_root>/.htaccess
 
 3.	Delete or comment out the following:
 

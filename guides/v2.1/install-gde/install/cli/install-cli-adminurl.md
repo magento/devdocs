@@ -28,7 +28,7 @@ A sample result follows:
 
 	Admin Panel URI: /admin_1wgrah
 
-You can also view the Admin URI in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
+You can also view the Admin URI in `<magento_root>/app/etc/env.php`. A snippet follows:
 
 ```php?startinline=1
   'backend' =>

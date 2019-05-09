@@ -15,7 +15,7 @@ Before you continue, [install Redis]({{ page.baseurl }}/config-guide/redis/confi
 
 Following is a sample configuration that causes Magento to use Redis for both the default cache (`default` array) and the full page cache (`page_cache` array). Magento's caching is implemented by [`Magento\Framework\App\CacheInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/App/CacheInterface.php).
 
-Add a configuration similar to the following to `<your Magento install dir>app/etc/env.php`:
+Add a configuration similar to the following to `<magento_root>app/etc/env.php`:
 
 ```php?start_inline=1
  'cache' =>

@@ -23,7 +23,6 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
           <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
-          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
       <td>
@@ -85,8 +84,18 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>
+    <tr>
+      <td>Add-ons*</td>
+      <td>
+        <ul>
+          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
+        </ul>
+      </td>
+      <td class="blank"></td>
+    </tr>
   </tbody>
 </table>
+\* _Available for an additional fee_
 
 ## Starter projects
 
