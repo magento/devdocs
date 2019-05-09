@@ -46,16 +46,21 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 
     An example follows:
 
-        git clone git@github.com:magento/magento2-sample-data.git
+    ```bash
+    git clone git@github.com:magento/magento2-sample-data.git
+    ```
+    
 6.  Wait for the repository to clone on your server.
 
     {:.bs-callout .bs-callout-info}
     If the following error displays, make sure you [shared your SSH key](https://help.github.com/articles/generating-ssh-keys/) with GitHub:<br>
-    ```
+    
+    ```terminal
     Cloning into 'magento2'...
     Permission denied (publickey).
     fatal: The remote end hung up unexpectedly
-    ````
+    ```
+    
 7.  Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main `magento2` repository.
 
     For example:
@@ -66,11 +71,17 @@ To clone the Magento sample data GitHub repository using the SSH protocol:
 
     To checkout the correct branch, run the following command from the sample data repository's root directory (assuming you need the `2.2.5` branch):
 
-        git checkout 2.2.5
-8.  Change to `<your Magento installation directory>`.
+    ```bash
+    git checkout 2.2.5
+    ```
+    
+8.  Change to `<magento_root>`.
 9.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
-        php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php -- --ce-source="<path_to_your_magento_instance>"
+    ```bash
+    php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php -- --ce-source="<path_to_your_magento_instance>"
+    ```
+    
 10.  Wait for the command to complete.
 
 11. See [Set file system permissions and ownership](#samp-data-perms).
@@ -92,8 +103,11 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 5.  Enter `git clone` and paste the value you obtained from step 1.
 
     An example follows:
-
-        git clone https://github.com/magento/magento2-sample-data.git
+    
+    ```bash
+    git clone https://github.com/magento/magento2-sample-data.git
+    ```
+    
 6.  Wait for the repository to clone on your server.
 7.  Ensure you checkout the branch of the sample data repository that corresponds with the branch you used from the main `magento2` repository.
 
@@ -105,21 +119,32 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 
     To checkout the correct branch, run the following command from the sample data repository's root directory (assuming you need the `2.2.5` branch):
 
-        git checkout 2.2.5
-8.  Change to `<your Magento installation directory>`.
+    ```bash
+    git checkout 2.2.5
+    ```
+    
+8.  Change to `<magento_root>`.
 9.  Enter the following command to create symbolic links between the files you just cloned so sample data works properly:
 
-        php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php -- --ce-source="<path_to_your_magento_instance>"
+    ```bash
+    php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php -- --ce-source="<path_to_your_magento_instance>"
+    ```
 
     For example,
-
-        php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php -- --ce-source="/var/www/magento2"
+    
+    ```bash
+    php -f <sample-data_clone_dir>/dev/tools/build-sample-data.php -- --ce-source="/var/www/magento2"
+    ```
 
 10.  Wait for the command to complete.
 11.  See the next section.
 
 {:.bs-callout .bs-callout-warning}
-If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema: `php <your Magento install dir>/bin/magento setup:upgrade`.
+If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema: 
+
+```bash
+<magento_root>/bin/magento setup:upgrade
+```
 
 ## Set file system ownership and permissions {#samp-data-perms}
 
@@ -130,7 +155,9 @@ To set file system permissions and ownership on the sample data repository:
 1.  Change to your sample data clone directory.
 2.  Set ownership:
 
-        chown -R :<your web server group name> .
+    ```bash
+    chown -R :<your web server group name> .
+    ```
 
     Typical examples:
 
@@ -140,11 +167,19 @@ To set file system permissions and ownership on the sample data repository:
 
 3.  Set permissions:
 
-        find . -type d -exec chmod g+ws {} +
+    ```bash
+    find . -type d -exec chmod g+ws {} +
+    ```
+    
 4.  Clear static files:
 
-        cd <your {{site.data.var.ce}} install dir>/var
-        rm -rf cache/* page_cache/* generation/*
+    ```bash
+    cd <your {{site.data.var.ce}} install dir>/var
+    ```
+    
+    ```bash
+    rm -rf cache/* page_cache/* generation/*
+    ```
 
 <!-- ABBREVIATIONS -->
 

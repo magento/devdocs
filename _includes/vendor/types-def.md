@@ -9,4 +9,4 @@ where
 	*	`language-`: Language package.
 
 	{:.bs-callout .bs-callout-info}
-  Currently, themes are located under `<your Magento install dir>/app/design/frontend` or `<your Magento install dir>/app/design/adminhtml`.
+  Currently, themes are located under `<magento_root>/app/design/frontend` or `<magento_root>/app/design/adminhtml`.

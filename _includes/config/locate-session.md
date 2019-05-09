@@ -8,16 +8,18 @@ This topic discusses how to locate where your session files are stored. The Mage
 
 	1.	Directory defined in [`env.php`](#session-where-env)
 	2.	Directory defined in [`php.ini`](#session-where-phpini)
-	3.	`<your Magento install dir>/var/session` directory
+	3.	`<magento_root>/var/session` directory
 
 ### `env.php` example {#session-where-env}
-A sample snippet from `<your Magento install dir>/app/etc/env.php` follows:
+A sample snippet from `<magento_root>/app/etc/env.php` follows:
 
+```php
 	'session' =>
 	   array (
 	     'save' => 'files',
 	     'save_path' => '/var/www/session',
 	),
+```
 
 The preceding example stores session files in `/var/www/session`
 

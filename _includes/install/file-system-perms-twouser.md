@@ -105,11 +105,25 @@ To set ownership and permissions before you install the Magento software:
 1.	Log in to your Magento server as, or switch to, the Magento file system owner.
 2.	Enter the following commands in the order shown:
 
-		cd <your Magento install dir>
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
-		sudo chown -R :<web server group> .
-		chmod u+x bin/magento
+    ```bash
+	cd <magento_root>
+	```
+	
+	```bash
+	find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} +
+	```
+	
+	```bash
+	find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} +
+	```
+	
+	```bash
+	sudo chown -R :<web server group> .
+	```
+	
+	```bash
+	chmod u+x bin/magento
+	```
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
