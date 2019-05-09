@@ -5,7 +5,7 @@ title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
 redirect_from:
-  - /guides/v2.0/extension-dev-guide/security/writing-secure-code.html
+  - /guides/v2.3/extension-dev-guide/security/writing-secure-code.html
   - /guides/v2.1/extension-dev-guide/security/writing-secure-code.html
 functional_areas:
   - Standards

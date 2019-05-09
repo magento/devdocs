@@ -6,7 +6,7 @@ menu_title: Upload your component to the Magento Marketplace
 menu_order: 100
 menu_node:
 redirect_from:
-  - /guides/v2.0/mktpl-quickstart/mktpl-intro.html
+  - /guides/v2.3/mktpl-quickstart/mktpl-intro.html
   - /guides/v2.2/mktpl-quickstart/mktpl-intro.html
 ---
 

@@ -5,8 +5,8 @@ title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 2000
 redirect_from:
-  - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html
-  - /guides/v2.0/extension-dev-guide/required-configuration-files.html
+  - /guides/v2.3/extension-dev-guide/template_create_req_config_files.html
+  - /guides/v2.3/extension-dev-guide/required-configuration-files.html
 functional_areas:
   - Configuration
 ---

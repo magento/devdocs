@@ -2,7 +2,7 @@
 group: installation-guide
 title: Uninstall language packages
 redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli-uninstall-langpk.html
+  - /guides/v2.3/install-gde/install/install-cli-uninstall-langpk.html
 functional_areas:
   - Install
   - System

@@ -5,7 +5,7 @@ title: Package
 menu_title: Package
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v2.0/extension-dev-guide/package.html
+redirect_from: /guides/v2.3/extension-dev-guide/package.html
 ---
 
 Use [Composer](https://getcomposer.org/) to package your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.

@@ -5,7 +5,7 @@ title: Manage your components
 menu_title: Manage your components
 menu_node:
 menu_order: 3
-redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
+redirect_from: /guides/v2.3/comp-mgr/compman-main-pg.html
 functional_areas:
   - Upgrade
 ---

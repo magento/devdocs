@@ -9,7 +9,7 @@ functional_areas:
   - Cloud
   - Configuration
 redirect_from:
-  - /guides/v2.0/cloud/admin/admin-user-admin.html
+  - /guides/v2.3/cloud/admin/admin-user-admin.html
   - /guides/v2.1/cloud/admin/admin-user-admin.html
 ---
 

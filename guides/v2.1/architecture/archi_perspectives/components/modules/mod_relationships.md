@@ -3,7 +3,7 @@ group: architecture-guide
 title: Module relationships
 menu_title: Module relationships
 redirect_from:
-  - /guides/v2.0/architecture/modules/mod_relationships.html
+  - /guides/v2.3/architecture/modules/mod_relationships.html
 ---
 
 ## Overview {#m2arch-module-relationships-overview}

@@ -3,7 +3,7 @@ group: architecture-guide
 title: Modules and areas
 menu_title: Modules and areas
 redirect_from:
-  - /guides/v2.0/architecture/modules/mod_and_areas.html
+  - /guides/v2.3/architecture/modules/mod_and_areas.html
 ---
 
 ## Overview {#m2arch-module-areas-overview}

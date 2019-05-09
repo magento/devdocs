@@ -6,7 +6,7 @@ menu_title: Install the Magento software using the command line
 menu_node: parent
 menu_order: 1
 redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli.html
+  - /guides/v2.3/install-gde/install/install-cli.html
 functional_areas:
   - Install
   - System

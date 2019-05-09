@@ -4,7 +4,7 @@ title: Magento Cloud CLI reference
 functional_areas:
   - Cloud
 redirect_from:
-  - /guides/v2.0/cloud/cli-ref/cli-ref-topic.html
+  - /guides/v2.3/cloud/cli-ref/cli-ref-topic.html
   - /guides/v2.1/cloud/cli-ref/cli-ref-topic.html
 ---
 

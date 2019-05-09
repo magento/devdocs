@@ -4,7 +4,7 @@ subgroup: 03_Build
 title: Component load order
 menu_title: Component load order
 menu_order: 7000
-redirect_from: /guides/v2.0/extension-dev-guide/module-load-order.html
+redirect_from: /guides/v2.3/extension-dev-guide/module-load-order.html
 ---
 
 You may need to specify your component's dependency on other components or files from other components using your component's [composer.json]({{ page.baseurl }}/extension-dev-guide/build/create_component.html#add-component-xml). Further, you can specify a load order in your component's `module.xml` file using the `<sequence>` tag to ensure that needed files from other components are already loaded when your component loads.

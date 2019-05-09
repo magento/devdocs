@@ -6,7 +6,7 @@ menu_title: Glossary of common terms
 menu_order: 5
 menu_node:
 redirect_from:
-  - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
+  - /guides/v2.3/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.1/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.2/mktpl-quickstart/intro-composer-gloss.html
 ---

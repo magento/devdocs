@@ -5,7 +5,7 @@ title: Developer roadmap
 menu_title: Developer roadmap
 menu_order: 2
 redirect_from:
-  - /guides/v2.0/extension-dev-guide/developers_roadmap.html
+  - /guides/v2.3/extension-dev-guide/developers_roadmap.html
 ---
 
 This topic introduces the high-level workflow for a developer who wants to create or customize the Magento application. Developers can also package and distribute their customizations to merchants.

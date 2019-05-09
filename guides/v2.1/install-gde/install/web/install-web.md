@@ -6,7 +6,7 @@ menu_title: Setup Wizard installation
 menu_node: parent
 menu_order: 1
 redirect_from:
-  - /guides/v2.0/install-gde/install/install-web.html
+  - /guides/v2.3/install-gde/install/install-web.html
 functional_areas:
   - Install
   - System

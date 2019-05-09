@@ -6,7 +6,7 @@ menu_title: During installation, PHP date warning
 menu_node:
 menu_order: 360
 redirect_from:
-  - /guides/v2.0/install-gde/trouble/tshoot_php-date.html
+  - /guides/v2.3/install-gde/trouble/tshoot_php-date.html
 functional_areas:
   - Install
   - System

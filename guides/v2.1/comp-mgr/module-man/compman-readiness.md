@@ -5,7 +5,7 @@ title: Step 1. Readiness check
 menu_title: Step 1. Readiness check
 menu_node:
 menu_order: 5
-redirect_from: /guides/v2.0/comp-mgr/compman-readiness.html
+redirect_from: /guides/v2.3/comp-mgr/compman-readiness.html
 functional_areas:
   - Upgrade
 ---

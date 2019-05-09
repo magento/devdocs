@@ -2,7 +2,7 @@
 group: php-developer-guide
 title: Test your component
 redirect_from:
-  - /guides/v2.0/mktpl-quickstart/dev-test.html
+  - /guides/v2.3/mktpl-quickstart/dev-test.html
   - /guides/v2.1/mktpl-quickstart/dev-test.html
 ---
 

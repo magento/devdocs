@@ -5,7 +5,7 @@ title: Set up cron for update and upgrade
 menu_title: Set up cron for update and upgrade
 menu_order: 3
 menu_node:
-redirect_from: /guides/v2.0/comp-mgr/prereq/prereq_compman-updater.html
+redirect_from: /guides/v2.3/comp-mgr/prereq/prereq_compman-updater.html
 functional_areas:
   - Upgrade
 ---

@@ -3,7 +3,7 @@ group: architecture-guide
 title: Module overview
 menu_title: Module overview
 redirect_from:
-  - /guides/v2.0/architecture/modules/mod_intro.html
+  - /guides/v2.3/architecture/modules/mod_intro.html
 ---
 
 ## What is a Magento module? {#arch-modules-overview}

@@ -3,7 +3,7 @@ group: architecture-guide
 title: Module dependencies
 menu_title: Module dependencies
 redirect_from:
-  - /guides/v2.0/architecture/modules/mod_depend.html
+  - /guides/v2.3/architecture/modules/mod_depend.html
 ---
 
 ## Overview {#m2devgde-moddep-intro}

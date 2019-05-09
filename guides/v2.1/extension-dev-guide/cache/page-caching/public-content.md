@@ -6,13 +6,13 @@ menu_title: Public content
 menu_order: 17
 menu_node:
 redirect_from:
-  - /guides/v2.0/config-guide/cache/cache-priv-priv.html
+  - /guides/v2.3/config-guide/cache/cache-priv-priv.html
   - /guides/v2.1/config-guide/cache/cache-priv-priv.html
   - /guides/v2.2/config-guide/cache/cache-priv-priv.html
-  - /guides/v2.0/config-guide/cache/cache-priv-context.html
+  - /guides/v2.3/config-guide/cache/cache-priv-context.html
   - /guides/v2.1/config-guide/cache/cache-priv-context.html
   - /guides/v2.2/config-guide/cache/cache-priv-context.html
-  - /guides/v2.0/config-guide/cache/cache-priv-inval.html
+  - /guides/v2.3/config-guide/cache/cache-priv-inval.html
   - /guides/v2.1/config-guide/cache/cache-priv-inval.html
   - /guides/v2.2/config-guide/cache/cache-priv-inval.html
 ---

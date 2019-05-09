@@ -2,7 +2,7 @@
 group: cloud-guide
 title: Snapshots and backup management
 redirect_from:
-  - /guides/v2.0/cloud/admin/admin-snap.html
+  - /guides/v2.3/cloud/admin/admin-snap.html
   - /guides/v2.1/cloud/admin/admin-snap.html
 functional_areas:
   - Cloud

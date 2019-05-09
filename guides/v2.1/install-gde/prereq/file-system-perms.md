@@ -8,8 +8,8 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: umask
 redirect_from:
-  - /guides/v2.0/install-gde/install/prereq/file-system-perms-over.html
-  - /guides/v2.0/install-gde/install/file-system-perms.html
+  - /guides/v2.3/install-gde/install/prereq/file-system-perms-over.html
+  - /guides/v2.3/install-gde/install/file-system-perms.html
 functional_areas:
   - Install
   - System
