@@ -20,19 +20,39 @@ You can either add a `require` section to `composer.json` or you can use the `co
 1.	Log in to the Magento server, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Change to the directory to which you cloned the Magento application. For example,
 
-		cd /var/www/magento2
+    ```bash
+	cd /var/www/magento2
+	```
 
 You have the following options:
 
-### Use the `composer require` command
+### Get available module versions
 
 Command usage:
 
-	composer require <vendor>/<name>:<version>
+    ```bash
+	composer show --all <vendor>/<name>
+    ```
 
 For example,
 
+	```bash
+	composer show --all example/module
+	```
+
+### Use the `composer require` command to install
+
+Command usage:
+
+    ```bash
+	composer require <vendor>/<name>:<version>
+    ```
+
+For example,
+
+	```bash
 	composer require example/module:1.0.0
+	```
 
 Wait while {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} updates dependencies and installs the component.
 
@@ -42,7 +62,7 @@ Open `composer.json` in a text editor.
 
 Add a `require` section like the following:
 
-```JSON
+```json
 	"require": {
 		"<vendor>/<name>": "<version>",
 		"<vendor>/<name>": "<version>"
