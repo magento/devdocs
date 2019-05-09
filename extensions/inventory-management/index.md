@@ -158,7 +158,7 @@ To enable {{site.data.var.im}} modules:
    bin/magento cache:clean
    ```
 
-We also recommend using [reservation inconsistencies commands]({{site.baseurl}}/inventory/inventory-cli-reference.html) after upgrading. When upgrading, all of your products will be added to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
+We also recommend using [reservation inconsistencies commands]({{site.baseurl}}/guides/v2.3/inventory/inventory-cli-reference.html) after upgrading. When upgrading, all of your products will be added to the Default Stock. If you have pending orders, the commands correctly update your salable quantity and reservations for sales and order fulfillment.
 
 ### Previous {{site.data.var.im}} versions
 
