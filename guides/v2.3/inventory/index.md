@@ -2,7 +2,6 @@
 group: inventory
 title: Inventory Management overview
 landing-page: Inventory
-redirect_from: /guides/v2.3/inventory/overview.html
 ---
 
 {{site.data.var.ce}} and {{site.data.var.ee}} v2.3 include new and expanded features and APIs for {{site.data.var.im}}. {{site.data.var.im}} replaces all core APIs in the Open Source `CatalogInventory` module and the `ScalableInventory` module in Commerce. It also provides additional APIs to extend and add functionality.
