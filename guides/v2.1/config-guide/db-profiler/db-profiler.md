@@ -15,7 +15,7 @@ The Magento database profiler displays all queries executed on a page, including
 
 ## Step 1: Modify the deployment configuration
 
-Modify `<your Magento install dir>/app/etc/env.php` to add the following reference to the [database profiler class]({{ site.mage2000url }}lib/internal/Magento/Framework/DB/Profiler.php):
+Modify `<magento_root>/app/etc/env.php` to add the following reference to the [database profiler class]({{ site.mage2000url }}lib/internal/Magento/Framework/DB/Profiler.php):
 
 ```php?start_inline=1
         'profiler' => [
@@ -53,7 +53,7 @@ An example follows:
 
 ## Step 2: Configure the output
 
-Configure the output in your Magento application boostrap file; this might be `<your Magento install dir>/index.php` or it could be located in a web server virtual host configuration.
+Configure the output in your Magento application boostrap file; this might be `<magento_root>/index.php` or it could be located in a web server virtual host configuration.
 
 The following example displays results in a three-column table:
 

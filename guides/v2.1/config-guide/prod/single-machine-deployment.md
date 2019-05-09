@@ -32,7 +32,7 @@ This guide does not apply if you used `git clone` to install Magento. Contributi
 
 3. Enable maintenance mode using the command:
 
-        php bin/magento maintenance:enable
+        bin/magento maintenance:enable
 
 4. Apply updates to Magento or its components using the following command pattern:
 
@@ -53,19 +53,19 @@ This guide does not apply if you used `git clone` to install Magento. Contributi
 
 6. Update the {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data:
 
-        php bin/magento setup:upgrade
+        bin/magento setup:upgrade
 
 7. Compile the code:
 
-        php bin/magento setup:di:compile
+        bin/magento setup:di:compile
 
 8. Deploy static content:
 
-        php bin/magento setup:static-content:deploy
+        bin/magento setup:static-content:deploy
 
 9. Exit maintenance mode:
 
-        php bin/magento maintenance:disable
+        bin/magento maintenance:disable
 
 ## Alternative deployment strategies
 
