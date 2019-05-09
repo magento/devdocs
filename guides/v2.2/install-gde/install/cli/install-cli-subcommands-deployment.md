@@ -6,7 +6,7 @@ menu_title: Create or update the deployment configuration
 menu_node:
 menu_order: 9
 redirect_from:
-  - /guides/v2.3/install-gde/install/install-cli-subcommands-deployment.html
+  - /guides/v2.0/install-gde/install/install-cli-subcommands-deployment.html
 functional_areas:
   - Install
   - System

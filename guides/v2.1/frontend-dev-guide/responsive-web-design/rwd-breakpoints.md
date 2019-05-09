@@ -2,7 +2,7 @@
 group: frontend-developer-guide
 title: Add a custom breakpoint
 redirect_from:
- - /guides/v2.3/frontend-dev-guide/css-topics/css-breakpoints.html
+ - /guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
  - /guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
 functional_areas:
   - Frontend

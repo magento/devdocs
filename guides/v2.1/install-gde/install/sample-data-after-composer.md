@@ -5,7 +5,7 @@ title: Install using Composer
 menu_title: Install using Composer
 menu_node:
 menu_order: 3
-redirect_from: /guides/v2.3/install-gde/install/sample-data-after-magento.html
+redirect_from: /guides/v2.0/install-gde/install/sample-data-after-magento.html
 functional_areas:
   - Install
   - System

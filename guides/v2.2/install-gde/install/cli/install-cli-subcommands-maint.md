@@ -6,7 +6,7 @@ menu_title: Enable or disable maintenance mode
 menu_node:
 menu_order: 10
 redirect_from:
-  - /guides/v2.3/install-gde/install/install-cli-subcommands-maint.html
+  - /guides/v2.0/install-gde/install/install-cli-subcommands-maint.html
 functional_areas:
   - Install
   - System

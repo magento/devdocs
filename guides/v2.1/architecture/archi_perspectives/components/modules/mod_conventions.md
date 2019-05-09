@@ -3,7 +3,7 @@ group: architecture-guide
 title: Module conventions
 menu_title: Module conventions
 redirect_from:
-  - /guides/v2.3/architecture/modules/mod_conventions.html
+  - /guides/v2.0/architecture/modules/mod_conventions.html
 ---
 
 ## Overview {#m2arch-module-conventions-overview}

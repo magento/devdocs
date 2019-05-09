@@ -1,7 +1,7 @@
 ---
 group: ui-components-guide
 title: Modal component
-redirect_from: /guides/v2.3/ui-components/ui-modal.html
+redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 
 The Modal {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).

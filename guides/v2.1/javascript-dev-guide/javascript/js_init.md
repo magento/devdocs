@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 redirect_from:
- - /guides/v2.3/frontend-dev-guide/javascript/js_init.html
+ - /guides/v2.0/frontend-dev-guide/javascript/js_init.html
 ---
 
 ## Overview {#js_init_overview}

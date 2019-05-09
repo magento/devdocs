@@ -2,7 +2,7 @@
 group: installation-guide
 title: Uninstall modules
 redirect_from:
-  - /guides/v2.3/install-gde/install/install-cli-uninstall-mods.html
+  - /guides/v2.0/install-gde/install/install-cli-uninstall-mods.html
 functional_areas:
   - Install
   - System

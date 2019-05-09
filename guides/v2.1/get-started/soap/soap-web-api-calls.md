@@ -6,7 +6,7 @@ menu_title: Use SOAP Services
 menu_order: 1
 menu_node: parent
 redirect_from:
-  - /guides/v2.3/get-started/soap/soap-front.html
+  - /guides/v2.0/get-started/soap/soap-front.html
 
 ---
 

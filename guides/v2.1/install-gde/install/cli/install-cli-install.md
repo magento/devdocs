@@ -2,7 +2,7 @@
 group: installation-guide
 title: Install the Magento software
 redirect_from:
-  - /guides/v2.3/install-gde/install/install-cli-install.html
+  - /guides/v2.0/install-gde/install/install-cli-install.html
 functional_areas:
   - Install
   - System

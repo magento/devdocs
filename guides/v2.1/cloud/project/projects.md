@@ -8,7 +8,7 @@ menu_node: parent
 functional_areas:
   - Cloud
 redirect_from:
-  - /guides/v2.3/cloud/admin/administer.html
+  - /guides/v2.0/cloud/admin/administer.html
   - /guides/v2.1/cloud/admin/administer.html
 ---
 

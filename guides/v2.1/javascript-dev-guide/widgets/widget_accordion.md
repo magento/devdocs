@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Accordion widget
 redirect_from:
- - /guides/v2.3/frontend-dev-guide/javascript/widget_accordion.html
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html
 ---
 
 ## Overview

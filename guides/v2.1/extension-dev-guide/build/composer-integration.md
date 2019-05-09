@@ -5,7 +5,7 @@ title: The composer.json file
 menu_title: The composer.json file
 menu_order: 1000
 redirect_from:
-  - /guides/v2.3/extension-dev-guide/composer-integration.html
+  - /guides/v2.0/extension-dev-guide/composer-integration.html
 ---
 
 ## Overview

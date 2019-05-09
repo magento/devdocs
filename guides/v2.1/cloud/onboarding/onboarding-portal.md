@@ -3,7 +3,7 @@ group: cloud-guide
 title: Onboarding Portal management
 redirect_to:
 # Temporarily removing this page from the doc site per MAGECLOUD-1531
- - /guides/v2.3/cloud/onboarding/onboarding-tasks.html
+ - /guides/v2.0/cloud/onboarding/onboarding-tasks.html
 ---
 
 The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.ece}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).

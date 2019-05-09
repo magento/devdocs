@@ -6,8 +6,8 @@ menu_title: About component file structure
 menu_order: 10
 menu_node:
 redirect_from:
-  - /guides/v2.3/mktpl-quickstart/dev-filesys.html
-  - /guides/v2.3/extension-dev-guide/prepare_file-str.html
+  - /guides/v2.0/mktpl-quickstart/dev-filesys.html
+  - /guides/v2.0/extension-dev-guide/prepare_file-str.html
   - /guides/v2.1/mktpl-quickstart/dev-filesys.html
 ---
 

@@ -3,7 +3,7 @@ group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Use custom JavaScript
 redirect_from:
- - /guides/v2.3/frontend-dev-guide/javascript/custom_js.html
+ - /guides/v2.0/frontend-dev-guide/javascript/custom_js.html
 ---
 
 ## Overview {#custom_js_overview}
