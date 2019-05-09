@@ -86,6 +86,31 @@ Sample page layout declaration file: `<Magento_Theme_module_dir>/view/frontend/l
 </page_layouts>
 ```
 
+Use `layout` attribute in `page` section to define a layout type of the page. Example below shows how to use `3 columns` page layout type for the [Wish List Sharing](https://github.com/magento/magento2/blob/2.3.1/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
+
+```xml
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="customer_account"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magento\Wishlist\Block\Customer\Sharing" name="wishlist.sharing" template="Magento_Wishlist::sharing.phtml" cacheable="false"/>
+        </referenceContainer>
+    </body>
+</page>
+```
+
+![Wish List Sharing. 3 columns layout page type]({{ page.baseurl }}/frontend-dev-guide/images/version.png)
+
+{:.bs-callout .bs-callout-info}
+By default Magento introduces 5 page layout types: `empty`, `1column`, `2columns-left`, `2columns-right` and `3columns`.
+
 ## Page configuration {#layout-types-conf}
 
 The page configuration adds content to the wireframe defined in a page layout file. A page configuration also contains page meta-information, and contents of the `<head>` section.
