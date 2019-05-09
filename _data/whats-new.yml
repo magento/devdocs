@@ -872,7 +872,7 @@ entries:
   versions: 2.3.x
   type: Technical changes
   date: November 16 2018
-- description: Added content to [Deprecated ScalableInventory entities](https://devdocs.magento.com/guides/v2.3/inventory/scalable-inventory-replacements.html)
+- description: Added content for deprecated ScalableInventory entities in [Inventory API reference](https://devdocs.magento.com/guides/v2.3/inventory/inventory-api-reference.html)
   versions: 2.3.x
   type: Major update
   date: November 16 2018
