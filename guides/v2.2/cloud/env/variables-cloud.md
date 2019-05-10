@@ -24,9 +24,10 @@ Variable | Description
 `MAGENTO_CLOUD_ROUTES` | Describe the routes defined in the environment `.magento/routes.yaml` file.
 `MAGENTO_CLOUD_TREE_ID` | The tree ID for the application, which corresponds to the SHA of the tree in Git.
 `MAGENTO_CLOUD_VARIABLES` | A base64-encoded JSON object with key-value pairs, such as `"key":"value"`.
+`MAGENTO_CLOUD_LOCKS_DIR` | Provides the path to the mount point for the lock provider on the Cloud infrastructure. The lock provider prevents the launch of duplicate cron jobs and cron groups.
 
 {:.bs-callout .bs-callout-warning}
-When attempting to [use environment variables to override configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:` as in the following example.
+To [add environment variables to override configuration settings]({{ site.baseurl }}/guides/v2.2/config-guide/prod/config-reference-var-name.html) using the [Project Web Interface]({{ page.baseurl }}/cloud/project/project-webint-basic.html#project-conf-env-var), you must prepend the variable name with `env:` as in the following example.
 ![Environment variable example]({{ site.baseurl }}/common/images/cloud_env_var_example.png)
 
 Since values can change over time, it is best to inspect the variable at runtime and use it to configure your application. For example, we use the `MAGENTO_CLOUD_RELATIONSHIPS` variable to retrieve environment-related relationships as follows:

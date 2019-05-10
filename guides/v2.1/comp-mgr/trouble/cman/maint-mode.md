@@ -27,7 +27,7 @@ See one of the following sections for more information:
 To create a maintenance page and redirect to it, first create a maintenance page named:
 
 *	Apache: `<web server docroot>/maintenance.html`
-*	nginx: `<your Magento install dir>/maintenance.html`
+*	nginx: `<magento_root>/maintenance.html`
 
 Add to it the following contents:
 
@@ -138,7 +138,7 @@ To redirect traffic to a custom maintenance page:
 		}
 4. Enter the following command:
 
-		touch <your Magento install dir>/maintenance.enable
+		touch <magento_root>/maintenance.enable
 3. Reload the nginx configuration:
 
 		service nginx reload

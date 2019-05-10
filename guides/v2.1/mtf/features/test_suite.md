@@ -85,6 +85,9 @@ To run a test suite enter the following commands from your terminal:
 
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
+```
+
+```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 ```
 

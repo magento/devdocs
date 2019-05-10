@@ -57,9 +57,9 @@ After the upgrade completes:
 
 2. Restart Varnish if you use it for page caching.
 
-	```bash
-  service varnish restart
-  ```
+    ```bash
+    service varnish restart
+    ```
 
 #### Errors
 
