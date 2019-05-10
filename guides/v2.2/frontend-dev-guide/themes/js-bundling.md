@@ -136,3 +136,6 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [Advanced-JavaScript-Bundling]:https://devdocs.magento.com/guides/v2.3/performance-best-practices/advanced-js-bundling.html
 [luma-view-xml]:https://github.com/magento/magento2/blob/2.2.3/app/design/frontend/Magento/luma/etc/view.xml#L270
+
+
+The minified files are saved with a .min suffix. all the file names are different in production. If the static content is deployed with a different setting, none of the Javascript on the site will work.
