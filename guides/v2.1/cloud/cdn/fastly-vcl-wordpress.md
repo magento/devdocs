@@ -25,18 +25,17 @@ We recommend adding custom VCL configurations to a Staging environment where you
 
 -  Identify the URL paths to redirect to the WordPress backend.
 
--  Use the Fastly API to add the following configuration settings: 
+-  Submit a support ticket requesting the following Fastly service configuration changes required to use the custom VCL snippet for the WordPress redirects: 
 
-   -  Add the WordPress host to the Fastly backend configuration, for example `customer.example.com`.
+   -  Add the WordPress host to the Fastly backend configuration. Include the domain name for the WordPress host.
 
    -  Attach the following request condition to the Wordpress backend.
 
      ```json
       req.http.X-WP == “1”
      ```
-	 Incoming requests that match this condition, which is set through the custom VCL snippet, redirect to the WordPress backend. 
+     Incoming requests that match this request condition, which is set through the [custom VCL snippet](#vcl), redirect to the WordPress backend. 
 	 
-     See the [Fastly API reference](https://docs.fastly.com/api/config#) for details on configuring the backend and request condition.
 
 ## Create an Edge Dictionary of WordPress paths {#edge-dictionary}
 
