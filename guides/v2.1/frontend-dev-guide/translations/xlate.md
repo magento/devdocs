@@ -88,11 +88,15 @@ Anyone can submit inline translations on the {% glossarytooltip 1a70d3ac-6bd9-47
 
 The preferred way of translating the Storefront in Magento is by using the translation dictionaries (.csv files) and language packages in the Magento codebase.
 
+Note: inline translation is not intended to be used as the primary localization technique in Magento. Instead, the preferred way of translating is by using the translation
+
 Magento Admin Panel offers a quick way feature for store administrators to update and translate text on the Storefront inline translation.
 
 Inline translations are stored in the database and are theme-specific, which means that they don't apply if another theme is selected for the Magento store after the inline translation is done. As a result, the inline translation should be done again by the store administrator if the theme is changed.
 
 In order to enable the inline translation, you should go to the **Stores > Configuration > Advanced > Developer > Translate Inline >** and you will see the drop-down menus to enable inline translation.
+
+In order to enable Inline Translation, you must first disable Production mode via the CLI. After enabling developer mode, go to **Stores > Configuration > Advanced > Developer >** Translate Inline and change "Enabled for Storefront" or "Enabled for Admin" to **yes**.
 
 You can not use the Inline translation feature in production mode.
 
