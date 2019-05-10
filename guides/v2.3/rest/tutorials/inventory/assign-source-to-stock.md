@@ -31,7 +31,7 @@ In this example, we configure the Baltimore warehouse to be the primary source f
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/stock-source-links`
+`POST <host>/rest/all/V1/inventory/stock-source-links`
 
 **Scope**
 
@@ -96,7 +96,7 @@ Magento returns empty array.
 
 **Required:** After you have assigned a source to stock, use the following command to perform a full reindex and flush the cache. This is required!
 
-``` bash
+```bash
 bin/magento indexer:reindex && bin/magento cache:flush
 ```
 

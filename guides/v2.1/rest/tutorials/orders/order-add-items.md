@@ -10,8 +10,6 @@ menu_order: 5
 level3_subgroup: order-tutorial
 redirect_from:
   - /guides/v2.1/get-started/order-tutorial/order-add-items.html
-  - /guides/v2.2/get-started/order-tutorial/order-add-items.html
-  - /guides/v2.3/get-started/order-tutorial/order-add-items.html
 functional_areas:
   - Integration
   - Orders
@@ -30,7 +28,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 
@@ -71,7 +69,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 
@@ -141,7 +139,7 @@ We now know the values for `option_value` for `size` and `color` are `168` and `
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 
@@ -215,7 +213,7 @@ The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sk
 
 To add a bundle product to a cart, you must specify the `sku` of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the `id` defined in the item's `product_links` object. The `product_links` object primarily describes the ordering and placement of options on the customization page, but it also links an item's `sku` and `id` to the `sku` of the bundle product.
 
-The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified response:
+The `GET <host>/rest/<store_code>/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified response:
 
 {% collapsible Show code sample %}
 
@@ -324,7 +322,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/carts/mine/items`
+`POST <host>/rest/<store_code>/V1/carts/mine/items`
 
 **Headers**
 

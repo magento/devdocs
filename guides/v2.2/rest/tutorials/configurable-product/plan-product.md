@@ -42,7 +42,7 @@ Pattern | Graphic Print
 Color | Gray
 Size | Configurable in small, medium, or large
 Description | The Champ Tee keeps you cool and dry while you do your thing. Let everyone know who you are by adding your name on the back for only $10.
-{:style="table-layout:auto;"}
+
 
 A merchant typically provides the product name, SKU, price, weight, and description. The other characteristics are defined by the system.
 
@@ -58,8 +58,8 @@ Use the following call to search for the attribute set named `Top`.
 
 **Endpoint**
 
-``` html
-GET <host>/index.php/rest/V1/eav/attribute-sets/list?
+```html
+GET <host>/rest/<store_code>/V1/eav/attribute-sets/list?
 searchCriteria[filter_groups][0][filters][0][field]=attribute_set_name&
 searchCriteria[filter_groups][0][filters][0][value]=Top&
 searchCriteria[filter_groups][0][filters][0][condition_type]=eq
@@ -69,7 +69,7 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=eq
 
 The `attribute_set_id` for the Top attribute set is `9`.
 
-``` json
+```json
 {
     "items": [
         {
@@ -116,7 +116,7 @@ Material | LumaTech  | 136 | `material` | 148
 Pattern | Graphic Print | 152 | `pattern` | 196
 Color | Gray | 93 | `color` | 52
 Size | Not applicable | 141 | `size` | 168 (small), 169 (medium), 170 (large)
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-warning}
 The attribute ID and value numbers might be different on your installation. Check the values carefully before using them in your calls.

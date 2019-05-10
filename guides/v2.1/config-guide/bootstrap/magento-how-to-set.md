@@ -17,7 +17,7 @@ The following table discusses the bootstrap parameters you can set:
 | ------------------- | -------------------------------------------- |
 | MAGE_DIRS           | Specifies custom directory and URL paths     |
 | MAGE_PROFILER       | Enables dependency graphs and HTML profiling |
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 *   Not all bootstrap parameters are documented at this time.
@@ -64,8 +64,8 @@ One way to set the Magento mode is by editing `.htaccess`. This way, you don't h
 
 You can modify `.htaccess` in any of the following locations, depending on your entry point to the Magento application:
 
-*	`<your Magento install dir>/.htaccess`
-*	`<your Magento install dir>/pub/.htaccess`
+*	`<magento_root>/.htaccess`
+*	`<magento_root>/pub/.htaccess`
 
 To set a variable:
 

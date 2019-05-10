@@ -44,6 +44,9 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Default No-route URL | `web/default/no_route` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Cookie Path | `web/cookie/cookie_path` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Cookie Domain | `web/cookie/cookie_domain` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Cookie Domain | `web/cookie/cookie_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Cookie Domain | `web/cookie/cookie_httponly` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Cookie Domain | `web/cookie/cookie_restriction` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ### Currency setup sensitive and system-specific paths
 
@@ -385,6 +388,7 @@ Your choice for this variable determines which [International paths](#vars-intl-
 | Merchant Account ID | `payment/braintree/merchant_account_id` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Kount Merchant ID | `payment/braintree/kount_id` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Override Merchant Name | `payment/braintree_paypal/merchant_name_override` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| Phone | `payment/braintree/descriptor_phone` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ### Worldpay sensitive and system-specific paths
@@ -409,7 +413,7 @@ Your choice for this variable determines which [International paths](#vars-intl-
 | Merchant MD5 | `payment/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | ![EE-only]({{ site.baseurl }}/common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Test Mode | `payment/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Gateway URL | `payment/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
-| Transaction Details URL | `payment/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Transaction Details URL | `payment/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 | Debug | `payment/authorizenet_directpost/debug` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ### eWAY sensitive and system-specific paths

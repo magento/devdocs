@@ -9,5 +9,3 @@ force) of persistent session. Persistent session data is kept in DB - so it's no
 as much time as we need. DB session keeps customerId + some data from real customer session that we want to sync (e.g.
 num items in shopping cart). For registered customer this info is synced to persistent session if choose "Remember me"
 checkbox during first login.
-
-

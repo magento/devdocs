@@ -31,7 +31,24 @@ stage:
   build:
     SCD_COMPRESSION_LEVEL: 4
 ```
+
+### `SCD_COMPRESSION_TIMEOUT`
+
+-  **Default**—`600`
+-  **Version**—Magento 2.1.4 and later
+
+When the time it takes to compress the static assets exceeds the compression timeout limit, it interrupts the deployment process. Set the maximum execution time, in seconds, for the static content compression command.
+
+```yaml
+stage:
+  build:
+    SCD_COMPRESSION_TIMEOUT: 800
+```
+
 ### `SCD_EXCLUDE_THEMES`
+
+{: .bs-callout .bs-callout-warning }
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
@@ -75,18 +92,18 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**: 
-    -  `1`—Starter environments and Pro Integration environments
-    -  `3`—Pro Staging and Production environments
+-  **Default**—Automatic
 -  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
+Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
 ```yaml
 stage:
   build:
     SCD_THREADS: 2
 ```
+
+For Magento version 2.1.11 and earlier, the default value is 1.
 
 To further reduce deployment time, we recommend using [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 

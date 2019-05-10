@@ -17,7 +17,7 @@ New Relic APM provides the following features to Magento:
 -  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
 
-By default, the {site.data.var.ece}} Pro plan includes New Relic on the Staging and Production environments. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation. For {{site.data.var.ece}} Pro plan customers also need to submit a support ticket to use New Relic on an Integration branch. 
+By default, the {{site.data.var.ece}} Pro plan includes New Relic on the Staging and Production environments. If it is not installed, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation. For {{site.data.var.ece}} Pro plan customers also need to submit a support ticket to use New Relic on an Integration branch. 
 
 
 {:.bs-callout .bs-callout-info}

@@ -29,7 +29,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Name | North America Site
    Code | `na_site`
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Web Site**.
 
@@ -41,7 +41,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | North America Store
    Code | `na_store`
    Root Category | Default Category
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store**.
 
@@ -53,7 +53,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | US Store View
    Code | `us`
    Status | Enabled
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store View**.
 
@@ -65,7 +65,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    --- | ---
    Name | Europe Site
    Code | `eu_site`
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Web Site**.
 
@@ -77,7 +77,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | Europe Store
    Code | `eu_store`
    Root Category | Default Category
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store**.
 
@@ -89,7 +89,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
    Name | Germany Store View
    Code | `de`
    Status | Enabled
-   {:style="table-layout:auto;"}
+   
 
    Click **Save Store View**.
 
@@ -97,7 +97,7 @@ In this tutorial, we'll create the infrastructure needed to implement a US and a
 
 To make it easier to locate products and log in as a customer later in this tutorial, configure Magento to add the store code to the URL.
 
-1. Click **Stores** > **Configuration** > **Web** and expand the **Url Options** section.
+1. Click **Stores** > **Settings** > **Configuration** > **Web** and expand the **Url Options** section.
 2. Change the value of **Add Store Code to Urls** to **Yes**.
 3. Click **Save Config**.
 
@@ -117,8 +117,8 @@ For this tutorial, we'll assume that payment and shipping methods are configured
 
 **Required:** Perform a full reindex and flush the cache.
 
-``` bash
-bin/magento indexer:reindex && php bin/magento cache:flush
+```bash
+bin/magento indexer:reindex && bin/magento cache:flush
 ```
 
 ## Verify this step

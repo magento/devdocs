@@ -46,7 +46,7 @@ Before you publish your component, test installing it using the [Magento Compone
 
 See these resources for testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components:
 
-* [Magento Marketplace Extension Quality Program Coding Standard] provides a set of rules and sniffs for [PHP_CodeSniffer] tool
+* The [Magento Coding Standard] provides a set of rules and sniffs for the [PHP_CodeSniffer] tool
 * [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program] (video) from Magento Imagine 2017
 * [Extension Quality Program] in the Magento Marketplace User Guide
 * [01 The Module Skeleton Kata] (video) by [Mage2Katas]
@@ -54,14 +54,14 @@ See these resources for testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16
 
 [Magento Testing Overview]: {{ page.baseurl }}/test/testing.html
 [Functional Testing Framework]: {{ page.baseurl }}/mtf/mtf_introduction.html
-[Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/2.2/introduction.html
+[Magento Functional Testing Framework]: https://devdocs.magento.com/mftf/docs/introduction.html
 [register]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
 [Magento Component Manager]: {{ page.baseurl }}/comp-mgr/bk-compman-upgrade-guide.html
 [Web Setup Wizard]: https://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
 [Package your component]: {{ page.baseurl }}/extension-dev-guide/package/package_module.html
 [Install your component]: {{ page.baseurl }}/comp-mgr/extens-man/extensman-checklist.html
 [Install using Composer]: {{ page.baseurl }}/install-gde/install/sample-data-after-composer.html
-[Magento Marketplace Extension Quality Program Coding Standard]: https://github.com/magento/marketplace-eqp
+[Magento Coding Standard]: https://github.com/magento/magento-coding-standard
 [PHP_CodeSniffer]: https://github.com/squizlabs/PHP_CodeSniffer
 [Technical Deep Dive: How to Pass the Magento Marketplace Extension Quality Program]: https://magento.com/resources/technical-deep-dive-how-pass-magento-marketplace-extension-quality-program
 [Extension Quality Program]: https://docs.magento.com/marketplace/user_guide/sellers/extension-quality-program.html

@@ -47,11 +47,11 @@ Field name | Data type | Description
 
 The following call asynchronously changes the price of the product that has a `sku` of `24-MB01`:
 
-PUT /async/V1/products/24-MB01
+PUT <host>/rest/<store_code>/async/V1/products/24-MB01
 
 ## Payload 
 
-``` json
+```json
 {
   "product": {
     "price": 29
@@ -63,7 +63,7 @@ PUT /async/V1/products/24-MB01
 
 Magento generates a `bulk_uuid` for each asynchronous request. Use the `bulk_uuid` to determine the [operation status]({{ page.baseurl }}/rest/operation-status-endpoints.html) of your request. 
 
-``` json
+```json
 {
     "bulk_uuid": "fbfca270-7a90-4c4e-9f32-d6cf3728cdc7",
     "request_items": [
