@@ -61,6 +61,47 @@ var fieldName = ko.contextFor($0).$data;
 console.log(fieldName.name); // product_form.product_form.product-details.container_name.name
 ```
 
+## Debugging using Chrome DevTools
+
+All modern browsers support “debugging” – a special UI in developer tools that makes finding and fixing errors much easier. 
+
+### Sources panel UI
+
+[DevTools] provides a lot of different tools for different tasks, but the **Sources** panel is where you debug JavaScript.
+
+1. Open the required page in Chrome.
+2. Turn on developer tools with F12 (Windows, Linux) or Cmd+Opt+I (Mac).
+3. Click the `Sources` tab.
+
+![Sources Panel]({{ site.baseurl }}/common/images/debugging-sources-pane.png)
+
+In the previous image, we can see three zones:
+
+1. The `Resources` zone lists all the files as HTML, JavaScript, CSS.
+2. The `Source` zone shows the source code of any selected file.
+3. The `Information and control` zone is for debugging.
+
+### Breakpoints
+
+A **breakpoint** is a line of code where the debugger will automatically pause the JavaScript execution process.
+To set a breakpoint, right click on the code line number (as shown in the next image).
+
+![Breakpoints]({{ site.baseurl }}/common/images/debugging-breakpoints.png)
+
+You can always find a list of breakpoints in the right panel, which is useful when you have many breakpoints in various files.
+
+{: .bs-callout .bs-callout-info }
+Right-clicking on the line number allows you to create a conditional breakpoint, which triggers only when the given expression is truthy. That’s helpful when you need to stop only for certain function parameters.
+
+### Execution trace
+
+After setting the breakpoint, refresh the page. Now, let's explore the script tracing. As you can see in the next image, the script execution paused on the given breakpoint.
+
+![Execution Trace]({{ site.baseurl }}/common/images/debugging-execution-trace.png)
+
+As result, you can see the input parameter values and what the function returns. Moreover, we're also able to change the function's values on the fly.
+
 ## See also
 
 [Debug using uiRegistry]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiregistry.html#debug_uiregistry)
+[DevTools]: https://developers.google.com/web/tools/chrome-devtools/javascript/
