@@ -36,6 +36,22 @@ To add the email template strings to the dictionary, use the `{{trans}}` [direct
 
 Custom email templates [added using the Admin panel] are not stored in the file system, and their strings are not added to the dictionary.
 
+To ensure that your new string is added to the dictionary and translated, use the `trans` method when outputting a string in a [email template].
+
+For example:
+
+- When only string is added in the email template:
+
+    ```html
+    {{trans "Lorem Ipsum is simply dummy text of the printing"}}
+    ```
+
+- When only string is added with variable value in the email template:
+
+    ```html
+    {{trans "%items items" items="numItems"}}
+    ```
+
 ## Strings added in UI component templates {#add_strings_ui_html}
 
 To ensure that the text you add in `.html` templates of UI components is added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how to use custom bindings:
