@@ -19,7 +19,7 @@ _Mode_ is an additional configuration option for the Docker configuration genera
 
 You can launch your Docker environment in one of the following modes:
 
--   **production**—Production mode is the default configuration setting for launching the Docker environment. This option builds the Docker environment in production mode and verifies configured service versions.
+-   **production**—Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
 -   **developer**—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
 
 For example, the following command starts the Docker configuration generator for the developer mode:
@@ -87,32 +87,32 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
 Continue launching your Docker environment in the default _production_ mode.
 
-1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
 
     ```bash
     ./vendor/bin/ece-tools docker:build
     ```
 
-1.  _Optional_: Copy the raw configuration files.
+1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration file to your file and make any necessary changes.
 
     ```bash
     cp docker/config.php.dist docker/config.php
     ```
 
-1. _Optional_: Convert the PHP configuration files to Docker ENV files.
+    Convert custom PHP configuration files to Docker ENV files.
 
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
     ```
 
-    This command generates the following Docker ENV files:
+    This generates the following Docker ENV files:
 
     * `docker/config.env`
 
     {: .bs-callout .bs-callout-info}
     The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
 
-1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
+1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1.  Build files to containers and run in the background.
 
@@ -161,29 +161,29 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html). If you have it installed, continue to the next step.
 
-1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
 
     ```bash
     ./vendor/bin/ece-tools docker:build --mode="developer"
     ```
 
-1.  _Optional_: Copy the raw configuration files.
+1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration file to your file and make any necessary changes.
 
     ```bash
     cp docker/config.php.dist docker/config.php
     ```
 
-1.  _Optional_: Convert the PHP configuration files to Docker ENV files.
+    Convert custom PHP configuration files to Docker ENV files.
 
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
     ```
 
-    This command generates the following Docker ENV files:
+    This generates the following Docker ENV files:
 
     * `docker/config.env`
 
-1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
+1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1.  Start the file synchronization.
 
@@ -202,10 +202,8 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     - Deploy Magento in the Docker container:
 
         ```bash
-        docker-compose up -d && \
         docker-compose run deploy cloud-deploy && \
-        docker-compose run deploy magento-command deploy:mode:set developer && \
-        docker-compose run deploy magento-command cache:clean
+        docker-compose run deploy magento-command deploy:mode:set developer
         ```
 
     {: .bs-callout .bs-callout-info}
