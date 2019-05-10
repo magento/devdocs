@@ -93,7 +93,7 @@ Continue launching your Docker environment in the default _production_ mode.
     ./vendor/bin/ece-tools docker:build
     ```
 
-1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration file to your file and make any necessary changes.
+1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
     ```bash
     cp docker/config.php.dist docker/config.php
@@ -167,7 +167,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     ./vendor/bin/ece-tools docker:build --mode="developer"
     ```
 
-1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration file to your file and make any necessary changes.
+1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
     ```bash
     cp docker/config.php.dist docker/config.php
