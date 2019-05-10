@@ -1,8 +1,6 @@
 ---
 group: php-developer-guide
 title: Register your component
-redirect_from:
-  - /guides/v2.0/extension-dev-guide/component-registration.html
 ---
 
 Magento components, including modules, themes, and language packages, must be registered in the Magento system through the Magento `ComponentRegistrar` class.

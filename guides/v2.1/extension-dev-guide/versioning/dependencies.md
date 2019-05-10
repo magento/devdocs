@@ -5,7 +5,6 @@ title: Module version dependencies
 menu_title: Module version dependencies
 menu_order: 1200
 redirect_from:
-  - /guides/v2.0/extension-dev-guide/backward-compatibility.html
   - /guides/v2.1/extension-dev-guide/backward-compatibility.html
   - /guides/v2.2/extension-dev-guide/backward-compatibility.html
 ---
