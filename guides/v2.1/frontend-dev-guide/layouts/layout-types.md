@@ -86,7 +86,7 @@ Sample page layout declaration file: `<Magento_Theme_module_dir>/view/frontend/l
 </page_layouts>
 ```
 
-Use `layout` attribute in `page` section to define a layout type of the page. Example below shows how to use `3 columns` page layout type for the [Wish List Sharing](https://github.com/magento/magento2/blob/2.3.1/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
+Use the `layout` attribute in the `page` section to define a layout type for the page. The following example shows how to use the `3 columns` page layout type for the [Wish List Sharing](https://github.com/magento/magento2/blob/2.3.1/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
 
 ```xml
 <?xml version="1.0"?>
@@ -109,7 +109,7 @@ Use `layout` attribute in `page` section to define a layout type of the page. Ex
 ![Wish List Sharing. 3 columns layout page type]({{ page.baseurl }}/frontend-dev-guide/images/version.png)
 
 {:.bs-callout .bs-callout-info}
-By default Magento introduces 5 page layout types: `empty`, `1column`, `2columns-left`, `2columns-right` and `3columns` for frontend and 3 page layout types `admin-empty`, `admin-1column` and `admin-2columns-left` for backend.
+By default, Magento provides 5 page layout types for the frontend (`empty`, `1column`, `2columns-left`, `2columns-right`, and `3columns`) and 3 page layout types for the backend (`admin-empty`, `admin-1column`, and `admin-2columns-left`).
 
 ## Page configuration {#layout-types-conf}
 
