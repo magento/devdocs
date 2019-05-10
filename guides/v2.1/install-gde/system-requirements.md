@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: Getting Started
-title: System 2.1.x requirements
-menu_title: Magento 2.1.x system requirements
-menu_node: parent
-menu_order: 1
+title: System 2.1 requirements
 redirect_from:
   - /guides/v2.1/install-gde/system-requirements-2.1.html
   - /magento-system-requirements.html
