@@ -177,8 +177,6 @@ algolia:
   files_to_exclude:
     - guides/m1x/**/*.html
     - guides/m1x/**/*.md
-    - guides/v2.0/**/*.html
-    - guides/v2.0/**/*.md
     - swagger
     - redoc
   # Index HTML elements, especially code samples.
@@ -235,7 +233,6 @@ exclude:
   - .idea
   - Gemfile
   - Gemfile.lock
-  - guides/v2.0/
   - package.json
   - package-lock.json
   - Rakefile
