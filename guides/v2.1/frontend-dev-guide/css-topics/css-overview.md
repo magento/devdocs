@@ -14,14 +14,25 @@ Magento application provides a built-in Less UI library, which you can optionall
 
 To customize {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} styles, you need to [create a custom design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html). Then you can use one of the following approaches:
 
-* If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files.
+* If your theme [inherits]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the Magento out-of-the-box Blank or Luma theme, you can override the default Less files; for example to [change the values of the variables]({{ page.baseurl }}/frontend-dev-guide/css-topics/theme-ui-lib.html#fedg_using-ui-lib_predef-vars) used in the default files. 
+* Create your own Less files using the built-in Less preprocessor. 
+* Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
 ## Things to remember when working with styles
 
 * Make sure that you [set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html).
-* When creating your own Less files using the built-in Less preprocessor, compilation mode should be [server-side]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html).
-* When creating your own CSS files, including when using third-party CSS preprocessor, compilation mode whould be [client-side]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html).
+
 * If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{ page.baseurl }}/frontend-dev-guide/cache_for_frontdevs.html#clean_static_cache) for instructions how to do this.
+
+### CSS merging, minification and performance
+
+There are a couple options to help with CSS and site performance.
+
+* Merge CSS files to decrease the number of HTTP requests required to load the page. 
+
+* Minification of CSS files reduces the file size being sent. It does this by stripping white space within the file.
+
+To enable / disable these settings, go into Admin > **Stores** > Setting > **Configuration** > **Advanced** > **Developer** > **CSS Settings**.
 
 ## Change styles: walkthrough {#css_walk}
 
