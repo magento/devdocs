@@ -6,11 +6,10 @@ menu_title: Codebase changes
 menu_order: 1300
 redirect_from:
   - /guides/v2.0/architecture/back-compatibility.html
-  - /guides/v2.1/architecture/back-compatibility.html
-  - /guides/v2.2/architecture/back-compatibility.html
+  - /guides/v2.1/architecture/back-compatibility.html	
   - /guides/v2.0/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.1/extension-dev-guide/backward-compatibility.html
-  - /guides/v2.2/extension-dev-guide/backward-compatibility.html
+  - /guides/v2.1/extension-dev-guide/backward-compatibility.html	
+
 ---
 
 Every Magento version release include a change in the codebase.
@@ -47,8 +46,6 @@ This policy allows third-party module developers to declare more granular depend
 Marking public code with `@deprecated` on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.
 
 When Magento deprecates the API or customization point in favor of a new implementation, the `@see` annotation points to the new implementation.
-
-### Deprecated Code Example
 
 ```php
 /**

@@ -36,7 +36,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 To create the directory for your theme:
 
-1.	Go to `<your Magento install dir>/app/design/frontend`.
+1.	Go to `<magento_root>/app/design/frontend`.
 
 3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
 
@@ -256,7 +256,7 @@ When your theme changes are not visible even after clearing the cache, try redep
 
 ### Theme registration {#register_theme}
 
-After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database.
+After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database. If a theme is removed, the default theme will automatically be used, but the theme's database record is not automatically removed.
 
 ### Applying a theme
 

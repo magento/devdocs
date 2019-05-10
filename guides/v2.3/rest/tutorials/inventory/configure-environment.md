@@ -117,8 +117,8 @@ For this tutorial, we'll assume that payment and shipping methods are configured
 
 **Required:** Perform a full reindex and flush the cache.
 
-``` bash
-bin/magento indexer:reindex && php bin/magento cache:flush
+```bash
+bin/magento indexer:reindex && bin/magento cache:flush
 ```
 
 ## Verify this step

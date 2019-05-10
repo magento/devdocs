@@ -83,7 +83,7 @@ For each CSS file included in the layouts, Less preprocessor does the following:
 
 In server-side Less compilation mode, to have your changes applied, you need to do the following:
 
-1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system.
+1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess).
 2. Clear the `var/cache` and `var/view_preprocessed` directories by deleting the directory in the file system. (if they already existed there).
 2. Trigger {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} compilation and publication. This can be done in one of the following ways:
 
@@ -94,7 +94,15 @@ Reloading the page only triggers compilation and publication of the styles used 
 
 ##### Debugging using the static view files deployment tool
 
-Once you save your changes and run the `magento setup:static-content:deploy` cli command from the `<your_Magento_instance>/bin` directory, the tool pre-processes (including compilation) and publishes the static view files.
+Once you save your changes, run the following command from your `<Magento_root>` directory:
+
+```bash
+bin/magento setup:static-content:deploy
+``` 
+The tool pre-processes (including compilation) and publishes the static view files.
+
+{:.bs-callout .bs-callout-info}
+Manual static content deployment is not required in "default" and "developer" modes. If you still want to deploy in these modes, use the -f option: `bin/magento setup:static-content:deploy -f`
 
 All errors occurring during `.less` files compilation are handled by the [`oyejorge/less.php`](https://github.com/oyejorge/less.php) third party library.
 
@@ -139,6 +147,8 @@ Client-side LESS compilation is implemented using the native `less.js` library. 
 You can find the detailed information about the configuration and other options of the `less.js` used in a browser at [http://lesscss.org/usage/#using-less-in-the-browser](http://lesscss.org/usage/#using-less-in-the-browser).
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
+
+With client-side compilation mode enabled, LESS files are compiled on every page load. This reduces page-loading performance.
 
 ##### When you need to clean static view files {#css_exception}
 

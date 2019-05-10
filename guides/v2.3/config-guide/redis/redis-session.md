@@ -63,9 +63,9 @@ bin/magento setup:config:set --session-save=redis --session-save-redis-host=127.
 
 ### Result
 
-Magento adds lines similar to the following to `<your Magento install dir>app/etc/env.php`:
+Magento adds lines similar to the following to `<magento_root>app/etc/env.php`:
 
-``` php?start_inline=1
+```php
     'session' =>
     array (
       'save' => 'redis',

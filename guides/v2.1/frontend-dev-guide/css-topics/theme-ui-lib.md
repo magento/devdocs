@@ -116,13 +116,13 @@ To use a mixin with default values, call the mixin without specifying any parame
 For example:
 ```css
 .breadcrumbs {
-    .breadcrumbs();
+    .lib-breadcrumbs();
 }
 ```
 To call a mixin with parameter values different from default, set these values when calling the mixin, like in the following example:
 ```css
 .example-button {
-    .button(
+    .lib-button(
         @_button-padding: @button-padding,
         @_button-color: #fff,
         @_button-color-hover: #ccc
