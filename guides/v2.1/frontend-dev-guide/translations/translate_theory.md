@@ -46,7 +46,7 @@ For example:
     {{trans "Lorem Ipsum is simply dummy text of the printing"}}
     ```
 
-- When only string is added with variable value in the email template:
+- When only a string is added with a variable value in the email template:
 
     ```html
     {{trans "%items items" items="numItems"}}
