@@ -40,7 +40,7 @@ To ensure that your new string is added to the dictionary and translated, use th
 
 For example:
 
-- When only string is added in the email template:
+- When only a string is added in the email template:
 
     ```html
     {{trans "Lorem Ipsum is simply dummy text of the printing"}}
