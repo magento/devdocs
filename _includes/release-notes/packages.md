@@ -14,8 +14,7 @@ Click the **Name** links to view the repository and the license agreement.
 
 {% assign magento-packages-dev = packages-dev | where_exp: "package", "package.name contains 'magento/'" %}
 
-{% assign size = magento-packages-dev | size %}
-{% unless size == 0 %}
+{% unless magento-packages-dev == empty %}
 
 ### Supported packages for development
 
