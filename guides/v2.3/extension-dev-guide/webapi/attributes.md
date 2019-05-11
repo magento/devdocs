@@ -38,48 +38,60 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection. The `InstallData` script will be executed when the module is first installed and either the `bin/magento setup:upgrade` or `bin/magento setup:db-data:upgrade` command is run.  If the module is already existing, `UpgradeData` scripts should be used. During the development cycle, if there is a need to re-run the `InstallData` or `UpgradeData` scripts, the `setup_module` table row for the module can be manipulated.  
+Customer EAV attributes, are created using a [data patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
 
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 
 ```php
-<?php 
-namespace My\Module\Setup;
+<?php
+
+namespace Magento\Customer\Setup\Patch\Data;
 
 use Magento\Customer\Model\Customer;
-use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Customer\Setup\CustomerSetupFactory;
+use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Framework\Setup\Patch\DataPatchInterface;
+use Magento\Framework\Setup\Patch\PatchVersionInterface;
 
-class InstallData implements \Magento\Framework\Setup\InstallDataInterface
+
+class AddCustomerExampleAttribute implements DataPatchInterface
 {
-    private $eavSetupFactory;
-    
-    private $eavConfig;
-    
-    private $attributeResource;
-    
-    public function __construct(
-        \Magento\Eav\Setup\EavSetupFactory $eavSetupFactory,
-        \Magento\Eav\Model\Config $eavConfig,
-        \Magento\Customer\Model\ResourceModel\Attribute $attributeResource
-    ) {
-        $this->eavSetupFactory = $eavSetupFactory;
-        $this->eavConfig = $eavConfig;
-        $this->attributeResource = $attributeResource;
-    }
-    
-    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
-    {
-        $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
 
-        $eavSetup->addAttribute(Customer::ENTITY, 'attribute_code', [
+    private $moduleDataSetup;
+
+    private $customerSetupFactory;
+
+    public function __construct(
+        ModuleDataSetupInterface $moduleDataSetup,
+        CustomerSetupFactory $customerSetupFactory
+    ) {
+        $this->moduleDataSetup = $moduleDataSetup;
+        $this->customerSetupFactory = $customerSetupFactory;
+    }
+
+    public function apply()
+    {
+        $customerSetup = $this->customerSetupFactory->create(['setup' => $this->moduleDataSetup]);
+        $customerSetup->addAttribute(Customer::ENTITY, 'attribute_code', [
             // Attribute parameters
         ]);
-        
-        $attribute = $this->eavConfig->getAttribute(Customer::ENTITY, 'attribute_code');
-        $attribute->setData('used_in_forms', ['adminhtml_customer']);
-        $this->attributeResource->save($attribute);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public static function getDependencies()
+    {
+        return [
+            UpdateIdentifierCustomerAttributesVisibility::class,
+        ];
+    }
+
+    public function getAliases()
+    {
+        return [];
     }
 }
 ```
