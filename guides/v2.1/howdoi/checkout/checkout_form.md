@@ -30,7 +30,7 @@ Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, req
 
 ## Step 1: Create the JS implementation of the form UI component {#component}
 
-In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `.js` file implementing the form.
+In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `custom-validation.js` file implementing the form.
 
 Example of extending the default form component:
 
@@ -71,7 +71,7 @@ define([
 
 ## Step 2: Create the HTML template {#template}
 
-Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory.
+Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory called `custom-form.html`.
 
 Example:
 
@@ -93,13 +93,6 @@ Example:
     </form>
 </div>
 ```
-
-### Clear files after modification {#modify}
-
-If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
-
-1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
-2. Reload the pages.
 
 ## Step 3: Declare the form in the checkout page layout {#layout}
 
@@ -130,7 +123,13 @@ It should be similar to the following:
                                                     <item name="children" xsi:type="array">
                                                         <item name="before-form" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <!-- Your form declaration here -->
+                                                              <item name="custom-form" xsi:type="array">
+                                                                <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-validation</item>
+                                                                  <item name="config" xsi:type="array">
+                                                                    <item name="template" xsi:type="string">VendorName_ModuleName/custom-form</item>
+                                                                  </item>
+                                                                </item>
+                                                              </item>
                                                             </item>
                                                         </item>
                                                     </item>
@@ -148,6 +147,13 @@ It should be similar to the following:
     </body>
 </page>
 ```
+
+### Clear files after modification {#modify}
+
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
+
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
+2. Reload the pages.
 
 ### Static forms {#static_form}
 
