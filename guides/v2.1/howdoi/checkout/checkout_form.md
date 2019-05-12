@@ -30,7 +30,7 @@ Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, req
 
 ## Step 1: Create the JS implementation of the form UI component {#component}
 
-In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `custom-validation.js` file implementing the form.
+In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `custom-checkout-form.js` file implementing the form.
 
 Example of extending the default form component:
 
@@ -71,7 +71,7 @@ define([
 
 ## Step 2: Create the HTML template {#template}
 
-Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory called `custom-form.html`.
+Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory called `custom-checkout-form.html`.
 
 Example:
 
@@ -123,13 +123,14 @@ It should be similar to the following:
                                                     <item name="children" xsi:type="array">
                                                         <item name="before-form" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                              <item name="custom-form" xsi:type="array">
-                                                                <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-validation</item>
-                                                                  <item name="config" xsi:type="array">
-                                                                    <item name="template" xsi:type="string">VendorName_ModuleName/custom-form</item>
-                                                                  </item>
+                                                                <item name="custom-form" xsi:type="array">
+                                                                    <!-- Add this item to configure your js file  -->
+                                                                    <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-checkout-form</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <!-- And this to add your html template  -->
+                                                                        <item name="template" xsi:type="string">VendorName_ModuleName/custom-checkout-form</item>
+                                                                    </item>
                                                                 </item>
-                                                              </item>
                                                             </item>
                                                         </item>
                                                     </item>
@@ -166,9 +167,11 @@ The following code sample shows configuration of the form that contains four fie
 
 ```xml
 <item name="custom-checkout-form-container" xsi:type="array">
+    <!-- Your JS file previously created -->
     <item name="component" xsi:type="string">%your_module_dir%/js/view/custom-checkout-form</item>
     <item name="provider" xsi:type="string">checkoutProvider</item>
     <item name="config" xsi:type="array">
+        <!-- Your HTML file previously created -->
         <item name="template" xsi:type="string">%your_module_dir%/custom-checkout-form</item>
     </item>
     <item name="children" xsi:type="array">
