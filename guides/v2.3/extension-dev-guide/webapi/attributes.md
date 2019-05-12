@@ -38,7 +38,7 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer EAV attributes, are created using a [data patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
+Customer EAV attributes are created using a [data patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
 
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
@@ -218,6 +218,7 @@ The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInvent
 
 In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET <host>/rest/<store_code>/V1/products/<sku>` request will receive product information similar to the following:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -229,9 +230,11 @@ In this example, the `stock_item` attribute is restricted to only the users who 
         "artist": "James Smith"
       }
     }
+```
 
 However, an authenticated user with the permission `Magento_CatalogInventory::cataloginventory` receives the additional `stock_item` field:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -247,6 +250,7 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
         "artist": "James Smith"
       }
     }
+```
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
 
