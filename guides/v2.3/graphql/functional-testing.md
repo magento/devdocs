@@ -236,7 +236,7 @@ Define the exception message before invoking logic that generates the exception.
 
 As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:
 
-"`The current user cannot perform operations on cart "XXXXX`"
+"`The current user cannot perform operations on cart "XXXXX"`"
   
 `XXXXX` is the unique ID of Customer B's cart. 
 
