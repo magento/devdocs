@@ -38,7 +38,7 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer EAV attributes are created using a [data patches](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/declarative-schema/data-patches.html).
+Customer EAV attributes are created using a [data patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html).
 
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
@@ -125,60 +125,17 @@ You must create a `<Module>/etc/extension_attributes.xml` file to define a modul
 
 where:
 
-<table>
-<thead>
-<th>Keyword</th>
-<th>Description</th>
-<th>Example</th>
-</thead>
-<tbody>
-<tr>
-<td><p>for</p></td>
-<td><p>The fully-qualified type name with the {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
-<td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
-</tr>
-<tr>
-<td><p>code</p></td>
-<td><p>The name of the attribute. The attribute name should be in snake case (the first letter in each word should be in lowercase, with each word separated by an underscore). </p></td>
-<td><code>gift_cards_amount_used</code></td>
-</tr>
-<tr>
-<td><p>type</p></td>
-<td><p>The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface.</p></td>
-<td><code>float <br />Magento\CatalogInventory\Api\Data\StockItemInterface</code></td>
-</tr>
-<tr>
-<td><p>ref</p></td>
-<td><p>Optional. Restricts access to the {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %} to users with the specified permission.</p></td>
-<td><code>Magento_CatalogInventory::cataloginventory</code></td>
-</tr>
-<tr>
-<td><p>reference_table</p></td>
-<td>
-<p>The table involved in a join operation. See <a href="#search">Searching extension attributes</a> for details.</p>
-</td>
-<td><code>admin_user</code></td>
-</tr>
-<tr>
-<td><p>reference_field</p></td>
-<td><p>Column in the reference_table</p></td>
-<td><code>user_id</code></td>
-</tr>
-<tr>
-<td><p>join_on_field</p></td>
-<td><p>The column of the table associated with the interface specified in the <code>for</code> {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} that will be used in the join operation.</p></td>
-<td><code>store_id</code></td>
-</tr>
-<tr>
-<td><p>field</p></td>
-<td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
-<p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code>&lt;field>firstname&lt;/field><br />&lt;field>lastname&lt;/field><br />&lt;field>email&lt;/field><br /><br />
-&lt;field column="customer_group_code">code&lt;/field></code></td>
-</tr>
-</tbody>
+|Keyword|Description|Example|
+|--- |--- |--- |
+| for | The fully-qualified type name with the {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module. | `Magento\Quote\Api\Data\TotalsInterface` |
+| code | The name of the attribute. The attribute name should be in snake case (the first letter in each word should be in lowercase, with each word separated by an underscore). | `gift_cards_amount_used` |
+| type | The data type. This can be a simple data type, such as string or integer, or complex type, such as an interface. | `float`<br />`Magento\CatalogInventory\Api\Data\StockItemInterface` |
+| ref | Optional. Restricts access to the {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %} to users with the specified permission. | `Magento_CatalogInventory::cataloginventory` |
+| reference_table | The table involved in a join operation. See <a href="#search">[Searching extension attributes](#search)</a> for details. | `admin_user` |
+| reference_field | Column in the `reference_table`. | `user_id` |
+| join_on_field | The column of the table associated with the interface specified in the `for` {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} that will be used in the join operation. | `store_id` |
+| field | One or more fields present in the interface specified in the `type` keyword.<br />You can specify the `column=""` keyword to define the column in the reference_table to use. The field value specifies the property on the `interface` which should be set. | `&lt;field>firstname&lt;/field>`<br />`&lt;field>lastname&lt;/field>`<br />`&lt;field>email&lt;/field>`<br /><br />`&lt;field column="customer_group_code">code&lt;/field>` |
 
-</table>
 
 ### Searching extension attributes {#search}
 
