@@ -32,6 +32,7 @@ The release notes include:
 
 ## v2002.0.19
 
+-   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
 
 ## v2002.0.18
 

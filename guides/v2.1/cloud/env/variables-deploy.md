@@ -91,6 +91,16 @@ stage:
       some_config: 'some_value'
 ```
 
+You can configure table prefixes; the following example uses the prefix `ece_`:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      some_config: 'some_value'
+      table_prefix: 'ece_'
+```
+
 {% include cloud/merge-configuration.md %}
 
 The following example merges new values to an existing configuration:
