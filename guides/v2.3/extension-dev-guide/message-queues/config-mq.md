@@ -8,7 +8,7 @@ functional_areas:
   - Setup
 ---
 
-The message queue topology is a {{site.data.var.ce}} feature. It can be included as part of {{site.data.var.ce}} installation, or you can add it existing modules.
+The message queue topology is a {{site.data.var.ce}} feature. It can be included as part of {{site.data.var.ce}} installation, or you can add it to existing modules.
 
 ### Overview ###
 
