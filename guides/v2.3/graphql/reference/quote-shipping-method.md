@@ -1,11 +1,9 @@
 ---
 group: graphql
-title: Set shipping methods
+title: setShippingMethodsOnCart mutation
 ---
 
-## Set shipping methods
-
-Use the `setShippingMethodsOnCart` mutation to set one or more shipping methods on a cart. By default, Magento GraphQL supports the following shipping methods:
+The `setShippingMethodsOnCart` mutation sets one or more shipping methods on a cart. By default, Magento GraphQL supports the following shipping methods:
 
 Label | Carrier code | Method code
 --- | --- | ---
@@ -17,11 +15,11 @@ Best Way | tablerate | bestway
 United Parcel Service | ups | Varies
 United States Postal Service | usps | Varies
 
-### Syntax
+## Syntax
 
 `mutation: {setShippingMethodsOnCart(input: setShippingMethodsOnCartInput) {setShippingMethodsOnCartOutput}}`
 
-### Example usage
+## Example usage
 
 The following example sets the shipping method to Best Way.
 
@@ -85,25 +83,25 @@ mutation {
 }
 ```
 
-### Input attributes
+## Input attributes
 
 The top-level `setShippingMethodsOnCartInput` object is listed first. All child objects are listed in alphabetical order.
 
-#### setShippingMethodsOnCartInput object {#setShippingMethodsOnCartInput}
+### setShippingMethodsOnCartInput object {#setShippingMethodsOnCartInput}
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `shipping_methods` | [ShippingMethodInput!](#ShippingMethodInput) | The billing address for a specific cart
 
-#### ShippingMethodInput object {#ShippingMethodInput}
+### ShippingMethodInput object {#ShippingMethodInput}
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `carrier_code` | String! | A string that identifies a commercial carrier or an offline shipping method
 `method_code` | String! | A string that indicates which service a commercial carrier will use to ship items. For offline shipping methods, this value is similar to the label displayed on the checkout page
 
-### Output attributes
+## Output attributes
 
 The `ShippingMethodInput` object contains the `Cart` object.
 
@@ -111,6 +109,6 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `cart` | Cart! | Describes the contents of the specified shopping cart.
 
-#### Cart object
+### Cart object
 
 {% include graphql/cart-object.md %}

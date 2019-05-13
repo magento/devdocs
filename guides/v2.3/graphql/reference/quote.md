@@ -573,13 +573,4 @@ Attribute |  Data Type | Description
 
 ## Mutations
 
-The following topics describe the mutations defined in the `QuoteGraphQl` module:
-
-* [Create a cart]({{page.baseurl}}/graphql/reference/quote-create-cart.html)
-* [Add products to a cart]({{page.baseurl}}/graphql/reference/quote-add-products.html)
-* [Update and remove products]({{page.baseurl}}/graphql/reference/quote-update-remove-products.html)
-* [Manage coupons]({{page.baseurl}}/graphql/reference/quote-apply-discount.html)
-* [Set billing and shipping addresses]({{page.baseurl}}/graphql/reference/quote-set-addresses.html)
-* [Set shipping methods]({{page.baseurl}}/graphql/reference/quote-shipping-method.html)
-* [Set the payment method]({{page.baseurl}}/graphql/reference/quote-payment-method.html)
-* [Place an order]({{page.baseurl}}/graphql/reference/quote-place-order.html)
+Refer to the left navigation for information about the mutations defined in the `QuoteGraphQl` module.

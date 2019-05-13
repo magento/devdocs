@@ -86,34 +86,48 @@ pages:
                 - label: GroupedProduct endpoint
                   url: /graphql/reference/grouped-product.html
 
-            - label: Quote endpoint
+            - label: Quote endpoint (cart query)
+              url: /graphql/reference/quote.html
               children: 
-                - label: Query a cart
-                  url: /graphql/reference/quote.html
 
-                - label: Create a cart
+                - label: addSimpleProductsToCart mutation
+                  url: /graphql/reference/quote-add-simple-products.html
+
+                - label: addVirtualProductsToCart mutation
+                  url: /graphql/reference/quote-add-virtual-products.html
+
+                - label: applyCouponToCart mutation
+                  url: /graphql/reference/quote-apply-coupon.html
+
+                - label: createEmptyCart mutation
                   url: /graphql/reference/quote-create-cart.html
 
-                - label: Add products to a cart
-                  url: /graphql/reference/quote-add-products.html
+                - label: placeOrder mutation
+                  url: /graphql/reference/quote-place-order.html
 
-                - label: Update and remove products
-                  url: /graphql/reference/quote-update-remove-products.html
+                - label: removeCouponFromCart mutation
+                  url: /graphql/reference/quote-remove-coupon.html
 
-                - label: Manage coupons
-                  url: /graphql/reference/quote-apply-discount.html
+                - label: removeItemFromCart mutation
+                  url: /graphql/reference/quote-remove-item.html
 
-                - label: Set billing and shipping addresses
-                  url: /graphql/reference/quote-set-addresses.html
+                - label: setBillingAddressesOnCart mutation
+                  url: /graphql/reference/quote-set-billing-address.html
 
-                - label: Set shipping methods
-                  url: /graphql/reference/quote-shipping-method.html
+                - label: setGuestEmailOnCart mutation
+                  url: /graphql/reference/quote-set-guest-email.html
 
-                - label: Set the payment method
+                - label: setPaymentMethodOnCart mutation
                   url: /graphql/reference/quote-payment-method.html
 
-                - label: Place an order
-                  url: /graphql/reference/quote-place-order.html
+                - label: setShippingAddressesOnCart mutation
+                  url: /graphql/reference/quote-set-shipping-address.html
+
+                - label: setShippingMethodsOnCart mutation
+                  url: /graphql/reference/quote-shipping-method.html
+
+                - label: updateCartItems mutation
+                  url: /graphql/reference/quote-update-cart-items.html
 
             - label: Sales endpoint
               url: /graphql/reference/sales.html
