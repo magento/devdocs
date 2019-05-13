@@ -56,7 +56,7 @@ For example, the following command starts the Docker configuration generator for
 
 You must have the following software installed on your local workstation:
 
--  PHP version 7.0 or later
+-  PHP version 7.1 or later
     -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
     -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
 -  [Composer](https://getcomposer.org)
@@ -67,6 +67,20 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
 ```
 127.0.0.1 magento2.docker
+```
+
+You can also run the command in your CLI:
+
+```bash
+echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
+```
+
+### Stopping default Apache instance on Mac OS
+
+Because Mac OS provides built-in Apache service, and may occupy port `80` you'll have to stop it with:
+
+```bash
+sudo apachectl stop
 ```
 
 #### To launch Docker:
@@ -140,7 +154,7 @@ Continue launching your Docker environment in the default _production_ mode.
 1.  Configure and connect Varnish.
 
     ```bash
-    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 -l
+    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
     ```
 
 1.  Clear the cache.
@@ -214,7 +228,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 1.  Configure and connect Varnish.
 
     ```bash
-    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 -l
+    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
     ```
 
 1.  Clear the cache.
@@ -242,6 +256,7 @@ Action | Command
 Suspend containers to continue your work later | `docker-compose stop`
 Start containers from a suspended state | `docker-compose start`
 Stop the synchronization daemon | `docker-sync stop`
+Start the synchronization daemon | `docker-sync start`
 
 #### To stop and remove the Docker configuration:
 
@@ -255,4 +270,28 @@ docker-compose down -v
 
 ```bash
 docker-sync stop
+```
+
+## Advanced usage
+
+### Extending docker-compose.yml configuration
+
+You have a possibility to use Docker's built-in [extension mechanism](https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files).
+
+1.  Create a `docker-compose-dev.yml` file inside your project's root directory with next content:
+
+```yaml
+version: '2'
+services:
+  deploy:
+    environment:
+      - ENABLE_SENDMAIL=true
+```
+
+This will replace default value of `ENABLE_SENDMAIL` environment variable.
+
+1.  Pass both configuration files while executing your commands. For example:
+
+```bash
+docker-compose -f docker-compose.yml -f docker-compose-dev.yml run deploy bash
 ```
