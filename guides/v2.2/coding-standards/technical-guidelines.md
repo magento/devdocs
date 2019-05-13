@@ -738,12 +738,15 @@ You need to read configuration from different sources (like database or filesyst
 {% collapsible Example: %}
 
 ``` php
-class SampleEventObserverThatModifiesInputs
+use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\Event\Observer;
+
+class SampleEventObserverThatModifiesInputs implements ObserverInterface
 {
     /**
-     * @param \Magento\Framework\Event\Observer $observer
+     * @param Observer $observer
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         /** @var \Magento\Framework\App\DataObject $transport */
         $transport = $observer->getData('transport');
