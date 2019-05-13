@@ -29,7 +29,6 @@ public static function getDependencies()
 
 The following code sample defines a data patch class that has a dependency.
 
-
 ```php
 <?php
     /**
@@ -118,6 +117,22 @@ The following code sample defines a data patch class that has a dependency.
             return [];
         }
     }
+```
+
+## Revert data patches
+
+Magento does not allow to revert a particular module data patch. It allows to revert all module data patches per `module:uninstall` command.
+
+Run the command below to revert all module's data patches (module has been installed through `composer`):
+
+```bash
+bin/magento module:uninstall Vendor_ModuleName
+```
+
+Run the command below to revert all `non composer` module's data patches:
+
+```bash
+bin/magento module:uninstall --non-composer Vendor_ModuleName
 ```
 
 ## Will old scripts work in newer versions?
