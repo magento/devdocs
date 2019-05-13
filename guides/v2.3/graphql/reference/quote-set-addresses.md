@@ -91,14 +91,14 @@ The top-level `SetBillingAddressOnCartInput` object is listed first. All child o
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`billing_address` | [BillingAddressInput!](#billingAddressInput) | The billing address for a specific cart
+`billing_address` | [BillingAddressInput!](#BillingAddressInput) | The billing address for a specific cart
 `cart_id` | String! | The unique ID that identifies the customer's cart
 
 #### BillingAddressInput object {#BillingAddressInput}
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`address` | [CartAddressInput](#cartAddressInput) | The billing address for the cart
+`address` | [CartAddressInput](#CartAddressInput) | The billing address for the cart
 `customer_address_id` | Int | The unique ID that identifies the customer's address
 `use_for_shipping` | Boolean | Specifies whether to use the billing address for the shipping address (`True`/`False`)
 
@@ -206,7 +206,7 @@ The top-level `SetShippingAddressesOnCartInput` object is listed first. All chil
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
-`billing_address` | [ShippingAddressInput!](#shippingAddressInput) | The billing address for a specific cart
+`billing_address` | [ShippingAddressInput!](#ShippingAddressInput) | The billing address for a specific cart
 
 #### CartAddressInput object {#CartAddressInputShip}
 

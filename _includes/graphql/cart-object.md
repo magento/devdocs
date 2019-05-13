@@ -10,9 +10,9 @@ Attribute |  Data Type | Description
 `shipping_addresses` | [ShippingCartAddress][ShippingCartAddress] | Contains one or more shipping addresses
 
 [AppliedCoupon]: {{page.baseurl}}/graphql/reference/quote.html#AppliedCoupon
-[AvailablePaymentMethod]: {{page.baseurl}}/reference/quote.html#AvailablePaymentMethod
-[BillingCartAddress]: {{page.baseurl}}/reference/quote.html#BillingCartAddress
+[AvailablePaymentMethod]: {{page.baseurl}}/graphql/reference/quote.html#AvailablePaymentMethod
+[BillingCartAddress]: {{page.baseurl}}/graphql/reference/quote.html#BillingCartAddress
 [CartItemInterface]: {{page.baseurl}}/graphql/reference/quote.html#CartItemInterface
 [CartPrices]: {{page.baseurl}}/graphql/reference/quote.html#CartPrices
 [SelectedPaymentMethod]: {{page.baseurl}}/graphql/reference/quote.html#SelectedPaymentMethod
-[ShippingCartAddress]: {{page.baseurl}}/graphql/reference/quote.html#AppliedShippingCartAddressCoupon
+[ShippingCartAddress]: {{page.baseurl}}/graphql/reference/quote.html#ShippingCartAddress

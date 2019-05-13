@@ -720,7 +720,7 @@ Attribute | Type | Description
 
 
 ### Example usage
-The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote.html#createEmptyCart) by creating an empty cart.
+The following example adds two black Teton Pullover Hoodies size extra-small to the specified shopping cart. The `cart_id` used in this example was [generated]({{ page.baseurl }}/graphql/reference/quote-create-cart.html) by creating an empty cart.
 
 **Request**
 

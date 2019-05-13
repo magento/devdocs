@@ -549,9 +549,9 @@ Attribute |  Data Type | Description
 `method_code` | String | A shipping method code associated with a carrier
 `method_title` | String | The label for the method code
 
-#### ShippingCart object {#ShippingCart}
+#### ShippingCartAddress object {#ShippingCartAddress}
 
-The `ShippingCart` object can contain the following attributes:
+The `ShippingCartAddress` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
