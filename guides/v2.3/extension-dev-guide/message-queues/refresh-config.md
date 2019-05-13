@@ -19,10 +19,6 @@ Interface | Description
 `PoisonPillPutInterface` | Location where you want to begin the compare.
 `PoisonPillReadInterface` | Result of the compare so you can process as needed.
 
-- Do we need to mention that it uses RabbitMQ and/or the MySQL adapter? If so, are there coding differences we should explain?
-- Do they need to add the poisonpill interface to their list of dependencies?
-
-
 **Example**
 
 The following example demonstrates how to implement the `PoisonPill` interface.
