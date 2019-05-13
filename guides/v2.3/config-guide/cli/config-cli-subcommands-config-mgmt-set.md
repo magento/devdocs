@@ -111,7 +111,7 @@ To find the values in the database:
 To set system-specific configuration values, use:
 
 ```bash
-bin/magento config:set [--scope="..."] [--scope-code="..."] [-e | --lock-env] [-c | --lock-config] path value
+bin/magento config:set [--scope="..."] [--scope-code="..."] [-le | --lock-env] [-lc | --lock-config] path value
 ```
 
 To set sensitive configuration values, use:
@@ -126,8 +126,8 @@ Parameter | Description
 --- | --- | ---
 `--scope` | The scope of the configuration. The possible values are `default`, `website`, or `store`. The default is `default`.
 `--scope-code` | The scope code of configuration (website code or store view code)
-`-e or --lock-env` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file.
-`-c or --lock-config` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/config.php` file. The `--lock-config` option overwrites `--lock-env` if you specify both options.
+`-le or --lock-env` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/env.php` file.
+`-lc or --lock-config` | Either locks the value so it cannot be edited in the Magento Admin or changes a setting that is already locked in the Magento Admin. The command writes the value to the `<Magento base dir>/app/etc/config.php` file. The `--lock-config` option overwrites `--lock-env` if you specify both options.
 `path` | *Required*. The configuration path
 `value` | *Required*. The value of the configuration
 
