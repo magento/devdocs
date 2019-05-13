@@ -209,9 +209,29 @@ You must have a Redis service configured in the `.magento.app.yaml` file and in 
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
+### `RESOURCE_CONFIGURATION`
+
+-  **Default**—Not set
+-  **Version**—Magento 2.1.4 and later
+
+Maps a resource name to a database connection. This configuration corresponds to the `resource` section of the `env.php` file.
+
+{% include cloud/merge-configuration.md %}
+
+The following example merges new values to an existing configuration:
+
+```yaml
+stage:
+  deploy:
+    RESOURCE_CONFIGURATION: 
+      _merge: false 
+      default_setup:
+        connection: default
+```
+
 ### `SCD_COMPRESSION_LEVEL`
 
--  **Default**—`6`
+-  **Default**—`4`
 -  **Version**—Magento 2.1.4 and later
 
 Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0` to `9`) to use when compressing static content; `0` disables compression.
@@ -219,10 +239,13 @@ Specifies which [gzip](https://www.gnu.org/software/gzip) compression level (`0`
 ```yaml
 stage:
   deploy:
-    SCD_COMPRESSION_LEVEL: 4
+    SCD_COMPRESSION_LEVEL: 5
 ```
 
-### `SCD_EXCLUDE_THEMES`
+### `SCD_EXCLUDE_THEMES` 
+
+{: .bs-callout .bs-callout-warning }
+The `SCD_EXCLUDE_THEMES` environment variable is deprecated in [ece-tools version 2002.0.16]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002016). Use the [SCD_MATRIX variable](#scd_matrix) to control theme configuration.
 
 -  **Default**—_Not set_
 -  **Version**—Magento 2.1.4 and later
