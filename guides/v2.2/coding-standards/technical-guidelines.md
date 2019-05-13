@@ -848,7 +848,7 @@ class SampleEventObserverThatModifiesInputs implements ObserverInterface
 
 15.12. Files MUST be secured by a web server configuration (e.g., `.htaccess` or `nginx.conf`), except files that are intended to be publicly accessible.
 
-## Cron
+## 16. Cron
 
 16.1. Cron job SHOULD be an [idempotent method](https://tools.ietf.org/html/rfc7231#section-4.2.2).
 
