@@ -10,7 +10,7 @@ The mutation for [adding configurable products]({{page.baseurl}}/graphql/referen
 
 ## Syntax
 
-`mutation; {addSimpleProductsToCart(input: AddSimpleProductsToCartInput): AddSimpleProductsToCartOutput}`
+`mutation: {addSimpleProductsToCart(input: AddSimpleProductsToCartInput): {AddSimpleProductsToCartOutput}}`
 
 ## Example usage
 
@@ -26,7 +26,7 @@ The following example adds a simple product to a cart. The response contains the
 mutation {
   addSimpleProductsToCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG", 
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
       cart_items: [
         {
           data: {
@@ -83,7 +83,7 @@ If a product has a customizable option, the option's value can be specified in t
 ``` text
 mutation {
   addSimpleProductsToCart (input: {
-    cart_id: "nu31JXR9DaqbdVqFDGnqjrMJmUnT3mzB"
+    cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
     cart_items: {
       data: {
         sku: "simple"
@@ -103,7 +103,6 @@ mutation {
            name
         }
         quantity
-
         ... on SimpleCartItem {
           customizable_options {
             label
@@ -130,7 +129,7 @@ mutation {
             "product": {
               "name": "simple"
             },
-            "qty": 2,
+            "quantity": 1,
             "customizable_options": [
               {
                 "label": "Field Option",
@@ -187,8 +186,10 @@ The `AddSimpleProductsToCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` | Cart! | Describes the contents of the specified shopping cart.
+`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart.
 
-### Cart object
+### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
+
+[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.

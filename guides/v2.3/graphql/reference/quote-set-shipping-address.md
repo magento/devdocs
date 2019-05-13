@@ -110,8 +110,10 @@ The `SetShippingAddressOnCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` | Cart! | Describes the contents of the specified shopping cart.
+`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart.
 
-### Cart object
+### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
+
+[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.

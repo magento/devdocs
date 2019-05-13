@@ -9,7 +9,8 @@ A Quote represents the contents of a customer's shopping cart. It is responsible
 * Determining estimated shipping costs
 * Calculating subtotals, computing additional costs, applying coupons, and determining the payment method
 
-## Query
+## cart Query {#cart}
+
 Use the `cart` query to retrieve information about a particular cart.
 
 ### Syntax
@@ -406,7 +407,7 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String | A 32-character string that is created when you [create a cart]({{page.baseurl}}/graphql/reference/quote-create-cart.html)
 
-### Output attributes
+### Output attributes {#cart-output}
 
 The top-level `Cart` object is listed first. All child objects are listed in alphabetical order.
 

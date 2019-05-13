@@ -12,7 +12,7 @@ The mutation for [adding configurable products]({{page.baseurl}}/graphql/referen
 
 ## Syntax
 
-`mutation; {addVirtualProductsToCart(input: AddVirtualProductsToCartInput): AddVirtualProductsToCartOutput}`
+`mutation: {addVirtualProductsToCart(input: AddVirtualProductsToCartInput): {AddVirtualProductsToCartOutput}}`
 
 ## Example usage
 
@@ -119,8 +119,10 @@ The `AddVirtualProductsToCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` | Cart! | Describes the contents of the specified shopping cart.
+`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart.
 
-### Cart object
+### Cart object {#CartObject}
 
 {% include graphql/cart-object.md %}
+
+[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
