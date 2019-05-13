@@ -119,17 +119,17 @@ The following code sample defines a data patch class that has a dependency.
     }
 ```
 
-## Revert data patches
+## Reverting data patches
 
-Magento does not allow to revert a particular module data patch. It allows to revert all module data patches per `module:uninstall` command.
+Magento does not allow the reverting of a particular module data patch. It only allows the reverting of all module data patches per the `module:uninstall` command.
 
-Run the command below to revert all module's data patches (module has been installed through `composer`):
+Run the folowing command to revert all the module's data patches (only for modules that have been installed through `composer`):
 
 ```bash
 bin/magento module:uninstall Vendor_ModuleName
 ```
 
-Run the command below to revert all `non composer` module's data patches:
+To revert all `non composer` data patches, run:
 
 ```bash
 bin/magento module:uninstall --non-composer Vendor_ModuleName
