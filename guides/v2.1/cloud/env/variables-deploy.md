@@ -129,7 +129,7 @@ The {{ site.data.var.ece }} deploy process always enables Google Analytics on Pr
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment to Pro and Starter staging and production environments, this variable replaces Magento base URLs in the database with the project URLs specified in the [`MAGENTO_CLOUD_ROUTES`]({{ page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) variable which is ignored when deploying to staging and production environments. 
+On deployment to Pro and Starter staging and production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) variable which is ignored when deploying to staging and production environments. 
 
 ```yaml
 stage:
@@ -437,10 +437,10 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with the project URLs specified in the [`MAGENTO_CLOUD_ROUTES`]({{ page.baseurl }}/cloud/env/variables-cloud.html) variable. This is useful for local development, where base URLs are set up for your local environment. 
+On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{ page.baseurl }}/cloud/env/variables-cloud.html) variable. This is useful for local development, where base URLs are set up for your local environment. 
 When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
-If you need to update URLs when deploying to staging or production environments,                  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable. 
+If you need to update URLs when deploying to Pro or Starter staging and production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable. 
 
 ```yaml
 stage:
