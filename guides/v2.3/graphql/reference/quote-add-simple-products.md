@@ -76,7 +76,7 @@ mutation {
 
 ### Add a simple product with customizable options to a cart
 
-If a product has a customizable option, the option's value can be specified in the add to cart request.
+If a product has a customizable option, you can specify the option's value in the `addSimpleProductsToCart` request.
 
 **Request**
 
