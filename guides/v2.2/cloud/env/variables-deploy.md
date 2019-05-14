@@ -194,6 +194,19 @@ stage:
 {:.bs-callout .bs-callout-info}
 The {{ site.data.var.ece }} deploy process always enables Google Analytics on Production environments.
 
+### `FORCE_UPDATE_URLS`
+
+-  **Default**—`true`
+-  **Version**—Magento 2.1.4 and later
+
+On deployment to Pro or Starter staging and production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. Use this setting to override the default behavior of the [UPDATE_URLS](#update_urls) deploy variable which is ignored when deploying to staging or production environments. 
+
+```yaml
+stage:
+  deploy:
+    FORCE_UPDATE_URLS: true
+```
+
 ### `MYSQL_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
@@ -512,27 +525,14 @@ stage:
 -  **Default**—`true`
 -  **Version**—Magento 2.1.4 and later
 
-On deployment, replace Magento base URLs in the database with the project URLs specified by the `MAGENTO_CLOUD_ROUTES` variable. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
+On deployment, replace Magento base URLs in the database with the project URLs specified by the [`MAGENTO_CLOUD_ROUTES`]({{page.baseurl}}/cloud/env/variables-cloud.html) variable. This is useful for local development, where base URLs are set up for your local environment. When you deploy to a Cloud environment, we change the URLs so you can access your storefront and Magento Admin using project URLs.
 
-To update URLs when deploying to staging or production environments,                            use the `FORCE_UPDATE_URLS` variable. 
+If you need to update URLs when deploying to Pro and Starter staging or production environments,  use the [`FORCE_UPDATE_URLS`](#force_update_urls) variable. 
 
 ```yaml
 stage:
   deploy:
     UPDATE_URLS: false
-```
-
-### `FORCE_UPDATE_URLS`
-
--  **Default**—`true`
--  **Version**—Magento 2.1.4 and later
-
-On deployment to staging and production environments, this variable replaces Magento base URLs in the database with the project URLs specified by the `MAGENTO_CLOUD_ROUTES` variable. Use this setting to override the default behavior of the UPDATE_URLS variable which is ignored when deploying to staging or production environments. 
-
-```yaml
-stage:
-  deploy:
-    FORCE_UPDATE_URLS: true
 ```
 
 ### `VERBOSE_COMMANDS`
