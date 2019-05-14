@@ -32,6 +32,9 @@ The release notes include:
 
 ## v2002.0.19
 
+-  {:.new}**Environment variable updates**—
+
+    -  {:.new}<!-- MAGECLOUD-3602-->Added the **FORCE_UPDATE_URLS** deploy variable to update Magento base URLs when deploying to Pro and Starter production and staging environments. See the definition in the [deploy variables]({{ page.baseurl }}/cloud/env/variables-deploy.html#force_update_urls) content.
 
 ## v2002.0.18
 
