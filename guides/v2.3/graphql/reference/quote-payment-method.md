@@ -13,7 +13,7 @@ Check / Money order | `checkmo`
 No Payment Information Required | `free`
 Purchase Order | `purchaseorder`
 
-Apply the `setPaymentMethodOnCart`  mutation after setting the shipping address and shipping method, and after applying any discounts to the cart.
+Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, shipping method, and after applying any discounts to the cart.
 
 ## Syntax
 
