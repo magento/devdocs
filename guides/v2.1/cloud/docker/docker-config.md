@@ -69,7 +69,7 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
 127.0.0.1 magento2.docker
 ```
 
-You can also run the command in your CLI:
+Alternatively, you can run the following command to add it to the file:
 
 ```bash
 echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
