@@ -161,8 +161,8 @@ where:
 <td><p>field</p></td>
 <td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
 <p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code>&lt;field>firstname&lt;/field><br />&lt;field>lastname&lt;/field><br />&lt;field>email&lt;/field><br /><br />
-&lt;field column="customer_group_code">code&lt;/field></code></td>
+<td><code><field>firstname</field><br /><field>lastname</field><br /><field>email</field><br /><br />
+<field column="customer_group_code">code</field></code></td>
 </tr>
 </tbody>
 
