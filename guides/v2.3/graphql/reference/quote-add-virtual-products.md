@@ -110,8 +110,10 @@ The `CustomizableOptionInput` object must contain the following attributes:
 
 The `VirtualProductCartItemInput` object must contain the following attributes:
 
+Attribute |  Data Type | Description
+--- | --- | ---
 `customizable_options` |[[CustomizableOptionInput]](#CustomizableOptionInputVirtual) | An array that defines customizable options for the product
-`data` | [CartItemInput!](#CartItemInputVirtual) | An object containing the `sku` and `quantity` of the product.
+`data` | [CartItemInput!](#CartItemInputVirtual) | An object containing the `sku` and `quantity` of the product
 
 ## Output attributes
 
@@ -119,7 +121,7 @@ The `AddVirtualProductsToCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart.
+`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 

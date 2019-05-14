@@ -92,7 +92,7 @@ The top-level `setShippingMethodsOnCartInput` object is listed first. All child 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
-`shipping_methods` | [ShippingMethodInput!](#ShippingMethodInput) | The billing address for a specific cart
+`shipping_methods` | [ShippingMethodInput!](#ShippingMethodInput) | The shipping address for a specific cart
 
 ### ShippingMethodInput object {#ShippingMethodInput}
 
@@ -107,7 +107,7 @@ The `ShippingMethodOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart.
+`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 

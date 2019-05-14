@@ -6,7 +6,7 @@ title: updateCartItems mutation
 The `updateCartItems` mutation allows you to replace the current quantity of one or more cart items with the specified quantities. It does not perform calculations to determine the quantity of cart items.
 
 {:.bs-callout .bs-callout-info}
-Setting the quantity to 0 removes an item from the cart.
+Setting the quantity to `0` removes an item from the cart.
 
 ## Syntax
 
@@ -14,7 +14,7 @@ Setting the quantity to 0 removes an item from the cart.
 
 ## Example usage
 
-The following example changes the quantity of cart item 13 to 3.
+The following example changes the quantity of cart item `13` to `3`.
 
 **Request**
 
@@ -104,7 +104,7 @@ The `CartItemUpdateInput` object must contain the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_item_id` | Int! | The unique ID assigned when a customer places an item in the cart
-`quantity` | Float! | The new quantity of the item. A value of 0 removes the item from the cart.
+`quantity` | Float! | The new quantity of the item. A value of `0` removes the item from the cart
 
 ## Output attributes
 
@@ -112,7 +112,7 @@ The `UpdateCartItemsOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart.
+`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
