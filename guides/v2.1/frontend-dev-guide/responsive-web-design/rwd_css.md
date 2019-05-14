@@ -110,5 +110,5 @@ You can find more information about the Magento UI library responsive mixin usag
 * [JavaScript in a responsive design]({{page.baseurl}}/frontend-dev-guide/responsive-web-design/rwd_js.html)
 
 
-[styles-l.less]: {{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-l.less
-[styles-m.less]: {{site.mage2000url}}app/design/frontend/Magento/blank/web/css/styles-m.less
+[styles-l.less]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-l.less
+[styles-m.less]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-m.less
