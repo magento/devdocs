@@ -105,4 +105,4 @@ To add new export format:
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/export.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/export.js)
