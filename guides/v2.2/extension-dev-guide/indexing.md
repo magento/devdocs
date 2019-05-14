@@ -40,7 +40,7 @@ The following components are involved in the indexing process:
 			<th>Description</th>
 		</tr>
 	<tr>
-		<td><a href="{{ site.mage2200url }}app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Indexer" target="_blank">Magento_Indexer</a></td>
 		<td>Implements:<ul>
 <li>indexer declaration</li>
 <li>indexer running</li>
@@ -48,7 +48,7 @@ The following components are involved in the indexing process:
 <li>indexer status</li></ul></td>
 	</tr>
 	<tr>
-		<td><a href="{{ site.mage2200url }}lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
 		<td><ul>
 <li>Allows tracking database changes for a certain {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} (product, {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}, etc.) and running change handler.</li>
 <li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
@@ -132,62 +132,62 @@ The Magento application implements the following indexers:
 	<tr>
 		<td>Design Config Grid</td>
 		<td><code>design_config_grid</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Theme/Model/Indexer/Design/Config.php" target="_blank">Magento\Theme\Model\Indexer\Design\Config</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/Model/Indexer/Design/Config.php" target="_blank">Magento\Theme\Model\Indexer\Design\Config</a></td>
 		<td />
 	</tr>
 		<tr>
 		<td>Customer Grid</td>
 		<td><code>customer_grid</code></td>
-		<td><a href="{{ site.mage2100url }}lib/internal/Magento/Framework/Indexer/Action/Entity.php" target="_blank">Magento\Framework\Indexer\Action\Entity</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Indexer/Action/Entity.php" target="_blank">Magento\Framework\Indexer\Action\Entity</a></td>
 		<td>Rebuilds the customer grid index.<br><br>Not supported by the <strong>Update by Schedule</strong> indexing mode. See the <a href="https://support.magento.com/hc/en-us/articles/360025481892-New-customer-records-are-not-displayed-in-the-Customers-grid-after-importing-them-from-CSV)">Help Center article</a>.</td>
 		<td />
 	</tr>
 	<tr>
 		<td>Category products</td>
 		<td><code>catalog_category_product</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Category/Product.php" target="_blank">Magento\Catalog\Model\Indexer\Category\Product</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product categories</td>
 		<td><code>catalog_product_category</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Category.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Category</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Category.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Category</a></td>
 		<td>Creates category/products association</td>
 	</tr>
 	<tr>
 		<td>Product price</td>
 		<td><code>catalog_product_price</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Price.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Price</a></td>
 		<td>Pre-calculates product prices</td>
 	</tr>
 	<tr>
 		<td>Product entity attribute value</td>
 		<td><code>catalog_product_attribute</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/Catalog/Model/Indexer/Product/Eav.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Eav</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Model/Indexer/Product/Eav.php" target="_blank">Magento\Catalog\Model\Indexer\Product\Eav</a></td>
 		<td>Reorganizes the EAV product structure to flat structure</td>
 	</tr>
 	<tr>
 		<td>Stock</td>
 		<td><code>cataloginventory_stock</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Indexer/Stock.php" target="_blank">Magento\CatalogInventory\Model\Indexer\Stock</a></td>
 		<td />
 	</tr>
 	<tr>
 		<td>Catalog rule product</td>
 		<td><code>catalogrule_rule</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Rule/RuleProductIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Rule\RuleProductIndexer</a></td>
 		<td />
 	</tr>
 	<tr>
 		<td>Catalog product rule</td>
 		<td><code>catalogrule_product</code></td>
-		<td><a href="{{ site.mage2100url  }}app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/Indexer/Product/ProductRuleIndexer.php" target="_blank">Magento\CatalogRule\Model\Indexer\Product\ProductRuleIndexer</a></td>
 		<td />
 	</tr>
 	<tr>
 		<td>Catalog search</td>
 		<td><code>catalogsearch_fulltext</code></td>
-		<td><a href="{{ site.mage2100url }}app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
+		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogSearch/Model/Indexer/Fulltext.php" target="_blank">Magento\CatalogSearch\Model\Indexer\Fulltext</a></td>
 		<td />
 	</tr>
 	</tbody>

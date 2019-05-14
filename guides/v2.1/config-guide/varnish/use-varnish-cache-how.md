@@ -11,7 +11,7 @@ functional_areas:
 
 This topic discusses how Varnish caching works with Magento using:
 
-*	[`nginx.conf.sample`]({{ site.mage2100url }}nginx.conf.sample) from the Magento 2 GitHub repository
+*	[`nginx.conf.sample`]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample) from the Magento 2 GitHub repository
 *	`.htaccess` distributed configuration file for Apache provided with Magento
 *	`default.vcl` configuration for Varnish generated using the [Magento Admin]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html)
 

@@ -193,7 +193,7 @@ The result is a dropdown dialog and a button (_Click Here_) that opens the dialo
 
 ![DropdownDialog Widget]({{ site.baseurl }}/common/images/widget/dropdown-dialog-widget-result.png)
 
-[lib/web/mage/dropdown.js]: {{ site.mage2100url }}lib/web/mage/dropdown.js
+[lib/web/mage/dropdown.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/dropdown.js
 [Initialize JavaScript]: {{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html
 [`position`]: http://api.jqueryui.com/dialog/#option-position
 [height]: http://api.jqueryui.com/dialog/#option-height

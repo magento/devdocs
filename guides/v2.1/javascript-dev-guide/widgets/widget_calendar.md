@@ -47,9 +47,8 @@ require([
 
 Most options, methods, and events for the calendar widget correspond to the jQuery [Datepicker Widget] options.
 
-
 [Datepicker Widget]: http://api.jQueryui.com/datepicker/
 [global configuration]: #fedg_calendar_config
-[lib/web/mage/calendar.js]: {{site.mage2100url}}lib/web/mage/calendar.js
+[lib/web/mage/calendar.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/calendar.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [Datepicker Widget]: http://api.jqueryui.com/datepicker/

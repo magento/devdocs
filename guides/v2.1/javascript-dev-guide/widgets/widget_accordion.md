@@ -11,7 +11,7 @@ Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
 The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/accordion.js].
-                                                                                                                  
+
 ## Initialize the accordion widget {#accordion_init}
 
 ### Initialize accordion in JS components
@@ -219,7 +219,7 @@ The result is three sections with separate swapped content.
 ![Accordion Widget]({{ site.baseurl }}/common/images/widget/accordion-widget-result.png)
 
 [Magento Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
-[lib/web/mage/accordion.js]: {{site.mage2100url}}lib/web/mage/accordion.js
+[lib/web/mage/accordion.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/accordion.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init
 [Magento Tabs options]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options
 [active]: #collaps_active

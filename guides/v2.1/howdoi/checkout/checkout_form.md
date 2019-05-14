@@ -12,7 +12,7 @@ functional_areas:
 
 This topic describes how to add a custom input form (implemented as a UI component) to the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page.
 
-Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/form.js) component.
+Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
 Magento provides the ability to add a custom form to any of the checkout steps: Shipping Information, Review and Payment Information, or custom. In order to add a custom form that is a UI component, take the following steps:
 
@@ -30,7 +30,7 @@ Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, req
 
 ## Step 1: Create the JS implementation of the form UI component {#component}
 
-In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `.js` file implementing the form.
+In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `custom-checkout-form.js` file implementing the form.
 
 Example of extending the default form component:
 
@@ -71,7 +71,7 @@ define([
 
 ## Step 2: Create the HTML template {#template}
 
-Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory.
+Add the `knockout.js` HTML template for the form component under the `<your_module_dir>/view/frontend/web/template` directory called `custom-checkout-form.html`.
 
 Example:
 
@@ -93,13 +93,6 @@ Example:
     </form>
 </div>
 ```
-
-### Clear files after modification {#modify}
-
-If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
-
-1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
-2. Reload the pages.
 
 ## Step 3: Declare the form in the checkout page layout {#layout}
 
@@ -130,7 +123,14 @@ It should be similar to the following:
                                                     <item name="children" xsi:type="array">
                                                         <item name="before-form" xsi:type="array">
                                                             <item name="children" xsi:type="array">
-                                                                <!-- Your form declaration here -->
+                                                                <item name="custom-form" xsi:type="array">
+                                                                    <!-- Add this item to configure your js file  -->
+                                                                    <item name="component" xsi:type="string">VendorName_ModuleName/js/view/custom-checkout-form</item>
+                                                                    <item name="config" xsi:type="array">
+                                                                        <!-- And this to add your html template  -->
+                                                                        <item name="template" xsi:type="string">VendorName_ModuleName/custom-checkout-form</item>
+                                                                    </item>
+                                                                </item>
                                                             </item>
                                                         </item>
                                                     </item>
@@ -149,6 +149,13 @@ It should be similar to the following:
 </page>
 ```
 
+### Clear files after modification {#modify}
+
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
+
+1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
+2. Reload the pages.
+
 ### Static forms {#static_form}
 
 The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Compare to [dynamic forms](#dynamic_form).
@@ -160,9 +167,11 @@ The following code sample shows configuration of the form that contains four fie
 
 ```xml
 <item name="custom-checkout-form-container" xsi:type="array">
+    <!-- Your JS file previously created -->
     <item name="component" xsi:type="string">%your_module_dir%/js/view/custom-checkout-form</item>
     <item name="provider" xsi:type="string">checkoutProvider</item>
     <item name="config" xsi:type="array">
+        <!-- Your HTML file previously created -->
         <item name="template" xsi:type="string">%your_module_dir%/custom-checkout-form</item>
     </item>
     <item name="children" xsi:type="array">

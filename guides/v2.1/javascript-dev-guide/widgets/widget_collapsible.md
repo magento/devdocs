@@ -561,6 +561,6 @@ The result is two sections with separate collapsible content.
 ![Collapsible Widget]({{ site.baseurl }}/common/images/widget/collapsible-widget-result-animate.png)
 
 [`collateral`]: #fedg_collaps_collateral
-[lib/web/mage/collapsible.js]: {{site.mage2100url}}lib/web/mage/collapsible.js
+[lib/web/mage/collapsible.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/collapsible.js
 [Accordion widget initialization]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init

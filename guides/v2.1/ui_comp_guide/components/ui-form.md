@@ -406,4 +406,4 @@ To replace one instance of a UI Form Component redefine link to a constructor in
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
+- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js)

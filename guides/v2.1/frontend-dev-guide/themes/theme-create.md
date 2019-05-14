@@ -29,7 +29,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading
 
-* [Checklist of modules]({{site.mage2100url}}app/code/Magento)
+* [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento)
 * [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
@@ -135,7 +135,7 @@ To register your theme in the system, add a `registration.php` file in your them
 
 Where `<Vendor>` is your vendor name and `<theme>` is the theme code.
 
-For illustration, see the [registration.php]({{site.mage2100url}}app/design/frontend/Magento/luma/registration.php) file in the Magento Luma theme.
+For illustration, see the [registration.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/registration.php) file in the Magento Luma theme.
 
 ## Configure images {#fedg_create_theme_how-to-images}
 

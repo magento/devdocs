@@ -55,7 +55,7 @@ The module uninstall command performs the following tasks:
 
 3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
-	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2100url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
+	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
 
 4.	Removes the specified modules from the `setup_module` database table.
 4.	Removes the specified modules from the module list in the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html).
