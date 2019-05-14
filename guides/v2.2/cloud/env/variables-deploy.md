@@ -98,8 +98,9 @@ By default, the deployment process overwrites all settings in the `env.php` file
 
 #### To see a list of message queue consumers:
 
-    ./bin/magento queue:consumers:list
-
+```bash
+./bin/magento queue:consumers:list
+```
 ### `CRYPT_KEY`
 
 -  **Default**—_Not set_
@@ -121,16 +122,6 @@ stage:
       some_config: 'some_value'
 ```
 
-You can configure table prefixes; the following example uses the prefix `ece_`:
-
-```yaml
-stage:
-  deploy:
-    DATABASE_CONFIGURATION:
-      some_config: 'some_value'
-      table_prefix: 'ece_'
-```
-
 {% include cloud/merge-configuration.md %}
 
 The following example merges new values to an existing configuration:
@@ -142,6 +133,48 @@ stage:
       some_config: 'some_new_value'
       _merge: true
 ```
+
+Also, you can configure a table prefix. 
+
+{: .bs-callout .bs-callout-warning}
+If you do not use the merge option with the table prefix, you must provide default connection settings or the deploy fails validation.
+
+The following example uses the `ece_` table prefix with default connection settings instead of using the `_merge` option:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      connection:
+        default:
+          username: user 
+          host: host
+          dbname: magento
+          password: password
+      table_prefix: 'ece_'
+```
+
+Sample output:
+
+```terminal
+MariaDB [main]> SHOW TABLES;
++-------------------------------------+
+| Tables_in_main                      |
++-------------------------------------+
+| ece_admin_passwords                 |
+| ece_admin_system_messages           |
+| ece_admin_user                      |
+| ece_admin_user_session              |
+| ece_adminnotification_inbox         |
+| ece_amazon_customer                 |
+| ece_authorization_rule              |
+| ece_cache                           |
+| ece_cache_tag                       |
+| ece_captcha_log                     |
+.....
+```
+{: .no-copy}
+
 
 ### `ELASTICSUITE_CONFIGURATION`
 
