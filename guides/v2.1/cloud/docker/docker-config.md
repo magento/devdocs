@@ -77,7 +77,7 @@ echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
 
 ### Stopping default Apache instance on Mac OS
 
-Because Mac OS provides built-in Apache service, and may occupy port `80` you'll have to stop it with:
+Because Mac OS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
 
 ```bash
 sudo apachectl stop
@@ -276,22 +276,22 @@ docker-sync stop
 
 ### Extending docker-compose.yml configuration
 
-You have a possibility to use Docker's built-in [extension mechanism](https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files).
+You can use Docker's built-in [extension mechanism](https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files).
 
-1.  Create a `docker-compose-dev.yml` file inside your project's root directory with next content:
+1.  Create a `docker-compose-dev.yml` file inside your project's root directory and add the following content:
 
-```yaml
-version: '2'
-services:
-  deploy:
-    environment:
-      - ENABLE_SENDMAIL=true
-```
+    ```yaml
+    version: '2'
+    services:
+      deploy:
+        environment:
+          - ENABLE_SENDMAIL=true
+    ```
 
-This will replace default value of `ENABLE_SENDMAIL` environment variable.
+    This replaces the default value of the `ENABLE_SENDMAIL` environment variable.
 
 1.  Pass both configuration files while executing your commands. For example:
 
-```bash
-docker-compose -f docker-compose.yml -f docker-compose-dev.yml run deploy bash
-```
+    ```bash
+    docker-compose -f docker-compose.yml -f docker-compose-dev.yml run deploy bash
+    ```
