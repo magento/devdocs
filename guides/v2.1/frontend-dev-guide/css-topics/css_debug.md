@@ -20,20 +20,31 @@ Magento has built-in Grunt tasks configured, but there are still several prerequ
 1. Install [node.js] to any location on your machine.
 
 2. Install the Grunt CLI globally:
+
     ```bash
     npm install -g grunt-cli
     ```
+    
 3. Rename the following files in your Magento root directory:
     -   `package.json.sample` to `package.json`
     -   `Gruntfile.js.sample` to `Gruntfile.js`
 
 4. Install (or refresh) the `node.js` project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:
-    ```
+    
+    ```bash
     cd <your_Magento_instance_directory>
+    ```
+    
+    ```bash
     npm install
+    ```
+    
+    ```bash
     npm update
     ```
+    
 5. Add your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
+   
     ```javascript
     module.exports = {
 

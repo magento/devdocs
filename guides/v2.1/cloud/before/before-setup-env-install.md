@@ -81,7 +81,7 @@ After you have installed Magento, you need to set the file system permissions an
 1.  Enter the following commands in the order shown:
 
     ```bash
-    cd <your Magento install dir>
+    cd <magento_root>
     ```
 
     ```terminal
@@ -194,7 +194,9 @@ To verify the local, access the store using the URL you passed in the install co
 
 To change the URI for the Admin panel, use this command to locate it:
 
+	```bash
 	php bin/magento info:adminuri
+	```
 
 To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.
 

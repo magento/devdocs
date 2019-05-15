@@ -123,7 +123,7 @@ To restore the Magento codebase to the state at which you backed it up, use the 
 
 	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 
-where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
+where `<filename>` is the name of the backup file located in `<magento_root>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
 {:.bs-callout .bs-callout-warning}
 This command deletes the specified files or the database before restoring them. (For example, the <code>--media-file</code> option deletes media assets under  `pub/media` before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.

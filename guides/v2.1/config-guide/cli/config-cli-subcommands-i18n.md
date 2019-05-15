@@ -43,7 +43,9 @@ You have options for using the translated dictionary:
 
 Command options:
 
-	bin/magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
+    ```bash
+    bin/magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
+    ```
 
 The following table explains this command's parameters and values:
 
@@ -99,7 +101,9 @@ This section discusses how to create a language package, which writes `.csv` fil
 
 Command usage:
 
-	bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <locale>
+```bash
+bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <locale>
+```
 
 The following table explains this command's parameters and values:
 
@@ -215,10 +219,12 @@ To add a German translation to a module or theme that you want to distribute to 
 
 1.  Collect phrases from your module:
 
-		bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+    ```bash
+    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+    ```
 
 	{:.bs-callout .bs-callout-info}
-  The .csv file name must _exactly match_ the locale, including the characters' case.
+    The .csv file name must _exactly match_ the locale, including the characters' case.
 
 1.  Translate the words and phrases using [these guidelines](#config-cli-subcommands-xlate-dict-trans).
 1.  If necessary, copy `xx_YY.csv` to `/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n` or to the module's theme directory (depending on whether the translation dictionary is for a module or a theme).
@@ -229,15 +235,19 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 
 1.  Collect phrases from your module:
 
-		bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
+    ```bash
+    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
+    ```
 
-	{:.bs-callout .bs-callout-info}
-  The `.csv` file name must _exactly match_ the locale, including the characters' case.
+    {:.bs-callout .bs-callout-info}
+    The `.csv` file name must _exactly match_ the locale, including the characters' case.
 
 1.  Translate the words and phrases using [these guidelines](#config-cli-subcommands-xlate-dict-trans).
 1.  Create the language package.
 
+    ```bash
     bin/magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY
+    ```
 
 1.  Create a directory for the language package.
 
