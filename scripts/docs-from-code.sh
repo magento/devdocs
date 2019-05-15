@@ -13,7 +13,7 @@ echo 'Initiating git in the directory'
 git init
 
 echo "Adding a remote repository: $repo"
-git remote add origin --fetch "$repo"
+git remote add origin "$repo"
 
 if $sparse; then
   echo 'Enabling sparse checkout'
