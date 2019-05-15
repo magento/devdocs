@@ -58,6 +58,24 @@ bin/magento admin:user:create --admin-firstname=John --admin-lastname=Doe --admi
 Created Magento administrator user named j.doe
 ```
 
+If you do not specify any of required params Magento will ask about them in the CLI:
+
+```bash
+bin/magento admin:user:create
+```
+
+```terminal
+Admin user: John
+Admin password: 
+Admin email: j.doe.young@example.com
+Admin first name: John
+Admin last name: Doe Young
+```
+
+```terminal
+Created Magento administrator user named John
+```
+
 The following example updates `first name`, `last name`, and `password` of `j.doe` admin user:
 
 ```bash
