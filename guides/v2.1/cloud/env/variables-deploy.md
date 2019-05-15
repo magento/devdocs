@@ -103,6 +103,47 @@ stage:
       _merge: true
 ```
 
+Also, you can configure a table prefix. 
+
+{: .bs-callout .bs-callout-warning}
+If you do not use the merge option with the table prefix, you must provide default connection settings or the deploy fails validation.
+
+The following example uses the `ece_` table prefix with default connection settings instead of using the `_merge` option:
+
+```yaml
+stage:
+  deploy:
+    DATABASE_CONFIGURATION:
+      connection:
+        default:
+          username: user 
+          host: host
+          dbname: magento
+          password: password
+      table_prefix: 'ece_'
+```
+
+Sample output:
+
+```terminal
+MariaDB [main]> SHOW TABLES;
++-------------------------------------+
+| Tables_in_main                      |
++-------------------------------------+
+| ece_admin_passwords                 |
+| ece_admin_system_messages           |
+| ece_admin_user                      |
+| ece_admin_user_session              |
+| ece_adminnotification_inbox         |
+| ece_amazon_customer                 |
+| ece_authorization_rule              |
+| ece_cache                           |
+| ece_cache_tag                       |
+| ece_captcha_log                     |
+.....
+```
+{: .no-copy}
+
 ### `ENABLE_GOOGLE_ANALYTICS`
 
 -  **Default**—`false`
