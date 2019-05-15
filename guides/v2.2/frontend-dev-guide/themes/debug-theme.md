@@ -25,6 +25,23 @@ To enable template hints:
 
 ![Enabling template hints]({{ site.baseurl }}/common/images/fdg_debug_theme.png)
 
+{:.bs-callout .bs-callout-info}
+You can also use CLI to enable/disable template hints.
+
+Use `bin/magento dev:template-hints:enable` command in CLI to enable template hints, and `bin/magento dev:template-hints:disable` to disable them. Do not forget to clear cache after command run. For example: 
+
+```bash
+bin/magento dev:template-hints:enable
+```
+
+```terminal
+Template hints enabled.
+```
+
+```bash
+bin/magento cache:clean
+```
+
 Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.
 
 For example, here is how a storefront {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page looks with enabled template hints:
