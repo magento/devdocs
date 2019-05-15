@@ -29,10 +29,10 @@ The InvoiceOrder service introduces a capability to execute Magento native busin
 
 With this service you can:
 
-- create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} document (full or partial)
-- capture money placed with order payment
-- notify a customer about document creation
-- change {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %} and state
+* create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} document (full or partial)
+* capture money placed with order payment
+* notify a customer about document creation
+* change {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %} and state
 
 ### Parameters
 
@@ -60,7 +60,8 @@ With this service you can:
       <td><code>items</code></td>
       <td>An array of order items that will be included to invoice. By default, the invoice will contain all order items.</td>
       <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
-      <td>
+      <td markdown="1">
+
      ```json
       [
           {
@@ -73,6 +74,7 @@ With this service you can:
           }
           ]
      ```
+
       </td>
       <td>Optional (required, when invoice must contain particular order items.</td>
       <td><code>[]</code></td>
@@ -105,13 +107,15 @@ With this service you can:
       <td><code>comment</code></td>
       <td>The comment to add to an invoice. Specify a comment if <code>appendComment</code> is set to <code>true</code>.</td>
       <td>A format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
-      <td>
+      <td markdown="1">
+
      ```json
       {
           "comment": "The first Invoice",
           "is_visible_on_front": true
       }
      ```
+
       </td>
       <td>Optional</td>
       <td><code>null</code></td>
@@ -199,7 +203,7 @@ The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b
 |[`\Magento\Sales\Api\OrderRepositoryInterface`]{:target="_blank"}| An interface for saving and retrieving Orders.
 |[`\Magento\Sales\Model\Order\OrderStateResolverInterface`]{:target="_blank"}| An interface which provides a correct state of an Order according to performed operation.
 |[`\Magento\Sales\Api\InvoiceRepositoryInterface`]{:target="_blank"}| An interface for saving and retrieving Shipments.
-|[`\Magento\Sales\Model\Order\InvoiceDocumentFactory`]{:target="_blank"}|	A factory for creating an Invoice data object. The factory uses the `arguments` parameter to process the extension attributes of a new Invoice.
+|[`\Magento\Sales\Model\Order\InvoiceDocumentFactory`]{:target="_blank"}| A factory for creating an Invoice data object. The factory uses the `arguments` parameter to process the extension attributes of a new Invoice.
 |[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]{:target="_blank"}| An interface for sending notifications about new Invoice creation.
 |[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]{:target="_blank"}| An interface for validating service parameters and Invoice data object.
 |[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]{:target="_blank"}| An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.
@@ -212,11 +216,11 @@ Please note, that current service is available only for invoices created using o
 
 With this service you can:
 
-   * create a {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}Credit Memo{% endglossarytooltip %} (complete or partial) for particular Invoice
-   * add details about refunded items to an Order
-   * change status and state of an Order according to performed actions
-   * notify a customer about performed refund operation
-   
+* create a {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}Credit Memo{% endglossarytooltip %} (complete or partial) for particular Invoice
+* add details about refunded items to an Order
+* change status and state of an Order according to performed actions
+* notify a customer about performed refund operation
+
 ### Service parameters
 
 <table>
@@ -277,7 +281,8 @@ With this service you can:
         "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
-      <td>
+      <td markdown=1>
+
        ```json
         [
             {
@@ -290,6 +295,7 @@ With this service you can:
             }
         ]
        ```
+
       </td>
       <td>
         Optional (required, when a Credit Memo must contain
@@ -381,13 +387,15 @@ With this service you can:
         "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
-      <td>
+      <td markdown=1>
+
        ```json
         {
             "comment": "The first Credit Memo",
             "is_visible_on_front": true
         }
        ```
+
       </td>
       <td>
         Optional
@@ -409,7 +417,8 @@ With this service you can:
         "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
-      <td>
+      <td markdown=1>
+
        ```json
         {
         "shipping_amount": 10.00,
@@ -417,6 +426,7 @@ With this service you can:
         "adjustment_negative": 5.00
         }
        ```
+
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
         area. If shipping amount is not specified, then shipping
@@ -516,10 +526,10 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 With the RefundOrder service you can:
 
-- create a Credit Memo (complete or partial) for a particular Order
-- add details about refunded items to an Order
-- change status and state of an Order according to performed actions
-- notify a customer about performed refund operation
+* create a Credit Memo (complete or partial) for a particular Order
+* add details about refunded items to an Order
+* change status and state of an Order according to performed actions
+* notify a customer about performed refund operation
 
 ### Service parameters
 
@@ -581,7 +591,8 @@ With the RefundOrder service you can:
         "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
-      <td>
+      <td markdown=1>
+
        ```json
         [
             {
@@ -594,6 +605,7 @@ With the RefundOrder service you can:
             }
         ]
        ```
+
       </td>
       <td>
         Optional (required, when a Credit Memo must contain
@@ -660,13 +672,15 @@ With the RefundOrder service you can:
         "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
-      <td>
+      <td markdown=1>
+
        ```json
         {
             "comment": "The first Credit Memo",
             "is_visible_on_front": true
         }
        ```
+
       </td>
       <td>
         Optional
@@ -688,7 +702,8 @@ With the RefundOrder service you can:
         "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
-      <td>
+      <td markdown=1>
+
        ```json
         {
         "shipping_amount": 10.00,
@@ -696,6 +711,7 @@ With the RefundOrder service you can:
         "adjustment_negative": 5.00
         }
        ```
+
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
         area. If shipping amount is not specified, then shipping
@@ -794,10 +810,10 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 With the ShipOrder service you can:
 
-- create a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} document (full or partial)
-- add details about shipped items into an order
-- change status and state of an order according to performed actions
-- notify the customer of a new {% glossarytooltip eb790722-f597-4b2f-82b4-e11735c6558b %}shipment document{% endglossarytooltip %}
+* create a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} document (full or partial)
+* add details about shipped items into an order
+* change status and state of an order according to performed actions
+* notify the customer of a new {% glossarytooltip eb790722-f597-4b2f-82b4-e11735c6558b %}shipment document{% endglossarytooltip %}
 
 ### Service parameters
 
@@ -825,7 +841,8 @@ With the ShipOrder service you can:
       <td><code>items</code></td>
       <td>An array of order items included to a shipment. By default, the service will create a shipment for all order items.</td>
       <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
-      <td>
+      <td markdown=1>
+
        ```json
         [
             {
@@ -838,6 +855,7 @@ With the ShipOrder service you can:
             }
         ]
        ```
+
       </td>
       <td>Optional (required, when a shipment document must contain particular order items)</td>
       <td><code>[]</code></td>
@@ -864,13 +882,15 @@ With the ShipOrder service you can:
       <td>A format according to the
         <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
         interface.</td>
-      <td>
+      <td markdown="1">
+
      ```json
-      {   
+      {
           "comment": "The first Invoice",
           "is_visible_on_front": true
       }
      ```
+
       </td>
       <td> Optional </td>
       <td> <code>null</code> </td>
@@ -880,7 +900,8 @@ With the ShipOrder service you can:
       <td> A list of track numbers attached to a shipment. </td>
       <td> Array of objects with a format according to
         <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
-      <td>
+      <td markdown="1">
+
      ```json
       [
           {
@@ -890,6 +911,7 @@ With the ShipOrder service you can:
           }
       ]
      ```
+
       </td>
       <td> Optional </td>
       <td> <code>[]</code> </td>
@@ -899,7 +921,8 @@ With the ShipOrder service you can:
       <td> A list of packages attached to a shipment. </td>
       <td> Array of objects with a format according to
         <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
-      <td>
+      <td markdown="1">
+
      ```json
       [
           {
@@ -915,6 +938,7 @@ With the ShipOrder service you can:
            }
       ]
      ```
+
       </td>
       <td>Optional</td>
       <td><code>[]</code></td>

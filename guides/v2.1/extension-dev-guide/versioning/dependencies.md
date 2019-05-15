@@ -33,6 +33,7 @@ However, the dependency rules are different:
 * If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
 
   **API dependency example**
+
 ```json
 {
     ...
@@ -42,8 +43,11 @@ However, the dependency rules are different:
     ...
 }
 ```
+
 * If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
+
    **SPI dependency example**
+
 ```json
 {
     ...
@@ -52,7 +56,6 @@ However, the dependency rules are different:
     },
     ...
 }
-
 ```
 
 ## Determine module dependency
@@ -104,4 +107,3 @@ Use this table to set the appropriate version dependency on a module based on ho
 | | Declare a foreign key on a module table | MAJOR|
 | | Declare a trigger on a module table | MAJOR|
 | | Read from table or write to table from a temporary table| PATCH|
-  
