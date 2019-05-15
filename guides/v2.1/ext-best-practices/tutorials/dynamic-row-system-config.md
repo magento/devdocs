@@ -1,0 +1,79 @@
+---
+group: extension-best-practices
+subgroup: 02_Extension-Coding
+title: Creating a dynamic row system config
+menu_title: Creating a dynamic row system config
+menu_order: 1010
+functional_areas:
+  - Standards
+---
+
+### Overview
+
+This tutorial gives instructions for adding a new dynamic rows system config in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento admin{% endglossarytooltip %}, by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0]{:target="_blank"} class. 
+
+## Step 1: Add your new system field 
+{:#step-1}
+
+**etc/adminhtml/system.xml**
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="general" translate="label" type="text">
+            <group id="quantity_ranges" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Quantity Ranges</label>
+                <field id="ranges" translate="label" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Ranges</label>
+                    <frontend_model>[vendor]\[module]\Block\Adminhtml\Form\Field\Ranges</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+```
+
+This code adds a new system config on the following location:
+
+``Stores / Configuration / General [General] / Quantity Ranges``
+
+## Step 2: Create the Frontend model class
+{:#step-2}
+
+**Block/Adminhtml/Form/Field/Ranges.php**
+
+```php
+<?php
+namespace Learning\GreetingMessage\Block\Adminhtml\Form\Field;
+
+use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
+
+/**
+ * Class Ranges
+ */
+class Ranges extends AbstractFieldArray
+{
+    /**
+     * Prepare rendering the new field by adding all the needed columns
+     */
+    protected function _prepareToRender()
+    {
+        $this->addColumn('from_qty', ['label' => __('From'), 'class' => 'required-entry']);
+        $this->addColumn('to_qty', ['label' => __('To'), 'class' => 'required-entry']);
+        $this->addColumn('price', ['label' => __('Price'), 'class' => 'required-entry']);
+        $this->_addAfter = false;
+        $this->_addButtonLabel = __('Add');
+    }
+}
+```
+
+This block prepares the columns that you want to have in your new config. 
+
+### Result
+
+The result is a new system dynamic row field into Admin panel.
+
+![Dynamic Rows System Config]({{ site.baseurl }}/common/images/ext-best-practices/dynamic-rows-config-result.png)
+
+[0]:{{ site.mage2bloburl }}/2.1/app/code/Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray.php
