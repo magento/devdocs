@@ -33,6 +33,8 @@ Use the following layout instructions to customize your layout:
 * [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
+* [`<XML Layout Merging>`](#xml_Layout_Merging)
+
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -297,6 +299,23 @@ Example:
     <argument name="css_class" xsi:type="string">header links</argument>
 </arguments>
 ```
+
+### XML layout File merging ordering {#xml_Layout_Merging}
+
+**Module Files**
+Sorted according to their module priority (array index of module's position in app/etc/config.php). If their priority are equal, they are sorted according to their alphabetical priority.
+
+- Module base file loaded
+
+- Module Area files loaded
+
+**Theme files**
+
+- Layout file loaded
+
+- Override files loaded
+
+- Theme Override files replaced
 
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
