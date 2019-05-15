@@ -1,1 +1,1 @@
-../../../v2.2/install-gde/install/cli/install-cli-subcommands-admin.md
+../../../../v2.2/install-gde/install/cli/install-cli-subcommands-admin.md
