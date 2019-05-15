@@ -103,6 +103,18 @@ A particular instance of a UI component is defined primarily by the following:
 3. [Backend/PHP modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html).
 4. Configuration inside the JavaScript classes.
 
+## UI component used in the frontend design area
+
+* Configured through layout XML
+
+* The jsLayout argument is used to specify information
+
+## UI component used in the Adminhtml area
+
+* Configured through dedicated XML file (view/.../ui_component/[ui_component_name.xml])
+
+* Included in layout XML with uiComponent tag
+
 ## Things to remember when working with UI components
 
 **UI components have different settings**
