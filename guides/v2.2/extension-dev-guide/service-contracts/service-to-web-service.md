@@ -296,6 +296,13 @@ If a service method argument is called `item`, there will be a problem during SO
 <p>The <code>webapi.xml</code> file for your module must specify an XML schema file for validation. Your <code>webapi.xml</code> file can specify the default or a customized XML schema file.</p>
 <p>The default <code>webapi.xsd</code> XML schema file can be found in the <code>app/code/Magento/Webapi/etc</code> directory.</p>
 
+The following table defines the `service` node attributes:
+
+Attribute name | Required | Description
+--- | --- | ---
+`class` | Yes | The responsible class for handling the API request.
+`method` | Yes | The class' method which handles the execution of the API.
+
 ## Forcing Request Parameters {#forced-parameters}
 
 <p>Parameters in the <code>webapi.xml</code> can be forced. This ensures that on specific routes, a specific value is
