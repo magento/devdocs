@@ -179,26 +179,25 @@ Name | Description
 `layout` | View result. A generic layout response can be used for rendering any kind of layout. So it comprises a response body from the layout elements it has and sets it to the HTTP response
 `page` | View result. Encapsulates page type, page configuration and imposes certain layout handles. Triggers `layout.xml` rendering into HTML.
 
-
-[`FrontController` class]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
+[`FrontController` class]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
 [FrontController]: #frontcontroller-class
-[Router class]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
-[admin]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Backend/App/Router.php
-[robots]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Robots/Controller/Router.php
-[urlrewrite]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/UrlRewrite/Controller/Router.php
-[standard]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/Base.php
-[default]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
-[cms]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Cms/Controller/Router.php
+[Router class]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
+[admin]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/App/Router.php
+[robots]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Robots/Controller/Router.php
+[urlrewrite]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/UrlRewrite/Controller/Router.php
+[standard]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/Base.php
+[default]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
+[cms]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Controller/Router.php
 [default router]: #default-router
-[NoRouteHandler]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandler.php
-[NoRouteHandlerInterface]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php
-[`ActionFactory`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/ActionFactory.php
-[`RouterList`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterList.php
-[`RouterInterface`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
-[`routes.xsd`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/etc/routes.xsd
+[NoRouteHandler]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandler.php
+[NoRouteHandlerInterface]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/NoRouteHandlerInterface.php
+[`ActionFactory`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/ActionFactory.php
+[`RouterList`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterList.php
+[`RouterInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
+[`routes.xsd`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/etc/routes.xsd
 [Router class section]: #router-class
-[`Magento\Robots\Controller\Router`]: {{site.mage2bloburl}}{{ page.guide_version }}/app/code/Magento/Robots/etc/frontend/di.xml
-[`Config`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Route/ConfigInterface.php
-[`Action`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Action/Action.php
-[`DefaultRouter`]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
+[`Magento\Robots\Controller\Router`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Robots/etc/frontend/di.xml
+[`Config`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Route/ConfigInterface.php
+[`Action`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Action/Action.php
+[`DefaultRouter`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Router/DefaultRouter.php
 [action class]: #action-class

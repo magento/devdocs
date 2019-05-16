@@ -92,7 +92,7 @@ This JSON-formatted request body includes a `customer` object with the customer 
 
 This example shows you how to construct a REST web API call to create an account.
 
-1. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml)
+1. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)
 
 2. Find the route element that defines the `createAccount` call:
 
@@ -109,7 +109,7 @@ This example shows you how to construct a REST web API call to create an account
 
 4. Use the `class` attribute on the `service` element to identify the service interface. In this example, the service interface is the `AccountManagementInterface` {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} file.
 
-   Open the [AccountManagementInterface.php]({{ site.mage2000url }}app/code/Magento/Customer/Api/AccountManagementInterface.php) file and find the <code>createAccount</code> method, as follows:
+   Open the [AccountManagementInterface.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/AccountManagementInterface.php) file and find the <code>createAccount</code> method, as follows:
 
    ```php?start_inline=1
    public function createAccount(
@@ -139,7 +139,7 @@ The following example builds a Customers Search request based on search criteria
    ]);
 ```
 
-2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2000url }}app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2000url }}app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
+2. Open the [Magento/Customer/etc/webapi.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/webapi.xml)  configuration file and find the [CustomerRepositoryInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Api/CustomerRepositoryInterface.php) interface with the `getList` method.
 
 
 3. Set the headers, URI and method to a request object. Use URI `/V1/customers/search` and method `GET` values. Use the `searchCriteria` parameter to complete the Customer Search query. See [searchCriteria usage]({{ page.baseurl }}/rest/performing-searches.html). Also check [List of REST endpoints by module]({{ page.baseurl }}/rest/list.html).
