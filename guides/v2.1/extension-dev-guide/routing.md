@@ -160,6 +160,20 @@ $this->_forward('action', 'controller', 'Other_Module')
 {: .bs-callout .bs-callout-tip }
 Use the [`ActionFactory`] in your router to create an instance of an `Action` class.
 
+{: .bs-callout .bs-callout-info }
+Action class should return a `result object`.
+
+## Result object
+
+Name | Description
+--- | ---
+`json` | Sets `Content-Type:application/json` in the header and returns a json encoded representation of an array with data.
+`raw` | Returns the data as it's been set. Does not set a `Content-Type` of the header.
+`redirect` | Creates an external redirect, which the browser follows and requests a new url.
+`forward` | Internally calls the execute method of another action class and does not trigger a new request from the browser. The URL stays the same.
+`layout` | View result. A generic layout response can be used for rendering any kind of layout. So it comprises a response body from the layout elements it has and sets it to the HTTP response
+`page` | View result. Encapsulates page type, page configuration and imposes certain layout handles. Triggers `layout.xml` rendering into HTML.
+
 [`FrontController` class]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/FrontController.php
 [FrontController]: #frontcontroller-class
 [Router class]: {{site.mage2bloburl}}{{ page.guide_version }}/lib/internal/Magento/Framework/App/RouterInterface.php
