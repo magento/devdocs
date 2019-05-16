@@ -60,11 +60,11 @@ To verify memcached is recognized by the web server:
 
 1. Create a `phpinfo.php` file in the web server's docroot:
 
-    ```php
-    <?php
-    // Show all information, defaults to INFO_ALL
-    phpinfo();
-    ```
+```php
+<?php
+// Show all information, defaults to INFO_ALL
+phpinfo();
+```
 
 1. Go to that page in your web browser.
 
