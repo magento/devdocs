@@ -25,8 +25,8 @@ To install memcached on CentOS, perform the following tasks as a user with `root
         yum install -y memcached
         yum install -y php-pecl-memcached
 
-    {:.bs-callout .bs-callout-info}
-    The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use `yum search memcache|grep php` to find the appropriate package name.
+{:.bs-callout .bs-callout-info}
+The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use `yum search memcache|grep php` to find the appropriate package name.
 
 1. Change the memcached configuration setting for `CACHESIZE` and `OPTIONS`:
 
@@ -72,7 +72,7 @@ To verify memcached is recognized by the web server:
 
 1. Make sure memcache displays as follows:
 
-  ![Confirm memcache is recognized by the web server]({{ site.baseurl }}/common/images/config_memcache.png)
+   ![Confirm memcache is recognized by the web server]({{ site.baseurl }}/common/images/config_memcache.png)
 
   Verify you're using memcached version 3.0.5 or later.
 
@@ -90,14 +90,14 @@ Create the MySQL database:
 
 At the `mysql` prompt, enter the following commands:
 
-    ```sql
-    create database memcache_test;
-    GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
-    use memcache_test;
-    create table example (id int, name varchar(30));
-    insert into example values (1, "new_data");
-    exit
-    ```
+```sql
+create database memcache_test;
+GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
+use memcache_test;
+create table example (id int, name varchar(30));
+insert into example values (1, "new_data");
+exit
+```
 
 Create `cache-test.php` in your web server's docroot:
 

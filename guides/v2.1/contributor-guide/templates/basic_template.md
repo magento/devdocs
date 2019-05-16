@@ -24,11 +24,7 @@ Parameter | Description
 `redirect_from`  | Optional. Add a list of other pages in DevDocs that should redirect to this page. The link should start with the `/guides` directory. For an example, see the source code for this template page.
 `ee_only:` | Optional. If set to `true`, graphics/cues display on the page indicating it applies to {{site.data.var.ee}}.
 
-
-{%
-include note.html
-type='info'
-content='If you need help with metadata, we can help in your submitted pull requests.'
+{% include note.html type='info' content='If you need help with metadata, we can help in your submitted pull requests.'
 %}
 
 ## Basic Markdown Syntax {#basic}
@@ -139,16 +135,14 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 
 *Example:*
 
-````
-```html
-<div class="container">
-  <h4 class="title">Title</h4>
-  <div class="content">
-    <p>Paragraph content.</p>
-  </div>
-</div>
-```
-````
+    ```html
+    <div class="container">
+      <h4 class="title">Title</h4>
+      <div class="content">
+        <p>Paragraph content.</p>
+      </div>
+    </div>
+    ```
 
 *Output:*
 
