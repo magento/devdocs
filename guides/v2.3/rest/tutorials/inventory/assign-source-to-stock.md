@@ -14,7 +14,7 @@ functional_areas:
   - Integration
 ---
 
-This step links the sources we created in Step 2 with the stocks we created in Step 3.
+This step links the sources we created in [Step 2. Create sources](create-sources.html) with the stocks we created in [Step 3. Create stocks](create-stock.html).
 
 Each stock can be assigned one or more sources. Magento uses these associations to calculate the virtual aggregated inventory per product. 
 
