@@ -36,7 +36,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Endpoint**
 
-`POST http://<host>/rest/default/V1/order/5/refund`
+`POST <host>/rest/<store_code>/V1/order/5/refund`
 
 **Headers**
 
@@ -46,7 +46,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Payload**
 
-{% highlight json %}
+```json
 {
   "items": [
     {
@@ -66,7 +66,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
     }
   }
 }
-{% endhighlight %}
+```
 
 **Response**
 
@@ -74,7 +74,7 @@ A {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}credit memo{% endglo
 
 ### Verify this step {#verify-step}
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Credit memos**. The credit memo is displayed in the grid.
+Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Credit Memos**. The credit memo is displayed in the grid.
 
 ## Congratulations! You've finished.
 {:.no_toc}

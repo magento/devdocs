@@ -57,7 +57,7 @@ Old data scripts cannot be converted automatically. The following steps help mak
 
 
 2. All released modules that previously used upgrade scripts must support backward compatibility by implementing
-`\Magento\Setup\Model\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
+`\Magento\Framework\Setup\Patch\PatchVersionInterface` and the `getVersion` method. This method allows you to skip changes that were applied in previous versions and were done by old scripts. The returned value of the `getVersion` method in this case should be equal to the value of a version in `version_compare` function in old scripts. When the `InstallData.php` script does not have any versions to compare, you can specify the first version of your module. See [Develop declarative data and schema patches]({{ page.baseurl }}/extension-dev-guide/declarative-schema/data-patches.html) for more information.
 
 ## Dry run mode
 
@@ -82,9 +82,9 @@ To help prevent data loss, you can specify command line options that dump all th
 
 Magento provides options to the `setup:install` and `setup:upgrade` commands that enable safe installations and rollbacks:
 
-`--safe-mode` - Creates a data dump during the installation or upgrade process.
+`--safe-mode=1` - Creates a data dump during the installation or upgrade process.
 
-`--data-restore` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore`.
+`--data-restore=1` - (Used with the `setup:upgrade` command only.) Performs a rollback. Before you rollback, you must first check out code to the previous version of Magento. Then run `setup:upgrade  --data-restore=1`.
 
 
 Several types of operations have an effect on data dumps and rollbacks.
@@ -112,7 +112,7 @@ Each CSV file contains a row that defines the column (or other database entity) 
 
 Backward compatibility must be maintained. Therefore, declarative schema does not automatically delete database tables, columns or keys that are not defined in a `db_schema.xml` file. Declarative schema cannot delete these elements because these items can be declared somewhere else, such as in an `Setup/UpgradeSchema.php` file.
 
-The `<module_vendor>/<module_name>/etc/db_schema_whitelist.json` file provides a history of all tables, columns, keys added with declarative schema. It can be generated manually or created automatically with the following command:
+The `<module_vendor>/<module_name>/etc/db_schema_whitelist.json` file provides a history of all tables, columns, and keys added with declarative schema. It is required to allow drop operations. It can be generated manually or created automatically with the following command:
 
 ```bash
 bin/magento setup:db-declaration:generate-whitelist [options]

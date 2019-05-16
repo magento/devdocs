@@ -20,7 +20,7 @@ This section is responsible for holding all product data that come from the serv
 
 The following code snippet uses the [`Magento_Catalog/js/product/storage/storage-service`][storage-service]{:target="_blank"} to initialize the repository when the data storage cache itself initializes:
 
-{% highlight js %}
+```javascript
 define([
     'Magento_Catalog/js/product/storage/storage-service'
 ]), function(storage){
@@ -54,13 +54,13 @@ define([
     }
 
 }
-{% endhighlight %}
+```
 
 ## Use the repository
 
 Subscribe a callback function to the product repository data to work with the cached data from recent server requests.
 
-{% highlight js %}
+```javascript
 
 ...
 
@@ -75,13 +75,13 @@ dataCollectionHandler: function(data){
 
 ...
 
-{% endhighlight %}
+```
 
 ## Get data from the server
 
 Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs. 
 
-{% highlight js %}
+```javascript
 
 ...
 
@@ -93,7 +93,7 @@ idsStorageHandler: function(idsStorage, currency, storeId){
 
 ...
 
-{% endhighlight %}
+```
 
 | Parameter  | Description                                     |
 | ---------- | ----------------------------------------------- |
@@ -113,7 +113,7 @@ For UI Components, add this information in the [`dataProvider`][datasource-compo
 
 The following example is from the [recently-viewed widget][recently-viewed-widget]{:target="_blank"}:
 
-{% highlight xml %}
+```xml
 
 <argument name="dataProvider" xsi:type="configurableObject">
     <argument name="data" xsi:type="array">
@@ -132,7 +132,7 @@ The following example is from the [recently-viewed widget][recently-viewed-widge
     </argument>
 </argument>
 
-{% endhighlight %}
+```
 
 This sets the appropriate information inside the `updateRequestConfig` object in the product storage configuration(`productStorageConfig` in the example code).
 
@@ -140,7 +140,7 @@ The object structure for this REST response is represented by [`\Magento\Catalog
 
 {% collapsible Show Object Structure %}
 
-{% highlight js %}
+```javascript
 [
    item_id: {
         //@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface
@@ -189,12 +189,12 @@ The object structure for this REST response is represented by [`\Magento\Catalog
         'store_id': ... //integer
    }  
 ]
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
 [datasource-component]: {{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_data_source.html
-[recently-viewed-widget]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
-[product-render-interface]: {{ site.mage2200url }}app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php
-[storage-service]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js
-[load-data-from-server]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213
+[recently-viewed-widget]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[product-render-interface]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php
+[storage-service]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js
+[load-data-from-server]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213

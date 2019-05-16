@@ -283,7 +283,7 @@ Use the following steps to install your module:
 
 ## Check your integration {#check}
 
-Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
+Log in to Magento and navigate to **System > Extensions > Integrations**. The integration should be displayed in the grid.
 
 ## Integrate with your application {#integrate}
 
@@ -311,7 +311,7 @@ The callback page must be able to perform the following tasks:
 
 * Parse the request token response. The response contains an `oauth_token` and `oauth_token_secret`.
 
-* Ask for a access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:
+* Ask for an access token. The request token must be exchanged for an access token. Use the following API to get a request token from Magento:
 
   `POST /oauth/token/access`
 

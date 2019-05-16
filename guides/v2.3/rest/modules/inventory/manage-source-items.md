@@ -28,9 +28,9 @@ Name | Description | Type | Requirements
 --- | --- | --- | ---
 sku	| The SKU of an existing product | String | Required to assign or unassign a source
 source_code	| The source to assign or unassign | String | Required to assign or unassign a source
-quantity	| The total amount of inventory available for this SKU and source | Number | Optional
+quantity	| The total amount of inventory available for this SKU and source | Float | Optional
 status	|  Indicates whether the product is out of stock (0) or in stock (1) | Integer | Optional
-{:style="table-layout:auto;"}
+
 
 ## Unassign products from a source
 
@@ -41,11 +41,11 @@ Unassigning a source clears all quantity data. For this example, this is OK, bec
 
 **Sample usage**
 
-`POST V1/inventory/source-items-delete`
+`POST <host>/rest/<store_code>/V1/inventory/source-items-delete`
 
 **Payload**
 
-``` json
+```json
 {
 	"sourceItems": [{
 		"sku": "new_product1",
@@ -72,11 +72,11 @@ The following example assigns `1000` units of product `new_product1` to the `cen
 
 **Sample usage**
 
-`POST V1/inventory/source-items`
+`POST <host>/rest/<store_code>/V1/inventory/source-items`
 
 **Payload**
 
-``` json
+```json
 {
   "sourceItems": [{
   	"sku": "new_product1",
@@ -117,9 +117,9 @@ The following call returns all source items for `sku` = `new_product2`.
 
 See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) for information about constructing a search query.
 
-**Sample usage**
+**Sample Usage**
 
-`GET /V1/inventory/source-items?searchCriteria[filter_groups][0][filters][0][field]=sku&searchCriteria[filter_groups][0][filters][0][value]=new_product2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/inventory/source-items?searchCriteria[filter_groups][0][filters][0][field]=sku&searchCriteria[filter_groups][0][filters][0][value]=new_product2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 
@@ -128,7 +128,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {

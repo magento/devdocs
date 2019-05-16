@@ -23,5 +23,3 @@ and do not run the compilation process.
 
 ## Install
 The Magento_Deploy module is installed automatically (using the native Magento install mechanism) without any additional actions.
-
-

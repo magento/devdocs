@@ -8,11 +8,11 @@ POST, PUT, and DELETE requests to the REST Web {% glossarytooltip 786086f2-622b-
 
 For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} of the GET request. The basic pattern for specifying the criteria is
 
-{% highlight html %}
+```
 searchCriteria[filter_groups][<index>][filters][<index>][field]=<field_name>
 searchCriteria[filter_groups][<index>][filters][<index>][value]=<search_value>
 searchCriteria[filter_groups][<index>][filters][<index>][condition_type]=<operator>
-{% endhighlight %}
+```
 
 where:
 
@@ -33,11 +33,12 @@ Condition | Notes
 `lteq` | Less than or equal
 `moreq` | More or equal
 `neq` | Not equal
+`nfinset` | A value that is not within a set of values
 `nin` | Not in. The `value` can contain a comma-separated list of values.
 `notnull` | Not null
 `null` | Null
 `to` | The end of a range. Must be used with `from`
-{:style="table-layout:auto;"}
+
 
 {:.bs-callout .bs-callout-info}
 `condition_type` is optional if the operator is `eq`.
@@ -57,8 +58,8 @@ The following sections provide examples of each type of search. These examples u
 
 The {{site.data.var.ce}} sample data uses the `category_gear` field to describe the categories for each item listed under Gear on sample store. Each item can be assigned to multiple categories. Electronics are assigned the code 86. The following example returns all gear tagged as electronics.
 
-``` html
-GET http://<magento_host>/rest/V1/products/?
+```
+GET <host>/rest/<store_code>/V1/products/?
 searchCriteria[filter_groups][0][filters][0][field]=category_gear&
 searchCriteria[filter_groups][0][filters][0][value]=86&
 searchCriteria[filter_groups][0][filters][0][condition_type]=finset
@@ -87,8 +88,8 @@ The query returns 9 items.
 
 The following search finds all invoices created after the specified time (midnight, July 1 2016). You can set up a similar search to run periodically to poll for changes.
 
-``` html
-GET http://<magento_host>/rest/V1/invoices?
+```
+GET <host>/rest/<store_code>/V1/invoices?
 searchCriteria[filter_groups][0][filters][0][field]=created_at&
 searchCriteria[filter_groups][0][filters][0][value]=2016-07-01 00:00:00&
 searchCriteria[filter_groups][0][filters][0][condition_type]=gt
@@ -98,8 +99,8 @@ searchCriteria[filter_groups][0][filters][0][condition_type]=gt
 
 The following example searches for all products whose names contain the string `Leggings` or `Parachute`. The instances of `%25` in the example are converted into the SQL wildcard character `%`.
 
-``` html
-GET http://<magento_host>/index.php/rest/V1/products?
+```
+GET <host>/rest/<store_code>/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=name&
 searchCriteria[filter_groups][0][filters][0][value]=%25Leggings%25&
 searchCriteria[filter_groups][0][filters][0][condition_type]=like&
@@ -136,8 +137,8 @@ The search returns 14 products that contain the string `Leggings` in the `name` 
 
 This sample searches for women's shorts that are size 31 and costs less than $30. In the CE sample data, women's shorts have a `sku` value that begins with `WSH`. The `sku` also contains the size and color, such as `WSH02-31-Yellow`.
 
-``` html
-GET http://<magento_host>/rest/V1/products?
+```
+GET <host>/rest/<store_code>/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=sku&
 searchCriteria[filter_groups][0][filters][0][value]=WSH%2531%25&
 searchCriteria[filter_groups][0][filters][0][condition_type]=like&
@@ -176,8 +177,8 @@ The query returns 9 items.
 
 This sample is similar the Logical AND sample. It searches the `sku`s for women's shorts (WSH%) or pants (WP%)in size 29. The system performs two logical ANDs to restrict the results to those that cost from $40 to $49.99
 
-``` html
-GET http://<magento_host>/rest/V1/products?
+```
+GET <host>/rest/<store_code>/V1/products?
 searchCriteria[filter_groups][0][filters][0][field]=sku&
 searchCriteria[filter_groups][0][filters][0][value]=WSH%2529%25&
 searchCriteria[filter_groups][0][filters][0][condition_type]=like&

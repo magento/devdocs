@@ -10,27 +10,27 @@ The `Magento\UrlRewrite` module converts URL rewrite requests to canonical URLs.
 
 You can use the `Magento\CmsUrlRewrite\Observer\ProcessUrlRewriteSavingObserver` class as the basis for saving URL rewrites. For deleting entries, create a `ProcessUrlRewriteDeleteObserver` class similar to the following:
 
-``` php
+```php
 /**
-    * Generate urls for UrlRewrite and save it in storage
-    *
-    * @param \Magento\Framework\Event\Observer $observer
-    * @return void
-    */
-   public function execute(EventObserver $observer)
-   {
-       /** @var \Magento\MyModule\Model\Page $myEntityPage  */
-       $page = $observer->getEvent()->getObject();
+ * Generate urls for UrlRewrite and save it in storage
+ *
+ * @param \Magento\Framework\Event\Observer $observer
+ * @return void
+ */
+public function execute(EventObserver $observer)
+{
+    /** @var \Magento\MyModule\Model\Page $myEntityPage  */
+    $page = $observer->getEvent()->getObject();
 
-       if ($page->isDeleted()) {
-           $this->urlPersist->deleteByData(
-               [
-                   UrlRewrite::ENTITY_ID => $page->getId(),
-                   UrlRewrite::ENTITY_TYPE => MyEntityPageUrlRewriteGenerator::ENTITY_TYPE,
-               ]
-           );
-       }
-   }
+    if ($page->isDeleted()) {
+        $this->urlPersist->deleteByData(
+            [
+                UrlRewrite::ENTITY_ID => $page->getId(),
+                UrlRewrite::ENTITY_TYPE => MyEntityPageUrlRewriteGenerator::ENTITY_TYPE,
+            ]
+        );
+    }
+}
 ```
 See [Events and observers]({{ page.baseurl }}/extension-dev-guide/events-and-observers.html) for more information about creating an observer.
 
@@ -40,24 +40,24 @@ Update the `graphql.xml` and `events.xml` file in your module's `etc` directory 
 
 * Add lines similar to the following in your module's `graphql.xml` file to define the enumeration. The `UrlRewriteGraphQl` module defines `UrlRewriteEntityTypeEnum`.
 
-  {% highlight xml %}
+ ```xml
   <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_GraphQl:etc/graphql.xsd">
     <type xsi:type="Enum" name="UrlRewriteEntityTypeEnum">
       <item name="my_entity">MY_ENTITY</item>
     </type>
   </config>
-  {% endhighlight %}
+ ```
 
 * Define two events similar to the following in your module's `events.xml` file.
 
-  {% highlight xml %}
+ ```xml
   <event name="mymodule_page_save_after">
     <observer name="process_url_rewrite_saving" instance="Magento\MyModuleRewrite\Observer\ProcessUrlRewriteSavingObserver" />
   </event>
   <event name="mymodule_page_delete_after">
     <observer name="process_url_rewrite_delete" instance="Magento\MyModuleRewrite\Observer\ProcessUrlRewriteDeleteObserver" />
   </event>
-  {% endhighlight %}
+ ```
 
 ## Related Topics
 

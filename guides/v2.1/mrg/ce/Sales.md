@@ -64,9 +64,9 @@ With this service you can:
     <tr>
       <td><code>items</code></td>
       <td>An array of order items that will be included to invoice. By default, the invoice will contain all order items.</td>
-      <td>Array of items with a format according to <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
+      <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
       <td>
-      {% highlight json %}
+     ```json
       [
           {
               "order_item_id": 1,
@@ -77,7 +77,7 @@ With this service you can:
           "qty": 0.5
           }
           ]
-      {% endhighlight %}
+     ```
       </td>
       <td>Optional (required, when invoice must contain particular order items.</td>
       <td><code>[]</code></td>
@@ -109,14 +109,14 @@ With this service you can:
     <tr>
       <td><code>comment</code></td>
       <td>The comment to add to an invoice. Specify a comment if <code>appendComment</code> is set to <code>true</code>.</td>
-      <td>A format according to <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
+      <td>A format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
       <td>
-      {% highlight json %}
+     ```json
       {
           "comment": "The first Invoice",
           "is_visible_on_front": true
       }
-      {% endhighlight %}
+     ```
       </td>
       <td>Optional</td>
       <td><code>null</code></td>
@@ -124,7 +124,7 @@ With this service you can:
     <tr>
       <td><code>arguments</code></td>
       <td>Additional arguments. Reserved for use by extension modules.</td>
-      <td>A format according to <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
+      <td>A format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
       <td>&nbsp;</td>
       <td>Optional</td>
       <td><code>null</code></td>
@@ -144,16 +144,16 @@ The service returns an identifier of the created Invoice.
 
 #### REST declaration
 
-[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/order/:orderId/invoice" method="POST">
     <service class="Magento\Sales\Api\InvoiceOrderInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -167,9 +167,9 @@ The service returns an identifier of the created Invoice.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Api/InvoiceOrderInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -179,9 +179,9 @@ The service returns an identifier of the created Invoice.
 
 {% collapsible Click to show/hide included code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Model/InvoiceOrder.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -189,11 +189,11 @@ The service returns an identifier of the created Invoice.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 
@@ -279,11 +279,11 @@ With this service you can:
       </td>
       <td>
         Array of items with a format according to <a href=
-        "{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+       ```json
         [
             {
                  "order_item_id": 1,
@@ -294,7 +294,7 @@ With this service you can:
             "qty": 0.5
             }
         ]
-        {% endhighlight %}
+       ```
       </td>
       <td>
         Optional (required, when a Credit Memo must contain
@@ -383,16 +383,16 @@ With this service you can:
       </td>
       <td>
         A format according to the <a href=
-        "{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+       ```json
         {
             "comment": "The first Credit Memo",
             "is_visible_on_front": true
         }
-        {% endhighlight %}
+       ```
       </td>
       <td>
         Optional
@@ -411,17 +411,17 @@ With this service you can:
       </td>
       <td>
         A format according to <a href=
-        "{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+       ```json
         {
         "shipping_amount": 10.00,
         "adjustment_positive": 5.00,
         "adjustment_negative": 5.00
         }
-        {% endhighlight %}
+       ```
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
         area. If shipping amount is not specified, then shipping
@@ -451,16 +451,16 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/invoice/:invoiceId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundInvoiceInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -474,9 +474,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Api/RefundInvoiceInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -486,9 +486,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Model/RefundInvoice.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -496,11 +496,11 @@ The service returns an identifier of a created Credit Memo.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 
@@ -583,11 +583,11 @@ With the RefundOrder service you can:
       </td>
       <td>
         Array of items with a format according to <a href=
-        "{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+       ```json
         [
             {
                  "order_item_id": 1,
@@ -598,7 +598,7 @@ With the RefundOrder service you can:
                  "qty": 0.5
             }
         ]
-        {% endhighlight %}
+       ```
       </td>
       <td>
         Optional (required, when a Credit Memo must contain
@@ -662,16 +662,16 @@ With the RefundOrder service you can:
       </td>
       <td>
         A format according to the <a href=
-        "{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+       ```json
         {
             "comment": "The first Credit Memo",
             "is_visible_on_front": true
         }
-        {% endhighlight %}
+       ```
       </td>
       <td>
         Optional
@@ -690,17 +690,17 @@ With the RefundOrder service you can:
       </td>
       <td>
         A format according to <a href=
-        "{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
         <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
       </td>
       <td>
-        {% highlight json %}
+       ```json
         {
         "shipping_amount": 10.00,
         "adjustment_positive": 5.00,
         "adjustment_negative": 5.00
         }
-        {% endhighlight %}
+       ```
         A parameter <code>shipping_amount</code>
         behaves like at the Credit Memo creation page in the Admin
         area. If shipping amount is not specified, then shipping
@@ -730,16 +730,16 @@ The service returns an identifier of a created Credit Memo.
 
 #### REST Declaration
 
-[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/order/:orderId/refund" method="POST">
     <service class="Magento\Sales\Api\RefundOrderInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -753,9 +753,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Api/RefundOrderInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -765,9 +765,9 @@ The service returns an identifier of a created Credit Memo.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Model/RefundOrder.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -775,11 +775,11 @@ The service returns an identifier of a created Credit Memo.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 
@@ -829,9 +829,9 @@ With the ShipOrder service you can:
     <tr>
       <td><code>items</code></td>
       <td>An array of order items included to a shipment. By default, the service will create a shipment for all order items.</td>
-      <td>Array of items with a format according to <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
+      <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
       <td>
-        {% highlight json %}
+       ```json
         [
             {
                 "order_item_id": 1,
@@ -842,7 +842,7 @@ With the ShipOrder service you can:
                 "qty": 0.5
             }
         ]
-        {% endhighlight %}
+       ```
       </td>
       <td>Optional (required, when a shipment document must contain particular order items)</td>
       <td><code>[]</code></td>
@@ -867,15 +867,15 @@ With the ShipOrder service you can:
       <td><code>comment</code></td>
       <td>A comment about a shipment.</td>
       <td>A format according to the
-        <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
+        <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
         interface.</td>
       <td>
-      {% highlight json %}
+     ```json
       {   
           "comment": "The first Invoice",
           "is_visible_on_front": true
       }
-      {% endhighlight %}
+     ```
       </td>
       <td> Optional </td>
       <td> <code>null</code> </td>
@@ -884,9 +884,9 @@ With the ShipOrder service you can:
       <td> <code>tracks</code> </td>
       <td> A list of track numbers attached to a shipment. </td>
       <td> Array of objects with a format according to
-        <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
+        <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
       <td>
-      {% highlight json %}
+     ```json
       [
           {
               "track_number": "132456789",
@@ -894,7 +894,7 @@ With the ShipOrder service you can:
               "carrier_code": "usps"
           }
       ]
-      {% endhighlight %}
+     ```
       </td>
       <td> Optional </td>
       <td> <code>[]</code> </td>
@@ -903,9 +903,9 @@ With the ShipOrder service you can:
       <td> <code>packages</code> </td>
       <td> A list of packages attached to a shipment. </td>
       <td> Array of objects with a format according to
-        <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
+        <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
       <td>
-      {% highlight json %}
+     ```json
       [
           {
               "extension_attributes":
@@ -919,7 +919,7 @@ With the ShipOrder service you can:
               }
            }
       ]
-      {% endhighlight %}
+     ```
       </td>
       <td>Optional</td>
       <td><code>[]</code></td>
@@ -929,7 +929,7 @@ With the ShipOrder service you can:
       <td>Additional arguments for the service. Can be used by
         extension modules.</td>
       <td>A format according to the
-        <a href="{{ site.mage2100url }}app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
+        <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
         interface.</td>
       <td>&nbsp;</td>
       <td>Optional</td>
@@ -950,16 +950,16 @@ The service returns the identifier of a created shipment.
 
 #### REST Declaration
 
-[`etc/webapi.xml`]({{ site.mage2100url }}app/code/Magento/Sales/etc/webapi.xml)
+[`etc/webapi.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/etc/webapi.xml)
 
-{% highlight xml %}
+```xml
 <route url="/V1/order/:orderId/ship" method="POST">
     <service class="Magento\Sales\Api\ShipOrderInterface" method="execute"/>
     <resources>
         <resource ref="Magento_Sales::sales" />
     </resources>
 </route>
-{% endhighlight %}
+```
 
 ### SOAP
 
@@ -973,9 +973,9 @@ The service returns the identifier of a created shipment.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Api/ShipOrderInterface.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -985,9 +985,9 @@ The service returns the identifier of a created shipment.
 
 {% collapsible Click to show/hide a code %}
 
-{% highlight php %}
+```php
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/2.1/app/code/Magento/Sales/Model/ShipOrder.php %}
-{% endhighlight %}
+```
 
 {% endcollapsible %}
 
@@ -995,11 +995,11 @@ The service returns the identifier of a created shipment.
 
 In case of failure, it returns an error object. Example in REST:
 
-{% highlight json %}
+```json
 {
     "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
-{% endhighlight %}
+```
 
 #### Extension points
 
@@ -1017,22 +1017,22 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 <!-- LINK DEFINITIONS -->
 
-[`\Magento\Sales\Api\CreditmemoRepositoryInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php
-[`\Magento\Sales\Api\OrderRepositoryInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Api/OrderRepositoryInterface.php
-[`\Magento\Sales\Model\Order\OrderStateResolverInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php
-[`\Magento\Sales\Api\ShipmentRepositoryInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php
-[`\Magento\Sales\Model\Order\CreditmemoDocumentFactory`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php
-[`\Magento\Sales\Model\Order\ShipmentDocumentFactory`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php
-[`\Magento\Sales\Model\Order\Creditmemo\NotifierInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
-[`\Magento\Sales\Model\Order\Shipment\NotifierInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
-[`\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php
-[`\Magento\Sales\Model\Order\Validation\RefundOrderInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php
-[`\Magento\Sales\Model\Order\Validation\ShipOrderInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php
-[`\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php
-[`\Magento\Sales\Api\InvoiceRepositoryInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php
-[`\Magento\Sales\Model\Order\InvoiceDocumentFactory`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php
-[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php
-[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php
-[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php
-[`\Magento\Sales\Model\Order\RefundAdapterInterface`]: {{ site.mage2100url }}app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php
+[`\Magento\Sales\Api\CreditmemoRepositoryInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/CreditmemoRepositoryInterface.php
+[`\Magento\Sales\Api\OrderRepositoryInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/OrderRepositoryInterface.php
+[`\Magento\Sales\Model\Order\OrderStateResolverInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/OrderStateResolverInterface.php
+[`\Magento\Sales\Api\ShipmentRepositoryInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/ShipmentRepositoryInterface.php
+[`\Magento\Sales\Model\Order\CreditmemoDocumentFactory`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/CreditmemoDocumentFactory.php
+[`\Magento\Sales\Model\Order\ShipmentDocumentFactory`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/ShipmentDocumentFactory.php
+[`\Magento\Sales\Model\Order\Creditmemo\NotifierInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
+[`\Magento\Sales\Model\Order\Shipment\NotifierInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Shipment/NotifierInterface.php
+[`\Magento\Sales\Model\Order\Validation\RefundInvoiceInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Validation/RefundInvoiceInterface.php
+[`\Magento\Sales\Model\Order\Validation\RefundOrderInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Validation/RefundOrderInterface.php
+[`\Magento\Sales\Model\Order\Validation\ShipOrderInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Validation/ShipOrderInterface.php
+[`\Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Shipment/OrderRegistrarInterface.php
+[`\Magento\Sales\Api\InvoiceRepositoryInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/InvoiceRepositoryInterface.php
+[`\Magento\Sales\Model\Order\InvoiceDocumentFactory`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/InvoiceDocumentFactory.php
+[`\Magento\Sales\Model\Order\Invoice\NotifierInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Invoice/NotifierInterface.php
+[`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php
+[`\Magento\Sales\Model\Order\PaymentAdapterInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php
+[`\Magento\Sales\Model\Order\RefundAdapterInterface`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php
 

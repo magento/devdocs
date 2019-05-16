@@ -14,7 +14,7 @@ As you contribute PRs, you gain [Contribution Points](https://devdocs.magento.co
 
 If you write and contribute a full topic, we will add your name (or your company's name) at the top of the DevDocs page and link it to your blog or website!
 
-## Get started 
+## Get started
 
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
 
@@ -28,12 +28,20 @@ If you write and contribute a full topic, we will add your name (or your company
 ![Contributing workflow](https://devdocs.magento.com/common/images/contribute-write-submit-pr.png)
 
 1. Create a new branch on your fork. Use a name that best describes the work, or references a GitHub issue number.
-1. Edit or create markdown (`.md`) files in your branch. 
+1. Edit or create markdown (`.md`) files in your branch.
 1. When ready, push your branch to your fork.
-1. Create a PR to the [magento/devdocs repo](https://github.com/magento/devdocs). Fill out as much info as possible and link any GitHub issues.
 
-The DevDocs team and Maintainers will review the PR and help with formatting and navigation. 
+### Create a pull request
 
+Create a PR to the [magento/devdocs repository](https://github.com/magento/devdocs). Fill out as much information as possible and link any GitHub issues.
+
+In general, you should use `master` as the base branch when creating a PR. If your contribution is related to a release that is in progress, use a version-specific integration branch, such as `develop`.
+
+Provide links to devdocs for the files you are changing. This is not required if the list is long.
+
+If you are updating an example from source code, include a link to the file in the repository.
+
+The DevDocs team and Maintainers will review the PR and help with formatting and navigation.
 
 **Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the PR provides a link. We require a signed form and agreement to the terms for contribution.
 
@@ -41,18 +49,19 @@ The DevDocs team and Maintainers will review the PR and help with formatting and
 
 ## Contribution guidelines
 
-Write content using [Kramdown](https://kramdown.gettalong.org/), which is a simple markup language. We use Kramdown, Liquid, and [Jekyll](https://jekyllrb.com/) to generate a static site hosted through [GH Pages](https://help.github.com/articles/what-is-github-pages/). Check [Templates](#templates) for examples of styles and markdown.
+Write content using [kramdown](https://kramdown.gettalong.org/), which is a simple markup language. We use kramdown, Liquid, and [Jekyll](https://jekyllrb.com/) to generate a static site hosted through [GH Pages](https://help.github.com/articles/what-is-github-pages/). Check [Templates](#templates) for examples of styles and markdown.
 
 You can update existing or add new topics in their respective Magento 2 versioned directories (2.1, 2.2, 2.3, and onward). If you need help finding a directory for your content, we can help in your PR.
 
 The following guidelines may answer most of your questions and help you get started:
 
-1.  Check [existing pull requests](https://github.com/magento/devdocs/pulls) and make sure you are not duplicating work!
-1.  For large contributions or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This may further prevent duplicate or unnecessary effort.
-1.  Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
+1. Check [existing pull requests](https://github.com/magento/devdocs/pulls) and make sure you are not duplicating work!
+1. For large contributions or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This may further prevent duplicate or unnecessary effort.
+1. [Chunk many small/medium changes](#tips-for-writing-content) into one or two PRs. This helps us to efficiently and effectively facilitate your contribution.
+1. Familiarize yourself with the existing documentation. Look through and search the guides to decide where to add your topics.
 
-    -   The DevDocs team can find the best home for your new topics and add it to the navigation.
-    -   If a topic has a symlink, you can remove it with Git commands and add a new file. Copy and paste a previous version of the topic to get started.
+    - The DevDocs team can find the best home for your new topics and add it to the navigation.
+    - If a topic has a symlink, you can remove it with Git commands and add a new file. Copy and paste a previous version of the topic to get started.
 
 ## Tips for writing content
 
@@ -60,13 +69,14 @@ Focus on the content with useful information, code samples, and important notes 
 
 Use the following guidelines to help you with the writing process:
 
--   Define the goal of your topic. What exactly do you want to teach the reader?
--   Make the title of your topic reflect the content.
--   Keep your sentences concise and try to separate conceptual information from procedural steps.
--   Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"The log captures commands, output..."_.
--   Use notes to alert readers about important details.
--   Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
--   Need help with markdown? See our [templates](#templates).
+- Define the goal of your topic. What exactly do you want to teach the reader?
+- Make the title of your topic reflect the content.
+- Keep your sentences concise. Separate conceptual information from procedural steps.
+- Batch several small changes into a single pull request (instead of separate ones) to ensure your contributions get approved and merged quickly. Have several typo fixes across several areas of documentation? Batch them into one PR.
+- Remember to use active voice (not passive), write in the present tense, and use a friendly tone in second person. For example, _"The log captures commands, output..."_.
+- Use notes to alert readers about important details.
+- Use cross-references to other topics if appropriate. We can help you with the syntax if it is not clear. The template provides an example you can use.
+- Need help with markdown? See our [templates](#templates).
 
 ### Preview your work on local
 
@@ -93,7 +103,6 @@ title: Continue with your installation
 ---
 ```
 
-
 > Key-value pair reference:
 
 | Property  | Description |
@@ -109,6 +118,7 @@ Enter as much information as you can including content corrections, steps to rep
 **Note:** Check the [existing issues](https://github.com/magento/devdocs/issues) on GitHub to see if someone has already reported the issue.
 
 You have a couple of options to enter an issue:
+
 - Have general feedback? Create an issue on [GitHub DevDocs](https://github.com/magento/devdocs/issues/new/choose).
 - Have feedback on a specific DevDocs page? Click the **Give us feedback** link at the top right of the page to report on the currently open topic.
 

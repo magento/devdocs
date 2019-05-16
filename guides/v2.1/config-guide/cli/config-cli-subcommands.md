@@ -15,8 +15,10 @@ functional_areas:
 1.  Log in to the Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2.  Change to the following directory:
 
-        cd <your Magento install dir>/bin
-
+    ```bash
+    cd <magento_root>/bin
+    ```
+    
     Examples:
 
       - Ubuntu: `cd /var/www/magento2/bin`
@@ -25,11 +27,11 @@ functional_areas:
 You can run the commands in any of the following ways:
 -   `php magento <command>`
 -   `./magento <command>`
--   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<your Magento install dir>/bin` to your system `PATH`)
+-   `magento <command>` (after [adding](http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables) `<magento_root>/bin` to your system `PATH`)
 
 ## Command summary {#config-cli-summary}
 
-The following table summarizes the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
+The following table summarizes some of the available commands. Commands are shown in summary form only; for more information about a command, click the link in the Command column.
 
 {:.bs-callout .bs-callout-info}
 Before you run any of these commands, you must either [install the Magento application]({{ page.baseurl }}/install-gde/install/cli/install-cli-install.html) or [enable some modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).

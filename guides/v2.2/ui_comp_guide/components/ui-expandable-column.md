@@ -43,7 +43,7 @@ The Expandable Column component can be used in {% glossarytooltip 29ddb393-ca22-
 
 Component's options are set in the configuration `.xml` file as follows:
 
-{% highlight xml %}
+```xml
 <column name="ids" class="Magento\Ui\Component\MassAction\Columns\Column">
     <argument name="data" xsi:type="array">
         <item name="options" xsi:type="object">Magento\Catalog\Model\Product\Attribute\Source\Status</item>
@@ -54,7 +54,7 @@ Component's options are set in the configuration `.xml` file as follows:
         </item>
     </argument>
 </column>
-{% endhighlight %}
+```
 
 ## Dependencies
 
@@ -62,9 +62,9 @@ This component has a dependency on the Column component, `<Magento_Ui_module_dir
 
 ## Source files
 
-- [`<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
-- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
+- [`<Magento_Ui_module_dir>/view/base/web/js/grid/columns/expandable.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/columns/expandable.js)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable.html)
+- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/cells/expandable/content.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/cells/expandable/content.html)
 
 
 ### Methods and events

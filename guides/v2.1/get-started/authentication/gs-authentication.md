@@ -28,7 +28,7 @@ User type | Accessible resources (defined in webapi.xml)
 Administrator or Integration | Resources for which administrators or integrators are authorized. For example, if administrators are authorized for the `Magento_Customer::group` resource, they can make a `GET /V1/customerGroups/:id` call.
 Customer | Resources with `anonymous` or `self` permission
 Guest user | Resources with `anonymous` permission
-{:style="table-layout:auto;"}
+
 
 ### Relation between acl.xml and webapi.xml
 
@@ -37,13 +37,13 @@ The <code>acl.xml</code> file defines the access control list (ACL) for a given 
 
 #### Sample customer acl.xml
 
-For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2000url }}app/code/Magento/Customer/etc/acl.xml).
+For example, account management, customer configuration, and customer group resource permissions are defined in the Customer module's [`acl.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/acl.xml).
 
 When a developer creates the Web API configuration file (<code>webapi.xml</code>), the permissions defined in acl.xml are referenced to create access rights for each API resource.
 
 #### Sample (truncated) customer webapi.xml
 
-``` xml
+```xml
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <!-- Customer Group -->
@@ -69,7 +69,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
             <resource ref="anonymous"/>
         </resources>
     </route>
-    <route url="/V1/customers/:id" method="PUT">
+    <route url="/V1/customers/:customerId" method="PUT">
         <service class="Magento\Customer\Api\CustomerRepositoryInterface" method="save"/>
         <resources>
             <resource ref="Magento_Customer::manage"/>

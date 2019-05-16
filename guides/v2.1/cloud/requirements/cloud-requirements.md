@@ -1,25 +1,6 @@
 ---
 group: cloud-guide
 title: Technologies and requirements
-redirect_from:
-  - /guides/v2.0/cloud/discover-tools.html
-  - /guides/v2.1/cloud/discover-tools.html
-  - /guides/v2.2/cloud/discover-tools.html
-  - /guides/v2.0/cloud/cloud-requirements.html
-  - /guides/v2.1/cloud/cloud-requirements.html
-  - /guides/v2.2/cloud/cloud-requirements.html
-  - /guides/v2.0/cloud/cloud-requirements-git.html
-  - /guides/v2.1/cloud/cloud-requirements-git.html
-  - /guides/v2.2/cloud/cloud-requirements-git.html
-  - /guides/v2.0/cloud/cloud-requirements-license.html
-  - /guides/v2.1/cloud/cloud-requirements-license.html
-  - /guides/v2.2/cloud/cloud-requirements-license.html
-  - /guides/v2.0/cloud/requirements/cloud-requirements-license.html
-  - /guides/v2.1/cloud/requirements/cloud-requirements-license.html
-  - /guides/v2.2/cloud/requirements/cloud-requirements-license.html
-  - /guides/v2.0/cloud/requirements/cloud-requirements-git.html
-  - /guides/v2.1/cloud/requirements/cloud-requirements-git.html
-  - /guides/v2.2/cloud/requirements/cloud-requirements-git.html
 functional_areas:
   - Cloud
   - Install
@@ -72,17 +53,20 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
 
-This software is *not* upgradable but versions for the following software is configurable:
+You cannot upgrade the software, but you can configure the following services:
 
-* [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) 5.5, 5.6, and 7.0
-* [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html) 5.6 and 5.7
-* [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html) 2.8 and 3.0
-* [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html) 3.5
-* [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html) 1.4, 1.7, and 2.4
+* [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html) 
+* [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
+* [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
+* [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
+* [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)
 
-For Staging and Production, you will use Fastly for CDN and caching. We recommend installing Fastly module 1.2.33 or later. For details, see [Fastly in Cloud]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html).
+{:.bs-callout .bs-callout-info}
+See [Magento 2.1.x technology stack requirements]({{ page.baseurl }}/install-gde/system-requirements-tech.html) for the latest software version compatibility information. 
 
-For detailed information on supported versions and extensions, see the following information. These files allow you to configure software versions you want to use in your implementation.
+For Staging and Production environments, you use the Fastly CDN module for Magento 2 for CDN and caching services. See [Configure Fastly services]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html#fastly-cdn-module-for-magento-2).
+
+For information about configuring the software versions to use in your implementation, see the following {{ site.data.var.ece }} configuration files:
 
 *	[`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 *	[`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)
@@ -103,13 +87,16 @@ We walk you through everything you need to do and know.
 Before you test any custom code in your local {{site.data.var.ee}} environment, you must do all of the following:
 
 *	For Pro, set the database [`auto_increment_increment` to 3]({{ page.baseurl }}/cloud/before/before-workspace-magento-prereqs.html#database)
-*	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
+*	Test with the correct file permissions in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
 *	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
 *	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+
+{:.bs-callout .bs-callout-info}
+{{ site.data.var.ece }} supports production and maintenance modes only.
 
 ## Development and testing {#cloud-req-devtest}
 

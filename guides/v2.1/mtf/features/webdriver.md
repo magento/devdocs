@@ -29,6 +29,7 @@ To set up the Facebook web driver, use the following steps:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 composer update
 ```
@@ -51,6 +52,7 @@ To setup the custom web driver, follow:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 composer update
 ```

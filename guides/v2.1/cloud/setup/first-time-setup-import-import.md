@@ -34,7 +34,7 @@ Create a remote Git reference from your Cloud Git repository to the repository c
 
 1.  Log in to your local {{site.data.var.ece}} development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
-1.  Copy `composer.json` to a _non-tracked directory_ so it doesn't get overwritten.
+1.  Copy `composer.json` to a _non-tracked directory_ so it does not get overwritten.
 
     ```
     cp composer.json ../composer.json.cloud
@@ -251,7 +251,7 @@ To add your {{site.data.var.ee}} encryption key:
 1.  Save your changes to `env.php` and exit the text editor.
 
     {:.bs-callout .bs-callout-info}
-    Make sure to add this key to the `env.php` file for all environments: Integration, Staging, and Production.
+    You must add this key to the `env.php` file for all environments: Integration, Staging, and Production.
 
 ## Import media {#media}
 
@@ -279,9 +279,15 @@ To import media files into your Cloud environment:
 
 On the Cloud environment, enter the following commands in the order shown:
 
-```
+```bash
 bin/magento setup:upgrade
+```
+
+```bash
 bin/magento magento setup:static-content:deploy
+```
+
+```bash
 bin/magento cache:clean
 ```
 
@@ -298,7 +304,7 @@ To verify everything imported properly, perform the following tasks in your loca
     ```
 
 1.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the username and password of your {{site.data.var.ee}} system.
-1.  Make sure settings in the Admin are the same as your {{site.data.var.ee}} system.
+1.  Verify that the settings in the Admin are the same as your {{site.data.var.ee}} system.
 1.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
-1.  Make sure categories, products, and so on display as you expect.
+1.  Confirm that categories, products, and other content display as expected.
 1.  Test everything thoroughly.

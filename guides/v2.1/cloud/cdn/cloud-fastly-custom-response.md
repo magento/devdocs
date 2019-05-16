@@ -89,7 +89,7 @@ Verify that the modified source displays correctly in the browser. Then, add the
 
 ## Customize the WAF error page
 
-Customers see the following default WAF error page when a request to the Fastly origin fails with a `403 Forbidden` error  caused by a [WAF](({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocking event.
+Customers see the following default WAF error page when a request to the Fastly origin fails with a `403 Forbidden` error  caused by a [WAF]({{ page.baseurl }}/cloud/cdn/fastly-waf-service.html) blocking event.
 
 ![WAF error page]
 

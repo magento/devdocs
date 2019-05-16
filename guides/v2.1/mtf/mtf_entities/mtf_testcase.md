@@ -25,7 +25,7 @@ The `__prepare()` method can be useful to prepare the unchangeable data that is 
 
 This method is called one time only during the test launch and is optional to use. `__prepare` can return an array of arguments which can be used as arguments in the `test()` method of a test case and the `processAssert()` method in [constraints][]. The following example creates and returns the `$customer` fixture. 
 
-``` php?start_inline=1
+```php
 public function __prepare(Customer $customer)
 {
     $customer->persist();
@@ -39,7 +39,7 @@ A returned argument `$customer` is available in the test and in [constraints][].
 
 The `__inject()` method is used to inject data in a test (usually to initialize a page). For an example:
 
-``` php?start_inline=1
+```php
 public function __inject(
     CatalogProductIndex $productGrid,
     CatalogProductEdit $editProductPage
@@ -70,10 +70,11 @@ In the following example, the test includes preconditions and test steps. Precon
  *
  * @param CatalogProductSimple $initialProduct
  * @param CatalogProductSimple $product
+ * @param Store|null $store
  * @param string $configData
  * @return array
  */
-public function test(CatalogProductSimple $initialProduct, CatalogProductSimple $product, $configData = '')
+public function test(CatalogProductSimple $initialProduct, CatalogProductSimple $product, Store $store = null, $configData = '')
 {
     $this->configData = $configData;
     // Preconditions
@@ -84,17 +85,28 @@ public function test(CatalogProductSimple $initialProduct, CatalogProductSimple 
     $category = $product->hasData('category_ids') && $product->getCategoryIds()[0]
         ? $product->getDataFieldConfig('category_ids')['source']->getCategories()[0]
         : $initialCategory;
-    $this->objectManager->create(
-        'Magento\Config\Test\TestStep\SetupConfigurationStep',
+    if ($store) {
+        $store->persist();
+        $productName[$store->getStoreId()] = $product->getName();
+    }
+    $this->testStepFactory->create(
+        \Magento\Config\Test\TestStep\SetupConfigurationStep::class,
         ['configData' => $configData]
     )->run();
     // Steps
     $filter = ['sku' => $initialProduct->getSku()];
     $this->productGrid->open();
     $this->productGrid->getProductGrid()->searchAndOpen($filter);
+    if ($store) {
+        $this->editProductPage->getFormPageActions()->changeStoreViewScope($store);
+    }
     $this->editProductPage->getProductForm()->fill($product);
     $this->editProductPage->getFormPageActions()->save();
-    return ['category' => $category];
+    return [
+        'category' => $category,
+        'stores' => isset($store) ? [$store] : [],
+        'productNames' => isset($productName) ? $productName : [],
+    ];
 }
 
 ```
@@ -107,7 +119,7 @@ When [constraints][] of the variation have been performed, you can use the `tear
 
 For example, the following code deletes a sales rule after each variation:
 
-``` php?start_inline=1
+```php
 public function tearDown()
 {
     $this->promoQuoteIndex->open();
@@ -156,7 +168,7 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 [processAssert()]:{{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
 [constraints]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
 [fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
-[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
+[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
 <!-- ABBREVIATIONS -->
 

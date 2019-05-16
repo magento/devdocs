@@ -24,9 +24,9 @@ It’s what we do.
 
 ## How to get the Magento software {#install-get-software}
 
-Check the availability of exciting new features and releases, and learn how you can obtain them, on our [Magento 2.3 product availability page](https://devdocs.magento.com/availability.html).
+Check the availability of exciting new features and releases, and learn how you can obtain them, on our [Magento 2.3 product availability page](https://devdocs.magento.com/release/#availability).
 
-Consult the following table for how to get started installing {{site.data.var.ce}} or {{site.data.var.ee}}.
+Consult the following table for getting started with installing {{site.data.var.ce}} or {{site.data.var.ee}}.
 
 <table>
 	<tbody>

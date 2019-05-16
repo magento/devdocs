@@ -256,7 +256,7 @@ The `<action>` instruction is deprecated. If the method implementation allows, u
 
 Calls public methods on the block API.
 
-**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.</p>
+**Details:** Used to set up the execution of a certain method of the block during block generation; the `<action>` node must be located in the scope of the `<block>` node.
 
 Example:
 
@@ -388,7 +388,7 @@ Sets the declared block or container element as a child of another element in th
 ### remove {#fedg_layout_xml-instruc_ex_rmv}
 
 `<remove>` is used only to remove the static resources linked in a page `<head>` section.
-For removing blocks or containers, use the `<remove>` attribute for [<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
+For removing blocks or containers, use the `remove` attribute for [<referenceBlock>` and `<referenceContainer>`](#fedg_layout_xml-instruc_ex_ref).
 
 Example of usage:
 
@@ -505,5 +505,5 @@ Example:
 ```
 
 
-[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
-[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml
+[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml
+[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/html/title.phtml

@@ -21,6 +21,7 @@ To apply any changes in fixture, run generate tool:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
@@ -38,6 +39,7 @@ Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 ```
@@ -91,6 +93,7 @@ To generate PHP classes, enter the following commands in the order shown:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
@@ -179,6 +182,7 @@ To apply the changes, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
@@ -229,6 +233,7 @@ To apply changes, enter following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
@@ -301,8 +306,8 @@ class LayoutUpdates extends DataSource
 ```
 
 It is important to note that you should mention repository in data source class to use it for fixture field:
-   
-``` php
+
+```php
 $this->data = $repositoryFactory->get($this->params['repository'])->get($data['dataset']);
 ```
 
@@ -311,9 +316,10 @@ To apply the changes, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
-```   
+```
 
 ## Merge fixtures {#mtf_fixture_merge}
 
@@ -337,6 +343,7 @@ To apply the changes, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
@@ -371,7 +378,7 @@ To generate your new fixture PHP class, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
-

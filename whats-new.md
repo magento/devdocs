@@ -24,8 +24,15 @@ redirect_from:
 
 ## {{ group.name }}
 
-{:style="table-layout:auto;"}
+
 Description |	Versions |	Type	| Date
 ---|---|---|---{% for item in group.items %}
-{{ item.description }} | {{ item.versions }} | {{ item.type }} | {{ item.date | date: "%B %e" }}{% endfor %}
+{{ item.description }} | {{ item.versions }} | {{ item.type }} |
+{%- if item.link -%}
+[{{ item.date | date: "%B&nbsp;%e" }}]({{ item.link }})
+{%- else -%}
+{{ item.date | date: "%B&nbsp;%e" }}
+{%- endif -%}
+{% endfor %}
+
 {% endfor %}
