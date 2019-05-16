@@ -28,7 +28,7 @@ To install memcached on CentOS, perform the following tasks as a user with `root
 {:.bs-callout .bs-callout-info}
 The syntax of the preceding commands might depend on what package repositories you use. For example, if you use webtatic and PHP 5.6, enter <code>yum install -y php56w-pecl-memcache</code>. Use `yum search memcache|grep php` to find the appropriate package name.
 
-1. Change the memcached configuration setting for `CACHESIZE` and `OPTIONS`:
+2. Change the memcached configuration setting for `CACHESIZE` and `OPTIONS`:
 
     1. Open `/etc/sysconfig/memcached` in a text editor.
     1. Locate the value for `CACHESIZE` and change it to at least 1GB. For example

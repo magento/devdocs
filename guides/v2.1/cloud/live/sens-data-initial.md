@@ -53,7 +53,7 @@ To change locale and static file optimization settings:
 1. In the right pane, expand **Locale Options**.
 1. From the **Locale** list, change the locale. You can change it back later.
 
-![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
+    ![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
 
 1. Click **Save Config**.
 1. In the left navigation pane, click **Advanced** > **Developer**.
@@ -131,16 +131,16 @@ To verify your configuration changes:
 2. Log back in to the Magento Admin.
 3. Click **Stores** > Settings > **Configuration** > General > **General**.
 4. In the right pane, expand **Locale Options**.
+   Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
 
-Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
-
-![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
+    ![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
 5. In the left navigation pane, click Advanced > **Developer**.
 6. In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**.
 
-Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
+    Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
 
-![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
+    ![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
+
 7. Log out of the Magento Admin.
 
 ## Change and update system-specific configuration settings {#modify}

@@ -47,6 +47,7 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
    * [PHP (Ubuntu)]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html)
    * [PHP (CentOS)]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
    * MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
+
 3. ust as importantly, set up the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
 4. Switch to the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 
@@ -92,11 +93,11 @@ The following example shows how to install using the command line with the follo
 * Default currency is U.S. dollars
 * Default time zone is U.S. Central (America/Chicago)
 
-    php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
-    --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
-    --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
-    --admin-user=admin --admin-password=admin123 --language=en_US \
-    --currency=USD --timezone=America/Chicago --use-rewrites=1
+      php /var/www/html/magento2/bin/magento setup:install --base-url=http://192.0.2.5/magento2/ \
+      --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+      --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+      --admin-user=admin --admin-password=admin123 --language=en_US \
+      --currency=USD --timezone=America/Chicago --use-rewrites=1
 
 Optionally switch to [developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
@@ -134,34 +135,34 @@ To run the Web Setup Wizard:
 
 1. At the welcome page, click **Agree and Setup Magento**.
 
-![You must accept the license agreement to install the Magento software]({{ site.baseurl }}/common/images/install_qr_wizard-welcome.png){:width="200px"}
+    ![You must accept the license agreement to install the Magento software]({{ site.baseurl }}/common/images/install_qr_wizard-welcome.png){:width="200px"}
 
-1. Step 1: Readiness Check verifies your system is ready to install the Magento software.
+1. Readiness Check verifies your system is ready to install the Magento software.
 
     Click **Start Readiness Check**
 
     ![The Readiness Check makes sure your system is ready for the Magento software]({{ site.baseurl }}/common/images/install_qr_readiness.png){:width="400px"}
 
-  * If the readiness check passes, click **Next** and continue with the next step.
-  * If the readiness check fails, see [Readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html)
+    * If the readiness check passes, click **Next** and continue with the next step.
+    * If the readiness check fails, see [Readiness check issues]({{ page.baseurl }}/install-gde/trouble/readiness/tshoot_rc_main.html)
 
-1. Step 2: Add a Database enables you to set up your Magento database.
+1. Add a Database enables you to set up your Magento database.
 
     ![Set up your Magento database]({{ site.baseurl }}/common/images/install_qr_database.png){:width="400px"}
 
-1. Step 3: Web Configuration enables you to enter the storefront and Magento Admin URLs.
+1. Web Configuration enables you to enter the storefront and Magento Admin URLs.
 
     ![Enter your storefront and Magento Admin URLs]({{ site.baseurl }}/common/images/install_qr_web.png){:width="400px"}
 
-1. Step 4: Customize Your Store enables you to enter a default store currency, time zone, and language.
+1. Customize Your Store enables you to enter a default store currency, time zone, and language.
 
     ![Customize the store's language, time zone, currency]({{ site.baseurl }}/common/images/install_qr_store.png){:width="400px"}
 
-1. Step 5: Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.
+1. Create Admin Account enables you to set up a Magento administrator. This user can perform all actions in the Magento Admin.
 
     ![Create a Magento administrator account]({{ site.baseurl }}/common/images/install_qr_admin.png){:width="400px"}
 
-1. Step 6: Install starts the installation when you click **Install Now**.
+1. Install starts the installation when you click **Install Now**.
 
     You can optionally expand **Console Log** to see installation messages while the installation is in progress.
 

@@ -35,6 +35,8 @@ For pre-release versions, the format is:
 
 `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`
 
+|||
+|--|--|
 | `alpha`, `beta` or `rc` | Stability indicators, as described in the [`version_compare()`][php-version-compare]{:target="_blank"} specification|
 | `n` | An increment number to distinguish releases of the non-stable versions |
 

@@ -40,11 +40,11 @@ Update installation dependencies as follows:
 
     CentOS:
 
-      cd /var/www/html/magento2 && composer install
+        cd /var/www/html/magento2 && composer install
 
     Ubuntu:
 
-      cd /var/www/magento2 && composer install
+        cd /var/www/magento2 && composer install
 
     This command updates package dependencies and can take a few minutes to complete.
 

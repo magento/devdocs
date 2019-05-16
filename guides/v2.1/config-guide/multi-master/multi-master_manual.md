@@ -73,11 +73,11 @@ Create sales and OMS quote databases as follows:
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
-    create database magento_quote;
-    GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
+        create database magento_quote;
+        GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
 
-    create database magento_sales;
-    GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
+        create database magento_sales;
+        GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
 
 1. Enter `exit` to quit the command prompt.
 
@@ -536,7 +536,6 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'chec
 Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` sections to it as follows:
 
 ```php
-
 'resource' =>
   array (
     'default_setup' =>
