@@ -58,7 +58,7 @@ You need Magento authentication keys to install Magento in your local developmen
 
 1. Click **Access Keys** under _My Products_ in the _Marketplace_ tab.
 
-  ![Click Access Keys]({{ site.baseurl }}/common/images/cloud_access-key.png)
+   ![Click Access Keys]({{ site.baseurl }}/common/images/cloud_access-key.png)
 
 1. Click **Create A New Access Key**.
 

@@ -64,7 +64,7 @@ To change locale and static file optimization settings:
 1. From the **Merge CSS Files** list, click **No**.
 1. From the **Minify CSS Files** list, click **No**.
 
-![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
+    ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
 
 1. Click **Save Config**.
 1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
@@ -180,20 +180,19 @@ To change values in the Integration environment Magento Admin:
 
 1. If you haven't done so already, log out of the Integration Admin.
 1. Log in to the Integration Admin.
+   For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
+1. Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
+1. In the right pane, expand **Template Settings**.
+1. Clear the **Use default value** checkbox next to the **Minify Html** list.
+1. From the **Minify Html** list, click **Yes**.
+1. In the right pane, expand **CSS Settings**.
+1. From the **Merge CSS Files** list, click **Yes**.
+1. From the **Minify CSS Files** list, click **Yes**.
 
-For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
-4. Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
-5. In the right pane, expand **Template Settings**.
-6. Clear the **Use default value** checkbox next to the **Minify Html** list.
-7. From the **Minify Html** list, click **Yes**.
-5. In the right pane, expand **CSS Settings**.
-6. From the **Merge CSS Files** list, click **Yes**.
-7. From the **Minify CSS Files** list, click **Yes**.
-
-![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_reset-minify.png){:width="550px"}
-8. Click **Save Config**.
-9. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
-10. Log out of the Magento Admin.
+    ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_reset-minify.png){:width="550px"}
+1. Click **Save Config**.
+1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. Log out of the Magento Admin.
 
 ### Generate a new version of config.local.php {#regenerate}
 

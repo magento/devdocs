@@ -66,9 +66,9 @@ Create sales and OMS quote databases as follows:
 1. Log in to your database server as any user.
 1. Enter the following command to get to a MySQL command prompt:
 
-```bash
-mysql -u root -p
-```
+    ```bash
+    mysql -u root -p
+    ```
 
 1. Enter the MySQL `root` user's password when prompted.
 1. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
@@ -93,9 +93,9 @@ mysql -u root -p
     exit
     ```
 
-```bash
-mysql -u magento_quote -p
-```
+    ```bash
+    mysql -u magento_quote -p
+    ```
 
     ```bash
     mysql -u magento_sales -p

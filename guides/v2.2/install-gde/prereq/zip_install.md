@@ -57,16 +57,16 @@ To transfer the Magento software archive to your server:
 1. Change to the web server docroot or the virtual host directory.
 1. Create a subdirectory for the Magento software.
 
-If you set up a virtual host, the subdirectory name must match the name in your virtual host.
+    If you set up a virtual host, the subdirectory name must match the name in your virtual host.
 
-For example,
+    For example,
 
-    mkdir magento2ce
-    mkdir magento2ee
+        mkdir magento2ce
+        mkdir magento2ee
 
-You can also use a generic directory name
+    You can also use a generic directory name
 
-    mkdir magento2
+        mkdir magento2
 
 1. Copy the Magento archive to that directory.
 

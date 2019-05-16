@@ -38,17 +38,17 @@ Update installation dependencies as follows:
 1. Log in to your Magento server as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} or [switch to that user]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2. Change to the Magento installation directory and run `composer install`. Examples:
 
-  CentOS:
+    CentOS:
 
-    cd /var/www/html/magento2 && composer install
+      cd /var/www/html/magento2 && composer install
 
-  Ubuntu:
+    Ubuntu:
 
-    cd /var/www/magento2 && composer install
+      cd /var/www/magento2 && composer install
 
-  This command updates package dependencies and can take a few minutes to complete.
+    This command updates package dependencies and can take a few minutes to complete.
 
-  The following error might display:
+The following error might display:
 
 ```terminal
 [Composer\Downloader\TransportException]
