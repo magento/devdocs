@@ -181,7 +181,7 @@ The element that triggers the modal.
 
 ### `type` {#modal_type}
 
-The type of window: popup or slide.
+The type of window: popup.
 
 **Type**: String 
 
