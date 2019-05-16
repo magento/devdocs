@@ -23,6 +23,12 @@ The following table defines the `zip` node attributes:
 --- | --- | ---
 `countryCode` | Yes | The country code (Alpha-2 format) for which the zip is defined
 
+```xml
+    <zip countryCode="US">
+        <!-- Here we add the zip codes -->
+    </zip>
+```
+
 The following table defines the `code` node attributes:
 
  Attribute name | Required | Description
