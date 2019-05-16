@@ -7,6 +7,7 @@ The `setPaymentMethodOnCart` mutation defines which payment method to apply to t
 
 Title | Code
 --- | ---
+Authorize.Net | `authorizenet_acceptjs`
 Bank Transfer Payment | `banktransfer`
 Cash on Delivery | `cashondelivery`
 Check / Money order | `checkmo`
@@ -20,6 +21,10 @@ Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, 
 `mutation: {setPaymentMethodOnCart(input: SetPaymentMethodOnCartInput): SetPaymentMethodOnCartOutput}}`
 
 ## Example usage
+
+### Auth
+
+### Offline payment method
 
 The following example assigns the `banktransfer` payment method to the specified cart.
 
@@ -72,6 +77,18 @@ Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer’s cart
 `payment_method` | [PaymentMethodInput!](#PaymentMethodInput) | An object containing the payment method code
+
+### AuthorizenetInput attributes {#AuthorizenetInput}
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`cc_last_4` | Int! | The last four digits of the credit or debit card
+`opaque_data_descriptor` | String! | Authorize.Net's description of the transaction request
+`opaque_data_value` | String! | The nonce returned by Authorize.Net
+
+### PaymentMethodAdditionalDataInput attributes {#PaymentMethodAdditionalDataInput}
+
+`authorizenet_acceptjs` | [AuthorizenetInput](#AuthorizenetInput) | Defines the required attributes for Authorize.Net payments
 
 ### PaymentMethodInput attributes {#PaymentMethodInput}
 
