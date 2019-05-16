@@ -202,6 +202,9 @@ Your functional tests should include events that cause exceptions. Since your te
 - The body of the test
 - The test function annotation
 
+{: .bs-callout .bs-callout-tip }
+We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annonations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
+
 ### Exception messages in the body of a test
 
 The following examples show two ways you can use the `expectExceptionMessage` function to define an expected exception message.
