@@ -712,12 +712,12 @@ With the RefundOrder service you can:
 }
 ```
 
-    A parameter shipping_amount</code>
-    behaves like at the Credit Memo creation page in the Admin
-    area. If shipping amount is not specified, then shipping
-    amount from a target Invoice is refunded automatically. To
-    specify a shipping amount, consider shipping tax displays
-    settings.
+A parameter shipping_amount</code>
+behaves like at the Credit Memo creation page in the Admin
+area. If shipping amount is not specified, then shipping
+amount from a target Invoice is refunded automatically. To
+specify a shipping amount, consider shipping tax displays
+settings.
   </td>
   <td>
     Optional
