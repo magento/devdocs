@@ -276,7 +276,7 @@ The result is three tabs with content, where the last tab is disabled based on i
 ![Tabs Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/tabs-widget-result.png)
 
 [Magento collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
-[lib/web/mage/tabs.js]: {{site.mage2000url}}lib/web/mage/tabs.js
+[lib/web/mage/tabs.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/tabs.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [collapsible]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [jQuery.animate()]: http://api.jquery.com/animate/

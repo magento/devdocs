@@ -60,7 +60,7 @@ For example, the value of the configuration path `web/secure/base_url` must be v
 Backend models are the mechanism for processing changes in system configuration.
 You define backend modules in `<module_name>/adminhtml/system.xml`.
 
-All backend models must extend the [`Magento\Framework\App\Config\Value`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Config/Value.php) class.
+All backend models must extend the [`Magento\Framework\App\Config\Value`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Config/Value.php) class.
 
 When we import backend models, we don't save the configuration values.
 

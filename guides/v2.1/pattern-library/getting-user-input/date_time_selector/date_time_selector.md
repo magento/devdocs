@@ -200,4 +200,4 @@ When the datepicker is active a calendar day of the week should always have focu
 
 ## Implementation
 
-Date and time selectors are implemented using the standard [jQuery UI datepicker widget](https://jqueryui.com/datepicker/) and Magento [addon]({{ site.mage2200url }}lib/web/jquery/jquery-ui-timepicker-addon.js).
+Date and time selectors are implemented using the standard [jQuery UI datepicker widget](https://jqueryui.com/datepicker/) and Magento [addon]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/jquery/jquery-ui-timepicker-addon.js).
