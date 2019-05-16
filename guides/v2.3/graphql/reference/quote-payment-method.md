@@ -22,7 +22,53 @@ Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, 
 
 ## Example usage
 
-### Auth
+### Authorize.Net
+
+The following example assigns the `authorizenet_acceptjs` payment method to the specified cart.
+
+**Request**
+
+```text
+mutation {
+  setPaymentMethodOnCart(input: {
+    cart_id: "lvdqOLzryManseE2artECZuPClxFgG1o"
+    payment_method: {
+      code: "authorizenet_acceptjs"
+      additional_data: {
+        authorizenet_acceptjs: {
+          cc_last_4: 1111
+          opaque_data_descriptor: "COMMON.ACCEPT.INAPP.PAYMENT"
+          opaque_data_value: "<nonce_value>"
+          }
+        }
+      }
+  }) {
+    cart {
+      selected_payment_method {
+        code
+        title
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "setPaymentMethodOnCart": {
+      "cart": {
+        "selected_payment_method": {
+          "code": "authorizenet_acceptjs",
+          "title": "Credit Card (Authorize.Net)"
+        }
+      }
+    }
+  }
+}
+```
 
 ### Offline payment method
 
