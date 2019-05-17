@@ -289,10 +289,10 @@ bin/magento setup:upgrade
 
 ## Screenshots
 
-### Custom shipping carrier. Backend settings.
+### Custom shipping carrier backend settings
 
-![Custom shipping carrier. Backend settings.]({{ page.baseurl }}/howdoi/checkout/images/checkout-add-custom-carrier-01.png)
+![Custom shipping carrier backend settings]({{ page.baseurl }}/howdoi/checkout/images/checkout-add-custom-carrier-01.png)
 
-### Custom shipping carrier. Checkout.
+### Custom shipping carrier on checkout
 
-![Custom shipping carrier. Checkout.]({{ page.baseurl }}/howdoi/checkout/images/checkout-add-custom-carrier-02.png)
+![Custom shipping carrier on checkout]({{ page.baseurl }}/howdoi/checkout/images/checkout-add-custom-carrier-02.png)
