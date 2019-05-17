@@ -14,16 +14,16 @@ functional_areas:
 
 This topic describes how to add a custom shipping carrier.
 
-To add new shipping carrier to the Magento checkout, do the following:
+To add a new shipping carrier to the Magento checkout:
 
 1. [Create a new module](#create-module)
-2. [Add carrier configuration](#create-configuration)
-3. [Create carrier model](#carrier-model)
-4. [Enable module](#enable-module)
+2. [Add the carrier configuration](#create-configuration)
+3. [Create the carrier model](#carrier-model)
+4. [Enable the module](#enable-module)
 
 ## Step 1: Create a new module {#create-module}
 
-Let's call an example module as `Vendor_CustomShipping`.
+The example module for use here is `Vendor_CustomShipping`.
 
 ### Source code of `app/code/Vendor/CustomShipping/registration.php`
 
