@@ -44,7 +44,7 @@ The following diagram shows the contribution workflow:
 
 1. Complete the pull request template.
 
-   We will close your pull request if you fail to complete the template.
+   **We will close your pull request if you fail to complete the template.**
 
 1. After creating a pull request, a DevDocs staff member or maintainer will review it and may ask you to make revisions.
 
@@ -54,10 +54,10 @@ The following diagram shows the contribution workflow:
 
 The following guidelines may answer most of your questions and help you get started:
 
-- Write content using markdown. See the [Templates](#templates) section for examples.
+- Write content using Markdown. See the [Templates](#templates) section for examples.
 - Review existing [pull requests](https://github.com/magento/devdocs/pulls) and [issues](https://github.com/magento/devdocs/issues) to avoid duplicating work.
 - For large contributions, or changes that include multiple files, [open an issue](#report-an-issue) and discuss it with us first. This helps prevent duplicate or unnecessary work.
-- Do not make global find/replace type changes without first creating and issue and discussing it with us. Global changes can have unintended consequences.
+- Do not make global find-and-replace changes without first creating an issue and discussing it with us. Global changes can have unintended consequences.
 - Combine multiple small changes (such as minor editorial and technical changes) into a single pull request. This helps us efficiently and effectively facilitate your contribution.
 - Familiarize yourself with the organization and conventions of our existing documentation before creating a pull request. Changes that are consistent with our style and conventions have a higher acceptance rate.
 
@@ -73,7 +73,7 @@ The following guidelines may answer most of your questions and help you get star
 
 Use the following guidelines to help you with the writing process:
 
-- Focus your efforts on providing useful information for your fellow Magento developers and community members. For example, new or revised code samples, important notes, clarification of vague or ambiguous content.
+- Focus your efforts on providing useful information for your fellow Magento developers and community members. For example, consider providing or revising code samples, important notes, and clarifying vague or ambiguous content.
 - Define the goal of your topic. What exactly do you want to teach the reader?
 - Make the title of your topic reflect the content.
 - Keep your sentences concise. Separate conceptual information from procedural steps.
@@ -89,7 +89,7 @@ _(Optional)_ To review your changes in HTML output, follow the instructions in t
 
 ### Templates
 
-We provide templates to help you get started writing new content and understanding markdown formatting:
+We provide templates to help you get started writing new content and understanding Markdown formatting:
 
 - **General topic template** - [Markdown](https://github.com/magento/devdocs/blob/master/guides/v2.1/contributor-guide/templates/basic_template.md) | [HTML](https://devdocs.magento.com/guides/v2.3/contributor-guide/templates/basic_template.html): This is a template for writing any topic with example formats and styles.
 - **Tutorial templates**: These templates provide example formats and styles for step-by-step instructions (like how-tos). Each file adds navigation buttons when content is generated. Templates include:
@@ -123,7 +123,7 @@ You must complete the issue template. We will close your issue if you fail to co
 
 **Note:** Check the existing [issues](https://github.com/magento/devdocs/issues) on GitHub to see if someone has already reported the issue.
 
-You have a couple of options to create an issue:
+You can provide feedback using the following options:
 
 - Have general feedback? Create an issue on [GitHub DevDocs](https://github.com/magento/devdocs/issues/new/choose).
 - Have feedback on a specific DevDocs page? Click the **Give us feedback** link at the top right of the page to report on the currently open topic.
