@@ -21,7 +21,6 @@ If you write and contribute a full topic, we will add your name (or your company
 
     **Note for partners:** Add [2FA](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#two-factor) protection when contributing to Magento repositories.
 
-1. Sign the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement).
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](https://github.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review the [DevDocs guidelines](#contribution-guidelines).
 
@@ -31,7 +30,7 @@ The following diagram shows the contribution workflow:
 
 ![Contributing workflow](https://devdocs.magento.com/common/images/contribute-write-submit-pr.png)
 
-**Tip!** If you are not sure where to start contributing, search for issues with the [`help wanted`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [`good first issue`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels. These issues receive higher priority for processing.
+**Tip!** If you are not sure where to start contributing, search for issues with the [`help wanted`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22), [`good first issue`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22), and [`groomed`](https://github.com/magento/devdocs/issues?q=is:issue+is:open+label:%22groomed%22) labels. These issues receive higher priority for processing.
 
 ### Create a branch
 
