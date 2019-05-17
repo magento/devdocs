@@ -19,7 +19,6 @@ Use Magento's coding standards when you contribute to Magento's codebase or crea
 
 - [Code demarcation standard]({{ page.baseurl }}/coding-standards/code-standard-demarcation.html)
 - [PHP coding standard]({{ page.baseurl }}/coding-standards/code-standard-php.html)
-- [PHP code sniffers]({{ page.baseurl }}/coding-standards/code-standard-sniffers.html)
 - [JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)
 - [jQuery widget coding standard]({{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html)
 - [DocBlock standard]({{ page.baseurl }}/coding-standards/docblock-standard-general.html)

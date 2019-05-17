@@ -4,7 +4,7 @@ title: The uiLayout service object
 ---
 
 The `uiLayout` service object is a JavaScript function object used for initializing and configuring UI components.
-This object is defined in the [`layout.js`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
+This object is defined in the [`layout.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/core/renderer/layout.js) file in the UI module.
 
 ## `run()` method
 
@@ -18,7 +18,7 @@ The `run()` method is the class entry point represented by `uiLayout` and has th
 | `parent`  | Object  | The parent component of the UI component |
 | `cached`  | Boolean | Determines if `nodes` should be cached   |
 | `merge`   | Boolean | Determines if `nodes` should be merged   |
-{:style="table-layout:auto;"}
+
 
 If `cached` is set to `true`, the key for the cache is constructed from the object keys in the `node` parameter.
 Use the `cached` and `merge` parameters when a UI component needs to be updated during runtime.
@@ -39,7 +39,7 @@ This object can have the following properties:
 | `isTemplate`   | Boolean | Whether to save the configuration as a template.                                                     |
 | `nodeTemplate` | String  | The full name of a saved configuration template.                                                     |
 | `provider`     | String  | The full name of the DataSource UI component. This property is inherited from the parent if skipped. |
-{:style="table-layout:auto;"}
+
 
 #### Naming
 

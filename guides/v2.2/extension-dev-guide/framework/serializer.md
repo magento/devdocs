@@ -25,12 +25,12 @@ For security reasons, `SerializerInterface` implementations, such as the Json an
 
 ### Json (default)
 
-The [`Magento\Framework\Serialize\Serializer\Json`]({{ site.mage2200url }}lib/internal/Magento/Framework/Serialize/Serializer/Json.php){:target="_blank"} class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
+The [`Magento\Framework\Serialize\Serializer\Json`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Json.php){:target="_blank"} class serializes and unserializes data using the [JSON](http://www.json.org/){:target="_blank"} format.
 This class does not unserialize objects.
 
 ### Serialize
 
-The [`Magento\Framework\Serialize\Serializer\Serialize`]({{ site.mage2200url }}lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
+The [`Magento\Framework\Serialize\Serializer\Serialize`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
 This class does not unserialize objects in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.
 
 {: .bs-callout .bs-callout-warning }
@@ -40,7 +40,7 @@ Magento discourages using the Serialize implementation directly because it can l
 
 Declare `SerializerInterface` as a [constructor dependency]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get an instance of a serializer class.
 
-{% highlight php startinline %}
+```php
 use Magento\Framework\Serialize\SerializerInterface;
 
 ...
@@ -56,11 +56,11 @@ public function __construct(SerializerInterface $serializer) {
   $this->serializer = $serializer;
 }
 
-{% endhighlight %}
+```
 
 \\
 The following example shows how to use a serializer's `serialize()` and `unserialize()` functions to store and retrieve array data from a cache:
-{% highlight php startinline %}
+```php
 
 ...
 
@@ -100,7 +100,7 @@ public function loadDataFromCache()
 
 ...
 
-{% endhighlight %}
+```
 
 ## Backward Compatibility Note
 
@@ -113,7 +113,7 @@ If the interface does not exist or an earlier version of Magento 2 is being exec
 
 Here is an example:
 
-{% highlight php startinline %}
+```php
 
 ...
 /**
@@ -131,4 +131,4 @@ Here is an example:
 }
 ...
 
-{% endhighlight %}
+```

@@ -1,37 +1,27 @@
-## This PR is a:
+## Purpose of this pull request
 
-- [ ] New topic
-- [ ] Content update
-- [ ] Content fix or rewrite
-- [ ] Bug fix or improvement
+<!-- REQUIRED Describe the goal and the type of changes this pull request covers. -->
 
-## Summary
+This pull request (PR) ...
 
-When this pull request is merged, it will...
+## Affected DevDocs pages
 
-<!-- (REQUIRED) What does this PR change? -->
-
-## Additional information
-
-List all affected URLs 
+<!-- REQUIRED List the affected pages on devdocs.magento.com (URLs). Not needed for large numbers of files. -->
 
 - ...
 - ...
 
-<!-- (REQUIRED) The Url that this PR will modify -->
+## Links to Magento source code
 
-<!-- (OPTIONAL) What other information can you provide about this PR? -->
+<!--  OPTIONAL - REMOVE THIS SECTION IF NOT USED. If this pull request references a file in a Magento codebase repository, add it here. -->
 
-<!--
-Thank you for your contribution!
+- ...
+- ...
 
-Before submitting this pull request, please make sure you have read our Contribution Guidelines and your PR meets our contribution standards:
-https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md
+<!-- 
+If you are fixing a GitHub issue, note it using GitHub keyword format (https://help.github.com/en/articles/closing-issues-using-keywords#closing-an-issue-in-a-different-repository) to close the issue when this pull request is merged. Example: `Fixes #1234`
 
-Please fill out as much information as you can about your PR to help speed up the review process.
-If your PR addresses an existing GitHub Issue, please refer to it in the title or Additional Information section to make the connection.
+`master` is the default branch. Merged pull requests to `master` go live on the site automatically. Any requested changes to content on the `master` branch must be related to the released codebase. Any content related to future releases goes in the `develop` branch.
 
-We may ask you for changes in your PR in order to meet the standards set in our Contribution Guidelines. PR's that do not comply with our guidelines may be closed at the maintainers' discretion.
-
-Feel free to remove this section before creating this PR.
+See Contribution guidelines (https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md) for more information.
 -->

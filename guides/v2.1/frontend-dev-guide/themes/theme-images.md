@@ -20,7 +20,7 @@ The conventional location of `view.xml` for a theme is:
 	<theme_dir>/etc/view.xml
 {% endraw %}
 
-For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml).
+For example, here is the `view.xml` of the Magento Blank theme: [`app/design/frontend/Magento/blank/etc/view.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml).
 
 
 In `view.xml`, image properties are configured in the scope of `<images module="Magento_Catalog">` element:
@@ -246,7 +246,9 @@ Each image assigned to a product must be resized in accordance with image {% glo
 
 Command usage:
 
-`php <magento install dir>/bin/magento catalog:images:resize`
+```bash
+php <magento install dir>/bin/magento catalog:images:resize
+```
 
 This command has no arguments or options. A progress indicator displays while the command runs.
 

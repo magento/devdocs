@@ -33,7 +33,7 @@ The topic describes how stylesheets are preprocessed and compiled to CSS in the 
         included in layout</a> are compiled.
         </p>
         <p>
-        For example, in one of the <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml"> layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
+        For example, in one of the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml"> layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
         </p>
         <pre>
 
@@ -47,17 +47,17 @@ The topic describes how stylesheets are preprocessed and compiled to CSS in the 
         <ul>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-m.less"
             target="_blank">/web/css/styles-m.less</a></code>
         </li>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-l.less"
             target="_blank">/web/css/styles-l.less</a></code>
         </li>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/print.less"
             target="_blank">/web/css/print.less</a></code>
         </li>
         </ul>
@@ -74,7 +74,7 @@ In the Magento application, the following modes of compiling `.less` files to CS
 
 To set the compilation mode:
 
-1.  In the Magento Admin, navigate to **Stores** > **Configuration** > **Advanced** > **Developer**.
+1.  In the Magento Admin, navigate to **Stores** > **Settings** > **Configuration** > **Advanced** > **Developer**.
 2.  In the **Store View** dropdown field, select **Default Config**.
 3.  Under **Frontend development workflow**, in the **Workflow type** field, select the compilation mode.
 4.  Click **Save Config**.
@@ -93,7 +93,7 @@ For each CSS file included in the layouts, Less preprocessor:
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 
-In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system, and reload the store pages to trigger compilation and publication.
+In server-side Less compilation mode, to have your changes applied, clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess), and reload the store pages to trigger compilation and publication.
 
 {:.bs-callout .bs-callout-info}
 You might also need to clear the `var/cache` and `var/view_preprocessed` directories.
@@ -154,6 +154,7 @@ If you need to import a remote CSS file in your `.less` source, use `url()` nota
 ```css
 @import url('//fonts.googleapis.com/css?family=Titillium+Web:400,300,200,600.css');
 ```
+To [include the font]({{ page.baseurl }}/frontend-dev-guide/css-topics/using-fonts.html) in your theme's CSS files, use the `@font-face` CSS rule for the fastest loading time.
 
 In this instance, Magento will skip the `@import` directive while resolving paths to the local resources.
 

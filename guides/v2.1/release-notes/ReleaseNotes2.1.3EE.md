@@ -139,7 +139,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
-<!---57383-->* You can now make Return Merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} (RMA) comments visible from the storefront by setting **Stores > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
+<!---57383-->* You can now make Return Merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}Authorization{% endglossarytooltip %} (RMA) comments visible from the storefront by setting **Stores > Settings > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
 
 <!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} is set to empty. 
 
@@ -211,7 +211,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---56018-->* Magento now imports custom options correctly. Previously, when you tried to import a custom option, the import failed, and Magento displayed this error: `JavaScript Error: Uncaught RangeError: Maximum call stack size exceeded`. [(GITHUB-5573)](https://github.com/magento/magento2/issues/5573){:target="_blank"} 
 
-<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <your Magento install dir>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  [(GITHUB-5359)](https://github.com/magento/magento2/issues/5359){:target="_blank"}
+<!---57438-->* We’ve added a new way to import images: You can now successfully import images when you set your document root to <magento_root>/pub. Previously, you needed to set document root to `/magento` to import images. Both ways of importing now work.  [(GITHUB-5359)](https://github.com/magento/magento2/issues/5359){:target="_blank"}
 
 
 <!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected during import. Previously, Magento did not remove these keys, which triggered a failure during import. This subsequently caused Magento to quickly reach the maximum error count, returning this error: "Maximum error count has been reached or system error is occurred!".  [(GITHUB-1471)](https://github.com/magento/magento2/issues/1471){:target="_blank"} 
@@ -427,7 +427,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 	**Workaround**: In `<Payment module base dir>/etc/adminhtml/system.xml`, file set group sortOrder greater than 5.
 
-	[Example for the Braintree module]({{ site.mage2100url }}app/code/Magento/Braintree/etc/adminhtml/system.xml#L11){:target="_blank"}.
+	[Example for the Braintree module]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/adminhtml/system.xml#L11){:target="_blank"}.
 
 	[GITHUB-7891](https://github.com/magento/magento2/issues/7891){:target="_blank"}
 

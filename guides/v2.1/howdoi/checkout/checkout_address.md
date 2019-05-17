@@ -83,7 +83,7 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/w
 
 The template should contain a button for setting the address to be used for shipping.
 
-You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
+You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Checkout/view/frontend/web/template/shipping-address/address-renderer/default.html).
 
 ## Step 3: Create the JS model for the shipping rate processor {#rate_processor}
 
@@ -239,7 +239,7 @@ define(
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:
 
 ```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
             <arguments>
@@ -291,14 +291,14 @@ If you want your custom address type to be displayed here as well, you need to c
 
 In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax.
 
-You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html]({{ site.mage2000url }}app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html).
+You can use the code from the default template: [app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Checkout/view/frontend/web/template/shipping-information/address-renderer/default.html).
 
 ### Declare the address to be used in the Ship-To section in layout
 
 In your `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file, add the following:
 
 ```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
             <block class="Magento\Checkout\Block\Onepage" name="checkout.root" template="onepage.phtml" cacheable="false">

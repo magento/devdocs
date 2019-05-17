@@ -13,7 +13,7 @@ The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endgl
 
 Forgetting to clear or disable caching can cause a lot of development headache. Visual spot checks on rendered content are unreliable when the content being displayed is retrieved from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. We recommend clearing your cache before doing visual checks for your theme to make sure the content displayed is correct.
 
-You can manage your cache in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} section under **System > Cache Management**.
+You can manage your cache in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} section under **System** > Tools > **Cache Management**.
 
 **Recommended Reading**
 

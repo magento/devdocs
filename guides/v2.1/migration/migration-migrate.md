@@ -38,9 +38,9 @@ In addition to the command arguments mentioned here, see [Common arguments]({{ p
 
 Below is a typical command example:
 
-{% highlight bash %}
+```bash
 bin/magento migrate:<mode> [-r|--reset] {<path to config.xml>}
-{% endhighlight bash %}
+```
 
 where:
 
@@ -51,14 +51,14 @@ where:
 3. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
 {: .bs-callout .bs-callout-info }
-Logs are written to the `<your Magento install dir>/var/` directory.
+Logs are written to the `<magento_root>/var/` directory.
 
 ## Migration order {#migration_order}
 
 When we created the Data Migration Tool, we assumed the following data transfer sequence:
 
-1.	[Settings]({{ page.baseurl }}/migration/migration-migrate-settings.html)
-2.	[Data]({{ page.baseurl }}/migration/migration-migrate-data.html)
-3.	[Changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)
+1. [Settings]({{ page.baseurl }}/migration/migration-migrate-settings.html)
+2. [Data]({{ page.baseurl }}/migration/migration-migrate-data.html)
+3. [Changes]({{ page.baseurl }}/migration/migration-migrate-delta.html)
 
 That's why we strongly recommend to keep this order to migrate quickly and with no issues.

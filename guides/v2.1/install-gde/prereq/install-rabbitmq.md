@@ -53,6 +53,7 @@ Run the following commands to install this feature.
 ```bash
 wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 ```
+
 ```bash
 rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 ```
@@ -67,6 +68,7 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 ```bash
 rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 ```
+
 ```bash
 yum install rabbitmq-server-3.5.6-1.noarch.rpm
 ```
@@ -98,7 +100,7 @@ where:
 |`amqp-user`|The username for connecting to RabbitMQ. Do not use the default user `guest`.|
 |`amqp-password`|The password for connecting to RabbitMQ. Do not use the default password `guest`.|
 |`amqp-virtualhost`|The virtual host for connecting to RabbitMQ. The default is `/`.
-{:style="table-layout:auto;"}
+
 
 ## Start the message queue consumers
 

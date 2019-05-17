@@ -13,14 +13,14 @@ These approaches give higher chances to avoid conflicts and issues with your the
 
 ## Theme development best practice
 
-1. When [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from a default Magento theme, rather extend, than override the default styles: whenever possible, put your customizations in the `_extend.less` or `_theme.less` file, instead of overriding a `.less` file from a parent theme. 
+1. When [inheriting]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from a default Magento theme, extend the default styles instead of overriding them.  Whenever possible, put your customizations in the `_extend.less` or `_theme.less` file, instead of overriding a `.less` file from a parent theme. 
 2. Customize or create new `.xml` layout files instead of customizing and overriding `.phtml` templates. For example, if you need to create a new container, it is better to add an `.xml` file and create it there, than override a template. 
 Some other customizations that can be performed using layout instructions are the following:
  
-   * change the position of a block or container using `<move>` 
-   * remove a block or container using the `remove` or `display` attribute of the `<referenceBlock>/<referenceContainer>` instruction
-   * reorder blocks and container using the `before/after` attributes of the `<referenceBlock>/<referenceContainer>` instruction
-   * change the HTML tag or CSS class for the existing container using `<referenceContainer>` element
+   * change the position of a block or container using `<move>`.
+   * add/remove a block or container by setting the `remove` attribute to `true` or `false`, or the `display` attribute to `true` or `false` within the `<referenceBlock>/<referenceContainer>` instruction.
+   * reorder blocks and container using the `before/after` attributes of the `<referenceBlock>/<referenceContainer>` instruction.
+   * change the HTML tag or CSS class for the existing container using `<referenceContainer>` element.
    
    For details about working with layouts see the [Layout chapter of this Guide]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html).
 		
@@ -29,4 +29,3 @@ Some other customizations that can be performed using layout instructions are th
 5. If you need to change the wording in user interface, [add custom CSV dictionary files]({{ page.baseurl }}/frontend-dev-guide/translations/theme_dictionary.html) instead of overriding `.phtml` templates. 
 
 Keep in mind, that after Magento instances, updates or upgrades something can change in default templates, layouts, and styles. So it is recommended to check if the changes effected the files overridden in your theme and copy changes if any, to your templates, layouts, and styles.
-

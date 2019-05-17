@@ -33,7 +33,7 @@ The `source_code` values will be used in subsequent steps.
 
 **Endpoint**
 
-`POST http://<host>/rest/all/V1/inventory/sources`
+`POST <host>/rest/all/V1/inventory/sources`
 
 **Scope**
 
@@ -47,7 +47,7 @@ The `source_code` values will be used in subsequent steps.
 
 **Payload**
 
-``` json
+```json
 {
    "source" : {
       "name" : "Baltimore Warehouse",
@@ -77,7 +77,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Austin warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Austin Warehouse",
@@ -97,7 +97,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Reno warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Reno Warehouse",
@@ -117,7 +117,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Berlin warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Berlin Warehouse",
@@ -137,7 +137,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Frankfurt warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Frankfurt Warehouse",
@@ -159,7 +159,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 This source will be used to fulfill virtual and downloadable products.
 
-``` json
+```json
 {
    "source" : {
       "name" : "HQ",

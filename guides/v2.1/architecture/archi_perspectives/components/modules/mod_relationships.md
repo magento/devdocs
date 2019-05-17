@@ -26,7 +26,7 @@ A single module can have the following types of relationships with another modul
 
 ### A uses B, C customizes B
 
-In a scenario where module A uses module B and module C customizes module B, the customizations in module C cannot break the API of module B so that module A still functions properly in the face of these customizations.
+In a scenario where module A uses module B and module C customizes module B, the customizations in module C must not break the API of module B so that module A still functions properly in the face of these customizations.
 
 ![Module relationship scenarios: A uses B, C customizes B]({{site.baseurl}}/common/images/archi_first_relate.png)
 

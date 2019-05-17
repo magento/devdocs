@@ -53,7 +53,7 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 ### Render layout
 
-{%highlight xml%}
+```xml
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="customer_edit_tab_view">
@@ -66,22 +66,22 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
        </block>
     </htmlContent>
 </form>
-{%endhighlight%}
+```
 
 ### Render simple Magento block
 
-{%highlight xml%}
+```xml
 
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="giftregistry">
         <block class="Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry" name="giftregistry"/>
     </htmlContent>
 </form>
-{%endhighlight%}
+```
 
 ## Source files
 
 Extends `uiComponent`:
 
-- [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/form/components/html.js)
-- [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/content/content.html)
+- [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/html.js)
+- [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/content/content.html)

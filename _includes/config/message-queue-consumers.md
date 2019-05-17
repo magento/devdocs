@@ -33,7 +33,7 @@ Parameter | Value | Required? | Default Value
 `--pid-file-path=<value>` | The file path for saving PID of consumer process. Consumer process such as `/var/someConsumer.pid` | No | 
 `--area-code=<value>` | The area code preferred for consumer process. | No | global
 `<consumer_name>` | The consumer to start. | Yes | |
-{:style="table-layout:auto;"}
+
 
 After consuming all available messages, the command terminates. You can run the command again manually or with a cron job. You can also run multiple instances of the `magento queue:consumers:start` command to process large message queues. For example, you can append `&` to the command to run it in the background, return to a prompt, and continue running commands:
 

@@ -47,13 +47,15 @@ Use [RFC2119] to interpret keywords like:
 
 {% collapsible Examples: %}
 <table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+  <tr>
+    <th><span style="color: red">Not recommended</span></th>
+    <th><span style="color: green">Recommended</span></th>
+  </tr>
+  <tr>
+      <td markdown="1">
+            
+```php
+            
 class Config
 {
     private $data;
@@ -68,10 +70,12 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+   </td>
+   <td markdown="1">
+        
+```php
 class Config
 {
     private $data;
@@ -85,9 +89,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 ---
@@ -98,29 +103,30 @@ class Config
 2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
-``` php?start_inline=1
+
+```php
 class Composite
 {
-    /**
-     * @var RendererInterface[]
-     */
-    private $renderers;
+  /**
+    * @var RendererInterface[]
+    */
+  private $renderers;
 
-    /**
-     * @param RendererInterface[] $renderers
-     * @throws InvalidArgumentException
-     */
-    public function __construct(array $renderers)
-    {
-        foreach ($renderers as $renderer) {
-            if (!$renderer instanceof RendererInterface) {
-                throw new InvalidArgumentException(
-                    sprintf('Instance of the phrase renderer is expected, got %s instead.', get_class($renderer))
-                );
-            }
-        }
-        $this->renderers = $renderers;
-    }
+  /**
+    * @param RendererInterface[] $renderers
+    * @throws InvalidArgumentException
+    */
+  public function __construct(array $renderers)
+  {
+      foreach ($renderers as $renderer) {
+          if (!$renderer instanceof RendererInterface) {
+              throw new InvalidArgumentException(
+                  sprintf('Instance of the phrase renderer is expected, got %s instead.', get_class($renderer))
+              );
+          }
+      }
+      $this->renderers = $renderers;
+  }
 }
 ```
 {% endcollapsible %}
@@ -136,8 +142,9 @@ class Composite
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+      <td markdown="1">
+          
+```php
 
 class Config
 {
@@ -149,10 +156,12 @@ class Config
         $eventManager->dispatch('config_read_after');
     }
 }
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+
+ </td>
+ <td markdown="1">
+  
+```php
 class Config
 {
     private $fileReader;
@@ -174,9 +183,10 @@ class Config
         return $this->data[$key];
     }
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -187,13 +197,14 @@ class Config
 
 {% collapsible Examples: %}
 <table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+  <tr>
+    <th><span style="color: red">Not recommended</span></th>
+    <th><span style="color: green">Recommended</span></th>
+  </tr>
+  <tr>
+    <td markdown="1">
+
+```php
 interface SessionAdapterInterface
 {}
 
@@ -202,15 +213,17 @@ RedisSessionAdapter implements SessionAdapterInterface
 
 class SessionManager
 {
-    public function __construct(RedisSessionAdapter $sessionAdapter)
-    {}
+  public function __construct(RedisSessionAdapter $sessionAdapter)
+  {}
 }
+// Breaks polymorphism principle,
+// restricts what types can be passed at the runtime.
+```
 
-// Breaks polymorphism principle, restricts what types can be passed at the runtime.
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+   </td>
+   <td markdown="1">
+
+```php
 interface SessionAdapterInterface
 {}
 
@@ -219,12 +232,13 @@ RedisSessionAdapter implements SessionAdapterInterface
 
 class SessionManager
 {
-    public function __construct(SessionAdapterInterface $sessionAdapter)
-    {}
+  public function __construct(SessionAdapterInterface $sessionAdapter)
+  {}
 }
-{% endhighlight %}
-        </td>
-    </tr>
+```
+
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -235,13 +249,14 @@ class SessionManager
 2.6. Inheritance SHOULD NOT be used. Composition SHOULD be used for code reuse.
 {% collapsible Examples: %}
 <table>
-    <tr>
-        <th><span style="color: red">Not recommended</span></th>
-        <th><span style="color: green">Recommended</span></th>
-    </tr>
-    <tr>
-        <td>
-{% highlight php %}
+  <tr>
+    <th><span style="color: red">Not recommended</span></th>
+    <th><span style="color: green">Recommended</span></th>
+  </tr>
+  <tr>
+    <td markdown="1">
+
+```php
 class AbstractController extends Action
 {
     // ...
@@ -270,31 +285,32 @@ class Edit extends AbstractController
         // ...
     }
 }
+// Smaller classes, one responsibility,
+// more flexible, easy to understand, more testable.
+```
 
-// Smaller classes, one responsibility, more flexible, easy to understand, more testable.
-
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+  </td>
+  <td markdown="1">
+    
+```php
 class Edit extends Action
 {
-    public function __constructor(
-        ValidatorInterface $validator,
-        HashGeneratorInterface $hashGenerator
-    ) {}
+  public function __constructor(
+      ValidatorInterface $validator,
+      HashGeneratorInterface $hashGenerator
+  ) {}
 
-    public function execute()
-    {
-        $errors = $this->validator->validate($request);
-        // ...
-        $hash = $this->hashGenerator->generateHash($request);
-    }
+  public function execute()
+  {
+      $errors = $this->validator->validate($request);
+      // ...
+      $hash = $this->hashGenerator->generateHash($request);
+  }
 }
+```
 
-{% endhighlight %}
-        </td>
-    </tr>
+   </td>
+  </tr>
 </table>
 {% endcollapsible %}
 
@@ -322,34 +338,38 @@ class Edit extends Action
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+            
+```php
 $url = new Url();
 $url->setBaseUrl($baseUrl);
 echo $url->get('custom/path'); // prints full URL
 
 // Developer forgot or didn’t know that you need to call setBaseUrl
 $url = new Url();
-echo $url->get('custom/path'); // Throws exception, which makes issue smaller. If it doesn't throw and exception, it could lead to a hidden bug more likely.
+echo $url->get('custom/path'); // Throws exception,
+// which makes issue smaller. If it doesn't throw and exception,
+// it could lead to a hidden bug more likely.
 
-// Method with out parameters that doesn’t return anything could be sign of temporal coupling.
+// Method with out parameters that doesn’t
+// return anything could be sign of temporal coupling.
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+```
+  </td>
+  <td markdown="1">
+    
+```php
 $url = new Url($baseUrl);
 echo $url->get('custom/path');
 
 // Or
 $url = new Url();
 echo $url->get($baseUrl, 'custom/path');
-
 // Only one way to use API, no temporal coupling.
+```
 
-{% endhighlight %}
-        </td>
-    </tr>
+   </td>
+   </tr>
 </table>
 {% endcollapsible %}
 
@@ -362,31 +382,33 @@ echo $url->get($baseUrl, 'custom/path');
         <th><span style="color: green">Recommended</span></th>
     </tr>
     <tr>
-        <td>
-{% highlight php %}
+        <td markdown="1">
+
+```php
 class Edit extends Action
 {
-    public function execute()
-    {
-        // ...
-        $product = $productResource->load($product, $productSku, 'sku');
-        $this->registry->register('product', $product);
-    }
+  public function execute()
+  {
+      // ...
+      $product = $productResource->load($product, $productSku, 'sku');
+      $this->registry->register('product', $product);
+  }
 }
 
 class View extends Template
 {
-    public function getProductName()
-    {
-        $product = $this->registry->get('product');
-        return $product->getName();
-    }
+  public function getProductName()
+  {
+      $product = $this->registry->get('product');
+      return $product->getName();
+  }
 }
+```
 
-{% endhighlight %}
-        </td>
-        <td>
-{% highlight php %}
+   </td>
+   <td markdown="1">
+
+```php
 class Edit extends Action
 {
     public function execute()
@@ -405,9 +427,9 @@ class View extends Template
         return $product->getName();
     }
 }
-// More flexible, no dependencies between classes, no temporal coupling.
-
-{% endhighlight %}
+// More flexible, no dependencies between classes,
+// no temporal coupling.
+```
 
 {% endcollapsible %}
 
@@ -423,7 +445,7 @@ class View extends Template
 
 2.17.2. Composites SHOULD be used when there is a need to work with a tree as a single object.
 
- {% collapsible Example: %}
+{% collapsible Example: %}
  You need to read configuration from different sources (like database or filesystem) and want to make the reading process configurable: allow extensions to add more configuration sources. In this case, you can create a `ConfigReaderInterface` with a composite implementation - `ConfigReaderComposite`, and configure particular readers as children of a composite reader.
  {% endcollapsible %}
 ---
@@ -453,11 +475,9 @@ class View extends Template
 
 5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:
 
-- Symptom
-
-- Details
-
-- Solution or workaround
+* Symptom
+* Details
+* Solution or workaround
 
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
@@ -516,7 +536,7 @@ class View extends Template
 
 6.2.5. Configuration for the presentation layer MUST be declared in the corresponding application area. This includes events and plugins that customize the presentation layer.
 
-###  6.3. Data Access (Persistence) layer
+### 6.3. Data Access (Persistence) layer
 
 6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
 
@@ -669,13 +689,17 @@ We are reviewing this section and will publish it soon.
 14.1. All values (including objects) passed to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Example: %}
-``` php?start_inline=1
-class SampleEventObserverThatModifiesInputs
+
+``` php
+use Magento\Framework\Event\ObserverInterface;
+use Magento\Framework\Event\Observer;
+
+class SampleEventObserverThatModifiesInputs implements ObserverInterface
 {
     /**
-     * @param \Magento\Framework\Event\Observer $observer
+     * @param Observer $observer
      */
-    public function execute(\Magento\Framework\Event\Observer $observer)
+    public function execute(Observer $observer)
     {
         /** @var \Magento\Framework\App\DataObject $transport */
         $transport = $observer->getData('transport');
@@ -691,6 +715,7 @@ class SampleEventObserverThatModifiesInputs
     }
 }
 ```
+
 {% endcollapsible %}
 ---
 
@@ -783,5 +808,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[rules]: {{ site.mage2100url }}dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[rules]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-naming-guidelines.html

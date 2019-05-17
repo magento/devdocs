@@ -57,7 +57,6 @@ An object that contains translations for loader text:
 Loader is subscribed to the following events:
 -   [processStart](#l_processStart)
 -   [processStop](#l_processStop)
--   [texts](#l_texts)
 
 ### `processStart` {#l_processStart}
 Display the loader. Can be triggered on any page element.
@@ -66,5 +65,5 @@ Display the loader. Can be triggered on any page element.
 Hide the loader. Can be triggered on any page element.
 
 
-[lib/web/mage/loader.js]: {{site.mage2000url}}lib/web/mage/loader.js
+[lib/web/mage/loader.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/loader.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
