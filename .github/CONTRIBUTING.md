@@ -69,6 +69,16 @@ The following guidelines may answer most of your questions and help you get star
     - If you need to update the site navigation, ask for help in Slack ([#devdocs](https://magentocommeng.slack.com/messages/CAN932A3H)).
     - We use symbolic links for topics that are the same across versions of Magento. Remove the symbolic link and add a new file if your changes are unique to a specific version. Copy and paste a previous version of the topic to get started.
 
+        For example:
+
+        ```bash
+        git rm guides/v2.2/install-gde/composer.md
+        ```
+
+        ```bash
+        cp guides/v2.1/install-gde/composer.md guides/v2.2/install-gde/composer.md
+        ```
+
 - Make sure that you update the correct version(s) of documentation (v2.1, v2.2, v2.3). If you are not sure what directory to put your content in, just do your best. We can help re-locate it (if necessary) during the review process.
 - Review your work for basic typos, formatting errors, or ambiguous sentences before opening a pull request.
 - Revise pull requests according to review feedback. We will close pull requests that require an inordinate amount of time to review and process (especially for minor changes) if you fail to make revisions according to review feedback.
