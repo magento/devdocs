@@ -112,4 +112,4 @@ The general magnifier options are set as follows:
 </var>
 ```
 
-For an example of setting the gallery option, see the [view.xml]({{ site.mage2100url }}app/design/frontend/Magento/blank/etc/view.xml#L225) file in the Blank theme.
+For an example of setting the gallery option, see the [view.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml#L225) file in the Blank theme.
