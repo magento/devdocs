@@ -65,5 +65,5 @@ Display the loader. Can be triggered on any page element.
 Hide the loader. Can be triggered on any page element.
 
 
-[lib/web/mage/loader.js]: {{site.mage2000url}}lib/web/mage/loader.js
+[lib/web/mage/loader.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/loader.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

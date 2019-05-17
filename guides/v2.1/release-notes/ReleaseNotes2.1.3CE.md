@@ -392,7 +392,7 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 	**Workaround**: In `<Payment module base dir>/etc/adminhtml/system.xml`, file set group sortOrder greater than 5.
 
-	[Example for the Braintree module]({{ site.mage2100url }}app/code/Magento/Braintree/etc/adminhtml/system.xml#L11){:target="_blank"}.
+	[Example for the Braintree module]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/adminhtml/system.xml#L11){:target="_blank"}.
 
 	[GITHUB-7891](https://github.com/magento/magento2/issues/7891){:target="_blank"}
 
