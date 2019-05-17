@@ -26,9 +26,9 @@ To enable template hints:
 ![Enabling template hints]({{ site.baseurl }}/common/images/fdg_debug_theme.png)
 
 {:.bs-callout .bs-callout-info}
-You can also use CLI to enable/disable template hints.
-
-Use `bin/magento dev:template-hints:enable` command in CLI to enable template hints, and `bin/magento dev:template-hints:disable` to disable them. Do not forget to clear cache after command run. For example: 
+You can also use the CLI to enable/disable template hints.
+ 
+Use the `bin/magento dev:template-hints:enable` command to enable template hints and the `bin/magento dev:template-hints:disable` command to disable them. Do not forget to clear the cache after running the commands. For example:
 
 ```bash
 bin/magento dev:template-hints:enable
