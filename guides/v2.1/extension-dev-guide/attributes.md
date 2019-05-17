@@ -38,7 +38,7 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection.
+Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection. The `InstallData` script will be executed when the module is first installed and either the `bin/magento setup:upgrade` or `bin/magento setup:db-data:upgrade` command is run.  If the module is already existing, `UpgradeData` scripts should be used. During the development cycle, if there is a need to re-run the `InstallData` or `UpgradeData` scripts, the `setup_module` table row for the module can be manipulated.  
 
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
@@ -190,7 +190,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See [Web API authentication overview]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) for general information about authentication in Magento.
 
-The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
+The following [code sample]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
@@ -206,6 +206,7 @@ The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInvent
 
 In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET <host>/rest/<store_code>/V1/products/<sku>` request will receive product information similar to the following:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -217,9 +218,11 @@ In this example, the `stock_item` attribute is restricted to only the users who 
         "artist": "James Smith"
       }
     }
+```
 
 However, an authenticated user with the permission `Magento_CatalogInventory::cataloginventory` receives the additional `stock_item` field:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -235,6 +238,7 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
         "artist": "James Smith"
       }
     }
+```
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
 
