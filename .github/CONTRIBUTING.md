@@ -4,7 +4,7 @@ Share your knowledge with the community by contributing to Magento DevDocs!
 You can contribute by creating an issue or pull request (PR) on our [DevDocs](https://github.com/magento/devdocs) GitHub repository.
 We welcome all types of contributions; from minor typo fixes to new topics.
 
-Magento's tech writer team and [Community Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
+DevDocs staff members and [Community Maintainers](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributors.html#/community-maintainers) review issues and pull requests on a regular basis. We do our best to address all issues as soon as possible, but working through the backlog takes time. We appreciate your patience.
 
 ## Rewards for contributions
 
@@ -17,7 +17,10 @@ If you write and contribute a full topic, we will add your name (or your company
 
 ![Get started workflow](https://devdocs.magento.com/common/images/contribute-prerequisites.png)
 
-1. Make sure you have a [GitHub account](https://github.com/signup/free) with [Two-Factor Authentication](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#two-factor)(2FA) enabled on your account. We require partners to add 2FA protection when contributing to Magento repositories.
+1. Make sure you have a [GitHub account](https://github.com/signup/free).
+
+    **Note for partners:** Add [2FA](https://devdocs.magento.com/guides/v2.3/contributor-guide/contributing.html#two-factor) protection when contributing to Magento repositories.
+
 1. Sign the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement).
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [DevDocs repository](https://github.com/magento/devdocs). Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review the [DevDocs guidelines](#contribution-guidelines).
@@ -28,7 +31,7 @@ The following diagram shows the contribution workflow:
 
 ![Contributing workflow](https://devdocs.magento.com/common/images/contribute-write-submit-pr.png)
 
-**Tip!** If you are not sure where to start contributing, search for issues with the [`help wanted`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [`good first issue`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels.
+**Tip!** If you are not sure where to start contributing, search for issues with the [`help wanted`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and [`good first issue`](https://github.com/magento/devdocs/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) labels. These issues receive higher priority for processing.
 
 ### Create a branch
 
@@ -46,7 +49,7 @@ The following diagram shows the contribution workflow:
 
    **We will close your pull request if you fail to complete the template.**
 
-1. After creating a pull request, a DevDocs staff member or maintainer will review it and may ask you to make revisions.
+1. After creating a pull request, a DevDocs staff member or maintainer will review it and may ask you to make revisions. We will close your pull request if you do not respond to feedback in two weeks.
 
 **Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the pull request provides a link. Magento requires a signed form and agreement to the terms for contribution.
 
