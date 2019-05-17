@@ -47,9 +47,11 @@ The following diagram shows the contribution workflow:
 
 1. Complete the pull request template.
 
-   **We will close your pull request if you fail to complete the template.**
+    **We will close your pull request if you do not complete the template.**
 
-1. After creating a pull request, a DevDocs staff member or maintainer will review it and may ask you to make revisions. We will close your pull request if you do not respond to feedback in two weeks.
+1. After creating a pull request, a DevDocs staff member or maintainer will review it and may ask you to make revisions.
+
+    **We will close your pull request if you do not respond to feedback in two weeks.**
 
 **Note:** If you have not signed the [Magento Contributor Agreement](https://magento.com/content/magento-contributor-agreement), the pull request provides a link. Magento requires a signed form and agreement to the terms for contribution.
 
