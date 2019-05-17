@@ -68,8 +68,6 @@ namespace :update do
     puts 'Updating Magento 2.0 docs:'.magenta
     abort 'Cannot find the "guides/v2.0" directory' unless Dir.exist? 'guides/v2.0'
     Dir.chdir 'guides/v2.0' do
-      sh 'git remote -v'
-      sh 'git checkout 2.0'
       sh 'git pull'
       sh 'git status -sb'
     end

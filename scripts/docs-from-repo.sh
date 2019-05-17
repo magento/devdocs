@@ -9,7 +9,7 @@ echo "Creating a directory: $dir"
 mkdir -p "$dir"
 cd "$dir" || exit
 
-echo 'Initiating git in the directory'
+echo "Initiating git in the $dir directory"
 git init
 
 echo "Adding a remote repository: $repo"
@@ -19,7 +19,7 @@ if $sparse; then
   echo 'Enabling sparse checkout'
   git config core.sparseCheckout true
 
-  echo 'Adding /docs/* to sparse checkout'
+  echo 'Adding /docs/* to .git/info/sparse-checkout'
   echo '/docs/*' >> .git/info/sparse-checkout
 fi
 

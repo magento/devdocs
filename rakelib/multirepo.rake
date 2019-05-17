@@ -12,7 +12,11 @@ namespace :multirepo do
 
     content_map = DocConfig.new.content_map
     content_map.each do |subrepo|
-      sh "./scripts/docs-from-code.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}"
+      if subrepo['repository']
+        sh "./scripts/docs-from-repo.sh #{subrepo['directory']} #{protocol}#{subrepo['repository']}.git #{subrepo['branch']} #{subrepo['filter']}"
+      else
+        sh "./scripts/docs-from-branch.sh #{subrepo['directory']} #{subrepo['branch']}"
+      end
     end
   end
 
