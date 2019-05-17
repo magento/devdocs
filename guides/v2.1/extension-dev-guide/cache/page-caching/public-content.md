@@ -133,10 +133,10 @@ Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP prox
 
 ```
 sub vcl_hash {
-if (req.http.cookie ~ "X-Magento-Vary=") {
-hash_data(regsub(req.http.cookie, "^.?X-Magento-Vary=([^;]+);.*$", "\1"));
-}
-... more ...
+    if (req.http.cookie ~ "X-Magento-Vary=") {
+        hash_data(regsub(req.http.cookie, "^.*?X-Magento-Vary=([^;]+);*.*$", "\1"));
+    }
+    ... more ...
 }
 ```
 
@@ -188,6 +188,6 @@ class View extends AbstractProduct implements \Magento\Framework\DataObject\Iden
 Magento uses cache tags for link creation. The performance of cache storage has a direct dependency on the number of tags per cache record, so try to minimize the number of tags and use them only for entities that are used in production mode. In other words, don't use invalidation for actions related to store setup.
 
 {: .bs-callout .bs-callout-warning }
-Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) {:target="_blank"}
+Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html){:target="_blank"}
 
 {% include cache/page-cache-checklists.md%}
