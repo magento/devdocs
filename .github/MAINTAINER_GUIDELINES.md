@@ -31,9 +31,9 @@ See https://github.com/magento/devdocs/labels for all labels and their descripti
 
 ## Testing
 
-Currently, we only test internal links. In the future, we plan to expand tests to include markdown linting and spell checking.
+Currently, we only test internal links. In the future, we plan to expand tests to include external links, markdown linting, and spell checking.
 
-We use Jenkins to build, test, and deploy the devdocs site. Unfortunately, our Jenkins host is behind the corporate firewall (per Adobe security policy) and is not accessible to non-employees.
+We use private CI/CD stack and do not provide access to it.
 
 Every pull request to the `master` branch must pass tests before it can be merged. When a pull request is ready for tests, a member of the [`devdocs-admins`](https://github.com/orgs/magento/teams/devdocs-admins) team must add the test trigger phrase to the pull request as a comment. The trigger phrase is "_running tests_". By approving a pull request, you are signalling an admin that the pull request is ready for tests.
 
@@ -45,60 +45,25 @@ https://github.com/magento/devdocs/projects
 
 ## Style
 
-We plan to explain style in depth in the repository wiki soon, but for now, use the following guidance on markdown syntax:
-
-- Pull requests should contain simple, clean markdown syntax and not HTML (in most cases)
-- We use non-standard syntax in some places for templating (liquid) and accessing Jekyll variables
-- We sometimes use HTML for _complex_ tables, but we prefer markdown formatting in most cases
+We prefer Markdown over HTML (in most cases). You can use [kramdown](https://kramdown.gettalong.org/syntax.html) syntax for more markup features and [Liquid](https://jekyllrb.com/docs/liquid/) for in-topic scripting.
 
 ## Small changes workflow
 
-Whenever we merge a pull request, we must first run tests on the branch. Our build and test pipeline:
+Before merging a pull request to the `master` branch, it must pass automated testing. Testing takes about 30 minutes to complete for each pull request, so we created a workflow to save time for small changes.
 
-- Merges the pull reB
-- Builds the devdocs site
-- Checks all internal links to ensure none are broken
+- **Individual pull requests to `master`**—15 individual pull requests to `master` x 30 minutes per pull request = 7.5 hrs of testing time
+- **Multiple pull requests using `small_changes`**—1 `small_changes` pull request (containing 15 individual pull requests) to `master` x 30 minutes = 30 minutes of testing time
 
-This process takes about 30 minutes to run and does the following:
-
-- Each build must be tested with the latest version of the `master` branch.
-- Every merged pull request updates the `master` branch, so the next pull request must be updated from `master` before testing
-- We can only test one pull request at a time.
-
-The `small_changes` branch is for small text changes, including:
-
-- Typos
-- Formatting
-- Minor text additions or deletions
-
-Basically, small changes are "safe" at a glance; they will not fail tests.
-
-It is not for:
-
-- Substantial new content
-- Changes to tables
-- New files or moved files
+This workflow is for typos, formatting issues, and minor text additions or deletions. It is not for substantial new content, changes to tables, new files, or files that have been moved.
 
 Periodically, we will create a pull request from `small_changes` to `master` and then run tests on that pull request to save time.
-
-For example:
-
-- **Old method**—15 individual pull requests to `master` x 30 minutes per pull request = 7.5 hrs of testing time
-- **Small Changes method**—1 `small_changes` pull request (containing 15 individual pull requests) to `master` x 30 minutes = 30 minutes of testing time
-
-This means:
-
-- Pull requests will show as merged, but will not be live on the devdocs site until the `small_changes` pull request is merged to `master`.
-- The point system remains the same. Credit is awarded when a pull request is merged, regardless of where it was merged.
 
 ### Process
 
 1. Review the pull request and either approve it or request changes.
-1. Apply the `Small changes` label if the following labels should also be applied:
+1. Apply the `Small changes` label if one of the following labels should also be applied:
 
    - `Editorial`
    - `Technical`
 
-1. Apply the `Editorial` or `Technical` label so the contributor will receive points.
-
-1. That's it! A devdocs-admin will run tests and merge the it.
+1. That's it! A devdocs-admin will run tests and merge.
