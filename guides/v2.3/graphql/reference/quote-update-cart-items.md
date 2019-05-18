@@ -14,7 +14,7 @@ Setting the quantity to `0` removes an item from the cart.
 
 ## Example usage
 
-The following example changes the quantity of cart item `13` to `3`.
+The following example changes the quantity of cart item `13`. The new quantity is `3`.
 
 **Request**
 
