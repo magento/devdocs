@@ -93,6 +93,8 @@ ComponentRegistrar::register(
 
 ## Step 2: Add the module configuration {#create-configuration}
 
+To add a module configuration use the following source code snippets.
+
 ### Source code of `app/code/Vendor/CustomShipping/etc/adminhtml/system.xml`
 
 Declares custom shipping module options:
