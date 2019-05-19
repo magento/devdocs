@@ -45,7 +45,7 @@ To develop a module, you must:
     --- | ---
     `name` | A string that uniquely identifies the module
     `setup_version` | The version of Magento the component uses
-    {:style="table-layout:auto;"}
+    
 
     The following example shows an example `etc/module.xml` file.
 
@@ -73,7 +73,7 @@ To develop a module, you must:
 
     The following example demonstrates a minimal `composer.json` file.
 
-    ``` json
+    ```json
       {
          "name": "Vendor1_Module1",
          "description": "create integration from config",
@@ -212,7 +212,7 @@ If you pre-configure the integration, the values cannot be edited from the {% gl
 
 The file defines which API resources the integration has access to.
 
-``` xml
+```xml
 <integrations>
    <integration name="TestIntegration">
        <email></email>
@@ -229,7 +229,7 @@ Element | Description
 `email` | An email to associate with this integration.
 `endpoint_url` | Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using `https://`. See [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html) for details.
 `identity_link_url` | Optional. The URL that redirects the user to link their 3rd party account with the Magento integration.
-{:style="table-layout:auto;"}
+
 
 ## Install your module {#install}
 
@@ -252,7 +252,7 @@ Use the following steps to install your module:
 
 ## Check your integration {#check}
 
-Log in to Magento and navigate to **Settings > Extensions > Integrations**. The integration should be displayed in the grid.
+Log in to Magento and navigate to **System > Extensions > Integrations**. The integration should be displayed in the grid.
 
 ## Integrate with your application {#integrate}
 

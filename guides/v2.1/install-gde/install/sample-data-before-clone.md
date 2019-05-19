@@ -1,5 +1,5 @@
 ---
-group: SampleData
+group: installation-guide
 subgroup: T_SampleData
 title: Install by cloning repositories
 menu_title: Install by cloning repositories

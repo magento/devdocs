@@ -95,7 +95,7 @@ The MassActions component has dependencies on the following components:
 
 ### Redefine the link to the template
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -104,11 +104,11 @@ The MassActions component has dependencies on the following components:
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```
 
 ### Specify action with confirmation
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -126,13 +126,13 @@ The MassActions component has dependencies on the following components:
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 ### Action with a custom callback
 
 Callback is provided by another component.
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -150,13 +150,13 @@ Callback is provided by another component.
         </argument>
     </action>
 </massaction>
-{% endhighlight %}
+```
 
 ### Instance replacement (one instance of a component)
 
 Redefine link to constructor:
 
-{% highlight xml %}
+```xml
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -164,14 +164,14 @@ Redefine link to constructor:
         </item>
     </argument>
 </massaction>
-{% endhighlight %}
+```
 
 ## Source files
 
 Extends `Collapsible`:
 
-- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
-- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
+- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
+- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
 
 ### Methods and events
 

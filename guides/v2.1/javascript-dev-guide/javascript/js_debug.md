@@ -64,6 +64,6 @@ There is no `mage/menu.js` in the current theme or parent theme JS files, so the
 [Using the Inspect Element define the id]: {{site.baseurl}}/common/images/fdg_js_debug1.png
 [Search the page source for the store.menu string]: {{site.baseurl}}/common/images/fdg_js_debug2.png
 [assets fallback rules]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static
-[`lib/web/mage/menu.js`]: {{site.mage2100url}}/lib/web/mage/menu.js
+[`lib/web/mage/menu.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js
 [JavaScript initialization]: {{site.baseurl}}/videos/fundamentals/add-a-javascript-module/
 [assets fallback]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static

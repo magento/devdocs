@@ -29,14 +29,14 @@ The high-level steps required to add a new theme in the Magento system are the f
 
 ## Recommended reading
 
-* [Checklist of modules]({{site.mage2100url}}app/code/Magento)
+* [Checklist of modules]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento)
 * [Static view files processing]({{page.baseurl}}/config-guide/cli/config-cli-subcommands-static-view.html)
 
 ## Create a theme directory
 
 To create the directory for your theme:
 
-1.	Go to `<your Magento install dir>/app/design/frontend`.
+1.	Go to `<magento_root>/app/design/frontend`.
 
 3.	Create a new directory named according to your vendor name: `/app/design/frontend/<Vendor>`.
 
@@ -135,7 +135,7 @@ To register your theme in the system, add a `registration.php` file in your them
 
 Where `<Vendor>` is your vendor name and `<theme>` is the theme code.
 
-For illustration, see the [registration.php]({{site.mage2100url}}app/design/frontend/Magento/luma/registration.php) file in the Magento Luma theme.
+For illustration, see the [registration.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/registration.php) file in the Magento Luma theme.
 
 ## Configure images {#fedg_create_theme_how-to-images}
 
@@ -254,7 +254,7 @@ When your theme changes are not visible even after clearing the cache, try redep
 
 ### Theme registration {#register_theme}
 
-After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database.
+After adding your theme files to the file system and opening the Magento Admin (or reloading any Magento Admin page), your theme gets registered and added to the database. If a theme is removed, the default theme will automatically be used, but the theme's database record is not automatically removed.
 
 ### Applying a theme
 
@@ -262,4 +262,4 @@ For information on how to apply the theme for the storefront, see the [Apply and
 
 ## See also
 
- * [Uninstall a theme]({{ site.gdeurl }}/install-gde/install/cli/install-cli-theme-uninstall.html)
+ * [Uninstall a theme]({{ site.gdeurl }}install-gde/install/cli/install-cli-theme-uninstall.html)

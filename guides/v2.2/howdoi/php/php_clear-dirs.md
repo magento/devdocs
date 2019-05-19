@@ -24,7 +24,7 @@ When you're developing Magento components (modules, themes, and language package
 
 | Directory | Description |
 | --- | --- |
-| `var/page_cache` | Cached pages from the full page cahe mechanism. This directory is empty if you use a third-party HTTP accelerator such as Varnish. |
+| `var/page_cache` | Cached pages from the full page cache mechanism. This directory is empty if you use a third-party HTTP accelerator such as Varnish. |
 | `var/cache` | All cacheable objects _except the page cache_. This directory is empty if you use a third-party cache storage such as Redis. |
 | `var/composer_home` | Home directory for Setup Wizard artifacts. Do not touch this directory unless you are an experienced developer familiar with the Magento plug-in system. |
 | `generated/code` | Contains [generated code][] |
@@ -50,7 +50,7 @@ The following table provides guidelines on what you should clear and when.
 
 To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
 
-	rm -rf <your Magento install dir>/generated/metadata/* <your Magento install dir>/generated/code/*
+	rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
 
 You can also use the following command-line tools clear some directories for you. These commands perform other tasks as well; consult the linked documentation for more details.
 

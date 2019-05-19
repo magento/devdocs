@@ -19,7 +19,7 @@ especially in cases where you do not want to lose incoming links that have
 changed or been removed over time. This topic discusses how you can manage redirection rules on your
 {{site.data.var.ece}} projects.
 
-If the redirection methods discussed in this topic don't work for you, you can use caching headers to do the same thing.
+If the redirection methods discussed in this topic do not work for you, you can use caching headers to do the same thing.
 
 ## Whole-route redirects {#cloud-route-whole}
 
@@ -103,12 +103,12 @@ http://{default}/:
        paths:
           "/from":
           to: "http://{default}/to"
-          partial: true
+          prefix: true
 ```
 
-In the preceding example, if `partial` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
+In the preceding example, if `prefix` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
 
-If `partial` is set to `false`, `/from` triggers a redirect, but `/from/another/path` does not.
+If `prefix` is set to `false`, `/from` triggers a redirect, but `/from/another/path` does not.
 
 {% endcollapsible %}
 

@@ -54,6 +54,9 @@ To update `composer.json`:
 
     ```bash
     composer require <component-name>:<version> --no-update
+    ```
+    
+    ```bash
     composer update
     ```
 
@@ -61,6 +64,9 @@ To update `composer.json`:
 
     ```bash
     composer require pixlee/magento2:1.0.1 --no-update
+    ```
+    
+    ```bash
     composer update
     ```
 
@@ -69,7 +75,13 @@ To update `composer.json`:
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<message>"
+    ```
+    
+    ```bash
     git push origin <environment ID>
     ```
 
@@ -80,7 +92,7 @@ When installing and adding the module, you must add the `composer.lock` file to 
 
 ### Step 3: Verify the extension {#verify}
 
-To verify the extension installed properly, you can check its functionality in the Magento Admin or you can make sure it is enabled as follows:
+To verify the extension installed properly, you can check its functionality in the Magento Admin or you can view enabled modules using the CLI:
 
 1.  Open a terminal.
 1.  [Checkout the branch]({{ page.baseurl }}/cloud/before/before-setup-env-2_clone.html#branch) where the module is installed.
@@ -153,7 +165,13 @@ You can use CLI commands or directly edit `app/etc/config.php` to enable or disa
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<message>"
+    ```
+    
+    ```bash
     git push origin <environment ID>
     ```
 
@@ -161,7 +179,7 @@ You can use CLI commands or directly edit `app/etc/config.php` to enable or disa
 
 ### Modify configurations {#configure}
 
-For projects using {{site.data.var.ece}} **before 2.1.4**, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you make sure to switch those to live settings if in Production.
+For projects using {{site.data.var.ece}} **before 2.1.4**, to change settings for your extensions and modules, you should make those changes in all environments as needed. We recommend using similar or matching settings between Staging and Production to fully test functionality. If you have an extension or module using sandbox credentials and settings, you must switch those to live settings if in Production.
 
 For projects **2.1.4 and later**, you will update configurations according to [Configuration Management]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html#cloud-clp-settings) for `config.local.php`.
 
@@ -188,7 +206,13 @@ To update an extension:
 
     ```bash
     git add -A
+    ```
+    
+    ```bash
     git commit -m "<message>"
+    ```
+    
+    ```bash
     git push origin <environment ID>
     ```
 

@@ -7,7 +7,7 @@ functional_areas:
 
 ## Customize email templates {#customize-email-templates}
 
-Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2100url }}app/code/Magento/Sales/view/frontend/email/order_new.html). 
+Email templates are stored in the `<module_dir>/view/<area>/email` directory of their respective modules. For example, the template for the new order transactional email for the Sales module is located in [`<Magento_Sales_module_dir>/view/frontend/email/order_new.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/view/frontend/email/order_new.html). 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
@@ -49,8 +49,8 @@ Make note of this path because you will need it later when you configure this ne
 
 Every frontend email template includes a header and footer template using these two directives: `{% raw %}{{template config_path="design/email/header_template"}}{% endraw %}` and `{% raw %}{{template config_path="design/email/footer_template"}}{% endraw %}`. By default, those two directives load contents from these files:
  
-  * [`<Magento_Email_module_dir>/view/frontend/email/header.html`]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/header.html)
-  * [`<Magento_Email_module_dir>/view/frontend/email/footer.html`]({{ site.mage2100url }}app/code/Magento/Email/view/frontend/email/footer.html)
+  * [`<Magento_Email_module_dir>/view/frontend/email/header.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/header.html)
+  * [`<Magento_Email_module_dir>/view/frontend/email/footer.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/view/frontend/email/footer.html)
 
 You can customize header and footer templates using either the [theme](#customize-email-theme) or [admin](#customize-email-admin) customization methods discussed previously.
 
@@ -114,7 +114,7 @@ To add a variable to your template content:
 
 
 {:.bs-callout .bs-callout-info}
-The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `<!--@vars @-->` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2100url }}app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
+The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `<!--@vars @-->` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
 
 ## Styles for email templates {#email-styles}
 
@@ -123,8 +123,9 @@ Some email clients (for example, Gmail) support only CSS styles that have been a
 ### Inline styles {#inline-styles}
 
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains an `inlinecss` directive:
-
-    {% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
+```
+{% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
+```
 
 The `inlinecss` directive tells Magento which files to apply as inline styles on the email template. 
 
@@ -291,12 +292,12 @@ Emails inherit the custom fonts that are defined by the frontend theme. The Mage
 
 Here is an overview of how the font structure for emails works:
 
-* [`<Magento_Blank_theme_dir>/web/css/source/_email-extend.less`]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
+* [`<Magento_Blank_theme_dir>/web/css/source/_email-extend.less`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_email-extend.less) contains the `@import` directive that requests the `email-fonts.css` file.
 
   The reason the contents of `email-fonts.css` are loaded using `@import` rather than being output directly into a `<style>` tag in the `<head>` of an email is that if a user is reading their email offline, some email clients don't render the text because the web fonts can't be loaded.
 * The `<Magento_Blank_theme_dir>/web/css/email-fonts.less` file imports `source/_variables.less` and `source/_typography.less` files:
-    * [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_variables.less) defines which font is used in the `@font-family-name__base` variable.
-    * [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2100url }}app/design/frontend/Magento/blank/web/css/source/_typography.less) generates the `@font-face` rules which import the custom fonts.
+    * [app/design/frontend/Magento/blank/web/css/source/_variables.less]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_variables.less) defines which font is used in the `@font-family-name__base` variable.
+    * [app/design/frontend/Magento/blank/web/css/source/_typography.less]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/source/_typography.less) generates the `@font-face` rules which import the custom fonts.
 
 If you want to change the font used for emails, do the following:
 
@@ -326,20 +327,21 @@ To customize your logo using a theme:
    Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
   
    Example:
-   
-       {% raw %}
-       {{if logo_width}}
-           width="{{var logo_width}}"
-       {{else}}
-           width="200"
-       {{/if}}
-       
-       {{if logo_height}}
-           height="{{var logo_height}}"
-       {{else}}
-           height="100"
-       {{/if}}
-       {% endraw %}
+   ```
+   {% raw %}
+   {{if logo_width}}
+       width="{{var logo_width}}"
+   {{else}}
+       width="200"
+   {{/if}}
+
+   {{if logo_height}}
+       height="{{var logo_height}}"
+   {{else}}
+       height="100"
+   {{/if}}
+   {% endraw %}
+   ```
    
    You should leave the if/else conditional statement in place in case you ever want to override these values using the Admin.
 
@@ -380,25 +382,35 @@ The sales emails are configured to display all of the above values, if they're c
 ## Localization {#localization}
 
 In order to support the translation of content, all strings in emails are output using the `trans` directive. Example: 
-
-    {% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
-    {% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
+```
+{% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
+{% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
+```
 
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
+
+The directive supports multiple named parameters, separated by spaces. For example:
+```
+{% raw %}
+{{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
+{% endraw %}
+```
 
 Please note, that variable assignment must not contain spaces. 
 
 Correct:
-
-    {% raw %}
-    {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
-    {% endraw %}
+```
+{% raw %}
+{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
+{% endraw %}
+```
 
 Incorrect:
-
-    {% raw %}
-    {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
-    {% endraw %}
+```
+{% raw %}
+{{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}
+{% endraw %}
+```
 
 {:.bs-callout .bs-callout-info}
 Exception: argument value can contain spaces if it is enclosed in brackets.

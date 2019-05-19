@@ -13,13 +13,13 @@ This component is a variation of the [FileUploader component]({{ page.baseurl }}
 | Title             | Type   | Default | Description                                                                    |
 | ----------------- | ------ | ------- | ------------------------------------------------------------------------------ |
 | `openDialogTitle` | String |   ---   | Defines the title that appears when opening the media browser dialog slideout. |
-{:style="table-layout:auto;"}
+
 
 ## Source files
 
 Extends [`FileUploader`]({{ page.baseurl }}/ui_comp_guide/components/ui-fileuploader.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js)
-- [`app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html)
-- [`app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd`]({{ site.mage2300url }}app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd)
-- [`app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php`]({{ site.mage2300url }}app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php)
+- [`app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/image-uploader.js)
+- [`app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/form/element/uploader/image.html)
+- [`app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition/imageUploader.xsd)
+- [`app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/Component/Form/Element/DataType/Media/Image.php)

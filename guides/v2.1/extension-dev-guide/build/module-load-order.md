@@ -14,7 +14,7 @@ You may need to specify your component's dependency on other components or files
 
 If you know that your component's logic depends on something in another component, then you should add this component to `require` in `composer.json` and `<sequence>` in `module.xml`.
 
-You can check your module's load order from the `<your Magento install dir>/app/etc/config.php` file after you've successfully set up Magento. This file is created dynamically at run time during set up.
+You can check your module's load order from the `<magento_root>/app/etc/config.php` file after you've successfully set up Magento. This file is created dynamically at run time during set up.
 
 {: .bs-callout .bs-callout-info }
 If you change the component load order using `<sequence>`, you must regenerate the component list in `config.php`; otherwise, the load order does not take effect. Currently, the only way to do this is to enable the component using [`magento module:enable `]({{ page.baseurl}}/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable), where `<module-list>` is the component or components to which you added `<sequence>`.
@@ -23,9 +23,9 @@ If you change the component load order using `<sequence>`, you must regenerate t
 
 Assume you have a component that needs a configuration file from another component:
 
-__Component A__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock` from __component B__. In this case, layout files from __component A__ should be loaded before __component B__, so you should specify that in __component B's__ `<sequence>` entry in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml. In other words, __component B__ is dependent on __component A__. That is to say:
+__Component B__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock` from __component A__. In this case, layout files from __component A__ should be loaded before __component B__, so you should specify that in __component B's__ `<sequence>` entry in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.xml. In other words, __component B__ is dependent on __component A__. That is to say:
 
-{% highlight XML %}
+```xml
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
     <module name="Vendor_ComponentB" setup_version="0.0.1">
@@ -35,7 +35,7 @@ __Component A__ introduces `gadgetlayout.xml`, which updates block `gadgetBlock`
         </sequence>
     </module>
 </config>
-{% endhighlight %}
+```
 
 For each particular scenario, files of the same type are loaded from different components taking into account the sequence information provided in each component's `module.xml` file.
 

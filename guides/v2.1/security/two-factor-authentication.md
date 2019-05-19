@@ -22,18 +22,20 @@ At this time, Two-Factor Authentication can be installed only from the command l
 
 Install the extension using the following Composer command:
 
-``` bash
+```bash
 composer require msp/twofactorauth:3.0.0
 ```
 
 To complete installation in an existing Magento instance, run the following commands to enable the module:
 
-``` bash
+```bash
 bin/magento module:enable --all
 ```
-``` bash
+
+```bash
 bin/magento setup:upgrade
 ```
+
 ```bash
 bin/magento cache:clean
 ```
@@ -70,7 +72,7 @@ The extension supports command line options for disabling, revoking, and resetti
 
 If you have issues with 2FA, you can disable 2FA globally for the Magento instance.
 
-``` bash
+```bash
 bin/magento msp:security:tfa:disable
 ```
 
@@ -78,7 +80,7 @@ bin/magento msp:security:tfa:disable
 
 If you need to manually reset a single user configuration, enter the following command. It restarts configuration and 2FA subscription for the user account.
 
-``` bash
+```bash
 bin/magento msp:security:tfa:reset <username> <provider>
 ```
 
