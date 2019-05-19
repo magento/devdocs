@@ -281,6 +281,8 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
 
 ## Step 4: Enable the module {#enable-module}
 
+Run the commands below to register `Vendor_CustomShipping` module:
+
 ```bash
 bin/magento module:enable Vendor_CustomShipping
 ```
