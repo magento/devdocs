@@ -155,7 +155,7 @@ The `system.xml` source code declares custom shipping module options:
 
 ### Source code of `app/code/Vendor/CustomShipping/etc/config.xml`
 
-File specifies default values for custom shipping module options and shipping module model - `Vendor\CustomShipping\Model\Carrier\Customshipping`.
+The `config.xml` file specifies default values for custom shipping module options and the shipping module model, `Vendor\CustomShipping\Model\Carrier\Customshipping`:
 
 ```xml
 <?xml version="1.0"?>
