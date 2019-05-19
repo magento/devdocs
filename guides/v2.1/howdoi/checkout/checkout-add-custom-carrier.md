@@ -91,7 +91,7 @@ ComponentRegistrar::register(
 </config>
 ```
 
-## Step 2: Add module configuration {#create-configuration}
+## Step 2: Add the module configuration {#create-configuration}
 
 ### Source code of `app/code/Vendor/CustomShipping/etc/adminhtml/system.xml`
 
@@ -173,7 +173,7 @@ File specifies default values for custom shipping module options and shipping mo
 </config>
 ```
 
-## Step 3: Create carrier model {#carrier-model}
+## Step 3: Create the carrier model {#carrier-model}
 
 ### Source code of `app/code/Vendor/CustomShipping/Model/Carrier/Customshipping.php`
 
@@ -277,7 +277,7 @@ class Customshipping extends AbstractCarrier implements CarrierInterface
 }
 ```
 
-## Step 4: Enable module {#enable-module}
+## Step 4: Enable the module {#enable-module}
 
 ```bash
 bin/magento module:enable Vendor_CustomShipping
