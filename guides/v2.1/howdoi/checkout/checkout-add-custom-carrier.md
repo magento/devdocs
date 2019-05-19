@@ -97,7 +97,7 @@ To add a module configuration use the following source code snippets.
 
 ### Source code of `app/code/Vendor/CustomShipping/etc/adminhtml/system.xml`
 
-Declares custom shipping module options:
+The `system.xml` source code declares custom shipping module options:
 - Enabled
 - Title
 - Method Name
