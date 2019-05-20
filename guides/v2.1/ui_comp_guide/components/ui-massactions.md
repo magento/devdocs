@@ -169,8 +169,8 @@ Redefine link to constructor.
 ## Source files
 
 Extends `Collapsible`:
-- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
-- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
+- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
+- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
 
 ### Methods and Events
 

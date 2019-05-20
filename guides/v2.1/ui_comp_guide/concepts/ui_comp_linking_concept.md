@@ -50,7 +50,7 @@ Example of setting `exports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2100url }}app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
+For an example of `exports` usage in Magento code see [`product_form.xml`, line 81]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81)
 
 ### `imports`
 
@@ -83,7 +83,7 @@ Example of using `imports` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2100url }}app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
+For an example of `imports` usage in Magento code see [`product_form.xml`, line 103]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103)
 
 ### `links`
 
@@ -116,7 +116,7 @@ Example of using `links` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
+For an example of `links` usage in Magento code see [`text.js`, line 19]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19)
 
 ### `listens`
 
@@ -150,7 +150,7 @@ Example of using `listens` in a component's configuration `.xml` file:
 </argument>
 ```
 
-For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2100url }}app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
+For example of `listens` usage in Magento code see [`new_category_form.xml`, line 92]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92)
 
 ## Template strings usage {#string_templ}
 

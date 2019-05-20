@@ -34,7 +34,7 @@ Following is a summary of the process:
 
 1.	Create a Command class (the recommended location is `<your component root dir>/Console/Command`).
 
-	See [`<Magento_Store_module_dir>/Console/Command/StoreListCommand.php`]({{ site.mage2300url }}app/code/Magento/Store/Console/Command/StoreListCommand.php) for example.
+	See [`<Magento_Store_module_dir>/Console/Command/StoreListCommand.php`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Console/Command/StoreListCommand.php) for example.
 2.	Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`):
 
 ```xml
@@ -53,7 +53,7 @@ Following is a summary of the process:
 
 3.	Clean the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and compiled code directories:
 
-		cd <your Magento install dir>/var
+		cd <magento_root>/var
 		rm -rf cache/* page_cache/* di/* generation/* 
 
 ## Add CLI commands using the Composer autoloader {#cli-autoload}
