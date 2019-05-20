@@ -89,7 +89,7 @@ Attribute |  Data Type | Description
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`is_email_available` | Boolean | A value of `true` indicates the email address can be used to create an account
+`is_email_available` | Boolean | A value of `true` indicates the email address is available, and the customer can use the email address to create an account
 
 ### Example usage
 
