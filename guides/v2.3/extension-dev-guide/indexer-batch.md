@@ -138,7 +138,7 @@ The following conditions must apply to disable Product EAV indexer:
 {:.bs-callout .bs-callout-info}
 To determine whether any 3rd-party extensions are using the Product EAV indexer, check the `catalog_product_index_eav` table for reading/writing activity.
 
-To disable the Product EAV indexer in the Admin, go to **Configuration** > **Catalog** > **Catalog Search** and make sure the **Search Engine** field has a value other than MySQL.  Then set the value of **Enable EAV Indexer** to No.
+To disable the Product EAV indexer in the Admin, go to **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Catalog Search** and make sure the **Search Engine** field has a value other than MySQL.  Then set the value of **Enable EAV Indexer** to No.
 
 ### Related topics
 {:.no_toc}
