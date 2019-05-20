@@ -331,7 +331,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 [ISO 639-1]: http://www.iso.org/iso/home/standards/language_codes.htm
 [ISO 3166]: http://www.iso.org/iso/country_codes.htm
 [registers]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
-[`de_de`]: {{ site.mage2000url }}app/i18n/magento/de_de/registration.php
+[`de_de`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/i18n/magento/de_de/registration.php
 [`composer.json`]: {{ page.baseurl }}/extension-dev-guide/build/composer-integration.html
 [`registration.php`]: {{ page.baseurl }}/extension-dev-guide/build/component-registration.html
-[Magento\Test\Integrity\App\Language\CircularDependencyTest]: {{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php
+[Magento\Test\Integrity\App\Language\CircularDependencyTest]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php
