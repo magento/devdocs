@@ -11,7 +11,7 @@ To return or modify information about a customer, Magento recommends you use cus
 
 The `customer` query returns information about the logged-in customer.
 
-The `isEmailAvailable` query checks whether the specified email has already been used to create a customer account. A value of `true` indicates the customer can use the email address to create an account.
+The `isEmailAvailable` query checks whether the specified email has already been used to create a customer account. A value of `true` indicates the email address is available, and the customer can use the email address to create an account.
 
 ### Syntax
 
