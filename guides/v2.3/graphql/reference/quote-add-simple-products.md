@@ -26,7 +26,7 @@ The following example adds a simple product to a cart. The response contains the
 mutation {
   addSimpleProductsToCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
       cart_items: [
         {
           data: {
