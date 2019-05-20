@@ -57,7 +57,7 @@ Example: Module A declares a dependency upon Module B. Thus, in Module A's `modu
 </config>
 ```
 
-After installing the module and opening the `app/etc/config.php`, you are able to see that the Module_B was loaded before Module_A:
+After installing the module and opening `app/etc/config.php`, you are able to see that the Module_B was loaded before Module_A:
 
 ```php
 return [
