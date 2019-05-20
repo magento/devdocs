@@ -125,6 +125,7 @@ You must create a `<Module>/etc/extension_attributes.xml` file to define a modul
 
 where:
 
+{:.fixed}
 |Keyword|Description|Example|
 |--- |--- |--- |
 | for | The fully-qualified type name with the {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module. | `Magento\Quote\Api\Data\TotalsInterface` |
@@ -134,7 +135,7 @@ where:
 | reference_table | The table involved in a join operation. See <a href="#search">[Searching extension attributes](#search)</a> for details. | `admin_user` |
 | reference_field | Column in the `reference_table`. | `user_id` |
 | join_on_field | The column of the table associated with the interface specified in the `for` {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} that will be used in the join operation. | `store_id` |
-| field | One or more fields present in the interface specified in the `type` keyword.<br />You can specify the `column=""` keyword to define the column in the reference_table to use. The field value specifies the property on the `interface` which should be set. | `&lt;field>firstname&lt;/field>`<br />`&lt;field>lastname&lt;/field>`<br />`&lt;field>email&lt;/field>`<br /><br />`&lt;field column="customer_group_code">code&lt;/field>` |
+| field | One or more fields present in the interface specified in the `type` keyword.<br />You can specify the `column=""` keyword to define the column in the reference_table to use. The field value specifies the property on the `interface` which should be set. | `<field>firstname</field>`<br />`<field>lastname</field>`<br />`<field>email</field>`<br /><br />`<field column="customer_group_code">code</field>` |
 
 
 ### Searching extension attributes {#search}
@@ -236,6 +237,7 @@ If you have issues when using `setup:upgrade`, verify `__construct` uses the met
 
 The following table is a reference for the `Magento\Eav\Setup\EavSetup::addAttribute` method. It contains the available options when creating a product attribute, listing each option's key, description, and the default value (where applicable).
 
+{:.fixed}
 |Key|Description|Default Value|
 |--- |--- |--- |
 |apply_to|Catalog EAV Attribute apply_to||
