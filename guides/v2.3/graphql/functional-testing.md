@@ -341,9 +341,13 @@ Use the following functions to cover expected exceptions:
 
 ### Configure your instance
 
-1. Copy `phpunit_graphql.xml.dist` file to `phpunit_graphql.xml` in the `dev/tests/api-functional/` folder.
+1. Change directories to `dev/tests/api-functional/` and copy the `phpunit_graphql.xml.dist` file to `phpunit_graphql.xml`.
 
-2. Open for edit `phpunit_graphql.xml` and set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
+    ```bash
+    cp phpunit_graphql.xml.dist phpunit_graphql.xml
+    ```
+
+2. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
 
     ```xml
     ...
@@ -356,7 +360,7 @@ Use the following functions to cover expected exceptions:
     ...
     ```    
 
-### Run all tests of API functional test 
+### Run all tests in a API functional test suite 
 
 **Syntax**
 
@@ -366,13 +370,13 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api
 
 **Example**
 
-To run all tests from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php](https://github.com/magento/magento2/blob/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php) run the following command:
+To run all tests from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php](https://github.com/magento/magento2/blob/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
  
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
 ```
 
-### Run a single test of API functional test
+### Run a single test in a API functional test suite
 
 **Syntax**
  
@@ -382,15 +386,15 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter <tes
  
 **Example**
 
-To run `testGenerateCustomerValidToken` test from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php](https://github.com/magento/magento2/blob/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php) run the following command:
+To run `testGenerateCustomerValidToken` test from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php](https://github.com/magento/magento2/blob/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
  
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter testGenerateCustomerValidToken dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
 ```
  
-### Run a single test or a couple of tests of API functional test
+### Run a selected group of tests in an API functional test suite
 
-Use `@group` directive in the test annotation to add the ability to run a couple of tests. 
+Use the `@group` directive in the test annotation to add the ability to run a group tests. 
 
 **Syntax**
  
@@ -400,7 +404,7 @@ vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --group <TEST
  
 **Example**
 
-`testGetCartTotalsWithNoAddressSet` test is marked with `@group recent`:
+The `testGetCartTotalsWithNoAddressSet` test is marked with `@group recent`:
 
 ```php
 <?php
@@ -435,7 +439,7 @@ class MyTest extends \Magento\TestFramework\TestCase\GraphQlAbstract
 }    
 ```
 
-To run `testFunction1` and `testFunction2` tests which included into `my_test_group` group use the following command:
+To run the `testFunction1` and `testFunction2` tests, which are part of the `my_test_group` group, use the following command:
 
 ```bash
 vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --group my_test_group dev/tests/api-functional/testsuite/Magento/GraphQl/MyTest.php
