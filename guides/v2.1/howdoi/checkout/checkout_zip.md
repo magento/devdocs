@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add custom input mask for ZIP code
 subtitle: Customize Checkout
-menu_order: 6
+menu_order: 7
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
