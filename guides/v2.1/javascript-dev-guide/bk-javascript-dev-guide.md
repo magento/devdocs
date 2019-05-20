@@ -36,9 +36,9 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 
 
 [AMD module]: http://requirejs.org/docs/whyamd.html#amd
-[`Magento_Ui`]: {{site.mage2100url}}app/code/Magento/Ui
-[app/code/Magento/Ui/view]: {{site.mage2100url}}app/code/Magento/Ui/view
-[jQuery UI library used in Magento]: {{site.mage2100url}}lib/web/jquery/jquery-ui-1.9.2.js
+[`Magento_Ui`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui
+[app/code/Magento/Ui/view]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view
+[jQuery UI library used in Magento]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/jquery/jquery-ui-1.9.2.js
 [jQuery Widget]: https://jqueryui.com/widget/
 
 [RequireJS file and module loader]: http://requirejs.org/

@@ -161,8 +161,8 @@ where:
 <td><p>field</p></td>
 <td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
 <p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code>&lt;field>firstname&lt;/field><br />&lt;field>lastname&lt;/field><br />&lt;field>email&lt;/field><br /><br />
-&lt;field column="customer_group_code">code&lt;/field></code></td>
+<td><code><field>firstname</field><br /><field>lastname</field><br /><field>email</field><br /><br />
+<field column="customer_group_code">code</field></code></td>
 </tr>
 </tbody>
 
@@ -190,7 +190,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See [Web API authentication overview]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) for general information about authentication in Magento.
 
-The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
+The following [code sample]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
