@@ -8,14 +8,11 @@ functional_areas:
   - Standards
 ---
 
-### Overview
+This tutorial shows you how to add a new dynamic rows system configuration in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento admin{% endglossarytooltip %}, by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0]{:target="_blank"} class. 
 
-This tutorial gives instructions for adding a new dynamic rows system config in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento admin{% endglossarytooltip %}, by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0]{:target="_blank"} class. 
+## Step 1: Add a new system field 
 
-## Step 1: Add your new system field 
-{:#step-1}
-
-**etc/adminhtml/system.xml**
+> `etc/adminhtml/system.xml`
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
@@ -34,14 +31,13 @@ This tutorial gives instructions for adding a new dynamic rows system config in 
 </config>
 ```
 
-This code adds a new system config on the following location:
+This code adds a new system config in the following location:
 
-``Stores / Configuration / General [General] / Quantity Ranges``
+``Stores/Configuration/General [General]/Quantity Ranges``
 
-## Step 2: Create the Frontend model class
-{:#step-2}
+## Step 2: Create the front-end model class
 
-**Block/Adminhtml/Form/Field/Ranges.php**
+> `Block/Adminhtml/Form/Field/Ranges.php`
 
 ```php
 <?php
@@ -68,11 +64,11 @@ class Ranges extends AbstractFieldArray
 }
 ```
 
-This block prepares the columns that you want to have in your new config. 
+This block prepares the desired columns for inclusion in the new config.
 
-### Result
+## Result
 
-The result is a new system dynamic row field into Admin panel.
+The result is a new dynamic system row field in the Admin panel.
 
 ![Dynamic Rows System Config]({{ site.baseurl }}/common/images/ext-best-practices/dynamic-rows-config-result.png)
 
