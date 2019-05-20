@@ -15,7 +15,9 @@ Use this command to create symlinks to LESS files.
 
 Command options:
 
-	bin/magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
+```bash
+bin/magento dev:source-theme:deploy [--type="..."] [--locale="..."] [--area="..."] [--theme="..."] [file1] ... [fileN]
+```
 
 The following table explains this command's parameters and values.
 
@@ -59,16 +61,22 @@ The following table explains this command's parameters and values.
 	</tbody>
 </table>
 
-For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<your Magento install dir>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
+For example, to create LESS files for the frontend theme named `VendorName/themeName` in the `en_US` locale using a CSS file named `<magento_root>/pub/static/frontend/VendorName/themeName/en_US/css/styles-l.css`, enter the following command:
 
-	bin/magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
+```bash
+bin/magento dev:source-theme:deploy --type="less" --locale="en_US" --area="frontend" --theme="VendorName/themeName" css/styles-l
+```
 
 The following messages display to confirm success:
 
-	Processed Area: frontend, Locale: en_US, Theme: VendorName/themeName, File type: less.
-	-> css/styles-l.less
-	Successfully processed.
+```terminal
+Processed Area: frontend, Locale: en_US, Theme: VendorName/themeName, File type: less.
+-> css/styles-l.less
+Successfully processed.
+```
 
 To create LESS files for the adminhtml, enter the following command:
 
-	bin/magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
+```bash
+bin/magento dev:source-theme:deploy --locale="en_US" --area="adminhtml" --theme="Magento/backend" css/styles css/styles-old
+```

@@ -34,6 +34,10 @@ To install a theme manually:
 
 To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) topic.
 
+- Manually installed themes are stored in the `app/design/` directory. Themes loaded through Composer are located in the `vendor/` directory and can be stored anywhere in root.
+
+- When the application starts up, Composer executes each file included in the `autoload.files` section. `registration.php` then registers itself as a theme.
+
 ## Install a theme as an extension
 
 If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with **Web Setup Wizard**. For details, see [Install the Extension](http://docs.magento.com/marketplace/user_guide/quick-tour/install-extension.html).

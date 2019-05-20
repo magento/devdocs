@@ -56,7 +56,7 @@ See one of the following sections for more information:
 
 ### Specify a variable using an nginx setting {#mode-specify-web-nginx}
 
-See the [nginx sample configuration]({{ site.mage2000url }}nginx.conf.sample#L16){:target="_blank"} on GitHub.
+See the [nginx sample configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample#L16){:target="_blank"} on GitHub.
 
 ### Specify a variable using .htaccess (Apache only) {#mode-specify-web-htaccess}
 
@@ -64,8 +64,8 @@ One way to set the Magento mode is by editing `.htaccess`. This way, you don't h
 
 You can modify `.htaccess` in any of the following locations, depending on your entry point to the Magento application:
 
-*	`<your Magento install dir>/.htaccess`
-*	`<your Magento install dir>/pub/.htaccess`
+*	`<magento_root>/.htaccess`
+*	`<magento_root>/pub/.htaccess`
 
 To set a variable:
 
