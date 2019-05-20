@@ -70,7 +70,7 @@ UI component is a combination of:
 2. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
 
 
-3. **Related template(s)** using KnockoutJs bindings
+3. **Related template(s)**
 
 ### XML Declaration
 
