@@ -33,7 +33,7 @@ This tutorial shows you how to add a new dynamic rows system configuration in th
 
 This code adds a new system config in the following location:
 
-``Stores/Configuration/General [General]/Quantity Ranges``
+`Stores/Configuration/General [General]/Quantity Ranges`
 
 ## Step 2: Create the front-end model class
 
@@ -72,4 +72,4 @@ The result is a new dynamic system row field in the Admin panel.
 
 ![Dynamic Rows System Config]({{ site.baseurl }}/common/images/ext-best-practices/dynamic-rows-config-result.png)
 
-[0]:{{ site.mage2bloburl }}/2.1/app/code/Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray.php
+[0]: {{ site.mage2bloburl }}/2.1/app/code/Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray.php
