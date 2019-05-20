@@ -4,7 +4,7 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon May 20 11:21:53 2019
+updated: Mon May 20 13:19:25 2019
 entries:
 - description: Added [reference documentation](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html#result-object)
     about the `result object` returned by the `Action` class.
@@ -12,6 +12,12 @@ entries:
   type: Major update
   date: May 20, 2019
   link: https://github.com/magento/devdocs/pull/4541
+- description: Added information about adding a custom carrier to the [Customize Checkout
+    tutorial](https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout-add-custom-carrier.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: May 20, 2019
+  link: https://github.com/magento/devdocs/pull/4371
 - description: Added examples of [creating and updating a Magento admin user](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-admin.html)
     with the command line.
   versions: 2.1.x, 2.2.x, 2.3.x
@@ -19,6 +25,7 @@ entries:
   date: May 17, 2019
   link: https://github.com/magento/devdocs/pull/4526
 - description: Added reference documentation for [ZIP code attributes](https://devdocs.magento.com/guides/v2.3/howdoi/checkout/checkout_zip.html),
+    including a new code sample showing how to pass multiple ZIP code patterns for
     the same country.
   versions: 2.1.x, 2.3.x, 2.x
   type: Major update
