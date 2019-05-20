@@ -76,11 +76,11 @@ The database container is based on the `mariadb:10` image.
 
 #### To import a database dump:
 
-Place the SQL file into the `docker/mysql/docker-entrypoint-initdb.d` folder.
+Place the SQL file into the `.docker/mysql/docker-entrypoint-initdb.d` folder.
 
 The `{{site.data.var.ct}}` package imports and processes the SQL file the next time you build and start the Docker environment using the `docker-compose up` command.
 
-Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `docker/mnt` directory and importing it inside the Docker container.
+Although it is a more complex approach, you can use GZIP by _sharing_ the `.sql.gz` file using the `.docker/mnt` directory and importing it inside the Docker container.
 
 ## Varnish container
 
@@ -90,7 +90,7 @@ The TLS termination proxy container, based on the  [magento/magento-cloud-docker
 
 ## Sharing data between host machine and container
 
-You can share files easily between your machine and a Docker container by placing the files in the `docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
+You can share files easily between your machine and a Docker container by placing the files in the `.docker/mnt` directory. You can find the files in the `/mnt` directory the next time you build and start the Docker environment using the `docker-compose up` command.
 
 ## Sendmail service
 
