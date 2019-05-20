@@ -177,9 +177,9 @@ The `config.xml` file specifies default values for custom shipping module option
 
 ## Step 3: Create the carrier model {#carrier-model}
 
-In this example, `Vendor\CustomShipping\Model\Carrier\Customshipping` class is a skeleton of carrier model. You can extend it depends on own purposes. 
+In this example, the `Vendor\CustomShipping\Model\Carrier\Customshipping` class is a skeleton of a carrier model. You can extend it to fit your needs. 
 
-Carrier class implements `CarrierInterface` interface and retrieves all available shipping methods in the `getAllowedMethods` function. The `collectRates` function returns `\Magento\Shipping\Model\Rate\Result` object if carrier method is available on checkout otherwise it returns `false` - carrier method is not applicable to shopping cart.
+The carrier class implements the `CarrierInterface` interface and retrieves all available shipping methods in the `getAllowedMethods` function. The `collectRates` function returns the `\Magento\Shipping\Model\Rate\Result` object if the carrier method is available on checkout. Otherwise, it returns `false`---the carrier method is not applicable to the shopping cart.
 
 ### Source code of `app/code/Vendor/CustomShipping/Model/Carrier/Customshipping.php`
 
