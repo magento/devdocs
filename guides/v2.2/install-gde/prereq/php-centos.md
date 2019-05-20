@@ -17,7 +17,7 @@ If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/ins
 
 ## PHP versions supported {#php-support}
 
-<!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "||" %}-->
+<!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "|" %}-->
 {% include install/php-versions-template.md %}
 
 
