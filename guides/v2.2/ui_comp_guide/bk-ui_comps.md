@@ -105,12 +105,11 @@ A particular instance of a UI component is defined primarily by the following:
 
 ## UI component used in the frontend design area
 
-* Configured through layout XML
+* Configured through layout XML.
 
-* The jsLayout argument is used to specify information
+* The `jsLayout` argument is used to specify information.
 
 ```xml
-
 <block name="block-name" template="Magento_Module::path_to_template.phtml">
   <arguments>
     <argument name="jsLayout" xsi:type="array">
@@ -120,7 +119,6 @@ A particular instance of a UI component is defined primarily by the following:
     </argument>
   </arguments>
 </block>
-
 ```
 
 ## UI component used in the Adminhtml area
