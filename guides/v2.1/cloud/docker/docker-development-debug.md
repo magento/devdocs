@@ -33,7 +33,7 @@ generic:
     - PHP_IDE_CONFIG=serverName=magento_cloud_docker
     - XDEBUG_CONFIG=remote_host=host.docker.internal
   env_file:
-    - ./docker/config.env
+    - ./.docker/config.env
 ```
 
 You can change any Xdebug configuration using the`XDEBUG_CONFIG` option. For example, to change the `xdebug.remote_port` option:

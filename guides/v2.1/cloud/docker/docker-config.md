@@ -96,7 +96,7 @@ Continue launching your Docker environment in the default _production_ mode.
 1.  _Optional_: Copy the raw configuration files.
 
     ```bash
-    cp docker/config.php.dist docker/config.php
+    cp .docker/config.php.dist .docker/config.php
     ```
 
 1. _Optional_: Convert the PHP configuration files to Docker ENV files.
@@ -107,7 +107,7 @@ Continue launching your Docker environment in the default _production_ mode.
 
     This command generates the following Docker ENV files:
 
-    * `docker/config.env`
+    * `.docker/config.env`
 
     {: .bs-callout .bs-callout-info}
     The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
@@ -170,7 +170,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 1.  _Optional_: Copy the raw configuration files.
 
     ```bash
-    cp docker/config.php.dist docker/config.php
+    cp .docker/config.php.dist .docker/config.php
     ```
 
 1.  _Optional_: Convert the PHP configuration files to Docker ENV files.
@@ -181,7 +181,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
     This command generates the following Docker ENV files:
 
-    * `docker/config.env`
+    * `.docker/config.env`
 
 1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 

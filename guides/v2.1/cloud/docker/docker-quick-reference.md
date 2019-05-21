@@ -50,3 +50,17 @@ php ./vendor/bin/ece-tools list | grep docker
 | ------------ | ---------------- | ------------------
 | Mode         | `--mode`, `-m`   | production, developer
 
+## bin/docker
+
+Action | Command
+:----- | :------
+Pull latest images | pull
+Destroy, re-create and start containers | up
+Destroy containers | down
+Build application | build
+Deploy application | up
+Re-build and re-deploy application | redeploy
+Connect to bash | bash
+Stop containers | stop
+Start containers | start
+Restart containers | restart
