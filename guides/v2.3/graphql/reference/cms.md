@@ -20,8 +20,8 @@ Return the contents of one or more CMS blocks:
 Attribute | Data type | Description
 --- | --- | ---
 `id` | Int | The ID of a CMS page
-`identifiers` | Array | An array containing a comma-separated list of block identifiers
-{:style="table-layout:auto;"}
+`identifiers` | [String] | An array containing a comma-separated list of block identifiers
+
 
 ### CmsPage output attributes 
 
@@ -33,11 +33,11 @@ Attribute | Data type | Description
 `content` | String | The content of the CMS page in raw HTML
 `meta_description` | String | A brief description of the page for search results listings
 `meta_keywords` | String | A set of keywords that search engines can use to index the page
-`meta_title` | String | The title that appears in the browser title bar and tab
+`meta_title` | String | A page title that is indexed by search engines and appears in search results listings
 `page_layout` | String | The design layout of the page, indicating the number of columns and navigation features used on the page
-`title` | String | The name that appears in the breadcrumb trail navigation
+`title` | String | The name that appears in the breadcrumb trail navigation and in the browser title bar and tab
 `url_key` |String | The URL key of the CMS page, which is often based on the `content_heading`
-{:style="table-layout:auto;"}
+
 
 ###  CmsBlocks output attributes
 
@@ -48,7 +48,7 @@ Attribute | Data type | Description
 `content` | String | The content of the CMS block in raw HTML
 `identifier` | String | The CMS block identifier
 `title` | String | The title assigned to the CMS block
-{:style="table-layout:auto;"}
+
 
 ## Example usage
 

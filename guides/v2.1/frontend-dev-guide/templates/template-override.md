@@ -14,7 +14,7 @@ This topic discusses the main concepts of how default templates work in the Mage
 Templates are usually initiated in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
 Each layout block has an associated template. 
 The template is specified in the `template` attribute of the `<block>` layout instruction. 
-For example, from [`<Magento_Catalog_module_dir>/view/frontend/layout/catalog_category_view.xml`]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml)
+For example, from [`<Magento_Catalog_module_dir>/view/frontend/layout/catalog_category_view.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/catalog_category_view.xml)
 
 ```xml
 <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml"/>

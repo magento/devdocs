@@ -22,7 +22,7 @@ This section describes the REST endpoints used to manage `Company` objects.
 
 **REST Endpoints**
 
-``` json
+```json
 POST /V1/company/
 PUT /V1/company/:companyId
 GET /V1/company/:companyId
@@ -57,7 +57,7 @@ Name | Description | Format | Requirements
 `reject_reason` | Specifies why a company's request to be a B2B customer is rejected | string | Optional
 `rejected_at` | A timestamp indicating when the company was rejected. | string | Optional
 `super_user_id` | The `customer_id` of the company administrator. When creating a company, the `customer_id` must already exist.  | integer | Required to create or update a company.
-{:style="table-layout:auto;"}
+
 
 ### Create a company
 
@@ -65,11 +65,11 @@ The following example creates a company and assigns the default shared catalog (
 
 **Sample Usage**
 
-`POST /V1/company/`
+`POST <host>/rest/<store_code>/V1/company/`
 
 **Payload**
 
-``` json
+```json
 {
   "company": {
     "company_name": "Test company",
@@ -91,7 +91,7 @@ The following example creates a company and assigns the default shared catalog (
 
 **Response**
 
-``` json
+```json
 {
   "id": 2,
   "company_name": "Test company",
@@ -125,11 +125,11 @@ The following call changes the company status to Rejected (`2`) and explains why
 
 **Sample Usage**
 
-`PUT /V1/company/2`
+`PUT <host>/rest/<store_code>/V1/company/2`
 
 **Payload**
 
-``` json
+```json
 {
   "company": {
   	"id": 2,
@@ -155,7 +155,7 @@ The following call changes the company status to Rejected (`2`) and explains why
 
 **Response**
 
-``` json
+```json
 {
   "id": 2,
   "company_name": "Test company",
@@ -188,7 +188,7 @@ The following call changes the company status to Rejected (`2`) and explains why
 This call returns detailed information about the specified company.
 **Sample Usage**
 
-`GET /V1/company/2`
+`GET <host>/rest/<store_code>/V1/company/2`
 
 **Payload**
 
@@ -196,7 +196,7 @@ None
 
 **Response**
 
-``` json
+```json
 {
   "id": 2,
   "status": 0,
@@ -231,7 +231,7 @@ When you delete a company, Magento assigns the "Inactive" status to all company 
 
 **Sample Usage**
 
-`DELETE /V1/company/2`
+`DELETE <host>/rest/<store_code>/V1/company/2`
 
 **Payload**
 
@@ -249,7 +249,7 @@ See [Search using REST APIs]({{ page.baseurl }}/rest/performing-searches.html) f
 
 **Sample Usage**
 
-`GET /V1/company?searchCriteria[filter_groups][0][filters][0][field]=region_id&searchCriteria[filter_groups][0][filters][0][value]=12&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+`GET <host>/rest/<store_code>/V1/company?searchCriteria[filter_groups][0][filters][0][field]=region_id&searchCriteria[filter_groups][0][filters][0][value]=12&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
 
 **Payload**
 
@@ -258,7 +258,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {

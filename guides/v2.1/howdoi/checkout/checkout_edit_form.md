@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add a custom template for a form field on Checkout page
 subtitle: Customize Checkout
-menu_order: 7
+menu_order: 8
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
@@ -61,7 +61,7 @@ In this file, add content similar to the following:
 
 ```xml
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
             <arguments>

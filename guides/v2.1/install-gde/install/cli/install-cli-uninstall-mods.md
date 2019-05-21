@@ -53,11 +53,11 @@ The module uninstall command performs the following tasks:
 | `--backup-code`  | Backs up the Magento file system (excluding `var` and `pub/static` directories). | var/backups/<timestamp>_filesystem.tgz       |
 | `--backup-media` | Backs up the pub/media directory.                                                | var/backups/<timestamp>_filesystem_media.tgz |
 | `--backup-db`    | Backs up the Magento 2 database.                                                 | var/backups/<timestamp>_db.gz                |
-{:style="table-layout:auto;"}
+
 
 3.	If `--remove-data` is specified, removes the database schema and data defined in the module's `Uninstall` classes.
 
-	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
+	For each specified module to uninstall, invokes the `uninstall` method in its `Uninstall` class. This class must inherit from [Magento\Framework\Setup\UninstallInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Setup/UninstallInterface.php){:target="_blank"}.
 
 4.	Removes the specified modules from the `setup_module` database table.
 4.	Removes the specified modules from the module list in the [deployment configuration]({{ page.baseurl }}/config-guide/config/config-php.html).
@@ -123,7 +123,7 @@ To restore the Magento codebase to the state at which you backed it up, use the 
 
 	magento setup:rollback [-c|--code-file="<filename>"] [-m|--media-file="<filename>"] [-d|--db-file="<filename>"]
 
-where `<filename>` is the name of the backup file located in `<your Magento install dir>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
+where `<filename>` is the name of the backup file located in `<magento_root>/var/backups`. To display a list of backup files, enter `magento info:backups:list`
 
 {:.bs-callout .bs-callout-warning}
 This command deletes the specified files or the database before restoring them. (For example, the <code>--media-file</code> option deletes media assets under  `pub/media` before restoring from the specified rollback file.) Make sure you have made no changes to the file system or database that you want to keep before using this command.

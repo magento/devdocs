@@ -270,7 +270,7 @@ openFileBrowser: function (o) {
         storeId = this.config['store_id'] !== null ? this.config['store_id'] : 0,
         frameDialog = jQuery(o.win.frameElement).parents('[role="dialog"]'),
         wUrl = this.config['files_browser_window_url'] +
-            'target_element_id/' + this.id + '/' +
+            'target_element_id/' + this.getId() + '/' +
             'store/' + storeId + '/';
 
     this.mediaBrowserOpener = o.win;
@@ -326,11 +326,11 @@ In your module's [`di.xml`] file, you can define a [virtual type] of this class 
 
 If your implementation does not require any modifications to the configuration, you can use the default implementation:
 
-`Magento\Cms\Mode\WysiwygDefaultConfig`
+`Magento\Cms\Model\WysiwygDefaultConfig`
 
 **Example di.xml file entry for TinyMCE3 editor:**
 
-``` xml
+```xml
 <type name="Magento\Cms\Model\Wysiwyg\CompositeConfigProvider">
     <arguments>
         <argument name="wysiwygConfigPostProcessor" xsi:type="array">
@@ -361,11 +361,11 @@ In the example provided, this value is `Magento_Tinymce3/tinymce3Adapter` define
 
 `Magento\Tinymce3\Model\Config\Source\Wysiwyg\Editor`
 
-[`Magento\Cms\Model\Wysiwyg\Config`]: {{ site.mage2300url }}app/code/Magento/Cms/Model/Wysiwyg/Config.php
+[`Magento\Cms\Model\Wysiwyg\Config`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Model/Wysiwyg/Config.php
 [virtual type]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html#virtual-types
 [`di.xml`]: {{page.baseurl }}/extension-dev-guide/build/di-xml-file.html
 [Integrate third-party editors]: {{page.baseurl }}/ui_comp_guide/components/ui-wysiwyg.html#add-a-custom-editor
-[`widgetTools`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentowidget/editor_plugin.js
-[`MagentovariablePlugin`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentovariable/editor_plugin.js
-[`MediabrowserUtility`]: {{site.mage2bloburl}}{{page.guide_version}}/lib/web/mage/adminhtml/browser.js
+[`widgetTools`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentowidget/editor_plugin.js
+[`MagentovariablePlugin`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/mage/adminhtml/wysiwyg/tiny_mce/plugins/magentovariable/editor_plugin.js
+[`MediabrowserUtility`]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/mage/adminhtml/browser.js
 [Add a third-party editor]: {{page.baseurl }}/ui_comp_guide/components/wysiwyg/add-custom-editor/

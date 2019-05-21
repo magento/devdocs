@@ -85,6 +85,9 @@ To run a test suite enter the following commands from your terminal:
 
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
+```
+
+```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 ```
 
@@ -183,7 +186,7 @@ You can use `group` and `value` parameters in the test case scope. In a test cas
 
 - Any tags that are used in the test case should be added to the beginning of a class definition:
 
-``` php?start_inline=1
+```php
 
 /* tags */
 const TEST_TYPE = '3rd_party_test_deprecated';
@@ -205,7 +208,7 @@ const TEST_TYPE = '3rd_party_test_deprecated';
 
 A test case can contain multiple tag groups, and a group can have multiple values. For example:
 
-``` php?start_inline=1
+```php
 
 /* tags */
 const MVP = 'yes';
@@ -270,7 +273,7 @@ A tag has two parameters: `group` and `value`. In a constraint, they are provide
 
 - Any tags that are used in the constraint should be added to the beginning of a class definition:
 
-``` php?start_inline=1
+```php
 
 class AssertProductView extends AbstractConstraint
 {

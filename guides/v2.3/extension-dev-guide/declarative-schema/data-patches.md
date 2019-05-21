@@ -18,7 +18,7 @@ The sequence of installing patches is handled through a dependency-based approac
 To define a dependency in a patch, add the method `public static function getDependencies()`
 to the patch class and return the class names of the patches this patch depends on. The dependency can be in any module.
 
-``` php
+```php
 public static function getDependencies()
 {
     return [
@@ -29,8 +29,7 @@ public static function getDependencies()
 
 The following code sample defines a data patch class that has a dependency.
 
-
-{% highlight php startinline=true %}
+```php
 <?php
     /**
      * Copyright © Magento, Inc. All rights reserved.
@@ -118,7 +117,23 @@ The following code sample defines a data patch class that has a dependency.
             return [];
         }
     }
-{% endhighlight %}
+```
+
+## Reverting data patches
+
+Magento does not allow you to revert a particular module data patch. However, you can revert all `composer` installed or `non-composer` installed data patches using the `module:uninstall` command.
+
+Run the following command to revert all `composer` installed data patches:
+
+```bash
+bin/magento module:uninstall Vendor_ModuleName
+```
+
+Run the following command to revert all `non-composer` installed data patches:
+
+```bash
+bin/magento module:uninstall --non-composer Vendor_ModuleName
+```
 
 ## Will old scripts work in newer versions?
 

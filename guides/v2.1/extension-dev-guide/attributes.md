@@ -38,12 +38,13 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection.
+Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection. The `InstallData` script will be executed when the module is first installed and either the `bin/magento setup:upgrade` or `bin/magento setup:db-data:upgrade` command is run.  If the module is already existing, `UpgradeData` scripts should be used. During the development cycle, if there is a need to re-run the `InstallData` or `UpgradeData` scripts, the `setup_module` table row for the module can be manipulated.  
 
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
 
-{% highlight PHP inline=true %}
+```php
+<?php 
 namespace My\Module\Setup;
 
 use Magento\Customer\Model\Customer;
@@ -81,7 +82,7 @@ class InstallData implements \Magento\Framework\Setup\InstallDataInterface
         $this->attributeResource->save($attribute);
     }
 }
-{% endhighlight %}
+```
 
 ## Extension attributes {#extension}
 
@@ -95,7 +96,7 @@ Most likely, you will want to extend interfaces defined in the `Api/Data` direct
 
 You must create a `<Module>/etc/extension_attributes.xml` file to define a module's extension attributes:
 
-{% highlight XML %}
+```xml
 <config>
     <extension_attributes for="Path\To\Interface">
         <attribute code="name_of_attribute" type="datatype">
@@ -108,7 +109,7 @@ You must create a `<Module>/etc/extension_attributes.xml` file to define a modul
         </attribute>
     </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
 where:
 
@@ -160,8 +161,8 @@ where:
 <td><p>field</p></td>
 <td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
 <p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code>&lt;field>firstname&lt;/field><br />&lt;field>lastname&lt;/field><br />&lt;field>email&lt;/field><br /><br />
-&lt;field column="customer_group_code">code&lt;/field></code></td>
+<td><code><field>firstname</field><br /><field>lastname</field><br /><field>email</field><br /><br />
+<field column="customer_group_code">code</field></code></td>
 </tr>
 </tbody>
 
@@ -173,7 +174,7 @@ The system uses a join directive to add external attributes to a collection and 
 
 In the following example, an attribute named `stock_item` of type `Magento\CatalogInventory\Api\Data\StockItemInterface` is being added to the `Magento\Catalog\Api\Data\ProductInterface`.
 
-{% highlight XML %}
+```xml
 <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
     <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
         <join reference_table="cataloginventory_stock_item" reference_field="product_id" join_on_field="entity_id">
@@ -181,7 +182,7 @@ In the following example, an attribute named `stock_item` of type `Magento\Catal
         </join>
     </attribute>
 </extension_attributes>
-{% endhighlight %}
+```
 
 When `getList()` is called, it returns a list of `ProductInterface`s. When it does this, the code populates the `stock_item` with a joined operation in which the `StockItemInterface`’s `qty` property comes from the `cataloginventory_stock_item` table where the `Product`'s `entity_Id` is joined with the `cataloginventory_stock_item.product_id` column.
 
@@ -189,9 +190,9 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See [Web API authentication overview]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) for general information about authentication in Magento.
 
-The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
+The following [code sample]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
-{% highlight XML %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="stock_item" type="Magento\CatalogInventory\Api\Data\StockItemInterface">
@@ -201,10 +202,11 @@ The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInvent
         </attribute>
     </extension_attributes>
 </config>
-{% endhighlight %}
+```
 
-In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET http://<magento_base_url>/rest/V1/products/<sku>` request will receive product information similar to the following:
+In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET <host>/rest/<store_code>/V1/products/<sku>` request will receive product information similar to the following:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -216,9 +218,11 @@ In this example, the `stock_item` attribute is restricted to only the users who 
         "artist": "James Smith"
       }
     }
+```
 
 However, an authenticated user with the permission `Magento_CatalogInventory::cataloginventory` receives the additional `stock_item` field:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -234,6 +238,7 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
         "artist": "James Smith"
       }
     }
+```
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
 
@@ -248,11 +253,11 @@ An `ExtensionInterface` will be empty if no extension attributes have been added
 
 However, if an extension similar to the following has been defined, the interface will not be empty:
 
-{% highlight XML %}
+```xml
 <extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
     <attribute code="attributeName" type="Magento\Some\Type[]" />
 </extension_attributes>
-{% endhighlight %}
+```
 
 ### Troubleshoot EAV attributes {#troubleshooting}
 

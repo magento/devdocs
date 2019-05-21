@@ -18,7 +18,7 @@ For recommendations about modal windows usage from the UX point of view, see the
 
 Component's options are set in the configuration `.xml` file as follows:
 
-{%highlight xml%}
+```xml
  <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -29,7 +29,7 @@ Component's options are set in the configuration `.xml` file as follows:
         </item>
     </argument>
 </modal>
-{%endhighlight%}
+```
 
 <table>
   <tr>
@@ -82,7 +82,7 @@ Component's options are set in the configuration `.xml` file as follows:
 
 The following sample is an example of the configuration for a simple modal window containing one text field and a standard set of action buttons (**Cancel**, **Clear**, **Done**):
 
-{%highlight xml%}
+```xml
 <modal name="test_modal">
     <argument name="data" xsi:type="array">
         <item name="config" xsi:type="array">
@@ -141,14 +141,14 @@ The following sample is an example of the configuration for a simple modal windo
         </item>
     </argument>
 </button>
-{%endhighlight%}
+```
 
 ## Source files
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
-- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
+- [`Magento_Ui_module_dir/view/base/web/js/modal/modal-component.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
+- [`Magento_Ui_module_dir/view/base/web/templates/modal/modal-component.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-component.html)
 
 ### Methods and events
 

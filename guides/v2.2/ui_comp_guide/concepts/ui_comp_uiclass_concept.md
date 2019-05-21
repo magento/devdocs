@@ -7,7 +7,7 @@ title: About the uiClass library
 
 The `uiClass` is an abstract class from which all components are extended. The `uiClass` is a low-level class and is rarely used as direct parent for UI components' classes.
 
-`uiClass` source code is `<UI_Module_dir>/view/base/web/js/lib/core/class.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/class.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/class.js)
+`uiClass` source code is `<UI_Module_dir>/view/base/web/js/lib/core/class.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/class.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/class.js)
 
 ## Commonly used uiClass methods
 
@@ -20,6 +20,7 @@ The uiClass class introduces the architecture of UI components through the follo
 * The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. This resulting configuration is then set as first level properties in the current UI component instance.
 
   As an example:
+
 ```js
 defaults: {
     myFirstProperty: 0,
