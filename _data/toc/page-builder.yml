@@ -201,5 +201,5 @@ pages:
   versionless: true
 
 - label: Contribution guide
-  url: https://github.com/magento/magento2-page-builder/blob/develop/CONTRIBUTING.md
+  url: https://github.com/magento/magento2-page-builder/blob/1.0-develop/CONTRIBUTING.md
   versionless: true
