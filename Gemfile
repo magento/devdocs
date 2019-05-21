@@ -12,6 +12,11 @@ group :test do
   gem 'launchy'
 end
 
+group :optimiztion do
+  gem 'image_optim'
+  gem 'image_optim_pack'
+end
+
 group :jekyll_plugins do
   gem 'jekyll-algolia', '~> 1.0'
   gem 'jekyll-redirect-from'
@@ -20,3 +25,5 @@ group :jekyll_plugins do
   gem 'jekyll-relative-links'
   gem 'jekyll-optional-front-matter'
 end
+
+gem "pry", "~> 0.12.2"
