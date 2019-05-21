@@ -513,7 +513,7 @@ $("#element").collapsible("forceDeactivate");
 ### `beforeOpen callback` {#c_beforeOpen}
 Called before the content is opened. 
 
-Example of adding callback on `beforeOpen` event:
+Example of adding a callback to `beforeOpen` events:
 
 ```javascript
 $("#element").on("beforeOpen", function () {
@@ -524,7 +524,7 @@ $("#element").on("beforeOpen", function () {
 ### `dimensionsChanged` {#c_dimensionsChanged}
 Called after content is opened or closed.
 
-Example of adding callback on `dimensionsChanged` event:
+Example of adding a callback to `dimensionsChanged` events:
 
 ```javascript
 $("#element").on("dimensionsChanged", function (event, data) {
