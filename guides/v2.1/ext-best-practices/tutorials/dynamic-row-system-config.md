@@ -33,7 +33,7 @@ This tutorial shows you how to add a new dynamic rows system configuration in th
 
 This code adds a new system config in the following location:
 
-`Stores/Configuration/General [General]/Quantity Ranges`
+**STORES** > Settings > **Configuration** > GENERAL > **General** > **Quantity Ranges**
 
 ## Step 2: Create the front-end model class
 
