@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add custom shipping carrier validations
 subtitle: Customize Checkout
-menu_order: 5
+menu_order: 6
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
