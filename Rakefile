@@ -69,3 +69,5 @@ task :whatsnew do
   print 'Generating data for the weekly digest: $ '.magenta
   sh 'whatsup_github'
 end
+desc 'Run linters'
+task lint: %w[lint:md]
