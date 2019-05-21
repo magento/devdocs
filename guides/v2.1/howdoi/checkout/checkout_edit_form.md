@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add a custom template for a form field on Checkout page
 subtitle: Customize Checkout
-menu_order: 7
+menu_order: 8
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout

@@ -32,6 +32,7 @@ You can customize the default checkout in multiple ways. This tutorial includes 
  - [Customize the view of an existing step]({{ page.baseurl }}/howdoi/checkout/checkout_customize.html)
  - [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html)
  - [Add custom validations before order placement]({{ page.baseurl }}/howdoi/checkout/checkout_order.html)
+ - [Add custom shipping carrier]({{ page.baseurl }}/howdoi/checkout/checkout-add-custom-carrier.html)
  - [Add custom shipping carrier validations]({{ page.baseurl }}/howdoi/checkout/checkout_carrier.html)
  - [Add custom input mask for ZIP code]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html)
  - [Add a custom template for a form field on Checkout page]({{ page.baseurl }}/howdoi/checkout/checkout_edit_form.html)
