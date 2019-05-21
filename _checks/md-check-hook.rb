@@ -8,12 +8,12 @@
 #
 Jekyll::Hooks.register :site, :post_write do |site|
   next unless site.config['serving']
-  puts 'Checking Markdown syntax.'.blue
   staged_files = `git ls-files -m`.split("\n")
   staged_md_files = staged_files.select { |file| File.extname(file) == '.md' }
   next if staged_md_files.empty?
+  puts 'Checking Markdown syntax...'.blue
   staged_md_files_as_a_string = staged_md_files.join(' ')
-  report = `mdl #{staged_md_files_as_a_string}`
+  report = `bin/mdl #{staged_md_files_as_a_string}`
   puts report.yellow
-  puts 'The rules are defined in _checks/md_style'
+  puts 'The style is defined in _checks/md_style'.yellow
 end
