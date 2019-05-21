@@ -63,5 +63,5 @@ To add a new customer attribute to the customer grid and make it filterable, you
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
+- [app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/filters/filters.js)
 

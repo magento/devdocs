@@ -33,7 +33,7 @@ The topic describes how stylesheets are preprocessed and compiled to CSS in the 
         included in layout</a> are compiled.
         </p>
         <p>
-        For example, in one of the <a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml"> layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
+        For example, in one of the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml"> layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included:
         </p>
         <pre>
 
@@ -47,17 +47,17 @@ The topic describes how stylesheets are preprocessed and compiled to CSS in the 
         <ul>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-m.less"
             target="_blank">/web/css/styles-m.less</a></code>
         </li>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-l.less"
             target="_blank">/web/css/styles-l.less</a></code>
         </li>
         <li>
             <code><a href=
-            "{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less"
+            "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/print.less"
             target="_blank">/web/css/print.less</a></code>
         </li>
         </ul>
