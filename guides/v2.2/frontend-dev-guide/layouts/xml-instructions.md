@@ -311,7 +311,10 @@ Sorted according to their module priority (array index of module's position in a
 
 **Theme files**
 
-- Layout file loaded
+- Module base layout file loaded
+- Module area layout file loaded
+- Theme layout file loaded
+...
 
 - Override files loaded
 
