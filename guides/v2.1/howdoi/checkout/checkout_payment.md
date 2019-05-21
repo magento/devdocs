@@ -104,7 +104,7 @@ define(
 );
 ```
 
-If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{ site.mage2000url }}app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
+If your payment method requires credit cards information, you might use the Magento renderer implementing a credit card form: [`<Magento_Payment_module_dir>/view/frontend/web/js/view/payment/cc-form.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/view/frontend/web/js/view/payment/cc-form.js). It also extends the default payment renderer, but has the following own methods:
 
 
 <table>
@@ -121,15 +121,15 @@ If your payment method requires credit cards information, you might use the Mage
       <td>Returns the list of available credit card types.</td>
    </tr>
    <tr class="even">
-      <td><code>getIcons()</code></td>
+      <td><code>getIcons():bool</code></td>
       <td>Returns links to the images for available credit card types.</td>
    </tr>
    <tr class="odd">
-      <td><code>getCcMonths()</code></td>
+      <td><code>getCcMonths():object</code></td>
       <td>Retrieves the month of the credit card expiration date.</td>
    </tr>
    <tr class="even">
-      <td><code>getCcYears()</code></td>
+      <td><code>getCcYears():object</code></td>
       <td>Retrieves the year of the credit card expiration date.</td>
    </tr>
    <tr class="odd">
@@ -149,7 +149,7 @@ If your payment method requires credit cards information, you might use the Mage
       <td>Retrieves the CVV tooltip image HTML.</td>
    </tr>
    <tr class="even">
-      <td><code>getSsStartYears()</code></td>
+      <td><code>getSsStartYears():object</code></td>
       <td>Solo or Switch (Maestro) card start year.</td>
    </tr>
 </table>
@@ -159,7 +159,7 @@ If your payment method requires credit cards information, you might use the Mage
 Your payment method might need to get data that cannot be defined in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} configuration, JS components or templates directly, for example, data from the Magento system config.
 This configuration is stored in the `window.checkoutConfig` variable that is defined in root checkout template.
 
-In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`]({{ site.mage2000url }}app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} configuration. The following code samples illustrate this.
+In order to get access to the system configuration, your payment method or a group of payment methods has to implement the [`\Magento\Checkout\Model\ConfigProviderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Checkout/Model/ConfigProviderInterface.php) interface, and the class implementing it must be injected to the composite config provider via DI {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} configuration. The following code samples illustrate this.
 
 A sample `.php` class implementing `\Magento\Checkout\Model\ConfigProviderInterface`:
 
@@ -233,14 +233,14 @@ If your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endgl
 
 In your custom module directory create a new `<your_module_dir>/view/frontend/web/template/<your_template>.html` file. The template can use [Knockout JS](http://knockoutjs.com/) syntax. You can find a sample `.html` template in any module implementing payment methods, for example the Magento_Authorizenet module.
 
-The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{ site.mage2000url }}app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
+The template for rendering the Authorize.Net payment method in checkout is [`<Magento_Authorizenet_module_dir>/view/frontend/web/template/payment/authorizenet-directpost.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Authorizenet/view/frontend/web/template/payment/authorizenet-directpost.html).
 
 ## Step 4: Declare the payment method in layout {#layout}
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. In this file, add the following:
 
 ```xml
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="checkout.root">
             <arguments>
@@ -310,4 +310,4 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 </page>
 ```
 
-For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml]({{ site.mage2000url }}app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)
+For an illustration of `checkout_index_index.xml` where a new payment method is declared, view [app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Authorizenet/view/frontend/layout/checkout_index_index.xml)

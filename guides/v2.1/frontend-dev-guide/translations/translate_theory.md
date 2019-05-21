@@ -36,6 +36,24 @@ To add the email template strings to the dictionary, use the `{{trans}}` [direct
 
 Custom email templates [added using the Admin panel] are not stored in the file system, and their strings are not added to the dictionary.
 
+To ensure that your new string is added to the dictionary and translated, use the `trans` method when outputting a string in an [email template]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/email/account_new.html).
+
+For example:
+
+- When only a string is added in the email template:
+    {% raw %}
+    ```html
+    {{trans "Lorem Ipsum is simply dummy text of the printing"}}
+    ```
+    {% endraw %}
+
+- When only a string is added with a variable value in the email template:
+    {% raw %}
+    ```html
+    {{trans "%items items" items="numItems"}}
+    ```
+    {% endraw %}
+
 ## Strings added in UI component templates {#add_strings_ui_html}
 
 To ensure that the text you add in `.html` templates of UI components is added to the dictionary, mark the text using the `i18n` custom binding. The following code samples illustrate how to use custom bindings:
@@ -101,7 +119,7 @@ In this example, the `'Hello %1'` string is added to the dictionary when the i18
 
 [i18n tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html
 [generating the dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
-[.phtml template]: {{ page.baseurl }}/frontend-dev-guide/templates/template-overview.html
-custom email templates]: {{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-theme
-[directive]: {{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#localization
-[added using the Admin panel]: {{ page.baseurl }}/frontend-dev-guide/templates/template-email.html#customize-email-admin
+[.phtml template]: {{page.baseurl}}/frontend-dev-guide/templates/template-overview.html
+[custom email templates]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#customize-email-theme
+[directive]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#localization
+[added using the Admin panel]: {{page.baseurl}}/frontend-dev-guide/templates/template-email.html#customize-email-admin

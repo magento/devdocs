@@ -13,6 +13,7 @@ Magento provides several endpoints that allow Multi Source merchants to make qui
 
 ```
 inventoryCatalogApiBulkInventoryTransferV1
+inventoryCatalogApiBulkPartialInventoryTransferV1
 inventoryCatalogApiBulkSourceAssignV1
 inventoryCatalogApiBulkSourceUnassignV1
 ```
@@ -21,6 +22,7 @@ inventoryCatalogApiBulkSourceUnassignV1
 
 ```
 POST /V1/inventory/bulk-product-source-transfer
+POST /V1/inventory/bulk-partial-source-transfer
 POST /V1/inventory/bulk-product-source-assign
 POST /V1/inventory/bulk-product-source-unassign
 ```
@@ -29,10 +31,9 @@ POST /V1/inventory/bulk-product-source-unassign
 
 Multi Source merchants may need to transfer product inventory from one source location to another. For example, the merchant might decide to stop shipping specific products from a location or completely close the facility. In these cases, all operations for those products move to a new location.
 
-Bulk transfer allows you to specify multiple products, the origin source from which to transfer inventory, and the destination source to receive quantities. The process moves all product inventory from the origin source. You cannot transfer a partial quantity.
+Bulk transfer allows you to specify multiple products, the origin source from which to transfer inventory, and the destination source to receive quantities. The bulk transfer process moves all product inventory from the origin source. Use [bulk partial transfer](#bulk-partial-transfer) to transfer specific quantities of one or more products.
 
  Unlike an unassign source action, Magento also retains product data by moving the status (in stock/out of stock), and the Notify Quantity from one source to another. If the origin and destination sources are in different stocks, performing a bulk transfer affects the aggregated Salable Quantity and reservations for in-progress orders.
-
 
 **Parameters**
 
@@ -42,11 +43,10 @@ Name | Description | Type | Requirements
 `originSource` | The current source of the SKUs | String | Required
 `destinationSource` | The target source for the SKUs. This source must be already defined. | String | Required
 `unassignFromOrigin` | If `true`, the current source is removed as a source for the products. If `false`, the original source is retained, but the products are marked as being out of stock with a quantity of 0. | Boolean | Required
-{:style="table-layout:auto;"}
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-transfer`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-transfer`
 
 **Payload**
 
@@ -66,6 +66,47 @@ Name | Description | Type | Requirements
 
 `true` if the request was successful
 
+## Bulk partial transfer
+
+You can use the `V1/inventory/bulk-partial-source-transfer` endpoint to transfer a limited quantity of a product from one source to another. As with full transfers, Magento keeps track of the stock status as well as the Notify Quantity when you move products from one source to another.
+
+**Parameters**
+
+Name | Description | Type | Requirements
+--- | --- | --- | ---
+`originSourceCode` | The current source of the products to be transferred | String | Required
+`destinationSourceCode` | The target source. This source must be already defined. | String | Required
+`items` | An array containing a set of products to be transferred | Array | Required
+`sku` | A product to transfer | String | Required
+`qty` | The quantity of the product to transfer | Float | Required
+
+**Sample usage**
+
+`POST <host>/rest/<store_code>/V1/inventory/bulk-partial-source-transfer`
+
+**Payload**
+
+```
+{
+  "originSourceCode": "default",
+  "destinationSourceCode": "central",
+  "items": [
+    {
+      "sku": "testConfigProduct-yellow",
+      "qty": 10
+    },
+    {
+      "sku": "testConfigProduct-green",
+      "qty": 50
+    }
+  ]
+}
+```
+
+**Response**
+
+An empty array
+
 ## Bulk assign sources
 
 Use the `POST /V1/inventory/bulk-product-source-assign` endpoint to add one or more sources to your products. This endpoint helps when creating and assigning custom sources to your default or custom stocks and preparing new locations and inventory.
@@ -80,11 +121,11 @@ Name | Description | Type | Requirements
 --- | --- | --- | ---
 `skus` | A comma-separated list of existing SKUs to assign | Array | Required
 `sourceCodes` | A comma-separated list of existing sources | Array | Required
-{:style="table-layout:auto;"}
+
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-assign`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-assign`
 
 **Payload**
 
@@ -119,7 +160,7 @@ If you unassign all sources from a product, you will not be able to sell the pro
 
 **Sample usage**
 
-`POST /V1/inventory/bulk-product-source-unassign`
+`POST <host>/rest/<store_code>/V1/inventory/bulk-product-source-unassign`
 
 **Payload**
 

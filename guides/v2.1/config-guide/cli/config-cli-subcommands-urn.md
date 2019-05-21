@@ -31,6 +31,8 @@ Currently, only PhpStorm is supported.
 
 Command syntax:
 
-	bin/magento dev:urn-catalog:generate <path>
+```bash
+bin/magento dev:urn-catalog:generate <path>
+```
 
 Where `<path>` is the path to your PhpStorm `misc.xml` file, which is located relative to your project root. Typically, `<path>` is `.idea/misc.xml`.

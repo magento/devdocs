@@ -398,7 +398,7 @@ Specifies if the state is saved in the local storage if the browser supports it.
 
 **Type**: Boolean
 
-**Default value**: `true`
+**Default value**: `false`
 
 Initialize the collapsible widget with the `saveState` option specified:
 ```javascript
@@ -516,8 +516,53 @@ Called before the content is opened.
 ### `dimensionsChanged` {#c_dimensionsChanged}
 Called after content is opened or closed.
 
+#### Code sample
+
+The following example shows how to initialize the collapsible widget and pass options during the initialization.
+
+```html
+<div data-mage-init='{
+    "collapsible":{
+        "collapsible": true,
+        "openedState": "active",
+        "active": true 
+    }}'>
+    <div data-role="title">
+        <h4>Fruit</h4>
+    </div>
+    <div data-role="content">
+        <ul>
+            <li>Orange</li>
+            <li>Apple</li>
+            <li>Banana</li>
+        </ul>
+    </div>
+</div>
+<div data-mage-init='{
+    "collapsible":{ 
+        "animate":{ "duration" :1000, "easing":"easeOutCubic"}
+    }}'>
+    <div data-role="title">
+        <h4>Exams</h4>
+    </div>
+    <div data-role="content">
+        <ul>
+            <li>Maths</li>
+            <li>English</li>
+            <li>Science</li>
+        </ul>
+    </div>
+</div>
+```
+
+### Result
+
+The result is two sections with separate collapsible content.
+
+![Collapsible Widget]({{ site.baseurl }}/common/images/widget/collapsible-widget-result-initial.png)
+![Collapsible Widget]({{ site.baseurl }}/common/images/widget/collapsible-widget-result-animate.png)
 
 [`collateral`]: #fedg_collaps_collateral
-[lib/web/mage/collapsible.js]: {{site.mage2000url}}lib/web/mage/collapsible.js
+[lib/web/mage/collapsible.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/collapsible.js
 [Accordion widget initialization]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init

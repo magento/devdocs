@@ -91,13 +91,13 @@ __Step 1.__ Create a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}P
  
 __Step 2.__ Extend your class from the [default element](#basic_class) or the [Magento custom element](#magento_class) class
 
-``` php?start_inline=1 
+```php 
 class OptgroupselectElement extends SelectElement
 ```
 
 __Step 3.__ Redefine methods of the extended class according to your goals
 
-``` php?start_inline=1
+```php
 /**
  * Option group locator
  *
@@ -126,7 +126,7 @@ public function setValue($value)
 Typified elements are used in the [FTF blocks][].
 Use a `find()` method to find an element. This method is declared in the [SimpleElement][] class:
 
-``` php?start_inline=1
+```php
 /**
  * Find element using locator in context of current element
  *
@@ -143,7 +143,7 @@ public function find($selector, $strategy = Locator::SELECTOR_CSS, $type = null)
 
 The following code is an example of the `find()` method usage from the [\Magento\Catalog\Test\Block\Adminhtml\Category\Tree][] block:
 
-``` php?start_inline=1
+```php
 /**
  * Check category in category tree
  *
@@ -195,10 +195,10 @@ The following code is a corresponding mapping with the typified element `optgrou
 <!-- General -->
 [`ElementInterface`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/ElementInterface.php
 [form mapping]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
-[`<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element
+[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
+[`<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element
 [FTF blocks]: {{ page.baseurl }}/mtf/mtf_entities/mtf_block.html
-[\Magento\Catalog\Test\Block\Adminhtml\Category\Tree]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php
+[\Magento\Catalog\Test\Block\Adminhtml\Category\Tree]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Category/Tree.php
 
 <!-- Basic classes -->
 [`\Magento\Mtf\Client\Element\SimpleElement`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SimpleElement.php
@@ -213,23 +213,23 @@ The following code is a corresponding mapping with the typified element `optgrou
 [`\Magento\Mtf\Client\Element\StrictselectElement`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictselectElement.php
 
 <!-- Magento classes -->
-[`\Magento\Mtf\Client\Element\ConditionsElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php
-[`\Magento\Mtf\Client\Element\DatepickerElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/DatepickerElement.php
-[`\Magento\Mtf\Client\Element\DropdownmultiselectElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/DropdownmultiselectElement.php
-[`\Magento\Mtf\Client\Element\GlobalsearchElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/GlobalsearchElement.php
-[`\Magento\Mtf\Client\Element\JquerytreeElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/JquerytreeElement.php
-[`\Magento\Mtf\Client\Element\LiselectstoreElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/LiselectstoreElement.php
-[`\Magento\Mtf\Client\Element\MultiselectgrouplistElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php
-[`\Magento\Mtf\Client\Element\MultiselectlistElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectlistElement.php
-[`\Magento\Mtf\Client\Element\MultisuggestElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/MultisuggestElement.php
-[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
-[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`\Magento\Mtf\Client\Element\SimplifiedselectElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SimplifiedselectElement.php
-[`\Magento\Mtf\Client\Element\SuggestElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
-[SuggestElement]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
-[`\Magento\Mtf\Client\Element\Tree`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
-[Tree]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
-[`\Magento\Mtf\Client\Element\TreeElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php
+[`\Magento\Mtf\Client\Element\ConditionsElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php
+[`\Magento\Mtf\Client\Element\DatepickerElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/DatepickerElement.php
+[`\Magento\Mtf\Client\Element\DropdownmultiselectElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/DropdownmultiselectElement.php
+[`\Magento\Mtf\Client\Element\GlobalsearchElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/GlobalsearchElement.php
+[`\Magento\Mtf\Client\Element\JquerytreeElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/JquerytreeElement.php
+[`\Magento\Mtf\Client\Element\LiselectstoreElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/LiselectstoreElement.php
+[`\Magento\Mtf\Client\Element\MultiselectgrouplistElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectgrouplistElement.php
+[`\Magento\Mtf\Client\Element\MultiselectlistElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultiselectlistElement.php
+[`\Magento\Mtf\Client\Element\MultisuggestElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/MultisuggestElement.php
+[`\Magento\Mtf\Client\Element\OptgroupselectElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/OptgroupselectElement.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`\Magento\Mtf\Client\Element\SimplifiedselectElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SimplifiedselectElement.php
+[`\Magento\Mtf\Client\Element\SuggestElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
+[SuggestElement]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SuggestElement.php
+[`\Magento\Mtf\Client\Element\Tree`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
+[Tree]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/Tree.php
+[`\Magento\Mtf\Client\Element\TreeElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/TreeElement.php
 
 <!-- ABBREVIATIONS -->
 *[FTF]: Functional Testing Framework

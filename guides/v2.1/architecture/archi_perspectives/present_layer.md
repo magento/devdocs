@@ -47,15 +47,15 @@ Blocks can generate their content using static HTML, Knockout JS scripts, and PH
 ## How Presentation code calls other layers
 
 Presentation code typically calls service contracts, particularly for a storefront.
-However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the *business logic* layer.
+However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the domain layer.
 For example, the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI screens are often tightly linked to a specific implementation and are not generic across implementations.
 
 The View layer calls code from the Model to get information about the state of the application (for example, the price of a product). Typically, the way it accesses the Model is through service contracts.
 
 ## Presentation layer flow
 
-Web users interact with components of the presentation layer to select actions that initiate calls to the underlying product layers.
-Presentation layer components make calls to the Service layer, which in turn sends requests to the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}Domain{% endglossarytooltip %} (or business logic) layer.
+Web users interact with components of the presentation layer to select actions that initiate calls to the underlying layers.
+Presentation layer components make calls to the service layer, which in turn sends requests to the {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} layer.
 
 ## Related topics {#related}
 

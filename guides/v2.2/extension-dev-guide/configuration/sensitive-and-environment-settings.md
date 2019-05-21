@@ -51,7 +51,7 @@ Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_
 
 ### Example: Sensitive settings
 
-{% highlight php startinline=true %}
+```xml
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="sensitive" xsi:type="array">
@@ -59,12 +59,17 @@ Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_
       </argument>
    </arguments>
 </type>
-{% endhighlight %}
+```
 
 After specifying the sensitive setting, use the following commands to verify it:
 
-    php bin/magento cache:clean
-    php bin/magento app:config:dump
+```bash
+bin/magento cache:clean
+```
+
+```bash
+bin/magento app:config:dump
+```
 
 A message similar to the following is displayed:
 
@@ -74,7 +79,7 @@ A message similar to the following is displayed:
 
 ### Example: System-specific settings
 
-{% highlight php startinline=true %}
+```xml
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="environment" xsi:type="array">
@@ -82,7 +87,7 @@ A message similar to the following is displayed:
       </argument>
    </arguments>
 </type>
-{% endhighlight %}
+```
 
 ### Sensitive, system-specific setting
 
@@ -95,6 +100,6 @@ To set a configuration setting as both sensitive and system-specific, create two
 *	[Developer roadmap]({{ page.baseurl }}/extension-dev-guide/intro/developers_roadmap.html)
 *	[Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
 
-[typepool]: {{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php
+[typepool]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Config/Model/Config/TypePool.php
 [di-xml]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html
 [config-importers]: {{ page.baseurl }}/extension-dev-guide/configuration/importers.html

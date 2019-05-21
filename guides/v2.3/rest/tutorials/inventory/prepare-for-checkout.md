@@ -24,7 +24,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/carts/mine/estimate-shipping-methods`
+`POST <host>/rest/us/V1/carts/mine/estimate-shipping-methods`
 
 **Scope**
 
@@ -40,7 +40,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 The payload contains the shipping address.
 
-``` json
+```json
 {  "address": {
       "region": "New York",
       "region_id": 43,
@@ -65,7 +65,7 @@ The payload contains the shipping address.
 
 The cost for the `flatrate` shipping method is $350 (70 items x $5 each). The downloadable item does not have a shipping charge because it is not a physical product.
 
-``` json
+```json
 [
     {
         "carrier_code": "flatrate",
@@ -90,7 +90,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Endpoint**
 
-`POST http://<host>/rest/us/V1/carts/mine/shipping-information`
+`POST <host>/rest/us/V1/carts/mine/shipping-information`
 
 **Scope**
 
@@ -104,7 +104,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Payload**
 
-``` json
+```json
 {
 "addressInformation": {
     "shipping_address": {
@@ -150,7 +150,7 @@ The subtotal of the order is $2462, and shipping charges are $350. The grand tot
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} in the next step.
 
 
-``` json
+```json
 {
     "payment_methods": [
         {

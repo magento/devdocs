@@ -18,16 +18,18 @@ Code compilation includes the following (in no particular order):
 -   Repositories code generation (generated code for APIs)
 -   Service data attributes generation (generated {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} classes for data objects)
 
-You can find code compilation classes in the [\Magento\Setup\Module\Di\App\Task\Operation]({{ site.mage2000url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation) {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
+You can find code compilation classes in the [\Magento\Setup\Module\Di\App\Task\Operation]({{ site.mage2bloburl }}/{{ page.guide_version }}/setup/src/Magento/Setup/Module/Di/App/Task/Operation) {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
 {:.bs-callout .bs-callout-warning}
 The Magento software does not support the multi-tenant compiler, which includes the `bin/magento setup:di:compile-multi-tenant` command.
 
 #### To run the single-tenant compiler: {#config-cli-subcommands-single}
 
-```
+```bash
 bin/magento setup:di:compile
+```
 
+```terminal
 Generated code and dependency injection configuration successfully.
 ```
 
@@ -37,8 +39,8 @@ In some cases, you might want to compile code before you install the Magento app
 
 1.  Enable the modules.
 
-    ```
-    php bin/magento module:enable --all [-c|--clear-static-content]
+    ```bash
+    bin/magento module:enable --all [-c|--clear-static-content]
     ```
 
     Use the `[-c|--clear-static-content]` option to clear {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %}. This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.
@@ -47,9 +49,11 @@ In some cases, you might want to compile code before you install the Magento app
 
 1.  Compile the code.
 
-    ```
+    ```bash
     bin/magento setup:di:compile
+    ```
 
+    ```terminal
     Generated code and dependency injection configuration successfully.
     ```
 

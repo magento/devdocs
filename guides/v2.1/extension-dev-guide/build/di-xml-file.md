@@ -27,11 +27,11 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
+* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the `crontab` area.
 
 ## Type configuration
 
@@ -39,7 +39,7 @@ Type configurations describe an object's lifestyle and how to instantiate it.
 
 You can configure the type in your `di.xml` configuration node in the following ways:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <virtualType name="moduleConfig" type="Magento\Core\Model\Config">
         <arguments>
@@ -52,7 +52,7 @@ You can configure the type in your `di.xml` configuration node in the following 
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
 The preceding example declares the following types:
 
@@ -74,7 +74,7 @@ The name of the argument configured in the {% glossarytooltip 8c0645c5-aa6b-4a52
 
 The following example creates instances of `Magento\Core\Model\Session` with the class constructor argument `$sessionName` set to a value of `adminhtml`:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Core\Model\Session">
         <arguments>
@@ -82,7 +82,7 @@ The following example creates instances of `Magento\Core\Model\Session` with the
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
 ### Argument types
 
@@ -197,7 +197,7 @@ When Magento loads a new configuration at a later time, either by a more specifi
 
 **Argument Examples:**
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Example\Type">
         <arguments>
@@ -232,7 +232,7 @@ When Magento loads a new configuration at a later time, either by a more specifi
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
 **Merging and Arguments**
@@ -248,21 +248,21 @@ The object manager uses these mappings to determine what the default implementat
 
 The `preference` node specifies the default implementation:
 
-{% highlight xml %}
+```xml
 <!--  File: app/etc/di.xml -->
 <config>
     <preference for="Magento\Core\Model\UrlInterface" type="Magento\Core\Model\Url" />
 </config>
-{% endhighlight %}
+```
 
 This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\Core\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope.
 
-{% highlight xml %}
+```xml
 <!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml -->
 <config>
     <preference for="Magento\Core\Model\UrlInterface" type="Magento\Backend\Model\Url" />
 </config>
-{% endhighlight %}
+```
 
 This mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} area.
 
@@ -271,7 +271,7 @@ This mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, so the 
 Parameters configured for a class type pass on its configuration to its descendant classes.
 Any descendant can override the parameters configured for its supertype; that is, the parent class or interface:
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Framework\View\Element\Context">
         <arguments>
@@ -284,13 +284,13 @@ Any descendant can override the parameters configured for its supertype; that is
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
-In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2000url }}app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
+In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
 
-The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{ site.mage2000url }}lib/internal/Magento/Framework/Url.php){:target="_blank"} as `$urlBuilder` in their constructors.
+The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url.php){:target="_blank"} as `$urlBuilder` in their constructors.
 
-The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2000url }}app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
+The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
 
 ## Object lifestyle configuration
 
@@ -305,7 +305,7 @@ Disposing or ending the container registered to it releases the instance.
 
 The `shared` property determines the lifestyle of both `argument` and `type` configurations.
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Filesystem" shared="false">
         <arguments>
@@ -313,7 +313,7 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
         </arguments>
     </type>
 </config>
-{% endhighlight %}
+```
 
 In this example `Magento\Filesystem` is not shared, so all clients will retrieve separate instances of `Magento\Filesystem`.
 Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
