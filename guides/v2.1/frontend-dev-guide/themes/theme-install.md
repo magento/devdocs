@@ -34,9 +34,8 @@ To install a theme manually:
 
 To install the theme as composer package, follow the instructions in the [Install, manage, and upgrade modules]({{ page.baseurl }}/cloud/howtos/install-components.html) topic.
 
-- Manually installed themes are stored in the `app/design/` directory. Themes loaded through Composer are located in the `vendor/` directory and can be stored anywhere in root.
-
-- When the application starts up, Composer executes each file included in the `autoload.files` section. `registration.php` then registers itself as a theme.
+{:.bs-callout .bs-callout-info}
+Composer-based themes are loaded from external source and cannot be modified directly, whereas local themes are as part of the project source code and can be modified directly.
 
 ## Install a theme as an extension
 
