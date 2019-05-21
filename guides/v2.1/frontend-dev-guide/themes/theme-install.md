@@ -40,8 +40,7 @@ To install the theme as composer package, follow the instructions in the [Instal
 
 
 {:.bs-callout .bs-callout-info}
-Composer-based themes are loaded from external source and cannot be modified directly, whereas local themes are as part of the project source code and can be modified directly.
-
+Composer-based themes are loaded from external sources and cannot be modified directly, whereas local themes are part of the project source code and therefore can be edited directly.
 
 ## Install a theme as an extension
 
