@@ -40,14 +40,21 @@ To get the Magento metapackage:
 
     **{{site.data.var.ee}}**
     ```bash
-    composer create-project --repository=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name>
+    composer create-project --repository=https://repo.magento.com/ magento/project-commerce-edition <install-directory-name>
+    ```
+    
+Optionally, if you want to get a specific metapackage version:
+    
+   **{{site.data.var.ee}}**
+    ```bash
+    composer create-project --repository=https://repo.magento.com/ magento/project-commerce-edition=2.3.1 <install-directory-name>
     ```
 
-    When prompted, enter your Magento authentication keys. Your _public key_ is your username; your _private key_ is your password.
+   When prompted, enter your Magento authentication keys. Your _public key_ is your username; your _private key_ is your password.
 
-    If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
+   If you encounter errors, such as `Could not find package...` or `...no matching package found`, make sure there are no typos in your command. If you still encounter errors, you may not be authorized to download {{site.data.var.ee}}. Contact [Magento support](https://magento.com/support) for help.
 
-    See [troubleshooting]({{page.baseurl}}/install-gde/trouble/tshoot_composer-fail.html) for help with more errors.
+   See [troubleshooting]({{page.baseurl}}/install-gde/trouble/tshoot_composer-fail.html) for help with more errors.
 
 ## Set file permissions
 
