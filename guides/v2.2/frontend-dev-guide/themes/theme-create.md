@@ -193,13 +193,13 @@ When you change files stored here during theme development, you need to clear th
 Run the command below to clear the `pub/static` directory:
 
 ```bash
-rm -rf pub/static/*
+rm -rf <magento_root>/pub/static/*
 ```
 
 and the next one, to clear the `var/view_preprocessed` directory:
  
 ```bash
-rm -rf var/view_preprocessed/*
+rm -rf <magento_root>/var/view_preprocessed/*
 ```
 
 ## Your theme directory structure now {#fedg_theme_how-to_structure}
