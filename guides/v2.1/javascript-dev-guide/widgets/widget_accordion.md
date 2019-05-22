@@ -179,8 +179,49 @@ $( "#element" ).accordion( "deactivate", 1 );
 $( "#element" ).accordion( "deactivate", [0,1]);
 ```
 
+## Code sample
+
+The following example shows how to initialize the accordion widget and pass options during the initialization.
+
+```html
+<div id="accordion" data-mage-init='{
+        "accordion":{
+            "active": [1,2],
+            "collapsible": true,
+            "openedState": "active",
+            "multipleCollapsible": true
+        }}'>
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h4>Title 1</h4>
+        </div>
+    </div>
+    <div data-role="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h4>Title 2</h4>
+        </div>
+    </div>
+    <div data-role="content"> It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+
+    <div data-role="collapsible">
+        <div data-role="trigger">
+            <h4>Title 3</h4>
+        </div>
+    </div>
+    <div data-role="content">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</div>
+</div>
+```
+
+### Result
+
+The result is three sections with separate swapped content.
+
+![Accordion Widget]({{ site.baseurl }}/common/images/widget/accordion-widget-result.png)
+
 [Magento Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
-[lib/web/mage/accordion.js]: {{site.mage2000url}}lib/web/mage/accordion.js
+[lib/web/mage/accordion.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/accordion.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init
 [Magento Tabs options]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options
 [active]: #collaps_active

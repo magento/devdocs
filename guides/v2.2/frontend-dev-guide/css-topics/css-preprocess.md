@@ -25,7 +25,7 @@ The topic describes how stylesheets are preprocessed and compiled to {% glossary
             <p>Root source files</p>
         </td>
         <td>
-            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{site.mage2bloburl}}2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
+            The <code>.less</code> files from which the <code>.css</code> files <a href="{{ page.baseurl }}/frontend-dev-guide/css-topics/css-themes.html">included in layout</a> are compiled. For example, in one of the <a href="{{ site.mage2bloburl }}/2.2/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml">layout files of the Magento Blank theme</a>, the following <code>.css</code> files are included in the <code>head</code>:
             
 <pre>
 &lt;head&gt;
@@ -37,9 +37,9 @@ The topic describes how stylesheets are preprocessed and compiled to {% glossary
             
             The root source files for the Blank theme:
             <ul>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less">Magento_Blank_theme_dir/web/css/styles-m.less</a></li>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less">Magento_Blank_theme_dir/web/css/styles-l.less</a></li>
-                <li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/print.less">Magento_Blank_theme_dir/web/css/print.less</a></li>
+                <li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-m.less">Magento_Blank_theme_dir/web/css/styles-m.less</a></li>
+                <li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-l.less">Magento_Blank_theme_dir/web/css/styles-l.less</a></li>
+                <li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/print.less">Magento_Blank_theme_dir/web/css/print.less</a></li>
             </ul>
         </td>
     </tr>
@@ -147,6 +147,8 @@ Client-side LESS compilation is implemented using the native `less.js` library. 
 You can find the detailed information about the configuration and other options of the `less.js` used in a browser at [http://lesscss.org/usage/#using-less-in-the-browser](http://lesscss.org/usage/#using-less-in-the-browser).
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
+
+With client-side compilation mode enabled, LESS files are compiled on every page load. This reduces page-loading performance.
 
 ##### When you need to clean static view files {#css_exception}
 

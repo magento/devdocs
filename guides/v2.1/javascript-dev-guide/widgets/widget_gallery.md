@@ -362,6 +362,25 @@ Sliding direction of thumbnails in the fullscreen view.
 - `vertical`
 - `horizontal`
 
+#### `fullscreen/navarrows` {#full_navarrows}
+
+Show/hide arrows in thumb navigation.
+
+**Type**: Boolean
+
+**Default value**: `true`
+
+#### `fullscreen/navtype` {#full_navtype}
+
+Type of navigation.
+
+**Possible values**:
+
+- `thumbs`
+- `slides`
+
+**Default value**: `thumbs`
+
 #### `fullscreen/navigation_carousel` {#full_carousel}
 
 Display navigation thumbnails as carousel in the fullscreen view.
@@ -453,7 +472,7 @@ The fullscreen and breakpoints options are set in a similar way:
 </var>
 ```
 
-For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
+For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml#L184).
 
 ## Gallery API {#gallery_api}
 
@@ -562,5 +581,5 @@ api.updateOptions([{
 
 
 [Fotorama widget]: http://fotorama.io/
-[lib/web/mage/gallery/gallery.js]: {{site.mage2000url}}lib/web/mage/gallery/gallery.js
-[lib/web/magnifier/magnify.js]: {{site.mage2000url}}lib/web/magnifier/magnify.js
+[lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
+[lib/web/magnifier/magnify.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js

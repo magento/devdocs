@@ -53,6 +53,7 @@ Enter in terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```

@@ -239,7 +239,7 @@ mutation {
       firstname: "Rob"
       email: "robloblaw@example.com"
     }
-    ) {
+  ) {
     customer {
       firstname
       email
@@ -269,7 +269,7 @@ mutation {
 
 Use these mutations to create or modify the customer's address.
 
-#### Manage customer address attibutes
+#### Manage customer address attributes
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -283,7 +283,7 @@ Attribute |  Data Type | Description
 `city` | String | The city or town
 `company` | String | The customer's company
 `country_id` | String | The customer's country
-`custom_attributes` | CustomerAddressAttributesInput | Address custom attributes
+`custom_attributes` | [CustomerAddressAttributeInput](#customerAddressAttributeInput) | Address custom attributes
 `customer_id` | Int | The customer ID
 `default_billing` | Boolean | Indicates whether the address is the default billing address
 `default_shipping` | Boolean | Indicates whether the address is the default shipping address
@@ -298,6 +298,16 @@ Attribute |  Data Type | Description
 `suffix` | String | A value such as Sr., Jr., or III
 `telephone` | String | The telephone number
 `vat_id` | String | The customer's Tax/VAT number (for corporate customers)
+
+
+### Customer address attributes {#customerAddressAttributeInput}
+
+The `CustomerAddressAttributeInput` object can contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`attribute_code` | String | Attribute code
+`value` | String | Attribute value
 
 ### Create customer address
 
@@ -317,10 +327,10 @@ The following call creates an address for the specified customer.
 mutation {
   createCustomerAddress(input: {
     region: {
-        region: "Arizona"
-        region_id: 4
-        region_code: "AZ"
-      }
+      region: "Arizona"
+      region_id: 4
+      region_code: "AZ"
+    }
     country_id: US
     street: ["123 Main Street"]
     telephone: "7777777777"
@@ -330,7 +340,7 @@ mutation {
     lastname: "Loblaw"
     default_shipping: true
     default_billing: false
-    }) {
+  }) {
     id
     customer_id
     region {
@@ -474,12 +484,12 @@ The following call creates a new customer token.
 
 ``` text
 mutation {
-	generateCustomerToken(
+  generateCustomerToken(
     email: "bobloblaw@example.com"
     password: "b0bl0bl@w"
-    ) {
+  ) {
     token
-    }
+  }
 }
 ```
 
@@ -523,7 +533,7 @@ mutation {
 {
   "data": {
     "revokeCustomerToken": {
-    "result": true
+      "result": true
     }
   }
 }

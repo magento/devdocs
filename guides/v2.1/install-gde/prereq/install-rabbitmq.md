@@ -53,6 +53,7 @@ Run the following commands to install this feature.
 ```bash
 wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm
 ```
+
 ```bash
 rpm -Uvh erlang-solutions-1.0-1.noarch.rpm
 ```
@@ -67,6 +68,7 @@ The RabbitMQ server is included on CentOS, but the version is often old. RabbitM
 ```bash
 rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 ```
+
 ```bash
 yum install rabbitmq-server-3.5.6-1.noarch.rpm
 ```

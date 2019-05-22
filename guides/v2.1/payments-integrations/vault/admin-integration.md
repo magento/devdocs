@@ -18,7 +18,7 @@ There are more details about these steps in the following sections.
 
 ## Component provider {#provider_admin}
 
-[Similar to the storefront vault implementation]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
+[Similar to the storefront vault implementation]({{ page.baseurl }}/payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
 
 Following is an example of a component provider for Admin:
 
@@ -101,7 +101,7 @@ This component will set public hash to a hidden input, when a user sets payment 
 
 Create a `.phtml` template for displaying token details and specify it in the [component provider](#provider_admin). 
 
-For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{ site.mage2100url }}app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
+For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
 
 In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`) 
 specify the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} code and path to the template. 
@@ -137,7 +137,10 @@ Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:
             <item name="payment" xsi:type="string">Magento\Braintree\Gateway\Request\PaymentDataBuilder</item>
             <item name="channel" xsi:type="string">Magento\Braintree\Gateway\Request\ChannelDataBuilder</item>
             <item name="address" xsi:type="string">Magento\Braintree\Gateway\Request\AddressDataBuilder</item>
+            <item name="3dsecure" xsi:type="string">Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder</item>
+            <item name="device_data" xsi:type="string">Magento\Braintree\Gateway\Request\KountPaymentDataBuilder</item>
             <item name="dynamic_descriptor" xsi:type="string">Magento\Braintree\Gateway\Request\DescriptorDataBuilder</item>
+            <item name="store" xsi:type="string">Magento\Braintree\Gateway\Request\StoreConfigBuilder</item>
         </argument>
     </arguments>
 </virtualType>

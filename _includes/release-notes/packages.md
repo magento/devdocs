@@ -12,13 +12,15 @@ Click the **Name** links to view the repository and the license agreement.
 | --- | --- | --- | --- |{% for package in packages %}{% if package.name contains 'magento/' %}
 | [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endif %}{% endfor %}
 
-{% unless packages-dev == empty %}
+{% assign magento-packages-dev = packages-dev | where_exp: "package", "package.name contains 'magento/'" %}
+
+{% unless magento-packages-dev == empty %}
 
 ### Supported packages for development
 
 | Name | Version |  License | Description |
-| --- | --- | --- | --- |{% for package in packages-dev %}{% if package.name contains 'magento/' %}
-| [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endif %}{% endfor %}
+| --- | --- | --- | --- |{% for package in magento-packages-dev %}
+| [{{ package.name }}]({{ package.source.url }}) | {{ package.version }} | {{ package.license }} | {{ package.description }} |{% endfor %}
 {% endunless %}
 
 ## Third party packages
@@ -35,7 +37,6 @@ Click the **Name** links to view the repository and the license agreement.
 {% unless packages-dev == empty %}
 
 ### Supported packages for development
-
 
 | Name | Version |  License | Description |
 | --- | --- | --- | --- |{% for package in packages-dev %}{% unless package.name contains 'magento/' %}

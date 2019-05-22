@@ -12,6 +12,8 @@ This article describes the basic concepts you need to know to create layouts for
 
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
+The objective is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as a 1 column, 2 column, or 3 column layout. These page layouts can applied to a page from within the admin panel.
+
 ![web page sample layout][layout]
 
 (1) *Layouts* provide the structures for web pages using an XML file that identifies all the containers and blocks composing the page. The details of layout XML files are described later in this section.
@@ -77,15 +79,17 @@ To make the necessary changes, create [extending][extend] and [overriding][overr
 
 The Magento application processes layout files in the following order:
 
-1.	Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`.
-2.	Determines the sequence of [inherited] themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
-3.	Iterates the sequence of themes from last ancestor to current:
+1. Module base files loaded.
+2. Module area files loaded.
+3. Collects all layout files from modules. The order is determined by the modules order in the module list from the `app/etc/config.php` file. (If their priorities are equal, they are sorted according to their alphabetical priority.)
+4. Determines the sequence of [inherited] themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
+5. Iterates the sequence of themes from last ancestor to current:
 
-	a.	Adds all extending theme layout files to the list.
+   a. Adds all extending theme layout files to the list.
 
-	b.	Replaces overridden layout files in the list.
+   b. Replaces overridden layout files in the list.
 
-4.	Merges all layout files from the list.
+6. Merges all layout files from the list.
 
 Layout files that belong to inactive modules or modules with disabled output are ignored.
 {: .bs-callout .bs-callout-info #info}

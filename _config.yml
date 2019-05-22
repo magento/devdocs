@@ -90,6 +90,14 @@ defaults:
       github_link: false
       feedback_link: false
 
+  - 
+      scope:
+        path: page-builder-migration
+      values:
+        group: page-builder
+        github_link: false
+        feedback_link: false
+
   -
     scope:
       path: guides/v2.3/mrg
@@ -196,31 +204,27 @@ check_links: true
 #############
 #
 # Magento 2 repository variable
-mage2bloburl: https://github.com/magento/magento2/blob/
+mage2bloburl: https://github.com/magento/magento2/blob
 
 # 2.0 variables
 gdeurl: /guides/v2.0/
 githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
-mage2000url: https://github.com/magento/magento2/blob/2.0/
 
 # 1.x variables
-m1xgdeurl: /guides/m1x/
-m1xgithuburl: https://github.com/magento/devdocs/blob/master/
+m1xgdeurl: /guides/m1x
+m1xgithuburl: https://github.com/magento/devdocs/blob/master
 
 # 2.1 variables
 gdeurl21: /guides/v2.1/
 githuburl21: https://github.com/magento/devdocs/tree/master/guides/v2.1/
-mage2100url: https://github.com/magento/magento2/blob/2.1/
 
 # 2.2 variables
 gdeurl22: /guides/v2.2/
 githuburl22: https://github.com/magento/devdocs/tree/master/guides/v2.2/
-mage2200url: https://github.com/magento/magento2/blob/2.2/
 
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
-mage2300url: https://github.com/magento/magento2/blob/2.3/
 
 
 ##########

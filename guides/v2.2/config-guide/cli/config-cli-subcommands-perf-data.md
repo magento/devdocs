@@ -9,7 +9,7 @@ functional_areas:
 
 ## Overview of performance testing data {#config-cli-perf-overview}
 
-To use the [Magento Performance Toolkit]({{ site.mage2200url }}setup/performance-toolkit) or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
+To use the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ page.guide_version }}/setup/performance-toolkit) or another tool for performance testing, you must generate a large amount of data (for example, stores, categories, products, and so on).
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
@@ -25,7 +25,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 The following table provides details about the data generator profiles (small, medium, large, and extra large).
 
-Profiles are located in `<your Magento install dir>/setup/performance-toolkit/profiles/<ce or ee>`
+Profiles are located in `<magento_root>/setup/performance-toolkit/profiles/<ce or ee>`
 
 For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 
