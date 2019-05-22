@@ -14,6 +14,11 @@ There are two possible ways to customize page layout in Magento:
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files. 
 
+In order to add a layout changes that will be available on every page, a module should use deafult.xml
+
+For Example :
+Layout changes that is added to `app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml` will be loaded to all the available page.
+
 Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
 
 *  Move a page element to another parent element.
