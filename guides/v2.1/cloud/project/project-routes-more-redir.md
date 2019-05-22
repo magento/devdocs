@@ -6,10 +6,7 @@ functional_areas:
   - Setup
 ---
 
-## Overview of redirection {#cloud-route-redir}
-
-Managing redirection rules is a common requirement for web applications, especially in cases where you do not want to lose incoming links that have changed or been removed over time. This topic discusses how you can manage redirection rules on your
-{{site.data.var.ece}} projects.
+Managing redirection rules is a common requirement for web applications, especially in cases where you do not want to lose incoming links that have changed or been removed over time. The following demonstrates how to manage redirection rules on your {{site.data.var.ece}} projects.
 
 If the redirection methods discussed in this topic do not work for you, you can use caching headers to do the same thing.
 
@@ -17,7 +14,7 @@ If the redirection methods discussed in this topic do not work for you, you can 
 
 Using whole-route redirects, you can define very basic routes using the `routes.yaml` file. For example, you can redirect from a naked domain to a `www` subdomain as follows:
 
-```yanl
+```yaml
 http://{default}/:
     type: redirect
     to: http://www.{default}/
@@ -30,7 +27,6 @@ to existing routes:
 
 ```yaml
 http://{default}/:
-    # [...]
     redirects:
         expires: 1d
         paths:
