@@ -311,14 +311,11 @@ Sorted according to their module priority (array index of module's position in a
 
 **Theme files**
 
-- Module base layout file loaded
-- Module area layout file loaded
-- Theme layout file loaded
-...
-
-- Override files loaded
-
-- Theme Override files replaced
+- Module base layout file loaded `[app/code/Module/Name/view/base/layout/]`
+- Module area layout file loaded `[app/code/Module/Name/view/frontend|bankend/layout/]`
+- Theme layout file loaded `[vendor/magento/theme-frontend-luma/Magento_Theme/view/layout/]`
+- Override files loaded `[app/design/Magento/Theme/Magento_Theme/view/layout/]`
+- Theme Override files replaced `[app/design/Magento/Theme/Magento_Theme/view/override/layout/]`
 
 [page layout]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page
 [page configuration]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf
