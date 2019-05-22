@@ -5,14 +5,14 @@ source 'https://rubygems.org'
 gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git'
 gem 'jekyll'
 
-gem 'wdm' if Gem.win_platform?
+gem 'wdm', platform: :mswin
 
 group :test do
   gem 'html-proofer'
   gem 'launchy'
 end
 
-group :optimiztion do
+group :optimization do
   gem 'image_optim'
   gem 'image_optim_pack'
 end
@@ -25,5 +25,3 @@ group :jekyll_plugins do
   gem 'jekyll-relative-links'
   gem 'jekyll-optional-front-matter'
 end
-
-gem "pry", "~> 0.12.2"
