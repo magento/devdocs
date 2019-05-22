@@ -141,6 +141,34 @@ pages:
     url: /page-builder/docs/how-to/how-to-deactivate-pagebuilder.html
     versionless: true
 
+- label: BlueFoot content migration
+  versionless: true
+  children:
+
+  - label: Overview of content migration
+    url: /page-builder-migration/docs/
+    versionless: true
+
+  - label: Install the migration module
+    url: /page-builder-migration/docs/install-migration-module.html
+    versionless: true
+
+  - label: Run the migration module
+    url: /page-builder-migration/docs/run-migration-module.html
+    versionless: true
+
+  - label: How content migration works
+    url: /page-builder-migration/docs/how-content-migration-works.html
+    versionless: true
+
+  - label: Migrate content from custom blocks
+    url: /page-builder-migration/docs/migrate-content-custom-blocks.html
+    versionless: true
+
+  - label: Migrate other BlueFoot content
+    url: /page-builder-migration/docs/migrate-other-bluefoot-content.html
+    versionless: true
+
 - label: Reference
   versionless: true
   children:
@@ -173,5 +201,5 @@ pages:
   versionless: true
 
 - label: Contribution guide
-  url: https://github.com/magento/magento2-page-builder/blob/develop/CONTRIBUTING.md
+  url: https://github.com/magento/magento2-page-builder/blob/1.0-develop/CONTRIBUTING.md
   versionless: true

@@ -31,9 +31,11 @@ To complete installation in an existing Magento instance, run the following comm
 ```bash
 bin/magento module:enable --all
 ```
+
 ```bash
 bin/magento setup:upgrade
 ```
+
 ```bash
 bin/magento cache:clean
 ```

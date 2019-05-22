@@ -78,6 +78,7 @@ Enter in your terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
 ```
@@ -133,7 +134,6 @@ Let's check the functional tests for the Magento_Widget module.
 It contains a `StoreIds.php` data source, that is similar to what we need. It has the following code:
 
 ```php
-
 <?php
 
 namespace Magento\Widget\Test\Fixture\Widget;
@@ -270,7 +270,9 @@ Now we should change the fixture. Instead of `store_id` and `website_id`, we mus
 
 Then, we must regenerate the fixture to apply changes:
 
+```bash
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+```
 
 A new PHP class `Synonym.php` is generated in `<magento2_root_dir>/dev/tests/functional/generated/Magento/Search/Test/Fixture`.
 
@@ -1055,12 +1057,12 @@ That's it!
 [Step 7]: #add-blocks-to-pages
 
 [develop branch]: https://github.com/magento/magento2
-[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
 [`\Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
-[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
+[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
 [up and running]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->

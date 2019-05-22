@@ -20,9 +20,9 @@ Start by creating the working directory for all the module files.
 
 In your Magento development environment under the `app/code` directory, run the following command:
 
-~~~
+```bash
 mkdir -p MyCompany/ExampleAdminNewPage
-~~~
+```
 
 This command creates the `MyCompany` company directory and the `ExampleAdminNewPage` module directory. The latter will be the root directory for the module we will create.
 
@@ -153,11 +153,11 @@ Now that we have a link to the **Hello World** page, we need to create the file 
 {:.no_toc}
 In the module's root directory, run the following command:
 
-~~~
+```bash
 mkdir -p Controller/Adminhtml/HelloWorld
-~~~
+```
 
-Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{ site.mage2100url }}app/code/Magento/Backend/App/Action.php){:target="_blank"}.
+Inside `Controller/Adminhtml/HelloWorld` directory, create the file `Index.php`. This file is the class assigned to the default Index action for the `HelloWorld` controller. Since the admin area serves this page, the file belongs in the `Adminhtml` directory, and the class itself extends [`\Magento\Backend\App\Action`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/App/Action.php){:target="_blank"}.
 {% collapsible File content for Index.php %}
  ```php
     <?php
@@ -204,10 +204,10 @@ Now that Magento knows how to handle requests for the **Hello World** page, we n
 
 Create the necessary directories for the files by running the following commands from the module's root directory:
 
-~~~
+```bash
 mkdir -pm view/adminhtml/layout
 mkdir -pm view/adminhtml/templates
-~~~
+```
 
 These files belong in the `view/adminhtml` directory because the Magento admin area use these files during page generation.
 

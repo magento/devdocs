@@ -68,7 +68,7 @@ The following table provides guidelines on what you should clear and when.
 		</tr>
 	<tr>
 		<td><ul><li>Change a class if there is a plug-in related to it.</li>
-		<li>A change that results in generated factories or proxies (for example, a non-existent [factory]({{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22){:target="_blank"} declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
+		<li>A change that results in generated factories or proxies (for example, a non-existent [factory]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22){:target="_blank"} declared in a class or a proxy declared in <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>
@@ -98,7 +98,7 @@ The following table provides guidelines on what you should clear and when.
 
 To only clear directories and not perform other actions, log in to the Magento server as the <a href="{{ page.baseurl }}/install-gde/prereq/apache-user.html">Magento file system owner</a> and clear directories using a command like the following:
 
-	rm -rf <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
+	rm -rf <magento_root>/var/di/* <magento_root>/var/generation/*
 
 You can also use the following command-line tools clear some directories for you. These commands perform other tasks as well; consult the linked documentation for more details.
 

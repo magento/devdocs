@@ -22,11 +22,14 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 
 1.  Before completing the upgrade, you must [update the `autoload`]({{page.baseurl}}/comp-mgr/cli/cli-upgrade.html#update-autoload) property of the `composer.json` file.
 
-1.  Change to your Magento root directory and set the upgrade version.
+1.  Change to your Magento root directory and set the upgrade version using the [version constraint syntax]({{page.baseurl}}/cloud/project/ece-tools-upgrade-project.html#metapackage).
 
     ```bash
-    composer require magento/magento-cloud-metapackage <requiredversion> --no-update
+    composer require "magento/magento-cloud-metapackage":">=2.3.1 <2.3.2" --no-update
     ```
+    
+    {: .bs-callout .bs-callout-info}
+    You must use the version constraint syntax to successfully update the `{{site.data.var.ct}}` package.
 
 1.  Update the project.
 
@@ -49,7 +52,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
-      php bin/magento --version
+      bin/magento --version
     ```
 
 ## Verify and upgrade your extensions {#extensions}

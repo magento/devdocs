@@ -1,6 +1,4 @@
 
-This section contains backward incompatible changes introduced to the codebase after 2.3.1 release.
-
 <h3 id="classes-231-23-develop">Changes in classes</h3>
 <table><tbody>
     <tr>
@@ -40,6 +38,10 @@ This section contains backward incompatible changes introduced to the codebase a
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
+        <td>Magento\Wishlist\Block\Customer\Wishlist\Item\Column\Cart::__construct</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Store\Model\Group::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
@@ -56,23 +58,15 @@ This section contains backward incompatible changes introduced to the codebase a
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
-        <td>Magento\Review\Model\ResourceModel\Review\Product\Collection::__construct</td>
+        <td>Magento\Reports\Model\ResourceModel\Product\Downloads\Collection::getSelectCountSql</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
-        <td>Magento\Reports\Model\ResourceModel\Product\Collection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
-        <td>Magento\Reports\Model\ResourceModel\Product\Lowstock\Collection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
-        <td>Magento\Reports\Model\ResourceModel\Product\Index\Collection\AbstractCollection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
-        <td>Magento\Reports\Model\ResourceModel\Customer\Collection::__construct</td>
+        <td>Magento\GraphQl\Controller\GraphQl::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
@@ -92,18 +86,6 @@ This section contains backward incompatible changes introduced to the codebase a
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
-        <td>Magento\Eav\Model\Entity\Type::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
-        <td>Magento\Eav\Model\Entity\Collection\AbstractCollection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
-        <td>Magento\Eav\Model\Entity\Collection\VersionControl\AbstractCollection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
         <td>Magento\Eav\Model\Entity\Attribute\Group::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
@@ -116,15 +98,15 @@ This section contains backward incompatible changes introduced to the codebase a
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
+        <td>Magento\Config\Model\Config\Source\Locale\Currency::__construct</td>
+        <td>[public] Added optional parameter(s).</td>
+    </tr>
+    <tr>
         <td>Magento\Config\App\Config\Type\System::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
         <td>Magento\CatalogSearch\Model\Advanced::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
-    </tr>
-    <tr>
-        <td>Magento\CatalogSearch\Model\ResourceModel\Search\Collection::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
@@ -156,20 +138,48 @@ This section contains backward incompatible changes introduced to the codebase a
         <td>[protected] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Collection::__construct</td>
+        <td>Magento\Backend\Model\Auth\Session::__construct</td>
         <td>[public] Added optional parameter(s).</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Product\Compare\Item\Collection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
+        <td>Magento\Backend\Model\Auth\Session::destroy</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Collection\AbstractCollection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
+        <td>Magento\Backend\Model\Auth\Session::getUser</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Model\ResourceModel\Category\Collection::__construct</td>
-        <td>[public] Added optional parameter(s).</td>
+        <td>Magento\Backend\Model\Auth\Session::setUser</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session::hasUser</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session::unsUser</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session::getAcl</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session::setAcl</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session::hasAcl</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session::unsAcl</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Auth\Session::writeClose</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Code\NameBuilder</td>
@@ -186,22 +196,6 @@ This section contains backward incompatible changes introduced to the codebase a
     <tr>
         <td>Magento\Framework\Search\RequestInterface::getSort</td>
         <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Framework\Model\ResourceModel\ResourceModelPoolInterface</td>
-        <td>Interface was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\MessageQueue\Api\PoisonPillCompareInterface</td>
-        <td>Interface was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\MessageQueue\Api\PoisonPillPutInterface</td>
-        <td>Interface was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\MessageQueue\Api\PoisonPillReadInterface</td>
-        <td>Interface was added.</td>
     </tr>
     <tr>
         <td>Magento\ImportExport\Api\ExportManagementInterface</td>

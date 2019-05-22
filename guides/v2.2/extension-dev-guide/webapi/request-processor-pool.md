@@ -12,6 +12,7 @@ The request processors pool routes WebApi requests. It is located in the Magento
 
 Magento defines the following processors: 
 
+{:.fixed}
 Processor name | Class | URL pattern | Description
 --- | --- | --- | ---
 `sync` | `Magento\Webapi\Controller\Rest\SynchronousRequestProcessor` | `/^\\/V\\d+/`| Executes the corresponding service contract.
