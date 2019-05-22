@@ -65,10 +65,21 @@ desc 'Optimize images in modified files, or by path (rake image_optim path=path/
 task :image_optim do
   path = ENV['path']
   unless path
-    staged_files = `git ls-files --modified --others --exclude-standard`.split("\n")
-    # staged_md_files = staged_files.select { |file| File.extname(file) == '.md' }
-    abort 'Didn\'t find any modified files.'.blue if staged_files.empty?
-    path = staged_files.join(' ')
+    modified_files = `git ls-files --modified --others --exclude-standard`.split("\n")
+    abort 'Didn\'t find any modified files.'.blue if modified_file.empty?
+    path = modified_file.join(' ')
   end
   system "bin/image_optim --no-pngout --no-svgo --recursive #{path}"
+end
+
+desc 'Pull docs from external repositories'
+task :spellcheck do
+  path = ENV['path']
+  unless path
+    modified_files = `git ls-files --modified --others --exclude-standard`.split("\n")
+    modified_md_files = modified_files.select { |file| File.extname(file).match?(/.(md|rb)/) }
+    abort 'Didn\'t find any modified Markdown or Ruby files.'.blue if modified_md_files.empty?
+    path = modified_md_files.join(' ')
+  end
+  system "forspell #{path}"
 end
