@@ -46,15 +46,6 @@ To do this, they added an overriding `_theme.less` file in the `app/design/front
 @button-primary__hover__border: 1px solid @color-orange-red2;
 @button-primary__hover__color: @color-white;
 
-//  Navigation
-@navigation-level0-item__color: @color-gray80;
-@submenu-item__color: @color-gray80;
-
-@navigation__background: @color-gray40;
-@navigation-desktop-level0-item__color: @color-gray80;
-@navigation-desktop-level0-item__hover__color: @color-gray34;
-@navigation-desktop-level0-item__active__color: @navigation-desktop-level0-item__color;
-
 //  Tabs
 @tab-control__background-color: @page__background-color;
 
@@ -62,9 +53,6 @@ To do this, they added an overriding `_theme.less` file in the `app/design/front
 @form-element-input__background: @color-gray89;
 @form-element-input-placeholder__color: @color-gray60;
 
-//  Header icons
-@header-icons-color: @color-gray89;
-@header-icons-color-hover: @color-gray60;
 ```
 
 After the Grey theme is applied (and [static files cache cleared]), store pages will look like following:
