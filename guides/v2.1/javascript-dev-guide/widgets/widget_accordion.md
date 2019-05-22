@@ -181,7 +181,7 @@ $( "#element" ).accordion( "deactivate", [0,1]);
 
 ## Events {#accordion_events}
 
-The accordion widget is subscribed to the same events as the [Magento Tabs widget] widget:
+The accordion widget is subscribed to the same events as the [Magento Tabs]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html) widget:
 
 -   [beforeOpen callback](#accordion_beforeOpen)
 -   [dimensionsChanged](#accordion_dimensionsChanged)
