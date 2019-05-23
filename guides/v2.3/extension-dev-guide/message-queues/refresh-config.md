@@ -14,13 +14,7 @@ To ensure the copy in memory is re-instantiated after an update, use the `Poison
 {: .bs-callout .bs-callout-info }
 If `PoisonPill` determines the copy of the in-memory state needs to be re-instantiated and you have set up a cron job, Magento will automatically restart all consumers on the next run of the `consumers_runner` cron task. If you did not set up the cron job, you will need to manually restart the consumers that were terminated by `PoisonPill`.
 
-The `PoisonPill` interface includes the following:
-
-Interface | Description
---- | ---
-`PoisonPillCompareInterface` | Compares the in-memory copy to the database.
-`PoisonPillPutInterface` | Location where you want to begin the compare.
-`PoisonPillReadInterface` | Result of the compare so you can process as needed.
+The `PoisonPill` interface describes how to compare the two versions.
 
 **Example**
 
