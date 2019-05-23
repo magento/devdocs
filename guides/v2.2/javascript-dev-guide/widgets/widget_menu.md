@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Menu widget
-redirect_from:
- - /guides/v2.3/frontend-dev-guide/javascript/widget_menu.html
 ---
 ## Overview
 
