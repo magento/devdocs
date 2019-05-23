@@ -8,6 +8,10 @@ functional_areas:
 
 This article describes the basic concepts you need to know to create layouts for your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
+## Purpose of page layouts
+
+The purpose is to create a structured and common set of layout instructions to render pages. Most pages on a website can be categories as fitting into a 1 column,2 column, or 3 column container system. These page layouts can be selected throughout the admin panel to provide a specific layout by page.
+
 ## Introduction
 
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
