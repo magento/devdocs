@@ -16,7 +16,7 @@ To change the page wireframe, modify the [page layout]({{page.baseurl}}/frontend
 ## Manage layouts
 
 To make layout changes available on every page, modify the `default.xml` file.
-For example, layout changes that is added to `app/code/Vendor/Module/view/frontend/layout/default.xml` will be loaded on all pages.
+For example, layout changes added to `app/code/Vendor/Module/view/frontend/layout/default.xml` are loaded on all pages.
 To add layout changes to a specific page a module should use layout handle that corresponds the page's path. 
 For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` file are loaded on the product details page.
 
