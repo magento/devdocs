@@ -14,7 +14,7 @@ There are two possible ways to customize page layout in Magento:
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files. 
 
-## Layout handle
+## Manage layouts
 
 To make layout changes available on every page, modify the `default.xml` file.
 For example, layout changes added to `app/code/Vendor/Module/view/frontend/layout/default.xml` are loaded on all pages.
