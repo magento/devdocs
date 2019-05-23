@@ -21,25 +21,25 @@ The following links provide quick access to our [Page Builder GitHub code exampl
 
 ## Tutorials
 
-- [Extend an existing content type]({{ site.baseurl }}page-builder/docs/extend-existing-content-type/overview.html)
-- [Create a new content type]({{ site.baseurl }}page-builder/docs/create-custom-content-type/overview.html)
+- [Extend an existing content type]({{ site.baseurl }}/page-builder/docs/extend-existing-content-type/overview.html)
+- [Create a new content type]({{ site.baseurl }}/page-builder/docs/create-custom-content-type/overview.html)
 
 ## How-Tos (just a few)
 
-- [How to customize the Page Builder panel]({{ site.baseurl }}page-builder/docs/how-to/how-to-customize-panel.html)
-- [How to add an image uploader]({{ site.baseurl }}page-builder/docs/how-to/how-to-add-image-uploader.html)
-- [How to add a storefront widget]({{ site.baseurl }}page-builder/docs/how-to/how-to-add-storefront-widget.html)
-- [How to add a custom toolbar]({{ site.baseurl }}page-builder/docs/how-to/how-to-add-custom-toolbar.html)
-- [How to add icons and images]({{ site.baseurl }}page-builder/docs/how-to/how-to-add-icons-images.html)
-- [How to change breakpoints]({{ site.baseurl }}page-builder/docs/how-to/how-to-change-breakpoints.html)
+- [How to customize the Page Builder panel]({{ site.baseurl }}/page-builder/docs/how-to/how-to-customize-panel.html)
+- [How to add an image uploader]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-image-uploader.html)
+- [How to add a storefront widget]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-storefront-widget.html)
+- [How to add a custom toolbar]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-custom-toolbar.html)
+- [How to add icons and images]({{ site.baseurl }}/page-builder/docs/how-to/how-to-add-icons-images.html)
+- [How to change breakpoints]({{ site.baseurl }}/page-builder/docs/how-to/how-to-change-breakpoints.html)
 
 ## Reference
 
-- [Page Builder configurations]({{ site.baseurl }}page-builder/docs/reference/configurations.html)
-- [Page Builder Datastore]({{ site.baseurl }}page-builder/docs/reference/data-store.html)
-- [Page Builder events]({{ site.baseurl }}page-builder/docs/reference/events.html)
-- [Page Builder Knockout bindings]({{ site.baseurl }}page-builder/docs/reference/knockout-bindings.html)
-- [Page Builder architecture]({{ site.baseurl }}page-builder/docs/reference/architecture.html)
+- [Page Builder configurations]({{ site.baseurl }}/page-builder/docs/reference/configurations.html)
+- [Page Builder Datastore]({{ site.baseurl }}/page-builder/docs/reference/data-store.html)
+- [Page Builder events]({{ site.baseurl }}/page-builder/docs/reference/events.html)
+- [Page Builder Knockout bindings]({{ site.baseurl }}/page-builder/docs/reference/knockout-bindings.html)
+- [Page Builder architecture]({{ site.baseurl }}/page-builder/docs/reference/architecture.html)
 
 ## Page Builder User Guide
 
