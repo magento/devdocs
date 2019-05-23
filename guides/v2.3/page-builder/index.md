@@ -1,3 +1,8 @@
+---
+layout: full-width
+title: Magento Page Builder Developer Guide
+---
+
 # What is Page Builder?
 
 Page Builder is a Magento extension for creating content by dragging-and-dropping pre-built controls. 
