@@ -11,6 +11,7 @@ Customizable options for a product provide a way to offer customers a selection 
 * Checkbox
 * Date picker
 * Drop-down menu
+* Multiple select box
 * Text field
 * File picker
 * Radio buttons
