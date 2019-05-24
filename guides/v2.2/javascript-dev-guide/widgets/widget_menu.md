@@ -56,8 +56,7 @@ Setting the default responsive handler for the navigation widget.
 **Default value**: `false`
 
 ### `mediaBreakpoint` {#m_mediaBreakpoint}
-Sets the breakpoint where menu changes approach on how menu is shown and reacts
-to user.
+Sets the width of user’s window in pixels for which the menu switches between mobile view and desktop view.
 
 **Type**: String.
 
