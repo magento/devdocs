@@ -124,6 +124,9 @@ pages:
         - label: Using custom fonts
           url: /frontend-dev-guide/css-topics/using-fonts.html
 
+        - label: Using custom icons
+        url: /frontend-dev-guide/css-topics/using-icons.html
+
         - label: Using custom CSS preprocessor
           children:
 
