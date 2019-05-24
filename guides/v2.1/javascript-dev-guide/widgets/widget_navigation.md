@@ -70,7 +70,7 @@ The default responsive handler for the navigation widget.
 
 **Default value**: `'wrap'`
 
-**Accepted values**: `wrap`, `onResize`, `onLoad`
+**Accepted values**: `wrap`, `onResize`, `onReload`
 
 ## Methods {#navigation_methods}
 
