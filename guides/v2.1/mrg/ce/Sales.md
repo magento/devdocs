@@ -42,42 +42,42 @@ With this service you can:
 ### Parameters
 
 <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Format</th>
-      <th>Example</th>
-      <th>Required / Optional</th>
-      <th>Default value</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>orderId</code></td>
-      <td>An identifier of a target order for operation.</td>
-      <td>Integer</td>
-      <td>&nbsp;</td>
-      <td>Required</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><code>items</code></td>
-      <td>An array of order items that will be included to invoice. By default, the invoice will contain all order items.</td>
-      <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
-      <td markdown="1">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Format</th>
+    <th>Example</th>
+    <th>Required / Optional</th>
+    <th>Default value</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>orderId</code></td>
+    <td>An identifier of a target order for operation.</td>
+    <td>Integer</td>
+    <td>&nbsp;</td>
+    <td>Required</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><code>items</code></td>
+    <td>An array of order items that will be included to invoice. By default, the invoice will contain all order items.</td>
+    <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceItemCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceItemCreationInterface</code></a>.</td>
+    <td markdown="1">
 
 ```json
 [
-    {
-        "order_item_id": 1,
-        "qty": 2
-    },
-    {
-    "order_item_id": 2,
-    "qty": 0.5
-    }
-    ]
+  {
+      "order_item_id": 1,
+      "qty": 2
+  },
+  {
+  "order_item_id": 2,
+  "qty": 0.5
+  }
+  ]
 ```
 
 </td>
@@ -85,55 +85,55 @@ With this service you can:
 <td><code>[]</code></td>
 </tr>
 <tr>
-  <td><code>capture</code></td>
-  <td>Flag that sets whether the customer’s payment can be captured using an online payments system (for example, PayPal). <strong>IMPORTANT: If you created Invoice with the flag set to default value (<code>false</code>), you will not be able to capture money in Magento on the corresponding Invoice.</strong></td>
-  <td>Boolean</td>
-  <td>&nbsp;</td>
-  <td>Optional</td>
-  <td><code>false</code></td>
+<td><code>capture</code></td>
+<td>Flag that sets whether the customer’s payment can be captured using an online payments system (for example, PayPal). <strong>IMPORTANT: If you created Invoice with the flag set to default value (<code>false</code>), you will not be able to capture money in Magento on the corresponding Invoice.</strong></td>
+<td>Boolean</td>
+<td>&nbsp;</td>
+<td>Optional</td>
+<td><code>false</code></td>
 </tr>
 <tr>
-  <td><code>notify</code></td>
-  <td>Flag that activates e-mail notification about new invoice for a customer. If <code>true</code>, the service will notify a customer. If <code>false</code>, the service won’t notify a customer.</td>
-  <td>Boolean</td>
-  <td>&nbsp;</td>
-  <td>Optional</td>
-  <td><code>false</code></td>
+<td><code>notify</code></td>
+<td>Flag that activates e-mail notification about new invoice for a customer. If <code>true</code>, the service will notify a customer. If <code>false</code>, the service won’t notify a customer.</td>
+<td>Boolean</td>
+<td>&nbsp;</td>
+<td>Optional</td>
+<td><code>false</code></td>
 </tr>
 <tr>
-  <td><code>appendComment</code></td>
-  <td>Flag that determines whether a <code>comment</code> argument must be included in an e-mail notification. If <code>true</code>, the service adds the comment.</td>
-  <td>Boolean</td>
-  <td>&nbsp;</td>
-  <td>Optional</td>
-  <td><code>false</code></td>
+<td><code>appendComment</code></td>
+<td>Flag that determines whether a <code>comment</code> argument must be included in an e-mail notification. If <code>true</code>, the service adds the comment.</td>
+<td>Boolean</td>
+<td>&nbsp;</td>
+<td>Optional</td>
+<td><code>false</code></td>
 </tr>
 <tr>
-  <td><code>comment</code></td>
-  <td>The comment to add to an invoice. Specify a comment if <code>appendComment</code> is set to <code>true</code>.</td>
-  <td>A format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
-  <td markdown="1">
+<td><code>comment</code></td>
+<td>The comment to add to an invoice. Specify a comment if <code>appendComment</code> is set to <code>true</code>.</td>
+<td>A format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCommentCreationInterface</code></a>.</td>
+<td markdown="1">
 
 ```json
 {
-    "comment": "The first Invoice",
-    "is_visible_on_front": true
+  "comment": "The first Invoice",
+  "is_visible_on_front": true
 }
 ```
 
-  </td>
-  <td>Optional</td>
-  <td><code>null</code></td>
+</td>
+<td>Optional</td>
+<td><code>null</code></td>
 </tr>
 <tr>
-  <td><code>arguments</code></td>
-  <td>Additional arguments. Reserved for use by extension modules.</td>
-  <td>A format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
-  <td>&nbsp;</td>
-  <td>Optional</td>
-  <td><code>null</code></td>
+<td><code>arguments</code></td>
+<td>Additional arguments. Reserved for use by extension modules.</td>
+<td>A format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/InvoiceCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</code></a>.</td>
+<td>&nbsp;</td>
+<td>Optional</td>
+<td><code>null</code></td>
 </tr>
-  </tbody>
+</tbody>
 </table>
 
 ### Return values
@@ -195,7 +195,7 @@ In case of failure, it returns an error object. Example in REST:
 
 ```json
 {
-    "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
+  "message": "Creditmemo Document Validation Error(s):\nWe can't create creditmemo for the order.\nThe most money available to refund is 0."
 }
 ```
 
@@ -229,200 +229,199 @@ With this service you can:
 ### Service parameters
 
 <table>
-  <thead>
-    <tr>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Format
-      </th>
-      <th>
-        Example
-      </th>
-      <th>
-        Required/Optional
-      </th>
-      <th>
-        Default value
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>invoiceId</code>
-      </td>
-      <td>
-        An identifier of a target Invoice for operation.
-      </td>
-      <td>
-        Integer
-      </td>
-      <td>
-        &nbsp;
-      </td>
-      <td>
-        Required
-      </td>
-      <td>
-        &nbsp;
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>items</code>
-      </td>
-      <td>
-        An array of invoice items included to a Credit Memo. By
-        default, the service will create a Credit Memo for all
-        invoice items.
-      </td>
-      <td>
-        Array of items with a format according to <a href=
-        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
-        <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
-      </td>
-      <td markdown=1>
+<thead>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Format
+    </th>
+    <th>
+      Example
+    </th>
+    <th>
+      Required/Optional
+    </th>
+    <th>
+      Default value
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>invoiceId</code>
+    </td>
+    <td>
+      An identifier of a target Invoice for operation.
+    </td>
+    <td>
+      Integer
+    </td>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+      Required
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>items</code>
+    </td>
+    <td>
+      An array of invoice items included to a Credit Memo. By
+      default, the service will create a Credit Memo for all
+      invoice items.
+    </td>
+    <td>
+      Array of items with a format according to <a href=
+      "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+      <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
+</td>
+<td markdown="1">
 
 ```json
 [
-    {
-          "order_item_id": 1,
-          "qty": 2
-    },
-    {
-    "order_item_id": 2,
-    "qty": 0.5
-    }
+  {
+        "order_item_id": 1,
+        "qty": 2
+  },
+  {
+  "order_item_id": 2,
+  "qty": 0.5
+  }
 ]
 ```
 
-  </td>
-  <td>
-    Optional (required, when a Credit Memo must contain
-    particular order items)
-  </td>
-  <td>
-    <code>[]</code>
-  </td>
+</td>
+<td>
+  Optional (required, when a Credit Memo must contain
+  particular order items)
+</td>
+<td>
+  <code>[]</code>
+</td>
 </tr>
 <tr>
-  <td>
-    <code>isOnline</code>
-  </td>
-  <td>
-    Flag that determines whether funds should be returned to a
-    customer via online payment system (PayPal for example) or
-    not.
-  </td>
-  <td>
-    Boolean
-  </td>
-  <td>
-    &nbsp;
-  </td>
-  <td>
-    Optional
-  </td>
-  <td>
-    <code>false</code>
-  </td>
+<td>
+  <code>isOnline</code>
+</td>
+<td>
+  Flag that determines whether funds should be returned to a
+  customer via online payment system (PayPal for example) or
+  not.
+</td>
+<td>
+  Boolean
+</td>
+<td>
+  &nbsp;
+</td>
+<td>
+  Optional
+</td>
+<td>
+  <code>false</code>
+</td>
 </tr>
 <tr>
-  <td></td>
+<td></td>
 </tr>
 <tr>
-  <td>
+<td>
 <code>notify</code>
-  </td>
-  <td>
-    Flag that activates e-mail notification about Credit Memo
-    creation. If <code>true</code>, the service notifies a
-    customer; if <code>false</code>, it doesn't.
-  </td>
-  <td>
-    Boolean
-  </td>
-  <td>
-    &nbsp;
-  </td>
-  <td>
-    Optional
-  </td>
-  <td>
-    <code>false</code>
-  </td>
+</td>
+<td>
+  Flag that activates e-mail notification about Credit Memo
+  creation. If <code>true</code>, the service notifies a
+  customer; if <code>false</code>, it doesn't.
+</td>
+<td>
+  Boolean
+</td>
+<td>
+  &nbsp;
+</td>
+<td>
+  Optional
+</td>
+<td>
+  <code>false</code>
+</td>
 </tr>
 <tr>
-  <td>
-    <code>appendComment</code>
-  </td>
-  <td>
-    Flag that activates addition of a <code>comment</code>
-    argument to the e-mail notification. If <code>true</code>
-    and <code>comment</code> contains data, the service will
-    add the comment to an e-mail notification.
-  </td>
-  <td>
+<td>
+  <code>appendComment</code>
+</td>
+<td>
+  Flag that activates addition of a <code>comment</code>
+  argument to the e-mail notification. If <code>true</code>
+  and <code>comment</code> contains data, the service will
+  add the comment to an e-mail notification.
+</td>
+<td>
 Boolean
-  </td>
-  <td>
-    &nbsp;
-  </td>
-  <td>
-    Optional
-  </td>
-  <td>
-    <code>false</code>
-  </td>
+</td>
+<td>
+  &nbsp;
+</td>
+<td>
+  Optional
+</td>
+<td>
+  <code>false</code>
+</td>
 </tr>
 <tr>
-  <td>
-    <code>comment</code>
-  </td>
-  <td>
-    A comment to Credit Memo.
-  </td>
-  <td>
-    A format according to the <a href=
-    "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
-    <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
-  </td>
-  <td markdown=1>
+<td>
+  <code>comment</code>
+</td>
+<td>
+  A comment to Credit Memo.
+</td>
+<td>
+  A format according to the <a href=
+  "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+  <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
+</td><td markdown="1">
 
 ```json
 {
-  "comment": "The first Credit Memo",
-  "is_visible_on_front": true
+"comment": "The first Credit Memo",
+"is_visible_on_front": true
 }
 ```
 
-  </td>
-  <td>
-    Optional
-  </td>
-  <td>
-    <code>null</code>
-  </td>
+</td>
+<td>
+  Optional
+</td>
+<td>
+  <code>null</code>
+</td>
 </tr>
 <tr>
-  <td>
-    <code>arguments</code>
-  </td>
-  <td>
-    Additional arguments for the service. Can be used by
-    extension modules.
-  </td>
-  <td>
-    A format according to <a href=
-    "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
-    <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
-  </td>
-  <td markdown=1>
+<td>
+  <code>arguments</code>
+</td>
+<td>
+  Additional arguments for the service. Can be used by
+  extension modules.
+</td>
+<td>
+  A format according to <a href=
+  "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+  <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
+</td>
+<td markdown="1">
 
 ```json
 {
@@ -432,21 +431,16 @@ Boolean
 }
 ```
 
-A parameter <code>shipping_amount</code>
-behaves like at the Credit Memo creation page in the Admin
-area. If shipping amount is not specified, then shipping
-amount from a target Invoice is refunded automatically. To
-specify a shipping amount, consider shipping tax displays
-settings.
+A parameter `shipping_amount` behaves like at the Credit Memo creation page in the Admin area. If shipping amount is not specified, then shipping amount from a target Invoice is refunded automatically. To specify a shipping amount, consider shipping tax displays settings.
 </td>
 <td>
-  Optional
+Optional
 </td>
 <td>
-  <code>null</code>
+<code>null</code>
 </td>
 </tr>
-  </tbody>
+</tbody>
 </table>
 
 ### Return values
@@ -539,175 +533,175 @@ With the RefundOrder service you can:
 ### Service parameters
 
 <table>
-  <thead>
-    <tr>
-      <th>
-        Name
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Format
-      </th>
-      <th>
-        Example
-      </th>
-      <th>
-        Required/Optional
-      </th>
-      <th>
-        Default value
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>orderId</code>
-      </td>
-      <td>
-        An identifier of a target Order for operation.
-      </td>
-      <td>
-        Integer
-      </td>
-      <td>
-        &nbsp;
-      </td>
-      <td>
-        Required
-      </td>
-      <td>
-        &nbsp;
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>items</code>
-      </td>
-      <td>
-        An array of Order items included to a Credit Memo. By
-        default, the service will create a Credit Memo for all
-        Order items.
-      </td>
-      <td>
-        Array of items with a format according to <a href=
-        "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
-        <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
-      </td>
-      <td markdown=1>
+<thead>
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Format
+    </th>
+    <th>
+      Example
+    </th>
+    <th>
+      Required/Optional
+    </th>
+    <th>
+      Default value
+    </th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>
+      <code>orderId</code>
+    </td>
+    <td>
+      An identifier of a target Order for operation.
+    </td>
+    <td>
+      Integer
+    </td>
+    <td>
+      &nbsp;
+    </td>
+    <td>
+      Required
+    </td>
+    <td>
+      &nbsp;
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>items</code>
+    </td>
+    <td>
+      An array of Order items included to a Credit Memo. By
+      default, the service will create a Credit Memo for all
+      Order items.
+    </td>
+    <td>
+      Array of items with a format according to <a href=
+      "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoItemCreationInterface.php">
+      <code>\Magento\Sales\Api\Data\CreditmemoItemCreationInterface</code></a>.
+</td>
+<td markdown="1">
 
 ```json
 [
-    {
-          "order_item_id": 1,
-          "qty": 2
-    },
-    {
-          "order_item_id": 2,
-          "qty": 0.5
-    }
+  {
+        "order_item_id": 1,
+        "qty": 2
+  },
+  {
+        "order_item_id": 2,
+        "qty": 0.5
+  }
 ]
 ```
 
-  </td>
-  <td>
-    Optional (required, when a Credit Memo must contain
-    particular order items)
-  </td>
-  <td>
-    <code>[]</code>
-  </td>
+</td>
+<td>
+  Optional (required, when a Credit Memo must contain
+  particular order items)
+</td>
+<td>
+  <code>[]</code>
+</td>
 </tr>
 <tr>
-  <td>
-    <code>notify</code>
-  </td>
-  <td>
-    Flag that activates e-mail notification about Credit Memo
-    creation. If <code>true</code>, the service notifies a
+<td>
+  <code>notify</code>
+</td>
+<td>
+  Flag that activates e-mail notification about Credit Memo
+  creation. If <code>true</code>, the service notifies a
 customer; if <code>false</code>, it doesn't.
-  </td>
-  <td>
-    Boolean
-  </td>
-  <td>
-    &nbsp;
-  </td>
-  <td>
-    Optional
-  </td>
-  <td>
-    <code>false</code>
-  </td>
-</tr>
-<tr>
-  <td>
-    <code>appendComment</code>
-  </td>
-  <td>
-    Flag that activates addition of a <code>comment</code>
-    argument to the e-mail notification. If <code>true</code>
-    and <code>comment</code> contains data, the service will
-    add the comment to an e-mail notification.
-  </td>
-  <td>
-    Boolean
-  </td>
-  <td>
-    &nbsp;
-  </td>
-  <td>
-    Optional
-  </td>
-  <td>
-    <code>false</code>
-  </td>
-</tr>
-<tr>
-  <td>
-    <code>comment</code>
-  </td>
-  <td>
-    A comment to Credit Memo.
-  </td>
-  <td>
-    A format according to the <a href=
-    "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
-    <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
-  </td>
-  <td markdown=1>
-
-```json
-{
-    "comment": "The first Credit Memo",
-    "is_visible_on_front": true
-}
-```
-
+</td>
+<td>
+  Boolean
+</td>
+<td>
+  &nbsp;
 </td>
 <td>
   Optional
 </td>
 <td>
-  <code>null</code>
+  <code>false</code>
 </td>
 </tr>
 <tr>
 <td>
-  <code>arguments</code>
+  <code>appendComment</code>
 </td>
 <td>
-  Additional arguments for the service. Can be used by
-  extension modules.
+  Flag that activates addition of a <code>comment</code>
+  argument to the e-mail notification. If <code>true</code>
+  and <code>comment</code> contains data, the service will
+  add the comment to an e-mail notification.
 </td>
 <td>
-  A format according to <a href=
-  "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
-  <code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
+  Boolean
 </td>
-<td markdown=1>
+<td>
+  &nbsp;
+</td>
+<td>
+  Optional
+</td>
+<td>
+  <code>false</code>
+</td>
+</tr>
+<tr>
+<td>
+  <code>comment</code>
+</td>
+<td>
+  A comment to Credit Memo.
+</td>
+<td>
+  A format according to the <a href=
+  "{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php">
+  <code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>.
+</td>
+<td markdown="1">
+
+```json
+{
+  "comment": "The first Credit Memo",
+  "is_visible_on_front": true
+}
+```
+
+</td>
+<td>
+Optional
+</td>
+<td>
+<code>null</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>arguments</code>
+</td>
+<td>
+Additional arguments for the service. Can be used by
+extension modules.
+</td>
+<td>
+A format according to <a href=
+"{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php">
+<code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>.
+</td>
+<td markdown="1">
 
 ```json
 {
@@ -717,21 +711,16 @@ customer; if <code>false</code>, it doesn't.
 }
 ```
 
-    A parameter <code>shipping_amount</code>
-    behaves like at the Credit Memo creation page in the Admin
-    area. If shipping amount is not specified, then shipping
-    amount from a target Invoice is refunded automatically. To
-    specify a shipping amount, consider shipping tax displays
-    settings.
-  </td>
-  <td>
-    Optional
-  </td>
-  <td>
-    <code>null</code>
-  </td>
+A parameter `shipping_amount` behaves like at the Credit Memo creation page in the Admin area. If shipping amount is not specified, then shipping amount from a target Invoice is refunded automatically. To specify a shipping amount, consider shipping tax displays settings.
+</td>
+<td>
+  Optional
+</td>
+<td>
+  <code>null</code>
+</td>
 </tr>
-  </tbody>
+</tbody>
 </table>
 
 ### Return values
@@ -824,142 +813,142 @@ With the ShipOrder service you can:
 
 <table>
 <thead>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Format</th>
-    <th>Example</th>
-    <th>Required/Optional</th>
-    <th>Default value</th>
-  </tr>
+<tr>
+  <th>Name</th>
+  <th>Description</th>
+  <th>Format</th>
+  <th>Example</th>
+  <th>Required/Optional</th>
+  <th>Default value</th>
+</tr>
 </thead>
 <tbody>
-  <tr>
-    <td><code>orderId</code></td>
-    <td>An identifier of a target order for operation.</td>
-    <td>Integer</td>
-    <td>&nbsp;</td>
-    <td>Required</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td><code>items</code></td>
-    <td>An array of order items included to a shipment. By default, the service will create a shipment for all order items.</td>
-    <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
-    <td markdown=1>
+<tr>
+  <td><code>orderId</code></td>
+  <td>An identifier of a target order for operation.</td>
+  <td>Integer</td>
+  <td>&nbsp;</td>
+  <td>Required</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td><code>items</code></td>
+  <td>An array of order items included to a shipment. By default, the service will create a shipment for all order items.</td>
+  <td>Array of items with a format according to <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentItemCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentItemCreationInterface</code></a>.</td>
+<td markdown="1">
 
 ```json
 [
-    {
-        "order_item_id": 1,
-        "qty": 2
-    },
-    {
-        "order_item_id": 2,
-        "qty": 0.5
-    }
+  {
+      "order_item_id": 1,
+      "qty": 2
+  },
+  {
+      "order_item_id": 2,
+      "qty": 0.5
+  }
 ]
 ```
 
-  </td>
-  <td>Optional (required, when a shipment document must contain particular order items)</td>
-  <td><code>[]</code></td>
+</td>
+<td>Optional (required, when a shipment document must contain particular order items)</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
-  <td><code>notify</code></td>
-  <td>Flag that activates e-mail notification about shipment details. If <code>true</code>, the service notifies a customer; if <code>false</code>, it doesn't.</td>
-  <td>Boolean</td>
-  <td>&nbsp;</td>
-  <td>Optional</td>
-  <td><code>false</code></td>
+<td><code>notify</code></td>
+<td>Flag that activates e-mail notification about shipment details. If <code>true</code>, the service notifies a customer; if <code>false</code>, it doesn't.</td>
+<td>Boolean</td>
+<td>&nbsp;</td>
+<td>Optional</td>
+<td><code>false</code></td>
 </tr>
 <tr>
-  <td><code>appendComment</code></td>
-  <td>Flag that activates addition of a <code>comment</code> argument to the e-mail notification. If <code>true</code> and <code>comment</code> contains data, the service will add the comment to an e-mail notification.</td>
-  <td>Boolean</td>
-  <td>&nbsp;</td>
-  <td>Optional</td>
-  <td><code>false</code></td>
+<td><code>appendComment</code></td>
+<td>Flag that activates addition of a <code>comment</code> argument to the e-mail notification. If <code>true</code> and <code>comment</code> contains data, the service will add the comment to an e-mail notification.</td>
+<td>Boolean</td>
+<td>&nbsp;</td>
+<td>Optional</td>
+<td><code>false</code></td>
 </tr>
 <tr>
-  <td><code>comment</code></td>
-  <td>A comment about a shipment.</td>
-  <td>A format according to the
-    <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
-    interface.</td>
-  <td markdown="1">
+<td><code>comment</code></td>
+<td>A comment about a shipment.</td>
+<td>A format according to the
+  <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCommentCreationInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCommentCreationInterface</code></a>
+  interface.</td>
+<td markdown="1">
 
 ```json
 {
-    "comment": "The first Invoice",
-    "is_visible_on_front": true
+  "comment": "The first Invoice",
+  "is_visible_on_front": true
 }
 ```
 
-  </td>
-  <td> Optional </td>
-  <td> <code>null</code> </td>
+</td>
+<td> Optional </td>
+<td> <code>null</code> </td>
 </tr>
 <tr>
-  <td> <code>tracks</code> </td>
-  <td> A list of track numbers attached to a shipment. </td>
-  <td> Array of objects with a format according to
-    <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
-  <td markdown="1">
+<td> <code>tracks</code> </td>
+<td> A list of track numbers attached to a shipment. </td>
+<td> Array of objects with a format according to
+  <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentTrackCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentTrackCreationInterface></code></a>. </td>
+<td markdown="1">
 
 ```json
 [
-  {
-    "track_number": "132456789",
-    "title": "United States Postal Service",
-    "carrier_code": "usps"
-  }
+{
+  "track_number": "132456789",
+  "title": "United States Postal Service",
+  "carrier_code": "usps"
+}
 ]
 ```
 
-  </td>
-  <td> Optional </td>
-  <td> <code>[]</code> </td>
+</td>
+<td> Optional </td>
+<td> <code>[]</code> </td>
 </tr>
 <tr>
-  <td> <code>packages</code> </td>
-  <td> A list of packages attached to a shipment. </td>
-  <td> Array of objects with a format according to
-    <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
-  <td markdown="1">
+<td> <code>packages</code> </td>
+<td> A list of packages attached to a shipment. </td>
+<td> Array of objects with a format according to
+  <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/ShipmentPackageCreationInterface.php"><code>\Magento\Sales\Api\Data\ShipmentPackageCreationInterface</code></a>. </td>
+<td markdown="1">
 
 ```json
 [
+{
+  "extension_attributes":
   {
-    "extension_attributes":
-    {
-      "ups":
-        {
-          "weight": 20,
-          "height": 15,
-          "width": 20
-        }
-    }
+    "ups":
+      {
+        "weight": 20,
+        "height": 15,
+        "width": 20
+      }
   }
+}
 ]
 ```
 
-  </td>
-  <td>Optional</td>
-  <td><code>[]</code></td>
+</td>
+<td>Optional</td>
+<td><code>[]</code></td>
 </tr>
 <tr>
-  <td><code>arguments</code></td>
-  <td>Additional arguments for the service. Can be used by
-    extension modules.</td>
-  <td>A format according to the
-    <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
-    interface.</td>
-  <td>&nbsp;</td>
-  <td>Optional</td>
-  <td><code>null</code></td>
+<td><code>arguments</code></td>
+<td>Additional arguments for the service. Can be used by
+  extension modules.</td>
+<td>A format according to the
+  <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Sales/Api/Data/CreditmemoCreationArgumentsInterface.php"><code>\Magento\Sales\Api\Data\CreditmemoCreationArgumentsInterface</code></a>
+  interface.</td>
+<td>&nbsp;</td>
+<td>Optional</td>
+<td><code>null</code></td>
 </tr>
-  </tbody>
+</tbody>
 </table>
 
 ### Return values

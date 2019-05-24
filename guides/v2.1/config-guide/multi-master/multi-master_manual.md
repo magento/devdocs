@@ -284,6 +284,7 @@ mysql -u <root username> -p <your sales DB name> < /<path>/sequence.sql
 
 ```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/salesarchive.sql
+```
 
 ```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/customercustomattributes.sql

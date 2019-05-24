@@ -135,14 +135,16 @@ For blocks of code, surround content with 3 backticks and an optional [supported
 
 *Example:*
 
-    ```html
-    <div class="container">
-      <h4 class="title">Title</h4>
-      <div class="content">
-        <p>Paragraph content.</p>
-      </div>
-    </div>
-    ```
+```markdown
+```html
+<div class="container">
+  <h4 class="title">Title</h4>
+  <div class="content">
+    <p>Paragraph content.</p>
+  </div>
+</div>
+```
+```
 
 *Output:*
 
