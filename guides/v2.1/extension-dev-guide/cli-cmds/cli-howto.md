@@ -65,7 +65,7 @@ Following is a summary of the process:
          * @param InputInterface $input
          * @param OutputInterface $output
          *
-         * @return void
+         * @return null|int
          */
         protected function execute(InputInterface $input, OutputInterface $output)
         {
