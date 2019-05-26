@@ -181,12 +181,12 @@ $( "#element" ).accordion( "deactivate", [0,1]);
 
 ## Events {#accordion_events}
 
-The accordion widget is subscribed to the same events as the [Tabs widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html):
+The accordion widget subscribes to the same events as the [Tabs widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html):
 
 -   [beforeOpen callback](#accordion_beforeOpen)
 -   [dimensionsChanged](#accordion_dimensionsChanged)
 
-### `beforeOpen callback` {#accordion_beforeOpen}
+### `beforeOpen callback`
 
 Called before the content is opened. 
 
@@ -198,7 +198,7 @@ $("#element").on("beforeOpen", function () {
 });
 ```
 
-### `dimensionsChanged` {#accordion_dimensionsChanged}
+### `dimensionsChanged`
 
 Called after content is opened or closed.
 
