@@ -44,7 +44,7 @@ You have options for using the translated dictionary:
 Command options:
 
     ```bash
-    bin/magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
+    php bin/magento i18n:collect-phrases [-o|--output="<csv file path and name>"] [-m|--magento] <path to directory to translate>
     ```
 
 The following table explains this command's parameters and values:
@@ -102,7 +102,7 @@ This section discusses how to create a language package, which writes `.csv` fil
 Command usage:
 
 ```bash
-bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <locale>
+php bin/magento i18n:pack [-m|--mode={merge|replace}] [-d|--allow-duplicates] <source> <locale>
 ```
 
 The following table explains this command's parameters and values:
@@ -220,7 +220,7 @@ To add a German translation to a module or theme that you want to distribute to 
 1.  Collect phrases from your module:
 
     ```bash
-    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
+    php bin/magento i18n:collect-phrases -o "/var/www/html/magento2/app/code/ExampleCorp/SampleModule/i18n/xx_YY.csv" /var/www/html/magento2/app/code/ExampleCorp/SampleModule
     ```
 
 	{:.bs-callout .bs-callout-info}
@@ -236,7 +236,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 1.  Collect phrases from your module:
 
     ```bash
-    bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
+    php bin/magento i18n:collect-phrases -o "/var/www/html/magento2/xx_YY.csv" -m
     ```
 
     {:.bs-callout .bs-callout-info}
@@ -246,7 +246,7 @@ Similar to the preceding example, generate a `.csv` file, but instead of specify
 1.  Create the language package.
 
     ```bash
-    bin/magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY
+    php bin/magento i18n:pack /var/www/html/magento2/xx_YY.csv -d xx_YY
     ```
 
 1.  Create a directory for the language package.
