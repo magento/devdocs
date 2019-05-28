@@ -17,7 +17,7 @@ Magento navigation widget is a customized <a href="http://api.jqueryui.com/menu/
 <li>Method for handling the responsive {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} of the menu.</li>
 </ul>
 
-The navigation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
+The navigation {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js" target="_blank">lib/web/mage/menu.js</a>
 
 ## Initialize the navigation widget   {#navigation_init}
 

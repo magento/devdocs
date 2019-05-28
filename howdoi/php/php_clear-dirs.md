@@ -68,7 +68,7 @@ The following table provides guidelines on what you should clear and when.
 		</tr>
 	<tr>
 		<td><ul><li>Change a class if there is a plug-in related to it.</li>
-		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="{{ site.mage2000url }}app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="{{ site.mage2000url }}app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
+		<li>A change that results in generated factories or proxies (for example, a non-existent <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Controller/Adminhtml/Category/Add.php#L22" target="_blank">factory</a> declared in a class or a proxy declared in <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml#L25" target="_blank"><code>di.xml</code></a>)</li></ul> </td>
 		<td>var/di, var/generation</td>
 	</tr>
 	<tr>

@@ -12,7 +12,7 @@ redirect_from:
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the <a href="{{ page.baseurl }}/javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Magento collapsible widget</a>.
 
-The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>.
+The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>.
 
 ## Initialize the tabs widget   {#fedg_tabs_init}
 

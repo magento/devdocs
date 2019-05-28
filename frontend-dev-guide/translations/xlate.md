@@ -53,7 +53,7 @@ Depending on your needs, you can use the existing <a href="#m2devgde-xlate-langu
 Changes made:
 
 *	The {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} (`i18n` directory) can now be moved and saved to any directory of your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
-*	The phrases for translations are enabled in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
+*	The phrases for translations are enabled in the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
 
 ### More information
 
@@ -138,11 +138,11 @@ In addition to the `.csv` file that contains the language dictionary, the langua
 
 *	`composer.json` that contains any dependencies for the language package and a mapping to its defined {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} 
 
-	<a href="{{ site.mage2000url }}app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a>
+	<a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a>
 
 *	`language.xml`, in which you declare a language package.
 
-	<a href="{{ site.mage2000url }}app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a>
+	<a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/i18n/magento/de_de/language.xml" target="_blank">Sample language.xml</a>
 
 #### Next step
 

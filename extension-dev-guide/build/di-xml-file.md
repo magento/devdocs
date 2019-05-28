@@ -27,11 +27,11 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
 
-* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
+* In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
 
-* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
+* In `cron.php`, the [`\Magento\Framework\App\Cron`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Cron.php#L68-L70){:target="_blank"} class always loads the 'crontab' area.
 
 ## Type configuration
 
@@ -286,11 +286,11 @@ Any descendant can override the parameters configured for its supertype; that is
 </config>
 {% endhighlight %}
 
-In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2000url }}app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
+In the preceding example, [`Magento\Backend\Block\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Block/Context.php){:target="_blank"} is a descendant of [`Magento\Framework\View\Element\Context`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/Context.php){:target="_blank"}.
 
-The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{ site.mage2000url }}lib/internal/Magento/Framework/Url.php){:target="_blank"} as `$urlBuilder` in their constructors.
+The first entry configures all instances of `Magento\Framework\View\Element\Context` as well as its children to pass in [`Magento\Core\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Url.php){:target="_blank"} as `$urlBuilder` in their constructors.
 
-The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2000url }}app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
+The second entry overrides this and configures all instances of `Magento\Backend\Block\Context` to use [`Magento\Backend\Model\Url`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/Model/Url.php){:target="_blank"} as the `$urlBuilder` instead.
 
 ## Object lifestyle configuration
 

@@ -16,7 +16,7 @@ The Calendar widget is a customized {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-6
 *	Taking into account server time zone offset.
 *	Converting date and time formats to avoid inconsistency in Zend Date format and Datepicker format.
 *	Making the calendar initialization easier.
-*	The Calendar {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2000url }}lib/web/mage/calendar.js" target="_blank">lib/web/mage/calendar.js</a>.
+*	The Calendar {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/calendar.js" target="_blank">lib/web/mage/calendar.js</a>.
 
 ## Initialize the calendar widget   {#fedg_calendar_init}
 

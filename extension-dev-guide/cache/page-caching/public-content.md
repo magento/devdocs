@@ -112,7 +112,7 @@ Context variables should not be specific to individual users because variables a
 Magento generates a hash based on all context variables (`\Magento\Framework\App\Http\Context::getVaryString`). The hash and current URL are used as keys for cache storage.
 
 <div class="bs-callout bs-callout-tip" markdown="1">
-Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2000url }}app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
+Use the `X-Magento-Vary` cookie to transfer context on the HTTP layer. HTTP proxies can be configured to calculate a unique identifier for cache based on the cookie and URL. For example, [our sample Varnish 4 configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/PageCache/etc/varnish4.vcl#L63-L68){:target="_blank"} uses the following:
 
 ```
 sub vcl_hash {
@@ -154,7 +154,7 @@ class CustomerAgeContextPlugin
 
 The `subject->setValue` argument specifies the value for newcomer context and is used to guarantee parity during cache key generation for newcomers and users who already received the `X-Magento-Vary` cookie.
 
-For another example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2000url }}lib/internal/Magento/Framework/App/Http/Context.php){:target="_blank"}.
+For another example of a context class, see [Magento/Framework/App/Http/Context]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http/Context.php){:target="_blank"}.
 
 ## Invalidate public content
 
@@ -162,7 +162,7 @@ You can clear cached content immediately after a entity changes. Magento uses  `
 
 This section shows you how to tell Magento what cache to clear when you change an entity.
 
-First, your entity {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
+First, your entity {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
 
 ``` php?start_inline=1
 use Magento\Framework\DataObject\IdentityInterface;

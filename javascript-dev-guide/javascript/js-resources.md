@@ -116,7 +116,7 @@ To be available for the entire Magento instance, RequireJS library is included i
 
  * For the `adminhtml` [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html):
 
-    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/layout/default.xml)
+    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/layout/default.xml)
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
@@ -150,7 +150,7 @@ To be available for the entire Magento instance, RequireJS library is included i
 </page>
 {%endhighlight%}
 
-* For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/layout/default.xml).
+* For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml).
 
 ### Mapping JS resources {#m2devgde-js-resources-mapping}
 
@@ -177,8 +177,8 @@ Dependencies between the modules or themes are considered as well.
 
 The `baseUrl` parameter for RequireJS is specified in the following files:
 
-* for the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
-* for the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2000url }}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
+* for the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
+* for the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
 
 ## Related reading
 

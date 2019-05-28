@@ -220,7 +220,7 @@ Often, you need to test a Magento block that contains a form. And of course, tes
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
-Let's see the [Customer Login]({{ site.mage2000url }}app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
+Let's see the [Customer Login]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Block/Form/Login.php) block. The block has two input fields: `email` and `password`.
 
 [![]({{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png)]({{ site.baseurl }}/common/images/ftf/mtf_block_login_ui.png)
 
@@ -272,7 +272,7 @@ The general structure of the form mapping file:
 ## Form tab mapping {#mtf_block_map_form_tab}
 
 You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
-To get the block class with form tab mapping, extend your class from [`Magento\Backend\Test\Block\Widget\FormTabs` ]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php). If you want to use custom tab logic you can extend your class from [`Magento\Backend\Test\Block\Widget\Tab`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php) class.
+To get the block class with form tab mapping, extend your class from [`Magento\Backend\Test\Block\Widget\FormTabs` ]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php). If you want to use custom tab logic you can extend your class from [`Magento\Backend\Test\Block\Widget\Tab`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php) class.
 
 For example, let's see tabs for the Magento Widget: **Settings**, **Storefront properties**, **Frontend App Options**, **Layout Updates** .
 
@@ -368,7 +368,7 @@ See the following table to understand the node's purpose.
     </tbody>
 </table>
 
-Example of `composite` field from [ProductForm.xml]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml):
+Example of `composite` field from [ProductForm.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Adminhtml/Product/ProductForm.xml):
 
 In the mapping file: 
 
@@ -450,7 +450,7 @@ If the name and path cover partially each other, hover the mouse pointer over th
 
 ##### Get the name and the path of blocks in the code {#mtf_block_path_code}
 
-If you want to change the representation of block details, you can change a [`Template.php`]({{ site.mage2000url }}lib/internal/Magento/Framework/View/Element/Template.php):
+If you want to change the representation of block details, you can change a [`Template.php`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Element/Template.php):
 
 * Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
 
@@ -495,7 +495,7 @@ Now you can inspect any element in a browser, and find which block contains it.
 
 Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
 
-For example, the [WidgetGrid.php]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php) is a part of the page that is defined in [`WidgetInstanceIndex.xml`]({{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml).
+For example, the [WidgetGrid.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php) is a part of the page that is defined in [`WidgetInstanceIndex.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml).
 
 `block` is the node that adds the block to the page:
 
@@ -645,17 +645,17 @@ There are some rules that should be followed to define a selector:
 <!-- LINK DEFINITIONS -->
  
 [page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
-[`Catalog/Test/Page/Product/CatalogProductView.xml`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml
+[`Catalog/Test/Page/Product/CatalogProductView.xml`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml
 [`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[`Magento\Catalog\Test\Block\Product\View`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
+[`Magento\Catalog\Test\Block\Product\View`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
 
-[`Magento\Backend\Test\Block\Widget\Grid`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
+[`Magento\Backend\Test\Block\Widget\Grid`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
 
 [`Magento\Mtf\Block\Block`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php
-[`Magento\Backend\Test\Block\Widget\Tab`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php
-[`Magento\Backend\Test\Block\Widget\FormTabs`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php
-[`Magento\Backend\Test\Block\Widget\Grid`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
-[`Magento\Ui\Test\Block\Adminhtml\DataGrid`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php
+[`Magento\Backend\Test\Block\Widget\Tab`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php
+[`Magento\Backend\Test\Block\Widget\FormTabs`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php
+[`Magento\Backend\Test\Block\Widget\Grid`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
+[`Magento\Ui\Test\Block\Adminhtml\DataGrid`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php
 [`Magento\Mtf\Client\Element\Locator`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php
 
 <!-- ABBREVIATIONS -->

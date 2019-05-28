@@ -22,7 +22,7 @@ Following are common terms used in this topic:
 
 <dl>
       <dt>Configuration object</dt>
-      <dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
+      <dd>The Magento library or class that is responsible for defining and validating the configuration type. For example, the configuration object for <code>config.xml</code> is <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Config.php" target="_blank">Magento\Framework\App\Config</a>.</dd>
       <dt>Configuration stage</dt>
       <dd>Stages are defined as <em>primary</em>, <em>global</em>, and <em>area</em>. Each stage determines when configuration type is loaded and merged with same-named configuration types. (For example, <code>module.xml</code> files are merged with other <code>module.xml</code> files.) For more information, see <a href="#config-files-loadmerge">Configuration load and merge</a>.</dd>
       <dt>Configuration scope</dt>
@@ -37,13 +37,13 @@ This section discusses how configuration files are loaded and merged.
 
 Magento loads configuration files in the following order (all paths are relative to your Magento installation directory):
 
-* Primary configuration (<a href="{{ site.mage2000url }}app/etc/di.xml" target="_blank">app/etc/di.xml</a>). This file is used to bootstrap Magento.
+* Primary configuration (<a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml" target="_blank">app/etc/di.xml</a>). This file is used to bootstrap Magento.
 * Global configurations from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/*.xml`). Collects certain configuration files from all modules and merges them together.
 * Area-specific configuration from modules (`<your component base dir>/<vendorname>/<component-type>-<component-name>/etc/<area>/*.xml`). Collects configuration files from all modules and merges them into the global configuration. Some area-specific configurations can override or extend the global configuration.
 
 {% include vendor/types-def.md %}
 
-*     `<component-name>`: Name of your component as defined in <a href="{{ site.mage2000url }}composer.json" target="_blank">composer.json</a>.
+*     `<component-name>`: Name of your component as defined in <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/composer.json" target="_blank">composer.json</a>.
 
 ### Configuration file merge   {#config-files-load-merge-merge}
 
@@ -86,50 +86,50 @@ The following table shows each configuration type and the Magento configuration 
                   <td><code>config.xml</code></td>
                   <td>System configuration</td>
                   <td>primary, global </td>
-                  <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
+                  <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Config.php" target="_blank">\Magento\Framework\App\Config</a></td>
             </tr>
             <tr>
                   <td><code>di.xml</code></td>
                   <td><a href="{{ page.baseurl }}/extension-dev-guide/depend-inj.html">Dependency injection</a> configuration</td>
                   <td>primary, global, area</td>
-                  <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
+                  <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/ObjectManager/Config/Config.php" target="_blank">\Magento\Framework\ObjectManager\Config</a></td>
             </tr>
             <tr>
                   <td><code>events.xml</code></td>
                   <td>Event/observer configuration</td>
                   <td>global, area</td>
-                  <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
+                  <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Event.php" target="_blank">\Magento\Framework\Event</a></td>
             </tr>
 <!--     <tr>
                   <td><code>cache.xml</code></td>
                   <td>global, area</td>
-                  <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
+                  <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Event.php" target="_blank">Magento\Framework\Event</a></td>
             </tr> -->
             <tr>
                   <td><code>routes.xml</code></td>
                   <td><a href="{{ page.baseurl }}/extension-dev-guide/routing.html">Route</a> configuration</td>
                   <td>area</td>
-                  <td><a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
+                  <td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Route/Config.php" target="_blank">Magento\Framework\App\Route\Config</a></td>
             </tr>
       </tbody>
 </table>
 
 ### Configuration interfaces   {#config-files-classes-int}
 
-You can interact with configuration files using interfaces under <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.
+You can interact with configuration files using interfaces under <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config" target="_blank">Magento\Framework\Config</a>. You can also use these interfaces if you create a new configuration types.
 
 `Magento\Framework\Config` provides the following interfaces:
 
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} into an in-memory array representation of the configurations.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Magento\Framework\Config\ReaderInterface</a>.
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.
+* <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} into an in-memory array representation of the configurations.
+* <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.
+* <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Magento\Framework\Config\ReaderInterface</a>.
+* <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.
 
 That is, the file system, database, other storage merges the configuration files according to the merging rules, and validates the configuration files with the validation schemas.
 
-*  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.
-*  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.
-*  <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.
+*  <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php" target="_blank">Framework\Config\SchemaLocatorInterface</a>, which locates the XSD schema.
+*  <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ScopeListInterface.php" target="_blank">Framework\Config\ScopeListInterface</a>, which returns a list of scopes.
+*  <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php" target="_blank">Framework\Config\ValidationStateInterface</a>, which retrieves the validation state.
 
 #### Related topics
 

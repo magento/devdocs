@@ -28,7 +28,7 @@ Example:
 ### Edit `config.xml` to configure Functional Testing Framework {#mtf_quickstart_config_configxml}
 
 {: .bs-callout .bs-callout-info }
-The default configuration is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist). It should be copied as `config.xml` for further changes.
+The default configuration is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/etc/config.xml.dist). It should be copied as `config.xml` for further changes.
 
 Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
 

@@ -76,7 +76,7 @@ See one of the following sections for more information:
 
 ### Specify a variable using an nginx setting   {#mode-specify-web-nginx}
 
-See the <a href="{{ site.mage2000url }}nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.
+See the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample#L16" target="_blank">nginx sample configuration</a> on GitHub.
 
 ### Specify a variable using .htaccess (Apache only)   {#mode-specify-web-htaccess}
 

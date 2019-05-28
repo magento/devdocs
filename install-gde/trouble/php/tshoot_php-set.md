@@ -74,7 +74,7 @@ Error text is typically:
 
 #### Solution: Set <code>asp_tags = off</code> in <code>php.ini</code>
 
-Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template]({{ site.mage2000url }}app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml){: target="_blank"} for displaying a product image:
+Multiple templates have syntax for support abstract level on templates (use different templates engines like Twig) wrapped in `<% %>` tags, like this [template]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/adminhtml/templates/product/edit/base_image.phtml){: target="_blank"} for displaying a product image:
 
 {% highlight PHP inline=true %}
 <img

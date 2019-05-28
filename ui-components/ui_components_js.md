@@ -36,7 +36,7 @@ The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-
  - `component`: the path to the component's `.js` file in terms of RequireJS.
 
 Example:
-The `.js` file of the bookmark component is [Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
+The `.js` file of the bookmark component is [Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/controls/bookmarks/bookmarks.js) 
 
 So the `component` property is set in the `.xml` configuration file like following:
 
@@ -50,7 +50,7 @@ So the `component` property is set in the `.xml` configuration file like followi
 
 Example:
 
-The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
+The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/controls/bookmarks/bookmarks.html). 
 
 {% highlight xml%}
 <argument name="data" xsi:type="array">
@@ -61,7 +61,7 @@ The `.html` template of the bookmarks component is [Magento/Ui/view/base/web/tem
  - children: is a general name for the nested components of a certain component. Children can be specified in the `.xml` configuration of the parent component (all nodes except `<argument/>` and `<dataSource/>` are considered children) and in the Knockout JS templates: children are the keys of the `elems` property.
 
  - `name`: the name of the component specified in the `.xml` configuration file of the parent UI component. In the run-time in a browser this value is transformed to a complex string. This string represents hierarchy of components in the run-time.
-For example, [`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`]({{ site.mage2000url }}app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57):
+For example, [`app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml:57`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/view/adminhtml/ui_component/cms_block_listing.xml#L57):
 
 {%highlight xml%} 
 <component name="columns_controls">
@@ -212,7 +212,7 @@ Extends `uiClass`. Adds the following:
 Extends `uiElement`. Adds the following:
 
 - managing child elements (the `elems` property)
-- by default uses the [app/code/Magento/Ui/view/base/web/templates/collection.html]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/collection.html) template
+- by default uses the [app/code/Magento/Ui/view/base/web/templates/collection.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/collection.html) template
 
 ### `uiRegistry`
 In-memory storage. Plain storage of entities by keys. Implements the `get()`, `set()`, and `has()` methods.

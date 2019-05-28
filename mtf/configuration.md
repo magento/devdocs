@@ -163,7 +163,7 @@ Set of parameters to be used for [installation test case].
 [desiredCapabilities]: https://github.com/SeleniumHQ/selenium/wiki/DesiredCapabilities
 [Open Selenium code]: https://github.com/giorgiosironi/phpunit-selenium/blob/master/PHPUnit/Extensions/Selenium2TestCase.php#L233-L238
 [PHPUnit documentation]: https://phpunit.de/manual/current/en/appendixes.configuration.html
-[installation test case]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Install/Test/TestCase/InstallTest.php#L60-L77
+[installation test case]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Install/Test/TestCase/InstallTest.php#L60-L77
 
 <!-- Internal -->
 [handler]: {{ page.baseurl }}/mtf/mtf_entities/mtf_handler.html

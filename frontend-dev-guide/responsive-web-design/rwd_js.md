@@ -17,8 +17,8 @@ This topic describes the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218
 The Blank and Luma themes use the following scripts to responsively relocate page elements by breakpoint:
 
 <ul>
-<li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
-<li><a href="{{ site.mage2000url }}lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
+<li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/js/responsive.js" target="_blank"><code>responsive.js</code></a></li>
+<li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js" target="_blank"><code>menu.js</code></a></li>
 
 <li><a href="https://github.com/paulirish/matchMedia.js/" target="_blank"><code>matchMedia.js</code></a>, used by <code>responsive.js</code> and <code>menu.js</code></li>
 </ul>

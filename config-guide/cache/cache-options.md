@@ -17,7 +17,7 @@ The Magento application uses a low-level {% glossarytooltip 0bc9c8bc-de1a-4a06-9
 
 ## Low-level frontend cache   {#cache-lowlevel-front}
 
-Magento extends [Zend\_Cache\_Core](http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html){: target="_blank"} by implementing [Magento\\Framework\\Cache\\Core]({{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php){: target="_blank"} frontend cache.
+Magento extends [Zend\_Cache\_Core](http://framework.zend.com/manual/1.12/en/zend.cache.frontends.html){: target="_blank"} by implementing [Magento\\Framework\\Cache\\Core]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Core.php){: target="_blank"} frontend cache.
 
 ## Low-level backend cache   {#cache-lowlevel-front}
 

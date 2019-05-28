@@ -1103,12 +1103,12 @@ That's it!
 [Step 7]: #add-blocks-to-pages
 
 [develop branch]: https://github.com/magento/magento2
-[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
 [`\Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
-[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
+[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
 [up and running]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->

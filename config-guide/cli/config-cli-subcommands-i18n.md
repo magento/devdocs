@@ -186,7 +186,7 @@ A language package is a directory under `app/i18n/<VendorName>` in the Magento f
 {: .bs-callout .bs-callout-info }
 The entire path must be all lowercase.
 
-For an example, see the [`de_de` language package]({{ site.mage2000url }}app/i18n/magento/de_de/registration.php){: target="_blank"}.
+For an example, see the [`de_de` language package]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/i18n/magento/de_de/registration.php){: target="_blank"}.
 
 To create these files:
 
@@ -259,7 +259,7 @@ If the Magento application cannot find word or phrase in the `en_GB` package, it
 1.  `<vendorname>/en_ca_package`
 1.  `<vendorname>/en_us_package`
 
-Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use [Magento\\Test\\Integrity\\App\\Language\\CircularDependencyTest]({{ site.mage2000url }}dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php){: target="_blank"} test to locate and fix such chains.
+Specifying all inheritances between the language packages might result in creating circular inheritance chains. Use [Magento\\Test\\Integrity\\App\\Language\\CircularDependencyTest]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/static/testsuite/Magento/Test/Integrity/App/Language/CircularDependencyTest.php){: target="_blank"} test to locate and fix such chains.
 
 ### Configure multiple packages for a language {#m2devgde-xlate-severalpacks}
 

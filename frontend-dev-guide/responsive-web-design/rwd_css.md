@@ -44,8 +44,8 @@ In the Blank and Luma themes, the mobile first approach is used. It means that t
 In the Blank theme, the mobile and desktop styles are defined in separate files:
 
 <ul>
-<li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles (768px and higher).</li>
-<li><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate basic and mobile-specific styles.</li>
+<li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-l.less">styles-l.less</a> is used to generate desktop-specific styles (768px and higher).</li>
+<li><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/web/css/styles-m.less">styles-m.less</a> is used to generate basic and mobile-specific styles.</li>
 </ul>
 
 ## Related topics

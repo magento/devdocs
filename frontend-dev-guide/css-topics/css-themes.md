@@ -79,7 +79,7 @@ Your custom <code>default_head_blocks.xml</code> should be located as follows:
 
 For example, the following illustrates how stylesheets are included in the default Blank theme: </p>
 
-<p><a href="{{ site.mage2000url }}app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></a></p>
+<p><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/Magento_Theme/layout/default_head_blocks.xml" target="_blank"><code>&lt;Magento_Blank_theme_dir&gt;/Magento_Theme/layout/default_head_blocks.xml</code></a></p>
 
 {%highlight xml%}
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">

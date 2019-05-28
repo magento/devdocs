@@ -12,7 +12,7 @@ For each operation (authorization, capture and so on) of a certain payment provi
 
 ## Interface
 
-Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2000url }}app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
+Basic interface for a gateway command is [`\Magento\Payment\Gateway\CommandInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Gateway/CommandInterface.php). It implements the [Command design pattern](http://designpatternsphp.readthedocs.io/en/latest/Behavioral/Command/README.html).
 
 ## Basic implementation
 
@@ -22,7 +22,7 @@ The `\Magento\Payment\Gateway\Command\GatewayCommand` class is the default `Comm
 
 For each particular integration with a payment provider, gateway commands are added using virtual types in [dependency injection (DI)]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration.
 
-In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the "authorize" operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{ site.mage2100url }}app/code/Magento/Braintree/etc/di.xml#L131)):
+In the following example the `BraintreeAuthorizeCommand` gateway command is added. The command implements the "authorize" operation for the Braintree payment provider ([`app/code/Magento/Braintree/etc/di.xml#131`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml#L131)):
 
 {% highlight xml %}
 <virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">

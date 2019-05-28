@@ -15,17 +15,17 @@ redirect_from:
 
 Since private content is specific to individual users, it's reasonable to handle it on the client (i.e., web browser).
 
-Use our [customer-data]({{ site.mage2000url }}app/code/Magento/Customer/view/frontend/web/js/customer-data.js){:target="_blank"} JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
+Use our [customer-data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/web/js/customer-data.js){:target="_blank"} JS library to store private data in local storage, invalidate private data using customizable rules, and synchronize data with the backend.
 
 This example shows a customer's name on a cacheable page.
 
 ## Create a section source {#config-cache-priv-how-source}
 
-The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2000url }}app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface.
+The section source class is responsible for retrieving data for the section. As a best practice, we recommend you put your code under the `Vendor/ModuleName/CustomerData` namespace. Your classes must implement the [`Magento\Customer\CustomerData\SectionSourceInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/CustomerData/SectionSourceInterface.php){:target="_blank"} interface.
 
 The public method `getSectionData` must return an array with data for private block.
 
-[Example]({{ site.mage2000url }}app/code/Magento/Catalog/CustomerData/CompareProducts.php#L36-L45){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L36-L45){:target="_blank"}
 
 Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (`di.xml`):
 
@@ -56,23 +56,23 @@ Initialize the component as follows:
 </script>
 ```
 
-[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="_blank"}
 
 ## Configure a UI component {#config-cache-priv-how-ui}
 
 The UI component renders block data on the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. To initialize the UI component, you must call the initialization method `_super()`.
 
-[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
 
 All properties are available in the template.
 
-[Example of defining a UI component in a layout]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L22){:target="_blank"}
+[Example of defining a UI component in a layout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L22){:target="_blank"}
 
 ## Invalidate private content
 
 Specify actions that trigger cache invalidation for private content blocks in a `sections.xml` configuration file in the `Vendor/ModuleName/etc/frontend` directory. Magento invalidates the cache on a POST or PUT request.
 
-The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2000url }}app/code/Magento/Catalog/etc/frontend/sections.xml){:target="_blank"} to show you what the code is doing.
+The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/frontend/sections.xml){:target="_blank"} to show you what the code is doing.
 
 ``` xml
 <?xml version="1.0"?>
@@ -105,9 +105,9 @@ Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping ca
 
 Other examples:
 
--   [Checkout]({{ site.mage2000url }}app/code/Magento/Checkout/etc/frontend/sections.xml){:target="_blank"}
+-   [Checkout]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Checkout/etc/frontend/sections.xml){:target="_blank"}
 
--   [Customer]({{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/sections.xml){:target="_blank"}
+-   [Customer]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/etc/frontend/sections.xml){:target="_blank"}
 
 ## Version private content {#config-priv-vers}
 

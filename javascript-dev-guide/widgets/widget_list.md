@@ -12,7 +12,7 @@ redirect_from:
 Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 
 
-The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is <a href="{{ site.mage2000url }}lib/web/mage/list.js" target="_blank">lib/web/mage/list.js</a>.
+The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/list.js" target="_blank">lib/web/mage/list.js</a>.
 
 ## Initialize the list widget   {#quicksearch_init}
 

@@ -51,7 +51,7 @@ Any separate <code>.js</code> file decorated as <a href="http://requirejs.org/do
 <i>Ui component</i>
 </td>
 <td>
-JS component located in the <code>Magento_Ui</code> module, in the <a href="{{ site.mage2000url }}app/code/Magento/Ui/view" target="_blank">app/code/Magento/Ui/view</a> directory.
+JS component located in the <code>Magento_Ui</code> module, in the <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view" target="_blank">app/code/Magento/Ui/view</a> directory.
 </td>
 </tr>
 
@@ -60,7 +60,7 @@ JS component located in the <code>Magento_Ui</code> module, in the <a href="{{ s
 <i>jQuery UI widget</i>
 </td>
 <td>
-A JS component/widget provided by <a href="{{ site.mage2000url }}lib/web/jquery/jquery-ui-1.9.2.js" target="_blank">jQuery UI library used in Magento</a>.
+A JS component/widget provided by <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/jquery/jquery-ui-1.9.2.js" target="_blank">jQuery UI library used in Magento</a>.
 </td>
 </tr>
 <tr>

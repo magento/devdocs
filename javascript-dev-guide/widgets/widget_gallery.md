@@ -22,9 +22,9 @@ The gallery widget uses the [Fotorama widget](http://fotorama.io/).
 
 The important feature of the gallery widget implementation is the possibility to configure the widget options in the `view.xml` configuration file of a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-The gallery widget source code is [lib/web/mage/gallery/gallery.js]({{ site.mage2000url }}lib/web/mage/gallery/gallery.js)
+The gallery widget source code is [lib/web/mage/gallery/gallery.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js)
 
-The gallery magnifier source is [ lib/web/magnifier/magnify.js]({{ site.mage2000url }}lib/web/magnifier/magnify.js).
+The gallery magnifier source is [ lib/web/magnifier/magnify.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js).
 
 ### Contents
 
@@ -457,7 +457,7 @@ The fullscreen and breakpoints options are set in a similar way:
 
 {%endhighlight%}
 
-For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
+For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml#L184).
 
 ## Gallery API {#gallery_api}
 

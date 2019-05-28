@@ -34,7 +34,7 @@ This work is delegated to a fallback, which is a queue of handlers in the priori
 
 ### `config.xml` {#mtf_handler_configxml}
 
-The default configuration for handlers is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist).
+The default configuration for handlers is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/etc/config.xml.dist).
 Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
 ```bash

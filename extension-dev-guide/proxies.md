@@ -72,4 +72,4 @@ With the proxy used in place of `SlowLoading`, the `SlowLoading` class will not 
 
 Because DI configuration is used to inject a proxy, proxies can be dropped in to replace their corresponding classes - or proxy replacements _removed_ - without touching application code.
 
-As a practical example of a proxy, you can see the [StoreManager]({{ site.mage2000url }}app/code/Magento/Store/Model/StoreManager.php){: target="_blank"} class and then see the generated `StoreManager` proxy class.
+As a practical example of a proxy, you can see the [StoreManager]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Model/StoreManager.php){: target="_blank"} class and then see the generated `StoreManager` proxy class.

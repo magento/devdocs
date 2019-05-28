@@ -85,12 +85,12 @@ The toolbar component should use the `ui/grid/sticky/toolbar` template for the s
 
 The sticky header component consists of the following elements:
 
-- Constructor: [`<Magento_Ui_module_dir>/view/base/web/js/grid/sticky/sticky.js`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js)
-- Main template: [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html)
+- Constructor: [`<Magento_Ui_module_dir>/view/base/web/js/grid/sticky/sticky.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/sticky/sticky.js)
+- Main template: [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html)
 - Elements' templates:
-	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/listing.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html)
-	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/filters.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html)
-	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`]({{ site.mage2000url }}app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html)
+	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/listing.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/sticky/listing.html)
+	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/filters.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/sticky/filters.html)
+	- [`<Magento_Ui_module_dir>/view/base/web/templates/grid/sticky/sticky.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/sticky/sticky.html)
 	
 
 ## Dependencies   {#sticky_dependencies}

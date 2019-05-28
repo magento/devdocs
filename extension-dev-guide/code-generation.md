@@ -8,7 +8,7 @@ menu_order: 8
 
 ## Overview of code generation   {#codegen-over}
 
-The Magento application generates code to create non-existent classes. As an example, look at the [\\Magento\\Customer\\Model\\Resource\\AddressRepository]({{ site.mage2000url }}app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php){: target="_blank"} constructor. A snippet follows:
+The Magento application generates code to create non-existent classes. As an example, look at the [\\Magento\\Customer\\Model\\Resource\\AddressRepository]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/ResourceModel/AddressRepository.php){: target="_blank"} constructor. A snippet follows:
 
 	...
 	    public function __construct(
@@ -62,9 +62,9 @@ If you’re preparing to deploy to production, you must use the multi-tenant com
 
 Depending on whether or not one of the compilers has been run before, the Magento application consumes the compilation using one of the following classes:
 
-*	[Magento\\Framework\\Interception\\ObjectManager\\Config\\Compiled]({{ site.mage2000url }}lib/internal/Magento/Framework/Interception/ObjectManager/Config/Compiled.php){: target="_blank"}, which is used if `global.ser` exists.
+*	[Magento\\Framework\\Interception\\ObjectManager\\Config\\Compiled]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/ObjectManager/Config/Compiled.php){: target="_blank"}, which is used if `global.ser` exists.
 
-*	[Magento\\Framework\\Interception\\ObjectManager\\Config\\Developer]({{ site.mage2000url }}lib/internal/Magento/Framework/Interception/ObjectManager/Config/Developer.php){: target="_blank"}, which is used if `global.ser` does not exist.
+*	[Magento\\Framework\\Interception\\ObjectManager\\Config\\Developer]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Interception/ObjectManager/Config/Developer.php){: target="_blank"}, which is used if `global.ser` does not exist.
 
 	This class is slower than `Magento\Framework\Interception\ObjectManager\Config\Compiled`.
 

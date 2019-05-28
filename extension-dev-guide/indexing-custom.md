@@ -20,7 +20,7 @@ To implement your own indexer, add the following code in your module:
 
 ### Custom indexer logic
 
-Your custom indexer class should implement [\\Magento\\Framework\\Indexer\\ActionInterface]({{ site.mage2000url }}lib/internal/Magento/Framework/Indexer/ActionInterface.php){: target="_blank"}, and the indexer should be able to perform three types of operations:
+Your custom indexer class should implement [\\Magento\\Framework\\Indexer\\ActionInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Indexer/ActionInterface.php){: target="_blank"}, and the indexer should be able to perform three types of operations:
 
 *	Row reindex: processing a single entry from a dictionary; responsibility of `executeRow($id)`
 *	List reindex: processing a set of dictionary entries; responsibility of `executeList($ids)`, where `$ids` is an array of {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} IDs
@@ -37,7 +37,7 @@ In the `etc` directory of your module, add `indexer.xml` with the following:
 *	indexer view ID
 *	shared indexes, if any
 
-Use the optional `shared_index=` parameter to improve performance if your indexer is related to another indexer. In this [example]({{ site.mage2000url }}app/code/Magento/CatalogRule/etc/indexer.xml){: target="_blank"}, if {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed.
+Use the optional `shared_index=` parameter to improve performance if your indexer is related to another indexer. In this [example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/etc/indexer.xml){: target="_blank"}, if {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed.
 
 All indexers related to a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} should be declared in one file.
 
@@ -50,7 +50,7 @@ Add the `mview.xml` configuration file in the `etc` module directory, where you 
 *	the database tables the indexer tracks
 *	what column data is sent to the indexer
 
-[Example]({{ site.mage2000url }}app/code/Magento/Catalog/etc/mview.xml){: target="_blank"}
+[Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/etc/mview.xml){: target="_blank"}
 
 All Mview declarations related to a module should be declared in one file.
 

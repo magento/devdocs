@@ -48,16 +48,16 @@ For example, if you...
 
 * ...need file system access?  
 
-  Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2000url }}lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
+  Use [`\Magento\Framework\Filesystem\Io\IoInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Filesystem/Io/IoInterface.php){:target="_blank"} instead of `fopen()`, `dir()` or other native methods.
 * ...need the current time?  
 
    Inject a [`\DateTimeInterface`](http://php.net/manual/en/refs.calendar.php){:target="_blank"} instance (for example `\DateTimeImmutable`) and use that.
 * ...need the remote IP?  
 
-  Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2000url }}lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
+  Use [`\Magento\Framework\HTTP\PhpEnvironment\RemoteAddress`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/RemoteAddress.php){:target="_blank"}.
 * ...need access to `$_SERVER`?  
 
-  Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2000url }}lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
+  Consider using [`\Magento\Framework\HTTP\PhpEnvironment\Request::getServerValue()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/PhpEnvironment/Request.php){:target="_blank"}.
 
 Anything that can be easily replaced by a test double is preferable to using low level functions.
 

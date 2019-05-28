@@ -156,7 +156,7 @@ __Step 7.__ If you want to perform any actions after constraints, use a [tearDow
 [processAssert()]:{{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html#mtf_constraint_assert
 [constraints]: {{ page.baseurl }}/mtf/mtf_entities/mtf_constraint.html
 [fixture]: {{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html
-[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
+[Magento\Catalog\Test\TestCase\Product\UpdateSimpleProductEntityTest]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/TestCase/Product/UpdateSimpleProductEntityTest.php
 
 <!-- ABBREVIATIONS -->
 

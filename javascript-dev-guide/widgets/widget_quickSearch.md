@@ -14,7 +14,7 @@ functional_areas:
 
 The quickSearch {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
 
-The suggest widget source is <a href="{{ site.mage2000url }}app/code/Magento/Search/view/frontend/web/form-mini.js" target="_blank"><code>&lt;Magento_Search_module_dir&gt;/view/frontend/web/form-mini.js</code></a>.
+The suggest widget source is <a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Search/view/frontend/web/form-mini.js" target="_blank"><code>&lt;Magento_Search_module_dir&gt;/view/frontend/web/form-mini.js</code></a>.
 
 ## Initialize the quickSearch widget   {#quicksearch_init}
 
