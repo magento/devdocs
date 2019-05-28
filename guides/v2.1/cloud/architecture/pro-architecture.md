@@ -69,10 +69,10 @@ The following table summarizes the differences between environments:
      <td>Yes</td>
    </tr>
    <tr>
-     <td>Includes New Relic Infrastructure</td>
-     <td>Yes (Only one branch)</td>
-     <td>Yes</td>
-     <td>Yes</td>
+     <td>Includes New Relic</td>
+     <td>No</td>
+     <td>APM</td>
+     <td>APM + NRI</td>
    </tr>
   </tbody>
 </table>
@@ -103,7 +103,7 @@ Do **not** create a branch from Global Master. Use the Integration environment b
 
 ## Staging environment {#cloud-arch-stage}
 
-The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment—including Fastly CDN, New Relic Infrastructure, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
+The Staging environment provides a near-production environment to test your site. This environment includes all services, such as Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
@@ -112,7 +112,7 @@ We highly recommend testing every merchant and customer interaction in the Stagi
 
 ## Production environment {#cloud-arch-prod}
 
-The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers.
+The Production environment runs your public-facing Magento single and multi-site storefronts. This environment runs on dedicated IaaS hardware featuring redundant, high-availability nodes for continuous access and failover protection for your customers. The Production environment includes all services in the Staging environment, plus the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
 
 You cannot create a branch from the Production environment branch. You must push code changes from the Staging environment branch to the Production environment branch.
 

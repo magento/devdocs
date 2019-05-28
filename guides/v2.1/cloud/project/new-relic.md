@@ -8,15 +8,17 @@ functional_areas:
   - Services
 ---
 
-[New Relic Infrastructure](https://newrelic.com/products/infrastructure) automatically connects with your application data and performance analytics to provide dynamic server monitoring and is standard for {{site.data.var.ece}} accounts. [New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyze and improve application interactions. New Relic APM provides the following features to Magento:
+[New Relic for application performance management (APM)](https://docs.newrelic.com/docs/apm/new-relic-apm/getting-started/introduction-new-relic-apm) is a software analytics product that helps you analyze and improve application interactions. New Relic APM is available to all {{site.data.var.ece}} accounts and provides the following features:
 
 -  **Focus on specific transactions**—Actively mark and monitor key customer actions in your site, such as adding to the cart, checking out, or processing a payment.
 -  **Database query monitoring**—Locate and monitor database queries affecting performance.
 -  **App Map**—View all application dependencies within your Magento site, extensions, and external services.
 -  **Apdex scores**—Evaluate performance and create alerts that identify issues and notify you when they occur, such as site performance affected by a flash sale or web event.
 
+For {{site.data.var.ece}} Pro accounts, the Production environment includes the [New Relic Infrastructure (NRI)](https://newrelic.com/products/infrastructure) service, which automatically connects with the application data and performance analytics to provide dynamic server monitoring.
+
 {:.bs-callout .bs-callout-info}
-Your {{site.data.var.ece}} account includes the software for the New Relic service along with a license key. You do not need to purchase or install any additional software. For Pro accounts, if New Relic is not installed on the Staging and Production environments, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
+Your {{site.data.var.ece}} account includes the software for the New Relic APM service along with a license key. You do not need to purchase or install any additional software. For Pro accounts, if New Relic APM is not installed on the Staging and Production environments or New Relic Infrastructure is not available in the Production environment, submit a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to request installation.
 
 ## New Relic account credentials
 
@@ -58,10 +60,7 @@ runtime:
 
 ## New Relic license key
 
-The {{site.data.var.ece}} Starter plans support up to three instances of your New Relic license across all environments. We recommend adding a New Relic license key to your Pro Staging and Production environments, and you can add the license to one other environment of your choice. 
-
-{:.bs-callout .bs-callout-info}
-If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment. Contact your Magento technical account manager or New Relic sales (sales@newrelic.com) if you want to use New Relic on more than three environments.
+The {{site.data.var.ece}} Starter plans support up to three instances of your New Relic license across all environments. We recommend adding a New Relic license key to your Staging and Production environments, and you can add the license to one other environment of your choice. If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
 
 #### To find your New Relic license key:
 
@@ -75,8 +74,6 @@ If you have more than three active environments using the same New Relic license
 
 1.  Copy the license key.
 
-You can also access the license key from the Magento Cloud Project interface. See [Blackfire and New Relic credentials]({{ page.baseurl }}/cloud/project/projects.html).
-
 ### Add a license key to an environment
 
 For Starter accounts, you need to use the license key and set a variable in the environment.
@@ -89,7 +86,8 @@ For Starter accounts, you need to use the license key and set a variable in the 
     magento-cloud variable:set php:newrelic.license <newrelic-license-key>
     ```
 
-Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
+    {:.bs-callout .bs-callout-info}
+    Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
 
 ### Remove a license key from an environment
 
@@ -110,16 +108,17 @@ Adding a variable to an environment triggers a redeployment to update the enviro
     ```
     {: .no-copy}
 
-1.  Delete a variable.
+    {:.bs-callout .bs-callout-warning}
+    If you added the license key as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit. To list project variables: `magento-cloud pvget`
 
-    For environment variables:
+1.  Delete a variable.
 
     ```bash
     magento-cloud variable:delete php:newrelic.license
     ```
 
-{:.bs-callout .bs-callout-warning}
-If you added the license key as a _project_ variable, you must remove that project-level variable. A project variable adds the license to every environment branch created, which can consume or exceed the license limit. To list project variables: `magento-cloud pvget`
+    {:.bs-callout .bs-callout-info}
+    Removing a variable from an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
 
 ## Investigate performance
 
