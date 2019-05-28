@@ -8,11 +8,16 @@ The `Customer` endpoint contains information about a customer account accessible
 To return or modify information about a customer, Magento recommends you use customer tokens in the header of your GraphQL calls. However, you also can use [session authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-session.html).
 
 ## Queries
-Use queries to read server-side data, such as a specific customer's address.
+
+The `customer` query returns information about the logged-in customer.
+
+The `isEmailAvailable` query checks whether the specified email has already been used to create a customer account. A value of `true` indicates the email address is available, and the customer can use the email address to create an account.
 
 ### Syntax
 
 `{customer: {Customer}}`
+
+`{isEmailAvailable (email): {IsEmailAvailableOutput}}`
 
 ### Customer attributes {#customerAttributes}
 The customer object can contain the following attributes:
@@ -73,6 +78,18 @@ Attribute |  Data Type | Description
 `region_code` | String | The address region code
 `region` | String | The state or province name
 `region_id` | Int | Uniquely identifies the region
+
+### isEmailAvailable query attribute
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`email` | String! | The email address to check
+
+### IsEmailAvailableOutput attribute
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`is_email_available` | Boolean | A value of `true` indicates the email address is available, and the customer can use the email address to create an account
 
 ### Example usage
 
@@ -135,6 +152,30 @@ The following call returns information about the logged-in customer. Provide the
          "telephone": "512 555-1212"
         }
       ]
+    }
+  }
+}
+```
+
+The following example checks whether the email address `customer@example.com` is available to create a customer account.
+
+**Request**
+
+```text
+{
+  isEmailAvailable(email: "customer@example.com") {
+    is_email_available
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "isEmailAvailable": {
+      "is_email_available": true
     }
   }
 }
