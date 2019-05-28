@@ -1,12 +1,6 @@
 ---
 group: cloud-guide
-subgroup: 090_configure
 title: Server side includes
-menu_title: Server side includes
-menu_order: 45
-menu_node:
-level3_menu_node: level3child
-level3_subgroup: routes
 functional_areas:
   - Cloud
   - Setup
@@ -21,21 +15,20 @@ You can activate or deactivate SSI on a per-route basis in your
 
 ```yaml
     "http://{default}/":
-	    type: upstream
-	    upstream: "myapp:php"
-	    cache:
-	      enabled: false
-	    ssi:
-	        enabled: true
-	"http://{default}/time.php":
-	    type: upstream
-	    upstream: "myapp:php"
-	    cache:
-	      enabled: true
+        type: upstream
+        upstream: "myapp:php"
+        cache:
+            enabled: false
+            ssi:
+                enabled: true
+    "http://{default}/time.php":
+        type: upstream
+        upstream: "myapp:php"
+        cache:
+            enabled: true
 ```
 
-SSI enables you to include in your HTML response directives that cause the
-server fill in parts of the HTML, respecting the your [caching configuration]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
+SSI enables you to include in your HTML response directives that cause the server fill in parts of the HTML, respecting the your [caching configuration]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 
 The following example shows how to insert a dynamic date control at the top of a page and another date control at the bottom that updates every 600 seconds:
 
