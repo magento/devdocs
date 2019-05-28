@@ -102,7 +102,7 @@ If an error occurs, return the error in the response body.
 A 500 status code is allowed when an exception occurs when generating a schema, but not during requests.
 1. The Store code should be passed via headers.
 1. GraphQL types and interfaces SHOULD NOT expose internal IDs (like database identity fields).
-1. Resolvers SHOULD NOT rely on execution resultы of another resolvers except data declared by schema.
+1. Resolvers SHOULD NOT rely on execution results of another resolvers except data declared by schema.
     Schema is the only contract between resolvers of different levels.
     Resolvers SHOULD NOT share state between themselves except allowed context.
 1. Query resolvers SHOULD support deferred execution to avoid the 
