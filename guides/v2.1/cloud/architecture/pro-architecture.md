@@ -69,7 +69,7 @@ The following table summarizes the differences between environments:
      <td>Yes</td>
    </tr>
    <tr>
-     <td>Includes New Relic APM</td>
+     <td>Includes New Relic Infrastructure</td>
      <td>Yes (Only one branch)</td>
      <td>Yes</td>
      <td>Yes</td>
@@ -103,7 +103,7 @@ Do **not** create a branch from Global Master. Use the Integration environment b
 
 ## Staging environment {#cloud-arch-stage}
 
-The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment—including Fastly CDN, New Relic APM, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
+The Staging environment provides a near-production environment to test your site. This environment includes all services used in the Production environment—including Fastly CDN, New Relic Infrastructure, Blackfire Profiler, and search—and shares the same dedicated IaaS hardware as the Production environment.
 
 You cannot create a branch from the Staging environment branch. You must push code changes from the Integration environment branch to the Staging environment branch.
 
@@ -164,7 +164,6 @@ The Production environment has three virtual machines (VMs) behind an Elastic Lo
     -   `app/etc`
 -   **Redis**—one server per VM with only one active and the other two as replicas
 -   **Elasticsearch**—search for {{site.data.var.ece}} 2.1 and later
--   **Solr**—search for {{site.data.var.ece}} 2.0 only
 -   **Galera**—database cluster with one MariaDB MySQL database per node with an auto-increment setting of three for unique IDs across every database
 
 The following figure shows the technologies used in the Production environment:
@@ -195,4 +194,4 @@ Edit the following YAML files to configure specific software versions to use in 
 -   [`.magento.app.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)—application build and deployment
 -   [`routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html)—url processing
 -   [`services.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_services.html)—supported services
--   [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2
+-   [`.magento.env.yaml`]({{ page.baseurl }}/cloud/project/magento-env-yaml.html)—unified configs for {{site.data.var.ece}} 2.2 and later
