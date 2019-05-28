@@ -14,7 +14,7 @@ functional_areas:
   - Integration
 ---
 
-In this step, we will create a customer account that is tied to the `us` web view that we created in Step 1. Before we can do this, we need to know the website and store view IDs.
+In this step, we will create a customer account that is tied to the `us` web view that we created in [Step 1. Configure your environment]({{ page.baseurl }}/rest/tutorials/inventory/configure-environment.html). Before we can do this, we need to know the website and store view IDs.
 
 ## Get the website and store view IDs
 
@@ -82,7 +82,7 @@ The value of the `id` and `website_id` parameters for the US Store View is `2`.
 
 ## Create a customer
 
-We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
+We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
 
 **Endpoint**
 
@@ -185,7 +185,7 @@ The customer `id` is `3`.
 
 To generate a customer's access token, you must specify the customer's username and password in the payload. You do not specify an admin {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token.
 
-By default, a customer token is valid for 1 hour. To change this value, click **Configuration** > **Services** > **OAuth** > **Access Token Expiration**. Then enter a new value for **Customer Token Lifetime (hours)**.
+By default, a customer token is valid for 1 hour. To change this value, click **Stores** > Settings > **Configuration** > **Services** > **OAuth** > **Access Token Expiration**. Then enter a new value for **Customer Token Lifetime (hours)**.
 
 
 **Endpoint**
