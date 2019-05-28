@@ -56,3 +56,4 @@ Example of adding composite builders for the Braintree payment provider ([`app/c
         </argument>
     </arguments>
 </virtualType>
+```
