@@ -13,7 +13,7 @@ functional_areas:
   - Integration
 ---
 
-In this step, we will create a customer account that is tied to the `us` web view that we created in Step 1. Before we can do this, we need to know the website and store view IDs.
+In this step, we will create a customer account that is tied to the `us` web view that we created in [Step 1. Configure your environment]({{ page.baseurl }}/rest/tutorials/inventory/configure-environment.html). Before we can do this, we need to know the website and store view IDs.
 
 ## Get the website and store view IDs
 
@@ -81,7 +81,7 @@ The value of the `id` and `website_id` parameters for the US Store View is `2`.
 
 ## Create a customer
 
-We can use the same customer definition presented in [Create a customer and generate a customer token]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
+We can use the same customer definition presented in [Step 3. Create a customer]({{ page.baseurl }}/rest/tutorials/orders/order-create-customer.html), with the only differences being the scope of the call (`us` instead of `default`) and inserting the `store_id` and `website_id` parameters into the payload. 
 
 **Endpoint**
 

@@ -29,10 +29,12 @@ The format follows [Semantic Versioning][semantic-versioning] rules:
 
 ### Pre-release versions
 
-For pre-release versions, the format is: 
+For pre-release versions, the format is:
 
 `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`
 
+|||
+|--|--|
 | `alpha`, `beta` or `rc` | Stability indicators, as described in the [`version_compare()`][php-version-compare]{:target="_blank"} specification|
 | `n` | An increment number to distinguish releases of the non-stable versions |
 
@@ -68,109 +70,97 @@ The following example shows how versions are used with composer to install softw
 
 This example uses several composer packages on the public GitHub to simulate a merchant site, 2 core Magento modules, and a third-party extension.
 
-<ol>
-<li>Start by cloning the master branch from GitHub.
+1. Start by cloning the master branch from GitHub.
 
+   This sample in `composer.json` states this site is dependent on a release candidate of a simulated Magento 2.0 release.
 
-  This sample in <code>composer.json</code> states this site is dependent on a release candidate of a simulated Magento 2.0 release.
-
-```json
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.0.0-RC1"
+    ```json
+    {
+      "name": "myexamplestore/sample-site",
+      "description": "A sample site",
+      "type": "project",
+      "version": "1.0.0",
+      "require": {
+        "myexamplestore/product-bundle": "2.0.0-RC1"
+        }
     }
-}
-```
-</li>
+    ```
 
-<li>Run the <code>composer update</code> command. Core modules a & b are pulled down from the repository.</li>
+1. Run the <code>composer update</code> command. Core modules a & b are pulled down from the repository.
 
-<li>Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
+1. Now the SI includes a third-party extension by adding the composer dependency. This extension trusts our BC and sets the appropriate version on the module-a core dependency.
 
-```json
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.0.0-RC1",
-    "myexamplestore/acme-extension": "~1.0"
+    ```json
+    {
+      "name": "myexamplestore/sample-site",
+      "description": "A sample site",
+      "type": "project",
+      "version": "1.0.0",
+      "require": {
+        "myexamplestore/product-bundle": "2.0.0-RC1",
+        "myexamplestore/acme-extension": "~1.0"
+        }
     }
-}
-```
-</li>
+    ```
 
-<li>Run <code>composer update</code> and see the new extension downloaded.</li>
+1. Run `composer update` and see the new extension downloaded.
 
-<li>When Magento releases 2.0 GA, the SI updates the site <code>composer.json</code> to the release version.
+1. When Magento releases 2.0 GA, the SI updates the site `composer.json` to the release version.
 
-```json{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.0.0",
-    "myexamplestore/acme-extension": "~1.0"
+    ```json{
+      "name": "myexamplestore/sample-site",
+      "description": "A sample site",
+      "type": "project",
+      "version": "1.0.0",
+      "require": {
+        "myexamplestore/product-bundle": "2.0.0",
+        "myexamplestore/acme-extension": "~1.0"
+        }
     }
-}
-```
-</li>
+    ```
 
-<li>Run <code>composer update</code> and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
+1. Run `composer update` and notice the core modules were updated since RC1, but the extension remains unchanged because of BC policy.
 
-   This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
-</li>
+    This step repeats with each subsequent release of Magento (2.1, 2.2, 2.3, etc.). Deprecation strategy and community communication happens in 2.3.
 
-<li>Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
+1. Magento decides backward incompatible changes are allowed and does this as part of the upcoming release 2.4.
 
-  ```json
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.4.0-RC1",
-    "myexamplestore/acme-extension": "~1.0"
+    ```json
+    {
+      "name": "myexamplestore/sample-site",
+      "description": "A sample site",
+      "type": "project",
+      "version": "1.0.0",
+      "require": {
+        "myexamplestore/product-bundle": "2.4.0-RC1",
+        "myexamplestore/acme-extension": "~1.0"
+        }
     }
-}
-```
-</li>
+    ```
 
-<li>Run <code>composer update</code> and notice that <code>acme-extension</code> is marked as incompatible. </li>
+1. Run `composer update` and notice that `acme-extension` is marked as incompatible.
 
-<li>Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
+1. Based upon previous communication, the developer has updated the extension so the SI updates to the new extension version.
 
-```json
-{
-  "name": "myexamplestore/sample-site",
-  "description": "A sample site",
-  "type": "project",
-  "version": "1.0.0",
-  "require": {
-    "myexamplestore/product-bundle": "2.4.0-RC1",
-    "myexamplestore/acme-extension": "~2.0"
+    ```json
+    {
+      "name": "myexamplestore/sample-site",
+      "description": "A sample site",
+      "type": "project",
+      "version": "1.0.0",
+      "require": {
+        "myexamplestore/product-bundle": "2.4.0-RC1",
+        "myexamplestore/acme-extension": "~2.0"
+        }
     }
-}
-```
-</li>
+    ```
 
-<li>Run <code>composer update</code>. Updates to core modules are returned as third-party extensions.</li>
-
-</ol>
+1. Run `composer update`. Updates to core modules are returned as third-party extensions.
 
 ## Related Topics
 
 [Module version dependencies][version-dependencies] - Information about how your module can depend on the version of other modules.
-
 [Codebase changes][codebase-changes] - Information on how changes in a Magento module's codebase affect versions.
-
 [version-dependencies]: {{ page.baseurl }}/extension-dev-guide/versioning/dependencies.html
 [codebase-changes]: {{ page.baseurl }}/extension-dev-guide/versioning/codebase-changes.html
 [semantic-versioning]: http://semver.org/

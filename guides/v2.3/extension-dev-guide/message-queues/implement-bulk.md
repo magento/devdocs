@@ -22,7 +22,7 @@ The following code sample shows how these duties can be completed.
 
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -156,7 +156,7 @@ A consumer class receives messages from the message queue and changes the status
 
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 

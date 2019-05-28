@@ -86,7 +86,18 @@ Template responsible for rendering returned data (suggested terms).
 
 **Type**: String
 
-**Default value**: `<li></li>` element.
+**Default value**: 
+
+```html
+<li class="<%- data.row_class %>" id="qs-option-<%- data.index %>" role="option">
+    <span class="qs-option-name">
+       <%- data.title %>
+    </span>
+    <span aria-hidden="true" class="amount">
+       <%- data.num_results %>
+    </span>
+</li>
+```
 
 [`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Search/view/frontend/web/form-mini.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
