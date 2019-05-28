@@ -42,7 +42,7 @@ The top node can have nested nodes. Every nested node is regarded as a separate 
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -116,7 +116,7 @@ In this example we showed only a small part of the possible configuration.
 The default configuration of a UI component is declared in one of the following ways:
 
 - inside the UI component itself, in the `.js` file
-- in the [`definition.xml` file]({{ site.mage2100url }}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
+- in the [`definition.xml` file]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)
 - in both places, in which case the configurations merge (the UI component `.js` file has priority).
 
 In the above example, the Fieldset UI component uses a merged configuration from both the `definition.xml` file and from the UI component's `.js` file.

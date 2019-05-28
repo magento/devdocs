@@ -124,7 +124,7 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 
 
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
-[`<Magento_Ui_module_dir>/view/base/web/js/modal/confirm.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/confirm.js
+[`<Magento_Ui_module_dir>/view/base/web/js/modal/confirm.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/confirm.js
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [navigation of the modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html#key_navigation

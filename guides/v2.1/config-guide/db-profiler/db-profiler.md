@@ -15,7 +15,7 @@ The Magento database profiler displays all queries executed on a page, including
 
 ## Step 1: Modify the deployment configuration
 
-Modify `<magento_root>/app/etc/env.php` to add the following reference to the [database profiler class]({{ site.mage2000url }}lib/internal/Magento/Framework/DB/Profiler.php):
+Modify `<magento_root>/app/etc/env.php` to add the following reference to the [database profiler class]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Profiler.php):
 
 ```php?start_inline=1
         'profiler' => [

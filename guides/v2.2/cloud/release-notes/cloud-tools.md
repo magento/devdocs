@@ -30,6 +30,10 @@ The release notes include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
+## v2002.0.19
+
+-   {:.fix}<!-- MAGECLOUD-3668 -->Fixed an issue that overwrites the `env.php` file during a deploy, resulting in a loss of custom configurations.  This update ensures that {{site.data.var.ece}} updates the `env.php` file with every deployment, while preserving custom configurations.
+
 ## v2002.0.18
 
 -   {:.new}**Docker Updates**—
@@ -44,7 +48,7 @@ The release notes include:
 
     -   {:.fix}<!-- MAGECLOUD-3369 -->Fixed an issue that caused Docker deploy to fail with a `Name or service not known` error if the cache is configured for a service that is not available. Now, you can remove a service from the [`.magento/services.yaml` file]({{page.baseurl}}/cloud/project/project-conf-files_services.html). The Docker configuration generator updates the service in the `docker/config.php.dist` file automatically.
 
-    -   {:.new}<!-- MAGECLOUD-3251 -->—Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{page.baseurl}}/cloud/docker/docker-config.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
+    -   {:.new}<!-- MAGECLOUD-3251 -->Added interactive validations for service compatibility. Now, if a requested service is incompatible with the Magento version or other services, the _interactive mode_ prompts the user with a message and a choice to continue. See the [Service versions]({{page.baseurl}}/cloud/docker/docker-config.html#service-versions) available for Docker. Use the `-n` option to skip the interactivity for CICD purposes.
 
     -   {:.fix}<!-- MAGECLOUD-3366 -->Fixed an issue with the Docker compose `db-dump` command that erased existing dumps.
 

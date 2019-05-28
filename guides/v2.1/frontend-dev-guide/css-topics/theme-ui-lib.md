@@ -34,12 +34,13 @@ The Magento UI library provides the ability to customize and reuse the following
 
 The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} product page containing some of the preceding elements:
 
-![A product page with user interface elements specified][ui_lib1.png]
+![*A product page with user interface elements specified*][ui_lib1.png]
 
 ## Mixin location {#fedg_using-ui-lib_mixins}
 
-You can find the Magento UI library under [`lib/web/css`].
+You can find the Magento UI library under [`lib/web/css`][].
 Library source `.less` files are stored under the `source` directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:
+
 ```tree
 lib/web
     ├── css/
@@ -85,12 +86,12 @@ lib/web
 
 ## Predefined variables {#fedg_using-ui-lib_predef-vars}
 
-If your theme [inherits] from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code or templates.
+If your theme [inherits][] from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code or templates.
 Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
 
-The complete list of these variables and their default values are stored in [`lib/web/css/source/lib/variables`].
+The complete list of these variables and their default values are stored in [`lib/web/css/source/lib/variables`][].
 This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables.
-For example, [`lib/web/css/source/lib/variables/_breadcrumbs.less`] contains variables used in the `breadcrumbs()` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}.
+For example, [`lib/web/css/source/lib/variables/_breadcrumbs.less`][] contains variables used in the `breadcrumbs()` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}.
 
 To change the default library variables values, specify the new values for the required variables in the `<theme_dir>/web/css/source/_theme.less` file.
 
@@ -101,7 +102,7 @@ So if you want to inherit the parent theme's variable values additionally to you
 The following figure shows the product page shown earlier in this topic, after a custom theme was applied.
 The theme customized Blank by redefining variables only.
 
-![Changing design by redefining variables][ui_lib2.png]
+![*Changing design by redefining variables*][ui_lib2.png]
 
 ## Your custom variables {#fedg_using-ui-lib_vars}
 
@@ -114,12 +115,15 @@ The following paragraphs describe both ways to call a mixin.
 
 To use a mixin with default values, call the mixin without specifying any parameters.
 For example:
+
 ```css
 .breadcrumbs {
     .lib-breadcrumbs();
 }
 ```
+
 To call a mixin with parameter values different from default, set these values when calling the mixin, like in the following example:
+
 ```css
 .example-button {
     .lib-button(
@@ -137,7 +141,8 @@ Variables starting with `@` (without the underscore) are global, and are listed 
 Use the accordion style for mobile and tab style for desktop.
 
 To set tabs and accordions using breakpoints, see the following example:
-```text
+
+```css
 & when (@media-common = true) { 
     .product.data.items {
         .lib-data-accordion();
@@ -148,6 +153,21 @@ To set tabs and accordions using breakpoints, see the following example:
     .product.data.items {
         .lib-data-tabs();
     }
+}
+```
+## Navigation set with CSS 
+
+Use the Navigation style for mobile and tab style for desktop.
+
+To set navigation using breakpoints, see the following example:
+
+```css
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
+    .lib-main-navigation();
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+    .lib-main-navigation-desktop();
 }
 ```
 
@@ -163,15 +183,15 @@ The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-
 
 <!-- Link definitions -->
 
-[`lib/web/css/docs/source/README.md`]: {{ site.mage2100url }}lib/web/css/docs/source/README.md
+[`lib/web/css/docs/source/README.md`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/css/docs/source/README.md
 
-[`lib/web/css/docs`]: {{ site.mage2100url }}lib/web/css/docs
+[`lib/web/css/docs`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/css/docs
 
-[`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2100url }}lib/web/css/source/lib/variables/_breadcrumbs.less
+[`lib/web/css/source/lib/variables/_breadcrumbs.less`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/css/source/lib/variables/_breadcrumbs.less
 
-[`lib/web/css/source/lib/variables`]: {{ site.mage2100url }}lib/web/css/source/lib/variables
+[`lib/web/css/source/lib/variables`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/css/source/lib/variables
 
-[`lib/web/css`]: {{ site.mage2100url }}lib/web/css
+[`lib/web/css`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/css
 
 [embedded documentation]: #docs
 [inherits]: {{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html
