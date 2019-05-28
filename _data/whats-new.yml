@@ -42,13 +42,13 @@ entries:
   date: May 23, 2019
   link: https://github.com/magento/devdocs/pull/4590
 - description: 'Reformatted YAML samples in the [Configure Environments: Services
-    section of the Cloud documentation](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html)'
+    section of the Cloud documentation](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html).'
   versions: 2.x
   type: Technical changes
   date: May 22, 2019
   link: https://github.com/magento/devdocs/pull/4574
 - description: Added a [new tutorial](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/dynamic-row-system-config.html)
-    that shows you how to add a dynamic rows system configuration
+    that shows you how to add a dynamic rows system configuration.
   versions: 2.1.x, 2.2.x, 2.3.x
   type: New topic
   date: May 21, 2019
