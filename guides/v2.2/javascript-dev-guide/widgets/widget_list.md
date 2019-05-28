@@ -10,7 +10,8 @@ redirect_from:
 {%
 include note.html
 type='warning'
-content='The list widget is deprecated since version 2.2.0.'
+content='The list widget is deprecated since version 2.2.0.
+As an alternative, use the [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html) component for the admin area.'
 %}
 
 Provides a way to move items, typically a list, from one content section to another.
