@@ -120,6 +120,8 @@ It covers the following cases:
 
 * `/* @noEscape */` before output. Output doesn't require escaping. Test is green.
 
+* `/* @escapeNotVerified */` before output. Output escaping is not checked and should be verified. Test is green.
+
 * Methods which contain `"html"` in their names (for example `echo $object->{suffix}Html{postfix}()`). Data is ready for the HTML output. Test is green.
 
 * AbstractBlock methods `escapeHtml`, `escapeHtmlAttr`, `escapeUrl`, `escapeJs` are allowed. Test is green.

@@ -5,11 +5,16 @@ source 'https://rubygems.org'
 gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git'
 gem 'jekyll'
 
-gem 'wdm' if Gem.win_platform?
+gem 'wdm', platform: :mswin
 
 group :test do
   gem 'html-proofer'
   gem 'launchy'
+end
+
+group :optimization do
+  gem 'image_optim'
+  gem 'image_optim_pack'
 end
 
 group :jekyll_plugins do
