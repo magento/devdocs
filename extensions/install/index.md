@@ -56,7 +56,6 @@ To get the extension's Composer name and version from the Magento Marketplace:
 
     ![Technical details shows the extension's Composer name]({{ site.baseurl }}/common/images/marketplace-extension-technical-details.png){:width="200px"}
 
-
 {: .bs-callout .bs-callout-tip }
 Alternatively, you can find the Composer name and version of _any_ extension (whether you purchased it on Magento Marketplace or somewhere else) in the extension's `composer.json` file.
 
@@ -87,6 +86,7 @@ Add the extension's name and version to your `composer.json` file:
     Writing lock file
     Generating autoload files
     ```
+    {: .no-copy}
 
 ## Verify the extension
 
@@ -179,22 +179,22 @@ To update or upgrade an extension:
 
 1. If a composer package exists for the extension, run one of the following.
 
-  Update per module name:
+    Update per module name:
 
-  ```bash
-  composer update vendor/module-name
-  ```
+    ```bash
+    composer update vendor/module-name
+    ```
 
-  Updater per version:
+    Updater per version:
 
-  ```bash
-  composer require vendor/module-name ^x.x.x
-  ```
+    ```bash
+    composer require vendor/module-name ^x.x.x
+    ```
 
 1. Run the following commands to upgrade, deploy, and clean the cache.
 
-  ```bash
-  php bin/magento setup:upgrade --keep-generated
-  php bin/magento setup:static-content:deploy
-  php bin/magento cache:clean
-  ```
+    ```bash
+    php bin/magento setup:upgrade --keep-generated
+    php bin/magento setup:static-content:deploy
+    php bin/magento cache:clean
+    ```

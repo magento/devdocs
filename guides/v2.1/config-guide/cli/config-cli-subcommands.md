@@ -50,6 +50,8 @@ Before you run any of these commands, you must either [install the Magento appli
 |[`magento dev:xml:convert`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-layout-xml.html)|Update your layout XML files to match the new Extensible Stylesheet Language Transformations (XSLT) stylesheet|
 |[`magento setup:perf:generate-fixtures`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-perf-data.html)|Generate data to use for performance testing.|
 |[`magento sampledata:install`]({{ page.baseurl }}/install-gde/install/sample-data.html)|Installs optional Magento sample data after you install the Magento application.<br><br>For more details about Magento sample data, see [Optional Magento sample data]({{ page.baseurl }}/install-gde/install/sample-data.html).|
+|[`bin/magento admin:user:{create/unlock}`]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-admin.html)| Creates/edits/unlocks admin users. |
+|[`bin/magento dev:template-hints:{enable/disable`}]({{ page.baseurl }}/frontend-dev-guide/themes/debug-theme.html)|Enables/disables developer template hints.| 
 
 ## Help commands {#config-cli-help}
 {% include install/cli_help-commands.md %}
