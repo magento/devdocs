@@ -221,7 +221,7 @@ The result is three sections with separate swapped content.
 ![Accordion Widget]({{ site.baseurl }}/common/images/widget/accordion-widget-result.png)
 
 [Magento Tabs widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html
-[lib/web/mage/accordion.js]: {{site.mage2000url}}lib/web/mage/accordion.js
+[lib/web/mage/accordion.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/accordion.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init
 [Magento Tabs options]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html#fedg_tabs_options
 [active]: #collaps_active

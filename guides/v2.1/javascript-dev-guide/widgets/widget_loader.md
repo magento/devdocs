@@ -52,6 +52,31 @@ An object that contains translations for loader text:
 -   `texts.imgAlt`: The text that is set as the `alt` attribute value of the loader image.
     **Default value**: *'Loading...'*
 
+## Methods {#loader_methods}
+
+-   [show()](#method_show)
+-   [hide()](#method_hide)
+
+### `show()` {#method_show}
+
+Show the loader.
+
+Invoke the show method:
+
+```javascript
+$("#element").loader("show");
+```
+
+### `hide()` {#method_hide}
+
+Hide the loader.
+
+Invoke the show method:
+
+```javascript
+$("#element").loader("hide");
+```
+
 ## Events
 
 Loader is subscribed to the following events:
@@ -65,5 +90,5 @@ Display the loader. Can be triggered on any page element.
 Hide the loader. Can be triggered on any page element.
 
 
-[lib/web/mage/loader.js]: {{site.mage2000url}}lib/web/mage/loader.js
+[lib/web/mage/loader.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/loader.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

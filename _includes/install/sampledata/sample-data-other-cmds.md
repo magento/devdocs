@@ -15,9 +15,7 @@ This topic discusses how to:
 
 Enter the following command:
 
-	magento sampledata:remove
-
-<!-- where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
+	bin/magento sampledata:remove
 
 The complete list of sample data modules follows:
 
@@ -29,6 +27,6 @@ This command enables you to update sample data before you update the Magento app
 
 To prepare sample data for updating, enter the following command:
 
-	magento sampledata:reset
+	bin/magento sampledata:reset
 
 After that, [update the Magento application]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update).

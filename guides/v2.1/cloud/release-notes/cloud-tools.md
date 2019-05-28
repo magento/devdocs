@@ -30,7 +30,7 @@ The release notes include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
-## v2002.0.19
+## v2002.0.20
 
 -   {:.new}**Environment variable updates**—
 
@@ -39,6 +39,10 @@ The release notes include:
     -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
 
 -   {:.fix}<!-- MAGECLOUD-3545/Github#455 -->Added the `pub/static/.htaccess` file to the exclude list.
+
+## v2002.0.19
+
+-   {:.fix}<!-- MAGECLOUD-3668 -->Fixed an issue that overwrites the `env.php` file during a deploy, resulting in a loss of custom configurations.  This update ensures that {{site.data.var.ece}} updates the `env.php` file with every deployment, while preserving custom configurations.
 
 ## v2002.0.18
 
