@@ -4,8 +4,67 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Mon May 20 13:19:25 2019
+updated: Tue May 28 10:33:45 2019
 entries:
+- description: Added a new section about [how to run API functional tests](https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html)
+    in GraphQL.
+  versions: 2.3.x
+  type: Major update
+  date: May 28, 2019
+  link: https://github.com/magento/devdocs/pull/4436
+- description: Added a new section that describes how to [manage layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 24, 2019
+  link: https://github.com/magento/devdocs/pull/4576
+- description: Updated the [Cloud Release notes for ece-tools version 2002.0.19](https://devdocs.magento.com/guides/v2.3/cloud/release-notes/cloud-tools.html#v2002019).
+  versions: 2.x
+  type: Technical changes
+  date: May 24, 2019
+  link: https://github.com/magento/devdocs/pull/4603
+- description: Added missing [menu widget](https://devdocs.magento.com/guides/v2.1/javascript-dev-guide/widgets/widget_menu.html)
+    options and methods.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 24, 2019
+  link: https://github.com/magento/devdocs/pull/4589
+- description: Added [methods](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_loader.html)
+    section for loader widget.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 23, 2019
+  link: https://github.com/magento/devdocs/pull/4588
+- description: Added the `isExpandable` and `suggestionDelay` Quick Search widget
+    [options](https://devdocs.magento.com/guides/v2.1/javascript-dev-guide/widgets/widget_quickSearch.html)
+    and fixed links to source code.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 23, 2019
+  link: https://github.com/magento/devdocs/pull/4590
+- description: 'Reformatted YAML samples in the [Configure Environments: Services
+    section of the Cloud documentation](https://devdocs.magento.com/guides/v2.3/cloud/project/project-conf-files_services.html)'
+  versions: 2.x
+  type: Technical changes
+  date: May 22, 2019
+  link: https://github.com/magento/devdocs/pull/4574
+- description: Added a [new tutorial](https://devdocs.magento.com/guides/v2.3/ext-best-practices/tutorials/dynamic-row-system-config.html)
+    that shows you how to add a dynamic rows system configuration
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: May 21, 2019
+  link: https://github.com/magento/devdocs/pull/4528
+- description: Added new code examples showing you [how to use callbacks](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_collapsible.html)
+    on collapsible widget events.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 21, 2019
+  link: https://github.com/magento/devdocs/pull/4552
+- description: Added 'UI component used in the frontend design area' and 'UI component
+    used in the Adminhtml area' to [Overview of UI components](https://devdocs.magento.com/guides/v2.3/ui_comp_guide/bk-ui_comps.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Technical changes
+  date: May 21, 2019
+  link: https://github.com/magento/devdocs/pull/4503
 - description: Added [reference documentation](https://devdocs.magento.com/guides/v2.3/extension-dev-guide/routing.html#result-object)
     about the `result object` returned by the `Action` class.
   versions: 2.1.x, 2.2.x, 2.3.x
