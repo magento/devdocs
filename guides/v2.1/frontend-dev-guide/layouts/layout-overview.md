@@ -22,7 +22,7 @@ In Magento, the basic components of page design are layouts, containers, and blo
 
 ## Purpose of page layouts
 
-The purpose of page laouts is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as fitting into a 1, 2, or 3-column container system. These page layouts can be selected in the admin panel to provide a specific layout per page.
+The purpose of page layouts is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as fitting into a 1, 2, or 3-column container system. These page layouts can be selected in the admin panel to provide a specific layout per page.
 
 ## Basic layouts 
 
