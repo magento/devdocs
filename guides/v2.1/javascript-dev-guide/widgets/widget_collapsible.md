@@ -513,8 +513,31 @@ $("#element").collapsible("forceDeactivate");
 ### `beforeOpen callback` {#c_beforeOpen}
 Called before the content is opened. 
 
+Example of adding a callback to `beforeOpen` events:
+
+```javascript
+$("#element").on("beforeOpen", function () {
+    // do something before opening the content
+});
+```
+
 ### `dimensionsChanged` {#c_dimensionsChanged}
 Called after content is opened or closed.
+
+Example of adding a callback to `dimensionsChanged` events:
+
+```javascript
+$("#element").on("dimensionsChanged", function (event, data) {
+    var opened = data.opened;
+
+    if (opened) {
+        // do something when the content is opened
+        return;
+    }
+
+    // do something when the content is closed
+});
+```
 
 #### Code sample
 
@@ -563,6 +586,6 @@ The result is two sections with separate collapsible content.
 ![Collapsible Widget]({{ site.baseurl }}/common/images/widget/collapsible-widget-result-animate.png)
 
 [`collateral`]: #fedg_collaps_collateral
-[lib/web/mage/collapsible.js]: {{site.mage2000url}}lib/web/mage/collapsible.js
+[lib/web/mage/collapsible.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/collapsible.js
 [Accordion widget initialization]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_accordion.html#accordion_init
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init

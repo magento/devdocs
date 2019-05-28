@@ -37,7 +37,7 @@ Selector for the element used for item adding.
 
 **Type**: String
 
-**Default value**: `[data-button=remove]`
+**Default value**: `[data-button=add]`
 
 ### `destinationSelector` {#l_destinationSelector}
 Content destination selector.
@@ -72,7 +72,7 @@ Alert message displayed when maximum limit is reached.
 
 **Type**: String
 
-**Default value**: `[data-button=remove]`
+**Default value**: `null`
 
 ### `removeButton` {#l_removeButton}
 Selector for the element used for item removing. 
@@ -93,7 +93,7 @@ Class attached to the template wrapper.
 
 **Type**: String
 
-**Default value**: `[data-role=container]`
+**Default value**: `null`
 
 ### `templateWrapper` {#l_templateWrapper}
 Element holding the template.
@@ -105,9 +105,9 @@ Element holding the template.
 ## Methods {#list_methods}
 
 The list widget has the following methods:
--   [addItem](#list_addItem)
+-   [addItem()](#list_addItem)
 -   [checkLimit()](#list_checkLimit)
--   [handleAdd](#list_handleAdd)
+-   [handleAdd()](#list_handleAdd)
 -   [removeItem()](#list_removeItem)
 
 ### `addItem()` {#list_addItem}
@@ -123,5 +123,5 @@ If the `maxItems` option is set, hides or displays the **Add** button.
 Removes an item from the list.
 
 
-[lib/web/mage/list.js]: {{site.mage2000url}}lib/web/mage/list.js
+[lib/web/mage/list.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/list.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

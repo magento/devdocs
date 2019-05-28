@@ -21,19 +21,19 @@ Running ES 2.x is strongly discouraged.
 If you need to work with Elasticsearch 5.x, run the following command:
 
 ```bash
-composer require "elastic/elasticsearch:~5.1"
+composer require "elasticsearch/elasticsearch:~5.1"
 ```
 
 If you need to work with Elasticsearch 2.x, run the following command:
 
 ```bash
-composer require "elastic/elasticsearch:~2.0"
+composer require "elasticsearch/elasticsearch:~2.0"
 ```
 
 To re-enable Elasticsearch 6.x, run the following command:
 
 ```bash
-composer require "elastic/elasticsearch:~6.1"
+composer require "elasticsearch/elasticsearch:~6.1"
 ```
 
 Then configure Elasticsearch within [Magento Admin][].

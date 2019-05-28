@@ -33,9 +33,6 @@ The {{site.data.var.b2b}} extension is only available for {{site.data.var.ee}} v
 
 1. Run the following commands after Composer finishes updating modules:
 
-{: .bs-callout .bs-callout-info }
-In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the command below. Magento does not prompt you to run the compile command in Developer mode.
-
     ```bash
     bin/magento setup:upgrade
     ```
@@ -51,6 +48,9 @@ In Production mode, you may receive a message to 'Please rerun Magento compile c
     ```bash
     bin/magento cache:clean
     ```
+
+{: .bs-callout .bs-callout-info }
+  Note: In Production mode, you may receive a message to 'Please rerun Magento compile command'.  Enter the commands above. Magento does not prompt you to run the compile command in Developer mode.
 
 {: .bs-callout .bs-callout-info }
 After completing the installation, you must follow the [post-installation steps](#configure-b2b).
@@ -74,6 +74,9 @@ The {{site.data.var.b2b}} extension uses MySQL for message queue management. If 
     ```terminal
     sharedCatalogUpdatePrice
     sharedCatalogUpdateCategoryPermissions
+    quoteItemCleaner
+    inventoryQtyCounter
+    async.operations.all
     ```
 
 1. Start each consumer separately:

@@ -17,7 +17,9 @@ If you must install both Apache and PHP, [install Apache]({{ page.baseurl }}/ins
 
 ## PHP versions supported {#php-support}
 
-{% include install/php_2.2.md %}
+<!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "|" %}-->
+{% include install/php-versions-template.md %}
+
 
 ## Help if you're just starting out {#php-ubuntu-help-beginner}
 

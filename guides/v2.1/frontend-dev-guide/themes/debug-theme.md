@@ -64,11 +64,11 @@ There is no straightforward algorithm how to define at once the exact layout fil
 
 Example:
 
-Let's say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}.
+Say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}.
 
 Using the Template Hints we determine that the template is `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml`, and in the path, we see that it belongs to the `Magento_Checkout` module.
 
-Let's search for the layout following the fallback scheme:
+Search for the layout following the fallback scheme:
 
 1. Check the `app/design/frontend/Magento/blank/Magento_Checkout/` layout. To locate the required layout, search this directory for occurrences of the template name, " minicart.phtml ". No matching file is found, so we proceed to the next fallback level, which is the parent theme layouts.
 2. We can find the info about parent theme in a theme configuration file `theme.xml`, the parent theme name is specified there in the `<parent></parent>` node. In the `app/design/frontend/Magento/blank/theme.xml` there's no `<parent>` node, which means the Blank theme has no parents. So we should search on the next fallback level which is the module layouts.
@@ -78,8 +78,8 @@ After you located the necessary layout file, you can create your custom layout f
 
 ## Locate styles {#debug-theme-style}
 
-To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or you can use browser debugging tools, to locate the class name.
-After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Perform the search according to the following fallback scheme:
+To locate a CSS rule that is applied to a certain element, find the template for the page that contains the element. Or use browser debugging tools to locate the class name.
+After you find the class name, use text search in the theme and module styles directories to locate the `.less` or `.css` file that defines the class. Using the grunt tool makes it easy to locate the CSS path to the specific line number. Perform the search according to the following fallback scheme:
 
 
 2. Theme styles `<current_theme_dir>/web/css/`

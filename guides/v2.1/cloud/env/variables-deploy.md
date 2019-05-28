@@ -179,23 +179,23 @@ The following example merges new values to an existing configuration:
 ```yaml
 stage:
   deploy:
-        QUEUE_CONFIGURATION:
-          _merge: true
-          amqp:
-            host: changed1.host
-            port: 5672
-          amqp2:
-            host: changed2.host2
-            port: 12345
-          mq:
-            host: changedmq.host
-            port: 1234
+    QUEUE_CONFIGURATION:
+      _merge: true
+      amqp:
+        host: changed1.host
+        port: 5672
+      amqp2:
+        host: changed2.host2
+        port: 12345
+      mq:
+        host: changedmq.host
+        port: 1234
 ```
 
 ### `REDIS_USE_SLAVE_CONNECTION`
 
 -  **Default**—`false`
--  **Version**—Magento 2.1.4 and later
+-  **Version**—Magento 2.1.16 and later
 
 Magento can read multiple Redis instances asynchronously. Set to `true` to automatically use a _read-only_ connection to a Redis instance to receive read-only traffic on a non-master node. This improves performance through load balancing, because only one node needs to handle read-write traffic. Set to `false` to remove any existing read-only connection array from the `env.php` file.
 
@@ -206,6 +206,8 @@ stage:
 ```
 
 You must have a Redis service configured in the `.magento.app.yaml` file and in the `services.yaml` file.
+
+[ece-tools version 2002.0.18]({{ page.baseurl }}/cloud/release-notes/cloud-tools.html#v2002018) and later uses more fault-tolerant settings. If Magento 2 cannot read data from the Redis _slave_ instance, then it reads data from the Redis _master_ instance.
 
 The read-only connection is not available for use in the Integration environment or if you use the [`CACHE_CONFIGURATION` variable](#cache_configuration).
 
@@ -302,18 +304,18 @@ stage:
 
 ### `SCD_THREADS`
 
--  **Default**:
-    -  `1`—Starter environments and Pro Integration environments
-    -  `3`—Pro Staging and Production environments
--  **Version**—Available in all versions
+-  **Default**—Automatic
+-  **Version**—Magento 2.1.4 and later
 
-Sets the number of threads for static content deployment. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down.
+Sets the number of threads for static content deployment. The default value is set based on the detected CPU thread count and does not exceed a value of 4. Increasing the number of threads speeds up static content deployment; decreasing the number of threads slows it down. You can set the thread value, for example:
 
 ```yaml
 stage:
   deploy:
     SCD_THREADS: 2
 ```
+
+For Magento version 2.1.11 and earlier, the default value is 1.
 
 To further reduce deployment time, we recommend using [Configuration Management]({{ page.baseurl }}/cloud/live/sens-data-over.html) with the `scd-dump` command to move static deployment into the build phase.
 

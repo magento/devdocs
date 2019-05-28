@@ -13,6 +13,13 @@ There are two possible ways to customize page layout in Magento:
 
 To change the page wireframe, modify the [page layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page) files; all other customizations are performed in the [page configuration]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf) or [generic layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen) files. 
 
+## Manage layouts
+
+To make layout changes available on every page, modify the `default.xml` file.
+For example, layout changes added to `app/code/Vendor/Module/view/frontend/layout/default.xml` are loaded on all pages.
+To add layout changes to a specific page, use a layout file that corresponds to the page's path. 
+For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` file are loaded on the product details page.
+
 Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
 *  Move a page element to another parent element.
 *  Add content.
@@ -505,5 +512,5 @@ Example:
 ```
 
 
-[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
-[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml
+[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml
+[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/html/title.phtml
