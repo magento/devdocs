@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git'
+gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', branch: 'yb_federated-search'
 gem 'jekyll'
 
 gem 'wdm', platform: :mswin
