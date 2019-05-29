@@ -12,6 +12,8 @@ Bank Transfer Payment | `banktransfer`
 Cash on Delivery | `cashondelivery`
 Check / Money order | `checkmo`
 No Payment Information Required | `free`
+PayFlow Express | `payflow_express`
+PayPal Express | `paypal_express`
 Purchase Order | `purchaseorder`
 
 Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, shipping method, and after applying any discounts to the cart.
