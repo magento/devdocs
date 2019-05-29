@@ -183,8 +183,8 @@ $( "#element" ).accordion( "deactivate", [0,1]);
 
 The accordion widget subscribes to the same events as the [Tabs widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html):
 
--   [beforeOpen callback](#accordion_beforeOpen)
--   [dimensionsChanged](#accordion_dimensionsChanged)
+-   [beforeOpen callback](#beforeopen-callback)
+-   [dimensionsChanged](#dimensionschanged)
 
 ### `beforeOpen callback`
 
