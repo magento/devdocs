@@ -19,7 +19,7 @@ To change the page wireframe, modify the [page layout]({{page.baseurl}}/frontend
 * Categories
 * Products
 
-Above admin settings, under design tab you can change the layout of CMS Page, Categories Pages and Products Pages.
+Above admin settings, under design tab you can change the layout of CMS Page, Category Page and Product Page.
 
 ![Change page layout from admin configuration]({{ page.baseurl }}/frontend-dev-guide/images/admin-layout-setting.png)
 
