@@ -69,18 +69,18 @@ We address the following functional issues in this release.
 
 <!---58902-->* Custom address attributes now appear in the Checkout summary.  
 
-<!---57497-->* Lengthy [Order Status](https://glossary.magento.com/Order Status) tables are now paginated as expected. 
+<!---57497-->* Lengthy [Order Status](https://glossary.magento.com/Order-Status) tables are now paginated as expected. 
 
 <!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
-<!---58057-->* We've resolved an issue that prevented you from adding more than one product to a [shopping cart](https://glossary.magento.com/shopping cart) from a wishlist. [(GITHUB-5282)](https://github.com/magento/magento2/issues/5282){:target="_blank"} 
+<!---58057-->* We've resolved an issue that prevented you from adding more than one product to a [shopping cart](https://glossary.magento.com/shopping-cart) from a wishlist. [(GITHUB-5282)](https://github.com/magento/magento2/issues/5282){:target="_blank"} 
 
 <!---59209-->* The number of items in the minicart is now updated correctly when you run Magento in mixed HTTP/HTTPS mode. [(GITHUB-6487)](https://github.com/magento/magento2/issues/6487){:target="_blank"} 
 
 
 <!---57062-->* The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products you added to one [website](https://glossary.magento.com/website) appeared in the other websites' minicarts.
 
-<!---57843-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple [cart rules](https://glossary.magento.com/cart rules) are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.[ (GITHUB-6294)](https://github.com/magento/magento2/issues/7171){:target="_blank"} 
+<!---57843-->* A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple [cart rules](https://glossary.magento.com/cart-rules) are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.[ (GITHUB-6294)](https://github.com/magento/magento2/issues/7171){:target="_blank"} 
 
 <!---59024-->* Refreshing your browser page while on the Review and Payments page of the checkout process no longer clears information from form fields. Previously, Magento cleared information from the **Ship to** field if you refreshed your browser page during this process. 
 
@@ -96,10 +96,10 @@ We address the following functional issues in this release.
 
 We've enhanced the performance of configurable products in several ways:
 
-<!---57055-->*  You can now successfully disable the lowest price of a [configurable product](https://glossary.magento.com/configurable product) and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. 
+<!---57055-->*  You can now successfully disable the lowest price of a [configurable product](https://glossary.magento.com/configurable-product) and its associated simple products. Previously, Magento displayed a configurable product's lowest price even after you disabled that price. 
 
 
-<!---56998 -->* Magento no longer applies one simple product's special price to another [simple product](https://glossary.magento.com/simple product) of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. [(GITHUB-4442)](https://github.com/magento/magento2/issues/4442){:target="_blank"}, [(GITHUB-5097)](https://github.com/magento/magento2/issues/5097){:target="_blank"}, [(GITHUB-6645)](https://github.com/magento/magento2/issues/6645){:target="_blank"}
+<!---56998 -->* Magento no longer applies one simple product's special price to another [simple product](https://glossary.magento.com/simple-product) of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. [(GITHUB-4442)](https://github.com/magento/magento2/issues/4442){:target="_blank"}, [(GITHUB-5097)](https://github.com/magento/magento2/issues/5097){:target="_blank"}, [(GITHUB-6645)](https://github.com/magento/magento2/issues/6645){:target="_blank"}
 
 
 
@@ -131,7 +131,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---55662-->* We've removed the duplicated [PHP](https://glossary.magento.com/PHP) settings from the sample web server configuration files. 
 
 
-<!--- 59581-->* We've improved and streamlined the [Magento Admin](https://glossary.magento.com/Magento Admin) PayPal configuration interface. 
+<!--- 59581-->* We've improved and streamlined the [Magento Admin](https://glossary.magento.com/Magento-Admin) PayPal configuration interface. 
 
 
 <!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. [(GITHUB-5279)](https://github.com/magento/magento2/issues/5279){:target="_blank"}
@@ -197,7 +197,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---57490-->* Magento now removes category URL keys from the `url_rewrite` table as expected during import. Previously, Magento did not remove these keys, which triggered a failure during import. This subsequently caused Magento to quickly reach the maximum error count, returning this error: "Maximum error count has been reached or system error is occurred!".  [(GITHUB-1471)](https://github.com/magento/magento2/issues/1471){:target="_blank"} 
 
 
-<!---57981-->* You can now export a [bundle product](https://glossary.magento.com/bundle product) that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
+<!---57981-->* You can now export a [bundle product](https://glossary.magento.com/bundle-product) that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, "There is no data for the export".
 
 ### Indexing
 {:.no_toc} 
@@ -256,7 +256,7 @@ We've enhanced the performance of configurable products in several ways:
 	* Configure dynamic descriptors (Company Name, Phone and URL) for Braintree.  This enhancement supports customers easily identifying a source of transactions in their bank statements. (This will potential simplify the resolution of disputed transactions by supporting the display of the Kount status for Braintree in the Admin interface.) 
 
 
-<!---56910-->* The Braintree [payment method](https://glossary.magento.com/payment method) now works as expected with Vault table prefixing.  
+<!---56910-->* The Braintree [payment method](https://glossary.magento.com/payment-method) now works as expected with Vault table prefixing.  
 
 
 <!---57426-->* Magento no longer throws an error when using the Braintree Vault payment GET order API call. [(GITHUB-6215)](https://github.com/magento/magento2/issues/6215){:target="_blank"}
@@ -268,7 +268,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!--- 59124-->* Fixed issue with credit card capture information failing to remain associated with its first [authorization](https://glossary.magento.com/authorization). [(GITHUB-6716)](https://github.com/magento/magento2/issues/6716){:target="_blank"} 
 
-<!---57086-->* You can now successfully place orders with Braintree when using an alternative [merchant account](https://glossary.magento.com/merchant account) ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) [(GITHUB-5910)](https://github.com/magento/magento2/issues/5910){:target="_blank"} 
+<!---57086-->* You can now successfully place orders with Braintree when using an alternative [merchant account](https://glossary.magento.com/merchant-account) ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) [(GITHUB-5910)](https://github.com/magento/magento2/issues/5910){:target="_blank"} 
 
 <!---59637-->*  Braintree no longer encounters an error during checkout when you apply a 100% discount coupon to a product and enable free shipping. Previously, Magento  displayed a spinning loader widget, and your screen froze. The Developer console displayed this error:
 `Uncaught Error: [paypal-container] is not a valid DOM Element`. 
@@ -279,7 +279,7 @@ We've improved the performance of these tasks:
 
 
 
-<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex [product types](https://glossary.magento.com/product types)
+<!---59708-->* Creating many (2500 - 5000) product variants, both simple and complex [product types](https://glossary.magento.com/product-types)
 
 
 <!---59806-->* Loading many configurable products with multiple images (for example, configurable products with three attributes and 250 options) [(GITHUB-6979)](https://github.com/magento/magento2/issues/6979){:target="_blank"} 
@@ -292,7 +292,7 @@ We've improved the performance of these tasks:
 {:.no_toc} 
 
 
-<!---56936 -->*  The list of allowed countries is now configured as part of website scope, not [store view](https://glossary.magento.com/store view) scope.  [(GITHUB-2946)](https://github.com/magento/magento2/issues/2946){:target="_blank"}
+<!---56936 -->*  The list of allowed countries is now configured as part of website scope, not [store view](https://glossary.magento.com/store-view) scope.  [(GITHUB-2946)](https://github.com/magento/magento2/issues/2946){:target="_blank"}
 
 
 <!---57001-->* A restricted user can now change storeview- or website- level attributes that are defined within his scope. 
@@ -303,9 +303,9 @@ We've improved the performance of these tasks:
 
 ### Static file processing
 {:.no_toc} 
-<!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via `static.php` in [static content](https://glossary.magento.com/static content) versioning. 
+<!---60603-->* We've corrected a problem with `_requirejs` asset retrieval via `static.php` in [static content](https://glossary.magento.com/static-content) versioning. 
 
-<!---56914-->* Versioning of [static files](https://glossary.magento.com/static files) (including CSS, JS, font, and image files) is now enabled by default. 
+<!---56914-->* Versioning of [static files](https://glossary.magento.com/static-files) (including CSS, JS, font, and image files) is now enabled by default. 
 
 <!---57904-->* We've improved the speed of static asset deployment. See [Deploy static view files]({{ site.baseurl }}/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html){:target="_blank"} for more information about available options. 
 

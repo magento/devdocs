@@ -29,7 +29,7 @@ External applications can make requests for business logic with simple SOAP and 
 With some simple [XML](https://glossary.magento.com/XML) or JSON, you can expose the service layer's PHP API and make it accessible to REST or SOAP web services.
 Once implemented, a web service can make a single API call and return an information-rich data structure.
 
-[Service contract](https://glossary.magento.com/Service contract) clients include:
+[Service contract](https://glossary.magento.com/Service-contract) clients include:
 
 * Controllers (initiated by actions of users of the storefront)
 
@@ -64,7 +64,7 @@ However, there is no requirement that service contracts conform to all three pat
 
 Service contracts allow you to add a new customer [extension](https://glossary.magento.com/extension) that adds or changes business logic-level resource models without breaking the system.
 
-This is done using the *&lt;preference&gt;* element in a custom module's [dependency injection](https://glossary.magento.com/dependency injection) configuration file (`di.xml`) file.
+This is done using the *&lt;preference&gt;* element in a custom module's [dependency injection](https://glossary.magento.com/dependency-injection) configuration file (`di.xml`) file.
 
 The `di.xml` file specifies which PHP class to use for the interface `Magento\Customer\Api\CustomerRepositoryInterface`.
 

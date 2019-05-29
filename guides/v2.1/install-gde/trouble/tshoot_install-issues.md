@@ -14,7 +14,7 @@ functional_areas:
 If you use the optional [PHP](https://glossary.magento.com/PHP) [extension](https://glossary.magento.com/extension) `xdebug`, you can encounter exceptions:
 
 *   During installation
-*   Accessing either the [Magento Admin](https://glossary.magento.com/Magento Admin) or [storefront](https://glossary.magento.com/storefront) after a successful installation
+*   Accessing either the [Magento Admin](https://glossary.magento.com/Magento-Admin) or [storefront](https://glossary.magento.com/storefront) after a successful installation
 
 Sample exception:
 

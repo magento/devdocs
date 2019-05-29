@@ -6,7 +6,7 @@ menu_title: Service contract design patterns
 menu_order: 4
 ---
 
-<p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a [design pattern](https://glossary.magento.com/design pattern) as a best practice with conditions.</p>
+<p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a [design pattern](https://glossary.magento.com/design-pattern) as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
 
 {: .bs-callout .bs-callout-info }
@@ -14,7 +14,7 @@ Service contract data interfaces are now mutable.
 
 ## Interface types and locations {#top-level-msc}
 
-<p>A [service contract](https://glossary.magento.com/service contract) must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
+<p>A [service contract](https://glossary.magento.com/service-contract) must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
 <p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a [module](https://glossary.magento.com/module).</p>
 <p>
    Service interfaces include management, repository, and [metadata](https://glossary.magento.com/metadata) interfaces.

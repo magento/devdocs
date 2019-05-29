@@ -37,7 +37,7 @@ You can also [extend]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-exten
 
 ## Layout handles {#layout-over-terms}
 
-A *layout handle* is a uniquely identified set of [layout instructions](https://glossary.magento.com/layout instructions) that serves as a name of a layout file.
+A *layout handle* is a uniquely identified set of [layout instructions](https://glossary.magento.com/layout-instructions) that serves as a name of a layout file.
 
 There are three kinds of layout handles:
 

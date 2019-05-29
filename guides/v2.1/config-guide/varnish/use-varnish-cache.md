@@ -50,7 +50,7 @@ For example,
 
 	magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
 
-You can then purge Varnish hosts when you refresh the Magento cache (also referred to as *cleaning* the cache) in the [Magento Admin](https://glossary.magento.com/Magento Admin) or using the command line.
+You can then purge Varnish hosts when you refresh the Magento cache (also referred to as *cleaning* the cache) in the [Magento Admin](https://glossary.magento.com/Magento-Admin) or using the command line.
 
 To refresh the cache using the Admin, click **SYSTEM** > Tools > **Cache Management**, then click **Flush Magento Cache** at the top of the page. (You can also refresh individual cache types.)
 

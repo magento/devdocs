@@ -85,7 +85,7 @@ In server-side Less compilation mode, to have your changes applied, you need to 
 
 1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess).
 2. Clear the `var/cache` and `var/view_preprocessed` directories by deleting the directory in the file system. (if they already existed there).
-2. Trigger [static files](https://glossary.magento.com/static files) compilation and publication. This can be done in one of the following ways:
+2. Trigger [static files](https://glossary.magento.com/static-files) compilation and publication. This can be done in one of the following ways:
 
 	-  Reloading the page where the modified styles are applied.
 	-  Running the [static files deployment tool]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).

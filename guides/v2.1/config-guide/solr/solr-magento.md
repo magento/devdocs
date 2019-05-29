@@ -108,7 +108,7 @@ This section discusses how to configure {{site.data.var.ee}} to use the Solr sea
 
 To configure Magento to work with Solr:
 
-1.  Log in to the [Magento Admin](https://glossary.magento.com/Magento Admin) as an administrator.
+1.  Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) as an administrator.
 2.  Click **STORES** > **Settings** > **Configuration** > [CATALOG](https://glossary.magento.com/CATALOG) > **Catalog** > **Catalog Search**.
 3.  In the right pane, expand **Catalog Search**.
 4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />

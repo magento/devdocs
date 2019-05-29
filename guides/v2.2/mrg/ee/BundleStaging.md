@@ -9,7 +9,7 @@ ee_only: true
 ---
 
 
-The Magento_BundleStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. This new functionality enables you to stage a [bundle product](https://glossary.magento.com/bundle product) in the Schedule Update form of the product.
+The Magento_BundleStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. This new functionality enables you to stage a [bundle product](https://glossary.magento.com/bundle-product) in the Schedule Update form of the product.
 
 ## Implementation details
 
@@ -31,7 +31,7 @@ You can find the list of modules that have dependencies on the Magento_BundleSta
 
 ### UI components
 
-You can extend Bundle updates product listing using  the grid [UI component](https://glossary.magento.com/UI component) located in the `Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml`. For more information, see [UI Listing/Grid Component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html).
+You can extend Bundle updates product listing using  the grid [UI component](https://glossary.magento.com/UI-component) located in the `Magento/BundleStaging/view/adminhtml/ui_component/bundle_update_product_listing.xml`. For more information, see [UI Listing/Grid Component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html).
 
 ## Additional information
 

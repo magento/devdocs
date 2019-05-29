@@ -557,7 +557,7 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
 
 ## Reference scripts {#split-db-ref}
 
-This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento [database schema](https://glossary.magento.com/database schema).
+This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento [database schema](https://glossary.magento.com/database-schema).
 
 {% collapsible Click to view reference SQL scripts %}
 

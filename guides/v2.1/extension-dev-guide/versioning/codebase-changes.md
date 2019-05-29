@@ -37,7 +37,7 @@ Modifications that break the API will trigger an increase in a module's MAJOR ve
 Modules customize or replace Customization Points to customize existing application scenarios.
 Modifications that break Customization Points will trigger an increase in a module's MINOR version.
 
-An interface or a [virtual type](https://glossary.magento.com/virtual type) represent either an API or Customization Point.
+An interface or a [virtual type](https://glossary.magento.com/virtual-type) represent either an API or Customization Point.
 
 This policy allows third-party module developers to declare more granular dependencies depending on their module's interaction with Magento modules.
 

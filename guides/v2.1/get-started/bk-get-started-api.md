@@ -13,7 +13,7 @@ functional_areas:
 
 The Magento web [API](https://glossary.magento.com/API) framework provides integrators and developers the means to use web services that communicate with the Magento system. Key features include:
 
-* Support for both [REST]({{ page.baseurl }}/rest/bk-rest.html) (Representational State Transfer) and [SOAP]({{ page.baseurl }}/soap/bk-soap.html) (Simple Object Access Protocol). In Magento 2, the [web API](https://glossary.magento.com/web API) coverage is the same for both REST and SOAP.
+* Support for both [REST]({{ page.baseurl }}/rest/bk-rest.html) (Representational State Transfer) and [SOAP]({{ page.baseurl }}/soap/bk-soap.html) (Simple Object Access Protocol). In Magento 2, the [web API](https://glossary.magento.com/web-API) coverage is the same for both REST and SOAP.
 
 * Three types of [authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html):
 	* Third-party applications authenticate with [OAuth 1.0a]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html).
@@ -44,7 +44,7 @@ The APIs can be used to perform a wide array of tasks. For example:
 
 ## How do I get started? {#procedure}
 
-You must register a web service on [Magento Admin](https://glossary.magento.com/Magento Admin). Use the following general steps to set up Magento to enable web services.
+You must register a web service on [Magento Admin](https://glossary.magento.com/Magento-Admin). Use the following general steps to set up Magento to enable web services.
 
 1. If you are using token-based authentication, create a web services user on Magento Admin by selecting **System** > Permission > **All Users** > Add New User. (If you are using session-based or OAuth authentication, you do not need to create the new user in the Admin.)
 2. Create a new integration on Magento Admin. To create an integration, click **System** > Extensions > **Integration** > Add New Integration**. Be sure to restrict which resources the integration can access.

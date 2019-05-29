@@ -6,7 +6,7 @@ title: Page
 A page object is a class that serves to interact with the Magento page under test.
 A page serves as container for [blocks]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html).
 
-In the functional tests, Page Object [Design Pattern](https://glossary.magento.com/Design Pattern) is used. Test uses block methods of page object class to interact with application under test.
+In the functional tests, Page Object [Design Pattern](https://glossary.magento.com/Design-Pattern) is used. Test uses block methods of page object class to interact with application under test.
 
 Benefit of this approach is that tests don’t need to be changed after changes in the UI. Only code in corresponding block must be changed. This approach provides the following advantages:
 

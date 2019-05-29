@@ -30,7 +30,7 @@ interface TokenUiComponentProviderInterface
 }
 ```
 
-The basic implementation of the token [UI component](https://glossary.magento.com/UI component) provider can be like following:
+The basic implementation of the token [UI component](https://glossary.magento.com/UI-component) provider can be like following:
 
 ```php
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface

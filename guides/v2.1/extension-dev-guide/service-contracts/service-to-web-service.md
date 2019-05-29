@@ -16,7 +16,7 @@ To [configure a web API](#configure-webapi), you define [XML](https://glossary.m
 
 Your module can use the default `webapi.xsd` file or you can create a customized XML schema file for validation.
 
-Users can make REST or SOAP calls to access the [web API](https://glossary.magento.com/web API).
+Users can make REST or SOAP calls to access the [web API](https://glossary.magento.com/web-API).
 
 To configure a web API, read these topics:
 

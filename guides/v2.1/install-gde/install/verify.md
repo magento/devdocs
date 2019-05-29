@@ -31,7 +31,7 @@ If the page displays a 404 (Not Found) or unconfigured (no styles, only text), s
 
 ## Verify the Magento Admin {#instgde-verify-admin}
 
-Go to the [Magento Admin](https://glossary.magento.com/Magento Admin) in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
+Go to the [Magento Admin](https://glossary.magento.com/Magento-Admin) in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
 
 (The [Admin](https://glossary.magento.com/Admin) URI is specified by the value of the `backend-frontname` installation parameter.)
 

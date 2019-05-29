@@ -166,7 +166,7 @@ To install the Magento Cloud CLI:
 
 1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
-2.	Change to a directory to which the [Magento file system owner](https://glossary.magento.com/Magento file system owner) has write access, such as the home directory.
+2.	Change to a directory to which the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner) has write access, such as the home directory.
 
 3.	Enter the following command:
 

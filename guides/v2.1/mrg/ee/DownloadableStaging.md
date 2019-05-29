@@ -4,7 +4,7 @@ title: Magento_DownloadableStaging module
 ee_only: true
 ---
 
-The Magento_DownloadableStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [Downloadable Product](https://glossary.magento.com/Downloadable Product) updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.
+The Magento_DownloadableStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [Downloadable Product](https://glossary.magento.com/Downloadable-Product) updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 

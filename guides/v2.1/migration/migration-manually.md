@@ -35,7 +35,7 @@ This section applies to you *only* if you store media files in the Magento datab
 
 3.	In the right pane, scroll to **Storage Configuration for Media**.
 
-4.	From the **Select Media Database** list, click the name of your [media storage](https://glossary.magento.com/media storage) database.
+4.	From the **Select Media Database** list, click the name of your [media storage](https://glossary.magento.com/media-storage) database.
 
 5.	Click **Synchronize**.
 

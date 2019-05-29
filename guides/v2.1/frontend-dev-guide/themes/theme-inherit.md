@@ -52,7 +52,7 @@ The particular directories, where the system searches in the course of the fallb
 
 If module context is not defined for a file:
 
-1. Current theme [static files](https://glossary.magento.com/static files) for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
+1. Current theme [static files](https://glossary.magento.com/static-files) for a specific locale (the locale set for the storefront): `<theme_dir>/web/i18n/<locale>`
 2. Current theme static files: `<theme_dir>/web/`
 2. Ancestor's static files, recursively, until a theme with no parent is reached:
 - `<parent_theme_dir>/web/i18n/<locale>`
@@ -102,7 +102,7 @@ So if you need to customize a certain template, you need to create an overriding
 For example, if you must override the `<Magento_Catalog_module_dir>/view/frontend/templates/category/widget/link/link_block.phtml` template, the `<path_to_template>` is `category/widget/link/`
 
 **Example**
-By default, according to the module template, in the mini [shopping cart](https://glossary.magento.com/shopping cart) products are listed under the Go to [Checkout](https://glossary.magento.com/Checkout) button:
+By default, according to the module template, in the mini [shopping cart](https://glossary.magento.com/shopping-cart) products are listed under the Go to [Checkout](https://glossary.magento.com/Checkout) button:
 
 ![In the minishopping cart products are listed under the Go to Checkout button]({{ site.baseurl }}/common/images/inherit_mini1.png)
 
@@ -156,7 +156,7 @@ To override the instructions from an ancestor theme layout file:
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/theme/<Vendor>/<ancestor_theme>` directory.
 
-To override module [layout instructions](https://glossary.magento.com/layout instructions) (base layout):
+To override module [layout instructions](https://glossary.magento.com/layout-instructions) (base layout):
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
 

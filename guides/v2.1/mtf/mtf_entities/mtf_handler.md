@@ -416,7 +416,7 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
 
 ## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
 
-Let's create a WebAPI handler that creates a new [tax rule](https://glossary.magento.com/tax rule).
+Let's create a WebAPI handler that creates a new [tax rule](https://glossary.magento.com/tax-rule).
 
 * Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create [interface](#mtf_handler_interface) for the WebAPI handler, and call the file `TaxRuleInterface.php`.

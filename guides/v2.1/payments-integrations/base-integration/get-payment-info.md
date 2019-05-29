@@ -59,7 +59,7 @@ You should remove any sensitive data (like credit card details) from payment add
 ## Getting payment information from frontend to backend 
 
 In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on [checkout](https://glossary.magento.com/checkout) payment form.
-So our [payment method](https://glossary.magento.com/payment method) implementation should provide the ability to display and process payment form on checkout step. 
+So our [payment method](https://glossary.magento.com/payment-method) implementation should provide the ability to display and process payment form on checkout step. 
 
 We can send to [backend](https://glossary.magento.com/backend) any specific data, just need to override `getData()` method in
 [payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):

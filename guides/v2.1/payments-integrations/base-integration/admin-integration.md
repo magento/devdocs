@@ -10,7 +10,7 @@ functional_areas:
 
 You can define whether the payment method is available for the [storefront](https://glossary.magento.com/storefront) and [checkout](https://glossary.magento.com/checkout) in the [payment method configuration in `config.xml`]({{ page.baseurl }}/payments-integrations/base-integration/payment-option-config.html):
 
-- `can_use_checkout`: whether [payment method](https://glossary.magento.com/payment method) is available in storefront checkout
+- `can_use_checkout`: whether [payment method](https://glossary.magento.com/payment-method) is available in storefront checkout
 - `can_use_internal`: whether payment method is available in [Admin](https://glossary.magento.com/Admin) order creation 
 
 If your payment flow should be different for storefront and Admin panel, you can use a separate DI configuration for each [area]({{ page.baseurl }}/architecture/archi_perspectives/components/modules/mod_and_areas.html#magento-area-types):
@@ -36,4 +36,4 @@ The DI configuration for [authorization](https://glossary.magento.com/authorizat
 ```
 
 While the general [app/code/Magento/Braintree/etc/di.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml#L140) does not
-have 3D secure verification builder for Admin panel, but [virtual type](https://glossary.magento.com/virtual type) has the same name (object will be created according to context of area).
+have 3D secure verification builder for Admin panel, but [virtual type](https://glossary.magento.com/virtual-type) has the same name (object will be created according to context of area).

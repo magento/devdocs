@@ -37,7 +37,7 @@ We address the following functional issues in this release.
 
 ### Catalog
 
-<!--- 58437-->* The [storefront](https://glossary.magento.com/storefront) gallery now displays all the images associated with a [configurable product](https://glossary.magento.com/configurable product). Previously, when you clicked on the swatches associated with a configurable product, the gallery displayed only one of several possible images.  [(GITHUB-6195)](https://github.com/magento/magento2/issues/6195){:target="_blank"}, [(GITHUB-4101)](https://github.com/magento/magento2/issues/4101){:target="_blank"}
+<!--- 58437-->* The [storefront](https://glossary.magento.com/storefront) gallery now displays all the images associated with a [configurable product](https://glossary.magento.com/configurable-product). Previously, when you clicked on the swatches associated with a configurable product, the gallery displayed only one of several possible images.  [(GITHUB-6195)](https://github.com/magento/magento2/issues/6195){:target="_blank"}, [(GITHUB-4101)](https://github.com/magento/magento2/issues/4101){:target="_blank"}
 
 
 <!---57832 -->* Magento now displays the **This is a required field** message immediately adjacent to the product options as needed during [checkout](https://glossary.magento.com/checkout). Previously, Magento displayed this message at the bottom of the checkout form. 
@@ -59,13 +59,13 @@ We address the following functional issues in this release.
 
 <!--- 62400-->* Third-party command line tools no longer fail when you run `setup:di:compile`.
 
-<!--- 62648-->* Magento now correctly applies [website](https://glossary.magento.com/website) configuration parameters to the corresponding [store view](https://glossary.magento.com/store view). [(GITHUB-7943)](https://github.com/magento/magento2/issues/7943){:target="_blank"}
+<!--- 62648-->* Magento now correctly applies [website](https://glossary.magento.com/website) configuration parameters to the corresponding [store view](https://glossary.magento.com/store-view). [(GITHUB-7943)](https://github.com/magento/magento2/issues/7943){:target="_blank"}
 
 ### Miscellaneous
 
 <!--- 62229-->* Magento now displays the price of out-of-stock products on the product page.  
 
-<!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Settings > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their [shopping cart](https://glossary.magento.com/shopping cart).  
+<!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Settings > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their [shopping cart](https://glossary.magento.com/shopping-cart).  
 
 
 <!--- 60248-->* Information set by the **Default Billing Address** and **Default Shipping Address** checkboxes on the Customer page are now saved correctly.
@@ -88,7 +88,7 @@ We address the following functional issues in this release.
 
 <!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings. 
 
-<!--- 55612-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/Payment method) available** message when a customer tries to ship items to a billing-restricted country. 
+<!--- 55612-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/Payment-method) available** message when a customer tries to ship items to a billing-restricted country. 
 
 <!--- 62669-->* Third-party payment gateways are now visible from the Admin.  [(GITHUB-7891)](https://github.com/magento/magento2/issues/7891){:target="_blank"}
 
@@ -221,7 +221,7 @@ We address the following functional issues in this release.
 <!---60408-->* **Issue**: If you move a product update from one scheduled update to another, Magento will no longer track [entity](https://glossary.magento.com/entity) changes. 
 
 
-<!---59775-->* **Issue**: You cannot generate secure content if you deploy [static content](https://glossary.magento.com/static content) under these conditions: 
+<!---59775-->* **Issue**: You cannot generate secure content if you deploy [static content](https://glossary.magento.com/static-content) under these conditions: 
 
 	* `pub/static` is in read-only mode
 

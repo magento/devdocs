@@ -14,12 +14,12 @@ functional_areas:
 Magento allows developers to define web [API](https://glossary.magento.com/API) resources and their permissions in a configuration file <code>webapi.xml</code>.
 Here are more details on exposing [services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
 
-Before you can make [web API](https://glossary.magento.com/web API) calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
+Before you can make [web API](https://glossary.magento.com/web-API) calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 
 ### Accessible resources
 
 The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
-Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/Magento Admin).
+Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/Magento-Admin).
 Permissions required to access particular resource are configured in the `webapi.xml` file. This table lists the resources that each user type can access:
 
 

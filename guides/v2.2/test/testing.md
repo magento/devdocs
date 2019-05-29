@@ -64,7 +64,7 @@ Until the porting to MFTF is finished, the FTF can still be run to ensure comple
 
 ## API Functional
 
-The Web [API](https://glossary.magento.com/API) testing framework enables you to test the Magento [Web API](https://glossary.magento.com/Web API) from the client application point of view.
+The Web [API](https://glossary.magento.com/API) testing framework enables you to test the Magento [Web API](https://glossary.magento.com/Web-API) from the client application point of view.
 
 For more information, see the [Web API functional testing][].
   

@@ -8,7 +8,7 @@ menu_order: 2
 ee_only: true
 ---
 
-The Magento_CatalogRuleStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [catalog](https://glossary.magento.com/catalog) rule updates to existing store campaigns. In other words, you can add and/or remove [catalog rules](https://glossary.magento.com/catalog rules) for some period of time. These updates are shown on the campaign dashboard.
+The Magento_CatalogRuleStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [catalog](https://glossary.magento.com/catalog) rule updates to existing store campaigns. In other words, you can add and/or remove [catalog rules](https://glossary.magento.com/catalog-rules) for some period of time. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 

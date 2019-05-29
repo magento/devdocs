@@ -12,7 +12,7 @@ functional_areas:
 Code compilation includes the following (in no particular order):
 
 -   Application code generation (factories, proxies)
--   Area configuration aggregation (optimized [dependency injection](https://glossary.magento.com/dependency injection) configurations per area)
+-   Area configuration aggregation (optimized [dependency injection](https://glossary.magento.com/dependency-injection) configurations per area)
 -   Interceptor generation (optimized code generation of interceptors)
 -   Interception [cache](https://glossary.magento.com/cache) generation
 -   Repositories code generation (generated code for APIs)
@@ -43,7 +43,7 @@ In some cases, you might want to compile code before you install the Magento app
     bin/magento module:enable --all [-c|--clear-static-content]
     ```
 
-    Use the `[-c|--clear-static-content]` option to clear [static content](https://glossary.magento.com/static content). This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.
+    Use the `[-c|--clear-static-content]` option to clear [static content](https://glossary.magento.com/static-content). This is necessary if you previously enabled or disabled modules and you must clear the static content previously generated for them.
 
     See [Enable modules]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-enable.html).
 

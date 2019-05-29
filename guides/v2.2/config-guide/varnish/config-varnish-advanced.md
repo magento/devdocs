@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Magento Admin](https://glossary.magento.com/Magento Admin).
+Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Magento Admin](https://glossary.magento.com/Magento-Admin).
 
 See the [Varnish Reference Manual](https://www.varnish-cache.org/docs/4.1/reference/index.html) for details about using the Varnish Configuration Language.
 
@@ -68,7 +68,7 @@ You should designate one machine as the primary installation. On this machine, i
 
 On all other machines, the Magento instance must have access the primary machine's mySQL database. The secondary machines should also have access to the files of the primary Magento instance.
 
-Alternatively, [static files](https://glossary.magento.com/static files) versioning can be turned off on all machines. This can be accessed from the Admin under **Stores > Settings > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** = **No**.
+Alternatively, [static files](https://glossary.magento.com/static-files) versioning can be turned off on all machines. This can be accessed from the Admin under **Stores > Settings > Configuration > Advanced > Developer > Static Files Settings > Sign Static Files** = **No**.
 
 Finally, all Magento instances must be in production mode. Before Varnish starts, clear the cache on each instance. In Admin, go to **System** > Tools > **Cache Management** and click **Flush Magento Cache**. You can also run the following command to clear the cache:
 

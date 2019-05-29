@@ -31,7 +31,7 @@ For example, here is how a storefront [category](https://glossary.magento.com/ca
 
 ![A storefront page with enabled template hints]({{ site.baseurl }}/common/images/theme_debug2.png)
 
-In this example mini [shopping cart](https://glossary.magento.com/shopping cart) page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
+In this example mini [shopping cart](https://glossary.magento.com/shopping-cart) page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
 
 ![A hint with template name for minishopping cart]({{ site.baseurl }}/common/images/theme_debug3.png)
 (the template name is above the element)
@@ -64,7 +64,7 @@ There is no straightforward algorithm how to define at once the exact layout fil
 
 Example:
 
-Say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the [store view](https://glossary.magento.com/store view).
+Say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the [store view](https://glossary.magento.com/store-view).
 
 Using the Template Hints we determine that the template is `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml`, and in the path, we see that it belongs to the `Magento_Checkout` module.
 

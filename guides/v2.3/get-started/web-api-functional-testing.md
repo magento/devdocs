@@ -3,7 +3,7 @@ group: web-api
 title: Web API functional testing
 ---
 
-The Web [API](https://glossary.magento.com/API) testing framework allows you to test Magento [Web API](https://glossary.magento.com/Web API) from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP [adapter](https://glossary.magento.com/adapter) that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
+The Web [API](https://glossary.magento.com/API) testing framework allows you to test Magento [Web API](https://glossary.magento.com/Web-API) from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP [adapter](https://glossary.magento.com/adapter) that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
 ## Implementation Details {#details}
 

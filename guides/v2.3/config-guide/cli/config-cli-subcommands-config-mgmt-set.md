@@ -27,7 +27,7 @@ You can set values at the following times:
 *   Before you install Magento, you can set configuration values for the default scope only.
 
     That's because before you install Magento, the default scope is the only valid scope.
-*   After you install Magento, you can set configuration values for any [website](https://glossary.magento.com/website) or [store view](https://glossary.magento.com/store view) scope.
+*   After you install Magento, you can set configuration values for any [website](https://glossary.magento.com/website) or [store view](https://glossary.magento.com/store-view) scope.
 
 Use the following commands:
 

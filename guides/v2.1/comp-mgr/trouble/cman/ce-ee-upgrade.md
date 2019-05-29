@@ -22,7 +22,7 @@ Your upgrade from **{{site.data.var.ce}}** to **{{site.data.var.ee}}** might fai
 
 If this error displays, resolve it as follows:
 
-1.	Log in to your Magento server as the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+1.	Log in to your Magento server as the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 2.	Enter the following commands in the order shown:
 
     ```bash

@@ -105,7 +105,7 @@ Create a `.phtml` template for displaying token details and specify it in the [c
 For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
 
 In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`) 
-specify the [payment method](https://glossary.magento.com/payment method) code and path to the template. 
+specify the [payment method](https://glossary.magento.com/payment-method) code and path to the template. 
 
 Following is an example of such layout:
 

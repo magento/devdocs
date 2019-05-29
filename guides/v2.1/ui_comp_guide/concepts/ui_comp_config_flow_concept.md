@@ -8,7 +8,7 @@ menu_order: 10
 
 ## Overview
 
-The following section covers the configuration flow of UI components within the Magento system. Before a [UI component](https://glossary.magento.com/UI component) is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s [XML](https://glossary.magento.com/XML) declaration, all the way to the merging of module-specific options.
+The following section covers the configuration flow of UI components within the Magento system. Before a [UI component](https://glossary.magento.com/UI-component) is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s [XML](https://glossary.magento.com/XML) declaration, all the way to the merging of module-specific options.
 
 When the server generates a page response, the configuration of these components in the [`.xml` declaration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is then modified by the [`.php` modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), and then finally this combined configuration is packed into JSON format and added into the HTTP response body.
 

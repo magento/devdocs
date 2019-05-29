@@ -39,7 +39,7 @@ The following diagram shows the OAuth authentication process. Each step is descr
 
 ## Activate an integration {#activate}
 
-The integration must be configured from the [Magento Admin](https://glossary.magento.com/Magento Admin) (**System > Extensions > Integrations**).  The configuration includes a callback URL and an identity link URL.  The callback URL specifies where OAuth credentials can be sent when using OAuth for token exchange. The identity link points to the login page of the third-party application that is integrating with Magento.
+The integration must be configured from the [Magento Admin](https://glossary.magento.com/Magento-Admin) (**System > Extensions > Integrations**).  The configuration includes a callback URL and an identity link URL.  The callback URL specifies where OAuth credentials can be sent when using OAuth for token exchange. The identity link points to the login page of the third-party application that is integrating with Magento.
 
 A merchant can choose to select **Save and Activate** when the integration is created. Alternatively, the merchant can click on **Activate** against a previously saved integration from the Integration grid.
 
@@ -123,7 +123,7 @@ The response contains these fields:
 
 After the Integration is authorized to make API calls, 3rd party extensions (registered as Integrations in Magento) can invoke Magento web APIs by using the access token.
 
-To use the access token to make [web API](https://glossary.magento.com/web API) calls:
+To use the access token to make [web API](https://glossary.magento.com/web-API) calls:
 
 `GET /rest/V1/products/1234`
 

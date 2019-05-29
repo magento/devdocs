@@ -81,7 +81,7 @@ or
 
 ### Configurable products
 
-<!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a [configurable product](https://glossary.magento.com/configurable product) can be sold (that is, is in a saleable state)). 
+<!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a [configurable product](https://glossary.magento.com/configurable-product) can be sold (that is, is in a saleable state)). 
 
 
 <!--- 65247 -->* Query optimizations have improved the speed of configurable product price calculation.

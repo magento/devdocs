@@ -102,7 +102,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- 56429 -->*  We've added the ability to change the status of a [shipment](https://glossary.magento.com/shipment) through the [web API](https://glossary.magento.com/web API).  The new `ShipOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
+<!--- 56429 -->*  We've added the ability to change the status of a [shipment](https://glossary.magento.com/shipment) through the [web API](https://glossary.magento.com/web-API).  The new `ShipOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* create a shipment document (full or partial)
 
@@ -131,12 +131,12 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 <!--- 55126-->* We've fixed an issue with using the REST API to link simple products to configurable ones. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){:target="_blank"}
 
 
-<!--- 58401-->* You can now use the REST API to create a [configurable product](https://glossary.magento.com/configurable product) with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){:target="_blank"}
+<!--- 58401-->* You can now use the REST API to create a [configurable product](https://glossary.magento.com/configurable-product) with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){:target="_blank"}
 
 ### Cart and checkout
 {:.no_toc} 
 
-<!--- 56431, 56426-->* Magento now updates [order status](https://glossary.magento.com/order status) as expected after a shipment or [invoice](https://glossary.magento.com/invoice) has been created through the API.
+<!--- 56431, 56426-->* Magento now updates [order status](https://glossary.magento.com/order-status) as expected after a shipment or [invoice](https://glossary.magento.com/invoice) has been created through the API.
 
 
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. [(GITHUB-6121)](https://github.com/magento/magento2/issues/6121){:target="_blank"} 

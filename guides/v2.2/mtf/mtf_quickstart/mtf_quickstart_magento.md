@@ -7,7 +7,7 @@ title: Quick start. Prepare Magento application
 
 A Selenium web-driver cannot enter data to fields with [WYSIWYG](https://glossary.magento.com/WYSIWYG). This option disables the WYSIWYG and enables the web-driver to process these fields as simple text areas.
 
-1. Log in to the [Magento Admin](https://glossary.magento.com/Magento Admin) as an administrator.
+1. Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) as an administrator.
 2. Follow **Stores &gt; Configuration &gt; General &gt; Content Management &gt; WYSIWYG Options**.
 3. Set **Enable WYSIWYG Editor** to **Disabled Completely**.
 4. Click **Save Config**.

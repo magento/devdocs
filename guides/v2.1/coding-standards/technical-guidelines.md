@@ -455,7 +455,7 @@ class View extends Template
 
 3.1. There SHOULD be no circular dependencies between objects.
 
-3.2. The `app/etc/di.xml` file MUST contain only framework-level [Dependency Injection](https://glossary.magento.com/Dependency Injection) (DI) settings.
+3.2. The `app/etc/di.xml` file MUST contain only framework-level [Dependency Injection](https://glossary.magento.com/Dependency-Injection) (DI) settings.
 
 3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in `<module_dir>/etc/di.xml`.
 
@@ -566,7 +566,7 @@ We are reviewing this section and will publish it soon.
 
 * [XML](https://glossary.magento.com/XML) configuration
 
-* generated code and [static files](https://glossary.magento.com/static files)
+* generated code and [static files](https://glossary.magento.com/static-files)
 
 * database structure
 
@@ -630,7 +630,7 @@ We are reviewing this section and will publish it soon.
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 [UI Component](https://glossary.magento.com/UI Component) framework MUST be used to build frontend applications.
+10.1. The Magento 2 [UI Component](https://glossary.magento.com/UI-Component) framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -672,7 +672,7 @@ We are reviewing this section and will publish it soon.
 
 12.1. Both REST and SOAP API's MUST be exposed.
 
-12.2. All [Web API](https://glossary.magento.com/Web API) GET endpoints MUST return lists of entities.
+12.2. All [Web API](https://glossary.magento.com/Web-API) GET endpoints MUST return lists of entities.
 
 ## 13. Command line interface (CLI)
 

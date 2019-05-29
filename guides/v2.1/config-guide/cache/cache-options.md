@@ -25,7 +25,7 @@ In general, the Magento application works with any backend cache that [Zend_Cach
 *   [Database]({{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html)
 *   File system (default): No configuration is necessary to use file system caching.
 
-[Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) doesn't require setting up a low-level [cache backend](https://glossary.magento.com/cache backend).
+[Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) doesn't require setting up a low-level [cache backend](https://glossary.magento.com/cache-backend).
 
 {:.bs-callout .bs-callout-info}
 We'll periodically add more low-level cache types so watch this space.

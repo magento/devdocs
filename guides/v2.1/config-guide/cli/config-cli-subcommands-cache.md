@@ -90,7 +90,7 @@ Sample result:
 ```
 
 {:.bs-callout .bs-callout-info}
-Enabling a [cache type](https://glossary.magento.com/cache type) automatically clears that cache type.
+Enabling a [cache type](https://glossary.magento.com/cache-type) automatically clears that cache type.
 
 ## Clean and flush cache types {#config-cli-subcommands-cache-clean}
 
@@ -141,4 +141,4 @@ Sample result:
 ```
 
 {:.bs-callout .bs-callout-info}
-You can also clean and flush cache types in the [Magento Admin](https://glossary.magento.com/Magento Admin). Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.
+You can also clean and flush cache types in the [Magento Admin](https://glossary.magento.com/Magento-Admin). Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.

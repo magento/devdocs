@@ -125,7 +125,7 @@ For example, to find a website or store view scope value in the Admin:
 
 To get these values from the database:
 
-1.	If you haven't done so already, log in to your development system as the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+1.	If you haven't done so already, log in to your development system as the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 2.	Enter the following command:
 
 		mysql -u <magento database username> -p

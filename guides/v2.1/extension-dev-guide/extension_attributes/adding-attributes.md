@@ -6,10 +6,10 @@ menu_title: Adding extension attributes to entity
 menu_order: 20
 ---
 
-Third-party developers cannot change the [API](https://glossary.magento.com/API) Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called [extension attributes](https://glossary.magento.com/extension attributes).  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
+Third-party developers cannot change the [API](https://glossary.magento.com/API) Data interfaces defined in the Magento Core code.  However, most of these entities have a feature called [extension attributes](https://glossary.magento.com/extension-attributes).  Check the interface for the methods `getExtensionAttributes()` and `setExtensionAttributes()` to determine if they are available for the entity.
 
 {: .bs-callout .bs-callout-info }
-We will demonstrate how to add extension attributes to a Product entity, Product Repository and [Web Api](https://glossary.magento.com/Web Api) example.
+We will demonstrate how to add extension attributes to a Product entity, Product Repository and [Web Api](https://glossary.magento.com/Web-Api) example.
 
 In order to retrieve a product or a list of products from the Magento API, you need to make an API request to the appropriate service (the Product Repository in this case).  
 The response to these requests will return objects with the following structure:
@@ -71,7 +71,7 @@ public function afterGet
 
 This is the simplest way to add extension attributes without causing a conflict:  
 - We get the [entity's](https://glossary.magento.com/entity's) extension attributes, if they are already set.
- - We add our [extension attribute](https://glossary.magento.com/extension attribute).
+ - We add our [extension attribute](https://glossary.magento.com/extension-attribute).
 - Finally set the extension attribute on the entity with ours included.  
 
 AfterGetList is similar to afterGet.

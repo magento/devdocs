@@ -128,7 +128,7 @@ Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-r
 We define the following *components*:
 
 *	`module` for a [module](https://glossary.magento.com/module) or [extension](https://glossary.magento.com/extension) (that is, [PHP](https://glossary.magento.com/PHP) code that modifies Magento behavior)
-*	`language` for a [language package](https://glossary.magento.com/language package) used to translate the Magento [storefront](https://glossary.magento.com/storefront) and [Admin](https://glossary.magento.com/Admin)
+*	`language` for a [language package](https://glossary.magento.com/language-package) used to translate the Magento [storefront](https://glossary.magento.com/storefront) and [Admin](https://glossary.magento.com/Admin)
 *	`theme` for a collection of styles that affect the look of the storefront or Admin
 *	`library` for a library&mdash;such as a shared third-party [library](https://glossary.magento.com/library)
 *	`component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)

@@ -50,7 +50,7 @@ The Magento_CatalogStaging module enables you to stage the following category at
     - Anchor
     - Product Sorting
     - Layered Navigation Price Step
-- [Search Engine Optimization](https://glossary.magento.com/Search Engine Optimization)
+- [Search Engine Optimization](https://glossary.magento.com/Search-Engine-Optimization)
     - Meta Title
     - Meta Keywords
     - Meta Description
@@ -68,7 +68,7 @@ The following category attributes cannot be staged:
 
 The Magento_CatalogStaging module enables you to stage the following product attributes:
 
-- [Attribute Set](https://glossary.magento.com/Attribute Set)
+- [Attribute Set](https://glossary.magento.com/Attribute-Set)
 - Product Name
 - Price
 - Weight attributes

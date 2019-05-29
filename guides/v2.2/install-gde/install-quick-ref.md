@@ -49,7 +49,7 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
    * MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 
 3. ust as importantly, set up the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
-4. Switch to the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+4. Switch to the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 
 ### Get the Magento software
 

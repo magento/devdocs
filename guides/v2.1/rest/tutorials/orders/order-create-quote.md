@@ -18,13 +18,13 @@ functional_areas:
   - Cart
 ---
 
-When a customer adds an item to their [shopping cart](https://glossary.magento.com/shopping cart) for the first time, Magento creates a [quote](https://glossary.magento.com/quote). Magento uses a quote to perform tasks such as
+When a customer adds an item to their [shopping cart](https://glossary.magento.com/shopping-cart) for the first time, Magento creates a [quote](https://glossary.magento.com/quote). Magento uses a quote to perform tasks such as
 
 * Track each item the customer wants to buy, including the quantity and base cost
 * Gather information about the customer, including billing and shipping addresses
 * Determine shipping costs
 * Calculate the subtotal, add costs (shipping fees, taxes, etc.) and apply coupons to determine the grand total
-* Determine the [payment method](https://glossary.magento.com/payment method)
+* Determine the [payment method](https://glossary.magento.com/payment-method)
 * Place the order so that the merchant can fulfill it.
 
 ### Types of carts {#cart-types}

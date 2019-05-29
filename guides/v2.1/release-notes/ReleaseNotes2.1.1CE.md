@@ -31,15 +31,15 @@ We address the following functional issues in this release.
 <!--- 55055 -->* Tier pricing now works correctly with full page [cache](https://glossary.magento.com/cache). [(GITHUB-5364)](https://github.com/magento/magento2/issues/5364){:target="_blank"} 
 
 
-<!--- 45339 -->* Cart Price rules are now applied as expected to [payment method](https://glossary.magento.com/payment method) conditions. Previously, discounts set in Cart Price rules were not applied during [checkout](https://glossary.magento.com/checkout).
+<!--- 45339 -->* Cart Price rules are now applied as expected to [payment method](https://glossary.magento.com/payment-method) conditions. Previously, discounts set in Cart Price rules were not applied during [checkout](https://glossary.magento.com/checkout).
 
 #### Shopping cart
 
-<!--- 53793 -->* Magento now implements the minicart maximum display recently added item setting to your [shopping cart](https://glossary.magento.com/shopping cart).  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. [(GITHUB-4750)](https://github.com/magento/magento2/issues/4750){:target="_blank"} 
+<!--- 53793 -->* Magento now implements the minicart maximum display recently added item setting to your [shopping cart](https://glossary.magento.com/shopping-cart).  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. [(GITHUB-4750)](https://github.com/magento/magento2/issues/4750){:target="_blank"} 
 
 #### Performance
 
-<!--- 57410-->* You can now quickly generate or preview multiple variations of a [configurable product](https://glossary.magento.com/configurable product). (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
+<!--- 57410-->* You can now quickly generate or preview multiple variations of a [configurable product](https://glossary.magento.com/configurable-product). (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations. 
 
 
 <!--- 52660 -->* We've improved the speed of static asset deployment. 
@@ -92,7 +92,7 @@ The Sales API
 
 * supports create, read, delete, and search operations on objects
 
-* does not support updates to [order status](https://glossary.magento.com/order status) or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
+* does not support updates to [order status](https://glossary.magento.com/order-status) or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)
 
 
 You can run these operations from the Admin.

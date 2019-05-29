@@ -31,7 +31,7 @@ Cash on Delivery | `cashondelivery` | No
 Purchase Order | `purchaseorder` | No
 Zero Subtotal Checkout | `free` | Yes
 
-In this tutorial, configure Magento to accept bank transfer payments. To allow bank transfer payments (or any other offline payment method) as a payment method, log in to [Admin](https://glossary.magento.com/Admin) and select **Stores** > **Settings** > **Configuration** > **Sales** > **Payment Methods**. Then enable the [payment method](https://glossary.magento.com/payment method) and click **Save**.
+In this tutorial, configure Magento to accept bank transfer payments. To allow bank transfer payments (or any other offline payment method) as a payment method, log in to [Admin](https://glossary.magento.com/Admin) and select **Stores** > **Settings** > **Configuration** > **Sales** > **Payment Methods**. Then enable the [payment method](https://glossary.magento.com/payment-method) and click **Save**.
 
 Upon clicking **Save**, a notification message states that the [cache](https://glossary.magento.com/cache) needs to be refreshed. Click the **System** > **Tools** > **Cache Management** link to refresh the cache.
 

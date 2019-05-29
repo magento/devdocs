@@ -24,7 +24,7 @@ To install the knockout debugging plugin for Google Chrome, take the following s
 6. In the **Search** field write **Knockoutjs context debugger** and press the **Enter** key.
 7. In the result, find the [extension](https://glossary.magento.com/extension) named **Knockoutjs context debugger** (usually the first result), and click **Add to Chrome**.
 
-To define the [UI component](https://glossary.magento.com/UI component) using the plugin:
+To define the [UI component](https://glossary.magento.com/UI-component) using the plugin:
 
 1. Open the required page in Chrome.
 2. Point to the required element on the page, right-click and select **Inspect**. The developer tools panel opens.
@@ -32,7 +32,7 @@ To define the [UI component](https://glossary.magento.com/UI component) using th
 
 A simple example:
 
-1. Launch [Magento Admin](https://glossary.magento.com/Magento Admin).
+1. Launch [Magento Admin](https://glossary.magento.com/Magento-Admin).
 2. Navigate to **Products** > **Catalog** and click **Add Product**. The product creation page opens.
 3. Right-click on the **Product Name** field and click **Inspect**. Go to the **Knockout context** tab. Here you can see the full context of the field, where you can find JS component file, component name, etc.
 ![Image Example]({{ site.baseurl }}/common/images/ui_comp_troubleshoot_chrome1.png)

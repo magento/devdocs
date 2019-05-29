@@ -4,7 +4,7 @@ title: Magento_CmsStaging module
 ee_only: true
 ---
 
-The Magento_CmsStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [CMS](https://glossary.magento.com/CMS) Page and the [CMS Block](https://glossary.magento.com/CMS Block) updates to the existing store campaigns. These updates are shown on the campaign dashboard.
+The Magento_CmsStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [CMS](https://glossary.magento.com/CMS) Page and the [CMS Block](https://glossary.magento.com/CMS-Block) updates to the existing store campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -19,7 +19,7 @@ You can stage the following parameters:
 - Content
     - Content Heading
     - Content (WYSIWYG)
-- [Search Engine Optimization](https://glossary.magento.com/Search Engine Optimization)
+- [Search Engine Optimization](https://glossary.magento.com/Search-Engine-Optimization)
     - URL Key
     - Meta Keywords
     - Meta Description
@@ -35,7 +35,7 @@ The following parameters can be staged:
 - Enable/Disable CMS Block
 - Block Title
 - Identifier
-- [Store View](https://glossary.magento.com/Store View)
+- [Store View](https://glossary.magento.com/Store-View)
 - Content (WYSIWYG)
 
 ### Installation details

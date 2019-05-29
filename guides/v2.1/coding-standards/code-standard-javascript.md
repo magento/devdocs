@@ -195,7 +195,7 @@ var msg = '<span class="text">Hello World!</div>';
 
 * Class method names should start with an English verb in its infinitive form that describes the method.
 * Names for accessors for instance or static variables should always have the `get` or `set` prefix.
-* In [design pattern](https://glossary.magento.com/design pattern) classes, implementation method names should contain the pattern name where practical to provide better behavior description.
+* In [design pattern](https://glossary.magento.com/design-pattern) classes, implementation method names should contain the pattern name where practical to provide better behavior description.
 * Methods that return status flags or Boolean values should have the `has` or `is` prefix.
 
 ### Variables and properties

@@ -15,7 +15,7 @@ Magento static assets are located under `<magento_root>/pub/static/`, within the
 
 ### Solution
 
-*	If you are using the Apache web server, verify your [server rewrites]({{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite) setting and your Magento server's base URL and try again. If you set up the Apache `AllowOverride` directive incorrectly, the [static files](https://glossary.magento.com/static files) are not served from the correct location.
+*	If you are using the Apache web server, verify your [server rewrites]({{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite) setting and your Magento server's base URL and try again. If you set up the Apache `AllowOverride` directive incorrectly, the [static files](https://glossary.magento.com/static-files) are not served from the correct location.
 
 * If you are using the nginx web server, be sure to [configure a virtual host file]({{page.baseurl}}/install-gde/prereq/nginx.html#configure-nginx-ubuntu). The nginx virtual host file must meet the following criteria:
 

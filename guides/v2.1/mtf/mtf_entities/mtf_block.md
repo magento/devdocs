@@ -3,7 +3,7 @@ group: functional-testing-framework-guide
 title: Block
 ---
 
-In functional tests we use Page Object [Design Pattern](https://glossary.magento.com/Design Pattern). Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.
+In functional tests we use Page Object [Design Pattern](https://glossary.magento.com/Design-Pattern). Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html) is a container for blocks.
 
 The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.
 
@@ -394,7 +394,7 @@ A basic flow is the following:
 #### How to determine a block name and a path {#mtf_block_path}
 
 The block name and path in the Magento functional tests (`<magento2_root_dir>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
-For example, you develop a functional test for the [bundle product](https://glossary.magento.com/bundle product) creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
+For example, you develop a functional test for the [bundle product](https://glossary.magento.com/bundle-product) creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
 
 Magento can show you a full class name of the block and path to the [PHTML](https://glossary.magento.com/PHTML) template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
 
@@ -402,7 +402,7 @@ Magento can show you a full class name of the block and path to the [PHTML](http
 
 To enable this feature follow:
 
-1. Log in to [Magento Admin](https://glossary.magento.com/Magento Admin) as administrator
+1. Log in to [Magento Admin](https://glossary.magento.com/Magento-Admin) as administrator
 1. Follow **STORES > Settings > Configuration**
 1. Change **Store View** to **Main Website** (the template path and block name will only appear for current website)
 1. Follow **ADVANCED > Developer**

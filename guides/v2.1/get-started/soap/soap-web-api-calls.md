@@ -16,7 +16,7 @@ A WSDL file is generated only for services that you request. This means that dif
 
 The Magento web [API](https://glossary.magento.com/API) uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
 
-Each Magento service interface that is part of a [service contract](https://glossary.magento.com/service contract) is represented as a separate service in the WSDL.
+Each Magento service interface that is part of a [service contract](https://glossary.magento.com/service-contract) is represented as a separate service in the WSDL.
 
 To consume several services, you must specify them in the WSDL endpoint [URL](https://glossary.magento.com/URL).
 

@@ -46,7 +46,7 @@ You can enable or disable an area within a module. If this module is enabled, it
 
 * Disabling an area does not result in disabling the modules related to it.
 
-* Areas are registered in the [Dependency Injection](https://glossary.magento.com/Dependency Injection) framework `di.xml` file.
+* Areas are registered in the [Dependency Injection](https://glossary.magento.com/Dependency-Injection) framework `di.xml` file.
 
 ### Note about Magento request processing
 

@@ -52,7 +52,7 @@ Depending on your needs, you can use the existing [language packages](#m2devgde-
 ## Programming notes
 
 * It is recommended, but not enforced, that you do not place variables inside `__()` functions or `new Phrase()` calls. The scanner that collects the phrases from the code cannot interpret and collect the value of the variable when it is in these locations. Instead, you should place the full text in the `__()` function or `new Phrase()` call. If you need to specify a variable in these cases, ensure that it is translated correctly wherever it is defined as a string literal.
-* The [language package](https://glossary.magento.com/language package) (`i18n` directory) can be saved to any directory of your [extension](https://glossary.magento.com/extension).
+* The [language package](https://glossary.magento.com/language-package) (`i18n` directory) can be saved to any directory of your [extension](https://glossary.magento.com/extension).
 * The phrases for translations are enabled in the [Phrase] class.
 
 ### More information
@@ -105,7 +105,7 @@ Assembling the preceding `pt_BR.csv` files across all modules and the current th
 
 ### Dictionary generator tool {#m2devgde-xlate-generatortool}
 
-You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a [language package](https://glossary.magento.com/language package). For more information, see [dictionary generator tool].
+You can generate a translation dictionary to use by itself (for example, to translate words and phrases in a custom module) or for use by a [language package](https://glossary.magento.com/language-package). For more information, see [dictionary generator tool].
 
 ## Language packages {#m2devgde-xlate-languagepack}
 

@@ -18,11 +18,11 @@ functional_areas:
   - Sales
 ---
 
-The [shopping cart](https://glossary.magento.com/shopping cart) contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the [quote](https://glossary.magento.com/quote) to an order.
+The [shopping cart](https://glossary.magento.com/shopping-cart) contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the [quote](https://glossary.magento.com/quote) to an order.
 
 ### Send payment information {#send-payment}
 
-When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline [payment method](https://glossary.magento.com/payment method) in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
+When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline [payment method](https://glossary.magento.com/payment-method) in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
 
 **Endpoint**
 

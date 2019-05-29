@@ -20,7 +20,7 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
     3. Re-create and push the updated `config.local.php` to the Integration environment.
 
 <!-- {:.bs-callout .bs-callout-info}
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/Magento Admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/Magento-Admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 -->
 
 For example, you may want to set the following settings:

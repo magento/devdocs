@@ -6,7 +6,7 @@ menu_title: Iconography
 menu_order: 2
 menu_node:
 ---
-Icons are used throughout the [Magento Admin](https://glossary.magento.com/Magento Admin) interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").
+Icons are used throughout the [Magento Admin](https://glossary.magento.com/Magento-Admin) interface, often as controls to initiate a function (such as a "Filter") or to direct a user to a section (such as "Account").
 
 Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their "use" to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.
 

@@ -57,7 +57,7 @@ In this case, using interfaces is preferable to using classes. You can build dep
 
 A module belonging to the application layer cannot be used in the Magento Framework.
 
-You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the [service contract](https://glossary.magento.com/service contract) or the service provider interface (SPI).
+You can build dependencies between classes in the application layer, but these classes must belong to the same module. Dependencies between the modules of the application layer should be built only by the [service contract](https://glossary.magento.com/service-contract) or the service provider interface (SPI).
 
 ## Related topics {#m2arch-module-related}
 

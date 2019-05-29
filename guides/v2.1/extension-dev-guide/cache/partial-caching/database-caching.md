@@ -97,7 +97,7 @@ To modify `di.xml`:
 
 ## Database caching using a custom cache frontend {#mage-cache-db-env}
 
-This section discusses how to set up database caching with a custom [cache frontend](https://glossary.magento.com/cache frontend).
+This section discusses how to set up database caching with a custom [cache frontend](https://glossary.magento.com/cache-frontend).
 
 {:.bs-callout .bs-callout-info #info}
 Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.

@@ -235,7 +235,7 @@ Element | Description
 
 Use the following steps to install your module:
 
-1. Run the following command to update the Magento [database schema](https://glossary.magento.com/database schema) and data.
+1. Run the following command to update the Magento [database schema](https://glossary.magento.com/database-schema) and data.
 
     <code>bin/magento setup:upgrade</code>
 

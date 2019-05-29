@@ -16,13 +16,13 @@ functional_areas:
   - Catalog
 ---
 
-This article shows how to add a simple product, a downloadable product, and a [bundle product](https://glossary.magento.com/bundle product) to the cart.
+This article shows how to add a simple product, a downloadable product, and a [bundle product](https://glossary.magento.com/bundle-product) to the cart.
 
 All calls are performed on behalf of a customer, and the customer's token is specified in the [authorization](https://glossary.magento.com/authorization) header.
 
 ### Add a simple product to a cart {#add-simple}
 
-To add a [simple product](https://glossary.magento.com/simple product) to a cart, you must provide a `sku`, the quantity, and the [quote](https://glossary.magento.com/quote) ID, which was generated when the cart was created.
+To add a [simple product](https://glossary.magento.com/simple-product) to a cart, you must provide a `sku`, the quantity, and the [quote](https://glossary.magento.com/quote) ID, which was generated when the cart was created.
 
 The following example adds an orange medium-sized Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
 
@@ -63,7 +63,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 
 ### Add a downloadable product to a cart {#add-downloadable}
 
-The requirements for adding a [downloadable product](https://glossary.magento.com/downloadable product) to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
+The requirements for adding a [downloadable product](https://glossary.magento.com/downloadable-product) to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
 
 The following example adds the downloadable product Advanced Pilates & Yoga (`sku`: 240-LV08)
 
@@ -426,4 +426,4 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ### Verify this step {#verify-step}
 
-[Sign in](https://glossary.magento.com/Sign in) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping cart). All the items you added are displayed.
+[Sign in](https://glossary.magento.com/Sign-in) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.

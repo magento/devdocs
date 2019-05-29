@@ -39,7 +39,7 @@ Certain properties of the `defaults` object are processed by an additional core 
 
 They can be used to interact with other UI Component JavaScript classes. While the full use of them is a separate topic, those values can use a colon (`:`) to separate an expression, which should evaluate to a UI Component's name, from the properties to be accessed in that class. Take this example: `'${ $.provider }:user.theme'`. If the `${ $.provider }` expression evaluates to the name of a UI Component that is currently in the registry, that component will be loaded and the value of its `user.theme` property returned.
 
-As a result, a template literal used in the value of one the objects listed above can be used to succinctly access data from an *entirely different* [UI Component](https://glossary.magento.com/UI Component) JavaScript class.
+As a result, a template literal used in the value of one the objects listed above can be used to succinctly access data from an *entirely different* [UI Component](https://glossary.magento.com/UI-Component) JavaScript class.
 
 ### Template Literal `$` context
 
@@ -51,7 +51,7 @@ Perhaps the most useful aspect of template literals is the ability to access oth
 
 UI Components can have a `<item name="config" xsi:type="array">...</item>` node in the primary XML declaration file ([see an example]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html#example-of-a-basic-components-configuration-file)). In that file, a `component` element can be added with a path reference to the RequireJS file. That file is loaded into the registry when it runs on the frontend and other JavaScript files can then access it by the *name* of the UI Component instead of the path to the file itself. The name often will look something like this: `example_component.example_component`.
 
-Names of other registered modules can be added to the [server side](https://glossary.magento.com/server side) configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the JavaScript on the frontend. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this JavaScript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other JavaScript class.
+Names of other registered modules can be added to the [server side](https://glossary.magento.com/server-side) configuration (XML or PHP) that is output through JSON. Those names can then be easily accessed in the JavaScript on the frontend. In the following example, the other UI Component's name will be obtained with a template literal in the `imports` object. When this JavaScript file is loaded, it will process the template literal and look up the name in the registry. If found, it will load that class. Because there is a colon (`:`), it will go on to find the property that is accessed in the other JavaScript class.
 
 
 ```javascript

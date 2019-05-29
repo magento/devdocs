@@ -70,7 +70,7 @@ of this procedure):
 - Your [theme](https://glossary.magento.com/theme) files: `<theme_dir>`
 - Your module view files: `<module_dir>/view/frontend`
 
-This way your custom JS component is used instead of the [Magento component](https://glossary.magento.com/Magento component) in all entries all over the [frontend](https://glossary.magento.com/frontend) area.
+This way your custom JS component is used instead of the [Magento component](https://glossary.magento.com/Magento-component) in all entries all over the [frontend](https://glossary.magento.com/frontend) area.
 
 ## Extend a default JS component {#extend_js}
 

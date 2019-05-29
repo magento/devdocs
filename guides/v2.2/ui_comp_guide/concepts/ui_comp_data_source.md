@@ -7,7 +7,7 @@ contributor_link: https://swiftotter.com/
 
 ## Overview
 
-Magento provides the DataSource object, which is designed to interact with data in your [UI component](https://glossary.magento.com/UI component). Many of the core UI components use this DataSource component. Many UI components require that this object is included. However, there are specific requirements it has in order for it to work correctly.
+Magento provides the DataSource object, which is designed to interact with data in your [UI component](https://glossary.magento.com/UI-component). Many of the core UI components use this DataSource component. Many UI components require that this object is included. However, there are specific requirements it has in order for it to work correctly.
 
 In this topic, we will explain how to take advantage of the powerful functionality of the data provider in a UI Component.
 

@@ -11,7 +11,7 @@ functional_areas:
 
 ## Overview of static view files deployment {#config-cli-static-overview}
 
-The static view files deployment command enables you to write [static files](https://glossary.magento.com/static files) to the Magento file system when the Magento software is set for [production mode].
+The static view files deployment command enables you to write [static files](https://glossary.magento.com/static-files) to the Magento file system when the Magento software is set for [production mode].
 
 The term *static view file* refers to the following:
 
@@ -37,7 +37,7 @@ You can clean generated static view files in several ways. Refer to [Clean stati
 
 To deploy static view files:
 
-1.  Log in to the Magento server as, or [switch to], the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+1.  Log in to the Magento server as, or [switch to], the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 2.  Delete the contents of `<magento_root>/pub/static`.
 3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
@@ -114,7 +114,7 @@ If you enable static view file merging in the Magento Admin, the `pub/static` di
 
 ## Tip for developers customizing the static content deployment tool
 
-When creating a custom implementation of the [static content](https://glossary.magento.com/static content) deployment tool, use only [atomic] file writing for files that should be available on the client.
+When creating a custom implementation of the [static content](https://glossary.magento.com/static-content) deployment tool, use only [atomic] file writing for files that should be available on the client.
 If you use non-atomic file writing, those files might be loaded on the client with partial content.
 
 One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over.

@@ -265,7 +265,7 @@ Apart from the configuration file and theme [metadata](https://glossary.magento.
 
 A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme.
 
-[Static files](https://glossary.magento.com/Static files) can be located in a theme directory as follows:
+[Static files](https://glossary.magento.com/Static-files) can be located in a theme directory as follows:
 
 ```tree
 <theme_dir>/

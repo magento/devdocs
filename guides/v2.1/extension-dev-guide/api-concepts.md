@@ -28,4 +28,4 @@ Third-party developers should use only these interfaces, that is, interfaces wit
    <li>Client API</li>
    <li>Provider [API](https://glossary.magento.com/API) (SPI)</li>
 </ul>
-<p>Directory structure and configuration file structure are types of APIs because [extension](https://glossary.magento.com/extension) developers use them. Developers write configurations, and place their [static files](https://glossary.magento.com/static files) in specified folders; so if the configuration file structure or directory structure changes in subsequent releases, modules and extensions may break.</p>
+<p>Directory structure and configuration file structure are types of APIs because [extension](https://glossary.magento.com/extension) developers use them. Developers write configurations, and place their [static files](https://glossary.magento.com/static-files) in specified folders; so if the configuration file structure or directory structure changes in subsequent releases, modules and extensions may break.</p>

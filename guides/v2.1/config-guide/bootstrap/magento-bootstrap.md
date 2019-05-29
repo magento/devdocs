@@ -99,7 +99,7 @@ When the request is redirected to the entry point, the Magento application parse
 	All future requests for the static resource are processed by the server the same as static files; that is, without involving the entry point. If it's necessary to synchronize published files with original ones, the `pub/static` directory should be removed; as a result, files are automatically republished with the next request.
 
 ### Media resource entry point {#config-boot-entry-media}
-[Magento\MediaStorage\App\Media]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/MediaStorage/App/Media.php){:target="_blank"} retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a [media storage](https://glossary.magento.com/media storage).
+[Magento\MediaStorage\App\Media]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/MediaStorage/App/Media.php){:target="_blank"} retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a [media storage](https://glossary.magento.com/media-storage).
 
 `\Magento\Core\App\Media` attempts to find the media file in the configured database storage and write it into the `pub/static` directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.
 

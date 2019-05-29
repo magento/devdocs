@@ -84,7 +84,7 @@ Parameters are the following:
 * **proxy**. Sets the JsTestDriver to behave as a proxy. The proxy parameter is an array of arrays that enables you to specify multiple matcher and server proxies.
 * **load**. Defines the list of files to load in the browser before any tests run.
 * **test**. Defines the list of test sources to run.
-* **serve**. Defines the list of [static files](https://glossary.magento.com/static files) to load by using the same [domain](https://glossary.magento.com/domain) as the JsTestDriver.
+* **serve**. Defines the list of [static files](https://glossary.magento.com/static-files) to load by using the same [domain](https://glossary.magento.com/domain) as the JsTestDriver.
 
 ### `jsTestDriverOrder.php` file {#jstestdriverorderphp}
 

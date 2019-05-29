@@ -15,7 +15,7 @@ functional_areas:
 
 To configure PHP:
 
-1.	If necessary, start the cPanel and click **Home** to return to the [home page](https://glossary.magento.com/home page).
+1.	If necessary, start the cPanel and click **Home** to return to the [home page](https://glossary.magento.com/home-page).
 2.	In the Software section, click **Select PHP Version**.
 
     ![Start out configuring PHP]({{ site.baseurl }}/common/images/install-merch_php.png){:width="550px"}

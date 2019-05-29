@@ -297,7 +297,7 @@ After the [cache](https://glossary.magento.com/cache) flushes, enter `exit` to c
 
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
-1.  On your Cloud environment, enter the following commands to find the information to log in to the [Magento Admin](https://glossary.magento.com/Magento Admin) and to view the storefront:
+1.  On your Cloud environment, enter the following commands to find the information to log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) and to view the storefront:
 
     ```
     magento-cloud environment:url

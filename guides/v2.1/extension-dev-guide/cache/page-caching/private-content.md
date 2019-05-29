@@ -33,7 +33,7 @@ The public method `getSectionData` must return an array with data for private bl
 
 [Example]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/CustomerData/CompareProducts.php#L36-L45){:target="_blank"}
 
-Add the following to your component's [dependency injection](https://glossary.magento.com/dependency injection) configuration (`di.xml`):
+Add the following to your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration (`di.xml`):
 
 ```xml
 <type name="Magento\Customer\CustomerData\SectionPoolInterface">
@@ -47,7 +47,7 @@ Add the following to your component's [dependency injection](https://glossary.ma
 
 ## Create a block and template {#config-cache-priv-how-block}
 
-To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the [UI component](https://glossary.magento.com/UI component).
+To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the [UI component](https://glossary.magento.com/UI-component).
 
 {: .bs-callout .bs-callout-info }
 Do _not_ use the `$_isScopePrivate` property in your blocks. This property is obsolete and won't work properly.

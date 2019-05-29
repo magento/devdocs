@@ -12,7 +12,7 @@ Essential qualities foster extensibility throughout the entire set of Magento co
 * Coding standards
 * Flexible attribute types
 * Web APIs
-* Service contracts and [dependency injection](https://glossary.magento.com/dependency injection)
+* Service contracts and [dependency injection](https://glossary.magento.com/dependency-injection)
 * Plug-ins
 * Declarative schema
 
@@ -53,11 +53,11 @@ Extension | No
 
 Attribute types fall into three general categories:
 
-* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/Magento Admin).
+* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/Magento-Admin).
 
 * **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/Catalog) modules use EAV attributes.
 
-* **Extension attributes** often use more [complex data](https://glossary.magento.com/complex data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
+* **Extension attributes** often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
 See [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-guide.html) for information about using attributes.
 

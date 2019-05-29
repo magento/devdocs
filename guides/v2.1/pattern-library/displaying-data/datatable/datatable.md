@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Data Table
 ---
-The data-table organizes [complex data](https://glossary.magento.com/complex data) into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data.
+The data-table organizes [complex data](https://glossary.magento.com/complex-data) into a tabular view. Each data record has its own row with data elements presented in columns with meaningful column headings. This allows users to quickly scan and understand complex data and perform actions against the data.
 
 Data-table requirements for Magento 2 include:
 

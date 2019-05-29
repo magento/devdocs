@@ -7,7 +7,7 @@ To configure a web API, developers define some of the elements of each API call 
 
 ## Overview {#request-overview}
 
-The following table and the sections that follow the table describe [web API](https://glossary.magento.com/web API) call elements:
+The following table and the sections that follow the table describe [web API](https://glossary.magento.com/web-API) call elements:
 
 Element | Specifies
 --- | ---

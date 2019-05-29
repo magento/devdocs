@@ -78,7 +78,7 @@ To add your `LayoutProcessor` class the corresponding pool of processors, specif
 
 ## Step 2: Add a JS mixin to modify data submission {#mixin}
 
-Add a JS [mixin](https://glossary.magento.com/mixin), to the [server side](https://glossary.magento.com/server side), to change the behavior of the component responsible for the data submission.
+Add a JS [mixin](https://glossary.magento.com/mixin), to the [server side](https://glossary.magento.com/server-side), to change the behavior of the component responsible for the data submission.
 
 In your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the `<your_module_dir>/view/frontend/web` directory. There are no strict requirements for the mixin file naming.
 

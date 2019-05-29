@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-This section describes how to configure vault [payment method](https://glossary.magento.com/payment method) and create payment actions, like authorize, sale (authorize & capture), capture and so on.
+This section describes how to configure vault [payment method](https://glossary.magento.com/payment-method) and create payment actions, like authorize, sale (authorize & capture), capture and so on.
 
 ## Add vault payment facade
 
@@ -27,7 +27,7 @@ Example of the vault payment facade configuration for Braintree:
 </virtualType>
 ```
 
-This [virtual type](https://glossary.magento.com/virtual type) is similar to the [payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). The main difference is the `vaultProvider` argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.
+This [virtual type](https://glossary.magento.com/virtual-type) is similar to the [payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). The main difference is the `vaultProvider` argument. As the Vault payment in the general case is a proxy, the specific payment provider must be specified.
 
 ## Extend payment method configuration
 

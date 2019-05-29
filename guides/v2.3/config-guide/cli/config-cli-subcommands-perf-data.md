@@ -346,7 +346,7 @@ We support the following XML node formats:
         &lt;!-- ... more entries ... -->
     &lt;/configurable_products></pre>
 
-*   Generate products based on a dynamically created [attribute set](https://glossary.magento.com/attribute set) with a specified amount of attributes and options:
+*   Generate products based on a dynamically created [attribute set](https://glossary.magento.com/attribute-set) with a specified amount of attributes and options:
 
     <pre class="no-copy">&lt;configurable_products>
         <!-- Configurable product configuration -->
@@ -498,7 +498,7 @@ Generates websites. XML profile node:
 
 ### Store groups {#config-cli-gen-stores}
 
-Generates store groups (referred to in the [Magento Admin](https://glossary.magento.com/Magento Admin) as _stores_). Store groups are distributed normally among websites.
+Generates store groups (referred to in the [Magento Admin](https://glossary.magento.com/Magento-Admin) as _stores_). Store groups are distributed normally among websites.
 
 XML profile node:
 

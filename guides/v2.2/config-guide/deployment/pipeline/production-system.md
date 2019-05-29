@@ -28,7 +28,7 @@ You can have one production system. All of the following must be true:
 
 To set up a production machine:
 
-1.	After installing Magento or pulling it from source control, log in to the production server as, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+1.	After installing Magento or pulling it from source control, log in to the production server as, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 2.	Create `~/.ssh/.composer/auth.json` if you haven't already done so.
 
 	Create the directory:
@@ -66,7 +66,7 @@ To set sensitive values:
 
 1.	Find a value to set using the [sensitive value reference]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 2.	Note the configuration path for the setting.
-3.	Log in to the production system as, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+3.	Log in to the production system as, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 4.	Change to the Magento installation directory.
 5.	Enter the following command:
 

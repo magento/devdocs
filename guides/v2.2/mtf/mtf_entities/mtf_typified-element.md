@@ -3,7 +3,7 @@ group: functional-testing-framework-guide
 title: Typified element
 ---
 
-A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, [Store View](https://glossary.magento.com/Store View) Selector. Typified elements are often used as elements of a form or a grid. Functional Testing Framework (FTF) enables you to test any typified element.
+A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, [Store View](https://glossary.magento.com/Store-View) Selector. Typified elements are often used as elements of a form or a grid. Functional Testing Framework (FTF) enables you to test any typified element.
 
 ## Example {#example}
 

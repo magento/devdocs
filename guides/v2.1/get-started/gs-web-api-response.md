@@ -13,7 +13,7 @@ Each web [API](https://glossary.magento.com/API) call returns a HTTP status code
 
 ### HTTP status codes {#http-status-codes}
 
-Each [web API](https://glossary.magento.com/web API) call returns an HTTP status code that reflects the result of a request:
+Each [web API](https://glossary.magento.com/web-API) call returns an HTTP status code that reflects the result of a request:
 
 HTTP code | Meaning | Description
 --- | --- | ---

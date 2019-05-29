@@ -51,7 +51,7 @@ This guide does not apply if you used `git clone` to install Magento. Contributi
 
         composer update
 
-6. Update the [database schema](https://glossary.magento.com/database schema) and data:
+6. Update the [database schema](https://glossary.magento.com/database-schema) and data:
 
         bin/magento setup:upgrade
 

@@ -10,7 +10,7 @@ functional_areas:
 
 ### Overview
 
-This tutorial gives instructions for the creation of a [module](https://glossary.magento.com/module) that displays a simple page in the [Magento admin](https://glossary.magento.com/Magento admin).
+This tutorial gives instructions for the creation of a [module](https://glossary.magento.com/module) that displays a simple page in the [Magento admin](https://glossary.magento.com/Magento-admin).
 
 For the purposes of this tutorial MyCompany is the name of the company associated with a module named ExampleAdminNewPage.
 

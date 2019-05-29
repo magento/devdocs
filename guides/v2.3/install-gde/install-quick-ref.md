@@ -47,7 +47,7 @@ If not, see the [Installation overview]({{page.baseurl }}/install-gde/bk-install
 	*	[PHP (CentOS)]({{page.baseurl }}/install-gde/prereq/php-centos-ubuntu.html#php-for-centos)
 	*	[MySQL]({{page.baseurl }}/install-gde/prereq/mysql.html)
 3.	Just as importantly, set up the [Magento file system owner]({{page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
-4.	Switch to the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+4.	Switch to the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 
 ### Get the Magento software
 

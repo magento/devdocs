@@ -37,7 +37,7 @@ With this service you can:
 * create an [invoice](https://glossary.magento.com/invoice) document (full or partial)
 * capture money placed with order payment
 * notify a customer about document creation
-* change [order status](https://glossary.magento.com/order status) and state
+* change [order status](https://glossary.magento.com/order-status) and state
 
 ### Parameters
 
@@ -221,7 +221,7 @@ Please note, that current service is available only for invoices created using o
 
 With this service you can:
 
-* create a [Credit Memo](https://glossary.magento.com/Credit Memo) (complete or partial) for particular Invoice
+* create a [Credit Memo](https://glossary.magento.com/Credit-Memo) (complete or partial) for particular Invoice
 * add details about refunded items to an Order
 * change status and state of an Order according to performed actions
 * notify a customer about performed refund operation
@@ -807,7 +807,7 @@ With the ShipOrder service you can:
 * create a [shipment](https://glossary.magento.com/shipment) document (full or partial)
 * add details about shipped items into an order
 * change status and state of an order according to performed actions
-* notify the customer of a new [shipment document](https://glossary.magento.com/shipment document)
+* notify the customer of a new [shipment document](https://glossary.magento.com/shipment-document)
 
 ### Service parameters
 

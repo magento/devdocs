@@ -11,7 +11,7 @@ This topic describes how to create your custom theme for Magento Admin, referenc
 
 ## Prerequisites 
 
-[Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static files) are cached by Magento. 
+[Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento. 
 
 ## Overview
 
@@ -44,7 +44,7 @@ Configure it using the following example (replace placeholders with your [theme]
 </theme>
 ```
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/Magento Admin) page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/Magento-Admin) page for your changes to be saved in the database.
 
 ## Add `registration.php` {#add_registry}
 

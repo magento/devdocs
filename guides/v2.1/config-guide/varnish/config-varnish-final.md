@@ -56,7 +56,7 @@ For example, to use the Chrome inspector:
 
 Make sure the `<magento_root>/var/page_cache` directory is empty:
 
-1.	Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento file system owner).
+1.	Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
 2.	Enter the following command:
 
 		rm -rf <magento_root>/var/page_cache/*

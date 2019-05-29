@@ -12,11 +12,11 @@ redirect_from:
 ---
 
 ### Component {#gloss-component}
-We refer to what you're coding as *components*. (Composer refers to them as [*packages*](https://getcomposer.org/doc/05-repositories.md#packages){:target="_blank"}; the terms component and package are equivalent.) A [Magento component](https://glossary.magento.com/Magento component) can be classified into the following *types*:
+We refer to what you're coding as *components*. (Composer refers to them as [*packages*](https://getcomposer.org/doc/05-repositories.md#packages){:target="_blank"}; the terms component and package are equivalent.) A [Magento component](https://glossary.magento.com/Magento-component) can be classified into the following *types*:
 
 *	[Module](https://glossary.magento.com/Module) (extend Magento capabilities)
 *	[Theme](https://glossary.magento.com/Theme) (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
-*	[Language package](https://glossary.magento.com/Language package) (localize the storefront and Admin)
+*	[Language package](https://glossary.magento.com/Language-package) (localize the storefront and Admin)
 
 You can *package* your components as follows:
 

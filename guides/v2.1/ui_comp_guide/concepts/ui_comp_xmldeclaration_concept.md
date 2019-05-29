@@ -16,7 +16,7 @@ Every [module](https://glossary.magento.com/module) that has view representation
 
 In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and sometimes [links to CSS and JS files]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css). There are other nodes as well, the most important for us now is the [`<referenceContainer/>` node]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref). (The `name` attribute in this node is responsible for the position of the container on the page.). [Basic]({{ page.baseurl }}/ui_comp_guide/bk-ui_comps.html#general-structure) UI components are declared in this node. All nested components are declared in the basic component instances configuration files (not in the page layouts).
 
-Example of a basic [UI component](https://glossary.magento.com/UI component) declaration:
+Example of a basic [UI component](https://glossary.magento.com/UI-component) declaration:
 
 ```xml
 <referenceContainer name="page-container">

@@ -449,7 +449,7 @@ Here is a class diagram of these classes:
 
 ## Logging {#logging}
 
-In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor [dependency injection](https://glossary.magento.com/dependency injection).
+In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor [dependency injection](https://glossary.magento.com/dependency-injection).
 
 <pre><code>class SomeClass
 {

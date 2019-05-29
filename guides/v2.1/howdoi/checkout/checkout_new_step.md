@@ -17,7 +17,7 @@ The default Magento [Checkout](https://glossary.magento.com/Checkout) consists o
  - Shipping Information
  - Review and Payments Information
 
-You can add a custom checkout step, it should be implemented as a [UI component](https://glossary.magento.com/UI component). For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate [module](https://glossary.magento.com/module).
+You can add a custom checkout step, it should be implemented as a [UI component](https://glossary.magento.com/UI-component). For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate [module](https://glossary.magento.com/module).
 
 1. [Create the view part of the checkout step component](#create-view).
 2. [Add your step to the Checkout page layout](#checkout).

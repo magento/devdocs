@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Declare a custom UI component
 ---
 
-Declaring a custom [UI component](https://glossary.magento.com/UI component) refers to creating the [XML](https://glossary.magento.com/XML) configuration of your custom component, and is a part of a bigger task of creating a custom UI component.
+Declaring a custom [UI component](https://glossary.magento.com/UI-component) refers to creating the [XML](https://glossary.magento.com/XML) configuration of your custom component, and is a part of a bigger task of creating a custom UI component.
 
 This topic describes the XML elements that must be used for declaring a custom component and where this declaration should be placed.  
 

@@ -9,7 +9,7 @@ Indexing is how Magento transforms data such as products and categories, to impr
 
 For example, if you change the price of an item from $4.99 to $3.99. Magento must reindex the price change to display it on your storefront.
 
-Without indexing, Magento would have to calculate the price of every product on the fly, taking into account [shopping cart](https://glossary.magento.com/shopping cart) price rules, bundle pricing, discounts, tier pricing, etc. Loading the price for a product would take a long time, possibly resulting in cart abandonment.
+Without indexing, Magento would have to calculate the price of every product on the fly, taking into account [shopping cart](https://glossary.magento.com/shopping-cart) price rules, bundle pricing, discounts, tier pricing, etc. Loading the price for a product would take a long time, possibly resulting in cart abandonment.
 
 ## Indexing terminology
 
@@ -100,7 +100,7 @@ Reindexing can be performed in two modes:
 
 To set these options:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/Magento Admin).
+1.	Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin).
 2.	Click **System >** Tools **> Index Management**.
 3.	Select the checkbox next to each type of indexer to change.
 4.	From the **Actions** list, click the indexing mode.

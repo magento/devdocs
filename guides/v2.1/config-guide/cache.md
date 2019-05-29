@@ -31,7 +31,7 @@ Magento uses the following caching terminology:
 
 This topic discusses the following options for configuring caching:
 
-*   Modifying the provided `default` cache frontend, which means you modify only `<magento_root>/app/etc/di.xml` (the Magento application's global [dependency injection](https://glossary.magento.com/dependency injection) configuration)
+*   Modifying the provided `default` cache frontend, which means you modify only `<magento_root>/app/etc/di.xml` (the Magento application's global [dependency injection](https://glossary.magento.com/dependency-injection) configuration)
 *   Configuring your own custom cache frontend, which means you modify only `<magento_root>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
 {:.bs-callout .bs-callout-info}

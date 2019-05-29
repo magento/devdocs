@@ -163,7 +163,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 The subtotal of the order is $160, and shipping charges are $5. The grand total is $165.
 
-The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment method) in the next step.
+The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
 
 {% collapsible Show code sample %}
 ```json
@@ -341,6 +341,6 @@ If you tried this call on your own, and the value of the `shipping_amount` param
 
 ### Verify this step {#verify-step}
 
-[Sign in](https://glossary.magento.com/Sign in) as the customer and go to the checkout page.
+[Sign in](https://glossary.magento.com/Sign-in) as the customer and go to the checkout page.
 
 The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges have been calculated.

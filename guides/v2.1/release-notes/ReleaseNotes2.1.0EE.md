@@ -20,14 +20,14 @@ This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the
 
 Magento Magento Commerce 2.1.0 includes several new and exciting features:
 
-* **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, [CMS](https://glossary.magento.com/CMS) content, promotions, and pricing, and can preview these changes by date or [store view](https://glossary.magento.com/store view) to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
+* **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, [CMS](https://glossary.magento.com/CMS) content, promotions, and pricing, and can preview these changes by date or [store view](https://glossary.magento.com/store-view) to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
 
 
 * **Elasticsearch** is cutting edge search technology that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box and merchants can set ‘stop words’, search synonyms, and attribute weighting to deliver highly relevant search results..
 
 * **PayPal enhancements** include PayPal in-context [checkout](https://glossary.magento.com/checkout) and saved credit cards. In-context checkout helps to increase [conversion](https://glossary.magento.com/conversion) rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the [Admin](https://glossary.magento.com/Admin) interface.
 
-* **Braintree Hosted Fields** securely collect all sensitive payment information in checkout so merchants can qualify for the simplest set of PCI compliance requirements. Merchants retain complete control over their checkout style and [layout](https://glossary.magento.com/layout) because Braintree gathers credit card data using small, transparent iframes that replace individual payment fields. Braintree [settlement](https://glossary.magento.com/settlement) reports are now also conveniently available within the [Magento Admin](https://glossary.magento.com/Magento Admin).
+* **Braintree Hosted Fields** securely collect all sensitive payment information in checkout so merchants can qualify for the simplest set of PCI compliance requirements. Merchants retain complete control over their checkout style and [layout](https://glossary.magento.com/layout) because Braintree gathers credit card data using small, transparent iframes that replace individual payment fields. Braintree [settlement](https://glossary.magento.com/settlement) reports are now also conveniently available within the [Magento Admin](https://glossary.magento.com/Magento-Admin).
 
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
@@ -108,7 +108,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 51987-->* We've fixed the Add to Cart button translation. [ (GITHUB-4181)](https://github.com/magento/magento2/issues/4181){:target="_blank"}
 
 
-<!--- 40616 -->*  The [shopping cart](https://glossary.magento.com/shopping cart) for a registered user now returns a complete list of products.  
+<!--- 40616 -->*  The [shopping cart](https://glossary.magento.com/shopping-cart) for a registered user now returns a complete list of products.  
 
 <!--- 51259 -->*  You can now create a fixed amount discount for an entire cart.
 
@@ -145,7 +145,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 46720 -->* The Orders API now exposes Shipping Address. [ (GITHUB-2628)](https://github.com/magento/magento2/issues/2628){:target="_blank"}
 
-<!--- 52613 -->* The [Credit Memo](https://glossary.magento.com/Credit Memo) REST API now updates attributes as expected.  [ (GITHUB-4329)](https://github.com/magento/magento2/issues/4329){:target="_blank"}
+<!--- 52613 -->* The [Credit Memo](https://glossary.magento.com/Credit-Memo) REST API now updates attributes as expected.  [ (GITHUB-4329)](https://github.com/magento/magento2/issues/4329){:target="_blank"}
 
 <!--- 47451-->* The 'in' filter now works in list APIs (checked customer, product, product attributes).  [ (GITHUB-2892)](https://github.com/magento/magento2/issues/2892){:target="_blank"}
 
@@ -199,7 +199,7 @@ To work around this issue, run the following commands in the order shown:
 #### Gift cards
 {:.no_toc}
 
-<!--- 52275 -->* Merchants can now  edit [Gift Card](https://glossary.magento.com/Gift Card) Product.
+<!--- 52275 -->* Merchants can now  edit [Gift Card](https://glossary.magento.com/Gift-Card) Product.
 
 <!--- 50488-->* Fixed issue where customers could not purchase gift cards.
 
@@ -234,7 +234,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 51099-->* The PayPal Settlement report now works correctly.
 
 
-<!--- 50054-->* Magento now requires the [Merchant Account](https://glossary.magento.com/Merchant Account) ID field  in PayPal configuration.
+<!--- 50054-->* Magento now requires the [Merchant Account](https://glossary.magento.com/Merchant-Account) ID field  in PayPal configuration.
 
 <!--- 50024-->* Magento still displays products  in the mini shopping cart after guest checkout with PayPal Express.
 
@@ -259,7 +259,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 53237-->* You can now apply Gift Card Account/Discount Code on the review page.
 
 
-<!--- 53240-->* You can now check out  [virtual product](https://glossary.magento.com/virtual product) using Braintree.
+<!--- 53240-->* You can now check out  [virtual product](https://glossary.magento.com/virtual-product) using Braintree.
 
 <!--- 53798-->* The Braintree PayPal button is no longer active until checkout.
 
@@ -383,14 +383,14 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 50745-->* Loader now disappears as expected after you click  the Place Order button.
 
-<!--- 52262-->* Fixed error on checkout page when you changed [base currency](https://glossary.magento.com/base currency) at checkout.
+<!--- 52262-->* Fixed error on checkout page when you changed [base currency](https://glossary.magento.com/base-currency) at checkout.
 
 <!--- 50830 -->* Fixed problem with opening My Cart page in one-page checkout.
 
 #### Bundle products
 {:.no_toc}
 
-<!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a [Bundle product](https://glossary.magento.com/Bundle product).
+<!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a [Bundle product](https://glossary.magento.com/Bundle-product).
 
 <!--- 52832 -->* You can now include quotation marks in Bundle product names. [ (GITHUB-4414)](https://github.com/magento/magento2/issues/4414){:target="_blank"}
 
@@ -399,7 +399,7 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 47379-->* You can now successfully move Bundle products to the Wishlist. [ (GITHUB-2717)](https://github.com/magento/magento2/issues/2717){:target="_blank"}
 
 
-<!--- 45173-->* Bundle products created using [Web API](https://glossary.magento.com/Web API) are now visible on the storefront.
+<!--- 45173-->* Bundle products created using [Web API](https://glossary.magento.com/Web-API) are now visible on the storefront.
 
 <!--- 46695-->* Magento now saves the price for Bundle option items.
 
@@ -470,7 +470,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51278 -->* Magento no longer creates a new single update when you edit an existing update.
 
-<!--- 52963 -->* You can now create and successfully save a future update for a [downloadable product](https://glossary.magento.com/downloadable product) associated with links and file content.  
+<!--- 52963 -->* You can now create and successfully save a future update for a [downloadable product](https://glossary.magento.com/downloadable-product) associated with links and file content.  
 
 <!--- 51449 -->*  Update Staging product offline status now works.
 
@@ -499,7 +499,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 49314 -->*  Magento date pickers now take into account Magento timezone settings.  
 
-<!--- 49973 -->*  Update Preview for a [simple product](https://glossary.magento.com/simple product) now works.
+<!--- 49973 -->*  Update Preview for a [simple product](https://glossary.magento.com/simple-product) now works.
 
 <!--- 51093 -->*  Magento now displays the "Is Active" flag for the Catalog rule when Staging is enabled.
 
@@ -578,7 +578,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 52104-->* You can now remove an entity update.
 
-<!--- 52057-->* Magento now displays attributes when you choose another [attribute set](https://glossary.magento.com/attribute set) in Staging Update.
+<!--- 52057-->* Magento now displays attributes when you choose another [attribute set](https://glossary.magento.com/attribute-set) in Staging Update.
 
 <!--- 52576-->* The Catalog Price Rule now works as expected.
 
@@ -659,7 +659,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 49939 -->*  You can now assign a CMS page to multiple storeviews.
 
-<!--- 49001 -->*  The [Search Engine Optimization](https://glossary.magento.com/Search Engine Optimization) fieldset no longer displays Category url_key.
+<!--- 49001 -->*  The [Search Engine Optimization](https://glossary.magento.com/Search-Engine-Optimization) fieldset no longer displays Category url_key.
 <!--- 49154 -->*  You can now successfully create a new update on 'custom store view'.
 <!--- 48588 -->*  You can now add a new row to a Custom Option of Input Type when editing a simple product.
 
@@ -683,17 +683,17 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 54228 -->* Varnish cache is no longer disabled on most HTML requests.
 
-<!--- 54214 -->* You can now place orders using the Payflow Pro [payment method](https://glossary.magento.com/payment method).
+<!--- 54214 -->* You can now place orders using the Payflow Pro [payment method](https://glossary.magento.com/payment-method).
 
 <!--- 54182 -->* You can now place an order for an item for an amount that exceeds half of item's stock.  
 
 <!--- 52612 -->* CLI is affected by the permissions configuration setting in server config.
 
-<!--- 53342 -->* Magento no longer duplicates URL keys during the creation of a [configurable product](https://glossary.magento.com/configurable product).
+<!--- 53342 -->* Magento no longer duplicates URL keys during the creation of a [configurable product](https://glossary.magento.com/configurable-product).
 
 <!--- 51592 -->* Single tenant compiler now works when Magento is not installed.
 
-<!--- 51834 -->* Maestro credit cards can now pass validation on the application [server side](https://glossary.magento.com/server side).
+<!--- 51834 -->* Maestro credit cards can now pass validation on the application [server side](https://glossary.magento.com/server-side).
 
 <!--- 50507 -->* You can now successfully rest the Product Attributes mass update Admin form.
 
@@ -713,7 +713,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 54092 -->* We now include `.gitignore` as part of the project package. [ (GITHUB-4358)](https://github.com/magento/magento2/issues/4358){:target="_blank"}
 
-<!--- 46022 -->*  The PHP [code migration](https://glossary.magento.com/code migration) tool no longer fails with this error:  "Call to a member function xpath() on a non-object".
+<!--- 46022 -->*  The PHP [code migration](https://glossary.magento.com/code-migration) tool no longer fails with this error:  "Call to a member function xpath() on a non-object".
 
 <!--- 46807 -->*  You can now add new Content CMS New Blocks.
 
@@ -867,7 +867,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 47267-->* URL Rewrites now work for products that you access through the category landing pages.
 <!--- 47844-->* Magento now displays  customer attribute options on the Attribute Edit page.
-<!--- 47064-->* Fixed issue with JaveScript errors when loading the product grid after cleaning the cache and [static files](https://glossary.magento.com/static files).
+<!--- 47064-->* Fixed issue with JaveScript errors when loading the product grid after cleaning the cache and [static files](https://glossary.magento.com/static-files).
 
 <!--- 51074-->* Product images now switch as expected when  you click on a swatch.
 <!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog [Event](https://glossary.magento.com/Event) change in the Product page and Advance Inventory changes.  
@@ -950,7 +950,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 50366-->* Magento now creates a new attribute set as expected after you use the Configurable Product wizard to create a new product.
 
-<!--- 50025-->* The checkout page now loads correctly after you add an [extension attribute](https://glossary.magento.com/extension attribute) to CartItemInterface.  [ (GITHUB-3640)](https://github.com/magento/magento2/issues/3640){:target="_blank"}
+<!--- 50025-->* The checkout page now loads correctly after you add an [extension attribute](https://glossary.magento.com/extension-attribute) to CartItemInterface.  [ (GITHUB-3640)](https://github.com/magento/magento2/issues/3640){:target="_blank"}
 
 <!--- 50195-->* The Admin URL is no longer indexed in Google.
 
@@ -1022,14 +1022,14 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 49559-->* Online payment methods now display as expected when you place an order for a  virtual product as a guest.
 
-<!--- 49538-->* You can now  dynamically switch [product types](https://glossary.magento.com/product types) when creating a new product.
+<!--- 49538-->* You can now  dynamically switch [product types](https://glossary.magento.com/product-types) when creating a new product.
 
 <!--- 49520-->* You can now create a credit memo when placing an order using Eway payment method when the  payment action setting is set to Authorize only.
 
 
 <!--- 49389-->* Setting category permissions to DENY now hides the category as expected.
 
-<!--- 48240-->* Fixed issue with the display of forms incorporating new [UI component](https://glossary.magento.com/UI component) in  Single-Store mode.
+<!--- 48240-->* Fixed issue with the display of forms incorporating new [UI component](https://glossary.magento.com/UI-component) in  Single-Store mode.
 
 <!--- 49349-->* You can now save bookmarks you've created in Admin data tables.
 
@@ -1103,7 +1103,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 53320-->* Invoice amounts now display the currency symbol of the currency used on the store view.
 
-<!--- 53395-->* Magento no longer displays Payment Review [order status](https://glossary.magento.com/order status)  to the customer after the Authorize.net  Fraud filters are triggered.
+<!--- 53395-->* Magento no longer displays Payment Review [order status](https://glossary.magento.com/order-status)  to the customer after the Authorize.net  Fraud filters are triggered.
 
 <!--- 52552-->* Invoice status now reflects the status of the captured saved invoice. [ (GITHUB-4385)](https://github.com/magento/magento2/issues/4385){:target="_blank"}
 
@@ -1148,7 +1148,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 46014-->* Magento now displays error messages on the page where the error occurred.
 
-<!--- 52928-->* Fixed issue with rendering of the category permissions [landing page](https://glossary.magento.com/landing page)  config control.
+<!--- 52928-->* Fixed issue with rendering of the category permissions [landing page](https://glossary.magento.com/landing-page)  config control.
 <!--- 53178-->* Magento now caches catalog event statuses when event status changes.
 
 <!--- 54172-->* Magento now creates product URL rewrites as expected on mass update to a new website.

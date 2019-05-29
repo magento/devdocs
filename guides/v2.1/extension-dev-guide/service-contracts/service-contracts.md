@@ -16,7 +16,7 @@ To address these issues, the Magento system introduces _service contracts_.
 
 ## What is a service contract? {#what-is-msc}
 
-<p>A [service contract](https://glossary.magento.com/service contract) is a set of [PHP](https://glossary.magento.com/PHP) interfaces that are defined for a [module](https://glossary.magento.com/module).
+<p>A [service contract](https://glossary.magento.com/service-contract) is a set of [PHP](https://glossary.magento.com/PHP) interfaces that are defined for a [module](https://glossary.magento.com/module).
    A service contract includes <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html#data-interfaces">data interfaces</a>, which preserve data integrity, and <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html#service-interfaces">service interfaces</a>, which hide business logic details from service requestors such as controllers, web services, and other modules.
 </p>
 <p>If developers define data and service interfaces according to a set of <a href="{{ page.baseurl }}/extension-dev-guide/service-contracts/design-patterns.html">design patterns</a>, the result is a well-defined, durable [API](https://glossary.magento.com/API) that other modules and third-party extensions can implement through Magento models and resource models.
@@ -31,7 +31,7 @@ To address these issues, the Magento system introduces _service contracts_.
 <p>Data entities are a side benefit of service contracts.
    The database tables that normally support these entities can be complicated.
    For example, some attributes might be stored in an EAV table, so a set of MySQL database tables might define a single data [entity](https://glossary.magento.com/entity).
-   Data entities in a service contract reveal a simpler data model than the data model in an underlying relational [database schema](https://glossary.magento.com/database schema).
+   Data entities in a service contract reveal a simpler data model than the data model in an underlying relational [database schema](https://glossary.magento.com/database-schema).
    Eventually, you will be able to use different storage technologies for different data collections. For example, you could use a NoSQL database to replace product tables.
 </p>
 

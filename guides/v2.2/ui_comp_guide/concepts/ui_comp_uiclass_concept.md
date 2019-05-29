@@ -17,7 +17,7 @@ The uiClass class introduces the architecture of UI components through the follo
    As an example:
     %componentName%.extend(%JavaScript_extender_object%);
 
-* The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent [UI component](https://glossary.magento.com/UI component). This resulting configuration is then set as first level properties in the current UI component instance.
+* The `initConfig()` method processes the UI component's configurations. The `initConfig()` method gets as a parameter the JavaScript configuration object, which is then merged with the default configuration (declared in the UI Component that calls the `initConfig()` method) and in the parent [UI component](https://glossary.magento.com/UI-component). This resulting configuration is then set as first level properties in the current UI component instance.
 
   As an example:
 

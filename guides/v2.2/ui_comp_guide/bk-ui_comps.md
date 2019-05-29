@@ -55,7 +55,7 @@ With Magento, you may apply different approaches to implementing a UI element, a
 
 * [jQuery](https://glossary.magento.com/jQuery) [widget](https://glossary.magento.com/widget)
 
-* Magento 2 [UI component](https://glossary.magento.com/UI component)
+* Magento 2 [UI component](https://glossary.magento.com/UI-component)
 
 We recommend using UI components as much as possible and tend to do the same in Magento core.
 

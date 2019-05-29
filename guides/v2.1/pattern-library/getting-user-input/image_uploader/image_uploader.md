@@ -6,7 +6,7 @@ The Image uploader provides the ability for users to upload a single image, or g
 
 ## When to Use
 
-When it is desirable to allow users to upload a single image or multiple images for display within the [Magento Admin](https://glossary.magento.com/Magento Admin) or on the [Storefront](https://glossary.magento.com/Storefront).
+When it is desirable to allow users to upload a single image or multiple images for display within the [Magento Admin](https://glossary.magento.com/Magento-Admin) or on the [Storefront](https://glossary.magento.com/Storefront).
 
 ## When Not to Use
 

@@ -61,9 +61,9 @@ The following entities have new forms and design:
 - Product
 - [Category](https://glossary.magento.com/Category)
 - CMS Page
-- [CMS Block](https://glossary.magento.com/CMS Block)
+- [CMS Block](https://glossary.magento.com/CMS-Block)
 - Sales Rule
-- [Catalog Rules](https://glossary.magento.com/Catalog Rules)
+- [Catalog Rules](https://glossary.magento.com/Catalog-Rules)
 
 {: .bs-callout .bs-callout-info }
 **Important information:** Customizations that were performed with the old forms of the listed entities will be lost.
@@ -72,7 +72,7 @@ The following entities have new forms and design:
 
 ### Staging ({{site.data.var.ee}} Only)
 
-The Staging modules introduce [database schema](https://glossary.magento.com/database schema) changes for the following entities:
+The Staging modules introduce [database schema](https://glossary.magento.com/database-schema) changes for the following entities:
 
 - Products
 - Categories

@@ -98,7 +98,7 @@ Example ([vault_cards_listaction.xml]({{ site.mage2bloburl }}/{{ page.guide_vers
 </page>
 ```
 
-In this example the default `credit_card.phtml` vault template is used. But you can create and specify a custom template. Add the template in the [payment method](https://glossary.magento.com/payment method) [module](https://glossary.magento.com/module).
+In this example the default `credit_card.phtml` vault template is used. But you can create and specify a custom template. Add the template in the [payment method](https://glossary.magento.com/payment-method) [module](https://glossary.magento.com/module).
 
 ## What's next
  [Using stored tokens to place order from Admin panel]({{ page.baseurl }}/payments-integrations/vault/admin-integration.html).

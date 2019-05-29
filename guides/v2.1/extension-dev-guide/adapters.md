@@ -143,7 +143,7 @@ class CiconiaParser implements AdapterInterface
 
 <br/>
 
-The following [dependency injection](https://glossary.magento.com/dependency injection) entries belong in the `di.xml` file.
+The following [dependency injection](https://glossary.magento.com/dependency-injection) entries belong in the `di.xml` file.
 They describe to the ObjectManager how to create the third-party and adapter classes.
 
 ```xml

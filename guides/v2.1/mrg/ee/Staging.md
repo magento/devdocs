@@ -20,7 +20,7 @@ You can work with the following entities out of the box:
 - Product
 - [Category](https://glossary.magento.com/Category)
 - [Catalog](https://glossary.magento.com/Catalog) Price Rule
-- [Shopping Cart](https://glossary.magento.com/Shopping Cart) Price Rule
+- [Shopping Cart](https://glossary.magento.com/Shopping-Cart) Price Rule
 - [CMS](https://glossary.magento.com/CMS) Block
 - CMS Page
 
@@ -121,7 +121,7 @@ Staging preview enables you to use the following functionality:
 
 - View a store on certain future date and time with all corresponding updates applied
 - View and manage a timeline with all future campaigns
-- Change a [website](https://glossary.magento.com/website) and a [store view](https://glossary.magento.com/store view)
+- Change a [website](https://glossary.magento.com/website) and a [store view](https://glossary.magento.com/store-view)
 - Add product to cart and proceed with [checkout](https://glossary.magento.com/checkout) till "Submit Order" step
 
 Note that you cannot create an order in a preview mode, use layered navigation and search.
@@ -274,7 +274,7 @@ When update is applied, the indexer handles it according to the actual indexing 
 
 ### Data migration
 
-The Magento_Staging module uses the `\Magento\Staging\Setup\BasicSetup` class during installation. This class changes [database schema](https://glossary.magento.com/database schema) and migrates data.
+The Magento_Staging module uses the `\Magento\Staging\Setup\BasicSetup` class during installation. This class changes [database schema](https://glossary.magento.com/database-schema) and migrates data.
 
 #### Migration of attributes with range
 

@@ -14,7 +14,7 @@ functional_areas:
 
 ## Step 1: Define a cache frontend {#cache-mage-frontend}
 
-The Magento application has a `default` cache [frontend](https://glossary.magento.com/frontend) you can use for any [cache type]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over). This section discusses how to optionally define a [cache frontend](https://glossary.magento.com/cache frontend) with a different name, which is preferable if you expect to customize your frontend.
+The Magento application has a `default` cache [frontend](https://glossary.magento.com/frontend) you can use for any [cache type]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over). This section discusses how to optionally define a [cache frontend](https://glossary.magento.com/cache-frontend) with a different name, which is preferable if you expect to customize your frontend.
 
 {:.bs-callout .bs-callout-info}
 To use the `default` cache type, you don't need to modify `env.php` at all; you modify Magento's global `di.xml`. See the topics referenced in [Low-level cache options]({{ page.baseurl }}/config-guide/cache/cache-options.html).
@@ -66,7 +66,7 @@ You can specify frontend and [backend](https://glossary.magento.com/backend) cac
 
 where
 
-*   `<frontend_type>` is the low-level frontend [cache type](https://glossary.magento.com/cache type). Specify the name of a class that is compatible with [Zend\Cache\Core](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html){:target="_blank"}.
+*   `<frontend_type>` is the low-level frontend [cache type](https://glossary.magento.com/cache-type). Specify the name of a class that is compatible with [Zend\Cache\Core](http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html){:target="_blank"}.
 
     If you omit `<frontend_type>`, [Magento\Framework\Cache\Core]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Cache/Core.php){:target="_blank"} is used.
 *   `<frontend_option>`, `<frontend_option_value>` are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation.

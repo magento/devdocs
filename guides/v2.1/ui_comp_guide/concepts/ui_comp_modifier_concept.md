@@ -5,7 +5,7 @@ title: About PHP modifiers in UI components
 
 ## What's in this topic
 
-This topic describes how to use [PHP](https://glossary.magento.com/PHP) modifiers that are the server-side part of [UI components configuration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when [static declaration in XML configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{ page.baseurl }}/howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain [product types](https://glossary.magento.com/product types).
+This topic describes how to use [PHP](https://glossary.magento.com/PHP) modifiers that are the server-side part of [UI components configuration]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html). Using modifiers is optional and might be necessary when [static declaration in XML configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the [default product creation form]({{ page.baseurl }}/howdoi/customize_product.html), for which the modifier is a place where validations are added to display only certain fields for certain [product types](https://glossary.magento.com/product-types).
 
 ## General implementation overview
 

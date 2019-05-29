@@ -61,7 +61,7 @@ The preceding example declares the following types:
 
 ### Virtual types
 
-A [virtual type](https://glossary.magento.com/virtual type) allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
+A [virtual type](https://glossary.magento.com/virtual-type) allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
 This allows you to use a customized class without affecting other classes that have a dependency on the original.
 
 The example creates a virtual type for `Magento\Core\Model\Config` and specifies `system` as the constructor argument for `type`.

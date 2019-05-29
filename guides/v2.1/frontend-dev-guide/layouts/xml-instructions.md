@@ -20,7 +20,7 @@ For example, layout changes added to `app/code/Vendor/Module/view/frontend/layou
 To add layout changes to a specific page, use a layout file that corresponds to the page's path. 
 For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` file are loaded on the product details page.
 
-Use these [layout instructions](https://glossary.magento.com/layout instructions) to:
+Use these [layout instructions](https://glossary.magento.com/layout-instructions) to:
 *  Move a page element to another parent element.
 *  Add content.
 *  Remove a page element.

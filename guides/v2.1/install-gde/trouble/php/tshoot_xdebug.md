@@ -21,6 +21,6 @@ During the installation, a  message similar to the following displays:
 
 ### Solution
 
-There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the [storefront](https://glossary.magento.com/storefront) or [Magento Admin](https://glossary.magento.com/Magento Admin) after installation.
+There is a known issue with <code>xdebug</code> that can affect Magento installations or access to the [storefront](https://glossary.magento.com/storefront) or [Magento Admin](https://glossary.magento.com/Magento-Admin) after installation.
 
 For details, see [Known issue with xdebug]({{ page.baseurl }}/install-gde/trouble/tshoot_install-issues.html).

@@ -30,7 +30,7 @@ The smallest working `module.xml` file would look something like this:
 </config>
 ```
 
-The `name` parameter defines the name of your component. It is required for all components. If you do not use [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html)  to help manage the installation and upgrade processes for your component, then you must also add the  `setup_version` parameter to the `module` line. Set the `setup_version` value to your module's [database schema](https://glossary.magento.com/database schema) version. Omit the `setup_version` parameter if you implement Declarative Schema.
+The `name` parameter defines the name of your component. It is required for all components. If you do not use [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html)  to help manage the installation and upgrade processes for your component, then you must also add the  `setup_version` parameter to the `module` line. Set the `setup_version` value to your module's [database schema](https://glossary.magento.com/database-schema) version. Omit the `setup_version` parameter if you implement Declarative Schema.
 
 {: .bs-callout .bs-callout-info}
 Avoid using "Ui" for your custom module name, because the `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
@@ -84,7 +84,7 @@ In this example:
 * `description` is a concise explanation of your component's purpose.
 * `require` lists any components your component depends on.
 * `suggest` lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. `Suggest` does not affect component load order.
-* `type` determines what the [Magento component](https://glossary.magento.com/Magento component) type. Choose from *magento2-theme*, *magento2-language*, or *magento2-module*.
+* `type` determines what the [Magento component](https://glossary.magento.com/Magento-component) type. Choose from *magento2-theme*, *magento2-language*, or *magento2-module*.
 * `version` lists the version of the component.
 * `license` lists applicable licenses that apply to your component.
 * `autoload` instructs Composer to load the specified files.

@@ -21,7 +21,7 @@ See one of the following sections for possible solutions:
 
 ### Problem: you're not authenticated {#not-auth}
 
-You might not have entered your authentication keys in the [Magento Admin](https://glossary.magento.com/Magento Admin).
+You might not have entered your authentication keys in the [Magento Admin](https://glossary.magento.com/Magento-Admin).
 
 #### Solution
 

@@ -129,7 +129,7 @@ A link for keyboard users to skip navigation should be at the top of the page. I
 
 Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.
 
-#### Provide [alt text](https://glossary.magento.com/alt text) if icons or glyphs are used without text
+#### Provide [alt text](https://glossary.magento.com/alt-text) if icons or glyphs are used without text
 
 Cascading style sheets (CSS) for purely decorative images. Hyperlinked images without supporting text must be inline, with alternative text.
 

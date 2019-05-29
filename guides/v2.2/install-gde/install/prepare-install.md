@@ -35,7 +35,7 @@ For you to be able to run the Magento application, make sure you perform all tas
 
 Update installation dependencies as follows:
 
-1. Log in to your Magento server as the [Magento file system owner](https://glossary.magento.com/Magento file system owner) or [switch to that user]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Log in to your Magento server as the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner) or [switch to that user]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 2. Change to the Magento installation directory and run `composer install`. Examples:
 
     CentOS:

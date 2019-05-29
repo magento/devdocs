@@ -41,7 +41,7 @@ See [Magento UI Library Components]({{page.baseurl}}/ui-components/ui-component.
 
 A *pattern library* is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The [Magento Admin Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) defines examples of components that administrators working with the storefront can use.
 
-Form elements included in the [Magento Admin](https://glossary.magento.com/Magento Admin) pattern library include:
+Form elements included in the [Magento Admin](https://glossary.magento.com/Magento-Admin) pattern library include:
 
 * address form
 * button bar

@@ -16,7 +16,7 @@ When talking about testing in Magento 2, we have to distinguish between differen
   For more information, see the [Functional Testing Framework Guide]({{ page.baseurl }}/mtf/mtf_introduction.html).
 
 ## API Functional 
-  The Web [API](https://glossary.magento.com/API) testing framework enables you to test the Magento [Web API](https://glossary.magento.com/Web API) from the client application point of view.
+  The Web [API](https://glossary.magento.com/API) testing framework enables you to test the Magento [Web API](https://glossary.magento.com/Web-API) from the client application point of view.
   
   For more information, see the [Web API functional testing]({{ page.baseurl }}/get-started/web-api-functional-testing.html).
   

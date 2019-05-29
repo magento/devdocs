@@ -24,7 +24,7 @@ We also accept [Community Engineering contributions] using CrowdIn for translati
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 
-You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language packages).
+You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-packages).
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
 

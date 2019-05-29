@@ -11,7 +11,7 @@ The `Catalog` module provides functionality for creating and maintaining product
 
 ## Categories
 
-When you create a [category](https://glossary.magento.com/category) from Admin, you have the option to configure display and [search engine optimization](https://glossary.magento.com/search engine optimization) settings. To configure these settings using `POST V1/categories`, you can specify the following parameters as `attribute_code` values:
+When you create a [category](https://glossary.magento.com/category) from Admin, you have the option to configure display and [search engine optimization](https://glossary.magento.com/search-engine-optimization) settings. To configure these settings using `POST V1/categories`, you can specify the following parameters as `attribute_code` values:
 
 ```
 all_children

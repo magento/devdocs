@@ -18,8 +18,8 @@ Manually clearing the browser cache works if you are a [website](https://glossar
 
 ### Static content signing
 
-[Static content](https://glossary.magento.com/Static content) signing is a Magento feature that allows you to invalidate the browser cache for static resources.
-Magento accomplishes this by adding a deployment version to the URL of [static files](https://glossary.magento.com/static files).
+[Static content](https://glossary.magento.com/Static-content) signing is a Magento feature that allows you to invalidate the browser cache for static resources.
+Magento accomplishes this by adding a deployment version to the URL of [static files](https://glossary.magento.com/static-files).
 
 The following is an example of a URL signed with a version:
 

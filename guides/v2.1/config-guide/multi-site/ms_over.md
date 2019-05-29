@@ -18,7 +18,7 @@ A single instance of the {{site.data.var.ee}} software enables you to start mult
 -  Products
 -  Currencies
 
-This flexible solution enables one Magento codebase and [Magento Admin](https://glossary.magento.com/Magento Admin) to administer and display different stores. You configure the websites, stores, and store views in the Magento Admin panel. Use certain variables in virtual hosts to start the Magento application using these websites or store views.
+This flexible solution enables one Magento codebase and [Magento Admin](https://glossary.magento.com/Magento-Admin) to administer and display different stores. You configure the websites, stores, and store views in the Magento Admin panel. Use certain variables in virtual hosts to start the Magento application using these websites or store views.
 
 A typical use is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another set of categories and products on a separate domain in a different language.
 

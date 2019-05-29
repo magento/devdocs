@@ -11,7 +11,7 @@ functional_areas:
 
 ## Prerequisite {#instgde-install-uninst-theme-prereq}
 
-Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of `<magento_root>/app/design/<area name>`. You must specify the path to the theme starting with the area, which is either `frontend` (for storefront themes) or `adminhtml` (for [Magento Admin](https://glossary.magento.com/Magento Admin) themes).
+Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of `<magento_root>/app/design/<area name>`. You must specify the path to the theme starting with the area, which is either `frontend` (for storefront themes) or `adminhtml` (for [Magento Admin](https://glossary.magento.com/Magento-Admin) themes).
 
 For example, the path to the Luma [theme](https://glossary.magento.com/theme) provided with Magento 2 is `frontend/Magento/luma`.
 
@@ -96,4 +96,4 @@ Messages similar to the following display:
 	Disabling maintenance mode
 
 {: .bs-callout .bs-callout-info }
-To uninstall a Magento [Admin](https://glossary.magento.com/Admin) theme, you must also remove it from your component's [dependency injection](https://glossary.magento.com/dependency injection) configuration, `<component root directory>/etc/di.xml`.
+To uninstall a Magento [Admin](https://glossary.magento.com/Admin) theme, you must also remove it from your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration, `<component root directory>/etc/di.xml`.

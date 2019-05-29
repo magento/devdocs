@@ -7,11 +7,11 @@ functional_areas:
 ---
 ## What's in this topic {#favicon-intro}
 
-This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Magento Admin](https://glossary.magento.com/Magento Admin).
+This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Magento Admin](https://glossary.magento.com/Magento-Admin).
 
 ## Prerequisites
 
-1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static files) are cached by Magento.
+1. [Set]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html). The application mode influences the way [static files](https://glossary.magento.com/static-files) are cached by Magento.
 2. [Create a custom theme for the Admin panel]({{ page.baseurl }}/frontend-dev-guide/themes/admin_theme_create.html).
 3. [Add a new custom module]({{ page.baseurl }}/extension-dev-guide/build/build.html) or decide to use existing custom module. The module must load after the Magento_Theme module. To ensure this, add the following code in `<your_custom_module_dir>/etc/module.xml` (replace placeholders with your [module](https://glossary.magento.com/module) information):
 

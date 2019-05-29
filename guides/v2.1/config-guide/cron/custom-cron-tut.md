@@ -228,7 +228,7 @@ For a description of what the options mean, see [Configure custom cron jobs and 
 
 ## Step 7 (optional): Verify your custom cron group
 
-This step shows how to verify your custom cron group using the [Magento Admin](https://glossary.magento.com/Magento Admin).
+This step shows how to verify your custom cron group using the [Magento Admin](https://glossary.magento.com/Magento-Admin).
 
 {% collapsible To verify your custom cron group: %}
 

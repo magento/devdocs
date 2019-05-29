@@ -31,7 +31,7 @@ To implement shipping address rendering in checkout, you need to take the follow
 
 ## Step 1: Create the JS renderer component (shipping address renderer) {#create}
 
-Your shipping address renderer must be implemented as a [JavaScript](https://glossary.magento.com/JavaScript) [UI component](https://glossary.magento.com/UI component). That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
+Your shipping address renderer must be implemented as a [JavaScript](https://glossary.magento.com/JavaScript) [UI component](https://glossary.magento.com/UI-component). That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html). Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 

@@ -39,7 +39,7 @@ You can also [extend] or [override] these files in your custom theme.
 
 ## Layout handles {#layout-over-terms}
 
-A *layout handle* is a uniquely identified set of [layout instructions](https://glossary.magento.com/layout instructions) that serves as a name of a layout file.
+A *layout handle* is a uniquely identified set of [layout instructions](https://glossary.magento.com/layout-instructions) that serves as a name of a layout file.
 
 There are three kinds of layout handles:
 

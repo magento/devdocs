@@ -13,7 +13,7 @@ functional_areas:
 
 To run the [Module](https://glossary.magento.com/Module) Manager:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/Magento Admin) as an administrator.
+1.	Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
 3.	Click **Module Manager**.
 
