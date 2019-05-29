@@ -3,20 +3,26 @@
 #
 # This custom plugin dynamically sets the 'versions' parameter
 # for a page at any '/guides/v<...>/' directory.
-# The pararmeter is available as a liquid expression {{ page.versions }}.
+# The parameter is available as a liquid expression {{ page.versions }}.
 # It stores an array of hashes like [ { 'name' => '2.1', 'url' = guides/v2.1/index.html }, { 'name' => '2.2', 'url' = guides/v2.2/index.html }, etc ].
 # The parameter contains all available versions of the topic.
 #
+# For all pages outside '/guides/v<...>/', the 'page.versionless' parameter is set to true.
+#
 Jekyll::Hooks.register :pages, :pre_render do |page, config|
   # Process only files with 'md' and 'html' extensions
-  next unless File.extname(page.path).match?(/md|html/)
+  next page unless File.extname(page.path).match?(/md|html/)
 
   #  Do nothing for redirects
-  next if page.name == 'redirect.html'
+  next page if page.name == 'redirect.html'
 
   # Process only pages that have URL starting with '/guides/v'
   filtering_pattern = '/guides/v'
-  next unless page.url.start_with? filtering_pattern
+
+  unless page.url.start_with? filtering_pattern
+    page.data['versionless'] = true
+    next page
+  end
 
   # Get all page objects at the site
   pages = page.site.pages
