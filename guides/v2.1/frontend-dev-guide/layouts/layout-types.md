@@ -14,6 +14,8 @@ All page layouts used for page rendering should be declared in the page layout d
 
 Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, [blocks of particular classes]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-overview.html) and containers.
 
+The page layout is specified in a layout XML file, in the root `<page>` node using the it layout argument.
+
 We also distinguish the third type of layout files, *generic layouts*. They are .xml files which define the contents and detailed structure inside the `<body>` section of the HTML page markup. These files are used for pages returned by AJAX requests, emails, HTML snippets and so on.
 
 This article gives a comprehensive description of each layout file type.
