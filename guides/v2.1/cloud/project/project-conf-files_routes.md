@@ -142,14 +142,14 @@ http://{default}/:
     type: redirect
 https://{default}/:
     cache:
-      cookies: [""]
-      default_ttl: 0
-      enabled: true
-      headers:
-      - Accept
-      - Accept-Language
+        cookies: [""]
+        default_ttl: 0
+        enabled: true
+        headers:
+            - Accept
+            - Accept-Language
     ssi:
-      enabled: false
+        enabled: false
     type: upstream
     upstream: php:http
 ```

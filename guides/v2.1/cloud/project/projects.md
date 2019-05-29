@@ -57,7 +57,7 @@ Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), 
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
-* [New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.ece}}.
+* [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
 
 To review your integration tokens, IDs, and more:
 

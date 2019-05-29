@@ -36,15 +36,15 @@ To configure notifications:
     ```yaml
     log:
       slack:
-          token: "<your-slack-token>"
-          channel: "<your-slack-channel>"
-          username: "SlackHandler"
-          min_level: "info"
+        token: "<your-slack-token>"
+        channel: "<your-slack-channel>"
+        username: "SlackHandler"
+        min_level: "info"
       email:
-          to: <your-email>
-          from: <your-email>
-          subject: "Log notification from Magento Cloud"
-          min_level: "notice"
+        to: <your-email>
+        from: <your-email>
+        subject: "Log notification from Magento Cloud"
+        min_level: "notice"
     ```
 
     {:.bs-callout .bs-callout-info}
@@ -67,10 +67,10 @@ The following example shows a Slack-only configuration:
 ```yaml
 log:
   slack:
-      token: "<your-slack-token>"
-      channel: "<your-slack-channel>"
-      username: "SlackHandler"
-      min_level: "info"
+    token: "<your-slack-token>"
+    channel: "<your-slack-channel>"
+    username: "SlackHandler"
+    min_level: "info"
 ```
 
 -   `token`—Your Slack [user token](https://api.slack.com/docs/token-types#user). Your user token authorizes {{site.data.var.ece}} to send messages.
@@ -88,10 +88,10 @@ The following example shows an email-only configuration:
 ```yaml
 log:
   email:
-      to: <your-email>
-      from: <your-email>
-      subject: "Log notification from Magento Cloud"
-      min_level: "notice"
+    to: <your-email>
+    from: <your-email>
+    subject: "Log notification from Magento Cloud"
+    min_level: "notice"
 ```
 
 -   `to`—Email address {{site.data.var.ece}} sends notification messages.
