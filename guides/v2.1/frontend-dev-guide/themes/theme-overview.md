@@ -24,6 +24,14 @@ Your new theme can be a standalone new theme, or it can inherit from the default
 
 ![Themes flow]({{ site.baseurl }}/common/images/fdg/create_install_theme.png)
 
+## Difference between Parent and child theme
+
+* A Child theme inherits view configuration, templates, layouts and static file from its parents
+
+* A Child theme is currently selected whereas the parent theme is only indirectly active ( its static file, layout, templates will be used if not overridden by the child theme)
+
+*Any theme can be chosen to display whether or not specifies a parent theme in theme.xml
+
 
 
 [inherit other required files from a parent theme]: {{page.baseurl}}/frontend-dev-guide/themes/theme-inherit.html
