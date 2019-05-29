@@ -14,6 +14,16 @@ There are two possible ways to customize page layout in Magento:
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files. 
 
+## Change layout using admin configuration of below pages
+
+* CMS pages
+* Categories
+* Products
+
+Above admin settings, under design tab you can change the layout of CMS Page, Categories Pages and Products Pages.
+
+![Change page layout from admin configuration]({{ page.baseurl }}/frontend-dev-guide/images/admin-layout-setting.png)
+
 ## Manage layouts
 
 To make layout changes available on every page, modify the `default.xml` file.
