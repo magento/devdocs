@@ -175,7 +175,7 @@ Sample of usage in layout:
 
 This would add a new column to the page layout.
 
-### block vs container {#block_vs_container}
+### block vs. container {#block_vs_container}
 
 A block represents the end of the chain in rendering HTML for Magento. Containers contain blocks and can wrap them in an HTML tag. Also, containers will not render any output if there are no children assigned to them.
 
