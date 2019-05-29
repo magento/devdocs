@@ -18,7 +18,9 @@ If you are interested in participating in Magento Community projects we welcome 
 
 ## Supported PHP versions {#php-support}
 
-{% include install/php_2.3.md %}
+<!--{% assign supported_php_versions = site.data.codebase.v2_3.open-source.composer_lock.platform.php | split: "||" %}-->
+{% include install/php-versions-template.md %}
+
 
 {:.bs-callout .bs-callout-info}
 If you must install both Apache and PHP, [install Apache]({{page.baseurl}}/install-gde/prereq/apache.html) first.
@@ -80,7 +82,7 @@ To install PHP 7.1 on CentOS 6 or 7:
 
 *CentOS 7*. Enter the following commands:
 
-  yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+  yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-15.ius.centos7.noarch.rpm
   yum -y update
 
 1. Install all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions):

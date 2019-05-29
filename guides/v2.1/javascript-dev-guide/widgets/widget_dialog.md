@@ -152,10 +152,24 @@ Customized public methods:
 -   [close()](#d_close)
 
 ### `open()` {#d_open}
+
 Beside default functionality, this method calls the `_mouseLeave()` and `_mouseEnter()` functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the `<body>` element.
 
+Invoke the open method:
+
+```javascript
+$("#element").dropdownDialog("open");
+```
+
 ### `close()` {#d_close}
+
 Beside default functionality, this method removes the classes from trigger and drop-down parent.Also clears the timeout if the latter exists.
+
+Invoke the close method:
+
+```javascript
+$("#element").dropdownDialog("close");
+```
 
 ## Code sample
 
@@ -194,7 +208,7 @@ The result is a dropdown dialog and a button (_Click Here_) that opens the dialo
 
 ![DropdownDialog Widget]({{ site.baseurl }}/common/images/widget/dropdown-dialog-widget-result.png)
 
-[lib/web/mage/dropdown.js]: {{ site.mage2000url }}lib/web/mage/dropdown.js
+[lib/web/mage/dropdown.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/dropdown.js
 [Initialize JavaScript]: {{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html
 [`position`]: http://api.jqueryui.com/dialog/#option-position
 [height]: http://api.jqueryui.com/dialog/#option-height

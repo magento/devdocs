@@ -70,7 +70,7 @@ The default responsive handler for the navigation widget.
 
 **Default value**: `'wrap'`
 
-**Accepted values**: `wrap`, `onResize`, `onLoad`
+**Accepted values**: `wrap`, `onResize`, `onReload`
 
 ## Methods {#navigation_methods}
 
@@ -86,5 +86,5 @@ Builds the more overflowing menu by cloning the main menu items.
 
 
 [jQuery UI Menu widget]: http://api.jqueryui.com/menu/
-[lib/web/mage/menu.js]: {{site.mage2000url}}lib/web/mage/menu.js
+[lib/web/mage/menu.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

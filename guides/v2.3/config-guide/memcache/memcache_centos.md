@@ -90,14 +90,14 @@ Create the MySQL database:
 
 At the `mysql` prompt, enter the following commands:
 
-    ```sql
-    create database memcache_test;
-    GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
-    use memcache_test;
-    create table example (id int, name varchar(30));
-    insert into example values (1, "new_data");
-    exit
-    ```
+```sql
+create database memcache_test;
+GRANT ALL ON memcache_test.* TO memcache_test@localhost IDENTIFIED BY 'memcache_test';
+use memcache_test;
+create table example (id int, name varchar(30));
+insert into example values (1, "new_data");
+exit
+```
 
 Create `cache-test.php` in your web server's docroot:
 
