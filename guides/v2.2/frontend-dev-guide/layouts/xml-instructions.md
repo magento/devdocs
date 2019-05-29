@@ -77,7 +77,7 @@ To pass parameters use the [`<argument></argument>`](#argument) instruction.
 A structure without content that holds other layout elements such as blocks and containers.
 
 **Details:** 
-A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. if the `<container>` is empty there are no child `<block>` available it won't be display in frontend source code. 
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to containers. Otherwise, it is given a random name.
