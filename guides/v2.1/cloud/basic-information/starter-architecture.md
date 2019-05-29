@@ -25,7 +25,7 @@ We highly recommend fully testing in your Staging environment and branch before 
 
 ## Staging branch and environment {#cloud-arch-stage}
 
-We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic, Blackfire, and search.
+We recommend creating a branch called `staging` from `master`. The Staging environment is created from the `staging` branch to provide a pre-production environment to test code, modules and extensions, payment gateways, shipping, product data, and much more. This environment provides the configuration for all services to match the Production environment including Fastly, New Relic APM, Blackfire, and search.
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into the Staging environment.
 
@@ -48,7 +48,7 @@ You can have up to **two** active Integration environments on a grid for **two**
 You can have an unlimited number of inactive branches to store code. To access, view, and test inactive branches, you must activate them.
 
 {:.bs-callout .bs-callout-info}
-The Integration environment does not support all services. For example, Fastly CDN and New Relic are not accessible in an Integration environment.
+The Integration environment does not support all services. For example, Fastly CDN is not accessible in an Integration environment.
 
 The process for developing in Integration requires the following process:
 
