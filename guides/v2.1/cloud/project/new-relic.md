@@ -46,9 +46,7 @@ See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Reli
 
 ## Configure New Relic
 
-Pro accounts are preconfigured to use the New Relic service; however, Starter accounts must add the New Relic service to the `.magento.app.yaml` configuration file and assign the license key to an environment variable. You can apply the New Relic license key to a maximum of three active environments.
-
-For Starter projects, check if the `.magento.app.yaml` file includes the New Relic extension in the `runtime` list. If not, then add the following:
+Pro accounts are preconfigured to use the New Relic service; however, Starter accounts need to verify that the New Relic service is configured properly. For Starter projects, check if the `.magento.app.yaml` file includes the New Relic extension in the `runtime` list. If not, then add the following:
 
 > .magento.app.yaml
 
@@ -58,9 +56,11 @@ runtime:
         - newrelic
 ```
 
-## New Relic license key
+## Manage license keys
 
-The {{site.data.var.ece}} Starter plans support up to three instances of your New Relic license across all environments. We recommend adding a New Relic license key to your Staging and Production environments, and you can add the license to one other environment of your choice. If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
+For Pro accounts, there is no need to apply the license key to any environments. This has already been done. You can log in to your New Relic account and verify connectivity.
+
+The {{site.data.var.ece}} Starter plan supports up to three instances of a New Relic license across all environments. For Starter projects, we recommend adding a New Relic license key to the Staging and Production (master) environments, and you can add the license key to one other environment of your choice. If you have more than three active environments using the same New Relic license key, you need to remove a license variable from an existing environment.
 
 #### To find your New Relic license key:
 
@@ -68,13 +68,13 @@ The {{site.data.var.ece}} Starter plans support up to three instances of your Ne
 
 1.  On the _Projects_ tab, find your project.
 
-1.  Click **View Details** to see the project provisioning information.
+1.  Click **View Details** to see the project plan information.
 
 1.  Expand the **NewRelic Service** section to view the license key.
 
 1.  Copy the license key.
 
-### Add a license key to an environment
+#### To add a license key to an environment:
 
 For Starter accounts, you need to use the license key and set a variable in the environment.
 
@@ -89,7 +89,9 @@ For Starter accounts, you need to use the license key and set a variable in the 
     {:.bs-callout .bs-callout-info}
     Adding a variable to an environment triggers a redeployment to update the environment variables and values. See [Working with variables]({{page.baseurl}}/cloud/env/working-with-variables.html).
 
-### Remove a license key from an environment
+1.  Log in to your New Relic account and verify it is receiving data.
+
+#### To remove a license key from an environment:
 
 1.  List environment variables.
 
@@ -140,9 +142,9 @@ All collected data details the time spent on an action transmitting data, querie
 
 To learn more about using and customizing New Relic services for your project, see [New Relic Infrastructure documentation](https://docs.newrelic.com/docs/infrastructure/new-relic-infrastructure/getting-started/introduction-new-relic-infrastructure)
 
-## New Relic and Blackfire
+### New Relic and Blackfire
 
-You can use the high-level data captured by New Relic APM to see what is happening in your application in realtime. The New Relic Insights helps to focus on events, transactions, regions, etcetera, to correlate data.  Also, with the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) you get a comprehensive view of your Magento store performance.
+You can use the high-level data captured by New Relic APM to see what is happening in your application in realtime. Combine that with the code-level data captured by the [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) and you get a comprehensive view of your Magento store performance.
 
 -  The New Relic worst-case requests are not averages, but edge cases; whereas, Blackfire provides more of the average worst-case requests.
 -  Blackfire is not detailed in determining and displaying queries giving you trouble, but you can use New Relic to find those.
