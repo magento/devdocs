@@ -99,7 +99,7 @@ To verify the extension installed properly, you can check its functionality in t
 1.  List all enabled modules:
 
     ```bash
-    php bin/magento module:status
+    bin/magento module:status
     ```
 
 1.  Verify the extension is listed.
@@ -121,25 +121,25 @@ Trying to enable and disable extensions not following this method can lead to pe
 1.  List all module.
 
     ```bash
-    php bin/magento module:status
+    bin/magento module:status
     ```
 
 1.  Enable a module.This command updates the `config.php` file with the enabled status of the module.
 
     ```bash
-    php bin/magento module:enable <module name>
+    bin/magento module:enable <module name>
     ```
 
 1.  Disable a module. This command updates the `config.php` file with the disable status of the module.
 
     ```bash
-    php bin/magento module:disable <module name>
+    bin/magento module:disable <module name>
     ```
 
 1.  Verify the status of a module:
 
     ```bash
-    php bin/magento module:status
+    bin/magento module:status
     ```
 
 1.  Push your updates to the Git branch.
