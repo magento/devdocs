@@ -175,6 +175,10 @@ kramdown:
   toc_levels: 2..3
   syntax_highlighter_opts:
     css_class: highlighter
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
 
 # Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
 #
