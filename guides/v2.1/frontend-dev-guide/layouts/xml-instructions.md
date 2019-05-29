@@ -33,7 +33,7 @@ Use the following layout instructions to customize your layout:
 * [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
-* [`<block vs container>`](#block_vs_container)
+* [`<block vs. container>`](#block_vs_container)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
