@@ -386,13 +386,10 @@ $helperMethodResult = $block->getData('helper_method_result');
 
 Use the following Common arguments blocks instructions:
 
-- template: sets the template for the block.
-- translate_inline: true = disable translation for this block.
-- module_name: sets the module for the block. Usually this is automatically
-- determined.
-- cache_key: custom-specific key for saving / retrieving cached information. This is
-helpful if the block needs to be cached, but with unique caches for unique sets of
-data (for example, loading customer data).
+- `template`: sets the template for the block.
+- `translate_inline`: true = disable translation for this block.
+- `module_name`: sets the module for the block. Usually this is automatically determined.
+- `cache_key`: custom-specific key for saving / retrieving cached information. This is helpful if the block needs to be cached, but with unique caches for unique sets of data (for example, loading customer data).
 
 ### arguments {#arguments}
 
