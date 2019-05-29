@@ -21,7 +21,7 @@ Layout file | Description
 `catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
 `catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
 
-## Product view page availble containers 
+## Product view page available containers 
 
 Magento provides many containers on the product page to display additional information, making it much easier for developer
 
