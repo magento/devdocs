@@ -78,12 +78,11 @@ Configuration file|Description|Stage|Configuration object
 `email_templates.xml`| Email templates configuration | global | [\Magento\Email\Model\Template\Config\Data]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Email/Model/Template/Config/Data.php)
 `esconfig.xml`| [Elasticsearch locale stopwords config]({{ page.baseurl }}/config-guide/elasticsearch/es-config-stopwords.html#config-create-stopwords) | global | [\Magento\Elasticsearch\Model\Adapter\Index\Config\EsConfig]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Elasticsearch/Model/Adapter/Index/Config/EsConfig.php)
 `events.xml`|Event/observer configuration|global, area|[\Magento\Framework\Event]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Event.php)|
-`export.xml`| | |
+`export.xml`| Export entity configuration | global | [\Magento\ImportExport\Model\Export\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Export/Config.php)
 `extension_attributes.xml`|[Extension attributes]({{ page.baseurl }}/extension-dev-guide/attributes.html#extension)| global | [\Magento\Framework\Api\ExtensionAttribute\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/ExtensionAttribute/Config.php) 
-`fieldset.xml`| | |
-`integration.xml`| | |
-`indexer.xml`| | |
-`import.xml`| | |
+`fieldset.xml`| Defines fieldsets | global | [\Magento\Framework\DataObject\Copy\Config\Reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/Copy/Config/Reader.php)
+`indexer.xml`| [Declares indexers]({{ page.baseurl }}/extension-dev-guide/indexing-custom.html) | global | [\Magento\Framework\Indexer\Config\Reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Indexer/Config/Reader.php)
+`import.xml`| Declares import entities | global | [\Magento\ImportExport\Model\Import\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/ImportExport/Model/Import/Config.php)
 `module.xml`| | |
 `mview.xml`| | |
 `payment.xml`| | |
@@ -95,7 +94,7 @@ Configuration file|Description|Stage|Configuration object
 `queue_consumer.xml`|[Defines the relationship between an existing queue and its consumer]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html#queueconsumerxml) | global | [\Magento\Framework\MessageQueue\Consumer\Config\Xml\Reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/MessageQueue/Consumer/Config/Xml/Reader.php)
 `queue_publisher.xml`|[Defines the exchange where a topic is published.]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html#queuepublisherxml)| global | [\Magento\WebapiAsync\Code\Generator\Config\RemoteServiceReader\Publisher]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/WebapiAsync/Code/Generator/Config/RemoteServiceReader/Publisher.php)
 `queue_topology.xml`|[Defines the message routing rules, declares queues and exchanges]({{ page.baseurl }}/extension-dev-guide/message-queues/config-mq.html#queuetopologyxml)| global | [\Magento\Framework\MessageQueue\Topology\Config\Xml\Reader]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/MessageQueue/Topology/Config/Xml/Reader.php)
-`reports.xml`| | |
+`reports.xml`| [XXX]({{ page.baseurl }}/advanced-reporting/report-xml.html) | global |
 `resources.xml`| | |
 `routes.xml`|[Route]({{ page.baseurl }}/extension-dev-guide/routing.html) configuration|area|[Magento\Framework\App\Route\Config]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Route/Config.php)|
 `sales.xml`| | |
