@@ -46,7 +46,7 @@ See [Accounts](https://docs.newrelic.com/docs/accounts/accounts) in the New Reli
 
 ## Configure New Relic
 
-Pro accounts are preconfigured to use the New Relic service; however, Starter accounts need to verify that the New Relic service is configured properly. For Starter projects, check if the `.magento.app.yaml` file includes the New Relic extension in the `runtime` list. If not, then add the following:
+Pro accounts are preconfigured to use the New Relic service. If you have a Starter account, you need to verify that the New Relic service is configured properly. Check if the `.magento.app.yaml` file includes the New Relic extension in the `runtime` list. If not, then add the following:
 
 > .magento.app.yaml
 
