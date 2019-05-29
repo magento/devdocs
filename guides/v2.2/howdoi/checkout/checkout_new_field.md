@@ -52,7 +52,7 @@ $customField = [
     'filterBy' => null,
     'customEntry' => null,
     'visible' => true,
-    'value' => '' // value is used to set a default value of the attribute
+    'value' => '' // value field is used to set a default value of the attribute
 ];
 
 $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shipping-address-fieldset']['children'][$customAttributeCode] = $customField;
