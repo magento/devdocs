@@ -690,7 +690,7 @@ The `AddConfigurableProductsToCartInput` object contains the following attribute
 
 Attribute | Type | Description
 --- | --- | ---
-`cartItems` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
+`cart_items` | [[ConfigurableProductCartItemInput]](#configProdCartItemInput) | An array of configurable items to add to the cart
 `cart_id` | String | The unique ID that identifies the customer's cart
 
 ### Configurable product cart item input {#configProdCartItemInput}
@@ -715,7 +715,7 @@ The `CartItemInput` object contains the following attributes:
 
 Attribute | Type | Description
 --- | --- | ---
-`qty` | Float | The number of configurable items to add to the cart
+`quantity` | Float | The number of configurable items to add to the cart
 `sku` | String | The SKU of the configurable product
 
 
@@ -729,11 +729,11 @@ mutation {
   addConfigurableProductsToCart(
     input: {
       cart_id: "4JQaNVJokOpFxrykGVvYrjhiNv9qt31C"
-      cartItems: [
+      cart_items: [
         {
           variant_sku: "MH02"
           data: {
-            qty: 2
+            quantity: 2
             sku: "MH02-XS-Black"
           }
         }
@@ -743,7 +743,7 @@ mutation {
     cart {
       items {
         id
-        qty
+        quantity
         product {
           name
           sku
@@ -769,7 +769,7 @@ mutation {
         "items": [
           {
             "id": "26",
-            "qty": 2,
+            "quantity": 2,
             "product": {
               "name": "Teton Pullover Hoodie-XS-Black",
               "sku": "MH02-XS-Black"
