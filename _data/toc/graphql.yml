@@ -59,6 +59,9 @@ pages:
             - label: Directory endpoint
               url: /graphql/reference/directory.html
 
+            - label: Paypal endpoint
+              url: /graphql/reference/paypal.html
+
             - label: Products endpoint
               url: /graphql/reference/products.html
               children:

@@ -65,6 +65,7 @@ mutation {
 
 **Response**
 
+```json
 {
   "data": {
     "createPaypalExpressToken": {
@@ -76,8 +77,9 @@ mutation {
     }
   }
 }
+```
 
-### Set payment method
+### Set the payment method
 
 Magento GraphQL supports the `paypal_express` and `paypal_payflow` payment methods.
 
@@ -109,6 +111,7 @@ mutation {
 
 **Response**
 
+```json
 {
   "data": {
     "setPaymentMethodOnCart": {
@@ -121,6 +124,7 @@ mutation {
     }
   }
 }
+```
 
 ### Place the order
 
