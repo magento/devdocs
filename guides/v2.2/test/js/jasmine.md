@@ -86,7 +86,7 @@ in its static representations generated in [Step 6] previously:
 
 For convenience, we can reflect the directory structure of a file to test.
 
-A path to JS {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
+A path to JS [module](https://glossary.magento.com/module) that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
 
 A path to a test of the module: `app/code/Magento/Ui/base/js/grid/columns/actions.test.js`
 

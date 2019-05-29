@@ -5,17 +5,17 @@ title: EAV and extension attributes
 
 There are two types of attributes you can use to extend Magento functionality:
 
-* Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
+* Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the [Magento Admin](https://glossary.magento.com/Magento Admin) panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules are the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
-* {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}Extension attributes{% endglossarytooltip %}. Extension attributes are new in Magento 2. They are used to extend functionality and often use more {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} types than custom attributes. These attributes do not appear in the Magento Admin.
+* [Extension attributes](https://glossary.magento.com/Extension attributes). Extension attributes are new in Magento 2. They are used to extend functionality and often use more [complex data](https://glossary.magento.com/complex data) types than custom attributes. These attributes do not appear in the Magento Admin.
 
 ## EAV and custom attributes {#custom}
 
 `CustomAttributesDataInterface` defines the methods that are called to get and set custom attributes, including `getCustomAttributes()`.
 
-A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has a set of built-in attributes that are always available. The `Catalog` module has several attributes that are defined as EAV attributes, but are treated as built-in attributes. These attributes include:
+A [module](https://glossary.magento.com/module) has a set of built-in attributes that are always available. The `Catalog` module has several attributes that are defined as EAV attributes, but are treated as built-in attributes. These attributes include:
 
 * attribute_set_id
 * created_at
@@ -23,7 +23,7 @@ A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossary
 * media_gallery
 * name
 * price
-* {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}sku{% endglossarytooltip %}
+* [sku](https://glossary.magento.com/sku)
 * status
 * store_id
 * tier_price

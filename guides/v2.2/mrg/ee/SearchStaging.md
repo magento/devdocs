@@ -9,7 +9,7 @@ ee_only: true
 ---
 
 
-The Magento_SearchStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It disables searching in the staging preview mode.
+The Magento_SearchStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It disables searching in the staging preview mode.
 
 ## Implementation details
 
@@ -21,7 +21,7 @@ You can find the list of modules that have dependencies on the Magento_SearchSta
 
 ## Extension points
 
-{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_SearchStaging module. [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
+[Extension](https://glossary.magento.com/Extension) points enable extension developers to interact with the Magento_SearchStaging module. [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
 
 ### Layouts
 

@@ -8,7 +8,7 @@ redirect_from:
 
 ## Overview {#modal_overview}
 
-The Magento modal {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
+The Magento modal [widget](https://glossary.magento.com/widget) implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
 -   Configuring as popup or slide
 -   Controlling stack of modal widgets

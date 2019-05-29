@@ -54,7 +54,7 @@ Although {{ site.data.var.ee }} supports the Apache web server, {{ site.data.var
 
 ## PHP (local) {#php}
 
-Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+Install [PHP](https://glossary.magento.com/PHP) on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
 
@@ -166,7 +166,7 @@ To install the Magento Cloud CLI:
 
 1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}/cloud/before/before-workspace-file-sys-owner.html).
 
-2.	Change to a directory to which the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} has write access, such as the home directory.
+2.	Change to a directory to which the [Magento file system owner](https://glossary.magento.com/Magento file system owner) has write access, such as the home directory.
 
 3.	Enter the following command:
 

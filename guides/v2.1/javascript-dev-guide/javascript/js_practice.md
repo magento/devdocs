@@ -8,7 +8,7 @@ redirect_from:
 
 ## Overview {#practice_overview}
 
-This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one.
+This topic features a step-by-step illustration of how to customize a [jQuery](https://glossary.magento.com/jQuery) [widget](https://glossary.magento.com/widget) and how to use a custom widget instead the default Magento one.
 
 ## Customize a default Magento jQuery widget
 

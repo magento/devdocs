@@ -17,7 +17,7 @@ This step displays if you're uninstalling extensions.
 
 After backing up, you have the choice of removing data from the Magento 2 database.
 
-If the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} has no data to remove, the following message displays. (If a extension has data but no uninstall script, the same prompt displays. In that case, contact the vendor or remove database data manually.)
+If the [extension](https://glossary.magento.com/extension) has no data to remove, the following message displays. (If a extension has data but no uninstall script, the same prompt displays. In that case, contact the vendor or remove database data manually.)
 
 	The selected extension has no data to remove.
 

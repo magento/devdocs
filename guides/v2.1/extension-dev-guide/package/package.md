@@ -8,7 +8,7 @@ menu_node: parent
 redirect_from: /guides/v2.0/extension-dev-guide/package.html
 ---
 
-Use [Composer](https://getcomposer.org/) to package your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+Use [Composer](https://getcomposer.org/) to package your [module](https://glossary.magento.com/module).
 
 *	[Using Composer to package a Magento 2 module](package_module.html)
 *	Use our [validation tool](https://github.com/magento/marketplace-tools){:target="_blank"} to check your package before you distribute it.

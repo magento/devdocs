@@ -33,9 +33,9 @@ If your Cloud account has access to multiple projects, you should see a list of 
 
 ## Magento specific tools
 
-When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} for the store UI and configurations.
+When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl }}/cloud/reference/cli-ref-topic.html) to issue commands and programmatically complete tasks and the [Magento Admin](https://glossary.magento.com/Magento Admin) for the store UI and configurations.
 
-You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+You need to set up the [Magento file system owner](https://glossary.magento.com/Magento file system owner) on your local to assign that user as the owner for all created files and directories. For more information, see [Overview of ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 ## Recommended tools
 
