@@ -1,0 +1,2270 @@
+- actiongroup: "AdminGridFilterResetActionGroup"
+  page: "admin/"
+  description: Scrolls to the top of the page. Clicks on the "Clear Filters" link, if present, in the Admin Grid 'Filters' section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Test/Mftf/ActionGroup/AdminGridFilterResetActionGroup.xml
+
+- actiongroup: "AdminGridFilterFillInputFieldActionGroup"
+  page: "admin/"
+  description: Expands the "Filters" section of an Admin Grid page. Fills in the provided Filter Value for the provided Filter Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Test/Mftf/ActionGroup/AdminGridFilterFillInputFieldActionGroup.xml
+
+- actiongroup: "AdminFormSaveAndClose"
+  page: "admin/catalog/product/"
+  description: Clicks on "Save and Close". Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Test/Mftf/ActionGroup/AdminSaveAndCloseActionGroup.xml
+
+- actiongroup: "AdminGridFilterSearchResultsByInput"
+  page: "admin/"
+  description: Filters an Admin Grid page using the provided Filter Selector and Search Value.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Test/Mftf/ActionGroup/AdminGridFilterSearchResultsActionGroup.xml
+
+- actiongroup: "searchAdminDataGridByKeyword"
+  page: "admin/"
+  description: Fills "Search by keyword" on an Admin Grid page. Clicks on Submit Search.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Test/Mftf/ActionGroup/AdminDataGridFilterActionGroup.xml
+
+- actiongroup: "adminDataGridSelectPerPage"
+  page: "admin/"
+  description: Sets the provided preset "per page" display setting on an Admin Grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Test/Mftf/ActionGroup/AdminDataGridPaginationActionGroup.xml
+
+- actiongroup: "AdminGridFilterApplyActionGroup"
+  page: "admin/"
+  description: Clicks on "Apply Filters" in the 'Filters' section of an Admin Grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Ui/Test/Mftf/ActionGroup/AdminGridFilterApplyActionGroup.xml
+
+- actiongroup: "GoToAllUsers"
+  page: "admin/"
+  description: Navigate to the Users page via Backend Admin Side Menu. PLEASE NOTE: Use the amOnPage action instead.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Braintree/Test/Mftf/ActionGroup/AdminUserActionGroup.xml
+
+- actiongroup: "StorefrontFillCartDataActionGroup"
+  page: "storefront"
+  description: Fills Cart Data with Braintree using the provided Data Entity.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Braintree/Test/Mftf/ActionGroup/StorefrontFillCartDataActionGroup.xml
+
+- actiongroup: "ConfigureBraintree"
+  page: "admin/system_config/"
+  description: Sets up the Braintree configuration setting using the BraintreeConfigurationSection Data Entity. PLEASE NOTE: The Action Group values are Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Braintree/Test/Mftf/ActionGroup/ConfigureBraintreeActionGroup.xml
+
+- actiongroup: "GoToUserRoles"
+  page: "admin/"
+  description: Navigate to the User Roles page via Backend Admin Side Menu. PLEASE NOTE: Use the amOnPage action instead.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Braintree/Test/Mftf/ActionGroup/AdminRoleActionGroup.xml
+
+- actiongroup: "AdminOrderBraintreeFillActionGroup"
+  page: "storefront"
+  description: Fill Payment Method with Braintree
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Braintree/Test/Mftf/ActionGroup/AdminOrderBraintreeFillActionGroup.xml
+
+- actiongroup: "AdminProductAddFPTValueActionGroup"
+  page: "admin/catalog/product/"
+  description: Adds the provided FPT details (Attribute Code, Country, State and Value) on the Admin Product creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Weee/Test/Mftf/ActionGroup/AdminProductAddFPTValueActionGroup.xml
+
+- actiongroup: "StorefrontFillContactUsFormActionGroup"
+  page: "storefront"
+  description: Fills Name, Email and Comment on the Storefront "Contact Us" page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Contact/Test/Mftf/ActionGroup/StorefrontFillContactUsFormActionGroup.xml
+
+- actiongroup: "StorefrontSubmitContactUsFormActionGroup"
+  page: "storefront"
+  description: Clicks on the "Submit" button on the Storefront 'Contact Us' page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Contact/Test/Mftf/ActionGroup/StorefrontSubmitContactUsFormActionGroup.xml
+
+- actiongroup: "AssertMessageContactUsFormActionGroup"
+  page: "storefront"
+  description: Validates that the provided Message appears in the correct Message Type on the Storefront "Contact Us" page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Contact/Test/Mftf/ActionGroup/AssertMessageContactUsFormActionGroup.xml
+
+- actiongroup: "StorefrontOpenContactUsPageActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront "Contact Us" page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Contact/Test/Mftf/ActionGroup/StorefrontOpenContactUsPageActionGroup.xml
+
+- actiongroup: "AdminCreateWidgetActionGroup"
+  page: "admin/widget_instance/new/"
+  description: Goes to the Admin Widget creation page. Creates the provided Widget.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminCreateWidgetActionGroup.xml
+
+- actiongroup: "AdminCreateWidgetWithBlockActionGroup"
+  page: "admin/widget_instance/new/"
+  description: Goes to the Admin Widgets creation page. Creates the provided Widget which includes the provided Block. Clicks on Save. Validates that the Success Message is preset and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminWidgetActionGroup.xml
+
+- actiongroup: "AdminCreateAndSaveWidgetActionGroup"
+  page: "admin/widget_instance/"
+  description: EXTENDS: AdminCreateWidgetActionGroup. Clicks on Save. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Widget/Test/Mftf/ActionGroup/AdminCreateAndSaveWidgetActionGroup.xml
+
+- actiongroup: "ClearCacheActionGroup"
+  page: "admin/cache/"
+  description: Goes to the Admin Cache Management page. Clicks on "Flush Magento Cache".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/PageCache/Test/Mftf/ActionGroup/ClearCacheActionGroup.xml
+
+- actiongroup: "ClearPageCacheActionGroup"
+  page: "admin/cache/"
+  description: Goes to the Admin Cache Management page. Selects "Refresh". Checks the "Page Cache" row. Clicks on Submit.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/PageCache/Test/Mftf/ActionGroup/ClearPageCacheActionGroup.xml
+
+- actiongroup: "CreateOrderToPrintPageActionGroup"
+  page: "storefront"
+  description: Goes to the provided Storefront Category page. Adds the Product to the Cart. Places the Order. Clicks on Print Order.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/CreateOrderToPrintPageActionGroup.xml
+
+- actiongroup: "AssertOrderButtonsAvailableActionGroup"
+  page: "admin/sales/order/view/"
+  description: Validates that the primary buttons appear on the Admin Order edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AssertOrderButtonsAvailableActionGroup.xml
+
+- actiongroup: "AdminAssertRefundOrderStatusCommentsHistoryActionGroup"
+  page: "admin/sales/order/view/order_id/"
+  description: Clicks on the "Comments History" on Admin View Order page. Validates that the provided Order Status and Refund message are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAssertRefundOrderStatusInCommentsHistoryActionGroup.xml
+
+- actiongroup: "verifyBasicCreditMemoInformation"
+  page: "admin/sales/order_creditmemo/view/creditmemo_id/"
+  description: Validates that the provided Customer, Shipping/Billing Address and Customer Group are present and correct on the Admin Credit Memo view page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminCreditMemoActionGroup.xml
+
+- actiongroup: "filterOrderGridById"
+  page: "admin/sales/order/"
+  description: Goes to the Admin Orders page. Filters the grid based on the provided Order ID.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOrderGridActionGroup.xml
+
+- actiongroup: "AdminOrderStatusFormFillAndSave"
+  page: "admin/sales/order_edit/"
+  description: Fills in the provided Status and Label on the Admin Order Status section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOrderStatusFormFillAndSaveActionGroup.xml
+
+- actiongroup: "AdminAssertRefundInRefundsGridActionGroup"
+  page: "admin/sales/creditmemo/"
+  description: Goes to the Admin Credit Memo grid page. Filters the grid for the provided Order ID, Memo ID, Refund Status and Refunded Total. Validates that the provided details are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAssertRefundInRefundsGridActionGroup.xml
+
+- actiongroup: "useBraintreeForMasterCard"
+  page: "admin/sales/order_create/index/"
+  description: Selects "Braintree" as the Payment Method on the Admin New Order creation page. Enters Credit Card details. PLEASE NOTE: The Credit Card details used are Hardcoded using 'PaymentAndShippingInfo'.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/CreateNewOrderActionGroup.xml
+
+- actiongroup: "AssertOrderStatusFormSaveSuccess"
+  page: "admin/sales/order/"
+  description: Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AssertOrderStatusFormSaveSuccessActionGroup.xml
+
+- actiongroup: "AssertOrderStatusExistsInGrid"
+  page: "admin/sales/order/"
+  description: Validates that the provided Order Status and Label are present in the Admin Orders grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AssertOrderStatusExistsInGridActionGroup.xml
+
+- actiongroup: "navigateToNewOrderPageNewCustomer"
+  page: "admin/sales/order/"
+  description: Goes to the Admin Orders grid page. Clicks on "Create New Order". Clicks on "Create New Customer". Select the provided Store View, if present. Validates that Page Title is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOrderActionGroup.xml
+
+- actiongroup: "AdminAssertProductQtyInGridActionGroup"
+  page: "admin/catalog/product/"
+  description: Goes tot he Admin Catalog Product grid page. Filters the grid based on the provided Product SKU. Validates that the provided Product Qty is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminAssertProductQtyInGridActionGroup.xml
+
+- actiongroup: "verifyBasicInvoiceInformation"
+  page: "admin/sales/invoice/view/invoice_id/"
+  description: Validates that the provided Customer, Address and Customer Group details are present and correct on the Admin View Invoice page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminInvoiceActionGroup.xml
+
+- actiongroup: "AssertOrderStatusFormSaveDuplicateError"
+  page: "admin/sales/order/"
+  description: Validates that the "Duplicate Order" Error Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AssertOrderStatusFormSaveDuplicateErrorActionGroup.xml
+
+- actiongroup: "AdminOpenAndFillCreditMemoRefundActionGroup"
+  page: "admin/sales/order/view/order_id/"
+  description: Clicks on the "Credit Memos" section on the Admin Orders edit page. Fills in the provided Refund details (Qty to Refund, Shipping Refund, Adjustment Refund, Adjustment Fee and Row #).
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/AdminOpenAndFillCreditMemoRefundActionGroup.xml
+
+- actiongroup: "StorefrontSearchGuestOrderActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Orders and Returns page. Fills in the provided Order ID, Billing Last Name and Email. Clicks on Continue. Validates that the URL is correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Sales/Test/Mftf/ActionGroup/StorefrontOrderActionGroupActionGroup.xml
+
+- actiongroup: "assertProductVideoStorefrontProductPage"
+  page: "storefront"
+  description: Validates that the provided Video is present on the Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ProductVideo/Test/Mftf/ActionGroup/StorefrontProductVideoActionGroup.xml
+
+- actiongroup: "addProductVideo"
+  page: "admin/catalog/product/"
+  description: Expands the "Images And Videos" section on the Admin Product creation/edit page. Adds the provided Video to the Product. Clicks on Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ProductVideo/Test/Mftf/ActionGroup/AdminProductVideoActionGroup.xml
+
+- actiongroup: "CustomerLoginOnStorefrontWithRememberMeChecked"
+  page: "storefront"
+  description: EXTENDS: LoginToStorefrontActionGroup. Checks the "Remember Me" checkbox.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Persistent/Test/Mftf/ActionGroup/StorefrontCustomerActionGroup.xml
+
+- actiongroup: "CreateCustomVariableActionGroup"
+  page: "admin/system_variable/new/"
+  description: Goes to the Custom Variable creation page. Fills in the Custom Variable details. PLEASE NOTE: The Custom Variable details are Hardcoded using 'customVariable'.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Variable/Test/Mftf/ActionGroup/CreateCustomVariableActionGroup.xml
+
+- actiongroup: "EnableWebUrlOptions"
+  page: "admin/system_config/edit/section/web/"
+  description: Goes to the "Configuration" page for 'Url Options'. Enables "Add Store Code to Urls". Clicks on the Save button.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/ConfigWebUrlOptionsActionGroup.xml
+
+- actiongroup: "SetGroupForValidVATIdIntraUnionActionGroup"
+  page: "admin/system_config/edit/section/customer/"
+  description: Goes to the "Configuration" page for 'Customer Configuration'. Sets the "Group For Valid VAT ID Intra Union' option. Clicks on the Save button. Validates the the Save message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/AdminConfigCreateNewAccountActionGroup.xml
+
+- actiongroup: "SwitchToVersion4ActionGroup"
+  page: "admin/system_config/edit/section/cms/"
+  description: Goes to the "Configuration" page for 'Content Management'. Sets the "WYSIWYG Editor" to 'TinyMCE 4'. Clicks on the Save button. PLEASE NOTE: The value is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/SwitcherActionGroup.xml
+
+- actiongroup: "NavigateToDefaultLayoutsSetting"
+  page: "admin/system_config/edit/section/web/"
+  description: Goes to the "Configuration" page for 'Web'. Expands the "Default Layouts" section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/GeneralConfigurationActionGroup.xml
+
+- actiongroup: "EnabledWYSIWYG"
+  page: "magentoCLI"
+  description: Enables the WYSIWYG Editor via the CLI.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/ConfigWYSIWYGActionGroup.xml
+
+- actiongroup: "RestoreLayoutSetting"
+  page: "admin/system_config/edit/section/web/"
+  description: Goes to the "Configuration" page for 'Web'. Clicks on the Save button.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/RestoreLayoutSettingActionGroup.xml
+
+- actiongroup: "SetTaxClassForShipping"
+  page: "admin/system_config/edit/section/tax/"
+  description: Goes to the "Configuration" page for 'Tax'. Sets "Tax Class for Shipping" to 'Taxable Goods'. Clicks on the Save button. PLEASE NOTE: The value is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/ConfigSalesTaxClassActionGroup.xml
+
+- actiongroup: "ChooseElasticSearchAsSearchEngine"
+  page: "admin/system_config/edit/section/catalog/"
+  description: Goes to the "Configuration" page for 'Catalog'. Sets the 'Search Engine' to "elasticsearch5". Clicks on the Save button. PLEASE NOTE: The value is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/ConfigAdminCatalogSearchActionGroup.xml
+
+- actiongroup: "ConfigAdminAccountSharingActionGroup"
+  page: "admin/system_config/edit/section/admin/"
+  description: Goes to the "Configuration" page for 'Admin'. Enables "Admin Account Sharing". Clicks on the Save button.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Config/Test/Mftf/ActionGroup/ConfigAdminAccountSharingActionGroup.xml
+
+- actiongroup: "ApplyCouponOnPaymentPageActionGroup"
+  page: "storefront"
+  description: Adds the provided Coupon Code on the Storefront Shopping Cart page. Validates that the Discount Verification Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Payment/Test/Mftf/ActionGroup/ApplyCouponOnPaymentPageActionGroup.xml
+
+- actiongroup: "AssertSearchTermSaveSuccessMessage"
+  page: "admin/search/term/index/"
+  description: Goes to the Catalog Search Term grid page. Adds the provided Search Term. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogSearch/Test/Mftf/ActionGroup/AdminCatalogSearchTermActionGroup.xml
+
+- actiongroup: "SetMinimalQueryLengthActionGroup"
+  page: "admin/system_config/edit/section/catalog/"
+  description: Goes to the "Configuration" page for 'Catalog'. Sets the Minimal Query Length. CLicks on the Save button.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogSearch/Test/Mftf/ActionGroup/AdminSetMinimalQueryLengthActionGroup.xml
+
+- actiongroup: "AssertSearchTermNotOnFrontend"
+  page: "storefront"
+  description: Goes to the Storefront. Fills the Search field with the provided Search Query. Clicks on Search. Validates that there are no results.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogSearch/Test/Mftf/ActionGroup/StorefrontCatalogSearchTermActionGroup.xml
+
+- actiongroup: "StorefrontCheckQuickSearchActionGroup"
+  page: "storefront"
+  description: Submits Form POST for the Storefront Search feature. Validates that the URL is correct. Validates that the Title is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogSearch/Test/Mftf/ActionGroup/StorefrontCatalogSearchActionGroup.xml
+
+- actiongroup: "resetProductGridToDefaultView"
+  page: "admin/catalog/product/"
+  description: Sets the Admin Products grid view to the "Default View".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminProductGridActionGroup.xml
+
+- actiongroup: "DeleteProductActionGroup"
+  page: "admin/catalog/product/"
+  description: Deletes the provided Product Name from the Product grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/DeleteProductActionGroup.xml
+
+- actiongroup: "AssertDontSeeProductDetailsOnStorefrontActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Info does NOT appear in the Product Number on a Storefront Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertDontSeeProductDetailsOnStorefrontActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductNameOnProductMainPageActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Name is present and correct on a Storefront Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertProductNameOnProductMainPageActionGroup.xml
+
+- actiongroup: "CreateCustomRadioOptions"
+  page: "admin/catalog/product/edit/id/"
+  description: Adds a custom Radio Product Option with 3 Radio Options to a Product based on the provided Options.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/CustomOptionsActionGroup.xml
+
+- actiongroup: "GoToStorefrontCategoryPageByParameters"
+  page: "storefront"
+  description: Goes to the Storefront Category page using URI Search Parameters.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontCategoryActionGroup.xml
+
+- actiongroup: "AssertProductInStorefrontProductPage"
+  page: "storefront"
+  description: Goes to the Storefront page. Validates that the provided Product details are present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductInStorefrontProductPageActionGroup.xml
+
+- actiongroup: "AssertProductInStorefrontCategoryPage"
+  page: "storefront"
+  description: Goes to Storefront Category page for the provided Category. Validates that the Product details are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductInStorefrontCategoryPageActionGroup.xml
+
+- actiongroup: "AddSimpleProductToCart"
+  page: "storefront"
+  description: Navigates to the Storefront Product page. Then adds the Product to the Cart. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AddProductToCartActionGroup.xml
+
+- actiongroup: "AdminAddTitleAndPriceValueToCustomOptionActionGroup"
+  page: "admin/catalog/page/"
+  description: Clicks on "Add Option". Fills in the provided Custom Option Title/Type on the Admin Product creation/edit page under the "Customizable Options" section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAddTitleAndPriceValueToCustomOptionActionGroup.xml
+
+- actiongroup: "AssertSubTotalOnStorefrontMiniCartActionGroup"
+  page: "storefront"
+  description: Validates that the provided Sub Total is present in the Storefront Mini Shopping Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertSubTotalOnStorefrontMinicartActionGroup.xml
+
+- actiongroup: "AdminCreateRootCategory"
+  page: "admin/catalog/category/"
+  description: Requires navigation to Category creation. Adds a new root category and asserts on creation.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCreateRootCategoryActionGroup.xml
+
+- actiongroup: "StorefrontSelectCustomOptionDropDownAndAssertPricesActionGroup"
+  page: "storefront"
+  description: EXTENDS: AssertStorefrontProductPricesActionGroup. Selects the provided Custom Product Option on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontSelectCustomOptionDropDownAndAssertPricesActionGroup.xml
+
+- actiongroup: "AdminAddAdvancedPricingToTheProductActionGroup"
+  page: "admin/catalog/product/"
+  description: Clicks "Advanced Pricing" on the Admin Product creation/edit page. Fills in the provided Group Price at the provided Index for CE/EE. Clicks on Done.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAddAdvancedPricingToTheProductActionGroup.xml
+
+- actiongroup: "AssertStorefrontProductPricesActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Price and Final Product Price are present on the Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertStorefrontProductPricesActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductSpecialPriceOnProductPageActionGroup"
+  page: "storefront"
+  description: Goes to the provided Storefront Product page. Validates that the provided Special Price is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertProductSpecialPriceOnProductPageActionGroup.xml
+
+- actiongroup: "StorefrontOpenProductPageActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Product page for the provided Product URL.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontOpenProductPageActionGroup.xml
+
+- actiongroup: "AssertErrorMessageAfterDeletingWebsiteActionGroup"
+  page: "admin/catalog/product/"
+  description: Goes to the Admin Products grid page. Clicks on Ok. Validates that the provided Error Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertErrorMessageAfterDeletingWebsiteActionGroup.xml
+
+- actiongroup: "AdminCreateCustomDropDownOptionsActionGroup"
+  page: "admin/catalog/product/"
+  description: Clicks on "Add Option". Adds the 2 provided Options under the provided Custom Option Name to a Product on the Admin Product creation/edit page under the "Customizable Options" section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCreateCustomDropDownOptionsActionGroup.xml
+
+- actiongroup: "AssertProductOnAdminGridActionGroup"
+  page: "admin/catalog/product/"
+  description: EXTENDS: viewProductInAdminGrid. Removes the "clickClearFiltersAfter" step from the Action Group.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductOnAdminGridActionGroup.xml
+
+- actiongroup: "AdminAddProductCustomOptionActionGroup"
+  page: "admin/catalog/product/"
+  description: Adds the provided Custom Option Title/Type to a Product on the Admin Product creation/edit page under the "Customizable Options" section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAddProductCustomOptionActionGroup.xml
+
+- actiongroup: "AdminAddMinimumAdvertisedPriceActionGroup"
+  page: "admin/catalog/product/"
+  description: Clicks "Advanced Pricing" on the Admin Product creation/edit page. Fills in the provided MSRP details. Clicks on Done.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAddMinimumAdvertisedPriceActionGroup.xml
+
+- actiongroup: "SearchForProductOnBackendActionGroup"
+  page: "admin/catalog/product/"
+  description: Goto the Product grid page. Search for the provided Product.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/SearchForProductOnBackendActionGroup.xml
+
+- actiongroup: "AdminSubmitAdvancedInventoryFormActionGroup"
+  page: "admin/catalog/product/"
+  description: Clicks on Done on the Admin Product creation/edit page on the 'Advanced Inventory' panel.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminSubmitAdvancedInventoryFormActionGroup.xml
+
+- actiongroup: "StorefrontOpenHomePageActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Homepage.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontOpenHomePageActionGroup.xml
+
+- actiongroup: "OpenProductFromCategoryPageActionGroup"
+  page: "storefront"
+  description: Goto the provided Category page. Click on the provided Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/OpenProductFromCategoryPageActionGroup.xml
+
+- actiongroup: "StorefrontCheckSimpleProduct"
+  page: "storefront"
+  description: Validates that the provided Simple Product information is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontProductActionGroup.xml
+
+- actiongroup: "AdminCreateRecentlyProductsWidgetActionGroup"
+  page: "admin/widget_instance/new/"
+  description: EXTENDS: AdminCreateWidgetActionGroup. Adds Product Attributes/Buttons to a Widget. Clicks on the Save button.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCreateWidgetActionGroup.xml
+
+- actiongroup: "AssignAttributeToGroup"
+  page: "admin/catalog/product_set/edit/id/"
+  description: Assign the provided Attribute to an Attribute Set from the Attribute Sets creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminProductAttributeSetActionGroup.xml
+
+- actiongroup: "CreateNewProductActionGroup"
+  page: "admin/catalog/product/edit/id/"
+  description: Goes to the Product creation/edit page. Fills in Product Name, Price and Quantity. Then Saves the work.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/CreateNewProductActionGroup.xml
+
+- actiongroup: "AdminOpenNewProductFormPageActionGroup"
+  page: "admin/catalog/product/edit/id/"
+  description: Goes to the Product creation/edit page for the provided Product Type and Attribute Set ID.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminOpenNewProductFormPageActionGroup.xml
+
+- actiongroup: "AssertProductDetailsOnStorefrontActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Info does NOT appear in the Product Number on a Storefront Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductDetailsOnStorefrontActionGroup.xml
+
+- actiongroup: "RestoreLayoutSetting"
+  page: "admin/system_config/edit/section/web/"
+  description: Goes to the "Configuration" page for 'Web'. Selects 'No layout updates' for the Default Product/Category Layouts.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/RestoreLayoutSettingActionGroup.xml
+
+- actiongroup: "navigateToCreatedProductAttribute"
+  page: "admin/catalog/product_attribute/"
+  description: Goes to the Product Attributes grid page. Filters the grid based on the provided Product Attribute. Clicks on the 1st row.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminProductAttributeActionGroup.xml
+
+- actiongroup: "StorefrontAddProductToCartWithQtyActionGroup"
+  page: "storefront"
+  description: Fills in the provided Product Quantity. Clicks on Add To Cart. Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAddProductToCartWithQtyActionGroup.xml
+
+- actiongroup: "searchAndMultiSelectActionGroup"
+  page: "admin/catalog/product/edit/id/"
+  description: Search for and select multiple items in the Magento dropdown UI component.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/SearchAndMultiselectActionGroup.xml
+
+- actiongroup: "CreateCategory"
+  page: "admin/catalog/category/"
+  description: Requires navigation to the Category creation page. Adds a new Subcategory. Validates that the Category was created.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminCategoryActionGroup.xml
+
+- actiongroup: "AssertAttributeDeletionErrorMessageActionGroup"
+  page: "admin/catalog/product_set/edit/id/"
+  description: Validates that the Error Message is present and correct on the Backend Admin Attribute Sets creation/edit page when you try to delete an Attribute Set assigned to a Configurable Product. PLEASE NOTE: The Error Message is hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertAttributeDeletionErrorMessageActionGroup.xml
+
+- actiongroup: "DeleteProductAttributeByAttributeCodeActionGroup"
+  page: "admin/catalog/product_attribute/edit/attribute_id/"
+  description: Delete a Product Attribute from the Product Attribute creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/DeleteProductAttributeByAttributeCodeActionGroup.xml
+
+- actiongroup: "AssertProductAttributePresenceInCatalogProductGridActionGroup"
+  page: "admin/catalog/product/"
+  description: Validates that the provided Attributes Sets is present on the Backend Attribute Sets grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductAttributePresenceInCatalogProductGridActionGroup.xml
+
+- actiongroup: "goToCreateProductPage"
+  page: "admin/catalog/product/"
+  description: Clicks on the "Add Product" toggle on the Admin Products grid page. Clicks on the provided Product (Type).
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminProductActionGroup.xml
+
+- actiongroup: "AdminFillAdvancedInventoryQtyActionGroup"
+  page: "admin/catalog/product/"
+  description: Fills in the provided Quantity for the "Qty" option in 'Advanced Inventory' panel on the Admin Product creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminFillAdvancedInventoryQtyActionGroup.xml
+
+- actiongroup: "AssertProductInfoOnEditPageActionGroup"
+  page: "admin/catalog/product/edit/id/"
+  description: Validate that the provided Product details are correct on the Product creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AssertProductInfoOnEditPageActionGroup.xml
+
+- actiongroup: "AdminClickOnAdvancedInventoryLinkActionGroup"
+  page: "admin/catalog/product/"
+  description: Clicks on the "Advanced Inventory" link on the Admin Product creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminClickOnAdvancedInventoryLinkActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductPriceOnProductPageActionGroup"
+  page: "storefront"
+  description: Validate that the provided Product Price is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertProductPriceOnProductPageActionGroup.xml
+
+- actiongroup: "StorefrontCheckProductPriceInCategoryActionGroup"
+  page: "storefront"
+  description: EXTENDS: StorefrontCheckCategorySimpleProduct. Removes 'AssertProductPrice'. Validates that the provided Product Price is present and correct on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontCheckProductPriceInCategoryActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductInRecentlyViewedWidgetActionGroup"
+  page: "storefront"
+  description: Validate that the provided Product appears in the Recently Viewed Products widget.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertProductInWidgetActionGroup.xml
+
+- actiongroup: "StorefrontSelectCustomOptionRadioAndAssertPricesActionGroup"
+  page: "storefront"
+  description: EXTENDS: AssertStorefrontProductPricesActionGroup. Clicks on the provided Custom Option on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontSelectCustomOptionRadioAndAssertPricesActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductSkuOnProductPageActionGroup"
+  page: "storefront"
+  description: Validate that the provided Product Sku is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertProductSkuOnProductPageActionGroup.xml
+
+- actiongroup: "StorefrontAssertCustomOptionByTitleActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Option Title is present on the Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertCustomOptionByTitleActionGroup.xml
+
+- actiongroup: "AddWebsiteToProductActionGroup"
+  page: "admin/catalog/product/"
+  description: Adds the provided Website to a Product on the Admin Product creation/edit page. Clicks on Save. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AddWebsiteToProductActionGroup.xml
+
+- actiongroup: "AdminFillAdvancedInventoryOutOfStockThresholdActionGroup"
+  page: "admin/catalog/product/"
+  description: Unchecks 'Use Config Setting' for the "Minimum Qty Allowed in Shopping Cart" option in 'Advanced Inventory' panel on the Admin Product creation/edit page. Fills in the provided Quantity.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminFillAdvancedInventoryOutOfStockThresholdActionGroup.xml
+
+- actiongroup: "SearchAttributeByCodeOnProductAttributeGridActionGroup"
+  page: "admin/catalog/product/"
+  description: Goto the Product Attribute grid page. Search for the provided Product Attribute Code.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/SearchAttributeByCodeOnProductAttributeGridActionGroup.xml
+
+- actiongroup: "CheckItemInLayeredNavigationActionGroup"
+  page: "storefront"
+  description: Expands the Product Filters on a Storefront Category page if it is not expanded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/CheckItemInLayeredNavigationActionGroup.xml
+
+- actiongroup: "OpenProductAttributeFromSearchResultInGridActionGroup"
+  page: "admin/catalog/product_attribute/"
+  description: EXTENDS: SearchAttributeByCodeOnProductAttributeGridActionGroup. Click on Edit for the provided Product Attribute Code.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/OpenProductAttributeFromSearchResultInGridActionGroup.xml
+
+- actiongroup: "addToCartFromStorefrontProductPage"
+  page: "storefront"
+  description: Click on the Add to Cart button. Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontProductPageActionGroup.xml
+
+- actiongroup: "StorefrontAddCategoryProductToCompareActionGroup"
+  page: "storefront"
+  description: Add a Product to the Compare Product list from a Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontCompareActionGroup.xml
+
+- actiongroup: "StorefrontClickAddToCartOnProductPageActionGroup"
+  page: "storefront"
+  description: Adds a Product to the Cart. Validate that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontClickAddToCartOnProductPageActionGroup.xml
+
+- actiongroup: "VerifyProductTypeOrder"
+  page: "admin/catalog/product/"
+  description: Clicks on the "Add Product" toggle. Validates that the Simple/Virtual Products are listed in the correct order.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/VerifyProductTypeOrderActionGroup.xml
+
+- actiongroup: "MoveCategoryActionGroup"
+  page: "admin/catalog/category/"
+  description: Move a Category on the Backend Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/MoveCategoryActionGroup.xml
+
+- actiongroup: "FilterProductInGridByStoreViewAndNameActionGroup"
+  page: "admin/catalog/product/"
+  description: Goes to the Admin Products grid page. Filters the grid based on the provided Store View. Validates that the Product Name is present in the 1st row of the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/FilterProductInGridByStoreViewAndNameActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductNameOnProductPageActionGroup"
+  page: "storefront"
+  description: Validate that the provided Product Price is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertProductNameOnProductPageActionGroup.xml
+
+- actiongroup: "StorefrontAddToCartCustomOptionsProductPageActionGroup"
+  page: "storefront"
+  description: Add a Product to the Cart. Validate that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAddToCartCustomOptionsProductPageActionGroup.xml
+
+- actiongroup: "AdminAssignImageRolesActionGroup"
+  page: "admin/catalog/product/"
+  description: Requires the navigation to the Product Creation page. Checks the Base, Small, Thumbnail, and Swatch Roles areas for images.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/AdminAssignImageRolesActionGroup.xml
+
+- actiongroup: "CompareTwoProductsOrder"
+  page: "storefront"
+  description: Goes to the Storefront. Validates that the 2 provided Products appear in the correct order.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/CheckProductsOrderActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductImagesOnProductPageActionGroup"
+  page: "storefront"
+  description: Validate that the Product Image is present and correct. Validate that the Fullscreen Product Image is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/StorefrontAssertProductImagesOnProductPageActionGroup.xml
+
+- actiongroup: "OpenEditProductOnBackendActionGroup"
+  page: "admin/catalog/product/"
+  description: Click on Edit for the provided Product SKU.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Catalog/Test/Mftf/ActionGroup/OpenEditProductOnBackendActionGroup.xml
+
+- actiongroup: "AdminDeleteTaxRule"
+  page: "admin/tax/rule/"
+  description: Goes to the Admin Tax Rule grid page. Deletes the provided Tax Rule Code.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Tax/Test/Mftf/ActionGroup/AdminDeleteTaxRuleActionGroup.xml
+
+- actiongroup: "editTaxConfigurationByUI"
+  page: "admin/system_config/edit/section/tax/"
+  description: Goes to the "Configuration" page for 'Tax'. Enables the display of Taxes in the Storefront Shopping Cart and Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Tax/Test/Mftf/ActionGroup/AdminTaxActionGroup.xml
+
+- actiongroup: "addCustomerTaxClass"
+  page: "admin/tax/rule/"
+  description: Adds the provided Customer Tax Class on the Admin Tax Rule creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Tax/Test/Mftf/ActionGroup/AdminCustomerTaxClassActionGroup.xml
+
+- actiongroup: "StorefrontSelectCustomizeAndAddToTheCartButtonActionGroup"
+  page: "storefront"
+  description: Clicks "Customize and Add to Cart" on a Storefront Bundled Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/StorefrontSelectCustomizeAndAddToTheCartButtonActionGroup.xml
+
+- actiongroup: "BundleProductFilter"
+  page: "admin/catalog/product/"
+  description: Applies a Backend Admin Grid filter for Bundle Products.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/BundleProductFilterActionGroup.xml
+
+- actiongroup: "StoreFrontAddProductToCartFromBundleWithCurrencyActionGroup"
+  page: "storefront"
+  description: Adds a Bundled Product to the Cart with a specified Currency Value.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/StoreFrontAddProductToCartFromBundleActionGroup.xml
+
+- actiongroup: "fillMainBundleProductForm"
+  page: "admin/catalog/product/"
+  description: Fills the Name, SKU and Stock Status fields.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/AdminBundleProductActionGroup.xml
+
+- actiongroup: "StorefrontAddCategoryBundleProductToCartActionGroup"
+  page: "storefront"
+  description: Adds a Bundled Product to the Cart from the Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/StorefrontProductCartActionGroup.xml
+
+- actiongroup: "AncillaryPrepBundleProduct"
+  page: "admin/catalog/product/"
+  description: Requires Navigation to the Product Creation page. Fills out Name, Sku, and SEO information using the BundleProduct Data Entity. PLEASE NOTE: The Action Group values are Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/EnableDisableProductActionGroup.xml
+
+- actiongroup: "AdminCreateApiDynamicBundleProductActionGroup"
+  page: "createData"
+  description: Creates 4 products with varying prices. Creates the bundle product with specified name. Adds the multiple select and checkbox options and 4 links to the created products. Uses "ApiBundleProduct" Entity.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/AdminCreateApiBundleProductActionGroup.xml
+
+- actiongroup: "SetBundleProductAttributes"
+  page: "admin/catalog/product/"
+  description: Requires navigation to the Product Creation page. Fills in the arguments listed below on the product page. Saves the changes.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/SetBundleProductAttributesActionGroup.xml
+
+- actiongroup: "AdminClearFiltersActionGroup"
+  page: "admin/catalog/product/"
+  description: Goes to the Catalog Backend Admin Grid page. Then clears the Grid Filters.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/AdminClearFiltersActionGroup.xml
+
+- actiongroup: "VerifyProductTypeOrder"
+  page: "admin/catalog/product/"
+  description: Checks that Bundle is in the correct order in comparison to other product types on the add product dropdown.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/VerifyProductTypeOrderActionGroup.xml
+
+- actiongroup: "CreateBasicBundleProduct"
+  page: "admin/catalog/product/"
+  description: Requires Navigation to the Product Creation page. Fills out Name, Sku, and SEO information using the BundleProduct Data Entity. PLEASE NOTE: The Action Group values are Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/CreateBundleProductActionGroup.xml
+
+- actiongroup: "StorefrontSelectBundleProductDropDownOptionActionGroup"
+  page: "storefront"
+  description: Selects the provided Product Name on a Storefront Bundled Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Bundle/Test/Mftf/ActionGroup/StorefrontSelectBundleProductDropDownOptionActionGroup.xml
+
+- actiongroup: "AdminClickSaveButtonOnUserFormActionGroup"
+  page: "admin/user/"
+  description: Clicks on the Save button on the Admin User creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminClickSaveButtonOnUserFormActionGroup.xml
+
+- actiongroup: "AdminCreateUserActionGroup"
+  page: "admin/user/"
+  description: Goes to the Admin Users grid page. Clicks on Create User. Fills in the provided Role and User.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminCreateUserActionGroup.xml
+
+- actiongroup: "AdminDeleteUserActionGroup"
+  page: "admin/user/"
+  description: Goes to the Admin Users grid page. Deletes the provided User. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminDeleteUserActionGroup.xml
+
+- actiongroup: "AdminCreateRoleActionGroup"
+  page: "admin/user_role/editrole/"
+  description: Goes to the Admin Edit Role page. Fills in the provided User details. Add the provided Role. Clicks on Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminCreateRoleActionGroup.xml
+
+- actiongroup: "AdminFillUserRoleFormActionGroup"
+  page: "admin/user_role/"
+  description: Fills in the provided Role and Current Admin Password on the Admin Roles creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminFillUserRoleFormActionGroup.xml
+
+- actiongroup: "AdminOpenNewUserPageActionGroup"
+  page: "admin/user/new/"
+  description: Goes to the Admin New User page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminOpenNewUserPageActionGroup.xml
+
+- actiongroup: "AssertAdminUserSaveMessageActionGroup"
+  page: "admin/user/"
+  description: Validates that the provided Save Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AssertAdminUserSaveMessageActionGroup.xml
+
+- actiongroup: "AdminFillNewUserFormRequiredFieldsActionGroup"
+  page: "admin/user/new/"
+  description: Fills in the provided User details on the New User creation page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminFillNewUserFormRequiredFieldsActionGroup.xml
+
+- actiongroup: "AdminClickSaveButtonOnUserRoleFormActionGroup"
+  page: "admin/user_role/"
+  description: Clicks on Save on the Admin Roles creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminClickSaveButtonOnUserRoleFormActionGroup.xml
+
+- actiongroup: "AdminDeleteCreatedUserActionGroup"
+  page: "admin/user/"
+  description: Goes to the Admin Users grid page. Edits the provided User. Deletes the User. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminDeleteCreatedUserActionGroup.xml
+
+- actiongroup: "AdminOpenForgotPasswordPageActionGroup"
+  page: "admin/"
+  description: Goes to the Admin Login page. Clicks on the "Forgot Password" link.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminOpenForgotPasswordPageActionGroup.xml
+
+- actiongroup: "AdminSubmitForgotPasswordFormActionGroup"
+  page: "admin/auth/forgotpassword/"
+  description: Clicks on the Retrieve Password button.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminSubmitForgotPasswordFormActionGroup.xml
+
+- actiongroup: "AdminDeleteCreatedRoleActionGroup"
+  page: "admin/user_role/"
+  description: Goes to the Admin Roles grid page. Deleted the provided Role. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminDeleteCreatedRoleActionGroup.xml
+
+- actiongroup: "AdminFillForgotPasswordFormActionGroup"
+  page: "admin/auth/forgotpassword/"
+  description: Fills in the provided Email Address on the Admin Forgot Password page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminFillForgotPasswordFormActionGroup.xml
+
+- actiongroup: "AdminOpenCreateRolePageActionGroup"
+  page: "admin/user_role/editrole/"
+  description: Goes to the Admin Roles edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/User/Test/Mftf/ActionGroup/AdminOpenCreateRolePageActionGroup.xml
+
+- actiongroup: "AssertMessageInAdminPanelActionGroup"
+  page: "admin/"
+  description: Validates that the provided Message appears in the provided Message Type on an Admin page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/AssertMessageInAdminPanelActionGroup.xml
+
+- actiongroup: "logout"
+  page: "admin/auth/logout/"
+  description: Logout of the Backend Admin. PLEASE NOTE: This Action Group does NOT validate that you are Logged Out.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/LogoutActionGroup.xml
+
+- actiongroup: "LoginAsAdmin"
+  page: "admin/"
+  description: Login to Backend Admin using provided User Data. PLEASE NOTE: This Action Group does NOT validate that you are Logged In.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/LoginAsAdminActionGroup.xml
+
+- actiongroup: "LoginAdminWithCredentialsActionGroup"
+  page: "admin/"
+  description: Login to Backend Admin using provided Admin credentials. PLEASE NOTE: This Action Group does NOT validate that you are Logged In.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/LoginAdminWithCredentialsActionGroup.xml
+
+- actiongroup: "AssertAdminSuccessLoginActionGroup"
+  page: "admin/"
+  description: Wait for the current Admin Name to appear in the Backend Admin.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/AssertAdminSuccessLoginActionGroup.xml
+
+- actiongroup: "deleteEntitySecondaryGrid"
+  page: "admin/"
+  description: This Action Group deletes an item from a grid based on provided Name. After Searching, the First Row is clicked.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/SecondaryGridActionGroup.xml
+
+- actiongroup: "LoginActionGroup"
+  page: "admin/"
+  description: Login to Backend Admin using ENV Admin credentials. PLEASE NOTE: This Action Group does NOT validate that you are Logged In.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/LoginActionGroup.xml
+
+- actiongroup: "AdminNavigateMenuActionGroup"
+  page: "admin/"
+  description: Open Backend Admin side Navigation Menu. Click on Sub-Navigation Menu item.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/AdminNavigateMenuActionGroup.xml
+
+- actiongroup: "AssertMessageOnAdminLoginActionGroup"
+  page: "admin/"
+  description: Validate Backend Admin Login status message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/AssertMessageOnAdminLoginActionGroup.xml
+
+- actiongroup: "AdminAssertPageTitleActionGroup"
+  page: "admin/"
+  description: Validate Backend Admin Grid Page Title is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/AdminAssertPageTitleActionGroup.xml
+
+- actiongroup: "AssertAdminDashboardPageIsVisibleActionGroup"
+  page: "admin/"
+  description: Validate the Backend Admin Dashboard URI is correct. Validate the Backend Admin Dashboard Title is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/AssertAdminDashboardPageIsVisibleActionGroup.xml
+
+- actiongroup: "AssertAdminPageIsNot404ActionGroup"
+  page: "admin/"
+  description: Validates that the '404 Error' message is present and correct in the Admin Page Header.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/AssertAdminPageIsNot404ActionGroup.xml
+
+- actiongroup: "SetWebsiteCountryOptionsToDefaultActionGroup"
+  page: "admin/system_config/"
+  description: Sets the Website Country configuration setting to the Default values. 
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/SetWebsiteCountryOptionsToDefaultActionGroup.xml
+
+- actiongroup: "SetAdminAccountActionGroup"
+  page: "admin/system_account/index/"
+  description: Update the Interface Language configuration setting using provided Interface Language.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/SetAdminAccountActionGroup.xml
+
+- actiongroup: "SortByIdDescendingActionGroup"
+  page: "admin/"
+  description: Sorts a Backend Admin Grid by descending order for the ID column.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backend/Test/Mftf/ActionGroup/SortByIdDescendingActionGroup.xml
+
+- actiongroup: "AdminImportProductsActionGroup"
+  page: "admin/import/"
+  description: Goes to the Admin Import page. Imports the provided File. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ImportExport/Test/Mftf/ActionGroup/AdminImportProductsActionGroup.xml
+
+- actiongroup: "verifyBasicShipmentInformation"
+  page: "admin/sales/order/view/order_id/"
+  description: Validates that the provided Customer, Shipping Address, Billing Address and Customer Group are present and correct on the view Admin Order page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Shipping/Test/Mftf/ActionGroup/AdminShipmentActionGroup.xml
+
+- actiongroup: "AdminAddDownloadableLinkInformationActionGroup"
+  page: "admin/catalog/product/"
+  description: Checks "Is this downloadable Product?". Fills in the provided Downloadable details under the 'Downloadable Information'.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Downloadable/Test/Mftf/ActionGroup/AdminAddDownloadableLinkInformationActionGroup.xml
+
+- actiongroup: "fillMainDownloadableProductForm"
+  page: "admin/catalog/product/new/set/4/type/downloadable/"
+  description: Fills the Name, SKU, Price and Quantity on the Product creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Downloadable/Test/Mftf/ActionGroup/AdminDownloadableProductActionGroup.xml
+
+- actiongroup: "StorefrontAssertDownloadableProductIsPresentInCustomerAccount"
+  page: "storefront"
+  description: Goes to the Storefront Customer Dashboard page. Clicks on "My Downloadable Products". Validates that the provided Product is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Downloadable/Test/Mftf/ActionGroup/StorefrontAssertDownloadableProductIsPresentInCustomerAccountActionGroup.xml
+
+- actiongroup: "VerifyProductTypeOrder"
+  page: "admin/catalog/product/"
+  description: Validates that the "Downloadable Product" option is present in the 'Add Product' dropdown menu on the Products grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Downloadable/Test/Mftf/ActionGroup/VerifyProductTypeOrderActionGroup.xml
+
+- actiongroup: "exportProductsFilterByAttribute"
+  page: "admin/export/"
+  description: Filters Products by the provided Attribute. Exports the filtered Products list. Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogImportExport/Test/Mftf/ActionGroup/AdminExportActionGroup.xml
+
+- actiongroup: "StorefrontAssertCheckoutEstimateShippingInformationActionGroup"
+  page: "storefront"
+  description: Validates that the provided Customer details (Country, State and Zip Code) are present and correct on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertCheckoutEstimateShippingInformationActionGroup.xml
+
+- actiongroup: "StorefrontCheckoutAndAssertOrderSummaryDisplayActionGroup"
+  page: "storefront"
+  description: Clicks on "Go To Checkout" in the Storefront Mini Shopping Cart modal. Validates that the provided Items in Cart Text is present and correct on the Storefront Checkout page under the 'Summary' section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontCheckoutAndAssertOrderSummaryDisplayActionGroup.xml
+
+- actiongroup: "FillShippingZipForm"
+  page: "storefront"
+  description: Fills in the provided Address details (Country, State and Zip Code) in the "Estimate Shipping and Tax" section of the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillShippingZipFormActionGroup.xml
+
+- actiongroup: "AssertStorefrontElementVisibleActionGroup"
+  page: "storefront"
+  description: Validates that the provided Selector contains the provided Value on a Storefront page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefronElementVisibleActionGroup.xml
+
+- actiongroup: "DeleteProductFromShoppingCartActionGroup"
+  page: "storefront"
+  description: Removes the provided Product Name from the Storefront Mini Shopping Cart. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/DeleteProductFromShoppingCartActionGroup.xml
+
+- actiongroup: "StorefrontAssertGuestShippingInfoActionGroup"
+  page: "storefront"
+  description: Validates that the provided Customer details are present and correct in the 'Shipping Address' section on the Storefront Check page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertGuestShippingInfoActionGroup.xml
+
+- actiongroup: "StorefrontOpenCheckoutPageActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontOpenCheckoutPageActionGroup.xml
+
+- actiongroup: "CustomerCheckoutFillNewShippingAddressActionGroup"
+  page: "storefront"
+  description: Fills in the provided Address details in the 'Shipping Address' section on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/CustomerCheckoutFillNewShippingAddressActionGroup.xml
+
+- actiongroup: "StorefrontCheckCartDiscountAndSummaryActionGroup"
+  page: "storefront"
+  description: Validates that the provided Order Total and Discount Totals are present and correct under the 'Summary' section of the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontCheckCartDiscountAndSummaryActionGroup.xml
+
+- actiongroup: "LoginAsCustomerOnCheckoutPageActionGroup"
+  page: "storefront"
+  description: Fills in the provided Customer (Email and Password) details in the 'Sign In' modal on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/LoginAsCustomerOnCheckoutPageActionGroup.xml
+
+- actiongroup: "StorefrontSelectOptionDateTimeActionGroup"
+  page: "storefront"
+  description: Selects the provided Month, Day, Year, Hour, Minute and Part of Day for the provided Product Option on a Storefront product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionDateTimeActionGroup.xml
+
+- actiongroup: "StorefrontUpdateProductQtyMiniShoppingCartActionGroup"
+  page: "storefront"
+  description: Clicks on the Storefront Mini Shopping Cart icon in the Header. Fills in the provided Quantity for the provided Product in the Mini Shopping Cart. Clicks on Update.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontUpdateProductQtyMiniShoppingCartActionGroup.xml
+
+- actiongroup: "FillNewShippingAddressModalActionGroup"
+  page: "storefront"
+  description: EXTENDS: FillShippingAddressOneStreetActionGroup. Selects the provided State in the 'Shipping Address' section of the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillNewShippingAddressModalActionGroup.xml
+
+- actiongroup: "StorefrontAssertShippingAddressPageDisplayActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Checkout page. Validates that the 'Shipping Address' Title and Main Area are present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertShippingAddressPageDisplayActionGroup.xml
+
+- actiongroup: "AssertShoppingCartIsEmptyActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Shopping Cart page. Validates that the Empty Shopping Cart message is present and correct. PLEASE NOTE: The message is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertShoppingCartIsEmptyActionGroup.xml
+
+- actiongroup: "StorefrontCartEstimateShippingAndTaxActionGroup"
+  page: "storefront"
+  description: Fills in the provided Address details (Country, State and Zip Code) under the 'Summary' section on the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontCartEstimateShippingAndTaxActionGroup.xml
+
+- actiongroup: "StorefrontAddToTheCartActionGroup"
+  page: "storefront"
+  description: Scrolls to the Add To Cart button. Clicks on Add To Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAddToTheCartActionGroup.xml
+
+- actiongroup: "AssertStorefrontEmailTooltipContentOnCheckoutActionGroup"
+  page: "storefront"
+  description: Clicks on the Email Address tooltip (?). Validates that the provided Message appears in the Email Address Tooltip.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontEmailTooltipContentOnCheckoutActionGroup.xml
+
+- actiongroup: "StorefrontAddProductWithSelectedConfigurableAndCustomOptionsToCartActionGroup"
+  page: "storefront"
+  description: Selects the provided Customizable Option in the Product Options drop down on a Storefront Configurable product page. Clicks on Add to Cart. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAddProductWithSelectedConfigurableAndCustomOptionsToCartActionGroup.xml
+
+- actiongroup: "FillShippingAddressOneStreetActionGroup"
+  page: "storefront"
+  description: Fills in the provided Address details in the 'Shipping Address' (Fills in Street Address 1 only) section of the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/FillShippingAddressOneStreetActionGroup.xml
+
+- actiongroup: "StorefrontSelectOptionDateActionGroup"
+  page: "storefront"
+  description: Selects the provided Month, Day and Year for the provided Product Option on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionDateActionGroup.xml
+
+- actiongroup: "StorefrontCheckoutCheckProductActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product and Cart Item are present and correct on the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontCheckoutCheckProductActionGroup.xml
+
+- actiongroup: "GuestCheckoutFillNewShippingAddressActionGroup"
+  page: "storefront"
+  description: Fills in the provided Customer/Address details in the 'Shipping Address' section on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/GuestCheckoutFillNewShippingAddressActionGroup.xml
+
+- actiongroup: "StorefrontAssertProductDetailsInOrderSummaryActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Name, Quantity and Price are present in the "Order Summary" section on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertProductDetailsInOrderSummaryActionGroup.xml
+
+- actiongroup: "StorefrontAssertCheckoutShippingMethodSelectedActionGroup"
+  page: "storefront"
+  description: Validates that the provided Shipping Method is checked on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertCheckoutShippingMethodSelectedActionGroup.xml
+
+- actiongroup: "clickViewAndEditCartFromMiniCart"
+  page: "storefront"
+  description: Clicks on the Storefront Mini Shopping Cart icon. Clicks on the "View and Edit Cart" link. Validates that the URL is present and correct. PLEASE NOTE: The URL is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontMiniCartActionGroup.xml
+
+- actiongroup: "StorefrontFillGuestShippingInfoActionGroup"
+  page: "storefront"
+  description: Fills in the provided Customer details on the Storefront Checkout page under the 'Shipping Address' section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontFillGuestShippingInfoActionGroup.xml
+
+- actiongroup: "AssertStorefrontSeeElementActionGroup"
+  page: "storefront"
+  description: Scrolls to the provided Selector. Validates that the provided Selector is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontSeeElementActionGroup.xml
+
+- actiongroup: "StorefrontSelectOptionCheckBoxActionGroup"
+  page: "storefront"
+  description: Checks the provided Product Option Title on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionCheckBoxActionGroup.xml
+
+- actiongroup: "StorefrontSelectOptionDropDownActionGroup"
+  page: "storefront"
+  description: Selects the provided Product Option Value under the provided Product Option Title on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionDropDownActionGroup.xml
+
+- actiongroup: "StorefrontFillOptionFieldInputActionGroup"
+  page: "storefront"
+  description: Fills in the provided Option Title with the provided Value on a Storefront product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontFillOptionFieldInputActionGroup.xml
+
+- actiongroup: "CheckoutSelectFlatRateShippingMethodActionGroup"
+  page: "storefront"
+  description: Clicks on the "Flat Rate" Shipping Method on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/CheckoutActionGroup.xml
+
+- actiongroup: "StorefrontAddCategoryProductToCartActionGroup"
+  page: "storefront"
+  description: Adds the provided Product to the Cart from a Storefront Category page. Validates that the Success Message is present and correct. Validates that the Mini Shopping Cart contains the provided Product Count.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontProductCartActionGroup.xml
+
+- actiongroup: "ClearShippingAddressActionGroup"
+  page: "storefront"
+  description: Clears all of the fields for the Shipping Address section on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/ClearShippingAddressActionGroup.xml
+
+- actiongroup: "AssertStorefrontShoppingCartSummaryItemsActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Shopping Cart page. Validates that the provided Subtotal/Total are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontShoppingCartSummaryItemsActionGroup.xml
+
+- actiongroup: "AssertMiniShoppingCartSubTotalActionGroup"
+  page: "storefront"
+  description: Validates that the provided Subtotal (Price and Store Currency) is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertMiniShoppingCartSubTotalActionGroup.xml
+
+- actiongroup: "ShipmentFormFreeShippingActionGroup"
+  page: "storefront"
+  description: Fills in the Customer details for the 'Shipping Address' section of the Storefront Checkout page. Selects 'Free Shipping'. Clicks on Next. Validates that the URL is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontShippmentFromActionGroup.xml
+
+- actiongroup: "StorefrontCheckThatCartIsEmptyActionGroup"
+  page: "storefront"
+  description: Clicks on the Mini Shopping Cart icon in the Storefront Header. Validates that the "Empty Cart" message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontCheckThatCartIsEmptyActionGroup.xml
+
+- actiongroup: "StorefrontSelectOptionTimeActionGroup"
+  page: "storefront"
+  description: Selects the provided Hour, Minute and Part of Day under the provided Product Option Title on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionTimeActionGroup.xml
+
+- actiongroup: "StorefrontAddBundleProductToTheCartActionGroup"
+  page: "storefront"
+  description: Clicks on 'Customize and Add to Cart' button on a Storefront Bundled product page. Adds the provided Product Name/Quantity. Clicks on Add to Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAddBundleProductToTheCartActionGroup.xml
+
+- actiongroup: "StorefrontFillOptionTextAreaActionGroup"
+  page: "storefront"
+  description: Fills in the provided Option Title with the provided Value on a Storefront product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontFillOptionTextAreaActionGroup.xml
+
+- actiongroup: "AssertStorefrontCheckoutCartItemsActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product details (Name, SKU, Price, Subtotal and Quantity) are present and correct on the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontCheckoutCartItemsActionGroup.xml
+
+- actiongroup: "AdminCheckoutSelectCheckMoneyOrderBillingMethodActionGroup"
+  page: "admin/sales/order_create/index/"
+  description: Selects the Billing Method "Check / Money order" on the Admin 'Create New Order for' page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AdminCheckoutActionGroup.xml
+
+- actiongroup: "VerifyCheckoutPaymentOrderSummaryActionGroup"
+  page: "storefront"
+  description: Validates that the provided Subtotal, Shipping Total and Summary Total prices are present and correct on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/VerifyCheckoutPaymentOrderSummaryActionGroup.xml
+
+- actiongroup: "StorefrontSelectOptionRadioButtonActionGroup"
+  page: "storefront"
+  description: Checks the provided Product Option radio button for the provided Product Option Price on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionRadioButtonActionGroup.xml
+
+- actiongroup: "StorefrontAssertCartEstimateShippingAndTaxActionGroup"
+  page: "storefront"
+  description: Validates that the provided Customer details (Country, State and Zip Code) are present and correct in the 'Estimate Shipping and Tax' section on the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertCartEstimateShippingAndTaxActionGroup.xml
+
+- actiongroup: "StorefrontSelectOptionMultiSelectActionGroup"
+  page: "storefront"
+  description: Selects the provided Product Option under the provided Product Option Title on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontSelectOptionMultiSelectActionGroup.xml
+
+- actiongroup: "StorefrontAssertMiniCartItemCountActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Count appears in the Storefront Header next to the Shopping Cart icon. Validates that the provided Product Count Text appears in the Storefront Mini Shopping Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertMiniCartItemCountActionGroup.xml
+
+- actiongroup: "StorefrontFillEmailFieldOnCheckoutActionGroup"
+  page: "storefront"
+  description: Fills in the provided Email Address on the Storefront Checkout page. Double clicks on the Email tooltip.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontFillEmailFieldOnCheckoutActionGroup.xml
+
+- actiongroup: "StorefrontClickOnMiniCartActionGroup"
+  page: "storefront"
+  description: Scrolls to the Top of the Page. Clicks on the Mini Shopping Cart icon in the Storefront Header.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontClickOnMiniCartActionGroup.xml
+
+- actiongroup: "StorefrontAddSimpleProductToCartActionGroup"
+  page: "storefront"
+  description: Adds the provided Product to the Storefront Shopping Cart from a Storefront Category page. Validates that the provided Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAddSimpleProductToCartActionGroup.xml
+
+- actiongroup: "AssertStorefrontMiniCartItemsActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product details (Name, Price, Subtotal and Quantity) are present and correct in the Storefront Mini Shopping Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontMiniCartItemsActionGroup.xml
+
+- actiongroup: "StorefrontAttachOptionFileActionGroup"
+  page: "storefront"
+  description: Attaches the provided File to the provided Product Option on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAttachOptionFileActionGroup.xml
+
+- actiongroup: "StorefrontOpenMiniCartActionGroup"
+  page: "storefront"
+  description: Clicks on the Mini Shopping Cart icon in the Storefront Header.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontOpenMiniCartActionGroup.xml
+
+- actiongroup: "LoginAsCustomerUsingSignInLinkActionGroup"
+  page: "storefront"
+  description: Clicks on "Sign In" on the Storefront Checkout page. Fills in the provided Customer details (Email and Password). Clicks on Sign In.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/LoginAsCustomerUsingSignInLinkActionGroup.xml
+
+- actiongroup: "AssertStorefrontShoppingCartSummaryWithShippingActionGroup"
+  page: "storefront"
+  description: EXTENDS: AssertStorefrontShoppingCartSummaryItemsActionGroup. Waits for the Storefront Checkout 'Shipping Methods' section to appear.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontShoppingCartSummaryWithShippingActionGroup.xml
+
+- actiongroup: "StorefrontAssertShippingMethodPresentInCartActionGroup"
+  page: "storefront"
+  description: Validates that the provided Shipping Method Name is present in the "Summary" section of the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertShippingMethodPresentInCartActionGroup.xml
+
+- actiongroup: "StorefrontAddProductWithSelectedConfigurableOptionToCartActionGroup"
+  page: "storefront"
+  description: Selects the provided Product Option in the drop down on a Storefront Configurable product page. Clicks on Add to Cart. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAddProductWithSelectedOptionToCartActionGroup.xml
+
+- actiongroup: "GuestCheckoutFillNewBillingAddressActionGroup"
+  page: "storefront"
+  description: Fills in the provided Customer and Address details on the Storefront Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/GuestCheckoutFillNewBillingAddressActionGroup.xml
+
+- actiongroup: "StorefrontEnterProductQuantityAndAddToTheCartActionGroup"
+  page: "storefront"
+  description: Fills in the provided Product Quantity on a Storefront Bundled product page. Clicks on Add to Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontEnterProductQuantityAndAddToTheCartActionGroup.xml
+
+- actiongroup: "StorefrontCheckoutCheckOutOfStockProductActionGroup"
+  page: "storefront"
+  description: Validates that the "Out of Stock" Error Message is present and correct on the Storefront Checkout page for the provided Product.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontCheckoutCheckOutOfStockProductActionGroup.xml
+
+- actiongroup: "AssertStorefrontEmailNoteMessageOnCheckoutActionGroup"
+  page: "storefront"
+  description: Validates that the provided 'Email Address' message is present on the Storefront Checkout page under the "Email Address" field.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontEmailNoteMessageOnCheckoutActionGroup.xml
+
+- actiongroup: "AssertStorefrontEmailValidationMessageOnCheckoutActionGroup"
+  page: "storefront"
+  description: Validates that the provided Error Message appears on the Storefront Checkout page after an invalid Email Addressed is inputted.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/AssertStorefrontEmailValidationMessageOnCheckoutActionGroup.xml
+
+- actiongroup: "StorefrontAssertCartShippingMethodSelectedActionGroup"
+  page: "storefront"
+  description: Validates that the provided Shipping Method Carrier/Method Code is checked on the Storefront Shopping Cart page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/StorefrontAssertCartShippingMethodSelectedActionGroup.xml
+
+- actiongroup: "AssertThatShippingAndBillingAddressTheSame"
+  page: "storefront"
+  description: Validates that the Shipping and Billing Addresses are the same.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Checkout/Test/Mftf/ActionGroup/IdentityOfDefaultBillingAndShippingAddressActionGroup.xml
+
+- actiongroup: "CaptchaFormsDisplayingActionGroup"
+  page: "admin/"
+  description: Navigates to store configuration page through UI and expands the CAPTCHA section under Customers > Customer Configuration.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/CaptchaFormsDisplayingActionGroup.xml
+
+- actiongroup: "StorefrontCustomerChangeEmailWithCaptchaActionGroup"
+  page: "storefront"
+  description: EXTENDS: StorefrontCustomerChangeEmailActionGroup. Fills in the Captcha field on the Storefront Customer Information page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/StorefrontCustomerChangeEmailWithCaptchaActionGroup.xml
+
+- actiongroup: "AssertCaptchaVisibleOnCustomerAccountCreatePageActionGroup"
+  page: "storefront"
+  description: Validate that the Captcha IS present on the Storefront Create Customer page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/AssertCaptchaVisibleOnCustomerAccountCreatePageActionGroup.xml
+
+- actiongroup: "AssertCaptchaVisibleOnCustomerAccountInfoActionGroup"
+  page: "storefront"
+  description: Validate that the Captcha IS present on the Storefront Customer Account Information page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/AssertCaptchaVisibleOnCustomerAccountInfoActionGroup.xml
+
+- actiongroup: "StorefrontFillContactUsFormWithCaptchaActionGroup"
+  page: "storefront"
+  description: EXTENDS: StorefrontFillContactUsFormActionGroup. Fills in the Captcha field on the Storefront Contact Us page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/StorefrontFillContactUsFormWithCaptchaActionGroup.xml
+
+- actiongroup: "StorefrontFillCustomerLoginFormWithCaptchaActionGroup"
+  page: "storefront"
+  description: EXTENDS: StorefrontFillCustomerLoginFormActionGroup. Fills in the Captcha field on the Storefront Customer Login page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/StorefrontFillCustomerLoginFormWithCaptchaActionGroup.xml
+
+- actiongroup: "AssertCaptchaVisibleOnContactUsFormActionGroup"
+  page: "storefront"
+  description: Validate that the Captcha IS present on the Storefront Contact Us page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/AssertCaptchaVisibleOnContactUsFormActionGroup.xml
+
+- actiongroup: "AssertCaptchaVisibleOnAdminLoginFormActionGroup"
+  page: "admin/"
+  description: Validate that the Captcha IS present on the Backend Admin Login page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/AssertCaptchaVisibleOnAdminLoginFormActionGroup.xml
+
+- actiongroup: "AdminLoginWithCaptchaActionGroup"
+  page: "admin/"
+  description: EXTENDS: LoginAsAdmin. Fills in the Captcha field on the Backend Admin Login page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/AdminLoginWithCaptchaActionGroup.xml
+
+- actiongroup: "AssertCaptchaNotVisibleOnCustomerLoginFormActionGroup"
+  page: "storefront"
+  description: Validate that the Captcha is NOT present on the Backend Admin Login page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/AssertCaptchaNotVisibleOnCustomerLoginFormActionGroup.xml
+
+- actiongroup: "StorefrontFillCustomerAccountCreationFormWithCaptchaActionGroup"
+  page: "storefront"
+  description: EXTENDS: StorefrontFillCustomerAccountCreationFormActionGroup. Fills in the Captcha field on the Storefront Create Customer page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/StorefrontFillCustomerAccountCreationFormWithCaptchaActionGroup.xml
+
+- actiongroup: "AssertCaptchaVisibleOnCustomerLoginFormActionGroup"
+  page: "storefront"
+  description: Validate that the Captcha IS present on the Storefront Customer Login page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Captcha/Test/Mftf/ActionGroup/AssertCaptchaVisibleOnCustomerLoginFormActionGroup.xml
+
+- actiongroup: "StoreFrontSelectDropDownSearchSuggestionActionGroup"
+  page: "storefront"
+  description: Fills the Storefront Quick Search field. Validates that the provided Search Suggestion is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Search/Test/Mftf/ActionGroup/StoreFrontSelectDropDownSearchSuggestionActionGroup.xml
+
+- actiongroup: "searchTermFilterBySearchQuery"
+  page: "admin/search/term/index/"
+  description: Fills in the provided Search Query on the Admin Search Term grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Search/Test/Mftf/ActionGroup/AdminSearchTermActionGroup.xml
+
+- actiongroup: "AdminFillAllSearchTermFieldsActionGroup"
+  page: "admin/search/term/index/"
+  description: Fills in the provided Search Term on the Admin Search Terms grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Search/Test/Mftf/ActionGroup/AdminEditSearchTermActionGroup.xml
+
+- actiongroup: "checkRequiredFieldsInGroupedProductForm"
+  page: "admin/catalog/product/new/set/4/type/grouped/"
+  description: Clears the Product Name and SKU fields when adding a Grouped Product and then verifies that they are required after attempting to Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/GroupedProduct/Test/Mftf/ActionGroup/AdminGroupedProductActionGroup.xml
+
+- actiongroup: "StorefrontAddThreeGroupedProductToTheCartActionGroup"
+  page: "storefront"
+  description: Goes to the provided URL for a Grouped Product. Validates that the provided Products and Quantities are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/GroupedProduct/Test/Mftf/ActionGroup/StorefrontAddThreeGroupedProductToTheCartActionGroup.xml
+
+- actiongroup: "AssertLinkPresenceOnGroupedProductPage"
+  page: "storefront"
+  description: Validates that the provided Product Name is present and correct on a Storefront Grouped Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/GroupedProduct/Test/Mftf/ActionGroup/AssertLinkPresenceOnGroupedProductPageActionGroup.xml
+
+- actiongroup: "VerifyProductTypeOrder"
+  page: "admin/catalog/product/"
+  description: Checks that Grouped is in the correct order in comparison to other product types on the add product dropdown.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/GroupedProduct/Test/Mftf/ActionGroup/VerifyProductTypeOrderActionGroup.xml
+
+- actiongroup: "AdminOpenCMSPagesGridActionGroup"
+  page: "admin/cms/page/"
+  description: Goes to the Admin Pages grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AdminOpenCMSPagesGridActionGroup.xml
+
+- actiongroup: "AssertBlockContent"
+  page: "admin/cms/block/"
+  description: Validates that the Block details are present and correct. PLEASE NOTE: The Block data is Hardcoded, using "_defaultBlock".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AssertCMSBlockContentActionGroup.xml
+
+- actiongroup: "StorefrontGoToCMSPageActionGroup"
+  page: "storefront"
+  description: Goes to the provided Storefront CMS Page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/StorefrontGoToCMSPageActionGroup.xml
+
+- actiongroup: "ClearWidgetsFromCMSContent"
+  page: "admin/cms_page/edit/page_id/"
+  description: Goes to the Admin CMS Page Edit page for the Page ID #2. Clears the Widget and replaces it with Text. PLEASE NOTE: The Page ID/Text is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/ClearWidgetsFromCMSContentActionGroup.xml
+
+- actiongroup: "AssertCMSPageNotFoundOnStorefrontActionGroup"
+  page: "storefront"
+  description: Validates that the "Whoops, our bad" error message is present and correct for a Storefront CMS Page that doesn't exist.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AssertCMSPageNotFoundOnStorefrontActionGroup.xml
+
+- actiongroup: "AdminCMSPageMassActionSelectActionGroup"
+  page: "admin/cms/page/"
+  description: Selects the provided Action in the 'Mass Action' drop down menu on the Admin Pages grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AdminCMSPageMassActionSelectActionGroup.xml
+
+- actiongroup: "FillOutCMSPageContent"
+  page: "admin/cms/page/"
+  description: Fills out the Page details (Page Title, Content and URL Key) on the Admin Page creation/edit page. PLEASE NOTE: The values are Hardcoded using '_duplicatedCMSPage'.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/FillOutCMSPageContentActionGroup.xml
+
+- actiongroup: "navigateToCreatedCMSPage"
+  page: "admin/cms/page/"
+  description: Goes to the Admin CMS Pages page. 
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/CMSActionGroup.xml
+
+- actiongroup: "AssignBlockToCMSPage"
+  page: "admin/cms/page/"
+  description: Goes to the Admin Pages grid page. Adds a Block to a CMS Page. Clicks on Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AssignBlockToCMSPageActionGroup.xml
+
+- actiongroup: "FillOutBlockContent"
+  page: "admin/cms/block/"
+  description: Fills in the Block Title, Identifier, Store View and Content. PLEASE NOTE: The values are Hardcoded using "_defaultBlock".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/FillOutBlockContentActionGroup.xml
+
+- actiongroup: "RestoreLayoutSetting"
+  page: "admin/system_config/edit/section/web/"
+  description: Sets the "Default Page Layout" to '1 column'. PLEASE NOTE: The value is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/RestoreLayoutSettingActionGroup.xml
+
+- actiongroup: "VerifyTinyMCEActionGroup"
+  page: "admin/cms/page/new/"
+  description: Goes to Admin CMS Page creation page. Validates that all of the Tiny MCE buttons are present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/VerifyTinyMCEActionGroup.xml
+
+- actiongroup: "searchBlockOnGridPage"
+  page: "admin/cms/block/"
+  description: Searches the Admin CMS Blocks grid based on the provided Block.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/SearchBlockOnGridPageActionGroup.xml
+
+- actiongroup: "AssertCMSPageContent"
+  page: "admin/cms/page/"
+  description: Validates that the CMS Page details are present and correct. PLEASE NOTE: The CMS Page data is Hardcoded, using "_duplicatedCMSPage".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AssertCMSPageContentActionGroup.xml
+
+- actiongroup: "AssertCMSPageInGridActionGroup"
+  page: "admin/cms/page/"
+  description: Validates that the provided CMS Page is present in the Admin Pages grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AssertCMSPageInGridActionGroup.xml
+
+- actiongroup: "NavigateToMediaFolderActionGroup"
+  page: "admin/cms/page/"
+  description: Clicks on the provided Folder Name in the Storage folder tree.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/NavigateToMediaFolderActionGroup.xml
+
+- actiongroup: "AdminSelectCMSPageInGridActionGroup"
+  page: "admin/cms/page/"
+  description: Checks the Row for the provided Identifier on the Admin Pages grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/AdminSelectCMSPageInGridActionGroup.xml
+
+- actiongroup: "clickBrowseBtnOnUploadPopup"
+  page: "admin/cms/"
+  description: Clicks on the Browse button in the "Insert/edit image" model.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/SelectImageFromMediaStorageActionGroup.xml
+
+- actiongroup: "DeletePageByUrlKeyActionGroup"
+  page: "admin/cms/page/"
+  description: Goes to the Admin CMS Pages page. Deletes a Page based on the provided URL Key. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/DeletePageByUrlKeyActionGroup.xml
+
+- actiongroup: "CreateNewPageWithAllValues"
+  page: "admin/cms/page/new/"
+  description: Goes to the Admin CMS creation page. Fills in the provided Page details (Title, Heading, URL, Store View and Hierarchy).
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/CreateNewPageWithAllValuesActionGroup.xml
+
+- actiongroup: "CreateNewPageWithWidget"
+  page: "admin/cms/page/new/"
+  description: Goes to Admin CMS Page creation page. Adds the provided Title, Category, Conditions and Widget. Clicks on Save. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/CreateNewPageWithWidgetActionGroup.xml
+
+- actiongroup: "DeleteImageFromStorageActionGroup"
+  page: "admin/cms/page/"
+  description: Deletes the provided Image from Storage.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Cms/Test/Mftf/ActionGroup/DeleteImageFromStorageActionGroup.xml
+
+- actiongroup: "StorefrontClickOnHeaderLogoActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront. Clicks on the Logo.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Theme/Test/Mftf/ActionGroup/StorefrontClickOnHeaderLogoActionGroup.xml
+
+- actiongroup: "NavigateToFaviconMediaFolderActionGroup"
+  page: "admin/catalog/category/"
+  description: Navigates to the Favicon Media folder in the "Media Gallery". Clicks on the provided Store Folder.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Theme/Test/Mftf/ActionGroup/NavigateToFaviconMediaFolderActionGroup.xml
+
+- actiongroup: "AdminAddUrlRewrite"
+  page: "admin/url_rewrite/edit/id/"
+  description: Goes to the Admin Add URL Rewrite edit page. Fills in the provided URL details. Clicks on Save. Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/AdminUrlRewriteActionGroup.xml
+
+- actiongroup: "AssertStorefrontUrlRewriteRedirect"
+  page: "storefront"
+  description: Goes to the provided New URL. Validates that the redirect works and the provided Category is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/StorefrontUrlRewriteRedirectActionGroup.xml
+
+- actiongroup: "AdminSearchByRequestPath"
+  page: "admin/url_rewrite/index/"
+  description: Goes to the Admin URL Rewrite grid page. Searches the grid based on the provided Redirect Path. Validates that the provided Redirect Path, Type and Target Path are present and correct in the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/UrlRewrite/Test/Mftf/ActionGroup/AdminUrlRewriteGridActionGroup.xml
+
+- actiongroup: "OpenPayPalButtonCheckoutPage"
+  page: "admin/system_config/edit/section/payment/"
+  description: Clicks on "Configure" for 'PayPal Express Checkout' on the Admin Configuration page. Expands the "Advanced Settings" tab. Expands the "Frontend Experience Settings" tab. Expands the "Checkout Page" tab.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Paypal/Test/Mftf/ActionGroup/OpenPayPalButtonCheckoutPageActionGroup.xml
+
+- actiongroup: "ConfigPayPalExpressCheckout"
+  page: "admin/system_config/edit/section/payment/"
+  description: Goes to the "Configuration" page for 'Payment Methods'. Fills in the provided PayPal credentials and other details. Clicks on Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Paypal/Test/Mftf/ActionGroup/PayPalExpressCheckoutConfigurationActionGroup.xml
+
+- actiongroup: "EnablePayPalConfiguration"
+  page: "admin/system_config/edit/section/payment/"
+  description: Expands the "OTHER PAYPAL PAYMENT SOLUTIONS" tab on the Admin Configuration page. Enables the provided PayPal Config type for the provided Country Code.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Paypal/Test/Mftf/ActionGroup/OtherPayPalConfigurationActionGroup.xml
+
+- actiongroup: "setColorPickerByHex"
+  page: "admin/catalog/product/"
+  description: Sets the provided HEX value in the provided Color Picker.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Swatches/Test/Mftf/ActionGroup/ColorPickerActionGroup.xml
+
+- actiongroup: "AddVisualSwatchToProductActionGroup"
+  page: "admin/catalog/product/"
+  description: Adds the provided Visual Swatch Attribute and Options (2) to a Product on the Admin Product creation/edit page. Clicks on Save. Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Swatches/Test/Mftf/ActionGroup/AddSwatchToProductActionGroup.xml
+
+- actiongroup: "displayOutOfStockProduct"
+  page: "admin/system_config/edit/section/cataloginventory/"
+  description: Goes to the "Configuration" page for 'Inventory'. Enables 'Display Out of Stock Products'. Clicks on the Save button.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogInventory/Test/Mftf/ActionGroup/DisplayOutOfStockProductActionGroup.xml
+
+- actiongroup: "FillPaymentInformation"
+  page: "storefront"
+  description: Fill Payment Method with Authorize.net
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/AuthorizenetAcceptjs/Test/Mftf/ActionGroup/FillPaymentInformationActionGroup.xml
+
+- actiongroup: "ConfigureAuthorizenetAcceptjs"
+  page: "admin/system_config/"
+  description: Sets up the Authorize.net Accept JS configuration setting with a specified Payment action.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/AuthorizenetAcceptjs/Test/Mftf/ActionGroup/ConfigureAuthorizenetAcceptjsActionGroup.xml
+
+- actiongroup: "ViewAndValidateOrderActionGroup"
+  page: "admin/sales/order/"
+  description: Validate the Order is Correct. Then Submit the Invoice.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/AuthorizenetAcceptjs/Test/Mftf/ActionGroup/ViewAndValidateOrderActionGroup.xml
+
+- actiongroup: "CheckingGiftOptionsActionGroup"
+  page: "storefront"
+  description: Clicks on Checkout with Multiple Addresses. Clicks on Add Gift option. Validates that the Success Message is present and correct. PLEASE NOTE: The message is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/GiftMessage/Test/Mftf/ActionGroup/CheckingGiftOptionsActionGroup.xml
+
+- actiongroup: "AdminDeleteCatalogRuleActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Clicks on the Delete button on a Admin Catalog Price Rule edit page. Clicks on Ok. Validates that the provided Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AdminDeleteCatalogRuleActionGroup.xml
+
+- actiongroup: "AssertCustomerGroupNotOnCatalogPriceRuleFormActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Validate that the provided Customer Group is not present on the Catalog Price Rules creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AssertCustomerGroupNotOnCatalogPriceRuleFormActionGroup.xml
+
+- actiongroup: "SaveAndApplyCatalogPriceRuleActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Clicks on Save and Apply. Validates that the Success Message is present and correct on the Admin Catalog Price Rule creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/SaveAndApplyCatalogPriceRuleActionGroup.xml
+
+- actiongroup: "AssertCatalogPriceRuleFormActionGroup"
+  page: "admin/catalog_rule/promo_catalog/new/"
+  description: Validates that the provided Catalog Rule, Status, Websites and Customer Group details are present and correct on a Admin Catalog Price Rule creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AssertCatalogPriceRuleFormActionGroup.xml
+
+- actiongroup: "AdminCreateNewCatalogPriceRuleActionGroup"
+  page: "admin/catalog_rule/promo_catalog/new/"
+  description: Goes to the Admin Catalog Price Rule creation page. Fills in the provided Catalog Rule details. Selects the provided Customer Group.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AdminCreateNewCatalogPriceRuleActionGroup.xml
+
+- actiongroup: "AssertCatalogRuleInGridActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Validates that the provided Catalog Rule Name, Status, Websites and Catalog Rule ID are present in the 1st row of the Admin Catalog Price Rule grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AssertCatalogRuleInGridActionGroup.xml
+
+- actiongroup: "CreateCatalogPriceRuleConditionWithAttributeAndOptionActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Adds the provided Attribute Name, Select Value, Index A and Index B details to the "Conditions" section on the Admin Catalog Price Rule creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/CreateCatalogPriceRuleConditionWithAttributeAndOptionActionGroup.xml
+
+- actiongroup: "CatalogSelectCustomerGroupActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Selects the provided Customer Group Name on the Admin Catalog Price Rule creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/CatalogSelectCustomerGroupActionGroup.xml
+
+- actiongroup: "newCatalogPriceRuleByUI"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Goes to the Catalog Price Rule grid. Clicks on Add. Fills in the provided Catalog Rule details.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/CatalogPriceRuleActionGroup.xml
+
+- actiongroup: "AdminSearchCatalogRuleInGridActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Goes to the Admin Catalog Price Rules grid page. Searches the grid for the provided Catalog Price Rule name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AdminSearchCatalogRuleInGridActionGroup.xml
+
+- actiongroup: "AdminSaveAndApplyRulesActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Clicks Save on a Admin Catalog Price Rule creation/edit page. Validates that the Success Message is present. Clicks Apply Rules. Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AdminSaveAndApplyRulesActionGroup.xml
+
+- actiongroup: "AdminOpenNewCatalogPriceRuleFormPageActionGroup"
+  page: "admin/catalog_rule/promo_catalog/new/"
+  description: Goes to the create Catalog Price Rule page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AdminOpenNewCatalogPriceRuleFormPageActionGroup.xml
+
+- actiongroup: "AdminSelectCatalogRuleFromGridActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Clicks on the Admin Catalog Price Rule row that contains the provided Catalog Price Rule name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRule/Test/Mftf/ActionGroup/AdminSelectCatalogRuleFromGridActionGroup.xml
+
+- actiongroup: "StorefrontCreateNewAccountNewsletterChecked"
+  page: "storefront"
+  description: EXTENDS: SignUpNewUserFromStorefrontActionGroup. Clicks on "Sign Up for Newsletter". Validates that the Subscription Confirmation message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Newsletter/Test/Mftf/ActionGroup/VerifySubscribedNewsletterDisplayedActionGroup.xml
+
+- actiongroup: "StorefrontCheckCategoryConfigurableProductWithUpdatedPriceActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Name and Price for a Configurable Product are present on a Storefront Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/StorefrontCheckCategoryConfigurableProductWithUpdatedPriceActionGroup.xml
+
+- actiongroup: "GotoCatalogProductsPage"
+  page: "admin/"
+  description: Goes to the Admin Products grid via the Admin Side Menu.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/ConfigurableProductAttributeNameDesignActionGroup.xml
+
+- actiongroup: "StorefrontCheckCategoryConfigurableProduct"
+  page: "storefront"
+  description: Validates that the provided Configurable Product is present and correct on a Category page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/StorefrontCategoryActionGroup.xml
+
+- actiongroup: "AdminCreateApiConfigurableProductActionGroup"
+  page: "admin/"
+  description: Creates a Configurable Product with 2 Product Options via the API.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/AdminCreateApiConfigurableProductActionGroup.xml
+
+- actiongroup: "CheckConfigurableProductInCheckoutCartItemsActionGroup"
+  page: "storefront"
+  description: Validates that the Configurable Product is present and correct in the Cart area on the Checkout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/ConfigurableProductCheckoutActionGroup.xml
+
+- actiongroup: "StorefrontAddConfigurableProductToTheCartActionGroup"
+  page: "storefront"
+  description: Goes to the provided Storefront URL. Selects the provided Product Option under the Product Attribute. Fills in the provided Quantity. Clicks Add to Cart. Validates that the Success Message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/StorefrontAddConfigurableProductToTheCartActionGroup.xml
+
+- actiongroup: "StorefrontCheckConfigurableProduct"
+  page: "storefront"
+  description: Goes to the provided Storefront Product page. Validates that the Product details are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/StorefrontProductActionGroup.xml
+
+- actiongroup: "StorefrontCheckCartConfigurableProductActionGroup"
+  page: "storefront"
+  description: Validates that the provided Option Price and Option Quantity is present and correct in the Mini Shopping Cart on the Storefront.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/StorefrontProductCartActionGroup.xml
+
+- actiongroup: "addOptionsToAttributeActionGroup"
+  page: "admin/catalog/product/new/set/4/type/configurable/"
+  description: Adds 5 provided Options to a new Attribute on the Configurable Product creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/AdminAddOptionsToAttributeActionGroup.xml
+
+- actiongroup: "SelectStorefrontSideBarAttributeOption"
+  page: "storefront"
+  description: Goes to the provided Storefront Category page. Validates that the provided Attribute Label is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/StorefrontProductAttributeActionGroup.xml
+
+- actiongroup: "StorefrontCheckCompareConfigurableProductActionGroup"
+  page: "storefront"
+  description: Validates that the Configurable Product is present and correct in the Compare Product area.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/StorefrontCompareActionGroup.xml
+
+- actiongroup: "VerifyProductTypeOrder"
+  page: "admin/catalog/product/"
+  description: Validates that the "Configurable Product" option is present in the 'Add Product' dropdown menu on the Products grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/VerifyProductTypeOrderActionGroup.xml
+
+- actiongroup: "viewConfigurableProductInAdminGrid"
+  page: "admin/catalog/product/"
+  description: Goes to the Admin Product grid page. Validates the provided Configurable Product is present and correct in the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/ConfigurableProduct/Test/Mftf/ActionGroup/AdminConfigurableProductActionGroup.xml
+
+- actiongroup: "createSystemBackup"
+  page: "admin/backup/index/"
+  description: Creates a System Backup using provided Backup Entity.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backup/Test/Mftf/ActionGroup/CreateBackupActionGroup.xml
+
+- actiongroup: "deleteBackup"
+  page: "admin/backup/index/"
+  description: Deletes a Backup using provided Backup Entity.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Backup/Test/Mftf/ActionGroup/DeleteBackupActionGroup.xml
+
+- actiongroup: "AdminCreateBlockWithWidget"
+  page: "admin/widget_instance/"
+  description: Inserts a Widget into a Block on the Block creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogWidget/Test/Mftf/ActionGroup/AdminCreateBlockWithWidgetActionGroup.xml
+
+- actiongroup: "updateIndexerBySchedule"
+  page: "admin/indexer/indexer/list/"
+  description: Goes to the Index Management page. Checks the provided Indexer Name. Selects "Update by Schedule". Clicks on Submit.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Indexer/Test/Mftf/ActionGroup/IndexerActionGroup.xml
+
+- actiongroup: "CreateNewTemplate"
+  page: "admin/email_template/"
+  description: Clicks on Add New Template. Fills the Template details. Clicks on Save. PLEASE NOTE: The values are Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Email/Test/Mftf/ActionGroup/EmailTemplateActionGroup.xml
+
+- actiongroup: "AdminCreateCustomerGroupActionGroup"
+  page: "admin/customer/group/"
+  description: Goes to the Customer Groups creation page. Fills Name. Selects Tax Class. Clicks on Save. Validate that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCreateCustomerGroupActionGroup.xml
+
+- actiongroup: "StorefrontCustomerAddressBookNumberOfAddresses"
+  page: "storefront"
+  description: Validate that the Customer Address count is present and correct on the Storefront Customer Dashboard page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerAddressBookNumberOfAddressesActionGroup.xml
+
+- actiongroup: "CreateCustomerActionGroup"
+  page: "admin/"
+  description: Goes to the Add Customers page via the Admin Nav Menu. Fills in the Customer details. Clicks on Save. PLEASE NOTE: The Customer data is Hardcoded using "NewCustomerData".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/CreateCustomerActionGroup.xml
+
+- actiongroup: "AssertStorefrontPasswordAutoCompleteOffActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Sign-In page. Validates that the Password field does NOT contain the 'autocomplete' attribute.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertStorefrontPasswordAutocompleteOffActionGroup.xml
+
+- actiongroup: "AssertMessageCustomerCreateAccountActionGroup"
+  page: "storefront"
+  description: Validates that the provided Message/Message Type are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertMessageCustomerCreateAccountActionGroup.xml
+
+- actiongroup: "AdminAssertCustomerNoDefaultShippingAddress"
+  page: "admin/customer/index/edit/id/"
+  description: Validates that a Customer does NOT have a Default Shipping Address assigned. PLEASE NOTE: The error message is hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerNoDefaultShippingAddressActionGroup.xml
+
+- actiongroup: "AdminAssertCustomerNoDefaultBillingAddress"
+  page: "admin/customer/index/edit/id/"
+  description: Validates that a Customer does NOT have a Default Billing Address assigned. PLEASE NOTE: The error message is hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerNoDefaultBillingAddressActionGroup.xml
+
+- actiongroup: "AdminAddProductToShoppingCartActionGroup"
+  page: "admin/sales/order_create/index/customer_id/"
+  description: Adds the provided Product Name to the Cart on the Admin Customer creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCustomerShopingCartActionGroup.xml
+
+- actiongroup: "AdminAssertCustomerDefaultBillingAddress"
+  page: "admin/customer/index/edit/id/"
+  description: Validates that the provided Default Customer Billing Address details are present and correct on the Customer creation/edit page. Under the section "Addresses".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerDefaultBillingAddressActionGroup.xml
+
+- actiongroup: "AssertCustomerGroupNotInGridActionGroup"
+  page: "admin/customer/index/"
+  description: Filters the Admin Customers grid for the Customer Group (Code). Validates that the grid is empty.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerGroupNotInGridActionGroup.xml
+
+- actiongroup: "StorefrontClickCreateAnAccountCustomerAccountCreationFormActionGroup"
+  page: "storefront"
+  description: Clicks on the Storefront Header "Create Account" link.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontClickCreateAnAccountCustomerAccountCreationFormActionGroup.xml
+
+- actiongroup: "AdminFilterCustomerByEmail"
+  page: "admin/customer/index/"
+  description: Goes to the Customer grid page. Filter results based on provided Customer Email Address.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCustomerGridActionGroup.xml
+
+- actiongroup: "StorefrontClickSignInButtonActionGroup"
+  page: "storefront"
+  description: Click on the Storefront Header "Sign-In" link.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontClickSignInButtonActionGroup.xml
+
+- actiongroup: "AdminAssertCustomerAccountInformation"
+  page: "admin/customer/index/edit/id/"
+  description: Validates that the provided Customer details are present and correct on the Customer creation/edit page. Under the "Account Information" section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerAccountInformationActionGroup.xml
+
+- actiongroup: "StorefrontOpenCustomerLoginPageActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Sign-In page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontOpenCustomerLoginPageActionGroup.xml
+
+- actiongroup: "SetCustomerGroupForSelectedCustomersViaGrid"
+  page: "admin/customer/index/"
+  description: Clicks on the "Actions" dropdown menu. Clicks on "Assign a Customer Group". Clicks on "Ok".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/SetGroupCustomerActionGroup.xml
+
+- actiongroup: "AdminFilterCustomerGroupByNameActionGroup"
+  page: "admin/customer/index/"
+  description: Filters the Admin Customers grid by the provided Customer Group Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFilterCustomerGroupByNameActionGroup.xml
+
+- actiongroup: "AssertMessageCustomerLoginActionGroup"
+  page: "storefront"
+  description: Validates that the provided Message/Message Type are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertMessageCustomerLoginActionGroup.xml
+
+- actiongroup: "AdminEditCustomerAddressSetDefaultShippingAndBilling"
+  page: "admin/customer/index/"
+  description: EXTENDS: AdminEditCustomerAddressesFrom. Removes "selectState" and "fillZipCode".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminEditCustomerAddressSetDefaultShippingAndBillingActionGroup.xml
+
+- actiongroup: "StorefrontAssertSuccessLoginToStorefront"
+  page: "storefront"
+  description: EXTENDS: LoginToStorefrontActionGroup. Validates that the provided Customer name is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontAssertSuccessLoginToStorefrontActionGroup.xml
+
+- actiongroup: "SignUpNewUserFromStorefrontActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront. Clicks on "Create Account". Fills in the provided Customer details, excluding Newsletter Sign-Up. Clicks on 'Create Account' button. Validate that the Customer details are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/SignUpNewUserFromStorefrontActionGroup.xml
+
+- actiongroup: "AssertCustomerGroupNotOnProductFormActionGroup"
+  page: "admin/catalog/product/"
+  description: Clicks on "Advanced Pricing" on the Admin Customers creation/edit page. Validates that the provided Customer Group does NOT appear in the dropdown menu.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerGroupNotOnProductFormActionGroup.xml
+
+- actiongroup: "VerifyCustomerGroupForCustomer"
+  page: "admin/customer/group/"
+  description: Clicks on the Edit link for the provided Customer Email Address.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/VerifyGroupCustomerActionGroup.xml
+
+- actiongroup: "AdminDeleteAddressInCustomersAddressGrid"
+  page: "admin/customer/index/edit/id/"
+  description: Deletes a Customer Address from the Customer creation/edit page under the "Addresses" section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminDeleteAddressInCustomersAddressGridActionGroup.xml
+
+- actiongroup: "NavigateToCustomerGroupPage"
+  page: "admin/"
+  description: Goes to the Admin Customer Groups page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/NavigateCustomerGroupActionGroup.xml
+
+- actiongroup: "StorefrontRegisterCustomerFromOrderSuccessPage"
+  page: "storefront"
+  description: Clicks on "Create Account" on the Storefront Checkout Success page. Fills in the provided Customer details. Clicks on "Create Account". Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontRegisterCustomerFromOrderSuccessPageActionGroup.xml
+
+- actiongroup: "AssertMessageCustomerChangeAccountInfoActionGroup"
+  page: "storefront"
+  description: Validates that the provided Message/Message Type are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertMessageCustomerChangeAccountInfoActionGroup.xml
+
+- actiongroup: "StorefrontOpenCustomerAccountInfoEditPageActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontOpenCustomerAccountInfoEditPageActionGroup.xml
+
+- actiongroup: "AdminFilterCustomerByName"
+  page: "admin/customer/index/"
+  description: Filters the Admin Customers grid by the provided Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFilterCustomerByNameActionGroup.xml
+
+- actiongroup: "AssertCustomerAccountPageTitleActionGroup"
+  page: "storefront"
+  description: Validates that the provided Page Title is present and correct on the Storefront Customer Dashboard.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerAccountPageTitleActionGroup.xml
+
+- actiongroup: "AdminAssertNumberOfRecordsInCustomersAddressGrid"
+  page: "admin/customer/index/"
+  description: Validates that the Number of Records listed on the Customer grid page is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertNumberOfRecordsInCustomersAddressGridActionGroup.xml
+
+- actiongroup: "AssertCustomerResetPasswordActionGroup"
+  page: "storefront"
+  description: Validates that the provided URL is present and correct. Validates that the provided Message/Message Type is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerResetPasswordActionGroup.xml
+
+- actiongroup: "AdminUpdateCustomerGroupByEmailActionGroup"
+  page: "admin/customer/index/"
+  description: Goes to the Admin Customers grid page. Filters the grid for the provided Email Address. Edits the Customer. Updates the Customer Group with the provided Customer Group. Clicks on Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminUpdateCustomerGroupActionGroup.xml
+
+- actiongroup: "SetCustomerDataLifetimeActionGroup"
+  page: "admin/system_config/edit/section/customer/"
+  description: Goes to the Customer Configuration page. Fills Customer Data Lifetime. Clicks on Save. Validates that the Success message is present.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminConfigCustomerActionGroup.xml
+
+- actiongroup: "DeleteCustomerActionGroup"
+  page: "admin/customer/index/"
+  description: Goes to the Admin Customers grid page. Deletes a Customer based on the provided Last Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/DeleteCustomerActionGroup.xml
+
+- actiongroup: "AdminResetFilterInCustomerAddressGrid"
+  page: "admin/customer/index/"
+  description: Clears the Admin Customer Address grid Filters. Sets the grid view to "Default View".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminResetFilterInCustomerAddressGridActionGroup.xml
+
+- actiongroup: "StorefrontCustomerLogoutActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Logout page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerLogoutActionGroup.xml
+
+- actiongroup: "AdminSaveCustomerAndAssertSuccessMessage"
+  page: "admin/customer/index/"
+  description: Clicks on the Save button. Validates that the Success Message is present and correct. PLEASE NOTE: The message is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminSaveCustomerAndAssertSuccessMessageActionGroup.xml
+
+- actiongroup: "AssertCustomerGroupOnCustomerFormActionGroup"
+  page: "admin/customer/index/"
+  description: Validates that the provided Customer Group is selected on the Admin Customer edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerGroupOnCustomerFormActionGroup.xml
+
+- actiongroup: "StorefrontAddNewCustomerAddressActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Add New Address page. Fills in the provided Address details. Clicks on Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontAddCustomerAddressActionGroup.xml
+
+- actiongroup: "AdminFilterCustomerGridByEmail"
+  page: "admin/customer/index/"
+  description: Filters the Admin Customers grid by the provided Email Address.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFilterCustomerGridByEmailActionGroup.xml
+
+- actiongroup: "AdminDeleteCustomerActionGroup"
+  page: "admin/customer/index/"
+  description: Goes to the Customers grid page. Check the row for the provided Customer Email Address. Delete the Customer.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminDeleteCustomerActionGroup.xml
+
+- actiongroup: "AssertAuthorizationPopUpPasswordAutoCompleteOffActionGroup"
+  page: "storefront"
+  description: Validates that the Storefront Customer Sign-In popup form does NOT contain the "autocomplete=off" attribute.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertAuthorizationPopUpPasswordAutoCompleteOffActionGroup.xml
+
+- actiongroup: "AdminEditCustomerAddressesFrom"
+  page: "admin/customer/index/"
+  description: Adds the provided Address to a Customer from the Admin Customers creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminEditCustomerAddressesFromActionGroup.xml
+
+- actiongroup: "AssertCustomerWelcomeMessageActionGroup"
+  page: "storefront"
+  description: Validates that the Welcome message is present and correct, including the provided Customers Full Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AssertCustomerLoggedInActionGroup.xml
+
+- actiongroup: "SignOut"
+  page: "admin/"
+  description: Click on the Backend Admin current Admin User menu. Click on "Logout". Validate that you are logged out.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/SwitchAccountActionGroup.xml
+
+- actiongroup: "StorefrontFillCustomerLoginFormWithWrongPasswordActionGroup"
+  page: "storefront"
+  description: EXTENDS: StorefrontFillCustomerLoginFormActionGroup. Removes 'fillPassword'. Fills in an invalid Password.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontFillCustomerLoginFormWithWrongPasswordActionGroup.xml
+
+- actiongroup: "StorefrontClickSignOnCustomerLoginFormActionGroup"
+  page: "storefront"
+  description: Click on the Customer Sign In button on the Storefront Customer Sign-In page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontClickSignOnCustomerLoginFormActionGroup.xml
+
+- actiongroup: "StorefrontCustomerAddressBookNotContains"
+  page: "storefront"
+  description: Validate that the provided Address does NOT appear in the Storefront Customer Address list.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerAddressBookNotContainsActionGroup.xml
+
+- actiongroup: "AdminDeleteCustomerGroupActionGroup"
+  page: "admin/customer/group/"
+  description: Goes to the Customer Groups grid page. Filter results based on provided Customer Group Name. Delete Customer from grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminDeleteCustomerGroupActionGroup.xml
+
+- actiongroup: "FillCustomerSignInPopupFormActionGroup"
+  page: "storefront"
+  description: Fills in the provided Customer details (Email and Password) in the Customer Sign In modal on the Storefront Checkout page. Clicks on Sign In.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/FillCustomerSignInPopupFormActionGroup.xml
+
+- actiongroup: "LoginToStorefrontActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Sign In page. Logs in using the provided Customer.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/LoginToStorefrontActionGroup.xml
+
+- actiongroup: "StorefrontFillCustomerAccountCreationFormActionGroup"
+  page: "storefront"
+  description: Fills in the provided Customer details on the Storefront Customer creation page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontFillCustomerAccountCreationFormActionGroup.xml
+
+- actiongroup: "OpenEditCustomerFromAdminActionGroup"
+  page: "admin/customer/index/"
+  description: Goes to the Admin Customers grid page. Filters the grid based on the provided Customer. Clicks on Edit.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/OpenEditCustomerFromAdminActionGroup.xml
+
+- actiongroup: "AdminEditCustomerAddressNoZipNoState"
+  page: "admin/customer/index/"
+  description: EXTENDS: AdminEditCustomerAddressesFrom. Removes "selectState" and "fillZipCode". Clicks on "Set Default" for Billing/Shipping.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminEditCustomerAddressNoZipNoStateActionGroup.xml
+
+- actiongroup: "OpenMyAccountPageActionGroup"
+  page: "storefront"
+  description: Clicks on the Storefront Customer menu in the Header. Clicks on "My Account".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/OpenMyAccountPageActionGroup.xml
+
+- actiongroup: "CustomerLogoutStorefrontByMenuItemsActionGroup"
+  page: "storefront"
+  description: Click on the Storefront Current Customer menu. Click on Logout.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerActionGroup.xml
+
+- actiongroup: "StorefrontCustomerChangeEmailActionGroup"
+  page: "storefront"
+  description: Change the Customer Email Address for a Customer Account via the Storefront Customer Dashboard page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerChangeEmailActionGroup.xml
+
+- actiongroup: "LoginToStorefrontWithEmailAndPassword"
+  page: "storefront"
+  description: Goes to the Storefront Customer Sign In page. Logs in using the provided Email and Password.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/LoginToStorefrontWithEmailAndPasswordActionGroup.xml
+
+- actiongroup: "NavigateThroughCustomerTabsActionGroup"
+  page: "storefront"
+  description: Clicks on the provided Storefront Customer Dashboard Side Bar tab names.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/NavigateThroughCustomerTabsActionGroup.xml
+
+- actiongroup: "StorefrontOpenCustomerAccountCreatePageActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Create page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontOpenCustomerAccountCreatePageActionGroup.xml
+
+- actiongroup: "AdminResetFilterInCustomerGrid"
+  page: "admin/customer/index/"
+  description: Clears the Admin Customer grid Filters. Sets the grid view to "Default View".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminResetFilterInCustomerGridActionGroup.xml
+
+- actiongroup: "AdminAssertCustomerDefaultShippingAddress"
+  page: "admin/customer/index/edit/id/"
+  description: Validates that the provided Default Customer Shipping Address details are present and correct on the Customer creation/edit page. Under the section "Addresses".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerDefaultShippingAddressActionGroup.xml
+
+- actiongroup: "AdminAssertAddressInCustomersAddressGrid"
+  page: "admin/customer/index/edit/id/"
+  description: Validates that the provided Customer Address is present in the Customer Address grid on the Customer creation/edit page. Under the "Addresses" section.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertAddressInCustomersAddressGridActionGroup.xml
+
+- actiongroup: "StorefrontCustomerAddressBookContains"
+  page: "storefront"
+  description: Validate that the provided Address appears in the Storefront Customer Address list.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerAddressBookContainsActionGroup.xml
+
+- actiongroup: "AdminOpenCustomerEditPageActionGroup"
+  page: "admin/customer/index/"
+  description: Goes to the Admin Customer Edit page for the provided Customer ID #.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminOpenCustomerEditPageActionGroup.xml
+
+- actiongroup: "EditCustomerAddressesFromAdminActionGroup"
+  page: "admin/customer/index/"
+  description: Adds the provided Address to a Customer from the Admin Customers creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/EditCustomerAddressesFromAdminActionGroup.xml
+
+- actiongroup: "AdminFilterCustomerAddressGridByPhoneNumber"
+  page: "admin/customer/index/"
+  description: Filters the Admin Customers grid by the provided Phone Number.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminFilterCustomerAddressGridByPhoneNumberActionGroup.xml
+
+- actiongroup: "NavigateToAllCustomerPage"
+  page: "admin/"
+  description: Goes to the Admin Customers grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/NavigateCustomerActionGroup.xml
+
+- actiongroup: "AdminCustomerSaveAndContinue"
+  page: "admin/customer/index/edit/id/"
+  description: Clicks on "Save and Continue" on the Customer creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCustomerSaveAndContinueActionGroup.xml
+
+- actiongroup: "AdminEditCustomerAccountInformationActionGroup"
+  page: "admin/customer/index/"
+  description: Fills in the Customer First Name, Last Name and Email. Clicks on Save and Continue.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminEditCustomerInformationFromActionGroup.xml
+
+- actiongroup: "StorefrontCustomerGoToSidebarMenu"
+  page: "storefront"
+  description: Click on the Storefront Customer Account Dashboard sub-menu based on the provided Menu Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerGoToSidebarMenuActionGroup.xml
+
+- actiongroup: "AdminCreateCustomerWithWebsiteAndStoreViewActionGroup"
+  page: "admin/customer/index/"
+  description: Goes to the Customer grid page. Click on "Add New Customer". Fills provided Customer Data. Fill provided Customer Address data. Assigns Product to Website and Store View. Click on Save Address.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminCreateCustomerWithWebsiteAndStoreViewActionGroup.xml
+
+- actiongroup: "StorefrontFillCustomerLoginFormActionGroup"
+  page: "storefront"
+  description: Fills Storefront Customer Login Email Address. Fills Storefront Customer Login Password.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontFillCustomerLoginFormActionGroup.xml
+
+- actiongroup: "AdminSelectCustomerByEmail"
+  page: "admin/customer/index/"
+  description: Checks the Customer for the provided Customer Email Address in the Admin Customers grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminSelectCustomerByEmailActionGroup.xml
+
+- actiongroup: "AdminSelectAllCustomers"
+  page: "admin/customer/index/"
+  description: Selects All of the Customers in the Admin Customers grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminSelectAllCustomersActionGroup.xml
+
+- actiongroup: "StorefrontCustomerResetPasswordActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront Customer Sign-In page. Clicks on "Forgot Password". Fills Email Address. Clicks on Reset Password.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/StorefrontCustomerResetPasswordActionGroup.xml
+
+- actiongroup: "AdminAssertCustomerInCustomersGrid"
+  page: "admin/customer/index/"
+  description: Validates that the provided Customer is present and correct in the Backend Customer grid page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Customer/Test/Mftf/ActionGroup/AdminAssertCustomerInCustomersGridActionGroup.xml
+
+- actiongroup: "StorefrontCustomerAddCategoryProductToWishlistActionGroup"
+  page: "storefront"
+  description: Adds the provided Product to the Wish List from a Storefront Category page. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Wishlist/Test/Mftf/ActionGroup/StorefrontCustomerWishlistActionGroup.xml
+
+- actiongroup: "GenerateOrderReportActionGroup"
+  page: "admin/reports/report_sales/sales/"
+  description: Clicks on "here" to refresh the grid data. Enters the provided Order From/To Dates. Clicks on "Show Report".
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Reports/Test/Mftf/ActionGroup/GenerateOrderReportActionGroup.xml
+
+- actiongroup: "AdminReviewOrderActionGroup"
+  page: "admin/"
+  description: Clicks on "REPORTS" in the Admin side menu. Clicks on "Ordered". Clicks on 'Refresh'. Validates that the provided Product name appears in the list.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Reports/Test/Mftf/ActionGroup/AdminReviewOrderActionGroup.xml
+
+- actiongroup: "EditCustomStoreGroupAcceptWarningMessageActionGroup"
+  page: "admin/system_store/"
+  description: EXTENDS: CreateCustomStore. Removes 'selectCreateStore'. Clicks on the 1st row. Clicks on Ok.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/EditCustomStoreGroupAcceptWarningMessageActionGroup.xml
+
+- actiongroup: "AssertStorefrontStoreCodeInUrlActionGroup"
+  page: "storefront"
+  description: Validates that the provided Store Code is present in the Storefront URL.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStorefrontStoreCodeInUrlActionGroup.xml
+
+- actiongroup: "DeleteCustomStoreActionGroup"
+  page: "admin/system_store/"
+  description: Goes to the Admin Stores grid page. Deletes the provided Store Group Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/DeleteCustomStoreActionGroup.xml
+
+- actiongroup: "StoreFrontProductValidationActionGroup"
+  page: "storefront"
+  description: Goes to the provided Storefront Product page. Validates that the provided Product details are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/StoreFrontProductValidationActionGroup.xml
+
+- actiongroup: "AdminSwitchStoreViewActionGroup"
+  page: "admin/"
+  description: Selects the provided Website from the "Store View" dropdown menu on the Admin Grid pages.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminSwitchStoreViewActionGroup.xml
+
+- actiongroup: "AssertStoreGroupFormActionGroup"
+  page: "admin/system_store/"
+  description: Clicks on the 1st row of the Admin Store grid page. Validates that the provided Website, Store Group Name/Code and Root Category are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStoreGroupFormActionGroup.xml
+
+- actiongroup: "DeleteCustomWebsiteActionGroup"
+  page: "admin/system_store/"
+  description: Goes to the Admin Stores grid page. Searches the grid for the provided Website Name. Deletes the provided Website Name. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/DeleteCustomWebsiteActionGroup.xml
+
+- actiongroup: "AdminSwitchWebsiteActionGroup"
+  page: "admin/"
+  description: Selects the provided Website from the "Store View" dropdown menu on the Admin Grid pages.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminSwitchWebsiteActionGroup.xml
+
+- actiongroup: "AdminFilterStoreViewActionGroup"
+  page: "admin/catalog/product/"
+  description: Filters the Admin Catalog Product page based on the provided Store Group and Custom Store.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminFilterStoreViewActionGroup.xml
+
+- actiongroup: "CreateCustomStoreViewActionGroup"
+  page: "admin/system_store/newStore/"
+  description: Goes to the Admin Store Views creation page. Fills in the provided Store View Name. Clicks on Save.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/CreateCustomStoreViewActionGroup.xml
+
+- actiongroup: "AssertStoreFrontendActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront. Selects the provided Store in the Store View dropdown menu. Validates that the provided Store View #1 is selected. Validates that the provided Store View #2 is present in the dropdown menu.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStoreFrontendActionGroup.xml
+
+- actiongroup: "StorefrontSwitchStoreViewActionGroup"
+  page: "storefront"
+  description: Switch the Storefront to the provided Store View.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/StorefrontSwitchStoreViewActionGroup.xml
+
+- actiongroup: "AdminCreateWebsiteActionGroup"
+  page: "admin/system_store/newWebsite/"
+  description: Goes to the Admin Website creation page. Fills in the provided Website Name and Code. Clicks on Save. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminCreateWebsiteActionGroup.xml
+
+- actiongroup: "AssertStoreViewFormActionGroup"
+  page: "admin/system_store/"
+  description: Validates that the provided Store, Name, Code and Status are present and correct on the Admin Stores creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStoreViewFormActionGroup.xml
+
+- actiongroup: "AdminCreateStoreViewActionGroup"
+  page: "admin/system_store/newStore/"
+  description: Goes to the Admin Store View creation page. Fills in the provided Store View and Store details. Clicks on Save. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminCreateStoreViewActionGroup.xml
+
+- actiongroup: "AssertStorefrontStoreVisibleInFooterActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront. Validates that the provided Store is present in the Footer Switch Store View drop down menu on the Storefront.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStorefrontStoreVisibleInFooterActionGroup.xml
+
+- actiongroup: "StoreViewDisabledErrorSaveMessageActionGroup"
+  page: "admin/system_store/newStore/"
+  description: Goes to the Admin Store View creation page. Fills in the provided Details (Store Group Name, Store View and Store View Status). Validates that the Error Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/StoreViewDisabledErrorSaveMessageActionGroup.xml
+
+- actiongroup: "AdminDeleteWebsiteActionGroup"
+  page: "admin/system_store/"
+  description: Goes to the Admin Stores grid page. Deletes the provided Website Name.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminDeleteWebsiteActionGroup.xml
+
+- actiongroup: "AdminDeleteStoreViewActionGroup"
+  page: "admin/system_store/"
+  description: Goes to the Admin Stores grid page. Deletes the provided Store without creating a Backup. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminDeleteStoreViewActionGroup.xml
+
+- actiongroup: "AssertStoreGroupInGridActionGroup"
+  page: "admin/system_store/"
+  description: Goes to the Admin Stores grid page. Searches the grid for the provided Store Group Name. Validates that the provided Store Group Name is present and correct in the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStoreGroupInGridActionGroup.xml
+
+- actiongroup: "ChangeStoreInStoreViewActionGroup"
+  page: "admin/system_store/"
+  description: Clicks on the 1st row 'Store View' on the Admin Stores grid page. Selects the provided Store drop down menu. Clicks on Save. Validates that the Warning Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/ChangeStoreInStoreViewActionGroup.xml
+
+- actiongroup: "AdminStoreGroupCreateActionGroup"
+  page: "admin/system_store/newGroup/"
+  description: Fills in the provided Website and Store Group details. Clicks on Save. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminStoreGroupCreateActionGroup.xml
+
+- actiongroup: "AdminCreateNewStoreGroupActionGroup"
+  page: "admin/system_store/newGroup/"
+  description: Goes to the Admin Stores creation page. Fills in the provided Details (Website, Store Group Name and Store Group Code). Clicks on Save. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AdminCreateNewStoreGroupActionGroup.xml
+
+- actiongroup: "AssertStorefrontStoreNotVisibleInFooterActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront. Validates that the provided Store is NOT present in the Footer Switch Store View drop down menu.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStorefrontStoreNotVisibleInFooterActionGroup.xml
+
+- actiongroup: "AssertStoreConfigurationBackendActionGroup"
+  page: "admin/system_config/"
+  description: Goes to the "Configuration" page. Clicks on the "Store View" dropdown menu. Validates that the provided Website, Store, Store View #1 and Store View #2 are present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStoreConfigurationBackendActionGroup.xml
+
+- actiongroup: "AssertStoreViewInGridActionGroup"
+  page: "admin/system_store/"
+  description: Goes the Admin Stores grid page. Searches the grid for the provided Store View Name. Validates that the provided Store View Name is present and correct in the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStoreViewInGridActionGroup.xml
+
+- actiongroup: "AssertStorefrontStoreVisibleInHeaderActionGroup"
+  page: "storefront"
+  description: Goes to the Storefront. Validates that the provided Store is present in the Header Switch Store View drop down menu on the Storefront.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/Store/Test/Mftf/ActionGroup/AssertStorefrontStoreVisibleInHeaderActionGroup.xml
+
+- actiongroup: "AdminCreateCartPriceRuleLabelsSectionActionGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Fills in the provided Rule details on a Admin Cart Price Rule creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCreateCartPriceRuleLabelsSectionActionGroup.xml
+
+- actiongroup: "StorefrontAddToTheCartActionGroup"
+  page: ""
+  description: 
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/StorefrontAddToTheCartActionGroup.xml
+
+- actiongroup: "selectNotLoggedInCustomerGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Selects "NOT LOGGED IN" from the 'Customer Groups' list (Magento 2 B2B). PLEASE NOTE: The value is Hardcoded.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCartPriceRuleActionGroup.xml
+
+- actiongroup: "AssertCustomerGroupNotOnCartPriceRuleFormActionGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Validates that the "Customer Groups" section does NOT contain the provided Customer Group on the Admin Cart Price Rule creation/edit page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AssertCustomerGroupNotOnCartPriceRuleFormActionGroup.xml
+
+- actiongroup: "AssertCartPriceRuleSuccessSaveMessageActionGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Clicks on the Save button on the Admin Cart Price Rule creation/edit page. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AssertCartPriceRuleSuccessSaveMessageActionGroup.xml
+
+- actiongroup: "AdminDeleteCartPriceRuleActionGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Goes to the Admin Cart Price Rules grid page. Filters the grid for the provided Rule Name. Deletes the Rule via the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminDeleteCartPriceRuleActionGroup.xml
+
+- actiongroup: "AdminCreateCartPriceRuleActionsSectionDiscountFieldsActionGroup"
+  page: "admin/catalog_rule/promo_catalog/"
+  description: Clicks on the "Actions" section on the Admin Cart Price Rule creation/edit page. Fills in the provided Cart Price Rule details.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCreateCartPriceRuleActionsSectionActionGroup.xml
+
+- actiongroup: "StorefrontApplyCouponActionGroup"
+  page: "storefront"
+  description: Applies the provided Coupon Code to the Storefront Shopping Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/StorefrontSalesRuleActionGroup.xml
+
+- actiongroup: "DeleteCartPriceRuleByName"
+  page: "admin/sales_rule/promo_quote/"
+  description: Goes to the Admin Cart Price Rules grid page. Filters the grid based on the provided Rule Name. Deletes the Price Rule via the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminSalesRuleActionGroup.xml
+
+- actiongroup: "AdminCreateCartPriceRuleRuleInfoSectionActionGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Goes to the Admin Cart Price Rule grid page. Clicks on Add New Rule. Fills in the provided Rule details.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCreateCartPriceRuleRuleInfoSectionActionGroup.xml
+
+- actiongroup: "StorefrontClickOnMiniCartActionGroup"
+  page: ""
+  description: 
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/StorefrontClickOnMiniCartActionGroup.xml
+
+- actiongroup: "AdminFilterCartPriceRuleActionGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Filters the Admin Cart Price Rule grid based on the provided Rule Name. Clicks on the 1st row in the grid.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminFilterCartPriceRuleActionGroup.xml
+
+- actiongroup: "AdminCreateCartPriceRuleActionGroup"
+  page: "admin/sales_rule/promo_quote/"
+  description: Goes to the Admin Cart Price Rule grid page. Adds the provided Rule. Validates that the Success Message is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminCreateCartPriceRuleActionGroup.xml
+
+- actiongroup: "AdminOpenNewCartPriceRuleFormPageActionGroup"
+  page: "admin/sales_rule/promo_quote/new/"
+  description: Goes to the Admin Cart Price Rule creation page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AdminOpenNewCartPriceRuleFormPageActionGroup.xml
+
+- actiongroup: "AssertStorefrontMiniCartItemsActionGroup"
+  page: ""
+  description: 
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/AssertStorefrontMiniCartItemsActionGroup.xml
+
+- actiongroup: "ApplyCartRuleOnStorefrontActionGroup"
+  page: "storefront"
+  description: Clicks on Add to Cart on a Storefront Product page. Validates that the Success Message is present and correct. Goes to the Storefront Shopping Cart page. Applies the provided Coupon Code to the Shopping Cart.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/SalesRule/Test/Mftf/ActionGroup/ApplyCartRuleOnStorefrontActionGroup.xml
+
+- actiongroup: "StorefrontAssertUpdatedProductPriceInStorefrontProductPageActionGroup"
+  page: "storefront"
+  description: Validates that the provided Product Name and Price are present on a Storefront Product page.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRuleConfigurable/Test/Mftf/ActionGroup/StorefrontAssertUpdatedProductPriceInStorefrontProductPageActionGroup.xml
+
+- actiongroup: "StorefrontAssertCatalogPriceRuleAppliedToProductOptionActionGroup"
+  page: "storefront"
+  description: Selects the provided Product Option on a Storefront Product page. Validates the provided Expected Price is present and correct.
+  repo: https://github.com/magento/magento2/blob/2.3-develop/app/code/Magento/CatalogRuleConfigurable/Test/Mftf/ActionGroup/StorefrontAssertCatalogPriceRuleAppliedToProductOptionActionGroup.xml
+
