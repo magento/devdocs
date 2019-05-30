@@ -34,11 +34,16 @@ For more information, see the article on [templates XSS security]({{ page.baseur
 
 Magento provides the [Escaper]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Escaper.php){:target="_blank"} class for escaping {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} output. This class contains the following useful functions:
 
-* `escapeHtml()` - Used for escaping string inside HTML content.
-* `escapeHtmlAttr()` - Used for escaping strings in HTML tag attributes.
-* `escapeCss()` - Used for escaping strings inside a {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} context.
-* `escapeJs()` - Used for escaping strings inside a JavaScript context.
-* `escapeUrl()` - Used for escaping strings that will be used in a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
+Function | Description
+--- | ---
+`escapeHtml()` | Escapes string inside HTML content
+`escapeHtmlAttr()` | Escapes strings in HTML tag attributes
+`escapeCss()` | Escapes strings inside a {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} context
+`escapeJs()` | Escapes strings inside a JavaScript context
+`escapeJsQuote()` | Escapes quotes in JavaScript
+`escapeQuote()` | Escapes quotes inside HTML attributes
+`escapeUrl()` | Escapes strings that will be used in a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}
+`escapeXssInUrl()` | Escapes XSS in URLs
 
 ### Related Topics
 
