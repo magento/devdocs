@@ -54,7 +54,7 @@ Blocks are a foundational building unit for layouts in Magento. They are the lin
 Blocks employ templates to generate HTML. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
 
 {:.bs-callout .bs-callout-info}
-The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required.**
+The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required**.
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to blocks. Otherwise, it is given a random name.
@@ -77,7 +77,7 @@ To pass parameters use the [`<argument></argument>`](#argument) instruction.
 A structure without content that holds other layout elements such as blocks and containers.
 
 **Details:** 
-A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. If the `<container>` is empty, and there is no child `<block>` available, it will not be displayed in the frontend source code. 
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to containers. Otherwise, it is given a random name.
@@ -162,9 +162,10 @@ Calls public methods on the block API.
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
 ### referenceBlock and referenceContainer {#fedg_layout_xml-instruc_ex_ref}
+
 Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.
 
-For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
+For example, if you make a reference by `<referenceBlock name="right">`, you are targeting the block `<block name="right">`.
 
 To pass parameters to a block use the [`<argument></argument>`](#argument) instruction.
 
@@ -172,7 +173,6 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 |:------- |:------ |:------ |:------ |
 | `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | true/false | no |
 | `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | true/false | no |
-
 
 - The `remove` attribute is optional and its default value is `false`.
 
