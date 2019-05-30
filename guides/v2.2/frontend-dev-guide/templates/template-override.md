@@ -78,6 +78,17 @@ is the same as writing
 <?php echo $block->getAdjustmentsHtml() ?>
 ```
 
+## To rendered child blocks
+
+Rendered single child block
+
+`$block->getChildHtml('child-name');`
+
+Rendered all child blocks
+
+`$block->getChildHtml();`
+
+
 ## Related reading
 
 [Set a block's template]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#set_template)
