@@ -74,7 +74,7 @@ If you are interested in participating in Magento Community projects we welcome 
 php -v
 ```
 
-You must run [PHP](https://glossary.magento.com/PHP) version 7.1.x or 7.2.x as the following result indicates:
+You must run [PHP](https://glossary.magento.com/php) version 7.1.x or 7.2.x as the following result indicates:
 
 ```terminal
 PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )

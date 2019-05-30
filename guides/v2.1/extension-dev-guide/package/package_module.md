@@ -10,7 +10,7 @@ redirect_from:
 
 ## Overview of packaging {#package-over}
 
-The Magento application uses [Composer](https://glossary.magento.com/Composer) packages to distribute, install, and upgrade components in an application instance.
+The Magento application uses [Composer](https://glossary.magento.com/composer) packages to distribute, install, and upgrade components in an application instance.
 
 To package a component, you must:
 
@@ -128,7 +128,7 @@ Create a package of your extension by performing a zip operation on the director
 
 Use alphanumeric characters for the package filename with dashes to separate words. Do not use whitespaces.
 
-Magento can retrieve your extension package from any valid GitHub [URL](https://glossary.magento.com/URL).
+Magento can retrieve your extension package from any valid GitHub [URL](https://glossary.magento.com/url).
 
 
 

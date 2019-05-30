@@ -318,6 +318,6 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 ### Verify this step {#verify-step}
 
-[Sign in](https://glossary.magento.com/Sign-in) to the US store (`http://<host>/us`) as the customer and go to the checkout page.
+[Sign in](https://glossary.magento.com/sign-in) to the US store (`http://<host>/us`) as the customer and go to the checkout page.
 
 The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges and shipping charges calculate and display.

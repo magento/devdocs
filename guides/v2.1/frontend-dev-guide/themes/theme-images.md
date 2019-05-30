@@ -79,7 +79,7 @@ Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are 
         <li><code>image</code> - corresponds to the Base Image role in the Magento Admin</li>
         <li><code>small_image</code> - corresponds to the Small Image role in the Magento Admin</li>
         <li><code>swatch_image</code> - corresponds to the Swatch Image role in the Magento Admin</li>
-        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Magento Admin](https://glossary.magento.com/Magento-Admin).</li>
+        <li><code>swatch_thumb</code> - corresponds to the Swatch Image role in the [Magento Admin](https://glossary.magento.com/magento-admin).</li>
         <li><code>thumbnail</code> - corresponds to the Thumbnail Image role in the Magento Admin</li>
         </ul>
 

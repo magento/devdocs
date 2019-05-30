@@ -17,7 +17,7 @@ Make sure that you [set]({{ site.gdeurl21 }}config-guide/cli/config-cli-subcomma
 
 ## Apply a theme {#theme-apply-apply}
 
-After you [add your theme to the file system]({{ site.gdeurl21 }}frontend-dev-guide/themes/theme-create.html), you can apply it to your store. You apply a theme in [Admin](https://glossary.magento.com/Admin).
+After you [add your theme to the file system]({{ site.gdeurl21 }}frontend-dev-guide/themes/theme-create.html), you can apply it to your store. You apply a theme in [Admin](https://glossary.magento.com/admin).
 
 To apply a theme:
 

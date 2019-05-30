@@ -15,7 +15,7 @@ The static view files deployment command enables you to write [static files](htt
 
 The term *static view file* refers to the following:
 
--   "Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and [CSS](https://glossary.magento.com/CSS) generated from LESS.
+-   "Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and [CSS](https://glossary.magento.com/css) generated from LESS.
 -   "View" refers to presentation layer (from MVC).
 
 Static view files are located in the `<magento_root>/pub/static` directory, and some are cached in the `<magento_root>/var/view_preprocessed` directory as well.
@@ -34,7 +34,7 @@ You must write static view files to the Magento file system manually using the c
 
 To deploy static view files:
 
-1.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
+1.  Log in to the Magento server as, or [switch to]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html), the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.  Delete the contents of `<magento_root>/pub/static`, except for the `.htaccess` file. Do not delete this file.
 3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
@@ -272,7 +272,7 @@ Following are some example commands.
 
 #### Excluding a theme and HTML minification
 
-The following command deploys [static content](https://glossary.magento.com/static-content) for the US English (`en_US`) language, excludes the Luma [theme](https://glossary.magento.com/theme) provided with Magento, and does not minify [HTML](https://glossary.magento.com/HTML) files.
+The following command deploys [static content](https://glossary.magento.com/static-content) for the US English (`en_US`) language, excludes the Luma [theme](https://glossary.magento.com/theme) provided with Magento, and does not minify [HTML](https://glossary.magento.com/html) files.
 
     bin/magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
 

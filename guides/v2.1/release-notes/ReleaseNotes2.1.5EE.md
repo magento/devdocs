@@ -20,7 +20,7 @@ Looking for the [Magento Commerce (Cloud)  Release Notes]({{ site.baseurl }}/gui
 
 ## System requirements
 
-Our technology stack is built on [PHP](https://glossary.magento.com/PHP) and MySQL. For more information, see
+Our technology stack is built on [PHP](https://glossary.magento.com/php) and MySQL. For more information, see
 [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 

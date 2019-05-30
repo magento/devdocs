@@ -16,7 +16,7 @@ Here we explain the Magento platform and components from the perspective of seve
 
 Magento is a highly-customizable eCommerce platform and content management system that is primarily used to build online storefronts or websites for selling merchandise.
 
-Magento is written using the [PHP](https://glossary.magento.com/PHP) programming language, and leverages elements of the Zend framework and the model-view-controller architecture. Magento runs on the MySQL relational database, and Magento schema and tables are included in the Magento installation package.
+Magento is written using the [PHP](https://glossary.magento.com/php) programming language, and leverages elements of the Zend framework and the model-view-controller architecture. Magento runs on the MySQL relational database, and Magento schema and tables are included in the Magento installation package.
 
 ## Help improve this documentation {#help}
 

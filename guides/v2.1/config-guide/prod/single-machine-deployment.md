@@ -12,7 +12,7 @@ This topic provides instructions for deploying updates to Magento on a productio
 
 This process applies to technical users responsible for stores running on a single machine with some themes and locales installed.
 
-For less technical users, i.e. business users, we recommend using the [System Upgrade][9] feature in the [Admin](https://glossary.magento.com/Admin).
+For less technical users, i.e. business users, we recommend using the [System Upgrade][9] feature in the [Admin](https://glossary.magento.com/admin).
 
 ## Assumptions
 

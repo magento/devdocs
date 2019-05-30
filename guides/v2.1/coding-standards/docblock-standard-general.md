@@ -130,7 +130,7 @@ If the file contains a structural element (for example, a class), description fo
 
 Use the following templates for the license notice and copyright blocks:
 
-**Template for [PHP](https://glossary.magento.com/PHP) Files**
+**Template for [PHP](https://glossary.magento.com/php) Files**
 
 ```php
 <?php
@@ -152,7 +152,7 @@ interface MetadataObjectInterface
 }
 ```
 
-**Template for [XML](https://glossary.magento.com/XML) Files**
+**Template for [XML](https://glossary.magento.com/xml) Files**
 
 ```xml
 
@@ -606,7 +606,7 @@ class LimitedMutableClass implements MutableInterface
 The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
- If the `@api` tag is applied at the file level, then all methods within the file are part of the public [API](https://glossary.magento.com/API).
+ If the `@api` tag is applied at the file level, then all methods within the file are part of the public [API](https://glossary.magento.com/api).
 You do not need to annotate each method individually.
 
 See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.

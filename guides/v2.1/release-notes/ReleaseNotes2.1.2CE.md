@@ -17,13 +17,13 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
-* Support for <i>PHP 7.0.4 and 5.6.5</i>. (This release supports [PHP](https://glossary.magento.com/PHP) 5.6.5 and above instead of 5.6.x.)
+* Support for <i>PHP 7.0.4 and 5.6.5</i>. (This release supports [PHP](https://glossary.magento.com/php) 5.6.5 and above instead of 5.6.x.)
 
 
 * Compatible with <i>MySQL 5.7</i>.
 
 
-* <i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales [API](https://glossary.magento.com/API) that is currently available in the [Admin](https://glossary.magento.com/Admin) interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See [Module Reference Guide]({{ page.baseurl }}/mrg/intro.html){:target="_blank"} for information on using the `ShipOrder` and `InvoiceOrder` interfaces.
+* <i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales [API](https://glossary.magento.com/api) that is currently available in the [Admin](https://glossary.magento.com/admin) interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See [Module Reference Guide]({{ page.baseurl }}/mrg/intro.html){:target="_blank"} for information on using the `ShipOrder` and `InvoiceOrder` interfaces.
 
 ### Why are we adding new APIs in a patch release?
 {:.no_toc} 
@@ -41,7 +41,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 
-<!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious [JavaScript](https://glossary.magento.com/JavaScript) and subsequently execute it in the Admin context.  
+<!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious [JavaScript](https://glossary.magento.com/javascript) and subsequently execute it in the Admin context.  
 
 
 <!--- 57565-->* You can no longer change or fake a product price from the Magento [storefront](https://glossary.magento.com/storefront) and then complete an order with that faked price. 
@@ -78,7 +78,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 46026/57463-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
 
-<!--- 57302/1338-->*  You can no longer manipulate the full page [cache](https://glossary.magento.com/cache) to store incorrect pages under regular page [URL](https://glossary.magento.com/URL) entries.
+<!--- 57302/1338-->*  You can no longer manipulate the full page [cache](https://glossary.magento.com/cache) to store incorrect pages under regular page [URL](https://glossary.magento.com/url) entries.
 
 ### Cross-Site Request Forgery  (CSRF)
 {:.no_toc} 
@@ -102,7 +102,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- 56429 -->*  We've added the ability to change the status of a [shipment](https://glossary.magento.com/shipment) through the [web API](https://glossary.magento.com/web-API).  The new `ShipOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
+<!--- 56429 -->*  We've added the ability to change the status of a [shipment](https://glossary.magento.com/shipment) through the [web API](https://glossary.magento.com/web-api).  The new `ShipOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* create a shipment document (full or partial)
 
@@ -165,7 +165,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 <!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). [(GITHUB-5413)](https://github.com/magento/magento2/issues/5413){:target="_blank"}
 
 
-<!--- 58568-->* Magento now correctly renders [HTML](https://glossary.magento.com/HTML) tags on the Sales Order page price field.
+<!--- 58568-->* Magento now correctly renders [HTML](https://glossary.magento.com/html) tags on the Sales Order page price field.
 
 
 <!--- 57032-->* Visual swatches are now displayed in search results.
@@ -202,7 +202,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 
 
 
-* **Issue**:  Magento does not correctly display Product > [Catalog](https://glossary.magento.com/Catalog) table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{ site.baseurl }}/guides/v2.0/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
+* **Issue**:  Magento does not correctly display Product > [Catalog](https://glossary.magento.com/catalog) table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{ site.baseurl }}/guides/v2.0/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
 <!--- 54618-->
 
 ## System requirements

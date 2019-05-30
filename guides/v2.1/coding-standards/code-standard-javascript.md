@@ -7,7 +7,7 @@ functional_areas:
 ---
 
 Use Magento's [ESLint Rules][eslint-rules] to make sure your code adheres to Magento's coding standards.
-Developers writing [JavaScript](https://glossary.magento.com/JavaScript) and [jQuery](https://glossary.magento.com/jQuery) code for Magento must adhere to these guidelines and follow the standards listed in this document.
+Developers writing [JavaScript](https://glossary.magento.com/javascript) and [jQuery](https://glossary.magento.com/jquery) code for Magento must adhere to these guidelines and follow the standards listed in this document.
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
@@ -59,7 +59,7 @@ The recommended max line length is 80 characters.
 
 Source code lines must not exceed 120 characters.
 
-Comment lines that contain an example command or a literal [URL](https://glossary.magento.com/URL) longer than 120 characters may exceed the 120 character limit for ease of cutting and pasting.
+Comment lines that contain an example command or a literal [URL](https://glossary.magento.com/url) longer than 120 characters may exceed the 120 character limit for ease of cutting and pasting.
 
 Do not be concerned about header guards that exceed 120 characters.
 

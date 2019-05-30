@@ -21,7 +21,7 @@ This topic is intended for experienced IIS administrators.
 
 ### Description
 
-The issue results if [URL](https://glossary.magento.com/URL) rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:
+The issue results if [URL](https://glossary.magento.com/url) rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:
 
 *	`X-Rewrite-Url`
 *	`X-Original-Url`

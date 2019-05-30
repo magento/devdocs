@@ -89,7 +89,7 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 *	Test with the correct file permissions in [PRODUCTION mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
-*	Test with minification for HTML, JavaScript, and [CSS](https://glossary.magento.com/CSS) enabled
+*	Test with minification for HTML, JavaScript, and [CSS](https://glossary.magento.com/css) enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
 *	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
 *	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)

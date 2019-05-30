@@ -11,15 +11,15 @@ functional_areas:
 
 ## Web API authentication overview
 
-Magento allows developers to define web [API](https://glossary.magento.com/API) resources and their permissions in a configuration file <code>webapi.xml</code>.
+Magento allows developers to define web [API](https://glossary.magento.com/api) resources and their permissions in a configuration file <code>webapi.xml</code>.
 Here are more details on exposing [services as Web APIs]({{ page.baseurl }}/extension-dev-guide/service-contracts/service-to-web-service.html).
 
-Before you can make [web API](https://glossary.magento.com/web-API) calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
+Before you can make [web API](https://glossary.magento.com/web-api) calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 
 ### Accessible resources
 
 The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
-Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/Magento-Admin).
+Each administrator or integration user can have a unique set of permissions which is configured in the [Magento Admin](https://glossary.magento.com/magento-admin).
 Permissions required to access particular resource are configured in the `webapi.xml` file. This table lists the resources that each user type can access:
 
 
@@ -33,7 +33,7 @@ Guest user | Resources with `anonymous` permission
 ### Relation between acl.xml and webapi.xml
 
 The <code>acl.xml</code> file defines the access control list (ACL) for a given [module](https://glossary.magento.com/module). It defines available set of permissions to access the resources.
-`acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed [Admin](https://glossary.magento.com/Admin) role resources or third party Integration's access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
+`acl.xml` files across all Magento modules are consolidated to build an ACL tree which is used to select allowed [Admin](https://glossary.magento.com/admin) role resources or third party Integration's access (**System** > **Extension** > **Integration** > **Add New Integration** > **Available APIs**).
 
 #### Sample customer acl.xml
 
@@ -91,7 +91,7 @@ When a developer creates the Web API configuration file (<code>webapi.xml</code>
 
 For example, in the preceding `webapi.xml` for the customerGroups resource, only a user with `Magento_Customer::group` authorization can `GET /V1/customerGroups/:id`. On the other hand, you can create a customer using `POST /V1/customers` anonymously (or by a guest).
 
-[Authorization](https://glossary.magento.com/Authorization) is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.
+[Authorization](https://glossary.magento.com/authorization) is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.
 
 {:.bs-callout .bs-callout-info}
 A guest or anonymous is a special permission that doesn't need to be defined in `acl.xml` (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in `webapi.xml` can be accessed without the need for authentication.

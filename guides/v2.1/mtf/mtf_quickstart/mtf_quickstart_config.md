@@ -13,14 +13,14 @@ If you cannot find `phpunit.xml`, create it from `phpunit.xml.dist`.
 #### Set URL for Magento storefront under test {#mtf_quickstart_config_phpunitxml_frontend}
 
 Find `<php>` element.
-For `name="app_frontend_url"` set `value` that is your actual [URL](https://glossary.magento.com/URL) for Magento [storefront](https://glossary.magento.com/storefront) under test.
+For `name="app_frontend_url"` set `value` that is your actual [URL](https://glossary.magento.com/url) for Magento [storefront](https://glossary.magento.com/storefront) under test.
 
 Example:
 `<env name="app_frontend_url" value="http://example.com/magento2/"/>`
 
 #### Set URL for Magento Admin URL under test {#mtf_quickstart_config_phpunitxml_backend}
 
-For `name="app_backend_url"` set `value` that is your actual URL for [Magento Admin](https://glossary.magento.com/Magento-Admin) URL under test.
+For `name="app_backend_url"` set `value` that is your actual URL for [Magento Admin](https://glossary.magento.com/magento-admin) URL under test.
 
 Example:
 `<env name="app_backend_url" value="http://example.com/magento2/admin/"/>`
@@ -34,7 +34,7 @@ Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it
 
 #### Set credentials for Magento Admin under test {#mtf_quickstart_config_configxml_credent-backend}
 
-In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento [Admin](https://glossary.magento.com/Admin) URL.
+In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento [Admin](https://glossary.magento.com/admin) URL.
 
 #### Set browser that the FTF will use for tests {#mtf_quickstart_config_configxml_browser}
 

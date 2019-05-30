@@ -25,7 +25,7 @@ Magento_Sales module is required for Magento_Checkout module to perform [checkou
 
 ## InvoiceOrder
 
-The InvoiceOrder service introduces a capability to execute Magento native business flow of the Sales [module](https://glossary.magento.com/module) using [API](https://glossary.magento.com/API).
+The InvoiceOrder service introduces a capability to execute Magento native business flow of the Sales [module](https://glossary.magento.com/module) using [API](https://glossary.magento.com/api).
 
 With this service you can:
 
@@ -216,7 +216,7 @@ Please note, that current service is available only for invoices created using o
 
 With this service you can:
 
-* create a [Credit Memo](https://glossary.magento.com/Credit-Memo) (complete or partial) for particular Invoice
+* create a [Credit Memo](https://glossary.magento.com/credit-memo) (complete or partial) for particular Invoice
 * add details about refunded items to an Order
 * change status and state of an Order according to performed actions
 * notify a customer about performed refund operation

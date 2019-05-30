@@ -22,7 +22,7 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
 	* Commit and push to Git.
 
 <!-- {:.bs-callout .bs-callout-info}
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/Magento-Admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 -->
 For example, you may want to set the following settings:
 
@@ -30,7 +30,7 @@ For example, you may want to set the following settings:
 * Enable static file optimization in Staging and Production environments
 * Configure Fastly in Staging and Production with specific credentials for each
 
-_Static file optimization_ means merging and minifying [JavaScript](https://glossary.magento.com/JavaScript) and Cascading Style Sheets, and minifying [HTML](https://glossary.magento.com/HTML) templates.
+_Static file optimization_ means merging and minifying [JavaScript](https://glossary.magento.com/javascript) and Cascading Style Sheets, and minifying [HTML](https://glossary.magento.com/html) templates.
 
 ## Prerequisites {#prereqs}
 

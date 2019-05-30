@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Button component
 ---
 
-The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the [HTML](https://glossary.magento.com/HTML) `<button>` element, which be configured to display a link.
+The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the [HTML](https://glossary.magento.com/html) `<button>` element, which be configured to display a link.
 
 ## Configuration options
 

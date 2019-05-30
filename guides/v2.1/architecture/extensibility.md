@@ -22,11 +22,11 @@ Central to the Magento model of software development is the practice of replacin
 
 ### Open-source software to create and manage extensions
 
-Magento is built on open-source technologies, created for the development community. For example, it uses [Composer](https://glossary.magento.com/Composer) to manage dependencies. See [Technology Stack]({{page.baseurl}}/architecture/tech-stack.html) for a complete list of technologies used.
+Magento is built on open-source technologies, created for the development community. For example, it uses [Composer](https://glossary.magento.com/composer) to manage dependencies. See [Technology Stack]({{page.baseurl}}/architecture/tech-stack.html) for a complete list of technologies used.
 
 ### Coding standards
 
-Adherence to standard best practices for [PHP](https://glossary.magento.com/PHP) and [JavaScript](https://glossary.magento.com/JavaScript) code ensures that the code base is sound. Magento has adopted most of the PSR2 Coding Standards for PHP. See [Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html) for more information.
+Adherence to standard best practices for [PHP](https://glossary.magento.com/php) and [JavaScript](https://glossary.magento.com/javascript) code ensures that the code base is sound. Magento has adopted most of the PSR2 Coding Standards for PHP. See [Coding Standards]({{page.baseurl}}/coding-standards/bk-coding-standards.html) for more information.
 
 ### Upgrade and versioning strategies
 

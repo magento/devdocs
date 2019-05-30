@@ -11,7 +11,7 @@ functional_areas:
 A [design theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html) is an important part of the Magento application. This topic describes the file structure of a Magento [theme](https://glossary.magento.com/theme).
 
 ## Magento theme location {#theme-structure-loc}
-[Storefront](https://glossary.magento.com/Storefront) themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the [Composer](https://glossary.magento.com/Composer) repository.
+[Storefront](https://glossary.magento.com/storefront) themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the [Composer](https://glossary.magento.com/composer) repository.
 
 Each theme must be stored in a separate directory:
 
@@ -265,7 +265,7 @@ Apart from the configuration file and theme [metadata](https://glossary.magento.
 
 A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme.
 
-[Static files](https://glossary.magento.com/Static-files) can be located in a theme directory as follows:
+[Static files](https://glossary.magento.com/static-files) can be located in a theme directory as follows:
 
 ```tree
 <theme_dir>/

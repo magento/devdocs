@@ -16,7 +16,7 @@ You can find the list of modules that have dependencies on the Magento_SearchSta
 
 ## Extension points
 
-[Extension](https://glossary.magento.com/Extension) points enable extension developers to interact with the Magento_SearchStaging module. [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_SearchStaging module. [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_SearchStaging module.
 
 ### Layouts
 

@@ -9,7 +9,7 @@ menu_node: parent
 functional_areas:
   - Standards
 ---
-<!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/URL) without informing engineering! -->
+<!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->
 <!-- Referring file: contributing.md owned by core -->
 
 

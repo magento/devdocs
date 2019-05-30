@@ -18,7 +18,7 @@ A module in functional tests (`<magento2_root_dir>/dev/tests/app/Magento/`) stor
 
 ### Constraint class {#mtf_constraint_assert}
 
-The constraint [PHP](https://glossary.magento.com/PHP) class must:
+The constraint [PHP](https://glossary.magento.com/php) class must:
 
 * Have unique name created using the following template `Assert{MagentoEntityName}{verification|action|place}`. For example:
 

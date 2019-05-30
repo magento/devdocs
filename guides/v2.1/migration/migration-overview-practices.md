@@ -41,6 +41,6 @@ We tested migration on the following system:
 
 * Settings migration time: ~10 mins
 
-* Data migration time: ~9 hrs (all data except [URL](https://glossary.magento.com/URL) Rewrites, ~85% of total data)
+* Data migration time: ~9 hrs (all data except [URL](https://glossary.magento.com/url) Rewrites, ~85% of total data)
 
 * Site downtime estimate: a few minutes to reindex and change DNS settings. Additional time required to "warm up" the page [cache](https://glossary.magento.com/cache)

@@ -3,7 +3,7 @@ group: functional-testing-framework-guide
 title: Functional Testing Framework Configuration
 ---
 
-The Functional Testing Framework configuration settings are located in two [XML](https://glossary.magento.com/XML) files:
+The Functional Testing Framework configuration settings are located in two [XML](https://glossary.magento.com/xml) files:
 
 - `phpunit.xml`
 - `config.xml`

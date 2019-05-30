@@ -7,11 +7,11 @@ functional_areas:
 
 ## What's in this topic
 
-This topic describes how to add a custom [CSS](https://glossary.magento.com/CSS) preprocessor. Adding [Sass](http://sass-lang.com/) support is used as an example.
+This topic describes how to add a custom [CSS](https://glossary.magento.com/css) preprocessor. Adding [Sass](http://sass-lang.com/) support is used as an example.
 
 ## Sample Sass module
 
-Magento has a sample [module-sample-scss](https://github.com/magento/magento2-samples/tree/master/module-sample-scss) [module](https://glossary.magento.com/module) implementing the [Sass](https://glossary.magento.com/Sass) preprocessor.
+Magento has a sample [module-sample-scss](https://github.com/magento/magento2-samples/tree/master/module-sample-scss) [module](https://glossary.magento.com/module) implementing the [Sass](https://glossary.magento.com/sass) preprocessor.
 
 You can view it as example when adding your custom preprocessor. Or install the module as is if you need to add Sass preprocessing. Installing a module is described in the [repository's Readme file](https://github.com/magento/magento2-samples/blob/master/README.md).
 
@@ -27,10 +27,10 @@ For details about creating a module refer to the [Magento PHP Developer Guide]({
 
 To add a custom preprocessor, take the following steps:
 
-1. In your module directory, add the [adapter](https://glossary.magento.com/adapter) [PHP](https://glossary.magento.com/PHP) class. It must implement the `Magento\Framework\View\Asset\ContentProcessorInterface` interface. 
+1. In your module directory, add the [adapter](https://glossary.magento.com/adapter) [PHP](https://glossary.magento.com/php) class. It must implement the `Magento\Framework\View\Asset\ContentProcessorInterface` interface. 
 For illustration, see the adapter for Sass in the sample module: [module-sample-scss/Preprocessor/Adapter/Scss/Processor.php](https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php)
 
-2. If the browser compilation is possible for your file types, that is, if the corresponding [JavaScript](https://glossary.magento.com/JavaScript) [library](https://glossary.magento.com/library) exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
+2. If the browser compilation is possible for your file types, that is, if the corresponding [JavaScript](https://glossary.magento.com/javascript) [library](https://glossary.magento.com/library) exists, create the custom renderer for the client-side compilation. This will allow the default [client-side compilation functionality]({{ page.baseurl }}/frontend-dev-guide/css-topics/css-preprocess.html#client-side) to be applied for your files type as well. 
 You can use the default Magento renderer for reference: [app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Developer/Model/View/Page/Config/ClientSideLessCompilation/Renderer.php)
 
 2. If in your custom preprocessor, the syntax of the importing directives is different from `@import` and `@magento_import`, you must implement custom processor classes. 

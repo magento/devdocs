@@ -74,7 +74,7 @@ The following diagram represents directory structure of Data Migration Tool:
 │       │   ├── Source.php
 │       │   └── Structure.php
 │       ├── Config.php
-│       ├── [Exception](https://glossary.magento.com/Exception).php
+│       ├── [Exception](https://glossary.magento.com/exception).php
 │       └── Step                            --- functionality for migrating specific data
 │           ├── Eav
 │           │   ├── Data.php
@@ -189,7 +189,7 @@ The migration process consists of steps.
 
 Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.
 
-By default, there are several steps (Map, EAV, [URL](https://glossary.magento.com/URL) Rewrites, and so on). You can optionally add your own steps as well.
+By default, there are several steps (Map, EAV, [URL](https://glossary.magento.com/url) Rewrites, and so on). You can optionally add your own steps as well.
 
 Steps related classes are located in the src/Migration/Step directory.
 

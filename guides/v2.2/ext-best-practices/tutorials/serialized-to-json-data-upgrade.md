@@ -8,7 +8,7 @@ menu_order: 1000
 
 ## Overview
 
-The following tutorial lists the steps needed to create an upgrade script that converts the data stored in the database from the default [PHP](https://glossary.magento.com/PHP) serialized format to JSON format.
+The following tutorial lists the steps needed to create an upgrade script that converts the data stored in the database from the default [PHP](https://glossary.magento.com/php) serialized format to JSON format.
 
 Use this tutorial to create an upgrade script to update your [extension](https://glossary.magento.com/extension) to work with Magento 2.2 and above.
 
@@ -28,7 +28,7 @@ Your extension will continue working in Magento 2.2 and above in the following c
 
 ### API Overview
 
-This tutorial uses the following framework [API](https://glossary.magento.com/API) in the following ways:
+This tutorial uses the following framework [API](https://glossary.magento.com/api) in the following ways:
 
 * `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another.
    * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.

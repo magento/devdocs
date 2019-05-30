@@ -11,7 +11,7 @@ functional_areas:
 
 ## Prerequisites
 
-Before running the [Module](https://glossary.magento.com/Module) Manager, [Extension](https://glossary.magento.com/Extension) Manager, or System Upgrade, complete the following tasks:
+Before running the [Module](https://glossary.magento.com/module) Manager, [Extension](https://glossary.magento.com/extension) Manager, or System Upgrade, complete the following tasks:
 
 *	[Set up cron]({{ page.baseurl }}/comp-mgr/prereq/prereq_cron.html)
 *	[Set `ulimit` for the web server user]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman-ulimit.html)

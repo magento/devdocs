@@ -26,7 +26,7 @@ You need the following information to import code into your project:
 
 - [Encryption key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-prepare.html) from your {{site.data.var.ee}} system
 
-- SSH or HTTPS [URL](https://glossary.magento.com/URL) for your {{site.data.var.ee}} installation Git repository.
+- SSH or HTTPS [URL](https://glossary.magento.com/url) for your {{site.data.var.ee}} installation Git repository.
 
 ## Create a remote Git reference {#cloud-import-ref}
 
@@ -297,13 +297,13 @@ After the [cache](https://glossary.magento.com/cache) flushes, enter `exit` to c
 
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
-1.  On your Cloud environment, enter the following commands to find the information to log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) and to view the storefront:
+1.  On your Cloud environment, enter the following commands to find the information to log in to the [Magento Admin](https://glossary.magento.com/magento-admin) and to view the storefront:
 
     ```
     magento-cloud environment:url
     ```
 
-1.  Log in to the Magento [Admin](https://glossary.magento.com/Admin) using the username and password of your {{site.data.var.ee}} system.
+1.  Log in to the Magento [Admin](https://glossary.magento.com/admin) using the username and password of your {{site.data.var.ee}} system.
 1.  Verify that the settings in the Admin are the same as your {{site.data.var.ee}} system.
 1.  Access the [storefront](https://glossary.magento.com/storefront).
 1.  Confirm that categories, products, and other content display as expected.

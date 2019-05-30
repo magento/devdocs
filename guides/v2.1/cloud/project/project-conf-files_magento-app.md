@@ -33,7 +33,7 @@ Do not change the name of an application after it has been deployed.
 
 The `type`  and `build` properties provide information about the base container image to build and run the project.
 
-The supported `type` language is [PHP](https://glossary.magento.com/PHP). Specify the PHP version as follows:
+The supported `type` language is [PHP](https://glossary.magento.com/php). Specify the PHP version as follows:
 
 ```yaml
 type: php:7.1

@@ -7,7 +7,7 @@ redirect_from: /guides/v2.1/howdoi/webapi/integration.html
 
 An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.
 
-Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/PHP) or Magento internal processes. However, you will need a working knowledge of
+Implementing a simple integration requires little knowledge of [PHP](https://glossary.magento.com/php) or Magento internal processes. However, you will need a working knowledge of
 
 * [Magento REST or SOAP Web APIs]({{ page.baseurl }}/get-started/bk-get-started-api.html)
 * [Web API authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication.html)
@@ -170,7 +170,7 @@ Magento provides the Integration module, which simplifies the process of definin
 * Maintaining OAuth authorizations and user data.
 * Managing security tokens and requests.
 
-To customize your module, you must create multiple [XML](https://glossary.magento.com/XML) files and read through others files to determine what resources existing Magento modules have access to.
+To customize your module, you must create multiple [XML](https://glossary.magento.com/xml) files and read through others files to determine what resources existing Magento modules have access to.
 
 The process for customizing your module includes
 
@@ -179,7 +179,7 @@ The process for customizing your module includes
 
 ### Define the required resources {#resources}
 
-The `etc/integration/api.xml` file defines which [API](https://glossary.magento.com/API) resources the integration has access to.
+The `etc/integration/api.xml` file defines which [API](https://glossary.magento.com/api) resources the integration has access to.
 
 To determine which resources an integration needs access to, review the permissions defined in each module's `etc/acl.xml` file.
 

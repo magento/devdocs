@@ -10,7 +10,7 @@ functional_areas:
 
 ### Overview
 
-This tutorial gives instructions for the creation of a [module](https://glossary.magento.com/module) that displays a simple page in the [Magento admin](https://glossary.magento.com/Magento-admin).
+This tutorial gives instructions for the creation of a [module](https://glossary.magento.com/module) that displays a simple page in the [Magento admin](https://glossary.magento.com/magento-admin).
 
 For the purposes of this tutorial MyCompany is the name of the company associated with a module named ExampleAdminNewPage.
 
@@ -100,7 +100,7 @@ For more information on this topic, see: [routing]({{ page.baseurl }}/extension-
 
 #### `etc/adminhtml/menu.xml`
 {:.no_toc}
-Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This [XML](https://glossary.magento.com/XML) file adds new menu items to the Magento [admin](https://glossary.magento.com/admin).
+Under the created `etc` directory, create a new directory called `adminhtml`. Under that directory, create the file `menu.xml`. This [XML](https://glossary.magento.com/xml) file adds new menu items to the Magento [admin](https://glossary.magento.com/admin).
 
 The `menu.xml` file provided below adds two items in the Content section of the left navigation:
 

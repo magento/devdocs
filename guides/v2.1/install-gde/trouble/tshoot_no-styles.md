@@ -9,7 +9,7 @@ functional_areas:
 
 ### Details
 
-The path to images and stylesheets is not correct, either because of an incorrect base [URL](https://glossary.magento.com/URL) or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.
+The path to images and stylesheets is not correct, either because of an incorrect base [URL](https://glossary.magento.com/url) or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.
 
 Magento static assets are located under `<magento_root>/pub/static/`, within the `frontend` and `adminhtml` directories).
 

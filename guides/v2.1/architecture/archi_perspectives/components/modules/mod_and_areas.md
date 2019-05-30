@@ -10,13 +10,13 @@ redirect_from:
 
 An *area* is a logical component that organizes code for optimized request processing. Magento uses areas to streamline web service calls by loading only the dependent code for the specified area.  Each of the default areas defined by Magento can contain completely different code on how to process URLs and requests.
 
-For example, if you are invoking a REST web service call, rather than load all the code related to generating user [HTML](https://glossary.magento.com/HTML) pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls.
+For example, if you are invoking a REST web service call, rather than load all the code related to generating user [HTML](https://glossary.magento.com/html) pages, you can specify a separate area that loads code whose scope is limited to answering  REST calls.
 
 ### Magento area types
 
 Magento is organized into these main areas:
 
-* **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The [Admin](https://glossary.magento.com/Admin) panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin panel.
+* **Magento Admin** (`adminhtml`): entry point for this area is `index.php` or `pub/index.php`. The [Admin](https://glossary.magento.com/admin) panel area includes the code needed for store management. The /app/design/adminhtml directory contains all the code for components you'll see while working in the Admin panel.
 
 * **Storefront** (`frontend`): entry point for this area is `index.php` or `pub/index.php`. The storefront (or `frontend`)  contains template and [layout](https://glossary.magento.com/layout) files that define the appearance of your [storefront](https://glossary.magento.com/storefront).
 
@@ -26,7 +26,7 @@ Magento is organized into these main areas:
 
 You can also send requests to Magento using the SOAP and REST APIs. These two areas
 
-* **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do [URL](https://glossary.magento.com/URL) lookups for REST-based URLs.
+* **Web API REST** (`webapi_rest`): entry point for this area is `index.php` or `pub/index.php`. The REST area has a front controller that understands how to do [URL](https://glossary.magento.com/url) lookups for REST-based URLs.
 
 * **Web API SOAP** (`webapi_soap`): entry point for this area is `index.php` or `pub/index.php`.
 
@@ -46,7 +46,7 @@ You can enable or disable an area within a module. If this module is enabled, it
 
 * Disabling an area does not result in disabling the modules related to it.
 
-* Areas are registered in the [Dependency Injection](https://glossary.magento.com/Dependency-Injection) framework `di.xml` file.
+* Areas are registered in the [Dependency Injection](https://glossary.magento.com/dependency-injection) framework `di.xml` file.
 
 ### Note about Magento request processing
 

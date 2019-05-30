@@ -15,7 +15,7 @@ Using patterns enhances customer experience through maintaining consistency and 
 
 Patterns libraries are designed to evolve over time, never going out of date. Changes should be communicated, as they occur, to the design community.
 
-Find more details about the [Admin](https://glossary.magento.com/Admin) [Design Pattern](https://glossary.magento.com/Design-Pattern) [Library](https://glossary.magento.com/Library) in the following topic:
+Find more details about the [Admin](https://glossary.magento.com/admin) [Design Pattern](https://glossary.magento.com/design-pattern) [Library](https://glossary.magento.com/library) in the following topic:
 
 ### Container
 

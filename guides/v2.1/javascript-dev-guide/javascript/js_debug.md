@@ -10,7 +10,7 @@ functional_areas:
 
 ## Overview {#js_debug_overview}
 
-This topic discusses how to define which [JavaScript](https://glossary.magento.com/JavaScript) components and widgets are used on a particular Magento store page.
+This topic discusses how to define which [JavaScript](https://glossary.magento.com/javascript) components and widgets are used on a particular Magento store page.
 
 ## Locate JS components: walkthrough {#locate_widget}
 

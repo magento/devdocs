@@ -18,7 +18,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ### Composer (latest stable version)
 
-[Composer](https://glossary.magento.com/Composer) is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
+[Composer](https://glossary.magento.com/composer) is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
 
 ### Web servers
 

@@ -79,7 +79,7 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 
 ## Configure page variations
 
-Most caching servers and proxies use a [URL](https://glossary.magento.com/URL) as a key for cache records. However, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
+Most caching servers and proxies use a [URL](https://glossary.magento.com/url) as a key for cache records. However, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
 
 -   Collisions in cache storage
 -   Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visible in public, etc.)

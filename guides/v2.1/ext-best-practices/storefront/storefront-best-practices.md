@@ -13,7 +13,7 @@ The [storefront](https://glossary.magento.com/storefront) theme is the front fac
 
 Forgetting to clear or disable caching can cause a lot of development headache. Visual spot checks on rendered content are unreliable when the content being displayed is retrieved from the [cache](https://glossary.magento.com/cache). We recommend clearing your cache before doing visual checks for your theme to make sure the content displayed is correct.
 
-You can manage your cache in the [Admin](https://glossary.magento.com/Admin) section under **System** > Tools > **Cache Management**.
+You can manage your cache in the [Admin](https://glossary.magento.com/admin) section under **System** > Tools > **Cache Management**.
 
 **Recommended Reading**
 

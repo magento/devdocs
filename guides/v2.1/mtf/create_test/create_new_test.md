@@ -21,7 +21,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 **Variation 1:**
 
-1. Log in to [Admin](https://glossary.magento.com/Admin).
+1. Log in to [Admin](https://glossary.magento.com/admin).
 2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
 3. Click the "New Synonyms Group" button.
 4. Enter data in the "Synonyms" field.
@@ -506,7 +506,7 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 
 ![Created pages]({{ site.baseurl }}/common/images/ftf/mtf_tutorial_pages.png)
 
-To generate [PHP](https://glossary.magento.com/PHP) classes for these [pages][] enter and run in your terminal
+To generate [PHP](https://glossary.magento.com/php) classes for these [pages][] enter and run in your terminal
 
 ```bash
 php <magento2_root_dir>/dev/tests/functional/utils/generate.php
@@ -540,7 +540,7 @@ public function addNew()
 }
 ```
 
-In [HTML](https://glossary.magento.com/HTML) page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
+In [HTML](https://glossary.magento.com/html) page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
 
 The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.
 

@@ -39,7 +39,7 @@ cd <magento2_root_dir>/dev/tests/functional
 vendor/bin/phpunit --filter <name of test>
 ```
 
-Name of test is the name of [PHP](https://glossary.magento.com/PHP) file with test.
+Name of test is the name of [PHP](https://glossary.magento.com/php) file with test.
 
 Example:
 

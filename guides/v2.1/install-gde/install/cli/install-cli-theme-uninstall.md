@@ -11,7 +11,7 @@ functional_areas:
 
 ## Prerequisite {#instgde-install-uninst-theme-prereq}
 
-Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of `<magento_root>/app/design/<area name>`. You must specify the path to the theme starting with the area, which is either `frontend` (for storefront themes) or `adminhtml` (for [Magento Admin](https://glossary.magento.com/Magento-Admin) themes).
+Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of `<magento_root>/app/design/<area name>`. You must specify the path to the theme starting with the area, which is either `frontend` (for storefront themes) or `adminhtml` (for [Magento Admin](https://glossary.magento.com/magento-admin) themes).
 
 For example, the path to the Luma [theme](https://glossary.magento.com/theme) provided with Magento 2 is `frontend/Magento/luma`.
 
@@ -21,7 +21,7 @@ For more information about themes, see [Magento theme structure]({{ page.baseurl
 
 This section discusses how to uninstall one or more themes, optionally including the themes' code from the file system. You can create backups first so you can restore the data at a later time.
 
-This command uninstalls *only* themes that are specified in `composer.json`; in other words, themes that are provided as [Composer](https://glossary.magento.com/Composer) packages. If your theme is not a Composer package, you must uninstall it manually by:
+This command uninstalls *only* themes that are specified in `composer.json`; in other words, themes that are provided as [Composer](https://glossary.magento.com/composer) packages. If your theme is not a Composer package, you must uninstall it manually by:
 
 *	Updating the `parent` node information in `theme.xml` to remove references to the theme.
 *	Removing theme code from the file system.
@@ -96,4 +96,4 @@ Messages similar to the following display:
 	Disabling maintenance mode
 
 {: .bs-callout .bs-callout-info }
-To uninstall a Magento [Admin](https://glossary.magento.com/Admin) theme, you must also remove it from your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration, `<component root directory>/etc/di.xml`.
+To uninstall a Magento [Admin](https://glossary.magento.com/admin) theme, you must also remove it from your component's [dependency injection](https://glossary.magento.com/dependency-injection) configuration, `<component root directory>/etc/di.xml`.

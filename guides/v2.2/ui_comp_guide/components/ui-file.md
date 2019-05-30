@@ -3,7 +3,7 @@ group: ui-components-guide
 title: File component
 ---
 
-The File component implements the [HTML](https://glossary.magento.com/HTML) `<input type="file">` form field.
+The File component implements the [HTML](https://glossary.magento.com/html) `<input type="file">` form field.
 
 ## Configuration options
 

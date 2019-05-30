@@ -26,7 +26,7 @@ We address the following functional issues in this release.
 
 #### Pricing
 
-<!--- 54320 -->* The [Category](https://glossary.magento.com/Category) page now displays current, rather than outdated,  product prices.
+<!--- 54320 -->* The [Category](https://glossary.magento.com/category) page now displays current, rather than outdated,  product prices.
 
 
 <!--- 55055 -->* Tier pricing now works correctly with full page [cache](https://glossary.magento.com/cache). [(GITHUB-5364)](https://github.com/magento/magento2/issues/5364){:target="_blank"} 
@@ -66,7 +66,7 @@ We address the following functional issues in this release.
 <!--- 56126 -->* You can now log in successfully after creating a custom attribute. Previously, Magento would display an error message, and you could not log in, after first creating a custom attribute, then logging out. 
 
 
-<!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure [Website](https://glossary.magento.com/Website) Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  [(GITHUB-4785)](https://github.com/magento/magento2/issues/4785){:target="_blank"} 
+<!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure [Website](https://glossary.magento.com/website) Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  [(GITHUB-4785)](https://github.com/magento/magento2/issues/4785){:target="_blank"} 
 
 
 
@@ -89,7 +89,7 @@ We address the following functional issues in this release.
 
 ### Known issue
 
-The Sales [API](https://glossary.magento.com/API) does not currently support all the update operations on objects that you can execute from the [Admin](https://glossary.magento.com/Admin). (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+The Sales [API](https://glossary.magento.com/api) does not currently support all the update operations on objects that you can execute from the [Admin](https://glossary.magento.com/admin). (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
  
 The Sales API
 
@@ -102,7 +102,7 @@ You can run these operations from the Admin.
 
 ### System requirements
 
-Our technology stack is built on [PHP](https://glossary.magento.com/PHP) and MySQL. For more information, see
+Our technology stack is built on [PHP](https://glossary.magento.com/php) and MySQL. For more information, see
 [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 

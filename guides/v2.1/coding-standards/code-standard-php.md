@@ -25,7 +25,7 @@ The Magento Coding Standard provides a set of rules that covers the following:
 
 ### Coding standard compliance
 
-Developers should consistently use [PHP_CodeSniffer]{:target="_blank"} to enhance the readability of the code and ensure that it meets the Magento Coding Standard. [PHP_CodeSniffer]{:target="_blank"} is the most popular tool in use throughout the [PHP](https://glossary.magento.com/PHP) development community.
+Developers should consistently use [PHP_CodeSniffer]{:target="_blank"} to enhance the readability of the code and ensure that it meets the Magento Coding Standard. [PHP_CodeSniffer]{:target="_blank"} is the most popular tool in use throughout the [PHP](https://glossary.magento.com/php) development community.
 It provides the mechanism of checking code compliance with specific coding standard.
 
 The set of Magento rules is located in [`ruleset.xml`][ruleset.xml]{:target="_blank"} file of Magento Coding Standard.
@@ -39,7 +39,7 @@ This includes references to:
 
 * Fully qualified class name
 * Imported/non-imported class name
-* [Namespace](https://glossary.magento.com/Namespace) relative class name
+* [Namespace](https://glossary.magento.com/namespace) relative class name
 * Import relative class name
 
 Examples:
@@ -52,7 +52,7 @@ Examples:
   $this->get(\Magento\Path\To\Class::class);
 ```
 
-The [Coding standards overview]{:target="_blank"} introduces Magento-specific practices for PHP, JavaScript, and [JQuery](https://glossary.magento.com/JQuery).
+The [Coding standards overview]{:target="_blank"} introduces Magento-specific practices for PHP, JavaScript, and [JQuery](https://glossary.magento.com/jquery).
 
 <!-- LINKS -->
 

@@ -77,4 +77,4 @@ A shipment ID, such as `3`.
 
 ## Verify this step
 
-Log in to [Admin](https://glossary.magento.com/Admin). Click **Sales** > **Shipments**. The shipment is displayed in the grid. Then click **Sales** > **Orders**. The status is Complete.
+Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Shipments**. The shipment is displayed in the grid. Then click **Sales** > **Orders**. The status is Complete.

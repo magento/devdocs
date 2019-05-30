@@ -7,7 +7,7 @@ menu_order: 5000
 redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
 ---
 
-Each Magento [module](https://glossary.magento.com/module) can contain XSD files for [XML](https://glossary.magento.com/XML) validation.
+Each Magento [module](https://glossary.magento.com/module) can contain XSD files for [XML](https://glossary.magento.com/xml) validation.
 
 Magento uses [Uniform Resource Names](https://en.wikipedia.org/wiki/Uniform_Resource_Name) (URNs) to reference XML schema declarations.
 

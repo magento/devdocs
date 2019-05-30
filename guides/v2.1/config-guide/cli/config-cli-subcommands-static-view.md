@@ -16,7 +16,7 @@ The static view files deployment command enables you to write [static files](htt
 The term *static view file* refers to the following:
 
 _ "Static" means it can be cached for a site (that is, the file is not dynamically generated).
-    Examples include images and [CSS](https://glossary.magento.com/CSS) generated from LESS.
+    Examples include images and [CSS](https://glossary.magento.com/css) generated from LESS.
 - "View" refers to the presentation layer (from MVC).
 
 Static view files are located in the `<magento_root>/pub/static` directory, and some are cached in the `<magento_root>/var/view_preprocessed` directory as well.
@@ -37,7 +37,7 @@ You can clean generated static view files in several ways. Refer to [Clean stati
 
 To deploy static view files:
 
-1.  Log in to the Magento server as, or [switch to], the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
+1.  Log in to the Magento server as, or [switch to], the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.  Delete the contents of `<magento_root>/pub/static`.
 3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 

@@ -105,7 +105,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 
 ## Data set structure {#structure}
 
-A data set is an [XML](https://glossary.magento.com/XML) file that contains test variations for a test case.
+A data set is an [XML](https://glossary.magento.com/xml) file that contains test variations for a test case.
 
 Each variation includes:
 

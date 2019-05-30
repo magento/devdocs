@@ -31,7 +31,7 @@ To implement shipping address rendering in checkout, you need to take the follow
 
 ## Step 1: Create the JS renderer component (shipping address renderer) {#create}
 
-Your shipping address renderer must be implemented as a [JavaScript](https://glossary.magento.com/JavaScript) [UI component](https://glossary.magento.com/UI-component). That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
+Your shipping address renderer must be implemented as a [JavaScript](https://glossary.magento.com/javascript) [UI component](https://glossary.magento.com/ui-component). That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html). Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
@@ -91,7 +91,7 @@ A shipping rate processor is responsible for retrieving the shipping rates avail
 
 In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory.
 
-Here you need to specify the [URL](https://glossary.magento.com/URL) used for calculating the shipping rates for your custom address type.
+Here you need to specify the [URL](https://glossary.magento.com/url) used for calculating the shipping rates for your custom address type.
 
 The following is a sample of the shipping rate processor code:
 

@@ -71,7 +71,7 @@ Buttons will be take on one of the below variations.
 	</tbody>
 </table>
 
-[CSS](https://glossary.magento.com/CSS) style classes will need to be established for any buttons that require a custom
+[CSS](https://glossary.magento.com/css) style classes will need to be established for any buttons that require a custom
 defined style.
 
 ## Styles and Behavior

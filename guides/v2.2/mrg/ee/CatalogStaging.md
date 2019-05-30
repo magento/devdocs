@@ -50,7 +50,7 @@ The Magento_CatalogStaging module enables you to stage the following category at
     - Anchor
     - Product Sorting
     - Layered Navigation Price Step
-- [Search Engine Optimization](https://glossary.magento.com/Search-Engine-Optimization)
+- [Search Engine Optimization](https://glossary.magento.com/search-engine-optimization)
     - Meta Title
     - Meta Keywords
     - Meta Description
@@ -62,13 +62,13 @@ The Magento_CatalogStaging module enables you to stage the following category at
 The following category attributes cannot be staged:
 
 - Assignment of Products to a Category
-- [URL](https://glossary.magento.com/URL)
+- [URL](https://glossary.magento.com/url)
 
 ### Product Staging
 
 The Magento_CatalogStaging module enables you to stage the following product attributes:
 
-- [Attribute Set](https://glossary.magento.com/Attribute-Set)
+- [Attribute Set](https://glossary.magento.com/attribute-set)
 - Product Name
 - Price
 - Weight attributes
@@ -78,18 +78,18 @@ The Magento_CatalogStaging module enables you to stage the following product att
 - Description
 - Websites(assignment)
 - Design
-  - [Layout](https://glossary.magento.com/Layout)
+  - [Layout](https://glossary.magento.com/layout)
   - Display Product Options In
-  - Layout Update [XML](https://glossary.magento.com/XML)
+  - Layout Update [XML](https://glossary.magento.com/xml)
 - Related Products, Up-Sells, and Cross-Sells
 
-Also, you can stage any other attribute added in [Admin](https://glossary.magento.com/Admin).
+Also, you can stage any other attribute added in [Admin](https://glossary.magento.com/admin).
 
 The following product attributes cannot be staged:
 
 - Quantity
 - URL Key
-- [SKU](https://glossary.magento.com/SKU)
+- [SKU](https://glossary.magento.com/sku)
 
 ### Installation details
 
@@ -101,7 +101,7 @@ You can find the list of modules that have dependencies on the Magento_CatalogSt
 
 ## Extension points
 
-[Extension](https://glossary.magento.com/Extension) points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html).
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_CatalogStaging module. You can interact with the Magento_CatalogStaging module using the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CatalogStaging module.
 

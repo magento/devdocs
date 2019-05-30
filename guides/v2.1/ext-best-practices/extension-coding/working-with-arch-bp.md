@@ -28,7 +28,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
 
   - Instead of creating custom validators from scratch, implement the [`\Magento\Framework\Validator\ValidatorInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Validator/ValidatorInterface.php){:target="_blank"}.
   - Instantiating a database connection can be expensive and unnecessary. Magento provides resource models for performing SQL commands. (See [Persistence Layer]({{ page.baseurl }}/architecture/archi_perspectives/persist_layer.html))
-  - Consider using Magento framework conventions instead of low-level or [PHP](https://glossary.magento.com/PHP) functionality.
+  - Consider using Magento framework conventions instead of low-level or [PHP](https://glossary.magento.com/php) functionality.
   - Use the  [`Magento\Framework\Data\Collection`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Data/Collection.php){:target="_blank"} class to retrieve a collection of filtered objects instead of directly querying the database.
 
 ### Use dependency injection
@@ -40,7 +40,7 @@ In addition to understanding fundamental programming designs/concepts, you are e
   Some important things to check in your extensions:
 
   - Make sure your Business Logic, Configuration, and SQL are implemented in the correct places.
-  - Make sure that CSS, JavaScript, HTML, and [XML](https://glossary.magento.com/XML) code are all in the appropriate files (i.e. they should not be inline).
+  - Make sure that CSS, JavaScript, HTML, and [XML](https://glossary.magento.com/xml) code are all in the appropriate files (i.e. they should not be inline).
   - Use appropriate logic in a Block, Helper, Template, Controller, or Model.
   - Ensure correct [module](https://glossary.magento.com/module) design.
 

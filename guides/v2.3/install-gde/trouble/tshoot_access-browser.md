@@ -17,7 +17,7 @@ Magento supports PHP 7.1.3 or later. Please read [Magento System Requirements]({
 	
 #### Solution
 
-Either upgrade [PHP](https://glossary.magento.com/PHP) or restart Apache (Apache might not be using the same PHP version as is on the file system).
+Either upgrade [PHP](https://glossary.magento.com/php) or restart Apache (Apache might not be using the same PHP version as is on the file system).
 
 ### Symptom: A 404 (Not Found) error displays.
 

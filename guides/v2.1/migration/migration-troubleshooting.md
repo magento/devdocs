@@ -107,7 +107,7 @@ The `Target path` in a URL rewrite must be specified by a unique pair of `Reques
 
 Enable the `auto_resolve_urlrewrite_duplicates` option in your `config.xml` file.
 
-This configuration adds a hash-string to the conflicting records of [URL](https://glossary.magento.com/URL) rewrites, and shows the resolution result in your command line interface.
+This configuration adds a hash-string to the conflicting records of [URL](https://glossary.magento.com/url) rewrites, and shows the resolution result in your command line interface.
 
 ### Mismatch of entities
 

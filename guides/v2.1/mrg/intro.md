@@ -4,7 +4,7 @@ title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 ---
 
-The [Module](https://glossary.magento.com/Module) Reference Guide contains information about Magento modules of {{site.data.var.ce}}
+The [Module](https://glossary.magento.com/module) Reference Guide contains information about Magento modules of {{site.data.var.ce}}
  and {{site.data.var.ee}}.
 
 The information includes:

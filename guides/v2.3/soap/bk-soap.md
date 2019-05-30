@@ -16,7 +16,7 @@ functional_areas:
 The value of `store_code` can be one of the following:
 * `default`
 * The assigned store code
-* `all`. This value only applies to the [CMS](https://glossary.magento.com/CMS) and Product modules. If this value is specified, the [API](https://glossary.magento.com/API) call affects all the merchant's stores.
+* `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the [API](https://glossary.magento.com/api) call affects all the merchant's stores.
 
 ## List of Service Names per Module
 

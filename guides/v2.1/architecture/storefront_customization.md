@@ -6,7 +6,7 @@ menu_title: Storefront customization strategies
 
 ## Overview
 
-We can generalize about the range of [storefront](https://glossary.magento.com/storefront) customizations that the Magento supports. This range spans the simplest customizations, which involve only small additions to the default Magento storefront settings, to a complete replacement of Magento-provided [HTML](https://glossary.magento.com/HTML) and [CSS](https://glossary.magento.com/CSS).
+We can generalize about the range of [storefront](https://glossary.magento.com/storefront) customizations that the Magento supports. This range spans the simplest customizations, which involve only small additions to the default Magento storefront settings, to a complete replacement of Magento-provided [HTML](https://glossary.magento.com/html) and [CSS](https://glossary.magento.com/css).
 
 ## Storefront customization levels
 
@@ -18,7 +18,7 @@ Magento supplies a default [theme](https://glossary.magento.com/theme) and a Les
 
 ### Replace PHTML template files
 
-In addition to extending the default CSS, you can generate different HTML [markup](https://glossary.magento.com/markup). For example, you might need to add a missing CSS class name, or an add an extra `<div>` tag to achieve some visual effect. You might also need to tweak some [JavaScript](https://glossary.magento.com/JavaScript) to cope with different HTML markup. This change is more demanding than simply extending Magento CSS, but is still within the grasp of smaller projects and leaner teams.
+In addition to extending the default CSS, you can generate different HTML [markup](https://glossary.magento.com/markup). For example, you might need to add a missing CSS class name, or an add an extra `<div>` tag to achieve some visual effect. You might also need to tweak some [JavaScript](https://glossary.magento.com/javascript) to cope with different HTML markup. This change is more demanding than simply extending Magento CSS, but is still within the grasp of smaller projects and leaner teams.
 
 ### Replace Magento-Provided CSS
 
@@ -31,7 +31,7 @@ In addition to replacing CSS files, you might need to replace small amounts of H
 Delivering a sharply different shopping experience than the default Magento installation provides is a more substantial task. However, the tradeoff might be a more complicated experience integrating additional extensions into your installation in the future.
 
 {:.bs-callout .bs-callout-tip}
- Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in [PHTML](https://glossary.magento.com/PHTML) files; keep all JavaScript in JavaScript files.
+ Any customization of your storefront will work optimally, and provide the easiest path for later upgrades, if you follow the best practice of consistently compartmentalizing code by type. For example, keep all HTML in [PHTML](https://glossary.magento.com/phtml) files; keep all JavaScript in JavaScript files.
 
 ### Related topics
 

@@ -34,7 +34,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 ## Audience {#mtf_intro_audi}
 
-This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, [PHP](https://glossary.magento.com/PHP) developers, and system integrators.
+This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, [PHP](https://glossary.magento.com/php) developers, and system integrators.
 
 ## Goal {#mtf_intro_goal}
 

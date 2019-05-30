@@ -76,7 +76,7 @@ The following diagram represents directory structure of Data Migration Tool:
 │       │   ├── Source.php
 │       │   └── Structure.php
 │       ├── Config.php
-│       ├── [Exception](https://glossary.magento.com/Exception).php
+│       ├── [Exception](https://glossary.magento.com/exception).php
 │       └── Step                            --- functionality for migrating specific data
 │           ├── Eav
 │           │   ├── Data.php
@@ -172,7 +172,7 @@ The migration process consists of steps.
 
 Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.
 
-By default, there are several steps (Map, EAV, [URL](https://glossary.magento.com/URL) Rewrites, and so on). You can optionally add your own steps as well.
+By default, there are several steps (Map, EAV, [URL](https://glossary.magento.com/url) Rewrites, and so on). You can optionally add your own steps as well.
 
 Steps related classes are located in the src/Migration/Step directory.
 
@@ -486,7 +486,7 @@ As for now manipulation with logger, adding handler(s), processor(s) to it and p
 
 ### Custom Resource Type of Source
 
-By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to [CSV](https://glossary.magento.com/CSV) as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
+By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to [CSV](https://glossary.magento.com/csv) as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
 
 ### Map Step configuration
 

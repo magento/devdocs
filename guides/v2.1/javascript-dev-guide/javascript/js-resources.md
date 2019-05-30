@@ -9,7 +9,7 @@ redirect_from:
 
 ## Overview {#m2devgde-js-resources-intro}
 
-This topic describes the general concepts of how [JavaScript](https://glossary.magento.com/JavaScript) components are organized in Magento.
+This topic describes the general concepts of how [JavaScript](https://glossary.magento.com/javascript) components are organized in Magento.
 
 To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the [RequireJS library](http://requirejs.org){: target="_blank"}.
 
@@ -21,7 +21,7 @@ RequireJS improves the perceived page load time because it allows JavaScript to 
 
 In Magento, you can find the JS components on the following levels:
 
-*   [Library](https://glossary.magento.com/Library) level (`lib/web`). Resources located here are available in any place in Magento.
+*   [Library](https://glossary.magento.com/library) level (`lib/web`). Resources located here are available in any place in Magento.
 *	Module level (`<module_dir>/view/<areaname>/web`). If the [module](https://glossary.magento.com/module) is enabled, resources added here are available in other modules and themes.
 *	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting] themes.
 *	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting] themes.

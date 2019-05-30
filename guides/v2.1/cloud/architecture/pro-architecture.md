@@ -176,10 +176,10 @@ The following figure shows the technologies used in the Production environment:
 
 Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade capacity without impacting site operation.
 
-<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/PHP) level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
+<!-- [//]: # (HG—careful: In addition, you can add extra web servers to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides _horizontal scaling_ to complement the vertical scaling provided by extra CPUs on the database level.) -->
 
 ## Software versions {#cloud-arch-software}
-{{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/NGINX) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
+{{site.data.var.ece}} uses the Debian GNU/Linux 8 (jessie) operating system and the [NGINX](https://glossary.magento.com/nginx) 1.8 web server. You cannot upgrade this software, but you can configure versions for the following:
 
 -   [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 -   [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)

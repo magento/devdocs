@@ -23,4 +23,4 @@ You can confirm the issue by the following error in the `var/report` directory:
 
 ### Workaround
 
-Append `/setup` to the [URL](https://glossary.magento.com/URL) by which you access the Setup Wizard or install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
+Append `/setup` to the [URL](https://glossary.magento.com/url) by which you access the Setup Wizard or install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).

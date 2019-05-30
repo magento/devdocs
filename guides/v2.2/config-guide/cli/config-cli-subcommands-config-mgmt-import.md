@@ -80,7 +80,7 @@ The preceding configurations can be imported in the following modes:
 *   `delete`: `config.php` does _not_ contain entities (`websites`, `groups`, `stores`) that are present on production environment
 
 {:.bs-callout .bs-callout-info}
-We don't import the root [category](https://glossary.magento.com/category) associated with stores. You must associate a root category with a store using the Magento [Admin](https://glossary.magento.com/Admin).
+We don't import the root [category](https://glossary.magento.com/category) associated with stores. You must associate a root category with a store using the Magento [Admin](https://glossary.magento.com/admin).
 
 ### Theme configuration
 

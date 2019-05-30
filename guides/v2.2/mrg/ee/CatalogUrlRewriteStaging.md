@@ -12,7 +12,7 @@ The Magento_CatalogUrlRewriteStaging [module](https://glossary.magento.com/modul
 
 ## Implementation details
 
-The Magento_CatalogUrlRewriteStaging module disables an opportunity to change the [URL](https://glossary.magento.com/URL) for a product or category, when you schedule an update. It is a technical module that doesn't have any public calls to intercept.
+The Magento_CatalogUrlRewriteStaging module disables an opportunity to change the [URL](https://glossary.magento.com/url) for a product or category, when you schedule an update. It is a technical module that doesn't have any public calls to intercept.
 
 ## Dependencies
 

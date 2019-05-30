@@ -139,7 +139,7 @@ You can set the variable values in the Magento `index.php` using the following f
 
 To set variable values:
 
-1.	Log in to your production system as, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
+1.	Log in to your production system as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Open `<Magento root dir>/index.php` in a text editor.
 3.	Anywhere in `index.php`, set values for the variables similar to the following:
 

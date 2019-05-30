@@ -230,7 +230,7 @@ class MyUtilityUpdater
 }
 ```
 
-Note if you miss <code>= null</code> and Magento calls the original method with <code>null</code>, [PHP](https://glossary.magento.com/PHP) would throw a fatal error as your plugin does not accept <code>null</code>.
+Note if you miss <code>= null</code> and Magento calls the original method with <code>null</code>, [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept <code>null</code>.
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 

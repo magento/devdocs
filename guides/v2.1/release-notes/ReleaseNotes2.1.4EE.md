@@ -70,14 +70,14 @@ We address the following functional issues in this release.
 
 <!--- 60248-->* Information set by the **Default Billing Address** and **Default Shipping Address** checkboxes on the Customer page are now saved correctly.
 
-<!---59416 -->* [Admin](https://glossary.magento.com/Admin) users with appropriate permissions can now reset the passwords of more than one customer at a time. [(GITHUB-5260)](https://github.com/magento/magento2/issues/5260){:target="_blank"}
+<!---59416 -->* [Admin](https://glossary.magento.com/admin) users with appropriate permissions can now reset the passwords of more than one customer at a time. [(GITHUB-5260)](https://github.com/magento/magento2/issues/5260){:target="_blank"}
 
 
 <!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento would not load data. 
 
 
 
-<!--- 58895-->* If you remove an item from the Compare Items list that is displayed on any [Category](https://glossary.magento.com/Category) page, Magento no longer redirects you to the Compare Products page.
+<!--- 58895-->* If you remove an item from the Compare Items list that is displayed on any [Category](https://glossary.magento.com/category) page, Magento no longer redirects you to the Compare Products page.
 
 
 <!--- 58832-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was made was listed twice.
@@ -88,7 +88,7 @@ We address the following functional issues in this release.
 
 <!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings. 
 
-<!--- 55612-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/Payment-method) available** message when a customer tries to ship items to a billing-restricted country. 
+<!--- 55612-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/payment-method) available** message when a customer tries to ship items to a billing-restricted country. 
 
 <!--- 62669-->* Third-party payment gateways are now visible from the Admin.  [(GITHUB-7891)](https://github.com/magento/magento2/issues/7891){:target="_blank"}
 
@@ -211,7 +211,7 @@ We address the following functional issues in this release.
 
 
 
-<!---60902-->* **Issue**: You cannot re-enable a previously disabled `Magento_AdminGws` [module](https://glossary.magento.com/module) without causing a range of [JavaScript](https://glossary.magento.com/JavaScript) errors. Here is a sample error:
+<!---60902-->* **Issue**: You cannot re-enable a previously disabled `Magento_AdminGws` [module](https://glossary.magento.com/module) without causing a range of [JavaScript](https://glossary.magento.com/javascript) errors. Here is a sample error:
 
 	```[PDOException] 
 	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
@@ -242,7 +242,7 @@ We address the following functional issues in this release.
 
 ## System requirements
 
-Our technology stack is built on [PHP](https://glossary.magento.com/PHP) and MySQL. For more information, see
+Our technology stack is built on [PHP](https://glossary.magento.com/php) and MySQL. For more information, see
 [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 

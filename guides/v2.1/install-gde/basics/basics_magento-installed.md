@@ -13,9 +13,9 @@ functional_areas:
   - Setup
 ---
 
-To determine if the Magento software is installed already, you can access the [Magento Admin](https://glossary.magento.com/Magento-Admin) (administration console) or [storefront](https://glossary.magento.com/storefront) using a web browser.
+To determine if the Magento software is installed already, you can access the [Magento Admin](https://glossary.magento.com/magento-admin) (administration console) or [storefront](https://glossary.magento.com/storefront) using a web browser.
 
-**Prerequisite**: You must know the Magento server's hostname or IP address, and the [URL](https://glossary.magento.com/URL) to access the Magento installation. If you're not sure, find the information from your system administrator or hosting provider.
+**Prerequisite**: You must know the Magento server's hostname or IP address, and the [URL](https://glossary.magento.com/url) to access the Magento installation. If you're not sure, find the information from your system administrator or hosting provider.
 
 Then open a web browser and go to the URL you were provided. Some examples follow:
 

@@ -13,7 +13,7 @@ functional_areas:
 
 ### Symptom
 
-After you successfully install Magento, exceptions display when you try to access the [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/Admin). You might have to
+After you successfully install Magento, exceptions display when you try to access the [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/admin). You might have to
 [enable developer mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html#change-to-developer-mode) to see the exceptions.
 
 Sample exceptions follow:

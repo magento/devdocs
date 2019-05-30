@@ -89,7 +89,7 @@ For each CSS file included in the layouts, Less preprocessor:
 2.  Changes the [extension](https://glossary.magento.com/extension) of the requested file to `.less` and tries to find the file using the [Magento fallback mechanism]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html#theme-inherit-static). If the `.less` file is not found, the Less pre-processor stops its execution. Otherwise, it proceeds to the next step.
 3.  Reads `.less` file contents and resolves [`@magento_import`](#fedg_css-magento-import) and default Less `@import` directives.
 4.  Resolves all paths in `.less` files to relative paths in the system using the Magento fallback mechanism. All files resolved by the Less pre-processor are copied to `var/view_preprocessed/less`. Imported files are processed recursively.
-5.  All source files are passed to the [PHP](https://glossary.magento.com/PHP) Less compiler. The resulting compiled `.css` files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.
+5.  All source files are passed to the [PHP](https://glossary.magento.com/php) Less compiler. The resulting compiled `.css` files are published to `pub/static/frontend/<Vendor>/<theme>/<locale>`.
 
 #### Styles debugging in server-side compilation mode {#css_debug_server}
 

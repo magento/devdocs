@@ -6,7 +6,7 @@ title: Page
 A page object is a class that serves to interact with the Magento page under test.
 A page serves as container for [blocks]({{ page.baseurl }}/mtf/mtf_entities/mtf_page.html).
 
-In the functional tests, Page Object [Design Pattern](https://glossary.magento.com/Design-Pattern) is used. Test uses block methods of page object class to interact with application under test.
+In the functional tests, Page Object [Design Pattern](https://glossary.magento.com/design-pattern) is used. Test uses block methods of page object class to interact with application under test.
 
 Benefit of this approach is that tests don’t need to be changed after changes in the UI. Only code in corresponding block must be changed. This approach provides the following advantages:
 
@@ -20,14 +20,14 @@ You can learn from this topic how to create new page, add blocks to the page. Fu
 
 The general flow is the following:
 
-1. Create an [XML](https://glossary.magento.com/XML) file in the Page directory of the module to which it belongs
+1. Create an [XML](https://glossary.magento.com/xml) file in the Page directory of the module to which it belongs
 
 2. Add the previously created blocks presented on this page to the `<page>` node
 
 3. Run the page generator
 
 
-Let's see an example of the Magento [Widget](https://glossary.magento.com/Widget) page:
+Let's see an example of the Magento [Widget](https://glossary.magento.com/widget) page:
 
 `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml`
 
@@ -73,8 +73,8 @@ Also, block can contain a `render` node. [Read about renders in the Block topic]
 
 Depending on `area` and `mca` attributes, page can be of one of the following types:
 
-* [Admin](https://glossary.magento.com/Admin) page is extended from [Magento\Mtf\Page\BackendPage][] class
-* [Storefront](https://glossary.magento.com/Storefront) page is extended from [Magento\Mtf\Page\FrontendPage][] class
+* [Admin](https://glossary.magento.com/admin) page is extended from [Magento\Mtf\Page\BackendPage][] class
+* [Storefront](https://glossary.magento.com/storefront) page is extended from [Magento\Mtf\Page\FrontendPage][] class
 * External page is extended from [Magento\Mtf\Page\ExternalPage][] class
 
 ### Admin page {#mtf_page_admin}

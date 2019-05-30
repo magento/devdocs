@@ -53,7 +53,7 @@ The following components are involved in the indexing process:
 		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
 		<td><ul>
 <li>Allows tracking database changes for a certain [entity](https://glossary.magento.com/entity) (product, [category](https://glossary.magento.com/category), etc.) and running change handler.</li>
-<li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing [PHP](https://glossary.magento.com/PHP) code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
+<li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing [PHP](https://glossary.magento.com/php) code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
 	</tr>
 </tbody></table>
 
@@ -86,7 +86,7 @@ Depending on whether an index data is up to date, an indexer status value is one
 *	invalid - the original data was changed, the index should be updated
 *	working - indexing is in progress
 
-The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/Admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
+The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
 ### Indexing modes {#m2devgde-indexing-modes}
 
@@ -100,7 +100,7 @@ Reindexing can be performed in two modes:
 
 To set these options:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin).
+1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
 2.	Click **System >** Tools **> Index Management**.
 3.	Select the checkbox next to each type of indexer to change.
 4.	From the **Actions** list, click the indexing mode.

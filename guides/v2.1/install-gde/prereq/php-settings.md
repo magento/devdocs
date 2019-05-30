@@ -12,7 +12,7 @@ functional_areas:
   - Setup
 ---
 
-This topic discusses how to set required [PHP](https://glossary.magento.com/PHP) options.
+This topic discusses how to set required [PHP](https://glossary.magento.com/php) options.
 
 {% collapsible About required and recommended PHP options: %}
 

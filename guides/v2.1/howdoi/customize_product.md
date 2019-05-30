@@ -9,7 +9,7 @@ level3_subgroup: product-creation-form
 menu_order: 1
 ---
 
-This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in [Admin](https://glossary.magento.com/Admin).
+This tutorial describes how developers can customize the product creation form used on the product creation and product edit pages in [Admin](https://glossary.magento.com/admin).
 
 In Magento version 2.1, the product creation form was completely refactored and implemented using the [form UI component]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-form.html).
 

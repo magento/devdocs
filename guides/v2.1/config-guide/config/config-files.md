@@ -75,7 +75,7 @@ You can interact with configuration files using interfaces under [Magento\Framew
 
 `Magento\Framework\Config` provides the following interfaces:
 
-* [Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php), which converts the [XML](https://glossary.magento.com/XML) into an in-memory array representation of the configurations.
+* [Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php), which converts the [XML](https://glossary.magento.com/xml) into an in-memory array representation of the configurations.
 * [Framework\Config\DataInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/DataInterface.php), which retrieves the configuration data in a specified scope.
 * [Framework\Config\FileResolverInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php), which identifies the location of files to be read by [Magento\Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php).
 * [Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php), which reads the configuration data from storage and selects the storage from which it reads.

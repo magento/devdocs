@@ -5,7 +5,7 @@ title:  Email component
 menu_title: Email component
 ---
 
-The Email component implements the [HTML](https://glossary.magento.com/HTML) `<input type="email">` form field.
+The Email component implements the [HTML](https://glossary.magento.com/html) `<input type="email">` form field.
 
 ## Configuration options
 

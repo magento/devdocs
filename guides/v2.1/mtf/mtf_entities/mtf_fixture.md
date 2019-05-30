@@ -5,7 +5,7 @@ title: Fixture
 
 An FTF fixture is a list of properties of the Magento [entity](https://glossary.magento.com/entity) under test.
 
-A fixture is represented as an [XML](https://glossary.magento.com/XML) file located in the `Fixture` directory that corresponds to a module in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
+A fixture is represented as an [XML](https://glossary.magento.com/xml) file located in the `Fixture` directory that corresponds to a module in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
 
 -  `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
 
@@ -26,13 +26,13 @@ cd <magento2_root_dir>/dev/tests/functional/utils
 php generate.php
 ```
 
-This tool creates [PHP](https://glossary.magento.com/PHP) classes that are used by the test.
+This tool creates [PHP](https://glossary.magento.com/php) classes that are used by the test.
 
 You can check fixture PHP class in corresponding [module](https://glossary.magento.com/module) in the `<magento2_root_dir>/dev/tests/functional/generated/Magento` directory.
 
 ## Create new fixture {#mtf_fixture_create}
 
-Let's imagine that we want to create new fixture to test our [Widget](https://glossary.magento.com/Widget) module.
+Let's imagine that we want to create new fixture to test our [Widget](https://glossary.magento.com/widget) module.
 
 Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture with parameters indicated in arguments. It is located in `<magento2_root_dir>/dev/tests/functional/utils`.
 

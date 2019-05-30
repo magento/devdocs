@@ -8,7 +8,7 @@ functional_areas:
   - Standards
 ---
 
-This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the [Admin](https://glossary.magento.com/Admin).
+This page is a compilation of frequently asked questions by the Magento Community about extensions integrating with the [Admin](https://glossary.magento.com/admin).
 
 #### Where should my extension appear in the Admin?
 

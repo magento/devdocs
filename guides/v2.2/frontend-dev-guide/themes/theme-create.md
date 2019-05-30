@@ -25,7 +25,7 @@ The high-level steps required to add a new theme in the Magento system are the f
 3. Add a `composer.json` file.
 4. Add `registration.php`.
 3. Create directories for CSS, JavaScript, images, and fonts.
-4. Configure your theme in the [Admin](https://glossary.magento.com/Admin) panel.
+4. Configure your theme in the [Admin](https://glossary.magento.com/admin) panel.
 
 ## Recommended reading
 
@@ -79,7 +79,7 @@ After you create a directory for your theme, you must create `theme.xml` contain
     </theme>
     ```
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/Magento-Admin) page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
 ## Make your theme a Composer package {#fedg_create_theme_composer}
 
@@ -168,7 +168,7 @@ Your theme will likely contain several types of static files:
 
 * Styles
 * Fonts
-* [JavaScript](https://glossary.magento.com/JavaScript)
+* [JavaScript](https://glossary.magento.com/javascript)
 * Images
 
 Each type should be stored in a separate sub-directory of `web` in your theme folder:

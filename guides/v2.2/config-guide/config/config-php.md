@@ -29,7 +29,7 @@ The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.
 Unlike other [module configuration files]({{ page.baseurl }}/config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
 
 ## Details about the deployment configuration {#config-php-contents}
-`config.php` and `env.php` are [PHP](https://glossary.magento.com/PHP) files that return a [multi-dimensional associative array](http://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
+`config.php` and `env.php` are [PHP](https://glossary.magento.com/php) files that return a [multi-dimensional associative array](http://www.w3schools.com/php/php_arrays.asp), which is basically a hierarchical arrangement of configuration parameters and values.
 
 On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key&mdash;where both the key and its value are defined by the Magento framework.
 
@@ -74,7 +74,7 @@ return array (
 
 The value `1` or `0` indicates whether a module is enabled or disabled.
 
-Disabled modules are not recognized by the Magento application; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/Admin) and don't affect routing.
+Disabled modules are not recognized by the Magento application; in other words, they don't participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the [storefront](https://glossary.magento.com/storefront) or [Admin](https://glossary.magento.com/admin) and don't affect routing.
 
 The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.
 

@@ -7,7 +7,7 @@ menu_title: Service layer
 ## What is a Service layer?
 
 The service layer provides a bridge between the presentation layer and the domain layer and resource-specific data.
-This is implemented using *service contracts*, which are defined using [PHP](https://glossary.magento.com/PHP) interfaces.
+This is implemented using *service contracts*, which are defined using [PHP](https://glossary.magento.com/php) interfaces.
 
 In general, the service layer:
 
@@ -15,7 +15,7 @@ In general, the service layer:
 
 * Contains service contracts, which define how the implementation will behave.
 
-* Provides an easy way to access the REST/SOAP [API](https://glossary.magento.com/API) framework code (which also resides above the service contracts).
+* Provides an easy way to access the REST/SOAP [API](https://glossary.magento.com/api) framework code (which also resides above the service contracts).
 You can bind service contracts to web service APIs in configuration files --- no coding required.
 
 * Provides a stable API for other modules to call into.
@@ -26,10 +26,10 @@ All calls from web service interfaces, or users working with your [storefront](h
 We strongly encourage the use of service contracts to call business logic.
 
 External applications can make requests for business logic with simple SOAP and REST calls.
-With some simple [XML](https://glossary.magento.com/XML) or JSON, you can expose the service layer's PHP API and make it accessible to REST or SOAP web services.
+With some simple [XML](https://glossary.magento.com/xml) or JSON, you can expose the service layer's PHP API and make it accessible to REST or SOAP web services.
 Once implemented, a web service can make a single API call and return an information-rich data structure.
 
-[Service contract](https://glossary.magento.com/Service-contract) clients include:
+[Service contract](https://glossary.magento.com/service-contract) clients include:
 
 * Controllers (initiated by actions of users of the storefront)
 
@@ -56,7 +56,7 @@ Typically, service contracts provide three distinct types of interfaces:
 
 * Management interfaces
 
-* [Metadata](https://glossary.magento.com/Metadata) interfaces
+* [Metadata](https://glossary.magento.com/metadata) interfaces
 
 However, there is no requirement that service contracts conform to all three patterns.
 

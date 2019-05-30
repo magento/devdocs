@@ -27,7 +27,7 @@ The following components can be used in the scope of the Form component:
 * Select
 * Text
 * Textarea
-* [Wysiwyg](https://glossary.magento.com/Wysiwyg)
+* [Wysiwyg](https://glossary.magento.com/wysiwyg)
 
 ## Configuration options
 
@@ -361,7 +361,7 @@ Component configuration:
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 
-Data Source is another [UI Component](https://glossary.magento.com/UI-Component) that provides data in specific format which is shared among all UI Components.
+Data Source is another [UI Component](https://glossary.magento.com/ui-component) that provides data in specific format which is shared among all UI Components.
 
 ### Replace instances of component
 

@@ -29,4 +29,4 @@ Just relying on the interface through [dependency injection](https://glossary.ma
 
 ### How do I configure my module so that it appears in a specific place on the Admin?
 
-Use the `<Module Directory>/etc/adminhtml/menu.xml` file to configure from where on the [Admin](https://glossary.magento.com/Admin) your [extension](https://glossary.magento.com/extension) is accessible.
+Use the `<Module Directory>/etc/adminhtml/menu.xml` file to configure from where on the [Admin](https://glossary.magento.com/admin) your [extension](https://glossary.magento.com/extension) is accessible.

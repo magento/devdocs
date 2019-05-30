@@ -7,7 +7,7 @@ functional_areas:
 ---
 ## What's in this topic {#favicon-intro}
 
-This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Magento Admin](https://glossary.magento.com/Magento-Admin).
+This topic describes how to apply your custom [theme](https://glossary.magento.com/theme) for [Magento Admin](https://glossary.magento.com/magento-admin).
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ If you decide to use the existing module, keep in mind, that theme declaring mig
 
 ## Apply a custom theme in Admin: Overview
 
-To apply the [Admin](https://glossary.magento.com/Admin) theme, take the following steps:
+To apply the [Admin](https://glossary.magento.com/admin) theme, take the following steps:
 
 2. [Specify the new Admin theme in your module's `di.xml`](#specify_di)
 3. Update the components by running the [`bin/magento setup:upgrade`]({{ page.baseurl }}/install-gde/install/cli/install-cli-uninstall.html#instgde-install-keep) command.

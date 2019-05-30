@@ -60,7 +60,7 @@ To install or upgrade Apache, see [Apache]({{ page.baseurl }}/install-gde/prereq
 
 	php -v
 
-You must run [PHP](https://glossary.magento.com/PHP) version 5.6 or 7.0.x as the following result indicates:
+You must run [PHP](https://glossary.magento.com/php) version 5.6 or 7.0.x as the following result indicates:
 
 	PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
 	Copyright (c) 1997-2016 The PHP Group

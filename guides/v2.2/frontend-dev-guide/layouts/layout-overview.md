@@ -20,7 +20,7 @@ The objective is to create a structured, common set of layout instructions to re
 
 (2) *Containers* assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.
 
-(3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the [HTML](https://glossary.magento.com/HTML) to insert into its parent structural block. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
+(3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the [HTML](https://glossary.magento.com/html) to insert into its parent structural block. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
 
 ## Purpose of page layouts
 

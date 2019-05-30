@@ -169,7 +169,7 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 
 ## Verify HTTP response headers {#config-varnish-verify-headers}
 
-Now you can verify that Varnish is serving pages by looking at [HTML](https://glossary.magento.com/HTML) response headers returned from any Magento page.
+Now you can verify that Varnish is serving pages by looking at [HTML](https://glossary.magento.com/html) response headers returned from any Magento page.
 
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the [`magento deploy:mode:set`]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html) command.
 

@@ -91,7 +91,7 @@ We have the following entry point applications (that is, applications defined by
 The entry point for static view files is not used in [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code>&lt;your Magento install dir>/pub/static</code> directory.
 
 In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate `.htaccess`.
-When the request is redirected to the entry point, the Magento application parses the requested [URL](https://glossary.magento.com/URL) based on retrieved parameters and finds the requested resource.
+When the request is redirected to the entry point, the Magento application parses the requested [URL](https://glossary.magento.com/url) based on retrieved parameters and finds the requested resource.
 
 *	In developer mode, the content of the file is returned so that every time the resource is requested, the returned content is up to date.
 *	In [default]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#default-mode) mode, the retrieved resource is published so it is accessible by the previously requested URL.

@@ -11,7 +11,7 @@ functional_areas:
 
 After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:
 
-* Put Magento 1 in maintenance mode and permanently stop all [Admin](https://glossary.magento.com/Admin) activities
+* Put Magento 1 in maintenance mode and permanently stop all [Admin](https://glossary.magento.com/admin) activities
 
 * Start Magento 2 cron jobs
 

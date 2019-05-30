@@ -15,7 +15,7 @@ This topic describes how to create your custom theme for Magento Admin, referenc
 
 ## Overview
 
-To create a custom [Admin](https://glossary.magento.com/Admin) theme, take the following steps:
+To create a custom [Admin](https://glossary.magento.com/admin) theme, take the following steps:
 
 1. [Create a theme directory.](#create_dir)
 2. [Add a declaration `theme.xml`.](#declare_theme)
@@ -44,7 +44,7 @@ Configure it using the following example (replace placeholders with your [theme]
 </theme>
 ```
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/Magento-Admin) page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
 ## Add `registration.php` {#add_registry}
 

@@ -16,8 +16,8 @@ functional_areas:
 <ul>
    <li>Decouple visual (CSS) layer from the functional (JavaScript) layer.</li>
    <li>Decouple functional (JavaScript) layer from the [markup](https://glossary.magento.com/markup) (HTML).</li>
-   <li>Reinstate emphasis on using of [jQuery](https://glossary.magento.com/jQuery) templates.</li>
-   <li>Reinstate emphasis on decoupling HTML, [CSS](https://glossary.magento.com/CSS) and JS from [PHP](https://glossary.magento.com/PHP) classes.</li>
+   <li>Reinstate emphasis on using of [jQuery](https://glossary.magento.com/jquery) templates.</li>
+   <li>Reinstate emphasis on decoupling HTML, [CSS](https://glossary.magento.com/css) and JS from [PHP](https://glossary.magento.com/php) classes.</li>
 </ul>
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.
@@ -59,7 +59,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
    <li>Reduces long-term maintenance efforts.</li>
 </ul>
 
-**Acceptable [PHTML](https://glossary.magento.com/PHTML) template**
+**Acceptable [PHTML](https://glossary.magento.com/phtml) template**
 
 <p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
 
@@ -144,7 +144,7 @@ The following list will help you make a distinction between the actual meaning o
 
 ### Visual representation must rely only on HTML `class` attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element's type attribute and form elements state attributes (example: `disabled`, `checked`).
 
-As the first option, you are required to use [HTML](https://glossary.magento.com/HTML) class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
+As the first option, you are required to use [HTML](https://glossary.magento.com/html) class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
 
 <ul>
    <li>Enforces clean, strict separation between visual and business logic layers.</li>
@@ -188,7 +188,7 @@ Exception: CSS attributes where values must be calculated beyond the css-topics/
    <li>Reduces long-term maintenance efforts by containing CSS styles in a single place.</li>
 </ul>
 
-**Acceptable [JavaScript](https://glossary.magento.com/JavaScript) [widget](https://glossary.magento.com/widget) file**
+**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
 ```js
 ...

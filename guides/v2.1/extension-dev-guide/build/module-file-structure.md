@@ -22,7 +22,7 @@ A typical file structure for a Magento 2 [module](https://glossary.magento.com/m
 {:.no_toc}
 Following are some common module directories:
 
-* `Block`: contains [PHP](https://glossary.magento.com/PHP) view classes as part of Model View Controller(MVC) vertical implementation of module logic.
+* `Block`: contains [PHP](https://glossary.magento.com/php) view classes as part of Model View Controller(MVC) vertical implementation of module logic.
 * `Controller`: contains PHP controller classes as part of MVC vertical implementation of module logic.
 * `etc`: contains configuration files; in particular, `module.xml`, which is required.
 * `Model`: contains PHP model classes as part of MVC vertical implementation of module logic.
@@ -32,7 +32,7 @@ Following are some common module directories:
 {:.no_toc}
 Additional folders can be added for configuration and other ancillary functions for items like [plugin-ins]({{ page.baseurl }}/extension-dev-guide/plugins.html), localization, and [layout](https://glossary.magento.com/layout) files.
 
-* `Api`: contains any PHP classes exposed to the [API](https://glossary.magento.com/API).
+* `Api`: contains any PHP classes exposed to the [API](https://glossary.magento.com/api).
 * `Console`: contains CLI commands. For more info, see [Add CLI commands]({{ page.baseurl }}/extension-dev-guide/cli-cmds/cli-add.html).
 * `Cron`: contains cron job definitions.
 * `CustomerData`: contains section files.

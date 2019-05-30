@@ -20,7 +20,7 @@ A single module can have the following types of relationships with another modul
 
 * **implements**: module A implements module B if it implements some, not necessarily all, behavior that is defined in module B
 
-* **replaces**: module A replaces module B if it provides its own version of the [API](https://glossary.magento.com/API) exposed and implemented by module B
+* **replaces**: module A replaces module B if it provides its own version of the [API](https://glossary.magento.com/api) exposed and implemented by module B
 
 ## Relationship types and scenarios
 

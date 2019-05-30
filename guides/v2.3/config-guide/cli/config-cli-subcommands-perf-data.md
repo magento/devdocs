@@ -233,7 +233,7 @@ The following sections discuss additional details about the performance fixtures
 
 ### Admin users {#config-cli-gen-admin}
 
-Generates [admin](https://glossary.magento.com/admin) users. [XML](https://glossary.magento.com/XML) profile node:
+Generates [admin](https://glossary.magento.com/admin) users. [XML](https://glossary.magento.com/xml) profile node:
 
 <pre class="no-copy">&lt;!-- Number of admin users -->
 &lt;admin_users>{int}</admin_users></pre>
@@ -498,7 +498,7 @@ Generates websites. XML profile node:
 
 ### Store groups {#config-cli-gen-stores}
 
-Generates store groups (referred to in the [Magento Admin](https://glossary.magento.com/Magento-Admin) as _stores_). Store groups are distributed normally among websites.
+Generates store groups (referred to in the [Magento Admin](https://glossary.magento.com/magento-admin) as _stores_). Store groups are distributed normally among websites.
 
 XML profile node:
 

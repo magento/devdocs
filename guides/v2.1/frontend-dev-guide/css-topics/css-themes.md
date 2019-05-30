@@ -19,7 +19,7 @@ This topic describes how stylesheets are located by default in the Magento appli
 
 ## How Magento stylesheet files are organized
 
-Conventionally, CSS and Less files are stored only in themes. [Module](https://glossary.magento.com/Module) directories do not contain any default styles.
+Conventionally, CSS and Less files are stored only in themes. [Module](https://glossary.magento.com/module) directories do not contain any default styles.
 
 In a [theme directory][], stylesheets are stored in the following locations:
 

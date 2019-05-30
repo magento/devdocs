@@ -119,7 +119,7 @@ The files are deployed to these subdirectories according to the following patter
 
 ### Mapping deployed files
 
-The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, [theme](https://glossary.magento.com/theme) and locale. There are separate map files for [PHP](https://glossary.magento.com/PHP) and JS:
+The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, [theme](https://glossary.magento.com/theme) and locale. There are separate map files for [PHP](https://glossary.magento.com/php) and JS:
 
 * `map.php`
 * `requirejs-map.js`
@@ -161,4 +161,4 @@ require.config({
 
 To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213).
 
-Do not use [URL](https://glossary.magento.com/URL) concatenations to avoid problems with [static files](https://glossary.magento.com/static-files) being not found and not displayed during page rendering.
+Do not use [URL](https://glossary.magento.com/url) concatenations to avoid problems with [static files](https://glossary.magento.com/static-files) being not found and not displayed during page rendering.

@@ -20,14 +20,14 @@ This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the
 
 Magento Magento Commerce 2.1.0 includes several new and exciting features:
 
-* **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, [CMS](https://glossary.magento.com/CMS) content, promotions, and pricing, and can preview these changes by date or [store view](https://glossary.magento.com/store-view) to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
+* **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, [CMS](https://glossary.magento.com/cms) content, promotions, and pricing, and can preview these changes by date or [store view](https://glossary.magento.com/store-view) to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
 
 
 * **Elasticsearch** is cutting edge search technology that is replacing Solr in Magento Enterprise Edition 2.1. It is simpler to set up, able to handle large catalogs, and can easily scale as search volume grows. It supports 33 languages out-of-the-box and merchants can set ‘stop words’, search synonyms, and attribute weighting to deliver highly relevant search results..
 
-* **PayPal enhancements** include PayPal in-context [checkout](https://glossary.magento.com/checkout) and saved credit cards. In-context checkout helps to increase [conversion](https://glossary.magento.com/conversion) rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the [Admin](https://glossary.magento.com/Admin) interface.
+* **PayPal enhancements** include PayPal in-context [checkout](https://glossary.magento.com/checkout) and saved credit cards. In-context checkout helps to increase [conversion](https://glossary.magento.com/conversion) rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the [Admin](https://glossary.magento.com/admin) interface.
 
-* **Braintree Hosted Fields** securely collect all sensitive payment information in checkout so merchants can qualify for the simplest set of PCI compliance requirements. Merchants retain complete control over their checkout style and [layout](https://glossary.magento.com/layout) because Braintree gathers credit card data using small, transparent iframes that replace individual payment fields. Braintree [settlement](https://glossary.magento.com/settlement) reports are now also conveniently available within the [Magento Admin](https://glossary.magento.com/Magento-Admin).
+* **Braintree Hosted Fields** securely collect all sensitive payment information in checkout so merchants can qualify for the simplest set of PCI compliance requirements. Merchants retain complete control over their checkout style and [layout](https://glossary.magento.com/layout) because Braintree gathers credit card data using small, transparent iframes that replace individual payment fields. Braintree [settlement](https://glossary.magento.com/settlement) reports are now also conveniently available within the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 * **Improved management interfaces** make it faster and easier to search for information in the Admin, set up global search synonyms, and create new product, category, and CMS content.
 
@@ -92,7 +92,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51953 -->* Manually unselecting the DownloadableStaging during installation no longer throws a fatal error.
 
-<!--- 45105 -->*   You can now successfully install Magento using a setup [URL](https://glossary.magento.com/URL) that contains a port number. [ (GITHUB-2272)](https://github.com/magento/magento2/issues/2272){:target="_blank"}
+<!--- 45105 -->*   You can now successfully install Magento using a setup [URL](https://glossary.magento.com/url) that contains a port number. [ (GITHUB-2272)](https://github.com/magento/magento2/issues/2272){:target="_blank"}
 
 <!--- 46858-->* The Magento CLI `setup:config:set` now accepts  hyphens and dashes "-".  [ (GITHUB-2700)](https://github.com/magento/magento2/issues/2700){:target="_blank"}
 
@@ -100,7 +100,7 @@ To work around this issue, run the following commands in the order shown:
 
 <!--- 51779-->* Magento Community Edition 2.0.4 with Sample Data.tar.bz2 (204 MB) download now works. [ (GITHUB-4090)](https://github.com/magento/magento2/issues/4090){:target="_blank"}
 
-<!--- 53471-->* The `MAGE_MODE` environment variable is no longer a required server config variable for [NGINX](https://glossary.magento.com/NGINX) configuration.
+<!--- 53471-->* The `MAGE_MODE` environment variable is no longer a required server config variable for [NGINX](https://glossary.magento.com/nginx) configuration.
 
 #### Shopping
 {:.no_toc}
@@ -141,11 +141,11 @@ To work around this issue, run the following commands in the order shown:
 {:.no_toc}
 <!--- 50878 -->* The OAuth handshake now clearly indicates the SAAS platform with which the Magento store is doing the OAuth handshake.
 
-<!--- 49699 -->*  You can now use the Web [API](https://glossary.magento.com/API) to access Version Manager.
+<!--- 49699 -->*  You can now use the Web [API](https://glossary.magento.com/api) to access Version Manager.
 
 <!--- 46720 -->* The Orders API now exposes Shipping Address. [ (GITHUB-2628)](https://github.com/magento/magento2/issues/2628){:target="_blank"}
 
-<!--- 52613 -->* The [Credit Memo](https://glossary.magento.com/Credit-Memo) REST API now updates attributes as expected.  [ (GITHUB-4329)](https://github.com/magento/magento2/issues/4329){:target="_blank"}
+<!--- 52613 -->* The [Credit Memo](https://glossary.magento.com/credit-memo) REST API now updates attributes as expected.  [ (GITHUB-4329)](https://github.com/magento/magento2/issues/4329){:target="_blank"}
 
 <!--- 47451-->* The 'in' filter now works in list APIs (checked customer, product, product attributes).  [ (GITHUB-2892)](https://github.com/magento/magento2/issues/2892){:target="_blank"}
 
@@ -190,7 +190,7 @@ To work around this issue, run the following commands in the order shown:
 
 #### PHP
 {:.no_toc}
-<!--- 53524 -->*  [PHP](https://glossary.magento.com/PHP) errors no longer occur when you run a cron script on installations running PHP5.5. [ (GITHUB-4722)](https://github.com/magento/magento2/issues/4722){:target="_blank"}
+<!--- 53524 -->*  [PHP](https://glossary.magento.com/php) errors no longer occur when you run a cron script on installations running PHP5.5. [ (GITHUB-4722)](https://github.com/magento/magento2/issues/4722){:target="_blank"}
 
 <!--- 47677-->* Remi PHP 7.0.1 now works with Sample Data.
 
@@ -199,7 +199,7 @@ To work around this issue, run the following commands in the order shown:
 #### Gift cards
 {:.no_toc}
 
-<!--- 52275 -->* Merchants can now  edit [Gift Card](https://glossary.magento.com/Gift-Card) Product.
+<!--- 52275 -->* Merchants can now  edit [Gift Card](https://glossary.magento.com/gift-card) Product.
 
 <!--- 50488-->* Fixed issue where customers could not purchase gift cards.
 
@@ -234,7 +234,7 @@ To work around this issue, run the following commands in the order shown:
 <!--- 51099-->* The PayPal Settlement report now works correctly.
 
 
-<!--- 50054-->* Magento now requires the [Merchant Account](https://glossary.magento.com/Merchant-Account) ID field  in PayPal configuration.
+<!--- 50054-->* Magento now requires the [Merchant Account](https://glossary.magento.com/merchant-account) ID field  in PayPal configuration.
 
 <!--- 50024-->* Magento still displays products  in the mini shopping cart after guest checkout with PayPal Express.
 
@@ -314,7 +314,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 50973-->* Magento no longer throws a general [exception](https://glossary.magento.com/exception) when you try to import more than 100,000 products.
 
-<!--- 50899 -->*  You can now export products to a [CSV](https://glossary.magento.com/CSV) file, edit names, then import products successfully.
+<!--- 50899 -->*  You can now export products to a [CSV](https://glossary.magento.com/csv) file, edit names, then import products successfully.
 
 
 <!--- 47877 -->*   Import process speed has been improved. [ (GITHUB-2957)](https://github.com/magento/magento2/issues/2957){:target="_blank"}
@@ -328,7 +328,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 53781-->* The Ajax loader now stops if you use an incorrect file type during import.
 
-<!--- 50817 -->*  The `console` command now flushes caches without error. [Cache](https://glossary.magento.com/Cache) should be flushed without errors.
+<!--- 50817 -->*  The `console` command now flushes caches without error. [Cache](https://glossary.magento.com/cache) should be flushed without errors.
 
 #### Search
 {:.no_toc}
@@ -390,7 +390,7 @@ target="_blank"> (GITHUB-4099)</a>
 #### Bundle products
 {:.no_toc}
 
-<!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a [Bundle product](https://glossary.magento.com/Bundle-product).
+<!--- 51194 -->* The Add Products to Option button now works as expected when you create a new update for a [Bundle product](https://glossary.magento.com/bundle-product).
 
 <!--- 52832 -->* You can now include quotation marks in Bundle product names. [ (GITHUB-4414)](https://github.com/magento/magento2/issues/4414){:target="_blank"}
 
@@ -399,7 +399,7 @@ target="_blank"> (GITHUB-4099)</a>
 <!--- 47379-->* You can now successfully move Bundle products to the Wishlist. [ (GITHUB-2717)](https://github.com/magento/magento2/issues/2717){:target="_blank"}
 
 
-<!--- 45173-->* Bundle products created using [Web API](https://glossary.magento.com/Web-API) are now visible on the storefront.
+<!--- 45173-->* Bundle products created using [Web API](https://glossary.magento.com/web-api) are now visible on the storefront.
 
 <!--- 46695-->* Magento now saves the price for Bundle option items.
 
@@ -617,7 +617,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 <!--- 51121 --> *  Fixed issue where the Select from Existing Scheduled Update option resulted in an SQL error.
 
-<!--- 51402-->* Fixed [JavaScript](https://glossary.magento.com/JavaScript) errors that were occurring when you clicked Schedule New Update on the Product Edit page.  
+<!--- 51402-->* Fixed [JavaScript](https://glossary.magento.com/javascript) errors that were occurring when you clicked Schedule New Update on the Product Edit page.  
 
 #### Miscellaneous
 {:.no_toc}
@@ -625,7 +625,7 @@ target="_blank"> (GITHUB-4099)</a>
 
 
 
-<!--- 53919 -->*  We changed the [HTML](https://glossary.magento.com/HTML) header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
+<!--- 53919 -->*  We changed the [HTML](https://glossary.magento.com/html) header used for SSL offloading from SSL-OFFLOADED{:target="_blank"} to X-Forwarded-Proto: https{:target="_blank"} to be compatible with Varnish and for compatibility with load balancers.
 
 To view this setting in the Magento Admin, click **Stores** > Settings > **Configuration** > GENERAL > **Web**. In the right pane, expand **Base URLs (Secure)**, value of the **Offloader header** field.
 
@@ -659,7 +659,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 49939 -->*  You can now assign a CMS page to multiple storeviews.
 
-<!--- 49001 -->*  The [Search Engine Optimization](https://glossary.magento.com/Search-Engine-Optimization) fieldset no longer displays Category url_key.
+<!--- 49001 -->*  The [Search Engine Optimization](https://glossary.magento.com/search-engine-optimization) fieldset no longer displays Category url_key.
 <!--- 49154 -->*  You can now successfully create a new update on 'custom store view'.
 <!--- 48588 -->*  You can now add a new row to a Custom Option of Input Type when editing a simple product.
 
@@ -697,7 +697,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 50507 -->* You can now successfully rest the Product Attributes mass update Admin form.
 
-<!--- 52284 -->* You can now insert more than two images using the [WYSIWYG](https://glossary.magento.com/WYSIWYG) editor. [ (GITHUB-4221)](https://github.com/magento/magento2/issues/4221){:target="_blank"}
+<!--- 52284 -->* You can now insert more than two images using the [WYSIWYG](https://glossary.magento.com/wysiwyg) editor. [ (GITHUB-4221)](https://github.com/magento/magento2/issues/4221){:target="_blank"}
 
 <!--- 49877 -->* Don't omit the "callable" argument type hint. [ (GITHUB-2026)](https://github.com/magento/magento2/issues/2026){:target="_blank"}
 
@@ -870,7 +870,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 <!--- 47064-->* Fixed issue with JaveScript errors when loading the product grid after cleaning the cache and [static files](https://glossary.magento.com/static-files).
 
 <!--- 51074-->* Product images now switch as expected when  you click on a swatch.
-<!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog [Event](https://glossary.magento.com/Event) change in the Product page and Advance Inventory changes.  
+<!--- 51061, 51059 -->* Varnish now properly invalidates or refreshes the both Catalog [Event](https://glossary.magento.com/event) change in the Product page and Advance Inventory changes.  
 <!--- 51053-->* Quote are no longer lost after you  cancel an order with the Worldpay payment method.
 
 <!--- 51034-->* You can now create a simple product with custom options.
@@ -1029,7 +1029,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 49389-->* Setting category permissions to DENY now hides the category as expected.
 
-<!--- 48240-->* Fixed issue with the display of forms incorporating new [UI component](https://glossary.magento.com/UI-component) in  Single-Store mode.
+<!--- 48240-->* Fixed issue with the display of forms incorporating new [UI component](https://glossary.magento.com/ui-component) in  Single-Store mode.
 
 <!--- 49349-->* You can now save bookmarks you've created in Admin data tables.
 
@@ -1122,7 +1122,7 @@ If you change the value of this field, you must regenerate your `.vcl` files.
 
 <!--- 52785-->* The Save button now works as expected on the Category Edit page after you've manipulated  CatalogPermissions elements.
 
-<!--- 53223-->* Setting Merge [CSS](https://glossary.magento.com/CSS) Files = Yes no longer erodes Magento performance.  [ (GITHUB-4710)](https://github.com/magento/magento2/issues/4710){:target="_blank"}
+<!--- 53223-->* Setting Merge [CSS](https://glossary.magento.com/css) Files = Yes no longer erodes Magento performance.  [ (GITHUB-4710)](https://github.com/magento/magento2/issues/4710){:target="_blank"}
 
 <!--- 53157-->* Image previewer now works with images that contain spaces in their name.   
 

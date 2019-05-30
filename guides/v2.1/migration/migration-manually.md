@@ -15,9 +15,9 @@ There are four kinds of data that need to be migrated manually:
 
 *	Media
 
-*	[Storefront](https://glossary.magento.com/Storefront) design
+*	[Storefront](https://glossary.magento.com/storefront) design
 
-*	[Admin](https://glossary.magento.com/Admin) user accounts
+*	[Admin](https://glossary.magento.com/admin) user accounts
 
 *	Access Control Lists (ACLs)
 
@@ -43,15 +43,15 @@ Then, repeat the same steps in your Magento 2 Admin panel.
 
 ### Media files in the file system
 
-All media files (images for products, categories, the [WYSIWYG](https://glossary.magento.com/WYSIWYG) editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`.
+All media files (images for products, categories, the [WYSIWYG](https://glossary.magento.com/wysiwyg) editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`.
 
 However, do *not* copy the `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved.
 
 ## Storefront design
 
-* Design in files (CSS, JS, templates, [XML](https://glossary.magento.com/XML) layouts) changed its location and format
+* Design in files (CSS, JS, templates, [XML](https://glossary.magento.com/xml) layouts) changed its location and format
 
-* [Layout](https://glossary.magento.com/Layout) Updates stored in database. Placed through Magento 1 Admin in [CMS](https://glossary.magento.com/CMS) Pages, CMS Widgets, [Category](https://glossary.magento.com/Category) Pages and Product Pages
+* [Layout](https://glossary.magento.com/layout) Updates stored in database. Placed through Magento 1 Admin in [CMS](https://glossary.magento.com/cms) Pages, CMS Widgets, [Category](https://glossary.magento.com/category) Pages and Product Pages
 
 ## Access Control Lists (ACLs)
 

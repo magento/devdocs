@@ -9,11 +9,11 @@ Magento 2.1 introduces changes that may affect the correct functionality of alre
 
 ## API Changes
 
-Magento 2.1 introduces changes in several [API](https://glossary.magento.com/API) classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
+Magento 2.1 introduces changes in several [API](https://glossary.magento.com/api) classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
 
 ### Catalog Module API
 
-The [Catalog](https://glossary.magento.com/Catalog) [module](https://glossary.magento.com/module) introduces new service methods that enhance both options management and products to categories cross linking management.
+The [Catalog](https://glossary.magento.com/catalog) [module](https://glossary.magento.com/module) introduces new service methods that enhance both options management and products to categories cross linking management.
 
 **Class:** [`Magento\Catalog\Api\CategoryLinkManagementInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Api/CategoryLinkManagementInterface.php){:target="_blank"}<br/>
 **Action:** Added the service method `assignProductToCategories`<br/>
@@ -32,7 +32,7 @@ The [Catalog](https://glossary.magento.com/Catalog) [module](https://glossary.ma
 
 ### CMS Module
 
-The [CMS](https://glossary.magento.com/CMS) Module has been updated to allow you to manage meta titles for your CMS pages.
+The [CMS](https://glossary.magento.com/cms) Module has been updated to allow you to manage meta titles for your CMS pages.
 
 **Class:** [`Magento\Cms\Api\Data\PageInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Api/Data/PageInterface.php){:target="_blank"}<br/>
 **Action:** Added the getter method `getMetaTitle`<br/>
@@ -54,16 +54,16 @@ A data interfaces has been changed in the GiftcardAccount module.
 
 ## Changes in UI
 
-In release 2.1, Magento introduced a new way to build the [Admin](https://glossary.magento.com/Admin) UI. Old forms have been rewritten using the new UI components. The new UI forms have better flexibility and can be customized using configuration files.
+In release 2.1, Magento introduced a new way to build the [Admin](https://glossary.magento.com/admin) UI. Old forms have been rewritten using the new UI components. The new UI forms have better flexibility and can be customized using configuration files.
 
 The following entities have new forms and design:
 
 - Product
-- [Category](https://glossary.magento.com/Category)
+- [Category](https://glossary.magento.com/category)
 - CMS Page
-- [CMS Block](https://glossary.magento.com/CMS-Block)
+- [CMS Block](https://glossary.magento.com/cms-block)
 - Sales Rule
-- [Catalog Rules](https://glossary.magento.com/Catalog-Rules)
+- [Catalog Rules](https://glossary.magento.com/catalog-rules)
 
 {: .bs-callout .bs-callout-info }
 **Important information:** Customizations that were performed with the old forms of the listed entities will be lost.

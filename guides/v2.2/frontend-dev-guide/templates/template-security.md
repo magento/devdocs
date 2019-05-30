@@ -9,7 +9,7 @@ functional_areas:
 
 To prevent [XSS] issues Magento recommends the following rules for escaping output in templates:
 
-* If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the [HTML](https://glossary.magento.com/HTML) output)
+* If a method indicates that the content is escaped, do not escape: `getTitleHtml()`, `getHtmlTitle()` (the title is ready for the [HTML](https://glossary.magento.com/html) output)
 
 * Type casting and [php](https://glossary.magento.com/php) function `count()` don't need escaping  (for example `echo (int)$var`, `echo (bool)$var`, `echo count($var)`)
 

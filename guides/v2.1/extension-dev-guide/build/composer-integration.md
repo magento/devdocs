@@ -10,7 +10,7 @@ redirect_from:
 
 ## Overview
 
-Magento 2 uses [Composer][0]{:target="_blank"}, a [PHP](https://glossary.magento.com/PHP) dependency manager, to package components and product editions.
+Magento 2 uses [Composer][0]{:target="_blank"}, a [PHP](https://glossary.magento.com/php) dependency manager, to package components and product editions.
 
 Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
 

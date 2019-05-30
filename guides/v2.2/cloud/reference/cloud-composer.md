@@ -54,7 +54,7 @@ This [metapackage](https://glossary.magento.com/metapackage) requires Magento ap
 
 ## Base packages and file marshalling
 
-Magento contains two base packages: `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, [PHP](https://glossary.magento.com/PHP) entry points, and so on.
+Magento contains two base packages: `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, [PHP](https://glossary.magento.com/php) entry points, and so on.
 
 These files are location-dependent, and cannot reside in the `vendor` directory. They are distributed as part of the base packages, and they rely on hooks located in the `magento/magento-composer-installer` package, which marshals them to the appropriate locations.
 

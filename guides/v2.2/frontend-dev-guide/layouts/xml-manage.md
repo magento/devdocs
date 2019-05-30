@@ -190,7 +190,7 @@ To wrap div or block using container see example:
 
 Blocks are created (declared) using the `<block>` instruction.
 
-Example: add a block with a product [SKU](https://glossary.magento.com/SKU) information.
+Example: add a block with a product [SKU](https://glossary.magento.com/sku) information.
 
 ```xml
 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">

@@ -102,7 +102,7 @@ This release contains hundreds of fixes and enhancements.
 <!---71890 -->* Magento no longer throws an exception when the configuration checksum is absent on a new installation.
 
 
-<!--- 59342-->* Custom themes now inherit parent [XML](https://glossary.magento.com/XML) configuration information as expected.
+<!--- 59342-->* Custom themes now inherit parent [XML](https://glossary.magento.com/xml) configuration information as expected.
 
 <!--- 54722-->* We've removed the sample password from the Setup Wizard
 
@@ -164,7 +164,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!---58902-->* Custom address attributes now appear in the Checkout summary.
 
-<!---57497-->* Lengthy [Order Status](https://glossary.magento.com/Order-Status) tables are now paginated as expected.
+<!---57497-->* Lengthy [Order Status](https://glossary.magento.com/order-status) tables are now paginated as expected.
 
 <!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
@@ -186,7 +186,7 @@ This release contains hundreds of fixes and enhancements.
 <!---58090-->* We've corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout.
 
 
-<!---57168-->* We fixed a [JavaScript](https://glossary.magento.com/JavaScript) error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
+<!---57168-->* We fixed a [JavaScript](https://glossary.magento.com/javascript) error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
 
 <!---60293 -->* Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception,```Object doesn't support this action```. [GitHub-5358](https://github.com/magento/magento2/issues/5358), [GitHub-7051](https://github.com/magento/magento2/issues/7051)
 
@@ -270,7 +270,7 @@ This release contains hundreds of fixes and enhancements.
 
 <!--- 62229-->* Magento now displays the price of out-of-stock products on the product page.
 
-<!--- 58895-->* If you remove an item from the Compare Items list that is displayed on any [Category](https://glossary.magento.com/Category) page, Magento no longer redirects you to the Compare Products page.
+<!--- 58895-->* If you remove an item from the Compare Items list that is displayed on any [Category](https://glossary.magento.com/category) page, Magento no longer redirects you to the Compare Products page.
 
 <!--- 72112-->* Subcategories no longer show up in the menu when the parent category is disabled or hidden from the menu. [GitHub-10664](https://github.com/magento/magento2/issues/10664)
 
@@ -387,7 +387,7 @@ This release contains hundreds of fixes and enhancements.
 <!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
 
 
-<!---60605-->* Magento no longer throws an [exception](https://glossary.magento.com/exception) when you add a configurable product by [SKU](https://glossary.magento.com/SKU) if an associated simple product is out-of-stock.
+<!---60605-->* Magento no longer throws an [exception](https://glossary.magento.com/exception) when you add a configurable product by [SKU](https://glossary.magento.com/sku) if an associated simple product is out-of-stock.
 
 
 <!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the [category](https://glossary.magento.com/category) page failed to list the product at all, rather than listing it as out-of-stock.
@@ -545,10 +545,10 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 60890 -->* Admin users with restricted permissions can now log in successfully as determined by those permissions. Previously, Magento displayed a fatal error when you logged in under these conditions.
 
-<!---55662-->* We've removed the duplicated [PHP](https://glossary.magento.com/PHP) settings from the sample web server configuration files.
+<!---55662-->* We've removed the duplicated [PHP](https://glossary.magento.com/php) settings from the sample web server configuration files.
 
 
-<!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when [Layout](https://glossary.magento.com/Layout) is set to empty.
+<!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when [Layout](https://glossary.magento.com/layout) is set to empty.
 
 <!---57351-->* We've removed the sample password from the Setup Wizard.
 
@@ -564,11 +564,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users.
 
-<!---59397-->* Custom themes now inherit parent [XML](https://glossary.magento.com/XML) configuration information as expected.
+<!---59397-->* Custom themes now inherit parent [XML](https://glossary.magento.com/xml) configuration information as expected.
 
 <!--- 60248-->* Information set by the **Default Billing Address** and **Default Shipping Address** checkboxes on the Customer page are now saved correctly.
 
-<!---59416 -->* [Admin](https://glossary.magento.com/Admin) users with appropriate permissions can now reset the passwords of more than one customer at a time. [GitHub-5260](https://github.com/magento/magento2/issues/5260)
+<!---59416 -->* [Admin](https://glossary.magento.com/admin) users with appropriate permissions can now reset the passwords of more than one customer at a time. [GitHub-5260](https://github.com/magento/magento2/issues/5260)
 
 <!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento would not load data.
 
@@ -673,7 +673,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!---55447-->* Magento no longer encounters an error when it cannot find a product image file. [GitHub-5184](https://github.com/magento/magento2/issues/5184), [GitHub-5497](https://github.com/magento/magento2/issues/5497), [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5871](https://github.com/magento/magento2/issues/5871)
 
-<!---56944-->*  Magento now successfully saves images that you edit in a [WYSIWYG](https://glossary.magento.com/WYSIWYG) editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
+<!---56944-->*  Magento now successfully saves images that you edit in a [WYSIWYG](https://glossary.magento.com/wysiwyg) editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
 
 <!---58335, 42954-->* You can now preview uploaded images.
 
@@ -684,7 +684,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---55608-->*  Graphics now scroll as expected on mobile devices. [GitHub-5302](https://github.com/magento/magento2/issues/5302)
 
 
-<!--- 55234-->* Magento now successfully saves images that you edit in a [WYSIWYG](https://glossary.magento.com/WYSIWYG) editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
+<!--- 55234-->* Magento now successfully saves images that you edit in a [WYSIWYG](https://glossary.magento.com/wysiwyg) editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.
 
 <!--- 58031-->*  Inserted images on the content block of Category no longer reference the Admin URL. Previously, when you used the Wysiwyg editor to insert an image into the Content block of a Category, the image URL on the frontend would reference the Admin location. When you subsequently logged out of the Admin panel, and refreshed the Category page, the image is no longer available.
 
@@ -715,7 +715,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 <!--- 71013-->* The export process now populates values in the configurable variations column for configurable products as expected. Previously, when exporting more than one product, the values for the configurable variations column for configurable products were not included.
 
-<!--- 64643, 64856-->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the [CSV](https://glossary.magento.com/CSV) file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
+<!--- 64643, 64856-->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the [CSV](https://glossary.magento.com/csv) file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
 
 <!--- 56588-->* Magento now runs a selective partial re-indexing operation after import if you enable **Update on Schedule**. Previously, Magento ran a full reindex no matter which index mode was set.
 
@@ -806,7 +806,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!---57387 -->* You can now print invoices and credit memos from the Order page.
 
 
-<!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure [Website](https://glossary.magento.com/Website) Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase. [GitHub-4785](https://github.com/magento/magento2/issues/4785)
+<!--- 55598/54787 -->* You can now successfully place orders when the Enable and Configure [Website](https://glossary.magento.com/website) Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase. [GitHub-4785](https://github.com/magento/magento2/issues/4785)
 
 
 <!--- 50026 -->* Attributes of the `salesInvoiceRepository` methods are now more appropriately type cast. (The data type is now a nullable float.)  Previously, due to the use of an incorrect data type, Magento would produce an error when calling the `salesInvoiceRepositoryV1GetList` method. [GitHub-3605](https://github.com/magento/magento2/issues/3605)
@@ -862,11 +862,11 @@ Thanks to our hardworking Magento Open Source community members for the followin
 <!--- 62669-->* Third-party payment gateways are now visible from the Admin. [GitHub-7891](https://github.com/magento/magento2/issues/7891)
 
 
-<!--- 55612-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/Payment-method) available** message when a customer tries to ship items to a billing-restricted country.
+<!--- 55612-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/payment-method) available** message when a customer tries to ship items to a billing-restricted country.
 
 
 
-<!--- 57923-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/Payment-method) available** message when a customer tries to ship items to a billing-restricted country.
+<!--- 57923-->* Magento no longer displays the **No [Payment method](https://glossary.magento.com/payment-method) available** message when a customer tries to ship items to a billing-restricted country.
 
 
 <!--- 69750-->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.
@@ -935,7 +935,7 @@ Thanks to our hardworking Magento Open Source community members for the followin
 
 #### PayPal
 
-<!--- 59581-->* We've improved and streamlined the [Magento Admin](https://glossary.magento.com/Magento-Admin) PayPal configuration interface.
+<!--- 59581-->* We've improved and streamlined the [Magento Admin](https://glossary.magento.com/magento-admin) PayPal configuration interface.
 
 <!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings.
 
@@ -1122,7 +1122,7 @@ This release includes substantial improvements to Magento caching, image process
 <!--- 65404 -->* Magento no longer creates redundant objects when initializing a configurable product on the Category page.
 
 
-<!--- 65403 -->* You can now disable swatches for both the [Catalog](https://glossary.magento.com/Catalog) page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Settings > Configuration > Catalog > Storefront > Show Swatches in Product List**.
+<!--- 65403 -->* You can now disable swatches for both the [Catalog](https://glossary.magento.com/catalog) page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Settings > Configuration > Catalog > Storefront > Show Swatches in Product List**.
 
 <!--- 65402 -->* We've optimized the logic that Magento uses to validate swatch attributes.
 

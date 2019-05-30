@@ -13,7 +13,7 @@ Merchants are encouraged to use Magento components and themes to extend and tran
 
 Magento provides several tools to help you significantly jumpstart the storefront customization process:
 
-* Magento Blank [Theme](https://glossary.magento.com/Theme)
+* Magento Blank [Theme](https://glossary.magento.com/theme)
 
 * [Overview of UI components]({{page.baseurl}}/ui_comp_guide/bk-ui_comps.html)
 
@@ -40,7 +40,7 @@ See [Overview of UI components]({{page.baseurl}}/ui_comp_guide/bk-ui_comps.html)
 
 A *pattern library* is a collection of user interface (UI) design patterns that can be re-used in locations throughout your product installation. The [Magento Admin Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) defines examples of components that administrators working with the storefront can use.
 
-Form elements included in the [Magento Admin](https://glossary.magento.com/Magento-Admin) pattern library include:
+Form elements included in the [Magento Admin](https://glossary.magento.com/magento-admin) pattern library include:
 
 * address form
 * button bar
@@ -50,7 +50,7 @@ Form elements included in the [Magento Admin](https://glossary.magento.com/Magen
 
 Users of the default Magento storefront encounter examples of these form elements throughout the product. These patterns provide a valuable language of software components (and indirectly, user experiences) for [extension](https://glossary.magento.com/extension) developers and administrators.
 
-The Magento [Admin](https://glossary.magento.com/Admin) Pattern library is built on the Less preprocessor and implemented as a [module](https://glossary.magento.com/module). You can download a free, current version of this module from [Magento Marketplace](https://marketplace.magento.com/).
+The Magento [Admin](https://glossary.magento.com/admin) Pattern library is built on the Less preprocessor and implemented as a [module](https://glossary.magento.com/module). You can download a free, current version of this module from [Magento Marketplace](https://marketplace.magento.com/).
 
 See [Magento Admin Pattern Library]({{page.baseurl}}/pattern-library/bk-pattern.html) for more information on using this library.
 

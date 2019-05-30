@@ -11,7 +11,7 @@ functional_areas:
 
 ## Overview of layout XML conversion
 
-Use this command to update your [layout](https://glossary.magento.com/layout) [XML](https://glossary.magento.com/XML) files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet.
+Use this command to update your [layout](https://glossary.magento.com/layout) [XML](https://glossary.magento.com/xml) files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet.
 
 For more information about layout XML files, see:
 

@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Magento Admin](https://glossary.magento.com/Magento-Admin).
+Varnish provides several features that prevent customers from experiencing long delays and timeouts when the Magento server is not functioning properly. These features can be configured in the `default.vcl` file. This topic describes the additions that Magento provides in the VCL (Varnish Configuration Language) file you download from [Magento Admin](https://glossary.magento.com/magento-admin).
 
 See the [Varnish Reference Manual](https://www.varnish-cache.org/docs/4.1/reference/index.html) for details about using the Varnish Configuration Language.
 
@@ -44,7 +44,7 @@ The `vcl_hit` subroutine defines how Varnish responds to a request for objects t
 
 ### When the Magento backend is healthy {#grace-healthy}
 
-When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from [Admin](https://glossary.magento.com/Admin) as described in [Configure Magento to use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
+When the health checks determine that the Magento backend is healthy, Varnish checks whether time remains in the grace period. The default grace period is 300 seconds, but a merchant can set the value from [Admin](https://glossary.magento.com/admin) as described in [Configure Magento to use Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish-magento.html). If the grace period hasn't expired, Varnish delivers the stale content, and asynchronously refreshes the object from the Magento server. If the grace period has expired, Varnish serves the stale content and synchronously refreshes the object from the Magento backend.
 
 The maximum amount of time that Varnish serves a stale object is the sum of the grace period (300 seconds by default) and the TTL value (86400 seconds by default).
 

@@ -47,7 +47,7 @@ Add the following to your component's [dependency injection](https://glossary.ma
 
 ## Create a block and template {#config-cache-priv-how-block}
 
-To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the [UI component](https://glossary.magento.com/UI-component).
+To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the [UI component](https://glossary.magento.com/ui-component).
 
 {: .bs-callout .bs-callout-info }
 Do _not_ use the `$_isScopePrivate` property in your blocks. This property is obsolete and won't work properly.
@@ -123,7 +123,7 @@ Versioning works as follows:
 
 1. The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.
 2. The server generates the `private_content_version` cookie for this user and returns the response to the browser.
-3. [JavaScript](https://glossary.magento.com/JavaScript) interprets the presence of the `private_content_version` cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.
+3. [JavaScript](https://glossary.magento.com/javascript) interprets the presence of the `private_content_version` cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.
 4. The server's reply is cached in the browser's local storage.
 
     Subsequent requests with the same data version are retrieved from local storage.

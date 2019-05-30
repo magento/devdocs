@@ -73,7 +73,7 @@ Users have encountered problems displaying images after upgrading their software
 
 or 
 
-* Save (or resave) the product with the associated image in the [Admin](https://glossary.magento.com/Admin) panel.
+* Save (or resave) the product with the associated image in the [Admin](https://glossary.magento.com/admin) panel.
 </div>
 
 
@@ -96,7 +96,7 @@ or
 
 ### Import
 
-<!--- 64856 -->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the [CSV](https://glossary.magento.com/CSV) file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
+<!--- 64856 -->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the [CSV](https://glossary.magento.com/csv) file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
 
 ### Miscellaneous
 
@@ -119,7 +119,7 @@ or
 <!--- 65404 -->* Magento no longer creates redundant objects when initializing a configurable product on the Category page.
 
 
-<!--- 65403 -->* You can now disable swatches for both the [Catalog](https://glossary.magento.com/Catalog) page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Settings > Configuration > Catalog > Storefront > Show Swatches in Product List**.
+<!--- 65403 -->* You can now disable swatches for both the [Catalog](https://glossary.magento.com/catalog) page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Settings > Configuration > Catalog > Storefront > Show Swatches in Product List**.
 
 <!--- 65402 -->* The logic that Magento uses to validate swatch attributes has been optimized. 
 
@@ -145,7 +145,7 @@ or
 
 ## System requirements
 
-Our technology stack is built on [PHP](https://glossary.magento.com/PHP) and MySQL. For more information, see
+Our technology stack is built on [PHP](https://glossary.magento.com/php) and MySQL. For more information, see
 [System Requirements]({{ page.baseurl }}/install-gde/system-requirements.html){:target="_blank"}.
 
 

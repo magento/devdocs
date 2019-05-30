@@ -48,7 +48,7 @@ To verify memcached works with Magento:
 
 2.  Go to any page on the [storefront](https://glossary.magento.com/storefront).
 
-3.  Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) and browse to several pages.
+3.  Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) and browse to several pages.
 
     If no errors display, congratulations! memcached is working! You can optionally look at memcached storage as discussed in the next step.
 

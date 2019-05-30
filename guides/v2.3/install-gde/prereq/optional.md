@@ -92,7 +92,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 	If all else fails, try rebooting the server.
 
 ## Create phpinfo.php {#install-optional-phpinfo}
-[`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){:target="_blank"} displays a large amount of information about [PHP](https://glossary.magento.com/PHP) and its extensions.
+[`phpinfo.php`](http://php.net/manual/en/function.phpinfo.php){:target="_blank"} displays a large amount of information about [PHP](https://glossary.magento.com/php) and its extensions.
 
 {:.bs-callout .bs-callout-info}
 Use `phpinfo.php` in a development system _only_. It can be a security issue in production.
@@ -105,7 +105,7 @@ Add the following code anywhere in your web server's docroot:
 
 For more information, see the [phpinfo manual page](http://php.net/manual/en/function.phpinfo.php){:target="_blank"}.
 
-To view the results, enter the following [URL](https://glossary.magento.com/URL) in your browser's location or address field:
+To view the results, enter the following [URL](https://glossary.magento.com/url) in your browser's location or address field:
 
 	http://<web server host or IP>/phpinfo.php
 

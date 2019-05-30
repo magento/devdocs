@@ -7,7 +7,7 @@ functional_areas:
 
 Magento 2 allows some REST endpoints to be accessed by unauthenticated (anonymous) users. Many of these endpoints allow a customer to have a robust shopping experience on the [website](https://glossary.magento.com/website) without having to log in.
 
-A subset of these endpoints can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, [Catalog](https://glossary.magento.com/Catalog) [module](https://glossary.magento.com/module) endpoints can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The [CMS](https://glossary.magento.com/CMS) module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.
+A subset of these endpoints can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, [Catalog](https://glossary.magento.com/catalog) [module](https://glossary.magento.com/module) endpoints can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The [CMS](https://glossary.magento.com/cms) module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.
 
 For this reason, by default, Magento 2 now prevents anonymous users from accessing the endpoints that could reveal sensitive information.  When the feature is enabled, the user must have administrator privileges to execute the affected endpoints.
 

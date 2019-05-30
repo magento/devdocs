@@ -1577,4 +1577,4 @@ Not applicable
 ### Verify this step {#verify-step}
 
 1. Log in to the Luma store as the customer. The dashboard shows the order.
-2. Log in to [Admin](https://glossary.magento.com/Admin). Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.
+2. Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.

@@ -7,7 +7,7 @@ Magento 2.2 introduces changes that may affect the correct functionality of alre
 
 ## API changes
 
-Magento 2.2 introduces changes in several [API](https://glossary.magento.com/API) classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
+Magento 2.2 introduces changes in several [API](https://glossary.magento.com/api) classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
 
 ### Framework
 
@@ -90,7 +90,7 @@ Deprecated method | Use instead | Subsequent calls
 
 ### Error processor module
 
-[Exception](https://glossary.magento.com/Exception) report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
+[Exception](https://glossary.magento.com/exception) report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
 
 ### Braintree module
 
@@ -234,7 +234,7 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 
 ### Advanced section in System Configurations
 
-**Action:** Section `Advanced` was removed from [Admin](https://glossary.magento.com/Admin) Interface<br/>
+**Action:** Section `Advanced` was removed from [Admin](https://glossary.magento.com/admin) Interface<br/>
 **Description:** Magento does not support disabling/enabling modules output from the Admin Panel in 2.2.0 version. Module output can still be enabled/disabled in configuration files.
 
 ## Database schema changes
@@ -250,7 +250,7 @@ This release replaces usages of `unserialize` with [`json_decode`]({{ page.baseu
 
 The release also provides upgrade scripts that convert Magento data stored in serialized format.
 
-[Extension](https://glossary.magento.com/Extension) developers should review the following cases to see what actions they should take for their extensions:
+[Extension](https://glossary.magento.com/extension) developers should review the following cases to see what actions they should take for their extensions:
 
 **Case 1:**  
 Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
@@ -284,7 +284,7 @@ Your extension accesses values in the `core_config_data` table using the followi
 - `admin/magento_logging/actions`
 
 **Solution:**  
-Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native [PHP](https://glossary.magento.com/PHP) serialize/unserialize functions.
+Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native [PHP](https://glossary.magento.com/php) serialize/unserialize functions.
 
 **Case 6:**  
 Your extension uses a backend model that extends `\Magento\Config\Model\Config\Backend\Serialized` to save/load data to/from the database.

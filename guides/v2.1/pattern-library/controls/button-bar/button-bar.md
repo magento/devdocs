@@ -90,7 +90,7 @@ To ensure page level actions are always visible, The button bar should stick to 
 
 ## Accessibility
 
-Buttons should make use of [CSS](https://glossary.magento.com/CSS) and [HTML](https://glossary.magento.com/HTML) so that button text is never dependent on a graphic asset.
+Buttons should make use of [CSS](https://glossary.magento.com/css) and [HTML](https://glossary.magento.com/html) so that button text is never dependent on a graphic asset.
 
 ## Assets
 

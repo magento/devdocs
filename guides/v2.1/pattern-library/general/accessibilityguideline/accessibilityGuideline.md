@@ -115,7 +115,7 @@ Ensure all content and design fits under a logical heading structure.
 
 #### Use true text whenever possible
 
-True text enlarges better, loads faster, and is easier to translate. Use [CSS](https://glossary.magento.com/CSS) to add visual style.
+True text enlarges better, loads faster, and is easier to translate. Use [CSS](https://glossary.magento.com/css) to add visual style.
 
 #### Support the link focus indicator
 

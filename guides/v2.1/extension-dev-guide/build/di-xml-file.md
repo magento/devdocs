@@ -27,7 +27,7 @@ During [bootstrapping]({{ page.baseurl }}/config-guide/bootstrap/magento-bootstr
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/URL).
+* In `index.php`, the [`\Magento\Framework\App\Http`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in the [URL](https://glossary.magento.com/url).
 
 * In `static.php`, the [`\Magento\Framework\App\StaticResource`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the URL in the request.
 
@@ -70,7 +70,7 @@ The example creates a virtual type for `Magento\Core\Model\Config` and specifies
 
 You can configure the class constructor arguments in your `di.xml` in the argument node.
 The object manager injects these arguments into the class during creation.
-The name of the argument configured in the [XML](https://glossary.magento.com/XML) file must correspond to the name of the parameter in the constructor in the configured class.
+The name of the argument configured in the [XML](https://glossary.magento.com/xml) file must correspond to the name of the parameter in the constructor in the configured class.
 
 The following example creates instances of `Magento\Core\Model\Session` with the class constructor argument `$sessionName` set to a value of `adminhtml`:
 

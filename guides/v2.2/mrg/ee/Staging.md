@@ -16,17 +16,17 @@ With the Magento_Staging module you can:
 - Manage future campaigns
     - Using the Staging Dashboard in Admin
     - Using APIs
-- Preview a future campaign in [Admin](https://glossary.magento.com/Admin)
+- Preview a future campaign in [Admin](https://glossary.magento.com/admin)
 
 Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with "Staging" and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
 
 You can work with the following entities out of the box:
 
 - Product
-- [Category](https://glossary.magento.com/Category)
-- [Catalog](https://glossary.magento.com/Catalog) Price Rule
-- [Shopping Cart](https://glossary.magento.com/Shopping-Cart) Price Rule
-- [CMS](https://glossary.magento.com/CMS) Block
+- [Category](https://glossary.magento.com/category)
+- [Catalog](https://glossary.magento.com/catalog) Price Rule
+- [Shopping Cart](https://glossary.magento.com/shopping-cart) Price Rule
+- [CMS](https://glossary.magento.com/cms) Block
 - CMS Page
 
 And you can extend the list adding your own [extension](https://glossary.magento.com/extension) modules.

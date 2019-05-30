@@ -10,7 +10,7 @@ functional_areas:
 
 Running tests in PhpStorm requires following steps to setup the system.
 
-1. Configuring the [PHP](https://glossary.magento.com/PHP) interpreter
+1. Configuring the [PHP](https://glossary.magento.com/php) interpreter
 2. Configuring PHPUnit
 3. Creating a run configuration
 
@@ -30,7 +30,7 @@ Then, click the **+** (add) button in the top right to select the desired PHP bi
 
 Please refer to the PhpStorm documentation for further information on [how to configure a local PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-local-php-interpreters.html?origin=old_help).
 
-It is also possible to [configure a remote PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-remote-php-interpreters.html?origin=old_help), which is a common setup when working with Vagrant or [Docker](https://glossary.magento.com/Docker) based development environments.
+It is also possible to [configure a remote PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-remote-php-interpreters.html?origin=old_help), which is a common setup when working with Vagrant or [Docker](https://glossary.magento.com/docker) based development environments.
 
 Please be aware that the details on configuring the PHP interpreter might vary between PhpStorm versions.
 

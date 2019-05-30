@@ -20,7 +20,7 @@ A Magento *module* is a discrete chunk of code that accomplishes a particular bu
 
 Themes can be applied to the module to change its appearance. So when you are building a module, you might also touch themes and language packages.
 
-A *package* is a component that is wrapped up in a distributable form. Usually you will use [Composer](https://glossary.magento.com/Composer) to do this.
+A *package* is a component that is wrapped up in a distributable form. Usually you will use [Composer](https://glossary.magento.com/composer) to do this.
 
 An *extension* is a component that are packaged for sale on Magento Marketplace.
 

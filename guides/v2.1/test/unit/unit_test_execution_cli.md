@@ -42,7 +42,7 @@ PHPUnit has many additional command line options. Please refer to the [PHPUnit d
 
 One possible reason for this to happen might be if you are trying to execute PHPUnit inside a Virtual Box VM with shared folders that don't allow modifying permissions.
 
-Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the [PHP](https://glossary.magento.com/PHP) interpreter, so your system knows what binary to use to run the tests.  
+Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the [PHP](https://glossary.magento.com/php) interpreter, so your system knows what binary to use to run the tests.  
 
 ```bash
 php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist

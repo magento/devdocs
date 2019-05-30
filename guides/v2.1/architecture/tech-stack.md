@@ -17,7 +17,7 @@ Magento's highly modular structure includes the following open-source technologi
 
 ### PHP
 
-*	[Composer](https://glossary.magento.com/Composer) (dependency management package for PHP)
+*	[Composer](https://glossary.magento.com/composer) (dependency management package for PHP)
 
 ### Database
 
@@ -41,8 +41,8 @@ Magento's highly modular structure includes the following open-source technologi
 ### Additional technologies
 
 *	HTML5
-*	CSS3 (LESS [CSS](https://glossary.magento.com/CSS) pre-processor)
-*	[jQuery](https://glossary.magento.com/jQuery) (primary [JavaScript](https://glossary.magento.com/JavaScript) library)
+*	CSS3 (LESS [CSS](https://glossary.magento.com/css) pre-processor)
+*	[jQuery](https://glossary.magento.com/jquery) (primary [JavaScript](https://glossary.magento.com/javascript) library)
 *	RequireJS (library that helps load JavaScript resources on demand)
 *	Knockout.js (simplifies JavaScript UIs with the Model-View-View Model pattern)
 *	Third-party libraries (Zend Framework 1, Zend Framework 2, Symfony)
@@ -57,7 +57,7 @@ Magento's highly modular structure includes the following open-source technologi
 
 Magento is *compatible with but not supported* for:
 
-*	HHVM 3.9 [PHP](https://glossary.magento.com/PHP) interpreter
+*	HHVM 3.9 [PHP](https://glossary.magento.com/php) interpreter
 
 ### Automated testing
 

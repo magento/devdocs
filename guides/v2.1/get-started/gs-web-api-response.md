@@ -9,11 +9,11 @@ menu_order: 3
 
 ## REST responses {#rest-responses}
 
-Each web [API](https://glossary.magento.com/API) call returns a HTTP status code and a response payload. When an error occurs, the response body also returns an error message.
+Each web [API](https://glossary.magento.com/api) call returns a HTTP status code and a response payload. When an error occurs, the response body also returns an error message.
 
 ### HTTP status codes {#http-status-codes}
 
-Each [web API](https://glossary.magento.com/web-API) call returns an HTTP status code that reflects the result of a request:
+Each [web API](https://glossary.magento.com/web-api) call returns an HTTP status code that reflects the result of a request:
 
 HTTP code | Meaning | Description
 --- | --- | ---

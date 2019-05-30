@@ -36,7 +36,7 @@ Refer to [Create websites]({{ page.baseurl }}/config-guide/multi-site/ms_website
 
 To set up multiple stores:
 
-1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Magento Admin](https://glossary.magento.com/Magento-Admin).
+1.	[Set up websites, stores, and store views]({{ page.baseurl }}/config-guide/multi-site/ms_websites.html) in the [Magento Admin](https://glossary.magento.com/magento-admin).
 2.	Create an [nginx virtual host](#ms-nginx-vhosts) to map many websites or one [nginx virtual host](#ms-nginx-vhosts) per Magento [website](https://glossary.magento.com/website) (steps detailed below).
 3.  Pass the values of the [Magento variables]({{ page.baseurl }}/config-guide/multi-site/ms_over.html) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample` (steps detailed below).
 

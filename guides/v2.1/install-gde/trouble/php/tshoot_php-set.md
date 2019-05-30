@@ -43,7 +43,7 @@ To resolve the error:
 
 ## PHP memory limit error {#trouble-php-memory}
 
-The readiness checks makes sure you have at least 1GB of memory set aside for [PHP](https://glossary.magento.com/PHP) processes. This setting should be sufficient for most installations, including installing optional sample data. However, we recommend at least 2GB for debugging.
+The readiness checks makes sure you have at least 1GB of memory set aside for [PHP](https://glossary.magento.com/php) processes. This setting should be sufficient for most installations, including installing optional sample data. However, we recommend at least 2GB for debugging.
 
 To increase your PHP memory limit:
 

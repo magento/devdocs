@@ -11,10 +11,10 @@ functional_areas:
 
 ## Start the Extension Manager from the Magento Admin
 
-To start the [Extension](https://glossary.magento.com/Extension) Manager:
+To start the [Extension](https://glossary.magento.com/extension) Manager:
 
 1.	If you haven't done so already, create or get your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
-2.	Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) as an administrator.
+2.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
 3.	Click **System** > **Web Setup Wizard**.
 4.	Click **Extension Manager** as the following figure shows.
 

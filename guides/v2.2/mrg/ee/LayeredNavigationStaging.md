@@ -22,7 +22,7 @@ You can find the list of modules that have dependencies on the Magento_LayeredNa
 
 ## Extension points
 
-[Extension](https://glossary.magento.com/Extension) points enable extension developers to interact with the Magento_LayeredNavigationStaging module. [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_LayeredNavigationStaging module.
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_LayeredNavigationStaging module. [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_LayeredNavigationStaging module.
 
 ### Layouts
 

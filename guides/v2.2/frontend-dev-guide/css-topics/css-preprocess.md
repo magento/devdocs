@@ -7,7 +7,7 @@ functional_areas:
 
 ## What's in this topic {#preproc_over}
 
-The topic describes how stylesheets are preprocessed and compiled to [CSS](https://glossary.magento.com/CSS) in the Magento application. It provides the theoretical background a [frontend](https://glossary.magento.com/frontend) developer needs to debug stylesheets effectively.
+The topic describes how stylesheets are preprocessed and compiled to [CSS](https://glossary.magento.com/css) in the Magento application. It provides the theoretical background a [frontend](https://glossary.magento.com/frontend) developer needs to debug stylesheets effectively.
 
 ## Terms used {#css_preprocess_terms}
 

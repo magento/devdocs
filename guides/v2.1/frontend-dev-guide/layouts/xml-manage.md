@@ -157,7 +157,7 @@ Example: add links to the page header panel.
 
 Blocks are created (declared) using the [`<block>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block) instruction.
 
-Example: add a block with a product [SKU](https://glossary.magento.com/SKU) information.
+Example: add a block with a product [SKU](https://glossary.magento.com/sku) information.
 
 ```xml
 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">

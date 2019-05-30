@@ -22,7 +22,7 @@ If your hosted system is already set up, go to [Get the Magento software package
 Magento requires the following software to run:
 
 *	Web server: Apache 2.2 or 2.4
-*	Programming language: [PHP](https://glossary.magento.com/PHP) 5.6.x or 5.5.x
+*	Programming language: [PHP](https://glossary.magento.com/php) 5.6.x or 5.5.x
 *	Database: MySQL 5.6.x
 
 {:.bs-callout .bs-callout-info}

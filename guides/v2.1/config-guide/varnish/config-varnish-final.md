@@ -41,7 +41,7 @@ For example, to use the Chrome inspector:
 3.	From the pop-up menu, click **Inspect Element**
 4.	In the inspector pane, click the **Network** tab.
 5.	Refresh the page.
-6.	Scroll to the top of the inspector pane so you can see the [URL](https://glossary.magento.com/URL) of the page you are viewing.
+6.	Scroll to the top of the inspector pane so you can see the [URL](https://glossary.magento.com/url) of the page you are viewing.
 
 	The following figure shows an example of loading the `magento2` index page.<br><br>
 	![Click the page you're viewing]({{ site.baseurl }}/common/images/config_varnish_inspector.png)
@@ -56,7 +56,7 @@ For example, to use the Chrome inspector:
 
 Make sure the `<magento_root>/var/page_cache` directory is empty:
 
-1.	Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
+1.	Log in to your Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Enter the following command:
 
 		rm -rf <magento_root>/var/page_cache/*

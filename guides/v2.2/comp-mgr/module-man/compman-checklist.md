@@ -11,7 +11,7 @@ functional_areas:
 
 ## Overview of the Module Manager {#compman-overview}
 
-This section discusses how to start the [Module](https://glossary.magento.com/Module) Manager, which updates or uninstalls *modules* (custom code that extends Magento capabilities)
+This section discusses how to start the [Module](https://glossary.magento.com/module) Manager, which updates or uninstalls *modules* (custom code that extends Magento capabilities)
 
 ## Prerequisites {#compman-prereq}
 

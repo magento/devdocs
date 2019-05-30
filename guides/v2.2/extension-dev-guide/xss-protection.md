@@ -12,13 +12,13 @@ menu_order: 1100
 
 There are mainly three types of XSS vulnerabilities:
 
-* **Persisted XSS** - In this type of vulnerability, the source of unvalidated data comes from the Database or [Backend](https://glossary.magento.com/Backend) permanent store.
+* **Persisted XSS** - In this type of vulnerability, the source of unvalidated data comes from the Database or [Backend](https://glossary.magento.com/backend) permanent store.
 * **Reflected (non-persistent) XSS** - This type of vulnerability occurs when data provided by a web client is used immediately by server-side scripts to parse and display a page to a user without properly sanitizing the request.
-* **DOM XSS** - For this vulnerability, the malicious data does not touch the web server. Rather, it is being reflected by the [JavaScript](https://glossary.magento.com/JavaScript) code, fully on the client side.
+* **DOM XSS** - For this vulnerability, the malicious data does not touch the web server. Rather, it is being reflected by the [JavaScript](https://glossary.magento.com/javascript) code, fully on the client side.
 
 ### Preventing XSS
 
-XSS vulnerabilities can be prevented by always validating and sanitizing both user input and output, i.e., user input should never be trusted. Both the [PHP](https://glossary.magento.com/PHP) language and Magento provides classes and functions to help secure your extension from XSS vulnerabilities.
+XSS vulnerabilities can be prevented by always validating and sanitizing both user input and output, i.e., user input should never be trusted. Both the [PHP](https://glossary.magento.com/php) language and Magento provides classes and functions to help secure your extension from XSS vulnerabilities.
 
 #### Input Processing
 
@@ -32,17 +32,17 @@ For more information, see the article on [templates XSS security]({{ page.baseur
 
 ### Using the Escaper classes
 
-Magento provides the [Escaper]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Escaper.php){:target="_blank"} class for escaping [HTML](https://glossary.magento.com/HTML) output. This class contains the following useful functions:
+Magento provides the [Escaper]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Escaper.php){:target="_blank"} class for escaping [HTML](https://glossary.magento.com/html) output. This class contains the following useful functions:
 
 Function | Description
 --- | ---
 `escapeHtml()` | Escapes string inside HTML content
 `escapeHtmlAttr()` | Escapes strings in HTML tag attributes
-`escapeCss()` | Used for escaping strings inside a [CSS](https://glossary.magento.com/CSS) context.
+`escapeCss()` | Used for escaping strings inside a [CSS](https://glossary.magento.com/css) context.
 `escapeJs()` | Escapes strings inside a JavaScript context
 `escapeJsQuote()` | Escapes quotes in JavaScript
 `escapeQuote()` | Escapes quotes inside HTML attributes
-`escapeUrl()` | Used for escaping strings that will be used in a [URL](https://glossary.magento.com/URL).
+`escapeUrl()` | Used for escaping strings that will be used in a [URL](https://glossary.magento.com/url).
 `escapeXssInUrl()` | Escapes XSS in URLs
 
 ### Related Topics

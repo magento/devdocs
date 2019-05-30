@@ -21,7 +21,7 @@ Your new `events.xml` is automatically collected from your module and merged wit
 
 To create new configuration type, you must add at minimum:
 
-* [XML](https://glossary.magento.com/XML) configuration files
+* [XML](https://glossary.magento.com/xml) configuration files
 * XSD validation schema
 * A loader
 

@@ -31,7 +31,7 @@ This class does not unserialize objects.
 ### Serialize
 
 The [`Magento\Framework\Serialize\Serializer\Serialize`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Serialize/Serializer/Serialize.php){:target="_blank"} class is less secure than the Json implementation but provides better performance on large arrays.
-This class does not unserialize objects in [PHP](https://glossary.magento.com/PHP) 7.
+This class does not unserialize objects in [PHP](https://glossary.magento.com/php) 7.
 
 {: .bs-callout .bs-callout-warning }
 Magento discourages using the Serialize implementation directly because it can lead to security vulnerabilities. Always use the `SerializerInterface` for serializing and unserializing.

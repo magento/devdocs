@@ -14,11 +14,11 @@ redirect_from:
 
 A WSDL file is generated only for services that you request. This means that different clients may use different services and therefore use different WSDLs.
 
-The Magento web [API](https://glossary.magento.com/API) uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
+The Magento web [API](https://glossary.magento.com/api) uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
 
 Each Magento service interface that is part of a [service contract](https://glossary.magento.com/service-contract) is represented as a separate service in the WSDL.
 
-To consume several services, you must specify them in the WSDL endpoint [URL](https://glossary.magento.com/URL).
+To consume several services, you must specify them in the WSDL endpoint [URL](https://glossary.magento.com/url).
 
 
 <table style="width:100%">
@@ -75,7 +75,7 @@ Service names use the following conventions:
 
 Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access [authorization](https://glossary.magento.com/authorization) issued to the client. For more information, see [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
 
-The following [PHP](https://glossary.magento.com/PHP) script illustrates how to get an access token:
+The following [PHP](https://glossary.magento.com/php) script illustrates how to get an access token:
 
 ```php
 <?php

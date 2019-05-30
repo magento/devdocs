@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-To be able to use vault in [Admin](https://glossary.magento.com/Admin) order creation, you need to take at least the following steps:
+To be able to use vault in [Admin](https://glossary.magento.com/admin) order creation, you need to take at least the following steps:
 
 1. Create a token component provider and specify it in the `<your_module_dir>/etc/di.xml`. 
 2. Create a custom vault JS component and specify it in the component provider. 

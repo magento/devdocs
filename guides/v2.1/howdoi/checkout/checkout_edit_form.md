@@ -10,7 +10,7 @@ functional_areas:
   - Checkout
 ---
 
-This topic describes how to replace the [HTML](https://glossary.magento.com/HTML) template for a form field on the [Checkout](https://glossary.magento.com/Checkout) page. You might need to replace the template in order to add elements displayed with the field, change the [CSS](https://glossary.magento.com/CSS) class assigned to it, add attributes and so on.
+This topic describes how to replace the [HTML](https://glossary.magento.com/html) template for a form field on the [Checkout](https://glossary.magento.com/checkout) page. You might need to replace the template in order to add elements displayed with the field, change the [CSS](https://glossary.magento.com/css) class assigned to it, add attributes and so on.
 
 The forms used on the Checkout page are implemented using Knockout JS.
 

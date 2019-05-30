@@ -13,7 +13,7 @@ This topic describes different ways to call and initialize JavaScript in Magento
 - Insert a [JavaScript component]({{ page.baseurl }}/javascript-dev-guide/bk-javascript-dev-guide.html#js_terms) in `.phtml` page templates.
 - Call Javascript components that require initialization in Javascript (`.js`) files.
 
-We strongly recommend that you use the described approaches and do not add inline [JavaScript](https://glossary.magento.com/JavaScript).
+We strongly recommend that you use the described approaches and do not add inline [JavaScript](https://glossary.magento.com/javascript).
 
 ## Insert a JS component in a PHTML template {#init_phtml}
 

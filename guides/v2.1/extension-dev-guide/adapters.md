@@ -14,7 +14,7 @@ These classes allow you to use functionality from third-party libraries in your 
 ## When to use
 
 You should always use [adapter](https://glossary.magento.com/adapter) classes instead of directly using classes from third-party libraries.
-This reduces the change impact on your code when the [API](https://glossary.magento.com/API) changes in a third-party [library](https://glossary.magento.com/library).
+This reduces the change impact on your code when the [API](https://glossary.magento.com/api) changes in a third-party [library](https://glossary.magento.com/library).
 
 We recommend using adapter classes for [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get access to the functionality provided by third-party classes.
 
@@ -66,7 +66,7 @@ interface AdapterInterface
 
 <br/>
 
-The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into [HTML](https://glossary.magento.com/HTML).
+The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into [HTML](https://glossary.magento.com/html).
 
 ```php
 namespace MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown;

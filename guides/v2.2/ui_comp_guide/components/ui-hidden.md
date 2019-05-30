@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Hidden component
 ---
 
-The Hidden component is a form element that implements the [HTML](https://glossary.magento.com/HTML) `<input type="hidden">` field.
+The Hidden component is a form element that implements the [HTML](https://glossary.magento.com/html) `<input type="hidden">` field.
 
 ## Configuration options
 

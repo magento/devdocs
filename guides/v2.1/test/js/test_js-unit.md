@@ -12,7 +12,7 @@ It is recommended that [Jasmine][] be used instead.
 
 ## Preface
 
-Magento [JavaScript](https://glossary.magento.com/JavaScript) unit tests use the external [JsTestDriver test library]. The tests are implemented using the external [JsTestDriver API] and have their own [jsunit.requirejsUtil framework].
+Magento [JavaScript](https://glossary.magento.com/javascript) unit tests use the external [JsTestDriver test library]. The tests are implemented using the external [JsTestDriver API] and have their own [jsunit.requirejsUtil framework].
 
 After you run the PHP interpreter once to run unit tests, you can [run the JavaScript unit tests from the PhpStorm IDE][PhpStorm].
 
@@ -26,7 +26,7 @@ Magento JavaScript unit tests use the external [JsTestDriver] library, which fol
 
 ### JsTestDriver API {#jstestdriver-api}
 
-The unit tests are implemented through the JsTestDriver [API](https://glossary.magento.com/API). Web developers should be familiar with this API and test structure.
+The unit tests are implemented through the JsTestDriver [API](https://glossary.magento.com/api). Web developers should be familiar with this API and test structure.
 
 ### jsunit.requirejsUtil framework {#framework}
 
@@ -59,7 +59,7 @@ Both files reside in the `<magento2_root_dir>/dev/tests/js` directory.
 
 ### `jsTestDriver.php.dist` file {#jstestdrivephp}
 
-`<magento2_root_dir>/dev/tests/js/jsTestDriver.php.dist` specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following [PHP](https://glossary.magento.com/PHP) code:
+`<magento2_root_dir>/dev/tests/js/jsTestDriver.php.dist` specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following [PHP](https://glossary.magento.com/php) code:
 
 ```php
 return array(

@@ -8,7 +8,7 @@ menu_order: 2
 ee_only: true
 ---
 
-The Magento_DownloadableStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [Downloadable Product](https://glossary.magento.com/Downloadable-Product) updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.
+The Magento_DownloadableStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [Downloadable Product](https://glossary.magento.com/downloadable-product) updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -26,7 +26,7 @@ You can find the list of modules that have dependencies on the Magento_Downloada
 
 ## Extension points
 
-[Extension](https://glossary.magento.com/Extension) points enable extension developers to interact with the Magento_DownloadableStaging module.
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_DownloadableStaging module.
 For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_DownloadableStaging module.

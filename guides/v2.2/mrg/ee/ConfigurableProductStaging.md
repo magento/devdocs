@@ -8,7 +8,7 @@ menu_order: 2
 ee_only: true
 ---
 
-The Magento_ConfigurableProductStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [Configurable Product](https://glossary.magento.com/Configurable-Product) updates to the existing store campaigns. In other words, you can change the Configurable Product attributes in campaigns. These updates are shown on the campaign dashboard.
+The Magento_ConfigurableProductStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [Configurable Product](https://glossary.magento.com/configurable-product) updates to the existing store campaigns. In other words, you can change the Configurable Product attributes in campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -24,7 +24,7 @@ You can find the list of modules that have dependencies on the Magento_Configura
 
 ## Extension points
 
-[Extension](https://glossary.magento.com/Extension) points enable extension developers to interact with the Magento_ConfigurableProductStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html).
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_ConfigurableProductStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_ConfigurableProductStaging module.
 

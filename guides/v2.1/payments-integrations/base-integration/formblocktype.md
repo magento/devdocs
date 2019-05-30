@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-The payment information form rendering in [Admin](https://glossary.magento.com/Admin) order creation is defined by the block class, its template and [layout](https://glossary.magento.com/layout). 
+The payment information form rendering in [Admin](https://glossary.magento.com/admin) order creation is defined by the block class, its template and [layout](https://glossary.magento.com/layout). 
 
 `formBlockType` is one of the arguments you must [configure for the payment method facade]({{ page.baseurl }}/payments-integrations/base-integration/facade-configuration.html). 
 

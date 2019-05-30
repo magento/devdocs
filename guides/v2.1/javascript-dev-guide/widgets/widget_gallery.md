@@ -486,7 +486,7 @@ var api = $(element).data('gallery');
 var api = $('[data-gallery-role="gallery"]').data('gallery');
 ```
 
-This method returns JS object that contains [API](https://glossary.magento.com/API) functions.
+This method returns JS object that contains [API](https://glossary.magento.com/api) functions.
 
 
 To ensure that the gallery is fully formed, wrap your code with [event](https://glossary.magento.com/event) handler function and add it to the `gallery:loaded` event:

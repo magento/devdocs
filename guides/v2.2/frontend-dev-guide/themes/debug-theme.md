@@ -20,7 +20,7 @@ To enable template hints:
 
 2. In the **Scope** dropdown in the upper-left corner select the view for which you want the template hints.
 
-3. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for [Admin](https://glossary.magento.com/Admin) set **Template Path Hints for Admin** to **Yes**.
+3. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for [Admin](https://glossary.magento.com/admin) set **Template Path Hints for Admin** to **Yes**.
 4. To save the changes, click **Save Config** in the upper-right corner.
 
 ![Enabling template hints]({{ site.baseurl }}/common/images/fdg_debug_theme.png)
@@ -57,7 +57,7 @@ Here is how Customers page looks with enabled template hints in Admin:
 
 ![Admin page with enabled template hints]({{ site.baseurl }}/common/images/theme_debug5.png)
 
-Alternatively, you can perform a text search in the file system by using system generated titles, [CSS](https://glossary.magento.com/CSS) class names, block titles, labels, or links text as search terms.
+Alternatively, you can perform a text search in the file system by using system generated titles, [CSS](https://glossary.magento.com/css) class names, block titles, labels, or links text as search terms.
 For example, using a browser debug tool, you can define that the minicart block css class is `minicart-wrapper`.
 
 ![Firebug displaying html]({{ site.baseurl }}/common/images/theme_debug4.png)

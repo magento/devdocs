@@ -35,7 +35,7 @@ where:
 * `{<path to config.xml>}` is the absolute file system path to the migration tool's [`config.xml`]({{page.baseurl}}/migration/migration-tool-configure.html#migration-configure) file; this argument is required.
 
 {: .bs-callout .bs-callout-info }
-This command does not migrate all configuration settings. Verify all settings in the Magento 2 [Admin](https://glossary.magento.com/Admin) before proceeding.
+This command does not migrate all configuration settings. Verify all settings in the Magento 2 [Admin](https://glossary.magento.com/admin) before proceeding.
 
 The `Migration completed` message is displayed after the settings are transferred successfully.
 

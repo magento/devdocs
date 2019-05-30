@@ -155,7 +155,7 @@ Beginning in 2.3.1, the helper no longer assumes RabbitMQ is running on `localho
 ### PHP memory_limit
 
 The default `phpunit.xml.dist` file does not contain any PHP `memory_limit` settings.
-However, sometimes the [PHP](https://glossary.magento.com/PHP) configuration restricts the amount of memory PHP may consume.
+However, sometimes the [PHP](https://glossary.magento.com/php) configuration restricts the amount of memory PHP may consume.
 This can make it impossible to run the integration tests.
 
 You can turn off the PHP memory limit by adding the following configuration to the `<php>` section of the integration test `phpunit.xml` file:
@@ -223,7 +223,7 @@ Configuration read from /var/www/magento2/dev/tests/integration/phpunit.xml
 ..........................
 ```
 
-The path to the `phpunit` executable installed by [Composer](https://glossary.magento.com/Composer) into the vendor directory is used.
+The path to the `phpunit` executable installed by [Composer](https://glossary.magento.com/composer) into the vendor directory is used.
 
 ### Run only a custom testsuite
 
@@ -288,7 +288,7 @@ To fix the issue, change to the `dev/tests/integration` directory, adjust any re
 
 ### Unable to connect to MySQL
 
-The [PHP](https://glossary.magento.com/PHP) interpreter must be able to connect to the test database. By default, this means the tests have to run on the same host as the MySQL server.
+The [PHP](https://glossary.magento.com/php) interpreter must be able to connect to the test database. By default, this means the tests have to run on the same host as the MySQL server.
 This problem most commonly occurs during development with Vagrant or Docker, where the Magento database is running on a virtual machine.
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.
 

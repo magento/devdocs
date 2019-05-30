@@ -17,7 +17,7 @@ Now that you've finished installing the Magento application, you need to configu
 
 cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on.
 
-Immediately after finishing your Magento installation, set up a *crontab* for the [Magento file system owner](https://glossary.magento.com/Magento-file-system-owner).
+Immediately after finishing your Magento installation, set up a *crontab* for the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 
 {% include config/setup-cron.md %}
 

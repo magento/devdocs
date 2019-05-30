@@ -20,7 +20,7 @@ During download, the following error displays:
 
 ### Description
 
-This happens because of changes in certain versions of [Composer](https://glossary.magento.com/Composer).
+This happens because of changes in certain versions of [Composer](https://glossary.magento.com/composer).
 
 The workaround is to downgrade Composer to an earlier version and try your Magento download again.
 

@@ -10,7 +10,7 @@ Introductory text that gives an overview of the topic you will be writing about.
 
 The purpose of this page is to provide you with a pre-formatted template and useful [markdown](https://glossary.magento.com/markdown) references to help you get started writing docs.
 
-You can start off by editing the local version of this file using markdown language (and [HTML](https://glossary.magento.com/HTML) where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
+You can start off by editing the local version of this file using markdown language (and [HTML](https://glossary.magento.com/html) where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
 ## Metadata parameters
 

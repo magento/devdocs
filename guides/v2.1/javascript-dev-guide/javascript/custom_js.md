@@ -8,7 +8,7 @@ redirect_from:
 
 ## Overview {#custom_js_overview}
 
-This topic discusses how to use custom [JavaScript](https://glossary.magento.com/JavaScript) components with the components provided by Magento or having replaced them with custom implementations.
+This topic discusses how to use custom [JavaScript](https://glossary.magento.com/javascript) components with the components provided by Magento or having replaced them with custom implementations.
 
 We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
@@ -70,7 +70,7 @@ of this procedure):
 - Your [theme](https://glossary.magento.com/theme) files: `<theme_dir>`
 - Your module view files: `<module_dir>/view/frontend`
 
-This way your custom JS component is used instead of the [Magento component](https://glossary.magento.com/Magento-component) in all entries all over the [frontend](https://glossary.magento.com/frontend) area.
+This way your custom JS component is used instead of the [Magento component](https://glossary.magento.com/magento-component) in all entries all over the [frontend](https://glossary.magento.com/frontend) area.
 
 ## Extend a default JS component {#extend_js}
 
@@ -78,7 +78,7 @@ You can add a custom JS component/widget, which will extend a default Magento co
 
 ### Extend Magento widget {#extend_js_widget}
 
-To extend a default Magento [jQuery](https://glossary.magento.com/jQuery) widget, create `<your_widget_name>.js` with the following contents:
+To extend a default Magento [jQuery](https://glossary.magento.com/jquery) widget, create `<your_widget_name>.js` with the following contents:
 
 ```javascript
 define([

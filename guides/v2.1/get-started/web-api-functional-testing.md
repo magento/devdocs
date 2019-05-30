@@ -10,7 +10,7 @@ menu_node: parent
 ## Web API functional testing
 {:.no_toc}
 
-The Web [API](https://glossary.magento.com/API) testing framework allows you to test Magento [Web API](https://glossary.magento.com/Web-API) from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP [adapter](https://glossary.magento.com/adapter) that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
+The Web [API](https://glossary.magento.com/api) testing framework allows you to test Magento [Web API](https://glossary.magento.com/web-api) from the client application point of view. The tests can be used with either REST or SOAP. The REST or SOAP [adapter](https://glossary.magento.com/adapter) that runs the tests is specified in PHPUnit configuration. See [How to Run the Tests](#howto) for more information.
 
 ## Implementation Details {#details}
 
@@ -95,7 +95,7 @@ interface AdapterInterface
 ## How to Run the Tests {#howto}
 ### Prerequisites {#prereq}
 
-1. Install the [PHP](https://glossary.magento.com/PHP) Soap [extension](https://glossary.magento.com/extension).
+1. Install the [PHP](https://glossary.magento.com/php) Soap [extension](https://glossary.magento.com/extension).
 
 	Copy `php_soap.dll` or `php_soap.so` to your PHP extensions directory. Edit your `php.ini` file and enable the PHP Soap extension. Usually this means deleting the leading semi-colon in front of the extension. Then restart Apache.
 

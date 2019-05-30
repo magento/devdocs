@@ -411,7 +411,7 @@ You need to read configuration from different sources (like database or filesyst
 
 3.1. There SHOULD be no circular dependencies between objects.
 
-3.2. The `app/etc/di.xml` file MUST contain only framework-level [Dependency Injection](https://glossary.magento.com/Dependency-Injection) (DI) settings.
+3.2. The `app/etc/di.xml` file MUST contain only framework-level [Dependency Injection](https://glossary.magento.com/dependency-injection) (DI) settings.
 
 3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in `<module_dir>/etc/di.xml`.
 
@@ -492,7 +492,7 @@ You need to read configuration from different sources (like database or filesyst
 
 * **Command** for Actions
 
-* **Query** for [Layout](https://glossary.magento.com/Layout) and its elements (Blocks and UI Components)
+* **Query** for [Layout](https://glossary.magento.com/layout) and its elements (Blocks and UI Components)
 
 6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.
 
@@ -609,7 +609,7 @@ You need to read configuration from different sources (like database or filesyst
 
 * application codebase
 
-* [XML](https://glossary.magento.com/XML) configuration
+* [XML](https://glossary.magento.com/xml) configuration
 
 * generated code and [static files](https://glossary.magento.com/static-files)
 
@@ -619,7 +619,7 @@ You need to read configuration from different sources (like database or filesyst
 
 * configuration scopes (stores/store groups/websites)
 
-* [CMS](https://glossary.magento.com/CMS) entities
+* [CMS](https://glossary.magento.com/cms) entities
 
 7.3. Environment Configuration includes information about application services connection.
 
@@ -655,13 +655,13 @@ You need to read configuration from different sources (like database or filesyst
 
 9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public [cache](https://glossary.magento.com/cache) server (Varnish).
 
-9.3. All customer-specific data MUST be rendered on the browser side using a [JavaScript](https://glossary.magento.com/JavaScript) (JS) application.
+9.3. All customer-specific data MUST be rendered on the browser side using a [JavaScript](https://glossary.magento.com/javascript) (JS) application.
 
-9.4. [HTML](https://glossary.magento.com/HTML) [markup](https://glossary.magento.com/markup) generated on server MUST NOT contain user-specific data.
+9.4. [HTML](https://glossary.magento.com/html) [markup](https://glossary.magento.com/markup) generated on server MUST NOT contain user-specific data.
 
 9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. a form element with a CSRF token).
 
-9.6. A JS application MAY receive customer-specific data using the CustomerData JS [API](https://glossary.magento.com/API).
+9.6. A JS application MAY receive customer-specific data using the CustomerData JS [API](https://glossary.magento.com/api).
 
 9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
 
@@ -675,7 +675,7 @@ You need to read configuration from different sources (like database or filesyst
 
 ## 10. JavaScript (JS) application
 
-10.1. The Magento 2 [UI Component](https://glossary.magento.com/UI-Component) framework MUST be used to build frontend applications.
+10.1. The Magento 2 [UI Component](https://glossary.magento.com/ui-component) framework MUST be used to build frontend applications.
 
 10.2. Only private content SHOULD be rendered in browser.
 
@@ -719,7 +719,7 @@ You need to read configuration from different sources (like database or filesyst
 
 12.1. Both REST and SOAP API's MUST be exposed.
 
-12.2. All [Web API](https://glossary.magento.com/Web-API) GET endpoints MUST return lists of entities.
+12.2. All [Web API](https://glossary.magento.com/web-api) GET endpoints MUST return lists of entities.
 
 ## 13. Command line interface (CLI)
 

@@ -37,7 +37,7 @@ where `{ModuleName}` specifies the module name in `<VendorName>_<ModuleName>` fo
 
 The module uninstall command performs the following tasks:
 
-1.	Verifies that the specified modules exist in the code base and are packages installed by [Composer](https://glossary.magento.com/Composer).
+1.	Verifies that the specified modules exist in the code base and are packages installed by [Composer](https://glossary.magento.com/composer).
 
 	This command works *only* with modules defined as Composer packages.
 

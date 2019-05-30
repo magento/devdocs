@@ -73,7 +73,7 @@ A [credit memo](https://glossary.magento.com/credit-memo) id, such as `3`.
 
 ### Verify this step {#verify-step}
 
-Log in to [Admin](https://glossary.magento.com/Admin). Click **Sales** > **Credit Memos**. The credit memo is displayed in the grid.
+Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Credit Memos**. The credit memo is displayed in the grid.
 
 ## Congratulations! You've finished.
 {:.no_toc}

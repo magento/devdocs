@@ -18,7 +18,7 @@ The scope of the change determines whether the MAJOR, MINOR, or PATCH number inc
 ## Public vs private code changes
 
 A Magento module's codebase consists of public and private code.
-Public code includes Public [API](https://glossary.magento.com/API)(indicated by the `@api` docblock tag) and Public Customization Points.
+Public code includes Public [API](https://glossary.magento.com/api)(indicated by the `@api` docblock tag) and Public Customization Points.
 Private code is not accessible via the API: classes and constants marked as [private][].
 
 Changes in public code always trigger MINOR or MAJOR version increases.

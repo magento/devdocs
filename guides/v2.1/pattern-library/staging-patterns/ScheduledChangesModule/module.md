@@ -3,7 +3,7 @@ group: admin-pattern-library
 title: Scheduled Changes Module
 ee_only: true
 ---
-For all stage-able entities, a Scheduled Changes [Module](https://glossary.magento.com/Module) appears on the top of each entity’s page. An entity’s module provides a quick summary of scheduled updates, as well as controls to view, edit and preview individual updates.
+For all stage-able entities, a Scheduled Changes [Module](https://glossary.magento.com/module) appears on the top of each entity’s page. An entity’s module provides a quick summary of scheduled updates, as well as controls to view, edit and preview individual updates.
 
 ## When to Use / When Not to Use
 

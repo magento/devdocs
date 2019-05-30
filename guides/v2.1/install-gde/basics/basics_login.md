@@ -13,7 +13,7 @@ functional_areas:
   - Setup
 ---
 
-<!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/URL) without informing engineering! -->
+<!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->
 <!-- Referring file: README.md owned by core -->
 
  

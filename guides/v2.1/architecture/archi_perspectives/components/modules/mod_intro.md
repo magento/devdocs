@@ -12,7 +12,7 @@ A *module* is a logical group -- that is, a directory containing blocks, control
 
 Modules and themes are the units of customization in Magento. Modules provide business features, with supporting logic,  while themes strongly influence user experience and [storefront](https://glossary.magento.com/storefront) appearance. Both components have a life cycle that allows them to be installed, deleted, and disabled. From the perspective of both merchants and [extension](https://glossary.magento.com/extension) developers, modules are the central unit of Magento organization.
 
-The Magento Framework provides a set of core logic: [PHP](https://glossary.magento.com/PHP) code, libraries, and the basic functions that are inherited by the modules and other components.
+The Magento Framework provides a set of core logic: [PHP](https://glossary.magento.com/php) code, libraries, and the basic functions that are inherited by the modules and other components.
 
 ## Module purpose
 
@@ -20,7 +20,7 @@ The purpose of each module is to provide specific product features by implementi
 
 ## Module components
 
-A module is a directory that contains the PHP and [XML](https://glossary.magento.com/XML) files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: [themes]({{page.baseurl}}/frontend-dev-guide/themes/theme-overview.html), [libraries]({{page.baseurl}}/architecture/archi_perspectives/third-party-libs.html), and [language packages]({{page.baseurl}}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack).
+A module is a directory that contains the PHP and [XML](https://glossary.magento.com/xml) files (blocks, controllers, helpers, models) that are related to a specific business feature, such as Shipping. Specifically, a Magento module is composed of these software components: [themes]({{page.baseurl}}/frontend-dev-guide/themes/theme-overview.html), [libraries]({{page.baseurl}}/architecture/archi_perspectives/third-party-libs.html), and [language packages]({{page.baseurl}}/frontend-dev-guide/translations/xlate.html#m2devgde-xlate-languagepack).
 
 ## Where do modules live?
 

@@ -3,9 +3,9 @@ group: ui-components-guide
 title: Expandable Column component
 ---
 
-The Expandable Column [UI component](https://glossary.magento.com/UI-component) is an [extension](https://glossary.magento.com/extension) for [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html). It alphabetically sorts the options associated with a record/row and renders several options (the number is defined in configuration) into a cell. The full list of options is displayed in a tooltip implemented by the Tooltip UI component `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`.
+The Expandable Column [UI component](https://glossary.magento.com/ui-component) is an [extension](https://glossary.magento.com/extension) for [Column]({{ page.baseurl }}/ui_comp_guide/components/ui-column.html). It alphabetically sorts the options associated with a record/row and renders several options (the number is defined in configuration) into a cell. The full list of options is displayed in a tooltip implemented by the Tooltip UI component `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`.
 
-The Expandable Column component can be used in [Admin](https://glossary.magento.com/Admin) and the [storefront](https://glossary.magento.com/storefront).
+The Expandable Column component can be used in [Admin](https://glossary.magento.com/admin) and the [storefront](https://glossary.magento.com/storefront).
 
 ## Configuration options
 <table>
@@ -69,7 +69,7 @@ This component has a dependency on the Column component, `<Magento_Ui_module_dir
 
 ### Methods and events
 
-The following [API](https://glossary.magento.com/API) methods are available:
+The following [API](https://glossary.magento.com/api) methods are available:
 
 - `getFullLabel()` - gets a label from a full list of options.
 - `getShortLabel()` - gets a label from a list of options limited by `visibeItemsLimit` value.

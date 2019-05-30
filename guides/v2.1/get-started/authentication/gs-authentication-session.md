@@ -8,18 +8,18 @@ functional_areas:
   - Integration
 ---
 
-As a customer, you log in to the Magento [storefront](https://glossary.magento.com/storefront) with your customer credentials. As an admin, you log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) with your [admin](https://glossary.magento.com/admin) credentials.
+As a customer, you log in to the Magento [storefront](https://glossary.magento.com/storefront) with your customer credentials. As an admin, you log in to the [Magento Admin](https://glossary.magento.com/magento-admin) with your [admin](https://glossary.magento.com/admin) credentials.
 
-The Magento web [API](https://glossary.magento.com/API) framework uses your logged-in session information to verify your identity and authorize access to the requested resource.
+The Magento web [API](https://glossary.magento.com/api) framework uses your logged-in session information to verify your identity and authorize access to the requested resource.
 
 Customers can access resources that are configured with `anonymous` or `self`  permission in the `webapi.xml` configuration file.
 
 Admins can access resources that are assigned to their Magento Admin profile.
 
 {: .bs-callout .bs-callout-info }
-The Magento [web API](https://glossary.magento.com/web-API) framework enables guest users to access resources that are configured with `anonymous` permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.
+The Magento [web API](https://glossary.magento.com/web-api) framework enables guest users to access resources that are configured with `anonymous` permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.
 
-For example, if a customer is logged in to the Magento storefront and the [JavaScript](https://glossary.magento.com/JavaScript) [widget](https://glossary.magento.com/widget) invokes the `self` API, details for the logged-in customer are fetched:
+For example, if a customer is logged in to the Magento storefront and the [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) invokes the `self` API, details for the logged-in customer are fetched:
 
 `GET /rest/V1/customers/me`
 

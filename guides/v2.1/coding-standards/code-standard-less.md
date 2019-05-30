@@ -9,7 +9,7 @@ functional_areas:
   - Standards
 ---
 
-This standard defines Magento internal requirements for code formatting and style for teams that develop Less and [CSS](https://glossary.magento.com/CSS) code.
+This standard defines Magento internal requirements for code formatting and style for teams that develop Less and [CSS](https://glossary.magento.com/css) code.
 
 Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this.
 
@@ -631,7 +631,7 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 ### Location
 
-[Theme](https://glossary.magento.com/Theme) mixins (except extends) should be located in the `source/utilities` directory.
+[Theme](https://glossary.magento.com/theme) mixins (except extends) should be located in the `source/utilities` directory.
 
 ### Naming
 

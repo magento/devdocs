@@ -10,7 +10,7 @@ functional_areas:
   - Checkout
 ---
 
-This topic contains the basic information about how to customize the view of an existing [checkout](https://glossary.magento.com/checkout) step. In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the [JavaScript](https://glossary.magento.com/JavaScript) implementation or template](#change-component) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.
+This topic contains the basic information about how to customize the view of an existing [checkout](https://glossary.magento.com/checkout) step. In the Magento application, checkout is implemented using UI components. You can customize each step by [changing the [JavaScript](https://glossary.magento.com/javascript) implementation or template](#change-component) for a component, [adding](#add), [disabling](#disable), or [removing](#remove) a component.
 
 ## Change the component's .js implementation and template {#change-component}
 
@@ -86,7 +86,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 ## Add the new component to the checkout page layout {#add}
 
-Any [UI component](https://glossary.magento.com/UI-component) is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#checkout).
+Any [UI component](https://glossary.magento.com/ui-component) is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{ page.baseurl }}/howdoi/checkout/checkout_new_step.html#checkout).
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 

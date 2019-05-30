@@ -96,7 +96,7 @@ Initially, event presets are defined in the FTF in `<magento_2_root_dir>/dev/tes
 
 ### Observers  {#observers}
 
-An observer is a [PHP](https://glossary.magento.com/PHP) class which defines actions under Magento instance, browser, test run, and so on.
+An observer is a [PHP](https://glossary.magento.com/php) class which defines actions under Magento instance, browser, test run, and so on.
 
 The list of ready-to-use observers is the following:
 
@@ -178,7 +178,7 @@ The following examples explain how to use the reporting tool on practice.
 
 The following example shows how to add a `custom` preset.
 
-**Task**: Create a preset that logs only a web page [HTML](https://glossary.magento.com/HTML) code and its screenshot when a test run is failed.
+**Task**: Create a preset that logs only a web page [HTML](https://glossary.magento.com/html) code and its screenshot when a test run is failed.
 
 **Reports**:
 

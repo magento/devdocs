@@ -58,7 +58,7 @@ If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default
 
 ## Health check timeouts
 
-If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the [Admin](https://glossary.magento.com/Admin).
+If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the [Admin](https://glossary.magento.com/admin).
 
 This situation could happen because the default health check has a `timeout` value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is considered unhealthy. Varnish serves stale content when the server is unhealthy.
 

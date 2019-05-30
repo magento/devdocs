@@ -11,8 +11,8 @@ functional_areas:
 
 In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the [jQuery UI Widget Factory][jquery-ui-widget-factory]{:target="_blank"}.
 
-The factory provides a flexible base for building complex, stateful plug-ins with a consistent [API](https://glossary.magento.com/API).
-It is designed not only for plug-ins that are part of [jQuery](https://glossary.magento.com/jQuery) UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
+The factory provides a flexible base for building complex, stateful plug-ins with a consistent [API](https://glossary.magento.com/api).
+It is designed not only for plug-ins that are part of [jQuery](https://glossary.magento.com/jquery) UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
 
 For more information, see the [jQuery Widget API documentation][jquery-ui-api-doc]{:target="_blank"}.
 
@@ -23,7 +23,7 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
 
 ## Naming conventions
 
-* [Widget](https://glossary.magento.com/Widget) names must consist of one or more non-abbreviated English word and in camelcase format.
+* [Widget](https://glossary.magento.com/widget) names must consist of one or more non-abbreviated English word and in camelcase format.
   
  ```javascript
 
@@ -48,7 +48,7 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
 
 ## Instantiation and resources
 
-* Additional [JavaScript](https://glossary.magento.com/JavaScript) files used as a resources must be dynamically loaded using the `$.mage.components()` method and must not be included in the `<head>` block.
+* Additional [JavaScript](https://glossary.magento.com/javascript) files used as a resources must be dynamically loaded using the `$.mage.components()` method and must not be included in the `<head>` block.
 * Use the `$.mage.components()` method to load additional JavaScript resource files not included in the `<head>` block.
 * You must use `$.mage.extend()` to extend an existing set of widget resources.
 * You must instantiate widgets using the `data-mage-init` attribute.
@@ -263,7 +263,7 @@ $('selector')
   
   Common tasks for this include:
 
-  * Removing or adding any [CSS](https://glossary.magento.com/CSS) classes the widget added/removed to the element.
+  * Removing or adding any [CSS](https://glossary.magento.com/css) classes the widget added/removed to the element.
   * Detaching any elements the widget added to the DOM.
   * Destroying any widgets that the widget applied to other elements.
 

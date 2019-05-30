@@ -94,7 +94,7 @@ dependencies:
         amqp-utils: "0.5.1"
 ```
 
-Then, when you log in to your [PHP](https://glossary.magento.com/PHP) container, you enter any `amqp-` command available to manage your queues.
+Then, when you log in to your [PHP](https://glossary.magento.com/php) container, you enter any `amqp-` command available to manage your queues.
 
 ### Connect from your PHP application {#cloud-rabbitmq-conn-php}
 

@@ -86,7 +86,7 @@ lib/web
 
 ## Predefined variables {#fedg_using-ui-lib_predef-vars}
 
-If your theme [inherits][] from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any [CSS](https://glossary.magento.com/CSS) code or templates.
+If your theme [inherits][] from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any [CSS](https://glossary.magento.com/css) code or templates.
 Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
 
 The complete list of these variables and their default values are stored in [`lib/web/css/source/lib/variables`][].
@@ -186,7 +186,7 @@ The detailed information about the Magento UI library is embedded in the code re
 * [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
 
 Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
-The documentation is available in a convenient [HTML](https://glossary.magento.com/HTML) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
+The documentation is available in a convenient [HTML](https://glossary.magento.com/html) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
 
 
 <!-- Link definitions -->

@@ -14,7 +14,7 @@ functional_areas:
   - Configuration
 ---
 
-[Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a [Content Delivery Network](https://glossary.magento.com/Content-Delivery-Network) (CDN) for static assets. Fastly is not available in Integration environments.
+[Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) is required for {{site.data.var.ece}}, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a [Content Delivery Network](https://glossary.magento.com/content-delivery-network) (CDN) for static assets. Fastly is not available in Integration environments.
 
 This information gets you started with installing and configuring Fastly.
 We provide additional information for configuring backends and Origin shields, customizing

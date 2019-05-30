@@ -46,7 +46,7 @@ The following nodes influence handlers:
 
 <table>
 <tr><th>Node</th><th>Semantics</th><th>Example</th></tr>
-<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the [Admin](https://glossary.magento.com/Admin).</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
+<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the [Admin](https://glossary.magento.com/admin).</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
 <tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
 <tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
 <tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>

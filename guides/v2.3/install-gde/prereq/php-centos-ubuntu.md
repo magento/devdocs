@@ -31,7 +31,7 @@ The following sections give you all the info you need to install PHP for CentOS.
 
 ### Verify PHP is installed {#centos-verify-php}
 
-To verify if PHP is installed already, enter `php -v`. If [PHP](https://glossary.magento.com/PHP) is installed, a message similar to the following displays:
+To verify if PHP is installed already, enter `php -v`. If [PHP](https://glossary.magento.com/php) is installed, a message similar to the following displays:
 
 ```bash
 PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )

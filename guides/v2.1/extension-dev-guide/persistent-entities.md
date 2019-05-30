@@ -45,7 +45,7 @@ An example of a model is the [`\Magento\Customer\Model\Customer`]({{ site.mage2b
 
 ### Repositories
 
-Modules interact with other modules through their public [API](https://glossary.magento.com/API). For working with persistent entities, Magento recommends and uses repositories. These classes adopt the [repository pattern](http://martinfowler.com/eaaCatalog/repository.html){:target="_blank"} and act as a layer between your module's business logic layer and the data mapping layer. We recommend placing the class files for repositories under the `Model` or `Model/ResourceModel` directory inside your module's root directory.
+Modules interact with other modules through their public [API](https://glossary.magento.com/api). For working with persistent entities, Magento recommends and uses repositories. These classes adopt the [repository pattern](http://martinfowler.com/eaaCatalog/repository.html){:target="_blank"} and act as a layer between your module's business logic layer and the data mapping layer. We recommend placing the class files for repositories under the `Model` or `Model/ResourceModel` directory inside your module's root directory.
 
 An example of a repository is the [`Magento\CatalogRule\Model\CatalogRuleRepository`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php){:target="_blank"} class.
 

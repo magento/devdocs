@@ -20,7 +20,7 @@ You must be authorized for {{site.data.var.ee}} to perform the tasks discussed i
 
 Before continuing, complete all tasks discussed in [Prerequisites]({{ page.baseurl }}/comp-mgr/prereq/prereq_compman.html).
 
-In addition, you might need to install the [PHP](https://glossary.magento.com/PHP) [`bcmath`](http://php.net/manual/en/book.bc.php) extension, which is required by {{site.data.var.ee}}. Examples follow:
+In addition, you might need to install the [PHP](https://glossary.magento.com/php) [`bcmath`](http://php.net/manual/en/book.bc.php) extension, which is required by {{site.data.var.ee}}. Examples follow:
 
 *	CentOS (using the `webtatic` repository): `yum -y install php56w-bcmath`
 *	Ubuntu (using the `ppa:ondrej/php5-5.6` repository): `apt-get -y install php5-bcmath`
@@ -32,7 +32,7 @@ Make sure you are authorized for {{site.data.var.ee}} access before you continue
 
 To run System Upgrade:
 
-1.	Log in to the [Magento Admin](https://glossary.magento.com/Magento-Admin) as an administrator.
+1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
 2.	Click **System** > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	![Specify whether to manage components or upgrade Magento]({{ site.baseurl }}/common/images/cman_upgr_initial.png)

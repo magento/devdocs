@@ -158,7 +158,7 @@ The following figure shows the technology used in the Production environment:
 
 {{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
-In addition, extra web servers can be added to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/PHP) level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) to complement the vertical scaling provided by extra CPUs on the database level.
+In addition, extra web servers can be added to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) to complement the vertical scaling provided by extra CPUs on the database level.
 
 ## Services {#cloud-arch-services}
 {{site.data.var.ece}} currently supports the following services:
@@ -183,7 +183,7 @@ You can have multiple applications running in the same project. Building a micro
 {{site.data.var.ece}} uses:
 
 -   Operating system: Debian GNU/Linux 8 (jessie)
--   Web server: [NGINX](https://glossary.magento.com/NGINX) 1.8
+-   Web server: [NGINX](https://glossary.magento.com/nginx) 1.8
 
 This software is *not* upgradable but versions for the following software is configurable:
 

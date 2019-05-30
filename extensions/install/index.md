@@ -17,7 +17,7 @@ Extensions include:
 - Language packages (localize the storefront and Admin)
 
 {: .bs-callout .bs-callout-tip }
-This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's [Composer](https://glossary.magento.com/Composer) name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
+This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's [Composer](https://glossary.magento.com/composer) name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
 Prior to installation, you may want to:
 

@@ -34,13 +34,13 @@ Magento 2.1.3 contains more than 90 bug fixes and enhancements, including these 
 
 * **Increased [storefront](https://glossary.magento.com/storefront) performance** by removing excessive and slow SQL media queries.
 
-* **Management of configurable products with many variations** in the [Admin](https://glossary.magento.com/Admin) interface without degrading performance.
+* **Management of configurable products with many variations** in the [Admin](https://glossary.magento.com/admin) interface without degrading performance.
 
 * **Upgrade to Magento 2.1.3 without issue** when using multiple master databases for checkout, order management, and product data.
 
-* **Successful import or export [CSV](https://glossary.magento.com/CSV) files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
+* **Successful import or export [CSV](https://glossary.magento.com/csv) files with data that contains special symbols** (that is, symbols that are not escaped during file processing).
 
-* The Sales [module](https://glossary.magento.com/module) provides **two new web [API](https://glossary.magento.com/API) endpoints that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
+* The Sales [module](https://glossary.magento.com/module) provides **two new web [API](https://glossary.magento.com/api) endpoints that allow you to process refunds from an order or invoice**. Previously, these actions could only be performed from Admin. After you install this patch, you can:
 
 	* Create a credit memo (complete or partial) for a particular invoice or order.
 
@@ -66,7 +66,7 @@ We address the following functional fixes and enhancements in this release.
 
 <!---58902-->* Custom address attributes now appear in the Checkout summary.  
 
-<!---57497-->* Lengthy [Order Status](https://glossary.magento.com/Order-Status) tables are now paginated as expected. 
+<!---57497-->* Lengthy [Order Status](https://glossary.magento.com/order-status) tables are now paginated as expected. 
 
 <!---56956-->* Magento now displays the product add validation message ("Product was added to the cart") only after you have successfully added a product to your cart.
 
@@ -86,7 +86,7 @@ We address the following functional fixes and enhancements in this release.
 <!---58090-->* We've corrected a problem with Magento throwing an HTTP ERROR 500 intermittently during checkout. 
 
 
-<!---57168-->* We fixed a [JavaScript](https://glossary.magento.com/JavaScript) error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
+<!---57168-->* We fixed a [JavaScript](https://glossary.magento.com/javascript) error that occurred on the Checkout page after you changed the country in the **Estimate Shipping and Tax** field.
 
 ### Configurable products
 {:.no_toc} 
@@ -104,7 +104,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---54808 -->* You can now edit a product attribute for multiple configurable products. Previously, when you tried to bulk-edit an attribute on a collection of filtered, configurable products, Magento would complete the process without incorporating your edits, and then incorrectly tell you that the products had been edited.
 
 
-<!---60605-->* Magento no longer throws an [exception](https://glossary.magento.com/exception) when you add a configurable product by [SKU](https://glossary.magento.com/SKU) if an associated simple product is out-of-stock. 
+<!---60605-->* Magento no longer throws an [exception](https://glossary.magento.com/exception) when you add a configurable product by [SKU](https://glossary.magento.com/sku) if an associated simple product is out-of-stock. 
 
 
 <!---61055-->* Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the [category](https://glossary.magento.com/category) page failed to list the product at all, rather than listing it as out-of-stock. 
@@ -128,20 +128,20 @@ We've enhanced the performance of configurable products in several ways:
 <!--- 55184 -->* You can now select and add a category to a Cart Price rule. Previously, Magento displayed this error: "Uncaught ReferenceError: sales_rule_form is not defined", and did not add the selected category to the condition. [(GITHUB-5526)](https://github.com/magento/magento2/issues/5526){:target="_blank"}
 
 
-<!---55662-->* We've removed the duplicated [PHP](https://glossary.magento.com/PHP) settings from the sample web server configuration files. 
+<!---55662-->* We've removed the duplicated [PHP](https://glossary.magento.com/php) settings from the sample web server configuration files. 
 
 <!---58465-->* The order of products in a category display no longer changes when you add a new product to the category. 
 
-<!--- 59581-->* We've improved and streamlined the [Magento Admin](https://glossary.magento.com/Magento-Admin) PayPal configuration interface. 
+<!--- 59581-->* We've improved and streamlined the [Magento Admin](https://glossary.magento.com/magento-admin) PayPal configuration interface. 
 
 
 <!---56962 -->* Magento now displays the **State/Province** field on the Add New Address page. [(GITHUB-5279)](https://github.com/magento/magento2/issues/5279){:target="_blank"}
 
 <!---56961-->* With valid permissions, you can now regain access to your Admin account after it is temporarily disabled due to invalid credentials. Previously, you could not unlock the account of a valid Admin user if it were disabled due to multiple invalid login attempts.
 
-<!---57383-->* You can now make Return Merchandise [Authorization](https://glossary.magento.com/Authorization) (RMA) comments visible from the storefront by setting **Stores > Settings > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
+<!---57383-->* You can now make Return Merchandise [Authorization](https://glossary.magento.com/authorization) (RMA) comments visible from the storefront by setting **Stores > Settings > Configuration > Sales > RMA Settings > Enable RMA on Storefront**.
 
-<!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when [Layout](https://glossary.magento.com/Layout) is set to empty. 
+<!---57187-->*  When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when [Layout](https://glossary.magento.com/layout) is set to empty. 
 
 <!---57035-->* You can now upload changes to the `robots.txt` file from the Admin panel. 
 
@@ -168,7 +168,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---57197-->* We've eliminated difficulties saving product information when logged in as Admin. Previously, the Product Save feature worked erratically for Admin users. 
 
 
-<!---59397-->* Custom themes now inherit parent [XML](https://glossary.magento.com/XML) configuration information as expected.  
+<!---59397-->* Custom themes now inherit parent [XML](https://glossary.magento.com/xml) configuration information as expected.  
 
 ### Gift cards
 {:.no_toc} 
@@ -188,7 +188,7 @@ We've enhanced the performance of configurable products in several ways:
 
 <!---55447-->* Magento no longer encounters an error when it cannot find a product image file. [(GITHUB-5184)](https://github.com/magento/magento2/issues/5184){:target="_blank"}, [(GITHUB-5497)](https://github.com/magento/magento2/issues/5497){:target="_blank"},  [(GITHUB-3545)](https://github.com/magento/magento2/issues/3545){:target="_blank"}, [(GITHUB-5871)](https://github.com/magento/magento2/issues/5871){:target="_blank"}
 
-<!---56944-->*  Magento now successfully saves images that you edit in a [WYSIWYG](https://glossary.magento.com/WYSIWYG) editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes. 
+<!---56944-->*  Magento now successfully saves images that you edit in a [WYSIWYG](https://glossary.magento.com/wysiwyg) editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes. 
 
 <!---58335-->* You can now preview uploaded images.
  
@@ -332,7 +332,7 @@ We've improved the performance of these tasks:
 ### Staging
 {:.no_toc} 
 
-<!---57346-->*  The [CMS](https://glossary.magento.com/CMS) page now refreshes as expected after an update. 
+<!---57346-->*  The [CMS](https://glossary.magento.com/cms) page now refreshes as expected after an update. 
 
 ### Static file processing
 {:.no_toc} 
@@ -374,7 +374,7 @@ We've improved the performance of these tasks:
 
 ## Breaking changes
 
-We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with [Composer](https://glossary.magento.com/Composer) configuration.
+We've introduced a backward-incompatible change to the `Magento_Vault` module. We've bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with [Composer](https://glossary.magento.com/composer) configuration.
 
 ### New method
 {:.no_toc} 

@@ -174,7 +174,7 @@ Extends `Collapsible`:
 
 ### Methods and Events
 
-The following [API](https://glossary.magento.com/API) methods are available:
+The following [API](https://glossary.magento.com/api) methods are available:
 
 * <code>getAction</code> - returns the action instance found by the provided identifier
 * <code>addAction</code> - adds a new action to the actions

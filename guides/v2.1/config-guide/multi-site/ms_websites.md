@@ -102,7 +102,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 ## Step 5: Change the website base URL
 
-To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the [Magento Admin](https://glossary.magento.com/Magento-Admin).
+To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 {% collapsible To change the website base URL: %}
 

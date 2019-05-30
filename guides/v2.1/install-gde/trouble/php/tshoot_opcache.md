@@ -21,7 +21,7 @@ In Magento 2.1 or later, when creating a new product in the Magento Admin, the f
 
 Magento 2.1 and later use PHP code comments in the `getDocComment` validation call in the [`getExtensionAttributes`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Api/ExtensionAttributesFactory.php#L64-L73) method in `Magento\Framework\Api\ExtensionAttributesFactory.php`.
 
-If you enabled the [PHP](https://glossary.magento.com/PHP) OPcache (which we recommend), this error displays because by default, the OPcache setting [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments) is disabled.
+If you enabled the [PHP](https://glossary.magento.com/php) OPcache (which we recommend), this error displays because by default, the OPcache setting [`opcache.save_comments`](http://php.net/manual/en/opcache.configuration.php#ini.opcache.save_comments) is disabled.
 
 ### Workaround
 

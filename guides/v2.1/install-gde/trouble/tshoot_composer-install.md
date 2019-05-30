@@ -13,7 +13,7 @@ functional_areas:
 
 ### Suggestion
 
-Change to the directory in which you installed [Composer](https://glossary.magento.com/Composer) and enter the following command:
+Change to the directory in which you installed [Composer](https://glossary.magento.com/composer) and enter the following command:
 
 `mv composer.phar /usr/local/bin/composer`
 

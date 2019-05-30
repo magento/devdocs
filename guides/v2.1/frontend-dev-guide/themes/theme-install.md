@@ -14,7 +14,7 @@ To install a theme, you need to add its code to your Magento 2 instance code bas
 
 - if a theme is just a set of files, for example an archive, add the theme manually.
 - if a theme is a [composer](https://glossary.magento.com/composer) package, install it using composer.
-- if a theme is distributed as an extension, use the **Web Setup Wizard** in [Magento Admin](https://glossary.magento.com/Magento-Admin).
+- if a theme is distributed as an extension, use the **Web Setup Wizard** in [Magento Admin](https://glossary.magento.com/magento-admin).
 
 The following sections contain more information about each installation flow.
 
@@ -48,6 +48,6 @@ If a theme is distributed on [Magento Marketplace](https://marketplace.magento.c
 
 ## Register a theme
 
-After you create or install a theme, open the Magento [Admin](https://glossary.magento.com/Admin) or reload any Magento Admin page. This way the theme gets registered and added to the database.
+After you create or install a theme, open the Magento [Admin](https://glossary.magento.com/admin) or reload any Magento Admin page. This way the theme gets registered and added to the database.
 
 To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.

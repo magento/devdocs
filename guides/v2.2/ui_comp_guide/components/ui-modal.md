@@ -4,11 +4,11 @@ title: Modal component
 redirect_from: /guides/v2.0/ui-components/ui-modal.html
 ---
 
-The Modal [UI component](https://glossary.magento.com/UI-component) implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).
+The Modal [UI component](https://glossary.magento.com/ui-component) implements a secondary window that opens on top of the main window. It uses the [modal widget]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html).
 
 Similar to the widget's configuration, the component's configuration allows you to set the window type and the behavior of action buttons (including linking action buttons to methods of the other UI components).
 
-The Modal component can be used for both [Admin](https://glossary.magento.com/Admin) and storefronts.
+The Modal component can be used for both [Admin](https://glossary.magento.com/admin) and storefronts.
 
 For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library]({{ page.baseurl }}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 

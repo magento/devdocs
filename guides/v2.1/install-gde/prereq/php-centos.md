@@ -34,7 +34,7 @@ If you're new to all this and need some help getting started, we suggest the fol
 
 ## Verify PHP is installed {#centos-verify-php}
 
-To verify if PHP is installed already, enter `php -v`. If [PHP](https://glossary.magento.com/PHP) is installed, messages similar to the following display:
+To verify if PHP is installed already, enter `php -v`. If [PHP](https://glossary.magento.com/php) is installed, messages similar to the following display:
 
 	PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
 	Copyright (c) 1997-2014 The PHP Group

@@ -11,7 +11,7 @@ functional_areas:
 You should make sure that your [extension](https://glossary.magento.com/extension) handles data with care in order to prevent sensitive information from being exposed. Incorrect handling of data requests or class usage can negatively impact your extension and create security vulnerabilities. Consider applying the following best practices to your extension to improve performance and security.
 
 ### Avoid using low-level functionality
-  The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the [PHP](https://glossary.magento.com/PHP) `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.
+  The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the [PHP](https://glossary.magento.com/php) `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.
 
 For a list of discouraged low-level functions, review the [`Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php`](https://github.com/magento/magento-coding-standard/blob/develop/Magento2/Sniffs/Functions/DiscouragedFunctionSniff.php){:target="_blank"} file and the [Magento Coding Standard](https://github.com/magento/magento-coding-standard){:target="_blank"}.
 
@@ -47,7 +47,7 @@ For a list of discouraged low-level functions, review the [`Magento2/Sniffs/Func
 ### Validate input and properly encode or escape output
   Remember to always validate data from non-trusted data sources. Sanitizing data coming into your extension and produced by it will improve overall security.
 
-  For example, to prevent XSS vulnerability, avoid creating methods that output non-validated user-supplied data without proper [HTML](https://glossary.magento.com/HTML) encoding.
+  For example, to prevent XSS vulnerability, avoid creating methods that output non-validated user-supplied data without proper [HTML](https://glossary.magento.com/html) encoding.
 
 ### Always encrypt sensitive data or configurations
   Never store sensitive information in clear text within a resource that might be accessible to another control sphere. This type of information should be encrypted or otherwise protected.

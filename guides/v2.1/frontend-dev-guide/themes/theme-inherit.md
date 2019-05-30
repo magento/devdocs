@@ -8,7 +8,7 @@ functional_areas:
 
 ## What's in this topic {#theme-inherit-over}
 
-[Theme](https://glossary.magento.com/Theme) inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
+[Theme](https://glossary.magento.com/theme) inheritance enables you to easily extend themes and minimize the maintenance efforts. You can use an existing theme as a basis for customizations, or minor store design updates, like holidays decoration. Rather than copy extensive theme files and modify what you want to change, you can add overriding and extending files.
 
 The level of theme inheritance is not limited.
 
@@ -102,7 +102,7 @@ So if you need to customize a certain template, you need to create an overriding
 For example, if you must override the `<Magento_Catalog_module_dir>/view/frontend/templates/category/widget/link/link_block.phtml` template, the `<path_to_template>` is `category/widget/link/`
 
 **Example**
-By default, according to the module template, in the mini [shopping cart](https://glossary.magento.com/shopping-cart) products are listed under the Go to [Checkout](https://glossary.magento.com/Checkout) button:
+By default, according to the module template, in the mini [shopping cart](https://glossary.magento.com/shopping-cart) products are listed under the Go to [Checkout](https://glossary.magento.com/checkout) button:
 
 ![In the minishopping cart products are listed under the Go to Checkout button]({{ site.baseurl }}/common/images/inherit_mini1.png)
 

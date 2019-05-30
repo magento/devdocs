@@ -5,7 +5,7 @@ functional_areas:
   - Integration
 ---
 
-The REST documentation on the Magento devdocs [website](https://glossary.magento.com/website) is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2. However, the REST [API](https://glossary.magento.com/API) documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
+The REST documentation on the Magento devdocs [website](https://glossary.magento.com/website) is generated with [Swagger UI](http://swagger.io) using a schema derived from the latest build of Magento 2. However, the REST [API](https://glossary.magento.com/api) documentation on devdocs is static in that the Magento Developers website is not running an instance of Magento, and there is no live data.
 
 Magento provides two ways to get detailed information about the structure of the REST endpoints, as described below.
 
@@ -23,7 +23,7 @@ To view the Swagger documentation for a specific store view, use this URL:
 
  * `default`
  * The assigned store code
- * `all`. This value only applies to the [CMS](https://glossary.magento.com/CMS) and Product modules. If this value is specified, the API call affects all the merchant's stores.
+ * `all`. This value only applies to the [CMS](https://glossary.magento.com/cms) and Product modules. If this value is specified, the API call affects all the merchant's stores.
 
 By default, Magento returns documentation for resources available to anonymous users across all stores. If you specify a valid value in the `api_key` text box in the upper right corner, Swagger returns documentation for all the endpoints the user has access to. To generate an API key, call the `POST /V1/integration/customer/token` or `POST /V1/integration/admin/token` as directed in [Token-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-token.html).
 
@@ -42,7 +42,7 @@ Swagger returns information about all resources available for asynchronous REST 
 
 ## Return the JSON schema for one or more services
 
-You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the [URL](https://glossary.magento.com/URL) to
+You can use a REST client to generate the JSON schema for one or more services. In the client, set the method to `GET` and the [URL](https://glossary.magento.com/url) to
 
 `http://<magento_host>/rest/<store_code>/schema?services=<serviceName1,serviceName2,..>`
 

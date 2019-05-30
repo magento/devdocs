@@ -8,7 +8,7 @@ redirect_from:
 
 ## Overview {#practice_overview}
 
-This topic features a step-by-step illustration of how to customize a [jQuery](https://glossary.magento.com/jQuery) [widget](https://glossary.magento.com/widget) and how to use a custom widget instead the default Magento one.
+This topic features a step-by-step illustration of how to customize a [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget) and how to use a custom widget instead the default Magento one.
 
 ## Customize a default Magento jQuery widget
 

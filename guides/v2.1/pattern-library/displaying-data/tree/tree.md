@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Tree Pattern
 ---
-This topic contains various types of Tree structures used in [Admin](https://glossary.magento.com/Admin) with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items.
+This topic contains various types of Tree structures used in [Admin](https://glossary.magento.com/admin) with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items.
 
 For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 

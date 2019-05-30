@@ -10,7 +10,7 @@ functional_areas:
   - Checkout
 ---
 
-This topic describes how to add a custom input form (implemented as a UI component) to the [Checkout](https://glossary.magento.com/Checkout) page.
+This topic describes how to add a custom input form (implemented as a UI component) to the [Checkout](https://glossary.magento.com/checkout) page.
 
 Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
@@ -158,7 +158,7 @@ If you modify your custom `.html` template after it was applied on the store pag
 
 ### Static forms {#static_form}
 
-The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the [Admin](https://glossary.magento.com/Admin). Compare to [dynamic forms](#dynamic_form).
+The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the [Admin](https://glossary.magento.com/admin). Compare to [dynamic forms](#dynamic_form).
 
 The fields of static forms are not generated dynamically, so they can be defined in a layout.
 

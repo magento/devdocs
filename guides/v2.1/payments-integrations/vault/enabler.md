@@ -53,7 +53,7 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{ sit
 
 The payment component must process the state of the vault-enabling control and update payment `additional_data` before it is sent to the [backend](https://glossary.magento.com/backend). 
 
-Magento has a default vault enabler [UI component](https://glossary.magento.com/UI-component) (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
+Magento has a default vault enabler [UI component](https://glossary.magento.com/ui-component) (`Magento_Vault/js/view/payment/vault-enabler`). In the payment component, you just need to call its `visitAdditionalData` to update the `additional_data` property. The rest is done by the [`\Magento\Vault\Observer\VaultEnableAssigner`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Observer/VaultEnableAssigner.php) observer.
 
 Example: [the Braintree payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js)
 

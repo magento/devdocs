@@ -11,7 +11,7 @@ functional_areas:
 
 ## Run the Extension Manager from the Magento Admin
 
-The [Extension](https://glossary.magento.com/Extension) Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *extension* means:
+The [Extension](https://glossary.magento.com/extension) Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *extension* means:
 
 *	Modules (extend Magento capabilities)
 *	Themes (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)

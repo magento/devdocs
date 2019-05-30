@@ -55,7 +55,7 @@ See the following references:
 
 ### Find the scope code
 
-You can find the scope code either in the Magento database or in the Magento [Admin](https://glossary.magento.com/Admin). See one of the following sections for more information.
+You can find the scope code either in the Magento database or in the Magento [Admin](https://glossary.magento.com/admin). See one of the following sections for more information.
 
 #### Find the scope code in the Admin
 
@@ -149,7 +149,7 @@ See one of the following sections for more information:
 
 Use `bin/magento config:set` _without_ `--lock-env` or `--lock-config` to write the value to the database. Values you set this way can be edited in the Magento Admin.
 
-Some examples for setting a store base [URL](https://glossary.magento.com/URL) follow:
+Some examples for setting a store base [URL](https://glossary.magento.com/url) follow:
 
 Set the base URL for the default scope:
 

@@ -9,8 +9,8 @@ functional_areas:
 
 ### Static content cache
 
-To improve performance, Magento sets the `Expires` headers for static resources such as images, JavaScript, and [CSS](https://glossary.magento.com/CSS) files.
-Setting the `Expires` header on a static resource tells the browser to [cache](https://glossary.magento.com/cache) the resource at that [URL](https://glossary.magento.com/URL) and serve the cached version until it expires.
+To improve performance, Magento sets the `Expires` headers for static resources such as images, JavaScript, and [CSS](https://glossary.magento.com/css) files.
+Setting the `Expires` header on a static resource tells the browser to [cache](https://glossary.magento.com/cache) the resource at that [URL](https://glossary.magento.com/url) and serve the cached version until it expires.
 This is a common [best practice](https://developer.yahoo.com/performance/rules.html#expires=) for caching static resources.
 
 When the browser caches a static resource and that resource changes on the server, you need to clear the browser cache so it can download the new version.
@@ -18,7 +18,7 @@ Manually clearing the browser cache works if you are a [website](https://glossar
 
 ### Static content signing
 
-[Static content](https://glossary.magento.com/Static-content) signing is a Magento feature that allows you to invalidate the browser cache for static resources.
+[Static content](https://glossary.magento.com/static-content) signing is a Magento feature that allows you to invalidate the browser cache for static resources.
 Magento accomplishes this by adding a deployment version to the URL of [static files](https://glossary.magento.com/static-files).
 
 The following is an example of a URL signed with a version:

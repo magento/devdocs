@@ -26,7 +26,7 @@ Although Magento architecture favors loosely coupled software components, module
 
 * other modules
 
-* [PHP](https://glossary.magento.com/PHP) extensions
+* [PHP](https://glossary.magento.com/php) extensions
 
 * libraries (either Magento Framework [library](https://glossary.magento.com/library) or third party libraries)
 

@@ -57,7 +57,7 @@ For example, `responsive.js` changes the view of the [checkout](https://glossary
 
 -   For the desktop view, the checkout progress block is permanently
     displayed on the left-hand side.
--   For the mobile view, it is moved by [CSS](https://glossary.magento.com/CSS)
+-   For the mobile view, it is moved by [CSS](https://glossary.magento.com/css)
     to be displayed under the checkout steps. `responsive.js` makes it
     a toggled block: by default, the checkout progress information is
     hidden in the **Your Checkout Progress** section and it is visible

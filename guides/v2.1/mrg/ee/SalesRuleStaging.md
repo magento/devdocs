@@ -31,7 +31,7 @@ You can find the list of modules that have dependencies on the Magento_SalesRule
 
 ## Extension points
 
-[Extension](https://glossary.magento.com/Extension) points enable extension developers to interact with the Magento_SalesRuleStaging. However, the Magento_SalesRuleStaging module does not provide any specific extension points.
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_SalesRuleStaging. However, the Magento_SalesRuleStaging module does not provide any specific extension points.
 
 For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/plugins.html).
 

@@ -294,4 +294,4 @@ You will use the `order_item_id` values to create a [shipment](https://glossary.
 
 ### Verify this step {#verify-step}
 
-Log in to [Admin](https://glossary.magento.com/Admin). Click **Sales** > **Invoices**. The invoice is displayed in the grid. The status is Paid. Then click **Sales** > **Orders**. The status is Processing.
+Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Invoices**. The invoice is displayed in the grid. The status is Paid. Then click **Sales** > **Orders**. The status is Processing.

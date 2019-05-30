@@ -33,7 +33,7 @@ Introducing a new dependency from an existing module is a backward incompatible 
 
 ### PHP
 
-The following is a list of prohibited [PHP](https://glossary.magento.com/PHP) code changes and possible alternative implementations.
+The following is a list of prohibited [PHP](https://glossary.magento.com/php) code changes and possible alternative implementations.
 
 #### Interface/class removal
 
@@ -98,7 +98,7 @@ private function updateScopedPrice($price, $storeId)
 
 #### Modifying the default values of optional arguments in public and protected methods
 
-This is forbidden because the default argument values of public or protected methods are part of the [API](https://glossary.magento.com/API) of the class/interface.
+This is forbidden because the default argument values of public or protected methods are part of the [API](https://glossary.magento.com/api) of the class/interface.
 
 As an alternative, Create a new method with new interface following the alternative implementation for creating a new method for a class or interface.
 
@@ -230,7 +230,7 @@ The following is a list of prohibited JS code changes:
 
 ### XML Schema
 
-The following is a list of prohibited [XML](https://glossary.magento.com/XML) Schema changes:
+The following is a list of prohibited [XML](https://glossary.magento.com/xml) Schema changes:
 
 - Adding an obligatory node
 - Adding an obligatory attribute

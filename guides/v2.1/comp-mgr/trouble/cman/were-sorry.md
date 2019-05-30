@@ -22,11 +22,11 @@ See one of the following sections for possible solutions:
 
 ### Problem: you're not authenticated {#not-auth}
 
-You might not have entered your authentication keys in the [Magento Admin](https://glossary.magento.com/Magento-Admin).
+You might not have entered your authentication keys in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 #### Solution
 
-Enter your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html) in the [Admin](https://glossary.magento.com/Admin). Try your upgrade again.
+Enter your [authentication keys]({{ page.baseurl }}/comp-mgr/prereq/prereq_auth-token.html) in the [Admin](https://glossary.magento.com/admin). Try your upgrade again.
 
 If that doesn't work, try generating [new authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html) and enter those in the Admin. Then try your upgrade again.
 

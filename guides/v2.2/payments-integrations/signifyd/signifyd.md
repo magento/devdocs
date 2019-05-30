@@ -46,7 +46,7 @@ These steps are enough to provide custom AVS/CVV mapping for payment integration
 
 ### Retrieve payment method for a placed order
 
-The Signifyd service can retrieve the payment method of a placed order. The *Magento_Signifyd* module allows to map Magento and Signifyd payment codes using the predefined [XML](https://glossary.magento.com/XML) list, located in:
+The Signifyd service can retrieve the payment method of a placed order. The *Magento_Signifyd* module allows to map Magento and Signifyd payment codes using the predefined [XML](https://glossary.magento.com/xml) list, located in:
 
     Magento\Signifyd\etc\signifyd_payment_mapping.xml
 

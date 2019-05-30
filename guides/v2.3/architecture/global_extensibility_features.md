@@ -26,7 +26,7 @@ If a [module](https://glossary.magento.com/module) is self-contained, then you c
 
 ### Reliance on popular design patterns
 
-Reliance on known architectural and programming structures helps [PHP](https://glossary.magento.com/PHP) developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers.
+Reliance on known architectural and programming structures helps [PHP](https://glossary.magento.com/php) developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers.
 
 Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but Model-View-Controller (MVC) holds particular interest for extension developers.
 
@@ -53,9 +53,9 @@ Extension | No
 
 Attribute types fall into three general categories:
 
-* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/Magento-Admin).
+* **EAV (Entity-Attribute-Value) attributes** are site-specific attributes that you can define for a local site using the [Magento Admin](https://glossary.magento.com/magento-admin).
 
-* **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/Catalog) modules use EAV attributes.
+* **Custom attributes** are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and [Catalog](https://glossary.magento.com/catalog) modules use EAV attributes.
 
 * **Extension attributes** often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.
 
@@ -63,7 +63,7 @@ See [PHP Developer Guide]({{page.baseurl}}/extension-dev-guide/bk-extension-dev-
 
 ### Web APIs
 
-Magento or third-party services can be configured as a web [API](https://glossary.magento.com/API) (REST or SOAP) with some simple [XML](https://glossary.magento.com/XML). You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and [CMS](https://glossary.magento.com/CMS) (Content Management Systems).
+Magento or third-party services can be configured as a web [API](https://glossary.magento.com/api) (REST or SOAP) with some simple [XML](https://glossary.magento.com/xml). You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and [CMS](https://glossary.magento.com/cms) (Content Management Systems).
 
 See [Getting Started with Magento Web APIs]({{page.baseurl}}/get-started/bk-get-started-api.html) for more information.
 
