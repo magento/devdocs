@@ -154,7 +154,7 @@ To ensure the quality of our public documentation for versions of Magento that a
 
 To build v2.0 documentation:
 
-> You can also use the GitHub interface to read the source Markdown files instead of building the site locally. Just navigate to the [`2.0`](https://github.com/magento/devdocs/tree/2.0) branch and click the file you want to view.
+> You can also use the GitHub interface to read the source Markdown files instead of building the site locally. Navigate to the [`2.0`](https://github.com/magento/devdocs/tree/2.0) branch and click the file you want to view.
 
 1. Add an entry for 2.0 in the `Docfile.yml` file.
 
