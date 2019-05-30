@@ -295,6 +295,16 @@ To configure a MySQL database instance:
 		create user magento IDENTIFIED BY 'magento';
 		GRANT ALL ON magento.* TO magento@localhost IDENTIFIED BY 'magento';
 		flush privileges;
+		
+        {: .bs-callout .bs-callout-info }
+	For MySQL 8:
+
+	```bash
+	create database magento;
+	create user magento@localhost IDENTIFIED BY 'magento';
+	GRANT ALL ON magento.* TO magento@localhost;
+	flush privileges;
+	```
 
 5.	Enter `exit` to quit the command prompt.
 
