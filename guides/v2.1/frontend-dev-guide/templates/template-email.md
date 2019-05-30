@@ -308,7 +308,7 @@ If you want to change the font used for emails, do the following:
 
 You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. 
 
-Because email clients don't support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare Allowed file types JPG, GIF, PNG (Maximum file size 2 MB). Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
+Because email clients don't support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare Allowed file types JPG, GIF, PNG (Maximum file size 2 MB, This file size configuration that can be changed by admin side). Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
 
 If you don't have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px &times; 100px, specify `200` for the width and `100` for the height.
 
