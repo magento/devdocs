@@ -298,7 +298,6 @@ To configure a MySQL database instance:
 		
         {: .bs-callout .bs-callout-info }
 	For MySQL 8:
-
 	```bash
 	create database magento;
 	create user magento@localhost IDENTIFIED BY 'magento';
