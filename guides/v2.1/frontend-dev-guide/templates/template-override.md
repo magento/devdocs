@@ -57,6 +57,16 @@ Unlike other templates, `root.phtml` contains the `doctype` specification and co
 
 Arguments values set in a layout file can be accessed in templates using the `get{ArgumentName}()` and `has{ArgumentName}()` methods. There are more details in the [Layout instructions article]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html).
 
+## To rendered child blocks
+
+Rendered single child block
+
+`$block->getChildHtml('child-name');`
+
+Rendered all child blocks
+
+`$block->getChildHtml();`
+
 ## Related reading
 
 [Set a block's template]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html#set_template)
