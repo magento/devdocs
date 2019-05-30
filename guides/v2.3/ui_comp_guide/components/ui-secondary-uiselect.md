@@ -72,7 +72,7 @@ actions: [
 |--- |--- |--- |--- |--- |
 |`chipsEnabled`|Selected options are shown in UI-select's header as deletable chips.|Boolean|True|Optional|
 |`closeBtn`|Shows the button that closes the dropdown|Boolean|True|Optional|
-|`closeBtnLabel`|`$t('Done')`|Label|String|Optional|
+|`closeBtnLabel`|Close Buttons Label|String|`$t('Done')`|Optional|
 |`deviation`|Handles scroll download behavior|Number|30|Optional|
 |`emptyOptionsHtml`|Specifies the HTML to display content if there are no options to display|String|Empty string|Optional|
 |`filterPlaceholder`|Specifies captions for the filter placeholder|String|Empty string|Optional|
