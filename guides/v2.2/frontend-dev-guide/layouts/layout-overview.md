@@ -12,6 +12,8 @@ This article describes the basic concepts you need to know to create layouts for
 
 In Magento, the basic components of page design are layouts, containers, and blocks. A *layout* represents the structure of a web page (1). *Containers* represent the placeholders within that web page structure (2). And *blocks* represent the UI controls or components within the container placeholders (3). These terms are illustrated and defined below.
 
+The objective is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as a 1 column, 2 column, or 3 column layout. These page layouts can applied to a page from within the admin panel.
+
 ![web page sample layout][layout]
 
 (1) *Layouts* provide the structures for web pages using an XML file that identifies all the containers and blocks composing the page. The details of layout XML files are described later in this section.
@@ -19,6 +21,10 @@ In Magento, the basic components of page design are layouts, containers, and blo
 (2) *Containers* assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.
 
 (3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} to insert into its parent structural block. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
+
+## Purpose of page layouts
+
+The purpose of page layouts is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as fitting into a 1, 2, or 3-column container system. These page layouts can be selected in the admin panel to provide a specific layout per page.
 
 ## Basic layouts
 

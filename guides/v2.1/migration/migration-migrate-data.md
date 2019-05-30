@@ -24,6 +24,7 @@ To start migrating data, run:
     bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}
 
 where:
+
 * `[-a|--auto]` is an optional argument that prevents migration from stopping when it encounters integrity check errors.
 
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
@@ -66,11 +67,11 @@ You may tell the Data Migration Tool to ignore the problematic entities.
 
 To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 
-```xml
+xml
 <ignore>
     <field>sales_order_address_id</field>
 </ignore>
-```
+
 
 {: .bs-callout .bs-callout-warning }
 Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.

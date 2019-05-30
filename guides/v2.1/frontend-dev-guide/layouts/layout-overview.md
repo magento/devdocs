@@ -20,6 +20,10 @@ In Magento, the basic components of page design are layouts, containers, and blo
 
 (3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the HTML to insert into its parent structural block. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
 
+## Purpose of page layouts
+
+The purpose of page layouts is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as fitting into a 1, 2, or 3-column container system. These page layouts can be selected in the admin panel to provide a specific layout per page.
+
 ## Basic layouts 
 
 The basic view of all Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} pages in defined in two page configuration layout files located in the Magento_Theme module: 

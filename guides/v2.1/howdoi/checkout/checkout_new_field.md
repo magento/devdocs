@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add a new field in address form
 subtitle: Customize Checkout
-menu_order: 9
+menu_order: 10
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
@@ -52,6 +52,7 @@ $customField = [
     'filterBy' => null,
     'customEntry' => null,
     'visible' => true,
+    'value' => '' // value field is used to set a default value of the attribute
 ];
 
 $jsLayout['components']['checkout']['children']['steps']['children']['shipping-step']['children']['shippingAddress']['children']['shipping-address-fieldset']['children'][$customAttributeCode] = $customField;
