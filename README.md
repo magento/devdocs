@@ -1,4 +1,4 @@
-# Magento Developer Documentation
+Â# Magento Developer Documentation
 
 Welcome! This site contains the latest Magento developer documentation for ongoing Magento 2.x releases. For additional information, see our [Contribution Guide](https://github.com/magento/devdocs/blob/master/.github/CONTRIBUTING.md).
 
@@ -145,6 +145,38 @@ The following example will generate Magento 2.2 documentation only.
    * Generates a new preview and opens the landing page in a web browser.
 
 If you don't have the `_config.local.yml` file at the root of your `devdocs/` directory, the rake will generate all versions of the documentation.
+
+### To build v2.0 documentation
+
+Magento 2.0.18 was the final 2.0.x release. After March 2018, Magento 2.0.x stopped receiving security patches, quality fixes, and documentation updates.
+
+To ensure the quality of our public documentation for versions of Magento that are still supported and to avoid potential confusion about 2.0.x support, we removed all 2.0.x content from our public documentation websites on May 31, 2019.
+
+To build v2.0 documentation:
+
+> You can also use the GitHub interface to read the source Markdown files instead of building the site locally. Just navigate to the [`2.0`](https://github.com/magento/devdocs/tree/2.0) branch and click the file you want to view.
+
+1. Add an entry for 2.0 in the `Docfile.yml` file.
+
+    ```yaml
+    -
+      directory: guides/v2.0
+      repository: magento/devdocs
+      branch: 2.0
+      filter: false
+    ```
+
+1. Initialize the `2.0` branch in your local devdocs repository.
+
+    ```shell
+    rake init
+    ```
+
+1. Run the preview command.
+
+    ```shell
+    rake preview
+    ```
 
 ## Build using Vagrant
 
