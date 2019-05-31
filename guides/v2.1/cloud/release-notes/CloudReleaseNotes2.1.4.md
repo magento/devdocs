@@ -35,5 +35,5 @@ These Release Notes provide up-to-date information about changes, additions, and
 *	You can now successfully upgrade from Magento Enterprise Cloud Edition 2.0.x to 2.1.x.
 
 ### {{site.data.var.ee}} Release Notes
-*	[{{site.data.var.ee}} 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html)
+
 *	[{{site.data.var.ee}} 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4EE.html)

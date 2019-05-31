@@ -1,9 +1,7 @@
 ---
 group: cloud-guide
 title: Composer
-redirect_from:
-  - /guides/v2.0/cloud/cloud-composer.html
-  - /guides/v2.1/cloud/cloud-composer.html
+redirect_from: /guides/v2.1/cloud/cloud-composer.html
 functional_areas:
   - Cloud
   - Upgrade

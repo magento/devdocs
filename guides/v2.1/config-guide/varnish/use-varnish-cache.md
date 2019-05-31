@@ -1,9 +1,7 @@
 ---
 group: configuration-guide
 title: How Magento cache clearing works with Varnish
-redirect_from:
- - /guides/v2.0/config-guide/varnish/config-use-varnish.html
- - /guides/v2.1/config-guide/varnish/config-use-varnish.html
+redirect_from: /guides/v2.1/config-guide/varnish/config-use-varnish.html
 functional_areas:
   - Configuration
   - System

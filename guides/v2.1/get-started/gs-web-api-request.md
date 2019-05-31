@@ -276,7 +276,6 @@ This request returns a list of all customers in JSON format, as shown below. You
 }
 ```
 
-
 ## Next step
 
 Run the web API call through a [cURL command]({{ page.baseurl }}/get-started/gs-curl.html) or a REST client.
