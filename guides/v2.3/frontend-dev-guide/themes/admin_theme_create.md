@@ -7,7 +7,7 @@ functional_areas:
 ---
 ## What's in this topic {#favicon-intro}
 
-This topic describes how to create your custom theme for Magento Admin, referencing the similar [flow for creating a custom storefront theme]({{ site.gdeurl }}frontend-dev-guide/themes/theme-create.html).
+This topic describes how to create your custom theme for Magento Admin, referencing the similar [flow for creating a custom storefront theme]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html).
 
 ## Prerequisites 
 

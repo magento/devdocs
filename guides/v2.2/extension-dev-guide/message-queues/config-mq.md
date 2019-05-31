@@ -7,7 +7,6 @@ menu_order: 26
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-redirect_from: /guides/v2.2/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration
   - System

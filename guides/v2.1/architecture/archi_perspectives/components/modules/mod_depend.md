@@ -2,8 +2,6 @@
 group: architecture-guide
 title: Module dependencies
 menu_title: Module dependencies
-redirect_from:
-  - /guides/v2.0/architecture/modules/mod_depend.html
 ---
 
 ## Overview {#m2devgde-moddep-intro}
@@ -44,6 +42,31 @@ At a high level, there are three main steps for managing module dependencies:
 3. (*Optional*) Define the desired load order of config files and `.css` files in the `module.xml` file.
 
 Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the `<sequence>` list, so that B's files are loaded before A's. Additionally, you must declare a dependency upon Module B in A's `composer.json` file. Furthermore, in the [deployment configuration]({{page.baseurl}}/config-guide/config/config-php.html), Modules A and B must both be defined as enabled.
+
+`etc/module.xml`
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Module_A" setup_version="1.0.0">
+        <sequence>
+            <module name="Module_B" />
+        </sequence>
+    </module>
+</config>
+```
+
+After installing the module and opening `app/etc/config.php`, you are able to see that the Module_B was loaded before Module_A:
+
+```php
+return [
+    'modules' => [
+        ...
+        'Module_B' => 1,
+        'Module_A' => 1,
+        ...
+    ]
+];
+```
 
 ## Related topics {#m2arch-module-related}
 

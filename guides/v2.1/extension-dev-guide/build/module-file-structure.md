@@ -4,7 +4,6 @@ subgroup: 03_Build
 title: Create your component file structure
 menu_title: Create your component file structure
 menu_order: 3000
-redirect_from: /guides/v2.0/extension-dev-guide/module-file-structure.html
 ---
 
 In this section, we go over the different file structures for the component types. The Magento application looks for the files that make up a component *including configuration files* in particular places inside the component file structure. Follow the predefined file structures for the component type you are developing to ensure that it works as expected.

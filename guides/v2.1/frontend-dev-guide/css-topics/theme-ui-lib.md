@@ -162,9 +162,17 @@ Use the Navigation style for mobile and tab style for desktop.
 To set navigation using breakpoints, see the following example:
 
 ```css
+//
+//  Mobile
+//  _____________________________________________
+
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
     .lib-main-navigation();
 }
+
+//
+//  Desktop
+//  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
     .lib-main-navigation-desktop();

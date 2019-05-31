@@ -5,11 +5,8 @@ title: Codebase changes
 menu_title: Codebase changes
 menu_order: 1300
 redirect_from:
-  - /guides/v2.0/architecture/back-compatibility.html
   - /guides/v2.1/architecture/back-compatibility.html	
-  - /guides/v2.0/extension-dev-guide/backward-compatibility.html
   - /guides/v2.1/extension-dev-guide/backward-compatibility.html	
-
 ---
 
 Every Magento version release include a change in the codebase.
@@ -84,6 +81,7 @@ Use this table to understand what changes Magento can make and which version num
 | | New required method argument | MAJOR|
 | | Removed a non-last argument| MAJOR|
 | | New required constructor object argument | MINOR|
+| | New optional constructor argument | MINOR|
 | | New required constructor scalar argument (without pre-configured value)| MAJOR|
 | | Removed a non-last constructor argument| MAJOR|
 | | Removed a last constructor argument| PATCH|

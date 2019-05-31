@@ -2,9 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: DropdownDialog widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
+
 ## Overview
 Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
 
@@ -152,10 +151,24 @@ Customized public methods:
 -   [close()](#d_close)
 
 ### `open()` {#d_open}
+
 Beside default functionality, this method calls the `_mouseLeave()` and `_mouseEnter()` functions, adds classes on trigger and drop-down parent, and binds the close on mouse click outside drop-down to the `<body>` element.
 
+Invoke the open method:
+
+```javascript
+$("#element").dropdownDialog("open");
+```
+
 ### `close()` {#d_close}
+
 Beside default functionality, this method removes the classes from trigger and drop-down parent.Also clears the timeout if the latter exists.
+
+Invoke the close method:
+
+```javascript
+$("#element").dropdownDialog("close");
+```
 
 ## Code sample
 

@@ -42,5 +42,4 @@ Version 1.0.0 was available in limited release only.
 
 -   {:.bug} Ineligible bundled products may display as Eligible for listing on Amazon. One of the products within the bundled product may not be eligible. If you encounter issues, check the eligibility status for bundled products items.
 
--   {:.bug} When using Inventory Management for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.
-
+-   {:.bug} When using [Inventory Management](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-management.html) for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.

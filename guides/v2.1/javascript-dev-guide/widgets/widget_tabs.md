@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Tabs widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 ## Overview {#fedg_tabs-widget_overview}
@@ -241,8 +239,31 @@ Tabs is subscribed to the same events as the [collapsible] widget:
 ### `beforeOpen callback` {#fedg_tabs_beforeOpen_callback}
 Called before the content is opened.
 
+Example of adding a callback to `beforeOpen` events:
+
+```javascript
+$("#element").on("beforeOpen", function () {
+    // do something before opening the content
+});
+```
+
 ### `dimensionsChanged` {#fedg_tabs_dimensionsChanged}
 Called after content is opened or closed.
+
+Example of adding a callback to `dimensionsChanged` events:
+
+```javascript
+$("#element").on("dimensionsChanged", function (event, data) {
+    var opened = data.opened;
+
+    if (opened) {
+        // do something when the content is opened
+        return;
+    }
+
+    // do something when the content is closed
+});
+```
 
 ## Code sample
 
