@@ -81,6 +81,7 @@ Use this table to understand what changes Magento can make and which version num
 | | New required method argument | MAJOR|
 | | Removed a non-last argument| MAJOR|
 | | New required constructor object argument | MINOR|
+| | New optional constructor argument | MINOR|
 | | New required constructor scalar argument (without pre-configured value)| MAJOR|
 | | Removed a non-last constructor argument| MAJOR|
 | | Removed a last constructor argument| PATCH|

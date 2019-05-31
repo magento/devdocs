@@ -52,7 +52,7 @@ pages:
         - label: SSH and sFTP
           url: /cloud/env/environments-ssh.html
 
-        - label: New Relic APM
+        - label: New Relic
           url: /cloud/project/new-relic.html
 
         - label: Blackfire.io
