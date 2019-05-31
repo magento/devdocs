@@ -199,7 +199,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 <!--- 56853-->
 
 
-* **Issue**:  Magento does not correctly display Product > [Catalog](https://glossary.magento.com/catalog) table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{ site.baseurl }}/guides/v2.0/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
+* **Issue**:  Magento does not correctly display Product > [Catalog](https://glossary.magento.com/catalog) table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{page.baseurl}}/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
 <!--- 54618-->
 
 ## System requirements
