@@ -5,7 +5,6 @@ title: Package
 menu_title: Package
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v2.0/extension-dev-guide/package.html
 ---
 
 Use [Composer](https://getcomposer.org/) to package your [module](https://glossary.magento.com/module).

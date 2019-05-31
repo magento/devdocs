@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 title: Example bulk operations implementation
-redirect_from: /guides/v2.3/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services
 ---

@@ -59,7 +59,7 @@ The [Coding standards overview]{:target="_blank"} introduces Magento-specific pr
 [PHP_CodeSniffer]: http://pear.php.net/manual/en/package.php.php-codesniffer.faq.php
 [PSR-1]: http://www.php-fig.org/psr/psr-1/
 [PSR-2]: http://www.php-fig.org/psr/psr-2/
-[Coding standards overview]: {{ site.baseurl }}/guides/v2.0/coding-standards/bk-coding-standards.html
+[Coding standards overview]: {{ page.baseurl }}/coding-standards/bk-coding-standards.html
 [ruleset]: http://pear.php.net/manual/en/package.php.php-codesniffer.annotated-ruleset.php
 [ruleset.xml]: https://github.com/magento/magento-coding-standard/blob/develop/Magento2/ruleset.xml
 [Magento Coding Standard]: https://github.com/magento/magento-coding-standard

@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Locate JavaScript components
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/js_debug.html
 functional_areas:
   - Testing
 ---

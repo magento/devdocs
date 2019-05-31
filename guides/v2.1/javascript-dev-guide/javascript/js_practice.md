@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Customizing JavaScript illustration
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
 ## Overview {#practice_overview}

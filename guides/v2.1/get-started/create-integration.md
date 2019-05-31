@@ -1,7 +1,6 @@
 ---
 group: web-api
 title: Create an integration
-redirect_from: /guides/v2.1/howdoi/webapi/integration.html
 ---
 
 

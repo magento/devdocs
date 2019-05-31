@@ -25,15 +25,14 @@ We assume that if you have this issue, you're an advanced user who has likely in
 
 To resolve the issue, try the following:
 
-* Restart your web server or php-fm.
-* Check the `$PATH` environment variable for multiple paths to PHP
-* Use the `which php` command to locate the first PHP executable in your path; if it's not correct, remove it or create a symlink to the correct PHP version
-* Use a [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) page to collect more information
-* Make sure you're running a supported PHP version according to our System Requirements:
+*	Restart your web server or php-fm.
+*	Check the `$PATH` environment variable for multiple paths to PHP
+*	Use the `which php` command to locate the first PHP executable in your path; if it's not correct, remove it or create a symlink to the correct PHP version
+*	Use a [`phpinfo.php`]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpinfo) page to collect more information
+*	Make sure you're running a supported PHP version according to our System Requirements:
 
-  * [Version 2.0]({{ site.gdeurl }}install-gde/system-requirements.html)
-  * [Version 2.1]({{ site.gdeurl21 }}install-gde/system-requirements.html)
-  * [Version 2.2]({{ site.gdeurl22 }}install-gde/system-requirements.html)
-  * [Version 2.3]({{ site.gdeurl23 }}install-gde/system-requirements.html)
-
-* Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in [PHP configuration options]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
+	*	[Version 2.1]({{ site.gdeurl21 }}install-gde/system-requirements.html)
+	*	[Version 2.2]({{ site.gdeurl22 }}install-gde/system-requirements.html)
+	*	[Version 2.3]({{ site.gdeurl23 }}install-gde/system-requirements.html)
+	
+*	Set the same PHP settings for both the PHP command line and the PHP web server plug-in as discussed in [PHP configuration options]({{ page.baseurl }}/install-gde/prereq/php-centos.html)

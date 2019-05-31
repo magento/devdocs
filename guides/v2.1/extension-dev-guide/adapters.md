@@ -30,7 +30,7 @@ This approach allows you to update or substitute different implementations provi
 
 ### `Magento/Framework/Code/Minifier`
 
-The [minifier](https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Code/Minifier){:target="_blank"} functionality provided by the `Magento/Framework/Code` library involves the use of third-party libraries for code compression.
+The [minifier]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier){:target="_blank"} functionality provided by the `Magento/Framework/Code` library involves the use of third-party libraries for code compression.
 
 The [`AdapterInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier/AdapterInterface.php){:target="_blank"} for this class contains a `minify($content)` function that the [`CSSmin`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier/Adapter/Css/CSSmin.php){:target="_blank"} and [`JShrink`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier/Adapter/Js/JShrink.php){:target="_blank"} implementation class define.
 
@@ -38,7 +38,7 @@ The [jshrink](https://github.com/tedious/JShrink){:target="_blank"}(tedivm/jshri
 
 ### `Magento/Framework/Image`
 
-The [`Magento/Framework/Image`](https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Image){:target="_blank"} library uses adapters to access functionality provided by GD(php-gd2) and ImageMagick(php-imagick) third-party libraries.
+The [`Magento/Framework/Image`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image){:target="_blank"} library uses adapters to access functionality provided by GD(php-gd2) and ImageMagick(php-imagick) third-party libraries.
 
 The [`AdapterInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image/Adapter/AdapterInterface.php){:target="_blank"} class defines the available functionality, and the [`Gd2`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image/Adapter/Gd2.php){:target="_blank"} and [`ImageMagick`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image/Adapter/ImageMagick.php){:target="_blank"} adapter classes provides the concrete implementation using the third-party libraries.
 

@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 title: Bulk Operations
-redirect_from: /guides/v2.3/extension-dev-guide/bulk-operations.html
 functional_areas:
   - Services
 ---

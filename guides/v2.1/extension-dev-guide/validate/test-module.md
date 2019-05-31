@@ -1,9 +1,7 @@
 ---
 group: php-developer-guide
 title: Test your component
-redirect_from:
-  - /guides/v2.0/mktpl-quickstart/dev-test.html
-  - /guides/v2.1/mktpl-quickstart/dev-test.html
+redirect_from: /guides/v2.1/mktpl-quickstart/dev-test.html
 ---
 
 ## Unit and Integration Tests {#test-unit}

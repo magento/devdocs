@@ -4,7 +4,6 @@ subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
 menu_order: 5000
-redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
 ---
 
 Each Magento [module](https://glossary.magento.com/module) can contain XSD files for [XML](https://glossary.magento.com/xml) validation.

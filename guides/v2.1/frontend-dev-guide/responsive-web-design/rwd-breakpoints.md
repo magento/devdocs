@@ -1,9 +1,7 @@
 ---
 group: frontend-developer-guide
 title: Add a custom breakpoint
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/css-topics/css-breakpoints.html
- - /guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
+redirect_from: /guides/v2.1/frontend-dev-guide/css-topics/css-breakpoints.html
 functional_areas:
   - Frontend
 ---
@@ -35,7 +33,7 @@ For example:
 @your__breakpoint: 1280px;
 ```
 
-For variables' naming rules see [Less coding standards]({{ site.baseurl }}/guides/v2.0/coding-standards/code-standard-less.html#variables).
+For variables' naming rules see [Less coding standards]({{ page.baseurl }}/coding-standards/code-standard-less.html#variables).
 
 ## Override `_responsive.less` from the library
 

@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: QuickSearch widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
 functional_areas:
   - Search
 ---
@@ -100,7 +98,6 @@ Template responsible for rendering returned data (suggested terms).
     </span>
 </li>
 ```
-
 
 [`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Search/view/frontend/web/form-mini.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
