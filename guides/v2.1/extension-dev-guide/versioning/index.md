@@ -5,9 +5,7 @@ title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
-redirect_from: 
-  - /guides/v2.0/architecture/versioning.html
-  - /guides/v2.1/architecture/versioning.html
+redirect_from: /guides/v2.1/architecture/versioning.html
 ---
 
 Magento software and Magento module releases have their own unique version number.

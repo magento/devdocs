@@ -202,7 +202,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 
 
 
-* **Issue**:  Magento does not correctly display Product > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{ site.baseurl }}/guides/v2.0/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
+* **Issue**:  Magento does not correctly display Product > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{ page.baseurl }}/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
 <!--- 54618-->
 
 ## System requirements

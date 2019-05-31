@@ -125,7 +125,6 @@ The prompt widget implements the following events:
 
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
-
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/prompt.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/prompt.js
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals

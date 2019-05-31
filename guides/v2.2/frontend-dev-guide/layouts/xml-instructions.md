@@ -400,4 +400,3 @@ $helperMethodResult = $block->getData('helper_method_result');
 [app/code/Magento/Theme/view/frontend/layout/default.xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml
 [app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/html/title.phtml
 [Layout file types]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html
-

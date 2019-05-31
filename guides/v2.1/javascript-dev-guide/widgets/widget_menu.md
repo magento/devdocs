@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Menu widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_menu.html
 ---
 ## Overview
 
@@ -72,7 +70,6 @@ Toggles website's menu opened state.
 ### `isExpanded()` {#m_isExpanded}
 
 Add class for expanded option.
-
 
 [lib/web/mage/menu.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

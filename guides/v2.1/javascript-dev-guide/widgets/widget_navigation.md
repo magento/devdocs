@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Navigation widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_navigation.html
 ---
 
 ## Overview
@@ -83,7 +81,6 @@ Moves the list items that are more than the total max item number set by the use
 
 ### `setupMoreMenu()` {#nav_setupMoreMenu}
 Builds the more overflowing menu by cloning the main menu items.
-
 
 [jQuery UI Menu widget]: http://api.jqueryui.com/menu/
 [lib/web/mage/menu.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/menu.js

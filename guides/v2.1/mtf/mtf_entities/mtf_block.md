@@ -613,9 +613,7 @@ There are some rules that should be followed to define a selector:
 6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
 7. Do not use enclosed text such as button or label names like `//button[contains(., "Sign in")]`
 
- 
 <!-- LINK DEFINITIONS -->
- 
 [page]: {{ page.baseurl }}/mtf/mtf_entities/mtf_page.html
 [`Catalog/Test/Page/Product/CatalogProductView.xml`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml
 [`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
