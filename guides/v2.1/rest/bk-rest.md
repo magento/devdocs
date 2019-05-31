@@ -1,7 +1,7 @@
 ---
 group: rest-api
 subgroup: A_rest
-title: Overview
+title: REST API Overview
 landing-page: REST API
 menu_title: Overview
 menu_order: 1

@@ -36,7 +36,7 @@ To add a custom favicon in the Magento Admin, do the following:
 
 5. Click **Save Configuration** in the upper right corner to save the changes.
 
-If caching is enabled in your Admin, you get a notification that refreshing certain [cache](https://glossary.magento.com/cache) types is required. Click the link provided in the notification, and then click **Flush Magento Cache**.
+If caching is enabled in your Admin, you get a notification that refreshing certain [cache](https://glossary.magento.com/cache) types is required. Click the link provided in the notification, and then click **Flush Magento Cache**. You can also navigate to **System** > Tools > **Cache Management** and click **Flush Magento Cache**, or run `bin/magento cache:flush`.
 
 ## Add custom favicons manually
 
