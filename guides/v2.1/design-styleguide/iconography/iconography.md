@@ -67,7 +67,7 @@ Learn how to use the icon grid:
 
 ## Icon Fonts
 
-We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found in [in GitHub]({{ site.mage2100url }}app/design/adminhtml/Magento/backend/web/fonts/admin-icons).
+We recommend using icon fonts to get the best quality for your icons. The Magento icon fonts can be found in [in GitHub]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/adminhtml/Magento/backend/web/fonts/admin-icons).
 
 If you want to add your own icons, each icon will need to be in its own SVG files. There are multiple ways to create icon fonts, here is one to get started:
 
