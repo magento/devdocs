@@ -12,7 +12,7 @@ The following steps describe the flow of calls required to complete a typical Pa
 
 1. **Send a token request.** When the buyer clicks a PayPal button, the frontend executes the `createPaypalExpressToken` mutation. The Magento `PaypalGraphQl` module gathers information in the specified cart and sends this information to PayPal.
 
-2. **PayPal sends a token.** If the token request succeeds, PayPal returns a token and a payer ID. PayPal also sends payment-related data that is outside the scope of GraphQL. You must include this token in subsequent steps. The buyer is redirected to the payment confirmation page, which was specified in the token request.
+2. **PayPal returns a token.** If the token request succeeds, PayPal returns a token and a payer ID. PayPal also sends payment-related data that is outside the scope of GraphQL. You must include this token in subsequent steps. The buyer is redirected to the payment confirmation page, which was specified in the token request.
 
 3. **Redirect the customer to PayPal for approval.** Depending on your implementation, the buyer is either redirected to the PayPal login screen, or the buyer enters their credentials in-context. 
 
@@ -36,7 +36,7 @@ These examples show all the mutations required to complete a PayPal purchase.
 
 ### Request a PayPal token
 
-The PayPal `token` will be used in the other mutations. The raw response from PayPal also includes the Payer ID. Extract the payer ID so that it used in the mutation that sets the payment method.
+The PayPal `token` will be used in the other mutations. The raw response from PayPal also includes the payer ID in the URL. Extract the payer ID so that it used in the mutation that sets the payment method.
 
 **Request**
 
@@ -162,13 +162,13 @@ mutation {
 
 ### PaypalExpressTokenInput {#PaypalExpressTokenInput}
 
-The `PaypalExpressTokenInput` object defines the attributes required to receive a payment token from PayPal
+The `PaypalExpressTokenInput` object defines the attributes required to receive a payment token from PayPal.
 
 Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `code` | String! | Payment method code
-`express_button`: | Boolean | Indicates whether the buyer selected the PayPal Express checkout button. The default value is `false`
+`express_button`: | Boolean | Indicates whether the buyer selected the PayPal Express Checkout button. The default value is `false`
 `urls` | [`PaypalExpressUrlsInput`](#PaypalExpressUrlsInput) | Defines a set of URLs to redirect to in response to the token request
 `use_paypal_credit` | Boolean | Indicates whether the buyer clicked the Paypal credit button. The default value is `false`
 
@@ -178,7 +178,7 @@ The `PaypalExpressUrlsInput` object contains a set of URLs that PayPal uses to r
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cancel_url` | String! | The URL of the original page on your website where the buyer initially chose PayPal as a payment type
+`cancel_url` | String! | The redirect URL when the buyer cancels the transaction. This should be the page on your website where the buyer initially chose PayPal as the payment type
 `pending_url` | String! | The URL to redirect for a pending transactions. Not applicable to most PayPal solutions
 `return_url` | String! | The URL of the final review page on your website where the buyer confirms the order and payment
 `success_url` | String! | The URL to redirect upon success. Not applicable to most PayPal solutions
