@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Loader widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
 ---
 
 ## Overview
@@ -88,7 +86,6 @@ Display the loader. Can be triggered on any page element.
 
 ### `processStop` {#l_processStop}
 Hide the loader. Can be triggered on any page element.
-
 
 [lib/web/mage/loader.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/loader.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

@@ -49,5 +49,4 @@ A gateway command must be configured with the following arguments:
 Optional arguments :
 
 * `handler`: [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html), changes the order and payment status depending on the payment provider response. 
-* `validator`: [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html), validates the provider response. 
-
+* `validator`: [response validator]({{ page.baseurl }}/payments-integrations/payment-gateway/response-validator.html), validates the provider response.

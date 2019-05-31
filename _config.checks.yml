@@ -12,4 +12,4 @@ html-proofer:
     :in_processes: 3
   :file_ignore:
   - !ruby/regexp /guides\/v2\.0/
-  - !ruby/regexp /videos\//
+  

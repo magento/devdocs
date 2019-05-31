@@ -579,7 +579,6 @@ api.updateOptions([{
 }]);
 ```
 
-
 [Fotorama widget]: http://fotorama.io/
 [lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [lib/web/magnifier/magnify.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js

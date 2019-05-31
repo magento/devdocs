@@ -5,7 +5,6 @@ title: Prepare (development quick start)
 menu_title: Prepare (development quick start)
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v2.0/extension-dev-guide/prepare.html
 ---
 
 Before you start building Magento modules, we suggest you use the following checklist:

@@ -5,7 +5,6 @@ title: Command naming guidelines
 menu_title: Command naming guidelines
 menu_node:
 menu_order: 2
-redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 ---
 
 <!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
