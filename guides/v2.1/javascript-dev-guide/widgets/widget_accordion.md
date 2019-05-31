@@ -177,6 +177,44 @@ $( "#element" ).accordion( "deactivate", 1 );
 $( "#element" ).accordion( "deactivate", [0,1]);
 ```
 
+## Events {#accordion_events}
+
+The accordion widget subscribes to the same events as the [Tabs widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html):
+
+-   [beforeOpen callback](#beforeopen-callback)
+-   [dimensionsChanged](#dimensionschanged)
+
+### `beforeOpen callback`
+
+Called before the content is opened. 
+
+Example of adding a callback to `beforeOpen` events:
+
+```javascript
+$("#element").on("beforeOpen", function () {
+    // do something before opening the content
+});
+```
+
+### `dimensionsChanged`
+
+Called after content is opened or closed.
+
+Example of adding a callback to `dimensionsChanged` events:
+
+```javascript
+$("#element").on("dimensionsChanged", function (event, data) {
+    var opened = data.opened;
+
+    if (opened) {
+        // do something when the content is opened
+        return;
+    }
+
+    // do something when the content is closed
+});
+```
+
 ## Code sample
 
 The following example shows how to initialize the accordion widget and pass options during the initialization.

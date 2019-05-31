@@ -191,6 +191,18 @@ It is likely that your theme will also contain module-specific files, which are 
 {: .bs-callout .bs-callout-info }
 When you change files stored here during theme development, you need to clear the `pub/static` and `var/view_preprocessed` directories, and then reload the pages. Otherwise, the old versions of files are displayed on the storefront.
 
+#### To clear the `pub/static` directory:
+
+```bash
+rm -rf <magento_root>/pub/static/*
+```
+
+#### To clear the `var/view_preprocessed` directory:
+ 
+```bash
+rm -rf <magento_root>/var/view_preprocessed/*
+```
+
 ## Your theme directory structure now {#fedg_theme_how-to_structure}
 
 At this point your theme file structure looks as follows:

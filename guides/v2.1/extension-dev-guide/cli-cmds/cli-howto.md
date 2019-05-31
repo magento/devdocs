@@ -34,20 +34,63 @@ Following is a summary of the process:
 1.	Create a Command class (the recommended location is `<your component root dir>/Console/Command`).
 
 	See [`<Magento_Store_module_dir>/Console/Command/StoreListCommand.php`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Console/Command/StoreListCommand.php) for example.
+
+```php
+<?php
+    namespace Magento\CommandExample\Console\Command;
+    
+    use Symfony\Component\Console\Command\Command;
+    use Symfony\Component\Console\Input\InputInterface;
+    use Symfony\Component\Console\Input\InputOption;
+    use Symfony\Component\Console\Output\OutputInterface;
+    
+    /**
+     * Class SomeCommand
+     */
+    class SomeCommand extends Command
+    {
+        /**
+         * @inheritDoc
+         */
+        protected function configure()
+        {
+            $this->setName('my:first:command');
+            $this->setDescription('This is my first console command.');
+            
+            parent::configure();
+        }
+    
+        /**
+         * @param InputInterface $input
+         * @param OutputInterface $output
+         *
+         * @return null|int
+         */
+        protected function execute(InputInterface $input, OutputInterface $output)
+        {
+            $output->writeln('<info>Success Message.</info>');
+            $output->writeln('<error>An error encountered.</error>');
+        }
+    }
+```
+    
+{: .bs-callout .bs-callout-info }
+You can style the output text by using <error>This is an error message</error> or <info>This is a success message</info>.
+
 2.	Declare your Command class in `Magento\Framework\Console\CommandListInterface` using dependency injection (`<your component root dir>/etc/di.xml`):
 
 ```xml
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    ...
-    <type name="Magento\Framework\Console\CommandList">
-        <arguments>
-            <argument name="commands" xsi:type="array">
-                <item name="commandexample_somecommand" xsi:type="object">Magento\CommandExample\Console\Command\SomeCommand</item>
-            </argument>
-        </arguments>
-    </type>
-    ...
-</config>
+    <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+        ...
+        <type name="Magento\Framework\Console\CommandList">
+            <arguments>
+                <argument name="commands" xsi:type="array">
+                    <item name="commandexample_somecommand" xsi:type="object">Magento\CommandExample\Console\Command\SomeCommand</item>
+                </argument>
+            </arguments>
+        </type>
+        ...
+    </config>
 ```
 
 3.	Clean the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and compiled code directories:
