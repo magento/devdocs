@@ -86,7 +86,7 @@ The installation stops before the sample data installation finishes. An example 
 
 Sample data installation does not finish.
 
-This error occurs when the maximum configured execution time of your {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.
+This error occurs when the maximum configured execution time of your [PHP](https://glossary.magento.com/php) scripts is exceeded. Because sample data can take a long time to load, you can increase the value during your installation.
 
 #### Solution
 

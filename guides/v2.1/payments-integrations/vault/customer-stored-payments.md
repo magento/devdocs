@@ -82,7 +82,7 @@ class CardRenderer extends AbstractCardRenderer
 
 ## Layout and template
 
-Next, you need to create the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} to be used for displaying token details. In this layout, specify the previously created token renderer.
+Next, you need to create the [layout](https://glossary.magento.com/layout) to be used for displaying token details. In this layout, specify the previously created token renderer.
 
 Example ([vault_cards_listaction.xml]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/layout/vault_cards_listaction.xml)):
 
@@ -98,7 +98,7 @@ Example ([vault_cards_listaction.xml]({{ site.mage2bloburl }}/{{ page.guide_vers
 </page>
 ```
 
-In this example the default `credit_card.phtml` vault template is used. But you can create and specify a custom template. Add the template in the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+In this example the default `credit_card.phtml` vault template is used. But you can create and specify a custom template. Add the template in the [payment method](https://glossary.magento.com/payment-method) [module](https://glossary.magento.com/module).
 
 ## What's next
  [Using stored tokens to place order from Admin panel]({{ page.baseurl }}/payments-integrations/vault/admin-integration.html).

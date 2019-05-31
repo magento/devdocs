@@ -18,7 +18,7 @@ functional_areas:
   - Sales
 ---
 
-You create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
+You create an [invoice](https://glossary.magento.com/invoice) after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
 
 ### Capture payment {#capture-payment}
 
@@ -68,7 +68,7 @@ Not applicable
 
 **Response**
 
-You will use the `order_item_id` values to create a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} in the next step.
+You will use the `order_item_id` values to create a [shipment](https://glossary.magento.com/shipment) in the next step.
 
 {% collapsible Show code sample %}
 
@@ -294,4 +294,4 @@ You will use the `order_item_id` values to create a {% glossarytooltip c8f00e9d-
 
 ### Verify this step {#verify-step}
 
-Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Invoices**. The invoice is displayed in the grid. The status is Paid. Then click **Sales** > **Orders**. The status is Processing.
+Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Invoices**. The invoice is displayed in the grid. The status is Paid. Then click **Sales** > **Orders**. The status is Processing.

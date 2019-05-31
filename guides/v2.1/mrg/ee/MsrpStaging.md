@@ -4,7 +4,7 @@ title: Magento_MsrpStaging module
 ee_only: true
 ---
 
-The Magento_MsrpStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage the manufacturer's suggested retail price.
+The Magento_MsrpStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to stage the manufacturer's suggested retail price.
 
 ## Implementation details
 

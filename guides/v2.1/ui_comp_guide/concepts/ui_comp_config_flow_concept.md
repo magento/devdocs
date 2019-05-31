@@ -8,13 +8,13 @@ menu_order: 10
 
 ## Overview
 
-The following section covers the configuration flow of UI components within the Magento system. Before a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} declaration, all the way to the merging of module-specific options.
+The following section covers the configuration flow of UI components within the Magento system. Before a [UI component](https://glossary.magento.com/ui-component) is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s [XML](https://glossary.magento.com/xml) declaration, all the way to the merging of module-specific options.
 
 When the server generates a page response, the configuration of these components in the [`.xml` declaration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is then modified by the [`.php` modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), and then finally this combined configuration is packed into JSON format and added into the HTTP response body.
 
 On the client-side, this JSON is processed by `Magento_Ui/js/core/app` where `Magento_Ui/js/core/app` is an alias for the [`app.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/core/app.js) file. The JSON could be seen in the page source. The `Magento_Ui/js/core/app` creates the UI components instances according to the configuration of the JSON using `uiLayout`.
 
-The Magento {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} application bounds these instances to the corresponding `.html` templates, if there are any `.html` templates declared in JSON for that particular component. The top-level UI component is bound to the page by the `scope` Knockout binding.
+The Magento [JavaScript](https://glossary.magento.com/javascript) application bounds these instances to the corresponding `.html` templates, if there are any `.html` templates declared in JSON for that particular component. The top-level UI component is bound to the page by the `scope` Knockout binding.
 
 ## Implementation details
 
@@ -22,9 +22,9 @@ This section provides more detailed steps about the configuration flow.
 
 Lets consider an example with the top-level UI component, `form`.
 
-Lets imagine we have the following file structure in our {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} `<My_Module>`:
+Lets imagine we have the following file structure in our [module](https://glossary.magento.com/module) `<My_Module>`:
 
-- {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} `.xml` file of the Module’s page: `my_page.xml`
+- [layout](https://glossary.magento.com/layout) `.xml` file of the Module’s page: `my_page.xml`
 - top-level UI Component (form or listing) configuration: `my_form.xml`
 - `.php` modifiers that are specific to the module
 

@@ -15,7 +15,7 @@ functional_areas:
 
 This topic is provided for convenience for anyone using {{site.data.var.ce}} or {{site.data.var.ee}} versions 2.0.0&ndash;2.0.5.
 
-In versions *before* 2.0.6, Magento explicitly set file system permissions when we created files, such as {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see [Overview of ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+In versions *before* 2.0.6, Magento explicitly set file system permissions when we created files, such as [cache](https://glossary.magento.com/cache) and static view files. Starting with 2.0.6, we do not set permissions explicitly. For more detail about file system ownership and permissions for version 2.0.6 and later, see [Overview of ownership and permissions]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
 
 ## Summary of file system permissions {#appendix-summary}
 

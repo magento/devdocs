@@ -113,7 +113,7 @@ This example returns only the following:
 
 ## POST operation
 
-The following POST operation and payload creates a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} category named `New Category`. Magento returns only the `id`, `parent_id`, and `name` attributes
+The following POST operation and payload creates a [catalog](https://glossary.magento.com/catalog) category named `New Category`. Magento returns only the `id`, `parent_id`, and `name` attributes
 
 `POST <host>/rest/<store_code>/V1/categories?fields=id,parent_id,name`
 

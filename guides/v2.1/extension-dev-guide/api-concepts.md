@@ -8,8 +8,8 @@ menu_order: 3
 
 ## What is a public interface? {#public-interface}
 
-<p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or build as a {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %}. Magento guarantees that this code will not change in subsequent releases without a major version change.</p>
-<p>Public interfaces for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} are marked with <code>@api</code> annotation.</p>
+<p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or build as a [plug-in](https://glossary.magento.com/plug-in). Magento guarantees that this code will not change in subsequent releases without a major version change.</p>
+<p>Public interfaces for a [module](https://glossary.magento.com/module) are marked with <code>@api</code> annotation.</p>
 
 {: .bs-callout .bs-callout-info }
 Third-party developers should use only these interfaces, that is, interfaces with the `@api` annotation. You can use other interfaces but those may be modified or removed in subsequent Magento releases. For more information, see [Backward compatibility]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
@@ -26,6 +26,6 @@ Third-party developers should use only these interfaces, that is, interfaces wit
    <li>Configuration files structure</li>
    <li>Events</li>
    <li>Client API</li>
-   <li>Provider {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} (SPI)</li>
+   <li>Provider [API](https://glossary.magento.com/api) (SPI)</li>
 </ul>
-<p>Directory structure and configuration file structure are types of APIs because {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers use them. Developers write configurations, and place their {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} in specified folders; so if the configuration file structure or directory structure changes in subsequent releases, modules and extensions may break.</p>
+<p>Directory structure and configuration file structure are types of APIs because [extension](https://glossary.magento.com/extension) developers use them. Developers write configurations, and place their [static files](https://glossary.magento.com/static-files) in specified folders; so if the configuration file structure or directory structure changes in subsequent releases, modules and extensions may break.</p>

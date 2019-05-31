@@ -24,7 +24,7 @@ This article describes the following typical layout customization tasks:
 - [Replace elements](#layout_markup_replace_elements)
 
 {:.bs-callout .bs-callout-info}
-To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize layout, create extending and overriding layout files in your custom theme.
+To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento [module](https://glossary.magento.com/module) and [theme](https://glossary.magento.com/theme) layouts. To customize layout, create extending and overriding layout files in your custom theme.
 
 ## Set the page layout {#layout_markup_columns}
 
@@ -157,7 +157,7 @@ Example: add links to the page header panel.
 
 Blocks are created (declared) using the [`<block>`]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_block) instruction.
 
-Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
+Example: add a block with a product [SKU](https://glossary.magento.com/sku) information.
 
 ```xml
 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">
@@ -321,7 +321,7 @@ To learn how to locate the layout file you need to customize, see [Locate templa
 
 Elements are removed using the `remove` attribute for the `<referenceBlock>` and `<referenceContainer>`. 
 
-**Example**: remove the Compare Products {% glossarytooltip 31751771-8163-434b-88bc-c5f94d859fc3 %}sidebar{% endglossarytooltip %} block from all store pages. 
+**Example**: remove the Compare Products [sidebar](https://glossary.magento.com/sidebar) block from all store pages. 
 
 This block is declared in `app/code/Magento/Catalog/view/frontend/layout/default.xml`:
 
