@@ -2,9 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: List widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_list.html
 ---
+
 ## Overview
 
 Provides a way to move items, typically a list, from one content section to another.
@@ -121,7 +120,6 @@ If the `maxItems` option is set, hides or displays the **Add** button.
 
 ### `removeItem()` {#list_removeItem}
 Removes an item from the list.
-
 
 [lib/web/mage/list.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/list.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

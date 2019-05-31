@@ -18,7 +18,7 @@ Upgrading to this release can cause problems with image resizing. Please see [Im
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page as well as image resizing. 
 
-Looking for the [Magento Enterprise Cloud Edition Release Notes]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?
+Looking for the [Magento Enterprise Cloud Edition Release Notes]({{ page.baseurl }}/cloud/release-notes/CloudReleaseNotes.html){:target="_blank"}?
 
 ## Highlights
 
