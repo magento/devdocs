@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 8. Apply coupon
+title: Step 8. Apply a coupon
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
@@ -14,7 +14,11 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use [applyCouponToCart]({{ page.baseurl }}/graphql/reference/quote.html#apply-coupon-to-cart) to apply a discount coupon to shopping cart.
+Use [applyCouponToCart]({{ page.baseurl }}/graphql/reference/quote-apply-coupon.html) to apply a discount coupon to the the specified `cart_id`.
+
+{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+
+{{ COUPON_CODE }} is an existing Magento coupon code. It cannot be generated with GraphQL.
 
 **Request**
 
@@ -35,9 +39,6 @@ mutation {
 }
 ```
 
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-`{{ COUPON_CODE }}` - coupon code.
-
 **Response**
 
 ```json
@@ -54,7 +55,7 @@ mutation {
 }
 ```
 
-Use [removeCouponFromCart]({{ page.baseurl }}/graphql/reference/quote.html#remove-coupon-from-cart) to remove a discount coupon from shopping cart.
+Use [removeCouponFromCart]({{ page.baseurl }}/graphql/reference/quote-remove-coupon.html) to remove a discount coupon from the shopping cart.
 
 **Request**
 
@@ -69,9 +70,6 @@ mutation {
   }
 }
 ```
-
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Response**
 
