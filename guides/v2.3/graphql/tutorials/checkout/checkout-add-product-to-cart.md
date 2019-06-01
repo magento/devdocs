@@ -24,7 +24,9 @@ GraphQL supports [7 types of product]({{ page.baseurl }}/graphql/reference/produ
  - gift card product (available for commerce version)
 
 **Request**
+
 The following query adds a simple product into shopping cart.
+
 ```text
 mutation {  
   addSimpleProductsToCart(
@@ -58,6 +60,7 @@ where
 `{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Response**
+
 ```json
 {
   "data": {
