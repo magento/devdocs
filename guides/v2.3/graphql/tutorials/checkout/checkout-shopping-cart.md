@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 2. Create empty cart
+title: Step 2. Create an empty cart
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
@@ -16,7 +16,7 @@ contributor_link: https://www.atwix.com/
 
 **Request**
 
-The following mutation query creates an empty cart:
+The following mutation creates an empty cart:
 
 ```text
 mutation {
@@ -34,7 +34,7 @@ mutation {
 }
 ```
 
-In the next tutorial steps the unique shopping cart identifier - `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be mentioned as `{{ CART_ID }}`.
+In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be listed as `{{ CART_ID }}`.
 
 {:.bs-callout .bs-callout-info}
 Send customer's authorization token in the `Authorization` parameter of the header if you create a shopping cart for a registered customer. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
