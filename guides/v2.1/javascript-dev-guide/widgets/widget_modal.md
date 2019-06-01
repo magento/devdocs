@@ -373,7 +373,7 @@ The following example shows how to initialize the modal widget and pass options 
 
 ### Result
 
-The result is a modal and a button (_S_) that opens the modal.
+The result is a modal and a buttons (_Proceed to Checkout_) when Guest Checkout is disabled that opens the modal.
 
 ![Modal Widget]({{ site.baseurl }}/common/images/widget/modal-widget-result-custom.png)
 
