@@ -25,7 +25,7 @@ GraphQL supports [7 types of product]({{ page.baseurl }}/graphql/reference/produ
 
 **Request**
 
-The following query adds a simple product into shopping cart.
+The following mutation adds a simple product into shopping cart.
 
 ```text
 mutation {  
