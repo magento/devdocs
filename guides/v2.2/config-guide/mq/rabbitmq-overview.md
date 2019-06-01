@@ -10,7 +10,7 @@ The following diagram illustrates the Message Queue Framework.
 
 ![]({{ site.baseurl }}/common/images/mq.png)
 
-* A [publisher](https://glossary.magento.com/publisher) is a component that sends messages to an exchange. It knows which exchange to publish to and the format of the messages it sends.
+* A [publisher](https://glossary.magento.com/publisher-subscriber-pattern) is a component that sends messages to an exchange. It knows which exchange to publish to and the format of the messages it sends.
 
 * An exchange receives messages from publishers and sends them to queues. Although RabbitMQ supports multiple types of exchanges, Magento uses topic exchanges only. A topic includes a routing key, which contains text strings separated by dots. The format for a topic name is <code><i>string1</i>.<i>string2</i></code>..., for example, `customer.created` or `customer.sent.email`.
 
