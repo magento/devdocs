@@ -14,9 +14,12 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use `placeOrder` mutation query to place order.
+The `placeOrder` mutation places an order.
+
+{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
+
 ```text
 mutation {
   placeOrder(input: {cart_id: "{{ CART_ID }}"}) {
@@ -27,10 +30,8 @@ mutation {
 }
 ```
 
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
 **Response**
+
 ```json
 {
   "data": {
@@ -44,4 +45,4 @@ where
 ```
 
 {:.bs-callout .bs-callout-info}
-Send customer's authorization token in the `Authorization` parameter of the header if you place order as a registered customer. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
