@@ -19,6 +19,8 @@ The widget uses the following templates:
 
 - [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`] popup type template.
 - [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`] slide type template.
+- [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-custom.html`] custom type template.
+
 
 The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.] 
 
@@ -157,7 +159,7 @@ Sets a margin between slide modal windows.
 **Default value**: 45
 
 ### `responsive` {#modal_responsive}
-Turn popup modal window to slide panel on small screens. Available if the `type` option is set to `modal`.
+Turn popup modal window to slide panel on small screens. Available if the `type` option is set to `popup` or `slide` or `custom`.
 
 **Type**: Boolean 
 
@@ -179,7 +181,7 @@ The element that triggers the modal.
 
 ### `type` {#modal_type}
 
-The type of window: popup or slide.
+The type of window: popup or slide or can be the custom.
 
 **Type**: String 
 
