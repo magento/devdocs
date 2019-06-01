@@ -381,5 +381,6 @@ The result is a modal and a button (_S_) that opens the modal.
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal.js
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
 [`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
+[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-custom.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-custom.html
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
