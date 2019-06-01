@@ -83,6 +83,6 @@ where
 ```
 
 {:.bs-callout .bs-callout-info}
-Send customer's authorization token in the `Authorization` parameter of the header if you add product into shopping cart as a registered customer. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
+If you add a product to the shopping cart as a registered customer, be sure to send customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
 
-Use `updateCartItems` mutation query to update shopping cart items and `removeItemFromCart` to remove product from the shopping cart.
+Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
