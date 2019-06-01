@@ -9,7 +9,7 @@ functional_areas:
 
 Redis features include:
 
-* Redis can also be used for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} session storage.
+* Redis can also be used for [PHP](https://glossary.magento.com/php) session storage.
 
 * The backend supports tag-based cache cleanup without `foreach` loops.
 

@@ -2,7 +2,7 @@
 group: admin-pattern-library
 title: Tree Pattern
 ---
-This topic contains various types of Tree structures used in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items.
+This topic contains various types of Tree structures used in [Admin](https://glossary.magento.com/admin) with functions for navigating, multi-selecting, adding nodes, editing inline, and dragging items.
 
 For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 
@@ -171,7 +171,7 @@ The 'Add' triggers should be placed above the tree container area. (Note: the ou
 
 There are two types of items that can be added:
 
-1. *A Group item* This is the parent item, which means there can be children. Example: a folder for the media {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} or a new {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}. The group item can also be added to another parent group. This allows for n-level tree.
+1. *A Group item* This is the parent item, which means there can be children. Example: a folder for the media [library](https://glossary.magento.com/library) or a new [category](https://glossary.magento.com/category). The group item can also be added to another parent group. This allows for n-level tree.
 2. *An item* This is the child. Example: a media item or a sub-category. The child item will be added to whichever parent is selected or to the same parent as sibling.
 
 The "add child" button should always have more importance than the "add parent" button.

@@ -3,7 +3,7 @@ group: ui-components-guide
 title:  Email component
 ---
 
-The Email component implements the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<input type="email">` form field.
+The Email component implements the [HTML](https://glossary.magento.com/html) `<input type="email">` form field.
 
 ## Configuration options
 

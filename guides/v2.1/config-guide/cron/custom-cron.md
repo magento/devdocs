@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-These topics discuss how to set up a custom cron job and optionally a custom cron group. If your Magento {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} requires scheduled tasks to run periodically, you can use these topics to set up a cron *job* (the scheduled task) and optionally a cron *group* (which runs custom tasks at the same time).
+These topics discuss how to set up a custom cron job and optionally a custom cron group. If your Magento [extension](https://glossary.magento.com/extension) requires scheduled tasks to run periodically, you can use these topics to set up a cron *job* (the scheduled task) and optionally a cron *group* (which runs custom tasks at the same time).
 
 If you use a Magento-provided cron group, you don't have to define a custom cron group; however, if you want your cron jobs to run at a different schedule or you want them all to run together, you should define a cron group
 

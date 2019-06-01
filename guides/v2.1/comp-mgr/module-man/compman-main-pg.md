@@ -5,7 +5,6 @@ title: Manage your components
 menu_title: Manage your components
 menu_node:
 menu_order: 3
-redirect_from: /guides/v2.0/comp-mgr/compman-main-pg.html
 functional_areas:
   - Upgrade
 ---
@@ -127,15 +126,15 @@ Continue with [Readiness check]({{ page.baseurl }}/comp-mgr/module-man/compman-r
 
 We define the following *components*:
 
-*	`module` for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} (that is, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code that modifies Magento behavior)
-*	`language` for a {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} used to translate the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}
+*	`module` for a [module](https://glossary.magento.com/module) or [extension](https://glossary.magento.com/extension) (that is, [PHP](https://glossary.magento.com/php) code that modifies Magento behavior)
+*	`language` for a [language package](https://glossary.magento.com/language-package) used to translate the Magento [storefront](https://glossary.magento.com/storefront) and [Admin](https://glossary.magento.com/admin)
 *	`theme` for a collection of styles that affect the look of the storefront or Admin
-*	`library` for a library&mdash;such as a shared third-party {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}
+*	`library` for a library&mdash;such as a shared third-party [library](https://glossary.magento.com/library)
 *	`component` for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)
 
 We also use `metapackage` to group components; Magento Community Edition (CE) and Magento Enterprise Edition (EE) are examples of metapackages.
 
-You can perform actions on components differently, depending on whether the component is part of a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} or not.
+You can perform actions on components differently, depending on whether the component is part of a [metapackage](https://glossary.magento.com/metapackage) or not.
 
 The following sections provide details:
 
@@ -144,7 +143,7 @@ The following sections provide details:
 
 ### Actions available for metapackage components {#compman-access-types-meta}
 
-Magento requires any component that has more than one type to be a metapackage. For example, we require a component that contains a module and a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to be packaged as a metapackage.
+Magento requires any component that has more than one type to be a metapackage. For example, we require a component that contains a module and a [theme](https://glossary.magento.com/theme) to be packaged as a metapackage.
 
 {:.bs-callout .bs-callout-info}
 We currently do not support uninstalling a metapackage.

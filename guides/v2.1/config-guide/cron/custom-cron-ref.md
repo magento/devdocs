@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-This topic helps you set up crontabs and optionally cron groups for custom modules. If your custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} needs to schedule tasks periodically, you must set up a crontab for that module. A *crontab* is a cron job's configuration.
+This topic helps you set up crontabs and optionally cron groups for custom modules. If your custom [module](https://glossary.magento.com/module) needs to schedule tasks periodically, you must set up a crontab for that module. A *crontab* is a cron job's configuration.
 
 You can optionally set up a custom group, which among other things enables you to run cron jobs defined in that group independently of other cron jobs.
 
@@ -78,7 +78,7 @@ As an example, see [Magento_Customer crontab.xml]({{ site.mage2bloburl }}/{{ pag
 
 #### Specifying Cron group options {#specify-cron-group-options}
 
-You may declare a new group and specify its configuration options (all of which run in {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} scope) via the `cron_groups.xml` file, located in:
+You may declare a new group and specify its configuration options (all of which run in [store view](https://glossary.magento.com/store-view) scope) via the `cron_groups.xml` file, located in:
 
 `<your component base dir>/<vendorname>/module-<name>/etc/cron_groups.xml`
 

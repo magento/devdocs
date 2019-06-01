@@ -7,7 +7,6 @@ menu_node:
 menu_order: 12
 level3_menu_node: level3child
 level3_subgroup: step3
-redirect_from: /guides/v2.0/comp-mgr/compman-uninst-data.html
 functional_areas:
   - Upgrade
 ---

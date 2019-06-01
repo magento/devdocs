@@ -13,7 +13,7 @@ functional_areas:
 This topic discusses how to get started with the split database solution by:
 
 1.	Installing {{site.data.var.ee}} with a single master database (named `magento`)
-2.	Creating two additional master databases for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and OMS (named `magento_quote` and `magento_sales`)
+2.	Creating two additional master databases for [checkout](https://glossary.magento.com/checkout) and OMS (named `magento_quote` and `magento_sales`)
 2.	Configuring {{site.data.var.ee}} to use the checkout and sales databases
 
 {:.bs-callout .bs-callout-info}

@@ -106,7 +106,7 @@ For these environments, you are pushing code from repository to repository: Inte
 
 ## Migrate static files {#cloud-live-migrate-static}
 
-You will migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to Staging or Production.
+You will migrate [static files](https://glossary.magento.com/static-files) from your `pub/media` directory to Staging or Production.
 
 We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync). rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 

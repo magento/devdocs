@@ -2,18 +2,17 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Accordion widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_accordion.html
 ---
 
 ## Overview
 
-Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the [Magento Tabs widget].
+Magento accordion widget is an [extension](https://glossary.magento.com/extension) of the [Magento Tabs widget].
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
-The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/accordion.js].
+The accordion [widget](https://glossary.magento.com/widget) source is [lib/web/mage/accordion.js].
                                                                                                                   
+>>>>>>> origin/master
 ## Initialize the accordion widget {#accordion_init}
 
 ### Initialize accordion in JS components
@@ -177,6 +176,44 @@ Code examples:
 $( "#element" ).accordion( "deactivate" );
 $( "#element" ).accordion( "deactivate", 1 );
 $( "#element" ).accordion( "deactivate", [0,1]);
+```
+
+## Events {#accordion_events}
+
+The accordion widget subscribes to the same events as the [Tabs widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html):
+
+-   [beforeOpen callback](#beforeopen-callback)
+-   [dimensionsChanged](#dimensionschanged)
+
+### `beforeOpen callback`
+
+Called before the content is opened. 
+
+Example of adding a callback to `beforeOpen` events:
+
+```javascript
+$("#element").on("beforeOpen", function () {
+    // do something before opening the content
+});
+```
+
+### `dimensionsChanged`
+
+Called after content is opened or closed.
+
+Example of adding a callback to `dimensionsChanged` events:
+
+```javascript
+$("#element").on("dimensionsChanged", function (event, data) {
+    var opened = data.opened;
+
+    if (opened) {
+        // do something when the content is opened
+        return;
+    }
+
+    // do something when the content is closed
+});
 ```
 
 ## Code sample
