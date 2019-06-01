@@ -15,16 +15,16 @@ contributor_link: https://www.atwix.com/
 ---
 
 {:.bs-callout .bs-callout-tip}
-Billing address must always be set.
+You must always set the billing address to place an order.
 
-Use [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote.html#set-the-billing-address-on-cart-attributes) mutation query to set a billing address. GraphQl allows to add billing address in the next ways:
-- add new billing address
-- add new billing address and set it as a shipping addresses  
-- use the existing customer's address from address book (available for registered customers)
+Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote.html#set-the-billing-address-on-cart-attributes) mutation to set a billing address. You can set the billing address in the following ways:
+- Add a new billing address
+- Add a new billing address and set it as the shipping addresses  
+- Use an address from the logged-in customer's address book
 
-### New billing address
+### Add a new billing address
 
-The following mutation adds a new billing address.
+The following mutation adds a new billing address. {{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
@@ -69,9 +69,6 @@ mutation {
 }
 ```
 
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
 **Response**
 
 ```json
@@ -104,7 +101,7 @@ where
 
 ### Add a new address for billing and shipping
 
-The following mutation adds a new billing address and sets it as a shipping address too.
+The following mutation includes the `use_for_shipping` attribute, which allows the same address to be used as the billing and shipping address.
 
 **Request**
 
@@ -213,9 +210,9 @@ mutation {
 }
 ```
 
-### Use the existing customer address
+### Use an existing customer address
 
-Use a query below to retrieve the list of customer addresses:
+First, query the customer to return the list of address IDs.
 
 **Request**
 
@@ -248,7 +245,9 @@ query {
 }
 ```
 
-Define `customer_address_id` to assign the existing customer address.
+Set {{ CUSTOMER_ADDRESS_ID }}  to an `id` returned in the query.
+
+{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
