@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 1. Define customer
+title: Step 1. Create a customer
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
@@ -21,7 +21,7 @@ Customers can make purchases in two ways:
 {:.bs-callout .bs-callout-tip}
 Skip this step if you want to place order as a guest user.
 
-If you want to place order as a new customer use `createCustomer` mutation to register new customer in the store.
+To place order as a new customer, use the `createCustomer` mutation to register the new customer account in the store.
 
 **Request**
 
@@ -65,9 +65,9 @@ mutation {
 }
 ```
 
-Check ["Customer endpoint"]({{ page.baseurl }}/graphql/reference/customer.html#create-a-customer) page to get the additional information about `createCustomer` parameters.
+["Customer endpoint"]({{ page.baseurl }}/graphql/reference/customer.html#create-a-customer) describes additional `createCustomer` parameters.
 
-If you want to place order as a new customer or a registered customer then you should get customer's authorization token. Use `generateCustomerToken` mutation for that.
+To place an order as a new customer, you must get the customer's authorization token. Use the `generateCustomerToken` mutation for that.
 
 **Request**
 
@@ -91,4 +91,4 @@ mutation {
 }
 ```
 
-See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
+["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes the mutation further.
