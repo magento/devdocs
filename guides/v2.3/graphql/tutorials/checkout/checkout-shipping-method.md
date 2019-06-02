@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 6. Set shipping method
+title: Step 6. Set the shipping method
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
@@ -14,10 +14,12 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-`setShippingMethodsOnCart` mutation query is using to define a shipping method for your order and requires the next input parameters:
+The `setShippingMethodsOnCart` mutation defines the shipping methods for your order. It requires these input parameters:
  - `cart_id`
  - `carrier_code`
  - `method_code`
+
+{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
@@ -47,9 +49,6 @@ mutation {
 }
 ```
 
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
 **Response**
 
 ```json
@@ -73,4 +72,4 @@ where
 ```
 
 {:.bs-callout .bs-callout-info}
-Send customer's authorization token in the `Authorization` parameter of the header if you set shipping method for a registered customer. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
