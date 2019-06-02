@@ -1,7 +1,7 @@
 ---
 layout: tutorial
 group: graphql
-title: Step 4. Set shipping address
+title: Step 4. Set the shipping address
 subtitle: GraphQL checkout tutorial
 level3_subgroup: graphql-checkout
 return_to:
@@ -14,16 +14,18 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/reference/quote.html#set-the-shipping-address-on-a-cart) mutation query to set a shipping address. GraphQl allows to add shipping address in the next ways:
-- add new shipping address
-- use for shipping a defined billing address
-- use the existing customer's address from address book (available for registered customers)
+Use [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/reference/quote-shipping-method.html) mutation to set a shipping address. You can set the shipping address in the following ways:
+- Add a new shipping address
+- Assign the shipping address to be the same as the billing address
+- Use an address already defined in the logged-in customer's address book
 
-### New shipping address
+### Create a new shipping address
 
 **Request**
 
-The following mutation query adds new address to quote.
+The following mutation adds a shipping address to the quote.
+
+{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 ```text
 mutation {
@@ -69,12 +71,9 @@ mutation {
 }
 ```
 
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-
 **Response**
 
-`setShippingAddressesOnCart` returns new address details if mutation query has been successfully executed.
+`setShippingAddressesOnCart` returns the new address details.
 
 ```json
 {
@@ -110,16 +109,16 @@ where
 }
 ```
 
-### Use for shipping a defined billing address
+### Assign the shipping address to be the same as the billing address
 
 See [Add a new address for billing and shipping]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-billing-address.html) topic.
 
 {:.bs-callout .bs-callout-info}
-Send customer's authorization token in the `Authorization` parameter of the header if you set shipping address for a registered customer. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ### Use the existing customer's address
 
-Use a query below to retrieve the list of customer addresses:
+First, query the customer to return the list of address IDs.
 
 **Request**
 
@@ -163,7 +162,9 @@ query {
 }
 ```
 
-Define `customer_address_id` to assign the existing customer address.
+Set {{ CUSTOMER_ADDRESS_ID }}  to an `id` returned in the query.
+
+{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
@@ -201,10 +202,6 @@ mutation {
   }
 }
 ```
-
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-`{{ CUSTOMER_ADDRESS_ID }}` - customer address ID (value from `entity_id` field of `customer_address_entity` table).
 
 **Response**
 
