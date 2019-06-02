@@ -37,4 +37,4 @@ mutation {
 In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be listed as `{{ CART_ID }}`.
 
 {:.bs-callout .bs-callout-info}
-Send customer's authorization token in the `Authorization` parameter of the header if you create a shopping cart for a registered customer. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) to get more details.
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
