@@ -18,15 +18,39 @@ This tutorial provides information how you can place order through GraphQl. Cust
 - As a logged-in user
 - As a guest user who does not create an account
 
+The **10-step tutorial** generally takes **30 minutes**.
+
 Checkout process in GraphQl consists of the 10 steps. Some of them may be optional.
 
-[Define customer]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-customer.html) (create customer, use a registered customer account or place order as guest)
-[Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shopping-cart.html)
+[Create a customer]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-customer.html) (create customer, use a registered customer account or place order as guest)
+[Create an empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shopping-cart.html)
 [Add product to cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html)
-[Set shipping address]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-address.html)
+[Set the shipping address]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-address.html)
 [Set billing address]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-billing-address.html)
-[Set shipping method]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-method.html)
-[Set payment method]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-payment-method.html)
-[Apply coupon]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-coupon.html)
-[Set quote email (for guest only)]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-quote-email.html)
+[Set the shipping method]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shipping-method.html)
+[Set the payment method]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-payment-method.html)
+[Apply a coupon]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-coupon.html)
+[Set email on the cart (guest customers only)]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-quote-email.html)
 [Place order]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-place-order.html)
+
+### Before you begin
+{:.tutorial-before}
+
+Complete the following prerequisites:
+
+* Install a Magento 2.1.3 (or later) instance with sample data.
+
+  The sample data defines a functional store, called Luma, that sells fitness clothing and accessories. The store does not provide any sandbox accounts for testing credit card payments, so transactions will be simulated using an offline {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}.
+
+* Install a GraphQl client. You can use any GraphQl client to send calls to Magento. [GraphiQL](https://www.getpostman.com/) is recommended.
+
+* Learn about GraphQL, how it works, and how to use it. See [Introduction to GraphQL](https://graphql.org/learn/) for details.
+
+* Know how to generate a customer token. See [Get customer authorization token]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for details.
+
+* Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}} 2.1](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
+
+### Other resources
+
+* [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) shows a system integrator how REST APIs are used in the lifecycle of an order, including configuring a store and creating a customer; creating quotes, orders, invoices, and shipments; preparing for checkout; and more order-related tasks.
+* [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
