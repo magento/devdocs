@@ -18,16 +18,23 @@ GraphQL supports [2 types of product]({{ page.baseurl }}/graphql/reference/produ
  - simple product
  - virtual product
 
-**Request**
+{:.bs-callout .bs-callout-info}
+If you add a product to the shopping cart as a registered customer, be sure to send customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
 
-The following mutation adds a simple product into shopping cart.
+`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+
+### Add a simple product into shopping cart
+
+The following mutation adds a **simple product** into shopping cart.
+
+**Request**
 
 ```text
 mutation {  
   addSimpleProductsToCart(
     input: {
       cart_id: "{{ CART_ID }}"
-      cartItems: [
+      cart_items: [
         {
           data: {
             qty: 1
@@ -50,9 +57,6 @@ mutation {
   }
 }
 ```
-
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Response**
 
@@ -77,7 +81,62 @@ where
 }
 ```
 
-{:.bs-callout .bs-callout-info}
-If you add a product to the shopping cart as a registered customer, be sure to send customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
+### Add a virtual product into shopping cart
+
+The following mutation adds a **virtual product** into shopping cart.
+
+**Request**
+
+```text
+mutation {  
+  addVirtualProductsToCart(
+    input: {
+      cart_id: "{{ CART_ID }}"
+      cart_items: [
+        {
+          data: {
+            qty: 1
+            sku: "virtual-product"
+          }
+        }
+      ]
+    }
+  ) {
+    cart {
+      items {
+        id
+        product {
+          sku
+          stock_status
+        }
+        qty
+      }
+    }
+  }
+}
+```
+
+**Response**
+
+```json
+{
+  "data": {
+    "addVirtualProductsToCart": {
+      "cart": {
+        "items": [
+          {
+            "id": "509",
+            "product": {
+              "sku": "virtual-product",
+              "stock_status": "IN_STOCK"
+            },
+            "qty": 1
+          }
+        ]
+      }
+    }
+  }
+}
+```
 
 Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
