@@ -16,9 +16,9 @@ contributor_link: https://www.atwix.com/
 
 Use [applyCouponToCart]({{ page.baseurl }}/graphql/reference/quote-apply-coupon.html) to apply a discount coupon to the the specified `cart_id`.
 
-{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-{{ COUPON_CODE }} is an existing Magento coupon code. It cannot be generated with GraphQL.
+`{{ COUPON_CODE }}` is an existing Magento coupon code. It cannot be generated with GraphQL.
 
 **Request**
 

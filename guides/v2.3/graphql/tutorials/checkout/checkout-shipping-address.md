@@ -27,6 +27,9 @@ The following mutation adds a shipping address to the quote.
 
 {{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
 ```text
 mutation {
   setShippingAddressesOnCart(
@@ -111,10 +114,7 @@ mutation {
 
 ### Assign the shipping address to be the same as the billing address
 
-See [Add a new address for billing and shipping]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-billing-address.html) topic.
-
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+[Add a new address for billing and shipping]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-billing-address.html) shows how to do this.
 
 ### Use the existing customer's address
 

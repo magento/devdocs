@@ -20,7 +20,7 @@ This tutorial provides information how you can place order through GraphQl. Cust
 
 The **10-step tutorial** generally takes **30 minutes**.
 
-Checkout process in GraphQl consists of the 10 steps. Some of them may be optional.
+The checkout process in GraphQl consists of the 10 steps. Magento GraphQL is designed to run queries and perform actions on behalf of a customer. Magento GraphQLsh does not perform backend tasks, such as manage invoices or shipments.
 
 [Create a customer]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-customer.html) (create customer, use a registered customer account or place order as guest)
 [Create an empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shopping-cart.html)
@@ -38,11 +38,11 @@ Checkout process in GraphQl consists of the 10 steps. Some of them may be option
 
 Complete the following prerequisites:
 
-* Install a Magento 2.1.3 (or later) instance with sample data.
+* Install a Magento 2.3 (or later) instance with sample data.
 
   The sample data defines a functional store, called Luma, that sells fitness clothing and accessories. The store does not provide any sandbox accounts for testing credit card payments, so transactions will be simulated using an offline {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %}.
 
-* Install a GraphQl client. You can use any GraphQl client to send calls to Magento. [GraphiQL](https://www.getpostman.com/) is recommended.
+* Install a GraphQl client. You can use any GraphQl client to send calls to Magento. [GraphiQL](https://electronjs.org/apps/graphiql) is recommended.
 
 * Learn about GraphQL, how it works, and how to use it. See [Introduction to GraphQL](https://graphql.org/learn/) for details.
 
