@@ -143,6 +143,9 @@ pages:
         - label: Step 4. Upgrade
           url: /comp-mgr/upgrader/upgrade.html
 
+    - label: Applying patches
+      url: /comp-mgr/patching.html
+    
     - label: Update the updater application
       url: /comp-mgr/updater/update-updater.html
       children:
