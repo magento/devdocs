@@ -5,7 +5,7 @@ title: DragAndDrop component
 menu_title: DragAndDrop component
 ---
 
-The DragAndDrop component is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} for [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html), allowing users to change columns position in the table.
+The DragAndDrop component is an [extension](https://glossary.magento.com/extension) for [Columns]({{ page.baseurl }}/ui_comp_guide/components/ui-columns.html), allowing users to change columns position in the table.
 
 ## Configuration options
 

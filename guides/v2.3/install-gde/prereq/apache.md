@@ -54,7 +54,7 @@ The result displays similar to the following:
 *	If Apache is *not* installed, see:
 	*	[Installing or upgrading Apache on Ubuntu](#install-prereq-apache-ubuntu)
 	*	[Installing Apache on CentOS]{#install-prereq-apache-centos}
-*	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.6, see the next section
+*	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use [PHP](https://glossary.magento.com/php) 5.6, see the next section
 
 ## Installing or upgrading Apache on Ubuntu {#install-prereq-apache-ubuntu}
 

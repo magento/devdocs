@@ -58,7 +58,7 @@ Full Guideline Reference: [http://www.w3.org/TR/WCAG10-HTML-TECHS/#links](http:/
 3. Show hierarchy and not history. To go back, users use the browser’s back button. Replicating this facility defies the purpose of having breadcrumbs.
 4. Progress from the highest level to the lowest, one step at a time.
 5. Have a simple link for each level.
-6. Include the full page title in the {% glossarytooltip e6de7fc4-1509-4730-a4c8-cc48b09ea01a %}breadcrumb{% endglossarytooltip %} trail. Also ensure consistency between the page address and the breadcrumb. If the page titles include keywords, then this will make your breadcrumbs both human and search engine friendly.
+6. Include the full page title in the [breadcrumb](https://glossary.magento.com/breadcrumb) trail. Also ensure consistency between the page address and the breadcrumb. If the page titles include keywords, then this will make your breadcrumbs both human and search engine friendly.
 7. Include the full navigational path from the homepage to last level of current page. Not displaying certain levels will confuse users.
 8. Never replace primary navigation. They have been devised as a secondary navigation aid and should always be used as such.
 

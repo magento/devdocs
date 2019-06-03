@@ -1,15 +1,14 @@
 ---
 group: php-developer-guide
 title: Message Queues
-redirect_from: /guides/v2.3/extension-dev-guide/message-queues.html
 
 ---
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
-In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional system that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses [RabbitMQ] as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
+In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional system that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses [RabbitMQ] as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
-A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
+A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL [adapter](https://glossary.magento.com/adapter) stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
 See [Configure message queues] for information about setting up the message queue system.
 

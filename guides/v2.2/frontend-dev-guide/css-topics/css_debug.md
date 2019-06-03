@@ -32,7 +32,7 @@ To compile `.less` files, add your theme to `module.exports` in the Grunt config
     npm install
     npm update
     ```
-5. Add your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
+5. Add your [theme](https://glossary.magento.com/theme) to Grunt configuration. To do this, in the `dev/tools/grunt/configs/themes.js` file, add your theme to `module.exports` like following:
     ```javascript
     module.exports = {
 

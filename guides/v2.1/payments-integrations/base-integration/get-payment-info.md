@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-To implement transaction {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} our payment should receive some payment details from payment form, like credit card details,
+To implement transaction [authorization](https://glossary.magento.com/authorization) our payment should receive some payment details from payment form, like credit card details,
 and send received details to payment processor.
 
 Depending on your payment integration, payment details might include credit card details, tokenized cards, payment nonce, and similar information.
@@ -58,10 +58,10 @@ You should remove any sensitive data (like credit card details) from payment add
 
 ## Getting payment information from frontend to backend 
 
-In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} payment form.
-So our {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} implementation should provide the ability to display and process payment form on checkout step. 
+In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on [checkout](https://glossary.magento.com/checkout) payment form.
+So our [payment method](https://glossary.magento.com/payment-method) implementation should provide the ability to display and process payment form on checkout step. 
 
-We can send to {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} any specific data, just need to override `getData()` method in
+We can send to [backend](https://glossary.magento.com/backend) any specific data, just need to override `getData()` method in
 [payment UI component]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js):
 
 ```javascript
@@ -105,7 +105,7 @@ define(
 ```
 
 The `getData()` method returns data what we need and depending on payment integration the returned data can be more
-complicated. we need last step to retrieve data from {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in the backend. Magento provides some
+complicated. we need last step to retrieve data from [storefront](https://glossary.magento.com/storefront) in the backend. Magento provides some
 mechanisms called [Observers]({{ site.gdeurl21 }}extension-dev-guide/events-and-observers.html).
  
 #### Read additional data
@@ -165,7 +165,7 @@ And this observer should be added to list of events (`Module_Name/etc/events.xml
 </config>
 ```
 
-This {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} will be triggered in [Adapter::assignData()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
+This [event](https://glossary.magento.com/event) will be triggered in [Adapter::assignData()]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php#L600) method call:
 
 ```php
 public function assignData(\Magento\Framework\DataObject $data)

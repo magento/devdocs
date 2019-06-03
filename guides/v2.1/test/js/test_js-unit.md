@@ -12,7 +12,7 @@ It is recommended that [Jasmine][] be used instead.
 
 ## Preface
 
-Magento {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} unit tests use the external [JsTestDriver test library]. The tests are implemented using the external [JsTestDriver API] and have their own [jsunit.requirejsUtil framework].
+Magento [JavaScript](https://glossary.magento.com/javascript) unit tests use the external [JsTestDriver test library]. The tests are implemented using the external [JsTestDriver API] and have their own [jsunit.requirejsUtil framework].
 
 After you run the PHP interpreter once to run unit tests, you can [run the JavaScript unit tests from the PhpStorm IDE][PhpStorm].
 
@@ -22,11 +22,11 @@ To run the automated JavaScript unit tests, you run the [`run_js_tests.php` scri
 
 ### JsTestDriver test library {#test-library}
 
-Magento JavaScript unit tests use the external [JsTestDriver] library, which follows JUnit principles. The PHPUnit {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} also follows these principles.
+Magento JavaScript unit tests use the external [JsTestDriver] library, which follows JUnit principles. The PHPUnit [library](https://glossary.magento.com/library) also follows these principles.
 
 ### JsTestDriver API {#jstestdriver-api}
 
-The unit tests are implemented through the JsTestDriver {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. Web developers should be familiar with this API and test structure.
+The unit tests are implemented through the JsTestDriver [API](https://glossary.magento.com/api). Web developers should be familiar with this API and test structure.
 
 ### jsunit.requirejsUtil framework {#framework}
 
@@ -59,7 +59,7 @@ Both files reside in the `<magento2_root_dir>/dev/tests/js` directory.
 
 ### `jsTestDriver.php.dist` file {#jstestdrivephp}
 
-`<magento2_root_dir>/dev/tests/js/jsTestDriver.php.dist` specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code:
+`<magento2_root_dir>/dev/tests/js/jsTestDriver.php.dist` specifies the contents of the YAML configuration file used by JsTestDriver. It contains the following [PHP](https://glossary.magento.com/php) code:
 
 ```php
 return array(
@@ -84,7 +84,7 @@ Parameters are the following:
 * **proxy**. Sets the JsTestDriver to behave as a proxy. The proxy parameter is an array of arrays that enables you to specify multiple matcher and server proxies.
 * **load**. Defines the list of files to load in the browser before any tests run.
 * **test**. Defines the list of test sources to run.
-* **serve**. Defines the list of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to load by using the same {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} as the JsTestDriver.
+* **serve**. Defines the list of [static files](https://glossary.magento.com/static-files) to load by using the same [domain](https://glossary.magento.com/domain) as the JsTestDriver.
 
 ### `jsTestDriverOrder.php` file {#jstestdriverorderphp}
 

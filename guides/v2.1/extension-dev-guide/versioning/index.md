@@ -5,9 +5,7 @@ title: Versioning
 menu_title: Versioning
 menu_order: 1000
 menu_node: parent
-redirect_from: 
-  - /guides/v2.0/architecture/versioning.html
-  - /guides/v2.1/architecture/versioning.html
+redirect_from: /guides/v2.1/architecture/versioning.html
 ---
 
 Magento software and Magento module releases have their own unique version number.
@@ -48,7 +46,7 @@ Magento's module versioning policy complies with the following specifications:
 
 ## Where versioning is used
 
-The software version can be found in the source code of any {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} or bundle, inside the `composer.json` file.
+The software version can be found in the source code of any [Magento component](https://glossary.magento.com/magento-component) or bundle, inside the `composer.json` file.
 
 It can be declared as the version of the component:
 

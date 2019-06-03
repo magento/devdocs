@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-**Symptom**: At the last step of installing Magento 2, the following {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} displays:
+**Symptom**: At the last step of installing Magento 2, the following [exception](https://glossary.magento.com/exception) displays:
 
 ```temrinal
 exception 'Exception' with message 'Warning: SessionHandler::read():

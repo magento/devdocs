@@ -5,8 +5,6 @@ title: git pull origin develop fails when updating the Magento software
 menu_title: git pull origin develop fails when updating the Magento software
 menu_node:
 menu_order: 410
-redirect_from:
-  - /guides/v2.0/install-gde/trouble/tshoot_git-pull-origin.html
 functional_areas:
   - Install
   - System
