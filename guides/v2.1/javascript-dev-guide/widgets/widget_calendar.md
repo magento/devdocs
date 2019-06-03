@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Calendar widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
 ---
 
 ## Overview {#fedg_jquery-widget_calendar-overview}
@@ -48,7 +46,6 @@ require([
 ## Options, methods, and events {#fedg_calendar_options}
 
 Most options, methods, and events for the calendar widget correspond to the jQuery [Datepicker Widget] options.
-
 
 [Datepicker Widget]: http://api.jQueryui.com/datepicker/
 [global configuration]: #fedg_calendar_config

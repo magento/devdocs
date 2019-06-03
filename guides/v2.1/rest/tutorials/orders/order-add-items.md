@@ -16,13 +16,13 @@ functional_areas:
   - Catalog
 ---
 
-This article shows how to add a simple product, a downloadable product, and a {% glossarytooltip fbcfce51-68e2-482f-84d5-f28d84404cff %}bundle product{% endglossarytooltip %} to the cart.
+This article shows how to add a simple product, a downloadable product, and a [bundle product](https://glossary.magento.com/bundle-product) to the cart.
 
-All calls are performed on behalf of a customer, and the customer's token is specified in the {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} header.
+All calls are performed on behalf of a customer, and the customer's token is specified in the [authorization](https://glossary.magento.com/authorization) header.
 
 ### Add a simple product to a cart {#add-simple}
 
-To add a {% glossarytooltip f85f36ad-2942-446e-b711-39f2a16f6364 %}simple product{% endglossarytooltip %} to a cart, you must provide a `sku`, the quantity, and the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} ID, which was generated when the cart was created.
+To add a [simple product](https://glossary.magento.com/simple-product) to a cart, you must provide a `sku`, the quantity, and the [quote](https://glossary.magento.com/quote) ID, which was generated when the cart was created.
 
 The following example adds an orange medium-sized Radiant women's t-shirt (`sku`: `WS12-M-Orange`) to the cart.
 
@@ -63,7 +63,7 @@ The following example adds an orange medium-sized Radiant women's t-shirt (`sku`
 
 ### Add a downloadable product to a cart {#add-downloadable}
 
-The requirements for adding a {% glossarytooltip 38fc3629-ee25-4de5-ac7a-72db8e8de6de %}downloadable product{% endglossarytooltip %} to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
+The requirements for adding a [downloadable product](https://glossary.magento.com/downloadable-product) to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
 
 The following example adds the downloadable product Advanced Pilates & Yoga (`sku`: 240-LV08)
 
@@ -426,4 +426,4 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 ### Verify this step {#verify-step}
 
-{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} as the customer and click on the {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %}. All the items you added are displayed.
+[Sign in](https://glossary.magento.com/sign-in) as the customer and click on the [shopping cart](https://glossary.magento.com/shopping-cart). All the items you added are displayed.

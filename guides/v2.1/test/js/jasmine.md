@@ -1,15 +1,13 @@
 ---
 group: testing
 title: JavaScript unit testing with Jasmine
-redirect_from:
-  - /guides/v2.0/extension-dev-guide/test/test_js-unit.html
-  - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
+redirect_from: /guides/v2.1/extension-dev-guide/test/test_js-unit.html
 functional_areas:
   - Testing
   - test
 ---
 
-Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a [theme](https://glossary.magento.com/theme).
 
 ## Prepare environment
 
@@ -89,7 +87,7 @@ in its static representations generated in [Step 6] previously:
 
 For convenience, we can reflect the directory structure of a file to test.
 
-A path to JS {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
+A path to JS [module](https://glossary.magento.com/module) that we want to cover with tests: `app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`
 
 A path to a test of the module: `app/code/Magento/Ui/base/js/grid/columns/actions.test.js`
 

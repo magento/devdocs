@@ -7,7 +7,7 @@ functional_areas:
 
 ## What's in this topic {#preproc_over}
 
-The topic describes how stylesheets are preprocessed and compiled to {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} in the Magento application. It provides the theoretical background a {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developer needs to debug stylesheets effectively.
+The topic describes how stylesheets are preprocessed and compiled to [CSS](https://glossary.magento.com/css) in the Magento application. It provides the theoretical background a [frontend](https://glossary.magento.com/frontend) developer needs to debug stylesheets effectively.
 
 ## Terms used {#css_preprocess_terms}
 
@@ -85,7 +85,7 @@ In server-side Less compilation mode, to have your changes applied, you need to 
 
 1. Clear `pub/static/frontend/<Vendor>/<theme>/<locale>` by deleting the directory in the file system (excluding .htaccess).
 2. Clear the `var/cache` and `var/view_preprocessed` directories by deleting the directory in the file system. (if they already existed there).
-2. Trigger {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} compilation and publication. This can be done in one of the following ways:
+2. Trigger [static files](https://glossary.magento.com/static-files) compilation and publication. This can be done in one of the following ways:
 
 	-  Reloading the page where the modified styles are applied.
 	-  Running the [static files deployment tool]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-static-view.html).

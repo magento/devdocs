@@ -104,10 +104,10 @@ Successful: 897 files modified
 New version of deployed files: 1440461332
 Static content deployment complete
 Gathering css/styles-m.less sources.
-Successfully processed LESS and/or {% glossarytooltip 45f1f76d-91cd-4789-a8b5-1e3f321a6280 %}Sass{% endglossarytooltip %} files
+Successfully processed LESS and/or [Sass](https://glossary.magento.com/sass) files
 ```
 
-{% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} deployment complete
+[CSS](https://glossary.magento.com/css) deployment complete
 Generated classes:
         Magento\Sales\Api\Data\CreditmemoCommentInterfacePersistor
         Magento\Sales\Api\Data\CreditmemoCommentInterfaceFactory

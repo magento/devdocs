@@ -11,7 +11,7 @@ The Magento menu widget is a customized [jQuery UI Menu widget](http://api.jquer
 -   declaring a responsive menu
 -   setting hover delay
 
-The Magento menu {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/menu.js].
+The Magento menu [widget](https://glossary.magento.com/widget) source is [lib/web/mage/menu.js].
 
 ## Initialize the menu widget {#menu_init}
 

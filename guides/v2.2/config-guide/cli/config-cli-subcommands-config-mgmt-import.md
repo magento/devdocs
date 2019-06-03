@@ -27,7 +27,7 @@ Use the optional `[-n, --no-interaction]` flag to import data without any intera
 
 If you enter `bin/magento app:config:import` without the optional flag, you're required to confirm the changes.
 
-For example, if configuration file contains one new {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} and one new store, the following  message is displayed:
+For example, if configuration file contains one new [website](https://glossary.magento.com/website) and one new store, the following  message is displayed:
 
     These Websites will be created: New Website
     These Groups will be created: New Store
@@ -53,7 +53,7 @@ The following sections discuss in detail what data we import.
 
 Magento directly uses values in the `system` array in the `config.php` or `env.php` files instead of importing them into the database because they require some pre- and post-processing actions.
 
-For example, the value of the configuration path `web/secure/base_url` must be validated with {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} models.
+For example, the value of the configuration path `web/secure/base_url` must be validated with [backend](https://glossary.magento.com/backend) models.
 
 #### Backend models
 
@@ -80,7 +80,7 @@ The preceding configurations can be imported in the following modes:
 *   `delete`: `config.php` does _not_ contain entities (`websites`, `groups`, `stores`) that are present on production environment
 
 {:.bs-callout .bs-callout-info}
-We don't import the root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} associated with stores. You must associate a root category with a store using the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+We don't import the root [category](https://glossary.magento.com/category) associated with stores. You must associate a root category with a store using the Magento [Admin](https://glossary.magento.com/admin).
 
 ### Theme configuration
 
@@ -92,7 +92,7 @@ Theme configuration includes all themes registered in your Magento system; the d
 The key of array is full theme path: `area` + `theme path`
 
 For example, `frontend/Magento/luma`.
-`frontend` is area and `Magento/luma` is {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} path.
+`frontend` is area and `Magento/luma` is [theme](https://glossary.magento.com/theme) path.
 
 The value of array is data about theme: code, title, path, parent id and etc.
 

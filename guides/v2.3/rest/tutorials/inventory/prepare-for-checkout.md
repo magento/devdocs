@@ -8,12 +8,11 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/prepare-for-checkout.html
 functional_areas:
   - Integration
 ---
 
-Now that all the items have been added to the cart, we can prepare the quote for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. This process includes the following steps:
+Now that all the items have been added to the cart, we can prepare the quote for [checkout](https://glossary.magento.com/checkout). This process includes the following steps:
 
 * Estimate shipping costs
 * Set shipping and billing information
@@ -147,7 +146,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 The subtotal of the order is $2462, and shipping charges are $350. The grand total is $2812.
 
-The available payment methods are `banktransfer` and `checkmo`. The customer will specify a {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} in the next step.
+The available payment methods are `banktransfer` and `checkmo`. The customer will specify a [payment method](https://glossary.magento.com/payment-method) in the next step.
 
 
 ```json
@@ -318,6 +317,6 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 ### Verify this step {#verify-step}
 
-{% glossarytooltip c3ce6f9b-a66a-4d81-ad4c-700f9dfaa9e2 %}Sign in{% endglossarytooltip %} to the US store (`http://<host>/us`) as the customer and go to the checkout page.
+[Sign in](https://glossary.magento.com/sign-in) to the US store (`http://<host>/us`) as the customer and go to the checkout page.
 
 The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges and shipping charges calculate and display.

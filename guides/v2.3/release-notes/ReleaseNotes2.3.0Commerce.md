@@ -31,7 +31,7 @@ Follow these steps to download and apply this patch:
 
 5. From your project root, apply the patch.  `git apply ./m2-hotfixes/<patch-file-name>`.
 
-6. Refresh the cache from the Admin (**System** > **Cache Management**).
+6. Refresh the cache from the Admin (**System** > Tools > **Cache Management**).
 
 
 ### Merchant tool enhancements
@@ -181,7 +181,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-93699 -->* Improved the cron job management process during the deploy phase to prevent database locks and other critical issues. Now, all cron jobs stop during the deploy phase and restart after deployment completes.
 
-<!---MAGETWO-91863 -->* Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **System Configuration** > **General** > **Reports**. Note that certain product features, such as  Magento Commerce dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly. 
+<!---MAGETWO-91863 -->* Statistics collection for the Reports module is now disabled by default. To enable or partially disable it, see **Stores** > Settings > **Configuration** > **General** > **Reports**. Note that certain product features, such as  Magento Commerce dynamic customer segments (specifically the ones based on viewed products), rely on Reports data collection to function properly. 
 
 <!---MAGETWO-88281 -->* You can now add a new IP address to an existing list by appending the new address with the `- add` flag rather than replacing a former address with a new one.  *Fix submitted by [Serhii](https://github.com/serhii-balko) in pull request [13783](https://github.com/magento/magento2/pull/13783)*. [GitHub-10559](https://github.com/magento/magento2/issues/10559)
 
@@ -263,7 +263,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-87449 -->* Magento now displays a more informative message you update a module and then switch to a different branch of source control that contains a lower version of that module. [GitHub-9981](https://github.com/magento/magento2/issues/9981)   
 
-<!---MAGETWO-87154 -->*  Disabling the **State is Required for** field from **Admin** > **Stores** > **Settings** > **Configuration** > **General** now works as expected. [GitHub-12894](https://github.com/magento/magento2/issues/12894)
+<!---MAGETWO-87154 -->*  Disabling the **State is Required for** field from **Stores** > Settings > **Configuration** > **General** > **General** > **State Options** now works as expected. [GitHub-12894](https://github.com/magento/magento2/issues/12894)
 
 
 
@@ -362,7 +362,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-95924 -->* Merchants can now create new user roles that do not have  access to Quotes.
 
 
-<!--- MAGETWO-94234 -->* Merchants can now successfully update product prices and currencies using **Admin** > **Stores** > **Settings** > **Configuration** > **Currency Setup**. 
+<!--- MAGETWO-94234 -->* Merchants can now successfully update product prices and currencies using **Stores** > Settings > **Configuration** > **General** > **Currency Setup**. 
 
 
 
@@ -396,7 +396,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-81175-->* The One Touch Ordering feature allows users to place orders without going through full checkout. *Fix submitted by [Daniel Korzeniowski](https://github.com/danielkorzeniowski)*. 
 
-<!--- MAGETWO-71761-->* You can now delete the last product in your shopping cart even when the **Minimum Order Amount** setting (**Admin** > **Sales**) is enabled. Previously, if you tried to delete the last item in your cart under these circumstances, Magento would throw an exception. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request [10601](https://github.com/magento/magento2/pull/10601)* [GitHub-6151](https://github.com/magento/magento2/issues/6151)
+<!--- MAGETWO-71761-->* You can now delete the last product in your shopping cart even when the **Minimum Order Amount** setting (**Stores** > Settings > **Configuration** > **Sales** > **Sales**) is enabled. Previously, if you tried to delete the last item in your cart under these circumstances, Magento would throw an exception. *Fix submitted by [Anton Evers](https://github.com/ajpevers) in pull request [10601](https://github.com/magento/magento2/pull/10601)* [GitHub-6151](https://github.com/magento/magento2/issues/6151)
 
 <!--- MAGETWO-86894-->* The checkout agreements `getList` method was refactored to include a new listing interface that supports the ability to set search criteria. *Fix submitted by [Stanislav Idolov](https://github.com/sidolov) in pull request [13221](https://github.com/magento/magento2/pull/13221)*. 
 
@@ -855,7 +855,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- ENGCOM-2481 -->* Unnecessary leading and trailing spaces have been removed from the customer account login page email field. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [16956](https://github.com/magento/magento2/pull/16956)*. [GitHub-6058](https://github.com/magento/magento2/issues/6058)
 
 
-<!--- ENGCOM-2067 -->* Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened **Admin** > **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`.  *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15842](https://github.com/magento/magento2/pull/15842)*. [GitHub-15822](https://github.com/magento/magento2/issues/15822)
+<!--- ENGCOM-2067 -->* Table alias prefixes in field mappings for customer group filter and sorting processors that were previously missing have been restored. Previous to this restoration, Magento threw this error when a merchant opened  **Customers** > **All Customers**: `SQL Error: ambiguous column 'customer_group_id' in 'All customers' page in admin when extension attribute table is joined`.  *Fix submitted by [Hitesh](https://github.com/hitesh-wagento) in pull request [15842](https://github.com/magento/magento2/pull/15842)*. [GitHub-15822](https://github.com/magento/magento2/issues/15822)
 
 <!--- ENGCOM-2060 -->* Customer accounts are now unlocked as expected after a password reset. [GitHub-15534](https://github.com/magento/magento2/issues/15534)
 
@@ -944,7 +944,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- ENGCOM-2708 -->* The Product Attribute Repository's incorrect return values have been replaced with values that now adhere to `Magento\Catalog\Api\ProductAttributeRepositoryInterface (extends Magento\Framework\Api\MetadataServiceInterface)` as expected. *Fix submitted by [julianvdrielen](https://github.com/julianvdrielen) in pull request [15723](https://github.com/magento/magento2/pull/15723)*.  [GitHub-4803](https://github.com/magento/magento2/issues/4803)
 
-<!--- MAGETWO-94070 -->*  When Elasticsearch is configured as the search engine, you can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Configuration** > **Catalog**  > **Catalog Search**).
+<!--- MAGETWO-94070 -->*  When Elasticsearch is configured as the search engine, you can now enable and disable the EAV indexer from the Enable EAV Indexer field (**Stores** > Settings > **Configuration** > **General** > **Catalog**  > **Catalog Search**).
 
 <!--- MAGETWO-91580 -->*  Magento no longer displays empty product attributes of type `dropdown` or `swatch` as having a value of **no** on the storefront. 
 
@@ -1065,7 +1065,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---MAGETWO-82428 -->* You can now successfully print out an invoice from the Admin without including order details. Previously,  Magento threw a fatal error because the `Zend_Pdf_Color_RGB` class  was not found in the `_drawHeader` method. [GitHub-11581](https://github.com/magento/magento2/issues/11581)
 
-<!---ENGCOM-1397 -->*  The **Stores** > **Terms and Conditions** table now displays the names of all store views and conditions as expected. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14868](https://github.com/magento/magento2/pull/14868)*. [GitHub-13944](https://github.com/magento/magento2/issues/13944)
+<!---ENGCOM-1397 -->*  The **Stores** > Settings > **Terms and Conditions** table now displays the names of all store views and conditions as expected. *Fix submitted by [Rostyslav](https://github.com/rostyslav-hymon) in pull request [14868](https://github.com/magento/magento2/pull/14868)*. [GitHub-13944](https://github.com/magento/magento2/issues/13944)
 
 <!---ENGCOM-2232 -->* We’ve fixed backward-incompatible changes to transport variable event parameters that had previously resulted in neither the email or the `$transport` variable being changed as expected.  *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [16600](https://github.com/magento/magento2/pull/16600)*. [GitHub-10210](https://github.com/magento/magento2/issues/10210)
 
@@ -1260,7 +1260,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- ENGCOM-2375 -->* Store view home pages in multistore deployments no longer display breadcrumbs. Previously, the first store view in a multistore deployment looked fine, but the other store views included unnecessary breadcrumbs on the home page. [GitHub-6504](https://github.com/magento/magento2/issues/6504)
 
-<!--- ENGCOM-2729 -->* You can now enable logs as expected (through the use of **Stores** > **Settings** > **Configuration** > **Advanced** > **Developer** > **Debug** > **Log to file**) when switching from production mode to developer mode.
+<!--- ENGCOM-2729 -->* You can now enable logs as expected (through the use of **Stores** > Settings > **Configuration** > **Advanced** > **Developer** > **Debug** > **Log to file**) when switching from production mode to developer mode.
 
 <!--- ENGCOM-2505 -->*  `magnifier.js` now works no matter which mode is set. (`magnifier.js` offers the option of setting mode to 'inside' for an in-frame zoom.) [GitHub-4977](https://github.com/magento/magento2/issues/4977)
 
@@ -1277,7 +1277,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- MAGETWO-87066 -->* The `404 forbidden` error message has been corrected for accuracy to `404 not found` in `/app/code/Magento/Backend/Controller/Adminhtml/Noroute/Index.php`. [GitHub-10775](https://github.com/magento/magento2/issues/10775)
 
 
-<!--- ENGCOM-1857 -->* The Module Manager module grid list is now displayed correctly (**System** > **Tools** > **Web Setup Wizard**  >  **Module Manager**).  *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15755](https://github.com/magento/magento2/pull/15755)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
+<!--- ENGCOM-1857 -->* The Module Manager module grid list is now displayed correctly (**System** > Tools > **Web Setup Wizard**  >  **Module Manager**).  *Fix submitted by [Vijay Golani](https://github.com/vijay-wagento) in pull request [15755](https://github.com/magento/magento2/pull/15755)*. [GitHub-15192](https://github.com/magento/magento2/issues/15192)
 
 <!--- MAGETWO-87176 -->* Layered navigation now shows the correct product count. Previously, Magento counted only in-stock product.  [GitHub-11946](https://github.com/magento/magento2/issues/11946)  
 
@@ -1296,7 +1296,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-87064 -->*  `health_check.php` has been added into the `nginx.conf.sample` file.  [GitHub-11157](https://github.com/magento/magento2/issues/11157)  
 
-<!---ENGCOM-1229 -->* The Google Analytics block code has been moved to the  <code><head></code> tag on the **Stores** > **Settings** > **Configuration** > **Sales** > **Google API** page.   [GitHub-8837](https://github.com/magento/magento2/issues/8837)  
+<!---ENGCOM-1229 -->* The Google Analytics block code has been moved to the  <code><head></code> tag on the **Stores** > Settings > **Configuration** > **Sales** > **Google API** page.   [GitHub-8837](https://github.com/magento/magento2/issues/8837)  
 
 <!--- MAGETWO-88018-->*    Magento now displays a more helpful message when you misspell the name of a new module in `registration.php`.  *Fix submitted by [Malyovanets Nickolas](https://github.com/nmalevanec) in pull request [13731](https://github.com/magento/magento2/pull/13731)*.
 
@@ -1411,7 +1411,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!--- ENGCOM-1514 -->* Product import now updates the **Enable Qty Increments** field as expected.  [GitHub-14351](https://github.com/magento/magento2/issues/14351)
 
 
-<!--- MAGETWO-94206 -->*  Magento now displays the correct execution time for an import operation on the **System** > **Import History** page. 
+<!--- MAGETWO-94206 -->*  Magento now displays the correct execution time for an import operation on the **System** > Data Transfer > **Import History** page. 
 
 
 
@@ -1567,7 +1567,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-80287 -->* A new static test detects blocks without the `name` attribute. 
 
-<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.0/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
+<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
 
 
 <!---MAGETWO-87056 -->*  You can now use the command-line interface to create a new administrator. Previously, Magento did not recognize configured tableprefix, which prevented Magento from creating the new user. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
@@ -1701,7 +1701,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 <!-- MAGETWO-87351 -->* New orders are now being saved as expected to the order grid. [GitHub-10128](https://github.com/magento/magento2/issues/10128)    
 
 
-<!---ENGCOM-1999 -->* Magento now correctly applies the designated frontend controller when store view URLs contain store codes (**Stores** > **Configuration** > **Settings** > **General**  > **Web** > **Add Store Code to Urls** is set to **yes**).  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15759](https://github.com/magento/magento2/pull/15759)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
+<!---ENGCOM-1999 -->* Magento now correctly applies the designated frontend controller when store view URLs contain store codes (**Stores** > Settings > **Configuration** > **General**  > **Web** > **Url Options** > **Add Store Code to Urls** is set to **yes**).  *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [15759](https://github.com/magento/magento2/pull/15759)*. [GitHub-15565](https://github.com/magento/magento2/issues/15565)
 
 <!--- MAGETWO-80095-->* Magento now checks if an invoice has been previously  canceled before canceling it. 
 
@@ -1747,7 +1747,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-93763 -->* Magento no longer throws an error when you try to add a new shipping address to an order paid with using Braintree from the Admin. 
 
-<!--- MAGETWO-95512 -->*  Magento now creates invoices as expected for orders created using Braintree PayPal. Previously, Magento threw an error when a merchant tried to create an invoice for an order from **Admin** > **Sales** > **Order**.
+<!--- MAGETWO-95512 -->*  Magento now creates invoices as expected for orders created using Braintree PayPal. Previously, Magento threw an error when a merchant tried to create an invoice for an order from **Sales** > **Orders**.
 
 <!-- MAGETWO-87154 -->*   Magento no longer disables the **Place Order** button  after an attempt to validate a payment made with PayPal fails. [GitHub-12900](https://github.com/magento/magento2/issues/12900)  
 
@@ -1829,7 +1829,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---ENGCOM-2169 -->*  The timezone has been removed from the date when Magento retrieves the current month from a UTC timestamp. *Fix submitted by [Michael Wylde](https://github.com/michaelwylde) in pull request [16492](https://github.com/magento/magento2/pull/16492)*. [GitHub-15940](https://github.com/magento/magento2/issues/15940)
 
-<!--- ENGCOM-2765 -->* The **Year-to-date** dropdown accessed from **Stores** > **Settings** > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected.  *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17495](https://github.com/magento/magento2/pull/17495)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
+<!--- ENGCOM-2765 -->* The **Year-to-date** dropdown accessed from **Stores** > Settings > **Configuration** > **General** > **Reports** > **Dashboard** now displays a numerical list that ranges from 01 to 12 as expected.  *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [17495](https://github.com/magento/magento2/pull/17495)*. [GitHub-17289](https://github.com/magento/magento2/issues/17289)
 
 
 <!--- MAGETWO-84811 -->* A valid  XML layout update handle is now preinstalled in the home page.  *Fix submitted by [adrian-martinez-interactiv4](https://github.com/adrian-martinez-interactiv4) in pull request [11891](https://github.com/magento/magento2/pull/11891)*. 
@@ -1844,7 +1844,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-91805 -->* When a customer creates a product review, the link to the product from the review in the customer's **My Account** > **My Product Review** is now SEO-friendly.
 
-<!-- MAGETWO-95723 -->* The **Save and Next** and **Save and Previous**  buttons on **Marketing** > **Reviews**  now work as expected. 
+<!-- MAGETWO-95723 -->* The **Save and Next** and **Save and Previous**  buttons on **Marketing** > User Content > **All Reviews**  now work as expected. 
 
 <!---ENGCOM-1234 -->* Magento now checks if a product is assigned to a current website before displaying the write a review page. *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14528](https://github.com/magento/magento2/pull/14528)*. [GitHub-13010](https://github.com/magento/magento2/issues/13010)
 
@@ -2034,7 +2034,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---ENGCOM-2666 -->* Images in XML sitemap are no longer always linked to the primary store in a multistore deployment. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [16813](https://github.com/magento/magento2/pull/16813)*. [GitHub-15588](https://github.com/magento/magento2/issues/15588)
 
-<!---ENGCOM-1351 -->* Magento now generates correct product URLS when you generate a sitemap of categories and products with **Use Categories Path for Product URLs** set to **no** ( **Configuration** > **Catalog** > **Search Engine Optimization**). *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14786](https://github.com/magento/magento2/pull/14786)*. [GitHub-4788](https://github.com/magento/magento2/issues/4788)
+<!---ENGCOM-1351 -->* Magento now generates correct product URLS when you generate a sitemap of categories and products with **Use Categories Path for Product URLs** set to **no** ( **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Search Engine Optimization**). *Fix submitted by [Mastiuhin Oleksandr](https://github.com/mastiuhin-olexandr) in pull request [14786](https://github.com/magento/magento2/pull/14786)*. [GitHub-4788](https://github.com/magento/magento2/issues/4788)
 
 ### Staging
 
@@ -2052,7 +2052,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!---ENGCOM-2606 -->* The `getUrlInStore()` method no longer returns URLs that contain the store code, which has shortened the extremely long URLs it previously returned. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [17261](https://github.com/magento/magento2/pull/17261)*. [GitHub-16273](https://github.com/magento/magento2/issues/16273)
 
-<!--- MAGETWO-87615 -->*  You can now use an `admin_system_config_changed_section` event to subscribe to changes for all sections in **Stores** > **Settings** > **Configuration**. [GitHub-5035](https://github.com/magento/magento2/issues/5035)  
+<!--- MAGETWO-87615 -->*  You can now use an `admin_system_config_changed_section` event to subscribe to changes for all sections in **Stores** > Settings > **Configuration**. [GitHub-5035](https://github.com/magento/magento2/issues/5035)  
 
 <!--- MAGETWO-87938 -->*  TinyMCE now loads successfully due to a refactoring of  the use of  `minify_exclude` configuration. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [13687](https://github.com/magento/magento2/pull/13687)*. [GitHub-11577](https://github.com/magento/magento2/issues/11577)
 
@@ -2172,7 +2172,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!-- MAGETWO-93708 -->* We've added  client-side caching of `js-translation.js`.
 
-<!-- MAGETWO-94119 -->* The datepicker date filter on **Reports** > **Products** > **Ordered** now works as expected for administrators working in Australian English locales. 
+<!-- MAGETWO-94119 -->* The datepicker date filter on **Reports** > Products > **Ordered** now works as expected for administrators working in Australian English locales. 
 
 <!--- ENGCOM-1055 -->* Magento now supports Malaysian locales. *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request [14305](https://github.com/magento/magento2/pull/14305)*. [GitHub-14089](https://github.com/magento/magento2/issues/14089)
 
@@ -2251,7 +2251,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 <!--- MAGETWO-88091-->* Switching store views now works as expected. Previously, under some conditions, users were redirected to a 404 page.[GitHub-5416](https://github.com/magento/magento2/issues/5416)
 
-<!--- MAGETWO-88091-->* You can now reset a form by clicking **Reset** in **Marketing** > **SEO & Search** > **URL Rewrites**. [GitHub-10459](https://github.com/magento/magento2/issues/10459)
+<!--- MAGETWO-88091-->* You can now reset a form by clicking **Reset** in **Marketing** > SEO & Search > **URL Rewrites**. [GitHub-10459](https://github.com/magento/magento2/issues/10459)
 
 <!-- MAGETWO-91808 -->* Categories of the Main menu in the different store view are now updated when Varnish is enabled. 
 
@@ -2319,7 +2319,7 @@ We've fixed hundreds of issues in the Magento 2.3.0 core code.
 
 **Known issue:** After installing a module and running `setup:upgrade`, you must run `cache:clean config`.
 
-**Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > **Other Settings ** > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
+**Known issue:** When installing or upgrading Magento and upgrading PHP to 7.2, you must specify an encryption key value of 32 symbols (256 bits) or Magento will throw an error, and any sensitive, unsaved configuration data will be lost. When upgrading Magento and upgrading  PHP to 7.2, make sure that your encryption key is exactly 32 symbols. To do this, navigate to  **System** > Other Settings > **Manage Encryption Key** and either enter a new key or generate a new one. To change the key, make sure that `app/etc/env.php` is writable.
 
 
 **Known issue:** Magento throws the following error when you try to use the API to create two products with the same name without specifying the URL key: `URL key for specified store already exists.`  However, when you try to create these products through the Admin, Magento does not throw an error, but instead appends a number to the converted URL key if two products have the same name.

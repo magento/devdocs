@@ -7,9 +7,7 @@ menu_order: 1
 menu_node: parent
 functional_areas:
   - Cloud
-redirect_from:
-  - /guides/v2.0/cloud/admin/administer.html
-  - /guides/v2.1/cloud/admin/administer.html
+redirect_from: /guides/v2.1/cloud/admin/administer.html
 ---
 
 The {{site.data.var.ece}} *project* includes all code in Git branches, associated environments, and *applications*. Applications have *environments* and *services* that run on them including a database, web server, and caching server.
@@ -57,7 +55,7 @@ Your project includes [Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html), 
 
 * [Blackfire.io Profiler](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
 
-* [New Relic APM](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in {{site.data.var.ece}}.
+* [New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.
 
 To review your integration tokens, IDs, and more:
 
