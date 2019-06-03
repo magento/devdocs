@@ -18,12 +18,12 @@ Backward-incompatible changes are documented in [Magento 2.1 backward incompatib
 
 Magento 2.1.2 contains multiple bug fixes and enhancements, including
 
-* Support for <i>PHP 7.0.4 and 5.6.5</i>. This release supports {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.6.5 and above instead of 5.6.x.
+* Support for <i>PHP 7.0.4 and 5.6.5</i>. This release supports [PHP](https://glossary.magento.com/php) 5.6.5 and above instead of 5.6.x.
 
 * Compatible with <i>MySQL 5.7</i>.
 
 
-* <i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} that is currently available in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See [Module Reference Guide]({{ page.baseurl }}/mrg/intro.html){:target="_blank"} for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
+* <i>Two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales [API](https://glossary.magento.com/api) that is currently available in the [Admin](https://glossary.magento.com/admin) interface. After you install this patch, you’ll be able to use the Sales API `ShipOrder` and `InvoiceOrder` methods to capture payment and ship product. See [Module Reference Guide]({{ page.baseurl }}/mrg/intro.html){:target="_blank"} for information on using the `ShipOrder` and `InvoiceOrder` interfaces. 
 
 ### Why are we adding new APIs in a patch release?
 {:.no_toc} 
@@ -39,14 +39,14 @@ The following list provides an overview of the security issues fixed in this rel
 ### General security
 {:.no_toc} 
 
-<!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and subsequently execute it in the Admin context.  
+<!--- 56912/1488-->*  Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious [JavaScript](https://glossary.magento.com/javascript) and subsequently execute it in the Admin context.  
 
 
-<!--- 57565-->* You can no longer change or fake a product price from the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and then complete an order with that faked price. 
+<!--- 57565-->* You can no longer change or fake a product price from the Magento [storefront](https://glossary.magento.com/storefront) and then complete an order with that faked price. 
 
 
 
-<!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. 
+<!--- 56852/1484-->*  Fixed issue with arbitrary PHP code execution during [checkout](https://glossary.magento.com/checkout). 
 
 
 <!--- 56594/1490-->*  Magento no longer permits you to use Products > Images and Videos > Insert YouTube video to potentially upload malicious code.
@@ -77,7 +77,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!--- 46026/57463-->* The Guest order view protection code is no longer vulnerable to brute force attacks.
 
-<!--- 57302/1338-->*  You can no longer manipulate the full page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} to store incorrect pages under regular page {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} entries.
+<!--- 57302/1338-->*  You can no longer manipulate the full page [cache](https://glossary.magento.com/cache) to store incorrect pages under regular page [URL](https://glossary.magento.com/url) entries.
 
 ### Cross-site scripting  (XSS)
 {:.no_toc} 
@@ -102,7 +102,7 @@ We address the following functional issues in this release.
 {:.no_toc} 
 
 
-<!--- 56429 -->*  We've added the ability to change the status of a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} through the {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %}.  The new `ShipOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
+<!--- 56429 -->*  We've added the ability to change the status of a [shipment](https://glossary.magento.com/shipment) through the [web API](https://glossary.magento.com/web-api).  The new `ShipOrder` interface supports tasks you can already do through the Admin dashboard, including the ability to:  
 
 	* create a shipment document (full or partial)
 
@@ -131,12 +131,12 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 <!--- 55126-->* We've fixed an issue with using the REST API to link simple products to configurable ones. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){:target="_blank"}
 
 
-<!--- 58401-->* You can now use the REST API to create a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %} with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){:target="_blank"}
+<!--- 58401-->* You can now use the REST API to create a [configurable product](https://glossary.magento.com/configurable-product) with a linked child product. [(GITHUB-5243)](https://github.com/magento/magento2/issues/5243){:target="_blank"}
 
 ### Cart and checkout
 {:.no_toc} 
 
-<!--- 56431, 56426-->* Magento now updates {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %} as expected after a shipment or {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} has been created through the API.
+<!--- 56431, 56426-->* Magento now updates [order status](https://glossary.magento.com/order-status) as expected after a shipment or [invoice](https://glossary.magento.com/invoice) has been created through the API.
 
 
 <!--- 54964-->* Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. [(GITHUB-6121)](https://github.com/magento/magento2/issues/6121){:target="_blank"} 
@@ -144,7 +144,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 ### Tracking and shipping
 {:.no_toc}  
 
-<!--- 57460-->* Magento no longer throws an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} if you enter an invalid FedEx shipment tracking number.
+<!--- 57460-->* Magento no longer throws an [exception](https://glossary.magento.com/exception) if you enter an invalid FedEx shipment tracking number.
 
 
 <!--- 57097-->* Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate did not update when you changed the city field. 	
@@ -165,7 +165,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 <!--- 56952-->* We've resolved an issue with the get active payment methods (`getActiveMethods`). [(GITHUB-5413)](https://github.com/magento/magento2/issues/5413){:target="_blank"}
 
 
-<!--- 58568-->* Magento now correctly renders {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} tags on the Sales Order page price field. 
+<!--- 58568-->* Magento now correctly renders [HTML](https://glossary.magento.com/html) tags on the Sales Order page price field. 
 
 <!--- 57032-->* Visual swatches are now displayed in search results.
 
@@ -199,7 +199,7 @@ For more information on these API enhancements, see [Magento Sales API]({{ page.
 <!--- 56853-->
 
 
-* **Issue**:  Magento does not correctly display Product > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{ site.baseurl }}/guides/v2.0/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
+* **Issue**:  Magento does not correctly display Product > [Catalog](https://glossary.magento.com/catalog) table after upgrade from 2.0.1 to 2.1.0 on systems running Varnish. **Workaround**: Restart Varnish after upgrading. For more information, see [Component Manager and System Upgrade Guide: Step 4]({{page.baseurl}}/comp-mgr/upgrader/upgrade.html){:target="_blank"}.
 <!--- 54618-->
 
 ## System requirements

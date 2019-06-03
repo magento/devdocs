@@ -75,4 +75,4 @@ Please see the [Get payment information from frontend to backend]({{ page.baseur
 
 ## Related topics
 
-- [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page.
+- [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to [checkout](https://glossary.magento.com/checkout) page.

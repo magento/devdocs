@@ -6,7 +6,6 @@ menu_title: Manage branches with the Interface
 menu_order: 20
 menu_node:
 redirect_from:
-  - /guides/v2.0/cloud/project/project-priv-repos.html
   - /guides/v2.1/cloud/project/project-priv-repos.html
   - /guides/v2.2/cloud/project/project-priv-repos.html
 functional_areas:

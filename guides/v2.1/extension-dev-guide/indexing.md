@@ -1,15 +1,13 @@
 ---
 group: php-developer-guide
 title: Indexing overview
-redirect_from:
-  - /guides/v2.0/architecture/index-cache/indexing.html
 ---
 
-Indexing is how Magento transforms data such as products and categories, to improve the performance of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. As data changes, the transformed data must be updated or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} data, prices, users, and stores) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.
+Indexing is how Magento transforms data such as products and categories, to improve the performance of your [storefront](https://glossary.magento.com/storefront). As data changes, the transformed data must be updated or reindexed. Magento has a very sophisticated architecture that stores lots of merchant data (including [catalog](https://glossary.magento.com/catalog) data, prices, users, and stores) in many database tables. To optimize storefront performance, Magento accumulates data into special tables using indexers.
 
 For example, if you change the price of an item from $4.99 to $3.99. Magento must reindex the price change to display it on your storefront.
 
-Without indexing, Magento would have to calculate the price of every product on the fly, taking into account {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} price rules, bundle pricing, discounts, tier pricing, etc. Loading the price for a product would take a long time, possibly resulting in cart abandonment.
+Without indexing, Magento would have to calculate the price of every product on the fly, taking into account [shopping cart](https://glossary.magento.com/shopping-cart) price rules, bundle pricing, discounts, tier pricing, etc. Loading the price for a product would take a long time, possibly resulting in cart abandonment.
 
 ## Indexing terminology
 
@@ -52,8 +50,8 @@ The following components are involved in the indexing process:
 	<tr>
 		<td><a href="{{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Mview" target="_blank">Magento\Framework\Mview</a></td>
 		<td><ul>
-<li>Allows tracking database changes for a certain {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} (product, {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}, etc.) and running change handler.</li>
-<li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
+<li>Allows tracking database changes for a certain [entity](https://glossary.magento.com/entity) (product, [category](https://glossary.magento.com/category), etc.) and running change handler.</li>
+<li>Emulates the <a href="http://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized view</a> technology for MySQL using triggers and separate materialization process (provides executing [PHP](https://glossary.magento.com/php) code instead of SQL queries, which allows materializing multiple queries).</li></ul></td>
 	</tr>
 </tbody></table>
 
@@ -86,7 +84,7 @@ Depending on whether an index data is up to date, an indexer status value is one
 *	invalid - the original data was changed, the index should be updated
 *	working - indexing is in progress
 
-The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
+The Magento indexing mechanism uses the status value in reindex triggering process. You can check the status of an indexer in the [Admin](https://glossary.magento.com/admin) panel in **System >** Tools **> Index Management** or manually using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#view-indexer-status).
 
 ### Indexing modes {#m2devgde-indexing-modes}
 
@@ -97,7 +95,7 @@ Reindexing can be performed in two modes:
 
 To set these options:
 
-1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin).
 2.	Click **System >** Tools **> Index Management**.
 3.	Select the checkbox next to each type of indexer to change.
 4.	From the **Actions** list, click the indexing mode.

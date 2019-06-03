@@ -4,10 +4,9 @@ subgroup: 03_Build
 title: URN schema validation
 menu_title: URN schema validation
 menu_order: 5000
-redirect_from: /guides/v2.0/extension-dev-guide/XSD-XML-validation.html
 ---
 
-Each Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can contain XSD files for {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} validation.
+Each Magento [module](https://glossary.magento.com/module) can contain XSD files for [XML](https://glossary.magento.com/xml) validation.
 
 Magento uses [Uniform Resource Names](https://en.wikipedia.org/wiki/Uniform_Resource_Name) (URNs) to reference XML schema declarations.
 
@@ -62,7 +61,7 @@ libxml_set_external_entity_loader(['Magento\Framework\Config\Dom\UrnResolver', '
 ```
 
 {: .bs-callout .bs-callout-info }
-The relative path to other XSDs cannot be used from inside the XSD file, because the {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} loader fails to resolve the relative path.
+The relative path to other XSDs cannot be used from inside the XSD file, because the [entity](https://glossary.magento.com/entity) loader fails to resolve the relative path.
 
 #### Next
 [Name your component]({{ page.baseurl }}/extension-dev-guide/build/create_component.html)
