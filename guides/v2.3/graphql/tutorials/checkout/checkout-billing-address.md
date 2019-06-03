@@ -24,7 +24,7 @@ Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote.htm
 
 ### Add a new billing address
 
-The following mutation adds a new billing address. {{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+The following mutation adds a new billing address. `{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
@@ -245,9 +245,9 @@ query {
 }
 ```
 
-Set {{ CUSTOMER_ADDRESS_ID }}  to an `id` returned in the query.
+Set `{{ CUSTOMER_ADDRESS_ID }}`  to an `id` returned in the query.
 
-{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
@@ -280,10 +280,6 @@ mutation {
   }
 }
 ```
-
-where
-`{{ CART_ID }}` - shopping cart unique ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
-`{{ CUSTOMER_ADDRESS_ID }}` - customer address ID (value from `entity_id` field of `customer_address_entity` table).
 
 **Response**
 
