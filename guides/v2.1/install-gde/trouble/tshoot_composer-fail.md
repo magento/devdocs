@@ -20,7 +20,7 @@ During download, the following error displays:
 
 ### Description
 
-This happens because of changes in certain versions of {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
+This happens because of changes in certain versions of [Composer](https://glossary.magento.com/composer).
 
 The workaround is to downgrade Composer to an earlier version and try your Magento download again.
 

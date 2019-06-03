@@ -118,7 +118,7 @@ We highly recommend testing every merchant and customer interaction in the Stagi
 
 Rather than running a traditional, active-passive master or a master-slave setup, {{site.data.var.ece}} runs a redundant, multi-master architecture where all three instances accept reads and writes. This architecture offers zero downtime when scaling and provides guaranteed transactional integrity.
 
-Because of our unique, redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IP addresses, so having more than one fixed IP address is not a problem.
+Because of our unique, redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to [whitelist](https://glossary.magento.com/whitelist) multiple IP addresses, so having more than one fixed IP address is not a problem.
 
 These three gateways map to the three servers in your Production environment cluster and retain static IP addresses. It is fully redundant and highly available at every level:
 
@@ -158,7 +158,7 @@ The following figure shows the technology used in the Production environment:
 
 {{site.data.var.ee}} seamlessly scales from the smallest 6 CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our redundant architecture means we can offer upscaling without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
-In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) to complement the vertical scaling provided by extra CPUs on the database level.
+In addition, extra web servers can be added to an existing cluster should the constriction be at the [PHP](https://glossary.magento.com/php) level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling) to complement the vertical scaling provided by extra CPUs on the database level.
 
 ## Services {#cloud-arch-services}
 {{site.data.var.ece}} currently supports the following services:
@@ -183,13 +183,12 @@ You can have multiple applications running in the same project. Building a micro
 {{site.data.var.ece}} uses:
 
 -   Operating system: Debian GNU/Linux 8 (jessie)
--   Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}NGINX{% endglossarytooltip %} 1.8
+-   Web server: [NGINX](https://glossary.magento.com/nginx) 1.8
 
 This software is *not* upgradable but versions for the following software is configurable:
 
 -   [PHP]({{ page.baseurl }}/cloud/project/project-conf-files_magento-app.html)
 -   [MySQL]({{ page.baseurl }}/cloud/project/project-conf-files_services-mysql.html)
--   [Solr]({{ site.baseurl }}/guides/v2.0/cloud/project/project-conf-files_services-solr.html)
 -   [Redis]({{ page.baseurl }}/cloud/project/project-conf-files_services-redis.html)
 -   [RabbitMQ]({{ page.baseurl }}/cloud/project/project-conf-files_services-rabbit.html)
 -   [Elasticsearch]({{ page.baseurl }}/cloud/project/project-conf-files_services-elastic.html)

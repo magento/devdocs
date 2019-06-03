@@ -4,16 +4,14 @@ subgroup: Security
 title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
-redirect_from:
-  - /guides/v2.0/extension-dev-guide/security/writing-secure-code.html
-  - /guides/v2.1/extension-dev-guide/security/writing-secure-code.html
+redirect_from: /guides/v2.1/extension-dev-guide/security/writing-secure-code.html
 functional_areas:
   - Standards
 ---
 
 ## Overview
 
-Using {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
+Using [PHP](https://glossary.magento.com/php) features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
 As a developer, you should avoid using features that introduce vulnerabilities in your code.
 
 ## PHP functions to avoid

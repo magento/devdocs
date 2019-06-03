@@ -48,7 +48,7 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 
 	service varnish restart
 
-Then access your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and verify everything is working properly.
+Then access your [storefront](https://glossary.magento.com/storefront) and verify everything is working properly.
 
 ## Errors after upgrade
 
@@ -57,7 +57,7 @@ After you finish your upgrade, errors might display.
 *	On the main storefront page, the following error might display.
 
 		We're sorry, an error has occurred while generating this email.
-*	On a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page, the following error might display:
+*	On a [category](https://glossary.magento.com/category) page, the following error might display:
 
 		We can't find products matching the selection.
 

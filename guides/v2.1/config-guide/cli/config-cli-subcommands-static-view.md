@@ -11,12 +11,12 @@ functional_areas:
 
 ## Overview of static view files deployment {#config-cli-static-overview}
 
-The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for [production mode].
+The static view files deployment command enables you to write [static files](https://glossary.magento.com/static-files) to the Magento file system when the Magento software is set for [production mode].
 
 The term *static view file* refers to the following:
 
 _ "Static" means it can be cached for a site (that is, the file is not dynamically generated).
-    Examples include images and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} generated from LESS.
+    Examples include images and [CSS](https://glossary.magento.com/css) generated from LESS.
 - "View" refers to the presentation layer (from MVC).
 
 Static view files are located in the `<magento_root>/pub/static` directory, and some are cached in the `<magento_root>/var/view_preprocessed` directory as well.
@@ -29,7 +29,7 @@ Static view files deployment is affected by Magento modes as follows:
 You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 {: .bs-callout .bs-callout-warning }
-_Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+_Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new [module](https://glossary.magento.com/module).
 <br/>
 You can clean generated static view files in several ways. Refer to [Clean static files cache topic for details] for more information.
 
@@ -37,7 +37,7 @@ You can clean generated static view files in several ways. Refer to [Clean stati
 
 To deploy static view files:
 
-1.  Log in to the Magento server as, or [switch to], the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+1.  Log in to the Magento server as, or [switch to], the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.  Delete the contents of `<magento_root>/pub/static`.
 3.  Run the static view files deployment tool `<magento_root>/bin/magento setup:static-content:deploy`.
 
@@ -114,7 +114,7 @@ If you enable static view file merging in the Magento Admin, the `pub/static` di
 
 ## Tip for developers customizing the static content deployment tool
 
-When creating a custom implementation of the {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment tool, use only [atomic] file writing for files that should be available on the client.
+When creating a custom implementation of the [static content](https://glossary.magento.com/static-content) deployment tool, use only [atomic] file writing for files that should be available on the client.
 If you use non-atomic file writing, those files might be loaded on the client with partial content.
 
 One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over.

@@ -6,7 +6,7 @@ functional_areas:
   - Theme
 ---
 
-The Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} is a flexible [Less]-based {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} library designed to assist Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} developers.
+The Magento UI [library](https://glossary.magento.com/library) is a flexible [Less]-based [frontend](https://glossary.magento.com/frontend) library designed to assist Magento [theme](https://glossary.magento.com/theme) developers.
 It employs a set of mixins for base elements to ease frontend theme development and customization.
 
 This topic describes how the library is organized, and how to use it. For more information, see the [Magento UI library documentation] that reflects the latest [embedded documentation].
@@ -20,7 +20,7 @@ The Magento UI library provides the ability to customize and reuse the following
 *	drop-downs
 *	forms
 *	icons
-*	{% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}
+*	[layout](https://glossary.magento.com/layout)
 *	loaders
 *	messages
 *	pagination
@@ -32,7 +32,7 @@ The Magento UI library provides the ability to customize and reuse the following
 *	typography
 *	list of theme variables
 
-The following illustration shows a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} product page containing some of the preceding elements:
+The following illustration shows a [storefront](https://glossary.magento.com/storefront) product page containing some of the preceding elements:
 
 ![*A product page with user interface elements specified*][ui_lib1.png]
 
@@ -86,12 +86,12 @@ lib/web
 
 ## Predefined variables {#fedg_using-ui-lib_predef-vars}
 
-If your theme [inherits][] from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code or templates.
+If your theme [inherits][] from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any [CSS](https://glossary.magento.com/css) code or templates.
 Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.
 
 The complete list of these variables and their default values are stored in [`lib/web/css/source/lib/variables`][].
 This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables.
-For example, [`lib/web/css/source/lib/variables/_breadcrumbs.less`][] contains variables used in the `breadcrumbs()` {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}.
+For example, [`lib/web/css/source/lib/variables/_breadcrumbs.less`][] contains variables used in the `breadcrumbs()` [mixin](https://glossary.magento.com/mixin).
 
 To change the default library variables values, specify the new values for the required variables in the `<theme_dir>/web/css/source/_theme.less` file.
 
@@ -162,9 +162,17 @@ Use the Navigation style for mobile and tab style for desktop.
 To set navigation using breakpoints, see the following example:
 
 ```css
+//
+//  Mobile
+//  _____________________________________________
+
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
     .lib-main-navigation();
 }
+
+//
+//  Desktop
+//  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
     .lib-main-navigation-desktop();
@@ -178,7 +186,7 @@ The detailed information about the Magento UI library is embedded in the code re
 * [`lib/web/css/docs`] contains a set of `.html` files with detailed information about the library mixins.
 
 Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins.
-The documentation is available in a convenient {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
+The documentation is available in a convenient [HTML](https://glossary.magento.com/html) view in the following location in your Magento installation: `pub/static/frontend/Magento/blank/en_US/css/docs/index.html`.
 
 
 <!-- Link definitions -->

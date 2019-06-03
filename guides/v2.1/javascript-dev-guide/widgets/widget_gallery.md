@@ -324,7 +324,7 @@ Display navigation arrows on the sides of previews in the fullscreen view.
 **Type**: Boolean
 
 #### `fullscreen/caption` {#full_caption}
-Display {% glossarytooltip 9122e7d4-7db9-48b2-ad27-1af26bad1215 %}alt text{% endglossarytooltip %} as image title in the fullscreen view.
+Display [alt text](https://glossary.magento.com/alt-text) as image title in the fullscreen view.
 
 **Type**: Boolean
 
@@ -486,10 +486,10 @@ var api = $(element).data('gallery');
 var api = $('[data-gallery-role="gallery"]').data('gallery');
 ```
 
-This method returns JS object that contains {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} functions.
+This method returns JS object that contains [API](https://glossary.magento.com/api) functions.
 
 
-To ensure that the gallery is fully formed, wrap your code with {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} handler function and add it to the `gallery:loaded` event:
+To ensure that the gallery is fully formed, wrap your code with [event](https://glossary.magento.com/event) handler function and add it to the `gallery:loaded` event:
 
 ```javascript
 $(element).on('gallery:loaded', function () {
@@ -578,7 +578,6 @@ api.updateOptions([{
     nav: 'dots'
 }]);
 ```
-
 
 [Fotorama widget]: http://fotorama.io/
 [lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js

@@ -166,7 +166,7 @@ _Sample of progress bar in modal_
 
 ### Implementation
 
-Modal windows are implemented by the following Magento {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} widgets:
+Modal windows are implemented by the following Magento [jQuery](https://glossary.magento.com/jquery) widgets:
 
 * [modal]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html)
 * [alert]({{ page.baseurl }}/javascript-dev-guide/widgets/widget_alert.html) (extends modal)

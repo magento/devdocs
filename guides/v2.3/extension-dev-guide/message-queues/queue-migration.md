@@ -2,7 +2,6 @@
 group: php-developer-guide
 title: Migrate message queue configuration
 menu_title: Migrate message queue configuration
-redirect_from: /guides/v2.3/config-guide/mq/queue-migration.html
 functional_areas:
   - Configuration
   - System
@@ -11,7 +10,7 @@ functional_areas:
 
 ### Migrate from Magento 2.1 to 2.2 ###
 
-To upgrade the message queues from Magento 2.1, you must create the following files in the `<module>/etc` directory for each {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that will use the message queue framework.
+To upgrade the message queues from Magento 2.1, you must create the following files in the `<module>/etc` directory for each [module](https://glossary.magento.com/module) that will use the message queue framework.
 
 * `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
 * `queue_topology.xml`- Defines the message routing rules and declares queues and exchanges.
@@ -74,7 +73,7 @@ To upgrade from Magento 2.0, you must create the following files in the `<module
 
 * `queue_consumer.xml` - Defines the relationship between an existing queue and its consumer.
 * `queue_topology.xml`- Defines the message routing rules.
-* `queue_publisher.xml` - Defines the relationship between a topic and its {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}.
+* `queue_publisher.xml` - Defines the relationship between a topic and its [publisher](https://glossary.magento.com/publisher).
 
 The existing `queue.xml` file is deprecated.
 

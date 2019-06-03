@@ -8,7 +8,7 @@ functional_areas:
   - Standards
 ---
 
-This tutorial shows you how to add a new dynamic rows system configuration in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento admin{% endglossarytooltip %}, by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0]{:target="_blank"} class. 
+This tutorial shows you how to add a new dynamic rows system configuration in the [Magento admin](https://glossary.magento.com/magento-admin), by extending the [Magento/Config/Block/System/Config/Form/Field/FieldArray/AbstractFieldArray][0]{:target="_blank"} class. 
 
 ## Step 1: Add a new system field 
 

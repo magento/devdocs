@@ -18,7 +18,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ### Composer (latest stable version)
 
-{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
+[Composer](https://glossary.magento.com/composer) is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
 
 ### Web servers
 
@@ -26,7 +26,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see [our Apache documentation]({{ page.baseurl }}/install-gde/prereq/apache.html).
 
-* {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8 (or [latest mainline version](http://nginx.org/en/linux_packages.html#mainline))
+* [nginx](https://glossary.magento.com/nginx) 1.8 (or [latest mainline version](http://nginx.org/en/linux_packages.html#mainline))
 
 ### Database
 
@@ -67,7 +67,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
 ### SSL
 
-* A valid {% glossarytooltip 363d6806-6a7d-4cb6-bc47-efc62bc26a1c %}security certificate{% endglossarytooltip %} is required for HTTPS.
+* A valid [security certificate](https://glossary.magento.com/security-certificate) is required for HTTPS.
 * Self-signed SSL certificates are not supported.
 * Transport Layer Security (TLS) requirement
 
