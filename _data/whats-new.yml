@@ -29,8 +29,8 @@ entries:
   type: Major update
   date: May 29, 2019
   link: https://github.com/magento/devdocs/pull/4613
-- description: "<br/>Added a new topic for [Product layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html)
-    in the Frontend Developers Guide."
+- description: Added a new topic for [Product layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html)
+    in the Frontend Developers Guide.
   versions: 2.x
   type: Major update
   date: May 28, 2019
