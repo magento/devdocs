@@ -79,7 +79,7 @@ One of these environment variables enables or disables outgoing emails for the e
 
 	![Set outgoing emails]({{ site.baseurl }}/common/images/cloud_project-conf-env.png)
 
-Configure your email notifications, services, and more as needed through the Magento Admin and test emails. If you need to enable this setting for Pro plan on Staging and Production, you will need to enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
+Configure your email notifications, services, and more as needed through the Magento Admin and test emails.
 
 ## Set environment and project variables {#project-conf-env-var}
 
