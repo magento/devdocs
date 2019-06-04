@@ -12,7 +12,7 @@ functional_areas:
 {:.bs-callout .bs-callout-warning}
 Solr is deprecated in Magento 2.1 and will not be supported in 2.2. In a future release, Solr compatibility will be removed. If possible, use [Elastic Search](../../../v2.1/config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
 
-{{site.data.var.ee}} version 2.x enables you to configure either of the following as a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} search engine:
+{{site.data.var.ee}} version 2.x enables you to configure either of the following as a [catalog](https://glossary.magento.com/catalog) search engine:
 
 *	Full text search using the MySQL database (the default)
 *	The [Apache Solr search engine](http://lucene.apache.org/solr/)
@@ -42,14 +42,14 @@ The example Solr configuration is _not_ intended to be used in a production site
 
 Solr runs as a standalone full-text search server in a servlet container such as Jetty (which is used by the Solr example configuration) and Tomcat.
 
-Solr uses the Lucene Java search {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} for full-text indexing and search.
+Solr uses the Lucene Java search [library](https://glossary.magento.com/library) for full-text indexing and search.
 Your applications interact with Solr using [HTTP POST](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.5) (in JSON, [XML](http://wiki.apache.org/solr/UpdateXmlMessages), CSV, or binary formats) to index documents and using [HTTP GET](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3) to retrieve search results back as [JSON](http://wiki.apache.org/solr/SolJSON?highlight=%28json%29%7C%28solr%29), XML, or a variety of other formats (Python, Ruby, [PHP](http://wiki.apache.org/solr/SolPHP?highlight=%28php%29%7C%28solr%29), [CSV](http://wiki.apache.org/solr/CSVResponseWriter?highlight=%28solr%29%7C%28csv%29), binary, and so on).
 If you're a programmer, try the [Solr tutorial](https://lucene.apache.org/solr/4_10_0/tutorial.html).
 Whether you're a programmer or not, read the [Solr FAQ](http://wiki.apache.org/solr/FAQ).
 
 No programming is required to implement Solr as discussed in this topic.
 
-Solr's powerful external configuration allows it to be tailored to almost any type of application without Java coding, and it has an extensive {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} architecture when more advanced customization is required.
+Solr's powerful external configuration allows it to be tailored to almost any type of application without Java coding, and it has an extensive [plug-in](https://glossary.magento.com/plug-in) architecture when more advanced customization is required.
 Solr is highly scalable, providing distributed search and index replication.
 
 {:.bs-callout .bs-callout-warning}

@@ -14,7 +14,7 @@ To upgrade your {{site.data.var.ee}} version or to upgrade from {{site.data.var.
 
 To enter your [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html):
 
-1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
+1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
 2.	Click **System** > Tools > **Web Setup Wizard**.
 3.	Click **System Configuration**.
 

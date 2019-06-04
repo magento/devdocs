@@ -42,11 +42,11 @@ bash shell example for CentOS:
 	export MAGE_PROFILER=firebug
 
 {:.bs-callout .bs-callout-info}
-If a `PHP Fatal error` displays in the browser after you set a profiler value, restart your web server. The reason might be related to {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} bytecode caching, which caches bytecodes and PHP classpaths.
+If a `PHP Fatal error` displays in the browser after you set a profiler value, restart your web server. The reason might be related to [PHP](https://glossary.magento.com/php) bytecode caching, which caches bytecodes and PHP classpaths.
 
 ## Specifying a parameter value {#mode-specify-web}
 
-This section discusses how to specify the mode for either Apache or {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}.
+This section discusses how to specify the mode for either Apache or [nginx](https://glossary.magento.com/nginx).
 
 See one of the following sections for more information:
 

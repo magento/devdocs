@@ -7,13 +7,13 @@ functional_areas:
   - Standards
 ---
 
-The {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+The [storefront](https://glossary.magento.com/storefront) theme is the front facing interface for a Magento application that can be customized through a [theme extension]({{ page.baseurl }}/frontend-dev-guide/themes/theme-general.html). We suggest adopting the following best practices to avoid common problems we have seen other developers make while making a [theme](https://glossary.magento.com/theme) [extension](https://glossary.magento.com/extension).
 
 ### Clear your cache periodically
 
-Forgetting to clear or disable caching can cause a lot of development headache. Visual spot checks on rendered content are unreliable when the content being displayed is retrieved from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. We recommend clearing your cache before doing visual checks for your theme to make sure the content displayed is correct.
+Forgetting to clear or disable caching can cause a lot of development headache. Visual spot checks on rendered content are unreliable when the content being displayed is retrieved from the [cache](https://glossary.magento.com/cache). We recommend clearing your cache before doing visual checks for your theme to make sure the content displayed is correct.
 
-You can manage your cache in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} section under **System** > Tools > **Cache Management**.
+You can manage your cache in the [Admin](https://glossary.magento.com/admin) section under **System** > Tools > **Cache Management**.
 
 **Recommended Reading**
 

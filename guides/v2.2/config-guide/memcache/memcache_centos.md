@@ -80,7 +80,7 @@ To verify memcached is recognized by the web server:
 
 ### Create a memcache test consisting of a MySQL database and PHP script
 
-The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script first searches the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
+The test uses a MySQL database, table, and data to verify you can retrieve the database data and store it in memcache. A [PHP](https://glossary.magento.com/php) script first searches the [cache](https://glossary.magento.com/cache). If the result does not exist, the script queries database. After the query has been fulfilled by the original database, the script stores the result in memcache, using the `set` command.
 
 [More details about this test](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-12-04)
 

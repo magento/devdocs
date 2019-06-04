@@ -11,7 +11,7 @@ functional_areas:
 
 ## Introduction {#frontend-dev-guide-javascript-js-coding-docblock-overview}
 
-To add {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
+To add [JavaScript](https://glossary.magento.com/javascript) code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
 This standard are a subset of [Google JavaScript Style Guide](https://google.github.io/styleguide/javascriptguide.xml){:target="_blank"} regulations.
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
@@ -44,7 +44,7 @@ Example:
 
 ```
 
-Many tools extract {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} from JSDoc comments to validate and optimize the code.
+Many tools extract [metadata](https://glossary.magento.com/metadata) from JSDoc comments to validate and optimize the code.
 
 ### JSDoc indentation {#frontend-dev-guide-javascript-js-coding-docblock-indentation}
 
@@ -257,7 +257,7 @@ Type names must be enclosed in curly braces. If the type is omitted, the compile
  * @param {string|number|null} term An itemName,
  *     or itemId, or null to search everything.
  */
-{% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.Storage.prototype.query = function(groupNum, term) {
+[namespace](https://glossary.magento.com/namespace).Storage.prototype.query = function(groupNum, term) {
    // ...
 };
 
@@ -283,7 +283,7 @@ namespace.Storage.prototype.getLastId = function() {
 
 #### @this {#frontend-dev-guide-javascript-js-coding-docblock-this}
 
-The type of the object in whose context a particular method is called. Required when the this {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} is referenced from a function that is not a prototype method.
+The type of the object in whose context a particular method is called. Required when the this [keyword](https://glossary.magento.com/keyword) is referenced from a function that is not a prototype method.
 
 ```javascript
 

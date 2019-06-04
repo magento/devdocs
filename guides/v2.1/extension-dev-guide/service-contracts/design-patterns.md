@@ -6,7 +6,7 @@ menu_title: Service contract design patterns
 menu_order: 4
 ---
 
-<p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} as a best practice with conditions.</p>
+<p>In the programming community, a <i>design pattern</i> is a recommended way of writing code that includes when to use, or not use, the pattern. Think of a [design pattern](https://glossary.magento.com/design-pattern) as a best practice with conditions.</p>
 <p>Design patterns for service contracts tell you which types of interfaces to define, and how and where to define and implement those  interfaces.</p>
 
 {: .bs-callout .bs-callout-info }
@@ -14,14 +14,14 @@ Service contract data interfaces are now mutable.
 
 ## Interface types and locations {#top-level-msc}
 
-<p>A {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
-<p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.</p>
+<p>A [service contract](https://glossary.magento.com/service-contract) must define data interfaces, which preserve data integrity, and service interfaces, which hide business logic from service requestors.</p>
+<p>Data interfaces define functions that return information about data entities, return search results, and set validation rules and return validation results. You must define the data interfaces for a service contract in the <b>Api/Data</b> subdirectory for a [module](https://glossary.magento.com/module).</p>
 <p>
-   Service interfaces include management, repository, and {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} interfaces.
+   Service interfaces include management, repository, and [metadata](https://glossary.magento.com/metadata) interfaces.
    You must define the service interfaces for a service contract in the <b>Api</b> subdirectory for a module.<!--  You can substitute another implementation in this directory. -->
 </p>
 <!--
-   <p>For example, the interfaces in the <b>Magento\Customer\Api</b> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
+   <p>For example, the interfaces in the <b>Magento\Customer\Api</b> [namespace](https://glossary.magento.com/namespace) define agreements, or a contract, between clients and implementations of services for the Magento Customer module.
                   </p>
     -->
 
@@ -33,7 +33,7 @@ Service contract data interfaces are now mutable.
 ### Data search results interfaces {#search-results-interfaces}
 
 <p>When you pass search criteria to a <code>getList()</code> call, a search results interface is returned with the search results.</p>
-<p>You must define one interface for each data {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} for type hinting purposes. That is, the <code>getItems()</code> function in the
+<p>You must define one interface for each data [entity](https://glossary.magento.com/entity) for type hinting purposes. That is, the <code>getItems()</code> function in the
    <code>CustomerSearchResultsInterface</code> returns an array of <code>CustomerInterface</code> data entities.
    In <code>GroupSearchResultsInterface</code>, the <code>getItems()</code> function returns an array of <code>GroupInterface</code> data entities.
 </p>

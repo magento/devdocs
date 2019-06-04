@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: Overview
+title: GraphQL Overview
 landing-page: GraphQL Developer's Guide
 ---
 

@@ -11,7 +11,7 @@ functional_areas:
 
 ## Overview of cache types {#config-cli-subcommands-cache-clean-over}
 
-Magento 2 has the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types:
+Magento 2 has the following [cache](https://glossary.magento.com/cache) types:
 
 |Cache type "friendly" name|Cache type code name|Description|
 |--- |--- |--- |
@@ -90,7 +90,7 @@ Sample result:
 ```
 
 {:.bs-callout .bs-callout-info}
-Enabling a {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %} automatically clears that cache type.
+Enabling a [cache type](https://glossary.magento.com/cache-type) automatically clears that cache type.
 
 ## Clean and flush cache types {#config-cli-subcommands-cache-clean}
 
@@ -141,4 +141,4 @@ Sample result:
 ```
 
 {:.bs-callout .bs-callout-info}
-You can also clean and flush cache types in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.
+You can also clean and flush cache types in the [Magento Admin](https://glossary.magento.com/magento-admin). Go to **System** > **Tools** > **Cache Management**. **Flush Cache Storage** is equivalent to `bin/magento cache:flush`. **Flush Magento Cache** is equivalent to `bin/magento cache:clean`.
