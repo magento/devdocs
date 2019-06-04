@@ -129,5 +129,3 @@ return [
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
 
 [Types of module dependencies]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend_types.html)
-
-[Module dependencies]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend.html)

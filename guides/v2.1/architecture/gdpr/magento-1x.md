@@ -21,25 +21,25 @@ The data flow diagrams show the types of data that customers and administrators 
 
 A user can enter customer, address, and payment information when registering for an account, during checkout, and similar events.
 
-![Frontend data entry points](images/frontend-data-entry-points.svg)
+![Frontend data entry points](frontend-data-entry-points.svg)
 
 ### Frontend data access points
 
 Magento loads customer information when the customer logs in and views several different pages or checks out.
 
-![Frontend data access points](image/frontend-data-access-points.svg)
+![Frontend data access points](frontend-data-access-points.svg)
 
 ### Backend data entry points
 
 A merchant can enter customer, address, and payment information when using Admin to create a customer or order.
 
-![Backend data entry points](images/backend-data-entry-points.svg)
+![Backend data entry points](backend-data-entry-points.svg)
 
 ### Backend data access points
 
 Magento loads customer information when a merchant views several types of grids, clicks on a grid to see detailed information, and performs various other tasks.
 
-![Backend data access points](images/backend-data-access-points.svg)
+![Backend data access points](backend-data-access-points.svg)
 
 ## Database entities
 
