@@ -46,8 +46,6 @@ Copy the file path and paste it into the `File to patch:` prompt and press `Ente
 
 5. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
 
-To verify that the patch was installed, download or view the file `<Magento_root>/app/etc/applied.patches.list`.
-
 Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
 
 ## Using Composer to install patches
