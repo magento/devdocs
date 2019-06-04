@@ -79,6 +79,7 @@ Use this table to understand what changes Magento can make and which version num
 | | Class removed| MAJOR|
 | | Method removed | MAJOR|
 | | New required method argument | MAJOR|
+| | New optional method argument | MINOR|
 | | Removed a non-last argument| MAJOR|
 | | New required constructor object argument | MINOR|
 | | New optional constructor argument | MINOR|
