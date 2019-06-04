@@ -146,5 +146,15 @@ If you are using server-side compilation mode, you must [clean generated static 
 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
 
+
+## client-side workflow for the initialization of UI components
+
+- `bootstrap.js` binds the component as a Model behind the View (template) using Knockout bindings.
+- The UI components are now displayed on the page and are fully interactive.
+- `app.js` calls `layout.js` and passes the UI component's config into the layout
+- The component's HTML templates are rendered by the `knockout.js` template engine. `bootstrap.js` passes our own template engine to knockout
+- layout.js creates instances of components. Each UI component's configuration must have an explicitly declared component property.
+- `RequireJS` requires `Magento_Ui/js/core/app` and pass `JSON` configuration as parameter.
+
 {:.bs-callout .bs-callout-info}
 When your Magento instance is in client-side Less compilation mode, simple changes are applied after saving or refreshing the page. For more sophisticated changes, you may need to manually clean the theme sub-directory in the `pub/static/frontend` directory and generate a new deployment. See [Styles debugging]({{ page.baseurl }}/frontend-dev-guide/css-topics/css_debug.html).
