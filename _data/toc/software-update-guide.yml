@@ -123,6 +123,10 @@ pages:
 
         - label: Command-line upgrade with sample data
           url: /comp-mgr/cli/cli-rc1-samp.html
+        - label: (Optional) Command-line upgrade using script
+          url: /comp-mgr/cli/upgrade-with-script.html
+        - label: (Experimental) Command-line upgrade using plugin
+          url: /comp-mgr/cli/upgrade-with-plugin.html
 
     - label: Run System Upgrade
       url: /comp-mgr/upgrader/upgrade-checklist.html
