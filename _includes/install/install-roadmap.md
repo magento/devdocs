@@ -41,6 +41,6 @@ Topics include:
 
 ## Deploy to production
 
-[Deploy Magento to production]({{ page.baseurl }}/howdoi/deploy/deploy-to-prod.html)
+[Deploy Magento to production]({{ page.baseurl }}/config-guide/prod/prod_deploy.html)
 
 *[Contributing developers]: A developer who contributes code to the Magento 2 CE codebase

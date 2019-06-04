@@ -121,7 +121,7 @@ Default value:
 
 If this constant is set to `enabled`, the integration test framework cleans the test database and reinstalls Magento on every test run.
 This way, any new modules will be automatically picked up and any artifacts left behind by previous test runs will be removed.
-It also causes the test framework to flush the test Magento configuration, the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}, and the code generation before executing any tests.
+It also causes the test framework to flush the test Magento configuration, the [cache](https://glossary.magento.com/cache), and the code generation before executing any tests.
 
 The downside of setting `TEST_CLEANUP` to `enabled` is that the reinstallation of Magento takes time; the exact time depends on the host you are using to run the integration tests and the Magento version.
 
@@ -155,7 +155,7 @@ Beginning in 2.3.1, the helper no longer assumes RabbitMQ is running on `localho
 ### PHP memory_limit
 
 The default `phpunit.xml.dist` file does not contain any PHP `memory_limit` settings.
-However, sometimes the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} configuration restricts the amount of memory PHP may consume.
+However, sometimes the [PHP](https://glossary.magento.com/php) configuration restricts the amount of memory PHP may consume.
 This can make it impossible to run the integration tests.
 
 You can turn off the PHP memory limit by adding the following configuration to the `<php>` section of the integration test `phpunit.xml` file:
@@ -172,7 +172,7 @@ For core tests, it makes sense that the integration tests do not reside within i
 Specific integration tests for shop implementation could also be placed within a different subdirectory of `dev/tests/integration/testsuite`, and then would be executed together with the core tests.
 
 However, third-party Magento extensions are contained within a single directory and might supply custom integration tests too.
-These tests usually reside in the `Test/Integration/` subdirectory within the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} folder.
+These tests usually reside in the `Test/Integration/` subdirectory within the [module](https://glossary.magento.com/module) folder.
 
 These third-party integration tests are not picked up by the default integration test configuration.
 You can add a test suite configuration, like the following, to the `<testsuites>` section of the `phpunit.xml` file so they are included during test execution.
@@ -223,7 +223,7 @@ Configuration read from /var/www/magento2/dev/tests/integration/phpunit.xml
 ..........................
 ```
 
-The path to the `phpunit` executable installed by {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} into the vendor directory is used.
+The path to the `phpunit` executable installed by [Composer](https://glossary.magento.com/composer) into the vendor directory is used.
 
 ### Run only a custom testsuite
 
@@ -288,7 +288,7 @@ To fix the issue, change to the `dev/tests/integration` directory, adjust any re
 
 ### Unable to connect to MySQL
 
-The {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interpreter must be able to connect to the test database. By default, this means the tests have to run on the same host as the MySQL server.
+The [PHP](https://glossary.magento.com/php) interpreter must be able to connect to the test database. By default, this means the tests have to run on the same host as the MySQL server.
 This problem most commonly occurs during development with Vagrant or Docker, where the Magento database is running on a virtual machine.
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.
 

@@ -7,7 +7,7 @@ functional_areas:
   - Setup
 ---
 
-This task requires you to create a root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
+This task requires you to create a root [category](https://glossary.magento.com/category) (and additional categories if desired) for each store. The tasks discussed in this topic provide one way to set up multiple stores. For additional information, see the following resources in the Magento User Guide:
 
 *	[Categories](http://docs.magento.com/m2/ce/user_guide/catalog/categories.html)
 *	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html)
@@ -15,13 +15,13 @@ This task requires you to create a root {% glossarytooltip 50e49338-1e6c-4473-85
 *	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html)
 
 {: .bs-callout .bs-callout-info}
-For example purposes only, we use a French {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} with website code `french` in this topic. For step-by-step tutorials, see:  
+For example purposes only, we use a French [website](https://glossary.magento.com/website) with website code `french` in this topic. For step-by-step tutorials, see:  
     -  [Tutorial: Set up multiple websites with Apache]({{ page.baseurl }}/config-guide/multi-site/ms_apache.html)  
     -  [Tutorial: Set up multiple websites with nginx]({{ page.baseurl }}/config-guide/multi-site/ms_nginx.html)
 
 ## Step 1: Create root categories
 
-Creating a root category is optional, but we show how to do it in this tutorial in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} you want each website to have a unique root category. You can create additional categories if you choose.
+Creating a root category is optional, but we show how to do it in this tutorial in the [event](https://glossary.magento.com/event) you want each website to have a unique root category. You can create additional categories if you choose.
 
 {% collapsible To create a root category: %}
 
@@ -102,7 +102,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 
 ## Step 5: Change the website base URL
 
-To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the [Magento Admin](https://glossary.magento.com/magento-admin).
 
 {% collapsible To change the website base URL: %}
 

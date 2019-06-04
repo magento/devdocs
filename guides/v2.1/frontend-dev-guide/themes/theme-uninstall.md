@@ -8,11 +8,11 @@ functional_areas:
 
 ## What's in this topic
 
-This topic describes how to uninstall a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} in Magento 2.
+This topic describes how to uninstall a [storefront](https://glossary.magento.com/storefront) [theme](https://glossary.magento.com/theme) in Magento 2.
 
 The way a theme should be uninstalled is defined by two factors:
 
-* the way the theme was added: manually added (installed or created), installed as {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} package or as an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+* the way the theme was added: manually added (installed or created), installed as [composer](https://glossary.magento.com/composer) package or as an [extension](https://glossary.magento.com/extension).
 * the way Magento was installed: [using the source files from GitHub]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-clone.html) or [using Composer]({{ page.baseurl }}/install-gde/install/cli/install-cli-sample-data-composer.html). 
 
 The following sections describe the flow for uninstalling themes in each case.
@@ -20,7 +20,7 @@ The following sections describe the flow for uninstalling themes in each case.
 ## Prerequisites 
 
 1. [Set your Magento application to the developer or default mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
-2. Make sure that the theme is not applied on the storefront. To do this, in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel navigate to **Content** > **Design** > **Configuration** and make sure that your custom theme is not applied for any {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}.
+2. Make sure that the theme is not applied on the storefront. To do this, in the [Admin](https://glossary.magento.com/admin) panel navigate to **Content** > **Design** > **Configuration** and make sure that your custom theme is not applied for any [store view](https://glossary.magento.com/store-view).
 2. Make sure that the theme is not defined as a parent for any registered theme. To do this, in the Admin panel, navigate to **Content** > **Design** > **Themes**. Make sure that your theme is not mentioned in the **Parent Theme** column. If it is mentioned, you need to uninstall the child theme first. 
 
 ## Uninstall a manually added theme
@@ -45,7 +45,7 @@ Where:
 
 ## Uninstall a theme package {#uninstall_theme_pack}
 
-The flow for uninstalling a theme that is {% glossarytooltip b57038ca-7906-4fce-a00f-d614b81d5301 %}Composer package{% endglossarytooltip %} is different, depending on the way your Magento instance was installed.  
+The flow for uninstalling a theme that is [Composer package](https://glossary.magento.com/composer-package) is different, depending on the way your Magento instance was installed.  
 
 ### Uninstall a theme package if Magento was installed using Composer
 
@@ -87,7 +87,7 @@ If the theme was installed as an extension, you can uninstall it using one of th
 
 To uninstall a theme extension using the Component Manager:
 
-1. In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} Panel, navigate to **System** > **Web Setup Wizard** > **Component Manager**.
+1. In the [Magento Admin](https://glossary.magento.com/magento-admin) Panel, navigate to **System** > **Web Setup Wizard** > **Component Manager**.
 2. In the **Actions** column, click **Select** > **Uninstall** in the theme record. See the following image for illustration.
 
 ![extension_manager_uninstall_theme]({{ site.baseurl }}/common/images/fdg/uninstall_extension.png){:width="630px"}

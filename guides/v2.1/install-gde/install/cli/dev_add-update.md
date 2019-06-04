@@ -17,7 +17,7 @@ To update components if you're *not* a contributing developer, see [Updating the
 
 You can either add a `require` section to `composer.json` or you can use the `composer require` command as follows:
 
-1. Log in to the Magento server, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+1. Log in to the Magento server, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2. Change to the directory to which you cloned the Magento application. For example,
 
     ```bash
@@ -54,7 +54,7 @@ For example:
 composer require example/module:1.0.0
 ```
 
-Wait while {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} updates dependencies and installs the component.
+Wait while [Composer](https://glossary.magento.com/composer) updates dependencies and installs the component.
 
 ### Add a `require` section to `composer.json`
 

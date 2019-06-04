@@ -6,7 +6,7 @@ The Image uploader provides the ability for users to upload a single image, or g
 
 ## When to Use
 
-When it is desirable to allow users to upload a single image or multiple images for display within the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %}.
+When it is desirable to allow users to upload a single image or multiple images for display within the [Magento Admin](https://glossary.magento.com/magento-admin) or on the [Storefront](https://glossary.magento.com/storefront).
 
 ## When Not to Use
 
@@ -22,7 +22,7 @@ This pattern should be used specifically to upload images, and not to upload doc
 
 **Uploading via Browser**
 
-The Image Uploader allows the user to browse for images to upload to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} application. This can accommodate single or multiple image upload. To initiate this behavior the user clicking on the "Upload Image" link (target area). The user then proceeds to select the desired images via the browser, using SHIFT + click or ALT/COMMAND + click to select multiple image files.
+The Image Uploader allows the user to browse for images to upload to the [Admin](https://glossary.magento.com/admin) application. This can accommodate single or multiple image upload. To initiate this behavior the user clicking on the "Upload Image" link (target area). The user then proceeds to select the desired images via the browser, using SHIFT + click or ALT/COMMAND + click to select multiple image files.
 
 ![](img/image-uploader-browse.jpg)
 
@@ -40,7 +40,7 @@ To upload a video to the Magento Admin application the user taps the "Add Video"
 
 ![](img/image-uploader-video-uploaded.jpg)
 
-A video settings panel is revealed that allows the user to provide the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} location of the video, write a description and upload a preview image for the video. The user taps the "Save" button to upload the information.
+A video settings panel is revealed that allows the user to provide the [URL](https://glossary.magento.com/url) location of the video, write a description and upload a preview image for the video. The user taps the "Save" button to upload the information.
 
 ![](img/image-uploader-video-panel.jpg)
 

@@ -7,7 +7,6 @@ menu_order: 26
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-redirect_from: /guides/v2.2/config-guide/mq/config-mq.html
 functional_areas:
   - Configuration
   - System
@@ -201,7 +200,7 @@ The following illustrates an `arguments` block:
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:
 
-* {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}
+* [publisher](https://glossary.magento.com/publisher)
 * publisher/connection
 
 #### Example `queue_publisher.xml` file

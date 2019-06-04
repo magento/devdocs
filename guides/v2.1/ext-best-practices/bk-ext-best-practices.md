@@ -11,7 +11,7 @@ We want your feedback; please do a pull request on [feedback-placement-and-desig
 
 Magento consists of the core product code plus optional components that enhance or replace the core product code. There are over 100 out-of-the-box components in the form of modules, themes, and language packages available for Magento 2.
 
-Magento's architecture allows for enhancements by letting you develop your own component. Keep in mind that in addition to Magento's own modules, your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento's modular environment.
+Magento's architecture allows for enhancements by letting you develop your own component. Keep in mind that in addition to Magento's own modules, your [extension](https://glossary.magento.com/extension) will be running alongside components from other developers. For this reason, it is important that your component behaves correctly in Magento's modular environment.
 
 The table below is data from a recent poll that shows the distribution of the amount of extensions installed on a Magento instance for each edition. So for example, 32% of merchants on EE have over 50 different extensions installed!
 

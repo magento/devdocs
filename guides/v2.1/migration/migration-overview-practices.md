@@ -41,6 +41,6 @@ We tested migration on the following system:
 
 * Settings migration time: ~10 mins
 
-* Data migration time: ~9 hrs (all data except {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} Rewrites, ~85% of total data)
+* Data migration time: ~9 hrs (all data except [URL](https://glossary.magento.com/url) Rewrites, ~85% of total data)
 
-* Site downtime estimate: a few minutes to reindex and change DNS settings. Additional time required to "warm up" the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+* Site downtime estimate: a few minutes to reindex and change DNS settings. Additional time required to "warm up" the page [cache](https://glossary.magento.com/cache)

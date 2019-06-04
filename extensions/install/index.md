@@ -13,11 +13,11 @@ Code that extends or customizes Magento behavior is called an extension. You can
 Extensions include:
 
 - Modules (extend Magento capabilities)
-- Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
+- Themes (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
 - Language packages (localize the storefront and Admin)
 
 {: .bs-callout .bs-callout-tip }
-This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
+This topic explains how to use the command line to install extensions you purchase from the Magento Marketplace. You can use the same procedure to install _any_ extension; all you need is the extension's [Composer](https://glossary.magento.com/composer) name and version. To find it, open the extension's `composer.json` file and note the values for `"name"` and `"version"`.
 
 Prior to installation, you may want to:
 

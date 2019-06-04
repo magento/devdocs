@@ -2,7 +2,6 @@
 group: configuration-guide
 title: Low-level cache options
 redirect_from:
-  - /guides/v2.0/config-guide/cache/caching_low-level.html
   - /guides/v2.1/config-guide/cache/caching_low-level.html
   - /guides/v2.2/config-guide/cache/caching_low-level.html
 functional_areas:
@@ -11,7 +10,7 @@ functional_areas:
   - Setup
 ---
 
-The Magento application uses a low-level {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} to provide access to the cache storage.
+The Magento application uses a low-level [cache](https://glossary.magento.com/cache) [frontend](https://glossary.magento.com/frontend) and [backend](https://glossary.magento.com/backend) to provide access to the cache storage.
 
 ## Low-level frontend cache {#cache-lowlevel-front}
 
@@ -25,7 +24,7 @@ In general, the Magento application works with any backend cache that [Zend_Cach
 *   [Database]({{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html)
 *   File system (default): No configuration is necessary to use file system caching.
 
-[Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) doesn't require setting up a low-level {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %}.
+[Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) doesn't require setting up a low-level [cache backend](https://glossary.magento.com/cache-backend).
 
 {:.bs-callout .bs-callout-info}
 We'll periodically add more low-level cache types so watch this space.

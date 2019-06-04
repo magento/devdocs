@@ -3,7 +3,7 @@ group: ui-components-guide
 title: WYSIWYG component
 ---
 
-The WYSIWYG component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [TinyMCE editor](https://www.tinymce.com/). WYSIWYG integrates editor's instance into the [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects to receive complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
+The WYSIWYG component is an [adapter](https://glossary.magento.com/adapter) for the [TinyMCE editor](https://www.tinymce.com/). WYSIWYG integrates editor's instance into the [Form component]({{ page.baseurl }}/ui_comp_guide/components/ui-form.html). It expects to receive complete [widget](https://glossary.magento.com/widget) declaration in the `content` option, which should contain both [markup](https://glossary.magento.com/markup) and the script responsible for creating the editor's instance.
 
 ## Configuration options
 

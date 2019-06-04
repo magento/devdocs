@@ -5,9 +5,7 @@ title: Contributing developers&mdash;update, reinstall Magento
 menu_title: Contributing developers&mdash;update, reinstall Magento
 menu_order: 1
 menu_node: parent
-redirect_from:
- - /guides/v2.0/install-gde/install/dev_updater.html
- - /guides/v2.1/install-gde/install/dev_updater.html
+redirect_from: /guides/v2.1/install-gde/install/dev_updater.html
 functional_areas:
   - Install
   - System

@@ -14,7 +14,7 @@ Add the content for each step as you see fit.
 
 ## Metadata parameters
 
-The procedural steps of a tutorial use the `subtitle` {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} parameter.
+The procedural steps of a tutorial use the `subtitle` [metadata](https://glossary.magento.com/metadata) parameter.
 
 Parameter | Description
 --- | ---

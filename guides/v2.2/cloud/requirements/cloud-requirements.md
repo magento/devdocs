@@ -22,7 +22,7 @@ Here are some advanced technologies we recommend getting familiar with:
 
 * [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) for CDN and caching (based on Varnish)
 * [Blackfire Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html) for performance testing
-* [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html) for performance testing
+* [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html) for performance testing
 * [GitHub]({{ page.baseurl }}/cloud/integrations/github-integration.html) if you need a Git repo
 * [Bitbucket]({{ page.baseurl }}/cloud/integrations/bitbucket-integration.html) if you need a Git repo
 
@@ -50,7 +50,7 @@ You must use Secure Shell (SSH) and not HTTPS to connect to the Git repository. 
 {{site.data.var.ece}} uses:
 
 *	Operating system: Debian GNU/Linux 8 (jessie)
-*	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
+*	Web server: [nginx](https://glossary.magento.com/nginx) 1.8
 
 You cannot upgrade the software, but you can configure the following services:
 
@@ -89,10 +89,10 @@ Before you test any custom code in your local {{site.data.var.ee}} environment, 
 *	Test with the correct file permissions in [Production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode)
 
 	Correct permissions only allow write access to `var`, `pub/static, pub/media`, and `app/etc`
-*	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
+*	Test with minification for HTML, JavaScript, and [CSS](https://glossary.magento.com/css) enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}/config-guide/redis/config-redis.html)
 *	Install and configure [Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html)
-*	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+*	Test using [Varnish]({{ page.baseurl }}/config-guide/varnish/config-varnish.html) for the page [cache](https://glossary.magento.com/cache)
 
 {:.bs-callout .bs-callout-info}
 {{ site.data.var.ece }} supports production and maintenance modes only.

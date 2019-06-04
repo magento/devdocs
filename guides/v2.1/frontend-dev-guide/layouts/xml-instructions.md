@@ -8,7 +8,7 @@ functional_areas:
 ## What's in this topic {#fedg_layout_xml-instruc_overview}
 
 There are two possible ways to customize page layout in Magento:
-* Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files 
+* Changing [layout](https://glossary.magento.com/layout) files 
 * Altering templates
 
 To change the page wireframe, modify the [page layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page) files; all other customizations are performed in the [page configuration]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf) or [generic layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen) files. 
@@ -20,7 +20,7 @@ For example, layout changes added to `app/code/Vendor/Module/view/frontend/layou
 To add layout changes to a specific page, use a layout file that corresponds to the page's path. 
 For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` file are loaded on the product details page.
 
-Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
+Use these [layout instructions](https://glossary.magento.com/layout-instructions) to:
 *  Move a page element to another parent element.
 *  Add content.
 *  Remove a page element.
@@ -49,7 +49,7 @@ Defines a block.
 
 Blocks are a foundational building unit for layouts in Magento. They are the link between a PHP block class (which contains logic) and a template (which renders content). Blocks can have children and grandchildren (and so on). Information can be passed from layout XML files to blocks using the `<arguments/>` child node. 
 
-Blocks employ templates to generate HTML. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.</p>
+Blocks employ templates to generate HTML. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.</p>
 
 <table>
    <tbody>
@@ -512,7 +512,6 @@ Example:
     <argument name="css_class" xsi:type="string">header links</argument>
 </arguments>
 ```
-
 
 [app/code/Magento/Theme/view/frontend/layout/default.xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml
 [app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/html/title.phtml
