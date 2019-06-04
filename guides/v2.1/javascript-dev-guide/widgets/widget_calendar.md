@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Calendar widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_calendar.html
 ---
 
 ## Overview {#fedg_jquery-widget_calendar-overview}
@@ -49,9 +47,8 @@ require([
 
 Most options, methods, and events for the calendar widget correspond to the jQuery [Datepicker Widget] options.
 
-
 [Datepicker Widget]: http://api.jQueryui.com/datepicker/
 [global configuration]: #fedg_calendar_config
-[lib/web/mage/calendar.js]: {{site.mage2000url}}lib/web/mage/calendar.js
+[lib/web/mage/calendar.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/calendar.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [Datepicker Widget]: http://api.jqueryui.com/datepicker/

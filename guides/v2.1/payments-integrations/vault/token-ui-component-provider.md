@@ -8,13 +8,13 @@ functional_areas:
   - Integration
 ---
 
-This topic describes how to create custom vault payments UI components, that are used to  display stored tokens on {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page and order placing using vault. 
+This topic describes how to create custom vault payments UI components, that are used to  display stored tokens on [checkout](https://glossary.magento.com/checkout) page and order placing using vault. 
 
 ## Token component provider {#token_provider}
 
 The main logic for displaying tokens on checkout page is located in
-[Vault TokensConfigProvider]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to create a token component provider. It should implement the 
-[TokenUiComponentProviderInterface]({{ site.mage2100url }}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
+[Vault TokensConfigProvider]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to create a token component provider. It should implement the 
+[TokenUiComponentProviderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
 
 ```php
 interface TokenUiComponentProviderInterface
@@ -30,7 +30,7 @@ interface TokenUiComponentProviderInterface
 }
 ```
 
-The basic implementation of the token {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} provider can be like following:
+The basic implementation of the token [UI component](https://glossary.magento.com/ui-component) provider can be like following:
 
 ```php
 class TokenUiComponentProvider implements TokenUiComponentProviderInterface
@@ -59,7 +59,7 @@ class TokenUiComponentProvider implements TokenUiComponentProviderInterface
 }
 ```
 
-This implementation allows to retrieve all available payment token details and specify the JS component for {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+This implementation allows to retrieve all available payment token details and specify the JS component for [storefront](https://glossary.magento.com/storefront).
 
 Having created the component provider, you need to add it to the list of available vault config providers in `di.xml` - the DI configuration file. 
 
@@ -79,7 +79,7 @@ In the following example the `Magento\Braintree\Model\Ui\TokenUiComponentProvide
 
 In your custom module directory, create the component’s `.js` file. It must be located under the `<your_module_dir>/view/frontend/web/js/view/` directory.
 
-The component should extend [vault.js]({{ site.mage2100url }}app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
+The component should extend [vault.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js):
 
 ```javascript
 define([

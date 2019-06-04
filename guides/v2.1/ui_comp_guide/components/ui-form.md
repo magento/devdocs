@@ -1,7 +1,6 @@
 ---
 group: ui-components-guide
 title: Form component
-redirect_from: /guides/v2.1/ui-components/ui-form.html
 ---
 
 The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
@@ -207,9 +206,9 @@ For more details see the <a href="{{ page.baseurl }}/ui_comp_guide/concepts/ui_c
 To create an instance of the Form component, you need to do the following:
 
 1. In your custom module, add a configuration file for the instance, for example: `customer_form.xml`.
-2. Add a set of fields (the Fieldset component with the component of the Field) for {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} or     to implement the upload of meta info in the DataProvider.
+2. Add a set of fields (the Fieldset component with the component of the Field) for [entity](https://glossary.magento.com/entity) or     to implement the upload of meta info in the DataProvider.
 3. Create the DataProvider class for the entity that implements DataProviderInterface
-* Add a component in Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} as a node: `<uiComponent name="customer_form"/>`
+* Add a component in Magento [layout](https://glossary.magento.com/layout) as a node: `<uiComponent name="customer_form"/>`
 
 Example:
 
@@ -364,7 +363,7 @@ Component configuration:
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 
-Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components.
+Data Source is another [UI Component](https://glossary.magento.com/ui-component) that provides data in specific format which is shared among all UI Components.
 
 ### Replace instances of component
 
@@ -407,4 +406,4 @@ To replace one instance of a UI Form Component redefine link to a constructor in
 
 Extends [`uiCollection`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uicollection_concept.html):
 
-- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/form.js)
+- [app/code/Magento/Ui/view/base/web/js/form/form.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js)

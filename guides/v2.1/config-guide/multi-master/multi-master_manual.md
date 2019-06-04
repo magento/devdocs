@@ -14,23 +14,23 @@ If the Magento application is already in production or if you've already install
 
 Manually splitting databases involves:
 
-*   Create the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and order management system (OMS) databases
-*   Run a series of SQL scripts that:
+* Create the [checkout](https://glossary.magento.com/checkout) and order management system (OMS) databases
+* Run a series of SQL scripts that:
 
-    *   Drop foreign keys
-    *   Back up sales and quote database tables
-    *   Move tables from your main Magento database to the sales and quote databases
+  * Drop foreign keys
+  * Back up sales and quote database tables
+  * Move tables from your main Magento database to the sales and quote databases
 
 {:.bs-callout .bs-callout-warning}
 If any custom code uses JOINs with tables in the sales and quote databases, you _cannot_ use split databases. If in doubt, contact the authors of any custom code or extensions to make sure their code does not use JOINs.
 
 This topic uses the following naming conventions:
 
-*   The main Magento database name is `magento` and its username and password are both `magento`
-*   The quote database name is `magento_quote` and its username and password are both `magento_quote`
+* The main Magento database name is `magento` and its username and password are both `magento`
+* The quote database name is `magento_quote` and its username and password are both `magento_quote`
 
     The quote database is also referred to as the *checkout* database.
-*   The sales database name is `magento_sales` and its username and password are both `magento_sales`
+* The sales database name is `magento_sales` and its username and password are both `magento_sales`
 
     The sales database is also referred to as the order management system (*OMS*) database.
 
@@ -39,38 +39,39 @@ This guide assumes all three databases are on the same host as the Magento appli
 
 ## Back up the Magento system {#config-ee-multidb-backup}
 
-We strongly recommend you back up your current database and file system so you can restore it later in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues during the process.
+We strongly recommend you back up your current database and file system so you can restore it later in the [event](https://glossary.magento.com/event) of issues during the process.
 
 {% collapsible Click to show how to back up Magento %}
 
 To back up your system:
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
-2.  Enter the following commands:
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html).
+1. Enter the following commands:
 
     ```bash
     magento setup:backup --code --media --db
     ```
-    
-3.  Continue with the next section.
+
+1. Continue with the next section.
+
 {% endcollapsible %}
 
 ## Set up additional master databases {#config-ee-multidb-master-masters}
 
-This section discusses how to create database instances for sales and {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} tables.
+This section discusses how to create database instances for sales and [quote](https://glossary.magento.com/quote) tables.
 
 {% collapsible Click to show how to create database instances %}
 Create sales and OMS quote databases as follows:
 
-1.  Log in to your database server as any user.
-2.  Enter the following command to get to a MySQL command prompt:
+1. Log in to your database server as any user.
+1. Enter the following command to get to a MySQL command prompt:
 
     ```bash
     mysql -u root -p
     ```
 
-3.  Enter the MySQL `root` user's password when prompted.
-4.  Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
+1. Enter the MySQL `root` user's password when prompted.
+1. Enter the following commands in the order shown to create database instances named `magento_quote` and `magento_sales` with the same usernames and passwords:
 
         create database magento_quote;
         GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
@@ -78,30 +79,36 @@ Create sales and OMS quote databases as follows:
         create database magento_sales;
         GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
 
-5.  Enter `exit` to quit the command prompt.
+1. Enter `exit` to quit the command prompt.
 
-6.  Verify the databases, one at a time:
+1. Verify the databases, one at a time:
 
     quote database:
-     ```bash
-     mysql -u magento_quote -p
-     ```
-     ```bash
-     exit
-     ```
 
-    Order management database:
+    ```bash
+    mysql -u magento_quote -p
+    ```
+
+    ```bash
+    exit
+    ```
+
+    ```bash
+    mysql -u magento_quote -p
+    ```
 
     ```bash
     mysql -u magento_sales -p
     ```
-    
+
     ```bash
     exit
     ```
 
     If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.
-7.  Continue with the next section.
+
+1. Continue with the next section.
+
 {% endcollapsible %}
 
 ## Configure the sales database {#config-ee-multidb-oms}
@@ -110,18 +117,18 @@ This section discusses how to create and run SQL scripts that alter quote databa
 
 Sales database table names start with:
 
-*   `salesrule_`
-*   `sales_`
-*   `magento_sales_`
-*   The `magento_customercustomattributes_sales_flat_order` table is also affected
+* `salesrule_`
+* `sales_`
+* `magento_sales_`
+* The `magento_customercustomattributes_sales_flat_order` table is also affected
 
 {:.bs-callout .bs-callout-info}
 This section contains scripts with specific database table names. If you've performed customizations or if you want to see a complete list of tables before you perform actions on them, see [Reference scripts](#split-db-ref).
 
 For more information, see:
 
-*   [Create sales database SQL scripts](#config-ee-multidb-sql-oms)
-*   [Back up sales data](#sales-backup)
+* [Create sales database SQL scripts](#config-ee-multidb-sql-oms)
+* [Back up sales data](#sales-backup)
 
 ### Create sales database SQL scripts {#config-ee-multidb-sql-oms}
 
@@ -187,25 +194,25 @@ ALTER TABLE paypal_billing_agreement_order DROP FOREIGN KEY PAYPAL_BILLING_AGREE
 
 Run the preceding script:
 
-1.  Log in to your MySQL database as the `root` or administrative user:
+1. Log in to your MySQL database as the `root` or administrative user:
 
     ```bash
     mysql -u root -p
     ```
-        
-2.  At the `mysql>` prompt, run the script as follows:
+
+2. At the `mysql>` prompt, run the script as follows:
 
     ```bash
     source <path>/<script>.sql
     ```
 
     For example,
-    
+
     ```bash
     source /root/sql-scripts/1_foreign-sales.sql
     ```
-    
-3.  After the script run, enter `exit`.
+
+3. After the script run, enter `exit`.
 {% endcollapsible %}
 
 ### Back up sales data {#sales-backup}
@@ -218,27 +225,31 @@ If you're currently at the `mysql>` prompt, enter `exit` to return to the comman
 
 Run the following `mysqldump` commands, one at a time, from the command shell. In each, substitute the following:
 
-*   `<your database root username>` with the name of your database root user
-*   `<your database root user password>` with the user's password
-*   `<your main magento DB name>` with the name of your Magento database
-*   `<path>` with a writable file system path
+* `<your database root username>` with the name of your database root user
+* `<your database root user password>` with the user's password
+* `<your main magento DB name>` with the name of your Magento database
+* `<path>` with a writable file system path
 
-**Script 1**
+#### Script 1
+
 ```bash
 mysqldump -u <your database root username> -p <your main magento DB name> sales_bestsellers_aggregated_daily sales_bestsellers_aggregated_monthly sales_bestsellers_aggregated_yearly sales_creditmemo sales_creditmemo_comment sales_creditmemo_grid sales_creditmemo_item sales_invoice sales_invoice_comment sales_invoice_grid sales_invoice_item sales_invoiced_aggregated sales_invoiced_aggregated_order sales_order sales_order_address sales_order_aggregated_created sales_order_aggregated_updated sales_order_grid sales_order_item sales_order_payment sales_order_status sales_order_status_history sales_order_status_label sales_order_status_state sales_order_tax sales_order_tax_item sales_payment_transaction sales_refunded_aggregated sales_refunded_aggregated_order sales_sequence_meta sales_sequence_profile sales_shipment sales_shipment_comment sales_shipment_grid sales_shipment_item sales_shipment_track sales_shipping_aggregated sales_shipping_aggregated_order > /<path>/sales.sql
 ```
 
-**Script 2**
+#### Script 2
+
 ```bash
 mysqldump -u <your database root username> -p <your main magento DB name> magento_sales_creditmemo_grid_archive magento_sales_invoice_grid_archive magento_sales_order_grid_archive magento_sales_shipment_grid_archive > /<path>/salesarchive.sql
 ```
 
-**Script 3**
+#### Script 3
+
 ```bash
 mysqldump -u <your database root username> -p <your main magento DB name> magento_customercustomattributes_sales_flat_order magento_customercustomattributes_sales_flat_order_address > /<path>/customercustomattributes.sql
 ```
 
-**Script 4**
+#### Script 4
+
 ```bash
 mysqldump -u <your database root username> -p <your main magento DB name> sequence_creditmemo_0 sequence_creditmemo_1 sequence_invoice_0 sequence_invoice_1 sequence_order_0 sequence_order_1 sequence_rma_item_0 sequence_rma_item_1 sequence_shipment_0 sequence_shipment_1 > /<path>/sequence.sql
 ```
@@ -251,13 +262,13 @@ This script restores sales data in your quote database.
 
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
-1.  Convert tables from InnoDb to NDB type in dump files:
+1. Convert tables from InnoDb to NDB type in dump files:
 
     ```bash
     sed -ei 's/InnoDb/NDB/' <file name>.sql
     ```
-    
-2.  Remove rows with a FULLTEXT key from dumps because NDB tables don't support FULLTEXT.
+
+1. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
 
 #### Restore the data
 
@@ -273,6 +284,7 @@ mysql -u <root username> -p <your sales DB name> < /<path>/sequence.sql
 
 ```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/salesarchive.sql
+```
 
 ```bash
 mysql -u <root username> -p <your sales DB name> < /<path>/customercustomattributes.sql
@@ -280,12 +292,13 @@ mysql -u <root username> -p <your sales DB name> < /<path>/customercustomattribu
 
 where
 
-*   `<your sales DB name>` with the name of your sales database.
+* `<your sales DB name>` with the name of your sales database.
 
     In this topic, the sample database name is `magento_sales`.
-*   `<root username>` with your MySQL root username
-*   `<root user password>` with the user's password
-*   Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
+
+* `<root username>` with your MySQL root username
+* `<root user password>` with the user's password
+* Verify the location of the backup files you created earlier (for example, `/var/sales.sql`)
 
 {% endcollapsible %}
 
@@ -315,19 +328,19 @@ ALTER TABLE quote_item DROP FOREIGN KEY QUOTE_ITEM_STORE_ID_STORE_STORE_ID;
 
 Run the script as follows:
 
-1.  Log in to your MySQL database as the root or administrative user:
-    
+1. Log in to your MySQL database as the root or administrative user:
+
     ```bash
     mysql -u root -p
     ```
-    
-2.  At the `mysql >` prompt, run the script as follows:
-it.
-        source <path>/<script>.sql
+
+1. At the `mysql >` prompt, run the script as follows:
+  `source <path>/<script>.sql`
     For example,
 
-        source /root/sql-scripts/2_foreign-key-quote.sql
-3.  After the script runs, enter `exit`.
+       source /root/sql-scripts/2_foreign-key-quote.sql
+
+1. After the script runs, enter `exit`.
 {% endcollapsible %}
 
 ### Back up quote tables
@@ -337,28 +350,29 @@ This section discusses how to back up quote tables from the main Magento databas
 {% collapsible Click to back up and restore quote tables %}
 
 Run the following command from a command prompt:
-    
-    ```bash
-    mysqldump -u <your database root username> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
-    ```
-    
+
+```bash
+mysqldump -u <your database root username> -p <your main Magento DB name> magento_customercustomattributes_sales_flat_quote magento_customercustomattributes_sales_flat_quote_address quote quote_address quote_address_item quote_item quote_item_option quote_payment quote_shipping_rate quote_id_mask > /<path>/quote.sql;
+```
+
 ### NDB requirement
 
 If you are using a [Network Database (NDB)](http://dev.mysql.com/doc/refman/5.6/en/mysql-cluster.html) cluster:
 
-1.  Convert tables from InnoDb to NDB type in dump files:
-    
+1. Convert tables from InnoDb to NDB type in dump files:
+
     ```bash
-        sed -ei 's/InnoDb/NDB/' <file name>.sql
+    sed -ei 's/InnoDb/NDB/' <file name>.sql
     ```
 
-2.  Remove rows with a FULLTEXT key from dumps because NDB tables don't support FULLTEXT.
+2. Remove rows with a FULLTEXT key from dumps because NDB tables do not support FULLTEXT.
 
 ### Restore tables to the quote database
 
 ```bash
 mysql -u root -p magento_quote < /<path>/quote.sql
 ```
+
 {% endcollapsible %}
 
 ## Drop sales and quote tables from the Magento database {#config-ee-multidb-drop}
@@ -382,72 +396,72 @@ DROP TABLE quote_item_option;
 DROP TABLE quote_payment;
 DROP TABLE quote_shipping_rate;
 DROP TABLE quote_id_mask;
-DROP TABLE sales_bestsellers_aggregated_daily;                        
-DROP TABLE sales_bestsellers_aggregated_monthly;                      
-DROP TABLE sales_bestsellers_aggregated_yearly;                       
-DROP TABLE sales_creditmemo;                                          
-DROP TABLE sales_creditmemo_comment;                                  
-DROP TABLE sales_creditmemo_grid;                                     
-DROP TABLE sales_creditmemo_item;                                     
-DROP TABLE sales_invoice;                                             
-DROP TABLE sales_invoice_comment;                                     
-DROP TABLE sales_invoice_grid;                                        
-DROP TABLE sales_invoice_item;                                        
-DROP TABLE sales_invoiced_aggregated;                                 
-DROP TABLE sales_invoiced_aggregated_order;                           
-DROP TABLE sales_order;                                               
-DROP TABLE sales_order_address;                                       
-DROP TABLE sales_order_aggregated_created;                            
-DROP TABLE sales_order_aggregated_updated;                            
-DROP TABLE sales_order_grid;                                          
-DROP TABLE sales_order_item;                                          
-DROP TABLE sales_order_payment;                                       
-DROP TABLE sales_order_status;                                        
-DROP TABLE sales_order_status_history;                                
-DROP TABLE sales_order_status_label;                                  
-DROP TABLE sales_order_status_state;                                  
-DROP TABLE sales_order_tax;                                           
-DROP TABLE sales_order_tax_item;                                      
-DROP TABLE sales_payment_transaction;                                 
-DROP TABLE sales_refunded_aggregated;                                 
-DROP TABLE sales_refunded_aggregated_order;                           
-DROP TABLE sales_sequence_meta;                                       
-DROP TABLE sales_sequence_profile;                                    
-DROP TABLE sales_shipment;                                            
-DROP TABLE sales_shipment_comment;                                    
-DROP TABLE sales_shipment_grid;                                       
-DROP TABLE sales_shipment_item;                                       
-DROP TABLE sales_shipment_track;                                      
-DROP TABLE sales_shipping_aggregated;                                 
-DROP TABLE sales_shipping_aggregated_order;                           
-DROP TABLE magento_sales_creditmemo_grid_archive;                     
-DROP TABLE magento_sales_invoice_grid_archive;                        
-DROP TABLE magento_sales_order_grid_archive;                          
-DROP TABLE magento_sales_shipment_grid_archive;                       
-DROP TABLE magento_customercustomattributes_sales_flat_order;         
+DROP TABLE sales_bestsellers_aggregated_daily;
+DROP TABLE sales_bestsellers_aggregated_monthly;
+DROP TABLE sales_bestsellers_aggregated_yearly;
+DROP TABLE sales_creditmemo;
+DROP TABLE sales_creditmemo_comment;
+DROP TABLE sales_creditmemo_grid;
+DROP TABLE sales_creditmemo_item;
+DROP TABLE sales_invoice;
+DROP TABLE sales_invoice_comment;
+DROP TABLE sales_invoice_grid;
+DROP TABLE sales_invoice_item;
+DROP TABLE sales_invoiced_aggregated;
+DROP TABLE sales_invoiced_aggregated_order;
+DROP TABLE sales_order;
+DROP TABLE sales_order_address;
+DROP TABLE sales_order_aggregated_created;
+DROP TABLE sales_order_aggregated_updated;
+DROP TABLE sales_order_grid;
+DROP TABLE sales_order_item;
+DROP TABLE sales_order_payment;
+DROP TABLE sales_order_status;
+DROP TABLE sales_order_status_history;
+DROP TABLE sales_order_status_label;
+DROP TABLE sales_order_status_state;
+DROP TABLE sales_order_tax;
+DROP TABLE sales_order_tax_item;
+DROP TABLE sales_payment_transaction;
+DROP TABLE sales_refunded_aggregated;
+DROP TABLE sales_refunded_aggregated_order;
+DROP TABLE sales_sequence_meta;
+DROP TABLE sales_sequence_profile;  
+DROP TABLE sales_shipment;
+DROP TABLE sales_shipment_comment;  
+DROP TABLE sales_shipment_grid;
+DROP TABLE sales_shipment_item;
+DROP TABLE sales_shipment_track;
+DROP TABLE sales_shipping_aggregated;
+DROP TABLE sales_shipping_aggregated_order;
+DROP TABLE magento_sales_creditmemo_grid_archive;
+DROP TABLE magento_sales_invoice_grid_archive;
+DROP TABLE magento_sales_order_grid_archive;  
+DROP TABLE magento_sales_shipment_grid_archive;
+DROP TABLE magento_customercustomattributes_sales_flat_order;
 DROP TABLE magento_customercustomattributes_sales_flat_order_address;
-DROP TABLE sequence_creditmemo_0;                                     
-DROP TABLE sequence_creditmemo_1;                                     
-DROP TABLE sequence_invoice_0;                                        
-DROP TABLE sequence_invoice_1;                                        
-DROP TABLE sequence_order_0;                                          
-DROP TABLE sequence_order_1;                                          
-DROP TABLE sequence_rma_item_0;                                       
-DROP TABLE sequence_rma_item_1;                                       
-DROP TABLE sequence_shipment_0;                                       
-DROP TABLE sequence_shipment_1;     
+DROP TABLE sequence_creditmemo_0;
+DROP TABLE sequence_creditmemo_1;
+DROP TABLE sequence_invoice_0;
+DROP TABLE sequence_invoice_1;
+DROP TABLE sequence_order_0;
+DROP TABLE sequence_order_1;
+DROP TABLE sequence_rma_item_0;
+DROP TABLE sequence_rma_item_1;
+DROP TABLE sequence_shipment_0;
+DROP TABLE sequence_shipment_1;
 SET foreign_key_checks = 1;
 ```
 
 Run the script as follows:
 
-1.  Log in to your MySQL database as the root or administrative user:
+1. Log in to your MySQL database as the root or administrative user:
 
     ```bash
     mysql -u root -p
     ```
-    
-2.  At the `mysql>` prompt, run the script as follows:
+
+2. At the `mysql>` prompt, run the script as follows:
 
     ```bash
     source <path>/<script>.sql
@@ -458,8 +472,8 @@ Run the script as follows:
     ```bash
     source /root/sql-scripts/3_drop-tables.sql
     ```
-    
-3.  After the script runs, enter `exit`.
+
+3. After the script runs, enter `exit`.
 {% endcollapsible %}
 
 ## Update your deployment configuration {#config-ee-multidb-config}
@@ -468,52 +482,52 @@ The final step in manually splitting databases is to add connection and resource
 
 {% collapsible Click to update the Magento deployment configuration %}
 
-1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
-2.  Back up your deployment configuration:
+1. Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html).
+1. Back up your deployment configuration:
 
     ```bash
     cp <magento_root>/app/etc/env.php <magento_root>/app/etc/env.php.orig
     ```
-    
-2.  Open `<magento_root>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
+
+1. Open `<magento_root>/app/etc/env.php` in a text editor and update it using the guidelines discussed in the following sections.
 
 ### Update database connections
 
 Locate the block starting with `'default'` (under `'connection'`) and add `'checkout'` and `'sales'` sections. Replace sample values with values appropriate for your site.
 
-```php?start_inline=1
+```php
  'default' =>
       array (
-        'host' => 'localhost',
-        'dbname' => 'magento',
-        'username' => 'magento',
-        'password' => 'magento',
-        'model' => 'mysql4',
-        'engine' => 'innodb',
-        'initStatements' => 'SET NAMES utf8;',
-        'active' => '1',
+'host' => 'localhost',
+'dbname' => 'magento',
+'username' => 'magento',
+'password' => 'magento',
+'model' => 'mysql4',
+'engine' => 'innodb',
+'initStatements' => 'SET NAMES utf8;',
+'active' => '1',
       ),
       'checkout' =>
       array (
-        'host' => 'localhost',
-        'dbname' => 'magento_quote',
-        'username' => 'magento_quote',
-        'password' => 'magento_quote',
-        'model' => 'mysql4',
-        'engine' => 'innodb',
-        'initStatements' => 'SET NAMES utf8;',
-        'active' => '1',
+'host' => 'localhost',
+'dbname' => 'magento_quote',
+'username' => 'magento_quote',
+'password' => 'magento_quote',
+'model' => 'mysql4',
+'engine' => 'innodb',
+'initStatements' => 'SET NAMES utf8;',
+'active' => '1',
       ),
       'sales' =>
       array (
-        'host' => 'localhost',
-        'dbname' => 'magento_sales',
-        'username' => 'magento_sales',
-        'password' => 'magento_sales',
-        'model' => 'mysql4',
-        'engine' => 'innodb',
-        'initStatements' => 'SET NAMES utf8;',
-        'active' => '1',
+'host' => 'localhost',
+'dbname' => 'magento_sales',
+'username' => 'magento_sales',
+'password' => 'magento_sales',
+'model' => 'mysql4',
+'engine' => 'innodb',
+'initStatements' => 'SET NAMES utf8;',
+'active' => '1',
       ),
     ),
 ```
@@ -522,8 +536,7 @@ Locate the block starting with `'default'` (under `'connection'`) and add `'chec
 
 Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` sections to it as follows:
 
-```php?start_inline=1
-
+```php
 'resource' =>
   array (
     'default_setup' =>
@@ -539,24 +552,26 @@ Locate the block starting with `'resource'` and add `'checkout'` and `'sales'` s
       'connection' => 'sales',
     ),
 ```
+
 {% endcollapsible %}
 
 ## Reference scripts {#split-db-ref}
 
-This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}.
+This section provides scripts you can run that print a complete list of affected tables without performing any actions on them. You can use them to see what tables are affected before you manually split databases, which can be useful if you use extensions that customize the Magento [database schema](https://glossary.magento.com/database-schema).
 
 {% collapsible Click to view reference SQL scripts %}
 
 To use these scripts:
 
-1.  Create a `.sql` script with the contents of each script in this section.
-2.  In each script, replace `<your main magento DB name>` with the name of your Magento database.
+1. Create a `.sql` script with the contents of each script in this section.
+1. In each script, replace `<your main magento DB name>` with the name of your Magento database.
 
     In this topic, the sample database name is `magento`.
-2.  Run each script from the `mysql>` prompt as `source <script name>`
-3.  Examine the output.
-4.  Copy the result of each script to another `.sql` script, removing the pipe characters (`|`).
-5.  Run each script from the `mysql>` prompt as `source <script name>`.
+
+1. Run each script from the `mysql>` prompt as `source <script name>`
+1. Examine the output.
+1. Copy the result of each script to another `.sql` script, removing the pipe characters (`|`).
+5.Run each script from the `mysql>` prompt as `source <script name>`.
 
     Running this second script performs the actions in your main Magento database.
 

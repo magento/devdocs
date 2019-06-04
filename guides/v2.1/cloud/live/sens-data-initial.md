@@ -15,21 +15,21 @@ This example shows how to use the [recommended procedure]({{ page.baseurl }}/clo
 3. Push `config.local.php` to the branch and Integration environment.
 4. Verify your settings are not editable in the Admin panel. Any configurations exported to `config.local.php` make those fields in the Admin panel read-only and disabled for edits.
 5. Update and modify configurations again in Integration and recreate the file to update in Git:
-        1. Delete `config.local.php` on the Integration environment.
-	2. Change configuration settings on the Integration environment.
-	3. Re-create and push the updated `config.local.php` to the Integration environment.
+    1. Delete `config.local.php` on the Integration environment.
+    2. Change configuration settings on the Integration environment.
+    3. Re-create and push the updated `config.local.php` to the Integration environment.
 
 <!-- {:.bs-callout .bs-callout-info}
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the [Magento Admin](https://glossary.magento.com/magento-admin). For more information, see [Sensitive and system-specific]({{ page.baseurl }}/config-guide/prod/config-reference-sens.html).
 -->
 
 For example, you may want to set the following settings:
 
-* Disable {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your Integration environment
+* Disable [locale](https://glossary.magento.com/locale) and static file optimization settings in your Integration environment
 * Enable static file optimization in Staging and Production environments
 * Configure Fastly in Staging and Production with specific credentials for each
 
-_Static file optimization_ means merging and minifying {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and Cascading Style Sheets, and minifying {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates.
+_Static file optimization_ means merging and minifying [JavaScript](https://glossary.magento.com/javascript) and Cascading Style Sheets, and minifying [HTML](https://glossary.magento.com/html) templates.
 
 ## Prerequisites {#prereqs}
 
@@ -39,8 +39,8 @@ To complete these configuration management tasks, you need the following:
 * Magento Admin panel URL and credentials for Integration, Staging, and Production environments
 * Push all updated code to your Integration environment:
 
-	* For Starter: To an Integration branch and environment
-	* For Pro: To the Integration `master` branch and environment
+  * For Starter: To an Integration branch and environment
+  * For Pro: To the Integration `master` branch and environment
 
 ## Configure Magento through the Integration Admin panel {#configure}
 
@@ -53,7 +53,8 @@ To change locale and static file optimization settings:
 1. In the right pane, expand **Locale Options**.
 1. From the **Locale** list, change the locale. You can change it back later.
 
-	![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
+    ![Change the locale]({{ site.baseurl }}/common/images/cloud_var_locale.png){:width="400px"}
+
 1. Click **Save Config**.
 1. In the left navigation pane, click **Advanced** > **Developer**.
 1. In the right pane, expand **Template Settings**.
@@ -63,7 +64,8 @@ To change locale and static file optimization settings:
 1. From the **Merge CSS Files** list, click **No**.
 1. From the **Minify CSS Files** list, click **No**.
 
-	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
+    ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_set-minify.png){:width="550px"}
+
 1. Click **Save Config**.
 1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
 1. Log out of the Magento Admin.
@@ -103,9 +105,7 @@ The following snippet from `config.local.php` shows an example of changing the d
      ],
 
      ... more ...
-     
 ```
-{: .no-copy}
 
 ## Push and deploy config.local.php to environments {#deploy}
 
@@ -131,16 +131,16 @@ To verify your configuration changes:
 2. Log back in to the Magento Admin.
 3. Click **Stores** > Settings > **Configuration** > General > **General**.
 4. In the right pane, expand **Locale Options**.
+   Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
 
-	Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
-
-	![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
+    ![Can't edit certain values in the Admin]({{ site.baseurl }}/common/images/cloud_var_not-editable.png){:width="550px"}
 5. In the left navigation pane, click Advanced > **Developer**.
 6. In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**.
 
-	Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
+    Notice several fields cannot be edited, as shown in the following sample. These configuration settings are maintained by `config.local.php`.
 
-	![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
+    ![Can't edit certain values in the Admin ]({{ site.baseurl }}/common/images/cloud_var_not-editable2.png){:width="550px"}
+
 7. Log out of the Magento Admin.
 
 ## Change and update system-specific configuration settings {#modify}
@@ -180,20 +180,19 @@ To change values in the Integration environment Magento Admin:
 
 1. If you haven't done so already, log out of the Integration Admin.
 1. Log in to the Integration Admin.
+   For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
+1. Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
+1. In the right pane, expand **Template Settings**.
+1. Clear the **Use default value** checkbox next to the **Minify Html** list.
+1. From the **Minify Html** list, click **Yes**.
+1. In the right pane, expand **CSS Settings**.
+1. From the **Merge CSS Files** list, click **Yes**.
+1. From the **Minify CSS Files** list, click **Yes**.
 
-	For URL and credentials, see [Find Admin login information]({{ site.baseurl }}/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-es-config-mg).
-4. Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
-5. In the right pane, expand **Template Settings**.
-6. Clear the **Use default value** checkbox next to the **Minify Html** list.
-7. From the **Minify Html** list, click **Yes**.
-5. In the right pane, expand **CSS Settings**.
-6. From the **Merge CSS Files** list, click **Yes**.
-7. From the **Minify CSS Files** list, click **Yes**.
-
-	![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_reset-minify.png){:width="550px"}
-8. Click **Save Config**.
-9. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
-10. Log out of the Magento Admin.
+    ![Set static file optimization settings]({{ site.baseurl }}/common/images/cloud_vars_reset-minify.png){:width="550px"}
+1. Click **Save Config**.
+1. If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html).
+1. Log out of the Magento Admin.
 
 ### Generate a new version of config.local.php {#regenerate}
 
@@ -204,33 +203,33 @@ To generate a new file:
     ```bash
     magento-cloud environment:ssh --pipe
     ```
-	
-2. Create `config.local.php` on the integration server.
+
+1. Create `config.local.php` on the integration server.
 
     ```bash
     ssh <SSH URL> "php bin/magento magento-cloud:scd-dump"
     ```
-	
-For example,
-	
+
+    For example,
+
     ```bash
     ssh itnu84v4m4e5k-master-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento magento-cloud:scd-dump"
     ```
 
-5. If you haven't done so already, change to the project root directory.
-6. Transfer `config.local.php` to your local workstation.
-    
+1. If you haven't done so already, change to the project root directory.
+1. Transfer `config.local.php` to your local workstation.
+
     ```bash
     rsync <SSH URL>:app/etc/config.local.php ./app/etc/config.local.php
     ```
-    
+
 ### Push the changes to Git {#push-again}
 
 To push your changes, enter the following command:
 
-    ```bash
-    git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
-    ```
+```bash
+git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
+```
 
 Wait for deployment to complete.
 

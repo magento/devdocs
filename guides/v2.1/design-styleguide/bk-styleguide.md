@@ -7,7 +7,7 @@ menu_title: Introduction
 menu_order: 1
 menu_node:
 ---
-The Magento Admin guide sets our foundational design, writing, and content standards for the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} software. For more specific user-interface standards, see the [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html).
+The Magento Admin guide sets our foundational design, writing, and content standards for the [Magento Admin](https://glossary.magento.com/magento-admin) software. For more specific user-interface standards, see the [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html).
 
 **Why follow the style guide?** A style guide is the best tool for designers and writers to establish and maintain consistency, which improves communication throughout the application. A seamless look-and-feel and a steady, encouraging writing style make the application usable and engaging.
 

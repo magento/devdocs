@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: JavaScript
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/js_overview.html
 ---
 
 By default, the Magento application uses the [RequireJS file and module loader] to optimize the time of loading pages with included JavaScript files, and to manage dependencies of JavaScript resources.
@@ -19,7 +17,7 @@ Topics of this chapter describe the following:
 - [JavaScript initialization]({{ page.baseurl }}/javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
 - [Use custom JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/custom_js.html): how to extend or replace default JavaScript components/widgets.
 - [Locate JavaScript]({{ page.baseurl }}/javascript-dev-guide/javascript/js_debug.html) components: how to define which components (scripts) are used on a particular store page.
-- [Magento jQuery widgets]({{ page.baseurl }}/javascript-dev-guide/widgets/jquery-widgets-about.html): Magento {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} documentation.
+- [Magento jQuery widgets]({{ page.baseurl }}/javascript-dev-guide/widgets/jquery-widgets-about.html): Magento [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget) [API](https://glossary.magento.com/api) documentation.
 - [Customizing JavaScript illustration]({{ page.baseurl }}/javascript-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
 
 ## Terms used {#js_terms}
@@ -36,5 +34,5 @@ Topics of this chapter describe the following:
 [disable all the default scripts and their load by RequireJS]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#disable_default_js
 [Configure JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js-resources.html
 [AMD module]: http://requirejs.org/docs/whyamd.html#amd
-[app/code/Magento/Ui/view]: {{site.mage2bloburl}}{{page.guide_version}}/app/code/Magento/Ui/view
-[jQuery UI library used in Magento]: {{site.mage2bloburl}}{{page.guide_version}}/lib/web/jquery/jquery-ui-1.9.2.js
+[app/code/Magento/Ui/view]: {{ site.mage2bloburl }}/{{page.guide_version}}/app/code/Magento/Ui/view
+[jQuery UI library used in Magento]: {{ site.mage2bloburl }}/{{page.guide_version}}/lib/web/jquery/jquery-ui-1.9.2.js

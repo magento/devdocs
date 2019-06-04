@@ -11,7 +11,7 @@ functional_areas:
 After configuration, the master databases are configured as follows:
 
 -   Main magento database: 369 tables
--   Magento {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} database: 11 tables
+-   Magento [quote](https://glossary.magento.com/quote) database: 11 tables
 -   Magento sales database: 55 tables
 
 To verify your split databases are working properly, perform the following tasks and verify that data is added to the database tables using a database tool like [phpmyadmin]({{ page.baseurl }}/install-gde/prereq/optional.html#install-optional-phpmyadmin):

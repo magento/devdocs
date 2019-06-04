@@ -100,6 +100,6 @@ To set a configuration setting as both sensitive and system-specific, create two
 *	[Developer roadmap]({{ page.baseurl }}/extension-dev-guide/intro/developers_roadmap.html)
 *	[Dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html)
 
-[typepool]: {{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php
+[typepool]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Config/Model/Config/TypePool.php
 [di-xml]: {{ page.baseurl }}/extension-dev-guide/build/di-xml-file.html
 [config-importers]: {{ page.baseurl }}/extension-dev-guide/configuration/importers.html

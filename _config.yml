@@ -20,9 +20,6 @@ baseurl: ""
 version: "2.3"
 versions:
    -
-      name: "2.0"
-      url: /guides/v2.0/
-   -
       name: "2.1"
       url: /guides/v2.1/
    -
@@ -107,11 +104,6 @@ defaults:
       feedback_link: false
   -
     scope:
-      path: guides/v2.0
-    values:
-      sitemap: false
-  -
-    scope:
       path: guides/v2.1
     values:
       sitemap: false
@@ -175,6 +167,10 @@ kramdown:
   toc_levels: 2..3
   syntax_highlighter_opts:
     css_class: highlighter
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
 
 # Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
 #
@@ -204,12 +200,7 @@ check_links: true
 #############
 #
 # Magento 2 repository variable
-mage2bloburl: https://github.com/magento/magento2/blob/
-
-# 2.0 variables
-gdeurl: /guides/v2.0/
-githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
-mage2000url: https://github.com/magento/magento2/blob/2.0/
+mage2bloburl: https://github.com/magento/magento2/blob
 
 # 1.x variables
 m1xgdeurl: /guides/m1x
@@ -218,17 +209,14 @@ m1xgithuburl: https://github.com/magento/devdocs/blob/master
 # 2.1 variables
 gdeurl21: /guides/v2.1/
 githuburl21: https://github.com/magento/devdocs/tree/master/guides/v2.1/
-mage2100url: https://github.com/magento/magento2/blob/2.1/
 
 # 2.2 variables
 gdeurl22: /guides/v2.2/
 githuburl22: https://github.com/magento/devdocs/tree/master/guides/v2.2/
-mage2200url: https://github.com/magento/magento2/blob/2.2/
 
 # 2.3 variables
 gdeurl23: /guides/v2.3/
 githuburl23: https://github.com/magento/devdocs/tree/master/guides/v2.3/
-mage2300url: https://github.com/magento/magento2/blob/2.3/
 
 
 ##########

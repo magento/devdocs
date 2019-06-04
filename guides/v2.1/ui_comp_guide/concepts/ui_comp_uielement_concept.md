@@ -2,9 +2,6 @@
 group: ui-components-guide
 subgroup: concepts
 title: About the uiElement class
-menu_title: About the uiElement class
-menu_node:
-menu_order: 70
 ---
 
 ## What is the `uiElement` class
@@ -12,11 +9,11 @@ menu_order: 70
 The `uiElement` class is a direct successor of the [uiClass library]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uiclass_concept.html).
 When creating a new component, use the `uiElement` class as a direct parent, if your component will be the last in the components hierarchy chain.
 
-`uiElement` source code is `<UI_Module_dir>/view/base/web/js/lib/core/element/element.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).
+`uiElement` source code is `<UI_Module_dir>/view/base/web/js/lib/core/element/element.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js).
 
 ## Commonly used `uiElement` methods
 
-- The `initLinks()` method implements component communication by using [`links.js`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js).  `initLinks()` introduces processing of the [`exports`, `imports`, `links` and `listens` properties]({{ site.baseurl }}/guides/v2.0/ui-components/ui_components_js.html#comp_link).
+- The `initLinks()` method implements component communication by using [`links.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js).  `initLinks()` introduces processing of the [`exports`, `imports`, `links` and `listens` properties]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html).
 
 - The `initObservable()` method allows you to declare observable variables within the same instance.
 

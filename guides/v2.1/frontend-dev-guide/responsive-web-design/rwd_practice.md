@@ -8,11 +8,11 @@ functional_areas:
 
 This topic features a step-by-step illustration of how to change the number of products displayed in a row on a product page, keeping up with the responsive design approach used by Magento out-of-the-box themes. 
 
-The described flow is applicable only for themes that [inherit]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the out-of-the-box Blank or Luma {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+The described flow is applicable only for themes that [inherit]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) from the out-of-the-box Blank or Luma [theme](https://glossary.magento.com/theme).
 
 ## Changing the number of products in a row {#rwd_practice}
 
-OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} page, so that each product takes more space.
+OrangeCo wants to make their products more visible by decreasing the quantity of products in a row displayed on a [catalog](https://glossary.magento.com/catalog) page, so that each product takes more space.
 
 In the basic Blank theme, the number of products in a row for each breakpoint is the following (for the [2-column page layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-types.html#layout-types-page)):
 -   1024px and more (desktop): four products
@@ -40,8 +40,6 @@ After OrangeCo [applies their theme]({{ page.baseurl }}/frontend-dev-guide/theme
 
 (compare to the [same page for the Blank theme]({{ page.baseurl }}/frontend-dev-guide/responsive-web-design/rwd_mobile.html).)
 
-
-[`/Magento_Catalog/web/css/source/module/_listings.less`]: {{site.mage2000url}}app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less
+[`/Magento_Catalog/web/css/source/module/_listings.less`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/Magento_Catalog/web/css/source/module/_listings.less
 [responsive practice 1]: {{site.baseurl}}/common/images/rwd_pract1.png
 [responsive practice 2]: {{site.baseurl}}/common/images/rwd_practice.jpg
-

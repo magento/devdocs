@@ -9,9 +9,9 @@ functional_areas:
 
 ## Monolog {#config-log-monolog}
 
-Magento 2 complies with the PSR-3 standard. By default, Magento uses [Monolog](https://github.com/Seldaek/monolog). Monolog implemented as a preference for `Psr\Log\LoggerInterface` in the Magento application [`di.xml`]({{ site.mage2000url }}app/etc/di.xml#L9).
+Magento 2 complies with the PSR-3 standard. By default, Magento uses [Monolog](https://github.com/Seldaek/monolog). Monolog implemented as a preference for `Psr\Log\LoggerInterface` in the Magento application [`di.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/etc/di.xml#L9).
 
-Monolog is a popular {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} logging solution with a wide range of handlers that enable you to build advanced logging strategies. Following is a summary of how Monolog works.
+Monolog is a popular [PHP](https://glossary.magento.com/php) logging solution with a wide range of handlers that enable you to build advanced logging strategies. Following is a summary of how Monolog works.
 
 A Monolog _logger_ is a channel that has its own set of _handlers_. Monolog has a large number of handlers, including:
 

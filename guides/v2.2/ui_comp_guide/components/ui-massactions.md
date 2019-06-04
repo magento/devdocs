@@ -170,12 +170,12 @@ Redefine link to constructor:
 
 Extends `Collapsible`:
 
-- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
-- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
+- [app\code\Magento\Ui\view\base\web\js\grid\massactions.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/massactions.js)
+- [app\code\Magento\Ui\view\base\web\templates\grid\actions.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/grid/actions.html)
 
 ### Methods and events
 
-The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
+The following [API](https://glossary.magento.com/api) methods are available:
 
 * `getAction` - returns the action instance found by the provided identifier
 * `addAction` - adds a new action to the actions

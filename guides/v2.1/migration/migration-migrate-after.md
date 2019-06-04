@@ -11,12 +11,12 @@ functional_areas:
 
 After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:
 
-*	Put Magento 1 in maintenance mode and permanently stop all {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} activities
+* Put Magento 1 in maintenance mode and permanently stop all [Admin](https://glossary.magento.com/admin) activities
 
-*	Start Magento 2 cron jobs
+* Start Magento 2 cron jobs
 
-*	[Flush all Magento 2 cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean){:target="_blank"}
+* [Flush all Magento 2 cache types]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean){:target="_blank"}
 
-*	[Reindex all Magento 2 indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex){:target="_blank"}
+* Reindex all Magento 2 indexers]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex){:target="_blank"}
 
-*	Change DNS, load balancers, etc. to point to Magento 2 production hardware
+* Change DNS, load balancers, etc. to point to Magento 2 production hardware

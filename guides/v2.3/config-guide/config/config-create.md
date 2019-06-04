@@ -9,7 +9,7 @@ functional_areas:
 
 ## Extend configuration types {#config-files-extend-create}
 
-To extend an existing configuration type, you need only create a configuration file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+To extend an existing configuration type, you need only create a configuration file in your [module](https://glossary.magento.com/module).
 
 For example, to add an event observer, you create `app/code/{VendorName}/{ModuleName}/etc/events.xml` and declare a new observer.
 
@@ -21,11 +21,11 @@ Your new `events.xml` is automatically collected from your module and merged wit
 
 To create new configuration type, you must add at minimum:
 
-* {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files
+* [XML](https://glossary.magento.com/xml) configuration files
 * XSD validation schema
 * A loader
 
-For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for a new search server that enables extensions to configure how its entities are indexed in that server, create:
+For example, to introduce an [adapter](https://glossary.magento.com/adapter) for a new search server that enables extensions to configure how its entities are indexed in that server, create:
 
 * A loader.
 * An XSD schema.
@@ -34,12 +34,12 @@ For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d
 
    If other modules have a `search.xml` file, they are merged with your file when it loads.
 
-To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
+To create a new configuration type, extend the `\Magento\Framework\Config\ReaderInterface`, which is [Magento\Framework\Config\Reader\Filesystem]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/Reader/Filesystem.php) to provide the following parameters:
 
-* `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
-* `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
-* `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
-* `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2300url }}lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated. 
+* `$fileResolver`. Implements [\Magento\Framework\Config\FileResolverInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php). This parameter lists the files containing the configurations of your custom type.
+* `$converter`. Implements [\Magento\Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php). This parameter converts the XML into the internal array representation of the configurations.
+* `$schemaLocator`. Implements [\Magento\Framework\Config\SchemaLocatorInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/SchemaLocatorInterface.php). This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.
+* `$validationState`. Implements [\Magento\Framework\Config\ValidationStateInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ValidationStateInterface.php). This parameter defines whether a configuration file should be validated. 
 * `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
 * `$idAttributes`. Array of node attribute IDs.
 

@@ -4,7 +4,7 @@ group: how-do-i
 subgroup:
 title: Add custom input mask for ZIP code
 subtitle: Customize Checkout
-menu_order: 6
+menu_order: 7
 level3_subgroup: checkout-tutorial
 functional_areas:
   - Checkout
@@ -12,10 +12,38 @@ functional_areas:
 
 This topic describes how a developer can add custom input masks.
 
-When a shopper specifies the country and ZIP code in the shipping address during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed.
+When a shopper specifies the country and ZIP code in the shipping address during [checkout](https://glossary.magento.com/checkout) or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed.
 
 In Magento the input masks for the **ZIP code** field are specified in the `<Magento_Directory_module_dir>/etc/zip_codes.xml`. Input masks are specified per country, and are entered in the form of regular expressions.
-The syntax of defined by the [zip_code.xsd]({{ site.mage2000url }}app/code/Magento/Directory/etc/zip_codes.xsd) scheme.
+The syntax of defined by the [zip_code.xsd]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Directory/etc/zip_codes.xsd) scheme.
+
+The following table defines the `zip` node attributes:
+
+ Attribute name | Required | Description
+--- | --- | ---
+`countryCode` | Yes | The country code (Alpha-2 format) for which the zip is defined
+
+```xml
+    <zip countryCode="US">
+        <!-- Here we add the zip codes -->
+    </zip>
+```
+
+The following table defines the `code` node attributes:
+
+ Attribute name | Required | Description
+--- | --- | ---
+`id` | Yes | A random unique name within the same list.
+`example` | Yes | An example of the allowed pattern.
+`active` | No | Defines if this zip pattern is active or not.
+
+You can define several zip `code` patterns for the same country, by passing a list of `codes`.
+```xml
+    <codes>
+        <code id="pattern_1" active="true" example="12345">^[0-9]{5}$</code>
+        <code id="pattern_2" active="true" example="AB1234">^[a-zA-z]{2}[0-9]{4}$</code>
+    </codes>
+```
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a separate, custom module. For your ZIP code input mask customization to be applied correctly, your custom module should depend on the `Magento_Directory` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
