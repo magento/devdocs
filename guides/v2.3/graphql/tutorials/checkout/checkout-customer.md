@@ -92,3 +92,7 @@ mutation {
 ```
 
 ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes the mutation further.
+
+### Verify this step {#verify-step}
+
+Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`. You should be successfully logged in.

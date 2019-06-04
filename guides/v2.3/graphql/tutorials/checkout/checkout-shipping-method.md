@@ -73,3 +73,11 @@ mutation {
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
+### Verify this step {#verify-step}
+
+1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
+
+2. Go to Checkout. 
+
+3. Selected shipping method is displayed in the Shipping Methods section on the Shipping step.

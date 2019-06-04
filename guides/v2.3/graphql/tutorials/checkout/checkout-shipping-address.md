@@ -238,3 +238,11 @@ mutation {
   }
 }
 ```
+
+### Verify this step {#verify-step}
+
+1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
+
+2. Go to Checkout. 
+
+3. On the Shipping step Shipping Address form is populated with the entered address details.

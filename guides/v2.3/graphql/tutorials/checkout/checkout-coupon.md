@@ -86,3 +86,11 @@ mutation {
   }
 }
 ```
+
+### Verify this step {#verify-step}
+
+1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
+
+2. Go to Checkout. 
+
+3. Discount is displayed in the Order Summary block.

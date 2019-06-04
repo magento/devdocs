@@ -38,3 +38,7 @@ In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUj
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
+### Verify this step {#verify-step}
+
+There are no additional verification steps. `quote`.`entity_id` value is not displayed on the website or in Admin.
