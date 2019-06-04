@@ -30,25 +30,25 @@ When the [patch][] program is run, this file is read in and the specified change
 
 ## Using the command line to apply a patch
 
-1. Login to the server as the Magneto user.
-1. Upload the patch files to the `<Magento_root>` folder.
+1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.  
+1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
 1. If the store is compiled, make sure the compiler is disabled.
 1. In the command line interface, run the following commands according to the patch extension:
 
-        patch --p0<patch_file_name.patch  --list
+        patch < patch_file_name.patch
 
-    (If the above command does not work, try using [-p1 instead of -p0][])
+   The command assumes the file to be patched is located relative to the patch file.
 
-1. Use either of the following methods to verify that the patch was installed:
+{: .bs-callout-info}
+If the command line shows: `File to patch:`, it means it cannot locate the intended file, even if the path seems correct.
+In the box displayed in the command line terminal, the first line shows the file to be patched.
+Copy the file path and paste it into the `File to patch:` prompt and press `Enter` and the patch should complete.
 
-    * Running the patch file with the `--list` argument, as shown above, will list all installed patches after completion.
+5. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
 
-    * Download or view the file: app/etc/applied.patches.list.
+To verify that the patch was installed, download or view the file `<Magento_root>/app/etc/applied.patches.list`.
 
-1. For the changes to be reflected, refresh the cache in the Admin under **System** > Tools > **Cache Management**.
-1. If your store is compiled, rerun the compiler.
-
-Alternatively, the patch can be applied to the local repo with the same command, then committed and pushed normally.
+Alternatively, the patch can be applied locally with the same command, then committed and pushed normally.
 
 ## Using Composer to install patches
 
@@ -61,3 +61,4 @@ Please refer to the [Magento Help Center][] for details on how to use Composer t
 [Back up and roll back the file system]:https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-backup.html
 [patch]:https://en.wikipedia.org/wiki/Patch_(Unix)
 [Magento Help Center]:https://support.magento.com/hc/en-us/articles/360005484154-Create-a-patch-for-a-Magento-2-Composer-installation-from-a-GitHub-commit
+[Magento Admin user]:https://devdocs.magento.com/guides/v2.3/config-guide/cli/config-cli.html#config-install-cli-first
