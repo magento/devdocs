@@ -715,6 +715,61 @@ You need to read configuration from different sources (like database or filesyst
 
 11.2.3. `ObjectManagerHelper` MAY BE used to automatically mock all dependencies of the object under test.
 
+### 11.3. Functional Testing
+
+11.3.1. Action Groups
+
+11.3.1.1. Action group names MUST be brief but comprehensive.
+
+11.3.1.2. Action group arguments MUST specify their type.
+
+11.3.1.3. Action groups MUST NOT have unused arguments.
+
+11.3.1.4. Action groups MUST NOT reference `$$createdData.property$$` or `$createdData.property$`.
+
+11.3.1.5. Action groups SHOULD be in their own file.
+
+11.3.1.6. Action groups SHOULD use the `string` type instead of `entity` unless many properties from the `entity` would be referenced.
+
+11.3.2. Elements
+
+11.3.2.1. Selectors SHOULD be written in CSS instead of Xpath when possible.
+
+11.3.2.2. CSS and Xpath selectors MUST be implemented in their most simple form.
+
+11.3.2.3. Xpath selectors MUST NOT use `@class="foo"`.
+
+11.3.2.4. CSS and Xpath selectors MUST NOT reference `@data-bind`.
+
+11.3.2.5. Parameterized selectors MUST use descriptive names for the parameters.
+
+11.3.2.6. Elements SHOULD use `timeout="30"` to wait after interactions.
+
+11.3.3. Test Before Block
+
+11.3.3.1. Configuration changes via `magentoCLI` SHOULD occur last in the `before` block.
+
+11.3.3.2. The `before` block SHOULD mostly be `createData` calls with minimal UI interaction.
+
+11.3.4. Test After Block
+
+11.3.4.1. Configuration changes via `magentoCLI` SHOULD occur first in the `after` block.
+
+11.3.4.2. The `after` block SHOULD mostly be `deleteData` calls with minimal UI interaction.
+
+11.3.5. Test Body
+
+11.3.5.1. The test SHOULD re-use action groups, pages, sections, and elements.
+
+11.3.5.2. Any data created MUST be deleted in the `after` block of the test.
+
+11.3.5.3. `amOnPage` SHOULD be followed by `waitForPageLoad`.
+
+11.3.5.4. `amOnPage` SHOULD use `Page.url` instead of a hardcoded URL.
+
+11.3.5.5. `waitForPageLoad` SHOULD be used instead of `waitForLoadingMaskToDisappear` or `waitForAjaxLoad`.
+
+
 ## 12. Web API
 
 12.1. Both REST and SOAP API's MUST be exposed.
