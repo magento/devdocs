@@ -127,5 +127,3 @@ return [
 ## Related topics {#m2arch-module-related}
 
 [Module overview]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_intro.html)
-
-[Types of module dependencies]({{page.baseurl}}/architecture/archi_perspectives/components/modules/mod_depend_types.html)
