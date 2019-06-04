@@ -5,7 +5,7 @@ functional_areas:
   - Integration
 ---
 
-In a REST call, a user could potentially specify one ID in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} and another in the request body. Whenever this type of conflict occurs, Magento uses the value specified in the URL.
+In a REST call, a user could potentially specify one ID in the [URL](https://glossary.magento.com/url) and another in the request body. Whenever this type of conflict occurs, Magento uses the value specified in the URL.
 
 For example:
 

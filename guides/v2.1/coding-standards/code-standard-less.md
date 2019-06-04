@@ -9,7 +9,7 @@ functional_areas:
   - Standards
 ---
 
-This standard defines Magento internal requirements for code formatting and style for teams that develop Less and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} code.
+This standard defines Magento internal requirements for code formatting and style for teams that develop Less and [CSS](https://glossary.magento.com/css) code.
 
 Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this.
 
@@ -557,7 +557,7 @@ Omit leading "0"s in values, use dot instead.
 
 #### Local variables
 
-If variables are local and used only in a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} scope, they should be located in the module file, in the beginning of the general comment.
+If variables are local and used only in a [module](https://glossary.magento.com/module) scope, they should be located in the module file, in the beginning of the general comment.
 
 **Example** `_module.less`:
 
@@ -631,11 +631,11 @@ Component name must meaningful. It can contain the `primary`, `secondary`, `tert
 
 ### Location
 
-{% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} mixins (except extends) should be located in the `source/utilities` directory.
+[Theme](https://glossary.magento.com/theme) mixins (except extends) should be located in the `source/utilities` directory.
 
 ### Naming
 
-For {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} naming apply the class naming rules.
+For [mixin](https://glossary.magento.com/mixin) naming apply the class naming rules.
 
 For mixins grouping use the double underscore "__" prefix.
 
@@ -662,7 +662,7 @@ Extend names should start with the `.abs-` prefix.
 
 ## `@import` directive
 
-Always add the file {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the imported resource.
+Always add the file [extension](https://glossary.magento.com/extension) of the imported resource.
 
 **Correct**:
 

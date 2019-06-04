@@ -11,7 +11,7 @@ This topic explains how default templates work in the Magento application.
 
 ## How templates are initiated {#template-layout}
 
-Templates are initiated in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files, and
+Templates are initiated in [layout](https://glossary.magento.com/layout) files, and
 each layout block has an associated template. 
 
 The template is specified in the `template` attribute of the `<block>` layout instruction. 
@@ -22,7 +22,7 @@ Take this example from [`app/code/Magento/Catalog/view/frontend/layout/catalog_c
 <block class="Magento\Catalog\Block\Category\View" name="category.image" template="Magento_Catalog::category/image.phtml">
 ```
 
-The `category.image` block is rendered by the `image.phtml` template in the `category` subdirectory of the `Magento_Catalog` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} templates directory.
+The `category.image` block is rendered by the `image.phtml` template in the `category` subdirectory of the `Magento_Catalog` [module](https://glossary.magento.com/module) templates directory.
 
 The templates directory of `Magento_Catalog` is `app/code/Magento/Catalog/view/frontend/templates`.
 

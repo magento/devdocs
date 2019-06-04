@@ -94,7 +94,7 @@ The following sample route does not redirect from the `www` to the apex domain; 
 In the first sample, the server responds directly to a request of the form `http://example.com/hello`, but it issues a _301 redirect_ for `http://www.example.com/mypath` (to `http://example.com/mypath`).
 
 ## Wildcard routes
-{{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
+{{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for [redirect](https://glossary.magento.com/redirect) and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
 
 -  `*.example.com`
 -  `www.example.com`
@@ -142,14 +142,14 @@ http://{default}/:
     type: redirect
 https://{default}/:
     cache:
-      cookies: [""]
-      default_ttl: 0
-      enabled: true
-      headers:
-      - Accept
-      - Accept-Language
+        cookies: [""]
+        default_ttl: 0
+        enabled: true
+        headers:
+            - Accept
+            - Accept-Language
     ssi:
-      enabled: false
+        enabled: false
     type: upstream
     upstream: php:http
 ```

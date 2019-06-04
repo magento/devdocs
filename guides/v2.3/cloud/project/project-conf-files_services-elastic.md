@@ -49,12 +49,12 @@ Optionally, you can add plugins with the `.magento/services.yaml` file. For exam
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:6.5
-   disk: 1024
-   configuration:
-    plugins:
-      - analysis-icu
-      - lang-python
+    type: elasticsearch:6.5
+    disk: 1024
+    configuration:
+        plugins:
+            - analysis-icu
+            - lang-python
 ```
 
 {:.bs-callout .bs-callout-info}

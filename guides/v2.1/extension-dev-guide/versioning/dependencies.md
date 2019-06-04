@@ -5,7 +5,6 @@ title: Module version dependencies
 menu_title: Module version dependencies
 menu_order: 1200
 redirect_from:
-  - /guides/v2.0/extension-dev-guide/backward-compatibility.html
   - /guides/v2.1/extension-dev-guide/backward-compatibility.html
   - /guides/v2.2/extension-dev-guide/backward-compatibility.html
 ---
@@ -25,7 +24,7 @@ A PHP Interface in Magento can be used several ways by the core product and exte
 
 * **As an API**. An interface is called by PHP code.
 * **As a Service Provider Interface (SPI)**. An interface can be implemented, allowing code to provide functionality to the platform.
-* **As both**. For example, in a service contract, we expect all calls to a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
+* **As both**. For example, in a service contract, we expect all calls to a [module](https://glossary.magento.com/module) to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
 APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.
 
 However, the dependency rules are different:
@@ -33,27 +32,30 @@ However, the dependency rules are different:
 * If a module uses (calls) an API, it should be dependent on the MAJOR version and the system provides backward compatibility in scope of current major version.
 
   **API dependency example**
-```json
-{
-    ...
-    "require": {
-        "magento/customer": "~2.0",
-    },
-    ...
-}
-```
-* If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
-   **SPI dependency example**
-```json
-{
-    ...
-    "require": {
-        "magento/customer": "~2.0.0",
-    },
-    ...
-}
 
-```
+    ```json
+    {
+        ...
+        "require": {
+            "magento/customer": "~2.0",
+        },
+        ...
+    }
+    ```
+
+* If a module implements an API/SPI, it should be dependent on the MAJOR+MINOR version, and the system provides backward compatibility in scope of the current minor version.
+
+   **SPI dependency example**
+
+    ```json
+    {
+        ...
+        "require": {
+            "magento/customer": "~2.0.0",
+        },
+        ...
+    }
+    ```
 
 ## Determine module dependency
 
@@ -104,4 +106,3 @@ Use this table to set the appropriate version dependency on a module based on ho
 | | Declare a foreign key on a module table | MAJOR|
 | | Declare a trigger on a module table | MAJOR|
 | | Read from table or write to table from a temporary table| PATCH|
-  

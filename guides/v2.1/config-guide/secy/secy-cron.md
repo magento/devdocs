@@ -71,7 +71,7 @@ Contents of the file:
 
 To secure cron in Magento's `.htaccess` file:
 
-1.	Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+1.	Log in to your Magento server as, or switch to, the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 2.	Open `<magento_root>/pub/.htaccess` in a text editor.
 
 	(Because `cron.php` is located in the `pub` directory, edit this `.htaccess` only.)
@@ -98,7 +98,7 @@ To secure cron in Magento's `.htaccess` file:
 
 ## Secure cron with nginx
 
-This section discusses how to secure cron using the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} web server. You must perform the following tasks:
+This section discusses how to secure cron using the [nginx](https://glossary.magento.com/nginx) web server. You must perform the following tasks:
 
 1.	Set up an encrypted password file for nginx
 2.	Modify your nginx configuration to reference the password file when accessing `pub/cron.php`

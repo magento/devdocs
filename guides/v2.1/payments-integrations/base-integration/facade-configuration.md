@@ -11,7 +11,7 @@ functional_areas:
 Payment facade it is an instance of [Payment Adapter]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Payment/Model/Method/Adapter.php) configured with virtual types and allows to
 process payment actions between Magento Sales Management and payment processor.
 
-Add the [dependency injection (DI)]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration for {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} facade in your `%Vendor_Module%/etc/di.xml`.
+Add the [dependency injection (DI)]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) configuration for [payment method](https://glossary.magento.com/payment-method) facade in your `%Vendor_Module%/etc/di.xml`.
 
 The following sample is an illustration of such configuration ([app/code/Magento/Braintree/etc/di.xml#L10]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/etc/di.xml#L10)):
 

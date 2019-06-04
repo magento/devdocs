@@ -12,7 +12,7 @@ functional_areas:
 
 You can upgrade Magento from the command line if you installed the software by:
 
-* Downloading the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`.
+* Downloading the [metapackage](https://glossary.magento.com/metapackage) using `composer create-project`.
 * Installing the compressed archive.
 
 There are two ways to upgrade your Magento application to the 2.3 version:

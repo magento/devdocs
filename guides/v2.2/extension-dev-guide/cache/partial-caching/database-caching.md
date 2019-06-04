@@ -2,11 +2,9 @@
 group: php-developer-guide
 title: Create custom cache engines
 redirect_from:
-  -  /guides/v2.0/config-guide/database/database.html
   -  /guides/v2.1/config-guide/database/database.html
   -  /guides/v2.2/config-guide/database/database.html
   -  /guides/v2.3/config-guide/database/database.html
-  -  /guides/v2.0/config-guide/cache/caching-database.html
   -  /guides/v2.1/config-guide/cache/caching-database.html
   -  /guides/v2.2/config-guide/cache/caching-database.html
   -  /guides/v2.3/config-guide/cache/caching-database.html
@@ -19,7 +17,7 @@ This topic discusses how to use the Magento 2 database for caching. After you co
 This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:
 
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
-*	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
+*	Using a custom [cache](https://glossary.magento.com/cache) frontend, in which case you modify `env.php` only.
 
 {:.bs-callout .bs-callout-warning}
 Database caching&mdash;like file-based caching&mdash; works well in a development environment but we _strongly recommend_ you use [Varnish] in production instead.
@@ -27,7 +25,7 @@ Varnish is designed to accelerate the HTTP protocol.
 
 ## Prerequisites {#mage-cache-db-prereq}
 
-Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
+Before you continue, if you're using your own frontend cache, make sure you [associate cache frontends with cache types]. If you're using the `default` [frontend](https://glossary.magento.com/frontend) cache, you don't have to do that.
 
 We provide [sample configurations] at the end of this topic.
 
@@ -100,7 +98,7 @@ To modify `di.xml`:
 
 ## Database caching using a custom cache frontend {#mage-cache-db-env}
 
-This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
+This section discusses how to set up database caching with a custom [cache frontend](https://glossary.magento.com/cache-frontend).
 
 {:.bs-callout .bs-callout-info #info}
 Due to a known issue, a custom cache frontend still results in some objects being cached to the file system; however, fewer assets are cached compared to file system caching.
@@ -151,7 +149,7 @@ Use the following steps:
 		rm -rf <magento_root>/var/cache/* <magento_root>/var/page_cache/* <magento_root>/generated/metadata/* <magento_root>/generated/code/*
     ```
 
-3.	In a web browser, go to any cacheable page (such as the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} front door page).
+3.	In a web browser, go to any cacheable page (such as the [storefront](https://glossary.magento.com/storefront) front door page).
 
 	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must [enable developer mode].)
 4.	Enter the following commands:
