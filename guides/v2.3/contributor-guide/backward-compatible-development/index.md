@@ -440,9 +440,10 @@ For example, when 2.2 is released, a new `backward-incompatible-changes.md` for 
 In order to update the page, create a PR to the DevDocs repository with your changes.
 
 ## GraphQl backward compatibility policy
-* For GraphQl project - only schema can be counted as a contract;
-* Only schema should be taken into account for backward compatibility needs;
-* GraphQl PHP codebase should NOT follow the restrictions provided with current article - e.g. skipp all introduced `backward compatibility` restrictions for PHP codebase;
+
+* In GraphQL, the schema is the only code that can be counted as a contract.
+* Only the schema should be taken into account for backward compatibility.
+* The GraphQL codebase should NOT follow the restrictions described in this topic. For example, skip all the `backward compatibility` restrictions for the GraphQL PHP codebase.
 
 <!-- Link definitions -->
 
