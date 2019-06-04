@@ -142,6 +142,15 @@ If you are using server-side compilation mode, you must [clean generated static 
     }
     ```
 
+## client-side workflow for the initialization of UI components
+
+- `bootstrap.js` binds the component as a Model behind the View (template) using Knockout bindings.
+- The UI components are now displayed on the page and are fully interactive.
+- `app.js` calls `layout.js` and passes the UI component's config into the layout
+- The component's HTML templates are rendered by the `knockout.js` template engine. `bootstrap.js` passes our own template engine to knockout
+- layout.js creates instances of components. Each UI component's configuration must have an explicitly declared component property.
+- `RequireJS` requires `Magento_Ui/js/core/app` and pass `JSON` configuration as parameter.
+
 1. Refresh the page and verify your changes.
 
     ![Admin login page where the font of the buttons was changed]({{ site.baseurl }}/common/images/extend_less_screenshot221.png)
