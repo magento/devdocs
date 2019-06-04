@@ -14,7 +14,7 @@ functional_areas:
 
 {{site.data.var.ee}} offers number of scalability advantages, including the ability to use three separate master databases for different functional areas of the Magento application.
 
-Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.
+Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from [website](https://glossary.magento.com/website) checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.
 
 {:.bs-callout .bs-callout-info}
 {{site.data.var.ece}} does _not_ support this feature at this time.
@@ -42,7 +42,7 @@ In {{site.data.var.ce}}, only one master database is used.
 Because of the way the split database performance solution is designed, your custom code and installed components *cannot* do any of the following:
 
 *	Write directly to the database (instead, you must use the {{site.data.var.ee}} database interface)
-*	Use JOINs that affect the sales or {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} databases
+*	Use JOINs that affect the sales or [quote](https://glossary.magento.com/quote) databases
 *	Use foreign keys to tables in the checkout, sales, or main databases
 
 {%
@@ -71,7 +71,7 @@ You must back up the two additional database instances manually. Magento backs u
 
 The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the *master* databases and they're used as follows:
 
-*	One master database for {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} tables
+*	One master database for [checkout](https://glossary.magento.com/checkout) tables
 *	One master database for sales tables (also referred to as *Order Management System*, or *OMS*, tables)
 *	One master database for the remainder of the Magento 2 application tables
 

@@ -11,11 +11,11 @@ functional_areas:
   - Setup
 ---
 
-[PHP Hypertext Preprocessor (PHP)](http://php.net/manual/en/faq.general.php){:target="_blank"} is a scripting language that Magento is authored in. Magento requires {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 5.5 or 5.6 to run.
+[PHP Hypertext Preprocessor (PHP)](http://php.net/manual/en/faq.general.php){:target="_blank"} is a scripting language that Magento is authored in. Magento requires [PHP](https://glossary.magento.com/php) version 5.5 or 5.6 to run.
 
 To configure PHP:
 
-1.	If necessary, start the cPanel and click **Home** to return to the {% glossarytooltip 2f4a0fcd-4106-4194-b47b-018ffbce3ac0 %}home page{% endglossarytooltip %}.
+1.	If necessary, start the cPanel and click **Home** to return to the [home page](https://glossary.magento.com/home-page).
 2.	In the Software section, click **Select PHP Version**.
 
     ![Start out configuring PHP]({{ site.baseurl }}/common/images/install-merch_php.png){:width="550px"}

@@ -65,7 +65,7 @@ This was favored for Magento 1 development.
 [Object composition](https://en.wikipedia.org/wiki/Object_composition){:target="_blank"} is the programming concept of combining class objects and data types to create a more complex class.
 The classes and data types are used together to produce a desired functionality.
 
-For Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} development, we encourage the use of object composition over class inheritance.
+For Magento 2 [extension](https://glossary.magento.com/extension) development, we encourage the use of object composition over class inheritance.
 Using composition over inheritance makes your extension easier to maintain when class changes occur and update when new features need to be implemented.
 
 ### Using around plugins

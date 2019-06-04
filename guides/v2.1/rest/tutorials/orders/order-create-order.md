@@ -18,11 +18,11 @@ functional_areas:
   - Sales
 ---
 
-The {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}quote{% endglossarytooltip %} to an order.
+The [shopping cart](https://glossary.magento.com/shopping-cart) contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the [quote](https://glossary.magento.com/quote) to an order.
 
 ### Send payment information {#send-payment}
 
-When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
+When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline [payment method](https://glossary.magento.com/payment-method) in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
 
 **Endpoint**
 
@@ -1577,4 +1577,4 @@ Not applicable
 ### Verify this step {#verify-step}
 
 1. Log in to the Luma store as the customer. The dashboard shows the order.
-2. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.
+2. Log in to [Admin](https://glossary.magento.com/admin). Click **Sales** > **Orders**. The order is displayed in the grid. Its status is Pending.

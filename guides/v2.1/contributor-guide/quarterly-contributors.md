@@ -1,7 +1,6 @@
 ---
 group: contributor-guide
 title: DevDocs Contributors
-redirect_from: /guides/v2.0/howdoi/howdoi_bios.html
 ---
 
 Thanks to the following community members, partners, and Magento fans who helped provide content to the DevDocs site this quarter.

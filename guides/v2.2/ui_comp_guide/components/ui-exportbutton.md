@@ -96,13 +96,13 @@ The following is an example of configuring the component using the`sales_order_g
 </listing>
 ```
 
-By default Magento allows {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} and Excel {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} export data formats.
+By default Magento allows [CSV](https://glossary.magento.com/csv) and Excel [XML](https://glossary.magento.com/xml) export data formats.
 
 ### Add new export format
 
 To add new export format:
 
-* Add configuration data to ExportButton definition [`Magento/Ui/view/base/ui_component/etc/definition.xml`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)</a>
+* Add configuration data to ExportButton definition [`Magento/Ui/view/base/ui_component/etc/definition.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/ui_component/etc/definition.xml)</a>
 * Add controller for new format processing `\Magento\Ui\Controller\Adminhtml\Export\GridToFoo`
 * Add converter `\Magento\Ui\Model\Export\ConvertToFoo`
 
@@ -110,5 +110,5 @@ To add new export format:
 
 Extends [`UiElement`]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html):
 
-- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`]({{ site.mage2200url }}app/code/Magento/Ui/view/base/web/js/grid/export.js)
+- [`app/code/Magento/Ui/view/base/web/js/grid/export.js`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/grid/export.js)
 

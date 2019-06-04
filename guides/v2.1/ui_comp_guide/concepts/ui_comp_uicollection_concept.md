@@ -10,13 +10,13 @@ menu_order: 80
 
 The `uiCollection` library class should be used as a base class by any components that contain a collection of child UI components.  `uiCollection` inherits from the [uiElement class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html).
 
-`uiCollection` source code is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js).
+`uiCollection` source code is `<UI_Module_dir>/view/base/web/js/lib/core/collection.js`, in the {{site.data.var.ce}} GitHub repository: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/lib/core/collection.js).
 
 ## Commonly used `uiCollection` methods
 
 The `uiCollection` class implements the following methods:
 
-* The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} instance as a parameter.
+* The `initElement()` method allows you to add custom functionality to a child UI component or to the current UI component at the moment when the child UI component initializes. The `initElement()` method gets the child [UI component](https://glossary.magento.com/ui-component) instance as a parameter.
 
   Example:
 
@@ -69,7 +69,7 @@ console.log(this.elems());
 
 ## uiCollection template {#uicollection_template}
 
-The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the {{site.data.var.ce}} GitHub repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/collection.html).
+The `uiCollection` template is `<UI_Module_dir>/view/base/web/templates/collection.html`, in the {{site.data.var.ce}} GitHub repository: [`app/code/Magento/Ui/view/base/web/templates/collection.html`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/collection.html).
 
 This template performs only one task: renders child templates if they exist.
 

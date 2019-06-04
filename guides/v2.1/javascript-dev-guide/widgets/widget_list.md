@@ -2,15 +2,14 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: List widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_list.html
 ---
+
 ## Overview
 
 Provides a way to move items, typically a list, from one content section to another.
 The content can be moved using buttons and links. 
 
-The list {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source file is [lib/web/mage/list.js].
+The list [widget](https://glossary.magento.com/widget) source file is [lib/web/mage/list.js].
 
 ## Initialize the list widget {#quicksearch_init}
 
@@ -122,6 +121,5 @@ If the `maxItems` option is set, hides or displays the **Add** button.
 ### `removeItem()` {#list_removeItem}
 Removes an item from the list.
 
-
-[lib/web/mage/list.js]: {{site.mage2000url}}lib/web/mage/list.js
+[lib/web/mage/list.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/list.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

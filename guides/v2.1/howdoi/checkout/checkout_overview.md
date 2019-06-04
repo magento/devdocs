@@ -11,7 +11,7 @@ functional_areas:
   - Checkout
 ---
 
-Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} is implemented using the [UI components]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html).
+Magento [checkout](https://glossary.magento.com/checkout) is implemented using the [UI components]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/bk-ui_comps.html).
 Out of the box, the checkout consists of two steps:
 
  - Shipping Information
@@ -19,10 +19,10 @@ Out of the box, the checkout consists of two steps:
 
 The checkout totals and the corresponding side-bar are only displayed after the first step is completed.
 
-The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
+The only [exception](https://glossary.magento.com/exception) is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
 
 {: .bs-callout .bs-callout-info }
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a custom [module](https://glossary.magento.com/module).
 
 ## List of available customizations
 
@@ -32,6 +32,7 @@ You can customize the default checkout in multiple ways. This tutorial includes 
  - [Customize the view of an existing step]({{ page.baseurl }}/howdoi/checkout/checkout_customize.html)
  - [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html)
  - [Add custom validations before order placement]({{ page.baseurl }}/howdoi/checkout/checkout_order.html)
+ - [Add custom shipping carrier]({{ page.baseurl }}/howdoi/checkout/checkout-add-custom-carrier.html)
  - [Add custom shipping carrier validations]({{ page.baseurl }}/howdoi/checkout/checkout_carrier.html)
  - [Add custom input mask for ZIP code]({{ page.baseurl }}/howdoi/checkout/checkout_zip.html)
  - [Add a custom template for a form field on Checkout page]({{ page.baseurl }}/howdoi/checkout/checkout_edit_form.html)

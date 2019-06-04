@@ -2,13 +2,11 @@
 group: javascript-developer-guide
 subgroup: 1_Javascript
 title: Customizing JavaScript illustration
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/js_practice.html
 ---
 
 ## Overview {#practice_overview}
 
-This topic features a step-by-step illustration of how to customize a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} and how to use a custom widget instead the default Magento one.
+This topic features a step-by-step illustration of how to customize a [jQuery](https://glossary.magento.com/jquery) [widget](https://glossary.magento.com/widget) and how to use a custom widget instead the default Magento one.
 
 ## Customize a default Magento jQuery widget
 
@@ -133,9 +131,9 @@ var config = {
 
 
 [Page source search result]: {{site.baseurl}}/common/images/fdg_js_pr1.png
-[`gallery.js`]: {{site.mage2100url}}lib/web/mage/gallery/gallery.js
+[`gallery.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [can be reached from the page source view or from the file system]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html#extend_js
 [RequireJS config file]: {{site.baseurl}}/common/images/fdg_pr_2.png
 [jCarousel widget]: http://sorgalla.com/jcarousel/
-[`gallery.js`]: {{site.mage2100url}}lib/web/mage/gallery/gallery.js
+[`gallery.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
 [Use custom JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/custom_js.html

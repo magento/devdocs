@@ -4,7 +4,7 @@ title: Handler
 ---
 
 You can use a handler to set up preconditions and prepare an initial testing environment for particular tests.
-For example, your scenario requires a particular {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} that must be implicitly created before the test is started.
+For example, your scenario requires a particular [widget](https://glossary.magento.com/widget) that must be implicitly created before the test is started.
 You need a [fixture]({{ page.baseurl }}/mtf/mtf_entities/mtf_fixture.html), a [data set]({{ page.baseurl }}/mtf/mtf_entities/mtf_dataset.html), and a handler.
 The handler transfers data to the application being tested.
 The data is a list of fields from a fixture and values from data sets.
@@ -30,12 +30,12 @@ Difficulties can be caused when the Magento code and Magento tests are run on di
 ## Configuration {#mtf_handler_config}
 
 One fixture can have various handlers.
-When we create an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} in the test we do not indicate which handler to use.
+When we create an [entity](https://glossary.magento.com/entity) in the test we do not indicate which handler to use.
 This work is delegated to a fallback, which is a queue of handlers in the priority order specified in [`config.xml`](#mtf_handler_configxml).
 
 ### `config.xml` {#mtf_handler_configxml}
 
-The default configuration for handlers is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2000url }}dev/tests/functional/etc/config.xml.dist). 
+The default configuration for handlers is set in [`<magento2>/dev/tests/functional/etc/config.xml.dist`]({{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/etc/config.xml.dist). 
 Create a duplicate of the file, and keep both, but make changes to the new one, which is called `config.xml`:
 
 ```bash
@@ -46,7 +46,7 @@ The following nodes influence handlers:
 
 <table>
 <tr><th>Node</th><th>Semantics</th><th>Example</th></tr>
-<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
+<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the [Admin](https://glossary.magento.com/admin).</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
 <tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
 <tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
 <tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="{{ page.baseurl }}/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
@@ -262,7 +262,7 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
 
 In the previously mentioned example of the [Curl.php](#mtf_curl_script) code, authentication in the Admin is realized using the `BackendDecorator` class.
 
-The [FrontendDecorator class](#mtf_handler_curl_frontdecor) manages authentication in the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
+The [FrontendDecorator class](#mtf_handler_curl_frontdecor) manages authentication in the [storefront](https://glossary.magento.com/storefront).
 
 #### BackendDecorator class {#mtf_handler_curl_backdecor}
 
@@ -402,7 +402,7 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
   }
   ```
 
-* Create [`di.xml`](#mtf_handler_di) in the `etc/ui` directory of the Magento_Widget {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+* Create [`di.xml`](#mtf_handler_di) in the `etc/ui` directory of the Magento_Widget [module](https://glossary.magento.com/module).
 
   ```xml
   <?xml version="1.0" ?>
@@ -416,7 +416,7 @@ This file contains a [handler class](#mtf_handler_conf_hand), which defines prep
 
 ## How to create a WebAPI handler {#mtf_handler_howto-create-webapi}
 
-Let's create a WebAPI handler that creates a new {% glossarytooltip f35f5e81-db5d-4754-937e-b5607ac255fa %}tax rule{% endglossarytooltip %}.
+Let's create a WebAPI handler that creates a new [tax rule](https://glossary.magento.com/tax-rule).
 
 * Create a directory with the name `TaxRule` in the `Handler` directory of the Magento_Tax module - `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule`.
 * In the same directory, create [interface](#mtf_handler_interface) for the WebAPI handler, and call the file `TaxRuleInterface.php`.

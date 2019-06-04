@@ -2,15 +2,13 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Tabs widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 ## Overview {#fedg_tabs-widget_overview}
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the [Magento collapsible widget].
 
-The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/tabs.js].
+The tabs [widget](https://glossary.magento.com/widget) source is [lib/web/mage/tabs.js].
 
 ## Initialize the tabs widget {#fedg_tabs_init}
 
@@ -241,8 +239,31 @@ Tabs is subscribed to the same events as the [collapsible] widget:
 ### `beforeOpen callback` {#fedg_tabs_beforeOpen_callback}
 Called before the content is opened.
 
+Example of adding a callback to `beforeOpen` events:
+
+```javascript
+$("#element").on("beforeOpen", function () {
+    // do something before opening the content
+});
+```
+
 ### `dimensionsChanged` {#fedg_tabs_dimensionsChanged}
 Called after content is opened or closed.
+
+Example of adding a callback to `dimensionsChanged` events:
+
+```javascript
+$("#element").on("dimensionsChanged", function (event, data) {
+    var opened = data.opened;
+
+    if (opened) {
+        // do something when the content is opened
+        return;
+    }
+
+    // do something when the content is closed
+});
+```
 
 ## Code sample
 
@@ -276,7 +297,7 @@ The result is three tabs with content, where the last tab is disabled based on i
 ![Tabs Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/tabs-widget-result.png)
 
 [Magento collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
-[lib/web/mage/tabs.js]: {{site.mage2000url}}lib/web/mage/tabs.js
+[lib/web/mage/tabs.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/tabs.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [collapsible]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [jQuery.animate()]: http://api.jquery.com/animate/

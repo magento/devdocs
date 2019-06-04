@@ -17,7 +17,7 @@ The following diagram shows a simplified interaction flow between Magento sales 
 
 Magento payment provider supports the following payment operations:
 
- * authorize: process {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} transaction; funds are blocked on customer account, but not withdrawn
+ * authorize: process [authorization](https://glossary.magento.com/authorization) transaction; funds are blocked on customer account, but not withdrawn
  * sale: process authorization transaction and capture automatically, funds are withdrawn
  * capture: withdraw previously authorized amount
  * refund: return previously withdrawn customer funds
@@ -75,7 +75,7 @@ Data used for a transaction. Might include the following:
 <li> shipping, billing addresses </li>
 <li> customer details </li>
 <li> taxes </li>
-<li> merchant's payment provider {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} credentials </li>
+<li> merchant's payment provider [API](https://glossary.magento.com/api) credentials </li>
 </ul>
 </td>
 </tr>

@@ -24,7 +24,7 @@ Magento does not recommend or endorse any particular logging solution.
 
 ### Magento PSR-3 compliance
 
-The [PSR-3 standard](https://zendframework.github.io/zend-log/psr3) defines a common {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interface for logging libraries. The main goal of PSR-3 is to allow libraries to receive a `Psr\Log\LoggerInterface` object and write logs to it in a simple and universal way.
+The [PSR-3 standard](https://zendframework.github.io/zend-log/psr3) defines a common [PHP](https://glossary.magento.com/php) interface for logging libraries. The main goal of PSR-3 is to allow libraries to receive a `Psr\Log\LoggerInterface` object and write logs to it in a simple and universal way.
 
 This provides the ability for the implementation to be replaced easily without worry that such replacement may break the application code. It also guarantees a custom component will work even when the Magento log implementation is changed in a future version of the system.
 

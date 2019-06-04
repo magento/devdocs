@@ -97,7 +97,7 @@ Mapping files for supported Magento versions are located in subdirectories of `<
 
 To use the mapping files:
 
-1.	Rename or copy them to remove the `.dist` {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
+1.	Rename or copy them to remove the `.dist` [extension](https://glossary.magento.com/extension).
 
 2.	Edit them using the schema located in
 

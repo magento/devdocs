@@ -7,7 +7,7 @@ The out-of-the-box tests are the ready to use functional tests developed by Mage
 
 ### Coverage {#coverage}
 
-Test coverage of the out-of-the-box test depends on a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} which it belongs to. The out-of-the-box tests cover the basic functionality of the Magento application. In general, they cover the CRUD functionality for all basic entities (CRUD is an abbreviation for "create", "read", "update", "delete" actions). The most important modules are covered better.
+Test coverage of the out-of-the-box test depends on a [module](https://glossary.magento.com/module) which it belongs to. The out-of-the-box tests cover the basic functionality of the Magento application. In general, they cover the CRUD functionality for all basic entities (CRUD is an abbreviation for "create", "read", "update", "delete" actions). The most important modules are covered better.
 
 ### Usage {#oob-usage}
 

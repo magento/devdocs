@@ -2,25 +2,23 @@
 group: architecture-guide
 title: Module relationships
 menu_title: Module relationships
-redirect_from:
-  - /guides/v2.0/architecture/modules/mod_relationships.html
 ---
 
 ## Overview {#m2arch-module-relationships-overview}
 
-Understanding how one {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} relates to another helps determine how it reacts to changes in that module.
+Understanding how one [module](https://glossary.magento.com/module) relates to another helps determine how it reacts to changes in that module.
 
 A single module can have the following types of relationships with another module:
 
 * **uses**: module A uses module B if it invokes behavior of module B
 
-* **reacts to**: module A reacts to module B if its behavior is triggered by an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} in module B without module B knowing about module A
+* **reacts to**: module A reacts to module B if its behavior is triggered by an [event](https://glossary.magento.com/event) in module B without module B knowing about module A
 
 * **customizes**: module A customizes module B if it modifies the behavior of module B
 
 * **implements**: module A implements module B if it implements some, not necessarily all, behavior that is defined in module B
 
-* **replaces**: module A replaces module B if it provides its own version of the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} exposed and implemented by module B
+* **replaces**: module A replaces module B if it provides its own version of the [API](https://glossary.magento.com/api) exposed and implemented by module B
 
 ## Relationship types and scenarios
 
