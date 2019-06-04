@@ -24,9 +24,7 @@ If there are different translations for one string, the theme dictionary transla
 ## What are database translations
 
 * Translations applied by manually overriding on frontend
-
 * Stored in the translation database table
-
 * Enable the Translate Inline option under *STORE > Settings > Configuration > ADVANCED > Developer*
 
 ## Creating a theme dictionary to override parent strings for default locale
