@@ -27,6 +27,27 @@ If there are different translations for one string, the theme dictionary transla
 * Stored in the *translation* database table
 * Enable the Translate Inline option under *STORE > Settings > Configuration > ADVANCED > Developer*
 
+Following steps describes the how data translation works
+
+1. Enable the Translate Inline option under *STORE > Settings > Configuration > ADVANCED > Developer*
+
+![Enable Translate Inline in storefront]({{ page.baseurl }}/frontend-dev-guide/images/Enable-Translate-Inline-in-storefront.png)
+
+2. Visit any frontend page to change the translation strings manually 
+
+![change the translation strings manually]({{ page.baseurl }}/frontend-dev-guide/images/tranlated-string.png)
+
+3. Change the string by your translated language string into the dialogbox open.
+
+![Change the string]({{ page.baseurl }}/frontend-dev-guide/images/Tranlate-string-dialog-box.png)
+
+4. Output of translating string
+
+![Output of translating string]({{ page.baseurl }}/frontend-dev-guide/images/result-of-translated-string.png)
+
+{:.bs-callout .bs-callout-info}
+Note : All Manual Translated string will be stored in translation table
+
 ## Creating a theme dictionary to override parent strings for default locale
 
 The translations priority described earlier is applied for the default `en_US` locale as well. So you can use the `en_US.csv` dictionary to customize the strings used in the default locale.
