@@ -3,7 +3,7 @@ group: php-developer-guide
 title: Array Manager
 subgroup: Framework
 menu_title: Array Manager
-menu_order: 1500
+menu_order: 1005
 ---
 
 ## Overview
@@ -18,7 +18,7 @@ Being more specifically, heavily nested associative arrays. It is used primarily
 | `exists` | Checks if the node exists in a given associative array |
 | `get` | This will return the value of the key (or node) at the end of the path, `null` is returned if the node hasn't been found. |
 | `move` | Moves a value from one path to another. |
-| `remove` | Updates the existing nodes and returns the modified array |
+| `remove` | Removes node and returns modified array |
 | `replace` | Updates the existing nodes and returns the modified array |
 | `set` | Set value into node and returns modified data |
 
