@@ -14,18 +14,19 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-Use [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/reference/quote-shipping-method.html) mutation to set a shipping address. You can set the shipping address in the following ways:
-- Add a new shipping address
-- Assign the shipping address to be the same as the billing address
-- Use an address already defined in the logged-in customer's address book
+Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/reference/quote-shipping-method.html) mutation to set a shipping address. You can set the shipping address in the following ways:
 
-### Create a new shipping address
+* Add a new shipping address
+* Assign the shipping address to be the same as the billing address
+* Use an address already defined in the logged-in customer's address book
+
+## Create a new shipping address
 
 **Request**
 
 The following mutation adds a shipping address to the quote.
 
-{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
@@ -112,11 +113,11 @@ mutation {
 }
 ```
 
-### Assign the shipping address to be the same as the billing address
+## Assign the shipping address to be the same as the billing address
 
 [Add a new address for billing and shipping]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-billing-address.html) shows how to do this.
 
-### Use the existing customer's address
+## Use the existing customer's address
 
 First, query the customer to return the list of address IDs.
 
@@ -162,9 +163,9 @@ query {
 }
 ```
 
-Set {{ CUSTOMER_ADDRESS_ID }}  to an `id` returned in the query.
+Set `{{ CUSTOMER_ADDRESS_ID }}` to an `id` returned in the query.
 
-{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
@@ -239,10 +240,10 @@ mutation {
 }
 ```
 
-### Verify this step {#verify-step}
+## Verify this step {#verify-step}
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
 2. Go to Checkout. 
 
-3. On the Shipping step Shipping Address form is populated with the entered address details.
+3. On the Shipping step, the Shipping Address form contains the address details you entered.

@@ -15,8 +15,9 @@ contributor_link: https://www.atwix.com/
 ---
 
 Customers can make purchases in two ways:
-- As a logged-in user
-- As a guest user who does not create an account
+
+* As a logged-in user
+* As a guest user who does not create an account
 
 {:.bs-callout .bs-callout-tip}
 Skip this step if you want to place order as a guest user.
@@ -93,6 +94,6 @@ mutation {
 
 ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) describes the mutation further.
 
-### Verify this step {#verify-step}
+## Verify this step {#verify-step}
 
 Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`. You should be successfully logged in.

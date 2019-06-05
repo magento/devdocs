@@ -50,6 +50,6 @@ mutation {
 }
 ```
 
-### Verify this step {#verify-step}
+## Verify this step {#verify-step}
 
 There are no additional verification steps. `quote`.`customer_email` is displayed for administrator on back-end side.

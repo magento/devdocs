@@ -14,6 +14,11 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
+The `createEmptyCart` mutation creates an empty shopping cart and generates a cart ID. 
+
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the Authorization parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
 **Request**
 
 The following mutation creates an empty cart:
@@ -36,9 +41,6 @@ mutation {
 
 In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be listed as `{{ CART_ID }}`.
 
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+## Verify this step {#verify-step}
 
-### Verify this step {#verify-step}
-
-There are no additional verification steps. `quote`.`entity_id` value is not displayed on the website or in Admin.
+There are no additional verification steps. The values of `quote` and `entity_id` value are  not displayed on the website or in the Magento Admin.

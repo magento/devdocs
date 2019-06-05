@@ -18,9 +18,10 @@ contributor_link: https://www.atwix.com/
 You must always set the billing address to place an order.
 
 Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote.html#set-the-billing-address-on-cart-attributes) mutation to set a billing address. You can set the billing address in the following ways:
-- Add a new billing address
-- Add a new billing address and set it as the shipping addresses  
-- Use an address from the logged-in customer's address book
+
+* Add a new billing address
+* Add a new billing address and set it as the shipping addresses  
+* Use an address from the logged-in customer's address book
 
 ## Add a new billing address
 
@@ -101,7 +102,7 @@ mutation {
 
 ## Add a new address for billing and shipping
 
-The following mutation includes the `use_for_shipping` attribute, which allows the same address to be used as the billing and shipping address.
+The following mutation includes the `use_for_shipping` attribute, which allows the same address to be used for billing and shipping.
 
 **Request**
 
@@ -245,7 +246,7 @@ query {
 }
 ```
 
-Set `{{ CUSTOMER_ADDRESS_ID }}`  to an `id` returned in the query.
+Set `{{ CUSTOMER_ADDRESS_ID }}` to an `id` returned in the query.
 
 `{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
@@ -317,4 +318,4 @@ mutation {
 
 2. Go to Checkout.
  
-3. Go to Review & Payments step. Billing Address form is populated with the entered address details.
+3. Go to the Review & Payments step. The Billing Address form is populated with the address details you entered.
