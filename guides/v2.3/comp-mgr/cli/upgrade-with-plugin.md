@@ -154,7 +154,7 @@ rm -rf generated/code/*
 ```
 
 {:.bs-callout .bs-callout-info}
-If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
+If you use cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
 ## Update the database schema and data
 
