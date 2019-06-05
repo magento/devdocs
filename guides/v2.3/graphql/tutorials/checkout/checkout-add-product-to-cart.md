@@ -15,15 +15,16 @@ contributor_link: https://www.atwix.com/
 ---
 
 GraphQL supports [2 types of product]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) which can be added into shopping cart:
- - simple product
- - virtual product
+ 
+ * simple product
+ * virtual product
 
 {:.bs-callout .bs-callout-info}
-If you add a product to the shopping cart as a registered customer, be sure to send customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
+If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
 
 `{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
-### Add a simple product into shopping cart
+## Add a simple product into shopping cart
 
 The following mutation adds a **simple product** into shopping cart.
 
@@ -81,7 +82,7 @@ mutation {
 }
 ```
 
-### Add a virtual product into shopping cart
+## Add a virtual product into shopping cart
 
 The following mutation adds a **virtual product** into shopping cart.
 
@@ -141,8 +142,8 @@ mutation {
 
 Use the `updateCartItems` mutation to update shopping cart items and `removeItemFromCart` to remove a product from the shopping cart.
 
-### Verify this step {#verify-step}
+## Verify this step {#verify-step}
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 
-2. Go to shopping cart. All the items you added are displayed.
+2. Go to the shopping cart. All the items you added are displayed.

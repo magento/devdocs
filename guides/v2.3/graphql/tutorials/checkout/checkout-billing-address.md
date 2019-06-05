@@ -22,7 +22,7 @@ Use the [setBillingAddressOnCart]({{ page.baseurl }}/graphql/reference/quote.htm
 - Add a new billing address and set it as the shipping addresses  
 - Use an address from the logged-in customer's address book
 
-### Add a new billing address
+## Add a new billing address
 
 The following mutation adds a new billing address. `{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
@@ -99,7 +99,7 @@ mutation {
 }
 ```
 
-### Add a new address for billing and shipping
+## Add a new address for billing and shipping
 
 The following mutation includes the `use_for_shipping` attribute, which allows the same address to be used as the billing and shipping address.
 
@@ -210,7 +210,7 @@ mutation {
 }
 ```
 
-### Use an existing customer address
+## Use an existing customer address
 
 First, query the customer to return the list of address IDs.
 
@@ -311,7 +311,7 @@ mutation {
 }
 ```
 
-### Verify this step {#verify-step}
+## Verify this step {#verify-step}
 
 1. Sign in as a customer to the website using the email `john.doe@example.com` and password `b1b2b3l@w+`.
 

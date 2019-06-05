@@ -14,13 +14,14 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-This tutorial provides information how you can place order through GraphQl. Customers can make purchases in two ways:
-- As a logged-in user
-- As a guest user who does not create an account
+This tutorial describes how to place order through GraphQl. Customers can make purchases in two ways:
+
+* As a logged-in user
+* As a guest user who does not create an account
 
 The **10-step tutorial** generally takes **30 minutes**.
 
-The checkout process in GraphQl consists of the 10 steps. Magento GraphQL is designed to run queries and perform actions on behalf of a customer. Magento GraphQLsh does not perform backend tasks, such as manage invoices or shipments.
+The checkout process in GraphQl consists of 10 steps. Magento GraphQL is designed to run queries and perform actions on behalf of a customer. Magento GraphQL does not perform backend tasks, such as manage invoices or shipments.
 
 [Create a customer]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-customer.html) (create customer, use a registered customer account or place order as guest)
 [Create an empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-shopping-cart.html)
@@ -48,9 +49,10 @@ Complete the following prerequisites:
 
 * Know how to generate a customer token. See [Get customer authorization token]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for details.
 
-* Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}} 2.1](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
+* Find the Magento Merchant documentation. Refer to [Getting Started with {{site.data.var.ce}}](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
 
 ### Other resources
 
 * [Order processing tutorial]({{ page.baseurl }}/rest/tutorials/orders/order-intro.html) shows a system integrator how REST APIs are used in the lifecycle of an order, including configuring a store and creating a customer; creating quotes, orders, invoices, and shipments; preparing for checkout; and more order-related tasks.
+
 * [REST Tutorials]({{ page.baseurl }}/rest/tutorials/index.html) provides additional information about completing any Magento REST tutorial.
