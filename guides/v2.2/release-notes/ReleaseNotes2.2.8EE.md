@@ -72,7 +72,7 @@ These releases include security enhancements that help close cross-site scriptin
  
 * Magento’s implementation of the Authorize.Net Direct Post payment method currently uses MD5 based hash for all M1 and M2 installations. As of June 28, 2019, Authorize.Net will stop supporting MD5 based hash usage. See [Authorize.Net Direct Post](https://docs.magento.com/m2/2.2/ee/user_guide/payment/authorize-net-direct-post.html) for a discussion of this deprecation and the steps you need to take to add the new key you’ll need after deprecation.  <!-- MAGETWO-98129-->* 
 
-* The shipping and billing data that a user enters during checkout nows persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
+* The shipping and billing data that a user enters during checkout now persists if the user interrupts checkout to continue shopping. Previously, checkout data was deleted after a cart update. <!-- MAGETWO-95067 -->
 
 
 ### Bundled extension enhancements
@@ -468,7 +468,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 <!-- ENGCOM-3385 -->* The order confirmation email sent to the customer during  guest checkout now includes download links for purchased downloadable products as expected. *Fix submitted by [Oleksandr Kravchuk](https://github.com/swnsma) in pull request [19036](https://github.com/magento/magento2/pull/19036)*. [GitHub-10934](https://github.com/magento/magento2/issues/10934),
  [GitHub-19003](https://github.com/magento/magento2/issues/19003),  [GitHub-18323](https://github.com/magento/magento2/issues/18323)
 
-<!-- ENGCOM-3584 -->* You can now delete a sample link from a downloadable product. Previously, Magento restored a deleted link after you saved the downloabable product. *Fix submitted by [Ansari](https://github.com/ansari-krish) in pull request [19431](https://github.com/magento/magento2/pull/19431)*. [GitHub-19344](https://github.com/magento/magento2/issues/19344)
+<!-- ENGCOM-3584 -->* You can now delete a sample link from a downloadable product. Previously, Magento restored a deleted link after you saved the downloadable product. *Fix submitted by [Ansari](https://github.com/ansari-krish) in pull request [19431](https://github.com/magento/magento2/pull/19431)*. [GitHub-19344](https://github.com/magento/magento2/issues/19344)
 
 
 ### EAV
@@ -556,7 +556,7 @@ Previously, when you reopened these categories, no checkboxes were checked.  *Fi
 
 <!-- MAGETWO-87734 -->* You can now pause product videos on YouTube on storefronts that are running on Internet Explorer 11.x.
 
-<!-- MAGETWO-90189 -->* You can sort a grouped product's associated products across multiple pages. Previously, when you trid to sort associated products, Magento sorted only the products visible on the current page.
+<!-- MAGETWO-90189 -->* You can sort a grouped product's associated products across multiple pages. Previously, when you tried to sort associated products, Magento sorted only the products visible on the current page.
 
 <!-- MAGETWO-85932 -->* Product pages that are included in a related products rule that uses a Price (percentage) condition now load correctly. Previously, loaded pages were blank.
 

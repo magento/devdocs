@@ -678,7 +678,7 @@ The following `products` query returns `ConfigurableProduct` information about t
 
 
 ## Mutation
-Use the `addConfigurableProductsToCart` muatation to add configurable products to a specific cart.
+Use the `addConfigurableProductsToCart` mutation to add configurable products to a specific cart.
 
 
 ### Syntax

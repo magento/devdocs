@@ -81,7 +81,7 @@ payment providers use different algorithms to create this hash. In most cases, e
 
 The created response handler must be added to the handler chain in the DI configuration file `di.xml`. 
 
-Example of the Braintriee `di.xml`:
+Example of the Braintree `di.xml`:
 
 ```xml
 <virtualType name="BraintreeAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">

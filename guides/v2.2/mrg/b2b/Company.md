@@ -42,7 +42,7 @@ The following directories contain extensible UI components:
 
 * `Magento\Company\view\adminhtml\ui_component` -  customer listing, invitation form, sales order grid
 
-* `Magento\Company\view\base\ui_component` - company listing, complany creation form, customer creation form
+* `Magento\Company\view\base\ui_component` - company listing, company creation form, customer creation form
 
 * `Magento\Company\view\frontend\ui_component` - company users listing, role listing
 

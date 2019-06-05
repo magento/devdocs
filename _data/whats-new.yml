@@ -2289,7 +2289,7 @@ entries:
     [Custom blacklist VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-blacklist.html),
     [Custom extend Admin timeout VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/configure-fastly.html#bulkaction),
     [Custom redirect to Wordpress VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-wordpress.html),
-    and [Custom block bad referer VCL](https://devdocs.magento.com/guides/v2.2/loud/cdn/fastly-vcl-badreferer.html).
+    and [Custom block bad referrer VCL](https://devdocs.magento.com/guides/v2.2/loud/cdn/fastly-vcl-badreferer.html).
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Nov 29 2017

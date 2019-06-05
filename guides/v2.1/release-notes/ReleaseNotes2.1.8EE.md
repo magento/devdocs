@@ -35,7 +35,7 @@ Magento 2.1.8 contains over 100 functional fixes and enhancements as well as pul
 With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes that were submitted through the Community Engineering program. Thank you, community members!
 
 
-If a community member has provided a fix, we identify the fix with the phrase, "*Fix provided by community member @member_name*". We've also included a table that identifes the GitHub issue, PR, and community member who created that PR.
+If a community member has provided a fix, we identify the fix with the phrase, "*Fix provided by community member @member_name*". We've also included a table that identifies the GitHub issue, PR, and community member who created that PR.
 
 ## Fixed issues and enhancements
 
@@ -140,7 +140,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 59173 -->*  Magento no longer sends email when the **Disable email communication** setting is set to **yes**. Previously, Magento sent email even when this setting was enabled.  [GitHub-5988](https://github.com/magento/magento2/issues/5988)
 
-<!--- 58855 -->* The Cart Price rule nows affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.  
+<!--- 58855 -->* The Cart Price rule now affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.  
 
 <!--- 63814 -->* SalesRule now applies to auto-generated coupon codes as expected.
 

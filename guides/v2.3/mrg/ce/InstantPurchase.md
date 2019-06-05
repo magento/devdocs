@@ -30,7 +30,7 @@ All payments created for instant purchase also have `'instant-purchase' => true`
 
 Instant purchase support may be implemented for any payment method with [vault support](https://devdocs.magento.com/guides/v2.1/payments-integrations/vault/vault-intro.html).
 Basic implementation provided in `Magento\InstantPurchase\PaymentMethodIntegration` should be enough in most cases. It is not enabled by default to avoid issues on production sites and authors of vault payment method should verify correct work for instant purchase manually.
-To enable basic implementation just add single option to configuration of payemnt method in `config.xml`:
+To enable basic implementation just add single option to configuration of payment method in `config.xml`:
 
 ```
 <instant_purchase>

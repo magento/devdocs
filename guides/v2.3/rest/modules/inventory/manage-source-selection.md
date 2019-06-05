@@ -51,7 +51,7 @@ None
 
 **Response**
 
-An array containing a list of SSA codes, titles, and desriptions.
+An array containing a list of SSA codes, titles, and descriptions.
 
 ```json
 [

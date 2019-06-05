@@ -55,7 +55,7 @@ Both `POST` and `PUT` requests support a batch model where multiple packages can
 |custom_license_name|string|GET, POST, PUT|marketing|The name of the license if `license_type` is set to `custom`.|
 |custom_license_url|string|GET, POST, PUT|marketing|The URL of the license if `license_type` is set to `custom`.|
 |external_services|object|GET, POST, PUT|marketing|The list of services—name and URL—that the extension integrates with (if applicable).|
-|browser_os_compatibility|object|GET, POST, PUT|marketing|The browser and its associated OS compatibilities this package supports. Refer to [Additional notes](#additional-notes) for a list of browsers and OS values.|
+|browser_os_compatibility|object|GET, POST, PUT|marketing|The browser and its associated OS capabilities this package supports. Refer to [Additional notes](#additional-notes) for a list of browsers and OS values.|
 |options|object|GET, POST, PUT|marketing|A set of options this package supports. Refer to [Additional notes](#additional-notes).|
 |submission_id|string|GET, PUT|-|A globally unique ID assigned to a package when it is submitted in a POST request. All further references to this package using GET or PUT requests can be made supplying this identifier.|
 |item_id|string|GET, POST, PUT|-|A developer-defined unique ID assigned to the package (if available). If it is being supplied, it must be unique for every POST request.|
