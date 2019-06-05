@@ -32,7 +32,6 @@ When the [patch][] program is run, this file is read in and the specified change
 
 1. Upload the local file into the `<Magento_root>` on the server using FTP, SFTP, SSH or your normal transport method.  
 1. Login to the server as the [Magento admin user][] and verify the file is in the correct directory.
-1. If the store is compiled, make sure the compiler is disabled.
 1. In the command line interface, run the following commands according to the patch extension:
 
         patch < patch_file_name.patch
