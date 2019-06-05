@@ -91,4 +91,4 @@ public function testSave()
 
 <!-- Link definitions -->
 
-[RepositoryTest.php]: https://github.com/magento/magento2/blob2.2dev/tests/integration/testsuite/Magento/Tax/Model/TaxClass/RepositoryTest.php
+[RepositoryTest.php]: {{ site.mage2bloburl }}/{{ page.guide_version }}/tests/integration/testsuite/Magento/Tax/Model/TaxClass/RepositoryTest.php
