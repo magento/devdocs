@@ -20,4 +20,4 @@
 | Accenture | [2121](https://github.com/magento-engcom/msi/pull/2121) | |
 | Netz98 | [21787](https://github.com/magento/magento2/pull/21787) |  [7227](https://github.com/magento/magento2/issues/7227) |
 | Veriteworks | [87](https://github.com/magento/magento2-jp/pull/87) |  [85](https://github.com/magento/magento2-jp/issues/85) |
-| Cimson Agility | [21756](https://github.com/magento/magento2/pull/21756) |  |
+| Crimson Agility | [21756](https://github.com/magento/magento2/pull/21756) |  |
