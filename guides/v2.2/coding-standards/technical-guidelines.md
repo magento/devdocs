@@ -741,6 +741,41 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.1.9. Action group names SHOULD match the file name that they are in.
 
+11.3.1.10. **You SHOULD use parameterized selectors in action groups with argument references.** Clarity and readability are important factors in good test writing. Having to parse through unreadable code can be time consuming. Save time by writing clearly. The good example clearly shows what the selector arguments refer to. In the bad example we see two parameters being passed into the selector with little clue as to their purpose.
+
+**Why?** The next person maintaining the test or extending it may not be able to understand what the parameters are referencing.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<test>
+    <actionGroup ref="VerifyOptionInProductStorefront" stepKey="verifyConfigurableOption" after="AssertProductInStorefrontProductPage">
+        <argument name="attributeCode" value="$createConfigProductAttribute.default_frontend_label$"/>
+        <argument name="optionName" value="$createConfigProductAttributeOption1.option[store_labels][1][label]$"/>
+    </actionGroup>
+</test>
+
+<actionGroup name="VerifyOptionInProductStorefront">
+    <arguments>
+        <argument name="attributeCode" type="string"/>
+        <argument name="optionName" type="string"/>
+    </arguments>
+    <seeElement selector="{{StorefrontProductInfoMainSection.attributeOptionByAttributeID(attributeCode, optionName)}}" stepKey="verifyOptionExists"/>
+</actionGroup>
+```
+
+### Not recommended
+
+```xml
+<test>
+    <seeElement selector="{{StorefrontProductInfoMainSection.attributeOptionByAttributeID($createConfigProductAttribute.default_frontend_label$, $createConfigProductAttributeOption1.option[store_labels][1][label]$)}}" stepKey="verifyOptionExists"/>
+</test>
+```
+
+{% endcollapsible %}
+
 11.3.2. Elements
 
 11.3.2.1. Selectors SHOULD be written in CSS instead of Xpath when possible.
@@ -755,6 +790,88 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.2.6. Elements SHOULD use `timeout="30"` to wait after interactions.
 
+11.3.2.7. **Xpath selectors should wrap `text()` with `contains()`.** When possible, use `contains(text(), 'someTextHere')` rather than `text()='someTextHere'`. `contains()` ignores whitespace while `text()` accounts for it.
+
+**Why?** If you are comparing text within a selector and have an unexpected space, or a blank line above or below the string, `text()` will fail while the `contains(text())` format will catch it. In this scenario `text()` is more exacting. Use it when you need to be very precise about what is getting compared.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+//span[contains(text(), 'SomeTextHere')]
+```
+
+### Not recommended
+
+```xml
+//span[text()='SomeTextHere']
+```
+
+{% endcollapsible %}
+
+11.3.2.8. **Selectors should be built in the proper order.** When building selectors for form elements, start with the parent context of the form element. Then specify the element `name` attribute in your selector to ensure the correct element is targeted. To build a selector for an input, use the pattern: `{{section_selector}}` `{{input_selector}}` or for a button: `{{section_selector}}` `{{button_selector}}`
+
+**Why?** Traversing the DOM takes a finite amount of time and reducing the scope of the selector makes the selector lookup as efficient as possible.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<element name="productName" type="input" selector="*[data-index='product-details'] input[name='product[name]']"/>
+```
+
+### Not recommended
+
+```xml
+<element name="productName" type="input" selector=".admin__field[data-index=name] input"/>
+```
+
+{% endcollapsible %}
+
+11.3.2.9. **Selectors should be built with appropriate specificity.** Selectors that are too general might sweep up unexpected elements. When possible, select the first parent tag and then specify the desired element within that selection.
+
+**Why?** Elements that are overly specific are less flexible and may fail if unexpected DOM changes occur. It also reduces the amount of the DOM it needs to parse.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+form[name='myform'] > input[name='firstname']
+
+//*[@id='container'][@class='dashboard-title']
+```
+
+### Not recommended
+
+```xml
+input[name='firstname']
+
+//*[@id='container']/*[@class='dashboard-advanced-reports']/*[@class='dashboard-advanced- reports-description']/*[@class='dashboard-title']
+```
+
+{% endcollapsible %}
+
+11.3.2.10. Parameterized selectors MUST use descriptive variable names.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{storeName}}')]" parameterized="true"/>
+```
+
+### Not recommended
+
+```xml
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{var1}}')]" parameterized="true"/>
+```
+
+{% endcollapsible %}
+
 11.3.3. Test Before Block
 
 11.3.3.1. Configuration changes via `magentoCLI` SHOULD occur last in the `before` block.
@@ -766,6 +883,50 @@ You need to read configuration from different sources (like database or filesyst
 11.3.4.1. Configuration changes via `magentoCLI` SHOULD occur first in the `after` block.
 
 11.3.4.2. The `after` block SHOULD mostly be `deleteData` calls with minimal UI interaction.
+
+11.3.4.3. **You SHOULD perform the most critical actions first in the `<after>` block.** Perform non-browser driving actions first. These are more likely to succeed as no UI is involved. In the good example, `magentoCLI` and `deleteData` are run first to ensure a proper state. In the bad example, we perform some heavy UI steps first.
+
+**Why?** If something goes wrong there, then the critical `magentoCLI` commands may not get a chance to run, leaving Magento configured incorrectly for any upcoming tests.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<after>
+    <magentoCLI command="indexer:set-mode" arguments="schedule" stepKey="setIndexerMode"/>
+    <magentoCLI command="config:set catalog/frontend/flat_catalog_category 0" stepKey="setFlatCatalogCategory"/>
+    <deleteData createDataKey="category" stepKey="deleteCategory"/>
+    <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewEn">
+        <argument name="customStore" value="customStoreEN"/>
+    </actionGroup>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewFr">
+        <argument name="customStore" value="customStoreFR"/>
+    </actionGroup>
+    <actionGroup ref="logout" stepKey="logout"/>
+</after>
+```
+
+### Not recommended
+
+```xml
+<after>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewEn">
+        <argument name="customStore" value="customStoreEN"/>
+    </actionGroup>
+    <actionGroup ref="AdminDeleteStoreViewActionGroup" stepKey="deleteStoreViewFr">
+        <argument name="customStore" value="customStoreFR"/>
+    </actionGroup>
+    <deleteData createDataKey="category" stepKey="deleteCategory"/>
+    <deleteData createDataKey="createSimpleProduct" stepKey="deleteSimpleProduct"/>
+    <magentoCLI command="config:set catalog/frontend/flat_catalog_category 0" stepKey="setFlatCatalogCategory"/>
+    <magentoCLI command="indexer:set-mode" arguments="schedule" stepKey="setIndexerMode"/>
+    <actionGroup ref="logout" stepKey="logout"/>
+</after>
+```
+
+{% endcollapsible %}
 
 11.3.5. Test
 
@@ -790,6 +951,119 @@ You need to read configuration from different sources (like database or filesyst
 11.3.5.8. Tests SHOULD be short and granular.
 
 11.3.5.9. Comments SHOULD be used to ensure tests are readable and maintainable.
+
+11.3.5.10. **`see` and `seeElement` SHOULD be used wisely.** If you need to see some element and verify that the text inside is shown correctly, use the `see` action. If you need to verify that element present on page, use `seeElement`. But never use `seeElement` and build a Xpath which contains the expected text.
+
+**Why?** For `see` it will output something similar to this: `Failed asserting that any element by #some_selector contains text "some_text"` And for `seeElement` it will output something like this: `Element by #some_selector is not visible.` There is a subtle distinction: The first is a failure but it is the desired result: a ‘positive failure’. The second is a proper result of the action.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<see selector="//div[@data-element='content']//p" userInput="SOME EXPECTED TEXT" stepKey="seeSlide1ContentStorefront"/>
+```
+
+### Not recommended
+
+```xml
+<seeElement selector="//div[@data-element='content']//p[.='SOME EXPECTED TEXT']" stepKey="seeSlide1ContentStorefront"/>
+```
+
+{% endcollapsible %}
+
+11.3.5.11. **Tests SHOULD be built from action groups.**
+
+**Why?** For extension developers, this will make it easier to extend or customize tests. Extending a single action group will update all tests that use this group. This improves maintainability as multiple instances of a failure can be fixed with a single action group update.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<test name="NavigateClamberWatchEntityTest">
+    <annotations>
+        <!--some annotations-->
+    </annotations>
+
+    <actionGroup ref="StorefrontOpenProductPageActionGroup" stepKey="openProductPage">
+        <argument name="productUrl" value="{{ClamberWatch.url_key}}" />
+    </actionGroup>
+    <actionGroup ref="StorefrontAssertProductNameOnProductPageActionGroup" stepKey="assertProductName">
+        <argument name="productName" value="{{ClamberWatch.name}}" />
+    </actionGroup>
+    <actionGroup ref="StorefrontAssertProductSkuOnProductPageActionGroup" stepKey="assertProductSku">
+        <argument name="productSku" value="{{ClamberWatch.sku}}" />
+    </actionGroup>
+    <actionGroup ref="StorefrontAssertProductPriceOnProductPageActionGroup" stepKey="assertProductPrice">
+        <argument name="productPrice" value="{{ClamberWatch.price}}" />
+    </actionGroup>
+    <actionGroup ref="StorefrontAssertProductImagesOnProductPageActionGroup" stepKey="assertProductImage">
+        <argument name="productImage" value="{{ClamberWatch.image}}" />
+    </actionGroup>
+</test>
+```
+
+### Not recommended
+
+```xml
+<test name="NavigateClamberWatchEntityTest">
+    <annotations>
+                <!--some annotations-->
+    </annotations>
+
+    <amOnPage url="{{StorefrontProductPage.url(ClamberWatch.url_key)}}" stepKey="openProductPage"/>
+    <see selector="{{StorefrontProductInfoMainSection.productName}}" userInput="{{ClamberWatch.name}}" stepKey="seeProductName" />
+    <see selector="{{StorefrontProductInfoMainSection.productSku}}" userInput="{{ClamberWatch.sku}}" stepKey="seeProductSku" />
+    <see selector="{{StorefrontProductInfoMainSection.price}}" userInput="{{ClamberWatch.price}}" stepKey="seeProductPrice" />
+    <waitForElementNotVisible selector="{{StorefrontProductMediaSection.gallerySpinner}}" stepKey="waitGallerySpinnerDisappear" />
+    <seeElement selector="{{StorefrontProductMediaSection.gallery}}" stepKey="seeProductGallery" />
+    <seeElement selector="{{StorefrontProductMediaSection.productImage(ClamberWatch.productImage)}}" stepKey="seeProductImage" />
+    <click selector="{{StorefrontProductMediaSection.productImage(ClamberWatch.productImage)}}" stepKey="openFullscreenImage" />
+    <waitForPageLoad stepKey="waitForGalleryLoaded" />
+    <seeElement selector="{{StorefrontProductMediaSection.productImageFullscreen(ClamberWatch.productImage)}}" stepKey="seeFullscreenProductImage" />
+</test>
+```
+
+{% endcollapsible %}
+
+11.3.5.12. `stepKey` names MUST be descriptive. This helps with readability and clarity.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<click selector="{{StorefrontNavigationSection.topCategory(SimpleSubCategory.name)}}" stepKey="clickSimpleSubCategoryLink" />
+<waitForPageLoad stepKey="waitForSimpleSubCategoryPageLoad" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(SimpleProduct.urlKey)}}" stepKey="clickSimpleProductLink" />
+<waitForPageLoad stepKey="waitForSimpleProductPageLoad" />
+
+<!-- Perform some actions / Assert product page -->
+
+<click selector="{{StorefrontNavigationSection.topCategory(CustomCategory.name)}}" stepKey="clickCustomCategoryLink" />
+<waitForPageLoad stepKey="waitForCustomCategoryPageLoad" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(CustomSimpleProduct.urlKey)}}" stepKey="clickCustomSimpleProductLink" />
+<waitForPageLoad stepKey="waitForCustomSimpleProductPageLoad" />
+```
+
+### Not recommended
+
+```xml
+<click selector="{{StorefrontNavigationSection.topCategory(SimpleSubCategory.name)}}" stepKey="clickCategoryLink1" />
+<waitForPageLoad stepKey="waitForPageLoad1" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(SimpleProduct.urlKey)}}" stepKey="clickProductLink1" />
+<waitForPageLoad stepKey="waitForPageLoad2" />
+
+<!-- Perform some actions / Assert product page -->
+
+<click selector="{{StorefrontNavigationSection.topCategory(CustomCategory.name)}}" stepKey="clickCategoryLink2" />
+<waitForPageLoad stepKey="waitForPageLoad3" />
+<click selector="{{StorefrontCategoryMainSection.productLinkByHref(CustomSimpleProduct.urlKey)}}" stepKey="clickProductLink2" />
+<waitForPageLoad stepKey="waitForPageLoad4" />
+```
+
+{% endcollapsible %}
 
 11.3.6. Extending
 
@@ -824,6 +1098,24 @@ You need to read configuration from different sources (like database or filesyst
 * {Type}Data.xml, where Type represents the entity type.
 
 * Example: ProductData.xml
+
+11.3.8.4. **Data references SHOULD be used instead of hardcoded values.** If you need to run a command such as `<magentoCLI command="config:set" />`, do not hardcode paths and values to the command. Rather, create an appropriate `ConfigData.xml` file, which contains the required parameters for running the command. It will simplify the future maintanence of tests.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<magentoCLI command="config:set {{StorefrontCustomerCaptchaLength3ConfigData.path}} {{StorefrontCustomerCaptchaLength3ConfigData.value}}" stepKey="setCaptchaLength" />
+```
+
+### Not recommended
+
+```xml
+<magentoCLI command="config:set customer/captcha/length 3" stepKey="setCaptchaLength" />
+```
+
+{% endcollapsible %}
 
 11.3.9. Sections
 
