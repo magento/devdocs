@@ -20,7 +20,7 @@ The upgrade script:
 - Backs up and updates the `magento/updater`, if it has been installed.
 - Updates the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file.
 
-## Ensure to comply with prerequisites
+## Before you begin
 
 Refer to [Prerequisites].
 
