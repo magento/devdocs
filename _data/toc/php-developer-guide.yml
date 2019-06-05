@@ -258,10 +258,13 @@ pages:
           url: /extension-dev-guide/configuration/importers.html
 
     - label: Framework
-      include_versions: ["2.2", "2.3"]
       children:
         - label: Serialize Library
+          include_versions: ["2.2", "2.3"]
           url: /extension-dev-guide/framework/serializer.html
+
+        - label: Array Manager
+          url: /extension-dev-guide/framework/array-manager.html
 
     - label: Security
       children:
