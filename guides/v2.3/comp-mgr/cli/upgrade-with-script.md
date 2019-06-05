@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: Command-line upgrade using the script
+title: Upgrade using the custom script
 functional_areas:
   - Upgrade
 ---
