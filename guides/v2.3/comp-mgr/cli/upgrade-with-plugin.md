@@ -1,6 +1,6 @@
 ---
 group: software-update-guide
-title: (Experimental) Command-line upgrade using the Magento composer root plugin
+title: Upgrade using the Magento composer root plugin
 functional_areas:
   - Upgrade
 ---
@@ -191,5 +191,6 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 <!-- Link definitions -->
 
+[custom composer plugin]: https://github.com/magento/composer-root-update-plugin/
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
 [Prerequisites]: cli-upgrade.html#prerequisites
