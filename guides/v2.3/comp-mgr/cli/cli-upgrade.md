@@ -28,7 +28,7 @@ Complete the following prerequisites to prepare your environment before starting
 - **Switch to maintenance mode**—To prevent access to your store while it's being upgraded, switch your store to maintenance mode:
 
     ```bash
-    php bin/magento maintenance:enable
+    bin/magento maintenance:enable
     ```
 
     See [Enable or disable maintenance mode] for additional options.
