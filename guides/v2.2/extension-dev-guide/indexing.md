@@ -112,6 +112,73 @@ The following figure shows an example of setting indexers to Update by Schedule:
 
 ![Changing indexer modes]({{ site.baseurl }}/common/images/index_index-modes.png){:width="600px"}
 
+### Mview {#m2devgde-mview}
+
+The `mview.xml` file is used to track database changes for a certain entity.
+
+For example part of `Magento/Catalog/etc/mview.xml` is tracking category to product relation described in the following record:
+```xml
+<!-- ... -->
+    <view id="catalog_category_product" class="Magento\Catalog\Model\Indexer\Category\Product" group="indexer">
+        <subscriptions>
+            <table name="catalog_category_entity" entity_column="entity_id" />
+            <table name="catalog_category_entity_int" entity_column="entity_id" />
+        </subscriptions>
+    </view>
+<!-- ... -->
+```
+
+Explanation of nodes:
+* The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines
+the indexer group. 
+* The `subscriptions` node is a list of tables for tracking changes.
+* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column` is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity` the method
+execute of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined
+under `entity_column` attribute. If indexer type is set to Update on Save the method being called right away after the operation if it set to Update by Schedule
+the mechanism creates a record in the change log table using MYSQL triggers.
+
+A change log table is created according to the naming rule - INDEXER_TABLE_NAME + '_cl', in case of `catalog_category_product` it will be `catalog_category_product_cl`.
+The table contains the `version_id` auto-increment column and `entity_id` column that contains identifiers of entities to be re-indexed.
+For each `table` node the framework automatically creates MYSQL AFTER triggers for each possible event (INSERT, UPDATE, DELETE).
+
+For the table `catalog_category_entity` will be created triggers with the following statements:
+INSERT operation:
+```mysql
+BEGIN
+    INSERT IGNORE INTO `catalog_category_product_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+END
+```
+
+UPDATE operation:
+```mysql
+BEGIN
+    IF (NEW.`entity_id` <=> OLD.`entity_id` 
+        OR NEW.`attribute_set_id` <=> OLD.`attribute_set_id`
+        OR NEW.`parent_id` <=> OLD.`parent_id` 
+        OR NEW.`created_at` <=> OLD.`created_at`
+        OR NEW.`path` <=> OLD.`path`
+        OR NEW.`position` <=> OLD.`position`
+        OR NEW.`level` <=> OLD.`level`
+        OR NEW.`children_count` <=> OLD.`children_count`) 
+            THEN INSERT IGNORE INTO `catalog_category_product_cl` (`entity_id`) VALUES (NEW.`entity_id`);
+    END IF;
+END
+
+```
+
+DELETE operation:
+```mysql
+BEGIN
+    INSERT IGNORE INTO `catalog_category_product_cl` (`entity_id`) VALUES (OLD.`entity_id`);
+END
+
+```
+
+The method `Magento\Framework\Mview\ViewInterface::update` responsible for handling records in the changelog. The method is being called by CRON and
+it defines ID's to be re-indexed from the change log by last applied `version_id` and call the method `execute` for each particular indexer with
+ID's as an argument.
+
+
 ### How to reindex
 
 You can reindex by:
