@@ -1,7 +1,6 @@
 GIT
   remote: https://github.com/magento-devdocs/devdocs-theme.git
-  revision: 1365cd391407ea7b93c27f5b006090f5bde183f6
-  branch: yb_search-version
+  revision: 450a470aa4b937400190d009131fa91cf27d7a9d
   specs:
     devdocs (0.0.1)
       jekyll (>= 3.3)
