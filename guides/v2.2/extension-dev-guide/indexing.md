@@ -132,16 +132,17 @@ Explanation of nodes:
 * The `view` node defines an indexer. The `id` attribute is a name of the indexer table, the `class` attribute is indexer executor, the `group` attribute defines
 the indexer group. 
 * The `subscriptions` node is a list of tables for tracking changes.
-* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column` is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity` the method
-execute of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined
-under `entity_column` attribute. If indexer type is set to Update on Save the method being called right away after the operation if it set to Update by Schedule
+* The `table` node defines the certain table to observe and track changes. The attribute `name` is a name of an observable table, the attribute `entity_column` 
+is an identifier column of entity to be re-indexed. So, in case of `catalog_category_product`, whenever one or more categories is saved, updated or deleted in `catalog_category_entity`
+the `execute` method of `Magento\Catalog\Model\Indexer\Category\Product` will be called with argument `ids` containing ids of entities from column defined
+under `entity_column` attribute. If indexer type is set to "Update on Save" the method is called right away after the operation. If it set to "Update by Schedule"
 the mechanism creates a record in the change log table using MYSQL triggers.
 
 A change log table is created according to the naming rule - INDEXER_TABLE_NAME + '_cl', in case of `catalog_category_product` it will be `catalog_category_product_cl`.
 The table contains the `version_id` auto-increment column and `entity_id` column that contains identifiers of entities to be re-indexed.
 For each `table` node the framework automatically creates MYSQL AFTER triggers for each possible event (INSERT, UPDATE, DELETE).
 
-For the table `catalog_category_entity` will be created triggers with the following statements:
+For the table `catalog_category_entity` triggers will be created with the following statements.
 INSERT operation:
 ```mysql
 BEGIN
@@ -174,9 +175,8 @@ END
 
 ```
 
-The method `Magento\Framework\Mview\ViewInterface::update` responsible for handling records in the changelog. The method is being called by CRON and
-it defines ID's to be re-indexed from the change log by last applied `version_id` and call the method `execute` for each particular indexer with
-ID's as an argument.
+The method `Magento\Framework\Mview\ViewInterface::update` is responsible for handling records in the changelog. The method is being called by CRON and
+it defines IDs to be re-indexed from the change log by last applied `version_id` and calls the `execute` method for each particular indexer with IDs as an argument.
 
 
 ### How to reindex
