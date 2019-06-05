@@ -3,7 +3,8 @@
   var algolia = {
     id : "{{ site.algolia.application_id}}",
     index:  "{{ site.algolia.index_name}}",
-    key:  "{{ site.algolia.api_key}}"
+    key:  "{{ site.algolia.api_key}}",
+    facetFilters: [["guide_version: {% if page.guide_version == nil %}{{ site.version }}{% else %}{{ page.guide_version }}{% endif %}", "versionless: true"]]
   };
 </script>
 

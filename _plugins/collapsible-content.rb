@@ -4,7 +4,7 @@
 # a jquery-ui accordion widget.
 #
 module Jekyll
-  # Collabsibility for regular blocks
+  # Collapsibility for regular blocks
   class Collapsible < Liquid::Block
     def initialize(tag_name, title, tokens)
       super
@@ -32,7 +32,7 @@ module Jekyll
   end
 
   ## TODO: Come up with cleaner solution
-  # Collabsibility as headings of level 2
+  # Collapsibility as headings of level 2
   class CollapsibleH2 < Liquid::Block
     def initialize(tag_name, title, tokens)
       super
@@ -59,7 +59,7 @@ module Jekyll
     end
   end
 
-  # Collabsibility as headings of level 3
+  # Collapsibility as headings of level 3
   class CollapsibleH3 < Liquid::Block
     def initialize(tag_name, title, tokens)
       super
