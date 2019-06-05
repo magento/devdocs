@@ -7,11 +7,13 @@ The `setPaymentMethodOnCart` mutation defines which payment method to apply to t
 
 Title | Code
 --- | ---
-Authorize.Net | `authorizenet_acceptjs`
 Bank Transfer Payment | `banktransfer`
 Cash on Delivery | `cashondelivery`
 Check / Money order | `checkmo`
+Credit Card (Authorize.Net) | `authorizenet_acceptjs`
 No Payment Information Required | `free`
+[PayPal Express Checkout]({{ page.baseurl}}/graphql/reference/paypal.html) | `paypal_express`
+[PayPal Express Checkout Payflow Edition]({{ page.baseurl}}/graphql/reference/paypal.html) | `payflow_express`
 Purchase Order | `purchaseorder`
 
 Apply the `setPaymentMethodOnCart` mutation after setting the shipping address, shipping method, and after applying any discounts to the cart.
