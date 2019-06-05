@@ -103,6 +103,6 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 <!-- Link definitions -->
 
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
-[Prerequisites]: #prerequisites
+[Prerequisites]: cli-upgrade.html#prerequisites
 [script]: https://raw.githubusercontent.com/magento/magento2/2.3.0/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
 [the manual process]: cli-upgrade.html

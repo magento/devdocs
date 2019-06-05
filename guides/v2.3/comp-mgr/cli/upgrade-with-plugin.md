@@ -20,7 +20,7 @@ Basically, this section repeats the manual upgrade scenario with the only exclus
 
 ## Ensure to comply with prerequisites
 
-Refer to [Prerequisites].
+Refer to [Prerequisites][].
 
 ## Backup `composer.json`
 
@@ -192,4 +192,4 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 <!-- Link definitions -->
 
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
-[Prerequisites]: #prerequisites
+[Prerequisites]: cli-upgrade.html#prerequisites
