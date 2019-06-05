@@ -417,7 +417,6 @@ The `Cart` object can contain the following attributes:
 
 {% include graphql/cart-object.md %}
 
-
 #### AppliedCoupon object {#AppliedCoupon}
 
 The `AppliedCoupon` object must contain the following attributes:
@@ -425,6 +424,14 @@ The `AppliedCoupon` object must contain the following attributes:
 Attribute |  Data Type | Description
 --- | --- | ---
 `code` | String! | The coupon code applied to the order
+
+#### AppliedGiftCard object {#AppliedGiftCard}
+
+The `AppliedGiftCard` object must contain the following attributes:
+
+Attribute |  Data Type | Description
+--- | --- | ---
+`code` | String! | The gift card code applied to the order
 
 #### AvailablePaymentMethod object {#AvailablePaymentMethod}
 

@@ -99,14 +99,23 @@ pages:
                 - label: applyCouponToCart mutation
                   url: /graphql/reference/quote-apply-coupon.html
 
+                - label: applyGiftCardToCart mutation
+                  url: /graphql/reference/quote-apply-giftcard.html
+
                 - label: createEmptyCart mutation
                   url: /graphql/reference/quote-create-cart.html
+
+                - label: giftCardAccount endpoint
+                  url: /graphql/reference/quote-giftcard-account.html
 
                 - label: placeOrder mutation
                   url: /graphql/reference/quote-place-order.html
 
                 - label: removeCouponFromCart mutation
                   url: /graphql/reference/quote-remove-coupon.html
+
+                - label: removeGiftCardFromCart mutation
+                  url: /graphql/reference/quote-remove-giftcard.html
 
                 - label: removeItemFromCart mutation
                   url: /graphql/reference/quote-remove-item.html
