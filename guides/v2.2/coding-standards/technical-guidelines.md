@@ -731,6 +731,16 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.1.6. Action groups SHOULD use the `string` type instead of `entity` unless many properties from the `entity` would be referenced.
 
+11.3.1.7. Action group arguments SHOULD specify default values.
+
+11.3.1.8. Action group file names MUST follow this pattern:
+
+* {Assert}{Admin or Storefront}{Functionality}ActionGroup.xml
+
+* Example: AssertStorefrontMinicartContainsProductActionGroup.xml
+
+11.3.1.9. Action group names SHOULD match the file name that they are in.
+
 11.3.2. Elements
 
 11.3.2.1. Selectors SHOULD be written in CSS instead of Xpath when possible.
@@ -757,7 +767,7 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.4.2. The `after` block SHOULD mostly be `deleteData` calls with minimal UI interaction.
 
-11.3.5. Test Body
+11.3.5. Test
 
 11.3.5.1. The test SHOULD re-use action groups, pages, sections, and elements.
 
@@ -769,6 +779,67 @@ You need to read configuration from different sources (like database or filesyst
 
 11.3.5.5. `waitForPageLoad` SHOULD be used instead of `waitForLoadingMaskToDisappear` or `waitForAjaxLoad`.
 
+11.3.5.6. Test file names MUST follow this pattern:
+
+* {Admin or Storefront}{Functionality}Test.xml
+
+* Example: StorefrontCreateCustomerTest.xml
+
+11.3.5.7. `wait` SHOULD NOT be used unless for very specific circumstances.
+
+11.3.5.8. Tests SHOULD be short and granular.
+
+11.3.5.9. Comments SHOULD be used to ensure tests are readable and maintainable.
+
+11.3.6. Extending
+
+11.3.6.1. You SHOULD use extends in your new test or action group when at least one of the following conditions is applicable to your case:
+
+* You want to keep the original test without any modifications.
+
+* You want to create a new test that follows the same path as the original test.
+
+* You want a new action group that behaves similarly to the existing action group, but you do not want to change the functionality of the original action group.
+
+11.3.6.2. You SHOULD NOT use extends in the following conditions:
+
+* You want to change the functionality of the test or action group and do not need to run the original version.
+
+* You plan to merge the base test or action group.
+
+11.3.7. Annotations
+
+11.3.7.1. You SHOULD use `<annotations>` to describe tests and action groups.
+
+11.3.7.2. You SHOULD update your annotations when updating tests.
+
+11.3.8. Data Entities
+
+11.3.8.1. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedely ran against the same environment.
+
+11.3.8.2. Data entities MUST NOT be modified and MUST NOT merge additional fields without complete understanding and verifying the usage of existing data in tests. New data entities SHOULD be created if you are not sure.
+
+11.3.8.3. Data entity file names MUST follow this pattern:
+
+* {Type}Data.xml, where Type represents the entity type.
+
+* Example: ProductData.xml
+
+11.3.9. Sections
+
+11.3.9.1. Section file names MUST follow this pattern:
+
+* {Admin or Storefront}{UI Description}Section.xml, where UI Description briefly describes the UI under test.
+
+* Example: AdminNavbarSection.xml
+
+11.3.10. Pages
+
+11.3.10.1. Page file names MUST follow this pattern:
+
+* {Admin or Storefront}{UI Description}Page.xml, where UI Description briefly describes the UI under tests.
+
+* Example: AdminLoginPage.xml
 
 ## 12. Web API
 
