@@ -9,11 +9,11 @@ menu_order: 7
 
 Response Handler is the component of Magento payment provider gateway, that processes payment provider response. Typically, the response requires one of the following actions:
 
-- Modify the {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %}
+- Modify the [order status](https://glossary.magento.com/order-status)
 - Save information that was provided in a transaction response
 - Send an email
 
-The response handler only modifies the order state, based on the {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} response. It does not perform any other required actions.
+The response handler only modifies the order state, based on the [payment gateway](https://glossary.magento.com/payment-gateway) response. It does not perform any other required actions.
 
 ## Interface
 

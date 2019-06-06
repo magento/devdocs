@@ -6,7 +6,7 @@ menu_title: Page Grids
 menu_order: 3
 menu_node:
 ---
-In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}, a grid is used on all pages to establish global layouts for page templates. The grid assigns a set number of columns and rows for a page, and designers can create a layout by dividing the columns into sections, where design patterns and content can be placed.
+In the [Magento Admin](https://glossary.magento.com/magento-admin), a grid is used on all pages to establish global layouts for page templates. The grid assigns a set number of columns and rows for a page, and designers can create a layout by dividing the columns into sections, where design patterns and content can be placed.
 
 ## Page Grid {#page}
 
@@ -32,7 +32,7 @@ For example:
 
 <b>Layout and behavior:</b> When a panel spawns, it slides from right to left atop and almost completely over the parent page. A narrow gutter of space remains at left, showing the left navigation and a small sliver of the parent page.
 
-Standard {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} within the edges of a browser screen
+Standard [layout](https://glossary.magento.com/layout) within the edges of a browser screen
 
 ![](img/slideout-panel7.png)
 

@@ -52,9 +52,9 @@ elasticsearch:
     type: elasticsearch:6.5
     disk: 1024
     configuration:
-    plugins:
-        - analysis-icu
-        - lang-python
+        plugins:
+            - analysis-icu
+            - lang-python
 ```
 
 {:.bs-callout .bs-callout-info}

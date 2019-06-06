@@ -55,9 +55,9 @@ elasticsearch:
     type: elasticsearch:5.2
     disk: 1024
     configuration:
-    plugins:
-        - analysis-icu
-        - lang-python
+        plugins:
+            - analysis-icu
+            - lang-python
 ```
 
 The following are supported Elasticsearch plugins for version 2.4:

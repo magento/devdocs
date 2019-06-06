@@ -9,11 +9,11 @@ Magento 2.1 introduces changes that may affect the correct functionality of alre
 
 ## API Changes
 
-Magento 2.1 introduces changes in several {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
+Magento 2.1 introduces changes in several [API](https://glossary.magento.com/api) classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
 
 ### Catalog Module API
 
-The {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} introduces new service methods that enhance both options management and products to categories cross linking management.
+The [Catalog](https://glossary.magento.com/catalog) [module](https://glossary.magento.com/module) introduces new service methods that enhance both options management and products to categories cross linking management.
 
 **Class:** [`Magento\Catalog\Api\CategoryLinkManagementInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/Api/CategoryLinkManagementInterface.php){:target="_blank"}<br/>
 **Action:** Added the service method `assignProductToCategories`<br/>
@@ -32,7 +32,7 @@ The {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endgloss
 
 ### CMS Module
 
-The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Module has been updated to allow you to manage meta titles for your CMS pages.
+The [CMS](https://glossary.magento.com/cms) Module has been updated to allow you to manage meta titles for your CMS pages.
 
 **Class:** [`Magento\Cms\Api\Data\PageInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Cms/Api/Data/PageInterface.php){:target="_blank"}<br/>
 **Action:** Added the getter method `getMetaTitle`<br/>
@@ -54,16 +54,16 @@ A data interfaces has been changed in the GiftcardAccount module.
 
 ## Changes in UI
 
-In release 2.1, Magento introduced a new way to build the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI. Old forms have been rewritten using the new UI components. The new UI forms have better flexibility and can be customized using configuration files.
+In release 2.1, Magento introduced a new way to build the [Admin](https://glossary.magento.com/admin) UI. Old forms have been rewritten using the new UI components. The new UI forms have better flexibility and can be customized using configuration files.
 
 The following entities have new forms and design:
 
 - Product
-- {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %}
+- [Category](https://glossary.magento.com/category)
 - CMS Page
-- {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %}
+- [CMS Block](https://glossary.magento.com/cms-block)
 - Sales Rule
-- {% glossarytooltip 3b0e248f-5571-48c0-9dde-efe1662fac6d %}Catalog Rules{% endglossarytooltip %}
+- [Catalog Rules](https://glossary.magento.com/catalog-rules)
 
 {: .bs-callout .bs-callout-info }
 **Important information:** Customizations that were performed with the old forms of the listed entities will be lost.
@@ -72,18 +72,18 @@ The following entities have new forms and design:
 
 ### Staging ({{site.data.var.ee}} Only)
 
-The Staging modules introduce {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} changes for the following entities:
+The Staging modules introduce [database schema](https://glossary.magento.com/database-schema) changes for the following entities:
 
 - Products
 - Categories
 - CMS Pages and Blocks
 - Cart and Catalog Price Rules
 
-These changes are applied only if Staging modules are installed. For {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} modules (e.g. DownloadableProduct, ConfigurableProduct, Bundle etc.), relations between main {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} tables were changed which may affect code that manages SQL queries directly.
+These changes are applied only if Staging modules are installed. For [extension](https://glossary.magento.com/extension) modules (e.g. DownloadableProduct, ConfigurableProduct, Bundle etc.), relations between main [entity](https://glossary.magento.com/entity) tables were changed which may affect code that manages SQL queries directly.
 
 ## Persistence management
 
-In Magento 2.1 release, a new level of persistence management has been added, the [`EntityManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/EntityManager/EntityManager.php){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} component. It allows decoupling from Magento persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all "Magento 1-style" model events in a backward compatible manner.
+In Magento 2.1 release, a new level of persistence management has been added, the [`EntityManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/EntityManager/EntityManager.php){:target="_blank"} [library](https://glossary.magento.com/library) component. It allows decoupling from Magento persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all "Magento 1-style" model events in a backward compatible manner.
 
 ### Data interfaces persistence
 

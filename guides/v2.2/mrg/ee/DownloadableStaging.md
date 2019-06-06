@@ -8,7 +8,7 @@ menu_order: 2
 ee_only: true
 ---
 
-The Magento_DownloadableStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the {% glossarytooltip 38fc3629-ee25-4de5-ac7a-72db8e8de6de %}Downloadable Product{% endglossarytooltip %} updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.
+The Magento_DownloadableStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [Downloadable Product](https://glossary.magento.com/downloadable-product) updates to the existing store campaigns. In other words, you can change the Downloadable Product attributes in campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -26,14 +26,14 @@ You can find the list of modules that have dependencies on the Magento_Downloada
 
 ## Extension points
 
-{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_DownloadableStaging module.
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_DownloadableStaging module.
 For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_DownloadableStaging module.
 
 ### UI components
 
-You can extend product and {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} updates using the UI components located in the `Magento\DownloadableStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html).
+You can extend product and [category](https://glossary.magento.com/category) updates using the UI components located in the `Magento\DownloadableStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component]({{ site.baseurl }}/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 
@@ -42,4 +42,4 @@ For more information about layouts, see the [Layout documentation]({{ site.baseu
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html).

@@ -64,7 +64,7 @@ The following diagram represents directory structure of Data Migration Tool:
 │       │   ├── Data.php
 │       │   ├── Delta.php
 │       │   └── Settings.php
-│       ├── ResourceModel                   --- contains {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for connection to data storage and classes to work with structured data
+│       ├── ResourceModel                   --- contains [adapter](https://glossary.magento.com/adapter) for connection to data storage and classes to work with structured data
 │       │   ├── Adapter
 │       │   │   └── Mysql.php
 │       │   ├── AbstractCollection.php
@@ -76,7 +76,7 @@ The following diagram represents directory structure of Data Migration Tool:
 │       │   ├── Source.php
 │       │   └── Structure.php
 │       ├── Config.php
-│       ├── {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %}.php
+│       ├── [Exception](https://glossary.magento.com/exception).php
 │       └── Step                            --- functionality for migrating specific data
 │           ├── Eav
 │           │   ├── Data.php
@@ -172,7 +172,7 @@ The migration process consists of steps.
 
 Step is a unit that provides functionality required for migration some separated data. Step can consist of one or more stages e.g. integrity check, data, volume check, delta.
 
-By default, there are several steps (Map, EAV, {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} Rewrites, and so on). You can optionally add your own steps as well.
+By default, there are several steps (Map, EAV, [URL](https://glossary.magento.com/url) Rewrites, and so on). You can optionally add your own steps as well.
 
 Steps related classes are located in the src/Migration/Step directory.
 
@@ -288,7 +288,7 @@ In this mode most of the data will be migrated. Before data migration the integr
 
 #### Map Step
 
-Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message.
+Map step is responsible for transferring most of data from Magento 1 to Magento 2. This step reads instructions from map.xml file (located in etc dir). The file describes differences between data structures of source (Magento 1) and destination (Magento 2). In case Magento 1 contains tables or fields that belong to some [extension](https://glossary.magento.com/extension) that does not exist in Magento 2, then these entities can be placed here to ignore them by Map Step. Otherwise it will show an error message.
 
 Map file has the next format:
 
@@ -432,7 +432,7 @@ Here is a class diagram of these classes:
 
 ## Logging {#logging}
 
-In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}.
+In order to implement output of migration process and control all possible levels PSR logger, which is used in Magento, is applied. \Migration\Logger\Logger class was implemented to provide logging functionality. To use the logger you should inject it via constructor [dependency injection](https://glossary.magento.com/dependency-injection).
 
 <pre><code>class SomeClass
 {
@@ -486,7 +486,7 @@ As for now manipulation with logger, adding handler(s), processor(s) to it and p
 
 ### Custom Resource Type of Source
 
-By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
+By default Data Migration Tool works with MySQL DB of Magento 1 as source of data to transfer it to Magento 2. But source data type can be changed to [CSV](https://glossary.magento.com/csv) as an example. There is resource_adapter_class_name option in config.xml that can hold custom class name to resource adapter which can be implemented to work with CSV as an example or any other data type.
 
 ### Map Step configuration
 

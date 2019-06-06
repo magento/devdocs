@@ -4,7 +4,7 @@ title: Static Content Container
 functional_areas:
   - Content
 ---
-Within the Magento application, it is often necessary to display static information to the users. These {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} are considered Content Container and should follow the guideline in this article. For solutions not described in this article or for further information, please contact the Magento UX Design Team.
+Within the Magento application, it is often necessary to display static information to the users. These [static content](https://glossary.magento.com/static-content) are considered Content Container and should follow the guideline in this article. For solutions not described in this article or for further information, please contact the Magento UX Design Team.
 
 ## When to Use
 

@@ -1,9 +1,6 @@
 ---
 group: installation-guide
 title: (Contributor) Clone the Magento repository
-redirect_from:
-  - /guides/v2.0/install-gde/install/composer-clone.html
-  - /guides/v2.0/install-gde/prereq/composer.html
 functional_areas:
   - Install
   - System
@@ -16,7 +13,7 @@ Totally lost? Need a helping hand? Try our [installation quick reference (tutori
 ## Intended audience {#integrator-aud}
 
 The audience for this topic is anyone who contributes to the {{site.data.var.ce}} codebase.
-You should be highly technical, understand {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn't you, go back and [choose another starting point]({{ page.baseurl }}/install-gde/bk-install-guide.html).
+You should be highly technical, understand [Composer](https://glossary.magento.com/composer) and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn't you, go back and [choose another starting point]({{ page.baseurl }}/install-gde/bk-install-guide.html).
 
 {:.bs-callout .bs-callout-warning}
 If you clone the Magento 2 GitHub repository, you _cannot_ use the Magento software in a production environment.

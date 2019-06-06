@@ -22,7 +22,7 @@ http://{default}/:
 
 ## Partial redirects {#cloud-route-partial}
 
-In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} rules
+In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial [redirect](https://glossary.magento.com/redirect) rules
 to existing routes:
 
 ```yaml

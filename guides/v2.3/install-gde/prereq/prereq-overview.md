@@ -17,7 +17,7 @@ Before you install Magento, you must do all of the following:
 
 * Set up one or more hosts that meet the [Magento system requirements]({{page.baseurl}}/install-gde/system-requirements.html).
 * If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
-* Make sure you can back up your entire system at various points during the installation so you can roll back in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues.
+* Make sure you can back up your entire system at various points during the installation so you can roll back in the [event](https://glossary.magento.com/event) of issues.
 
 {:.bs-callout .bs-callout-info}
 We assume you're installing the Magento 2 software in a **development environment**, which means you have [root user](http://www.linfo.org/root.html) access to the machine **and** that the machine does not need to be highly secure. If you're setting up a more secure machine, we strongly recommend you consult a network administrator for additional assistance.
@@ -74,7 +74,7 @@ If you are interested in participating in Magento Community projects we welcome 
 php -v
 ```
 
-You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 7.1.x or 7.2.x as the following result indicates:
+You must run [PHP](https://glossary.magento.com/php) version 7.1.x or 7.2.x as the following result indicates:
 
 ```terminal
 PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )

@@ -17,7 +17,7 @@ This command runs a set of tests defined in the Magento 2 code base. You can eit
 
 Before you run this command, all of the following must be true:
 
--   The `Magento_Developer` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must be enabled. You can enable it as follows:
+-   The `Magento_Developer` [module](https://glossary.magento.com/module) must be enabled. You can enable it as follows:
 
         bin/magento module:enable [--force] Magento_Developer
 

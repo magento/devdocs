@@ -6,7 +6,6 @@ menu_title: Full page caching
 menu_order: 16
 menu_node: parent
 redirect_from:
-  - /guides/v2.0/config-guide/cache/cache-priv-over.html
   - /guides/v2.1/config-guide/cache/cache-priv-over.html
   - /guides/v2.2/config-guide/cache/cache-priv-over.html
 ---

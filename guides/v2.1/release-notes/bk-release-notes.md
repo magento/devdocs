@@ -6,9 +6,6 @@ redirect_from:
   - /guides/v2.1/release-notes/2.3.0-install.html
 ---
 
-
-Looking for [2.0.x Release Notes]({{site.gdeurl}}release-notes/bk-release-notes.html)?
-
 ## Magento 2.1.0 Release Notes
 
 * [{{site.data.var.ce}} 2.1.17 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.17CE.html)
