@@ -12,11 +12,11 @@ The `giftCardAccount` query returns information for a specific gift card.
 
 ## Example usage
 
- The following example returns information about the `00MP4BZTB4NV` gift card code.
+The following example returns information about the `048FQEGYUA73` gift card code.
 
 **Request**
 
- ``` text
+``` text
 query {
   giftCardAccount(input: {gift_card_code: "048FQEGYUA73"}){
     code
@@ -31,7 +31,7 @@ query {
 
 **Response**
 
- ```json
+```json
 {
     "giftCardAccount": {
       "code": "048FQEGYUA73",
@@ -47,7 +47,7 @@ query {
 
 ## Input attributes
 
- The `giftCardAccount` query requires the `gift_card_code`.
+The `giftCardAccount` query requires the `gift_card_code`.
 
 ### GiftCardAccount object {#GiftCardAccount}
 

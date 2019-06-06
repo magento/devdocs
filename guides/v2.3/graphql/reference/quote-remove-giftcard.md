@@ -14,22 +14,22 @@ The `removeGiftCardFromCart` mutation removes a previously-applied gift card fro
 
  The following example removes a gift card from the cart.
 
- **Request**
+**Request**
 
  ``` text
 mutation {
- removeGiftCardFromCart(input:
-   {
-    cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG",
-     gift_card_code: "048FQEGYUA73"
-   })
- {
-   cart {
-     applied_gift_cards {
-       code
-     }
-   }
- }
+  removeGiftCardFromCart(
+    input: {
+      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
+      gift_card_code: "048FQEGYUA73"
+    }
+  ) {
+    cart {
+      applied_gift_cards {
+        code
+      }
+    }
+  }
 }
 ```
 
@@ -48,22 +48,22 @@ mutation {
 
 ## Input attributes
 
- The `removeGiftCardFromCart` mutation requires the `cart_id` attribute.
+The `removeGiftCardFromCart` mutation requires the `cart_id` attribute.
 
 ### removeGiftCardFromCart object {#removeGiftCardFromCart}
 
- The `removeGiftCardFromCart` object must contain the following attributes:
+The `removeGiftCardFromCart` object must contain the following attributes:
 
- Attribute |  Data Type | Description
+Attribute |  Data Type | Description
 --- | --- | ---
 `cart_id` | String! | The unique ID that identifies the customer's cart
 `gift_card_code` | String! | The gift card code
 
 ## Output attributes
 
- The `removeGiftCardFromCart` object contains the `Cart` object.
+The `removeGiftCardFromCart` object contains the `Cart` object.
 
- Attribute |  Data Type | Description
+Attribute |  Data Type | Description
 --- | --- | ---
 `cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
@@ -71,4 +71,4 @@ mutation {
 
  {% include graphql/cart-object.md %}
 
- [Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.

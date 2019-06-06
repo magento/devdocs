@@ -12,28 +12,28 @@ The `applyGiftCardToCart` mutation applies a pre-defined gift card code to the s
 
 ## Example usage
 
- The following example adds a gift card code called `048FQEGYUA73` to a cart.
+The following example adds a gift card code called `048FQEGYUA73` to a cart.
 
 **Request**
 
- ``` text
+``` text
 mutation {
-   applyGiftCardToCart(
+   applyGiftCardToCart( input: {
       cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
       gift_card_code: "048FQEGYUA73"
-   ) {
+   }
+)  {
     cart {
-    applied_gift_cards {
-        code
+       applied_gift_cards {
+          code
       }
     }
-  }
+}
 ```
 
 **Response**
 
- ```json
-
+```json
 {
  "applyGiftCardToCart": {
       "cart": {
@@ -50,7 +50,7 @@ mutation {
 
 ## Input attributes
 
- The `applyGiftCardToCart` mutation requires the `cart_id` and `gift_card_code`.
+The `applyGiftCardToCart` mutation requires the `cart_id` and `gift_card_code`.
 
 ### ApplyGiftCardToCartInput object {#ApplyGiftCardToCartInput}
 
@@ -73,4 +73,4 @@ Attribute |  Data Type | Description
 
  {% include graphql/cart-object.md %}
 
- [Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
+[Cart query output]({{page.baseurl}}/graphql/reference/quote.html#cart-output) provides more information about the `Cart` object.
