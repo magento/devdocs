@@ -717,31 +717,173 @@ You need to read configuration from different sources (like database or filesyst
 
 ### 11.3. Functional Testing
 
-11.3.1. Action Groups
+#### 11.3.1. Pages
 
-11.3.1.1. Action group names MUST be brief but comprehensive.
+11.3.1.1. Page file names MUST follow this pattern:
 
-11.3.1.2. Action group arguments MUST specify their type.
+* {Admin or Storefront}{UI Description}Page.xml, where UI Description briefly describes the UI under tests.
 
-11.3.1.3. Action groups MUST NOT have unused arguments.
+* Example: AdminLoginPage.xml
 
-11.3.1.4. Action groups MUST NOT reference `$$createdData.property$$` or `$createdData.property$`.
+#### 11.3.2. Sections
 
-11.3.1.5. Action groups SHOULD be in their own file.
+11.3.2.1. Section file names MUST follow this pattern:
 
-11.3.1.6. Action groups SHOULD use the `string` type instead of `entity` unless many properties from the `entity` would be referenced.
+* {Admin or Storefront}{UI Description}Section.xml, where UI Description briefly describes the UI under test.
 
-11.3.1.7. Action group arguments SHOULD specify default values.
+* Example: AdminNavbarSection.xml
 
-11.3.1.8. Action group file names MUST follow this pattern:
+#### 11.3.3. Elements
+
+11.3.3.1. Selectors SHOULD be written in CSS instead of Xpath when possible.
+
+11.3.3.2. CSS and Xpath selectors MUST be implemented in their most simple form.
+
+11.3.3.3. Xpath selectors MUST NOT use `@class="foo"`.
+
+11.3.3.4. CSS and Xpath selectors MUST NOT reference `@data-bind`.
+
+11.3.3.5. Parameterized selectors MUST use descriptive names for the parameters.
+
+11.3.3.6. Elements SHOULD use `timeout="30"` to wait after interactions.
+
+11.3.3.7. **Xpath selectors SHOULD wrap `text()` with `contains()`.** When possible, use `contains(text(), 'someTextHere')` rather than `text()='someTextHere'`. `contains()` ignores whitespace while `text()` accounts for it.
+
+**Why?** If you are comparing text within a selector and have an unexpected space, or a blank line above or below the string, `text()` will fail while the `contains(text())` format will catch it. In this scenario `text()` is more exacting. Use it when you need to be very precise about what is getting compared.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+//span[contains(text(), 'SomeTextHere')]
+```
+
+### Not recommended
+
+```xml
+//span[text()='SomeTextHere']
+```
+
+{% endcollapsible %}
+
+11.3.3.8. **Selectors SHOULD be built in the proper order.** When building selectors for form elements, start with the parent context of the form element. Then specify the element `name` attribute in your selector to ensure the correct element is targeted. To build a selector for an input, use the pattern: `{{section_selector}}` `{{input_selector}}` or for a button: `{{section_selector}}` `{{button_selector}}`
+
+**Why?** Traversing the DOM takes a finite amount of time and reducing the scope of the selector makes the selector lookup as efficient as possible.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<element name="productName" type="input" selector="*[data-index='product-details'] input[name='product[name]']"/>
+```
+
+### Not recommended
+
+```xml
+<element name="productName" type="input" selector=".admin__field[data-index=name] input"/>
+```
+
+{% endcollapsible %}
+
+11.3.3.9. **Selectors SHOULD be built with appropriate specificity.** Selectors that are too general might sweep up unexpected elements. When possible, select the first parent tag and then specify the desired element within that selection.
+
+**Why?** Elements that are overly specific are less flexible and may fail if unexpected DOM changes occur. It also reduces the amount of the DOM it needs to parse.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+form[name='myform'] > input[name='firstname']
+
+//*[@id='container'][@class='dashboard-title']
+```
+
+### Not recommended
+
+```xml
+input[name='firstname']
+
+//*[@id='container']/*[@class='dashboard-advanced-reports']/*[@class='dashboard-advanced- reports-description']/*[@class='dashboard-title']
+```
+
+{% endcollapsible %}
+
+11.3.3.10. Parameterized selectors MUST use descriptive variable names.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{storeName}}')]" parameterized="true"/>
+```
+
+### Not recommended
+
+```xml
+<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{var1}}')]" parameterized="true"/>
+```
+
+{% endcollapsible %}
+
+#### 11.3.4. Data Entities
+
+11.3.4.1. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedely ran against the same environment.
+
+11.3.4.2. Data entities MUST NOT be modified and MUST NOT merge additional fields without complete understanding and verifying the usage of existing data in tests. New data entities SHOULD be created if you are not sure.
+
+11.3.4.3. Data entity file names MUST follow this pattern:
+
+* {Type}Data.xml, where Type represents the entity type.
+
+* Example: ProductData.xml
+
+11.3.4.4. **Data references SHOULD be used instead of hardcoded values.** If you need to run a command such as `<magentoCLI command="config:set" />`, do not hardcode paths and values to the command. Rather, create an appropriate `ConfigData.xml` file, which contains the required parameters for running the command. It will simplify the future maintanence of tests.
+
+{% collapsible Examples: %}
+
+### Recommended
+
+```xml
+<magentoCLI command="config:set {{StorefrontCustomerCaptchaLength3ConfigData.path}} {{StorefrontCustomerCaptchaLength3ConfigData.value}}" stepKey="setCaptchaLength" />
+```
+
+### Not recommended
+
+```xml
+<magentoCLI command="config:set customer/captcha/length 3" stepKey="setCaptchaLength" />
+```
+
+{% endcollapsible %}
+
+#### 11.3.5. Action Groups
+
+11.3.5.1. Action group names MUST be brief but comprehensive.
+
+11.3.5.2. Action group arguments MUST specify their type.
+
+11.3.5.3. Action groups MUST NOT have unused arguments.
+
+11.3.5.4. Action groups MUST NOT reference `$$createdData.property$$` or `$createdData.property$`.
+
+11.3.5.5. Action groups SHOULD be in their own file.
+
+11.3.5.6. Action groups SHOULD use the `string` type instead of `entity` unless many properties from the `entity` would be referenced.
+
+11.3.5.7. Action group arguments SHOULD specify default values.
+
+11.3.5.8. Action group file names MUST follow this pattern:
 
 * {Assert}{Admin or Storefront}{Functionality}ActionGroup.xml
 
 * Example: AssertStorefrontMinicartContainsProductActionGroup.xml
 
-11.3.1.9. Action group names SHOULD match the file name that they are in.
+11.3.5.9. Action group names SHOULD match the file name that they are in.
 
-11.3.1.10. **You SHOULD use parameterized selectors in action groups with argument references.** Clarity and readability are important factors in good test writing. Having to parse through unreadable code can be time consuming. Save time by writing clearly. The good example clearly shows what the selector arguments refer to. In the bad example we see two parameters being passed into the selector with little clue as to their purpose.
+11.3.5.10. **You SHOULD use parameterized selectors in action groups with argument references.** Clarity and readability are important factors in good test writing. Having to parse through unreadable code can be time consuming. Save time by writing clearly. The good example clearly shows what the selector arguments refer to. In the bad example we see two parameters being passed into the selector with little clue as to their purpose.
 
 **Why?** The next person maintaining the test or extending it may not be able to understand what the parameters are referencing.
 
@@ -776,115 +918,25 @@ You need to read configuration from different sources (like database or filesyst
 
 {% endcollapsible %}
 
-11.3.2. Elements
+#### 11.3.6. Annotations
 
-11.3.2.1. Selectors SHOULD be written in CSS instead of Xpath when possible.
+11.3.6.1. You SHOULD use `<annotations>` to describe tests and action groups.
 
-11.3.2.2. CSS and Xpath selectors MUST be implemented in their most simple form.
+11.3.6.2. You SHOULD update your annotations when updating tests.
 
-11.3.2.3. Xpath selectors MUST NOT use `@class="foo"`.
+#### 11.3.7. Test Before Block
 
-11.3.2.4. CSS and Xpath selectors MUST NOT reference `@data-bind`.
+11.3.7.1. Configuration changes via `magentoCLI` SHOULD occur last in the `before` block.
 
-11.3.2.5. Parameterized selectors MUST use descriptive names for the parameters.
+11.3.7.2. The `before` block SHOULD mostly be `createData` calls with minimal UI interaction.
 
-11.3.2.6. Elements SHOULD use `timeout="30"` to wait after interactions.
+#### 11.3.8. Test After Block
 
-11.3.2.7. **Xpath selectors should wrap `text()` with `contains()`.** When possible, use `contains(text(), 'someTextHere')` rather than `text()='someTextHere'`. `contains()` ignores whitespace while `text()` accounts for it.
+11.3.8.1. Configuration changes via `magentoCLI` SHOULD occur first in the `after` block.
 
-**Why?** If you are comparing text within a selector and have an unexpected space, or a blank line above or below the string, `text()` will fail while the `contains(text())` format will catch it. In this scenario `text()` is more exacting. Use it when you need to be very precise about what is getting compared.
+11.3.8.2. The `after` block SHOULD mostly be `deleteData` calls with minimal UI interaction.
 
-{% collapsible Examples: %}
-
-### Recommended
-
-```xml
-//span[contains(text(), 'SomeTextHere')]
-```
-
-### Not recommended
-
-```xml
-//span[text()='SomeTextHere']
-```
-
-{% endcollapsible %}
-
-11.3.2.8. **Selectors should be built in the proper order.** When building selectors for form elements, start with the parent context of the form element. Then specify the element `name` attribute in your selector to ensure the correct element is targeted. To build a selector for an input, use the pattern: `{{section_selector}}` `{{input_selector}}` or for a button: `{{section_selector}}` `{{button_selector}}`
-
-**Why?** Traversing the DOM takes a finite amount of time and reducing the scope of the selector makes the selector lookup as efficient as possible.
-
-{% collapsible Examples: %}
-
-### Recommended
-
-```xml
-<element name="productName" type="input" selector="*[data-index='product-details'] input[name='product[name]']"/>
-```
-
-### Not recommended
-
-```xml
-<element name="productName" type="input" selector=".admin__field[data-index=name] input"/>
-```
-
-{% endcollapsible %}
-
-11.3.2.9. **Selectors should be built with appropriate specificity.** Selectors that are too general might sweep up unexpected elements. When possible, select the first parent tag and then specify the desired element within that selection.
-
-**Why?** Elements that are overly specific are less flexible and may fail if unexpected DOM changes occur. It also reduces the amount of the DOM it needs to parse.
-
-{% collapsible Examples: %}
-
-### Recommended
-
-```xml
-form[name='myform'] > input[name='firstname']
-
-//*[@id='container'][@class='dashboard-title']
-```
-
-### Not recommended
-
-```xml
-input[name='firstname']
-
-//*[@id='container']/*[@class='dashboard-advanced-reports']/*[@class='dashboard-advanced- reports-description']/*[@class='dashboard-title']
-```
-
-{% endcollapsible %}
-
-11.3.2.10. Parameterized selectors MUST use descriptive variable names.
-
-{% collapsible Examples: %}
-
-### Recommended
-
-```xml
-<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{storeName}}')]" parameterized="true"/>
-```
-
-### Not recommended
-
-```xml
-<element name="storeName" type="checkbox" selector="//label[contains(text(),'{{var1}}')]" parameterized="true"/>
-```
-
-{% endcollapsible %}
-
-11.3.3. Test Before Block
-
-11.3.3.1. Configuration changes via `magentoCLI` SHOULD occur last in the `before` block.
-
-11.3.3.2. The `before` block SHOULD mostly be `createData` calls with minimal UI interaction.
-
-11.3.4. Test After Block
-
-11.3.4.1. Configuration changes via `magentoCLI` SHOULD occur first in the `after` block.
-
-11.3.4.2. The `after` block SHOULD mostly be `deleteData` calls with minimal UI interaction.
-
-11.3.4.3. **You SHOULD perform the most critical actions first in the `<after>` block.** Perform non-browser driving actions first. These are more likely to succeed as no UI is involved. In the good example, `magentoCLI` and `deleteData` are run first to ensure a proper state. In the bad example, we perform some heavy UI steps first.
+11.3.8.3. **You SHOULD perform the most critical actions first in the `<after>` block.** Perform non-browser driving actions first. These are more likely to succeed as no UI is involved. In the good example, `magentoCLI` and `deleteData` are run first to ensure a proper state. In the bad example, we perform some heavy UI steps first.
 
 **Why?** If something goes wrong there, then the critical `magentoCLI` commands may not get a chance to run, leaving Magento configured incorrectly for any upcoming tests.
 
@@ -928,31 +980,31 @@ input[name='firstname']
 
 {% endcollapsible %}
 
-11.3.5. Test
+#### 11.3.9. Test Body
 
-11.3.5.1. The test SHOULD re-use action groups, pages, sections, and elements.
+11.3.9.1. The test SHOULD re-use action groups, pages, sections, and elements.
 
-11.3.5.2. Any data created MUST be deleted in the `after` block of the test.
+11.3.9.2. Any data created MUST be deleted in the `after` block of the test.
 
-11.3.5.3. `amOnPage` SHOULD be followed by `waitForPageLoad`.
+11.3.9.3. `amOnPage` SHOULD be followed by `waitForPageLoad`.
 
-11.3.5.4. `amOnPage` SHOULD use `Page.url` instead of a hardcoded URL.
+11.3.9.4. `amOnPage` SHOULD use `Page.url` instead of a hardcoded URL.
 
-11.3.5.5. `waitForPageLoad` SHOULD be used instead of `waitForLoadingMaskToDisappear` or `waitForAjaxLoad`.
+11.3.9.5. `waitForPageLoad` SHOULD be used instead of `waitForLoadingMaskToDisappear` or `waitForAjaxLoad`.
 
-11.3.5.6. Test file names MUST follow this pattern:
+11.3.9.6. Test file names MUST follow this pattern:
 
 * {Admin or Storefront}{Functionality}Test.xml
 
 * Example: StorefrontCreateCustomerTest.xml
 
-11.3.5.7. `wait` SHOULD NOT be used unless for very specific circumstances.
+11.3.9.7. `wait` SHOULD NOT be used unless for very specific circumstances.
 
-11.3.5.8. Tests SHOULD be short and granular.
+11.3.9.8. Tests SHOULD be short and granular.
 
-11.3.5.9. Comments SHOULD be used to ensure tests are readable and maintainable.
+11.3.9.9. Comments SHOULD be used to ensure tests are readable and maintainable.
 
-11.3.5.10. **`see` and `seeElement` SHOULD be used wisely.** If you need to see some element and verify that the text inside is shown correctly, use the `see` action. If you need to verify that element present on page, use `seeElement`. But never use `seeElement` and build a Xpath which contains the expected text.
+11.3.9.10. **`see` and `seeElement` SHOULD be used wisely.** If you need to see some element and verify that the text inside is shown correctly, use the `see` action. If you need to verify that element present on page, use `seeElement`. But never use `seeElement` and build a Xpath which contains the expected text.
 
 **Why?** For `see` it will output something similar to this: `Failed asserting that any element by #some_selector contains text "some_text"` And for `seeElement` it will output something like this: `Element by #some_selector is not visible.` There is a subtle distinction: The first is a failure but it is the desired result: a ‘positive failure’. The second is a proper result of the action.
 
@@ -972,7 +1024,7 @@ input[name='firstname']
 
 {% endcollapsible %}
 
-11.3.5.11. **Tests SHOULD be built from action groups.**
+11.3.9.11. **Tests SHOULD be built from action groups.**
 
 **Why?** For extension developers, this will make it easier to extend or customize tests. Extending a single action group will update all tests that use this group. This improves maintainability as multiple instances of a failure can be fixed with a single action group update.
 
@@ -1027,7 +1079,7 @@ input[name='firstname']
 
 {% endcollapsible %}
 
-11.3.5.12. `stepKey` names MUST be descriptive. This helps with readability and clarity.
+11.3.9.12. `stepKey` names MUST be descriptive. This helps with readability and clarity.
 
 {% collapsible Examples: %}
 
@@ -1065,9 +1117,9 @@ input[name='firstname']
 
 {% endcollapsible %}
 
-11.3.6. Extending
+#### 11.3.10. Extending
 
-11.3.6.1. You SHOULD use extends in your new test or action group when at least one of the following conditions is applicable to your case:
+11.3.10.1. You SHOULD use extends in your new test or action group when at least one of the following conditions is applicable to your case:
 
 * You want to keep the original test without any modifications.
 
@@ -1075,63 +1127,11 @@ input[name='firstname']
 
 * You want a new action group that behaves similarly to the existing action group, but you do not want to change the functionality of the original action group.
 
-11.3.6.2. You SHOULD NOT use extends in the following conditions:
+11.3.10.2. You SHOULD NOT use extends in the following conditions:
 
 * You want to change the functionality of the test or action group and do not need to run the original version.
 
 * You plan to merge the base test or action group.
-
-11.3.7. Annotations
-
-11.3.7.1. You SHOULD use `<annotations>` to describe tests and action groups.
-
-11.3.7.2. You SHOULD update your annotations when updating tests.
-
-11.3.8. Data Entities
-
-11.3.8.1. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedely ran against the same environment.
-
-11.3.8.2. Data entities MUST NOT be modified and MUST NOT merge additional fields without complete understanding and verifying the usage of existing data in tests. New data entities SHOULD be created if you are not sure.
-
-11.3.8.3. Data entity file names MUST follow this pattern:
-
-* {Type}Data.xml, where Type represents the entity type.
-
-* Example: ProductData.xml
-
-11.3.8.4. **Data references SHOULD be used instead of hardcoded values.** If you need to run a command such as `<magentoCLI command="config:set" />`, do not hardcode paths and values to the command. Rather, create an appropriate `ConfigData.xml` file, which contains the required parameters for running the command. It will simplify the future maintanence of tests.
-
-{% collapsible Examples: %}
-
-### Recommended
-
-```xml
-<magentoCLI command="config:set {{StorefrontCustomerCaptchaLength3ConfigData.path}} {{StorefrontCustomerCaptchaLength3ConfigData.value}}" stepKey="setCaptchaLength" />
-```
-
-### Not recommended
-
-```xml
-<magentoCLI command="config:set customer/captcha/length 3" stepKey="setCaptchaLength" />
-```
-
-{% endcollapsible %}
-
-11.3.9. Sections
-
-11.3.9.1. Section file names MUST follow this pattern:
-
-* {Admin or Storefront}{UI Description}Section.xml, where UI Description briefly describes the UI under test.
-
-* Example: AdminNavbarSection.xml
-
-11.3.10. Pages
-
-11.3.10.1. Page file names MUST follow this pattern:
-
-* {Admin or Storefront}{UI Description}Page.xml, where UI Description briefly describes the UI under tests.
-
-* Example: AdminLoginPage.xml
 
 ## 12. Web API
 
