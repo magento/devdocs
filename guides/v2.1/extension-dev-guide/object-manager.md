@@ -72,7 +72,7 @@ $objectManager->configure([
 ]);
 ```
 
-## Relate topics
+## Related topics
 
 - [The `di.xml` file][`di.xml`]
 - [Dependency injection][]
