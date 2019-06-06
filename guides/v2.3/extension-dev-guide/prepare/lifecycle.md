@@ -181,34 +181,49 @@ If your installation or upgrade logic spans multiple classes, pass this resource
 class DefaultCustomerGroupsAndAttributes implements DataPatchInterface, PatchVersionInterface
 {
     /**
+     * @var CustomerSetupFactory
+     */
+    private $customerSetupFactory;
+    /**
      * @var ModuleDataSetupInterface
      */
     private $moduleDataSetup;
-
     /**
-     * Init
-     *
+     * DefaultCustomerGroupsAndAttributes constructor.
+     * @param CustomerSetupFactory $customerSetupFactory
      * @param ModuleDataSetupInterface $moduleDataSetup
      */
-    public function __construct(\Magento\Framework\Setup\ModuleDataSetupInterface $moduleDataSetup)
-    {
+    public function __construct(
+        CustomerSetupFactory $customerSetupFactory,
+        \Magento\Framework\Setup\ModuleDataSetupInterface $moduleDataSetup
+    ) {
+        $this->customerSetupFactory = $customerSetupFactory;
         $this->moduleDataSetup = $moduleDataSetup;
     }
     /**
      * {@inheritdoc}
+     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)
      */
-    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    public function apply()
     {
         /** @var CustomerSetup $customerSetup */
         $customerSetup = $this->customerSetupFactory->create(['setup' => $this->moduleDataSetup]);
-        $setup->startSetup();
         ...
-        $customerSetup->installEntities();	
+        $customerSetup->installEntities();
         $customerSetup->installCustomerForms();
         $disableAGCAttribute = $customerSetup->getEavConfig()->getAttribute('customer', 'disable_auto_group_change');
         ...
-	$setup->endSetup();
+        $migrationSetup = $this->moduleDataSetup->createMigrationSetup();
+        $migrationSetup->appendClassAliasReplace(
+            'customer_eav_attribute',
+            'data_model',
+            Migration::ENTITY_TYPE_MODEL,
+            Migration::FIELD_CONTENT_TYPE_PLAIN,
+            ['attribute_id']
+        );
+        $migrationSetup->doUpdateClassAliases();
     }
+    ...
 }
 ```
 
