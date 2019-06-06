@@ -71,7 +71,7 @@ Array of buttons for action pane.
 **Structure**:
 ```javascript
 buttons: [{
-    text: '',
+    text: $.mage.__(''),
     class: '',
     click: function() {} //handler on button click
 }]
@@ -80,7 +80,7 @@ buttons: [{
 **Default value**:
 ```javascript
 buttons: [{
-    text: 'Ok',
+    text: $.mage.__('Ok'),
     class: '',
     click: function() {
         this.closeModal();
