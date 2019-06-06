@@ -17,7 +17,7 @@ Google reCAPTCHA reduces potential user error when entering a Captcha code and e
 
 ## Install Module
 
-The Google reCAPTCHA extension installs when you install or upgrade to Magento Open Source or Commerce 2.3.X. This extensions installs like a Core Bundled Extension (CBE).
+The Google reCAPTCHA extension installs when you install or upgrade to Magento Open Source or Commerce 2.3.x. This extensions is bundled and included in these versions.
 
 ## Configure reCAPTCHA
 
