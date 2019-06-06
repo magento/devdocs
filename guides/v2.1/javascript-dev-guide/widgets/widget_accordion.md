@@ -12,7 +12,6 @@ Accordions are generally used to break content into multiple sections that can b
 
 The accordion [widget](https://glossary.magento.com/widget) source is [lib/web/mage/accordion.js].
                                                                                                                   
->>>>>>> origin/master
 ## Initialize the accordion widget {#accordion_init}
 
 ### Initialize accordion in JS components
