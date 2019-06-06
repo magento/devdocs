@@ -19,19 +19,22 @@ The accordion [widget](https://glossary.magento.com/widget) source is [lib/web/m
 #### Initialize accordion with `data-*` attributes specified
 
 Generally the accordion widget is instantiated like following:
+
 ```javascript
 $("#element").accordion();
 ```
 
 Where:
--   `#element` is the selector of the element for accordion is initialized.
--   `#element` has children with the following attributes specified:
-    -   `data-role="title"`
-    -   `data-role="content"`
+- `#element` is the selector of the element for accordion is initialized.
+- `#element` has children with the following attributes specified:
+
+    - `data-role="title"`
+    - `data-role="content"`
 
 Optionally, you can specify the following:
--   If you want the trigger to be different from the title, add the `data-role="content"` attribute for the element
--   To have the content updated using Ajax, add the `data-ajax="true"` attribute for the element containing the URL for request.
+
+- If you want the trigger to be different from the title, add the `data-role="content"` attribute for the element
+- To have the content updated using Ajax, add the `data-ajax="true"` attribute for the element containing the URL for request.
 
 Accordions support arbitrary markup, but the following requirements should be kept:
 
@@ -77,6 +80,7 @@ Mark-up examples:
 
 You can specify the header, content, trigger as options when you initialize the widget.
 For example:
+
 ```javascript
 $("#element").accordion({
     header : "#title-1",
@@ -93,9 +97,10 @@ The accordion widget can be initialized using the `data-mage-init` attribute or 
 ## Options {#accordion_options}
 
 Accordion options coincide with [Magento Tabs options], plus the following custom ones:
--   [active]
--   [multipleCollapsible]
--   [openOnFocus]
+
+- [active]
+- [multipleCollapsible]
+- [openOnFocus]
 
 ### `active` {#collaps_active}
 
@@ -106,12 +111,14 @@ Defines which tab is active when the widget gets instantiated.
 **Default value**: `0`
 
 Example of the accordion initialization with the <code>active</code> option specified:
+
 ```javascript
 $("#element").accordion({ active: "0 1"});
 $("#element").accordion({ active: [0,1]});
 ```
 
 ### `multipleCollapsible` {#collaps_multi}
+
 Defines if multiple panels can be expanded at the same time.
 
 **Type**: Boolean
@@ -119,11 +126,13 @@ Defines if multiple panels can be expanded at the same time.
 **Default value**: `false`
 
 Example of the accordion initialization with the `multipleCollapsible` option specified:
+
 ```javascript
 $("#element").accordion({ multipleCollapsible: false});
 ```
 
 Get or set the `multipleCollapsible` option, after initialization:
+
 ```javascript
 //getter
 var multipleCollapsible = $("#element").accordion("option","multipleCollapsible");
@@ -133,6 +142,7 @@ $("#element").tabs("option","multipleCollapsible",false);
 ```
 
 ### `openOnFocus` {#collaps_open}
+
 For keyboard navigation defines if the accordion expands when the title gets in focus.
 
 **Type**: Boolean
@@ -144,10 +154,12 @@ For keyboard navigation defines if the accordion expands when the title gets in 
 Accordion widget options and keyboard interaction mostly coincide with the Magento tabs widget methods.
 
 The custom accordion methods are the following:
--   [activate()]
--   [deactivate()]
+
+- [activate()]
+- [deactivate()]
 
 ### `activate(index)` {#meth_act}
+
 Activate a tab with the specified `index`.
 
 **Type**: Number, Array.
@@ -163,6 +175,7 @@ $( "#element" ).accordion( "activate", [0,1]);
 ```
 
 ### `deactivate(index)` {#meth_deact}
+
 Deactivate a tab with the specified `index`.
 
 **Type**: Number, Array.
@@ -181,8 +194,8 @@ $( "#element" ).accordion( "deactivate", [0,1]);
 
 The accordion widget subscribes to the same events as the [Tabs widget]({{page.baseurl}}/javascript-dev-guide/widgets/widget_tabs.html):
 
--   [beforeOpen callback](#beforeopen-callback)
--   [dimensionsChanged](#dimensionschanged)
+- [beforeOpen callback](#beforeopen-callback)
+- [dimensionsChanged](#dimensionschanged)
 
 ### `beforeOpen callback`
 
@@ -210,7 +223,6 @@ $("#element").on("dimensionsChanged", function (event, data) {
         // do something when the content is opened
         return;
     }
-
     // do something when the content is closed
 });
 ```
