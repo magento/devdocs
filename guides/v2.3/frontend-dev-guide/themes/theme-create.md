@@ -81,7 +81,6 @@ After you create a directory for your theme, you must create `theme.xml` contain
 
 If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any [Magento Admin](https://glossary.magento.com/magento-admin) page for your changes to be saved in the database.
 
-
 ## Make your theme a Composer package {#fedg_create_theme_composer}
 
 Magento default themes are distributed as [Composer](https://getcomposer.org/){:target="_blank"} packages.
