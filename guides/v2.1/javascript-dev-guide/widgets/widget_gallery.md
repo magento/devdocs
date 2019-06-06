@@ -472,6 +472,25 @@ The fullscreen and breakpoints options are set in a similar way:
 </var>
 ```
 
+Gallery magnifier theme settings : 
+
+```xml
+<var name="magnifier">
+        <var name="fullscreenzoom">20</var>  <!-- Zoom for fullscreen (integer)-->
+        <var name="top"></var> <!-- Top position of magnifier -->
+        <var name="left"></var> <!-- Left position of magnifier -->
+        <var name="width"></var> <!-- Width of magnifier block -->
+        <var name="height"></var> <!-- Height of magnifier block -->
+        <var name="eventType">hover</var> <!-- Action that atcivates zoom (hover/click) -->
+        <var name="enabled">true</var> <!-- Turn on/off magnifier (true/false) -->
+        <var name="mode">outside</var> <!-- Zoom type (outside/inside) -->
+</var>
+```
+
+The following picture is an illustration of image displaying on the product page using the gallery magnifier settings:
+
+![A product page with magnifier settings]({{site.baseurl}}/common/images/gallery_zoom.png)
+
 For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml#L184).
 
 ## Gallery API {#gallery_api}
@@ -578,6 +597,7 @@ api.updateOptions([{
     nav: 'dots'
 }]);
 ```
+
 
 
 [Fotorama widget]: http://fotorama.io/
