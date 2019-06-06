@@ -1,0 +1,11 @@
+---
+group: configuration-guide
+functional_areas:
+  - Configuration
+  - System
+  - Setup
+---
+
+{% assign file = site.data.codebase.v2_3.open-source.bin-magento %}
+
+{% include config/cli-reference-template.md %}
