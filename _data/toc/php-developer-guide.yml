@@ -211,6 +211,7 @@ pages:
               url: /extension-dev-guide/message-queues/config-mq.html
 
             - label: Handling outdated in-memory object states
+              include_versions: ["2.3"]
               url: /extension-dev-guide/message-queues/refresh-config.html
             
             - label: Migrate message queue configuration
