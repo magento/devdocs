@@ -90,4 +90,4 @@ If you use the ElasticSuite third-party plugin, you must [update the `{{site.dat
 {% include cloud/pretty-print-services.md %}
 
 {: .bs-callout-warning}
-Staging and Production environments in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
+Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

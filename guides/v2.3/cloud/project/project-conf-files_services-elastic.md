@@ -87,4 +87,4 @@ The response includes all relationships for services and configuration data for 
 {: .no-copy}
 
 {: .bs-callout-warning}
-Staging and Production environments in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
+Staging and Production environments that are in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
