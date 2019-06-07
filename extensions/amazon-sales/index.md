@@ -23,6 +23,16 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
 1. Click **Download**.
 1. Export the contents to your Magento root.
 1. Follow all instructions for Extension [Installation]({{site.baseurl}}/extensions/install/).
+1. Update your `composer.json` file
+    - Add the extension’s name and version to your composer.json file:
+    - Navigate to your Magento project directory and update your composer.json file.
+
+      ```bash
+      composer require magento/services-connector:~1.0.3
+      ```
+
+    - Enter your [authentication keys]({{https://devdocs.magento.com/guides/v2.3/install-gde/prereq/connect-auth.html}}). Your public key is your username; your private key is your password.
+    - Wait for Composer to finish updating your project dependencies and make sure there aren’t any errors.
 1. After installing, enter an API Key to complete configuration.
 
 ## Add the Amazon Sales Channel API key
