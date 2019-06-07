@@ -6,6 +6,10 @@
 {% else %}
 # Magento CLI
 {% endif %}
+
+This reference contains {{ commands | size }} commands.
+The initial list is auto generated using `bin/magento list` command at the {{ site.data.var.ce }} edition.
+
 {% for command in commands %}
   {% assign arguments = command.definition.arguments %}
   {% assign options = command.definition.options %}
@@ -21,6 +25,7 @@
   {% unless arguments.size == 0 %}
 
 ### Arguments
+{: .no_toc}
 
   {% for argument in arguments %}
   {% for item in argument %}
@@ -42,7 +47,8 @@
   {% endfor %}
   {% endfor %}
 
-### Options
+#### Options
+{: .no_toc}
 
  {% for option in options %}
  {% assign opt = option[1] %}
