@@ -82,8 +82,9 @@ buttons: [{
 buttons: [{
     text: $.mage.__('Ok'),
     class: '',
-    click: function() {
-        this.closeModal();
+    attr: {},
+    click: function (event) {
+        this.closeModal(event);
     }
 }]
 ```
