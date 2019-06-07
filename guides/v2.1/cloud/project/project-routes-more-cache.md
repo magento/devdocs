@@ -126,7 +126,7 @@ The cache key depends on the value of the `value` cookie in the request.
 A special case exists if the `cookies` key has the `["*"]` value. This value means that any request with a cookie will bypass the cache. This is the default value.
 
 {:.bs-callout .bs-callout-info}
-You can not use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (`*`). `SESS*` or `~SESS` are currently **not** valid values.
+You can't use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (`*`). `SESS*` or `~SESS` are currently **not** valid values.
 
 Magento cookies have the following restrictions:
 
