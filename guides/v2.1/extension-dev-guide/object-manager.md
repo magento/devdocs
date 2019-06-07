@@ -1,7 +1,6 @@
 ---
 group: php-developer-guide
 title: ObjectManager
-menu_title: ObjectManager
 ---
 
 ## Overview
