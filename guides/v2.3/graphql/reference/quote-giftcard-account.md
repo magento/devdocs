@@ -12,13 +12,13 @@ The `giftCardAccount` query returns information for a specific gift card.
 
 ## Example usage
 
-The following example returns information about the `048FQEGYUA73` gift card code.
+The following example returns information about the `01PNC9L76H4H` gift card code.
 
 **Request**
 
 ``` text
 query {
-  giftCardAccount(input: {gift_card_code: "048FQEGYUA73"}){
+  giftCardAccount(input: {gift_card_code: "01PNC9L76H4H"}){
     code
     balance {
       currency
@@ -33,13 +33,14 @@ query {
 
 ```json
 {
+  "data": {
     "giftCardAccount": {
-      "code": "048FQEGYUA73",
+      "code": "01PNC9L76H4H",
       "balance": {
         "currency": "USD",
-        "value": 50
+        "value": 25
       },
-      "expiration_date": "2019-06-25"
+      "expiration_date": null
     }
   }
 }

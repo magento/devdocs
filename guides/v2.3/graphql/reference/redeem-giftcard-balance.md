@@ -4,10 +4,10 @@ title: redeemGiftCardBalanceAsStoreCredit mutation
 ee_only: True
 ---
 
-The `redeemGiftCardBalanceAsStoreCredit` mutation converts the entire balance of a gift card to store credit. As a result, the remaining balance on the gift card is 0.
+The `redeemGiftCardBalanceAsStoreCredit` mutation converts the entire balance of a gift card to store credit. The gift card must be redeemable and cannot have a balance of 0 at the time you run the mutation. After successfully running the mutation, the value of the gift card changes to 0.
 
 {:.bs-callout .bs-callout-info}
-Run this mutation on behalf of logged-in customers only.
+Run this mutation on behalf of logged-in customers only. [Get customer authorization token]({{page.baseurl}}/graphql/get-customer-authorization-token.html) describes how to send a request as a customer.
 
 ## Syntax
 
@@ -15,26 +15,21 @@ Run this mutation on behalf of logged-in customers only.
 
 ## Example usage
 
-The following example redeems the gift card with code `BFR1345Q05`.
+The following example redeems the gift card with code `“00SBOLF4LJDY”`.
 
 **Request**
 
 ``` text
 mutation {
   redeemGiftCardBalanceAsStoreCredit(
-    input: {
-      gift_card_code: "BFR1345Q05"
-    }
+    input : { gift_card_code: “00SBOLF4LJDY”}
   ) {
-    GiftCardAccount {
-      balance {
-        currency
-        value
-      }
-      code
-      expiration_date
-      }
+    balance {
+      currency
+      value
     }
+    code
+    expiration_date
   }
 }
 ```
@@ -43,14 +38,16 @@ mutation {
 
 ```json
 {
-  "GiftCardAccount": {
-    "code": "BFR1345Q05",
-    "balance": {
-      "currency": "USD",
-      "value": 0
-    },
-    "expiration_date": ""
-  }
+ “data”: {
+   “redeemGiftCardBalanceAsStoreCredit”: {
+     “balance”: {
+       “currency”: “USD”,
+       “value”: 0
+     },
+     “code”: “00SBOLF4LJDY”,
+     “expiration_date”: null
+   }
+ }
 }
 ```
 

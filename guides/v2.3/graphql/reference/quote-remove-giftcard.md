@@ -20,8 +20,8 @@ The `removeGiftCardFromCart` mutation removes a previously-applied gift card fro
 mutation {
   removeGiftCardFromCart(
     input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
-      gift_card_code: "048FQEGYUA73"
+      cart_id: "lOeLKsVkZ1PEvA8A7EaCvmEAk4JRBR7A"
+      gift_card_code: "049XDMZ6L81X"
     }
   ) {
     cart {
@@ -37,12 +37,13 @@ mutation {
 
  ```json
 {
-   "removeGiftCardFromCart": {
-     "cart": {
-       "applied_gift_cards": []
-     }
-   }
- }
+  "data": {
+    "removeGiftCardFromCart": {
+      "cart": {
+        "applied_gift_cards": []
+      }
+    }
+  }
 }
 ```
 

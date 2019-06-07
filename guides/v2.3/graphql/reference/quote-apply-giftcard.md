@@ -12,22 +12,24 @@ The `applyGiftCardToCart` mutation applies a pre-defined gift card code to the s
 
 ## Example usage
 
-The following example adds a gift card code called `048FQEGYUA73` to a cart.
+The following example adds a gift card code called `049XDMZ6L81X` to a cart.
 
 **Request**
 
 ``` text
 mutation {
-   applyGiftCardToCart( input: {
-      cart_id: "IeTUiU0oCXjm0uRqGCOuhQ2AuQatogjG"
-      gift_card_code: "048FQEGYUA73"
-   }
-)  {
+  applyGiftCardToCart(
+    input: {
+      cart_id: "lOeLKsVkZ1PEvA8A7EaCvmEAk4JRBR7A"
+      gift_card_code: "049XDMZ6L81X"
+    }
+  ) {
     cart {
-       applied_gift_cards {
-          code
+      applied_gift_cards {
+        code
       }
     }
+  }
 }
 ```
 
@@ -35,16 +37,17 @@ mutation {
 
 ```json
 {
- "applyGiftCardToCart": {
+  "data": {
+    "applyGiftCardToCart": {
       "cart": {
-          "applied_gift_cards": [
-              {
-                "code": "048FQEGYUA73"
-                 }
-                ]
-            }
-        }
+        "applied_gift_cards": [
+          {
+            "code": "049XDMZ6L81X"
+          }
+        ]
+      }
     }
+  }
 }
 ```
 
@@ -67,7 +70,7 @@ The `ApplyGiftCardToCartOutput` object contains the `Cart` object.
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`cart` |[ Cart!](#CartObject) | Describes the contents of the specified shopping cart
+`cart` |[Cart!](#CartObject) | Describes the contents of the specified shopping cart
 
 ### Cart object {#CartObject}
 
