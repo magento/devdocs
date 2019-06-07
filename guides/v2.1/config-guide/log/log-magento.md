@@ -29,7 +29,19 @@ Other channels can have a different set of handlers and logic.
 
 ## Get started with logging {#config-log-start}
 
-To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. One way to do that is illustrated in our [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
+To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. With this interface, you can call the following functions to write data to log files:
+
+ * [alert()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L558)
+ * [critical()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L545)
+ * [debug()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L480)
+ * [emergency()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L571)
+ * [error()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L532)
+ * [info()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L493)
+ * [log()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L465)
+ * [notice()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L506)
+ * [warning()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L519)
+
+One way to do that is illustrated in our [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
 
 Another way follows:
 
