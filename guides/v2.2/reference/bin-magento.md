@@ -1,5 +1,5 @@
 ---
-group: configuration-guide
+layout: full-width
 functional_areas:
   - Configuration
   - System

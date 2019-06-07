@@ -82,9 +82,6 @@ pages:
         - label: Get started with command-line configuration
           url: /config-guide/cli/config-cli-subcommands.html
 
-        - label: 'bin/magento commands reference'
-          url: /config-guide/cli/reference.html
-
         - label: Logging
           include_versions: ["2.2", "2.3"]
           url: /config-guide/cli/logging.html
