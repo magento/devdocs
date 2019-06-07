@@ -40,6 +40,12 @@ Google Shopping ads Channel 1.1.1 is generally available for versions 2.2.4+ and
 - {:.new} **Magento Log Exceptions**: <!--3439, requires update to configuration reference-->Implemented indexer actions logs.
 
 
+### v1.1.2
+
+Google Shopping ads Channel 1.1.2 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+- {:.fix} **Intermittent Load Error**: Resolved an intermittent error preventing Google Shopping ads Channel from loading after install.
+
 ### v1.1.1
 
 Google Shopping ads Channel 1.1.1 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
