@@ -71,7 +71,7 @@ Array of buttons for action pane.
 **Structure**:
 ```javascript
 buttons: [{
-    text: $.mage.__(''),
+    text: $.mage.__('Ok'),
     class: '',
     click: function() {} //handler on button click
 }]
