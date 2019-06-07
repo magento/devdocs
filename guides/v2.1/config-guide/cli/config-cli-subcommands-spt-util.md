@@ -80,7 +80,7 @@ After the command completes, provide the database backup to Magento Support.
 
 ## Troubleshooting: display utilities and paths {#config-cli-spt-utils-trouble}
 
-We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or on the command line:
+We provide commands that display paths to utilities required by the Data Collector and the command line. You can use these commands, for example, if errors like the following display in the [Admin](https://glossary.magento.com/admin) or on the command line:
 
 ```terminal
 Utility lsof not found

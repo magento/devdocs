@@ -2,13 +2,11 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Loader widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_loader.html
 ---
 
 ## Overview
 
-The Loader {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
+The Loader [widget](https://glossary.magento.com/widget) blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
 The Loader widget source is [lib/web/mage/loader.js].
 
@@ -52,6 +50,31 @@ An object that contains translations for loader text:
 -   `texts.imgAlt`: The text that is set as the `alt` attribute value of the loader image.
     **Default value**: *'Loading...'*
 
+## Methods {#loader_methods}
+
+-   [show()](#method_show)
+-   [hide()](#method_hide)
+
+### `show()` {#method_show}
+
+Show the loader.
+
+Invoke the show method:
+
+```javascript
+$("#element").loader("show");
+```
+
+### `hide()` {#method_hide}
+
+Hide the loader.
+
+Invoke the show method:
+
+```javascript
+$("#element").loader("hide");
+```
+
 ## Events
 
 Loader is subscribed to the following events:
@@ -63,7 +86,6 @@ Display the loader. Can be triggered on any page element.
 
 ### `processStop` {#l_processStop}
 Hide the loader. Can be triggered on any page element.
-
 
 [lib/web/mage/loader.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/loader.js
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

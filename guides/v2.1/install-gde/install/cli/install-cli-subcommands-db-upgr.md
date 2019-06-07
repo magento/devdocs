@@ -17,7 +17,7 @@ Before you use this command, you must [install the Magento software]({{ page.bas
 
 ## Upgrade the Magento database schema and data {#instgde-cli-db-upgr}
 
-Anytime you perform an action that causes the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
+Anytime you perform an action that causes the Magento [database schema](https://glossary.magento.com/database-schema) or data to change, you must update them by running the command discussed in this section. A partial list of reasons follows:
 
 *	You upgraded the Magento software using the command line
 *	You installed or updated a component using the command line

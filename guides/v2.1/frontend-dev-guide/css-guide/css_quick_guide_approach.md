@@ -6,7 +6,7 @@ functional_areas:
 ---
 ## What's in this topic
 
-Let's say you created a new {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} inheriting from Magento Blank or Luma, and chose the [Less compilation mode]. What's next? Where to add the style changes? This topic gives quick answers.
+Let's say you created a new [theme](https://glossary.magento.com/theme) inheriting from Magento Blank or Luma, and chose the [Less compilation mode]. What's next? Where to add the style changes? This topic gives quick answers.
 
 ## Simplest way to extend parent styles {#simple_extend} 
 
@@ -33,7 +33,7 @@ The rules and variables declared in `_extend.less` always have precedence over o
 
 ## Simplest way to override parent styles {#simple_override}
 
-To override parent styles (that is, override default Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} variables):
+To override parent styles (that is, override default Magento UI [library](https://glossary.magento.com/library) variables):
 
 1. In your theme directory, create a `web/css/source` sub-directory.
 2. Create a `_theme.less` file here. The path to it then looks like following: 

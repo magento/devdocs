@@ -1,7 +1,6 @@
 ---
 group: inventory
 title: Inventory CLI reference
-redirect_from: /guides/v2.3/config-guide/cli/config-cli-inventory.html
 functional_areas:
   - Configuration
   - System

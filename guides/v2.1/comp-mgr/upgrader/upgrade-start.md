@@ -18,7 +18,7 @@ If you're upgrading to version 2.1, see [Upgrade to Magento version 2.1 (June 22
 
 ## Optional custom maintenance page
 
-During the time you're upgrading, your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} is partially available. Users can see a list of files and so on but cannot shop or check out.
+During the time you're upgrading, your [storefront](https://glossary.magento.com/storefront) is partially available. Users can see a list of files and so on but cannot shop or check out.
 
 To avoid the appearance of a disabled site and to set up a custom maintenance page that displays during the upgrade, see [Maintenance mode options for upgrade]({{ page.baseurl }}/comp-mgr/trouble/cman/maint-mode.html).
 
@@ -26,7 +26,7 @@ To avoid the appearance of a disabled site and to set up a custom maintenance pa
 
 To run System Upgrade:
 
-1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
+1.	Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
 2.	Click **System** > **Tools** > **Web Setup Wizard**.
 	The following page displays.<br><br>
 	![Specify whether to manage components or upgrade Magento]({{ site.baseurl }}/common/images/cman_upgr_initial.png)

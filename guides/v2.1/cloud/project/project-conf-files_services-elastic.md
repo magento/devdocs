@@ -9,10 +9,10 @@ functional_areas:
 
 [Elasticsearch](https://www.elastic.co) is an open source product that enables you to take data from any source, any format, and search and visualize it in real time.
 
-*   Elasticsearch performs quick and advanced searches on products in the product catalog
-*   Elasticsearch Analyzers support multiple languages
-*   Supports stop words and synonyms
-*   Indexing does not impact customers until the reindex operation completes
+-  Elasticsearch performs quick and advanced searches on products in the product catalog
+-  Elasticsearch Analyzers support multiple languages
+-  Supports stop words and synonyms
+-  Indexing does not impact customers until the reindex operation completes
 
 We support Elasticsearch versions 1.4, 1.7, and 2.4. The recommended version is 2.4. We support Elasticsearch for all environments starting with {{site.data.var.ece}} 2.1 and later. Refer to [Elasticsearch information]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/es-overview.html) to learn more.
 
@@ -26,12 +26,12 @@ If you prefer using an existing search service, like Elasticsearch, instead of r
 
 ## Add Elasticsearch in services.yaml and .magento.app.yaml {#settings}
 
-To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to `.magento/services.yaml`.
+To enable Elasticsearch, add the following code with your installed version and allocated disk space in MB to the `.magento/services.yaml` file.
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:2.4
-   disk: 1024
+    type: elasticsearch:2.4
+    disk: 1024
 ```
 
 To configure the relationships for the environment variable, set a relationship in your `.magento.app.yaml` in the Git branch. For example:
@@ -49,31 +49,31 @@ Optionally, you can add the plugins through the `.magento/services.yaml` file. F
 
 ```yaml
 elasticsearch:
-   type: elasticsearch:2.4
-   disk: 1024
-   configuration:
-    plugins:
-      - analysis-icu
-      - lang-python
+    type: elasticsearch:2.4
+    disk: 1024
+    configuration:
+        plugins:
+            - analysis-icu
+            - lang-python
 ```
 
 The following are supported Elasticsearch plugins for version 2.4:
 
-* `analysis-icu`: ICU Analysis Plugin, Support ICU Unicode text analysis
-* `analysis-kuromoji`: Japanese (kuromoji) Analysis Plugin, Japanese language support
-* `analysis-phonetic`: Phonetic Analysis Plugin, Phonetic analysis
-* `analysis-smartcn`: Smart Chinese Analysis Plugins
-* `analysis-stempel`: Stempel Polish Analysis Plugin
-* `cloud-aws`: AWS Cloud Plugin, allows storing indices on AWS S3
-* `cloud-azure`: Azure Cloud Plugin
-* `cloud-gce`: GCE Cloud Plugin
-* `delete-by-query`: Support for deleting documents matching a given query
-* `discovery-multicast`: Ability to form a cluster using TCP/IP multicast messages
-* `lang-javascript`: JavaScript language plugin, allows the use of JavaScript in Elasticsearch scripts
-* `lang-python`: Python language plugin, allows the use of Python in Elasticsearch scripts
-* `mapper-attachments`: Mapper attachments plugin for indexing common file types
-* `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
-* `mapper-size`: Size mapper plugin, enables the `_size` meta field
+-  `analysis-icu`: ICU Analysis Plugin, Support ICU Unicode text analysis
+-  `analysis-kuromoji`: Japanese (kuromoji) Analysis Plugin, Japanese language support
+-  `analysis-phonetic`: Phonetic Analysis Plugin, Phonetic analysis
+-  `analysis-smartcn`: Smart Chinese Analysis Plugins
+-  `analysis-stempel`: Stempel Polish Analysis Plugin
+-  `cloud-aws`: AWS Cloud Plugin, allows storing indices on AWS S3
+-  `cloud-azure`: Azure Cloud Plugin
+-  `cloud-gce`: GCE Cloud Plugin
+-  `delete-by-query`: Support for deleting documents matching a given query
+-  `discovery-multicast`: Ability to form a cluster using TCP/IP multicast messages
+-  `lang-javascript`: JavaScript language plugin, allows the use of JavaScript in Elasticsearch scripts
+-  `lang-python`: Python language plugin, allows the use of Python in Elasticsearch scripts
+-  `mapper-attachments`: Mapper attachments plugin for indexing common file types
+-  `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
+-  `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
 {:.bs-callout .bs-callout-info}
 Magento does not support the ElasticSuite third-party plugin.
@@ -85,28 +85,9 @@ For documentation on plugins, see [Elasticsearch plugin documentation](https://w
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
 {:.bs-callout .bs-callout-info}
-You will use this information to [complete Elasticsearch configuration](#configure) in the Admin Panel.
+Use this information to [complete Elasticsearch configuration](#configure) in the Admin Panel.
 
-To verify this information used for configurations and settings:
-
-1. SSH into the Integration environment with Elasticsearch installed and configured.
-2. Enter the following command to pretty-print connection information for Elasticsearch. You will use this information when configuring Elasticsearch through the Magento Admin.
-
-        php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"])));'
-
-The response includes all relationships for services and configuration data for that environment. In the response, you can locate data similar to the following for Elasticsearch:
-
-```
-"elasticsearch" : [
-      {
-         "host" : "elasticsearch.internal",
-         "ip" : "250.0.97.96",
-         "scheme" : "http",
-         "port" : "9200"
-      }
-   ],
-```
-{: .no-copy}
+{% include cloud/pretty-print-services.md %}
 
 ## Configure Elasticsearch for your site {#configure}
 

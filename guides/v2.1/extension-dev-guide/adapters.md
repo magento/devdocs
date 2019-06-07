@@ -13,8 +13,8 @@ These classes allow you to use functionality from third-party libraries in your 
 
 ## When to use
 
-You should always use {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} classes instead of directly using classes from third-party libraries.
-This reduces the change impact on your code when the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} changes in a third-party {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
+You should always use [adapter](https://glossary.magento.com/adapter) classes instead of directly using classes from third-party libraries.
+This reduces the change impact on your code when the [API](https://glossary.magento.com/api) changes in a third-party [library](https://glossary.magento.com/library).
 
 We recommend using adapter classes for [dependency injection]({{ page.baseurl }}/extension-dev-guide/depend-inj.html) to get access to the functionality provided by third-party classes.
 
@@ -30,7 +30,7 @@ This approach allows you to update or substitute different implementations provi
 
 ### `Magento/Framework/Code/Minifier`
 
-The [minifier](https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Code/Minifier){:target="_blank"} functionality provided by the `Magento/Framework/Code` library involves the use of third-party libraries for code compression.
+The [minifier]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier){:target="_blank"} functionality provided by the `Magento/Framework/Code` library involves the use of third-party libraries for code compression.
 
 The [`AdapterInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier/AdapterInterface.php){:target="_blank"} for this class contains a `minify($content)` function that the [`CSSmin`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier/Adapter/Css/CSSmin.php){:target="_blank"} and [`JShrink`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Code/Minifier/Adapter/Js/JShrink.php){:target="_blank"} implementation class define.
 
@@ -38,13 +38,13 @@ The [jshrink](https://github.com/tedious/JShrink){:target="_blank"}(tedivm/jshri
 
 ### `Magento/Framework/Image`
 
-The [`Magento/Framework/Image`](https://github.com/magento/magento2/tree/2.0/lib/internal/Magento/Framework/Image){:target="_blank"} library uses adapters to access functionality provided by GD(php-gd2) and ImageMagick(php-imagick) third-party libraries.
+The [`Magento/Framework/Image`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image){:target="_blank"} library uses adapters to access functionality provided by GD(php-gd2) and ImageMagick(php-imagick) third-party libraries.
 
 The [`AdapterInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image/Adapter/AdapterInterface.php){:target="_blank"} class defines the available functionality, and the [`Gd2`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image/Adapter/Gd2.php){:target="_blank"} and [`ImageMagick`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Image/Adapter/ImageMagick.php){:target="_blank"} adapter classes provides the concrete implementation using the third-party libraries.
 
 ## Example Code
 
-The code below describes an interface for an adapter that parses {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %}.
+The code below describes an interface for an adapter that parses [markdown](https://glossary.magento.com/markdown).
 
 ```php
 /**
@@ -66,7 +66,7 @@ interface AdapterInterface
 
 <br/>
 
-The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %}.
+The code below is an implementation class of the `AdapterInterface` that uses the [php-markdown](https://github.com/michelf/php-markdown){:target="_blank"} library to convert markdown into [HTML](https://glossary.magento.com/html).
 
 ```php
 namespace MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown;
@@ -143,7 +143,7 @@ class CiconiaParser implements AdapterInterface
 
 <br/>
 
-The following {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} entries belong in the `di.xml` file.
+The following [dependency injection](https://glossary.magento.com/dependency-injection) entries belong in the `di.xml` file.
 They describe to the ObjectManager how to create the third-party and adapter classes.
 
 ```xml

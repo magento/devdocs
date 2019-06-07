@@ -2,15 +2,13 @@
 group: architecture-guide
 title: Module dependencies
 menu_title: Module dependencies
-redirect_from:
-  - /guides/v2.0/architecture/modules/mod_depend.html
 ---
 
 ## Overview {#m2devgde-moddep-intro}
 
 A *software dependency* identifies  one software component's reliance on another for proper functioning. A core principle of Magento architecture is the **minimization of software dependencies**. Instead of being closely interrelated with other modules, modules are optimally designed to be *loosely coupled*. Loosely coupled modules require little or no knowledge of other modules to perform their tasks.
 
-Each Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for a unique feature. In practice, this means that:
+Each Magento [module](https://glossary.magento.com/module) is responsible for a unique feature. In practice, this means that:
 
 * Several modules cannot be responsible for one feature.
 
@@ -26,9 +24,9 @@ Although Magento architecture favors loosely coupled software components, module
 
 * other modules
 
-* {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} extensions
+* [PHP](https://glossary.magento.com/php) extensions
 
-* libraries (either Magento Framework {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} or third party libraries)
+* libraries (either Magento Framework [library](https://glossary.magento.com/library) or third party libraries)
 
 {:.bs-callout .bs-callout-tip}
 Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.
@@ -44,6 +42,31 @@ At a high level, there are three main steps for managing module dependencies:
 3. (*Optional*) Define the desired load order of config files and `.css` files in the `module.xml` file.
 
 Example: Module A declares a dependency upon Module B. Thus, in Module A's `module.xml` file, Module B is listed in the `<sequence>` list, so that B's files are loaded before A's. Additionally, you must declare a dependency upon Module B in A's `composer.json` file. Furthermore, in the [deployment configuration]({{page.baseurl}}/config-guide/config/config-php.html), Modules A and B must both be defined as enabled.
+
+`etc/module.xml`
+
+```xml
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Module_A" setup_version="1.0.0">
+        <sequence>
+            <module name="Module_B" />
+        </sequence>
+    </module>
+</config>
+```
+
+After installing the module and opening `app/etc/config.php`, you are able to see that the Module_B was loaded before Module_A:
+
+```php
+return [
+    'modules' => [
+        ...
+        'Module_B' => 1,
+        'Module_A' => 1,
+        ...
+    ]
+];
+```
 
 ## Related topics {#m2arch-module-related}
 

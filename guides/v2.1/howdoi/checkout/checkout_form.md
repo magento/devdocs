@@ -10,7 +10,7 @@ functional_areas:
   - Checkout
 ---
 
-This topic describes how to add a custom input form (implemented as a UI component) to the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} page.
+This topic describes how to add a custom input form (implemented as a UI component) to the [Checkout](https://glossary.magento.com/checkout) page.
 
 Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default [Magento_Ui/js/form/form]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/form.js) component.
 
@@ -98,7 +98,7 @@ Example:
 
 Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file `<Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml`.
 
-Also you locate the regions in the `.html` templates of the blocks used in this {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
+Also you locate the regions in the `.html` templates of the blocks used in this [layout](https://glossary.magento.com/layout) file.
 For example, the shipping JS component (see `<Magento_Checkout_module_dir>/view/frontend/web/template/shipping.html`) provides the `before-form` region and corresponding UI container.
 
 Any content added here is rendered before the Shipping Address form on the Shipping Information step. To add content to this region, create a `checkout_index_index.xml` layout update in the `<your_module_dir>/view/frontend/layout/`.
@@ -158,7 +158,7 @@ If you modify your custom `.html` template after it was applied on the store pag
 
 ### Static forms {#static_form}
 
-The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Compare to [dynamic forms](#dynamic_form).
+The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the [Admin](https://glossary.magento.com/admin). Compare to [dynamic forms](#dynamic_form).
 
 The fields of static forms are not generated dynamically, so they can be defined in a layout.
 

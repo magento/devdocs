@@ -10,7 +10,7 @@ contributor_link: http://www.classyllama.com/
 
 ## Overview
 
-Factories are service classes that instantiate non-injectable classes, that is, models that represent a database {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}.
+Factories are service classes that instantiate non-injectable classes, that is, models that represent a database [entity](https://glossary.magento.com/entity).
 They create a layer of abstraction between the `ObjectManager` and business code.
 
 ## Relationship to `ObjectManager`
@@ -18,7 +18,7 @@ They create a layer of abstraction between the `ObjectManager` and business code
 The `Magento\Framework\ObjectManager` is the class responsible for instantiating objects in the Magento application.
 Magento prohibits depending on and directly using the `ObjectManager` in your code.
 
-Factories are an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} to this rule because they require the `ObjectManager` to instantiate specific models.
+Factories are an [exception](https://glossary.magento.com/exception) to this rule because they require the `ObjectManager` to instantiate specific models.
 
 The following example illustrates the relationship between a simple factory and the `ObjectManager`:
 
@@ -100,4 +100,4 @@ For example, in the [`CatalogInventory`]({{ site.mage2bloburl }}/{{ page.guide_v
 ```
 
 It instructs Magento to use the specific [`Item`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Model/Stock/Item.php){:target="_blank"} class wherever the [`StockItemInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php){:target="_blank"} is used.
-When a class in that {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.
+When a class in that [module](https://glossary.magento.com/module) includes the factory `StockItemInterfaceFactory` as a dependency, Magento generates a factory that is capable of creating the specific `Item` objects.

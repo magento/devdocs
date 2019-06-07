@@ -33,7 +33,7 @@ include /etc/nginx/conf.d/*.conf;
 
 ### Step 2: Set up nginx as a proxy {#es-ws-secure-nginx-proxy}
 
-This section discusses how to specify who can access the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} server.
+This section discusses how to specify who can access the [nginx](https://glossary.magento.com/nginx) server.
 
 1.	Use a text editor to create a new file `/etc/nginx/conf.d/magento_es_auth.conf` with the following contents:
 

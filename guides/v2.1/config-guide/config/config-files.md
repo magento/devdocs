@@ -9,7 +9,7 @@ functional_areas:
 
 ## Overview of module configuration files {#config-files-overview}
 
-The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
+The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various [module](https://glossary.magento.com/module) directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
 You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
 
@@ -75,7 +75,7 @@ You can interact with configuration files using interfaces under [Magento\Framew
 
 `Magento\Framework\Config` provides the following interfaces:
 
-* [Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php), which converts the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} into an in-memory array representation of the configurations.
+* [Framework\Config\ConverterInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ConverterInterface.php), which converts the [XML](https://glossary.magento.com/xml) into an in-memory array representation of the configurations.
 * [Framework\Config\DataInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/DataInterface.php), which retrieves the configuration data in a specified scope.
 * [Framework\Config\FileResolverInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/FileResolverInterface.php), which identifies the location of files to be read by [Magento\Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php).
 * [Framework\Config\ReaderInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Config/ReaderInterface.php), which reads the configuration data from storage and selects the storage from which it reads.

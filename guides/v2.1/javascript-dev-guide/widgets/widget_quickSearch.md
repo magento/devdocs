@@ -2,15 +2,13 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: QuickSearch widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_quickSearch.html
 functional_areas:
   - Search
 ---
 
 ## Overview
 
-The quickSearch {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
+The quickSearch [widget](https://glossary.magento.com/widget) is a custom autocomplete widget that populates a list of suggested search terms for a given field. 
 
 The suggest widget source is [`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`].
 
@@ -88,8 +86,18 @@ Template responsible for rendering returned data (suggested terms).
 
 **Type**: String
 
-**Default value**: `<li></li>` element.
+**Default value**: 
 
+```html
+<li class="<%- data.row_class %>" id="qs-option-<%- data.index %>" role="option">
+    <span class="qs-option-name">
+       <%- data.title %>
+    </span>
+    <span aria-hidden="true" class="amount">
+       <%- data.num_results %>
+    </span>
+</li>
+```
 
 [`<Magento_Search_module_dir>/view/frontend/web/form-mini.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Search/view/frontend/web/form-mini.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

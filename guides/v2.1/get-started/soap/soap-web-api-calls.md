@@ -5,20 +5,17 @@ title: Use SOAP Services
 menu_title: Use SOAP Services
 menu_order: 1
 menu_node: parent
-redirect_from:
-  - /guides/v2.0/get-started/soap/soap-front.html
-
 ---
 
 ## WSDL File {#wsdl}
 
 A WSDL file is generated only for services that you request. This means that different clients may use different services and therefore use different WSDLs.
 
-The Magento web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
+The Magento web [API](https://glossary.magento.com/api) uses WSDL 1.2, which complies with WS-I 2.0 Basic Profile.
 
-Each Magento service interface that is part of a {% glossarytooltip cdf644c4-bc99-4550-a954-dd5ae165785a %}service contract{% endglossarytooltip %} is represented as a separate service in the WSDL.
+Each Magento service interface that is part of a [service contract](https://glossary.magento.com/service-contract) is represented as a separate service in the WSDL.
 
-To consume several services, you must specify them in the WSDL endpoint {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
+To consume several services, you must specify them in the WSDL endpoint [URL](https://glossary.magento.com/url).
 
 
 <table style="width:100%">
@@ -63,7 +60,7 @@ Service names use the following conventions:
 * The string `Service` is omitted.
 * The `Magento` prefix is omitted.
 * The `Interface` suffix is omitted.
-* If the service name is the same as the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
+* If the service name is the same as the [module](https://glossary.magento.com/module) name, the module name is omitted. For example, if there is a customer service interface in the customer module, the word `customer` will be used in the service name only once.
 
 | Original Service Interface Name | Service Name |
 |----------
@@ -73,9 +70,9 @@ Service names use the following conventions:
 
 ## Authentication {#auth}
 
-Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} issued to the client. For more information, see [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
+Protected SOAP resources can be accessed using bearer tokens (OAuth access tokens) over HTTP. Access tokens are strings representing an access [authorization](https://glossary.magento.com/authorization) issued to the client. For more information, see [OAuth-based authentication]({{ page.baseurl }}/get-started/authentication/gs-authentication-oauth.html)
 
-The following {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script illustrates how to get an access token:
+The following [PHP](https://glossary.magento.com/php) script illustrates how to get an access token:
 
 ```php
 <?php

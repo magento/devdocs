@@ -1,7 +1,6 @@
 ---
 group: inventory
 title: Release Notes
-redirect_from: /guides/v2.3/release-notes/release-management.html
 ---
 
 **{{site.data.var.im}} (provided by the [Multi Source Inventory (MSI)](https://github.com/magento-engcom/msi) project)** is available with {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}} 2.3.x. Merchants can use {{site.data.var.im}} to manage inventory for all product types in a single warehouse and across complex shipping networks. Manage these locations as sources, tracking on-hand inventory quantities per product. Stocks connect these sources with sales channels (websites) to provide an accurate salable quantity, calculating available on-hand products, pending orders (reservations), and configured thresholds. {{site.data.var.im}} also updates order and shipment options, giving you full control over your inventory and deducations at the source level.
