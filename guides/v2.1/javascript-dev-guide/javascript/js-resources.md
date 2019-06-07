@@ -117,7 +117,7 @@ To be available for the entire Magento instance, RequireJS library is included i
             <!-- Here's the basic configuration file require_js.phtml specified -->
             <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
             <referenceContainer name="global.notices">
-                <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="page/notices.phtml"/>
+                <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="Magento_Backend::page/notices.phtml"/>
             </referenceContainer>
             <referenceContainer name="header">
                 ...

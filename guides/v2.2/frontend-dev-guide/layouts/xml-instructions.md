@@ -42,6 +42,8 @@ Use the following layout instructions to customize your layout:
 * [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
+* [`<block vs container>`](#block_vs_container)
+
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -104,6 +106,12 @@ Sample of usage in layout:
 ```
 
 This would add a new column to the page layout.
+
+### block vs. container {#block_vs_container}
+
+* Blocks represents the end of the chain in rendering HTML for Magento.
+* Containers contain blocks and can wrap them in an HTML tag.
+* Containers do not render any output if there are no children assigned to them.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 
