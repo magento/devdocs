@@ -54,7 +54,7 @@ You can depend on and use the `ObjectManager` class in the following scenarios:
   - An example can be found in the `__wakeup()` method in the [`Magento/Eav/Model/Entity/Attribute/AbstractAttribute`][] class.
 - You can use the `ObjectManager` to maintain backward compatibility for a constructor.
 - In a global scope, like in fixtures of integration tests, you can use the object manager.
-- The object manager can be a dependency in classes used for the creation of objects, e.g. factories or proxies.
+- The object manager can be a dependency in classes used for creating objects such as factories or proxies.
 
 ### Programmatic product updates
 
