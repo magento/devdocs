@@ -15,6 +15,30 @@ The release notes include:
 
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
+-   {:.bug}Known issues
+
+### v2.0.0
+
+Google Shopping ads Channel 1.1.1 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+- {:.fix} **Resolved Configurable Product Issues**: Configurable product (parent/child) handling has been improved.
+    - <!--3372-->Corrected an issue preventing child products from inheriting the parent description and causing Google to disapprove products for missing descriptions
+    - <!--3297, 3341, 3410-->Corrected and improved the pageview trigger when selecting options for a child product and when viewing a child product in the cart
+
+- {:.fix} **Index Management Improvements**: Indexing processes between Magento and Google have been updated for increased efficiency and performance.
+    <!--3004, 3298, 3343, 3480, 3481, 3465, 3472-->
+    - Consolidated separate indexers into a single, rebuilt indexer for communicating with Google
+    - Set indexer to run on schedule by default
+    - Adjusted indexer logic to only send product data changes, instead of all data for a changed product
+
+- {:.fix} **Security Updates**: <!--3380-->Updated security whitelist and implemented Content Security Policy (CSP) when communicating with Google.
+
+- {:.fix} **Update to Product Linking**: <!--3463-->Updated communication between Google and Magento to ensure use of the same product link to prevent product disapprovals in the Google Merchant Account (GMC).
+
+- {:.fix} **Product Attribute Updates**: <!--3485-->Corrected an issue causing some deleted product attributes to re-populate in the attributes list.
+
+- {:.new} **Magento Log Exceptions**: <!--3439, requires update to configuration reference-->Implemented indexer actions logs.
+
 
 ### v1.1.1
 
