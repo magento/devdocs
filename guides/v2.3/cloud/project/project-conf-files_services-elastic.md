@@ -57,10 +57,10 @@ elasticsearch:
             - lang-python
 ```
 
-{:.bs-callout .bs-callout-info}
-Magento does not support the ElasticSuite third-party plugin.
-
 See [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/current/index.html).
+
+{:.bs-callout-info}
+If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 
 ## Verify relationships
 
@@ -86,5 +86,5 @@ The response includes all relationships for services and configuration data for 
 ```
 {: .no-copy}
 
-{:.bs-callout .bs-callout-warning}
-The Staging and Production environments share a single Elasticsearch instance; therefore, you must specify a unique Elasticsearch prefix for each environment.
+{: .bs-callout-warning}
+Staging and Production environments in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.

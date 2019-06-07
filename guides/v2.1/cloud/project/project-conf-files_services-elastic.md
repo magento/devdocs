@@ -75,16 +75,15 @@ The following are supported Elasticsearch plugins for version 2.4:
 -  `mapper-murmur3`: Murmur3 mapper plugin for computing hashes at index-time
 -  `mapper-size`: Size mapper plugin, enables the `_size` meta field
 
-{:.bs-callout .bs-callout-info}
-Magento does not support the ElasticSuite third-party plugin.
-
 For documentation on plugins, see [Elasticsearch plugin documentation](https://www.elastic.co/guide/en/elasticsearch/plugins/2.4/index.html).
+
+{:.bs-callout-info}
+If you use the ElasticSuite third-party plugin, you must [update the `{{site.data.var.ct}}` package]({{page.baseurl}}/cloud/project/ece-tools-update.html) to version 2002.0.19 or later.
 
 ## Verify relationships
 
 We use the {{site.data.var.ece}} environment variable [`$MAGENTO_CLOUD_RELATIONSHIPS`]({{ page.baseurl }}/cloud/env/environment-vars_cloud.html), a JSON object, to retrieve environment-related relationships.
 
-{:.bs-callout .bs-callout-info}
 Use this information to [complete Elasticsearch configuration](#configure) in the Admin Panel.
 
 {% include cloud/pretty-print-services.md %}
@@ -93,5 +92,5 @@ Use this information to [complete Elasticsearch configuration](#configure) in th
 
 The last step is to configure Elasticsearch for your catalog search options through the Magento Admin. You will need the information from the variable `MAGENTO_CLOUD_RELATIONSHIPS`. See [Configure Magento to use Elasticsearch]({{ site.baseurl }}/guides/v2.1/config-guide/elasticsearch/configure-magento.html) to complete your Admin configurations.
 
-{: .bs-callout .bs-callout-warning}
-Staging and Production environments share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
+{: .bs-callout-warning}
+Staging and Production environments in the same cluster share a single Elasticsearch instance, so you must specify a unique Elasticsearch prefix for each of these environments.
