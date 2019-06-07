@@ -30,13 +30,20 @@ The initial list is auto generated using `bin/magento list` command at the {{ si
   {% for argument in arguments %}
   {% for item in argument %}
   {% if item.name %}
+  
+  {% if item.default == empty %}
+  {% endif %}
 
 #### `{{ item.name }}`
 
 - Description: {{ item.description }}
-  {% if item.default %}
+{% unless item.default == nil %}
+  {% if item.default == false or (item.default == empty and item.default != '') %}
 - Default: `{{ item.default | inspect }}`
+  {% else %}
+- Default: `{{ item.default }}`
   {% endif %}
+{% endunless %}
   {% if item.is_required %}
 - Required
   {% endif %}
@@ -59,7 +66,13 @@ The initial list is auto generated using `bin/magento list` command at the {{ si
 - Shortcut: `{{ opt.shortcut }}`
 {% endif %}
 - Description: {{ opt.description }}
+{% unless opt.default == nil %}
+  {% if opt.default == false or (opt.default == empty and opt.default != '') %}
 - Default: `{{ opt.default | inspect }}`
+  {% else %}
+- Default: `{{ opt.default }}`
+  {% endif %}
+{% endunless %}
 {% if opt.is_value_required %}
 - Requires a value
 {% elsif opt.accept_value and opt.is_multiple %}
