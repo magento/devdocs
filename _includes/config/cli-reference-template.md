@@ -54,7 +54,7 @@ The initial list is auto generated using `bin/magento list` command at the {{ si
   {% endfor %}
   {% endfor %}
 
-#### Options
+### Options
 {: .no_toc}
 
  {% for option in options %}
