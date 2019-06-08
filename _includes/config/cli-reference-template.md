@@ -7,7 +7,7 @@
 # Magento CLI
 {% endif %}
 
-This reference contains {{ commands | size }} commands.
+This reference contains {{ commands | size }} commands available through the `bin/magento` command-line tool.
 The initial list is auto generated using `bin/magento list` command at the {{ site.data.var.ce }} edition.
 
 {% for command in commands %}
