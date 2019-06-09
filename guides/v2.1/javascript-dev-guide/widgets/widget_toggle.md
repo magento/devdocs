@@ -25,7 +25,7 @@ $("#element").toggleAdvanced();
 ```
 
 Where:
--   `#element` is the selector of the element for ToggleAdvanced is initialized.
+-   `#element` is the selector of the element for which ToggleAdvanced is initialized.
 
 Phtml template file examples using script:
 
@@ -63,7 +63,7 @@ The class used to be toggled on clicked element.
 
 ### `selectorsToggleClass`
 
-The class used to be toggled on selectors DOM elements.
+The class that will be toggled (added/removed) for selected DOM elements.
 
 **Type**: String
 
@@ -71,7 +71,7 @@ The class used to be toggled on selectors DOM elements.
 
 ### `toggleContainers`
 
-The selectors for DOM elements we wish to toggle.
+The selectors of DOM elements that will be toggled.
 
 **Type**: String
 
@@ -95,7 +95,7 @@ Text of the old label to be used on toggle.
 
 ### `currentLabelElement`
 
-Current label of the container.
+Container element of the current label.
 
 **Type**: String
 
@@ -137,7 +137,7 @@ The following example shows how to initialize the ToggleAdvanced widget.
 
 ## Result
 
-The result is two sections with initial content and not toggled content.
+The result is two sections with initial content and toggled content.
 
 ![Toggle Widget Initial Result]({{ page.baseurl }}/javascript-dev-guide/widgets/images/toggle-widget-initial-result.png)
 ![Toggle Widget Toggled Result]({{ page.baseurl }}/javascript-dev-guide/widgets/images/toggle-widget-toggled-result.png)
