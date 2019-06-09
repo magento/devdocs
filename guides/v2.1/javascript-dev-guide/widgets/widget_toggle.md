@@ -1,0 +1,146 @@
+---
+group: javascript-developer-guide
+subgroup: 3_Widgets
+title: ToggleAdvanced widget
+redirect_from:
+ - /guides/v2.0/frontend-dev-guide/javascript/widget_toggle.html
+---
+
+## Overview
+
+The ToggleAdvanced {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is used to toggle HTML class for selectors by click on a toggle element.
+
+Also, it allows toggling a clicked element class and a clicked element text if an element is toggled.
+
+The ToggleAdvanced widget source is [lib/web/mage/toggle.js].
+
+## Initialize the ToggleAdvanced widget
+
+For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
+
+Generally the ToggleAdvanced widget is instantiated like following:
+
+```javascript
+$("#element").toggleAdvanced();
+```
+
+Where:
+-   `#element` is the selector of the element for ToggleAdvanced is initialized.
+
+Phtml template file examples using script:
+
+```html
+<script>
+    require([
+        'jquery',
+        'toggleAdvanced'
+    ], function ($) {
+        'use strict';
+        
+        $("#element").toggleAdvanced();
+    });
+</script>
+```
+
+## Options
+
+The ToggleAdvanced widget has the following options:
+
+- [baseToggleClass](#basetoggleclass)
+- [selectorsToggleClass](#selectorstoggleclass)
+- [toggleContainers](#togglecontainers)
+- [newLabel](#newlabel)
+- [curLabel](#curlabel)
+- [currentLabelElement](#currentlabelelement)
+
+### `baseToggleClass`
+
+The class used to be toggled on clicked element.
+
+**Type**: String
+
+**Default value**: `active`
+
+### `selectorsToggleClass`
+
+The class used to be toggled on selectors DOM elements.
+
+**Type**: String
+
+**Default value**: `hidden`
+
+### `toggleContainers`
+
+The selectors for DOM elements we wish to toggle.
+
+**Type**: String
+
+**Default value**: `null`
+
+### `newLabel`
+
+Text of the new label to be used on toggle.
+
+**Type**: String
+
+**Default value**: `null`
+
+### `curLabel`
+
+Text of the old label to be used on toggle.
+
+**Type**: String
+
+**Default value**: `null`
+
+### `currentLabelElement`
+
+Current label of the container.
+
+**Type**: String
+
+**Default value**: `null`
+
+## Methods
+
+The ToggleAdvanced widget has the following methods:
+
+- [beforeCreate](#beforecreate)
+- [afterCreate](#aftercreate)
+
+### `beforeCreate`
+
+`beforeCreate()` method used to inject 3rd party functionality before creating.
+
+### `afterCreate`
+
+`afterCreate()` method used to inject 3rd party functionality after creating.
+
+## Code sample
+
+The following example shows how to initialize the ToggleAdvanced widget.
+
+```html
+<div class="toggle-example">
+    <div class="toggle-wrap">
+        <a href="#"
+           data-mage-init='{"toggleAdvanced": {"selectorsToggleClass": "active", "baseToggleClass": "expanded", "toggleContainers": "#toggleContainer", "newLabel": "Expanded Toggle Button"}}'
+           id="toggle"
+           title="Title"
+           class="action">Toggle Button</a>
+    </div>
+    <div class="toggle-container" id="toggleContainer">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem, corporis ducimus ex in ipsam minima nisi nulla officiis omnis quae quaerat quasi quo ratione reiciendis rem repellendus temporibus, voluptates.</p>
+    </div>
+</div>
+```
+
+## Result
+
+The result is two sections with initial content and not toggled content.
+
+![Toggle Widget Initial Result]({{ page.baseurl }}/javascript-dev-guide/widgets/images/toggle-widget-initial-result.png)
+![Toggle Widget Toggled Result]({{ page.baseurl }}/javascript-dev-guide/widgets/images/toggle-widget-toggled-result.png)
+
+[lib/web/mage/toggle.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/toggle.js
+[Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
