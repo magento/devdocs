@@ -31,15 +31,15 @@ Other channels can have a different set of handlers and logic.
 
 To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. With this interface, you can call the following functions to write data to log files:
 
- * [alert()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L558)
- * [critical()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L545)
- * [debug()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L480)
- * [emergency()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L571)
- * [error()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L532)
- * [info()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L493)
- * [log()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L465)
- * [notice()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L506)
- * [warning()](https://github.com/Seldaek/monolog/blob/master/src/Monolog/Logger.php#L519)
+ * [alert()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L43)
+ * [critical()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L55)
+ * [debug()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L111)
+ * [emergency()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L30)
+ * [error()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L66)
+ * [info()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L101)
+ * [log()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L122)
+ * [notice()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L89)
+ * [warning()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L79)
 
 One way to do that is illustrated in our [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
 
