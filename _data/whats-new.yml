@@ -4,8 +4,49 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue May 28 10:33:45 2019
+updated: Mon Jun 3 13:52:38 2019
 entries:
+- description: Updated the [Cloud New Relic topic](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)
+    to distinguish Pro and Starter account actions and availability of services.
+  versions: 2.x
+  type: Technical changes
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4621
+- description: Added information about [accordion widget events](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_accordion.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4580
+- description: Added a known issue about Inventory Management to the 2.0.0 Amazon
+    Sales Channel [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/#v200).
+  versions: 2.0.0-asc
+  type: Technical changes
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4633
+- description: Added the required class for [creating and running a new console command](https://devdocs.magento.com/guides/v2.1/extension-dev-guide/cli-cmds/cli-howto.html),
+    including examples for styling the command output.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4613
+- description: Added a new topic for [Product layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html)
+    in the Frontend Developers Guide.
+  versions: 2.x
+  type: Major update
+  date: May 28, 2019
+  link: https://github.com/magento/devdocs/pull/4489
+- description: Added new code examples showing you [how to use callbacks](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_tabs.html)
+    on widget tab events.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 28, 2019
+  link: https://github.com/magento/devdocs/pull/4578
+- description: Added a new paragraph that provides more context about the [purpose
+    of blocks in layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 28, 2019
+  link: https://github.com/magento/devdocs/pull/4596
 - description: Added a new section about [how to run API functional tests](https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html)
     in GraphQL.
   versions: 2.3.x
