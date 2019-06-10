@@ -6,7 +6,7 @@ title: Magento Commerce 2.2.9 Release Notes
 
 *Release notes published on June 26, 2019.*
 
-We are pleased to present Magento Commerce 2.2.9. This release includes over 30 critical enhancements to product security, over 150 core code fixes and enhancements, and 285 community-submitted pull requests.
+We are pleased to present Magento Commerce 2.2.9. This release includes 75 critical enhancements to product security, over 100 core code fixes and enhancements, and over 200 community-submitted pull requests.
 
 ## Highlights
 
@@ -27,7 +27,7 @@ This release contains 150 enhancements to core quality, which improve the qualit
 * **Braintree payment method is now supported for checkout with multiple addresses**. Previously, you could not use Braintree and Braintree PayPal when checking out an order that was being shipped to multiple addresses.
 <!--- MAGETWO-98424-->
 
-* **The CGI URL gateway in UPS module has been updated from HTTP to HTTPS**. The CGI URL gateway endpoint in the UPS module has been updated from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS). <!--- MAGETWO-98947-->
+* **The CGI URL gateway in UPS module has been updated from HTTP to HTTPS**. The CGI URL gateway endpoint in the UPS module has been updated from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS). <!--- MAGETWO-98948-->
 
 * **Google chart API updated to the Image-Charts**. Magento now uses the Image-Charts free service to render static charts in Admin dashboards. Earlier deployments used Google Image Charts, which was deprecated in 2012 and turned off on [March 18, 2019](https://developers.google.com/chart/image/docs/making_charts). <!--- MAGETWO-98833-->
 
@@ -78,6 +78,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-98678 -->
 * You can now add backordered products to the cart when backorders are enabled.
+
 
 ### Bundle products
 
@@ -708,6 +709,8 @@ This release includes substantial community contributions: over 100 GitHub issue
 ### Individual contributor contributions
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
+
+{% include release-notes/engcomm-2-2-9-issues.md %}
 
 ### Partner contributions
 

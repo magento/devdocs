@@ -10,7 +10,7 @@ title: Magento Open Source 2.2.9 Release Notes
 *Release notes published on June 26  2019.*
 
 
-We are pleased to present Magento Open Source 2.2.9. This release includes 75 critical enhancements to product security, over 150 core code fixes and enhancements, and  285 community-submitted pull requests. 
+We are pleased to present Magento Open Source 2.2.9. This release includes 75 critical enhancements to product security, over 100 core code fixes and enhancements, and  over 200 community-submitted pull requests. 
 
 
 
@@ -63,9 +63,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4229 -->* Fixed alignment of reload CAPTCHA icon on the Admin  login  page. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [21162](https://github.com/magento/magento2/pull/21162)*. [GitHub-20911](https://github.com/magento/magento2/issues/20911)
 
-
-
-
 ### Bundle products
 
 <!-- ENGCOM-4041 -->* Fixed alignment of the bundle product radio button on the Product page when you click **Customize** and **Add to cart**. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20743](https://github.com/magento/magento2/pull/20743)*. [GitHub-20518](https://github.com/magento/magento2/issues/20518)
@@ -74,12 +71,7 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4143 -->* Fixed misalignment of the **Add to cart** button on the bundle product page in portrait orientation in mobile view.  *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20554](https://github.com/magento/magento2/pull/20554)*. [GitHub-20193](https://github.com/magento/magento2/issues/20193)
 
-
-
-
 <!-- MAGETWO-97226 -->*  Magento now displays the correct price on the storefront  for products whose prices have been updated in a shared catalog. Previously, Magento did not update storefront prices when a price in the shared catalog was updated.
-
-
 
 
 ### Catalog
@@ -148,24 +140,9 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 s
 <!-- MAGETWO-98794 -->* You can now add a product to an order by using the **Add products by SKU** button. Previously, when you tried to add a product this way, Magento displayed this message, `The SKU was not found in the catalog.
 
-
-
-
-
-
-
-
-
 ### Cart and checkout
 
 <!-- MAGETWO-98569 -->* Magento now persists the shipping quote in the shopping cart for guest customers when **Persistent Shopping Cart** is enabled.
-
-
-
-
-
-
-
 
 <!-- MAGETWO-98365 -->* Magento now applies the correct tier price for a product after a customer who is assigned to a customer group logs in after first adding items to their cart as a guest. Previously, Magento did not apply the tier price after the customer logged in. 
 
@@ -202,8 +179,6 @@ s
 
 
 
-
-
 ### Clean up and minor refactoring
 
 <!-- ENGCOM-4304 -->* Removed excessive white space from the top of CMS pages when displayed in mobile view. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20781](https://github.com/magento/magento2/pull/20781)*. [GitHub-20755](https://github.com/magento/magento2/issues/20755)
@@ -233,29 +208,20 @@ s
 
 <!-- ENGCOM-4470 -->* Corrected the position of the labels in the configurable product variations table. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [21691](https://github.com/magento/magento2/pull/21691)*. [GitHub-20527](https://github.com/magento/magento2/issues/20527)
 
-
-
-
-
-
-
-
-
 ### CMS
 
-<!-- MAGETWO-99818 -->* Additional permissions added for updating "Design" fieldset of categories, products and CMS pages. Existing roles that have save permissions for said entities will remain to be able to save everything, new roles will have to be granted permissions to edit design manually. In case a user doesn't have permission to edit design and use web API endpoints to update a category, a product or a CMS page the design properties will remain unchanged.
+<!-- MAGETWO-99818 -->
+* We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
 
+  * Existing roles that have **save** permission for these entities can save everything.
 
+  * New roles must be granted permission to edit design manually.
 
+  * If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
 
 <!-- MAGETWO-98990 -->* The HTML source editor **Update** and **Cancel** buttons now appear as expected in browsers running Internet Explorer  11.x. 
 
 <!-- ENGCOM-4200 -->* Improved the display of images that are uploaded when you click the **Insert Image** button on a CMS page. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [21110](https://github.com/magento/magento2/pull/21110)*. [GitHub-20786](https://github.com/magento/magento2/issues/20786)
-
-
-
-
-
 
 
 
@@ -282,17 +248,7 @@ s
 
 <!-- MAGETWO-97684 -->* The **State/Province** field is no longer marked as mandatory in the Admin customer address form. Previously, this field was always marked by an asterisk, even when the field was not required. 
 
-
-
-
-
 <!-- MAGETWO-98044 -->* When loading an order for a customer already assigned to a customer group, Magento now shows the assigned customer group in the order information.  Additionally, Magento now saves the group assignment if you change it when creating a customer order. Previously, the customer group reverted to the default configured group assignment for customers with an existing group assignment. On new orders, if you changed the customer group during the ordering process, the new assignment was not saved. When you loaded the customer order, the customer group showed the default group instead of the group assignment applied during the ordering process.
-
-
-
-
-
-
 
 ### cron
 
@@ -340,12 +296,9 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 <!-- ENGCOM-4518 -->* Magento no longer throws an exception when the  `fixed-Quantity_and_stock_status` attribute has **Change Visible on Catalog Pages on Storefront** enabled. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21802](https://github.com/magento/magento2/pull/21802)*. [GitHub-13612](https://github.com/magento/magento2/issues/13612)
 
 
-
-
 ### Email
 
 <!-- ENGCOM-4305 -->* Corrected problems with  disabling and enabling order-related emails. *Fix submitted by [Serhiy Zhovnir](https://github.com/serhiyzhovnir) in pull request [20954](https://github.com/magento/magento2/pull/20954)*. [GitHub-18698](https://github.com/magento/magento2/issues/18698)
-
 
 
 ### Frameworks
@@ -363,28 +316,17 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 <!-- ENGCOM-4542 -->*  Magento now logs exceptions during autoloading instead of throwing exceptions. This conforms with PSR-4 guidelines.  *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21435](https://github.com/magento/magento2/pull/21435)*. [GitHub-20773](https://github.com/magento/magento2/issues/20773)
 
 
-
 #### Cache framework
 
 <!-- ENGCOM-4183 -->* A syntax error in `magento2/lib/internal/Magento/Framework/Cache/Backend/Database.php` has been corrected. *Fix submitted by [Nirav Kadiya](https://github.com/ssp58bleuciel) in pull request [21078](https://github.com/magento/magento2/pull/21078)*. [GitHub-13309](https://github.com/magento/magento2/issues/13309)
-
 
 #### JavaScript framework
 
 <!-- ENGCOM-4610 -->* JavaScript validation on UI form components now works as expected. Previously, adding the `validate-per-page-value-list` validation rule resulted in a failure for every non-empty value in the field to which it as applied. *Fix submitted by [Roman Kis](https://github.com/kisroman) in pull request [21813](https://github.com/magento/magento2/pull/21813)*. [GitHub-21734](https://github.com/magento/magento2/issues/21734)
 
-
-
-
-
-
-
 ### General
 
 <!-- ENGCOM-2667 -->* Sorting on stores from the Admin (**Stores** > **All Stores**) now works as expected. *Fix submitted by [afirlejczyk](https://github.com/afirlejczyk) in pull request [17371](https://github.com/magento/magento2/pull/17371)*. [GitHub-7283](https://github.com/magento/magento2/issues/7283)
-
-
-
 
 <!-- ENGCOM-4548 -->* Product attribute labels are no longer translated but maintain their store-specific valu *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [21864](https://github.com/magento/magento2/pull/21864)*. [GitHub-21750](https://github.com/magento/magento2/issues/21750)
 
@@ -438,7 +380,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 <!-- MAGETWO-96957 -->* You can now change pages at an expected speed from the Admin newsletter subscribers page (**Marketing** > **Communications** > **Newsletter Subscribers**). Previously, it took excessively long to move off this page
 
 
-
 ### Orders
 
 <!-- ENGCOM-4593 -->* Magento no longer displays a negative number in the dashboard to represent a canceled order. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [21944](https://github.com/magento/magento2/pull/21944)*. [GitHub-18754](https://github.com/magento/magento2/issues/18754), [GitHub-21281](https://github.com/magento/magento2/issues/21281)
@@ -446,8 +387,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 ### Page Cache
 
 <!-- MAGETWO-90953 -->* Page caching is no longer active when maintenance mode is enabled.  Previously, Magento cached  pages from all IP addresses during maintenance mode. 
-
-
 
 ### Payment methods
 
@@ -465,8 +404,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 <!-- MAGETWO-97464 -->* Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update. 
 
-
-
 ### Pricing
 
 <!-- MAGETWO-99247 -->* Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prics were  not saved on the stor-view level when Catalog Price Scope was to **Global**. 
@@ -475,29 +412,15 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 <!-- MAGETWO-96898 -->* Tier pricing for bundle products now works as expected: Magento displays the correct  price in the cart, and reminds customers that they can buy a specific quantity of the  product for a discount. Previously, Magento did not calculate the price correctly, and did not display any informative messages about tier pricing on the category and product pages. 
 
-
-
-
 ### Quick Order
 
 <!-- MAGETWO-97523 -->* The quick order form now handles the SKUs that you enter  for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
-
-
-
-
 
 ### Reports
 
 <!-- MAGETWO-96883 -->* Reports now include orders from only the websites that the administrator has permissions for in multisite deployments. Previously, a report run by an administrator with access to one website only contained information about products and sales on other websites. 
 
 <!-- ENGCOM-4445 -->* The date range in reports no longer displays the same start and end dates. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [21589](https://github.com/magento/magento2/pull/21589)*. [GitHub-20128](https://github.com/magento/magento2/issues/20128)
-
-
-
-
-
-
-
 
 ### Review
 
@@ -515,10 +438,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 <!-- ENGCOM-4280 -->*  Corrected misalignment of page elements on the Admin product reorder page. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21241](https://github.com/magento/magento2/pull/21241)*. [GitHub-20919](https://github.com/magento/magento2/issues/20919)
 
-
-
-
-
 <!-- ENGCOM-3968 -->* The `transportBuilderByStore` class has been removed. Previously, this class was the cause of undesired repeat emails. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [18472](https://github.com/magento/magento2/pull/18472)*. [GitHub-11740](https://github.com/magento/magento2/issues/11740), [GitHub-14945](https://github.com/magento/magento2/issues/14945), [GitHub-14952](https://github.com/magento/magento2/issues/14952), [GitHub-16355](https://github.com/magento/magento2/issues/16355)
 
 <!-- ENGCOM-4403 -->* You can now successfully re-order a virtual product. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [21513](https://github.com/magento/magento2/pull/21513)*. [GitHub-15059](https://github.com/magento/magento2/issues/15059)
@@ -533,7 +452,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 ### Sales rule
 
-
 <!-- MAGETWO-98568 -->* Magento now displays the Cart Price Rule code on an order details Admin page if free shipping applies. Previously, Magento did not display information about the Sales rule or why shipping was free.
 
 <!-- ENGCOM-4485 -->* Sales rule validation has been refactored to eliminate a leak in the salesrule collection. Previously, a poorly constructed SQL query resulted in poor performance. *Fix submitted by [David Führ](https://github.com/david-fuehr) in pull request [21699](https://github.com/magento/magento2/pull/21699)*. [GitHub-19117](https://github.com/magento/magento2/issues/19117)
@@ -541,7 +459,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 
 ### Search
-
 
 <!-- MAGETWO-97374 -->* Layered navigation results no longer includes price ranges that contain no products. 
 
@@ -554,9 +471,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 
 ### Shipping 
-
-
-
 
 <!-- MAGETWO-96001 -->* The tracking pop-up window now displays an accurate value for the delivery date for FedEx shipments in transit.
 
@@ -582,8 +496,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 <!-- MAGETWO-96870 -->* The tax that is applied to a simple child product is now  based on the tax class of that product. Previously, Magento based the tax for a child product on the tax class of its parent product.
 
 <!-- MAGETWO-97975 -->* The tax that is applied to simple child product is now  based on the tax Class of that product. Previously, the tax was based on the tax class of the parent  product. 
-
-
 
 
 ### Testing
@@ -617,9 +529,6 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 ###  URL rewrite
 
-
-
-
 <!-- ENGCOM-4621 -->* Magento now retains filter terms after you've applied a filter to the Admin `url_rewrites` table, then click the back button. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21805](https://github.com/magento/magento2/pull/21805)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
 
 
@@ -627,21 +536,9 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 <!-- ENGCOM-4224 -->* The store switcher now works in multistore deployments.  Previously, the switcher redirected the user to the home page, not to the alternative store view as expected. *Fix submitted by [Janak Bhimani](https://github.com/janakbhimani) in pull request [21140](https://github.com/magento/magento2/pull/21140)*. [GitHub-19714](https://github.com/magento/magento2/issues/19714)
 
-
-
 ### VAT ID
 
 <!-- ENGCOM-4232 -->* Greek VAT numbers can now be validated. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21169](https://github.com/magento/magento2/pull/21169)*. [GitHub-6960](https://github.com/magento/magento2/issues/6960)
-
-
-
-
-
-
-
-
-
-
 
 
 ### Wishlist
@@ -662,6 +559,7 @@ This release includes substantial community contributions: over 100 GitHub issue
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request.
 
+{% include release-notes/engcomm-2-2-9-issues.md %}
 
 
 ### Partner contributions
