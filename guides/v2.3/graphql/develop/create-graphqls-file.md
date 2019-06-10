@@ -77,7 +77,7 @@ input ProductSortInput {
 
 `ProductSortInput` indicates that the attributes are available to catalog (Product) queries. If you specify a module-specific value such as `VolumizerSortInput`, then the attribute will be available only to queries processed by that module.
 
-`SortEnum` indicates whether to return results in ascending or descending order. For the definition see [`schema.graphqls`](https://github.com/magento/magento2/blob/2.3/app/code/Magento/GraphQl/etc/schema.graphqls) file.
+`SortEnum` indicates whether to return results in ascending or descending order. For the definition see [`schema.graphqls`]({{ site.mage2bloburl }}/2.3/app/code/Magento/GraphQl/etc/schema.graphqls) file.
 
 ## Specify output attributes {#specify-output-attributes}
 
