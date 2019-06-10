@@ -30,7 +30,6 @@ For information about how to initialize a widget in a JS component or `.phtml` t
 -   [template](#q_template)
 -   [isExpandable](#q_isExpandable)
 
-
 ### `autocomplete` {#q_autocomplete}
 Attaches the `autocomplete` attribute to the search field.
 
@@ -40,14 +39,12 @@ Attaches the `autocomplete` attribute to the search field.
 
 **Accepted values**: `off`, `on`
 
-
 ### `formSelector` {#q_formSelector}
 The form selector containing the search input field.
 
 **Type**: String 
 
 **Default value**: No form by default.
-
 
 ### `minSearchLength` {#q_minSearchLength}
 Minimum number of characters required before the auto suggest triggers.
