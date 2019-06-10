@@ -86,7 +86,7 @@ Sample page layout declaration file: `<Magento_Theme_module_dir>/view/frontend/l
 </page_layouts>
 ```
 
-Use the `layout` attribute in the `page` section to define a layout type for the page. The following example shows how to use the `3 columns` page layout type for the [Wish List Sharing](https://github.com/magento/magento2/blob/2.3.1/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
+Use the `layout` attribute in the `page` section to define a layout type for the page. The following example shows how to use the `3 columns` page layout type for the [Wish List Sharing]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Wishlist/view/frontend/layout/wishlist_index_share.xml#L8) page:
 
 ```xml
 <?xml version="1.0"?>
