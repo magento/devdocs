@@ -4,5 +4,4 @@ title: Magento_ConfigurableProductSales module
 
 {% include mrg/note.md %}
 
-The Magento_ConfigurableProductSales module checks that the selected options of order item are still presented in
-Catalog. Returns true if the previously ordered item configuration is still available.
+The Magento_ConfigurableProductSales module checks that the selected options of order item are still presented in Catalog. Returns true if the previously ordered item configuration is still available.
