@@ -126,7 +126,7 @@ Use the following CLI commands to set system-specific and sensitive configuratio
 To set the system-specific setting **Default Email Domain**, which is in the default scope, use the following command:
 
 ```bash
-php bin/magento config:set customer/create_account/email_domain <email domain>
+bin/magento config:set customer/create_account/email_domain <email domain>
 ```
 
 You don't need to use the scope in the command because it's the default scope.
@@ -136,7 +136,7 @@ To set values for **Send Emails To**, however, you must know the scope type (`we
 Example:
 
 ``` unix
-php bin/magento config:sensitive:set contact/email/recipient_email --scope=website --scope-code=<website code> <email address>
+bin/magento config:sensitive:set contact/email/recipient_email --scope=website --scope-code=<website code> <email address>
 ```
 
 ### Update the shared settings {#config-split-verify-shared}

@@ -12,7 +12,7 @@ Revise the `di.xml` file, adding the configuration settings as an argument to `M
 
 The following code shows an example of configuration settings in the `di.xml` file that determine the font sizes available for selection and add a paragraph menu option associated with the `<p>` tag:
 
-```
+```xml
 <type name="Magento\PageBuilder\Model\Wysiwyg\DefaultConfigProvider">
     <arguments>
         <argument name="additionalSettings" xsi:type="array">

@@ -29,7 +29,7 @@ Set values:
 *   Before you install Magento. You can set configuration values for the default scope only.
 
     Before you install Magento, the default scope is the only valid scope.
-*   After you install Magento. You can set configuration values for any {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} scope.
+*   After you install Magento. You can set configuration values for any [website](https://glossary.magento.com/website) or [store view](https://glossary.magento.com/store-view) scope.
 
 Use the following commands:
 
@@ -57,7 +57,7 @@ See the following references:
 
 ### Find the scope code
 
-You can find the scope code either in the Magento database or in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. See one of the following sections for more information.
+You can find the scope code either in the Magento database or in the Magento [Admin](https://glossary.magento.com/admin). See one of the following sections for more information.
 
 #### Find the scope code in the Admin
 
@@ -148,7 +148,7 @@ See one of the following sections for more information:
 
 Use `bin/magento config:set` _without_ `--lock` (or `--lock-env` or `--lock-config`) to write the value to the database. Values you set this way can be edited in the Magento Admin.
 
-#### Examples for setting a store base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}
+#### Examples for setting a store base [URL](https://glossary.magento.com/url)
 
 Set the base URL for the default scope:
 

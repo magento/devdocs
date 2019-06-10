@@ -15,11 +15,11 @@ Before you start migration, stop all Magento 1 cron jobs.
 
 During the migration process, **do not:**
 
-1. Make any changes in the Magento 1 {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} except for order management (shipping, creating invoice, credit memos, etc.)
+1. Make any changes in the Magento 1 [Admin](https://glossary.magento.com/admin) except for order management (shipping, creating invoice, credit memos, etc.)
 
 2. Alter any code
 
-3. Make changes in the Magento 2 Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
+3. Make changes in the Magento 2 Admin and [storefront](https://glossary.magento.com/storefront)
 
 {: .bs-callout .bs-callout-tip }
 All operations in Magento 1 storefront are allowed at this time.
@@ -51,7 +51,7 @@ where:
 3. `{<path to config.xml>}` is the absolute file system path to `config.xml`; this argument is required.
 
 {: .bs-callout .bs-callout-info }
-Logs are written to the `<your Magento install dir>/var/` directory.
+Logs are written to the `<magento_root>/var/` directory.
 
 ## Migration order {#migration_order}
 

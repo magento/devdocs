@@ -10,6 +10,17 @@ pages:
     url: /extensions/install/
     versionless: true
 
+  - label: Amazon Sales Channel
+    versionless: true
+    children:
+    - label: Install
+      url: /extensions/amazon-sales/
+      versionless: true
+
+    - label: Release Notes
+      url: /extensions/amazon-sales/release-notes/
+      versionless: true
+
   - label: B2B
     versionless: true
     children:

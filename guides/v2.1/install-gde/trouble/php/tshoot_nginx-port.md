@@ -11,7 +11,7 @@ functional_areas:
   - Setup
 ---
 
-If you use the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} web server and you attempt to install the Magento software, the installation sometimes fails.
+If you use the [nginx](https://glossary.magento.com/nginx) web server and you attempt to install the Magento software, the installation sometimes fails.
 
 ### Detail
 
@@ -23,4 +23,4 @@ You can confirm the issue by the following error in the `var/report` directory:
 
 ### Workaround
 
-Append `/setup` to the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} by which you access the Setup Wizard or install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).
+Append `/setup` to the [URL](https://glossary.magento.com/url) by which you access the Setup Wizard or install the Magento software using the [command line]({{ page.baseurl }}/install-gde/install/cli/install-cli.html).

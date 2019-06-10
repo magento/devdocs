@@ -8,12 +8,19 @@ functional_areas:
 ## What's in this topic {#fedg_layout_xml-instruc_overview}
 
 There are two possible ways to customize page layout in Magento:
-* Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files 
+* Changing [layout](https://glossary.magento.com/layout) files 
 * Altering templates
 
 To change the page wireframe, modify the [page layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-page) files; all other customizations are performed in the [page configuration]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-conf) or [generic layout]({{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html#layout-types-gen) files. 
 
-Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
+## Manage layouts
+
+To make layout changes available on every page, modify the `default.xml` file.
+For example, layout changes added to `app/code/Vendor/Module/view/frontend/layout/default.xml` are loaded on all pages.
+To add layout changes to a specific page, use a layout file that corresponds to the page's path. 
+For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` file are loaded on the product details page.
+
+Use these [layout instructions](https://glossary.magento.com/layout-instructions) to:
 *  Move a page element to another parent element.
 *  Add content.
 *  Remove a page element.
@@ -33,6 +40,7 @@ Use the following layout instructions to customize your layout:
 * [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
+* [`<block vs. container>`](#block_vs_container)
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -40,7 +48,9 @@ Defines a block.
 
 **Details:** A block is a unit of page output that renders some distinctive content (anything visually tangible for the end-user), such as a piece of information or a user interface element.
 
-Blocks employ templates to generate HTML. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.</p>
+Blocks are a foundational building unit for layouts in Magento. They are the link between a PHP block class (which contains logic) and a template (which renders content). Blocks can have children and grandchildren (and so on). Information can be passed from layout XML files to blocks using the `<arguments/>` child node. 
+
+Blocks employ templates to generate HTML. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.</p>
 
 <table>
    <tbody>
@@ -173,6 +183,12 @@ Sample of usage in layout:
 ```
 
 This would add a new column to the page layout.
+
+### block vs. container {#block_vs_container}
+
+* Blocks represents the end of the chain in rendering HTML for Magento.
+* Containers contain blocks and can wrap them in an HTML tag.
+* Containers do not render any output if there are no children assigned to them.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 
@@ -504,6 +520,5 @@ Example:
 </arguments>
 ```
 
-
-[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml
-[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/html/title.phtml
+[app/code/Magento/Theme/view/frontend/layout/default.xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml
+[app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/html/title.phtml

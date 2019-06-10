@@ -202,6 +202,9 @@ Your functional tests should include events that cause exceptions. Since your te
 - The body of the test
 - The test function annotation
 
+{: .bs-callout .bs-callout-tip }
+We recommend that you declare expected exceptions in the test method body, as declaring expected exceptions with annonations has been deprecated in PHPUnit 8. Existing tests that use annotations will have to be updated when Magento requires that version of PHPUnit or higher.
+
 ### Exception messages in the body of a test
 
 The following examples show two ways you can use the `expectExceptionMessage` function to define an expected exception message.
@@ -236,7 +239,7 @@ Define the exception message before invoking logic that generates the exception.
 
 As an example, consider the case where Customer A tries to retrieve information about Customer B's cart. In this situation, Customer A gets this error:
 
-"`The current user cannot perform operations on cart "XXXXX`"
+    The current user cannot perform operations on cart "XXXXX"
   
 `XXXXX` is the unique ID of Customer B's cart. 
 
@@ -336,3 +339,111 @@ Use the following functions to cover expected exceptions:
 - `expectExceptionMessage`
 - `expectExceptionMessageRegExp`
 - `expectExceptionObject`
+
+## Run functional tests
+
+### Configure your instance
+
+1. Change directories to `dev/tests/api-functional/` and copy the `phpunit_graphql.xml.dist` file to `phpunit_graphql.xml`.
+
+    ```bash
+    cp phpunit_graphql.xml.dist phpunit_graphql.xml
+    ```
+
+2. Edit `phpunit_graphql.xml` to set values for the TESTS_BASE_URL, TESTS_WEBSERVICE_USER, TESTS_WEBSERVICE_APIKEY options:
+
+    ```xml
+    ...
+    <!-- Webserver URL -->
+    <const name="TESTS_BASE_URL" value="http://magento.url"/>
+    <!-- Webserver API user -->
+    <const name="TESTS_WEBSERVICE_USER" value="admin"/>
+    <!-- Webserver API key -->
+    <const name="TESTS_WEBSERVICE_APIKEY" value="123123q"/>
+    ...
+    ```    
+
+### Run all tests in a API functional test suite 
+
+**Syntax**
+
+```bash
+vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
+```
+
+**Example**
+
+To run all tests from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
+ 
+```bash
+vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
+```
+
+### Run a single test in a API functional test suite
+
+**Syntax**
+ 
+```bash
+vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter <testFunctionName> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
+```
+ 
+**Example**
+
+To run `testGenerateCustomerValidToken` test from [dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php]({{ site.mage2bloburl }}/2.3.1/dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php), run the following command:
+ 
+```bash
+vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --filter testGenerateCustomerValidToken dev/tests/api-functional/testsuite/Magento/GraphQl/Customer/GenerateCustomerTokenTest.php
+```
+ 
+### Run a selected group of tests in an API functional test suite
+
+Use the `@group` directive in the test annotation to add the ability to run a group tests. 
+
+**Syntax**
+ 
+```bash
+vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --group <TEST_GROUP_ALIAS> dev/tests/api-functional/testsuite/<Vendor>/<Module>/<TestFile>.php
+```
+ 
+**Example**
+
+The `testGetCartTotalsWithNoAddressSet` test is marked with `@group recent`:
+
+```php
+<?php
+
+namespace Magento\GraphQl;
+
+class MyTest extends \Magento\TestFramework\TestCase\GraphQlAbstract
+
+    /**
+     * @group my_test_group
+     */
+    public function testFunction1()
+    {
+        ...
+    }
+
+    /**
+     * @group my_test_group
+     */
+    public function testFunction2()
+    {
+        ...
+    }
+    
+    /**
+     * 
+     */
+    public function testFunction3()
+    {
+        ...
+    }
+}    
+```
+
+To run the `testFunction1` and `testFunction2` tests, which are part of the `my_test_group` group, use the following command:
+
+```bash
+vendor/bin/phpunit -c dev/tests/api-functional/phpunit_graphql.xml --group my_test_group dev/tests/api-functional/testsuite/Magento/GraphQl/MyTest.php
+```

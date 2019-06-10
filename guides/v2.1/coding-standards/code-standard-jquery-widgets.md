@@ -11,19 +11,19 @@ functional_areas:
 
 In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base&mdash;the [jQuery UI Widget Factory][jquery-ui-widget-factory]{:target="_blank"}.
 
-The factory provides a flexible base for building complex, stateful plug-ins with a consistent {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
-It is designed not only for plug-ins that are part of {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
+The factory provides a flexible base for building complex, stateful plug-ins with a consistent [API](https://glossary.magento.com/api).
+It is designed not only for plug-ins that are part of [jQuery](https://glossary.magento.com/jquery) UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.
 
 For more information, see the [jQuery Widget API documentation][jquery-ui-api-doc]{:target="_blank"}.
 
-This standard is mandatory for Magento core developers and recommended for third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.
+This standard is mandatory for Magento core developers and recommended for third-party [extension](https://glossary.magento.com/extension) developers.
 Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.
 
 Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 ## Naming conventions
 
-* {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} names must consist of one or more non-abbreviated English word and in camelcase format.
+* [Widget](https://glossary.magento.com/widget) names must consist of one or more non-abbreviated English word and in camelcase format.
   
  ```javascript
 
@@ -48,11 +48,11 @@ Use [RFC 2119][rfc2119]{:target="_blank"} to interpret the "must," "must not," "
 
 ## Instantiation and resources
 
-* Additional {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} files used as a resources must be dynamically loaded using the `$.mage.components()` method and must not be included in the `<head>` block.
+* Additional [JavaScript](https://glossary.magento.com/javascript) files used as a resources must be dynamically loaded using the `$.mage.components()` method and must not be included in the `<head>` block.
 * Use the `$.mage.components()` method to load additional JavaScript resource files not included in the `<head>` block.
 * You must use `$.mage.extend()` to extend an existing set of widget resources.
 * You must instantiate widgets using the `data-mage-init` attribute.
-  You can use the `.mage()` {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} to instantiate widgets that use callback methods.
+  You can use the `.mage()` [plug-in](https://glossary.magento.com/plug-in) to instantiate widgets that use callback methods.
 
   Benefits:
 
@@ -108,7 +108,7 @@ $.widget('mage.dialog', $.ui.dialog, {
 
 * Widgets should comply with the [single responsibility principle][single-responsibility-principle]{:target="_blank"}.
   
-  Widgets should not have responsibilities not related to the {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} described by the widget.
+  Widgets should not have responsibilities not related to the [entity](https://glossary.magento.com/entity) described by the widget.
 
  ```javascript
 // Widget "dialog" that is responsible
@@ -263,11 +263,11 @@ $('selector')
   
   Common tasks for this include:
 
-  * Removing or adding any {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} classes the widget added/removed to the element.
+  * Removing or adding any [CSS](https://glossary.magento.com/css) classes the widget added/removed to the element.
   * Detaching any elements the widget added to the DOM.
   * Destroying any widgets that the widget applied to other elements.
 
-* Bind {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} handlers using the `_bind()` method to make it easy to find what events the widget reacts on.
+* Bind [event](https://glossary.magento.com/event) handlers using the `_bind()` method to make it easy to find what events the widget reacts on.
 * Bind events using the `on()` method.
   
   Benefits:

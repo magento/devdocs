@@ -6,7 +6,7 @@ functional_areas:
   - Theme
 ---
 
-## What's in this topic {#fedg_css-in-themes_overview}
+## In this topic {#fedg_css-in-themes_overview}
 
 In the Magento application, CSS files are included in [layout files].
 
@@ -19,9 +19,9 @@ This topic describes how stylesheets are located by default in the Magento appli
 
 ## How Magento stylesheet files are organized
 
-Conventionally, CSS and Less files are stored only in themes. {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} directories do not contain any default styles.
+Conventionally, CSS and Less files are stored only in themes. [Module](https://glossary.magento.com/module) directories do not contain any default styles.
 
-In a [theme directory], stylesheets are stored in the following locations:
+In a [theme directory][], stylesheets are stored in the following locations:
 
 <table>
 <tr>
@@ -43,13 +43,13 @@ Contains the following:
 <li>
 <code>print.less</code>: used to generate styles for the printed version of store pages.
 </li>
-<li><code>_styles.less</code> - a composite file, which includes all Less files used in the {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. The underscore sign ("_") in a file name conventionally means that a file is not used independently, but is included in other files.
+<li><code>_styles.less</code> - a composite file, which includes all Less files used in the [theme](https://glossary.magento.com/theme). The underscore sign ("_") in a file name conventionally means that a file is not used independently, but is included in other files.
 </li>
 <li><code>styles-m.less</code>: used to generate mobile-specific styles, includes <code>_styles.less</code>
 </li>
 <li><code>styles-l.less</code>: used to generate desktop-specific styles, includes <code>_styles.less</code>.
 </li>
-<li><code>/source</code>: this subdirectory contains Less configuration files that invoke mixins from the Magento UI {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}
+<li><code>/source</code>: this subdirectory contains Less configuration files that invoke mixins from the Magento UI [library](https://glossary.magento.com/library)
 </li>
 <li>
 <code>/source/_theme.less</code>: overrides the default Magento UI library variables values.
@@ -63,7 +63,7 @@ Contains the following:
 
 ## Include CSS {#fedg_css-in-themes_xml}
 
-In the Magento application, the recommended way to include stylesheets is to specify them in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files. 
+In the Magento application, the recommended way to include stylesheets is to specify them in [layout](https://glossary.magento.com/layout) files. 
 
 Usually, the stylesheets you include should be available for all store pages. To achieve this, include your CSS in `default_head_blocks.xml` of the `Magento_Theme` module, which defines the default `<head>` page section for all Magento pages. 
 The recommended way to do this is adding an [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) `default_head_blocks.xml` in your theme, and including the required stylesheets in this file.
@@ -89,6 +89,18 @@ For example, the following illustrates how stylesheets are included in the defau
 </page>
 ```
 
+To include an external CSS file, add `<css src="URL to External Source" src_type="url" rel="stylesheet" type="text/css" />` to the list.
+
+```xml
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="css/styles-m.css" />
+        <css src="css/styles-l.css" media="screen and (min-width: 768px)"/>
+        <css src="css/print.css" media="print" />
+        <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"  src_type="url" rel="stylesheet" type="text/css"  />
+    </head>
+</page>
+```
 
 {:.bs-callout .bs-callout-info}
 If the system does not find the included CSS files, it searches for the same file names with a `.less` extension. This is part of the built-in preprocessing mechanism. You can find more information about it in the [CSS Preprocessing] topic.

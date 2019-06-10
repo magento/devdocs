@@ -18,9 +18,9 @@ To update the updater application:
 
 	For example,
 
-		mv <your Magento install dir>/update <your Magento install dir>/old_update
+		mv <magento_root>/update <magento_root>/old_update
 3.	Change to your Magento 2 installation directory and enter the following command:
 
 		composer create-project magento/updater update --repository https://repo.magento.com
 4.	If prompted, enter your Magento [authentication keys]({{ page.baseurl }}/install-gde/prereq/connect-auth.html).
-5.	Wait while {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} installs the updater and its dependencies.
+5.	Wait while [Composer](https://glossary.magento.com/composer) installs the updater and its dependencies.

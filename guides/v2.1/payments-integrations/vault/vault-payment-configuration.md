@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-You need to configure the main parameters of the vault implementation in the `config.xml` file of your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} module:
+You need to configure the main parameters of the vault implementation in the `config.xml` file of your [payment method](https://glossary.magento.com/payment-method) module:
 
 * `model` - instance of the vault payment implementation, [configured in `di.xml`]({{ page.baseurl }}/payments-integrations/vault/vault-di.html).
 * `title` - vault payment method title; can be overwritten in the store configuration.

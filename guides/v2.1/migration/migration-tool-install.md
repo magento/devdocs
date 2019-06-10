@@ -17,9 +17,9 @@ Make sure you are using *the same released version* of both Magento 2 and the Da
 
 #### Composer metapackage
 
-If you downloaded the Magento software using a {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} metapackage, enter the following command:
+If you downloaded the Magento software using a [Composer](https://glossary.magento.com/composer) metapackage, enter the following command:
 
-	php <your Magento install dir>/bin/magento --version
+	php <magento_root>/bin/magento --version
 
 #### GitHub repository
 
@@ -73,7 +73,7 @@ To install the Data Migration Tool, you must update `composer.json` in the Magen
 		composer config repositories.magento composer https://repo.magento.com
 		composer require magento/data-migration-tool:2.1.2
 
-4.  When prompted, enter your <a href="{{ site.baseurl }}/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
+4.  When prompted, enter your <a href="{{ page.baseurl }}/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.
 
 ### Install from GitHub {#install-github}
 

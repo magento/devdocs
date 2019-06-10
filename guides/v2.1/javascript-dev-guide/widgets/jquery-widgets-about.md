@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Magento jQuery widgets
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/jquery-widgets-about.html
 ---
 
 The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.

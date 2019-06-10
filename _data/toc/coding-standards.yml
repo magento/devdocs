@@ -10,9 +10,6 @@ pages:
         - label: PHP coding standard
           url: /coding-standards/code-standard-php.html
 
-        - label: PHP code sniffers
-          url: /coding-standards/code-standard-sniffers.html
-
         - label: DocBlock standard
           url: /coding-standards/docblock-standard-general.html
 

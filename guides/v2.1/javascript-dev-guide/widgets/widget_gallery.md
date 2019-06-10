@@ -324,7 +324,7 @@ Display navigation arrows on the sides of previews in the fullscreen view.
 **Type**: Boolean
 
 #### `fullscreen/caption` {#full_caption}
-Display {% glossarytooltip 9122e7d4-7db9-48b2-ad27-1af26bad1215 %}alt text{% endglossarytooltip %} as image title in the fullscreen view.
+Display [alt text](https://glossary.magento.com/alt-text) as image title in the fullscreen view.
 
 **Type**: Boolean
 
@@ -361,6 +361,25 @@ Sliding direction of thumbnails in the fullscreen view.
 
 - `vertical`
 - `horizontal`
+
+#### `fullscreen/navarrows` {#full_navarrows}
+
+Show/hide arrows in thumb navigation.
+
+**Type**: Boolean
+
+**Default value**: `true`
+
+#### `fullscreen/navtype` {#full_navtype}
+
+Type of navigation.
+
+**Possible values**:
+
+- `thumbs`
+- `slides`
+
+**Default value**: `thumbs`
 
 #### `fullscreen/navigation_carousel` {#full_carousel}
 
@@ -453,7 +472,7 @@ The fullscreen and breakpoints options are set in a similar way:
 </var>
 ```
 
-For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2000url }}app/design/frontend/Magento/blank/etc/view.xml#L184).
+For illustration of setting gallery option in `view.xml`, you can reference to the [view.xml of the Blank theme]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/blank/etc/view.xml#L184).
 
 ## Gallery API {#gallery_api}
 
@@ -467,10 +486,10 @@ var api = $(element).data('gallery');
 var api = $('[data-gallery-role="gallery"]').data('gallery');
 ```
 
-This method returns JS object that contains {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} functions.
+This method returns JS object that contains [API](https://glossary.magento.com/api) functions.
 
 
-To ensure that the gallery is fully formed, wrap your code with {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} handler function and add it to the `gallery:loaded` event:
+To ensure that the gallery is fully formed, wrap your code with [event](https://glossary.magento.com/event) handler function and add it to the `gallery:loaded` event:
 
 ```javascript
 $(element).on('gallery:loaded', function () {
@@ -560,7 +579,6 @@ api.updateOptions([{
 }]);
 ```
 
-
 [Fotorama widget]: http://fotorama.io/
-[lib/web/mage/gallery/gallery.js]: {{site.mage2000url}}lib/web/mage/gallery/gallery.js
-[lib/web/magnifier/magnify.js]: {{site.mage2000url}}lib/web/magnifier/magnify.js
+[lib/web/mage/gallery/gallery.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/gallery/gallery.js
+[lib/web/magnifier/magnify.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/magnifier/magnify.js

@@ -30,15 +30,15 @@ JavaScript automatic testing is described in a separate [JavaScript unit testing
 | ------------------------------------- |--------------------------------------------------- | 
 | *JavaScript component (JS component)* | Any separate `.js` file decorated as [AMD module]. |
 | *Ui component*                        | JS component located in the `Magento_Ui` module, in the [app/code/Magento/Ui/view] directory. |
-| *jQuery UI widget*                    | A JS component/widget provided by [jQuery UI library used in Magento]. |
-| *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are jQuery widget. |
+| *jQuery UI widget*                    | A JS component/widget provided by the [jQuery UI library used in Magento]. |
+| *jQuery widget*                       | Custom widget created using jQuery UI Widget Factory and decorated as AMD module. Many Magento JS components are the jQuery widgets. |
 
 
 
 [AMD module]: http://requirejs.org/docs/whyamd.html#amd
-[`Magento_Ui`]: {{site.mage2100url}}app/code/Magento/Ui
-[app/code/Magento/Ui/view]: {{site.mage2100url}}app/code/Magento/Ui/view
-[jQuery UI library used in Magento]: {{site.mage2100url}}lib/web/jquery/jquery-ui-1.9.2.js
+[`Magento_Ui`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui
+[app/code/Magento/Ui/view]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view
+[jQuery UI library used in Magento]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/jquery/jquery-ui-1.9.2.js
 [jQuery Widget]: https://jqueryui.com/widget/
 
 [RequireJS file and module loader]: http://requirejs.org/

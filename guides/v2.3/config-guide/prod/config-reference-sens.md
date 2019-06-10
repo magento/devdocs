@@ -44,6 +44,9 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Default No-route URL | `web/default/no_route` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Cookie Path | `web/cookie/cookie_path` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 | Cookie Domain | `web/cookie/cookie_domain` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Cookie Lifetime | `web/cookie/cookie_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Use HTTP Only | `web/cookie/cookie_httponly` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
+| Cookie Restriction Mode | `web/cookie/cookie_restriction` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}/common/images/cloud_env.png) |
 
 ### Currency setup sensitive and system-specific paths
 
@@ -77,6 +80,8 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 | Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|--------------|--------------|
 | Send Emails To | `contact/email/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| Email Sender | `contact/email/sender_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
+| Email Template | `contact/email/email_template` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}/common/images/cloud_sens.png) |
 
 ### New Relic reporting sensitive and system-specific paths
 

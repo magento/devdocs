@@ -4,7 +4,7 @@ title: Magento_CmsStaging module
 ee_only: true
 ---
 
-The Magento_CmsStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Page and the {% glossarytooltip edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9 %}CMS Block{% endglossarytooltip %} updates to the existing store campaigns. These updates are shown on the campaign dashboard.
+The Magento_CmsStaging [module](https://glossary.magento.com/module) is a part of the staging functionality in {{site.data.var.ee}}. It enables you to add the [CMS](https://glossary.magento.com/cms) Page and the [CMS Block](https://glossary.magento.com/cms-block) updates to the existing store campaigns. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -19,7 +19,7 @@ You can stage the following parameters:
 - Content
     - Content Heading
     - Content (WYSIWYG)
-- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %}
+- [Search Engine Optimization](https://glossary.magento.com/search-engine-optimization)
     - URL Key
     - Meta Keywords
     - Meta Description
@@ -35,7 +35,7 @@ The following parameters can be staged:
 - Enable/Disable CMS Block
 - Block Title
 - Identifier
-- {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}Store View{% endglossarytooltip %}
+- [Store View](https://glossary.magento.com/store-view)
 - Content (WYSIWYG)
 
 ### Installation details
@@ -48,13 +48,13 @@ You can find the list of modules that have dependencies on the Magento_CmsStagin
 
 ## Extension points
 
-{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_CmsStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/plugins.html).
+[Extension](https://glossary.magento.com/extension) points enable extension developers to interact with the Magento_CmsStaging module. For more information about the Magento extension mechanism, see [Magento plug-ins]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism]({{ site.baseurl }}/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CmsStaging module.
 
 ### UI components
 
-You can extend product and {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} updates using the UI components located in the `Magento\CmsStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html).
+You can extend product and [category](https://glossary.magento.com/category) updates using the UI components located in the `Magento\CmsStaging\view\adminhtml\ui_component` directory. For more information, see [UI Listing/Grid Component]({{ site.baseurl }}/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 
@@ -63,4 +63,4 @@ For more information about layouts, see the [Layout documentation]({{ site.baseu
 
 ## Additional information
 
-You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ site.baseurl }}/guides/v2.0/release-notes/backward-incompatible-changes/commerce.html).
+You can track [backward incompatible changes made in a {{site.data.var.ee}} mainline after the Magento 2.0 release]({{ page.baseurl }}/release-notes/backward-incompatible-changes/commerce.html).
