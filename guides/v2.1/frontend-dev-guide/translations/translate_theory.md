@@ -9,7 +9,7 @@ functional_areas:
 
 Your custom theme may contain new strings that are not present in out-of-the-box Magento themes. 
 To ensure your theme displays correctly with any language applied on a store view, verify the unique strings of your theme are added to the translation [i18n tool] when [generating the dictionary].
-Then when a new {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} is created and used to translate a store view, all theme strings are also translated.
+Then when a new [language package](https://glossary.magento.com/language-package) is created and used to translate a store view, all theme strings are also translated.
 
 ## Strings added in .phtml templates {#add_strings_phtml}
 

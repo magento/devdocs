@@ -5,7 +5,7 @@ redirect_from:
   - /community/resources/index.html
 ---
 
-This Community collection of resources links to blog posts, podcasts, presentations, and books created by members of the {% glossarytooltip cadefd6b-0e85-4a8c-909a-5f967c56d35f %}Magento{% endglossarytooltip %} community and core developers separated into popular topics.
+This Community collection of resources links to blog posts, podcasts, presentations, and books created by members of the [Magento](https://glossary.magento.com/magento) community and core developers separated into popular topics.
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 

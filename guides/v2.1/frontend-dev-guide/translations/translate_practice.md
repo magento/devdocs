@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
 ---
 
-This topic is a step-by-step tutorial to create a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} [dictionary] for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
+This topic is a step-by-step tutorial to create a default en_US [locale](https://glossary.magento.com/locale) [dictionary] for a custom [theme](https://glossary.magento.com/theme). 
 
 ## Changing default strings {#theme}
 

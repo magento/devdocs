@@ -6,7 +6,7 @@ functional_areas:
   - Setup
 ---
 
-The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
+The [Message Queue Framework (MQF)]({{ page.baseurl }}/config-guide/mq/rabbitmq-overview.html) is a system within {{site.data.var.ee}} that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also defines the consumers that will receive the messages asynchronously.
 
 The MQF uses [RabbitMQ](http://www.rabbitmq.com) as the messaging broker, which provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
@@ -94,8 +94,8 @@ dependencies:
         amqp-utils: "0.5.1"
 ```
 
-Then, when you log in to your {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} container, you enter any `amqp-` command available to manage your queues.
+Then, when you log in to your [PHP](https://glossary.magento.com/php) container, you enter any `amqp-` command available to manage your queues.
 
 ### Connect from your PHP application {#cloud-rabbitmq-conn-php}
 
-To connect to RabbitMQ using your PHP application, add a PHP {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} (like [PHP AMQPlib](https://github.com/videlalvaro/php-amqplib)) to your source tree.
+To connect to RabbitMQ using your PHP application, add a PHP [library](https://glossary.magento.com/library) (like [PHP AMQPlib](https://github.com/videlalvaro/php-amqplib)) to your source tree.

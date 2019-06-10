@@ -15,7 +15,7 @@ Magento translations enable you to customize and localize your store for multipl
 
 This topic discusses how to generate:
 
-- Translation dictionaries, which are a convenient way to customize or translate *some* words and phrases, such as those for a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
+- Translation dictionaries, which are a convenient way to customize or translate *some* words and phrases, such as those for a custom [module](https://glossary.magento.com/module) or [theme](https://glossary.magento.com/theme).
 - Language packages, which enable you to translate *any or all* words and phrases in the Magento application.
 
 See [Translations overview].
@@ -24,7 +24,7 @@ We also accept [Community Engineering contributions] using CrowdIn for translati
 
 ## Generate a translation dictionary {#config-cli-subcommands-xlate-dict}
 
-You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language packages{% endglossarytooltip %}.
+You can generate a [translation dictionary] to customize existing strings, translate words and phrases in a custom module, localize a theme, or create  [language packages](https://glossary.magento.com/language-packages).
 
 ### Work with translation dictionaries {#config-cli-subcommands-xlate-dict-dict}
 
@@ -141,7 +141,7 @@ To create these files:
 
 When declaring a language package in the `language.xml` configuration file, you must specify the sequence of the language inheritance for this package.
 
-Language inheritance enables you to create a new translation called a _child_ based on an existing translation called a _parent_. The child translations override the parent. However, if the child translation fails to upload or display or is missing a phrase or word, Magento uses the parent {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}. [Examples of language package inheritance](#m2devgde-xlate-inheritancework).
+Language inheritance enables you to create a new translation called a _child_ based on an existing translation called a _parent_. The child translations override the parent. However, if the child translation fails to upload or display or is missing a phrase or word, Magento uses the parent [locale](https://glossary.magento.com/locale). [Examples of language package inheritance](#m2devgde-xlate-inheritancework).
 
 To declare a package, specify the following information:
 

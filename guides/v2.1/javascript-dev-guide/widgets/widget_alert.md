@@ -9,7 +9,7 @@ The Magento alert widget implements a modal pop-up window with a confirmation bu
 
 The alert widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`].
 
-The widget can be used for implementing alert windows for both Admin and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. The design patterns for the pop-up modal windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
+The widget can be used for implementing alert windows for both Admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the pop-up modal windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
 ## Initialize the alert widget {#alert_initialize}
 
@@ -114,7 +114,6 @@ The alert widget implements a single event: the `always` callback.
 ## Keyboard navigation {#alert_key_navigation}
 
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
-
 
 [Magento modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/alert.js

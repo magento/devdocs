@@ -7,7 +7,7 @@ functional_areas:
 
 ## In this topic
 
-This article describes the following typical {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} customization tasks:
+This article describes the following typical [layout](https://glossary.magento.com/layout) customization tasks:
 
 - [Set the page layout](#layout_markup_columns)
 - [Include static resources (JavaScript, CSS, fonts) in \<head\>](#layout_markup_css)
@@ -25,7 +25,7 @@ This article describes the following typical {% glossarytooltip 73ab5daa-5857-40
 - [Modify functionality with plugins (interceptors)](#layout_markup_modify_with_plugins)
 
 {:.bs-callout .bs-callout-info}
-To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} layouts. To customize your layout, create extending and overriding layout files in your custom theme.
+To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento [module](https://glossary.magento.com/module) and [theme](https://glossary.magento.com/theme) layouts. To customize your layout, create extending and overriding layout files in your custom theme.
 
 ## Set the page layout {#layout_markup_columns}
 
@@ -190,7 +190,7 @@ To wrap div or block using container see example:
 
 Blocks are created (declared) using the `<block>` instruction.
 
-Example: add a block with a product {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}SKU{% endglossarytooltip %} information.
+Example: add a block with a product [SKU](https://glossary.magento.com/sku) information.
 
 ```xml
 <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.sku" template="product/view/attribute.phtml" after="product.info.type">

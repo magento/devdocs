@@ -15,7 +15,7 @@ To use the [Magento Performance Toolkit]({{ site.mage2bloburl }}/{{ page.guide_v
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
-The following figure shows how a product displays on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the small profile:
+The following figure shows how a product displays on the [storefront](https://glossary.magento.com/storefront) using the small profile:
 
 ![Sample storefront with generated data]({{ site.baseurl }}/common/images/config_generate-data.png){:width="550px"}
 

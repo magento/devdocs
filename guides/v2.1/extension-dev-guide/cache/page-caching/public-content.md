@@ -6,13 +6,10 @@ menu_title: Public content
 menu_order: 17
 menu_node:
 redirect_from:
-  - /guides/v2.0/config-guide/cache/cache-priv-priv.html
   - /guides/v2.1/config-guide/cache/cache-priv-priv.html
   - /guides/v2.2/config-guide/cache/cache-priv-priv.html
-  - /guides/v2.0/config-guide/cache/cache-priv-context.html
   - /guides/v2.1/config-guide/cache/cache-priv-context.html
   - /guides/v2.2/config-guide/cache/cache-priv-context.html
-  - /guides/v2.0/config-guide/cache/cache-priv-inval.html
   - /guides/v2.1/config-guide/cache/cache-priv-inval.html
   - /guides/v2.2/config-guide/cache/cache-priv-inval.html
 ---
@@ -79,7 +76,7 @@ class DynamicController extends \Magento\Framework\App\Action\Action
 
 ## Configure page variations
 
-Most caching servers and proxies use a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} as a key for cache records. However, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
+Most caching servers and proxies use a [URL](https://glossary.magento.com/url) as a key for cache records. However, Magento URLs are not unique *enough* to allow caching by URL only. Cookie and session data in the URL can also lead to undesirable side effects,  including:
 
 -   Collisions in cache storage
 -   Unwanted information leaks (e.g., French language website partially visible on an English language website, prices for customer group visible in public, etc.)
@@ -142,11 +139,11 @@ sub vcl_hash {
 
 ## Invalidate public content
 
-You can clear cached content immediately after a entity changes. Magento uses  `IdentityInterface` to link entities in the application with cached content and to know what cache to clear when an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} changes.
+You can clear cached content immediately after a entity changes. Magento uses  `IdentityInterface` to link entities in the application with cached content and to know what cache to clear when an [entity](https://glossary.magento.com/entity) changes.
 
 This section shows you how to tell Magento what cache to clear when you change an entity.
 
-First, your entity {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
+First, your entity [module](https://glossary.magento.com/module) must implement [`Magento/Framework/DataObject/IdentityInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DataObject/IdentityInterface.php){:target="_blank"} as follows:
 
 ```php
 use Magento\Framework\DataObject\IdentityInterface;
