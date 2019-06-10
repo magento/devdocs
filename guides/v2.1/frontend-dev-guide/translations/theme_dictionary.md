@@ -17,7 +17,7 @@ When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endg
 	1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
 	1. `<current_theme_dir>/i18n/`
 1. Translation package: `app/i18n/`
-1. Magento database (translations located in this database take precedence and override translations stored in other locations.)
+1. Magento database (translations located in this database take precedence and override translations stored in other locations.)  Refer to the [user guide](https://docs.magento.com/m2/ce/user_guide/system/translate-inline.html) for more information.
 
 If there are different translations for one string, the theme dictionary translations have priority over the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} translations, and child theme translations have priority over parent theme translations.
 
@@ -26,27 +26,6 @@ If there are different translations for one string, the theme dictionary transla
 * Translations applied by manually overriding on frontend
 * Stored in the *translation* database table
 * Enable the Translate Inline option under *STORE > Settings > Configuration > ADVANCED > Developer*
-
-Following steps describes the how data translation works
-
-1. Enable the Translate Inline option under *STORE > Settings > Configuration > ADVANCED > Developer*
-
-![Enable Translate Inline in storefront]({{ page.baseurl }}/frontend-dev-guide/images/Enable-Translate-Inline-in-storefront.png)
-
-2. Visit any frontend page to change the translation strings manually 
-
-![change the translation strings manually]({{ page.baseurl }}/frontend-dev-guide/images/tranlated-string.png)
-
-3. Change the string by your translated language string into the dialogbox open.
-
-![Change the string]({{ page.baseurl }}/frontend-dev-guide/images/Tranlate-string-dialog-box.png)
-
-4. Output of translating string
-
-![Output of translating string]({{ page.baseurl }}/frontend-dev-guide/images/result-of-translated-string.png)
-
-{:.bs-callout .bs-callout-info}
-Note : All Manual Translated string will be stored in translation table
 
 ## Creating a theme dictionary to override parent strings for default locale
 
