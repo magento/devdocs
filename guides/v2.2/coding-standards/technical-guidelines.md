@@ -831,15 +831,15 @@ input[name='firstname']
 
 #### 11.3.4. Data Entities
 
-11.3.4.1. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedely ran against the same environment.
-
-11.3.4.2. Data entities MUST NOT be modified and MUST NOT merge additional fields without complete understanding and verifying the usage of existing data in tests. New data entities SHOULD be created if you are not sure.
-
-11.3.4.3. Data entity file names MUST follow this pattern:
+11.3.4.1. Data entity file names MUST follow this pattern:
 
 * {Type}Data.xml, where Type represents the entity type.
 
 * Example: ProductData.xml
+
+11.3.4.2. Data entities SHOULD make use of `unique="suffix"` or `unique="prefix"` to ensure that tests using the entity can be repeatedely ran against the same environment.
+
+11.3.4.3. Data entities MUST NOT be modified and MUST NOT merge additional fields without complete understanding and verifying the usage of existing data in tests. New data entities SHOULD be created if you are not sure.
 
 11.3.4.4. **Data references SHOULD be used instead of hardcoded values.** If you need to run a command such as `<magentoCLI command="config:set" />`, do not hardcode paths and values to the command. Rather, create an appropriate `ConfigData.xml` file, which contains the required parameters for running the command. It will simplify the future maintanence of tests.
 
@@ -861,25 +861,25 @@ input[name='firstname']
 
 #### 11.3.5. Action Groups
 
-11.3.5.1. Action group names MUST be brief but comprehensive.
-
-11.3.5.2. Action group arguments MUST specify their type.
-
-11.3.5.3. Action groups MUST NOT have unused arguments.
-
-11.3.5.4. Action groups MUST NOT reference `$$createdData.property$$` or `$createdData.property$`.
-
-11.3.5.5. Action groups SHOULD be in their own file.
-
-11.3.5.6. Action groups SHOULD use the `string` type instead of `entity` unless many properties from the `entity` would be referenced.
-
-11.3.5.7. Action group arguments SHOULD specify default values.
-
-11.3.5.8. Action group file names MUST follow this pattern:
+11.3.5.1. Action group file names MUST follow this pattern:
 
 * {Assert}{Admin or Storefront}{Functionality}ActionGroup.xml
 
 * Example: AssertStorefrontMinicartContainsProductActionGroup.xml
+
+11.3.5.2. Action group names MUST be brief but comprehensive.
+
+11.3.5.3. Action group arguments MUST specify their type.
+
+11.3.5.4. Action groups MUST NOT have unused arguments.
+
+11.3.5.5. Action groups MUST NOT reference `$$createdData.property$$` or `$createdData.property$`.
+
+11.3.5.6. Action groups SHOULD be in their own file.
+
+11.3.5.7. Action groups SHOULD use the `string` type instead of `entity` unless many properties from the `entity` would be referenced.
+
+11.3.5.8. Action group arguments SHOULD specify default values.
 
 11.3.5.9. Action group names SHOULD match the file name that they are in.
 
@@ -917,6 +917,8 @@ input[name='firstname']
 ```
 
 {% endcollapsible %}
+
+11.3.5.11. Action groups SHOULD have `<annotations>`.
 
 #### 11.3.6. Annotations
 
@@ -982,21 +984,21 @@ input[name='firstname']
 
 #### 11.3.9. Test Body
 
-11.3.9.1. The test SHOULD re-use action groups, pages, sections, and elements.
-
-11.3.9.2. Any data created MUST be deleted in the `after` block of the test.
-
-11.3.9.3. `amOnPage` SHOULD be followed by `waitForPageLoad`.
-
-11.3.9.4. `amOnPage` SHOULD use `Page.url` instead of a hardcoded URL.
-
-11.3.9.5. `waitForPageLoad` SHOULD be used instead of `waitForLoadingMaskToDisappear` or `waitForAjaxLoad`.
-
-11.3.9.6. Test file names MUST follow this pattern:
+11.3.9.1. Test file names MUST follow this pattern:
 
 * {Admin or Storefront}{Functionality}Test.xml
 
 * Example: StorefrontCreateCustomerTest.xml
+
+11.3.9.2. The test SHOULD re-use action groups, pages, sections, and elements.
+
+11.3.9.3. Any data created MUST be deleted in the `after` block of the test.
+
+11.3.9.4. `amOnPage` SHOULD be followed by `waitForPageLoad`.
+
+11.3.9.5. `amOnPage` SHOULD use `Page.url` instead of a hardcoded URL.
+
+11.3.9.6. `waitForPageLoad` SHOULD be used instead of `waitForLoadingMaskToDisappear` or `waitForAjaxLoad`.
 
 11.3.9.7. `wait` SHOULD NOT be used unless for very specific circumstances.
 
