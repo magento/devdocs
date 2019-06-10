@@ -16,13 +16,13 @@ contributor_link: https://www.atwix.com/
 
 Use the following `cart` query to determine which payment methods which are available for your order.
 
-`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
 ```text
 query {
-  cart(cart_id: "{{ CART_ID }}") {
+  cart(cart_id: "{ CART_ID }") {
     available_payment_methods {
       code
       title
@@ -58,7 +58,7 @@ For logged-in customers, send the customer's authorization token in the `Authori
 ```text
 mutation {
   setPaymentMethodOnCart(input: {
-      cart_id: "{{ CART_ID }}"
+      cart_id: "{ CART_ID }"
       payment_method: {
           code: "checkmo"
       }

@@ -19,10 +19,10 @@ Customers can make purchases in two ways:
 * As a logged-in user
 * As a guest user who does not create an account
 
-{:.bs-callout .bs-callout-tip}
-Skip this step if you want to place order as a guest user.
-
 To place order as a new customer, use the `createCustomer` mutation to register the new customer account in the store.
+
+{:.bs-callout .bs-callout-info}
+Skip this step if you want to place order as a guest user.
 
 **Request**
 

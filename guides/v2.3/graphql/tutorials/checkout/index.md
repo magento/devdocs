@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-This tutorial describes how to place order through GraphQl. Customers can make purchases in two ways:
+This tutorial describes how to place an order through GraphQl. Customers can make purchases in two ways:
 
 * As a logged-in user
 * As a guest user who does not create an account

@@ -22,7 +22,7 @@ GraphQL supports [2 types of product]({{ page.baseurl }}/graphql/reference/produ
 {:.bs-callout .bs-callout-info}
 If you add a product to the shopping cart as a registered customer, be sure to send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more details.
 
-`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 ## Add a simple product into shopping cart
 
@@ -34,7 +34,7 @@ The following mutation adds a **simple product** into shopping cart.
 mutation {  
   addSimpleProductsToCart(
     input: {
-      cart_id: "{{ CART_ID }}"
+      cart_id: "{ CART_ID }"
       cart_items: [
         {
           data: {
@@ -92,7 +92,7 @@ The following mutation adds a **virtual product** into shopping cart.
 mutation {  
   addVirtualProductsToCart(
     input: {
-      cart_id: "{{ CART_ID }}"
+      cart_id: "{ CART_ID }"
       cart_items: [
         {
           data: {

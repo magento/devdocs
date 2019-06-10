@@ -20,7 +20,7 @@ The `setShippingMethodsOnCart` mutation defines the shipping methods for your or
  * `carrier_code`
  * `method_code`
 
-`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
@@ -29,7 +29,7 @@ The following mutation query assigns UPS "Ground" method.
 ```text
 mutation {
   setShippingMethodsOnCart(input: {
-    cart_id: "{{ CART_ID }}"
+    cart_id: "{ CART_ID }"
     shipping_methods: [
       {
         carrier_code: "ups"

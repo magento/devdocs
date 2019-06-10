@@ -39,7 +39,7 @@ mutation {
 }
 ```
 
-In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be listed as `{{ CART_ID }}`.
+In the subsequent tutorial steps, the unique shopping cart identifier `A7jCcOmUjjCh7MxDIzu1SeqdqETqEa5h` will be listed as `{ CART_ID }`.
 
 ## Verify this step {#verify-step}
 

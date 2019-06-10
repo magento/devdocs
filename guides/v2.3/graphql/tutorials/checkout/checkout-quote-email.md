@@ -19,14 +19,14 @@ Skip this step if you placed the order as a registered customer.
 
 If you place an order as a guest user, you must set a quote email address. Use the `setGuestEmailOnCart` mutation query for that.
 
-`{{ CART_ID }}` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+`{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
 
 ```text
 mutation {
   setGuestEmailOnCart(input: {
-    cart_id: "{{ CART_ID }}"
+    cart_id: "{ CART_ID }"
     email: "guest@example.com"
   }) {
     cart {
