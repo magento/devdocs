@@ -29,7 +29,7 @@ Other channels can have a different set of handlers and logic.
 
 ## Get started with logging {#config-log-start}
 
-To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instance. With this interface, you can call the following functions to write data to log files:
+To start working with a logger, you must create an instance of `\Psr\Log\LoggerInterface`. With this interface, you can call the following functions to write data to log files:
 
  * [alert()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L43)
  * [critical()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L55)
@@ -41,11 +41,11 @@ To start working with a logger, you must get a `\Psr\Log\LoggerInterface` instan
  * [notice()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L89)
  * [warning()](https://github.com/php-fig/log/blob/master/Psr/Log/LoggerInterface.php#L79)
 
-One way to do that is illustrated in our [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
+One way to do that is illustrated in the [database logging example]({{ page.baseurl }}/config-guide/log/log-db.html).
 
 Another way follows:
 
-```php?start_inline=1
+```php
 class SomeModel
  {
      private $logger;
@@ -66,7 +66,7 @@ class SomeModel
  }
 ```
 
-The preceding example shows that `SomeModel` receives a `\Psr\Log\LoggerInterface` object using constructor injection. In a method `doSomething`, if some error occurred, it's logged to a method `critical` (`$this->logger->critical($e);`).
+The preceding example shows that `SomeModel` receives a `\Psr\Log\LoggerInterface` object using constructor injection. In a method `doSomething`, if some error occurred, it is logged to a method `critical` (`$this->logger->critical($e);`).
 
 [RFC 5424](https://tools.ietf.org/html/rfc5424) defines eight log levels (debug, info, notice, warning, error, critical, alert, and emergency).
 
