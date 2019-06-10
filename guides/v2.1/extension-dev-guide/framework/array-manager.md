@@ -1,30 +1,27 @@
 ---
 group: php-developer-guide
 title: Array Manager
-subgroup: Framework
-menu_title: Array Manager
-menu_order: 1005
 ---
 
 ## Overview
 
-The [`Magento\Framework\Stdlib\ArrayManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Stdlib/ArrayManager.php){:target="_blank"} class provides a better way of managing the nested arrays. 
-Being more specifically, heavily nested associative arrays. It is used primarily when handling data from UiComponents within [DataProviders]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_data_source.html) and [Modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), which, are actually part of a complicated process of parsing XML files as associative arrays.
+The [`Magento\Framework\Stdlib\ArrayManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/Stdlib/ArrayManager.php){:target="_blank"} library provides the ability to manage deeply nested associative arrays. 
+The library is primarily used to handle data from UI components within [DataProviders]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_data_source.html) and [Modifiers]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_modifier_concept.html), which are actually part of a complicated process of parsing XML files in associative arrays.
 
 ## Usage
 
 |Method|Description|
 |--- |--- |
 | `exists` | Checks if the node exists in a given associative array |
-| `get` | This will return the value of the key (or node) at the end of the path, `null` is returned if the node hasn't been found. |
-| `move` | Moves a value from one path to another. |
+| `get` | Returns the value of the key (or node) at the end of the path, `null` is returned if the node hasn't been found. |
+| `move` | Moves a value from one path to another |
 | `remove` | Removes node and returns modified array |
 | `replace` | Updates the existing nodes and returns the modified array |
 | `set` | Set value into node and returns modified data |
 
 #### Example 1
 
-Let's have a look at the following [LayoutProcessor implementation]({{ site.mage2bloburl }}/1f9186c3b9a96c5e642fd5d3d31ac5c7e1877d2b/app/code/Magento/Checkout/Block/Checkout/LayoutProcessor.php#L143){:target="_blank"}, of how a custom field is added to checkout billing address.
+The following example shows how to add a custom field to the checkout billing address using the [LayoutProcessor implementation]({{ site.mage2bloburl }}/1f9186c3b9a96c5e642fd5d3d31ac5c7e1877d2b/app/code/Magento/Checkout/Block/Checkout/LayoutProcessor.php#L143){:target="_blank"}.
 
 ```php
 <?php
@@ -52,7 +49,7 @@ public function process($jsLayout)
 }
 ```
 
-By using the `Magento\Framework\Stdlib\ArrayManager`, we should have it much cleaner and there is no reason to duplicate the checking and getting the needed array.
+For a cleaner implementation of the previous example, use the `Magento\Framework\Stdlib\ArrayManager`, library to eliminate duplicate checking and get the required array.
 
 ```php
 <?php
@@ -99,7 +96,7 @@ use Magento\Framework\Stdlib\ArrayManager;
 
 #### Example 2
 
-Let's suppose you have the following nested array:
+Suppose you have the following nested array:
 
 ```php
 $data = [
@@ -117,7 +114,7 @@ $data = [
 ]
 ```
 
-By using `Magento\Framework\Stdlib\ArrayManager`, you should be able to perform the next actions:
+You can use the  `Magento\Framework\Stdlib\ArrayManager` library to access items in the array:
 
 ```php
 ...
