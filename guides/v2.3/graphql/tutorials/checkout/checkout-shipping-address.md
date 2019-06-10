@@ -119,7 +119,7 @@ mutation {
 
 ## Use the existing customer's address
 
-First, query the customer to return the list of address IDs.
+First, query the customer to return a list of address IDs.
 
 **Request**
 

@@ -14,7 +14,7 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
-GraphQL supports [2 types of product]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) which can be added into shopping cart:
+GraphQL supports [two types of product]({{ page.baseurl }}/graphql/reference/product-interface-implementations.html) which can be added into shopping cart:
  
  * simple product
  * virtual product
