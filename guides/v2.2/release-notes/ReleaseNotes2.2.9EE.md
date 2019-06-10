@@ -547,9 +547,6 @@ See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/instal
 <!-- MAGETWO-96898 -->
 * Tier pricing for bundle products now works as expected: Magento displays the correct price in the cart, and reminds customers that they can buy a specific quantity of the product for a discount. Previously, Magento did not calculate the price correctly, and did not display any informative messages about tier pricing on the category and product pages.
 
-### Quick Order
-
-<!-- MAGETWO-97523 -->* The quick order form now handles the SKUs that you enter for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
 
 ### Reports
 

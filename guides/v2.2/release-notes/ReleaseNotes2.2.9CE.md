@@ -264,7 +264,7 @@ s
 
 	* `--lock-file-path=LOCK-FILE-PATH` The path where file locks will be saved.
 
-See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-subcommands-lock.html
+See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-subcommands-lock.html).
 
 
 ### Customer custom attributes
@@ -408,13 +408,10 @@ See https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/Install-cli-
 
 <!-- MAGETWO-99247 -->* Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prics were  not saved on the stor-view level when Catalog Price Scope was to **Global**. 
 
-<!-- MAGETWO-96062 -->* The quick order form now handles the SKUs that you enter  for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
+<!-- MAGETWO-96062, 97523 -->* The quick order form now handles the SKUs that you enter  for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
 
 <!-- MAGETWO-96898 -->* Tier pricing for bundle products now works as expected: Magento displays the correct  price in the cart, and reminds customers that they can buy a specific quantity of the  product for a discount. Previously, Magento did not calculate the price correctly, and did not display any informative messages about tier pricing on the category and product pages. 
 
-### Quick Order
-
-<!-- MAGETWO-97523 -->* The quick order form now handles the SKUs that you enter  for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
 
 ### Reports
 
