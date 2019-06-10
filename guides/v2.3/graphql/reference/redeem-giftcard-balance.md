@@ -15,14 +15,14 @@ Run this mutation on behalf of logged-in customers only. [Get customer authoriza
 
 ## Example usage
 
-The following example redeems the gift card with code `“00SBOLF4LJDY”`.
+The following example redeems the gift card with code `“056MHP57TJ5C”`.
 
 **Request**
 
 ``` text
 mutation {
   redeemGiftCardBalanceAsStoreCredit(
-    input : { gift_card_code: “00SBOLF4LJDY”}
+    input : { gift_card_code: “056MHP57TJ5C”}
   ) {
     balance {
       currency
@@ -38,16 +38,16 @@ mutation {
 
 ```json
 {
- “data”: {
-   “redeemGiftCardBalanceAsStoreCredit”: {
-     “balance”: {
-       “currency”: “USD”,
-       “value”: 0
-     },
-     “code”: “00SBOLF4LJDY”,
-     “expiration_date”: null
-   }
- }
+  "data": {
+    "redeemGiftCardBalanceAsStoreCredit": {
+      "balance": {
+        "currency": "USD",
+        "value": 0
+      },
+      "code": "056MHP57TJ5C",
+      "expiration_date": null
+    }
+  }
 }
 ```
 
