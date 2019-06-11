@@ -23,10 +23,16 @@ These release notes can include:
   - Set the [shipping address]({{page.baseurl}}/graphql/reference/quote-set-shipping-address.html). Address books are supported.
   - Set the [billing address]({{page.baseurl}}/graphql/reference/quote-set-billing-address.html). Address books are supported.
   - Set the [shipping method]({{page.baseurl}}/graphql/reference/quote-shipping-method.html). Supported methods include DHL, FedEx, Flat Rate, Free Shipping, Table Rate, UPS, and USPS.
-  - Set the [payment method]({{page.baseurl}}/graphql/reference/quote-payment-method.html). Supported methods include Bank Transfer, Cash on Delivery, Check/Money Order, and Purchase Order.
+  - Set the [payment method]({{page.baseurl}}/graphql/reference/quote-payment-method.html). Supported methods include Bank Transfer, Cash on Delivery, Check/Money Order, Purchase Order, and Zero Subtotal Checkout.
   - [Apply]({{page.baseurl}}/graphql/reference/quote-apply-coupon.html) or [remove]({{page.baseurl}}/graphql/reference/quote-remove-coupon.html) cart coupons.
   - [Assign an email]({{page.baseurl}}/graphql/reference/quote-set-guest-email.html) to a guest cart.
   - [Place an order]({{page.baseurl}}/graphql/reference/quote-place-order.html).
+
+- {:.new} **Added new queries and extended the functionality of others.**
+
+  - The [`isEmailAvailable` query]({{page.baseurl}}/graphql/reference/customer.html) checks whether the specified email address has already been used to create an account.
+  - The [`cart` query]({{page.baseurl}}/graphql/reference/quote.html) can now return information set by mutations that perform cart operations, including product information, shipping and billing addresses, shipping and payment methods, and applied coupons. The query also returns calculated totals.
+  - The `customerPaymentTokens` query returns the signed-in customer's payment tokens.
 
 - {:.new} **Queries can now be performed as HTTP GET or POST operations.**
 
