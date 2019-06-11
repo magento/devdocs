@@ -231,7 +231,7 @@ s
 
 <!-- MAGETWO-72961 -->* Magento now uses the value of the  default billing address attribute as expected during checkout. [GitHub-8777](https://github.com/magento/magento2/issues/8777)
 
-<!-- MAGETWO-93521 -->* Custom customer attributes now show as expected in the Admin customer create and edit forms. Previously, these attributes were not displayed unless  configued for display on the Customer Registration or Customer Account Edit forms. [GitHub-14456](https://github.com/magento/magento2/issues/14456)
+<!-- MAGETWO-93521 -->* Custom customer attributes now show as expected in the Admin customer create and edit forms. Previously, these attributes were not displayed unless configured for display on the Customer Registration or Customer Account Edit forms. [GitHub-14456](https://github.com/magento/magento2/issues/14456)
 
 
 <!-- ENGCOM-4132 -->* Removed an unneeded space from the title of the My Account page in mobile view. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20782](https://github.com/magento/magento2/pull/20782)*. [GitHub-20723](https://github.com/magento/magento2/issues/20723)
@@ -406,7 +406,7 @@ See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/instal
 
 ### Pricing
 
-<!-- MAGETWO-99247 -->* Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prics were  not saved on the stor-view level when Catalog Price Scope was to **Global**. 
+<!-- MAGETWO-99247 -->* Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prices were not saved on the store-view level when Catalog Price Scope was set to **Global**.
 
 <!-- MAGETWO-96062, 97523 -->* The quick order form now handles the SKUs that you enter  for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
 
@@ -540,7 +540,7 @@ See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/instal
 
 ### Wishlist
 
-<!-- MAGETWO-73613 -->* The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesiraable and inaccurate changes in quantity
+<!-- MAGETWO-73613 -->* The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesirable and inaccurate changes in quantity
 
 <!-- ENGCOM-4513 -->* Customer wishlists now include review summaries for included products. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21759](https://github.com/magento/magento2/pull/21759)*. [GitHub-21419](https://github.com/magento/magento2/issues/21419)
 
