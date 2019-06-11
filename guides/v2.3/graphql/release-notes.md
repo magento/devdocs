@@ -17,13 +17,14 @@ These release notes can include:
 
 ## {{site.data.var.ce}} 2.3.2
 
-- {:.new} **Added mutations to support the following cart operations and checkout:**
-  - Add [simple products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) and [virtual products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) to a cart.
+- {:.new} **Added mutations to support the following cart operations and checkout for logged-in and guest customers:**
+  - Add [simple products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) to a cart.
+  - Add [virtual products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) to a cart.
   - Set the [shipping address]({{page.baseurl}}/graphql/reference/quote-set-shipping-address.html). Address books are supported.
   - Set the [billing address]({{page.baseurl}}/graphql/reference/quote-set-billing-address.html). Address books are supported.
   - Set the [shipping method]({{page.baseurl}}/graphql/reference/quote-shipping-method.html). Supported methods include DHL, FedEx, Flat Rate, Free Shipping, Table Rate, UPS, and USPS.
   - Set the [payment method]({{page.baseurl}}/graphql/reference/quote-payment-method.html). Supported methods include Bank Transfer, Cash on Delivery, Check/Money Order, and Purchase Order.
-  - [Apply]({{page.baseurl}}/graphql/reference/quote-apply-coupon.html) or [remove]({{page.baseurl}}/graphql/reference/quote-remove-coupon.html) a coupon to a cart.
+  - [Apply]({{page.baseurl}}/graphql/reference/quote-apply-coupon.html) or [remove]({{page.baseurl}}/graphql/reference/quote-remove-coupon.html) cart coupons.
   - [Assign an email]({{page.baseurl}}/graphql/reference/quote-set-guest-email.html) to a guest cart.
   - [Place an order]({{page.baseurl}}/graphql/reference/quote-place-order.html).
 
@@ -34,7 +35,7 @@ These release notes can include:
   - `category`
   - `cmsBlocks`
   - `cmsPage`
-  - `products`q
+  - `products`
   - `urlResolver`
 
   You must send these queries as HTTP GET operations to cache the results.
