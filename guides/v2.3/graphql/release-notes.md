@@ -18,8 +18,9 @@ These release notes can include:
 ## {{site.data.var.ce}} 2.3.2
 
 - {:.new} **Added mutations to support the following cart operations and checkout for logged-in and guest customers:**
+
   - Add [simple products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) to a cart.
-  - Add [virtual products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) to a cart.
+  - Add [virtual products]({{page.baseurl}}/graphql/reference/quote-add-virtual-products.html) to a cart.
   - Set the [shipping address]({{page.baseurl}}/graphql/reference/quote-set-shipping-address.html). Address books are supported.
   - Set the [billing address]({{page.baseurl}}/graphql/reference/quote-set-billing-address.html). Address books are supported.
   - Set the [shipping method]({{page.baseurl}}/graphql/reference/quote-shipping-method.html). Supported methods include DHL, FedEx, Flat Rate, Free Shipping, Table Rate, UPS, and USPS.
