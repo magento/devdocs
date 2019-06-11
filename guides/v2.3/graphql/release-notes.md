@@ -3,7 +3,7 @@ group: graphql
 title: Release Notes
 ---
 
-*Release notes published March 2019.*
+*Release notes published June 2019.*
 
 GraphQL is a flexible and performant API that allows you to build custom front-ends, including headless storefronts, [Progressive Web Apps](https://github.com/magento-research/pwa-studio) (PWA), and mobile apps for Magento.
 
@@ -14,6 +14,29 @@ These release notes can include:
 
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
+
+## {{site.data.var.ce}} 2.3.2
+
+- {:.new} **Added mutations to support the following cart operations and checkout:**
+  - Add [simple products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) and [virtual products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) to a cart.
+  - Set the [shipping address]({{page.baseurl}}/graphql/reference/quote-set-shipping-address.html). Address books are supported.
+  - Set the [billing address]({{page.baseurl}}/graphql/reference/quote-set-billing-address.html). Address books are supported.
+  - Set the [shipping method]({{page.baseurl}}/graphql/reference/quote-set-shipping-method.html). Supported methods include DHL, FedEx, Flat Rate, Free Shipping, Table Rate, UPS, and USPS.
+  - Set the [payment method]({{page.baseurl}}/graphql/reference/quote-payment-method.html). Supported methods include Bank Transfer, Cash on Delivery, Check/Money Order, and Purchase Order.
+  - [Apply]({{page.baseurl}}/graphql/reference/quote-apply-coupon.html) or [remove]({{page.baseurl}}/graphql/reference/quote-remove-coupon.html) a coupon to a cart.
+  - [Assign an email]({{page.baseurl}}/graphql/reference/quote-set-guest-email.html) to a guest cart.
+  - [Place an order]({{page.baseurl}}/graphql/reference/quote-place-order.html).
+
+- {:.new} **Queries can now be performed as HTTP GET or POST operations.**
+
+- {:.new} **Magento can use Varnish or full-page caching to [cache]({{page.baseurl}}/graphql/caching.html) pages rendered from the results of the following GraphQL queries:**
+  - `category`
+  - `cmsBlocks`
+  - `cmsPage`
+  - `products`q
+  - `urlResolver`
+
+  You must send these queries as HTTP GET operations to cache the results.
 
 ## {{site.data.var.ce}} 2.3.1
 
