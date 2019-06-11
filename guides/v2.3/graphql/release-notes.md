@@ -30,6 +30,7 @@ These release notes can include:
 - {:.new} **Queries can now be performed as HTTP GET or POST operations.**
 
 - {:.new} **Magento can use Varnish or full-page caching to [cache]({{page.baseurl}}/graphql/caching.html) pages rendered from the results of the following GraphQL queries:**
+
   - `category`
   - `cmsBlocks`
   - `cmsPage`
