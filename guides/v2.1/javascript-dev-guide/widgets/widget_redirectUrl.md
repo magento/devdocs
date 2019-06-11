@@ -2,8 +2,6 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: RedirectUrl widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_redirectUrl.html
 ---
 
 ## Overview
