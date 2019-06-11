@@ -21,7 +21,7 @@ These release notes can include:
   - Add [simple products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) and [virtual products]({{page.baseurl}}/graphql/reference/quote-add-simple-products.html) to a cart.
   - Set the [shipping address]({{page.baseurl}}/graphql/reference/quote-set-shipping-address.html). Address books are supported.
   - Set the [billing address]({{page.baseurl}}/graphql/reference/quote-set-billing-address.html). Address books are supported.
-  - Set the [shipping method]({{page.baseurl}}/graphql/reference/quote-set-shipping-method.html). Supported methods include DHL, FedEx, Flat Rate, Free Shipping, Table Rate, UPS, and USPS.
+  - Set the [shipping method]({{page.baseurl}}/graphql/reference/quote-shipping-method.html). Supported methods include DHL, FedEx, Flat Rate, Free Shipping, Table Rate, UPS, and USPS.
   - Set the [payment method]({{page.baseurl}}/graphql/reference/quote-payment-method.html). Supported methods include Bank Transfer, Cash on Delivery, Check/Money Order, and Purchase Order.
   - [Apply]({{page.baseurl}}/graphql/reference/quote-apply-coupon.html) or [remove]({{page.baseurl}}/graphql/reference/quote-remove-coupon.html) a coupon to a cart.
   - [Assign an email]({{page.baseurl}}/graphql/reference/quote-set-guest-email.html) to a guest cart.
@@ -30,6 +30,7 @@ These release notes can include:
 - {:.new} **Queries can now be performed as HTTP GET or POST operations.**
 
 - {:.new} **Magento can use Varnish or full-page caching to [cache]({{page.baseurl}}/graphql/caching.html) pages rendered from the results of the following GraphQL queries:**
+
   - `category`
   - `cmsBlocks`
   - `cmsPage`
