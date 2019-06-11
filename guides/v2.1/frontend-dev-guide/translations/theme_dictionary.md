@@ -21,12 +21,6 @@ When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endg
 
 If there are different translations for one string, the theme dictionary translations have priority over the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} translations, and child theme translations have priority over parent theme translations.
 
-## What are database translations
-
-* Translations applied by manually overriding on frontend
-* Stored in the *translation* database table
-* Enable the Translate Inline option under *STORE > Settings > Configuration > ADVANCED > Developer*
-
 ## Creating a theme dictionary to override parent strings for default locale
 
 The translations priority described earlier is applied for the default `en_US` locale as well. So you can use the `en_US.csv` dictionary to customize the strings used in the default locale.
