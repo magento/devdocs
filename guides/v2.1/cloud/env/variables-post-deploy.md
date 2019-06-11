@@ -41,7 +41,7 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
           - 'http://example2.com/test'
     ```
 
--   **multiple pages**—Use the following format to cache multiple pages according to a specific pattern:
+-   **multiple pages**—Use the following format to cache multiple pages according to a specific regular expression pattern:
 
     ```terminal
     <entity_type>:<store_id>:<pattern>
@@ -51,13 +51,15 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
     -  `store_id`: Use the ID of the store or an asterisk (\*) for all stores
     -  `pattern`: Use a `regexp` pattern to filter the URLs or an asterisk (\*) for all pages 
 
-    The following example caches all `category` pages and `cms` pages:
+    The following example caches all category pages for store 1, any category pages that begin with `car_` and do not end with `html` for store 2, any category pages that begin with `tires_` for store 3, and all `cms` pages:
 
     ```yaml
     stage:
       post-deploy: 
         WARM_UP_PAGES:
-          - category:*:*
+          - "category:1:*"
+          - "category:2:|car_.*?\.html|"
+          - "category:3:|tires_.*|"
           - cms-page:*:*
     ```
 
