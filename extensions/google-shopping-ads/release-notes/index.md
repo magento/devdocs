@@ -23,7 +23,7 @@ Google Shopping ads Channel 2.0.0 is generally available for versions 2.2.4+ and
 
 - {:.fix} **Resolved Configurable Product Issues**: Configurable product (parent/child) handling has been improved.
     - <!--3372-->Corrected an issue preventing child products from inheriting the parent description and causing Google to disapprove products for missing descriptions
-    - <!--3297, 3341, 3410-->Corrected and improved the gtag pageview trigger when selecting options for a child product and when viewing a child product in the cart
+    - <!--3297, 3341, 3410-->Corrected and improved the gtag (pageview) trigger when selecting options for a child product and when viewing a child product in the cart
 
 - {:.fix} **Index Management Improvements**: Indexing processes between Magento and Google have been updated for increased efficiency and performance.
     <!--3004, 3298, 3343, 3480, 3481, 3465, 3472-->
@@ -37,7 +37,7 @@ Google Shopping ads Channel 2.0.0 is generally available for versions 2.2.4+ and
 
 - {:.fix} **Product Attribute Updates**: <!--3485-->Updated attribute management to allow the deletion of the Google Merchant Center Category attribute, which can be created by the Google application.
 
-- {:.new} **Magento Log Exceptions**: <!--3439, requires update to configuration reference-->Implemented indexer actions logs to help troublshoot.
+- {:.new} **Magento Log Exceptions**: <!--3439, requires update to configuration reference-->Implemented indexer actions logging to help troublshoot.
 
 
 ### v1.1.2
