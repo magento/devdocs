@@ -49,6 +49,11 @@ To ensure the stability of your customizations and prevent upgrades from overwri
     `@font-display: swap` is declared by default for Magento Blank theme in `app/design/frontend/Magento/blank/web/css/source/_typography.less`.
     
     Fallback web fonts that are used by default in Magento are located in `lib/web/css/source/lib/variables/_typography.less`.
+    
+### Font head type
+
+`<font>` is added to HTML `<head>` type for the layout in `lib/internal/Magento/Framework/View/Layout/etc/head.xsd`. It means that fonts and icons can be preloaded by default. As a result custom fonts can be delivered faster.
+
 ## Overview of Magento's Icon CSS
 
 In addition to including custom fonts in your Magento Blank theme, you also can include custom fonts for any icons in the Blank theme. The icon font files for the Magento Blank theme are located in the `lib/web/fonts/Blank-Theme-Icons` directory. The `lib/web/css/source/lib/variables/_typography.less` file defines the font icon path and name for the icons and the `web/css/source/_icons.less` file uses these files to define the icon font face itself, which should be used in all CSS declarations.
