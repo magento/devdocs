@@ -29,7 +29,7 @@ Default Luma theme critical CSS file is located in `app/design/frontend/Magento/
 If there is not `critical.css` for custom theme but there is Luma theme, Luma's `critical.css` will be used.
 Critical css file path can also be configured in `di.xml` as a constructor `filePath` argument in `Magento\Theme\Block\Html\Header\CriticalCss` block.
 
-To generate critical CSS for your theme online generators can be used or you can create it by yourself. While creating your own critical CSS adhere to the following principles:
+To generate critical CSS for your theme critical path CSS generators like [Penthouse](https://www.npmjs.com/package/penthouse) or [Critical](https://www.npmjs.com/package/critical) can be used. Or you can create it by yourself. While creating critical CSS adhere to the following principles:
 
 - Minify your `critical.css` to reduce it's size.
 - Do not duplicate your styles in `critical.css` and non-critical style sheets.
@@ -37,8 +37,8 @@ To generate critical CSS for your theme online generators can be used or you can
 
 ### Critical CSS loader
 
-There is a loading spinner in critical styles if CSS critical path is enabled in configuration. Loader explains to users that something is still loading and it helps to increase the user experience.
-After non-critical CSS is loaded and applied, spinner disappears. External developers should either override `main_css_preloader` block defined in `Magento/Theme/view/frontend/layout/default.xml` or hide loading spinner after non-critical CSS is loaded.
+There is a preloading spinner in critical styles if CSS critical path is enabled in configuration. It is added in `Magento/Theme/view/frontend/layout/default.xml`. Preloader explains to users that something is still loading and it helps to increase the user experience.
+After non-critical CSS is loaded and applied, spinner disappears. But spinner disappears only in case if you have CSS styles from Blank theme CSS. If you have your own CSS rule, you should hide preloader by `data-role='main-css-loader'` attribute.
 
 ## Critical CSS performance improvements
 
@@ -50,7 +50,7 @@ Introducing critical path CSS to Magento leads to the following performance opti
 
 2. First meaningful paint time improved from 3.5 sec to 2.3 sec.
 
-![First meaningful time improved]({{ site.baseurl }}/common/images/critical_css_improvements2.png)
+![First meaningful paint time improved]({{ site.baseurl }}/common/images/critical_css_improvements2.png)
 
 3. Speed index increased by 0.8 sec.
 
