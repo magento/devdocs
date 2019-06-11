@@ -31,7 +31,7 @@ Amazon Sales Channel install is a `.zip` file available from the Magento Marketp
       composer require magento/services-connector:~1.0.3
       ```
 
-    - Enter your [authentication keys]({{ site.baseurl }}/guides/v2.3/install-gde/prereq/connect-auth.html). Your public key is your username; your private key is your password.
+    - Enter your [authentication keys]({{ site.baseurl }}/guides/{{ site.version }}/install-gde/prereq/connect-auth.html). Your public key is your username; your private key is your password.
     - Wait for Composer to finish updating your project dependencies and make sure there aren’t any errors.
 1. After installing, enter an [API Key](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/amazon-verify-api-key.html) to complete configuration.
 
