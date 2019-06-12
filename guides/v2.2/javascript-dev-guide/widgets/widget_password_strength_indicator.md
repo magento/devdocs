@@ -37,7 +37,8 @@ The password strength indicator widget has the following options:
 -   [passwordSelector](#password_strength_indicator_password_selector)
 -   [passwordStrengthMeterSelector](#password_strength_indicator_password_strength_meter_selector)
 -   [passwordStrengthMeterLabelSelector](#password_strength_indicator_password_strength_meter_label_selector)
--   [defaultClassName](#password_strength_indicator_default_class_name)
+-   [formSelector](#password_strength_indicator_form_selector)
+-   [emailSelector](#password_strength_indicator_email_selector)
 
 ### passwordSelector {#password_strength_indicator_password_selector}
 
@@ -63,18 +64,25 @@ The selector for the password strength visualization block label.
 
 **Default value**: `[data-role=password-strength-meter-label]`
 
-### defaultClassName {#password_strength_indicator_default_class_name}
+### formSelector {#password_strength_indicator_form_selector}
 
-The class name prefix for the visualization block.
+The selector for the form block.
 
 **Type**: String 
 
-**Default value**: `password-strength-meter-`
+**Default value**: `form`
 
+### emailSelector {#password_strength_indicator_email_selector}
+
+The selector for the email input.
+
+**Type**: String 
+
+**Default value**: `input[type="email"]`
 
 ## Events {#password_strength_indicator_events}
 
-The password strength indicator widget listens `change`, `keyup` and `paste` events on the password input.
+The password strength indicator widget listens `change`, `keyup` and `paste` events on the password and the email inputs. Listening to the email input is optional.
 
 ## Code sample
 
