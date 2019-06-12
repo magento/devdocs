@@ -56,6 +56,7 @@ The alert widget has the following options:
 -   [content]
 -   [focus]
 -   [title]
+-   [modalClass]
 
 ### `actions` {#alert_actions}
 Widget callbacks.
@@ -107,13 +108,82 @@ The title of the alert window.
 
 **Default value**: `''`
 
+### `modalClass`
+The CSS class of the alert window.
+
+**Type**: String.
+
+**Default value**: `'confirm'`
+
 ## Events {#alert_events}
 
 The alert widget implements a single event: the `always` callback.
+The `always` callback called when a modal is closed.
 
 ## Keyboard navigation {#alert_key_navigation}
 
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
+
+## Code Sample
+
+### Code sample of standalone initialization
+
+```html
+<div class="alert-modal-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/alert'
+], function ($, alert) {
+    'use strict';
+    
+    alert({
+        title: 'Alert Title',
+        content: $('.alert-modal-content'),
+        modalClass: 'alert',
+        actions: {
+            always: function() {
+                // do something when the modal is closed
+            }
+        }
+    });
+});
+</script>
+```
+
+### Code sample of initialization on an element
+
+```html
+<div class="alert-modal-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/alert'
+], function ($) {
+    'use strict';
+    
+    $('.alert-modal-content').alert({
+        title: 'Alert Title',
+        modalClass: 'alert',
+        actions: {
+            always: function() {
+                // do something when the modal is closed
+            }
+        }
+    });
+});
+</script>
+```
+
+## Result
+
+![Alert Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/alert-widget-result.png)
 
 [Magento modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/alert.js
