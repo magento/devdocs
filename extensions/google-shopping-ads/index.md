@@ -65,6 +65,21 @@ To add the Google API key:
 
 See [Onboarding Google Shopping ads](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/onboarding-google.html) to continue.
 
+## Google Shopping ads Channel Settings
+
+You have the following options for configuring Google Shopping ads Channel. You do not need to modify these settings to begin onboarding. We recommend advanced administrators consider these options.
+
+1. Log into the Magento Admin.
+
+1. On the Admin sidebar, click **Stores**. Then under **Settings**, click **Configuration**.
+
+1. Click **Services**, then **Channels**.
+
+1. Here you can:
+    - Update your Api Key information, if needed
+    - Enable Service Logs: No (default)/Yes
+        - If set to "Yes,"  all indexer action messages sent between Magento and Google are captured and handled by CRON jobs using the [Magento CRON](https://docs.magento.com/m2/ce/user_guide/system/cron.html). Advanced users can view this data for research and troubleshooting.
+
 ## Update
 
 If an update is available, a message displays when opening Google Shopping ads Channel.
