@@ -117,21 +117,21 @@ class ClassToTest extends TestCase
 
 Based on our set of data, we expect that only the last email is a valid one.
 
-Instead of having numeric keys, you can also use string keys to name each of the data set, it's easier to find the failing dataset. 
+Instead of having numeric keys, you can also use string keys to name each of the data set, it's easier to find the failing data set. 
 Check the below example:
 
 ```php
 
-    /**
-     * @return array
-     */
-    public function dataProvider(): array
-    {
-        return [
-            'First Data Set' => ['test-1', false],
-            'Second Data Set' => ['test-2', false]
-        ];
-    }
+/**
+ * @return array
+ */
+public function dataProvider(): array
+{
+    return [
+        'First Data Set' => ['test-1', false],
+        'Second Data Set' => ['test-2', false]
+    ];
+}
 ```
 
 You can read more about PHPUnit Data Providers [here](https://phpunit.readthedocs.io/en/8.0/writing-tests-for-phpunit.html#data-providers){:target="_blank"}.
