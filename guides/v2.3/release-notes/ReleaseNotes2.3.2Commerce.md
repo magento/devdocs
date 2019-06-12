@@ -375,9 +375,8 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 <!--- ENGCOM-4490-->
 * We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
-has been replaced with the following argument:
-
-`<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+has been replaced with the following argument: `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.)
+*Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 ### Catalog URL rewrite
 
@@ -697,7 +696,7 @@ Customer groups can now be successfully reassigned during order creation in the 
 <!--- ENGCOM-4281-->
 * The import process  `replace` method now works as expected. *Fix submitted by [Denys Saltanakhmedov](https://github.com/DenisSaltanahmedov) in pull request [21189](https://github.com/magento/magento2/pull/21189)*. [GitHub-18761](https://github.com/magento/magento2/issues/18761)
 
-<!--- ENGCOM-4772--> The import process now imports product quantity aa expected.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22382](https://github.com/magento/magento2/pull/22382)*. [GitHub-22355](https://github.com/magento/magento2/issues/22355)
+<!--- ENGCOM-4772--> The import process now imports product quantity as expected.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22382](https://github.com/magento/magento2/pull/22382)*. [GitHub-22355](https://github.com/magento/magento2/issues/22355)
 
 <!--- ENGCOM-3761-->
 * Custom import adapters now validate CSV files as expected if column and data are available. Previously, the CSV file was not validated, and Magento threw the following error: `Notice: Undefined index: sku in /var/www/html/hamtc/vendor/magento/module-import-export/Model/Import/Entity/AbstractEntity.php on line 411`. *Fix submitted by [Jaimin Sutariya](https://github.com/jaimin-ktpl) in pull request [19765](https://github.com/magento/magento2/pull/19765)*. [GitHub-19761](https://github.com/magento/magento2/issues/19761)
@@ -712,7 +711,7 @@ Customer groups can now be successfully reassigned during order creation in the 
 * Magento now displays the correct import status data for an import that is created using **System** > **Import** > **Advanced Pricing** > **Add/Update**. *Fix submitted by [Denys Saltanakhmedov](https://github.com/DenisSaltanahmedov) in pull request [21476](https://github.com/magento/magento2/pull/21476)*. [GitHub-21192](https://github.com/magento/magento2/issues/21192)
 
 <!--- ENGCOM-3993-->
-* The `store_view_code` column now contains data from the chosen product store. Previously, Magento did not populate the store_view_code column. *Fix submitted by [Valant13](https://github.com/Valant13) in pull request [19395](https://github.com/magento/magento2/pull/19395)*. [GitHub-17784](https://github.com/magento/magento2/issues/17784), [GitHub-19786](https://github.com/magento/magento2/issues/19786)
+* The `store_view_code` column now contains data from the chosen product store. Previously, Magento did not populate the `store_view_code` column. *Fix submitted by [Valant13](https://github.com/Valant13) in pull request [19395](https://github.com/magento/magento2/pull/19395)*. [GitHub-17784](https://github.com/magento/magento2/issues/17784), [GitHub-19786](https://github.com/magento/magento2/issues/19786)
 
 ### Index
 
