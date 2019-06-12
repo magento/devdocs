@@ -28,7 +28,6 @@ The URL to the loader image. This image is displayed when the widget is active; 
 
 **Default value**: No image by default.
 
-
 ### `template` {#l_template}
 HTML wrapper for the output, or a DOM element selector. 
 
