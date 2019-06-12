@@ -108,7 +108,7 @@ The title of the alert window.
 
 **Default value**: `''`
 
-### `modalClass`
+### `modalClass` {#alert_modalClass}
 The CSS class of the alert window.
 
 **Type**: String.
@@ -195,4 +195,5 @@ require([
 [content]: #alert_content
 [focus]: #alert_focus
 [title]: #alert_title
+[modalClass]: #alert_modalClass
 [navigation of the modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html#key_navigation
