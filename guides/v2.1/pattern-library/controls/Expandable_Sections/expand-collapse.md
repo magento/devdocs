@@ -29,7 +29,7 @@ Required fields should not be located within a collapsed section, as this increa
 
 * A simple expandable section is a container with a border, section header, and a toggle arrow (right aligned) to control the showing and hiding of content.
 ![Simple expandable section](img/simple.png)
-* A nested expandable section is a sub-section within an expandable section. The nested expandable section has all the same features as the "simple" expandable section, however the expandd and collapse control is located on the left. This is to help the User more easily identify the expandable sub-sections within an expanded section.
+* A nested expandable section is a sub-section within an expandable section. The nested expandable section has all the same features as the "simple" expandable section, however the expand and collapse control is located on the left. This is to help the User more easily identify the expandable sub-sections within an expanded section.
 ![Nested section](img/nested.png)
 * When expanded, the control (chevron symbol) points upward, and it points downward when closed or collapsed. This indicates the direction the section will expand or collapse when clicked.
 * The section deader title font size is 17px semibold.
