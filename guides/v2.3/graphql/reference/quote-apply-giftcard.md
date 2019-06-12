@@ -12,7 +12,7 @@ The `applyGiftCardToCart` mutation applies a pre-defined gift card code to the s
 
 ## Example usage
 
-The following example adds a gift card code called `049XDMZ6L81X` to a cart.
+The following example adds a gift card with the code `0330CEIVTLB4` to the cart. The gift card has a value of $20.
 
 **Request**
 
@@ -20,13 +20,22 @@ The following example adds a gift card code called `049XDMZ6L81X` to a cart.
 mutation {
   applyGiftCardToCart(
     input: {
-      cart_id: "lOeLKsVkZ1PEvA8A7EaCvmEAk4JRBR7A"
-      gift_card_code: "049XDMZ6L81X"
+      cart_id: "lY8PnKhlHBGc4WS5v0Y3dWjxiA5PvvgY"
+      gift_card_code: "0330CEIVTLB4"
     }
   ) {
     cart {
       applied_gift_cards {
+        applied_balance {
+          value
+          currency
+        }
         code
+        current_balance {
+          value
+          currency
+        }
+        expiration_date
       }
     }
   }
@@ -42,7 +51,16 @@ mutation {
       "cart": {
         "applied_gift_cards": [
           {
-            "code": "049XDMZ6L81X"
+            "applied_balance": {
+              "value": 20,
+              "currency": "USD"
+            },
+            "code": "0330CEIVTLB4",
+            "current_balance": {
+              "value": 20,
+              "currency": "USD"
+            },
+            "expiration_date": null
           }
         ]
       }

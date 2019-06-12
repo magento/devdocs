@@ -427,11 +427,14 @@ Attribute |  Data Type | Description
 
 #### AppliedGiftCard object {#AppliedGiftCard}
 
-The `AppliedGiftCard` object must contain the following attributes:
+The `AppliedGiftCard` object can contain the following attributes:
 
 Attribute |  Data Type | Description
 --- | --- | ---
-`code` | String! | The gift card code applied to the order
+`applied_balance` | Money | Applied balance to the current cart
+`code` | String | The gift card code applied to the order
+`current_balance` | Money | Current balance remaining on the gift card
+`expiration_date` | String | Gift card expiration date
 
 #### AvailablePaymentMethod object {#AvailablePaymentMethod}
 
