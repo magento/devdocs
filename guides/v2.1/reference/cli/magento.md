@@ -8,4 +8,4 @@ functional_areas:
 
 {% assign file = site.data.codebase.v2_1.open-source.bin-magento %}
 
-{% include config/cli-reference-template.md %}
+{% include reference/cli-template.md %}

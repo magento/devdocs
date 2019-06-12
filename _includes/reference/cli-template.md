@@ -19,7 +19,7 @@ The initial list is auto generated using `bin/magento list` command at the {{ si
 {{ command.description }}
 
 ```bash
-{{ command.usage }}
+bin/magento {{ command.usage }}
 ```
 
   {% unless arguments.size == 0 %}
