@@ -37,7 +37,7 @@ Google Shopping ads Channel 2.0.0 is generally available for versions 2.2.4+ and
 
 - {:.fix} **Product Attribute Updates**: <!--3485-->Updated attribute management to allow the deletion of the Google Merchant Center Category attribute, which can be created by the Google application.
 
-- {:.new} **Magento Log Exceptions**: <!--3439, requires update to configuration reference-->Implemented indexer actions logging to help troublshoot.
+- {:.new} **Magento Log Exceptions**: <!--3439-->Implemented **Enable Services Logs** feature to help in troubleshooting. See the [Channels](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) topic in the Configuration Reference.
 
 
 ### v1.1.2
