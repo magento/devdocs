@@ -9,7 +9,7 @@ menu_order: 3
 
 ## Overview of adding CLI commands {#cli-add-over}
 
-Magento enables your component to add commands to our Symfony-like command-line interface (CLI). 
+Magento enables your component to add commands to our [Symfony-like command-line interface (CLI)](https://symfony.com/doc/current/components/console.html). 
 
 ### About the Magento CLI
 {% include install/new-cli-intro.md %}

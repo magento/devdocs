@@ -51,7 +51,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
 ```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     ...
-    <datasource>
+    <dataSource>
         <!-- 
             DataProvider should retrieve information about product. In our case will be good to retrieve
             formatted prices with currency code, etc... and raw prices.
@@ -80,7 +80,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
                 <primaryFieldName/>
             </settings>
         </dataProvider>
-    </datasource>
+    </dataSource>
     <columns name="some_columns" component="SomeVendor_SomeComponent/js/product/list/listing">
         <!-- 
             Price columns is composite component (it has children),
