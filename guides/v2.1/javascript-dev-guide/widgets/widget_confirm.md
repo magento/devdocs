@@ -89,7 +89,6 @@ Close the confirmation window when a user clicks on the overlay.
 
 **Default value**: `true`
 
-
 ### `content` {#confirm_content}
 The confirmation window content.
 
