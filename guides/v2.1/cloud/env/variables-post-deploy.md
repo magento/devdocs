@@ -44,23 +44,29 @@ Customize the list of pages used to preload the cache in the `post_deploy` stage
 -   **multiple pages**—Use the following format to cache multiple pages according to a specific regular expression pattern:
 
     ```terminal
-    <entity_type>:<store_id>:<pattern>
+    <entity_type>:<pattern|url>:<store_id|store_code>
     ```
 
     -  `entity_type`: Choose `category` or `cms-page`
-    -  `store_id`: Use the ID of the store or an asterisk (\*) for all stores
-    -  `pattern`: Use a `regexp` pattern to filter the URLs or an asterisk (\*) for all pages 
+    -  `pattern|url`: Use a `regexp` pattern or an exact match `url` to filter the URLs, or use an asterisk (\*) for all pages 
+    -  `store_id|store_code`: Use the ID or Code of the store or an asterisk (\*) for all stores
 
-    The following example caches all category pages for store 1, any category pages that begin with `car_` and do not end with `html` for store 2, any category pages that begin with `tires_` for store 3, and all `cms` pages:
+    The following example caches: 
+    - all category pages for store with ID 1
+    - category page `cars` for store with code `store_en`
+    - cms page `contact` for all stores 
+    - any category page that contains `car_` and ends with `html` for store with ID 2
+    - any category page that contains `tires_` for store with code `store_gb`
 
     ```yaml
     stage:
       post-deploy: 
         WARM_UP_PAGES:
-          - "category:1:*"
-          - "category:2:|car_.*?\.html|"
-          - "category:3:|tires_.*|"
-          - cms-page:*:*
+          - "category:*:1"
+          - "category:cars:store_en"
+          - "cms-page:contact:*
+          - "category:|car_.*?\\.html$|:2"
+          - "category:|tires_.*|:store_gb"
     ```
 
 [hooks section]: {{page.baseurl}}/cloud/project/project-conf-files_magento-app.html#hooks
