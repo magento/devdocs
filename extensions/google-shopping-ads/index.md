@@ -59,7 +59,7 @@ To add the Google API key:
 
 1. Click **Save Config**.
 
-    ![Add the API Key](images/config-api-key.png)
+    ![Add the API Key](images/config-api-key2.png)
 
     {:.bs-callout .bs-callout-info}
 You can also [Enable Service Logs](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) during this step. This option is disabled by default.
