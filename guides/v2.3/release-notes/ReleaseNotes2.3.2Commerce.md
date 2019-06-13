@@ -23,6 +23,7 @@ This release includes extensive security enhancements:
 
 * **Google reCAPTCHA module for PayPal Payflow checkout**. The new PaypalRecaptcha module adds Google reCAPTCHA and CAPTCHA to the Payflow Pro checkout form.  This enhanced functionality has been added in response to malicious targeting of Magento deployments that implement Payflow Pro. Configuration information can be found in [Google reCAPTCHA](https://docs.magento.com/m2/ee/user_guide/stores/security-google-recaptcha.html).  <!--- MC-15427-->
 
+{:.bs-callout .bs-callout-note}
 Starting with the release of Magento Commerce 2.3.2, Magento will  assign and publish indexed Common Vulnerabilities and Exposures (CVE) numbers with each security bug reported to us by external parties. This  will allows users of Magento Commerce to more easily identify unaddressed vulnerabilities in their deployment.
 
 ### Performance boosts
@@ -35,7 +36,7 @@ Starting with the release of Magento Commerce 2.3.2, Magento will  assign and pu
 
 * **Product page gallery load optimization**. Product images are now loaded as quickly as other page content. In previous releases, although the product page loaded quickly, product images needed two to four additional seconds to load completely. <!--- MC-15440-->
 
-* **Improved page rendering through deferred loading and parsing of storefront JavaScript**. All non-critical JavaScript code has been relocated to the bottom of storefront pages, which speeds up page rendering and allows users to see the complete page sooner while nonessential elements remain inactive.  <!--- MC-15439-->
+* **Improved page rendering through deferred loading and parsing of storefront JavaScript**. All non-critical JavaScript code has been relocated to the bottom of storefront pages, which speeds up page rendering and allows users to see the complete page sooner while nonessential elements remain inactive. To enable this performance enhancement, you must navigate to **Stores** > **Configuration** > **Developer** > **JavaScript Settings** and enable the **Move JS code to the bottom of the page** option.   <!--- MC-15439-->
 
 ### Infrastructure improvements
 
@@ -51,9 +52,11 @@ This release contains 130 enhancements to core quality, which improve the qualit
 
 Magento now performs the following tasks as **asynchronous background processes** and sends system messages to alert Admin users when tasks complete. Moving these common administrative tasks to the background frees administrators to work on other tasks while the initial tasks are processing.
 
-* Discount coupon generation. See [Coupon Code](https://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart-coupon.html). <!--- MC-13615-->
+* Discount coupon generation. See [Coupon Code](https://docs.magento.com/m2/ee/user_guide/marketing/price-rules-cart-coupon.html). 
+<!--- MC-13615-->
 
-* Mass editing of products. <!--- MC-13613-->
+* Mass editing of products. 
+<!--- MC-13613-->
 
 * Data export. Previously, connection timeouts occurred during export of large data sets (for example, the export of 200,000 products). See [Export](https://docs.magento.com/m2/b2b/user_guide/system/data-export.html) for more information. <!--- MC-5953-->
 
@@ -63,7 +66,7 @@ Magento now performs the following tasks as **asynchronous background processes*
 
 * Improved user interface for assigning sources to products. This redesigned interface includes:
 
-    *Support for decimal order quantity
+  * Support for decimal order quantity
   * New test scenarios created to cover Credit Memo use cases
   * New InventoryGraphQl module provides attributes that return correct information about product quantities
   * Single product save (using asynchronous synchronization with legacy catalog inventory)
@@ -91,6 +94,8 @@ GraphQL performance improvements include these enhancements:
   * Place an order
 
 * **GraphQL performance test scenario coverage**. We have added PWA GraphQL test scenarios for critical checkout and catalog browsing to the performance builds. GraphQL community developers can use the new scenarios to measure storefront performance. <!--- MC-15826, 15922-->
+
+See [Release notes](https://devdocs.magento.com/guides/v2.3/graphql/release-notes.html) for a more detailed discussion of recent GraphQL bug fixes.
 
 ### Progressive Web Apps (PWA)
 
@@ -275,7 +280,8 @@ We have fixed hundreds of issues in the Magento 2.3.2 core code.
 
 <!--- MAGETWO-96429-->
 * Product search results now display the correct special price as set by a scheduled update. Previously, search results displayed the original special price, not the price set by the scheduled update.
-
+  
+{:.bs-callout .bs-callout-note}
 This fix can degrade performance in deployments that implement flat catalogs. To avoid this potential performance degradation, consider disabling flat catalogs.
 
 <!--- MAGETWO-96416-->
@@ -377,12 +383,15 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 * We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
 has been replaced with the following argument:
 
-`<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+  `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 ### Catalog URL rewrite
 
 <!--- ENGCOM-4386-->
 * URL rewrites are no longer overwritten in multisite deployments. *Fix submitted by [Anshu Mishra](https://github.com/AnshuMishra17) in pull request [21462](https://github.com/magento/magento2/pull/21462)*. [GitHub-21329](https://github.com/magento/magento2/issues/21329)
+
+
+
 
 ### Cleanup and simple code refactoring
 
@@ -495,7 +504,7 @@ has been replaced with the following argument:
 
   * `--lock-file-path=LOCK-FILE-PATH`—The path where file locks will be saved.
 
-See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-lock.html).
+  See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/install-gde/install/cli/install-cli-subcommands-lock.html).
 
 ### Customers
 
@@ -524,7 +533,7 @@ See [Configure the lock provider](https://devdocs.magento.com/guides/v2.3/instal
 * Magento no longer applies the default customer group settings to customers that have already been assigned to another group.
 
 <!--- MAGETWO-98087-->
-Customer groups can now be successfully reassigned during order creation in the Admin.
+* Customer groups can now be successfully reassigned during order creation in the Admin.
 
 <!--- ENGCOM-4678-->
 * Customer accounts are now confirmed when a customer clicks the email activation link. Previously, Magento confirmed the customer account even when the customer did not click on the email activation link. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [22147](https://github.com/magento/magento2/pull/22147)*. [GitHub-22052](https://github.com/magento/magento2/issues/22052)
@@ -697,7 +706,8 @@ Customer groups can now be successfully reassigned during order creation in the 
 <!--- ENGCOM-4281-->
 * The import process  `replace` method now works as expected. *Fix submitted by [Denys Saltanakhmedov](https://github.com/DenisSaltanahmedov) in pull request [21189](https://github.com/magento/magento2/pull/21189)*. [GitHub-18761](https://github.com/magento/magento2/issues/18761)
 
-<!--- ENGCOM-4772--> The import process now imports product quantity aa expected.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22382](https://github.com/magento/magento2/pull/22382)*. [GitHub-22355](https://github.com/magento/magento2/issues/22355)
+<!--- ENGCOM-4772--> 
+* The import process now imports product quantity aa expected.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22382](https://github.com/magento/magento2/pull/22382)*. [GitHub-22355](https://github.com/magento/magento2/issues/22355)
 
 <!--- ENGCOM-3761-->
 * Custom import adapters now validate CSV files as expected if column and data are available. Previously, the CSV file was not validated, and Magento threw the following error: `Notice: Undefined index: sku in /var/www/html/hamtc/vendor/magento/module-import-export/Model/Import/Entity/AbstractEntity.php on line 411`. *Fix submitted by [Jaimin Sutariya](https://github.com/jaimin-ktpl) in pull request [19765](https://github.com/magento/magento2/pull/19765)*. [GitHub-19761](https://github.com/magento/magento2/issues/19761)
@@ -782,6 +792,14 @@ Customer groups can now be successfully reassigned during order creation in the 
 
 <!--- ENGCOM-4505-->
 * Magento now creates a log entry if an observer does not implement `ObserverInterface` in modes other than developer mode.  Previously, Magento created a log entry when in developer mode only. *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [21767](https://github.com/magento/magento2/pull/21767)*. [GitHub-21755](https://github.com/magento/magento2/issues/21755)
+
+
+### Magento Shipping
+
+* Fixed issue with the event stream cron job.
+  
+* Fixed issue with retrieving shipping labels from some AWS environments.
+
 
 ### New Relic reporting
 
@@ -916,23 +934,30 @@ Customer groups can now be successfully reassigned during order creation in the 
 
 <!--- MAGETWO-58764-->
 * Catalog search **Minimal Query Length** values are now enforced as expected.
+ 
 <!--- MAGETWO-97209-->
 * The count of products in layered navigation now equals the number of  products found by search in deployments that run B2B. Previously, fewer products were identified by search than by layered navigation.
+ 
 <!--- MAGETWO-97830-->
 * Elasticsearch quick search now works as expected when the default attribute set contains a `date` attribute that has been set to **Search = Yes**. Previously, the search page threw an exception and crashed.
+ 
 <!--- ENGCOM-4109-->
 * The performance of layered navigation queries has been improved. *Fix submitted by [Mads Nielsen](https://github.com/k4emic) in pull request [20971](https://github.com/magento/magento2/pull/20971)*. [GitHub-20969](https://github.com/magento/magento2/issues/20969)
+  
 <!--- ENGCOM-4481-->
 * The search REST API now returns the correct `total_count` of result items. Previously, the value of `total_count`  equaled `searchCriteria[pageSize]`,  not the total count of the search result items. *Fix submitted by [Ronak Patel](https://github.com/ronak2ram) in pull request [21713](https://github.com/magento/magento2/pull/21713)*. [GitHub-17295](https://github.com/magento/magento2/issues/17295)
+  
 <!--- ENGCOM-4761-->
 * The search icon on Admin page headers now works as expected. *Fix submitted by [Nirav Patel](https://github.com/niravkrish) in pull request [22154](https://github.com/magento/magento2/pull/22154)*. [GitHub-22152](https://github.com/magento/magento2/issues/22152)
+  
 <!--- ENGCOM-4620-->
-* Magento now checks concrete class while applying plugins. Previously, when  the pluginized class was virtual-typed by a class with name ending with an autogenerated suffix and without the implementation of the base concrete class, the `di:compile` process failed.  *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [22046](https://github.com/magento/magento2/pull/22046)*. [GitHub-21916](https://github.com/magento/magento2/issues/21916), [GitHub-21976](https://github.com/magento/magento2/issues/21976)
+* Magento now checks concrete class while applying plugins. Previously, when  the pluginized class was virtual-typed by a class with name ending with an autogenerated suffix and without the implementation of the base concrete class, the `di:compile` process failed.  *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [22046]
+(https://github.com/magento/magento2/pull/22046)*. [GitHub-21916](https://github.com/magento/magento2/issues/21916), [GitHub-21976](https://github.com/magento/magento2/issues/21976)
 
 ### Shipping
 
 <!--- ENGCOM-4266-->
-UPS (non XML) endpoints are now HTTPS instead of  HTTP. *Fix submitted by [Josh](https://github.com/wsajosh) in pull request [21511](https://github.com/magento/magento2/pull/21511)*.
+* UPS (non XML) endpoints are now HTTPS instead of  HTTP. *Fix submitted by [Josh](https://github.com/wsajosh) in pull request [21511](https://github.com/magento/magento2/pull/21511)*.
 
 <!--- ENGCOM-3601-->
 * Magento now provides quotes for DHL shipments when **DHL Content Type** is set to **Non Documents**. *Fix submitted by [gwharton](https://github.com/gwharton) in pull request [19487](https://github.com/magento/magento2/pull/19487)*. [GitHub-19485](https://github.com/magento/magento2/issues/19485)
@@ -1093,6 +1118,10 @@ label, types, and disabled settings, but the actual `file-content` was not repla
 
 <!--- ENGCOM-4664-->
 * You can now insert widgets that contain a WYSIWYG field into a form. Previously, when you tried to insert a widget with a `WYSIWYG` parameter into a form, the operation failed. *Fix submitted by [James Dinsdale](https://github.com/molovo) in pull request [20174](https://github.com/magento/magento2/pull/20174)*. [GitHub-19742](https://github.com/magento/magento2/issues/19742)
+
+# Known issue
+
+The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. 
 
 ## Community contributions
 
