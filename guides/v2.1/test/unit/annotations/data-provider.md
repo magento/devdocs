@@ -29,13 +29,12 @@ A Data Provider allows you to define the test once and run it multiple times wit
 For using a data provider you need to follow up the next steps:
 
 1. Create a public method, that returns an array of data sets
-2. Add a data provider annotation in the docblock of your test method
-3. Pass the data set as arguments to your test method
+1. Add a data provider annotation in the docblock of your test method
+1. Pass the data set as arguments to your test method
 
-#### Example 1
+### Example 1
 
 ```php
-
 namespace Vendor\Module;
 
 use PHPUnit\Framework\TestCase;
@@ -65,12 +64,11 @@ class ClassToTest extends TestCase
 }
 ```
 
-#### Example 2
+### Example 2
 
-Lets check the following practical example, where we'll be checking if an email is valid.
+Lets check the following practical example, where we will be checking if an email is valid.
 
 ```php
-
 namespace Vendor\Module;
 
 use PHPUnit\Framework\TestCase;
@@ -117,11 +115,10 @@ class ClassToTest extends TestCase
 
 Based on our set of data, we expect that only the last email is a valid one.
 
-Instead of having numeric keys, you can also use string keys to name each of the data set, it's easier to find the failing data set. 
+Instead of having numeric keys, you can also use string keys to name each of the data set, it is easier to find the failing data set. 
 Check the below example:
 
 ```php
-
 /**
  * @return array
  */
