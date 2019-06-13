@@ -26,7 +26,7 @@ Google Shopping ads Channel install is a `.zip` file available from the Magento 
 1. For the component name and version, click **Technical Details**.
 1. Click **Download**.
 1. Export the contents to your Magento root.
-1. Follow all instrutions for Extension [Installation]({{site.baseurl}}/extensions/install/).
+1. Follow all instructions for Extension [Installation]({{site.baseurl}}/extensions/install/).
 1. After installing, enter an API Key to complete configuration.
 
 ## Add the Google API key
@@ -61,24 +61,13 @@ To add the Google API key:
 
     ![Add the API Key](images/config-api-key.png)
 
+    {:.bs-callout .bs-callout-info}
+You can also [Enable Service Logs](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) during this step. This option is disabled by default.
+
 1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Google Shopping ads**. Magento verifies and validates the entered API key, continuing with onboarding.
 
 See [Onboarding Google Shopping ads](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/onboarding-google.html) to continue.
 
-## Google Shopping ads Channel Settings
-
-You have the following options for configuring Google Shopping ads Channel. You do not need to modify these settings to begin onboarding. We recommend advanced administrators consider these options.
-
-1. Log into the Magento Admin.
-
-1. On the Admin sidebar, click **Stores**. Then under **Settings**, click **Configuration**.
-
-1. Click **Services**, then **Channels**.
-
-1. Here you can:
-    - Update your Api Key information, if needed
-    - Enable Service Logs: No (default)/Yes
-        - If set to "Yes,"  all indexer action messages sent between Magento and Google are captured and handled by CRON jobs using the [Magento CRON](https://docs.magento.com/m2/ce/user_guide/system/cron.html). Advanced users can view this data for research and troubleshooting.
 
 ## Update
 
