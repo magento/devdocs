@@ -392,7 +392,6 @@ has been replaced with the following argument:
 
 
 
-
 ### Cleanup and simple code refactoring
 
 <!--- ENGCOM-4249-->
