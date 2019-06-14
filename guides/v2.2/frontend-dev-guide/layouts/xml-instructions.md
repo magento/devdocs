@@ -9,7 +9,7 @@ functional_areas:
 
 There are two possible ways to customize page layout in Magento:
 
-* Changing {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} files.
+* Changing [layout](https://glossary.magento.com/layout) files.
 * Altering templates.
 
 To change the page wireframe, modify the [page layout] files; all other customizations are performed in the [page configuration] or [generic layout] files. 
@@ -21,7 +21,7 @@ For example, layout changes added to `app/code/Vendor/Module/view/frontend/layou
 To add layout changes to a specific page, use a layout file that corresponds to the page's path. 
 For example, changes to the `app/code/Vendor/Module/view/frontend/layout/catalog_product_view.xml` page are loaded on the product details page.
 
-Use these {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} to:
+Use these [layout instructions](https://glossary.magento.com/layout-instructions) to:
 
 *  Move a page element to another parent element.
 *  Add content.
@@ -42,6 +42,8 @@ Use the following layout instructions to customize your layout:
 * [`<remove>`](#fedg_layout_xml-instruc_ex_rmv)
 * [`<update>`](#fedg_layout_xml-instruc_ex_upd)
 * [`<argument>`](#argument)
+* [`<block vs container>`](#block_vs_container)
+
 
 ### block {#fedg_layout_xml-instruc_ex_block}
 
@@ -51,10 +53,10 @@ Defines a block.
 
 Blocks are a foundational building unit for layouts in Magento. They are the link between a PHP block class (which contains logic) and a template (which renders content). Blocks can have children and grandchildren (and so on). Information can be passed from layout XML files to blocks using the `<arguments/>` child node. 
 
-Blocks employ templates to generate HTML. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
+Blocks employ templates to generate HTML. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
 
 {:.bs-callout .bs-callout-info}
-The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required.**
+The `class` attribute is no longer required in versions `2.2.1` and above as it will default to `Magento\Framework\View\Element\Template`. **In versions lower than `2.2.1`, the `class` attribute is still required**.
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to blocks. Otherwise, it is given a random name.
@@ -77,7 +79,7 @@ To pass parameters use the [`<argument></argument>`](#argument) instruction.
 A structure without content that holds other layout elements such as blocks and containers.
 
 **Details:** 
-A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements.
+A container renders child elements during view output generation. It can be empty or it can contain an arbitrary set of `<container>` and `<block>` elements. If the `<container>` is empty, and there is no child `<block>` available, it will not be displayed in the frontend source code. 
 
 {:.bs-callout .bs-callout-info}
 We recommend always adding a `name` to containers. Otherwise, it is given a random name.
@@ -104,6 +106,12 @@ Sample of usage in layout:
 ```
 
 This would add a new column to the page layout.
+
+### block vs. container {#block_vs_container}
+
+* Blocks represents the end of the chain in rendering HTML for Magento.
+* Containers contain blocks and can wrap them in an HTML tag.
+* Containers do not render any output if there are no children assigned to them.
 
 ### before and after attributes {#fedg_xml-instrux_before-after}
 
@@ -162,9 +170,10 @@ Calls public methods on the block API.
 To pass parameters, use the [`<argument></argument>`](#argument) instruction.
 
 ### referenceBlock and referenceContainer {#fedg_layout_xml-instruc_ex_ref}
+
 Updates in `<referenceBlock>` and `<referenceContainer>` are applied to the corresponding `<block>` or `<container>`.
 
-For example, if you make a reference by `<referenceBlock name="right">`, you're targeting the block `<block name="right">`.
+For example, if you make a reference by `<referenceBlock name="right">`, you are targeting the block `<block name="right">`.
 
 To pass parameters to a block use the [`<argument></argument>`](#argument) instruction.
 
@@ -172,7 +181,6 @@ To pass parameters to a block use the [`<argument></argument>`](#argument) instr
 |:------- |:------ |:------ |:------ |
 | `remove` | Allows to remove or cancel the removal of the element. When a container is removed, its child elements are removed as well. | true/false | no |
 | `display` | Allows you to disable rendering of specific block or container with all its children (both set directly and by reference). The block's/container's and its children' respective PHP objects are still generated and available for manipulation. | true/false | no |
-
 
 - The `remove` attribute is optional and its default value is `false`.
 
@@ -400,4 +408,3 @@ $helperMethodResult = $block->getData('helper_method_result');
 [app/code/Magento/Theme/view/frontend/layout/default.xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/layout/default.xml
 [app/code/Magento/Theme/view/frontend/templates/html/title.phtml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Theme/view/frontend/templates/html/title.phtml
 [Layout file types]: {{page.baseurl}}/frontend-dev-guide/layouts/layout-types.html
-

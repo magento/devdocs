@@ -11,7 +11,7 @@ This information is stored in Payment Token.
 
 The basic interface for Payment Token is [PaymentTokenInterface]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php).
 
-To retrieve and store token details, you need to implement a [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html). In the response handler a Payment Token {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} is created and stored in the payment {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
+To retrieve and store token details, you need to implement a [response handler]({{ page.baseurl }}/payments-integrations/payment-gateway/response-handler.html). In the response handler a Payment Token [entity](https://glossary.magento.com/entity) is created and stored in the payment [extension](https://glossary.magento.com/extension) attributes.
 
 Following sample is an example of the response handler implementation:
 
@@ -84,7 +84,7 @@ Different payment providers use different algorithms to create this hash. In mos
 
 The created response handler must be added to the handler chain in the DI configuration file `di.xml`. 
 
-Example of the Braintriee `di.xml`:
+Example of the Braintree `di.xml`:
 
 ```xml
 <virtualType name="BraintreeAuthorizationHandler" type="Magento\Payment\Gateway\Response\HandlerChain">

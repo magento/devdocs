@@ -5,10 +5,9 @@ title: Build
 menu_title: Build
 menu_order: 1
 menu_node: parent
-redirect_from: /guides/v2.0/extension-dev-guide/build.html
 ---
 
-Building your component involves laying out the file structure, creating the necessary configuration files, building out any needed {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} interfaces and services, and adding any {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} parts needed for your component.
+Building your component involves laying out the file structure, creating the necessary configuration files, building out any needed [API](https://glossary.magento.com/api) interfaces and services, and adding any [frontend](https://glossary.magento.com/frontend) parts needed for your component.
 
 ## Prerequisites {#create-component-basics}
 

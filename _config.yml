@@ -20,9 +20,6 @@ baseurl: ""
 version: "2.3"
 versions:
    -
-      name: "2.0"
-      url: /guides/v2.0/
-   -
       name: "2.1"
       url: /guides/v2.1/
    -
@@ -107,11 +104,6 @@ defaults:
       feedback_link: false
   -
     scope:
-      path: guides/v2.0
-    values:
-      sitemap: false
-  -
-    scope:
       path: guides/v2.1
     values:
       sitemap: false
@@ -175,6 +167,10 @@ kramdown:
   toc_levels: 2..3
   syntax_highlighter_opts:
     css_class: highlighter
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
 
 # Search engine settings. For more details, refer to https://github.com/algolia/jekyll-algolia
 #
@@ -191,6 +187,11 @@ algolia:
   nodes_to_index: 'p,li,td,code'
   # Override 10KB default and use our allowed max of 20KB
   max_record_size: 20000
+  settings:
+    attributesForFaceting:
+      - searchable(functional_areas)
+      - searchable(guide_version)
+      - searchable(versionless)  
 
 google:
   analytics: UA-66243208-1
@@ -205,10 +206,6 @@ check_links: true
 #
 # Magento 2 repository variable
 mage2bloburl: https://github.com/magento/magento2/blob
-
-# 2.0 variables
-gdeurl: /guides/v2.0/
-githuburl: https://github.com/magento/devdocs/tree/master/guides/v2.0/
 
 # 1.x variables
 m1xgdeurl: /guides/m1x
