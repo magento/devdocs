@@ -12,7 +12,7 @@ functional_areas:
 
 In general, *stopwords* are a language's most common words that search engines filter out after processing text. Originally, when disk space and memory were extremely limited, every kilobyte saved meant a significant improvement in performance. Therefore, search engines achieved performance gains by ignoring certain words and keeping the index small.
 
-Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still use stopwords to improve performance.
+Although we have more storage today, performance is still important. Elasticsearch, like other search engines, still uses stopwords to improve performance.
 
 You must manage your Elasticsearch stopwords using `.csv` files located in the `<magento_root>/vendor/magento/module-elasticsearch/etc/stopwords` directory or the `<magento_root>/app/code/Magento/Elasticsearch/etc/stopwords/` directory, depending on how you installed the Magento software.
 
