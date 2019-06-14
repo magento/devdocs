@@ -15,7 +15,7 @@ A Data Provider allows you to define the test once and run it multiple times wit
  {
     ...
  }
- 
+
  /**
   * @return array
   */
@@ -23,7 +23,6 @@ A Data Provider allows you to define the test once and run it multiple times wit
  {
      return [];
  }
- 
 ```
 
 For using a data provider you need to follow up the next steps:
@@ -41,26 +40,26 @@ use PHPUnit\Framework\TestCase;
 
 class ClassToTest extends TestCase
 {
-    /**
-     * @param string $scope
-     *
-     * @dataProvider dataProviderScopes
-     */
-    public function testOne(string $scope)
-    {
-        // Do your magic here
-    }
-    
-    /**
-     * @return array
-     */
-    public function dataProviderScopes(): array
-    {
-        return [
-            ['default'],
-            ['store'],
-        ];
-    }
+  /**
+    * @param string $scope
+    *
+    * @dataProvider dataProviderScopes
+    */
+  public function testOne(string $scope)
+  {
+      // Do your magic here
+  }
+
+  /**
+    * @return array
+    */
+  public function dataProviderScopes(): array
+  {
+      return [
+          ['default'],
+          ['store'],
+      ];
+  }
 }
 ```
 
@@ -75,47 +74,47 @@ use PHPUnit\Framework\TestCase;
 
 class ClassToTest extends TestCase
 {
-    /**
-     * Testable object
-     */
-    private $sut;
-    
-    ...
-    
-    /**
-     * Test if the email is valid
-     *
-     * @param string $email
-     * @param bool $result
-     *
-     * @dataProvider dataProviderEmails
-     */
-    public function testIsValidEmail(string $email, bool $result)
-    {
-        $expected = $this->sut->isValidEmail($email); 
-        $this->assertEquals($expected, $result);
-    }
-    
-    /**
-     * @return array
-     */
-    public function dataProviderEmails(): array
-    {
-        return [
-            ['first#example.com', false],
-            ['second@example', false],
-            ['second.example.com', false],
-            ['@example.com', false],
-            ['@example@example.com', false],
-            ['example@example.com', true],
-        ];
-    }
+  /**
+    * Testable object
+    */
+  private $sut;
+
+  ...
+
+  /**
+    * Test if the email is valid
+    *
+    * @param string $email
+    * @param bool $result
+    *
+    * @dataProvider dataProviderEmails
+    */
+  public function testIsValidEmail(string $email, bool $result)
+  {
+      $expected = $this->sut->isValidEmail($email);
+      $this->assertEquals($expected, $result);
+  }
+
+  /**
+    * @return array
+    */
+  public function dataProviderEmails(): array
+  {
+    return [
+      ['first#example.com', false],
+      ['second@example', false],
+      ['second.example.com', false],
+      ['@example.com', false],
+      ['@example@example.com', false],
+      ['example@example.com', true],
+    ];
+  }
 }
 ```
 
 Based on our set of data, we expect that only the last email is a valid one.
 
-Instead of having numeric keys, you can also use string keys to name each of the data set, it is easier to find the failing data set. 
+Instead of having numeric keys, you can also use string keys to name each of the data set, it is easier to find the failing data set.
 Check the below example:
 
 ```php
@@ -124,10 +123,10 @@ Check the below example:
  */
 public function dataProvider(): array
 {
-    return [
-        'First Data Set' => ['test-1', false],
-        'Second Data Set' => ['test-2', false]
-    ];
+  return [
+      'First Data Set' => ['test-1', false],
+      'Second Data Set' => ['test-2', false]
+  ];
 }
 ```
 
