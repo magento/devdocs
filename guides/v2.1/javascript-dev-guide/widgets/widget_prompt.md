@@ -39,7 +39,7 @@ require([
 ], function(prompt) { // Variable that represents the `prompt` function
 
     prompt({
-        title: jQuery.mage.__('Some title'),
+        title: $.mage.__('Some title'),
         content: jQuery.mage.__('Some content'),
         actions: {
             confirm: function(){},
