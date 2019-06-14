@@ -4,8 +4,91 @@ description: |
   We exclude from this list proofreading, spelling checks, and all minor updates.
 link: /whats-new.html
 thread: /whatsnew-feed.xml
-updated: Tue May 28 10:33:45 2019
+updated: Thu Jun 13 15:25:09 2019
 entries:
+- description: Added information about the Magento persistent module for [v2.1](https://devdocs.magento.com/guides/v2.1/mrg/ce/Persistent.html)
+    and [v2.2](https://devdocs.magento.com/guides/v2.2/mrg/ce/Persistent.html).
+  versions: 2.1.x, 2.2.x
+  type: New topic
+  date: June 8, 2019
+  link: https://github.com/magento/devdocs/pull/4707
+- description: Updated Amazon Sales Channel installation information with composer-specific
+    step.
+  versions: 2.0.0-asc
+  type: Major update
+  date: June 7, 2019
+  link: https://github.com/magento/devdocs/pull/4704
+- description: Updated the [Releases](https://devdocs.magento.com/release/) page to
+    include the Google Shopping ads Channel v1.1.2.
+  versions: 1.1.2-gsa
+  type: Major update
+  date: June 7, 2019
+  link: https://github.com/magento/devdocs/pull/4706
+- description: Added a new section that describes the [differences between blocks
+    and containers](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html#block_vs_container).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: June 7, 2019
+  link: https://github.com/magento/devdocs/pull/4599
+- description: Added [release notes](https://devdocs.magento.com/extensions/google-shopping-ads/release-notes/)
+    for Google Shopping ads Channel patch 1.1.2.
+  versions: 1.1.2-gsa
+  type: Major update
+  date: June 7, 2019
+  link: https://github.com/magento/devdocs/pull/4703
+- description: Added a [Applying patches](https://devdocs.magento.com/guides/v2.3/comp-mgr/patching.html)
+    topic to the Software Update Guide.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: New topic
+  date: June 6, 2019
+  link: https://github.com/magento/devdocs/pull/4670
+- description: Updated the [Configuration types and objects](https://devdocs.magento.com/guides/v2.3/config-guide/config/config-files.html#config-files-classes-objects)
+    for the module configuration files.
+  versions: 2.3.x
+  type: Major update
+  date: June 4, 2019
+  link: https://github.com/magento/devdocs/pull/4643
+- description: Updated the [Cloud New Relic topic](https://devdocs.magento.com/guides/v2.2/cloud/project/new-relic.html)
+    to distinguish Pro and Starter account actions and availability of services.
+  versions: 2.x
+  type: Technical changes
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4621
+- description: Added information about [accordion widget events](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_accordion.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4580
+- description: Added a known issue about Inventory Management to the 2.0.0 Amazon
+    Sales Channel [release notes](https://devdocs.magento.com/extensions/amazon-sales/release-notes/#v200).
+  versions: 2.0.0-asc
+  type: Technical changes
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4633
+- description: Added the required class for [creating and running a new console command](https://devdocs.magento.com/guides/v2.1/extension-dev-guide/cli-cmds/cli-howto.html),
+    including examples for styling the command output.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 29, 2019
+  link: https://github.com/magento/devdocs/pull/4613
+- description: Added a new topic for [Product layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/product-layouts.html)
+    in the Frontend Developers Guide.
+  versions: 2.x
+  type: Major update
+  date: May 28, 2019
+  link: https://github.com/magento/devdocs/pull/4489
+- description: Added new code examples showing you [how to use callbacks](https://devdocs.magento.com/guides/v2.3/javascript-dev-guide/widgets/widget_tabs.html)
+    on widget tab events.
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 28, 2019
+  link: https://github.com/magento/devdocs/pull/4578
+- description: Added a new paragraph that provides more context about the [purpose
+    of blocks in layouts](https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/layouts/xml-instructions.html).
+  versions: 2.1.x, 2.2.x, 2.3.x
+  type: Major update
+  date: May 28, 2019
+  link: https://github.com/magento/devdocs/pull/4596
 - description: Added a new section about [how to run API functional tests](https://devdocs.magento.com/guides/v2.3/graphql/functional-testing.html)
     in GraphQL.
   versions: 2.3.x
@@ -2248,7 +2331,7 @@ entries:
     [Custom blacklist VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-blacklist.html),
     [Custom extend Admin timeout VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/configure-fastly.html#bulkaction),
     [Custom redirect to Wordpress VCL](https://devdocs.magento.com/guides/v2.2/cloud/cdn/fastly-vcl-wordpress.html),
-    and [Custom block bad referer VCL](https://devdocs.magento.com/guides/v2.2/loud/cdn/fastly-vcl-badreferer.html).
+    and [Custom block bad referrer VCL](https://devdocs.magento.com/guides/v2.2/loud/cdn/fastly-vcl-badreferer.html).
   versions: 2.0.x, 2.1.x, 2.2.x, 2.x
   type: New
   date: Nov 29 2017

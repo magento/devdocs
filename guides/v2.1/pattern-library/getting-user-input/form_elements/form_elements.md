@@ -26,7 +26,7 @@ In most cases every text field, text box, radio button group, checkbox or checkb
 
 ## "Required" Indicator
 
-As a matter of best practices, any input that is required in order to be successfully submitted should clearly bear an indication. This is achieved by including an asterisk in relation to the form element. The asterisk should precede the label whenever the label appears above the form field.However, for left-aligned form labels the asterisk should follow the label, thus appearing between the label and form field –this improves scannability making it less likely that the user will overlook the required fields.
+As a matter of best practices, any input that is required in order to be successfully submitted should clearly bear an indication. This is achieved by including an asterisk in relation to the form element. The asterisk should precede the label whenever the label appears above the form field. However, for left-aligned form labels the asterisk should follow the label, thus appearing between the label and form field –this improves scanability making it less likely that the user will overlook the required fields.
 
 ![](img/required.png)
 
