@@ -275,6 +275,7 @@ In this phase, your module should remove all traces of its existence in the data
 | **Method**     | `uninstall()`          |
 
 **Example:** Uninstall.php
+
 ```php
 class \VendorName\ModuleName\Setup\Uninstall implements \Magento\Framework\Setup\UninstallInterface
 {
