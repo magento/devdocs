@@ -106,8 +106,8 @@ The `setCurrentPage` function sets the current page:
 
 ```php
 $searchCriteria
-    ->setCurrentPage(20)
-    ->setCurrentPage(15); //will show entities from 15-th to 20-th
+    ->setPageSize(20)
+    ->setCurrentPage(2); //show the 21st to 40th entity
 
 ```
 
