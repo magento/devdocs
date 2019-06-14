@@ -8,7 +8,7 @@ title: List widget
 {%
 include note.html
 type='warning'
-content='The list widget is deprecated since version 2.2.0. As an alternative component for the admin area, use [DynamicRows]({{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html).'
+content='The list widget is deprecated since version 2.2.0. As an alternative component for the admin area, use [DynamicRows][].'
 %}
 
 Provides a way to move items, typically a list, from one content section to another.
@@ -129,3 +129,4 @@ Removes an item from the list.
 
 [lib/web/mage/list.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/list.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
+[DynamicRows]:{{ page.baseurl }}/ui_comp_guide/components/ui-dynamicrows.html
