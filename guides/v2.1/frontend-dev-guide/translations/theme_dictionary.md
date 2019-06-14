@@ -61,6 +61,15 @@ The locale dictionary would use the default values (keys) in the left column fol
 "Card Verification Number",	<translation>
 ```
 
+## Element translations per Module
+
+You can translate same element in different ways for different modules:
+
+```text
+"Add to Cart", "Add to Cart",module, Magento_Review
+"Add to Cart", "Add to Shopping Cart", module, Magento_Catalog
+```
+
 ## Additional information
 
 - [Translations overview]
