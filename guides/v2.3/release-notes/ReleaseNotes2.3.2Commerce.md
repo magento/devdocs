@@ -391,7 +391,6 @@ has been replaced with the following argument:
 * URL rewrites are no longer overwritten in multisite deployments. *Fix submitted by [Anshu Mishra](https://github.com/AnshuMishra17) in pull request [21462](https://github.com/magento/magento2/pull/21462)*. [GitHub-21329](https://github.com/magento/magento2/issues/21329)
 
 
-
 ### Cleanup and simple code refactoring
 
 <!--- ENGCOM-4249-->
