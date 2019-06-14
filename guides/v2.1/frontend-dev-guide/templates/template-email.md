@@ -11,7 +11,7 @@ Email templates are stored in the `<module_dir>/view/<area>/email` directory of 
 
 We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates. 
 
-You can add custom templates as physical files in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} or create them using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Both approaches are described in the following sections.
+You can add custom templates as physical files in your custom [theme](https://glossary.magento.com/theme) or create them using the [Magento Admin](https://glossary.magento.com/magento-admin). Both approaches are described in the following sections.
  
 ### Customize email templates using a theme {#customize-email-theme}
 
@@ -21,7 +21,7 @@ Override email templates by creating templates in a new directory in your custom
  
 ### Customize email templates using the Magento Admin {#customize-email-admin}
 
-Any templates configured in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} take precedence over default or theme-based templates.
+Any templates configured in the Magento [Admin](https://glossary.magento.com/admin) take precedence over default or theme-based templates.
 
 1. In the Magento Admin, navigate to **MARKETING** > Communications > **Email Templates**
 2. Click **Add New Template**.
@@ -112,7 +112,6 @@ To add a variable to your template content:
 
 5. Click the name of the required variable. <br> The variable code is inserted in the template content.
 
-
 {:.bs-callout .bs-callout-info}
 The selection of available variables depends on which template you use as a basis. The template-specific variables are contained in a `<!--@vars @-->` comment at the top of each template on the file system. (For example, look at [app/code/Magento/Customer/view/frontend/email/account_new.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/view/frontend/email/account_new.html#L8).
 
@@ -123,13 +122,12 @@ Some email clients (for example, Gmail) support only CSS styles that have been a
 ### Inline styles {#inline-styles}
 
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains an `inlinecss` directive:
-```
-{% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
-```
+
+    {% raw %}{{inlinecss file="css/email-inline.css"}}{% endraw %}
 
 The `inlinecss` directive tells Magento which files to apply as inline styles on the email template. 
 
-For example, let's say an email is being sent from a store configured with the Magento Luma theme. The `inlinecss` directive first looks for a `email-inline.less` file in `<Magento_Luma_theme_dir>/web/css/email-inline.less`. However because that file doesn't exist, it will fall back to the `<Magento_Blank_theme_dir>/web/css/email-inline.less` file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.
+For example, say an email is being sent from a store configured with the Magento Luma theme. The `inlinecss` directive first looks for a `email-inline.less` file in `<Magento_Luma_theme_dir>/web/css/email-inline.less`. However because that file does not exist, it will fall back to the `<Magento_Blank_theme_dir>/web/css/email-inline.less` file. The contents of that file will then be compiled and its contents are applied as inline styles to the email template.
 
 Refer to the [Emogrifier README](https://github.com/jjriv/emogrifier#supported-css-selectors") to see what CSS selectors are supported.
 
@@ -139,9 +137,10 @@ Non-inline styles for emails come from global and template-specific styles, as d
 
 #### Global non-inline styles {#global-non-inline-styles}
 
-While the majority of styles should be applied inline, there are certain CSS styles that can't be applied inline, such as media queries or `:hover` pseudo styles. These styles must be in a `<style type="text/css"></style>` tag for them to work.
+While the majority of styles should be applied inline, there are certain CSS styles that cannot be applied inline, such as media queries or `:hover` pseudo styles. These styles must be in a `<style type="text/css"></style>` tag for them to work.
 
 The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains a `css` directive inside of a `<style>` tag:
+
 ```html
 <style type="text/css">
     {% raw %}{{var template_styles|raw}}{% endraw %}
@@ -152,7 +151,7 @@ The `<Magento_Email_module_dir>/view/frontend/email/header.html` file contains a
 
 The `css` directive compiles the contents of the provided file and outputs it. 
 
-For example, let's say an email is being sent from a store configured with the Magento Luma theme. The `css` directive first looks for an `email.less` file in `<Magento_Luma_theme_dir>/web/css`. However, because the file doesn't exist there, it falls back to `<Magento_Blank_theme_dir>/web/css/email.less`. The contents of that file are compiled and its contents output in the `<style>` tag.
+For example, say an email is being sent from a store configured with the Magento Luma theme. The `css` directive first looks for an `email.less` file in `<Magento_Luma_theme_dir>/web/css`. However, because the file does not exist there, it falls back to `<Magento_Blank_theme_dir>/web/css/email.less`. The contents of that file are compiled and its contents output in the `<style>` tag.
 
 #### Template-specific non-inline styles {#template-specific-non-inline-styles}
 
@@ -161,6 +160,7 @@ As mentioned in the preceding section, the `header.html` file outputs the `{% ra
 The value of that variable comes from any of the following: 
 
 * Any styles you add to any `html` email template inside a comment block, like in the following example, are included in the `template_styles` variable:
+
 ```html
       <!--@styles 
       .example-style { color: green; }
@@ -308,9 +308,9 @@ If you want to change the font used for emails, do the following:
 
 You can add a logo to emails by adding it to your theme or by uploading it in the Magento Admin. 
 
-Because email clients don't support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a Portable Network Graphics (PNG) logo. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
+Because email clients do not support vector-based formats such as Scalable Vector Graphics (SVG), you must prepare a logo in a standard web format: JPG, GIF, or PNG. There is a maximum file size of 2 MB, but this can be changed by an admin. Because emails are viewed on devices with a broad range of pixel densities, you should use a logo that is 3&times; the size that you actually want it to display. For example, let's say your email has a 200px &times; 100px area for the logo. The logo image should be 600px &times; 300px.
 
-If you don't have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px &times; 100px, specify `200` for the width and `100` for the height.
+If you do not have access to a high-resolution version of your logo, you can upload a normal-resolution image. For example, if your logo image is 200px &times; 100px, specify `200` for the width and `100` for the height.
 
 ### Customize the email logo using a theme {#customize-logo-theme} 
 
@@ -327,7 +327,8 @@ To customize your logo using a theme:
    Edit the `width` and `height` attributes of the `<img>` tag to reflect the area in which you want your logo to display (for example, 200 &times; 100).
   
    Example:
-   ```
+   
+   ```html
    {% raw %}
    {{if logo_width}}
        width="{{var logo_width}}"
@@ -350,7 +351,7 @@ To customize your logo using a theme:
 1. In the Magento Admin, navigate to **CONTENT** > Design > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes.
 2. In the configuration record corresponding to your store view, click **Edit**.
 3. Under **Transactional Emails** in the **Logo Image** field upload your logo and specify the alternative text for it.
-![System configuration]({{ site.baseurl }}/common/images/email_templ_logo21.png)
+   ![System configuration]({{ site.baseurl }}/common/images/email_templ_logo21.png)
 
 4. Enter values for **Logo Width** and **Logo Height**. Based on the preceding example, you would enter `200` and `100`, respectively.
 
@@ -382,6 +383,7 @@ The sales emails are configured to display all of the above values, if they're c
 ## Localization {#localization}
 
 In order to support the translation of content, all strings in emails are output using the `trans` directive. Example: 
+
 ```
 {% raw %}{{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}{% endraw %}
 {% raw %}{{trans "Once your package ships we will send you a tracking number."}}{% endraw %}
@@ -390,6 +392,7 @@ In order to support the translation of content, all strings in emails are output
 The `trans` directive will translate strings into whatever locale is configured for the store from which the email is being sent. For example, if an email is being sent from a store view that is configured to use the `fr_FR` locale, the emails are translated to French.
 
 The directive supports multiple named parameters, separated by spaces. For example:
+
 ```
 {% raw %}
 {{trans "Dear %first_name %last_name," first_name=$first_name last_name=$last_name}}
@@ -399,6 +402,7 @@ The directive supports multiple named parameters, separated by spaces. For examp
 Please note, that variable assignment must not contain spaces. 
 
 Correct:
+
 ```
 {% raw %}
 {{trans "Thank you for your order from %store_name." store_name=$store.getFrontendName()}}
@@ -406,6 +410,7 @@ Correct:
 ```
 
 Incorrect:
+
 ```
 {% raw %}
 {{trans "Thank you for your order from %store_name." store_name = $store.getFrontendName()}}

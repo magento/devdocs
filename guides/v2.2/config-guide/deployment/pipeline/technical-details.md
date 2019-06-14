@@ -278,7 +278,7 @@ File permissions and ownership must be consistent across development, build, and
 
 *   All of the following:
 
-    *   Set up the same {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} username on all systems
+    *   Set up the same [Magento file system owner](https://glossary.magento.com/magento-file-system-owner) username on all systems
     *   Make sure the web server runs as the same user on all systems
     *   Make sure the Magento file system owner is in the web server group on all systems
 *   Change Magento file system permissions and ownership on each system as necessary using the following guidelines:

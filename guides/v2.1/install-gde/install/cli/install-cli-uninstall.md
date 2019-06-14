@@ -54,7 +54,7 @@ The following message displays to confirm a successful uninstallation:
 
 By default, `bin/magento setup:upgrade` clears compiled code and the cache. Typically, you use `bin/magento setup:upgrade` to update components and each component can require different compiled classes.
 
-However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} is still cleared.) To update the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data *without* clearing compiled code, enter:
+However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The [cache](https://glossary.magento.com/cache) is still cleared.) To update the Magento [database schema](https://glossary.magento.com/database-schema) and data *without* clearing compiled code, enter:
 
 ```bash
 bin/magento setup:upgrade --keep-generated

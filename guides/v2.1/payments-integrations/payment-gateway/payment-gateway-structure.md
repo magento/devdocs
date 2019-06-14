@@ -4,14 +4,13 @@ subgroup: A_gateway
 title: Payment provider gateway structure
 menu_title: Payment provider gateway structure
 menu_order: 1
-redirect_from: /guides/v2.0/payment-gateway/payment-gateway-stucture.html
 ---
 
 The following diagram shows the basic components of the Magento payment provider gateway:
 
 ![Payment Gateway Structure]({{ site.baseurl }}/common/images/payments-integrations/pg_structure.png)
 
-The interaction between the {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} components looks like following:
+The interaction between the [payment gateway](https://glossary.magento.com/payment-gateway) components looks like following:
 
 ![Payment Gateway Structure]({{ site.baseurl }}/common/images/pg_internal_flow.png)
 

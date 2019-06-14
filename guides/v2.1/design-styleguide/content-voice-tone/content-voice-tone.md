@@ -43,7 +43,6 @@ To ensure that users with special needs – including the use of screen readers 
 For more guidance, see this summary of [Web Content Accessibility Guidelines (WCAG) 2.0 standards](https://www.w3.org/WAI/WCAG20/glance/).
 
 Also, test your content’s readability. On the [Flesch-Kincaid Readability Test](http://www.readabilityformulas.com/free-readability-formula-tests.php), Magento Admin content should score above 50, which is approximately high-school level.
-<br><br>
 
 **Use correct terms and content style.**
 
@@ -51,7 +50,7 @@ In all contexts, strive for accuracy and consistency to inspire and build confid
 
 When uncertain about using a correct term or style, consult the following documents:
 
-* The [Magento Glossary](https://magento.github.io/glossary/index.html) and [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html)
+* The [Magento Glossary](https://glossary.magento.com/)
 
 * [Admin Design Pattern Library]({{ page.baseurl }}/pattern-library/bk-pattern.html)
 
@@ -61,10 +60,9 @@ For standards not included in those documents, we use the following stylebooks:
 
 * *Second reference:* Microsoft Manual of Style, specifically these chapters:
 
-  - Content for a worldwide audience (Ch. 3)
-  - Accessible content (Ch. 4)
-  - Procedures and technical content (Ch. 6)
-<br>
+  * Content for a worldwide audience (Ch. 3)
+  * Accessible content (Ch. 4)
+  * Procedures and technical content (Ch. 6)
 
 **Avoid jargon, slang, and acronyms.**
 
@@ -72,7 +70,7 @@ Words like "optimize", "flexible", and "scalable" might be big, but they’re no
 
 Avoid terms that may not translate internationally, like metaphors, other figurative language, and humor.
 
-When introducing a term that may be unfamiliar to merchants, apply a glossary term from the [Magento Glossary](https://magento.github.io/glossary/index.html), provide further explanation, or add contextual help. To see what acronyms can be used on first reference, check the [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html) and AP Stylebook. When in doubt, use the full spelling and add the acronym in parenthesis afterword.
+When introducing a term that may be unfamiliar to merchants, apply a glossary term from the [Magento Glossary](https://glossary.magento.com/), provide further explanation, or add contextual help. To see what acronyms can be used on first reference check the AP Stylebook. When in doubt, use the full spelling and add the acronym in parenthesis afterword.
 
 *Example:*
 
@@ -85,7 +83,7 @@ When introducing a term that may be unfamiliar to merchants, apply a glossary te
 
 <ul style="list-style-type:none">
   <li><strong>No</strong> – “This SaaS feature is only available in Magento Commerce.”</li>
-  <li>Yes – “This {% glossarytooltip 4fd82444-6f73-436c-9e67-04f9a6b0fa9d %}software as a service{% endglossarytooltip %} (SaaS) feature is only available in Magento Commerce.”</li>
+  <li>Yes – “This [software as a service](https://glossary.magento.com/software-as-a-service) (SaaS) feature is only available in Magento Commerce.”</li>
 </ul>  
 <br>
 
@@ -182,8 +180,8 @@ Consistency is critical. For example, wherever content is displayed in [Data Tab
 
 Take a neutral tone – don’t blame a merchant or in any way indicate that the merchant made a mistake. Use “business casual” and easy-to-understand language. Avoid personal pronouns and technical jargon. Content structure and formatting should follow this order:
 
-1.	Tell merchants what went wrong, in specific terms.
-2.	Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
+1. Tell merchants what went wrong, in specific terms.
+2. Instruct how to fix the problem and continue the current task. If the error can’t be resolved online, try to give merchants an appropriate offline contact option and a timeframe when they should try again.
 
 *Example:*
 

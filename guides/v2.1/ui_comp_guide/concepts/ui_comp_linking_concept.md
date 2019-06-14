@@ -14,7 +14,7 @@ The following properties are used for linking observable properties and methods 
 
 These properties are processed by the `initLinks()` method of the [`uiElement` class]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_uielement_concept.html) which is called at the moment of a component's instantiation.
 
-Linking properties are set in [UI components configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}. 
+Linking properties are set in [UI components configuration files]({{ page.baseurl }}/ui_comp_guide/concepts/ui_comp_config_flow_concept.html): XML, JS or [PHP](https://glossary.magento.com/php). 
 
 ## List of linking properties 
 
@@ -158,7 +158,7 @@ The options of linking properties can contain template strings in the `'${...}'`
 
 So if we put a variable name in `'${...}'`, it is processed into a string representation of the variable’s value.
 
-When working with UI components, we often need to use the string representation of a certain property of the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. To address a property of the UI component in the scope of this component, the `$.someProperty` syntax is used.
+When working with UI components, we often need to use the string representation of a certain property of the [UI component](https://glossary.magento.com/ui-component). To address a property of the UI component in the scope of this component, the `$.someProperty` syntax is used.
 
 As a result, if the component's property is the variable for the template string, we get notation similar to the following:
 

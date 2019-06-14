@@ -25,8 +25,8 @@ Magento\Framework\Exception
 
 [other errors]
 
-{% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %}
- {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
+[Exception](https://glossary.magento.com/exception)
+ [PHP](https://glossary.magento.com/php) Fatal error:  Class 'Magento\Framework\Stdlib\DateTime\TimezoneInterface' not found in /var/www/magento2/app/bootstrap.php on line 56</pre>
 
 ```
 Dependencies not installed. Please run 'composer install' under /setup directory.

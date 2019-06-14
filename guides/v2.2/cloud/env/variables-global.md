@@ -13,6 +13,7 @@ stage:
   global:
     GLOBAL_VARIABLE_NAME: value
 ```
+
 {% include cloud/customize-build-deploy.md %}
 
 ### `MIN_LOGGING_LEVEL`
@@ -24,8 +25,8 @@ Overrides the minimum logging level for all output streams without making change
 
 ```yaml
 stage:
-    global:
-        MIN_LOGGING_LEVEL: debug
+  global:
+    MIN_LOGGING_LEVEL: debug
 ```
 
 ### `SCD_ON_DEMAND`
@@ -45,13 +46,14 @@ stage:
 
 The `SCD_ON_DEMAND` variable skips the SCD and the `STATIC_CONTENT_SYMLINK` in both phases (build and deploy), clears the `pub/static` and `var/view_preprocessed` folders, and writes the following to the `app/etc/env.php` file:
 
-```php
+```php?start_inline=1
 return array(
    ...
    'static_content_on_demand_in_production' => 1,
    ...
 );
 ```
+{: .no-copy}
 
 ### `SCD_MAX_EXECUTION_TIME` 
 
@@ -100,7 +102,6 @@ Use the `X_FRAME_CONFIGURATION` variable to change the [`X-Frame-Options`]({{ pa
 -  `ALLOW-FROM` `<uri>`—Page can be displayed only in a frame on the specified origin.
 
 Add the `X_FRAME_CONFIGURATION` environment variable to the `global` stage in the `.magento.env.yaml` file:
-
 
 ```yaml
 stage:

@@ -27,7 +27,7 @@ To determine your `libcurl` version, enter the following command:
 
 #### CentOS {#solution-centos}
 
-The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. 
+The source of the issue is that the [`libcurl`](https://curl.haxx.se/libcurl/c/CURLOPT_SSLVERSION.html){:target="_blank"} [library](https://glossary.magento.com/library) packaged with CentOS 6.6 and earlier use TLS 1.1 or earlier by default. 
 
 To determine the version of CentOS your server runs, enter the following command:
 

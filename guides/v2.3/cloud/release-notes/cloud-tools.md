@@ -30,6 +30,10 @@ The release notes include:
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
+## v2002.0.19
+
+-   {:.fix}<!-- MAGECLOUD-3668 -->Fixed an issue that overwrites the `env.php` file during a deploy, resulting in a loss of custom configurations.  This update ensures that {{site.data.var.ece}} updates the `env.php` file with every deployment, while preserving custom configurations.
+
 ## v2002.0.18
 
 -   {:.new}**Docker Updates**—

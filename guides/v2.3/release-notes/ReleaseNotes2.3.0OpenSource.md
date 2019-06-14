@@ -1138,7 +1138,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---MAGETWO-85662 -->* The **Modified** date field is now updated as expected when you save a page in a deployment running Magento 2.2.1.  *Fix submitted by [Oscar Recio](https://github.com/osrecio) in pull request  [12637](https://github.com/magento/magento2/pull/12637)*. [GitHub-12625](https://github.com/magento/magento2/issues/12625)
 
-<!--- MAGETWO-85673-->* When the **Redirect Customer to Account Dashboard after Logging in** setting is disabled, Magento now includes the login URL (including the referer in base64 encoding) from the `window.checkout` object as expected (for example, https://myshop.com/customer/account/login/referer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). 
+<!--- MAGETWO-85673-->* When the **Redirect Customer to Account Dashboard after Logging in** setting is disabled, Magento now includes the login URL (including the referrer in base64 encoding) from the `window.checkout` object as expected (for example, https://myshop.com/customer/account/login/referrer/aHR0cHM6Ly9teXNob3AuY29tL2NoZWNrb3V0). 
 
 <!--- MAGETWO-85539-->* Magento now correctly handles `file` or `image` type customer attributes. Previously, when you tried to save customer information when one of these customer attributes were set, Magento threw an exception and did not save the file. *Fix submitted by [Franciszek Wawrzak](https://github.com/fsw) in pull request  [11267](https://github.com/magento/magento2/pull/11267)*. [GitHub-11252](https://github.com/magento/magento2/issues/11252)
 
@@ -1523,7 +1523,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!-- MAGETWO-80287 -->* A new static test detects blocks without the `name` attribute. 
 
-<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.0/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
+<!-- MAGETWO-87524 -->*  The [Contribution Guide](https://devdocs.magento.com/guides/v2.3/contributor-guide/backward-compatible-development/ )  now suggests that contributors specify possible replacements for deprecated code. [GitHub-10133](https://github.com/magento/magento2/issues/10133)
 
 
 <!---MAGETWO-87056 -->*  You can now use the command-line interface to create a new administrator. Previously, Magento did not recognize configured tableprefix, which prevented Magento from creating the new user. [GitHub-11176](https://github.com/magento/magento2/issues/11176)
@@ -1913,7 +1913,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.2.7
 
 <!---ENGCOM-1815 -->* You can now use the **Enter** key to submit a search form. *Fix submitted by [Vishal Gelani](https://github.com/vgelani) in pull request [15696](https://github.com/magento/magento2/pull/15696)*. [GitHub-13793](https://github.com/magento/magento2/issues/13793)
 
-<!---ENGCOM-1910 -->* Search on MySQL-based entities has been improved. (This improvment does not provide a fulltext search, but simply the best way to search when a `SearchCriteria` with `fulltext` condition is provided over a MySQL table.) *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15685](https://github.com/magento/magento2/pull/15685)*. [GitHub-1221](https://github.com/magento/magento2/issues/1221)
+<!---ENGCOM-1910 -->* Search on MySQL-based entities has been improved. (This improvement does not provide a fulltext search, but simply the best way to search when a `SearchCriteria` with `fulltext` condition is provided over a MySQL table.) *Fix submitted by [Riccardo Tempesta](https://github.com/phoenix128) in pull request [15685](https://github.com/magento/magento2/pull/15685)*. [GitHub-1221](https://github.com/magento/magento2/issues/1221)
 
 <!---ENGCOM-2588 -->* Magento now displays validation messages as needed on advanced searches. Previously, Magento did not display a message even after a customer submitted the advanced search form with no entries. *Fix submitted by [Torben Höhn](https://github.com/torhoehn) in pull request [17210](https://github.com/magento/magento2/pull/17210)*. [GitHub-8131](https://github.com/magento/magento2/issues/8131)
 
