@@ -138,6 +138,9 @@ pages:
             - label: UrlRewrite endpoint
               url: /graphql/reference/url-resolver.html
 
+            - label: Vault endpoint
+              url: /graphql/reference/vault.html
+
             - label: Wishlist endpoint
               url: /graphql/reference/wishlist.html
               
