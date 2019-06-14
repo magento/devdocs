@@ -40,7 +40,7 @@ require([
 
     prompt({
         title: $.mage.__('Some title'),
-        content: jQuery.mage.__('Some content'),
+        content: $.mage.__('Some content'),
         actions: {
             confirm: function(){},
             cancel: function(){},
