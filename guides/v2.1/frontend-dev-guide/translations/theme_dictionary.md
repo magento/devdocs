@@ -61,13 +61,13 @@ The locale dictionary would use the default values (keys) in the left column fol
 "Card Verification Number",	<translation>
 ```
 
-## Module wise translate same element
+## Element translations per Module
 
-You can translate same element in different ways for different module, you can use this example:
+You can translate same element in different ways for different modules:
 
 ```text
-"Add to Cart","Add to Bag",module,Magento_Review
-"Add to Cart","Add to shopping Bag",module,Magento_Catalog
+"Add to Cart", "Add to Cart",module, Magento_Review
+"Add to Cart", "Add to Shopping Cart", module, Magento_Catalog
 ```
 
 ## Additional information
