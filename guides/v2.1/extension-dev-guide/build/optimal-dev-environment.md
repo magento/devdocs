@@ -4,8 +4,6 @@ title: Optimal Development Environment
 subgroup: 03_Build
 menu_title: Optimal development environment
 menu_order: 1
-redirect_from:
-  - /guides/v2.0/extension-dev-guide/build/optimal-dev-environment.html
 ---
 
 ## Overview
@@ -14,7 +12,7 @@ A typical software development flow is as follows:
 
 **Local dev machine** > **QA/integration server** > **Preview server** (optional) > **Production server**
 
-Whether you are writing a new Magento 2 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} or contributing to the [code base](https://github.com/magento/magento2){:target="_blank"}, the first step for any developer is setting up a development environment.
+Whether you are writing a new Magento 2 [extension](https://glossary.magento.com/extension) or contributing to the [code base](https://github.com/magento/magento2){:target="_blank"}, the first step for any developer is setting up a development environment.
 This article will guide you in setting up and optimizing your local development machine.
 
 ## Local development machine
@@ -42,7 +40,7 @@ The following is a list of the different ways you can install Magento 2 locally:
 
 The following is a list of optimizations you can make on your local development machine
 
-* Magento recommends installing and using the latest supported version of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 to increase performance.
+* Magento recommends installing and using the latest supported version of [PHP](https://glossary.magento.com/php) 7 to increase performance.
 * Replace your MySQL database with [Percona](https://www.percona.com/software/mysql-database/percona-server){:target="_blank"}.
 * Make sure you install and enable [PHP OPcache](http://php.net/manual/en/intro.opcache.php){:target="_blank"}.
 * Xdebug is off by default. Enable this feature only when you need it because it requires a lot of memory and degrades performance.
@@ -51,6 +49,6 @@ The following is a list of optimizations you can make on your local development 
 * If you need sample data, you can install it using [composer]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data-composer.html) or by [cloning repositories]({{ page.baseurl }}/install-gde/install/web/install-web-sample-data-clone.html).
 * To speed up frontend development, [turn off merging of CSS and JavaScript](http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html){:target="_blank"}.
 * Make sure [caching]({{ page.baseurl }}/config-guide/cache.html) is turned on (this is the default behavior).
-  Generally, only page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and block cache should be turned off for development and turned back on when testing.
+  Generally, only page [cache](https://glossary.magento.com/cache) and block cache should be turned off for development and turned back on when testing.
 * [Opcache timestamp validation](http://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps){:target="_blank"} should always be on for development.
   Development is impossible with opcache on and revalidation off because any PHP modification would require a cache reset.

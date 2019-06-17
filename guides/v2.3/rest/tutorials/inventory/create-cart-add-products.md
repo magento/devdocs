@@ -8,12 +8,11 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/create-cart-add-products.html
 functional_areas:
   - Integration
 ---
 
-Next, we'll create a cart and add the items that we modified in [Reassign products to custom sources](reassign-products-to-another-source.html.
+Next, we'll create a cart and add the items that we modified in [Step 5. Reassign products to custom sources](reassign-products-to-another-source.html).
 
 ## Create a cart
 
@@ -43,7 +42,7 @@ The response is the `quoteId`: 3
 
 ## Check for product availability
 
-In [Step 6. Reassign products to another source](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
+In [Step 5. Reassign products to custom sources](reassign-products-to-another-source.html), we defined the quantities of products `24-WB01` and `24-WB03` for the US source as follows:
 
 Product | Baltimore Warehouse | Austin Warehouse  | Reno Warehouse
 --- | --- | --- | ---

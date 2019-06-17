@@ -70,7 +70,7 @@ To verify memcached is recognized by the web server:
 
 ### Verify memcached can cache data
 
-This test uses a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} script to verify that memcached can store and retrieve {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} data.
+This test uses a [PHP](https://glossary.magento.com/php) script to verify that memcached can store and retrieve [cache](https://glossary.magento.com/cache) data.
 
 For more information about this test, see [this digitalocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-memcache-on-ubuntu-14-04).
 

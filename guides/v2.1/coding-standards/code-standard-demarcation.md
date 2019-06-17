@@ -10,14 +10,14 @@ functional_areas:
 ---
 
 <p>Magento core developers must follow the Magento code demarcation standard.</p>
-<p>This standard is recommended for third-party {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.</p>
+<p>This standard is recommended for third-party [extension](https://glossary.magento.com/extension) developers.</p>
 <p>Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.</p>
 <p>The standard was developed in the scope of our efforts to ensure the following:</p>
 <ul>
    <li>Decouple visual (CSS) layer from the functional (JavaScript) layer.</li>
-   <li>Decouple functional (JavaScript) layer from the {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} (HTML).</li>
-   <li>Reinstate emphasis on using of {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} templates.</li>
-   <li>Reinstate emphasis on decoupling HTML, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} and JS from {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes.</li>
+   <li>Decouple functional (JavaScript) layer from the [markup](https://glossary.magento.com/markup) (HTML).</li>
+   <li>Reinstate emphasis on using of [jQuery](https://glossary.magento.com/jquery) templates.</li>
+   <li>Reinstate emphasis on decoupling HTML, [CSS](https://glossary.magento.com/css) and JS from [PHP](https://glossary.magento.com/php) classes.</li>
 </ul>
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL" keywords.
@@ -59,7 +59,7 @@ Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MU
    <li>Reduces long-term maintenance efforts.</li>
 </ul>
 
-**Acceptable {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} template**
+**Acceptable [PHTML](https://glossary.magento.com/phtml) template**
 
 <p>The following acceptable example is terse and uses an Accessible Rich Internet Applications (ARIA) approach.</p>
 
@@ -144,11 +144,11 @@ The following list will help you make a distinction between the actual meaning o
 
 ### Visual representation must rely only on HTML `class` attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element's type attribute and form elements state attributes (example: `disabled`, `checked`).
 
-As the first option, you are required to use {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
+As the first option, you are required to use [HTML](https://glossary.magento.com/html) class attributes. In case this option is not applicable then it is recommended to use HTML tags and form element's type attribute.
 
 <ul>
    <li>Enforces clean, strict separation between visual and business logic layers.</li>
-   <li>Allows {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} teams to work independently.</li>
+   <li>Allows [frontend](https://glossary.magento.com/frontend) and [backend](https://glossary.magento.com/backend) teams to work independently.</li>
    <li>Allows changing look and feel without affecting business functionality, and vice versa.</li>
    <li>Enables frontend teams to clean up old styles quickly and easily when refactoring.</li>
 </ul>
@@ -188,7 +188,7 @@ Exception: CSS attributes where values must be calculated beyond the css-topics/
    <li>Reduces long-term maintenance efforts by containing CSS styles in a single place.</li>
 </ul>
 
-**Acceptable {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} file**
+**Acceptable [JavaScript](https://glossary.magento.com/javascript) [widget](https://glossary.magento.com/widget) file**
 
 ```js
 ...

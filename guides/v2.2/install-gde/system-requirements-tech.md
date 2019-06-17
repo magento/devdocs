@@ -1,10 +1,6 @@
 ---
 group: installation-guide
-subgroup: Getting Started
-title: Magento 2.2.x technology stack requirements
-menu_title: Magento 2.2.x technology stack requirements
-menu_node:
-menu_order: 2
+title: Magento 2.2 technology stack requirements
 functional_areas:
   - Install
   - System
@@ -21,7 +17,7 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 
 ### Composer (latest stable version)
 
-{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
+[Composer](https://glossary.magento.com/composer) is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
 ### Web servers
 
@@ -37,38 +33,21 @@ MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7, and other binary-compatible MySQL technologies.
 
-{:.bs-callout bs-callout-info}
+{: .bs-callout .bs-callout-info }
 Magento only uses MySQL features compatible with MariaDB. MariaDB may not be compatible with all MySQL features, however, so be sure to research compatibility issues before using a feature in your Magento module.
 
 ### PHP
 
-{% include install/php_2.2.md %}
+<!--{% assign supported_php_versions = site.data.codebase.v2_2.open-source.composer_lock.platform.php | split: "|" %}-->
+{% include install/php-versions-template.md %}
 
 #### Required PHP extensions
 
-{:.bs-callout bs-callout-info}
+{: .bs-callout .bs-callout-info }
 The [CentOS]({{ page.baseurl }}/install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}/install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
 
-* [bc-math](http://php.net/manual/en/book.bc.php) ({{site.data.var.ee}} only for 2.2.0 - 2.2.3. {{site.data.var.ee}} and {{site.data.var.ce}} as of 2.2.4.)
-* [ctype](http://php.net/manual/en/book.ctype.php)
-* [curl](http://php.net/manual/en/book.curl.php)
-* [dom](http://php.net/manual/en/book.dom.php)
-* [gd](http://php.net/manual/en/book.image.php), [ImageMagick 6.3.7](http://php.net/manual/en/book.imagick.php) (or later) or both
-* [hash](http://php.net/manual/en/book.hash.php)
-* [iconv](http://php.net/manual/en/book.iconv.php)
-* [intl](http://php.net/manual/en/book.intl.php)
-* [json](http://php.net/manual/en/book.json.php)
-* [libxml](http://php.net/manual/en/book.libxml.php)
-* [mbstring](http://php.net/manual/en/book.mbstring.php)
-* [mcrypt](http://php.net/manual/en/book.mcrypt.php)
-* [openssl](http://php.net/manual/en/book.openssl.php)
-* [PDO/MySQL](http://php.net/manual/en/ref.pdo-mysql.php)
-* [SimpleXML](http://php.net/manual/en/book.simplexml.php)
-* [soap](http://php.net/manual/en/book.soap.php)
-* [spl](http://php.net/manual/en/book.spl.php)
-* [xsl](http://php.net/manual/en/book.xsl.php)
-* [zip](http://php.net/manual/en/book.zip.php)
-
+<!--{% assign platform-req = site.data.codebase.v2_2.open-source.composer_lock.platform %}-->
+{% include install/php-extensions-template.md %}
 
 #### PHP OPcache
 
@@ -84,7 +63,7 @@ For more information, see [Required PHP settings]({{ page.baseurl }}/install-gde
 
 ### SSL
 
-* A valid {% glossarytooltip 363d6806-6a7d-4cb6-bc47-efc62bc26a1c %}security certificate{% endglossarytooltip %} is required for HTTPS.
+* A valid [security certificate](https://glossary.magento.com/security-certificate) is required for HTTPS.
 * Self-signed SSL certificates are not supported.
 * Transport Layer Security (TLS) requirement - PayPal and `repo.magento.com` both require TLS 1.1 or later:
 

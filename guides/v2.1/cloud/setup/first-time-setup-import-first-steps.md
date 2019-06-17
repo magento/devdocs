@@ -8,7 +8,6 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 redirect_from:
-  - /guides/v2.0/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.1/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.2/cloud/access-acct/first-time-setup_import-prereq.html
   - /guides/v2.3/cloud/access-acct/first-time-setup_import-prereq.html
@@ -98,7 +97,7 @@ The complete workflow for importing existing code includes the following steps:
 1.  [Import your Magento database]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html#cloud-import-db) into your {{site.data.var.ece}} project.
 1.  [Import your static files]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html#media) into your {{site.data.var.ece}} project.
 1.  Copy your {{site.data.var.ee}} [encryption key]({{ page.baseurl }}/cloud/setup/first-time-setup-import-import.html#encryption-key) to your {{site.data.var.ece}} project. This key is required for data migration and access.
-1.  Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and verify the project imported successfully.
+1.  Clear the [cache](https://glossary.magento.com/cache) and verify the project imported successfully.
 
 ## Create a new {{site.data.var.ece}} project {#cloud-import-proj}
 

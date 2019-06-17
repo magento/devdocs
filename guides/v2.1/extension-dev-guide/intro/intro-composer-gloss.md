@@ -6,17 +6,16 @@ menu_title: Glossary of common terms
 menu_order: 5
 menu_node:
 redirect_from:
-  - /guides/v2.0/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.1/mktpl-quickstart/intro-composer-gloss.html
   - /guides/v2.2/mktpl-quickstart/intro-composer-gloss.html
 ---
 
 ### Component {#gloss-component}
-We refer to what you're coding as *components*. (Composer refers to them as [*packages*](https://getcomposer.org/doc/05-repositories.md#packages){:target="_blank"}; the terms component and package are equivalent.) A {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} can be classified into the following *types*:
+We refer to what you're coding as *components*. (Composer refers to them as [*packages*](https://getcomposer.org/doc/05-repositories.md#packages){:target="_blank"}; the terms component and package are equivalent.) A [Magento component](https://glossary.magento.com/magento-component) can be classified into the following *types*:
 
-*	{% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} (extend Magento capabilities)
-*	{% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
-*	{% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}Language package{% endglossarytooltip %} (localize the storefront and Admin)
+*	[Module](https://glossary.magento.com/module) (extend Magento capabilities)
+*	[Theme](https://glossary.magento.com/theme) (change the look and feel of your [storefront](https://glossary.magento.com/storefront) and Admin)
+*	[Language package](https://glossary.magento.com/language-package) (localize the storefront and Admin)
 
 You can *package* your components as follows:
 
@@ -28,7 +27,7 @@ You can *package* your components as follows:
 	More information about metapackages can be found in the next section.
 
 {: .bs-callout .bs-callout-info }
-Magento Marketplace uses the blanket term *product* to refer to a component or a {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
+Magento Marketplace uses the blanket term *product* to refer to a component or a [metapackage](https://glossary.magento.com/metapackage).
 
 ### Metapackage {#gloss-meta}
 

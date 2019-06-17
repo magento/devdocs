@@ -3,23 +3,28 @@ group: extensions
 title: Google Shopping ads Channel Release Notes
 ---
 
-*Release notes published April 2019.*
-
-**Google Shopping ads Channel** is now available for Magento 2.2.x and 2.3.x. Merchants can use this extension to integrate with Google Merchant Center (GMC) and Google Ads accounts to advertize and sell Magento products.
+**Google Shopping ads Channel** is now generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}. Merchants can use this extension to integrate with Google Merchant Center (GMC) and Google Ads accounts to advertize and sell Magento products.
 
 See the following documentation:
 
 - [Google Shopping ads Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/google-ads/google-ad-channel.html) for merchant information and instructions
 - [Install]({{site.baseurl}}/extensions/google-shopping-ads/) Google Shopping ads Channel  for installation, API key, and update information
+- [Google Shopping ads Channel Marketplace page](http://marketplace.magento.com/magento-google-shopping-ads.html)
 
 The release notes include:
 
 -   {:.new}New features
 -   {:.fix}Fixes and improvements
 
-### v1.0.0
+### v1.1.2
 
-Google Shopping ads Channel 1.0.0 is compatible with version 2.2.x and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Google Shopping ads Channel 1.1.2 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+- {:.fix} **Intermittent Load Error**: Resolved an intermittent error preventing Google Shopping ads Channel from loading after install.
+
+### v1.1.1
+
+Google Shopping ads Channel 1.1.1 is generally available for versions 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
 
 - {:.new} **Simplified Onboarding and Maintenance**: Add GMC accounts with ease through a step-by-step process with detailed instructions available through the Magento Admin.
 

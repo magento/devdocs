@@ -20,7 +20,7 @@ A part of Magento that can be scheduled to change, within an update. Examples: P
 
 ### Update
 
-A combination of changes to a stage-able {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent.
+A combination of changes to a stage-able [entity](https://glossary.magento.com/entity). Multiple updates are shown on the staging timeline. An update’s state is either completed, active or scheduled to be activated.Most updates are scheduled for a temporary span of time, but some can be permanent.
 
 ### Objects
 

@@ -3,9 +3,9 @@ group: functional-testing-framework-guide
 title: Fixture
 ---
 
-An FTF fixture is a list of properties of the Magento {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} under test.
+An FTF fixture is a list of properties of the Magento [entity](https://glossary.magento.com/entity) under test.
 
-A fixture is represented as an {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file located in the `Fixture` directory that corresponds to a module in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
+A fixture is represented as an [XML](https://glossary.magento.com/xml) file located in the `Fixture` directory that corresponds to a module in `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/functional`. Example for `Widget`:
 
 -  `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Widget/Test/Fixture/Widget.xml`
 
@@ -21,23 +21,25 @@ To apply any changes in fixture, run generate tool:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
 
-This tool creates {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes that are used by the test.
+This tool creates [PHP](https://glossary.magento.com/php) classes that are used by the test.
 
-You can check fixture PHP class in corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} in the `<magento2_root_dir>/dev/tests/functional/generated/Magento` directory.
+You can check fixture PHP class in corresponding [module](https://glossary.magento.com/module) in the `<magento2_root_dir>/dev/tests/functional/generated/Magento` directory.
 
 ## Create new fixture {#mtf_fixture_create}
 
-Let's imagine that we want to create new fixture to test our {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}Widget{% endglossarytooltip %} module.
+Let's imagine that we want to create new fixture to test our [Widget](https://glossary.magento.com/widget) module.
 
 Magento has a tool, `generateFixtureXml.php,`, to automatically generate fixture with parameters indicated in arguments. It is located in `<magento2_root_dir>/dev/tests/functional/utils`.
 
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php -f generateFixtureXml.php -- --name widget --entity_type widget_instance --collection Magento\\Widget\\Model\\Resource\\Widget\\Instance\\Collection
 ```
@@ -91,6 +93,7 @@ To generate PHP classes, enter the following commands in the order shown:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
@@ -179,13 +182,14 @@ To apply the changes, enter the following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```
 
 ## Add a repository to the fixture field {#mtf_fixture_repositoy}
 
-Now we have a new fixture for Widget. All fields are defined and ready to take test data. Let's assume that we are not focused on {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} updates functionality and want to use pre-defined data.
+Now we have a new fixture for Widget. All fields are defined and ready to take test data. Let's assume that we are not focused on [layout](https://glossary.magento.com/layout) updates functionality and want to use pre-defined data.
 
 For this goal, link to the repository where all test data has already been defined.
 
@@ -229,6 +233,7 @@ To apply changes, enter following commands:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php generate.php
 ```

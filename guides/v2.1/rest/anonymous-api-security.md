@@ -5,9 +5,9 @@ functional_areas:
   - Integration
 ---
 
-Magento 2 allows some REST endpoints to be accessed by unauthenticated (anonymous) users. Many of these endpoints allow a customer to have a robust shopping experience on the {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} without having to log in.
+Magento 2 allows some REST endpoints to be accessed by unauthenticated (anonymous) users. Many of these endpoints allow a customer to have a robust shopping experience on the [website](https://glossary.magento.com/website) without having to log in.
 
-A subset of these endpoints can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} endpoints can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.
+A subset of these endpoints can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, [Catalog](https://glossary.magento.com/catalog) [module](https://glossary.magento.com/module) endpoints can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The [CMS](https://glossary.magento.com/cms) module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.
 
 For this reason, by default, Magento 2 now prevents anonymous users from accessing the endpoints that could reveal sensitive information.  When the feature is enabled, the user must have administrator privileges to execute the affected endpoints.
 
@@ -58,7 +58,7 @@ To disable this feature, log in to the Admin panel and navigate to **Stores** > 
 
 If the list of endpoints that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension's `di.xml` file to update or replace the functionality defined in the WebapiSecurity module.
 
-The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and add-to-cart Ajax functionalities.
+The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the [checkout](https://glossary.magento.com/checkout) and add-to-cart Ajax functionalities.
 
 | Product | Module | Endpoint | Action |
 | --- | --- | --- | --- |

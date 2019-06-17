@@ -68,7 +68,7 @@ In default mode:
 
 -   Errors are logged to the file reports at server, and never shown to a user
 -   Static view files are cached
--   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view). In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+-   Default mode is not optimized for a production environment, primarily because of the adverse performance impact of [static files](https://glossary.magento.com/static-files) being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view). In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
@@ -81,8 +81,8 @@ In developer mode:
 -   Static view files are not cached; they are written to the Magento `pub/static` directory every time they're called
 -   Uncaught exceptions display in the browser
 -   System logging in `var/report` is verbose
--   An {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is thrown in the error handler, rather than being logged
--   An exception is thrown when an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} subscriber cannot be invoked
+-   An [exception](https://glossary.magento.com/exception) is thrown in the error handler, rather than being logged
+-   An exception is thrown when an [event](https://glossary.magento.com/event) subscriber cannot be invoked
 
 For more information, see [Set the Magento mode]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-mode.html).
 
@@ -94,7 +94,7 @@ This improves performance by providing all necessary static files at deployment 
 
 In production mode:
 
--   Static view files are not materialized, and URLs for them are composed on the fly. Static view files are served from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} only.
+-   Static view files are not materialized, and URLs for them are composed on the fly. Static view files are served from the [cache](https://glossary.magento.com/cache) only.
 -   Errors are logged to the file system and are never displayed to the user.
 -   You can enable and disable cache types only using the [command line]({{ page.baseurl }}/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en).
 

@@ -105,6 +105,7 @@ Enabled | `currency/import/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}/com
 Service | `currency/import/service` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Start Time | `currency/import/time` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Frequency | `currency/import/frequency` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Error Email Recipient | `currency/import/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Error Email Sender | `currency/import/error_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Error Email Template | `currency/import/error_email_template` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
@@ -115,6 +116,7 @@ These configuration values are available in the Magento Admin in **Stores** > Se
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enable Contact Us | `contact/contact/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
+Send Emails To | `contact/contact/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Email Sender | `contact/email/sender_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 Email Template | `contact/email/email_template` | <!-- ![Not EE-only]({{ site.baseurl }}/common/images/red-x.png) --> |
 
