@@ -52,6 +52,7 @@ A sample follows:
 config_integration_api: 1
      config_webservice: 1
 ```
+For example, when Sign `cache:status` Sign 1 (`config: 1`) `cache` is `enable` and Sign 0 (`config: 0`) is `cache` is `disable`.
 
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
 
