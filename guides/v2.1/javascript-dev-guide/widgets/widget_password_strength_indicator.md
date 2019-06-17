@@ -6,12 +6,12 @@ title: PasswordStrengthIndicator widget
 
 ## Overview {#password_strength_indicator_overview}
 
-The Magento password strength indicator {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} show the user immediate feedback on the validity and strength of a password while it is being typed.
-If a password does not strong enough the UI asks the user to choose a new password.
+Magento password strength indicator {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} show the user immediate feedback on the validity and strength of a password while it is being typed.
+If the password is not strong enough the UI asks the user to choose a new password.
 
 The password strength indicator widget source is [`<Magento_Customer_module_dir>/view/frontend/web/js/password-strength-indicator.js`].
 
-The widget being used in the following templates:
+The widget is being used in the following templates:
 
 - [`<Magento_Ui_module_dir>/view/frontend/templates/form/register.phtml`] customer register template.
 - [`<Magento_Ui_module_dir>/view/frontend/templates/form/forgotpassword.phtml`] customer forgot password template.
@@ -41,7 +41,7 @@ The password strength indicator widget has the following options:
 
 ### passwordSelector {#password_strength_indicator_password_selector}
 
-The selector for the password input.
+Selector for the password input.
 
 **Type**: String 
 
@@ -49,7 +49,7 @@ The selector for the password input.
 
 ### passwordStrengthMeterSelector {#password_strength_indicator_password_strength_meter_selector}
 
-The selector for the password strength visualization block.
+Selector for the password strength visualization block.
 
 **Type**: String 
 
@@ -57,7 +57,7 @@ The selector for the password strength visualization block.
 
 ### passwordStrengthMeterLabelSelector {#password_strength_indicator_password_strength_meter_label_selector}
 
-The selector for the password strength visualization block label.
+Selector for the password strength visualization block label.
 
 **Type**: String 
 
@@ -65,7 +65,7 @@ The selector for the password strength visualization block label.
 
 ### defaultClassName {#password_strength_indicator_default_class_name}
 
-The class name prefix for the visualization block.
+Class name prefix for the visualization block.
 
 **Type**: String 
 
