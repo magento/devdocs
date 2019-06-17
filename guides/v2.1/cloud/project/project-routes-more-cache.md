@@ -126,7 +126,12 @@ The cache key depends on the value of the `value` cookie in the request.
 A special case exists if the `cookies` key has the `["*"]` value. This value means that any request with a cookie will bypass the cache. This is the default value.
 
 {:.bs-callout .bs-callout-info}
-You cannot  use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (`*`). `SESS*` or `~SESS` are currently **not** valid values.
+You can't use wildcards in the cookie name. You must either use a precise cookie name, or match all cookies with asterisk (`*`). `SESS*` or `~SESS` are currently **not** valid values.
+
+Magento cookies have the following restrictions:
+
+* You can set maximum of **50 cookies** in the system. Otherwise, Magento will throw an `Unable to send the cookie. Maximum number of cookies would be exceeded` exception.
+* A maximum cookie size is **4096 bytes**. Otherwise, Magento will throw an `Unable to send the cookie. Size of '%name' is %size bytes` exception.
 
 ### `default_ttl` {#cloud-cache-attrib-ttl}
 
