@@ -236,17 +236,17 @@ The following example merges new values to an existing configuration:
 ```yaml
 stage:
   deploy:
-        QUEUE_CONFIGURATION:
-          _merge: true
-          amqp:
-            host: changed1.host
-            port: 5672
-          amqp2:
-            host: changed2.host2
-            port: 12345
-          mq:
-            host: changedmq.host
-            port: 1234
+    QUEUE_CONFIGURATION:
+      _merge: true
+      amqp:
+        host: changed1.host
+        port: 5672
+      amqp2:
+        host: changed2.host2
+        port: 12345
+      mq:
+        host: changedmq.host
+        port: 1234
 ```
 
 ### `REDIS_USE_SLAVE_CONNECTION`

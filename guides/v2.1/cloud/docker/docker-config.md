@@ -19,7 +19,7 @@ _Mode_ is an additional configuration option for the Docker configuration genera
 
 You can launch your Docker environment in one of the following modes:
 
--   **production**—Production mode is the default configuration setting for launching the Docker environment. This option builds the Docker environment in production mode and verifies configured service versions.
+-   **production**—Production mode is the default configuration setting for launching the Docker environment with read-only filesystem permissions. This option builds the Docker environment in production mode and verifies configured service versions.
 -   **developer**—Developer mode supports an active development environment with full, writable filesystem permissions. This option builds the Docker environment in developer mode and verifies configured service versions. System performance is slower in developer mode because of additional file synchronization operations.
 
 For example, the following command starts the Docker configuration generator for the developer mode:
@@ -56,7 +56,7 @@ For example, the following command starts the Docker configuration generator for
 
 You must have the following software installed on your local workstation:
 
--  PHP version 7.0 or later
+-  PHP version 7.1 or later
     -  [php@7.1](https://formulae.brew.sh/formula/php@7.1)
     -  [php@7.2](https://formulae.brew.sh/formula/php@7.2)
 -  [Composer](https://getcomposer.org)
@@ -67,6 +67,20 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
 ```
 127.0.0.1 magento2.docker
+```
+
+Alternatively, you can run the following command to add it to the file:
+
+```bash
+echo "127.0.0.1 magento2.docker" | sudo tee -a /etc/hosts
+```
+
+### Stopping default Apache instance on Mac OS
+
+Because Mac OS provides built-in Apache service, and may occupy port `80`, you must stop the service with the following command:
+
+```bash
+sudo apachectl stop
 ```
 
 #### To launch Docker:
@@ -87,32 +101,32 @@ Before you begin, you must add the following hostname to your `/etc/hosts` file:
 
 Continue launching your Docker environment in the default _production_ mode.
 
-1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
 
     ```bash
     ./vendor/bin/ece-tools docker:build
     ```
 
-1.  _Optional_: Copy the raw configuration files.
+1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
     ```bash
     cp docker/config.php.dist docker/config.php
     ```
 
-1. _Optional_: Convert the PHP configuration files to Docker ENV files.
+    Convert custom PHP configuration files to Docker ENV files.
 
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
     ```
 
-    This command generates the following Docker ENV files:
+    This generates the following Docker ENV files:
 
     * `docker/config.env`
 
     {: .bs-callout .bs-callout-info}
     The `{{site.data.var.ct}}` version 2002.0.12 package does not support the `docker:config:convert` command.
 
-1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
+1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1.  Build files to containers and run in the background.
 
@@ -140,7 +154,7 @@ Continue launching your Docker environment in the default _production_ mode.
 1.  Configure and connect Varnish.
 
     ```bash
-    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 -l
+    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
     ```
 
 1.  Clear the cache.
@@ -161,29 +175,29 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 
 1.  Install the `docker-sync` tool using the [Installation instructions](https://docker-sync.readthedocs.io/en/latest/getting-started/installation.html). If you have it installed, continue to the next step.
 
-1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to specify a version.
+1.  In your local environment, start the Docker configuration generator. You can use the service keys, such as `--php`, to [specify a version](#service-versions).
 
     ```bash
     ./vendor/bin/ece-tools docker:build --mode="developer"
     ```
 
-1.  _Optional_: Copy the raw configuration files.
+1.  _Optional_: If you have a custom PHP configuration file, copy the default configuration DIST file to your custom configuration file and make any necessary changes.
 
     ```bash
     cp docker/config.php.dist docker/config.php
     ```
 
-1.  _Optional_: Convert the PHP configuration files to Docker ENV files.
+    Convert custom PHP configuration files to Docker ENV files.
 
     ```bash
     ./vendor/bin/ece-tools docker:config:convert
     ```
 
-    This command generates the following Docker ENV files:
+    This generates the following Docker ENV files:
 
     * `docker/config.env`
 
-1.  _Optional_: Configure the Docker global variables in the `docker-compose.yaml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
+1.  _Optional_: Configure the Docker global variables in the `docker-compose.yml` file. For example, you can [enable and configure Xdebug]({{ page.baseurl }}/cloud/docker/docker-development-debug.html).
 
 1.  Start the file synchronization.
 
@@ -202,10 +216,8 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
     - Deploy Magento in the Docker container:
 
         ```bash
-        docker-compose up -d && \
         docker-compose run deploy cloud-deploy && \
-        docker-compose run deploy magento-command deploy:mode:set developer && \
-        docker-compose run deploy magento-command cache:clean
+        docker-compose run deploy magento-command deploy:mode:set developer
         ```
 
     {: .bs-callout .bs-callout-info}
@@ -214,7 +226,7 @@ The `{{site.data.var.ct}}` version 2002.0.18 and later supports developer mode.
 1.  Configure and connect Varnish.
 
     ```bash
-    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 -l
+    docker-compose run deploy magento-command config:set system/full_page_cache/caching_application 2 --lock-env
     ```
 
 1.  Clear the cache.
@@ -242,6 +254,7 @@ Action | Command
 Suspend containers to continue your work later | `docker-compose stop`
 Start containers from a suspended state | `docker-compose start`
 Stop the synchronization daemon | `docker-sync stop`
+Start the synchronization daemon | `docker-sync start`
 
 #### To stop and remove the Docker configuration:
 
@@ -256,3 +269,27 @@ docker-compose down -v
 ```bash
 docker-sync stop
 ```
+
+## Advanced usage
+
+### Extending docker-compose.yml configuration
+
+You can use Docker's built-in [extension mechanism](https://docs.docker.com/compose/reference/overview/#specifying-multiple-compose-files).
+
+1.  Create a `docker-compose-dev.yml` file inside your project's root directory and add the following content:
+
+    ```yaml
+    version: '2'
+    services:
+      deploy:
+        environment:
+          - ENABLE_SENDMAIL=true
+    ```
+
+    This replaces the default value of the `ENABLE_SENDMAIL` environment variable.
+
+1.  Pass both configuration files while executing your commands. For example:
+
+    ```bash
+    docker-compose -f docker-compose.yml -f docker-compose-dev.yml run deploy bash
+    ```

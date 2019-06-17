@@ -33,8 +33,6 @@ crons:
 The following example is the default cron included for {{site.data.var.ece}}.
 
 ```yaml
-# Default Magento 2 cron job
-
 crons:
     cronrun:
         spec: "* * * * *"
@@ -89,8 +87,6 @@ The default cron interval for all environments provisioned in the us-3, eu-3, an
 We include a default cron job for Magento in the default file:
 
 ```yaml
-# Default Magento 2 cron jobs
-
 crons:
     cronrun:
         spec: "* * * * *"

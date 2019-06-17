@@ -7,7 +7,7 @@ A scenario test is a case of separate test steps where each step is a distinct c
 
 A scenario test has the following advantages:
 
-- Each step in the scenario is a separate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class that is placed in the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to which it belongs.
+- Each step in the scenario is a separate [PHP](https://glossary.magento.com/php) class that is placed in the [module](https://glossary.magento.com/module) to which it belongs.
 - A scenario test reduces code duplication because each step can be used multiple times.
 - Scenario tests are flexible and support Magento modularity.
 - New tests can be easily created using existing steps.
@@ -21,7 +21,7 @@ A scenario test is split into four logical components:
 
 ## Test case class   {#test-case}
 
-Test cases are located in `<magento2 root dir>/dev/tests/functional/tests/app/Magento/<module>/Test/TestCase` along with their corresponding data sets. Each test case is a PHP class that runs the scenario. It does not contain any other logic. In general, the difference between a scenario test case and an injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file.
+Test cases are located in `<magento2 root dir>/dev/tests/functional/tests/app/Magento/<module>/Test/TestCase` along with their corresponding data sets. Each test case is a PHP class that runs the scenario. It does not contain any other logic. In general, the difference between a scenario test case and an injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in [XML](https://glossary.magento.com/xml) file.
 
 The implementation of a scenario test is always the same. You only have to change the name of your test case.
 

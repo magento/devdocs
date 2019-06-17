@@ -5,7 +5,7 @@ title: HtmlContent component
 menu_title: HtmlContent component
 ---
 
-The HtmlContent {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} provides the ability to process and render a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} structure or a Magento block directly inside a UI component configuration. Processing and rendering is executed on the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}.
+The HtmlContent [UI component](https://glossary.magento.com/ui-component) provides the ability to process and render a [layout](https://glossary.magento.com/layout) structure or a Magento block directly inside a UI component configuration. Processing and rendering is executed on the [server side](https://glossary.magento.com/server-side).
 
 The layout structure inside HtmlContent must contain only one top-level block. The top-level block may contain as many child blocks or containers as required.
 All blocks inside HtmlContent are integrated into the layout, so external blocks can refer to them and vice verse.
@@ -85,5 +85,5 @@ All blocks inside HtmlContent are integrated into the layout, so external blocks
 
 Extends `uiComponent`:
 
-- [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/js/form/components/html.js)
-- [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{ site.mage2100url }}app/code/Magento/Ui/view/base/web/templates/content/content.html)
+- [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/form/components/html.js)
+- [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/content/content.html)

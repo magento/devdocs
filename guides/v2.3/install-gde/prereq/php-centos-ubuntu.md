@@ -31,7 +31,7 @@ The following sections give you all the info you need to install PHP for CentOS.
 
 ### Verify PHP is installed {#centos-verify-php}
 
-To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, a message similar to the following displays:
+To verify if PHP is installed already, enter `php -v`. If [PHP](https://glossary.magento.com/php) is installed, a message similar to the following displays:
 
 ```bash
 PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
@@ -82,7 +82,7 @@ To install PHP 7.1 on CentOS 6 or 7:
 
 *CentOS 7*. Enter the following commands:
 
-  yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
+  yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-15.ius.centos7.noarch.rpm
   yum -y update
 
 1. Install all [required PHP extensions]({{page.baseurl}}/install-gde/system-requirements-tech.html#required-php-extensions):

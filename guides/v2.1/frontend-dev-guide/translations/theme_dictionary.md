@@ -6,20 +6,20 @@ functional_areas:
   - Theme
 ---
 
-Modify default strings in your custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to load and use [translation dictionaries]. Learn more about locales, modifying strings, and how Magento searches and applies translations. 
+Modify default strings in your custom [theme](https://glossary.magento.com/theme) to load and use [translation dictionaries]. Learn more about locales, modifying strings, and how Magento searches and applies translations. 
 
 ## How Magento applies locales
 
-When the {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} is changed for a store, Magento searches for and applies translations in the corresponding dictionaries:
+When the [locale](https://glossary.magento.com/locale) is changed for a store, Magento searches for and applies translations in the corresponding dictionaries:
 
 1. Module translations: `<module_dir>/i18n/`
 1. Theme translations: 
 	1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
 	1. `<current_theme_dir>/i18n/`
 1. Translation package: `app/i18n/`
-1. Magento database (translations located in this database take precedence and override translations stored in other locations.)
+1. Magento database (translations located in this database take precedence and override translations stored in other locations.)  Refer to the [user guide](https://docs.magento.com/m2/ce/user_guide/system/translate-inline.html) for more information.
 
-If there are different translations for one string, the theme dictionary translations have priority over the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} translations, and child theme translations have priority over parent theme translations.
+If there are different translations for one string, the theme dictionary translations have priority over the [module](https://glossary.magento.com/module) translations, and child theme translations have priority over parent theme translations.
 
 ## Creating a theme dictionary to override parent strings for default locale
 
@@ -61,14 +61,22 @@ The locale dictionary would use the default values (keys) in the left column fol
 "Card Verification Number",	<translation>
 ```
 
+## Element translations per module
+
+You can translate the same element in different ways for different modules:
+
+```text
+"Add to Cart", "Add to Cart", module, Magento_Review
+"Add to Cart", "Add to Shopping Cart", module, Magento_Catalog
+```
+
 ## Additional information
 
 - [Translations overview]
 - [Example theme translation dictionary]
 
-
 [translation dictionaries]: {{page.baseurl}}/frontend-dev-guide/translations/xlate.html#translate_terms
-[`<Magento_Luma_theme_dir>/i18n/en_US.csv`]: {{site.mage2000url}}app/design/frontend/Magento/luma/i18n/en_US.csv
+[`<Magento_Luma_theme_dir>/i18n/en_US.csv`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/i18n/en_US.csv
 [i18n tool]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [Generate the dictionary]: {{page.baseurl}}/config-guide/cli/config-cli-subcommands-i18n.html#config-cli-subcommands-xlate-dict
 [Example theme translation dictionary]: {{page.baseurl}}/frontend-dev-guide/translations/translate_practice.html

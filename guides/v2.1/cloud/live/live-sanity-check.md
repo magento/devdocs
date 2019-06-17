@@ -84,7 +84,7 @@ During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#c
 *	Apply patches distributed to all {{site.data.var.ece}} accounts
 *	Apply patches we provided specifically to you
 *	Enable modules to build
-*	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
+*	Compile code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration
 
 The build also checks for a [configuration file]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.
 
@@ -162,7 +162,7 @@ We highly recommend having Magento already installed prior to deployment. During
 
 *	Install the Magento application if needed
 *	If the Magento application is installed, upgrade components
-*	Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+*	Clear the [cache](https://glossary.magento.com/cache)
 *	Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 #### To deploy your site:

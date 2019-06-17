@@ -13,10 +13,9 @@ functional_areas:
 
 ### Details
 
-During the installation, a  message similar to the following displays: 
+During the installation, a  message similar to the following displays:
 
-	[ERROR] exception 'ReflectionException' with message 'Class Magento\Framework\StoreManagerInterface does not exist' 
-	in /<path>/lib/internal/Magento/Framework/Code/Reader/ClassReader.php
+    [ERROR] exception 'ReflectionException' with message 'Class Magento\Framework\StoreManagerInterface does not exist' in /<path>/lib/internal/Magento/Framework/Code/Reader/ClassReader.php
 
 ### Solution
 
@@ -24,13 +23,13 @@ Clear all directories and files under Magento's `var` subdirectory and install t
 
 As the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) or as a user with `root` privileges, enter the following commands:
 
-    ```bash
-	cd <your Magento install directory>/var
-	```
-	
-	```bash
-	rm -rf cache/* di/* generation/* page_cache/*
-	```
+```bash
+cd <your Magento install directory>/var
+```
+
+```bash
+rm -rf cache/* di/* generation/* page_cache/*
+```
 
 #### Redis
 

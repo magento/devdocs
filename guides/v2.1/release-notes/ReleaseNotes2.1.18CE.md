@@ -5,10 +5,10 @@ title: Magento Open Source 2.1.18 Release Notes
 
 
 
-*Release notes published on June 20, 2019.*
+*Release notes published on June 25, 2019.*
 
 
-
+{:.bs-callout .bs-callout-note}
 The Magento Open Source 2.1.18 software release marks the final supported software release for Magento Open Source version 2.1.x. Magento Open Source 2.1.x will no longer receive security updates or product quality fixes now that its support window has expired.
 
 To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Open Source. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
@@ -37,6 +37,15 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.3.2
 
 
 <!--- MAGETWO-99218 -->* The new PaypalRecaptcha module adds Google reCAPTCHA and CAPTCHA to the Payflow Pro checkout form.  This enhanced functionality has been added in response to malicious targeting of Magento deployments that implement Payflow Pro. No additional configuration is needed to deploy this feature. 
+
+<!-- MAGETWO-99818 -->
+* We have modified the required permissions for updating the `design` fieldset of categories, products, and CMS pages:
+
+  * Existing roles that have **save** permission for these entities can save everything.
+
+  * New roles must be granted permission to edit design manually.
+
+  * If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
 
 
 ## Installation

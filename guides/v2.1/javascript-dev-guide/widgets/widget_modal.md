@@ -2,18 +2,15 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Modal widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_modal.html
 ---
 
 ## Overview {#modal_overview}
 
-The Magento modal {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
+The Magento modal [widget](https://glossary.magento.com/widget) implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:
 
 -   Configuring as popup or slide
 -   Controlling stack of modal widgets
 -   Setting buttons for action bar
-
 
 The modal widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`].
 
@@ -82,10 +79,11 @@ buttons: [{
 **Default value**:
 ```javascript
 buttons: [{
-    text: 'Ok',
+    text: $.mage.__('Ok'),
     class: '',
-    click: function() {
-        this.closeModal();
+    attr: {},
+    click: function (event) {
+        this.closeModal(event);
     }
 }]
 ```
@@ -98,7 +96,6 @@ Close the modal window when a user clicks on the overlay.
 
 **Default value**: `true`
 
-
 ### `closeText` {#modal_closeText}
 The close button text.
 
@@ -106,15 +103,12 @@ The close button text.
 
 **Default value**: `$.mage.__('Close')`
 
-
 ### `focus` {#modal_focus}
 Selector to focusing when a modal window opens or 'none' if focusing is not necessary.
-
 
 **Type**: String 
 
 **Default value**: `''`
-
 
 ### `innerScroll` {#modal_innerScroll}
 Modal scroll position.
@@ -198,14 +192,11 @@ The modal widget has the following methods:
 ### `openModal()` {#modal_open}
 Open the modal window.
 
-
 ### `closeModal()` {#modal_close}
 Close the modal window.
 
-
 ### `keyEventSwitcher()` {#modal_keyEventSwitcher}
 Listens for key events and calls handler function if it exists.
-
 
 ### `toggleModal()` {#modal_toggleModal}
 Toggles the modal window.
@@ -264,7 +255,7 @@ The following example shows how to initialize the modal widget and pass options 
             'trigger': '[data-trigger=trigger]',
             'responsive': true,
             'buttons': [{
-                text: 'Submit',
+                text: $.mage.__('Submit'),
                 class: 'action'
             }]
         }}">
@@ -280,8 +271,8 @@ The result is a modal and a button (_Click Here_) that opens the modal.
 
 ![Modal Widget]({{ site.baseurl }}/common/images/widget/modal-widget-result.png)
 
-[`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/js/modal/modal.js
-[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
-[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{site.mage2000url}}app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
+[`<Magento_Ui_module_dir>/view/base/web/js/modal/modal.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/modal.js
+[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-popup.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html
+[`<Magento_Ui_module_dir>/view/base/web/templates/modal/modal-slide.html`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
 [JavaScript initialization]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html

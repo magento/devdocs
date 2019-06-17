@@ -21,7 +21,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 **Variation 1:**
 
-1. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+1. Log in to [Admin](https://glossary.magento.com/admin).
 2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
 3. Click the "New Synonyms Group" button.
 4. Enter data in the "Synonyms" field.
@@ -69,7 +69,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 #### Step 2. Create the testing object - a fixture {#create-test-object}
 
-This step is applicable if a fixture doesn't exist in a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+This step is applicable if a fixture doesn't exist in a [module](https://glossary.magento.com/module).
 
 Use a [`generateFixtureXml.php`][] to create a new [fixture][].
 
@@ -506,7 +506,7 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 
 ![Created pages]({{ site.baseurl }}/common/images/ftf/mtf_tutorial_pages.png)
 
-To generate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes for these [pages][] enter and run in your terminal
+To generate [PHP](https://glossary.magento.com/php) classes for these [pages][] enter and run in your terminal
 
 ```bash
 php <magento2_root_dir>/dev/tests/functional/utils/generate.php
@@ -540,7 +540,7 @@ public function addNew()
 }
 ```
 
-In {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
+In [HTML](https://glossary.magento.com/html) page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
 
 The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.
 
@@ -611,7 +611,7 @@ Now we have the following structure:
 ![Form mapping block]({{ site.baseurl }}/common/images/ftf/mtf_tutorial_block_mapping.png)
 
 
-Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}css{% endglossarytooltip %} selector.
+Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` [css](https://glossary.magento.com/css) selector.
 
 ```xml
 <block name="synonymForm" class="Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm" locator="[id='page:main-container']" strategy="css selector" />
@@ -1057,12 +1057,12 @@ That's it!
 [Step 7]: #add-blocks-to-pages
 
 [develop branch]: https://github.com/magento/magento2
-[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
 [`\Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
-[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
+[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
 [up and running]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->

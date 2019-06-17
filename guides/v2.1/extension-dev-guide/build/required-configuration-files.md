@@ -4,14 +4,11 @@ subgroup: 03_Build
 title: Define your configuration files
 menu_title: Define your configuration files
 menu_order: 2000
-redirect_from:
-  - /guides/v2.0/extension-dev-guide/template_create_req_config_files.html
-  - /guides/v2.0/extension-dev-guide/required-configuration-files.html
 functional_areas:
   - Configuration
 ---
 
-Each Magento 2 {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has its own set of configuration files, gathered into the module's `etc` directory.
+Each Magento 2 [module](https://glossary.magento.com/module) has its own set of configuration files, gathered into the module's `etc` directory.
 
 {: .bs-callout .bs-callout-info }
 Unlike Magento 1, there is no monolithic configuration file in Magento 2.
@@ -32,7 +29,7 @@ Magento 2 looks for configuration information for each module in that module's `
 {: .bs-callout .bs-callout-info }
 Additions you make to those configuration files are applied *globally* to your module.
 
-In addition to those files, a Magento 2 module also has nested configuration directories in the `etc` directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a `config.xml` file to `etc/frontend`, the settings you make in that file overrides the settings in `etc/config.xml` for {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} functionality *only*.
+In addition to those files, a Magento 2 module also has nested configuration directories in the `etc` directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a `config.xml` file to `etc/frontend`, the settings you make in that file overrides the settings in `etc/config.xml` for [storefront](https://glossary.magento.com/storefront) functionality *only*.
 
 
 *	`<your module root dir>/etc/adminhtml/`
@@ -47,7 +44,7 @@ In addition to those files, a Magento 2 module also has nested configuration dir
 
 ### Tailor your configuration files for what your module does
 
-The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel, or as a {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
+The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the [Magento Admin](https://glossary.magento.com/magento-admin) panel, or as a [backend](https://glossary.magento.com/backend) [extension](https://glossary.magento.com/extension) that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to `etc/adminhtml/`, like:
 
 *	`<your module root dir>/etc/adminhtml/di.xml`
 *	`<your module root dir>/etc/adminhtml/routes.xml`
