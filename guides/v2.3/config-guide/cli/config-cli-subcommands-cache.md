@@ -60,6 +60,8 @@ config_integration_api: 1
              translate: 1
 ```
 
+For example, when Sign `cache:status` Sign 1 (`config: 1`) `cache` is `enable` and Sign 0 (`config: 0`) is `cache` is `disable`.
+
 ## Enable or disable cache types {#config-cli-subcommands-cache-en}
 
 This command enables you to enable or disable all cache types or only the ones you specify. Disabling cache types is useful during development because you see the results of your changes without having to flush the cache; however, disabling cache types has an adverse effect on performance.
