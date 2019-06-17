@@ -1,12 +1,11 @@
 ---
 group: rest-api
 title: Search using REST endpoints
-redirect_from: /guides/v2.1/howdoi/webapi/search-criteria.html
 ---
 
-POST, PUT, and DELETE requests to the REST Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} structure) in the body of the message.
+POST, PUT, and DELETE requests to the REST Web [API](https://glossary.magento.com/api) require the service method parameters to be in the body of the request. For example, to create a Customer, you would specify a JSON array (or [XML](https://glossary.magento.com/xml) structure) in the body of the message.
 
-For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} of the GET request. The basic pattern for specifying the criteria is
+For search APIs that invoke a `*Repository::getList(SearchCriteriaInterface *)` call, the searchCriteria must be specified in the [URL](https://glossary.magento.com/url) of the GET request. The basic pattern for specifying the criteria is
 
 ```
 searchCriteria[filter_groups][<index>][filters][<index>][field]=<field_name>

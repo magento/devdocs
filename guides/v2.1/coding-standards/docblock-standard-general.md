@@ -130,7 +130,7 @@ If the file contains a structural element (for example, a class), description fo
 
 Use the following templates for the license notice and copyright blocks:
 
-**Template for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} Files**
+**Template for [PHP](https://glossary.magento.com/php) Files**
 
 ```php
 <?php
@@ -152,7 +152,7 @@ interface MetadataObjectInterface
 }
 ```
 
-**Template for {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} Files**
+**Template for [XML](https://glossary.magento.com/xml) Files**
 
 ```xml
 
@@ -275,7 +275,7 @@ If possible, add use cases where developers can or cannot use the class.
 {:#short-name-form}
 
 It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
-The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is in the `Service/DTO` classes due to tooling requirements.
+The only [exception](https://glossary.magento.com/exception) is in the `Service/DTO` classes due to tooling requirements.
 
 **Example of a Method DocBlock**
 
@@ -606,7 +606,7 @@ class LimitedMutableClass implements MutableInterface
 The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy]({{ page.baseurl }}/contributor-guide/backward-compatible-development/).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
- If the `@api` tag is applied at the file level, then all methods within the file are part of the public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
+ If the `@api` tag is applied at the file level, then all methods within the file are part of the public [API](https://glossary.magento.com/api).
 You do not need to annotate each method individually.
 
 See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.

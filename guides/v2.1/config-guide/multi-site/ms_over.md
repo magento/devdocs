@@ -1,9 +1,7 @@
 ---
 group: configuration-guide
 title: Multiple websites or stores
-redirect_from:
- - /guides/v2.0/config-guide/bootstrap/mage-run.html
- - /guides/v2.1/config-guide/bootstrap/mage-run.html
+redirect_from: /guides/v2.1/config-guide/bootstrap/mage-run.html
 functional_areas:
   - Configuration
   - System
@@ -18,11 +16,11 @@ A single instance of the {{site.data.var.ee}} software enables you to start mult
 -  Products
 -  Currencies
 
-This flexible solution enables one Magento codebase and {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} to administer and display different stores. You configure the websites, stores, and store views in the Magento Admin panel. Use certain variables in virtual hosts to start the Magento application using these websites or store views.
+This flexible solution enables one Magento codebase and [Magento Admin](https://glossary.magento.com/magento-admin) to administer and display different stores. You configure the websites, stores, and store views in the Magento Admin panel. Use certain variables in virtual hosts to start the Magento application using these websites or store views.
 
 A typical use is to set up stores with different options in different domains. For example, you could have one set of categories and products on one domain and another set of categories and products on a separate domain in a different language.
 
-You configure the websites, stores, and store views in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in virtual hosts to start the Magento application using these websites or store views.
+You configure the websites, stores, and store views in the Magento [Admin](https://glossary.magento.com/admin). Use the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables in virtual hosts to start the Magento application using these websites or store views.
 
 Consider the following terms:
 

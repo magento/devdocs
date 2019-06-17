@@ -1,6 +1,6 @@
 ---
 group: configuration-guide
-title: Overview
+title: Deployment Overview
 functional_areas:
   - Configuration
   - Deploy

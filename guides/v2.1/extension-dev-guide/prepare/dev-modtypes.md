@@ -6,8 +6,6 @@ menu_title: Component types
 menu_order: 2
 menu_node:
 redirect_from:
-  - /guides/v2.0/mktpl-quickstart/dev-modtypes.html
-  - /guides/v2.0/extension-dev-guide/dev-modtypes.html
   - /guides/v2.1/mktpl-quickstart/dev-modtypes.html
   - /guides/v2.2/mktpl-quickstart/dev-modtypes.html
 ---

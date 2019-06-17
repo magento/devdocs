@@ -12,7 +12,7 @@ functional_areas:
 
 This topic describes how to implement a custom shipping address renderer.
 
-Out of the box, Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} consists of two steps:
+Out of the box, Magento [checkout](https://glossary.magento.com/checkout) consists of two steps:
 
 - Shipping Information
 - Review and Payment Information
@@ -31,7 +31,7 @@ To implement shipping address rendering in checkout, you need to take the follow
 
 ## Step 1: Create the JS renderer component (shipping address renderer) {#create}
 
-Your shipping address renderer must be implemented as a {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
+Your shipping address renderer must be implemented as a [JavaScript](https://glossary.magento.com/javascript) [UI component](https://glossary.magento.com/ui-component). That is, it must be a RequireJS module, and must return a factory function, that takes a configurable object.
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code. Instead add your customizations in a separate module. For your checkout customization to be applied correctly, your custom module must depend on the `Magento_Checkout` module. Module dependencies are specified in the [module's `composer.json`]({{ page.baseurl }}/extension-dev-guide/build/composer-integration.html). Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
@@ -91,7 +91,7 @@ A shipping rate processor is responsible for retrieving the shipping rates avail
 
 In your custom module directory, create the component's `.js` file for the processor. It must be located under the `<your_module_dir>/view/frontend/web/js/model/` directory.
 
-Here you need to specify the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} used for calculating the shipping rates for your custom address type.
+Here you need to specify the [URL](https://glossary.magento.com/url) used for calculating the shipping rates for your custom address type.
 
 The following is a sample of the shipping rate processor code:
 
@@ -285,7 +285,7 @@ The `address_type` you need to specify in the layout, is the value you set in th
 
 On the Review and Payment Information step of checkout, the shipping address is displayed in the **Ship-To** section for customer to make sure everything is set correctly.
 
-If you want your custom address type to be displayed here as well, you need to create an `.html` template for rendering it, and declare in the corresponding location in {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
+If you want your custom address type to be displayed here as well, you need to create an `.html` template for rendering it, and declare in the corresponding location in [layout](https://glossary.magento.com/layout).
 
 ### Add template for displaying the address in the Ship-To section
 

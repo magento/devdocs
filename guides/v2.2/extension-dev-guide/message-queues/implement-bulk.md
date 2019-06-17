@@ -7,14 +7,13 @@ menu_order: 29
 ee_only: True
 level3_menu_node: level3child
 level3_subgroup: mq
-redirect_from: /guides/v2.2/extension-dev-guide/implement-bulk.html
 functional_areas:
   - Services
 ---
 
 This document describes how bulk operations can be implemented. There are three primary tasks to accomplish this:
 
-* Create a {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %} that sends messages to the message queue
+* Create a [publisher](https://glossary.magento.com/publisher) that sends messages to the message queue
 * Create a consumer that receives and processes messages
 * Configure the message queues
 
@@ -294,7 +293,7 @@ For more information about the `di.xml` file, see [Dependency Injection]({{ page
 
 #### Create `communication.xml`
 
-The `communication.xml` file defines aspects of the message queue system that apply to all topics for the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. Create this file with the following contents:
+The `communication.xml` file defines aspects of the message queue system that apply to all topics for the [module](https://glossary.magento.com/module). Create this file with the following contents:
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">

@@ -7,7 +7,7 @@ Magento 2.2 introduces changes that may affect the correct functionality of alre
 
 ## API changes
 
-Magento 2.2 introduces changes in several {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
+Magento 2.2 introduces changes in several [API](https://glossary.magento.com/api) classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
 
 ### Framework
 
@@ -18,7 +18,7 @@ Magento no longer supports custom config file pools
 
 ### Store module
 
-The Store {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} management has been updated to allow the retrieval of a store by its {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} id.
+The Store [module](https://glossary.magento.com/module) management has been updated to allow the retrieval of a store by its [website](https://glossary.magento.com/website) id.
 
 **Class:** [`Magento\Store\Api\StoreWebsiteRelationInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php){:target="_blank"}<br/>
 **Action:** New interface added with method `getStoreByWebsiteId($websiteId)`
@@ -90,7 +90,7 @@ Deprecated method | Use instead | Subsequent calls
 
 ### Error processor module
 
-{% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %} report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
+[Exception](https://glossary.magento.com/exception) report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
 
 ### Braintree module
 
@@ -234,7 +234,7 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 
 ### Advanced section in System Configurations
 
-**Action:** Section `Advanced` was removed from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Interface<br/>
+**Action:** Section `Advanced` was removed from [Admin](https://glossary.magento.com/admin) Interface<br/>
 **Description:** Magento does not support disabling/enabling modules output from the Admin Panel in 2.2.0 version. Module output can still be enabled/disabled in configuration files.
 
 ## Database schema changes
@@ -250,7 +250,7 @@ This release replaces usages of `unserialize` with [`json_decode`]({{ page.baseu
 
 The release also provides upgrade scripts that convert Magento data stored in serialized format.
 
-{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} developers should review the following cases to see what actions they should take for their extensions:
+[Extension](https://glossary.magento.com/extension) developers should review the following cases to see what actions they should take for their extensions:
 
 **Case 1:**  
 Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
@@ -284,7 +284,7 @@ Your extension accesses values in the `core_config_data` table using the followi
 - `admin/magento_logging/actions`
 
 **Solution:**  
-Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} serialize/unserialize functions.
+Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native [PHP](https://glossary.magento.com/php) serialize/unserialize functions.
 
 **Case 6:**  
 Your extension uses a backend model that extends `\Magento\Config\Model\Config\Backend\Serialized` to save/load data to/from the database.
@@ -357,7 +357,7 @@ The table for `\Magento\Widget\Model\ResourceModel\Widget` has been deprecated.
 
 ### New Class: `FieldDataConverter`
 
-This class supports data {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} from one format to another.
+This class supports data [conversion](https://glossary.magento.com/conversion) from one format to another.
 It can be used to upgrade data in upgrade scripts.
 
 #### Features

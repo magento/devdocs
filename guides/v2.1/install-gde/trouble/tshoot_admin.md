@@ -11,7 +11,7 @@ functional_areas:
 
   The requested URL /magento2index.php/admin/admin/dashboard/index/key/0c81957145a968b697c32a846598dc2e/ was not found on this server.
 
-Note the lack of a slash character between `magento2` and `index.php` in the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
+Note the lack of a slash character between `magento2` and `index.php` in the [URL](https://glossary.magento.com/url).
 
 ### Solution
 

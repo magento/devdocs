@@ -6,7 +6,7 @@ This page describes rules and best practices for backward compatible development
 
 ## Backward Compatibility Policy
 
-See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developers.
+See the [versioning][versioning] documentation for the definitions of MAJOR and MINOR changes and how it impacts [extension](https://glossary.magento.com/extension) developers.
 
 The core Magento team and contributing developers work in two release types
 
@@ -33,7 +33,7 @@ Introducing a new dependency from an existing module is a backward incompatible 
 
 ### PHP
 
-The following is a list of prohibited {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code changes and possible alternative implementations.
+The following is a list of prohibited [PHP](https://glossary.magento.com/php) code changes and possible alternative implementations.
 
 #### Interface/class removal
 
@@ -98,7 +98,7 @@ private function updateScopedPrice($price, $storeId)
 
 #### Modifying the default values of optional arguments in public and protected methods
 
-This is forbidden because the default argument values of public or protected methods are part of the {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} of the class/interface.
+This is forbidden because the default argument values of public or protected methods are part of the [API](https://glossary.magento.com/api) of the class/interface.
 
 As an alternative, Create a new method with new interface following the alternative implementation for creating a new method for a class or interface.
 
@@ -110,7 +110,7 @@ Do not modify a method argument type.
 
 #### Modifying the types of thrown exceptions
 
-Do not modify the types of thrown exceptions unless a new {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is a sub-type of the old one.
+Do not modify the types of thrown exceptions unless a new [exception](https://glossary.magento.com/exception) is a sub-type of the old one.
 
 #### Throwing a new type of exception from an existing method
 
@@ -196,7 +196,7 @@ Do not remove or rename constants.
 
 #### Removing, renaming, or changing the type of event arguments
 
-Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} arguments.
+Do not remove or rename [event](https://glossary.magento.com/event) arguments.
 Do not change argument types.
 Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding `@deprecated` annotation before dispatching the event.
 
@@ -230,7 +230,7 @@ The following is a list of prohibited JS code changes:
 
 ### XML Schema
 
-The following is a list of prohibited {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} Schema changes:
+The following is a list of prohibited [XML](https://glossary.magento.com/xml) Schema changes:
 
 - Adding an obligatory node
 - Adding an obligatory attribute
@@ -258,7 +258,7 @@ The following is a list of prohibited CSS/Less changes:
 The following is a list of prohibited Magento API changes:
 
 - Removing or renaming an event
-- Removing or renaming a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} handle
+- Removing or renaming a [layout](https://glossary.magento.com/layout) handle
 - Removing or renaming a store configuration path
 - Modifying the directory structure
 - Removing an @api annotation
@@ -288,7 +288,7 @@ Changing the value of a constant is itself a backward compatible change.
 Even if client code saves the value in permanent storage or use it as input or output of a method, it is the responsibility of that code to ensure that it is a reliable implementation.
 
 The client code should have enough control over the constant's value.
-Do not rely on a value of a constant from another {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or another vendor.
+Do not rely on a value of a constant from another [module](https://glossary.magento.com/module) or another vendor.
 
 #### Stop setting a value to the Registry
 

@@ -108,8 +108,8 @@ This section discusses how to configure {{site.data.var.ee}} to use the Solr sea
 
 To configure Magento to work with Solr:
 
-1.  Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
-2.  Click **STORES** > **Settings** > **Configuration** > {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}CATALOG{% endglossarytooltip %} > **Catalog** > **Catalog Search**.
+1.  Log in to the [Magento Admin](https://glossary.magento.com/magento-admin) as an administrator.
+2.  Click **STORES** > **Settings** > **Configuration** > [CATALOG](https://glossary.magento.com/catalog) > **Catalog** > **Catalog Search**.
 3.  In the right pane, expand **Catalog Search**.
 4.  The following table shows the minimum amount of information to enter to test the connection to your Solr search engine. Leave all other values at their defaults.<br />
 <table>
@@ -195,9 +195,9 @@ Only after the test connection succeeds, click **Save Config<** and continue wit
 
 ## Reindexing catalog search and refreshing the full page cache {#solr-reindex}
 
-After you change Magento's Solr configuration, you must reindex the catalog search index and refresh the full page using the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or command line.
+After you change Magento's Solr configuration, you must reindex the catalog search index and refresh the full page using the [Admin](https://glossary.magento.com/admin) or command line.
 
-To refresh the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} using the Admin:
+To refresh the [cache](https://glossary.magento.com/cache) using the Admin:
 
 1.  In the Admin, click **System** > **Cache Management**.
 2.  Select the checkbox next to **Page Cache**.
@@ -229,7 +229,7 @@ Unlike the cache, indexers are updated by a cron job. Make sure [cron is enabled
 
 ## Verify Solr is working {#solr-verify}
 
-To verify Solr works, go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and search for any term (including one that won't return results) and look for the search in the Solr command window.
+To verify Solr works, go to the [storefront](https://glossary.magento.com/storefront) and search for any term (including one that won't return results) and look for the search in the Solr command window.
 
 The following figure shows an example of a storefront search.
 

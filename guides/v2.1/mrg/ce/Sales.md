@@ -7,16 +7,16 @@ redirect_from:
  - /guides/v2.1/mrg/ce/Sales/services.html
 ---
 
-Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in system.
+Magento_Sales [module](https://glossary.magento.com/module) is responsible for order processing and appearance in system.
 
 Magento_Sales module manages next system entities and flows:
 
 * order management
-* {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} management
-* {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} management (including track management)
+* [invoice](https://glossary.magento.com/invoice) management
+* [shipment](https://glossary.magento.com/shipment) management (including track management)
 * credit memos management
 
-Magento_Sales module is required for Magento_Checkout module to perform {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} operations.
+Magento_Sales module is required for Magento_Checkout module to perform [checkout](https://glossary.magento.com/checkout) operations.
 
 ## System requirements
 
@@ -30,14 +30,14 @@ The Magento_Sales module is installed automatically during Magento installation.
 
 ## InvoiceOrder
 
-The InvoiceOrder service introduces a capability to execute Magento native business flow of the Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} using {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
+The InvoiceOrder service introduces a capability to execute Magento native business flow of the Sales [module](https://glossary.magento.com/module) using [API](https://glossary.magento.com/api).
 
 With this service you can:
 
-* create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} document (full or partial)
+* create an [invoice](https://glossary.magento.com/invoice) document (full or partial)
 * capture money placed with order payment
 * notify a customer about document creation
-* change {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %} and state
+* change [order status](https://glossary.magento.com/order-status) and state
 
 ### Parameters
 
@@ -201,7 +201,7 @@ In case of failure, it returns an error object. Example in REST:
 
 #### Extension points
 
-The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} points marked with `@api` annotation. Extension developers can use APIs to extend service logic.
+The service implementation contains [extension](https://glossary.magento.com/extension) points marked with `@api` annotation. Extension developers can use APIs to extend service logic.
 
 |Extension point | Description
 |---|---
@@ -221,7 +221,7 @@ Please note, that current service is available only for invoices created using o
 
 With this service you can:
 
-* create a {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}Credit Memo{% endglossarytooltip %} (complete or partial) for particular Invoice
+* create a [Credit Memo](https://glossary.magento.com/credit-memo) (complete or partial) for particular Invoice
 * add details about refunded items to an Order
 * change status and state of an Order according to performed actions
 * notify a customer about performed refund operation
@@ -804,10 +804,10 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 With the ShipOrder service you can:
 
-* create a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} document (full or partial)
+* create a [shipment](https://glossary.magento.com/shipment) document (full or partial)
 * add details about shipped items into an order
 * change status and state of an order according to performed actions
-* notify the customer of a new {% glossarytooltip eb790722-f597-4b2f-82b4-e11735c6558b %}shipment document{% endglossarytooltip %}
+* notify the customer of a new [shipment document](https://glossary.magento.com/shipment-document)
 
 ### Service parameters
 

@@ -2,13 +2,12 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: DropdownDialog widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
-## Overview
-Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
 
--   triggering {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} for opening
+## Overview
+Magento dropdownDialog [widget](https://glossary.magento.com/widget) is a customization of the standard [jQuery UI Dialog](http://api.jqueryui.com/dialog/){:target="_blank"}. As extra functionality it implements the following:
+
+-   triggering [event](https://glossary.magento.com/event) for opening
 -   delaying to automatically close the drop-down on mouse out
 -   clicking outside the area closes the drop-down
 
@@ -47,7 +46,6 @@ If set to `false` (default value), then `position` rules are not used and the dr
 
 **Default value**: `false`
 
-
 ### `autoOpen` {#d_autoOpen}
 
 Specifies if the drop-down should open after page load.
@@ -56,7 +54,6 @@ Specifies if the drop-down should open after page load.
 
 **Default value**: `false`
 
-
 ### `autoSize` {#d_autoSize}
 
 Specifies if the size of the drop-down is defined by widget options ([height], [width], [minHeight], [minWidth]).
@@ -64,7 +61,6 @@ Specifies if the size of the drop-down is defined by widget options ([height], [
 **Type**: Boolean
 
 **Default value**: `false`
-
 
 ### `closeOnMouseLeave` {#d_closeOnMouseLeave}
 Specifies if the drop-down is closed when mouse pointer is moved out.
@@ -89,7 +85,6 @@ Defines if the [title] option is used for displaying the title bar.
 
 ### `defaultDialogClass` {#d_defaultDialogClass}
 Class that is added to the drop-down, when it gets initialized.
-
 
 **Type**: String
 
@@ -123,7 +118,6 @@ Name of the event that triggers the `open()` function for drop-down.
 
 **Default value**: `click`
 
-
 ### `triggerTarget` {#d_triggerTarget}
 Element that triggers the drop-down.
 
@@ -133,7 +127,6 @@ Element that triggers the drop-down.
 - jQuery object
 
 **Default value**: `null`
-
 
 ### `timeout` {#d_timeout}
 The number of milliseconds until the dropdown is closed after mouse pointer moves out.
@@ -145,7 +138,6 @@ The number of milliseconds until the dropdown is closed after mouse pointer move
 ## Methods {#dialog_methods}
 
 Magento customized dropdownDialog widget has default [jQuery UI Dialog widget] methods, though some of them are customized. 
-
 
 Customized public methods:
 -   [open()](#d_open)

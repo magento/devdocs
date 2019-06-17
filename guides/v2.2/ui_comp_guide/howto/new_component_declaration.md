@@ -3,7 +3,7 @@ group: ui-components-guide
 title: Declare a custom UI component
 ---
 
-Declaring a custom {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} refers to creating the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration of your custom component, and is a part of a bigger task of creating a custom UI component.
+Declaring a custom [UI component](https://glossary.magento.com/ui-component) refers to creating the [XML](https://glossary.magento.com/xml) configuration of your custom component, and is a part of a bigger task of creating a custom UI component.
 
 This topic describes the XML elements that must be used for declaring a custom component and where this declaration should be placed.  
 
@@ -19,12 +19,12 @@ The `<container>` element is typically used for declaring custom components that
 
 The `<container>` and `<component>` elements have no mandatory attributes. The following optional attributes are available for both these elements:
 
-- `component`: link to the component's {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} constructor.
-- `class`: link to the component's {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class.
+- `component`: link to the component's [JavaScript](https://glossary.magento.com/javascript) constructor.
+- `class`: link to the component's [PHP](https://glossary.magento.com/php) class.
 - `template`: link to component's `.html` template.
 - `provider`: link to component's data provider.
 - `sortOrder`: component's sort order
-- `displayArea`: the placeholder which defines the area for rendering the component in the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
+- `displayArea`: the placeholder which defines the area for rendering the component in the [layout](https://glossary.magento.com/layout) file.
 
 {%
 include note.html

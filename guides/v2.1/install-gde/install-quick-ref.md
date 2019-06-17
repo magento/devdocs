@@ -47,11 +47,11 @@ If not, see the [Installation overview]({{ page.baseurl }}/install-gde/bk-instal
 	*	[PHP (CentOS)]({{ page.baseurl }}/install-gde/prereq/php-centos.html)
 	*	[MySQL]({{ page.baseurl }}/install-gde/prereq/mysql.html)
 3.	Just as importantly, set up the [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/file-sys-perms-over.html) on the server.
-4.	Switch to the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+4.	Switch to the [Magento file system owner](https://glossary.magento.com/magento-file-system-owner).
 
 ### Get the Magento software
 
-When all prerequisites have been met, get the Magento software using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} as follows:
+When all prerequisites have been met, get the Magento software using [Composer](https://glossary.magento.com/composer) as follows:
 
 	cd <web server docroot directory>
 	composer create-project --repository=https://repo.magento.com/ magento/project-community-edition magento2
