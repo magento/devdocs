@@ -22,7 +22,7 @@ The prompt widget can be initialized with or without binding to a certain elemen
 
 ```javascript
 $('#prompt_init').prompt({
-    title: 'Prompt title',
+    title: $.mage.__('Prompt title'),
     actions: {
         confirm: function(){}, //callback on 'Ok' button click
         cancel: function(){}, //callback on 'Cancel' button click
@@ -39,8 +39,8 @@ require([
 ], function(prompt) { // Variable that represents the `prompt` function
 
     prompt({
-        title: 'Some title',
-        content: 'Some content',
+        title: $.mage.__('Some title'),
+        content: $.mage.__('Some content'),
         actions: {
             confirm: function(){},
             cancel: function(){},
