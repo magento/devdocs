@@ -65,16 +65,14 @@ _{{ ce }}_:
 composer require magento/product-community-edition={{ page.guide_version }}.2 --no-update
 ```
 
-_{{ ee }}_:}
+_{{ ee }}_:
 
 ```bash
 composer require magento/product-enterprise-edition={{ page.guide_version }}.2 --no-update
 ```
 
-{%
-include note.html{{ page.guide_version }}
-type='tip'
-content='To see a full list of available {{ page.guide_version }} versions:
+<div class="bs-callout-tip" markdown="1">
+To see a full list of available {{ page.guide_version }} versions:
 
 _Magento Open Source_:
 
@@ -88,8 +86,7 @@ _Magento Commerce_:
 composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
 ```
 
-'
-%}
+</div>
 
 ## Modify the Magento updater
 
