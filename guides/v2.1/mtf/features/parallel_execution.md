@@ -98,6 +98,7 @@ Run the test suite:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 ```

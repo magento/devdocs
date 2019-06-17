@@ -42,9 +42,12 @@ Sometimes you just want to test your build prior to pushing your code to Git. Yo
 2. Move to another location to run your build. You should keep this build separate from your usual Git branch.
 3. Run the following command to build locally. The command builds the current project locally strictly to test the build without the full patching and commit process.
 
-		magento-cloud local:build
+    ```bash
+    magento-cloud local:build
+    ```
 
-	For details, enter `magento-cloud local:build --help`.
+    For details, enter `magento-cloud local:build --help`.
+
 4. Watch for the results. A series of files will generate for the build. If you do not encounter errors, you can [push code to the remote Git branch](#push) and continue.
 
 If errors occur during the build, you can investigate and resolve the code issues. You should not commit the files from this build to Git.
@@ -81,7 +84,7 @@ During the [build phase]({{page.baseurl}}/cloud/reference/discover-deploy.html#c
 *	Apply patches distributed to all {{site.data.var.ece}} accounts
 *	Apply patches we provided specifically to you
 *	Enable modules to build
-*	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
+*	Compile code and the [dependency injection](https://glossary.magento.com/dependency-injection) configuration
 
 The build also checks for a [configuration file]({{ site.baseurl }}/guides/v2.1/cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it is completed in the deployment stage.
 
@@ -132,6 +135,7 @@ Before you continue, you must know the file system path to any patch we provided
     ```bash
     php bin/magento  setup:di:compile
     ```
+    
 	This command can take several minutes to complete and produces messages similar to the following:
 
     ```terminal
@@ -158,7 +162,7 @@ We highly recommend having Magento already installed prior to deployment. During
 
 *	Install the Magento application if needed
 *	If the Magento application is installed, upgrade components
-*	Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+*	Clear the [cache](https://glossary.magento.com/cache)
 *	Set the Magento application for [`production`]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode) mode
 
 #### To deploy your site:
@@ -167,15 +171,22 @@ We highly recommend having Magento already installed prior to deployment. During
 2.	Change to your project root directory.
 3.	Enter the following command:
 
-		php bin/magento setup:upgrade
+    ```bash
+    php bin/magento setup:upgrade
+    ```
 
 	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}/cloud/setup/first-time-deploy.html). If you have not installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}/install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 4.	Clean the Magento cache:
 
-		php bin/magento cache:clean
+    ```bash
+    php bin/magento cache:clean
+    ```
+
 5.	Set the Magento application for [production mode]({{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode):
 
-		php bin/magento deploy:mode:set production
+    ```bash
+    php bin/magento deploy:mode:set production
+    ```
 
 If errors display, debug them if possible, [review logs]({{ page.baseurl }}/cloud/trouble/environments-logs.html), or open a [support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html) to get additional assistance.
 

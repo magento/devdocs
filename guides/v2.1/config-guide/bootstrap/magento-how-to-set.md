@@ -42,11 +42,11 @@ bash shell example for CentOS:
 	export MAGE_PROFILER=firebug
 
 {:.bs-callout .bs-callout-info}
-If a `PHP Fatal error` displays in the browser after you set a profiler value, restart your web server. The reason might be related to {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} bytecode caching, which caches bytecodes and PHP classpaths.
+If a `PHP Fatal error` displays in the browser after you set a profiler value, restart your web server. The reason might be related to [PHP](https://glossary.magento.com/php) bytecode caching, which caches bytecodes and PHP classpaths.
 
 ## Specifying a parameter value {#mode-specify-web}
 
-This section discusses how to specify the mode for either Apache or {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}.
+This section discusses how to specify the mode for either Apache or [nginx](https://glossary.magento.com/nginx).
 
 See one of the following sections for more information:
 
@@ -56,7 +56,7 @@ See one of the following sections for more information:
 
 ### Specify a variable using an nginx setting {#mode-specify-web-nginx}
 
-See the [nginx sample configuration]({{ site.mage2000url }}nginx.conf.sample#L16){:target="_blank"} on GitHub.
+See the [nginx sample configuration]({{ site.mage2bloburl }}/{{ page.guide_version }}/nginx.conf.sample#L16){:target="_blank"} on GitHub.
 
 ### Specify a variable using .htaccess (Apache only) {#mode-specify-web-htaccess}
 
@@ -64,8 +64,8 @@ One way to set the Magento mode is by editing `.htaccess`. This way, you don't h
 
 You can modify `.htaccess` in any of the following locations, depending on your entry point to the Magento application:
 
-*	`<your Magento install dir>/.htaccess`
-*	`<your Magento install dir>/pub/.htaccess`
+*	`<magento_root>/.htaccess`
+*	`<magento_root>/pub/.htaccess`
 
 To set a variable:
 

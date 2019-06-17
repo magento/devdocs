@@ -5,7 +5,7 @@ functional_areas:
   - Frontend
 ---
 
-This topic is a step-by-step tutorial to create a default en_US {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} [dictionary] for a custom {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. 
+This topic is a step-by-step tutorial to create a default en_US [locale](https://glossary.magento.com/locale) [dictionary] for a custom [theme](https://glossary.magento.com/theme). 
 
 ## Changing default strings {#theme}
 
@@ -24,9 +24,11 @@ The following image shows a page where the current strings are used:
 To override the strings, OrangeCo plans to use the `en_US.csv` dictionary file. 
 
 1. Run the [i18n (internationalization) tool] to generate the en_US dictionary for the `orange` theme:
+    
     ```bash
     php magento2/bin/magento i18n:collect-phrases --output="magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv" magento2/app/design/frontend/OrangeCo/orange
     ```
+    
 1. Open the newly generated `magento2/app/design/frontend/OrangeCo/orange/i18n/en_US.csv` file and add the following rows:
     ```text
     "Add to Cart", "Purchase"

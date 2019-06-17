@@ -5,17 +5,17 @@ title: EAV and extension attributes
 
 There are two types of attributes you can use to extend Magento functionality:
 
-* Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
+* Custom and Entity-Attribute-Value (EAV) attributes—Custom attributes are those added on behalf of a merchant. For example, a merchant might need to add attributes to describe products, such as shape or volume. A merchant can add these attributes in the [Magento Admin](https://glossary.magento.com/magento-admin) panel. See the [merchant documentation](http://docs.magento.com/m2/ce/user_guide/stores/attributes.html) for information about managing custom attributes.
 
 	Custom attributes are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The `Customer` and `Catalog` modules are the primary models that use EAV attributes. Other modules, such as `ConfigurableProduct`, `GiftMessage`, and `Tax`, use the EAV functionality for `Catalog`.
 
-* {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}Extension attributes{% endglossarytooltip %}. Extension attributes are new in Magento 2. They are used to extend functionality and often use more {% glossarytooltip fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4 %}complex data{% endglossarytooltip %} types than custom attributes. These attributes do not appear in the Magento Admin.
+* [Extension attributes](https://glossary.magento.com/extension-attributes). Extension attributes are new in Magento 2. They are used to extend functionality and often use more [complex data](https://glossary.magento.com/complex-data) types than custom attributes. These attributes do not appear in the Magento Admin.
 
 ## EAV and custom attributes {#custom}
 
 `CustomAttributesDataInterface` defines the methods that are called to get and set custom attributes, including `getCustomAttributes()`.
 
-A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} has a set of built-in attributes that are always available. The `Catalog` module has several attributes that are defined as EAV attributes, but are treated as built-in attributes. These attributes include:
+A [module](https://glossary.magento.com/module) has a set of built-in attributes that are always available. The `Catalog` module has several attributes that are defined as EAV attributes, but are treated as built-in attributes. These attributes include:
 
 * attribute_set_id
 * created_at
@@ -23,7 +23,7 @@ A {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossary
 * media_gallery
 * name
 * price
-* {% glossarytooltip fd4bed67-7130-4415-8a6f-ad8d8ef8f25e %}sku{% endglossarytooltip %}
+* [sku](https://glossary.magento.com/sku)
 * status
 * store_id
 * tier_price
@@ -38,7 +38,7 @@ The `Customer` module does not treat its EAV attributes in a special manner. As 
 
 ### Adding Customer EAV attribute for backend only {#customer-eav-attribute}
 
-Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection.
+Customer attributes are created inside of `InstallData` and `UpgradeData` scripts. To add new attributes to the database, you must use the `\Magento\Eav\Setup\EavSetupFactory` class as a dependency injection. The `InstallData` script will be executed when the module is first installed and either the `bin/magento setup:upgrade` or `bin/magento setup:db-data:upgrade` command is run.  If the module is already existing, `UpgradeData` scripts should be used. During the development cycle, if there is a need to re-run the `InstallData` or `UpgradeData` scripts, the `setup_module` table row for the module can be manipulated.  
 
 {: .bs-callout .bs-callout-warning }
 Both the `save()` and `getResource()` methods for `Magento\Framework\Model\AbstractModel` have been marked as `@deprecated` since 2.1 and should no longer be used.
@@ -122,7 +122,7 @@ where:
 <tbody>
 <tr>
 <td><p>for</p></td>
-<td><p>The fully-qualified type name with the {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
+<td><p>The fully-qualified type name with the [namespace](https://glossary.magento.com/namespace) that processes the extensions. The value must be a type that implements `ExtensibleDataInterface`. The interface can be in a different module.</p> </td>
 <td><code>Magento\Quote\Api\Data\TotalsInterface</code></td>
 </tr>
 <tr>
@@ -137,7 +137,7 @@ where:
 </tr>
 <tr>
 <td><p>ref</p></td>
-<td><p>Optional. Restricts access to the {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %} to users with the specified permission.</p></td>
+<td><p>Optional. Restricts access to the [extension attribute](https://glossary.magento.com/extension-attribute) to users with the specified permission.</p></td>
 <td><code>Magento_CatalogInventory::cataloginventory</code></td>
 </tr>
 <tr>
@@ -154,15 +154,15 @@ where:
 </tr>
 <tr>
 <td><p>join_on_field</p></td>
-<td><p>The column of the table associated with the interface specified in the <code>for</code> {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} that will be used in the join operation.</p></td>
+<td><p>The column of the table associated with the interface specified in the <code>for</code> [keyword](https://glossary.magento.com/keyword) that will be used in the join operation.</p></td>
 <td><code>store_id</code></td>
 </tr>
 <tr>
 <td><p>field</p></td>
 <td><p>One or more fields present in the interface specified in the <code>type</code> keyword.</p>
 <p>You can specify the <code>column=""</code> keyword to define the column in the reference_table to use. The field value specifies the property on the <code>interface</code> which should be set.</p></td>
-<td><code>&lt;field>firstname&lt;/field><br />&lt;field>lastname&lt;/field><br />&lt;field>email&lt;/field><br /><br />
-&lt;field column="customer_group_code">code&lt;/field></code></td>
+<td><code><field>firstname</field><br /><field>lastname</field><br /><field>email</field><br /><br />
+<field column="customer_group_code">code</field></code></td>
 </tr>
 </tbody>
 
@@ -190,7 +190,7 @@ When `getList()` is called, it returns a list of `ProductInterface`s. When it do
 
 Individual fields that are defined as extension attributes can be restricted, based on existing permissions. This feature allows extension developers to restrict access to data. See [Web API authentication overview]({{ page.baseurl }}/get-started/authentication/gs-authentication.html) for general information about authentication in Magento.
 
-The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
+The following [code sample]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/CatalogInventory/etc/extension_attributes.xml) defines `stock_item` as an extension attribute of the `CatalogInventory` module. `CatalogInventory` is treated as a "third-party extension". Access to the inventory data is restricted because the quantity of in-stock item may be competitive information.
 
 ```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
@@ -206,6 +206,7 @@ The following [code sample]({{ site.mage2000url }}app/code/Magento/CatalogInvent
 
 In this example, the `stock_item` attribute is restricted to only the users who have the `Magento_CatalogInventory::cataloginventory` permission. As a result, an anonymous or unauthenticated user issuing a `GET <host>/rest/<store_code>/V1/products/<sku>` request will receive product information similar to the following:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -217,9 +218,11 @@ In this example, the `stock_item` attribute is restricted to only the users who 
         "artist": "James Smith"
       }
     }
+```
 
 However, an authenticated user with the permission `Magento_CatalogInventory::cataloginventory` receives the additional `stock_item` field:
 
+```json
     {
       "sku": "tshirt1",
       "price": "20.00",
@@ -235,6 +238,7 @@ However, an authenticated user with the permission `Magento_CatalogInventory::ca
         "artist": "James Smith"
       }
     }
+```
 
 This only works for extension attributes (those attributes defined in an `extension_attributes.xml` file). There are no permission restrictions on the rest of the returned data. For example, there is no way to restrict `custom_attributes`.
 

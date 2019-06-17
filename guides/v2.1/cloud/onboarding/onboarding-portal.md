@@ -1,9 +1,6 @@
 ---
 group: cloud-guide
 title: Onboarding Portal management
-redirect_to:
-# Temporarily removing this page from the doc site per MAGECLOUD-1531
- - /guides/v2.0/cloud/onboarding/onboarding-tasks.html
 ---
 
 The Onboarding Portal gives business and technical users a central location to get started with a {{site.data.var.ece}} project and environments. If you are not sure who the Project Owner is, you can check the Project Owner page in the portal. If you need to change this user, enter a [Support ticket]({{ page.baseurl }}/cloud/trouble/trouble.html).
@@ -75,7 +72,7 @@ You may have a number of different people help create, launch, and maintain your
 
 * **Development Workflow**: A high-level checklist for preparing your local development environment, cloning code, creating branches, and developing your store. It provides a quick walk-through for the [First-time development setup]({{ page.baseurl }}/cloud/setup/first-time-setup.html) information according to your [Starter]({{ page.baseurl }}/cloud/basic-information/starter-architecture.html) or [Pro]({{ page.baseurl }}/cloud/architecture/pro-architecture.html) plan.
 * **Environments**: Provides links and information for your Pro and Starter account environments. Every active branch of code has a complete environment to fully test new features, extensions, and integrations. This page includes direct URL links, SSH link, CLI command access, and a link into the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html#login). You may want to provide the following helpful information for the development and deploy process for [Starter]({{ page.baseurl }}/cloud/basic-information/starter-develop-deploy-workflow.html) and [Pro]({{ page.baseurl }}/cloud/architecture/pro-develop-deploy-workflow.html) to your developers.
-* **Services**: Learn more about available and integrated services for your project. These services include [Blackfire.io Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), [New Relic APM]({{ page.baseurl }}/cloud/project/new-relic.html), and [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html). You can review and set credentials for these services through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html#login).
+* **Services**: Learn more about available and integrated services for your project. These services include [Blackfire.io Profiler]({{ page.baseurl }}/cloud/project/project-integrate-blackfire.html), [New Relic]({{ page.baseurl }}/cloud/project/new-relic.html), and [Fastly]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html). You can review and set credentials for these services through the [Project Web Interface]({{ page.baseurl }}/cloud/project/projects.html#login).
 
 The technical admin, technical users, developers, and others can directly access the [Project Web Interface]({{ page.baseurl }}/cloud/basic-information/cloud-fastly.html) to manage code, variables, and settings. These options are also configurable using [Magento Cloud CLI]({{ page.baseurl }}/cloud/project/project-webint-basic.html) commands.
 

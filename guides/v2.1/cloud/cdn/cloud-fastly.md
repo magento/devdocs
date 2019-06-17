@@ -40,7 +40,7 @@ We highly recommend using Fastly for your CDN, security, and image optimization 
 
 ## Fastly CDN module for Magento 2
 
-Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master` branch). 
+Fastly services for {{ site.data.var.ece }} use the [Fastly CDN module for Magento 2](https://github.com/fastly/fastly-magento2) installed in the following environments: Pro Staging and Production, Starter Production (`master`) and Staging.
 
 On initial provisioning or upgrade of your {{ site. data.var.ece }} project, we install the latest version of the Fastly CDN module. When Fastly releases module updates, you receive notifications in the Magento Admin UI for your environments. We recommend that you update your environments to use the latest release. See [Upgrade Fastly]({{ page.baseurl}}/cloud/cdn/configure-fastly.html#upgrade).
 
@@ -130,6 +130,6 @@ settings or entering credentials.
 * Configure Fastly in Staging and Production, not in Integration or your local
 * Test Fastly for caching
 
-For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/cloud-fastly.html).
+For instructions, see [Set up Fastly]({{ page.baseurl }}/cloud/cdn/configure-fastly.html).
 After you have configured it, you can continue with advanced options including
 custom VCL snippets.

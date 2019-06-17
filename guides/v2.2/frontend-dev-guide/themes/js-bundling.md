@@ -16,7 +16,7 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 1. From the Magento root directory, switch to production mode:
 
     ```bash
-    php bin/magento deploy:mode:set production
+    bin/magento deploy:mode:set production
     ```
 
 2. Enable JavaScript bundling:
@@ -135,4 +135,4 @@ Follow these steps to help you identify which JavaScript files to bundle for you
 
 [production-mode]:{{ page.baseurl }}/config-guide/bootstrap/magento-modes.html#production-mode
 [Advanced-JavaScript-Bundling]:https://devdocs.magento.com/guides/v2.3/performance-best-practices/advanced-js-bundling.html
-[luma-view-xml]:https://github.com/magento/magento2/blob/2.2.3/app/design/frontend/Magento/luma/etc/view.xml#L270
+[luma-view-xml]:{{ site.mage2bloburl }}/{{ page.guide_version }}/app/design/frontend/Magento/luma/etc/view.xml#L270

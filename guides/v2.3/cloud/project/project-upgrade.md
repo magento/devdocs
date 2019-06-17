@@ -52,7 +52,7 @@ If you use PHP version 7.2, you must remove the `mcrypt` extension from the [`ex
 1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
-      php bin/magento --version
+      bin/magento --version
     ```
 
 ## Verify and upgrade your extensions {#extensions}

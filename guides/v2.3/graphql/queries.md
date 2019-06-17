@@ -8,7 +8,7 @@ redirect_from:
 A GraphQL query retrieves data from the Magento server in a similar manner as a REST GET call. The current set of Magento GraphQL queries allow a mobile app or browser to render a wide variety of information, including the following:
 
 * A set of products to be displayed. This can include the entire catalog or those that match customer-specified criteria.
-* Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wishlists, order history, and other sensitive data.
+* Customer data. With a customer token, a query can retrieve basic information about a customer as well as billing and shipping addresses, wish lists, order history, and other sensitive data.
 * Shopping cart contents. GraphQL supports both guest and logged-in customer carts.
 * Store configuration values, including theme and CMS settings, the currency code, and supported countries.
 
@@ -435,7 +435,7 @@ The query returns 8 items.
 
 #### Logical AND and OR search
 
-This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s shorts in size 10 (`WSH%10%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
+This query searches for products that have `name` that ends with `Short` or has a `sku` that indicates the product is a pair of women’s pants (`WP%`). The system performs a logical AND to restrict the results to those that cost from $40 to $49.99.
 
 ``` text
 {
@@ -444,12 +444,12 @@ This query searches for products that have `name` that ends with `Short` or has 
       price: {
         from: "40" to: "49.99"
       }
-      name: {
-        like: "%Short"
-      }
       or: {
+        name: {
+          like: "%Short"
+        }      
         sku: {
-          like: "WSH%10%"
+          like: "WP%"
         }
       }
     }
@@ -479,4 +479,4 @@ This query searches for products that have `name` that ends with `Short` or has 
 }
 ```
 
-The query returns 1 item.
+The query returns 14 item.

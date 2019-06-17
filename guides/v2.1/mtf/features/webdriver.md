@@ -5,7 +5,7 @@ title: Web Driver Replacement in the Functional Testing Framework
 
 ## Overview
 
-The Functional Testing Framework (FTF) enables you to change a web driver {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} used for communication with Selenium Server, PhantomJS or any other web page automation tool.
+The Functional Testing Framework (FTF) enables you to change a web driver [library](https://glossary.magento.com/library) used for communication with Selenium Server, PhantomJS or any other web page automation tool.
 
 Web drivers provided with the FTF are the following:
 
@@ -29,6 +29,7 @@ To set up the Facebook web driver, use the following steps:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 composer update
 ```
@@ -51,6 +52,7 @@ To setup the custom web driver, follow:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional
 ```
+
 ```bash
 composer update
 ```

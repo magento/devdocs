@@ -40,7 +40,7 @@ See [Magento Security Center](https://magento.com/security/patches/magento-221-2
 
 ### Installation, setup, and deployment
 
-<!--- 58072 -->*  Magento no longer creates an `i18n` directory under the system root directory (`/`) when you run the `php bin/magento i18n:pack` command to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
+<!--- 58072 -->*  Magento no longer creates an `i18n` directory under the system root directory (`/`) when you run the `bin/magento i18n:pack` command to install a language pack. [GitHub-6260](https://github.com/magento/magento2/issues/6260)
 
 
 <!---  70137-->* Component Manager can now handle custom composer modules. Previously, when you opened  **System > Tools > Web Setup > Component Manager** after using Composer to install a custom extension, a PHP error occurred, and Magento did not display the list of installed extensions. *Fix submitted by [JTimNolan](https://github.com/JTimNolan) in pull request 9692.* [GitHub-6718](https://github.com/magento/magento2/issues/6718)

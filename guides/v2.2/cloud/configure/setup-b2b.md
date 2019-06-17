@@ -34,7 +34,7 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
 1. Open a terminal application.
 2. Change to your local development environment root directory.
-1.  Install the B2B module using composer.
+3.  Install the B2B module using composer.
 
     ```bash
     composer require magento/extension-b2b
@@ -44,7 +44,7 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
         InvalidArgumentException - Could not find package magento/extension-b2b at any version for your minimum-stability (stable). Check the package spelling or your minimum-stability.
 
-1.  Add and commit the updated `composer.json` and `composer.lock` files.
+4.  Add and commit the updated `composer.json` and `composer.lock` files.
 
     ```bash
     git add composer.json composer.lock && git commit -a -m "install b2b module"
@@ -55,8 +55,9 @@ You need to add the module to `composer.json`. All extensions and modules must b
 
 6. Complete the upgrade with B2B using the following command:
 
+    ```bash
         php bin/magento setup:upgrade
-
+    ```
 
 If you have a config.php file as part of your deployment, you should also add the B2B module in the modules section of the file.
 
@@ -65,9 +66,14 @@ If you have a config.php file as part of your deployment, you should also add th
 3. In the modules list, add the B2B module.
 4. Save the file and update Git.
 
+    ```bash
         git add -f app/etc/config.php
+    ```
+    
+    ```bash
         git commit -a -m “Add config.php.”
-
+    ```
+    
 ## Configure and use B2B {#use}
 
 For additional information on using and configuring B2B, review the [Magento B2B User Guide](http://docs.magento.com/m2/b2b/user_guide/getting-started.html). To extend functionality, see the [Magento B2B Developer Guide]({{ site.baseurl }}/guides/v2.2/b2b/bk-b2b.html).

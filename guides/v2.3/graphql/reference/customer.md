@@ -239,7 +239,7 @@ mutation {
       firstname: "Rob"
       email: "robloblaw@example.com"
     }
-    ) {
+  ) {
     customer {
       firstname
       email
@@ -269,7 +269,7 @@ mutation {
 
 Use these mutations to create or modify the customer's address.
 
-#### Manage customer address attibutes
+#### Manage customer address attributes
 
 Attribute |  Data Type | Description
 --- | --- | ---
@@ -327,10 +327,10 @@ The following call creates an address for the specified customer.
 mutation {
   createCustomerAddress(input: {
     region: {
-        region: "Arizona"
-        region_id: 4
-        region_code: "AZ"
-      }
+      region: "Arizona"
+      region_id: 4
+      region_code: "AZ"
+    }
     country_id: US
     street: ["123 Main Street"]
     telephone: "7777777777"
@@ -340,7 +340,7 @@ mutation {
     lastname: "Loblaw"
     default_shipping: true
     default_billing: false
-    }) {
+  }) {
     id
     customer_id
     region {
@@ -484,12 +484,12 @@ The following call creates a new customer token.
 
 ``` text
 mutation {
-	generateCustomerToken(
+  generateCustomerToken(
     email: "bobloblaw@example.com"
     password: "b0bl0bl@w"
-    ) {
+  ) {
     token
-    }
+  }
 }
 ```
 
@@ -533,7 +533,7 @@ mutation {
 {
   "data": {
     "revokeCustomerToken": {
-    "result": true
+      "result": true
     }
   }
 }

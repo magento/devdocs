@@ -9,10 +9,10 @@ functional_areas:
 
 ## Example&mdash;logging database activity
 
-To log database activity, use [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/LoggerInterface.php), which has two implementations:
+To log database activity, use [`Magento\Framework\DB\LoggerInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/LoggerInterface.php), which has two implementations:
 
-*	Logs nothing (default): [`Magento\Framework\DB\Logger\Quiet`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/Logger/Quiet.php)
-*	Logs to the Magento `var/log` directory: [`Magento\Framework\DB\Logger\File`]({{ site.mage2100url }}lib/internal/Magento/Framework/DB/Logger/File.php)
+*	Logs nothing (default): [`Magento\Framework\DB\Logger\Quiet`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Logger/Quiet.php)
+*	Logs to the Magento `var/log` directory: [`Magento\Framework\DB\Logger\File`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/DB/Logger/File.php)
 
 To change the preference to `\Magento\Framework\DB\Logger\File`, edit your `app/etc/di.xml`.
 

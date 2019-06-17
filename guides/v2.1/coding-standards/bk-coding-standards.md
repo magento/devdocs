@@ -9,7 +9,7 @@ menu_node: parent
 functional_areas:
   - Standards
 ---
-<!-- This topic is referred to from Magento 2 code! Don't change the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} without informing engineering! -->
+<!-- This topic is referred to from Magento 2 code! Don't change the [URL](https://glossary.magento.com/url) without informing engineering! -->
 <!-- Referring file: contributing.md owned by core -->
 
 
@@ -19,7 +19,6 @@ Use Magento's coding standards when you contribute to Magento's codebase or crea
 
 - [Code demarcation standard]({{ page.baseurl }}/coding-standards/code-standard-demarcation.html)
 - [PHP coding standard]({{ page.baseurl }}/coding-standards/code-standard-php.html)
-- [PHP code sniffers]({{ page.baseurl }}/coding-standards/code-standard-sniffers.html)
 - [JavaScript coding standard]({{ page.baseurl }}/coding-standards/code-standard-javascript.html)
 - [jQuery widget coding standard]({{ page.baseurl }}/coding-standards/code-standard-jquery-widgets.html)
 - [DocBlock standard]({{ page.baseurl }}/coding-standards/docblock-standard-general.html)

@@ -39,21 +39,21 @@ To resolve these errors, perform the following tasks:
 	If you don't have access to the Magento server file system, connect to it using an FTP application.
 2.	Remove the following files so you can upgrade again:
 
-		<your Magento install dir>/var/.maintenance.flag
-		<your Magento install dir>/var/.update_in_progress.flag
-		<your Magento install dir>/var/cache/*
-		<your Magento install dir>/var/page_cache/*
-		<your Magento install dir>/var/generation/*
+		<magento_root>/var/.maintenance.flag
+		<magento_root>/var/.update_in_progress.flag
+		<magento_root>/var/cache/*
+		<magento_root>/var/page_cache/*
+		<magento_root>/var/generation/*
 
 3.	Run your upgrade again, making sure to complete _all tasks_ discussed in [Run System Upgrade]({{ page.baseurl }}/comp-mgr/upgrader/upgrade-start.html).
 
 
 ### `var/session` permissions failure {#compman-upgr-perms}
-If your Magento application is set to write session data to the `<your Magento install dir>/var/session` directory, you must set permissions on that directory before you upgrade.
+If your Magento application is set to write session data to the `<magento_root>/var/session` directory, you must set permissions on that directory before you upgrade.
 
 [How to find where Magento stores session files]({{ page.baseurl }}/config-guide/sessions.html).
 
-To verify whether or not sessions are stored in `<your Magento install dir>/var/session`, log in to your Magento server, or switch to, [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html) and enter the following command:
+To verify whether or not sessions are stored in `<magento_root>/var/session`, log in to your Magento server, or switch to, [Magento file system owner]({{ page.baseurl }}/install-gde/prereq/apache-user.html) and enter the following command:
 
 	ls <your Magento file install dir>/var/session
 
@@ -70,7 +70,7 @@ To set file system permissions before upgrade:
 
 	*	One Magento user (typical of shared hosting):
 
-			cd <your Magento install dir>
+			cd <magento_root>
 			find var -type f -exec chmod u+w {} +
 			find var -type d -exec chmod u+w {} +
 
@@ -78,7 +78,7 @@ To set file system permissions before upgrade:
 
 	*	Two Magento users:
 
-			cd <your Magento install dir>
+			cd <magento_root>
 			find var -type f -exec chmod g+w {} +
 			find var -type d -exec chmod g+ws {} +
 			chown -R :<web server group> .

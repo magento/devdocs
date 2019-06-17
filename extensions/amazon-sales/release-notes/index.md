@@ -9,7 +9,7 @@ See the following documentation:
 
 - [Amazon Sales Channel](https://docs.magento.com/m2/ce/user_guide/sales-channels/amazon/amazon-sales-channel.html) for merchant information and instructions
 - [Amazon Sales Channel install]({{site.baseurl}}/extensions/amazon-sales/) for installation and API key information
-- [Amazon Sales Channel Marketplace page](http://marketplace.magento.com/magento-module-amazon.html)
+- [Amazon Sales Channel Marketplace](http://marketplace.magento.com/magento-module-amazon.html)
 
 The release notes include:
 
@@ -17,9 +17,12 @@ The release notes include:
 -   {:.fix}Fixes and improvements
 -   {:.bug}Known issues
 
-### v1.0.0
+### v2.0.0
 
-Amazon Sales Channel 1.0.0 is compatible with version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+Amazon Sales Channel 2.0.0 is compatible with version 2.2.4+ and 2.3.x of {{site.data.var.ce}}, {{site.data.var.ee}}, and {{site.data.var.ece}}.
+
+{:.bs-callout .bs-callout-info}
+Version 1.0.0 was available in limited release only. 
 
 - {:.new} **Simplified Onboarding and Maintenance**: Add and integrate with your Amazon Seller account through a step-by-step process with detailed instructions available through the Magento Admin. Maintain your stores, accounts, and listed products through one dashboard.
 
@@ -39,4 +42,4 @@ Amazon Sales Channel 1.0.0 is compatible with version 2.2.4+ and 2.3.x of {{site
 
 -   {:.bug} Ineligible bundled products may display as Eligible for listing on Amazon. One of the products within the bundled product may not be eligible. If you encounter issues, check the eligibility status for bundled products items.
 
--   {:.bug} When using Inventory Management for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.
+-   {:.bug} When using [Inventory Management](https://docs.magento.com/m2/ee/user_guide/catalog/inventory-management.html) for Magento 2.3.x, a partial stock reindex may not trigger when an order is created. The salable quantity recalculates hourly, which may cause overselling during this update interval.

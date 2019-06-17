@@ -7,58 +7,58 @@ Magento 2.2 introduces changes that may affect the correct functionality of alre
 
 ## API changes
 
-Magento 2.2 introduces changes in several {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
+Magento 2.2 introduces changes in several [API](https://glossary.magento.com/api) classes. These changes are designed to extend overall API coverage and improve developer experience with new features.
 
 ### Framework
 
 Magento no longer supports custom config file pools
 
-**Class:** [`Magento\Framework\App\DeploymentConfig\Reader`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php){:target="_blank"}<br/>
+**Class:** [`Magento\Framework\App\DeploymentConfig\Reader`]({{ site.mage2bloburl }}/{{ page.guide_version }}/lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php){:target="_blank"}<br/>
 **Action:** Deprecated the method `loadConfigFile`<br/>
 
 ### Store module
 
-The Store {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} management has been updated to allow the retrieval of a store by its {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} id.
+The Store [module](https://glossary.magento.com/module) management has been updated to allow the retrieval of a store by its [website](https://glossary.magento.com/website) id.
 
-**Class:** [`Magento\Store\Api\StoreWebsiteRelationInterface`]({{ site.mage2200url }}app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php){:target="_blank"}<br/>
+**Class:** [`Magento\Store\Api\StoreWebsiteRelationInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php){:target="_blank"}<br/>
 **Action:** New interface added with method `getStoreByWebsiteId($websiteId)`
 
-**Class:** [`Magento\Store\Model\StoreManager`]({{ site.mage2200url }}app/code/Magento/Store/Model/StoreManager.php){:target="_blank"}<br/>
+**Class:** [`Magento\Store\Model\StoreManager`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Model/StoreManager.php){:target="_blank"}<br/>
 **Action:** Implemented `StoreWebsiteRelationInterface` and added the inherited method `getStoreByWebsiteId($websiteId)`<br/>
 
 **Description:** Retrieves a store by website id<br/>
 
 New unique and required field `code` was added to the Store Group.
 
-**Class:** [`Magento\Store\Api\Data\GroupInterface`]({{ site.mage2200url }}app/code/Magento/Store/Api/Data/GroupInterface.php)<br/>
+**Class:** [`Magento\Store\Api\Data\GroupInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Store/Api/Data/GroupInterface.php)<br/>
 **Action:** Added two methods `getCode()` and `setCode($code)`<br/>
 
 ### Customer module
 
 Change was done in order to add default values to customer attributes.
 
-**Class:** [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]({{ site.mage2200url }}app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php){:target="_blank"}<br/>
+**Class:** [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php){:target="_blank"}<br/>
 **Action:** New interface added with methods `getDefaultValue()` and `setDefaultValue($defaultValue)`<br/>
 
-**Class:** [`Magento\Customer\Model\Data\AttributeMetadata`]({{ site.mage2200url }}app/code/Magento/Customer/Model/Data/AttributeMetadata.php){:target="_blank"}<br/>
+**Class:** [`Magento\Customer\Model\Data\AttributeMetadata`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Customer/Model/Data/AttributeMetadata.php){:target="_blank"}<br/>
 **Action:** Implemented `AttributeDefaultValueInterface` and added the getter `getDefaultValue()` and setter `setDefaultValue($defaultValue)` methods<br/>
 
 **Description:** Retrieve and set default values to customer attributes<br/>
 
 ### Wishlist module
 
-**Class:** [`Magento\Wishlist\Model\Wishlist`]({{ site.mage2200url }}app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
+**Class:** [`Magento\Wishlist\Model\Wishlist`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
 **Action:** The format of the string for the `buyRequest` parameter in the `addNewItem` method changed from serialized to JSON.<br/>
 
 ### Recently Viewed and Recently Compared Widgets
 
-**Class:** [`Magento\Reports\Block\Product\Viewed`]({{ site.mage2100url }}app/code/Magento/Reports/Block/Product/Viewed.php){:target="_blank"}<br/>
+**Class:** [`Magento\Reports\Block\Product\Viewed`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Reports/Block/Product/Viewed.php){:target="_blank"}<br/>
 **Action:** Deprecated <br/>
 
-**Class:** [`Magento\Reports\Block\Product\Compared`]({{ site.mage2100url }}app/code/Magento/Reports/Block/Product/Compared.php){:target="_blank"}<br/>
+**Class:** [`Magento\Reports\Block\Product\Compared`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Reports/Block/Product/Compared.php){:target="_blank"}<br/>
 **Action:** Deprecated <br/>
 
-**Configuration** [`Magento\Reports\etc\widget.xml`]({{ site.mage2100url }}app/code/Magento/Reports/etc/widget.xml){:target="_blank"}<br/>
+**Configuration** [`Magento\Reports\etc\widget.xml`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Reports/etc/widget.xml){:target="_blank"}<br/>
 **Action:** Removed <br/>
 
 Please note, that all inheritance of old widget.xml file will break Magento. Use `Magento/Catalog/etc/widget.xml` instead of `Magento/Reports/etc/widget.xml`.
@@ -90,17 +90,17 @@ Deprecated method | Use instead | Subsequent calls
 
 ### Error processor module
 
-{% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}Exception{% endglossarytooltip %} report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
+[Exception](https://glossary.magento.com/exception) report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
 
 ### Braintree module
 
-**Class:** [`Magento\Braintree\Model\Ui\ConfigProvider`]({{ site.mage2200url }}app/code/Magento/Braintree/Model/Ui/ConfigProvider.php){:target="_blank"}<br/>
+**Class:** [`Magento\Braintree\Model\Ui\ConfigProvider`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Braintree/Model/Ui/ConfigProvider.php){:target="_blank"}<br/>
 **Action:** The deprecated constant `PAYPAL_CODE` has been removed<br/>
 **Description** Use `\Magento\Braintree\Model\Ui\PayPal\ConfigProvider::PAYPAL_CODE` instead.<br/>
 
 ### PayPal module
 
-**Class:** [`Magento\Paypal\Cron\FetchReports`]({{ site.mage2200url }}app/code/Magento/Paypal/Cron/FetchReports.php){:target="_blank"}<br/>
+**Class:** [`Magento\Paypal\Cron\FetchReports`]({{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Paypal/Cron/FetchReports.php){:target="_blank"}<br/>
 **Action:**
 
 - Method `execute` has been reworked and now throws an `\Exception` instead of logging it
@@ -234,7 +234,7 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 
 ### Advanced section in System Configurations
 
-**Action:** Section `Advanced` was removed from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Interface<br/>
+**Action:** Section `Advanced` was removed from [Admin](https://glossary.magento.com/admin) Interface<br/>
 **Description:** Magento does not support disabling/enabling modules output from the Admin Panel in 2.2.0 version. Module output can still be enabled/disabled in configuration files.
 
 ## Database schema changes
@@ -250,7 +250,7 @@ This release replaces usages of `unserialize` with [`json_decode`]({{ page.baseu
 
 The release also provides upgrade scripts that convert Magento data stored in serialized format.
 
-{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} developers should review the following cases to see what actions they should take for their extensions:
+[Extension](https://glossary.magento.com/extension) developers should review the following cases to see what actions they should take for their extensions:
 
 **Case 1:**  
 Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
@@ -284,7 +284,7 @@ Your extension accesses values in the `core_config_data` table using the followi
 - `admin/magento_logging/actions`
 
 **Solution:**  
-Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} serialize/unserialize functions.
+Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for serializing/unserializing data instead of the native [PHP](https://glossary.magento.com/php) serialize/unserialize functions.
 
 **Case 6:**  
 Your extension uses a backend model that extends `\Magento\Config\Model\Config\Backend\Serialized` to save/load data to/from the database.
@@ -357,7 +357,7 @@ The table for `\Magento\Widget\Model\ResourceModel\Widget` has been deprecated.
 
 ### New Class: `FieldDataConverter`
 
-This class supports data {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} from one format to another.
+This class supports data [conversion](https://glossary.magento.com/conversion) from one format to another.
 It can be used to upgrade data in upgrade scripts.
 
 #### Features
