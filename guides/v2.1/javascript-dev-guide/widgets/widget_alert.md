@@ -88,7 +88,6 @@ Close the alert window when a user clicks on the overlay.
 ### `content` {#alert_content}
 The text displayed in the alert window.
 
-
 **Type**: String.
 
 ### `focus` {#alert_focus}
@@ -101,7 +100,6 @@ If `focus` is not specified or set to empty string, the focus is on the close bu
 
 ### `title` {#alert_title}
 The title of the alert window.
-
 
 **Type**: String.
 
