@@ -63,3 +63,9 @@ task init: %w[multirepo:init]
 
 desc 'Run checks (image optimization).'
 task check: %w[check:image_optim] 
+
+desc 'Generate data for the weekly digest.'
+task :whatsnew do
+  print 'Generating data for the weekly digest: $ '.magenta
+  sh 'whatsup_github'
+end
