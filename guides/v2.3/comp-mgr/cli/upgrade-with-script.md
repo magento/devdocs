@@ -12,7 +12,7 @@ Use [the manual process] if you previously made updates to the same values that 
 
 The upgrade script:
 
-- Updates Magento with the 2.3 requirements.
+- Updates Magento with the {{ page.guide_version }} requirements.
 - Backs up the `composer.json` file.
 - Specifies the new version of the Magento metapackage.
 - Updates the `"require-dev"` section in the `composer.json` file.
@@ -28,18 +28,18 @@ If you need to upgrade PHP, do it before you run the script.
 
 ### Download the script
 
-Download, or copy, the script file from the `magento/magento2` repo, [`/dev/tools/UpgradeScripts/pre_composer_update_2.3.php`][script].
+Download, or copy, the script file from the `magento/magento2` repo, [`/dev/tools/UpgradeScripts/pre_composer_update_{{ page.guide_version }}.php`][script].
 
 ### Show script options
 
 ```bash
-php -f pre_composer_update_2.3.php -- --help
+php -f pre_composer_update_{{ page.guide_version }}.php -- --help
 ```
 
 ### Run the script
 
 ```bash
-php -f pre_composer_update_2.3.php -- --root='<path/to/magento/install/dir>' --repo=https://repo.magento.com/ <options>
+php -f pre_composer_update_{{ page.guide_version }}.php -- --root='<path/to/magento/install/dir>' --repo=https://repo.magento.com/ <options>
 ```
 
 ### Apply updates
@@ -104,5 +104,5 @@ If the application fails with a  `We're sorry, an error has occurred while gener
 
 [file system ownership and permissions]: {{ page.baseurl }}/install-gde/prereq/file-system-perms.html
 [Prerequisites]: cli-upgrade.html#prerequisites
-[script]: https://raw.githubusercontent.com/magento/magento2/2.3.0/dev/tools/UpgradeScripts/pre_composer_update_2.3.php
+[script]: https://raw.githubusercontent.com/magento/magento2/{{ page.guide_version }}/dev/tools/UpgradeScripts/pre_composer_update_{{ page.guide_version }}.php
 [the manual process]: cli-upgrade.html

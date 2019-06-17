@@ -18,9 +18,11 @@ The [`magento/composer-root-update-plugin`][custom composer plugin] Composer plu
 
 Basically, this section repeats the manual upgrade scenario with the only exclusion that you are guided to install the plugin to resolve the dependency conflicts instead of fixing them manually.
 
-## Ensure to comply with prerequisites
+## Before you begin
 
-Refer to [Prerequisites][].
+Refer to [Prerequisites].
+
+If you need to upgrade PHP, do it before you run the script.
 
 ## Backup `composer.json`
 
@@ -47,35 +49,43 @@ composer remove magento/product-community-edition --no-update
 
 ### Specify Magento packages
 
-Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`2.3.0`), that you want to upgrade to.
+Indicate the Magento packages, both the edition (`community` or `enterprise`) and the version (`{{ page.guide_version }}.2`), that you want to upgrade to.
+
+{: .bs-callout-info }
+The first time you upgrade using the plugin, you can interactively view and update any out-of-date values that may be remaining from previous versions.
+To enable this, use the `--interactive-magento-conflicts` option on the `composer require` commands.
+
+{: .bs-callout-tip }
+Use `composer require --help` to learn more about available options.
+To learn more about usage of the plugin, refer to the [Plugin Usage](https://github.com/magento/composer-root-update-plugin/blob/0.1/src/Magento/ComposerRootUpdatePlugin/README.md#usage).
 
 _{{ ce }}_:
 
 ```bash
-composer require magento/product-community-edition=2.3.0 --no-update
+composer require magento/product-community-edition={{ page.guide_version }}.2 --no-update
 ```
 
-_{{ ee }}_:
+_{{ ee }}_:}
 
 ```bash
-composer require magento/product-enterprise-edition=2.3.0 --no-update
+composer require magento/product-enterprise-edition={{ page.guide_version }}.2 --no-update
 ```
 
 {%
-include note.html
+include note.html{{ page.guide_version }}
 type='tip'
-content='To see a full list of available 2.3 versions:
+content='To see a full list of available {{ page.guide_version }} versions:
 
 _Magento Open Source_:
 
 ```bash
-composer show magento/product-community-edition 2.3.* --all | grep -m 1 versions
+composer show magento/product-community-edition {{ page.guide_version }}.* --all | grep -m 1 versions
 ```
 
 _Magento Commerce_:
 
 ```bash
-composer show magento/product-enterprise-edition 2.3.* --all | grep -m 1 versions
+composer show magento/product-enterprise-edition {{ page.guide_version }}.* --all | grep -m 1 versions
 ```
 
 '
@@ -88,16 +98,16 @@ _Optional_—If the Magento updater is installed (it is located in `update/`) mo
 1. Backup `update/` directory.
 2. Create a Composer project.
 
-   _{{ ce }} version 2.3.0:_
+   _{{ ce }} version {{ page.guide_version }}.2:_
 
     ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-community-edition=2.3.0 temp_dir --no-install
+    composer create-project --repository=https://repo.magento.com magento/project-community-edition={{ page.guide_version }}.2 temp_dir --no-install
     ```
 
-    _{{ ee }} version 2.3.0:_
+    _{{ ee }} version {{ page.guide_version }}.2:_
 
     ```bash
-    composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition=2.3.0 temp_dir --no-install
+    composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
     ```
 
     {:.bs-callout .bs-callout-info}
