@@ -3,7 +3,7 @@ group: graphql
 title: Vault endpoint
 ---
 
-When the vault feature is enabled in the payment method configuration for Braintree, customers have the option during checkout to save their credit card information. During subsequent checkouts, the customer is presented with a list of saved payment options. If Instant Purchase is enabled, customers can even by-pass the two-step checkout process and place the order from the product page.
+When the [vault]({{page.baseurl}}/payments-integrations/vault/vault-intro.html) feature is supported by a payment integration and enabled, customers have the option during checkout to save their credit card information. (Braintree supports the vault feature. Third-party payment integrations may support this feature as well.) During subsequent checkouts, the customer is presented with a list of saved payment options. If Instant Purchase is enabled, customers can even by-pass the two-step checkout process and place the order from the product page.
 
 ## Query
 
