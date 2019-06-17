@@ -17,7 +17,7 @@ When the [locale](https://glossary.magento.com/locale) is changed for a store, M
 	1. `<parent_theme_dir>/i18n/` (iterated through all ancestor themes)
 	1. `<current_theme_dir>/i18n/`
 1. Translation package: `app/i18n/`
-1. Magento database (translations located in this database take precedence and override translations stored in other locations.)
+1. Magento database (translations located in this database take precedence and override translations stored in other locations.)  Refer to the [user guide](https://docs.magento.com/m2/ce/user_guide/system/translate-inline.html) for more information.
 
 If there are different translations for one string, the theme dictionary translations have priority over the [module](https://glossary.magento.com/module) translations, and child theme translations have priority over parent theme translations.
 
@@ -59,6 +59,15 @@ The locale dictionary would use the default values (keys) in the left column fol
 "Add to Compare",	<translation>
 "Your Checkout Progress",	<translation>
 "Card Verification Number",	<translation>
+```
+
+## Element translations per module
+
+You can translate the same element in different ways for different modules:
+
+```text
+"Add to Cart", "Add to Cart", module, Magento_Review
+"Add to Cart", "Add to Shopping Cart", module, Magento_Catalog
 ```
 
 ## Additional information

@@ -111,8 +111,6 @@ Add the custom VCL snippet to your Fastly service configuration from the Magento
 	   ```
 
 1.  Click **Create** to generate the VCL snippet file with the name pattern `type_priority_name.vcl`, for example `recv_5_allowlist.vcl`
-
-	      ![Create VCL Snippet]
 	
 1.  After the page reloads, click **Upload VCL to Fastly** in the *Fastly Configuration* section to add the file to the Fastly service configuration.
 

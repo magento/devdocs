@@ -175,7 +175,6 @@ Define whether images are displayed in a loop.
 
 **Default value**: `false`
 
-
 #### `options/maxheight` {#gallery_maxheight}
 
 Maximum height of the preview block in pixels or percent.
@@ -233,7 +232,6 @@ Sliding direction of thumbnails.
 
 Display navigation arrows for thumbnails.
 
-
 **Type**: Boolean
 
 #### `options/navtype` {#gallery_navtype}
@@ -287,7 +285,6 @@ Height of thumbnails.
 
 **Type**: Number, String
 
-
 #### `options/transition` {#gallery_transitioneffect}
 
 Sets the transition effect for slides changing.
@@ -333,7 +330,6 @@ Display [alt text](https://glossary.magento.com/alt-text) as image title in the 
 Switch on/off the keyboard navigation in the fullscreen mode.
 
 **Type**: Boolean
-
 
 #### `fullscreen/loop` {#full_loop}
 
@@ -391,7 +387,6 @@ Display navigation thumbnails as carousel in the fullscreen view.
 
 Enable view of caption in the fullscreen mode. Can be for initialized for specific image. Can work globally.
 
-
 **Type**: Boolean
 
 #### `fullscreen/thumbwidth` {#full_thumbwidth}
@@ -420,7 +415,6 @@ Sets the transition effect for slides changing in the fullscreen view.
 Sets transition duration in milliseconds in the fullscreen view.
 
 **Type**: Number
-
 
 ### `breakpoints` {#breakpoints}
 Set of options that could be dynamically set while page is resizing.
@@ -488,7 +482,6 @@ var api = $('[data-gallery-role="gallery"]').data('gallery');
 
 This method returns JS object that contains [API](https://glossary.magento.com/api) functions.
 
-
 To ensure that the gallery is fully formed, wrap your code with [event](https://glossary.magento.com/event) handler function and add it to the `gallery:loaded` event:
 
 ```javascript
@@ -554,7 +547,6 @@ Behavior:
 * `seek(1)` displays the first image.
 * `seek(-1)` displays the last image.
 * If the argument is a number bigger than the number of items, or less than "-(number of items)" the gallery shows the modulus of the following division: total images number divided by the argument number.  
-
 
 #### `updateData()` {#gallery_updateData}
 
