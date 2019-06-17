@@ -1,6 +1,6 @@
 ---
 group: graphql
-title: giftCardAccount endpoint
+title: giftCardAccount query
 ee_only: True
 ---
 

@@ -105,7 +105,7 @@ pages:
                 - label: createEmptyCart mutation
                   url: /graphql/reference/quote-create-cart.html
 
-                - label: giftCardAccount endpoint
+                - label: giftCardAccount query
                   url: /graphql/reference/quote-giftcard-account.html
 
                 - label: placeOrder mutation
