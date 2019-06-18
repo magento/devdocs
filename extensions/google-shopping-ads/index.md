@@ -59,10 +59,10 @@ To add the Google API key:
 
 1. Click **Save Config**.
 
-    ![Add the API Key](images/config-api-key2.png)
+    ![Add the API Key](images/config-api-key.png)
 
     {:.bs-callout .bs-callout-info}
-You can also [Enable Service Logs](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) during this step. This option is disabled by default.
+You can also [Enable Service Logs](https://docs.magento.com/m2/ce/user_guide/configuration/services/channels.html) during this step. This option is disabled by default and should only be used when needed for troubleshooting, as continued logging will negatively impact performance.
 
 1. On the Admin sidebar, click **Marketing**. Then under **Advertising Channels**, click **Google Shopping ads**. Magento verifies and validates the entered API key, continuing with onboarding.
 
