@@ -9,9 +9,6 @@ pages:
 
         - label: Architectural diagrams
           url: /architecture/archi_perspectives/arch_diagrams.html
-        
-        - label: Modularity and Extensibility
-          url: /architecture/extensibility.html
 
         - label: Frontend customization
           url: /architecture/frontend_custom_strategies.html
@@ -32,8 +29,14 @@ pages:
         - label: Service layer
           url: /architecture/archi_perspectives/service_layer.html
 
+    - label: Coding Standards
+      url: /coding-standards/bk-coding-standards.html
+      
+   - label: Magento Framework
+      url: /architecture/archi_perspectives/framework.html
+    
     - label: Modules and Extensibility
-      url: /architecture/archi_perspectives/components/AComponents.html
+      url: /architecture/extensibility.html
       children:
 
         - label: Module overview
@@ -48,15 +51,9 @@ pages:
         - label: Module dependencies
           url: /architecture/archi_perspectives/components/modules/mod_depend.html
 
-    - label: Magento Framework
-      url: /architecture/archi_perspectives/framework.html
-
     - label: Technical vision
       url: /architecture/archi_perspectives/tech-vision.html
       children:
-
-        - label: Coding Standards
-          url: /coding-standards/bk-coding-standards.html
 
         - label: Web Api
           url: /get-started/bk-get-started-api.html
