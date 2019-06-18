@@ -8,7 +8,7 @@ title: Magento Open Source 2.1.18 Release Notes
 *Release notes published on June 25, 2019.*
 
 
-{:.bs-callout .bs-callout-note}
+{:.bs-callout .bs-callout-info}
 The Magento Open Source 2.1.18 software release marks the final supported software release for Magento Open Source version 2.1.x. Magento Open Source 2.1.x will no longer receive security updates or product quality fixes now that its support window has expired.
 
 To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Open Source. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
