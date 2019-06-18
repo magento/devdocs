@@ -69,7 +69,11 @@ You can translate the same element in different ways for different modules:
 "Add to Cart", "Add to Cart", module, Magento_Review
 "Add to Cart", "Add to Shopping Cart", module, Magento_Catalog
 ```
+You can use two double quotation marks for word or phrase
 
+```text
+"Search",&quot;Search here&quot;
+```
 ## Additional information
 
 - [Translations overview]
