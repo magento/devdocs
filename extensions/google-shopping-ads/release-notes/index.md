@@ -27,7 +27,7 @@ Google Shopping ads Channel 2.0.0 is generally available for versions 2.2.4+ and
 
 - {:.fix} **Index Management Improvements**: Indexing processes between Magento and Google have been updated for increased efficiency and performance.
     <!--3004, 3298, 3343, 3480, 3481, 3465, 3472-->
-    - Consolidated and rebuilt indexer for communicating with Google separate
+    - Consolidated and rebuilt indexer for communicating with Google
     - Set indexer to run on schedule by default
     - Adjusted indexer logic to only send product data changes, instead of all data for a changed product
 
