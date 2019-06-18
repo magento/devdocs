@@ -722,7 +722,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.1.1. Page file names MUST follow this pattern:
 
 * {Admin or Storefront}{Description}Page.xml, where {Description} briefly describes the page under test.
-* Use PascalCase.
+* Use [PascalCase](http://wiki.c2.com/?PascalCase).
 * Example: AdminProductAttributeGridPage.xml
 
 11.3.1.2. Page `name` attribute MUST be the same as the file name.
@@ -739,7 +739,7 @@ You need to read configuration from different sources (like database or filesyst
 11.3.2.1. Section file names MUST follow this pattern:
 
 * {Admin or Storefront}{Description}Section.xml, where {Description} briefly describes the section under test.
-* Use PascalCase.
+* Use [PascalCase](http://wiki.c2.com/?PascalCase).
 * Example: StorefrontCheckoutCartSummarySection.xml
 
 11.3.2.2. Section `name` attribute MUST be the same as the file name.
