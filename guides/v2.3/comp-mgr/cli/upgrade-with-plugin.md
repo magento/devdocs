@@ -22,7 +22,7 @@ Basically, this section repeats the manual upgrade scenario with the only exclus
 
 Refer to [Prerequisites].
 
-If you need to upgrade PHP, do it before you run the script.
+If you need to upgrade PHP, do it before you run the plugin.
 
 ## Backup `composer.json`
 
@@ -31,7 +31,12 @@ Backup the existing `composer.json` file in the Magento installation directory.
 ## Install the plugin
 
 ```bash
-composer require magento/composer-root-update-plugin 1.0.0 --no-update
+composer require magento/composer-root-update-plugin ~0.1 --no-update
+```
+
+Update the dependencies:
+
+```bash
 composer update
 ```
 
