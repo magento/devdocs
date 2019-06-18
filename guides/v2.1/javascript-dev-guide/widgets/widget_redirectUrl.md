@@ -2,6 +2,8 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: RedirectUrl widget
+contributor_name: Atwix
+contributor_link: https://www.atwix.com/
 ---
 
 ## Overview
