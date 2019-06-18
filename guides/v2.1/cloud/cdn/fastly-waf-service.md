@@ -65,7 +65,7 @@ The standard Magento Cloud WAF powered by Fastly does not support the following 
 - Rate limiting or virtual patching
 - Configuring a logging endpoint for customer
 
-Althought the WAF does not allow you to block or allow traffic based on IP addresses, you can add access control lists (ACL) and custom VCL snippets to your Fastly service to specify the IP addresses and VCL logic for blocking or allowing traffic. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
+Although the WAF does not allow you to block or allow traffic based on IP addresses, you can add access control lists (ACL) and custom VCL snippets to your Fastly service to specify the IP addresses and VCL logic for blocking or allowing traffic. See [Custom Fastly VCL snippets]({{ page.baseurl }}/cloud/cdn/cloud-vcl-custom-snippets.html).
 
 
 [WAF error page]: {{site.baseurl}}/common/images/cloud/cloud-fastly-waf-403-error.png
