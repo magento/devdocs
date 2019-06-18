@@ -392,12 +392,32 @@ $helperMethodResult = $block->getData('helper_method_result');
 
 ## Common arguments for blocks
 
-Use the following Common arguments blocks instructions:
+ Use the following common arguments blocks instructions:
+
+- `cache_key`: custom-specific key for saving / retrieving cached information. This is helpful if the block needs to be cached [example]({{ page.baseurl }}/cloud/project/project-routes-more-cache.html).
 
 - `template`: sets the template for the block.
-- `translate_inline`: true = disable translation for this block.
+```xml
+  <referenceBlock name="page.main.title">
+     <arguments>
+       <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+     </arguments>
+   </referenceBlock>
+   ```
+
+- `translate_inline`: `true = disable` translation for this block.
+  ```xml
+  <argument xsi:type="string" translate="true">{strValue}</argument>
+  ```
+
 - `module_name`: sets the module for the block. Usually this is automatically determined.
-- `cache_key`: custom-specific key for saving / retrieving cached information. This is helpful if the block needs to be cached, but with unique caches for unique sets of data (for example, loading customer data).
+```xml
+<block class="Namespace_Module_Block_Type" name="block.example">
+  <arguments>
+    <argument name="label" xsi:type="string">Block Label</argument>
+  </arguments>
+</block>
+```
 
 ### arguments {#arguments}
 
