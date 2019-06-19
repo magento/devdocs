@@ -12,7 +12,7 @@ It extends the [Magento modal widget].
 
 The prompt widget source is [`<Magento_Ui_module_dir>/view/base/web/js/modal/prompt.js`].
 
-The widget can be used for implementing prompt windows for both, Admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the modal pop-up windows in the Admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
+The widget can be used for implementing prompt windows for both, admin and [storefront](https://glossary.magento.com/storefront). The design patterns for the modal pop-up windows in the admin are described in the [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]
 
 ## Initialize the prompt widget {#prompt_init}
 
@@ -55,20 +55,20 @@ For details about how to initialize a widget in a `.phtml` template, refer to th
 
 ## Options {#prompt_options}
 
--   [actions](#prompt_actions)
--   [autoOpen](#prompt_autoopen)
--   [clickableOverlay](#prompt_clickableOverlay)
--   [content](#prompt_content)
--   [focus](#prompt_focus)
--   [title](#prompt_title)
--   [modalClass](#prompt_modalClass)
--   [promptContentTmpl](#prompt_promptContentTmpl)
--   [value](#prompt_value)
--   [promptField](#prompt_promptField)
--   [attributesForm](#prompt_attributesForm)
--   [attributesField](#prompt_attributesField)
--   [validation](#prompt_validation)
--   [validationRules](#prompt_validationRules)
+- [actions](#prompt_actions)
+- [autoOpen](#prompt_autoopen)
+- [clickableOverlay](#prompt_clickableOverlay)
+- [content](#prompt_content)
+- [focus](#prompt_focus)
+- [title](#prompt_title)
+- [modalClass](#prompt_modalClass)
+- [promptContentTmpl](#prompt_promptContentTmpl)
+- [value](#prompt_value)
+- [promptField](#prompt_promptField)
+- [attributesForm](#prompt_attributesForm)
+- [attributesField](#prompt_attributesField)
+- [validation](#prompt_validation)
+- [validationRules](#prompt_validationRules)
 
 ### `actions` {#prompt_actions}
 Widget callbacks.
@@ -76,6 +76,7 @@ Widget callbacks.
 **Type**: Object.
 
 **Default value**:
+
 ```javascript
 actions: {
     confirm: function(){},
@@ -256,7 +257,7 @@ The keyboard navigation for the alert windows is similar to the [navigation of t
 
 ```html
 <div class="prompt-modal-content">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 </div>
 
 <script>
