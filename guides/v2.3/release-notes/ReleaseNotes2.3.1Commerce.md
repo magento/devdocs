@@ -146,7 +146,7 @@ Infrastructure improvements are core enhancements that underlie both merchant an
 
 * Magento now uses version 6.0 of the DHL XML Services schema for the DHL shipping method. <!--- MC-4245-->* 
 
-* <!--- MC-1364-->* The **Allow Dynamic Media URLs in Products and Categories** configuration setting, which was previously under **Stores** > **Configuration** > **Catalog** > **Catalog** > **Storefront**, has been removed.  Because this setting is set to **yes** by default in  the **system.xml** file, dynamic urls are typically rendered on the storefront. However, you can change this default setting by editing the **system.xml** file. 
+* <!--- MC-1364-->* The **Allow Dynamic Media URLs in Products and Categories** configuration setting, which was previously under **Stores** > **Configuration** > **Catalog** > **Catalog** > **Storefront**, has been removed.  Because this setting is set to 'yes' by default in  the `system.xml` file, dynamic URLs are typically rendered on the storefront. However, you can change this default setting by editing the `system.xml` file. 
 
 The **Use Static URLs for Media Content in WYSIWYG** setting at **Stores** > **Configuration** > **General** > **Content management** > **WYSIWYG Options** now applies to any media URLs that are entered through the WYSIWYG editor.
 
