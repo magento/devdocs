@@ -116,7 +116,7 @@ The CSS class of the alert window.
 ## Events {#alert_events}
 
 The alert widget implements a single event: the `always` callback.
-The `always` callback called when a modal is closed.
+The `always` callback is invoked when a modal window is closed.
 
 ## Keyboard navigation {#alert_key_navigation}
 
@@ -181,7 +181,7 @@ require([
 
 ## Result
 
-![Alert Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/alert-widget-result.png)
+![Alert Widget]({{ site.baseurl }}/common/images/widget/alert-widget-result.png)
 
 [Magento modal widget]: {{ page.baseurl }}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/alert.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/alert.js
