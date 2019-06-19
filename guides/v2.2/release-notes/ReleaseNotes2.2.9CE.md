@@ -5,20 +5,14 @@ title: Magento Open Source 2.2.9 Release Notes
 
 ---
 
-
-
-*Release notes published on June 26  2019.*
-
+*Patch code and release notes published on June 25 2019.*
 
 We are pleased to present Magento Open Source 2.2.9. This release includes 75 critical enhancements to product security, over 100 core code fixes and enhancements, and  over 200 community-submitted pull requests. 
-
-
 
 
 ## Highlights
 
 Look for the following highlights in this release:
-
 
 ### Substantial security enhancements
 
@@ -53,7 +47,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer displays an extraneous blank option in the country drop-down menu. 
 
 <!-- ENGCOM-4741 -->
-* Magento no longer throws an error when you use `app:config:import` to import configuration settings. Previously, the import failed, and Magento threw the following error even when the imported file contained only minor changes to password or URL values: `Please specify the admin custom URL`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22282](https://github.com/magento/magento2/pull/22282)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
+* Magento no longer throws an error when executing `setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22282](https://github.com/magento/magento2/pull/22282)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
 
 <!-- ENGCOM-4829 -->
 * All fields are now hidden with appropriate dependencies as assigned in the backup configuration settings. *Fix submitted by [Keyur Kanani](https://github.com/keyuremipro) in pull request [22499](https://github.com/magento/magento2/pull/22499)*. [GitHub-22474](https://github.com/magento/magento2/issues/22474)
@@ -191,8 +185,9 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer increments stock for products for which stock managing has been disabled. Previously, Magento increased the product quantity count when an order failed if **Manage Stock** was disabled. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20644](https://github.com/magento/magento2/pull/20644)*. [GitHub-19482](https://github.com/magento/magento2/issues/19482)
 
 <!-- ENGCOM-4514 -->
-* We've fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
-has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+* * We have replaced the incorrect proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
+ with the following argument:
+  `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 <!-- MAGETWO-98794 --> 
 * You can now add a product to an order by using the **Add products by SKU** button. Previously, when you tried to add a product this way, Magento displayed this message, `The SKU was not found in the catalog.
@@ -801,18 +796,18 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 ### Wishlist
 
 <!-- MAGETWO-73613 -->
-* The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesiraable and inaccurate changes in quantity
+* The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesirable and inaccurate changes in quantity
 
 <!-- ENGCOM-4513 -->
 * Customer wishlists now include review summaries for included products. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21759](https://github.com/magento/magento2/pull/21759)*. [GitHub-21419](https://github.com/magento/magento2/issues/21419)
 
+## Known issue
 
-
-
+* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. 
+  
 ## Community contributions
 
 This release includes substantial community contributions: over 100 GitHub issues resolved and over 350 pull requests merged. We are grateful to the wider Magento community for this effort and would like to acknowledge their contributions to this release.
-
 
 ### Individual contributor contributions
 

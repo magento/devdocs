@@ -4,7 +4,7 @@ title: Magento Commerce 2.2.9 Release Notes
 
 ---
 
-*Release notes published on June 26, 2019.*
+*Patch code and release notes published on June 25 2019.*
 
 We are pleased to present Magento Commerce 2.2.9. This release includes 75 critical enhancements to product security, over 100 core code fixes and enhancements, and over 200 community-submitted pull requests.
 
@@ -45,7 +45,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer displays an extraneous blank option in the country drop-down menu.
 
 <!-- ENGCOM-4741 -->
-* Magento no longer throws an error when you use `app:config:import` to import configuration settings. Previously, the import failed, and Magento threw the following error even when the imported file contained only minor changes to password or URL values: `Please specify the admin custom URL`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22282](https://github.com/magento/magento2/pull/22282)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
+* Magento no longer throws an error when executing `setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22282](https://github.com/magento/magento2/pull/22282)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
 
 <!-- ENGCOM-4829 -->
 * All fields are now hidden with appropriate dependencies as assigned in the backup configuration settings. *Fix submitted by [Keyur Kanani](https://github.com/keyuremipro) in pull request [22499](https://github.com/magento/magento2/pull/22499)*. [GitHub-22474](https://github.com/magento/magento2/issues/22474)
@@ -207,13 +207,9 @@ In addition to security enhancements, this release contains the following functi
 * Magento no longer increments stock for products for which stock managing has been disabled. Previously, Magento increased the product quantity count when an order failed if **Manage Stock** was disabled. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20644](https://github.com/magento/magento2/pull/20644)*. [GitHub-19482](https://github.com/magento/magento2/issues/19482)
 
 <!-- ENGCOM-4514 -->
-* We have fixed the incorrect proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. Specifically, we replaced the following argument:
-
-  `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
-
-  with a new value:
-
- `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+* * We have replaced the incorrect proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
+ with the following argument:
+  `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21793](https://github.com/magento/magento2/pull/21793)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 <!-- MAGETWO-98794 -->
 * You can now add a product to an order by using the **Add products by SKU** button. Previously, when you tried to add a product using this method, Magento displayed the following message: `The SKU was not found in the catalog.
@@ -228,6 +224,7 @@ In addition to security enhancements, this release contains the following functi
 * **Meta Keywords** and **Meta Description** are now defined as textarea throughout product forms. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21199](https://github.com/magento/magento2/pull/21199)*. [GitHub-20555](https://github.com/magento/magento2/issues/20555) 
 
 ### Catalog rule
+
 <!-- MAGETWO-98679 -->
 * Catalog rules are applied as expected after a customer uses Visual Merchandiser  to drag and drop products in a category. Previously, discounts that were applied to products through a catalog rule were dropped after the product was dragged and dropped.
 
@@ -285,12 +282,10 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4677 -->
 * The Close button on the mini cart no longer overlaps with the shipping section when the checkout page is opened on a mobile device. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20844](https://github.com/magento/magento2/pull/20844)*. [GitHub-20614](https://github.com/magento/magento2/issues/20614)
 
-
 ### Cart Price rule
 
 <!-- ENGCOM-4540 -->
 * Added a new condition type Subtotal (Excl. Tax) to configure discounts that exclude the sales tax when calculating the subtotal on a Total Amount cart rule.  See [Price rules](https://docs.magento.com/m2/ee/user_guide/marketing/price-rule-discount-minimum-purchase.html). *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [21845](https://github.com/magento/magento2/pull/21845)*. [GitHub-12396](https://github.com/magento/magento2/issues/12396)
-
 
 
 ### Checkout agreements
@@ -563,7 +558,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-97595 -->
 * Editing a theme now creates an entry in the Admin action log as expected. 
 
-
 <!-- ENGCOM-4834 -->
 * The downloads report table (**Admin** > **Reports** > **Downloads**) now displays an accurate count of all downloadable products and the number of times they have been downloaded. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [22523](https://github.com/magento/magento2/pull/22523)*. [GitHub-22223](https://github.com/magento/magento2/issues/22223)
 
@@ -686,7 +680,6 @@ In addition to security enhancements, this release contains the following functi
   
 ### Search
 
-
 <!-- MAGETWO-97374 -->
 * Layered navigation results no longer includes price ranges that contain no products.
 
@@ -798,7 +791,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4621 -->
 * Magento now retains filter terms after you have applied a filter to the Admin `url_rewrites` table, then click the back button. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21805](https://github.com/magento/magento2/pull/21805)*. [GitHub-21805](https://github.com/magento/magento2/issues/21805)
 
-
 <!-- ENGCOM-4116 -->
 * The import process now retains permanent redirects for outdated product URLs as expected. Previously, the import process removed these redirects, and when you tried to open the changed product by the old URL key, Magento displayed a 404 page. *Fix submitted by [Shikha Mishra](https://github.com/shikhamis11) in pull request [20737](https://github.com/magento/magento2/pull/20737)*. [GitHub-20282](https://github.com/magento/magento2/issues/20282)
 
@@ -811,6 +803,7 @@ In addition to security enhancements, this release contains the following functi
 * Magento can now validate Greek VAT numbers. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21169](https://github.com/magento/magento2/pull/21169)*. [GitHub-6960](https://github.com/magento/magento2/issues/6960)
 
 ### Web API framework
+
 <!-- MAGETWO-73978 -->
 * Magento now throws an error as expected when you send an APU request that specifies `pageSize` and `currentPage` values that exceed the number of products in the catalog you’re querying. Previously, when you queried a catalog and specified values that exceeded catalog size, the API would ignores the specified `currentPage` value, and returned the same results as the highest valid `currentPage`. 
 
@@ -827,6 +820,10 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4513 -->
 * Customer wish lists now include review summaries for included products. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21759](https://github.com/magento/magento2/pull/21759)*. [GitHub-21419](https://github.com/magento/magento2/issues/21419)
+
+## Known issue
+
+* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. 
 
 ## Community contributions
 
