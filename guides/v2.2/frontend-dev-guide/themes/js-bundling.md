@@ -39,9 +39,20 @@ JavaScript bundling does not work unless Magento is in [production mode][product
 
     For example, when `Sign Static Files` is disabled (which is the default: `config:set dev/static/sign 0`), the URL to a static file might look like this: `/static/frontend/Magento/luma/en_US/mage/dataPost.js`. But when you enable the setting (`config:set dev/static/sign 1`), the same URL might look something like this: `static/version40s2f9ef/frontend/Magento/luma/en_US/mage/dataPost.js`, with a version number added as shown. The next time this file is updated (with `bin/magento setup:static-content:deploy`), a new version will be generated, causing the browser to download a new file from the server, thus busting the browser's cache.
 
+
+## How merging works in Magento
+
+- Concatenate source js file from an area together into one file.
+- Reduce number of js Requests
+- A massive js file is downloaded
+
 ## How bundling works in Magento
 
 When you enable bundling, Magento combines hundreds of JavaScript files into just a few JavaScript bundles and downloads those bundles for each page. Because the browser downloads the bundles synchronously, page rendering *is* blocked until all bundles finish downloading. But the time saved from reducing server requests from hundreds to just a few, usually offsets the cost of downloading the bundles synchronously.
+
+## How minifying works in Magento
+
+Reduce the js File size by stripping whitespace and shortening variable names
 
 ### Excluding files
 

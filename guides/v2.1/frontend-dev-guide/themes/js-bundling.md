@@ -24,10 +24,20 @@ To optimize bundling, set the following settings to `Yes`:
 * `JavaScript Settings -> Minify JavaScript Files`
 * `Static Files Settings -> Sign Static Files`
 
+## How merging works in Magento
+
+- Concatenate source js file from an area together into one file.
+- Reduce number of js Requests
+- A massive js file is downloaded
+
 ## How bundling works in Magento
 
 By default, Magento bundles all JavaScript files and loads them synchronously on every page load.
 This means that each bundle is loaded one after the other and causes delays for JavaScript behaviors on a page.
+
+## How minifying works in Magento
+
+Reduce the js File size by stripping whitespace and shortening variable names
 
 ### Excluding files
 
