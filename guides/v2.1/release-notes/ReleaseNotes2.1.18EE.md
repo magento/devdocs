@@ -3,29 +3,19 @@ group: release-notes
 title: Magento Commerce 2.1.18 Release Notes
 ---
 
+*Patch code and release notes published on June 25, 2019.*
 
-*Release notes published on June 25, 2019.*
+{:.bs-callout .bs-callout-info}
+The Magento Commerce 2.1.18 software release marks the final supported software release for Magento Commerce version 2.1.x. As of June 30 2019, Magento Commerce 2.1.x will no longer receive security updates or product quality fixes now that its support window has expired. To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Commerce. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
 
+We are pleased to present {{site.data.var.ee}} 2.1.18. This release includes multiple enhancements to product security and several important functional fixes. 
 
-{:.bs-callout .bs-callout-note}
-The Magento Commerce 2.1.18 software release marks the final supported software release for Magento Commerce version 2.1.x. Magento Commerce 2.1.x will no longer receive security updates or product quality fixes now that its support window has expired. 
+Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions.
 
-To maintain the performance and security of your site, we advise you to upgrade to the latest version of Magento Commerce. We encourage you to reach out to your partners, developers, or Magento Customer Success contact for more information on upgrading your site.
-
-
-We are pleased to present {{site.data.var.ee}}  2.1.18. This release includes  multiple enhancements to product security and several important functional fixes. 
-
-
-Although this release includes these security enhancements, no confirmed attacks related to these issues have occurred to date. However, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your Magento software to the latest version as soon as possible.
+See [Magento Security Center](https://magento.com/security/patches/magento-2.3.2-2.2.9-and-2.1.18-security-update) for a comprehensive discussion of these security issues. All known exploitable security issues fixed in this release (2.1.18) have been ported to 2.3.2, 2.2.9, 1.14.4.2, and 1.9.4.2, as appropriate. 
 
 
 ## Highlights
-
-See [Magento Security Center](https://magento.com/security/patches/magento-2.3.2-2.2.9-and-2.1.18-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.18) have been ported to 2.3.2, 2.2.9, 1.14.4.2, and 1.9.4.2, as appropriate. 
-
-
-See [Magento Security Center](https://magento.com/security/patches/magento-2.3.2-2.2.9-and-2.1.18-security-update) for a comprehensive discussion of these issues. All exploitable security issues fixed in this release (2.1.18) have been ported to 2.3.2, 2.2.9, 1.14.4.2, and 1.9.4.2, as appropriate. 
-
 
 <!--- MAGETWO-98950 -->
 * The CGI URL gateway endpoint in the UPS module has been updated  from HTTP to HTTPS in response to the disablement of the HTTP gateway by UPS in mid-2019. See [Magento User Guide](https://docs.magento.com/m2/ee/user_guide/shipping/ups.html) for a discussion of using the UPS shipment method. Shipping method configuration settings are described in the [Shipping methods](https://docs.magento.com/m2/ee/user_guide/configuration/sales/shipping-methods.html#UPS). 
@@ -44,8 +34,6 @@ See [Magento Security Center](https://magento.com/security/patches/magento-2.3.2
   * New roles must be granted permission to edit design manually.
 
   * If you do not have permission to edit the `design` fieldset or use web API endpoints to update a category, Magento does not save your changes and the design properties remain unchanged.
-
-
 
 ## Installation
 
