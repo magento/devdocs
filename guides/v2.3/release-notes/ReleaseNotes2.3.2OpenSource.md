@@ -84,7 +84,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 * Magento no longer throws an error when you use  `app:config:import` to import configuration settings. Previously, the import failed, and Magento threw the following error even when the imported file contained only minor changes to password or URL values: `Please specify the admin custom URL`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22281](https://github.com/magento/magento2/pull/22281)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
 
 <!--- MAGETWO-95675-->
-* Magento no longer throws an error when you use  `app:config:import` to import configuration settings. Previously, the import failed, and Magento threw the following error even when the imported file contained only minor changes to password or URL values: `Please specify the admin custom URL`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22281](https://github.com/magento/magento2/pull/22281)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
+* Magento no longer throws an error when executing `setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`.
 
 <!--- ENGCOM-4794-->
 * Magento no longer throws an error during catalog set up when you run `bin/magento setup:upgrade`. Previously, set up failed, and Magento threw the following error even though no problems existed with your catalog, `Magento\Catalog\Setup\Media does not exist`. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [22446](https://github.com/magento/magento2/pull/22446)*. [GitHub-22124](https://github.com/magento/magento2/issues/22124)
@@ -302,9 +302,8 @@ This fix can degrade performance in deployments that implement flat catalogs. To
 
 <!--- ENGCOM-4490-->
 * We have fixed the wrong proxy `resourceStock` argument for the `\Magento\CatalogInventory\Observer\UpdateItemsStockUponConfigChangeObserver` in `di.xml`. (Specifically, `<argument name="resourceStock" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Proxy</argument>`
-has been changed to
-
-	`<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`. ) *Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
+has been changed to `<argument name="resourceStockItem" xsi:type="object">Magento\CatalogInventory\Model\ResourceModel\Stock\Item\Proxy</argument>`.)
+*Fix submitted by [Vitaliy](https://github.com/VitaliyBoyko) in pull request [21731](https://github.com/magento/magento2/pull/21731)*. [GitHub-167](https://github.com/magento/magento2/issues/167)
 
 
 ### Catalog URL rewrite
@@ -614,7 +613,7 @@ has been changed to
 * The import process  `replace` method now works as expected. *Fix submitted by [Denys Saltanakhmedov](https://github.com/DenisSaltanahmedov) in pull request [21189](https://github.com/magento/magento2/pull/21189)*. [GitHub-18761](https://github.com/magento/magento2/issues/18761)
 
 <!--- ENGCOM-4772--> 
-* The import process now imports product quantity aa expected.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22382](https://github.com/magento/magento2/pull/22382)*. [GitHub-22355](https://github.com/magento/magento2/issues/22355)
+* The import process now imports product quantity as expected.  *Fix submitted by [Nazar Klovanych](https://github.com/Nazar65) in pull request [22382](https://github.com/magento/magento2/pull/22382)*. [GitHub-22355](https://github.com/magento/magento2/issues/22355)
 
 <!--- ENGCOM-3761-->
 * Custom import adapters now validate CSV files as expected if column and data are available. Previously, the CSV file was not validated, and Magento threw the following error: `Notice: Undefined index: sku in /var/www/html/hamtc/vendor/magento/module-import-export/Model/Import/Entity/AbstractEntity.php on line 411`. *Fix submitted by [Jaimin Sutariya](https://github.com/jaimin-ktpl) in pull request [19765](https://github.com/magento/magento2/pull/19765)*. [GitHub-19761](https://github.com/magento/magento2/issues/19761)
@@ -629,7 +628,7 @@ has been changed to
 * Magento now displays the correct import status data for an import that is created using **System** > **Import** > **Advanced Pricing** > **Add/Update**. *Fix submitted by [Denys Saltanakhmedov](https://github.com/DenisSaltanahmedov) in pull request [21476](https://github.com/magento/magento2/pull/21476)*. [GitHub-21192](https://github.com/magento/magento2/issues/21192)
 
 <!--- ENGCOM-3993-->
-* The `store_view_code` column now contains data from the chosen product store. Previously, Magento did not populate the store_view_code column. *Fix submitted by [Valant13](https://github.com/Valant13) in pull request [19395](https://github.com/magento/magento2/pull/19395)*. [GitHub-17784](https://github.com/magento/magento2/issues/17784), [GitHub-19786](https://github.com/magento/magento2/issues/19786)
+* The `store_view_code` column now contains data from the chosen product store. Previously, Magento did not populate the `store_view_code` column. *Fix submitted by [Valant13](https://github.com/Valant13) in pull request [19395](https://github.com/magento/magento2/pull/19395)*. [GitHub-17784](https://github.com/magento/magento2/issues/17784), [GitHub-19786](https://github.com/magento/magento2/issues/19786)
 
 ### Index
 
