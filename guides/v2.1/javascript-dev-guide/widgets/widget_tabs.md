@@ -14,7 +14,6 @@ The tabs [widget](https://glossary.magento.com/widget) source is [lib/web/mage/t
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
 
-
 Generally the tabs widget is instantiated like following:
 ```javascript
 $("#element").tabs();
@@ -39,6 +38,7 @@ Phtml template file examples using script:
 
 The tabs widget has the following options:
 
+- [active](#fedg_tabs_options-active)
 - [ajaxUrlElement](#fedg_tabs_options-ajaxUrlElement)
 - [ajaxContent](#fedg_tabs_options-ajaxContent)
 - [animate](#fedg_tabs_options-animate)
@@ -163,7 +163,6 @@ The option of the [collapsible] widget used by tabs.
 
 **Default value**: `{ header: null, activeHeader: null }`
 
-
 ### `loadingClass` {#fedg_tabs_options-loadingClass}
 Class assigned to a tab during content loading for this tab.
 
@@ -214,11 +213,9 @@ The tabs widget has the following methods:
 -   [deactivate()](#fedg_tabs_methods-deactivate)
 -   [disable()](#fedg_tabs_options-disable)
 
-
 ### `activate()` {#fedg_tabs_methods-activate}
 
 `activate(index)` displays `content` for the tab with the corresponding `index`.
-
 
 ### `enable()` {#fedg_tabs_methods-enable}
 `enable(index)` enables the tab with the corresponding `index`.
