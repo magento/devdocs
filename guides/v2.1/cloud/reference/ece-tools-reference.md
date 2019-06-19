@@ -5,7 +5,7 @@ functional_areas:
   - Cloud
 ---
 
-The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as Docker environment deployment, cron management, and project verification. You can view the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
+The `{{site.data.var.ct}}` package is a set of scripts and tools designed to manage and deploy {{site.data.var.ece}} projects. The `{{site.data.var.ct}}` package simplifies many {{site.data.var.ece}} processes, such as Docker environment deployment, cron management, and project verification. You can view and contribute to the open-source [ece-tools repository on Github](https://github.com/magento/ece-tools).
 
 {% include cloud/note-ece-tools-package.md %}
 
