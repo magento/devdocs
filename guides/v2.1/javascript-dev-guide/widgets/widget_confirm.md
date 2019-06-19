@@ -58,6 +58,7 @@ For details about how to initialize a widget in a`.phtml` template, refer to the
 -   [content](#confirm_content)
 -   [focus](#confirm_focus)
 -   [title](#confirm_title)
+-   [modalClass](#confirm_modalClass)
 
 ### `actions` {#confirm_actions}
 Widget callbacks.
@@ -109,17 +110,96 @@ The title of the confirmation window.
 
 **Default value**: `''`
 
+### `modalClass` {#confirm_modalClass}
+The CSS class of the confirm window.
+
+**Type**: String.
+
+**Default value**: `'confirm'`
+
 ## Events {#confirm_events}
 
 The confirmation widget implements the following events:
 
 - `confirm` callback: called when the confirmation button is clicked.
 - `cancel` callback: called when the cancel button is clicked.
-- `always` callback.
+- `always` callback: called when the popup is closed.
 
 ## Keyboard navigation {#confirm_key_navigation}
 
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
+
+## Code Sample
+
+### Code sample of initialization on an element
+
+```html
+<div class="confirm-modal-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/confirm'
+], function ($) {
+    'use strict';
+    
+    $('.confirm-modal-content').confirm({
+        title: 'Confirm Title',
+        modalClass: 'confirm',
+        actions: {
+            always: function() {
+                // do something when the modal is closed
+            },
+            confirm: function () {
+                // do something when the confirmation button is clicked
+            },
+            cancel: function () {
+                // do something when the cancel button is clicked
+            }
+        }
+    });
+});
+</script>
+```
+
+### Code sample of standalone initialization
+
+```html
+<div class="confirm-modal-content">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet aut consequuntur culpa cum, distinctio earum harum, iste magnam nobis numquam pariatur tempora ullam vero vitae. Hic ipsam itaque velit.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/confirm'
+], function ($, confirm) {
+    'use strict';
+    confirm({
+        title: 'Confirm Title',
+        content: $('.confirm-modal-content'),
+        modalClass: 'confirm',
+        actions: {
+            always: function() {
+                // do something when the modal is closed
+            },
+            confirm: function () {
+                // do something when the confirmation button is clicked
+            },
+            cancel: function () {
+                // do something when the cancel button is clicked
+            }
+        }
+    });
+});
+</script>
+```
+
+## Result
+
+![Confirm Widget]({{ site.baseurl }}/common/images/widget/confirm-widget-result.png)
 
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/confirm.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/confirm.js
