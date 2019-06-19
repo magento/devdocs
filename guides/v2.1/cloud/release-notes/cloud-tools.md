@@ -10,19 +10,6 @@ redirect_from:
 ---
 <!-- 2.1 release notes -->
 
-<!-- Assigning liquid variables for placeholder values
-{% assign base_url = "{{base_url}}" %}
-{% assign unsecure_base_url = "{{unsecure_base_url}}" %}
--->
-
-The `{{site.data.var.ct}}` package is compatible with {{site.data.var.ee}} version 2.1.4 and later to provide a rich set of features you can use to manage your {{site.data.var.ece}} project. It contains scripts and {{site.data.var.ece}} commands designed to help manage your code and automatically build and deploy your projects.
-
-You can list the available `{{site.data.var.ct}}` commands using:
-
-```bash
-php ./vendor/bin/ece-tools list
-```
-
 The following updates describe the latest improvements to the `{{site.data.var.ct}}` package, which uses the following version sequence: `200<major>.<minor>.<patch>`. See [Upgrades and patches]({{ site.baseurl }}/guides/v2.1/cloud/project/project-upgrade-parent.html) for information about updating to the latest release of the `{{site.data.var.ct}}` package.
 
 The release notes include:
@@ -41,6 +28,12 @@ The release notes include:
     -   {:.new}<!-- MAGECLOUD-2901 -->Added support for database table prefixes using the [DATABASE_CONFIGURATION environment variable]({{page.baseurl}}/cloud/env/variables-deploy.html#database_configuration).
 
 -   {:.fix}<!-- MAGECLOUD-3545/Github#455 -->Added the `pub/static/.htaccess` file to the exclude list.
+
+-   {:.fix}<!-- MAGECLOUD-3178 -->Fixed an error when all validation messages were showing as Critical if at least one critical level validator returned an error.
+
+-   {:.fix}<!-- MAGECLOUD-3075 -->Fixed an issue that caused a deployment failure if the Magento base URL did not exist in the database.
+
+-   {:.new}<!-- MAGECLOUD-3451 -->Added a new command to the `{{site.data.var.ct}}` package that displays environment services, routes, or variables. See [Services, routes, and variable]({{page.baseurl}}/cloud/reference/ece-tools-reference.html#services-routes-and-variables). [Thanks to Vladimir Kerkhoff](https://github.com/magento/ece-tools/pull/486).
 
 ## v2002.0.19
 
