@@ -67,9 +67,9 @@ To call a JS component on an HTML element without direct access to the element o
 <script type="text/x-magento-init">
 {
     // components initialized on the element defined by selector
-	"<element_selector>": {
-		"<js_component1>": ...,
-		"<js_component2>": ...
+    "<element_selector>": {
+        "<js_component1>": ...,
+        "<js_component2>": ...
     },
     // components initialized without binding to an element
     "*": {
@@ -139,8 +139,8 @@ $(function () { // to ensure that code evaluates on page load
     $('[data-role=example]')  // we expect that page contains markup <tag data-role="example">..</tag>
         .accordion({ // now we can use "accordion" as jQuery plugin
             header:  '[data-role=header]',
-	    content: '[data-role=content]',
-	    trigger: '[data-role=trigger]',
+            content: '[data-role=content]',
+            trigger: '[data-role=trigger]',
             ajaxUrlElement: 'a'
         });
 });
