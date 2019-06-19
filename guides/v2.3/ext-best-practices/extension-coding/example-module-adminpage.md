@@ -92,6 +92,8 @@ For more information see: [naming your component]({{ page.baseurl }}/extension-d
  ```
 {% endcollapsible %}
 
+If your module does not implement [Declarative Schema]({{ page.baseurl }}/extension-dev-guide/declarative-schema/index.html), define the `setup_version` attribute in the module element.
+
 ## Routing and navigation
 
 Before we can view the module's page, we need a way to navigate to it. These files create a link to the page in the left navigation and tells Magento how to resolve requests for that page.
