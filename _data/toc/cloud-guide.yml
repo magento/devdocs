@@ -38,6 +38,9 @@ pages:
         - label: Magento Cloud CLI
           url: /cloud/reference/cli-ref-topic.html
 
+        -  label: ece-tools package
+           url: /cloud/reference/ece-tools-reference.html
+
         - label: Git
           url: /cloud/reference/git-integration.html
 
