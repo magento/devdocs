@@ -503,7 +503,7 @@ In addition to security enhancements, this release contains the following functi
 * You can now change customer groups when creating a new customer during order creation on the Admin. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21239](https://github.com/magento/magento2/pull/21239)*. [GitHub-7974](https://github.com/magento/magento2/issues/7974)
 
 <!-- MAGETWO-98000 -->
-* The store switcher now redirects users to the correct store. 
+* PayPal Express now creates a gift card as expected when payment for the card is captured. Previously, Magento did not create a gift card under these circumstances, even when payment action was set to **Authorize and Capture** and **Generate Gift Card Account when Order Item is** was set  to *Invoiced*.
 
 
 ### Gift card account
