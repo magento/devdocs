@@ -10,7 +10,7 @@ functional_areas:
 {% capture ee %}{{site.data.var.ee}}{% endcapture %}
 -->
 
-{: .bs-callout-warning}
+{: .bs-callout-warning }
 This upgrading scenario is still under development and is published here to make it available for the Community to test.
 Do not use it on production.
 
@@ -22,7 +22,7 @@ Basically, this section repeats the manual upgrade scenario with the only exclus
 
 Refer to [Prerequisites].
 
-If you need to upgrade PHP, do it before you run the plugin.
+If you need to upgrade PHP, do so before proceeding with the following steps.
 
 ## Backup `composer.json`
 
@@ -112,7 +112,7 @@ _Optional_—If the Magento updater is installed (it is located in `update/`) mo
     composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
     ```
 
-    {:.bs-callout .bs-callout-info}
+    {: .bs-callout-info }
       If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
 3. Remove the old `update/` directory and move the `temp_dir/update/` to the `update/` directory:
 
@@ -130,7 +130,7 @@ _Optional_—If the Magento updater is installed (it is located in `update/`) mo
 
 ## Update metadata
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Updating the metadata in `composer.json` file is entirely superficial, not functional.
 
 Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as desired.
@@ -165,7 +165,7 @@ rm -rf var/page_cache/*
 rm -rf generated/code/*
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 If you use cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
 ## Update the database schema and data

@@ -33,7 +33,7 @@ Complete the following prerequisites to prepare your environment before starting
 
     See [Enable or disable maintenance mode] for additional options.
 
-    {:.bs-callout .bs-callout-info}
+    {: .bs-callout-info }
     Optionally, you can create a [custom maintenance mode page].
 
 ## Upgrade using the command line {#upgrade-cli-upgr}
@@ -136,8 +136,8 @@ _Optional_—If the Magento updater is installed (it is located in `update/`) mo
     composer create-project --repository=https://repo.magento.com magento/project-enterprise-edition={{ page.guide_version }}.2 temp_dir --no-install
     ```
 
-    {:.bs-callout .bs-callout-info}
-      If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
+    {: .bs-callout-info }
+    If you need to use a repository that contains non-public packages, such as internal sandboxes, change the URL in `--repository` accordingly.
 3. Remove the old `update/` directory and move the `temp_dir/update/` to the `update/` directory:
 
    ```bash
@@ -156,7 +156,7 @@ _Optional_—If the Magento updater is installed (it is located in `update/`) mo
 
 Update the `"name"`, `"version"`, and `"description"` fields in the `composer.json` file as desired.
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 Updating the metadata in `composer.json` file is entirely superficial, not functional.
 
 ### Apply updates
@@ -189,7 +189,7 @@ rm -rf var/page_cache/*
 rm -rf generated/code/*
 ```
 
-{:.bs-callout .bs-callout-info}
+{: .bs-callout-info }
 If you use a cache storage other than the filesystem, such as Redis or Memcached, you must manually clear the cache there too.
 
 ### Update the database schema and data
