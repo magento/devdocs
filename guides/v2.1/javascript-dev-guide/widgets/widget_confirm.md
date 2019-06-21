@@ -121,6 +121,65 @@ The confirmation widget implements the following events:
 
 The keyboard navigation for the alert windows is similar to the [navigation of the modal widget].
 
+## Code Sample
+
+### Code sample of standalone initialization
+
+```html
+<div class="confirmation-modal-content">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/confirm'
+], function ($, confirmation) {
+    'use strict';
+
+    confirmation({
+        title: $.mage.__('Confirmation Title'),
+        content: $('.confirmation-modal-content'),
+        actions: {
+            confirm: function(){}, //callback on 'Ok' button click
+            cancel: function(){}, //callback on 'Cancel' button click
+            always: function(){}
+        }
+    });
+});
+</script>
+```
+
+### Code sample of initialization on an element
+
+```html
+<div class="confirmation-modal-content">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</div>
+
+<script>
+require([
+    'jquery',
+    'Magento_Ui/js/modal/confirm'
+], function ($) {
+    'use strict';
+    
+    $('.confirmation-modal-content').confirm({
+        title: 'Confirmation Title',
+        actions: {
+            confirm: function(){}, //callback on 'Ok' button click
+            cancel: function(){}, //callback on 'Cancel' button click
+            always: function(){}
+        }
+    });
+});
+</script>
+```
+
+## Result
+
+![Confirmation Widget]({{ site.baseurl }}/common/images/widget/confirm-widget-result.png)
+
 [Magento modal widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_modal.html
 [`<Magento_Ui_module_dir>/view/base/web/js/modal/confirm.js`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Ui/view/base/web/js/modal/confirm.js
 [Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.]: {{page.baseurl}}/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals
