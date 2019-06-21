@@ -62,6 +62,9 @@
     - label: Release Information
       url: /release-notes/bk-release-notes.html
 
+    - label: Command-line Tools Reference
+      url: /reference/cli/magento.html
+
 - label: Development
   children:
 
