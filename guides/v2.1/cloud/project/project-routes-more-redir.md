@@ -10,9 +10,11 @@ Managing redirection rules is a common requirement for web applications, especia
 
 If the redirection methods discussed in this topic do not work for you, you can use caching headers to do the same thing.
 
+{% include cloud/note-route-all-placeholder.md %}
+
 ## Whole-route redirects {#cloud-route-whole}
 
-Using whole-route redirects, you can define very basic routes using the `routes.yaml` file. For example, you can redirect from a naked domain to a `www` subdomain as follows:
+Using whole-route redirects, you can define simple routes using the `routes.yaml` file. For example, you can redirect from a naked domain to a `www` subdomain as follows:
 
 ```yaml
 http://{default}/:
@@ -22,7 +24,7 @@ http://{default}/:
 
 ## Partial redirects {#cloud-route-partial}
 
-In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial [redirect](https://glossary.magento.com/redirect) rules
+In the [`.magento/routes.yaml`]({{ page.baseurl }}/cloud/project/project-conf-files_routes.html) file you can also add partial redirect] rules
 to existing routes:
 
 ```yaml
@@ -34,27 +36,27 @@ http://{default}/:
             "/regexp/(.*)/matching": { "to": "http://example.com/$1", regexp: true }
 ```
 
-This format is more rich and works with any type of route, including routes served directly by the application.
+You can use partial redirects with any type of route, including routes served directly by the application.
 
 Two keys are available under `redirects`:
 
--  `expires`: Optional, the duration that the redirect is cached.
+- `expires`—COptional, the duration that the redirect is cached.
     Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
 
--  `paths`: The paths to apply the redirects to.
+- `paths`—The paths to apply the redirects to.
 
 The following defines each rule under `paths`:
 
--  A key that describes the expression to match against the request path
--  A value object describing both the destination to redirect to with detail on how to handle the redirection.
+- A key that describes the expression to match against the request path
+- A value object describing both the destination to redirect to with detail on how to handle the redirection.
 
 The value object is defined with the following keys:
 
--  [`to`](#cloud-route-partial-to)
--  [`regexp`](#cloud-route-partial-regexp)
--  [`prefix`](#cloud-route-partial-prefix)
--  [`append_suffix`](#cloud-route-partial-append)
--  [`code`](#cloud-route-partial-code)
+- [`to`](#cloud-route-partial-to)
+- [`regexp`](#cloud-route-partial-regexp)
+- [`prefix`](#cloud-route-partial-prefix)
+- [`append_suffix`](#cloud-route-partial-append)
+- [`code`](#cloud-route-partial-code)
 
 ### `to` {#cloud-route-partial-to}
 
@@ -62,9 +64,7 @@ Required, a partial (`"/destination"` or `"//destination"`) or full URL (`"http:
 
 ### `regexp` {#cloud-route-partial-regexp}
 
-Optional, defaults to `false`. Specifies whether the path key should be interpreted asa PCRE regular expression.
-
-{% collapsible Click to show/hide content %}
+Optional, defaults to `false`. Specifies whether the path key should be interpreted as a PCRE regular expression.
 
 In the following example, a request to `http://example.com/regexp/a/b/c/match` redirects to `http://example.com/a/b/c`:
 
@@ -78,12 +78,8 @@ http://{default}/:
                 regexp: true
 ```
 
-{% endcollapsible %}
-
 ### `prefix` {#cloud-route-partial-prefix}
 Specifies whether or not to redirect both the path and all its children or just the path itself. Defaults to `true`, but is not supported if `regexp` is `true`.
-
-{% collapsible Click to show/hide content %}
 
 For example,
 
@@ -97,16 +93,12 @@ http://{default}/:
                 prefix: true
 ```
 
-In the preceding example, if `prefix` is set to `true`, `/from` redirects to `/to` and `/from/another/path` will redirect to `/to/another/path`
+In the preceding example, if `prefix` is set to `true`, `/from` redirects to `/to` and `/from/another/path` redirect to `/to/another/path`
 
 If `prefix` is set to `false`, `/from` triggers a redirect, but `/from/another/path` does not.
 
-{% endcollapsible %}
-
 ### `append_suffix` {#cloud-route-partial-append}
 Determines if the suffix is carried over with the redirect. Defaults to `true`, but not supported if `regexp` is `true` *or* if `prefix` is `false`.
-
-{% collapsible Click to show/hide content %}
 
 For example,
 
@@ -123,8 +115,6 @@ http://{default}/:
 The preceding example results in `/from/path/suffix` redirecting to just `/to`.
 
 If `append_suffix` is set to its default value of `true`, `/from/path/suffix` redirects to `/to/path/suffix`.
-
-{% endcollapsible %}
 
 ### `code` {#cloud-route-partial-code}
 

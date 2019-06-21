@@ -6,9 +6,9 @@ functional_areas:
   - Setup
 ---
 
-{{site.data.var.ee}} processes an incoming URL using a *route*. The `routes.yaml` file—located at `.magento/routes.yaml` in your project—defines routes for the Integration environment. The deploy script uses values defined in the configuration files in the `.magento` directory and deletes the directory after deployment. Your local workspace is not affected.
+{{site.data.var.ee}} processes an incoming URL using a *route*. The `routes.yaml` file—located at `.magento/routes.yaml` in your project—defines routes for the Integration, Staging, and Production environments. The deploy script uses values defined in the configuration files in the `.magento` directory and deletes the directory after deployment. Your local workspace is not affected.
 
-{% include cloud/note-pro-using-yaml-support.md %}
+{% include cloud/note-pro-missing-self-service-options.md %}
 
 The following is the default `routes.yaml` file:
 
@@ -32,12 +32,23 @@ magento-cloud environment:routes
 +-------------------+----------+---------------+
 ```
 
-## Route templates
+The `routes.yaml` file is a list of templated routes and their configurations. You can use the following placeholders in a route template:
 
-The `routes.yaml` file is a list of templated routes and their configurations. A route template looks similar to this: `http://www.{default}/` or `https://{default}/blog`, where `{default}` is the qualified domain name configured for the project. For example, the routes for `example.com` domain resolve to the following:
+- `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment: 
+  - `http://www.example.com/`
+  - `https://example.com/blog`
 
--  `http://www.example.com/`
--  `https://example.com/blog`
+  In a non-production branch, `{default}` will be replaced with the project ID and environment ID.
+
+- `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
+  - `http://www.example.com/`
+  - `http://www.example.com/blog`
+  - `http://www.example1.com/`
+  - `http://www.example1.com/blog`
+
+  The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
+
+  If a project does not have any domains configured which is a common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
 {{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following:
 
@@ -47,8 +58,8 @@ The `routes.yaml` file is a list of templated routes and their configurations. A
 
 For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcss` hosted in the `us` cluster, the domains are: 
 
--  `http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/`
--  `https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog`
+- `http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/`
+- `https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog`
 
 <!-- {{site.data.var.ece}} also supports [multiple applications]({{ page.baseurl }}/cloud/project/project-conf-multi.html) per project. Each project has a single `routes.yaml` file that defines which request is routed to which application. -->
 

@@ -1,0 +1,2 @@
+{: .bs-callout .bs-callout-info}
+On Pro projects, we recommend that you make and test changes to the `routes.yaml` file in an Integration environment before pushing to Staging and Production. If you discover that the changes are not applied after you push the updated files to a Staging or Production environment and redeploy, submit a [Support ticket](http://support.magento.com). Indicate the service changes needed and include the updated yaml configuration file in the tickets.
