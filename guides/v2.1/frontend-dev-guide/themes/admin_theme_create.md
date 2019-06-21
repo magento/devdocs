@@ -78,7 +78,7 @@ To customize the Admin theme logo:
 
 1. After you create admin theme then You can customize Magento admin logo.
 
-2. Create a new `xml` in theme named `app/design/adminhtml/<Vendor>/<theme>/Magento_Backend/layout/admin_login.xml`. 
+2. Create a new XML file in the theme named `app/design/adminhtml/<Vendor>/<theme>/Magento_Backend/layout/admin_login.xml`. 
 
  Use following example in `admin_login.xml`.
  ```xml
