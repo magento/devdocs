@@ -92,7 +92,7 @@ To customize the Admin theme logo:
     </body>
 </page>
 ```
-3. Place your custom logo in following directory 
+3. Add your custom logo to the `app/design/adminhtml/<Vendor>/<theme>/web/images/` directory. 
  `app/design/adminhtml/<Vendor>/<theme>/web/images/custom-logo.svg`
 
 ## Theme registration {#register_theme}
