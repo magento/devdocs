@@ -75,7 +75,6 @@ The default responsive handler for the navigation widget.
 -   [setMaxItems()](#nav_setMaxItems)
 -   [setupMoreMenu()](#nav_setupMoreMenu)
 
-
 ### `setMaxItems()` {#nav_setMaxItems}
 Moves the list items that are more than the total max item number set by the user option.
 

@@ -74,7 +74,7 @@ defaults:
       path: mftf/docs
     values:
       group: mftf
-      github_files: https://github.com/magento/magento2-functional-testing-framework/blob/develop/
+      github_files: https://github.com/magento/magento2-functional-testing-framework/blob/master/
       github_repo: https://github.com/magento/magento2-functional-testing-framework/
       functional_areas:
         - Test
@@ -187,6 +187,11 @@ algolia:
   nodes_to_index: 'p,li,td,code'
   # Override 10KB default and use our allowed max of 20KB
   max_record_size: 20000
+  settings:
+    attributesForFaceting:
+      - searchable(functional_areas)
+      - searchable(guide_version)
+      - searchable(versionless)  
 
 google:
   analytics: UA-66243208-1

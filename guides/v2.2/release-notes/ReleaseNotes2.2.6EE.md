@@ -494,7 +494,7 @@ Our community contributors have made many helpful, minor corrections to spelling
 
 #### Spelling corrections
 
-<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughot the code base. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
+<!-- ENGCOM-2290 -->* Corrected misspelling of `formatedPrice` throughout the code base. *Fix submitted by [Arnoud Beekman](https://github.com/arnoudhgz) in pull request [16726](https://github.com/magento/magento2/pull/16726)*. 
 
 <!-- ENGCOM-2280 -->* Corrected return message from `ProductRuleTest.php`. *Fix submitted by [Namrata](https://github.com/sanganinamrata) in pull request [16721](https://github.com/magento/magento2/pull/16721)*. 
 
@@ -1545,7 +1545,7 @@ You can find Magento Shipping-specific release notes in [Magento Shipping Releas
 
 <!-- MAGETWO-90682 -->* Banners remain assigned to a cart rule after a staging Update is applied. Previously, a banner was unassigned from the cart rule after a staging update was applied. 
 
-<!-- MAGETWO-91889 -->* Magento now rolls  back updated changes to their pre-update state  when a merchant deletes an active Scheduled Update. Previously, some products were removed from their assigned categories (and categories were removed from the Amdin) when an active product update was deleted.  
+<!-- MAGETWO-91889 -->* Magento now rolls  back updated changes to their pre-update state  when a merchant deletes an active Scheduled Update. Previously, some products were removed from their assigned categories (and categories were removed from the Admin) when an active product update was deleted.  
 
 <!-- MAGETWO-92509 -->* You can now successfully re-order a configurable product. Previously, a schedule update for one configurable product affected other ordered configurable products. 
 
