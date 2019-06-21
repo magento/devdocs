@@ -8,6 +8,9 @@ redirect_from:
 
 ## Magento 2.1.0 Release Notes
 
+* [{{site.data.var.ce}} 2.1.18 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.18CE.html)
+* [{{site.data.var.ee}} 2.1.18 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.18EE.html)
+
 * [{{site.data.var.ce}} 2.1.17 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.17CE.html)
 * [{{site.data.var.ee}} 2.1.17 Release Notes]({{page.baseurl}}/release-notes/ReleaseNotes2.1.17EE.html)
 

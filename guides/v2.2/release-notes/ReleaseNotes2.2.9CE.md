@@ -9,7 +9,6 @@ title: Magento Open Source 2.2.9 Release Notes
 
 We are pleased to present Magento Open Source 2.2.9. This release includes 75 critical enhancements to product security, over 100 core code fixes and enhancements, and  over 200 community-submitted pull requests. 
 
-
 ## Highlights
 
 Look for the following highlights in this release:
@@ -32,11 +31,9 @@ This release contains 150 enhancements to core quality, which improve the qualit
 
 * **Google chart API updated to the Image-Charts**. Magento now uses the Image-Charts free service to render static charts in Admin dashboards. Earlier deployments used Google Image Charts, which was deprecated in 2012 and turned off on [March 18, 2019](https://developers.google.com/chart/image/docs/making_charts). <!--- MAGETWO-98833-->
 
-
 ## Functional fixes
 
 In addition to security enhancements, this release contains the following functional fixes. 
-
 
 ### Installation, setup, and deployment
 
@@ -93,8 +90,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4841 -->
 * CMS block cache keys now contain the appropriate store ID in deployments with multiple store views. Previously, Magento always loaded the cached version of the block for the first store view. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [22534](https://github.com/magento/magento2/pull/22534)*. [GitHub-22299](https://github.com/magento/magento2/issues/22299)
-
-
 
 ### Catalog
 
@@ -253,7 +248,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4677 -->
 * The Close button on the mini cart no longer overlaps with the shipping section when the checkout page is opened on a mobile device. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [20844](https://github.com/magento/magento2/pull/20844)*. [GitHub-20614](https://github.com/magento/magento2/issues/20614)
 
-
 ### Cart Price rule
 
 <!-- ENGCOM-4540 -->
@@ -263,13 +257,10 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-98679 -->
 * Catalog rules are applied as expected after a customer uses Visual Merchandiser  to drag and drop products in a category. Previously, discounts that were applied to products through a catalog rule were dropped after the product was dragged and dropped.
  
-
 ### Checkout agreements
 
 <!-- ENGCOM-3989 -->
 * Magento no longer throws SQL errors when table prefixes are used. *Fix submitted by [Vishal Gelani](https://github.com/gelanivishal) in pull request [18866](https://github.com/magento/magento2/pull/18866)*. [GitHub-18357](https://github.com/magento/magento2/issues/18357), [GitHub-18954](https://github.com/magento/magento2/issues/18954)
-
-
 
 ### Clean up and minor refactoring
 
@@ -293,7 +284,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM- 4535-->
 * Added a missing asterix adjacent to the Checkout Agreements checkbox. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21838](https://github.com/magento/magento2/pull/21838)*. [GitHub-21648](https://github.com/magento/magento2/issues/21648)
-
 
 ### Configurable products
 
@@ -333,8 +323,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4200 -->
 * Improved the display of images that are uploaded when you click the **Insert Image** button on a CMS page. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [21110](https://github.com/magento/magento2/pull/21110)*. [GitHub-20786](https://github.com/magento/magento2/issues/20786)
 
-
-
 ### Customer
 
 <!-- MAGETWO-98334 -->
@@ -343,9 +331,7 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-72961 -->
 * Magento now uses the value of the  default billing address attribute as expected during checkout. [GitHub-8777](https://github.com/magento/magento2/issues/8777)
 
-<!-- MAGETWO-93521 -->
-* Custom customer attributes now show as expected in the Admin customer create and edit forms. Previously, these attributes were not displayed unless  configued for display on the Customer Registration or Customer Account Edit forms. [GitHub-14456](https://github.com/magento/magento2/issues/14456)
-
+<!-- MAGETWO-93521 -->* Custom customer attributes now show as expected in the Admin customer create and edit forms. Previously, these attributes were not displayed unless configured for display on the Customer Registration or Customer Account Edit forms. [GitHub-14456](https://github.com/magento/magento2/issues/14456)
 
 <!-- ENGCOM-4132 -->
 * Removed an unneeded space from the title of the My Account page in mobile view. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [20782](https://github.com/magento/magento2/pull/20782)*. [GitHub-20723](https://github.com/magento/magento2/issues/20723)
@@ -392,7 +378,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4660 -->
 * `crontab` now updates all currency rates daily as expected. Previously, `crontab` updated only a subset of the enabled currencies. *Fix submitted by [Denis Papec](https://github.com/denispapec) in pull request [18980](https://github.com/magento/magento2/pull/18980)*. [GitHub-18580](https://github.com/magento/magento2/issues/18580)
 
-
 ### Customer custom attributes
 
 <!-- MAGETWO-97528 -->
@@ -401,14 +386,10 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-96265 -->
 * Magento now loads the customer attribute page as expected, and users can edit attributes, when attributes are set to default values. Previously, Magento did not completely load this page when attributes values were set to default. 
 
-
-
-
 ### Directory
 
 <!-- ENGCOM-4234 -->
 * The Swagger definition for `eav-data-attribute-option-interface` has been corrected. Previously, when you created a REST call to an endpoint that returns an object of `eav-data-attribute-option-interface` and `is_default` is set to `true`, `is_default` returns an object instead of the expected Boolean. *Fix submitted by [Pratik Oza](https://github.com/mage2pratik) in pull request [21164](https://github.com/magento/magento2/pull/21164)*. [GitHub-18525](https://github.com/magento/magento2/issues/18525)
-
 
 ### Downloadable
 
@@ -463,7 +444,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- ENGCOM-4542 -->
 *  Magento now logs exceptions during autoloading instead of throwing exceptions. This conforms with PSR-4 guidelines.  *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21435](https://github.com/magento/magento2/pull/21435)*. [GitHub-20773](https://github.com/magento/magento2/issues/20773)
 
-
 #### Cache framework
 
 <!-- ENGCOM-4183 -->
@@ -496,14 +476,11 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-98694 -->
 * Magento now correctly saves product URL keys in Arabic. Previously, keys in Arabic returned 404 errors. 
 
-
 ### Indexers
 
 <!-- ENGCOM-4555 -->
 * You can now access a list of Admin indexers after creating a custom index. Previously, when you tried to access the Admin indexer list,  Magento threw a fatal error. *Fix submitted by [Cristiano Casciotti](https://github.com/ccasciotti) in pull request [21576](https://github.com/magento/magento2/pull/21576)*. [GitHub-21510](https://github.com/magento/magento2/issues/21510)
  
-
-
 ### Infrastructure
 
 <!-- ENGCOM-4570 -->
@@ -540,9 +517,6 @@ In addition to security enhancements, this release contains the following functi
 <!-- MAGETWO-73985 -->
 *  MAP (minimum advertised price) prices for the simple products that belong to a configurable product are now supported. MAP prices for these products are now successfully handled and displayed  on the configurable product page and  the category page display of the configurable product.
 
-
-
-
 ### Newsletter
 
 <!-- ENGCOM-4303 -->
@@ -550,7 +524,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- MAGETWO-96957 -->
 * You can now change pages at an expected speed from the Admin newsletter subscribers page (**Marketing** > **Communications** > **Newsletter Subscribers**). Previously, it took excessively long to move off this page
-
 
 ### Orders
 
@@ -587,15 +560,13 @@ In addition to security enhancements, this release contains the following functi
 
 ### Pricing
 
-<!-- MAGETWO-99247 -->
-* Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prics were  not saved on the stor-view level when Catalog Price Scope was to **Global**. 
+<!-- MAGETWO-99247 -->* Magento now saves customizable option price input on the store-view level when Catalog Price Scope is set to **Global**. Previously, customizable option prices were not saved on the store-view level when Catalog Price Scope was set to **Global**.
 
 <!-- MAGETWO-96062, 97523 -->
 * The quick order form now handles the SKUs that you enter  for configurable products as expected. Previously, Magento threw an error when you tried to enter the SKU for a configurable product.
 
 <!-- MAGETWO-96898 -->
 * Tier pricing for bundle products now works as expected: Magento displays the correct  price in the cart, and reminds customers that they can buy a specific quantity of the  product for a discount. Previously, Magento did not calculate the price correctly, and did not display any informative messages about tier pricing on the category and product pages. 
-
 
 ### Reports
 
@@ -615,8 +586,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM- 4539-->
 * Pending Reviews are now correctly labeled under **System** > **User Roles** > **Add New Role** > **Role Resources**, and Magento now displays a new Pending reviews menu under **Marketing** > **User Content**. Previously, Magento displayed the Reviews menu twice. *Fix submitted by [Eduard Chitoraga](https://github.com/eduard13) in pull request [21849](https://github.com/magento/magento2/pull/21849)*. [GitHub-20924](https://github.com/magento/magento2/issues/20924)
-
-
 
 ### Sales
 
@@ -640,10 +609,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4285 -->
 * Fixed display of the Luma theme My Account Order status tabs in mobile view. *Fix submitted by [suryakant-krish](https://github.com/suryakant-krish) in pull request [21250](https://github.com/magento/magento2/pull/21250)*. [GitHub-21070](https://github.com/magento/magento2/issues/21070)
-
-
-
-
 
 ### Sales rule
 
@@ -672,9 +637,6 @@ In addition to security enhancements, this release contains the following functi
 
 <!-- ENGCOM-4793 -->
 * The search icon on Admin page headers now works as expected. *Fix submitted by [Saphal Jha](https://github.com/saphaljha) in pull request [22441](https://github.com/magento/magento2/pull/22441)*. [GitHub-22152](https://github.com/magento/magento2/issues/22152)
-
-
-
 
 ### Shipping 
 
@@ -795,11 +757,9 @@ In addition to security enhancements, this release contains the following functi
    
 ### Wishlist
 
-<!-- MAGETWO-73613 -->
-* The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesirable and inaccurate changes in quantity
+<!-- MAGETWO-73613 -->* The quantity field now has limits on both the type and number of characters that can be entered. Previously, you could enter both extremely large number and letters into this field, which resulted in undesirable and inaccurate changes in quantity
 
-<!-- ENGCOM-4513 -->
-* Customer wishlists now include review summaries for included products. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21759](https://github.com/magento/magento2/pull/21759)*. [GitHub-21419](https://github.com/magento/magento2/issues/21419)
+<!-- ENGCOM-4513 -->* Customer wishlists now include review summaries for included products. *Fix submitted by [Amol Chaudhari](https://github.com/amol2jcommerce) in pull request [21759](https://github.com/magento/magento2/pull/21759)*. [GitHub-21419](https://github.com/magento/magento2/issues/21419)
 
 ## Known issue
 
