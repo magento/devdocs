@@ -40,7 +40,7 @@ You can use partial redirects with any type of route, including routes served di
 
 Two keys are available under `redirects`:
 
-- `expires`—COptional, the duration that the redirect is cached.
+- `expires`—Optional, the duration that the redirect is cached.
     Examples of valid values include `3600s`, `1d`, `2w`, `3m`.
 
 - `paths`—The paths to apply the redirects to.
