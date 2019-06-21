@@ -74,7 +74,7 @@ In the default `Magento/backend` theme `lib/web/images/magento-logo.svg` is used
 To override it, in your theme directory, create a `web/images` sub-directory, and add your custom file named `magento-logo.svg`. 
 If you want to use the file with other name and/or format, you need to additionally declare it as described in [Declaring theme logo]({{ page.baseurl }}/frontend-dev-guide/themes/theme-create.html#logo_declare).
 
-To update Admin theme logo, take the following steps:
+To customize the Admin theme logo:
 
 1. After you create admin theme then You can customize Magento admin logo.
 
