@@ -40,7 +40,7 @@ In addition to security enhancements, this release contains the following functi
 
 
 <!-- MAGETWO-76424 -->
-* Magento no longer displays an extraneous blank option in the country drop-down menu on the Country Options page for store configuration settings.
+* Magento no longer displays an extraneous blank option in the country drop-down menu on the Country Options page for store configuration settings (**Stores** > Settings > **Configuration** > **General** > **Country Options**).
 
 <!-- ENGCOM-4741 -->
 * Magento no longer throws an error when executing `bin/magento setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22282](https://github.com/magento/magento2/pull/22282)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
