@@ -20,7 +20,7 @@ The confirmation widget can be initialized with or without binding to a certain 
 
 ```javascript
 $('#confirm_init').confirm({
-    title: 'Confirmation title',
+    title: $.mage.__('Confirmation title'),
     actions: {
         confirm: function(){}, //callback on 'Ok' button click
         cancel: function(){}, //callback on 'Cancel' button click
@@ -36,8 +36,8 @@ require([
 ], function(confirmation) { // Variable that represents the `confirm` widget
 
     confirmation({
-        title: 'Some title',
-        content: 'Some content',
+        title: $.mage.__('Some title'),
+        content: $.mage.__('Some content'),
         actions: {
             confirm: function(){},
             cancel: function(){},
