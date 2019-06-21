@@ -125,8 +125,10 @@ When you change from production to developer mode, you should clear generated cl
 
 1.  If you're changing from production mode to developer mode, delete the contents of the `generated/code` and `generated/metadata` directories:
 
+    ```bash
     rm -rf <magento_root>/generated/metadata/* <magento_root>/generated/code/*
-
+    ```
+    
 2.  Set the mode:
 
     ```bash
