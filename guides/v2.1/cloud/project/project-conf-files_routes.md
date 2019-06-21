@@ -36,11 +36,11 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
 - `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
 
-  ``` html
+  ```
   http://www.example.com/
   ```
   
-  ```html
+  ```
   http://www.example.com/blog
   ```
 
@@ -48,21 +48,21 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
 - `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
 
-  ``` html
+  ```
   http://www.example.com/
 
   ```
 
-  ```html
+  ```
   http://www.example.com/blog
 
   ```
 
-  ```html
+  ```
   http://www.example1.com/
   ```
 
-  ```html
+  ```
   http://www.example1.com/blog
   ```
 
@@ -72,17 +72,17 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
 {{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following:
 
-```html
+```
 [branch]-[project-id].[region].magentosite.cloud
 ```
 
 For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcss` hosted in the `us` cluster, the domains are: 
 
-```html
+```
 http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
 ```
 
-```html
+```
 https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
 ```
 
