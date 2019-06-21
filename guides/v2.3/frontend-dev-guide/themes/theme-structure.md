@@ -230,7 +230,7 @@ The directories and files structure described below is the most extended one. It
       </td>
       <td colspan="1">optional</td>
       <td colspan="1">
-        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package.
+        Describes the theme dependencies and some meta-information. Will be here if your theme is a Composer package. The "name" field must be in the format <code>"&lt;vendor-name&gt;/theme-&lt;area&gt;-&lt;theme-name&gt;"</code>.
       </td>
     </tr>
     <tr>
@@ -248,7 +248,7 @@ The directories and files structure described below is the most extended one. It
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, if the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
+        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme title and the parent theme name, if the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
       </td>
     </tr>
   </tbody>

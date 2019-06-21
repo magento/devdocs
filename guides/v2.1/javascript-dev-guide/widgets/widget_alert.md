@@ -19,8 +19,8 @@ The alert widget can be initialized with or without binding to a certain element
 
 ```javascript
 $('#init_element').alert({
-    title: 'Warning',
-    content: 'Warning content',
+    title: $.mage.__('Warning'),
+    content: $.mage.__('Warning content'),
     actions: {
         always: function(){}
     }
@@ -34,8 +34,8 @@ require([
 ], function(alert) { // Variable that represents the `alert` function
  
     alert({
-        title: 'Some title',
-        content: 'Some content',
+        title: $.mage.__('Some title'),
+        content: $.mage.__('Some content'),
         actions: {
             always: function(){}
         }
