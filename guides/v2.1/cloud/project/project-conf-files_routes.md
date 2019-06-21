@@ -36,53 +36,43 @@ The `routes.yaml` file is a list of templated routes and their configurations. Y
 
 - `{default}` represents the qualified domain name configured as the default for the project. For example, if you have a project with the default domain `example.com`, the route templates `http://www.{default}/` and `https://{default}/blog` resolve to the following URLs in a production environment:
 
-  ```
+  ```text
   http://www.example.com/
-  ```
-  
-  ```
+
   http://www.example.com/blog
   ```
 
-  In a non-production branch, `{default}` will be replaced with the project ID and environment ID.
+  In a non-production branch, the `{default}` placeholder resolves to the project ID and environment ID.
 
 - `{all}` represents all the domain names configured for the project. For example, if you have a project with `example.com` and `example1.com` domains, the route templates `http://www.{all}/` and `https://{all}/blog` resolve to routes for all domains in the project:
 
-  ```
+  ```text
   http://www.example.com/
 
-  ```
-
-  ```
   http://www.example.com/blog
 
-  ```
-
-  ```
   http://www.example1.com/
-  ```
 
-  ```
   http://www.example1.com/blog
   ```
 
   The `{all}` placeholder is useful for projects configured for multiple domains. In a non-production branch `{all}` is replaced with the project ID and environment ID for each domain.
 
-  If a project does not have any domains configured which is a common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
+  If a project does not have any domains configured which is common during development, the `{all}` placeholder behaves in the same way as the `{default}` placeholder.
 
-{{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following:
+{{site.data.var.ee}} also generates URLs for every active environment, so you can test that system. In a test system, `{default}` is replaced with the following domain name:
 
-```
+```text
 [branch]-[project-id].[region].magentosite.cloud
 ```
 
-For example, if the project ID is `mswy7hzcuhcjw` on a branch called `refactorcss` hosted in the `us` cluster, the domains are: 
+For example, the `refactorcss` branch for the `mswy7hzcuhcjw` project hosted in the `us` cluster has the following the domains: 
 
-```
+```text
 http://www-refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/
 ```
 
-```
+```text
 https://refactorcss-mswy7hzcuhcjw.us.magentosite.cloud/blog
 ```
 
@@ -132,10 +122,10 @@ In the first sample, the server responds directly to a request of the form `http
 ## Wildcard routes
 {{site.data.var.ece}} supports wildcard routes, so you can map multiple subdomains to the same application. This works for [redirect](https://glossary.magento.com/redirect) and upstream routes. You prefix the route with an asterisk (\*). For example, the following routes to the same application:
 
--  `*.example.com`
--  `www.example.com`
--  `blog.example.com`
--  `us.example.com`
+- `*.example.com`
+- `www.example.com`
+- `blog.example.com`
+- `us.example.com`
 
 This functions as a catch-all domain in a live environment.
 
