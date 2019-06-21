@@ -84,7 +84,7 @@ We've fixed hundreds of issues in the Magento 2.3.2 core code.
 * Magento no longer throws an error when you use  `app:config:import` to import configuration settings. Previously, the import failed, and Magento threw the following error even when the imported file contained only minor changes to password or URL values: `Please specify the admin custom URL`. *Fix submitted by [David Alger](https://github.com/davidalger) in pull request [22281](https://github.com/magento/magento2/pull/22281)*. [GitHub-15090](https://github.com/magento/magento2/issues/15090)
 
 <!--- MAGETWO-95675-->
-* Magento no longer throws an error when executing `setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`.
+* Magento no longer throws an error when executing `bin/magento setup:static-content:deploy` in parallel mode if theme or locale deployment takes more than 400 seconds. Previously, Magento threw the following error under these conditions: `2436; Status: 0`. 
 
 <!--- ENGCOM-4794-->
 * Magento no longer throws an error during catalog set up when you run `bin/magento setup:upgrade`. Previously, set up failed, and Magento threw the following error even though no problems existed with your catalog, `Magento\Catalog\Setup\Media does not exist`. *Fix submitted by [Pieter Hoste](https://github.com/hostep) in pull request [22446](https://github.com/magento/magento2/pull/22446)*. [GitHub-22124](https://github.com/magento/magento2/issues/22124)
@@ -751,7 +751,7 @@ has been changed to `<argument name="resourceStockItem" xsi:type="object">Magent
 ### Performance
 
 <!--- MC-16005-->
-* Client-side performance has been optimized by moving non-critical JavaScript code to the bottom of the page along with the corresponding deferred parsing and evaluation of this code. This means that users can see  rendered pages faster. 
+* Client-side performance has been optimized by moving non-critical JavaScript code to the bottom of the page along with the corresponding deferred parsing and evaluation of this code. This means that users can see  rendered pages faster. To enable this performance enhancement, you must navigate to **Stores** > **Configuration** > **Developer** > **JavaScript Settings** and enable the **Move JS code to the bottom of the page** option.
 
 <!--- MAGETWO-96138-->
 * The transfer cart line items and transfer shipping options in the the Shipping step of checkout now work for PayPal. [GitHub-19064](https://github.com/magento/magento2/issues/19064)
@@ -1004,9 +1004,11 @@ label, types and disabled, but the actual `file-content` was not replaced with t
 * You can now insert widgets that contain a WYSIWYG field into a form. Previously, widgets with a `WYSIWYG` parameter failed when inserting them into a WYSIWYG in a form. *Fix submitted by [James Dinsdale](https://github.com/molovo) in pull request [20174](https://github.com/magento/magento2/pull/20174)*. [GitHub-19742](https://github.com/magento/magento2/issues/19742)
 
 
-## Known issue
+# Known issues
 
-The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. 
+* **Issue**: The Async/Bulk Web APIs support only the default store view. A hot fix for this issue will be available in the near future. 
+
+* **Issue**: The security enhancements that are part of Magento 2.3.2 require the installation of libsodium version 1.0.13 or higher. You will not be able to successfully install Magento Commerce 2.3.2 without first ensuring that your server runs  version 1.0.13 or higher. See [Libsodium releases](https://github.com/jedisct1/libsodium/releases) for a description of the available releases and installation instructions. 
 
 ## Community contributions
 
