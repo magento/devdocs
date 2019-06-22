@@ -10,6 +10,11 @@ pages:
         - label: Component Status
           url: /release-notes/component-status.html
 
+        - label: Magento Open Source 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2OpenSource.html
+
+        - label: Magento Commerce 2.3.2 Release Notes
+          url: /release-notes/ReleaseNotes2.3.2Commerce.html
 
         - label: Magento Open Source 2.3.1 Release Notes
           url: /release-notes/ReleaseNotes2.3.1OpenSource.html
@@ -94,6 +99,9 @@ pages:
         - label: Magento Open Source 2.1.x Release Notes
           children:
 
+            - label: Magento Open Source 2.1.18 Release Notes
+              url: /release-notes/ReleaseNotes2.1.18CE.html
+
             - label: Magento Open Source 2.1.17 Release Notes
               url: /release-notes/ReleaseNotes2.1.17CE.html
 
@@ -150,6 +158,9 @@ pages:
 
         - label: Magento Commerce 2.1.x Release Notes
           children:
+
+            - label: Magento Commerce 2.1.18 Release Notes
+              url: /release-notes/ReleaseNotes2.1.18EE.html
 
             - label: Magento Commerce 2.1.17 Release Notes
               url: /release-notes/ReleaseNotes2.1.17EE.html
