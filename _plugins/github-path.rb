@@ -8,7 +8,7 @@
 #
 Jekyll::Hooks.register :pages, :post_init do |page|
   # Process only files with 'md' and 'html' extensions
-  next unless File.extname(page.path).match?(/md|html/)
+  next unless File.extname(page.path).match(/md|html/)
   # Do nothing for redirects
   next if page.name == 'redirect.html'
 
