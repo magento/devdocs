@@ -14,12 +14,12 @@ This topic provides information about product layouts files. Magento allows you 
 Layout file | Description
 --- | ---
 `catalog_product_view.xml` | Common layout. Affects all product types
-`catalog_product_view_type_bundle.xml` | Layout from this file is applied to `bundle` product only
-`catalog_product_view_type_configurable.xml` | Layout from this file is applied to `configurable` product only
-`catalog_product_view_type_downloadable.xml` | Layout from this file is applied to `downloadable` product only
-`catalog_product_view_type_grouped.xml` | Layout from this file is applied to `grouped` product only
-`catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only
-`catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only
+`catalog_product_view_type_bundle.xml` | Layout from this file is applied to `bundle` product only, provide the list of numerous configuration options.
+`catalog_product_view_type_configurable.xml` | Layout from this file is applied to `configurable` product only, display list of options based attributes.
+`catalog_product_view_type_downloadable.xml` | Layout from this file is applied to `downloadable` product only, product is a digital file that a customer can be downloaded (eBook, software application, video etc).
+`catalog_product_view_type_grouped.xml` | Layout from this file is applied to `grouped` product only, can be order of each product in specific quantity list preferred by customer.
+`catalog_product_view_type_simple.xml` | Layout from this file is applied to `simple` product only, It show the primary unit of index.
+`catalog_product_view_type_virtual.xml` | Layout from this file is applied to `virtual` product only, display Digital product.
 
 ## Checkout cart configure page
 
