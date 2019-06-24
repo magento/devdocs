@@ -29,7 +29,7 @@ These release notes can include:
   - [Assign an email]({{page.baseurl}}/graphql/reference/quote-set-guest-email.html) to a guest cart.
   - [Place an order]({{page.baseurl}}/graphql/reference/quote-place-order.html).
 
-- {:.new} ** Added support for payment methods that implement [Magento Vault]({{page.baseurl}}/reference/vault.html)
+- {:.new} ** Added support for payment methods that implement [Magento Vault]({{page.baseurl}}/graphql/reference/vault.html)
 - 
 - {:.new} **Added new queries and extended the functionality of others.**
 
