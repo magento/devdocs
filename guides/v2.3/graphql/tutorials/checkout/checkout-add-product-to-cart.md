@@ -30,6 +30,9 @@ The following mutation adds a **simple product** into shopping cart.
 
 **Request**
 
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
 ```text
 mutation {  
   addSimpleProductsToCart(
@@ -38,7 +41,7 @@ mutation {
       cart_items: [
         {
           data: {
-            qty: 1
+            quantity: 1
             sku: "simple-product"
           }
         }
@@ -52,7 +55,7 @@ mutation {
           sku
           stock_status
         }
-        qty
+        quantity
       }
     }
   }
@@ -73,7 +76,7 @@ mutation {
               "sku": "simple-product",
               "stock_status": "IN_STOCK"
             },
-            "qty": 1
+            "quantity": 1
           }
         ]
       }
@@ -88,6 +91,9 @@ The following mutation adds a **virtual product** into shopping cart.
 
 **Request**
 
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
 ```text
 mutation {  
   addVirtualProductsToCart(
@@ -96,7 +102,7 @@ mutation {
       cart_items: [
         {
           data: {
-            qty: 1
+            quantity: 1
             sku: "virtual-product"
           }
         }
@@ -110,7 +116,7 @@ mutation {
           sku
           stock_status
         }
-        qty
+        quantity
       }
     }
   }
@@ -131,7 +137,7 @@ mutation {
               "sku": "virtual-product",
               "stock_status": "IN_STOCK"
             },
-            "qty": 1
+            "quantity": 1
           }
         ]
       }

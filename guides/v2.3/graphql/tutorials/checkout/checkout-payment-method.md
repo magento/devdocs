@@ -14,11 +14,17 @@ contributor_name: Atwix
 contributor_link: https://www.atwix.com/
 ---
 
+{:.bs-callout .bs-callout-tip}
+You must always set a payment method.
+
 Use the following `cart` query to determine which payment methods which are available for your order.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
 
 **Request**
+
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text
 query {
@@ -50,10 +56,10 @@ query {
 
 Use the `setPaymentMethodOnCart` mutation to set the payment method for your order. The value `checkmo` ("Check / Money order" payment method code) was returned in the query.
 
+**Request**
+
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
-
-**Request**
 
 ```text
 mutation {

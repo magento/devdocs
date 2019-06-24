@@ -22,11 +22,11 @@ Use the [setShippingAddressesOnCart]({{ page.baseurl }}/graphql/reference/quote-
 
 ## Create a new shipping address
 
-**Request**
-
 The following mutation adds a shipping address to the quote.
 
 `{ CART_ID }` is the unique shopping cart ID from [Step 2. Create empty cart]({{ page.baseurl }}/graphql/tutorials/checkout/checkout-add-product-to-cart.html).
+
+**Request**
 
 {:.bs-callout .bs-callout-info}
 For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.

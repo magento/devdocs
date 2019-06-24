@@ -22,6 +22,9 @@ Use [applyCouponToCart]({{ page.baseurl }}/graphql/reference/quote-apply-coupon.
 
 **Request**
 
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
 ```text
 mutation {
   applyCouponToCart(
@@ -58,6 +61,9 @@ mutation {
 Use [removeCouponFromCart]({{ page.baseurl }}/graphql/reference/quote-remove-coupon.html) to remove a discount coupon from the shopping cart.
 
 **Request**
+
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ```text
 mutation {

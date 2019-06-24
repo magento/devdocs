@@ -26,6 +26,9 @@ The `setShippingMethodsOnCart` mutation defines the shipping methods for your or
 
 The following mutation query assigns UPS "Ground" method.
 
+{:.bs-callout .bs-callout-info}
+For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
+
 ```text
 mutation {
   setShippingMethodsOnCart(input: {
@@ -71,9 +74,6 @@ mutation {
   }
 }
 ```
-
-{:.bs-callout .bs-callout-info}
-For logged-in customers, send the customer's authorization token in the `Authorization` parameter of the header. See ["Get customer authorization token"]({{ page.baseurl }}/graphql/get-customer-authorization-token.html) for more information.
 
 ## Verify this step {#verify-step}
 
