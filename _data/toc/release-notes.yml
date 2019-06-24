@@ -284,7 +284,7 @@ pages:
       url: /graphql/release-notes.html
       exclude_versions: ["2.0", "2.1", "2.2"]
 
-    - label: Inventory management
+    - label: Inventory Management
       url: /inventory/release-notes.html
       exclude_versions: ["2.0", "2.1", "2.2"]
 
