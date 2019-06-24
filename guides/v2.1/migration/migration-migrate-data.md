@@ -24,6 +24,7 @@ To start migrating data, run:
     bin/magento migrate:data [-r|--reset] [-a|--auto] {<path to config.xml>}
 
 where:
+
 * `[-a|--auto]` is an optional argument that prevents migration from stopping when it encounters integrity check errors.
 
 * `[-r|--reset]` is an optional argument that starts migration from the beginning. You can use this argument for testing migration.
@@ -40,9 +41,9 @@ To force the Data Migration Tool to run from the beginning, use the `--reset` ar
 
 While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like this:
 
-{% highlight xml %}
+```xml
 Source documents are not mapped: <EXTENSION_TABLE>
-{% endhighlight %}
+```
 
 See the [Troubleshooting]({{ page.baseurl }}/migration/migration-troubleshooting.html) section of this guide for more information and recommendations.
 
@@ -58,7 +59,7 @@ Below are the possible ways to handle these errors.
 
 ### Fix errors: Install corresponding Magento 2 extensions
 
-Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} versions or contact your extension provider.
+Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest [extension](https://glossary.magento.com/extension) versions or contact your extension provider.
 
 ### Fix errors: Ignore entities
 
@@ -66,11 +67,11 @@ You may tell the Data Migration Tool to ignore the problematic entities.
 
 To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 
-{% highlight xml %}
+xml
 <ignore>
     <field>sales_order_address_id</field>
 </ignore>
-{% endhighlight %}
+
 
 {: .bs-callout .bs-callout-warning }
 Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.

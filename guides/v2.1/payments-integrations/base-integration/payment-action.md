@@ -25,7 +25,7 @@ Configure the command as described in [Gateway Command]({{ page.baseurl }}/payme
 
 Configuring the gateway command and adding it to command pool (`app/code/Magento/Braintree/etc/di.xml`):
 
-{% highlight xml %}
+```xml
 <virtualType name="BraintreeCommandPool" type="Magento\Payment\Gateway\Command\CommandPool">
     <arguments>
         <argument name="commands" xsi:type="array">
@@ -43,15 +43,14 @@ Configuring the gateway command and adding it to command pool (`app/code/Magento
         <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\ResponseValidator</argument>
     </arguments>
 </virtualType>
-{% endhighlight %}
-
+```
 
 In the command configuration we see that `BraintreeAuthorizeRequest` is specified as `requestBuilder`, that is a
 Let's look closer on the `requestBuilder` arguments. This argument value is a list of builders, builder composite.  
 
 The `BraintreeAuthorizeRequest` builder contains the following builders (`app/code/Magento/Braintree/etc/di.xml`):
 
-{% highlight xml%}
+```xml
 <virtualType name="BraintreeAuthorizeRequest" type="Magento\Payment\Gateway\Request\BuilderComposite">
         <arguments>
             <argument name="builders" xsi:type="array">
@@ -61,11 +60,13 @@ The `BraintreeAuthorizeRequest` builder contains the following builders (`app/co
                 <item name="address" xsi:type="string">Magento\Braintree\Gateway\Request\AddressDataBuilder</item>
                 <item name="vault" xsi:type="string">Magento\Braintree\Gateway\Request\VaultDataBuilder</item>
                 <item name="3dsecure" xsi:type="string">Magento\Braintree\Gateway\Request\ThreeDSecureDataBuilder</item>
-                <item name="kount" xsi:type="string">Magento\Braintree\Gateway\Request\KountPaymentDataBuilder</item>
+                <item name="device_data" xsi:type="string">Magento\Braintree\Gateway\Request\KountPaymentDataBuilder</item>
+                <item name="dynamic_descriptor" xsi:type="string">Magento\Braintree\Gateway\Request\DescriptorDataBuilder</item>
+                <item name="store" xsi:type="string">Magento\Braintree\Gateway\Request\StoreConfigBuilder</item>
             </argument>
         </arguments>
     </virtualType>
-{%endhighlight%}
+```
 
 The most important builder in this pool is `Magento\Braintree\Gateway\Request\PaymentDataBuilder`, the `payment` builder. It is responsible for the payment information part of the request.  
 
@@ -73,4 +74,4 @@ Please see the [Get payment information from frontend to backend]({{ page.baseur
 
 ## Related topics
 
-- [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page.
+- [Add a custom payment method to checkout]({{ page.baseurl }}/howdoi/checkout/checkout_payment.html): how to add a custom payment integration to [checkout](https://glossary.magento.com/checkout) page.

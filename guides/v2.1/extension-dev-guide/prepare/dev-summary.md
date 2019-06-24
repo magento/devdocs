@@ -6,13 +6,8 @@ menu_title: Roadmap for developing and packaging components
 menu_order: 50
 menu_node:
 redirect_from:
-  - /guides/v2.0/mktpl-quickstart/dev-intro.html
-  - /guides/v2.0/mktpl-quickstart/dev-summary.html
-  - /guides/v2.0/extension-dev-guide/dev-summary.html
-  - /guides/v2.1/mktpl-quickstart/dev-summary.html
-  - /guides/v2.2/mktpl-quickstart/dev-summary.html
-  - /guides/v2.1/mktpl-quickstart/dev-intro.html
-  - /guides/v2.2/mktpl-quickstart/dev-intro.html
+  - /guides/v2.1/mktpl-quickstart/dev-summary.html	
+  - /guides/v2.1/mktpl-quickstart/dev-intro.html	
 ---
 
 To develop your component, use the following steps:

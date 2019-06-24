@@ -9,7 +9,6 @@ level3_subgroup: msi-tutorial
 return_to:
   title: REST Tutorials
   url: rest/tutorials/index.html
-redirect_from: /guides/v2.3/rest/tutorials/msi-order-processing/create-sources.html
 functional_areas:
   - Integration
 ---
@@ -47,7 +46,7 @@ The `source_code` values will be used in subsequent steps.
 
 **Payload**
 
-``` json
+```json
 {
    "source" : {
       "name" : "Baltimore Warehouse",
@@ -77,7 +76,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Austin warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Austin Warehouse",
@@ -97,7 +96,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Reno warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Reno Warehouse",
@@ -117,7 +116,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Berlin warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Berlin Warehouse",
@@ -137,7 +136,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 ### Frankfurt warehouse
 
-``` json
+```json
 {
    "source" : {
       "name" : "Frankfurt Warehouse",
@@ -159,7 +158,7 @@ Use the same endpoint to create sources representing the Austin, Reno, Berlin, a
 
 This source will be used to fulfill virtual and downloadable products.
 
-``` json
+```json
 {
    "source" : {
       "name" : "HQ",

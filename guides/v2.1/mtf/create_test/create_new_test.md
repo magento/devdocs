@@ -21,7 +21,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 **Variation 1:**
 
-1. Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+1. Log in to [Admin](https://glossary.magento.com/admin).
 2. Browse to "Marketing" > "SEO & Search" > "Search Synonyms".
 3. Click the "New Synonyms Group" button.
 4. Enter data in the "Synonyms" field.
@@ -69,7 +69,7 @@ Create a synonym group (synonyms are a way to expand the scope of eligible match
 
 #### Step 2. Create the testing object - a fixture {#create-test-object}
 
-This step is applicable if a fixture doesn't exist in a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+This step is applicable if a fixture doesn't exist in a [module](https://glossary.magento.com/module).
 
 Use a [`generateFixtureXml.php`][] to create a new [fixture][].
 
@@ -78,6 +78,7 @@ Enter in your terminal:
 ```bash
 cd <magento2_root_dir>/dev/tests/functional/utils
 ```
+
 ```bash
 php -f generateFixtureXml.php -- --name synonym --entity_type search_synonyms --collection Magento\\Search\\Model\\ResourceModel\\Query\\Collection
 ```
@@ -133,7 +134,6 @@ Let's check the functional tests for the Magento_Widget module.
 It contains a `StoreIds.php` data source, that is similar to what we need. It has the following code:
 
 ```php
-
 <?php
 
 namespace Magento\Widget\Test\Fixture\Widget;
@@ -270,7 +270,9 @@ Now we should change the fixture. Instead of `store_id` and `website_id`, we mus
 
 Then, we must regenerate the fixture to apply changes:
 
+```bash
     php <magento2_root_dir>/dev/tests/functional/utils/generate.php
+```
 
 A new PHP class `Synonym.php` is generated in `<magento2_root_dir>/dev/tests/functional/generated/Magento/Search/Test/Fixture`.
 
@@ -504,7 +506,7 @@ In [Step 3][], we added two [pages][] to the test case class. Because both pages
 
 ![Created pages]({{ site.baseurl }}/common/images/ftf/mtf_tutorial_pages.png)
 
-To generate {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} classes for these [pages][] enter and run in your terminal
+To generate [PHP](https://glossary.magento.com/php) classes for these [pages][] enter and run in your terminal
 
 ```bash
 php <magento2_root_dir>/dev/tests/functional/utils/generate.php
@@ -538,7 +540,7 @@ public function addNew()
 }
 ```
 
-In {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
+In [HTML](https://glossary.magento.com/html) page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
 
 The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.
 
@@ -609,7 +611,7 @@ Now we have the following structure:
 ![Form mapping block]({{ site.baseurl }}/common/images/ftf/mtf_tutorial_block_mapping.png)
 
 
-Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}css{% endglossarytooltip %} selector.
+Then we should add the block class to the `SynonymsNew.xml` page object. To identify a form block on the HTML page, use an `id='page:main-container'` [css](https://glossary.magento.com/css) selector.
 
 ```xml
 <block name="synonymForm" class="Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm" locator="[id='page:main-container']" strategy="css selector" />
@@ -676,7 +678,7 @@ Here we should recall [Step 3][], where the initial test case was created.
 
 An argument for the `test()` method is a [test object][] (a [fixture][]).
 
-``` php?start_inline=1
+```php
 /**
  * Create Synonym group test.
  *
@@ -691,7 +693,7 @@ public function test(Synonym $synonym)
 
 Now we can add page classes made in [Step 5][]:
 
-``` php?start_inline=1
+```php
 use Magento\Search\Test\Page\Adminhtml\SynonymsIndex;
 use Magento\Search\Test\Page\Adminhtml\SynonymsNew;
 ```
@@ -712,7 +714,7 @@ Let's code it!
 
 In the FTF, the process of logging in doesn't require a special method and is performed automatically when any page from the Admin is opened. A method, which we will use, is an `open()` method of the `Magento/Mtf/Page/BackendPage` class. There is no need to add this class in `use`, because it is inherited from the `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class.
 
-``` php?start_inline=1
+```php
 $this->synonymsIndex->open();
 ```
 
@@ -720,7 +722,7 @@ $this->synonymsIndex->open();
 
 To Click the "New Synonym Group" button, we will use the `addNew()` method from the `pageActionsBlock` block. A `getPageActionsBlock()` of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsIndex` class receives parameters defined in the `pageActionsBlock` block (`class`, `locator`, `strategy`).
 
-``` php?start_inline=1
+```php
 $this->synonymsIndex->getPageActionsBlock()->addNew();
 ```
 
@@ -730,7 +732,7 @@ $this->synonymsIndex->getPageActionsBlock()->addNew();
 
 To enter data in the form, we use the `fill()` method from the `synonymForm` block of the `synonymsNew` page. An argument for this method is a fixture `Synonym`. A `getSynonymForm()` method of the generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` class receives parameters defined in the `synonymForm` block.
 
-``` php?start_inline=1
+```php
 $this->synonymsNew->getSynonymForm()->fill($synonym);
 ```
 
@@ -738,13 +740,13 @@ $this->synonymsNew->getSynonymForm()->fill($synonym);
 
 A `save()` method with parameters defined in a `formPageActions` block. Parameters are injected using a `getFormPageActions()` method from the `synonymsNew` page (generated `Magento/Search/Test/Page/Adminhtml/SynonymsNew` page class).
 
-``` php?start_inline=1
+```php
 $this->synonymsNew->getFormPageActions()->save();
 ```
 
 **Full `test()` definition**
 
-``` php?start_inline=1
+```php
 /**
  * Create Synonym group test.
  *
@@ -1055,12 +1057,12 @@ That's it!
 [Step 7]: #add-blocks-to-pages
 
 [develop branch]: https://github.com/magento/magento2
-[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\GridPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/GridPageActions.php
 [`\Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2000url }}dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
-[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
-[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2000url }}dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
+[`\Magento\Mtf\Client\Element\SelectstoreElement`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php
+[`\Magento\Backend\Test\Block\FormPageActions`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Backend/Test/Block/FormPageActions.php
+[`\Magento\Customer\Test\Constraint\AssertCustomerSuccessSaveMessage`]: {{ site.mage2bloburl }}/{{ page.guide_version }}/dev/tests/functional/tests/app/Magento/Customer/Test/Constraint/AssertCustomerSuccessSaveMessage.php
 [up and running]: {{ page.baseurl }}/mtf/mtf_quickstart/mtf_quickstart_environment.html#mtf_quickstart_env_selenium
 
 <!-- ABBREVIATIONS -->

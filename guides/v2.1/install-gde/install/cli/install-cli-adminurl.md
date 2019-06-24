@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: Display or change the Admin URI
-redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli-adminurl.html
 functional_areas:
   - Install
   - System
@@ -18,7 +16,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 Before you run this command, you must [Create or update the deployment configuration]({{ page.baseurl }}/install-gde/install/cli/install-cli-subcommands-deployment.html).
 
 ## Display the Admin URI {#instgde-cli-displayurl}
-This section discusses how to use the command line to display the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Uniform Resource Identifier ([URI](http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2){:target="_blank"}).
+This section discusses how to use the command line to display the [Admin](https://glossary.magento.com/admin) Uniform Resource Identifier ([URI](http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2){:target="_blank"}).
 
 Command options:
 
@@ -28,7 +26,7 @@ A sample result follows:
 
 	Admin Panel URI: /admin_1wgrah
 
-You can also view the Admin URI in `<your Magento install dir>/app/etc/env.php`. A snippet follows:
+You can also view the Admin URI in `<magento_root>/app/etc/env.php`. A snippet follows:
 
 ```php?startinline=1
   'backend' =>

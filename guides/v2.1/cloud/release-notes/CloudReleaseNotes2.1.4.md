@@ -7,8 +7,6 @@ menu_order: 383
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: mccloud-relnotes
-redirect_from:
-  - /guides/v2.2/cloud/release-notes/CloudReleaseNotes2.1.4.html
 functional_areas:
   - Cloud
 ---
@@ -32,10 +30,10 @@ These Release Notes provide up-to-date information about changes, additions, and
 
 <!--MAGECLOUD-1317-->* We fixed an issue with Elasticsearch configuration settings on deployment in 2.1.4.
 
-*	When you disable a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and deploy it to the remote Cloud server, the module stays disabled.
+*	When you disable a [module](https://glossary.magento.com/module) and deploy it to the remote Cloud server, the module stays disabled.
 
 *	You can now successfully upgrade from Magento Enterprise Cloud Edition 2.0.x to 2.1.x.
 
 ### {{site.data.var.ee}} Release Notes
-*	[{{site.data.var.ee}} 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html)
+
 *	[{{site.data.var.ee}} 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4EE.html)

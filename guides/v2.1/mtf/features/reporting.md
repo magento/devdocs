@@ -9,7 +9,7 @@ The following image demonstrates example of a general flow.
 
 ![Reporting mechanism diagram]({{ site.baseurl }}/common/images/ftf/ftf-reporting-diagram.png){:target="_blank"}
 
-The {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} manager is a core component which:
+The [event](https://glossary.magento.com/event) manager is a core component which:
 
 - dispatches events
 - gets a list of observers
@@ -96,7 +96,7 @@ Initially, event presets are defined in the FTF in `<magento_2_root_dir>/dev/tes
 
 ### Observers  {#observers}
 
-An observer is a {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} class which defines actions under Magento instance, browser, test run, and so on.
+An observer is a [PHP](https://glossary.magento.com/php) class which defines actions under Magento instance, browser, test run, and so on.
 
 The list of ready-to-use observers is the following:
 
@@ -146,7 +146,7 @@ As you can see, a tag contains one required attribute `name`, where a name of ev
 
 A method that is used to dispatch events is defined in [`\Magento\Mtf\System\Event\EventManagerInterface`][EventManagerInterface]. The FTF uses its default implementation `\Magento\Mtf\System\Event\EventManager::dispatchEvent()`.
 
-``` php?start_inline=1
+```php
 $this->eventManager->dispatchEvent(['your_event_tag'], [$your_input_parameters]);
 ```
 
@@ -178,7 +178,7 @@ The following examples explain how to use the reporting tool on practice.
 
 The following example shows how to add a `custom` preset.
 
-**Task**: Create a preset that logs only a web page {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} code and its screenshot when a test run is failed.
+**Task**: Create a preset that logs only a web page [HTML](https://glossary.magento.com/html) code and its screenshot when a test run is failed.
 
 **Reports**:
 
@@ -288,7 +288,7 @@ Step 1. Create an observer class `\Magento\Mtf\System\Observer\WebapiResponse` t
 ```php
 <?php
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -325,7 +325,7 @@ class WebapiResponse extends AbstractObserver
 
 Step 2. [Dispatch][dispatch] an event `webapi_failed` in the `\Magento\Tax\Test\Handler\TaxRule\WebApi::persist()` [handler] for failed responses.
 
-``` php?start_inline=1
+```php
 
 public function persist(FixtureInterface $fixture = null)
 {

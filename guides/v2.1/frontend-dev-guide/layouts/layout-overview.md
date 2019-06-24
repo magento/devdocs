@@ -18,11 +18,15 @@ In Magento, the basic components of page design are layouts, containers, and blo
 
 (2) *Containers* assign content structure to a page using container tags within a layout XML file. A container has no additional content except the content of included elements. Examples of containers include the header, left column, main column, and footer.
 
-(3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the HTML to insert into its parent structural block. Examples of blocks include a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} list, a mini cart, product tags, and product listing.
+(3) *Blocks* render the UI elements on a page using block tags within a layout XML file. Blocks use templates to generate the HTML to insert into its parent structural block. Examples of blocks include a [category](https://glossary.magento.com/category) list, a mini cart, product tags, and product listing.
+
+## Purpose of page layouts
+
+The purpose of page layouts is to create a structured, common set of layout instructions to render pages. Most pages on a website can be categorized as fitting into a 1, 2, or 3-column container system. These page layouts can be selected in the admin panel to provide a specific layout per page.
 
 ## Basic layouts 
 
-The basic view of all Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} pages in defined in two page configuration layout files located in the Magento_Theme module: 
+The basic view of all Magento [storefront](https://glossary.magento.com/storefront) pages in defined in two page configuration layout files located in the Magento_Theme module: 
 
 * `<Magento_Theme_module_dir>/view/frontend/layout/default.xml`: defines the page layout. 
 * `<Magento_Theme_module_dir>/view/frontend/layout/default_head_blocks.xml`: defines the scripts, images, and meta data included in pages' `<head>` section. 
@@ -33,7 +37,7 @@ You can also [extend]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-exten
 
 ## Layout handles {#layout-over-terms}
 
-A *layout handle* is a uniquely identified set of {% glossarytooltip bcbc9bf8-3251-4b3c-a802-07417770af3b %}layout instructions{% endglossarytooltip %} that serves as a name of a layout file.
+A *layout handle* is a uniquely identified set of [layout instructions](https://glossary.magento.com/layout-instructions) that serves as a name of a layout file.
 
 There are three kinds of layout handles:
 
@@ -70,7 +74,7 @@ The following terms are used to distinguish layouts provided by different applic
 
 ## Customize layout {#layout-custom}
 
-To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme layouts.
+To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento [module](https://glossary.magento.com/module) and theme layouts.
 
 To make the necessary changes, create [extending]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html) and [overriding]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html) layout files in your custom theme. 
 
@@ -78,26 +82,28 @@ To make the necessary changes, create [extending]({{ page.baseurl }}/frontend-de
 
 The Magento application processes layout files in the following order:
 
-1.	Collects all layout files from modules. The order is determined by the modules order in the module list from `app/etc/config.php`.
-2.	Determines the sequence of [inherited]({{ page.baseurl }}/frontend-dev-guide/themes/theme-inherit.html) themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
-3.	Iterates the sequence of themes from last ancestor to current:
+1. Module base files loaded.
+2. Module area files loaded.
+3. Collects all layout files from modules. The order is determined by the modules order in the module list from the `app/etc/config.php` file. (If their priorities are equal, they are sorted according to their alphabetical priority.)
+4. Determines the sequence of [inherited] themes `[<parent_theme>, ..., <parent1_theme>] <current_theme>`
+5. Iterates the sequence of themes from last ancestor to current:
 
-	a.	Adds all extending theme layout files to the list.
-	b.	Replaces overridden layout files in the list.
+   a. Adds all extending theme layout files to the list.
 
+   b. Replaces overridden layout files in the list.
 
-4.	Merges all layout files from the list.
+6. Merges all layout files from the list.
 
-    {:.bs-callout .bs-callout-info}
-    Layout files that belong to inactive modules or modules with disabled output are ignored.
+{:.bs-callout .bs-callout-info}
+Layout files that belong to inactive modules or modules with disabled output are ignored.
 
 ## Related topics
 
-*	[Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
-*	[Common layout customization tasks]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html)
-*	[Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
-*	[Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html)
-*	[Customizing layout - step-by-step illustration]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-practice.html)
+* [Layout instructions]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-instructions.html)
+* [Common layout customization tasks]({{ page.baseurl }}/frontend-dev-guide/layouts/xml-manage.html)
+* [Extend a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-extend.html)
+* [Override a layout]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-override.html)
+* [Customizing layout - step-by-step illustration]({{ page.baseurl }}/frontend-dev-guide/layouts/layout-practice.html)
 
 
 [layouts overview]: {{site.baseurl}}/common/images/layouts_block_containers_defn21.png

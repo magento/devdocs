@@ -2,14 +2,13 @@
 group: php-developer-guide
 title: Message Queues
 ee_only: True
-redirect_from: /guides/v2.2/extension-dev-guide/message-queues.html
 ---
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
-In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional system that allows a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses [RabbitMQ] as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
+In {{site.data.var.ee}}, the Message Queue Framework (MQF) is a fully-functional system that allows a [module](https://glossary.magento.com/module) to publish messages to queues. It also creates consumers to receive them asynchronously. The MQF primarily uses [RabbitMQ] as the messaging broker, which  provides a scalable platform for sending and receiving messages. It also includes a mechanism for storing undelivered messages. RabbitMQ is based on the Advanced Message Queuing Protocol (AMQP) 0.9.1 specification.
 
-A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
+A basic message queue system can also be set up without using RabbitMQ. In this system, a MySQL [adapter](https://glossary.magento.com/adapter) stores messages in the database. Three database tables (`queue`, `queue_message`, and `queue_message_status`) manage the message queue workload. Cron jobs ensure the consumers are able to receive messages. This solution is not very scalable. RabbitMQ should be used whenever possible.
 
 See [Configure message queues] for information about setting up the message queue system.
 
@@ -17,9 +16,9 @@ See [Configure message queues] for information about setting up the message queu
 
 The following code sends a message to the queue. The `publish` method is defined in `PublisherInterface`
 
-{% highlight php startinline=true %}
+```php
 $publisher->publish($topic, $message)
-{% endhighlight %}
+```
 
 In an MySQL adapter environment, when a message is published to multiple queues, create a single record in `queue_message` and multiple records in `queue_message_status`: one for each queue. (A join on the `queue`, `queue_message`, and `queue_message_status` tables is required).
 
@@ -31,10 +30,10 @@ The procedure for instantiating a consumer differs, depending on which message q
 
 This instantiates a consumer that is defined in a `queue.xml` file. The consumer (`customer_created_listener`) listens to the queue and receives all new messages. For every message, it invokes `Magento\Some\Class::processMessage($message)`
 
-{% highlight php startinline=true %}
+```php
 $this->consumerFactory->get('customer_created_listener')
     ->process();
-{% endhighlight %}
+```
 
 ### MySQL adapter
 
@@ -51,7 +50,7 @@ Perform the following actions:
 
 The following sample introduces a runtime configuration that allows you to redefine the adapter for a topic.
 
-{% highlight php startinline=true %}
+```php
 'queue' =>
     array(
      'topics' => array(
@@ -59,7 +58,7 @@ The following sample introduces a runtime configuration that allows you to redef
         'order.created' => [publisher="default-rabitmq"],
     ),
 ),
-{% endhighlight %}
+```
 
 #### Related Topics
 

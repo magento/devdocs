@@ -105,7 +105,7 @@ The `CreateSimpleProductEntityTestVariation1` variation contains the following `
 
 ## Data set structure {#structure}
 
-A data set is an {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file that contains test variations for a test case.
+A data set is an [XML](https://glossary.magento.com/xml) file that contains test variations for a test case.
 
 Each variation includes:
 
@@ -122,7 +122,7 @@ The following table shows structure of the data set:
 <tr><th>Node </th><th>Semantics </th><th>Attributes </th></tr>
 <tr>
 <td><code>config</code> </td>
-<td>The root element that defines an XML {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} and an XML Schema. </td>
+<td>The root element that defines an XML [namespace](https://glossary.magento.com/namespace) and an XML Schema. </td>
 <td><ul>
 <li><code> xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"</code></li>
 <li><code>xsi:noNamespaceSchemaLocation="../../../../../../vendor/magento/mtf/etc/variations.xsd"</code></li>
@@ -183,7 +183,7 @@ A data set should be placed in the same directory with a corresponding test case
 
 ## Data set merging {#merge}
 
-The FTF enables you to merge data sets from different modules. For example, if you create a new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that adds a menu option to an existing module, the FTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
+The FTF enables you to merge data sets from different modules. For example, if you create a new [module](https://glossary.magento.com/module) that adds a menu option to an existing module, the FTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
 
 There are two options to merge data sets in the FTF:
 
@@ -192,7 +192,7 @@ There are two options to merge data sets in the FTF:
 
 ## HowTos {#howtos}
 
-A data set is a flexible FTF {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} that allows to perform different tasks. Learn their descriptions in the following sections.
+A data set is a flexible FTF [entity](https://glossary.magento.com/entity) that allows to perform different tasks. Learn their descriptions in the following sections.
 
 ### Define `name` in the `<data>` node {#data_node}
 
@@ -216,7 +216,7 @@ If a variable is assigned more than one value:
 
 the value is processed as an array:
 
-``` php?start_inline=1
+```php
 $price = [
     'data' => [
         'shopping_cart' => [

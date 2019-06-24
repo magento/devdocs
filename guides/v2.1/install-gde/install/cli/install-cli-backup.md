@@ -1,8 +1,6 @@
 ---
 group: installation-guide
 title: Back up and roll back the file system, media, and database
-redirect_from:
-  - /guides/v2.0/install-gde/install/install-cli-backup.html
 functional_areas:
   - Install
   - System
@@ -29,7 +27,7 @@ In addition to the command arguments discussed here, see [Common arguments]({{ p
 
 The Magento backup feature is disabled by default. To enable, enter the following CLI command:
 
-``` bash
+```bash
 bin/magento config:set system/backup/functionality_enabled 1
 ```
 

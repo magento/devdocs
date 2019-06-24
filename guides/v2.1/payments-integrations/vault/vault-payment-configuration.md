@@ -8,7 +8,7 @@ functional_areas:
   - Integration
 ---
 
-You need to configure the main parameters of the vault implementation in the `config.xml` file of your {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} module:
+You need to configure the main parameters of the vault implementation in the `config.xml` file of your [payment method](https://glossary.magento.com/payment-method) module:
 
 * `model` - instance of the vault payment implementation, [configured in `di.xml`]({{ page.baseurl }}/payments-integrations/vault/vault-di.html).
 * `title` - vault payment method title; can be overwritten in the store configuration.
@@ -19,7 +19,7 @@ Additional configuration might be required depending on your implementation.
 
 The following example is the `config.xml` file of the Braintree payment method: 
 
-{% highlight xml %}
+```xml
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <payment>
@@ -34,7 +34,7 @@ The following example is the `config.xml` file of the Braintree payment method:
         </payment>
     </default>
 </config>
-{% endhighlight %}
+```
 
 In this example `braintree_cc_vault` is the unique payment code of the vault implementation for Braintree.
 

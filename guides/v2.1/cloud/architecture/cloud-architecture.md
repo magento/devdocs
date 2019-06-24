@@ -23,7 +23,6 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>All Magento 2 core features</li>
           <li>PayPal Onboarding Tool</li>
           <li><a href="https://magento.com/blog/magento-news/introducing-magento-business-intelligence-essentials">Business Intelligence Essentials</a></li>
-          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
         </ul>
       </td>
       <td>
@@ -42,7 +41,7 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances</li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
+            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic</a> APM (Performance Monitoring) on 3 branches: <code>master</code> and 2 of your choice
           </li>
           <li>
             <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
@@ -55,7 +54,7 @@ For comparison, each plan includes the following infrastructure features and sup
           <li>Continuous cloud integration tools with unlimited users</li>
           <li>Fastly Content Delivery Network (CDN), Image Optimization (IO), and added security with generous bandwidth allowances</li>
           <li>
-            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic APM</a> (Performance Monitoring) on 3 branches: Integration <code>master</code>, Staging, and Production
+            <a href="{{ page.baseurl }}/cloud/project/new-relic.html">New Relic</a> Infrastructure on Production + APM (Performance Monitoring) on Staging and Production
           </li>
           <li>
             <a href="{{ page.baseurl }}/cloud/project/project-integrate-blackfire.html">Blackfire.io</a> Enterprise (Performance Testing)
@@ -85,8 +84,18 @@ For comparison, each plan includes the following infrastructure features and sup
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
       <td>Dedicated technical account management for the initial launch period, starting with your subscription until your initial site launch</td>
     </tr>
+    <tr>
+      <td>Add-ons*</td>
+      <td>
+        <ul>
+          <li><a href="https://magento.com/business-needs/b2b-commerce">B2B module</a></li>
+        </ul>
+      </td>
+      <td class="blank"></td>
+    </tr>
   </tbody>
 </table>
+\* _Available for an additional fee_
 
 ## Starter projects
 

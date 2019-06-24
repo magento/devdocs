@@ -9,11 +9,11 @@ menu_order: 3
 
 ## REST responses {#rest-responses}
 
-Each web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call returns a HTTP status code and a response payload. When an error occurs, the response body also returns an error message.
+Each web [API](https://glossary.magento.com/api) call returns a HTTP status code and a response payload. When an error occurs, the response body also returns an error message.
 
 ### HTTP status codes {#http-status-codes}
 
-Each {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} call returns an HTTP status code that reflects the result of a request:
+Each [web API](https://glossary.magento.com/web-api) call returns an HTTP status code that reflects the result of a request:
 
 HTTP code | Meaning | Description
 --- | --- | ---
@@ -35,7 +35,7 @@ A successful DELETE call returns `true`. An unsuccessful DELETE call returns a p
 The response payload depends on the call.
 For example, a `GET /V1/customers/:customerId` call returns the following payload:
 
-{% highlight json %}
+```json
 {
     "customers": {
         "customer": {
@@ -63,7 +63,7 @@ For example, a `GET /V1/customers/:customerId` call returns the following payloa
         ]
     }
 }
-{% endhighlight %}
+```
 
 This JSON-formatted response body includes a `customer` object with the customer email, first name, and last name, and customer address information. The information in this response body shows account information for the specified customer.
 
@@ -79,11 +79,11 @@ Part | Description
 
 As an example, Magento returns a `code` of `400` and the following `message` when an invalid `sku` value is specified in the call `PUT V1/products/:sku`.
 
-{% highlight json %}
+```json
 {
   "message": "Invalid product data: %1",
   "parameters": [
     "Invalid attribute set entity type"
   ]
 }
-{% endhighlight %}
+```

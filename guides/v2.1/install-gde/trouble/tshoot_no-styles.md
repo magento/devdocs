@@ -9,13 +9,13 @@ functional_areas:
 
 ### Details
 
-The path to images and stylesheets is not correct, either because of an incorrect base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.
+The path to images and stylesheets is not correct, either because of an incorrect base [URL](https://glossary.magento.com/url) or because server rewrites (CentOS, Ubuntu) are not set up properly. To confirm this is the case, use a web browser inspector to check the paths to static assets and verify those assets are located on the Magento file system.
 
-Magento static assets are located under `<your Magento install dir>/pub/static/`, within the `frontend` and `adminhtml` directories).
+Magento static assets are located under `<magento_root>/pub/static/`, within the `frontend` and `adminhtml` directories).
 
 ### Solution
 
-*	If you are using the Apache web server, verify your [server rewrites]({{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite) setting and your Magento server's base URL and try again. If you set up the Apache `AllowOverride` directive incorrectly, the {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are not served from the correct location.
+*	If you are using the Apache web server, verify your [server rewrites]({{page.baseurl}}/install-gde/prereq/apache.html#apache-help-rewrite) setting and your Magento server's base URL and try again. If you set up the Apache `AllowOverride` directive incorrectly, the [static files](https://glossary.magento.com/static-files) are not served from the correct location.
 
 * If you are using the nginx web server, be sure to [configure a virtual host file]({{page.baseurl}}/install-gde/prereq/nginx.html#configure-nginx-ubuntu). The nginx virtual host file must meet the following criteria:
 

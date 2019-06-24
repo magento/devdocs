@@ -48,10 +48,10 @@ For the purposes of this article, we will use a listing component to render simp
 
 The [XML configuration file][ui-component-declaration] for UI components shows the parent-child relationship between different UI components and tells Magento which template files to use when rendering.
 
-{%highlight xml%}
+```xml
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     ...
-    <datasource>
+    <dataSource>
         <!-- 
             DataProvider should retrieve information about product. In our case will be good to retrieve
             formatted prices with currency code, etc... and raw prices.
@@ -80,7 +80,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
                 <primaryFieldName/>
             </settings>
         </dataProvider>
-    </datasource>
+    </dataSource>
     <columns name="some_columns" component="SomeVendor_SomeComponent/js/product/list/listing">
         <!-- 
             Price columns is composite component (it has children),
@@ -130,7 +130,7 @@ The [XML configuration file][ui-component-declaration] for UI components shows t
         </column>
     </columns>
 </listing>
-{%endhighlight%}
+```
 
 A good example from the Magento codebase is the Catalog module's [`widget_recently_viewed.xml`][widget-recently-viewed-xml] file.
 
@@ -138,7 +138,7 @@ A good example from the Magento codebase is the Catalog module's [`widget_recent
 
 In the following code sample, the `price-box` component aggregates and creates the `price` components for a specific product.
 
-{%highlight javascript%}
+```javascript
 /**
  * Retrieve array of prices, that should be rendered for specific product
  *
@@ -200,7 +200,7 @@ _comparePrices: function (firstPrice, secondPrice) {
 
     return 0;
 }
-{%endhighlight%}
+```
 
 The preceding code sample is based on the Catalog module's [`price-box` component][price-box].
 
@@ -209,7 +209,7 @@ The preceding code sample is based on the Catalog module's [`price-box` componen
 In our example, each price is configured to have its own template, but they all share a common price component called `final-price`.
 This component is defined in the following code sample:
 
-{%highlight javascript%}
+```javascript
 /**
  * Retrieve specific template
  *
@@ -263,7 +263,7 @@ getAdjustments: function () {
 
     return adjustments;
 }
-{%endhighlight%}
+```
 
 This code sample is based on the Catalog module's [`final-price` component][final-price].
 
@@ -274,7 +274,7 @@ It calls the `hasSpecialPrice` function to check if a special price exists for a
 
 If a product has a special price, it calls `getPrice` to get the value and renders any adjustments configured for the price.
 
-{%highlight html%}
+```html
 <if args="isSalable($row()) && hasSpecialPrice($row())">
     <span class="special-price">
         <span class="price-container">
@@ -295,7 +295,7 @@ If a product has a special price, it calls `getPrice` to get the value and rende
         </span>
     </span>
 </if>
-{%endhighlight%}
+```
 
 This example is based on the [`special_price.html` template file][special-price-html] for Magento Catalog.
 
@@ -303,7 +303,7 @@ This example is based on the [`special_price.html` template file][special-price-
 
 The following is sample template code that is rendered for the tax adjustment component:
 
-{%highlight html%}
+```html
 <if args="displayBothPrices()">
     <span class="price-wrapper price-excluding-tax"
           attr="'data-label': $t('Excl. Tax')"
@@ -312,7 +312,7 @@ The following is sample template code that is rendered for the tax adjustment co
           html="getTax($row())"><!-- You can implement self::getTax function how you want -->
     </span>
 </if>
-{%endhighlight%}
+```
 
 ## Related Topics
 
@@ -322,8 +322,8 @@ The following is sample template code that is rendered for the tax adjustment co
 
 [form-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-form.html
 [listing-component]: {{ page.baseurl }}/ui_comp_guide/components/ui-listing-grid.html
-[special-price-html]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
-[widget-recently-viewed-xml]: {{ site.mage2200url }}app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[special-price-html]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
+[widget-recently-viewed-xml]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
 [ui-component-declaration]: {{ page.baseurl }}/ui_comp_guide/howto/new_component_declaration.html
-[price-box]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
-[final-price]: {{ site.mage2200url }}app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
+[price-box]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
+[final-price]: {{ site.mage2bloburl }}/{{ page.guide_version }}/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js

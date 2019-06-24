@@ -3,14 +3,27 @@
 # For configuration defaults, refer to: https://github.com/gjtorikian/html-proofer/blob/master/lib/html-proofer/configuration.rb
 #
 html-proofer:
+  # Do not check external links.
   :disable_external: true
+
+  # Report only errors that fall within the 4xx status code range.
   :only_4xx: true
+
+  # Ignores images with empty alt tags.
   :empty_alt_ignore: true
-  :allow_hash_ref: true
+
+  # Sort errors by description in the report
   :error_sort: :desc
+
+  # Use up to 3 parallel processes to speed up internal file checks.
   :parallel:
     :in_processes: 3
-  :file_ignore:
-  - !ruby/regexp /guides\/m1x/
-  - !ruby/regexp /guides\/v2\.0/
-  - !ruby/regexp /videos\//
+
+  # Ignore entirely the files which pathname matches a specified pattern 
+  # :file_ignore:
+  # - guides/v2.0
+
+  # Ignore any link that includes a specified pattern
+  # :url_ignore:
+  # - !ruby/regexp /guides\/v2\.0/
+  

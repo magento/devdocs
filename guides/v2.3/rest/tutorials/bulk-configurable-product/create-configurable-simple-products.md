@@ -52,7 +52,7 @@ The payload contains both the configurable product and the simple products.
 
 {% collapsible Show code sample %}
 
- ``` json
+ ```json
 [{
   "product": {
     "sku": "MS-Champ",
@@ -283,7 +283,7 @@ The payload contains both the configurable product and the simple products.
 
  **Response**
 
-``` json
+```json
 {
     "bulk_uuid": "c08a2b99-4be2-4b28-af7e-56e9664e0b39",
     "request_items": [

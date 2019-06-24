@@ -27,7 +27,7 @@ If the update is successful, a page similar to the following displays.
 
 Messages similar to the following display in the Console Log:
 
-{% highlight xml %}
+```terminal
 [2016-07-27 20:36:03 UTC] Job "setup:maintenance:enable []" has started
 Enabled maintenance mode
 
@@ -62,7 +62,7 @@ Downloading: Connecting... Downloading: 0%..... Downloading: 100%
 Generating autoload files
 
 [2016-07-27 15:38:36 CDT] Composer update completed successfully
-{% endhighlight %}
+```
 
 If the update is successful, clean the cache by clicking **System** > **Cache Management** > **Flush Magento Cache** or by entering the following command:
 

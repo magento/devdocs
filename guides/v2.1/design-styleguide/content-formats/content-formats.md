@@ -8,7 +8,7 @@ menu_node:
 functional_areas:
   - Content
 ---
-For more specifics, use the [Magento Glossary](https://magento.github.io/glossary/index.html) and [Magento Word Usage Bank](https://magento.github.io/glossary/word-usage.html). If an item is not found, refer to the Associated Press (AP) Stylebook on first reference, and the Microsoft Manual of Style on second reference.
+For more specifics, use the [Magento Glossary](https://glossary.magento.com/). If an item is not found, refer to the Associated Press (AP) Stylebook on first reference, and the Microsoft Manual of Style on second reference.
 
 ## Abbreviations
 
@@ -90,11 +90,11 @@ Use these rules for lists:
 
 * **Introducing a list.** All lists must be preceded by a lead-in heading, sentence or phrase, as follows:
 
-  - A heading / title without punctuation
+  * A heading / title without punctuation
 
-  - A sentence that ends in a colon or ellipsis
+  * A sentence that ends in a colon or ellipsis
 
-  - A phrase, or partial sentence, ending in a colon or ellipsis
+  * A phrase, or partial sentence, ending in a colon or ellipsis
 
 * **Bullets vs. numbers.** Use bullets for non-sequential lists and numbers for sequential lists or instructions.
 

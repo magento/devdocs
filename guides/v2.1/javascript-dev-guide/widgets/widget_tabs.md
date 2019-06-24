@@ -2,20 +2,17 @@
 group: javascript-developer-guide
 subgroup: 3_Widgets
 title: Tabs widget
-redirect_from:
- - /guides/v2.0/frontend-dev-guide/javascript/widget_tabs.html
 ---
 
 ## Overview {#fedg_tabs-widget_overview}
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the [Magento collapsible widget].
 
-The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is [lib/web/mage/tabs.js].
+The tabs [widget](https://glossary.magento.com/widget) source is [lib/web/mage/tabs.js].
 
 ## Initialize the tabs widget {#fedg_tabs_init}
 
 For information about how to initialize a widget in a JS component or `.phtml` template, see the [Initialize JavaScript] topic.
-
 
 Generally the tabs widget is instantiated like following:
 ```javascript
@@ -41,6 +38,7 @@ Phtml template file examples using script:
 
 The tabs widget has the following options:
 
+- [active](#fedg_tabs_options-active)
 - [ajaxUrlElement](#fedg_tabs_options-ajaxUrlElement)
 - [ajaxContent](#fedg_tabs_options-ajaxContent)
 - [animate](#fedg_tabs_options-animate)
@@ -165,7 +163,6 @@ The option of the [collapsible] widget used by tabs.
 
 **Default value**: `{ header: null, activeHeader: null }`
 
-
 ### `loadingClass` {#fedg_tabs_options-loadingClass}
 Class assigned to a tab during content loading for this tab.
 
@@ -216,11 +213,9 @@ The tabs widget has the following methods:
 -   [deactivate()](#fedg_tabs_methods-deactivate)
 -   [disable()](#fedg_tabs_options-disable)
 
-
 ### `activate()` {#fedg_tabs_methods-activate}
 
 `activate(index)` displays `content` for the tab with the corresponding `index`.
-
 
 ### `enable()` {#fedg_tabs_methods-enable}
 `enable(index)` enables the tab with the corresponding `index`.
@@ -241,12 +236,65 @@ Tabs is subscribed to the same events as the [collapsible] widget:
 ### `beforeOpen callback` {#fedg_tabs_beforeOpen_callback}
 Called before the content is opened.
 
+Example of adding a callback to `beforeOpen` events:
+
+```javascript
+$("#element").on("beforeOpen", function () {
+    // do something before opening the content
+});
+```
+
 ### `dimensionsChanged` {#fedg_tabs_dimensionsChanged}
 Called after content is opened or closed.
 
+Example of adding a callback to `dimensionsChanged` events:
+
+```javascript
+$("#element").on("dimensionsChanged", function (event, data) {
+    var opened = data.opened;
+
+    if (opened) {
+        // do something when the content is opened
+        return;
+    }
+
+    // do something when the content is closed
+});
+```
+
+## Code sample
+
+The following example shows how to initialize the tabs widget and pass options during the initialization.
+This example uses the same CSS classes as the tabs on the product page.
+
+```html
+<div class="product data items"
+     data-mage-init='{"mage/tabs": {"openedState": "active", "animate": {"duration": 100}, "active": 1, "disabled": [2], "disabledState": "disabled"}}'>
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-cars">Cars</a>
+    </div>
+    <div id="tab-cars" class="item content" data-role="content">Cars content</div>
+    
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-movies">Movies</a>
+    </div>
+    <div id="tab-movies" class="item content" data-role="content">Movies content</div>
+
+    <div class="item title" data-role="collapsible">
+        <a class="switch" data-toggle="trigger" href="#tab-music">Music</a>
+    </div>
+    <div id="tab-music" class="item content" data-role="content">Music Content</div>
+</div>
+```
+
+### Result
+
+The result is three tabs with content, where the last tab is disabled based on initialization options, as shown here:
+
+![Tabs Widget]({{ page.baseurl }}/javascript-dev-guide/widgets/images/tabs-widget-result.png)
 
 [Magento collapsible widget]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
-[lib/web/mage/tabs.js]: {{site.mage2000url}}lib/web/mage/tabs.js
+[lib/web/mage/tabs.js]: {{ site.mage2bloburl }}/{{ page.guide_version }}/lib/web/mage/tabs.js
 [Initialize JavaScript]: {{page.baseurl}}/javascript-dev-guide/javascript/js_init.html
 [collapsible]: {{page.baseurl}}/javascript-dev-guide/widgets/widget_collapsible.html
 [jQuery.animate()]: http://api.jquery.com/animate/

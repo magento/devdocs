@@ -111,7 +111,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 {
     "items": [
         {
@@ -158,7 +158,7 @@ None
 **Response**
 
 {% collapsible Show code sample %}
-``` json
+```json
 [
     {
         "source_code": "central",

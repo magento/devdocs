@@ -13,7 +13,7 @@ A plugin, or interceptor, is a class that modifies the behavior of public class 
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class which are referred to as plugins.
 
-This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% endglossarytooltip %} approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
+This [interception](https://glossary.magento.com/interception) approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Because they can be called sequentially according to a configured sort order, these interceptors do not conflict with one another.
 
 #### Limitations
 
@@ -30,15 +30,15 @@ Plugins cannot be used with any of the following:
 
 ### Declaring a plugin
 
-A plugin for a class object is declared in the <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
+A plugin for a class object is declared in the <code>di.xml</code> file in your [module](https://glossary.magento.com/module).
 
-{% highlight xml %} 
+```xml 
 <config>
     <type name="{ObservedType}">
       <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" />
     </type>
 </config>
-{% endhighlight %}
+```
 
 You must specify these elements:
 
@@ -161,7 +161,7 @@ class MyUtilityPlugin
 }
 ```
 
-Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
+Note the missing <code>= null</code>. Now, if the original method was called with <code>null</code> [PHP](https://glossary.magento.com/php) would throw a fatal error as your plugin does not accept <code>null</code>.
 
 It is also worth noting that you are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this simply:
 
@@ -230,7 +230,7 @@ All plugins added for interfaces and inherited classes will be added to classes 
 
 Plugins defined in the global scope will be applied when the system is in a specific area (i.e. frontend, backend, etc). These global plugin configuration can also be extended or overridden via an area's `di.xml`.
 
-For example, the developer can disable a global plugin in the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} area by disabling it in the specific `di.xml` file for the backend area.
+For example, the developer can disable a global plugin in the [backend](https://glossary.magento.com/backend) area by disabling it in the specific `di.xml` file for the backend area.
 
 ### Related topics
 

@@ -48,7 +48,7 @@ The `POST /V1/inventory/low-quantity-notification` endpoint accepts an array of 
 
 **Payload**
 
-``` json
+```json
 {
   "sourceItemConfigurations": [
     {
@@ -89,7 +89,7 @@ None
 
 **Response**
 
-``` json
+```json
 {
 "source_code": "reno_wh",
 "notify_stock_qty": 5,
@@ -108,7 +108,7 @@ The `POST /V1/inventory/low-quantity-notifications-delete` endpoint deletes the 
 
 **Payload**
 
-``` json
+```json
 {
   "sourceItems": [
     {

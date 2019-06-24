@@ -45,7 +45,7 @@ You can also use a process manager such as [Supervisor](http://supervisord.org/i
 
 Edit */app/etc/env.php* file for configure cron job `consumers_runner`
 
-{% highlight php %}
+```php
 ...
     'cron_consumers_runner' => array(
         'cron_run' => false,
@@ -56,7 +56,7 @@ Edit */app/etc/env.php* file for configure cron job `consumers_runner`
         )
     ),
 ...
-{% endhighlight %}
+```
 
 * `cron_run` - the option for enabling/disabling cron job `consumers_runner`, by default is true.
 * `max_messages` - the maximum number of messages for each consumer that must be processed before consumer terminate, by default is 1000. If it is 0, then the consumer never stops working.

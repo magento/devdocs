@@ -22,7 +22,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 `POST <host>/rest/default/V1/products/options`
 
 **Payload**
-``` json
+```json
 {
   "option": {
     "product_sku": "MS-Champ",
@@ -41,7 +41,7 @@ The `product_sku` is the `sku` of the configurable product. The `sku` specified 
 
 **Response**
 
-``` json
+```json
 {
     "product_sku": "MS-Champ",
     "option_id": 7,

@@ -20,7 +20,7 @@ in next components declaration:
     * template - overloaded template to provide switcher between grid and timeline, legend for timeline.
     * updateTypes - path to status column that provide data for legend
  - columns
-    * component - timeline component tht extends listing.
+    * component - timeline component that extends listing.
     * recordTmpl - overloaded template for timeline records.
     * detailsTmpl - template for tooltip that provide details about updates.
  - status column

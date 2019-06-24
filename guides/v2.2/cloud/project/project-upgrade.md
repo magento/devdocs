@@ -117,7 +117,7 @@ If you are upgrading to 2.2.X, you need to also update your [.magento.app.yaml](
 1.  Verify the upgrade in your Integration, Staging, or Production environment by using SSH to log in and check the version.
 
     ```bash
-      php bin/magento --version
+    php bin/magento --version
     ```
 
 ## Create a new config.php file

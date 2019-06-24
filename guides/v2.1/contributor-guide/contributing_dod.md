@@ -1,7 +1,6 @@
 ---
 group: contributor-guide
 title: Magento Definition of Done
-redirect_from: /guides/v2.0/contributor-guide/contributing_dod.html
 ---
 
 ## Overview
@@ -28,7 +27,7 @@ For more information, see [Magento's backward compatibility policy][1].
 All changes, additions, and extensions to the product should be documented by the author.
 The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
-Ideally, the information about the submitted code should be added to the official Magento DevDocs {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
+Ideally, the information about the submitted code should be added to the official Magento DevDocs [library](https://glossary.magento.com/library).
 Contributors are asked to submit the doc as a Pull Request to the [DevDocs GitHub repo][4].
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message.
@@ -163,6 +162,20 @@ A task, when complete by the author, should be reviewed by another Magento commu
 The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 
 * There are no unauthorized backward-incompatible functional changes
+* All backward-incompatible changes on code level are approved by an architect. The following cases currently cause SVC failures but do NOT require architect approval:
+  * Removal of private constant
+  * Override of the method defined in parent class
+  * Adding optional parameter to the constructor, except for the classes explicitly meant for extension, including the following ones:
+    * `\Magento\Framework\Model\AbstractExtensibleModel`
+    * `\Magento\Framework\Api\AbstractExtensibleObject`
+    * `\Magento\Framework\Api\AbstractSimpleObject`
+    * `\Magento\Framework\Model\AbstractModel`
+    * `\Magento\Framework\App\Action\Action`
+    * `\Magento\Backend\App\Action`
+    * `\Magento\Backend\App\AbstractAction`
+    * `\Magento\Framework\App\Action\AbstractAction`
+    * `\Magento\Framework\View\Element\AbstractBlock`
+    * `\Magento\Framework\View\Element\Template`
 * All changes are documented properly
 * All changes are covered with automated tests
 * Determine if code changes caused any failure in continuous integration builds
