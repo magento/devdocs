@@ -20,7 +20,7 @@ stage:
 - **Default**— `[]` (an empty array)
 - **Version**—Magento 2.1.4 and later
 
-Configure _Time To First Byte_ (TTFB) testing for specified pages to test your {{ site.data.var.ece }} site performance. For each page to test, specify the path or the HTTP or HTTPS URL.
+Configure _Time To First Byte_ (TTFB) testing for specified pages to test your {{ site.data.var.ece }} site performance. For each page to page to test, specify the absolute path reference or an absolute URL with protocol and host.
 
 ```yaml
 stage:
